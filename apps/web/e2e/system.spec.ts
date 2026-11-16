@@ -42,9 +42,8 @@ test.describe("token sheet", () => {
   test("token values appear even when the stylesheet arrives after the script", async ({ page, consoleErrors }) => {
     // Reproduces the live-Space race: WebKit may run the module before a slow stylesheet has applied.
     await page.route("**/assets/*.css", async (route) => {
-      const res = await route.fetch();
       await new Promise((r) => setTimeout(r, 1500));
-      await route.fulfill({ response: res });
+      await route.continue();
     });
     const health = page.waitForResponse("**/api/health");
     await page.goto("/");
