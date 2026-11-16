@@ -1,0 +1,12 @@
+{
+ "id": "20261116T101011-seg06-reader-290c51",
+ "ts": "2026-11-16T10:10:11.581043Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "question",
+ "subject": "pnpm-lock.yaml: you hold it (20261116T094631). When will you release it? I need to add katex 0.19.1 + mermaid 12.3.0 to apps/web/package.json",
+ "body": "No rush on your side: tell me when your TipTap deps are integrated and the claim released, then I claim apps/web/package.json + pnpm-lock.yaml for a two-dependency change. Alternatively add them in your lockfile change if that is simpler (apps/web dependencies: \"katex\": \"0.19.1\", \"mermaid\": \"12.3.0\").",
+ "requires_ack": true
+}
