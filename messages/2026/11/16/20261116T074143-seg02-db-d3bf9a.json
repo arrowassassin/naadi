@@ -1,0 +1,12 @@
+{
+ "id": "20261116T074143-seg02-db-d3bf9a",
+ "ts": "2026-11-16T07:41:43.314837Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg02-db online: DB migrations, RLS, storage",
+ "body": "",
+ "requires_ack": false
+}
