@@ -20,7 +20,8 @@ feature_flags:
   courses: {enabled: true}        # S06 Courses + Reader
   qbank: {enabled: true}          # S08 Builder + tutor mode
   qbank_timed: {enabled: true}    # S09 timed + exam-simulation screens (mock exams run here)
-  planner: {enabled: false}       # S11
+  planner: {enabled: false}       # S16 Planner screen ("Full plan" on Today stays hidden until on)
+  coach: {enabled: true}          # S11 nightly coach suggestions on Today
   notes: {enabled: false}         # S13
   pathway: {enabled: false}       # S17
   search: {enabled: true}         # S07 Search
@@ -64,6 +65,32 @@ exam_rules:
       seconds_per_question: 90
       explanations: after_block
       assistant: false             # the assistant is silent in exam mode (CLAUDE.md)
+
+# Study-plan generator (S11, naadi_api/plan/generator.py). Hours scale by daily_hours / reference_hours (the
+# template's daily maximum); fewer than min_study_days available dates is refused. Exams without a template are
+# not offered in onboarding. item_minutes sizes a day's items (durations only, never clock times).
+plan:
+  reference_hours: 10
+  min_study_days: 21
+  max_daily_hours: 14
+  templates: {step1: step1-60d}
+  item_minutes: {cards: 30, admin: 30, extra: 30, questions_untimed: 60, seconds_per_question: 90, review_factor: 1.0, min_read: 30}
+
+# Nightly coach (S11, graph `coach`, Aegra cron 21:07 UTC) and the thresholds Today shows. weak_below: a system
+# under this share correct is "weak"; min_attempts: fewer attempts show "not enough data". Readiness =
+# blueprint-weighted % correct over first attempts in the last readiness_days, shown only after
+# readiness_min_answered answers covering readiness_min_coverage of the weighted systems.
+coach:
+  enabled: true
+  max_suggestions: 3
+  max_users_per_run: 200
+  weak_below: 0.55
+  min_attempts: 5
+  window_days: 14
+  readiness_days: 60
+  readiness_min_answered: 40
+  readiness_min_coverage: 0.5
+  catch_up_questions: 20
 
 # Reference ranges for the question view's Lab values panel (GET /api/lab-values). Naadi-original table of
 # common adult ranges (conventional units, SI where it differs). The exam board's own table is (c) and is only

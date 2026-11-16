@@ -50,6 +50,9 @@ USER_TABLES = (
     "ink_items",
     "block_sections",
     "card_review_logs",
+    "study_plans",
+    "study_plan_days",
+    "coach_suggestions",
 )
 # Card scheduling: only the API writes it (the client may only SELECT its own rows).
 API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
@@ -142,8 +145,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "43 Naadi tables present",
-            "select count(*) = 43 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "46 Naadi tables present",
+            "select count(*) = 46 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -186,6 +189,21 @@ def checks(head: str) -> list[Check]:
             "select bool_and(has_table_privilege('authenticated', t, 'select')"
             " and not has_table_privilege('authenticated', t, 'insert,update,delete,truncate')) as ok, '' as detail"
             " from unnest(array['public.ink_layers','public.ink_items']) t",
+        ),
+        Check(
+            "study plans are API-written; plan days and coach suggestions take status only",
+            "select has_table_privilege('authenticated', 'public.study_plans', 'select')"
+            " and not has_any_column_privilege('authenticated', 'public.study_plans', 'insert,update')"
+            " and not has_table_privilege('authenticated', 'public.study_plans', 'delete')"
+            " and not has_any_column_privilege('authenticated', 'public.study_plan_days', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.study_plan_days', 'delete')"
+            " and not has_column_privilege('authenticated', 'public.study_plan_days', 'topic', 'update')"
+            " and has_column_privilege('authenticated', 'public.study_plan_days', 'status', 'update')"
+            " and not has_any_column_privilege('authenticated', 'public.coach_suggestions', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.coach_suggestions', 'delete')"
+            " and not has_column_privilege('authenticated', 'public.coach_suggestions', 'facts', 'update')"
+            " and has_column_privilege('authenticated', 'public.coach_suggestions', 'status', 'update')"
+            " as ok, '' as detail",
         ),
         Check(
             "attempts and blocks are written by the API only; attempts.correct is not client-readable",

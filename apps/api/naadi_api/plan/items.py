@@ -20,25 +20,10 @@ import re
 from collections.abc import Sequence
 from dataclasses import dataclass, replace
 
-from pydantic import BaseModel, ConfigDict, Field
-
+from ..config_api.schemas import PlanItemMinutes as ItemMinutes
 from .generator import PlanDay
 
 PlanKind = str  # one of plan_items.kind: read, questions, assessment, cards, video, admin, rest
-
-
-class ItemMinutes(BaseModel):
-    """Fixed sizes (minutes) used when a day's hours are shared between its items."""
-
-    model_config = ConfigDict(extra="forbid")
-
-    cards: int = Field(30, ge=5, le=240)
-    admin: int = Field(30, ge=5, le=240)
-    extra: int = Field(30, ge=5, le=240)
-    questions_untimed: int = Field(60, ge=5, le=480)
-    seconds_per_question: int = Field(90, ge=30, le=600)
-    review_factor: float = Field(1.0, ge=0, le=3, description="Review time per question, x the answer time")
-    min_read: int = Field(30, ge=0, le=480)
 
 
 # Outside resources, matched by name in the template text. Order matters: the first match names the item.

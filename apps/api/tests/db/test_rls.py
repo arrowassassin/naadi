@@ -82,23 +82,24 @@ def test_user_b_cannot_touch_user_a_rows(
                 _update(conn, table, user_a)
         else:
             assert _update(conn, table, user_a) == 0, "B updated A's rows"
-        if table.name in SELECT_ONLY or table.name in API_WRITTEN:
+        if table.name in SELECT_ONLY or table.name in API_WRITTEN or table.name in API_ROWS:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 _delete(conn, table, user_a)
         else:
             assert _delete(conn, table, user_a) == 0, "B deleted A's rows"
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             insert_row(conn, table.name, table.row(user_a, shared))
-    if table.name in API_WRITTEN or table.name in SELECT_ONLY:
-        if table.name == "ink_items":  # an item needs its own user's layer
-            layers = next(t for t in USER_TABLES if t.name == "ink_layers")
-            insert_row(pg, "ink_layers", layers.row(user_b, shared))
-        if table.name == "block_sections":  # a section belongs to its own user's block
-            insert_row(pg, "blocks", next(t for t in USER_TABLES if t.name == "blocks").row(user_b, shared))
+    if table.name in API_WRITTEN or table.name in SELECT_ONLY or table.name in API_ROWS:
+        # an item needs its own user's layer, a section its own user's block, a plan day its own user's plan
+        parent = {"ink_items": "ink_layers", "block_sections": "blocks", "study_plan_days": "study_plans"}.get(
+            table.name
+        )
+        if parent:
+            insert_row(pg, parent, next(t for t in USER_TABLES if t.name == parent).row(user_b, shared))
         insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
     with as_user(pg, user_b) as conn:
         # B also cannot move one of its own rows over to A.
-        if table.name not in API_WRITTEN and table.name not in SELECT_ONLY:
+        if table.name not in API_WRITTEN and table.name not in SELECT_ONLY and table.name not in API_ROWS:
             insert_row(conn, table.name, table.row(user_b, shared))
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
@@ -140,14 +141,14 @@ def test_user_a_can_select_update_delete_insert_own_rows(
                 _update(conn, table, user_a)  # the API owns blocks
         else:
             assert _update(conn, table, user_a) == 1
-        if table.name in API_WRITTEN:
+        if table.name in API_WRITTEN or table.name in API_ROWS:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 _delete(conn, table, user_a)  # no client delete: a student cannot erase an answer and redo it
             assert _count(conn, table.name, user_a) == 1
         else:
             assert _delete(conn, table, user_a) == 1
             assert _count(conn, table.name, user_a) == 0
-        if table.name in API_WRITTEN:
+        if table.name in API_WRITTEN or table.name in API_ROWS:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 insert_row(conn, table.name, table.row(user_a, shared))
         else:
@@ -160,7 +161,42 @@ API_WRITTEN = ("attempts", "blocks")
 # Ink (0009): every item is validated and merged by the API; students may only read their own layers and items.
 # Exam timing (0011): every timing write is the API's own clock; students may only read their sections.
 # Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
-SELECT_ONLY = ("ink_layers", "ink_items", "block_sections", "card_reviews", "card_review_logs")
+SELECT_ONLY = ("ink_layers", "ink_items", "block_sections", "card_reviews", "card_review_logs", "study_plans")
+# Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
+# plan day's score notes), never insert, delete or re-point them.
+API_ROWS = ("study_plan_days", "coach_suggestions")
+
+
+@pytest.mark.parametrize(
+    ("table", "column", "value"),
+    [
+        ("study_plan_days", "topic", "Something else"),
+        ("study_plan_days", "date", "2027-01-01"),
+        ("study_plan_days", "plan_id", uuid.uuid4()),
+        ("coach_suggestions", "facts", Jsonb({"misses": 99})),
+        ("coach_suggestions", "action", Jsonb({"kind": "add_plan_items"})),
+        ("coach_suggestions", "source", "llm"),
+    ],
+)
+def test_plan_and_coach_rows_take_status_only(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str, column: str, value: object
+) -> None:
+    seed_user_rows(pg, user_a, shared)
+    with as_user(pg, user_a) as conn:
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(
+                sql.SQL("update public.{} set {} = %s").format(sql.Identifier(table), sql.Identifier(column)), (value,)
+            )
+        ok = conn.execute(sql.SQL("update public.{} set status = status").format(sql.Identifier(table)))
+        assert ok.rowcount == 1
+
+
+def test_one_active_plan_per_student(pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared) -> None:
+    seed_user_rows(pg, user_a, shared)
+    row = {"user_id": user_a, "template_id": shared.plan_template_id, "inputs": Jsonb({}), "generator_version": 1}
+    with pytest.raises(errors.UniqueViolation), pg.transaction():
+        insert_row(pg, "study_plans", row)
+    insert_row(pg, "study_plans", {**row, "active": False})
 
 
 @pytest.mark.parametrize("table", [*API_WRITTEN, "block_sections"])

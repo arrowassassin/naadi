@@ -31,6 +31,7 @@ class Shared:
     task_id: str
     media_id: str
     unapproved_media_id: str
+    plan_template_id: str
 
 
 @dataclass(frozen=True)
@@ -43,6 +44,11 @@ class UserTable:
 
 def _id() -> uuid.UUID:
     return uuid.uuid4()
+
+
+def study_plan_id(user_id: uuid.UUID) -> uuid.UUID:
+    """The fixture's study plan id per user, so its day rows reference their own user's plan."""
+    return uuid.uuid5(user_id, "study-plan")
 
 
 def ink_layer_id(user_id: uuid.UUID) -> uuid.UUID:
@@ -231,6 +237,38 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("user_id", "card_id"),
         ("rating", 4),
     ),
+    UserTable(
+        "study_plans",
+        lambda u, s: {
+            "id": study_plan_id(u),
+            "user_id": u,
+            "template_id": s.plan_template_id,
+            "inputs": Jsonb({"exam": "step1"}),
+            "generator_version": 1,
+        },
+        ("user_id",),
+        ("active", False),
+    ),
+    UserTable(
+        "study_plan_days",
+        lambda u, s: {
+            "user_id": u,
+            "plan_id": study_plan_id(u),
+            "day_no": 1,
+            "date": "2026-11-16",
+            "weekday": "Mon",
+            "week": 1,
+            "template_day": 1,
+        },
+        ("user_id", "plan_id", "day_no"),
+        ("status", "Done"),
+    ),
+    UserTable(
+        "coach_suggestions",
+        lambda u, s: {"user_id": u, "for_date": "2026-11-16", "kind": "cards_catchup", "source": "rules"},
+        ("user_id",),
+        ("status", "dismissed"),
+    ),
 )
 
 USER_TABLE_NAMES = tuple(t.name for t in USER_TABLES)
@@ -264,6 +302,7 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
         task_id=f"test-task-{tag}",
         media_id=f"test-fig-{tag}",
         unapproved_media_id=f"test-fig-pending-{tag}",
+        plan_template_id=f"test-plan-{tag}",
     )
     insert_row(conn, "sources", {"id": s.source_id, "name": "Test", "license": "proprietary-naadi"})
     insert_row(
@@ -323,6 +362,7 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
         conn, "taxonomy_nodes", {"id": f"test.sys.{tag}", "kind": "system", "label": "Cardio", "exam": ["step1"]}
     )
     insert_row(conn, "embeddings", {"ref_type": "section", "ref_id": s.section_id, "content": "shared chunk"})
+    insert_row(conn, "plan_templates", {"id": s.plan_template_id, "exam": "step1", "title": "Test plan", "days": 1, "source_id": s.source_id})
     return s
 
 

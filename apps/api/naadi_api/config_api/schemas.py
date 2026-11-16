@@ -134,6 +134,44 @@ class ExamRules(_Strict):
     modes: ExamModes
 
 
+# ── study plans and the coach (S11) ──
+
+
+class PlanItemMinutes(_Strict):
+    """Fixed minutes per plan item kind when a day's hours are shared out (no clock times)."""
+
+    cards: int = Field(30, ge=5, le=240)
+    admin: int = Field(30, ge=5, le=240)
+    extra: int = Field(30, ge=5, le=240)
+    questions_untimed: int = Field(60, ge=5, le=480)
+    seconds_per_question: int = Field(90, ge=30, le=600)
+    review_factor: float = Field(1.0, ge=0, le=3)
+    min_read: int = Field(30, ge=0, le=480)
+
+
+class PlanRules(_Strict):
+    reference_hours: float = Field(gt=0, le=24, description="The template's daily maximum: hours scale by H / this")
+    min_study_days: int = Field(ge=1, le=366)
+    max_daily_hours: float = Field(14, gt=0, le=24)
+    templates: dict[Literal["step1", "step2ck", "step3"], str] = Field(
+        description="Plan template id per exam; an exam without one is not offered in onboarding"
+    )
+    item_minutes: PlanItemMinutes = PlanItemMinutes()  # type: ignore[call-arg]
+
+
+class CoachRules(_Strict):
+    enabled: bool
+    max_suggestions: int = Field(ge=1, le=3)
+    max_users_per_run: int = Field(ge=1, le=10_000)
+    weak_below: float = Field(0.55, gt=0, lt=1, description="A system under this share correct is weak")
+    min_attempts: int = Field(5, ge=1, le=100, description="Attempts before a system's share is shown")
+    window_days: int = Field(14, ge=1, le=120, description="By-system window on Today and in the coach facts")
+    readiness_days: int = Field(60, ge=7, le=365)
+    readiness_min_answered: int = Field(40, ge=1, le=1000)
+    readiness_min_coverage: float = Field(0.5, gt=0, le=1)
+    catch_up_questions: int = Field(20, ge=1, le=40)
+
+
 # ── storage, ui_copy, sources_policy ──
 
 
@@ -1275,6 +1313,22 @@ KEY_SPECS: dict[str, KeySpec] = {
             "app_config.yaml",
             "Flashcard scheduling (FSRS-6)",
             _schema_of(FsrsConfig),
+        ),
+        KeySpec(
+            "plan",
+            _model_validator(PlanRules),
+            False,
+            "app_config.yaml",
+            "Study-plan generator inputs (S11)",
+            _schema_of(PlanRules),
+        ),
+        KeySpec(
+            "coach",
+            _model_validator(CoachRules),
+            False,
+            "app_config.yaml",
+            "Nightly coach and Today analytics thresholds (S11)",
+            _schema_of(CoachRules),
         ),
         KeySpec(
             "ui_copy", _model_validator(UiCopy), True, "app_config.yaml", "Editable UI strings", _schema_of(UiCopy)

@@ -1,6 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py;
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -476,6 +476,50 @@ create index ingest_items_user_status_idx on public.ingest_items (user_id, statu
 create index ingest_items_upload_idx on public.ingest_items (upload_id) where upload_id is not null;
 create index ingest_items_kb_source_idx on public.ingest_items (kb_source_id) where kb_source_id is not null;
 
+
+-- 0013: generated study plans (one active per student), their dated rows in the template CSV's shape, and the
+-- nightly coach's suggestions. Written by the API; students update only status (+ a plan day's score_notes).
+create table public.study_plans (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  template_id text not null references public.plan_templates(id),
+  inputs jsonb not null check (jsonb_typeof(inputs) = 'object'),
+  generator_version smallint not null check (generator_version >= 1),
+  active boolean not null default true,
+  created_at timestamptz not null default now(),
+  unique (id, user_id)
+);
+create unique index study_plans_one_active_idx on public.study_plans (user_id) where active;
+create index study_plans_template_idx on public.study_plans (template_id);
+
+create table public.study_plan_days (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  plan_id uuid not null,
+  day_no smallint not null check (day_no >= 1),
+  date date not null,
+  weekday text not null check (weekday in ('Mon','Tue','Wed','Thu','Fri','Sat','Sun')),
+  week smallint not null check (week >= 1),
+  phase text,
+  chapter_ref text,
+  chapter_ids text[] not null default '{}',
+  topic text,
+  chapter_questions text,
+  qbank text,
+  self_assessment text,
+  admin_task text,
+  extra_resource text,
+  target_hours numeric(4,1) check (target_hours is null or target_hours between 0 and 24),
+  template_day smallint not null check (template_day >= 1),
+  merged_days smallint[] not null default '{}',
+  extra boolean not null default false,
+  status text not null default 'Not started' check (status in ('Not started','In progress','Done','Skipped')),
+  score_notes text not null default '' check (char_length(score_notes) <= 2000),
+  primary key (plan_id, day_no),
+  unique (plan_id, date),
+  foreign key (plan_id, user_id) references public.study_plans (id, user_id) on delete cascade
+);
+create index study_plan_days_user_date_idx on public.study_plan_days (user_id, date);
+
 create table public.plan_items (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
@@ -488,9 +532,32 @@ create table public.plan_items (
   target_count int check (target_count is null or target_count >= 0),
   status text not null default 'planned' check (status in ('planned','now','done','skipped','behind')),
   origin text not null default 'generator' check (origin in ('generator','user','assistant','seed')),
-  sort smallint
+  sort smallint,
+  -- 0013: generator items point at their plan and day (composite FK: only the student's own plan)
+  plan_id uuid,
+  plan_day smallint check (plan_day is null or plan_day >= 1),
+  constraint plan_items_plan_fkey foreign key (plan_id, user_id)
+    references public.study_plans (id, user_id) on delete cascade,
+  constraint plan_items_plan_link_check check ((plan_id is null) = (plan_day is null))
 );
 create index plan_items_user_day_idx on public.plan_items (user_id, day, sort);
+create index plan_items_plan_idx on public.plan_items (plan_id, plan_day) where plan_id is not null;
+
+create table public.coach_suggestions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  for_date date not null,
+  kind text not null check (kind in ('catch_up_block','review_misses','cards_catchup','reread_section')),
+  title text check (title is null or char_length(title) between 1 and 120),
+  body text check (body is null or char_length(body) between 1 and 600),
+  facts jsonb not null default '{}' check (jsonb_typeof(facts) = 'object'),
+  action jsonb not null default '{}' check (jsonb_typeof(action) = 'object'),
+  source text not null check (source in ('llm','rules')),
+  status text not null default 'new' check (status in ('new','accepted','dismissed')),
+  created_at timestamptz not null default now(),
+  check ((source = 'llm') = (title is not null and body is not null))
+);
+create index coach_suggestions_user_date_idx on public.coach_suggestions (user_id, for_date desc, created_at);
 
 create table public.user_pathway_tasks (
   user_id uuid not null references auth.users(id) on delete cascade,
@@ -839,6 +906,9 @@ create trigger plan_templates_touch_updated_at before update on public.plan_temp
 --   app_config, app_config_history, chapter_section_revisions, search_cache, llm_usage, embeddings, seed_runs (0004),
 --   search_usage, agent_health (0005), naadi_alembic_version
 --   (embeddings: retrieval runs in the API; question and draft chunks would leak answers)
+--
+-- 0013: study_plans: select only. study_plan_days: select + update (status, score_notes). coach_suggestions:
+--   select + update (status). RLS forced with the four _own policies; inserts and deletes come from the API.
 --
 -- Functions naadi_touch_updated_at(), naadi_app_config_history(), naadi_app_config_notify(),
 -- naadi_mark_section_edited() and naadi_secure_aegra_tables() pin search_path = '' and are not executable
