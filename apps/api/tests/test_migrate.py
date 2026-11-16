@@ -42,7 +42,7 @@ def test_sqlalchemy_url_rejects_other_backends() -> None:
 def test_revisions_form_one_linear_chain_with_real_downgrades() -> None:
     script = ScriptDirectory.from_config(migrate.alembic_config())
     revs = list(script.walk_revisions())
-    assert [r.revision for r in reversed(revs)] == ["0001", "0002"]
+    assert [r.revision for r in reversed(revs)] == ["0001", "0002", "0003"]
     assert len(script.get_heads()) == 1
     for r in revs:
         assert r.path is not None

@@ -23,7 +23,7 @@ import httpx
 
 from naadi_api import migrate
 
-# The fixed contract: these 17 user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
+# The fixed contract: these 18 user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
 USER_TABLES = (
     "profiles",
     "attempts",
@@ -42,6 +42,7 @@ USER_TABLES = (
     "ingest_items",
     "generated_media",
     "report_issues",
+    "reading_positions",
 )
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
 HIDDEN_QUESTION_COLUMNS = (
@@ -123,11 +124,11 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "33 Naadi tables present",
-            "select count(*) = 33 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "34 Naadi tables present",
+            "select count(*) = 34 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')",
         ),
-        Check("17 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
+        Check("18 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
         Check(
             "question answers hidden from anon and authenticated",
             "select to_regclass('public.questions') is not null and not exists (select 1"

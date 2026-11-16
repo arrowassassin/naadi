@@ -139,6 +139,18 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("user_id",),
         ("body", "Typo in line 2"),
     ),
+    UserTable(
+        "reading_positions",
+        lambda u, s: {
+            "user_id": u,
+            "chapter_id": s.chapter_id,
+            "section_id": s.section_id,
+            "scroll_position": 1.5,
+            "client_updated_at": "2026-11-16T08:00:00Z",
+        },
+        ("user_id", "section_id"),
+        ("scroll_position", 2.25),
+    ),
 )
 
 USER_TABLE_NAMES = tuple(t.name for t in USER_TABLES)

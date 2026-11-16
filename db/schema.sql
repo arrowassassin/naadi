@@ -1,6 +1,7 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py; version table public.naadi_alembic_version).
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py; version table
+-- public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
 --
@@ -141,7 +142,10 @@ create table public.media_assets (
   metadata_fetched_at timestamptz,
   attribution text,
   taxonomy_ids text[] not null default '{}',
-  review_status text not null default 'unreviewed' check (review_status in ('unreviewed','approved','rejected'))
+  review_status text not null default 'unreviewed' check (review_status in ('unreviewed','approved','rejected')),
+  -- 0003: intrinsic size in px (an SVG's viewBox) so the reader reserves the space of a lazy figure
+  width int check (width is null or width > 0),
+  height int check (height is null or height > 0)
 );
 
 create table public.section_media (
@@ -446,6 +450,22 @@ create table public.report_issues (
 create index report_issues_user_idx on public.report_issues (user_id, created_at desc);
 create index report_issues_open_idx on public.report_issues (status, created_at) where status in ('open','triaged');
 
+-- 0003: one row per (user, section) opened in the reader; synced across devices. scroll_position = index of
+-- the top-most visible top-level block + the fraction of it scrolled past (layout independent).
+-- client_updated_at (clamped by the API to the server clock) orders writes: an older write never wins.
+create table public.reading_positions (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  chapter_id text not null references public.chapters(id) on delete cascade,
+  section_id text not null references public.chapter_sections(id) on delete cascade,
+  scroll_position double precision not null default 0 check (scroll_position >= 0 and scroll_position <= 100000),
+  completed_at timestamptz,
+  client_updated_at timestamptz not null,
+  updated_at timestamptz not null default now(),
+  primary key (user_id, section_id)
+);
+create index reading_positions_chapter_idx on public.reading_positions (user_id, chapter_id, client_updated_at desc);
+create index reading_positions_section_idx on public.reading_positions (section_id);
+
 -- ───────────── Runtime configuration (admin only) ─────────────
 create table public.app_config (
   key text primary key,
@@ -521,6 +541,7 @@ create trigger ink_layers_touch_updated_at before update on public.ink_layers fo
 create trigger uploads_touch_updated_at before update on public.uploads for each row execute function public.naadi_touch_updated_at();
 create trigger kb_sources_touch_updated_at before update on public.kb_sources for each row execute function public.naadi_touch_updated_at();
 create trigger ingest_items_touch_updated_at before update on public.ingest_items for each row execute function public.naadi_touch_updated_at();
+create trigger reading_positions_touch_updated_at before update on public.reading_positions for each row execute function public.naadi_touch_updated_at();
 
 -- ───────────── Grants and row-level security (0001) ─────────────
 -- Every table in public has RLS enabled (tests/db/test_rls_coverage.py enforces it).
@@ -552,6 +573,8 @@ create trigger ingest_items_touch_updated_at before update on public.ingest_item
 --   ingest_items
 --   generated_media  (client insert: id, user_id, kind, title, prompt, model, storage_path, width, height, duration_s; client update: title)
 --   report_issues  (client insert: id, user_id, ref_type, ref_id, body; client update: body)
+--   reading_positions (0003)  (client insert: user_id, chapter_id, section_id, scroll_position, completed_at, client_updated_at; client update: scroll_position, completed_at, client_updated_at)
+--     + insert/update check: exists (select 1 from public.chapter_sections s where s.id = reading_positions.section_id and s.chapter_id = reading_positions.chapter_id)
 --
 -- Shared content: RLS enabled; select to anon, authenticated with the row filter below; writes by the
 -- service role (backend) only, except that a student may insert/update/delete their own private

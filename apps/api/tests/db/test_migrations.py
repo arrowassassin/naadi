@@ -101,11 +101,21 @@ def test_round_trip_from_empty(local_url: str, aegra_version_table: None) -> Non
         assert _scalar(c, "select version_num from public.naadi_alembic_version") == head
 
     try:
-        migrate.downgrade(local_url, "-1")
+        # down to 0001: drops 0003 (reading positions, figure sizes) and 0002 (storage), keeps the core data
+        migrate.downgrade(local_url, "0001")
         with psycopg.connect(local_url, autocommit=True) as c:
             assert _scalar(c, "select version_num from public.naadi_alembic_version") == "0001"
             assert _buckets(c) == set()
             assert _naadi_storage_policies(c) == set()
+            assert _scalar(c, "select to_regclass('public.reading_positions')") is None
+            assert (
+                _scalar(
+                    c,
+                    "select count(*) from information_schema.columns where table_schema = 'public'"
+                    " and table_name = 'media_assets' and column_name in ('width', 'height')",
+                )
+                == 0
+            )
             # downgrading storage must not touch the core data
             assert _scalar(c, "select count(*) from public.profiles where user_id = any(%s)", (users,)) == 2
 
