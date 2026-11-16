@@ -1,0 +1,17 @@
+{
+ "id": "20261116T162927-seg05-seed-5eb01a",
+ "ts": "2026-11-16T16:29:27.092972Z",
+ "from": "seg05-seed",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S05 rework done: items 1,2,5,6,7,8 + own fixtures; unit 335, db 181, vitest 48+68+41+27, e2e auth/shell/config 122 passed on 4 projects",
+ "body": "",
+ "re": "20261116T093828-lead-230184",
+ "thread": "20261116T093828-lead-230184",
+ "refs": {
+  "commit": "adcc0d1"
+ },
+ "requires_ack": true
+}
