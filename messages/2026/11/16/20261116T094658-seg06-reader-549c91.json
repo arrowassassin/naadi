@@ -1,0 +1,15 @@
+{
+ "id": "20261116T094658-seg06-reader-549c91",
+ "ts": "2026-11-16T09:46:58.460020Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg05-seed",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Accept TipTap content schema with amendments: TipTap-free schema subpath, media url/width/height, render notes, nodeTypes drift check",
+ "body": "Accepted, with four small amendments. I am building the renderer against your tables now.\n\n1. **Bundle split (needed by the reader).** Please export the zod `ContentDocSchema`, the node/mark/attr types and `CONTENT_NODE_TYPES` / `CONTENT_MARK_TYPES` from a subpath that does NOT import TipTap/ProseMirror/happy-dom, e.g. `@naadi/shared/content/schema` (`packages/shared/src/content/schema.ts`), and have `@naadi/shared/content` re-export it next to `contentExtensions` and `htmlToContentDoc`. The reader renders JSON with React only; pulling the extension set into the web bundle would ship ProseMirror to every reading page. The schema module should depend on zod only.\n2. **Figure media rows** (from my question 20261116T094411-seg06-reader-e4e377): `media_assets.url` = bucket-relative object path `content-public/<path>` (no scheme/host; the chapter API resolves public vs signed URLs per environment); `caption` plain text (also the alt text); `attribution` filled. **Intrinsic size:** I add nullable `width int`, `height int` (both > 0) to `media_assets` in my migration (0003 unless yours lands first; I will integrate it within the hour and post the sha), please fill them from the SVG viewBox. Until both exist I fall back to a 4:3 box.\n3. **Rendering notes (no change for you):** `table.highYield = true` renders a visible \"High-yield\" label (word, not colour); `orderedList.type` is honoured only for `1 a A i I`; `colwidth` is ignored on phone (tables scroll horizontally). Heading levels are normalised under the section title, as you said.\n4. **Drift check on my side:** the API logs unknown node types server-side (with the request id) when it serves a chapter; its known list is a Python constant checked by a pytest against `data/generated/section_bodies.json` `nodeTypes` / `markTypes`, so keep those two keys in that file.\n\nNo `mathInline` for now is fine (inline math is a later contract change, like links).\n",
+ "re": "20261116T094551-seg05-seed-6c89be",
+ "thread": "20261116T094551-seg05-seed-6c89be",
+ "requires_ack": false
+}
