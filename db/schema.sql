@@ -3,6 +3,10 @@
 -- (0001_core_schema.py, 0002_storage_buckets.py; version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
+--
+-- Default privileges (first statement of 0001): for role postgres in schema public, tables, sequences and
+-- functions created from now on grant nothing to anon/authenticated (Supabase's defaults grant all). Every
+-- client grant below is explicit. Functions keep PostgreSQL's global PUBLIC execute; Naadi's revoke it.
 
 -- ───────────── Functions ─────────────
 create function public.naadi_touch_updated_at() returns trigger
@@ -522,20 +526,27 @@ create trigger ingest_items_touch_updated_at before update on public.ingest_item
 -- Every table in public has RLS enabled (tests/db/test_rls_coverage.py enforces it).
 --
 -- User-owned tables: RLS enabled AND forced; `anon` has no privileges; `authenticated` has
--- select/insert/update/delete (column-restricted where noted); four policies `to authenticated`,
--- each `(select auth.uid()) = user_id`: <t>_select_own, <t>_insert_own, <t>_update_own, <t>_delete_own.
+-- select/insert/update/delete (column-restricted where noted: grading, moderation and pipeline columns are
+-- backend-only); four policies `to authenticated`, each `(select auth.uid()) = user_id`:
+-- <t>_select_own, <t>_insert_own, <t>_update_own, <t>_delete_own. Where a row references shared content, the
+-- insert/update check also requires that row to be visible to the caller (no foreign-key oracle).
 --   profiles
---   attempts
---   blocks
+--     + insert/update check: pathway_stage is null or exists (select 1 from public.pathway_stages p where p.key = profiles.pathway_stage)
+--   attempts  (client insert: user_id, question_id, block_id, chosen, seconds, flagged, mode; client update: flagged)
+--     + insert/update check: exists (select 1 from public.questions p where p.id = attempts.question_id)
+--   blocks  (client insert: id, user_id, config, question_ids, started_at; client update: started_at)
 --   card_reviews
+--     + insert/update check: exists (select 1 from public.flashcards p where p.id = card_reviews.card_id)
 --   notes
 --   notebooks
 --   ink_layers
---   uploads
+--   uploads  (client insert: id, user_id, kind, storage_path, original_name, bytes; client update: original_name)
 --   plan_items
 --   user_pathway_tasks
+--     + insert/update check: exists (select 1 from public.pathway_tasks p where p.id = user_pathway_tasks.task_id)
 --   vault_documents
 --   costs
+--     + insert/update check: task_id is null or exists (select 1 from public.pathway_tasks p where p.id = costs.task_id)
 --   assistant_threads
 --   kb_sources
 --   ingest_items
@@ -544,7 +555,8 @@ create trigger ingest_items_touch_updated_at before update on public.ingest_item
 --
 -- Shared content: RLS enabled; select to anon, authenticated with the row filter below; writes by the
 -- service role (backend) only, except that a student may insert/update/delete their own private
--- flashcards (owner_user_id = auth.uid(), origin <> 'seed').
+-- flashcards with origin = 'user' (assistant / anki_import / seed cards are backend writes) whose linked
+-- question / section is visible to them.
 --   sources: true
 --   taxonomy_nodes: true
 --   pathway_stages: true
@@ -555,26 +567,29 @@ create trigger ingest_items_touch_updated_at before update on public.ingest_item
 --   section_media: exists (select 1 from public.chapter_sections s where s.id = section_media.section_id) and exists (select 1 from public.media_assets m where m.id = section_media.media_id)
 --   questions: status = 'published' and (chapter_id is null or exists (select 1 from public.chapters c where c.id = questions.chapter_id))
 --   flashcards: owner_user_id is null or owner_user_id = (select auth.uid())
---   embeddings: owner_user_id is null or owner_user_id = (select auth.uid())
 --
 -- questions: clients get column-level select only on
 --   (id, chapter_id, exam, block, stem_html, options, difficulty, taxonomy_ids, tags, source_id, status, created_at);
 --   answer, answer_html, explanation_html, why_not_html, educational_objective, review and stats are
 --   not readable by anon/authenticated at all (the API serves them after an attempt).
 --
--- Admin-only (RLS enabled and forced, no client privileges, service role only):
---   app_config, app_config_history, chapter_section_revisions, search_cache, llm_usage, naadi_alembic_version
+-- Server-side only (RLS enabled and forced, no client privileges, service role only):
+--   app_config, app_config_history, chapter_section_revisions, search_cache, llm_usage, embeddings, naadi_alembic_version
+--   (embeddings: retrieval runs in the API; question and draft chunks would leak answers)
 --
 -- Functions naadi_touch_updated_at() and naadi_app_config_history() pin search_path = '' and are not
 -- executable by clients.
 
 -- ───────────── Storage (0002) ─────────────
--- Buckets (storage.buckets; schema owned by the Supabase Storage service):
---   content-public  : public read; 10 MB; images incl. SVG        (service-role writes)
---   content-private : signed URLs only; 50 MB; PDF/EPUB/media      (service-role writes)
---   user-uploads    : private; 50 MB; documents, images, audio, video, zip/apkg; {auth.uid()}/... only
---   vault           : private; 20 MB; PDF and photos; {auth.uid()}/... only; NEVER sent to any AI path
---   generated-media : private; 50 MB; AI images/clips; {auth.uid()}/... only
+-- Buckets (storage.buckets; schema owned by the Supabase Storage service). No catch-all MIME type
+-- (no application/octet-stream); the upload client sends an explicit contentType (application/vnd.anki for
+-- .apkg/.colpkg after a ZIP magic check) and the server re-sniffs.
+--   content-public  : public read; 10 MB; image/svg+xml, image/png, image/jpeg, image/webp, image/gif, image/avif
+--   content-private : private; 50 MB; application/pdf, application/epub+zip, image/png, image/jpeg, image/webp, image/gif, image/avif, image/heic, image/heif, audio/mpeg, audio/mp4, audio/aac, audio/wav, audio/x-wav, audio/webm, audio/ogg, video/mp4, video/webm, video/quicktime
+--   user-uploads    : private; 50 MB; application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/csv, text/plain, text/markdown, text/html, application/epub+zip, application/rtf, text/rtf, image/png, image/jpeg, image/webp, image/gif, image/avif, image/heic, image/heif, audio/mpeg, audio/mp4, audio/aac, audio/wav, audio/x-wav, audio/webm, audio/ogg, video/mp4, video/webm, video/quicktime, application/zip, application/x-zip-compressed, application/vnd.anki
+--   vault           : private; 20 MB; application/pdf, image/png, image/jpeg, image/webp, image/heic, image/heif
+--   generated-media : private; 50 MB; image/png, image/jpeg, image/webp, video/mp4, video/webm
+-- content-* writes: service role only. vault objects are NEVER sent to any AI / ingest path.
 -- storage.objects policies: naadi_user_folders_select/insert/update/delete (authenticated, buckets
 -- user-uploads|vault|generated-media, (storage.foldername(name))[1] = auth.uid()::text) and
 -- naadi_content_public_read (anon, authenticated, bucket content-public).

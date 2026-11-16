@@ -46,6 +46,10 @@ def test_bucket_configuration(pg: psycopg.Connection) -> None:
     assert "application/pdf" in cfg["vault"][2]
     assert "image/svg+xml" in cfg["content-public"][2]
     assert "image/svg+xml" not in cfg["user-uploads"][2]  # user SVGs could carry script
+    for b, (_, _, mimes) in cfg.items():
+        # a catch-all type would make the allowlist meaningless
+        assert not {"application/octet-stream", "*/*", "application/*"} & set(mimes), b
+    assert {"application/zip", "application/x-zip-compressed", "application/vnd.anki"} <= set(cfg["user-uploads"][2])
 
 
 @pytest.mark.parametrize("bucket", USER_BUCKETS)

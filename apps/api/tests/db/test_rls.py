@@ -15,7 +15,14 @@ from .rls import DB_MARKS, as_anon, as_service_role, as_user, create_auth_user
 
 pytestmark = DB_MARKS
 
-ADMIN_TABLES = ("app_config", "app_config_history", "chapter_section_revisions", "search_cache", "llm_usage")
+ADMIN_TABLES = (
+    "app_config",
+    "app_config_history",
+    "chapter_section_revisions",
+    "search_cache",
+    "llm_usage",
+    "embeddings",
+)
 SHARED_TABLES = (
     "chapters",
     "chapter_sections",
@@ -124,23 +131,107 @@ def test_anon_has_no_access_to_user_tables(
             insert_row(conn, table.name, table.row(user_a, shared))
 
 
-def test_restricted_columns_are_backend_only(pg: psycopg.Connection, user_a: uuid.UUID) -> None:
-    with as_user(pg, user_a) as conn:
-        insert_row(conn, "generated_media", {"user_id": user_a, "kind": "image", "prompt": "p", "model": "m"})
-        insert_row(conn, "report_issues", {"user_id": user_a, "ref_type": "other", "body": "b"})
-        for stmt in (
+# (table, row the student may insert, statements that must be refused) for every backend-only column.
+BACKEND_ONLY: list[tuple[str, dict[str, object], list[str], list[dict[str, object]]]] = [
+    (
+        "generated_media",
+        {"kind": "image", "prompt": "p", "model": "m"},
+        [
             "update public.generated_media set approved_for_publish = true",
             "update public.generated_media set ai_generated = false",
-            "update public.report_issues set status = 'resolved'",
-        ):
+        ],
+        [{"approved_for_publish": True}],
+    ),
+    (
+        "report_issues",
+        {"ref_type": "other", "body": "b"},
+        ["update public.report_issues set status = 'resolved'"],
+        [{"status": "resolved"}],
+    ),
+    # grading is the API's job
+    (
+        "attempts",
+        {"question_id": "{question}", "chosen": "A"},
+        ["update public.attempts set correct = true", "update public.attempts set chosen = 'B'"],
+        [{"correct": True}],
+    ),
+    (
+        "blocks",
+        {"config": Jsonb({"count": 1}), "question_ids": ["{question}"]},
+        ["update public.blocks set score = 100", "update public.blocks set finished_at = now()"],
+        [{"score": 100}, {"finished_at": "2026-12-01T00:00:00Z"}],
+    ),
+    # ingest pipeline state
+    (
+        "uploads",
+        {"kind": "pdf", "original_name": "a.pdf"},
+        ["update public.uploads set status = 'ready'", "update public.uploads set processed_chapter_id = '{chapter}'"],
+        [{"status": "ready"}, {"processed_chapter_id": "{chapter}"}],
+    ),
+]
+
+
+def _fill(value: object, shared: Shared) -> object:
+    if isinstance(value, str):
+        return value.replace("{question}", shared.question_id).replace("{chapter}", shared.chapter_id)
+    if isinstance(value, list):
+        return [_fill(v, shared) for v in value]
+    return value
+
+
+@pytest.mark.parametrize(("table", "row", "updates", "inserts"), BACKEND_ONLY, ids=[b[0] for b in BACKEND_ONLY])
+def test_backend_only_columns(
+    pg: psycopg.Connection,
+    user_a: uuid.UUID,
+    shared: Shared,
+    table: str,
+    row: dict[str, object],
+    updates: list[str],
+    inserts: list[dict[str, object]],
+) -> None:
+    base = {"user_id": user_a, **{k: _fill(v, shared) for k, v in row.items()}}
+    with as_user(pg, user_a) as conn:
+        insert_row(conn, table, base)  # the allowed columns work
+        for stmt in updates:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
-                conn.execute(stmt)
+                conn.execute(str(_fill(stmt, shared)))
+        for extra in inserts:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table, {**base, **{k: _fill(v, shared) for k, v in extra.items()}})
+    with as_service_role(pg) as conn:  # the backend can set them
+        for stmt in updates:
+            conn.execute(str(_fill(stmt, shared)))
+
+
+def test_references_must_be_visible_to_the_caller(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    """A foreign key to hidden content (draft question, someone's private card) is refused, not an oracle."""
+    a_card = uuid.uuid4()
+    insert_row(pg, "flashcards", {"id": a_card, "owner_user_id": user_a, "front_html": "f", "back_html": "secret"})
+    other_task = f"{shared.task_id}-x"
+    insert_row(pg, "pathway_tasks", {"id": other_task, "stage_key": shared.stage_key, "title": "T"})
+    refused = [
+        ("attempts", {"user_id": user_b, "question_id": shared.draft_question_id, "chosen": "A"}),
+        ("card_reviews", {"user_id": user_b, "card_id": a_card, "due": "2026-12-01T00:00:00Z"}),
+        (
+            "flashcards",
+            {"owner_user_id": user_b, "front_html": "f", "back_html": "b", "question_id": shared.draft_question_id},
+        ),
+    ]
+    with as_user(pg, user_b) as conn:
+        for table, row in refused:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table, row)
+        # visible parents are fine
+        insert_row(conn, "attempts", {"user_id": user_b, "question_id": shared.question_id, "chosen": "A"})
+        insert_row(conn, "card_reviews", {"user_id": user_b, "card_id": shared.flashcard_id, "due": "2026-12-01"})
+        insert_row(conn, "user_pathway_tasks", {"user_id": user_b, "task_id": other_task})
+        insert_row(conn, "costs", {"user_id": user_b, "task_id": other_task, "amount": 1})
+        insert_row(conn, "profiles", {"user_id": user_b, "pathway_stage": shared.stage_key})
+        # re-pointing an existing row at hidden content is refused too
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
-            insert_row(
-                conn,
-                "generated_media",
-                {"user_id": user_a, "kind": "image", "prompt": "p", "model": "m", "approved_for_publish": True},
-            )
+            conn.execute("update public.card_reviews set card_id = %s where user_id = %s", (a_card, user_b))
 
 
 def test_composite_foreign_keys_keep_parents_per_user(
@@ -243,18 +334,37 @@ def test_user_flashcards_are_private_and_owner_writable(
         card = uuid.uuid4()
         insert_row(conn, "flashcards", {"id": card, "owner_user_id": user_a, "front_html": "f", "back_html": "b"})
         assert conn.execute("update public.flashcards set back_html = 'b2' where id = %s", (card,)).rowcount == 1
+        # a student cannot relabel their card as assistant / Anki / seed content
+        for origin in ("assistant", "anki_import", "seed"):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("update public.flashcards set origin = %s where id = %s", (origin, card))
         assert conn.execute("delete from public.flashcards where id = %s", (card,)).rowcount == 1
-        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
-            insert_row(conn, "flashcards", {"owner_user_id": user_b, "front_html": "f", "back_html": "b"})
-        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
-            insert_row(conn, "flashcards", {"owner_user_id": None, "front_html": "f", "back_html": "b"})
-        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
-            insert_row(
-                conn, "flashcards", {"owner_user_id": user_a, "front_html": "f", "back_html": "b", "origin": "seed"}
-            )
+        for row in (
+            {"owner_user_id": user_b},
+            {"owner_user_id": None},
+            {"owner_user_id": user_a, "origin": "seed"},
+            {"owner_user_id": user_a, "origin": "assistant"},
+            {"owner_user_id": user_a, "origin": "anki_import"},
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, "flashcards", {"front_html": "f", "back_html": "b", **row})
 
-    a_card = uuid.uuid4()
+    # Backend-written cards in A's deck (assistant / Anki import) are readable but not editable by A.
+    a_card, assistant_card = uuid.uuid4(), uuid.uuid4()
     insert_row(pg, "flashcards", {"id": a_card, "owner_user_id": user_a, "front_html": "f", "back_html": "b"})
+    insert_row(
+        pg,
+        "flashcards",
+        {"id": assistant_card, "owner_user_id": user_a, "front_html": "f", "back_html": "b", "origin": "assistant"},
+    )
+    with as_user(pg, user_a) as conn:
+        assert conn.execute("select count(*) from public.flashcards where id = %s", (assistant_card,)).fetchone() == (
+            1,
+        )
+        assert (
+            conn.execute("update public.flashcards set back_html = 'x' where id = %s", (assistant_card,)).rowcount == 0
+        )
+        assert conn.execute("delete from public.flashcards where id = %s", (assistant_card,)).rowcount == 0
     with as_user(pg, user_b) as conn:
         assert conn.execute("select count(*) from public.flashcards where id = %s", (a_card,)).fetchone() == (0,)
         assert conn.execute(
@@ -291,36 +401,28 @@ def test_question_answers_readable_by_service_role(pg: psycopg.Connection, share
         assert row.fetchone() == ("B", "<p>because</p>")
 
 
-def test_embeddings_visibility(pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared) -> None:
+def test_embeddings_are_server_side_only(pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared) -> None:
+    """Chunks of questions and drafts carry answers, so no client role reads embeddings at all."""
+    insert_row(pg, "embeddings", {"ref_type": "question", "ref_id": shared.question_id, "content": "Answer: B"})
     insert_row(pg, "embeddings", {"owner_user_id": user_a, "ref_type": "note", "ref_id": "n1", "content": "A's note"})
-    with as_user(pg, user_a) as conn:
-        got = {
-            r[0]
-            for r in conn.execute(
-                "select content from public.embeddings where ref_id in (%s, 'n1')", (shared.section_id,)
-            )
-        }
-        assert got == {"shared chunk", "A's note"}
-        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
-            insert_row(
-                conn, "embeddings", {"owner_user_id": user_a, "ref_type": "note", "ref_id": "n2", "content": "x"}
-            )
-    with as_user(pg, user_b) as conn:
-        got = {
-            r[0]
-            for r in conn.execute(
-                "select content from public.embeddings where ref_id in (%s, 'n1')", (shared.section_id,)
-            )
-        }
-        assert got == {"shared chunk"}
-    with as_anon(pg) as conn:
-        got = {
-            r[0]
-            for r in conn.execute(
-                "select content from public.embeddings where ref_id in (%s, 'n1')", (shared.section_id,)
-            )
-        }
-        assert got == {"shared chunk"}
+    for ctx in (as_anon(pg), as_user(pg, user_a)):
+        with ctx as conn:
+            for stmt in (
+                "select content from public.embeddings",
+                "select count(*) from public.embeddings",
+                "select id from public.embeddings where tsv @@ to_tsquery('english', 'answer')",
+            ):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    conn.execute(stmt)
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(
+                    conn, "embeddings", {"owner_user_id": user_a, "ref_type": "note", "ref_id": "n2", "content": "x"}
+                )
+    with as_service_role(pg) as conn:
+        got = conn.execute(
+            "select count(*) from public.embeddings where ref_id = any(%s)", ([shared.question_id, "n1"],)
+        ).fetchone()
+        assert got == (2,)
 
 
 @pytest.mark.parametrize("table", ADMIN_TABLES)

@@ -5,20 +5,28 @@ Revises:
 Create Date: 2026-11-16
 
 Access model (see db/schema.sql for the documented contract):
+- Default privileges: tables, sequences and functions that `postgres` creates in `public` from now on
+  (this migration's, Aegra's, any later one's) grant nothing to `anon` / `authenticated`; every grant to a
+  client role below is explicit.
 - User-owned tables: RLS enabled and forced; `select/insert/update/delete` policies `to authenticated` with
-  `(select auth.uid()) = user_id`; `anon` has no privileges at all.
+  `(select auth.uid()) = user_id`; `anon` has no privileges at all. Insert/update checks also require every
+  referenced shared row (question, flashcard, pathway task/stage) to be visible to the caller, so a foreign
+  key cannot be used as an oracle for hidden content. Grading, moderation and pipeline columns
+  (`attempts.correct`, `blocks.score/finished_at`, `uploads.status/processed_chapter_id`,
+  `generated_media.approved_for_publish/ai_generated`, `report_issues.status`) are backend-only.
 - Shared content: RLS on; `select` to `anon, authenticated` only for published / approved rows, or the
   caller's own private rows (`owner_user_id`). Writes by the service role only (the backend), except that a
-  student may write their own private flashcards.
+  student may write their own private flashcards with `origin = 'user'`.
 - `questions`: clients get column-level `select` only; answers, explanations, educational objective,
   review metadata and answer statistics are not readable by `anon` / `authenticated` at all.
-- `embeddings`: select shared rows (`owner_user_id is null`) or the caller's own; writes service role only.
-- Admin-only tables: RLS on, no client privileges; service role only.
+- `embeddings` and admin-only tables: RLS enabled and forced, no client privileges; service role only
+  (retrieval runs server-side; chunks of questions and drafts would otherwise leak answers).
 """
 
 from __future__ import annotations
 
 from collections.abc import Sequence
+from typing import NamedTuple
 
 from alembic import op
 from sqlalchemy import text
@@ -30,29 +38,57 @@ depends_on: str | Sequence[str] | None = None
 
 UID = "(select auth.uid())"
 
-# Every user-owned table and the columns `authenticated` may insert / update (None = all columns).
-# Restricted columns keep moderation and provenance fields backend-only.
-USER_TABLES: dict[str, tuple[tuple[str, ...] | None, tuple[str, ...] | None]] = {
-    "profiles": (None, None),
-    "attempts": (None, None),
-    "blocks": (None, None),
-    "card_reviews": (None, None),
-    "notes": (None, None),
-    "notebooks": (None, None),
-    "ink_layers": (None, None),
-    "uploads": (None, None),
-    "plan_items": (None, None),
-    "user_pathway_tasks": (None, None),
-    "vault_documents": (None, None),
-    "costs": (None, None),
-    "assistant_threads": (None, None),
-    "kb_sources": (None, None),
-    "ingest_items": (None, None),
-    "generated_media": (
-        ("id", "user_id", "kind", "title", "prompt", "model", "storage_path", "width", "height", "duration_s"),
-        ("title",),
+
+class UserTable(NamedTuple):
+    """Columns `authenticated` may insert / update (None = all) and extra insert/update checks."""
+
+    insert: tuple[str, ...] | None = None
+    update: tuple[str, ...] | None = None
+    # Referenced shared rows must be visible to the caller (the sub-select runs under the caller's RLS).
+    refs: str | None = None
+
+
+USER_TABLES: dict[str, UserTable] = {
+    "profiles": UserTable(
+        refs="pathway_stage is null"
+        " or exists (select 1 from public.pathway_stages p where p.key = profiles.pathway_stage)"
     ),
-    "report_issues": (("id", "user_id", "ref_type", "ref_id", "body"), ("body",)),
+    # The API grades: `correct` is backend-only.
+    "attempts": UserTable(
+        insert=("user_id", "question_id", "block_id", "chosen", "seconds", "flagged", "mode"),
+        update=("flagged",),
+        refs="exists (select 1 from public.questions p where p.id = attempts.question_id)",
+    ),
+    # `score` and `finished_at` are set by the API when it grades the block.
+    "blocks": UserTable(
+        insert=("id", "user_id", "config", "question_ids", "started_at"),
+        update=("started_at",),
+    ),
+    "card_reviews": UserTable(refs="exists (select 1 from public.flashcards p where p.id = card_reviews.card_id)"),
+    "notes": UserTable(),
+    "notebooks": UserTable(),
+    "ink_layers": UserTable(),
+    # `status` and `processed_chapter_id` belong to the ingest pipeline.
+    "uploads": UserTable(
+        insert=("id", "user_id", "kind", "storage_path", "original_name", "bytes"),
+        update=("original_name",),
+    ),
+    "plan_items": UserTable(),
+    "user_pathway_tasks": UserTable(
+        refs="exists (select 1 from public.pathway_tasks p where p.id = user_pathway_tasks.task_id)"
+    ),
+    "vault_documents": UserTable(),
+    "costs": UserTable(
+        refs="task_id is null or exists (select 1 from public.pathway_tasks p where p.id = costs.task_id)"
+    ),
+    "assistant_threads": UserTable(),
+    "kb_sources": UserTable(),
+    "ingest_items": UserTable(),
+    "generated_media": UserTable(
+        insert=("id", "user_id", "kind", "title", "prompt", "model", "storage_path", "width", "height", "duration_s"),
+        update=("title",),
+    ),
+    "report_issues": UserTable(insert=("id", "user_id", "ref_type", "ref_id", "body"), update=("body",)),
 }
 
 # Shared content and the row filter for client reads.
@@ -74,10 +110,19 @@ SHARED_TABLES: dict[str, str] = {
         " or exists (select 1 from public.chapters c where c.id = questions.chapter_id))"
     ),
     "flashcards": f"owner_user_id is null or owner_user_id = {UID}",
-    "embeddings": f"owner_user_id is null or owner_user_id = {UID}",
 }
 
-ADMIN_TABLES = ("app_config", "app_config_history", "chapter_section_revisions", "search_cache", "llm_usage")
+ADMIN_TABLES = (
+    "app_config",
+    "app_config_history",
+    "chapter_section_revisions",
+    "search_cache",
+    "llm_usage",
+    "embeddings",
+)
+
+CLIENT_ROLES = "anon, authenticated"
+DEFAULT_PRIVILEGE_OBJECTS = ("tables", "sequences", "functions")
 
 # Columns of `questions` that clients may select. Everything else is served by the API after an attempt.
 QUESTION_CLIENT_COLUMNS = (
@@ -662,9 +707,11 @@ def _cols(cols: tuple[str, ...] | None) -> str:
     return "" if cols is None else " (" + ", ".join(cols) + ")"
 
 
-def _user_table_rls(table: str, insert_cols: tuple[str, ...] | None, update_cols: tuple[str, ...] | None) -> str:
+def _user_table_rls(table: str, spec: UserTable) -> str:
     t = f"public.{table}"
     own = f"{UID} = user_id"
+    check = own if spec.refs is None else f"{own} and ({spec.refs})"
+    insert_cols, update_cols = spec.insert, spec.update
     return f"""
 alter table {t} enable row level security;
 alter table {t} force row level security;
@@ -674,8 +721,8 @@ grant insert{_cols(insert_cols)} on table {t} to authenticated;
 grant update{_cols(update_cols)} on table {t} to authenticated;
 grant all on table {t} to service_role;
 create policy {table}_select_own on {t} for select to authenticated using ({own});
-create policy {table}_insert_own on {t} for insert to authenticated with check ({own});
-create policy {table}_update_own on {t} for update to authenticated using ({own}) with check ({own});
+create policy {table}_insert_own on {t} for insert to authenticated with check ({check});
+create policy {table}_update_own on {t} for update to authenticated using ({own}) with check ({check});
 create policy {table}_delete_own on {t} for delete to authenticated using ({own});
 """
 
@@ -697,13 +744,22 @@ create policy {table}_read on {t} for select to anon, authenticated using ({usin
 
 def _flashcard_owner_writes() -> str:
     own = f"owner_user_id = {UID}"
+    # Students write only their own `origin = 'user'` cards; seed, assistant and Anki-import rows are backend
+    # writes. A linked question / section must be visible to the caller.
+    check = (
+        f"{own} and origin = 'user'"  # noqa: S608 - module constants only
+        " and (question_id is null or exists (select 1 from public.questions p where p.id = flashcards.question_id))"
+        " and (section_id is null"
+        " or exists (select 1 from public.chapter_sections p where p.id = flashcards.section_id))"
+    )
     return f"""
 grant insert, update, delete on table public.flashcards to authenticated;
 create policy flashcards_insert_own on public.flashcards for insert to authenticated
-  with check ({own} and origin <> 'seed');
+  with check ({check});
 create policy flashcards_update_own on public.flashcards for update to authenticated
-  using ({own}) with check ({own} and origin <> 'seed');
-create policy flashcards_delete_own on public.flashcards for delete to authenticated using ({own});
+  using ({own} and origin = 'user') with check ({check});
+create policy flashcards_delete_own on public.flashcards for delete to authenticated
+  using ({own} and origin = 'user');
 """
 
 
@@ -755,12 +811,23 @@ def _extensions() -> str:
     return bind.dialect.identifier_preparer.quote_identifier(schema)
 
 
+def _default_privileges(action: str) -> str:
+    # `for role postgres`: the role that runs migrations (Naadi's and Aegra's). Supabase's schema-level
+    # defaults grant everything to anon/authenticated; Naadi closes them and grants explicitly instead.
+    verb = "revoke all on {obj} from" if action == "revoke" else "grant all on {obj} to"
+    return "\n".join(
+        f"alter default privileges for role postgres in schema public {verb.format(obj=o)} {CLIENT_ROLES};"
+        for o in DEFAULT_PRIVILEGE_OBJECTS
+    )
+
+
 def upgrade() -> None:
+    op.execute(_default_privileges("revoke"))
     vector_schema = _extensions()
     op.execute(_schema_sql(vector_schema))
     op.execute(_updated_at_triggers())
-    for table, (insert_cols, update_cols) in USER_TABLES.items():
-        op.execute(_user_table_rls(table, insert_cols, update_cols))
+    for table, spec in USER_TABLES.items():
+        op.execute(_user_table_rls(table, spec))
     for table, using in SHARED_TABLES.items():
         op.execute(_shared_table_rls(table, using))
     op.execute(_flashcard_owner_writes())
@@ -777,3 +844,4 @@ def downgrade() -> None:
         op.execute(f"drop table if exists public.{table} cascade")
     op.execute("drop function if exists public.naadi_app_config_history()")
     op.execute("drop function if exists public.naadi_touch_updated_at()")
+    op.execute(_default_privileges("grant"))  # back to the Supabase defaults

@@ -50,7 +50,7 @@ USER_TABLES: tuple[UserTable, ...] = (
     ),
     UserTable(
         "attempts",
-        lambda u, s: {"user_id": u, "question_id": s.question_id, "chosen": "A", "correct": True, "mode": "tutor"},
+        lambda u, s: {"user_id": u, "question_id": s.question_id, "chosen": "A", "mode": "tutor"},
         ("user_id", "question_id"),
         ("flagged", True),
     ),
@@ -58,7 +58,7 @@ USER_TABLES: tuple[UserTable, ...] = (
         "blocks",
         lambda u, s: {"id": _id(), "user_id": u, "config": Jsonb({"count": 1}), "question_ids": [s.question_id]},
         ("user_id",),
-        ("score", 50),
+        ("started_at", "2026-12-01T08:00:00Z"),
     ),
     UserTable(
         "card_reviews",
@@ -85,7 +85,7 @@ USER_TABLES: tuple[UserTable, ...] = (
         "uploads",
         lambda u, s: {"id": _id(), "user_id": u, "kind": "pdf", "original_name": "a.pdf", "bytes": 10},
         ("user_id",),
-        ("status", "processing"),
+        ("original_name", "renamed.pdf"),
     ),
     UserTable(
         "plan_items",

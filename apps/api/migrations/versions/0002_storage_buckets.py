@@ -49,7 +49,12 @@ DOCUMENTS = [
 ]
 AUDIO = ["audio/mpeg", "audio/mp4", "audio/aac", "audio/wav", "audio/x-wav", "audio/webm", "audio/ogg"]
 VIDEO = ["video/mp4", "video/webm", "video/quicktime"]
-ARCHIVES = ["application/zip", "application/x-zip-compressed", "application/octet-stream"]  # .zip, Anki .apkg
+# No `application/octet-stream`: it would let any file through. Measured File.type (Playwright, real paths):
+# .zip → application/zip in Chromium, WebKit and Firefox (Windows Chrome/Edge send application/x-zip-compressed);
+# Anki .apkg → application/vnd.anki in Firefox and EMPTY in Chromium and WebKit (iPad Safari), .colpkg → empty
+# everywhere. The upload client (S15) therefore sends an explicit contentType: for an empty-type .apkg/.colpkg
+# it checks the ZIP magic bytes and uses application/vnd.anki; the server re-sniffs every upload anyway.
+ARCHIVES = ["application/zip", "application/x-zip-compressed", "application/vnd.anki"]
 
 BUCKETS: dict[str, dict[str, object]] = {
     "content-public": {
