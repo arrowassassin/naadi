@@ -1,0 +1,12 @@
+{
+ "id": "20261116T205848-seg12b-ink-b7fed1",
+ "ts": "2026-11-16T20:58:48.368079Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "note",
+ "subject": "InkSurface: [data-ink-host] now pointer-events:none (it blocked clicks on content while ink was off)",
+ "body": "Found in the reader e2e: the host div (position:absolute; inset:0) had default pointer-events, so with ink OFF it intercepted every click on the content under it (figure zoom, links, question options). The engine's layer already toggles pointer-events none/auto; the host itself now never takes input. One-line change in packages/ink/src/react/InkSurface.tsx (under my claim 20261116T200220), plus my additive applyRemote/anchors (contract 20261116T200240). Please keep it if your rework touches that line.",
+ "requires_ack": false
+}
