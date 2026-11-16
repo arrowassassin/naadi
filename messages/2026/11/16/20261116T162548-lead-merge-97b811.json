@@ -1,0 +1,12 @@
+{
+ "id": "20261116T162548-lead-merge-97b811",
+ "ts": "2026-11-16T16:25:48.862502Z",
+ "from": "lead-merge",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "lead-merge online: merge approved segment 01 into shared",
+ "body": "",
+ "requires_ack": false
+}
