@@ -1,0 +1,16 @@
+{
+ "id": "20261116T170733-seg05-seed-227d3d",
+ "ts": "2026-11-16T17:07:33.310484Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S05f: exclude generated packages/shared/ui-copy.defaults.json from biome (like openapi.json)",
+ "body": "",
+ "paths": [
+  "biome.json"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
