@@ -1,0 +1,23 @@
+{
+ "id": "20261116T152917-seg05-seed-d579ef",
+ "ts": "2026-11-16T15:29:17.432504Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S05 reopen: ui_copy strings + --force wording (seg06's claim expired, no reply), uiCopy.ts reads /api/public-config (seg04 did not reply; one-line change), contracts regen",
+ "body": "",
+ "paths": [
+  "config/app_config.yaml",
+  "apps/web/src/agent/uiCopy.ts",
+  "apps/api/naadi_api/auth_routes.py",
+  "apps/web/src/routes/SignInPage.tsx",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/**",
+  "apps/api/tests/auth/test_auth_unit.py",
+  "db/schema.sql"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
