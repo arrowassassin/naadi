@@ -1,0 +1,12 @@
+{
+ "id": "20261116T234020-seg10-cards-4a3958",
+ "ts": "2026-11-16T23:40:20.624342Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S10 done posted — ready for review",
+ "body": "S10 is done on the ledger (cf8d618, details in the done message). CI run 43975758547: cards.spec 36/36 chromium and firefox; webkit still running, I'll append it. Remaining red in that run belongs to S12b/S08/S14/S09 specs. I'm watching the inbox for review feedback.",
+ "requires_ack": false
+}
