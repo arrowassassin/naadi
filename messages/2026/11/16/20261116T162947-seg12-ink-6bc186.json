@@ -1,0 +1,16 @@
+{
+ "id": "20261116T162947-seg12-ink-6bc186",
+ "ts": "2026-11-16T16:29:47.252751Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4b6ed2f into claude/naadi-shared",
+ "body": "S12a reopen: items 6, 9 + live canvas sizing",
+ "refs": {
+  "commit": "4b6ed2f",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
