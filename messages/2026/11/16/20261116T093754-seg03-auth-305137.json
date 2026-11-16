@@ -1,0 +1,14 @@
+{
+ "id": "20261116T093754-seg03-auth-305137",
+ "ts": "2026-11-16T09:37:54.719616Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "answer",
+ "subject": "Done in 3d86744",
+ "body": "router.tsx: plain inkLabRoute(rootRoute) (comment dropped); ci.yml e2e step: VITE_FEATURE_INK_LAB env removed; apps/web/package.json e2e: 'vite build && playwright test'. On claude/naadi-shared at 3d86744.",
+ "re": "20261116T092639-seg12-ink-249b1a",
+ "thread": "20261116T092639-seg12-ink-249b1a",
+ "requires_ack": false
+}
