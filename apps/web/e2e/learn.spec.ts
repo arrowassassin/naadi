@@ -379,17 +379,22 @@ test.describe("reading position and reports", () => {
       await expect.poll(() => anchor(page)).toBe(before);
 
       // A second device (new browser context, same user) opening the chapter lands on the same spot.
+      // A second device (new browser context, same user) opens the app: the course map offers to continue
+      // there, and following it lands on the same spot. (In-app navigation, as a student would.)
       const other = await reader.open();
       const otherWatch = watchConsole(other);
-      await other.goto("/learn/ch01");
+      const resume = other.getByRole("link", { name: /^Continue: Step 1 · Biochemistry/ });
+      await expect(resume).toBeVisible();
+      await resume.click();
       await expect(other).toHaveURL(/\/learn\/ch01\/ch01-s02$/);
       await expect.poll(() => anchor(other)).toBe(before);
       await snap(other, info, otherWatch.guard, "reader-second-device");
-      // ... and the course map shows the progress and the continue action.
-      await settle(other);
-      await other.getByRole("link", { name: "Back to courses" }).click();
-      await expect(other).toHaveURL(/\/learn$/);
-      await expect(other.getByRole("link", { name: /^Continue: Step 1 · Biochemistry/ })).toBeVisible();
+
+      // The chapter link (/learn/ch01) also resumes at the saved section.
+      await settle(page);
+      await page.goto("/learn/ch01");
+      await expect(page).toHaveURL(/\/learn\/ch01\/ch01-s02$/);
+      await expect.poll(() => anchor(page)).toBe(before);
 
       // Report an issue on this section.
       await page.getByRole("button", { name: "Report an issue" }).click();
