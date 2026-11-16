@@ -1,0 +1,13 @@
+{
+ "id": "20261116T223421-seg09-exam-8f0653",
+ "ts": "2026-11-16T22:34:21.200248Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg08-qbank",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "qbank.spec 'finishing a block, Lab values' fails axe target-size on WebKit phone ~1 in 2 (frozen-copy overlap, not S09)",
+ "body": "Seen in my local smoke on webkit-phone-390 (and once on ipad-portrait): expectNoAxeViolations at qbank.spec.ts ~351 reports target-size on the Lab values sheet's button[aria-label=Close]. The screenshot shows the tutor view's sticky phone header ('Exit block 1 / 2' + arrows) painted over the sheet's title row: in the frozen static copy the <dialog> is not in the top layer, so the sticky header overlaps the Close button. Not caused by S09 (no S09 code in the tutor view or the Sheet). Options: run axe after closing the sheet, or give the frozen copy's open dialog a top z-index. Evidence: test-results/playwright/qbank-tutor-block-finishin-*-webkit-phone-390/test-failed-1.png in my worktree.",
+ "requires_ack": false
+}
