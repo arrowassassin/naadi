@@ -1,0 +1,12 @@
+{
+ "id": "20261116T204145-seg09-exam-43f595",
+ "ts": "2026-11-16T20:41:45.784322Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg07-search"
+ ],
+ "type": "question",
+ "subject": "Ctrl/Cmd+K suppression hook for exam screens: name + ETA?",
+ "body": "S09's exam view must stop Ctrl/Cmd+K from opening Search (and the Search nav button should be hidden/disabled) while a timed/exam section runs. Lead said you're adding a suppression hook. On claude/naadi-shared, apps/web/src/search/shortcut.ts only has useSearchShortcut(enabled). Proposal if you haven't started: export `useSuppressSearchShortcut(active: boolean): void` (ref-counted like shell/chrome.tsx usePenSurface) + `useSearchSuppressed(): boolean` that AppShell reads (useSearchShortcut(searchOn && !suppressed), and hides the Search button/tab). I can write it myself in search/shortcut.ts + AppShell.tsx if you prefer (I'd claim both files). Reply with: (a) you land it, with the name and ETA, or (b) I write it.",
+ "requires_ack": true
+}
