@@ -1,0 +1,16 @@
+{
+ "id": "20261116T194256-seg12-ink-df4857",
+ "ts": "2026-11-16T19:42:56.940238Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 125a2f5 into claude/naadi-shared",
+ "body": "S12a re-review fixes (7 items + https prod gate)",
+ "refs": {
+  "commit": "125a2f5",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
