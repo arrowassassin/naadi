@@ -664,90 +664,82 @@ test.describe("ink lab", () => {
     // in, and the first frame after each switch is left out (it repaints for the switch, not for the scroll).
     // Both states are measured within a fraction of a second of each other, so a neighbour's load on a shared
     // runner, which swings over seconds, hits them alike; separate 3 s runs per state could not tell that
-    // load from the ink. A slice is 250 ms, or eight frames where this runner draws fewer than 32 fps, so every
-    // slice keeps frames after the one it leaves out. A round's ratio is ink-shown fps over ink-hidden fps;
+    // load from the ink. A slice is 250 ms, or eight frames at the rate the previous round drew where that
+    // is below 32 fps, so every slice keeps frames after the one it leaves out. A round's ratio is ink-shown fps over ink-hidden fps;
     // the rounds are judged by their median, and a round with fewer than 12 counted frames in either state
     // is repeated (at most five extra rounds).
-    const frameMs = await page.evaluate(
-      () =>
-        new Promise<number>((resolve) => {
-          const deltas: number[] = [];
-          let prev = -1;
-          const step = (ts: number) => {
-            if (prev >= 0) deltas.push(ts - prev);
-            prev = ts;
-            window.scrollBy(0, 4);
-            if (deltas.length < 30) requestAnimationFrame(step);
-            else resolve([...deltas].sort((a, b) => a - b)[15] as number);
-          };
-          requestAnimationFrame(step);
-        }),
-    );
-    const sliceMs = Math.min(2000, Math.max(250, frameMs * 8));
-    const durationMs = Math.max(6000, sliceMs * 16);
-    const round = () =>
+    const round = (sliceMs: number) =>
       page.evaluate(
         ({ sliceMs, durationMs }) =>
-          new Promise<{ ink: number; base: number; frames: { ink: number; base: number } }>((resolve) => {
-            const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
-            const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
-            if (!surface) throw new Error("stress surface missing");
-            const top = surface.getBoundingClientRect().top + window.scrollY;
-            const from = Math.max(0, top - 80);
-            const to = top + surface.offsetHeight - window.innerHeight * 0.5;
-            const time = { ink: 0, base: 0 };
-            const frames = { ink: 0, base: 0 };
-            let shown = true;
-            let start = -1;
-            let prev = -1;
-            let skip = true;
-            const show = (v: boolean) => {
-              shown = v;
-              for (const el of layers) el.style.visibility = v ? "" : "hidden";
-            };
-            window.scrollTo(0, from);
-            show(true);
-            const step = (ts: number) => {
-              if (start < 0) {
-                start = ts;
-                prev = ts;
-                requestAnimationFrame(step);
-                return;
-              }
-              const k = shown ? "ink" : "base";
-              if (!skip) {
-                time[k] += ts - prev;
-                frames[k] += 1;
-              }
-              skip = false;
-              prev = ts;
-              const t = Math.min(1, (ts - start) / durationMs);
-              // Down over the first half, back up over the second.
-              const pos = t < 0.5 ? t * 2 : 2 - t * 2;
-              window.scrollTo(0, from + (to - from) * pos);
-              const want = Math.floor((ts - start) / sliceMs) % 2 === 0;
-              if (want !== shown) {
-                show(want);
-                skip = true;
-              }
-              if (t < 1) {
-                requestAnimationFrame(step);
-                return;
-              }
+          new Promise<{ ink: number; base: number; frames: { ink: number; base: number }; frameMs: number }>(
+            (resolve) => {
+              const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
+              const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
+              if (!surface) throw new Error("stress surface missing");
+              const top = surface.getBoundingClientRect().top + window.scrollY;
+              const from = Math.max(0, top - 80);
+              const to = top + surface.offsetHeight - window.innerHeight * 0.5;
+              const time = { ink: 0, base: 0 };
+              const frames = { ink: 0, base: 0 };
+              let shown = true;
+              let start = -1;
+              let prev = -1;
+              let skip = true;
+              let n = 0;
+              const show = (v: boolean) => {
+                shown = v;
+                for (const el of layers) el.style.visibility = v ? "" : "hidden";
+              };
+              window.scrollTo(0, from);
               show(true);
-              const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
-              resolve({ ink: fps("ink"), base: fps("base"), frames });
-            };
-            requestAnimationFrame(step);
-          }),
-        { sliceMs, durationMs },
+              const step = (ts: number) => {
+                if (start < 0) {
+                  start = ts;
+                  prev = ts;
+                  requestAnimationFrame(step);
+                  return;
+                }
+                n++;
+                const k = shown ? "ink" : "base";
+                if (!skip) {
+                  time[k] += ts - prev;
+                  frames[k] += 1;
+                }
+                skip = false;
+                prev = ts;
+                const t = Math.min(1, (ts - start) / durationMs);
+                // Down over the first half, back up over the second.
+                const pos = t < 0.5 ? t * 2 : 2 - t * 2;
+                window.scrollTo(0, from + (to - from) * pos);
+                const want = Math.floor((ts - start) / sliceMs) % 2 === 0;
+                if (want !== shown) {
+                  show(want);
+                  skip = true;
+                }
+                if (t < 1) {
+                  requestAnimationFrame(step);
+                  return;
+                }
+                show(true);
+                const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
+                resolve({ ink: fps("ink"), base: fps("base"), frames, frameMs: (ts - start) / Math.max(1, n) });
+              };
+              requestAnimationFrame(step);
+            },
+          ),
+        { sliceMs, durationMs: Math.max(6000, sliceMs * 16) },
       );
     const ink: number[] = [];
     const base: number[] = [];
     let rounds = 0;
+    let sliceMs = 250;
+    let frameMs = 0;
     while (ink.length < 5 && rounds < 10) {
       rounds++;
-      const r = await round();
+      const r = await round(sliceMs);
+      frameMs = r.frameMs;
+      // Eight frames per slice at the rate this round drew (250 ms down to 32 fps, 2 s at most).
+      sliceMs = Math.min(2000, Math.max(sliceMs, Math.ceil(r.frameMs * 8)));
       if (r.frames.ink < 12 || r.frames.base < 12) continue;
       ink.push(r.ink);
       base.push(r.base);
