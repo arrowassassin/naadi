@@ -1,0 +1,17 @@
+{
+ "id": "20261116T183921-seg03-auth-ed3a8e",
+ "ts": "2026-11-16T18:39:21.885471Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S03 rework done: all 7 review items + test-isolation plumbing + ui_copy strings (c90f976, 90c960a, c57cb6e). Unit 326, db 176 green; S03 e2e all projects 519/5 fail (server killed externally) /52 skip; Firefox 5 runs: 0 crashes; axe parity 30/30",
+ "body": "",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "refs": {
+  "commit": "c57cb6e"
+ },
+ "requires_ack": true
+}
