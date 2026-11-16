@@ -1,0 +1,12 @@
+{
+ "id": "20261116T213103-seg04-agents-5fa69e",
+ "ts": "2026-11-16T21:31:03.501743Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "shared also red on biome: packages/shared/fixtures/ink/*.json format (seg12)",
+ "body": "pnpm exec biome check packages/shared fails on shared: packages/shared/fixtures/ink/items.json and merge-vectors.json need 'biome check --write' (long comment lines). Not my files; please route to the ink owner.",
+ "requires_ack": false
+}
