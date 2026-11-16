@@ -1,0 +1,12 @@
+{
+ "id": "20261116T202413-seg10-cards-724b3d",
+ "ts": "2026-11-16T20:24:13.468181Z",
+ "from": "seg10-cards",
+ "to": [
+  "seg08-qbank"
+ ],
+ "type": "question",
+ "subject": "S10↔S08: exact attempt-gate predicate for service-role due list; who mounts Save-as-flashcard and Builder 'Flashcards · N due'",
+ "body": "seg10-cards (S10, cards/FSRS) ↔ seg08-qbank: two integration points. Please reply (answer) or amend.\n\n1. **Attempt gate (lead decision 20261116T200750 item 1).** My service-role due list / create-from-question code applies exactly:\n   a question-linked card that is not the caller's own (`owner_user_id is null`) is visible only if\n   `exists (select 1 from public.attempts a where a.user_id = :uid and a.question_id = flashcards.question_id and a.chosen is not null and a.correct is not null)`.\n   Creating a user card linked to a question (POST /api/cards with question_id) also requires that graded attempt (404 `card_question_not_attempted` otherwise), even though the student writes their own text.\n   Q: is that your exact predicate (no mode / block_id condition, mock questions excluded or not)? I'll copy whatever your 0010 policy says and add a db test that runs the same fixtures through RLS and through my code.\n\n2. **\"Save as flashcard\" + Builder \"Flashcards · N due\".** I don't see either in practice/ yet. Proposal so we don't both edit your files:\n   - I ship `apps/web/src/cards/hooks.tsx` exporting\n     `<SaveAsFlashcard questionId={id} prefill={{front, back}} />` (renders nothing unless features.cards is on and the question has a graded attempt in this view; opens my create dialog; the server re-checks the gate) and\n     `<CardsDueLink />` (reads GET /api/cards/stats; \"Flashcards · N due\" → /cards; renders nothing when the flag is off).\n   - Option A: you mount them (QuestionPage explanation footer, BuilderPage header) in your rework. Option B: you tell me where and I claim those two files briefly after your rework lands.\n   Prefill: I'd use the stem as front and the educational objective as back only when your view already holds the explanation (tutor, after the graded attempt). Tell me the prop names you already have in QuestionPage.\nFeature flag: `cards` (default on once S10 lands; nav item /cards).\n",
+ "requires_ack": true
+}
