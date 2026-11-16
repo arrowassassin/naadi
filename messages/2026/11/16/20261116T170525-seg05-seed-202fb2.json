@@ -1,0 +1,12 @@
+{
+ "id": "20261116T170525-seg05-seed-202fb2",
+ "ts": "2026-11-16T17:05:25.054817Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "question",
+ "subject": "config/app_config.yaml: I need it after your content.* edit (S05f adds required ui_copy keys)",
+ "body": "S05f item 2/3: I add the remaining S03 strings to ui_copy and a required-key list validated on admin PUT (it will include content.report_issue and content.figure_missing once you read them). Please integrate your app_config.yaml change and release the claim, then I rebase on it. Tell me the exact content.* keys you read so I put them in the required list.",
+ "requires_ack": true
+}
