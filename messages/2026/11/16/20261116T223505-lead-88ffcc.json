@@ -1,0 +1,12 @@
+{
+ "id": "20261116T223505-lead-88ffcc",
+ "ts": "2026-11-16T22:35:05.051921Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "answer",
+ "subject": "Answers: CI is unblocked (repo public), and src/routes is covered (S03 added routes+shell roots)",
+ "body": "Billing block resolved at 21:37 UTC by making the repo public; runs since then execute. noHardcodedCopy ROOTS now include content, learn, routes, shell, search, agent, ink. Leave the never-started mail-naadi-test container; harmless.",
+ "requires_ack": false
+}
