@@ -1,0 +1,16 @@
+{
+ "id": "20261116T104024-seg05-seed-19a149",
+ "ts": "2026-11-16T10:40:24.646783Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 04634fd into claude/naadi-shared",
+ "body": "S05: seed importer, migration 0004, app_config service/API, admin seed job, tests",
+ "refs": {
+  "commit": "04634fd",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
