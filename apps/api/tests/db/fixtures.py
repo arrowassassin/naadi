@@ -25,7 +25,8 @@ class Shared:
     section_id: str
     question_id: str
     draft_question_id: str
-    flashcard_id: uuid.UUID
+    flashcard_id: uuid.UUID  # shared, not linked to a question
+    linked_flashcard_id: uuid.UUID  # shared, linked to question_id
     stage_key: str
     task_id: str
     media_id: str
@@ -166,6 +167,7 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
         question_id=f"test-ch-{tag}-q01",
         draft_question_id=f"test-ch-{tag}-q02",
         flashcard_id=uuid.uuid4(),
+        linked_flashcard_id=uuid.uuid4(),
         stage_key=f"test-stage-{tag}",
         task_id=f"test-task-{tag}",
         media_id=f"test-fig-{tag}",
@@ -204,7 +206,18 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
     insert_row(
         conn,
         "flashcards",
-        {"id": s.flashcard_id, "front_html": "f", "back_html": "b", "origin": "seed", "question_id": s.question_id},
+        {"id": s.flashcard_id, "front_html": "f", "back_html": "b", "origin": "seed"},
+    )
+    insert_row(
+        conn,
+        "flashcards",
+        {
+            "id": s.linked_flashcard_id,
+            "front_html": "Q?",
+            "back_html": "The answer is B",
+            "origin": "seed",
+            "question_id": s.question_id,
+        },
     )
     insert_row(conn, "pathway_stages", {"key": s.stage_key, "sort": 1, "title": "Stage"})
     insert_row(conn, "pathway_tasks", {"id": s.task_id, "stage_key": s.stage_key, "sort": 1, "title": "Task"})

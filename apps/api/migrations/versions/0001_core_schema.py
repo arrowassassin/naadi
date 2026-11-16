@@ -91,8 +91,9 @@ USER_TABLES: dict[str, UserTable] = {
     "report_issues": UserTable(insert=("id", "user_id", "ref_type", "ref_id", "body"), update=("body",)),
 }
 
-# Shared content and the row filter for client reads.
-SHARED_TABLES: dict[str, str] = {
+# Shared content and the row filter for client reads: one expression for `anon, authenticated`, or a
+# per-role mapping when anon must see less (and cannot reference user tables it has no privileges on).
+SHARED_TABLES: dict[str, str | dict[str, str]] = {
     "sources": "true",
     "taxonomy_nodes": "true",
     "pathway_stages": "true",
@@ -109,7 +110,15 @@ SHARED_TABLES: dict[str, str] = {
         "status = 'published' and (chapter_id is null"
         " or exists (select 1 from public.chapters c where c.id = questions.chapter_id))"
     ),
-    "flashcards": f"owner_user_id is null or owner_user_id = {UID}",
+    # A shared card linked to a question restates its answer, so it becomes visible only after the caller has
+    # attempted that question (the attempts sub-select runs under attempts' own-rows RLS); never to anon.
+    "flashcards": {
+        "anon": "owner_user_id is null and question_id is null",
+        "authenticated": (
+            f"owner_user_id = {UID} or (owner_user_id is null and (question_id is null or exists"  # noqa: S608 - module constants only
+            f" (select 1 from public.attempts a where a.user_id = {UID} and a.question_id = flashcards.question_id)))"
+        ),
+    },
 }
 
 ADMIN_TABLES = (
@@ -727,18 +736,25 @@ create policy {table}_delete_own on {t} for delete to authenticated using ({own}
 """
 
 
-def _shared_table_rls(table: str, using: str) -> str:
+def _shared_table_rls(table: str, using: str | dict[str, str]) -> str:
     t = f"public.{table}"
     if table == "questions":
         select_grant = f"grant select ({', '.join(QUESTION_CLIENT_COLUMNS)}) on table {t} to anon, authenticated;"
     else:
         select_grant = f"grant select on table {t} to anon, authenticated;"
+    if isinstance(using, str):
+        policies = f"create policy {table}_read on {t} for select to anon, authenticated using ({using});"
+    else:
+        policies = "\n".join(
+            f"create policy {table}_read_{role} on {t} for select to {role} using ({expr});"
+            for role, expr in using.items()
+        )
     return f"""
 alter table {t} enable row level security;
 revoke all on table {t} from anon, authenticated;
 {select_grant}
 grant all on table {t} to service_role;
-create policy {table}_read on {t} for select to anon, authenticated using ({using});
+{policies}
 """
 
 

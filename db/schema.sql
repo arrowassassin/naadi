@@ -556,7 +556,8 @@ create trigger ingest_items_touch_updated_at before update on public.ingest_item
 -- Shared content: RLS enabled; select to anon, authenticated with the row filter below; writes by the
 -- service role (backend) only, except that a student may insert/update/delete their own private
 -- flashcards with origin = 'user' (assistant / anki_import / seed cards are backend writes) whose linked
--- question / section is visible to them.
+-- question / section is visible to them. A shared flashcard linked to a question restates its
+-- answer: it is never visible to anon, and to a student only after they have an attempt on that question.
 --   sources: true
 --   taxonomy_nodes: true
 --   pathway_stages: true
@@ -566,7 +567,8 @@ create trigger ingest_items_touch_updated_at before update on public.ingest_item
 --   media_assets: review_status = 'approved'
 --   section_media: exists (select 1 from public.chapter_sections s where s.id = section_media.section_id) and exists (select 1 from public.media_assets m where m.id = section_media.media_id)
 --   questions: status = 'published' and (chapter_id is null or exists (select 1 from public.chapters c where c.id = questions.chapter_id))
---   flashcards: owner_user_id is null or owner_user_id = (select auth.uid())
+--   flashcards (anon): owner_user_id is null and question_id is null
+--   flashcards (authenticated): owner_user_id = (select auth.uid()) or (owner_user_id is null and (question_id is null or exists (select 1 from public.attempts a where a.user_id = (select auth.uid()) and a.question_id = flashcards.question_id)))
 --
 -- questions: clients get column-level select only on
 --   (id, chapter_id, exam, block, stem_html, options, difficulty, taxonomy_ids, tags, source_id, status, created_at);

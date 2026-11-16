@@ -485,3 +485,42 @@ def test_profile_first_sign_in_is_idempotent_as_the_user(pg: psycopg.Connection,
             )
         row = conn.execute("select count(*), min(exam_target), min(timezone) from public.profiles").fetchone()
         assert row == (1, "step1", "Asia/Kolkata")
+
+
+def test_question_linked_shared_flashcard_needs_an_attempt(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+    """A shared card linked to a question restates the answer: hidden from anon always, and from a student
+    until they have attempted that question. Unlinked shared cards stay visible to everyone."""
+    linked, plain = shared.linked_flashcard_id, shared.flashcard_id
+
+    def visible(conn: psycopg.Connection) -> set[uuid.UUID]:
+        rows = conn.execute("select id from public.flashcards where id = any(%s)", ([linked, plain],)).fetchall()
+        return {r[0] for r in rows}
+
+    with as_anon(pg) as conn:
+        assert visible(conn) == {plain}
+        hits = conn.execute("select count(*) from public.flashcards where question_id = %s", (shared.question_id,))
+        assert hits.fetchone() == (0,)
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain}, "linked card visible before any attempt"
+        # reviewing the hidden card (an oracle for its existence) is refused too
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "card_reviews", {"user_id": user_a, "card_id": linked, "due": "2026-12-01"})
+
+    # B attempts the question; that does not unlock the card for A.
+    insert_row(pg, "attempts", {"user_id": user_b, "question_id": shared.question_id, "chosen": "A"})
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain}, "another user's attempt unlocked the card"
+    with as_user(pg, user_b) as conn:
+        assert visible(conn) == {plain, linked}
+        row = conn.execute("select back_html from public.flashcards where id = %s", (linked,)).fetchone()
+        assert row == ("The answer is B",)
+        insert_row(conn, "card_reviews", {"user_id": user_b, "card_id": linked, "due": "2026-12-01"})
+    with as_anon(pg) as conn:
+        assert visible(conn) == {plain}
+
+    # A attempts it through the normal client path, and then sees it.
+    with as_user(pg, user_a) as conn:
+        insert_row(conn, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B"})
+        assert visible(conn) == {plain, linked}
