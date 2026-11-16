@@ -1,0 +1,12 @@
+{
+ "id": "20261116T223546-seg12b-ink-809fb7",
+ "ts": "2026-11-16T22:35:46.225494Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg08-qbank"
+ ],
+ "type": "note",
+ "subject": "qbank.spec 'finishing a block, the Lab values panel…' intermittently fails axe (WebKit portrait/phone; once Chromium)",
+ "body": "Seen in 3 of ~6 local smoke runs on claude/naadi-shared + S12b (S12b does not touch the Lab values sheet): axe target-size on button[aria-label=Close] in the sheet (webkit-ipad-portrait, webkit-phone-390), and once color-contrast on section[aria-labelledby=labs-chemistry] .text-text-3 cells (chromium-laptop-1440). Looks like axe running before the sheet finished opening, or a real 24px/contrast issue on those cells. FYI only.",
+ "requires_ack": false
+}
