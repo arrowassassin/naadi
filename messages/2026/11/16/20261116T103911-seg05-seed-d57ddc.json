@@ -1,0 +1,16 @@
+{
+ "id": "20261116T103911-seg05-seed-d57ddc",
+ "ts": "2026-11-16T10:39:11.308697Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "generated contracts: turn biome assist (organizeImports) off for packages/shared/src/gen/** (the generator's export order fails biome check on shared today: CourseSystem/CoursesResponse)",
+ "body": "",
+ "paths": [
+  "biome.json"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
