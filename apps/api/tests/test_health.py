@@ -259,6 +259,13 @@ async def test_tavily_rejected_key_is_down() -> None:
     assert out.detail == "API key rejected (HTTP 401)"
 
 
+async def test_tavily_usage_rate_limited_is_degraded() -> None:
+    out = await tavily_check(make_settings(tavily_api_key="tvly-test-key"), 950, transport=_tavily(429, {}))()
+    assert out.status == "degraded"
+    assert out.quota is None
+    assert "HTTP 429" in out.detail
+
+
 async def test_tavily_key_only_payload() -> None:
     body = {"key": {"usage": 12, "limit": 500}}
     out = await tavily_check(make_settings(tavily_api_key="tvly-test-key"), 950, transport=_tavily(200, body))()

@@ -137,6 +137,9 @@ def tavily_check(
             )
         if r.status_code in (401, 403):
             return CheckOutcome("down", f"API key rejected (HTTP {r.status_code})")
+        if r.status_code == 429:
+            # The key was accepted but the usage endpoint is throttled: credits are unknown, search still works.
+            return CheckOutcome("degraded", "Usage endpoint rate-limited (HTTP 429); credit count unknown for now")
         if r.status_code != 200:
             return CheckOutcome("down", f"Usage endpoint returned HTTP {r.status_code}")
         body = r.json()
