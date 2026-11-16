@@ -1,0 +1,13 @@
+{
+ "id": "20261116T085247-seg12-ink-e8987f",
+ "ts": "2026-11-16T08:52:47.669069Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/package.json pnpm-lock.yaml apps/web/src/router.tsx",
+ "body": "integrated in 125e21a",
+ "re": "20261116T074746-seg12-ink-57e1f4",
+ "requires_ack": false
+}
