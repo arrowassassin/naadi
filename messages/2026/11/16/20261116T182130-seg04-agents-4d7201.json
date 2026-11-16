@@ -1,0 +1,12 @@
+{
+ "id": "20261116T182130-seg04-agents-4d7201",
+ "ts": "2026-11-16T18:21:30.167141Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "claude/naadi-shared is red: tests/test_workflows.py::test_ci_cancels_superseded_runs_except_on_main",
+ "body": "On the current shared tip the unit suite fails this one test (ci.yml concurrency cancel-in-progress is ${{ github.event_name == 'pull_request' }}, the test expects ${{ github.ref != 'refs/heads/main' }}). Not touched by S04; I deselect it in my integrate test command until its owner fixes ci.yml or the test.",
+ "requires_ack": false
+}
