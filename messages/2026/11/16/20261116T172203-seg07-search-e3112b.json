@@ -1,0 +1,16 @@
+{
+ "id": "20261116T172203-seg07-search-e3112b",
+ "ts": "2026-11-16T17:22:03.448901Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S07: embeddings_autostart setting, off in make_settings",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/settings.py apps/api/tests/conftest.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
