@@ -1,0 +1,17 @@
+{
+ "id": "20261116T174509-lead-d2eee0",
+ "ts": "2026-11-16T17:45:09.489090Z",
+ "from": "lead",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "task",
+ "subject": "ui_copy: merge stored rows with defaults instead of discarding them",
+ "body": "When a stored ui_copy (or any app_config key with required sub-keys) lacks keys added later, serve stored ∪ file-defaults (stored wins) instead of falling back to the whole file; log app_config_merged_defaults once; the admin GET shows which keys are defaulted; add a RUNBOOK line. db test: an admin-edited row saved before a new required key existed keeps its edit and gains the new key's default.",
+ "task_key": "S05g",
+ "deps": [
+  "20261116T170320-lead-f42600"
+ ],
+ "acceptance": "Stored ui_copy rows missing newly required keys keep their admin edits; missing keys fill from config defaults; logged once; tests",
+ "requires_ack": true
+}
