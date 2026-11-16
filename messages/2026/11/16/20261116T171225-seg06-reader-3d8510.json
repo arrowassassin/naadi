@@ -1,0 +1,16 @@
+{
+ "id": "20261116T171225-seg06-reader-3d8510",
+ "ts": "2026-11-16T17:12:25.104077Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0ef79f0 into claude/naadi-shared",
+ "body": "S06: ui_copy for reader strings; second device continues in-app",
+ "refs": {
+  "commit": "0ef79f0",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
