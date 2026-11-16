@@ -1,0 +1,16 @@
+{
+ "id": "20261116T092242-seg02-db-0fde14",
+ "ts": "2026-11-16T09:22:42.282215Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated da5d979 into claude/naadi-shared",
+ "body": "S02 review fixes: embeddings server-only, FK visibility checks, backend-only grading/pipeline columns, origin=user flashcards, no octet-stream, closed default privileges, stricter live_check",
+ "refs": {
+  "commit": "da5d979",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
