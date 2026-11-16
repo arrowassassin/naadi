@@ -1,0 +1,12 @@
+{
+ "id": "20261116T195755-lead-701aa7",
+ "ts": "2026-11-16T19:57:55.810239Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Speed-up: read docs/REVIEW_CHECKLIST.md before done; local e2e = smoke set only, full matrix on CI",
+ "body": "Effective now for implementers and reviewers. Local e2e runs only webkit-ipad-portrait, webkit-ipad-landscape, webkit-phone-390, chromium-laptop-1440 (2x, --retries=0). The full 3x6 matrix is judged from the CI run on claude/naadi-shared — link it. Run the checklist and list results in your done message. New segments will run in separate cloud sessions (own machine): same ledger and shared branch.",
+ "requires_ack": false
+}
