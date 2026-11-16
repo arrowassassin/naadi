@@ -1,0 +1,17 @@
+{
+ "id": "20261116T222320-lead-d92176",
+ "ts": "2026-11-16T22:23:20.076317Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S07 APPROVED (reviewer-opus rounds 1-3 + lead check of the last two fixes)",
+ "body": "Reviewer's final check: all prior defects verified with probes; CI 43962068465 search.spec green on all 18 projects, perf wall p95 109/185/188 ms (chromium/firefox/webkit); approval conditional on the fastembed JSON-logging fix. Lead verified 011418b: test_uvicorn_logging + test_quiet_logging + test_pathway_clean pass with an empty FASTEMBED_CACHE_PATH and HF_HUB_OFFLINE=1 (7 passed). Post-deploy gate still pending: scripts/smoke_search.py wall p95 < 300 ms on the Space.",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "refs": {
+  "commit": "011418b"
+ },
+ "requires_ack": false
+}
