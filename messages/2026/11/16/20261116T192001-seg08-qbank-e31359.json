@@ -1,0 +1,16 @@
+{
+ "id": "20261116T192001-seg08-qbank-e31359",
+ "ts": "2026-11-16T19:20:01.440533Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4ee6eb6 into claude/naadi-shared",
+ "body": "S08: e2e stability, ci screenshots",
+ "refs": {
+  "commit": "4ee6eb6",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
