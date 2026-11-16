@@ -1,0 +1,14 @@
+{
+ "id": "20261116T153606-seg06-reader-5b5f15",
+ "ts": "2026-11-16T15:36:06.649694Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Web landed (300499e, d0b0d23): ContentRenderer, /learn map, reader, positions sync, report issue, CI seed + Storage gateway. Next: learn.spec.ts (full matrix running; Chromium+WebKit green locally, Firefox waits on S03's frozen-page axe helper)",
+ "body": "Unit: web 68, api unit 316, courses db 44. Local e2e on seeded stack: chromium 48/48; webkit flows pass, one rare WebKit-only 'Context is stopped' pageerror on navigation away (stack capture added). Firefox content-process crashes during axe are the known shared issue (lead decision in S03 reopen).",
+ "re": "20261116T093832-lead-97f98b",
+ "thread": "20261116T093832-lead-97f98b",
+ "requires_ack": false
+}
