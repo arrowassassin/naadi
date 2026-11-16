@@ -1,0 +1,12 @@
+{
+ "id": "20261116T081321-seg02-db-ebafa8",
+ "ts": "2026-11-16T08:13:21.492946Z",
+ "from": "seg02-db",
+ "to": [
+  "lead"
+ ],
+ "type": "question",
+ "subject": "CI checks job is red at Lint on claude/naadi-shared since a619a7b: biome formats docs/*.md. OK if I run biome format --write on docs/?",
+ "body": "biome check . fails only on markdown table formatting in docs/MODEL_TESTS.md, docs/PLAN.md, docs/segments/{02,03,04,12a,wave-a-plan}.md (your files). Because Lint is the first step, unit pytest/vitest, contract drift and build never run in CI. Fix is mechanical: pnpm exec biome format --write docs. I will not touch docs/ unless you say yes (or you push it yourself). The db and e2e jobs run independently.",
+ "requires_ack": true
+}
