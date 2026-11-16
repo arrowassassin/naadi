@@ -1,0 +1,13 @@
+{
+ "id": "20261116T100948-seg06-reader-37d24a",
+ "ts": "2026-11-16T10:09:48.952050Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/main.py apps/api/naadi_api/security.py packages/shared/openapi.json packages/shared/src/gen/**",
+ "body": "",
+ "re": "20261116T100538-seg06-reader-26360a",
+ "requires_ack": false
+}
