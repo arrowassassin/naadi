@@ -18,7 +18,8 @@ sources_policy:
 feature_flags:
   today: {enabled: true}
   courses: {enabled: true}        # S06 Courses + Reader
-  qbank: {enabled: false}         # S08/S09
+  qbank: {enabled: true}          # S08 Builder + tutor mode
+  qbank_timed: {enabled: false}   # S09 timed + exam-simulation screens; the Builder disables those modes until on
   planner: {enabled: false}       # S11
   notes: {enabled: false}         # S13
   pathway: {enabled: false}       # S17
@@ -31,6 +32,7 @@ feature_flags:
 ui.nav:
   - {id: today, label: Today, path: /, icon: sun, feature: today}
   - {id: learn, label: Learn, path: /learn, icon: book-open, feature: courses}
+  - {id: practice, label: Practice, path: /practice, icon: list-checks, feature: qbank}
 
 # USMLE block format (usmle.org bulletin: Step 1 = 7 one-hour blocks, Step 2 CK = 8, up to 40 items each)
 # and the three practice modes (HANDOFF §8 Builder/Qbank/Exam).
@@ -59,6 +61,88 @@ exam_rules:
       seconds_per_question: 90
       explanations: after_block
       assistant: false             # the assistant is silent in exam mode (CLAUDE.md)
+
+# Reference ranges for the question view's Lab values panel (GET /api/lab-values). Naadi-original table of
+# common adult ranges (conventional units, SI where it differs). The exam board's own table is (c) and is only
+# linked to, through its `sources` row (official_source_id).
+lab_values:
+  source_id: naadi-original-v1
+  official_source_id: nbme-lab-values
+  groups:
+    - id: chemistry
+      label: Blood chemistry
+      rows:
+        - {analyte: "Sodium", range: "136-145 mEq/L", si: "136-145 mmol/L"}
+        - {analyte: "Potassium", range: "3.5-5.0 mEq/L", si: "3.5-5.0 mmol/L"}
+        - {analyte: "Chloride", range: "95-105 mEq/L", si: "95-105 mmol/L"}
+        - {analyte: "Bicarbonate", range: "22-28 mEq/L", si: "22-28 mmol/L"}
+        - {analyte: "Urea nitrogen (BUN)", range: "7-18 mg/dL", si: "2.5-6.4 mmol/L"}
+        - {analyte: "Creatinine", range: "0.6-1.2 mg/dL", si: "53-106 umol/L"}
+        - {analyte: "Glucose, fasting", range: "70-100 mg/dL", si: "3.9-5.6 mmol/L"}
+        - {analyte: "Calcium, total", range: "8.4-10.2 mg/dL", si: "2.1-2.6 mmol/L"}
+        - {analyte: "Magnesium", range: "1.5-2.0 mEq/L", si: "0.75-1.0 mmol/L"}
+        - {analyte: "Phosphorus", range: "3.0-4.5 mg/dL", si: "1.0-1.5 mmol/L"}
+        - {analyte: "Albumin", range: "3.5-5.5 g/dL", si: "35-55 g/L"}
+        - {analyte: "Total protein", range: "6.0-7.8 g/dL", si: "60-78 g/L"}
+        - {analyte: "Uric acid", range: "3.0-8.2 mg/dL", si: "0.18-0.48 mmol/L"}
+        - {analyte: "Lactate, venous", range: "4.5-20 mg/dL", si: "0.5-2.2 mmol/L"}
+        - {analyte: "Osmolality, serum", range: "275-295 mOsm/kg"}
+    - id: liver
+      label: Liver and pancreas
+      rows:
+        - {analyte: "AST", range: "12-38 U/L"}
+        - {analyte: "ALT", range: "10-40 U/L"}
+        - {analyte: "Alkaline phosphatase", range: "25-100 U/L"}
+        - {analyte: "GGT", range: "8-38 U/L"}
+        - {analyte: "Bilirubin, total", range: "0.1-1.0 mg/dL", si: "2-17 umol/L"}
+        - {analyte: "Bilirubin, direct", range: "0.0-0.3 mg/dL", si: "0-5 umol/L"}
+        - {analyte: "Amylase", range: "25-125 U/L"}
+        - {analyte: "Lipase", range: "0-160 U/L"}
+    - id: blood
+      label: Hematology and coagulation
+      rows:
+        - {analyte: "Hemoglobin, male", range: "13.5-17.5 g/dL", si: "135-175 g/L"}
+        - {analyte: "Hemoglobin, female", range: "12.0-16.0 g/dL", si: "120-160 g/L"}
+        - {analyte: "Hematocrit, male", range: "41-53%"}
+        - {analyte: "Hematocrit, female", range: "36-46%"}
+        - {analyte: "MCV", range: "80-100 fL"}
+        - {analyte: "Leukocytes", range: "4,500-11,000/mm3", si: "4.5-11.0 x 10^9/L"}
+        - {analyte: "Platelets", range: "150,000-400,000/mm3", si: "150-400 x 10^9/L"}
+        - {analyte: "Reticulocytes", range: "0.5-1.5% of red cells"}
+        - {analyte: "ESR, male", range: "0-15 mm/h"}
+        - {analyte: "ESR, female", range: "0-20 mm/h"}
+        - {analyte: "Prothrombin time", range: "11-15 s"}
+        - {analyte: "aPTT", range: "25-40 s"}
+        - {analyte: "INR", range: "0.8-1.1"}
+    - id: gases
+      label: Arterial blood gas
+      rows:
+        - {analyte: "pH", range: "7.35-7.45"}
+        - {analyte: "PaCO2", range: "33-45 mm Hg", si: "4.4-5.9 kPa"}
+        - {analyte: "PaO2", range: "75-105 mm Hg", si: "10.0-14.0 kPa"}
+        - {analyte: "HCO3-", range: "22-28 mEq/L", si: "22-28 mmol/L"}
+    - id: endocrine
+      label: Endocrine, lipids and cardiac
+      rows:
+        - {analyte: "TSH", range: "0.5-5.0 uU/mL", si: "0.5-5.0 mU/L"}
+        - {analyte: "Free thyroxine (T4)", range: "0.8-1.8 ng/dL", si: "10-23 pmol/L"}
+        - {analyte: "Hemoglobin A1c", range: "below 5.7%"}
+        - {analyte: "Cortisol, 8 AM", range: "5-23 ug/dL", si: "138-635 nmol/L"}
+        - {analyte: "Total cholesterol", range: "below 200 mg/dL", si: "below 5.2 mmol/L"}
+        - {analyte: "LDL cholesterol", range: "below 130 mg/dL", si: "below 3.4 mmol/L"}
+        - {analyte: "HDL cholesterol", range: "40 mg/dL or more", si: "1.0 mmol/L or more"}
+        - {analyte: "Triglycerides", range: "below 150 mg/dL", si: "below 1.7 mmol/L"}
+        - {analyte: "Troponin I", range: "0.04 ng/mL or less"}
+        - {analyte: "BNP", range: "below 100 pg/mL"}
+    - id: urine_csf
+      label: Urine and cerebrospinal fluid
+      rows:
+        - {analyte: "Urine specific gravity", range: "1.003-1.030"}
+        - {analyte: "Urine pH", range: "4.5-8.0"}
+        - {analyte: "CSF opening pressure", range: "70-180 mm H2O"}
+        - {analyte: "CSF protein", range: "15-45 mg/dL"}
+        - {analyte: "CSF glucose", range: "40-70 mg/dL"}
+        - {analyte: "CSF leukocytes", range: "0-5/mm3"}
 
 # Supabase Storage bucket names (created by migration 0002).
 storage:
@@ -108,6 +192,78 @@ ui_copy:
   account.cancel: "Cancel"
   account.sign_out_failed_title: "Not signed out"
   account.sign_out_failed: "Could not sign out. Try again."
+  practice.headline: "Build"
+  practice.headline_muted: "a block."
+  practice.past_blocks: "Past blocks"
+  practice.group_mode: "Mode"
+  practice.group_exam: "Exam"
+  practice.group_systems: "Systems"
+  practice.group_disciplines: "Disciplines"
+  practice.group_status: "Which questions"
+  practice.group_difficulty: "Difficulty"
+  practice.mode_tutor: "Tutor: explain after each"
+  practice.mode_timed: "Timed"
+  practice.mode_exam: "Exam simulation"
+  practice.mode_unavailable: "Timed and exam blocks are coming soon. Tutor mode is ready now."
+  practice.status_all: "All"
+  practice.status_unused: "Unused"
+  practice.status_incorrect: "Incorrect"
+  practice.status_flagged: "Flagged"
+  practice.status_correct: "Correct"
+  practice.difficulty_all: "Mixed"
+  practice.difficulty_easy: "Easier"
+  practice.difficulty_medium: "Medium"
+  practice.difficulty_hard: "Harder"
+  practice.your_block: "Your block"
+  practice.fewer: "Fewer questions"
+  practice.more: "More questions"
+  practice.count_label: "Questions in the block"
+  practice.start: "Start block"
+  practice.building: "Building your block…"
+  practice.all_systems: "All systems"
+  practice.summary: "{mode} · {topics} · {status} questions"
+  practice.matches: "{n} questions match."
+  practice.matches_one: "1 question matches."
+  practice.empty_pool: "No questions match these filters. Choose different topics or another status."
+  practice.weak_kicker: "Or let Naadi choose"
+  practice.weak_body: "Questions aimed at the topics you miss most."
+  practice.weak_cta: "Build my weak-spot block"
+  practice.weak_building: "Finding your weak spots…"
+  practice.past_empty: "No blocks yet. The blocks you start will appear here."
+  practice.past_progress: "{answered} of {total} answered"
+  practice.past_correct: "{correct} right"
+  practice.past_continue: "Continue"
+  practice.past_review: "Review"
+  practice.load_error_title: "Practice could not be loaded"
+  practice.exit: "Exit block"
+  practice.progress: "Question {n} of {total}"
+  practice.flag: "Flag"
+  practice.flagged: "Flagged"
+  practice.labs: "Lab values"
+  practice.next: "Next"
+  practice.previous: "Previous"
+  practice.submit: "Submit"
+  practice.finish: "Finish block"
+  practice.correct: "Correct"
+  practice.incorrect: "Incorrect"
+  practice.your_answer: "Your answer"
+  practice.correct_answer: "Correct answer"
+  practice.why_it_is: "Why it's {answer}"
+  practice.why_not: "Why the others are wrong"
+  practice.objective: "Learning objective"
+  practice.lesson: "Open the lesson: {title}"
+  practice.report: "Report an issue"
+  practice.report_what: "this question"
+  practice.ink: "Scratch ink"
+  practice.offline_saved: "Saved on this device. It will sync when you are back online."
+  practice.offline_question: "This question is not saved for offline use. Reconnect to continue."
+  practice.question_error_title: "This question could not be loaded"
+  practice.labs_source: "Reference ranges written by Naadi for study use. Values vary between laboratories."
+  practice.labs_official: "Official lab values table from the exam board"
+  practice.block_done_title: "Block complete"
+  practice.block_done_body: "You answered {total} questions and got {correct} right ({score}%)."
+  practice.back_to_builder: "Build another block"
+  practice.keys_hint: "Keys: 1 to 5 or A to E choose, F flags, N next, Command or Control Enter submits."
   content.report_issue: "Report an issue"
   content.report_issue_prompt: "Something wrong or unclear in this section?"
   content.report_issue_question: "What is wrong with {what}?"

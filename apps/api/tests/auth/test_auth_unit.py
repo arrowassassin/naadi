@@ -410,7 +410,7 @@ def test_nav_returns_only_enabled_items(auth_client: Callable[..., TestClient], 
     res = auth_client().get("/api/nav", headers=bearer(mint(signing_key, claims())))
     assert res.status_code == 200
     body = res.json()
-    assert [i["id"] for i in body["items"]] == ["today", "learn"]
+    assert [i["id"] for i in body["items"]] == ["today", "learn", "practice"]
     assert body["items"][0]["path"] == "/"
     # no database in unit tests: app_config's logged fail-safe (config/app_config.yaml) answers
     assert body["features"]["assistant"] is False
@@ -498,7 +498,7 @@ def test_public_config(auth_client: Callable[..., TestClient]) -> None:
     body = res.json()
     # flags, nav, exam rules and UI copy come from app_config (S05); checked in tests/config_api and tests/db
     assert body.pop("features")["ink_lab"] is False  # admins only in prod
-    assert [i["id"] for i in body.pop("nav")] == ["today", "learn"]
+    assert [i["id"] for i in body.pop("nav")] == ["today", "learn", "practice"]
     assert body.pop("exam_rules")["modes"]["exam"]["assistant"] is False
     assert body.pop("ui_copy")["signin.tagline"]
     assert body == {

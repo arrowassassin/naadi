@@ -295,6 +295,8 @@ create table public.attempts (
 create index attempts_user_question_idx on public.attempts (user_id, question_id, created_at desc);
 create index attempts_user_created_idx on public.attempts (user_id, created_at desc);
 create index attempts_block_idx on public.attempts (block_id) where block_id is not null;
+-- 0006: one row per (block, question), so answering is idempotent and the flag shares the answer's row
+create unique index attempts_block_question_key on public.attempts (block_id, question_id) where block_id is not null;
 
 create table public.card_reviews (
   user_id uuid not null references auth.users(id) on delete cascade,

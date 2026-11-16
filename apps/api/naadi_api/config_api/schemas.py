@@ -230,6 +230,39 @@ class SourcesPolicy(_Strict):
     original_source_id: str = Field(default="naadi-original-v1", min_length=1)
 
 
+# ── lab_values ──
+
+
+class LabRow(_Strict):
+    analyte: str = Field(min_length=1, max_length=80)
+    range: str = Field(min_length=1, max_length=80, description="Adult reference range, with the conventional unit")
+    si: str | None = Field(default=None, max_length=80, description="The same range in SI units, when it differs")
+
+
+class LabGroup(_Strict):
+    id: str = Field(pattern=r"^[a-z][a-z0-9_]{0,31}$")
+    label: str = Field(min_length=1, max_length=60)
+    rows: list[LabRow] = Field(min_length=1, max_length=60)
+
+
+class LabValues(_Strict):
+    """Naadi's own reference-range table for the question view's Lab values panel (original content, not a copy
+    of the exam board's table: that one is © and is only linked to through its `sources` row)."""
+
+    source_id: str = Field(min_length=1, max_length=80, description="`sources` row of this table (Naadi original)")
+    official_source_id: str = Field(
+        min_length=1, max_length=80, description="`sources` row whose URL is the official table to link out to"
+    )
+    groups: list[LabGroup] = Field(min_length=1, max_length=20)
+
+    @model_validator(mode="after")
+    def _unique_groups(self) -> LabValues:
+        ids = [g.id for g in self.groups]
+        if len(set(ids)) != len(ids):
+            raise ValueError("lab group ids must be unique")
+        return self
+
+
 # ── registry ──
 
 
@@ -298,6 +331,14 @@ KEY_SPECS: dict[str, KeySpec] = {
             "app_config.yaml",
             "Block sizes and practice modes",
             _schema_of(ExamRules),
+        ),
+        KeySpec(
+            "lab_values",
+            _model_validator(LabValues),
+            False,
+            "app_config.yaml",
+            "Lab values reference table (Qbank)",
+            _schema_of(LabValues),
         ),
         KeySpec(
             "storage",

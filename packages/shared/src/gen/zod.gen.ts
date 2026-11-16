@@ -13,12 +13,117 @@ export const zAdminOverview = z.object({
 });
 
 /**
+ * AttemptIn
+ */
+export const zAttemptIn = z.object({
+  chosen: z.string().regex(/^[A-J]$/),
+  flagged: z.boolean().optional().default(false),
+  question_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+  seconds: z.int().gte(0).lte(7200).optional().default(0),
+});
+
+/**
+ * AttemptState
+ */
+export const zAttemptState = z.object({
+  chosen: z.string(),
+  correct: z.boolean().nullable(),
+  seconds: z.int().nullable(),
+});
+
+/**
+ * BlockConfig
+ */
+export const zBlockConfig = z.object({
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  disciplines: z.array(z.string()),
+  exam: z.string(),
+  mode: z.enum(["tutor", "timed", "exam"]),
+  seed: z.int(),
+  status: z.enum(["all", "unused", "incorrect", "flagged", "correct"]),
+  systems: z.array(z.string()),
+  weak_spot: z.boolean(),
+});
+
+/**
+ * BlockCreate
+ */
+export const zBlockCreate = z.object({
+  count: z.int().gte(1).lte(80),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullish(),
+  disciplines: z.array(z.string()).max(40).optional(),
+  exam: z.string().regex(/^[a-z0-9]{2,16}$/),
+  mode: z.enum(["tutor", "timed", "exam"]).optional().default("tutor"),
+  seed: z.int().gte(0).lte(4611686018427388000).nullish(),
+  status: z.enum(["all", "unused", "incorrect", "flagged", "correct"]).optional().default("all"),
+  systems: z.array(z.string()).max(40).optional(),
+});
+
+/**
+ * BlockLimits
+ */
+export const zBlockLimits = z.object({
+  default_questions: z.int(),
+  max_questions: z.int(),
+  min_questions: z.int(),
+});
+
+/**
+ * BlockQuestionState
+ */
+export const zBlockQuestionState = z.object({
+  answered: z.boolean(),
+  correct: z.boolean().nullable(),
+  flagged: z.boolean(),
+  n: z.int(),
+});
+
+/**
+ * BlockDetail
+ */
+export const zBlockDetail = z.object({
+  answered: z.int(),
+  config: zBlockConfig,
+  correct: z.int().nullable(),
+  created_at: z.iso.datetime(),
+  finished_at: z.iso.datetime().nullable(),
+  id: z.uuid(),
+  next_n: z.int(),
+  questions: z.array(zBlockQuestionState),
+  score: z.number().nullable(),
+  started_at: z.iso.datetime().nullable(),
+  total: z.int(),
+});
+
+/**
  * BlockRules
  */
 export const zBlockRules = z.object({
   default_questions: z.int().gte(1).lte(80),
   max_questions: z.int().gte(1).lte(80),
   min_questions: z.int().gte(1).lte(40),
+});
+
+/**
+ * BlockSummary
+ */
+export const zBlockSummary = z.object({
+  answered: z.int(),
+  config: zBlockConfig,
+  correct: z.int().nullable(),
+  created_at: z.iso.datetime(),
+  finished_at: z.iso.datetime().nullable(),
+  id: z.uuid(),
+  score: z.number().nullable(),
+  started_at: z.iso.datetime().nullable(),
+  total: z.int(),
+});
+
+/**
+ * BlockList
+ */
+export const zBlockList = z.object({
+  blocks: z.array(zBlockSummary),
 });
 
 /**
@@ -104,6 +209,14 @@ export const zCourseSystem = z.object({
 });
 
 /**
+ * ExamChoice
+ */
+export const zExamChoice = z.object({
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
  * ExamFormat
  */
 export const zExamFormat = z.object({
@@ -120,6 +233,33 @@ export const zExamOption = z.object({
   chapter_count: z.int(),
   id: z.string(),
   label: z.string(),
+});
+
+/**
+ * Explanation
+ */
+export const zExplanation = z.object({
+  answer: z.string(),
+  answer_html: z.string().nullable(),
+  educational_objective: z.string().nullable(),
+  explanation_html: z.string().nullable(),
+  why_not_html: z.string().nullable(),
+});
+
+/**
+ * AttemptOut
+ */
+export const zAttemptOut = z.object({
+  answered: z.int(),
+  chosen: z.string(),
+  correct: z.boolean().nullable(),
+  explanation: zExplanation.nullable(),
+  finished: z.boolean(),
+  flagged: z.boolean(),
+  n: z.int(),
+  question_id: z.string(),
+  seconds: z.int().nullable(),
+  total: z.int(),
 });
 
 /**
@@ -146,6 +286,22 @@ export const zErrorBody = z.object({
  */
 export const zErrorResponse = z.object({
   error: zErrorBody,
+});
+
+/**
+ * FlagIn
+ */
+export const zFlagIn = z.object({
+  flagged: z.boolean(),
+});
+
+/**
+ * FlagOut
+ */
+export const zFlagOut = z.object({
+  flagged: z.boolean(),
+  n: z.int(),
+  question_id: z.string(),
 });
 
 export const zJsonValue = z.unknown();
@@ -191,6 +347,32 @@ export const zConfigUpdate = z.object({
   admin_edited: z.boolean().optional().default(true),
   expected_updated_at: z.iso.datetime().nullable(),
   value: zJsonValue,
+});
+
+/**
+ * LabRowOut
+ */
+export const zLabRowOut = z.object({
+  analyte: z.string(),
+  range: z.string(),
+  si: z.string().nullable(),
+});
+
+/**
+ * LabGroupOut
+ */
+export const zLabGroupOut = z.object({
+  id: z.string(),
+  label: z.string(),
+  rows: z.array(zLabRowOut),
+});
+
+/**
+ * LessonLink
+ */
+export const zLessonLink = z.object({
+  chapter_id: z.string(),
+  title: z.string(),
 });
 
 /**
@@ -240,6 +422,14 @@ export const zMockExam = z.object({
   meta: z.string().nullable(),
   question_count: z.int(),
   title: z.string(),
+});
+
+/**
+ * ModeChoice
+ */
+export const zModeChoice = z.object({
+  available: z.boolean(),
+  id: z.enum(["tutor", "timed", "exam"]),
 });
 
 /**
@@ -345,6 +535,30 @@ export const zCoursesResponse = z.object({
 });
 
 /**
+ * PoolFacet
+ */
+export const zPoolFacet = z.object({
+  count: z.int(),
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
+ * PoolResponse
+ */
+export const zPoolResponse = z.object({
+  difficulty: z.record(z.string(), z.int()),
+  disciplines: z.array(zPoolFacet),
+  exam: z.string(),
+  exams: z.array(zExamChoice),
+  limits: zBlockLimits,
+  modes: z.array(zModeChoice),
+  status: z.record(z.string(), z.int()),
+  systems: z.array(zPoolFacet),
+  total: z.int(),
+});
+
+/**
  * Profile
  */
 export const zProfile = z.object({
@@ -407,6 +621,34 @@ export const zEmbeddedQuestion = z.object({
   id: z.string(),
   options: z.array(zQuestionOption),
   stem_html: z.string(),
+});
+
+/**
+ * QuestionBody
+ *
+ * A question as the client may see it before answering: never the answer or any explanation.
+ */
+export const zQuestionBody = z.object({
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  id: z.string(),
+  options: z.array(zQuestionOption),
+  stem_html: z.string(),
+  topics: z.array(z.string()),
+});
+
+/**
+ * QuestionView
+ */
+export const zQuestionView = z.object({
+  attempt: zAttemptState.nullable(),
+  block_id: z.uuid(),
+  explanation: zExplanation.nullable(),
+  flagged: z.boolean(),
+  lesson: zLessonLink.nullable(),
+  mode: z.enum(["tutor", "timed", "exam"]),
+  n: z.int(),
+  question: zQuestionBody,
+  total: z.int(),
 });
 
 /**
@@ -571,6 +813,32 @@ export const zSeedRunList = z.object({
 });
 
 /**
+ * SingleBlockCreate
+ */
+export const zSingleBlockCreate = z.object({
+  question_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * SourceRef
+ */
+export const zSourceRef = z.object({
+  id: z.string(),
+  license: z.string(),
+  name: z.string(),
+  url: z.string().nullable(),
+});
+
+/**
+ * LabValuesOut
+ */
+export const zLabValuesOut = z.object({
+  groups: z.array(zLabGroupOut),
+  official: zSourceRef,
+  source: zSourceRef,
+});
+
+/**
  * SystemRef
  */
 export const zSystemRef = z.object({
@@ -613,6 +881,34 @@ export const zValidationError = z.object({
  */
 export const zHttpValidationError = z.object({
   detail: z.array(zValidationError).optional(),
+});
+
+/**
+ * WeakCellOut
+ */
+export const zWeakCellOut = z.object({
+  attempts: z.int(),
+  correct: z.int(),
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
+ * WeakSpotBlock
+ */
+export const zWeakSpotBlock = z.object({
+  block: zBlockDetail,
+  cells: z.array(zWeakCellOut),
+});
+
+/**
+ * WeakSpotCreate
+ */
+export const zWeakSpotCreate = z.object({
+  count: z.int().gte(1).lte(80).nullish(),
+  exam: z.string().regex(/^[a-z0-9]{2,16}$/),
+  mode: z.enum(["tutor", "timed", "exam"]).optional().default("tutor"),
+  seed: z.int().gte(0).lte(4611686018427388000).nullish(),
 });
 
 /**
@@ -679,6 +975,78 @@ export const zGetSeedRunPath = z.object({
  */
 export const zGetSeedRunResponse = zSeedRun;
 
+export const zListBlocksQuery = z.object({
+  limit: z.int().gte(1).lte(100).optional().default(30),
+});
+
+/**
+ * Successful Response
+ */
+export const zListBlocksResponse = zBlockList;
+
+export const zCreateBlockBody = zBlockCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateBlockResponse = zBlockDetail;
+
+export const zCreateSingleQuestionBlockBody = zSingleBlockCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateSingleQuestionBlockResponse = zBlockDetail;
+
+export const zCreateWeakSpotBlockBody = zWeakSpotCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateWeakSpotBlockResponse = zWeakSpotBlock;
+
+export const zGetBlockPath = z.object({
+  block_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetBlockResponse = zBlockDetail;
+
+export const zCreateAttemptBody = zAttemptIn;
+
+export const zCreateAttemptPath = z.object({
+  block_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zCreateAttemptResponse = zAttemptOut;
+
+export const zFlagAttemptBody = zFlagIn;
+
+export const zFlagAttemptPath = z.object({
+  block_id: z.uuid(),
+  question_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zFlagAttemptResponse = zFlagOut;
+
+export const zGetBlockQuestionPath = z.object({
+  block_id: z.uuid(),
+  n: z.int().gte(1).lte(200),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetBlockQuestionResponse = zQuestionView;
+
 export const zGetChapterPath = z.object({
   chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
 });
@@ -712,6 +1080,11 @@ export const zGetHealthResponse = zHealthResponse;
 /**
  * Successful Response
  */
+export const zGetLabValuesResponse = zLabValuesOut;
+
+/**
+ * Successful Response
+ */
 export const zGetMeResponse = zMeResponse;
 
 export const zUpdateMeBody = zMeUpdate;
@@ -730,6 +1103,22 @@ export const zGetNavResponse = zNavResponse;
  * Successful Response
  */
 export const zGetPublicConfigResponse = zPublicConfig;
+
+export const zGetQbankPoolQuery = z.object({
+  exam: z
+    .string()
+    .regex(/^[a-z0-9]{2,16}$/)
+    .nullish(),
+  systems: z.array(z.string()).max(40).nullish(),
+  disciplines: z.array(z.string()).max(40).nullish(),
+  status: z.enum(["all", "unused", "incorrect", "flagged", "correct"]).optional().default("all"),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetQbankPoolResponse = zPoolResponse;
 
 export const zGetReadingPositionQuery = z.object({
   chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),

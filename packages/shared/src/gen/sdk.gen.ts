@@ -5,6 +5,21 @@ import * as z from "zod";
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from "./client";
 import { client } from "./client.gen";
 import type {
+  CreateAttemptData,
+  CreateAttemptErrors,
+  CreateAttemptResponses,
+  CreateBlockData,
+  CreateBlockErrors,
+  CreateBlockResponses,
+  CreateSingleQuestionBlockData,
+  CreateSingleQuestionBlockErrors,
+  CreateSingleQuestionBlockResponses,
+  CreateWeakSpotBlockData,
+  CreateWeakSpotBlockErrors,
+  CreateWeakSpotBlockResponses,
+  FlagAttemptData,
+  FlagAttemptErrors,
+  FlagAttemptResponses,
   GetAdminOverviewData,
   GetAdminOverviewErrors,
   GetAdminOverviewResponses,
@@ -14,6 +29,12 @@ import type {
   GetAppConfigHistoryErrors,
   GetAppConfigHistoryResponses,
   GetAppConfigResponses,
+  GetBlockData,
+  GetBlockErrors,
+  GetBlockQuestionData,
+  GetBlockQuestionErrors,
+  GetBlockQuestionResponses,
+  GetBlockResponses,
   GetChapterData,
   GetChapterErrors,
   GetChapterResponses,
@@ -23,6 +44,9 @@ import type {
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
+  GetLabValuesData,
+  GetLabValuesErrors,
+  GetLabValuesResponses,
   GetMeData,
   GetMeErrors,
   GetMeResponses,
@@ -31,6 +55,9 @@ import type {
   GetNavResponses,
   GetPublicConfigData,
   GetPublicConfigResponses,
+  GetQbankPoolData,
+  GetQbankPoolErrors,
+  GetQbankPoolResponses,
   GetReadingPositionData,
   GetReadingPositionErrors,
   GetReadingPositionResponses,
@@ -43,6 +70,9 @@ import type {
   ListAppConfigData,
   ListAppConfigErrors,
   ListAppConfigResponses,
+  ListBlocksData,
+  ListBlocksErrors,
+  ListBlocksResponses,
   ListSeedRunsData,
   ListSeedRunsErrors,
   ListSeedRunsResponses,
@@ -63,26 +93,47 @@ import type {
   UpdateMeResponses,
 } from "./types.gen";
 import {
+  zCreateAttemptBody,
+  zCreateAttemptPath,
+  zCreateAttemptResponse,
+  zCreateBlockBody,
+  zCreateBlockResponse,
+  zCreateSingleQuestionBlockBody,
+  zCreateSingleQuestionBlockResponse,
+  zCreateWeakSpotBlockBody,
+  zCreateWeakSpotBlockResponse,
+  zFlagAttemptBody,
+  zFlagAttemptPath,
+  zFlagAttemptResponse,
   zGetAdminOverviewResponse,
   zGetAppConfigHistoryPath,
   zGetAppConfigHistoryQuery,
   zGetAppConfigHistoryResponse,
   zGetAppConfigPath,
   zGetAppConfigResponse,
+  zGetBlockPath,
+  zGetBlockQuestionPath,
+  zGetBlockQuestionResponse,
+  zGetBlockResponse,
   zGetChapterPath,
   zGetChapterResponse,
   zGetCoursesQuery,
   zGetCoursesResponse,
   zGetHealthResponse,
+  zGetLabValuesResponse,
   zGetMeResponse,
   zGetNavResponse,
   zGetPublicConfigResponse,
+  zGetQbankPoolQuery,
+  zGetQbankPoolResponse,
   zGetReadingPositionQuery,
   zGetReadingPositionResponse,
   zGetReadyResponse,
   zGetSeedRunPath,
   zGetSeedRunResponse,
   zListAppConfigResponse,
+  zListBlocksQuery,
+  zListBlocksResponse,
   zListSeedRunsResponse,
   zPutAppConfigBody,
   zPutAppConfigPath,
@@ -284,6 +335,186 @@ export const getSeedRun = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * The caller's past blocks, newest first
+ */
+export const listBlocks = <ThrowOnError extends boolean = false>(
+  options?: Options<ListBlocksData, ThrowOnError>,
+): RequestResult<ListBlocksResponses, ListBlocksErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListBlocksResponses, ListBlocksErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListBlocksQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListBlocksResponse.parseAsync(data),
+    url: "/api/blocks",
+    ...options,
+  });
+
+/**
+ * Build a block from the filters: server-chosen, no duplicates, deterministic for the seed
+ */
+export const createBlock = <ThrowOnError extends boolean = false>(
+  options: Options<CreateBlockData, ThrowOnError>,
+): RequestResult<CreateBlockResponses, CreateBlockErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateBlockResponses, CreateBlockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateBlockBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateBlockResponse.parseAsync(data),
+    url: "/api/blocks",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * A one-question tutor block for a question found elsewhere (search); answers stay hidden until answered
+ */
+export const createSingleQuestionBlock = <ThrowOnError extends boolean = false>(
+  options: Options<CreateSingleQuestionBlockData, ThrowOnError>,
+): RequestResult<CreateSingleQuestionBlockResponses, CreateSingleQuestionBlockErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateSingleQuestionBlockResponses, CreateSingleQuestionBlockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateSingleQuestionBlockBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateSingleQuestionBlockResponse.parseAsync(data),
+    url: "/api/blocks/single",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Build a block from the caller's weakest topics (accuracy weighted by recency, with a minimum of attempts)
+ */
+export const createWeakSpotBlock = <ThrowOnError extends boolean = false>(
+  options: Options<CreateWeakSpotBlockData, ThrowOnError>,
+): RequestResult<CreateWeakSpotBlockResponses, CreateWeakSpotBlockErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateWeakSpotBlockResponses, CreateWeakSpotBlockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateWeakSpotBlockBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateWeakSpotBlockResponse.parseAsync(data),
+    url: "/api/blocks/weak-spot",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * One block with the state of each question (answered, flagged; correct only in tutor mode)
+ */
+export const getBlock = <ThrowOnError extends boolean = false>(
+  options: Options<GetBlockData, ThrowOnError>,
+): RequestResult<GetBlockResponses, GetBlockErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetBlockResponses, GetBlockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetBlockPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetBlockResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}",
+    ...options,
+  });
+
+/**
+ * Answer a question: the server grades it; idempotent per (block, question); explanation in tutor mode only
+ */
+export const createAttempt = <ThrowOnError extends boolean = false>(
+  options: Options<CreateAttemptData, ThrowOnError>,
+): RequestResult<CreateAttemptResponses, CreateAttemptErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateAttemptResponses, CreateAttemptErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateAttemptBody,
+          path: zCreateAttemptPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateAttemptResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/attempts",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Flag or unflag a question of the block (the only field a client may change after answering)
+ */
+export const flagAttempt = <ThrowOnError extends boolean = false>(
+  options: Options<FlagAttemptData, ThrowOnError>,
+): RequestResult<FlagAttemptResponses, FlagAttemptErrors, ThrowOnError> =>
+  (options.client ?? client).patch<FlagAttemptResponses, FlagAttemptErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zFlagAttemptBody,
+          path: zFlagAttemptPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zFlagAttemptResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/attempts/{question_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Question n of a block: no answer or explanation unless the caller has a graded attempt (tutor mode)
+ */
+export const getBlockQuestion = <ThrowOnError extends boolean = false>(
+  options: Options<GetBlockQuestionData, ThrowOnError>,
+): RequestResult<GetBlockQuestionResponses, GetBlockQuestionErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetBlockQuestionResponses, GetBlockQuestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetBlockQuestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetBlockQuestionResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/questions/{n}",
+    ...options,
+  });
+
+/**
  * A chapter with its ordered sections (TipTap JSON), resolved media and embedded questions
  */
 export const getChapter = <ThrowOnError extends boolean = false>(
@@ -340,6 +571,26 @@ export const getHealth = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetHealthResponse.parseAsync(data),
     url: "/api/health",
+    ...options,
+  });
+
+/**
+ * Reference ranges for the question view (Naadi's own table; the official one is linked, not copied)
+ */
+export const getLabValues = <ThrowOnError extends boolean = false>(
+  options?: Options<GetLabValuesData, ThrowOnError>,
+): RequestResult<GetLabValuesResponses, GetLabValuesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetLabValuesResponses, GetLabValuesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetLabValuesResponse.parseAsync(data),
+    url: "/api/lab-values",
     ...options,
   });
 
@@ -424,6 +675,26 @@ export const getPublicConfig = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetPublicConfigResponse.parseAsync(data),
     url: "/api/public-config",
+    ...options,
+  });
+
+/**
+ * How many questions match each Builder filter (live counts from the caller's attempts and the taxonomy)
+ */
+export const getQbankPool = <ThrowOnError extends boolean = false>(
+  options?: Options<GetQbankPoolData, ThrowOnError>,
+): RequestResult<GetQbankPoolResponses, GetQbankPoolErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetQbankPoolResponses, GetQbankPoolErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetQbankPoolQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetQbankPoolResponse.parseAsync(data),
+    url: "/api/qbank/pool",
     ...options,
   });
 

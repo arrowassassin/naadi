@@ -20,6 +20,7 @@ from .health.checks import database_check, nvidia_check, openrouter_check, stora
 from .health.service import Check, HealthService
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import RequestContextMiddleware
+from .qbank.routes import install_qbank_routes
 from .seed.jobs import drain_seed_tasks
 from .seed.jobs import router as seed_router
 from .settings import Settings, get_settings
@@ -108,6 +109,7 @@ def create_app(
     app.include_router(api.router)
     install_auth_routes(app)
     install_courses_routes(app)
+    install_qbank_routes(app)
     install_app_config(app, settings)
     app.include_router(seed_router)
     install_spa(app, settings.static_dir)

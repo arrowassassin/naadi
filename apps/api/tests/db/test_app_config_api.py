@@ -98,7 +98,7 @@ def test_public_config(client: TestClient) -> None:
     assert body["features"]["today"] is True
     assert body["features"]["assistant"] is False
     assert body["features"]["ink_lab"] is False  # admins only in prod
-    assert [i["id"] for i in body["nav"]] == ["today", "learn"]
+    assert [i["id"] for i in body["nav"]] == ["today", "learn", "practice"]
     assert body["exam_rules"]["modes"]["exam"]["assistant"] is False
     assert body["ui_copy"]["agent.quota_reset"] == "AI quota resets at {time}"
     # nothing from the server-only keys (model routing, budgets, search rules, buckets, generation)
@@ -216,7 +216,7 @@ def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: 
 
     listed = client.get("/api/admin/config", headers=admin).json()["items"]
     assert {i["key"]: i["source"] for i in listed} == {i["key"]: "db" for i in listed}
-    assert len(listed) == 10
+    assert len(listed) == 11
 
     entry = client.get("/api/admin/config/ui_copy", headers=admin).json()
     assert entry["source"] == "db"

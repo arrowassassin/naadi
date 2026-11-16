@@ -27,6 +27,282 @@ export type AdminOverview = {
 };
 
 /**
+ * AttemptIn
+ */
+export type AttemptIn = {
+  /**
+   * Chosen
+   */
+  chosen: string;
+  /**
+   * Flagged
+   */
+  flagged?: boolean;
+  /**
+   * Question Id
+   */
+  question_id: string;
+  /**
+   * Seconds
+   */
+  seconds?: number;
+};
+
+/**
+ * AttemptOut
+ */
+export type AttemptOut = {
+  /**
+   * Answered
+   *
+   * Questions answered in the block, this one included
+   */
+  answered: number;
+  /**
+   * Chosen
+   */
+  chosen: string;
+  /**
+   * Correct
+   *
+   * Only in tutor mode (with the explanation)
+   */
+  correct: boolean | null;
+  explanation: Explanation | null;
+  /**
+   * Finished
+   */
+  finished: boolean;
+  /**
+   * Flagged
+   */
+  flagged: boolean;
+  /**
+   * N
+   */
+  n: number;
+  /**
+   * Question Id
+   */
+  question_id: string;
+  /**
+   * Seconds
+   */
+  seconds: number | null;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * AttemptState
+ */
+export type AttemptState = {
+  /**
+   * Chosen
+   */
+  chosen: string;
+  /**
+   * Correct
+   *
+   * Only in tutor mode (with the explanation)
+   */
+  correct: boolean | null;
+  /**
+   * Seconds
+   */
+  seconds: number | null;
+};
+
+/**
+ * BlockConfig
+ */
+export type BlockConfig = {
+  /**
+   * Difficulty
+   */
+  difficulty: "easy" | "medium" | "hard" | null;
+  /**
+   * Disciplines
+   */
+  disciplines: Array<string>;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Mode
+   */
+  mode: "tutor" | "timed" | "exam";
+  /**
+   * Seed
+   */
+  seed: number;
+  /**
+   * Status
+   */
+  status: "all" | "unused" | "incorrect" | "flagged" | "correct";
+  /**
+   * Systems
+   */
+  systems: Array<string>;
+  /**
+   * Weak Spot
+   */
+  weak_spot: boolean;
+};
+
+/**
+ * BlockCreate
+ */
+export type BlockCreate = {
+  /**
+   * Count
+   *
+   * Bounded by app_config.exam_rules.block
+   */
+  count: number;
+  /**
+   * Difficulty
+   */
+  difficulty?: "easy" | "medium" | "hard" | null;
+  /**
+   * Disciplines
+   */
+  disciplines?: Array<string>;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Mode
+   */
+  mode?: "tutor" | "timed" | "exam";
+  /**
+   * Seed
+   *
+   * Same seed + filters give the same questions
+   */
+  seed?: number | null;
+  /**
+   * Status
+   */
+  status?: "all" | "unused" | "incorrect" | "flagged" | "correct";
+  /**
+   * Systems
+   */
+  systems?: Array<string>;
+};
+
+/**
+ * BlockDetail
+ */
+export type BlockDetail = {
+  /**
+   * Answered
+   */
+  answered: number;
+  config: BlockConfig;
+  /**
+   * Correct
+   *
+   * Right answers so far; only in tutor mode or once the block is finished
+   */
+  correct: number | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Finished At
+   */
+  finished_at: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Next N
+   *
+   * First unanswered question, else 1
+   */
+  next_n: number;
+  /**
+   * Questions
+   */
+  questions: Array<BlockQuestionState>;
+  /**
+   * Score
+   *
+   * Percent correct, set when the block finishes
+   */
+  score: number | null;
+  /**
+   * Started At
+   */
+  started_at: string | null;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * BlockLimits
+ */
+export type BlockLimits = {
+  /**
+   * Default Questions
+   */
+  default_questions: number;
+  /**
+   * Max Questions
+   */
+  max_questions: number;
+  /**
+   * Min Questions
+   */
+  min_questions: number;
+};
+
+/**
+ * BlockList
+ */
+export type BlockList = {
+  /**
+   * Blocks
+   */
+  blocks: Array<BlockSummary>;
+};
+
+/**
+ * BlockQuestionState
+ */
+export type BlockQuestionState = {
+  /**
+   * Answered
+   */
+  answered: boolean;
+  /**
+   * Correct
+   *
+   * Only in tutor mode or once the block is finished
+   */
+  correct: boolean | null;
+  /**
+   * Flagged
+   */
+  flagged: boolean;
+  /**
+   * N
+   *
+   * 1-based position in the block
+   */
+  n: number;
+};
+
+/**
  * BlockRules
  */
 export type BlockRules = {
@@ -42,6 +318,49 @@ export type BlockRules = {
    * Min Questions
    */
   min_questions: number;
+};
+
+/**
+ * BlockSummary
+ */
+export type BlockSummary = {
+  /**
+   * Answered
+   */
+  answered: number;
+  config: BlockConfig;
+  /**
+   * Correct
+   *
+   * Right answers so far; only in tutor mode or once the block is finished
+   */
+  correct: number | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Finished At
+   */
+  finished_at: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Score
+   *
+   * Percent correct, set when the block finishes
+   */
+  score: number | null;
+  /**
+   * Started At
+   */
+  started_at: string | null;
+  /**
+   * Total
+   */
+  total: number;
 };
 
 /**
@@ -572,6 +891,20 @@ export type ErrorResponse = {
 };
 
 /**
+ * ExamChoice
+ */
+export type ExamChoice = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
  * ExamFormat
  */
 export type ExamFormat = {
@@ -639,6 +972,34 @@ export type ExamRules = {
 };
 
 /**
+ * Explanation
+ */
+export type Explanation = {
+  /**
+   * Answer
+   *
+   * The correct option label
+   */
+  answer: string;
+  /**
+   * Answer Html
+   */
+  answer_html: string | null;
+  /**
+   * Educational Objective
+   */
+  educational_objective: string | null;
+  /**
+   * Explanation Html
+   */
+  explanation_html: string | null;
+  /**
+   * Why Not Html
+   */
+  why_not_html: string | null;
+};
+
+/**
  * FieldError
  */
 export type FieldError = {
@@ -654,6 +1015,34 @@ export type FieldError = {
    * Type
    */
   type: string;
+};
+
+/**
+ * FlagIn
+ */
+export type FlagIn = {
+  /**
+   * Flagged
+   */
+  flagged: boolean;
+};
+
+/**
+ * FlagOut
+ */
+export type FlagOut = {
+  /**
+   * Flagged
+   */
+  flagged: boolean;
+  /**
+   * N
+   */
+  n: number;
+  /**
+   * Question Id
+   */
+  question_id: string;
 };
 
 /**
@@ -705,6 +1094,74 @@ export type HealthResponse = {
 };
 
 export type JsonValue = unknown;
+
+/**
+ * LabGroupOut
+ */
+export type LabGroupOut = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Rows
+   */
+  rows: Array<LabRowOut>;
+};
+
+/**
+ * LabRowOut
+ */
+export type LabRowOut = {
+  /**
+   * Analyte
+   */
+  analyte: string;
+  /**
+   * Range
+   */
+  range: string;
+  /**
+   * Si
+   */
+  si: string | null;
+};
+
+/**
+ * LabValuesOut
+ */
+export type LabValuesOut = {
+  /**
+   * Groups
+   */
+  groups: Array<LabGroupOut>;
+  /**
+   * The official table, linked to rather than copied
+   */
+  official: SourceRef;
+  /**
+   * Where this table comes from (Naadi original)
+   */
+  source: SourceRef;
+};
+
+/**
+ * LessonLink
+ */
+export type LessonLink = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Title
+   */
+  title: string;
+};
 
 /**
  * MeResponse
@@ -852,6 +1309,22 @@ export type MockExam = {
    * Title
    */
   title: string;
+};
+
+/**
+ * ModeChoice
+ */
+export type ModeChoice = {
+  /**
+   * Available
+   *
+   * false while the screens for the mode have not shipped (S09)
+   */
+  available: boolean;
+  /**
+   * Id
+   */
+  id: "tutor" | "timed" | "exam";
 };
 
 /**
@@ -1025,6 +1498,77 @@ export type NextUp = {
 };
 
 /**
+ * PoolFacet
+ */
+export type PoolFacet = {
+  /**
+   * Count
+   *
+   * Questions that would match if this were chosen, given the other filters
+   */
+  count: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
+ * PoolResponse
+ */
+export type PoolResponse = {
+  /**
+   * Difficulty
+   *
+   * Counts per difficulty: easy, medium, hard, all
+   */
+  difficulty: {
+    [key: string]: number;
+  };
+  /**
+   * Disciplines
+   *
+   * Disciplines (Step 1) or clinical sciences (Step 2 CK)
+   */
+  disciplines: Array<PoolFacet>;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Exams
+   */
+  exams: Array<ExamChoice>;
+  limits: BlockLimits;
+  /**
+   * Modes
+   */
+  modes: Array<ModeChoice>;
+  /**
+   * Status
+   *
+   * Counts per status filter: all, unused, incorrect, flagged, correct
+   */
+  status: {
+    [key: string]: number;
+  };
+  /**
+   * Systems
+   */
+  systems: Array<PoolFacet>;
+  /**
+   * Total
+   *
+   * Questions matching every filter
+   */
+  total: number;
+};
+
+/**
  * Profile
  */
 export type Profile = {
@@ -1136,6 +1680,36 @@ export type PublicConfig = {
 };
 
 /**
+ * QuestionBody
+ *
+ * A question as the client may see it before answering: never the answer or any explanation.
+ */
+export type QuestionBody = {
+  /**
+   * Difficulty
+   */
+  difficulty: "easy" | "medium" | "hard" | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Options
+   */
+  options: Array<QuestionOption>;
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+  /**
+   * Topics
+   *
+   * Labels of the question's systems and disciplines
+   */
+  topics: Array<string>;
+};
+
+/**
  * QuestionOption
  */
 export type QuestionOption = {
@@ -1147,6 +1721,39 @@ export type QuestionOption = {
    * Label
    */
   label: string;
+};
+
+/**
+ * QuestionView
+ */
+export type QuestionView = {
+  attempt: AttemptState | null;
+  /**
+   * Block Id
+   */
+  block_id: string;
+  /**
+   * Present only after the student's graded attempt, and only in tutor mode
+   */
+  explanation: Explanation | null;
+  /**
+   * Flagged
+   */
+  flagged: boolean;
+  lesson: LessonLink | null;
+  /**
+   * Mode
+   */
+  mode: "tutor" | "timed" | "exam";
+  /**
+   * N
+   */
+  n: number;
+  question: QuestionBody;
+  /**
+   * Total
+   */
+  total: number;
 };
 
 /**
@@ -1424,6 +2031,38 @@ export type SeedRunList = {
 };
 
 /**
+ * SingleBlockCreate
+ */
+export type SingleBlockCreate = {
+  /**
+   * Question Id
+   */
+  question_id: string;
+};
+
+/**
+ * SourceRef
+ */
+export type SourceRef = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * License
+   */
+  license: string;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Url
+   */
+  url: string | null;
+};
+
+/**
  * SystemRef
  */
 export type SystemRef = {
@@ -1463,6 +2102,65 @@ export type ValidationError = {
    * Error Type
    */
   type: string;
+};
+
+/**
+ * WeakCellOut
+ */
+export type WeakCellOut = {
+  /**
+   * Attempts
+   */
+  attempts: number;
+  /**
+   * Correct
+   */
+  correct: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
+ * WeakSpotBlock
+ */
+export type WeakSpotBlock = {
+  block: BlockDetail;
+  /**
+   * Cells
+   *
+   * The weakest topics the block was built from
+   */
+  cells: Array<WeakCellOut>;
+};
+
+/**
+ * WeakSpotCreate
+ */
+export type WeakSpotCreate = {
+  /**
+   * Count
+   *
+   * Default 20, at most the questions available
+   */
+  count?: number | null;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Mode
+   */
+  mode?: "tutor" | "timed" | "exam";
+  /**
+   * Seed
+   */
+  seed?: number | null;
 };
 
 export type ListAppConfigData = {
@@ -1832,6 +2530,366 @@ export type GetSeedRunResponses = {
 
 export type GetSeedRunResponse = GetSeedRunResponses[keyof GetSeedRunResponses];
 
+export type ListBlocksData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/blocks";
+};
+
+export type ListBlocksErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListBlocksError = ListBlocksErrors[keyof ListBlocksErrors];
+
+export type ListBlocksResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlockList;
+};
+
+export type ListBlocksResponse = ListBlocksResponses[keyof ListBlocksResponses];
+
+export type CreateBlockData = {
+  body: BlockCreate;
+  path?: never;
+  query?: never;
+  url: "/api/blocks";
+};
+
+export type CreateBlockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid request or a pool too small for the block
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateBlockError = CreateBlockErrors[keyof CreateBlockErrors];
+
+export type CreateBlockResponses = {
+  /**
+   * Successful Response
+   */
+  201: BlockDetail;
+};
+
+export type CreateBlockResponse = CreateBlockResponses[keyof CreateBlockResponses];
+
+export type CreateSingleQuestionBlockData = {
+  body: SingleBlockCreate;
+  path?: never;
+  query?: never;
+  url: "/api/blocks/single";
+};
+
+export type CreateSingleQuestionBlockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateSingleQuestionBlockError = CreateSingleQuestionBlockErrors[keyof CreateSingleQuestionBlockErrors];
+
+export type CreateSingleQuestionBlockResponses = {
+  /**
+   * Successful Response
+   */
+  201: BlockDetail;
+};
+
+export type CreateSingleQuestionBlockResponse =
+  CreateSingleQuestionBlockResponses[keyof CreateSingleQuestionBlockResponses];
+
+export type CreateWeakSpotBlockData = {
+  body: WeakSpotCreate;
+  path?: never;
+  query?: never;
+  url: "/api/blocks/weak-spot";
+};
+
+export type CreateWeakSpotBlockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid request or a pool too small for the block
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateWeakSpotBlockError = CreateWeakSpotBlockErrors[keyof CreateWeakSpotBlockErrors];
+
+export type CreateWeakSpotBlockResponses = {
+  /**
+   * Successful Response
+   */
+  201: WeakSpotBlock;
+};
+
+export type CreateWeakSpotBlockResponse = CreateWeakSpotBlockResponses[keyof CreateWeakSpotBlockResponses];
+
+export type GetBlockData = {
+  body?: never;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}";
+};
+
+export type GetBlockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetBlockError = GetBlockErrors[keyof GetBlockErrors];
+
+export type GetBlockResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlockDetail;
+};
+
+export type GetBlockResponse = GetBlockResponses[keyof GetBlockResponses];
+
+export type CreateAttemptData = {
+  body: AttemptIn;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/attempts";
+};
+
+export type CreateAttemptErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid request or a pool too small for the block
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateAttemptError = CreateAttemptErrors[keyof CreateAttemptErrors];
+
+export type CreateAttemptResponses = {
+  /**
+   * Successful Response
+   */
+  200: AttemptOut;
+};
+
+export type CreateAttemptResponse = CreateAttemptResponses[keyof CreateAttemptResponses];
+
+export type FlagAttemptData = {
+  body: FlagIn;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+    /**
+     * Question Id
+     */
+    question_id: string;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/attempts/{question_id}";
+};
+
+export type FlagAttemptErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type FlagAttemptError = FlagAttemptErrors[keyof FlagAttemptErrors];
+
+export type FlagAttemptResponses = {
+  /**
+   * Successful Response
+   */
+  200: FlagOut;
+};
+
+export type FlagAttemptResponse = FlagAttemptResponses[keyof FlagAttemptResponses];
+
+export type GetBlockQuestionData = {
+  body?: never;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+    /**
+     * N
+     *
+     * 1-based position
+     */
+    n: number;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/questions/{n}";
+};
+
+export type GetBlockQuestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetBlockQuestionError = GetBlockQuestionErrors[keyof GetBlockQuestionErrors];
+
+export type GetBlockQuestionResponses = {
+  /**
+   * Successful Response
+   */
+  200: QuestionView;
+};
+
+export type GetBlockQuestionResponse = GetBlockQuestionResponses[keyof GetBlockQuestionResponses];
+
 export type GetChapterData = {
   body?: never;
   path: {
@@ -1957,6 +3015,39 @@ export type GetHealthResponses = {
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
 
+export type GetLabValuesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/lab-values";
+};
+
+export type GetLabValuesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetLabValuesError = GetLabValuesErrors[keyof GetLabValuesErrors];
+
+export type GetLabValuesResponses = {
+  /**
+   * Successful Response
+   */
+  200: LabValuesOut;
+};
+
+export type GetLabValuesResponse = GetLabValuesResponses[keyof GetLabValuesResponses];
+
 export type GetMeData = {
   body?: never;
   path?: never;
@@ -2075,6 +3166,64 @@ export type GetPublicConfigResponses = {
 };
 
 export type GetPublicConfigResponse = GetPublicConfigResponses[keyof GetPublicConfigResponses];
+
+export type GetQbankPoolData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     */
+    exam?: string | null;
+    /**
+     * Systems
+     */
+    systems?: Array<string> | null;
+    /**
+     * Disciplines
+     */
+    disciplines?: Array<string> | null;
+    /**
+     * Status
+     */
+    status?: "all" | "unused" | "incorrect" | "flagged" | "correct";
+    /**
+     * Difficulty
+     */
+    difficulty?: "easy" | "medium" | "hard" | null;
+  };
+  url: "/api/qbank/pool";
+};
+
+export type GetQbankPoolErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid request or a pool too small for the block
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetQbankPoolError = GetQbankPoolErrors[keyof GetQbankPoolErrors];
+
+export type GetQbankPoolResponses = {
+  /**
+   * Successful Response
+   */
+  200: PoolResponse;
+};
+
+export type GetQbankPoolResponse = GetQbankPoolResponses[keyof GetQbankPoolResponses];
 
 export type GetReadingPositionData = {
   body?: never;

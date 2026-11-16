@@ -29,6 +29,502 @@
         "title": "AdminOverview",
         "type": "object"
       },
+      "AttemptIn": {
+        "additionalProperties": false,
+        "properties": {
+          "chosen": {
+            "pattern": "^[A-J]$",
+            "title": "Chosen",
+            "type": "string"
+          },
+          "flagged": {
+            "default": false,
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "question_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+            "title": "Question Id",
+            "type": "string"
+          },
+          "seconds": {
+            "default": 0,
+            "maximum": 7200.0,
+            "minimum": 0.0,
+            "title": "Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "question_id",
+          "chosen"
+        ],
+        "title": "AttemptIn",
+        "type": "object"
+      },
+      "AttemptOut": {
+        "properties": {
+          "answered": {
+            "description": "Questions answered in the block, this one included",
+            "title": "Answered",
+            "type": "integer"
+          },
+          "chosen": {
+            "title": "Chosen",
+            "type": "string"
+          },
+          "correct": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Only in tutor mode (with the explanation)",
+            "title": "Correct"
+          },
+          "explanation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Explanation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "finished": {
+            "title": "Finished",
+            "type": "boolean"
+          },
+          "flagged": {
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "n": {
+            "title": "N",
+            "type": "integer"
+          },
+          "question_id": {
+            "title": "Question Id",
+            "type": "string"
+          },
+          "seconds": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seconds"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "question_id",
+          "n",
+          "chosen",
+          "correct",
+          "flagged",
+          "seconds",
+          "explanation",
+          "answered",
+          "total",
+          "finished"
+        ],
+        "title": "AttemptOut",
+        "type": "object"
+      },
+      "AttemptState": {
+        "properties": {
+          "chosen": {
+            "title": "Chosen",
+            "type": "string"
+          },
+          "correct": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Only in tutor mode (with the explanation)",
+            "title": "Correct"
+          },
+          "seconds": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seconds"
+          }
+        },
+        "required": [
+          "chosen",
+          "seconds",
+          "correct"
+        ],
+        "title": "AttemptState",
+        "type": "object"
+      },
+      "BlockConfig": {
+        "properties": {
+          "difficulty": {
+            "anyOf": [
+              {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "disciplines": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Disciplines",
+            "type": "array"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "tutor",
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "seed": {
+            "title": "Seed",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "all",
+              "unused",
+              "incorrect",
+              "flagged",
+              "correct"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "systems": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "weak_spot": {
+            "title": "Weak Spot",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "exam",
+          "mode",
+          "status",
+          "difficulty",
+          "systems",
+          "disciplines",
+          "seed",
+          "weak_spot"
+        ],
+        "title": "BlockConfig",
+        "type": "object"
+      },
+      "BlockCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "count": {
+            "description": "Bounded by app_config.exam_rules.block",
+            "maximum": 80.0,
+            "minimum": 1.0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "difficulty": {
+            "anyOf": [
+              {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "disciplines": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Disciplines",
+            "type": "array"
+          },
+          "exam": {
+            "pattern": "^[a-z0-9]{2,16}$",
+            "title": "Exam",
+            "type": "string"
+          },
+          "mode": {
+            "default": "tutor",
+            "enum": [
+              "tutor",
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "seed": {
+            "anyOf": [
+              {
+                "maximum": 4.611686018427388e+18,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Same seed + filters give the same questions",
+            "title": "Seed"
+          },
+          "status": {
+            "default": "all",
+            "enum": [
+              "all",
+              "unused",
+              "incorrect",
+              "flagged",
+              "correct"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "systems": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Systems",
+            "type": "array"
+          }
+        },
+        "required": [
+          "exam",
+          "count"
+        ],
+        "title": "BlockCreate",
+        "type": "object"
+      },
+      "BlockDetail": {
+        "properties": {
+          "answered": {
+            "title": "Answered",
+            "type": "integer"
+          },
+          "config": {
+            "$ref": "#/components/schemas/BlockConfig"
+          },
+          "correct": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Right answers so far; only in tutor mode or once the block is finished",
+            "title": "Correct"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "next_n": {
+            "description": "First unanswered question, else 1",
+            "title": "Next N",
+            "type": "integer"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/BlockQuestionState"
+            },
+            "title": "Questions",
+            "type": "array"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Percent correct, set when the block finishes",
+            "title": "Score"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "created_at",
+          "started_at",
+          "finished_at",
+          "config",
+          "total",
+          "answered",
+          "correct",
+          "score",
+          "questions",
+          "next_n"
+        ],
+        "title": "BlockDetail",
+        "type": "object"
+      },
+      "BlockLimits": {
+        "properties": {
+          "default_questions": {
+            "title": "Default Questions",
+            "type": "integer"
+          },
+          "max_questions": {
+            "title": "Max Questions",
+            "type": "integer"
+          },
+          "min_questions": {
+            "title": "Min Questions",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "min_questions",
+          "max_questions",
+          "default_questions"
+        ],
+        "title": "BlockLimits",
+        "type": "object"
+      },
+      "BlockList": {
+        "properties": {
+          "blocks": {
+            "items": {
+              "$ref": "#/components/schemas/BlockSummary"
+            },
+            "title": "Blocks",
+            "type": "array"
+          }
+        },
+        "required": [
+          "blocks"
+        ],
+        "title": "BlockList",
+        "type": "object"
+      },
+      "BlockQuestionState": {
+        "properties": {
+          "answered": {
+            "title": "Answered",
+            "type": "boolean"
+          },
+          "correct": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Only in tutor mode or once the block is finished",
+            "title": "Correct"
+          },
+          "flagged": {
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "n": {
+            "description": "1-based position in the block",
+            "title": "N",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "n",
+          "answered",
+          "flagged",
+          "correct"
+        ],
+        "title": "BlockQuestionState",
+        "type": "object"
+      },
       "BlockRules": {
         "additionalProperties": false,
         "properties": {
@@ -57,6 +553,92 @@
           "default_questions"
         ],
         "title": "BlockRules",
+        "type": "object"
+      },
+      "BlockSummary": {
+        "properties": {
+          "answered": {
+            "title": "Answered",
+            "type": "integer"
+          },
+          "config": {
+            "$ref": "#/components/schemas/BlockConfig"
+          },
+          "correct": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Right answers so far; only in tutor mode or once the block is finished",
+            "title": "Correct"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Percent correct, set when the block finishes",
+            "title": "Score"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "created_at",
+          "started_at",
+          "finished_at",
+          "config",
+          "total",
+          "answered",
+          "correct",
+          "score"
+        ],
+        "title": "BlockSummary",
         "type": "object"
       },
       "ChapterDetail": {
@@ -981,6 +1563,24 @@
         "title": "ErrorResponse",
         "type": "object"
       },
+      "ExamChoice": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "title": "ExamChoice",
+        "type": "object"
+      },
       "ExamFormat": {
         "additionalProperties": false,
         "properties": {
@@ -1101,6 +1701,68 @@
         "title": "ExamRules",
         "type": "object"
       },
+      "Explanation": {
+        "properties": {
+          "answer": {
+            "description": "The correct option label",
+            "title": "Answer",
+            "type": "string"
+          },
+          "answer_html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answer Html"
+          },
+          "educational_objective": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Educational Objective"
+          },
+          "explanation_html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explanation Html"
+          },
+          "why_not_html": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Why Not Html"
+          }
+        },
+        "required": [
+          "answer",
+          "answer_html",
+          "explanation_html",
+          "why_not_html",
+          "educational_objective"
+        ],
+        "title": "Explanation",
+        "type": "object"
+      },
       "FieldError": {
         "properties": {
           "loc": {
@@ -1132,6 +1794,43 @@
           "type"
         ],
         "title": "FieldError",
+        "type": "object"
+      },
+      "FlagIn": {
+        "additionalProperties": false,
+        "properties": {
+          "flagged": {
+            "title": "Flagged",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "flagged"
+        ],
+        "title": "FlagIn",
+        "type": "object"
+      },
+      "FlagOut": {
+        "properties": {
+          "flagged": {
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "n": {
+            "title": "N",
+            "type": "integer"
+          },
+          "question_id": {
+            "title": "Question Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question_id",
+          "n",
+          "flagged"
+        ],
+        "title": "FlagOut",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -1230,6 +1929,106 @@
         "type": "object"
       },
       "JsonValue": {},
+      "LabGroupOut": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/LabRowOut"
+            },
+            "title": "Rows",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "rows"
+        ],
+        "title": "LabGroupOut",
+        "type": "object"
+      },
+      "LabRowOut": {
+        "properties": {
+          "analyte": {
+            "title": "Analyte",
+            "type": "string"
+          },
+          "range": {
+            "title": "Range",
+            "type": "string"
+          },
+          "si": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Si"
+          }
+        },
+        "required": [
+          "analyte",
+          "range",
+          "si"
+        ],
+        "title": "LabRowOut",
+        "type": "object"
+      },
+      "LabValuesOut": {
+        "properties": {
+          "groups": {
+            "items": {
+              "$ref": "#/components/schemas/LabGroupOut"
+            },
+            "title": "Groups",
+            "type": "array"
+          },
+          "official": {
+            "$ref": "#/components/schemas/SourceRef",
+            "description": "The official table, linked to rather than copied"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceRef",
+            "description": "Where this table comes from (Naadi original)"
+          }
+        },
+        "required": [
+          "groups",
+          "source",
+          "official"
+        ],
+        "title": "LabValuesOut",
+        "type": "object"
+      },
+      "LessonLink": {
+        "properties": {
+          "chapter_id": {
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapter_id",
+          "title"
+        ],
+        "title": "LessonLink",
+        "type": "object"
+      },
       "MeResponse": {
         "properties": {
           "email": {
@@ -1535,6 +2334,30 @@
         "title": "MockExam",
         "type": "object"
       },
+      "ModeChoice": {
+        "properties": {
+          "available": {
+            "description": "false while the screens for the mode have not shipped (S09)",
+            "title": "Available",
+            "type": "boolean"
+          },
+          "id": {
+            "enum": [
+              "tutor",
+              "timed",
+              "exam"
+            ],
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "available"
+        ],
+        "title": "ModeChoice",
+        "type": "object"
+      },
       "ModeRules": {
         "additionalProperties": false,
         "properties": {
@@ -1780,6 +2603,104 @@
         "title": "NextUp",
         "type": "object"
       },
+      "PoolFacet": {
+        "properties": {
+          "count": {
+            "description": "Questions that would match if this were chosen, given the other filters",
+            "title": "Count",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "count"
+        ],
+        "title": "PoolFacet",
+        "type": "object"
+      },
+      "PoolResponse": {
+        "properties": {
+          "difficulty": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "description": "Counts per difficulty: easy, medium, hard, all",
+            "title": "Difficulty",
+            "type": "object"
+          },
+          "disciplines": {
+            "description": "Disciplines (Step 1) or clinical sciences (Step 2 CK)",
+            "items": {
+              "$ref": "#/components/schemas/PoolFacet"
+            },
+            "title": "Disciplines",
+            "type": "array"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "exams": {
+            "items": {
+              "$ref": "#/components/schemas/ExamChoice"
+            },
+            "title": "Exams",
+            "type": "array"
+          },
+          "limits": {
+            "$ref": "#/components/schemas/BlockLimits"
+          },
+          "modes": {
+            "items": {
+              "$ref": "#/components/schemas/ModeChoice"
+            },
+            "title": "Modes",
+            "type": "array"
+          },
+          "status": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "description": "Counts per status filter: all, unused, incorrect, flagged, correct",
+            "title": "Status",
+            "type": "object"
+          },
+          "systems": {
+            "items": {
+              "$ref": "#/components/schemas/PoolFacet"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "total": {
+            "description": "Questions matching every filter",
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "exam",
+          "exams",
+          "limits",
+          "modes",
+          "total",
+          "systems",
+          "disciplines",
+          "status",
+          "difficulty"
+        ],
+        "title": "PoolResponse",
+        "type": "object"
+      },
       "Profile": {
         "properties": {
           "created_at": {
@@ -1970,6 +2891,59 @@
         "title": "PublicConfig",
         "type": "object"
       },
+      "QuestionBody": {
+        "description": "A question as the client may see it before answering: never the answer or any explanation.",
+        "properties": {
+          "difficulty": {
+            "anyOf": [
+              {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/QuestionOption"
+            },
+            "title": "Options",
+            "type": "array"
+          },
+          "stem_html": {
+            "title": "Stem Html",
+            "type": "string"
+          },
+          "topics": {
+            "description": "Labels of the question's systems and disciplines",
+            "items": {
+              "type": "string"
+            },
+            "title": "Topics",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "stem_html",
+          "options",
+          "difficulty",
+          "topics"
+        ],
+        "title": "QuestionBody",
+        "type": "object"
+      },
       "QuestionOption": {
         "properties": {
           "html": {
@@ -1986,6 +2960,83 @@
           "html"
         ],
         "title": "QuestionOption",
+        "type": "object"
+      },
+      "QuestionView": {
+        "properties": {
+          "attempt": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AttemptState"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "explanation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Explanation"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Present only after the student's graded attempt, and only in tutor mode"
+          },
+          "flagged": {
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "lesson": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LessonLink"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "mode": {
+            "enum": [
+              "tutor",
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "n": {
+            "title": "N",
+            "type": "integer"
+          },
+          "question": {
+            "$ref": "#/components/schemas/QuestionBody"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "block_id",
+          "n",
+          "total",
+          "mode",
+          "question",
+          "lesson",
+          "flagged",
+          "attempt",
+          "explanation"
+        ],
+        "title": "QuestionView",
         "type": "object"
       },
       "Quota": {
@@ -2444,6 +3495,56 @@
         "title": "SeedRunList",
         "type": "object"
       },
+      "SingleBlockCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "question_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+            "title": "Question Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question_id"
+        ],
+        "title": "SingleBlockCreate",
+        "type": "object"
+      },
+      "SourceRef": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "license": {
+            "title": "License",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "license",
+          "url"
+        ],
+        "title": "SourceRef",
+        "type": "object"
+      },
       "SystemRef": {
         "properties": {
           "id": {
@@ -2500,6 +3601,107 @@
           "type"
         ],
         "title": "ValidationError",
+        "type": "object"
+      },
+      "WeakCellOut": {
+        "properties": {
+          "attempts": {
+            "title": "Attempts",
+            "type": "integer"
+          },
+          "correct": {
+            "title": "Correct",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "attempts",
+          "correct"
+        ],
+        "title": "WeakCellOut",
+        "type": "object"
+      },
+      "WeakSpotBlock": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockDetail"
+          },
+          "cells": {
+            "description": "The weakest topics the block was built from",
+            "items": {
+              "$ref": "#/components/schemas/WeakCellOut"
+            },
+            "title": "Cells",
+            "type": "array"
+          }
+        },
+        "required": [
+          "block",
+          "cells"
+        ],
+        "title": "WeakSpotBlock",
+        "type": "object"
+      },
+      "WeakSpotCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "count": {
+            "anyOf": [
+              {
+                "maximum": 80.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Default 20, at most the questions available",
+            "title": "Count"
+          },
+          "exam": {
+            "pattern": "^[a-z0-9]{2,16}$",
+            "title": "Exam",
+            "type": "string"
+          },
+          "mode": {
+            "default": "tutor",
+            "enum": [
+              "tutor",
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "seed": {
+            "anyOf": [
+              {
+                "maximum": 4.611686018427388e+18,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seed"
+          }
+        },
+        "required": [
+          "exam"
+        ],
+        "title": "WeakSpotCreate",
         "type": "object"
       }
     }
@@ -3182,6 +4384,685 @@
         ]
       }
     },
+    "/api/blocks": {
+      "get": {
+        "operationId": "listBlocks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 30,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The caller's past blocks, newest first",
+        "tags": [
+          "qbank"
+        ]
+      },
+      "post": {
+        "operationId": "createBlock",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request or a pool too small for the block"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Build a block from the filters: server-chosen, no duplicates, deterministic for the seed",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/single": {
+      "post": {
+        "operationId": "createSingleQuestionBlock",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SingleBlockCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "A one-question tutor block for a question found elsewhere (search); answers stay hidden until answered",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/weak-spot": {
+      "post": {
+        "operationId": "createWeakSpotBlock",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WeakSpotCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeakSpotBlock"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request or a pool too small for the block"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Build a block from the caller's weakest topics (accuracy weighted by recency, with a minimum of attempts)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}": {
+      "get": {
+        "operationId": "getBlock",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "One block with the state of each question (answered, flagged; correct only in tutor mode)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}/attempts": {
+      "post": {
+        "operationId": "createAttempt",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttemptIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttemptOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request or a pool too small for the block"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Answer a question: the server grades it; idempotent per (block, question); explanation in tutor mode only",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}/attempts/{question_id}": {
+      "patch": {
+        "operationId": "flagAttempt",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "question_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Question Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FlagIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlagOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Flag or unflag a question of the block (the only field a client may change after answering)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}/questions/{n}": {
+      "get": {
+        "operationId": "getBlockQuestion",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          },
+          {
+            "description": "1-based position",
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "schema": {
+              "description": "1-based position",
+              "maximum": 200,
+              "minimum": 1,
+              "title": "N",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuestionView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Question n of a block: no answer or explanation unless the caller has a graded attempt (tutor mode)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
     "/api/chapters/{chapter_id}": {
       "get": {
         "operationId": "getChapter",
@@ -3410,6 +5291,57 @@
         ]
       }
     },
+    "/api/lab-values": {
+      "get": {
+        "operationId": "getLabValues",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LabValuesOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Reference ranges for the question view (Naadi's own table; the official one is linked, not copied)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
     "/api/me": {
       "get": {
         "operationId": "getMe",
@@ -3599,6 +5531,164 @@
         "summary": "Public client configuration (no auth): Supabase URL + anon key, sign-in options, version",
         "tags": [
           "auth"
+        ]
+      }
+    },
+    "/api/qbank/pool": {
+      "get": {
+        "operationId": "getQbankPool",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "exam",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[a-z0-9]{2,16}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exam"
+            }
+          },
+          {
+            "in": "query",
+            "name": "systems",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 40,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Systems"
+            }
+          },
+          {
+            "in": "query",
+            "name": "disciplines",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 40,
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Disciplines"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "default": "all",
+              "enum": [
+                "all",
+                "unused",
+                "incorrect",
+                "flagged",
+                "correct"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "difficulty",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "easy",
+                    "medium",
+                    "hard"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Difficulty"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PoolResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request or a pool too small for the block"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "How many questions match each Builder filter (live counts from the caller's attempts and the taxonomy)",
+        "tags": [
+          "qbank"
         ]
       }
     },
