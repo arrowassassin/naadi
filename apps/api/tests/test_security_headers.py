@@ -5,7 +5,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from naadi_api.security import content_security_policy
+from naadi_api.security import SEARCH_MEDIA_HOSTS, content_security_policy
 
 from .conftest import make_settings
 
@@ -28,7 +28,7 @@ def test_csp_is_strict() -> None:
     assert d["style-src"] == ["'self'"]
     assert d["font-src"] == ["'self'"]
     assert d["connect-src"] == ["'self'", SUPA, "wss://abcdefghijklmnopqrst.supabase.co"]
-    assert d["img-src"] == ["'self'", "data:", "blob:", SUPA]
+    assert d["img-src"] == ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, SUPA]
     assert d["frame-ancestors"] == ["'self'", "https://huggingface.co"]
     assert d["object-src"] == ["'none'"]
     assert "upgrade-insecure-requests" in d

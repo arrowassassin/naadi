@@ -46,3 +46,16 @@ Endpoint uptime (OpenRouter endpoints API, last 1 day): nemotron-3-ultra 95 %, l
 **Rendering (Chromium):** all four images decoded (960–1600 px). YouTube embed: "Error 153 Video player configuration error" from a `file://` page with no referrer; **plays correctly** when served over HTTP with `origin` + `referrerpolicy="strict-origin-when-cross-origin"`.
 
 Not yet tested: SearXNG (self-hosted in segment 04), Tavily-free fallbacks such as You.com (not adopted).
+
+## Agent platform (segment 04, 2026-11-16, live from the sandbox through `naadi_api/llm.py`)
+
+| Path | Result |
+|---|---|
+| `router` role → NVIDIA `ChatNVIDIA` (sync client in a worker thread; the aiohttp client ignores HTTPS_PROXY) | stream + invoke ok, 0.9–1.1 s, `llm_usage` rows written |
+| `reviewer` role → OpenRouter `ChatOpenRouter` 0.2.9 on the `openrouter` 1.3.179 SDK (uv override: the package pins <1.0) | stream + invoke ok, 1.0–3.1 s |
+| `ping` graph on Aegra 0.11.0 (streaming, custom block, interrupt → resume, background run, system cron) | all green in tests/agent (real NVIDIA call) |
+| `tools/check_models.py --app-config management` | YAML PASS; live `app_config` not migrated/seeded on the real project yet |
+
+**Search layers (live):** PubMed (Bio.Entrez) 5, Europe PMC 5 with licence per article, ClinicalTrials.gov 2–3, openFDA 0 for a disease query (404 = no match), MedlinePlus 0 for a 4-word term (2-word terms answer), Wikimedia Commons 4 reusable-licence images, YouTube oEmbed ok, Tavily `include_domains` → official pages (aamc.org, uscis.gov, travel.state.gov), second identical query served from cache.
+
+**PMC figures:** `pmc.ncbi.nlm.nih.gov/articles/…` answers Python HTTP clients with a reCAPTCHA page (curl passes), so figures come from NCBI's **PMC Article Datasets** bucket (`pmc-oa-opendata.s3.amazonaws.com/<PMCID>.<v>/`), whose JSON record carries `license_code`, `is_retracted` and the media list; captions from the article JATS XML. CSP `img-src` allows that host.

@@ -4,11 +4,22 @@ from __future__ import annotations
 
 from .settings import Settings
 
+# Images that layered search (naadi_api/search.py) returns, rendered directly with attribution: Wikimedia
+# Commons files and thumbnails, PMC open-access figures (NCBI's PMC Article Datasets bucket and the PMC CDN),
+# and YouTube thumbnails from oEmbed.
+SEARCH_MEDIA_HOSTS = (
+    "https://upload.wikimedia.org",
+    "https://thumb.wikimedia.org",
+    "https://pmc-oa-opendata.s3.amazonaws.com",
+    "https://cdn.ncbi.nlm.nih.gov",
+    "https://i.ytimg.com",
+)
+
 
 def content_security_policy(settings: Settings) -> str:
     supa = settings.supabase_origin
     connect = ["'self'"]
-    img = ["'self'", "data:", "blob:"]
+    img = ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS]
     if supa:
         connect += [supa, supa.replace("https://", "wss://", 1)]
         img.append(supa)  # Supabase Storage serves from the project origin (/storage/v1/...)

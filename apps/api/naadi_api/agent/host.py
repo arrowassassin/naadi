@@ -113,6 +113,8 @@ async def ensure_system_cron() -> None:
     from sqlalchemy.ext.asyncio import AsyncSession
 
     async with AsyncSession(db_manager.get_engine()) as session:
+        # Two processes starting together must not both create it: serialize on a transaction lock.
+        await session.execute(text("select pg_advisory_xact_lock(4611686018427387914)"))
         existing = await session.scalar(
             select(CronORM).where(
                 CronORM.user_id == SYSTEM_IDENTITY,

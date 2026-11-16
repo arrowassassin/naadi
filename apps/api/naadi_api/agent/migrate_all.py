@@ -21,6 +21,8 @@ import asyncio
 import os
 import sys
 import time
+from collections.abc import Iterator
+from contextlib import contextmanager
 
 import psycopg
 
@@ -88,6 +90,27 @@ def tables_without_rls(database_url: str) -> list[str]:
     return [r[0] for r in rows]
 
 
+# Session advisory lock held around the whole startup migration (Aegra + LangGraph + Naadi + securing), so two
+# containers or processes starting at once never run LangGraph's CREATE ... IF NOT EXISTS concurrently.
+# Distinct from naadi_api.migrate.ADVISORY_LOCK_KEY, which Naadi's own Alembic run takes inside this one.
+STARTUP_LOCK_KEY = 4_611_686_018_427_387_913
+LOCK_WAIT_S = 600.0
+
+
+@contextmanager
+def startup_lock(database_url: str) -> Iterator[None]:
+    conn = psycopg.connect(database_url, connect_timeout=10, autocommit=True, application_name="naadi-migrate-all")
+    try:
+        deadline = time.monotonic() + LOCK_WAIT_S
+        while not conn.execute("select pg_try_advisory_lock(%s)", (STARTUP_LOCK_KEY,)).fetchone()[0]:  # type: ignore[index]
+            if time.monotonic() > deadline:
+                raise TimeoutError(f"another process held the startup migration lock for more than {LOCK_WAIT_S:.0f}s")
+            time.sleep(1.0)
+        yield
+    finally:
+        conn.close()  # releases the session lock
+
+
 def run(settings: Settings) -> int:
     if settings.database_url is None:
         log.error("migrate_all.failed", error="DatabaseNotConfigured", detail="DATABASE_URL is not set")
@@ -95,6 +118,17 @@ def run(settings: Settings) -> int:
     url = settings.database_url.get_secret_value()
     started = time.monotonic()
     step = "aegra"
+    try:
+        lock = startup_lock(url)
+        lock.__enter__()
+    except Exception as exc:  # noqa: BLE001 - one clear line, then stop
+        log.error(
+            "migrate_all.failed",
+            step="lock",
+            error=type(exc).__name__,
+            detail=scrub(str(exc), settings.secret_values()),
+        )
+        return 1
     try:
         _aegra_env(settings)
         aegra_upgrade()
@@ -125,6 +159,8 @@ def run(settings: Settings) -> int:
             hint="the app was not started; fix the migration or the database and redeploy",
         )
         return 1
+    finally:
+        lock.__exit__(None, None, None)
     log.info(
         "migrate_all.ok",
         naadi_revision_before=before,
