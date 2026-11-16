@@ -1,0 +1,17 @@
+{
+ "id": "20261116T180058-lead-d4623f",
+ "ts": "2026-11-16T18:00:58.580704Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S05g APPROVED by reviewer-opus",
+ "body": "Reviewer: 378 unit + 206 db green on a fresh stack, stored ui_copy merge/fallback paths probed directly. Non-blocking note carried to S19 (admin editor): a fallen-back row reports admin_edited_at=None even when the stored row was admin-edited; surface the stored edit marker in GET /api/admin/config/ui_copy.",
+ "re": "20261116T174509-lead-d2eee0",
+ "thread": "20261116T174509-lead-d2eee0",
+ "refs": {
+  "commit": "e4d8757"
+ },
+ "requires_ack": false
+}
