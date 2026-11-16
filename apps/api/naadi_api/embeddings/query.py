@@ -30,7 +30,7 @@ from ..db import Database
 from ..logs import get_logger
 from . import ranking
 from .engine import Engine, vector_literal
-from .sources import pathway_task_text, question_text
+from .sources import clean_pathway_text, pathway_task_text, question_text
 from .text import html_to_text, markdown_to_text, tiptap_to_text
 
 log = get_logger("naadi.embeddings.query")
@@ -303,7 +303,10 @@ async def _load_meta(
         )
         for r in await cur.fetchall():
             if r["allow_ai_ingest"]:
-                meta[("pathway", r["id"])] = {**r, "current": markdown_to_text(r["body_md"])}
+                meta[("pathway", r["id"])] = {
+                    **r,
+                    "current": clean_pathway_text(markdown_to_text(r["body_md"]), r["title"]),
+                }
     return meta
 
 

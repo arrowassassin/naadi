@@ -2,7 +2,7 @@ import type { SearchHit, Segment, WebResult } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { Search as SearchIcon, X } from "lucide-react";
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { type RefObject, useEffect, useId, useMemo, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { type Scope, useLocalSearch, useWebSearch } from "./api";
@@ -199,11 +199,11 @@ function errorText(err: unknown, copy: Copy): { message: string; requestId: stri
   return { message: copy("search.error_body"), requestId: null };
 }
 
+type RootRef = RefObject<HTMLElement | null>;
+type InputRef = RefObject<HTMLInputElement | null>;
+
 /** Arrow keys move between the field and the result links. */
-function useResultKeys(
-  container: React.RefObject<HTMLElement | null>,
-  input: React.RefObject<HTMLInputElement | null>,
-): void {
+function useResultKeys(container: RootRef, input: InputRef): void {
   useEffect(() => {
     const root = container.current;
     if (!root) return;

@@ -2,7 +2,8 @@
 
 The mock chapters' "Instructions" sections carry the answer key as a table (header cells `Q`, `Answer`, `Topic`,
 repeated per column group). The answers already live in the questions' backend-only columns, so the importer
-removes such tables from `mock_exam` sections: no reader, search snippet or assistant context can show a key.
+removes such tables (and the sentence that points to them) from `mock_exam` sections: no reader, search snippet or
+assistant context can show a key.
 """
 
 from __future__ import annotations
@@ -14,6 +15,9 @@ from typing import Any
 _TABLE_HTML = re.compile(r"<table\b.*?</table>", re.S | re.I)
 _TH = re.compile(r"<th\b[^>]*>(.*?)</th>", re.S | re.I)
 _TAG = re.compile(r"<[^>]+>")
+# With the key gone the instructions must not send the student to it: results come after the exam.
+_KEY_SENTENCE = re.compile(r"then (?:score yourself|mark them) against the answer key at the end", re.I)
+_KEY_REPLACEMENT = "and your results appear after the exam"
 
 
 def is_answer_key_cells(cells: list[str]) -> bool:
@@ -43,6 +47,8 @@ def _is_key_table(node: Mapping[str, Any]) -> bool:
 def _strip_node(node: Any) -> Any:
     if not isinstance(node, Mapping):
         return node
+    if node.get("type") == "text" and isinstance(node.get("text"), str):
+        return {**node, "text": _KEY_SENTENCE.sub(_KEY_REPLACEMENT, node["text"])}
     kids = node.get("content")
     if not isinstance(kids, list):
         return node
@@ -58,4 +64,6 @@ def strip_answer_key(body: Mapping[str, Any] | None, body_html: str | None) -> t
         new_html = _TABLE_HTML.sub(
             lambda m: "" if is_answer_key_cells(_html_cells(m.group(0))) else m.group(0), body_html
         )
+    if new_html:
+        new_html = _KEY_SENTENCE.sub(_KEY_REPLACEMENT, new_html)
     return new_body, new_html

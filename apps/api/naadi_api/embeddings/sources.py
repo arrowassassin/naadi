@@ -136,15 +136,31 @@ async def question_docs(
             yield Doc(None, "question", r["id"], (text,))
 
 
-_ID_TOKEN = re.compile(r"\b[a-z0-9]+-\d{2}\b")
+_ID_TOKEN = re.compile(r"\b[a-z]{2,}-\d{2}\b")
+# `(erassubmit-60d)`, `(residencystart+150d)`, `(start)`: a parenthesised due-rule token, no spaces inside
+_RULE_TOKEN = re.compile(r"\s*\((?:[a-z]+(?:[+-]\d+d)?)\)")
+_EMPTY_CELLS = {"", "-", "\u2014", "official"}
+
+
+def clean_pathway_text(text: str, title: str | None = None) -> str:
+    """Pathway markdown as plain text without internal ids (`ca-01`), due-rule tokens (`(erassubmit-60d)`), a
+    repeated title line, and empty or placeholder table cells (`-`, an em dash, `official`)."""
+    lines: list[str] = []
+    for raw in text.split("\n"):
+        line = _RULE_TOKEN.sub("", _ID_TOKEN.sub("", raw))
+        if " ; " in f" {line} " or ";" in line:
+            cells = [c.strip() for c in line.split(";")]
+            line = " ; ".join(c for c in cells if c.lower() not in _EMPTY_CELLS)
+        line = line.strip(" ;").strip()
+        if line and line != (title or "").strip():
+            lines.append(line)
+    return "\n".join(lines)
 
 
 def pathway_task_text(stage_title: str | None, title: str | None, detail_md: str | None) -> tuple[str, str]:
-    """(heading, body) of a pathway task: the heading carries stage and title once; the body drops a repeated title
-    line and internal ids (`eras-08`) so neither reaches an embedding or a snippet."""
+    """(heading, body) of a pathway task: the heading carries stage and title once; the body is cleaned."""
     heading = " - ".join(x for x in (stage_title, title) if x)
-    lines = [ln for ln in markdown_to_text(detail_md).split("\n") if ln.strip() and ln.strip() != (title or "").strip()]
-    return heading, _ID_TOKEN.sub("", "\n".join(lines)).strip()
+    return heading, clean_pathway_text(markdown_to_text(detail_md), title)
 
 
 async def pathway_docs(
@@ -178,7 +194,7 @@ async def pathway_docs(
         ref = f"guide:{r['key']}"
         if wanted is not None and ref not in wanted:
             continue
-        chunks = chunk_text(markdown_to_text(r["body_md"]), heading=r["title"])
+        chunks = chunk_text(clean_pathway_text(markdown_to_text(r["body_md"]), r["title"]), heading=r["title"])
         if chunks:
             yield Doc(None, "pathway", ref, tuple(chunks))
 
