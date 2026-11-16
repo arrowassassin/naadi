@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import os
 import threading
+import warnings
 from collections import OrderedDict
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -20,6 +21,19 @@ from ..config import ConfigError, load_models_config
 from ..logs import get_logger
 
 log = get_logger("naadi.embeddings")
+
+
+def _quiet_third_party_logging() -> None:
+    """fastembed logs through loguru (coloured plain text on stderr) and huggingface_hub draws tqdm bars: neither
+    goes through naadi_api.logs, and the Space's stdout/stderr must be JSON lines only. A failure to load is
+    raised as ModelsNotCached and logged by the caller in the structured format."""
+    os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
+    # fastembed asks the hub to enable its bars; the hub then warns that the variable forbids it. Expected.
+    warnings.filterwarnings("ignore", message="Cannot enable progress bars", category=UserWarning)
+    from loguru import logger as loguru_logger  # a fastembed dependency
+
+    loguru_logger.disable("fastembed")
+
 
 # Column type of public.embeddings.embedding (halfvec(384), db/schema.sql); a model with another size
 # needs a migration and a re-index, so a mismatch fails loudly here.
@@ -85,6 +99,7 @@ class Engine:
         return kw
 
     def _load(self, kind: str) -> Any:
+        _quiet_third_party_logging()
         from fastembed import TextEmbedding  # imported lazily: onnxruntime is heavy
         from fastembed.rerank.cross_encoder import TextCrossEncoder
 

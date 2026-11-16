@@ -136,7 +136,7 @@ async def question_docs(
             yield Doc(None, "question", r["id"], (text,))
 
 
-_ID_TOKEN = re.compile(r"\b[a-z]{2,}-\d{2}\b")
+_ID_TOKEN = re.compile(r"\b[a-z][a-z0-9]*-\d{2}\b")
 # `(erassubmit-60d)`, `(residencystart+150d)`, `(start)`: a parenthesised due-rule token, no spaces inside
 _RULE_TOKEN = re.compile(r"\s*\((?:[a-z]+(?:[+-]\d+d)?)\)")
 _EMPTY_CELLS = {"", "-", "\u2014", "official"}

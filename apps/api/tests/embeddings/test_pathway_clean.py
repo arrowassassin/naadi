@@ -27,6 +27,12 @@ def test_ids_due_rules_and_empty_cells_are_removed() -> None:
     assert "California is a J-1 heavy market." in out
 
 
+def test_ids_with_digits_are_removed_too() -> None:
+    out = clean_pathway_text("s1-01 ; Plan Step 1\ns2ck-01 ; Book Step 2 CK\ns3lic-01 ; Licensure\nUse NBME-12 forms")
+    assert "s1-01" not in out and "s2ck-01" not in out and "s3lic-01" not in out
+    assert "Plan Step 1" in out and "Book Step 2 CK" in out and "Licensure" in out
+
+
 def test_a_repeated_title_line_is_dropped() -> None:
     assert clean_pathway_text("Title\nBody", "Title") == "Body"
 
