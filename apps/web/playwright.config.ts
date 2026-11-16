@@ -4,7 +4,7 @@ import { existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
-import { e2eDatabaseUrl } from "./e2e/databaseUrl";
+import { e2eTargets } from "./e2e/databaseUrl";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "../..");
@@ -117,6 +117,19 @@ function ensureLoopbackCert(): void {
     { stdio: "ignore" },
   );
 }
+/**
+ * Local runs only: decide the database and Supabase project now, at config load, before Playwright starts
+ * any webServer (they migrate the database). A hosted DATABASE_URL or SUPABASE_URL throws here unless it
+ * came as E2E_DATABASE_URL / E2E_SUPABASE_URL or E2E_ALLOW_HOSTED=1 is set (see e2e/databaseUrl.ts).
+ * The vetted values are written back, so the servers, the test-user helpers and the workers all see them.
+ */
+const targets = liveBaseUrl ? null : e2eTargets(process.env);
+if (targets) {
+  process.env.DATABASE_URL = targets.databaseUrl;
+  process.env.E2E_DATABASE_URL = targets.databaseUrl;
+  process.env.SUPABASE_URL = targets.supabaseUrl;
+  process.env.VITE_SUPABASE_URL = targets.supabaseUrl;
+}
 if (!liveBaseUrl) {
   ensureLoopbackCert();
   process.env.E2E_PROD_URL = `https://127.0.0.1:${PROD_PORT}`;
@@ -129,9 +142,7 @@ if (!liveBaseUrl) {
  */
 function webServers(): PlaywrightTestConfig["webServer"] {
   const api = path.join(repoRoot, "apps/api");
-  const dbUrl = e2eDatabaseUrl(process.env);
-  // Workers and specs (agent.spec, auth-users) read the same variable, so they use the vetted URL too.
-  if (dbUrl) process.env.E2E_DATABASE_URL = dbUrl;
+  const dbUrl = targets?.databaseUrl ?? "";
   const env = (extra: Record<string, string> = {}) => ({
     NAADI_STATIC_DIR: path.join(here, "dist"),
     APP_ENV: "local",
@@ -140,7 +151,10 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     APP_VERSION: process.env.APP_VERSION ?? "e2e",
     // The local API is checked against throwaway test accounts, never the owner's address.
     ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
-    ...(dbUrl ? { DATABASE_URL: dbUrl } : {}),
+    // Always explicit (empty when there is none), so a .env file can never supply another database or project.
+    DATABASE_URL: dbUrl,
+    SUPABASE_URL: targets?.supabaseUrl ?? "",
+    VITE_SUPABASE_URL: targets?.supabaseUrl ?? "",
     // No provider keys unless asked for (E2E_LIVE_LLM=1): the suite must not spend model or search quota,
     // and the agent runtime then records "unavailable" instead of calling a model.
     ...(process.env.E2E_LIVE_LLM === "1" ? {} : { NVIDIA_API_KEY: "", OPENROUTER_API_KEY: "", TAVILY_API_KEY: "" }),
