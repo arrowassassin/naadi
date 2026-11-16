@@ -1,0 +1,15 @@
+{
+ "id": "20261116T184213-seg07-search-2c97b5",
+ "ts": "2026-11-16T18:42:13.784476Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/web/src/router.tsx",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/web/src/router.tsx\n\nRecent integration commits touching them:\nfeat(practice): Builder, tutor-mode question view, lab values, offline answers, e2e (S08 web)\nfeat(web): ContentRenderer for every content node, Courses map and chapter Reader\nfeat(web): useAgent (official useStream against the same-origin Aegra runtime) and the admin agent diagnostics panel at /admin/agent\nchore(web): ink lab gated at runtime by features.ink_lab; drop the build-time VITE_FEATURE_INK_LAB flag (for seg12-ink)\nfeat(web): Supabase sign-in (magic link + Google, PKCE), callback, protected app shell, Today, Account\nfeat(ink): ink engine package, React binding, toolbar and /system/ink-lab latency harness\nwip(m0): checkpoint segment 01 scaffold in progress\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/web/src/router.tsx"
+ ],
+ "requires_ack": true
+}
