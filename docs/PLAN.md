@@ -75,7 +75,12 @@ Spec: [`handoff/HANDOFF.md`](../handoff/HANDOFF.md). Working rules: [`CLAUDE.md`
 
 ## Parallel execution (waves)
 
-Segments run in parallel where dependencies allow. Each implementer works in its **own git worktree on a local branch** (no file collisions), knows the names of the other agents in its wave, and uses **agent-to-agent messages** (`SendMessage`) to agree interfaces (schemas, API contracts, component props), report conflicts, ask for requirements, or wait on a dependency. Implementers commit locally and do not push or deploy; the lead merges each finished branch into `claude/blissful-knuth-1gh22d`, resolves conflicts, runs the full suite, deploys once, and only then sends the segment to `reviewer-opus`. Reviews stay one per segment; whole-app reviews run at wave ends.
+Segments run in parallel where dependencies allow, coordinated by the **multiplayer** skill (`.claude/skills/multiplayer/`, config `.claude/multiplayer.toml`):
+
+- **Ledger branch `claude/naadi-ledger`**: the lead posts each wave's `plan` and one `task` per agent. Agents `accept`, post `update`s, ask and answer, agree `contract`s, `claim` shared files, `ack` every message they read, and mark tasks `done`. It is append-only: the run's shared memory and audit trail.
+- **Shared branch `claude/naadi-shared`**: every parallel agent commits here through `multiplayer.py integrate` (rebase on the tip, fast tests, push, retry; conflicts are auto-posted to the ledger). Each agent works in its own worktree.
+- **Promote**: after `reviewer-opus` APPROVES a task, the lead `verify`s it, promotes `claude/naadi-shared` → `claude/blissful-knuth-1gh22d`, deploys and smoke-tests. Reviews stay one per segment; whole-app reviews run at the end of each wave.
+- Direct agent-to-agent messages (`SendMessage`) are only doorbells pointing at a ledger message id.
 
 | Wave | Runs together | Why they're independent | Coordination points |
 |---|---|---|---|
