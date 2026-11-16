@@ -171,9 +171,21 @@ jobs:
         env:
           NAADI_PG_PORT: "5432"
           NAADI_AUTH_SITE_URL: http://127.0.0.1:7860
+          # The same gateway serves Storage at /storage/v1 (stack.sh's storage-api on the host network), so the
+          # browser loads seeded figures from SUPABASE_URL/storage/v1/object/public/... as on the real project.
+          NAADI_AUTH_STORAGE_UPSTREAM: 127.0.0.1:5000
         run: apps/api/tests/auth/auth_stack.sh ci
       - name: Install ${{ matrix.browser }} for the pinned @playwright/test
         run: pnpm --filter @naadi/web exec playwright install --with-deps ${{ matrix.browser }}
+      - name: Migrate and import the seed content (chapters, questions, figures into local Storage)
+        working-directory: apps/api
+        env:
+          NAADI_STORAGE_URL: http://localhost:5000
+        run: |
+          uv run --frozen python -m naadi_api.migrate
+          # Throwaway service key for the local storage-api container (fixed local-only secret in stack.sh).
+          SUPABASE_SERVICE_ROLE_KEY="$(uv run --frozen python -c 'from tests.db.storage import local_service_key; print(local_service_key())')" \
+            uv run --frozen python scripts/seed.py --data ../../data --config ../../config
       - name: Build and run e2e (served by uvicorn from the production build)
         run: |
           pnpm --filter @naadi/web build
@@ -181,7 +193,7 @@ jobs:
       - name: Scan artifacts for credentials (minted CI keys, session storage, API keys)
         id: scan
         if: ${{ !cancelled() }}
-        run: uv --directory apps/api run --frozen python -m tests.auth.scan_artifacts ../../test-results/screens/01 ../../test-results/screens/12a ../../test-results/screens/03
+        run: uv --directory apps/api run --frozen python -m tests.auth.scan_artifacts ../../test-results/screens/01 ../../test-results/screens/12a ../../test-results/screens/03 ../../test-results/screens/06
       - if: ${{ !cancelled() && steps.scan.outcome == 'success' }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
@@ -191,6 +203,7 @@ jobs:
             test-results/screens/01
             test-results/screens/12a
             test-results/screens/03
+            test-results/screens/06
           retention-days: 14
           if-no-files-found: ignore
 
