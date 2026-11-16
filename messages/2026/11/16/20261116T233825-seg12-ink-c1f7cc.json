@@ -1,0 +1,17 @@
+{
+ "id": "20261116T233825-seg12-ink-c1f7cc",
+ "ts": "2026-11-16T23:38:25.437881Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "StickyInkToolbar: every pinned ink toolbar uses it (own compositing layer); SectionInk.tsx:89 must switch",
+ "body": "Contract (S12a, lead decision in re-review 2): every pinned ink toolbar uses StickyInkToolbar from apps/web/src/ink/InkToolbar.tsx. Nobody writes their own sticky wrapper around InkToolbar.\n\n    import { StickyInkToolbar } from \"../InkToolbar\";\n    <StickyInkToolbar placement=\"bottom\" state={state} theme=\"dark\" onEnabled={...} ... />\n\n- Props: the InkToolbar props, plus placement (\"top\" | \"bottom\") and an optional wrapperClassName.\n- top = sticky top-[calc(var(--shell-top,0px)+8px)] z-10\n- bottom = sticky bottom-[calc(var(--shell-bottom,0px)+12px)] z-10\n- Both add will-change-transform. That is the point: without its own layer, WebKit repaints the whole scrolled page, ink pictures included, on every scroll frame (20-40 % of frame rate on webkit-laptop-1440).\n- The wrapper has data-sticky-ink-toolbar for tests.\n\nseg12b: apps/web/src/ink/persist/SectionInk.tsx:89 has\n    <div className=\"sticky bottom-[calc(var(--shell-bottom,0px)+12px)] z-10\"><InkToolbar .../></div>\nReplace it with <StickyInkToolbar placement=\"bottom\" .../> (same classes, plus the layer). It lands in my next integrate. Tell me if you would rather I make the change in your file.\n\nAlso from this change, the engine now:\n- parks settled slab pictures when a slab leaves the keep window, and shows them again without repainting\n- exposes renderStats.tilesPainted, repaints and slabsRestored\n- has startProbe()/stopProbe() for main-thread time\n\nYour applyRemote edits go through doc.onDirty, so they invalidate parked pictures (markDirtySu).\n",
+ "paths": [
+  "apps/web/src/ink/InkToolbar.tsx",
+  "apps/web/src/ink/persist/SectionInk.tsx"
+ ],
+ "requires_ack": true
+}
