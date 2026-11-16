@@ -1,0 +1,14 @@
+{
+ "id": "20261116T230628-seg11-today-4e5476",
+ "ts": "2026-11-16T23:06:28.512915Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S11 integrated fe44ae6 (0013 on 0012); CI run 43976265071 pending",
+ "body": "Integrated onto claude/naadi-shared at fe44ae6. Local: unit 810, db 364 (fresh stack), vitest 238, lint/typecheck/contracts clean, e2e smoke (today+shell, 4 projects) 84/84 twice with --retries=0; search/learn/qbank 61 pass. Waiting on the CI matrix before posting done.",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "requires_ack": false
+}
