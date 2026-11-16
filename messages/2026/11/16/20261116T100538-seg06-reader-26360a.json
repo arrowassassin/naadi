@@ -1,0 +1,19 @@
+{
+ "id": "20261116T100538-seg06-reader-26360a",
+ "ts": "2026-11-16T10:05:38.206055Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: include courses router + GZip (excludes SSE); CSP frame-src for YouTube nocookie; regenerate contracts",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/main.py",
+  "apps/api/naadi_api/security.py",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/**"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
