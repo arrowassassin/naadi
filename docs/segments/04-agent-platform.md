@@ -28,10 +28,30 @@ A production agent runtime on the Space: Aegra runs Naadi's LangGraph graphs wit
 - Attribution headers from `OPENROUTER_APP_URL` / `OPENROUTER_APP_TITLE`.
 - Never log prompts or completions; log role, model, status, tokens, latency, `request_id`/`run_id`.
 
-### 2. Web search guard — `naadi_api/search.py`
+### 2. Layered search — `naadi_api/search.py` (one entry point, cheapest/most authoritative first)
+The chain stops at the first layer that answers well; every result carries its source, license and a link. Live-tested 2026-11-16 (see `docs/MODEL_TESTS.md` → "Search sources").
 
-- `tavily-python` only (`search`, `extract`; never `research`/`crawl`/`map`), `basic` depth, ≤ 5 results, `include_domains` from `app_config.search`.
-- Normalized-query cache in `search_cache` (7-day TTL); per-user daily cap 25; monthly credit guard stops at 950 and falls back to course retrieval. Credits counted from our own ledger (plus Tavily's usage endpoint over HTTPS for reconciliation in `/api/health`, with a comment why).
+| # | Layer | Client | Used for | Free limit / cost |
+|---|---|---|---|---|
+| 1 | Student knowledge base | our hybrid index (pgvector + full text) | Chapters, notes, handwriting, uploads, saved URLs | local |
+| 2 | **PubMed / PMC** | `biopython` `Bio.Entrez` (official NCBI E-utilities client; `tool="naadi"`, no personal email sent; add an `NCBI_API_KEY` later for 10 req/s) | Evidence, abstracts, open-access full text | 3 req/s without key |
+| 3 | **Europe PMC** | REST over httpx (no official Python SDK) | Literature + OA full-text search, licence per article | free |
+| 4 | **MedlinePlus** | NLM web service over httpx (no SDK) | Plain-language explainers | free |
+| 5 | **openFDA** | REST over httpx (no SDK) | Drug labels, adverse events | free (key optional) |
+| 6 | **ClinicalTrials.gov v2** | REST over httpx (no SDK) | Trials | free |
+| 7 | **Tavily** | `tavily-python` | Official-domain pathway/visa questions, recent news | 1,000 credits/month |
+| 8 | **SearXNG** (self-hosted in the container, JSON API) | httpx to localhost | Unlimited general fallback | free (own CPU); engines may throttle the Space IP |
+
+Rules:
+- Routing: medical/evidence queries → 2–6 in parallel (rate-limited per source); pathway/visa/"latest" → 7 with `include_domains`; 8 only when 2–7 return nothing useful or Tavily's guard is exhausted.
+- **Tavily guard:** normalized-query cache in `search_cache` (7-day TTL), per-user daily cap 25, monthly stop at 950 credits counted from **our own ledger** (Tavily's usage endpoint throttles hard; call it at most once a day for reconciliation, never from `/api/health` on every check).
+- Cache every source's results (TTL per source) so repeated questions cost nothing.
+- **Licences:** PubMed abstracts and most article text are copyrighted → context + citation + link only, never copied into chapters or RAG; only CC BY / CC0 / public-domain items may be stored, with attribution. Enforce via the `sources` license gates.
+- **Media from search** (rendered as answer blocks and in the canvas):
+  - **Images:** Wikimedia Commons via the MediaWiki API (`prop=imageinfo&iiprop=url|extmetadata`): keep only files whose `LicenseShortName` is CC BY / CC BY-SA / CC0 / public domain; show title, author and licence on every image; prefer English-labelled files (several top hits are Polish). PMC open-access figures: locate figure URLs on `cdn.ncbi.nlm.nih.gov` (via the PMC article/OA service), show only when the article licence is CC BY/CC0, always with citation + link. Images are proxied/cached through our API or rendered directly with CSP `img-src` allowing `upload.wikimedia.org`, `thumb.wikimedia.org` (Commons thumbnails) and `cdn.ncbi.nlm.nih.gov`.
+  - **Video:** YouTube via the official IFrame player only, metadata from oEmbed (keyless) or the YouTube Data API v3 (`google-api-python-client`, when `YOUTUBE_API_KEY` exists). **Embeds must send `origin=<APP_BASE_URL>` and `referrerpolicy="strict-origin-when-cross-origin"`** — without a referrer YouTube shows "Error 153 Video player configuration error" (reproduced in the live test). CSP `frame-src https://www.youtube-nocookie.com https://www.youtube.com`.
+- Send a generic client identity only (`User-Agent: Naadi/<version> (+https://github.com/arrowassassin/naadi)`); never the student's name or email.
+- Tests: unit tests with recorded fixtures per source; integration tests hit each live source once (cached); an e2e that renders a Commons image, a PMC figure and a YouTube embed inside an assistant answer block at all viewports (WebKit included) with zero console errors.
 
 ### 3. `tools/check_models.py` on the `openrouter` SDK
 

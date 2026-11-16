@@ -29,3 +29,20 @@ Run from the build sandbox through LangGraph (`create_react_agent` with one tool
 Endpoint uptime (OpenRouter endpoints API, last 1 day): nemotron-3-ultra 95 %, lfm-3-1.7b 69 %, most others 99–100 %.
 
 **Result:** Nemotron direct via NVIDIA first; newer non-NVIDIA labs (Particle AI, Baidu, dots.llm, InclusionAI) via OpenRouter as fallbacks; reviewer always from a non-NVIDIA, non-Baidu family.
+
+## Search sources (2026-11-16, live from the sandbox)
+
+| Source | Client | Result | Latency |
+|---|---|---|---|
+| PubMed | biopython `Bio.Entrez` | 694 hits for "diabetic ketoacidosis anion gap", 3 summaries | 0.64 s |
+| Europe PMC | REST | 24,321 open-access full-text hits, licence per article | 0.62 s |
+| PMC open-access figure | article page → `cdn.ncbi.nlm.nih.gov` blob | 200, image/webp, 87 KB (direct `europepmc.org/articles/…/bin/…` → 403) | — |
+| MedlinePlus | NLM web service | 3 health topics | 0.62 s |
+| openFDA | REST, no key | insulin glargine labels (18) | 0.76 s |
+| ClinicalTrials.gov v2 | REST | 2 studies | 0.35 s |
+| Wikimedia Commons | MediaWiki API | 3 nephron diagrams with licences (CC BY 3.0, CC BY-SA 3.0) and authors | 0.63 s |
+| YouTube oEmbed | REST, keyless | title + IFrame HTML | 0.37 s |
+
+**Rendering (Chromium):** all four images decoded (960–1600 px). YouTube embed: "Error 153 Video player configuration error" from a `file://` page with no referrer; **plays correctly** when served over HTTP with `origin` + `referrerpolicy="strict-origin-when-cross-origin"`.
+
+Not yet tested: SearXNG (self-hosted in segment 04), Tavily-free fallbacks such as You.com (not adopted).
