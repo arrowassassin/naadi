@@ -52,7 +52,8 @@ test.describe("magic link, end to end", () => {
     await pa.goto(callbackPath(magicLink("global"), "/settings/account"));
     await expect(pa.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
     await pb.goto(callbackPath(magicLink("global"), "/"));
-    await expect(pb).toHaveURL(/\/$/);
+    // A new account lands on Today, which opens onboarding until the plan exists (segment 11).
+    await expect(pb).toHaveURL(/\/(welcome)?$/);
     const tokenB = await pb.evaluate(() => {
       const raw = localStorage.getItem("naadi.auth");
       return raw ? (JSON.parse(raw) as { access_token: string }).access_token : "";

@@ -1,5 +1,5 @@
 import type { OnboardingState, PlanPreview } from "@naadi/shared";
-import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
+import { cx, ErrorState, Skeleton } from "@naadi/ui";
 import { useNavigate } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { type ReactNode, useEffect, useId, useState } from "react";
@@ -238,14 +238,21 @@ function Form({ state }: { state: OnboardingState }) {
               />
             </label>
           </div>
-          <label className="flex flex-col gap-3 text-ui text-text-2">
+          <div className="flex flex-col gap-3 text-ui text-text-2">
             <span className="flex items-baseline justify-between gap-3">
-              <span>{t("onboarding.hours_label")}</span>
-              <output className="font-display font-bold text-[1.375rem] text-text" aria-live="polite">
+              <label htmlFor={`${ids}-hours`} id={`${ids}-hours-label`}>
+                {t("onboarding.hours_label")}
+              </label>
+              <output
+                htmlFor={`${ids}-hours`}
+                className="font-display font-bold text-[1.375rem] text-text"
+                aria-live="polite"
+              >
                 {t("onboarding.hours_value", { h: String(hours) })}
               </output>
             </span>
             <input
+              id={`${ids}-hours`}
               type="range"
               min={state.hours.min}
               max={state.hours.max}
@@ -255,7 +262,7 @@ function Form({ state }: { state: OnboardingState }) {
               aria-valuetext={t("onboarding.hours_value", { h: String(hours) })}
               className="h-11 w-full accent-[var(--color-paper)]"
             />
-          </label>
+          </div>
           <fieldset className="m-0 border-0 p-0">
             <legend className="mb-3 p-0 text-ui text-text-2">{t("onboarding.days_legend")}</legend>
             <div className="flex flex-wrap gap-2">
@@ -321,19 +328,23 @@ function Form({ state }: { state: OnboardingState }) {
               : t("onboarding.next_plan", { date: formatDate(state.today) })}
           </p>
           <div className="flex flex-col gap-3">
-            <Button
-              variant="strong"
-              size="cta"
+            <button
+              type="button"
               disabled={!ready || busy}
               aria-busy={busy || undefined}
               onClick={() => submit(state.diagnostic.available ? "diagnostic" : "today")}
-              className="w-full bg-lime-ink text-lime hover:bg-lime-ink hover:text-lime-hover disabled:bg-transparent"
+              className={cx(
+                "inline-flex min-h-[3.75rem] w-full items-center justify-center rounded-pill px-7 font-semibold text-[1.0625rem]",
+                "transition-colors duration-(--duration-control) ease-out",
+                "bg-lime-ink text-lime hover:text-lime-hover",
+                "disabled:cursor-not-allowed disabled:border disabled:border-lime-ink disabled:border-dashed disabled:bg-transparent disabled:text-lime-ink",
+              )}
               data-cta="primary"
             >
               {busy
                 ? t(stage === "diagnostic" ? "onboarding.starting_diagnostic" : "onboarding.saving")
                 : t(state.diagnostic.available ? "onboarding.cta_diagnostic" : "onboarding.cta_start")}
-            </Button>
+            </button>
             {state.diagnostic.available ? (
               <button
                 type="button"

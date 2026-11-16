@@ -105,9 +105,13 @@ function useInvalidateToday() {
 }
 
 export function useSaveOnboarding() {
+  const userId = useUserId();
+  const qc = useQueryClient();
   const invalidate = useInvalidateToday();
   return useMutation({
     mutationFn: (body: OnboardingIn) => authed<OnboardingOut>((headers) => saveOnboarding({ headers, body })),
+    // The cached Today predates the plan (it said "not onboarded"): drop it so Today loads fresh.
+    onSuccess: () => qc.removeQueries({ queryKey: todayKey(userId) }),
     onSettled: invalidate,
   });
 }

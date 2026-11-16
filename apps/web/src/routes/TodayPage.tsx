@@ -606,6 +606,9 @@ export function TodayPage() {
       </section>
     );
   }
-  if (!today.data.data.onboarding_complete) return <Navigate to="/welcome" replace />;
+  if (!today.data.data.onboarding_complete) {
+    // Only a fresh answer decides: a cached copy from before onboarding must not bounce the student back.
+    return today.isFetching || today.data.fromCache ? <Loading /> : <Navigate to="/welcome" replace />;
+  }
   return <Populated cached={today.data} />;
 }

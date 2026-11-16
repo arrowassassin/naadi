@@ -64,14 +64,13 @@ test.describe("signed in as a student", () => {
   test.use(signedInAs("student"));
 
   test("Today is populated from the profile", async ({ page, consoleErrors }, info) => {
+    // The shared roles are onboarded when their session is minted (session.ts); Today's own states are in
+    // today.spec.ts (segment 11).
     await page.goto("/");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toHaveText(/^Good (morning|afternoon|evening)\.$/);
     await expect(page.locator("[data-state=populated]")).toBeVisible();
-    await expect(page.getByRole("heading", { name: "USMLE Step 1" })).toBeVisible();
-    await expect(page.getByText("No exam date yet")).toBeVisible();
-    // no display name yet: the one lime action is to add it
-    await expect(page.getByRole("link", { name: "Add your name" })).toHaveAttribute("href", "/settings/account");
+    await expect(page.getByRole("heading", { name: "Today's flow" })).toBeVisible();
     await expectChromeFor(page, page.viewportSize()?.width ?? 0);
     await expectNoHorizontalOverflow(page);
     await expectNoAxeViolations(page);
@@ -101,7 +100,7 @@ test.describe("signed in as a student", () => {
     const gate = new Promise<void>((r) => {
       release = r;
     });
-    await page.route("**/api/me", async (route) => {
+    await page.route("**/api/today", async (route) => {
       await gate;
       await route.continue();
     });
@@ -118,27 +117,27 @@ test.describe("signed in as a student", () => {
 
   test("an API error shows retry and the request id", async ({ page, consoleErrors }, info) => {
     await dropUserCache(page);
-    consoleErrors.allowHttpError({ urlPart: "/api/me", status: 500 });
-    await page.route("**/api/me", (route) =>
+    consoleErrors.allowHttpError({ urlPart: "/api/today", status: 500 });
+    await page.route("**/api/today", (route) =>
       route.fulfill({
         status: 500,
-        headers: { "x-request-id": "e2e-me-500" },
+        headers: { "x-request-id": "e2e-today-500" },
         json: {
           error: {
             code: "internal_error",
             message: "Something went wrong on our side. Try again in a moment.",
-            request_id: "e2e-me-500",
+            request_id: "e2e-today-500",
           },
         },
       }),
     );
     await page.goto("/");
     const alert = page.getByRole("alert");
-    await expect(alert).toContainText("Your profile could not be loaded");
-    await expect(alert).toContainText("Request ID e2e-me-500");
+    await expect(alert).toContainText("Today could not be loaded");
+    await expect(alert).toContainText("Request ID e2e-today-500");
     await expectNoAxeViolations(page);
     await snap(page, info, consoleErrors, "today-error");
-    await page.unroute("**/api/me");
+    await page.unroute("**/api/today");
     await alert.getByRole("button", { name: "Try again" }).click();
     await expect(page.locator("[data-state=populated]")).toBeVisible();
   });
