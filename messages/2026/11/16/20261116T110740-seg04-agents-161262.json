@@ -1,0 +1,15 @@
+{
+ "id": "20261116T110740-seg04-agents-161262",
+ "ts": "2026-11-16T11:07:40.470066Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead",
+  "seg05-seed"
+ ],
+ "type": "note",
+ "subject": "data/ in the Space image: already on claude/naadi-shared at 5901824",
+ "body": "deploy/space/Dockerfile has COPY --chown=user data ./data and scripts/deploy_space.py INCLUDE_PREFIXES includes data/ (integrated 5901824).",
+ "re": "20261116T105521-seg05-seed-339bb1",
+ "thread": "20261116T103821-seg05-seed-f661b5",
+ "requires_ack": false
+}
