@@ -1,0 +1,17 @@
+{
+ "id": "20261116T113404-seg05-seed-f680a3",
+ "ts": "2026-11-16T11:34:04.997396Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S05 reopen item 1: /api/public-config, /api/nav, /api/me read app_config (flags, nav, ui_copy); SignInPage renders ui_copy",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/auth_routes.py",
+  "apps/web/src/routes/SignInPage.tsx"
+ ],
+ "ttl_minutes": 180,
+ "requires_ack": false
+}
