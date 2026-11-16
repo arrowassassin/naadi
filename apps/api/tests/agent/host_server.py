@@ -62,7 +62,7 @@ class Host:
     log_path: Path
 
 
-def _env(database_url: str, port: int) -> dict[str, str]:
+def _env(database_url: str, port: int, *, live: bool) -> dict[str, str]:
     env = {k: v for k, v in os.environ.items() if not k.startswith(("SUPABASE_", "VITE_SUPABASE_"))}
     env.update(
         {
@@ -76,12 +76,18 @@ def _env(database_url: str, port: int) -> dict[str, str]:
             "PORT": str(port),
         }
     )
-    env.setdefault("NVIDIA_API_KEY", "nvapi-proxy-injected")
+    if live:
+        # `live` tests call the real router model (NVIDIA first; the sandbox proxy injects the key).
+        env.setdefault("NVIDIA_API_KEY", "nvapi-proxy-injected")
+    else:
+        # `db` tests never reach a provider: the ping runs and records "unavailable".
+        for name in ("NVIDIA_API_KEY", "OPENROUTER_API_KEY", "TAVILY_API_KEY"):
+            env[name] = ""
     return env
 
 
 @contextmanager
-def running_host(database_url: str, log_dir: Path) -> Iterator[Host]:
+def running_host(database_url: str, log_dir: Path, *, live: bool = False) -> Iterator[Host]:
     from naadi_api.agent import migrate_all
     from naadi_api.settings import Settings
 
@@ -118,7 +124,7 @@ def running_host(database_url: str, log_dir: Path) -> Iterator[Host]:
                 "--no-access-log",
             ],
             cwd=API_DIR,
-            env=_env(database_url, port),
+            env=_env(database_url, port, live=live),
             stdout=log,
             stderr=subprocess.STDOUT,
         )

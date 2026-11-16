@@ -16,10 +16,11 @@ from .host_server import Host, running_host
 
 
 @pytest.fixture(scope="module")
-def host(tmp_path_factory: pytest.TempPathFactory) -> Iterator[Host]:
+def host(request: pytest.FixtureRequest, tmp_path_factory: pytest.TempPathFactory) -> Iterator[Host]:
     url = database_url()
     require_local(url)
-    with running_host(url, tmp_path_factory.mktemp("agent-host")) as h:
+    live = any(m.name == "live" for m in getattr(request.module, "pytestmark", []))
+    with running_host(url, tmp_path_factory.mktemp("agent-host"), live=live) as h:
         yield h
 
 
