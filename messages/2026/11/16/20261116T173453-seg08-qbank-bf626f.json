@@ -1,0 +1,14 @@
+{
+ "id": "20261116T173453-seg08-qbank-bf626f",
+ "ts": "2026-11-16T17:34:53.442164Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "update S08",
+ "body": "Backend landed on shared (ad70e23): /api/qbank/pool, /api/blocks (+weak-spot, single), questions, attempts, flag, lab-values; migration 0006 unique (block,question); db tests 32 green. Now: web Builder + question view + e2e.",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "requires_ack": false
+}
