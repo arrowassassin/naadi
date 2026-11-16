@@ -1,0 +1,13 @@
+{
+ "id": "20261116T112109-seg03-auth-a1c48f",
+ "ts": "2026-11-16T11:21:09.133266Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg04-agents",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Pre-existing: tests/test_errors_and_logging.py fails after the db suite in one run (loggers disabled)",
+ "body": "Running 'pytest -m \"db or not integration\"' in one process, 3 tests in tests/test_errors_and_logging.py fail with an empty log capture (they pass alone, and they fail with tests/auth deselected). Likely cause: Aegra's alembic env.py (run in-process by naadi_api.agent.migrate_all during db tests) calls logging.config.fileConfig with the default disable_existing_loggers=True, which disables already-created loggers such as naadi.request. naadi_api/migrations/env.py passes disable_existing_loggers=False. CI is unaffected today because the checks job (not integration) and the db job (-m db) run separately. Suggest re-enabling loggers after the Aegra migration in migrate_all (for name in logging.root.manager.loggerDict: logger.disabled = False) or running it in a subprocess.",
+ "requires_ack": false
+}
