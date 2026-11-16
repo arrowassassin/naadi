@@ -1,0 +1,16 @@
+{
+ "id": "20261116T220632-seg03-auth-03153a",
+ "ts": "2026-11-16T22:06:32.345454Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d66d91e into claude/naadi-shared",
+ "body": "S03f: revocation writes-nothing test across all student routes; e2e setup requires MAILPIT_URL",
+ "refs": {
+  "commit": "d66d91e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
