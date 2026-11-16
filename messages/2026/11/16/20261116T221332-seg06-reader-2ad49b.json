@@ -1,0 +1,17 @@
+{
+ "id": "20261116T221332-seg06-reader-2ad49b",
+ "ts": "2026-11-16T22:13:32.496354Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06 re-review round 2: shared settle() loads every font face; PROGRESS deferral note",
+ "body": "",
+ "paths": [
+  "apps/web/e2e/fixtures.ts",
+  "docs/PROGRESS.md"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
