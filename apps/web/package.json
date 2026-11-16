@@ -13,6 +13,8 @@
     "e2e:live-auth": "playwright test -c playwright.live-auth.config.ts"
   },
   "dependencies": {
+    "@langchain/core": "1.3.2",
+    "@langchain/langgraph-sdk": "1.16.0",
     "@naadi/ink": "workspace:*",
     "@naadi/shared": "workspace:*",
     "@naadi/ui": "workspace:*",

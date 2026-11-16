@@ -1,5 +1,6 @@
 import { ErrorState } from "@naadi/ui";
 import { createRootRoute, createRoute, createRouter, Link, Outlet, redirect } from "@tanstack/react-router";
+import { agentDiagnosticsRoute } from "./agent/route";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
 import { inkLabRoute } from "./ink/route";
@@ -129,6 +130,7 @@ export const routeTree = rootRoute.addChildren([
     // one route per line, so parallel segments add theirs without merge conflicts
     todayRoute,
     settingsRoute.addChildren([accountRoute]),
+    agentDiagnosticsRoute(appRoute),
   ]),
 ]);
 

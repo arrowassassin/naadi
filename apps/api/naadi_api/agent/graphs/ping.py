@@ -15,12 +15,13 @@ it spends model quota. When the budget is exhausted the run still completes and 
 from __future__ import annotations
 
 import time
-from typing import Any, Literal, NotRequired, TypedDict
+from typing import Annotated, Any, Literal, NotRequired, TypedDict
 
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import AnyMessage, HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.config import get_stream_writer
 from langgraph.graph import END, START, StateGraph
+from langgraph.graph.message import add_messages
 from langgraph.types import interrupt
 
 from naadi_api.agent.health import record_ping
@@ -35,6 +36,8 @@ PING_PROMPT = "Confirm you are online and name one organ of the urinary system."
 
 
 class PingState(TypedDict):
+    # The probe's answer, as a message, so streaming clients (useStream) render its tokens.
+    messages: NotRequired[Annotated[list[AnyMessage], add_messages]]
     trigger: NotRequired[Trigger]
     reply: NotRequired[str]
     outcome: NotRequired[Literal["ok", "budget_exhausted", "unavailable"]]
@@ -70,6 +73,7 @@ async def ask(state: PingState, config: RunnableConfig) -> dict[str, Any]:
         return {"trigger": trigger, "outcome": "unavailable", "reply": ""}
     meta = msg.response_metadata
     return {
+        "messages": [msg],
         "trigger": trigger,
         "outcome": "ok",
         "reply": str(msg.content)[:500],
