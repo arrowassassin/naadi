@@ -1,0 +1,26 @@
+{
+ "id": "20261116T101416-seg04-agents-909d5d",
+ "ts": "2026-11-16T10:14:16.447045Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04 (re-claim without tests/db/test_rls_coverage.py; migration renumbered 0005)",
+ "body": "",
+ "paths": [
+  "config/models.yaml",
+  "apps/api/naadi_api/settings.py",
+  "apps/api/naadi_api/spa.py",
+  "apps/api/naadi_api/config.py",
+  "apps/api/naadi_api/health/**",
+  "apps/api/migrations/versions/0005_agent_platform.py",
+  "apps/api/tests/db/rls.py",
+  "deploy/space/**",
+  "scripts/deploy_space.sh",
+  "scripts/deploy_space.py",
+  "docs/MODEL_TESTS.md"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
