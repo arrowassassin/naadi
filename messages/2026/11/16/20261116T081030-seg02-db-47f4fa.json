@@ -1,0 +1,13 @@
+{
+ "id": "20261116T081030-seg02-db-47f4fa",
+ "ts": "2026-11-16T08:10:30.390515Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release scripts/deploy_space.py",
+ "body": "landed in 5692e13",
+ "re": "20261116T080305-seg02-db-0e631a",
+ "requires_ack": false
+}
