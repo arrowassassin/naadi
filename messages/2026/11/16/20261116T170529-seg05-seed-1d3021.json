@@ -1,0 +1,24 @@
+{
+ "id": "20261116T170529-seg05-seed-1d3021",
+ "ts": "2026-11-16T17:05:29.013834Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S05f: required ui_copy keys + shared non-empty fallback; remaining S03 strings into ui_copy",
+ "body": "",
+ "paths": [
+  "apps/web/src/routes/AccountPage.tsx",
+  "apps/web/src/auth/callback.ts",
+  "apps/web/src/routes/CallbackPage.tsx",
+  "apps/web/src/routes/SignInPage.tsx",
+  "apps/web/src/agent/uiCopy.ts",
+  "packages/shared/src/uiCopy.ts",
+  "packages/shared/src/index.ts",
+  "packages/shared/ui-copy.defaults.json",
+  "apps/web/e2e/config.spec.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
