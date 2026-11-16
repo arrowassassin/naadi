@@ -1,0 +1,16 @@
+{
+ "id": "20261116T173441-seg08-qbank-0ecbf2",
+ "ts": "2026-11-16T17:34:41.371616Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ad70e23 into claude/naadi-shared",
+ "body": "S08 backend: qbank API, grading, weak-spot, lab values, migration 0006",
+ "refs": {
+  "commit": "ad70e23",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
