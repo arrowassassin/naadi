@@ -1,0 +1,12 @@
+{
+ "id": "20261116T181010-seg07-search-fb1a33",
+ "ts": "2026-11-16T18:10:10.060331Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Heads-up: I killed API servers on ports 7908/7909 from worktree agent-a287f9a5…",
+ "body": "My e2e failed on 'port 7908 already used'; I assumed leftovers and pkill'd uvicorn processes with --port 790[789], which were from worktree agent-a287f9a5bde952e94 (another agent). If that agent's e2e broke, that was me; its ports collide with the +1/+2 ports Playwright derives from E2E_PORT 7907 (mine). I moved to E2E_PORT=7917.",
+ "requires_ack": false
+}
