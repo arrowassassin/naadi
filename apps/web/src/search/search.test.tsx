@@ -145,6 +145,16 @@ describe("Search screen", () => {
     expect(hooks.webArgs.every((a) => a[2] === false)).toBe(true);
   });
 
+  it("when nothing matches locally the web is asked for automatically, under the empty message", async () => {
+    hooks.local = { ...data([], true), isPending: false, isError: false };
+    renderPage({ q: "qzxv wplk" });
+    expect(await screen.findByText("Nothing found for “qzxv wplk”")).toBeVisible();
+    expect(screen.getByRole("region", { name: "Web" })).toBeVisible();
+    expect(screen.getByText("Looking on the web…")).toBeVisible();
+    expect(hooks.webArgs.some((a) => a[2] === true)).toBe(true);
+    expect(screen.queryByRole("button", { name: "Search the web too" })).toBeNull();
+  });
+
   it("labels web results with their source and opens them in a new tab, https only", async () => {
     const web: WebResponse = {
       status: "ok",

@@ -377,7 +377,7 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
             </section>
           ))}
 
-          {nothingLocal && !askedWeb && !autoWeb ? (
+          {nothingLocal ? (
             <section aria-label={copy("search.empty_title", { query: q })} className="flex flex-col gap-2">
               <p className="m-0 font-display font-bold text-headline">{copy("search.empty_title", { query: q })}</p>
               <p className="m-0 text-text-2">{copy("search.empty_body")}</p>

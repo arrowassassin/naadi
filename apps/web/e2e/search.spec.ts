@@ -122,20 +122,17 @@ test("keyboard: arrows move through results and Enter opens one", async ({ page 
   await expect(page).toHaveURL(/\/learn\/ch\d+\//);
 });
 
-test("nothing found: a clear empty state, and the web is one click away and labelled", async ({
+test("nothing found: a clear empty state, and the web panel says what it found", async ({
   page,
   consoleErrors,
 }, info) => {
   await page.goto("/search?q=qzxv+wplk+jjrt");
   await expect(page.getByText("Nothing found for “qzxv wplk jjrt”")).toBeVisible();
-  await expectNoAxeViolations(page);
-  await snap(page, info, consoleErrors, "search-empty-result");
-  await page.getByRole("button", { name: "Search the web too" }).click();
-  await expect(page).toHaveURL(/web=1/);
+  // Nothing local, so the web is asked for automatically. Whatever the network allows in this environment,
+  // the panel says what happened: labelled results, an empty note, or that the web is unavailable. It
+  // never stays blank or spinning.
   const web = page.getByRole("region", { name: "Web" });
   await expect(web).toBeVisible();
-  // Whatever the network allows in this environment, the panel says what happened: labelled results, an
-  // empty note, or that the web is unavailable. It never stays blank or spinning.
   await expect(
     web
       .getByText(/^Web results from /)
@@ -143,6 +140,35 @@ test("nothing found: a clear empty state, and the web is one click away and labe
       .or(web.getByText("Web search is not available right now."))
       .or(web.getByText(/allowance is used up/)),
   ).toBeVisible({ timeout: 45_000 });
+  await expectNoAxeViolations(page);
+  await expectNoHorizontalOverflow(page);
+  await snap(page, info, consoleErrors, "search-empty-result");
+});
+
+test("the web is one click away when the library has answers, and its results are labelled", async ({
+  page,
+  consoleErrors,
+}, info) => {
+  await page.goto("/search?q=thyroid");
+  await expect(page.getByRole("region", { name: "Chapters" })).toBeVisible();
+  await expect(page.getByRole("region", { name: "Web" })).toHaveCount(0); // not asked for, not shown
+  await page.getByRole("button", { name: "Search the web too" }).click();
+  await expect(page).toHaveURL(/web=1/);
+  const web = page.getByRole("region", { name: "Web" });
+  await expect(web).toBeVisible();
+  const labelled = web.getByText(/^Web results from /);
+  await expect(
+    labelled
+      .or(web.getByText("The web search found nothing for this."))
+      .or(web.getByText("Web search is not available right now."))
+      .or(web.getByText(/allowance is used up/)),
+  ).toBeVisible({ timeout: 45_000 });
+  if (await labelled.isVisible()) {
+    // each web row names its source and opens in a new tab
+    const row = web.getByRole("link").first();
+    await expect(row).toHaveAttribute("target", "_blank");
+    await expect(row).toHaveAttribute("rel", /noopener/);
+  }
   await expectNoAxeViolations(page);
   await snap(page, info, consoleErrors, "search-web");
 });

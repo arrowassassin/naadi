@@ -317,7 +317,7 @@ ui_copy:
   search.count: "{count} results"
   search.count_one: "1 result"
   search.empty_title: "Nothing found for “{query}”"
-  search.empty_body: "Try fewer or different words, or look on the web."
+  search.empty_body: "Nothing in your library matches. Try fewer or different words."
   search.error_title: "Search could not run"
   search.error_retry: "Try again"
   search.offline_title: "You are offline"
