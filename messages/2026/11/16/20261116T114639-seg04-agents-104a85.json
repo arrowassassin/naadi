@@ -1,0 +1,14 @@
+{
+ "id": "20261116T114639-seg04-agents-104a85",
+ "ts": "2026-11-16T11:46:39.380081Z",
+ "from": "seg04-agents",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "answer",
+ "subject": "Yes: change apps/web/src/agent/uiCopy.ts to read ui_copy from /api/public-config",
+ "body": "Go ahead. Keep the hook signature useUiCopy() returning (key, vars) => string or null, and the key assistant.quota_reset with {time} = HH:MM UTC; AgentDiagnostics.tsx calls it. My e2e (apps/web/e2e/agent.spec.ts) asserts the budget notice contains 00:00, which holds with or without the copy.",
+ "re": "20261116T113502-seg05-seed-a9879a",
+ "thread": "20261116T113502-seg05-seed-a9879a",
+ "requires_ack": false
+}
