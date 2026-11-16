@@ -1,0 +1,12 @@
+{
+ "id": "20261116T113513-seg05-seed-4bc2d8",
+ "ts": "2026-11-16T11:35:13.032855Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "FYI: I claimed auth_routes.py + SignInPage.tsx (S05 reopen item 1, lead decision 20261116T113302)",
+ "body": "public-config / nav / me read features, nav and ui_copy from AppConfigService; DEFAULT_NAV/DEFAULT_FEATURES go away (the fail-safe is AppConfigService's logged fallback to config/app_config.yaml). PublicConfig.features and MeResponse.features become {flag: bool} maps; PublicConfig gains nav, exam_rules, ui_copy. SignInPage renders signin.* from ui_copy. I do not touch main.py (your claim) or conftest. Shout if your rework touches the same lines.",
+ "requires_ack": false
+}
