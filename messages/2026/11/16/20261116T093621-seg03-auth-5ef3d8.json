@@ -1,0 +1,16 @@
+{
+ "id": "20261116T093621-seg03-auth-5ef3d8",
+ "ts": "2026-11-16T09:36:21.604882Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated bb446ba into claude/naadi-shared",
+ "body": "S03 web: sign-in (magic link + Google, PKCE), callback, protected shell (nav pill / tab bar), Today, Account, pen-surface registration; CI real sign-in via local supabase/auth; pnpm e2e:live-auth",
+ "refs": {
+  "commit": "bb446ba",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
