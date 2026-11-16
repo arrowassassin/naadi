@@ -439,7 +439,6 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "learn.empty_exam",
         "learn.your_file",
         "learn.your_files",
-        "learn.mock_exams",
         "learn.format_label",
         "learn.format_read",
         "learn.format_read_watch",

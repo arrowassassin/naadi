@@ -662,8 +662,6 @@
           "kind": {
             "enum": [
               "chapter",
-              "mock_exam",
-              "pathway",
               "user_upload",
               "user_kb"
             ],
@@ -1387,13 +1385,6 @@
             "title": "Exams",
             "type": "array"
           },
-          "mock_exams": {
-            "items": {
-              "$ref": "#/components/schemas/MockExam"
-            },
-            "title": "Mock Exams",
-            "type": "array"
-          },
           "next_up": {
             "anyOf": [
               {
@@ -1431,7 +1422,6 @@
           "system",
           "systems",
           "chapters",
-          "mock_exams",
           "next_up"
         ],
         "title": "CoursesResponse",
@@ -2594,41 +2584,6 @@
           "url"
         ],
         "title": "MediaSource",
-        "type": "object"
-      },
-      "MockExam": {
-        "properties": {
-          "id": {
-            "title": "Id",
-            "type": "string"
-          },
-          "meta": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Meta"
-          },
-          "question_count": {
-            "title": "Question Count",
-            "type": "integer"
-          },
-          "title": {
-            "title": "Title",
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "title",
-          "meta",
-          "question_count"
-        ],
-        "title": "MockExam",
         "type": "object"
       },
       "ModeChoice": {

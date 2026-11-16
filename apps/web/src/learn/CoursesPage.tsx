@@ -190,7 +190,6 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
   const q = useCourses(search);
   const t = useUiText();
   const router = useRouter();
-  const routes = router.routesByPath as Record<string, unknown>;
 
   if (q.isPending && !q.data) return <Loading t={t} />;
   if (!q.data) {
@@ -339,25 +338,6 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
               <ChapterRow key={c.id} c={c} t={t} />
             ))}
           </ol>
-        </section>
-      ) : null}
-
-      {/* Mock exams open in Practice; listed only once that route exists in this build (no dead links). */}
-      {data.mock_exams.length && "/practice" in routes ? (
-        <section aria-labelledby="mocks-h" className="flex flex-col gap-4">
-          <h2 id="mocks-h" className="m-0 font-bold font-display text-[1.75rem] tracking-[-0.02em]">
-            {t("learn.mock_exams")}
-          </h2>
-          <ul className="m-0 flex list-none flex-col gap-2 p-0">
-            {data.mock_exams.map((m) => (
-              <li key={m.id}>
-                <a href="/practice" className="flex min-h-12 flex-col py-2">
-                  <span className="font-semibold">{m.title}</span>
-                  <span className="text-text-3 text-ui-sm">{count(t, "learn.count_question", m.question_count)}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
         </section>
       ) : null}
     </section>

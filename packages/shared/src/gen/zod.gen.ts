@@ -480,16 +480,6 @@ export const zMediaOut = z.object({
 });
 
 /**
- * MockExam
- */
-export const zMockExam = z.object({
-  id: z.string(),
-  meta: z.string().nullable(),
-  question_count: z.int(),
-  title: z.string(),
-});
-
-/**
  * ModeChoice
  */
 export const zModeChoice = z.object({
@@ -593,7 +583,6 @@ export const zCoursesResponse = z.object({
   chapters: z.array(zCourseChapter),
   exam: z.string().nullable(),
   exams: z.array(zExamOption),
-  mock_exams: z.array(zMockExam),
   next_up: zNextUp.nullable(),
   system: z.string().nullable(),
   systems: z.array(zCourseSystem),
@@ -939,7 +928,7 @@ export const zChapterDetail = z.object({
   coverage: zCoverage,
   exam: z.string(),
   id: z.string(),
-  kind: z.enum(["chapter", "mock_exam", "pathway", "user_upload", "user_kb"]),
+  kind: z.enum(["chapter", "user_upload", "user_kb"]),
   media: z.record(z.string(), zMediaOut),
   meta: z.string().nullable(),
   next_chapter: zChapterLink.nullable(),

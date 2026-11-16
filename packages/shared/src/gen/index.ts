@@ -225,7 +225,6 @@ export type {
   MediaSource,
   MeResponse,
   MeUpdate,
-  MockExam,
   ModeChoice,
   ModelProbe,
   ModeRules,

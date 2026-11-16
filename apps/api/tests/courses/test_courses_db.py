@@ -160,6 +160,13 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
         },
         {"id": w.draft_s, "chapter_id": w.draft, "sort": 1, "heading": "Hidden", "body": Jsonb({"type": "doc"})},
         {
+            "id": f"{w.mock}-s01",
+            "chapter_id": w.mock,
+            "sort": 1,
+            "heading": "Instructions",
+            "body": Jsonb({"type": "doc", "content": [p(t("Q1 ; ANSWER B ; TOPIC renal"))]}),
+        },
+        {
             "id": w.private_s,
             "chapter_id": w.private,
             "sort": 1,
@@ -298,9 +305,26 @@ def test_course_map_lists_published_and_own_chapters_with_coverage(
     systems = {s["id"]: s for s in body["systems"]}
     assert systems[world.sys_a]["chapter_ids"] == [world.ch1]
     assert systems[world.sys_b]["chapter_ids"] == [world.ch2]
-    assert body["mock_exams"] == [{"id": world.mock, "title": "Mock A", "meta": None, "question_count": 0}]
+    assert "mock_exams" not in body
+    assert world.mock not in res.text  # mock exams are Practice content, never listed here
     assert body["next_up"]["reason"] == "start"
     assert body["next_up"]["section_id"] == world.s11
+
+
+def test_mock_exams_are_not_readable_here(client: TestClient, key: SigningKey, world: World) -> None:
+    """A mock exam's sections (its instructions, any blueprint) are Practice content: 404 in the reader."""
+    a = h(key, world.owner)
+    res = client.get(f"/api/chapters/{world.mock}", headers=a)
+    assert res.status_code == 404
+    assert "ANSWER" not in res.text
+    pos = client.put(
+        "/api/reading-position",
+        headers=a,
+        json={"chapter_id": world.mock, "section_id": f"{world.mock}-s01", "offset": 0},
+    )
+    assert pos.status_code == 404
+    exams = client.get("/api/courses", params={"exam": world.exam}, headers=a).json()["exams"]
+    assert next(e for e in exams if e["id"] == world.exam)["chapter_count"] == 2
 
 
 def test_other_users_do_not_see_private_chapters(client: TestClient, key: SigningKey, world: World) -> None:

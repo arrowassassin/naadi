@@ -109,13 +109,6 @@ class ExamOption(BaseModel):
     chapter_count: int
 
 
-class MockExam(BaseModel):
-    id: str
-    title: str
-    meta: str | None
-    question_count: int
-
-
 class NextUp(BaseModel):
     """The one next action on the course map (the lime CTA)."""
 
@@ -132,7 +125,6 @@ class CoursesResponse(BaseModel):
     system: str | None = Field(description="The system filter applied, if any")
     systems: list[CourseSystem] = Field(description="Every system of the exam with at least one chapter")
     chapters: list[CourseChapter] = Field(description="Chapters of the exam (and the caller's own), filtered")
-    mock_exams: list[MockExam]
     next_up: NextUp | None
 
 
@@ -195,7 +187,7 @@ class ChapterLink(BaseModel):
 class ChapterDetail(BaseModel):
     id: str
     exam: str
-    kind: Literal["chapter", "mock_exam", "pathway", "user_upload", "user_kb"]
+    kind: Literal["chapter", "user_upload", "user_kb"]
     title: str
     meta: str | None
     number: int | None
@@ -378,7 +370,7 @@ select c.exam as id, coalesce(t.label, c.exam) as label, coalesce(t.sort, 999) a
        count(*) filter (where c.kind = 'chapter') as chapter_count
 from public.chapters c
 left join public.taxonomy_nodes t on t.id = c.exam and t.kind = 'exam'
-where c.owner_user_id is null and c.status = 'published' and c.kind in ('chapter', 'mock_exam')
+where c.owner_user_id is null and c.status = 'published' and c.kind = 'chapter'
 group by 1, 2, 3
 order by 3, 1
 """
@@ -386,7 +378,7 @@ order by 3, 1
 _Q_CHAPTERS = """
 select id, exam, kind, title, meta, sort, owner_user_id is not null as own
 from public.chapters
-where status <> 'retired' and kind in ('chapter', 'mock_exam', 'user_upload', 'user_kb')
+where status <> 'retired' and kind in ('chapter', 'user_upload', 'user_kb')
   and (exam = %(exam)s or owner_user_id = (select auth.uid()))
 order by (owner_user_id is not null), sort nulls last, id
 """
@@ -599,7 +591,7 @@ async def get_courses(
             chosen = target if target in ids else (ids[0] if ids else None)
         if chosen is None:
             return CoursesResponse(
-                exam=None, exams=exams, system=system, systems=[], chapters=[], mock_exams=[], next_up=None
+                exam=None, exams=exams, system=system, systems=[], chapters=[], next_up=None
             )
         rows = await _rows(conn, _Q_CHAPTERS, {"exam": chosen})
         ids = [r["id"] for r in rows]
@@ -649,18 +641,12 @@ async def get_courses(
                 )
             )
         listed = [c for c in chapters if system is None or system in c.systems]
-        mocks = [
-            MockExam(id=r["id"], title=r["title"], meta=r["meta"], question_count=st.questions.get(r["id"], 0))
-            for r in rows
-            if r["kind"] == "mock_exam"
-        ]
         return CoursesResponse(
             exam=chosen,
             exams=exams,
             system=system,
             systems=systems,
             chapters=listed,
-            mock_exams=mocks,
             next_up=_next_up(readable, st),
         )
 
@@ -669,9 +655,12 @@ async def get_courses(
 
 # ── Routes: chapter ──
 
+# Mock exams are Practice content (their instruction section is a blueprint for timed blocks, and mock
+# questions are answered there); pathway pages have their own screen. Neither is listed or readable here.
 _Q_CHAPTER = """
 select id, exam, kind, title, meta, sort, owner_user_id is not null as own
-from public.chapters where id = %(id)s and status <> 'retired'
+from public.chapters
+where id = %(id)s and status <> 'retired' and kind in ('chapter', 'user_upload', 'user_kb')
 """
 
 _Q_SHARED_ORDER = """
@@ -880,6 +869,8 @@ async def put_reading_position(
             "completed": body.completed,
             "cts": cts,
         }
+        if not await _rows(conn, _Q_CHAPTER, {"id": body.chapter_id}):
+            raise HTTPException(404, "This section does not exist or is not available to you.")
         try:
             async with conn.transaction():
                 rows = await _rows(conn, _UPSERT_POSITION, params)

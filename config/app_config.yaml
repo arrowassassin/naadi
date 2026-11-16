@@ -440,7 +440,6 @@ ui_copy:
   learn.empty_exam: "There are no chapters for this exam yet."
   learn.your_file: "Your file"
   learn.your_files: "Your files"
-  learn.mock_exams: "Mock exams"
   learn.format_label: "Format"
   learn.format_read: "Read"
   learn.format_read_watch: "Read + watch"

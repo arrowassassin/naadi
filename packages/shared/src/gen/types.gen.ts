@@ -385,7 +385,7 @@ export type ChapterDetail = {
   /**
    * Kind
    */
-  kind: "chapter" | "mock_exam" | "pathway" | "user_upload" | "user_kb";
+  kind: "chapter" | "user_upload" | "user_kb";
   /**
    * Media
    *
@@ -782,10 +782,6 @@ export type CoursesResponse = {
    * Exams
    */
   exams: Array<ExamOption>;
-  /**
-   * Mock Exams
-   */
-  mock_exams: Array<MockExam>;
   next_up: NextUp | null;
   /**
    * System
@@ -1476,28 +1472,6 @@ export type MediaSource = {
    * Url
    */
   url: string | null;
-};
-
-/**
- * MockExam
- */
-export type MockExam = {
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Meta
-   */
-  meta: string | null;
-  /**
-   * Question Count
-   */
-  question_count: number;
-  /**
-   * Title
-   */
-  title: string;
 };
 
 /**

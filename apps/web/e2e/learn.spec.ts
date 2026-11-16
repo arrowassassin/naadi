@@ -157,7 +157,9 @@ test.describe("course map", () => {
     const list = page
       .getByRole("region", { name: "All chapters" })
       .or(page.locator("section[aria-labelledby=chapters-h]"));
-    await expect(list.getByRole("listitem")).toHaveCount(7); // Step 1 chapters (mock exam listed separately)
+    await expect(list.getByRole("listitem")).toHaveCount(7); // Step 1 chapters only
+    // Mock exams are Practice content: never listed in /learn (their sections are not reading material).
+    await expect(page.getByText(/Mock Exam/)).toHaveCount(0);
     await expect(page.getByRole("link", { name: /^(Start|Continue|Next): / })).toHaveCount(1);
     expect(await limeCount(page)).toBe(1);
     // coverage and progress are words, not colour alone
@@ -358,6 +360,10 @@ test.describe("reader", () => {
     await expect(alert).toContainText(/Request ID [0-9a-f]{32}/);
     await expectNoAxeViolations(page);
     await snap(page, info, consoleErrors, "reader-not-found");
+
+    // A mock exam is not readable here either (the API answers 404 for it).
+    await page.goto("/learn/mock1/mock1-s01");
+    await expect(page.getByRole("alert")).toContainText("This chapter is not available");
   });
 });
 
