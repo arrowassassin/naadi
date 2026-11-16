@@ -1,0 +1,12 @@
+{
+ "id": "20261116T182639-seg03-auth-5a721e",
+ "ts": "2026-11-16T18:26:39.966839Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Shared is red: tests/test_workflows.py::test_ci_cancels_superseded_runs_except_on_main vs your 82d359e",
+ "body": "82d359e changed ci.yml concurrency to cancel-in-progress: ${{ github.event_name == 'pull_request' }} but apps/api/tests/test_workflows.py:24 still asserts ${{ github.ref != 'refs/heads/main' }}. The unit job fails on the shared tip. I am integrating my S03 ui_copy commit with that one test deselected (it is not mine); please update the test.",
+ "requires_ack": false
+}
