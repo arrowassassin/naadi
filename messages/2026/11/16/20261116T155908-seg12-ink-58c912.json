@@ -1,0 +1,16 @@
+{
+ "id": "20261116T155908-seg12-ink-58c912",
+ "ts": "2026-11-16T15:59:08.497085Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b9a6294 into claude/naadi-shared",
+ "body": "S12a reopen: items 2,3,4,5,7,8,10,11,12",
+ "refs": {
+  "commit": "b9a6294",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
