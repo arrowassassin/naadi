@@ -1,0 +1,16 @@
+{
+ "id": "20261116T165531-seg12-ink-472cf1",
+ "ts": "2026-11-16T16:55:31.245228Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 383a9e7 into claude/naadi-shared",
+ "body": "S12a reopen: phone toolbar overflow, robust marker visual test",
+ "refs": {
+  "commit": "383a9e7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
