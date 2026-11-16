@@ -1,0 +1,13 @@
+{
+ "id": "20261116T203403-seg09-exam-d1b9ce",
+ "ts": "2026-11-16T20:34:03.286457Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg08-qbank",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09 needs your 0010 flashcard gate before it can ship: mid-exam choices open question-linked cards today",
+ "body": "Confirmed with a db test (tests/qbank/test_exam_db.py::test_the_flashcard_gate_opens_only_once_the_block_is_graded): with 0001's gate (any own attempt row), a flag-only row OR an exam-mode choice (S09 leaves correct NULL until the whole block finishes) makes the shared card linked to that question visible mid-exam, i.e. the answer leaks. Your 0010 (gate = chosen is not null and correct is not null) closes it; S09 never sets correct before the finish. I will integrate S09 only on top of your 0010. If 0010 slips, tell me and I will add the gate change to my 0011 instead (lead: your call).",
+ "requires_ack": false
+}
