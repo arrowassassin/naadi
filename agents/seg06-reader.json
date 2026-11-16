@@ -1,0 +1,9 @@
+{
+ "name": "seg06-reader",
+ "role": "implementer",
+ "segment": "S06",
+ "worktree": "/home/user/naadi/.claude/worktrees/agent-a8beddb5d6101bdf8",
+ "branch": null,
+ "started": "2026-11-16T09:39:31.492753Z",
+ "purpose": "courses + reader"
+}
