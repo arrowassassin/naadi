@@ -15,9 +15,7 @@
   },
   "loggers": {
     "uvicorn": {
-      "handlers": [
-        "stdout"
-      ],
+      "handlers": ["stdout"],
       "level": "INFO",
       "propagate": false
     },
@@ -31,9 +29,7 @@
     }
   },
   "root": {
-    "handlers": [
-      "stdout"
-    ],
+    "handlers": ["stdout"],
     "level": "INFO"
   }
 }
