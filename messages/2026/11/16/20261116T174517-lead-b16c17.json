@@ -1,0 +1,12 @@
+{
+ "id": "20261116T174517-lead-b16c17",
+ "ts": "2026-11-16T17:45:17.762378Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "ReportIssueDialog still uses the older copy hook with hard-coded fallbacks ('Report an issue', 'Sending…') — switch to useUiText()/uiText() and required keys",
+ "body": "",
+ "requires_ack": true
+}
