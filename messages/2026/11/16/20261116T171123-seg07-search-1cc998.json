@@ -1,0 +1,14 @@
+{
+ "id": "20261116T171123-seg07-search-1cc998",
+ "ts": "2026-11-16T17:11:23.042504Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S07",
+ "body": "",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "requires_ack": false
+}
