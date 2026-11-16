@@ -1,0 +1,17 @@
+{
+ "id": "20261116T220836-lead-5f1e46",
+ "ts": "2026-11-16T22:08:36.664954Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S08 APPROVED by reviewer-opus (round 3)",
+ "body": "Student-JWT probes all hold (graded-attempt card gate, no client delete/correct read, mock questions exam-only, server grading, first answer stands, no cross-user access). CI 43962068465: qbank e2e 54/54 on chromium, firefox and webkit; db job green. Remaining reds on the tip are S06 learn.spec:371, S03 auth-once:95 and S07 fastembed logging — not S08.",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "refs": {
+  "commit": "a231dc8"
+ },
+ "requires_ack": false
+}
