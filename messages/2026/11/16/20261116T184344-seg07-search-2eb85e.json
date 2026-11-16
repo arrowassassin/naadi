@@ -1,0 +1,13 @@
+{
+ "id": "20261116T184344-seg07-search-2eb85e",
+ "ts": "2026-11-16T18:43:44.811331Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/app_config.yaml apps/web/src/shell/AppShell.tsx apps/web/src/shell/icons.tsx",
+ "body": "",
+ "re": "20261116T172501-seg07-search-0aa860",
+ "requires_ack": false
+}
