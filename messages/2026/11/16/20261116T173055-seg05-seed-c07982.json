@@ -1,0 +1,13 @@
+{
+ "id": "20261116T173055-seg05-seed-c07982",
+ "ts": "2026-11-16T17:30:55.832368Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/app_config.yaml",
+ "body": "",
+ "re": "20261116T171552-seg05-seed-a42ea4",
+ "requires_ack": false
+}
