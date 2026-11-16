@@ -1505,6 +1505,25 @@
         "title": "CardStats",
         "type": "object"
       },
+      "CardsOut": {
+        "properties": {
+          "due": {
+            "title": "Due",
+            "type": "integer"
+          },
+          "reviewable": {
+            "description": "true when the Cards screen is available to link to",
+            "title": "Reviewable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "due",
+          "reviewable"
+        ],
+        "title": "CardsOut",
+        "type": "object"
+      },
       "ChangeStats": {
         "properties": {
           "changed": {
@@ -1747,6 +1766,113 @@
           "last_read_at"
         ],
         "title": "ChapterProgress",
+        "type": "object"
+      },
+      "CoachActionOut": {
+        "properties": {
+          "added_items": {
+            "items": {
+              "$ref": "#/components/schemas/PlanItemOut"
+            },
+            "title": "Added Items",
+            "type": "array"
+          },
+          "suggestion": {
+            "$ref": "#/components/schemas/CoachSuggestionOut"
+          }
+        },
+        "required": [
+          "suggestion",
+          "added_items"
+        ],
+        "title": "CoachActionOut",
+        "type": "object"
+      },
+      "CoachSuggestionOut": {
+        "properties": {
+          "action": {
+            "additionalProperties": true,
+            "title": "Action",
+            "type": "object"
+          },
+          "body": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body"
+          },
+          "facts": {
+            "additionalProperties": true,
+            "title": "Facts",
+            "type": "object"
+          },
+          "for_date": {
+            "format": "date",
+            "title": "For Date",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "catch_up_block",
+              "review_misses",
+              "cards_catchup",
+              "reread_section"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "llm",
+              "rules"
+            ],
+            "title": "Source",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "new",
+              "accepted",
+              "dismissed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Assistant-written (source llm); null for rules (client uses ui_copy)",
+            "title": "Title"
+          }
+        },
+        "required": [
+          "id",
+          "for_date",
+          "kind",
+          "source",
+          "title",
+          "body",
+          "facts",
+          "action",
+          "status"
+        ],
+        "title": "CoachSuggestionOut",
         "type": "object"
       },
       "ComponentHealth": {
@@ -2283,7 +2409,7 @@
           },
           "exams": {
             "items": {
-              "$ref": "#/components/schemas/ExamOption"
+              "$ref": "#/components/schemas/naadi_api__courses__ExamOption"
             },
             "title": "Exams",
             "type": "array"
@@ -2367,6 +2493,62 @@
           "cards"
         ],
         "title": "Coverage",
+        "type": "object"
+      },
+      "DiagnosticOut": {
+        "properties": {
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "created": {
+            "description": "false when an open diagnostic already existed and was returned",
+            "title": "Created",
+            "type": "boolean"
+          },
+          "questions": {
+            "title": "Questions",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "block_id",
+          "questions",
+          "created"
+        ],
+        "title": "DiagnosticOut",
+        "type": "object"
+      },
+      "DiagnosticState": {
+        "properties": {
+          "available": {
+            "description": "false until timed blocks ship: the onboarding diagnostic step is hidden",
+            "title": "Available",
+            "type": "boolean"
+          },
+          "open_block_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Open Block Id"
+          },
+          "questions": {
+            "title": "Questions",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "available",
+          "questions"
+        ],
+        "title": "DiagnosticState",
         "type": "object"
       },
       "DueResponse": {
@@ -2598,29 +2780,6 @@
           "exam"
         ],
         "title": "ExamModes",
-        "type": "object"
-      },
-      "ExamOption": {
-        "properties": {
-          "chapter_count": {
-            "title": "Chapter Count",
-            "type": "integer"
-          },
-          "id": {
-            "title": "Id",
-            "type": "string"
-          },
-          "label": {
-            "title": "Label",
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "label",
-          "chapter_count"
-        ],
-        "title": "ExamOption",
         "type": "object"
       },
       "ExamRules": {
@@ -2971,6 +3130,34 @@
         "title": "HealthResponse",
         "type": "object"
       },
+      "HoursRange": {
+        "properties": {
+          "default": {
+            "title": "Default",
+            "type": "number"
+          },
+          "max": {
+            "title": "Max",
+            "type": "number"
+          },
+          "min": {
+            "title": "Min",
+            "type": "number"
+          },
+          "step": {
+            "title": "Step",
+            "type": "number"
+          }
+        },
+        "required": [
+          "min",
+          "max",
+          "step",
+          "default"
+        ],
+        "title": "HoursRange",
+        "type": "object"
+      },
       "IndexJob": {
         "properties": {
           "error": {
@@ -3310,6 +3497,25 @@
           "vars"
         ],
         "title": "Insight",
+        "type": "object"
+      },
+      "ItemStatusIn": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "enum": [
+              "planned",
+              "done",
+              "skipped"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "ItemStatusIn",
         "type": "object"
       },
       "JsonValue": {},
@@ -3970,6 +4176,790 @@
         "title": "NextUp",
         "type": "object"
       },
+      "OnboardingIn": {
+        "additionalProperties": false,
+        "properties": {
+          "daily_hours": {
+            "maximum": 24.0,
+            "minimum": 1.0,
+            "title": "Daily Hours",
+            "type": "number"
+          },
+          "exam": {
+            "enum": [
+              "step1",
+              "step2ck",
+              "step3"
+            ],
+            "title": "Exam",
+            "type": "string"
+          },
+          "exam_date": {
+            "format": "date",
+            "title": "Exam Date",
+            "type": "string"
+          },
+          "materials": {
+            "items": {
+              "enum": [
+                "qbank",
+                "review_book",
+                "anki",
+                "video_course",
+                "own_pdfs",
+                "nothing"
+              ],
+              "type": "string"
+            },
+            "maxItems": 6,
+            "title": "Materials",
+            "type": "array"
+          },
+          "medical_school": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Medical School"
+          },
+          "study_days": {
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 7,
+            "minItems": 1,
+            "title": "Study Days",
+            "type": "array"
+          }
+        },
+        "required": [
+          "exam",
+          "exam_date",
+          "daily_hours",
+          "study_days"
+        ],
+        "title": "OnboardingIn",
+        "type": "object"
+      },
+      "OnboardingOut": {
+        "properties": {
+          "completed_at": {
+            "format": "date-time",
+            "title": "Completed At",
+            "type": "string"
+          },
+          "plan_id": {
+            "format": "uuid",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/PlanSummaryOut"
+          }
+        },
+        "required": [
+          "plan_id",
+          "summary",
+          "completed_at"
+        ],
+        "title": "OnboardingOut",
+        "type": "object"
+      },
+      "OnboardingState": {
+        "properties": {
+          "completed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed At"
+          },
+          "diagnostic": {
+            "$ref": "#/components/schemas/DiagnosticState"
+          },
+          "exams": {
+            "description": "Only exams that have a plan template",
+            "items": {
+              "$ref": "#/components/schemas/naadi_api__plan__models__ExamOption"
+            },
+            "title": "Exams",
+            "type": "array"
+          },
+          "hours": {
+            "$ref": "#/components/schemas/HoursRange"
+          },
+          "materials": {
+            "items": {
+              "enum": [
+                "qbank",
+                "review_book",
+                "anki",
+                "video_course",
+                "own_pdfs",
+                "nothing"
+              ],
+              "type": "string"
+            },
+            "title": "Materials",
+            "type": "array"
+          },
+          "min_study_days": {
+            "title": "Min Study Days",
+            "type": "integer"
+          },
+          "today": {
+            "description": "Today in the student's time zone (the plan starts here)",
+            "format": "date",
+            "title": "Today",
+            "type": "string"
+          },
+          "values": {
+            "$ref": "#/components/schemas/OnboardingValues",
+            "description": "Saved answers, or the defaults for a new student"
+          }
+        },
+        "required": [
+          "exams",
+          "materials",
+          "hours",
+          "min_study_days",
+          "today",
+          "values",
+          "completed_at",
+          "diagnostic"
+        ],
+        "title": "OnboardingState",
+        "type": "object"
+      },
+      "OnboardingValues": {
+        "properties": {
+          "daily_hours": {
+            "title": "Daily Hours",
+            "type": "number"
+          },
+          "exam": {
+            "enum": [
+              "step1",
+              "step2ck",
+              "step3"
+            ],
+            "title": "Exam",
+            "type": "string"
+          },
+          "exam_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exam Date"
+          },
+          "materials": {
+            "items": {
+              "enum": [
+                "qbank",
+                "review_book",
+                "anki",
+                "video_course",
+                "own_pdfs",
+                "nothing"
+              ],
+              "type": "string"
+            },
+            "title": "Materials",
+            "type": "array"
+          },
+          "medical_school": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Medical School"
+          },
+          "study_days": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Study Days",
+            "type": "array"
+          }
+        },
+        "required": [
+          "exam",
+          "exam_date",
+          "medical_school",
+          "daily_hours",
+          "study_days",
+          "materials"
+        ],
+        "title": "OnboardingValues",
+        "type": "object"
+      },
+      "PathwayStageOut": {
+        "properties": {
+          "done": {
+            "title": "Done",
+            "type": "integer"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "key",
+          "title",
+          "done",
+          "total"
+        ],
+        "title": "PathwayStageOut",
+        "type": "object"
+      },
+      "PlanDayMeta": {
+        "properties": {
+          "assessment": {
+            "title": "Assessment",
+            "type": "boolean"
+          },
+          "chapter_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Chapter Ids",
+            "type": "array"
+          },
+          "chapter_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Ref"
+          },
+          "date": {
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "day_no": {
+            "title": "Day No",
+            "type": "integer"
+          },
+          "extra": {
+            "title": "Extra",
+            "type": "boolean"
+          },
+          "merged_days": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Merged Days",
+            "type": "array"
+          },
+          "phase": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "target_hours": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Hours"
+          },
+          "template_day": {
+            "title": "Template Day",
+            "type": "integer"
+          },
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Topic"
+          },
+          "week": {
+            "title": "Week",
+            "type": "integer"
+          },
+          "weekday": {
+            "title": "Weekday",
+            "type": "string"
+          }
+        },
+        "required": [
+          "day_no",
+          "date",
+          "weekday",
+          "week",
+          "phase",
+          "chapter_ref",
+          "chapter_ids",
+          "topic",
+          "target_hours",
+          "template_day",
+          "merged_days",
+          "extra",
+          "assessment",
+          "status"
+        ],
+        "title": "PlanDayMeta",
+        "type": "object"
+      },
+      "PlanDayOut": {
+        "properties": {
+          "assessment": {
+            "title": "Assessment",
+            "type": "boolean"
+          },
+          "chapter_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Chapter Ids",
+            "type": "array"
+          },
+          "chapter_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Ref"
+          },
+          "date": {
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "day_no": {
+            "title": "Day No",
+            "type": "integer"
+          },
+          "extra": {
+            "title": "Extra",
+            "type": "boolean"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PlanItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "merged_days": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Merged Days",
+            "type": "array"
+          },
+          "phase": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "target_hours": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Hours"
+          },
+          "template_day": {
+            "title": "Template Day",
+            "type": "integer"
+          },
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Topic"
+          },
+          "week": {
+            "title": "Week",
+            "type": "integer"
+          },
+          "weekday": {
+            "title": "Weekday",
+            "type": "string"
+          }
+        },
+        "required": [
+          "day_no",
+          "date",
+          "weekday",
+          "week",
+          "phase",
+          "chapter_ref",
+          "chapter_ids",
+          "topic",
+          "target_hours",
+          "template_day",
+          "merged_days",
+          "extra",
+          "assessment",
+          "status",
+          "items"
+        ],
+        "title": "PlanDayOut",
+        "type": "object"
+      },
+      "PlanItemOut": {
+        "properties": {
+          "day": {
+            "format": "date",
+            "title": "Day",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "read",
+              "questions",
+              "assessment",
+              "cards",
+              "video",
+              "admin",
+              "rest"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "generator",
+              "user",
+              "assistant",
+              "seed"
+            ],
+            "title": "Origin",
+            "type": "string"
+          },
+          "plan_day": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plan Day"
+          },
+          "ref_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ref Id"
+          },
+          "ref_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ref Type"
+          },
+          "sort": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sort"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "now",
+              "done",
+              "skipped",
+              "behind"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "target_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Count"
+          },
+          "target_minutes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Minutes"
+          },
+          "title": {
+            "description": "The plan template's own text, verbatim",
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "day",
+          "kind",
+          "title",
+          "ref_type",
+          "ref_id",
+          "target_minutes",
+          "target_count",
+          "status",
+          "origin",
+          "sort",
+          "plan_day"
+        ],
+        "title": "PlanItemOut",
+        "type": "object"
+      },
+      "PlanOut": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "days": {
+            "items": {
+              "$ref": "#/components/schemas/PlanDayOut"
+            },
+            "title": "Days",
+            "type": "array"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "inputs": {
+            "additionalProperties": true,
+            "title": "Inputs",
+            "type": "object"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/PlanSummaryOut"
+          },
+          "template_id": {
+            "title": "Template Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "template_id",
+          "created_at",
+          "inputs",
+          "summary",
+          "days"
+        ],
+        "title": "PlanOut",
+        "type": "object"
+      },
+      "PlanPreview": {
+        "properties": {
+          "available_days": {
+            "description": "Dates from today to the day before the exam on a study weekday",
+            "title": "Available Days",
+            "type": "integer"
+          },
+          "needed_days": {
+            "title": "Needed Days",
+            "type": "integer"
+          },
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "problem": {
+            "anyOf": [
+              {
+                "enum": [
+                  "too_few_study_days",
+                  "exam_date_not_after_start",
+                  "no_template"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Problem"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlanSummaryOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "ok",
+          "available_days",
+          "needed_days"
+        ],
+        "title": "PlanPreview",
+        "type": "object"
+      },
+      "PlanSummaryOut": {
+        "properties": {
+          "assessments": {
+            "title": "Assessments",
+            "type": "integer"
+          },
+          "days_per_week": {
+            "title": "Days Per Week",
+            "type": "integer"
+          },
+          "extra_review_days": {
+            "title": "Extra Review Days",
+            "type": "integer"
+          },
+          "first_day": {
+            "format": "date",
+            "title": "First Day",
+            "type": "string"
+          },
+          "last_day": {
+            "format": "date",
+            "title": "Last Day",
+            "type": "string"
+          },
+          "merged_days": {
+            "title": "Merged Days",
+            "type": "integer"
+          },
+          "study_days": {
+            "title": "Study Days",
+            "type": "integer"
+          },
+          "weeks": {
+            "title": "Weeks",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "study_days",
+          "weeks",
+          "days_per_week",
+          "first_day",
+          "last_day",
+          "assessments",
+          "extra_review_days",
+          "merged_days"
+        ],
+        "title": "PlanSummaryOut",
+        "type": "object"
+      },
       "PoolFacet": {
         "properties": {
           "count": {
@@ -4571,6 +5561,47 @@
         "title": "Quota",
         "type": "object"
       },
+      "ReadinessOut": {
+        "properties": {
+          "answered": {
+            "title": "Answered",
+            "type": "integer"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "integer"
+          },
+          "needed_answered": {
+            "title": "Needed Answered",
+            "type": "integer"
+          },
+          "needed_coverage": {
+            "title": "Needed Coverage",
+            "type": "integer"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whole percent; null until enough first attempts and coverage",
+            "title": "Score"
+          }
+        },
+        "required": [
+          "score",
+          "coverage",
+          "answered",
+          "needed_answered",
+          "needed_coverage"
+        ],
+        "title": "ReadinessOut",
+        "type": "object"
+      },
       "ReadingPosition": {
         "properties": {
           "chapter_id": {
@@ -4851,6 +5882,95 @@
           "seconds"
         ],
         "title": "ResultQuestion",
+        "type": "object"
+      },
+      "ResumeBlock": {
+        "properties": {
+          "answered": {
+            "title": "Answered",
+            "type": "integer"
+          },
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "diagnostic": {
+            "title": "Diagnostic",
+            "type": "boolean"
+          },
+          "kind": {
+            "const": "block",
+            "title": "Kind",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "tutor",
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "next_n": {
+            "title": "Next N",
+            "type": "integer"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "block_id",
+          "mode",
+          "answered",
+          "total",
+          "next_n",
+          "diagnostic"
+        ],
+        "title": "ResumeBlock",
+        "type": "object"
+      },
+      "ResumeReading": {
+        "properties": {
+          "chapter_id": {
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "chapter_title": {
+            "title": "Chapter Title",
+            "type": "string"
+          },
+          "kind": {
+            "const": "reading",
+            "title": "Kind",
+            "type": "string"
+          },
+          "section_heading": {
+            "title": "Section Heading",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          },
+          "section_n": {
+            "title": "Section N",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "chapter_id",
+          "chapter_title",
+          "section_id",
+          "section_heading",
+          "section_n"
+        ],
+        "title": "ResumeReading",
         "type": "object"
       },
       "RetentionOut": {
@@ -5416,6 +6536,56 @@
         "title": "SourceRef",
         "type": "object"
       },
+      "SystemOut": {
+        "properties": {
+          "attempts": {
+            "title": "Attempts",
+            "type": "integer"
+          },
+          "correct": {
+            "title": "Correct",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "percent": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percent"
+          },
+          "state": {
+            "enum": [
+              "ok",
+              "weak",
+              "insufficient"
+            ],
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "attempts",
+          "correct",
+          "percent",
+          "state"
+        ],
+        "title": "SystemOut",
+        "type": "object"
+      },
       "SystemRef": {
         "properties": {
           "id": {
@@ -5432,6 +6602,38 @@
           "label"
         ],
         "title": "SystemRef",
+        "type": "object"
+      },
+      "SystemsOut": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SystemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "min_attempts": {
+            "title": "Min Attempts",
+            "type": "integer"
+          },
+          "weak_below": {
+            "description": "Whole percent",
+            "title": "Weak Below",
+            "type": "integer"
+          },
+          "window_days": {
+            "title": "Window Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "window_days",
+          "min_attempts",
+          "weak_below",
+          "items"
+        ],
+        "title": "SystemsOut",
         "type": "object"
       },
       "Target": {
@@ -5624,6 +6826,195 @@
           "total_s"
         ],
         "title": "TimeStats",
+        "type": "object"
+      },
+      "TodayOut": {
+        "properties": {
+          "cards": {
+            "$ref": "#/components/schemas/CardsOut"
+          },
+          "coach": {
+            "items": {
+              "$ref": "#/components/schemas/CoachSuggestionOut"
+            },
+            "title": "Coach",
+            "type": "array"
+          },
+          "days_left": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Days Left"
+          },
+          "exam": {
+            "enum": [
+              "step1",
+              "step2ck",
+              "step3"
+            ],
+            "title": "Exam",
+            "type": "string"
+          },
+          "exam_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exam Date"
+          },
+          "onboarding_complete": {
+            "title": "Onboarding Complete",
+            "type": "boolean"
+          },
+          "pathway": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/PathwayStageOut"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Only while the pathway flag is on",
+            "title": "Pathway"
+          },
+          "plan": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TodayPlan"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/ReadinessOut"
+          },
+          "resume": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "block": "#/components/schemas/ResumeBlock",
+                    "reading": "#/components/schemas/ResumeReading"
+                  },
+                  "propertyName": "kind"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ResumeReading"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ResumeBlock"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resume"
+          },
+          "systems": {
+            "$ref": "#/components/schemas/SystemsOut"
+          },
+          "today": {
+            "format": "date",
+            "title": "Today",
+            "type": "string"
+          }
+        },
+        "required": [
+          "today",
+          "exam",
+          "exam_date",
+          "days_left",
+          "onboarding_complete",
+          "plan",
+          "resume",
+          "readiness",
+          "systems",
+          "cards",
+          "coach",
+          "pathway"
+        ],
+        "title": "TodayOut",
+        "type": "object"
+      },
+      "TodayPlan": {
+        "properties": {
+          "day": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlanDayMeta"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Today's plan day; null on a non-study day"
+          },
+          "items": {
+            "description": "Today's items in plan order (generator first, then added ones)",
+            "items": {
+              "$ref": "#/components/schemas/PlanItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_day": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Day"
+          },
+          "now_item": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The first item of today not done or skipped",
+            "title": "Now Item"
+          },
+          "plan_id": {
+            "format": "uuid",
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plan_id",
+          "day",
+          "items",
+          "next_day",
+          "now_item"
+        ],
+        "title": "TodayPlan",
         "type": "object"
       },
       "TopicStat": {
@@ -6030,6 +7421,53 @@
           "percent"
         ],
         "title": "WeightOverlay",
+        "type": "object"
+      },
+      "naadi_api__courses__ExamOption": {
+        "properties": {
+          "chapter_count": {
+            "title": "Chapter Count",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "chapter_count"
+        ],
+        "title": "ExamOption",
+        "type": "object"
+      },
+      "naadi_api__plan__models__ExamOption": {
+        "properties": {
+          "id": {
+            "enum": [
+              "step1",
+              "step2ck",
+              "step3"
+            ],
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "description": "The exam's short name from exam_rules (a proper noun, not a sentence)",
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "title": "ExamOption",
         "type": "object"
       }
     }
@@ -8734,6 +10172,172 @@
         ]
       }
     },
+    "/api/coach/suggestions/{suggestion_id}/accept": {
+      "post": {
+        "operationId": "acceptCoachSuggestion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "suggestion_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Suggestion Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoachActionOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Accept a coach suggestion: its stored action adds items to today's plan",
+        "tags": [
+          "plan"
+        ]
+      }
+    },
+    "/api/coach/suggestions/{suggestion_id}/dismiss": {
+      "post": {
+        "operationId": "dismissCoachSuggestion",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "suggestion_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Suggestion Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoachSuggestionOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Dismiss a coach suggestion",
+        "tags": [
+          "plan"
+        ]
+      }
+    },
     "/api/courses": {
       "get": {
         "operationId": "getCourses",
@@ -8832,6 +10436,77 @@
         "summary": "Course map: chapters by system with coverage and the caller's progress, plus the next action",
         "tags": [
           "courses"
+        ]
+      }
+    },
+    "/api/diagnostic": {
+      "post": {
+        "operationId": "createDiagnostic",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiagnosticOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The onboarding diagnostic: a timed, blueprint-stratified block (returns the open one if it exists)",
+        "tags": [
+          "plan"
         ]
       }
     },
@@ -9377,6 +11052,445 @@
         "summary": "Navigation for the signed-in user: enabled items only, plus shell feature flags",
         "tags": [
           "auth"
+        ]
+      }
+    },
+    "/api/onboarding": {
+      "get": {
+        "operationId": "getOnboarding",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnboardingState"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Onboarding options (exams with a plan template, materials, hours) and the saved answers",
+        "tags": [
+          "plan"
+        ]
+      },
+      "put": {
+        "operationId": "saveOnboarding",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OnboardingIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnboardingOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Save the onboarding answers to the profile and generate the study plan",
+        "tags": [
+          "plan"
+        ]
+      }
+    },
+    "/api/plan": {
+      "get": {
+        "operationId": "getPlan",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The active study plan: every day with its items",
+        "tags": [
+          "plan"
+        ]
+      }
+    },
+    "/api/plan/export.csv": {
+      "get": {
+        "operationId": "exportPlanCsv",
+        "responses": {
+          "200": {
+            "content": {
+              "text/csv": {}
+            },
+            "description": "The plan as CSV"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The active plan in the template CSV's shape (CRLF, UTF-8)",
+        "tags": [
+          "plan"
+        ]
+      }
+    },
+    "/api/plan/items/{item_id}/status": {
+      "post": {
+        "operationId": "setPlanItemStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemStatusIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Mark a plan item done, skipped or planned again",
+        "tags": [
+          "plan"
+        ]
+      }
+    },
+    "/api/plan/preview": {
+      "get": {
+        "operationId": "previewPlan",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "exam",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9]{2,16}$",
+              "title": "Exam",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "exam_date",
+            "required": true,
+            "schema": {
+              "format": "date",
+              "title": "Exam Date",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "daily_hours",
+            "required": true,
+            "schema": {
+              "maximum": 24,
+              "minimum": 1,
+              "title": "Daily Hours",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "study_days",
+            "required": true,
+            "schema": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 7,
+              "minItems": 1,
+              "title": "Study Days",
+              "type": "array"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanPreview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid inputs"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Live plan preview for the onboarding form (nothing is saved)",
+        "tags": [
+          "plan"
         ]
       }
     },
@@ -10015,6 +12129,57 @@
         "summary": "Web results through the layered search (PubMed and other medical sources; Tavily for latest and pathway)",
         "tags": [
           "search"
+        ]
+      }
+    },
+    "/api/today": {
+      "get": {
+        "operationId": "getToday",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodayOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Today in one request: countdown, plan items, resume target, readiness, by-system, cards, coach",
+        "tags": [
+          "plan"
         ]
       }
     }

@@ -5,6 +5,9 @@ import * as z from "zod";
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from "./client";
 import { client } from "./client.gen";
 import type {
+  AcceptCoachSuggestionData,
+  AcceptCoachSuggestionErrors,
+  AcceptCoachSuggestionResponses,
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
@@ -17,6 +20,9 @@ import type {
   CreateCardData,
   CreateCardErrors,
   CreateCardResponses,
+  CreateDiagnosticData,
+  CreateDiagnosticErrors,
+  CreateDiagnosticResponses,
   CreateMockBlockData,
   CreateMockBlockErrors,
   CreateMockBlockResponses,
@@ -29,6 +35,12 @@ import type {
   DeleteCardData,
   DeleteCardErrors,
   DeleteCardResponses,
+  DismissCoachSuggestionData,
+  DismissCoachSuggestionErrors,
+  DismissCoachSuggestionResponses,
+  ExportPlanCsvData,
+  ExportPlanCsvErrors,
+  ExportPlanCsvResponses,
   FinishBlockData,
   FinishBlockErrors,
   FinishBlockResponses,
@@ -92,6 +104,12 @@ import type {
   GetNavData,
   GetNavErrors,
   GetNavResponses,
+  GetOnboardingData,
+  GetOnboardingErrors,
+  GetOnboardingResponses,
+  GetPlanData,
+  GetPlanErrors,
+  GetPlanResponses,
   GetPublicConfigData,
   GetPublicConfigResponses,
   GetQbankPoolData,
@@ -106,6 +124,9 @@ import type {
   GetSeedRunData,
   GetSeedRunErrors,
   GetSeedRunResponses,
+  GetTodayData,
+  GetTodayErrors,
+  GetTodayResponses,
   ListAppConfigData,
   ListAppConfigErrors,
   ListAppConfigResponses,
@@ -118,6 +139,9 @@ import type {
   PostInkChangesData,
   PostInkChangesErrors,
   PostInkChangesResponses,
+  PreviewPlanData,
+  PreviewPlanErrors,
+  PreviewPlanResponses,
   PutAppConfigData,
   PutAppConfigErrors,
   PutAppConfigResponses,
@@ -133,12 +157,18 @@ import type {
   ReviewCardData,
   ReviewCardErrors,
   ReviewCardResponses,
+  SaveOnboardingData,
+  SaveOnboardingErrors,
+  SaveOnboardingResponses,
   SearchLocalData,
   SearchLocalErrors,
   SearchLocalResponses,
   SearchWebData,
   SearchWebErrors,
   SearchWebResponses,
+  SetPlanItemStatusData,
+  SetPlanItemStatusErrors,
+  SetPlanItemStatusResponses,
   StartSeedData,
   StartSeedErrors,
   StartSeedResponses,
@@ -150,6 +180,8 @@ import type {
   UpdateMeResponses,
 } from "./types.gen";
 import {
+  zAcceptCoachSuggestionPath,
+  zAcceptCoachSuggestionResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
   zCreateAttemptBody,
@@ -159,6 +191,7 @@ import {
   zCreateBlockResponse,
   zCreateCardBody,
   zCreateCardResponse,
+  zCreateDiagnosticResponse,
   zCreateMockBlockBody,
   zCreateMockBlockResponse,
   zCreateSingleQuestionBlockBody,
@@ -167,6 +200,8 @@ import {
   zCreateWeakSpotBlockResponse,
   zDeleteCardPath,
   zDeleteCardResponse,
+  zDismissCoachSuggestionPath,
+  zDismissCoachSuggestionResponse,
   zFinishBlockPath,
   zFinishBlockResponse,
   zFlagAttemptBody,
@@ -205,6 +240,8 @@ import {
   zGetLabValuesResponse,
   zGetMeResponse,
   zGetNavResponse,
+  zGetOnboardingResponse,
+  zGetPlanResponse,
   zGetPublicConfigResponse,
   zGetQbankPoolQuery,
   zGetQbankPoolResponse,
@@ -213,6 +250,7 @@ import {
   zGetReadyResponse,
   zGetSeedRunPath,
   zGetSeedRunResponse,
+  zGetTodayResponse,
   zListAppConfigResponse,
   zListBlocksQuery,
   zListBlocksResponse,
@@ -220,6 +258,8 @@ import {
   zPostInkChangesBody,
   zPostInkChangesPath,
   zPostInkChangesResponse,
+  zPreviewPlanQuery,
+  zPreviewPlanResponse,
   zPutAppConfigBody,
   zPutAppConfigPath,
   zPutAppConfigResponse,
@@ -232,10 +272,15 @@ import {
   zReviewCardBody,
   zReviewCardPath,
   zReviewCardResponse,
+  zSaveOnboardingBody,
+  zSaveOnboardingResponse,
   zSearchLocalQuery,
   zSearchLocalResponse,
   zSearchWebQuery,
   zSearchWebResponse,
+  zSetPlanItemStatusBody,
+  zSetPlanItemStatusPath,
+  zSetPlanItemStatusResponse,
   zStartSeedBody,
   zStartSeedResponse,
   zUpdateCardBody,
@@ -932,6 +977,46 @@ export const getChapter = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Accept a coach suggestion: its stored action adds items to today's plan
+ */
+export const acceptCoachSuggestion = <ThrowOnError extends boolean = false>(
+  options: Options<AcceptCoachSuggestionData, ThrowOnError>,
+): RequestResult<AcceptCoachSuggestionResponses, AcceptCoachSuggestionErrors, ThrowOnError> =>
+  (options.client ?? client).post<AcceptCoachSuggestionResponses, AcceptCoachSuggestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zAcceptCoachSuggestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zAcceptCoachSuggestionResponse.parseAsync(data),
+    url: "/api/coach/suggestions/{suggestion_id}/accept",
+    ...options,
+  });
+
+/**
+ * Dismiss a coach suggestion
+ */
+export const dismissCoachSuggestion = <ThrowOnError extends boolean = false>(
+  options: Options<DismissCoachSuggestionData, ThrowOnError>,
+): RequestResult<DismissCoachSuggestionResponses, DismissCoachSuggestionErrors, ThrowOnError> =>
+  (options.client ?? client).post<DismissCoachSuggestionResponses, DismissCoachSuggestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDismissCoachSuggestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDismissCoachSuggestionResponse.parseAsync(data),
+    url: "/api/coach/suggestions/{suggestion_id}/dismiss",
+    ...options,
+  });
+
+/**
  * Course map: chapters by system with coverage and the caller's progress, plus the next action
  */
 export const getCourses = <ThrowOnError extends boolean = false>(
@@ -948,6 +1033,26 @@ export const getCourses = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetCoursesResponse.parseAsync(data),
     url: "/api/courses",
+    ...options,
+  });
+
+/**
+ * The onboarding diagnostic: a timed, blueprint-stratified block (returns the open one if it exists)
+ */
+export const createDiagnostic = <ThrowOnError extends boolean = false>(
+  options?: Options<CreateDiagnosticData, ThrowOnError>,
+): RequestResult<CreateDiagnosticResponses, CreateDiagnosticErrors, ThrowOnError> =>
+  (options?.client ?? client).post<CreateDiagnosticResponses, CreateDiagnosticErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateDiagnosticResponse.parseAsync(data),
+    url: "/api/diagnostic",
     ...options,
   });
 
@@ -1120,6 +1225,133 @@ export const getNav = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Onboarding options (exams with a plan template, materials, hours) and the saved answers
+ */
+export const getOnboarding = <ThrowOnError extends boolean = false>(
+  options?: Options<GetOnboardingData, ThrowOnError>,
+): RequestResult<GetOnboardingResponses, GetOnboardingErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetOnboardingResponses, GetOnboardingErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetOnboardingResponse.parseAsync(data),
+    url: "/api/onboarding",
+    ...options,
+  });
+
+/**
+ * Save the onboarding answers to the profile and generate the study plan
+ */
+export const saveOnboarding = <ThrowOnError extends boolean = false>(
+  options: Options<SaveOnboardingData, ThrowOnError>,
+): RequestResult<SaveOnboardingResponses, SaveOnboardingErrors, ThrowOnError> =>
+  (options.client ?? client).put<SaveOnboardingResponses, SaveOnboardingErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSaveOnboardingBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSaveOnboardingResponse.parseAsync(data),
+    url: "/api/onboarding",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * The active study plan: every day with its items
+ */
+export const getPlan = <ThrowOnError extends boolean = false>(
+  options?: Options<GetPlanData, ThrowOnError>,
+): RequestResult<GetPlanResponses, GetPlanErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetPlanResponses, GetPlanErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetPlanResponse.parseAsync(data),
+    url: "/api/plan",
+    ...options,
+  });
+
+/**
+ * The active plan in the template CSV's shape (CRLF, UTF-8)
+ */
+export const exportPlanCsv = <ThrowOnError extends boolean = false>(
+  options?: Options<ExportPlanCsvData, ThrowOnError>,
+): RequestResult<ExportPlanCsvResponses, ExportPlanCsvErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ExportPlanCsvResponses, ExportPlanCsvErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    url: "/api/plan/export.csv",
+    ...options,
+  });
+
+/**
+ * Mark a plan item done, skipped or planned again
+ */
+export const setPlanItemStatus = <ThrowOnError extends boolean = false>(
+  options: Options<SetPlanItemStatusData, ThrowOnError>,
+): RequestResult<SetPlanItemStatusResponses, SetPlanItemStatusErrors, ThrowOnError> =>
+  (options.client ?? client).post<SetPlanItemStatusResponses, SetPlanItemStatusErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSetPlanItemStatusBody,
+          path: zSetPlanItemStatusPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSetPlanItemStatusResponse.parseAsync(data),
+    url: "/api/plan/items/{item_id}/status",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Live plan preview for the onboarding form (nothing is saved)
+ */
+export const previewPlan = <ThrowOnError extends boolean = false>(
+  options: Options<PreviewPlanData, ThrowOnError>,
+): RequestResult<PreviewPlanResponses, PreviewPlanErrors, ThrowOnError> =>
+  (options.client ?? client).get<PreviewPlanResponses, PreviewPlanErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zPreviewPlanQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPreviewPlanResponse.parseAsync(data),
+    url: "/api/plan/preview",
+    ...options,
+  });
+
+/**
  * Public client configuration (no auth): Supabase URL + anon key, sign-in options, version
  */
 export const getPublicConfig = <ThrowOnError extends boolean = false>(
@@ -1284,5 +1516,25 @@ export const searchWeb = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zSearchWebResponse.parseAsync(data),
     url: "/api/search/web",
+    ...options,
+  });
+
+/**
+ * Today in one request: countdown, plan items, resume target, readiness, by-system, cards, coach
+ */
+export const getToday = <ThrowOnError extends boolean = false>(
+  options?: Options<GetTodayData, ThrowOnError>,
+): RequestResult<GetTodayResponses, GetTodayErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetTodayResponses, GetTodayErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetTodayResponse.parseAsync(data),
+    url: "/api/today",
     ...options,
   });

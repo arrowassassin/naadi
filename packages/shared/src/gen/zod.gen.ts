@@ -199,6 +199,14 @@ export const zCardOut = z.object({
 });
 
 /**
+ * CardsOut
+ */
+export const zCardsOut = z.object({
+  due: z.int(),
+  reviewable: z.boolean(),
+});
+
+/**
  * ChangeStats
  */
 export const zChangeStats = z.object({
@@ -225,6 +233,21 @@ export const zChapterProgress = z.object({
   sections_read: z.int(),
   sections_total: z.int(),
   status: z.enum(["not_started", "in_progress", "done"]),
+});
+
+/**
+ * CoachSuggestionOut
+ */
+export const zCoachSuggestionOut = z.object({
+  action: z.record(z.string(), z.unknown()),
+  body: z.string().nullable(),
+  facts: z.record(z.string(), z.unknown()),
+  for_date: z.iso.date(),
+  id: z.uuid(),
+  kind: z.enum(["catch_up_block", "review_misses", "cards_catchup", "reread_section"]),
+  source: z.enum(["llm", "rules"]),
+  status: z.enum(["new", "accepted", "dismissed"]),
+  title: z.string().nullable(),
 });
 
 /**
@@ -291,6 +314,24 @@ export const zCourseSystem = z.object({
 });
 
 /**
+ * DiagnosticOut
+ */
+export const zDiagnosticOut = z.object({
+  block_id: z.uuid(),
+  created: z.boolean(),
+  questions: z.int(),
+});
+
+/**
+ * DiagnosticState
+ */
+export const zDiagnosticState = z.object({
+  available: z.boolean(),
+  open_block_id: z.uuid().nullish(),
+  questions: z.int(),
+});
+
+/**
  * ExamChoice
  */
 export const zExamChoice = z.object({
@@ -309,15 +350,6 @@ export const zExamFormat = z.object({
   label: z.string().min(1).max(40),
   minutes_per_block: z.int().gte(1).lte(240),
   questions_per_block: z.int().gte(1).lte(80),
-});
-
-/**
- * ExamOption
- */
-export const zExamOption = z.object({
-  chapter_count: z.int(),
-  id: z.string(),
-  label: z.string(),
 });
 
 /**
@@ -446,6 +478,16 @@ export const zDueResponse = z.object({
 });
 
 /**
+ * HoursRange
+ */
+export const zHoursRange = z.object({
+  default: z.number(),
+  max: z.number(),
+  min: z.number(),
+  step: z.number(),
+});
+
+/**
  * IndexJob
  */
 export const zIndexJob = z.object({
@@ -529,6 +571,13 @@ export const zInsight = z.object({
     "trend_down",
   ]),
   vars: z.record(z.string(), z.union([z.string(), z.int(), z.number()])),
+});
+
+/**
+ * ItemStatusIn
+ */
+export const zItemStatusIn = z.object({
+  status: z.enum(["planned", "done", "skipped"]),
 });
 
 export const zJsonValue = z.unknown();
@@ -748,15 +797,153 @@ export const zNextUp = z.object({
 });
 
 /**
- * CoursesResponse
+ * OnboardingIn
  */
-export const zCoursesResponse = z.object({
-  chapters: z.array(zCourseChapter),
-  exam: z.string().nullable(),
-  exams: z.array(zExamOption),
-  next_up: zNextUp.nullable(),
-  system: z.string().nullable(),
-  systems: z.array(zCourseSystem),
+export const zOnboardingIn = z.object({
+  daily_hours: z.number().gte(1).lte(24),
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  exam_date: z.iso.date(),
+  materials: z
+    .array(z.enum(["qbank", "review_book", "anki", "video_course", "own_pdfs", "nothing"]))
+    .max(6)
+    .optional(),
+  medical_school: z.string().max(120).nullish(),
+  study_days: z.array(z.int()).min(1).max(7),
+});
+
+/**
+ * OnboardingValues
+ */
+export const zOnboardingValues = z.object({
+  daily_hours: z.number(),
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  exam_date: z.iso.date().nullable(),
+  materials: z.array(z.enum(["qbank", "review_book", "anki", "video_course", "own_pdfs", "nothing"])),
+  medical_school: z.string().nullable(),
+  study_days: z.array(z.int()),
+});
+
+/**
+ * PathwayStageOut
+ */
+export const zPathwayStageOut = z.object({
+  done: z.int(),
+  key: z.string(),
+  title: z.string().nullable(),
+  total: z.int(),
+});
+
+/**
+ * PlanDayMeta
+ */
+export const zPlanDayMeta = z.object({
+  assessment: z.boolean(),
+  chapter_ids: z.array(z.string()),
+  chapter_ref: z.string().nullable(),
+  date: z.iso.date(),
+  day_no: z.int(),
+  extra: z.boolean(),
+  merged_days: z.array(z.int()),
+  phase: z.string().nullable(),
+  status: z.string(),
+  target_hours: z.number().nullable(),
+  template_day: z.int(),
+  topic: z.string().nullable(),
+  week: z.int(),
+  weekday: z.string(),
+});
+
+/**
+ * PlanItemOut
+ */
+export const zPlanItemOut = z.object({
+  day: z.iso.date(),
+  id: z.uuid(),
+  kind: z.enum(["read", "questions", "assessment", "cards", "video", "admin", "rest"]),
+  origin: z.enum(["generator", "user", "assistant", "seed"]),
+  plan_day: z.int().nullable(),
+  ref_id: z.string().nullable(),
+  ref_type: z.string().nullable(),
+  sort: z.int().nullable(),
+  status: z.enum(["planned", "now", "done", "skipped", "behind"]),
+  target_count: z.int().nullable(),
+  target_minutes: z.int().nullable(),
+  title: z.string(),
+});
+
+/**
+ * CoachActionOut
+ */
+export const zCoachActionOut = z.object({
+  added_items: z.array(zPlanItemOut),
+  suggestion: zCoachSuggestionOut,
+});
+
+/**
+ * PlanDayOut
+ */
+export const zPlanDayOut = z.object({
+  assessment: z.boolean(),
+  chapter_ids: z.array(z.string()),
+  chapter_ref: z.string().nullable(),
+  date: z.iso.date(),
+  day_no: z.int(),
+  extra: z.boolean(),
+  items: z.array(zPlanItemOut),
+  merged_days: z.array(z.int()),
+  phase: z.string().nullable(),
+  status: z.string(),
+  target_hours: z.number().nullable(),
+  template_day: z.int(),
+  topic: z.string().nullable(),
+  week: z.int(),
+  weekday: z.string(),
+});
+
+/**
+ * PlanSummaryOut
+ */
+export const zPlanSummaryOut = z.object({
+  assessments: z.int(),
+  days_per_week: z.int(),
+  extra_review_days: z.int(),
+  first_day: z.iso.date(),
+  last_day: z.iso.date(),
+  merged_days: z.int(),
+  study_days: z.int(),
+  weeks: z.int(),
+});
+
+/**
+ * OnboardingOut
+ */
+export const zOnboardingOut = z.object({
+  completed_at: z.iso.datetime(),
+  plan_id: z.uuid(),
+  summary: zPlanSummaryOut,
+});
+
+/**
+ * PlanOut
+ */
+export const zPlanOut = z.object({
+  created_at: z.iso.datetime(),
+  days: z.array(zPlanDayOut),
+  id: z.uuid(),
+  inputs: z.record(z.string(), z.unknown()),
+  summary: zPlanSummaryOut,
+  template_id: z.string(),
+});
+
+/**
+ * PlanPreview
+ */
+export const zPlanPreview = z.object({
+  available_days: z.int(),
+  needed_days: z.int(),
+  ok: z.boolean(),
+  problem: z.enum(["too_few_study_days", "exam_date_not_after_start", "no_template"]).nullish(),
+  summary: zPlanSummaryOut.nullish(),
 });
 
 /**
@@ -954,6 +1141,17 @@ export const zHealthResponse = z.object({
 });
 
 /**
+ * ReadinessOut
+ */
+export const zReadinessOut = z.object({
+  answered: z.int(),
+  coverage: z.int(),
+  needed_answered: z.int(),
+  needed_coverage: z.int(),
+  score: z.int().nullable(),
+});
+
+/**
  * ReadingPosition
  */
 export const zReadingPosition = z.object({
@@ -1039,6 +1237,31 @@ export const zResultQuestion = z.object({
   outcome: z.enum(["correct", "incorrect", "omitted"]),
   question_id: z.string(),
   seconds: z.int().nullable(),
+  section_n: z.int(),
+});
+
+/**
+ * ResumeBlock
+ */
+export const zResumeBlock = z.object({
+  answered: z.int(),
+  block_id: z.uuid(),
+  diagnostic: z.boolean(),
+  kind: z.literal("block"),
+  mode: z.enum(["tutor", "timed", "exam"]),
+  next_n: z.int(),
+  total: z.int(),
+});
+
+/**
+ * ResumeReading
+ */
+export const zResumeReading = z.object({
+  chapter_id: z.string(),
+  chapter_title: z.string(),
+  kind: z.literal("reading"),
+  section_heading: z.string(),
+  section_id: z.string(),
   section_n: z.int(),
 });
 
@@ -1243,6 +1466,18 @@ export const zLabValuesOut = z.object({
 });
 
 /**
+ * SystemOut
+ */
+export const zSystemOut = z.object({
+  attempts: z.int(),
+  correct: z.int(),
+  id: z.string(),
+  label: z.string(),
+  percent: z.int().nullable(),
+  state: z.enum(["ok", "weak", "insufficient"]),
+});
+
+/**
  * SystemRef
  */
 export const zSystemRef = z.object({
@@ -1267,6 +1502,16 @@ export const zChapterDetail = z.object({
   sections: z.array(zSectionOut),
   systems: z.array(zSystemRef),
   title: z.string(),
+});
+
+/**
+ * SystemsOut
+ */
+export const zSystemsOut = z.object({
+  items: z.array(zSystemOut),
+  min_attempts: z.int(),
+  weak_below: z.int(),
+  window_days: z.int(),
 });
 
 /**
@@ -1322,6 +1567,35 @@ export const zTimeStats = z.object({
   median_s: z.number().nullable(),
   target_s: z.int().nullable(),
   total_s: z.int(),
+});
+
+/**
+ * TodayPlan
+ */
+export const zTodayPlan = z.object({
+  day: zPlanDayMeta.nullable(),
+  items: z.array(zPlanItemOut),
+  next_day: z.iso.date().nullable(),
+  now_item: z.uuid().nullable(),
+  plan_id: z.uuid(),
+});
+
+/**
+ * TodayOut
+ */
+export const zTodayOut = z.object({
+  cards: zCardsOut,
+  coach: z.array(zCoachSuggestionOut),
+  days_left: z.int().nullable(),
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  exam_date: z.iso.date().nullable(),
+  onboarding_complete: z.boolean(),
+  pathway: z.array(zPathwayStageOut).nullable(),
+  plan: zTodayPlan.nullable(),
+  readiness: zReadinessOut,
+  resume: z.discriminatedUnion("kind", [zResumeReading, zResumeBlock]).nullable(),
+  systems: zSystemsOut,
+  today: z.iso.date(),
 });
 
 /**
@@ -1455,6 +1729,49 @@ export const zBlockResults = z.object({
   total: z.int(),
   trend: z.array(zTrendPoint),
   weights: z.array(zWeightOverlay),
+});
+
+/**
+ * ExamOption
+ */
+export const zNaadiApiCoursesExamOption = z.object({
+  chapter_count: z.int(),
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
+ * CoursesResponse
+ */
+export const zCoursesResponse = z.object({
+  chapters: z.array(zCourseChapter),
+  exam: z.string().nullable(),
+  exams: z.array(zNaadiApiCoursesExamOption),
+  next_up: zNextUp.nullable(),
+  system: z.string().nullable(),
+  systems: z.array(zCourseSystem),
+});
+
+/**
+ * ExamOption
+ */
+export const zNaadiApiPlanModelsExamOption = z.object({
+  id: z.enum(["step1", "step2ck", "step3"]),
+  label: z.string(),
+});
+
+/**
+ * OnboardingState
+ */
+export const zOnboardingState = z.object({
+  completed_at: z.iso.datetime().nullable(),
+  diagnostic: zDiagnosticState,
+  exams: z.array(zNaadiApiPlanModelsExamOption),
+  hours: zHoursRange,
+  materials: z.array(z.enum(["qbank", "review_book", "anki", "video_course", "own_pdfs", "nothing"])),
+  min_study_days: z.int(),
+  today: z.iso.date(),
+  values: zOnboardingValues,
 });
 
 /**
@@ -1727,6 +2044,24 @@ export const zGetChapterPath = z.object({
  */
 export const zGetChapterResponse = zChapterDetail;
 
+export const zAcceptCoachSuggestionPath = z.object({
+  suggestion_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zAcceptCoachSuggestionResponse = zCoachActionOut;
+
+export const zDismissCoachSuggestionPath = z.object({
+  suggestion_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDismissCoachSuggestionResponse = zCoachSuggestionOut;
+
 export const zGetCoursesQuery = z.object({
   exam: z
     .string()
@@ -1742,6 +2077,11 @@ export const zGetCoursesQuery = z.object({
  * Successful Response
  */
 export const zGetCoursesResponse = zCoursesResponse;
+
+/**
+ * Successful Response
+ */
+export const zCreateDiagnosticResponse = zDiagnosticOut;
 
 /**
  * Successful Response
@@ -1800,6 +2140,46 @@ export const zUpdateMeResponse = zMeResponse;
  * Successful Response
  */
 export const zGetNavResponse = zNavResponse;
+
+/**
+ * Successful Response
+ */
+export const zGetOnboardingResponse = zOnboardingState;
+
+export const zSaveOnboardingBody = zOnboardingIn;
+
+/**
+ * Successful Response
+ */
+export const zSaveOnboardingResponse = zOnboardingOut;
+
+/**
+ * Successful Response
+ */
+export const zGetPlanResponse = zPlanOut;
+
+export const zSetPlanItemStatusBody = zItemStatusIn;
+
+export const zSetPlanItemStatusPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zSetPlanItemStatusResponse = zPlanItemOut;
+
+export const zPreviewPlanQuery = z.object({
+  exam: z.string().regex(/^[a-z0-9]{2,16}$/),
+  exam_date: z.iso.date(),
+  daily_hours: z.number().gte(1).lte(24),
+  study_days: z.array(z.int()).min(1).max(7),
+});
+
+/**
+ * Successful Response
+ */
+export const zPreviewPlanResponse = zPlanPreview;
 
 /**
  * Successful Response
@@ -1873,3 +2253,8 @@ export const zSearchWebQuery = z.object({
  * Successful Response
  */
 export const zSearchWebResponse = zWebResponse;
+
+/**
+ * Successful Response
+ */
+export const zGetTodayResponse = zTodayOut;

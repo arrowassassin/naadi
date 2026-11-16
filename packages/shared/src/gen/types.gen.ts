@@ -851,6 +851,22 @@ export type CardStats = {
 };
 
 /**
+ * CardsOut
+ */
+export type CardsOut = {
+  /**
+   * Due
+   */
+  due: number;
+  /**
+   * Reviewable
+   *
+   * true when the Cards screen is available to link to
+   */
+  reviewable: boolean;
+};
+
+/**
  * ChangeStats
  */
 export type ChangeStats = {
@@ -990,6 +1006,65 @@ export type ChapterProgress = {
    * Status
    */
   status: "not_started" | "in_progress" | "done";
+};
+
+/**
+ * CoachActionOut
+ */
+export type CoachActionOut = {
+  /**
+   * Added Items
+   */
+  added_items: Array<PlanItemOut>;
+  suggestion: CoachSuggestionOut;
+};
+
+/**
+ * CoachSuggestionOut
+ */
+export type CoachSuggestionOut = {
+  /**
+   * Action
+   */
+  action: {
+    [key: string]: unknown;
+  };
+  /**
+   * Body
+   */
+  body: string | null;
+  /**
+   * Facts
+   */
+  facts: {
+    [key: string]: unknown;
+  };
+  /**
+   * For Date
+   */
+  for_date: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "catch_up_block" | "review_misses" | "cards_catchup" | "reread_section";
+  /**
+   * Source
+   */
+  source: "llm" | "rules";
+  /**
+   * Status
+   */
+  status: "new" | "accepted" | "dismissed";
+  /**
+   * Title
+   *
+   * Assistant-written (source llm); null for rules (client uses ui_copy)
+   */
+  title: string | null;
 };
 
 /**
@@ -1294,7 +1369,7 @@ export type CoursesResponse = {
   /**
    * Exams
    */
-  exams: Array<ExamOption>;
+  exams: Array<NaadiApiCoursesExamOption>;
   next_up: NextUp | null;
   /**
    * System
@@ -1340,6 +1415,46 @@ export type Coverage = {
    * Videos
    */
   videos: number;
+};
+
+/**
+ * DiagnosticOut
+ */
+export type DiagnosticOut = {
+  /**
+   * Block Id
+   */
+  block_id: string;
+  /**
+   * Created
+   *
+   * false when an open diagnostic already existed and was returned
+   */
+  created: boolean;
+  /**
+   * Questions
+   */
+  questions: number;
+};
+
+/**
+ * DiagnosticState
+ */
+export type DiagnosticState = {
+  /**
+   * Available
+   *
+   * false until timed blocks ship: the onboarding diagnostic step is hidden
+   */
+  available: boolean;
+  /**
+   * Open Block Id
+   */
+  open_block_id?: string | null;
+  /**
+   * Questions
+   */
+  questions: number;
 };
 
 /**
@@ -1491,24 +1606,6 @@ export type ExamModes = {
   exam: ModeRules;
   timed: ModeRules;
   tutor: ModeRules;
-};
-
-/**
- * ExamOption
- */
-export type ExamOption = {
-  /**
-   * Chapter Count
-   */
-  chapter_count: number;
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Label
-   */
-  label: string;
 };
 
 /**
@@ -1728,6 +1825,28 @@ export type HealthResponse = {
 };
 
 /**
+ * HoursRange
+ */
+export type HoursRange = {
+  /**
+   * Default
+   */
+  default: number;
+  /**
+   * Max
+   */
+  max: number;
+  /**
+   * Min
+   */
+  min: number;
+  /**
+   * Step
+   */
+  step: number;
+};
+
+/**
  * IndexJob
  */
 export type IndexJob = {
@@ -1942,6 +2061,16 @@ export type Insight = {
   vars: {
     [key: string]: string | number | number;
   };
+};
+
+/**
+ * ItemStatusIn
+ */
+export type ItemStatusIn = {
+  /**
+   * Status
+   */
+  status: "planned" | "done" | "skipped";
 };
 
 export type JsonValue = unknown;
@@ -2337,6 +2466,415 @@ export type NextUp = {
 };
 
 /**
+ * OnboardingIn
+ */
+export type OnboardingIn = {
+  /**
+   * Daily Hours
+   */
+  daily_hours: number;
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Exam Date
+   */
+  exam_date: string;
+  /**
+   * Materials
+   */
+  materials?: Array<"qbank" | "review_book" | "anki" | "video_course" | "own_pdfs" | "nothing">;
+  /**
+   * Medical School
+   */
+  medical_school?: string | null;
+  /**
+   * Study Days
+   */
+  study_days: Array<number>;
+};
+
+/**
+ * OnboardingOut
+ */
+export type OnboardingOut = {
+  /**
+   * Completed At
+   */
+  completed_at: string;
+  /**
+   * Plan Id
+   */
+  plan_id: string;
+  summary: PlanSummaryOut;
+};
+
+/**
+ * OnboardingState
+ */
+export type OnboardingState = {
+  /**
+   * Completed At
+   */
+  completed_at: string | null;
+  diagnostic: DiagnosticState;
+  /**
+   * Exams
+   *
+   * Only exams that have a plan template
+   */
+  exams: Array<NaadiApiPlanModelsExamOption>;
+  hours: HoursRange;
+  /**
+   * Materials
+   */
+  materials: Array<"qbank" | "review_book" | "anki" | "video_course" | "own_pdfs" | "nothing">;
+  /**
+   * Min Study Days
+   */
+  min_study_days: number;
+  /**
+   * Today
+   *
+   * Today in the student's time zone (the plan starts here)
+   */
+  today: string;
+  /**
+   * Saved answers, or the defaults for a new student
+   */
+  values: OnboardingValues;
+};
+
+/**
+ * OnboardingValues
+ */
+export type OnboardingValues = {
+  /**
+   * Daily Hours
+   */
+  daily_hours: number;
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Exam Date
+   */
+  exam_date: string | null;
+  /**
+   * Materials
+   */
+  materials: Array<"qbank" | "review_book" | "anki" | "video_course" | "own_pdfs" | "nothing">;
+  /**
+   * Medical School
+   */
+  medical_school: string | null;
+  /**
+   * Study Days
+   */
+  study_days: Array<number>;
+};
+
+/**
+ * PathwayStageOut
+ */
+export type PathwayStageOut = {
+  /**
+   * Done
+   */
+  done: number;
+  /**
+   * Key
+   */
+  key: string;
+  /**
+   * Title
+   */
+  title: string | null;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * PlanDayMeta
+ */
+export type PlanDayMeta = {
+  /**
+   * Assessment
+   */
+  assessment: boolean;
+  /**
+   * Chapter Ids
+   */
+  chapter_ids: Array<string>;
+  /**
+   * Chapter Ref
+   */
+  chapter_ref: string | null;
+  /**
+   * Date
+   */
+  date: string;
+  /**
+   * Day No
+   */
+  day_no: number;
+  /**
+   * Extra
+   */
+  extra: boolean;
+  /**
+   * Merged Days
+   */
+  merged_days: Array<number>;
+  /**
+   * Phase
+   */
+  phase: string | null;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Target Hours
+   */
+  target_hours: number | null;
+  /**
+   * Template Day
+   */
+  template_day: number;
+  /**
+   * Topic
+   */
+  topic: string | null;
+  /**
+   * Week
+   */
+  week: number;
+  /**
+   * Weekday
+   */
+  weekday: string;
+};
+
+/**
+ * PlanDayOut
+ */
+export type PlanDayOut = {
+  /**
+   * Assessment
+   */
+  assessment: boolean;
+  /**
+   * Chapter Ids
+   */
+  chapter_ids: Array<string>;
+  /**
+   * Chapter Ref
+   */
+  chapter_ref: string | null;
+  /**
+   * Date
+   */
+  date: string;
+  /**
+   * Day No
+   */
+  day_no: number;
+  /**
+   * Extra
+   */
+  extra: boolean;
+  /**
+   * Items
+   */
+  items: Array<PlanItemOut>;
+  /**
+   * Merged Days
+   */
+  merged_days: Array<number>;
+  /**
+   * Phase
+   */
+  phase: string | null;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Target Hours
+   */
+  target_hours: number | null;
+  /**
+   * Template Day
+   */
+  template_day: number;
+  /**
+   * Topic
+   */
+  topic: string | null;
+  /**
+   * Week
+   */
+  week: number;
+  /**
+   * Weekday
+   */
+  weekday: string;
+};
+
+/**
+ * PlanItemOut
+ */
+export type PlanItemOut = {
+  /**
+   * Day
+   */
+  day: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "read" | "questions" | "assessment" | "cards" | "video" | "admin" | "rest";
+  /**
+   * Origin
+   */
+  origin: "generator" | "user" | "assistant" | "seed";
+  /**
+   * Plan Day
+   */
+  plan_day: number | null;
+  /**
+   * Ref Id
+   */
+  ref_id: string | null;
+  /**
+   * Ref Type
+   */
+  ref_type: string | null;
+  /**
+   * Sort
+   */
+  sort: number | null;
+  /**
+   * Status
+   */
+  status: "planned" | "now" | "done" | "skipped" | "behind";
+  /**
+   * Target Count
+   */
+  target_count: number | null;
+  /**
+   * Target Minutes
+   */
+  target_minutes: number | null;
+  /**
+   * Title
+   *
+   * The plan template's own text, verbatim
+   */
+  title: string;
+};
+
+/**
+ * PlanOut
+ */
+export type PlanOut = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Days
+   */
+  days: Array<PlanDayOut>;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Inputs
+   */
+  inputs: {
+    [key: string]: unknown;
+  };
+  summary: PlanSummaryOut;
+  /**
+   * Template Id
+   */
+  template_id: string;
+};
+
+/**
+ * PlanPreview
+ */
+export type PlanPreview = {
+  /**
+   * Available Days
+   *
+   * Dates from today to the day before the exam on a study weekday
+   */
+  available_days: number;
+  /**
+   * Needed Days
+   */
+  needed_days: number;
+  /**
+   * Ok
+   */
+  ok: boolean;
+  /**
+   * Problem
+   */
+  problem?: "too_few_study_days" | "exam_date_not_after_start" | "no_template" | null;
+  summary?: PlanSummaryOut | null;
+};
+
+/**
+ * PlanSummaryOut
+ */
+export type PlanSummaryOut = {
+  /**
+   * Assessments
+   */
+  assessments: number;
+  /**
+   * Days Per Week
+   */
+  days_per_week: number;
+  /**
+   * Extra Review Days
+   */
+  extra_review_days: number;
+  /**
+   * First Day
+   */
+  first_day: string;
+  /**
+   * Last Day
+   */
+  last_day: string;
+  /**
+   * Merged Days
+   */
+  merged_days: number;
+  /**
+   * Study Days
+   */
+  study_days: number;
+  /**
+   * Weeks
+   */
+  weeks: number;
+};
+
+/**
  * PoolFacet
  */
 export type PoolFacet = {
@@ -2696,6 +3234,34 @@ export type Quota = {
 };
 
 /**
+ * ReadinessOut
+ */
+export type ReadinessOut = {
+  /**
+   * Answered
+   */
+  answered: number;
+  /**
+   * Coverage
+   */
+  coverage: number;
+  /**
+   * Needed Answered
+   */
+  needed_answered: number;
+  /**
+   * Needed Coverage
+   */
+  needed_coverage: number;
+  /**
+   * Score
+   *
+   * Whole percent; null until enough first attempts and coverage
+   */
+  score: number | null;
+};
+
+/**
  * ReadingPosition
  */
 export type ReadingPosition = {
@@ -2865,6 +3431,70 @@ export type ResultQuestion = {
    * Seconds
    */
   seconds: number | null;
+  /**
+   * Section N
+   */
+  section_n: number;
+};
+
+/**
+ * ResumeBlock
+ */
+export type ResumeBlock = {
+  /**
+   * Answered
+   */
+  answered: number;
+  /**
+   * Block Id
+   */
+  block_id: string;
+  /**
+   * Diagnostic
+   */
+  diagnostic: boolean;
+  /**
+   * Kind
+   */
+  kind: "block";
+  /**
+   * Mode
+   */
+  mode: "tutor" | "timed" | "exam";
+  /**
+   * Next N
+   */
+  next_n: number;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * ResumeReading
+ */
+export type ResumeReading = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Chapter Title
+   */
+  chapter_title: string;
+  /**
+   * Kind
+   */
+  kind: "reading";
+  /**
+   * Section Heading
+   */
+  section_heading: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
   /**
    * Section N
    */
@@ -3208,6 +3838,36 @@ export type SourceRef = {
 };
 
 /**
+ * SystemOut
+ */
+export type SystemOut = {
+  /**
+   * Attempts
+   */
+  attempts: number;
+  /**
+   * Correct
+   */
+  correct: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Percent
+   */
+  percent: number | null;
+  /**
+   * State
+   */
+  state: "ok" | "weak" | "insufficient";
+};
+
+/**
  * SystemRef
  */
 export type SystemRef = {
@@ -3219,6 +3879,30 @@ export type SystemRef = {
    * Label
    */
   label: string;
+};
+
+/**
+ * SystemsOut
+ */
+export type SystemsOut = {
+  /**
+   * Items
+   */
+  items: Array<SystemOut>;
+  /**
+   * Min Attempts
+   */
+  min_attempts: number;
+  /**
+   * Weak Below
+   *
+   * Whole percent
+   */
+  weak_below: number;
+  /**
+   * Window Days
+   */
+  window_days: number;
 };
 
 /**
@@ -3299,6 +3983,87 @@ export type TimeStats = {
    * Total S
    */
   total_s: number;
+};
+
+/**
+ * TodayOut
+ */
+export type TodayOut = {
+  cards: CardsOut;
+  /**
+   * Coach
+   */
+  coach: Array<CoachSuggestionOut>;
+  /**
+   * Days Left
+   */
+  days_left: number | null;
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Exam Date
+   */
+  exam_date: string | null;
+  /**
+   * Onboarding Complete
+   */
+  onboarding_complete: boolean;
+  /**
+   * Pathway
+   *
+   * Only while the pathway flag is on
+   */
+  pathway: Array<PathwayStageOut> | null;
+  plan: TodayPlan | null;
+  readiness: ReadinessOut;
+  /**
+   * Resume
+   */
+  resume:
+    | ({
+        kind: "reading";
+      } & ResumeReading)
+    | ({
+        kind: "block";
+      } & ResumeBlock)
+    | null;
+  systems: SystemsOut;
+  /**
+   * Today
+   */
+  today: string;
+};
+
+/**
+ * TodayPlan
+ */
+export type TodayPlan = {
+  /**
+   * Today's plan day; null on a non-study day
+   */
+  day: PlanDayMeta | null;
+  /**
+   * Items
+   *
+   * Today's items in plan order (generator first, then added ones)
+   */
+  items: Array<PlanItemOut>;
+  /**
+   * Next Day
+   */
+  next_day: string | null;
+  /**
+   * Now Item
+   *
+   * The first item of today not done or skipped
+   */
+  now_item: string | null;
+  /**
+   * Plan Id
+   */
+  plan_id: string;
 };
 
 /**
@@ -3560,6 +4325,40 @@ export type WeightOverlay = {
    * Official share of the exam, percent (low end)
    */
   weight_min: number | null;
+};
+
+/**
+ * ExamOption
+ */
+export type NaadiApiCoursesExamOption = {
+  /**
+   * Chapter Count
+   */
+  chapter_count: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
+ * ExamOption
+ */
+export type NaadiApiPlanModelsExamOption = {
+  /**
+   * Id
+   */
+  id: "step1" | "step2ck" | "step3";
+  /**
+   * Label
+   *
+   * The exam's short name from exam_rules (a proper noun, not a sentence)
+   */
+  label: string;
 };
 
 export type ListAppConfigData = {
@@ -5000,6 +5799,98 @@ export type GetChapterResponses = {
 
 export type GetChapterResponse = GetChapterResponses[keyof GetChapterResponses];
 
+export type AcceptCoachSuggestionData = {
+  body?: never;
+  path: {
+    /**
+     * Suggestion Id
+     */
+    suggestion_id: string;
+  };
+  query?: never;
+  url: "/api/coach/suggestions/{suggestion_id}/accept";
+};
+
+export type AcceptCoachSuggestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type AcceptCoachSuggestionError = AcceptCoachSuggestionErrors[keyof AcceptCoachSuggestionErrors];
+
+export type AcceptCoachSuggestionResponses = {
+  /**
+   * Successful Response
+   */
+  200: CoachActionOut;
+};
+
+export type AcceptCoachSuggestionResponse = AcceptCoachSuggestionResponses[keyof AcceptCoachSuggestionResponses];
+
+export type DismissCoachSuggestionData = {
+  body?: never;
+  path: {
+    /**
+     * Suggestion Id
+     */
+    suggestion_id: string;
+  };
+  query?: never;
+  url: "/api/coach/suggestions/{suggestion_id}/dismiss";
+};
+
+export type DismissCoachSuggestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DismissCoachSuggestionError = DismissCoachSuggestionErrors[keyof DismissCoachSuggestionErrors];
+
+export type DismissCoachSuggestionResponses = {
+  /**
+   * Successful Response
+   */
+  200: CoachSuggestionOut;
+};
+
+export type DismissCoachSuggestionResponse = DismissCoachSuggestionResponses[keyof DismissCoachSuggestionResponses];
+
 export type GetCoursesData = {
   body?: never;
   path?: never;
@@ -5049,6 +5940,47 @@ export type GetCoursesResponses = {
 };
 
 export type GetCoursesResponse = GetCoursesResponses[keyof GetCoursesResponses];
+
+export type CreateDiagnosticData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/diagnostic";
+};
+
+export type CreateDiagnosticErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateDiagnosticError = CreateDiagnosticErrors[keyof CreateDiagnosticErrors];
+
+export type CreateDiagnosticResponses = {
+  /**
+   * Successful Response
+   */
+  201: DiagnosticOut;
+};
+
+export type CreateDiagnosticResponse = CreateDiagnosticResponses[keyof CreateDiagnosticResponses];
 
 export type GetActiveExamData = {
   body?: never;
@@ -5362,6 +6294,248 @@ export type GetNavResponses = {
 };
 
 export type GetNavResponse = GetNavResponses[keyof GetNavResponses];
+
+export type GetOnboardingData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/onboarding";
+};
+
+export type GetOnboardingErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetOnboardingError = GetOnboardingErrors[keyof GetOnboardingErrors];
+
+export type GetOnboardingResponses = {
+  /**
+   * Successful Response
+   */
+  200: OnboardingState;
+};
+
+export type GetOnboardingResponse = GetOnboardingResponses[keyof GetOnboardingResponses];
+
+export type SaveOnboardingData = {
+  body: OnboardingIn;
+  path?: never;
+  query?: never;
+  url: "/api/onboarding";
+};
+
+export type SaveOnboardingErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SaveOnboardingError = SaveOnboardingErrors[keyof SaveOnboardingErrors];
+
+export type SaveOnboardingResponses = {
+  /**
+   * Successful Response
+   */
+  200: OnboardingOut;
+};
+
+export type SaveOnboardingResponse = SaveOnboardingResponses[keyof SaveOnboardingResponses];
+
+export type GetPlanData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/plan";
+};
+
+export type GetPlanErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetPlanError = GetPlanErrors[keyof GetPlanErrors];
+
+export type GetPlanResponses = {
+  /**
+   * Successful Response
+   */
+  200: PlanOut;
+};
+
+export type GetPlanResponse = GetPlanResponses[keyof GetPlanResponses];
+
+export type ExportPlanCsvData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/plan/export.csv";
+};
+
+export type ExportPlanCsvErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ExportPlanCsvError = ExportPlanCsvErrors[keyof ExportPlanCsvErrors];
+
+export type ExportPlanCsvResponses = {
+  /**
+   * The plan as CSV
+   */
+  200: unknown;
+};
+
+export type SetPlanItemStatusData = {
+  body: ItemStatusIn;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/plan/items/{item_id}/status";
+};
+
+export type SetPlanItemStatusErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SetPlanItemStatusError = SetPlanItemStatusErrors[keyof SetPlanItemStatusErrors];
+
+export type SetPlanItemStatusResponses = {
+  /**
+   * Successful Response
+   */
+  200: PlanItemOut;
+};
+
+export type SetPlanItemStatusResponse = SetPlanItemStatusResponses[keyof SetPlanItemStatusResponses];
+
+export type PreviewPlanData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Exam
+     */
+    exam: string;
+    /**
+     * Exam Date
+     */
+    exam_date: string;
+    /**
+     * Daily Hours
+     */
+    daily_hours: number;
+    /**
+     * Study Days
+     */
+    study_days: Array<number>;
+  };
+  url: "/api/plan/preview";
+};
+
+export type PreviewPlanErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid inputs
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PreviewPlanError = PreviewPlanErrors[keyof PreviewPlanErrors];
+
+export type PreviewPlanResponses = {
+  /**
+   * Successful Response
+   */
+  200: PlanPreview;
+};
+
+export type PreviewPlanResponse = PreviewPlanResponses[keyof PreviewPlanResponses];
 
 export type GetPublicConfigData = {
   body?: never;
@@ -5687,3 +6861,36 @@ export type SearchWebResponses = {
 };
 
 export type SearchWebResponse = SearchWebResponses[keyof SearchWebResponses];
+
+export type GetTodayData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/today";
+};
+
+export type GetTodayErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetTodayError = GetTodayErrors[keyof GetTodayErrors];
+
+export type GetTodayResponses = {
+  /**
+   * Successful Response
+   */
+  200: TodayOut;
+};
+
+export type GetTodayResponse = GetTodayResponses[keyof GetTodayResponses];
