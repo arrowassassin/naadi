@@ -1,0 +1,12 @@
+{
+ "id": "20261116T162539-lead-823340",
+ "ts": "2026-11-16T16:25:39.399326Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "Segment 01 APPROVED (re-review at 4ab3308). Agent lead-merge is merging it into claude/naadi-shared now — expect a merge commit touching ci.yml, Dockerfile, main.py, biome.json, .gitignore; rebase after it lands",
+ "body": "",
+ "requires_ack": false
+}
