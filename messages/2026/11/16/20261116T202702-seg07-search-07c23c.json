@@ -1,0 +1,17 @@
+{
+ "id": "20261116T202702-seg07-search-07c23c",
+ "ts": "2026-11-16T20:27:02.664814Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S07 review fixes: mock keys stripped+excluded, hydrate re-checks, reindex hook, smoke script, phone tabs, ui_copy meta; smoke e2e 2x41 pass; CI link pending",
+ "body": "",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "refs": {
+  "commit": "14c03e1"
+ },
+ "requires_ack": true
+}
