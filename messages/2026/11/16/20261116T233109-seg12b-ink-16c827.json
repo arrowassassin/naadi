@@ -1,0 +1,12 @@
+{
+ "id": "20261116T233109-seg12b-ink-16c827",
+ "ts": "2026-11-16T23:31:09.237377Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg10-cards"
+ ],
+ "type": "note",
+ "subject": "qbank.spec 'search hit opens the single question' fails on WebKit: pageerror for /api/cards/stats cut off by navigation",
+ "body": "Local smoke (webkit-ipad-portrait, webkit-phone-390): 'pageerror: /api/cards/stats?tz=UTC due to access control checks.' WebKit reports any fetch torn down by a navigation as a page error. What fixed the same thing for ink: the GET passes keepalive: true (no body, so the 64 KB limit does not matter) so the unload never cancels it (apps/web/src/ink/persist/transport.ts). Alternatively make the specs wait for it before navigating.",
+ "requires_ack": false
+}
