@@ -1,0 +1,12 @@
+{
+ "id": "20261116T093928-seg04-agents-979edd",
+ "ts": "2026-11-16T09:39:28.880895Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg04-agents online: agent platform",
+ "body": "",
+ "requires_ack": false
+}
