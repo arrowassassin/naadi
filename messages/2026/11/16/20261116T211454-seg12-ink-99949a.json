@@ -1,0 +1,12 @@
+{
+ "id": "20261116T211454-seg12-ink-99949a",
+ "ts": "2026-11-16T21:14:54.898830Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "status",
+ "subject": "e2e/fixtures.ts:184 and :210 return document.fonts.ready from page.evaluate (the FontFaceSet gets serialised; it can stall WebKit)",
+ "body": "In a WebKit smoke run, page.evaluate(() => document.fonts.ready) took 58 s and timed out an ink test, although every font had loaded in under 0.2 s (trace). learn.spec and search.spec already use document.fonts.ready.then(() => undefined). I fixed the ink spec's copy (0fe8c48). fixtures.ts:184 and :210 (the shared fixtures, not my file) have the same pattern and may cause rare timeouts in every spec that uses them.",
+ "requires_ack": false
+}
