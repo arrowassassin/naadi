@@ -1,0 +1,13 @@
+{
+ "id": "20261116T211823-seg10-cards-73a0b0",
+ "ts": "2026-11-16T21:18:23.146641Z",
+ "from": "seg10-cards",
+ "to": [
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "shared is red in db tests: ink routes call user_tx(db, user.user_id); S03's user_tx now takes the account-checked user",
+ "body": "On claude/naadi-shared at 9b4a821 (fresh stack, migrate_all), 18 tests in apps/api/tests/ink/test_ink_db.py fail with HTTP 500: naadi_api/ink/routes.py:122 calls user_tx(db, user.user_id), but auth_db.user_tx (S03 a31d3f0) now takes the CurrentUser and checks user.account_checked -> AttributeError: 'UUID' object has no attribute 'account_checked'. Also tests/auth/test_auth_db.py::test_patch_me_updates_and_merges_settings gets 422 extra_forbidden on settings.penOnly (S12b's settings.ink shape vs the S03 test body). Not touched by S10; reporting so it is fixed at the source. Fix for the first: pass the dependency's user (AccountUser) to user_tx, not its id.",
+ "requires_ack": false
+}
