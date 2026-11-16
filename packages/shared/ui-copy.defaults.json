@@ -2,12 +2,15 @@
   "generator": "UPDATE_UI_COPY_DEFAULTS=1 uv run pytest tests/config_api/test_ui_copy_defaults.py",
   "required": [
     "account.cancel",
+    "account.name_too_long",
+    "account.settings_label",
     "account.sign_out",
     "account.sign_out_all",
     "account.sign_out_all_confirm",
     "account.sign_out_everywhere",
     "account.sign_out_failed",
     "account.sign_out_failed_title",
+    "account.signed_in_as",
     "account.signing_out",
     "account.signing_out_everywhere",
     "agent.exam_mode",
@@ -127,16 +130,20 @@
     "signin.sending",
     "signin.signed_out",
     "signin.submit",
-    "signin.tagline"
+    "signin.tagline",
+    "signin.unavailable_title"
   ],
   "values": {
     "account.cancel": "Cancel",
+    "account.name_too_long": "Use at most 120 characters.",
+    "account.settings_label": "Settings",
     "account.sign_out": "Sign out",
     "account.sign_out_all": "Sign out of all devices",
     "account.sign_out_all_confirm": "This signs you out on every device, including installed apps, within about 30 seconds. You will need a new sign-in link on each.",
     "account.sign_out_everywhere": "Sign out everywhere",
     "account.sign_out_failed": "Could not sign out. Try again.",
     "account.sign_out_failed_title": "Not signed out",
+    "account.signed_in_as": "Signed in as",
     "account.signing_out": "Signing out…",
     "account.signing_out_everywhere": "Signing out everywhere…",
     "agent.exam_mode": "The assistant is off during exam mode.",
@@ -256,6 +263,7 @@
     "signin.sending": "Sending…",
     "signin.signed_out": "You are signed out.",
     "signin.submit": "Email me a sign-in link",
-    "signin.tagline": "One place to study"
+    "signin.tagline": "One place to study",
+    "signin.unavailable_title": "Sign-in is unavailable"
   }
 }

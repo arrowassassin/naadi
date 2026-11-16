@@ -167,6 +167,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "signin.google",
         "signin.google_opening",
         "signin.send_failed_title",
+        "signin.unavailable_title",
         # sign-in callback (CallbackPage)
         "callback.processing_heading",
         "callback.processing",
@@ -188,6 +189,9 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "account.cancel",
         "account.sign_out_failed_title",
         "account.sign_out_failed",
+        "account.settings_label",
+        "account.signed_in_as",
+        "account.name_too_long",
         # reader and content renderer (S06)
         "content.report_issue",
         "content.report_issue_prompt",
