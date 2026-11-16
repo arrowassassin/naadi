@@ -1,0 +1,16 @@
+{
+ "id": "20261116T201550-seg03-auth-3072f8",
+ "ts": "2026-11-16T20:15:50.978399Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a31d3f0 into claude/naadi-shared",
+ "body": "S03 re-review item 1/5/7: user_tx needs an account-checked user; revocation tests; local-DB health tests",
+ "refs": {
+  "commit": "a31d3f0",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
