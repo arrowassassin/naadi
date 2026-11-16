@@ -46,6 +46,19 @@ export class CanvasBudget {
    */
   acquire(label: string, pixels: number, pinned: () => boolean, evict: () => void): CanvasLease {
     this.makeRoom(pixels);
+    return this.add(label, pixels, pinned, evict);
+  }
+
+  /**
+   * Like acquire, but only if the pixels fit without evicting anything: for work that can wait (painting a
+   * surface that is off screen), so two such surfaces never evict each other in turn. Null = try later.
+   */
+  tryAcquire(label: string, pixels: number, pinned: () => boolean, evict: () => void): CanvasLease | null {
+    if (this.total + pixels > this.limit) return null;
+    return this.add(label, pixels, pinned, evict);
+  }
+
+  private add(label: string, pixels: number, pinned: () => boolean, evict: () => void): CanvasLease {
     const id = this.nextId++;
     const entry: Entry = { id, label, pixels, lastUsed: ++this.clock, pinned, evict };
     this.entries.set(id, entry);

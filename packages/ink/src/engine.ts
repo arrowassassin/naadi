@@ -247,6 +247,8 @@ export class InkEngine {
   private prewarmTimer: ReturnType<typeof setTimeout> | null = null;
   private settleTimer: ReturnType<typeof setTimeout> | null = null;
   private settling = 0;
+  private deferred = false;
+  private retryTimer: ReturnType<typeof setTimeout> | null = null;
   private liveLease: CanvasLease | null = null;
   /** The visible part of the surface (surface CSS px), refreshed on scroll/resize. */
   private vis = { top: 0, bottom: 0, onScreen: false };
@@ -524,6 +526,7 @@ export class InkEngine {
     cancelAnimationFrame(this.raf);
     if (this.prewarmTimer) clearTimeout(this.prewarmTimer);
     if (this.settleTimer) clearTimeout(this.settleTimer);
+    if (this.retryTimer) clearTimeout(this.retryTimer);
     for (const c of this.cleanups) c();
     for (const slab of this.slabs.values()) this.releaseSlab(slab);
     this.slabs.clear();
@@ -720,6 +723,16 @@ export class InkEngine {
     this.frameStale = true;
     if (this.gesture) return; // the frame is re-read with the next sample
     this.updateSlabs();
+    if (this.dirtyTiles.size > 0) this.requestFrame(); // tiles waiting for memory may be on screen now
+  }
+
+  /** Tiles waiting for canvas memory: look again shortly (settling elsewhere releases memory). */
+  private retryLater(): void {
+    if (this.retryTimer) return;
+    this.retryTimer = setTimeout(() => {
+      this.retryTimer = null;
+      if (!this.destroyed && this.dirtyTiles.size > 0) this.requestFrame();
+    }, 400);
   }
 
   /** The part of the surface inside the viewport, in surface CSS px. */
@@ -800,12 +813,21 @@ export class InkEngine {
     }
     const devW = Math.max(1, Math.round(this.widthPx * this.dpr));
     const devH = Math.max(1, Math.round(slab.h * this.dpr));
-    const lease = canvasBudget.acquire(
+    // On screen: take the memory (evicting least recently used off-screen canvases). Off screen: only
+    // if it is free; otherwise the tile waits until the slab scrolls into view or memory is released.
+    const acquire = this.slabPinned(slab)
+      ? canvasBudget.acquire.bind(canvasBudget)
+      : canvasBudget.tryAcquire.bind(canvasBudget);
+    const lease = acquire(
       `ink:${layer.kind}:${slab.i}`,
       devW * devH,
       () => this.slabPinned(slab),
       () => this.evictLayer(slab, layer),
     );
+    if (!lease) {
+      this.deferred = true;
+      return null;
+    }
     let c = layer.canvas;
     if (!c) {
       c = this.makeCanvas(layer.kind);
@@ -826,7 +848,7 @@ export class InkEngine {
     c.height = devH;
     const ctx = c.getContext("2d");
     if (!ctx) {
-      lease.release();
+      lease?.release();
       this.fail("This browser could not create a drawing canvas (out of canvas memory).");
       return null;
     }
@@ -1152,14 +1174,20 @@ export class InkEngine {
       // Visible tiles first, so a slab coming into view fills where the student is looking.
       const { top, bottom } = this.vis;
       const tiles = [...this.dirtyTiles].sort((a, b) => tileDistance(a, top, bottom) - tileDistance(b, top, bottom));
+      const waiting: string[] = [];
       for (const key of tiles) {
         this.dirtyTiles.delete(key);
+        this.deferred = false;
         const slab = this.renderTile(key);
-        if (slab) touched.add(slab);
+        if (this.deferred)
+          waiting.push(key); // no memory for an off-screen slab yet
+        else if (slab) touched.add(slab);
         if (performance.now() - start > budget) break;
       }
       for (const slab of touched) this.updateSlabVisibility(slab);
-      if (this.dirtyTiles.size > 0) this.requestFrame();
+      for (const key of waiting) this.dirtyTiles.add(key);
+      if (this.dirtyTiles.size > waiting.length) this.requestFrame();
+      else if (waiting.length > 0) this.retryLater();
     }
   }
 

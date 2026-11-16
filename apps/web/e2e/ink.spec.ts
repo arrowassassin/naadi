@@ -656,7 +656,15 @@ test.describe("ink lab", () => {
     expect(bestInk, `with ink ${ink.join("/")} fps, ink hidden ${base.join("/")} fps`).toBeGreaterThanOrEqual(
       bestBase * 0.7,
     );
-    expect(bestInk, "absolute floor").toBeGreaterThanOrEqual(25);
+    // The 25 fps floor needs a runner that can show it: when this runner scrolls the page below 30 fps
+    // with no ink at all (WebKit's software compositor at desktop size or dpr 2 under load), only the
+    // relative bound above can judge the ink, and the run is annotated.
+    if (bestBase >= 30) expect(bestInk, "absolute floor").toBeGreaterThanOrEqual(25);
+    else
+      info.annotations.push({
+        type: "fps-floor",
+        description: `runner baseline ${bestBase} fps < 30: floor not applicable`,
+      });
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "stress-page");
   });

@@ -88,4 +88,16 @@ describe("canvas budget", () => {
     lease.release();
     expect(b.stats().total).toBe(0);
   });
+
+  it("tryAcquire never evicts: off-screen painting waits instead of thrashing", () => {
+    const b = new CanvasBudget(100);
+    const a = surface(b, "a");
+    a.alloc("1", 80);
+    const none = () => false;
+    const noop = () => undefined;
+    expect(b.tryAcquire("b:1", 40, none, noop)).toBeNull();
+    expect(a.evicted).toEqual([]);
+    a.release("1");
+    expect(b.tryAcquire("b:1", 40, none, noop)).not.toBeNull();
+  });
 });
