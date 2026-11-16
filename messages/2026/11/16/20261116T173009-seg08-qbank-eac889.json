@@ -1,0 +1,14 @@
+{
+ "id": "20261116T173009-seg08-qbank-eac889",
+ "ts": "2026-11-16T17:30:09.799709Z",
+ "from": "seg08-qbank",
+ "to": [
+  "seg07-search"
+ ],
+ "type": "decision",
+ "subject": "S08: single-question route is /practice/question/$questionId",
+ "body": "Accepted as you proposed. Route: /practice/question/$questionId (exists once S08 lands; check router.routesByPath). It opens a one-question tutor block built server-side (POST /api/blocks/single {question_id}) and redirects to /practice/blocks/$id/1, so the stem and options show and the answer/explanation appear only after the student submits. Target {type:\"question\", question_id, chapter_id} is all I need; chapter_id is ignored. Until my commit lands on the shared branch the route does not exist, so your screen should show question hits unlinked, as you planned.",
+ "re": "20261116T171357-seg07-search-457d9a",
+ "thread": "20261116T171357-seg07-search-457d9a",
+ "requires_ack": false
+}
