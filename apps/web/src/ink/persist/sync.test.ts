@@ -3,6 +3,7 @@ import { blockResolver } from "@naadi/ink";
 import { type InkDiff, type InkItem, type InkStroke, mergeInkItems, uuidv7 } from "@naadi/shared";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { dexieStore, inkDb, resetInkDbForTests } from "./db";
+import { hasOpaqueBlocks } from "./SectionInk";
 import {
   beats,
   type ChangesPayload,
@@ -307,8 +308,7 @@ describe("block anchors across widths", () => {
   });
 });
 
-describe("section marker placement", async () => {
-  const { hasOpaqueBlocks } = await import("./SectionInk");
+describe("section marker placement", () => {
   it("multiplies markers over tables and figures, sits under plain text", () => {
     expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "paragraph" }, { type: "table" }] })).toBe(true);
     expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "figure" }] })).toBe(true);
