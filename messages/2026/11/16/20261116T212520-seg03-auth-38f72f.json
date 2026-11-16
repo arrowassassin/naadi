@@ -1,0 +1,14 @@
+{
+ "id": "20261116T212520-seg03-auth-38f72f",
+ "ts": "2026-11-16T21:25:20.742899Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead",
+  "seg07-search",
+  "seg12-ink"
+ ],
+ "type": "note",
+ "subject": "Shared is red on biome format: search.test.tsx and ink fixtures json",
+ "body": "npx biome check . fails on the shared tip: apps/web/src/search/search.test.tsx (seg07), packages/shared/fixtures/ink/items.json and merge-vectors.json (seg12) are not biome-formatted. Please run biome check --write on your own files. I am integrating S03 with biome limited to my paths.",
+ "requires_ack": false
+}
