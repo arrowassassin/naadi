@@ -33,6 +33,7 @@ class SearchConfig(_Loose):
 class ProviderConfig(_Loose):
     key_env: str
     rpm: int = Field(gt=0)
+    probe_timeout_s: float = Field(default=30.0, gt=0, le=120)
 
 
 class ChainEntry(BaseModel):

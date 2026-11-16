@@ -158,6 +158,35 @@ describe("HealthPanel", () => {
     expect(card.queryByRole("list", { name: "Configured models" })).not.toBeInTheDocument();
   });
 
+  it("labels the last result stale when a refetch fails, with the request id and a retry", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse(200, healthy));
+    renderPanel();
+    await screen.findByRole("heading", { name: "Database" });
+    expect(screen.getByText("Overall status:").parentElement).toHaveTextContent("OK");
+    fetchMock.mockResolvedValueOnce(
+      jsonResponse(500, {
+        error: { code: "internal_error", message: "Something went wrong on our side.", request_id: "req-stale-500" },
+      }),
+    );
+    await userEvent.click(screen.getByRole("button", { name: /Check again/ }));
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("The latest check failed");
+    expect(alert).toHaveTextContent("Something went wrong on our side. (HTTP 500)");
+    expect(alert).toHaveTextContent(/last successful check at .+ and may be out of date/);
+    expect(alert).toHaveTextContent("Request ID req-stale-500");
+    expect(screen.getByText("Overall status:").parentElement).toHaveTextContent("Stale");
+    expect(screen.queryByText("Overall status:")?.parentElement).not.toHaveTextContent(/^Overall status:\s*OK$/);
+    expect(cardsOf()).toHaveLength(5);
+    expect(document.querySelector("[data-stale]")).toHaveAttribute("data-stale", "true");
+    expect(screen.getByText(/^Stale · Version/)).toBeInTheDocument();
+
+    fetchMock.mockResolvedValueOnce(jsonResponse(200, healthy));
+    await userEvent.click(within(alert).getByRole("button", { name: "Try again" }));
+    await waitFor(() => expect(screen.queryByRole("alert")).not.toBeInTheDocument());
+    expect(screen.getByText("Overall status:").parentElement).toHaveTextContent("OK");
+    expect(document.querySelector("[data-stale]")).toHaveAttribute("data-stale", "false");
+  });
+
   it("explains a network failure", async () => {
     fetchMock.mockRejectedValue(new TypeError("Failed to fetch"));
     renderPanel();

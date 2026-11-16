@@ -1,0 +1,95 @@
+# Deploy main to the Hugging Face Space, then smoke it (API + live WebKit). Runs only after the `ci`
+# workflow has passed for a push to main (or by hand on main). It has its own concurrency group with
+# cancel-in-progress off: a deploy that is uploading or building is never cancelled; a newer commit waits.
+# This is the only workflow that reads the HF_TOKEN secret.
+name: deploy
+
+on:
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-space
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "24.22.3"
+  PYTHON_VERSION: "3.13"
+  UV_VERSION: "0.11.32"
+  SPACE_ID: arrowassassin/naadi
+  SPACE_URL: https://arrowassassin-naadi.hf.space
+  FORCE_COLOR: "1"
+
+jobs:
+  deploy:
+    name: deploy to the Space + live smoke
+    # A green CI run for a push to main in this repository (never a PR or a fork), or a manual run on main.
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_SPACE_ID: arrowassassin/naadi
+    steps:
+      - name: Require HF_TOKEN
+        run: |
+          if [ -z "${HF_TOKEN}" ]; then
+            echo "::error::Missing GitHub Actions secret HF_TOKEN (Settings -> Secrets and variables -> Actions). See docs/SECRETS.md."
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The commit CI tested, not whatever main points at now.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: corepack enable
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - name: Install
+        run: |
+          pnpm install --frozen-lockfile
+          uv --directory apps/api sync --frozen
+      - name: Deploy (upload, wait for RUNNING on cpu-basic, smoke /api/health + / + /api/ready)
+        run: scripts/deploy_space.sh --space "$HF_SPACE_ID" --hardware cpu-basic
+      - name: Install WebKit
+        run: pnpm --filter @naadi/web exec playwright install --with-deps webkit
+      - name: Live WebKit smoke (HF token header; database must be ok)
+        # The live config records no trace, video or HTML report (they would hold the token header):
+        # screenshots under test-results/screens/01-live and a JUnit summary under test-results/live-smoke.
+        env:
+          E2E_BASE_URL: ${{ env.SPACE_URL }}
+          E2E_EXPECT_DB_OK: "1"
+          CI: "1"
+        run: pnpm --filter @naadi/web exec playwright test --project "webkit-*"
+      - name: Guard - the HF token is in no file about to be uploaded
+        id: scan
+        if: ${{ !cancelled() }}
+        run: python3 scripts/scan_artifacts.py --env HF_TOKEN test-results/screens/01-live test-results/live-smoke
+      - if: ${{ !cancelled() && steps.scan.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: live-smoke
+          path: |
+            test-results/screens/01-live
+            test-results/live-smoke
+          retention-days: 14
+          if-no-files-found: ignore

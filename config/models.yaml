@@ -36,6 +36,7 @@ providers:
     daily_cap: 2000               # our own guard; counted from llm_usage (provider = nvidia), reset 00:00 UTC
     timeout_s: 60
     probe_before_use: true        # catalog lists retired models: check_models must call each one
+    probe_timeout_s: 30           # one-token probe deadline (/api/health); slow fallbacks have taken ~15 s
   openrouter:
     sdk: langchain-openrouter==0.2.9            # ChatOpenRouter (+ openrouter SDK for key/model metadata)
     key_env: OPENROUTER_API_KEY

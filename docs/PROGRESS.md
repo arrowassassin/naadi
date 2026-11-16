@@ -7,10 +7,9 @@
 
 ## Approved
 - **S02 — DB migrations, RLS, storage** (2026-11-16, reviewer-opus re-review APPROVED at `c8ef1b7`): 33 tables, RLS on 17 user tables, answer columns hidden, embeddings server-only, no self-grading, attempt-gated question-linked flashcards, 5 buckets, default privileges closed; 132 db + 183 unit tests; 20 reviewer mutations caught. Real-project migration runs on the Wave A deploy.
+- **S01 — M0 scaffold, tokens, contracts, health, CI, Docker Space deploy** (2026-11-16, re-review APPROVED at `4ab3308`): deploy lives in its own `.github/workflows/deploy.yml` (ci.yml holds no secrets and never deploys), `scripts/scan_artifacts.py` guards uploaded artifacts, canonical frozen-DOM axe helper in `apps/web/e2e/fixtures.ts`, JSON uvicorn logging config, log redaction, version from `naadi_api/__version__`. Merged into the shared branch.
 
 ## In progress
-
-- Segment 01 — M0 scaffold, tokens, contracts, health, CI, Docker Space deploy (`implementer-opus`).
 
 - **S12a — ink engine** (seg12-ink, in review): `@naadi/ink` + `/system/ink-lab` (server flag `features.ink_lab`).
   Measured on CI (GitHub `ubuntu-24.04`, headless, software rendering, synthetic pen events at 4 ms):
@@ -43,6 +42,7 @@
 
 ## Decisions
 | 2026-11-16 | Promotion is per wave: the shared branch carries concurrent tasks, so the lead promotes + deploys once every task in a wave is APPROVED (then runs real-project checks: S02 live_check, S03 live auth, S05 seed) |
+| 2026-11-16 | Deferred to after completion (owner): fine-grained `HF_GEN_TOKEN` for the app (15b is built and verified with the build session's token; app shows generation "not configured" until set) and making the Space public (18 is tested against the private Space). Neither blocks end-to-end completion. YOUTUBE_API_KEY added (env + Space). |
 
 | Date       | Decision                                                                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |

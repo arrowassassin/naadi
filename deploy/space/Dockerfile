@@ -49,4 +49,5 @@ EXPOSE 7860
 # (naadi_api/agent/host.py). ONE worker: Aegra's in-memory broker and cron scheduler live in the process, so a
 # second worker would split streams from their runs and fire crons twice.
 # --no-access-log: our middleware writes one JSON line per request without query strings.
-CMD ["sh", "-c", "python -m naadi_api.agent.migrate_all && exec uvicorn naadi_api.agent.host:app --host 0.0.0.0 --port 7860 --workers 1 --proxy-headers --forwarded-allow-ips '*' --no-access-log --timeout-graceful-shutdown 10"]
+# --log-config: uvicorn's own lines use the same JSON formatter as the app (naadi_api/uvicorn_logging.json).
+CMD ["sh", "-c", "python -m naadi_api.agent.migrate_all && exec uvicorn naadi_api.agent.host:app --host 0.0.0.0 --port 7860 --workers 1 --proxy-headers --forwarded-allow-ips '*' --no-access-log --log-config naadi_api/uvicorn_logging.json --timeout-graceful-shutdown 10"]

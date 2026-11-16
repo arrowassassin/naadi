@@ -8,6 +8,7 @@
     "./content": "./src/content/index.ts",
     "./content/convert": "./src/content/convert.ts"
   },
+  "//": "Type-checking uses the repo's TypeScript 7.0.2 (root devDependency). The local typescript 6.0.3 exists only as the peer of @hey-api/openapi-ts, which needs the JavaScript compiler API that TypeScript 7 (native) does not ship; 6.0.3 is the version openapi-ts itself is built and tested with.",
   "scripts": {
     "gen": "openapi-ts -f openapi-ts.config.ts && biome format --write src/gen && pnpm gen:ink",
     "gen:ink": "UPDATE_INK_SCHEMA=1 vitest run src/ink.test.ts && biome format --write ink.schema.json",
@@ -29,7 +30,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.6.8",
     "@hey-api/openapi-ts": "0.99.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "5.1.0"
   }
 }

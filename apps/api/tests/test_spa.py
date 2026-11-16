@@ -63,3 +63,38 @@ def test_openapi_is_served_but_docs_are_off(client_factory: Callable[..., TestCl
     c = client_factory()
     assert c.get("/api/openapi.json").json()["info"]["title"] == "Naadi API"
     assert c.get("/api/docs").status_code == 404
+
+
+def test_openapi_version_is_the_single_source_and_matches_the_committed_contract(
+    client_factory: Callable[..., TestClient],
+) -> None:
+    """The container installs dependencies only (no package metadata), so the version must not come from
+    importlib.metadata; it comes from naadi_api.__version__, which pyproject also reads."""
+    import json
+    import tomllib
+    from importlib.metadata import PackageNotFoundError
+
+    import naadi_api.main as main_mod
+    from naadi_api import __version__
+
+    from .conftest import REPO_ROOT
+
+    live = client_factory().get("/api/openapi.json").json()["info"]["version"]
+    committed = json.loads((REPO_ROOT / "packages/shared/openapi.json").read_text())["info"]["version"]
+    pyproject = tomllib.loads((REPO_ROOT / "apps/api/pyproject.toml").read_text())
+    assert live == committed == __version__
+    assert pyproject["project"]["dynamic"] == ["version"]
+    assert pyproject["tool"]["hatch"]["version"]["path"] == "naadi_api/__init__.py"
+
+    def no_metadata(_: str) -> str:
+        raise PackageNotFoundError("naadi-api")
+
+    # Simulate the container: package metadata is absent, the version must still be correct.
+    import importlib.metadata as md
+
+    original = md.version
+    md.version = no_metadata  # type: ignore[assignment]
+    try:
+        assert main_mod.package_version() == __version__
+    finally:
+        md.version = original  # type: ignore[assignment]

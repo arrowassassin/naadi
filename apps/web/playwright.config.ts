@@ -29,6 +29,20 @@ function authHeaders(): Record<string, string> | undefined {
   return { Authorization: `Bearer ${token}` };
 }
 
+/**
+ * Local / CI: list + HTML report (with traces). Live: list + a JUnit summary only; the HTML report
+ * embeds traces and attachments, so it is never written for a live run.
+ */
+function reporters(): PlaywrightTestConfig["reporter"] {
+  if (liveBaseUrl) {
+    return [["list"], ["junit", { outputFile: path.join(repoRoot, "test-results/live-smoke/junit.xml") }]];
+  }
+  if (process.env.CI) {
+    return [["list"], ["html", { open: "never", outputFolder: path.join(repoRoot, "playwright-report") }]];
+  }
+  return "list";
+}
+
 const VIEWPORTS = [
   { name: "ipad-portrait", width: 820, height: 1180, touch: true },
   { name: "ipad-landscape", width: 1180, height: 820, touch: true },
@@ -154,18 +168,18 @@ export default defineConfig({
   outputDir: path.join(repoRoot, "test-results/playwright"),
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
-  // One retry in CI only, for browser-process crashes on shared runners; Playwright still reports such tests as flaky.
-  retries: process.env.CI ? 1 : 0,
+  retries: 0,
   workers: process.env.CI ? 2 : 4,
   timeout: 60_000,
   expect: { timeout: 15_000 },
-  reporter: process.env.CI
-    ? [["list"], ["html", { open: "never", outputFolder: path.join(repoRoot, "playwright-report") }]]
-    : "list",
+  reporter: reporters(),
   use: {
     baseURL,
     extraHTTPHeaders: authHeaders(),
-    trace: "retain-on-failure",
+    // Live runs carry the HF token in a request header. Traces, videos and HAR files record request
+    // headers, so a live run captures none of them (screenshots of the page cannot contain a header).
+    trace: liveBaseUrl ? "off" : "retain-on-failure",
+    video: "off",
     screenshot: "only-on-failure",
   },
   projects,

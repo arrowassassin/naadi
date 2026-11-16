@@ -12,6 +12,7 @@
       "!**/dist",
       "!**/.venv",
       "!docs",
+      "!research",
       "!design",
       "!handoff",
       "!data",

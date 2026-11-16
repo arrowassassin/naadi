@@ -60,6 +60,8 @@ class ProviderSpec(_Strict):
     sdk: str | None = None
     probe_before_use: bool = False
     only_free_ids: bool = False
+    # /api/health one-token probe deadline (naadi_api/config.py reads the same key for the health check).
+    probe_timeout_s: float | None = Field(default=None, gt=0, le=120)
 
 
 class ChainEntry(_Strict):

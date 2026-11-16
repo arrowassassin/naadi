@@ -1,6 +1,6 @@
 [project]
 name = "naadi-api"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Naadi API: FastAPI app serving the SPA and /api"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
@@ -46,6 +46,9 @@ dev = [
 [build-system]
 requires = ["hatchling==1.33.0"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "naadi_api/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["naadi_api"]

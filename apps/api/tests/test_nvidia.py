@@ -155,6 +155,21 @@ def test_app_wires_nvidia_with_hour_long_cache() -> None:
     check = svc.checks["nvidia"]
     assert NVIDIA_PROBE_TTL_S >= 3600
     assert check.ttl_s == NVIDIA_PROBE_TTL_S and check.down_ttl_s == NVIDIA_PROBE_TTL_S
+    timeout = load_models_config(REPO_ROOT / "config").providers["nvidia"].probe_timeout_s
+    assert timeout >= 30
+    assert check.timeout_s > timeout  # the whole check outlives every per-model deadline
+
+
+async def test_probe_timeout_comes_from_config(monkeypatch: pytest.MonkeyPatch) -> None:
+    seen: list[float] = []
+
+    async def fake_probe(model: str, key: SecretStr, timeout_s: float = 0) -> ProbeResult:
+        seen.append(timeout_s)
+        return ProbeResult("nvidia", model, True, 1.0, "answers")
+
+    monkeypatch.setattr("naadi_api.health.checks.probe_nvidia", fake_probe)
+    await nvidia_check(make_settings(nvidia_api_key="nvapi-unit-test-key"), ["a/one"], timeout_s=42.0)()
+    assert seen == [42.0]
 
 
 # ───────────── probe helper ─────────────

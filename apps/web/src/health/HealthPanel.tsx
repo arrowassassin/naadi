@@ -164,11 +164,24 @@ export function HealthPanel() {
   const error = q.error;
   const checking = q.isFetching;
 
+  // TanStack Query keeps the last data when a refetch fails: show that failure next to the old result.
+  const failed = error instanceof HealthRequestError ? error : null;
+  const stale = Boolean(result && error);
+
   let body: ReactNode;
   if (result) {
     const { health } = result;
     body = (
       <>
+        {stale ? (
+          <ErrorState
+            title="The latest check failed"
+            message={`${failed?.message ?? "Something went wrong while checking the API."} The results below are from the last successful check at ${formatTime(health.checked_at)} and may be out of date.`}
+            requestId={failed?.requestId}
+            onRetry={() => q.refetch()}
+            retrying={checking}
+          />
+        ) : null}
         {result.httpStatus === 503 ? (
           <ErrorState
             title="The database is down"
@@ -176,13 +189,14 @@ export function HealthPanel() {
             requestId={result.requestId}
           />
         ) : null}
-        <ul className={GRID}>
+        <ul className={GRID} data-stale={stale} aria-label={stale ? "Last known component status" : undefined}>
           {COMPONENTS.map(({ key, name, what, wide }) => (
             <ComponentCard key={key} name={name} what={what} wide={wide} c={health.components[key]} />
           ))}
         </ul>
         <p className="m-0 font-mono text-label-sm text-text-3">
-          Version {health.version} · {health.environment} · checked {formatTime(health.checked_at)}
+          {stale ? "Stale · " : ""}Version {health.version} · {health.environment} · last checked{" "}
+          {formatTime(health.checked_at)}
         </p>
       </>
     );
@@ -220,7 +234,12 @@ export function HealthPanel() {
           </h2>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          {result ? <StatusChip status={result.health.status} prefix="Overall status" /> : null}
+          {result && stale ? (
+            <Chip tone="warning" icon={<AlertTriangle size={14} strokeWidth={2.4} />} srPrefix="Overall status">
+              Stale
+            </Chip>
+          ) : null}
+          {result && !stale ? <StatusChip status={result.health.status} prefix="Overall status" /> : null}
           {result ? (
             <Button
               variant="secondary"
