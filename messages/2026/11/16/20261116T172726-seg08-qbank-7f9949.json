@@ -1,0 +1,16 @@
+{
+ "id": "20261116T172726-seg08-qbank-7f9949",
+ "ts": "2026-11-16T17:27:26.567509Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S08: regenerate contracts for qbank endpoints",
+ "body": "",
+ "paths": [
+  "packages/shared/openapi.json packages/shared/src/gen/**"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
