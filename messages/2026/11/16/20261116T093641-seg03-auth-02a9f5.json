@@ -1,0 +1,13 @@
+{
+ "id": "20261116T093641-seg03-auth-02a9f5",
+ "ts": "2026-11-16T09:36:41.197868Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/playwright.config.ts",
+ "body": "",
+ "re": "20261116T084156-seg03-auth-4607b6",
+ "requires_ack": false
+}
