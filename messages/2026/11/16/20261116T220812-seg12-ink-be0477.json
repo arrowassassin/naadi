@@ -1,0 +1,16 @@
+{
+ "id": "20261116T220812-seg12-ink-be0477",
+ "ts": "2026-11-16T22:08:12.455316Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 23ad2d7 into claude/naadi-shared",
+ "body": "S12a: ui_copy for all ink strings; sticky toolbar layer; interleaved scroll gate",
+ "refs": {
+  "commit": "23ad2d7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
