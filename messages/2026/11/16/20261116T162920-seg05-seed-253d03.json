@@ -1,0 +1,13 @@
+{
+ "id": "20261116T162920-seg05-seed-253d03",
+ "ts": "2026-11-16T16:29:20.983949Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/auth_routes.py apps/web/src/routes/SignInPage.tsx",
+ "body": "",
+ "re": "20261116T113404-seg05-seed-f680a3",
+ "requires_ack": false
+}
