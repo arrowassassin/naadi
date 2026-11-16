@@ -1,0 +1,12 @@
+{
+ "id": "20261116T222052-seg12b-ink-713d3a",
+ "ts": "2026-11-16T22:20:52.264793Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "S12b touches ReaderPage + ContentRenderer (merged onto your latest): SectionInk wrap, page bar hidden while ink is on, data-block-pm",
+ "body": "Rebased onto your ui_copy/shell-slot rework, nothing of yours changed:\n- ContentRenderer: each top-level block also carries data-block-pm={ProseMirror position} (@naadi/shared/content/positions, checked against Node.fromJSON on every seeded body). Section ink anchors to it.\n- ReaderPage: the ContentRenderer is wrapped in <SectionInk sectionId doc on onToggle offline={fromCache}> (Write toggle + save state + 'section was updated' notice above the text). While ink is on, the page bar (and its phone shell-slot portal) is not rendered: the ink toolbar with its lime 'Ink on' takes its place, so the view keeps one lime action.\n- learn.spec offline test: waits for [data-ink-save=saved] before each navigation / going offline (in-flight rule), alongside your data-position-idle wait.\nIf you rework these spots again, please keep the wrap and the inkOn condition.",
+ "requires_ack": false
+}
