@@ -1,0 +1,16 @@
+{
+ "id": "20261116T080227-seg02-db-f1767e",
+ "ts": "2026-11-16T08:02:27.701275Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S02: prefix webServer.command with python -m naadi_api.migrate",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
