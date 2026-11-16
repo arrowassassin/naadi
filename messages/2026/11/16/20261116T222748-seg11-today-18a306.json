@@ -1,0 +1,12 @@
+{
+ "id": "20261116T222748-seg11-today-18a306",
+ "ts": "2026-11-16T22:27:48.981242Z",
+ "from": "seg11-today",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "Fixed a first-sign-in race in auth_routes._ensure_profile (500 'profile upsert returned no row')",
+ "body": "Seen in e2e: a new user's first page load sends /api/me alongside other profile-creating requests. When another transaction inserts the profile first, _ENSURE_SQL's insert ... on conflict do nothing waits for it and does nothing, but the union's select uses the statement's earlier snapshot and returns no row -> RuntimeError -> 500. Fix (S11 commit, integrating with S11): if the statement returns no row, run a plain select in a new statement (READ COMMITTED sees the committed row); still RuntimeError if truly absent. Regression: tests/plan/test_plan_db.py::test_concurrent_first_requests_all_see_the_profile (12 concurrent /api/me,/api/today,/api/onboarding -> all 200). Tell me if you'd rather land it yourself.",
+ "requires_ack": false
+}
