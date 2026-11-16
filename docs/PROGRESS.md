@@ -11,13 +11,21 @@
 
 ## In progress
 
-- **S12a — ink engine** (seg12-ink, in review): `@naadi/ink` + `/system/ink-lab` (server flag `features.ink_lab`).
-  Measured on CI (GitHub `ubuntu-24.04`, headless, software rendering, synthetic pen events at 4 ms):
-  input-to-paint p50 2.4–3.2 ms / p95 4.3–7 ms; input-to-next-frame p50 16.3–19.1 ms / p95 20.5–46.5 ms
-  (Chromium, six viewports). 5,000-stroke page, rAF-driven scroll, best of paired runs (ink shown / hidden):
-  phones 59.7–60 / 59.3–59.7 fps; iPad portrait 49.7 / 56.4; iPad landscape 49.4 / 55.7; laptop 50.7 / 55.4;
-  desktop 39.5 / 45.4 fps. The runner itself does not reach 60 fps on large viewports with the ink hidden,
-  so the e2e gate is min(55 fps, 70 % of the ink-hidden run). WebKit (CI, best of 3, shown / hidden): phones 56.1 / 59.3, iPad portrait 41.3 / 50.2, iPad landscape 37.5 / 47.5, laptop 27.5 / 39.6, desktop 28.2 / 31.9; Firefox 54–59 with ink, within 2 fps of hidden. WebKit input-to-paint p50 4–5 ms / p95 8–9 ms; Firefox 3–4 / 6–10 ms.
+- **S12a — ink engine** (seg12-ink, review rework): `@naadi/ink` + `/system/ink-lab` (server flag: /api/me
+  `features.ink_lab` when signed in, /api/public-config when signed out; admin-only in production).
+  Re-recorded 2026-11-16 after the latency fix (latency is now measured from the first input not yet painted,
+  so it includes the wait for the frame). Headless Playwright, software rendering, synthetic pen events at 4 ms,
+  local sandbox under shared load (load average about 22 on 4 cores), dpr 1 unless noted:
+  - input-to-paint p50 / p95: Chromium 10.5–12.8 / 18–62 ms; Firefox 14–15 / 22–38 ms; WebKit 12–15 / 37–65 ms;
+    WebKit iPad portrait at dpr 2: 36 / 132 ms (before the live canvas was sized to the stroke: 107 / 513 ms).
+  - Settling ink into images costs 0.5–9 ms of main-thread time per page; the PNG encode runs in a worker.
+  - 5,000-stroke page, rAF-driven scroll, best of 4 paired runs (fps with ink / with the ink hidden): Chromium
+    45–60 / 50–60 (ratio 0.89–0.99); Firefox 52–59 / 56–58 (0.91–1.01); WebKit phones 49 / 53–56, iPad 37–39 / 41–42,
+    laptop 29 / 33, desktop 17 / 24, iPad dpr 2: 11 / 15 (ratios 0.73–0.95). The runner cannot scroll the large WebKit
+    pages at 60 fps with no ink at all, so the e2e gate is ink >= 0.7 x ink-hidden, plus >= 25 fps when the
+    ink-hidden run reaches 30 fps.
+  - Canvas memory: one page-wide budget of 24 Mpx. Twelve surfaces at dpr 2 peak at 22.9 Mpx with zero evictions;
+    settled pages hold no canvas memory at all.
   **Capacitor/PencilKit decision: not yet.** Stay on the web engine; decide from the owner's 240 fps slow-motion
   run on the iPad (lab → Slow-motion mode; `docs/DEVICE_CHECKLIST.md`). Rule: if the median tip-to-ink time with
   predicted ink on is above 20 ms (more than ~5 frames at 240 fps), plan Capacitor + PencilKit for the ink
