@@ -1,4 +1,4 @@
-"""Regenerates items.json and merge-vectors.json (run from the repo root: python3 packages/shared/fixtures/ink/generate.py).
+"""Regenerates items.json and merge-vectors.json (from the repo root: python3 packages/shared/fixtures/ink/generate.py && npx biome format --write packages/shared/fixtures/ink).
 
 Hand-written cases; the expected merge results are checked by both test suites, not computed here."""
 import json

@@ -110,8 +110,7 @@ describe("Search screen", () => {
           type: "ink",
           group: "handwriting",
           title: "4 → aldo problem",
-          context: null,
-          anchor: null,
+          context: null, anchor: null,
           target: {
             type: "ink",
             surface_type: "section",
