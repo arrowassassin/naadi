@@ -57,6 +57,15 @@ import { activateShortcutTarget, registerShortcutTarget, type ShortcutAction } f
 
 export type InkToolName = "pen" | "marker" | "eraser" | "lasso" | "shapes" | "text";
 export type EraserMode = "stroke" | "pixel";
+
+/** What went wrong, for the app to word: no 2D canvas, out of canvas memory, or the page is full. */
+export type InkError = { code: "no_canvas" } | { code: "canvas_memory" } | { code: "too_many_items"; max: number };
+
+/** Accessible names for elements the engine creates. */
+export interface InkLabels {
+  newTextBox: string;
+  editTextBox: string;
+}
 /**
  * Where marker ink sits: "under" the surface content (plain text: the highlight shows through the glyphs)
  * or "multiply" over it with a multiply blend (images, PDF pages, tables with opaque fills).
@@ -169,7 +178,10 @@ export interface InkEngineOptions {
   onAsk?: (payload: InkSelectionPayload) => void;
   onStateChange?: (state: InkEngineState) => void;
   onPenActiveChange?: (active: boolean) => void;
-  onError?: (message: string) => void;
+  /** Structured errors; the app words them (ui_copy). */
+  onError?: (error: InkError) => void;
+  /** Accessible names the engine puts on elements it creates (from the app's ui_copy). */
+  labels: InkLabels;
 }
 
 /** Device pixels per slab canvas: bounds memory on tall surfaces at high device pixel ratios. */
@@ -332,7 +344,7 @@ export class InkEngine {
     this.host.append(this.layer);
     this.liveCtx = this.liveCanvas.getContext("2d", { desynchronized: true }) as CanvasRenderingContext2D | null;
     this.tailCtx = this.tailCanvas.getContext("2d", { desynchronized: true }) as CanvasRenderingContext2D | null;
-    if (!this.liveCtx) this.fail("This browser could not create a drawing canvas.");
+    if (!this.liveCtx) this.fail({ code: "no_canvas" });
     this.applyThemeBlend();
 
     if (options.items) {
@@ -625,8 +637,8 @@ export class InkEngine {
     this.liveCanvas.style.zIndex = "1";
   }
 
-  private fail(message: string): void {
-    this.o.onError?.(message);
+  private fail(error: InkError): void {
+    this.o.onError?.(error);
   }
 
   private now(): number {
@@ -896,7 +908,7 @@ export class InkEngine {
     const ctx = c.getContext("2d");
     if (!ctx) {
       lease?.release();
-      this.fail("This browser could not create a drawing canvas (out of canvas memory).");
+      this.fail({ code: "canvas_memory" });
       return null;
     }
     layer.lease = lease;
@@ -1605,9 +1617,7 @@ export class InkEngine {
     }
     if (this.doc.size >= INK_MAX_ITEMS) {
       this.palm.up(e.pointerId);
-      this.fail(
-        `This page holds the maximum of ${INK_MAX_ITEMS.toLocaleString("en")} strokes. Erase some to keep writing.`,
-      );
+      this.fail({ code: "too_many_items", max: INK_MAX_ITEMS });
       return;
     }
     const now = this.now();
@@ -1967,7 +1977,7 @@ export class InkEngine {
   ): void {
     const el = this.host.ownerDocument.createElement("textarea");
     el.dataset.inkText = "";
-    el.setAttribute("aria-label", existing ? "Edit text box" : "New text box");
+    el.setAttribute("aria-label", existing ? this.o.labels.editTextBox : this.o.labels.newTextBox);
     el.rows = 1;
     el.value = existing?.text ?? "";
     el.maxLength = 2000;

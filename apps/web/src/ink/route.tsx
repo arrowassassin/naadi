@@ -6,14 +6,20 @@ import { lazy, type ReactNode, Suspense } from "react";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
+import { useInkCopy } from "./copy";
 
 const InkLab = lazy(() => import("./InkLab").then((m) => ({ default: m.InkLab })));
 
+/** Why /api/public-config failed, as structured fields; the gate words it with ui_copy. */
 class PublicConfigError extends Error {
+  readonly code: "unreachable" | "contract" | "http";
+  readonly status: number | null;
   readonly requestId: string | null;
-  constructor(message: string, requestId: string | null) {
-    super(message);
+  constructor(code: PublicConfigError["code"], status: number | null, requestId: string | null) {
+    super(code);
     this.name = "PublicConfigError";
+    this.code = code;
+    this.status = status;
     this.requestId = requestId;
   }
 }
@@ -24,14 +30,13 @@ export async function fetchPublicConfig(signal?: AbortSignal): Promise<PublicCon
   try {
     res = await getPublicConfig({ signal });
   } catch {
-    throw new PublicConfigError("The API could not be reached. Check your connection and try again.", null);
+    throw new PublicConfigError("unreachable", null, null);
   }
   const requestId = res.response?.headers.get("x-request-id") ?? null;
   if (res.data && res.response?.ok) return res.data;
   if (res.error instanceof Error && res.error.name === "ZodError")
-    throw new PublicConfigError("The API sent a response this version of the app does not understand.", requestId);
-  const status = res.response ? ` (HTTP ${res.response.status})` : "";
-  throw new PublicConfigError(`The app configuration could not be loaded${status}.`, requestId);
+    throw new PublicConfigError("contract", res.response?.status ?? null, requestId);
+  throw new PublicConfigError("http", res.response?.status ?? null, requestId);
 }
 
 function Shell({ children, busy = false }: { children: ReactNode; busy?: boolean }) {
@@ -48,10 +53,11 @@ function Shell({ children, busy = false }: { children: ReactNode; busy?: boolean
 }
 
 function Loading() {
+  const t = useInkCopy();
   return (
     <Shell busy>
       <p role="status" className="m-0 font-mono text-label text-text-3 uppercase">
-        Opening the ink lab…
+        {t("ink.gate.opening")}
       </p>
       <Skeleton className="h-12 w-60" />
       <Skeleton className="h-14 w-full" />
@@ -61,25 +67,34 @@ function Loading() {
 }
 
 function NotFound() {
+  const t = useInkCopy();
   return (
     <Shell>
-      <h1 className="m-0 font-display text-headline">Page not found</h1>
-      <p className="m-0 text-text-2">There is nothing at this address.</p>
+      <h1 className="m-0 font-display text-headline">{t("ink.gate.not_found")}</h1>
+      <p className="m-0 text-text-2">{t("ink.gate.not_found_body")}</p>
       <p className="m-0">
-        <Link to="/system">Open the design system</Link>
+        <Link to="/system">{t("ink.gate.to_system")}</Link>
       </p>
     </Shell>
   );
 }
 
 function Failed({ error, onRetry, retrying }: { error: Error; onRetry: () => void; retrying: boolean }) {
+  const t = useInkCopy();
   const requestId = error instanceof PublicConfigError || error instanceof ApiError ? error.requestId : null;
+  // Our own failures are worded here from their code; /api/me errors arrive already worded by the auth client.
+  const message =
+    error instanceof PublicConfigError
+      ? error.code === "http"
+        ? t("ink.gate.http", { status: error.status ?? "?" })
+        : t(error.code === "contract" ? "ink.gate.contract" : "ink.gate.unreachable")
+      : error.message;
   return (
     <Shell>
-      <h1 className="m-0 font-display text-headline">Ink lab</h1>
+      <h1 className="m-0 font-display text-headline">{t("ink.gate.title")}</h1>
       <ErrorState
-        title="The ink lab could not be opened"
-        message={error.message}
+        title={t("ink.gate.failed")}
+        message={message}
         requestId={requestId}
         onRetry={onRetry}
         retrying={retrying}

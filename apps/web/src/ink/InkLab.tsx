@@ -4,6 +4,7 @@ import {
   type EraserMode,
   type InkEngine,
   type InkEngineState,
+  type InkError,
   type InkSelectionPayload,
   type InkTheme,
   type InkToolName,
@@ -18,6 +19,7 @@ import { Button, Chip, cx } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
 import type React from "react";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { type InkCopy, inkErrorText, useInkCopy } from "./copy";
 import { InkCanvas } from "./InkCanvas";
 import { InkToolbar } from "./InkToolbar";
 import "./ink-lab.css";
@@ -66,6 +68,7 @@ function Switch({
   onChange: (v: boolean) => void;
   hint?: string;
 }) {
+  const t = useInkCopy();
   return (
     <button
       type="button"
@@ -92,7 +95,9 @@ function Switch({
         />
       </span>
       {label}
-      <span className="font-mono text-label-sm text-text-3 uppercase">{checked ? "On" : "Off"}</span>
+      <span className="font-mono text-label-sm text-text-3 uppercase">
+        {t(checked ? "ink.lab.switch_on" : "ink.lab.switch_off")}
+      </span>
       {hint ? <span className="sr-only">{hint}</span> : null}
     </button>
   );
@@ -100,6 +105,7 @@ function Switch({
 
 /** A live frame counter for the 240 fps slow-motion protocol: each video frame shows which rAF it is. */
 function FrameCounter() {
+  const t = useInkCopy();
   const ref = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     let raf = 0;
@@ -116,7 +122,7 @@ function FrameCounter() {
   }, []);
   return (
     <p className="m-0 font-mono text-[1.5rem] text-text" aria-live="off">
-      <span className="sr-only">Animation frame counter: </span>
+      <span className="sr-only">{`${t("ink.lab.frame_counter")} `}</span>
       <span ref={ref}>000000 · 0.0 ms</span>
     </p>
   );
@@ -138,6 +144,7 @@ function SelectionMenu({
   const menu = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const hasInk = selection.ids.length > 0;
+  const t = useInkCopy();
   useLayoutEffect(() => {
     const el = menu.current;
     if (el && (el.offsetWidth !== size.w || el.offsetHeight !== size.h))
@@ -155,35 +162,33 @@ function SelectionMenu({
     <div
       ref={menu}
       role="toolbar"
-      aria-label="Selection"
+      aria-label={t("ink.select.menu")}
       className="absolute z-20 flex max-w-[calc(100%-16px)] flex-wrap gap-1 rounded-[28px] border border-line-strong bg-ground p-1.5"
       style={{ left: `${left}px`, top: `${top}px`, visibility: size.w ? "visible" : "hidden" }}
     >
-      <span className="sr-only">
-        {hasInk ? "Drag the selection to move it." : "No ink in this loop: ask about the region."}
-      </span>
+      <span className="sr-only">{t(hasInk ? "ink.select.drag_hint" : "ink.select.region_hint")}</span>
       {hasInk ? (
         <>
           <Button variant="secondary" className="min-h-11" onClick={() => engine.current?.duplicateSelection()}>
-            Copy
+            {t("ink.select.copy")}
           </Button>
           <Button variant="secondary" className="min-h-11" onClick={() => engine.current?.deleteSelection()}>
-            Delete
+            {t("ink.select.delete")}
           </Button>
           <Button variant="secondary" className="min-h-11" onClick={() => void engine.current?.convertSelection()}>
-            Convert to text
+            {t("ink.select.convert")}
           </Button>
         </>
       ) : null}
       <Button variant="assistant" className="min-h-11" onClick={() => void engine.current?.askAboutSelection()}>
-        Ask Naadi
+        {t("ink.select.ask")}
       </Button>
     </div>
   );
 }
 
-function fmt(ms: number): string {
-  return `${ms.toFixed(1)} ms`;
+function fmt(t: InkCopy, ms: number): string {
+  return t("ink.lab.ms", { value: ms.toFixed(1) });
 }
 
 export function InkLab() {
@@ -216,6 +221,7 @@ export function InkLab() {
   const [manyPages, setManyPages] = useState<InkItem[][] | null>(null);
   const pageEngines = useRef<(InkEngine | null)[]>([]);
   const [budget, setBudget] = useState(() => canvasBudget.stats());
+  const t = useInkCopy();
 
   useEffect(() => {
     window.naadiInkLab = {
@@ -266,49 +272,55 @@ export function InkLab() {
     (d: InkDiff) =>
       log(
         "strokes",
-        `Strokes changed: ${d.added.length} added, ${d.updated.length} updated, ${d.removed.length} removed`,
+        t("ink.lab.ev.strokes", { added: d.added.length, updated: d.updated.length, removed: d.removed.length }),
       ),
-    [log],
+    [log, t],
   );
   const onLasso = useCallback(
     (sel: SelectionInfo, blob: Blob | null) => {
       if (!blob) {
-        log(
-          "lasso",
-          `Lasso circled a region with no ink: ${Math.round(sel.rect.width)}×${Math.round(sel.rect.height)} px (region only)`,
-        );
+        log("lasso", t("ink.lab.ev.region", { w: Math.round(sel.rect.width), h: Math.round(sel.rect.height) }));
         return;
       }
       log(
         "lasso",
-        `Lasso selected ${sel.ids.length} item${sel.ids.length === 1 ? "" : "s"} (PNG ${Math.round(blob.size / 1024)} KB)`,
+        t(sel.ids.length === 1 ? "ink.lab.ev.lasso_one" : "ink.lab.ev.lasso_other", {
+          count: sel.ids.length,
+          kb: Math.round(blob.size / 1024),
+        }),
       );
       showPng(blob, sel);
     },
-    [log, showPng],
+    [log, showPng, t],
   );
   const onConvert = useCallback(
     (p: InkSelectionPayload) =>
       log(
         "convert",
-        `Convert to text: ${p.ids.length} items, ${Math.round(p.rect.width)}×${Math.round(p.rect.height)} px`,
+        t("ink.lab.ev.convert", { count: p.ids.length, w: Math.round(p.rect.width), h: Math.round(p.rect.height) }),
       ),
-    [log],
+    [log, t],
   );
   const onAsk = useCallback(
     (p: InkSelectionPayload) =>
       log(
         "ask",
-        `Circle to ask Naadi: ${p.ids.length} items, ${Math.round(p.rect.width)}×${Math.round(p.rect.height)} px, ${p.path.length}-point loop${p.png ? "" : ", no ink picture"}`,
+        t(p.png ? "ink.lab.ev.ask" : "ink.lab.ev.ask_region", {
+          count: p.ids.length,
+          w: Math.round(p.rect.width),
+          h: Math.round(p.rect.height),
+          points: p.path.length,
+        }),
       ),
-    [log],
+    [log, t],
   );
   const onError = useCallback(
-    (m: string) => {
+    (e: InkError) => {
+      const m = inkErrorText(t, e);
       setError(m);
       log("error", m);
     },
-    [log],
+    [log, t],
   );
 
   const buildStress = () => {
@@ -335,7 +347,8 @@ export function InkLab() {
   const sizes = slowMo ? { ...DEFAULT_SIZES, pen: 6 } : DEFAULT_SIZES;
   const surfaceTheme: InkTheme = slowMo ? "paper" : theme;
   const selection = state?.selection ?? null;
-  const yes = (b: boolean) => (b ? "Yes" : "No");
+  const yes = (b: boolean) => t(b ? "ink.lab.yes" : "ink.lab.no");
+  const stressCountText = STRESS_COUNT.toLocaleString("en");
   const frameSummary = summary.frame;
   const paintSummary = summary.paint;
 
@@ -348,30 +361,41 @@ export function InkLab() {
       <header className="flex flex-col gap-3">
         <p className="m-0 font-mono text-label text-text-3 uppercase">
           <Link to="/system" className="underline underline-offset-2">
-            System
-          </Link>{" "}
-          · Ink lab
+            {t("ink.lab.breadcrumb")}
+          </Link>
+          {` · ${t("ink.gate.title")}`}
         </p>
-        <h1 className="m-0 font-display text-headline">Ink lab</h1>
-        <p className="m-0 max-w-[68ch] text-reading text-text-2">
-          Write with Apple Pencil, a stylus, a finger or a mouse. The lab measures input-to-paint latency, shows which
-          input features this browser offers, and stress-tests scrolling on a page with 5,000 strokes.
-        </p>
-        <ul aria-label="Input features" className="m-0 flex list-none flex-wrap gap-2 p-0">
+        <h1 className="m-0 font-display text-headline">{t("ink.gate.title")}</h1>
+        <p className="m-0 max-w-[68ch] text-reading text-text-2">{t("ink.lab.intro", { count: stressCountText })}</p>
+        <ul aria-label={t("ink.lab.features")} className="m-0 flex list-none flex-wrap gap-2 p-0">
           <li>
-            <Chip tone="meta" srPrefix="Coalesced events">{`Coalesced events: ${yes(caps.coalesced)}`}</Chip>
+            <Chip tone="meta" srPrefix={t("ink.lab.cap.coalesced_name")}>
+              {t("ink.lab.cap.coalesced", { value: yes(caps.coalesced) })}
+            </Chip>
           </li>
           <li>
-            <Chip tone="meta" srPrefix="Predicted events">{`Predicted events: ${yes(caps.predicted)}`}</Chip>
+            <Chip tone="meta" srPrefix={t("ink.lab.cap.predicted_name")}>
+              {t("ink.lab.cap.predicted", { value: yes(caps.predicted) })}
+            </Chip>
           </li>
           <li>
-            <Chip tone="meta" srPrefix="Raw pointer updates">{`Raw updates: ${yes(caps.rawUpdate)}`}</Chip>
+            <Chip tone="meta" srPrefix={t("ink.lab.cap.raw_name")}>
+              {t("ink.lab.cap.raw", { value: yes(caps.rawUpdate) })}
+            </Chip>
           </li>
           <li data-testid="pen-status">
-            <Chip tone="meta" srPrefix="Pen">{`Pen: ${state?.penPresent ? "Detected" : "Not detected"}`}</Chip>
+            <Chip tone="meta" srPrefix={t("ink.lab.cap.pen_name")}>
+              {t("ink.lab.cap.pen", {
+                value: t(state?.penPresent ? "ink.lab.cap.pen_detected" : "ink.lab.cap.pen_missing"),
+              })}
+            </Chip>
           </li>
           <li data-testid="finger-status">
-            <Chip tone="meta" srPrefix="Finger">{`Finger: ${state?.fingersDraw ? "Draws" : "Scrolls"}`}</Chip>
+            <Chip tone="meta" srPrefix={t("ink.lab.cap.finger_name")}>
+              {t("ink.lab.cap.finger", {
+                value: t(state?.fingersDraw ? "ink.lab.cap.finger_draws" : "ink.lab.cap.finger_scrolls"),
+              })}
+            </Chip>
           </li>
         </ul>
       </header>
@@ -399,50 +423,45 @@ export function InkLab() {
       </div>
 
       <section aria-labelledby="ink-settings-h" className="flex flex-col gap-3">
-        <SectionHeading id="ink-settings-h">Pencil and ink</SectionHeading>
+        <SectionHeading id="ink-settings-h">{t("ink.lab.settings")}</SectionHeading>
         <div className="flex flex-wrap gap-2">
           <Switch
-            label="Pen-only drawing"
+            label={t("ink.lab.pen_only")}
             checked={penOnly}
             onChange={setPenOnly}
-            hint="With a pen detected, fingers scroll and never draw."
+            hint={t("ink.lab.pen_only_hint")}
           />
-          <Switch label="Predicted ink" checked={predict} onChange={setPredict} />
-          <Switch
-            label="Slow-motion mode"
-            checked={slowMo}
-            onChange={setSlowMo}
-            hint="High contrast and a frame counter for 240 fps video."
-          />
+          <Switch label={t("ink.lab.predict")} checked={predict} onChange={setPredict} />
+          <Switch label={t("ink.lab.slowmo")} checked={slowMo} onChange={setSlowMo} hint={t("ink.lab.slowmo_hint")} />
           <Button
             variant="secondary"
             aria-pressed={theme === "dark"}
             disabled={slowMo}
             onClick={() => setTheme(theme === "paper" ? "dark" : "paper")}
           >
-            {theme === "paper" ? "Paper theme" : "Dark theme"}
+            {t(theme === "paper" ? "ink.lab.theme_paper" : "ink.lab.theme_dark")}
           </Button>
           <Button
             variant="secondary"
             aria-pressed={content === "table"}
             onClick={() => setContent(content === "text" ? "table" : "text")}
           >
-            {content === "text" ? "Page content: text" : "Page content: text and a table"}
+            {t(content === "text" ? "ink.lab.content_text" : "ink.lab.content_table")}
           </Button>
         </div>
       </section>
 
       <section aria-labelledby="ink-page-h" className="flex flex-col gap-3">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <SectionHeading id="ink-page-h">Page</SectionHeading>
+          <SectionHeading id="ink-page-h">{t("ink.lab.page")}</SectionHeading>
           <span className="font-mono text-label-sm text-text-3 uppercase" data-testid="page-count">
-            {`${state?.count ?? 0} item${state?.count === 1 ? "" : "s"}`}
+            {t(state?.count === 1 ? "ink.lab.items_one" : "ink.lab.items_other", { count: state?.count ?? 0 })}
           </span>
         </div>
         {slowMo ? <FrameCounter /> : null}
         <div className="relative" ref={surfaceBox}>
           <InkCanvas
-            label="Ink page"
+            label={t("ink.lab.page_label")}
             className={cx(
               "w-full overflow-hidden rounded-tile-sm",
               surfaceTheme === "paper" ? "ink-paper-dotted" : "ink-dark-dotted",
@@ -478,18 +497,15 @@ export function InkLab() {
                 surfaceTheme === "paper" ? "text-ground" : "text-text",
               )}
             >
-              <p className="m-0 max-w-[48ch] text-reading">
-                Write anywhere on this page. On plain text the marker sits under the words; on a page with a table, a
-                figure or a PDF it blends over them.
-              </p>
+              <p className="m-0 max-w-[48ch] text-reading">{t("ink.lab.sample_intro")}</p>
               <p className="m-0 py-3" data-testid="plain-row">
-                Plain line to highlight
+                {t("ink.lab.sample_plain")}
               </p>
               {content === "table" ? (
                 <table className="w-full max-w-[520px] border-collapse">
                   <tbody>
                     <tr data-testid="opaque-row" className="bg-mark-amber text-ground">
-                      <td className="px-3 py-3">Table row with a fill</td>
+                      <td className="px-3 py-3">{t("ink.lab.sample_table")}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -503,48 +519,48 @@ export function InkLab() {
       </section>
 
       <section aria-labelledby="ink-latency-h" className="flex flex-col gap-3" data-testid="latency-panel">
-        <SectionHeading id="ink-latency-h">Latency</SectionHeading>
+        <SectionHeading id="ink-latency-h">{t("ink.lab.latency")}</SectionHeading>
         <div className="grid grid-cols-1 gap-3 tablet:grid-cols-2">
           <dl className="m-0 grid grid-cols-2 gap-x-4 gap-y-2 rounded-block border border-line-soft bg-surface-1 p-4">
-            <dt className="text-text-3">Input to paint p50</dt>
+            <dt className="text-text-3">{t("ink.lab.paint_p50")}</dt>
             <dd className="m-0 font-mono" data-metric="paint-p50">
-              {fmt(paintSummary.p50)}
+              {fmt(t, paintSummary.p50)}
             </dd>
-            <dt className="text-text-3">Input to paint p95</dt>
+            <dt className="text-text-3">{t("ink.lab.paint_p95")}</dt>
             <dd className="m-0 font-mono" data-metric="paint-p95">
-              {fmt(paintSummary.p95)}
+              {fmt(t, paintSummary.p95)}
             </dd>
-            <dt className="text-text-3">Input to next frame p50</dt>
+            <dt className="text-text-3">{t("ink.lab.frame_p50")}</dt>
             <dd className="m-0 font-mono" data-metric="frame-p50">
-              {fmt(frameSummary.p50)}
+              {fmt(t, frameSummary.p50)}
             </dd>
-            <dt className="text-text-3">Input to next frame p95</dt>
+            <dt className="text-text-3">{t("ink.lab.frame_p95")}</dt>
             <dd className="m-0 font-mono" data-metric="frame-p95">
-              {fmt(frameSummary.p95)}
+              {fmt(t, frameSummary.p95)}
             </dd>
-            <dt className="text-text-3">Painted frames</dt>
+            <dt className="text-text-3">{t("ink.lab.frames")}</dt>
             <dd className="m-0 font-mono" data-metric="frames">
               {paintSummary.count}
             </dd>
           </dl>
           <dl className="m-0 grid grid-cols-2 gap-x-4 gap-y-2 rounded-block border border-line-soft bg-surface-1 p-4">
-            <dt className="text-text-3">Samples used</dt>
+            <dt className="text-text-3">{t("ink.lab.samples")}</dt>
             <dd className="m-0 font-mono" data-metric="samples">
               {stats.accepted ?? 0}
             </dd>
-            <dt className="text-text-3">Coalesced batches</dt>
+            <dt className="text-text-3">{t("ink.lab.coalesced_batches")}</dt>
             <dd className="m-0 font-mono" data-metric="coalesced">
               {stats.coalescedBatches ?? 0}
             </dd>
-            <dt className="text-text-3">Predicted samples</dt>
+            <dt className="text-text-3">{t("ink.lab.predicted_samples")}</dt>
             <dd className="m-0 font-mono" data-metric="predicted">
               {stats.predicted ?? 0}
             </dd>
-            <dt className="text-text-3">Coalesced id mismatches</dt>
+            <dt className="text-text-3">{t("ink.lab.id_mismatch")}</dt>
             <dd className="m-0 font-mono" data-metric="id-mismatch">
               {stats.idMismatch ?? 0}
             </dd>
-            <dt className="text-text-3">Dropped samples</dt>
+            <dt className="text-text-3">{t("ink.lab.dropped")}</dt>
             <dd className="m-0 font-mono" data-metric="dropped">
               {stats.dropped ?? 0}
             </dd>
@@ -552,30 +568,32 @@ export function InkLab() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Button variant="secondary" onClick={() => latency.reset()}>
-            Reset measurements
+            {t("ink.lab.reset")}
           </Button>
         </div>
         <details className="rounded-block border border-line-soft bg-surface-1 p-4 text-text-2">
           <summary className="min-h-11 cursor-pointer content-center font-semibold text-text">
-            240 fps slow-motion protocol (real iPad)
+            {t("ink.lab.protocol")}
           </summary>
           <ol className="mt-2 mb-0 flex flex-col gap-1.5 pl-5">
-            <li>Turn on Slow-motion mode: thick black ink on paper and a frame counter above the page.</li>
-            <li>Record the iPad screen with another phone at 240 fps, close up, Pencil tip and ink both in frame.</li>
-            <li>Draw fast, short strokes. In the video, count frames from the tip touching to the first ink pixel.</li>
-            <li>Each frame is 4.17 ms; the target is 20 ms or less (about 5 frames). Note the median of 10 strokes.</li>
-            <li>Repeat with Predicted ink off. Record both in docs/PROGRESS.md with the iPad and iPadOS version.</li>
+            {(["1", "2", "3", "4", "5"] as const).map((n) => (
+              <li key={n}>{t(`ink.lab.protocol_${n}`)}</li>
+            ))}
           </ol>
         </details>
       </section>
 
       <section aria-labelledby="ink-events-h" className="flex flex-col gap-3">
-        <SectionHeading id="ink-events-h">Events</SectionHeading>
+        <SectionHeading id="ink-events-h">{t("ink.lab.events")}</SectionHeading>
         <div className="grid grid-cols-1 gap-3 tablet:grid-cols-[1fr_auto]">
           {events.length === 0 ? (
-            <p className="m-0 text-text-2">No ink events yet. Draw on the page.</p>
+            <p className="m-0 text-text-2">{t("ink.lab.events_empty")}</p>
           ) : (
-            <ol aria-label="Recent ink events" className="m-0 flex list-none flex-col gap-1.5 p-0" data-testid="events">
+            <ol
+              aria-label={t("ink.lab.events_list")}
+              className="m-0 flex list-none flex-col gap-1.5 p-0"
+              data-testid="events"
+            >
               {events.map((ev) => (
                 <li key={ev.n} data-kind={ev.kind} className="font-mono text-[0.8125rem] text-text-2">
                   {ev.text}
@@ -587,34 +605,41 @@ export function InkLab() {
             <figure className="m-0 flex flex-col gap-1.5">
               <img
                 src={png.url}
-                alt="Lasso selection as sent to later features"
+                alt={t("ink.lab.png_alt")}
                 className="max-h-40 max-w-60 rounded-inner border border-line-strong object-contain"
               />
-              <figcaption className="font-mono text-label-sm text-text-3 uppercase">{`${png.w}×${png.h} px crop`}</figcaption>
+              <figcaption className="font-mono text-label-sm text-text-3 uppercase">
+                {t("ink.lab.png_caption", { w: png.w, h: png.h })}
+              </figcaption>
             </figure>
           ) : null}
         </div>
       </section>
 
       <section aria-labelledby="ink-stress-h" className="flex flex-col gap-3" data-testid="stress">
-        <SectionHeading id="ink-stress-h">Scroll stress test</SectionHeading>
+        <SectionHeading id="ink-stress-h">{t("ink.lab.stress")}</SectionHeading>
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="secondary" onClick={buildStress}>
-            {stressItems ? "Rebuild 5,000-stroke page" : "Build 5,000-stroke page"}
+            {t(stressItems ? "ink.lab.stress_rebuild" : "ink.lab.stress_build", { count: stressCountText })}
           </Button>
           <Button variant="secondary" disabled={!stressItems || measuring} onClick={() => void runScroll()}>
-            {measuring ? "Measuring scroll…" : "Measure scroll"}
+            {t(measuring ? "ink.lab.measuring" : "ink.lab.measure")}
           </Button>
           {scroll ? (
             <p className="m-0 font-mono text-[0.8125rem] text-text-2" data-testid="scroll-result" data-fps={scroll.fps}>
-              {`${scroll.fps} fps · p95 frame ${scroll.p95FrameMs} ms · ${scroll.longFrames} long frames of ${scroll.frames}`}
+              {t("ink.lab.scroll_result", {
+                fps: scroll.fps,
+                p95: scroll.p95FrameMs,
+                long: scroll.longFrames,
+                frames: scroll.frames,
+              })}
             </p>
           ) : null}
         </div>
         {stressItems ? (
           <div ref={stressRef}>
             <InkCanvas
-              label="Stress page with 5,000 strokes"
+              label={t("ink.lab.stress_label", { count: stressCountText })}
               className={cx(
                 "w-full overflow-hidden rounded-tile-sm",
                 surfaceTheme === "paper" ? "bg-paper" : "bg-surface-1",
@@ -634,23 +659,25 @@ export function InkLab() {
               onError={onError}
             />
             <p className="mt-2 mb-0 font-mono text-label-sm text-text-3 uppercase" data-testid="stress-count">
-              {`${stressCount.toLocaleString("en")} items`}
+              {t("ink.lab.items_other", { count: stressCount.toLocaleString("en") })}
             </p>
           </div>
         ) : null}
       </section>
       <section aria-labelledby="ink-many-h" className="flex flex-col gap-3" data-testid="many-pages">
-        <SectionHeading id="ink-many-h">Many pages and canvas memory</SectionHeading>
-        <p className="m-0 max-w-[68ch] text-text-2">
-          Every surface on a page shares one canvas memory budget. Mount {MANY_PAGES} pages of ink and scroll:
-          off-screen pages give their memory back and repaint when they return.
-        </p>
+        <SectionHeading id="ink-many-h">{t("ink.lab.many")}</SectionHeading>
+        <p className="m-0 max-w-[68ch] text-text-2">{t("ink.lab.many_body", { count: MANY_PAGES })}</p>
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="secondary" disabled={manyPages !== null} onClick={mountManyPages}>
-            {`Mount ${MANY_PAGES} pages`}
+            {t("ink.lab.many_mount", { count: MANY_PAGES })}
           </Button>
           <p className="m-0 font-mono text-[0.8125rem] text-text-2" data-testid="budget">
-            {`Canvas memory ${(budget.total / 1e6).toFixed(1)} of ${(budget.limit / 1e6).toFixed(0)} Mpx · ${budget.canvases} canvases · ${budget.evictions} evictions`}
+            {t("ink.lab.budget", {
+              used: (budget.total / 1e6).toFixed(1),
+              limit: (budget.limit / 1e6).toFixed(0),
+              canvases: budget.canvases,
+              evictions: budget.evictions,
+            })}
           </p>
         </div>
         {manyPages ? (
@@ -659,7 +686,7 @@ export function InkLab() {
               // biome-ignore lint/suspicious/noArrayIndexKey: the list is fixed once mounted
               <li key={i}>
                 <InkCanvas
-                  label={`Ink page ${i + 1} of ${MANY_PAGES}`}
+                  label={t("ink.lab.many_label", { n: i + 1, count: MANY_PAGES })}
                   className={cx(
                     "w-full overflow-hidden rounded-tile-sm",
                     surfaceTheme === "paper" ? "bg-paper" : "bg-surface-1",

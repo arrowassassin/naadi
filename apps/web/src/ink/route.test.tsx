@@ -20,6 +20,16 @@ const auth = vi.hoisted(() => ({ state: { status: "loading" } as Record<string, 
 const me = vi.hoisted(() => ({ result: {} as Record<string, unknown> }));
 vi.mock("../auth/session", () => ({ useAuth: () => auth.state }));
 vi.mock("../auth/api", () => ({ useMe: () => me.result }));
+// ui_copy comes from /api/public-config; these tests use the shipped defaults (the same text) directly.
+vi.mock("../agent/uiCopy", async () => {
+  const { uiText } = await import("@naadi/shared");
+  return {
+    useUiCopy:
+      () =>
+      (key: string, vars: Record<string, string> = {}) =>
+        uiText(null, key, vars),
+  };
+});
 vi.mock("./InkLab", () => ({ InkLab: () => <h1>Ink lab (loaded)</h1> }));
 
 /** Shape of GET /api/public-config as served by the API (values neutral; nothing secret in a fixture). */

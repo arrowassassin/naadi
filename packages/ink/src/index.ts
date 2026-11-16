@@ -11,6 +11,8 @@ export {
   InkEngine,
   type InkEngineOptions,
   type InkEngineState,
+  type InkError,
+  type InkLabels,
   type InkSelectionPayload,
   type InkToolName,
   type MarkerMode,

@@ -665,19 +665,18 @@ test.describe("ink lab", () => {
         for (const el of document.querySelectorAll<HTMLElement>("[data-ink-layer]"))
           el.style.visibility = v ? "" : "hidden";
       }, visible);
-    // Paired runs: the same page with the ink layers shown, then hidden. The hidden run is what this
-    // runner can scroll at all (software rendering on shared CI runners is often below 60 fps even
-    // without ink), so the ink is judged by what it costs on top of that. Four pairs, best against best,
-    // so a noisy neighbour on a shared runner doesn't decide the result.
-    // Five interleaved pairs (ink shown, then hidden, on the same page and moment), judged by the median of
-    // the per-pair ratios: a noisy neighbour on a shared runner hits both halves of a pair alike.
+    // Paired runs on the same page: ink layers shown, and hidden. The hidden run is what this runner can
+    // scroll at all (software rendering on shared CI runners is often below 60 fps even without ink), so the
+    // ink is judged by what it costs on top of that. Five interleaved pairs, judged by the median of the
+    // per-pair ratios: a noisy neighbour hits both halves of a pair alike. The order alternates (ink first,
+    // then hidden first), so load that rises or falls during the test does not favour either half.
     const ink: number[] = [];
     const base: number[] = [];
     for (let i = 0; i < 5; i++) {
-      await setInkVisible(true);
-      ink.push(await measure());
-      await setInkVisible(false);
-      base.push(await measure());
+      for (const shown of i % 2 === 0 ? [true, false] : [false, true]) {
+        await setInkVisible(shown);
+        (shown ? ink : base).push(await measure());
+      }
     }
     await setInkVisible(true);
     const median = (a: number[]) => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)] as number;

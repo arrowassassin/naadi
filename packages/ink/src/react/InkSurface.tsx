@@ -4,6 +4,8 @@ import {
   type EraserMode,
   InkEngine,
   type InkEngineState,
+  type InkError,
+  type InkLabels,
   type InkSelectionPayload,
   type InkToolName,
   type MarkerMode,
@@ -40,7 +42,8 @@ export interface InkSurfaceProps {
   onAsk?: (payload: InkSelectionPayload) => void;
   onStateChange?: (state: InkEngineState) => void;
   onPenActiveChange?: (active: boolean) => void;
-  onError?: (message: string) => void;
+  onError?: (error: InkError) => void;
+  labels: InkLabels;
   /** Imperative handle: undo/redo/clear/selection actions. */
   engineRef?: Ref<InkEngine | null>;
   /** The content the ink sits on. */
@@ -48,7 +51,7 @@ export interface InkSurfaceProps {
   className?: string;
   style?: CSSProperties;
   /** Accessible name of the surface region. */
-  label?: string;
+  label: string;
 }
 
 /**
@@ -87,6 +90,10 @@ export function InkSurface(props: InkSurfaceProps) {
       onStateChange: (s) => cb.current.onStateChange?.(s),
       onPenActiveChange: (a) => cb.current.onPenActiveChange?.(a),
       onError: (m) => cb.current.onError?.(m),
+      // Read through the ref, so labels configured after mount (ui_copy loading) are used.
+      get labels() {
+        return cb.current.labels;
+      },
     });
     engine.current = e;
     if (typeof p.engineRef === "function") p.engineRef(e);
@@ -133,7 +140,7 @@ export function InkSurface(props: InkSurfaceProps) {
 
   return (
     <section
-      aria-label={props.label ?? "Ink surface"}
+      aria-label={props.label}
       className={props.className}
       style={{ position: "relative", isolation: "isolate", ...props.style }}
       data-ink-surface=""

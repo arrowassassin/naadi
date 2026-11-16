@@ -4,6 +4,17 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { InkToolbar } from "./InkToolbar";
 
+// ui_copy comes from /api/public-config; these tests use the shipped defaults (the same text) directly.
+vi.mock("../agent/uiCopy", async () => {
+  const { uiText } = await import("@naadi/shared");
+  return {
+    useUiCopy:
+      () =>
+      (key: string, vars: Record<string, string> = {}) =>
+        uiText(null, key, vars),
+  };
+});
+
 const base: InkEngineState = {
   enabled: true,
   tool: "pen",

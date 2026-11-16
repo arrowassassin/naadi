@@ -3,28 +3,34 @@ import type { InkColor } from "@naadi/shared";
 import { Button, cx } from "@naadi/ui";
 import { Redo2, Trash2, Undo2 } from "lucide-react";
 import { useRef } from "react";
+import { useInkCopy } from "./copy";
 
-export const TOOLS: { tool: InkToolName; label: string; key?: string }[] = [
-  { tool: "pen", label: "Pen", key: "P" },
-  { tool: "marker", label: "Marker", key: "M" },
-  { tool: "eraser", label: "Eraser", key: "E" },
-  { tool: "lasso", label: "Lasso", key: "L" },
-  { tool: "shapes", label: "Shapes" },
-  { tool: "text", label: "Text" },
+/** Tools with their keyboard shortcut (the letter is a key, not copy: it is what the student presses). */
+export const TOOLS: { tool: InkToolName; key?: string }[] = [
+  { tool: "pen", key: "P" },
+  { tool: "marker", key: "M" },
+  { tool: "eraser", key: "E" },
+  { tool: "lasso", key: "L" },
+  { tool: "shapes" },
+  { tool: "text" },
 ];
 
-/** Swatch names and the token class that shows each colour role on the given theme. */
+/** The ui_copy key naming each swatch and the token class that shows each colour role on the given theme. */
 const PEN_COLOURS: { color: InkColor; label: Record<InkTheme, string>; swatch: Record<InkTheme, string> }[] = [
-  { color: "ink", label: { paper: "Ink black", dark: "Ink white" }, swatch: { paper: "bg-ground", dark: "bg-paper" } },
+  {
+    color: "ink",
+    label: { paper: "ink.colour.ink_paper", dark: "ink.colour.ink_dark" },
+    swatch: { paper: "bg-ground", dark: "bg-paper" },
+  },
   {
     color: "violet",
-    label: { paper: "Ink violet", dark: "Ink violet" },
+    label: { paper: "ink.colour.violet", dark: "ink.colour.violet" },
     swatch: { paper: "bg-ink-violet", dark: "bg-violet-text" },
   },
 ];
 const MARKER_COLOURS: { color: InkColor; label: string; swatch: Record<InkTheme, string> }[] = [
-  { color: "lime", label: "Marker lime, key fact", swatch: { paper: "bg-lime", dark: "bg-lime" } },
-  { color: "amber", label: "Marker amber, my mistake", swatch: { paper: "bg-mark-amber", dark: "bg-amber" } },
+  { color: "lime", label: "ink.colour.lime", swatch: { paper: "bg-lime", dark: "bg-lime" } },
+  { color: "amber", label: "ink.colour.amber", swatch: { paper: "bg-mark-amber", dark: "bg-amber" } },
 ];
 
 const toolBtn =
@@ -58,12 +64,13 @@ export function InkToolbar({
   className,
 }: InkToolbarProps) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const t = useInkCopy();
   const markerish = state.tool === "marker";
   const colourless = state.tool === "eraser" || state.tool === "lasso";
   return (
     <div
       role="toolbar"
-      aria-label="Ink tools"
+      aria-label={t("ink.toolbar")}
       className={cx(
         // One row at every width; on a phone it scrolls sideways instead of wrapping into three rows.
         "relative flex flex-nowrap items-center gap-0.5 overflow-x-auto overscroll-x-contain rounded-[28px] border border-line-strong bg-ground p-1.5 [scrollbar-width:none] [&>*]:shrink-0",
@@ -77,40 +84,41 @@ export function InkToolbar({
         // The one lime control on the page: turning ink on/off is the student's next action (Ink board).
         className={cx(toolBtn, "bg-lime px-4 font-semibold text-lime-ink hover:bg-lime-hover")}
       >
-        {state.enabled ? "Ink on" : "Ink off"}
+        {t(state.enabled ? "ink.toggle_on" : "ink.toggle_off")}
       </button>
       <span aria-hidden="true" className="mx-0.5 h-6 w-px bg-line-strong" />
-      {TOOLS.map((t) => {
-        const on = state.tool === t.tool;
+      {TOOLS.map((tool) => {
+        const on = state.tool === tool.tool;
+        const label = t(`ink.tool.${tool.tool}`);
         return (
           <button
-            key={t.tool}
+            key={tool.tool}
             type="button"
             aria-pressed={on}
-            aria-keyshortcuts={t.key}
-            title={t.key ? `${t.label} (${t.key})` : t.label}
+            aria-keyshortcuts={tool.key}
+            title={tool.key ? t("ink.tool.with_key", { tool: label, key: tool.key }) : label}
             disabled={!state.enabled}
-            onClick={() => onTool(t.tool)}
+            onClick={() => onTool(tool.tool)}
             className={cx(
               toolBtn,
               on && state.enabled ? "bg-paper font-semibold text-ground" : "text-text hover:bg-surface-2",
               !state.enabled && "cursor-not-allowed text-text-muted",
             )}
           >
-            {t.label}
+            {label}
           </button>
         );
       })}
       <span aria-hidden="true" className="mx-0.5 h-6 w-px bg-line-strong" />
       {state.tool === "eraser" ? (
         <fieldset className="m-0 flex items-center gap-1 border-0 p-0">
-          <legend className="sr-only">Eraser mode</legend>
+          <legend className="sr-only">{t("ink.eraser.mode")}</legend>
           {(
             [
-              ["stroke", "Whole stroke"],
-              ["pixel", "Partial"],
+              ["stroke", "ink.eraser.stroke"],
+              ["pixel", "ink.eraser.pixel"],
             ] as const
-          ).map(([mode, label]) => (
+          ).map(([mode, labelKey]) => (
             <button
               key={mode}
               type="button"
@@ -124,16 +132,16 @@ export function InkToolbar({
                   : "text-text-2 hover:bg-surface-2",
               )}
             >
-              {label}
+              {t(labelKey)}
             </button>
           ))}
         </fieldset>
       ) : (
         <fieldset className="m-0 flex items-center gap-1 border-0 p-0">
-          <legend className="sr-only">{markerish ? "Marker colour" : "Ink colour"}</legend>
+          <legend className="sr-only">{t(markerish ? "ink.colour.marker_group" : "ink.colour.ink_group")}</legend>
           {(markerish ? MARKER_COLOURS : PEN_COLOURS).map((c) => {
             const checked = state.color === c.color;
-            const label = typeof c.label === "string" ? c.label : c.label[theme];
+            const label = t(typeof c.label === "string" ? c.label : c.label[theme]);
             return (
               <button
                 key={c.color}
@@ -158,9 +166,9 @@ export function InkToolbar({
       <span className="flex-1" />
       <button
         type="button"
-        aria-label="Undo"
+        aria-label={t("ink.undo")}
         aria-keyshortcuts="Meta+Z Control+Z"
-        title="Undo (⌘Z)"
+        title={t("ink.undo_hint")}
         disabled={!state.canUndo}
         onClick={onUndo}
         className={cx(
@@ -172,9 +180,9 @@ export function InkToolbar({
       </button>
       <button
         type="button"
-        aria-label="Redo"
+        aria-label={t("ink.redo")}
         aria-keyshortcuts="Shift+Meta+Z Shift+Control+Z"
-        title="Redo (⇧⌘Z)"
+        title={t("ink.redo_hint")}
         disabled={!state.canRedo}
         onClick={onRedo}
         className={cx(
@@ -186,8 +194,8 @@ export function InkToolbar({
       </button>
       <button
         type="button"
-        aria-label="Clear page"
-        title="Clear page"
+        aria-label={t("ink.clear")}
+        title={t("ink.clear")}
         disabled={state.count === 0}
         onClick={() => dialog.current?.showModal()}
         className={cx(
@@ -204,14 +212,14 @@ export function InkToolbar({
         className="m-auto max-w-[min(420px,calc(100vw-32px))] rounded-block border border-line-strong bg-surface-1 p-6 text-text backdrop:bg-ground/70"
       >
         <h2 id="ink-clear-h" className="m-0 font-display text-[1.375rem] font-bold">
-          Clear all ink on this page?
+          {t("ink.clear_title")}
         </h2>
         <p id="ink-clear-d" className="mt-2 mb-5 text-text-2">
-          Every stroke and text box on this page is removed. Undo brings them back.
+          {t("ink.clear_body")}
         </p>
         <form method="dialog" className="flex flex-wrap justify-end gap-2">
           <Button type="submit" variant="secondary" autoFocus>
-            Cancel
+            {t("ink.clear_cancel")}
           </Button>
           <Button
             type="button"
@@ -221,7 +229,7 @@ export function InkToolbar({
               onClear();
             }}
           >
-            Clear page
+            {t("ink.clear_confirm")}
           </Button>
         </form>
       </dialog>
