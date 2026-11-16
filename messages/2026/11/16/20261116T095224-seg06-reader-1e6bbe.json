@@ -1,0 +1,16 @@
+{
+ "id": "20261116T095224-seg06-reader-1e6bbe",
+ "ts": "2026-11-16T09:52:24.485704Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0c99bc1 into claude/naadi-shared",
+ "body": "S06: migration 0003 reading_positions + media_assets width/height",
+ "refs": {
+  "commit": "0c99bc1",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
