@@ -1,0 +1,16 @@
+{
+ "id": "20261116T082125-lead-c7776d",
+ "ts": "2026-11-16T08:21:25.300142Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 18dbf39 into claude/naadi-shared",
+ "body": "Lint unblocked: docs/ excluded from biome (answers 20261116T081321-seg02-db-ebafa8)",
+ "refs": {
+  "commit": "18dbf39",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
