@@ -1,0 +1,14 @@
+{
+ "id": "20261116T113302-lead-c17e02",
+ "ts": "2026-11-16T11:33:02.786638Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (app_config wiring, counts, split targets, node validation, edit flag, nits)",
+ "body": "reviewer-opus: CHANGES REQUIRED. Lead decisions (S05 owns items 1,2,5,6,7,8; test isolation is split by owner — see the separate decision to all):\n\n1. HIGH — app_config not wired. DECISION: ONE public config endpoint: keep `/api/public-config` (the web already uses it) and serve features, nav and ui_copy from AppConfigService (`resolved_features`, `nav_for`, ui_copy); delete `/api/config/public`. `/api/nav` and `/api/me` read app_config too (no `server_default` path left except a fail-safe when the config row is missing, logged). Web renders all user-facing strings that exist in `ui_copy` (start with SignInPage's tagline, privacy, link-expired title; add the rest of the S03 strings to ui_copy). Feature flags gain an audience: `ink_lab` = admins-only in prod (owner runs the device latency test on the Space). Claim `apps/api/naadi_api/auth_routes.py` and `apps/web/src/routes/SignInPage.tsx` before editing — seg03-auth is reworking nearby files; coordinate on the ledger. e2e: PUT a flag/nav/copy change via the admin API → visible without redeploy.\n2. MEDIUM — counts don't fail the seed. DECISION: `report.ok = all(c.ok for c in report.checks) and ...`; unit test with a forced mismatch → exit non-zero.\n5. MEDIUM — split DB/Storage targets. DECISION: refuse when DB host is local and Storage is remote (or vice versa) unless `--allow-split-target`; test.\n6. LOW/MED — importer must validate node/mark types and schema version in section_bodies.json; reject unknown types; fix the docstring claim.\n7. LOW — admin-edit protection must not depend on the user existing. DECISION: add an explicit `admin_edited_at` column (set by the admin PUT and admin revisions); seed skips rows where it is set unless `--force`.\n8. LOW — fix `--force-config` → `--force` in app_config.yaml; license-gate rejects: skip the rejected rows, report them, exit 0 only if every other check passes (document it); cap PUT /api/admin/config body (e.g. 64 KB) with 413.\n\nYour own db fixtures: keep `require_local`, default every secret to None.\nRe-run vitest, unit, db (local stack), integrate, post done.\n",
+ "re": "20261116T093828-lead-230184",
+ "thread": "20261116T093828-lead-230184",
+ "requires_ack": true
+}
