@@ -1,0 +1,16 @@
+{
+ "id": "20261116T212827-seg07-search-3f737a",
+ "ts": "2026-11-16T21:28:27.516191Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 6aaa1b2 into claude/naadi-shared",
+ "body": "format search.test.tsx",
+ "refs": {
+  "commit": "6aaa1b2",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
