@@ -1,0 +1,16 @@
+{
+ "id": "20261116T093007-seg02-db-df17e7",
+ "ts": "2026-11-16T09:30:07.149817Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c8ef1b7 into claude/naadi-shared",
+ "body": "S02: question-linked shared flashcards need the caller's own attempt; never anon",
+ "refs": {
+  "commit": "c8ef1b7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
