@@ -108,7 +108,10 @@ function addDays(iso: string, n: number): string {
 const preview = (page: Page) => page.locator("[data-preview]");
 
 test.describe("onboarding", () => {
-  test("a new student sets up a plan in under three minutes and lands on Today", async ({ browser, baseURL }, info) => {
+  test("a new student sets up a plan and starts the diagnostic in under three minutes", async ({
+    browser,
+    baseURL,
+  }, info) => {
     const started = Date.now();
     const { page, done } = await fresh(browser, baseURL as string, info, "welcome");
     const { errors, guard } = watchConsole(page);
@@ -116,13 +119,12 @@ test.describe("onboarding", () => {
       await page.waitForURL((u) => u.pathname === "/welcome", { timeout: 30_000 });
       await expect(page.getByRole("heading", { level: 1 })).toHaveText("When is the big day?");
       await settle(page);
-      // Only exams with a plan template are offered (Step 1 today); the diagnostic step is absent until
-      // timed blocks ship.
+      // Only exams with a plan template are offered (Step 1 today); five steps, the diagnostic among them.
       await expect(page.getByRole("button", { name: "Step 1", exact: true })).toHaveAttribute("aria-pressed", "true");
       await expect(page.getByRole("button", { name: "Step 3" })).toHaveCount(0);
       await expect(page.getByRole("button", { name: "OET Medicine" })).toHaveCount(0);
-      await expect(page.getByRole("list", { name: "Setup steps" }).getByRole("listitem")).toHaveCount(4);
-      await expect(page.getByRole("button", { name: "Take the diagnostic" })).toHaveCount(0);
+      await expect(page.getByRole("list", { name: "Setup steps" }).getByRole("listitem")).toHaveCount(5);
+      await expect(page.getByRole("button", { name: "Take the diagnostic" })).toBeDisabled();
       await expect(preview(page)).toContainText("Pick an exam date to see your plan.");
       await expectNoHorizontalOverflow(page);
       await expectNoAxeViolations(page);
@@ -149,13 +151,45 @@ test.describe("onboarding", () => {
       await expectNoAxeViolations(page);
       await snap(page, info, guard, "welcome-filled", true);
 
-      const start = page.getByRole("button", { name: "Start my plan" });
-      await expect(start).toBeEnabled();
-      await start.click();
+      await expect(page.getByText("Next: a 40-question diagnostic")).toBeVisible();
+      const take = page.getByRole("button", { name: "Take the diagnostic" });
+      await expect(take).toBeEnabled();
+      await take.click();
+      await page.waitForURL(/\/practice\/blocks\/[0-9a-f-]{36}\/1$/, { timeout: 30_000 });
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      expect(Date.now() - started, "onboarding takes at most three minutes").toBeLessThan(180_000);
+      await settle(page);
+      await snap(page, info, guard, "diagnostic-start", true);
+
+      // Today now offers the diagnostic as the one next action, with counts only.
+      await page.goto("/");
+      await expect(page.locator("[data-state=populated]")).toBeVisible();
+      await expect(page.getByRole("button", { name: "Resume the diagnostic" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Diagnostic" })).toBeVisible();
+      await expect(page.getByText("0 of 40 answered")).toBeVisible();
+      await settle(page);
+      expect(await limeCount(page)).toBe(1);
+      await expectNoHorizontalOverflow(page);
+      await expectNoAxeViolations(page);
+      await snap(page, info, guard, "today-diagnostic", true);
+      expect(errors).toEqual([]);
+    } finally {
+      await done();
+    }
+  });
+
+  test("Later saves the plan and opens Today on day one", async ({ browser, baseURL }, info) => {
+    const { page, done } = await fresh(browser, baseURL as string, info, "later", "/welcome");
+    const { errors, guard } = watchConsole(page);
+    try {
+      await page.waitForURL((u) => u.pathname === "/welcome", { timeout: 30_000 });
+      const date = page.getByLabel("Exam date");
+      const min = (await date.getAttribute("min")) as string;
+      await date.fill(addDays(min, 76));
+      await expect(preview(page)).toHaveAttribute("data-preview", "11");
+      await page.getByRole("button", { name: "Later" }).click();
       await page.waitForURL((u) => u.pathname === "/", { timeout: 30_000 });
       await expect(page.locator("[data-state=populated]")).toBeVisible();
-      expect(Date.now() - started, "onboarding takes at most three minutes").toBeLessThan(180_000);
-
       // Today from the generated plan: countdown, the baseline day's items in plan order, one lime action.
       await expect(page.getByText("77 days", { exact: false })).toBeVisible();
       await expect(page.getByText("Today: Baseline + setup")).toBeVisible();
@@ -185,7 +219,8 @@ test.describe("onboarding", () => {
       for (const d of ["Mon", "Tue", "Wed", "Thu", "Fri"])
         await page.getByRole("button", { name: d, exact: true }).click();
       await expect(preview(page)).toContainText("A plan needs at least 21");
-      await expect(page.getByRole("button", { name: "Start my plan" })).toBeDisabled();
+      await expect(page.getByRole("button", { name: "Take the diagnostic" })).toBeDisabled();
+      await expect(page.getByRole("button", { name: "Later" })).toBeDisabled();
       await settle(page);
       await expectNoAxeViolations(page);
       await snap(page, info, guard, "welcome-too-short", true);
