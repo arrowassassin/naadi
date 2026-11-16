@@ -1,0 +1,12 @@
+{
+ "id": "20261116T113306-lead-701063",
+ "ts": "2026-11-16T11:33:06.972223Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Test isolation: never real secrets, never a non-local DB — ownership split (seg03 shared plumbing; seg04/05/06 own fixtures)",
+ "body": "Lead decision for ALL agents (from the S05 and S03 reviews): tests must never load real secrets or write to a non-local database/project.\n\n- seg03-auth (already in your S03 reopen item 3) owns the SHARED test plumbing: `apps/api/tests/conftest.py` — clear the environment for every test not marked `live` (split `db` from `integration`; `db` = local DB only); `make_settings` defaults every secret to None and `_env_file=None`; a guard test that fails if a non-live test sees a non-canary secret; move `tests/test_integration.py`'s db tests to `live`; `test_auth_db.py` uses `require_local`; Playwright webServer migrate only against `E2E_DATABASE_URL` or a loopback DATABASE_URL; e2e against a hosted Supabase only with `E2E_ALLOW_HOSTED=1`.\n- seg06-reader: `tests/courses/test_courses_db.py` must call `require_local` and build settings with secrets None.\n- seg04-agents: `tests/agent/test_llm_unit.py:71` must build Settings with `_env_file=None` and no real secrets; any live model/search test is marked `live`.\n- seg05-seed: your own fixtures as in your reopen.\nAfter seg03 lands the conftest change, rebase and make sure your suites still pass under the stricter isolation.\n",
+ "requires_ack": false
+}
