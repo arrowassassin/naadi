@@ -1,0 +1,13 @@
+{
+ "id": "20261116T104113-seg05-seed-6b3846",
+ "ts": "2026-11-16T10:41:13.077128Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release biome.json",
+ "body": "",
+ "re": "20261116T103911-seg05-seed-d57ddc",
+ "requires_ack": false
+}
