@@ -5,6 +5,9 @@
 - **Env setup (§0.5):** `.env.example`, `docs/SECRETS.md`, `scripts/check_env.py` (official SDKs; 46 pass, 0 required fail), `scripts/push_space_secrets.sh`, `docs/DEVICE_CHECKLIST.md`. Space `arrowassassin/naadi` has 5 secrets + 12 variables.
 - **Plan:** `docs/PLAN.md` (22 segments, 7 whole-app reviews + final audit).
 
+## Approved
+- **S02 — DB migrations, RLS, storage** (2026-11-16, reviewer-opus re-review APPROVED at `c8ef1b7`): 33 tables, RLS on 17 user tables, answer columns hidden, embeddings server-only, no self-grading, attempt-gated question-linked flashcards, 5 buckets, default privileges closed; 132 db + 183 unit tests; 20 reviewer mutations caught. Real-project migration runs on the Wave A deploy.
+
 ## In progress
 
 - Segment 01 — M0 scaffold, tokens, contracts, health, CI, Docker Space deploy (`implementer-opus`).
@@ -27,6 +30,7 @@
 | Leaks          | Public repo: `.env*` gitignored (except `.env.example`), scripts never print values, Space secrets set by name from env (never on argv), `HF_TOKEN`/`SUPABASE_ACCESS_TOKEN` kept off the Space   | —                                                                              |
 
 ## Decisions
+| 2026-11-16 | Promotion is per wave: the shared branch carries concurrent tasks, so the lead promotes + deploys once every task in a wave is APPROVED (then runs real-project checks: S02 live_check, S03 live auth, S05 seed) |
 
 | Date       | Decision                                                                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
