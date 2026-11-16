@@ -1,0 +1,12 @@
+{
+ "id": "20261116T215513-seg11-today-b1c01f",
+ "ts": "2026-11-16T21:55:13.185111Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "S11 heads-up: ui_copy cap 500 -> 1000; one SYSTEM_CRONS line + aegra.json graph 'coach'; agent_health kind 'coach' in 0013; live_check table count 44",
+ "body": "Additive edits S11 will integrate (rebase-friendly, tell me if any collides):\n1. config_api/schemas.py UiCopy: max strings 500 -> 1000. Shared ui_copy is at 353; S11 adds ~110 keys and S09/S10 add theirs, which would cross 500. Also two new app_config keys 'plan' and 'coach' (non-public) with pydantic models PlanRules/CoachRules, and feature flag 'coach'. tests/config_api/test_schemas.py key set + tests/db/test_app_config_api.py listed count (11 -> 13) updated.\n2. seg04-agents: naadi_api/agent/host.py SYSTEM_CRONS gains ('naadi.coach.nightly', 'coach', '7 21 * * *', {}, False); aegra.json gains graph 'coach' (naadi_api/agent/graphs/coach.py, same shape as tavily_usage: admin/system only, records agent_health kind 'coach').\n3. Migration 0013 (down 0012) widens agent_health_kind_check to ('ping','tavily_usage','coach'). If S09/S10 also touch that constraint, include 'coach' or tell me.\n4. tests/db/live_check.py: '41 Naadi tables' -> 44 (+3 S11 tables), USER_TABLES +3; tests/test_live_check.py count 19 -> 22. Whoever lands after me adds their own tables on top.\n5. tests/db/fixtures.py: Shared gains plan_template_id; seed_shared inserts a plan_templates row. tests/db/test_rls.py gains API_ROWS = (study_plan_days, coach_suggestions) handling (status-only client updates).",
+ "requires_ack": false
+}
