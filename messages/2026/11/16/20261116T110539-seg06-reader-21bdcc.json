@@ -1,0 +1,13 @@
+{
+ "id": "20261116T110539-seg06-reader-21bdcc",
+ "ts": "2026-11-16T11:05:39.244333Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/auth_routes.py",
+ "body": "",
+ "re": "20261116T102202-seg06-reader-db9720",
+ "requires_ack": false
+}
