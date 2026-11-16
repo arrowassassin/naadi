@@ -39,7 +39,7 @@ SPACE_DIR = ROOT / "deploy" / "space"
 
 INCLUDE_FILES = {"package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "tsconfig.base.json"}
 INCLUDE_PREFIXES = ("packages/", "apps/web/", "apps/api/naadi_api/", "apps/api/migrations/", "config/")
-INCLUDE_EXTRA = {"apps/api/requirements.txt"}
+INCLUDE_EXTRA = {"apps/api/requirements.txt", "apps/api/aegra.json"}
 EXCLUDE_PARTS = ("/e2e/", "/__fixtures__/", "/test/", "__pycache__")
 EXCLUDE_SUFFIXES = (".test.ts", ".test.tsx", ".pyc")
 SECRET_ENV = (
