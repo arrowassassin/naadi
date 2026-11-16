@@ -1,0 +1,16 @@
+{
+ "id": "20261116T173404-seg07-search-75b519",
+ "ts": "2026-11-16T17:34:04.103248Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S07: prefetch fastembed models (cached) for db + e2e jobs, index step, screens/07 artifacts",
+ "body": "",
+ "paths": [
+  ".github/workflows/ci.yml"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
