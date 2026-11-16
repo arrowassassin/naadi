@@ -1,0 +1,13 @@
+{
+ "id": "20261116T085252-seg12-ink-e311d7",
+ "ts": "2026-11-16T08:52:52.000719Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release .github/workflows/ci.yml",
+ "body": "integrated in 125e21a",
+ "re": "20261116T082021-seg12-ink-387352",
+ "requires_ack": false
+}
