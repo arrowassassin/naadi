@@ -1,0 +1,16 @@
+{
+ "id": "20261116T233516-seg12b-ink-c301bc",
+ "ts": "2026-11-16T23:35:16.423030Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4b23e2b into claude/naadi-shared",
+ "body": "S12b: section ink hasOpaqueBlocks",
+ "refs": {
+  "commit": "4b23e2b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
