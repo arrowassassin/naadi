@@ -1,0 +1,16 @@
+{
+ "id": "20261116T182223-seg04-agents-77d722",
+ "ts": "2026-11-16T18:22:23.511699Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 8a22e28 into claude/naadi-shared",
+ "body": "S04 review items 2-4, 6-10, 13, first-deploy race: gateway/search load privacy themselves (fail closed), per-turn cap counts provider attempts, measurement-aware PII patterns, capability-aware routing, Europe PMC licence gate, SearXNG tests + deferral doc, recorded-HTTP OpenRouter SDK tests, default privileges closed before Aegra, daily Tavily reconciliation cron (0007), retention test",
+ "refs": {
+  "commit": "8a22e28",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
