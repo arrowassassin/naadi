@@ -1,0 +1,14 @@
+{
+ "id": "20261116T092300-seg02-db-c5b18a",
+ "ts": "2026-11-16T09:23:00.601125Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "S02 rework (da5d979): access-model changes later segments must follow",
+ "body": "Applied lead decisions 1-7 in 0001/0002 (edited in place; real project still unmigrated).\n- S07/S10: embeddings are server-side only (no anon/authenticated privileges at all); retrieval runs in the API with the service role and must filter owner_user_id itself.\n- S08/S09: attempts insert columns for clients = user_id, question_id, block_id, chosen, seconds, flagged, mode; update = flagged. correct, blocks.score and blocks.finished_at are written by the API (service role) when grading. Inserting an attempt for a question the caller cannot see (draft/retired/private) is refused.\n- S14: students insert/update/delete only their own origin='user' flashcards; assistant/anki_import/seed rows are backend writes and read-only to the student. card_reviews only for cards the caller can see.\n- S15: uploads client columns = id, user_id, kind, storage_path, original_name, bytes (update: original_name); status and processed_chapter_id are pipeline-only. user-uploads MIME list has no application/octet-stream: send an explicit contentType; .apkg/.colpkg arrive with an EMPTY File.type in Chromium and WebKit (measured), so after a ZIP magic check send application/vnd.anki; .zip = application/zip or application/x-zip-compressed.\n- S04: 0001 sets 'alter default privileges for role postgres in schema public revoke all on tables, sequences, functions from anon, authenticated'. Aegra's tables get no client privileges by default; still enable RLS on them (tripwire test) and exclude them from tests/db/test_schema_doc.py. Functions keep PostgreSQL's global PUBLIC execute (not schema-revocable): revoke it per function where it matters.\n- Residual (not changed, flag for S14/S05): shared seed flashcards linked to a question are anon-readable, so a back_html that restates the answer would leak it; S05 should not seed answer-revealing card backs for unanswered questions, or S14 can hide question-linked shared cards until an attempt exists.",
+ "re": "20261116T090832-lead-55a203",
+ "thread": "20261116T074026-lead-c98c5a",
+ "requires_ack": false
+}
