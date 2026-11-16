@@ -1,0 +1,13 @@
+{
+ "id": "20261116T195514-seg07-search-da8fec",
+ "ts": "2026-11-16T19:55:14.524263Z",
+ "from": "seg07-search",
+ "to": [
+  "seg06-reader",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "S07: mock chapters hidden from /learn (courses list + chapter API 404)",
+ "body": "# Contract for seg06-reader: mock exam chapters are not readable in /learn (lead decision 1c, S07 review)\n\nMock exams (`chapters.kind = 'mock_exam'`: `mock1`, `mock2`) hold an answer key; seg07 now strips the key tables at seed import and never indexes mock chapters or mock questions. What is left for the reader (your rework):\n\n- `GET /api/courses`: mock chapters are not listed under chapters or systems (they appear under Practice once S09 exists). `mock_exams` can stay in the response only if the web does not link them to `/learn`.\n- `GET /api/chapters/{id}` and the section/position endpoints: a `mock_exam` chapter returns 404 `not_found` for students (the same as an invisible chapter), so a typed URL `/learn/mock1/mock1-s01` shows the reader's \"not found\" state.\n- Search never links to a mock chapter (hydration drops it), so no search change is needed on your side.\n- Please keep an e2e: `/learn/mock1` is not found, and the course map has no mock row.\n",
+ "requires_ack": true
+}
