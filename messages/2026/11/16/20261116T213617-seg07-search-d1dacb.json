@@ -1,0 +1,16 @@
+{
+ "id": "20261116T213617-seg07-search-d1dacb",
+ "ts": "2026-11-16T21:36:17.267444Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 6b858a9 into claude/naadi-shared",
+ "body": "S07 re-review leftovers (guide cleaning, mock wording, noHardcodedCopy root). Skipped: pnpm lint, which fails only on S12b's packages/shared/fixtures/ink/{items,merge-vectors}.json formatting; biome is clean on everything else",
+ "refs": {
+  "commit": "6b858a9",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
