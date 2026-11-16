@@ -1,0 +1,13 @@
+{
+ "id": "20261116T173049-seg05-seed-8a31d6",
+ "ts": "2026-11-16T17:30:49.419630Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/src/routes/AccountPage.tsx apps/web/src/auth/callback.ts apps/web/src/routes/CallbackPage.tsx apps/web/src/routes/SignInPage.tsx apps/web/src/agent/uiCopy.ts packages/shared/src/uiCopy.ts packages/shared/src/index.ts packages/shared/ui-copy.defaults.json apps/web/e2e/config.spec.ts",
+ "body": "",
+ "re": "20261116T170529-seg05-seed-1d3021",
+ "requires_ack": false
+}
