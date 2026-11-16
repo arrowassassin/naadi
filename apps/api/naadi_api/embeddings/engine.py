@@ -8,11 +8,12 @@ an explicit `ModelsNotCached` and never a silent download while a student waits.
 
 from __future__ import annotations
 
+import contextlib
 import os
 import threading
 import warnings
 from collections import OrderedDict
-from collections.abc import Sequence
+from collections.abc import Iterator, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -21,6 +22,27 @@ from ..config import ConfigError, load_models_config
 from ..logs import get_logger
 
 log = get_logger("naadi.embeddings")
+
+
+@contextlib.contextmanager
+def _native_stderr_silenced() -> Iterator[None]:
+    """onnxruntime's C++ logger writes coloured warnings straight to file descriptor 2 when it is imported or first
+    used (e.g. GPU device discovery on a CI runner: "[W:onnxruntime:Default, device_discovery.cc ...]"), which no
+    Python logging setting reaches. Real failures arrive as exceptions, so for the one-off model load fd 2 is
+    pointed at /dev/null."""
+    try:
+        saved = os.dup(2)
+        null = os.open(os.devnull, os.O_WRONLY)
+    except OSError:  # no usable stderr (some embedded hosts): nothing to silence
+        yield
+        return
+    try:
+        os.dup2(null, 2)
+        yield
+    finally:
+        os.dup2(saved, 2)
+        os.close(saved)
+        os.close(null)
 
 
 def _quiet_third_party_logging() -> None:
@@ -100,13 +122,14 @@ class Engine:
 
     def _load(self, kind: str) -> Any:
         _quiet_third_party_logging()
-        from fastembed import TextEmbedding  # imported lazily: onnxruntime is heavy
-        from fastembed.rerank.cross_encoder import TextCrossEncoder
-
         try:
-            if kind == "embedder":
-                return TextEmbedding(self.spec.model, **self._kwargs())
-            return TextCrossEncoder(self.spec.reranker, **self._kwargs())
+            with _native_stderr_silenced():
+                from fastembed import TextEmbedding  # imported lazily: onnxruntime is heavy
+                from fastembed.rerank.cross_encoder import TextCrossEncoder
+
+                if kind == "embedder":
+                    return TextEmbedding(self.spec.model, **self._kwargs())
+                return TextCrossEncoder(self.spec.reranker, **self._kwargs())
         except Exception as exc:
             if self._allow_download:
                 raise
