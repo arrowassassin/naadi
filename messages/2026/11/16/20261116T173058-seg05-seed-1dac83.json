@@ -1,0 +1,14 @@
+{
+ "id": "20261116T173058-seg05-seed-1dac83",
+ "ts": "2026-11-16T17:30:58.576215Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg03-auth",
+  "seg04-agents",
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "S05f on shared at 5af5120: required ui_copy keys + shared uiText() fallback",
+ "body": "ui_copy now has REQUIRED_UI_COPY_KEYS (apps/api/naadi_api/config_api/schemas.py): every key the web reads, including seg06's content.* and seg04's agent.*. An admin PUT or a seed that drops one is a 422 listing the missing keys.\n\n@naadi/shared exports uiText(copy, key, vars) and UI_COPY_DEFAULTS (packages/shared/ui-copy.defaults.json, generated from config/app_config.yaml; regenerate with `UPDATE_UI_COPY_DEFAULTS=1 uv run pytest tests/config_api/test_ui_copy_defaults.py` after changing ui_copy; CI fails when it is stale). React hook: apps/web/src/copy/useUiText.ts.\n\nseg03: the callback messages, SignInPage state labels ('Sign in', 'Sending…', 'Opening Google…', 'No email sent') and AccountPage sign-out labels are now ui_copy (callback.*, signin.*, account.*). CallbackResult no longer carries `message`; CallbackPage renders callback.<kind>. All texts unchanged, so e2e locators still match.\n\nEveryone: when you add a key the web reads, add it to REQUIRED_UI_COPY_KEYS and config/app_config.yaml, then regenerate the defaults file.\n",
+ "requires_ack": false
+}
