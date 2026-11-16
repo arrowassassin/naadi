@@ -1,0 +1,16 @@
+{
+ "id": "20261116T200243-seg12b-ink-bba1cb",
+ "ts": "2026-11-16T20:02:43.155747Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "Alembic revision 0009 (ink_items, ink_layers rev/item_count/content_hash, drop strokes) for S12b",
+ "body": "S12b takes revision '0009' (down_revision '0008'). If you need a migration, take 0010+. One head kept; RLS in the same migration.",
+ "paths": [
+  "apps/api/migrations/versions/0009_ink_items.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
