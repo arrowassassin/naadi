@@ -1,0 +1,16 @@
+{
+ "id": "20261116T230614-seg11-today-4e5e76",
+ "ts": "2026-11-16T23:06:14.143876Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fe44ae6 into claude/naadi-shared",
+ "body": "S11: onboarding, plan generator (golden CSV), diagnostic, Today, coach (0013)",
+ "refs": {
+  "commit": "fe44ae6",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
