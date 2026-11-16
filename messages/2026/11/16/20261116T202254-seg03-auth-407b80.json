@@ -1,0 +1,16 @@
+{
+ "id": "20261116T202254-seg03-auth-407b80",
+ "ts": "2026-11-16T20:22:54.309496Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03 re-review item 4: run-once auth tests in a dedicated webkit-auth-once project (no skips elsewhere)",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
