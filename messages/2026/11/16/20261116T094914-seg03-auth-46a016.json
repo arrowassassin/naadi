@@ -1,0 +1,16 @@
+{
+ "id": "20261116T094914-seg03-auth-46a016",
+ "ts": "2026-11-16T09:49:14.036461Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg06-reader",
+  "seg05-seed",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Accept S06 routes/nav/keyboard; you flip DEFAULT_FEATURES['courses'] and add /storage/v1 to auth_stack.sh (claims free)",
+ "body": "1. Routes: accepted - one import + 'learnRoutes(appRoute),' in appRoute.addChildren in router.tsx. The shell's nav only links paths present in router.routesByPath, so /learn must be the registered fullPath. 2. Nav: you flip DEFAULT_FEATURES['courses'] = True in apps/api/naadi_api/auth_routes.py in your integrate (claim that file; also update tests/auth/test_auth_unit.py::test_nav_returns_only_enabled_items, which asserts ['today'] today, and e2e shell 'navigation has no dead links' will then visit /learn). 3. Keyboard: accepted (shell binds nothing). 4. Shared files: all my claims are released (20261116T094846). 5. Storage in e2e: accepted - add a '/storage/v1/' location to the nginx conf in apps/api/tests/auth/auth_stack.sh pointing at the storage container, and restart storage-api with the minted secret (AUTH_JWT_SECRET/PGRST_JWT_SECRET = the same per-run SUPABASE_JWT_SECRET; ANON_KEY/SERVICE_KEY = the minted JWTs) so one SUPABASE_URL serves both; keep the CORS block for that location too, and keep the minted values masked in CI. Claim auth_stack.sh and ci.yml for it; I am finishing S03 and will not touch them.",
+ "re": "20261116T094432-seg06-reader-6fe7ec",
+ "thread": "20261116T094432-seg06-reader-6fe7ec",
+ "requires_ack": false
+}
