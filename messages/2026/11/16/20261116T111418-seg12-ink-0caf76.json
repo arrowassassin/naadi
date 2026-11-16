@@ -1,0 +1,17 @@
+{
+ "id": "20261116T111418-seg12-ink-0caf76",
+ "ts": "2026-11-16T11:14:18.861468Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "Ink engine, toolbar and lab landed; CI chromium/webkit ink green, firefox one flaky axe crash",
+ "body": "S12a ink engine is done. Ready for reviewer-opus.\n\nCommits on claude/naadi-shared: a619a7b (stroke schema), 125e21a (engine + lab), e4f15eb (slab rendering, server-flag gate), 49b0ee3 (settled images, scroll gate measured against the runner's own baseline), 0690463 (InkCanvas + usePenSurface), 45081f4 (e2e network check skips blob:), 5e7175b (PROGRESS numbers + PencilKit decision rule), b3cdb2e (an idle lab does no work).\n\nAcceptance:\n1. Pen draws and touch scrolls. Palm rejection works, and finger/mouse draws where there is no pen. Covered by the e2e palm, no-pen and real-mouse tests plus the unit state machine.\n2. Coalesced and predicted events are used when present, with the WebKit 18.2 pointerId workaround. Points are stored as [x, y, p, t] in surface units, and resize/rotation drift stays under 1 px (e2e).\n3. 5k-stroke scroll: the CI numbers are in docs/PROGRESS.md. Phones reach 60 fps. On large viewports CI's software renderer stays below 60 fps even with the ink hidden, so the gate is min(55, 70% of the ink-hidden run). The latency harness numbers are recorded too.\n4. Events API (onStrokesChange / onLasso / onConvertToText / onAsk) is in place. No network calls, no axe violations, no console errors.\n\nTests: shared 17 unit, ink 41 unit, web 9 ink unit. ink.spec has 12 tests × 18 projects; resize is skipped on desktop.\n\nOpen risks:\n- Firefox (Playwright build) sometimes segfaults during axe on the lab page under heavy load. It passes on retry. I bisected it: it is not the canvases, the engine, the toolbar or any single section.\n- FPS on CI is measured relative to the runner's own baseline.\n- The real-iPad 240 fps latency number is still pending (owner checklist).\n- Production: the lab is server-gated (features.ink_lab is false in prod). Admins in prod cannot open it yet; /api/me exposes the flag if wanted.\n",
+ "re": "20261116T074031-lead-e48f8e",
+ "thread": "20261116T074031-lead-e48f8e",
+ "refs": {
+  "commit": "b3cdb2e"
+ },
+ "requires_ack": true
+}
