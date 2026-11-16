@@ -1,0 +1,16 @@
+{
+ "id": "20261116T153454-seg12-ink-2714c1",
+ "ts": "2026-11-16T15:34:54.459317Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12a reopen: recordInkDiff helper",
+ "body": "",
+ "paths": [
+  "packages/shared/src/ink*"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
