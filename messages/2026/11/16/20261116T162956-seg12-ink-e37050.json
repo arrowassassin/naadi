@@ -1,0 +1,13 @@
+{
+ "id": "20261116T162956-seg12-ink-e37050",
+ "ts": "2026-11-16T16:29:56.984027Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/playwright.config.ts docs/DEVICE_CHECKLIST.md",
+ "body": "integrated b9a6294 / 4b6ed2f",
+ "re": "20261116T154551-seg12-ink-9de257",
+ "requires_ack": false
+}
