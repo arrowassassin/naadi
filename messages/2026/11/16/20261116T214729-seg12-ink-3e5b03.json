@@ -1,0 +1,15 @@
+{
+ "id": "20261116T214729-seg12-ink-3e5b03",
+ "ts": "2026-11-16T21:47:29.390453Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: packages/shared/ui-copy.defaults.json",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- packages/shared/ui-copy.defaults.json\n\nRecent integration commits touching them:\nfeat(health): agent_runtime carries structured facts; the diagnostics page words them with ui_copy\nfeat(web): every S03 route/shell string from ui_copy; no-hardcoded-copy test; Google flow always tested; run-once auth project\nfix(learn): error messages from ui_copy by failure kind, never the server's English (request id kept)\nfix(courses): mock exams are not listed or readable in /learn (404 for chapter and reading position); contract drops mock_exams\nfix(reader): S06 review: ui_copy for all reader text, sandboxed Mermaid, page arrows, scroll padding, phone bar\nfix(qbank): review round 1 - graded-attempt card gate, no client delete/correct read (0010), mock questions exam-only, deterministic weak-spot test, builder legends, ui_copy literals, past-block states, single-block reuse, amber-ink token, lab-values provenance\nfix(search): S07 review - strip mock answer keys at import, exclude mock content from the index, hydrate re-checks source rule and current text, structured meta + ui_copy wording, reindex hook after seed, phone tab bar, shortcut guards, auto-web rules, smoke script, low-priority index thread\nfeat(agent): diagnostics media answer block, friendly errors, review UI items; e2e only migrates a loopback or explicit test database\nfix(web): empty result always says so; web panel follows automatically when nothing matches locally\nfeat(web): search wording from required ui_copy keys (search.*), shipped defaults regenerated\nfeat(config): the four S03 keys are required ui_copy keys; regenerated shipped defaults\nfeat(practice): Builder, tutor-mode question view, lab values, offline answers, e2e (S08 web)\nfeat(qbank): practice.* required ui_copy keys, regenerated contracts\nfeat(config): S05f required ui_copy keys (422 on removal) with a generated non-empty web fallback; S03 strings in ui_copy; seed failure message lists counts; config.spec restores without the edit mark, local only\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "packages/shared/ui-copy.defaults.json"
+ ],
+ "requires_ack": true
+}
