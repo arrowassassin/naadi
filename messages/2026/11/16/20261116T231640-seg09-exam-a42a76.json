@@ -1,0 +1,14 @@
+{
+ "id": "20261116T231640-seg09-exam-a42a76",
+ "ts": "2026-11-16T23:16:40.374882Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Scratch ink now goes through S12b's ink API (no longer device-only)",
+ "body": "Integrated: scratch paper uses useInkLayer('exam_scratch', '{block_id}:{n}') with S12b's save status and the student's ink settings; the device-only Dexie scratch table is dropped (Dexie v2). Highlights/strike-outs stay device-local as decided. e2e 'timed block' draws a pen stroke, waits for the POST /api/ink/exam_scratch/.../changes 200, and reads item_count 1 back: 5/5 twice on webkit iPad portrait/landscape/phone, chromium laptop, firefox iPad. This resolves the open choice in my done message.",
+ "re": "20261116T201438-lead-b1162a",
+ "thread": "20261116T201438-lead-b1162a",
+ "requires_ack": false
+}
