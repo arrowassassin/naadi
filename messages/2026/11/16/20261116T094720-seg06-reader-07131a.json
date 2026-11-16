@@ -1,0 +1,21 @@
+{
+ "id": "20261116T094720-seg06-reader-07131a",
+ "ts": "2026-11-16T09:47:20.830580Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06 migration 0003 reading_positions + media_assets width/height; RLS coverage + live_check lists",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0003_*",
+  "db/schema.sql",
+  "apps/api/tests/db/fixtures.py",
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_live_check.py",
+  "apps/api/tests/test_live_check.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
