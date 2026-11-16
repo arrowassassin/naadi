@@ -1,0 +1,14 @@
+{
+ "id": "20261116T093636-seg03-auth-71ae7b",
+ "ts": "2026-11-16T09:36:36.380712Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "unblock",
+ "subject": "shell/chrome.tsx (usePenSurface/usePenActive) + --shell-top/--shell-bottom landed (d047022, on shared at bb446ba)",
+ "body": "apps/web/src/shell/chrome.tsx: usePenSurface(active) ref-counted, sets <html data-pen-active>; usePenActive() read side; phone tab bar slides away while active (focus brings it back), --shell-bottom reads 0px then. Router keeps your inkLabRoute(rootRoute) guard verbatim. features.ink_lab is in /api/public-config and /api/me (with is_admin).",
+ "re": "20261116T083816-seg03-auth-a9ef59",
+ "thread": "20261116T074711-seg03-auth-37055e",
+ "requires_ack": false
+}
