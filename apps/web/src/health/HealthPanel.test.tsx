@@ -1,3 +1,4 @@
+import { client } from "@naadi/shared";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { act, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -42,6 +43,8 @@ let fetchMock: ReturnType<typeof vi.fn>;
 beforeEach(() => {
   fetchMock = vi.fn();
   vi.stubGlobal("fetch", fetchMock);
+  // Node's Request needs an absolute URL; in the browser the client uses same-origin relative paths.
+  client.setConfig({ baseUrl: "http://naadi.test" });
   Object.defineProperty(navigator, "onLine", { configurable: true, get: () => true });
 });
 
@@ -70,10 +73,13 @@ describe("HealthPanel", () => {
     const db = within(cards[0] as HTMLElement);
     expect(db.getByText("OK")).toBeInTheDocument();
     expect(db.getByText("select 1 succeeded")).toBeInTheDocument();
-    expect(screen.getByText(/0 of 50 requests used today/)).toBeInTheDocument();
-    expect(screen.getByText(/0 of 950 credits used this month \(provider limit 1000\)/)).toBeInTheDocument();
+    const para = (re: RegExp) => (_: string, el: Element | null) =>
+      el?.tagName === "P" && re.test(el.textContent ?? "");
+    expect(screen.getByText(para(/^0 of 50 requests used today$/))).toBeInTheDocument();
+    expect(screen.getByText(para(/^0 of 950 credits used this month \(provider limit 1000\)$/))).toBeInTheDocument();
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
-    const url = new URL((fetchMock.mock.calls[0]?.[0] as Request).url);
+    const sent = fetchMock.mock.calls[0]?.[0] as Request;
+    const url = new URL(sent.url);
     expect(url.pathname).toBe("/api/health");
   });
 

@@ -5,6 +5,8 @@
  * `pnpm gen:contracts`; never edit it by hand. Every SDK call parses its response with the matching
  * zod schema, so a payload that drifts from the contract fails loudly instead of rendering wrong data.
  */
+import "./zod-config";
+
 export { client } from "./gen/client.gen";
 export * from "./gen/sdk.gen";
 export type * from "./gen/types.gen";

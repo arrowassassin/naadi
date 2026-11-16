@@ -16,3 +16,4 @@ apps/api/static/
 .pytest_cache/
 space_build/
 .DS_Store
+apps/api/VERSION

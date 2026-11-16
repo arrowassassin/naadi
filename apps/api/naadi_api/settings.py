@@ -31,6 +31,16 @@ def default_config_dir() -> Path:
     return _first_existing(APP_DIR / "config", REPO_ROOT / "config")
 
 
+def default_app_version() -> str:
+    """The deploy script writes the git commit into ./VERSION; local runs report `dev`."""
+    f = APP_DIR / "VERSION"
+    try:
+        v = f.read_text(encoding="utf-8").strip()
+    except OSError:
+        return "dev"
+    return v[:64] or "dev"
+
+
 def default_static_dir() -> Path:
     return APP_DIR / "static"
 
@@ -52,7 +62,9 @@ class Settings(BaseSettings):
     app_env: AppEnv = "local"
     app_base_url: str | None = None
     log_level: LogLevel = "INFO"
-    app_version: str = Field(default="dev", validation_alias=AliasChoices("APP_VERSION", "NAADI_VERSION"))
+    app_version: str = Field(
+        default_factory=default_app_version, validation_alias=AliasChoices("APP_VERSION", "NAADI_VERSION")
+    )
     static_dir: Path = Field(default_factory=default_static_dir, validation_alias="NAADI_STATIC_DIR")
     config_dir: Path = Field(default_factory=default_config_dir, validation_alias="NAADI_CONFIG_DIR")
 

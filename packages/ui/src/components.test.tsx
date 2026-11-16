@@ -143,7 +143,9 @@ describe("AssistantBar", () => {
 
   it("is inert with a stated reason when disabled (exam mode)", async () => {
     const onSubmit = vi.fn();
-    render(<AssistantBar onSubmit={onSubmit} onAttach={() => {}} disabled disabledReason="Assistant is off in exam mode" />);
+    render(
+      <AssistantBar onSubmit={onSubmit} onAttach={() => {}} disabled disabledReason="Assistant is off in exam mode" />,
+    );
     const input = screen.getByLabelText("Ask Naadi");
     expect(input).toBeDisabled();
     expect(input).toHaveAccessibleDescription("Assistant is off in exam mode");

@@ -28,6 +28,14 @@ import {
 } from "./tokens";
 import { useCssVars, usePrefersReducedMotion } from "./useCssVar";
 
+/** Minifiers rewrite `200ms` as `.2s`; show durations in milliseconds as the tokens define them. */
+function asMs(v: string): string {
+  const m = /^(-?[\d.]+)(ms|s)$/.exec(v.trim());
+  if (!m) return v;
+  const n = Number(m[1]) * (m[2] === "s" ? 1000 : 1);
+  return `${Math.round(n)} ms`;
+}
+
 function SectionHeading({ id, children }: { id: string; children: ReactNode }) {
   return (
     <h2 id={id} className="m-0 font-mono text-label font-medium text-text-3 uppercase">
@@ -53,7 +61,7 @@ function Swatches({ tokens, label }: { tokens: ColorToken[]; label: string }) {
           />
           <span className="text-[0.8125rem] font-semibold">{t.name}</span>
           <span className="font-mono text-label-sm break-words text-text-3">
-            {values[t.cssVar].toUpperCase() || t.cssVar} · {t.use}
+            {(values[t.cssVar] ?? "").toUpperCase() || t.cssVar} · {t.use}
           </span>
         </li>
       ))}
@@ -155,7 +163,7 @@ function ShapeSection() {
 
       <h3 className="m-0 mt-2 text-ui-sm font-semibold text-text-2">Motion</h3>
       <p className="m-0 text-ui-sm text-text-2">
-        {MOTION.map((m) => `${motion[m.cssVar] || m.cssVar} ${m.label}`).join(", ")}, ease-out. Reduced motion is{" "}
+        {MOTION.map((m) => `${asMs(motion[m.cssVar] || m.cssVar)} ${m.label}`).join(", ")}, ease-out. Reduced motion is{" "}
         <strong className="text-text">{reduced ? "on" : "off"}</strong> on this device
         {reduced ? ", so all motion is off." : "."} Focus ring: 3 px violet, 2 px offset.
       </p>

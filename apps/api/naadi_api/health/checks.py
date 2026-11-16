@@ -145,6 +145,6 @@ def tavily_check(
         )
         if used >= guard:
             return CheckOutcome("degraded", f"Credit guard reached ({used} of {guard}); web search is paused", quota)
-        return CheckOutcome("ok", f"{used} of {guard} credits used this month (guard)", quota)
+        return CheckOutcome("ok", "Key valid; web search available", quota)
 
     return run

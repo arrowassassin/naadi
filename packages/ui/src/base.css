@@ -36,6 +36,12 @@
     color: inherit;
   }
 
+  /* Transitions on colour utilities include outline-color; starting from the ring colour keeps the
+     ring from fading in from currentColor, so it appears at full strength immediately. */
+  :where(a, button, input, textarea, select, summary, [tabindex]) {
+    outline-color: var(--focus-ring-color);
+  }
+
   :focus-visible {
     outline: var(--focus-ring-width) solid var(--focus-ring-color);
     outline-offset: var(--focus-ring-offset);

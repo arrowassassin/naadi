@@ -1,27 +1,44 @@
-# ── Stage 1: build the web app (Vite 8 + React 19) ─────────────────────────
-FROM node:24-slim AS web
+# syntax=docker/dockerfile:1.7
+# Naadi single Docker Space: one container serves the built SPA (/) and the API (/api/*) on :7860.
+# Build context is assembled by scripts/deploy_space.sh (tracked files only: never .env or secrets).
+
+# ── Stage 1: build the web app (Node 24 LTS + pnpm 12.21.0, Vite 8) ─────────────────────────────
+FROM node:24.22.3-slim AS web
+ENV CI=1 COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 RUN corepack enable && corepack prepare pnpm@12.21.0 --activate
 WORKDIR /src
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.base.json ./
 COPY apps/web/package.json apps/web/
+COPY packages/ui/package.json packages/ui/
+COPY packages/shared/package.json packages/shared/
+RUN pnpm install --frozen-lockfile --filter "@naadi/web..."
 COPY packages ./packages
-RUN pnpm install --frozen-lockfile
 COPY apps/web ./apps/web
-# Public build-time config (NOT secrets) — set as Space *variables*
+# Public build-time config (NOT secrets): HF passes Space *variables* as build args.
 ARG VITE_SUPABASE_URL
 ARG VITE_SUPABASE_ANON_KEY
-ENV VITE_API_BASE=/api
 RUN pnpm --filter @naadi/web build
 
-# ── Stage 2: API + static files (Python 3.13, FastAPI, LangGraph) ──────────
-FROM python:3.13-slim
-RUN useradd -m -u 1000 user                       # HF Spaces run as uid 1000
-ENV HOME=/home/user PATH=/home/user/.local/bin:$PATH PYTHONUNBUFFERED=1
+# ── Stage 2: API + static files (Python 3.13, FastAPI) ──────────────────────────────────────────
+FROM python:3.13.18-slim
+RUN useradd -m -u 1000 user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
 WORKDIR /home/user/app
-COPY --chown=user apps/api/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY --chown=user apps/api ./
+# Hash-locked export of apps/api/uv.lock (CI fails if it drifts).
+COPY --chown=user apps/api/requirements.txt ./requirements.txt
+RUN pip install --require-hashes --no-deps -r requirements.txt
+COPY --chown=user apps/api/naadi_api ./naadi_api
+COPY --chown=user apps/api/VERSION ./VERSION
+COPY --chown=user config ./config
 COPY --chown=user --from=web /src/apps/web/dist ./static
+ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/config
 USER user
 EXPOSE 7860
-CMD ["uvicorn", "naadi_api.main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "2", "--proxy-headers"]
+# --no-access-log: our middleware writes one JSON line per request without query strings.
+CMD ["uvicorn", "naadi_api.main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "2", \
+     "--proxy-headers", "--forwarded-allow-ips", "*", "--no-access-log", "--timeout-graceful-shutdown", "10"]
