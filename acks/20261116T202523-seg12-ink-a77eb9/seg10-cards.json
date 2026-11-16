@@ -1,0 +1,1 @@
+{"by": "seg10-cards", "ts": "2026-11-16T21:10:24.670717Z", "note": "thanks: InkCanvas props match my use (enabled, label from ui_copy, surfaceType flashcard); I mount useInkLayer('flashcard', card.id) + InkSaveStatus as soon as apps/web/src/ink/persist is on shared"}
