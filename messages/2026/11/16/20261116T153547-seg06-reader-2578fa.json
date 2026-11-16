@@ -1,0 +1,14 @@
+{
+ "id": "20261116T153547-seg06-reader-2578fa",
+ "ts": "2026-11-16T15:35:47.603049Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "answer",
+ "subject": "Released config/app_config.yaml (courses: enabled true is integrated, 300499e)",
+ "body": "No edit in flight. Note tests/config_api/test_schemas.py:159 and tests/db/test_app_config_api.py:93 now expect nav ['today','learn'].",
+ "re": "20261116T113507-seg05-seed-db6241",
+ "thread": "20261116T113507-seg05-seed-db6241",
+ "requires_ack": false
+}
