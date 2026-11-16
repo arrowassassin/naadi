@@ -48,14 +48,17 @@ def require_local(url: str) -> None:
 
 
 def ensure_migrated(url: str) -> str:
-    """Local container: `alembic upgrade head` (advisory-locked, idempotent). Any other database is only
-    migrated by the Space at startup, so there this asserts it is already at head. Returns the head."""
+    """Local container: the Space's startup migration (`naadi_api.agent.migrate_all`: Aegra's schema, LangGraph
+    tables, Naadi's `alembic upgrade head`, Aegra tables secured, RLS tripwire), so the suite sees the same
+    catalog as production. Any other database is only migrated by the Space at startup, so there this asserts
+    it is already at head. Returns the head."""
     from naadi_api import migrate
+    from naadi_api.agent import migrate_all
+    from naadi_api.settings import Settings
 
     head = migrate.head_revision()
     if is_local(url):
-        _, after = migrate.upgrade(url)
-        assert after == head
+        assert migrate_all.run(Settings(database_url=url)) == 0, "migrate_all failed (see the log line above)"
         return head
     engine = migrate.make_engine(url)
     try:

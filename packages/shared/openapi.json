@@ -1129,6 +1129,17 @@
       },
       "HealthComponents": {
         "properties": {
+          "agent_runtime": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComponentHealth"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Aegra agent runtime (graphs loaded, its DB pool, broker, cron scheduler, last hourly ping); present when the process is the Aegra host"
+          },
           "database": {
             "$ref": "#/components/schemas/ComponentHealth"
           },

@@ -1,4 +1,3 @@
-import type { ComponentHealth } from "@naadi/shared";
 import { Button, Chip, ErrorState, OfflineBanner, Skeleton, Tile, TileLabel } from "@naadi/ui";
 import { Activity, Check, Clock, Sparkles, X } from "lucide-react";
 import { useMe } from "../auth/api";
@@ -24,7 +23,7 @@ function RuntimeStatus() {
   if (q.isPending) return <Skeleton className="h-24 w-full" />;
   if (q.isError)
     return <ErrorState title="Runtime status unavailable" message={q.error.message} onRetry={() => void q.refetch()} />;
-  const rt = (q.data.health.components as Record<string, ComponentHealth | undefined>).agent_runtime;
+  const rt = q.data.health.components.agent_runtime;
   return (
     <Tile className="flex flex-col gap-3" data-testid="agent-runtime">
       <div className="flex flex-wrap items-center justify-between gap-3">

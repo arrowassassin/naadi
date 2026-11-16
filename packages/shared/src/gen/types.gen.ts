@@ -658,6 +658,10 @@ export type HttpValidationError = {
  * HealthComponents
  */
 export type HealthComponents = {
+  /**
+   * Aegra agent runtime (graphs loaded, its DB pool, broker, cron scheduler, last hourly ping); present when the process is the Aegra host
+   */
+  agent_runtime?: ComponentHealth | null;
   database: ComponentHealth;
   nvidia: ComponentHealth;
   openrouter: ComponentHealth;

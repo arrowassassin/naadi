@@ -37,6 +37,7 @@ COPY --chown=user apps/api/migrations ./migrations
 COPY --chown=user apps/api/aegra.json ./aegra.json
 COPY --chown=user apps/api/VERSION ./VERSION
 COPY --chown=user config ./config
+COPY --chown=user data ./data
 COPY --chown=user --from=web /src/apps/web/dist ./static
 ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/config
 USER user

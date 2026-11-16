@@ -471,6 +471,7 @@ export const zComponentHealth = z.object({
  * HealthComponents
  */
 export const zHealthComponents = z.object({
+  agent_runtime: zComponentHealth.nullish(),
   database: zComponentHealth,
   nvidia: zComponentHealth,
   openrouter: zComponentHealth,

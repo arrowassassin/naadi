@@ -25,6 +25,7 @@ from urllib.parse import urlparse
 import httpx
 
 from naadi_api import migrate
+from naadi_api.agent.migrate_all import AEGRA_TABLES
 
 # The fixed contract: these 18 user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
 USER_TABLES = (
@@ -64,6 +65,8 @@ CLIENT_CLOSED_TABLES = (
     "llm_usage",
     "naadi_alembic_version",
     "seed_runs",
+    "search_usage",
+    "agent_health",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -134,9 +137,18 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "38 Naadi tables present",
-            "select count(*) = 38 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
-            " and tablename not in ('naadi_alembic_version', 'alembic_version')",
+            "40 Naadi tables present",
+            "select count(*) = 40 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            " and tablename not in ('naadi_alembic_version', 'alembic_version')"
+            f" and tablename <> all({_array(AEGRA_TABLES)})",
+        ),
+        Check(
+            "Aegra tables present, RLS on, closed to anon/authenticated",
+            "select count(*) filter (where relname = any("
+            "array['assistant','thread','runs','crons','checkpoints','store'])) = 6"
+            " and bool_and(relrowsecurity and not has_table_privilege('anon', oid, 'select')"
+            " and not has_table_privilege('authenticated', oid, 'select')) as ok, count(*)::text as detail"
+            f" from pg_class where relnamespace = 'public'::regnamespace and relname = any({_array(AEGRA_TABLES)})",
         ),
         Check("18 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
         Check(

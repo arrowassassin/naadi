@@ -6,7 +6,8 @@ import { HealthRequestError, useHealth } from "./useHealth";
 import { useOnlineStatus } from "./useOnlineStatus";
 
 type Status = HealthResponse["status"];
-type ComponentName = keyof HealthResponse["components"];
+// `agent_runtime` is optional (only the Aegra host reports it) and has its own panel at /admin/agent.
+type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime">;
 
 /** Display order: infrastructure first, then the two LLM providers side by side (NVIDIA spans two columns
  * from tablet up so its per-model list has room and the grid stays full). */

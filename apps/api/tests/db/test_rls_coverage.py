@@ -73,6 +73,8 @@ def test_anon_has_no_privileges_on_user_or_admin_tables(pg: psycopg.Connection) 
                 "embeddings",
                 "naadi_alembic_version",
                 "seed_runs",
+                "search_usage",
+                "agent_health",
             ],
         ),
     ).fetchall()
@@ -108,7 +110,12 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         " has_function_privilege('authenticated', p.oid, 'execute')"
         " from pg_proc p where p.pronamespace = 'public'::regnamespace and p.proname like 'naadi\\_%'"
     ).fetchall()
-    assert {r[0] for r in rows} == {"naadi_touch_updated_at", "naadi_app_config_history", "naadi_app_config_notify"}
+    assert {r[0] for r in rows} == {
+        "naadi_touch_updated_at",
+        "naadi_app_config_history",
+        "naadi_app_config_notify",
+        "naadi_secure_aegra_tables",
+    }
     for name, config, anon_exec, auth_exec in rows:
         assert config == ['search_path=""'], name
         assert not anon_exec and not auth_exec, name
@@ -143,3 +150,43 @@ def test_default_acl_for_postgres_in_public_has_no_client_roles(pg: psycopg.Conn
         " and a.grantee <> 0 and a.grantee::regrole::text in ('anon', 'authenticated')"
     ).fetchall()
     assert rows == []
+
+
+def test_aegra_tables_are_closed_to_clients(pg: psycopg.Connection) -> None:
+    """Aegra / LangGraph tables (created at container start, before Naadi's migrations) have RLS on and no
+    anon/authenticated privilege: 0005's naadi_secure_aegra_tables() runs again after every startup."""
+    from naadi_api.agent.migrate_all import AEGRA_TABLES
+
+    rows = pg.execute(
+        "select c.relname, c.relrowsecurity, has_table_privilege('anon', c.oid, 'select,insert,update,delete'),"
+        " has_table_privilege('authenticated', c.oid, 'select,insert,update,delete')"
+        " from pg_class c where c.relnamespace = 'public'::regnamespace and c.relname = any(%s)",
+        (list(AEGRA_TABLES),),
+    ).fetchall()
+    for name, rls, anon, auth in rows:
+        assert (rls, anon, auth) == (True, False, False), name
+    with pg.transaction(force_rollback=True):
+        pg.execute("create table if not exists public.store_migrations (v int)")
+        pg.execute("alter table public.store_migrations disable row level security")
+        pg.execute("grant select on public.store_migrations to authenticated")
+        assert pg.execute("select public.naadi_secure_aegra_tables()").fetchone()[0] >= 1
+        row = pg.execute(
+            "select relrowsecurity, has_table_privilege('authenticated', oid, 'select') from pg_class"
+            " where oid = 'public.store_migrations'::regclass"
+        ).fetchone()
+        assert row == (True, False)
+
+
+def test_migration_and_startup_secure_the_same_aegra_tables() -> None:
+    import importlib.util
+
+    from naadi_api import migrate
+    from naadi_api.agent.migrate_all import AEGRA_TABLES
+
+    spec = importlib.util.spec_from_file_location(
+        "m0005", migrate.MIGRATIONS_DIR / "versions" / "0005_agent_platform.py"
+    )
+    assert spec is not None and spec.loader is not None
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    assert tuple(mod.AEGRA_TABLES) == tuple(AEGRA_TABLES)

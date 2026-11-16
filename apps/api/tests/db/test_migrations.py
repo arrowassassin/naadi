@@ -17,6 +17,7 @@ import psycopg
 import pytest
 
 from naadi_api import migrate
+from naadi_api.agent.migrate_all import AEGRA_TABLES
 
 from .fixtures import USER_TABLE_NAMES, seed_admin_rows, seed_shared, seed_user_rows
 from .rls import DB_MARKS, create_auth_user, require_local
@@ -35,7 +36,8 @@ def _scalar(conn: psycopg.Connection, query: str, params: tuple[object, ...] = (
 def _naadi_tables(conn: psycopg.Connection) -> set[str]:
     rows = conn.execute(
         "select tablename from pg_tables where schemaname = 'public'"
-        " and tablename not in ('naadi_alembic_version', 'alembic_version')"
+        " and tablename not in ('naadi_alembic_version', 'alembic_version') and tablename <> all(%s)",
+        (list(AEGRA_TABLES),),
     ).fetchall()
     return {r[0] for r in rows}
 
@@ -63,13 +65,21 @@ def local_url(migrated_url: str) -> Iterator[str]:
 
 @pytest.fixture
 def aegra_version_table(local_url: str) -> Iterator[None]:
+    # The database may already hold Aegra's real tables (the agent tests run migrate_all): keep its version row.
     with psycopg.connect(local_url, autocommit=True) as c:
+        existed = c.execute("select to_regclass('public.alembic_version') is not null").fetchone()[0]
+        saved = c.execute("select version_num from public.alembic_version").fetchall() if existed else []
         c.execute("create table if not exists public.alembic_version (version_num varchar(32) primary key)")
         c.execute("delete from public.alembic_version")
         c.execute("insert into public.alembic_version values ('aegra_head_marker')")
     yield
     with psycopg.connect(local_url, autocommit=True) as c:
-        c.execute("drop table if exists public.alembic_version")
+        if existed:
+            c.execute("delete from public.alembic_version")
+            for (v,) in saved:
+                c.execute("insert into public.alembic_version values (%s)", (v,))
+        else:
+            c.execute("drop table if exists public.alembic_version")
 
 
 def test_round_trip_from_empty(local_url: str, aegra_version_table: None) -> None:

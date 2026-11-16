@@ -6,6 +6,8 @@ import re
 
 import psycopg
 
+from naadi_api.agent.migrate_all import AEGRA_TABLES
+
 from ..conftest import REPO_ROOT
 from .rls import DB_MARKS
 
@@ -31,8 +33,9 @@ def documented_tables() -> dict[str, list[str]]:
 def test_schema_doc_matches_the_migrated_database(pg: psycopg.Connection) -> None:
     rows = pg.execute(
         "select table_name, column_name from information_schema.columns where table_schema = 'public'"
-        " and table_name <> all(array['naadi_alembic_version', 'alembic_version'])"
-        " order by table_name, ordinal_position"
+        " and table_name <> all(array['naadi_alembic_version', 'alembic_version']) and table_name <> all(%s)"
+        " order by table_name, ordinal_position",
+        (list(AEGRA_TABLES),),
     ).fetchall()
     actual: dict[str, list[str]] = {}
     for table, column in rows:
