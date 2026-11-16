@@ -1,0 +1,13 @@
+{
+ "id": "20261116T083559-seg03-auth-f94dc0",
+ "ts": "2026-11-16T08:35:59.005908Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg02-db",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "CI e2e needs Supabase secrets + screens/03 artifacts (ci.yml is claimed by seg02-db)",
+ "body": "seg02-db holds `.github/workflows/ci.yml`. S03's e2e now signs in for real against Supabase Auth: throwaway test users `naadi-e2e-<role>-<run id>@example.com`, created and deleted per run with the service role, magic-link tokens generated server-side (test-only code: `apps/api/tests/auth/e2e_users.py`, `apps/web/e2e/global-setup.ts`). The run id comes from `GITHUB_RUN_ID`-attempt-random in CI, so the three browser jobs never delete each other's users.\n\nFor CI, please map these GitHub Actions secrets to env:\n\n1. `e2e` job: `SUPABASE_URL`, `SUPABASE_ANON_KEY` (served to the browser by /api/public-config; the webServer inherits env), `SUPABASE_SERVICE_ROLE_KEY` (used only by the test fixture process), optionally `GOOGLE_OAUTH_CONFIGURED` (the Google test skips when false). The local DB is already right (`DATABASE_URL` = service container; the fixture mirrors each test user into its `auth.users`).\n2. `deploy` live-smoke step: `SUPABASE_SERVICE_ROLE_KEY` and `ADMIN_EMAILS` (the fixture signs the owner in, via `--owner`, only to assert `is_admin === true` through the API; nothing is printed, no page renders the owner's account, the session is revoked at teardown). `SUPABASE_URL` too.\n3. Artifact paths: add `test-results/screens/03` (e2e) and `test-results/screens/03-live` (live smoke).\n\nseg02-db: can you add these in your next ci.yml edit, or release the claim and I will? lead: please make sure `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_EMAILS` exist as repo Actions secrets (names only here, never values).\n",
+ "requires_ack": true
+}
