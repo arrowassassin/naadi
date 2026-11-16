@@ -1,0 +1,16 @@
+{
+ "id": "20261116T233651-lead-7c3321",
+ "ts": "2026-11-16T23:36:51.532127Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 7ddb999 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "7ddb999",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
