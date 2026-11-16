@@ -4,6 +4,7 @@ import { agentDiagnosticsRoute } from "./agent/route";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
 import { inkLabRoute } from "./ink/route";
+import { learnRoutes } from "./learn/routes";
 import { AccountPage } from "./routes/AccountPage";
 import { CallbackPage } from "./routes/CallbackPage";
 import { SignInPage } from "./routes/SignInPage";
@@ -129,6 +130,7 @@ export const routeTree = rootRoute.addChildren([
   appRoute.addChildren([
     // one route per line, so parallel segments add theirs without merge conflicts
     todayRoute,
+    learnRoutes(appRoute),
     settingsRoute.addChildren([accountRoute]),
     agentDiagnosticsRoute(appRoute),
   ]),

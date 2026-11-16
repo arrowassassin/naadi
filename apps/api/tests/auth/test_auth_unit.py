@@ -333,7 +333,7 @@ def test_nav_returns_only_enabled_items(auth_client: Callable[..., TestClient], 
     res = auth_client().get("/api/nav", headers=bearer(mint(signing_key, claims())))
     assert res.status_code == 200
     body = res.json()
-    assert [i["id"] for i in body["items"]] == ["today"]
+    assert [i["id"] for i in body["items"]] == ["today", "learn"]
     assert body["items"][0]["path"] == "/"
     assert body["features"] == {"assistant": False, "search": False}
     assert body["source"] == "server_default"

@@ -175,7 +175,7 @@ DEFAULT_NAV: tuple[NavItem, ...] = (
 )
 DEFAULT_FEATURES: dict[str, bool] = {
     "today": True,
-    "courses": False,
+    "courses": True,  # /learn (segment 06)
     "qbank": False,
     "planner": False,
     "notes": False,
