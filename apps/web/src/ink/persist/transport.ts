@@ -47,7 +47,9 @@ export function apiTransport(surfaceType: InkSurfaceType, surfaceId: string): In
     async load(since): Promise<LayerPayload> {
       assertOnline();
       const out = await authed<InkLayerOut>((headers) =>
-        getInkLayer({ path, query: since === null ? undefined : { since }, headers, signal: inflight.signal }),
+        // keepalive: a load still running when the page navigates away is not torn down by the unload (WebKit
+        // reports such a cancelled request as a page error); it has no body, so the 64 KB limit does not apply.
+        getInkLayer({ path, query: since === null ? undefined : { since }, headers, keepalive: true }),
       );
       remember();
       return { rev: out.rev, items: out.items as InkItem[], reset: out.reset, outdated: out.outdated };
@@ -66,6 +68,7 @@ export function apiTransport(surfaceType: InkSurfaceType, surfaceId: string): In
         reset: out.reset,
       };
     },
+    // Ordinary (non-keepalive) sends in flight when the page goes away; their items stay pending on the device.
     abort() {
       inflight.abort();
       inflight = new AbortController();
