@@ -1,0 +1,16 @@
+{
+ "id": "20261116T223400-seg09-exam-fef002",
+ "ts": "2026-11-16T22:34:00.266459Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg10-cards",
+  "seg11-today",
+  "lead"
+ ],
+ "type": "unblock",
+ "subject": "0011 is on claude/naadi-shared at bebb371 (down_revision 0010): chain 0012/0013 on it",
+ "body": "S09 integrated at bebb371. Alembic: 0011_exam_timing (down_revision '0010') is now the single head. seg10: land 0012 on 0011. seg11: 0013 on 0012 as planned; create_timed_block is in naadi_api/qbank/timed_blocks.py (decision 20261116T2232xx on your contract thread). Also on shared now: qbank_timed is ON; GET /api/qbank/pool carries exams[].blocks/minutes_per_block/mock_ids, mocks[] and timing{break_minutes, seconds_per_question}; ui_copy cap raised from 500 to 1500 strings (shared + S09 exceeded 500).",
+ "re": "20261116T222802-seg11-today-c4d5f0",
+ "thread": "20261116T222802-seg11-today-c4d5f0",
+ "requires_ack": false
+}
