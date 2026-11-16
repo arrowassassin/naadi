@@ -3,6 +3,16 @@
 import * as z from "zod";
 
 /**
+ * AdminOverview
+ */
+export const zAdminOverview = z.object({
+  admins_configured: z.int(),
+  environment: z.string(),
+  profiles: z.int(),
+  version: z.string(),
+});
+
+/**
  * FieldError
  */
 export const zFieldError = z.object({
@@ -29,6 +39,26 @@ export const zErrorResponse = z.object({
 });
 
 /**
+ * MeFeatures
+ */
+export const zMeFeatures = z.object({
+  assistant: z.boolean(),
+  ink_lab: z.boolean(),
+  search: z.boolean(),
+});
+
+/**
+ * MeUpdate
+ *
+ * Only the fields sent are changed. `settings` is merged one level deep; a `null` value removes a key.
+ */
+export const zMeUpdate = z.object({
+  display_name: z.string().max(120).nullish(),
+  settings: z.record(z.string(), z.unknown()).nullish(),
+  timezone: z.string().max(64).nullish(),
+});
+
+/**
  * ModelProbe
  *
  * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
@@ -39,6 +69,84 @@ export const zModelProbe = z.object({
   model: z.string().max(120),
   ok: z.boolean(),
   provider: z.enum(["nvidia", "openrouter"]),
+});
+
+/**
+ * NavFeatures
+ */
+export const zNavFeatures = z.object({
+  assistant: z.boolean(),
+  search: z.boolean(),
+});
+
+/**
+ * NavItem
+ */
+export const zNavItem = z.object({
+  feature: z.string(),
+  icon: z.string(),
+  id: z.string(),
+  label: z.string(),
+  path: z.string(),
+});
+
+/**
+ * NavResponse
+ */
+export const zNavResponse = z.object({
+  features: zNavFeatures,
+  items: z.array(zNavItem),
+  source: z.enum(["app_config", "server_default"]),
+});
+
+/**
+ * Profile
+ */
+export const zProfile = z.object({
+  created_at: z.iso.datetime(),
+  daily_hours: z.number(),
+  display_name: z.string().nullable(),
+  exam_date: z.iso.date().nullable(),
+  exam_target: z.enum(["step1", "step2ck", "step3"]),
+  pathway_stage: z.string().nullable(),
+  settings: z.record(z.string(), z.unknown()),
+  study_days: z.array(z.int()),
+  timezone: z.string(),
+  updated_at: z.iso.datetime(),
+  user_id: z.uuid(),
+});
+
+/**
+ * MeResponse
+ */
+export const zMeResponse = z.object({
+  email: z.string().nullable(),
+  email_verified: z.boolean(),
+  features: zMeFeatures,
+  is_admin: z.boolean(),
+  profile: zProfile,
+});
+
+/**
+ * PublicFeatures
+ */
+export const zPublicFeatures = z.object({
+  ink_lab: z.boolean(),
+});
+
+/**
+ * PublicConfig
+ *
+ * Everything the web app needs before sign-in. Nothing here is secret.
+ */
+export const zPublicConfig = z.object({
+  app_base_url: z.string().nullable(),
+  app_version: z.string(),
+  auth_configured: z.boolean(),
+  features: zPublicFeatures,
+  google_oauth_enabled: z.boolean(),
+  supabase_anon_key: z.string().nullable(),
+  supabase_url: z.string().nullable(),
 });
 
 /**
@@ -101,7 +209,34 @@ export const zReadyResponse = z.object({
 /**
  * Successful Response
  */
+export const zGetAdminOverviewResponse = zAdminOverview;
+
+/**
+ * Successful Response
+ */
 export const zGetHealthResponse = zHealthResponse;
+
+/**
+ * Successful Response
+ */
+export const zGetMeResponse = zMeResponse;
+
+export const zUpdateMeBody = zMeUpdate;
+
+/**
+ * Successful Response
+ */
+export const zUpdateMeResponse = zMeResponse;
+
+/**
+ * Successful Response
+ */
+export const zGetNavResponse = zNavResponse;
+
+/**
+ * Successful Response
+ */
+export const zGetPublicConfigResponse = zPublicConfig;
 
 /**
  * Successful Response

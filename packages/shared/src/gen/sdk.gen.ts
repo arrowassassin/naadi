@@ -5,14 +5,37 @@ import * as z from "zod";
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from "./client";
 import { client } from "./client.gen";
 import type {
+  GetAdminOverviewData,
+  GetAdminOverviewErrors,
+  GetAdminOverviewResponses,
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
+  GetMeData,
+  GetMeErrors,
+  GetMeResponses,
+  GetNavData,
+  GetNavErrors,
+  GetNavResponses,
+  GetPublicConfigData,
+  GetPublicConfigResponses,
   GetReadyData,
   GetReadyErrors,
   GetReadyResponses,
+  UpdateMeData,
+  UpdateMeErrors,
+  UpdateMeResponses,
 } from "./types.gen";
-import { zGetHealthResponse, zGetReadyResponse } from "./zod.gen";
+import {
+  zGetAdminOverviewResponse,
+  zGetHealthResponse,
+  zGetMeResponse,
+  zGetNavResponse,
+  zGetPublicConfigResponse,
+  zGetReadyResponse,
+  zUpdateMeBody,
+  zUpdateMeResponse,
+} from "./zod.gen";
 
 export type Options<
   TData extends TDataShape = TDataShape,
@@ -33,6 +56,26 @@ export type Options<
 };
 
 /**
+ * Admin only: environment, version, number of admins configured and of profiles
+ */
+export const getAdminOverview = <ThrowOnError extends boolean = false>(
+  options?: Options<GetAdminOverviewData, ThrowOnError>,
+): RequestResult<GetAdminOverviewResponses, GetAdminOverviewErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetAdminOverviewResponses, GetAdminOverviewErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminOverviewResponse.parseAsync(data),
+    url: "/api/admin/overview",
+    ...options,
+  });
+
+/**
  * System health: database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits
  */
 export const getHealth = <ThrowOnError extends boolean = false>(
@@ -49,6 +92,90 @@ export const getHealth = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetHealthResponse.parseAsync(data),
     url: "/api/health",
+    ...options,
+  });
+
+/**
+ * The signed-in user's profile (created on first call), admin flag and feature flags
+ */
+export const getMe = <ThrowOnError extends boolean = false>(
+  options?: Options<GetMeData, ThrowOnError>,
+): RequestResult<GetMeResponses, GetMeErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetMeResponses, GetMeErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetMeResponse.parseAsync(data),
+    url: "/api/me",
+    ...options,
+  });
+
+/**
+ * Update display name, time zone and settings (as the user, under RLS)
+ */
+export const updateMe = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateMeData, ThrowOnError>,
+): RequestResult<UpdateMeResponses, UpdateMeErrors, ThrowOnError> =>
+  (options.client ?? client).patch<UpdateMeResponses, UpdateMeErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zUpdateMeBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUpdateMeResponse.parseAsync(data),
+    url: "/api/me",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Navigation for the signed-in user: enabled items only, plus shell feature flags
+ */
+export const getNav = <ThrowOnError extends boolean = false>(
+  options?: Options<GetNavData, ThrowOnError>,
+): RequestResult<GetNavResponses, GetNavErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetNavResponses, GetNavErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetNavResponse.parseAsync(data),
+    url: "/api/nav",
+    ...options,
+  });
+
+/**
+ * Public client configuration (no auth): Supabase URL + anon key, sign-in options, version
+ */
+export const getPublicConfig = <ThrowOnError extends boolean = false>(
+  options?: Options<GetPublicConfigData, ThrowOnError>,
+): RequestResult<GetPublicConfigResponses, unknown, ThrowOnError> =>
+  (options?.client ?? client).get<GetPublicConfigResponses, unknown, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetPublicConfigResponse.parseAsync(data),
+    url: "/api/public-config",
     ...options,
   });
 

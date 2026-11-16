@@ -1,6 +1,34 @@
 {
   "components": {
     "schemas": {
+      "AdminOverview": {
+        "properties": {
+          "admins_configured": {
+            "title": "Admins Configured",
+            "type": "integer"
+          },
+          "environment": {
+            "title": "Environment",
+            "type": "string"
+          },
+          "profiles": {
+            "title": "Profiles",
+            "type": "integer"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "environment",
+          "version",
+          "admins_configured",
+          "profiles"
+        ],
+        "title": "AdminOverview",
+        "type": "object"
+      },
       "ComponentHealth": {
         "properties": {
           "cached": {
@@ -258,6 +286,112 @@
         "title": "HealthResponse",
         "type": "object"
       },
+      "MeFeatures": {
+        "properties": {
+          "assistant": {
+            "title": "Assistant",
+            "type": "boolean"
+          },
+          "ink_lab": {
+            "title": "Ink Lab",
+            "type": "boolean"
+          },
+          "search": {
+            "title": "Search",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "assistant",
+          "search",
+          "ink_lab"
+        ],
+        "title": "MeFeatures",
+        "type": "object"
+      },
+      "MeResponse": {
+        "properties": {
+          "email": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The signed-in user's own email, from the verified token",
+            "title": "Email"
+          },
+          "email_verified": {
+            "title": "Email Verified",
+            "type": "boolean"
+          },
+          "features": {
+            "$ref": "#/components/schemas/MeFeatures"
+          },
+          "is_admin": {
+            "title": "Is Admin",
+            "type": "boolean"
+          },
+          "profile": {
+            "$ref": "#/components/schemas/Profile"
+          }
+        },
+        "required": [
+          "profile",
+          "email",
+          "email_verified",
+          "is_admin",
+          "features"
+        ],
+        "title": "MeResponse",
+        "type": "object"
+      },
+      "MeUpdate": {
+        "additionalProperties": false,
+        "description": "Only the fields sent are changed. `settings` is merged one level deep; a `null` value removes a key.",
+        "properties": {
+          "display_name": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Display Name"
+          },
+          "settings": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Settings"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timezone"
+          }
+        },
+        "title": "MeUpdate",
+        "type": "object"
+      },
       "ModelProbe": {
         "description": "One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).",
         "properties": {
@@ -304,6 +438,267 @@
           "detail"
         ],
         "title": "ModelProbe",
+        "type": "object"
+      },
+      "NavFeatures": {
+        "properties": {
+          "assistant": {
+            "title": "Assistant",
+            "type": "boolean"
+          },
+          "search": {
+            "title": "Search",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "assistant",
+          "search"
+        ],
+        "title": "NavFeatures",
+        "type": "object"
+      },
+      "NavItem": {
+        "properties": {
+          "feature": {
+            "description": "Feature flag that must be on for the item to be shown",
+            "title": "Feature",
+            "type": "string"
+          },
+          "icon": {
+            "description": "Icon name from the web app's icon set",
+            "title": "Icon",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "path": {
+            "description": "In-app route path",
+            "title": "Path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "path",
+          "icon",
+          "feature"
+        ],
+        "title": "NavItem",
+        "type": "object"
+      },
+      "NavResponse": {
+        "properties": {
+          "features": {
+            "$ref": "#/components/schemas/NavFeatures"
+          },
+          "items": {
+            "description": "Enabled items only, in display order",
+            "items": {
+              "$ref": "#/components/schemas/NavItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "source": {
+            "enum": [
+              "app_config",
+              "server_default"
+            ],
+            "title": "Source",
+            "type": "string"
+          }
+        },
+        "required": [
+          "items",
+          "features",
+          "source"
+        ],
+        "title": "NavResponse",
+        "type": "object"
+      },
+      "Profile": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "daily_hours": {
+            "title": "Daily Hours",
+            "type": "number"
+          },
+          "display_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Display Name"
+          },
+          "exam_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exam Date"
+          },
+          "exam_target": {
+            "enum": [
+              "step1",
+              "step2ck",
+              "step3"
+            ],
+            "title": "Exam Target",
+            "type": "string"
+          },
+          "pathway_stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pathway Stage"
+          },
+          "settings": {
+            "additionalProperties": true,
+            "title": "Settings",
+            "type": "object"
+          },
+          "study_days": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Study Days",
+            "type": "array"
+          },
+          "timezone": {
+            "title": "Timezone",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "display_name",
+          "exam_target",
+          "exam_date",
+          "daily_hours",
+          "study_days",
+          "timezone",
+          "pathway_stage",
+          "settings",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "Profile",
+        "type": "object"
+      },
+      "PublicConfig": {
+        "description": "Everything the web app needs before sign-in. Nothing here is secret.",
+        "properties": {
+          "app_base_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Canonical origin used for auth redirects",
+            "title": "App Base Url"
+          },
+          "app_version": {
+            "title": "App Version",
+            "type": "string"
+          },
+          "auth_configured": {
+            "title": "Auth Configured",
+            "type": "boolean"
+          },
+          "features": {
+            "$ref": "#/components/schemas/PublicFeatures"
+          },
+          "google_oauth_enabled": {
+            "title": "Google Oauth Enabled",
+            "type": "boolean"
+          },
+          "supabase_anon_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The public anon key (safe to expose; RLS protects data)",
+            "title": "Supabase Anon Key"
+          },
+          "supabase_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Supabase Url"
+          }
+        },
+        "required": [
+          "auth_configured",
+          "supabase_url",
+          "supabase_anon_key",
+          "google_oauth_enabled",
+          "app_base_url",
+          "app_version",
+          "features"
+        ],
+        "title": "PublicConfig",
+        "type": "object"
+      },
+      "PublicFeatures": {
+        "properties": {
+          "ink_lab": {
+            "description": "The /system/ink-lab tool is available (not in production)",
+            "title": "Ink Lab",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ink_lab"
+        ],
+        "title": "PublicFeatures",
         "type": "object"
       },
       "Quota": {
@@ -404,6 +799,67 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/admin/overview": {
+      "get": {
+        "operationId": "getAdminOverview",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminOverview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Auth or database unavailable"
+          }
+        },
+        "summary": "Admin only: environment, version, number of admins configured and of profiles",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
     "/api/health": {
       "get": {
         "operationId": "getHealth",
@@ -442,6 +898,198 @@
         "summary": "System health: database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits",
         "tags": [
           "system"
+        ]
+      }
+    },
+    "/api/me": {
+      "get": {
+        "operationId": "getMe",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Auth or database unavailable"
+          }
+        },
+        "summary": "The signed-in user's profile (created on first call), admin flag and feature flags",
+        "tags": [
+          "auth"
+        ]
+      },
+      "patch": {
+        "operationId": "updateMe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid fields"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Auth or database unavailable"
+          }
+        },
+        "summary": "Update display name, time zone and settings (as the user, under RLS)",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/nav": {
+      "get": {
+        "operationId": "getNav",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NavResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Auth or database unavailable"
+          }
+        },
+        "summary": "Navigation for the signed-in user: enabled items only, plus shell feature flags",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/public-config": {
+      "get": {
+        "operationId": "getPublicConfig",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicConfig"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Public client configuration (no auth): Supabase URL + anon key, sign-in options, version",
+        "tags": [
+          "auth"
         ]
       }
     },

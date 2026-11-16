@@ -9,6 +9,8 @@ from importlib.metadata import PackageNotFoundError, version
 from fastapi import FastAPI
 
 from . import api
+from .auth import TokenVerifier, install_auth
+from .auth_routes import install_auth_routes
 from .config import load_models_config
 from .db import Database
 from .errors import install_error_handlers
@@ -58,6 +60,7 @@ def create_app(
     *,
     health: HealthService | None = None,
     db: Database | None = None,
+    verifier: TokenVerifier | None = None,
 ) -> FastAPI:
     settings = settings or get_settings()
     configure_logging(settings.log_level)
@@ -94,7 +97,9 @@ def create_app(
     app.state.health = health
 
     install_error_handlers(app)
+    install_auth(app, settings, verifier)
     app.include_router(api.router)
+    install_auth_routes(app)
     install_spa(app, settings.static_dir)
     app.add_middleware(RequestContextMiddleware, settings=settings)
     return app

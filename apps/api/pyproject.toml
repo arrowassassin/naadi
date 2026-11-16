@@ -17,6 +17,10 @@ dependencies = [
     "structlog==26.1.0",
     "pyyaml==6.0.3",
     "langchain-nvidia-ai-endpoints==1.5.0",
+    "pyjwt[crypto]==2.15.1",
+    "tzdata==2026.6",
+    "alembic==1.20.1",
+    "sqlalchemy==2.1.8",
 ]
 
 [dependency-groups]

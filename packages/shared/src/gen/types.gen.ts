@@ -5,6 +5,28 @@ export type ClientOptions = {
 };
 
 /**
+ * AdminOverview
+ */
+export type AdminOverview = {
+  /**
+   * Admins Configured
+   */
+  admins_configured: number;
+  /**
+   * Environment
+   */
+  environment: string;
+  /**
+   * Profiles
+   */
+  profiles: number;
+  /**
+   * Version
+   */
+  version: string;
+};
+
+/**
  * ComponentHealth
  */
 export type ComponentHealth = {
@@ -145,6 +167,68 @@ export type HealthResponse = {
 };
 
 /**
+ * MeFeatures
+ */
+export type MeFeatures = {
+  /**
+   * Assistant
+   */
+  assistant: boolean;
+  /**
+   * Ink Lab
+   */
+  ink_lab: boolean;
+  /**
+   * Search
+   */
+  search: boolean;
+};
+
+/**
+ * MeResponse
+ */
+export type MeResponse = {
+  /**
+   * Email
+   *
+   * The signed-in user's own email, from the verified token
+   */
+  email: string | null;
+  /**
+   * Email Verified
+   */
+  email_verified: boolean;
+  features: MeFeatures;
+  /**
+   * Is Admin
+   */
+  is_admin: boolean;
+  profile: Profile;
+};
+
+/**
+ * MeUpdate
+ *
+ * Only the fields sent are changed. `settings` is merged one level deep; a `null` value removes a key.
+ */
+export type MeUpdate = {
+  /**
+   * Display Name
+   */
+  display_name?: string | null;
+  /**
+   * Settings
+   */
+  settings?: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Timezone
+   */
+  timezone?: string | null;
+};
+
+/**
  * ModelProbe
  *
  * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
@@ -172,6 +256,170 @@ export type ModelProbe = {
    * Provider
    */
   provider: "nvidia" | "openrouter";
+};
+
+/**
+ * NavFeatures
+ */
+export type NavFeatures = {
+  /**
+   * Assistant
+   */
+  assistant: boolean;
+  /**
+   * Search
+   */
+  search: boolean;
+};
+
+/**
+ * NavItem
+ */
+export type NavItem = {
+  /**
+   * Feature
+   *
+   * Feature flag that must be on for the item to be shown
+   */
+  feature: string;
+  /**
+   * Icon
+   *
+   * Icon name from the web app's icon set
+   */
+  icon: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Path
+   *
+   * In-app route path
+   */
+  path: string;
+};
+
+/**
+ * NavResponse
+ */
+export type NavResponse = {
+  features: NavFeatures;
+  /**
+   * Items
+   *
+   * Enabled items only, in display order
+   */
+  items: Array<NavItem>;
+  /**
+   * Source
+   */
+  source: "app_config" | "server_default";
+};
+
+/**
+ * Profile
+ */
+export type Profile = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Daily Hours
+   */
+  daily_hours: number;
+  /**
+   * Display Name
+   */
+  display_name: string | null;
+  /**
+   * Exam Date
+   */
+  exam_date: string | null;
+  /**
+   * Exam Target
+   */
+  exam_target: "step1" | "step2ck" | "step3";
+  /**
+   * Pathway Stage
+   */
+  pathway_stage: string | null;
+  /**
+   * Settings
+   */
+  settings: {
+    [key: string]: unknown;
+  };
+  /**
+   * Study Days
+   */
+  study_days: Array<number>;
+  /**
+   * Timezone
+   */
+  timezone: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+  /**
+   * User Id
+   */
+  user_id: string;
+};
+
+/**
+ * PublicConfig
+ *
+ * Everything the web app needs before sign-in. Nothing here is secret.
+ */
+export type PublicConfig = {
+  /**
+   * App Base Url
+   *
+   * Canonical origin used for auth redirects
+   */
+  app_base_url: string | null;
+  /**
+   * App Version
+   */
+  app_version: string;
+  /**
+   * Auth Configured
+   */
+  auth_configured: boolean;
+  features: PublicFeatures;
+  /**
+   * Google Oauth Enabled
+   */
+  google_oauth_enabled: boolean;
+  /**
+   * Supabase Anon Key
+   *
+   * The public anon key (safe to expose; RLS protects data)
+   */
+  supabase_anon_key: string | null;
+  /**
+   * Supabase Url
+   */
+  supabase_url: string | null;
+};
+
+/**
+ * PublicFeatures
+ */
+export type PublicFeatures = {
+  /**
+   * Ink Lab
+   *
+   * The /system/ink-lab tool is available (not in production)
+   */
+  ink_lab: boolean;
 };
 
 /**
@@ -224,6 +472,43 @@ export type ReadyResponse = {
   ready: boolean;
 };
 
+export type GetAdminOverviewData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/overview";
+};
+
+export type GetAdminOverviewErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Auth or database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminOverviewError = GetAdminOverviewErrors[keyof GetAdminOverviewErrors];
+
+export type GetAdminOverviewResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminOverview;
+};
+
+export type GetAdminOverviewResponse = GetAdminOverviewResponses[keyof GetAdminOverviewResponses];
+
 export type GetHealthData = {
   body?: never;
   path?: never;
@@ -252,6 +537,125 @@ export type GetHealthResponses = {
 };
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
+
+export type GetMeData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/me";
+};
+
+export type GetMeErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Auth or database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetMeError = GetMeErrors[keyof GetMeErrors];
+
+export type GetMeResponses = {
+  /**
+   * Successful Response
+   */
+  200: MeResponse;
+};
+
+export type GetMeResponse = GetMeResponses[keyof GetMeResponses];
+
+export type UpdateMeData = {
+  body: MeUpdate;
+  path?: never;
+  query?: never;
+  url: "/api/me";
+};
+
+export type UpdateMeErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid fields
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Auth or database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type UpdateMeError = UpdateMeErrors[keyof UpdateMeErrors];
+
+export type UpdateMeResponses = {
+  /**
+   * Successful Response
+   */
+  200: MeResponse;
+};
+
+export type UpdateMeResponse = UpdateMeResponses[keyof UpdateMeResponses];
+
+export type GetNavData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/nav";
+};
+
+export type GetNavErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Auth or database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetNavError = GetNavErrors[keyof GetNavErrors];
+
+export type GetNavResponses = {
+  /**
+   * Successful Response
+   */
+  200: NavResponse;
+};
+
+export type GetNavResponse = GetNavResponses[keyof GetNavResponses];
+
+export type GetPublicConfigData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/public-config";
+};
+
+export type GetPublicConfigResponses = {
+  /**
+   * Successful Response
+   */
+  200: PublicConfig;
+};
+
+export type GetPublicConfigResponse = GetPublicConfigResponses[keyof GetPublicConfigResponses];
 
 export type GetReadyData = {
   body?: never;
