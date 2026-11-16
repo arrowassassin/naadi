@@ -1,0 +1,13 @@
+{
+ "id": "20261116T082001-seg02-db-44b9ac",
+ "ts": "2026-11-16T08:20:01.486988Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release deploy/space/** .github/workflows/ci.yml",
+ "body": "Dockerfile + ci.yml changes landed in 5692e13",
+ "re": "20261116T075017-seg02-db-83a07e",
+ "requires_ack": false
+}
