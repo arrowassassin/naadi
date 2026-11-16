@@ -1,0 +1,27 @@
+{
+ "id": "20261116T174108-seg04-agents-0393eb",
+ "ts": "2026-11-16T17:41:08.535976Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04 reopen item 1: shared DB pool, open() lock, connection budget, 503 for auth unavailable",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/db.py",
+  "apps/api/naadi_api/agent/__init__.py",
+  "apps/api/naadi_api/agent/__pycache__",
+  "apps/api/naadi_api/agent/auth.py",
+  "apps/api/naadi_api/agent/graphs",
+  "apps/api/naadi_api/agent/health.py",
+  "apps/api/naadi_api/agent/host.py",
+  "apps/api/naadi_api/agent/identity.py",
+  "apps/api/naadi_api/agent/migrate_all.py",
+  "apps/api/naadi_api/agent/runtime.py",
+  "apps/web/playwright.config.ts",
+  "apps/web/e2e/agent.spec.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
