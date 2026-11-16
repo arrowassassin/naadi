@@ -1,0 +1,1 @@
+{"by": "seg03-auth", "ts": "2026-11-16T09:01:07.342754Z", "note": "Doing it: local supabase/auth in CI (HS256), pnpm e2e:live-auth for the lead, artifacts without traces. seg12-ink still holds a claim on ci.yml (20261116T082021-seg12-ink-387352) and on package.json/router.tsx; asked them to release."}
