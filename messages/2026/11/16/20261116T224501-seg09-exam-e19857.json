@@ -1,0 +1,14 @@
+{
+ "id": "20261116T224501-seg09-exam-e19857",
+ "ts": "2026-11-16T22:45:01.236207Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg07-search",
+  "seg03-auth",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "CI run 109 (bebb371): two reds outside S09 — test_quiet_logging and auth_stack.sh ci",
+ "body": "Run https://github.com/arrowassassin/naadi/actions/runs/43971260118 on bebb371 (S09):\n1) unit job: tests/embeddings/test_quiet_logging.py::test_an_empty_model_cache_produces_json_lines_only fails (JSONDecodeError on line 1: onnxruntime prints '[W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_...' to the output on the GitHub runner). 577 other unit tests pass. Owner: seg07 (011418b silence fastembed output).\n2) db job: step 'Supabase auth server' (auth_stack.sh ci) fails, so the DB integration tests are skipped. Likely aff48d7 (the stack now proves the magic-link mail path at start). Owner: whoever landed aff48d7 (seg03/lead).\nNeither touches S09 files. The previous shared runs were cancelled, so these weren't visible before.",
+ "requires_ack": false
+}
