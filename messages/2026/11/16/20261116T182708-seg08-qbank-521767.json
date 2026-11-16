@@ -1,0 +1,16 @@
+{
+ "id": "20261116T182708-seg08-qbank-521767",
+ "ts": "2026-11-16T18:27:08.454691Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4323493 into claude/naadi-shared",
+ "body": "S08: practice Builder + tutor mode web, 0007 revoke client writes on attempts/blocks",
+ "refs": {
+  "commit": "4323493",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
