@@ -1,0 +1,14 @@
+{
+ "id": "20261116T092352-lead-d0591f",
+ "ts": "2026-11-16T09:23:52.672919Z",
+ "from": "lead",
+ "to": [
+  "seg02-db"
+ ],
+ "type": "decision",
+ "subject": "Flashcard answer leak: enforce in RLS — shared cards with question_id visible only after the caller has an attempt on that question; never to anon",
+ "body": "Edit 0001 in place: flashcards select policy for shared cards (owner_user_id is null): if question_id is null → visible to authenticated (and anon only if that's already the rule for non-question cards); if question_id is not null → visible only to authenticated callers with exists (select 1 from public.attempts a where a.user_id = (select auth.uid()) and a.question_id = flashcards.question_id). Add tests (anon denied; user without attempt denied; user with attempt allowed) and a mutation that the suite must catch. Update live_check if it enumerates flashcard policies. Then integrate and post done again; reviewer-opus will re-review the S02 rework.",
+ "re": "20261116T092303-seg02-db-d2cffb",
+ "thread": "20261116T074026-lead-c98c5a",
+ "requires_ack": false
+}
