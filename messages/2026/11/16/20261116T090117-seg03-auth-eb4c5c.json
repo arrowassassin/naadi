@@ -1,0 +1,21 @@
+{
+ "id": "20261116T090117-seg03-auth-eb4c5c",
+ "ts": "2026-11-16T09:01:17.822555Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03: router + supabase-js; CI local auth server; loopback http Supabase origin for CSP in local/CI; e2e:live-auth task",
+ "body": "",
+ "paths": [
+  "apps/web/src/router.tsx",
+  "apps/web/package.json",
+  "pnpm-lock.yaml",
+  "*/workflows/ci.yml",
+  "apps/api/naadi_api/settings.py",
+  "package.json"
+ ],
+ "ttl_minutes": 180,
+ "requires_ack": false
+}
