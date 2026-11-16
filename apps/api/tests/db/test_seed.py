@@ -356,6 +356,7 @@ def test_a_count_mismatch_fails_the_seed_and_the_cli(
         run_seed(options(url, dry_run=True, only=("chapters", "sources")), bundle=b)
     assert not e.value.report.ok
     assert [c.name for c in e.value.report.checks if not c.ok] == ["count chapters"]
+    assert "count chapters (14 / 15)" in str(e.value)  # the message carries the failing count and its detail
 
     monkeypatch.setenv("DATABASE_URL", url)
     for name in ("SUPABASE_URL", "VITE_SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "NAADI_STORAGE_URL"):

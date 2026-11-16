@@ -745,7 +745,8 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
     report.ok = all(c.ok for c in report.checks)
     if not report.ok:
         raise SeedFailed(
-            "seed verification failed: " + "; ".join(f"{c.name} ({c.detail})" for c in checks if not c.ok), report
+            "seed verification failed: " + "; ".join(f"{c.name} ({c.detail})" for c in report.checks if not c.ok),
+            report,
         )
     return report
 

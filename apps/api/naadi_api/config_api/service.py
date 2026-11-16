@@ -51,6 +51,7 @@ class ConfigRow:
     updated_by: uuid.UUID | None
     source: Source
     invalid_reason: str | None = None
+    admin_edited_at: dt.datetime | None = None
 
 
 @dataclass(frozen=True)
@@ -148,7 +149,9 @@ class AppConfigService:
                     return ConfigRow(
                         key, self.file_value(key), raw["updated_at"], raw["updated_by"], "file", invalid_reason=reason
                     )
-                return ConfigRow(key, value, raw["updated_at"], raw["updated_by"], "db")
+                return ConfigRow(
+                    key, value, raw["updated_at"], raw["updated_by"], "db", admin_edited_at=raw["admin_edited_at"]
+                )
         log.warning("app_config_fallback", key=key, reason=reason)
         return ConfigRow(key, self.file_value(key), None, None, "file")
 
@@ -160,7 +163,9 @@ class AppConfigService:
         assert self._db.pool is not None
         async with self._db.pool.connection(timeout=DB_DEADLINE_S) as conn, asyncio.timeout(DB_DEADLINE_S):
             cur = conn.cursor(row_factory=dict_row)
-            await cur.execute("select value, updated_at, updated_by from public.app_config where key = %s", (key,))
+            await cur.execute(
+                "select value, updated_at, updated_by, admin_edited_at from public.app_config where key = %s", (key,)
+            )
             return await cur.fetchone()
 
     # ── derived views ──
@@ -191,8 +196,16 @@ class AppConfigService:
         return await self.row(key)
 
     async def put(
-        self, key: str, value: object, *, expected_updated_at: dt.datetime | None, user_id: uuid.UUID
+        self,
+        key: str,
+        value: object,
+        *,
+        expected_updated_at: dt.datetime | None,
+        user_id: uuid.UUID,
+        admin_edited: bool = True,
     ) -> ConfigRow:
+        """Save `value`. `admin_edited=False` hands the key back to the seed (no admin_edited_at mark), e.g. when
+        an admin restores the shipped value: the next seed run may then update it again."""
         normalized = validate_value(key, value)
         others = {k: (normalized if k == key else (await self.get(k))) for k in ("ui.nav", "feature_flags")}
         problems = cross_key_problems(others)
@@ -212,11 +225,11 @@ class AppConfigService:
                 raise StaleWrite(current_at)
             await cur.execute(
                 "insert into public.app_config (key, value, updated_by, admin_edited_at)"
-                " values (%s, %s::jsonb, %s, now())"
+                " values (%s, %s::jsonb, %s, case when %s then now() end)"
                 " on conflict (key) do update set value = excluded.value, updated_by = excluded.updated_by,"
                 " admin_edited_at = excluded.admin_edited_at"
-                " returning value, updated_at, updated_by",
-                (key, json.dumps(normalized, separators=(",", ":")), user_id),
+                " returning value, updated_at, updated_by, admin_edited_at",
+                (key, json.dumps(normalized, separators=(",", ":")), user_id, admin_edited),
             )
             saved = await cur.fetchone()
         assert saved is not None
@@ -224,7 +237,9 @@ class AppConfigService:
         if key in llm_config.AGENT_CONFIG_KEYS:
             llm_config.invalidate_runtime_config()
         log.info("app_config_updated", key=key)
-        return ConfigRow(key, normalized, saved["updated_at"], saved["updated_by"], "db")
+        return ConfigRow(
+            key, normalized, saved["updated_at"], saved["updated_by"], "db", admin_edited_at=saved["admin_edited_at"]
+        )
 
     async def history(self, key: str, *, limit: int = 50) -> list[HistoryRow]:
         if key not in KEY_SPECS:

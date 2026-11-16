@@ -1,5 +1,5 @@
 import type { APIRequestContext, Browser, Page } from "@playwright/test";
-import { canMintUsers, type E2ERole } from "./auth-users";
+import { canMintUsers, type E2ERole, isLive } from "./auth-users";
 import { expect, test } from "./fixtures";
 import { signedInState } from "./session";
 
@@ -11,7 +11,9 @@ import { signedInState } from "./session";
  * and restores every key it touched. The keys it edits (signin.pitch, the notes flag and nav item) are not
  * asserted by any other spec, and /notes is not a route yet, so parallel specs see no difference.
  */
-test.skip(!canMintUsers(), "needs the service role to mint the admin (run pnpm e2e:live-auth against the Space)");
+// Local stack only: it rewrites global app_config rows, which must never happen on a deployed Space.
+test.skip(isLive(), "edits global app_config: local stack only, never against a deployed Space");
+test.skip(!canMintUsers(), "needs the local auth stack's service role to mint the admin and the student");
 
 const roleState = async (browser: Browser, baseURL: string, role: E2ERole) => signedInState(browser, baseURL, role);
 
@@ -35,10 +37,17 @@ async function getKey(request: APIRequestContext, auth: string, key: string): Pr
   return (await res.json()) as Entry;
 }
 
-async function putKey(request: APIRequestContext, auth: string, key: string, value: unknown, at: string | null) {
+async function putKey(
+  request: APIRequestContext,
+  auth: string,
+  key: string,
+  value: unknown,
+  at: string | null,
+  adminEdited = true,
+) {
   const res = await request.put(`/api/admin/config/${key}`, {
     headers: { authorization: auth },
-    data: { value, expected_updated_at: at },
+    data: { value, expected_updated_at: at, admin_edited: adminEdited },
   });
   expect(res.status(), await res.text()).toBe(200);
   return (await res.json()) as Entry;
@@ -115,7 +124,10 @@ test("an admin's flag, navigation and copy edits show up without a redeploy", as
     ];
     for (const [key, before] of restore) {
       const mine = saved[key];
-      if (mine) await putKey(adminCtx.request, admin, key, before.value, mine.updated_at);
+      if (!mine) continue;
+      // Hand the key back to the seed: no admin_edited_at mark is left behind by the test.
+      const restored = await putKey(adminCtx.request, admin, key, before.value, mine.updated_at, false);
+      expect((restored as Entry & { admin_edited_at: string | null }).admin_edited_at).toBeNull();
     }
     await Promise.all([adminCtx.close(), studentCtx.close(), anonCtx.close()]);
   }

@@ -47,6 +47,7 @@ class ConfigEntry(BaseModel):
     source: str
     updated_at: dt.datetime | None = Field(description="Send back as expected_updated_at when saving")
     updated_by: uuid.UUID | None
+    admin_edited_at: dt.datetime | None = Field(description="Set while the seed must not overwrite this key")
     invalid_reason: str | None
     json_schema: dict[str, JsonValue] = Field(description="JSON Schema of the value (for the admin editor)")
 
@@ -57,6 +58,11 @@ class ConfigUpdate(BaseModel):
     value: JsonValue
     expected_updated_at: dt.datetime | None = Field(
         description="updated_at of the row you edited (null if it had no row); a mismatch is a 409"
+    )
+    admin_edited: bool = Field(
+        default=True,
+        description="Mark the key as admin-edited (the seed then keeps it). false hands it back to the seed,"
+        " e.g. after restoring the shipped value",
     )
 
 
@@ -117,6 +123,7 @@ def _entry(row: ConfigRow) -> ConfigEntry:
         source=row.source,
         updated_at=row.updated_at,
         updated_by=row.updated_by,
+        admin_edited_at=row.admin_edited_at,
         invalid_reason=row.invalid_reason,
         json_schema=KEY_SPECS[row.key].json_schema(),
     )
@@ -188,7 +195,11 @@ async def put_config(request: Request, admin: AdminUser, key: ConfigKey, body: C
     _known(key)
     try:
         row = await _service(request).put(
-            key, body.value, expected_updated_at=body.expected_updated_at, user_id=admin.user_id
+            key,
+            body.value,
+            expected_updated_at=body.expected_updated_at,
+            user_id=admin.user_id,
+            admin_edited=body.admin_edited,
         )
     except ValidationError as exc:
         details = [

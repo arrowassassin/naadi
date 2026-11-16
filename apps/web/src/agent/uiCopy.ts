@@ -1,10 +1,10 @@
-import { getPublicConfig } from "@naadi/shared";
+import { getPublicConfig, UI_COPY_DEFAULTS, uiText } from "@naadi/shared";
 import { useQuery } from "@tanstack/react-query";
 
 /**
  * Editable UI strings from `app_config.ui_copy`, served with GET /api/public-config (segment 05; cached 60 s
- * by the server). `copy(key, vars)` fills `{placeholders}`; it returns null while the strings are loading or
- * when the key is not configured, and the caller then shows the bare value (for example only the time).
+ * by the server). `copy(key, vars)` fills `{placeholders}`; while loading, or for a key the config lacks, it
+ * uses the shipped default; it returns null only for a key with neither (the caller shows the bare value).
  */
 type UiCopy = Record<string, string>;
 
@@ -22,8 +22,9 @@ export function useUiCopy() {
     retry: 1,
   });
   return (key: string, vars: Record<string, string> = {}): string | null => {
-    const template = q.data?.[key];
-    if (!template) return null;
-    return template.replace(/\{(\w+)\}/g, (m, name: string) => vars[name] ?? m);
+    // Configured text, else the shipped default (uiText); null only for a key that is neither, so the
+    // caller can show the bare value instead of a key name.
+    if (!q.data?.[key] && !UI_COPY_DEFAULTS[key]) return null;
+    return uiText(q.data ?? null, key, vars);
   };
 }

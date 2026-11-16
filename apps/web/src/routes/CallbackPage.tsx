@@ -4,7 +4,16 @@ import { Loader2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { type CallbackResult, completeSignInOnce } from "../auth/callback";
 import { useAuth } from "../auth/session";
+import { useUiText } from "../copy/useUiText";
 import { Wordmark } from "../shell/Logo";
+
+/** ui_copy key of the message for each way a sign-in link can fail. */
+const CALLBACK_MESSAGE: Record<Exclude<CallbackResult, { ok: true }>["kind"], string> = {
+  expired: "callback.expired",
+  "other-browser": "callback.other_browser",
+  denied: "callback.denied",
+  invalid: "callback.invalid",
+};
 
 /** /auth/callback: finishes a magic-link or Google sign-in, then returns to the page the user came from. */
 export function CallbackPage() {
@@ -32,13 +41,14 @@ export function CallbackPage() {
   }, [auth, navigate]);
 
   const failed = result && !result.ok ? result : null;
+  const t = useUiText();
   return (
     <main id="main" tabIndex={-1} className="min-h-dvh bg-ground outline-none">
       <div className="mx-auto flex max-w-[40rem] flex-col gap-8 px-(--gutter) pt-6 pb-12">
         <Wordmark className="text-[1.375rem]" size={32} />
         {auth.status === "unavailable" ? (
           <ErrorState
-            title="Sign-in could not be completed"
+            title={t("callback.unavailable_title")}
             message={auth.error.message}
             requestId={auth.error.requestId}
             onRetry={() => window.location.reload()}
@@ -47,27 +57,27 @@ export function CallbackPage() {
         ) : failed ? (
           <section aria-labelledby="cb-h" className="flex flex-col gap-5" data-state="error">
             <h1 id="cb-h" className="m-0 font-display text-headline">
-              Sign-in did not finish
+              {t("callback.failed_heading")}
             </h1>
-            <ErrorState title="This link did not work" message={failed.message} />
+            <ErrorState title={t("callback.failed_title")} message={t(CALLBACK_MESSAGE[failed.kind])} />
             <div>
               <Button
                 variant="primary"
                 size="cta"
                 onClick={() => void navigate({ to: "/sign-in", search: { redirect: failed.next } })}
               >
-                Back to sign in
+                {t("callback.back")}
               </Button>
             </div>
           </section>
         ) : (
           <section aria-labelledby="cb-h" aria-busy="true" className="flex flex-col gap-4" data-state="processing">
             <h1 id="cb-h" className="m-0 font-display text-headline">
-              Signing you in…
+              {t("callback.processing_heading")}
             </h1>
             <p role="status" className="m-0 flex items-center gap-3 text-text-2">
               <Loader2 aria-hidden="true" size={20} className="animate-spin" />
-              Checking your sign-in link.
+              {t("callback.processing")}
             </p>
           </section>
         )}

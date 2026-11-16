@@ -22,6 +22,7 @@
       "!**/test-results",
       "!**/playwright-report",
       "!packages/shared/openapi.json",
+      "!packages/shared/ui-copy.defaults.json",
       "!apps/api/tests/fixtures",
       "!**/routeTree.gen.ts",
       "!**/*.yaml",

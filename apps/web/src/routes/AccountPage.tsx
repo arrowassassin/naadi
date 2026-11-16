@@ -6,6 +6,7 @@ import { type FormEvent, useId, useMemo, useState } from "react";
 import { useMe, useUpdateMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { type SignOutScope, signOut } from "../auth/session";
+import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 
 function timeZones(current: string): string[] {
@@ -130,6 +131,7 @@ function ProfileForm({ me }: { me: MeResponse }) {
 
 function SignOutPanel() {
   const navigate = useNavigate();
+  const t = useUiText();
   const [busy, setBusy] = useState<SignOutScope | null>(null);
   const [confirmGlobal, setConfirmGlobal] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -140,7 +142,7 @@ function SignOutPanel() {
     const r = await signOut(scope);
     setBusy(null);
     if (!r.ok) {
-      setMessage(r.message ?? "Could not sign out. Try again.");
+      setMessage(r.message ?? t("account.sign_out_failed"));
       return;
     }
     void navigate({ to: "/sign-in", search: { signed_out: 1 }, replace: true });
@@ -155,31 +157,28 @@ function SignOutPanel() {
           disabled={busy !== null}
           onClick={() => void run("local")}
         >
-          {busy === "local" ? "Signing out…" : "Sign out"}
+          {t(busy === "local" ? "account.signing_out" : "account.sign_out")}
         </Button>
         {confirmGlobal ? null : (
           <Button variant="secondary" disabled={busy !== null} onClick={() => setConfirmGlobal(true)}>
-            Sign out of all devices
+            {t("account.sign_out_all")}
           </Button>
         )}
       </div>
       {confirmGlobal ? (
         <div className="flex flex-col gap-3 rounded-block border border-line-strong bg-surface-2 p-4">
-          <p className="m-0 text-text">
-            This signs you out on every device, including installed apps, within about 30 seconds. You will need a new
-            sign-in link on each.
-          </p>
+          <p className="m-0 text-text">{t("account.sign_out_all_confirm")}</p>
           <div className="flex flex-wrap gap-3">
             <Button variant="strong" disabled={busy !== null} onClick={() => void run("global")}>
-              {busy === "global" ? "Signing out everywhere…" : "Sign out everywhere"}
+              {t(busy === "global" ? "account.signing_out_everywhere" : "account.sign_out_everywhere")}
             </Button>
             <Button variant="secondary" disabled={busy !== null} onClick={() => setConfirmGlobal(false)}>
-              Cancel
+              {t("account.cancel")}
             </Button>
           </div>
         </div>
       ) : null}
-      {message ? <ErrorState title="Not signed out" message={message} /> : null}
+      {message ? <ErrorState title={t("account.sign_out_failed_title")} message={message} /> : null}
     </div>
   );
 }

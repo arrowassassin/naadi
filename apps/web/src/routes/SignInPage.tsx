@@ -4,6 +4,7 @@ import { Clock, MailCheck } from "lucide-react";
 import { type FormEvent, useEffect, useId, useRef, useState } from "react";
 import { callbackUrl, redirectOrigin } from "../auth/redirect";
 import { useAuth } from "../auth/session";
+import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { Wordmark } from "../shell/Logo";
 
@@ -64,9 +65,8 @@ export function SignInPage({ next, notice }: SignInPageProps) {
     auth.status === "signed-out" || auth.status === "signed-in" ? auth.client : null;
   const config = auth.status === "signed-out" || auth.status === "signed-in" ? auth.config : null;
   const redirectTo = callbackUrl(redirectOrigin(config?.app_base_url), next);
-  // Editable strings from app_config.ui_copy (served with /api/public-config). Without a config the page is
-  // in its "unavailable" state and these lines are simply not shown.
-  const copy = (key: string): string => config?.ui_copy?.[key] ?? "";
+  // Editable strings from app_config.ui_copy (served with /api/public-config); never empty (see useUiText).
+  const copy = useUiText();
 
   useEffect(() => {
     if (phase.name === "sent") sentHeading.current?.focus();
@@ -139,7 +139,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
             className="flex min-w-0 flex-[2_1_520px] flex-col gap-7 rounded-tile border border-line-soft bg-surface-1 p-6 tablet:p-9"
           >
             <h2 id="signin-h" className="m-0 font-mono text-label text-text-3 uppercase tracking-[0.12em]">
-              Sign in
+              {copy("signin.heading")}
             </h2>
 
             {!online ? <OfflineBanner message={copy("signin.offline")} /> : null}
@@ -216,7 +216,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                       onClick={() => void google()}
                       icon={<GoogleG />}
                     >
-                      {googleBusy ? "Opening Google…" : copy("signin.google")}
+                      {copy(googleBusy ? "signin.google_opening" : "signin.google")}
                     </Button>
                     <div className="flex items-center gap-3 text-text-3" aria-hidden="true">
                       <span className="h-px flex-1 bg-line" />
@@ -251,7 +251,9 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                   <p id={hintId} className={fieldError ? "m-0 text-amber" : "m-0 text-[0.8125rem] text-text-3"}>
                     {fieldError ?? copy("signin.email_hint")}
                   </p>
-                  {phase.name === "error" ? <ErrorState title="No email sent" message={phase.message} /> : null}
+                  {phase.name === "error" ? (
+                    <ErrorState title={copy("signin.send_failed_title")} message={phase.message} />
+                  ) : null}
                   <Button
                     type="submit"
                     variant="primary"
@@ -259,7 +261,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                     className="w-full"
                     disabled={!client || !online || sending}
                   >
-                    {sending ? "Sending…" : copy("signin.submit")}
+                    {copy(sending ? "signin.sending" : "signin.submit")}
                   </Button>
                 </form>
               </>

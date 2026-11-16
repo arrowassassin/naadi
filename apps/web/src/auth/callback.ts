@@ -3,7 +3,8 @@ import { safeNext } from "./redirect";
 
 export type CallbackResult =
   | { ok: true; next: string }
-  | { ok: false; kind: "expired" | "other-browser" | "denied" | "invalid"; message: string; next: string };
+  // The page shows the ui_copy message for `kind` (callback.expired, callback.other_browser, ...).
+  | { ok: false; kind: "expired" | "other-browser" | "denied" | "invalid"; next: string };
 
 const OTP_TYPES: ReadonlySet<string> = new Set(["magiclink", "email", "signup", "invite", "recovery", "email_change"]);
 
@@ -16,14 +17,7 @@ function params(url: URL): URLSearchParams {
 }
 
 function failure(kind: Exclude<CallbackResult, { ok: true }>["kind"], next: string): CallbackResult {
-  const message = {
-    expired: "This sign-in link has expired or was already used. Request a new one.",
-    "other-browser":
-      "This link was opened in a different browser or app than the one you requested it from. Request a new link here, then open it in this browser.",
-    denied: "Sign-in was cancelled or refused. You can try again.",
-    invalid: "This sign-in link is incomplete or not valid. Request a new one.",
-  }[kind];
-  return { ok: false, kind, message, next };
+  return { ok: false, kind, next };
 }
 
 /**
