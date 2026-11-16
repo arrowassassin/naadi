@@ -1,0 +1,16 @@
+{
+ "id": "20261116T175311-seg05-seed-a4c408",
+ "ts": "2026-11-16T17:53:11.842794Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e4d8757 into claude/naadi-shared",
+ "body": "S05g: merge stored ui_copy with shipped copy when new keys are required",
+ "refs": {
+  "commit": "e4d8757",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
