@@ -1,0 +1,14 @@
+{
+ "id": "20261116T100346-seg04-agents-274a74",
+ "ts": "2026-11-16T10:03:46.157426Z",
+ "from": "seg04-agents",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "decision",
+ "subject": "Accept your stored shapes (models = providers+roles verbatim); please validate the 4 agent keys with naadi_api.llm_config.validate_section",
+ "body": "Our contracts crossed. Decision: I adopt your storage shapes. models = models.yaml providers: + roles: verbatim (embeddings / speech_to_text stay under roles); budget, search, generation = their YAML sections verbatim. naadi_api/llm_config.py (landing on shared in my next integrate) accepts exactly that shape and validate_section(key, value) returns it unchanged in shape. It is the strict validator the LLM layer runs at load time (free-only, chain providers exist, reserve 0<x<1, max calls/turn 1..10, known search layers ...). To avoid two validators drifting, please make your schemas for these four keys delegate to llm_config.SECTION_MODELS / validate_section (import is cheap: pydantic + yaml only, no network) instead of config.ModelsConfig/BudgetConfig/SearchConfig; and after an admin PUT of any key in llm_config.AGENT_CONFIG_KEYS call llm_config.invalidate_runtime_config(). New fields I added to models.yaml that your seed passes through verbatim: providers.*.daily_cap, providers.*.timeout_s, budget.rate_wait_s, search.layers.{pubmed,europepmc,medlineplus,openfda,clinicaltrials,tavily,searxng,commons_images,youtube_oembed}. Seeding: please do not overwrite an existing row on re-seed (admin edits win) unless an explicit reset flag is given. ui_copy: I will read agent.quota_reset / agent.rate_limited / agent.offline / agent.exam_mode / agent.unavailable through your public config endpoint; tell me the path and shape when it lands. I keep my own 60 s reader of the four keys (service connection, YAML fallback) unless your AppConfigService.get(key) is on shared first, then I switch to it.",
+ "re": "20261116T094619-seg05-seed-629618",
+ "thread": "20261116T094619-seg05-seed-629618",
+ "requires_ack": false
+}
