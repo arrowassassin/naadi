@@ -28,7 +28,7 @@ export function LabValuesSheet({ open, onClose }: { open: boolean; onClose: () =
               <h3 id={`labs-${g.id}`} className="m-0 pb-2 font-mono text-label text-text-3 uppercase">
                 {g.label}
               </h3>
-              <table className="w-full border-collapse text-left text-ui-sm">
+              <table className="w-full table-fixed border-collapse text-left text-ui-sm">
                 <thead className="sr-only">
                   <tr>
                     <th scope="col">Test</th>
@@ -39,7 +39,7 @@ export function LabValuesSheet({ open, onClose }: { open: boolean; onClose: () =
                 <tbody>
                   {g.rows.map((r) => (
                     <tr key={r.analyte} className="border-line-soft border-t align-top">
-                      <th scope="row" className="py-2.5 pr-3 font-medium text-text">
+                      <th scope="row" className="w-[42%] py-2.5 pr-3 font-medium text-text">
                         {r.analyte}
                       </th>
                       <td className="py-2.5 pr-3 font-mono text-text-2">{r.range}</td>
