@@ -1,6 +1,7 @@
 import { cx } from "@naadi/ui";
 import { X } from "lucide-react";
 import { type ReactNode, useEffect, useId, useRef } from "react";
+import { useUiText } from "../copy/useUiText";
 import "./sheet.css";
 
 /**
@@ -11,17 +12,21 @@ export function Sheet({
   open,
   onClose,
   title,
+  closeLabel,
   children,
   className,
 }: {
   open: boolean;
   onClose: () => void;
   title: string;
+  /** Accessible name of the close button (ui_copy). */
+  closeLabel?: string;
   children: ReactNode;
   className?: string;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const titleId = useId();
+  const t = useUiText();
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
@@ -62,7 +67,7 @@ export function Sheet({
             <button
               type="button"
               onClick={onClose}
-              aria-label="Close"
+              aria-label={closeLabel ?? t("learn.close")}
               className="flex size-11 items-center justify-center rounded-pill border border-line-control bg-surface-2"
             >
               <X aria-hidden="true" size={18} />

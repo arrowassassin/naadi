@@ -1,5 +1,5 @@
 import { putReadingPosition, type ReadingPosition, type ReadingPositionIn } from "@naadi/shared";
-import { type RefObject, useCallback, useEffect, useRef } from "react";
+import { type RefObject, useCallback, useEffect, useRef, useState } from "react";
 import { getAuthState } from "../auth/session";
 import { useSavePosition } from "./api";
 
@@ -89,10 +89,13 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
   saveRef.current = save.mutate;
   const state = useRef({ offset: 0, sent: -1, completed: false, sentCompleted: false, restored: false });
   const timer = useRef<number | undefined>(undefined);
+  // A save is waiting for scrolling to settle (or the restore has not run yet).
+  const [scheduled, setScheduled] = useState(true);
 
   const flush = useCallback(
     (keepalive = false) => {
       window.clearTimeout(timer.current);
+      setScheduled(false);
       const s = state.current;
       if (!enabled || !s.restored) return;
       const changed = Math.abs(s.offset - s.sent) >= MIN_CHANGE || (s.completed && !s.sentCompleted);
@@ -118,6 +121,7 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
   // biome-ignore lint/correctness/useExhaustiveDependencies: the reset must run whenever the section changes
   useEffect(() => {
     state.current = { offset: 0, sent: -1, completed: false, sentCompleted: false, restored: false };
+    setScheduled(true);
   }, [sectionId]);
 
   useEffect(() => {
@@ -144,6 +148,7 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
         s.restored = true;
         // The first visit records the section as opened, so other devices can resume here.
         if (!saved) flush();
+        else setScheduled(false);
       });
     };
     void go();
@@ -165,6 +170,7 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
         state.current.offset = measureOffset(el);
         window.clearTimeout(timer.current);
         timer.current = window.setTimeout(() => flush(), SAVE_AFTER_MS);
+        setScheduled(true);
       });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -209,5 +215,7 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
     };
   }, [flush]);
 
-  return { flush, saving: save.isPending, saveError: save.error };
+  // Idle: restored, nothing scheduled and no request in flight (the reader exposes it as data-position-idle,
+  // so a test can wait for it instead of racing the debounce).
+  return { flush, idle: !scheduled && !save.isPending, saveError: save.error };
 }

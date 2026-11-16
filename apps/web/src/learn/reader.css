@@ -1,0 +1,11 @@
+/*
+ * Keep whatever the browser scrolls into view (focus, find-in-page, anchors, restored positions) clear of the
+ * fixed chrome: the nav pill on top (--shell-top), and at the bottom the phone tab bar (--shell-bottom, which
+ * includes the reader's page bar on phone) plus the reader's own sticky page bar on tablet and laptop
+ * (--reader-bar, set by the reader while it is mounted).
+ */
+:root {
+  --reader-anchor: calc(var(--shell-top, 0px) + 24px);
+  scroll-padding-top: calc(var(--shell-top, 0px) + 16px);
+  scroll-padding-bottom: calc(var(--shell-bottom, 0px) + var(--reader-bar, 0px) + 16px);
+}

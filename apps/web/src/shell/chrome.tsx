@@ -38,3 +38,31 @@ export function usePenSurface(active: boolean): void {
     };
   }, [active]);
 }
+
+/**
+ * The phone bottom-bar slot (S06): a page that has its own bottom actions (the reader's previous / next bar)
+ * renders them into this element with a portal, so the phone shows ONE bottom bar: the page's row above the
+ * tabs inside the same surface, measured into --shell-bottom. Null on tablet and laptop, where the shell has
+ * no bottom bar (the page then keeps its actions in its own layout).
+ */
+let bottomSlot: HTMLElement | null = null;
+const slotListeners = new Set<() => void>();
+
+export function setShellBottomSlot(el: HTMLElement | null): void {
+  if (bottomSlot === el) return;
+  bottomSlot = el;
+  for (const l of slotListeners) l();
+}
+
+function subscribeSlot(l: () => void): () => void {
+  slotListeners.add(l);
+  return () => slotListeners.delete(l);
+}
+
+export function useShellBottomSlot(): HTMLElement | null {
+  return useSyncExternalStore(
+    subscribeSlot,
+    () => bottomSlot,
+    () => null,
+  );
+}

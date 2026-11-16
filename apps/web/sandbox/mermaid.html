@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Diagram renderer</title>
+  </head>
+  <body>
+    <!--
+      Mermaid renderer, loaded only inside <iframe sandbox="allow-scripts"> (opaque origin: no cookies, no
+      storage, no access to the app). Its own CSP (set by the server for this path) allows the inline styles
+      Mermaid needs while it lays out a diagram; the app's CSP stays strict. See src/sandbox/mermaid.ts.
+    -->
+    <script type="module" src="/src/sandbox/mermaid.ts"></script>
+  </body>
+</html>

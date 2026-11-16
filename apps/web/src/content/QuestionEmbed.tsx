@@ -9,24 +9,17 @@ import type { ContentEnv } from "./types";
  */
 export function QuestionEmbed({ questionId, env }: { questionId: string | null; env: ContentEnv }) {
   const q = questionId ? env.questions[questionId] : undefined;
-  if (!q)
-    return (
-      <MediaUnavailable
-        message={env.text("content.question_missing", "This practice question is not available right now.")}
-        mediaId={questionId}
-        env={env}
-      />
-    );
+  if (!q) return <MediaUnavailable message={env.text("content.question_missing")} mediaId={questionId} env={env} />;
   return (
     <section
       data-node="question-embed"
       data-question-id={q.id}
-      aria-label="Practice question"
+      aria-label={env.text("content.question_label")}
       className="flex flex-col gap-4 rounded-block border border-line bg-surface-1 p-4 tablet:p-5"
     >
       <span className="flex items-center gap-2 font-mono text-label text-text-3 uppercase">
         <ListChecks aria-hidden="true" size={16} />
-        Practice question
+        {env.text("content.question_label")}
       </span>
       <SafeHtml html={q.stem_html} className="flex flex-col gap-3 text-text [&_p]:m-0" />
       <ol className="m-0 flex list-none flex-col gap-2 p-0">

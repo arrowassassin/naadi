@@ -4,6 +4,9 @@
 - other existing files (favicon, robots.txt, manifest): short cache.
 - anything else that is not `/api/*`: `index.html` with `no-cache`, so a deploy is picked up at once.
 - unknown `/api/*`: JSON 404 (any method); a known `/api` path with the wrong method: JSON 405 + `Allow`.
+- `/sandbox/mermaid.html`: the diagram renderer, only ever loaded in `<iframe sandbox="allow-scripts">`. It gets
+  its own CSP (see `security.sandbox_content_security_policy`), and because its opaque origin loads the hashed
+  module scripts with CORS, `/assets/*` answer `Access-Control-Allow-Origin: *` (public files, no credentials).
 """
 
 from __future__ import annotations
@@ -13,6 +16,8 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from starlette.routing import BaseRoute, Match
+
+from .security import SANDBOX_DOCUMENTS, sandbox_content_security_policy
 
 ASSET_CACHE = "public, max-age=31536000, immutable"
 FILE_CACHE = "public, max-age=3600"
@@ -72,8 +77,12 @@ def install_spa(app: FastAPI, static_dir: Path) -> None:
         if full_path:
             f = _safe_file(root, full_path)
             if f is not None:
-                cache = ASSET_CACHE if full_path.startswith("assets/") else FILE_CACHE
-                return FileResponse(f, headers={"cache-control": cache})
+                headers = {"cache-control": FILE_CACHE}
+                if full_path.startswith("assets/"):
+                    headers = {"cache-control": ASSET_CACHE, "access-control-allow-origin": "*"}
+                elif full_path in SANDBOX_DOCUMENTS:
+                    headers["content-security-policy"] = sandbox_content_security_policy()
+                return FileResponse(f, headers=headers)
             last = full_path.rstrip("/").rsplit("/", 1)[-1]
             if full_path.startswith("assets/") or "." in last:
                 raise HTTPException(404, "File not found.")

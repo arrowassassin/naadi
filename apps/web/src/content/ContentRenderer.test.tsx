@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import type { MediaOut } from "@naadi/shared";
+import { type MediaOut, uiText } from "@naadi/shared";
 import { CONTENT_MARK_TYPES, CONTENT_NODE_TYPES, ContentDocSchema } from "@naadi/shared/content";
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
@@ -191,7 +191,7 @@ describe("ContentRenderer", () => {
       <ContentRenderer
         sectionId="s1"
         mode="prod"
-        copy={(key) => (key === "content.figure_missing" ? "Figure on its way back." : null)}
+        text={(key, vars) => (key === "content.figure_missing" ? "Figure on its way back." : uiText(null, key, vars))}
         doc={doc({ type: "figure", attrs: { mediaId: "gone" } })}
       />,
     );

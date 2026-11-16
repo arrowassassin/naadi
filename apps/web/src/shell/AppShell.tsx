@@ -2,13 +2,13 @@ import type { NavItem } from "@naadi/shared";
 import { cx, ErrorState, OfflineBanner, Skeleton } from "@naadi/ui";
 import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router";
 import { Search, UserRound } from "lucide-react";
-import { type RefObject, useLayoutEffect, useRef } from "react";
+import { type RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { useSearchCopy } from "../search/copy";
 import { useSearchShortcut } from "../search/shortcut";
-import { usePenActive } from "./chrome";
+import { setShellBottomSlot, usePenActive } from "./chrome";
 import { NavIcon } from "./icons";
 import { LogoMark } from "./Logo";
 
@@ -133,6 +133,18 @@ export function AppShell() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const topRef = useRef<HTMLElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const [slotEl, slotRef] = useState<HTMLDivElement | null>(null);
+  // The bottom slot exists only where the tab bar is shown (phone, < 640 px).
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639.98px)");
+    const apply = () => setShellBottomSlot(mq.matches ? slotEl : null);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => {
+      mq.removeEventListener("change", apply);
+      setShellBottomSlot(null);
+    };
+  }, [slotEl]);
   const penActive = usePenActive();
   useInsetVar(topRef, "--shell-top");
   useInsetVar(bottomRef, "--shell-bottom", penActive);
@@ -226,38 +238,39 @@ export function AppShell() {
           penActive && "translate-y-[calc(100%+8px)] focus-within:translate-y-0",
         )}
       >
-        <nav
-          aria-label="Tabs"
-          aria-busy={navLoading || undefined}
-          className="rounded-pill border border-line-strong bg-bar/95 p-1.5 backdrop-blur-[18px]"
-        >
-          <ul className="m-0 flex list-none items-center gap-1 p-0">
-            {navLoading ? (
-              <li className="flex flex-1">
-                <Skeleton className="h-12 w-full rounded-pill" />
-              </li>
-            ) : (
-              items.map((item) => (
+        {/* One surface on phone: a page's own bottom row (the reader's page bar, via a portal into the slot)
+            sits above the tabs inside it; the slot is collapsed while empty. */}
+        <div className="flex flex-col gap-1 rounded-[28px] border border-line-strong bg-bar/95 p-1.5 backdrop-blur-[18px]">
+          <div ref={slotRef} data-shell-bottom-slot="" className="empty:hidden" />
+          <nav aria-label="Tabs" aria-busy={navLoading || undefined}>
+            <ul className="m-0 flex list-none items-center gap-1 p-0">
+              {navLoading ? (
+                <li className="flex flex-1">
+                  <Skeleton className="h-12 w-full rounded-pill" />
+                </li>
+              ) : (
+                items.map((item) => (
+                  <TabItem
+                    key={item.id}
+                    to={item.path}
+                    label={item.label}
+                    icon={item.icon}
+                    current={isCurrent(item.path, pathname)}
+                  />
+                ))
+              )}
+              {searchOn ? (
                 <TabItem
-                  key={item.id}
-                  to={item.path}
-                  label={item.label}
-                  icon={item.icon}
-                  current={isCurrent(item.path, pathname)}
+                  to="/search"
+                  label={searchCopy("search.tab")}
+                  icon="search"
+                  current={isCurrent("/search", pathname)}
                 />
-              ))
-            )}
-            {searchOn ? (
-              <TabItem
-                to="/search"
-                label={searchCopy("search.tab")}
-                icon="search"
-                current={isCurrent("/search", pathname)}
-              />
-            ) : null}
-            <TabItem to={ACCOUNT_PATH} label="Account" icon="user-round" current={onAccount} />
-          </ul>
-        </nav>
+              ) : null}
+              <TabItem to={ACCOUNT_PATH} label="Account" icon="user-round" current={onAccount} />
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   );

@@ -29,8 +29,9 @@ def content_security_policy(settings: Settings) -> str:
         f"img-src {' '.join(img)}",
         f"connect-src {' '.join(connect)}",
         "media-src 'self' blob:",
-        # YouTube only through the official IFrame player (privacy-enhanced domain first).
-        "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
+        # YouTube only through the official IFrame player on its privacy-enhanced domain; 'self' is the
+        # sandboxed diagram renderer (SANDBOX_DOCUMENTS), which runs with an opaque origin.
+        "frame-src 'self' https://www.youtube-nocookie.com",
         "worker-src 'self'",
         "manifest-src 'self'",
         "object-src 'none'",
@@ -42,6 +43,29 @@ def content_security_policy(settings: Settings) -> str:
     if not settings.is_local:
         directives.append("upgrade-insecure-requests")
     return "; ".join(directives)
+
+
+# Documents only ever loaded in `<iframe sandbox="allow-scripts">` (opaque origin: no cookies, storage or
+# access to the app). Mermaid lays out SVG text with inline styles, so they get their own policy; the app's own
+# CSP above stays strict.
+SANDBOX_DOCUMENTS = frozenset({"sandbox/mermaid.html"})
+
+
+def sandbox_content_security_policy() -> str:
+    return "; ".join(
+        [
+            "default-src 'none'",
+            # The opaque-origin document fetches its hashed modules from this server with CORS.
+            "script-src 'self'",
+            "style-src 'self' 'unsafe-inline'",
+            "img-src data:",
+            "font-src 'self'",
+            "base-uri 'none'",
+            "form-action 'none'",
+            "frame-ancestors 'self'",
+            "sandbox allow-scripts",
+        ]
+    )
 
 
 PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"

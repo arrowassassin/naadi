@@ -1,4 +1,4 @@
-import type { EmbeddedQuestion, MediaOut } from "@naadi/shared";
+import { type EmbeddedQuestion, type MediaOut, uiText } from "@naadi/shared";
 import { cx, Highlight, type HighlightKind } from "@naadi/ui";
 import { AlertTriangle, ArrowLeftRight, Gem, OctagonAlert } from "lucide-react";
 import { createElement, type ReactNode, useEffect, useMemo, useRef } from "react";
@@ -9,11 +9,11 @@ import {
   type ContentEnv,
   type ContentMark,
   type ContentNode,
-  type CopyLookup,
   int,
   isNode,
   type RenderMode,
   str,
+  type TextLookup,
   type UnknownContent,
 } from "./types";
 
@@ -36,15 +36,25 @@ export interface ContentRendererProps {
   mode?: RenderMode;
   headingBase?: 2 | 3;
   onUnknown?: (u: UnknownContent) => void;
-  /** Editable UI strings (app_config.ui_copy); built-in wording is used for keys it does not have. */
-  copy?: CopyLookup;
+  /** UI wording (app_config.ui_copy, via copy/useUiText); defaults to the shipped ui_copy defaults. */
+  text?: TextLookup;
   className?: string;
 }
 
 const CALLOUTS = {
-  pearl: { label: "Pearl", Icon: Gem, frame: "border-line-strong bg-surface-2", tone: "text-text" },
-  trap: { label: "Trap", Icon: OctagonAlert, frame: "border-amber/70 bg-surface-2", tone: "text-amber" },
-  bridge: { label: "Bridge", Icon: ArrowLeftRight, frame: "border-line-control bg-surface-1", tone: "text-text-2" },
+  pearl: { label: "content.callout_pearl", Icon: Gem, frame: "border-line-strong bg-surface-2", tone: "text-text" },
+  trap: {
+    label: "content.callout_trap",
+    Icon: OctagonAlert,
+    frame: "border-amber/70 bg-surface-2",
+    tone: "text-amber",
+  },
+  bridge: {
+    label: "content.callout_bridge",
+    Icon: ArrowLeftRight,
+    frame: "border-line-control bg-surface-1",
+    tone: "text-text-2",
+  },
 } as const;
 
 const HIGHLIGHT_MEANING: Record<string, HighlightKind> = {
@@ -56,7 +66,17 @@ const HIGHLIGHT_COLOR: Record<string, HighlightKind> = { lime: "key-fact", viole
 
 const ORDERED_TYPES = new Set(["1", "a", "A", "i", "I"]);
 
-function UnknownCard({ type, path, kind }: { type: string; path: string; kind: "node" | "mark" }) {
+function UnknownCard({
+  type,
+  path,
+  kind,
+  text,
+}: {
+  type: string;
+  path: string;
+  kind: "node" | "mark";
+  text: TextLookup;
+}) {
   return (
     <div
       role="note"
@@ -66,11 +86,9 @@ function UnknownCard({ type, path, kind }: { type: string; path: string; kind: "
       <AlertTriangle aria-hidden="true" size={18} className="mt-0.5 shrink-0 text-amber" />
       <span className="flex flex-col gap-1">
         <span className="font-semibold">
-          Unknown content {kind} “{type}”
+          {text(kind === "node" ? "content.unknown_node" : "content.unknown_mark", { type })}
         </span>
-        <span className="font-mono text-label-sm text-text-2">
-          {path} · not in the content schema; shown in development only
-        </span>
+        <span className="font-mono text-label-sm text-text-2">{text("content.unknown_detail", { path })}</span>
       </span>
     </div>
   );
@@ -146,7 +164,9 @@ class Walker {
   node(node: unknown, path: string, key: number): ReactNode {
     if (!isNode(node)) {
       this.report("node", "<invalid>", path);
-      return this.env.mode === "dev" ? <UnknownCard key={key} type="<invalid>" path={path} kind="node" /> : null;
+      return this.env.mode === "dev" ? (
+        <UnknownCard key={key} type="<invalid>" path={path} kind="node" text={this.env.text} />
+      ) : null;
     }
     const env = this.env;
     switch (node.type) {
@@ -224,12 +244,12 @@ class Walker {
             key={key}
             data-node="callout"
             data-variant={variant ?? "pearl"}
-            aria-label={c.label}
+            aria-label={env.text(c.label)}
             className={cx("flex flex-col gap-3 rounded-block border p-4 tablet:p-5", c.frame)}
           >
             <span className={cx("flex items-center gap-2 font-mono text-label uppercase", c.tone)}>
               <c.Icon aria-hidden="true" size={16} />
-              {c.label}
+              {env.text(c.label)}
             </span>
             <div className="flex flex-col gap-3">{this.children(node, path)}</div>
           </aside>
@@ -261,7 +281,9 @@ class Walker {
         return <div key={key}>{this.children(node, path)}</div>;
       default:
         this.report("node", node.type, path);
-        if (env.mode === "dev") return <UnknownCard key={key} type={node.type} path={path} kind="node" />;
+        if (env.mode === "dev") {
+          return <UnknownCard key={key} type={node.type} path={path} kind="node" text={env.text} />;
+        }
         // prod: skip the node, keep any text a student would otherwise lose
         return node.content?.length ? <div key={key}>{this.children(node, path)}</div> : null;
     }
@@ -275,13 +297,15 @@ class Walker {
     return (
       <div key={key} data-node="table" className="flex flex-col gap-2">
         {highYield ? (
-          <span className="font-mono text-label-sm tracking-[0.12em] text-text-3 uppercase">High-yield table</span>
+          <span className="font-mono text-label-sm tracking-[0.12em] text-text-3 uppercase">
+            {this.env.text("content.table_high_yield")}
+          </span>
         ) : null}
         {/* Scrolls sideways on phone; focusable so keyboard users can scroll it too. */}
         <section
           // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
           tabIndex={0}
-          aria-label={highYield ? "High-yield table" : "Table"}
+          aria-label={this.env.text(highYield ? "content.table_high_yield" : "content.table")}
           className="overflow-x-auto rounded-block border border-line [-webkit-overflow-scrolling:touch]"
         >
           <table className="w-full min-w-[32rem] border-collapse text-[0.9375rem] leading-normal tablet:min-w-0">
@@ -312,6 +336,9 @@ function minHeadingLevel(doc: ContentNode): number {
   return min;
 }
 
+/** Shipped ui_copy defaults: used when no lookup is passed (tests, previews). */
+const defaultText: TextLookup = (key, vars) => uiText(null, key, vars);
+
 export function ContentRenderer({
   doc,
   sectionId,
@@ -320,14 +347,15 @@ export function ContentRenderer({
   mode = import.meta.env.DEV ? "dev" : "prod",
   headingBase = 2,
   onUnknown,
-  copy,
+  text,
   className,
 }: ContentRendererProps) {
   const unknownRef = useRef(onUnknown);
   unknownRef.current = onUnknown;
-  // The lookup function changes identity every render; read it through a ref so the walk is not redone.
-  const copyRef = useRef(copy);
-  copyRef.current = copy;
+  // The lookup changes identity every render; read it through a ref so the walk is not redone. The wording
+  // is in the public config the app already holds before a page renders.
+  const textRef = useRef<TextLookup>(text ?? defaultText);
+  textRef.current = text ?? defaultText;
   const blocks = useMemo(() => {
     const unknown: UnknownContent[] = [];
     if (!isNode(doc) || doc.type !== "doc") {
@@ -342,12 +370,12 @@ export function ContentRenderer({
       minHeading: minHeadingLevel(doc),
       onUnknown: (u) => unknown.push(u),
       embedOrigin: typeof window === "undefined" ? "" : window.location.origin,
-      text: (key, fallback) => copyRef.current?.(key) ?? fallback,
+      text: (key, vars) => textRef.current(key, vars),
     };
     const w = new Walker(env);
     const nodes = (doc.content ?? []).map((c, i) => (
       // biome-ignore lint/suspicious/noArrayIndexKey: blocks are positional; the index is the reading-position anchor
-      <div key={`${sectionId}-${i}`} data-block-index={i} className="scroll-mt-(--reader-anchor,96px)">
+      <div key={`${sectionId}-${i}`} data-block-index={i}>
         {w.node(c, `${sectionId} › block ${i}`, i)}
       </div>
     ));
@@ -360,7 +388,9 @@ export function ContentRenderer({
   }, [blocks]);
 
   if (blocks.error) {
-    return mode === "dev" ? <UnknownCard type="<not a doc>" path={sectionId} kind="node" /> : null;
+    return mode === "dev" ? (
+      <UnknownCard type="<not a doc>" path={sectionId} kind="node" text={textRef.current} />
+    ) : null;
   }
   return (
     <div

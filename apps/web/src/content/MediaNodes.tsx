@@ -34,13 +34,15 @@ function credit(m: MediaOut): string | null {
   return null;
 }
 
-function Caption({ m }: { m: MediaOut }) {
+function Caption({ m, env }: { m: MediaOut; env: ContentEnv }) {
   const by = credit(m);
   if (!m.caption && !by) return null;
   return (
     <figcaption className="flex flex-col gap-1 text-ui-sm text-text-2">
       {m.caption ? <span>{m.caption}</span> : null}
-      {by ? <span className="font-mono text-label-sm text-text-3">Source: {by}</span> : null}
+      {by ? (
+        <span className="font-mono text-label-sm text-text-3">{env.text("content.source", { credit: by })}</span>
+      ) : null}
     </figcaption>
   );
 }
@@ -62,15 +64,9 @@ export function Figure({ mediaId, env }: { mediaId: string | null; env: ContentE
   }, [open]);
 
   if (!m?.url || (m.kind !== "svg" && m.kind !== "image")) {
-    return (
-      <MediaUnavailable
-        message={env.text("content.figure_missing", "This figure is not available right now.")}
-        mediaId={mediaId}
-        env={env}
-      />
-    );
+    return <MediaUnavailable message={env.text("content.figure_missing")} mediaId={mediaId} env={env} />;
   }
-  const alt = m.caption ?? m.title ?? "Figure";
+  const alt = m.caption ?? m.title ?? env.text("content.figure_fallback_alt");
   // Intrinsic size reserves the box before the lazy image loads (a restored scroll position must not jump).
   const w = m.width ?? 4;
   const h = m.height ?? 3;
@@ -82,7 +78,7 @@ export function Figure({ mediaId, env }: { mediaId: string | null; env: ContentE
         aria-haspopup="dialog"
         className="group relative block w-full cursor-zoom-in rounded-block border border-line bg-white p-3 tablet:p-5"
       >
-        <span className="sr-only">Enlarge figure</span>
+        <span className="sr-only">{env.text("content.figure_enlarge")}</span>
         <img
           src={m.url}
           alt={alt}
@@ -99,7 +95,7 @@ export function Figure({ mediaId, env }: { mediaId: string | null; env: ContentE
           <Maximize2 size={16} />
         </span>
       </button>
-      <Caption m={m} />
+      <Caption m={m} env={env} />
       <dialog
         ref={dialogRef}
         aria-label={alt}
@@ -114,7 +110,7 @@ export function Figure({ mediaId, env }: { mediaId: string | null; env: ContentE
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                aria-label="Close figure"
+                aria-label={env.text("content.figure_close")}
                 className="flex size-11 shrink-0 items-center justify-center rounded-pill border border-line-control bg-surface-2"
               >
                 <X aria-hidden="true" size={18} />
@@ -137,11 +133,12 @@ function youtubeSrc(id: string, origin: string, start: number | null, end: numbe
   return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?${q.toString()}`;
 }
 
-function duration(s: number | null): string | null {
+function duration(s: number | null, env: ContentEnv): string | null {
   if (s === null || s <= 0) return null;
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return m ? `${m} min${r ? ` ${r} s` : ""}` : `${r} s`;
+  const m = String(Math.floor(s / 60));
+  const r = String(s % 60);
+  if (m === "0") return env.text("content.duration_s", { s: r });
+  return env.text(r === "0" ? "content.duration_min" : "content.duration_min_s", { m, s: r });
 }
 
 export function Video({
@@ -157,16 +154,9 @@ export function Video({
 }) {
   const m = mediaId ? env.media[mediaId] : undefined;
   const [loaded, setLoaded] = useState(false);
-  if (!m)
-    return (
-      <MediaUnavailable
-        message={env.text("content.video_missing", "This video is not available right now.")}
-        mediaId={mediaId}
-        env={env}
-      />
-    );
-  const title = m.title ?? m.caption ?? "Video";
-  const len = duration(m.duration_s);
+  if (!m) return <MediaUnavailable message={env.text("content.video_missing")} mediaId={mediaId} env={env} />;
+  const title = m.title ?? m.caption ?? env.text("content.video_fallback_title");
+  const len = duration(m.duration_s, env);
 
   if (m.kind === "video_youtube" && m.youtube_id && m.embeddable !== false) {
     return (
@@ -192,14 +182,14 @@ export function Video({
               <span className="flex size-16 items-center justify-center rounded-pill bg-paper text-ground">
                 <Play aria-hidden="true" size={26} />
               </span>
-              <span className="px-6 text-center font-semibold">Play video: {title}</span>
+              <span className="px-6 text-center font-semibold">{env.text("content.video_play", { title })}</span>
               <span className="text-ui-sm text-text-2">
-                {len ? `${len} · ` : ""}Loads the YouTube player (youtube-nocookie.com)
+                {env.text(len ? "content.video_loads_with_length" : "content.video_loads", { length: len ?? "" })}
               </span>
             </button>
           )}
         </div>
-        <Caption m={m} />
+        <Caption m={m} env={env} />
       </figure>
     );
   }
@@ -215,31 +205,19 @@ export function Video({
           title={title}
           className="aspect-video w-full rounded-block border border-line bg-surface-2"
         />
-        <Caption m={m} />
+        <Caption m={m} env={env} />
       </figure>
     );
   }
-  return (
-    <MediaUnavailable
-      message={env.text("content.video_missing", "This video is not available right now.")}
-      mediaId={mediaId}
-      env={env}
-    />
-  );
+  return <MediaUnavailable message={env.text("content.video_missing")} mediaId={mediaId} env={env} />;
 }
 
 export function PdfLink({ mediaId, page, env }: { mediaId: string | null; page: number | null; env: ContentEnv }) {
   const m = mediaId ? env.media[mediaId] : undefined;
   if (!m?.url || m.kind !== "pdf")
-    return (
-      <MediaUnavailable
-        message={env.text("content.pdf_missing", "This PDF is not available right now.")}
-        mediaId={mediaId}
-        env={env}
-      />
-    );
+    return <MediaUnavailable message={env.text("content.pdf_missing")} mediaId={mediaId} env={env} />;
   const href = page ? `${m.url}#page=${page}` : m.url;
-  const label = m.title ?? m.caption ?? "PDF document";
+  const label = m.title ?? m.caption ?? env.text("content.pdf_fallback_title");
   return (
     <div data-node="pdf" className="flex flex-col gap-2">
       <a
@@ -254,10 +232,16 @@ export function PdfLink({ mediaId, page, env }: { mediaId: string | null; page: 
         <FileText aria-hidden="true" size={20} className="shrink-0 text-text-2" />
         <span className="flex min-w-0 flex-col">
           <span className="font-semibold">{label}</span>
-          <span className="text-ui-sm text-text-2">Open PDF{page ? `, page ${page}` : ""} in a new tab</span>
+          <span className="text-ui-sm text-text-2">
+            {page ? env.text("content.pdf_open_page", { page: String(page) }) : env.text("content.pdf_open")}
+          </span>
         </span>
       </a>
-      {credit(m) ? <span className="font-mono text-label-sm text-text-3">Source: {credit(m)}</span> : null}
+      {credit(m) ? (
+        <span className="font-mono text-label-sm text-text-3">
+          {env.text("content.source", { credit: credit(m) ?? "" })}
+        </span>
+      ) : null}
     </div>
   );
 }

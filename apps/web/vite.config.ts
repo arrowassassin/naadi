@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
@@ -20,6 +21,13 @@ export default defineConfig({
     sourcemap: false,
     // Never inline assets as data: URIs; fonts must come from 'self' under the CSP.
     assetsInlineLimit: 0,
+    rolldownOptions: {
+      input: {
+        main: fileURLToPath(new URL("./index.html", import.meta.url)),
+        // The Mermaid renderer, served with its own CSP and only ever loaded in a sandboxed iframe.
+        mermaid: fileURLToPath(new URL("./sandbox/mermaid.html", import.meta.url)),
+      },
+    },
   },
   test: {
     environment: "jsdom",

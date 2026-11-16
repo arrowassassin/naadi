@@ -1,7 +1,12 @@
 import type { ChapterProgress, Coverage } from "@naadi/shared";
+import type { TextLookup } from "../content/types";
 
-export function plural(n: number, one: string, many = `${one}s`): string {
-  return `${n} ${n === 1 ? one : many}`;
+/**
+ * Counted wording from app_config.ui_copy: `<base>_one` for 1, `<base>_other` otherwise, with `{n}` filled
+ * (e.g. learn.count_section_one = "{n} section", learn.count_section_other = "{n} sections").
+ */
+export function count(t: TextLookup, base: string, n: number): string {
+  return t(`${base}_${n === 1 ? "one" : "other"}`, { n: String(n) });
 }
 
 export function percent(read: number, total: number): number {
@@ -9,22 +14,24 @@ export function percent(read: number, total: number): number {
 }
 
 /** "16 sections · 7 figures · 45 questions · 12 cards · about 80 min": only what exists. */
-export function coverageLine(c: Coverage): string {
-  const parts = [plural(c.sections, "section")];
-  if (c.figures) parts.push(plural(c.figures, "figure"));
-  if (c.videos) parts.push(plural(c.videos, "video"));
-  if (c.questions) parts.push(plural(c.questions, "question"));
-  if (c.cards) parts.push(plural(c.cards, "card"));
-  if (c.reading_minutes) parts.push(`about ${c.reading_minutes} min`);
-  return parts.join(" · ");
+export function coverageLine(t: TextLookup, c: Coverage): string {
+  const parts = [count(t, "learn.count_section", c.sections)];
+  if (c.figures) parts.push(count(t, "learn.count_figure", c.figures));
+  if (c.videos) parts.push(count(t, "learn.count_video", c.videos));
+  if (c.questions) parts.push(count(t, "learn.count_question", c.questions));
+  if (c.cards) parts.push(count(t, "learn.count_card", c.cards));
+  if (c.reading_minutes) parts.push(minutesLabel(t, c.reading_minutes));
+  return parts.join(t("learn.separator"));
 }
 
-export function statusWord(p: ChapterProgress): string {
-  if (p.status === "done") return "Done";
-  if (p.status === "in_progress") return `${p.sections_read} of ${p.sections_total} read`;
-  return "Not started";
+export function statusWord(t: TextLookup, p: ChapterProgress): string {
+  if (p.status === "done") return t("learn.status_done");
+  if (p.status === "in_progress") {
+    return t("learn.status_progress", { read: String(p.sections_read), total: String(p.sections_total) });
+  }
+  return t("learn.status_not_started");
 }
 
-export function minutesLabel(m: number): string {
-  return m <= 1 ? "about 1 min" : `about ${m} min`;
+export function minutesLabel(t: TextLookup, m: number): string {
+  return count(t, "learn.count_minute", Math.max(1, m));
 }

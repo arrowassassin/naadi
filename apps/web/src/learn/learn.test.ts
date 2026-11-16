@@ -1,7 +1,29 @@
+import { uiText } from "@naadi/shared";
 import { describe, expect, it, vi } from "vitest";
 import { coverageLine, percent, statusWord } from "./format";
+import { pageOwnsArrows } from "./ReaderPage";
 import { parseCoursesSearch } from "./routes";
 import { measureOffset, scrollToOffset } from "./useReadingPosition";
+
+const t = (key: string, vars?: Readonly<Record<string, string>>) => uiText(null, key, vars);
+
+describe("page arrows", () => {
+  it("turn the page only when focus is on the page or the article", () => {
+    const article = document.createElement("article");
+    const table = document.createElement("section");
+    table.tabIndex = 0;
+    const field = document.createElement("textarea");
+    const video = document.createElement("video");
+    article.append(table, field, video);
+    document.body.append(article);
+    expect(pageOwnsArrows(document.body, article)).toBe(true);
+    expect(pageOwnsArrows(article, article)).toBe(true);
+    expect(pageOwnsArrows(table, article)).toBe(false);
+    expect(pageOwnsArrows(field, article)).toBe(false);
+    expect(pageOwnsArrows(video, article)).toBe(false);
+    article.remove();
+  });
+});
 
 describe("course filters from the URL", () => {
   it("keeps valid exam and system ids and drops anything else", () => {
@@ -16,11 +38,11 @@ describe("course filters from the URL", () => {
 
 describe("format", () => {
   it("lists only what exists and never shows colour-only status", () => {
-    expect(coverageLine({ sections: 16, reading_minutes: 80, figures: 7, videos: 0, questions: 45, cards: 1 })).toBe(
+    expect(coverageLine(t, { sections: 16, reading_minutes: 80, figures: 7, videos: 0, questions: 45, cards: 1 })).toBe(
       "16 sections · 7 figures · 45 questions · 1 card · about 80 min",
     );
     expect(
-      statusWord({
+      statusWord(t, {
         sections_read: 3,
         sections_total: 9,
         status: "in_progress",

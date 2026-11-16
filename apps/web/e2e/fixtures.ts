@@ -35,10 +35,11 @@ interface Fixtures {
  * Playwright's WebKit screenshot injects a <style> element into the page; our CSP (style-src 'self',
  * no 'unsafe-inline') correctly refuses it and WebKit logs this line. It is caused by the test tool,
  * never by the app, so it is ignored only while a screenshot is being taken. Tests that take no
- * screenshot still prove the app itself triggers no CSP violation.
+ * screenshot still prove the app itself triggers no CSP violation. Matched as the exact full line, so any other
+ * CSP report (an inline style the app itself set, a diagram's stylesheet) is never hidden by it.
  */
-const TOOL_CSP_NOISE =
-  "Refused to apply a stylesheet because its hash, its nonce, or 'unsafe-inline' does not appear in the style-src directive";
+export const TOOL_CSP_NOISE =
+  "Refused to apply a stylesheet because its hash, its nonce, or 'unsafe-inline' does not appear in the style-src directive of the Content Security Policy.";
 
 /**
  * Origins of third-party embeds whose own documents log to the console: the YouTube IFrame player probes
@@ -63,7 +64,7 @@ export const test = base.extend<Fixtures>({
     let toolActive = 0;
     page.on("console", (msg) => {
       if (msg.type() !== "error") return;
-      if (toolActive > 0 && msg.text().startsWith(TOOL_CSP_NOISE)) return;
+      if (toolActive > 0 && msg.text() === TOOL_CSP_NOISE) return;
       if (fromThirdPartyEmbed(msg.location().url)) return;
       errors.push(`${msg.text()} @ ${msg.location().url}`);
     });

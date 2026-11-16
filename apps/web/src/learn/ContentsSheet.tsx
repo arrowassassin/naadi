@@ -1,5 +1,6 @@
 import type { ChapterDetail, ReadingPosition } from "@naadi/shared";
 import { Chip, cx } from "@naadi/ui";
+import { useUiText } from "../copy/useUiText";
 import { minutesLabel } from "./format";
 import { Sheet } from "./Sheet";
 
@@ -18,8 +19,9 @@ export function ContentsSheet({
   positions: Map<string, ReadingPosition>;
   onPick: (sectionId: string) => void;
 }) {
+  const t = useUiText();
   return (
-    <Sheet open={open} onClose={onClose} title="Contents">
+    <Sheet open={open} onClose={onClose} title={t("learn.contents")} closeLabel={t("learn.close")}>
       <p className="mt-0 mb-3 text-text-2 text-ui-sm">{detail.title}</p>
       <ol className="m-0 flex list-none flex-col p-0">
         {detail.sections.map((s, i) => {
@@ -39,16 +41,16 @@ export function ContentsSheet({
                 <span className="font-mono text-label-sm text-text-3">{String(i + 1).padStart(2, "0")}</span>
                 <span className="flex min-w-0 flex-col">
                   <span className={cx("truncate", current && "font-semibold")}>{s.heading}</span>
-                  <span className="text-text-3 text-ui-sm">{minutesLabel(s.reading_minutes)}</span>
+                  <span className="text-text-3 text-ui-sm">{minutesLabel(t, s.reading_minutes)}</span>
                 </span>
                 {current ? (
-                  <Chip tone="done">Reading</Chip>
+                  <Chip tone="done">{t("learn.contents_reading")}</Chip>
                 ) : p?.completed ? (
-                  <Chip tone="done">Read</Chip>
+                  <Chip tone="done">{t("learn.contents_read")}</Chip>
                 ) : p ? (
-                  <Chip tone="planned">Started</Chip>
+                  <Chip tone="planned">{t("learn.contents_started")}</Chip>
                 ) : (
-                  <span className="sr-only">Not started</span>
+                  <span className="sr-only">{t("learn.status_not_started")}</span>
                 )}
               </button>
             </li>
