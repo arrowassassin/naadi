@@ -28,6 +28,11 @@ uv run python scripts/seed.py --data ../../data --config ../../config --dry-run 
 uv run python scripts/seed.py --data ../../data --config ../../config --report /tmp/seed.json
 ```
 
+A local database with a remote Storage (or the reverse) is refused (exit 2) unless `--allow-split-target`,
+so a local run can never upload into the real project's bucket.
+Sources without complete license fields are skipped and listed under `license gate` in the report; they do
+not fail the run. Every other check, the counts included, must pass.
+
 Exit codes: 0 ok, 1 verification failed (report printed), 2 invalid bundle or configuration, 3 another
 import holds the lock.
 
@@ -55,9 +60,11 @@ One-off container alternative (same code path): `python -m naadi_api.seed --dry-
 
 ### Edits and the seed
 
-- `app_config`: an admin PUT sets `updated_by`; the seed never overwrites such a key without `force`.
+- `app_config`: an admin PUT sets `admin_edited_at` (and `updated_by`); the seed never overwrites such a key
+  without `force`, even if the admin's account is later deleted. A forced run clears the mark.
   Every change is in `app_config_history` (GET `/api/admin/config/{key}/history`).
-- Chapter sections: a non-seed revision (admin editor, assistant) protects the section. When the seed itself
+- Chapter sections: a non-seed revision (admin editor, assistant) sets `admin_edited_at` by trigger, which
+  protects the section. When the seed itself
   replaces a body, the previous body is stored as a `seed` revision in `chapter_section_revisions`.
 
 ## Sign-in check on the live Space (S03): `pnpm e2e:live-auth`

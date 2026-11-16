@@ -322,7 +322,7 @@ export type ConfigKeySummary = {
   /**
    * Public
    *
-   * Served to clients by GET /api/config/public
+   * Served to clients with GET /api/public-config
    */
   public: boolean;
   /**

@@ -553,7 +553,7 @@
             "type": "string"
           },
           "public": {
-            "description": "Served to clients by GET /api/config/public",
+            "description": "Served to clients with GET /api/public-config",
             "title": "Public",
             "type": "boolean"
           },

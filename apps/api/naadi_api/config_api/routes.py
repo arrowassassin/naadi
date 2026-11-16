@@ -29,7 +29,7 @@ router = APIRouter(prefix="/api")
 class ConfigKeySummary(BaseModel):
     key: str
     description: str
-    public: bool = Field(description="Served to clients by GET /api/config/public")
+    public: bool = Field(description="Served to clients with GET /api/public-config")
     source: str = Field(description="'db' when a valid row exists, else 'file' (config/*.yaml fallback)")
     source_file: str
     updated_at: dt.datetime | None

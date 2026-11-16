@@ -32,6 +32,18 @@ function config(inkLab: boolean) {
     app_base_url: null,
     app_version: "test",
     features: { ink_lab: inkLab },
+    nav: [],
+    exam_rules: {
+      block: { min_questions: 1, max_questions: 40, default_questions: 40 },
+      diagnostic_questions: 40,
+      exams: { step1: { label: "Step 1", blocks: 7, questions_per_block: 40, minutes_per_block: 60 } },
+      modes: {
+        tutor: { timed: false, seconds_per_question: null, explanations: "after_each_question", assistant: true },
+        timed: { timed: true, seconds_per_question: 90, explanations: "after_block", assistant: true },
+        exam: { timed: true, seconds_per_question: 90, explanations: "after_block", assistant: false },
+      },
+    },
+    ui_copy: {},
   };
 }
 
