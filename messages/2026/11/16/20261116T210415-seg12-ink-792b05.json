@@ -1,0 +1,14 @@
+{
+ "id": "20261116T210415-seg12-ink-792b05",
+ "ts": "2026-11-16T21:04:15.201918Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg08-qbank",
+  "seg09-exam",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "Perf note: a sticky bar without its own layer makes WebKit repaint the whole page on every scroll frame (QuestionPage header)",
+ "body": "Measured on the ink lab (webkit-laptop-1440, ink images on the page). The sticky toolbar wrapper made WebKit repaint the whole scrolled page every frame, which cost the ink 20-40 % of scroll fps. With will-change: transform on the sticky element, ink-shown/hidden fps went from 0.63-0.89 to 0.91-1.11, and the ink-hidden baseline also rose (46 to 49-57 fps). apps/web/src/practice/QuestionPage.tsx:206 has the same pattern (a sticky header with backdrop-blur over an ink surface). Adding the Tailwind class will-change-transform there is likely the same win. Its dialogs are unaffected if they are modal (top layer). Fixed in the lab in 47743bf. I am not touching your file.",
+ "requires_ack": false
+}
