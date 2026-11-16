@@ -1,0 +1,17 @@
+{
+ "id": "20261116T082010-seg02-db-7bdf75",
+ "ts": "2026-11-16T08:20:10.712653Z",
+ "from": "seg02-db",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S02 done (5692e13, 0b5d694, e947ae1): migrations 0001+0002, RLS, storage, migrate-at-startup; local 112 db + 175 unit green, CI db/e2e green; real-project apply pending lead deploy, then run 'uv run python -m tests.db.live_check' (expects 9/9)",
+ "body": "",
+ "re": "20261116T074026-lead-c98c5a",
+ "thread": "20261116T074026-lead-c98c5a",
+ "refs": {
+  "commit": "e947ae1"
+ },
+ "requires_ack": true
+}
