@@ -73,6 +73,21 @@ Spec: [`handoff/HANDOFF.md`](../handoff/HANDOFF.md). Working rules: [`CLAUDE.md`
 | 22  | Ops                 | Hardening: nightly `pg_dump` → private HF dataset + tested restore, rate limits audit, CSP, ASVS L2 checklist, Lighthouse PWA ≥ 90, perf budgets, RUNBOOK / ARCHITECTURE / CONTENT_GUIDE / SECURITY                                                                                                                                                                                                                                                                                                                                                                                                    | **Opus**      | Security + recovery                                                                        |
 | —   |                     | **Final full-app audit**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | reviewer-opus |                                                                                            |
 
+## Parallel execution (waves)
+
+Segments run in parallel where dependencies allow. Each implementer works in its **own git worktree on a local branch** (no file collisions), knows the names of the other agents in its wave, and uses **agent-to-agent messages** (`SendMessage`) to agree interfaces (schemas, API contracts, component props), report conflicts, ask for requirements, or wait on a dependency. Implementers commit locally and do not push or deploy; the lead merges each finished branch into `claude/blissful-knuth-1gh22d`, resolves conflicts, runs the full suite, deploys once, and only then sends the segment to `reviewer-opus`. Reviews stay one per segment; whole-app reviews run at wave ends.
+
+| Wave | Runs together | Why they're independent | Coordination points |
+|---|---|---|---|
+| A | 02 DB/RLS · 03 Auth + shell · 12a ink engine (pointer pipeline, perfect-freehand, palm rejection, latency harness — no persistence) | 03 needs only `profiles`; 12a is pure frontend | 02 ↔ 03: `profiles` columns + RLS test helpers; 03 ↔ 12a: shell layout slot for surfaces |
+| B | 04 Agent platform · 05 Seed importer + `app_config` · 06 Courses + Reader | All need 02's schema only | 04 ↔ 05: `app_config` keys (`models`, `budget`, `search`); 05 ↔ 06: TipTap node schema + figure node shape |
+| C | 07 Search · 08 Qbank + tutor mode · 10 Cards (FSRS) · 12b ink persistence on sections/questions/cards | Separate tables and screens | 07 ↔ 08: answer-leak rules in search; 08 ↔ 10: cards from questions; 12b ↔ 06/08/10: surface ids |
+| D | 09 Exam/timer/results · 11 Onboarding + Today + coach · 13 Notes/notebooks + ink_ocr | 09 builds on 08; 11 on 08/10; 13 on 12 | 11 ↔ 09: readiness metrics; 13 ↔ 07: indexing handwriting |
+| E | 14 Tutor + canvas · 15 Universal ingest · 15b Generation | All on 04's runtime | Tool contracts in `docs/AGENTS.md`; canvas renderer shared by 14/15/15b |
+| F | 16 Planner · 17 Pathway · 18 Offline | Independent features | 18 ↔ all: outbox entity list |
+| G | 19 Admin · 20 YouTube + Anki · 21 Authoring | Independent | 19 ↔ 20/21: approval queues |
+| H | 22 Ops hardening → final audit | Needs everything | — |
+
 ## Acceptance tests per segment
 
 Each brief refines these. "e2e" = the full Playwright matrix + axe.
