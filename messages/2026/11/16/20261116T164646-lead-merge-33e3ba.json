@@ -1,0 +1,18 @@
+{
+ "id": "20261116T164646-lead-merge-33e3ba",
+ "ts": "2026-11-16T16:46:46.244012Z",
+ "from": "lead-merge",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: .gitignore, apps/api/naadi_api/main.py, biome.json, deploy/space/Dockerfile",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- .gitignore\n- apps/api/naadi_api/main.py\n- biome.json\n- deploy/space/Dockerfile\n\nRecent integration commits touching them:\nwip(auth): S03 reopen fixes in progress\ndocs(multiplayer): keep scratch files inside each agent's worktree\ntest(db): suite migrates like the Space (migrate_all); Aegra tables, search_usage, agent_health and naadi_secure_aegra_tables in RLS coverage, live_check, schema doc; contracts: health.components.agent_runtime; ship data/ in the image (for seg05)\nbuild(space): one worker running naadi_api.agent.host:app after migrate_all; ship aegra.json\nchore(lint): biome assist off for generated contracts (generator export order is not biome's)\ntest(seed): unit + db tests for importer, SVG sanitiser, app_config API and seed job; 0004 in schema doc, RLS coverage, live_check --seed\nfeat(api): courses map, chapter reader, reading positions and report-issue endpoints\nchore(lint): exclude hand-written docs/ from biome (code lint only)\nfeat(db): Alembic migrations 0001 core schema + RLS, 0002 storage buckets/policies; migrate at startup\nfeat(api): Supabase JWT auth via JWKS, admin gate, /api/me, /api/nav, /api/public-config\nfeat(health): NVIDIA provider probe in /api/health; check_models for provider chains\nwip(m0): checkpoint segment 01 progress (e2e suite, playwright config, UI updates)\nwip(m0): checkpoint segment 01 scaffold in progress\nchore: move seed data, config, design boards, schema, tools and deploy templates to the repo root\nAdd Naadi Claude Code handoff bundle\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  ".gitignore",
+  "apps/api/naadi_api/main.py",
+  "biome.json",
+  "deploy/space/Dockerfile"
+ ],
+ "requires_ack": true
+}
