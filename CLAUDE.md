@@ -3,6 +3,7 @@
 Read `handoff/HANDOFF.md` first. It is the product and engineering spec; this file is the working agreement.
 
 ## Repo layout
+
 ```
 apps/web        Vite 8 + React 19 SPA/PWA (TanStack Router/Query, Tailwind 4, TipTap 3, perfect-freehand, ts-fsrs, Dexie)
 apps/api        Python 3.12 (free Gradio/ZeroGPU Space) or 3.13 (Docker/PRO); FastAPI-style + LangGraph (naadi_api/), Alembic migrations, scripts/seed.py
@@ -13,6 +14,7 @@ data/ config/   seed content and configs from the handoff bundle
 ```
 
 ## Rules
+
 - iPad Safari is the primary target. Test every UI change at iPad portrait and landscape and in Playwright WebKit before calling it done.
 - Follow the colour roles exactly: lime = next action (one per view), violet = assistant, paper = student. Status never relies on colour alone.
 - Pin exact versions (see HANDOFF §3). Upgrade deliberately in a dedicated PR with the changelog read.
@@ -26,6 +28,7 @@ data/ config/   seed content and configs from the handoff bundle
 - Keep the seed importer idempotent (upsert by id).
 
 ## Commands (set these up in M0)
+
 - `pnpm dev`: web on :5173, proxying `/api` to :7860
 - `uv run uvicorn naadi_api.main:app --reload --port 7860`: API
 - `pnpm test` · `pnpm e2e` (Playwright WebKit + Chromium) · `uv run pytest`

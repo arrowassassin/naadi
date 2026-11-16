@@ -1,0 +1,48 @@
+/* Global base styles built on the tokens. Import after tailwindcss and tokens.css. */
+
+@layer base {
+  html {
+    background: var(--color-ground);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-ground);
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    overflow-x: hidden;
+  }
+
+  a {
+    color: var(--color-lime);
+  }
+
+  a:hover {
+    color: var(--color-lime-hover);
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  ::selection {
+    background: var(--color-violet);
+    color: var(--color-violet-ink);
+  }
+}

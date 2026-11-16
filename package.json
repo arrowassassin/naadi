@@ -1,0 +1,26 @@
+{
+  "name": "naadi",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "pnpm": "12.21.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @naadi/web dev",
+    "dev:api": "uv --directory apps/api run uvicorn naadi_api.main:app --reload --port 7860",
+    "build": "pnpm --filter @naadi/web build",
+    "lint": "biome check . && uv --directory apps/api run ruff check . && uv --directory apps/api run ruff format --check .",
+    "format": "biome check --write . && uv --directory apps/api run ruff format .",
+    "typecheck": "pnpm -r --parallel typecheck && uv --directory apps/api run mypy",
+    "test": "pnpm -r test",
+    "e2e": "pnpm --filter @naadi/web e2e",
+    "gen:contracts": "uv --directory apps/api run python -m naadi_api.export_openapi ../../packages/shared/openapi.json && pnpm --filter @naadi/shared gen",
+    "gen:requirements": "uv --directory apps/api export --frozen --no-dev --no-emit-project --format requirements-txt -o requirements.txt"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.8",
+    "typescript": "7.0.2"
+  }
+}

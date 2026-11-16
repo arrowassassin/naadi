@@ -1,0 +1,48 @@
+"""Security headers applied to every response (API, static files, errors)."""
+
+from __future__ import annotations
+
+from .settings import Settings
+
+
+def content_security_policy(settings: Settings) -> str:
+    supa = settings.supabase_origin
+    connect = ["'self'"]
+    img = ["'self'", "data:", "blob:"]
+    if supa:
+        connect += [supa, supa.replace("https://", "wss://", 1)]
+        img.append(supa)  # Supabase Storage serves from the project origin (/storage/v1/...)
+    directives = [
+        "default-src 'self'",
+        "script-src 'self'",
+        "style-src 'self'",
+        "font-src 'self'",
+        f"img-src {' '.join(img)}",
+        f"connect-src {' '.join(connect)}",
+        "media-src 'self' blob:",
+        "worker-src 'self'",
+        "manifest-src 'self'",
+        "object-src 'none'",
+        "base-uri 'self'",
+        "form-action 'self'",
+        # HF renders Spaces inside an iframe on huggingface.co.
+        "frame-ancestors 'self' https://huggingface.co",
+    ]
+    if not settings.is_local:
+        directives.append("upgrade-insecure-requests")
+    return "; ".join(directives)
+
+
+PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"
+
+
+def security_headers(settings: Settings) -> list[tuple[bytes, bytes]]:
+    headers = {
+        "content-security-policy": content_security_policy(settings),
+        "strict-transport-security": "max-age=63072000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": PERMISSIONS_POLICY,
+        "cross-origin-opener-policy": "same-origin",
+    }
+    return [(k.encode("latin-1"), v.encode("latin-1")) for k, v in headers.items()]

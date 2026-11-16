@@ -1,0 +1,142 @@
+"""Runtime settings for the Naadi API.
+
+Precedence (docs/SECRETS.md): process environment first, then `.env` in the repo root as a local-dev
+fallback. Secrets are `SecretStr`, so they never show up in `repr()`, logs or responses.
+"""
+
+from __future__ import annotations
+
+from functools import lru_cache
+from pathlib import Path
+from typing import Literal
+from urllib.parse import urlparse
+
+from pydantic import AliasChoices, Field, SecretStr, field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+PACKAGE_DIR = Path(__file__).resolve().parent
+APP_DIR = PACKAGE_DIR.parent  # apps/api locally, /home/user/app in the container
+REPO_ROOT = APP_DIR.parent.parent  # only meaningful in a checkout
+
+
+def _first_existing(*candidates: Path) -> Path:
+    for c in candidates:
+        if c.exists():
+            return c
+    return candidates[0]
+
+
+def default_config_dir() -> Path:
+    """`./config` next to the app (container), else `<repo>/config` (checkout)."""
+    return _first_existing(APP_DIR / "config", REPO_ROOT / "config")
+
+
+def default_static_dir() -> Path:
+    return APP_DIR / "static"
+
+
+AppEnv = Literal["local", "staging", "prod"]
+LogLevel = Literal["DEBUG", "INFO", "WARNING", "ERROR"]
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=REPO_ROOT / ".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+        case_sensitive=False,
+        populate_by_name=True,
+    )
+
+    # ── App ──
+    app_env: AppEnv = "local"
+    app_base_url: str | None = None
+    log_level: LogLevel = "INFO"
+    app_version: str = Field(default="dev", validation_alias=AliasChoices("APP_VERSION", "NAADI_VERSION"))
+    static_dir: Path = Field(default_factory=default_static_dir, validation_alias="NAADI_STATIC_DIR")
+    config_dir: Path = Field(default_factory=default_config_dir, validation_alias="NAADI_CONFIG_DIR")
+
+    # ── Supabase ──
+    database_url: SecretStr | None = None
+    supabase_url: str | None = Field(default=None, validation_alias=AliasChoices("SUPABASE_URL", "VITE_SUPABASE_URL"))
+    supabase_anon_key: str | None = Field(
+        default=None, validation_alias=AliasChoices("SUPABASE_ANON_KEY", "VITE_SUPABASE_ANON_KEY")
+    )
+    supabase_service_role_key: SecretStr | None = None
+    supabase_jwt_secret: SecretStr | None = None
+
+    # ── AI ──
+    openrouter_api_key: SecretStr | None = None
+    openrouter_daily_cap: int = 50
+    openrouter_app_url: str | None = None
+    openrouter_app_title: str = "Naadi"
+    tavily_api_key: SecretStr | None = None
+
+    # ── Auth / admin (PII, so a secret) ──
+    admin_emails: SecretStr | None = None
+    google_oauth_configured: bool = False
+
+    @field_validator("log_level", mode="before")
+    @classmethod
+    def _upper(cls, v: object) -> object:
+        return v.upper() if isinstance(v, str) else v
+
+    @field_validator(
+        "database_url",
+        "supabase_url",
+        "supabase_anon_key",
+        "supabase_service_role_key",
+        "supabase_jwt_secret",
+        "openrouter_api_key",
+        "openrouter_app_url",
+        "tavily_api_key",
+        "admin_emails",
+        "app_base_url",
+        mode="before",
+    )
+    @classmethod
+    def _empty_is_none(cls, v: object) -> object:
+        return None if isinstance(v, str) and not v.strip() else v
+
+    @field_validator("supabase_url")
+    @classmethod
+    def _strip_slash(cls, v: str | None) -> str | None:
+        return v.rstrip("/") if v else v
+
+    @property
+    def supabase_origin(self) -> str | None:
+        """`https://<ref>.supabase.co` (scheme + host only), used by the CSP."""
+        if not self.supabase_url:
+            return None
+        u = urlparse(self.supabase_url)
+        if u.scheme != "https" or not u.hostname:
+            return None
+        return f"https://{u.netloc}"
+
+    @property
+    def is_local(self) -> bool:
+        return self.app_env == "local"
+
+    def secret_values(self) -> list[str]:
+        """Every secret value (and the DB password), so error details can be scrubbed."""
+        out: list[str] = []
+        for s in (
+            self.database_url,
+            self.supabase_service_role_key,
+            self.supabase_jwt_secret,
+            self.openrouter_api_key,
+            self.tavily_api_key,
+            self.admin_emails,
+        ):
+            if s is not None:
+                out.append(s.get_secret_value())
+        if self.database_url is not None:
+            pw = urlparse(self.database_url.get_secret_value()).password
+            if pw:
+                out.append(pw)
+        return [v for v in out if len(v) >= 4]
+
+
+@lru_cache(maxsize=1)
+def get_settings() -> Settings:
+    return Settings()

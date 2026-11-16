@@ -11,7 +11,7 @@ The cloud build runs Playwright WebKit, Chromium and Firefox at the device viewp
 - [ ] **Orientation:** rotate portrait ↔ landscape on every screen touched this milestone. No clipped or overlapping content.
 - [ ] **Split View ⅓ and ½, plus Stage Manager:** layout reflows to the phone or tablet layout with no horizontal scroll.
 - [ ] **Hardware keyboard:** ⌘K opens search; focus ring is visible (3 px violet); Tab order is logical.
-- [ ] **Sign-in:** Google and magic link both work in Safari *and* in the installed PWA (the magic link returns to the app).
+- [ ] **Sign-in:** Google and magic link both work in Safari _and_ in the installed PWA (the magic link returns to the app).
 - [ ] **Cold start:** open after the Space has slept. A loading state shows, not a blank page or a Gradio error.
 - [ ] **iPhone:** bottom tab bar; the assistant opens full screen; every feature from this milestone is reachable.
 - [ ] **Laptop:** mouse and keyboard only; every feature works.

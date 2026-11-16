@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "@naadi/ui/tokens.css";
+@import "@naadi/ui/fonts.css";
+@import "@naadi/ui/base.css";
+
+/* Tailwind does not scan node_modules; the shared components live in a workspace package. */
+@source "../../../packages/ui/src";
