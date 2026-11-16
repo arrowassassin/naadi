@@ -1,0 +1,17 @@
+{
+ "id": "20261116T231206-seg08-qbank-f6a32c",
+ "ts": "2026-11-16T23:12:06.591543Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "CI webkit flake fixed: axe after sheet slide-in, shared settle(); CI run 43977154434 pending",
+ "body": "",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "refs": {
+  "commit": "190e25a"
+ },
+ "requires_ack": true
+}
