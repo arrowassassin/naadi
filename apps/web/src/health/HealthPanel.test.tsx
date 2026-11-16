@@ -20,7 +20,11 @@ healthy.status = "ok";
   cached: false,
   quota: null,
   free_tier: null,
+  configured: true,
+  models: null,
 };
+
+const cardsOf = () => Array.from(document.querySelectorAll<HTMLElement>("[data-component]"));
 
 function jsonResponse(status: number, body: unknown, requestId = "req-test-000001") {
   return new Response(JSON.stringify(body), {
@@ -64,9 +68,10 @@ describe("HealthPanel", () => {
   it("renders every component with a status word when healthy", async () => {
     fetchMock.mockResolvedValue(jsonResponse(200, healthy));
     renderPanel();
-    const cards = await screen.findAllByRole("listitem");
-    expect(cards).toHaveLength(4);
-    for (const name of ["Database", "Storage", "OpenRouter", "Tavily"]) {
+    await screen.findByRole("heading", { name: "Database" });
+    const cards = cardsOf();
+    expect(cards).toHaveLength(5);
+    for (const name of ["Database", "Storage", "Tavily", "OpenRouter", "NVIDIA"]) {
       expect(screen.getByRole("heading", { name })).toBeInTheDocument();
     }
     expect(screen.getByText("Overall status:")).toBeInTheDocument();
@@ -75,8 +80,8 @@ describe("HealthPanel", () => {
     expect(db.getByText("select 1 succeeded")).toBeInTheDocument();
     const para = (re: RegExp) => (_: string, el: Element | null) =>
       el?.tagName === "P" && re.test(el.textContent ?? "");
-    expect(screen.getByText(para(/^0 of 50 requests used today$/))).toBeInTheDocument();
-    expect(screen.getByText(para(/^0 of 950 credits used this month \(provider limit 1000\)$/))).toBeInTheDocument();
+    expect(screen.getByText(para(/^12 of 50 requests used today$/))).toBeInTheDocument();
+    expect(screen.getByText(para(/^2 of 950 credits used this month \(provider limit 1000\)$/))).toBeInTheDocument();
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     const sent = fetchMock.mock.calls[0]?.[0] as Request;
     const url = new URL(sent.url);
@@ -108,7 +113,49 @@ describe("HealthPanel", () => {
     fetchMock.mockResolvedValueOnce(jsonResponse(200, healthy));
     await userEvent.click(within(alert).getByRole("button", { name: "Try again" }));
     await waitFor(() => expect(screen.queryByRole("alert")).not.toBeInTheDocument());
-    expect(await screen.findAllByRole("listitem")).toHaveLength(4);
+    await screen.findByRole("heading", { name: "NVIDIA" });
+    expect(cardsOf()).toHaveLength(5);
+  });
+
+  it("lists each NVIDIA model probe with a word, not only a colour", async () => {
+    const report = structuredClone(healthy);
+    const nvidia = (report.components as Record<string, Json>).nvidia as Json;
+    const models = nvidia.models as Json[];
+    (models[1] as Json).ok = false;
+    (models[1] as Json).detail = "HTTP 410 (retired)";
+    nvidia.status = "degraded";
+    nvidia.detail = "3 of 4 configured models answer. Failing: vendor-b/chat-model-2 HTTP 410 (retired)";
+    fetchMock.mockResolvedValue(jsonResponse(200, report));
+    renderPanel();
+    const card = within((await screen.findByRole("heading", { name: "NVIDIA" })).closest("li") as HTMLElement);
+    const list = within(card.getByRole("list", { name: "Configured models" }));
+    expect(list.getAllByRole("listitem")).toHaveLength(4);
+    expect(list.getByText("vendor-b/chat-model-2").closest("li")).toHaveTextContent("Fails: HTTP 410 (retired)");
+    expect(list.getByText("vendor-a/chat-model-1").closest("li")).toHaveTextContent(/Answers · \d+ ms/);
+    expect(card.getByText("Degraded")).toBeInTheDocument();
+  });
+
+  it("shows an unconfigured NVIDIA key as degraded with the variable name", async () => {
+    const report = structuredClone(healthy);
+    (report.components as Record<string, Json>).nvidia = {
+      status: "degraded",
+      latency_ms: null,
+      detail: "Not configured: NVIDIA_API_KEY is not set on this deployment",
+      checked_at: "2026-11-16T05:51:11.430770Z",
+      cached: false,
+      quota: null,
+      free_tier: null,
+      configured: false,
+      models: null,
+    };
+    report.status = "degraded";
+    fetchMock.mockResolvedValue(jsonResponse(200, report));
+    renderPanel();
+    const card = within((await screen.findByRole("heading", { name: "NVIDIA" })).closest("li") as HTMLElement);
+    expect(card.getByText("Degraded")).toBeInTheDocument();
+    expect(card.getByText(/NVIDIA_API_KEY is not set/)).toBeInTheDocument();
+    expect(card.getByText("n/a")).toBeInTheDocument();
+    expect(card.queryByRole("list", { name: "Configured models" })).not.toBeInTheDocument();
   });
 
   it("explains a network failure", async () => {
@@ -126,14 +173,14 @@ describe("HealthPanel", () => {
   it("shows the offline banner and keeps the last result", async () => {
     fetchMock.mockResolvedValue(jsonResponse(200, healthy));
     renderPanel();
-    await screen.findAllByRole("listitem");
+    await screen.findByRole("heading", { name: "Database" });
     Object.defineProperty(navigator, "onLine", { configurable: true, get: () => false });
     act(() => {
       window.dispatchEvent(new Event("offline"));
     });
     const banner = await screen.findByText("Offline");
     expect(banner.closest('[role="status"]')).toHaveTextContent("Showing the last result from");
-    expect(screen.getAllByRole("listitem")).toHaveLength(4);
+    expect(cardsOf()).toHaveLength(5);
     expect(screen.getByRole("button", { name: /Check again/ })).toBeDisabled();
   });
 });

@@ -82,6 +82,7 @@ class Settings(BaseSettings):
     openrouter_daily_cap: int = 50
     openrouter_app_url: str | None = None
     openrouter_app_title: str = "Naadi"
+    nvidia_api_key: SecretStr | None = None
     tavily_api_key: SecretStr | None = None
 
     # ── Auth / admin (PII, so a secret) ──
@@ -101,6 +102,7 @@ class Settings(BaseSettings):
         "supabase_jwt_secret",
         "openrouter_api_key",
         "openrouter_app_url",
+        "nvidia_api_key",
         "tavily_api_key",
         "admin_emails",
         "app_base_url",
@@ -137,6 +139,7 @@ class Settings(BaseSettings):
             self.supabase_service_role_key,
             self.supabase_jwt_secret,
             self.openrouter_api_key,
+            self.nvidia_api_key,
             self.tavily_api_key,
             self.admin_emails,
         ):

@@ -49,6 +49,7 @@ SECRET_ENV = (
     "SUPABASE_JWT_SECRET",
     "SUPABASE_ACCESS_TOKEN",
     "OPENROUTER_API_KEY",
+    "NVIDIA_API_KEY",
     "TAVILY_API_KEY",
     "ADMIN_EMAILS",
     "YOUTUBE_API_KEY",
@@ -64,7 +65,7 @@ def die(msg: str) -> None:
 
 
 def git(*args: str) -> str:
-    return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True, text=True).stdout
+    return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True, text=True).stdout  # noqa: S603,S607 - fixed argv
 
 
 def tracked_files() -> list[str]:
@@ -131,7 +132,7 @@ def print_logs(space: str, build: bool) -> None:
     if not hf:
         return
     cmd = [hf, "spaces", "logs", space, "--tail", "120"] + (["--build"] if build else [])
-    subprocess.run(cmd, check=False, timeout=60)
+    subprocess.run(cmd, check=False, timeout=60)  # noqa: S603 - fixed argv, resolved binary
 
 
 def wait_running(api: HfApi, space: str, commit: str, timeout_s: int) -> None:
@@ -189,7 +190,8 @@ def smoke(host: str, token: str, timeout_s: int = 300) -> None:
         r = http.get(f"{host}/")
         ok = r.status_code == 200 and '<div id="root">' in r.text
         csp = r.headers.get("content-security-policy", "")
-        print(f"  /: HTTP {r.status_code}, SPA shell {'found' if ok else 'missing'}, CSP {'present' if csp else 'MISSING'}")
+        shell = "found" if ok else "missing"
+        print(f"  /: HTTP {r.status_code}, SPA shell {shell}, CSP {'present' if csp else 'MISSING'}")
         if not ok or "frame-ancestors" not in csp:
             die("live / did not serve the SPA with its CSP")
         ready = http.get(f"{host}/api/ready")

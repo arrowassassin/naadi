@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Literal
 
 import yaml
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+ProviderName = Literal["nvidia", "openrouter"]
 
 
 class _Loose(BaseModel):
@@ -27,9 +30,45 @@ class SearchConfig(_Loose):
     cache_ttl_days: int
 
 
+class ProviderConfig(_Loose):
+    key_env: str
+    rpm: int = Field(gt=0)
+
+
+class ChainEntry(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    provider: ProviderName
+    model: str = Field(min_length=3)
+
+
+class RoleConfig(_Loose):
+    """An LLM role has an ordered `chain`; non-LLM roles (embeddings, speech_to_text) have none."""
+
+    chain: list[ChainEntry] | None = None
+
+
 class ModelsConfig(_Loose):
     budget: BudgetConfig
     search: SearchConfig
+    providers: dict[ProviderName, ProviderConfig]
+    roles: dict[str, RoleConfig]
+
+    @model_validator(mode="after")
+    def _chains_use_known_providers(self) -> ModelsConfig:
+        for role, spec in self.roles.items():
+            for entry in spec.chain or []:
+                if entry.provider not in self.providers:
+                    raise ValueError(f"roles.{role}: provider {entry.provider!r} is not under `providers:`")
+        return self
+
+    def models_for(self, provider: ProviderName) -> list[str]:
+        """Distinct model IDs that any role chain routes to `provider`, in first-use order."""
+        seen: dict[str, None] = {}
+        for spec in self.roles.values():
+            for entry in spec.chain or []:
+                if entry.provider == provider:
+                    seen.setdefault(entry.model, None)
+        return list(seen)
 
 
 class ConfigError(RuntimeError):

@@ -33,7 +33,7 @@ export type Options<
 };
 
 /**
- * System health: database, storage, OpenRouter quota, Tavily credits
+ * System health: database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits
  */
 export const getHealth = <ThrowOnError extends boolean = false>(
   options?: Options<GetHealthData, ThrowOnError>,

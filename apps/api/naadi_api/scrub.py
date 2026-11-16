@@ -7,7 +7,7 @@ from collections.abc import Iterable
 
 _PG_PASSWORD = re.compile(r"(postgres(?:ql)?://[^:/@\s]+:)[^@\s]+@")
 _BEARER = re.compile(r"(Bearer\s+)[A-Za-z0-9._~+/=\-]+", re.IGNORECASE)
-_KEYLIKE = re.compile(r"\b(sk-or-v1-|tvly-|hf_|sbp_|eyJ)[A-Za-z0-9._\-]{8,}")
+_KEYLIKE = re.compile(r"\b(sk-or-v1-|tvly-|hf_|sbp_|nvapi-|eyJ)[A-Za-z0-9._\-]{8,}")
 _EMAIL = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 
 

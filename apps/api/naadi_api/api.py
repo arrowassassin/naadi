@@ -16,7 +16,7 @@ router = APIRouter(prefix="/api")
 @router.get(
     "/health",
     operation_id="getHealth",
-    summary="System health: database, storage, OpenRouter quota, Tavily credits",
+    summary="System health: database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits",
     response_model=HealthResponse,
     responses={503: {"model": HealthResponse, "description": "The database is down"}, 500: {"model": ErrorResponse}},
     tags=["system"],

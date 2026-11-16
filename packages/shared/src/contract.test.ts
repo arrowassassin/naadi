@@ -16,7 +16,7 @@ const healthy = {
   version: "abc1234",
   environment: "prod",
   checked_at: "2026-11-16T02:48:37.150000Z",
-  components: { database: component, storage: component, openrouter: component, tavily: component },
+  components: { database: component, storage: component, openrouter: component, nvidia: component, tavily: component },
 };
 
 function respond(status: number, body: unknown) {
@@ -46,6 +46,26 @@ describe("generated client", () => {
     const res = await getHealth();
     expect(res.data).toBeUndefined();
     expect((res.error as unknown as Error).name).toBe("ZodError");
+  });
+
+  it("accepts NVIDIA model probes and rejects a malformed one", async () => {
+    const probe = {
+      provider: "nvidia",
+      model: "vendor-a/chat-model-1",
+      ok: true,
+      latency_ms: 410.2,
+      detail: "answers",
+    };
+    const nvidia = { ...component, models: [probe], configured: true };
+    respond(200, { ...healthy, components: { ...healthy.components, nvidia } });
+    const ok = await getHealth();
+    expect(ok.data?.components.nvidia.models?.[0]?.ok).toBe(true);
+    respond(200, {
+      ...healthy,
+      components: { ...healthy.components, nvidia: { ...nvidia, models: [{ ...probe, ok: "yes" }] } },
+    });
+    const bad = await getHealth();
+    expect((bad.error as unknown as Error).name).toBe("ZodError");
   });
 
   it("rejects a response missing a component", async () => {

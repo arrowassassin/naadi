@@ -1,7 +1,7 @@
 import type { Route } from "@playwright/test";
 import { expect, expectNoAxeViolations, expectNoHorizontalOverflow, healthPanel, snap, test } from "./fixtures";
 
-const COMPONENTS = ["database", "storage", "openrouter", "tavily"] as const;
+const COMPONENTS = ["database", "storage", "tavily", "openrouter", "nvidia"] as const;
 // The chip reads "<Component> status: <Word>" to assistive tech; the visible word is the last token.
 const STATUS_WORDS = /status: (OK|Degraded|Down)$/;
 
@@ -102,6 +102,16 @@ test.describe("health panel", () => {
       await expect(card.locator("[data-tone]")).toHaveText(STATUS_WORDS);
       await expect(card).toContainText(body.components[name].detail);
     }
+    const probes = body.components.nvidia.models ?? [];
+    const modelList = panel.locator('[data-component="nvidia"]').getByRole("list", { name: "Configured models" });
+    if (probes.length > 0) {
+      await expect(modelList.getByRole("listitem")).toHaveCount(probes.length);
+      for (const p of probes) {
+        await expect(modelList.locator(`[data-model="${p.model}"]`)).toContainText(p.ok ? "Answers" : "Fails:");
+      }
+    } else {
+      await expect(modelList).toHaveCount(0);
+    }
     if (process.env.E2E_EXPECT_DB_OK) {
       await expect(panel.locator('[data-component="database"]')).toHaveAttribute("data-status", "ok");
     }
@@ -137,7 +147,7 @@ test.describe("health panel", () => {
     release();
     const status = (await done).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
-    await expect(panel.locator("[data-component]")).toHaveCount(4);
+    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
   });
 
   test("error shows a message and retry recovers", async ({ page, consoleErrors }, testInfo) => {
@@ -170,7 +180,7 @@ test.describe("health panel", () => {
     await alert.getByRole("button", { name: "Try again" }).click();
     const status = (await retried).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
-    await expect(healthPanel(page).locator("[data-component]")).toHaveCount(4);
+    await expect(healthPanel(page).locator("[data-component]")).toHaveCount(COMPONENTS.length);
   });
 
   test("offline shows the banner and keeps the last result", async ({ page, context, consoleErrors }, testInfo) => {
@@ -179,13 +189,13 @@ test.describe("health panel", () => {
     const status = (await healthResponse).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     const panel = healthPanel(page);
-    await expect(panel.locator("[data-component]")).toHaveCount(4);
+    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
 
     await context.setOffline(true);
     const banner = panel.getByRole("status").filter({ hasText: "Offline" });
     await expect(banner).toBeVisible();
     await expect(banner).toContainText("Showing the last result from");
-    await expect(panel.locator("[data-component]")).toHaveCount(4);
+    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
     await expect(panel.getByRole("button", { name: /Check again/ })).toBeDisabled();
     await expectNoHorizontalOverflow(page);
     await expectNoAxeViolations(page);

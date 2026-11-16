@@ -12,7 +12,7 @@ from . import api
 from .config import load_models_config
 from .db import Database
 from .errors import install_error_handlers
-from .health.checks import database_check, openrouter_check, storage_check, tavily_check
+from .health.checks import database_check, nvidia_check, openrouter_check, storage_check, tavily_check
 from .health.service import Check, HealthService
 from .logs import configure_logging, get_logger
 from .middleware import RequestContextMiddleware
@@ -20,6 +20,7 @@ from .settings import Settings, get_settings
 from .spa import install_spa
 
 log = get_logger("naadi.app")
+NVIDIA_PROBE_TTL_S = 3600.0
 
 
 def package_version() -> str:
@@ -36,6 +37,14 @@ def default_health_service(settings: Settings, db: Database) -> HealthService:
             "database": Check("database", database_check(db), ttl_s=5.0),
             "storage": Check("storage", storage_check(settings), ttl_s=60.0),
             "openrouter": Check("openrouter", openrouter_check(settings), ttl_s=60.0),
+            # Real model calls: cached for an hour whatever the result, so /api/health cannot burn quota.
+            "nvidia": Check(
+                "nvidia",
+                nvidia_check(settings, models.models_for("nvidia")),
+                ttl_s=NVIDIA_PROBE_TTL_S,
+                timeout_s=20.0,
+                failure_ttl_s=NVIDIA_PROBE_TTL_S,
+            ),
             "tavily": Check("tavily", tavily_check(settings, models.search.monthly_credit_guard), ttl_s=300.0),
         },
         version=settings.app_version,

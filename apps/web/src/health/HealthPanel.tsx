@@ -1,4 +1,4 @@
-import type { ComponentHealth, HealthResponse, Quota } from "@naadi/shared";
+import type { ComponentHealth, HealthResponse, ModelProbe, Quota } from "@naadi/shared";
 import { Button, Chip, type ChipTone, ErrorState, OfflineBanner, Skeleton, Tile, TileLabel } from "@naadi/ui";
 import { AlertTriangle, Check, RefreshCw, X } from "lucide-react";
 import type { ReactNode } from "react";
@@ -8,11 +8,14 @@ import { useOnlineStatus } from "./useOnlineStatus";
 type Status = HealthResponse["status"];
 type ComponentName = keyof HealthResponse["components"];
 
-const COMPONENTS: Array<{ key: ComponentName; name: string; what: string }> = [
+/** Display order: infrastructure first, then the two LLM providers side by side (NVIDIA spans two columns
+ * from tablet up so its per-model list has room and the grid stays full). */
+const COMPONENTS: Array<{ key: ComponentName; name: string; what: string; wide?: boolean }> = [
   { key: "database", name: "Database", what: "Postgres select 1" },
   { key: "storage", name: "Storage", what: "Supabase Storage buckets" },
-  { key: "openrouter", name: "OpenRouter", what: "Free-model daily quota" },
   { key: "tavily", name: "Tavily", what: "Web-search credits" },
+  { key: "openrouter", name: "OpenRouter", what: "Free-model daily quota" },
+  { key: "nvidia", name: "NVIDIA", what: "Model probes, hourly", wide: true },
 ];
 
 const STATUS_WORD: Record<Status, string> = { ok: "OK", degraded: "Degraded", down: "Down" };
@@ -22,6 +25,8 @@ const STATUS_ICON: Record<Status, ReactNode> = {
   degraded: <AlertTriangle size={14} strokeWidth={2.4} />,
   down: <X size={14} strokeWidth={2.8} />,
 };
+
+const GRID = "m-0 grid list-none grid-cols-1 gap-3 p-0 tablet:grid-cols-2 laptop:grid-cols-3";
 
 const timeFmt = new Intl.DateTimeFormat(undefined, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
@@ -65,10 +70,41 @@ function QuotaLine({ quota }: { quota: Quota }) {
   );
 }
 
-function ComponentCard({ name, what, c }: { name: string; what: string; c: ComponentHealth }) {
+function ModelList({ models }: { models: ModelProbe[] }) {
+  return (
+    <ul className="m-0 flex list-none flex-col gap-2 p-0" aria-label="Configured models">
+      {models.map((m) => (
+        <li
+          key={`${m.provider}:${m.model}`}
+          className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5"
+          data-model={m.model}
+          data-ok={m.ok}
+        >
+          <span className="min-w-0 font-mono text-label-sm break-all text-text-2">{m.model}</span>
+          <span
+            className={
+              m.ok
+                ? "inline-flex shrink-0 items-center gap-1 text-ui-sm text-text"
+                : "inline-flex shrink-0 items-center gap-1 text-ui-sm font-semibold text-amber"
+            }
+          >
+            {m.ok ? (
+              <Check size={13} strokeWidth={2.6} aria-hidden="true" />
+            ) : (
+              <X size={13} strokeWidth={2.8} aria-hidden="true" />
+            )}
+            {m.ok ? `Answers${m.latency_ms === null ? "" : ` · ${Math.round(m.latency_ms)} ms`}` : `Fails: ${m.detail}`}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ComponentCard({ name, what, c, wide }: { name: string; what: string; c: ComponentHealth; wide?: boolean }) {
   return (
     <li
-      className="flex min-w-0 flex-col gap-3 rounded-block border border-line-soft bg-surface-2 p-5"
+      className={`flex min-w-0 flex-col gap-3 rounded-block border border-line-soft bg-surface-2 p-5${wide ? " tablet:col-span-2" : ""}`}
       data-component={name.toLowerCase()}
       data-status={c.status}
     >
@@ -81,6 +117,7 @@ function ComponentCard({ name, what, c }: { name: string; what: string; c: Compo
       </div>
       <p className="m-0 text-ui-sm break-words text-text-2">{c.detail}</p>
       {c.quota ? <QuotaLine quota={c.quota} /> : null}
+      {c.models && c.models.length > 0 ? <ModelList models={c.models} /> : null}
       <dl className="m-0 mt-auto flex flex-wrap gap-x-4 gap-y-1 font-mono text-label-sm text-text-3">
         <div className="flex gap-1.5">
           <dt>Latency</dt>
@@ -100,9 +137,12 @@ function ComponentCard({ name, what, c }: { name: string; what: string; c: Compo
 
 function LoadingCards() {
   return (
-    <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 tablet:grid-cols-2 laptop:grid-cols-4" aria-hidden="true">
+    <ul className={GRID} aria-hidden="true">
       {COMPONENTS.map((c) => (
-        <li key={c.key} className="flex flex-col gap-3 rounded-block border border-line-soft bg-surface-2 p-5">
+        <li
+          key={c.key}
+          className={`flex flex-col gap-3 rounded-block border border-line-soft bg-surface-2 p-5${c.wide ? " tablet:col-span-2" : ""}`}
+        >
           <div className="flex items-center justify-between gap-3">
             <Skeleton className="h-5 w-28" />
             <Skeleton className="h-6 w-16 rounded-pill" />
@@ -135,9 +175,9 @@ export function HealthPanel() {
             requestId={result.requestId}
           />
         ) : null}
-        <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 tablet:grid-cols-2 laptop:grid-cols-4">
-          {COMPONENTS.map(({ key, name, what }) => (
-            <ComponentCard key={key} name={name} what={what} c={health.components[key]} />
+        <ul className={GRID}>
+          {COMPONENTS.map(({ key, name, what, wide }) => (
+            <ComponentCard key={key} name={name} what={what} wide={wide} c={health.components[key]} />
           ))}
         </ul>
         <p className="m-0 font-mono text-label-sm text-text-3">

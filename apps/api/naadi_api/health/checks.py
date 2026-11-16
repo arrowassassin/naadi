@@ -3,21 +3,26 @@
 - database:   `select 1` on the pool
 - storage:    supabase SDK `storage.list_buckets()` with the service role
 - openrouter: SDK `api_keys.get_current_key_metadata()` (key metadata is free; no completion is made)
+- nvidia:     one-token probe of each NVIDIA model in the role chains (`naadi_api.llm.probe_nvidia`); the
+              service caches it for an hour so the public endpoint cannot burn the NVIDIA quota
 - tavily:     GET https://api.tavily.com/usage (free; reports credits used this month)
 """
 
 from __future__ import annotations
 
-from collections.abc import Awaitable, Callable
+import asyncio
+from collections.abc import Awaitable, Callable, Sequence
 from dataclasses import dataclass
 
 import httpx
 from openrouter import OpenRouter
+from pydantic import SecretStr
 from supabase import AsyncClient, acreate_client
 
 from ..db import Database
+from ..llm import ProbeResult, probe_nvidia
 from ..settings import Settings
-from .models import Quota, Status
+from .models import ModelProbe, Quota, Status
 
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 
@@ -28,13 +33,22 @@ class CheckOutcome:
     detail: str
     quota: Quota | None = None
     free_tier: bool | None = None
+    models: list[ModelProbe] | None = None
 
 
 CheckFn = Callable[[], Awaitable[CheckOutcome]]
+NvidiaProbe = Callable[[str, SecretStr], Awaitable[ProbeResult]]
 
 
 class NotConfigured(Exception):
-    """Raised when the settings a check needs are absent; reported as `down` with the variable names."""
+    """Raised when the settings a check needs are absent; reported with the variable names.
+
+    `status` is `down` for components the app cannot work without, `degraded` for optional ones.
+    """
+
+    def __init__(self, message: str, status: Status = "down") -> None:
+        super().__init__(message)
+        self.status: Status = status
 
 
 def _int_or_none(v: object) -> int | None:
@@ -146,5 +160,31 @@ def tavily_check(
         if used >= guard:
             return CheckOutcome("degraded", f"Credit guard reached ({used} of {guard}); web search is paused", quota)
         return CheckOutcome("ok", "Key valid; web search available", quota)
+
+    return run
+
+
+def nvidia_check(settings: Settings, models: Sequence[str], probe: NvidiaProbe = probe_nvidia) -> CheckFn:
+    """Probe every NVIDIA model the role chains use. NVIDIA is optional (OpenRouter chains back it up),
+    so a missing key is `degraded`; some models failing is `degraded`; all failing is `down`."""
+
+    async def run() -> CheckOutcome:
+        if not models:
+            return CheckOutcome("ok", "No role chain routes to NVIDIA", models=[])
+        key = settings.nvidia_api_key
+        if key is None:
+            raise NotConfigured("NVIDIA_API_KEY is not set on this deployment", status="degraded")
+        results = await asyncio.gather(*(probe(m, key) for m in models))
+        probes = [
+            ModelProbe(provider=r.provider, model=r.model, ok=r.ok, latency_ms=r.latency_ms, detail=r.detail[:80])
+            for r in results
+        ]
+        failing = [p for p in probes if not p.ok]
+        n, ok = len(probes), len(probes) - len(failing)
+        if not failing:
+            return CheckOutcome("ok", f"All {n} configured model{'s' if n != 1 else ''} answer", models=probes)
+        listing = "; ".join(f"{p.model} {p.detail}" for p in failing)
+        status: Status = "down" if ok == 0 else "degraded"
+        return CheckOutcome(status, f"{ok} of {n} configured models answer. Failing: {listing}", models=probes)
 
     return run

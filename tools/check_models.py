@@ -1,32 +1,44 @@
 #!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.13"
-# dependencies = ["openrouter==1.3.179", "pyyaml==6.0.3"]
+# dependencies = ["openrouter==1.3.179", "pyyaml==6.0.3", "langchain-nvidia-ai-endpoints==1.5.0"]
 # ///
-"""Verify every OpenRouter model in config/models.yaml against the live catalog (official `openrouter` SDK).
+"""Verify every LLM role chain in config/models.yaml against its provider.
 
 Usage:
     uv run tools/check_models.py [--config config/models.yaml]
     (from apps/api:) uv run python ../../tools/check_models.py
 
-Checks, per role under `roles:` (other top-level blocks such as `generation:` are not OpenRouter models):
-  - `only_free_ids_in_chains`: every primary and fallback ID ends with `:free`, except the explicit free
-    router `openrouter/free`. A paid ID in a chain is billed at the paid price.
-  - the primary exists in the catalog and has the capability its role needs (tools / structured outputs /
-    image input). Missing fallbacks are reported but do not fail the run.
-  - every listed ID is actually priced at $0 (catches a `:free` variant that started charging).
-Roles served outside OpenRouter (local embeddings, speech-to-text chain) are listed and skipped.
+Each role under `roles:` with a `chain:` is an ordered list of `{provider, model}` (providers under
+`providers:`). Roles without a chain (local embeddings, speech-to-text) and the `generation:` block are
+not LLM chains and are listed as skipped.
 
-Exit code 1 if any rule fails. The model catalog is public, so no API key is needed; OPENROUTER_API_KEY is
-used when present (same catalog, higher rate limit).
+OpenRouter entries (public catalog via the official `openrouter` SDK, `models.list()`):
+  - `only_free_ids_in_chains` / `providers.openrouter.only_free_ids`: every ID ends with `:free`, except the
+    explicit free router `openrouter/free`. A paid ID in a chain is billed at the paid price.
+  - every listed ID is priced at $0 (catches a `:free` variant that started charging).
+  - the chain's first entry (the primary) exists and has the capability its role needs.
+NVIDIA entries (`langchain-nvidia-ai-endpoints` `ChatNVIDIA`):
+  - the catalog lists retired models, so each model is PROBED with a one-token call when NVIDIA_API_KEY is
+    set. Without the key (CI) the script says so explicitly: the deployed Space's /api/health probes them.
+  - the primary's capability comes from the SDK's model profile (`tool_calling`, `image_inputs`,
+    `structured_output`); a capability the profile does not declare counts as missing.
+Required capabilities: tutor -> tools, vision -> image input, structured -> structured output.
+Missing or incapable fallbacks are reported as warnings; llm.py skips them at run time.
+
+Exit code 1 if any rule fails. Prints model IDs and statuses only, never key material.
 """
 
 from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
-from dataclasses import dataclass
+import time
+import warnings
+from collections.abc import Callable
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -34,13 +46,15 @@ import yaml
 from openrouter import OpenRouter
 
 FREE_ROUTER = "openrouter/free"
-NOT_OPENROUTER_ROLES = {"embeddings", "speech_to_text"}
-NEEDS: dict[str, set[str]] = {
-    "tutor": {"tools"},
-    "structured": {"structured_outputs"},
-    "vision": {"image"},
-}
+PROVIDERS = ("nvidia", "openrouter")
+NEEDS: dict[str, str] = {"tutor": "tools", "vision": "image", "structured": "structured_output"}
+# How each provider spells a capability: OpenRouter supported_parameters / input_modalities,
+# ChatNVIDIA model profile keys.
+OPENROUTER_CAP = {"tools": "tools", "image": "image", "structured_output": "structured_outputs"}
+NVIDIA_PROFILE_CAP = {"tools": "tool_calling", "image": "image_inputs", "structured_output": "structured_output"}
+NOT_PROBED_IN_CI = "not probed in CI; probed by the Space health check"
 ROOT = Path(__file__).resolve().parent.parent
+_HTTP_STATUS = re.compile(r"\[(\d{3})\]")
 
 
 @dataclass
@@ -50,6 +64,20 @@ class CatalogModel:
     capabilities: set[str]
     prompt_price: float
     completion_price: float
+
+
+@dataclass
+class NvidiaModel:
+    id: str
+    capabilities: set[str]  # normalized names from NEEDS values
+    probe: str | None  # None = answers; else why it failed; NOT_PROBED_IN_CI when there is no key
+    latency_ms: float | None = None
+
+
+@dataclass
+class Report:
+    failures: list[str] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
 
 
 def is_free_id(model_id: str) -> bool:
@@ -63,7 +91,7 @@ def _price(v: Any) -> float:
         return float("inf")
 
 
-def fetch_catalog(api_key: str | None) -> dict[str, CatalogModel]:
+def fetch_openrouter_catalog(api_key: str | None) -> dict[str, CatalogModel]:
     out: dict[str, CatalogModel] = {}
     with OpenRouter(api_key=api_key, timeout_ms=60_000) as client:
         page = client.models.list(limit=500)
@@ -82,43 +110,149 @@ def fetch_catalog(api_key: str | None) -> dict[str, CatalogModel]:
     return out
 
 
-def check(config: dict[str, Any], catalog: dict[str, CatalogModel]) -> list[str]:
-    """Return the list of failures (empty = pass). Prints a line per model."""
-    failures: list[str] = []
-    only_free = bool((config.get("budget") or {}).get("only_free_ids_in_chains", False))
-    roles = config.get("roles") or {}
-    if not roles:
-        return ["config has no `roles:` block"]
-    for role, spec in roles.items():
-        if role in NOT_OPENROUTER_ROLES:
-            print(f"{role:14s} skipped (served outside OpenRouter)")
+def _nvidia_client(model: str, api_key: str | None) -> Any:
+    from langchain_nvidia_ai_endpoints import ChatNVIDIA
+
+    with warnings.catch_warnings():
+        # Without a key the SDK warns that hosted NIMs need one; we only read the profile then.
+        warnings.simplefilter("ignore", UserWarning)
+        return ChatNVIDIA(
+            model=model,
+            api_key=api_key,
+            max_completion_tokens=1,
+            temperature=0,
+            timeout=20,
+            usage_telemetry_enabled=False,
+        )
+
+
+def _describe(exc: BaseException) -> str:
+    m = _HTTP_STATUS.search(str(exc))
+    return f"HTTP {m.group(1)}" if m else type(exc).__name__
+
+
+def inspect_nvidia(models: list[str], api_key: str | None) -> dict[str, NvidiaModel]:
+    """Read each model's SDK profile; probe it with a one-token call when a key is available."""
+    out: dict[str, NvidiaModel] = {}
+    for mid in models:
+        client = _nvidia_client(mid, api_key)
+        profile = dict(client.profile or {})
+        caps = {need for need, key in NVIDIA_PROFILE_CAP.items() if profile.get(key) is True}
+        if not api_key:
+            out[mid] = NvidiaModel(mid, caps, NOT_PROBED_IN_CI)
             continue
-        primary = spec.get("model")
-        if not primary:
-            failures.append(f"{role}: no primary `model`")
+        started = time.perf_counter()
+        try:
+            client.invoke("Reply with OK.")
+            probe: str | None = None
+        except Exception as exc:  # noqa: BLE001 - any failure means the model cannot be used
+            probe = _describe(exc)
+        out[mid] = NvidiaModel(mid, caps, probe, round((time.perf_counter() - started) * 1000, 1))
+    return out
+
+
+def chains(config: dict[str, Any]) -> tuple[dict[str, list[dict[str, str]]], list[str], list[str]]:
+    """Return (role -> chain, roles without a chain, shape errors)."""
+    out: dict[str, list[dict[str, str]]] = {}
+    skipped: list[str] = []
+    errors: list[str] = []
+    providers = config.get("providers") or {}
+    for p in providers:
+        if p not in PROVIDERS:
+            errors.append(f"providers.{p}: unknown provider (known: {', '.join(PROVIDERS)})")
+    for role, spec in (config.get("roles") or {}).items():
+        chain = (spec or {}).get("chain")
+        if chain is None:
+            if "model" in (spec or {}) and "engine" not in (spec or {}):
+                errors.append(f"{role}: has `model` but no `chain:` (old config shape)")
+            else:
+                skipped.append(role)
             continue
-        chain = [primary, *(spec.get("fallbacks") or [])]
-        for i, mid in enumerate(chain):
-            tag = "primary " if i == 0 else "fallback"
-            if only_free and not is_free_id(mid):
-                failures.append(f"{role}: {mid} is not a :free ID (only_free_ids_in_chains)")
-                print(f"{role:14s} {tag} {mid:48s} NOT FREE")
+        if not isinstance(chain, list) or not chain:
+            errors.append(f"{role}: `chain` must be a non-empty list")
+            continue
+        entries: list[dict[str, str]] = []
+        for i, e in enumerate(chain):
+            if not isinstance(e, dict) or not e.get("provider") or not e.get("model"):
+                errors.append(f"{role}: chain[{i}] needs `provider` and `model`")
                 continue
-            m = catalog.get(mid)
-            if m is None:
-                print(f"{role:14s} {tag} {mid:48s} MISSING from catalog")
-                if i == 0:
-                    failures.append(f"{role}: primary {mid} is missing from the OpenRouter catalog")
+            if e["provider"] not in providers:
+                errors.append(f"{role}: chain[{i}] provider {e['provider']!r} is not under `providers:`")
                 continue
-            if mid != FREE_ROUTER and (m.prompt_price > 0 or m.completion_price > 0):
-                failures.append(f"{role}: {mid} is no longer priced at $0")
-            missing = NEEDS.get(role, set()) - m.capabilities
-            price = f"${m.prompt_price * 1e6:.2f}/${m.completion_price * 1e6:.2f} per 1M"
-            status = f"MISSING CAP {sorted(missing)}" if missing else "ok"
-            print(f"{role:14s} {tag} {mid:48s} ctx={m.context_length} {price} {status}")
-            if missing and i == 0:
-                failures.append(f"{role}: primary {mid} lacks {sorted(missing)}")
-    return failures
+            entries.append({"provider": str(e["provider"]), "model": str(e["model"])})
+        out[role] = entries
+    if not out and not errors:
+        errors.append("config has no role with a `chain:`")
+    return out, skipped, errors
+
+
+def models_for(role_chains: dict[str, list[dict[str, str]]], provider: str) -> list[str]:
+    seen: dict[str, None] = {}
+    for entries in role_chains.values():
+        for e in entries:
+            if e["provider"] == provider:
+                seen.setdefault(e["model"], None)
+    return list(seen)
+
+
+def check(
+    config: dict[str, Any],
+    openrouter_catalog: dict[str, CatalogModel],
+    nvidia: dict[str, NvidiaModel],
+    out: Callable[[str], None] = print,
+) -> Report:
+    report = Report()
+    role_chains, skipped, errors = chains(config)
+    report.failures.extend(errors)
+    budget = config.get("budget") or {}
+    or_cfg = (config.get("providers") or {}).get("openrouter") or {}
+    only_free = bool(budget.get("only_free_ids_in_chains")) or bool(or_cfg.get("only_free_ids"))
+
+    for role in skipped:
+        out(f"{role:13s} skipped (not an LLM chain)")
+    for role, entries in role_chains.items():
+        need = NEEDS.get(role)
+        for i, e in enumerate(entries):
+            primary = i == 0
+            tag = "primary " if primary else "fallback"
+            mid, provider = e["model"], e["provider"]
+            label = f"{role:13s} {tag} {provider:10s} {mid:46s}"
+
+            def problem(msg: str, label: str = label, primary: bool = primary, role: str = role) -> None:
+                out(f"{label} {msg}")
+                (report.failures if primary else report.warnings).append(f"{role}: {msg}")
+
+            if provider == "openrouter":
+                if only_free and not is_free_id(mid):
+                    out(f"{label} NOT FREE")
+                    report.failures.append(f"{role}: {mid} is not a :free ID (only_free_ids_in_chains)")
+                    continue
+                m = openrouter_catalog.get(mid)
+                if m is None:
+                    problem(f"{mid} is missing from the OpenRouter catalog")
+                    continue
+                if mid != FREE_ROUTER and (m.prompt_price > 0 or m.completion_price > 0):
+                    out(f"{label} PRICED")
+                    report.failures.append(f"{role}: {mid} is no longer priced at $0")
+                    continue
+                if need and OPENROUTER_CAP[need] not in m.capabilities and mid != FREE_ROUTER:
+                    problem(f"{mid} lacks {need}")
+                    continue
+                out(f"{label} ok (ctx {m.context_length}, $0)")
+            else:
+                n = nvidia.get(mid)
+                if n is None:
+                    problem(f"{mid} was not inspected")
+                    continue
+                if need and need not in n.capabilities:
+                    problem(f"{mid} lacks {need} (not declared by the ChatNVIDIA model profile)")
+                if n.probe == NOT_PROBED_IN_CI:
+                    out(f"{label} {NOT_PROBED_IN_CI}")
+                elif n.probe is not None:
+                    problem(f"{mid} does not answer ({n.probe})")
+                else:
+                    out(f"{label} answers ({n.latency_ms:.0f} ms)")
+    return report
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -126,15 +260,30 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--config", type=Path, default=ROOT / "config" / "models.yaml")
     args = ap.parse_args(argv)
     config = yaml.safe_load(args.config.read_text(encoding="utf-8"))
-    catalog = fetch_catalog(os.environ.get("OPENROUTER_API_KEY") or None)
-    print(f"OpenRouter catalog: {len(catalog)} models, {sum(is_free_id(i) for i in catalog)} free IDs\n")
-    failures = check(config, catalog)
-    if failures:
+    role_chains, _, _ = chains(config)
+
+    catalog: dict[str, CatalogModel] = {}
+    if models_for(role_chains, "openrouter"):
+        catalog = fetch_openrouter_catalog(os.environ.get("OPENROUTER_API_KEY") or None)
+        print(f"OpenRouter catalog: {len(catalog)} models, {sum(is_free_id(i) for i in catalog)} free IDs")
+    nv_key_env = ((config.get("providers") or {}).get("nvidia") or {}).get("key_env") or "NVIDIA_API_KEY"
+    nv_key = os.environ.get(nv_key_env) or None
+    nv_models = models_for(role_chains, "nvidia")
+    nvidia = inspect_nvidia(nv_models, nv_key)
+    if nv_models:
+        how = "probed with a one-token call" if nv_key else f"{nv_key_env} not set: {NOT_PROBED_IN_CI}"
+        print(f"NVIDIA: {len(nv_models)} models, {how}")
+    print()
+
+    report = check(config, catalog, nvidia)
+    for w in report.warnings:
+        print(f"WARN  {w}")
+    if report.failures:
         print("\nFAIL")
-        for f in failures:
+        for f in report.failures:
             print(f"  - {f}")
         return 1
-    print("\nPASS: every chain is free and every primary exists with its required capability")
+    print("\nPASS: every chain is free, and every primary is available with its required capability")
     return 0
 
 

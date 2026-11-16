@@ -20,7 +20,7 @@ from .models import ComponentHealth, HealthComponents, HealthResponse, Status
 
 log = get_logger("naadi.health")
 
-COMPONENTS = ("database", "storage", "openrouter", "tavily")
+COMPONENTS = ("database", "storage", "openrouter", "nvidia", "tavily")
 FAILURE_TTL_CAP_S = 15.0
 
 
@@ -30,6 +30,11 @@ class Check:
     run: CheckFn
     ttl_s: float
     timeout_s: float = 6.0
+    failure_ttl_s: float | None = None  # how long a `down` result is kept; default min(ttl_s, 15 s)
+
+    @property
+    def down_ttl_s(self) -> float:
+        return self.failure_ttl_s if self.failure_ttl_s is not None else min(self.ttl_s, FAILURE_TTL_CAP_S)
 
 
 @dataclass
@@ -56,12 +61,13 @@ class HealthService:
     async def _execute(self, check: Check) -> ComponentHealth:
         started = time.perf_counter()
         latency: float | None
+        configured = True
         try:
             async with asyncio.timeout(check.timeout_s):
                 outcome = await check.run()
             latency = round((time.perf_counter() - started) * 1000, 1)
         except NotConfigured as exc:
-            outcome, latency = CheckOutcome("down", f"Not configured: {exc}"), None
+            outcome, latency, configured = CheckOutcome(exc.status, f"Not configured: {exc}"), None, False
         except TimeoutError:
             outcome = CheckOutcome("down", f"Timed out after {check.timeout_s:g} s")
             latency = round((time.perf_counter() - started) * 1000, 1)
@@ -78,6 +84,8 @@ class HealthService:
             cached=False,
             quota=outcome.quota,
             free_tier=outcome.free_tier,
+            configured=configured,
+            models=outcome.models,
         )
 
     async def component(self, name: str) -> ComponentHealth:
@@ -91,7 +99,7 @@ class HealthService:
             if entry and entry.expires > self.clock():
                 return entry.value.model_copy(update={"cached": True})
             value = await self._execute(check)
-            ttl = check.ttl_s if value.status != "down" else min(check.ttl_s, FAILURE_TTL_CAP_S)
+            ttl = check.ttl_s if value.status != "down" else check.down_ttl_s
             self._cache[name] = _Entry(value, self.clock() + ttl)
             return value
 

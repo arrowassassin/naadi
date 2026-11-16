@@ -56,7 +56,7 @@ def test_database_down_is_503(client_factory: Callable[..., TestClient]) -> None
     assert body["components"]["storage"]["status"] == "ok"
 
 
-@pytest.mark.parametrize("component", ["storage", "openrouter", "tavily"])
+@pytest.mark.parametrize("component", ["storage", "openrouter", "nvidia", "tavily"])
 def test_other_component_down_is_degraded_200(client_factory: Callable[..., TestClient], component: str) -> None:
     svc = fake_service(**{component: fake_check(exc=RuntimeError("nope"))})
     r = client_factory(health=svc).get("/api/health")

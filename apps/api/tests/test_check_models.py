@@ -6,7 +6,7 @@ import importlib.util
 import sys
 from pathlib import Path
 from types import ModuleType
-from typing import Any
+from typing import Any, ClassVar
 
 import pytest
 import yaml
@@ -34,12 +34,28 @@ def model(mid: str, caps: set[str] | None = None, price: float = 0.0) -> Any:
     )
 
 
+def nv(mid: str, caps: set[str] | None = None, probe: str | None = None) -> Any:
+    return cm.NvidiaModel(id=mid, capabilities=caps or set(), probe=probe, latency_ms=10.0)
+
+
 def catalog(*models: Any) -> dict[str, Any]:
     return {m.id: m for m in models}
 
 
+def chain(*entries: tuple[str, str]) -> dict[str, Any]:
+    return {"chain": [{"provider": p, "model": m} for p, m in entries]}
+
+
 def cfg(roles: dict[str, Any], only_free: bool = True, **extra: Any) -> dict[str, Any]:
-    return {"budget": {"only_free_ids_in_chains": only_free}, "roles": roles, **extra}
+    providers = {"nvidia": {"key_env": "NVIDIA_API_KEY", "rpm": 35}, "openrouter": {"key_env": "K", "rpm": 18}}
+    return {"budget": {"only_free_ids_in_chains": only_free}, "providers": providers, "roles": roles, **extra}
+
+
+def run(c: dict[str, Any], orc: dict[str, Any] | None = None, nvd: dict[str, Any] | None = None) -> Any:
+    lines: list[str] = []
+    report = cm.check(c, orc or {}, nvd or {}, out=lines.append)
+    report.lines = lines
+    return report
 
 
 def test_free_id_rule() -> None:
@@ -49,55 +65,148 @@ def test_free_id_rule() -> None:
     assert not cm.is_free_id("openrouter/auto")
 
 
-def test_all_good_passes_and_ignores_non_openrouter_blocks() -> None:
+def test_all_good_passes_and_ignores_non_chain_blocks() -> None:
     c = cfg(
         {
-            "tutor": {"model": "v/t:free", "fallbacks": ["v/missing-fallback:free", "openrouter/free"]},
+            "tutor": chain(("nvidia", "n/t"), ("openrouter", "v/missing:free"), ("openrouter", "openrouter/free")),
             "embeddings": {"engine": "fastembed", "model": "BAAI/whatever"},
+            "speech_to_text": {"order": ["ipados_dictation"]},
         },
-        generation={"image": {"model": "not/openrouter"}},
+        generation={"image": {"model": "not/an-llm"}},
     )
-    cat = catalog(model("v/t:free", {"tools"}), model("openrouter/free"))
-    assert cm.check(c, cat) == []
+    r = run(c, catalog(model("openrouter/free")), {"n/t": nv("n/t", {"tools"})})
+    assert r.failures == []
+    assert r.warnings == ["tutor: v/missing:free is missing from the OpenRouter catalog"]
+    assert any("embeddings" in line and "skipped" in line for line in r.lines)
 
 
-def test_paid_id_in_chain_fails() -> None:
-    c = cfg({"router": {"model": "v/r:free", "fallbacks": ["v/paid"]}})
-    failures = cm.check(c, catalog(model("v/r:free"), model("v/paid")))
-    assert failures == ["router: v/paid is not a :free ID (only_free_ids_in_chains)"]
+def test_paid_openrouter_id_fails_anywhere_in_chain() -> None:
+    c = cfg({"router": chain(("openrouter", "v/r:free"), ("openrouter", "v/paid"))})
+    r = run(c, catalog(model("v/r:free"), model("v/paid")))
+    assert r.failures == ["router: v/paid is not a :free ID (only_free_ids_in_chains)"]
 
 
-def test_paid_id_allowed_when_rule_off() -> None:
-    c = cfg({"router": {"model": "v/paid"}}, only_free=False)
-    assert cm.check(c, catalog(model("v/paid"))) == []
+def test_provider_level_free_rule_applies_without_budget_flag() -> None:
+    c = cfg({"router": chain(("openrouter", "v/paid"))}, only_free=False)
+    c["providers"]["openrouter"]["only_free_ids"] = True
+    assert run(c, catalog(model("v/paid"))).failures == ["router: v/paid is not a :free ID (only_free_ids_in_chains)"]
 
 
-def test_missing_primary_fails() -> None:
-    failures = cm.check(cfg({"author": {"model": "v/gone:free"}}), catalog())
-    assert failures == ["author: primary v/gone:free is missing from the OpenRouter catalog"]
+def test_paid_id_allowed_when_rules_off() -> None:
+    c = cfg({"router": chain(("openrouter", "v/paid"))}, only_free=False)
+    assert run(c, catalog(model("v/paid"))).failures == []
+
+
+def test_missing_openrouter_primary_fails() -> None:
+    r = run(cfg({"author": chain(("openrouter", "v/gone:free"))}))
+    assert r.failures == ["author: v/gone:free is missing from the OpenRouter catalog"]
 
 
 @pytest.mark.parametrize(
-    ("role", "cap"), [("tutor", "tools"), ("structured", "structured_outputs"), ("vision", "image")]
+    ("role", "need", "orcap"),
+    [
+        ("tutor", "tools", "tools"),
+        ("structured", "structured_output", "structured_outputs"),
+        ("vision", "image", "image"),
+    ],
 )
-def test_primary_without_required_capability_fails(role: str, cap: str) -> None:
-    failures = cm.check(cfg({role: {"model": "v/m:free"}}), catalog(model("v/m:free", {"text"})))
-    assert failures == [f"{role}: primary v/m:free lacks ['{cap}']"]
+def test_openrouter_primary_without_capability_fails(role: str, need: str, orcap: str) -> None:
+    c = cfg({role: chain(("openrouter", "v/m:free"))})
+    assert run(c, catalog(model("v/m:free", {"text"}))).failures == [f"{role}: v/m:free lacks {need}"]
+    assert run(c, catalog(model("v/m:free", {orcap}))).failures == []
+
+
+@pytest.mark.parametrize("role", ["tutor", "structured", "vision"])
+def test_nvidia_primary_without_declared_capability_fails(role: str) -> None:
+    need = cm.NEEDS[role]
+    c = cfg({role: chain(("nvidia", "n/m"))})
+    r = run(c, nvd={"n/m": nv("n/m", set())})
+    assert r.failures == [f"{role}: n/m lacks {need} (not declared by the ChatNVIDIA model profile)"]
+    assert run(c, nvd={"n/m": nv("n/m", {need})}).failures == []
 
 
 def test_free_suffix_that_started_charging_fails() -> None:
-    failures = cm.check(cfg({"router": {"model": "v/r:free"}}), catalog(model("v/r:free", price=0.000001)))
-    assert failures == ["router: v/r:free is no longer priced at $0"]
+    r = run(cfg({"router": chain(("openrouter", "v/r:free"))}), catalog(model("v/r:free", price=0.000001)))
+    assert r.failures == ["router: v/r:free is no longer priced at $0"]
 
 
-def test_repo_config_obeys_free_only_rule() -> None:
+def test_nvidia_primary_that_does_not_answer_fails_fallback_warns() -> None:
+    c = cfg({"author": chain(("nvidia", "n/a"), ("nvidia", "n/b"))})
+    r = run(c, nvd={"n/a": nv("n/a", probe="HTTP 410"), "n/b": nv("n/b", probe="HTTP 404")})
+    assert r.failures == ["author: n/a does not answer (HTTP 410)"]
+    assert r.warnings == ["author: n/b does not answer (HTTP 404)"]
+
+
+def test_nvidia_without_key_is_explicit_not_silent_and_not_a_failure() -> None:
+    c = cfg({"author": chain(("nvidia", "n/a"))})
+    r = run(c, nvd={"n/a": nv("n/a", probe=cm.NOT_PROBED_IN_CI)})
+    assert r.failures == []
+    assert any(cm.NOT_PROBED_IN_CI in line and "n/a" in line for line in r.lines)
+
+
+def test_inspect_nvidia_without_key_makes_no_call(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakeChat:
+        profile: ClassVar[dict[str, bool]] = {"tool_calling": True, "image_inputs": False}
+
+        def invoke(self, prompt: str) -> None:
+            raise AssertionError("must not call the model without a key")
+
+    monkeypatch.setattr(cm, "_nvidia_client", lambda mid, key: FakeChat())
+    out = cm.inspect_nvidia(["n/a"], None)
+    assert out["n/a"].capabilities == {"tools"}
+    assert out["n/a"].probe == cm.NOT_PROBED_IN_CI
+
+
+def test_inspect_nvidia_with_key_probes(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakeChat:
+        profile: ClassVar[dict[str, bool]] = {"structured_output": True}
+
+        def __init__(self, mid: str) -> None:
+            self.mid = mid
+
+        def invoke(self, prompt: str) -> None:
+            if self.mid == "n/gone":
+                raise Exception("[410] Gone")
+
+    monkeypatch.setattr(cm, "_nvidia_client", lambda mid, key: FakeChat(mid))
+    out = cm.inspect_nvidia(["n/ok", "n/gone"], "nvapi-unit-test")
+    assert out["n/ok"].probe is None and out["n/ok"].capabilities == {"structured_output"}
+    assert out["n/gone"].probe == "HTTP 410"
+
+
+def test_shape_errors() -> None:
+    c = cfg({"tutor": {"model": "v/old:free"}, "vision": {"chain": []}, "x": chain(("acme", "a/b"))})
+    r = run(c)
+    assert "tutor: has `model` but no `chain:` (old config shape)" in r.failures
+    assert "vision: `chain` must be a non-empty list" in r.failures
+    assert "x: chain[0] provider 'acme' is not under `providers:`" in r.failures
+
+
+def test_repo_config_shape_and_free_rule() -> None:
     config = yaml.safe_load((REPO_ROOT / "config" / "models.yaml").read_text())
     assert config["budget"]["only_free_ids_in_chains"] is True
-    for role, spec in config["roles"].items():
-        if role in cm.NOT_OPENROUTER_ROLES:
-            continue
-        for mid in [spec["model"], *(spec.get("fallbacks") or [])]:
-            assert cm.is_free_id(mid), f"{role}: {mid}"
+    role_chains, skipped, errors = cm.chains(config)
+    assert errors == []
+    assert {"embeddings", "speech_to_text"} <= set(skipped)
+    assert {"tutor", "vision", "structured"} <= set(role_chains)
+    for role, entries in role_chains.items():
+        for e in entries:
+            if e["provider"] == "openrouter":
+                assert cm.is_free_id(e["model"]), f"{role}: {e['model']}"
+
+
+def test_repo_nvidia_primaries_declare_their_capabilities() -> None:
+    """Offline (SDK profile only, no key): the same check CI runs before the live probe."""
+    config = yaml.safe_load((REPO_ROOT / "config" / "models.yaml").read_text())
+    role_chains, _, _ = cm.chains(config)
+    nvd = cm.inspect_nvidia(cm.models_for(role_chains, "nvidia"), None)
+    r = cm.check(config, {}, nvd, out=lambda _line: None)
+    nvidia_primary_failures = [
+        f
+        for f in r.failures
+        if any(f.startswith(f"{role}: ") and ch[0]["provider"] == "nvidia" for role, ch in role_chains.items())
+    ]
+    assert nvidia_primary_failures == []
 
 
 def test_main_with_missing_config_file(tmp_path: Path) -> None:

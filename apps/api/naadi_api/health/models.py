@@ -19,6 +19,16 @@ class Quota(BaseModel):
     guard: int | None = Field(default=None, description="Our own stop point below the provider limit")
 
 
+class ModelProbe(BaseModel):
+    """One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog)."""
+
+    provider: Literal["nvidia", "openrouter"]
+    model: str = Field(max_length=120)
+    ok: bool
+    latency_ms: float | None
+    detail: str = Field(max_length=80, description="`answers`, or why the call failed (e.g. `HTTP 410 (retired)`)")
+
+
 class ComponentHealth(BaseModel):
     status: Status
     latency_ms: float | None = Field(description="Time the check took; None if it could not run")
@@ -27,12 +37,15 @@ class ComponentHealth(BaseModel):
     cached: bool = Field(description="True when served from the check cache")
     quota: Quota | None = None
     free_tier: bool | None = Field(default=None, description="OpenRouter only: account has no credit purchase")
+    configured: bool = Field(default=True, description="False when the settings this check needs are absent")
+    models: list[ModelProbe] | None = Field(default=None, description="NVIDIA only: per-model probe results")
 
 
 class HealthComponents(BaseModel):
     database: ComponentHealth
     storage: ComponentHealth
     openrouter: ComponentHealth
+    nvidia: ComponentHealth
     tavily: ComponentHealth
 
 

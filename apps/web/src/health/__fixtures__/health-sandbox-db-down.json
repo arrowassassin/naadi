@@ -2,43 +2,105 @@
   "status": "down",
   "version": "dev",
   "environment": "staging",
-  "checked_at": "2026-11-16T02:48:37.149905Z",
+  "checked_at": "2026-11-16T05:51:13.793603Z",
   "components": {
     "database": {
       "status": "down",
-      "latency_ms": 4001.2,
+      "latency_ms": 3999.9,
       "detail": "PoolTimeout: couldn't get a connection after 4.00 sec",
-      "checked_at": "2026-11-16T02:48:37.149803Z",
+      "checked_at": "2026-11-16T05:51:13.793519Z",
       "cached": false,
       "quota": null,
-      "free_tier": null
+      "free_tier": null,
+      "configured": true,
+      "models": null
     },
     "storage": {
       "status": "ok",
-      "latency_ms": 883.9,
+      "latency_ms": 723.6,
       "detail": "Storage reachable; 0 buckets",
-      "checked_at": "2026-11-16T02:48:33.033457Z",
+      "checked_at": "2026-11-16T05:51:10.516963Z",
       "cached": false,
       "quota": null,
-      "free_tier": null
+      "free_tier": null,
+      "configured": true,
+      "models": null
     },
     "openrouter": {
       "status": "ok",
-      "latency_ms": 447.3,
-      "detail": "Key valid; 50 free-model requests left today",
-      "checked_at": "2026-11-16T02:48:32.664162Z",
+      "latency_ms": 562.1,
+      "detail": "Key valid; 38 free-model requests left today",
+      "checked_at": "2026-11-16T05:51:10.416343Z",
       "cached": false,
-      "quota": { "used": 0, "limit": 50, "remaining": 50, "unit": "requests", "period": "day", "guard": 50 },
-      "free_tier": true
+      "quota": {
+        "used": 12,
+        "limit": 50,
+        "remaining": 38,
+        "unit": "requests",
+        "period": "day",
+        "guard": 50
+      },
+      "free_tier": true,
+      "configured": true,
+      "models": null
+    },
+    "nvidia": {
+      "status": "ok",
+      "latency_ms": 1429.0,
+      "detail": "All 4 configured models answer",
+      "checked_at": "2026-11-16T05:51:11.430770Z",
+      "cached": false,
+      "quota": null,
+      "free_tier": null,
+      "configured": true,
+      "models": [
+        {
+          "provider": "nvidia",
+          "model": "vendor-a/chat-model-1",
+          "ok": true,
+          "latency_ms": 598.3,
+          "detail": "answers"
+        },
+        {
+          "provider": "nvidia",
+          "model": "vendor-b/chat-model-2",
+          "ok": true,
+          "latency_ms": 1416.3,
+          "detail": "answers"
+        },
+        {
+          "provider": "nvidia",
+          "model": "vendor-c/chat-model-3",
+          "ok": true,
+          "latency_ms": 769.9,
+          "detail": "answers"
+        },
+        {
+          "provider": "nvidia",
+          "model": "vendor-d/chat-model-4",
+          "ok": true,
+          "latency_ms": 472.3,
+          "detail": "answers"
+        }
+      ]
     },
     "tavily": {
       "status": "ok",
-      "latency_ms": 653.6,
-      "detail": "0 of 950 credits used this month (guard)",
-      "checked_at": "2026-11-16T02:48:32.928411Z",
+      "latency_ms": 778.1,
+      "detail": "Key valid; web search available",
+      "checked_at": "2026-11-16T05:51:10.780470Z",
       "cached": false,
-      "quota": { "used": 0, "limit": 1000, "remaining": 1000, "unit": "credits", "period": "month", "guard": 950 },
-      "free_tier": null
+      "quota": {
+        "used": 2,
+        "limit": 1000,
+        "remaining": 998,
+        "unit": "credits",
+        "period": "month",
+        "guard": 950
+      },
+      "free_tier": null,
+      "configured": true,
+      "models": null
     }
   }
 }

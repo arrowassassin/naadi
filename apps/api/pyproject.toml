@@ -16,6 +16,7 @@ dependencies = [
     "httpx==0.28.1",
     "structlog==26.1.0",
     "pyyaml==6.0.3",
+    "langchain-nvidia-ai-endpoints==1.5.0",
 ]
 
 [dependency-groups]

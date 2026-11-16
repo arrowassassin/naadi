@@ -19,6 +19,7 @@ export type {
   GetReadyResponses,
   HealthComponents,
   HealthResponse,
+  ModelProbe,
   Quota,
   ReadyResponse,
 } from "./types.gen";

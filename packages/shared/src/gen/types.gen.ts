@@ -19,6 +19,12 @@ export type ComponentHealth = {
    */
   checked_at: string;
   /**
+   * Configured
+   *
+   * False when the settings this check needs are absent
+   */
+  configured?: boolean;
+  /**
    * Detail
    *
    * Short human-readable summary, never secret material
@@ -36,6 +42,12 @@ export type ComponentHealth = {
    * Time the check took; None if it could not run
    */
   latency_ms: number | null;
+  /**
+   * Models
+   *
+   * NVIDIA only: per-model probe results
+   */
+  models?: Array<ModelProbe> | null;
   quota?: Quota | null;
   /**
    * Status
@@ -103,6 +115,7 @@ export type FieldError = {
  */
 export type HealthComponents = {
   database: ComponentHealth;
+  nvidia: ComponentHealth;
   openrouter: ComponentHealth;
   storage: ComponentHealth;
   tavily: ComponentHealth;
@@ -129,6 +142,36 @@ export type HealthResponse = {
    * Version
    */
   version: string;
+};
+
+/**
+ * ModelProbe
+ *
+ * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
+ */
+export type ModelProbe = {
+  /**
+   * Detail
+   *
+   * `answers`, or why the call failed (e.g. `HTTP 410 (retired)`)
+   */
+  detail: string;
+  /**
+   * Latency Ms
+   */
+  latency_ms: number | null;
+  /**
+   * Model
+   */
+  model: string;
+  /**
+   * Ok
+   */
+  ok: boolean;
+  /**
+   * Provider
+   */
+  provider: "nvidia" | "openrouter";
 };
 
 /**

@@ -1,8 +1,9 @@
-"""Integration tests against the real services (Supabase, OpenRouter, Tavily).
+"""Integration tests against the real services (Supabase, OpenRouter, NVIDIA, Tavily).
 
 `-m "integration and not db"` runs where raw Postgres is unreachable (the build sandbox);
 CI runs `-m integration`, which includes the `db` tests. Missing configuration fails the test loudly.
-None of these spend quota: OpenRouter key metadata and Tavily usage are free endpoints.
+None of these spend paid quota: OpenRouter key metadata and Tavily usage are free endpoints; the NVIDIA
+probe is one free one-token call per configured model.
 """
 
 from __future__ import annotations
@@ -10,8 +11,9 @@ from __future__ import annotations
 import pytest
 from fastapi.testclient import TestClient
 
+from naadi_api.config import load_models_config
 from naadi_api.db import Database
-from naadi_api.health.checks import database_check, openrouter_check, storage_check, tavily_check
+from naadi_api.health.checks import database_check, nvidia_check, openrouter_check, storage_check, tavily_check
 from naadi_api.main import create_app
 from naadi_api.settings import Settings
 
@@ -50,13 +52,24 @@ async def test_tavily_usage_without_spending() -> None:
     assert second.quota.used == first.quota.used  # checking usage must not cost a credit
 
 
+async def test_nvidia_probes_every_configured_model() -> None:
+    # In the build sandbox the network proxy injects the real key; NVIDIA_API_KEY holds a placeholder there.
+    require_env("NVIDIA_API_KEY")
+    s = _settings()
+    models = load_models_config(s.config_dir).models_for("nvidia")
+    out = await nvidia_check(s, models)()
+    assert out.models is not None
+    assert [m.model for m in out.models] == models
+    assert out.status == "ok", out.detail
+
+
 def test_health_endpoint_reports_real_external_components() -> None:
-    require_env("SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "OPENROUTER_API_KEY", "TAVILY_API_KEY")
+    require_env("SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "OPENROUTER_API_KEY", "NVIDIA_API_KEY", "TAVILY_API_KEY")
     s = _settings()
     with TestClient(create_app(s)) as c:
         r = c.get("/api/health")
     body = r.json()
-    for name in ("storage", "openrouter", "tavily"):
+    for name in ("storage", "openrouter", "nvidia", "tavily"):
         assert body["components"][name]["status"] in ("ok", "degraded"), (name, body["components"][name]["detail"])
     for secret in s.secret_values():
         assert secret not in r.text

@@ -29,6 +29,19 @@ export const zErrorResponse = z.object({
 });
 
 /**
+ * ModelProbe
+ *
+ * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
+ */
+export const zModelProbe = z.object({
+  detail: z.string().max(80),
+  latency_ms: z.number().nullable(),
+  model: z.string().max(120),
+  ok: z.boolean(),
+  provider: z.enum(["nvidia", "openrouter"]),
+});
+
+/**
  * Quota
  */
 export const zQuota = z.object({
@@ -46,9 +59,11 @@ export const zQuota = z.object({
 export const zComponentHealth = z.object({
   cached: z.boolean(),
   checked_at: z.iso.datetime(),
+  configured: z.boolean().optional().default(true),
   detail: z.string().max(240),
   free_tier: z.boolean().nullish(),
   latency_ms: z.number().nullable(),
+  models: z.array(zModelProbe).nullish(),
   quota: zQuota.nullish(),
   status: z.enum(["ok", "degraded", "down"]),
 });
@@ -58,6 +73,7 @@ export const zComponentHealth = z.object({
  */
 export const zHealthComponents = z.object({
   database: zComponentHealth,
+  nvidia: zComponentHealth,
   openrouter: zComponentHealth,
   storage: zComponentHealth,
   tavily: zComponentHealth,

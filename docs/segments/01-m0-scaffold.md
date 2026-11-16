@@ -103,6 +103,7 @@ DB schema/migrations (02), auth (03), seed (04), any content screens.
 Files changed, commands run with results (counts of tests passed/failed/skipped per suite), live URL checks, screenshots path, anything not finished, risks, and spec ambiguities you resolved.
 
 ## Updates since this brief was written (binding; they override anything above)
+
 1. **CI secrets:** GitHub Actions has exactly ONE secret, `HF_TOKEN` (already added). The repo is **public**: ubuntu runners only, concurrency groups to cancel superseded runs. Public config CI needs must not be Actions secrets; the Space already holds everything at runtime.
 2. **DB tests in CI** run against a `services:` container of Supabase's real Postgres image `supabase/postgres`, pinned to a plain 17.11.x tag (not `-orioledb` / `-multigres`). It ships the anon/authenticated/service_role roles and the `auth` schema. No Supabase secrets in CI.
 3. **Deploy job on `main` only:** `HF_TOKEN` → upload to `arrowassassin/naadi`, wait for RUNNING, smoke `/api/health` (database ok) and a Playwright WebKit smoke against the live URL with the HF token header. Missing `HF_TOKEN` fails loudly. From this sandbox you may also deploy directly with `scripts/deploy_space.sh` (HF_TOKEN is in the environment).

@@ -13,6 +13,12 @@
             "title": "Checked At",
             "type": "string"
           },
+          "configured": {
+            "default": true,
+            "description": "False when the settings this check needs are absent",
+            "title": "Configured",
+            "type": "boolean"
+          },
           "detail": {
             "description": "Short human-readable summary, never secret material",
             "maxLength": 240,
@@ -42,6 +48,21 @@
             ],
             "description": "Time the check took; None if it could not run",
             "title": "Latency Ms"
+          },
+          "models": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ModelProbe"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "NVIDIA only: per-model probe results",
+            "title": "Models"
           },
           "quota": {
             "anyOf": [
@@ -171,6 +192,9 @@
           "database": {
             "$ref": "#/components/schemas/ComponentHealth"
           },
+          "nvidia": {
+            "$ref": "#/components/schemas/ComponentHealth"
+          },
           "openrouter": {
             "$ref": "#/components/schemas/ComponentHealth"
           },
@@ -185,6 +209,7 @@
           "database",
           "storage",
           "openrouter",
+          "nvidia",
           "tavily"
         ],
         "title": "HealthComponents",
@@ -231,6 +256,54 @@
           "components"
         ],
         "title": "HealthResponse",
+        "type": "object"
+      },
+      "ModelProbe": {
+        "description": "One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).",
+        "properties": {
+          "detail": {
+            "description": "`answers`, or why the call failed (e.g. `HTTP 410 (retired)`)",
+            "maxLength": 80,
+            "title": "Detail",
+            "type": "string"
+          },
+          "latency_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latency Ms"
+          },
+          "model": {
+            "maxLength": 120,
+            "title": "Model",
+            "type": "string"
+          },
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "provider": {
+            "enum": [
+              "nvidia",
+              "openrouter"
+            ],
+            "title": "Provider",
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "model",
+          "ok",
+          "latency_ms",
+          "detail"
+        ],
+        "title": "ModelProbe",
         "type": "object"
       },
       "Quota": {
@@ -366,7 +439,7 @@
             "description": "The database is down"
           }
         },
-        "summary": "System health: database, storage, OpenRouter quota, Tavily credits",
+        "summary": "System health: database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits",
         "tags": [
           "system"
         ]

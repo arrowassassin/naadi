@@ -12,6 +12,7 @@ A production agent runtime on the Space: Aegra runs Naadi's LangGraph graphs wit
 ## Scope
 
 ### 1. LLM layer — `naadi_api/llm.py` (the only way any code calls a model)
+
 - **Two providers:** NVIDIA API catalog (`NVIDIA_API_KEY`, `langchain-nvidia-ai-endpoints` `ChatNVIDIA`) and OpenRouter (`langchain-openrouter` / `openrouter` SDK). `config/models.yaml` → `providers:` (order, rpm, daily cap per provider) and per-role model IDs per provider. Fallback order: provider × model, skipping a provider whose bucket/cap is exhausted. Each provider has its own token bucket and daily counter in `llm_usage` (add a `provider` column in 02). Start by listing NVIDIA's live catalog (`ChatNVIDIA.get_available_models()`), test tool calling, streaming and image input per candidate, and record latency/429s; choose per-role order from that plus `tools/model_eval`. The free-only rule applies to OpenRouter; for NVIDIA, use only models available on the free API catalog tier.
 
 - Routing from `app_config.models` (seeded from `config/models.yaml`; cached 60 s). Model IDs never appear in code.
