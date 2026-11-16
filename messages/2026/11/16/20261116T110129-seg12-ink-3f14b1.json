@@ -1,0 +1,16 @@
+{
+ "id": "20261116T110129-seg12-ink-3f14b1",
+ "ts": "2026-11-16T11:01:29.933756Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b3cdb2e into claude/naadi-shared",
+ "body": "S12a: idle lab does no work",
+ "refs": {
+  "commit": "b3cdb2e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
