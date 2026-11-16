@@ -3,6 +3,8 @@
 Order matters: Naadi's agent-platform migration enables row-level security on Aegra's tables, so they must
 exist first. Steps, each idempotent:
 
+0. default privileges in `public` closed to anon/authenticated for the migrating role (so Aegra's tables are
+   never exposed, even on a brand-new project where Naadi's 0001 has not run yet);
 1. Aegra's Alembic migrations (its own `alembic_version` table), under Aegra's advisory lock;
 2. LangGraph's checkpointer and store tables (`AsyncPostgresSaver.setup()` / `AsyncPostgresStore.setup()`),
    which Aegra would otherwise create lazily at first boot;
@@ -54,6 +56,27 @@ def _aegra_env(settings: Settings) -> None:
     assert settings.database_url is not None
     os.environ.setdefault("AEGRA_CONFIG", str(APP_DIR / "aegra.json"))
     os.environ["DATABASE_URL"] = settings.database_url.get_secret_value()
+
+
+CLIENT_ROLES = ("anon", "authenticated")
+
+
+def close_client_defaults(database_url: str) -> None:
+    """Before Aegra creates anything: tables, sequences and functions that THIS role creates in `public` grant
+    nothing to anon/authenticated (Supabase's defaults grant them everything). Naadi's 0001 does the same for
+    role postgres, but on a brand-new project Aegra's migrations run first, so without this step Aegra's tables
+    would be readable through the Data API until 0005 secures them. Idempotent."""
+    with psycopg.connect(database_url, connect_timeout=10, autocommit=True) as conn:
+        present = conn.execute(
+            "select count(*) from pg_roles where rolname = any(%s)", (list(CLIENT_ROLES),)
+        ).fetchone()
+        if not present or int(present[0]) != len(CLIENT_ROLES):
+            return  # a plain Postgres without Supabase's client roles: nothing to close
+        conn.execute(
+            "alter default privileges in schema public revoke all on tables from anon, authenticated;"
+            " alter default privileges in schema public revoke all on sequences from anon, authenticated;"
+            " alter default privileges in schema public revoke all on functions from anon, authenticated"
+        )
 
 
 def aegra_upgrade() -> None:
@@ -130,6 +153,9 @@ def run(settings: Settings) -> int:
         )
         return 1
     try:
+        step = "close_client_defaults"
+        close_client_defaults(url)
+        step = "aegra"
         _aegra_env(settings)
         aegra_upgrade()
         # Aegra's alembic env.py applies its own logging fileConfig in the main thread: restore JSON lines.
