@@ -46,9 +46,11 @@ async def expect_404(call: Any) -> None:
     except NotFoundError:
         return
     except httpx.HTTPStatusError as exc:
-        assert exc.response.status_code == 404, exc.response.status_code
-        return
-    pytest.fail("expected 404")
+        status = exc.response.status_code
+    else:
+        pytest.fail("expected 404")
+    if status != 404:
+        pytest.fail(f"expected 404, got {status}")
 
 
 def pg() -> psycopg.Connection:
