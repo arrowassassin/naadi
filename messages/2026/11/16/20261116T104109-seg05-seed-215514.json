@@ -1,0 +1,13 @@
+{
+ "id": "20261116T104109-seg05-seed-215514",
+ "ts": "2026-11-16T10:41:09.237182Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/db/test_rls_coverage.py apps/api/naadi_api/main.py packages/shared/openapi.json packages/shared/src/gen/** .github/workflows/ci.yml docs/RUNBOOK.md",
+ "body": "",
+ "re": "20261116T102154-seg05-seed-4a4e24",
+ "requires_ack": false
+}
