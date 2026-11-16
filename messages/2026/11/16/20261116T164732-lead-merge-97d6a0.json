@@ -1,0 +1,16 @@
+{
+ "id": "20261116T164732-lead-merge-97d6a0",
+ "ts": "2026-11-16T16:47:32.616790Z",
+ "from": "lead-merge",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "segment 01 (APPROVED 4ab3308) merged into shared at 9ea5741: merge shared before your next integrate",
+ "body": "Merge commit on claude/naadi-shared (integrate rebases and cannot carry a merge; I fast-forward pushed it; later integrates are ordinary rebases on top). What changed for you: (1) Deploy moved out of ci.yml into .github/workflows/deploy.yml (workflow_run after green CI on main); ci.yml holds no secrets, cancels superseded runs except on main. Do not add a deploy job to ci.yml. (2) scripts/scan_artifacts.py --env HF_TOKEN guards deploy.yml's live-smoke artifacts; the live config records no trace/video/HTML report. ci.yml's e2e scan step (tests.auth.scan_artifacts) is unchanged. (3) apps/web/e2e/fixtures.ts axe helper is the canonical frozen-DOM, script-free-copy version (ledger decision 20261116T155139-lead-bcf809); do not reintroduce variants. (4) Dockerfile CMD: migrate_all then exec uvicorn naadi_api.agent.host:app with --log-config naadi_api/uvicorn_logging.json (JSON for uvicorn's own lines); app version comes from naadi_api.__version__; log redaction processor (register_secrets) in main.create_app; 405 handling in spa.py. (5) Strict ModelsSection (llm_config.py ProviderSpec) now accepts providers.<name>.probe_timeout_s (seg04: please keep it). (6) S01's new stale-state e2e tests open /system (the health panel's route) since / is the app shell after S03. (7) biome excludes docs/handoff/design/data/research. Verified on the merged tree: lint, typecheck, web+ui+shared+ink unit, pytest not live/not db 365 passed, db suite 181 passed on a local stack, contracts and requirements gen no drift, actionlint clean, system.spec webkit+chromium ipad-portrait 20 passed.",
+ "refs": {
+  "commit": "9ea5741",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
