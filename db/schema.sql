@@ -1,6 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007;
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0012_card_review_logs.py;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -242,9 +242,14 @@ create table public.flashcards (
   section_id text references public.chapter_sections(id) on delete set null,
   taxonomy_ids text[] not null default '{}',
   origin text not null default 'user' check (origin in ('seed','user','assistant','anki_import')),
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  -- 0012: the faces as TipTap documents for ContentRenderer (front_html/back_html stay the interchange form)
+  front_doc jsonb check (front_doc is null or jsonb_typeof(front_doc) = 'object'),
+  back_doc jsonb check (back_doc is null or jsonb_typeof(back_doc) = 'object'),
+  updated_at timestamptz not null default now()
 );
 create index flashcards_owner_idx on public.flashcards (owner_user_id);
+create index flashcards_question_idx on public.flashcards (question_id) where question_id is not null;
 
 -- Retrieval index (RAG). Only rows whose source allows AI ingest; vault content never enters it.
 create table public.embeddings (
@@ -340,6 +345,8 @@ create table public.card_reviews (
   lapses int,
   state smallint,
   last_review timestamptz,
+  -- 0012: learning / relearning step of the Python fsrs scheduler (null in Review)
+  step smallint check (step is null or step >= 0),
   primary key (user_id, card_id)
 );
 create index card_reviews_user_due_idx on public.card_reviews (user_id, due);
@@ -578,6 +585,38 @@ create table public.reading_positions (
 create index reading_positions_chapter_idx on public.reading_positions (user_id, chapter_id, client_updated_at desc);
 create index reading_positions_section_idx on public.reading_positions (section_id);
 
+-- 0012: one row per flashcard rating, written by the API's FSRS scheduler. The ts-fsrs ReviewLog fields hold
+-- the memory state before the review (optimizer-ready); next_* / reps / lapses hold the outcome, returned again
+-- for a repeated client_review_id (offline outbox) instead of scheduling twice.
+create table public.card_review_logs (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  card_id uuid not null references public.flashcards(id) on delete cascade,
+  client_review_id uuid not null,
+  rating smallint not null check (rating between 1 and 4),
+  state smallint not null check (state between 0 and 3),
+  due timestamptz not null,
+  stability double precision,
+  difficulty double precision,
+  elapsed_days int not null check (elapsed_days >= 0),
+  last_elapsed_days int not null check (last_elapsed_days >= 0),
+  scheduled_days int not null check (scheduled_days >= 0),
+  learning_step smallint check (learning_step is null or learning_step >= 0),
+  review timestamptz not null,
+  duration_ms int check (duration_ms is null or (duration_ms >= 0 and duration_ms <= 3600000)),
+  next_state smallint not null check (next_state between 1 and 3),
+  next_step smallint check (next_step is null or next_step >= 0),
+  next_due timestamptz not null,
+  next_stability double precision not null,
+  next_difficulty double precision not null,
+  reps int not null check (reps >= 1),
+  lapses int not null check (lapses >= 0),
+  created_at timestamptz not null default now(),
+  unique (user_id, client_review_id)
+);
+create index card_review_logs_user_review_idx on public.card_review_logs (user_id, review desc);
+create index card_review_logs_card_idx on public.card_review_logs (card_id, review);
+
 -- ───────────── Runtime configuration (admin only) ─────────────
 create table public.app_config (
   key text primary key,
@@ -732,6 +771,7 @@ create trigger uploads_touch_updated_at before update on public.uploads for each
 create trigger kb_sources_touch_updated_at before update on public.kb_sources for each row execute function public.naadi_touch_updated_at();
 create trigger ingest_items_touch_updated_at before update on public.ingest_items for each row execute function public.naadi_touch_updated_at();
 create trigger reading_positions_touch_updated_at before update on public.reading_positions for each row execute function public.naadi_touch_updated_at();
+create trigger flashcards_touch_updated_at before update on public.flashcards for each row execute function public.naadi_touch_updated_at();
 create trigger pathway_guides_touch_updated_at before update on public.pathway_guides for each row execute function public.naadi_touch_updated_at();
 create trigger plan_templates_touch_updated_at before update on public.plan_templates for each row execute function public.naadi_touch_updated_at();
 
@@ -749,7 +789,7 @@ create trigger plan_templates_touch_updated_at before update on public.plan_temp
 --   block_sections (0011): select only; every timing write is the API's (0008 also revoked client writes on blocks)
 --     + insert/update check: exists (select 1 from public.questions p where p.id = attempts.question_id)
 --   blocks  (client insert: id, user_id, config, question_ids, started_at; client update: started_at)
---   card_reviews
+--   card_reviews  (0012: API-written; client select only)
 --     + insert/update check: exists (select 1 from public.flashcards p where p.id = card_reviews.card_id)
 --   notes
 --   notebooks
@@ -769,6 +809,8 @@ create trigger plan_templates_touch_updated_at before update on public.plan_temp
 --   report_issues  (client insert: id, user_id, ref_type, ref_id, body; client update: body)
 --   reading_positions (0003)  (client insert: user_id, chapter_id, section_id, scroll_position, completed_at, client_updated_at; client update: scroll_position, completed_at, client_updated_at)
 --     + insert/update check: exists (select 1 from public.chapter_sections s where s.id = reading_positions.section_id and s.chapter_id = reading_positions.chapter_id)
+--   card_review_logs (0012)  (API-written; client select only)
+--     + insert/update check: exists (select 1 from public.flashcards p where p.id = card_review_logs.card_id)
 --
 -- Shared content: RLS enabled; select to anon, authenticated with the row filter below; writes by the
 -- service role (backend) only, except that a student may insert/update/delete their own private

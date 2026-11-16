@@ -159,7 +159,8 @@ def test_user_a_can_select_update_delete_insert_own_rows(
 API_WRITTEN = ("attempts", "blocks")
 # Ink (0009): every item is validated and merged by the API; students may only read their own layers and items.
 # Exam timing (0011): every timing write is the API's own clock; students may only read their sections.
-SELECT_ONLY = ("ink_layers", "ink_items", "block_sections")
+# Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
+SELECT_ONLY = ("ink_layers", "ink_items", "block_sections", "card_reviews", "card_review_logs")
 
 
 @pytest.mark.parametrize("table", [*API_WRITTEN, "block_sections"])
@@ -198,7 +199,7 @@ def test_a_student_cannot_insert_attempts_or_write_blocks(
             ):
                 with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                     conn.execute(stmt)
-        else:
+        elif table == "attempts":
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 conn.execute("update public.attempts set correct = true")
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
@@ -294,6 +295,31 @@ def test_backend_only_columns(
             conn.execute(str(_fill(stmt, shared)))
 
 
+@pytest.mark.parametrize("table", ["card_reviews", "card_review_logs"])
+def test_a_student_cannot_forge_a_card_schedule(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str
+) -> None:
+    """FSRS state and review logs are the API's: no due date pushed out, no stability raised, no rating rewritten."""
+    seed_user_rows(pg, user_a, shared)
+    stmts = {
+        "card_reviews": (
+            "update public.card_reviews set due = now() + interval '10 years'",
+            "update public.card_reviews set stability = 36500, state = 2",
+            "delete from public.card_reviews",
+        ),
+        "card_review_logs": (
+            "update public.card_review_logs set rating = 4",
+            "update public.card_review_logs set next_due = now() + interval '10 years'",
+            "delete from public.card_review_logs",
+        ),
+    }[table]
+    with as_user(pg, user_a) as conn:
+        for stmt in stmts:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+        assert _count(conn, table, user_a) == 1  # the student still reads their own
+
+
 def test_references_must_be_visible_to_the_caller(
     pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
 ) -> None:
@@ -315,7 +341,7 @@ def test_references_must_be_visible_to_the_caller(
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 insert_row(conn, table, row)
         # visible parents are fine
-        insert_row(conn, "card_reviews", {"user_id": user_b, "card_id": shared.flashcard_id, "due": "2026-12-01"})
+        # (card_reviews: only the API writes them since 0012; its visibility check is in tests/cards)
         insert_row(conn, "user_pathway_tasks", {"user_id": user_b, "task_id": other_task})
         insert_row(conn, "costs", {"user_id": user_b, "task_id": other_task, "amount": 1})
         insert_row(conn, "profiles", {"user_id": user_b, "pathway_stage": shared.stage_key})
@@ -606,7 +632,6 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
         assert visible(conn) == {plain, linked}
         row = conn.execute("select back_html from public.flashcards where id = %s", (linked,)).fetchone()
         assert row == ("The answer is B",)
-        insert_row(conn, "card_reviews", {"user_id": user_b, "card_id": linked, "due": "2026-12-01"})
     with as_anon(pg) as conn:
         assert visible(conn) == {plain}
 

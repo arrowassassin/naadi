@@ -27,7 +27,7 @@ import httpx
 from naadi_api import migrate
 from naadi_api.agent.migrate_all import AEGRA_TABLES
 
-# The fixed contract: these 19 user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
+# The fixed contract: these user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
 USER_TABLES = (
     "profiles",
     "attempts",
@@ -49,7 +49,10 @@ USER_TABLES = (
     "reading_positions",
     "ink_items",
     "block_sections",
+    "card_review_logs",
 )
+# Card scheduling: only the API writes it (the client may only SELECT its own rows).
+API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
 HIDDEN_QUESTION_COLUMNS = (
     "answer",
@@ -139,8 +142,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "42 Naadi tables present",
-            "select count(*) = 42 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "43 Naadi tables present",
+            "select count(*) = 43 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -153,6 +156,15 @@ def checks(head: str) -> list[Check]:
             f" from pg_class where relnamespace = 'public'::regnamespace and relname = any({_array(AEGRA_TABLES)})",
         ),
         Check("user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
+        Check(
+            "card scheduling is API-written (no client INSERT/UPDATE/DELETE on card_reviews, card_review_logs)",
+            "select count(*) = 0 as ok, coalesce(string_agg(t || ':' || p, ','), '') as detail"
+            f" from unnest({_array(API_WRITTEN_TABLES)}) t cross join unnest(array['INSERT','UPDATE','DELETE']) p"
+            " where to_regclass('public.' || t) is null"
+            " or has_table_privilege('authenticated', ('public.' || t)::regclass, p)"
+            " or exists (select 1 from information_schema.column_privileges c where c.table_schema = 'public'"
+            " and c.table_name = t and c.grantee = 'authenticated' and c.privilege_type = p)",
+        ),
         Check(
             "question answers hidden from anon and authenticated",
             "select to_regclass('public.questions') is not null and not exists (select 1"

@@ -39,6 +39,9 @@ MUTATIONS = [
     ("create table public.naadi_probe (id int)", "every public table has RLS"),
     ("grant insert on public.ink_items to authenticated", "ink layers and items are select-only"),
     ("grant delete on public.ink_layers to authenticated", "ink layers and items are select-only"),
+    ("grant update (due) on public.card_reviews to authenticated", "card scheduling is API-written"),
+    ("grant insert on public.card_review_logs to authenticated", "card scheduling is API-written"),
+    ("grant delete on public.card_reviews to authenticated", "card scheduling is API-written"),
     ("grant select on public.embeddings to authenticated", "no client grants"),
     ("grant select (answer) on public.questions to anon", "question answers hidden"),
     (

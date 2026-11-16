@@ -207,6 +207,30 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("user_id",),
         ("content_rev", "r2"),
     ),
+    UserTable(
+        "card_review_logs",
+        lambda u, s: {
+            "user_id": u,
+            "card_id": s.flashcard_id,
+            "client_review_id": _id(),
+            "rating": 3,
+            "state": 0,
+            "due": "2026-12-01T00:00:00Z",
+            "elapsed_days": 0,
+            "last_elapsed_days": 0,
+            "scheduled_days": 0,
+            "review": "2026-12-01T00:00:00Z",
+            "next_state": 1,
+            "next_step": 1,
+            "next_due": "2026-12-01T00:10:00Z",
+            "next_stability": 2.3065,
+            "next_difficulty": 2.1181,
+            "reps": 1,
+            "lapses": 0,
+        },
+        ("user_id", "card_id"),
+        ("rating", 4),
+    ),
 )
 
 USER_TABLE_NAMES = tuple(t.name for t in USER_TABLES)
