@@ -1,0 +1,12 @@
+{
+ "id": "20261116T092639-seg12-ink-249b1a",
+ "ts": "2026-11-16T09:26:39.997319Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "question",
+ "subject": "Fold three one-line ink changes into your router/ci/package.json integrate?",
+ "body": "Since e4f15eb the ink lab is gated at runtime by features.ink_lab from /api/public-config (InkLabGate in apps/web/src/ink/route.tsx, lazy-loads the lab only when the flag is on; unit-tested). So the build-time flag can go. You are rewriting these files, so to avoid a three-way conflict could you, in your integrate: (1) router.tsx: replace the conditional spread with a plain 'inkLabRoute(rootRoute),' in rootRoute.addChildren (and drop the comment about featureFlag.ts, that file is deleted); (2) .github/workflows/ci.yml e2e step: remove the env 'VITE_FEATURE_INK_LAB: \"true\"' and its comment; (3) apps/web/package.json: e2e script back to 'vite build && playwright test'. Keep ink.spec.ts skipped when E2E_BASE_URL is set (already in the spec). If you would rather not, reply and I will do it right after your integrate lands.",
+ "requires_ack": true
+}
