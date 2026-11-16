@@ -7,6 +7,7 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  settle,
   snapSegment,
   TOOL_CSP_NOISE,
   test,
@@ -31,24 +32,34 @@ const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string, fu
   });
 
 /**
- * Let every font load finish (Firefox logs a font download aborted by the next navigation as an error).
- * Called after each navigation and before the next one.
+ * Nothing in flight on the current page: every font face loaded (shared `settle`) and, on a /learn page, no
+ * reading-position save or offline cache write pending (`data-learn-idle`). Called before every navigation
+ * and before going offline, so neither a font subset nor a Cache Storage put is cut off by the page leaving.
  */
-async function settle(page: Page): Promise<void> {
-  await page.waitForFunction(() => document.fonts.status === "loaded");
-  await page.evaluate(() => document.fonts.ready.then(() => undefined));
+async function quiet(page: Page): Promise<void> {
+  if (page.url() === "about:blank") return;
+  await settle(page);
+  await page.waitForFunction(() => document.querySelector("[data-learn-page]:not([data-learn-idle])") === null);
 }
 
-/** Navigate and wait until the page and its fonts are settled. */
-async function go(page: Page, url: string): Promise<void> {
+/**
+ * Navigate after the current page is quiet, then wait until the new page and its fonts are settled.
+ * `heading: false` for a page held in its loading state by a test route.
+ */
+async function go(page: Page, url: string, opts: { heading?: boolean } = {}): Promise<void> {
+  await quiet(page);
   await page.goto(url);
-  await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
+  if (opts.heading !== false) await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
   await settle(page);
 }
 
-/** Load every declared font face (all unicode-range subsets), as a returning reader's cache would hold. */
-const loadAllFonts = (page: Page) =>
-  page.evaluate(() => Promise.all([...document.fonts].map((f) => f.load().catch(() => f))).then(() => undefined));
+/** Reload the same way: quiet first, settled after. */
+async function reload(page: Page): Promise<void> {
+  await quiet(page);
+  await page.reload();
+  await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
+  await settle(page);
+}
 
 const asStudent = {
   storageState: async (
@@ -105,6 +116,7 @@ async function freshReader(browser: Browser, baseURL: string, info: TestInfo, ki
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, "/learn"));
     await page.waitForURL((u) => u.pathname === "/learn", { timeout: 30_000 });
+    await settle(page);
     return page;
   };
   const done = async () => {
@@ -152,7 +164,7 @@ test.describe("course map", () => {
     page,
     consoleErrors,
   }, info) => {
-    await page.goto("/learn");
+    await go(page, "/learn");
     await expect(page.getByRole("heading", { level: 1, name: /Everything/ })).toBeVisible();
     const list = page
       .getByRole("region", { name: "All chapters" })
@@ -202,7 +214,7 @@ test.describe("course map", () => {
       await gate;
       await route.continue();
     });
-    await page.goto("/learn");
+    await go(page, "/learn", { heading: false });
     await expect(page.getByRole("status").filter({ hasText: "Loading your courses" })).toBeAttached();
     await expect(page.locator("[data-skeleton]").first()).toBeVisible();
     await snap(page, info, consoleErrors, "courses-loading");
@@ -228,7 +240,7 @@ test.describe("course map", () => {
         }),
       });
     });
-    await page.goto("/learn");
+    await go(page, "/learn");
     const alert = page.getByRole("alert");
     await expect(alert).toContainText("Your courses could not be loaded");
     await expect(alert).toContainText("Request ID e2e-courses-503");
@@ -240,7 +252,7 @@ test.describe("course map", () => {
   });
 
   test("a filter with no chapters shows the empty state and a way back", async ({ page, consoleErrors }, info) => {
-    await page.goto("/learn?exam=step1&system=step1.sys.no_such_system");
+    await go(page, "/learn?exam=step1&system=step1.sys.no_such_system");
     await expect(page.getByText("No chapters cover this system yet.")).toBeVisible();
     await expectNoAxeViolations(page);
     await snap(page, info, consoleErrors, "courses-empty");
@@ -257,9 +269,10 @@ test.describe("course map", () => {
     // be for a returning reader.
     await go(page, "/learn/ch01/ch01-s02");
     await go(page, "/learn/ch01/ch01-s01");
-    await loadAllFonts(page);
-    // Nothing in flight when the connection drops: the opened-section save has landed and no save is pending.
-    await expect(page.locator("[data-position-idle]")).toBeAttached();
+    // Nothing in flight when the connection drops: every font loaded, the opened-section save landed and its
+    // offline cache write finished.
+    await expect(page.locator("[data-learn-idle]")).toBeAttached();
+    await quiet(page);
     await context.setOffline(true);
     try {
       await expect(page.getByRole("status").filter({ hasText: "Offline" })).toBeVisible();
@@ -348,13 +361,13 @@ test.describe("reader", () => {
       await gate;
       await route.continue();
     });
-    await page.goto("/learn/ch02/ch02-s01");
+    await go(page, "/learn/ch02/ch02-s01", { heading: false });
     await expect(page.getByRole("status").filter({ hasText: "Loading the chapter" })).toBeAttached();
     await snap(page, info, consoleErrors, "reader-loading");
     release();
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-    await page.goto("/learn/no-such-chapter/x-s01");
+    await go(page, "/learn/no-such-chapter/x-s01");
     const alert = page.getByRole("alert");
     await expect(alert).toContainText("This chapter is not available");
     await expect(alert).toContainText(/Request ID [0-9a-f]{32}/);
@@ -362,7 +375,7 @@ test.describe("reader", () => {
     await snap(page, info, consoleErrors, "reader-not-found");
 
     // A mock exam is not readable here either (the API answers 404 for it).
-    await page.goto("/learn/mock1/mock1-s01");
+    await go(page, "/learn/mock1/mock1-s01");
     await expect(page.getByRole("alert")).toContainText("This chapter is not available");
   });
 });
@@ -377,7 +390,6 @@ test.describe("reading position and reports", () => {
       await page.getByRole("link", { name: /^Start: / }).click();
       await expect(page).toHaveURL(/\/learn\/ch01\/ch01-s01$/);
       // ch01-s02 is long (a big table): scroll part-way and let the position save.
-      await settle(page);
       // The first visit records the section as opened (offset 0) once the reader has laid it out: wait for
       // that, so the scroll below is not undone by the reader's own restore.
       const opened = page.waitForResponse(isPositionSave);
@@ -409,10 +421,7 @@ test.describe("reading position and reports", () => {
       await snap(page, info, watch.guard, "reader-scrolled");
 
       // Reload: the same block is at the top again.
-      await settle(page);
-      await page.reload();
-      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-      await settle(page);
+      await reload(page);
       await expect.poll(() => anchor(page)).toBe(before);
 
       // A second device (new browser context, same user) opening the chapter lands on the same spot.
@@ -428,7 +437,6 @@ test.describe("reading position and reports", () => {
       await snap(other, info, otherWatch.guard, "reader-second-device");
 
       // The chapter link (/learn/ch01) also resumes at the saved section.
-      await settle(page);
       await go(page, "/learn/ch01");
       await expect(page).toHaveURL(/\/learn\/ch01\/ch01-s02$/);
       await expect.poll(() => anchor(page)).toBe(before);

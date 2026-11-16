@@ -4,6 +4,7 @@
  * Keys are per user; everything is deleted on sign-out or a user change. The full "download this week"
  * offline mode (Dexie, outbox) is segment 18.
  */
+import { useSyncExternalStore } from "react";
 import { onAuthChange } from "../auth/session";
 
 const CACHE = "naadi-reader-v1";
@@ -27,17 +28,57 @@ export async function readOffline<T>(userId: string, kind: string, id: string): 
   }
 }
 
-export async function writeOffline(userId: string, kind: string, id: string, value: unknown): Promise<void> {
-  if (!available()) return;
+// Cache writes still in flight. The reader and the course map count them in their idle signal, so a test
+// (or a prefetching router) can tell when nothing would be cut off by navigating away.
+let pending = 0;
+const listeners = new Set<() => void>();
+function setPending(delta: number): void {
+  pending += delta;
+  for (const l of listeners) l();
+}
+
+export function pendingOfflineWrites(): number {
+  return pending;
+}
+
+export function subscribeOfflineWrites(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+/** True while no offline cache write is in flight (part of the page's idle signal). */
+export function useOfflineWritesIdle(): boolean {
+  return useSyncExternalStore(
+    subscribeOfflineWrites,
+    () => pending === 0,
+    () => true,
+  );
+}
+
+/**
+ * Store `value` for an offline reload. Never rejects: the handler is attached synchronously to the whole
+ * open-then-put chain, so a put cut off by navigation (WebKit: "Context is stopped") is never unhandled.
+ */
+export function writeOffline(userId: string, kind: string, id: string, value: unknown): Promise<void> {
+  if (!available()) return Promise.resolve();
+  let body: string;
   try {
-    const body = JSON.stringify(value);
-    await (await caches.open(CACHE)).put(
-      keyFor(userId, kind, id),
-      new Response(body, { headers: { "content-type": "application/json" } }),
-    );
+    body = JSON.stringify(value);
   } catch {
-    // quota exceeded or storage disabled: only the offline fallback is lost
+    return Promise.resolve();
   }
+  setPending(1);
+  return caches
+    .open(CACHE)
+    .then((cache) =>
+      cache.put(keyFor(userId, kind, id), new Response(body, { headers: { "content-type": "application/json" } })),
+    )
+    .catch(() => {
+      // quota exceeded, storage disabled or the page is unloading: only the offline fallback is lost
+    })
+    .finally(() => setPending(-1));
 }
 
 export async function clearOffline(): Promise<void> {

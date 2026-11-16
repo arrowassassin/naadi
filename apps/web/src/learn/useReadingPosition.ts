@@ -215,7 +215,7 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
     };
   }, [flush]);
 
-  // Idle: restored, nothing scheduled and no request in flight (the reader exposes it as data-position-idle,
-  // so a test can wait for it instead of racing the debounce).
+  // Idle: restored, nothing scheduled and no request in flight. The reader combines it with pending offline
+  // cache writes as data-learn-idle, so a test can wait for it instead of racing the debounce.
   return { flush, idle: !scheduled && !save.isPending, saveError: save.error };
 }

@@ -4,12 +4,17 @@
 for external media, an absolute `https://` URL. Storage paths are resolved here so the same seeded rows work
 against the local stack, CI and the real project:
 
+Bucket names come from `app_config.storage` (config/app_config.yaml); the defaults are shown here.
+
 - `content-public/...`  -> the public object URL `{SUPABASE_URL}/storage/v1/object/public/content-public/...`
 - `content-private/...` -> a signed URL (service role, short expiry), cached until shortly before it expires
 - `user-uploads/{uid}/...` -> signed, but only for the signed-in owner (the first folder is their user id),
   because the service role would otherwise bypass Storage's own per-user policy
 - `vault/...` and every other bucket -> never resolved (vault files never leave through content paths)
 - anything else (relative junk, `http:`, `javascript:` ...) -> None, so the renderer shows "unavailable"
+
+Signed URLs are cached per (bucket, path); expired entries are evicted and the cache is bounded. A sign call
+runs outside any lock, and concurrent requests for the same object share one in-flight call (single flight).
 """
 
 from __future__ import annotations
@@ -21,16 +26,18 @@ from collections.abc import Awaitable, Callable, Iterable
 from dataclasses import dataclass
 from urllib.parse import quote, urlparse
 
+from .config_api.defaults import file_values
+from .config_api.schemas import StorageBuckets
 from .logs import get_logger
 from .settings import Settings
 
 log = get_logger("naadi.media")
 
-PUBLIC_BUCKET = "content-public"
-SIGNED_BUCKETS = frozenset({"content-private", "user-uploads"})
 SIGNED_URL_TTL_S = 3600
 # A cached signed URL is reused only while it has at least this long left.
 SIGNED_URL_MIN_LEFT_S = 600
+# Upper bound on cached signed URLs (one per object); the soonest-expiring are dropped first.
+SIGNED_URL_CACHE_MAX = 4096
 
 Signer = Callable[[str, list[str], int], Awaitable[dict[str, str]]]
 
@@ -67,15 +74,34 @@ def external_url(raw: str) -> str | None:
     return None
 
 
+def configured_buckets(settings: Settings) -> StorageBuckets:
+    """The Storage bucket names from config/app_config.yaml (`storage`), validated."""
+    return StorageBuckets.model_validate(file_values(settings.config_dir)["storage"])
+
+
+CacheKey = tuple[str, str]
+
+
 class MediaUrlResolver:
     """Per-process resolver with a small signed-URL cache (one Space container serves every request)."""
 
-    def __init__(self, settings: Settings, signer: Signer | None = None, clock: Callable[[], float] = time.time):
+    def __init__(
+        self,
+        settings: Settings,
+        signer: Signer | None = None,
+        clock: Callable[[], float] = time.time,
+        buckets: StorageBuckets | None = None,
+    ):
         self._settings = settings
         self._signer = signer
         self._clock = clock
-        self._cache: dict[tuple[str, str], tuple[str, float]] = {}
-        self._lock = asyncio.Lock()
+        b = buckets or configured_buckets(settings)
+        self._public_bucket = b.content_public
+        self._uploads_bucket = b.user_uploads
+        self._signed_buckets = frozenset({b.content_private, b.user_uploads})
+        self._cache: dict[CacheKey, tuple[str, float]] = {}
+        # One future per object being signed right now; later callers await it instead of signing again.
+        self._inflight: dict[CacheKey, asyncio.Future[str | None]] = {}
 
     def _signer_or_default(self) -> Signer | None:
         if self._signer is not None:
@@ -100,6 +126,10 @@ class MediaUrlResolver:
         self._signer = sign
         return sign
 
+    @property
+    def cached_count(self) -> int:
+        return len(self._cache)
+
     async def resolve(self, raws: Iterable[tuple[str, str | None]], owner: uuid.UUID) -> dict[str, str | None]:
         """{media_id: raw url} -> {media_id: browser URL or None}. Never raises for one bad row."""
         out: dict[str, str | None] = {}
@@ -118,10 +148,10 @@ class MediaUrlResolver:
                 continue
             if not supa:
                 continue
-            if sp.bucket == PUBLIC_BUCKET:
+            if sp.bucket == self._public_bucket:
                 out[media_id] = public_object_url(supa, sp)
-            elif sp.bucket in SIGNED_BUCKETS:
-                if sp.bucket == "user-uploads" and sp.path.split("/", 1)[0] != str(owner):
+            elif sp.bucket in self._signed_buckets:
+                if sp.bucket == self._uploads_bucket and sp.path.split("/", 1)[0] != str(owner):
                     log.warning("media_url_foreign_upload", media_id=media_id)
                     continue
                 to_sign.setdefault(sp.bucket, []).append((media_id, sp.path))
@@ -131,29 +161,61 @@ class MediaUrlResolver:
             await self._sign_into(out, to_sign)
         return out
 
+    def _evict(self, now: float) -> None:
+        for k in [k for k, (_, exp) in self._cache.items() if exp - now <= SIGNED_URL_MIN_LEFT_S]:
+            del self._cache[k]
+        over = len(self._cache) - SIGNED_URL_CACHE_MAX
+        if over > 0:
+            for k in sorted(self._cache, key=lambda k: self._cache[k][1])[:over]:
+                del self._cache[k]
+
     async def _sign_into(self, out: dict[str, str | None], to_sign: dict[str, list[tuple[str, str]]]) -> None:
+        # Everything up to the first await runs without yielding, so the cache and in-flight table need no lock.
         now = self._clock()
-        async with self._lock:
-            for bucket, items in to_sign.items():
-                missing: list[str] = []
-                for media_id, path in items:
-                    hit = self._cache.get((bucket, path))
-                    if hit and hit[1] - now > SIGNED_URL_MIN_LEFT_S:
-                        out[media_id] = hit[0]
-                    else:
-                        missing.append(path)
-                if not missing:
+        self._evict(now)
+        waits: dict[CacheKey, asyncio.Future[str | None]] = {}
+        mine: dict[str, list[str]] = {}
+        loop = asyncio.get_running_loop()
+        for bucket, items in to_sign.items():
+            for _media_id, path in items:
+                key = (bucket, path)
+                if key in waits or key in self._cache:
                     continue
-                signer = self._signer_or_default()
-                if signer is None:
-                    continue
+                running = self._inflight.get(key)
+                if running is None:
+                    running = loop.create_future()
+                    self._inflight[key] = running
+                    mine.setdefault(bucket, []).append(path)
+                waits[key] = running
+        if mine:
+            await asyncio.gather(*(self._sign_bucket(b, paths) for b, paths in mine.items()))
+        for bucket, items in to_sign.items():
+            for media_id, path in items:
+                key = (bucket, path)
+                hit = self._cache.get(key)
+                if hit is not None:
+                    out[media_id] = hit[0]
+                elif key in waits:
+                    # shield: one cancelled request must not cancel the shared result for the others
+                    out[media_id] = await asyncio.shield(waits[key])
+
+    async def _sign_bucket(self, bucket: str, paths: list[str]) -> None:
+        """Sign `paths` (all registered as in flight by this call) and settle their futures, whatever happens."""
+        signed: dict[str, str] = {}
+        try:
+            signer = self._signer_or_default()
+            if signer is not None:
                 try:
-                    signed = await signer(bucket, sorted(set(missing)), SIGNED_URL_TTL_S)
+                    signed = await signer(bucket, sorted(paths), SIGNED_URL_TTL_S)
                 except Exception as exc:  # noqa: BLE001 - one unreachable Storage must not fail the chapter
                     log.warning("media_sign_failed", bucket=bucket, error=type(exc).__name__)
-                    continue
-                for path, url in signed.items():
-                    self._cache[(bucket, path)] = (url, now + SIGNED_URL_TTL_S)
-                for media_id, path in items:
-                    if out.get(media_id) is None and path in signed:
-                        out[media_id] = signed[path]
+            expires = self._clock() + SIGNED_URL_TTL_S
+            for path in paths:
+                url = signed.get(path)
+                if url:
+                    self._cache[(bucket, path)] = (url, expires)
+        finally:
+            for path in paths:
+                fut = self._inflight.pop((bucket, path), None)
+                if fut is not None and not fut.done():
+                    fut.set_result(signed.get(path))

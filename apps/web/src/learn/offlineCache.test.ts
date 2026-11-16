@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { clearOffline, readOffline, writeOffline } from "./offlineCache";
+import { clearOffline, pendingOfflineWrites, readOffline, subscribeOfflineWrites, writeOffline } from "./offlineCache";
 
 /** A minimal in-memory Cache Storage (jsdom has none); unit test only. */
 function installFakeCaches() {
@@ -44,5 +44,42 @@ describe("offline copy", () => {
     Reflect.deleteProperty(globalThis, "caches");
     await writeOffline("u1", "chapter", "ch01", { a: 1 });
     expect(await readOffline("u1", "chapter", "ch01")).toBeUndefined();
+  });
+});
+
+describe("pending offline writes", () => {
+  afterEach(() => {
+    Reflect.deleteProperty(globalThis, "caches");
+  });
+
+  it("counts a write until it settles and never rejects when the put is cut off", async () => {
+    let fail: (e: Error) => void = () => {};
+    const api = {
+      open: async () => ({
+        put: () =>
+          new Promise<void>((_resolve, reject) => {
+            fail = reject;
+          }),
+      }),
+    };
+    Object.defineProperty(globalThis, "caches", { value: api, configurable: true });
+    const seen: number[] = [];
+    const off = subscribeOfflineWrites(() => seen.push(pendingOfflineWrites()));
+    const write = writeOffline("u1", "chapter", "ch01", { a: 1 });
+    expect(pendingOfflineWrites()).toBe(1);
+    await new Promise((r) => setTimeout(r, 0));
+    fail(new Error("Context is stopped"));
+    await expect(write).resolves.toBeUndefined();
+    expect(pendingOfflineWrites()).toBe(0);
+    expect(seen).toEqual([1, 0]);
+    off();
+  });
+
+  it("does not count a value that cannot be serialised", async () => {
+    installFakeCaches();
+    const cyclic: Record<string, unknown> = {};
+    cyclic.self = cyclic;
+    await writeOffline("u1", "chapter", "ch01", cyclic);
+    expect(pendingOfflineWrites()).toBe(0);
   });
 });

@@ -21,6 +21,7 @@ import { useShellBottomSlot } from "../shell/chrome";
 import { useChapter, usePositions } from "./api";
 import { ContentsSheet } from "./ContentsSheet";
 import { count, errorText, minutesLabel } from "./format";
+import { useOfflineWritesIdle } from "./offlineCache";
 import { ReportIssueDialog } from "./ReportIssueDialog";
 import { useReadingPosition } from "./useReadingPosition";
 import "./reader.css";
@@ -180,6 +181,7 @@ function Reader({
 
   const byId = useMemo(() => new Map((positions ?? []).map((p) => [p.section_id, p])), [positions]);
   const saved = positionsLoaded ? (byId.get(sectionId) ?? null) : undefined;
+  const cacheIdle = useOfflineWritesIdle();
   const { flush, idle } = useReadingPosition({
     chapterId: detail.id,
     sectionId,
@@ -309,7 +311,11 @@ function Reader({
   );
 
   return (
-    <div className="flex flex-col gap-4 pt-1 tablet:gap-5 tablet:pt-2" data-position-idle={idle || undefined}>
+    <div
+      className="flex flex-col gap-4 pt-1 tablet:gap-5 tablet:pt-2"
+      data-learn-page=""
+      data-learn-idle={(idle && cacheIdle) || undefined}
+    >
       {/* Phone: one mono line (PhoneChapter board) */}
       <header className="flex items-center gap-2 tablet:hidden">
         <Link

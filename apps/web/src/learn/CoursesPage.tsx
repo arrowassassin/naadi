@@ -9,6 +9,7 @@ import { useUiText } from "../copy/useUiText";
 import { CTA_LINK } from "../routes/TodayPage";
 import { useCourses } from "./api";
 import { count, coverageLine, errorText, percent, statusWord } from "./format";
+import { useOfflineWritesIdle } from "./offlineCache";
 
 export interface CoursesSearch {
   exam?: string;
@@ -190,6 +191,7 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
   const q = useCourses(search);
   const t = useUiText();
   const router = useRouter();
+  const cacheIdle = useOfflineWritesIdle();
 
   if (q.isPending && !q.data) return <Loading t={t} />;
   if (!q.data) {
@@ -217,7 +219,12 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
   const next = data.next_up;
 
   return (
-    <section aria-labelledby="courses-h" className="flex flex-col gap-8 pt-6 pb-8 tablet:gap-10 tablet:pt-10">
+    <section
+      aria-labelledby="courses-h"
+      className="flex flex-col gap-8 pt-6 pb-8 tablet:gap-10 tablet:pt-10"
+      data-learn-page=""
+      data-learn-idle={cacheIdle || undefined}
+    >
       <header className="flex flex-wrap items-end justify-between gap-6">
         <Headline t={t} />
         {data.exams.length > 1 ? (

@@ -64,6 +64,13 @@
 | 2026-11-16 | CI needs only `HF_TOKEN`; DB tests use a `supabase/postgres` 17.11 service container; migrations apply on Space start                                   |
 | 2026-11-16 | Bundle dirs moved from `handoff/` to the repo root                                                                                                      |
 
+## Deferrals
+
+- **Course map filters "Weak areas only" and "High-yield only"** (design/Courses.dc.html), deferred from S06.
+  "Weak areas only" needs S11's mastery and weak-spot model, so it lands with S11. "High-yield only" needs a
+  per-chapter or per-section high-yield flag in the content schema and seed, which does not exist yet. S06 ships
+  neither control, so the map has no dead buttons; the exam and system filters cover browsing until then.
+
 ## Risks
 - `multiplayer.py integrate` rebases, so it can't land a branch merge (e.g. promoting dev back into shared); lead-merge used a plain fast-forward push. Add an `integrate --merge` mode to the skill before the next wave-end promotion.
 

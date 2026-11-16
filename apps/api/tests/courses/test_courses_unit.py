@@ -2,13 +2,15 @@
 
 from __future__ import annotations
 
+import asyncio
 import uuid
 
 import pytest
 from pydantic import SecretStr, ValidationError
 
 from naadi_api.chapters_content import scan_body
-from naadi_api.chapters_media import MediaUrlResolver, parse_storage_path
+from naadi_api.chapters_media import SIGNED_URL_TTL_S, MediaUrlResolver, configured_buckets, parse_storage_path
+from naadi_api.config_api.schemas import StorageBuckets
 from naadi_api.courses import ReadingPositionIn, ReportIssueIn, chapter_systems, next_section
 from tests.conftest import make_settings
 
@@ -100,6 +102,99 @@ async def test_signing_failure_and_missing_supabase_degrade_to_none() -> None:
     assert out == {"a": None, "b": f"{SUPA}/storage/v1/object/public/content-public/b.svg"}
     out = await resolver(FakeSigner(), supabase_url=None).resolve([("b", "content-public/b.svg")], OWNER)
     assert out == {"b": None}
+
+
+def test_bucket_names_come_from_app_config() -> None:
+    s = make_settings(supabase_url=SUPA, supabase_service_role_key=SecretStr("k"))
+    b = configured_buckets(s)
+    assert (b.content_public, b.content_private, b.user_uploads) == (
+        "content-public",
+        "content-private",
+        "user-uploads",
+    )
+
+
+async def test_renamed_buckets_are_honoured_and_the_old_names_refused() -> None:
+    signer = FakeSigner()
+    s = make_settings(supabase_url=SUPA, supabase_service_role_key=SecretStr("k"))
+    renamed = StorageBuckets(
+        content_public="pub-x", content_private="priv-x", user_uploads="up-x", vault="vault-x", generated_media="gen-x"
+    )
+    r = MediaUrlResolver(s, signer=signer, buckets=renamed)
+    out = await r.resolve(
+        [
+            ("pub", "pub-x/a.svg"),
+            ("priv", "priv-x/a.pdf"),
+            ("mine", f"up-x/{OWNER}/a.png"),
+            ("theirs", f"up-x/{uuid.uuid4()}/a.png"),
+            ("old", "content-public/a.svg"),
+        ],
+        OWNER,
+    )
+    assert out["pub"] == f"{SUPA}/storage/v1/object/public/pub-x/a.svg"
+    assert out["priv"] is not None and out["mine"] is not None
+    assert out["theirs"] is None and out["old"] is None
+
+
+async def test_expired_entries_are_evicted() -> None:
+    signer = FakeSigner()
+    clock = [1000.0]
+    r = resolver(signer, clock)
+    await r.resolve([("a", "content-private/a.pdf"), ("b", "content-private/b.pdf")], OWNER)
+    assert r.cached_count == 2
+    clock[0] += SIGNED_URL_TTL_S + 1
+    await r.resolve([("c", "content-private/c.pdf")], OWNER)
+    assert r.cached_count == 1
+
+
+async def test_concurrent_requests_share_one_sign_call_and_do_not_serialise() -> None:
+    gate = asyncio.Event()
+    calls: list[tuple[str, list[str]]] = []
+    active = [0, 0]  # now, max
+
+    async def slow(bucket: str, paths: list[str], expires_in: int) -> dict[str, str]:
+        calls.append((bucket, paths))
+        active[0] += 1
+        active[1] = max(active[1], active[0])
+        await gate.wait()
+        active[0] -= 1
+        return {p: f"{SUPA}/sign/{bucket}/{p}" for p in paths}
+
+    s = make_settings(supabase_url=SUPA, supabase_service_role_key=SecretStr("k"))
+    r = MediaUrlResolver(s, signer=slow)
+    same = [asyncio.create_task(r.resolve([(f"m{i}", "content-private/a.pdf")], OWNER)) for i in range(5)]
+    other = asyncio.create_task(r.resolve([("o", "content-private/b.pdf")], OWNER))
+    await asyncio.sleep(0)
+    await asyncio.sleep(0)
+    # the second object's sign call started while the first is still waiting: no lock around the network call
+    assert active[1] == 2
+    gate.set()
+    outs = await asyncio.gather(*same, other)
+    assert [c for c in calls if c[1] == ["a.pdf"]] == [("content-private", ["a.pdf"])]
+    assert {o[f"m{i}"] for i, o in enumerate(outs[:5])} == {f"{SUPA}/sign/content-private/a.pdf"}
+    assert outs[5]["o"] == f"{SUPA}/sign/content-private/b.pdf"
+
+
+async def test_a_cancelled_request_does_not_strand_the_others() -> None:
+    gate = asyncio.Event()
+
+    async def slow(bucket: str, paths: list[str], expires_in: int) -> dict[str, str]:
+        await gate.wait()
+        return {p: f"{SUPA}/sign/{p}" for p in paths}
+
+    s = make_settings(supabase_url=SUPA, supabase_service_role_key=SecretStr("k"))
+    r = MediaUrlResolver(s, signer=slow)
+    owner_task = asyncio.create_task(r.resolve([("a", "content-private/a.pdf")], OWNER))
+    await asyncio.sleep(0)
+    waiter = asyncio.create_task(r.resolve([("b", "content-private/a.pdf")], OWNER))
+    await asyncio.sleep(0)
+    owner_task.cancel()
+    with pytest.raises(asyncio.CancelledError):
+        await owner_task
+    # the signing request was cancelled: the waiter gets None now (no hang) and the next request signs afresh
+    assert (await asyncio.wait_for(waiter, 1.0)) == {"b": None}
+    gate.set()
+    assert (await r.resolve([("c", "content-private/a.pdf")], OWNER))["c"] == f"{SUPA}/sign/a.pdf"
 
 
 def test_scan_collects_ids_and_unknown_types() -> None:

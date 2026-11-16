@@ -227,3 +227,18 @@ export async function expectNoHorizontalOverflow(page: Page): Promise<void> {
 }
 
 export const healthPanel = (page: Page) => page.locator("section[aria-labelledby='health-h']");
+
+/** Load every declared font face, including every unicode-range subset (a failed face counts as settled). */
+export async function loadAllFonts(page: Page): Promise<void> {
+  await page.evaluate(() => Promise.all([...document.fonts].map((f) => f.load().catch(() => f))).then(() => undefined));
+}
+
+/**
+ * Call after every navigation and before the next one, or before going offline. Firefox requests a subset
+ * (e.g. the Greek one for "α") only when a glyph needs it, and logs that download as an error when the next
+ * navigation cancels it; loading every face first means nothing is left in flight.
+ */
+export async function settle(page: Page): Promise<void> {
+  await loadAllFonts(page);
+  await page.waitForFunction(() => document.fonts.status === "loaded");
+}
