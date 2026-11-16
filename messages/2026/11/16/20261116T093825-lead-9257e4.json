@@ -1,0 +1,24 @@
+{
+ "id": "20261116T093825-lead-9257e4",
+ "ts": "2026-11-16T09:38:25.833563Z",
+ "from": "lead",
+ "to": [
+  "seg04-agents"
+ ],
+ "type": "task",
+ "subject": "Agent platform: llm.py, layered search, Aegra host, ping graph",
+ "body": "Brief: docs/segments/04-agent-platform.md. Wave plan above. Model routing: config/models.yaml providers + chains; live test notes in docs/MODEL_TESTS.md.",
+ "task_key": "S04",
+ "paths": [
+  "apps/api/naadi_api/llm*",
+  "apps/api/naadi_api/search*",
+  "apps/api/naadi_api/agent/**",
+  "apps/api/aegra.json",
+  "tools/check_models.py"
+ ],
+ "deps": [
+  "20261116T074026-lead-c98c5a"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/04-agent-platform.md",
+ "requires_ack": true
+}
