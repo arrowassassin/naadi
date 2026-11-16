@@ -5,6 +5,7 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  settle,
   snapSegment,
   test,
 } from "./fixtures";
@@ -364,7 +365,7 @@ test.describe("timed block", () => {
       await expect(page.getByRole("group", { name: "Answer options" }).getByRole("button")).toHaveCount(5);
 
       // offline: the answer is kept on this device and sent when the connection returns
-      await loadAllFonts(page);
+      await settle(page);
       await page.waitForLoadState("networkidle");
       await context.setOffline(true);
       await page.keyboard.press("c");
@@ -382,7 +383,7 @@ test.describe("timed block", () => {
       expect(
         errors.filter(
           (e) =>
-            !/Failed to fetch|Load failed|NetworkError|ERR_INTERNET_DISCONNECTED|WebKit encountered an internal error/.test(
+            !/Failed to fetch|Load failed|NetworkError|ERR_INTERNET_DISCONNECTED|WebKit encountered an internal error|downloadable font: download failed/.test(
               e,
             ),
         ),
