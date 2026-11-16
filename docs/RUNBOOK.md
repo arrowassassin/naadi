@@ -63,6 +63,10 @@ One-off container alternative (same code path): `python -m naadi_api.seed --dry-
 - `app_config`: an admin PUT sets `admin_edited_at` (and `updated_by`); the seed never overwrites such a key
   without `force`, even if the admin's account is later deleted. A forced run clears the mark.
   Every change is in `app_config_history` (GET `/api/admin/config/{key}/history`).
+- `ui_copy` and newly required keys: if a stored (admin-edited) `ui_copy` lacks keys a newer release requires,
+  the API serves stored ∪ shipped (`config/app_config.yaml`), the stored strings winning, and reports it as
+  "N missing keys filled" on `GET /api/admin/config/ui_copy`. Saving it once from the admin editor
+  stores the merged value. Only a row that is invalid for another reason falls back to the shipped value whole.
 - Chapter sections: a non-seed revision (admin editor, assistant) sets `admin_edited_at` by trigger, which
   protects the section. When the seed itself
   replaces a body, the previous body is stored as a `seed` revision in `chapter_section_revisions`.

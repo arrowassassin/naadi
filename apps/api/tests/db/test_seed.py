@@ -15,6 +15,7 @@ import psycopg
 import pytest
 from psycopg.types.json import Jsonb
 
+from naadi_api.config_api.schemas import KEY_SPECS
 from naadi_api.seed.data import SeedBundle
 from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedFailed, SeedLocked, run_seed
 from naadi_api.seed.report import SeedReport
@@ -39,7 +40,7 @@ EXPECTED = {
     "plan_template_days": 60,
     "sources": 16,
     "section_media": 95,
-    "app_config": 10,
+    "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
 }
 
 

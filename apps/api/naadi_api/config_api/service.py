@@ -144,6 +144,20 @@ class AppConfigService:
                 try:
                     value = validate_value(key, raw["value"])
                 except ValidationError as exc:
+                    merged = self._fill_missing_copy(key, raw["value"])
+                    if merged is not None:
+                        value, added = merged
+                        note = f"{len(added)} missing keys filled from config/app_config.yaml"
+                        log.info("app_config_filled", key=key, added=len(added))
+                        return ConfigRow(
+                            key,
+                            value,
+                            raw["updated_at"],
+                            raw["updated_by"],
+                            "db",
+                            invalid_reason=note,
+                            admin_edited_at=raw["admin_edited_at"],
+                        )
                     reason = f"invalid row ({exc.error_count()} errors)"
                     log.warning("app_config_fallback", key=key, reason=reason)
                     return ConfigRow(
@@ -154,6 +168,20 @@ class AppConfigService:
                 )
         log.warning("app_config_fallback", key=key, reason=reason)
         return ConfigRow(key, self.file_value(key), None, None, "file")
+
+    def _fill_missing_copy(self, key: str, stored: object) -> tuple[Any, list[str]] | None:
+        """A stored ui_copy that predates newly required keys (an admin-edited row the seed keeps): stored strings
+        win, the shipped value fills only the keys it lacks. None when that still does not validate."""
+        if key != "ui_copy" or not isinstance(stored, dict):
+            return None
+        shipped: dict[str, str] = self.file_value(key)
+        added = sorted(k for k in shipped if k not in stored)
+        if not added:
+            return None
+        try:
+            return validate_value(key, {**shipped, **stored}), added
+        except ValidationError:
+            return None
 
     async def _fetch(self, key: str) -> dict[str, Any] | None:
         if not self._db.configured:

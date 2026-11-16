@@ -13,6 +13,7 @@ from typing import Any
 import psycopg
 import pytest
 from fastapi.testclient import TestClient
+from psycopg.types.json import Jsonb
 from pydantic import SecretStr
 
 from naadi_api.auth import TokenVerifier
@@ -192,6 +193,39 @@ def test_required_copy_cannot_be_removed_and_a_restore_clears_the_edit_mark(
         # (deleting the admin later would null updated_by, which itself writes a history row)
         c.execute("update public.app_config set updated_by = null where key = 'ui_copy'")
         c.execute("delete from public.app_config_history where key = 'ui_copy'")
+
+
+async def test_a_stored_copy_missing_new_keys_is_merged_not_discarded(url: str) -> None:
+    """An admin-edited ui_copy saved before keys became required: stored strings win, shipped ones fill gaps."""
+    shipped = AppConfigService(Database(None), CONFIG).file_value("ui_copy")
+    stored = {k: v for k, v in shipped.items() if k not in ("signin.heading", "account.cancel")}
+    stored["signin.tagline"] = "Edited by the admin"
+    with psycopg.connect(url, autocommit=True) as c:
+        c.execute(
+            "update public.app_config set value = %s, admin_edited_at = now() where key = 'ui_copy'", (Jsonb(stored),)
+        )
+    db = Database(SecretStr(url))
+    try:
+        row = await AppConfigService(db, CONFIG).row("ui_copy")
+        assert row.source == "db"
+        assert row.value["signin.tagline"] == "Edited by the admin"  # stored wins
+        assert row.value["signin.heading"] == shipped["signin.heading"]  # filled
+        assert row.value["account.cancel"] == shipped["account.cancel"]
+        assert row.invalid_reason == "2 missing keys filled from config/app_config.yaml"
+        # a broken row (not just missing keys) still falls back to the files as a whole
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("update public.app_config set value = '{\"Bad Key\": \"x\"}' where key = 'ui_copy'")
+        broken = await AppConfigService(db, CONFIG).row("ui_copy")
+        assert broken.source == "file"
+        assert broken.value == shipped
+    finally:
+        await db.close()
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute(
+                "update public.app_config set value = %s, admin_edited_at = null where key = 'ui_copy'",
+                (Jsonb(shipped),),
+            )
+            c.execute("delete from public.app_config_history where key = 'ui_copy'")
 
 
 def test_put_body_is_capped(client: TestClient, key: SigningKey, users: dict[str, uuid.UUID]) -> None:
