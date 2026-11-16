@@ -147,7 +147,10 @@ test.describe("ink lab", () => {
   test("pen draws pressure strokes in surface-relative [x, y, p, t]", async ({ page, consoleErrors }, info) => {
     const requests: string[] = [];
     await openLab(page);
-    page.on("request", (r) => requests.push(r.url()));
+    // Network = http(s). Settled ink is shown from local blob: URLs, which never leave the device.
+    page.on("request", (r) => {
+      if (/^https?:/.test(r.url())) requests.push(r.url());
+    });
     await stroke(page, wave(0.1, 0.15, 0.6), { pressure: 0.8 });
     await stroke(page, wave(0.1, 0.22, 0.5), { pressure: 0.3 });
     await expect.poll(() => count(page)).toBe(2);
