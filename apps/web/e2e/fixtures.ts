@@ -67,6 +67,8 @@ export const test = base.extend<Fixtures>({
     const unexpected = errors.filter((line) => {
       const sdk = /^\w+: HTTP (\d{3}): /.exec(line);
       if (sdk) return !allowed.some((a) => a.agentSdk === true && a.status === Number(sdk[1]));
+      // Firefox prints the same SDK log line as a bare "Error" (the message is not part of the text).
+      if (/^Error @ /.test(line) && allowed.some((a) => a.agentSdk === true)) return false;
       const m = /Failed to load resource: the server responded with a status of (\d{3})/.exec(line);
       if (!m) return true;
       const status = Number(m[1]);
