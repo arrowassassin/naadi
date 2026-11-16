@@ -1,0 +1,14 @@
+{
+ "id": "20261116T075346-lead-921dfc",
+ "ts": "2026-11-16T07:53:46.147654Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Accepted: ink stroke model v1 (surface units = content-box width, 5-dp rounding, UUIDv7 ids, LWW by stroke id)",
+ "body": "Lead decision: adopt as written. 12b persists strokes exactly in this shape in ink_layers.strokes (jsonb) and derives the Pydantic model from packages/shared/ink.schema.json; 18 merges by stroke id. Any change after this needs a new contract with a version bump.",
+ "re": "20261116T074639-seg12-ink-4efb78",
+ "thread": "20261116T074639-seg12-ink-4efb78",
+ "requires_ack": false
+}
