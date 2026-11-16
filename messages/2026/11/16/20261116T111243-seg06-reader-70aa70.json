@@ -1,0 +1,16 @@
+{
+ "id": "20261116T111243-seg06-reader-70aa70",
+ "ts": "2026-11-16T11:12:43.326344Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 300499e into claude/naadi-shared",
+ "body": "S06: ContentRenderer, Courses map, Reader, Learn nav + courses flag, Storage via local gateway",
+ "refs": {
+  "commit": "300499e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
