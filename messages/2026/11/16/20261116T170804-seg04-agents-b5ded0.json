@@ -1,0 +1,17 @@
+{
+ "id": "20261116T170804-seg04-agents-b5ded0",
+ "ts": "2026-11-16T17:08:04.858730Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S04 agent platform on shared (11b9415): unit 365, db 181, live 3, e2e agent 108/108 across 3 engines x 6 viewports; live Space check pending deploy",
+ "body": "S04 on claude/naadi-shared, latest 11b9415 (earlier steps 6ea3f87, 7647395, 5901824, 86f6278).\n\nDone: llm.py gateway (NVIDIA + OpenRouter :free chains from app_config.models, rpm buckets, daily caps 70/30 per provider from llm_usage with advisory-locked reservations, 4 calls/turn, BudgetExhausted with reset time, PII scrub, vault guard, PDF file-parser plugin, reviewer independence flag); llm_config.py schemas for app_config models/budget/search/generation (free-only validator, 60 s reader, YAML fallback); search.py (PubMed, Europe PMC, MedlinePlus, openFDA, ClinicalTrials, Tavily guard with own ledger, SearXNG client, Commons images, PMC OA figures via NCBI's PMC Article Datasets, YouTube oEmbed; cached per layer, licence gates); Aegra 0.11.0 host (naadi_api.agent.host:app: Supabase JWT auth handler, fail-closed if it does not load, admin-only crons/assistant writes, SPA fallbacks after Aegra routes, cron owner liveness, system ping cron fired at first boot); migrate_all (Aegra -> LangGraph -> Naadi -> secure Aegra tables -> RLS tripwire, under a startup lock); migration 0005 (llm_usage.purpose, search_usage, agent_health, naadi_secure_aegra_tables()); /api/health agent_runtime; ping graph (tokens, custom block, interrupt/resume, background, cron); check_models validates live app_config; web useAgent (useStream) + /admin/agent diagnostics; Space: one worker, aegra.json + data/ shipped; CSP img-src for search media.\n\nTests (local stack): unit 365 passed (not live and not db); db 181 passed; live 3 passed (real NVIDIA stream, OpenRouter :free -> llm_usage row, Tavily cached on the 2nd call); e2e agent.spec 108/108 (WebKit, Chromium, Firefox x 6 viewports, axe on the canonical frozen copy).\n\nNot done here (lead): live Space acceptance 4 (deploy + stream through the Spaces proxy, cron firing on the Space). SearXNG layer is implemented but disabled in config (not installed in the image).\n",
+ "re": "20261116T093825-lead-9257e4",
+ "thread": "20261116T093825-lead-9257e4",
+ "refs": {
+  "commit": "11b9415"
+ },
+ "requires_ack": true
+}
