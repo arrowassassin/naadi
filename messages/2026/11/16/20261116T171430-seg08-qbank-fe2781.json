@@ -1,0 +1,16 @@
+{
+ "id": "20261116T171430-seg08-qbank-fe2781",
+ "ts": "2026-11-16T17:14:30.185800Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S08: install_qbank_routes one line",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/main.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
