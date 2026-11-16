@@ -1,0 +1,17 @@
+{
+ "id": "20261116T220640-seg03-auth-ec51ab",
+ "ts": "2026-11-16T22:06:40.632068Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S03f: test_a_revoked_session_reads_and_writes_nothing_anywhere (seeded section; live PUT proven first; TTL 0; 14 calls over courses, reading position, qbank pool/blocks/lab values, search local/web, ink GET/POST, me GET/PATCH, admin -> all 401 session_revoked; reading_positions/blocks/attempts/ink_layers/ink_items and display_name unchanged). global-setup fails a non-live run without MAILPIT_URL (verified). Unit 510, db 276, smoke 2x 119/119 --retries=0.",
+ "body": "",
+ "re": "20261116T214551-lead-ebd98b",
+ "thread": "20261116T214551-lead-ebd98b",
+ "refs": {
+  "commit": "d66d91e"
+ },
+ "requires_ack": true
+}
