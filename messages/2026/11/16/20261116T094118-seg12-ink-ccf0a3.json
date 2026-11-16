@@ -1,0 +1,15 @@
+{
+ "id": "20261116T094118-seg12-ink-ccf0a3",
+ "ts": "2026-11-16T09:41:18.130132Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/web/src/router.tsx",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/web/src/router.tsx\n\nRecent integration commits touching them:\nchore(web): ink lab gated at runtime by features.ink_lab; drop the build-time VITE_FEATURE_INK_LAB flag (for seg12-ink)\nfeat(web): Supabase sign-in (magic link + Google, PKCE), callback, protected app shell, Today, Account\nfeat(ink): ink engine package, React binding, toolbar and /system/ink-lab latency harness\nwip(m0): checkpoint segment 01 scaffold in progress\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/web/src/router.tsx"
+ ],
+ "requires_ack": true
+}
