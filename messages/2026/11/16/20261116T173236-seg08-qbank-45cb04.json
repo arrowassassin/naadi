@@ -1,0 +1,16 @@
+{
+ "id": "20261116T173236-seg08-qbank-45cb04",
+ "ts": "2026-11-16T17:32:36.239792Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S08: practice.* required keys",
+ "body": "",
+ "paths": [
+  "packages/shared/ui-copy.defaults.json"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
