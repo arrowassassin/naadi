@@ -86,6 +86,7 @@ Details of the file layout, message fields and exit codes: `references/protocol.
 - **Prefer agreeing a contract early to resolving a conflict late.** If two tasks meet at an interface, post the contract before writing code on either side.
 - **Keep the shared branch green.** Integrate only what passes your fast tests; a broken shared branch stalls everyone. If you break it, say so on the ledger immediately and fix or revert.
 - **Never rewrite history on the ledger or shared branch** and never edit someone else's message — post a correction that references it.
+- **Keep scratch files inside your own worktree** (e.g. a gitignored `.tmp/`), never in a directory other agents share: parallel agents in one session share the same scratchpad and temp paths, and a colliding file name silently corrupts another agent's run.
 - **Secrets never go on the ledger** (it is a normal git branch and may be public). Reference where a value lives, never the value.
 - **Before stopping for any reason** (done, blocked, out of budget), commit, integrate what's ready, and post an `update`/`block`/`handoff` so nobody waits on a silent agent.
 
