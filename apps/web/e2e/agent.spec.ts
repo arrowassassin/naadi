@@ -113,7 +113,8 @@ test.describe("admin, budget forced to zero", () => {
     await openDiagnostics(page);
     await page.getByRole("button", { name: "Run ping" }).click();
     await expect(page.getByTestId("budget-exhausted")).toBeVisible({ timeout: 45_000 });
-    await expect(page.getByTestId("budget-exhausted")).toContainText(/00:00/);
+    // Copy from app_config.ui_copy (agent.quota_reset), reset at the next 00:00 UTC.
+    await expect(page.getByTestId("budget-exhausted")).toContainText("AI quota resets at 00:00 UTC");
     await expect(panel(page)).toHaveAttribute("data-phase", "budget_exhausted");
     await expectNoAxeViolations(page);
     await expectNoHorizontalOverflow(page);

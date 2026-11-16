@@ -131,7 +131,7 @@ function PingRun() {
             Quota used
           </Chip>
           <p className="m-0 text-text">
-            {copy("assistant.quota_reset", { time: utcTime.format(agent.budget.resetAt) }) ?? (
+            {copy("agent.quota_reset", { time: `${utcTime.format(agent.budget.resetAt)} UTC` }) ?? (
               <time dateTime={agent.budget.resetAt.toISOString()}>{utcTime.format(agent.budget.resetAt)} UTC</time>
             )}
           </p>
