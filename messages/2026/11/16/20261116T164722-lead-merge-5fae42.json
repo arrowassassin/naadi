@@ -1,0 +1,13 @@
+{
+ "id": "20261116T164722-lead-merge-5fae42",
+ "ts": "2026-11-16T16:47:22.528679Z",
+ "from": "lead-merge",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/llm_config.py",
+ "body": "",
+ "re": "20261116T162949-lead-merge-403949",
+ "requires_ack": false
+}
