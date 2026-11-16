@@ -78,91 +78,74 @@ export const test = base.extend<Fixtures>({
 
 export { expect };
 
-export type AxeResults = Awaited<ReturnType<AxeBuilder["analyze"]>>;
-
-/** The page as the user sees it now, as static HTML: form state kept, no scripts. */
-async function freezePage(page: Page): Promise<string> {
-  return page.evaluate(() => {
-    const live = document.documentElement;
-    const copy = live.cloneNode(true) as HTMLElement;
-    // Form state lives in properties, not attributes: copy what the user sees into the markup.
-    const liveFields = live.querySelectorAll("input, textarea, select");
-    const copyFields = copy.querySelectorAll("input, textarea, select");
-    liveFields.forEach((el, i) => {
-      const c = copyFields[i];
-      if (el instanceof HTMLInputElement && c instanceof HTMLInputElement) {
-        if (el.type === "checkbox" || el.type === "radio") c.toggleAttribute("checked", el.checked);
-        else c.setAttribute("value", el.value);
-      } else if (el instanceof HTMLTextAreaElement && c instanceof HTMLTextAreaElement) {
-        c.textContent = el.value;
-      } else if (el instanceof HTMLSelectElement && c instanceof HTMLSelectElement) {
-        Array.from(el.options).forEach((o, j) => {
-          c.options[j]?.toggleAttribute("selected", o.selected);
-        });
-      }
-    });
-    // No page JavaScript in the copy: drop scripts and module preloads (inline handlers are not used).
-    for (const n of copy.querySelectorAll('script, link[rel="modulepreload"]')) n.remove();
-    // Inline the applied CSS (linked and constructed sheets), so the copy renders identically even when
-    // the test has taken the browser offline. url() references are made absolute first.
-    const cssText = [...document.styleSheets, ...document.adoptedStyleSheets]
-      .map((sheet) => {
-        try {
-          const base = sheet.href ?? document.baseURI;
-          return Array.from(sheet.cssRules, (r) =>
-            r.cssText.replace(/url\((['"]?)(?!data:|https?:|blob:)([^'")]+)\1\)/g, (_m, q, u) => {
-              return `url(${q}${new URL(u, base).href}${q})`;
-            }),
-          ).join("\n");
-        } catch {
-          return "";
-        }
-      })
-      .join("\n");
-    for (const n of copy.querySelectorAll('link[rel="stylesheet"], style')) n.remove();
+/**
+ * A frozen, script-free copy of the page as it is now, in a fresh browser context with the same
+ * emulation (viewport, touch, mobile, scale) and headers, at the same URL (same origin, so fonts and
+ * relative URLs resolve). Scripts are removed, so no page code exists to run (JavaScript itself stays
+ * on: axe-core hung in a context created with javaScriptEnabled: false), and every stylesheet is
+ * inlined from the live CSSOM, so nothing can load, fetch, re-render or animate while axe walks it.
+ * A separate context also stays online when the test has taken the live context offline.
+ */
+async function frozenCopy(page: Page): Promise<{ frozen: Page; close: () => Promise<void> }> {
+  const { html, url } = await page.evaluate(() => {
+    const css = Array.from(document.styleSheets, (sheet) => Array.from(sheet.cssRules, (r) => r.cssText).join("\n"));
+    const root = document.documentElement.cloneNode(true) as HTMLElement;
+    for (const n of root.querySelectorAll(
+      'script, link[rel="stylesheet"], link[rel="modulepreload"], link[rel="preload"], style',
+    )) {
+      n.remove();
+    }
     const style = document.createElement("style");
-    style.textContent = cssText;
-    copy.querySelector("head")?.append(style);
-    return `<!doctype html>\n${copy.outerHTML}`;
+    style.textContent = css.join("\n");
+    root.querySelector("head")?.append(style);
+    return { html: `<!doctype html>\n${root.outerHTML}`, url: location.href };
   });
+  const browser = page.context().browser();
+  if (!browser) throw new Error("frozenCopy needs a browser-backed page");
+  const use = base.info().project.use;
+  const context = await browser.newContext({
+    viewport: page.viewportSize(),
+    hasTouch: use.hasTouch,
+    isMobile: use.isMobile,
+    deviceScaleFactor: use.deviceScaleFactor,
+    extraHTTPHeaders: use.extraHTTPHeaders,
+    colorScheme: use.colorScheme,
+    reducedMotion: use.reducedMotion,
+  });
+  const frozen = await context.newPage();
+  await frozen.route(url, (route) =>
+    route.fulfill({ status: 200, contentType: "text/html; charset=utf-8", body: html }),
+  );
+  await frozen.goto(url, { waitUntil: "load" });
+  return { frozen, close: () => context.close() };
 }
 
 /**
- * axe-core against a FROZEN copy of the page, in every browser.
+ * WCAG 2.2 AA audit with the full rule set, run on a frozen copy of the page (see frozenCopy) rather
+ * than on the live page, in every browser so all three engines audit the same thing.
  *
- * Why: Firefox's content process crashes with SIGSEGV (libxul; `dmesg`: "Web Content ... segfault") when
- * axe walks a live page that is still busy (pending/held requests, aria-busy regions, skeleton
- * animations); reviewer-opus reproduced it in CI run 43843684814 (shell.spec loading/error, auth.spec
- * sending/processing, Split View 320) and locally. Running the same rules on a static snapshot (same
- * DOM, same stylesheets and fonts from the same origin, same viewport, no scripts) gives the same
- * results, which e2e/axe-parity.spec.ts checks against live-page axe on Chromium.
+ * Why (segment 01 review 1, defect 6): Playwright's Firefox (build 1572, @playwright/test 1.65.1, the
+ * latest) killed the content process with SIGSEGV at one fixed libxul address in about 1 of 12 axe runs
+ * on the live page: core dumps show the fault in native code called from JS, and markers in an
+ * instrumented axe-core show every crash after axe's last rule and teardown, while the result travels
+ * back from a page that is still running the app. It reproduced with 1 worker or 4 and with the JIT,
+ * content sandbox, Fission, incremental GC, GPU prefs, reduced motion or the network off; it never
+ * happened without axe. On the frozen copy it does not happen (see the defect 6 commit for the runs).
  */
-export async function axeFrozen(page: Page): Promise<AxeResults> {
-  const html = await freezePage(page);
-  const frozen = await page.context().newPage();
-  try {
-    const url = new URL("/__axe-frozen__", page.url()).toString();
-    await frozen.route(url, (route) => route.fulfill({ status: 200, contentType: "text/html", body: html }));
-    await frozen.goto(url, { waitUntil: "load" });
-    await frozen.evaluate(() => document.fonts.ready);
-    return await new AxeBuilder({ page: frozen }).withTags(WCAG_TAGS).analyze();
-  } finally {
-    await frozen.close();
-  }
-}
-
-export function summarizeViolations(results: AxeResults) {
-  return results.violations.map((v) => ({
-    id: v.id,
-    impact: v.impact,
-    help: v.help,
-    nodes: v.nodes.slice(0, 5).map((n) => n.target.join(" ")),
-  }));
-}
-
 export async function expectNoAxeViolations(page: Page): Promise<void> {
-  const results = await axeFrozen(page);
-  expect(summarizeViolations(results), "axe WCAG 2.2 AA violations").toEqual([]);
+  const { frozen, close } = await frozenCopy(page);
+  try {
+    const results = await new AxeBuilder({ page: frozen }).withTags(WCAG_TAGS).analyze();
+    const summary = results.violations.map((v) => ({
+      id: v.id,
+      impact: v.impact,
+      help: v.help,
+      nodes: v.nodes.slice(0, 5).map((n) => n.target.join(" ")),
+    }));
+    expect(summary, "axe WCAG 2.2 AA violations").toEqual([]);
+  } finally {
+    await close();
+  }
 }
 
 export async function snap(
