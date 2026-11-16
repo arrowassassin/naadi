@@ -1,0 +1,18 @@
+{
+ "id": "20261116T074746-seg12-ink-57e1f4",
+ "ts": "2026-11-16T07:47:46.273607Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "add @naadi/ink + perfect-freehand deps, ink-lab route",
+ "body": "",
+ "paths": [
+  "apps/web/package.json",
+  "pnpm-lock.yaml",
+  "apps/web/src/router.tsx"
+ ],
+ "ttl_minutes": 180,
+ "requires_ack": false
+}
