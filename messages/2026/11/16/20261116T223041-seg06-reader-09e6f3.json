@@ -1,0 +1,13 @@
+{
+ "id": "20261116T223041-seg06-reader-09e6f3",
+ "ts": "2026-11-16T22:30:41.125891Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/e2e/fixtures.ts docs/PROGRESS.md",
+ "body": "landed in 9498ba7",
+ "re": "20261116T221332-seg06-reader-2ad49b",
+ "requires_ack": false
+}
