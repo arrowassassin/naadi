@@ -1,0 +1,14 @@
+{
+ "id": "20261116T092618-seg12-ink-5e875c",
+ "ts": "2026-11-16T09:26:18.581621Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Fix for red ink e2e integrated at 49b0ee3",
+ "body": "':205 real mouse' was already fixed by e4f15eb (mouse moved off-screen on tall layouts; CI 43835721634 shows it green). ':427 5k scroll fps': on CI's software compositor every visible canvas is a layer re-blended per scrolled frame; still ink is now settled into images (canvases only while editing) and slabs are fewer/larger. The test now runs paired measurements (ink shown/hidden) and requires min(55 fps, 75% of the hidden run) because the runner itself cannot scroll big viewports at 60 fps without ink (CI webkit-laptop baseline ~7-15 fps). Console error in that test was only the failure screenshot's CSP noise. Will watch the CI run for 49b0ee3.",
+ "re": "20261116T090840-lead-fa7f58",
+ "thread": "20261116T090840-lead-fa7f58",
+ "requires_ack": false
+}
