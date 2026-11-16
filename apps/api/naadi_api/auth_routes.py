@@ -381,13 +381,18 @@ async def _field_invalid_handler(_: Request, exc: Exception) -> JSONResponse:
     responses=_AUTH_ERRORS,
     tags=["auth"],
 )
-async def get_nav(request: Request, user: Annotated[CurrentUser, user_limited("me_read")]) -> NavResponse:
+async def get_nav(
+    request: Request, user: Annotated[CurrentUser, user_limited("me_read", account=False)]
+) -> NavResponse:
+    # Token-only (no account lookup, so the shell's most frequent call stays cheap): the admin decision lives in
+    # `auth` and is not made here, so flags and items with audience "admins" resolve as for a student. Admin
+    # flags are served by /api/me (account-checked). An admin-only nav item would need account=True here.
     cfg = _config(request)
     env = _settings(request).app_env
     rows = (await cfg.row("feature_flags"), await cfg.row("ui.nav"))
     return NavResponse(
-        items=[NavItem.model_validate(i) for i in await cfg.nav_for(is_admin=user.is_admin, app_env=env)],
-        features=await cfg.resolved_features(is_admin=user.is_admin, app_env=env),
+        items=[NavItem.model_validate(i) for i in await cfg.nav_for(is_admin=False, app_env=env)],
+        features=await cfg.resolved_features(is_admin=False, app_env=env),
         source="app_config" if all(r.source == "db" for r in rows) else "file_fallback",
     )
 
