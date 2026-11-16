@@ -48,6 +48,30 @@ async def record_ping(
     return int(row[0]) if row else 0
 
 
+async def record_health(
+    db: Database,
+    *,
+    kind: str,
+    trigger: Trigger,
+    ok: bool,
+    run_id: str | None,
+    detail: dict[str, Any],
+) -> int:
+    """One `agent_health` row of another kind (e.g. the daily `tavily_usage` reading)."""
+    if db.pool is None:
+        await db.open()
+    if db.pool is None:
+        raise RuntimeError("DATABASE_URL is not set")
+    async with db.pool.connection(timeout=5.0) as conn, asyncio.timeout(5.0):
+        cur = await conn.execute(
+            "insert into public.agent_health (kind, trigger, ok, run_id, detail) values (%s, %s, %s, %s, %s::jsonb)"
+            " returning id",
+            (kind, trigger, ok, run_id, json.dumps(detail)),
+        )
+        row = await cur.fetchone()
+    return int(row[0]) if row else 0
+
+
 async def last_ping(db: Database, trigger: Trigger | None = None) -> dict[str, Any] | None:
     if db.pool is None:
         await db.open()

@@ -263,3 +263,31 @@ async def test_checkpoint_retention_keeps_only_the_latest_state(host: Host) -> N
             "select expires_at > now() + interval '29 days' from public.thread_ttl where thread_id = %s", (tid,)
         ).fetchone()
     assert rearmed == (True,)
+
+
+async def test_tavily_usage_reconciliation_records_and_never_blocks(host: Host) -> None:
+    """The daily system cron exists; a run records the reading next to our ledger (no key here: recorded as
+    not configured, the run still succeeds). Students cannot run it."""
+    with pg() as conn:
+        cron = conn.execute(
+            "select schedule from public.crons where user_id = 'naadi-system'"
+            " and metadata->>'naadi_key' = 'naadi.tavily_usage.daily'"
+        ).fetchone()
+    assert cron == ("43 3 * * *",)
+    a = client(host, host.admin_token)
+    thread = await a.threads.create()
+    run = await a.runs.create(thread["thread_id"], "tavily_usage", input={})
+    await a.runs.join(thread["thread_id"], run["run_id"])
+    assert (await a.runs.get(thread["thread_id"], run["run_id"]))["status"] == "success"
+    with pg() as conn:
+        row = conn.execute(
+            "select kind, ok, detail->>'outcome', (detail->>'ledger_month_credits')::int >= 0"
+            " from public.agent_health where run_id = %s",
+            (run["run_id"],),
+        ).fetchone()
+    assert row == ("tavily_usage", False, "not_configured", True)
+    s = client(host, host.student_token)
+    st = await s.threads.create()
+    srun = await s.runs.create(st["thread_id"], "tavily_usage", input={})
+    await s.runs.join(st["thread_id"], srun["run_id"])
+    assert (await s.runs.get(st["thread_id"], srun["run_id"]))["status"] == "error"

@@ -66,6 +66,11 @@ HOSTED = False
 SPA_ENDPOINTS = ("api_not_found", "spa")
 SYSTEM_CRON_KEY = "naadi.ping.hourly"
 SYSTEM_CRON_SCHEDULE = "17 * * * *"
+# (key, graph, schedule UTC, input, fire on first boot). Owned by SYSTEM_IDENTITY; created once.
+SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
+    (SYSTEM_CRON_KEY, "ping", SYSTEM_CRON_SCHEDULE, {"trigger": "cron"}, True),
+    ("naadi.tavily_usage.daily", "tavily_usage", "43 3 * * *", {}, False),
+)
 
 naadi_app: FastAPI = create_app()
 
@@ -110,8 +115,8 @@ async def validate_cron_user(user_id: str) -> bool:
         return await cur.fetchone() is not None
 
 
-async def ensure_system_cron() -> None:
-    """Idempotently create the hourly system `ping` cron (owned by SYSTEM_IDENTITY)."""
+async def ensure_system_crons() -> None:
+    """Idempotently create the system crons (owned by SYSTEM_IDENTITY): hourly `ping`, daily `tavily_usage`."""
     from aegra_api.core.database import db_manager
     from aegra_api.core.orm import Cron as CronORM
     from aegra_api.models.crons import CronCreate
@@ -120,35 +125,37 @@ async def ensure_system_cron() -> None:
     from sqlalchemy import select, text
     from sqlalchemy.ext.asyncio import AsyncSession
 
-    async with AsyncSession(db_manager.get_engine()) as session:
-        # Two processes starting together must not both create it: serialize on a transaction lock.
-        await session.execute(text("select pg_advisory_xact_lock(4611686018427387914)"))
-        existing = await session.scalar(
-            select(CronORM).where(
-                CronORM.user_id == SYSTEM_IDENTITY,
-                text("crons.metadata ->> 'naadi_key' = :key").bindparams(key=SYSTEM_CRON_KEY),
+    for key, graph, schedule, payload, fire_now in SYSTEM_CRONS:
+        async with AsyncSession(db_manager.get_engine()) as session:
+            # Two processes starting together must not both create it: serialize on a transaction lock.
+            await session.execute(text("select pg_advisory_xact_lock(4611686018427387914)"))
+            existing = await session.scalar(
+                select(CronORM).where(
+                    CronORM.user_id == SYSTEM_IDENTITY,
+                    text("crons.metadata ->> 'naadi_key' = :key").bindparams(key=key),
+                )
             )
-        )
-        if existing is not None:
-            return
-        cron = await CronService(session, get_langgraph_service()).create_cron(
-            CronCreate(
-                assistant_id="ping",
-                schedule=SYSTEM_CRON_SCHEDULE,
-                input={"trigger": "cron"},
-                metadata={"naadi_key": SYSTEM_CRON_KEY},
-                on_run_completed="delete",
-                timezone="UTC",
-            ),
-            SYSTEM_IDENTITY,
-        )
-        # The service schedules the second occurrence (the API would fire the first itself): fire on the next
-        # scheduler poll instead, so a fresh deployment reports a cron ping within a minute.
-        await session.execute(
-            text("update crons set next_run_date = now() where cron_id = :id").bindparams(id=cron.cron_id)
-        )
-        await session.commit()
-        log.info("agent_runtime.system_cron_created", schedule=SYSTEM_CRON_SCHEDULE)
+            if existing is not None:
+                continue
+            cron = await CronService(session, get_langgraph_service()).create_cron(
+                CronCreate(
+                    assistant_id=graph,
+                    schedule=schedule,
+                    input=payload,
+                    metadata={"naadi_key": key},
+                    on_run_completed="delete",
+                    timezone="UTC",
+                ),
+                SYSTEM_IDENTITY,
+            )
+            if fire_now:
+                # The service schedules the second occurrence (the API would fire the first itself): fire on
+                # the next poll instead, so a fresh deployment reports a cron ping within a minute.
+                await session.execute(
+                    text("update crons set next_run_date = now() where cron_id = :id").bindparams(id=cron.cron_id)
+                )
+            await session.commit()
+            log.info("agent_runtime.system_cron_created", key=key, schedule=schedule)
 
 
 def _wrap_lifespan(app: FastAPI) -> None:
@@ -161,7 +168,7 @@ def _wrap_lifespan(app: FastAPI) -> None:
         await init_runtime(get_settings())
         try:
             async with inner(a):
-                await ensure_system_cron()
+                await ensure_system_crons()
                 yield
         finally:
             await close_runtime()
