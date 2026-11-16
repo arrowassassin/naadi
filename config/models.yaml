@@ -1,5 +1,8 @@
 # Naadi — FREE model routing via OpenRouter (https://openrouter.ai/api/v1)
 # Catalog read from /api/v1/models on 2026-11-15 (467 models, ~15 ":free" LLMs).
+# Rebalanced 2026-11-16 from live endpoint uptime (OpenRouter endpoints API, last 1d): nemotron-3-ultra 95%,
+# lfm-3-1.7b 69%; gemma-4-31b, ernie-5.5-flash, inkling-2-small 100%; nemotron-3.5-super-vl/lightning 99.8%.
+# Fallbacks spread across providers. Final role choice must pass tools/model_eval (HANDOFF §6.1).
 # Free models change often: run tools/check_models.py at startup/CI and keep IDs ONLY here.
 #
 # Free-tier limits (OpenRouter FAQ, Nov 2026):
@@ -22,29 +25,29 @@ budget:
 
 roles:
   tutor:                           # page-aware chat with tool calling
-    model: nvidia/nemotron-3-ultra-550b-a55b:free     # 1M ctx; tools; best free GPQA/MMLU-Pro (86.7% / 85.8%)
-    fallbacks: [google/gemma-4-31b-it:free, inclusionai/ling-3.2-flash:free, openrouter/free]
+    model: google/gemma-4-31b-it:free   # Google AI Studio, 100% 1d uptime; tools; image+video input
+    fallbacks: [baidu/ernie-5.5-flash-preview:free, nvidia/nemotron-3.5-super-vl:free, thinkingmachines/inkling-2-small:free, openrouter/free]
     temperature: 0.3
   vision:                          # photos, handwriting, page images, diagrams (rasterize PDFs in browser)
-    model: nvidia/nemotron-3.5-super-vl:free          # text+image+video, structured outputs, 1M ctx
-    fallbacks: [google/gemma-4-31b-it:free, inclusionai/ling-3.2-flash:free]
+    model: nvidia/nemotron-3.5-super-vl:free   # 99.8% 1d; image+video; structured outputs
+    fallbacks: [google/gemma-4-26b-a4b-it:free, dots-studio/dots-3-note-preview:free]
   structured:                      # flashcards, plans, JSON (json_schema), Mermaid text
-    model: inclusionai/ling-3.2-flash:free            # has structured_outputs
-    fallbacks: [baidu/ernie-5.5-flash-preview:free, nvidia/nemotron-3.5-super-vl:free]
+    model: baidu/ernie-5.5-flash-preview:free   # 100% 1d; structured_outputs
+    fallbacks: [inclusionai/ling-3.2-flash:free, nvidia/nemotron-3.5-super-vl:free]
     validate: pydantic + retry once; mermaid.parse on server
   long_context:                    # chapter / PDF summaries
-    model: nvidia/nemotron-3.5-super-vl:free          # best long-context evidence among free (AA-LCR 69%)
-    fallbacks: [inclusionai/ling-3.2-flash:free, baidu/ernie-5.5-flash-preview:free]
+    model: nvidia/nemotron-3.5-super-vl:free   # 1M ctx; 99.8% 1d
+    fallbacks: [baidu/ernie-5.5-flash-preview:free, thinkingmachines/inkling-2-small:free]
   author:                          # offline question authoring jobs (night-time, within budget)
-    model: nvidia/nemotron-3-ultra-550b-a55b:free
+    model: nvidia/nemotron-3-ultra-550b-a55b:free   # strongest reasoning; 95% uptime is fine for night jobs
     fallbacks: [baidu/ernie-5.5-flash-preview:free]
   reviewer:                        # blind solver — MUST be a different family from the author (Google ≠ NVIDIA)
-    model: google/gemma-4-31b-it:free
-    fallbacks: [baidu/ernie-5.5-flash-preview:free, inclusionai/ling-3.2-flash:free]
+    model: google/gemma-4-31b-it:free   # different family from author (never NVIDIA/Baidu)
+    fallbacks: [thinkingmachines/inkling-2-small:free, particle-ai/particle-1:free]
     if_fallback_family_equals_author: mark_review_not_independent
   router:                          # prefer deterministic Python rules first (costs no request)
-    model: liquid/lfm-3-1.7b:free
-    fallbacks: [nvidia/nemotron-3.5-lightning:free]
+    model: nvidia/nemotron-3.5-lightning:free   # 99.8% 1d, ~430 ms p50 (lfm-3-1.7b was 69% 1d)
+    fallbacks: [nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free]
   embeddings:                      # LOCAL, free, private, no rate limit
     engine: fastembed==0.9.1
     model: BAAI/bge-small-en-v1.5   # 384 dims, 67 MB, MIT
@@ -56,7 +59,7 @@ roles:
       - ipados_dictation           # free, on-device, zero code
       - browser: "@huggingface/transformers@4.3.2 onnx-community/whisper-base (WebGPU → WASM)"
       - server: "faster-whisper==1.2.1 base.en int8 on Space CPU"
-      - last_resort: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free   # uses daily quota; NVIDIA logs audio
+      - last_resort: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free   # audio input; uses daily quota; NVIDIA logs audio
 
 search:
   provider: tavily                 # FREE plan: 1,000 credits/month (~33/day), 100 rpm
@@ -74,3 +77,19 @@ search:
 # Upgrade path (paid, only if quality or quotas demand it) — swap per role, nothing else changes:
 #   tutor: anthropic/claude-sonnet-5.5 ($2/$10) · vision/long: google/gemini-3.8-flash · author: anthropic/claude-opus-5.5
 #   reviewer: google/gemini-4-argon · embeddings: openai/text-embedding-3-large (then migrate the index)
+
+# Image / video generation — NOT on OpenRouter (no free model outputs images or video, catalog 2026-11-16).
+# Runs on a private ZeroGPU Space using the owner's HF PRO daily quota: never billed; pauses when the quota is used.
+# HF Inference Providers are NOT used (included credits roll into paid usage).
+generation:
+  provider: hf_zerogpu_space          # called with the official gradio_client
+  space_id: arrowassassin/naadi-gen   # Gradio SDK, ZeroGPU flavor, private
+  image:
+    model: black-forest-labs/FLUX.1-schnell   # Apache-2.0
+    max_per_user_per_day: 30
+  video:
+    model: Lightricks/LTX-Video               # verify license + ZeroGPU fit when building
+    max_seconds: 5
+    max_per_user_per_day: 5
+  label: "AI-generated illustration — not clinical reference"
+  publish_requires_admin_approval: true
