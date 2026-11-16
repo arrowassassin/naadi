@@ -16,6 +16,9 @@ export const WCAG_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"
 export interface ExpectedHttpError {
   urlPart: string;
   status: number;
+  /** Also allow the LangGraph SDK's own log line for the same failed agent request (`HTTP 401: {...}`):
+   * the SDK console.errors a failed run before handing it to the app, which shows it as an error state. */
+  agentSdk?: boolean;
 }
 
 export interface ConsoleGuard {
@@ -62,6 +65,8 @@ export const test = base.extend<Fixtures>({
       },
     });
     const unexpected = errors.filter((line) => {
+      const sdk = /^\w+: HTTP (\d{3}): /.exec(line);
+      if (sdk) return !allowed.some((a) => a.agentSdk === true && a.status === Number(sdk[1]));
       const m = /Failed to load resource: the server responded with a status of (\d{3})/.exec(line);
       if (!m) return true;
       const status = Number(m[1]);

@@ -97,21 +97,24 @@ function PingRun() {
 
       {agent.phase === "offline" ? <OfflineBanner message="The self-test needs a connection." /> : null}
 
-      <div role="status" aria-live="polite" className="flex flex-col gap-3">
-        {busy ? (
-          <Chip tone="assistant" icon={<Sparkles size={14} />} srPrefix="Agent:">
-            Running
-          </Chip>
-        ) : null}
-        {agent.text ? (
-          <blockquote
-            className="m-0 rounded-block border border-assistant/40 bg-assistant/10 p-4 text-text"
-            data-testid="ping-reply"
-          >
-            {agent.text}
-          </blockquote>
-        ) : null}
-      </div>
+      {/* Rendered only with content: an empty zero-height live region crashed Firefox's axe contrast scan. */}
+      {busy || agent.text ? (
+        <div role="status" aria-live="polite" className="flex flex-col gap-3">
+          {busy ? (
+            <Chip tone="assistant" icon={<Sparkles size={14} />} srPrefix="Agent:">
+              Running
+            </Chip>
+          ) : null}
+          {agent.text ? (
+            <blockquote
+              className="m-0 rounded-block border border-assistant/40 bg-assistant/10 p-4 text-text"
+              data-testid="ping-reply"
+            >
+              {agent.text}
+            </blockquote>
+          ) : null}
+        </div>
+      ) : null}
 
       {agent.blocks.map((b) =>
         b.type === "table" ? (

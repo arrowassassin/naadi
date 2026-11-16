@@ -78,29 +78,42 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
     onError: (err: unknown) => setRunError(err instanceof Error ? err.message : "The agent run failed."),
   });
 
+  // A failed submit (network, 401, 5xx) becomes the `error` state; it must not surface as an unhandled
+  // promise rejection.
+  const submitSafely = useCallback(
+    async (...args: Parameters<typeof stream.submit>) => {
+      try {
+        await stream.submit(...args);
+      } catch (err) {
+        setRunError(err instanceof Error ? err.message : "The agent run failed.");
+      }
+    },
+    [stream],
+  );
+
   const start = useCallback(
     async (input: Partial<State>) => {
       if (examMode || !online) return;
       setBlocks([]);
       setBudget(null);
       setRunError(null);
-      await stream.submit(input as Parameters<typeof stream.submit>[0], {
+      await submitSafely(input as Parameters<typeof stream.submit>[0], {
         streamMode: ["messages-tuple", "custom", "updates", "values"],
       });
     },
-    [examMode, online, stream],
+    [examMode, online, submitSafely],
   );
 
   const resume = useCallback(
     async (value: unknown) => {
       if (!online) return;
       setRunError(null);
-      await stream.submit(null, {
+      await submitSafely(null, {
         command: { resume: value },
         streamMode: ["messages-tuple", "custom", "updates", "values"],
       });
     },
-    [online, stream],
+    [online, submitSafely],
   );
 
   const reset = useCallback(() => {

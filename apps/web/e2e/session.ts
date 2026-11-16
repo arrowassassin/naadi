@@ -1,5 +1,4 @@
 import { existsSync, mkdirSync, readFileSync, rmSync } from "node:fs";
-import path from "node:path";
 import type { Browser } from "@playwright/test";
 import { AUTH_STATE_DIR, authStatePath, callbackPath, type E2ERole, magicLink } from "./auth-users";
 
@@ -53,10 +52,10 @@ async function acquire(lock: string): Promise<boolean> {
 }
 
 export async function signedInState(browser: Browser, baseURL: string, role: E2ERole): Promise<string> {
-  const file = authStatePath(role);
+  const file = authStatePath(role, baseURL);
   if (existsSync(file) && fresh(file)) return file;
   mkdirSync(AUTH_STATE_DIR, { recursive: true });
-  const lock = path.join(AUTH_STATE_DIR, `${role}.lock`);
+  const lock = `${file}.lock`;
   await acquire(lock);
   try {
     if (existsSync(file) && fresh(file)) return file; // another worker renewed it meanwhile

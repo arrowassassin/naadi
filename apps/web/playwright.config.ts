@@ -54,6 +54,59 @@ const projects: PlaywrightTestConfig["projects"] = BROWSERS.flatMap((browserName
   })),
 );
 
+/** Port of the second API server, whose LLM budget is forced to zero (the degradation path, segment 04). */
+const BUDGET_ZERO_PORT = port + 1;
+
+/**
+ * With a database the API under test is the production entrypoint: Aegra hosting the Naadi app
+ * (naadi_api.agent.host:app, after migrate_all), so agent pages run against the real runtime. Without one
+ * (a quick local run) it is the plain Naadi app, and the agent specs skip themselves.
+ */
+function webServers(): PlaywrightTestConfig["webServer"] {
+  const api = path.join(repoRoot, "apps/api");
+  const dbUrl = process.env.E2E_DATABASE_URL ?? process.env.DATABASE_URL;
+  const env = (extra: Record<string, string> = {}) => ({
+    NAADI_STATIC_DIR: path.join(here, "dist"),
+    APP_ENV: "local",
+    APP_VERSION: process.env.APP_VERSION ?? "e2e",
+    // The local API is checked against throwaway test accounts, never the owner's address.
+    ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
+    ...(dbUrl ? { DATABASE_URL: dbUrl } : {}),
+    ...extra,
+  });
+  const serve = (p: number, app: string) =>
+    `uv --directory ${api} run uvicorn ${app} --host 127.0.0.1 --port ${p} --workers 1 --no-access-log`;
+  const common = { reuseExistingServer: !process.env.CI, stdout: "ignore" as const, stderr: "pipe" as const };
+  if (!dbUrl) {
+    return {
+      ...common,
+      command: `uv --directory ${api} run python -m naadi_api.migrate --if-configured && ${serve(port, "naadi_api.main:app")}`,
+      url: `${baseURL}/`,
+      timeout: 120_000,
+      env: env(),
+    };
+  }
+  const migrate = `uv --directory ${api} run python -m naadi_api.agent.migrate_all`;
+  return [
+    {
+      ...common,
+      command: `${migrate} && ${serve(port, "naadi_api.agent.host:app")}`,
+      url: `${baseURL}/`,
+      timeout: 180_000,
+      env: env(),
+    },
+    {
+      ...common,
+      // Same database and code; OPENROUTER_DAILY_CAP=0 and no NVIDIA key, so every model call is refused by
+      // the budget guard (BudgetExhausted), never by a missing provider. Its cron scheduler is off.
+      command: `${migrate} && ${serve(BUDGET_ZERO_PORT, "naadi_api.agent.host:app")}`,
+      url: `http://127.0.0.1:${BUDGET_ZERO_PORT}/`,
+      timeout: 180_000,
+      env: env({ OPENROUTER_DAILY_CAP: "0", NVIDIA_API_KEY: "", CRON_ENABLED: "false" }),
+    },
+  ];
+}
+
 export default defineConfig({
   testDir: "./e2e",
   // Real Supabase Auth: test users are created and signed in once per run, and deleted afterwards.
@@ -77,22 +130,5 @@ export default defineConfig({
     screenshot: "only-on-failure",
   },
   projects,
-  webServer: liveBaseUrl
-    ? undefined
-    : {
-        command: `uv --directory ${path.join(repoRoot, "apps/api")} run python -m naadi_api.migrate --if-configured && uv --directory ${path.join(repoRoot, "apps/api")} run uvicorn naadi_api.main:app --host 127.0.0.1 --port ${port} --no-access-log`,
-        url: `${baseURL}/`,
-        reuseExistingServer: !process.env.CI,
-        timeout: 120_000,
-        stdout: "ignore",
-        stderr: "pipe",
-        env: {
-          NAADI_STATIC_DIR: path.join(here, "dist"),
-          APP_ENV: "local",
-          APP_VERSION: process.env.APP_VERSION ?? "e2e",
-          // The local API is checked against throwaway test accounts, never the owner's address.
-          ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
-          ...(process.env.E2E_DATABASE_URL ? { DATABASE_URL: process.env.E2E_DATABASE_URL } : {}),
-        },
-      },
+  webServer: liveBaseUrl ? undefined : webServers(),
 });

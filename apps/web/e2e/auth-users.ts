@@ -37,7 +37,9 @@ export function emailFor(role: E2ERole): string {
 }
 
 export const AUTH_STATE_DIR = path.resolve(import.meta.dirname, "../../../test-results/.auth");
-export const authStatePath = (role: E2ERole) => path.join(AUTH_STATE_DIR, `${role}.json`);
+/** One storage state per role and origin (localStorage is per origin; the e2e may run two API servers). */
+export const authStatePath = (role: E2ERole, baseURL?: string) =>
+  path.join(AUTH_STATE_DIR, baseURL ? `${role}-${new URL(baseURL).port || "80"}.json` : `${role}.json`);
 
 /**
  * A local Postgres the API under test uses, when the auth server is the hosted project (whose users then

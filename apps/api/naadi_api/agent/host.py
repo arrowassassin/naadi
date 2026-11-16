@@ -123,7 +123,7 @@ async def ensure_system_cron() -> None:
         )
         if existing is not None:
             return
-        await CronService(session, get_langgraph_service()).create_cron(
+        cron = await CronService(session, get_langgraph_service()).create_cron(
             CronCreate(
                 assistant_id="ping",
                 schedule=SYSTEM_CRON_SCHEDULE,
@@ -134,6 +134,12 @@ async def ensure_system_cron() -> None:
             ),
             SYSTEM_IDENTITY,
         )
+        # The service schedules the second occurrence (the API would fire the first itself): fire on the next
+        # scheduler poll instead, so a fresh deployment reports a cron ping within a minute.
+        await session.execute(
+            text("update crons set next_run_date = now() where cron_id = :id").bindparams(id=cron.cron_id)
+        )
+        await session.commit()
         log.info("agent_runtime.system_cron_created", schedule=SYSTEM_CRON_SCHEDULE)
 
 
