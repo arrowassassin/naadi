@@ -1,0 +1,13 @@
+{
+ "id": "20261116T094224-seg12-ink-4dbe8a",
+ "ts": "2026-11-16T09:42:24.284446Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/src/router.tsx .github/workflows/ci.yml apps/web/package.json",
+ "body": "seg03 landed the same change in 3d86744",
+ "re": "20261116T093739-seg12-ink-f24e9e",
+ "requires_ack": false
+}
