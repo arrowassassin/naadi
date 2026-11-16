@@ -590,9 +590,7 @@ async def get_courses(
             ids = [e.id for e in exams]
             chosen = target if target in ids else (ids[0] if ids else None)
         if chosen is None:
-            return CoursesResponse(
-                exam=None, exams=exams, system=system, systems=[], chapters=[], next_up=None
-            )
+            return CoursesResponse(exam=None, exams=exams, system=system, systems=[], chapters=[], next_up=None)
         rows = await _rows(conn, _Q_CHAPTERS, {"exam": chosen})
         ids = [r["id"] for r in rows]
         st = await _ChapterStats.load(conn, ids)

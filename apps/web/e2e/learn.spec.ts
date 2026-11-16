@@ -482,17 +482,19 @@ test.describe("reader layout and keys", () => {
         const tops = [visible(slot)?.top, visible(bar)?.top].filter((v): v is number => typeof v === "number");
         return { top: visible(pill)?.bottom ?? 0, bottom: Math.min(window.innerHeight, ...tops) };
       });
+    // Re-measured until layout has settled (late font or bar measurement), never with a looser bound.
+    const clears = async (locator: ReturnType<Page["locator"]>, block: "start" | "end") => {
+      await locator.evaluate((el, b) => el.scrollIntoView({ block: b, behavior: "instant" }), block);
+      const r = await locator.boundingBox();
+      const c = await chrome();
+      if (!r) return false;
+      return block === "end" ? r.y + r.height <= c.bottom + 0.5 : r.y >= c.top - 0.5;
+    };
     const report = page.getByRole("button", { name: "Report an issue" });
-    await report.evaluate((el) => el.scrollIntoView({ block: "end", behavior: "instant" }));
-    const r = await report.boundingBox();
-    const c = await chrome();
-    expect(r && r.y + r.height <= c.bottom + 0.5, "the bottom of the button is above the bottom bars").toBe(true);
+    await expect.poll(() => clears(report, "end"), { message: "the button clears the bottom bars" }).toBe(true);
     const heading = page.locator("[data-content-root] h3, [data-content-root] h2").first();
     if ((await heading.count()) > 0) {
-      await heading.evaluate((el) => el.scrollIntoView({ block: "start", behavior: "instant" }));
-      const h = await heading.boundingBox();
-      const c2 = await chrome();
-      expect(h && h.y >= c2.top - 0.5, "the heading is below the nav pill").toBe(true);
+      await expect.poll(() => clears(heading, "start"), { message: "the heading clears the nav pill" }).toBe(true);
     }
     await snap(page, info, consoleErrors, "reader-scroll-padding");
   });

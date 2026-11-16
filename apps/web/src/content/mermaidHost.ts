@@ -116,31 +116,43 @@ export function diagramStyleCount(): number {
   return rules.size;
 }
 
+const ENTITIES: Record<string, string> = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&#39;": "'" };
+
+function unescapeXml(s: string): string {
+  return s.replace(/&(amp|lt|gt|quot|#39);/g, (m) => ENTITIES[m] ?? m);
+}
+
 /**
- * Sanitise `svgText` and move it into `host` without inline styles; `id` keys its rules in the shared sheet.
- * Style attributes and <style> elements are taken out while DOMPurify walks its inert copy, so no node carrying
- * inline style ever enters the app's document (that is what the CSP would refuse).
+ * Take every inline style out of the serialised SVG BEFORE anything parses it: WebKit parses DOMPurify's
+ * working document under the page's CSP, so a `style` attribute or `<style>` element would already be
+ * refused (and reported) there. Attributes become `data-naadi-style` indexes; <style> text is collected.
  */
-export function adoptSvg(host: HTMLElement, svgText: string, id: string): void {
-  const purify = DOMPurify(window);
+export function extractStyles(svgText: string): { markup: string; css: string[]; styles: string[] } {
   const css: string[] = [];
   const styles: string[] = [];
-  purify.addHook("uponSanitizeElement", (node, data) => {
-    if (data.tagName === "style") {
-      css.push(node.textContent ?? "");
-      node.textContent = "";
-    }
-  });
-  purify.addHook("uponSanitizeAttribute", (node, data) => {
-    if (data.attrName === "style") {
-      (node as Element).setAttribute("data-naadi-style", String(styles.length));
-      styles.push(data.attrValue);
-      data.keepAttr = false;
-    }
-  });
-  const clean = purify.sanitize(svgText, {
+  const markup = svgText
+    .replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gi, (_m, body: string) => {
+      css.push(unescapeXml(body.replace(/^<!\[CDATA\[|\]\]>$/g, "")));
+      return "";
+    })
+    .replace(/\sstyle\s*=\s*(?:"([^"]*)"|'([^']*)')/gi, (_m, dq: string | undefined, sq: string | undefined) => {
+      styles.push(unescapeXml(dq ?? sq ?? ""));
+      return ` data-naadi-style="${styles.length - 1}"`;
+    });
+  return { markup, css, styles };
+}
+
+/**
+ * Sanitise `svgText` and move it into `host` without inline styles; `id` keys its rules in the shared sheet.
+ * Styles are taken out of the text first (extractStyles), the rest goes through DOMPurify's SVG profile, and
+ * the declarations are re-applied through `element.style` (CSSOM, which the CSP allows).
+ */
+export function adoptSvg(host: HTMLElement, svgText: string, id: string): void {
+  const { markup, css, styles } = extractStyles(svgText);
+  const clean = DOMPurify(window).sanitize(markup, {
     USE_PROFILES: { svg: true, svgFilters: true },
     FORBID_TAGS: ["foreignObject", "script", "style", "a", "image", "use"],
+    FORBID_ATTR: ["style"],
     ADD_ATTR: ["data-naadi-style"],
     RETURN_DOM_FRAGMENT: true,
   }) as DocumentFragment;
@@ -151,8 +163,8 @@ export function adoptSvg(host: HTMLElement, svgText: string, id: string): void {
     const st = styles[Number(el.getAttribute("data-naadi-style"))] ?? "";
     el.removeAttribute("data-naadi-style");
     for (const decl of st.split(";")) {
-      const i = decl.indexOf(":");
-      if (i > 0) el.style.setProperty(decl.slice(0, i).trim(), decl.slice(i + 1).trim());
+      const at = decl.indexOf(":");
+      if (at > 0) el.style.setProperty(decl.slice(0, at).trim(), decl.slice(at + 1).trim());
     }
   }
   if (css.some((c) => c.trim())) {
