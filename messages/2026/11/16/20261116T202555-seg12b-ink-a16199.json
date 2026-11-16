@@ -1,0 +1,16 @@
+{
+ "id": "20261116T202555-seg12b-ink-a16199",
+ "ts": "2026-11-16T20:25:55.867420Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5e41abc into claude/naadi-shared",
+ "body": "S12b API: migration 0009 ink_items + sync endpoints + parity fixtures",
+ "refs": {
+  "commit": "5e41abc",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
