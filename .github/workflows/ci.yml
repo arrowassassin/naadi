@@ -222,6 +222,11 @@ jobs:
         run: |
           pnpm --filter @naadi/web build
           pnpm --filter @naadi/web exec playwright test --project "${{ matrix.browser }}-*"
+      - name: Auth server and Mailpit logs (only on failure; throwaway test addresses, no keys)
+        if: failure()
+        run: |
+          docker logs auth-naadi-test 2>&1 | tail -60 || true
+          docker logs mail-naadi-test 2>&1 | tail -60 || true
       - name: Scan artifacts for credentials (minted CI keys, session storage, API keys)
         id: scan
         if: ${{ !cancelled() }}

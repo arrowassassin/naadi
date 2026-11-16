@@ -137,6 +137,61 @@ wait_auth() {
   return 1
 }
 
+wait_mail() {
+  for _ in $(seq 1 60); do
+    if curl -fsS "http://localhost:${MAIL_PORT}/api/v1/info" >/dev/null 2>&1; then
+      return 0
+    fi
+    sleep 1
+  done
+  log "Mailpit did not become ready on port ${MAIL_PORT}:"
+  docker logs "$MAIL_CONTAINER" 2>&1 | tail -20 >&2
+  return 1
+}
+
+# End to end before any test relies on it: the auth server sends a real magic-link email for a throwaway
+# address and Mailpit receives it. On failure, the auth server's and Mailpit's logs explain why.
+check_mail_path() {
+  local anon="$1" service="$2" addr
+  addr="naadi-e2e-stackcheck-$(date +%s)@example.com"
+  local code
+  code="$(curl -sS -o /dev/null -w '%{http_code}' -X POST "${PUBLIC_URL}/auth/v1/otp" \
+    -H "apikey: ${anon}" -H "content-type: application/json" \
+    -d "{\"email\":\"${addr}\",\"create_user\":true}" || true)"
+  local found=""
+  if [ "$code" = "200" ]; then
+    for _ in $(seq 1 30); do
+      if curl -fsS "http://localhost:${MAIL_PORT}/api/v1/search?query=to:${addr}" 2>/dev/null | grep -q '"messages_count":[1-9]'; then
+        found=1
+        break
+      fi
+      sleep 1
+    done
+  fi
+  # Clean up: the stack-check user and every caught message.
+  local uid
+  uid="$(curl -sS "${PUBLIC_URL}/auth/v1/admin/users?per_page=200" -H "apikey: ${anon}" \
+    -H "authorization: Bearer ${service}" | py -c "
+import json, sys
+users = json.load(sys.stdin).get('users', [])
+print(next((u['id'] for u in users if u.get('email') == sys.argv[1]), ''))
+" "$addr" || true)"
+  if [ -n "$uid" ]; then
+    curl -sS -o /dev/null -X DELETE "${PUBLIC_URL}/auth/v1/admin/users/${uid}" -H "apikey: ${anon}" \
+      -H "authorization: Bearer ${service}" || true
+  fi
+  curl -sS -o /dev/null -X DELETE "http://localhost:${MAIL_PORT}/api/v1/messages" || true
+  if [ -n "$found" ]; then
+    log "mail path ok: the auth server's magic-link email reached Mailpit"
+    return 0
+  fi
+  log "mail path FAILED (POST /otp -> HTTP ${code}, nothing caught by Mailpit). auth server log:"
+  docker logs "$AUTH_CONTAINER" 2>&1 | tail -30 >&2
+  log "Mailpit log:"
+  docker logs "$MAIL_CONTAINER" 2>&1 | tail -30 >&2
+  return 1
+}
+
 start() {
   local db_host="$1" upstream="$2" smtp_host="$3"
   shift 3
@@ -144,7 +199,8 @@ start() {
   docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" "$MAIL_CONTAINER" >/dev/null 2>&1 || true
   local mail_net=("${net_args[@]}")
   if [ "${net_args[1]:-}" = "host" ]; then
-    mail_net+=(-e "MP_UI_BIND_ADDR=0.0.0.0:${MAIL_PORT}")
+    # Explicit IPv4 binds: Mailpit's default "[::]" listeners are not reachable the same way on every host.
+    mail_net+=(-e "MP_UI_BIND_ADDR=0.0.0.0:${MAIL_PORT}" -e "MP_SMTP_BIND_ADDR=0.0.0.0:1025")
   else
     mail_net+=(-p "${MAIL_PORT}:8025")
   fi
@@ -184,6 +240,8 @@ start() {
   docker run -d --name "$PROXY_CONTAINER" "${proxy_net[@]}" \
     -v "$conf_dir/nginx.conf:/etc/nginx/nginx.conf:ro" "$PROXY_IMAGE" >/dev/null
   wait_auth
+  wait_mail
+  check_mail_path "$anon" "$service"
 
   local lines=(
     "SUPABASE_URL=${PUBLIC_URL}"

@@ -98,7 +98,14 @@ test.describe("magic link, end to end", () => {
     const address = emailFor("mail");
     await page.goto("/sign-in?redirect=%2Fsettings%2Faccount");
     await emailBox(page).fill(address);
+    const sent = page.waitForResponse((r) => new URL(r.url()).pathname.endsWith("/auth/v1/otp"));
     await sendButton(page).click();
+    const otp = await sent;
+    // Status and error code only (never the body's address): says whether the auth server failed to send.
+    const failure = otp.ok()
+      ? ""
+      : String(((await otp.json().catch(() => ({}))) as { error_code?: string }).error_code);
+    expect(otp.status(), `POST /auth/v1/otp failed: ${failure}`).toBe(200);
     await expect(page.getByRole("heading", { name: "Check your email" })).toBeVisible();
 
     // The email Supabase's auth server actually sent, caught by Mailpit.
