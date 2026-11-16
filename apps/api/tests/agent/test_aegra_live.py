@@ -58,7 +58,11 @@ async def test_ping_streams_tokens_a_block_and_interrupts_then_resumes(host: Hos
             interrupted = True
     assert run_id
     assert tokens, events  # tokens streamed from the router role
-    assert blocks and blocks[0]["type"] == "table"
+    by_type = {b["type"]: b["data"] for b in blocks}
+    assert by_type.get("ping_result", {}).get("outcome") == "ok", blocks
+    assert by_type["ping_result"]["latency_ms"] >= 0
+    # Interactive runs also carry the sample media answer block (Commons, PMC figure, YouTube).
+    assert {i["kind"] for i in by_type.get("media", {}).get("items", [])} >= {"image", "video"}, blocks
     assert interrupted
     state = await c.threads.get_state(thread["thread_id"])
     assert state["next"] == ["confirm"] or "confirm" in state["next"]
