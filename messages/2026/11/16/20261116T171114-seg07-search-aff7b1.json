@@ -1,0 +1,12 @@
+{
+ "id": "20261116T171114-seg07-search-aff7b1",
+ "ts": "2026-11-16T17:11:14.701455Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg07-search online: local search + Search screen",
+ "body": "",
+ "requires_ack": false
+}

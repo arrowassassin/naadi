@@ -1,0 +1,9 @@
+{
+ "name": "seg07-search",
+ "role": "implementer",
+ "segment": "S07",
+ "worktree": "/home/user/naadi/.claude/worktrees/agent-afbf962351dd9649f",
+ "branch": null,
+ "started": "2026-11-16T17:11:14.701415Z",
+ "purpose": "local search + Search screen"
+}
