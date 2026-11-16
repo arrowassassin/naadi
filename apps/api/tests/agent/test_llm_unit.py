@@ -558,3 +558,61 @@ def test_identifiers_are_still_scrubbed(raw: str, kept_out: str) -> None:
     from naadi_api.llm_privacy import scrub_generic
 
     assert kept_out not in scrub_generic(raw)
+
+
+# ── capability-aware routing (review item 9) ──
+
+
+async def test_tools_skip_models_whose_profile_denies_tool_calling() -> None:
+    s = sections()
+    s["models"]["roles"]["tutor"]["chain"] = chain(("openrouter", "a/no-tools:free"), ("openrouter", "b/tools:free"))
+    clients = FakeClients(
+        {
+            ("openrouter", "a/no-tools:free"): ScriptedModel(profile={"tool_calling": False}),
+            ("openrouter", "b/tools:free"): ScriptedModel(reply="ok", profile={"tool_calling": True}),
+        }
+    )
+    gw, led, _ = gateway(s, clients)
+    model = gw.chat_model("tutor", ctx()).bind_tools(
+        [{"type": "function", "function": {"name": "f", "parameters": {}}}]
+    )
+    out = await model.ainvoke([HumanMessage("x")])
+    assert out.response_metadata["naadi_model"] == "b/tools:free"
+    assert [r["row"].model for r in led.rows.values()] == ["b/tools:free"]  # the skipped model cost nothing
+    # Without tools the first model is fine.
+    out = await gw.ainvoke("tutor", [HumanMessage("x")], ctx())
+    assert out.response_metadata["naadi_model"] == "a/no-tools:free"
+
+
+async def test_images_skip_text_only_models_and_unknown_profiles_are_allowed() -> None:
+    s = sections()
+    s["models"]["roles"]["vision"]["chain"] = chain(
+        ("nvidia", "a/text-only"), ("openrouter", "b/no-profile:free"), ("openrouter", "c/vision:free")
+    )
+    clients = FakeClients(
+        {
+            ("nvidia", "a/text-only"): ScriptedModel(profile={"image_inputs": False}),
+            ("openrouter", "b/no-profile:free"): ScriptedModel(reply="seen"),
+        }
+    )
+    gw, _, _ = gateway(s, clients)
+    img = HumanMessage(
+        content=[
+            {"type": "text", "text": "read"},
+            {"type": "image_url", "image_url": {"url": "data:image/png;base64,AA=="}},
+        ]
+    )
+    out = await gw.ainvoke("vision", [img], ctx("job"))
+    assert out.response_metadata["naadi_model"] == "b/no-profile:free"
+
+
+def test_required_capabilities() -> None:
+    from naadi_api.llm import required_capabilities
+
+    img = HumanMessage(content=[{"type": "image_url", "image_url": {"url": "x"}}])
+    assert required_capabilities([HumanMessage("x")], {}) == set()
+    assert required_capabilities([img], {"tools": [{}], "response_format": {"type": "json_object"}}) == {
+        "image_inputs",
+        "tool_calling",
+        "structured_output",
+    }

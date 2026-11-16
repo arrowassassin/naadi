@@ -46,7 +46,8 @@ providers:
     only_free_ids: true           # every id ends with :free, or the free router openrouter/free
 
 # Each role is an ordered chain of {provider, model}; llm.py walks it on 429/5xx/timeout/410,
-# skipping providers whose rpm bucket or daily cap is exhausted. Prefer newer models.
+# skipping providers whose rpm bucket or daily cap is exhausted, and any model whose SDK profile says it lacks
+# what the call needs (bound tools, image input, JSON output). Prefer newer models.
 roles:
   tutor:                          # page-aware chat with tools; vision so lasso crops go straight in
     temperature: 0.3

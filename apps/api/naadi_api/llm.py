@@ -147,6 +147,30 @@ def describe_failure(exc: BaseException) -> str:
     return type(exc).__name__
 
 
+def required_capabilities(messages: Sequence[BaseMessage], kwargs: dict[str, Any]) -> set[str]:
+    """Model-profile keys this call needs: bound tools, image parts, a JSON response format."""
+    needs: set[str] = set()
+    if kwargs.get("tools"):
+        needs.add("tool_calling")
+    if kwargs.get("response_format"):
+        needs.add("structured_output")
+    for m in messages:
+        if isinstance(m.content, list) and any(
+            isinstance(p, dict) and p.get("type") in ("image_url", "image") for p in m.content
+        ):
+            needs.add("image_inputs")
+    return needs
+
+
+def missing_capabilities(model: BaseChatModel, needs: set[str]) -> set[str]:
+    """Capabilities the SDK's model profile explicitly denies. A model without a profile (or without the key)
+    is not skipped: its capability is unknown here and tools/check_models.py reports it."""
+    if not needs:
+        return set()
+    profile = getattr(model, "profile", None) or {}
+    return {n for n in needs if profile.get(n) is False}
+
+
 def _has_pdf(messages: Sequence[BaseMessage]) -> bool:
     for m in messages:
         if isinstance(m.content, list):
@@ -397,6 +421,7 @@ class LLMGateway:
         if spec is None:
             raise KeyError(f"unknown LLM role {role!r}")
         pdf = _has_pdf(clean)
+        needs = required_capabilities(clean, kwargs)
         extra = dict(kwargs)
         attempts: list[dict[str, Any]] = []
         deadline = self._clock() + cfg.budget.rate_wait_s
@@ -415,6 +440,19 @@ class LLMGateway:
                     cap_hit = True  # a zero cap is a budget decision, whether or not the key is configured
                     continue
                 if self._clients.key_for(provider) is None or self._is_dead(provider, entry.model):
+                    continue
+                try:
+                    model = await self._candidate(cfg, role, spec.temperature, spec.max_tokens, entry)
+                except Exception as exc:  # noqa: BLE001 - a client that cannot be built is a failed candidate
+                    attempts.append(
+                        {"provider": provider, "model": entry.model, "status": None, "error": describe_failure(exc)}
+                    )
+                    continue
+                lacking = missing_capabilities(model, needs)
+                if lacking:
+                    log.info(
+                        "llm.skip_capability", role=role, provider=provider, model=entry.model, lacks=sorted(lacking)
+                    )
                     continue
                 bucket = self._buckets.get(provider, pspec.rpm)
                 if not await bucket.try_take():
@@ -441,7 +479,6 @@ class LLMGateway:
                 yielded = False
                 last: ChatGeneration | None = None
                 try:
-                    model = await self._candidate(cfg, role, spec.temperature, spec.max_tokens, entry)
                     served = Served(
                         provider,
                         entry.model,
