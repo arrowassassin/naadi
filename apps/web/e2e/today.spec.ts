@@ -239,15 +239,21 @@ test.describe("Today with practice history", () => {
       await card.getByRole("button", { name: "Show me why" }).click();
       await expect(card.locator("dl")).toContainText("Attempts");
       await snap(page, info, guard, "today-coach-why");
+      const afterAccept = page.waitForResponse((r) => r.url().endsWith("/api/today") && r.status() === 200);
       await card.getByRole("button", { name: "Add to plan" }).click();
+      await afterAccept;
       await expect(page.locator("section[aria-labelledby=today-coach]")).toHaveCount(0);
       const added = page.locator("section[aria-labelledby=today-flow] li").filter({ hasText: "Added by Naadi" });
       await expect(added).toContainText("Weak-spot block · Respiratory & Renal/Urinary Systems");
 
       // Tick the current item: it is done after a reload too, and the next one becomes "Now".
       const first = page.locator("section[aria-labelledby=today-flow] li").first();
+      // The tick refetches Today: wait for that answer before reloading (WebKit reports an aborted fetch as
+      // a page error).
+      const afterTick = page.waitForResponse((r) => r.url().endsWith("/api/today") && r.status() === 200);
       await first.getByRole("button", { name: /^Mark done:/ }).click();
       await expect(first).toContainText("Done");
+      await afterTick;
       await settle(page);
       await page.reload();
       await expect(page.locator("section[aria-labelledby=today-flow] li").first()).toContainText("Done");
