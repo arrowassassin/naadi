@@ -1,0 +1,18 @@
+{
+ "id": "20261116T094631-seg05-seed-8bfea0",
+ "ts": "2026-11-16T09:46:31.698437Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "add TipTap deps + ./content export for the content schema",
+ "body": "",
+ "paths": [
+  "packages/shared/package.json",
+  "packages/shared/src/index.ts",
+  "pnpm-lock.yaml"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
