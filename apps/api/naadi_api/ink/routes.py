@@ -119,7 +119,7 @@ async def _guard[T](fn: Callable[[], Awaitable[T]]) -> T:
 
 async def _surface(db: Database, user: CurrentUser, surface_type: str, surface_id: str) -> Surface:
     async def run() -> Surface:
-        async with user_tx(db, user.user_id) as conn:
+        async with user_tx(db, user) as conn:
             return await resolve_surface(conn, surface_type, surface_id)
 
     try:
@@ -146,7 +146,7 @@ async def get_ink_layer(
     surface = await _surface(db, user, surface_type, surface_id)
 
     async def run() -> InkLayerOut:
-        async with user_tx(db, user.user_id) as conn:  # reads under RLS
+        async with user_tx(db, user) as conn:  # reads under RLS
             r = await read_layer(conn, user.user_id, surface, since)
         return InkLayerOut(
             layer_id=r.layer_id,
