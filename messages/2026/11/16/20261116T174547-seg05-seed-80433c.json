@@ -1,0 +1,14 @@
+{
+ "id": "20261116T174547-seg05-seed-80433c",
+ "ts": "2026-11-16T17:45:47.122690Z",
+ "from": "seg05-seed",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S05g",
+ "body": "",
+ "re": "20261116T174509-lead-d2eee0",
+ "thread": "20261116T174509-lead-d2eee0",
+ "requires_ack": false
+}
