@@ -1,0 +1,16 @@
+{
+ "id": "20261116T221058-seg04-agents-34bcd7",
+ "ts": "2026-11-16T22:10:58.184936Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04 re-review R2: deadline on AccountDirectory._fetch (TimeoutError -> AuthUnavailable/503), per lead",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/auth.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
