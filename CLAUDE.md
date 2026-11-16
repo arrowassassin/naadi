@@ -1,6 +1,6 @@
 # CLAUDE.md — Naadi
 
-Read `HANDOFF.md` first. It is the product and engineering spec; this file is the working agreement.
+Read `handoff/HANDOFF.md` first. It is the product and engineering spec; this file is the working agreement.
 
 ## Repo layout
 ```
@@ -17,6 +17,7 @@ data/ config/   seed content and configs from the handoff bundle
 - Follow the colour roles exactly: lime = next action (one per view), violet = assistant, paper = student. Status never relies on colour alone.
 - Pin exact versions (see HANDOFF §3). Upgrade deliberately in a dedicated PR with the changelog read.
 - Free tier first: only `:free` OpenRouter models, local fastembed embeddings, Tavily via `search_cache`. Respect the budget guards in `config/models.yaml` (rpm, daily cap, max 4 LLM calls per turn); strip PII before any LLM call.
+- Use the official SDKs: `supabase` (py) / `@supabase/supabase-js`, `openrouter` (py) plus `langchain-openrouter` for LangGraph chat models, `tavily-python`, `huggingface_hub`, `langgraph`. Raw `httpx` only where no SDK method exists, with a one-line comment saying why.
 - Model IDs live only in `config/models.yaml`. Call LLMs only through `naadi_api/llm.py`, which applies the provider object (`zdr`, `data_collection: deny`), fallbacks, and caching.
 - Never commit secrets. Read them via `naadi_api/settings.py`. Never log request bodies that contain uploads or notes.
 - Content legality: every media or text asset references a `sources` row. Don't add copyrighted text (First Aid, UWorld, NBME items) to the repo, seed data, prompts or RAG. Use YouTube only through the official IFrame player.
@@ -29,5 +30,6 @@ data/ config/   seed content and configs from the handoff bundle
 - `uv run uvicorn naadi_api.main:app --reload --port 7860`: API
 - `pnpm test` · `pnpm e2e` (Playwright WebKit + Chromium) · `uv run pytest`
 - `uv run python scripts/seed.py --data ../../data`: import seed content
+- `uv run scripts/check_env.py`: verify every env var and live service (never prints values)
 - `uv run python ../../tools/check_models.py`: verify OpenRouter model IDs and prices
 - Deploy: push `main`, then CI uploads to the HF Space (see HANDOFF §10; use the huggingface-spaces skill if available)
