@@ -1,0 +1,21 @@
+{
+ "id": "20261116T110139-seg03-auth-01147d",
+ "ts": "2026-11-16T11:01:39.601569Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03 reopen: DB-backed admin + session revocation (agent auth uses the same), env isolation in tests, frozen-page axe helper, live-auth runbook, mailpit in CI auth stack",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/agent/auth.py",
+  "apps/api/tests/conftest.py",
+  "apps/web/e2e/fixtures.ts",
+  "docs/RUNBOOK.md",
+  "*/workflows/ci.yml",
+  "apps/api/naadi_api/main.py"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
