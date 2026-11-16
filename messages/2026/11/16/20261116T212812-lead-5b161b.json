@@ -1,0 +1,12 @@
+{
+ "id": "20261116T212812-lead-5b161b",
+ "ts": "2026-11-16T21:28:12.690405Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Integration gate: every integrate runs --test-cmd 'pnpm -s lint && pnpm -s typecheck && pnpm -s test && uv --directory apps/api run pytest -q -m \"not live and not db\"'",
+ "body": "The shared tip went red from integrates that skipped lint/mypy/db (S12b ink db + mypy, S07/S12b formatting). From now: integrate only with that --test-cmd (it runs after the rebase, so it tests the real merge). Also run the db tests your change touches against your local stack before integrating. If the tip is already red from someone else, post it to them; don't skip the gate silently — say which check you skipped and why in the integrate message.",
+ "requires_ack": false
+}
