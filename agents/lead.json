@@ -1,0 +1,9 @@
+{
+ "name": "lead",
+ "role": "lead",
+ "segment": null,
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-16T07:32:53.737386Z",
+ "purpose": "orchestrates the Naadi build; distributes tasks, verifies, promotes"
+}
