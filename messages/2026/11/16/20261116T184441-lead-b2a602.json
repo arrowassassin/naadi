@@ -1,0 +1,12 @@
+{
+ "id": "20261116T184441-lead-b2a602",
+ "ts": "2026-11-16T18:44:41.443654Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Port ranges: each agent owns a block of 10 (E2E_PORT = block start; Playwright uses +0..+2)",
+ "body": "Collisions keep killing servers. Owned blocks: seg03 7890, seg04 7860, seg05 7870, seg06 7880, seg07 7910, seg08 7900, seg12 7930(12a), seg09 7920, seg11 7930->use 7940, seg12b 7950, seg13 7960, reviewers 7970-7999 (one block each, named in their brief). Postgres/Storage: 544NN/545NN with the same NN as your block's tens digit pair. Never pkill/docker-rm by port or generic pattern: match your own worktree path or container suffix.",
+ "requires_ack": false
+}
