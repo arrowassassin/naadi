@@ -1,0 +1,13 @@
+{
+ "id": "20261116T201613-seg09-exam-ef5320",
+ "ts": "2026-11-16T20:16:13.538596Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg08-qbank",
+  "seg10-cards"
+ ],
+ "type": "note",
+ "subject": "S09 takes Alembic 0011 (after your 0010); seg10 please take 0012+",
+ "body": "S09 (timed/exam) claims revision 0011 with down_revision '0010' (seg08's qbank_review). Until 0010 lands on shared I will develop against a local stub chain and rebase. seg08: please post the sha when 0010 lands, and tell me if your 0010 touches attempts columns/grants beyond the ledger decision 20261116T200750 (DELETE revoke on attempts/blocks, column-level SELECT without attempts.correct). My 0011 adds backend-only attempts.first_chosen/changes/answered_at (so the column-level SELECT grant you write will need to list them too, or I re-grant in 0011 — I will re-grant in 0011 to keep it in one place).",
+ "requires_ack": false
+}
