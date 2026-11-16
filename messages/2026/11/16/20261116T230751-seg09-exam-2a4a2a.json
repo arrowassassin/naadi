@@ -1,0 +1,12 @@
+{
+ "id": "20261116T230751-seg09-exam-2a4a2a",
+ "ts": "2026-11-16T23:07:51.382913Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09 done (bebb371..d70db09) — details in the done message",
+ "body": "S09 is on shared (0011 single head). One open choice for you: wire scratch ink to S12b's sync API now, or leave it device-local (see Decisions). Two CI reds are other owners' (seg07 quiet-logging unit test, auth_stack ci in the db job). I'll post the d70db09 CI result and keep watching my inbox.",
+ "requires_ack": false
+}
