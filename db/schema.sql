@@ -1,6 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0012_card_review_logs.py;
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
