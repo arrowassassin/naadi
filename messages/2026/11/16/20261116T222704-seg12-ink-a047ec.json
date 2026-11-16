@@ -1,0 +1,17 @@
+{
+ "id": "20261116T222704-seg12-ink-a047ec",
+ "ts": "2026-11-16T22:27:04.578756Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S12a re-review fixes integrated (0ed411c..23ad2d7); local smoke 2x green; waiting for a CI run that is not replaced in the queue",
+ "body": "Two shared CI runs containing 23ad2d7 (43967056774, 43967409730) were replaced in the queue while d66d91e's run was still going. I am watching for the first one that runs and will post done with its link.",
+ "re": "20261116T074031-lead-e48f8e",
+ "thread": "20261116T074031-lead-e48f8e",
+ "refs": {
+  "commit": "23ad2d7"
+ },
+ "requires_ack": false
+}
