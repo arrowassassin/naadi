@@ -10,6 +10,7 @@ import {
   inkItemsJsonSchema,
   isUuidV7,
   mergeInkItems,
+  recordInkDiff,
   roundSu,
   uuidv7,
 } from "./ink";
@@ -133,5 +134,18 @@ describe("merge and diff", () => {
     const bNew = { ...b, color: "violet" as const, updatedAt: b.updatedAt + 1 };
     const out = applyInkDiff([a, b], { added: [c], updated: [bNew], removed: [a.id] });
     expect(out).toEqual([bNew, c]);
+  });
+});
+
+describe("recordInkDiff", () => {
+  it("keeps removed items as tombstones stamped now, applies updates and appends additions", () => {
+    const a = stroke({ updatedAt: 5 });
+    const b = stroke({ updatedAt: 5 });
+    const c = stroke();
+    const b2 = { ...b, color: "violet" as const, updatedAt: 9 };
+    const out = recordInkDiff([a, b], { added: [c], updated: [b2], removed: [a.id] }, 100);
+    expect(out).toEqual([{ ...a, deleted: true, updatedAt: 100 }, b2, c]);
+    // A stale "now" never moves a tombstone behind the item it deletes.
+    expect(recordInkDiff([a], { added: [], updated: [], removed: [a.id] }, 1)[0]?.updatedAt).toBe(6);
   });
 });

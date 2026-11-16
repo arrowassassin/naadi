@@ -189,6 +189,27 @@ export function applyInkDiff(items: readonly InkItem[], diff: InkDiff): InkItem[
   return out;
 }
 
+/**
+ * Record a diff into a sync replica (12b/18): like applyInkDiff, but removed items become tombstones
+ * stamped `now`, so the deletion itself wins last-writer-wins merges against older copies.
+ */
+export function recordInkDiff(items: readonly InkItem[], diff: InkDiff, now: number): InkItem[] {
+  const removed = new Set(diff.removed);
+  const updated = new Map([...diff.updated, ...diff.added].map((i) => [i.id, i]));
+  const out: InkItem[] = [];
+  const seen = new Set<string>();
+  for (const item of items) {
+    seen.add(item.id);
+    if (removed.has(item.id)) {
+      out.push({ ...item, deleted: true, updatedAt: Math.max(Math.floor(now), item.updatedAt + 1) });
+      continue;
+    }
+    out.push(updated.get(item.id) ?? item);
+  }
+  for (const item of diff.added) if (!seen.has(item.id)) out.push(item);
+  return out;
+}
+
 /** JSON Schema of `ink_layers.strokes`, for the API side (Pydantic / jsonschema validation). */
 export function inkItemsJsonSchema(): Record<string, unknown> {
   return z.toJSONSchema(z.array(InkItemSchema).max(INK_MAX_ITEMS), { target: "draft-2020-12" }) as Record<

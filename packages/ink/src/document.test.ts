@@ -1,7 +1,14 @@
-import type { InkDiff } from "@naadi/shared";
+import { type InkDiff, type InkItem, mergeInkItems, recordInkDiff } from "@naadi/shared";
 import { describe, expect, it } from "vitest";
 import { InkDocument } from "./document";
 import { stroke } from "./test/helpers";
+
+/** An item without its updatedAt (undo/redo restamp it). */
+function plain(i: InkItem | undefined) {
+  if (!i) return i;
+  const { updatedAt: _u, ...rest } = i;
+  return rest;
+}
 
 function setup() {
   const doc = new InkDocument();
@@ -22,11 +29,11 @@ describe("InkDocument", () => {
     doc.undo();
     expect(doc.size).toBe(0);
     doc.redo();
-    expect(doc.items()).toEqual([a]);
+    expect(doc.items().map(plain)).toEqual([plain(a)]); // redo restamps updatedAt
     expect(diffs).toEqual([
       { added: [a], updated: [], removed: [] },
       { added: [], updated: [], removed: [a.id] },
-      { added: [a], updated: [], removed: [] },
+      { added: [{ ...a, updatedAt: expect.any(Number) }], updated: [], removed: [] },
     ]);
   });
 
@@ -51,7 +58,7 @@ describe("InkDocument", () => {
     expect(doc.items().map((i) => i.id)).toEqual([a.id, b.id]);
     expect(diffs.at(-1)).toEqual({ added: [], updated: [moved], removed: [] });
     doc.undo();
-    expect(doc.get(a.id)).toEqual(a);
+    expect(plain(doc.get(a.id))).toEqual(plain(a));
   });
 
   it("a transaction (pixel erase) is one undoable action with one net diff", () => {
@@ -82,9 +89,9 @@ describe("InkDocument", () => {
     expect(diff).toEqual({ added: [f1], updated: [], removed: [a.id] });
     expect(diffs).toHaveLength(1);
     doc.undo();
-    expect(doc.items()).toEqual([a]);
+    expect(doc.items().map(plain)).toEqual([plain(a)]);
     doc.redo();
-    expect(doc.items()).toEqual([f1]);
+    expect(doc.items().map(plain)).toEqual([plain(f1)]);
   });
 
   it("rollback restores everything a transaction touched", () => {
@@ -121,5 +128,59 @@ describe("InkDocument", () => {
     const far = stroke([[0.1, 3]]);
     doc.commit({ before: [], after: doc.fresh([a, b, far]) });
     expect(doc.query({ x0: 0.4, y0: 0.4, x1: 0.6, y1: 0.6 }).map((e) => e.item.id)).toEqual([a.id, b.id]);
+  });
+});
+
+describe("undo/redo and last-writer-wins sync", () => {
+  it("undo/redo re-stamp what they bring back, so a replica that saw the intermediate state cannot win", () => {
+    let clock = 1_000;
+    const doc = new InkDocument({ now: () => clock });
+    const diffs: InkDiff[] = [];
+    // Local replica as 12b/18 keep it: every diff recorded with tombstones.
+    let local: InkItem[] = [];
+    doc.onDiff((d) => {
+      diffs.push(d);
+      local = recordInkDiff(local, d, clock);
+    });
+
+    const s = stroke([[0.1, 0.1]], { createdAt: 1_000, updatedAt: 1_000 });
+    doc.commit({ before: [], after: doc.fresh([s]) });
+    clock = 2_000;
+    const e = doc.entry(s.id);
+    if (!e) throw new Error("missing");
+    doc.commit({ before: [e], after: [] }); // delete
+    // Another device synced right now: it holds the tombstone from t=2000.
+    const remote = [...local];
+    expect(remote[0]?.deleted).toBe(true);
+
+    clock = 3_000;
+    doc.undo(); // bring the stroke back
+    expect(diffs.at(-1)?.added[0]?.updatedAt).toBe(3_000);
+    const merged = mergeInkItems(local, remote);
+    expect(merged.find((i) => i.id === s.id)?.deleted).toBeUndefined();
+
+    clock = 4_000;
+    doc.redo(); // delete again: the new tombstone is newer than the restore
+    const merged2 = mergeInkItems(local, merged);
+    expect(merged2.find((i) => i.id === s.id)).toMatchObject({ deleted: true, updatedAt: 4_000 });
+
+    clock = 5_000;
+    doc.undo();
+    expect(diffs.at(-1)?.added[0]?.updatedAt).toBe(5_000);
+    expect(mergeInkItems(local, merged2).find((i) => i.id === s.id)?.deleted).toBeUndefined();
+  });
+
+  it("undo of a move restamps the old position", () => {
+    let clock = 10;
+    const doc = new InkDocument({ now: () => clock });
+    const s = stroke([[0.1, 0.1]], { updatedAt: 10 });
+    doc.commit({ before: [], after: doc.fresh([s]) });
+    const e = doc.entry(s.id);
+    if (!e) throw new Error("missing");
+    clock = 20;
+    doc.commit({ before: [e], after: [{ item: { ...s, points: [[0.5, 0.5, 0.5, 0]], updatedAt: 20 }, seq: e.seq }] });
+    clock = 30;
+    const d = doc.undo();
+    expect(d?.updated[0]).toMatchObject({ points: s.points, updatedAt: 30 });
   });
 });

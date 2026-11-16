@@ -174,7 +174,7 @@ interface TextEditor {
  * tiles + a live layer), tools, undo/redo and events. Framework-free; see react/InkSurface for React.
  */
 export class InkEngine {
-  readonly doc = new InkDocument();
+  readonly doc: InkDocument;
   readonly stats: SampleStats = newStats();
   private readonly o: InkEngineOptions;
   private readonly host: HTMLElement;
@@ -219,6 +219,7 @@ export class InkEngine {
 
   constructor(options: InkEngineOptions) {
     this.o = options;
+    this.doc = new InkDocument({ now: () => this.now() });
     this.host = options.host;
     this.theme = options.theme ?? "paper";
     this.sizes = { ...DEFAULT_SIZES, ...options.sizes };

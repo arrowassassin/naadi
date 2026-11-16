@@ -35,6 +35,26 @@ export class InkDocument {
   private tx: { before: Map<string, Entry | null>; touched: Set<string> } | null = null;
   /** Bumped on every change, so renderers can cache per version. */
   version = 0;
+  private readonly now: () => number;
+
+  /** `now` stamps undo/redo re-applications (epoch ms), so they win last-writer-wins merges. */
+  constructor(opts: { now?: () => number } = {}) {
+    this.now = opts.now ?? Date.now;
+  }
+
+  /**
+   * Undo and redo are new edits for sync: every item they bring back gets updatedAt = now, so a replica
+   * that saw the intermediate state (e.g. a tombstone) does not win the merge. The history entry is
+   * updated in place, so a later undo/redo removes exactly these versions.
+   */
+  private restamp(entries: Entry[]): Entry[] {
+    const now = Math.floor(this.now());
+    for (let i = 0; i < entries.length; i++) {
+      const e = entries[i] as Entry;
+      entries[i] = { item: { ...e.item, updatedAt: Math.max(now, e.item.updatedAt + 1) }, seq: e.seq };
+    }
+    return entries;
+  }
 
   get size(): number {
     return this.entries.size;
@@ -187,7 +207,7 @@ export class InkDocument {
     const c = this.undoStack.pop();
     if (!c) return null;
     this.redoStack.push(c);
-    const diff = this.applyRaw({ before: c.after, after: c.before });
+    const diff = this.applyRaw({ before: c.after, after: this.restamp(c.before) });
     this.emitDiff(diff);
     return diff;
   }
@@ -197,7 +217,7 @@ export class InkDocument {
     const c = this.redoStack.pop();
     if (!c) return null;
     this.undoStack.push(c);
-    const diff = this.applyRaw(c);
+    const diff = this.applyRaw({ before: c.before, after: this.restamp(c.after) });
     this.emitDiff(diff);
     return diff;
   }
