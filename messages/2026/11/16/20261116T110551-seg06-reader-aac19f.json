@@ -1,0 +1,16 @@
+{
+ "id": "20261116T110551-seg06-reader-aac19f",
+ "ts": "2026-11-16T11:05:51.182002Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: feature_flags.courses enabled (the screen ships)",
+ "body": "",
+ "paths": [
+  "config/app_config.yaml"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
