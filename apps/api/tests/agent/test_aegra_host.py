@@ -10,58 +10,15 @@ from __future__ import annotations
 import asyncio
 import time
 import uuid
-from collections.abc import Iterator
 from pathlib import Path
-from typing import Any
 
 import httpx
-import psycopg
 import pytest
-from langgraph_sdk import get_client
-from langgraph_sdk.errors import NotFoundError
 
-from ..db.rls import database_url, require_local
-from .host_server import Host, running_host
+from .conftest import agent_health_rows, client, expect_404, pg
+from .host_server import Host
 
 pytestmark = [pytest.mark.integration, pytest.mark.db]
-
-
-@pytest.fixture(scope="module")
-def host(tmp_path_factory: pytest.TempPathFactory) -> Iterator[Host]:
-    url = database_url()
-    require_local(url)
-    with running_host(url, tmp_path_factory.mktemp("agent-host")) as h:
-        yield h
-
-
-def client(h: Host, tok: str | None) -> Any:
-    headers = {"authorization": f"Bearer {tok}"} if tok else {}
-    return get_client(url=h.url, headers=headers)
-
-
-async def expect_404(call: Any) -> None:
-    """The SDK raises NotFoundError on most routes and a bare httpx.HTTPStatusError on some (join)."""
-    try:
-        await call()
-    except NotFoundError:
-        return
-    except httpx.HTTPStatusError as exc:
-        status = exc.response.status_code
-    else:
-        pytest.fail("expected 404")
-    if status != 404:
-        pytest.fail(f"expected 404, got {status}")
-
-
-def pg() -> psycopg.Connection:
-    return psycopg.connect(database_url(), autocommit=True)
-
-
-def agent_health_rows(run_id: str) -> list[tuple[Any, ...]]:
-    with pg() as c:
-        return c.execute(
-            "select trigger, ok, provider from public.agent_health where run_id = %s", (run_id,)
-        ).fetchall()
 
 
 def test_aegra_and_naadi_migrations_coexist(host: Host) -> None:
@@ -95,55 +52,6 @@ def test_unauthenticated_and_bad_tokens_are_refused(host: Host) -> None:
     assert httpx.get(f"{host.url}/metrics", timeout=10).status_code in (401, 404)  # metrics never exposed
 
 
-async def test_ping_streams_tokens_a_block_and_interrupts_then_resumes(host: Host) -> None:
-    c = client(host, host.admin_token)
-    thread = await c.threads.create()
-    events: dict[str, int] = {}
-    tokens: list[str] = []
-    blocks: list[dict[str, Any]] = []
-    interrupted = False
-    run_id: str | None = None
-    async for part in c.runs.stream(
-        thread["thread_id"],
-        "ping",
-        input={"trigger": "interactive"},
-        stream_mode=["messages-tuple", "custom", "updates"],
-    ):
-        events[part.event] = events.get(part.event, 0) + 1
-        if part.event == "metadata":
-            run_id = part.data["run_id"]
-        elif part.event == "messages":
-            chunk, _meta = part.data
-            if chunk.get("content"):
-                tokens.append(str(chunk["content"]))
-        elif part.event == "custom" and part.data.get("type") == "block":
-            blocks.append(part.data["block"])
-        elif part.event == "updates" and "__interrupt__" in part.data:
-            interrupted = True
-    assert run_id
-    assert tokens, events  # tokens streamed from the router role
-    assert blocks and blocks[0]["type"] == "table"
-    assert interrupted
-    state = await c.threads.get_state(thread["thread_id"])
-    assert state["next"] == ["confirm"] or "confirm" in state["next"]
-    resumed: list[str] = []
-    async for part in c.runs.stream(
-        thread["thread_id"], "ping", command={"resume": {"confirmed": True}}, stream_mode="updates"
-    ):
-        if part.event == "metadata":
-            resumed.append(part.data["run_id"])
-    final = await c.threads.get_state(thread["thread_id"])
-    assert final["values"]["outcome"] == "ok"
-    assert final["values"]["recorded_id"]
-    rows = agent_health_rows(resumed[0])
-    assert rows and rows[0][0] == "interactive" and rows[0][1] is True
-    with pg() as conn:
-        usage = conn.execute(
-            "select provider, purpose, ok from public.llm_usage where run_id = %s", (run_id,)
-        ).fetchall()
-    assert usage and usage[-1][2] is True and usage[-1][1] == "job"
-
-
 async def test_background_run_completes(host: Host) -> None:
     c = client(host, host.admin_token)
     thread = await c.threads.create()
@@ -153,6 +61,9 @@ async def test_background_run_completes(host: Host) -> None:
     assert got["status"] == "success"
     state = await c.threads.get_state(thread["thread_id"])
     assert state["values"]["recorded_id"]
+    # With provider keys the outcome is "ok" (test_aegra_live.py asserts it); without them the run still
+    # completes and records "unavailable" rather than failing.
+    assert state["values"]["outcome"] in ("ok", "unavailable", "budget_exhausted")
     assert agent_health_rows(run["run_id"])[0][0] == "background"
 
 
@@ -176,7 +87,6 @@ async def test_system_cron_exists_and_fires(host: Host) -> None:
                 "select id, ok from public.agent_health where trigger = 'cron' and id > %s", (before,)
             ).fetchone()
         if got:
-            assert got[1] is True
             break
         await asyncio.sleep(2)
     else:

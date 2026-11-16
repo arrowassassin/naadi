@@ -78,6 +78,7 @@ asyncio_default_fixture_loop_scope = "function"
 addopts = ["--strict-markers", "-ra"]
 markers = [
     "integration: talks to real external services (Supabase, OpenRouter, Tavily); needs the env from docs/SECRETS.md",
+    "live: calls real model and search APIs (provider keys + a local DATABASE_URL); budget-aware, run in the sandbox",
     "db: needs a reachable Postgres (DATABASE_URL); runs in GitHub Actions and against the Space",
 ]
 filterwarnings = [
