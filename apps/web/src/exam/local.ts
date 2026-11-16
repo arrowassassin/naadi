@@ -1,10 +1,9 @@
-import type { InkItem } from "@naadi/shared";
 import Dexie, { type EntityTable } from "dexie";
 
 /**
  * What a student marks on an exam question that stays on this device (decision, segment 09): highlights and
- * struck-out options (like test day, they help while answering and are not synced), and scratch ink until the
- * cross-device ink API takes it over. Keyed by user, block and question; everything of a block is deleted
+ * struck-out options (like test day, they help while answering and are not synced). Scratch ink is synced by
+ * the ink API (exam/ScratchSheet). Keyed by user, block and question; everything of a block is deleted
  * seven days after the block finished (`sweep`). Never holds an answer or anything from the server.
  */
 export interface QuestionMarks {
@@ -20,16 +19,6 @@ export interface QuestionMarks {
   updatedAt: number;
 }
 
-export interface ScratchInk {
-  /** `${userId}:${blockId}:${n}` (surface id `{block_id}:{n}`, kind exam_scratch) */
-  key: string;
-  userId: string;
-  blockId: string;
-  n: number;
-  items: InkItem[];
-  updatedAt: number;
-}
-
 export interface FinishedBlock {
   /** `${userId}:${blockId}` */
   key: string;
@@ -40,7 +29,6 @@ export interface FinishedBlock {
 
 class ExamDb extends Dexie {
   marks!: EntityTable<QuestionMarks, "key">;
-  scratch!: EntityTable<ScratchInk, "key">;
   finished!: EntityTable<FinishedBlock, "key">;
 
   constructor() {
@@ -50,6 +38,8 @@ class ExamDb extends Dexie {
       scratch: "key, [userId+blockId], updatedAt",
       finished: "key, userId, finishedAt",
     });
+    // v2: scratch ink moved to the ink API (segment 12b); the device-only table is dropped.
+    this.version(2).stores({ scratch: null });
   }
 }
 
@@ -90,16 +80,6 @@ export function writeMarks(
   });
 }
 
-export function readScratch(userId: string, blockId: string, n: number): Promise<InkItem[]> {
-  return safe([], async (d) => (await d.scratch.get(keyOf(userId, blockId, n)))?.items ?? []);
-}
-
-export function writeScratch(userId: string, blockId: string, n: number, items: InkItem[]): Promise<void> {
-  return safe(undefined, async (d) => {
-    await d.scratch.put({ key: keyOf(userId, blockId, n), userId, blockId, n, items, updatedAt: Date.now() });
-  });
-}
-
 /** Remember when a block finished (first time only), so `sweep` can clear its marks a week later. */
 export function markFinished(userId: string, blockId: string, finishedAt: number): Promise<void> {
   return safe(undefined, async (d) => {
@@ -108,7 +88,7 @@ export function markFinished(userId: string, blockId: string, finishedAt: number
   });
 }
 
-/** Delete the marks and scratch ink of every block of this user that finished more than seven days ago. */
+/** Delete the marks of every block of this user that finished more than seven days ago. */
 export function sweep(userId: string, now = Date.now()): Promise<number> {
   return safe(0, async (d) => {
     const old = await d.finished
@@ -117,9 +97,8 @@ export function sweep(userId: string, now = Date.now()): Promise<number> {
       .filter((f) => now - f.finishedAt > KEEP_AFTER_FINISH_MS)
       .toArray();
     for (const f of old) {
-      await d.transaction("rw", d.marks, d.scratch, d.finished, async () => {
+      await d.transaction("rw", d.marks, d.finished, async () => {
         await d.marks.where("[userId+blockId]").equals([userId, f.blockId]).delete();
-        await d.scratch.where("[userId+blockId]").equals([userId, f.blockId]).delete();
         await d.finished.delete(f.key);
       });
     }
@@ -130,9 +109,8 @@ export function sweep(userId: string, now = Date.now()): Promise<number> {
 /** Sign-out or a user change: nothing of this user's stays on the device. */
 export function clearUser(userId: string): Promise<void> {
   return safe(undefined, async (d) => {
-    await d.transaction("rw", d.marks, d.scratch, d.finished, async () => {
+    await d.transaction("rw", d.marks, d.finished, async () => {
       await d.marks.where("[userId+blockId]").between([userId, Dexie.minKey], [userId, Dexie.maxKey]).delete();
-      await d.scratch.where("[userId+blockId]").between([userId, Dexie.minKey], [userId, Dexie.maxKey]).delete();
       await d.finished.where("userId").equals(userId).delete();
     });
   });

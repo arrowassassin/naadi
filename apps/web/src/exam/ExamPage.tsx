@@ -961,9 +961,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
       </Sheet>
       <LabValuesSheet open={tool === "labs"} onClose={() => setTool(null)} />
       <Calculator open={tool === "calc"} onClose={() => setTool(null)} />
-      {userId ? (
-        <ScratchSheet open={tool === "scratch"} onClose={() => setTool(null)} userId={userId} blockId={blockId} n={n} />
-      ) : null}
+      <ScratchSheet open={tool === "scratch"} onClose={() => setTool(null)} blockId={blockId} n={n} />
       <ViewSheet t={t} open={tool === "view"} onClose={() => setTool(null)} prefs={prefs} onChange={setView} />
       <EndDialog
         t={t}

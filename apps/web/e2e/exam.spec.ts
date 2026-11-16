@@ -352,6 +352,52 @@ test.describe("timed block", () => {
       await expect(page.getByRole("group", { name: "Answer options" }).getByRole("button")).toHaveCount(5);
       await expectTimerAccurate(page, blockId);
 
+      // scratch paper: an exam_scratch ink surface ({block}:{n}) saved through the ink API
+      if (!isPhone(page)) {
+        await page.getByRole("button", { name: "Scratch paper — ink" }).click();
+        const sheet = page.getByRole("dialog", { name: "Scratch paper — ink" });
+        await expect(sheet.locator("[data-ink-layer]")).toBeVisible();
+        const saved = page.waitForResponse(
+          (r) =>
+            r.url().includes(`/api/ink/exam_scratch/${blockId}`) &&
+            r.url().endsWith("/changes") &&
+            r.request().method() === "POST",
+          { timeout: 20_000 },
+        );
+        await sheet.locator("[data-ink-layer]").evaluate(async (layer) => {
+          const r = layer.getBoundingClientRect();
+          const mk = (kind: string, fx: number, buttons: number) =>
+            new PointerEvent(kind, {
+              pointerId: 2,
+              pointerType: "pen",
+              isPrimary: true,
+              bubbles: true,
+              cancelable: true,
+              composed: true,
+              clientX: r.left + fx * r.width,
+              clientY: r.top + 60,
+              pressure: buttons ? 0.6 : 0,
+              buttons,
+              button: kind === "pointermove" ? -1 : 0,
+            });
+          layer.dispatchEvent(mk("pointerdown", 0.1, 1));
+          for (let i = 1; i < 24; i++) {
+            layer.dispatchEvent(mk("pointermove", 0.1 + (0.4 * i) / 23, 1));
+            await new Promise((res) => setTimeout(res, 8));
+          }
+          layer.dispatchEvent(mk("pointerup", 0.5, 0));
+        });
+        expect((await saved).status()).toBe(200);
+        await snap(page, info, guard, "timed-scratch");
+        await sheet.getByRole("button", { name: "Close" }).last().click();
+        const ink = await api<{ item_count: number }>(
+          page,
+          "GET",
+          `/api/ink/exam_scratch/${encodeURIComponent(`${blockId}:1`)}`,
+        );
+        expect(ink.json.item_count).toBe(1);
+      }
+
       // pause: the questions hide, the time freezes, the server refuses answers
       await page.getByRole("button", { name: "Pause" }).click();
       await expect(page.getByRole("heading", { level: 1, name: "The block is paused." })).toBeVisible();
