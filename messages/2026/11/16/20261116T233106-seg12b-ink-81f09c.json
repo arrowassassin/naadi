@@ -1,0 +1,16 @@
+{
+ "id": "20261116T233106-seg12b-ink-81f09c",
+ "ts": "2026-11-16T23:31:06.453287Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b7f258a into claude/naadi-shared",
+ "body": "S12b: ink loads are keepalive (no WebKit page error on navigation)",
+ "refs": {
+  "commit": "b7f258a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
