@@ -1,0 +1,16 @@
+{
+ "id": "20261116T202655-seg07-search-c39934",
+ "ts": "2026-11-16T20:26:55.655379Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 14c03e1 into claude/naadi-shared",
+ "body": "S07 review fixes",
+ "refs": {
+  "commit": "14c03e1",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
