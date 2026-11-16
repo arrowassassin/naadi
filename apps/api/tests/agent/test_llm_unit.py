@@ -419,3 +419,19 @@ async def test_runtime_config_falls_back_to_yaml_without_db() -> None:
     cfg = await rc.get()
     assert cfg.source == {"models": "yaml", "budget": "yaml", "search": "yaml", "generation": "yaml"}
     assert cfg.models.roles["tutor"].chain
+
+
+async def test_zero_cap_is_budget_exhausted_even_without_keys() -> None:
+    s = sections()
+    s["models"]["roles"]["router"]["chain"] = chain(("openrouter", "b/o:free"), ("nvidia", "a/n"))
+    gw, _, _ = gateway(s, FakeClients({}, keys={"nvidia": False, "openrouter": False}), openrouter_daily_cap=0)
+    with pytest.raises(BudgetExhausted) as e:
+        await gw.ainvoke("router", [HumanMessage("x")], ctx())
+    assert e.value.reason == "daily_cap"
+
+
+async def test_no_keys_and_no_zero_cap_is_unavailable() -> None:
+    s = sections()
+    gw, _, _ = gateway(s, FakeClients({}, keys={"nvidia": False, "openrouter": False}))
+    with pytest.raises(LLMUnavailable):
+        await gw.ainvoke("router", [HumanMessage("x")], ctx())

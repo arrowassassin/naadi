@@ -390,18 +390,21 @@ class LLMGateway:
             for entry in spec.chain:
                 provider = entry.provider
                 pspec = cfg.models.providers[provider]
-                if self._clients.key_for(provider) is None or self._is_dead(provider, entry.model):
-                    continue
                 if pdf and provider != "openrouter":
                     continue  # only OpenRouter parses PDFs (file-parser plugin); NVIDIA would reject the part
+                cap = purpose_cap(
+                    cfg, provider, ctx.purpose, self._openrouter_env_cap() if provider == "openrouter" else None
+                )
+                if cap <= 0:
+                    cap_hit = True  # a zero cap is a budget decision, whether or not the key is configured
+                    continue
+                if self._clients.key_for(provider) is None or self._is_dead(provider, entry.model):
+                    continue
                 bucket = self._buckets.get(provider, pspec.rpm)
                 if not await bucket.try_take():
                     rate_waits.append(bucket.wait_s())
                     continue
                 row = UsageRow(provider, ctx.purpose, role, entry.model, ctx.user_id, ctx.run_id)
-                cap = purpose_cap(
-                    cfg, provider, ctx.purpose, self._openrouter_env_cap() if provider == "openrouter" else None
-                )
                 usage_id = await self._ledger.reserve(row, cap)
                 if usage_id is None:
                     cap_hit = True
