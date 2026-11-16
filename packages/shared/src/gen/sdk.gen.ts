@@ -8,6 +8,12 @@ import type {
   GetAdminOverviewData,
   GetAdminOverviewErrors,
   GetAdminOverviewResponses,
+  GetChapterData,
+  GetChapterErrors,
+  GetChapterResponses,
+  GetCoursesData,
+  GetCoursesErrors,
+  GetCoursesResponses,
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
@@ -19,20 +25,39 @@ import type {
   GetNavResponses,
   GetPublicConfigData,
   GetPublicConfigResponses,
+  GetReadingPositionData,
+  GetReadingPositionErrors,
+  GetReadingPositionResponses,
   GetReadyData,
   GetReadyErrors,
   GetReadyResponses,
+  PutReadingPositionData,
+  PutReadingPositionErrors,
+  PutReadingPositionResponses,
+  ReportIssueData,
+  ReportIssueErrors,
+  ReportIssueResponses,
   UpdateMeData,
   UpdateMeErrors,
   UpdateMeResponses,
 } from "./types.gen";
 import {
   zGetAdminOverviewResponse,
+  zGetChapterPath,
+  zGetChapterResponse,
+  zGetCoursesQuery,
+  zGetCoursesResponse,
   zGetHealthResponse,
   zGetMeResponse,
   zGetNavResponse,
   zGetPublicConfigResponse,
+  zGetReadingPositionQuery,
+  zGetReadingPositionResponse,
   zGetReadyResponse,
+  zPutReadingPositionBody,
+  zPutReadingPositionResponse,
+  zReportIssueBody,
+  zReportIssueResponse,
   zUpdateMeBody,
   zUpdateMeResponse,
 } from "./zod.gen";
@@ -72,6 +97,46 @@ export const getAdminOverview = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetAdminOverviewResponse.parseAsync(data),
     url: "/api/admin/overview",
+    ...options,
+  });
+
+/**
+ * A chapter with its ordered sections (TipTap JSON), resolved media and embedded questions
+ */
+export const getChapter = <ThrowOnError extends boolean = false>(
+  options: Options<GetChapterData, ThrowOnError>,
+): RequestResult<GetChapterResponses, GetChapterErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetChapterResponses, GetChapterErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetChapterPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetChapterResponse.parseAsync(data),
+    url: "/api/chapters/{chapter_id}",
+    ...options,
+  });
+
+/**
+ * Course map: chapters by system with coverage and the caller's progress, plus the next action
+ */
+export const getCourses = <ThrowOnError extends boolean = false>(
+  options?: Options<GetCoursesData, ThrowOnError>,
+): RequestResult<GetCoursesResponses, GetCoursesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetCoursesResponses, GetCoursesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetCoursesQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetCoursesResponse.parseAsync(data),
+    url: "/api/courses",
     ...options,
   });
 
@@ -180,6 +245,50 @@ export const getPublicConfig = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * The caller's positions in one chapter (all sections) and the most recent one, from any device
+ */
+export const getReadingPosition = <ThrowOnError extends boolean = false>(
+  options: Options<GetReadingPositionData, ThrowOnError>,
+): RequestResult<GetReadingPositionResponses, GetReadingPositionErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetReadingPositionResponses, GetReadingPositionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetReadingPositionQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetReadingPositionResponse.parseAsync(data),
+    url: "/api/reading-position",
+    ...options,
+  });
+
+/**
+ * Save where the caller is in a section (last-writer-wins by the device's timestamp)
+ */
+export const putReadingPosition = <ThrowOnError extends boolean = false>(
+  options: Options<PutReadingPositionData, ThrowOnError>,
+): RequestResult<PutReadingPositionResponses, PutReadingPositionErrors, ThrowOnError> =>
+  (options.client ?? client).put<PutReadingPositionResponses, PutReadingPositionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPutReadingPositionBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPutReadingPositionResponse.parseAsync(data),
+    url: "/api/reading-position",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
  * Readiness: settings loaded and the database pool can hand out a connection
  */
 export const getReady = <ThrowOnError extends boolean = false>(
@@ -197,4 +306,28 @@ export const getReady = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zGetReadyResponse.parseAsync(data),
     url: "/api/ready",
     ...options,
+  });
+
+/**
+ * Report a problem with a section, chapter, figure or question (stored for review)
+ */
+export const reportIssue = <ThrowOnError extends boolean = false>(
+  options: Options<ReportIssueData, ThrowOnError>,
+): RequestResult<ReportIssueResponses, ReportIssueErrors, ThrowOnError> =>
+  (options.client ?? client).post<ReportIssueResponses, ReportIssueErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReportIssueBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReportIssueResponse.parseAsync(data),
+    url: "/api/report-issue",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });

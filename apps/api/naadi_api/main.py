@@ -7,11 +7,13 @@ from contextlib import asynccontextmanager
 from importlib.metadata import PackageNotFoundError, version
 
 from fastapi import FastAPI
+from starlette.middleware.gzip import GZipMiddleware
 
 from . import api
 from .auth import TokenVerifier, install_auth
 from .auth_routes import install_auth_routes
 from .config import load_models_config
+from .courses import install_courses_routes
 from .db import Database
 from .errors import install_error_handlers
 from .health.checks import database_check, nvidia_check, openrouter_check, storage_check, tavily_check
@@ -100,7 +102,10 @@ def create_app(
     install_auth(app, settings, verifier)
     app.include_router(api.router)
     install_auth_routes(app)
+    install_courses_routes(app)
     install_spa(app, settings.static_dir)
+    # Chapter JSON is large and repetitive; Starlette's GZip skips text/event-stream, so SSE is untouched.
+    app.add_middleware(GZipMiddleware, minimum_size=1024)
     app.add_middleware(RequestContextMiddleware, settings=settings)
     return app
 

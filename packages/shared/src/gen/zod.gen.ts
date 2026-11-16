@@ -13,6 +13,76 @@ export const zAdminOverview = z.object({
 });
 
 /**
+ * ChapterLink
+ */
+export const zChapterLink = z.object({
+  id: z.string(),
+  title: z.string(),
+});
+
+/**
+ * ChapterProgress
+ */
+export const zChapterProgress = z.object({
+  last_read_at: z.iso.datetime().nullable(),
+  last_section_id: z.string().nullable(),
+  sections_read: z.int(),
+  sections_total: z.int(),
+  status: z.enum(["not_started", "in_progress", "done"]),
+});
+
+/**
+ * Coverage
+ *
+ * What exists today for a chapter or a system (counts of items visible to the caller).
+ */
+export const zCoverage = z.object({
+  cards: z.int(),
+  figures: z.int(),
+  questions: z.int(),
+  reading_minutes: z.int(),
+  sections: z.int(),
+  videos: z.int(),
+});
+
+/**
+ * CourseChapter
+ */
+export const zCourseChapter = z.object({
+  coverage: zCoverage,
+  exam: z.string(),
+  format: z.enum(["read", "read_watch"]),
+  id: z.string(),
+  kind: z.enum(["chapter", "user_upload", "user_kb"]),
+  meta: z.string().nullable(),
+  number: z.int().nullable(),
+  progress: zChapterProgress,
+  systems: z.array(z.string()),
+  title: z.string(),
+});
+
+/**
+ * CourseSystem
+ */
+export const zCourseSystem = z.object({
+  chapter_ids: z.array(z.string()),
+  coverage: zCoverage,
+  id: z.string(),
+  label: z.string(),
+  sections_read: z.int(),
+  sections_total: z.int(),
+});
+
+/**
+ * ExamOption
+ */
+export const zExamOption = z.object({
+  chapter_count: z.int(),
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
  * FieldError
  */
 export const zFieldError = z.object({
@@ -59,6 +129,44 @@ export const zMeUpdate = z.object({
 });
 
 /**
+ * MediaSource
+ */
+export const zMediaSource = z.object({
+  id: z.string(),
+  license: z.string(),
+  name: z.string(),
+  url: z.string().nullable(),
+});
+
+/**
+ * MediaOut
+ */
+export const zMediaOut = z.object({
+  attribution: z.string().nullable(),
+  caption: z.string().nullable(),
+  duration_s: z.int().nullable(),
+  embeddable: z.boolean().nullable(),
+  height: z.int().nullable(),
+  id: z.string(),
+  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]),
+  source: zMediaSource.nullable(),
+  title: z.string().nullable(),
+  url: z.string().nullable(),
+  width: z.int().nullable(),
+  youtube_id: z.string().nullable(),
+});
+
+/**
+ * MockExam
+ */
+export const zMockExam = z.object({
+  id: z.string(),
+  meta: z.string().nullable(),
+  question_count: z.int(),
+  title: z.string(),
+});
+
+/**
  * ModelProbe
  *
  * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
@@ -97,6 +205,32 @@ export const zNavResponse = z.object({
   features: zNavFeatures,
   items: z.array(zNavItem),
   source: z.enum(["app_config", "server_default"]),
+});
+
+/**
+ * NextUp
+ *
+ * The one next action on the course map (the lime CTA).
+ */
+export const zNextUp = z.object({
+  chapter_id: z.string(),
+  chapter_title: z.string(),
+  reason: z.enum(["continue", "start", "next"]),
+  section_heading: z.string(),
+  section_id: z.string(),
+});
+
+/**
+ * CoursesResponse
+ */
+export const zCoursesResponse = z.object({
+  chapters: z.array(zCourseChapter),
+  exam: z.string().nullable(),
+  exams: z.array(zExamOption),
+  mock_exams: z.array(zMockExam),
+  next_up: zNextUp.nullable(),
+  system: z.string().nullable(),
+  systems: z.array(zCourseSystem),
 });
 
 /**
@@ -150,6 +284,25 @@ export const zPublicConfig = z.object({
 });
 
 /**
+ * QuestionOption
+ */
+export const zQuestionOption = z.object({
+  html: z.string(),
+  label: z.string(),
+});
+
+/**
+ * EmbeddedQuestion
+ *
+ * A question without its answer, explanation or statistics (answering arrives with segment 08).
+ */
+export const zEmbeddedQuestion = z.object({
+  id: z.string(),
+  options: z.array(zQuestionOption),
+  stem_html: z.string(),
+});
+
+/**
  * Quota
  */
 export const zQuota = z.object({
@@ -199,6 +352,46 @@ export const zHealthResponse = z.object({
 });
 
 /**
+ * ReadingPosition
+ */
+export const zReadingPosition = z.object({
+  chapter_id: z.string(),
+  client_updated_at: z.iso.datetime(),
+  completed: z.boolean(),
+  offset: z.number(),
+  section_id: z.string(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * ChapterPositions
+ */
+export const zChapterPositions = z.object({
+  chapter_id: z.string(),
+  last: zReadingPosition.nullable(),
+  sections: z.array(zReadingPosition),
+});
+
+/**
+ * ReadingPositionIn
+ */
+export const zReadingPositionIn = z.object({
+  chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+  client_updated_at: z.iso.datetime().nullish(),
+  completed: z.boolean().optional().default(false),
+  offset: z.number().gte(0).lte(100000),
+  section_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * ReadingPositionWrite
+ */
+export const zReadingPositionWrite = z.object({
+  applied: z.boolean(),
+  position: zReadingPosition,
+});
+
+/**
  * ReadyResponse
  */
 export const zReadyResponse = z.object({
@@ -207,9 +400,109 @@ export const zReadyResponse = z.object({
 });
 
 /**
+ * ReportIssueIn
+ */
+export const zReportIssueIn = z.object({
+  body: z.string().min(1).max(4000),
+  ref_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+  ref_type: z.enum(["section", "chapter", "media", "question"]),
+});
+
+/**
+ * ReportIssueOut
+ */
+export const zReportIssueOut = z.object({
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  status: z.enum(["open", "triaged", "resolved", "dismissed"]),
+});
+
+/**
+ * SectionOut
+ */
+export const zSectionOut = z.object({
+  body: z.record(z.string(), z.unknown()).nullable(),
+  heading: z.string(),
+  id: z.string(),
+  reading_minutes: z.int(),
+  sort: z.int(),
+  taxonomy_ids: z.array(z.string()),
+});
+
+/**
+ * SystemRef
+ */
+export const zSystemRef = z.object({
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
+ * ChapterDetail
+ */
+export const zChapterDetail = z.object({
+  chapter_count: z.int(),
+  coverage: zCoverage,
+  exam: z.string(),
+  id: z.string(),
+  kind: z.enum(["chapter", "mock_exam", "pathway", "user_upload", "user_kb"]),
+  media: z.record(z.string(), zMediaOut),
+  meta: z.string().nullable(),
+  next_chapter: zChapterLink.nullable(),
+  number: z.int().nullable(),
+  questions: z.record(z.string(), zEmbeddedQuestion),
+  sections: z.array(zSectionOut),
+  systems: z.array(zSystemRef),
+  title: z.string(),
+});
+
+/**
+ * ValidationError
+ */
+export const zValidationError = z.object({
+  ctx: z.record(z.string(), z.unknown()).optional(),
+  input: z.unknown().optional(),
+  loc: z.array(z.union([z.string(), z.int()])),
+  msg: z.string(),
+  type: z.string(),
+});
+
+/**
+ * HTTPValidationError
+ */
+export const zHttpValidationError = z.object({
+  detail: z.array(zValidationError).optional(),
+});
+
+/**
  * Successful Response
  */
 export const zGetAdminOverviewResponse = zAdminOverview;
+
+export const zGetChapterPath = z.object({
+  chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetChapterResponse = zChapterDetail;
+
+export const zGetCoursesQuery = z.object({
+  exam: z
+    .string()
+    .regex(/^[a-z0-9]{2,16}$/)
+    .nullish(),
+  system: z
+    .string()
+    .regex(/^[A-Za-z0-9][A-Za-z0-9._\-]{0,127}$/)
+    .nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetCoursesResponse = zCoursesResponse;
 
 /**
  * Successful Response
@@ -238,7 +531,30 @@ export const zGetNavResponse = zNavResponse;
  */
 export const zGetPublicConfigResponse = zPublicConfig;
 
+export const zGetReadingPositionQuery = z.object({
+  chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetReadingPositionResponse = zChapterPositions;
+
+export const zPutReadingPositionBody = zReadingPositionIn;
+
+/**
+ * Successful Response
+ */
+export const zPutReadingPositionResponse = zReadingPositionWrite;
+
 /**
  * Successful Response
  */
 export const zGetReadyResponse = zReadyResponse;
+
+export const zReportIssueBody = zReportIssueIn;
+
+/**
+ * Successful Response
+ */
+export const zReportIssueResponse = zReportIssueOut;

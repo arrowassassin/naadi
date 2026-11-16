@@ -20,6 +20,8 @@ def content_security_policy(settings: Settings) -> str:
         f"img-src {' '.join(img)}",
         f"connect-src {' '.join(connect)}",
         "media-src 'self' blob:",
+        # YouTube only through the official IFrame player (privacy-enhanced domain first).
+        "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
         "worker-src 'self'",
         "manifest-src 'self'",
         "object-src 'none'",

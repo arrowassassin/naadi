@@ -29,6 +29,224 @@
         "title": "AdminOverview",
         "type": "object"
       },
+      "ChapterDetail": {
+        "properties": {
+          "chapter_count": {
+            "description": "Shared chapters in this exam",
+            "title": "Chapter Count",
+            "type": "integer"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "chapter",
+              "mock_exam",
+              "pathway",
+              "user_upload",
+              "user_kb"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "media": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MediaOut"
+            },
+            "description": "Every visible media asset the sections reference, by id",
+            "title": "Media",
+            "type": "object"
+          },
+          "meta": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meta"
+          },
+          "next_chapter": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChapterLink"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "number": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Number"
+          },
+          "questions": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EmbeddedQuestion"
+            },
+            "description": "Questions embedded in the sections, by id",
+            "title": "Questions",
+            "type": "object"
+          },
+          "sections": {
+            "items": {
+              "$ref": "#/components/schemas/SectionOut"
+            },
+            "title": "Sections",
+            "type": "array"
+          },
+          "systems": {
+            "items": {
+              "$ref": "#/components/schemas/SystemRef"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "exam",
+          "kind",
+          "title",
+          "meta",
+          "number",
+          "chapter_count",
+          "systems",
+          "coverage",
+          "sections",
+          "media",
+          "questions",
+          "next_chapter"
+        ],
+        "title": "ChapterDetail",
+        "type": "object"
+      },
+      "ChapterLink": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title"
+        ],
+        "title": "ChapterLink",
+        "type": "object"
+      },
+      "ChapterPositions": {
+        "properties": {
+          "chapter_id": {
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "last": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReadingPosition"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Most recent position in this chapter, from any device"
+          },
+          "sections": {
+            "items": {
+              "$ref": "#/components/schemas/ReadingPosition"
+            },
+            "title": "Sections",
+            "type": "array"
+          }
+        },
+        "required": [
+          "chapter_id",
+          "last",
+          "sections"
+        ],
+        "title": "ChapterPositions",
+        "type": "object"
+      },
+      "ChapterProgress": {
+        "properties": {
+          "last_read_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Read At"
+          },
+          "last_section_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Section Id"
+          },
+          "sections_read": {
+            "title": "Sections Read",
+            "type": "integer"
+          },
+          "sections_total": {
+            "title": "Sections Total",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "not_started",
+              "in_progress",
+              "done"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sections_read",
+          "sections_total",
+          "status",
+          "last_section_id",
+          "last_read_at"
+        ],
+        "title": "ChapterProgress",
+        "type": "object"
+      },
       "ComponentHealth": {
         "properties": {
           "cached": {
@@ -122,6 +340,276 @@
         "title": "ComponentHealth",
         "type": "object"
       },
+      "CourseChapter": {
+        "properties": {
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "format": {
+            "description": "read_watch when at least one video is attached",
+            "enum": [
+              "read",
+              "read_watch"
+            ],
+            "title": "Format",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "chapter",
+              "user_upload",
+              "user_kb"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "meta": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meta"
+          },
+          "number": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Position among the exam's shared chapters (1-based); null for own files",
+            "title": "Number"
+          },
+          "progress": {
+            "$ref": "#/components/schemas/ChapterProgress"
+          },
+          "systems": {
+            "description": "Taxonomy system ids this chapter is listed under",
+            "items": {
+              "type": "string"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "exam",
+          "kind",
+          "title",
+          "meta",
+          "number",
+          "systems",
+          "format",
+          "coverage",
+          "progress"
+        ],
+        "title": "CourseChapter",
+        "type": "object"
+      },
+      "CourseSystem": {
+        "properties": {
+          "chapter_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Chapter Ids",
+            "type": "array"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "sections_read": {
+            "title": "Sections Read",
+            "type": "integer"
+          },
+          "sections_total": {
+            "title": "Sections Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "chapter_ids",
+          "coverage",
+          "sections_read",
+          "sections_total"
+        ],
+        "title": "CourseSystem",
+        "type": "object"
+      },
+      "CoursesResponse": {
+        "properties": {
+          "chapters": {
+            "description": "Chapters of the exam (and the caller's own), filtered",
+            "items": {
+              "$ref": "#/components/schemas/CourseChapter"
+            },
+            "title": "Chapters",
+            "type": "array"
+          },
+          "exam": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The exam shown (the query, else the profile's target, else the first)",
+            "title": "Exam"
+          },
+          "exams": {
+            "items": {
+              "$ref": "#/components/schemas/ExamOption"
+            },
+            "title": "Exams",
+            "type": "array"
+          },
+          "mock_exams": {
+            "items": {
+              "$ref": "#/components/schemas/MockExam"
+            },
+            "title": "Mock Exams",
+            "type": "array"
+          },
+          "next_up": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NextUp"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "system": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The system filter applied, if any",
+            "title": "System"
+          },
+          "systems": {
+            "description": "Every system of the exam with at least one chapter",
+            "items": {
+              "$ref": "#/components/schemas/CourseSystem"
+            },
+            "title": "Systems",
+            "type": "array"
+          }
+        },
+        "required": [
+          "exam",
+          "exams",
+          "system",
+          "systems",
+          "chapters",
+          "mock_exams",
+          "next_up"
+        ],
+        "title": "CoursesResponse",
+        "type": "object"
+      },
+      "Coverage": {
+        "description": "What exists today for a chapter or a system (counts of items visible to the caller).",
+        "properties": {
+          "cards": {
+            "title": "Cards",
+            "type": "integer"
+          },
+          "figures": {
+            "title": "Figures",
+            "type": "integer"
+          },
+          "questions": {
+            "title": "Questions",
+            "type": "integer"
+          },
+          "reading_minutes": {
+            "title": "Reading Minutes",
+            "type": "integer"
+          },
+          "sections": {
+            "title": "Sections",
+            "type": "integer"
+          },
+          "videos": {
+            "title": "Videos",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sections",
+          "reading_minutes",
+          "figures",
+          "videos",
+          "questions",
+          "cards"
+        ],
+        "title": "Coverage",
+        "type": "object"
+      },
+      "EmbeddedQuestion": {
+        "description": "A question without its answer, explanation or statistics (answering arrives with segment 08).",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "options": {
+            "items": {
+              "$ref": "#/components/schemas/QuestionOption"
+            },
+            "title": "Options",
+            "type": "array"
+          },
+          "stem_html": {
+            "title": "Stem Html",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "stem_html",
+          "options"
+        ],
+        "title": "EmbeddedQuestion",
+        "type": "object"
+      },
       "ErrorBody": {
         "properties": {
           "code": {
@@ -182,6 +670,29 @@
         "title": "ErrorResponse",
         "type": "object"
       },
+      "ExamOption": {
+        "properties": {
+          "chapter_count": {
+            "title": "Chapter Count",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "chapter_count"
+        ],
+        "title": "ExamOption",
+        "type": "object"
+      },
       "FieldError": {
         "properties": {
           "loc": {
@@ -213,6 +724,19 @@
           "type"
         ],
         "title": "FieldError",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
         "type": "object"
       },
       "HealthComponents": {
@@ -392,6 +916,223 @@
         "title": "MeUpdate",
         "type": "object"
       },
+      "MediaOut": {
+        "properties": {
+          "attribution": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Attribution"
+          },
+          "caption": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Caption"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "embeddable": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Embeddable"
+          },
+          "height": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Height"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "svg",
+              "image",
+              "video_own",
+              "video_youtube",
+              "audio",
+              "pdf",
+              "link"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MediaSource"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Browser URL (public or signed); null when it cannot be served",
+            "title": "Url"
+          },
+          "width": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Width"
+          },
+          "youtube_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Youtube Id"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "url",
+          "title",
+          "caption",
+          "attribution",
+          "width",
+          "height",
+          "youtube_id",
+          "duration_s",
+          "embeddable",
+          "source"
+        ],
+        "title": "MediaOut",
+        "type": "object"
+      },
+      "MediaSource": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "license": {
+            "title": "License",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "license",
+          "url"
+        ],
+        "title": "MediaSource",
+        "type": "object"
+      },
+      "MockExam": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "meta": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meta"
+          },
+          "question_count": {
+            "title": "Question Count",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "meta",
+          "question_count"
+        ],
+        "title": "MockExam",
+        "type": "object"
+      },
       "ModelProbe": {
         "description": "One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).",
         "properties": {
@@ -522,6 +1263,45 @@
           "source"
         ],
         "title": "NavResponse",
+        "type": "object"
+      },
+      "NextUp": {
+        "description": "The one next action on the course map (the lime CTA).",
+        "properties": {
+          "chapter_id": {
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "chapter_title": {
+            "title": "Chapter Title",
+            "type": "string"
+          },
+          "reason": {
+            "enum": [
+              "continue",
+              "start",
+              "next"
+            ],
+            "title": "Reason",
+            "type": "string"
+          },
+          "section_heading": {
+            "title": "Section Heading",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason",
+          "chapter_id",
+          "chapter_title",
+          "section_id",
+          "section_heading"
+        ],
+        "title": "NextUp",
         "type": "object"
       },
       "Profile": {
@@ -701,6 +1481,24 @@
         "title": "PublicFeatures",
         "type": "object"
       },
+      "QuestionOption": {
+        "properties": {
+          "html": {
+            "title": "Html",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "html"
+        ],
+        "title": "QuestionOption",
+        "type": "object"
+      },
       "Quota": {
         "properties": {
           "guard": {
@@ -770,6 +1568,113 @@
         "title": "Quota",
         "type": "object"
       },
+      "ReadingPosition": {
+        "properties": {
+          "chapter_id": {
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "client_updated_at": {
+            "format": "date-time",
+            "title": "Client Updated At",
+            "type": "string"
+          },
+          "completed": {
+            "title": "Completed",
+            "type": "boolean"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "number"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapter_id",
+          "section_id",
+          "offset",
+          "completed",
+          "client_updated_at",
+          "updated_at"
+        ],
+        "title": "ReadingPosition",
+        "type": "object"
+      },
+      "ReadingPositionIn": {
+        "additionalProperties": false,
+        "properties": {
+          "chapter_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "client_updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the device recorded it (orders offline writes); clamped to the server clock",
+            "title": "Client Updated At"
+          },
+          "completed": {
+            "default": false,
+            "description": "The reader reached the end of the section (never unset)",
+            "title": "Completed",
+            "type": "boolean"
+          },
+          "offset": {
+            "description": "Index of the top-most visible top-level block plus the fraction of it scrolled past",
+            "maximum": 100000.0,
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "number"
+          },
+          "section_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+            "title": "Section Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapter_id",
+          "section_id",
+          "offset"
+        ],
+        "title": "ReadingPositionIn",
+        "type": "object"
+      },
+      "ReadingPositionWrite": {
+        "properties": {
+          "applied": {
+            "description": "false when a newer position from another device was kept",
+            "title": "Applied",
+            "type": "boolean"
+          },
+          "position": {
+            "$ref": "#/components/schemas/ReadingPosition",
+            "description": "The stored position after the write"
+          }
+        },
+        "required": [
+          "position",
+          "applied"
+        ],
+        "title": "ReadingPositionWrite",
+        "type": "object"
+      },
       "ReadyResponse": {
         "properties": {
           "checks": {
@@ -789,6 +1694,178 @@
           "checks"
         ],
         "title": "ReadyResponse",
+        "type": "object"
+      },
+      "ReportIssueIn": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Body",
+            "type": "string"
+          },
+          "ref_id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+            "title": "Ref Id",
+            "type": "string"
+          },
+          "ref_type": {
+            "enum": [
+              "section",
+              "chapter",
+              "media",
+              "question"
+            ],
+            "title": "Ref Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref_type",
+          "ref_id",
+          "body"
+        ],
+        "title": "ReportIssueIn",
+        "type": "object"
+      },
+      "ReportIssueOut": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "triaged",
+              "resolved",
+              "dismissed"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "created_at"
+        ],
+        "title": "ReportIssueOut",
+        "type": "object"
+      },
+      "SectionOut": {
+        "properties": {
+          "body": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "TipTap JSON (schema: @naadi/shared/content); null if empty",
+            "title": "Body"
+          },
+          "heading": {
+            "title": "Heading",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "reading_minutes": {
+            "title": "Reading Minutes",
+            "type": "integer"
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "integer"
+          },
+          "taxonomy_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Taxonomy Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "sort",
+          "heading",
+          "reading_minutes",
+          "taxonomy_ids",
+          "body"
+        ],
+        "title": "SectionOut",
+        "type": "object"
+      },
+      "SystemRef": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "title": "SystemRef",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
         "type": "object"
       }
     }
@@ -857,6 +1934,193 @@
         "summary": "Admin only: environment, version, number of admins configured and of profiles",
         "tags": [
           "admin"
+        ]
+      }
+    },
+    "/api/chapters/{chapter_id}": {
+      "get": {
+        "operationId": "getChapter",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chapter_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Chapter Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "304": {
+            "description": "Not modified (If-None-Match)"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "A chapter with its ordered sections (TipTap JSON), resolved media and embedded questions",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/api/courses": {
+      "get": {
+        "operationId": "getCourses",
+        "parameters": [
+          {
+            "description": "Exam id, e.g. step1, step2ck",
+            "in": "query",
+            "name": "exam",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[a-z0-9]{2,16}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exam id, e.g. step1, step2ck",
+              "title": "Exam"
+            }
+          },
+          {
+            "description": "Taxonomy system id",
+            "in": "query",
+            "name": "system",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._\\-]{0,127}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Taxonomy system id",
+              "title": "System"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoursesResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Course map: chapters by system with coverage and the caller's progress, plus the next action",
+        "tags": [
+          "courses"
         ]
       }
     },
@@ -1093,6 +2357,158 @@
         ]
       }
     },
+    "/api/reading-position": {
+      "get": {
+        "operationId": "getReadingPosition",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "chapter_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+              "title": "Chapter Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterPositions"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid query"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The caller's positions in one chapter (all sections) and the most recent one, from any device",
+        "tags": [
+          "courses"
+        ]
+      },
+      "put": {
+        "operationId": "putReadingPosition",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadingPositionIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadingPositionWrite"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid fields"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Save where the caller is in a section (last-writer-wins by the device's timestamp)",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
     "/api/ready": {
       "get": {
         "operationId": "getReady",
@@ -1121,6 +2537,87 @@
         "summary": "Readiness: settings loaded and the database pool can hand out a connection",
         "tags": [
           "system"
+        ]
+      }
+    },
+    "/api/report-issue": {
+      "post": {
+        "operationId": "reportIssue",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportIssueIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportIssueOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid fields"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Report a problem with a section, chapter, figure or question (stored for review)",
+        "tags": [
+          "courses"
         ]
       }
     }

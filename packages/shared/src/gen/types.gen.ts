@@ -27,6 +27,126 @@ export type AdminOverview = {
 };
 
 /**
+ * ChapterDetail
+ */
+export type ChapterDetail = {
+  /**
+   * Chapter Count
+   *
+   * Shared chapters in this exam
+   */
+  chapter_count: number;
+  coverage: Coverage;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "chapter" | "mock_exam" | "pathway" | "user_upload" | "user_kb";
+  /**
+   * Media
+   *
+   * Every visible media asset the sections reference, by id
+   */
+  media: {
+    [key: string]: MediaOut;
+  };
+  /**
+   * Meta
+   */
+  meta: string | null;
+  next_chapter: ChapterLink | null;
+  /**
+   * Number
+   */
+  number: number | null;
+  /**
+   * Questions
+   *
+   * Questions embedded in the sections, by id
+   */
+  questions: {
+    [key: string]: EmbeddedQuestion;
+  };
+  /**
+   * Sections
+   */
+  sections: Array<SectionOut>;
+  /**
+   * Systems
+   */
+  systems: Array<SystemRef>;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * ChapterLink
+ */
+export type ChapterLink = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * ChapterPositions
+ */
+export type ChapterPositions = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Most recent position in this chapter, from any device
+   */
+  last: ReadingPosition | null;
+  /**
+   * Sections
+   */
+  sections: Array<ReadingPosition>;
+};
+
+/**
+ * ChapterProgress
+ */
+export type ChapterProgress = {
+  /**
+   * Last Read At
+   */
+  last_read_at: string | null;
+  /**
+   * Last Section Id
+   */
+  last_section_id: string | null;
+  /**
+   * Sections Read
+   */
+  sections_read: number;
+  /**
+   * Sections Total
+   */
+  sections_total: number;
+  /**
+   * Status
+   */
+  status: "not_started" | "in_progress" | "done";
+};
+
+/**
  * ComponentHealth
  */
 export type ComponentHealth = {
@@ -78,6 +198,170 @@ export type ComponentHealth = {
 };
 
 /**
+ * CourseChapter
+ */
+export type CourseChapter = {
+  coverage: Coverage;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Format
+   *
+   * read_watch when at least one video is attached
+   */
+  format: "read" | "read_watch";
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "chapter" | "user_upload" | "user_kb";
+  /**
+   * Meta
+   */
+  meta: string | null;
+  /**
+   * Number
+   *
+   * Position among the exam's shared chapters (1-based); null for own files
+   */
+  number: number | null;
+  progress: ChapterProgress;
+  /**
+   * Systems
+   *
+   * Taxonomy system ids this chapter is listed under
+   */
+  systems: Array<string>;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * CourseSystem
+ */
+export type CourseSystem = {
+  /**
+   * Chapter Ids
+   */
+  chapter_ids: Array<string>;
+  coverage: Coverage;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Sections Read
+   */
+  sections_read: number;
+  /**
+   * Sections Total
+   */
+  sections_total: number;
+};
+
+/**
+ * CoursesResponse
+ */
+export type CoursesResponse = {
+  /**
+   * Chapters
+   *
+   * Chapters of the exam (and the caller's own), filtered
+   */
+  chapters: Array<CourseChapter>;
+  /**
+   * Exam
+   *
+   * The exam shown (the query, else the profile's target, else the first)
+   */
+  exam: string | null;
+  /**
+   * Exams
+   */
+  exams: Array<ExamOption>;
+  /**
+   * Mock Exams
+   */
+  mock_exams: Array<MockExam>;
+  next_up: NextUp | null;
+  /**
+   * System
+   *
+   * The system filter applied, if any
+   */
+  system: string | null;
+  /**
+   * Systems
+   *
+   * Every system of the exam with at least one chapter
+   */
+  systems: Array<CourseSystem>;
+};
+
+/**
+ * Coverage
+ *
+ * What exists today for a chapter or a system (counts of items visible to the caller).
+ */
+export type Coverage = {
+  /**
+   * Cards
+   */
+  cards: number;
+  /**
+   * Figures
+   */
+  figures: number;
+  /**
+   * Questions
+   */
+  questions: number;
+  /**
+   * Reading Minutes
+   */
+  reading_minutes: number;
+  /**
+   * Sections
+   */
+  sections: number;
+  /**
+   * Videos
+   */
+  videos: number;
+};
+
+/**
+ * EmbeddedQuestion
+ *
+ * A question without its answer, explanation or statistics (answering arrives with segment 08).
+ */
+export type EmbeddedQuestion = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Options
+   */
+  options: Array<QuestionOption>;
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+};
+
+/**
  * ErrorBody
  */
 export type ErrorBody = {
@@ -115,6 +399,24 @@ export type ErrorResponse = {
 };
 
 /**
+ * ExamOption
+ */
+export type ExamOption = {
+  /**
+   * Chapter Count
+   */
+  chapter_count: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
  * FieldError
  */
 export type FieldError = {
@@ -130,6 +432,16 @@ export type FieldError = {
    * Type
    */
   type: string;
+};
+
+/**
+ * HTTPValidationError
+ */
+export type HttpValidationError = {
+  /**
+   * Detail
+   */
+  detail?: Array<ValidationError>;
 };
 
 /**
@@ -229,6 +541,103 @@ export type MeUpdate = {
 };
 
 /**
+ * MediaOut
+ */
+export type MediaOut = {
+  /**
+   * Attribution
+   */
+  attribution: string | null;
+  /**
+   * Caption
+   */
+  caption: string | null;
+  /**
+   * Duration S
+   */
+  duration_s: number | null;
+  /**
+   * Embeddable
+   */
+  embeddable: boolean | null;
+  /**
+   * Height
+   */
+  height: number | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link";
+  source: MediaSource | null;
+  /**
+   * Title
+   */
+  title: string | null;
+  /**
+   * Url
+   *
+   * Browser URL (public or signed); null when it cannot be served
+   */
+  url: string | null;
+  /**
+   * Width
+   */
+  width: number | null;
+  /**
+   * Youtube Id
+   */
+  youtube_id: string | null;
+};
+
+/**
+ * MediaSource
+ */
+export type MediaSource = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * License
+   */
+  license: string;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Url
+   */
+  url: string | null;
+};
+
+/**
+ * MockExam
+ */
+export type MockExam = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Meta
+   */
+  meta: string | null;
+  /**
+   * Question Count
+   */
+  question_count: number;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
  * ModelProbe
  *
  * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
@@ -319,6 +728,34 @@ export type NavResponse = {
    * Source
    */
   source: "app_config" | "server_default";
+};
+
+/**
+ * NextUp
+ *
+ * The one next action on the course map (the lime CTA).
+ */
+export type NextUp = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Chapter Title
+   */
+  chapter_title: string;
+  /**
+   * Reason
+   */
+  reason: "continue" | "start" | "next";
+  /**
+   * Section Heading
+   */
+  section_heading: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
 };
 
 /**
@@ -423,6 +860,20 @@ export type PublicFeatures = {
 };
 
 /**
+ * QuestionOption
+ */
+export type QuestionOption = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
  * Quota
  */
 export type Quota = {
@@ -457,6 +908,84 @@ export type Quota = {
 };
 
 /**
+ * ReadingPosition
+ */
+export type ReadingPosition = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Client Updated At
+   */
+  client_updated_at: string;
+  /**
+   * Completed
+   */
+  completed: boolean;
+  /**
+   * Offset
+   */
+  offset: number;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * ReadingPositionIn
+ */
+export type ReadingPositionIn = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Client Updated At
+   *
+   * When the device recorded it (orders offline writes); clamped to the server clock
+   */
+  client_updated_at?: string | null;
+  /**
+   * Completed
+   *
+   * The reader reached the end of the section (never unset)
+   */
+  completed?: boolean;
+  /**
+   * Offset
+   *
+   * Index of the top-most visible top-level block plus the fraction of it scrolled past
+   */
+  offset: number;
+  /**
+   * Section Id
+   */
+  section_id: string;
+};
+
+/**
+ * ReadingPositionWrite
+ */
+export type ReadingPositionWrite = {
+  /**
+   * Applied
+   *
+   * false when a newer position from another device was kept
+   */
+  applied: boolean;
+  /**
+   * The stored position after the write
+   */
+  position: ReadingPosition;
+};
+
+/**
  * ReadyResponse
  */
 export type ReadyResponse = {
@@ -470,6 +999,118 @@ export type ReadyResponse = {
    * Ready
    */
   ready: boolean;
+};
+
+/**
+ * ReportIssueIn
+ */
+export type ReportIssueIn = {
+  /**
+   * Body
+   */
+  body: string;
+  /**
+   * Ref Id
+   */
+  ref_id: string;
+  /**
+   * Ref Type
+   */
+  ref_type: "section" | "chapter" | "media" | "question";
+};
+
+/**
+ * ReportIssueOut
+ */
+export type ReportIssueOut = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Status
+   */
+  status: "open" | "triaged" | "resolved" | "dismissed";
+};
+
+/**
+ * SectionOut
+ */
+export type SectionOut = {
+  /**
+   * Body
+   *
+   * TipTap JSON (schema: @naadi/shared/content); null if empty
+   */
+  body: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Heading
+   */
+  heading: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Reading Minutes
+   */
+  reading_minutes: number;
+  /**
+   * Sort
+   */
+  sort: number;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+};
+
+/**
+ * SystemRef
+ */
+export type SystemRef = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
+ * ValidationError
+ */
+export type ValidationError = {
+  /**
+   * Context
+   */
+  ctx?: {
+    [key: string]: unknown;
+  };
+  /**
+   * Input
+   */
+  input?: unknown;
+  /**
+   * Location
+   */
+  loc: Array<string | number>;
+  /**
+   * Message
+   */
+  msg: string;
+  /**
+   * Error Type
+   */
+  type: string;
 };
 
 export type GetAdminOverviewData = {
@@ -508,6 +1149,102 @@ export type GetAdminOverviewResponses = {
 };
 
 export type GetAdminOverviewResponse = GetAdminOverviewResponses[keyof GetAdminOverviewResponses];
+
+export type GetChapterData = {
+  body?: never;
+  path: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  query?: never;
+  url: "/api/chapters/{chapter_id}";
+};
+
+export type GetChapterErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetChapterError = GetChapterErrors[keyof GetChapterErrors];
+
+export type GetChapterResponses = {
+  /**
+   * Successful Response
+   */
+  200: ChapterDetail;
+};
+
+export type GetChapterResponse = GetChapterResponses[keyof GetChapterResponses];
+
+export type GetCoursesData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     *
+     * Exam id, e.g. step1, step2ck
+     */
+    exam?: string | null;
+    /**
+     * System
+     *
+     * Taxonomy system id
+     */
+    system?: string | null;
+  };
+  url: "/api/courses";
+};
+
+export type GetCoursesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetCoursesError = GetCoursesErrors[keyof GetCoursesErrors];
+
+export type GetCoursesResponses = {
+  /**
+   * Successful Response
+   */
+  200: CoursesResponse;
+};
+
+export type GetCoursesResponse = GetCoursesResponses[keyof GetCoursesResponses];
 
 export type GetHealthData = {
   body?: never;
@@ -657,6 +1394,89 @@ export type GetPublicConfigResponses = {
 
 export type GetPublicConfigResponse = GetPublicConfigResponses[keyof GetPublicConfigResponses];
 
+export type GetReadingPositionData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  url: "/api/reading-position";
+};
+
+export type GetReadingPositionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Invalid query
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetReadingPositionError = GetReadingPositionErrors[keyof GetReadingPositionErrors];
+
+export type GetReadingPositionResponses = {
+  /**
+   * Successful Response
+   */
+  200: ChapterPositions;
+};
+
+export type GetReadingPositionResponse = GetReadingPositionResponses[keyof GetReadingPositionResponses];
+
+export type PutReadingPositionData = {
+  body: ReadingPositionIn;
+  path?: never;
+  query?: never;
+  url: "/api/reading-position";
+};
+
+export type PutReadingPositionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid fields
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PutReadingPositionError = PutReadingPositionErrors[keyof PutReadingPositionErrors];
+
+export type PutReadingPositionResponses = {
+  /**
+   * Successful Response
+   */
+  200: ReadingPositionWrite;
+};
+
+export type PutReadingPositionResponse = PutReadingPositionResponses[keyof PutReadingPositionResponses];
+
 export type GetReadyData = {
   body?: never;
   path?: never;
@@ -681,3 +1501,44 @@ export type GetReadyResponses = {
 };
 
 export type GetReadyResponse = GetReadyResponses[keyof GetReadyResponses];
+
+export type ReportIssueData = {
+  body: ReportIssueIn;
+  path?: never;
+  query?: never;
+  url: "/api/report-issue";
+};
+
+export type ReportIssueErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid fields
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ReportIssueError = ReportIssueErrors[keyof ReportIssueErrors];
+
+export type ReportIssueResponses = {
+  /**
+   * Successful Response
+   */
+  201: ReportIssueOut;
+};
+
+export type ReportIssueResponse = ReportIssueResponses[keyof ReportIssueResponses];
