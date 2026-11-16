@@ -127,6 +127,78 @@ export const zBlockRules = z.object({
 });
 
 /**
+ * CardCreate
+ */
+export const zCardCreate = z.object({
+  back_text: z.string().max(8000),
+  deck: z.string().max(60).nullish(),
+  front_text: z.string().max(8000),
+  question_id: z
+    .string()
+    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/)
+    .nullish(),
+  section_id: z
+    .string()
+    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/)
+    .nullish(),
+});
+
+/**
+ * CardPatch
+ */
+export const zCardPatch = z.object({
+  back_text: z.string().max(8000).nullish(),
+  deck: z.string().max(60).nullish(),
+  front_text: z.string().max(8000).nullish(),
+});
+
+/**
+ * CardSchedule
+ *
+ * The student's scheduling state of the card; `state` 0 = new (never reviewed).
+ */
+export const zCardSchedule = z.object({
+  difficulty: z.number().nullable(),
+  due: z.iso.datetime().nullable(),
+  lapses: z.int(),
+  last_review: z.iso.datetime().nullable(),
+  reps: z.int(),
+  stability: z.number().nullable(),
+  state: z.int().gte(0).lte(3),
+  step: z.int().nullable(),
+});
+
+/**
+ * CardSource
+ *
+ * Where the card came from, for "Open source page". Only ids the student may open.
+ */
+export const zCardSource = z.object({
+  chapter_id: z.string().nullable(),
+  id: z.string(),
+  kind: z.enum(["section", "question"]),
+});
+
+/**
+ * CardOut
+ */
+export const zCardOut = z.object({
+  back: z.record(z.string(), z.unknown()),
+  back_text: z.string(),
+  created_at: z.iso.datetime(),
+  deck: z.string(),
+  editable: z.boolean(),
+  front: z.record(z.string(), z.unknown()),
+  front_text: z.string(),
+  id: z.uuid(),
+  origin: z.enum(["seed", "user", "assistant", "anki_import"]),
+  schedule: zCardSchedule,
+  source: zCardSource.nullable(),
+  taxonomy_ids: z.array(z.string()),
+  updated_at: z.iso.datetime(),
+});
+
+/**
  * ChangeStats
  */
 export const zChangeStats = z.object({
@@ -324,6 +396,53 @@ export const zFlagOut = z.object({
 export const zFlagStats = z.object({
   flagged: z.int(),
   flagged_correct: z.int(),
+});
+
+/**
+ * FsrsSchedulerConfig
+ *
+ * The scheduler parameters the server uses (app_config `fsrs`), so a client preview is the server result.
+ */
+export const zFsrsSchedulerConfig = z.object({
+  desired_retention: z.number(),
+  enable_fuzz: z.boolean(),
+  learning_steps_s: z.array(z.int()),
+  maximum_interval: z.int(),
+  relearning_steps_s: z.array(z.int()),
+  weights: z.tuple([
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+    z.number(),
+  ]),
+});
+
+/**
+ * DueResponse
+ */
+export const zDueResponse = z.object({
+  cards: z.array(zCardOut),
+  due_count: z.int(),
+  next_due: z.iso.datetime().nullable(),
+  now: z.iso.datetime(),
+  scheduler: zFsrsSchedulerConfig,
 });
 
 /**
@@ -924,6 +1043,54 @@ export const zResultQuestion = z.object({
 });
 
 /**
+ * RetentionOut
+ */
+export const zRetentionOut = z.object({
+  rate: z.number().nullable(),
+  recalled: z.int(),
+  reviews: z.int(),
+});
+
+/**
+ * CardStats
+ */
+export const zCardStats = z.object({
+  due_now: z.int(),
+  due_today: z.int(),
+  due_tomorrow: z.int(),
+  new: z.int(),
+  next_due: z.iso.datetime().nullable(),
+  retention: zRetentionOut,
+  reviewed_today: z.int(),
+  streak_days: z.int(),
+  total: z.int(),
+  zone: z.string(),
+});
+
+/**
+ * ReviewIn
+ */
+export const zReviewIn = z.object({
+  client_review_id: z.uuid(),
+  duration_ms: z.int().gte(0).lte(3600000).nullish(),
+  rating: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
+  reviewed_at: z.iso.datetime().nullish(),
+});
+
+/**
+ * ReviewOut
+ */
+export const zReviewOut = z.object({
+  card_id: z.uuid(),
+  client_review_id: z.uuid(),
+  rating: z.int(),
+  replayed: z.boolean(),
+  reviewed_at: z.iso.datetime(),
+  schedule: zCardSchedule,
+  scheduled_days: z.int(),
+});
+
+/**
  * SectionLayout
  *
  * One section of a timed/exam block: a consecutive slice of `question_ids`.
@@ -1485,6 +1652,71 @@ export const zChangeBlockSectionPath = z.object({
  * Successful Response
  */
 export const zChangeBlockSectionResponse = zBlockDetail;
+
+export const zCreateCardBody = zCardCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateCardResponse = zCardOut;
+
+export const zGetDueCardsQuery = z.object({
+  limit: z.int().gte(1).lte(200).optional().default(50),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetDueCardsResponse = zDueResponse;
+
+export const zGetCardStatsQuery = z.object({
+  tz: z.string().max(64).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetCardStatsResponse = zCardStats;
+
+export const zDeleteCardPath = z.object({
+  card_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteCardResponse = z.void();
+
+export const zGetCardPath = z.object({
+  card_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetCardResponse = zCardOut;
+
+export const zUpdateCardBody = zCardPatch;
+
+export const zUpdateCardPath = z.object({
+  card_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zUpdateCardResponse = zCardOut;
+
+export const zReviewCardBody = zReviewIn;
+
+export const zReviewCardPath = z.object({
+  card_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zReviewCardResponse = zReviewOut;
 
 export const zGetChapterPath = z.object({
   chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),

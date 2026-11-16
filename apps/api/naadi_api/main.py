@@ -11,6 +11,7 @@ from starlette.middleware.gzip import GZipMiddleware
 from . import __version__, api
 from .auth import AccountDirectory, TokenVerifier, install_auth
 from .auth_routes import install_auth_routes
+from .cards.routes import install_cards_routes
 from .config import load_models_config
 from .config_api.routes import install_app_config
 from .courses import install_courses_routes
@@ -125,6 +126,7 @@ def create_app(
     install_auth_routes(app)
     install_courses_routes(app)
     install_qbank_routes(app)
+    install_cards_routes(app)
     install_search_routes(app)
     install_ink_routes(app)
     install_app_config(app, settings)

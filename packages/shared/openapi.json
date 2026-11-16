@@ -1111,6 +1111,400 @@
         "title": "BlockSummary",
         "type": "object"
       },
+      "CardCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "back_text": {
+            "maxLength": 8000,
+            "title": "Back Text",
+            "type": "string"
+          },
+          "deck": {
+            "anyOf": [
+              {
+                "maxLength": 60,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Default 'My cards'",
+            "title": "Deck"
+          },
+          "front_text": {
+            "maxLength": 8000,
+            "title": "Front Text",
+            "type": "string"
+          },
+          "question_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Link to a question; needs your graded attempt on it",
+            "title": "Question Id"
+          },
+          "section_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,127}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Link to a section you can read",
+            "title": "Section Id"
+          }
+        },
+        "required": [
+          "front_text",
+          "back_text"
+        ],
+        "title": "CardCreate",
+        "type": "object"
+      },
+      "CardOut": {
+        "properties": {
+          "back": {
+            "additionalProperties": true,
+            "description": "TipTap document for ContentRenderer",
+            "title": "Back",
+            "type": "object"
+          },
+          "back_text": {
+            "title": "Back Text",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "deck": {
+            "title": "Deck",
+            "type": "string"
+          },
+          "editable": {
+            "description": "The student's own card (origin user): may be edited and deleted",
+            "title": "Editable",
+            "type": "boolean"
+          },
+          "front": {
+            "additionalProperties": true,
+            "description": "TipTap document for ContentRenderer",
+            "title": "Front",
+            "type": "object"
+          },
+          "front_text": {
+            "description": "The face as plain text (for editing)",
+            "title": "Front Text",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "seed",
+              "user",
+              "assistant",
+              "anki_import"
+            ],
+            "title": "Origin",
+            "type": "string"
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/CardSchedule"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CardSource"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "taxonomy_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Taxonomy Ids",
+            "type": "array"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "deck",
+          "origin",
+          "editable",
+          "front",
+          "back",
+          "front_text",
+          "back_text",
+          "source",
+          "taxonomy_ids",
+          "created_at",
+          "updated_at",
+          "schedule"
+        ],
+        "title": "CardOut",
+        "type": "object"
+      },
+      "CardPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "back_text": {
+            "anyOf": [
+              {
+                "maxLength": 8000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Back Text"
+          },
+          "deck": {
+            "anyOf": [
+              {
+                "maxLength": 60,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deck"
+          },
+          "front_text": {
+            "anyOf": [
+              {
+                "maxLength": 8000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Front Text"
+          }
+        },
+        "title": "CardPatch",
+        "type": "object"
+      },
+      "CardSchedule": {
+        "description": "The student's scheduling state of the card; `state` 0 = new (never reviewed).",
+        "properties": {
+          "difficulty": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Difficulty"
+          },
+          "due": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null for a new card (due now)",
+            "title": "Due"
+          },
+          "lapses": {
+            "title": "Lapses",
+            "type": "integer"
+          },
+          "last_review": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Review"
+          },
+          "reps": {
+            "title": "Reps",
+            "type": "integer"
+          },
+          "stability": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stability"
+          },
+          "state": {
+            "description": "0 new, 1 learning, 2 review, 3 relearning",
+            "maximum": 3.0,
+            "minimum": 0.0,
+            "title": "State",
+            "type": "integer"
+          },
+          "step": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Step"
+          }
+        },
+        "required": [
+          "state",
+          "step",
+          "stability",
+          "difficulty",
+          "due",
+          "last_review",
+          "reps",
+          "lapses"
+        ],
+        "title": "CardSchedule",
+        "type": "object"
+      },
+      "CardSource": {
+        "description": "Where the card came from, for \"Open source page\". Only ids the student may open.",
+        "properties": {
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The section's chapter (section links)",
+            "title": "Chapter Id"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "section",
+              "question"
+            ],
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "chapter_id"
+        ],
+        "title": "CardSource",
+        "type": "object"
+      },
+      "CardStats": {
+        "properties": {
+          "due_now": {
+            "title": "Due Now",
+            "type": "integer"
+          },
+          "due_today": {
+            "description": "Due before the end of today (local), overdue and new included",
+            "title": "Due Today",
+            "type": "integer"
+          },
+          "due_tomorrow": {
+            "description": "Falling due during tomorrow (local)",
+            "title": "Due Tomorrow",
+            "type": "integer"
+          },
+          "new": {
+            "description": "Cards never reviewed",
+            "title": "New",
+            "type": "integer"
+          },
+          "next_due": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Due"
+          },
+          "retention": {
+            "$ref": "#/components/schemas/RetentionOut"
+          },
+          "reviewed_today": {
+            "title": "Reviewed Today",
+            "type": "integer"
+          },
+          "streak_days": {
+            "title": "Streak Days",
+            "type": "integer"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "zone": {
+            "description": "The IANA time zone the day counts use",
+            "title": "Zone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "zone",
+          "total",
+          "new",
+          "due_now",
+          "due_today",
+          "due_tomorrow",
+          "reviewed_today",
+          "streak_days",
+          "retention",
+          "next_due"
+        ],
+        "title": "CardStats",
+        "type": "object"
+      },
       "ChangeStats": {
         "properties": {
           "changed": {
@@ -1975,6 +2369,54 @@
         "title": "Coverage",
         "type": "object"
       },
+      "DueResponse": {
+        "properties": {
+          "cards": {
+            "description": "Due reviews (oldest due first), then new cards (oldest first)",
+            "items": {
+              "$ref": "#/components/schemas/CardOut"
+            },
+            "title": "Cards",
+            "type": "array"
+          },
+          "due_count": {
+            "description": "Cards due now, of which `cards` holds at most `limit`",
+            "title": "Due Count",
+            "type": "integer"
+          },
+          "next_due": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The earliest due time after now, when nothing else is due",
+            "title": "Next Due"
+          },
+          "now": {
+            "description": "Server time the list was computed at",
+            "format": "date-time",
+            "title": "Now",
+            "type": "string"
+          },
+          "scheduler": {
+            "$ref": "#/components/schemas/FsrsSchedulerConfig"
+          }
+        },
+        "required": [
+          "now",
+          "cards",
+          "due_count",
+          "next_due",
+          "scheduler"
+        ],
+        "title": "DueResponse",
+        "type": "object"
+      },
       "EmbeddedQuestion": {
         "description": "A question without its answer, explanation or statistics (answering arrives with segment 08).",
         "properties": {
@@ -2382,6 +2824,56 @@
           "flagged_correct"
         ],
         "title": "FlagStats",
+        "type": "object"
+      },
+      "FsrsSchedulerConfig": {
+        "description": "The scheduler parameters the server uses (app_config `fsrs`), so a client preview is the server result.",
+        "properties": {
+          "desired_retention": {
+            "title": "Desired Retention",
+            "type": "number"
+          },
+          "enable_fuzz": {
+            "title": "Enable Fuzz",
+            "type": "boolean"
+          },
+          "learning_steps_s": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Learning Steps S",
+            "type": "array"
+          },
+          "maximum_interval": {
+            "title": "Maximum Interval",
+            "type": "integer"
+          },
+          "relearning_steps_s": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Relearning Steps S",
+            "type": "array"
+          },
+          "weights": {
+            "items": {
+              "type": "number"
+            },
+            "maxItems": 21,
+            "minItems": 21,
+            "title": "Weights",
+            "type": "array"
+          }
+        },
+        "required": [
+          "weights",
+          "desired_retention",
+          "learning_steps_s",
+          "relearning_steps_s",
+          "maximum_interval",
+          "enable_fuzz"
+        ],
+        "title": "FsrsSchedulerConfig",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -4359,6 +4851,139 @@
           "seconds"
         ],
         "title": "ResultQuestion",
+        "type": "object"
+      },
+      "RetentionOut": {
+        "properties": {
+          "rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "recalled / reviews, null with no reviews",
+            "title": "Rate"
+          },
+          "recalled": {
+            "description": "Of those, rated Hard, Good or Easy",
+            "title": "Recalled",
+            "type": "integer"
+          },
+          "reviews": {
+            "description": "Reviews of cards in the review state, last 30 days",
+            "title": "Reviews",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "reviews",
+          "recalled",
+          "rate"
+        ],
+        "title": "RetentionOut",
+        "type": "object"
+      },
+      "ReviewIn": {
+        "additionalProperties": false,
+        "properties": {
+          "client_review_id": {
+            "description": "Idempotency key: the same id returns the first result",
+            "format": "uuid",
+            "title": "Client Review Id",
+            "type": "string"
+          },
+          "duration_ms": {
+            "anyOf": [
+              {
+                "maximum": 3600000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration Ms"
+          },
+          "rating": {
+            "description": "1 Again, 2 Hard, 3 Good, 4 Easy",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "title": "Rating",
+            "type": "integer"
+          },
+          "reviewed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the student rated (offline reviews); default now, never in the future",
+            "title": "Reviewed At"
+          }
+        },
+        "required": [
+          "client_review_id",
+          "rating"
+        ],
+        "title": "ReviewIn",
+        "type": "object"
+      },
+      "ReviewOut": {
+        "properties": {
+          "card_id": {
+            "format": "uuid",
+            "title": "Card Id",
+            "type": "string"
+          },
+          "client_review_id": {
+            "format": "uuid",
+            "title": "Client Review Id",
+            "type": "string"
+          },
+          "rating": {
+            "title": "Rating",
+            "type": "integer"
+          },
+          "replayed": {
+            "description": "true when this client_review_id was already applied",
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "reviewed_at": {
+            "format": "date-time",
+            "title": "Reviewed At",
+            "type": "string"
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/CardSchedule"
+          },
+          "scheduled_days": {
+            "title": "Scheduled Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "card_id",
+          "client_review_id",
+          "replayed",
+          "rating",
+          "reviewed_at",
+          "scheduled_days",
+          "schedule"
+        ],
+        "title": "ReviewOut",
         "type": "object"
       },
       "SearchHit": {
@@ -7411,6 +8036,615 @@
         "summary": "Start, pause (timed mode only), resume or end a section; answers 409 with a code when not possible",
         "tags": [
           "qbank"
+        ]
+      }
+    },
+    "/api/cards": {
+      "post": {
+        "operationId": "createCard",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "card_question_not_attempted (no graded attempt) or card_section_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "Create your own card from text, optionally linked to a question you answered or a section",
+        "tags": [
+          "cards"
+        ]
+      }
+    },
+    "/api/cards/due": {
+      "get": {
+        "operationId": "getDueCards",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DueResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "Cards due for review now (due reviews first, then new cards), with the scheduler parameters",
+        "tags": [
+          "cards"
+        ]
+      }
+    },
+    "/api/cards/stats": {
+      "get": {
+        "operationId": "getCardStats",
+        "parameters": [
+          {
+            "description": "IANA zone; default your profile's",
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "IANA zone; default your profile's",
+              "title": "Tz"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardStats"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "card_zone_unknown"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "Due today / tomorrow (in your time zone), new, reviewed today, 30-day retention, streak",
+        "tags": [
+          "cards"
+        ]
+      }
+    },
+    "/api/cards/{card_id}": {
+      "delete": {
+        "operationId": "deleteCard",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Card Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "card_not_editable"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible (code card_not_found)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "Delete your own card (origin user) with its schedule and review history",
+        "tags": [
+          "cards"
+        ]
+      },
+      "get": {
+        "operationId": "getCard",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Card Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible (code card_not_found)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "One card you can see, with your schedule for it",
+        "tags": [
+          "cards"
+        ]
+      },
+      "patch": {
+        "operationId": "updateCard",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Card Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "card_not_editable"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible (code card_not_found)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "Edit your own card (origin user); the schedule is kept",
+        "tags": [
+          "cards"
+        ]
+      }
+    },
+    "/api/cards/{card_id}/review": {
+      "post": {
+        "operationId": "reviewCard",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "card_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Card Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible (code card_not_found)"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "review_out_of_order (older than the card's last review) or review_id_reused"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request, or review_too_old"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code cards_unavailable)"
+          }
+        },
+        "summary": "Rate a card (1 Again … 4 Easy); the server schedules it. Idempotent on client_review_id",
+        "tags": [
+          "cards"
         ]
       }
     },

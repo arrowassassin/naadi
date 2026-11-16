@@ -89,7 +89,7 @@ create policy card_review_logs_update_own on public.card_review_logs for update 
 create policy card_review_logs_delete_own on public.card_review_logs for delete to authenticated using ({OWN});
 
 revoke insert, update, delete on table public.card_reviews from authenticated;
-"""
+"""  # noqa: S608 - module constants only
 
 
 def upgrade() -> None:

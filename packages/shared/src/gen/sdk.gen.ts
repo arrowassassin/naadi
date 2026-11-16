@@ -14,6 +14,9 @@ import type {
   CreateBlockData,
   CreateBlockErrors,
   CreateBlockResponses,
+  CreateCardData,
+  CreateCardErrors,
+  CreateCardResponses,
   CreateMockBlockData,
   CreateMockBlockErrors,
   CreateMockBlockResponses,
@@ -23,6 +26,9 @@ import type {
   CreateWeakSpotBlockData,
   CreateWeakSpotBlockErrors,
   CreateWeakSpotBlockResponses,
+  DeleteCardData,
+  DeleteCardErrors,
+  DeleteCardResponses,
   FinishBlockData,
   FinishBlockErrors,
   FinishBlockResponses,
@@ -53,12 +59,21 @@ import type {
   GetBlockResultsData,
   GetBlockResultsErrors,
   GetBlockResultsResponses,
+  GetCardData,
+  GetCardErrors,
+  GetCardResponses,
+  GetCardStatsData,
+  GetCardStatsErrors,
+  GetCardStatsResponses,
   GetChapterData,
   GetChapterErrors,
   GetChapterResponses,
   GetCoursesData,
   GetCoursesErrors,
   GetCoursesResponses,
+  GetDueCardsData,
+  GetDueCardsErrors,
+  GetDueCardsResponses,
   GetEmbeddingsStatusData,
   GetEmbeddingsStatusErrors,
   GetEmbeddingsStatusResponses,
@@ -115,6 +130,9 @@ import type {
   ReportIssueData,
   ReportIssueErrors,
   ReportIssueResponses,
+  ReviewCardData,
+  ReviewCardErrors,
+  ReviewCardResponses,
   SearchLocalData,
   SearchLocalErrors,
   SearchLocalResponses,
@@ -124,6 +142,9 @@ import type {
   StartSeedData,
   StartSeedErrors,
   StartSeedResponses,
+  UpdateCardData,
+  UpdateCardErrors,
+  UpdateCardResponses,
   UpdateMeData,
   UpdateMeErrors,
   UpdateMeResponses,
@@ -136,12 +157,16 @@ import {
   zCreateAttemptResponse,
   zCreateBlockBody,
   zCreateBlockResponse,
+  zCreateCardBody,
+  zCreateCardResponse,
   zCreateMockBlockBody,
   zCreateMockBlockResponse,
   zCreateSingleQuestionBlockBody,
   zCreateSingleQuestionBlockResponse,
   zCreateWeakSpotBlockBody,
   zCreateWeakSpotBlockResponse,
+  zDeleteCardPath,
+  zDeleteCardResponse,
   zFinishBlockPath,
   zFinishBlockResponse,
   zFlagAttemptBody,
@@ -162,10 +187,16 @@ import {
   zGetBlockResponse,
   zGetBlockResultsPath,
   zGetBlockResultsResponse,
+  zGetCardPath,
+  zGetCardResponse,
+  zGetCardStatsQuery,
+  zGetCardStatsResponse,
   zGetChapterPath,
   zGetChapterResponse,
   zGetCoursesQuery,
   zGetCoursesResponse,
+  zGetDueCardsQuery,
+  zGetDueCardsResponse,
   zGetEmbeddingsStatusResponse,
   zGetHealthResponse,
   zGetInkLayerPath,
@@ -198,12 +229,18 @@ import {
   zReindexEmbeddingsResponse,
   zReportIssueBody,
   zReportIssueResponse,
+  zReviewCardBody,
+  zReviewCardPath,
+  zReviewCardResponse,
   zSearchLocalQuery,
   zSearchLocalResponse,
   zSearchWebQuery,
   zSearchWebResponse,
   zStartSeedBody,
   zStartSeedResponse,
+  zUpdateCardBody,
+  zUpdateCardPath,
+  zUpdateCardResponse,
   zUpdateMeBody,
   zUpdateMeResponse,
 } from "./zod.gen";
@@ -720,6 +757,158 @@ export const changeBlockSection = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zChangeBlockSectionResponse.parseAsync(data),
     url: "/api/blocks/{block_id}/sections/{n}/{action}",
     ...options,
+  });
+
+/**
+ * Create your own card from text, optionally linked to a question you answered or a section
+ */
+export const createCard = <ThrowOnError extends boolean = false>(
+  options: Options<CreateCardData, ThrowOnError>,
+): RequestResult<CreateCardResponses, CreateCardErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateCardResponses, CreateCardErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateCardBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateCardResponse.parseAsync(data),
+    url: "/api/cards",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Cards due for review now (due reviews first, then new cards), with the scheduler parameters
+ */
+export const getDueCards = <ThrowOnError extends boolean = false>(
+  options?: Options<GetDueCardsData, ThrowOnError>,
+): RequestResult<GetDueCardsResponses, GetDueCardsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetDueCardsResponses, GetDueCardsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetDueCardsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetDueCardsResponse.parseAsync(data),
+    url: "/api/cards/due",
+    ...options,
+  });
+
+/**
+ * Due today / tomorrow (in your time zone), new, reviewed today, 30-day retention, streak
+ */
+export const getCardStats = <ThrowOnError extends boolean = false>(
+  options?: Options<GetCardStatsData, ThrowOnError>,
+): RequestResult<GetCardStatsResponses, GetCardStatsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetCardStatsResponses, GetCardStatsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetCardStatsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetCardStatsResponse.parseAsync(data),
+    url: "/api/cards/stats",
+    ...options,
+  });
+
+/**
+ * Delete your own card (origin user) with its schedule and review history
+ */
+export const deleteCard = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteCardData, ThrowOnError>,
+): RequestResult<DeleteCardResponses, DeleteCardErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteCardResponses, DeleteCardErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteCardPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteCardResponse.parseAsync(data),
+    url: "/api/cards/{card_id}",
+    ...options,
+  });
+
+/**
+ * One card you can see, with your schedule for it
+ */
+export const getCard = <ThrowOnError extends boolean = false>(
+  options: Options<GetCardData, ThrowOnError>,
+): RequestResult<GetCardResponses, GetCardErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetCardResponses, GetCardErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetCardPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetCardResponse.parseAsync(data),
+    url: "/api/cards/{card_id}",
+    ...options,
+  });
+
+/**
+ * Edit your own card (origin user); the schedule is kept
+ */
+export const updateCard = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateCardData, ThrowOnError>,
+): RequestResult<UpdateCardResponses, UpdateCardErrors, ThrowOnError> =>
+  (options.client ?? client).patch<UpdateCardResponses, UpdateCardErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zUpdateCardBody,
+          path: zUpdateCardPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUpdateCardResponse.parseAsync(data),
+    url: "/api/cards/{card_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Rate a card (1 Again … 4 Easy); the server schedules it. Idempotent on client_review_id
+ */
+export const reviewCard = <ThrowOnError extends boolean = false>(
+  options: Options<ReviewCardData, ThrowOnError>,
+): RequestResult<ReviewCardResponses, ReviewCardErrors, ThrowOnError> =>
+  (options.client ?? client).post<ReviewCardResponses, ReviewCardErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReviewCardBody,
+          path: zReviewCardPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReviewCardResponse.parseAsync(data),
+    url: "/api/cards/{card_id}/review",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });
 
 /**

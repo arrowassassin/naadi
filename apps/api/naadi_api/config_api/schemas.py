@@ -1038,6 +1038,36 @@ class LabValues(_Strict):
         return self
 
 
+# ── fsrs (segment 10) ──
+
+
+class FsrsConfig(_Strict):
+    """Flashcard scheduling (FSRS-6). The API schedules with these and sends them with the due list, so the
+    web's preview uses the same parameters. Defaults are ts-fsrs 6 / `fsrs` 6.3.3's (fuzz off, as ts-fsrs)."""
+
+    weights: list[float] = Field(min_length=21, max_length=21, description="FSRS-6 model weights w0..w20")
+    desired_retention: float = Field(ge=0.7, le=0.97, description="Target probability of recall when a card is due")
+    learning_steps_s: list[int] = Field(max_length=10, description="New-card steps in seconds (default 1 min, 10 min)")
+    relearning_steps_s: list[int] = Field(max_length=10, description="Steps after a lapse, in seconds (default 10 min)")
+    maximum_interval: int = Field(ge=1, le=36500, description="Longest interval in days")
+    enable_fuzz: bool = Field(description="Spread due dates by a few days (seeded, so previews still match)")
+
+    @field_validator("learning_steps_s", "relearning_steps_s")
+    @classmethod
+    def _steps(cls, v: list[int]) -> list[int]:
+        if any(s < 1 or s > 30 * 86400 for s in v):
+            raise ValueError("each step is 1 second to 30 days")
+        return v
+
+    @field_validator("weights")
+    @classmethod
+    def _bounds(cls, v: list[float]) -> list[float]:
+        from ..cards.scheduler import validate_params  # the fsrs package's own bounds check
+
+        validate_params(v)
+        return v
+
+
 # ── registry ──
 
 
@@ -1122,6 +1152,14 @@ KEY_SPECS: dict[str, KeySpec] = {
             "app_config.yaml",
             "Storage bucket names",
             _schema_of(StorageBuckets),
+        ),
+        KeySpec(
+            "fsrs",
+            _model_validator(FsrsConfig),
+            False,
+            "app_config.yaml",
+            "Flashcard scheduling (FSRS-6)",
+            _schema_of(FsrsConfig),
         ),
         KeySpec(
             "ui_copy", _model_validator(UiCopy), True, "app_config.yaml", "Editable UI strings", _schema_of(UiCopy)

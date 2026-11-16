@@ -620,6 +620,237 @@ export type BlockSummary = {
 };
 
 /**
+ * CardCreate
+ */
+export type CardCreate = {
+  /**
+   * Back Text
+   */
+  back_text: string;
+  /**
+   * Deck
+   *
+   * Default 'My cards'
+   */
+  deck?: string | null;
+  /**
+   * Front Text
+   */
+  front_text: string;
+  /**
+   * Question Id
+   *
+   * Link to a question; needs your graded attempt on it
+   */
+  question_id?: string | null;
+  /**
+   * Section Id
+   *
+   * Link to a section you can read
+   */
+  section_id?: string | null;
+};
+
+/**
+ * CardOut
+ */
+export type CardOut = {
+  /**
+   * Back
+   *
+   * TipTap document for ContentRenderer
+   */
+  back: {
+    [key: string]: unknown;
+  };
+  /**
+   * Back Text
+   */
+  back_text: string;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Deck
+   */
+  deck: string;
+  /**
+   * Editable
+   *
+   * The student's own card (origin user): may be edited and deleted
+   */
+  editable: boolean;
+  /**
+   * Front
+   *
+   * TipTap document for ContentRenderer
+   */
+  front: {
+    [key: string]: unknown;
+  };
+  /**
+   * Front Text
+   *
+   * The face as plain text (for editing)
+   */
+  front_text: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Origin
+   */
+  origin: "seed" | "user" | "assistant" | "anki_import";
+  schedule: CardSchedule;
+  source: CardSource | null;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * CardPatch
+ */
+export type CardPatch = {
+  /**
+   * Back Text
+   */
+  back_text?: string | null;
+  /**
+   * Deck
+   */
+  deck?: string | null;
+  /**
+   * Front Text
+   */
+  front_text?: string | null;
+};
+
+/**
+ * CardSchedule
+ *
+ * The student's scheduling state of the card; `state` 0 = new (never reviewed).
+ */
+export type CardSchedule = {
+  /**
+   * Difficulty
+   */
+  difficulty: number | null;
+  /**
+   * Due
+   *
+   * null for a new card (due now)
+   */
+  due: string | null;
+  /**
+   * Lapses
+   */
+  lapses: number;
+  /**
+   * Last Review
+   */
+  last_review: string | null;
+  /**
+   * Reps
+   */
+  reps: number;
+  /**
+   * Stability
+   */
+  stability: number | null;
+  /**
+   * State
+   *
+   * 0 new, 1 learning, 2 review, 3 relearning
+   */
+  state: number;
+  /**
+   * Step
+   */
+  step: number | null;
+};
+
+/**
+ * CardSource
+ *
+ * Where the card came from, for "Open source page". Only ids the student may open.
+ */
+export type CardSource = {
+  /**
+   * Chapter Id
+   *
+   * The section's chapter (section links)
+   */
+  chapter_id: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "section" | "question";
+};
+
+/**
+ * CardStats
+ */
+export type CardStats = {
+  /**
+   * Due Now
+   */
+  due_now: number;
+  /**
+   * Due Today
+   *
+   * Due before the end of today (local), overdue and new included
+   */
+  due_today: number;
+  /**
+   * Due Tomorrow
+   *
+   * Falling due during tomorrow (local)
+   */
+  due_tomorrow: number;
+  /**
+   * New
+   *
+   * Cards never reviewed
+   */
+  new: number;
+  /**
+   * Next Due
+   */
+  next_due: string | null;
+  retention: RetentionOut;
+  /**
+   * Reviewed Today
+   */
+  reviewed_today: number;
+  /**
+   * Streak Days
+   */
+  streak_days: number;
+  /**
+   * Total
+   */
+  total: number;
+  /**
+   * Zone
+   *
+   * The IANA time zone the day counts use
+   */
+  zone: string;
+};
+
+/**
  * ChangeStats
  */
 export type ChangeStats = {
@@ -1112,6 +1343,37 @@ export type Coverage = {
 };
 
 /**
+ * DueResponse
+ */
+export type DueResponse = {
+  /**
+   * Cards
+   *
+   * Due reviews (oldest due first), then new cards (oldest first)
+   */
+  cards: Array<CardOut>;
+  /**
+   * Due Count
+   *
+   * Cards due now, of which `cards` holds at most `limit`
+   */
+  due_count: number;
+  /**
+   * Next Due
+   *
+   * The earliest due time after now, when nothing else is due
+   */
+  next_due: string | null;
+  /**
+   * Now
+   *
+   * Server time the list was computed at
+   */
+  now: string;
+  scheduler: FsrsSchedulerConfig;
+};
+
+/**
  * EmbeddedQuestion
  *
  * A question without its answer, explanation or statistics (answering arrives with segment 08).
@@ -1361,6 +1623,60 @@ export type FlagStats = {
    * Flagged Correct
    */
   flagged_correct: number;
+};
+
+/**
+ * FsrsSchedulerConfig
+ *
+ * The scheduler parameters the server uses (app_config `fsrs`), so a client preview is the server result.
+ */
+export type FsrsSchedulerConfig = {
+  /**
+   * Desired Retention
+   */
+  desired_retention: number;
+  /**
+   * Enable Fuzz
+   */
+  enable_fuzz: boolean;
+  /**
+   * Learning Steps S
+   */
+  learning_steps_s: Array<number>;
+  /**
+   * Maximum Interval
+   */
+  maximum_interval: number;
+  /**
+   * Relearning Steps S
+   */
+  relearning_steps_s: Array<number>;
+  /**
+   * Weights
+   */
+  weights: [
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+  ];
 };
 
 /**
@@ -2553,6 +2869,91 @@ export type ResultQuestion = {
    * Section N
    */
   section_n: number;
+};
+
+/**
+ * RetentionOut
+ */
+export type RetentionOut = {
+  /**
+   * Rate
+   *
+   * recalled / reviews, null with no reviews
+   */
+  rate: number | null;
+  /**
+   * Recalled
+   *
+   * Of those, rated Hard, Good or Easy
+   */
+  recalled: number;
+  /**
+   * Reviews
+   *
+   * Reviews of cards in the review state, last 30 days
+   */
+  reviews: number;
+};
+
+/**
+ * ReviewIn
+ */
+export type ReviewIn = {
+  /**
+   * Client Review Id
+   *
+   * Idempotency key: the same id returns the first result
+   */
+  client_review_id: string;
+  /**
+   * Duration Ms
+   */
+  duration_ms?: number | null;
+  /**
+   * Rating
+   *
+   * 1 Again, 2 Hard, 3 Good, 4 Easy
+   */
+  rating: 1 | 2 | 3 | 4;
+  /**
+   * Reviewed At
+   *
+   * When the student rated (offline reviews); default now, never in the future
+   */
+  reviewed_at?: string | null;
+};
+
+/**
+ * ReviewOut
+ */
+export type ReviewOut = {
+  /**
+   * Card Id
+   */
+  card_id: string;
+  /**
+   * Client Review Id
+   */
+  client_review_id: string;
+  /**
+   * Rating
+   */
+  rating: number;
+  /**
+   * Replayed
+   *
+   * true when this client_review_id was already applied
+   */
+  replayed: boolean;
+  /**
+   * Reviewed At
+   */
+  reviewed_at: string;
+  schedule: CardSchedule;
+  /**
+   * Scheduled Days
+   */
+  scheduled_days: number;
 };
 
 /**
@@ -4229,6 +4630,329 @@ export type ChangeBlockSectionResponses = {
 };
 
 export type ChangeBlockSectionResponse = ChangeBlockSectionResponses[keyof ChangeBlockSectionResponses];
+
+export type CreateCardData = {
+  body: CardCreate;
+  path?: never;
+  query?: never;
+  url: "/api/cards";
+};
+
+export type CreateCardErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * card_question_not_attempted (no graded attempt) or card_section_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid request
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type CreateCardError = CreateCardErrors[keyof CreateCardErrors];
+
+export type CreateCardResponses = {
+  /**
+   * Successful Response
+   */
+  201: CardOut;
+};
+
+export type CreateCardResponse = CreateCardResponses[keyof CreateCardResponses];
+
+export type GetDueCardsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/cards/due";
+};
+
+export type GetDueCardsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetDueCardsError = GetDueCardsErrors[keyof GetDueCardsErrors];
+
+export type GetDueCardsResponses = {
+  /**
+   * Successful Response
+   */
+  200: DueResponse;
+};
+
+export type GetDueCardsResponse = GetDueCardsResponses[keyof GetDueCardsResponses];
+
+export type GetCardStatsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Tz
+     *
+     * IANA zone; default your profile's
+     */
+    tz?: string | null;
+  };
+  url: "/api/cards/stats";
+};
+
+export type GetCardStatsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * card_zone_unknown
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetCardStatsError = GetCardStatsErrors[keyof GetCardStatsErrors];
+
+export type GetCardStatsResponses = {
+  /**
+   * Successful Response
+   */
+  200: CardStats;
+};
+
+export type GetCardStatsResponse = GetCardStatsResponses[keyof GetCardStatsResponses];
+
+export type DeleteCardData = {
+  body?: never;
+  path: {
+    /**
+     * Card Id
+     */
+    card_id: string;
+  };
+  query?: never;
+  url: "/api/cards/{card_id}";
+};
+
+export type DeleteCardErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * card_not_editable
+   */
+  403: ErrorResponse;
+  /**
+   * Not found or not visible (code card_not_found)
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteCardError = DeleteCardErrors[keyof DeleteCardErrors];
+
+export type DeleteCardResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteCardResponse = DeleteCardResponses[keyof DeleteCardResponses];
+
+export type GetCardData = {
+  body?: never;
+  path: {
+    /**
+     * Card Id
+     */
+    card_id: string;
+  };
+  query?: never;
+  url: "/api/cards/{card_id}";
+};
+
+export type GetCardErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible (code card_not_found)
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetCardError = GetCardErrors[keyof GetCardErrors];
+
+export type GetCardResponses = {
+  /**
+   * Successful Response
+   */
+  200: CardOut;
+};
+
+export type GetCardResponse = GetCardResponses[keyof GetCardResponses];
+
+export type UpdateCardData = {
+  body: CardPatch;
+  path: {
+    /**
+     * Card Id
+     */
+    card_id: string;
+  };
+  query?: never;
+  url: "/api/cards/{card_id}";
+};
+
+export type UpdateCardErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * card_not_editable
+   */
+  403: ErrorResponse;
+  /**
+   * Not found or not visible (code card_not_found)
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid request
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type UpdateCardError = UpdateCardErrors[keyof UpdateCardErrors];
+
+export type UpdateCardResponses = {
+  /**
+   * Successful Response
+   */
+  200: CardOut;
+};
+
+export type UpdateCardResponse = UpdateCardResponses[keyof UpdateCardResponses];
+
+export type ReviewCardData = {
+  body: ReviewIn;
+  path: {
+    /**
+     * Card Id
+     */
+    card_id: string;
+  };
+  query?: never;
+  url: "/api/cards/{card_id}/review";
+};
+
+export type ReviewCardErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible (code card_not_found)
+   */
+  404: ErrorResponse;
+  /**
+   * review_out_of_order (older than the card's last review) or review_id_reused
+   */
+  409: ErrorResponse;
+  /**
+   * Invalid request, or review_too_old
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code cards_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ReviewCardError = ReviewCardErrors[keyof ReviewCardErrors];
+
+export type ReviewCardResponses = {
+  /**
+   * Successful Response
+   */
+  200: ReviewOut;
+};
+
+export type ReviewCardResponse = ReviewCardResponses[keyof ReviewCardResponses];
 
 export type GetChapterData = {
   body?: never;
