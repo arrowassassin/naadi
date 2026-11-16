@@ -32,6 +32,19 @@ export function statusWord(t: TextLookup, p: ChapterProgress): string {
   return t("learn.status_not_started");
 }
 
+/**
+ * The message for a failed request, from ui_copy by kind of failure: never the server's own English text
+ * (the request id is shown next to it, so a report still matches the server log).
+ */
+export function errorText(t: TextLookup, err: unknown): string {
+  const status =
+    typeof err === "object" && err !== null && "status" in err ? (err as { status: unknown }).status : null;
+  if (status === null || status === undefined) return t("learn.unreachable");
+  if (status === 404) return t("learn.not_available_body");
+  if (status === 429) return t("learn.rate_limited");
+  return t("learn.error_generic");
+}
+
 export function minutesLabel(t: TextLookup, m: number): string {
   return count(t, "learn.count_minute", Math.max(1, m));
 }

@@ -20,7 +20,7 @@ import { useUiText } from "../copy/useUiText";
 import { useShellBottomSlot } from "../shell/chrome";
 import { useChapter, usePositions } from "./api";
 import { ContentsSheet } from "./ContentsSheet";
-import { count, minutesLabel } from "./format";
+import { count, errorText, minutesLabel } from "./format";
 import { ReportIssueDialog } from "./ReportIssueDialog";
 import { useReadingPosition } from "./useReadingPosition";
 import "./reader.css";
@@ -99,7 +99,7 @@ export function ReaderPage({ chapterId, sectionId }: ReaderProps) {
         </h1>
         <ErrorState
           title={missing ? t("learn.reader_unavailable") : t("learn.reader_load_failed")}
-          message={err?.message ?? t("learn.error_generic")}
+          message={errorText(t, err)}
           requestId={err instanceof ApiError ? err.requestId : null}
           onRetry={missing ? undefined : () => void chapter.refetch()}
           retrying={chapter.isFetching}

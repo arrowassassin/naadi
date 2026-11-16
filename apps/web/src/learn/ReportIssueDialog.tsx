@@ -5,6 +5,7 @@ import { useEffect, useId, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
 import { useReportIssue } from "./api";
+import { errorText } from "./format";
 import { Sheet } from "./Sheet";
 
 const MAX = 4000;
@@ -75,7 +76,7 @@ export function ReportIssueDialog({
           {report.isError ? (
             <ErrorState
               title={t("content.report_issue_failed")}
-              message={report.error.message}
+              message={errorText(t, report.error)}
               requestId={report.error instanceof ApiError ? report.error.requestId : null}
             />
           ) : null}

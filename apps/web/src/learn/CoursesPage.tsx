@@ -8,7 +8,7 @@ import type { TextLookup } from "../content/types";
 import { useUiText } from "../copy/useUiText";
 import { CTA_LINK } from "../routes/TodayPage";
 import { useCourses } from "./api";
-import { count, coverageLine, percent, statusWord } from "./format";
+import { count, coverageLine, errorText, percent, statusWord } from "./format";
 
 export interface CoursesSearch {
   exam?: string;
@@ -199,7 +199,7 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
         <Headline t={t} />
         <ErrorState
           title={t("learn.load_failed")}
-          message={err?.message ?? t("learn.error_generic")}
+          message={errorText(t, err)}
           requestId={err instanceof ApiError ? err.requestId : null}
           onRetry={() => void q.refetch()}
           retrying={q.isFetching}
