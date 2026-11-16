@@ -21,6 +21,8 @@ from .models import ComponentHealth, HealthComponents, HealthResponse, Status
 log = get_logger("naadi.health")
 
 COMPONENTS = ("database", "storage", "openrouter", "nvidia", "tavily")
+# Reported only when registered (the Aegra host adds `agent_runtime`; a plain API process has no runtime).
+OPTIONAL_COMPONENTS = ("agent_runtime",)
 FAILURE_TTL_CAP_S = 15.0
 
 
@@ -104,8 +106,9 @@ class HealthService:
             return value
 
     async def health(self) -> HealthResponse:
-        results = await asyncio.gather(*(self.component(n) for n in COMPONENTS))
-        comps = dict(zip(COMPONENTS, results, strict=True))
+        names = [*COMPONENTS, *(n for n in OPTIONAL_COMPONENTS if n in self.checks)]
+        results = await asyncio.gather(*(self.component(n) for n in names))
+        comps = dict(zip(names, results, strict=True))
         return HealthResponse(
             status=overall_status(comps),
             version=self.version,

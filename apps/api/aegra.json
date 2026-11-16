@@ -1,0 +1,33 @@
+{
+  "graphs": {
+    "ping": {
+      "path": "./naadi_api/agent/graphs/ping.py:graph",
+      "description": "Agent runtime self-test: streams from the router role, emits a block, interrupts to confirm, records to agent_health"
+    }
+  },
+  "auth": {
+    "path": "naadi_api.agent.auth:auth",
+    "disable_studio_auth": true
+  },
+  "http": {
+    "app": "naadi_api.agent.host:naadi_app",
+    "enable_custom_route_auth": false,
+    "cors": {
+      "allow_origins": [],
+      "allow_credentials": false,
+      "allow_methods": ["GET", "POST", "PATCH", "PUT", "DELETE"],
+      "allow_headers": ["authorization", "content-type"],
+      "expose_headers": ["Content-Location", "Location"],
+      "max_age": 600
+    }
+  },
+  "checkpointer": {
+    "durability": "async",
+    "ttl": {
+      "strategy": "keep_latest",
+      "default_ttl": 43200,
+      "sweep_interval_minutes": 60,
+      "sweep_limit": 200
+    }
+  }
+}

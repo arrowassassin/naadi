@@ -68,7 +68,7 @@ plugins = ["pydantic.mypy"]
 packages = ["naadi_api"]
 
 [[tool.mypy.overrides]]
-module = ["supabase.*", "openrouter.*", "psycopg_pool.*"]
+module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*"]
 follow_untyped_imports = true
 
 [tool.pytest.ini_options]

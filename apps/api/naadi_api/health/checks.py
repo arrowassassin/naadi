@@ -191,3 +191,15 @@ def nvidia_check(settings: Settings, models: Sequence[str], probe: NvidiaProbe =
         return CheckOutcome(status, f"{ok} of {n} configured models answer. Failing: {listing}", models=probes)
 
     return run
+
+
+def agent_runtime_check(db: Database | None) -> CheckFn:
+    """Aegra's live objects in this process plus the age of the last hourly system ping (agent_health)."""
+
+    async def run() -> CheckOutcome:
+        from ..agent.health import runtime_status
+
+        st = await runtime_status(db)
+        return CheckOutcome(st.status, st.detail)
+
+    return run

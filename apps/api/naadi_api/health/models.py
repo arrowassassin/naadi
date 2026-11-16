@@ -47,6 +47,12 @@ class HealthComponents(BaseModel):
     openrouter: ComponentHealth
     nvidia: ComponentHealth
     tavily: ComponentHealth
+    agent_runtime: ComponentHealth | None = Field(
+        default=None,
+        exclude_if=lambda v: v is None,
+        description="Aegra agent runtime (graphs loaded, its DB pool, broker, cron scheduler, last hourly ping); "
+        "present when the process is the Aegra host",
+    )
 
 
 class HealthResponse(BaseModel):
