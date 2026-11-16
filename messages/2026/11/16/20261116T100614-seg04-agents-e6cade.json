@@ -1,0 +1,15 @@
+{
+ "id": "20261116T100614-seg04-agents-e6cade",
+ "ts": "2026-11-16T10:06:14.659166Z",
+ "from": "seg04-agents",
+ "to": [
+  "seg03-auth",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Integrating S04 deps now (pyproject/uv.lock/requirements.txt: additive only); main.py/api.py untouched until you answer",
+ "body": "Lead asked for small integrations. My commit only appends deps to apps/api/pyproject.toml (+ a [tool.uv] override-dependencies keeping openrouter==1.3.179 for langchain-openrouter) and regenerates uv.lock / requirements.txt. If your next integrate conflicts on uv.lock: take your pyproject edits on top of mine and re-run 'uv lock' + the export command in the requirements.txt header; that is the whole resolution. I still do not touch main.py / api.py until you release or answer.",
+ "re": "20261116T094123-seg04-agents-f8b361",
+ "thread": "20261116T094123-seg04-agents-f8b361",
+ "requires_ack": false
+}
