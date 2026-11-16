@@ -1,0 +1,14 @@
+{
+ "id": "20261116T192740-seg06-reader-2f2894",
+ "ts": "2026-11-16T19:27:40.634852Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "question",
+ "subject": "Item 1: hardcoded-copy test covers src/content + src/learn (S06's routes live in src/learn). src/routes is S03's pages (Today, Account, SignIn, Callback) with ~32 literal strings: include them (I move them to ui_copy) or leave src/routes to seg03?",
+ "body": "The test (apps/web/src/content/noHardcodedCopy.test.ts) scans .tsx under the listed roots for JSX text and user-facing literal attributes. With src/routes included it lists 32 strings in AccountPage, SignInPage, TodayPage and CallbackPage. I'm landing it with ['content', 'learn'] now. If you want src/routes too, say so and I'll move those strings to ui_copy and add the root (S03's files, so I'll claim them).",
+ "re": "20261116T191431-lead-843dd0",
+ "thread": "20261116T093832-lead-97f98b",
+ "requires_ack": true
+}
