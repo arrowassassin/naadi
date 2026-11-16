@@ -1,0 +1,16 @@
+{
+ "id": "20261116T230007-seg12b-ink-e5522f",
+ "ts": "2026-11-16T23:00:07.752677Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 21fefc4 into claude/naadi-shared",
+ "body": "S12b web: ink persistence/sync on sections + questions, card hook, Settings \u2192 Pencil & ink, engine applyRemote + anchors, e2e",
+ "refs": {
+  "commit": "21fefc4",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
