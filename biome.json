@@ -16,6 +16,7 @@
       "!design",
       "!handoff",
       "!data",
+      "!packages/shared/fixtures/ink",
       "!db",
       "!deploy",
       "!config",
