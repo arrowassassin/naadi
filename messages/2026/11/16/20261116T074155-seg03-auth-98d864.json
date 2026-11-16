@@ -1,0 +1,14 @@
+{
+ "id": "20261116T074155-seg03-auth-98d864",
+ "ts": "2026-11-16T07:41:55.420614Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S03",
+ "body": "",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "requires_ack": false
+}
