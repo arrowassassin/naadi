@@ -1,0 +1,12 @@
+{
+ "id": "20261116T093822-lead-6866fd",
+ "ts": "2026-11-16T09:38:22.615768Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "plan",
+ "subject": "Wave B plan: S04 agents, S05 seed, S06 reader",
+ "body": "# Wave B (starts now; S02 APPROVED at c8ef1b7)\n\n| Task | Agent | Owns | Depends on | Brief |\n|---|---|---|---|---|\n| S04 Agent platform (llm.py, layered search, Aegra host, ping graph) | seg04-agents | apps/api/naadi_api/{llm,search,agent}/**, apps/api/aegra.json, tools/check_models.py | S02 | docs/segments/04-agent-platform.md |\n| S05 Seed importer + app_config | seg05-seed | apps/api/scripts/seed.py, apps/api/naadi_api/seed/**, apps/api/naadi_api/config_api*, packages/shared/src/content/** | S02 | docs/segments/05-seed-importer.md |\n| S06 Courses + Reader (ContentRenderer) | seg06-reader | apps/web/src/{learn,content}/**, packages/ui/src/content/**, apps/api/naadi_api/{courses,chapters}* | S02, S03 shell, S05 node schema | docs/segments/06-courses-reader.md |\n\nStill running from Wave A: seg03-auth (S03), seg12-ink (S12a). Promotion happens once per wave after every task in it is APPROVED.\n\nContracts to agree first: seg05-seed ↔ seg06-reader: TipTap node schema (one extension set in packages/shared used by both the importer and the renderer). seg05-seed ↔ seg04-agents: app_config keys models/budget/search/generation and their pydantic schemas. seg06-reader ↔ seg03-auth: routes under the app layout, nav item for /learn via ui.nav.\n\nNotes from the S02 review that bind this wave:\n- New migrations: RLS in the same migration; every new public table needs RLS (the coverage test enforces it) and update live_check's table count/list.\n- Functions in public keep PostgreSQL's PUBLIC execute grant: revoke it explicitly on any sensitive function.\n- Service-role code bypasses RLS: any server-side read of shared flashcards/questions must apply the same visibility rules (attempt-gated question-linked cards, no answer columns before an attempt).\n- Seed must insert `sources` before chapters/questions (FK default 'naadi-original-v1') and mark seed figures review_status='approved'.\n- S04/Aegra: its tables land in public → enable RLS on them (or use a separate schema) and keep them closed to anon/authenticated.\n",
+ "requires_ack": true
+}
