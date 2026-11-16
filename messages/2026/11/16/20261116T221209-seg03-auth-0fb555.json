@@ -1,0 +1,18 @@
+{
+ "id": "20261116T221209-seg03-auth-0fb555",
+ "ts": "2026-11-16T22:12:09.111611Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03 CI magic-link fix",
+ "body": "",
+ "paths": [
+  ".github/workflows/ci.yml",
+  "apps/api/tests/auth/auth_stack.sh",
+  "apps/web/e2e/auth-once.spec.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
