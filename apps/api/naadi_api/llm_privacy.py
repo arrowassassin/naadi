@@ -36,10 +36,19 @@ _CITATION_PREFIX = re.compile(r"(?:PMID|PubMed|doi|DOI|ISBN|ISSN)[:\s#]*$")
 _DIGIT = re.compile(r"\d")
 # A number followed by a unit, or preceded by a lab/measure word, is a measurement, not an identifier:
 # "150000-450000 /uL", "12000000 copies/mL", "250 mg/dL", "platelets 150000-450000".
-# Unit words must end there ("cal" is a unit, "call" is not); "%", "/…" and "x 10^…" need no word end.
+# Unit words must end there ("cal" is a unit, "call" is not). "/" and "per" count only when a unit follows
+# ("/uL", "per mL"), never a digit or a word ("9876543210/9876543211", "per my mom"). "%" is not a unit here:
+# "9876543210% sure" is not a measurement; "neutrophils 12000000%" is covered by the lab word before it.
+_UNITS = (
+    r"copies|cells|IU|U|units?|mg|mcg|µg|ug|g|kg|ng|pg|mmol|µmol|umol|nmol|pmol|mol|mEq|mL|ml|L|dL|fL"
+    r"|mm|cm|µm|um|nm|mmHg|kPa|bpm|Hz|kcal|cal"
+)
+_END = r"(?![A-Za-zµ0-9])"
+_UNIT_WORD = rf"(?:{_UNITS}){_END}"
+# After "/" or "per": the units above plus denominators ("/uL", "/mm3", "/hpf", "/m2", "/min", "per day").
+_PER_UNIT = rf"(?:uL|µL|mm3|hpf|m2|min|hr|h|d|day|s|{_UNITS}){_END}"
 _UNIT_AFTER = re.compile(
-    r"^\s*(?:%|/|[x×]\s*10|(?:copies|cells|IU|U|units?|mg|mcg|µg|ug|g|kg|ng|pg|mmol|µmol|umol|nmol|pmol"
-    r"|mol|mEq|mL|ml|L|dL|fL|mm|cm|µm|um|nm|mmHg|kPa|bpm|Hz|kcal|cal|per)(?![A-Za-zµ]))",
+    rf"^\s*(?:[x×]\s*10\b|{_UNIT_WORD}|/\s*{_PER_UNIT}|per\s+{_PER_UNIT})",
     re.IGNORECASE,
 )
 # Before a number, only a lab-specific word (a whole word) makes it a measurement. Generic words ("to", "from",

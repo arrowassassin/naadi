@@ -543,6 +543,10 @@ async def test_turn_cap_stops_a_chain_mid_walk() -> None:
         "WBC: 11000000",
         "4500000000 /L",
         "120000000 x 10^9/L",
+        "12000000 per mL",
+        "15000000/mm3",
+        "25000000 / hpf",
+        "neutrophils 12000000%",
     ],
 )
 def test_measurements_are_not_scrubbed(clinical: str) -> None:
@@ -581,6 +585,14 @@ def test_measurements_are_not_scrubbed(clinical: str) -> None:
         ("9876543210 call me", "9876543210"),
         ("12345678 gross", "12345678"),
         ("ring 9876543210 later", "9876543210"),
+        # S04 final check B1: "/" counts only before a unit, never a digit; "per" and "%" are not units alone.
+        ("call 9876543210/9876543211", "9876543210"),
+        ("call 9876543210/9876543211", "9876543211"),
+        ("call 9876543210 / 9876543211 anytime", "9876543210"),
+        ("call 9876543210 / 9876543211 anytime", "9876543211"),
+        ("9876543210 per my mom", "9876543210"),
+        ("9876543210% sure", "9876543210"),
+        ("12345678/9", "12345678"),
         # A +country code is a phone even after a lab word.
         ("platelets +44 7911 123456", "7911"),
     ],
