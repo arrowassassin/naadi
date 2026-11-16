@@ -250,7 +250,7 @@ def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: 
 
     listed = client.get("/api/admin/config", headers=admin).json()["items"]
     assert {i["key"]: i["source"] for i in listed} == {i["key"]: "db" for i in listed}
-    assert len(listed) == 11
+    assert len(listed) == 12  # S10 added fsrs
 
     entry = client.get("/api/admin/config/ui_copy", headers=admin).json()
     assert entry["source"] == "db"
