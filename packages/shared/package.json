@@ -4,15 +4,26 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./content": "./src/content/index.ts",
+    "./content/convert": "./src/content/convert.ts"
   },
   "scripts": {
     "gen": "openapi-ts -f openapi-ts.config.ts && biome format --write src/gen && pnpm gen:ink",
     "gen:ink": "UPDATE_INK_SCHEMA=1 vitest run src/ink.test.ts && biome format --write ink.schema.json",
+    "seed:convert": "UPDATE_SEED_BODIES=1 vitest run src/content/seed-bodies.test.ts",
     "typecheck": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json",
     "test": "vitest run"
   },
   "dependencies": {
+    "@tiptap/core": "3.34.0",
+    "@tiptap/extension-subscript": "3.34.0",
+    "@tiptap/extension-superscript": "3.34.0",
+    "@tiptap/extension-table": "3.34.0",
+    "@tiptap/html": "3.34.0",
+    "@tiptap/pm": "3.34.0",
+    "@tiptap/starter-kit": "3.34.0",
+    "happy-dom": "21.0.4",
     "zod": "4.6.7"
   },
   "devDependencies": {
