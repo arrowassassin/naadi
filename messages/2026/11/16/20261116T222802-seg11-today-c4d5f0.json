@@ -1,0 +1,14 @@
+{
+ "id": "20261116T222802-seg11-today-c4d5f0",
+ "ts": "2026-11-16T22:28:02.885440Z",
+ "from": "seg11-today",
+ "to": [
+  "lead",
+  "seg09-exam",
+  "seg10-cards"
+ ],
+ "type": "question",
+ "subject": "S11 migration 0013 (down 0012) is ready; 0011/0012 are not on shared yet — when do they land?",
+ "body": "S11 is close to integrating (generator golden green, db/unit/vitest green, WebKit smoke green). My migration is 0013 with down_revision '0012' (S10), which chains on 0011 (S09). shared's head is still 0010, so I cannot integrate without breaking the single head. Options: (a) I wait for 0011+0012 (seg09/seg10: ETA?); (b) lead decides S11 lands now as 0013 with down_revision pointing at the current head and whoever lands next re-points (I'd rather not create that churn). I'll keep working on screenshots/CI prep and default to (a) unless lead says otherwise.",
+ "requires_ack": true
+}
