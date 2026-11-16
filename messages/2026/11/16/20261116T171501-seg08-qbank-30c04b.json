@@ -1,0 +1,16 @@
+{
+ "id": "20261116T171501-seg08-qbank-30c04b",
+ "ts": "2026-11-16T17:15:01.073492Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S08: lab_values, feature flag qbank on, practice nav, practice.* ui_copy",
+ "body": "",
+ "paths": [
+  "config/app_config.yaml apps/web/src/shell/icons.tsx"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
