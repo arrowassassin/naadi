@@ -11,11 +11,12 @@ import {
   type SampleStats,
   type SelectionInfo,
 } from "@naadi/ink";
-import { InkSurface } from "@naadi/ink/react";
+
 import type { InkColor, InkDiff, InkItem } from "@naadi/shared";
 import { Button, Chip, cx } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { InkCanvas } from "./InkCanvas";
 import { InkToolbar } from "./InkToolbar";
 import "./ink-lab.css";
 import { measureScroll, type ScrollMeasurement, stressStrokes } from "./stress";
@@ -335,7 +336,7 @@ export function InkLab() {
         </div>
         {slowMo ? <FrameCounter /> : null}
         <div className="relative">
-          <InkSurface
+          <InkCanvas
             label="Ink page"
             className={cx(
               "w-full overflow-hidden rounded-tile-sm",
@@ -511,7 +512,7 @@ export function InkLab() {
         </div>
         {stressItems ? (
           <div ref={stressRef}>
-            <InkSurface
+            <InkCanvas
               label="Stress page with 5,000 strokes"
               className={cx(
                 "w-full overflow-hidden rounded-tile-sm",
