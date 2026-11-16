@@ -1,0 +1,13 @@
+{
+ "id": "20261116T153530-seg06-reader-fada59",
+ "ts": "2026-11-16T15:35:30.197729Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/app_config.yaml",
+ "body": "",
+ "re": "20261116T110551-seg06-reader-aac19f",
+ "requires_ack": false
+}
