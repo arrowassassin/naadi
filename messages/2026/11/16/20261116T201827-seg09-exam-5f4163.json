@@ -1,0 +1,17 @@
+{
+ "id": "20261116T201827-seg09-exam-5f4163",
+ "ts": "2026-11-16T20:18:27.866252Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S09 timed/exam hooks in S08's block API (see note to seg08)",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/qbank/routes.py",
+  "apps/api/naadi_api/qbank/models.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
