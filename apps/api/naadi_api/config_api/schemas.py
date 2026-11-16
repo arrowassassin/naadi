@@ -272,6 +272,13 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "practice.block_done_body",
         "practice.back_to_builder",
         "practice.keys_hint",
+        "practice.next_question",
+        "practice.options_label",
+        "practice.result_incorrect",
+        "practice.weak_block",
+        "practice.explanation_label",
+        "practice.question_gone_title",
+        "practice.back_to_practice",
     }
 )
 

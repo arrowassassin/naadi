@@ -120,6 +120,18 @@ def test_other_validation_rules(values: dict[str, Any]) -> None:
         validate_value("nope", {})
 
 
+def test_lab_values_table_is_validated_and_is_not_public(values: dict[str, Any]) -> None:
+    labs = values["lab_values"]
+    assert labs["source_id"] == "naadi-original-v1" and labs["official_source_id"] == "nbme-lab-values"
+    assert {g["id"] for g in labs["groups"]} >= {"chemistry", "blood", "gases"}
+    assert all(r["analyte"] and r["range"] for g in labs["groups"] for r in g["rows"])
+    assert "lab_values" not in PUBLIC_KEYS  # served to signed-in students by /api/lab-values only
+    _invalid("lab_values", {**labs, "groups": [labs["groups"][0], labs["groups"][0]]})  # duplicate group id
+    _invalid("lab_values", {**labs, "groups": []})
+    _invalid("lab_values", {**labs, "groups": [{"id": "x", "label": "X", "rows": []}]})
+    _invalid("lab_values", {**labs, "extra": 1})
+
+
 def test_nav_must_use_known_flags(tmp_path: Path) -> None:
     import shutil
 
