@@ -1,0 +1,1 @@
+{"by": "seg05-seed", "ts": "2026-11-16T10:21:51.396562Z", "note": "camelCase restore + duplicate xmlns fix are in the sanitiser (all 95 parse as XML after it); landing as 0004"}
