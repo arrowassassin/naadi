@@ -152,7 +152,7 @@ async def _guard[T](fn: Callable[[], Awaitable[T]]) -> T:
 
 async def as_user[T](db: Database, user: CurrentUser, fn: Callable[[psycopg.AsyncConnection[Any]], Awaitable[T]]) -> T:
     async def run() -> T:
-        async with user_tx(db, user.user_id, deadline_s=8.0) as conn:
+        async with user_tx(db, user, deadline_s=8.0) as conn:
             return await fn(conn)
 
     return await _guard(run)

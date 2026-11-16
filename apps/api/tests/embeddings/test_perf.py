@@ -32,7 +32,7 @@ from naadi_api.db import Database
 from naadi_api.embeddings.engine import Engine
 from naadi_api.embeddings.query import search_local
 from naadi_api.main import create_app
-from tests.auth.accounts import signed_in
+from tests.auth.accounts import checked_user, signed_in
 from tests.auth.jwt_helpers import SUPABASE_URL, JwksServer, SigningKey
 from tests.conftest import fake_service, make_settings
 
@@ -113,7 +113,7 @@ def test_local_search_p95_on_the_seeded_corpus(
             found += bool(res.json()["hits"])
         jobs = http.app.state.embedding_jobs
         for q in queries[:20]:  # stage split from the service itself
-            r = asyncio.run(search_local(Database(SecretStr(url), max_size=2), jobs.engine, uid[0], q))
+            r = asyncio.run(search_local(Database(SecretStr(url), max_size=2), jobs.engine, checked_user(uid[0]), q))
             for k, v in r.timings_ms.items():
                 stages.setdefault(k, []).append(v)
     finally:

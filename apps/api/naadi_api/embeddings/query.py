@@ -24,6 +24,7 @@ from typing import Any, Literal
 import psycopg
 from psycopg.rows import dict_row
 
+from ..auth import CurrentUser
 from ..auth_db import user_tx
 from ..db import Database
 from ..logs import get_logger
@@ -204,13 +205,13 @@ def _first_line(text: str, n: int = 140) -> str:
     return line if len(line) <= n else line[: n - 1].rstrip() + "…"
 
 
-async def hydrate(db: Database, user_id: uuid.UUID, cands: Sequence[Candidate], terms: Sequence[str]) -> list[Hit]:
+async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], terms: Sequence[str]) -> list[Hit]:
     """Titles, links and metadata, read as the caller. Anything RLS hides is dropped."""
     by_type: dict[str, list[Candidate]] = defaultdict(list)
     for c in cands:
         by_type[c.ref_type].append(c)
     meta: dict[tuple[str, str], dict[str, Any]] = {}
-    async with user_tx(db, user_id, deadline_s=DB_DEADLINE_S) as conn:
+    async with user_tx(db, user, deadline_s=DB_DEADLINE_S) as conn:
         conn.row_factory = dict_row
         for rt in ("section", "upload", "kb_doc"):
             ids = [c.ref_id for c in by_type.get(rt, [])]
@@ -385,8 +386,9 @@ async def hydrate(db: Database, user_id: uuid.UUID, cands: Sequence[Candidate], 
 
 
 async def search_local(
-    db: Database, engine: Engine, user_id: uuid.UUID, q: str, *, scope: Scope = "all", limit: int = 20
+    db: Database, engine: Engine, user: CurrentUser, q: str, *, scope: Scope = "all", limit: int = 20
 ) -> LocalResult:
+    user_id = user.user_id
     q = re.sub(r"\s+", " ", q).strip()[:MAX_QUERY_CHARS]
     terms = ranking.query_terms(q)
     cands, timings = await retrieve(db, engine, user_id, q, SCOPE_TYPES[scope])
@@ -396,7 +398,7 @@ async def search_local(
     kept = relevant(cands)
     chosen = select(kept, scope, limit)
     t = time.perf_counter()
-    hits = await hydrate(db, user_id, chosen, terms)
+    hits = await hydrate(db, user, chosen, terms)
     timings["hydrate"] = (time.perf_counter() - t) * 1000
     best = max((c.rerank for c in kept if c.rerank is not None), default=None)
     suggest_web = not hits or best is None or best < ranking.WEAK_RERANK

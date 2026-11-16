@@ -213,7 +213,7 @@ async def search(
     jobs = _jobs(request)
     t0 = time.perf_counter()
     try:
-        result = await search_local(jobs.db, jobs.engine, user.user_id, q, scope=scope, limit=limit)
+        result = await search_local(jobs.db, jobs.engine, user, q, scope=scope, limit=limit)
     except ModelsNotCached as exc:
         log.warning("search_models_not_cached")
         raise HTTPException(503, SEARCH_UNAVAILABLE) from exc

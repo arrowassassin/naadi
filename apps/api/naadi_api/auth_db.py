@@ -23,6 +23,7 @@ from typing import Any
 from psycopg import AsyncConnection
 from psycopg.rows import dict_row, tuple_row
 
+from .auth import CurrentUser
 from .db import Database, DatabaseNotConfigured
 
 STATEMENT_TIMEOUT_MS = 5000
@@ -33,9 +34,19 @@ def claims_json(user_id: uuid.UUID) -> str:
     return json.dumps({"sub": str(user_id), "role": "authenticated", "aud": "authenticated"}, separators=(",", ":"))
 
 
+class AccountNotChecked(RuntimeError):
+    """A programming error: user data reached with a user whose session was never checked in `auth`."""
+
+
 @asynccontextmanager
-async def user_tx(db: Database, user_id: uuid.UUID, *, deadline_s: float = 5.0) -> AsyncIterator[AsyncConnection[Any]]:
-    """Yield a connection inside a transaction running as `authenticated` with `sub = user_id`."""
+async def user_tx(db: Database, user: CurrentUser, *, deadline_s: float = 5.0) -> AsyncIterator[AsyncConnection[Any]]:
+    """Yield a connection inside a transaction running as `authenticated` with `sub = user.user_id`.
+
+    Only for an account-checked user (`AccountUser` / `AdminUser` / `AccountDirectory.resolve`): the token
+    alone is not enough, because its session may have been revoked ("sign out of all devices")."""
+    if not user.account_checked:
+        raise AccountNotChecked("user_tx needs an account-checked user (depend on AccountUser, not AuthUser)")
+    user_id = user.user_id
     if not db.configured:
         raise DatabaseNotConfigured("DATABASE_URL is not set")
     if db.pool is None:

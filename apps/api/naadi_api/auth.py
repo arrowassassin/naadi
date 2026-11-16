@@ -83,6 +83,9 @@ class CurrentUser:
     email_verified: bool
     is_admin: bool
     session_id: str | None = field(default=None, repr=False)
+    # True only when `AccountDirectory.resolve` has checked the session and account in `auth`: `user_tx`
+    # refuses any other user, so no route can reach user data with a revoked session.
+    account_checked: bool = False
 
 
 def user_from_claims(claims: Mapping[str, Any]) -> CurrentUser:
@@ -197,6 +200,7 @@ class AccountDirectory:
             email_verified=verified,
             is_admin=verified and email is not None and email.lower() in self._admins,
             session_id=user.session_id,
+            account_checked=True,
         )
 
 

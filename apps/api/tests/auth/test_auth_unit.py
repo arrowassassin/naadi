@@ -570,3 +570,42 @@ def test_hs256_project_tokens_work_end_to_end(static_dir: Path) -> None:
 )
 def test_supabase_origin_allows_plain_http_only_on_loopback(url: str, origin: str | None) -> None:
     assert make_settings(supabase_url=url).supabase_origin == origin
+
+
+async def test_aegra_handler_refuses_a_revoked_session_and_unconfirmed_admins() -> None:
+    """The agent runtime's auth handler uses the same AccountDirectory as /api (adopted from the S03 re-review
+    probe): a revoked session is 401 there too, and admin permission needs a confirmed listed email."""
+    from langgraph_sdk import Auth
+
+    from naadi_api.agent import auth as agent_auth
+
+    key = SigningKey()
+    db = FakeAuthDb()
+    owner = db.login(key, "owner@example.com")
+    unconfirmed = db.login(key, "owner@example.com", confirmed=False)
+    verifier = TokenVerifier(SUPABASE_URL, transport=JwksServer(key).transport())
+    agent_auth.configure(verifier, AccountDirectory(db, parse_admin_emails(ADMIN), ttl_s=0))
+    try:
+        ok = await agent_auth.authenticate({"authorization": f"Bearer {owner}"})
+        assert ok["identity"]
+        assert ok["permissions"] == ["admin"]
+        plain = await agent_auth.authenticate({"authorization": f"Bearer {unconfirmed}"})
+        assert plain["permissions"] == []
+        db.sessions.clear()  # "sign out of all devices"
+        with pytest.raises(Auth.exceptions.HTTPException) as ei:
+            await agent_auth.authenticate({"authorization": f"Bearer {owner}"})
+        assert ei.value.status_code == 401
+    finally:
+        agent_auth.configure(None, None)
+
+
+def test_admin_route_refuses_a_revoked_admin_session(
+    auth_client: Callable[..., TestClient], signing_key: SigningKey, accounts: FakeAuthDb
+) -> None:
+    c = auth_client()
+    c.app.state.accounts._ttl = 0  # type: ignore[attr-defined]
+    token = accounts.login(signing_key, "owner@example.com")
+    assert c.get("/api/admin/overview", headers=bearer(token)).status_code == 200
+    accounts.sessions.clear()
+    res = c.get("/api/admin/overview", headers=bearer(token))
+    assert (res.status_code, res.json()["error"]["code"]) == (401, "session_revoked")

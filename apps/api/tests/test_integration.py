@@ -1,7 +1,7 @@
 """Integration tests against the real services (Supabase, OpenRouter, NVIDIA, Tavily).
 
-`-m "integration and not db"` runs where raw Postgres is unreachable (the build sandbox);
-CI runs `-m integration`, which includes the `db` tests. Missing configuration fails the test loudly.
+All of them are `live` (real services, real secrets). The database checks that used to live here run
+against a LOCAL database in tests/test_database_local.py (`db`). Missing configuration fails loudly.
 None of these spend paid quota: OpenRouter key metadata and Tavily usage are free endpoints; the NVIDIA
 probe is one free one-token call per configured model.
 """
@@ -16,10 +16,8 @@ from fastapi.testclient import TestClient
 
 import naadi_api.health.checks as checks_mod
 from naadi_api.config import load_models_config
-from naadi_api.db import Database
 from naadi_api.health.checks import (
     TAVILY_USAGE_URL,
-    database_check,
     nvidia_check,
     openrouter_check,
     storage_check,
@@ -121,54 +119,3 @@ def test_health_endpoint_reports_real_external_components() -> None:
         assert body["components"][name]["status"] in ("ok", "degraded"), (name, body["components"][name]["detail"])
     for secret in s.secret_values():
         assert secret not in r.text
-
-
-async def test_database_select_1() -> None:
-    require_env("DATABASE_URL")
-    db = Database(_settings().database_url)
-    await db.open()
-    try:
-        out = await database_check(db)()
-        assert out.status == "ok"
-    finally:
-        await db.close()
-
-
-def test_health_database_ok_and_ready() -> None:
-    # Only DATABASE_URL is required: in CI it points at the supabase/postgres service container and the
-    # external components (no secrets there) report `down: not configured`, which keeps the overall
-    # status at `degraded` with HTTP 200; on the Space every component is configured.
-    require_env("DATABASE_URL")
-    with TestClient(create_app(_settings())) as c:
-        health = c.get("/api/health")
-        ready = c.get("/api/ready")
-    assert health.status_code == 200, health.json()
-    assert health.json()["components"]["database"]["status"] == "ok"
-    assert health.json()["status"] in ("ok", "degraded")
-    assert ready.status_code == 200, ready.json()
-    assert ready.json() == {"ready": True, "checks": {"settings": True, "database_pool": True}}
-
-
-async def test_database_is_supabase_postgres_with_its_roles() -> None:
-    # CI uses the real supabase/postgres image, so later migrations (RLS for anon / authenticated /
-    # service_role, references to auth.users) are tested against the same roles and schemas as the project.
-    require_env("DATABASE_URL")
-    db = Database(_settings().database_url)
-    await db.open()
-    try:
-        assert db.pool is not None
-        async with db.pool.connection(timeout=10) as conn:
-            cur = await conn.execute(
-                "select rolname from pg_roles where rolname = any(%s) order by rolname",
-                (["anon", "authenticated", "service_role"],),
-            )
-            roles = [r[0] for r in await cur.fetchall()]
-            cur = await conn.execute("select exists(select 1 from pg_namespace where nspname = 'auth')")
-            row = await cur.fetchone()
-            cur = await conn.execute("show server_version_num")
-            version = await cur.fetchone()
-    finally:
-        await db.close()
-    assert roles == ["anon", "authenticated", "service_role"]
-    assert row is not None and row[0] is True
-    assert version is not None and int(version[0]) >= 170000

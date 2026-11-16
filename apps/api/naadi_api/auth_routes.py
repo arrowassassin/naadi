@@ -267,7 +267,7 @@ async def _me(request: Request, user: CurrentUser, row: dict[str, Any]) -> MeRes
 
 async def _as_user(db: Database, user: CurrentUser, fn: Any) -> Any:
     try:
-        async with user_tx(db, user.user_id) as conn:
+        async with user_tx(db, user) as conn:
             return await fn(conn)
     except DatabaseNotConfigured as exc:
         raise AuthUnavailable("Your profile cannot be loaded right now. Try again in a moment.") from exc

@@ -10,6 +10,7 @@ HTTP path runs: bearer token -> JWKS verification -> session + account lookup in
 
 from __future__ import annotations
 
+import time
 import uuid
 from collections.abc import Iterator
 from pathlib import Path
@@ -20,12 +21,13 @@ import pytest
 from fastapi.testclient import TestClient
 from pydantic import SecretStr
 
-from naadi_api.auth import AccountDirectory, TokenVerifier, parse_admin_emails
-from naadi_api.auth_db import user_tx
+from naadi_api.auth import AccountDirectory, CurrentUser, TokenVerifier, parse_admin_emails
+from naadi_api.auth_db import AccountNotChecked, user_tx
 from naadi_api.db import Database
 from naadi_api.main import create_app
 from tests.conftest import fake_service, make_settings
 
+from .accounts import checked_user
 from .jwt_helpers import SUPABASE_URL, JwksServer, SigningKey, claims, mint
 
 pytestmark = [pytest.mark.db]
@@ -217,10 +219,10 @@ async def test_user_tx_applies_rls_not_the_pool_role(url: str, users: list[uuid.
     await db.open()
     try:
         for uid in (a, b):
-            async with user_tx(db, uid) as conn:
+            async with user_tx(db, checked_user(uid)) as conn:
                 await conn.execute("insert into public.profiles (user_id) values ((select auth.uid()))")
 
-        async with user_tx(db, a) as conn:
+        async with user_tx(db, checked_user(a)) as conn:
             who = await (await conn.execute("select current_user as r, (select auth.uid()) as uid")).fetchone()
             assert who == {"r": "authenticated", "uid": a}
             rows = await (await conn.execute("select user_id from public.profiles")).fetchall()
@@ -231,7 +233,7 @@ async def test_user_tx_applies_rls_not_the_pool_role(url: str, users: list[uuid.
             assert dele.rowcount == 0
 
         with pytest.raises(psycopg.errors.InsufficientPrivilege):
-            async with user_tx(db, a) as conn:
+            async with user_tx(db, checked_user(a)) as conn:
                 await conn.execute("insert into public.profiles (user_id) values (%s)", (b,))
 
         # The pooled connection is clean afterwards: back to the pool's own role, no claims left behind.
@@ -263,3 +265,64 @@ def test_anon_role_cannot_read_profiles(pg: psycopg.Connection[Any], users: list
 
     with pytest.raises(psycopg.errors.InsufficientPrivilege):
         read_as_anon()
+
+
+async def test_user_tx_refuses_a_user_whose_session_was_not_checked(url: str, users: list[uuid.UUID]) -> None:
+    """No route can reach user data with only a verified token: the session must have been checked."""
+    a, _ = users
+    db = Database(SecretStr(url))
+    token_only = CurrentUser(user_id=a, email=None, email_verified=False, is_admin=False)
+    try:
+        with pytest.raises(AccountNotChecked):
+            async with user_tx(db, token_only):
+                pass
+    finally:
+        await db.close()
+
+
+def _poll_status(fn: Any, want: int, timeout_s: float = 3.0) -> Any:
+    deadline = time.monotonic() + timeout_s
+    while True:
+        res = fn()
+        if res.status_code == want or time.monotonic() > deadline:
+            return res
+        time.sleep(0.2)
+
+
+@pytest.mark.parametrize(
+    ("method", "path", "body"),
+    [
+        ("get", "/api/courses", None),
+        ("get", "/api/reading-position?chapter_id=ch-none", None),
+        ("put", "/api/reading-position", {"chapter_id": "ch-none", "section_id": "sec-none", "offset": 1.0}),
+        ("get", "/api/me", None),
+        ("get", "/api/admin/overview", None),
+    ],
+    ids=["courses", "position-read", "position-write", "me", "admin"],
+)
+def test_every_user_data_route_refuses_a_revoked_session_within_the_cache_window(
+    url: str,
+    key: SigningKey,
+    static_dir: Path,
+    pg: psycopg.Connection[Any],
+    users: list[uuid.UUID],
+    method: str,
+    path: str,
+    body: dict[str, Any] | None,
+) -> None:
+    a, _ = users
+    pg.execute("update auth.users set email = %s where id = %s", (ADMIN, a))  # admin, so /api/admin works
+    with make_client(url, key, static_dir, ttl_s=1.0) as c:
+        headers = h(key, pg, a)
+
+        def call() -> Any:
+            return getattr(c, method)(path, headers=headers, **({"json": body} if body is not None else {}))
+
+        assert call().status_code != 401  # works while the session is live
+        pg.execute("delete from auth.sessions where user_id = %s", (a,))  # "sign out of all devices"
+        res = _poll_status(call, 401)
+        assert res.status_code == 401, (path, res.status_code, res.text[:200])
+        assert res.json()["error"]["code"] == "session_revoked"
+    if path.startswith("/api/reading-position") and method == "put":
+        n = pg.execute("select count(*) from public.reading_positions where user_id = %s", (a,)).fetchone()
+        assert n == (0,)  # nothing was written after the revocation

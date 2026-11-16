@@ -16,6 +16,7 @@ from typing import Any
 
 import psycopg
 
+from naadi_api.auth import CurrentUser
 from tests.conftest import is_local_url
 
 from .jwt_helpers import SigningKey, claims, mint
@@ -62,3 +63,11 @@ def signed_in(
     claim_overrides.setdefault("email", row[0])
     token = mint(key, claims(user_id, session_id=sid, **claim_overrides))
     return {header: f"Bearer {token}"}
+
+
+def checked_user(user_id: uuid.UUID, *, email: str | None = None) -> CurrentUser:
+    """A user as `AccountDirectory.resolve` returns it, for tests that call `user_tx` (or a service built on
+    it) directly, without going through HTTP. Only for users whose session the test has really opened."""
+    return CurrentUser(
+        user_id=user_id, email=email, email_verified=email is not None, is_admin=False, account_checked=True
+    )

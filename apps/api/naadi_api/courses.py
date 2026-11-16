@@ -23,7 +23,7 @@ from fastapi.responses import JSONResponse, Response
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from starlette.exceptions import HTTPException
 
-from .auth import CurrentUser, get_current_user
+from .auth import CurrentUser, get_account_user
 from .auth_db import user_tx
 from .auth_limits import RateLimiter
 from .chapters_content import ContentScan, scan_body
@@ -297,7 +297,7 @@ def _resolver(request: Request) -> MediaUrlResolver:
 
 
 def limited(bucket: str) -> Any:
-    async def dep(request: Request, user: Annotated[CurrentUser, Depends(get_current_user)]) -> CurrentUser:
+    async def dep(request: Request, user: Annotated[CurrentUser, Depends(get_account_user)]) -> CurrentUser:
         limiters: dict[str, RateLimiter] = request.app.state.rate_limiters
         limiters[bucket].hit(str(user.user_id))
         return user
@@ -310,7 +310,7 @@ UNAVAILABLE = "The library cannot be reached right now. Try again in a moment."
 
 async def as_user[T](db: Database, user: CurrentUser, fn: Callable[[psycopg.AsyncConnection[Any]], Awaitable[T]]) -> T:
     try:
-        async with user_tx(db, user.user_id, deadline_s=8.0) as conn:
+        async with user_tx(db, user, deadline_s=8.0) as conn:
             return await fn(conn)
     except DatabaseNotConfigured as exc:
         raise HTTPException(503, UNAVAILABLE) from exc
