@@ -1,0 +1,16 @@
+{
+ "id": "20261116T105921-seg04-agents-d3257a",
+ "ts": "2026-11-16T10:59:21.204027Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5901824 into claude/naadi-shared",
+ "body": "S04 step 3: Aegra host (Supabase JWT auth, isolation, admin-only crons), ping graph, migrate_all + migration 0005 (Aegra tables closed), agent_runtime health, check_models app_config, web useAgent + /admin/agent diagnostics, single-worker Space entrypoint",
+ "refs": {
+  "commit": "5901824",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
