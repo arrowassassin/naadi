@@ -1,5 +1,5 @@
 import type { Page, Route, TestInfo } from "@playwright/test";
-import { callbackPath, magicLink } from "./auth-users";
+import { callbackPath, emailFor, magicLink } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
@@ -244,7 +244,7 @@ test.describe("magic link, end to end", () => {
     await page.goto(callbackPath(magicLink("link"), "/settings/account"));
     await expect(page).toHaveURL(/\/settings\/account$/);
     await expect(page.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "naadi-e2e-link@example.com" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: emailFor("link") })).toBeVisible();
     await expect(page.getByText("Email verified")).toBeVisible();
     expect(page.url()).not.toContain("token_hash");
     expect(meCalls).toContain(200);

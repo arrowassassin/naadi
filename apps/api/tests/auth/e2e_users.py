@@ -5,12 +5,15 @@ server-side, so e2e can sign in for real without an inbox. Prints one JSON objec
 `{"user_id": "...", "token_hash": "...", "email_verified": bool}`. The token is single-use and expires in an
 hour; callers must not log it.
 
-    uv run python -m tests.auth.e2e_users link --email naadi-e2e-student@example.com [--local-db URL]
-    uv run python -m tests.auth.e2e_users delete --email naadi-e2e-student@example.com [--local-db URL]
+    uv run python -m tests.auth.e2e_users link --email naadi-e2e-student-<run>@example.com [--local-db URL]
+    uv run python -m tests.auth.e2e_users delete --email naadi-e2e-student-<run>@example.com [--local-db URL]
+    uv run python -m tests.auth.e2e_users link --owner     # live admin check only; never deleted or printed
 
 `--local-db` mirrors the user into a local Postgres `auth.users` (only localhost URLs are accepted), so a
 local API whose database is not the Supabase project can still satisfy the profiles -> auth.users FK.
-Only addresses at example.com are accepted, so this can never touch a real person's account.
+Only `naadi-e2e-*@example.com` addresses are accepted, so this can never touch a real person's account.
+The one exception is `--owner` (link only): the first `ADMIN_EMAILS` address, used by the live smoke to
+assert that the owner is an admin. That address is never printed, and that account is never deleted.
 """
 
 from __future__ import annotations
@@ -18,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from typing import Any
 from urllib.parse import urlparse
@@ -25,7 +29,7 @@ from urllib.parse import urlparse
 import psycopg
 from supabase import Client, create_client
 
-ALLOWED_DOMAIN = "example.com"
+TEST_EMAIL = re.compile(r"^naadi-e2e-[a-z]+-[a-z0-9-]{4,40}@example\.com$")
 
 
 def _client() -> Client:
@@ -38,9 +42,18 @@ def _client() -> Client:
 
 def _check_email(email: str) -> str:
     email = email.strip().lower()
-    if not email.endswith(f"@{ALLOWED_DOMAIN}") or email.count("@") != 1:
-        raise SystemExit(f"only test addresses at {ALLOWED_DOMAIN} are allowed")
+    if not TEST_EMAIL.match(email):
+        raise SystemExit("only naadi-e2e-<role>-<run>@example.com test addresses are allowed")
     return email
+
+
+def _owner_email() -> str:
+    """The first ADMIN_EMAILS entry, as written (same separators as naadi_api.auth.parse_admin_emails)."""
+    raw = os.environ.get("ADMIN_EMAILS", "")
+    for part in raw.replace(";", ",").replace("\n", ",").replace(" ", ",").split(","):
+        if "@" in part.strip():
+            return part.strip().lower()
+    raise SystemExit("ADMIN_EMAILS is not set")
 
 
 def _check_local(url: str) -> str:
@@ -62,10 +75,12 @@ def _find_user(sb: Client, email: str) -> Any | None:
         page += 1
 
 
-def link(email: str, local_db: str | None) -> dict[str, Any]:
+def link(email: str, local_db: str | None, *, create: bool = True) -> dict[str, Any]:
     sb = _client()
     user = _find_user(sb, email)
     if user is None:
+        if not create:
+            raise SystemExit("that account does not exist")
         user = sb.auth.admin.create_user({"email": email, "email_confirm": True}).user
     res = sb.auth.admin.generate_link({"type": "magiclink", "email": email})
     props = res.properties
@@ -93,11 +108,18 @@ def delete(email: str, local_db: str | None) -> dict[str, Any]:
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("action", choices=["link", "delete"])
-    ap.add_argument("--email", required=True)
+    who = ap.add_mutually_exclusive_group(required=True)
+    who.add_argument("--email")
+    who.add_argument("--owner", action="store_true")
     ap.add_argument("--local-db")
     a = ap.parse_args(argv)
-    email = _check_email(a.email)
-    out = link(email, a.local_db) if a.action == "link" else delete(email, a.local_db)
+    if a.owner:
+        if a.action != "link" or a.local_db:
+            raise SystemExit("--owner is only for `link` against the live project")
+        out = link(_owner_email(), None, create=False)
+    else:
+        email = _check_email(a.email)
+        out = link(email, a.local_db) if a.action == "link" else delete(email, a.local_db)
     sys.stdout.write(json.dumps(out) + "\n")
     return 0
 

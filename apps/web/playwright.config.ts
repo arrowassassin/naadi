@@ -1,3 +1,4 @@
+import { randomBytes } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
@@ -10,6 +11,12 @@ const repoRoot = path.resolve(here, "../..");
  * Live: E2E_BASE_URL=https://<ns>-naadi.hf.space; a private Space needs HF_TOKEN, sent as a Bearer header.
  */
 const liveBaseUrl = process.env.E2E_BASE_URL?.replace(/\/$/, "");
+
+// Auth test users are named per run (workers inherit the id), so parallel CI jobs never collide. Locally the
+// id is fixed, so a reused dev server (reuseExistingServer) still has the matching ADMIN_EMAILS.
+process.env.E2E_RUN_ID ??= process.env.GITHUB_RUN_ID
+  ? `${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT ?? "1"}-${randomBytes(3).toString("hex")}`
+  : "local";
 const port = Number(process.env.E2E_PORT ?? 7860);
 const baseURL = liveBaseUrl ?? `http://127.0.0.1:${port}`;
 
@@ -84,7 +91,7 @@ export default defineConfig({
           APP_ENV: "local",
           APP_VERSION: process.env.APP_VERSION ?? "e2e",
           // The local API is checked against throwaway test accounts, never the owner's address.
-          ADMIN_EMAILS: "naadi-e2e-admin@example.com",
+          ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
           ...(process.env.E2E_DATABASE_URL ? { DATABASE_URL: process.env.E2E_DATABASE_URL } : {}),
         },
       },

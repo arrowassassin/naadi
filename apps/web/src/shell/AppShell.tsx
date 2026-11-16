@@ -6,6 +6,7 @@ import { type RefObject, useLayoutEffect, useRef } from "react";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { usePenActive } from "./chrome";
 import { NavIcon } from "./icons";
 import { LogoMark } from "./Logo";
 
@@ -16,13 +17,17 @@ function isCurrent(path: string, pathname: string): boolean {
   return pathname === path || pathname.startsWith(`${path}/`);
 }
 
-/** Publishes the chrome's size as --shell-top-inset / --shell-bottom-inset on :root (0px when hidden). */
-function useInsetVar(ref: RefObject<HTMLElement | null>, name: string): void {
+/**
+ * Publishes the chrome's size as --shell-top / --shell-bottom on :root (contract with S12a): px, 0px when
+ * the element is hidden at this breakpoint or moved out of the way for the pen.
+ */
+function useInsetVar(ref: RefObject<HTMLElement | null>, name: string, collapsed = false): void {
   useLayoutEffect(() => {
     const el = ref.current;
     const root = document.documentElement;
     if (!el) return;
-    const apply = () => root.style.setProperty(name, `${Math.round(el.getBoundingClientRect().height)}px`);
+    const apply = () =>
+      root.style.setProperty(name, collapsed ? "0px" : `${Math.round(el.getBoundingClientRect().height)}px`);
     apply();
     const ro = new ResizeObserver(apply);
     ro.observe(el);
@@ -32,7 +37,7 @@ function useInsetVar(ref: RefObject<HTMLElement | null>, name: string): void {
       window.removeEventListener("resize", apply);
       root.style.setProperty(name, "0px");
     };
-  }, [ref, name]);
+  }, [ref, name, collapsed]);
 }
 
 function initialOf(name: string | null | undefined, email: string | null | undefined): string {
@@ -106,8 +111,9 @@ export function AppShell() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const topRef = useRef<HTMLElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
-  useInsetVar(topRef, "--shell-top-inset");
-  useInsetVar(bottomRef, "--shell-bottom-inset");
+  const penActive = usePenActive();
+  useInsetVar(topRef, "--shell-top");
+  useInsetVar(bottomRef, "--shell-bottom", penActive);
 
   // Only routes that exist in this build are linked, whatever the server lists: no dead navigation.
   const routes = router.routesByPath as Record<string, unknown>;
@@ -157,11 +163,16 @@ export function AppShell() {
         </div>
       ) : null}
 
+      {/* The window scrolls; nothing here sets touch-action, transform or filter on main or its ancestors
+          (pen surfaces depend on it). Children are centred at 1320 px unless they opt out with data-bleed. */}
       <main
         id="main"
         tabIndex={-1}
         data-shell-content=""
-        className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-6 pb-[calc(var(--shell-bottom-inset,0px)+32px)] outline-none"
+        className={cx(
+          "w-full pt-6 pb-[calc(var(--shell-bottom,0px)+32px)] outline-none",
+          "[&>*:not([data-bleed])]:mx-auto [&>*:not([data-bleed])]:max-w-(--content-max) [&>*:not([data-bleed])]:px-(--gutter)",
+        )}
       >
         {nav.isError && !nav.data ? (
           <ErrorState
@@ -178,7 +189,13 @@ export function AppShell() {
 
       <div
         ref={bottomRef}
-        className="fixed inset-x-0 bottom-0 z-20 px-3 pt-2 pb-[max(12px,env(safe-area-inset-bottom))] tablet:hidden"
+        data-collapsed={penActive || undefined}
+        className={cx(
+          "fixed inset-x-0 bottom-0 z-20 px-3 pt-2 pb-[max(12px,env(safe-area-inset-bottom))] tablet:hidden",
+          "transition-transform duration-(--duration-sheet) ease-out",
+          // While the pen is down the tab bar slides away; keyboard focus inside brings it back.
+          penActive && "translate-y-[calc(100%+8px)] focus-within:translate-y-0",
+        )}
       >
         <nav
           aria-label="Tabs"

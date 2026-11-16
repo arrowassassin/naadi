@@ -1,5 +1,5 @@
 import type { Page, TestInfo } from "@playwright/test";
-import { authStatePath } from "./auth-users";
+import { authStatePath, emailFor, storedAccessToken } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
@@ -134,6 +134,11 @@ test.describe("signed in as a student", () => {
   test("offline keeps the shell and the last profile", async ({ page, context, consoleErrors }, info) => {
     await page.goto("/");
     await expect(page.locator("[data-state=populated]")).toBeVisible();
+    // The banner uses a font face the page has not needed yet; fetch it while online, as a returning
+    // visitor's HTTP cache would already have it.
+    await page.evaluate(() =>
+      Promise.all([...document.fonts].filter((f) => f.family.includes("JetBrains")).map((f) => f.load())),
+    );
     await context.setOffline(true);
     const banner = page.getByRole("status").filter({ hasText: "Offline" });
     await expect(banner).toContainText("Showing what was loaded last");
@@ -149,7 +154,7 @@ test.describe("signed in as a student", () => {
     await expect(page.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
     await page.reload();
     await expect(page).toHaveURL(/\/settings\/account$/);
-    await expect(page.getByRole("heading", { name: "naadi-e2e-student@example.com" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: emailFor("student") })).toBeVisible();
   });
 
   test("Account settings", async ({ page, consoleErrors }, info) => {
@@ -184,8 +189,8 @@ test.describe("signed in as a student", () => {
       const insets = await page.evaluate(() => {
         const s = getComputedStyle(document.documentElement);
         return {
-          top: Number.parseFloat(s.getPropertyValue("--shell-top-inset")),
-          bottom: Number.parseFloat(s.getPropertyValue("--shell-bottom-inset")),
+          top: Number.parseFloat(s.getPropertyValue("--shell-top")),
+          bottom: Number.parseFloat(s.getPropertyValue("--shell-bottom")),
         };
       });
       if (width < 640) {
@@ -211,21 +216,11 @@ test.describe("signed in as a student", () => {
   });
 });
 
-test.describe("signed in as an admin", () => {
-  test.use({ storageState: authStatePath("admin") });
-
-  test("admin flag and admin route", async ({ page }) => {
-    await page.goto("/settings/account");
-    await expect(page.getByText("Admin", { exact: true })).toBeVisible();
-    const res = await page.request.get("/api/admin/overview", { headers: { authorization: await bearer(page) } });
-    expect(res.status()).toBe(200);
-    const body = await res.json();
-    expect(body.admins_configured).toBeGreaterThanOrEqual(1);
-    expect(body.profiles).toBeGreaterThanOrEqual(1);
-  });
+test.describe("signed in as an editor", () => {
+  test.use({ storageState: authStatePath("editor") });
 
   test("saving a display name updates the greeting", async ({ page, consoleErrors }, info) => {
-    const name = `Admin ${info.project.name}`.slice(0, 60);
+    const name = `Editor ${info.project.name}`.slice(0, 60);
     await page.goto("/settings/account");
     const field = page.getByRole("textbox", { name: "Display name" });
     await field.fill(name);
@@ -238,5 +233,32 @@ test.describe("signed in as an admin", () => {
       : page.getByRole("link", { name: "Naadi, Today" })
     ).click();
     await expect(page.getByRole("heading", { level: 1 })).toContainText(name);
+  });
+});
+
+/**
+ * Admin, checked through the API only (no page renders the account): locally a throwaway admin, live the
+ * owner's own account, about which only booleans and counts are asserted.
+ */
+test.describe("admin", () => {
+  test("is an admin and passes the server-side admin gate", async ({ request }) => {
+    const authorization = `Bearer ${storedAccessToken("admin")}`;
+    const me = await request.get("/api/me", { headers: { authorization } });
+    expect(me.status()).toBe(200);
+    expect((await me.json()).is_admin).toBe(true);
+    const res = await request.get("/api/admin/overview", { headers: { authorization } });
+    expect(res.status()).toBe(200);
+    const body = await res.json();
+    expect(body.admins_configured).toBeGreaterThanOrEqual(1);
+    expect(body.profiles).toBeGreaterThanOrEqual(1);
+  });
+
+  test("the admin UI marker shows only for admins", async ({ browser, baseURL }) => {
+    test.skip(Boolean(process.env.E2E_BASE_URL), "never render the owner's account page in a test");
+    const ctx = await browser.newContext({ baseURL, storageState: authStatePath("admin") });
+    const page = await ctx.newPage();
+    await page.goto("/settings/account");
+    await expect(page.getByText("Admin", { exact: true })).toBeVisible();
+    await ctx.close();
   });
 });
