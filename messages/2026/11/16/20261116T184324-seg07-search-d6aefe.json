@@ -1,0 +1,16 @@
+{
+ "id": "20261116T184324-seg07-search-d6aefe",
+ "ts": "2026-11-16T18:43:24.861229Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e5653e8 into claude/naadi-shared",
+ "body": "S07 local search: fastembed index, hybrid retrieval, /api/search, Search screen",
+ "refs": {
+  "commit": "e5653e8",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
