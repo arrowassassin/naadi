@@ -5,7 +5,15 @@ import { useEffect, useRef, useState } from "react";
 import type { ContentEnv } from "./types";
 
 /** Shown when a node points at media the caller cannot see or the server cannot serve. Never silent. */
-export function MediaUnavailable({ what, mediaId, env }: { what: string; mediaId: string | null; env: ContentEnv }) {
+export function MediaUnavailable({
+  message,
+  mediaId,
+  env,
+}: {
+  message: string;
+  mediaId: string | null;
+  env: ContentEnv;
+}) {
   return (
     <div
       data-node="media-unavailable"
@@ -13,7 +21,7 @@ export function MediaUnavailable({ what, mediaId, env }: { what: string; mediaId
     >
       <ImageOff aria-hidden="true" size={18} className="shrink-0" />
       <span>
-        {what} is not available right now.
+        {message}
         {env.mode === "dev" && mediaId ? <span className="ml-1 font-mono text-label-sm">({mediaId})</span> : null}
       </span>
     </div>
@@ -54,7 +62,13 @@ export function Figure({ mediaId, env }: { mediaId: string | null; env: ContentE
   }, [open]);
 
   if (!m?.url || (m.kind !== "svg" && m.kind !== "image")) {
-    return <MediaUnavailable what="This figure" mediaId={mediaId} env={env} />;
+    return (
+      <MediaUnavailable
+        message={env.text("content.figure_missing", "This figure is not available right now.")}
+        mediaId={mediaId}
+        env={env}
+      />
+    );
   }
   const alt = m.caption ?? m.title ?? "Figure";
   // Intrinsic size reserves the box before the lazy image loads (a restored scroll position must not jump).
@@ -143,7 +157,14 @@ export function Video({
 }) {
   const m = mediaId ? env.media[mediaId] : undefined;
   const [loaded, setLoaded] = useState(false);
-  if (!m) return <MediaUnavailable what="This video" mediaId={mediaId} env={env} />;
+  if (!m)
+    return (
+      <MediaUnavailable
+        message={env.text("content.video_missing", "This video is not available right now.")}
+        mediaId={mediaId}
+        env={env}
+      />
+    );
   const title = m.title ?? m.caption ?? "Video";
   const len = duration(m.duration_s);
 
@@ -198,12 +219,25 @@ export function Video({
       </figure>
     );
   }
-  return <MediaUnavailable what="This video" mediaId={mediaId} env={env} />;
+  return (
+    <MediaUnavailable
+      message={env.text("content.video_missing", "This video is not available right now.")}
+      mediaId={mediaId}
+      env={env}
+    />
+  );
 }
 
 export function PdfLink({ mediaId, page, env }: { mediaId: string | null; page: number | null; env: ContentEnv }) {
   const m = mediaId ? env.media[mediaId] : undefined;
-  if (!m?.url || m.kind !== "pdf") return <MediaUnavailable what="This PDF" mediaId={mediaId} env={env} />;
+  if (!m?.url || m.kind !== "pdf")
+    return (
+      <MediaUnavailable
+        message={env.text("content.pdf_missing", "This PDF is not available right now.")}
+        mediaId={mediaId}
+        env={env}
+      />
+    );
   const href = page ? `${m.url}#page=${page}` : m.url;
   const label = m.title ?? m.caption ?? "PDF document";
   return (

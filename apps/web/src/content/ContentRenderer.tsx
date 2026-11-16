@@ -9,6 +9,7 @@ import {
   type ContentEnv,
   type ContentMark,
   type ContentNode,
+  type CopyLookup,
   int,
   isNode,
   type RenderMode,
@@ -35,6 +36,8 @@ export interface ContentRendererProps {
   mode?: RenderMode;
   headingBase?: 2 | 3;
   onUnknown?: (u: UnknownContent) => void;
+  /** Editable UI strings (app_config.ui_copy); built-in wording is used for keys it does not have. */
+  copy?: CopyLookup;
   className?: string;
 }
 
@@ -317,10 +320,14 @@ export function ContentRenderer({
   mode = import.meta.env.DEV ? "dev" : "prod",
   headingBase = 2,
   onUnknown,
+  copy,
   className,
 }: ContentRendererProps) {
   const unknownRef = useRef(onUnknown);
   unknownRef.current = onUnknown;
+  // The lookup function changes identity every render; read it through a ref so the walk is not redone.
+  const copyRef = useRef(copy);
+  copyRef.current = copy;
   const blocks = useMemo(() => {
     const unknown: UnknownContent[] = [];
     if (!isNode(doc) || doc.type !== "doc") {
@@ -335,6 +342,7 @@ export function ContentRenderer({
       minHeading: minHeadingLevel(doc),
       onUnknown: (u) => unknown.push(u),
       embedOrigin: typeof window === "undefined" ? "" : window.location.origin,
+      text: (key, fallback) => copyRef.current?.(key) ?? fallback,
     };
     const w = new Walker(env);
     const nodes = (doc.content ?? []).map((c, i) => (

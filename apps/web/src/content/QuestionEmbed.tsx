@@ -9,7 +9,14 @@ import type { ContentEnv } from "./types";
  */
 export function QuestionEmbed({ questionId, env }: { questionId: string | null; env: ContentEnv }) {
   const q = questionId ? env.questions[questionId] : undefined;
-  if (!q) return <MediaUnavailable what="This practice question" mediaId={questionId} env={env} />;
+  if (!q)
+    return (
+      <MediaUnavailable
+        message={env.text("content.question_missing", "This practice question is not available right now.")}
+        mediaId={questionId}
+        env={env}
+      />
+    );
   return (
     <section
       data-node="question-embed"

@@ -2,6 +2,7 @@ import type { ReportIssueIn } from "@naadi/shared";
 import { Button, ErrorState } from "@naadi/ui";
 import { CheckCircle2 } from "lucide-react";
 import { useEffect, useId, useState } from "react";
+import { useUiCopy } from "../agent/uiCopy";
 import { ApiError } from "../auth/apiError";
 import { useReportIssue } from "./api";
 import { Sheet } from "./Sheet";
@@ -22,6 +23,7 @@ export function ReportIssueDialog({
   what: string;
 }) {
   const report = useReportIssue();
+  const copy = useUiCopy();
   const [body, setBody] = useState("");
   const fieldId = useId();
   const hintId = useId();
@@ -36,12 +38,12 @@ export function ReportIssueDialog({
 
   const text = body.trim();
   return (
-    <Sheet open={open} onClose={onClose} title="Report an issue">
+    <Sheet open={open} onClose={onClose} title={copy("content.report_issue") ?? "Report an issue"}>
       {report.isSuccess ? (
         <div role="status" className="flex flex-col items-start gap-4 pb-2">
           <p className="m-0 flex items-center gap-2 text-text">
             <CheckCircle2 aria-hidden="true" size={20} />
-            Thanks. Your report about {what} was sent.
+            {copy("content.report_issue_sent", { what }) ?? `Thanks. Your report about ${what} was sent.`}
           </p>
           <Button variant="secondary" onClick={onClose}>
             Close
@@ -56,7 +58,7 @@ export function ReportIssueDialog({
           }}
         >
           <label htmlFor={fieldId} className="font-semibold">
-            What is wrong with {what}?
+            {copy("content.report_issue_question", { what }) ?? `What is wrong with ${what}?`}
           </label>
           <textarea
             id={fieldId}
@@ -68,7 +70,8 @@ export function ReportIssueDialog({
             className="min-h-32 w-full resize-y rounded-block border border-line-control bg-surface-2 p-3 text-[1rem] text-text"
           />
           <span id={hintId} className="text-text-3 text-ui-sm">
-            A typo, a wrong fact, a figure that does not load… {body.length} / {MAX}
+            {copy("content.report_issue_hint") ?? "A typo, a wrong fact, a figure that does not load…"} {body.length} /{" "}
+            {MAX}
           </span>
           {report.isError ? (
             <ErrorState
@@ -79,7 +82,7 @@ export function ReportIssueDialog({
           ) : null}
           <div className="flex flex-wrap gap-2">
             <Button type="submit" variant="strong" disabled={!text || report.isPending}>
-              {report.isPending ? "Sending…" : "Send report"}
+              {report.isPending ? "Sending…" : (copy("content.report_issue_send") ?? "Send report")}
             </Button>
             <Button variant="secondary" onClick={onClose}>
               Cancel

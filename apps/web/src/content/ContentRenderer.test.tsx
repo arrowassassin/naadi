@@ -186,6 +186,18 @@ describe("ContentRenderer", () => {
     expect(screen.getByText("This figure is not available right now.")).toBeInTheDocument();
   });
 
+  it("unavailable-media wording comes from app_config.ui_copy when it is set", () => {
+    render(
+      <ContentRenderer
+        sectionId="s1"
+        mode="prod"
+        copy={(key) => (key === "content.figure_missing" ? "Figure on its way back." : null)}
+        doc={doc({ type: "figure", attrs: { mediaId: "gone" } })}
+      />,
+    );
+    expect(screen.getByText("Figure on its way back.")).toBeInTheDocument();
+  });
+
   it("YouTube is a click-to-load facade, then the privacy-enhanced IFrame with origin and referrer policy", () => {
     const { container } = render(
       <ContentRenderer

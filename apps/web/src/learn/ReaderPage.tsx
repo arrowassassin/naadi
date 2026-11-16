@@ -3,6 +3,7 @@ import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Flag, ListOrdered } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useUiCopy } from "../agent/uiCopy";
 import { ApiError } from "../auth/apiError";
 import { ContentRenderer } from "../content/ContentRenderer";
 import type { UnknownContent } from "../content/types";
@@ -113,6 +114,7 @@ function Reader({
   positionsLoaded: boolean;
 }) {
   const navigate = useNavigate();
+  const copy = useUiCopy();
   const index = detail.sections.findIndex((s) => s.id === sectionId);
   const section = index >= 0 ? detail.sections[index] : undefined;
   const prev = index > 0 ? detail.sections[index - 1] : undefined;
@@ -275,6 +277,7 @@ function Reader({
                 media={detail.media}
                 questions={detail.questions}
                 onUnknown={logUnknown}
+                copy={copy}
               />
             </div>
           ) : (
@@ -283,14 +286,16 @@ function Reader({
         </div>
         <div ref={endRef} aria-hidden="true" className="h-px" />
         <div className="mx-auto flex w-full max-w-[46rem] flex-wrap items-center justify-between gap-3 border-line-soft border-t pt-5">
-          <span className="text-text-3 text-ui-sm">Something wrong or unclear in this section?</span>
+          <span className="text-text-3 text-ui-sm">
+            {copy("content.report_issue_prompt") ?? "Something wrong or unclear in this section?"}
+          </span>
           <Button
             variant="secondary"
             icon={<Flag size={16} />}
             onClick={() => setReportOpen(true)}
             aria-haspopup="dialog"
           >
-            Report an issue
+            {copy("content.report_issue") ?? "Report an issue"}
           </Button>
         </div>
       </article>

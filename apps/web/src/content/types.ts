@@ -66,7 +66,12 @@ export interface ContentEnv {
   onUnknown?: (u: UnknownContent) => void;
   /** The origin YouTube embeds must declare (window.location.origin in the browser). */
   embedOrigin: string;
+  /** An editable UI string (app_config.ui_copy), or the built-in wording while it loads or is not set. */
+  text: (key: string, fallback: string) => string;
 }
+
+/** Look up `app_config.ui_copy` strings; returns null when the key is not configured (see agent/uiCopy.ts). */
+export type CopyLookup = (key: string, vars?: Record<string, string>) => string | null;
 
 export function isNode(v: unknown): v is ContentNode {
   return typeof v === "object" && v !== null && typeof (v as { type?: unknown }).type === "string";
