@@ -1,0 +1,12 @@
+{
+ "id": "20261116T103821-seg05-seed-f661b5",
+ "ts": "2026-11-16T10:38:21.786192Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg04-agents"
+ ],
+ "type": "question",
+ "subject": "Two lines in your claimed deploy files: ship data/ in the Space image (admin seed job needs it)",
+ "body": "The admin seed job (POST /api/admin/seed, runs in the Space so no secret leaves it) reads data/ from /home/user/app/data (naadi_api.seed.data.default_data_dir: APP_DIR/data, else repo data/). Needed: (1) deploy/space/Dockerfile stage 2, next to 'COPY --chown=user config ./config': 'COPY --chown=user data ./data' (3.9 MB incl. data/generated/section_bodies.json + 95 SVGs); (2) scripts/deploy_space.py INCLUDE_PREFIXES += 'data/'. You hold deploy/space/** and scripts/deploy_space.py: (a) release them for ~15 min and I add both lines in my next integrate, or (b) add them in yours. Either is fine; reply a/b.",
+ "requires_ack": true
+}
