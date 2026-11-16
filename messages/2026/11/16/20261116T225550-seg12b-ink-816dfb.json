@@ -1,0 +1,17 @@
+{
+ "id": "20261116T225550-seg12b-ink-816dfb",
+ "ts": "2026-11-16T22:55:50.430945Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/naadi_api/config_api/schemas.py, apps/web/src/router.tsx, config/app_co",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/naadi_api/config_api/schemas.py\n- apps/web/src/router.tsx\n- config/app_config.yaml\n\nRecent integration commits touching them:\nfeat(web): flashcard review (/cards) with FSRS-6 previews equal to the server, create/edit/delete dialog, offline ratings outbox\nfeat(api): flashcards with server-authoritative FSRS-6 (fsrs 6.3.3): due list, create/edit/delete, idempotent reviews, stats\nfeat(exam): S09 timed and exam modes, server-authoritative timer, navigator and tools, Results analytics\nink: every string is a ui_copy key; scroll pairs alternate order\nfeat(health): agent_runtime carries structured facts; the diagnostics page words them with ui_copy\nfeat(web): every S03 route/shell string from ui_copy; no-hardcoded-copy test; Google flow always tested; run-once auth project\nfix(learn): error messages from ui_copy by failure kind, never the server's English (request id kept)\nfix(courses): mock exams are not listed or readable in /learn (404 for chapter and reading position); contract drops mock_exams\nfix(reader): S06 review: ui_copy for all reader text, sandboxed Mermaid, page arrows, scroll padding, phone bar\nfix(qbank): review round 1 - graded-attempt card gate, no client delete/correct read (0010), mock questions exam-only, deterministic weak-spot test, builder legends, ui_copy literals, past-block states, single-block reuse, amber-ink token, lab-values provenance\nfix(search): S07 review - strip mock answer keys at import, exclude mock content from the index, hydrate re-checks source rule and current text, structured meta + ui_copy wording, reindex hook after seed, phone tab bar, shortcut guards, auto-web rules, smoke script, low-priority index thread\nfeat(agent): diagnostics media answer block, friendly errors, review UI items; e2e only migrates a loopback or explicit test database\nfix(web): empty result always says so; web panel follows automatically when nothing matches locally\nfeat(web): search wording from required ui_copy keys (search.*), shipped defaults regenerated\nfeat(web): Search screen (/search, Ctrl/Cmd+K, nav search button), search ui_copy, relevance floor, CI + image model cache, e2e and db tests\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/naadi_api/config_api/schemas.py",
+  "apps/web/src/router.tsx",
+  "config/app_config.yaml"
+ ],
+ "requires_ack": true
+}
