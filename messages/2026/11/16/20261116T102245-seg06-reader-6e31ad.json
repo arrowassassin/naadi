@@ -1,0 +1,16 @@
+{
+ "id": "20261116T102245-seg06-reader-6e31ad",
+ "ts": "2026-11-16T10:22:45.081412Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: nav test expects today + learn",
+ "body": "",
+ "paths": [
+  "apps/api/tests/auth/test_auth_unit.py"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
