@@ -135,30 +135,32 @@ def print_logs(space: str, build: bool) -> None:
     subprocess.run(cmd, check=False, timeout=60)  # noqa: S603 - fixed argv, resolved binary
 
 
+BUILD_STAGES = {"BUILDING", "RUNNING_BUILDING", "APP_STARTING", "RUNNING_APP_STARTING"}
+
+
 def wait_running(api: HfApi, space: str, commit: str, timeout_s: int) -> None:
+    """Wait until *our* commit is RUNNING. A failure stage only counts once it belongs to our commit (the
+    runtime reports its sha) or a build has started since the upload: right after the upload the runtime
+    can still show the previous state (e.g. NO_APP_FILE on a fresh Space)."""
     start = time.monotonic()
-    seen_transition = False
+    seen_build = False
     last = ""
     while time.monotonic() - start < timeout_s:
         rt = api.get_space_runtime(space)
         raw = rt.raw or {}
         stage = str(rt.stage)
         sha = raw.get("sha")
+        ours = bool(sha) and sha == commit
         if stage != last:
             print(f"  runtime: {stage} (hardware {rt.hardware or '-'} requested {rt.requested_hardware or '-'})")
             last = stage
-        if stage != "RUNNING":
-            seen_transition = True
-        if stage in FAIL_STAGES and (seen_transition or time.monotonic() - start > 60):
+        if stage in BUILD_STAGES:
+            seen_build = True
+        if stage in FAIL_STAGES and (ours or seen_build):
             print_logs(space, build=stage in {"BUILD_ERROR", "CONFIG_ERROR"})
             die(f"Space stage {stage}")
-        if stage == "RUNNING":
-            if sha and sha == commit:
-                return
-            if not sha and seen_transition:
-                return
-            if not sha and time.monotonic() - start > 120:
-                return
+        if stage == "RUNNING" and (ours or (not sha and seen_build)):
+            return
         time.sleep(10)
     print_logs(space, build=True)
     die(f"timed out after {timeout_s}s waiting for RUNNING (last stage {last})")
