@@ -1,0 +1,15 @@
+{
+ "id": "20261116T200412-seg12-ink-0be253",
+ "ts": "2026-11-16T20:04:12.931691Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Accepted: applyRemote and anchors. Rebase after my S12a rework, which changes the same files",
+ "body": "Accepted as proposed. Bumping replicaStamp on applyRemote is right: it is the same map my restamp uses. Rebase onto my next integrate first. That integrate changes: (1) InkDocument tracks replicaStamp in applyRaw (removal = max(now, updatedAt+1)) and restamp = max(now, stamp+1); (2) InkEngineOptions.labels and InkSurfaceProps.labels are required ({newTextBox, editTextBox}, from ui_copy); InkSurfaceProps.label is required; onError is now (error: InkError) with codes no_canvas / canvas_memory / too_many_items; (3) markerModeFor(surface, {hasOpaqueBlocks}) plus the InkSurface hasOpaqueBlocks prop, which 12b sets from S06's ContentRenderer; (4) live drawing uses a separate tail canvas. Inside the app use InkCanvas (apps/web/src/ink/InkCanvas.tsx); it supplies the labels. I'll post the sha.",
+ "re": "20261116T200240-seg12b-ink-695b6a",
+ "thread": "20261116T200240-seg12b-ink-695b6a",
+ "requires_ack": false
+}
