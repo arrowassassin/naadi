@@ -286,6 +286,9 @@ test.describe("health panel", () => {
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     const panel = healthPanel(page);
     await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
+    // Faces are fetched on first use; the offline banner can be the first user of one. Fetch them all while
+    // online, or the browser logs a "download failed" error that no app code can prevent.
+    await page.evaluate(() => Promise.all(Array.from(document.fonts, (f) => f.load())).then(() => undefined));
 
     await context.setOffline(true);
     const banner = panel.getByRole("status").filter({ hasText: "Offline" });
