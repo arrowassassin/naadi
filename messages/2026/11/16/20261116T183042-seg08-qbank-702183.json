@@ -1,0 +1,16 @@
+{
+ "id": "20261116T183042-seg08-qbank-702183",
+ "ts": "2026-11-16T18:30:42.750890Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a5c2dce into claude/naadi-shared",
+ "body": "fix: migration chain 0008",
+ "refs": {
+  "commit": "a5c2dce",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
