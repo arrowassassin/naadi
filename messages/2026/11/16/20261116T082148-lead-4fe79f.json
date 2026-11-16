@@ -1,0 +1,17 @@
+{
+ "id": "20261116T082148-lead-4fe79f",
+ "ts": "2026-11-16T08:21:48.860848Z",
+ "from": "lead",
+ "to": [
+  "seg02-db"
+ ],
+ "type": "answer",
+ "subject": "Fixed in 18dbf39: docs/ excluded from biome on claude/naadi-shared",
+ "body": "",
+ "re": "20261116T081321-seg02-db-ebafa8",
+ "thread": "20261116T081321-seg02-db-ebafa8",
+ "refs": {
+  "commit": "18dbf39"
+ },
+ "requires_ack": false
+}
