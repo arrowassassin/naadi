@@ -22,6 +22,7 @@ budget:
   on_cap_reached: degrade          # answer from course retrieval only + "AI quota resets at 00:00 UTC"
   pdf_engine: cloudflare-ai        # ALWAYS set; the default (mistral-ocr) is paid ($2/1k pages)
   only_free_ids_in_chains: true    # a paid model in a fallback chain is billed at the paid price
+  rate_wait_s: 3                   # when every provider's rpm bucket is empty, wait at most this long for a token
 
 # Providers (2026-11-16 live tests through LangGraph: streaming, tool-calling agent, structured output, image input).
 # NVIDIA API catalog lists 143 chat models but only 4 answer (others 410 retired / 404): its own Nemotrons + Meta muse-glimmer.
@@ -31,12 +32,16 @@ providers:
   nvidia:
     sdk: langchain-nvidia-ai-endpoints==1.5.0   # ChatNVIDIA
     key_env: NVIDIA_API_KEY
-    rpm: 35                       # verify the account limit in segment 04; token bucket per provider
+    rpm: 35                       # token bucket per provider (the account allows 40/min)
+    daily_cap: 2000               # our own guard; counted from llm_usage (provider = nvidia), reset 00:00 UTC
+    timeout_s: 60
     probe_before_use: true        # catalog lists retired models: check_models must call each one
   openrouter:
     sdk: langchain-openrouter==0.2.9            # ChatOpenRouter (+ openrouter SDK for key/model metadata)
     key_env: OPENROUTER_API_KEY
     rpm: 18
+    daily_cap: null               # null = budget.daily_request_cap and OPENROUTER_DAILY_CAP (the lower wins)
+    timeout_s: 60
     only_free_ids: true           # every id ends with :free, or the free router openrouter/free
 
 # Each role is an ordered chain of {provider, model}; llm.py walks it on 429/5xx/timeout/410,
@@ -105,6 +110,18 @@ search:
   never_call: [research, crawl, map]
   include_domains: [usmle.org, ecfmg.org, intealth.org, nrmp.org, aamc.org, ncbi.nlm.nih.gov, cdc.gov,
                     uspreventiveservicestaskforce.org, fda.gov, who.int, travel.state.gov, uscis.gov]
+  # Layered search (naadi_api/search.py): cheapest / most authoritative first; every result keeps source, licence, link.
+  # rps = our own per-source rate limit; ttl_hours = cache lifetime in search_cache; max_results per layer.
+  layers:
+    pubmed:          {enabled: true, ttl_hours: 168, rps: 3, max_results: 5}    # Bio.Entrez, tool=naadi, no email
+    europepmc:       {enabled: true, ttl_hours: 168, rps: 5, max_results: 5}
+    medlineplus:     {enabled: true, ttl_hours: 720, rps: 2, max_results: 3}
+    openfda:         {enabled: true, ttl_hours: 168, rps: 2, max_results: 3}
+    clinicaltrials:  {enabled: true, ttl_hours: 72,  rps: 2, max_results: 3}
+    tavily:          {enabled: true, ttl_hours: 168, rps: 1, max_results: 5}    # guarded: per-user cap + monthly stop
+    searxng:         {enabled: false, ttl_hours: 24, rps: 1, max_results: 5, base_url: "http://127.0.0.1:8888"}
+    commons_images:  {enabled: true, ttl_hours: 720, rps: 2, max_results: 4}
+    youtube_oembed:  {enabled: true, ttl_hours: 720, rps: 2, max_results: 1}
 
 # Upgrade path (paid, only if quality or quotas demand it) — swap per role, nothing else changes:
 #   tutor: anthropic/claude-sonnet-5.5 ($2/$10) · vision/long: google/gemini-3.8-flash · author: anthropic/claude-opus-5.5
