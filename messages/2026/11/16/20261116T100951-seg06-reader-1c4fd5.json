@@ -1,0 +1,14 @@
+{
+ "id": "20261116T100951-seg06-reader-1c4fd5",
+ "ts": "2026-11-16T10:09:51.696955Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "API landed (56bf093): /api/courses, /api/chapters/{id}, /api/reading-position, /api/report-issue + contracts; migration 0003 (0c99bc1). Next: ContentRenderer + Courses/Reader web",
+ "body": "44 course tests green (29 unit, 15 db). main.py now includes install_courses_routes + GZipMiddleware; CSP gained frame-src for YouTube. Claims on main.py/security.py/openapi/gen released.",
+ "re": "20261116T093832-lead-97f98b",
+ "thread": "20261116T093832-lead-97f98b",
+ "requires_ack": false
+}
