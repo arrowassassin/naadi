@@ -29,6 +29,10 @@ from naadi_api.agent.identity import RunIdentityError, run_identity
 from naadi_api.agent.runtime import agent_db
 from naadi_api.llm import LLMUnavailable, get_gateway
 from naadi_api.llm_budget import BudgetExhausted
+from naadi_api.logs import get_logger
+from naadi_api.search import SearchResult, get_search
+
+log = get_logger("naadi.agent.ping")
 
 Trigger = Literal["interactive", "background", "cron"]
 PING_SYSTEM = "You are the health probe of a study app. Answer in one short sentence."
@@ -84,6 +88,52 @@ async def ask(state: PingState, config: RunnableConfig) -> dict[str, Any]:
     }
 
 
+async def _media_items() -> list[dict[str, Any]]:
+    """The answer-block media of the self-test: a Wikimedia Commons image, a PMC open-access figure and a
+    YouTube video, from `search.probe` in app_config (served from search_cache when cached). Each item keeps
+    its title, author/citation, licence and source link. Lookups that fail are left out (never fail the ping)."""
+    search = get_search()
+    probe = (await get_gateway().config()).search.model_extra or {}
+    spec = probe.get("probe") or {}
+    items: list[dict[str, Any]] = []
+
+    def image(r: SearchResult) -> dict[str, Any]:
+        return {
+            "kind": "image",
+            "source": r.source,
+            "title": r.title,
+            "image_url": r.meta.get("image_url"),
+            "link": r.url,
+            "license": r.license,
+            "credit": r.citation,
+            "width": r.meta.get("width"),
+            "height": r.meta.get("height"),
+        }
+
+    try:
+        if spec.get("images_query"):
+            items += [image(r) for r in (await search.commons_images(str(spec["images_query"])))[:1]]
+        if spec.get("pmcid"):
+            items += [image(r) for r in (await search.pmc_figures(str(spec["pmcid"]), limit=1))[:1]]
+        if spec.get("video_url"):
+            v = await search.youtube(str(spec["video_url"]))
+            if v is not None:
+                items.append(
+                    {
+                        "kind": "video",
+                        "source": v.source,
+                        "title": v.title,
+                        "video_id": v.meta.get("video_id"),
+                        "link": v.url,
+                        "license": v.license,
+                        "credit": v.citation,
+                    }
+                )
+    except Exception as exc:  # noqa: BLE001 - media is decoration for the self-test; the ping still completes
+        log.warning("ping.media_failed", error=type(exc).__name__)
+    return items
+
+
 async def report(state: PingState) -> dict[str, Any]:
     writer = get_stream_writer()
     if state.get("outcome") == "budget_exhausted":
@@ -98,24 +148,29 @@ async def report(state: PingState) -> dict[str, Any]:
             {
                 "type": "block",
                 "block": {
-                    "type": "table",
+                    "type": "ping_result",
                     "data": {
-                        "columns": ["Check", "Result"],
-                        "rows": [
-                            ["Outcome", state.get("outcome") or "unknown"],
-                            ["Provider", state.get("provider") or "—"],
-                            ["Model", state.get("model") or "—"],
-                            ["Latency (ms)", str(state.get("latency_ms") or "—")],
-                        ],
+                        "outcome": state.get("outcome") or "unavailable",
+                        "provider": state.get("provider"),
+                        "model": state.get("model"),
+                        "latency_ms": state.get("latency_ms"),
                     },
                 },
             }
         )
+    if _trigger(state) == "interactive":
+        items = await _media_items()
+        if items:
+            writer({"type": "block", "block": {"type": "media", "data": {"items": items}}})
     return {}
 
 
 def route_after_report(state: PingState) -> str:
-    return "confirm" if _trigger(state) == "interactive" else "record"
+    if _trigger(state) != "interactive":
+        return "record"
+    # A spent budget ends the run with nothing pending (the panel shows when the quota resets); an answer or
+    # an unavailable provider is a health reading the admin may record.
+    return "end" if state.get("outcome") == "budget_exhausted" else "confirm"
 
 
 async def confirm(state: PingState) -> dict[str, Any]:
@@ -151,7 +206,7 @@ def build() -> StateGraph[PingState]:
     g.add_node("record", record)
     g.add_edge(START, "ask")
     g.add_edge("ask", "report")
-    g.add_conditional_edges("report", route_after_report, {"confirm": "confirm", "record": "record"})
+    g.add_conditional_edges("report", route_after_report, {"confirm": "confirm", "record": "record", "end": END})
     g.add_edge("confirm", "record")
     g.add_edge("record", END)
     return g

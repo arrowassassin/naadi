@@ -97,6 +97,12 @@ async function frozenCopy(page: Page): Promise<{ frozen: Page; close: () => Prom
     )) {
       n.remove();
     }
+    // Third-party embeds (the YouTube IFrame player) keep their element, so the frame itself is audited
+    // (title, size), but not their document: it is not ours to fix and would load and run in the copy.
+    for (const f of root.querySelectorAll("iframe[src]")) {
+      const src = f.getAttribute("src") ?? "";
+      if (new URL(src, location.href).origin !== location.origin) f.setAttribute("src", "about:blank");
+    }
     const style = document.createElement("style");
     style.textContent = css.join("\n");
     root.querySelector("head")?.append(style);

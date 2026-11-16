@@ -180,13 +180,13 @@ def test_pmc_figures_only_for_open_cc_by_articles() -> None:
 
 
 def test_youtube_ids_and_oembed() -> None:
-    assert youtube_id("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=10") == "dQw4w9WgXcQ"
-    assert youtube_id("https://youtu.be/dQw4w9WgXcQ") == "dQw4w9WgXcQ"
-    assert youtube_id("https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ") == "dQw4w9WgXcQ"
-    assert youtube_id("https://evil.example/watch?v=dQw4w9WgXcQ") is None
+    assert youtube_id("https://www.youtube.com/watch?v=czY5nyvZ7cU&t=10") == "czY5nyvZ7cU"
+    assert youtube_id("https://youtu.be/czY5nyvZ7cU") == "czY5nyvZ7cU"
+    assert youtube_id("https://www.youtube-nocookie.com/embed/czY5nyvZ7cU") == "czY5nyvZ7cU"
+    assert youtube_id("https://evil.example/watch?v=czY5nyvZ7cU") is None
     assert youtube_id("https://www.youtube.com/watch?v=bad") is None
-    r = parse_youtube_oembed(load("youtube_oembed.json"), "dQw4w9WgXcQ")
-    assert r.kind == "video" and r.meta["embed_url"] == "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+    r = parse_youtube_oembed(load("youtube_oembed.json"), "czY5nyvZ7cU")
+    assert r.kind == "video" and r.meta["embed_url"] == "https://www.youtube-nocookie.com/embed/czY5nyvZ7cU"
 
 
 @pytest.mark.parametrize(

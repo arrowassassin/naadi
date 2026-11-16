@@ -4,6 +4,7 @@ import { existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
+import { e2eDatabaseUrl } from "./e2e/databaseUrl";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "../..");
@@ -128,7 +129,9 @@ if (!liveBaseUrl) {
  */
 function webServers(): PlaywrightTestConfig["webServer"] {
   const api = path.join(repoRoot, "apps/api");
-  const dbUrl = process.env.E2E_DATABASE_URL ?? process.env.DATABASE_URL;
+  const dbUrl = e2eDatabaseUrl(process.env);
+  // Workers and specs (agent.spec, auth-users) read the same variable, so they use the vetted URL too.
+  if (dbUrl) process.env.E2E_DATABASE_URL = dbUrl;
   const env = (extra: Record<string, string> = {}) => ({
     NAADI_STATIC_DIR: path.join(here, "dist"),
     APP_ENV: "local",

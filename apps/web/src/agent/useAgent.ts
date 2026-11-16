@@ -1,5 +1,5 @@
 import { useStream } from "@langchain/langgraph-sdk/react";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 
@@ -13,7 +13,10 @@ import { useOnlineStatus } from "../health/useOnlineStatus";
  * - `streaming` → `interrupted` (a write waits for the student's confirm) → `idle`;
  * - `budget_exhausted`: a graph reported that the AI quota is spent (custom `notice` block with the reset
  *   time); the surface shows when it resets;
- * - `error`: the run failed or the runtime could not be reached.
+ * - `error`: the run failed or the runtime could not be reached (`error.status` + `error.requestId` let the
+ *   surface explain it without showing raw response text).
+ *
+ * Every `start` begins a new thread, so a surface shows only the latest run.
  */
 export type AgentPhase = "idle" | "streaming" | "interrupted" | "budget_exhausted" | "error" | "offline" | "exam_mode";
 
@@ -31,6 +34,12 @@ export interface BudgetNotice {
   resetAt: Date;
 }
 
+/** A failed run: the HTTP status when the runtime answered (null for a network failure) and its request id. */
+export interface AgentError {
+  status: number | null;
+  requestId: string | null;
+}
+
 interface CustomEvent {
   type?: string;
   block?: AgentBlock;
@@ -39,6 +48,13 @@ interface CustomEvent {
 function isCustomEvent(v: unknown): v is CustomEvent {
   return typeof v === "object" && v !== null;
 }
+
+function statusOf(err: unknown): number | null {
+  const s = typeof err === "object" && err !== null ? (err as { status?: unknown }).status : undefined;
+  return typeof s === "number" ? s : null;
+}
+
+const STREAM_MODE = ["messages-tuple", "custom", "updates", "values"] as const;
 
 export interface UseAgentOptions {
   assistantId: string;
@@ -51,14 +67,32 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
   const token = auth.status === "signed-in" ? auth.session.access_token : null;
   const [blocks, setBlocks] = useState<ReceivedBlock[]>([]);
   const [budget, setBudget] = useState<BudgetNotice | null>(null);
-  const [runError, setRunError] = useState<string | null>(null);
+  const [runError, setRunError] = useState<AgentError | null>(null);
   const [threadId, setThreadId] = useState<string | null>(null);
+  // The request id of the runtime's latest answer (both our middleware and Aegra's echo X-Request-ID).
+  const lastRequestId = useRef<string | null>(null);
 
   const headers = useMemo(() => (token ? { authorization: `Bearer ${token}` } : undefined), [token]);
+  const callerOptions = useMemo(
+    () => ({
+      fetch: async (input: RequestInfo | URL, init?: RequestInit) => {
+        const res = await fetch(input, init);
+        lastRequestId.current = res.headers.get("x-request-id");
+        return res;
+      },
+    }),
+    [],
+  );
+  const fail = useCallback((err: unknown) => {
+    setRunError({ status: statusOf(err), requestId: lastRequestId.current });
+  }, []);
+
   const stream = useStream<State>({
     apiUrl: window.location.origin,
+    apiKey: null,
     assistantId,
     defaultHeaders: headers,
+    callerOptions,
     threadId,
     onThreadId: setThreadId,
     fetchStateHistory: false,
@@ -75,7 +109,7 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
       }
       setBlocks((prev) => [...prev, { ...block, id: prev.length + 1 }]);
     },
-    onError: (err: unknown) => setRunError(err instanceof Error ? err.message : "The agent run failed."),
+    onError: fail,
   });
 
   // A failed submit (network, 401, 5xx) becomes the `error` state; it must not surface as an unhandled
@@ -85,10 +119,10 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
       try {
         await stream.submit(...args);
       } catch (err) {
-        setRunError(err instanceof Error ? err.message : "The agent run failed.");
+        fail(err);
       }
     },
-    [stream],
+    [stream, fail],
   );
 
   const start = useCallback(
@@ -97,31 +131,20 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
       setBlocks([]);
       setBudget(null);
       setRunError(null);
-      await submitSafely(input as Parameters<typeof stream.submit>[0], {
-        streamMode: ["messages-tuple", "custom", "updates", "values"],
-      });
+      stream.switchThread(null); // a new run starts a new thread: the surface shows only the latest run
+      await submitSafely(input as Parameters<typeof stream.submit>[0], { streamMode: [...STREAM_MODE] });
     },
-    [examMode, online, submitSafely],
+    [examMode, online, stream, submitSafely],
   );
 
   const resume = useCallback(
     async (value: unknown) => {
       if (!online) return;
       setRunError(null);
-      await submitSafely(null, {
-        command: { resume: value },
-        streamMode: ["messages-tuple", "custom", "updates", "values"],
-      });
+      await submitSafely(null, { command: { resume: value }, streamMode: [...STREAM_MODE] });
     },
     [online, submitSafely],
   );
-
-  const reset = useCallback(() => {
-    setThreadId(null);
-    setBlocks([]);
-    setBudget(null);
-    setRunError(null);
-  }, []);
 
   let phase: AgentPhase;
   if (examMode) phase = "exam_mode";
@@ -142,15 +165,12 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
     text,
     blocks,
     budget,
-    error:
-      runError ??
-      (stream.error instanceof Error ? stream.error.message : stream.error ? "The agent run failed." : null),
+    error: runError ?? (stream.error ? { status: statusOf(stream.error), requestId: lastRequestId.current } : null),
     interrupt: stream.interrupt?.value as Record<string, unknown> | undefined,
     values: stream.values,
     threadId,
     start,
     resume,
     stop: stream.stop,
-    reset,
   };
 }

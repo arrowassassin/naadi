@@ -112,6 +112,12 @@ search:
   never_call: [research, crawl, map]
   include_domains: [usmle.org, ecfmg.org, intealth.org, nrmp.org, aamc.org, ncbi.nlm.nih.gov, cdc.gov,
                     uspreventiveservicestaskforce.org, fda.gov, who.int, travel.state.gov, uscis.gov]
+  # Media the agent runtime self-test (ping graph) renders in its answer block: one Commons image, one PMC
+  # open-access figure (CC BY), one YouTube video (embed). Cached in search_cache like any search.
+  probe:
+    images_query: "nephron diagram"
+    pmcid: PMC13730868
+    video_url: "https://www.youtube.com/watch?v=czY5nyvZ7cU"
   # Layered search (naadi_api/search.py): cheapest / most authoritative first; every result keeps source, licence, link.
   # rps = our own per-source rate limit; ttl_hours = cache lifetime in search_cache; max_results per layer.
   layers:

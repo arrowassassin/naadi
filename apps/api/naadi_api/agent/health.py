@@ -146,7 +146,8 @@ async def runtime_status(db: Database | None) -> RuntimeStatus:
         )
     return RuntimeStatus(
         "ok",
-        f"{len(graphs)} graphs, crons firing (last ping {last.isoformat(timespec='minutes')})",
+        f"{len(graphs)} graph{'' if len(graphs) == 1 else 's'}, crons firing"
+        f" (last ping {last.isoformat(timespec='minutes')})",
         graphs,
         checks,
         last,
