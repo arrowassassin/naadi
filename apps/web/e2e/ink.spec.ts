@@ -644,7 +644,7 @@ test.describe("ink lab", () => {
     page,
     consoleErrors,
   }, info) => {
-    test.setTimeout(240_000);
+    test.setTimeout(360_000);
     await openLab(page);
     await page.getByRole("button", { name: "Build 5,000-stroke page" }).click();
     await expect(page.getByTestId("stress-count")).toHaveText("5,000 items");
@@ -659,16 +659,35 @@ test.describe("ink lab", () => {
     await expect(page.getByRole("button", { name: "Measure scroll", exact: true })).toBeVisible({ timeout: 20_000 });
     expect(Number(await page.getByTestId("scroll-result").getAttribute("data-fps"))).toBeGreaterThan(0);
     // The gate: five rounds, each one continuous scroll across the stress page (down, then back up) in which
-    // the ink layers are shown and hidden in alternating 250 ms slices. Each frame counts for the state it
-    // was drawn in, and the first frame after each switch is left out (it repaints for the switch, not for
-    // the scroll). Both states are measured within a quarter of a second of each other, so a neighbour's load
-    // on a shared runner, which swings over seconds, hits them alike; separate 3 s runs per state could not
-    // tell that load from the ink. A round's ratio is ink-shown fps over ink-hidden fps, and the rounds are
-    // judged by their median.
+    // the ink layers are shown and hidden in alternating slices. Each frame counts for the state it was drawn
+    // in, and the first frame after each switch is left out (it repaints for the switch, not for the scroll).
+    // Both states are measured within a fraction of a second of each other, so a neighbour's load on a shared
+    // runner, which swings over seconds, hits them alike; separate 3 s runs per state could not tell that
+    // load from the ink. A slice is 250 ms, or eight frames where this runner draws fewer than 32 fps, so every
+    // slice keeps frames after the one it leaves out. A round's ratio is ink-shown fps over ink-hidden fps;
+    // the rounds are judged by their median, and a round with fewer than 12 counted frames in either state
+    // is repeated (at most five extra rounds).
+    const frameMs = await page.evaluate(
+      () =>
+        new Promise<number>((resolve) => {
+          const deltas: number[] = [];
+          let prev = -1;
+          const step = (ts: number) => {
+            if (prev >= 0) deltas.push(ts - prev);
+            prev = ts;
+            window.scrollBy(0, 4);
+            if (deltas.length < 30) requestAnimationFrame(step);
+            else resolve([...deltas].sort((a, b) => a - b)[15] as number);
+          };
+          requestAnimationFrame(step);
+        }),
+    );
+    const sliceMs = Math.min(2000, Math.max(250, frameMs * 8));
+    const durationMs = Math.max(6000, sliceMs * 16);
     const round = () =>
       page.evaluate(
         ({ sliceMs, durationMs }) =>
-          new Promise<{ ink: number; base: number }>((resolve) => {
+          new Promise<{ ink: number; base: number; frames: { ink: number; base: number } }>((resolve) => {
             const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
             const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
             if (!surface) throw new Error("stress surface missing");
@@ -716,16 +735,19 @@ test.describe("ink lab", () => {
               }
               show(true);
               const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
-              resolve({ ink: fps("ink"), base: fps("base") });
+              resolve({ ink: fps("ink"), base: fps("base"), frames });
             };
             requestAnimationFrame(step);
           }),
-        { sliceMs: 250, durationMs: 6000 },
+        { sliceMs, durationMs },
       );
     const ink: number[] = [];
     const base: number[] = [];
-    for (let i = 0; i < 5; i++) {
+    let rounds = 0;
+    while (ink.length < 5 && rounds < 10) {
+      rounds++;
       const r = await round();
+      if (r.frames.ink < 12 || r.frames.base < 12) continue;
       ink.push(r.ink);
       base.push(r.base);
     }
@@ -740,7 +762,19 @@ test.describe("ink lab", () => {
         [...document.querySelectorAll<HTMLElement>(sel)].filter((el) => getComputedStyle(el).display !== "none").length;
       return { canvases: shown("[data-ink-layer] canvas"), images: shown("[data-ink-layer] img") };
     });
-    record(info, "scroll-fps", { withInk: ink, inkHidden: base, ratios, medianRatio: ratio, medInk, medBase, layers });
+    record(info, "scroll-fps", {
+      withInk: ink,
+      inkHidden: base,
+      ratios,
+      medianRatio: ratio,
+      medInk,
+      medBase,
+      frameMs,
+      sliceMs,
+      rounds,
+      layers,
+    });
+    expect(ink.length, `rounds with at least 12 frames per state (slice ${sliceMs} ms, ${rounds} rounds)`).toBe(5);
     expect(layers.canvases, "settled ink is not left on canvases").toBe(0);
     // The ink may cost at most 30 % of what this runner scrolls at with the ink hidden. (Software rendering on
     // shared CI runners is below 60 fps on large viewports even without ink; the device number is measured

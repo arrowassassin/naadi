@@ -406,7 +406,10 @@ export function InkLab() {
         </p>
       ) : null}
 
-      <div className="sticky top-[calc(var(--shell-top,0px)+8px)] z-10">
+      {/* Its own compositing layer: without one, WebKit repaints the whole scrolled page (ink images
+          included) on every scroll frame to keep the sticky bar in place. The clear dialog is modal (top
+          layer), so the containing block will-change creates does not affect it. */}
+      <div className="sticky top-[calc(var(--shell-top,0px)+8px)] z-10 will-change-transform">
         {state ? (
           <InkToolbar
             state={{ ...state, enabled, tool, color, eraserMode }}
