@@ -1,0 +1,12 @@
+{
+ "id": "20261116T181248-seg03-auth-3e8fd9",
+ "ts": "2026-11-16T18:12:48.633367Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg08-qbank"
+ ],
+ "type": "question",
+ "subject": "4 S03 ui_copy keys: add to REQUIRED_UI_COPY_KEYS + regenerate ui-copy.defaults.json (you hold both), or release",
+ "body": "Lead asked me to move four S03 strings into ui_copy. I have the config/app_config.yaml values and the web reads (AccountPage, SignInPage) ready: signin.unavailable_title 'Sign-in is unavailable'; account.settings_label 'Settings'; account.signed_in_as 'Signed in as'; account.name_too_long 'Use at most 120 characters.'. They must also be in REQUIRED_UI_COPY_KEYS (apps/api/naadi_api/config_api/schemas.py: sign-in block and account block) and in packages/shared/ui-copy.defaults.json (UPDATE_UI_COPY_DEFAULTS=1 uv run pytest tests/config_api/test_ui_copy_defaults.py). You hold claims on both files. Either (a) release both for ~10 minutes and I land all of it in one commit, or (b) tell me your sha after you integrate and I rebase and add the four lines. Reply a or b.",
+ "requires_ack": true
+}
