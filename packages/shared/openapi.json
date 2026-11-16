@@ -29,6 +29,36 @@
         "title": "AdminOverview",
         "type": "object"
       },
+      "BlockRules": {
+        "additionalProperties": false,
+        "properties": {
+          "default_questions": {
+            "maximum": 80.0,
+            "minimum": 1.0,
+            "title": "Default Questions",
+            "type": "integer"
+          },
+          "max_questions": {
+            "maximum": 80.0,
+            "minimum": 1.0,
+            "title": "Max Questions",
+            "type": "integer"
+          },
+          "min_questions": {
+            "maximum": 40.0,
+            "minimum": 1.0,
+            "title": "Min Questions",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "min_questions",
+          "max_questions",
+          "default_questions"
+        ],
+        "title": "BlockRules",
+        "type": "object"
+      },
       "ChapterDetail": {
         "properties": {
           "chapter_count": {
@@ -338,6 +368,267 @@
           "cached"
         ],
         "title": "ComponentHealth",
+        "type": "object"
+      },
+      "ConfigEntry": {
+        "properties": {
+          "invalid_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Invalid Reason"
+          },
+          "json_schema": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "description": "JSON Schema of the value (for the admin editor)",
+            "title": "Json Schema",
+            "type": "object"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Send back as expected_updated_at when saving",
+            "title": "Updated At"
+          },
+          "updated_by": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated By"
+          },
+          "value": {
+            "$ref": "#/components/schemas/JsonValue"
+          }
+        },
+        "required": [
+          "key",
+          "value",
+          "source",
+          "updated_at",
+          "updated_by",
+          "invalid_reason",
+          "json_schema"
+        ],
+        "title": "ConfigEntry",
+        "type": "object"
+      },
+      "ConfigHistory": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ConfigHistoryItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "items"
+        ],
+        "title": "ConfigHistory",
+        "type": "object"
+      },
+      "ConfigHistoryItem": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "op": {
+            "title": "Op",
+            "type": "string"
+          },
+          "replaced_at": {
+            "format": "date-time",
+            "title": "Replaced At",
+            "type": "string"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          },
+          "updated_by": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated By"
+          },
+          "value": {
+            "$ref": "#/components/schemas/JsonValue"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "updated_by",
+          "updated_at",
+          "op",
+          "replaced_at"
+        ],
+        "title": "ConfigHistoryItem",
+        "type": "object"
+      },
+      "ConfigKeyList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ConfigKeySummary"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "ConfigKeyList",
+        "type": "object"
+      },
+      "ConfigKeySummary": {
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "invalid_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Invalid Reason"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "public": {
+            "description": "Served to clients by GET /api/config/public",
+            "title": "Public",
+            "type": "boolean"
+          },
+          "source": {
+            "description": "'db' when a valid row exists, else 'file' (config/*.yaml fallback)",
+            "title": "Source",
+            "type": "string"
+          },
+          "source_file": {
+            "title": "Source File",
+            "type": "string"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          },
+          "updated_by": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated By"
+          }
+        },
+        "required": [
+          "key",
+          "description",
+          "public",
+          "source",
+          "source_file",
+          "updated_at",
+          "updated_by",
+          "invalid_reason"
+        ],
+        "title": "ConfigKeySummary",
+        "type": "object"
+      },
+      "ConfigUpdate": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "updated_at of the row you edited (null if it had no row); a mismatch is a 409",
+            "title": "Expected Updated At"
+          },
+          "value": {
+            "$ref": "#/components/schemas/JsonValue"
+          }
+        },
+        "required": [
+          "value",
+          "expected_updated_at"
+        ],
+        "title": "ConfigUpdate",
         "type": "object"
       },
       "CourseChapter": {
@@ -670,6 +961,64 @@
         "title": "ErrorResponse",
         "type": "object"
       },
+      "ExamFormat": {
+        "additionalProperties": false,
+        "properties": {
+          "blocks": {
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "Blocks",
+            "type": "integer"
+          },
+          "label": {
+            "maxLength": 40,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "minutes_per_block": {
+            "maximum": 240.0,
+            "minimum": 1.0,
+            "title": "Minutes Per Block",
+            "type": "integer"
+          },
+          "questions_per_block": {
+            "maximum": 80.0,
+            "minimum": 1.0,
+            "title": "Questions Per Block",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "label",
+          "blocks",
+          "questions_per_block",
+          "minutes_per_block"
+        ],
+        "title": "ExamFormat",
+        "type": "object"
+      },
+      "ExamModes": {
+        "additionalProperties": false,
+        "properties": {
+          "exam": {
+            "$ref": "#/components/schemas/ModeRules"
+          },
+          "timed": {
+            "$ref": "#/components/schemas/ModeRules"
+          },
+          "tutor": {
+            "$ref": "#/components/schemas/ModeRules"
+          }
+        },
+        "required": [
+          "tutor",
+          "timed",
+          "exam"
+        ],
+        "title": "ExamModes",
+        "type": "object"
+      },
       "ExamOption": {
         "properties": {
           "chapter_count": {
@@ -691,6 +1040,45 @@
           "chapter_count"
         ],
         "title": "ExamOption",
+        "type": "object"
+      },
+      "ExamRules": {
+        "additionalProperties": false,
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockRules"
+          },
+          "diagnostic_questions": {
+            "maximum": 80.0,
+            "minimum": 1.0,
+            "title": "Diagnostic Questions",
+            "type": "integer"
+          },
+          "exams": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ExamFormat"
+            },
+            "propertyNames": {
+              "enum": [
+                "step1",
+                "step2ck",
+                "step3"
+              ]
+            },
+            "title": "Exams",
+            "type": "object"
+          },
+          "modes": {
+            "$ref": "#/components/schemas/ExamModes"
+          }
+        },
+        "required": [
+          "block",
+          "diagnostic_questions",
+          "exams",
+          "modes"
+        ],
+        "title": "ExamRules",
         "type": "object"
       },
       "FieldError": {
@@ -810,6 +1198,7 @@
         "title": "HealthResponse",
         "type": "object"
       },
+      "JsonValue": {},
       "MeFeatures": {
         "properties": {
           "assistant": {
@@ -1133,6 +1522,48 @@
         "title": "MockExam",
         "type": "object"
       },
+      "ModeRules": {
+        "additionalProperties": false,
+        "properties": {
+          "assistant": {
+            "title": "Assistant",
+            "type": "boolean"
+          },
+          "explanations": {
+            "enum": [
+              "after_each_question",
+              "after_block"
+            ],
+            "title": "Explanations",
+            "type": "string"
+          },
+          "seconds_per_question": {
+            "anyOf": [
+              {
+                "maximum": 600.0,
+                "minimum": 10.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seconds Per Question"
+          },
+          "timed": {
+            "title": "Timed",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "timed",
+          "seconds_per_question",
+          "explanations",
+          "assistant"
+        ],
+        "title": "ModeRules",
+        "type": "object"
+      },
       "ModelProbe": {
         "description": "One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).",
         "properties": {
@@ -1179,6 +1610,50 @@
           "detail"
         ],
         "title": "ModelProbe",
+        "type": "object"
+      },
+      "NavEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "feature": {
+            "description": "Feature flag that must be on for the item to show",
+            "pattern": "^[a-z][a-z0-9_]{0,47}$",
+            "title": "Feature",
+            "type": "string"
+          },
+          "icon": {
+            "description": "Icon name from the web app's icon set",
+            "pattern": "^[a-z0-9-]{1,40}$",
+            "title": "Icon",
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^[a-z][a-z0-9_-]{0,31}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 40,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "path": {
+            "description": "In-app route path",
+            "maxLength": 80,
+            "pattern": "^/[a-z0-9/_-]*$",
+            "title": "Path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "path",
+          "icon",
+          "feature"
+        ],
+        "title": "NavEntry",
         "type": "object"
       },
       "NavFeatures": {
@@ -1399,6 +1874,46 @@
           "updated_at"
         ],
         "title": "Profile",
+        "type": "object"
+      },
+      "PublicAppConfig": {
+        "description": "What every client needs before and after sign-in. Never models, budgets, search or storage settings.",
+        "properties": {
+          "exam_rules": {
+            "$ref": "#/components/schemas/ExamRules"
+          },
+          "features": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Feature flags resolved for a signed-out visitor",
+            "title": "Features",
+            "type": "object"
+          },
+          "nav": {
+            "description": "Navigation items whose feature flag is on, in display order",
+            "items": {
+              "$ref": "#/components/schemas/NavEntry"
+            },
+            "title": "Nav",
+            "type": "array"
+          },
+          "ui_copy": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Editable UI strings; {name} marks a placeholder",
+            "title": "Ui Copy",
+            "type": "object"
+          }
+        },
+        "required": [
+          "features",
+          "nav",
+          "exam_rules",
+          "ui_copy"
+        ],
+        "title": "PublicAppConfig",
         "type": "object"
       },
       "PublicConfig": {
@@ -1810,6 +2325,151 @@
         "title": "SectionOut",
         "type": "object"
       },
+      "SeedRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "dry_run": {
+            "default": true,
+            "description": "Write nothing; report what a run would change",
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "force": {
+            "default": false,
+            "description": "Also overwrite admin-edited sections and app_config keys",
+            "title": "Force",
+            "type": "boolean"
+          },
+          "only": {
+            "items": {
+              "enum": [
+                "sources",
+                "taxonomy",
+                "figures",
+                "chapters",
+                "questions",
+                "pathway",
+                "plan",
+                "app_config"
+              ],
+              "type": "string"
+            },
+            "minItems": 1,
+            "title": "Only",
+            "type": "array"
+          }
+        },
+        "title": "SeedRequest",
+        "type": "object"
+      },
+      "SeedRun": {
+        "properties": {
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "options": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Options",
+            "type": "object"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/JsonValue"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The verification report (counts, checks)",
+            "title": "Report"
+          },
+          "started_at": {
+            "format": "date-time",
+            "title": "Started At",
+            "type": "string"
+          },
+          "started_by": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started By"
+          },
+          "status": {
+            "enum": [
+              "running",
+              "succeeded",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "options",
+          "started_by",
+          "started_at",
+          "finished_at",
+          "error",
+          "report"
+        ],
+        "title": "SeedRun",
+        "type": "object"
+      },
+      "SeedRunList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SeedRun"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "SeedRunList",
+        "type": "object"
+      },
       "SystemRef": {
         "properties": {
           "id": {
@@ -1876,6 +2536,392 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/admin/config": {
+      "get": {
+        "operationId": "listAppConfig",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigKeyList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unknown config key"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: every app_config key with its source and last change",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/config/{key}": {
+      "get": {
+        "operationId": "getAppConfig",
+        "parameters": [
+          {
+            "description": "app_config key, e.g. feature_flags",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "description": "app_config key, e.g. feature_flags",
+              "pattern": "^[a-z][a-z0-9_.]{1,47}$",
+              "title": "Key",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigEntry"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unknown config key"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: one app_config value with its JSON Schema",
+        "tags": [
+          "admin"
+        ]
+      },
+      "put": {
+        "operationId": "putAppConfig",
+        "parameters": [
+          {
+            "description": "app_config key, e.g. feature_flags",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "description": "app_config key, e.g. feature_flags",
+              "pattern": "^[a-z][a-z0-9_.]{1,47}$",
+              "title": "Key",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigEntry"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unknown config key"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The value changed since you read it"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The value is not valid for this key"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: replace one app_config value (validated; the old value goes to history)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/config/{key}/history": {
+      "get": {
+        "operationId": "getAppConfigHistory",
+        "parameters": [
+          {
+            "description": "app_config key, e.g. feature_flags",
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "description": "app_config key, e.g. feature_flags",
+              "pattern": "^[a-z][a-z0-9_.]{1,47}$",
+              "title": "Key",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigHistory"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unknown config key"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: previous values of one app_config key, newest first",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
     "/api/admin/overview": {
       "get": {
         "operationId": "getAdminOverview",
@@ -1932,6 +2978,221 @@
           }
         },
         "summary": "Admin only: environment, version, number of admins configured and of profiles",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/seed": {
+      "post": {
+        "operationId": "startSeed",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeedRun"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "A seed job is already running"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: start a seed import job in the background (dry run by default)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/seed/runs": {
+      "get": {
+        "operationId": "listSeedRuns",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeedRunList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: the latest seed jobs, newest first",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/seed/runs/{run_id}": {
+      "get": {
+        "operationId": "getSeedRun",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "run_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Run Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeedRun"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "No such run"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: one seed job with its report",
         "tags": [
           "admin"
         ]
@@ -2020,6 +3281,27 @@
         "summary": "A chapter with its ordered sections (TipTap JSON), resolved media and embedded questions",
         "tags": [
           "courses"
+        ]
+      }
+    },
+    "/api/config/public": {
+      "get": {
+        "operationId": "getPublicAppConfig",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicAppConfig"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Runtime client config (no auth): feature flags, navigation, exam rules, UI copy",
+        "tags": [
+          "config"
         ]
       }
     },

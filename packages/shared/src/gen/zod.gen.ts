@@ -13,6 +13,15 @@ export const zAdminOverview = z.object({
 });
 
 /**
+ * BlockRules
+ */
+export const zBlockRules = z.object({
+  default_questions: z.int().gte(1).lte(80),
+  max_questions: z.int().gte(1).lte(80),
+  min_questions: z.int().gte(1).lte(40),
+});
+
+/**
  * ChapterLink
  */
 export const zChapterLink = z.object({
@@ -29,6 +38,27 @@ export const zChapterProgress = z.object({
   sections_read: z.int(),
   sections_total: z.int(),
   status: z.enum(["not_started", "in_progress", "done"]),
+});
+
+/**
+ * ConfigKeySummary
+ */
+export const zConfigKeySummary = z.object({
+  description: z.string(),
+  invalid_reason: z.string().nullable(),
+  key: z.string(),
+  public: z.boolean(),
+  source: z.string(),
+  source_file: z.string(),
+  updated_at: z.iso.datetime().nullable(),
+  updated_by: z.uuid().nullable(),
+});
+
+/**
+ * ConfigKeyList
+ */
+export const zConfigKeyList = z.object({
+  items: z.array(zConfigKeySummary),
 });
 
 /**
@@ -74,6 +104,16 @@ export const zCourseSystem = z.object({
 });
 
 /**
+ * ExamFormat
+ */
+export const zExamFormat = z.object({
+  blocks: z.int().gte(1).lte(12),
+  label: z.string().min(1).max(40),
+  minutes_per_block: z.int().gte(1).lte(240),
+  questions_per_block: z.int().gte(1).lte(80),
+});
+
+/**
  * ExamOption
  */
 export const zExamOption = z.object({
@@ -106,6 +146,49 @@ export const zErrorBody = z.object({
  */
 export const zErrorResponse = z.object({
   error: zErrorBody,
+});
+
+export const zJsonValue = z.unknown();
+
+/**
+ * ConfigEntry
+ */
+export const zConfigEntry = z.object({
+  invalid_reason: z.string().nullable(),
+  json_schema: z.record(z.string(), zJsonValue),
+  key: z.string(),
+  source: z.string(),
+  updated_at: z.iso.datetime().nullable(),
+  updated_by: z.uuid().nullable(),
+  value: zJsonValue,
+});
+
+/**
+ * ConfigHistoryItem
+ */
+export const zConfigHistoryItem = z.object({
+  id: z.int(),
+  op: z.string(),
+  replaced_at: z.iso.datetime(),
+  updated_at: z.iso.datetime().nullable(),
+  updated_by: z.uuid().nullable(),
+  value: zJsonValue,
+});
+
+/**
+ * ConfigHistory
+ */
+export const zConfigHistory = z.object({
+  items: z.array(zConfigHistoryItem),
+  key: z.string(),
+});
+
+/**
+ * ConfigUpdate
+ */
+export const zConfigUpdate = z.object({
+  expected_updated_at: z.iso.datetime().nullable(),
+  value: zJsonValue,
 });
 
 /**
@@ -167,6 +250,35 @@ export const zMockExam = z.object({
 });
 
 /**
+ * ModeRules
+ */
+export const zModeRules = z.object({
+  assistant: z.boolean(),
+  explanations: z.enum(["after_each_question", "after_block"]),
+  seconds_per_question: z.int().gte(10).lte(600).nullable(),
+  timed: z.boolean(),
+});
+
+/**
+ * ExamModes
+ */
+export const zExamModes = z.object({
+  exam: zModeRules,
+  timed: zModeRules,
+  tutor: zModeRules,
+});
+
+/**
+ * ExamRules
+ */
+export const zExamRules = z.object({
+  block: zBlockRules,
+  diagnostic_questions: z.int().gte(1).lte(80),
+  exams: z.record(z.string(), zExamFormat),
+  modes: zExamModes,
+});
+
+/**
  * ModelProbe
  *
  * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
@@ -177,6 +289,20 @@ export const zModelProbe = z.object({
   model: z.string().max(120),
   ok: z.boolean(),
   provider: z.enum(["nvidia", "openrouter"]),
+});
+
+/**
+ * NavEntry
+ */
+export const zNavEntry = z.object({
+  feature: z.string().regex(/^[a-z][a-z0-9_]{0,47}$/),
+  icon: z.string().regex(/^[a-z0-9-]{1,40}$/),
+  id: z.string().regex(/^[a-z][a-z0-9_-]{0,31}$/),
+  label: z.string().min(1).max(40),
+  path: z
+    .string()
+    .max(80)
+    .regex(/^\/[a-z0-9\/_-]*$/),
 });
 
 /**
@@ -259,6 +385,18 @@ export const zMeResponse = z.object({
   features: zMeFeatures,
   is_admin: z.boolean(),
   profile: zProfile,
+});
+
+/**
+ * PublicAppConfig
+ *
+ * What every client needs before and after sign-in. Never models, budgets, search or storage settings.
+ */
+export const zPublicAppConfig = z.object({
+  exam_rules: zExamRules,
+  features: z.record(z.string(), z.boolean()),
+  nav: z.array(zNavEntry),
+  ui_copy: z.record(z.string(), z.string()),
 });
 
 /**
@@ -430,6 +568,39 @@ export const zSectionOut = z.object({
 });
 
 /**
+ * SeedRequest
+ */
+export const zSeedRequest = z.object({
+  dry_run: z.boolean().optional().default(true),
+  force: z.boolean().optional().default(false),
+  only: z
+    .array(z.enum(["sources", "taxonomy", "figures", "chapters", "questions", "pathway", "plan", "app_config"]))
+    .min(1)
+    .optional(),
+});
+
+/**
+ * SeedRun
+ */
+export const zSeedRun = z.object({
+  error: z.string().nullable(),
+  finished_at: z.iso.datetime().nullable(),
+  id: z.uuid(),
+  options: z.record(z.string(), zJsonValue),
+  report: z.record(z.string(), zJsonValue).nullable(),
+  started_at: z.iso.datetime(),
+  started_by: z.uuid().nullable(),
+  status: z.enum(["running", "succeeded", "failed"]),
+});
+
+/**
+ * SeedRunList
+ */
+export const zSeedRunList = z.object({
+  items: z.array(zSeedRun),
+});
+
+/**
  * SystemRef
  */
 export const zSystemRef = z.object({
@@ -477,7 +648,66 @@ export const zHttpValidationError = z.object({
 /**
  * Successful Response
  */
+export const zListAppConfigResponse = zConfigKeyList;
+
+export const zGetAppConfigPath = z.object({
+  key: z.string().regex(/^[a-z][a-z0-9_.]{1,47}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAppConfigResponse = zConfigEntry;
+
+export const zPutAppConfigBody = zConfigUpdate;
+
+export const zPutAppConfigPath = z.object({
+  key: z.string().regex(/^[a-z][a-z0-9_.]{1,47}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPutAppConfigResponse = zConfigEntry;
+
+export const zGetAppConfigHistoryPath = z.object({
+  key: z.string().regex(/^[a-z][a-z0-9_.]{1,47}$/),
+});
+
+export const zGetAppConfigHistoryQuery = z.object({
+  limit: z.int().gte(1).lte(200).optional().default(50),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAppConfigHistoryResponse = zConfigHistory;
+
+/**
+ * Successful Response
+ */
 export const zGetAdminOverviewResponse = zAdminOverview;
+
+export const zStartSeedBody = zSeedRequest;
+
+/**
+ * Successful Response
+ */
+export const zStartSeedResponse = zSeedRun;
+
+/**
+ * Successful Response
+ */
+export const zListSeedRunsResponse = zSeedRunList;
+
+export const zGetSeedRunPath = z.object({
+  run_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetSeedRunResponse = zSeedRun;
 
 export const zGetChapterPath = z.object({
   chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
@@ -487,6 +717,11 @@ export const zGetChapterPath = z.object({
  * Successful Response
  */
 export const zGetChapterResponse = zChapterDetail;
+
+/**
+ * Successful Response
+ */
+export const zGetPublicAppConfigResponse = zPublicAppConfig;
 
 export const zGetCoursesQuery = z.object({
   exam: z

@@ -27,6 +27,24 @@ export type AdminOverview = {
 };
 
 /**
+ * BlockRules
+ */
+export type BlockRules = {
+  /**
+   * Default Questions
+   */
+  default_questions: number;
+  /**
+   * Max Questions
+   */
+  max_questions: number;
+  /**
+   * Min Questions
+   */
+  min_questions: number;
+};
+
+/**
  * ChapterDetail
  */
 export type ChapterDetail = {
@@ -195,6 +213,149 @@ export type ComponentHealth = {
    * Status
    */
   status: "ok" | "degraded" | "down";
+};
+
+/**
+ * ConfigEntry
+ */
+export type ConfigEntry = {
+  /**
+   * Invalid Reason
+   */
+  invalid_reason: string | null;
+  /**
+   * Json Schema
+   *
+   * JSON Schema of the value (for the admin editor)
+   */
+  json_schema: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Key
+   */
+  key: string;
+  /**
+   * Source
+   */
+  source: string;
+  /**
+   * Updated At
+   *
+   * Send back as expected_updated_at when saving
+   */
+  updated_at: string | null;
+  /**
+   * Updated By
+   */
+  updated_by: string | null;
+  value: JsonValue;
+};
+
+/**
+ * ConfigHistory
+ */
+export type ConfigHistory = {
+  /**
+   * Items
+   */
+  items: Array<ConfigHistoryItem>;
+  /**
+   * Key
+   */
+  key: string;
+};
+
+/**
+ * ConfigHistoryItem
+ */
+export type ConfigHistoryItem = {
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Op
+   */
+  op: string;
+  /**
+   * Replaced At
+   */
+  replaced_at: string;
+  /**
+   * Updated At
+   */
+  updated_at: string | null;
+  /**
+   * Updated By
+   */
+  updated_by: string | null;
+  value: JsonValue;
+};
+
+/**
+ * ConfigKeyList
+ */
+export type ConfigKeyList = {
+  /**
+   * Items
+   */
+  items: Array<ConfigKeySummary>;
+};
+
+/**
+ * ConfigKeySummary
+ */
+export type ConfigKeySummary = {
+  /**
+   * Description
+   */
+  description: string;
+  /**
+   * Invalid Reason
+   */
+  invalid_reason: string | null;
+  /**
+   * Key
+   */
+  key: string;
+  /**
+   * Public
+   *
+   * Served to clients by GET /api/config/public
+   */
+  public: boolean;
+  /**
+   * Source
+   *
+   * 'db' when a valid row exists, else 'file' (config*.yaml fallback)
+   */
+  source: string;
+  /**
+   * Source File
+   */
+  source_file: string;
+  /**
+   * Updated At
+   */
+  updated_at: string | null;
+  /**
+   * Updated By
+   */
+  updated_by: string | null;
+};
+
+/**
+ * ConfigUpdate
+ */
+export type ConfigUpdate = {
+  /**
+   * Expected Updated At
+   *
+   * updated_at of the row you edited (null if it had no row); a mismatch is a 409
+   */
+  expected_updated_at: string | null;
+  value: JsonValue;
 };
 
 /**
@@ -399,6 +560,37 @@ export type ErrorResponse = {
 };
 
 /**
+ * ExamFormat
+ */
+export type ExamFormat = {
+  /**
+   * Blocks
+   */
+  blocks: number;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Minutes Per Block
+   */
+  minutes_per_block: number;
+  /**
+   * Questions Per Block
+   */
+  questions_per_block: number;
+};
+
+/**
+ * ExamModes
+ */
+export type ExamModes = {
+  exam: ModeRules;
+  timed: ModeRules;
+  tutor: ModeRules;
+};
+
+/**
  * ExamOption
  */
 export type ExamOption = {
@@ -414,6 +606,24 @@ export type ExamOption = {
    * Label
    */
   label: string;
+};
+
+/**
+ * ExamRules
+ */
+export type ExamRules = {
+  block: BlockRules;
+  /**
+   * Diagnostic Questions
+   */
+  diagnostic_questions: number;
+  /**
+   * Exams
+   */
+  exams: {
+    [key: string]: ExamFormat;
+  };
+  modes: ExamModes;
 };
 
 /**
@@ -477,6 +687,8 @@ export type HealthResponse = {
    */
   version: string;
 };
+
+export type JsonValue = unknown;
 
 /**
  * MeFeatures
@@ -638,6 +850,28 @@ export type MockExam = {
 };
 
 /**
+ * ModeRules
+ */
+export type ModeRules = {
+  /**
+   * Assistant
+   */
+  assistant: boolean;
+  /**
+   * Explanations
+   */
+  explanations: "after_each_question" | "after_block";
+  /**
+   * Seconds Per Question
+   */
+  seconds_per_question: number | null;
+  /**
+   * Timed
+   */
+  timed: boolean;
+};
+
+/**
  * ModelProbe
  *
  * One configured model's liveness, from a one-token call (NVIDIA lists retired models in its catalog).
@@ -665,6 +899,38 @@ export type ModelProbe = {
    * Provider
    */
   provider: "nvidia" | "openrouter";
+};
+
+/**
+ * NavEntry
+ */
+export type NavEntry = {
+  /**
+   * Feature
+   *
+   * Feature flag that must be on for the item to show
+   */
+  feature: string;
+  /**
+   * Icon
+   *
+   * Icon name from the web app's icon set
+   */
+  icon: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Path
+   *
+   * In-app route path
+   */
+  path: string;
 };
 
 /**
@@ -808,6 +1074,37 @@ export type Profile = {
    * User Id
    */
   user_id: string;
+};
+
+/**
+ * PublicAppConfig
+ *
+ * What every client needs before and after sign-in. Never models, budgets, search or storage settings.
+ */
+export type PublicAppConfig = {
+  exam_rules: ExamRules;
+  /**
+   * Features
+   *
+   * Feature flags resolved for a signed-out visitor
+   */
+  features: {
+    [key: string]: boolean;
+  };
+  /**
+   * Nav
+   *
+   * Navigation items whose feature flag is on, in display order
+   */
+  nav: Array<NavEntry>;
+  /**
+   * Ui Copy
+   *
+   * Editable UI strings; {name} marks a placeholder
+   */
+  ui_copy: {
+    [key: string]: string;
+  };
 };
 
 /**
@@ -1072,6 +1369,82 @@ export type SectionOut = {
 };
 
 /**
+ * SeedRequest
+ */
+export type SeedRequest = {
+  /**
+   * Dry Run
+   *
+   * Write nothing; report what a run would change
+   */
+  dry_run?: boolean;
+  /**
+   * Force
+   *
+   * Also overwrite admin-edited sections and app_config keys
+   */
+  force?: boolean;
+  /**
+   * Only
+   */
+  only?: Array<"sources" | "taxonomy" | "figures" | "chapters" | "questions" | "pathway" | "plan" | "app_config">;
+};
+
+/**
+ * SeedRun
+ */
+export type SeedRun = {
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Finished At
+   */
+  finished_at: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Options
+   */
+  options: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Report
+   *
+   * The verification report (counts, checks)
+   */
+  report: {
+    [key: string]: JsonValue;
+  } | null;
+  /**
+   * Started At
+   */
+  started_at: string;
+  /**
+   * Started By
+   */
+  started_by: string | null;
+  /**
+   * Status
+   */
+  status: "running" | "succeeded" | "failed";
+};
+
+/**
+ * SeedRunList
+ */
+export type SeedRunList = {
+  /**
+   * Items
+   */
+  items: Array<SeedRun>;
+};
+
+/**
  * SystemRef
  */
 export type SystemRef = {
@@ -1113,6 +1486,212 @@ export type ValidationError = {
   type: string;
 };
 
+export type ListAppConfigData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/config";
+};
+
+export type ListAppConfigErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Unknown config key
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAppConfigError = ListAppConfigErrors[keyof ListAppConfigErrors];
+
+export type ListAppConfigResponses = {
+  /**
+   * Successful Response
+   */
+  200: ConfigKeyList;
+};
+
+export type ListAppConfigResponse = ListAppConfigResponses[keyof ListAppConfigResponses];
+
+export type GetAppConfigData = {
+  body?: never;
+  path: {
+    /**
+     * Key
+     *
+     * app_config key, e.g. feature_flags
+     */
+    key: string;
+  };
+  query?: never;
+  url: "/api/admin/config/{key}";
+};
+
+export type GetAppConfigErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Unknown config key
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAppConfigError = GetAppConfigErrors[keyof GetAppConfigErrors];
+
+export type GetAppConfigResponses = {
+  /**
+   * Successful Response
+   */
+  200: ConfigEntry;
+};
+
+export type GetAppConfigResponse = GetAppConfigResponses[keyof GetAppConfigResponses];
+
+export type PutAppConfigData = {
+  body: ConfigUpdate;
+  path: {
+    /**
+     * Key
+     *
+     * app_config key, e.g. feature_flags
+     */
+    key: string;
+  };
+  query?: never;
+  url: "/api/admin/config/{key}";
+};
+
+export type PutAppConfigErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Unknown config key
+   */
+  404: ErrorResponse;
+  /**
+   * The value changed since you read it
+   */
+  409: ErrorResponse;
+  /**
+   * The value is not valid for this key
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PutAppConfigError = PutAppConfigErrors[keyof PutAppConfigErrors];
+
+export type PutAppConfigResponses = {
+  /**
+   * Successful Response
+   */
+  200: ConfigEntry;
+};
+
+export type PutAppConfigResponse = PutAppConfigResponses[keyof PutAppConfigResponses];
+
+export type GetAppConfigHistoryData = {
+  body?: never;
+  path: {
+    /**
+     * Key
+     *
+     * app_config key, e.g. feature_flags
+     */
+    key: string;
+  };
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/admin/config/{key}/history";
+};
+
+export type GetAppConfigHistoryErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Unknown config key
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAppConfigHistoryError = GetAppConfigHistoryErrors[keyof GetAppConfigHistoryErrors];
+
+export type GetAppConfigHistoryResponses = {
+  /**
+   * Successful Response
+   */
+  200: ConfigHistory;
+};
+
+export type GetAppConfigHistoryResponse = GetAppConfigHistoryResponses[keyof GetAppConfigHistoryResponses];
+
 export type GetAdminOverviewData = {
   body?: never;
   path?: never;
@@ -1149,6 +1728,126 @@ export type GetAdminOverviewResponses = {
 };
 
 export type GetAdminOverviewResponse = GetAdminOverviewResponses[keyof GetAdminOverviewResponses];
+
+export type StartSeedData = {
+  body: SeedRequest;
+  path?: never;
+  query?: never;
+  url: "/api/admin/seed";
+};
+
+export type StartSeedErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * A seed job is already running
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type StartSeedError = StartSeedErrors[keyof StartSeedErrors];
+
+export type StartSeedResponses = {
+  /**
+   * Successful Response
+   */
+  202: SeedRun;
+};
+
+export type StartSeedResponse = StartSeedResponses[keyof StartSeedResponses];
+
+export type ListSeedRunsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/seed/runs";
+};
+
+export type ListSeedRunsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListSeedRunsError = ListSeedRunsErrors[keyof ListSeedRunsErrors];
+
+export type ListSeedRunsResponses = {
+  /**
+   * Successful Response
+   */
+  200: SeedRunList;
+};
+
+export type ListSeedRunsResponse = ListSeedRunsResponses[keyof ListSeedRunsResponses];
+
+export type GetSeedRunData = {
+  body?: never;
+  path: {
+    /**
+     * Run Id
+     */
+    run_id: string;
+  };
+  query?: never;
+  url: "/api/admin/seed/runs/{run_id}";
+};
+
+export type GetSeedRunErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such run
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetSeedRunError = GetSeedRunErrors[keyof GetSeedRunErrors];
+
+export type GetSeedRunResponses = {
+  /**
+   * Successful Response
+   */
+  200: SeedRun;
+};
+
+export type GetSeedRunResponse = GetSeedRunResponses[keyof GetSeedRunResponses];
 
 export type GetChapterData = {
   body?: never;
@@ -1195,6 +1894,22 @@ export type GetChapterResponses = {
 };
 
 export type GetChapterResponse = GetChapterResponses[keyof GetChapterResponses];
+
+export type GetPublicAppConfigData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/config/public";
+};
+
+export type GetPublicAppConfigResponses = {
+  /**
+   * Successful Response
+   */
+  200: PublicAppConfig;
+};
+
+export type GetPublicAppConfigResponse = GetPublicAppConfigResponses[keyof GetPublicAppConfigResponses];
 
 export type GetCoursesData = {
   body?: never;

@@ -8,6 +8,12 @@ import type {
   GetAdminOverviewData,
   GetAdminOverviewErrors,
   GetAdminOverviewResponses,
+  GetAppConfigData,
+  GetAppConfigErrors,
+  GetAppConfigHistoryData,
+  GetAppConfigHistoryErrors,
+  GetAppConfigHistoryResponses,
+  GetAppConfigResponses,
   GetChapterData,
   GetChapterErrors,
   GetChapterResponses,
@@ -23,6 +29,8 @@ import type {
   GetNavData,
   GetNavErrors,
   GetNavResponses,
+  GetPublicAppConfigData,
+  GetPublicAppConfigResponses,
   GetPublicConfigData,
   GetPublicConfigResponses,
   GetReadingPositionData,
@@ -31,18 +39,38 @@ import type {
   GetReadyData,
   GetReadyErrors,
   GetReadyResponses,
+  GetSeedRunData,
+  GetSeedRunErrors,
+  GetSeedRunResponses,
+  ListAppConfigData,
+  ListAppConfigErrors,
+  ListAppConfigResponses,
+  ListSeedRunsData,
+  ListSeedRunsErrors,
+  ListSeedRunsResponses,
+  PutAppConfigData,
+  PutAppConfigErrors,
+  PutAppConfigResponses,
   PutReadingPositionData,
   PutReadingPositionErrors,
   PutReadingPositionResponses,
   ReportIssueData,
   ReportIssueErrors,
   ReportIssueResponses,
+  StartSeedData,
+  StartSeedErrors,
+  StartSeedResponses,
   UpdateMeData,
   UpdateMeErrors,
   UpdateMeResponses,
 } from "./types.gen";
 import {
   zGetAdminOverviewResponse,
+  zGetAppConfigHistoryPath,
+  zGetAppConfigHistoryQuery,
+  zGetAppConfigHistoryResponse,
+  zGetAppConfigPath,
+  zGetAppConfigResponse,
   zGetChapterPath,
   zGetChapterResponse,
   zGetCoursesQuery,
@@ -50,14 +78,24 @@ import {
   zGetHealthResponse,
   zGetMeResponse,
   zGetNavResponse,
+  zGetPublicAppConfigResponse,
   zGetPublicConfigResponse,
   zGetReadingPositionQuery,
   zGetReadingPositionResponse,
   zGetReadyResponse,
+  zGetSeedRunPath,
+  zGetSeedRunResponse,
+  zListAppConfigResponse,
+  zListSeedRunsResponse,
+  zPutAppConfigBody,
+  zPutAppConfigPath,
+  zPutAppConfigResponse,
   zPutReadingPositionBody,
   zPutReadingPositionResponse,
   zReportIssueBody,
   zReportIssueResponse,
+  zStartSeedBody,
+  zStartSeedResponse,
   zUpdateMeBody,
   zUpdateMeResponse,
 } from "./zod.gen";
@@ -81,6 +119,90 @@ export type Options<
 };
 
 /**
+ * Admin only: every app_config key with its source and last change
+ */
+export const listAppConfig = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAppConfigData, ThrowOnError>,
+): RequestResult<ListAppConfigResponses, ListAppConfigErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAppConfigResponses, ListAppConfigErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAppConfigResponse.parseAsync(data),
+    url: "/api/admin/config",
+    ...options,
+  });
+
+/**
+ * Admin only: one app_config value with its JSON Schema
+ */
+export const getAppConfig = <ThrowOnError extends boolean = false>(
+  options: Options<GetAppConfigData, ThrowOnError>,
+): RequestResult<GetAppConfigResponses, GetAppConfigErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAppConfigResponses, GetAppConfigErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAppConfigPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAppConfigResponse.parseAsync(data),
+    url: "/api/admin/config/{key}",
+    ...options,
+  });
+
+/**
+ * Admin only: replace one app_config value (validated; the old value goes to history)
+ */
+export const putAppConfig = <ThrowOnError extends boolean = false>(
+  options: Options<PutAppConfigData, ThrowOnError>,
+): RequestResult<PutAppConfigResponses, PutAppConfigErrors, ThrowOnError> =>
+  (options.client ?? client).put<PutAppConfigResponses, PutAppConfigErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPutAppConfigBody,
+          path: zPutAppConfigPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPutAppConfigResponse.parseAsync(data),
+    url: "/api/admin/config/{key}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: previous values of one app_config key, newest first
+ */
+export const getAppConfigHistory = <ThrowOnError extends boolean = false>(
+  options: Options<GetAppConfigHistoryData, ThrowOnError>,
+): RequestResult<GetAppConfigHistoryResponses, GetAppConfigHistoryErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAppConfigHistoryResponses, GetAppConfigHistoryErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAppConfigHistoryPath,
+          query: zGetAppConfigHistoryQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAppConfigHistoryResponse.parseAsync(data),
+    url: "/api/admin/config/{key}/history",
+    ...options,
+  });
+
+/**
  * Admin only: environment, version, number of admins configured and of profiles
  */
 export const getAdminOverview = <ThrowOnError extends boolean = false>(
@@ -101,6 +223,70 @@ export const getAdminOverview = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Admin only: start a seed import job in the background (dry run by default)
+ */
+export const startSeed = <ThrowOnError extends boolean = false>(
+  options: Options<StartSeedData, ThrowOnError>,
+): RequestResult<StartSeedResponses, StartSeedErrors, ThrowOnError> =>
+  (options.client ?? client).post<StartSeedResponses, StartSeedErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zStartSeedBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zStartSeedResponse.parseAsync(data),
+    url: "/api/admin/seed",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: the latest seed jobs, newest first
+ */
+export const listSeedRuns = <ThrowOnError extends boolean = false>(
+  options?: Options<ListSeedRunsData, ThrowOnError>,
+): RequestResult<ListSeedRunsResponses, ListSeedRunsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListSeedRunsResponses, ListSeedRunsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListSeedRunsResponse.parseAsync(data),
+    url: "/api/admin/seed/runs",
+    ...options,
+  });
+
+/**
+ * Admin only: one seed job with its report
+ */
+export const getSeedRun = <ThrowOnError extends boolean = false>(
+  options: Options<GetSeedRunData, ThrowOnError>,
+): RequestResult<GetSeedRunResponses, GetSeedRunErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetSeedRunResponses, GetSeedRunErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetSeedRunPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetSeedRunResponse.parseAsync(data),
+    url: "/api/admin/seed/runs/{run_id}",
+    ...options,
+  });
+
+/**
  * A chapter with its ordered sections (TipTap JSON), resolved media and embedded questions
  */
 export const getChapter = <ThrowOnError extends boolean = false>(
@@ -117,6 +303,26 @@ export const getChapter = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetChapterResponse.parseAsync(data),
     url: "/api/chapters/{chapter_id}",
+    ...options,
+  });
+
+/**
+ * Runtime client config (no auth): feature flags, navigation, exam rules, UI copy
+ */
+export const getPublicAppConfig = <ThrowOnError extends boolean = false>(
+  options?: Options<GetPublicAppConfigData, ThrowOnError>,
+): RequestResult<GetPublicAppConfigResponses, unknown, ThrowOnError> =>
+  (options?.client ?? client).get<GetPublicAppConfigResponses, unknown, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetPublicAppConfigResponse.parseAsync(data),
+    url: "/api/config/public",
     ...options,
   });
 
