@@ -1,0 +1,22 @@
+{
+ "id": "20261116T100817-seg05-seed-dfd626",
+ "ts": "2026-11-16T10:08:17.962312Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S05 migration (pathway_guides, plan_templates, seed_runs, app_config notify): live_check seed counts, migration tests, schema doc, stack.sh storage port",
+ "body": "",
+ "paths": [
+  "apps/api/tests/db/stack.sh",
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_live_check.py",
+  "apps/api/tests/test_live_check.py",
+  "apps/api/tests/db/test_migrations.py",
+  "apps/api/tests/test_migrate.py",
+  "db/schema.sql"
+ ],
+ "ttl_minutes": 180,
+ "requires_ack": false
+}
