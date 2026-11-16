@@ -102,6 +102,32 @@ export async function snap(
   );
 }
 
+/** Screenshot into test-results/screens/<segment>/ (`-live` suffix against the deployed Space). */
+export async function snapSegment(
+  page: Page,
+  testInfo: TestInfo,
+  guard: ConsoleGuard,
+  segment: string,
+  state: string,
+  fullPage = false,
+): Promise<void> {
+  const dir = path.resolve(
+    import.meta.dirname,
+    "../../..",
+    "test-results/screens",
+    process.env.E2E_BASE_URL ? `${segment}-live` : segment,
+  );
+  mkdirSync(dir, { recursive: true });
+  await page.evaluate(() => document.fonts.ready);
+  await guard.duringTool(() =>
+    page.screenshot({
+      path: path.join(dir, `${state}--${testInfo.project.name}.png`),
+      fullPage,
+      animations: "disabled",
+    }),
+  );
+}
+
 export async function expectNoHorizontalOverflow(page: Page): Promise<void> {
   const { scrollWidth, innerWidth } = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,

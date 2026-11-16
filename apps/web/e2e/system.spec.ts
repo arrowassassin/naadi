@@ -6,7 +6,7 @@ const COMPONENTS = ["database", "storage", "tavily", "openrouter", "nvidia"] as 
 const STATUS_WORDS = /status: (OK|Degraded|Down)$/;
 
 test.describe("token sheet", () => {
-  for (const path of ["/", "/system"]) {
+  for (const path of ["/system"]) {
     test(`renders at ${path}`, async ({ page, consoleErrors }) => {
       const health = page.waitForResponse("**/api/health");
       await page.goto(path);
@@ -46,7 +46,7 @@ test.describe("token sheet", () => {
       await route.continue();
     });
     const health = page.waitForResponse("**/api/health");
-    await page.goto("/");
+    await page.goto("/system");
     const status = (await health).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     await expect(page.getByText("#C6FF3D · action")).toBeVisible();
@@ -60,7 +60,7 @@ test.describe("token sheet", () => {
       if (url.origin !== new URL(baseURL as string).origin && !url.protocol.startsWith("data")) foreign.push(req.url());
     });
     const health = page.waitForResponse("**/api/health");
-    await page.goto("/");
+    await page.goto("/system");
     const status = (await health).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     await page.evaluate(() => document.fonts.ready);
@@ -69,7 +69,7 @@ test.describe("token sheet", () => {
 
   test("keyboard focus ring is 3 px violet", async ({ page, consoleErrors, browserName }) => {
     const health = page.waitForResponse("**/api/health");
-    await page.goto("/");
+    await page.goto("/system");
     const status = (await health).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     // WebKit only tabs to links with Alt+Tab (Safari's default); buttons are reached with Tab in all three.
@@ -101,7 +101,7 @@ test.describe("token sheet", () => {
 test.describe("health panel", () => {
   test("populated from the running API", async ({ page, consoleErrors }, testInfo) => {
     const healthResponse = page.waitForResponse("**/api/health");
-    await page.goto("/");
+    await page.goto("/system");
     const res = await healthResponse;
     const status = res.status();
     expect([200, 503]).toContain(status);
@@ -149,7 +149,7 @@ test.describe("health panel", () => {
       await gate;
       await route.continue();
     });
-    await page.goto("/");
+    await page.goto("/system");
     const panel = healthPanel(page);
     await expect(panel).toHaveAttribute("aria-busy", "true");
     await expect(panel.getByRole("status")).toHaveText("Checking system health…");
@@ -180,7 +180,7 @@ test.describe("health panel", () => {
         }),
       }),
     );
-    await page.goto("/");
+    await page.goto("/system");
     const alert = healthPanel(page).getByRole("alert");
     await expect(alert).toContainText("System health could not be loaded");
     await expect(alert).toContainText("Something went wrong on our side. Try again in a moment. (HTTP 500)");
@@ -199,7 +199,7 @@ test.describe("health panel", () => {
 
   test("offline shows the banner and keeps the last result", async ({ page, context, consoleErrors }, testInfo) => {
     const healthResponse = page.waitForResponse("**/api/health");
-    await page.goto("/");
+    await page.goto("/system");
     const status = (await healthResponse).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     const panel = healthPanel(page);

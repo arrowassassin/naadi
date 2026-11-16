@@ -49,6 +49,9 @@ const projects: PlaywrightTestConfig["projects"] = BROWSERS.flatMap((browserName
 
 export default defineConfig({
   testDir: "./e2e",
+  // Real Supabase Auth: test users are created and signed in once per run, and deleted afterwards.
+  globalSetup: "./e2e/global-setup.ts",
+  globalTeardown: "./e2e/global-teardown.ts",
   outputDir: path.join(repoRoot, "test-results/playwright"),
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
@@ -80,6 +83,9 @@ export default defineConfig({
           NAADI_STATIC_DIR: path.join(here, "dist"),
           APP_ENV: "local",
           APP_VERSION: process.env.APP_VERSION ?? "e2e",
+          // The local API is checked against throwaway test accounts, never the owner's address.
+          ADMIN_EMAILS: "naadi-e2e-admin@example.com",
+          ...(process.env.E2E_DATABASE_URL ? { DATABASE_URL: process.env.E2E_DATABASE_URL } : {}),
         },
       },
 });
