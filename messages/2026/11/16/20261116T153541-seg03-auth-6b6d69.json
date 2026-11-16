@@ -1,0 +1,13 @@
+{
+ "id": "20261116T153541-seg03-auth-6b6d69",
+ "ts": "2026-11-16T15:35:41.042304Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/agent/host_server.py",
+ "body": "",
+ "re": "20261116T110743-seg03-auth-ef71fb",
+ "requires_ack": false
+}
