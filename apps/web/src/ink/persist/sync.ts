@@ -42,6 +42,8 @@ export interface InkTransport {
   send(baseRev: number, items: InkItem[], opts: { keepalive: boolean }): Promise<ChangesPayload>;
   /** Start a keepalive POST synchronously during `pagehide`; false when it could not be started. */
   beacon(baseRev: number, items: InkItem[]): boolean;
+  /** Cancel in-flight loads/sends (the page is going away; what is pending stays on the device). */
+  abort?(): void;
 }
 
 export interface InkSyncOptions {
@@ -287,11 +289,16 @@ export class InkSync {
     return run.then(() => (this.pending.size > 0 ? this.flush() : undefined));
   }
 
-  /** `pagehide`: start one keepalive request synchronously with what fits; the rest stays on the device. */
+  /**
+   * `pagehide`: start one keepalive request synchronously with what fits (the rest stays on the device), then
+   * cancel our ordinary in-flight requests ourselves rather than leave them to be torn down by the unload.
+   */
   beacon(): void {
-    if (this.pending.size === 0) return;
-    const batch = chunk([...this.pending.values()], KEEPALIVE_BYTES);
-    this.o.transport.beacon(this.rev, batch);
+    if (this.pending.size > 0) {
+      const batch = chunk([...this.pending.values()], KEEPALIVE_BYTES);
+      this.o.transport.beacon(this.rev, batch);
+    }
+    this.o.transport.abort?.();
   }
 
   /** Retry now (the "Retry" button, the `online` event). */

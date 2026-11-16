@@ -420,7 +420,7 @@ function Reader({
         </h1>
         <div className="mx-auto w-full max-w-[46rem]">
           {section.body ? (
-            <SectionInk sectionId={section.id} doc={section.body} on={inkOn} onToggle={setInkOn}>
+            <SectionInk sectionId={section.id} doc={section.body} on={inkOn} onToggle={setInkOn} offline={fromCache}>
               <div ref={rootRef} className="contents">
                 <ContentRenderer
                   key={section.id}

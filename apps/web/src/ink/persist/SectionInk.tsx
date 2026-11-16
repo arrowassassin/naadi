@@ -17,6 +17,8 @@ export interface SectionInkProps {
   /** Ink on (the surface takes Pencil input and the toolbar replaces the page bar). */
   on: boolean;
   onToggle: (on: boolean) => void;
+  /** The reader is showing its device copy (the network failed): the ink is read from the device too. */
+  offline?: boolean;
   /** The content (ContentRenderer, whose top-level blocks carry data-block-pm). */
   children: ReactNode;
   className?: string;
@@ -27,13 +29,13 @@ export interface SectionInkProps {
  * paragraph under each stroke so it survives reflow between iPad and phone, with the save state as icon + word and
  * a notice when the section text changed after the ink was drawn (the ink is never dropped).
  */
-export function SectionInk({ sectionId, doc, on, onToggle, children, className }: SectionInkProps) {
+export function SectionInk({ sectionId, doc, on, onToggle, offline, children, className }: SectionInkProps) {
   const t = useUiText();
   const engine = useRef<InkEngine | null>(null);
   const surface = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<InkEngineState | null>(null);
   const { settings, save } = useInkSettings();
-  const layer = useInkLayer("section", sectionId, { engineRef: engine });
+  const layer = useInkLayer("section", sectionId, { engineRef: engine, offline });
   const anchors = useBlockAnchors(surface, doc);
   const onState = useCallback((s: InkEngineState) => setState(s), []);
 

@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
@@ -8,6 +9,7 @@ import {
   snapSegment,
   test,
 } from "./fixtures";
+import { signedInState } from "./session";
 
 /**
  * Segment 12b: ink persistence and cross-device sync against the real API and database. Each test signs in its own
@@ -439,6 +441,81 @@ test.describe("ink on a reader section", () => {
   });
 });
 
+test.describe("ink on a tutor-mode question", () => {
+  test.setTimeout(120_000);
+
+  test("saved per question (stem and options), back after a reload", async ({ browser, baseURL }, info) => {
+    const s = await student(browser, baseURL as string, info, "q");
+    try {
+      const a = await s.device();
+      const ca = consoleOf(a);
+      test.skip((a.viewportSize()?.width ?? 0) < 640, "question ink is offered from tablet width up");
+      const made = await a.evaluate(async () => {
+        const raw = localStorage.getItem("naadi.auth") ?? "{}";
+        const token = (JSON.parse(raw) as { access_token?: string }).access_token ?? "";
+        const res = await fetch("/api/blocks", {
+          method: "POST",
+          headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
+          body: JSON.stringify({ exam: "step1", count: 3, mode: "tutor", status: "all", seed: 4 }),
+        });
+        return (await res.json()) as { id: string };
+      });
+      await a.goto(`/practice/blocks/${made.id}/1`);
+      await expect(a.getByRole("radio")).toHaveCount(5);
+      await a.getByRole("button", { name: "Scratch ink" }).click();
+      const Q = '[data-ink-surface][aria-label="Scratch ink"]';
+      const box = await a.locator(Q).boundingBox();
+      if (!box) throw new Error("no question surface");
+      const sent = a.waitForResponse((r) => r.url().includes("/api/ink/question/") && r.url().endsWith("/changes"));
+      await a.evaluate(async (sel) => {
+        const layer = document.querySelector(`${sel} [data-ink-layer]`) as HTMLElement;
+        const r = layer.getBoundingClientRect();
+        const ev = (k: string, f: number, b: number) =>
+          new PointerEvent(k, {
+            pointerId: 7,
+            pointerType: "pen",
+            isPrimary: true,
+            bubbles: true,
+            cancelable: true,
+            clientX: r.left + r.width * f,
+            clientY: r.top + 30,
+            pressure: b ? 0.6 : 0,
+            buttons: b,
+          });
+        layer.dispatchEvent(ev("pointerdown", 0.1, 1));
+        for (let i = 1; i <= 20; i++) {
+          layer.dispatchEvent(ev("pointermove", 0.1 + i * 0.02, 1));
+          await new Promise((res) => setTimeout(res, 8));
+        }
+        layer.dispatchEvent(ev("pointerup", 0.5, 0));
+      }, Q);
+      expect((await sent).status()).toBe(200);
+      await expect(a.locator(SAVE)).toHaveAttribute("data-ink-save", "saved");
+      await expectNoAxeViolations(a);
+      await snap(a, info, ca.guard, "question-ink-saved");
+      // The explanation is outside the ink surface (it never carries ink).
+      const q = await a.evaluate(() => location.pathname);
+      await a.reload();
+      await expect(a).toHaveURL(new RegExp(`${q}$`));
+      const layer = await a.evaluate(async (blockId) => {
+        const raw = localStorage.getItem("naadi.auth") ?? "{}";
+        const token = (JSON.parse(raw) as { access_token?: string }).access_token ?? "";
+        const h = { authorization: `Bearer ${token}` };
+        const qv = (await (await fetch(`/api/blocks/${blockId}/questions/1`, { headers: h })).json()) as {
+          question: { id: string };
+        };
+        return (await (await fetch(`/api/ink/question/${qv.question.id}`, { headers: h })).json()) as {
+          item_count: number;
+        };
+      }, made.id);
+      expect(layer.item_count).toBe(1);
+      expect(ca.errors).toEqual([]);
+    } finally {
+      await s.done();
+    }
+  });
+});
+
 test.describe("Settings → Pencil & ink", () => {
   test("pen-only and predicted ink save to the account", async ({ browser, baseURL }, info) => {
     const s = await student(browser, baseURL as string, info, "set");
@@ -464,6 +541,43 @@ test.describe("Settings → Pencil & ink", () => {
       expect(ca.errors).toEqual([]);
     } finally {
       await s.done();
+    }
+  });
+});
+
+test.describe("on the production server (strict CSP)", () => {
+  const PROD = process.env.E2E_PROD_URL;
+  test.skip(!PROD, "needs the local APP_ENV=prod API");
+
+  test("section ink loads, draws and saves with zero console errors", async ({ browser, baseURL }, info) => {
+    // The shared student's session moved to the https prod origin (see ink-gate.spec.ts).
+    const file = await signedInState(browser, baseURL as string, "student");
+    const state = JSON.parse(readFileSync(file, "utf8")) as {
+      origins: { origin: string; localStorage: { name: string; value: string }[] }[];
+    };
+    const origin = new URL(PROD as string).origin;
+    const ctx = await browser.newContext({
+      ...info.project.use,
+      baseURL: PROD,
+      ignoreHTTPSErrors: true,
+      storageState: { cookies: [], origins: state.origins.map((o) => ({ ...o, origin })) },
+    });
+    try {
+      const page = await ctx.newPage();
+      const c = consoleOf(page);
+      await page.goto(SECTION);
+      await expect(page.locator(SAVE)).toHaveAttribute("data-ink-save", "saved", { timeout: 20_000 });
+      await turnInkOn(page);
+      const y = (await blockTop(page, 2)) + 10;
+      const sent = page.waitForResponse((r) => r.url().includes("/changes"));
+      await penStroke(page, 0.1, 0.4, y);
+      expect((await sent).status()).toBe(200);
+      await expect(page.locator(SAVE)).toHaveAttribute("data-ink-save", "saved");
+      await page.goto("/settings/ink");
+      await expect(page.getByRole("switch", { name: "Only Pencil draws" })).toBeVisible();
+      expect(c.errors).toEqual([]);
+    } finally {
+      await ctx.close();
     }
   });
 });

@@ -267,12 +267,15 @@ test.describe("course map", () => {
   }, info) => {
     // Visit both sections online first, so the font subsets they need are in the HTTP cache, as they would
     // be for a returning reader.
+    const inkLoaded = () => expect(page.locator("[data-ink-save]")).toHaveAttribute("data-ink-save", "saved");
     await go(page, "/learn/ch01/ch01-s02");
+    await inkLoaded(); // no ink request is cut off by the next navigation
     await go(page, "/learn/ch01/ch01-s01");
     // Nothing in flight when the connection drops: every font loaded, the opened-section save landed and its
     // offline cache write finished.
     await expect(page.locator("[data-learn-idle]")).toBeAttached();
     await quiet(page);
+    await inkLoaded(); // and the section's ink layer has loaded
     await context.setOffline(true);
     try {
       await expect(page.getByRole("status").filter({ hasText: "Offline" })).toBeVisible();

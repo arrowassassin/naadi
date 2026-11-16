@@ -3,6 +3,7 @@ import type { InkDiff, InkItem, InkSurfaceType } from "@naadi/shared";
 import { useQuery } from "@tanstack/react-query";
 import { type Ref, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "../../auth/session";
+import { useOnlineStatus } from "../../health/useOnlineStatus";
 import { dexieStore, type PendingStore } from "./db";
 import { type InkFailure, type InkSaveState, InkSync, type InkTransport } from "./sync";
 import { apiTransport, classifyInkError } from "./transport";
@@ -15,6 +16,8 @@ export interface UseInkLayerOptions {
   onStrokesChange?: (diff: InkDiff) => void;
   /** Your own engine handle (undo/redo buttons, selection actions). */
   engineRef?: Ref<InkEngine | null>;
+  /** The page already knows the server is unreachable (e.g. it shows its device copy): do not fetch. */
+  offline?: boolean;
   /** Test seams. */
   transport?: InkTransport;
   store?: PendingStore;
@@ -64,6 +67,7 @@ export function useInkLayer(
   const [sync, setSync] = useState<InkSync | null>(null);
   const [items, setItems] = useState<readonly InkItem[] | undefined>(undefined);
   const [, setTick] = useState(0);
+  const online = useOnlineStatus();
 
   useEffect(() => {
     if (!userId) return;
@@ -110,7 +114,8 @@ export function useInkLayer(
 
   const query = useQuery({
     queryKey: ["ink", userId, surfaceType, surfaceId],
-    enabled: sync !== null,
+    // Offline, nothing is asked of the server (the device copy is shown); coming back online refetches.
+    enabled: sync !== null && online && !options.offline,
     queryFn: async () => {
       if (!sync) return null;
       await sync.refresh();

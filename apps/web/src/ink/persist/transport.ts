@@ -7,7 +7,7 @@ import {
   postInkChanges,
 } from "@naadi/shared";
 import { authed } from "../../auth/api";
-import { ApiError } from "../../auth/apiError";
+import { ApiError, UNREACHABLE } from "../../auth/apiError";
 import { accessToken } from "../../auth/session";
 import type { ChangesPayload, InkFailure, InkTransport, LayerPayload } from "./sync";
 
@@ -26,9 +26,15 @@ export function classifyInkError(err: unknown): InkFailure {
  * before it calls fetch, and a page that is being unloaded may not get that far. It reuses the last token the SDK
  * path saw (`lastToken`), so it needs no await; if there is none, the ink simply stays on the device.
  */
+/** Known offline: do not even try (no failed request, no console noise); the ink waits on the device. */
+function assertOnline(): void {
+  if (typeof navigator !== "undefined" && navigator.onLine === false) throw new ApiError(UNREACHABLE, null, null, null);
+}
+
 export function apiTransport(surfaceType: InkSurfaceType, surfaceId: string): InkTransport {
   const path = { surface_type: surfaceType, surface_id: surfaceId };
   let lastToken: string | null = null;
+  let inflight = new AbortController();
   const remember = () =>
     void accessToken().then(
       (t) => {
@@ -39,15 +45,17 @@ export function apiTransport(surfaceType: InkSurfaceType, surfaceId: string): In
   remember();
   return {
     async load(since): Promise<LayerPayload> {
+      assertOnline();
       const out = await authed<InkLayerOut>((headers) =>
-        getInkLayer({ path, query: since === null ? undefined : { since }, headers }),
+        getInkLayer({ path, query: since === null ? undefined : { since }, headers, signal: inflight.signal }),
       );
       remember();
       return { rev: out.rev, items: out.items as InkItem[], reset: out.reset, outdated: out.outdated };
     },
     async send(baseRev, items, { keepalive }): Promise<ChangesPayload> {
+      assertOnline();
       const out = await authed<InkChangesOut>((headers) =>
-        postInkChanges({ path, body: { base_rev: baseRev, items }, headers, keepalive }),
+        postInkChanges({ path, body: { base_rev: baseRev, items }, headers, keepalive, signal: inflight.signal }),
       );
       remember();
       return {
@@ -58,8 +66,12 @@ export function apiTransport(surfaceType: InkSurfaceType, surfaceId: string): In
         reset: out.reset,
       };
     },
+    abort() {
+      inflight.abort();
+      inflight = new AbortController();
+    },
     beacon(baseRev, items) {
-      if (!lastToken) return false;
+      if (!lastToken || (typeof navigator !== "undefined" && navigator.onLine === false)) return false;
       try {
         // keepalive: the request outlives the page (body under 64 KB, which sync.chunk guarantees)
         void fetch(`/api/ink/${encodeURIComponent(surfaceType)}/${encodeURIComponent(surfaceId)}/changes`, {
