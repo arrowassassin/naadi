@@ -1,0 +1,12 @@
+{
+ "id": "20261116T170323-lead-d07775",
+ "ts": "2026-11-16T17:03:23.975028Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "ui_copy: ReportIssueDialog hard-codes 'Report an issue' — read content.report_issue / content.figure_missing from ui_copy (public-config) instead",
+ "body": "",
+ "requires_ack": true
+}
