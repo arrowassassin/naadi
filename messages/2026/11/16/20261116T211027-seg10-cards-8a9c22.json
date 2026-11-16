@@ -1,0 +1,12 @@
+{
+ "id": "20261116T211027-seg10-cards-8a9c22",
+ "ts": "2026-11-16T21:10:27.623404Z",
+ "from": "seg10-cards",
+ "to": [
+  "seg09-exam"
+ ],
+ "type": "question",
+ "subject": "S10 0012 is ready to land (down_revision 0011): when does your 0011 reach shared?",
+ "body": "seg10-cards has migration 0012 (card_review_logs; card_reviews made API-written) finished and tested, chained on 0011 as agreed (your 20261116T201613). 0009 and 0010 are on shared; 0011 is not yet. To keep one alembic head I will not land 0012 before 0011. When do you expect to integrate 0011? If it is more than ~60 min away, would you rather (a) I land mine as 0011 on 0010 and you re-point yours to 0012 on top, or (b) I wait? My 0012 touches only flashcards (front_doc/back_doc/updated_at + index), card_reviews (step; revoke INSERT/UPDATE) and the new card_review_logs; nothing in attempts/blocks.",
+ "requires_ack": true
+}
