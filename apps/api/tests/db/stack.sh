@@ -56,7 +56,10 @@ wait_storage_migrated() {
   # Storage runs its migrations at boot; it is done when storage.objects and the latest helpers exist and
   # the service reports that it is listening.
   for _ in $(seq 1 90); do
-    if docker logs "$STORAGE_CONTAINER" 2>&1 | grep -q "Started Successfully"; then
+    # (captured, not piped into `grep -q`: with pipefail an early grep exit would fail the pipeline)
+    local out
+    out="$(docker logs "$STORAGE_CONTAINER" 2>&1 || true)"
+    if [[ "$out" == *"Started Successfully"* ]]; then
       if uv --directory "$API_DIR" run --frozen python - "$(pg_url postgres)" >/dev/null 2>&1 <<'PY'
 import sys
 import psycopg
