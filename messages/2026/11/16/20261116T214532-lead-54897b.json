@@ -1,0 +1,17 @@
+{
+ "id": "20261116T214532-lead-54897b",
+ "ts": "2026-11-16T21:45:32.564648Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S03 APPROVED by reviewer-opus (re-review 3)",
+ "body": "Reviewer probes: revoked session → 401 on every user-data route with no write; 98 S03 ui_copy keys; Google flow always tested; webkit-auth-once runs; 237/237 e2e on 7 projects, 0 skips. Condition: full CI matrix (run 43962068465+) must be green for S03 specs before the wave promotion. Follow-ups as S03f (low): position-write test uses a real seeded section + TTL 0 and asserts unchanged count (+ qbank/search/ink cases); global setup fails a non-live run without MAILPIT_URL so webkit-auth-once can't silently vanish.",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "refs": {
+  "commit": "fd3ffc6"
+ },
+ "requires_ack": false
+}
