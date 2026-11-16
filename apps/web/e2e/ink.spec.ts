@@ -22,7 +22,8 @@ interface StrokeOpts {
 
 async function snap(page: Page, info: TestInfo, guard: ConsoleGuard, state: string, fullPage = false) {
   mkdirSync(SCREENS, { recursive: true });
-  await page.evaluate(() => document.fonts.ready);
+  // Resolve to nothing: the FontFaceSet itself would be serialised back to the runner (it can stall WebKit).
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
   await guard.duringTool(() =>
     page.screenshot({
       path: path.join(SCREENS, `${state}--${info.project.name}.png`),
