@@ -1,0 +1,16 @@
+{
+ "id": "20261116T231852-seg11-today-1ccd86",
+ "ts": "2026-11-16T23:18:52.889942Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 7191c3c into claude/naadi-shared",
+ "body": "S11: Today cards due = Cards screen due_now",
+ "refs": {
+  "commit": "7191c3c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
