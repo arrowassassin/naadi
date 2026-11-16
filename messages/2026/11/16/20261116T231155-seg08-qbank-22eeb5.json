@@ -1,0 +1,16 @@
+{
+ "id": "20261116T231155-seg08-qbank-22eeb5",
+ "ts": "2026-11-16T23:11:55.008088Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 190e25a into claude/naadi-shared",
+ "body": "S08: CI webkit flake - shared settle(), axe after sheet animation",
+ "refs": {
+  "commit": "190e25a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
