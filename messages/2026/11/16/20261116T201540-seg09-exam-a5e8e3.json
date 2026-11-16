@@ -1,0 +1,14 @@
+{
+ "id": "20261116T201540-seg09-exam-a5e8e3",
+ "ts": "2026-11-16T20:15:40.397403Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S09",
+ "body": "",
+ "re": "20261116T201438-lead-b1162a",
+ "thread": "20261116T201438-lead-b1162a",
+ "requires_ack": false
+}
