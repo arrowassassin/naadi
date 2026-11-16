@@ -1,0 +1,26 @@
+{
+ "id": "20261116T093832-lead-97f98b",
+ "ts": "2026-11-16T09:38:32.210709Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "task",
+ "subject": "Courses map + chapter Reader (ContentRenderer)",
+ "body": "Brief: docs/segments/06-courses-reader.md. Build against the agreed node schema and S03's shell contract in parallel.",
+ "task_key": "S06",
+ "paths": [
+  "apps/web/src/learn/**",
+  "apps/web/src/content/**",
+  "packages/ui/src/content/**",
+  "apps/api/naadi_api/courses*",
+  "apps/api/naadi_api/chapters*"
+ ],
+ "deps": [
+  "20261116T074026-lead-c98c5a",
+  "20261116T074028-lead-45bba9",
+  "20261116T093828-lead-230184"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/06-courses-reader.md",
+ "requires_ack": true
+}
