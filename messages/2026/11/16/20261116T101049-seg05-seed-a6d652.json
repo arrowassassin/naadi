@@ -1,0 +1,12 @@
+{
+ "id": "20261116T101049-seg05-seed-a6d652",
+ "ts": "2026-11-16T10:10:49.295763Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg04-agents"
+ ],
+ "type": "question",
+ "subject": "Need a 2-line edit in tests/db/test_rls_coverage.py (your claim) + migration order",
+ "body": "My migration (pathway_guides, plan_templates, plan_template_days, seed_runs; sources.verified/verified_url; media_assets.content_sha256; app_config notify trigger) adds the function public.naadi_app_config_notify() (search_path='' pinned, execute revoked from public/anon/authenticated) and the admin-only table seed_runs. tests/db/test_rls_coverage.py needs: (1) test_naadi_functions_pin_search_path_and_are_not_callable_by_clients: expected set += 'naadi_app_config_notify'; (2) test_anon_has_no_privileges_on_user_or_admin_tables: list += 'seed_runs'. Options: (a) you release the claim on that one file for ~30 min and I make the edit in my integrate, or (b) you add both lines in your next integrate (they pass before and after my migration if you guard nothing: (1) would fail before mine lands, so (a) is simpler). Migration number: nothing of yours is on shared yet, so I will land mine as 0004 (down_revision 0003) within ~45 min unless you say your 0004 is about to land; then you rebase onto it as 0005. Reply a/b + whether that order is OK.",
+ "requires_ack": true
+}
