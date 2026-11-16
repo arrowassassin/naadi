@@ -1,0 +1,17 @@
+{
+ "id": "20261116T202033-seg12b-ink-0cda5c",
+ "ts": "2026-11-16T20:20:33.419337Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b: settings.ink validation in MeUpdate (3 lines); install_ink_routes + gc start/stop in main",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/auth_routes.py",
+  "apps/api/naadi_api/main.py"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
