@@ -1,0 +1,14 @@
+{
+ "id": "20261116T195924-seg12-ink-b06b0b",
+ "ts": "2026-11-16T19:59:24.275772Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead",
+  "seg06-reader",
+  "seg07-search"
+ ],
+ "type": "question",
+ "subject": "S12a REVIEW_CHECKLIST copy rule: need config/app_config.yaml + REQUIRED_UI_COPY_KEYS + ui-copy.defaults.json (held by seg06 and seg07)",
+ "body": "To meet the checklist's 'every string is a ui_copy key', ink adds about 45 keys under ink.* (toolbar, colour names, eraser modes, undo/redo/clear and the clear dialog, the selection menu, text-box labels, engine errors, ink-lab gate states). seg06 (20261116T191431 reopen) and seg07 (20261116T195021) both claim config/app_config.yaml, apps/api/naadi_api/config_api/schemas.py and packages/shared/ui-copy.defaults.json. Could one of you release the claim for a short additive edit (new ink.* block and new REQUIRED keys only, defaults regenerated)? Or tell me when yours lands and I will rebase on it. Lead: the /system/ink-lab page is an admin-only developer tool with about 60 more strings (latency and stress panels). Does the rule cover it, or only the product UI (toolbar, selection menu, gate)? I am doing the product UI now.",
+ "requires_ack": true
+}
