@@ -4,13 +4,14 @@ import { describe, expect, it } from "vitest";
 
 /**
  * User-facing wording comes from app_config.ui_copy (editable without a redeploy), never from JSX. This scans
- * the reading surfaces for literal text between tags and for literal user-facing attributes.
+ * the reading surfaces (S06) and the sign-in, Today, Account and shell screens (S03) for literal text between
+ * tags and for literal user-facing attributes. Segments add their roots to ROOTS.
  */
-const ROOTS = ["content", "learn"];
+const ROOTS = ["content", "learn", "routes", "shell"];
 const SRC = path.resolve(__dirname, "..");
 
 // Text that is not copy: punctuation and separators that are layout, not wording.
-const ALLOWED_TEXT = new Set(["/", "·", ",", ".", ":", "…", "×", "–", "—"]);
+const ALLOWED_TEXT = new Set(["/", "·", ",", ".", ":", "…", "×", "–", "—", "Naadi"]); // "Naadi": the brand
 const COPY_ATTRS = ["aria-label", "title", "placeholder", "alt", "label", "retryLabel", "srPrefix", "message"];
 
 function files(dir: string): string[] {
@@ -42,7 +43,7 @@ function hardcodedCopy(source: string): string[] {
   return found;
 }
 
-describe("no hardcoded copy in the reading surfaces", () => {
+describe("no hardcoded copy in user-facing screens", () => {
   it("detects literal text and attributes", () => {
     expect(hardcodedCopy('<p className="x">Hello there</p>')).toEqual(["Hello there"]);
     expect(hardcodedCopy('<button aria-label="Close">{t("x")}</button>')).toEqual(['aria-label="Close"']);

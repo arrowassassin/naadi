@@ -5,6 +5,7 @@ import { Search, UserRound } from "lucide-react";
 import { type RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
+import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { useSearchCopy } from "../search/copy";
 import { useSearchShortcut } from "../search/shortcut";
@@ -48,11 +49,11 @@ function initialOf(name: string | null | undefined, email: string | null | undef
   return ch ? ch.toLocaleUpperCase() : "";
 }
 
-function Avatar({ initial, current }: { initial: string; current: boolean }) {
+function Avatar({ initial, current, label }: { initial: string; current: boolean; label: string }) {
   return (
     <Link
       to={ACCOUNT_PATH}
-      aria-label="Account and settings"
+      aria-label={label}
       aria-current={current ? "page" : undefined}
       className={cx(
         "flex size-11 shrink-0 items-center justify-center rounded-pill border font-semibold text-[0.875rem] no-underline",
@@ -158,6 +159,7 @@ export function AppShell() {
   // Search shows once the server turns the feature on and this build has the screen.
   const searchOn = me.data?.features.search === true && "/search" in routes;
   const searchCopy = useSearchCopy();
+  const t = useUiText();
   useSearchShortcut(searchOn);
   const navLoading = nav.isPending && !nav.data;
   const offline = !online || (auth.status === "signed-in" && auth.offline);
@@ -169,13 +171,13 @@ export function AppShell() {
         className="sticky top-0 z-20 hidden px-4 pt-[max(16px,env(safe-area-inset-top))] pb-2 tablet:block"
       >
         <nav
-          aria-label="Main"
+          aria-label={t("shell.nav_main")}
           aria-busy={navLoading || undefined}
           className="mx-auto flex w-fit max-w-full items-center gap-1 rounded-[28px] border border-line bg-bar/85 p-1.5 backdrop-blur-[18px]"
         >
           <Link
             to="/"
-            aria-label="Naadi, Today"
+            aria-label={t("shell.home_label")}
             className="flex min-h-11 shrink-0 items-center gap-2 rounded-pill pr-3.5 pl-2.5 font-bold font-display text-[1.1875rem] text-text no-underline hover:text-text"
           >
             <LogoMark />
@@ -193,14 +195,14 @@ export function AppShell() {
           {searchOn ? (
             <SearchButton current={isCurrent("/search", pathname)} label={searchCopy("search.title")} />
           ) : null}
-          <Avatar initial={initial} current={onAccount} />
+          <Avatar initial={initial} current={onAccount} label={t("shell.account_label")} />
         </nav>
       </header>
       <div aria-hidden="true" className="h-[env(safe-area-inset-top)] tablet:hidden" />
 
       {offline ? (
         <div className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3">
-          <OfflineBanner message="Showing what was loaded last. Changes need a connection." />
+          <OfflineBanner message={t("shell.offline")} />
         </div>
       ) : null}
 
@@ -218,7 +220,7 @@ export function AppShell() {
         {nav.isError && !nav.data ? (
           <ErrorState
             className="mb-6"
-            title="Navigation could not be loaded"
+            title={t("shell.nav_failed_title")}
             message={nav.error.message}
             requestId={"requestId" in nav.error ? (nav.error.requestId as string | null) : null}
             onRetry={() => void nav.refetch()}
@@ -242,7 +244,7 @@ export function AppShell() {
             sits above the tabs inside it; the slot is collapsed while empty. */}
         <div className="flex flex-col gap-1 rounded-[28px] border border-line-strong bg-bar/95 p-1.5 backdrop-blur-[18px]">
           <div ref={slotRef} data-shell-bottom-slot="" className="empty:hidden" />
-          <nav aria-label="Tabs" aria-busy={navLoading || undefined}>
+          <nav aria-label={t("shell.nav_tabs")} aria-busy={navLoading || undefined}>
             <ul className="m-0 flex list-none items-center gap-1 p-0">
               {navLoading ? (
                 <li className="flex flex-1">
@@ -267,7 +269,7 @@ export function AppShell() {
                   current={isCurrent("/search", pathname)}
                 />
               ) : null}
-              <TabItem to={ACCOUNT_PATH} label="Account" icon="user-round" current={onAccount} />
+              <TabItem to={ACCOUNT_PATH} label={t("shell.account_tab")} icon="user-round" current={onAccount} />
             </ul>
           </nav>
         </div>

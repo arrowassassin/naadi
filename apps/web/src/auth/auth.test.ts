@@ -1,6 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { describe, expect, it, vi } from "vitest";
-import { daysUntil, greeting, localDate } from "../routes/time";
+import { dayPart, daysUntil, localDate } from "../routes/time";
 import { completeSignIn, completeSignInOnce } from "./callback";
 import { callbackUrl, redirectOrigin, safeNext } from "./redirect";
 
@@ -162,7 +162,7 @@ describe("time helpers", () => {
     expect(daysUntil("2026-11-20", now, "Asia/Kolkata")).toBe(3);
     expect(daysUntil("2026-11-20", now, "America/New_York")).toBe(4);
     expect(daysUntil("2026-11-10", now, "UTC")).toBe(-6);
-    expect(greeting(now, "Asia/Kolkata")).toBe("Good evening");
-    expect(greeting(new Date("2026-11-16T04:00:00Z"), "Asia/Kolkata")).toBe("Good morning");
+    expect(dayPart(now, "Asia/Kolkata")).toBe("evening");
+    expect(dayPart(new Date("2026-11-16T04:00:00Z"), "Asia/Kolkata")).toBe("morning");
   });
 });

@@ -56,7 +56,7 @@ function ProfileForm({ me }: { me: MeResponse }) {
   return (
     <form noValidate onSubmit={onSubmit} className="flex flex-col gap-6" aria-busy={update.isPending}>
       <label htmlFor={nameId} className="flex flex-col gap-2 text-[0.875rem] text-text-2">
-        Display name
+        {t("account.display_name")}
         <input
           id={nameId}
           className={INPUT}
@@ -72,7 +72,7 @@ function ProfileForm({ me }: { me: MeResponse }) {
         {tooLong ? <span className="text-amber">{t("account.name_too_long")}</span> : null}
       </label>
       <label htmlFor={tzId} className="flex flex-col gap-2 text-[0.875rem] text-text-2">
-        Time zone
+        {t("account.time_zone")}
         <span className="relative flex">
           <select
             id={tzId}
@@ -97,34 +97,34 @@ function ProfileForm({ me }: { me: MeResponse }) {
         </span>
         {deviceTz && deviceTz !== tz ? (
           <span className="text-text-3">
-            This device is set to {deviceTz.replaceAll("_", " ")}.{" "}
+            {t("account.device_tz", { tz: deviceTz.replaceAll("_", " ") })}{" "}
             <button
               type="button"
               className="min-h-11 cursor-pointer border-0 bg-transparent p-0 text-text underline underline-offset-4"
               onClick={() => setTz(deviceTz)}
             >
-              Use it
+              {t("account.use_device_tz")}
             </button>
           </span>
         ) : null}
       </label>
       {err ? (
         <ErrorState
-          title="Your changes were not saved"
+          title={t("account.save_failed_title")}
           message={err.message}
           requestId={err instanceof ApiError ? err.requestId : null}
         />
       ) : null}
       <div className="flex flex-wrap items-center gap-4">
         <Button type="submit" variant="primary" size="cta" disabled={!dirty || tooLong || update.isPending || !online}>
-          {update.isPending ? "Saving…" : "Save changes"}
+          {t(update.isPending ? "account.saving" : "account.save")}
         </Button>
         {saved && !dirty ? (
           <span role="status" className="inline-flex items-center gap-2 text-text-2">
-            <Check aria-hidden="true" size={18} /> Saved
+            <Check aria-hidden="true" size={18} /> {t("account.saved")}
           </span>
         ) : null}
-        {!online ? <span className="text-text-3">Connect to save changes.</span> : null}
+        {!online ? <span className="text-text-3">{t("account.offline_save")}</span> : null}
       </div>
     </form>
   );
@@ -192,22 +192,22 @@ export function AccountPage() {
       <div className="flex flex-col gap-3">
         <span className="font-mono text-label text-text-3 uppercase">{t("account.settings_label")}</span>
         <h1 id="account-h" className="m-0 font-display text-headline">
-          Account
+          {t("account.heading")}
         </h1>
       </div>
 
       {me.isPending && !me.data ? (
         <div aria-busy="true" className="flex flex-col gap-4">
           <p role="status" className="sr-only">
-            Loading your account…
+            {t("account.loading")}
           </p>
           <Skeleton className="h-48 rounded-tile" />
           <Skeleton className="h-32 rounded-tile" />
         </div>
       ) : !me.data ? (
         <ErrorState
-          title="Your account could not be loaded"
-          message={me.error?.message ?? "Something went wrong."}
+          title={t("account.load_failed_title")}
+          message={me.error?.message ?? t("common.error_fallback")}
           requestId={me.error instanceof ApiError ? me.error.requestId : null}
           onRetry={() => void me.refetch()}
           retrying={me.isFetching}
@@ -216,7 +216,7 @@ export function AccountPage() {
         <div className="grid items-start gap-5 laptop:grid-cols-[2fr_1fr]">
           <Tile as="section" aria-labelledby="profile-h" className="flex flex-col gap-6">
             <h2 id="profile-h" className="m-0 font-display font-bold text-[1.5rem]">
-              Profile
+              {t("account.profile_heading")}
             </h2>
             <ProfileForm key={me.data.profile.user_id} me={me.data} />
           </Tile>
@@ -224,18 +224,18 @@ export function AccountPage() {
             <Tile as="section" aria-labelledby="signin-h" className="flex flex-col gap-4">
               <TileLabel>{t("account.signed_in_as")}</TileLabel>
               <h2 id="signin-h" className="m-0 break-all font-semibold text-[1.0625rem]">
-                {me.data.email ?? "No email on this account"}
+                {me.data.email ?? t("account.no_email")}
               </h2>
               <div className="flex flex-wrap gap-2">
                 <Chip tone={me.data.email_verified ? "done" : "warning"}>
-                  {me.data.email_verified ? "Email verified" : "Email not verified"}
+                  {t(me.data.email_verified ? "account.email_verified" : "account.email_unverified")}
                 </Chip>
-                {me.data.is_admin ? <Chip tone="meta">Admin</Chip> : null}
+                {me.data.is_admin ? <Chip tone="meta">{t("account.admin_chip")}</Chip> : null}
               </div>
             </Tile>
             <Tile as="section" aria-labelledby="signout-h" className="flex flex-col gap-4">
               <h2 id="signout-h" className="m-0 font-display font-bold text-[1.5rem]">
-                Sign out
+                {t("account.sign_out_heading")}
               </h2>
               <SignOutPanel />
             </Tile>

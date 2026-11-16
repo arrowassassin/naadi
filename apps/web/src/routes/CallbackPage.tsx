@@ -52,7 +52,7 @@ export function CallbackPage() {
             message={auth.error.message}
             requestId={auth.error.requestId}
             onRetry={() => window.location.reload()}
-            retryLabel="Reload"
+            retryLabel={t("common.reload")}
           />
         ) : failed ? (
           <section aria-labelledby="cb-h" className="flex flex-col gap-5" data-state="error">

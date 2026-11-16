@@ -1,5 +1,4 @@
 import type { Page, Route, TestInfo } from "@playwright/test";
-import { callbackPath, canMintUsers, emailFor, magicLink } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
@@ -10,15 +9,11 @@ import {
 } from "./fixtures";
 
 /**
- * Sign-in, callback and sign-out, signed out (no stored session). Real Supabase Auth throughout, with two
- * deliberate exceptions: the *send* of a magic-link email is intercepted (sending real email to test
- * addresses bounces, and Supabase's free sender allows only a few emails an hour), and Supabase's own
- * redirect for an expired link is replayed as the URL it produces. Real magic-link sign-ins (server-side
- * generated tokens) run in every project against the CI auth container; against the hosted project only in
- * one project per browser engine, because hosted Supabase rate-limits verifications per IP.
+ * Sign-in, callback and route protection, signed out (no stored session), in every project. Real Supabase
+ * Auth throughout, except where a state cannot be produced on demand: the send of a magic-link email is
+ * intercepted for the sending/sent/error states (the real email path runs once, in auth-once.spec.ts, against
+ * the local mail catcher), and Supabase's redirect for an expired link is replayed as the URL it produces.
  */
-const HOSTED_AUTH = (process.env.SUPABASE_URL ?? "").startsWith("https://");
-const REAL_LINK_PROJECTS = new Set(["webkit-ipad-portrait", "chromium-laptop-1440", "firefox-phone-390"]);
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string) =>
   snapSegment(page, info, guard, "03", state);
@@ -60,8 +55,13 @@ test.describe("sign-in screen", () => {
   });
 
   test("Google starts the Supabase PKCE redirect back to /auth/callback", async ({ page }) => {
+    // Whatever this deployment has configured, the Google button's PKCE flow is exercised: the config is
+    // served with Google on, and Supabase's /authorize is intercepted (Google itself is never contacted).
     const cfg = await publicConfig(page);
-    test.skip(!cfg.google_oauth_enabled, "Google sign-in is not enabled on this deployment");
+    await page.route("**/api/public-config", async (route) => {
+      const res = await route.fetch();
+      await route.fulfill({ response: res, json: { ...(await res.json()), google_oauth_enabled: true } });
+    });
     let authorize: URL | null = null;
     await page.route(`${cfg.supabase_url}/auth/v1/authorize**`, async (route) => {
       authorize = new URL(route.request().url());
@@ -238,130 +238,5 @@ test.describe("route protection", () => {
       });
       expect(forged.status()).toBe(401);
     }
-  });
-});
-
-test.describe("magic link, end to end", () => {
-  test("sign in from a real link, survive reload, sign out", async ({ page, consoleErrors }, info) => {
-    test.skip(!canMintUsers(), "needs the service role (live: pnpm e2e:live-auth)");
-    test.skip(HOSTED_AUTH && !REAL_LINK_PROJECTS.has(info.project.name), "hosted: once per browser engine");
-    const meCalls: number[] = [];
-    page.on("response", (r) => {
-      if (new URL(r.url()).pathname === "/api/me") meCalls.push(r.status());
-    });
-    await page.goto(callbackPath(magicLink("link"), "/settings/account"));
-    await expect(page).toHaveURL(/\/settings\/account$/);
-    await expect(page.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
-    await expect(page.getByRole("heading", { name: emailFor("link") })).toBeVisible();
-    await expect(page.getByText("Email verified")).toBeVisible();
-    expect(page.url()).not.toContain("token_hash");
-    expect(meCalls).toContain(200);
-
-    await page.reload();
-    await expect(page.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
-    await expect(page).toHaveURL(/\/settings\/account$/);
-
-    await page.getByRole("button", { name: "Sign out", exact: true }).click();
-    await expect(page).toHaveURL(/\/sign-in\?signed_out=1/);
-    await expect(page.getByText("You are signed out.")).toBeVisible();
-    expect(await page.evaluate(() => localStorage.getItem("naadi.auth"))).toBeNull();
-    await page.goto("/");
-    await expect(page).toHaveURL(/\/sign-in/);
-    void consoleErrors;
-  });
-
-  test("sign out of all devices revokes the session everywhere", async ({ browser, baseURL }, info) => {
-    test.skip(!canMintUsers(), "needs the service role (live: pnpm e2e:live-auth)");
-    test.skip(info.project.name !== "chromium-laptop-1440", "global sign-out runs once");
-    const a = await browser.newContext({ baseURL });
-    const b = await browser.newContext({ baseURL });
-    const pa = await a.newPage();
-    const pb = await b.newPage();
-    await pa.goto(callbackPath(magicLink("global"), "/settings/account"));
-    await expect(pa.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
-    await pb.goto(callbackPath(magicLink("global"), "/"));
-    await expect(pb).toHaveURL(/\/$/);
-    const tokenB = await pb.evaluate(() => {
-      const raw = localStorage.getItem("naadi.auth");
-      return raw ? (JSON.parse(raw) as { access_token: string }).access_token : "";
-    });
-    const meB = () => b.request.get("/api/me", { headers: { authorization: `Bearer ${tokenB}` } });
-    expect((await meB()).status()).toBe(200);
-
-    await pa.getByRole("button", { name: "Sign out of all devices" }).click();
-    await pa.getByRole("button", { name: "Sign out everywhere" }).click();
-    await expect(pa).toHaveURL(/\/sign-in/);
-
-    // The other device's refresh token is revoked: refreshing fails and the app signs it out.
-    const refreshed = await pb.evaluate(async () => {
-      const raw = localStorage.getItem("naadi.auth");
-      if (!raw) return "no-session";
-      const s = JSON.parse(raw) as { refresh_token: string };
-      const cfg = await (await fetch("/api/public-config")).json();
-      const r = await fetch(`${cfg.supabase_url}/auth/v1/token?grant_type=refresh_token`, {
-        method: "POST",
-        headers: { apikey: cfg.supabase_anon_key, "content-type": "application/json" },
-        body: JSON.stringify({ refresh_token: s.refresh_token }),
-      });
-      return r.status;
-    });
-    expect(refreshed).not.toBe(200);
-    // And device B's still-unexpired access token no longer opens the API (session lookup, cached <= 30 s).
-    await expect
-      .poll(
-        async () => {
-          const r = await meB();
-          return r.status() === 401 ? (await r.json()).error.code : r.status();
-        },
-        { timeout: 45_000, intervals: [2_000] },
-      )
-      .toBe("session_revoked");
-    await a.close();
-    await b.close();
-  });
-
-  test("a real magic-link email: send, open the link, signed in (PKCE)", async ({ page, request }, info) => {
-    const mailpit = process.env.MAILPIT_URL;
-    test.skip(!mailpit, "needs the local auth stack's mail catcher (auth_stack.sh)");
-    test.skip(info.project.name !== "webkit-ipad-portrait", "one WebKit run: the email path is browser-independent");
-    const address = emailFor("mail");
-    await page.goto("/sign-in?redirect=%2Fsettings%2Faccount");
-    await emailBox(page).fill(address);
-    await sendButton(page).click();
-    await expect(page.getByRole("heading", { name: "Check your email" })).toBeVisible();
-
-    // The email Supabase's auth server actually sent, caught by Mailpit.
-    let link = "";
-    await expect
-      .poll(
-        async () => {
-          const search = await request.get(`${mailpit}/api/v1/search`, { params: { query: `to:"${address}"` } });
-          const found = (await search.json()) as { messages?: { ID: string }[] };
-          const id = found.messages?.[0]?.ID;
-          if (!id) return "";
-          const msg = (await (await request.get(`${mailpit}/api/v1/message/${id}`)).json()) as {
-            HTML?: string;
-            Text?: string;
-          };
-          const body = `${msg.HTML ?? ""} ${msg.Text ?? ""}`.replaceAll("&amp;", "&");
-          link = /https?:\/\/[^\s"'<>]+\/verify\?[^\s"'<>]+/.exec(body)?.[0] ?? "";
-          return link;
-        },
-        { timeout: 30_000, intervals: [1_000] },
-      )
-      .not.toBe("");
-    expect(new URL(link).searchParams.get("type")).toBe("magiclink");
-    expect(new URL(link).searchParams.get("redirect_to")).toContain("/auth/callback");
-
-    // Opening it: /verify -> redirect to /auth/callback?code=... -> the app exchanges the code (PKCE).
-    const codes: string[] = [];
-    page.on("request", (r) => {
-      const u = new URL(r.url());
-      if (u.pathname === "/auth/callback" && u.searchParams.has("code")) codes.push("code");
-    });
-    await page.goto(link);
-    await expect(page).toHaveURL(/\/settings\/account$/);
-    expect(codes).toEqual(["code"]);
-    await expect(page.getByRole("heading", { name: address })).toBeVisible();
   });
 });

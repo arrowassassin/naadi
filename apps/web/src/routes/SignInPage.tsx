@@ -1,7 +1,7 @@
 import { Button, ErrorState, OfflineBanner } from "@naadi/ui";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { Clock, MailCheck } from "lucide-react";
-import { type FormEvent, useEffect, useId, useRef, useState } from "react";
+import { type FormEvent, type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { callbackUrl, redirectOrigin } from "../auth/redirect";
 import { useAuth } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
@@ -15,22 +15,35 @@ type Phase =
   | { name: "idle" }
   | { name: "sending" }
   | { name: "sent"; email: string; sentAt: number }
-  | { name: "error"; message: string };
+  | { name: "error"; messageKey: string };
 
-function sendErrorMessage(err: { status?: number; code?: string; message: string }): string {
+/** The ui_copy key for a failed send, from Supabase's error code (never its English message). */
+function sendErrorKey(err: { status?: number; code?: string; message: string }): string {
   if (err.status === 429 || err.code === "over_email_send_rate_limit" || err.code === "over_request_rate_limit") {
-    return "Too many sign-in emails were requested. Wait a few minutes, then try again.";
+    return "signin.error_rate_limited";
   }
   if (err.code === "email_address_invalid" || err.code === "validation_failed") {
-    return "That email address was not accepted. Check it and try again.";
+    return "signin.error_invalid_email";
   }
   if (err.code === "signup_disabled" || err.code === "otp_disabled") {
-    return "Sign-up with email is turned off for this app. Ask the admin for an invite.";
+    return "signin.error_signup_disabled";
   }
   if (err.status === 0 || /fetch|network/i.test(err.message)) {
-    return "The sign-in service could not be reached. Check your connection and try again.";
+    return "signin.error_unreachable";
   }
-  return "The sign-in email could not be sent. Try again in a moment.";
+  return "signin.error_generic";
+}
+
+/** Render a ui_copy template, putting `node` where `{name}` stands (e.g. the address in bold). */
+function withSlot(text: string, name: string, node: ReactNode): ReactNode {
+  const [before, after = ""] = text.split(`{${name}}`);
+  return (
+    <>
+      {before}
+      {node}
+      {after}
+    </>
+  );
 }
 
 function useNow(active: boolean): number {
@@ -80,7 +93,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
       options: { emailRedirectTo: redirectTo, shouldCreateUser: true },
     });
     if (error) {
-      setPhase({ name: "error", message: sendErrorMessage(error) });
+      setPhase({ name: "error", messageKey: sendErrorKey(error) });
       return;
     }
     setPhase({ name: "sent", email: address, sentAt: Date.now() });
@@ -90,7 +103,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
     e.preventDefault();
     const address = email.trim();
     if (!EMAIL_RE.test(address)) {
-      setFieldError("Enter an email address like name@example.com.");
+      setFieldError(copy("signin.email_invalid"));
       inputRef.current?.focus();
       return;
     }
@@ -107,7 +120,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
     });
     if (error) {
       setGoogleBusy(false);
-      setPhase({ name: "error", message: "Google sign-in could not start. Try again, or use an email link." });
+      setPhase({ name: "error", messageKey: "signin.google_failed" });
     }
   }
 
@@ -128,9 +141,14 @@ export function SignInPage({ next, notice }: SignInPageProps) {
         </header>
 
         <h1 className="m-0 font-display font-extrabold text-[clamp(3.5rem,2rem+8vw,9.25rem)] leading-[0.88] tracking-[-0.05em]">
-          Welcome
-          <br />
-          back<span className="text-lime">.</span>
+          {copy("signin.welcome")
+            .split("\n")
+            .map((line, i, all) => (
+              <span key={line}>
+                {line}
+                {i < all.length - 1 ? <br /> : <span className="text-lime">.</span>}
+              </span>
+            ))}
         </h1>
 
         <div className="flex flex-wrap items-stretch gap-5">
@@ -162,7 +180,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                 message={auth.error.message}
                 requestId={auth.error.requestId}
                 onRetry={() => window.location.reload()}
-                retryLabel="Reload"
+                retryLabel={copy("common.reload")}
               />
             ) : null}
 
@@ -176,11 +194,14 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                       tabIndex={-1}
                       className="m-0 font-display font-bold text-[1.75rem] leading-tight outline-none"
                     >
-                      Check your email
+                      {copy("signin.sent_heading")}
                     </h3>
                     <p className="m-0 break-words text-text-2" role="status">
-                      We sent a sign-in link to <span className="font-semibold text-text">{phase.email}</span>. Open it
-                      on this device to continue.
+                      {withSlot(
+                        copy("signin.sent_body"),
+                        "email",
+                        <span className="font-semibold text-text">{phase.email}</span>,
+                      )}
                     </p>
                   </div>
                 </div>
@@ -191,7 +212,9 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                     onClick={() => void send(phase.email)}
                     icon={cooldownLeft > 0 ? <Clock size={16} /> : undefined}
                   >
-                    {cooldownLeft > 0 ? `Resend in ${cooldownLeft} s` : "Resend the link"}
+                    {cooldownLeft > 0
+                      ? copy("signin.resend_in", { seconds: String(cooldownLeft) })
+                      : copy("signin.resend")}
                   </Button>
                   <Button
                     variant="secondary"
@@ -200,7 +223,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                       queueMicrotask(() => inputRef.current?.focus());
                     }}
                   >
-                    Use a different email
+                    {copy("signin.different_email")}
                   </Button>
                 </div>
               </div>
@@ -220,7 +243,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                     </Button>
                     <div className="flex items-center gap-3 text-text-3" aria-hidden="true">
                       <span className="h-px flex-1 bg-line" />
-                      <span className="font-mono text-label-sm uppercase">or</span>
+                      <span className="font-mono text-label-sm uppercase">{copy("signin.or")}</span>
                       <span className="h-px flex-1 bg-line" />
                     </div>
                   </>
@@ -228,7 +251,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
 
                 <form noValidate onSubmit={onSubmit} className="flex flex-col gap-4" aria-busy={sending}>
                   <label htmlFor={emailId} className="flex flex-col gap-2 text-[0.875rem] text-text-2">
-                    Email
+                    {copy("signin.email_label")}
                     <input
                       ref={inputRef}
                       id={emailId}
@@ -245,14 +268,14 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                       aria-describedby={hintId}
                       disabled={sending}
                       className="min-h-14 rounded-swatch border border-line-control bg-ground px-[18px] text-[1.0625rem] text-text placeholder:text-text-3 aria-invalid:border-amber"
-                      placeholder="name@example.com"
+                      placeholder={copy("signin.email_placeholder")}
                     />
                   </label>
                   <p id={hintId} className={fieldError ? "m-0 text-amber" : "m-0 text-[0.8125rem] text-text-3"}>
                     {fieldError ?? copy("signin.email_hint")}
                   </p>
                   {phase.name === "error" ? (
-                    <ErrorState title={copy("signin.send_failed_title")} message={phase.message} />
+                    <ErrorState title={copy("signin.send_failed_title")} message={copy(phase.messageKey)} />
                   ) : null}
                   <Button
                     type="submit"
@@ -269,7 +292,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
           </section>
 
           <aside
-            aria-label="About Naadi"
+            aria-label={copy("signin.about_label")}
             className="flex min-w-0 flex-[1_1_320px] flex-col justify-between gap-6 rounded-tile border border-line-soft bg-surface-1 p-6 tablet:p-9"
           >
             <span className="font-mono text-label text-text-3 uppercase tracking-[0.12em]">

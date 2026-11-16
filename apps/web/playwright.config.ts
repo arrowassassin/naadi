@@ -60,6 +60,9 @@ const BROWSERS = ["webkit", "chromium", "firefox"] as const;
 const projects: NonNullable<PlaywrightTestConfig["projects"]> = BROWSERS.flatMap((browserName) =>
   VIEWPORTS.map((v) => ({
     name: `${browserName}-${v.name}`,
+    // Flows that must run exactly once per run (they revoke sessions or read the mail catcher) have their own
+    // project below, so they never show up as skips in the matrix.
+    testIgnore: /auth-once\.spec\.ts/,
     use: {
       browserName,
       viewport: { width: v.width, height: v.height },
@@ -84,6 +87,17 @@ projects.push({
     deviceScaleFactor: 2,
   },
 });
+
+// Once per run, in the primary target (WebKit, iPad portrait): the real magic-link email, global sign-out
+// across two devices and a full sign-in, reload, sign-out round trip. Only where throwaway users and the
+// local mail catcher exist (local stack, CI); never against the live Space.
+if (!liveBaseUrl && process.env.MAILPIT_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  projects.push({
+    name: "webkit-auth-once",
+    testMatch: /auth-once\.spec\.ts/,
+    use: { browserName: "webkit", viewport: { width: 820, height: 1180 }, hasTouch: true, isMobile: true },
+  });
+}
 
 /** Port of the second API server, whose LLM budget is forced to zero (the degradation path, segment 04). */
 const BUDGET_ZERO_PORT = port + 1;

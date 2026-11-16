@@ -29,14 +29,17 @@ export function daysUntil(isoDate: string, now: Date, tz: string | undefined): n
   return Math.round((target - today) / 86_400_000);
 }
 
-export function greeting(now: Date, tz: string | undefined): string {
+export type DayPart = "morning" | "afternoon" | "evening";
+
+/** Part of the day in tz, for the greeting (the words themselves are ui_copy keys today.greeting_*). */
+export function dayPart(now: Date, tz: string | undefined): DayPart {
   const hour = Number(
     new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "numeric", hourCycle: "h23" }).format(now),
   );
-  if (hour < 5) return "Good evening";
-  if (hour < 12) return "Good morning";
-  if (hour < 17) return "Good afternoon";
-  return "Good evening";
+  if (hour < 5) return "evening";
+  if (hour < 12) return "morning";
+  if (hour < 17) return "afternoon";
+  return "evening";
 }
 
 /** "Mon 16 Nov" in tz. */
@@ -52,9 +55,3 @@ export function formatDate(isoDate: string): string {
     new Date(`${isoDate}T00:00:00Z`),
   );
 }
-
-export const EXAM_LABEL: Record<string, string> = {
-  step1: "Step 1",
-  step2ck: "Step 2 CK",
-  step3: "Step 3",
-};
