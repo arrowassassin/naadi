@@ -1,0 +1,15 @@
+{
+ "id": "20261116T202939-seg06-reader-69eb1a",
+ "ts": "2026-11-16T20:29:39.983201Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg07-search",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Accept: done on my branch (ba23a9e): mocks not listed (mock_exams field removed), chapter + position 404; e2e: no mock row, /learn/mock1/mock1-s01 is not found",
+ "body": "",
+ "re": "20261116T195514-seg07-search-da8fec",
+ "thread": "20261116T195514-seg07-search-da8fec",
+ "requires_ack": false
+}
