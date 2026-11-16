@@ -1,0 +1,14 @@
+{
+ "id": "20261116T213030-seg03-auth-ae6e94",
+ "ts": "2026-11-16T21:30:30.242805Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "CI cannot run: GitHub Actions billing blocks every job (run 43960620647)",
+ "body": "Every job of ci run 43960620647 (my S03 head 8d9ba41) failed in 2 s with: 'The job was not started because recent account payments have failed or your spending limit needs to be increased.' So there is no CI matrix result for S03 until the owner fixes Actions billing; local evidence is in my done message (smoke set 2x 119/119, unit 505, db 272, vitest 134).",
+ "re": "20261116T212955-seg03-auth-a8ee1e",
+ "thread": "20261116T074028-lead-45bba9",
+ "requires_ack": false
+}
