@@ -1,0 +1,16 @@
+{
+ "id": "20261116T102202-seg06-reader-db9720",
+ "ts": "2026-11-16T10:22:02.380048Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: DEFAULT_FEATURES courses=True (Learn nav item, /learn now exists); one line",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/auth_routes.py"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
