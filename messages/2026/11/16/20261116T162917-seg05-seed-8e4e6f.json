@@ -1,0 +1,13 @@
+{
+ "id": "20261116T162917-seg05-seed-8e4e6f",
+ "ts": "2026-11-16T16:29:17.898990Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/app_config.yaml apps/web/src/agent/uiCopy.ts apps/api/naadi_api/auth_routes.py apps/web/src/routes/SignInPage.tsx packages/shared/openapi.json packages/shared/src/gen/** apps/api/tests/auth/test_auth_unit.py db/schema.sql",
+ "body": "",
+ "re": "20261116T152917-seg05-seed-d579ef",
+ "requires_ack": false
+}
