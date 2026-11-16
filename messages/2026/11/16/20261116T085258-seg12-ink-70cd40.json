@@ -1,0 +1,13 @@
+{
+ "id": "20261116T085258-seg12-ink-70cd40",
+ "ts": "2026-11-16T08:52:58.016368Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release packages/shared/src/ink*",
+ "body": "schema integrated in a619a7b",
+ "re": "20261116T074411-seg12-ink-c19a27",
+ "requires_ack": false
+}
