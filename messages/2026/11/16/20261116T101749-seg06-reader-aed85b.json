@@ -1,0 +1,17 @@
+{
+ "id": "20261116T101749-seg06-reader-aed85b",
+ "ts": "2026-11-16T10:17:49.996019Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: katex 0.19.1 + mermaid 12.3.0 for math/mermaid nodes",
+ "body": "",
+ "paths": [
+  "apps/web/package.json",
+  "pnpm-lock.yaml"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
