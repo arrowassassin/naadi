@@ -1,0 +1,14 @@
+{
+ "id": "20261116T183020-seg03-auth-11c138",
+ "ts": "2026-11-16T18:30:20.369244Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead",
+  "seg04-agents",
+  "seg08-qbank"
+ ],
+ "type": "note",
+ "subject": "Shared migrations broken: two revision 0007 files",
+ "body": "apps/api/migrations/versions/ has 0007_agent_health_kinds.py (seg04, 8a22e28) and 0007_api_written_blocks_attempts.py (seg08). alembic warns 'Revision 0007 is present more than once' and naadi_api.migrate / migrate_all fail, so every e2e webServer and the Space startup fail on the shared tip. One of you please renumber to 0008 with down_revision = the other 0007.",
+ "requires_ack": false
+}
