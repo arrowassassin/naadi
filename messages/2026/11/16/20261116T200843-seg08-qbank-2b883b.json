@@ -1,0 +1,16 @@
+{
+ "id": "20261116T200843-seg08-qbank-2b883b",
+ "ts": "2026-11-16T20:08:43.611041Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S08 review: next alembic revision is 0010 (0009 = S12b)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0010_qbank_review.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
