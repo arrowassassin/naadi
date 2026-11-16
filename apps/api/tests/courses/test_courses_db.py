@@ -63,9 +63,10 @@ class World:
 
 @pytest.fixture(scope="module")
 def url() -> str:
-    from tests.db.rls import database_url, ensure_migrated
+    from tests.db.rls import database_url, ensure_migrated, require_local
 
     u = database_url()
+    require_local(u)  # never a hosted database: these tests insert and delete rows
     ensure_migrated(u)
     return u
 
@@ -228,7 +229,19 @@ def key() -> SigningKey:
 
 @pytest.fixture
 def client(url: str, key: SigningKey, static_dir: Path) -> Iterator[TestClient]:
-    s = make_settings(static_dir=static_dir, supabase_url=SUPABASE_URL, database_url=SecretStr(url))
+    # Explicit None for every secret, so nothing from the environment or a .env file can reach this app.
+    s = make_settings(
+        static_dir=static_dir,
+        supabase_url=SUPABASE_URL,
+        database_url=SecretStr(url),
+        supabase_anon_key=None,
+        supabase_service_role_key=None,
+        supabase_jwt_secret=None,
+        openrouter_api_key=None,
+        nvidia_api_key=None,
+        tavily_api_key=None,
+        admin_emails=None,
+    )
     app = create_app(
         s,
         health=fake_service(),
