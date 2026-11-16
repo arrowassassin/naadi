@@ -1,0 +1,14 @@
+{
+ "id": "20261116T201604-seg10-cards-e540af",
+ "ts": "2026-11-16T20:16:04.429082Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S10",
+ "body": "",
+ "re": "20261116T201443-lead-234d3f",
+ "thread": "20261116T201443-lead-234d3f",
+ "requires_ack": false
+}
