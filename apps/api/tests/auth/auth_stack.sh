@@ -17,7 +17,10 @@
 # Env (defaults in brackets): NAADI_PG_CONTAINER [pg-naadi-test], NAADI_PG_HOST [localhost],
 # NAADI_PG_PORT [54322], NAADI_PG_PASSWORD [postgres], NAADI_TEST_NETWORK [naadi-test-net],
 # NAADI_AUTH_CONTAINER [auth-naadi-test], NAADI_AUTH_PROXY_CONTAINER [auth-proxy-naadi-test],
-# NAADI_AUTH_PORT [54329] (published proxy port), NAADI_AUTH_SITE_URL [http://127.0.0.1:7860].
+# NAADI_AUTH_PORT [54329] (published proxy port), NAADI_AUTH_SITE_URL [http://127.0.0.1:7860],
+# NAADI_AUTH_STORAGE_UPSTREAM [unset] host:port of the storage-api from stack.sh (e.g. storage-naadi-test:5000
+# locally, 127.0.0.1:5000 in CI): when set, the same gateway also serves `/storage/v1/`, so the browser loads
+# public figures from SUPABASE_URL/storage/v1/object/public/... exactly as on the hosted project.
 set -euo pipefail
 
 AUTH_IMAGE="supabase/auth:v2.197.0"
@@ -31,6 +34,7 @@ AUTH_CONTAINER="${NAADI_AUTH_CONTAINER:-auth-naadi-test}"
 PROXY_CONTAINER="${NAADI_AUTH_PROXY_CONTAINER:-auth-proxy-naadi-test}"
 AUTH_PORT="${NAADI_AUTH_PORT:-54329}"
 SITE_URL="${NAADI_AUTH_SITE_URL:-http://127.0.0.1:7860}"
+STORAGE_UPSTREAM="${NAADI_AUTH_STORAGE_UPSTREAM:-}"
 API_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 REPO_DIR="$(cd "$API_DIR/../.." && pwd)"
 ENV_FILE="${NAADI_AUTH_ENV_FILE:-$REPO_DIR/test-results/.auth-stack.env}"
@@ -68,6 +72,19 @@ print(secret, key("anon"), key("service_role"))
 PY
 }
 
+storage_location() {
+  [ -n "$STORAGE_UPSTREAM" ] || return 0
+  cat <<NGINX
+    # Supabase's gateway path for Storage (stack.sh's storage-api serves it at the root).
+    location /storage/v1/ {
+      proxy_pass http://${STORAGE_UPSTREAM}/;
+      proxy_set_header Host \$host;
+      proxy_hide_header Access-Control-Allow-Origin;
+      add_header Access-Control-Allow-Origin \$http_origin always;
+    }
+NGINX
+}
+
 write_proxy_conf() {
   local upstream="$1" conf="$2"
   cat >"$conf" <<NGINX
@@ -91,6 +108,7 @@ http {
       proxy_set_header Host \$host;
       proxy_set_header X-Forwarded-For \$remote_addr;
     }
+$(storage_location)
   }
 }
 NGINX

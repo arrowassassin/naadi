@@ -73,6 +73,8 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
       if (!enabled || !s.restored) return;
       const changed = Math.abs(s.offset - s.sent) >= MIN_CHANGE || (s.completed && !s.sentCompleted);
       if (!changed) return;
+      // Offline: keep the latest position and send it when the connection is back (the "online" listener).
+      if (typeof navigator !== "undefined" && navigator.onLine === false) return;
       s.sent = s.offset;
       s.sentCompleted = s.completed;
       saveRef.current({
@@ -172,11 +174,14 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
       if (document.visibilityState === "hidden") flush(true);
     };
     const onPageHide = () => flush(true);
+    const onOnline = () => flush();
     document.addEventListener("visibilitychange", onHide);
     window.addEventListener("pagehide", onPageHide);
+    window.addEventListener("online", onOnline);
     return () => {
       document.removeEventListener("visibilitychange", onHide);
       window.removeEventListener("pagehide", onPageHide);
+      window.removeEventListener("online", onOnline);
       flush();
     };
   }, [flush]);

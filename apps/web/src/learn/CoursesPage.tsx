@@ -51,7 +51,8 @@ function SystemTile({ s, selected, exam }: { s: CourseSystem; selected: boolean;
       <Link
         to="/learn"
         search={{ exam, system: selected ? undefined : s.id }}
-        aria-current={selected ? "true" : undefined}
+        aria-current={selected ? "page" : undefined}
+        activeOptions={{ exact: true, includeSearch: true }}
         className={cx(
           "flex min-h-40 w-full flex-col justify-between gap-4 rounded-tile-sm border p-5 no-underline",
           "transition-colors duration-(--duration-control) ease-out",
@@ -64,7 +65,9 @@ function SystemTile({ s, selected, exam }: { s: CourseSystem; selected: boolean;
           <span>{plural(s.chapter_ids.length, "chapter")}</span>
           <span>{selected ? "Showing" : s.sections_read === 0 ? "Not started" : ""}</span>
         </span>
-        <span className="font-bold font-display text-[1.375rem] leading-[1.1] tracking-[-0.02em]">{s.label}</span>
+        <span className="font-bold font-display text-[1.375rem] leading-[1.1] tracking-[-0.02em] [overflow-wrap:anywhere]">
+          {s.label}
+        </span>
         <ProgressBar read={s.sections_read} total={s.sections_total} label={`${s.label} progress`} inverse={selected} />
       </Link>
     </li>
@@ -183,7 +186,8 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
                 key={e.id}
                 to="/learn"
                 search={{ exam: e.id }}
-                aria-pressed={e.id === exam}
+                aria-current={e.id === exam ? "page" : undefined}
+                activeOptions={{ exact: true, includeSearch: true }}
                 className={cx(
                   "inline-flex min-h-12 items-center rounded-pill px-5 text-[0.875rem] no-underline",
                   e.id === exam
@@ -227,7 +231,12 @@ export function CoursesPage({ search }: { search: CoursesSearch }) {
               Systems
             </h2>
             {selected ? (
-              <Link to="/learn" search={{ exam: exam ?? undefined }} className="min-h-11 py-3 text-ui-sm">
+              <Link
+                to="/learn"
+                search={{ exam: exam ?? undefined }}
+                activeOptions={{ exact: true, includeSearch: true }}
+                className="min-h-11 py-3 text-ui-sm"
+              >
                 Show all systems
               </Link>
             ) : null}
