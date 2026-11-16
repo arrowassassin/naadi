@@ -212,3 +212,43 @@ def test_repo_nvidia_primaries_declare_their_capabilities() -> None:
 def test_main_with_missing_config_file(tmp_path: Path) -> None:
     with pytest.raises(FileNotFoundError):
         cm.main(["--config", str(tmp_path / "nope.yaml")])
+
+
+def test_app_config_rows_map_to_the_checked_shape() -> None:
+    models = {"providers": {"openrouter": {"key_env": "K", "rpm": 1}}, "roles": {"router": {"chain": []}}}
+    cfg = cm._rows_to_config([("models", models), ("budget", {"only_free_ids_in_chains": True})])
+    assert cfg == {
+        "providers": models["providers"],
+        "roles": models["roles"],
+        "budget": {"only_free_ids_in_chains": True},
+    }
+    assert cm._rows_to_config([("budget", {})]) is None
+
+
+def test_paid_id_in_live_app_config_fails_main(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    repo = yaml.safe_load((REPO_ROOT / "config" / "models.yaml").read_text(encoding="utf-8"))
+    live = {
+        "providers": repo["providers"],
+        "roles": {"router": {"chain": [{"provider": "openrouter", "model": "vendor/paid-model"}]}},
+        "budget": repo["budget"],
+    }
+    caps = {"tools", "image", "structured_output"}
+    monkeypatch.setattr(cm, "load_app_config", lambda mode: (live, "read from DATABASE_URL"))
+    monkeypatch.setattr(cm, "fetch_openrouter_catalog", lambda key: {})
+    monkeypatch.setattr(
+        cm, "inspect_nvidia", lambda models, key: {m: cm.NvidiaModel(m, caps, None, 1.0) for m in models}
+    )
+    assert cm.main(["--app-config", "db"]) == 1
+    out = capsys.readouterr().out
+    assert "app_config (live): router: vendor/paid-model is not a :free ID" in out
+
+
+def test_app_config_off_and_auto_without_env(monkeypatch: pytest.MonkeyPatch) -> None:
+    for name in ("DATABASE_URL", "SUPABASE_URL", "SUPABASE_ACCESS_TOKEN"):
+        monkeypatch.delenv(name, raising=False)
+    assert cm.load_app_config("off") == (None, "skipped (--app-config off)")
+    assert cm.load_app_config("auto")[0] is None
+    with pytest.raises(SystemExit):
+        cm.load_app_config("db")

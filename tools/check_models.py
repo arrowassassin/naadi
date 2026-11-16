@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.13"
-# dependencies = ["openrouter==1.3.179", "pyyaml==6.0.3", "langchain-nvidia-ai-endpoints==1.5.0"]
+# dependencies = [
+#   "openrouter==1.3.179", "pyyaml==6.0.3", "langchain-nvidia-ai-endpoints==1.5.0",
+#   "httpx==0.28.1", "psycopg[binary]==3.3.9",
+# ]
 # ///
 """Verify every LLM role chain in config/models.yaml against its provider.
 
 Usage:
-    uv run tools/check_models.py [--config config/models.yaml]
+    uv run tools/check_models.py [--config config/models.yaml] [--app-config auto|db|management|off]
     (from apps/api:) uv run python ../../tools/check_models.py
+
+Two sources are checked with the same rules: the YAML (the seed) and the LIVE routing in the
+`app_config` table (keys `models` + `budget`, what llm.py actually uses; an admin can edit them).
+`--app-config` picks how the table is read: `db` = DATABASE_URL (psycopg), `management` = the Supabase
+Management API SQL endpoint, read-only (SUPABASE_URL + SUPABASE_ACCESS_TOKEN; the build sandbox has no raw
+Postgres egress), `auto` (default) = the first of those that is configured, `off` = YAML only. A missing
+row is reported (not seeded yet) and is not a failure; a paid ID in the table is.
 
 Each role under `roles:` with a `chain:` is an ordered list of `{provider, model}` (providers under
 `providers:`). Roles without a chain (local embeddings, speech-to-text) and the `generation:` block are
@@ -255,12 +265,90 @@ def check(
     return report
 
 
+APP_CONFIG_SQL = "select key, value from public.app_config where key in ('models', 'budget')"
+
+
+def _rows_to_config(rows: list[tuple[str, Any]]) -> dict[str, Any] | None:
+    values = {k: v for k, v in rows}
+    models = values.get("models")
+    if not isinstance(models, dict):
+        return None
+    return {
+        "providers": models.get("providers") or {},
+        "roles": models.get("roles") or {},
+        "budget": values.get("budget") or {},
+    }
+
+
+def app_config_from_db(database_url: str) -> dict[str, Any] | None:
+    import psycopg
+
+    with psycopg.connect(database_url, connect_timeout=10) as conn:
+        present = conn.execute("select to_regclass('public.app_config') is not null").fetchone()
+        if not present or not present[0]:
+            return None
+        rows = conn.execute(APP_CONFIG_SQL).fetchall()
+    return _rows_to_config([(str(r[0]), r[1]) for r in rows])
+
+
+def app_config_from_management(supabase_url: str, token: str) -> dict[str, Any] | None:
+    from urllib.parse import urlparse
+
+    import httpx
+
+    ref = (urlparse(supabase_url).hostname or "").split(".", 1)[0]
+
+    def sql(query: str) -> list[dict[str, Any]]:
+        # No SDK covers the Management API SQL endpoint (supabase-py wraps the project APIs only).
+        r = httpx.post(
+            f"https://api.supabase.com/v1/projects/{ref}/database/query",
+            json={"query": query, "read_only": True},
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=30,
+        )
+        if r.status_code >= 400:
+            raise SystemExit(f"app_config: Management API answered HTTP {r.status_code}")
+        rows: list[dict[str, Any]] = r.json()
+        return rows
+
+    present = sql("select to_regclass('public.app_config') is not null as present")
+    if not present or not present[0].get("present"):
+        return None
+    return _rows_to_config([(str(row["key"]), row["value"]) for row in sql(APP_CONFIG_SQL)])
+
+
+def load_app_config(mode: str) -> tuple[dict[str, Any] | None, str]:
+    """(config or None, how it was read / why it was skipped)."""
+    db = os.environ.get("DATABASE_URL") or ""
+    sb, tok = os.environ.get("SUPABASE_URL") or "", os.environ.get("SUPABASE_ACCESS_TOKEN") or ""
+    if mode == "off":
+        return None, "skipped (--app-config off)"
+    if mode in ("db", "auto") and db:
+        return app_config_from_db(db), "read from DATABASE_URL"
+    if mode in ("management", "auto") and sb and tok:
+        return app_config_from_management(sb, tok), "read through the Supabase Management API (read-only)"
+    if mode == "auto":
+        return None, "skipped (no DATABASE_URL, and no SUPABASE_URL + SUPABASE_ACCESS_TOKEN)"
+    raise SystemExit(f"--app-config {mode}: the required environment variables are not set")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", type=Path, default=ROOT / "config" / "models.yaml")
+    ap.add_argument("--app-config", choices=("auto", "db", "management", "off"), default="auto")
     args = ap.parse_args(argv)
     config = yaml.safe_load(args.config.read_text(encoding="utf-8"))
-    role_chains, _, _ = chains(config)
+    live, how = load_app_config(args.app_config)
+    sources: list[tuple[str, dict[str, Any]]] = [(str(args.config), config)]
+    missing = "" if live is not None or "skipped" in how else "; no `models` row yet (not migrated or not seeded)"
+    print(f"app_config: {how}{missing}")
+    if live is not None:
+        sources.append(("app_config (live)", live))
+    # Every model either source routes to, so each is fetched / probed once.
+    role_chains: dict[str, list[dict[str, str]]] = {}
+    for _, cfg in sources:
+        for role, entries in chains(cfg)[0].items():
+            role_chains[role] = [*role_chains.get(role, []), *entries]
 
     catalog: dict[str, CatalogModel] = {}
     if models_for(role_chains, "openrouter"):
@@ -275,12 +363,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"NVIDIA: {len(nv_models)} models, {how}")
     print()
 
-    report = check(config, catalog, nvidia)
-    for w in report.warnings:
-        print(f"WARN  {w}")
-    if report.failures:
-        print("\nFAIL")
-        for f in report.failures:
+    failures: list[str] = []
+    for name, cfg in sources:
+        print(f"── {name}")
+        report = check(cfg, catalog, nvidia)
+        for w in report.warnings:
+            print(f"WARN  {w}")
+        failures.extend(f"{name}: {f}" for f in report.failures)
+        print()
+    if failures:
+        print("FAIL")
+        for f in failures:
             print(f"  - {f}")
         return 1
     print("\nPASS: every chain is free, and every primary is available with its required capability")
