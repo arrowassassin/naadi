@@ -13,6 +13,7 @@ import pytest
 from pydantic import SecretStr
 
 from naadi_api.llm_config import RuntimeConfig
+from naadi_api.llm_privacy import PrivacyContext, PrivacyUnavailable
 from naadi_api.search import (
     SearchResult,
     SearchService,
@@ -66,14 +67,34 @@ async def no_sleep(_: float) -> None:
     return None
 
 
-def service(store: MemStore, *, tavily_calls: list[dict[str, Any]] | None = None, handler: Any = None) -> SearchService:
+class FakePrivacy:
+    """Stand-in for PrivacyDirectory: every user is the same test student."""
+
+    def __init__(self) -> None:
+        self.ctx = PrivacyContext.from_profile(
+            display_name="Meera Krishnan", email="meera.k@example.org", phone="+91 90000 11111"
+        )
+
+    async def get(self, user_id: Any) -> PrivacyContext:
+        return self.ctx
+
+
+def service(
+    store: MemStore,
+    *,
+    tavily_calls: list[dict[str, Any]] | None = None,
+    handler: Any = None,
+    pubmed_queries: list[str] | None = None,
+) -> SearchService:
     calls = tavily_calls if tavily_calls is not None else []
+    pq = pubmed_queries if pubmed_queries is not None else []
 
     async def fake_tavily(**kw: Any) -> dict[str, Any]:
         calls.append(kw)
         return tavily_body()
 
     async def fake_pubmed(q: str, n: int) -> list[SearchResult]:
+        pq.append(q)
         return []
 
     transport = httpx.MockTransport(handler or (lambda req: httpx.Response(200, json={})))
@@ -86,6 +107,7 @@ def service(store: MemStore, *, tavily_calls: list[dict[str, Any]] | None = None
         tavily_search=fake_tavily,
         pubmed_search=fake_pubmed,
         sleep=no_sleep,
+        privacy=FakePrivacy(),  # type: ignore[arg-type]
     )
 
 
@@ -273,3 +295,38 @@ async def test_requests_carry_only_the_generic_client_identity() -> None:
     for r in seen:
         assert r.headers["user-agent"].startswith("Naadi/test (+https://")
         assert "authorization" not in r.headers and "cookie" not in r.headers
+
+
+async def test_no_pii_leaves_in_requests_or_cache_keys() -> None:
+    seen: list[httpx.Request] = []
+
+    def handler(req: httpx.Request) -> httpx.Response:
+        seen.append(req)
+        return httpx.Response(200, json={"resultList": {"result": []}, "studies": []})
+
+    store, tavily, pubmed = MemStore(), [], []
+    svc = service(store, handler=handler, tavily_calls=tavily, pubmed_queries=pubmed)
+    uid = uuid.uuid4()
+    leaky = (
+        "Meera Krishnan meera.k@example.org 90000 11111 asks about renal tubular acidosis,"
+        " uid 3f2b8c1e-1d2a-4b9e-9c1a-0e5f6a7b8c9d"
+    )
+    await svc.search(leaky, user_id=uid)
+    await svc.search("visa question from meera.k@example.org, call +1 415 555 0134", user_id=uid)
+    outbound = [str(r.url) for r in seen] + [str(c["query"]) for c in tavily] + pubmed + list(store.cache)
+    assert outbound
+    for text in outbound:
+        low = text.lower()
+        for secret in ("meera", "krishnan", "example.org", "90000", "11111", "3f2b8c1e", "555"):
+            assert secret not in low, (secret, text)
+    assert any("renal tubular acidosis" in t for t in pubmed)
+
+
+async def test_user_search_without_privacy_directory_is_refused() -> None:
+    svc = service(MemStore())
+    svc._privacy = None
+    with pytest.raises(PrivacyUnavailable):
+        await svc.search("anion gap", user_id=uuid.uuid4())
+    # Anonymous (system) searches still run with the generic patterns.
+    ans = await svc.search("anion gap", user_id=None)
+    assert ans.intent == "medical"

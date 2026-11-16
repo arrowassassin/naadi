@@ -47,6 +47,7 @@ from pydantic import SecretStr
 
 from .db import Database
 from .llm_config import RuntimeConfig, SearchLayer, SearchSection
+from .llm_privacy import PrivacyDirectory, PrivacyUnavailable, scrub_generic
 from .logs import get_logger
 
 log = get_logger("naadi.search")
@@ -546,6 +547,7 @@ class SearchService:
         tavily_search: Callable[..., Awaitable[Mapping[str, Any]]] | None = None,
         pubmed_search: Callable[[str, int], Awaitable[list[SearchResult]]] | None = None,
         sleep: Callable[[float], Awaitable[None]] = asyncio.sleep,
+        privacy: PrivacyDirectory | None = None,
     ) -> None:
         self._runtime = runtime
         self._store = store
@@ -556,6 +558,16 @@ class SearchService:
         self._tavily_search = tavily_search or self._tavily_sdk
         self._pubmed_search = pubmed_search or self._pubmed_entrez
         self._client: httpx.AsyncClient | None = None
+        self._privacy = privacy
+
+    async def _clean(self, query: str, user_id: uuid.UUID | None) -> str:
+        """The query with PII replaced, before any outbound request and before the cache key is computed:
+        the student's own identifiers (PrivacyDirectory) for a user-scoped search, generic patterns always."""
+        if user_id is None:
+            return scrub_generic(query)
+        if self._privacy is None:
+            raise PrivacyUnavailable("no privacy directory configured for user-scoped search")
+        return (await self._privacy.get(user_id)).scrub(query)
 
     def _http(self) -> httpx.AsyncClient:
         if self._client is None:
@@ -764,6 +776,7 @@ class SearchService:
         query = query.strip()
         if not query:
             raise ValueError("empty query")
+        query = (await self._clean(query, user_id)).strip()
         cfg = (await self._runtime.get()).search
         intent = intent or ("latest" if web else classify(query))
         layers: dict[str, str] = {}
@@ -816,7 +829,8 @@ class SearchService:
         return SearchAnswer(query_hash(query), intent, results, layers)
 
     # ── media ──
-    async def commons_images(self, query: str) -> list[SearchResult]:
+    async def commons_images(self, query: str, *, user_id: uuid.UUID | None = None) -> list[SearchResult]:
+        query = await self._clean(query, user_id)
         cfg = (await self._runtime.get()).search
         layer = cfg.layer("commons_images")
         if layer is None:

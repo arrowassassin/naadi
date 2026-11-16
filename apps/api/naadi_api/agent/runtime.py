@@ -13,6 +13,7 @@ from ..db import Database
 from ..llm import LLMGateway, set_gateway
 from ..llm_budget import PgUsageLedger
 from ..llm_config import RuntimeConfig, set_runtime_config
+from ..llm_privacy import PrivacyDirectory
 from ..logs import get_logger
 from ..search import PgSearchStore, SearchService, set_search
 from ..settings import Settings
@@ -44,8 +45,11 @@ async def init_runtime(settings: Settings) -> AgentRuntime:
     db = Database(settings.database_url, max_size=4)
     await db.open()
     rc = RuntimeConfig(db, settings.config_dir)
-    gateway = LLMGateway(settings, rc, PgUsageLedger(db))
-    search = SearchService(rc, PgSearchStore(db), tavily_key=settings.tavily_api_key, app_version=settings.app_version)
+    privacy = PrivacyDirectory(db)
+    gateway = LLMGateway(settings, rc, PgUsageLedger(db), privacy=privacy)
+    search = SearchService(
+        rc, PgSearchStore(db), tavily_key=settings.tavily_api_key, app_version=settings.app_version, privacy=privacy
+    )
     set_runtime_config(rc)
     set_gateway(gateway)
     set_search(search)

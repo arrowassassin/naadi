@@ -141,6 +141,14 @@ class PrivacyContext:
             profile_values=tuple(_strings(settings or {})),
         )
 
+    def merged(self, other: PrivacyContext) -> PrivacyContext:
+        return PrivacyContext(
+            names=(*self.names, *other.names),
+            emails=(*self.emails, *other.emails),
+            phones=(*self.phones, *other.phones),
+            profile_values=(*self.profile_values, *other.profile_values),
+        )
+
     def scrub(self, text: str) -> str:
         for pat, repl in self._patterns:
             text = pat.sub(repl, text)
@@ -209,9 +217,67 @@ def scrub_messages(messages: Sequence[BaseMessage], ctx: PrivacyContext) -> list
     return out
 
 
+class PrivacyUnavailable(PermissionError):
+    """The student's identifying data could not be loaded: the model call is refused, never sent unscrubbed."""
+
+
+_PRIVACY_SQL = (
+    "select p.display_name, p.settings, u.email, u.phone,"
+    " u.raw_user_meta_data ->> 'full_name', u.raw_user_meta_data ->> 'name'"
+    " from auth.users u left join public.profiles p on p.user_id = u.id where u.id = %s"
+)
+
+
+class PrivacyDirectory:
+    """Loads a student's PrivacyContext from `auth.users` + `profiles` (service connection), cached for
+    `ttl_s` per user in a bounded map. `llm.py` and `search.py` call it for every user-scoped call, so no
+    caller can forget to scrub. Never logs a value."""
+
+    def __init__(self, db: Any, *, ttl_s: float = 300.0, max_entries: int = 5000, clock: Any = None) -> None:
+        import time as _time
+
+        self._db = db
+        self._ttl = ttl_s
+        self._max = max_entries
+        self._clock = clock or _time.monotonic
+        self._cache: dict[Any, tuple[float, PrivacyContext]] = {}
+
+    async def get(self, user_id: Any) -> PrivacyContext:
+        hit = self._cache.get(user_id)
+        if hit is not None and self._clock() - hit[0] < self._ttl:
+            return hit[1]
+        try:
+            if self._db.pool is None:
+                await self._db.open()
+            if self._db.pool is None:
+                raise PrivacyUnavailable("no database")
+            async with self._db.pool.connection(timeout=5.0) as conn:
+                cur = await conn.execute(_PRIVACY_SQL, (user_id,))
+                row = await cur.fetchone()
+        except PrivacyUnavailable:
+            raise
+        except Exception as exc:  # any failure refuses the call (fail closed)
+            raise PrivacyUnavailable(type(exc).__name__) from exc
+        if row is None:
+            raise PrivacyUnavailable("unknown user")
+        display_name, settings, email, phone, full_name, name = row
+        ctx = PrivacyContext(
+            names=tuple(n for n in (display_name, full_name, name) if isinstance(n, str) and n),
+            emails=(email,) if isinstance(email, str) and email else (),
+            phones=(phone,) if isinstance(phone, str) and phone else (),
+            profile_values=tuple(_strings(settings or {})),
+        )
+        if len(self._cache) >= self._max:
+            self._cache.clear()
+        self._cache[user_id] = (self._clock(), ctx)
+        return ctx
+
+
 __all__ = [
     "VAULT_MARK",
     "PrivacyContext",
+    "PrivacyDirectory",
+    "PrivacyUnavailable",
     "VaultContentRejected",
     "VaultDocument",
     "assert_no_vault",

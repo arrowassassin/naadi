@@ -48,6 +48,7 @@ from .llm_budget import (
     BudgetExhausted,
     RateBuckets,
     TurnCounter,
+    TurnLimitReached,
     TurnRegistry,
     UsageLedger,
     UsageRow,
@@ -55,7 +56,14 @@ from .llm_budget import (
     purpose_cap,
 )
 from .llm_config import AgentConfig, ChainEntry, ProviderSpec, Purpose, RuntimeConfig, model_family
-from .llm_privacy import PrivacyContext, VaultContentRejected, assert_no_vault, scrub_messages
+from .llm_privacy import (
+    PrivacyContext,
+    PrivacyDirectory,
+    PrivacyUnavailable,
+    VaultContentRejected,
+    assert_no_vault,
+    scrub_messages,
+)
 from .logs import get_logger
 from .settings import Settings
 
@@ -252,6 +260,7 @@ class LLMGateway:
         clients: Any = None,
         clock: Any = time.monotonic,
         sleep: Callable[[float], Any] = asyncio.sleep,
+        privacy: PrivacyDirectory | None = None,
     ) -> None:
         self._settings = settings
         self._runtime = runtime
@@ -260,6 +269,7 @@ class LLMGateway:
         self._buckets = RateBuckets(clock=clock)
         self._clock = clock
         self._sleep = sleep
+        self._privacy = privacy
         self._dead_models: dict[tuple[str, str], float] = {}
         self._dead_providers: dict[str, float] = {}
         self.turns = TurnRegistry()
@@ -375,8 +385,14 @@ class LLMGateway:
     ) -> AsyncIterator[ChatGeneration | Served]:
         cfg = await self._runtime.get()
         assert_no_vault(messages)
-        clean = scrub_messages(messages, ctx.privacy)
-        ctx.turn.take(cfg.budget.max_llm_calls_per_turn)
+        privacy = ctx.privacy
+        if ctx.user_id is not None:
+            # The gateway loads the student's identifying data itself, so no caller can forget it; when it
+            # cannot be loaded the call is refused rather than sent with only the generic patterns.
+            if self._privacy is None:
+                raise PrivacyUnavailable("no privacy directory configured for user-scoped calls")
+            privacy = privacy.merged(await self._privacy.get(ctx.user_id))
+        clean = scrub_messages(messages, privacy)
         spec = cfg.models.roles.get(role)
         if spec is None:
             raise KeyError(f"unknown LLM role {role!r}")
@@ -404,11 +420,18 @@ class LLMGateway:
                 if not await bucket.try_take():
                     rate_waits.append(bucket.wait_s())
                     continue
+                # The per-turn cap counts provider requests (fallback attempts included), not logical calls.
+                try:
+                    ctx.turn.take(cfg.budget.max_llm_calls_per_turn)
+                except TurnLimitReached:
+                    await bucket.refund()
+                    raise
                 row = UsageRow(provider, ctx.purpose, role, entry.model, ctx.user_id, ctx.run_id)
                 usage_id = await self._ledger.reserve(row, cap)
                 if usage_id is None:
                     cap_hit = True
                     await bucket.refund()
+                    ctx.turn.refund()
                     continue
                 call_kwargs = dict(extra)
                 if provider == "openrouter" and pdf:
@@ -443,7 +466,7 @@ class LLMGateway:
                     if not yielded:
                         raise RuntimeError("empty response")
                     status = 200
-                except (VaultContentRejected, BudgetExhausted, asyncio.CancelledError):
+                except (VaultContentRejected, BudgetExhausted, PrivacyUnavailable, asyncio.CancelledError):
                     await self._finish(usage_id, ok=False, status=None, last=None, started=started)
                     raise
                 except Exception as exc:  # classified below; the chain moves on

@@ -19,7 +19,7 @@ from naadi_api.llm_config import (
     sections_from_models_yaml,
     validate_section,
 )
-from naadi_api.llm_privacy import PrivacyContext, VaultContentRejected, VaultDocument
+from naadi_api.llm_privacy import PrivacyContext, PrivacyUnavailable, VaultContentRejected, VaultDocument
 from naadi_api.settings import Settings
 
 from .fakes import Clock, FakeClients, MemLedger, ScriptedModel
@@ -442,3 +442,80 @@ async def test_no_keys_and_no_zero_cap_is_unavailable() -> None:
     gw, _, _ = gateway(s, FakeClients({}, keys={"nvidia": False, "openrouter": False}))
     with pytest.raises(LLMUnavailable):
         await gw.ainvoke("router", [HumanMessage("x")], ctx())
+
+
+# ── privacy loaded by the gateway itself (review item 2) ──
+
+
+class StaticPrivacy:
+    def __init__(self, ctx: PrivacyContext | None) -> None:
+        self.ctx = ctx
+        self.calls = 0
+
+    async def get(self, user_id: Any) -> PrivacyContext:
+        self.calls += 1
+        if self.ctx is None:
+            raise PrivacyUnavailable("unknown user")
+        return self.ctx
+
+
+async def test_gateway_loads_the_students_privacy_itself() -> None:
+    import uuid as _uuid
+
+    s = sections()
+    s["models"]["roles"]["router"]["chain"] = chain(("openrouter", "b/o:free"))
+    model = ScriptedModel()
+    gw, _, _ = gateway(s, FakeClients({("openrouter", "b/o:free"): model}))
+    directory = StaticPrivacy(PrivacyContext.from_profile(display_name="Kavya Menon", email="kavya@example.net"))
+    gw._privacy = directory  # type: ignore[assignment]
+    # The caller passes NO privacy context: only the user id.
+    await gw.ainvoke("router", [HumanMessage("Kavya Menon here, kavya@example.net")], ctx(user_id=_uuid.uuid4()))
+    sent = str(model.seen[0][0].content)
+    assert "Kavya" not in sent and "Menon" not in sent and "kavya@" not in sent
+    assert directory.calls == 1
+
+
+async def test_user_call_is_refused_when_privacy_cannot_be_loaded() -> None:
+    import uuid as _uuid
+
+    s = sections()
+    clients = FakeClients({})
+    gw, led, _ = gateway(s, clients)
+    with pytest.raises(PrivacyUnavailable):  # no directory configured
+        await gw.ainvoke("router", [HumanMessage("x")], ctx(user_id=_uuid.uuid4()))
+    gw._privacy = StaticPrivacy(None)  # type: ignore[assignment]
+    with pytest.raises(PrivacyUnavailable):  # directory cannot build it
+        await gw.ainvoke("router", [HumanMessage("x")], ctx(user_id=_uuid.uuid4()))
+    assert clients.calls == [] and led.rows == {}
+
+
+# ── per-turn cap counts provider attempts (review item 7) ──
+
+
+async def test_turn_cap_counts_fallback_attempts() -> None:
+    s = sections()
+    s["models"]["roles"]["router"]["chain"] = chain(
+        ("openrouter", "a/1:free"), ("openrouter", "a/2:free"), ("openrouter", "a/3:free"), ("nvidia", "a/4")
+    )
+    failing = {("openrouter", f"a/{i}:free"): ScriptedModel(fail_status=503) for i in (1, 2, 3)}
+    gw, led, _ = gateway(s, FakeClients(failing))
+    c = gw.context_for_run("chat", "run-attempts")
+    out = await gw.ainvoke("router", [HumanMessage("x")], c)  # 3 failures + 1 success = 4 provider requests
+    assert out.response_metadata["naadi_provider"] == "nvidia"
+    assert len(led.rows) == 4
+    with pytest.raises(TurnLimitReached):
+        await gw.ainvoke("router", [HumanMessage("again")], c)
+    assert len(led.rows) == 4  # the refused call made no request
+
+
+async def test_turn_cap_stops_a_chain_mid_walk() -> None:
+    s = sections()
+    s["budget"]["max_llm_calls_per_turn"] = 2
+    s["models"]["roles"]["router"]["chain"] = chain(
+        ("openrouter", "a/1:free"), ("openrouter", "a/2:free"), ("nvidia", "a/3")
+    )
+    failing = {("openrouter", f"a/{i}:free"): ScriptedModel(fail_status=429) for i in (1, 2)}
+    gw, led, _ = gateway(s, FakeClients(failing))
+    with pytest.raises(TurnLimitReached):
+        await gw.ainvoke("router", [HumanMessage("x")], gw.context_for_run("chat", "run-mid"))
+    assert len(led.rows) == 2

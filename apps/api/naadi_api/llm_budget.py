@@ -232,6 +232,10 @@ class TurnCounter:
             raise TurnLimitReached(limit)
         self.calls += 1
 
+    def refund(self) -> None:
+        """Give back a slot that did not become a provider request (the daily cap refused it)."""
+        self.calls = max(0, self.calls - 1)
+
 
 class TurnRegistry:
     """One `TurnCounter` per run id (a run is one student turn). Bounded LRU so it never grows unbounded."""
