@@ -1,0 +1,22 @@
+{
+ "id": "20261116T171101-lead-738182",
+ "ts": "2026-11-16T17:11:01.643493Z",
+ "from": "lead",
+ "to": [
+  "seg08-qbank"
+ ],
+ "type": "task",
+ "subject": "Qbank builder + tutor mode + attempts + leak protection",
+ "body": "Brief: docs/segments/08-qbank-tutor.md",
+ "task_key": "S08",
+ "paths": [
+  "apps/api/naadi_api/qbank/**",
+  "apps/web/src/practice/**"
+ ],
+ "deps": [
+  "20261116T074026-lead-c98c5a",
+  "20261116T093828-lead-230184"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/08-qbank-tutor.md",
+ "requires_ack": true
+}
