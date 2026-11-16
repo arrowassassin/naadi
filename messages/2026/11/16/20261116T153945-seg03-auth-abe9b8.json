@@ -1,0 +1,13 @@
+{
+ "id": "20261116T153945-seg03-auth-abe9b8",
+ "ts": "2026-11-16T15:39:45.037314Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/agent/auth.py apps/api/tests/conftest.py apps/web/e2e/fixtures.ts docs/RUNBOOK.md */workflows/ci.yml apps/api/naadi_api/main.py",
+ "body": "",
+ "re": "20261116T110139-seg03-auth-01147d",
+ "requires_ack": false
+}
