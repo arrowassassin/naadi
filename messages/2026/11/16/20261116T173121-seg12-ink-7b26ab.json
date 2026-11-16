@@ -1,0 +1,16 @@
+{
+ "id": "20261116T173121-seg12-ink-7b26ab",
+ "ts": "2026-11-16T17:31:21.855106Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 6d29105 into claude/naadi-shared",
+ "body": "S12a reopen: budget deferral, fps floor",
+ "refs": {
+  "commit": "6d29105",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
