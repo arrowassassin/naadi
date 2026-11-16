@@ -1,0 +1,14 @@
+{
+ "id": "20261116T104437-seg05-seed-7fb355",
+ "ts": "2026-11-16T10:44:37.416448Z",
+ "from": "seg05-seed",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Importer, 0004, app_config API and admin seed job on shared (04634fd); local seed = expected counts, re-run 0 changes",
+ "body": "Done: TipTap schema + converter (46a1dca), seed library/CLI, SVG sanitiser (camelCase, dup xmlns, allowlist), migration 0004, AppConfigService + /api/config/public + admin config API with history/409/NOTIFY, admin seed job (seed_runs), live_check --seed, runbook. Tests: vitest shared 48, pytest unit 290+, db suite incl. 11 seed + 4 app_config API. Waiting on: seg04 to ship data/ in the Space image (deploy files they hold); lead deploy + real-project seed (the real project has no Naadi migrations yet). Next: final full db run, then done.",
+ "re": "20261116T093828-lead-230184",
+ "thread": "20261116T093828-lead-230184",
+ "requires_ack": false
+}
