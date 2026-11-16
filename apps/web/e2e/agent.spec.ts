@@ -9,7 +9,7 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
-  fromThirdPartyEmbed,
+  fromNonAppFrame,
   snapSegment,
   test,
 } from "./fixtures";
@@ -152,6 +152,12 @@ test.describe("admin, answer blocks", () => {
     consoleErrors,
   }, info) => {
     test.skip(!canSeedMedia, "the recorded media results are seeded only into a local test database");
+    const youtubeRequests: string[] = [];
+    page.on("request", (r) => {
+      if (/(^|\.)(youtube(-nocookie)?\.com|ytimg\.com|googlevideo\.com)$/.test(new URL(r.url()).hostname)) {
+        youtubeRequests.push(r.url());
+      }
+    });
     await openDiagnostics(page);
     await page.getByRole("button", { name: "Run ping" }).click();
     const media = page.getByTestId("agent-block-media");
@@ -165,14 +171,21 @@ test.describe("admin, answer blocks", () => {
       await expect(fig).toContainText(/CC BY/);
       await expect(fig.getByRole("link", { name: "Source" })).toHaveAttribute("href", /^https:\/\//);
     }
-    const yt = media.getByTestId("media-youtube").locator("iframe");
-    await expect(yt).toHaveAttribute("src", /^https:\/\/www\.youtube-nocookie\.com\/embed\/czY5nyvZ7cU\?origin=/);
-    await expect(yt).toHaveAttribute("referrerpolicy", "strict-origin-when-cross-origin");
-    await expect(yt).toHaveAttribute("title", /^Video: /);
+    // Click-to-load: no contact with YouTube until the admin asks for the video.
+    const video = media.getByTestId("media-youtube");
+    await expect(video.locator("iframe")).toHaveCount(0);
+    expect(youtubeRequests, "no request to YouTube before the click").toEqual([]);
     await expect(page.getByTestId("ping-confirm")).toBeVisible({ timeout: 45_000 });
     await expectNoAxeViolations(page);
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "media");
+    await video.getByRole("button", { name: /^Play video: / }).click();
+    const yt = video.locator("iframe");
+    await expect(yt).toHaveAttribute("src", /^https:\/\/www\.youtube-nocookie\.com\/embed\/czY5nyvZ7cU\?/);
+    const src = new URL((await yt.getAttribute("src")) ?? "");
+    expect(src.searchParams.get("origin")).toBe(new URL(page.url()).origin);
+    await expect(yt).toHaveAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    await expect(yt).toHaveAttribute("title", /^Video: /);
   });
 
   test("streamed reply (recorded stream): the assistant's answer renders in violet", async ({
@@ -255,7 +268,7 @@ test.describe("admin, production server (APP_ENV=prod, production CSP)", () => {
       const page = await ctx.newPage();
       const errors: string[] = [];
       page.on("console", (m) => {
-        if (m.type() === "error" && !fromThirdPartyEmbed(m.location().url)) {
+        if (m.type() === "error" && !fromNonAppFrame(m.location().url, page.url())) {
           errors.push(`${m.text()} @ ${m.location().url}`);
         }
       });
@@ -274,7 +287,9 @@ test.describe("admin, production server (APP_ENV=prod, production CSP)", () => {
           .poll(() => img.evaluate((i: HTMLImageElement) => i.complete && i.naturalWidth > 0), { timeout: 20_000 })
           .toBe(true);
       }
-      await expect(media.getByTestId("media-youtube").locator("iframe")).toBeVisible();
+      // The video stays a click-to-load facade: the page makes no contact with YouTube.
+      await expect(media.getByTestId("media-youtube").getByRole("button", { name: /^Play video: / })).toBeVisible();
+      await expect(media.getByTestId("media-youtube").locator("iframe")).toHaveCount(0);
       await expect(page.getByTestId("ping-confirm")).toBeVisible({ timeout: 45_000 });
       await page.getByRole("button", { name: "Discard" }).click();
       await expect(page.getByTestId("ping-done")).toHaveText("Not recorded.", { timeout: 30_000 });

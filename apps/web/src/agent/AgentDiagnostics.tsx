@@ -1,6 +1,7 @@
 import type { AgentRuntimeFacts } from "@naadi/shared";
 import { Button, Chip, ErrorState, OfflineBanner, Skeleton, Tile, TileLabel } from "@naadi/ui";
-import { Activity, AlertTriangle, Check, Clock, Sparkles, X } from "lucide-react";
+import { Activity, AlertTriangle, Check, Clock, Play, Sparkles, X } from "lucide-react";
+import { useState } from "react";
 import { useMe } from "../auth/api";
 import { useUiText } from "../copy/useUiText";
 import { StatusChip } from "../health/HealthPanel";
@@ -158,6 +159,46 @@ function isMediaItem(v: unknown): v is MediaItem {
 
 /** Media answer block: Commons / PMC images with title, credit and licence; YouTube through the official
  * IFrame player (privacy-enhanced domain, origin + strict-origin-when-cross-origin referrer). */
+/** Click-to-load facade (as ContentRenderer's Video): nothing is requested from YouTube until the admin asks
+ * for the video; then the official IFrame player on the privacy-enhanced domain, with origin and an
+ * origin-only referrer (YouTube refuses to play without one). */
+function YouTubeFacade({ videoId, title, t }: { videoId: string; title: string; t: T }) {
+  const [loaded, setLoaded] = useState(false);
+  const src = new URL(`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`);
+  src.search = new URLSearchParams({
+    autoplay: "1",
+    rel: "0",
+    playsinline: "1",
+    origin: window.location.origin,
+  }).toString();
+  return (
+    <div className="relative aspect-video w-full overflow-hidden rounded-swatch border border-line bg-surface-2">
+      {loaded ? (
+        <iframe
+          src={src.toString()}
+          title={t("agent.diag.video_title", { title })}
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          allowFullScreen
+          className="absolute inset-0 size-full border-0"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setLoaded(true)}
+          className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-text"
+        >
+          <span className="flex size-12 items-center justify-center rounded-pill bg-paper text-ground">
+            <Play aria-hidden="true" size={22} />
+          </span>
+          <span className="text-center font-semibold">{t("content.video_play", { title })}</span>
+          <span className="text-center text-ui-sm text-text-2">{t("content.video_loads")}</span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 function MediaBlock({ block, t }: { block: ReceivedBlock; t: T }) {
   const items = (Array.isArray(block.data.items) ? block.data.items : []).filter(isMediaItem);
   if (!items.length) return null;
@@ -195,15 +236,7 @@ function MediaBlock({ block, t }: { block: ReceivedBlock; t: T }) {
             </figure>
           ) : m.kind === "video" && m.video_id ? (
             <figure key={m.video_id} className="m-0 flex min-w-0 flex-col gap-2" data-testid="media-youtube">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(m.video_id)}?origin=${encodeURIComponent(window.location.origin)}&rel=0`}
-                title={t("agent.diag.video_title", { title: m.title })}
-                referrerPolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-                className="aspect-video w-full rounded-swatch border-0"
-              />
+              <YouTubeFacade videoId={m.video_id} title={m.title} t={t} />
               <figcaption className="flex flex-col gap-1 text-[0.8125rem] text-text-2">
                 <span className="font-semibold text-text">{m.title}</span>
                 <span>{t("agent.diag.media_credit", { credit: m.credit ?? "—", license: m.license })}</span>

@@ -42,16 +42,18 @@ export const TOOL_CSP_NOISE =
   "Refused to apply a stylesheet because its hash, its nonce, or 'unsafe-inline' does not appear in the style-src directive of the Content Security Policy.";
 
 /**
- * Origins of third-party embeds whose own documents log to the console: the YouTube IFrame player probes
- * features the embed is not granted (e.g. "Permissions policy violation: compute-pressure", now and then).
- * Its script runs in its own cross-origin frame, so its lines are not the app's errors. Lines whose source
- * is the app (or any other origin) are still failures.
+ * True when a console line comes from a document that is not the app: a third-party frame such as the YouTube
+ * IFrame player, whose own scripts (and Google's inside it) log freely and probe features the embed is not
+ * granted. Those lines are not the app's errors. A line is the app's when its source has the app's origin, or
+ * has no URL at all (the engine reports no location), so the app can never hide behind this. The app origin
+ * is the page's current one (local, budget-zero and prod servers each have their own).
  */
-const THIRD_PARTY_EMBED_ORIGINS = new Set(["https://www.youtube-nocookie.com"]);
-
-export function fromThirdPartyEmbed(url: string): boolean {
+export function fromNonAppFrame(sourceUrl: string, pageUrl: string): boolean {
+  if (!sourceUrl) return false;
   try {
-    return THIRD_PARTY_EMBED_ORIGINS.has(new URL(url).origin);
+    const app = new URL(pageUrl).origin;
+    const src = new URL(sourceUrl).origin;
+    return app !== "null" && src !== "null" && src !== app;
   } catch {
     return false;
   }
@@ -65,7 +67,7 @@ export const test = base.extend<Fixtures>({
     page.on("console", (msg) => {
       if (msg.type() !== "error") return;
       if (toolActive > 0 && msg.text() === TOOL_CSP_NOISE) return;
-      if (fromThirdPartyEmbed(msg.location().url)) return;
+      if (fromNonAppFrame(msg.location().url, page.url())) return;
       errors.push(`${msg.text()} @ ${msg.location().url}`);
     });
     page.on("pageerror", (err) => errors.push(`pageerror: ${err.message}`));
