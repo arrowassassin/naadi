@@ -18,11 +18,11 @@
 # Env (defaults in brackets): NAADI_PG_CONTAINER [pg-naadi-test], NAADI_PG_HOST [localhost],
 # NAADI_PG_PORT [54322], NAADI_PG_PASSWORD [postgres], NAADI_TEST_NETWORK [naadi-test-net],
 # NAADI_AUTH_CONTAINER [auth-naadi-test], NAADI_AUTH_PROXY_CONTAINER [auth-proxy-naadi-test],
-# NAADI_AUTH_PORT [54329] (published proxy port), NAADI_AUTH_SITE_URL [http://127.0.0.1:7860],
+# NAADI_AUTH_PORT [54329; 8099 in `ci`] (published proxy port), NAADI_AUTH_SITE_URL [http://127.0.0.1:7860],
 # NAADI_AUTH_STORAGE_UPSTREAM [unset] host:port of the storage-api from stack.sh (e.g. storage-naadi-test:5000
 # locally, 127.0.0.1:5000 in CI): when set, the same gateway also serves `/storage/v1/`, so the browser loads
 # public figures from SUPABASE_URL/storage/v1/object/public/... exactly as on the hosted project.
-# NAADI_MAIL_CONTAINER [mail-naadi-test], NAADI_MAIL_PORT [54324] (Mailpit HTTP API).
+# NAADI_MAIL_CONTAINER [mail-naadi-test], NAADI_MAIL_PORT [54324; 8025 in `ci`] (Mailpit HTTP API).
 set -euo pipefail
 
 AUTH_IMAGE="supabase/auth:v2.197.0"
@@ -35,9 +35,15 @@ PG_PASSWORD="${NAADI_PG_PASSWORD:-postgres}"
 NETWORK="${NAADI_TEST_NETWORK:-naadi-test-net}"
 AUTH_CONTAINER="${NAADI_AUTH_CONTAINER:-auth-naadi-test}"
 PROXY_CONTAINER="${NAADI_AUTH_PROXY_CONTAINER:-auth-proxy-naadi-test}"
-AUTH_PORT="${NAADI_AUTH_PORT:-54329}"
+cmd="${1:-up}"
+# On the CI host network the listeners share the runner's port space. 54xxx sits inside Linux's ephemeral
+# range (32768-60999), so any outgoing connection (image pulls, uv, pnpm) can hold the port when the gateway
+# or Mailpit binds it ("address already in use", Mailpit exits and no auth email is ever caught). The `ci`
+# defaults stay below that range.
+if [ "$cmd" = "ci" ]; then default_auth_port=8099 default_mail_port=8025; else default_auth_port=54329 default_mail_port=54324; fi
+AUTH_PORT="${NAADI_AUTH_PORT:-$default_auth_port}"
 MAIL_CONTAINER="${NAADI_MAIL_CONTAINER:-mail-naadi-test}"
-MAIL_PORT="${NAADI_MAIL_PORT:-54324}"
+MAIL_PORT="${NAADI_MAIL_PORT:-$default_mail_port}"
 SITE_URL="${NAADI_AUTH_SITE_URL:-http://127.0.0.1:7860}"
 STORAGE_UPSTREAM="${NAADI_AUTH_STORAGE_UPSTREAM:-}"
 API_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -263,7 +269,6 @@ start() {
   fi
 }
 
-cmd="${1:-up}"
 case "$cmd" in
   up)
     docker network connect "$NETWORK" "$PG_CONTAINER" >/dev/null 2>&1 || true
