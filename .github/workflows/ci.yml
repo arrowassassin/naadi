@@ -60,8 +60,8 @@ jobs:
         run: pnpm typecheck
       - name: Unit tests (vitest)
         run: pnpm test
-      - name: Unit tests (pytest, no external services)
-        run: uv --directory apps/api run pytest -m "not integration"
+      - name: Unit tests (pytest, no external services, cleared environment)
+        run: uv --directory apps/api run pytest -m "not live and not db"
       - name: Contracts drift (OpenAPI -> zod + TS client)
         run: |
           pnpm gen:contracts
@@ -114,6 +114,10 @@ jobs:
         env:
           NAADI_PG_PORT: "5432"
         run: apps/api/tests/db/stack.sh storage
+      - name: Supabase auth server (migrates the auth schema as on the hosted project; sessions, confirmed emails)
+        env:
+          NAADI_PG_PORT: "5432"
+        run: apps/api/tests/auth/auth_stack.sh ci
       - name: DB integration tests
         # Only the `db` tests: the other integration tests need service keys that live on the Space, not in CI.
         run: uv --directory apps/api run pytest -m db -v

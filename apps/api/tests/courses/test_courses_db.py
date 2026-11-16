@@ -22,7 +22,8 @@ from pydantic import SecretStr
 from naadi_api.auth import TokenVerifier
 from naadi_api.db import Database
 from naadi_api.main import create_app
-from tests.auth.jwt_helpers import SUPABASE_URL, JwksServer, SigningKey, claims, mint
+from tests.auth.accounts import signed_in
+from tests.auth.jwt_helpers import SUPABASE_URL, JwksServer, SigningKey
 from tests.conftest import fake_service, make_settings
 
 pytestmark = [pytest.mark.integration, pytest.mark.db]
@@ -253,7 +254,8 @@ def client(url: str, key: SigningKey, static_dir: Path) -> Iterator[TestClient]:
 
 
 def h(key: SigningKey, uid: uuid.UUID) -> dict[str, str]:
-    return {"authorization": f"Bearer {mint(key, claims(uid))}"}
+    # A confirmed account with a live session (the API checks both in Supabase's auth schema).
+    return signed_in(key, uid)
 
 
 def test_courses_requires_sign_in(client: TestClient) -> None:

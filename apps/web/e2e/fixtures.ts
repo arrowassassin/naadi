@@ -91,7 +91,9 @@ async function freezePage(page: Page): Promise<string> {
       } else if (el instanceof HTMLTextAreaElement && c instanceof HTMLTextAreaElement) {
         c.textContent = el.value;
       } else if (el instanceof HTMLSelectElement && c instanceof HTMLSelectElement) {
-        Array.from(el.options).forEach((o, j) => c.options[j]?.toggleAttribute("selected", o.selected));
+        Array.from(el.options).forEach((o, j) => {
+          c.options[j]?.toggleAttribute("selected", o.selected);
+        });
       }
     });
     // No page JavaScript in the copy: drop scripts and module preloads (inline handlers are not used).

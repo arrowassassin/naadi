@@ -20,7 +20,8 @@ from naadi_api.config_api.service import AppConfigService
 from naadi_api.db import Database
 from naadi_api.main import create_app
 from naadi_api.seed.importer import run_seed
-from tests.auth.jwt_helpers import SUPABASE_URL, JwksServer, SigningKey, claims, mint
+from tests.auth.accounts import signed_in
+from tests.auth.jwt_helpers import SUPABASE_URL, JwksServer, SigningKey
 from tests.conftest import fake_service, make_settings
 
 from .rls import DB_MARKS, create_auth_user, require_local
@@ -78,7 +79,8 @@ def client(url: str, key: SigningKey, static_dir: Path, monkeypatch: pytest.Monk
 
 
 def _h(key: SigningKey, user: uuid.UUID, email: str) -> dict[str, str]:
-    return {"Authorization": f"Bearer {mint(key, claims(user, email=email))}"}
+    # A confirmed account with a live session (the API checks both in Supabase's auth schema).
+    return signed_in(key, user, email=email, header="Authorization")
 
 
 def test_public_config(client: TestClient) -> None:
