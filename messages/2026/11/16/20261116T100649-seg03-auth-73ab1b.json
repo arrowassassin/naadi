@@ -1,0 +1,17 @@
+{
+ "id": "20261116T100649-seg03-auth-73ab1b",
+ "ts": "2026-11-16T10:06:49.359121Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S03 done: JWKS/HS256 auth, admin gate, /api/me /api/nav /api/public-config, sign-in + callback + protected shell (nav pill/tab bar), Today, Account, pen-surface registration; CI real sign-in via local supabase/auth; pnpm e2e:live-auth for post-deploy. Full matrix 857 passed / 23 failed (Firefox content-process segfaults in this sandbox, ink perf, 2 font-offline fixed in f27ccdc) / 38 skipped",
+ "body": "",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "refs": {
+  "commit": "f27ccdc"
+ },
+ "requires_ack": true
+}
