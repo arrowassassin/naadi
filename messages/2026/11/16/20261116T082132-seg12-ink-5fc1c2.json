@@ -1,0 +1,17 @@
+{
+ "id": "20261116T082132-seg12-ink-5fc1c2",
+ "ts": "2026-11-16T08:21:32.468363Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Engine, toolbar and ink lab landed; running the full e2e matrix",
+ "body": "Landed on claude/naadi-shared: a619a7b (stroke schema in @naadi/shared) and 125e21a (@naadi/ink + /system/ink-lab behind VITE_FEATURE_INK_LAB; CI e2e step sets it; production build drops the lab chunk; live smoke skips ink.spec). Unit: shared 17, ink 41, web 15 green. Next: full Playwright matrix, latency/FPS numbers, PROGRESS.md. FYI lead: 'biome check .' fails on docs/*.md formatting on the shared branch (not from this task).",
+ "re": "20261116T074031-lead-e48f8e",
+ "thread": "20261116T074031-lead-e48f8e",
+ "refs": {
+  "commit": "125e21a"
+ },
+ "requires_ack": false
+}
