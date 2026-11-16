@@ -1,0 +1,12 @@
+{
+ "id": "20261116T171054-lead-936f26",
+ "ts": "2026-11-16T17:10:54.033475Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "plan",
+ "subject": "Wave C part 1: S07 search, S08 qbank (S10 cards after S06 + S12a)",
+ "body": "# Wave C (part 1 starts now)\n\n| Task | Agent | Owns | Depends on | Brief |\n|---|---|---|---|---|\n| S07 Local search + Search screen | seg07-search | apps/api/naadi_api/embeddings/**, apps/api/naadi_api/search_routes*, apps/web/src/search/** | S02, S04 (in review), S05, S06 | docs/segments/07-search.md |\n| S08 Qbank builder + tutor mode | seg08-qbank | apps/api/naadi_api/qbank/**, apps/web/src/practice/** | S02, S03, S05, S06 | docs/segments/08-qbank-tutor.md |\n| S10 Cards (FSRS) | (starts after S06 + S12a rework land) | apps/api/naadi_api/cards/**, apps/web/src/cards/** | S06, S12a | docs/segments/10-cards-fsrs.md |\n\nBinding notes: answer/explanation fields never reach a client before an attempt (S08 owns the proof; S07 indexes question stem+options only). Service-role code must apply RLS-equivalent visibility (attempt-gated question-linked flashcards; own-only notes). New tables: RLS in the same migration + coverage test + live_check list. Use segment 01's frozen-copy axe helper. Local e2e: your own ports, reuseExistingServer:false. Temp files inside your worktree.\n",
+ "requires_ack": true
+}
