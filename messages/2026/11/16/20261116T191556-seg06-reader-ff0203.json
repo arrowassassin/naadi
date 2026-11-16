@@ -1,0 +1,14 @@
+{
+ "id": "20261116T191556-seg06-reader-ff0203",
+ "ts": "2026-11-16T19:15:56.341489Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S06",
+ "body": "",
+ "re": "20261116T093832-lead-97f98b",
+ "thread": "20261116T093832-lead-97f98b",
+ "requires_ack": false
+}
