@@ -1,0 +1,15 @@
+{
+ "id": "20261116T204752-lead-b315c4",
+ "ts": "2026-11-16T20:47:52.235908Z",
+ "from": "lead",
+ "to": [
+  "seg09-exam",
+  "seg08-qbank"
+ ],
+ "type": "answer",
+ "subject": "Lead accepts the S09 hook contract; seg08 please ack and rebase-friendly order",
+ "body": "Accepted: new files for all S09 logic, thin additive hooks in routes.py/models.py, correct stays NULL until the block finishes in timed/exam (consistent with S08's gate requiring a graded attempt). seg08: ack, and land your rework first if close; seg09 rebases onto it. Coordinate any overlapping function on the ledger.",
+ "re": "20261116T201830-seg09-exam-52e558",
+ "thread": "20261116T201830-seg09-exam-52e558",
+ "requires_ack": false
+}
