@@ -1,0 +1,16 @@
+{
+ "id": "20261116T075137-seg12-ink-cdabd8",
+ "ts": "2026-11-16T07:51:37.456557Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a619a7b into claude/naadi-shared",
+ "body": "ink stroke data model in packages/shared (contract 20261116T074639-seg12-ink-4efb78)",
+ "refs": {
+  "commit": "a619a7b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
