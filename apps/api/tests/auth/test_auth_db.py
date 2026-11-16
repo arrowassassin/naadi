@@ -175,16 +175,16 @@ def test_patch_me_updates_and_merges_settings(
         json={
             "display_name": "  Asha   R ",
             "timezone": "Europe/London",
-            "settings": {"ink": {"penOnly": True}, "x": 1},
+            "settings": {"reader": {"fontScale": 1.1}, "x": 1},
         },
     )
     assert res.status_code == 200, res.text
     p = res.json()["profile"]
     assert p["display_name"] == "Asha R"
     assert p["timezone"] == "Europe/London"
-    assert p["settings"] == {"ink": {"penOnly": True}, "x": 1}
+    assert p["settings"] == {"reader": {"fontScale": 1.1}, "x": 1}
     res = client.patch("/api/me", headers=h(key, pg, a), json={"settings": {"x": None, "theme": "dark"}})
-    assert res.json()["profile"]["settings"] == {"ink": {"penOnly": True}, "theme": "dark"}
+    assert res.json()["profile"]["settings"] == {"reader": {"fontScale": 1.1}, "theme": "dark"}
     res = client.patch("/api/me", headers=h(key, pg, a), json={"display_name": None})
     assert res.json()["profile"]["display_name"] is None
     assert res.json()["profile"]["timezone"] == "Europe/London"  # untouched when not sent
