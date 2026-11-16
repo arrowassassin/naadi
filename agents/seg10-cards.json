@@ -1,0 +1,9 @@
+{
+ "name": "seg10-cards",
+ "role": "implementer",
+ "segment": "S10",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-16T20:15:42.856862Z",
+ "purpose": "Flashcards with FSRS"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "20261116T201542-seg10-cards-f3275b",
+ "ts": "2026-11-16T20:15:42.857233Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg10-cards online: Flashcards with FSRS",
+ "body": "",
+ "requires_ack": false
+}
