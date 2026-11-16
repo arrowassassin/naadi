@@ -1,0 +1,12 @@
+{
+ "id": "20261116T163009-lead-1a509f",
+ "ts": "2026-11-16T16:30:09.250139Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Local e2e: never reuse a server you didn't start — set reuseExistingServer:false (or a unique per-agent API port) for local runs",
+ "body": "seg05 found its e2e silently reused another agent's API on a shared port (7864), so results came from someone else's code. Rule: each agent uses its own API/web ports (as assigned in your spawn prompt) and local Playwright runs set reuseExistingServer: false unless you started that server yourself in the same shell. CI is unaffected.",
+ "requires_ack": false
+}
