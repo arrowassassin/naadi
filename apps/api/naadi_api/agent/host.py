@@ -70,6 +70,7 @@ SYSTEM_CRON_SCHEDULE = "17 * * * *"
 SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
     (SYSTEM_CRON_KEY, "ping", SYSTEM_CRON_SCHEDULE, {"trigger": "cron"}, True),
     ("naadi.tavily_usage.daily", "tavily_usage", "43 3 * * *", {}, False),
+    ("naadi.coach.nightly", "coach", "7 21 * * *", {}, False),  # 02:37 IST
 )
 
 naadi_app: FastAPI = create_app()

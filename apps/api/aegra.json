@@ -7,6 +7,10 @@
     "tavily_usage": {
       "path": "./naadi_api/agent/graphs/tavily_usage.py:graph",
       "description": "Daily reconciliation of Tavily's usage reading with Naadi's own ledger (records only)"
+    },
+    "coach": {
+      "path": "./naadi_api/agent/graphs/coach.py:graph",
+      "description": "Nightly study coach: facts -> validated suggestions for Today (rules fallback when the job budget is spent)"
     }
   },
   "auth": {
@@ -19,9 +23,21 @@
     "cors": {
       "allow_origins": [],
       "allow_credentials": false,
-      "allow_methods": ["GET", "POST", "PATCH", "PUT", "DELETE"],
-      "allow_headers": ["authorization", "content-type"],
-      "expose_headers": ["Content-Location", "Location"],
+      "allow_methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "PUT",
+        "DELETE"
+      ],
+      "allow_headers": [
+        "authorization",
+        "content-type"
+      ],
+      "expose_headers": [
+        "Content-Location",
+        "Location"
+      ],
       "max_age": 600
     }
   },

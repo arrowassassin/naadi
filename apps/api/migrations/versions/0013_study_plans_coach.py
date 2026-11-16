@@ -16,6 +16,7 @@ Create Date: 2026-11-16
   checked against, `action` what accepting applies (through the API). `source = 'llm'` rows carry `title`/`body`
   written by the model; `source = 'rules'` rows carry none (the client words them from `ui_copy`
   `coach.rules.<kind>.*` with `facts`). The student may update `status` only.
+- `agent_health.kind` gains `coach` (one row per nightly pass: counts only).
 - RLS forced on all three with the four `_own` policies (as 0009: the revoked commands' policies document the row
   filter); no client INSERT/DELETE on any of them, no UPDATE on `study_plans`.
 """
@@ -102,6 +103,9 @@ create table public.coach_suggestions (
 );
 create index coach_suggestions_user_date_idx on public.coach_suggestions (user_id, for_date desc, created_at);
 
+alter table public.agent_health drop constraint agent_health_kind_check,
+  add constraint agent_health_kind_check check (kind in ('ping','tavily_usage','coach'));
+
 alter table public.study_plans enable row level security;
 alter table public.study_plans force row level security;
 revoke all on table public.study_plans from anon, authenticated;
@@ -144,6 +148,11 @@ def upgrade() -> None:
 
 
 def downgrade() -> None:
+    op.execute("delete from public.agent_health where kind = 'coach'")
+    op.execute(
+        "alter table public.agent_health drop constraint agent_health_kind_check,"
+        " add constraint agent_health_kind_check check (kind in ('ping','tavily_usage'))"
+    )
     op.execute("drop table if exists public.coach_suggestions")
     op.execute(
         "alter table public.plan_items drop constraint if exists plan_items_plan_link_check,"
