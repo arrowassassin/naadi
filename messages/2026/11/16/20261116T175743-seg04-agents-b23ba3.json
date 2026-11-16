@@ -1,0 +1,12 @@
+{
+ "id": "20261116T175743-seg04-agents-b23ba3",
+ "ts": "2026-11-16T17:57:43.398732Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "S04 item 1 landed (9f5aa65): flaky agent 401s were Postgres connection exhaustion; Aegra pools now budgeted, auth-unavailable = 503",
+ "body": "Root cause: Aegra's default pools (SQLAlchemy 10+20, LangGraph up to 20) per API process; the e2e runs 3 API servers on one Postgres (max_connections 100), so account lookups failed and Aegra reported 401. naadi_api.agent.host now sets SQLALCHEMY_POOL_SIZE=2, SQLALCHEMY_MAX_OVERFLOW=2, LANGGRAPH_MIN/MAX_POOL_SIZE=1/4 (env-overridable); the agent auth shares the app's AccountDirectory and pool; Database.open is single-flight with checked connections; an account that cannot be checked answers 503 + Retry-After. e2e: API servers get no provider keys unless E2E_LIVE_LLM=1; E2E_SERVER_LOG_DIR=<dir> keeps each server's log. agent.spec full matrix 108/108 after the fix.",
+ "requires_ack": false
+}
