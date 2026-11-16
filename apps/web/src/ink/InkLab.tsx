@@ -16,7 +16,8 @@ import {
 import type { InkColor, InkDiff, InkItem } from "@naadi/shared";
 import { Button, Chip, cx } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type React from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { InkCanvas } from "./InkCanvas";
 import { InkToolbar } from "./InkToolbar";
 import "./ink-lab.css";
@@ -121,6 +122,66 @@ function FrameCounter() {
   );
 }
 
+/**
+ * Actions for a lasso selection, placed beside it and never over it: below when there is room inside the
+ * page, otherwise above. With no ink in the loop only "Ask Naadi" applies, so only it is shown.
+ */
+function SelectionMenu({
+  selection,
+  box,
+  engine,
+}: {
+  selection: SelectionInfo;
+  box: React.RefObject<HTMLDivElement | null>;
+  engine: React.RefObject<InkEngine | null>;
+}) {
+  const menu = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState({ w: 0, h: 0 });
+  const hasInk = selection.ids.length > 0;
+  useLayoutEffect(() => {
+    const el = menu.current;
+    if (el && (el.offsetWidth !== size.w || el.offsetHeight !== size.h))
+      setSize({ w: el.offsetWidth, h: el.offsetHeight });
+  });
+  const surfaceW = box.current?.clientWidth ?? 0;
+  const surfaceH = box.current?.clientHeight ?? 0;
+  const r = selection.rect;
+  const gap = 12;
+  const left = Math.max(8, Math.min(r.left, surfaceW - size.w - 8));
+  const below = r.top + r.height + gap;
+  const above = r.top - size.h - gap;
+  const top = below + size.h <= surfaceH - 8 || above < 8 ? below : above;
+  return (
+    <div
+      ref={menu}
+      role="toolbar"
+      aria-label="Selection"
+      className="absolute z-20 flex max-w-[calc(100%-16px)] flex-wrap gap-1 rounded-[28px] border border-line-strong bg-ground p-1.5"
+      style={{ left: `${left}px`, top: `${top}px`, visibility: size.w ? "visible" : "hidden" }}
+    >
+      <span className="sr-only">
+        {hasInk ? "Drag the selection to move it." : "No ink in this loop: ask about the region."}
+      </span>
+      {hasInk ? (
+        <>
+          <Button variant="secondary" className="min-h-11" onClick={() => engine.current?.duplicateSelection()}>
+            Copy
+          </Button>
+          <Button variant="secondary" className="min-h-11" onClick={() => engine.current?.deleteSelection()}>
+            Delete
+          </Button>
+          <Button variant="secondary" className="min-h-11" onClick={() => void engine.current?.convertSelection()}>
+            Convert to text
+          </Button>
+        </>
+      ) : null}
+      <Button variant="assistant" className="min-h-11" onClick={() => void engine.current?.askAboutSelection()}>
+        Ask Naadi
+      </Button>
+    </div>
+  );
+}
+
 function fmt(ms: number): string {
   return `${ms.toFixed(1)} ms`;
 }
@@ -150,7 +211,8 @@ export function InkLab() {
   const [error, setError] = useState<string | null>(null);
   const eventN = useRef(0);
   const stressRef = useRef<HTMLDivElement>(null);
-  const [content, setContent] = useState<"text" | "opaque">("text");
+  const [content, setContent] = useState<"text" | "table">("text");
+  const surfaceBox = useRef<HTMLDivElement>(null);
   const [manyPages, setManyPages] = useState<InkItem[][] | null>(null);
   const pageEngines = useRef<(InkEngine | null)[]>([]);
   const [budget, setBudget] = useState(() => canvasBudget.stats());
@@ -173,6 +235,8 @@ export function InkLab() {
   useEffect(() => {
     let last = "";
     const id = window.setInterval(() => {
+      // Never re-render the lab while a stroke is being drawn: the panel would compete with the ink it measures.
+      if (pageEngine.current?.drawing || stressEngine.current?.drawing) return;
       const summary = latency.summary();
       const stats = { ...(pageEngine.current?.stats ?? {}) };
       const mem = canvasBudget.stats();
@@ -360,10 +424,10 @@ export function InkLab() {
           </Button>
           <Button
             variant="secondary"
-            aria-pressed={content === "opaque"}
-            onClick={() => setContent(content === "text" ? "opaque" : "text")}
+            aria-pressed={content === "table"}
+            onClick={() => setContent(content === "text" ? "table" : "text")}
           >
-            {content === "text" ? "Page content: text" : "Page content: opaque (PDF, image)"}
+            {content === "text" ? "Page content: text" : "Page content: text and a table"}
           </Button>
         </div>
       </section>
@@ -376,7 +440,7 @@ export function InkLab() {
           </span>
         </div>
         {slowMo ? <FrameCounter /> : null}
-        <div className="relative">
+        <div className="relative" ref={surfaceBox}>
           <InkCanvas
             label="Ink page"
             className={cx(
@@ -384,7 +448,8 @@ export function InkLab() {
               surfaceTheme === "paper" ? "ink-paper-dotted" : "ink-dark-dotted",
             )}
             style={{ aspectRatio: "820 / 1180" }}
-            surfaceType={content === "opaque" ? "pdf_page" : "section"}
+            surfaceType="section"
+            hasOpaqueBlocks={content === "table"}
             enabled={enabled}
             tool={tool}
             color={slowMo ? "ink" : color}
@@ -414,68 +479,25 @@ export function InkLab() {
               )}
             >
               <p className="m-0 max-w-[48ch] text-reading">
-                Write anywhere on this page. Highlight the rows below with the marker: on a plain row the highlight sits
-                under the text, on an opaque row it has to blend over it.
+                Write anywhere on this page. On plain text the marker sits under the words; on a page with a table, a
+                figure or a PDF it blends over them.
               </p>
-              <table className="w-full max-w-[520px] border-collapse">
-                <tbody>
-                  <tr data-testid="plain-row">
-                    <td className="border-y border-line-dashed px-3 py-3">Plain row</td>
-                  </tr>
-                  <tr data-testid="opaque-row" className="bg-mark-amber text-ground">
-                    <td className="px-3 py-3">Opaque row (a table fill, an image or a PDF page)</td>
-                  </tr>
-                </tbody>
-              </table>
+              <p className="m-0 py-3" data-testid="plain-row">
+                Plain line to highlight
+              </p>
+              {content === "table" ? (
+                <table className="w-full max-w-[520px] border-collapse">
+                  <tbody>
+                    <tr data-testid="opaque-row" className="bg-mark-amber text-ground">
+                      <td className="px-3 py-3">Table row with a fill</td>
+                    </tr>
+                  </tbody>
+                </table>
+              ) : null}
             </div>
           </InkCanvas>
           {selection && enabled && tool === "lasso" ? (
-            <div
-              role="toolbar"
-              aria-label="Selection"
-              className="absolute z-20 flex flex-wrap gap-1 rounded-pill border border-line-strong bg-ground p-1.5"
-              style={{
-                left: `clamp(8px, ${selection.rect.left}px, calc(100% - 340px))`,
-                top: `${selection.rect.top + selection.rect.height + 12}px`,
-              }}
-            >
-              <span className="sr-only">
-                {selection.ids.length > 0
-                  ? "Drag the selection to move it."
-                  : "No ink in this loop: ask about the region."}
-              </span>
-              <Button
-                variant="secondary"
-                className="min-h-11"
-                disabled={selection.ids.length === 0}
-                onClick={() => pageEngine.current?.duplicateSelection()}
-              >
-                Copy
-              </Button>
-              <Button
-                variant="secondary"
-                className="min-h-11"
-                disabled={selection.ids.length === 0}
-                onClick={() => pageEngine.current?.deleteSelection()}
-              >
-                Delete
-              </Button>
-              <Button
-                variant="secondary"
-                className="min-h-11"
-                disabled={selection.ids.length === 0}
-                onClick={() => void pageEngine.current?.convertSelection()}
-              >
-                Convert to text
-              </Button>
-              <Button
-                variant="assistant"
-                className="min-h-11"
-                onClick={() => void pageEngine.current?.askAboutSelection()}
-              >
-                Ask Naadi
-              </Button>
-            </div>
+            <SelectionMenu selection={selection} box={surfaceBox} engine={pageEngine} />
           ) : null}
         </div>
       </section>

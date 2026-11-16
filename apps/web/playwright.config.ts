@@ -1,4 +1,6 @@
+import { execFileSync } from "node:child_process";
 import { randomBytes } from "node:crypto";
+import { existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
@@ -89,7 +91,35 @@ const BUDGET_ZERO_PORT = port + 1;
  * such as the ink lab being admin-only (ink-gate.spec). Specs find it through E2E_PROD_URL.
  */
 const PROD_PORT = port + 2;
-if (!liveBaseUrl) process.env.E2E_PROD_URL = `http://127.0.0.1:${PROD_PORT}`;
+/**
+ * The prod-mode API is served over https with a throwaway self-signed certificate for 127.0.0.1: production's
+ * CSP carries upgrade-insecure-requests, which WebKit applies to http loopback too, so an http prod server
+ * could not load its own assets in WebKit. The certificate is made here, when the config loads (Playwright
+ * starts web servers before global setup), and only test contexts that opt in ignore its HTTPS errors.
+ */
+const TLS_DIR = path.join(repoRoot, "test-results/.tls");
+const TLS_KEY = path.join(TLS_DIR, "loopback-key.pem");
+const TLS_CERT = path.join(TLS_DIR, "loopback-cert.pem");
+function ensureLoopbackCert(): void {
+  if (existsSync(TLS_KEY) && existsSync(TLS_CERT)) return;
+  mkdirSync(TLS_DIR, { recursive: true });
+  execFileSync(
+    "openssl",
+    ["req", "-x509", "-newkey", "rsa:2048", "-nodes", "-days", "2", "-subj", "/CN=127.0.0.1"].concat([
+      "-addext",
+      "subjectAltName=IP:127.0.0.1,DNS:localhost",
+      "-keyout",
+      TLS_KEY,
+      "-out",
+      TLS_CERT,
+    ]),
+    { stdio: "ignore" },
+  );
+}
+if (!liveBaseUrl) {
+  ensureLoopbackCert();
+  process.env.E2E_PROD_URL = `https://127.0.0.1:${PROD_PORT}`;
+}
 
 /**
  * With a database the API under test is the production entrypoint: Aegra hosting the Naadi app
@@ -116,8 +146,9 @@ function webServers(): PlaywrightTestConfig["webServer"] {
   // E2E_SERVER_LOG_DIR: keep each API server's JSON log (one file per port) for diagnosing a failed run.
   const logTo = (p: number) =>
     process.env.E2E_SERVER_LOG_DIR ? ` >> ${path.join(process.env.E2E_SERVER_LOG_DIR, `api-${p}.log`)} 2>&1` : "";
-  const serve = (p: number, app: string) =>
-    `uv --directory ${api} run uvicorn ${app} --host 127.0.0.1 --port ${p} --workers 1 --no-access-log${logTo(p)}`;
+  const tls = ` --ssl-keyfile ${TLS_KEY} --ssl-certfile ${TLS_CERT}`;
+  const serve = (p: number, app: string, https = false) =>
+    `uv --directory ${api} run uvicorn ${app} --host 127.0.0.1 --port ${p} --workers 1 --no-access-log${https ? tls : ""}${logTo(p)}`;
   const common = { reuseExistingServer: !process.env.CI, stdout: "ignore" as const, stderr: "pipe" as const };
   if (!dbUrl) {
     return [
@@ -130,8 +161,9 @@ function webServers(): PlaywrightTestConfig["webServer"] {
       },
       {
         ...common,
-        command: serve(PROD_PORT, "naadi_api.main:app"),
-        url: `http://127.0.0.1:${PROD_PORT}/api/public-config`,
+        command: serve(PROD_PORT, "naadi_api.main:app", true),
+        url: `https://127.0.0.1:${PROD_PORT}/api/public-config`,
+        ignoreHTTPSErrors: true,
         timeout: 120_000,
         env: env({ APP_ENV: "prod" }),
       },
@@ -158,8 +190,9 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     {
       ...common,
       // Same database and code in production mode (the migrations above have run or are idempotent).
-      command: `${migrate} && ${serve(PROD_PORT, "naadi_api.agent.host:app")}`,
-      url: `http://127.0.0.1:${PROD_PORT}/api/public-config`,
+      command: `${migrate} && ${serve(PROD_PORT, "naadi_api.agent.host:app", true)}`,
+      url: `https://127.0.0.1:${PROD_PORT}/api/public-config`,
+      ignoreHTTPSErrors: true,
       timeout: 180_000,
       env: env({ APP_ENV: "prod" }),
     },

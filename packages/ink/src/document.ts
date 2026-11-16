@@ -51,10 +51,19 @@ export class InkDocument {
     const now = Math.floor(this.now());
     for (let i = 0; i < entries.length; i++) {
       const e = entries[i] as Entry;
-      entries[i] = { item: { ...e.item, updatedAt: Math.max(now, e.item.updatedAt + 1) }, seq: e.seq };
+      // Strictly newer than anything a replica can hold for this id, even within the same millisecond.
+      const seen = this.replicaStamp.get(e.item.id) ?? e.item.updatedAt;
+      const updatedAt = Math.max(now, seen + 1, e.item.updatedAt + 1);
+      entries[i] = { item: { ...e.item, updatedAt }, seq: e.seq };
     }
     return entries;
   }
+
+  /**
+   * The newest updatedAt a sync replica can hold per id: the item's own stamp, or for a removal the
+   * tombstone recordInkDiff writes (max(now, updatedAt + 1)).
+   */
+  private readonly replicaStamp = new Map<string, number>();
 
   get size(): number {
     return this.entries.size;
@@ -230,14 +239,20 @@ export class InkDocument {
 
   private applyRaw(change: Change): InkDiff {
     let dirty = EMPTY_RECT;
+    const now = Math.floor(this.now());
+    const kept = new Set(change.after.map((e) => e.item.id));
     for (const e of change.before) {
       const cur = this.entries.get(e.item.id);
       if (!cur) continue;
+      const prev = this.replicaStamp.get(e.item.id) ?? 0;
+      const stamp = kept.has(e.item.id) ? cur.item.updatedAt : Math.max(now, cur.item.updatedAt + 1);
+      this.replicaStamp.set(e.item.id, Math.max(prev, stamp));
       dirty = unionRect(dirty, bboxOfItem(cur.item));
       this.entries.delete(e.item.id);
       this.index.remove(e.item.id);
     }
     for (const e of change.after) {
+      this.replicaStamp.set(e.item.id, Math.max(this.replicaStamp.get(e.item.id) ?? 0, e.item.updatedAt));
       this.entries.set(e.item.id, { item: e.item, seq: e.seq });
       if (e.seq >= this.nextSeq) this.nextSeq = Math.floor(e.seq) + 1;
       const box = bboxOfItem(e.item);

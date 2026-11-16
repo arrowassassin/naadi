@@ -94,6 +94,39 @@ async function openLab(page: Page) {
   await expect(page.getByRole("toolbar", { name: "Ink tools" })).toBeVisible();
 }
 
+/** The selection menu sits beside the lasso selection, never on it, and inside the viewport width. */
+async function expectMenuClearOfSelection(page: Page): Promise<void> {
+  const geo = await page.evaluate(() => {
+    const engine = window.naadiInkLab?.page();
+    const host = document.querySelector('[data-ink-surface][aria-label="Ink page"] [data-ink-host]') as HTMLElement;
+    const menu = document.querySelector('[role="toolbar"][aria-label="Selection"]') as HTMLElement;
+    const sel = engine?.getState().selection;
+    if (!sel || !menu) return null;
+    const h = host.getBoundingClientRect();
+    const m = menu.getBoundingClientRect();
+    return {
+      sel: {
+        x0: h.left + sel.rect.left,
+        y0: h.top + sel.rect.top,
+        x1: h.left + sel.rect.left + sel.rect.width,
+        y1: h.top + sel.rect.top + sel.rect.height,
+      },
+      menu: { x0: m.left, y0: m.top, x1: m.right, y1: m.bottom },
+      vw: window.innerWidth,
+    };
+  });
+  expect(geo, "a selection and its menu").not.toBeNull();
+  if (!geo) return;
+  const overlap = !(
+    geo.menu.x1 <= geo.sel.x0 ||
+    geo.sel.x1 <= geo.menu.x0 ||
+    geo.menu.y1 <= geo.sel.y0 ||
+    geo.sel.y1 <= geo.menu.y0
+  );
+  expect(overlap, `menu ${JSON.stringify(geo.menu)} covers selection ${JSON.stringify(geo.sel)}`).toBe(false);
+  expect(geo.menu.x1).toBeLessThanOrEqual(geo.vw);
+}
+
 /** Mean RGB of a PNG screenshot, decoded in the page (no image library on the test side). */
 async function meanColour(page: Page, png: Buffer): Promise<number[]> {
   return page.evaluate(async (b64) => {
@@ -179,9 +212,15 @@ test.describe("ink lab", () => {
     await openLab(page);
     // Network = http(s). Settled ink is shown from local blob: URLs, which never leave the device.
     page.on("request", (r) => {
-      // Same-origin static assets (the PNG-encode worker script) are code, not data leaving the device.
+      // The one exemption: GET of a same-origin built script under /assets/ (the PNG-encode worker). It is
+      // code from this app's own bundle, not data leaving the device. Anything else is a failure.
       const url = new URL(r.url());
-      if (/^https?:$/.test(url.protocol) && !url.pathname.startsWith("/assets/")) requests.push(r.url());
+      if (!/^https?:$/.test(url.protocol)) return; // blob:/data: never leave the browser
+      const ownScript =
+        r.method() === "GET" &&
+        url.origin === new URL(page.url()).origin &&
+        /^\/assets\/[\w.-]+\.js$/.test(url.pathname);
+      if (!ownScript) requests.push(`${r.method()} ${r.url()}`);
     });
     await stroke(page, wave(0.1, 0.15, 0.6), { pressure: 0.8 });
     await stroke(page, wave(0.1, 0.22, 0.5), { pressure: 0.3 });
@@ -347,6 +386,7 @@ test.describe("ink lab", () => {
     await stroke(page, loop);
     const sel = page.getByRole("toolbar", { name: "Selection" });
     await expect(sel).toBeVisible();
+    await expectMenuClearOfSelection(page);
     await expect(page.locator('[data-testid="events"] li[data-kind="lasso"]').first()).toContainText("2 items");
     await expect(page.getByRole("img", { name: "Lasso selection as sent to later features" })).toBeVisible();
     await expectNoAxeViolations(page);
@@ -477,19 +517,17 @@ test.describe("ink lab", () => {
     await stroke(page, loop);
     await expect(page.locator('[data-testid="events"] li[data-kind="lasso"]').first()).toContainText("region only");
     const sel = page.getByRole("toolbar", { name: "Selection" });
-    await expect(sel.getByRole("button", { name: "Copy" })).toBeDisabled();
-    await expect(sel.getByRole("button", { name: "Delete" })).toBeDisabled();
-    await expect(sel.getByRole("button", { name: "Convert to text" })).toBeDisabled();
+    // Nothing to copy, delete or convert: only "Ask Naadi" is offered, and the menu stays off the loop.
+    for (const name of ["Copy", "Delete", "Convert to text"])
+      await expect(sel.getByRole("button", { name })).toHaveCount(0);
+    await expectMenuClearOfSelection(page);
     await sel.getByRole("button", { name: "Ask Naadi" }).click();
     await expect(page.locator('[data-testid="events"] li[data-kind="ask"]').first()).toContainText("0 items");
     await expect(page.locator('[data-testid="events"] li[data-kind="ask"]').first()).toContainText("no ink picture");
     await snap(page, info, consoleErrors, "lasso-region-only", true);
   });
 
-  test("marker: under plain text by default, multiplied over an opaque row on PDF/image surfaces", async ({
-    page,
-    consoleErrors,
-  }) => {
+  test("marker: under plain text, multiplied over a page with a table", async ({ page, consoleErrors }) => {
     await openLab(page);
     const rowBox = async (testId: string) => {
       const host = await page.locator(`${PAGE} [data-ink-host]`).boundingBox();
@@ -500,41 +538,33 @@ test.describe("ink lab", () => {
     const shot = async (testId: string) => {
       await page.getByTestId(testId).evaluate((el) => el.scrollIntoView({ block: "center" }));
       const { row } = await rowBox(testId);
-      const clip = {
-        x: row.x + row.width * 0.3,
-        y: row.y + row.height * 0.3,
-        width: 24,
-        height: Math.max(6, row.height * 0.4),
-      };
+      const clip = { x: row.x + 12, y: row.y + row.height * 0.3, width: 24, height: Math.max(6, row.height * 0.4) };
       const png = await consoleErrors.duringTool(() => page.screenshot({ clip, animations: "disabled" }));
       return meanColour(page, png);
     };
-    // Largest per-channel change of the mean colour (screenshots differ by a few levels run to run).
     const moved = (a: number[], b: number[]) => Math.max(...a.map((v, i) => Math.abs(v - (b[i] ?? 0))));
     const markRow = async (testId: string) => {
       const { host, row, fy } = await rowBox(testId);
-      const fx0 = (row.x - host.x + row.width * 0.1) / host.width;
-      const fx1 = (row.x - host.x + row.width * 0.7) / host.width;
+      const fx0 = (row.x - host.x + 4) / host.width;
+      const fx1 = (row.x - host.x + Math.min(row.width, 240)) / host.width;
       await stroke(page, line(fx0, fy, fx1, fy, 20));
     };
-    await page.keyboard.press("m");
-    // Text surface: the opaque row hides an under-layer marker; the plain row shows it.
-    const plainBefore = await shot("plain-row");
-    const opaqueBefore = await shot("opaque-row");
-    await markRow("plain-row");
-    await markRow("opaque-row");
-    await page.waitForTimeout(300);
-    expect(moved(await shot("plain-row"), plainBefore), "marker shows on a plain row").toBeGreaterThan(20);
-    expect(
-      moved(await shot("opaque-row"), opaqueBefore),
-      "under-layer marker is hidden by an opaque fill",
-    ).toBeLessThan(6);
-
-    // PDF/image surface: the marker multiplies over the content, so the opaque row is highlighted too.
-    await page.getByRole("button", { name: "Page content: text" }).click();
     const marker = page.locator(`${PAGE} canvas[data-ink-canvas="marker"]`).first();
+    await page.keyboard.press("m");
+
+    // Plain text: the marker sits under the words (no blend layer, nothing composited over the text).
+    const plainBefore = await shot("plain-row");
+    await markRow("plain-row");
+    await expect.poll(async () => moved(await shot("plain-row"), plainBefore)).toBeGreaterThan(20);
+    expect(await marker.evaluate((c) => getComputedStyle(c).zIndex)).toBe("-1");
+
+    // A page with a table (opaque blocks): the marker multiplies over the content, so a filled row shows it.
+    await page.getByRole("button", { name: "Page content: text" }).click();
+    await expect(page.getByTestId("opaque-row")).toBeVisible();
     await expect.poll(() => marker.evaluate((c) => getComputedStyle(c).mixBlendMode)).toBe("multiply");
     expect(await marker.evaluate((c) => getComputedStyle(c).zIndex)).toBe("1");
+    const opaqueBefore = await shot("opaque-row");
+    await markRow("opaque-row");
     await expect.poll(async () => moved(await shot("opaque-row"), opaqueBefore)).toBeGreaterThan(20);
   });
 
@@ -570,6 +600,9 @@ test.describe("ink lab", () => {
       final: await page.evaluate(() => window.naadiInkLab?.budget.stats()),
     });
     expect(maxTotal).toBeLessThanOrEqual(limit);
+    // The budget's own high-water mark covers moments between our samples (e.g. while a page paints).
+    const peak = await page.evaluate(() => window.naadiInkLab?.budget.stats().peak ?? Number.POSITIVE_INFINITY);
+    expect(peak, "canvas memory high-water mark").toBeLessThanOrEqual(limit);
   });
 
   test("latency harness records input-to-paint percentiles", async ({ page, consoleErrors }, info) => {
@@ -597,6 +630,12 @@ test.describe("ink lab", () => {
     });
     // A sanity bound on shared, software-rendered runners (the median, which load disturbs least); the
     // 20 ms target is the device number from the 240 fps protocol in docs/DEVICE_CHECKLIST.md.
+    // Profile behind the dpr-2 WebKit number (headless WPE, load ~30 on 4 cores, this test's 4×120 events):
+    // our JS per live frame 0.4–1.4 ms and the input handler ~0 ms; the frame gap was 55–90 ms against 16 ms
+    // idle. Taking parts out one at a time: the lab's 4 Hz panel re-render (a full React render of the lab
+    // during the stroke) and repainting a large live canvas each frame were the cost. Fixes: the panel does
+    // not render while a stroke is down, and the stroke tip draws on a small tail canvas while the frozen
+    // part changes rarely. dpr-2 p50 went from 66–93 ms to 20 ms (p95 75 ms), so one bound fits all.
     expect(summary?.paint.p50 ?? 999).toBeLessThan(60);
     await snap(page, info, consoleErrors, "latency-panel", true);
   });
@@ -605,7 +644,7 @@ test.describe("ink lab", () => {
     page,
     consoleErrors,
   }, info) => {
-    test.setTimeout(180_000);
+    test.setTimeout(240_000);
     await openLab(page);
     await page.getByRole("button", { name: "Build 5,000-stroke page" }).click();
     await expect(page.getByTestId("stress-count")).toHaveText("5,000 items");
@@ -630,40 +669,47 @@ test.describe("ink lab", () => {
     // runner can scroll at all (software rendering on shared CI runners is often below 60 fps even
     // without ink), so the ink is judged by what it costs on top of that. Four pairs, best against best,
     // so a noisy neighbour on a shared runner doesn't decide the result.
+    // Five interleaved pairs (ink shown, then hidden, on the same page and moment), judged by the median of
+    // the per-pair ratios: a noisy neighbour on a shared runner hits both halves of a pair alike.
     const ink: number[] = [];
     const base: number[] = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       await setInkVisible(true);
       ink.push(await measure());
       await setInkVisible(false);
       base.push(await measure());
-      if (Math.max(...ink) >= 58) break;
     }
     await setInkVisible(true);
-    const bestInk = Math.max(...ink);
-    const bestBase = Math.max(...base);
+    const median = (a: number[]) => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)] as number;
+    const ratios = ink.map((v, i) => v / (base[i] as number));
+    const ratio = median(ratios);
+    const medInk = median(ink);
+    const medBase = median(base);
     // Settled ink is shown as images (canvases only while editing); record what the page actually had.
     const layers = await page.evaluate(() => {
       const shown = (sel: string) =>
         [...document.querySelectorAll<HTMLElement>(sel)].filter((el) => getComputedStyle(el).display !== "none").length;
       return { canvases: shown("[data-ink-layer] canvas"), images: shown("[data-ink-layer] img") };
     });
-    record(info, "scroll-fps", { withInk: ink, inkHidden: base, bestInk, bestBase, layers });
+    record(info, "scroll-fps", { withInk: ink, inkHidden: base, ratios, medianRatio: ratio, medInk, medBase, layers });
     expect(layers.canvases, "settled ink is not left on canvases").toBe(0);
-    // The ink may cost at most 30 % of what this runner scrolls at with the ink hidden, and never drop below
-    // 25 fps. (Software rendering on shared CI runners is below 60 fps on large viewports even without ink;
-    // the device number is measured on the iPad, docs/DEVICE_CHECKLIST.md.)
-    expect(bestInk, `with ink ${ink.join("/")} fps, ink hidden ${base.join("/")} fps`).toBeGreaterThanOrEqual(
-      bestBase * 0.7,
-    );
-    // The 25 fps floor needs a runner that can show it: when this runner scrolls the page below 30 fps
-    // with no ink at all (WebKit's software compositor at desktop size or dpr 2 under load), only the
-    // relative bound above can judge the ink, and the run is annotated.
-    if (bestBase >= 30) expect(bestInk, "absolute floor").toBeGreaterThanOrEqual(25);
+    // The ink may cost at most 30 % of what this runner scrolls at with the ink hidden. (Software rendering on
+    // shared CI runners is below 60 fps on large viewports even without ink; the device number is measured
+    // on the iPad, docs/DEVICE_CHECKLIST.md.)
+    expect(
+      ratio,
+      `ratios ${ratios.map((r) => r.toFixed(2)).join("/")} (ink ${ink.join("/")}, hidden ${base.join("/")})`,
+    ).toBeGreaterThanOrEqual(0.7);
+    // The 25 fps floor applies whenever this runner leaves room for it at the allowed cost, i.e. when the
+    // ink-hidden median is at least 25 / 0.7 = 36 fps. Below that (WebKit's software compositor at laptop
+    // or desktop size, or dpr 2, on a loaded runner) the floor would fail with no ink cost at all, so the
+    // ratio alone judges and the run is annotated.
+    const floorFrom = 25 / 0.7;
+    if (medBase >= floorFrom) expect(medInk, "absolute floor").toBeGreaterThanOrEqual(25);
     else
       info.annotations.push({
         type: "fps-floor",
-        description: `runner baseline ${bestBase} fps < 30: floor not applicable`,
+        description: `runner baseline ${medBase} fps < ${floorFrom.toFixed(1)}: floor not applicable`,
       });
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "stress-page");

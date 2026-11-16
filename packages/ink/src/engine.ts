@@ -41,7 +41,17 @@ import {
 } from "./input";
 import type { LatencyRecorder } from "./latency";
 import { markPenPresent, onPenPresence, penPresent } from "./presence";
-import { drawItem, type InkTheme, LiveStroke, type Palette, prepareItem, REF, resolvePalette } from "./render";
+import {
+  drawItem,
+  type InkTheme,
+  LiveStroke,
+  outlineToPath,
+  type Palette,
+  prepareItem,
+  REF,
+  resolvePalette,
+  strokeOutline,
+} from "./render";
 import { recognizeShape } from "./shapes";
 import { activateShortcutTarget, registerShortcutTarget, type ShortcutAction } from "./shortcuts";
 
@@ -53,9 +63,13 @@ export type EraserMode = "stroke" | "pixel";
  */
 export type MarkerMode = "under" | "multiply";
 
-/** The marker placement that suits each kind of surface (HANDOFF §5.3). */
-export function markerModeFor(surface: InkSurfaceType): MarkerMode {
-  return surface === "pdf_page" ? "multiply" : "under";
+/**
+ * The marker placement that suits a surface (HANDOFF §5.3): multiply over the content where it has opaque
+ * blocks (a PDF page always; a chapter section, question or card when it contains figures or tables with
+ * fills, which the content renderer reports), under the content where it is plain text.
+ */
+export function markerModeFor(surface: InkSurfaceType, opts: { hasOpaqueBlocks?: boolean } = {}): MarkerMode {
+  return surface === "pdf_page" || opts.hasOpaqueBlocks ? "multiply" : "under";
 }
 
 /** Default tool sizes in CSS px at the moment of drawing (stored in su, so ink then scales with the page). */
@@ -165,7 +179,9 @@ const MAX_SLABS_PIXELS = 16_000_000;
 /** Quiet time after the last change before canvases are swapped for images. */
 const SETTLE_MS = 700;
 /** Room the live canvas keeps around its content, so a stroke rarely outgrows it. */
-const LIVE_MARGIN_PX = 160;
+const LIVE_MARGIN_PX = 48;
+/** Side of the (square) tail canvas around the stroke tip, CSS px; grows only for a very fast stroke. */
+const TAIL_SIDE_PX = 160;
 /** Committed layers are repainted in TILE×TILE CSS px tiles. */
 const TILE = 256;
 const HOLD_MS = 550;
@@ -254,8 +270,27 @@ export class InkEngine {
   private vis = { top: 0, bottom: 0, onScreen: false };
   private markerMode: MarkerMode;
   /** Main-thread time spent starting settle encodes (the encode itself runs in a worker where possible). */
-  readonly renderStats = { settleMainMs: 0 };
+  readonly renderStats = {
+    settleMainMs: 0,
+    /** Live-layer frames drawn, their total main-thread time, and the live canvas area (device px). */
+    liveFrames: 0,
+    liveMs: 0,
+    livePixels: 0,
+  };
   private readonly liveStroke = new LiveStroke();
+  /**
+   * The tip of the stroke being drawn lives on its own small canvas: the browser re-uploads a whole canvas
+   * whenever it changes, and at dpr 2-3 in a software compositor that upload, not our drawing, was the
+   * pen-to-pixel floor (profile in ink.spec.ts). The live canvas only changes when a chunk freezes.
+   */
+  private readonly tailCanvas: HTMLCanvasElement;
+  private tailCtx: CanvasRenderingContext2D | null = null;
+  private tailLease: CanvasLease | null = null;
+  private tail = { x0: 0, y0: 0, w: 0, h: 0 };
+  /** Stroke whose frozen chunks are on the live canvas, and how many of them. */
+  private liveStrokeId = "";
+  private liveChunksDrawn = 0;
+  private liveMoved = false;
 
   constructor(options: InkEngineOptions) {
     this.o = options;
@@ -291,9 +326,12 @@ export class InkEngine {
     } satisfies Partial<CSSStyleDeclaration> & Record<string, string>);
     this.liveCanvas = this.makeCanvas("live");
     this.liveCanvas.style.display = "none";
-    this.layer.append(this.liveCanvas);
+    this.tailCanvas = this.makeCanvas("tail");
+    this.tailCanvas.style.display = "none";
+    this.layer.append(this.liveCanvas, this.tailCanvas);
     this.host.append(this.layer);
     this.liveCtx = this.liveCanvas.getContext("2d", { desynchronized: true }) as CanvasRenderingContext2D | null;
+    this.tailCtx = this.tailCanvas.getContext("2d", { desynchronized: true }) as CanvasRenderingContext2D | null;
     if (!this.liveCtx) this.fail("This browser could not create a drawing canvas.");
     this.applyThemeBlend();
 
@@ -485,6 +523,11 @@ export class InkEngine {
   }
 
   /** CSS px bounds of an item relative to the surface (used by tests and overlays). */
+  /** True while a pen/finger/mouse gesture is in progress. */
+  get drawing(): boolean {
+    return this.gesture !== null;
+  }
+
   /** True while committed tiles or stroke geometry are still being built (first paint of a big page). */
   renderPending(): boolean {
     return (
@@ -532,6 +575,10 @@ export class InkEngine {
     this.slabs.clear();
     this.liveLease?.release();
     this.liveLease = null;
+    this.tailLease?.release();
+    this.tailLease = null;
+    this.tailCanvas.width = 0;
+    this.tailCanvas.height = 0;
     this.liveCanvas.width = 0;
     this.liveCanvas.height = 0;
     this.layer.remove();
@@ -970,7 +1017,74 @@ export class InkEngine {
     Object.assign(c.style, { left: `${x0}px`, top: `${y0}px`, width: `${x1 - x0}px`, height: `${y1 - y0}px` });
     this.live = { x0, y0, w: x1 - x0, h: y1 - y0 };
     this.liveRect = EMPTY_RECT;
+    this.liveMoved = true;
     return true;
+  }
+
+  /** Draw the stroke's unfrozen tip (and prediction) on the small tail canvas. */
+  private drawTail(item: InkStroke, predicted: readonly InkPoint[], style: Partial<CSSStyleDeclaration>): void {
+    const ctx = this.tailCtx;
+    const c = this.tailCanvas;
+    if (!ctx) return;
+    const tail = this.liveStroke.tail(item, predicted);
+    const w = this.widthPx;
+    const box = bboxOfItem({ ...item, points: tail });
+    const need = { x0: box.x0 * w - 4, y0: box.y0 * w - 4, x1: box.x1 * w + 4, y1: box.y1 * w + 4 };
+    const T = this.tail;
+    const fits = this.tailLease && need.x0 >= T.x0 && need.y0 >= T.y0 && need.x1 <= T.x0 + T.w && need.y1 <= T.y0 + T.h;
+    // The canvas keeps its size and only moves (a style change) while the tip fits in it; it is
+    // reallocated (the expensive part) only when the tip outgrows it.
+    const big = need.x1 - need.x0 > T.w || need.y1 - need.y0 > T.h || !this.tailLease;
+    if (!fits && !big) {
+      const x0 = Math.floor((need.x0 + need.x1) / 2 - T.w / 2);
+      const y0 = Math.floor((need.y0 + need.y1) / 2 - T.h / 2);
+      this.tail = { ...T, x0, y0 };
+      c.style.left = `${x0}px`;
+      c.style.top = `${y0}px`;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, c.width, c.height);
+    } else if (!fits) {
+      const side = Math.max(TAIL_SIDE_PX, need.x1 - need.x0 + 32, need.y1 - need.y0 + 32);
+      const x0 = Math.floor((need.x0 + need.x1) / 2 - side / 2);
+      const y0 = Math.floor((need.y0 + need.y1) / 2 - side / 2);
+      const x1 = x0 + Math.ceil(side);
+      const y1 = y0 + Math.ceil(side);
+      const devW = Math.max(1, Math.round((x1 - x0) * this.dpr));
+      const devH = Math.max(1, Math.round((y1 - y0) * this.dpr));
+      if (!this.tailLease) {
+        this.tailLease = canvasBudget.acquire(
+          "ink:tail",
+          devW * devH,
+          () => !this.destroyed && this.gesture !== null,
+          () => {
+            this.tailLease = null;
+            c.width = 0;
+            c.height = 0;
+            c.style.display = "none";
+          },
+        );
+      } else this.tailLease.resize(devW * devH);
+      c.width = devW;
+      c.height = devH;
+      Object.assign(c.style, { left: `${x0}px`, top: `${y0}px`, width: `${x1 - x0}px`, height: `${y1 - y0}px` });
+      this.tail = { x0, y0, w: x1 - x0, h: y1 - y0 };
+    } else {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, c.width, c.height);
+    }
+    for (const [key, value] of Object.entries({ ...style, display: "" }) as [keyof CSSStyleDeclaration, string][]) {
+      if (c.style[key] !== value) (c.style as unknown as Record<string, string>)[key as string] = value;
+    }
+    const k = (w * this.dpr) / REF;
+    ctx.setTransform(k, 0, 0, k, -this.tail.x0 * this.dpr, -this.tail.y0 * this.dpr);
+    ctx.fillStyle = this.palette[item.color];
+    ctx.fill(outlineToPath(strokeOutline({ ...item, points: tail }, false)));
+  }
+
+  private hideTail(): void {
+    if (this.tailCanvas.style.display === "none") return;
+    this.tailCanvas.style.display = "none";
+    this.tailCtx?.clearRect(0, 0, this.tailCanvas.width, this.tailCanvas.height);
   }
 
   /** Everything the live layer will draw this frame, in su. */
@@ -1266,6 +1380,14 @@ export class InkEngine {
 
   /** Repaint the live layer: current stroke (+ prediction), lasso, selection, drag preview, hover cursor. */
   private renderLive(): void {
+    const t0 = performance.now();
+    this.drawLive();
+    this.renderStats.liveFrames++;
+    this.renderStats.liveMs += performance.now() - t0;
+    this.renderStats.livePixels = this.liveCanvas.width * this.liveCanvas.height;
+  }
+
+  private drawLive(): void {
     const ctx = this.liveCtx;
     if (!ctx) return;
     const content = this.liveContent();
@@ -1276,14 +1398,27 @@ export class InkEngine {
       }
       this.liveRect = EMPTY_RECT;
       this.liveCanvas.style.display = "none";
+      this.hideTail();
+      this.liveStrokeId = "";
+      this.liveChunksDrawn = 0;
       return;
     }
     this.liveLease?.touch();
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    if (!rectIsEmpty(this.liveRect)) {
-      const r = this.liveRect;
-      ctx.clearRect(r.x0 - 2, r.y0 - 2, r.x1 - r.x0 + 4, r.y1 - r.y0 + 4);
+    const g0 = this.gesture;
+    const freehand = g0?.kind === "stroke" && !g0.item.shape ? g0 : null;
+    if (!freehand || this.liveMoved || this.liveStrokeId !== freehand.item.id) {
+      // Anything but the frozen part of a stroke in progress: clear what was drawn last time.
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      if (this.liveMoved || this.liveStrokeId) ctx.clearRect(0, 0, this.liveCanvas.width, this.liveCanvas.height);
+      else if (!rectIsEmpty(this.liveRect)) {
+        const r = this.liveRect;
+        ctx.clearRect(r.x0 - 2, r.y0 - 2, r.x1 - r.x0 + 4, r.y1 - r.y0 + 4);
+      }
+      this.liveMoved = false;
+      this.liveChunksDrawn = 0;
+      this.liveStrokeId = freehand ? freehand.item.id : "";
     }
+    if (!freehand) this.hideTail();
     let drawn = EMPTY_RECT;
     const k = this.widthPx * this.dpr;
     const liveLeft = this.live.x0 * this.dpr;
@@ -1306,7 +1441,18 @@ export class InkEngine {
     if (g?.kind === "stroke") {
       const predicted = this.state.predict ? g.predicted : [];
       if (g.item.shape) drawItem(ctx, g.item, this.palette, this.font, true);
-      else this.liveStroke.draw(ctx, g.item, predicted, this.palette);
+      else {
+        // Frozen chunks go onto the live canvas once each (no clear); the tip goes on the tail canvas.
+        const chunks = this.liveStroke.frozenChunks(g.item);
+        ctx.fillStyle = this.palette[g.item.color];
+        for (let i = this.liveChunksDrawn; i < chunks.length; i++) ctx.fill(chunks[i] as Path2D);
+        this.liveChunksDrawn = chunks.length;
+        this.drawTail(g.item, predicted, {
+          zIndex: this.liveCanvas.style.zIndex,
+          mixBlendMode: this.liveCanvas.style.mixBlendMode,
+          opacity: this.liveCanvas.style.opacity,
+        });
+      }
       const box = bboxOfItem(predicted.length > 0 ? { ...g.item, points: [...g.item.points, ...predicted] } : g.item);
       drawn = unionRect(drawn, toDev(box));
     }

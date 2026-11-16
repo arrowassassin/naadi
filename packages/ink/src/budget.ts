@@ -35,6 +35,12 @@ export class CanvasBudget {
   private clock = 0;
   private total = 0;
   evictions = 0;
+  /** High-water mark of `total` since the page loaded (or `resetPeak`). */
+  private peak = 0;
+
+  resetPeak(): void {
+    this.peak = this.total;
+  }
 
   constructor(limit = DEFAULT_CANVAS_BUDGET) {
     this.limit = limit;
@@ -63,6 +69,7 @@ export class CanvasBudget {
     const entry: Entry = { id, label, pixels, lastUsed: ++this.clock, pinned, evict };
     this.entries.set(id, entry);
     this.total += pixels;
+    this.peak = Math.max(this.peak, this.total);
     const self = this;
     return {
       touch() {
@@ -74,6 +81,7 @@ export class CanvasBudget {
         entry.pixels = px;
         entry.lastUsed = ++self.clock;
         if (self.total > self.limit) self.makeRoom(0, id);
+        self.peak = Math.max(self.peak, self.total);
       },
       release() {
         if (!self.entries.delete(id)) return;
@@ -105,9 +113,10 @@ export class CanvasBudget {
     return [...this.entries.values()].map((e) => ({ label: e.label, pixels: e.pixels, pinned: e.pinned() }));
   }
 
-  stats(): { total: number; limit: number; canvases: number; evictions: number; overPinned: boolean } {
+  stats(): { total: number; peak: number; limit: number; canvases: number; evictions: number; overPinned: boolean } {
     return {
       total: this.total,
+      peak: this.peak,
       limit: this.limit,
       canvases: this.entries.size,
       evictions: this.evictions,

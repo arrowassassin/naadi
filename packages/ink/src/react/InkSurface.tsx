@@ -21,6 +21,8 @@ export interface InkSurfaceProps {
   enabled: boolean;
   /** What the surface shows; picks the marker placement (see markerModeFor) unless `markerMode` is set. */
   surfaceType?: InkSurfaceType;
+  /** The content has figures, images or tables with fills (opaque blocks): markers multiply over it. */
+  hasOpaqueBlocks?: boolean;
   markerMode?: MarkerMode;
   tool?: InkToolName;
   color?: InkColor;
@@ -68,7 +70,7 @@ export function InkSurface(props: InkSurfaceProps) {
       host,
       items: p.items,
       enabled: p.enabled,
-      markerMode: p.markerMode ?? markerModeFor(p.surfaceType ?? "section"),
+      markerMode: p.markerMode ?? markerModeFor(p.surfaceType ?? "section", { hasOpaqueBlocks: p.hasOpaqueBlocks }),
       tool: p.tool,
       color: p.color,
       eraserMode: p.eraserMode,
@@ -108,8 +110,11 @@ export function InkSurface(props: InkSurfaceProps) {
   }, [props.items]);
   useEffect(() => engine.current?.setEnabled(props.enabled), [props.enabled]);
   useEffect(
-    () => engine.current?.setMarkerMode(props.markerMode ?? markerModeFor(props.surfaceType ?? "section")),
-    [props.markerMode, props.surfaceType],
+    () =>
+      engine.current?.setMarkerMode(
+        props.markerMode ?? markerModeFor(props.surfaceType ?? "section", { hasOpaqueBlocks: props.hasOpaqueBlocks }),
+      ),
+    [props.markerMode, props.surfaceType, props.hasOpaqueBlocks],
   );
   useEffect(() => {
     if (props.tool) engine.current?.setTool(props.tool);

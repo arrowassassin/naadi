@@ -100,4 +100,15 @@ describe("canvas budget", () => {
     a.release("1");
     expect(b.tryAcquire("b:1", 40, none, noop)).not.toBeNull();
   });
+
+  it("keeps a high-water mark of the total", () => {
+    const b = new CanvasBudget(100);
+    const a = surface(b, "a");
+    a.alloc("1", 60);
+    a.alloc("2", 30);
+    a.release("1");
+    expect(b.stats()).toMatchObject({ total: 30, peak: 90 });
+    b.resetPeak();
+    expect(b.stats().peak).toBe(30);
+  });
 });

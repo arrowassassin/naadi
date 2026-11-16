@@ -151,7 +151,7 @@ export function drawStroke(ctx: CanvasRenderingContext2D, item: InkStroke, palet
   ctx.fill(path);
 }
 
-const LIVE_CHUNK = 64;
+const LIVE_CHUNK = 24;
 const LIVE_OVERLAP = 4;
 
 /**
@@ -176,22 +176,32 @@ export class LiveStroke {
     return this.frozen;
   }
 
-  draw(ctx: CanvasRenderingContext2D, item: InkStroke, predicted: readonly InkPoint[], palette: Palette): void {
+  /** Freeze whatever is old enough and return every frozen chunk so far (in order). */
+  frozenChunks(item: InkStroke): readonly Path2D[] {
     if (item.id !== this.id) {
       this.reset();
       this.id = item.id;
     }
     const pts = item.points;
-    while (pts.length - this.frozen > LIVE_CHUNK * 2) {
+    while (pts.length - this.frozen > LIVE_CHUNK + LIVE_CHUNK / 2) {
       const start = Math.max(0, this.frozen - LIVE_OVERLAP);
       const end = this.frozen + LIVE_CHUNK;
       this.chunks.push(outlineToPath(strokeOutline({ ...item, points: pts.slice(start, end + 1) }, false)));
       this.frozen = end;
     }
+    return this.chunks;
+  }
+
+  /** The points not yet frozen (with a small overlap), plus the predicted ones. */
+  tail(item: InkStroke, predicted: readonly InkPoint[]): InkPoint[] {
+    return [...item.points.slice(Math.max(0, this.frozen - LIVE_OVERLAP)), ...predicted];
+  }
+
+  /** Everything at once (one canvas): chunks then the tail. */
+  draw(ctx: CanvasRenderingContext2D, item: InkStroke, predicted: readonly InkPoint[], palette: Palette): void {
     ctx.fillStyle = palette[item.color];
-    for (const c of this.chunks) ctx.fill(c);
-    const tail = [...pts.slice(Math.max(0, this.frozen - LIVE_OVERLAP)), ...predicted];
-    ctx.fill(outlineToPath(strokeOutline({ ...item, points: tail }, false)));
+    for (const c of this.frozenChunks(item)) ctx.fill(c);
+    ctx.fill(outlineToPath(strokeOutline({ ...item, points: this.tail(item, predicted) }, false)));
   }
 }
 

@@ -183,4 +183,30 @@ describe("undo/redo and last-writer-wins sync", () => {
     const d = doc.undo();
     expect(d?.updated[0]).toMatchObject({ points: s.points, updatedAt: 30 });
   });
+
+  it("undo/redo within the same millisecond as the delete still beat the replica's tombstone", () => {
+    const clock = 1_000; // frozen: every action in one millisecond
+    const doc = new InkDocument({ now: () => clock });
+    let local: InkItem[] = [];
+    doc.onDiff((d) => {
+      local = recordInkDiff(local, d, clock);
+    });
+    const s = stroke([[0.1, 0.1]], { createdAt: 1_000, updatedAt: 1_000 });
+    doc.commit({ before: [], after: doc.fresh([s]) });
+    const e = doc.entry(s.id);
+    if (!e) throw new Error("missing");
+    doc.commit({ before: [e], after: [] });
+    const tombstone = [...local];
+    doc.undo();
+    let merged = mergeInkItems(local, tombstone);
+    expect(merged.find((i) => i.id === s.id)?.deleted).toBeUndefined();
+    const restored = [...local];
+    doc.redo();
+    merged = mergeInkItems(local, restored);
+    expect(merged.find((i) => i.id === s.id)?.deleted).toBe(true);
+    const deletedAgain = [...local];
+    doc.undo();
+    merged = mergeInkItems(local, deletedAgain);
+    expect(merged.find((i) => i.id === s.id)?.deleted).toBeUndefined();
+  });
 });
