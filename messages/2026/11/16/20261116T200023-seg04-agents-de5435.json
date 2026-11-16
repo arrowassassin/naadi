@@ -1,0 +1,18 @@
+{
+ "id": "20261116T200023-seg04-agents-de5435",
+ "ts": "2026-11-16T20:00:23.961016Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "structured agent_runtime facts (REVIEW_CHECKLIST: no server sentences in UI); additive optional field",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/health/models.py",
+  "apps/api/naadi_api/health/checks.py",
+  "apps/api/naadi_api/health/service.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
