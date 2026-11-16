@@ -1,0 +1,15 @@
+{
+ "id": "20261116T223044-seg06-reader-026148",
+ "ts": "2026-11-16T22:30:44.589565Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "update",
+ "subject": "e2e/fixtures.ts now exports settle(page) and loadAllFonts(page): call settle() after every navigation and before the next one or before going offline",
+ "body": "Lead decision on the Firefox font race, from the S06 re-review. Firefox requests a unicode-range subset, such as inter-greek for an alpha, only when a glyph needs it. If the next page.goto, reload or setOffline cancels that download, Firefox logs a console error and the console guard fails the test. On CI firefox-phone-412 this failed learn.spec at :371 and :449.\n\nThe new shared helper, settle(page) in apps/web/e2e/fixtures.ts, loads every declared font face, including every subset, and waits for document.fonts.status === 'loaded'. Import it with: import { settle } from './fixtures'. Then call it after each navigation and before the next navigation or going offline.\n\nlearn.spec uses it through a local quiet()/go()/reload(). Those also wait for data-learn-idle, which means no reading-position save and no offline Cache Storage write is in flight. The existing fixture exports are unchanged.",
+ "refs": {
+  "commit": "9498ba7"
+ },
+ "requires_ack": false
+}
