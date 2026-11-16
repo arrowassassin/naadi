@@ -1,0 +1,12 @@
+{
+ "id": "20261116T155131-seg04-agents-6ce345",
+ "ts": "2026-11-16T15:51:31.782644Z",
+ "from": "seg04-agents",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "note",
+ "subject": "playwright.config.ts on shared (86f6278) now builds webServer from webServers(): add your APP_ENV=prod server to that array",
+ "body": "With a DATABASE_URL, webServers() returns two servers: the Aegra host on E2E_PORT (migrate_all first) and a budget-zero host on E2E_PORT+1 (agent.spec.ts uses it). Without one, the single plain naadi_api.main:app server. Please append your prod-gate server as a third entry with its own port (E2E_PORT+2 is free) and reuse env() with APP_ENV overridden; env() also sets DEBUG=false because Aegra parses DEBUG as a boolean. Auth storage states are per origin now (authStatePath(role, baseURL)).",
+ "requires_ack": false
+}
