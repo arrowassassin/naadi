@@ -11,9 +11,11 @@ Run from the build sandbox through LangGraph (`create_react_agent` with one tool
 | nvidia/nemotron-3.5-super-vl-120b-a12b                                                                  | 1.5 s                | correct, 1.4 s     | ok, 2.1 s       | correct, 1.1 s         |
 | nvidia/nemotron-3-ultra-550b-a55b                                                                       | 3.7 s                | correct, 2.5 s     | ok, 7.7 s       | —                      |
 | nvidia/nemotron-3.5-lightning-30b-a3b                                                                   | 3.8 s                | correct, 3.0 s     | ok, 40.6 s      | —                      |
-| meta/muse-glimmer-30b                                                                                   | alive (probe 1.7 s)  | —                  | —               | —                      |
+| meta/muse-glimmer-30b                                                                                   | alive (probe 1.7 s)  | correct (forced)¹  | —               | —                      |
 | moonshotai/kimi-k2.6, kimi-k2-thinking, deepseek-v4-pro/flash, z-ai/glm-5.1, qwen3.5-122b, gpt-oss-120b | 410 retired          |                    |                 |                        |
 | google/gemma-4-31b-it                                                                                   | timeout              |                    |                 |                        |
+
+¹ S04 re-review probe, 2026-11-16 (one live call, `ChatNVIDIA.bind_tools(..., tool_choice=...)`): a well-formed tool call (`Organ(name="kidney")`, empty text content). The SDK has no capability profile for this model, so `llm.py`'s capability-aware routing treats tool support as unknown and keeps it in the `tutor` chain; this probe is the evidence that it may stay there.
 
 **OpenRouter `:free`:**
 

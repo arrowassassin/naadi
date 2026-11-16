@@ -146,9 +146,14 @@ def test_commons_keeps_only_reusable_licences_and_prefers_english() -> None:
         assert r.meta["image_url"].startswith(("https://upload.wikimedia.org/", "https://thumb.wikimedia.org/"))
         assert r.citation  # author shown on every image
     titles = [r.title for r in rs]
-    non_en = [t for t in titles if t.lower().endswith(("-ca.svg", " pl.svg"))]
-    if non_en:
-        assert titles.index(non_en[0]) >= len(titles) - len(non_en)
+    # S04 re-review R4: "Nephron-urine.svg" has no language suffix but Commons files it under "Medical diagrams
+    # in Polish"; the English-labelled diagram comes first, the Polish and Catalan ones last.
+    assert titles[0] == "Kidney nephron molar transport diagram.svg"
+    assert titles[1:] == [
+        "Nephron-urine.svg",
+        "Physiology of Nephron pl.svg",
+        "Kidney nephron molar transport diagram-ca.svg",
+    ]
     # A non-commercial or all-rights-reserved file is dropped.
     page = next(iter(body["query"]["pages"].values()))
     bad = {
@@ -422,3 +427,26 @@ async def test_latest_questions_stay_on_official_domains_unless_the_web_is_asked
     assert "ecfmg.org" in calls[-1]["include_domains"]
     await svc.search("pharmacology podcast recommendations", user_id=uuid.uuid4(), web=True)
     assert calls[-1]["include_domains"] is None
+
+
+def test_commons_category_languages() -> None:
+    from naadi_api.search import _category_languages
+
+    assert _category_languages("Medical diagrams in Polish|SVG nephron physiology") == {"Polish"}
+    assert _category_languages("Catalan-language SVG medical diagrams") == {"Catalan"}
+    assert _category_languages("Featured pictures on Wikipedia, Polish") == {"Polish"}
+    assert _category_languages("English-language SVG diagrams|Human urine") == {"English"}
+    # Words that are not language names do not count ("created with Inkscape", "in Hospital").
+    assert _category_languages("Valid SVG created with Inkscape:Diagrams|Images in Hospital") == set()
+
+
+def test_commons_explicit_english_ranks_before_unmarked() -> None:
+    body = load("commons.json")
+    pages = sorted(body["query"]["pages"].values(), key=lambda p: p.get("index", 0))
+    marked = {**pages[2], "title": "File:Nephron English.svg"}
+    info = {**marked["imageinfo"][0]}
+    info["extmetadata"] = {**info["extmetadata"], "Categories": {"value": "English-language SVG diagrams"}}
+    marked["imageinfo"] = [info]
+    body2 = {"query": {"pages": {"1": {**pages[1], "index": 1}, "2": {**marked, "index": 2}}}}
+    expected = ["Nephron English.svg", pages[1]["title"].removeprefix("File:")]
+    assert [r.title for r in parse_commons(body2, 2)] == expected

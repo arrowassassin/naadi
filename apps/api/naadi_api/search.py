@@ -398,10 +398,79 @@ _NON_EN_SUFFIX = re.compile(
 )
 
 
+# Commons marks a diagram's label language in its categories: "Polish-language SVG diagrams", "Medical
+# diagrams in Polish", "Featured pictures on Wikipedia, Polish", "English-language diagrams".
+_LANGUAGES = frozenset(
+    {
+        "English",
+        "Polish",
+        "Catalan",
+        "German",
+        "French",
+        "Spanish",
+        "Italian",
+        "Portuguese",
+        "Russian",
+        "Ukrainian",
+        "Japanese",
+        "Chinese",
+        "Arabic",
+        "Dutch",
+        "Swedish",
+        "Czech",
+        "Hungarian",
+        "Turkish",
+        "Korean",
+        "Greek",
+        "Hebrew",
+        "Persian",
+        "Hindi",
+        "Indonesian",
+        "Vietnamese",
+        "Thai",
+        "Romanian",
+        "Bulgarian",
+        "Serbian",
+        "Croatian",
+        "Slovak",
+        "Slovenian",
+        "Finnish",
+        "Danish",
+        "Norwegian",
+        "Estonian",
+        "Latvian",
+        "Lithuanian",
+        "Basque",
+        "Galician",
+        "Esperanto",
+        "Belarusian",
+        "Macedonian",
+        "Albanian",
+        "Armenian",
+        "Georgian",
+        "Azerbaijani",
+        "Kazakh",
+        "Malay",
+        "Tamil",
+        "Bengali",
+        "Urdu",
+    }
+)
+_CATEGORY_LANGUAGE = re.compile(r"\b([A-Z][a-z]+)-language\b|\b(?:in|Wikipedia,)\s+([A-Z][a-z]+)\b")
+
+
+def _category_languages(categories: str) -> set[str]:
+    found = {a or b for a, b in _CATEGORY_LANGUAGE.findall(categories)}
+    return found & _LANGUAGES
+
+
 def parse_commons(body: Mapping[str, Any], limit: int) -> list[SearchResult]:
     pages = list(((body.get("query") or {}).get("pages") or {}).values())
     pages.sort(key=lambda p: p.get("index", 0))
+    # Labels in English first: an explicit English-language category, then files with no language marker,
+    # then files marked as another language (category, file-name suffix or non-Latin title).
     english: list[SearchResult] = []
+    unmarked: list[SearchResult] = []
     other: list[SearchResult] = []
     for p in pages:
         info = (p.get("imageinfo") or [{}])[0]
@@ -431,8 +500,14 @@ def parse_commons(body: Mapping[str, Any], limit: int) -> list[SearchResult]:
                 "license_url": (em.get("LicenseUrl") or {}).get("value"),
             },
         )
-        (other if _NON_EN_SUFFIX.search(title) or not _LATIN.match(title) else english).append(res)
-    return (english + other)[:limit]
+        langs = _category_languages(strip_html((em.get("Categories") or {}).get("value", "")))
+        if "English" in langs:
+            english.append(res)
+        elif langs or _NON_EN_SUFFIX.search(title) or not _LATIN.match(title):
+            other.append(res)
+        else:
+            unmarked.append(res)
+    return (english + unmarked + other)[:limit]
 
 
 _YT_ID = re.compile(r"^[A-Za-z0-9_-]{11}$")
