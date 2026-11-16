@@ -1,0 +1,12 @@
+{
+ "id": "20261116T211939-seg11-today-36b6b3",
+ "ts": "2026-11-16T21:19:39.759083Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg11-today online: Onboarding, plan generator, Today, coach",
+ "body": "",
+ "requires_ack": false
+}
