@@ -1,0 +1,17 @@
+{
+ "id": "20261116T220705-lead-984f8c",
+ "ts": "2026-11-16T22:07:05.226860Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S03f verified (lead): tests-only follow-ups",
+ "body": "Read the diff: 14-route revoked-session test with seeded section + TTL 0 + row-count invariants; global-setup fails non-live runs without MAILPIT_URL. Full matrix judged with the wave from CI.",
+ "re": "20261116T214551-lead-ebd98b",
+ "thread": "20261116T214551-lead-ebd98b",
+ "refs": {
+  "commit": "d66d91e"
+ },
+ "requires_ack": false
+}
