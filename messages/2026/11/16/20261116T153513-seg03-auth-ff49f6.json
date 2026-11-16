@@ -1,0 +1,16 @@
+{
+ "id": "20261116T153513-seg03-auth-ff49f6",
+ "ts": "2026-11-16T15:35:13.207569Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c90f976 into claude/naadi-shared",
+ "body": "S03 rework: AccountDirectory (sessions + confirmed email from auth schema), no implicit callback, test isolation plumbing, frozen-page axe, mailpit e2e, live-auth hardening",
+ "refs": {
+  "commit": "c90f976",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
