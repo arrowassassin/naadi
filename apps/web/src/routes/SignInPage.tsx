@@ -64,6 +64,9 @@ export function SignInPage({ next, notice }: SignInPageProps) {
     auth.status === "signed-out" || auth.status === "signed-in" ? auth.client : null;
   const config = auth.status === "signed-out" || auth.status === "signed-in" ? auth.config : null;
   const redirectTo = callbackUrl(redirectOrigin(config?.app_base_url), next);
+  // Editable strings from app_config.ui_copy (served with /api/public-config). Without a config the page is
+  // in its "unavailable" state and these lines are simply not shown.
+  const copy = (key: string): string => config?.ui_copy?.[key] ?? "";
 
   useEffect(() => {
     if (phase.name === "sent") sentHeading.current?.focus();
@@ -139,17 +142,17 @@ export function SignInPage({ next, notice }: SignInPageProps) {
               Sign in
             </h2>
 
-            {!online ? <OfflineBanner message="Connect to the internet to sign in." /> : null}
+            {!online ? <OfflineBanner message={copy("signin.offline")} /> : null}
 
             {notice === "expired" && phase.name === "idle" ? (
               <div role="status" className="rounded-block border border-amber/60 bg-surface-2 p-4 text-text">
-                <p className="m-0 font-semibold">That sign-in link has expired</p>
-                <p className="m-0 text-text-2">Links work once and for one hour. Request a new one below.</p>
+                <p className="m-0 font-semibold">{copy("signin.link_expired_title")}</p>
+                <p className="m-0 text-text-2">{copy("signin.link_expired_body")}</p>
               </div>
             ) : null}
             {notice === "signed-out" && phase.name === "idle" ? (
               <p role="status" className="m-0 text-text-2">
-                You are signed out.
+                {copy("signin.signed_out")}
               </p>
             ) : null}
 
@@ -213,7 +216,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                       onClick={() => void google()}
                       icon={<GoogleG />}
                     >
-                      {googleBusy ? "Opening Google…" : "Continue with Google"}
+                      {googleBusy ? "Opening Google…" : copy("signin.google")}
                     </Button>
                     <div className="flex items-center gap-3 text-text-3" aria-hidden="true">
                       <span className="h-px flex-1 bg-line" />
@@ -246,7 +249,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                     />
                   </label>
                   <p id={hintId} className={fieldError ? "m-0 text-amber" : "m-0 text-[0.8125rem] text-text-3"}>
-                    {fieldError ?? "We email you a link that signs you in. No password needed."}
+                    {fieldError ?? copy("signin.email_hint")}
                   </p>
                   {phase.name === "error" ? <ErrorState title="No email sent" message={phase.message} /> : null}
                   <Button
@@ -256,7 +259,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
                     className="w-full"
                     disabled={!client || !online || sending}
                   >
-                    {sending ? "Sending…" : "Email me a sign-in link"}
+                    {sending ? "Sending…" : copy("signin.submit")}
                   </Button>
                 </form>
               </>
@@ -267,11 +270,13 @@ export function SignInPage({ next, notice }: SignInPageProps) {
             aria-label="About Naadi"
             className="flex min-w-0 flex-[1_1_320px] flex-col justify-between gap-6 rounded-tile border border-line-soft bg-surface-1 p-6 tablet:p-9"
           >
-            <span className="font-mono text-label text-text-3 uppercase tracking-[0.12em]">One place to study</span>
+            <span className="font-mono text-label text-text-3 uppercase tracking-[0.12em]">
+              {copy("signin.tagline")}
+            </span>
             <p className="m-0 font-display font-bold text-[1.75rem] leading-[1.1] tracking-[-0.02em]">
-              Read, practise, review and plan for USMLE on your iPad, phone or laptop.
+              {copy("signin.pitch")}
             </p>
-            <p className="m-0 text-text-2">Your notes and ink are private to your account.</p>
+            <p className="m-0 text-text-2">{copy("signin.privacy")}</p>
           </aside>
         </div>
       </div>

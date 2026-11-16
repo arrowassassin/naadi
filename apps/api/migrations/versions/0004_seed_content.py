@@ -12,6 +12,9 @@ Create Date: 2026-11-16
 - `seed_runs`: status of admin seed jobs (POST /api/admin/seed). Admin-only: RLS forced, no client privileges.
 - `sources.verified` / `verified_url`: whether the license terms were checked at a cited URL (sources.yaml).
 - `media_assets.content_sha256`: hash of the stored (sanitised) object, so the importer skips unchanged uploads.
+- `app_config.admin_edited_at` / `chapter_sections.admin_edited_at`: set when an admin (or the assistant, for
+  sections) changes the row; the seed importer never overwrites such a row unless forced. A trigger sets it on
+  sections whenever a non-seed revision is recorded.
 - `naadi_app_config_notify()`: `pg_notify('naadi_app_config', key)` after every app_config write, so each API
   process drops its 60 s cache entry at once (the TTL still bounds staleness if a listener is down).
 """
@@ -33,6 +36,22 @@ UPGRADE = """
 alter table public.sources
   add column verified boolean not null default false,
   add column verified_url text check (verified_url is null or verified_url ~ '^https://');
+
+alter table public.app_config add column admin_edited_at timestamptz;
+alter table public.chapter_sections add column admin_edited_at timestamptz;
+
+create function public.naadi_mark_section_edited() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  if new.origin <> 'seed' then
+    update public.chapter_sections set admin_edited_at = coalesce(new.created_at, now()) where id = new.section_id;
+  end if;
+  return null;
+end
+$$;
+revoke all on function public.naadi_mark_section_edited() from public, anon, authenticated;
+create trigger chapter_section_revisions_mark_edited after insert on public.chapter_section_revisions
+  for each row execute function public.naadi_mark_section_edited();
 
 alter table public.media_assets
   add column content_sha256 text check (content_sha256 is null or content_sha256 ~ '^[0-9a-f]{64}$');
@@ -133,6 +152,10 @@ grant all on table public.seed_runs to service_role;
 def downgrade() -> None:
     op.execute("drop trigger if exists app_config_notify on public.app_config")
     op.execute("drop function if exists public.naadi_app_config_notify()")
+    op.execute("drop trigger if exists chapter_section_revisions_mark_edited on public.chapter_section_revisions")
+    op.execute("drop function if exists public.naadi_mark_section_edited()")
+    op.execute("alter table public.chapter_sections drop column if exists admin_edited_at")
+    op.execute("alter table public.app_config drop column if exists admin_edited_at")
     for table in ("seed_runs", "plan_template_days", "plan_templates", "pathway_guides"):
         op.execute(f"drop table if exists public.{table} cascade")
     op.execute("alter table public.media_assets drop column if exists content_sha256")

@@ -164,6 +164,8 @@ const MAX_SLAB_PIXELS = 8_000_000;
 const MAX_SLABS_PIXELS = 16_000_000;
 /** Quiet time after the last change before canvases are swapped for images. */
 const SETTLE_MS = 700;
+/** Room the live canvas keeps around its content, so a stroke rarely outgrows it. */
+const LIVE_MARGIN_PX = 160;
 /** Committed layers are repainted in TILE×TILE CSS px tiles. */
 const TILE = 256;
 const HOLD_MS = 550;
@@ -212,7 +214,8 @@ export class InkEngine {
   private slabH = 0;
   /** Which kinds of ink each painted tile holds (to hide empty slab canvases). */
   private readonly tileKinds = new Map<string, { m: boolean; k: boolean }>();
-  private live = { y0: 0, h: 0 };
+  /** Where the live canvas sits, surface CSS px. */
+  private live = { x0: 0, y0: 0, w: 0, h: 0 };
   private liveCtx: CanvasRenderingContext2D | null = null;
   private readonly palm: PalmRejection;
   private palette: Palette;
@@ -246,7 +249,7 @@ export class InkEngine {
   private settling = 0;
   private liveLease: CanvasLease | null = null;
   /** The visible part of the surface (surface CSS px), refreshed on scroll/resize. */
-  private vis = { top: 0, bottom: 0 };
+  private vis = { top: 0, bottom: 0, onScreen: false };
   private markerMode: MarkerMode;
   /** Main-thread time spent starting settle encodes (the encode itself runs in a worker where possible). */
   readonly renderStats = { settleMainMs: 0 };
@@ -705,24 +708,27 @@ export class InkEngine {
       this.refreshSelectionRect();
       this.positionEditor();
     }
+    if (changed) {
+      this.live = { x0: 0, y0: 0, w: 0, h: 0 }; // re-fit at the new size / pixel ratio
+      this.liveDirty = true;
+      this.requestFrame();
+    }
     this.updateSlabs();
-    this.positionLive(changed);
   }
 
   private onScroll(): void {
     this.frameStale = true;
     if (this.gesture) return; // the frame is re-read with the next sample
     this.updateSlabs();
-    if (this.selection || this.hover) this.positionLive(false);
   }
 
   /** The part of the surface inside the viewport, in surface CSS px. */
-  private visibleRange(): { top: number; bottom: number; vh: number } {
+  private visibleRange(): { top: number; bottom: number; vh: number; onScreen: boolean } {
     const r = this.host.getBoundingClientRect();
     const vh = window.innerHeight || this.heightPx;
     const top = Math.min(this.heightPx, Math.max(0, -r.top));
     const bottom = Math.max(top, Math.min(this.heightPx, vh - r.top));
-    return { top, bottom, vh };
+    return { top, bottom, vh, onScreen: r.bottom > 0 && r.top < vh };
   }
 
   /**
@@ -735,8 +741,8 @@ export class InkEngine {
     const w = this.widthPx;
     const h = this.heightPx;
     if (w <= 0 || h <= 0 || this.slabH <= 0) return;
-    const { top, bottom } = this.visibleRange();
-    this.vis = { top, bottom };
+    const { top, bottom, onScreen } = this.visibleRange();
+    this.vis = { top, bottom, onScreen };
     const count = Math.ceil(h / this.slabH);
     const perSlab = Math.max(1, Math.round(w * this.dpr) * Math.round(this.slabH * this.dpr));
     const max = Math.max(1, Math.floor(MAX_SLABS_PIXELS / perSlab));
@@ -761,6 +767,7 @@ export class InkEngine {
   /** A slab on screen (or being drawn on) is never evicted from the canvas budget. */
   private slabPinned(slab: Slab): boolean {
     if (this.destroyed) return false;
+    if (!this.vis.onScreen) return false;
     const margin = 64;
     return slab.y0 < this.vis.bottom + margin && slab.y0 + slab.h > this.vis.top - margin;
   }
@@ -895,17 +902,33 @@ export class InkEngine {
     for (const el of [slab.ink.canvas, slab.ink.img]) if (el) el.style.zIndex = "1";
   }
 
-  /** Size the live canvas to the visible part of the surface (it is cleared, not scrolled). */
-  private positionLive(force: boolean): void {
+  /**
+   * The live canvas covers only what is live (the stroke being drawn, a lasso, a selection, the hover
+   * cursor) plus a margin, not the viewport: its size is what the compositor uploads on every inked frame,
+   * which at device pixel ratio 2-3 decides pen-to-pixel latency. When the content outgrows it, it is
+   * moved/resized (renderLive redraws everything each frame anyway).
+   */
+  private ensureLive(contentSu: Rect): boolean {
     const w = this.widthPx;
-    if (w <= 0 || this.heightPx <= 0) return;
-    const { top, bottom } = this.visibleRange();
-    const y0 = Math.floor(top);
-    const h = Math.max(1, Math.ceil(bottom) - y0);
     const c = this.liveCanvas;
-    if (!force && this.liveLease && this.live.y0 === y0 && this.live.h === h) return;
-    const devW = Math.max(1, Math.round(w * this.dpr));
-    const devH = Math.max(1, Math.round(h * this.dpr));
+    if (rectIsEmpty(contentSu) || w <= 0) return false;
+    const need = {
+      x0: Math.max(0, contentSu.x0 * w - 8),
+      y0: Math.max(0, contentSu.y0 * w - 8),
+      x1: Math.min(w, contentSu.x1 * w + 8),
+      y1: Math.min(this.heightPx, contentSu.y1 * w + 8),
+    };
+    const L = this.live;
+    const fits =
+      this.liveLease !== null && need.x0 >= L.x0 && need.y0 >= L.y0 && need.x1 <= L.x0 + L.w && need.y1 <= L.y0 + L.h;
+    if (fits) return true;
+    const m = LIVE_MARGIN_PX;
+    const x0 = Math.floor(Math.max(0, need.x0 - m));
+    const y0 = Math.floor(Math.max(0, need.y0 - m));
+    const x1 = Math.ceil(Math.min(w, need.x1 + m));
+    const y1 = Math.ceil(Math.min(this.heightPx, need.y1 + m));
+    const devW = Math.max(1, Math.round((x1 - x0) * this.dpr));
+    const devH = Math.max(1, Math.round((y1 - y0) * this.dpr));
     if (!this.liveLease) {
       this.liveLease = canvasBudget.acquire(
         "ink:live",
@@ -920,15 +943,37 @@ export class InkEngine {
         },
       );
     } else this.liveLease.resize(devW * devH);
-    if (c.width !== devW || c.height !== devH) {
-      c.width = devW;
-      c.height = devH;
-    } else this.liveCtx?.clearRect(0, 0, devW, devH);
-    Object.assign(c.style, { width: `${w}px`, height: `${h}px`, top: `${y0}px` });
-    this.live = { y0, h };
+    c.width = devW; // resizing also clears it
+    c.height = devH;
+    Object.assign(c.style, { left: `${x0}px`, top: `${y0}px`, width: `${x1 - x0}px`, height: `${y1 - y0}px` });
+    this.live = { x0, y0, w: x1 - x0, h: y1 - y0 };
     this.liveRect = EMPTY_RECT;
-    this.liveDirty = true;
-    this.requestFrame();
+    return true;
+  }
+
+  /** Everything the live layer will draw this frame, in su. */
+  private liveContent(): Rect {
+    let box = EMPTY_RECT;
+    const g = this.gesture;
+    const pt = (p: Vec) => ({ x0: p.x, y0: p.y, x1: p.x, y1: p.y });
+    if (g?.kind === "stroke") {
+      const pred = this.state.predict ? g.predicted : [];
+      box = unionRect(box, bboxOfItem(pred.length > 0 ? { ...g.item, points: [...g.item.points, ...pred] } : g.item));
+    }
+    if (g?.kind === "lasso") for (const p of g.path) box = unionRect(box, pt(p));
+    if (this.selection) {
+      const dx = g?.kind === "drag" ? g.dx : 0;
+      const dy = g?.kind === "drag" ? g.dy : 0;
+      const b = this.selection.bbox;
+      const pad = 10 / Math.max(1, this.widthPx);
+      box = unionRect(box, { x0: b.x0 + dx - pad, y0: b.y0 + dy - pad, x1: b.x1 + dx + pad, y1: b.y1 + dy + pad });
+      for (const p of this.selection.path) box = unionRect(box, pt(p));
+    }
+    if (this.hover && !g) {
+      const r = (Math.max(this.sizes.eraser, this.toolSizePx()) + 4) / Math.max(1, this.widthPx);
+      box = unionRect(box, { x0: this.hover.x - r, y0: this.hover.y - r, x1: this.hover.x + r, y1: this.hover.y + r });
+    }
+    return box;
   }
 
   private invalidateAll(): void {
@@ -1195,6 +1240,17 @@ export class InkEngine {
   private renderLive(): void {
     const ctx = this.liveCtx;
     if (!ctx) return;
+    const content = this.liveContent();
+    if (!this.ensureLive(content)) {
+      if (!rectIsEmpty(this.liveRect) && this.liveLease) {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, this.liveCanvas.width, this.liveCanvas.height);
+      }
+      this.liveRect = EMPTY_RECT;
+      this.liveCanvas.style.display = "none";
+      return;
+    }
+    this.liveLease?.touch();
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     if (!rectIsEmpty(this.liveRect)) {
       const r = this.liveRect;
@@ -1202,9 +1258,15 @@ export class InkEngine {
     }
     let drawn = EMPTY_RECT;
     const k = this.widthPx * this.dpr;
+    const liveLeft = this.live.x0 * this.dpr;
     const liveTop = this.live.y0 * this.dpr;
-    const toDev = (r: Rect): Rect => ({ x0: r.x0 * k, y0: r.y0 * k - liveTop, x1: r.x1 * k, y1: r.y1 * k - liveTop });
-    this.setDrawTransform(ctx, this.live.y0);
+    const toDev = (r: Rect): Rect => ({
+      x0: r.x0 * k - liveLeft,
+      y0: r.y0 * k - liveTop,
+      x1: r.x1 * k - liveLeft,
+      y1: r.y1 * k - liveTop,
+    });
+    ctx.setTransform(k / REF, 0, 0, k / REF, -liveLeft, -liveTop);
     const g = this.gesture;
     // A live marker stroke is previewed where it will land (under the content, or multiplied over it).
     const liveMarker = g?.kind === "stroke" && g.item.tool === "marker";
@@ -1334,7 +1396,6 @@ export class InkEngine {
     }
     activateShortcutTarget(this);
     this.frameStale = true;
-    this.positionLive(false);
     this.hover = null;
     const pt = this.toSu({ x: e.clientX, y: e.clientY });
     const t = e.timeStamp;
@@ -1412,7 +1473,6 @@ export class InkEngine {
       if (e.pointerType === "pen" && e.buttons === 0 && this.state.enabled && !g) {
         if (this.palm.hover("pen")) markPenPresent();
         const p = this.toSu({ x: e.clientX, y: e.clientY });
-        if (!this.hover) this.positionLive(false);
         this.hover = p;
         this.liveDirty = true;
         this.requestFrame();

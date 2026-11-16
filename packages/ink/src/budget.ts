@@ -87,6 +87,11 @@ export class CanvasBudget {
     }
   }
 
+  /** Every live canvas, for diagnostics (the lab and the e2e suite). */
+  entriesSnapshot(): { label: string; pixels: number; pinned: boolean }[] {
+    return [...this.entries.values()].map((e) => ({ label: e.label, pixels: e.pixels, pinned: e.pinned() }));
+  }
+
   stats(): { total: number; limit: number; canvases: number; evictions: number; overPinned: boolean } {
     return {
       total: this.total,

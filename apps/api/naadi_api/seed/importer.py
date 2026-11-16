@@ -6,9 +6,13 @@
   figures (Storage, then media_assets), chapters + sections + section_media, questions, pathway, plan,
   app_config. Sources go first so every asset's `source_id` resolves.
 - A row is written only when a column differs (`is distinct from`), so a second run reports 0 changes and
-  fires no updated_at / history triggers. A section an admin or the assistant has edited (a non-seed row in
-  chapter_section_revisions) is kept; so is an app_config key an admin edited (`updated_by` set). `force`
-  overwrites both. When the seed replaces a section body, the previous body is saved as a 'seed' revision.
+  fires no updated_at / history triggers. A row an admin (or, for sections, the assistant) edited has
+  `admin_edited_at` set and is kept; `force` overwrites it and clears the mark. When the seed replaces a
+  section body, the previous body is saved as a 'seed' revision.
+- License gate: sources.yaml rows without complete license fields are skipped and listed in the report; they
+  do not fail the run (nothing references them). Every other check, the counts included, must pass.
+- Targets: a local database with a remote Storage (or the reverse) is refused unless allow_split_target, so a
+  local run can never upload into the real project's bucket, nor a Space run write into a stray database.
 - `dry_run`: the same statements run inside one transaction that is rolled back, and nothing is uploaded,
   so the report shows exactly what a real run would insert/update. (Identity sequences may advance; no row
   is kept.)
@@ -26,6 +30,7 @@ from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, LiteralString
+from urllib.parse import urlparse
 
 import psycopg
 from psycopg import sql
@@ -65,6 +70,32 @@ class SeedOptions:
     dry_run: bool = False
     only: tuple[str, ...] = GROUPS
     force: bool = False
+    allow_split_target: bool = False
+
+
+LOOPBACK = frozenset({"localhost", "127.0.0.1", "::1"})
+
+
+class SplitTarget(ValueError):
+    """The database and Storage are not the same kind of target (one local, one remote)."""
+
+
+def _is_local(url: str | None) -> bool:
+    host = (urlparse(url).hostname or "") if url else ""
+    return host in LOOPBACK or host.endswith(".localhost")
+
+
+def check_targets(opts: SeedOptions) -> None:
+    if opts.storage is None or "figures" not in opts.only or opts.allow_split_target:
+        return
+    db_local = _is_local(opts.database_url)
+    storage_local = _is_local(opts.storage.storage_url or opts.storage.supabase_url)
+    if db_local != storage_local:
+        where = ("local", "remote") if db_local else ("remote", "local")
+        raise SplitTarget(
+            f"the database is {where[0]} but Storage is {where[1]}: refusing to seed two different projects"
+            " (pass allow_split_target / --allow-split-target if this is really intended)"
+        )
 
 
 # ── generic upsert ──
@@ -266,9 +297,7 @@ def _media_rows(b: SeedBundle, figures: list[PreparedFigure], bucket: str) -> li
 
 
 # A section edited outside the seed (admin editor, assistant) is not overwritten unless forced.
-SECTION_GUARD: LiteralString = (
-    "not exists (select 1 from public.chapter_section_revisions r where r.section_id = t.id and r.origin <> 'seed')"
-)
+SECTION_GUARD: LiteralString = "t.admin_edited_at is null"
 
 
 def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
@@ -298,6 +327,7 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
                 "body": body.body,
                 "body_html": body.body_html,
                 "reading_minutes": body.reading_minutes,
+                "admin_edited_at": None,  # a forced run takes the section back from the editor
             }
         )
     # Remember what the seed is about to replace, then upsert, then keep the replaced bodies as revisions.
@@ -315,8 +345,8 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
     guard = None if force else SECTION_GUARD
     if not force:
         cur.execute(
-            "select count(*) from naadi_seed_prev p where exists (select 1 from public.chapter_section_revisions r"
-            " where r.section_id = p.id and r.origin <> 'seed')"
+            "select count(*) from naadi_seed_prev p join public.chapter_sections s on s.id = p.id"
+            " where s.admin_edited_at is not null"
         )
         row = cur.fetchone()
         kept = int(row[0]) if row else 0
@@ -425,17 +455,17 @@ def _plan(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]:
     return out
 
 
-ADMIN_EDIT_GUARD: LiteralString = "t.updated_by is null"
+ADMIN_EDIT_GUARD: LiteralString = "t.admin_edited_at is null"
 
 
 def _app_config(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
     values = file_values(b.config_dir)
-    rows = [{"key": k, "value": v, "updated_by": None} for k, v in sorted(values.items())]
+    rows = [{"key": k, "value": v, "updated_by": None, "admin_edited_at": None} for k, v in sorted(values.items())]
     kept = 0
     if not force:
         cur.execute(
             "select count(*) from public.app_config a join jsonb_to_recordset(%s::jsonb) as x(key text, value jsonb)"
-            " on x.key = a.key where a.updated_by is not null and a.value is distinct from x.value",
+            " on x.key = a.key where a.admin_edited_at is not null and a.value is distinct from x.value",
             (_payload(rows),),
         )
         row = cur.fetchone()
@@ -627,6 +657,7 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
     unknown = [g for g in opts.only if g not in GROUPS]
     if unknown:
         raise ValueError(f"unknown groups {unknown}; choose from {', '.join(GROUPS)}")
+    check_targets(opts)
     b = bundle or load_bundle(opts.data_dir, opts.config_dir)
     figures = prepare_figures(b)
     report = SeedReport(
@@ -709,7 +740,9 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
     ]
     report.checks = counts + checks
     report.seconds = round(time.monotonic() - started, 2)
-    report.ok = all(c.ok for c in checks) and not b.sources.rejected
+    # Every check, the counts included. License-gate rejections are not failures: those rows are skipped
+    # and listed in report.license_gate (HANDOFF §7.1: nothing without a license is seeded).
+    report.ok = all(c.ok for c in report.checks)
     if not report.ok:
         raise SeedFailed(
             "seed verification failed: " + "; ".join(f"{c.name} ({c.detail})" for c in checks if not c.ok), report

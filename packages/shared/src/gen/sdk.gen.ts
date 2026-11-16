@@ -29,8 +29,6 @@ import type {
   GetNavData,
   GetNavErrors,
   GetNavResponses,
-  GetPublicAppConfigData,
-  GetPublicAppConfigResponses,
   GetPublicConfigData,
   GetPublicConfigResponses,
   GetReadingPositionData,
@@ -78,7 +76,6 @@ import {
   zGetHealthResponse,
   zGetMeResponse,
   zGetNavResponse,
-  zGetPublicAppConfigResponse,
   zGetPublicConfigResponse,
   zGetReadingPositionQuery,
   zGetReadingPositionResponse,
@@ -303,26 +300,6 @@ export const getChapter = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetChapterResponse.parseAsync(data),
     url: "/api/chapters/{chapter_id}",
-    ...options,
-  });
-
-/**
- * Runtime client config (no auth): feature flags, navigation, exam rules, UI copy
- */
-export const getPublicAppConfig = <ThrowOnError extends boolean = false>(
-  options?: Options<GetPublicAppConfigData, ThrowOnError>,
-): RequestResult<GetPublicAppConfigResponses, unknown, ThrowOnError> =>
-  (options?.client ?? client).get<GetPublicAppConfigResponses, unknown, ThrowOnError>({
-    requestValidator: async (data) =>
-      await z
-        .object({
-          body: z.never().optional(),
-          path: z.never().optional(),
-          query: z.never().optional(),
-        })
-        .parseAsync(data),
-    responseValidator: async (data) => await zGetPublicAppConfigResponse.parseAsync(data),
-    url: "/api/config/public",
     ...options,
   });
 

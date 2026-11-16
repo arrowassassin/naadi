@@ -2,8 +2,10 @@
  * Build-time conversion of the seed chapters (data/chapters.json) into content JSON for the importer
  * (data/generated/section_bodies.json). Node only. Written by `pnpm --filter @naadi/shared seed:convert`;
  * seed-bodies.test.ts fails in CI when the committed file is stale. The Space runtime has no Node, which is
- * why the conversion is committed rather than run at seed time; the Python importer re-checks every
- * section's source sha256 and node types against this file's header.
+ * why the conversion is committed rather than run at seed time. The Python importer
+ * (apps/api/naadi_api/seed/data.py) refuses a section whose source sha256 differs, a schemaVersion it does not
+ * read, and any node or mark type outside its pinned list for that version (tests compare that list with the
+ * header written here).
  */
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";

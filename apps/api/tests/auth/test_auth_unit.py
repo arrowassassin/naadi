@@ -412,8 +412,10 @@ def test_nav_returns_only_enabled_items(auth_client: Callable[..., TestClient], 
     body = res.json()
     assert [i["id"] for i in body["items"]] == ["today", "learn"]
     assert body["items"][0]["path"] == "/"
-    assert body["features"] == {"assistant": False, "search": False}
-    assert body["source"] == "server_default"
+    # no database in unit tests: app_config's logged fail-safe (config/app_config.yaml) answers
+    assert body["features"]["assistant"] is False
+    assert body["features"]["today"] is True
+    assert body["source"] == "file_fallback"
 
 
 def test_admin_route_403_for_non_admin_200_for_admin(
@@ -492,15 +494,20 @@ def test_rate_limit_per_user(auth_client: Callable[..., TestClient], signing_key
 def test_public_config(auth_client: Callable[..., TestClient]) -> None:
     res = auth_client(app_base_url="https://naadi.example.org/").get("/api/public-config")
     assert res.status_code == 200
-    assert res.headers["cache-control"] == "public, max-age=300"
-    assert res.json() == {
+    assert res.headers["cache-control"] == "public, max-age=60"
+    body = res.json()
+    # flags, nav, exam rules and UI copy come from app_config (S05); checked in tests/config_api and tests/db
+    assert body.pop("features")["ink_lab"] is False  # admins only in prod
+    assert [i["id"] for i in body.pop("nav")] == ["today", "learn"]
+    assert body.pop("exam_rules")["modes"]["exam"]["assistant"] is False
+    assert body.pop("ui_copy")["signin.tagline"]
+    assert body == {
         "auth_configured": True,
         "supabase_url": SUPABASE_URL,
         "supabase_anon_key": "public-anon-key",
         "google_oauth_enabled": True,
         "app_base_url": "https://naadi.example.org",
         "app_version": "test-1",
-        "features": {"ink_lab": False},
     }
 
 
@@ -508,7 +515,7 @@ def test_public_config_google_off_and_unconfigured(auth_client: Callable[..., Te
     body = auth_client(google_oauth_configured=False, supabase_url=None, app_env="local").get("/api/public-config")
     assert body.json()["google_oauth_enabled"] is False
     assert body.json()["auth_configured"] is False
-    assert body.json()["features"] == {"ink_lab": True}
+    assert body.json()["features"]["ink_lab"] is True  # everyone outside prod
 
 
 def test_public_config_has_no_secrets(auth_client: Callable[..., TestClient]) -> None:

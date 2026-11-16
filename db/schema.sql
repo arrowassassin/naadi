@@ -156,7 +156,10 @@ create table public.chapter_sections (
   body_html text,
   reading_minutes smallint,
   taxonomy_ids text[] not null default '{}',
-  updated_at timestamptz not null default now()
+  updated_at timestamptz not null default now(),
+  -- 0004: set when an admin or the assistant edits the section (trigger on non-seed revisions); the seed
+  -- importer keeps such sections unless forced
+  admin_edited_at timestamptz
 );
 create index chapter_sections_chapter_idx on public.chapter_sections (chapter_id, sort);
 
@@ -520,7 +523,9 @@ create table public.app_config (
   key text primary key,
   value jsonb not null,
   updated_by uuid references auth.users(id) on delete set null,
-  updated_at timestamptz not null default now()
+  updated_at timestamptz not null default now(),
+  -- 0004: set by the admin PUT; the seed importer keeps such keys unless forced
+  admin_edited_at timestamptz
 );
 
 create table public.app_config_history (
@@ -550,6 +555,19 @@ create trigger app_config_history_update before update on public.app_config
   for each row when (old.* is distinct from new.*) execute function public.naadi_app_config_history();
 create trigger app_config_history_delete before delete on public.app_config
   for each row execute function public.naadi_app_config_history();
+
+-- 0004: a non-seed revision (admin editor, assistant) marks its section as edited.
+create function public.naadi_mark_section_edited() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  if new.origin <> 'seed' then
+    update public.chapter_sections set admin_edited_at = coalesce(new.created_at, now()) where id = new.section_id;
+  end if;
+  return null;
+end
+$$;
+create trigger chapter_section_revisions_mark_edited after insert on public.chapter_section_revisions
+  for each row execute function public.naadi_mark_section_edited();
 
 -- 0004: every app_config write notifies channel 'naadi_app_config' (payload = key) so each API process drops
 -- its 60 s cache entry at once.
@@ -641,6 +659,7 @@ language plpgsql set search_path = '' as $$ ... $$;
 revoke all on function public.naadi_touch_updated_at() from public, anon, authenticated;
 revoke all on function public.naadi_app_config_history() from public, anon, authenticated;
 revoke all on function public.naadi_app_config_notify() from public, anon, authenticated;
+revoke all on function public.naadi_mark_section_edited() from public, anon, authenticated;
 revoke all on function public.naadi_secure_aegra_tables() from public, anon, authenticated;
 
 -- ───────────── updated_at triggers ─────────────
@@ -717,9 +736,9 @@ create trigger plan_templates_touch_updated_at before update on public.plan_temp
 --   search_usage, agent_health (0005), naadi_alembic_version
 --   (embeddings: retrieval runs in the API; question and draft chunks would leak answers)
 --
--- Functions naadi_touch_updated_at(), naadi_app_config_history(), naadi_app_config_notify() and
--- naadi_secure_aegra_tables() pin
--- search_path = '' and are not executable by clients.
+-- Functions naadi_touch_updated_at(), naadi_app_config_history(), naadi_app_config_notify(),
+-- naadi_mark_section_edited() and naadi_secure_aegra_tables() pin search_path = '' and are not executable
+-- by clients.
 
 -- ───────────── Storage (0002) ─────────────
 -- Buckets (storage.buckets; schema owned by the Supabase Storage service). No catch-all MIME type

@@ -22,7 +22,7 @@ The cloud build runs Playwright WebKit, Chromium and Firefox at the device viewp
 - [ ] **Palm rejection:** rest a palm while writing. No stray strokes.
 - [ ] **Pressure:** line width follows pressure.
 - [ ] **Latency:** record a 240 fps slow-motion video of a fast stroke. Count frames from tip contact to pixel; target ≤ 20 ms (about 5 frames). Record the number.
-- [ ] **Scroll performance:** a page with about 5k strokes still scrolls smoothly.
+- [ ] **Scroll performance:** 60 fps (120 on ProMotion) with ~5k strokes, measured with the ink lab's **Build 5,000-stroke page** then **Measure scroll** (/system/ink-lab, admin). Record the number.
 - [ ] **Scribble:** handwriting into any text field converts to text.
 - [ ] **Persistence:** ink survives reload, rotation and zoom, and appears on the laptop.
 

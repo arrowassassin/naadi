@@ -25,6 +25,72 @@ SECTION_BODIES = Path("generated") / "section_bodies.json"
 CONVERT_CMD = "pnpm --filter @naadi/shared seed:convert"
 
 
+# The content schema this importer understands (packages/shared/src/content: CONTENT_SCHEMA_VERSION and the
+# node / mark lists). A schema change bumps the version there; the importer then refuses the file until it is
+# updated here too, so a body with a node the reader cannot render never reaches the database.
+CONTENT_SCHEMA_VERSION = 1
+CONTENT_NODE_TYPES = frozenset(
+    {
+        "doc",
+        "paragraph",
+        "heading",
+        "bulletList",
+        "orderedList",
+        "listItem",
+        "table",
+        "tableRow",
+        "tableHeader",
+        "tableCell",
+        "callout",
+        "figure",
+        "video",
+        "pdf",
+        "questionEmbed",
+        "mermaid",
+        "math",
+        "hardBreak",
+        "text",
+    }
+)
+CONTENT_MARK_TYPES = frozenset({"bold", "italic", "subscript", "superscript", "highlight"})
+
+
+def body_problems(section_id: str, body: Mapping[str, Any], figure_ids: list[str]) -> list[str]:
+    """Node/mark types inside the schema, figure nodes matching figureIds, no placeholder text."""
+    problems: list[str] = []
+    figures: list[str] = []
+
+    def walk(node: Any, path: str) -> None:
+        if not isinstance(node, Mapping):
+            problems.append(f"section {section_id}: {path} is not a node")
+            return
+        t = node.get("type")
+        if t not in CONTENT_NODE_TYPES:
+            problems.append(f"section {section_id}: unknown node type {t!r} at {path}")
+        for m in node.get("marks") or []:
+            mt = m.get("type") if isinstance(m, Mapping) else None
+            if mt not in CONTENT_MARK_TYPES:
+                problems.append(f"section {section_id}: unknown mark type {mt!r} at {path}")
+        if t == "text" and "[[figure:" in str(node.get("text", "")):
+            problems.append(f"section {section_id}: [[figure: placeholder left at {path}")
+        if t == "figure":
+            attrs = node.get("attrs")
+            figures.append(str(attrs.get("mediaId")) if isinstance(attrs, Mapping) else "")
+        children = node.get("content") or []
+        if not isinstance(children, list):
+            problems.append(f"section {section_id}: content of {path} is not a list")
+            return
+        for i, child in enumerate(children):
+            walk(child, f"{path}.{i}")
+
+    if body.get("type") != "doc":
+        problems.append(f"section {section_id}: body is not a doc")
+    walk(body, "doc")
+    if figures != figure_ids:
+        problems.append(f"section {section_id}: figure nodes {figures} differ from figureIds {figure_ids}")
+    return problems
+
+
 def default_data_dir() -> Path:
     """`./data` next to the app (container), else `<repo>/data` (checkout)."""
     for c in (APP_DIR / "data", REPO_ROOT / "data"):
@@ -411,6 +477,16 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
     except (OSError, ValidationError, json.JSONDecodeError) as exc:
         raise SeedDataError([f"{bodies_path}: unreadable ({type(exc).__name__}); run `{CONVERT_CMD}`"]) from exc
 
+    if bodies.schema_version != CONTENT_SCHEMA_VERSION:
+        problems.append(
+            f"{SECTION_BODIES}: content schema version {bodies.schema_version}, this importer reads"
+            f" {CONTENT_SCHEMA_VERSION}; update naadi_api/seed/data.py with the new node set"
+        )
+    unknown_nodes = sorted(set(bodies.node_types) - CONTENT_NODE_TYPES)
+    unknown_marks = sorted(set(bodies.mark_types) - CONTENT_MARK_TYPES)
+    if unknown_nodes or unknown_marks:
+        problems.append(f"{SECTION_BODIES}: unknown node types {unknown_nodes} / mark types {unknown_marks}")
+
     def dupes(ids: list[str], what: str) -> None:
         seen: set[str] = set()
         for i in ids:
@@ -462,6 +538,10 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
                 problems.append(f"section {s.id}: {SECTION_BODIES} is stale; run `{CONVERT_CMD}`")
             elif body.figure_ids != s.figure_ids:
                 problems.append(f"section {s.id}: converted figures differ from figureIds")
+            else:
+                problems += body_problems(s.id, body.body, s.figure_ids)
+                if "[[figure:" in body.body_html:
+                    problems.append(f"section {s.id}: [[figure: placeholder left in bodyHtml")
     unplaced = sorted(figure_ids - set(placed))
     if unplaced:
         problems.append(f"figures never placed in a section: {unplaced}")

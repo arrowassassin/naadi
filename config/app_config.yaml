@@ -1,6 +1,6 @@
 # Naadi runtime configuration seeded into `app_config` (HANDOFF §7.5) by the seed importer
 # (apps/api/naadi_api/seed). Edited later in the admin console with history; a re-seed only rewrites keys an
-# admin has never edited (`--force-config` overwrites). Each key is validated by its pydantic model in
+# admin has never edited (admin_edited_at unset; `seed.py --force` overwrites). Each key is validated by its pydantic model in
 # apps/api/naadi_api/config_api/schemas.py. models / budget / search / generation come from models.yaml;
 # nothing in here is secret.
 
@@ -76,8 +76,12 @@ ui_copy:
   agent.exam_mode: "The assistant is off during exam mode."
   agent.unavailable: "The assistant could not answer right now."
   signin.tagline: "One place to study"
+  signin.pitch: "Read, practise, review and plan for USMLE on your iPad, phone or laptop."
   signin.privacy: "Your notes and ink are private to your account."
   signin.link_expired_title: "That sign-in link has expired"
   signin.link_expired_body: "Links work once and for one hour. Request a new one below."
-  content.figure_missing: "This figure could not be loaded."
-  content.report_issue: "Report an issue"
+  signin.signed_out: "You are signed out."
+  signin.offline: "Connect to the internet to sign in."
+  signin.email_hint: "We email you a link that signs you in. No password needed."
+  signin.submit: "Email me a sign-in link"
+  signin.google: "Continue with Google"
