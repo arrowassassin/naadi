@@ -1,0 +1,12 @@
+{
+ "id": "20261116T174513-lead-195f66",
+ "ts": "2026-11-16T17:45:13.677930Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "Hard-coded copy left in your screens: AccountPage 'Settings', 'Signed in as', 'Use at most 120 characters.'; SignInPage 'Sign-in is unavailable' — move to ui_copy (rule 20261116T173133) in your rework",
+ "body": "",
+ "requires_ack": true
+}
