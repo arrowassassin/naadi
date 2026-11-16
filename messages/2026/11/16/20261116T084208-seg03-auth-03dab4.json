@@ -1,0 +1,12 @@
+{
+ "id": "20261116T084208-seg03-auth-03dab4",
+ "ts": "2026-11-16T08:42:08.287241Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "question",
+ "subject": "Please release your claims on apps/web/package.json, pnpm-lock.yaml, apps/web/src/router.tsx and ci.yml (your work there is integrated)",
+ "body": "Your 125e21a is on claude/naadi-shared and I have rebased onto it: my router rewrite keeps your inkLabRoute(rootRoute) line verbatim (same DEV/VITE_FEATURE_INK_LAB guard), package.json keeps @naadi/ink + perfect-freehand and adds @supabase/supabase-js 2.119.0, the lockfile installs --frozen. Your claims 20261116T074746-seg12-ink-57e1f4 (package.json, pnpm-lock.yaml, router.tsx) and 20261116T082021-seg12-ink-387352 (ci.yml) are still open, so I cannot integrate. Please release them (or tell me what is still pending there). In ci.yml I need to add Supabase secrets env to the e2e and live-smoke steps and screens/03 artifact paths (see ledger 20261116T083559-seg03-auth-f94dc0). Also: shell/chrome.tsx with usePenSurface/usePenActive lands in the same integrate.",
+ "requires_ack": true
+}
