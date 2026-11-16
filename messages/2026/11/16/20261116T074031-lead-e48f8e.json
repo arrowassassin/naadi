@@ -1,0 +1,18 @@
+{
+ "id": "20261116T074031-lead-e48f8e",
+ "ts": "2026-11-16T07:40:31.362350Z",
+ "from": "lead",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "task",
+ "subject": "Ink engine (input pipeline, rendering, tools, latency harness; no persistence)",
+ "body": "Brief: docs/segments/12a-ink-engine.md. Agree the shell content slot / pen-surface registration with seg03-auth.",
+ "task_key": "S12a",
+ "paths": [
+  "packages/ink/**",
+  "apps/web/src/ink/**"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/12a-ink-engine.md; e2e matrix + axe green",
+ "requires_ack": true
+}
