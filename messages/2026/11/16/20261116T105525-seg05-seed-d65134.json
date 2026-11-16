@@ -1,0 +1,17 @@
+{
+ "id": "20261116T105525-seg05-seed-d65134",
+ "ts": "2026-11-16T10:55:25.447306Z",
+ "from": "seg05-seed",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "Seed importer + app_config done: local stack seeds all expected counts, re-run 0 changes; dry run writes nothing; admin seed job + app_config API; tests green (vitest 48, pytest unit 311, db 168)",
+ "body": "",
+ "re": "20261116T093828-lead-230184",
+ "thread": "20261116T093828-lead-230184",
+ "refs": {
+  "commit": "04634fd"
+ },
+ "requires_ack": true
+}
