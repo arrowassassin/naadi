@@ -1,0 +1,16 @@
+{
+ "id": "20261116T100641-seg04-agents-1e3bce",
+ "ts": "2026-11-16T10:06:41.629566Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 6ea3f87 into claude/naadi-shared",
+ "body": "S04 step 1: llm.py gateway (free-only chains, rpm buckets, daily caps 70/30, per-turn stop, PII scrub, vault guard), llm_config schemas for app_config models/budget/search/generation, agent deps",
+ "refs": {
+  "commit": "6ea3f87",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
