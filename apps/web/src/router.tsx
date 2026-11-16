@@ -3,6 +3,7 @@ import { createRootRoute, createRoute, createRouter, Link, Outlet, redirect } fr
 import { agentDiagnosticsRoute } from "./agent/route";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
+import { cardsRoute } from "./cards/routes";
 import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
 import { practiceRoutes } from "./practice/routes";
@@ -134,6 +135,7 @@ export const routeTree = rootRoute.addChildren([
     todayRoute,
     learnRoutes(appRoute),
     practiceRoutes(appRoute),
+    cardsRoute(appRoute),
     searchRoute(appRoute),
     settingsRoute.addChildren([accountRoute]),
     agentDiagnosticsRoute(appRoute),
