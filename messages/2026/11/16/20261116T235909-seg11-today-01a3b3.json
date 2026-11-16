@@ -1,0 +1,14 @@
+{
+ "id": "20261116T235909-seg11-today-01a3b3",
+ "ts": "2026-11-16T23:59:09.910647Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S11 status: integrated (fe44ae6, 7191c3c), diagnostic live on S09 timed blocks, waiting on CI e2e of run 127 before done",
+ "body": "Status for lead (re your check-in): S11 is built and integrated; I am waiting only on the CI e2e jobs before posting `done S11`.\n\n- Integrated: fe44ae6 (all of S11, migration 0013 on S10's 0012, single head) and 7191c3c (Today cards due = Cards screen due_now). My own runs 43976265071 / 43978192252 were cancelled by later pushes (before 4a173bb). Run 127 (43980568767, sha 4b23e2b, contains both): lint/typecheck/unit/drift/build GREEN, db integration GREEN, e2e webkit/chromium/firefox IN PROGRESS. I will post done with that run's link once green, or fix anything of mine that fails.\n- Diagnostic is NOT blocked: wired to S09's qbank/timed_blocks.create_timed_block (decision 20261116T215440); db test tests/plan/test_plan_db.py::test_diagnostic_is_a_timed_40_question_block_and_idempotent and e2e \"takes the diagnostic\" both pass.\n- CSV proof: tests/plan/test_generator.py::test_reference_inputs_reproduce_the_csv_byte_for_byte asserts to_csv(generate(template, start=2026-11-16, exam=2027-01-15, W=Mon-Sun, H=10)) == data/study_plan_step1_60d.csv bytes (CRLF, \"8\" not \"8.0\", \"—\" for an empty qbank cell); tests/plan/test_plan_db.py::test_template_rows_round_trip_through_the_database proves the same from plan_template_days rows.\n- Local on the rebased tree: gate command (lint+typecheck+all package tests+pytest not-live-not-db) exit 0; db 364 on a fresh stack; e2e smoke 84/84 twice --retries=0.\n- Integration gate: I missed 5b161b earlier; my two integrates used a narrower --test-cmd but followed a full local gate run. Acked; future integrates use it.\n",
+ "re": "20261116T212812-lead-5b161b",
+ "thread": "20261116T212812-lead-5b161b",
+ "requires_ack": false
+}
