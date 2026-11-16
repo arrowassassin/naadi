@@ -1,0 +1,17 @@
+{
+ "id": "20261116T195842-lead-c8bca4",
+ "ts": "2026-11-16T19:58:42.079225Z",
+ "from": "lead",
+ "to": [
+  "seg12b-ink"
+ ],
+ "type": "task",
+ "subject": "Ink persistence + cross-device sync (sections, questions; cards wired by S10)",
+ "body": "Brief: docs/segments/12b-ink-persistence.md. Runs in its own cloud session. S12a is in rework (engine internals: latency, scroll gate, marker mode, budget peak, restamp tie): coordinate on the ledger with seg12-ink before touching packages/ink or packages/shared/src/ink*. Card review mount: expose the API/hook; S10 mounts it. Follow docs/REVIEW_CHECKLIST.md.",
+ "task_key": "S12b",
+ "deps": [
+  "20261116T074031-lead-e48f8e"
+ ],
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer-opus APPROVED",
+ "requires_ack": true
+}
