@@ -97,12 +97,20 @@ async function openLab(page: Page) {
 async function inkedAt(page: Page, fx: number, fy: number, radius = 3): Promise<boolean> {
   return page.evaluate(
     ({ fx, fy, radius, sel }) => {
-      const canvas = document.querySelector(`${sel} canvas[data-ink-canvas="ink"]`) as HTMLCanvasElement;
-      const host = canvas.parentElement as HTMLElement;
+      const host = document.querySelector(`${sel} [data-ink-host]`) as HTMLElement;
+      const py = fy * host.clientHeight;
+      // Committed ink lives in slab canvases; pick the one covering this point.
+      const canvas = [...document.querySelectorAll<HTMLCanvasElement>(`${sel} canvas[data-ink-canvas="ink"]`)].find(
+        (c) => {
+          const top = Number.parseFloat(c.style.top || "0");
+          return py >= top && py < top + Number.parseFloat(c.style.height);
+        },
+      );
+      if (!canvas) return false;
       const scale = canvas.width / host.clientWidth;
       const top = Number.parseFloat(canvas.style.top || "0");
       const x = Math.round(fx * host.clientWidth * scale);
-      const y = Math.round((fy * host.clientHeight - top) * scale);
+      const y = Math.round((py - top) * scale);
       const r = Math.max(1, Math.round(radius * scale));
       const data = (canvas.getContext("2d") as CanvasRenderingContext2D).getImageData(
         x - r,
@@ -204,11 +212,16 @@ test.describe("ink lab", () => {
 
   test("a real mouse draws (trusted input, coalesced where supported)", async ({ page }) => {
     await openLab(page);
+    // Real input only lands inside the viewport: bring the top of the page into view below the toolbar.
+    await page
+      .locator(LAYER)
+      .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 160));
     const box = await page.locator(LAYER).boundingBox();
     if (!box) throw new Error("no layer box");
-    await page.mouse.move(box.x + box.width * 0.2, box.y + box.height * 0.4);
+    const y = box.y + Math.min(box.height * 0.3, 240);
+    await page.mouse.move(box.x + box.width * 0.2, y);
     await page.mouse.down();
-    await page.mouse.move(box.x + box.width * 0.6, box.y + box.height * 0.45, { steps: 20 });
+    await page.mouse.move(box.x + box.width * 0.6, y + 30, { steps: 20 });
     await page.mouse.up();
     await expect.poll(() => count(page)).toBe(1);
     await expect

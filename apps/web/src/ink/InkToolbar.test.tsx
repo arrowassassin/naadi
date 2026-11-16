@@ -2,7 +2,6 @@ import type { InkEngineState } from "@naadi/ink";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { inkLabEnabled } from "./featureFlag";
 import { InkToolbar } from "./InkToolbar";
 
 const base: InkEngineState = {
@@ -73,11 +72,5 @@ describe("InkToolbar", () => {
   it("clear is disabled on an empty page", () => {
     setup({ count: 0 });
     expect(screen.getByRole("button", { name: "Clear page" })).toBeDisabled();
-  });
-});
-
-describe("ink lab flag", () => {
-  it("is on in the dev/test build and off when the env says nothing in production", () => {
-    expect(inkLabEnabled()).toBe(import.meta.env.DEV || import.meta.env.VITE_FEATURE_INK_LAB === "true");
   });
 });

@@ -64,6 +64,12 @@ export class InkDocument {
     return this.entries.get(id);
   }
 
+  /** Does any item match? (unordered, stops at the first hit) */
+  some(fn: (item: InkItem) => boolean): boolean {
+    for (const e of this.entries.values()) if (fn(e.item)) return true;
+    return false;
+  }
+
   /** Items in z-order. */
   items(): InkItem[] {
     return [...this.entries.values()].sort((a, b) => a.seq - b.seq).map((e) => e.item);

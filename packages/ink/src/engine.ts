@@ -130,8 +130,8 @@ export interface InkEngineOptions {
   onError?: (message: string) => void;
 }
 
-/** Device pixels one canvas may hold; beyond this the committed layers cover a band around the viewport. */
-const MAX_CANVAS_PIXELS = 4_000_000;
+/** Device pixels per slab canvas: bounds memory on tall surfaces at high device pixel ratios. */
+const MAX_SLAB_PIXELS = 2_000_000;
 /** Committed layers are repainted in TILE×TILE CSS px tiles. */
 const TILE = 256;
 const HOLD_MS = 550;
@@ -175,11 +175,12 @@ export class InkEngine {
   private readonly o: InkEngineOptions;
   private readonly host: HTMLElement;
   private readonly layer: HTMLDivElement;
-  private readonly markerCanvas: HTMLCanvasElement;
-  private readonly inkCanvas: HTMLCanvasElement;
   private readonly liveCanvas: HTMLCanvasElement;
-  private markerCtx: CanvasRenderingContext2D | null = null;
-  private inkCtx: CanvasRenderingContext2D | null = null;
+  private readonly slabs = new Map<number, Slab>();
+  private slabH = 0;
+  /** Which kinds of ink each painted tile holds (to hide empty slab canvases). */
+  private readonly tileKinds = new Map<string, { m: boolean; k: boolean }>();
+  private live = { y0: 0, h: 0 };
   private liveCtx: CanvasRenderingContext2D | null = null;
   private readonly palm: PalmRejection;
   private palette: Palette;
@@ -199,7 +200,6 @@ export class InkEngine {
   private widthPx = 0;
   private heightPx = 0;
   private dpr = 1;
-  private band = { y0: 0, h: 0 };
   private readonly dirtyTiles = new Set<string>();
   private liveRect: Rect = EMPTY_RECT; // device px on the live canvas
   private liveDirty = false;
@@ -241,15 +241,12 @@ export class InkEngine {
       webkitUserSelect: "none",
       webkitTouchCallout: "none",
     } satisfies Partial<CSSStyleDeclaration> & Record<string, string>);
-    this.markerCanvas = this.makeCanvas("marker");
-    this.inkCanvas = this.makeCanvas("ink");
     this.liveCanvas = this.makeCanvas("live");
-    this.layer.append(this.markerCanvas, this.inkCanvas, this.liveCanvas);
+    this.liveCanvas.style.display = "none";
+    this.layer.append(this.liveCanvas);
     this.host.append(this.layer);
-    this.markerCtx = this.markerCanvas.getContext("2d");
-    this.inkCtx = this.inkCanvas.getContext("2d");
     this.liveCtx = this.liveCanvas.getContext("2d", { desynchronized: true }) as CanvasRenderingContext2D | null;
-    if (!this.markerCtx || !this.inkCtx || !this.liveCtx) this.fail("This browser could not create a drawing canvas.");
+    if (!this.liveCtx) this.fail("This browser could not create a drawing canvas.");
     this.applyThemeBlend();
 
     if (options.items) {
@@ -467,6 +464,8 @@ export class InkEngine {
     cancelAnimationFrame(this.raf);
     if (this.prewarmTimer) clearTimeout(this.prewarmTimer);
     for (const c of this.cleanups) c();
+    for (const slab of this.slabs.values()) this.releaseSlab(slab);
+    this.slabs.clear();
     this.layer.remove();
     if (this.lastPenActive) this.o.onPenActiveChange?.(false);
   }
@@ -507,9 +506,7 @@ export class InkEngine {
    * On a dark surface the marker layer is translucent instead (multiply against dark would vanish).
    */
   private applyThemeBlend(): void {
-    this.markerCanvas.style.zIndex = "-1";
-    this.markerCanvas.style.opacity = this.theme === "paper" ? "1" : "0.45";
-    this.inkCanvas.style.zIndex = "1";
+    for (const slab of this.slabs.values()) this.applySlabStyle(slab);
     this.liveCanvas.style.zIndex = "1";
   }
 
@@ -597,7 +594,14 @@ export class InkEngine {
     }
   }
 
-  // ── Geometry, band and tiles ──────────────────────────────────────────────
+  // ── Geometry, slabs and tiles ─────────────────────────────────────────────
+  //
+  // Committed ink lives in "slabs": canvases covering a horizontal strip of the surface (the whole
+  // surface when it is small). Slabs near the viewport exist and scroll natively with the content, so
+  // scrolling never repaints ink; slabs that come into range are painted tile by tile (TILE×TILE CSS px,
+  // time-sliced), and slabs far away are released to bound memory. Each slab has a marker canvas (under
+  // the content) and an ink canvas (over it); an empty one is hidden because even an empty canvas costs
+  // a composited layer on every scrolled frame.
 
   private refreshFrame(): SurfaceFrame {
     if (this.frameStale) {
@@ -630,95 +634,123 @@ export class InkEngine {
     this.heightPx = h;
     this.dpr = dpr;
     if (changed) {
-      this.layoutBand(true);
+      for (const slab of this.slabs.values()) this.releaseSlab(slab);
+      this.slabs.clear();
+      this.tileKinds.clear();
+      this.dirtyTiles.clear();
+      const rows = Math.floor(MAX_SLAB_PIXELS / Math.max(1, w * dpr * dpr) / TILE);
+      this.slabH = Math.max(1, rows) * TILE;
       this.refreshSelectionRect();
       this.positionEditor();
-    } else this.layoutBand(false);
+    }
+    this.updateSlabs();
+    this.positionLive(changed);
   }
 
   private onScroll(): void {
     this.frameStale = true;
     if (this.gesture) return; // the frame is re-read with the next sample
-    this.layoutBand(false);
+    this.updateSlabs();
+    if (this.selection || this.hover) this.positionLive(false);
   }
 
-  /** Choose which vertical band of the surface the committed canvases cover. */
-  private layoutBand(force: boolean): void {
+  /** The part of the surface inside the viewport, in surface CSS px. */
+  private visibleRange(): { top: number; bottom: number; vh: number } {
+    const r = this.host.getBoundingClientRect();
+    const vh = window.innerHeight || this.heightPx;
+    const top = Math.min(this.heightPx, Math.max(0, -r.top));
+    const bottom = Math.max(top, Math.min(this.heightPx, vh - r.top));
+    return { top, bottom, vh };
+  }
+
+  /** Create the slabs within half a viewport of the visible part; release those beyond two viewports. */
+  private updateSlabs(): void {
     const w = this.widthPx;
     const h = this.heightPx;
-    if (w <= 0 || h <= 0) return;
-    const dpr = this.dpr;
-    const maxH = Math.max(TILE, Math.floor(MAX_CANVAS_PIXELS / (w * dpr * dpr)));
-    let y0 = 0;
-    let bh = h;
-    if (h > maxH) {
-      const r = this.host.getBoundingClientRect();
-      const vh = window.innerHeight || h;
-      const visTop = Math.min(h, Math.max(0, -r.top));
-      const visBot = Math.max(visTop, Math.min(h, vh - r.top));
-      bh = maxH;
-      const margin = Math.min(vh * 0.5, (bh - (visBot - visTop)) / 2);
-      const cur = this.band;
-      const inside =
-        cur.h === bh &&
-        visTop >= cur.y0 + Math.max(0, margin * 0.25) &&
-        visBot <= cur.y0 + cur.h - Math.max(0, margin * 0.25);
-      if (inside && !force) return;
-      const mid = (visTop + visBot) / 2;
-      y0 = Math.round(Math.min(h - bh, Math.max(0, mid - bh / 2)));
-      if (!force && cur.h === bh && Math.abs(cur.y0 - y0) < 1) return;
-    } else if (!force && this.band.y0 === 0 && this.band.h === h) return;
-    this.moveBand(y0, bh, force);
+    if (w <= 0 || h <= 0 || this.slabH <= 0) return;
+    const { top, bottom, vh } = this.visibleRange();
+    const keepFrom = Math.floor(Math.max(0, top - vh * 0.5) / this.slabH);
+    const keepTo = Math.floor(Math.max(0, Math.min(h - 1, bottom + vh * 0.5)) / this.slabH);
+    for (const [i, slab] of this.slabs) {
+      const slabTop = i * this.slabH;
+      if (slabTop + slab.h < top - vh * 2 || slabTop > bottom + vh * 2) {
+        this.releaseSlab(slab);
+        this.slabs.delete(i);
+      }
+    }
+    for (let i = keepFrom; i <= keepTo; i++) if (!this.slabs.has(i)) this.createSlab(i);
   }
 
-  private moveBand(y0: number, bh: number, force: boolean): void {
+  private createSlab(i: number): void {
+    const y0 = i * this.slabH;
+    const h = Math.min(this.slabH, this.heightPx - y0);
+    if (h <= 0) return;
     const dpr = this.dpr;
     const devW = Math.max(1, Math.round(this.widthPx * dpr));
-    const devH = Math.max(1, Math.round(bh * dpr));
-    const old = this.band;
-    const resized = force || this.inkCanvas.width !== devW || this.inkCanvas.height !== devH;
-    for (const c of [this.markerCanvas, this.inkCanvas, this.liveCanvas]) {
-      if (resized) {
-        c.width = devW;
-        c.height = devH;
-        c.style.width = `${this.widthPx}px`;
-        c.style.height = `${bh}px`;
-      }
-      c.style.top = `${y0}px`;
+    const devH = Math.max(1, Math.round(h * dpr));
+    const make = (name: string) => {
+      const c = this.makeCanvas(name);
+      c.width = devW;
+      c.height = devH;
+      Object.assign(c.style, { width: `${this.widthPx}px`, height: `${h}px`, top: `${y0}px`, display: "none" });
+      return c;
+    };
+    const marker = make("marker");
+    const ink = make("ink");
+    marker.dataset.slab = String(i);
+    ink.dataset.slab = String(i);
+    this.layer.insertBefore(ink, this.liveCanvas);
+    this.layer.insertBefore(marker, ink);
+    const slab: Slab = { i, y0, h, marker, ink, mctx: marker.getContext("2d"), ictx: ink.getContext("2d") };
+    if (!slab.mctx || !slab.ictx) this.fail("This browser could not create a drawing canvas (out of canvas memory).");
+    this.slabs.set(i, slab);
+    this.applySlabStyle(slab);
+    this.markDirtyPx({ x0: 0, y0, x1: this.widthPx, y1: y0 + h });
+  }
+
+  private releaseSlab(slab: Slab): void {
+    // Shrinking first returns the backing store at once (Safari keeps detached canvases' memory a while).
+    for (const c of [slab.marker, slab.ink]) {
+      c.width = 0;
+      c.height = 0;
+      c.remove();
     }
-    this.band = { y0, h: bh };
+    for (const key of [...this.tileKinds.keys()]) {
+      const ty = Number(key.split(",")[1]);
+      if (ty * TILE >= slab.y0 && ty * TILE < slab.y0 + slab.h) this.tileKinds.delete(key);
+    }
+  }
+
+  private applySlabStyle(slab: Slab): void {
+    slab.marker.style.zIndex = "-1";
+    slab.marker.style.opacity = this.theme === "paper" ? "1" : "0.45";
+    slab.ink.style.zIndex = "1";
+  }
+
+  /** Size the live canvas to the visible part of the surface (it is cleared, not scrolled). */
+  private positionLive(force: boolean): void {
+    const w = this.widthPx;
+    if (w <= 0 || this.heightPx <= 0) return;
+    const { top, bottom } = this.visibleRange();
+    const y0 = Math.floor(top);
+    const h = Math.max(1, Math.ceil(bottom) - y0);
+    if (!force && this.live.y0 === y0 && this.live.h === h) return;
+    const c = this.liveCanvas;
+    const devW = Math.max(1, Math.round(w * this.dpr));
+    const devH = Math.max(1, Math.round(h * this.dpr));
+    if (c.width !== devW || c.height !== devH) {
+      c.width = devW;
+      c.height = devH;
+    } else this.liveCtx?.clearRect(0, 0, devW, devH);
+    Object.assign(c.style, { width: `${w}px`, height: `${h}px`, top: `${y0}px` });
+    this.live = { y0, h };
     this.liveRect = EMPTY_RECT;
     this.liveDirty = true;
-    if (resized) {
-      this.allTilesDirty();
-    } else {
-      // Same size, new position: keep the pixels that are still in the band and repaint only the strip
-      // that scrolled in.
-      const shift = Math.round((old.y0 - y0) * dpr);
-      for (const ctx of [this.markerCtx, this.inkCtx]) {
-        if (!ctx) continue;
-        ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.globalCompositeOperation = "copy";
-        ctx.drawImage(ctx.canvas, 0, shift);
-        ctx.restore();
-      }
-      const exposed =
-        shift > 0
-          ? { top: y0, bottom: Math.min(y0 + bh, old.y0) }
-          : { top: Math.max(y0, old.y0 + old.h), bottom: y0 + bh };
-      if (Math.abs(shift) >= devH) this.allTilesDirty();
-      else this.markDirtyPx({ x0: 0, y0: exposed.top, x1: this.widthPx, y1: exposed.bottom });
-    }
     this.requestFrame();
   }
 
-  private allTilesDirty(): void {
-    this.markDirtyPx({ x0: 0, y0: this.band.y0, x1: this.widthPx, y1: this.band.y0 + this.band.h });
-  }
-
   private invalidateAll(): void {
-    this.allTilesDirty();
+    this.markDirtyPx({ x0: 0, y0: 0, x1: this.widthPx, y1: this.heightPx });
     this.liveDirty = true;
     this.requestFrame();
   }
@@ -727,32 +759,45 @@ export class InkEngine {
   private markDirtySu(r: Rect): void {
     if (rectIsEmpty(r)) return;
     const w = this.widthPx;
-    const pad = 2 / Math.max(1, w);
-    const p = padRect(r, pad);
-    this.markDirtyPx({
-      x0: Math.max(0, p.x0 * w),
-      y0: Math.max(this.band.y0, p.y0 * w),
-      x1: Math.min(w, p.x1 * w),
-      y1: Math.min(this.band.y0 + this.band.h, p.y1 * w),
-    });
+    const p = padRect(r, 2 / Math.max(1, w));
+    this.markDirtyPx({ x0: p.x0 * w, y0: p.y0 * w, x1: p.x1 * w, y1: p.y1 * w });
   }
 
-  /** Mark tiles dirty for a rectangle in CSS px (surface-relative), clipped to the band. */
+  /** Mark tiles dirty for a rectangle in CSS px (surface-relative); only tiles of live slabs matter. */
   private markDirtyPx(r: Rect): void {
-    const y0 = Math.max(r.y0, this.band.y0);
-    const y1 = Math.min(r.y1, this.band.y0 + this.band.h);
     const x0 = Math.max(0, r.x0);
     const x1 = Math.min(this.widthPx, r.x1);
-    if (!(x1 > x0 && y1 > y0)) return;
-    for (let tx = Math.floor(x0 / TILE); tx <= Math.floor((x1 - 0.001) / TILE); tx++)
-      for (let ty = Math.floor(y0 / TILE); ty <= Math.floor((y1 - 0.001) / TILE); ty++)
+    const y0 = Math.max(0, r.y0);
+    const y1 = Math.min(this.heightPx, r.y1);
+    if (!(x1 > x0 && y1 > y0) || this.slabH <= 0) return;
+    for (let ty = Math.floor(y0 / TILE); ty <= Math.floor((y1 - 0.001) / TILE); ty++) {
+      if (!this.slabs.has(Math.floor((ty * TILE) / this.slabH))) continue;
+      for (let tx = Math.floor(x0 / TILE); tx <= Math.floor((x1 - 0.001) / TILE); tx++)
         this.dirtyTiles.add(`${tx},${ty}`);
+    }
     this.requestFrame();
   }
 
   private requestFrame(): void {
     if (this.raf || this.destroyed) return;
     this.raf = requestAnimationFrame((ts) => this.onFrame(ts));
+  }
+
+  /** Show a slab's marker/ink canvas only when one of its tiles has something of that kind. */
+  private updateSlabVisibility(slab: Slab): void {
+    let m = false;
+    let k = false;
+    const first = slab.y0 / TILE;
+    const last = Math.ceil((slab.y0 + slab.h) / TILE);
+    for (const [key, kinds] of this.tileKinds) {
+      const ty = Number(key.split(",")[1]);
+      if (ty < first || ty >= last) continue;
+      m ||= kinds.m;
+      k ||= kinds.k;
+      if (m && k) break;
+    }
+    slab.marker.style.display = m ? "" : "none";
+    slab.ink.style.display = k ? "" : "none";
   }
 
   private onFrame(_ts: number): void {
@@ -773,39 +818,50 @@ export class InkEngine {
     // Committed tiles: keep frames short while a stroke is live, finish the rest next frame.
     const budget = this.gesture ? 4 : 10;
     if (this.dirtyTiles.size > 0) {
-      const tiles = [...this.dirtyTiles];
+      const touched = new Set<Slab>();
+      // Visible tiles first, so a slab coming into view fills where the student is looking.
+      const { top, bottom } = this.visibleRange();
+      const tiles = [...this.dirtyTiles].sort((a, b) => {
+        const da = tileDistance(a, top, bottom);
+        const db = tileDistance(b, top, bottom);
+        return da - db;
+      });
       for (const key of tiles) {
         this.dirtyTiles.delete(key);
-        this.renderTile(key);
+        const slab = this.renderTile(key);
+        if (slab) touched.add(slab);
         if (performance.now() - start > budget) break;
       }
+      for (const slab of touched) this.updateSlabVisibility(slab);
       if (this.dirtyTiles.size > 0) this.requestFrame();
     }
   }
 
-  /** Reference space → device px of the band canvases. */
-  private setDrawTransform(ctx: CanvasRenderingContext2D): void {
+  /** Reference space → device px of a canvas whose top edge is at `top` CSS px of the surface. */
+  private setDrawTransform(ctx: CanvasRenderingContext2D, top: number): void {
     const k = (this.widthPx * this.dpr) / REF;
-    ctx.setTransform(k, 0, 0, k, 0, -this.band.y0 * this.dpr);
+    ctx.setTransform(k, 0, 0, k, 0, -top * this.dpr);
   }
 
-  private renderTile(key: string): void {
+  private renderTile(key: string): Slab | null {
     const [txs, tys] = key.split(",");
     const tx = Number(txs);
     const ty = Number(tys);
+    const slab = this.slabs.get(Math.floor((ty * TILE) / this.slabH));
+    if (!slab) return null;
     const dpr = this.dpr;
     const x0 = tx * TILE;
-    const y0 = Math.max(ty * TILE, this.band.y0);
+    const y0 = Math.max(ty * TILE, slab.y0);
     const x1 = Math.min(this.widthPx, (tx + 1) * TILE);
-    const y1 = Math.min((ty + 1) * TILE, this.band.y0 + this.band.h);
-    if (!(x1 > x0 && y1 > y0)) return;
+    const y1 = Math.min((ty + 1) * TILE, slab.y0 + slab.h);
+    if (!(x1 > x0 && y1 > y0)) return slab;
     const dev = {
       x: Math.floor(x0 * dpr),
-      y: Math.floor((y0 - this.band.y0) * dpr),
+      y: Math.floor((y0 - slab.y0) * dpr),
       w: Math.ceil((x1 - x0) * dpr) + 1,
       h: Math.ceil((y1 - y0) * dpr) + 1,
     };
-    for (const ctx of [this.markerCtx, this.inkCtx]) {
+    for (const ctx of [slab.mctx, slab.ictx]) {
       if (!ctx) continue;
       ctx.save();
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -813,19 +869,26 @@ export class InkEngine {
       ctx.beginPath();
       ctx.rect(dev.x, dev.y, dev.w, dev.h);
       ctx.clip();
-      this.setDrawTransform(ctx);
+      this.setDrawTransform(ctx, slab.y0);
     }
     const w = this.widthPx;
     const query = { x0: x0 / w, y0: y0 / w, x1: x1 / w, y1: y1 / w };
+    const kinds = { m: false, k: false };
     for (const e of this.doc.query(padRect(query, 1 / w))) {
       if (this.hidden.has(e.item.id)) continue;
-      const ctx = e.item.tool === "marker" ? this.markerCtx : this.inkCtx;
+      const marker = e.item.tool === "marker";
+      const ctx = marker ? slab.mctx : slab.ictx;
       if (!ctx) continue;
-      ctx.globalCompositeOperation = e.item.tool === "marker" ? "multiply" : "source-over";
+      if (marker) kinds.m = true;
+      else kinds.k = true;
+      ctx.globalCompositeOperation = marker ? "multiply" : "source-over";
       drawItem(ctx, e.item, this.palette, this.font);
     }
-    this.markerCtx?.restore();
-    this.inkCtx?.restore();
+    slab.mctx?.restore();
+    slab.ictx?.restore();
+    if (kinds.m || kinds.k) this.tileKinds.set(key, kinds);
+    else this.tileKinds.delete(key);
+    return slab;
   }
 
   /** Repaint the live layer: current stroke (+ prediction), lasso, selection, drag preview, hover cursor. */
@@ -839,13 +902,9 @@ export class InkEngine {
     }
     let drawn = EMPTY_RECT;
     const k = this.widthPx * this.dpr;
-    const toDev = (r: Rect): Rect => ({
-      x0: r.x0 * k,
-      y0: r.y0 * k - this.band.y0 * this.dpr,
-      x1: r.x1 * k,
-      y1: r.y1 * k - this.band.y0 * this.dpr,
-    });
-    this.setDrawTransform(ctx);
+    const liveTop = this.live.y0 * this.dpr;
+    const toDev = (r: Rect): Rect => ({ x0: r.x0 * k, y0: r.y0 * k - liveTop, x1: r.x1 * k, y1: r.y1 * k - liveTop });
+    this.setDrawTransform(ctx, this.live.y0);
     const g = this.gesture;
     // A live marker stroke is previewed under the content, where it will land; everything else on top.
     this.liveCanvas.style.zIndex = g?.kind === "stroke" && g.item.tool === "marker" ? "-1" : "1";
@@ -915,6 +974,9 @@ export class InkEngine {
       );
     }
     this.liveRect = drawn;
+    // An empty canvas still costs a composited layer on every scrolled frame (badly so with software
+    // compositing): only show the live layer while it has something on it.
+    this.liveCanvas.style.display = rectIsEmpty(drawn) ? "none" : "";
   }
 
   private suRectToPx(r: Rect): PxRect {
@@ -959,6 +1021,7 @@ export class InkEngine {
     }
     activateShortcutTarget(this);
     this.frameStale = true;
+    this.positionLive(false);
     this.hover = null;
     const pt = this.toSu({ x: e.clientX, y: e.clientY });
     const t = e.timeStamp;
@@ -1034,6 +1097,7 @@ export class InkEngine {
       if (e.pointerType === "pen" && e.buttons === 0 && this.state.enabled && !g) {
         if (this.palm.hover("pen")) markPenPresent();
         const p = this.toSu({ x: e.clientX, y: e.clientY });
+        if (!this.hover) this.positionLive(false);
         this.hover = p;
         this.liveDirty = true;
         this.requestFrame();
@@ -1478,4 +1542,23 @@ export class InkEngine {
 
 function clampPressure(p: number): number {
   return !Number.isFinite(p) || p <= 0 ? 0.5 : Math.min(1, Math.max(0.02, p));
+}
+
+interface Slab {
+  i: number;
+  /** Top edge and height in surface CSS px. */
+  y0: number;
+  h: number;
+  marker: HTMLCanvasElement;
+  ink: HTMLCanvasElement;
+  mctx: CanvasRenderingContext2D | null;
+  ictx: CanvasRenderingContext2D | null;
+}
+
+/** How far a tile ("tx,ty") is from the visible range, in CSS px (0 = visible). */
+function tileDistance(key: string, top: number, bottom: number): number {
+  const ty = Number(key.split(",")[1]);
+  const y0 = ty * TILE;
+  const y1 = y0 + TILE;
+  return y1 < top ? top - y1 : y0 > bottom ? y0 - bottom : 0;
 }
