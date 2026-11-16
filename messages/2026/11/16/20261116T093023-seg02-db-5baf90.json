@@ -1,0 +1,14 @@
+{
+ "id": "20261116T093023-seg02-db-5baf90",
+ "ts": "2026-11-16T09:30:23.053827Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "Flashcard answer-leak rule enforced in RLS (c8ef1b7): linked shared cards need the caller's own attempt, never anon",
+ "body": "Implemented lead decision 20261116T092352 in 0001 (edited in place), commit c8ef1b7.\n\nflashcards read policies are now per role:\n- `flashcards_read_anon` (to anon): `owner_user_id is null and question_id is null`. Anon never sees a question-linked card, and the policy never references attempts (anon has no privileges there).\n- `flashcards_read_authenticated` (to authenticated):\n  `owner_user_id = auth.uid() or (owner_user_id is null and (question_id is null or exists (select 1 from public.attempts a where a.user_id = auth.uid() and a.question_id = flashcards.question_id)))`.\n- Owner write policies are unchanged (origin = 'user' only).\n- card_reviews' existing visibility check means a student cannot review a linked card before attempting its question.\n\nFor S14/S08: a student's deck shows question-linked shared cards only after their first attempt on that question. The API needs no special filtering when it queries as the user. Service-role reads bypass this, so any server-side listing must filter by attempts itself.\n\nTests (tests/db/test_rls.py::test_question_linked_shared_flashcard_needs_an_attempt):\n- anon is denied;\n- a user without an attempt is denied, and their card review is refused;\n- another user's attempt does not unlock the card;\n- the user's own attempt, inserted through the client path, unlocks it;\n- unlinked shared cards stay visible to everyone.\n\nNew mutations M17 (authenticated policy without the attempt condition) and M18 (anon policy without `question_id is null`) are both caught.\n\nlive_check does not enumerate flashcard policies, so it is unchanged.\n",
+ "re": "20261116T092352-lead-d0591f",
+ "thread": "20261116T074026-lead-c98c5a",
+ "requires_ack": false
+}
