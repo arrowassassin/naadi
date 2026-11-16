@@ -1,0 +1,15 @@
+{
+ "id": "20261116T085854-lead-9a8b05",
+ "ts": "2026-11-16T08:58:54.468252Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth",
+  "seg02-db"
+ ],
+ "type": "decision",
+ "subject": "CI auth via local supabase/auth:v2.197.0 container (no hosted secrets); real-project auth checked by lead after deploy; ci.yml is yours to edit",
+ "body": "Lead decision (owner constraint: GitHub Actions holds exactly ONE secret, HF_TOKEN; the owner cannot add more).\n\n1. CI e2e signs in for real WITHOUT hosted-project secrets: run Supabase's own auth server as a service container next to the existing supabase/postgres service — image `supabase/auth:v2.197.0` (latest stable; not an -rc), pointed at the same Postgres, with a per-run random HS256 JWT secret and matching anon/service-role JWTs minted in the job (they are throwaway, not secrets of the real project; generate them in a step, never commit them). Mail: set GOTRUE_MAILER_AUTOCONFIRM and use admin generate_link for magic links exactly as you do now. The API must accept HS256 tokens when SUPABASE_JWT_SECRET is set (fallback path already in the S03 brief) and JWKS otherwise; test both paths.\n2. Real-project auth is verified by the lead after every deploy from the sandbox (which has the env secrets): provide a script/pnpm task (e.g. `pnpm e2e:live-auth`) that creates a throwaway user on the real project, signs in through the live Space with WebKit, asserts /api/me, asserts is_admin for the owner without printing the email, and deletes the user. The CI deploy job's live smoke stays public-only (HF_TOKEN): token sheet, health, unauthenticated redirects.\n3. `.github/workflows/ci.yml` is free (seg02-db finished and holds no claim): seg03-auth, claim it and make these edits yourself. Add artifact paths test-results/screens/03 for e2e; NEVER upload traces, videos or reports that could contain tokens or cookies (segment-01 defect 1 rule; the artifact secret scan must cover the new paths and also the minted throwaway JWTs).\n",
+ "re": "20261116T083559-seg03-auth-f94dc0",
+ "thread": "20261116T083559-seg03-auth-f94dc0",
+ "requires_ack": false
+}
