@@ -46,6 +46,7 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, path));
     await page.waitForURL((u) => u.pathname === path, { timeout: 30_000 });
+    await settle(page);
     return { page, context };
   };
   const done = async () => {
@@ -129,8 +130,6 @@ async function limeCount(page: Page): Promise<number> {
   });
 }
 
-const loadAllFonts = (page: Page) =>
-  page.evaluate(() => Promise.all([...document.fonts].map((f) => f.load().catch(() => f))).then(() => undefined));
 const isPhone = (page: Page) => (page.viewportSize()?.width ?? 1000) < 640;
 const isLaptop = (page: Page) => (page.viewportSize()?.width ?? 0) > 1100;
 
@@ -187,6 +186,7 @@ test.describe("mock exam A", () => {
       await snap(page, info, guard, "builder-mock-group");
       await mockButton.click();
       await page.waitForURL(/\/practice\/blocks\/[0-9a-f-]{36}\/1$/);
+      await settle(page);
       const blockId = /blocks\/([0-9a-f-]{36})/.exec(page.url())?.[1] ?? "";
       const created = await api<Block>(page, "GET", `/api/blocks/${blockId}`);
       expect(created.json.config.mode).toBe("exam");
@@ -249,6 +249,7 @@ test.describe("mock exam A", () => {
         if (i < 40) {
           await page.keyboard.press("n");
           await page.waitForURL(new RegExp(`/practice/blocks/${blockId}/${i + 1}$`));
+          await settle(page);
         }
       }
       // the leak probe while the block runs: answers are recorded, never graded or explained
@@ -287,6 +288,7 @@ test.describe("mock exam A", () => {
 
       await page.getByRole("button", { name: "Start block 2" }).click();
       await page.waitForURL(new RegExp(`/practice/blocks/${blockId}/41$`));
+      await settle(page);
       await expect(page.getByText(isPhone(page) ? "1 / 40" : "Block 2 of 2 · Question 1 of 40")).toBeVisible();
       await expectTimerAccurate(page, blockId);
       await page.keyboard.press("c");
@@ -298,6 +300,7 @@ test.describe("mock exam A", () => {
       await expect(last.getByText("Unanswered: 39")).toBeVisible();
       await last.getByRole("button", { name: "End and see results" }).click();
       await page.waitForURL(new RegExp(`/practice/blocks/${blockId}/results$`));
+      await settle(page);
       await expect(page.getByRole("heading", { level: 1 })).toContainText("%");
       const results = await api<{ total: number; omitted: number; changes: { changed: number } }>(
         page,
@@ -320,12 +323,13 @@ test.describe("mock exam A", () => {
       await snap(page, info, guard, "results", true);
       await page.getByRole("link", { name: /^Review \d+ miss/ }).click();
       await page.waitForURL(new RegExp(`/practice/blocks/${blockId}/review/\\d+`));
+      await settle(page);
       await expect(page.getByText("Correct answer").first()).toBeVisible();
       expect(await limeCount(page)).toBe(1);
       await expectNoAxeViolations(page);
       await expectNoHorizontalOverflow(page);
       await snap(page, info, guard, "review");
-      await loadAllFonts(page);
+      await settle(page);
       expect(errors).toEqual([]);
     } finally {
       await student.done();
@@ -348,6 +352,7 @@ test.describe("timed block", () => {
       const blockId = made.json.id;
       expect(made.json.config.sections.map((s) => s.time_limit_s)).toEqual([450]);
       await page.goto(`/practice/blocks/${blockId}/1`);
+      await settle(page);
       await page.getByRole("button", { name: "Start the block" }).click();
       await expect(page.getByRole("group", { name: "Answer options" }).getByRole("button")).toHaveCount(5);
       await expectTimerAccurate(page, blockId);
@@ -450,10 +455,12 @@ test.describe("timer integrity", () => {
       const blockId = await startMock(page);
       expect((await api(page, "POST", `/api/blocks/${blockId}/sections/1/start`)).status).toBe(200);
       await page.goto(`/practice/blocks/${blockId}/1`);
+      await settle(page);
       await expectTimerAccurate(page, blockId);
 
-      await loadAllFonts(page);
+      await settle(page);
       await page.reload();
+      await settle(page);
       await expectTimerAccurate(page, blockId);
 
       // 30 s in the background: frozen page lifecycle in Chromium, a hidden document elsewhere
@@ -495,6 +502,7 @@ test.describe("timer integrity", () => {
         await skewed.clock.resume();
         const { errors } = watchConsole(skewed);
         await skewed.goto(`/practice/blocks/${blockId}/1`);
+        await settle(skewed);
         await expect(skewed.getByRole("timer")).toBeVisible();
         // the first sample may come from a cold start: let the 60 s re-sync logic take its best sample
         await skewed.waitForTimeout(1_500);
@@ -534,13 +542,14 @@ test.describe("exam view on a production server", () => {
           if (/Content Security Policy|Refused to/.test(m.text())) violations.push(m.text());
         });
         await p.goto(`/practice/blocks/${blockId}/1`);
+        await settle(p);
         await expect(p.getByRole("heading", { level: 1, name: "Ready when you are." })).toBeVisible();
         await p.getByRole("button", { name: "Start block 1" }).click();
         await expect(p.getByRole("timer")).toBeVisible();
         await expect(p.getByRole("group", { name: "Answer options" }).getByRole("button")).toHaveCount(5);
         await p.keyboard.press("d");
         await expect(p.getByRole("button", { name: /^D, your answer/ })).toHaveAttribute("aria-pressed", "true");
-        await loadAllFonts(p);
+        await settle(p);
         expect(violations).toEqual([]);
         expect(errors).toEqual([]);
       } finally {
