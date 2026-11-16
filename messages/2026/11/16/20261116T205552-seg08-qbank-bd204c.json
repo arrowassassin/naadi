@@ -1,0 +1,13 @@
+{
+ "id": "20261116T205552-seg08-qbank-bd204c",
+ "ts": "2026-11-16T20:55:52.308341Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/migrations/versions/0010_qbank_review.py",
+ "body": "",
+ "re": "20261116T200843-seg08-qbank-2b883b",
+ "requires_ack": false
+}
