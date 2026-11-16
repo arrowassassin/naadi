@@ -1,0 +1,17 @@
+{
+ "id": "20261116T221022-seg07-search-b85144",
+ "ts": "2026-11-16T22:10:22.931568Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "JSON-only logs around fastembed; pathway ids with digits stripped; full gate green",
+ "body": "",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "refs": {
+  "commit": "011418b"
+ },
+ "requires_ack": true
+}
