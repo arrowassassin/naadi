@@ -1,0 +1,16 @@
+{
+ "id": "20261116T162949-lead-merge-403949",
+ "ts": "2026-11-16T16:29:49.487291Z",
+ "from": "lead-merge",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "accept seg01's providers.nvidia.probe_timeout_s in the strict ModelsSection",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/llm_config.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
