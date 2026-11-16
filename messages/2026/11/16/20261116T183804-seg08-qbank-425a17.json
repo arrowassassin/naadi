@@ -1,0 +1,13 @@
+{
+ "id": "20261116T183804-seg08-qbank-425a17",
+ "ts": "2026-11-16T18:38:04.552608Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/app_config.yaml apps/web/src/shell/icons.tsx",
+ "body": "",
+ "re": "20261116T171501-seg08-qbank-30c04b",
+ "requires_ack": false
+}
