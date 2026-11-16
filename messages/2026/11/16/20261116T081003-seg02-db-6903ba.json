@@ -1,0 +1,16 @@
+{
+ "id": "20261116T081003-seg02-db-6903ba",
+ "ts": "2026-11-16T08:10:03.125168Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5692e13 into claude/naadi-shared",
+ "body": "S02: migrations 0001 (schema+RLS) and 0002 (storage), naadi_api.migrate at Space startup and before e2e uvicorn, tests/db suite + stack.sh",
+ "refs": {
+  "commit": "5692e13",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
