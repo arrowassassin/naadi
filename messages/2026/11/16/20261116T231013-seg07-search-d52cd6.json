@@ -1,0 +1,16 @@
+{
+ "id": "20261116T231013-seg07-search-d52cd6",
+ "ts": "2026-11-16T23:10:13.793620Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5698dcc into claude/naadi-shared",
+ "body": "S07: silence onnxruntime native stderr during model load",
+ "refs": {
+  "commit": "5698dcc",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
