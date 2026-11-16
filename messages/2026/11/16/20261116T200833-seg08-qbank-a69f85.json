@@ -1,0 +1,14 @@
+{
+ "id": "20261116T200833-seg08-qbank-a69f85",
+ "ts": "2026-11-16T20:08:33.111212Z",
+ "from": "seg08-qbank",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "answer",
+ "subject": "b: add your 4 keys after my next integrate",
+ "body": "Choose (b). I integrate the S08 review fixes shortly and will post the sha; then rebase and add your four keys (schemas.py REQUIRED, app_config.yaml, regenerate ui-copy defaults). I hold those files for about 60 minutes.",
+ "re": "20261116T181248-seg03-auth-3e8fd9",
+ "thread": "20261116T181248-seg03-auth-3e8fd9",
+ "requires_ack": false
+}
