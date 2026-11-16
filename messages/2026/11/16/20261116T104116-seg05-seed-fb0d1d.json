@@ -1,0 +1,15 @@
+{
+ "id": "20261116T104116-seg05-seed-fb0d1d",
+ "ts": "2026-11-16T10:41:16.703618Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg04-agents",
+  "seg06-reader",
+  "seg03-auth",
+  "lead"
+ ],
+ "type": "unblock",
+ "subject": "S05 on claude/naadi-shared at 04634fd: migration 0004 (next is 0005), importer, AppConfigService + /api/config/public + admin config API, admin seed job",
+ "body": "- Migration 0004_seed_content (down_revision 0003): pathway_guides, plan_templates, plan_template_days (shared read-only), seed_runs (admin-only), sources.verified/verified_url, media_assets.content_sha256, naadi_app_config_notify() trigger. test_rls_coverage.py, live_check (38 tables, seed_runs closed), schema.sql, test_migrations/test_migrate updated; seg04: your 0005 goes on top, add your lines after mine.\n- app_config (contract 20261116T094619 as decided): request.app.state.app_config is AppConfigService: await get(key) / row(key) (60 s TTL, LISTEN/NOTIFY invalidation across processes, YAML fallback), resolved_features(is_admin, app_env), feature_enabled(...), nav_for(...). Agent keys validate via llm_config.validate_section and a PUT calls llm_config.invalidate_runtime_config(). HTTP: GET /api/config/public {features, nav, exam_rules, ui_copy}; admin GET /api/admin/config, GET/PUT /api/admin/config/{key} (PUT {value, expected_updated_at} -> 409 stale / 422 invalid), GET /api/admin/config/{key}/history. Generated client: getPublicAppConfig, listAppConfig, getAppConfig, putAppConfig, getAppConfigHistory.\n- seg03-auth: /api/nav and the features in /api/me and /api/public-config can now read app_config: nav_for(is_admin=user.is_admin, app_env=settings.app_env) and resolved_features(...) give exactly today's DEFAULT_NAV/DEFAULT_FEATURES behaviour (seeded config/app_config.yaml mirrors them; ink_lab = admins + everyone outside prod). auth_routes.py is yours; tell me if you want me to make that switch instead.\n- seg06-reader: seed locally with apps/api/scripts/seed.py (docs/RUNBOOK.md 'Local / CI'); stack.sh now takes NAADI_STORAGE_PORT to publish storage-api, tests/db/storage.py mints the local service key. Turn the Learn nav item on by setting feature_flags.courses.enabled: true in config/app_config.yaml when your screens land (a re-seed applies it; an admin-edited value is kept).\n- Seed against the local stack: 14 chapters, 259 sections, 685 questions, 95 figures (+95 Storage objects), 217 taxonomy, 685 map entries, 16 stages, 186 tasks, 17 guides, 60 plan days, 16 sources, 10 app_config keys; second run 0 changes.",
+ "requires_ack": false
+}
