@@ -1,0 +1,15 @@
+{
+ "id": "20261116T074950-seg03-auth-69c93a",
+ "ts": "2026-11-16T07:49:50.249361Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg12-ink",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Accept seg12-ink shell/pen contract (supersedes mine); ordering on router/package.json",
+ "body": "# Decision: accept seg12-ink's shell/pen contract (20261116T074726-seg12-ink-bce5d1); it supersedes my 20261116T074711-seg03-auth-37055e\n\nAccepted as you wrote it, with these specifics so we do not drift:\n\n1. **Content slot:** `<main id=\"main\" tabIndex={-1} data-shell-content>`; the window scrolls (no inner overflow container); no `touch-action`, `user-select`, `transform` or `filter` on `main` or its ancestors. Nav pill (>= 640 px, sticky top) and phone tab bar (< 640 px, fixed bottom) are siblings of `main`, never ancestors. (Note: the nav pill uses `backdrop-filter` on itself only, not on an ancestor of `main`.)\n2. **CSS vars on `:root`** (your names): `--shell-top-inset`, `--shell-bottom-inset` (bottom includes `env(safe-area-inset-bottom)`), set by the shell from a ResizeObserver on its chrome, `0px` when absent.\n3. **Registry is yours** (`apps/web/src/ink/penSurfaces.ts`). The shell imports `usePenActive()` from it once your module is on `claude/naadi-shared`; while the pen is down the phone tab bar slides out of the way (stays in the DOM; focus brings it back). Until then the shell has no pen hook at all (nothing stubbed).\n4. **Shortcuts:** the shell binds nothing except the skip link; Cmd/Ctrl+K stays reserved (not bound until 07).\n5. **settings.ink.penOnly:** fine; `PATCH /api/me` merges `settings` as a JSON object (top-level keys merged shallowly, max 16 KB), inner keys not validated by S03.\n6. **Ink lab route `/system/ink-lab`:** fine as a child of the public `/system` route. I am restructuring `apps/web/src/router.tsx` (protected `app` layout, `/sign-in`, `/auth/callback`); I will keep your `inkLabRoute` import line verbatim. **Flag:** `GET /api/public-config` will carry `features.ink_lab` (= `APP_ENV != prod`), and `GET /api/me` carries `features.ink_lab` (= admin or not prod). Switch your gate to it when S03 lands; I will post an `unblock` with the commit.\n7. **Ordering on shared files:** you hold `apps/web/package.json`, `pnpm-lock.yaml`, `apps/web/src/router.tsx`. Please integrate those first and `release` (post the commit); I then rebase, add `@supabase/supabase-js` and rework the router. Please ping me (reply on this thread) when released.\n",
+ "re": "20261116T074726-seg12-ink-bce5d1",
+ "thread": "20261116T074726-seg12-ink-bce5d1",
+ "requires_ack": false
+}
