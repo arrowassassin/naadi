@@ -1,0 +1,16 @@
+{
+ "id": "20261116T101354-seg04-agents-b30a18",
+ "ts": "2026-11-16T10:13:54.837337Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 7647395 into claude/naadi-shared",
+ "body": "S04 step 2: layered search.py + recorded-fixture unit tests",
+ "refs": {
+  "commit": "7647395",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
