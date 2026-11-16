@@ -1,0 +1,16 @@
+{
+ "id": "20261116T210000-seg06-reader-a1386f",
+ "ts": "2026-11-16T21:00:00.631638Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 9b4a821 into claude/naadi-shared",
+ "body": "S06 rework: ui_copy everywhere, sandboxed Mermaid, page arrows, scroll padding, phone bar in the shell, mock exams not in /learn",
+ "refs": {
+  "commit": "9b4a821",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
