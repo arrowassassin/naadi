@@ -21,7 +21,7 @@ function files(dir: string): string[] {
   });
 }
 
-export function hardcodedCopy(source: string): string[] {
+function hardcodedCopy(source: string): string[] {
   // Drop comments ({/* */}, /* */ and // lines) so prose in them is not mistaken for copy.
   const code = source
     .replace(/\{\/\*[\s\S]*?\*\/\}/g, "")
