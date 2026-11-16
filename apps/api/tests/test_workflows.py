@@ -24,6 +24,8 @@ def test_ci_cancels_only_superseded_pull_request_runs() -> None:
     ci = _load("ci.yml")
     conc = ci["concurrency"]
     assert conc["cancel-in-progress"] == "${{ github.event_name == 'pull_request' }}"
+    # Push runs are grouped per commit, so a newer push never replaces a queued run on a busy branch.
+    assert conc["group"] == "ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}"
     assert "deploy" not in ci["jobs"]
     assert "secrets." not in (WF / "ci.yml").read_text()
 

@@ -12,10 +12,10 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  # Only superseded PR runs are cancelled. Pushes to main and to the multiplayer shared branch let the
-  # running run finish (GitHub still replaces a queued run with the newest), so every busy branch gets
-  # complete results and the newest main commit always reaches deploy.yml.
+  # PRs share one group per PR (superseded PR runs are cancelled). Every push gets its own group (keyed by
+  # sha), so on the busy multiplayer shared branch no push run is ever queued behind, or replaced by, a newer
+  # one: each commit gets complete results (public repo: Actions minutes are free).
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
