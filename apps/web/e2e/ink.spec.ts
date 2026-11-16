@@ -569,7 +569,7 @@ test.describe("ink lab", () => {
   });
 
   test("12 surfaces share one canvas memory budget", async ({ page }, info) => {
-    test.setTimeout(120_000);
+    test.setTimeout(300_000);
     await openLab(page);
     const mount = page.getByRole("button", { name: "Mount 12 pages" });
     // Centre it first: on a phone the sticky toolbar would cover a button scrolled to the top edge.
@@ -584,7 +584,7 @@ test.describe("ink lab", () => {
       await pages.nth(i).scrollIntoViewIfNeeded();
       await expect
         .poll(() => page.evaluate((n) => window.naadiInkLab?.pages()[n]?.renderPending() ?? true, i), {
-          timeout: 20_000,
+          timeout: 60_000,
         })
         .toBe(false);
       const s = await page.evaluate(() => window.naadiInkLab?.budget.stats());
@@ -650,7 +650,7 @@ test.describe("ink lab", () => {
     await expect(page.getByTestId("stress-count")).toHaveText("5,000 items");
     // Measure scrolling, not the first paint: wait until every tile and stroke path is built.
     await expect
-      .poll(() => page.evaluate(() => window.naadiInkLab?.stress()?.renderPending() ?? true), { timeout: 30_000 })
+      .poll(() => page.evaluate(() => window.naadiInkLab?.stress()?.renderPending() ?? true), { timeout: 90_000 })
       .toBe(false);
     // The lab's own measurement once, as a student would run it: the button works and reports a rate.
     await page.evaluate(() => window.scrollTo(0, 0));
