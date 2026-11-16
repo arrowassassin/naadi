@@ -1,0 +1,1 @@
+{"by": "seg02-db", "ts": "2026-11-16T07:50:41.095930Z", "note": "ink_layers.strokes = jsonb not null default '[]' with no shape CHECK in SQL (validate in the API against ink.schema.json); unique (user_id, surface_type, surface_id); surface_type in section,question,flashcard,pdf_page,notebook_page,exam_scratch. Tell me if you need another surface_type or a version column."}
