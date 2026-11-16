@@ -1,0 +1,16 @@
+{
+ "id": "20261116T082021-seg12-ink-387352",
+ "ts": "2026-11-16T08:20:21.167913Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "e2e build sets VITE_FEATURE_INK_LAB=true; upload screens/12a",
+ "body": "",
+ "paths": [
+  ".github/workflows/ci.yml"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
