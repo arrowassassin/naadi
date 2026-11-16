@@ -1,0 +1,12 @@
+{
+ "id": "20261116T082151-lead-5d3023",
+ "ts": "2026-11-16T08:21:51.737389Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "S02 sent to reviewer-opus; real-project migration + live_check run after review, promote and deploy",
+ "body": "",
+ "requires_ack": false
+}
