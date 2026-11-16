@@ -353,3 +353,47 @@ test.describe("review", () => {
     }
   });
 });
+
+test.describe("production server (strict CSP)", () => {
+  const PROD = process.env.E2E_PROD_URL;
+  test.skip(!PROD, "needs the local APP_ENV=prod API (not available against the live Space)");
+
+  test("review on APP_ENV=prod with no console errors", async ({ browser, baseURL }, info) => {
+    const student = await freshStudent(browser, baseURL as string, info);
+    try {
+      const { context } = await student.open();
+      // Move the session to the https prod origin (see ink-gate.spec: signing in there would go through
+      // upgrade-insecure-requests to the http local auth stack).
+      const origin = new URL(PROD as string).origin;
+      const state = await context.storageState();
+      const prod = await browser.newContext({
+        ...info.project.use,
+        baseURL: PROD,
+        ignoreHTTPSErrors: true,
+        storageState: { cookies: [], origins: state.origins.map((o) => ({ ...o, origin })) },
+      });
+      try {
+        const page = await prod.newPage();
+        const { errors } = watchConsole(page);
+        await page.goto("/cards");
+        await expect(page.getByRole("heading", { level: 2, name: "No cards due" })).toBeVisible();
+        expect((await api(page, "POST", "/api/cards", { front_text: "CSP card", back_text: "Strict" })).status).toBe(
+          201,
+        );
+        await page.reload();
+        await expect(page.getByRole("region", { name: "Flashcard" }).getByText("CSP card")).toBeVisible();
+        await page.locator("body").press("Space");
+        await expect(rating(page, "Easy")).toBeVisible();
+        const reviewed = page.waitForResponse((r) => r.url().includes("/review"));
+        await page.locator("body").press("4");
+        expect((await reviewed).status()).toBe(200);
+        await expect(page.getByRole("heading", { level: 2, name: "All caught up" })).toBeVisible();
+        expect(errors).toEqual([]);
+      } finally {
+        await prod.close();
+      }
+    } finally {
+      await student.done();
+    }
+  });
+});
