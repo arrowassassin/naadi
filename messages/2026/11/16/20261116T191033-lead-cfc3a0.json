@@ -1,0 +1,16 @@
+{
+ "id": "20261116T191033-lead-cfc3a0",
+ "ts": "2026-11-16T19:10:33.442770Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 8d36430 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "8d36430",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
