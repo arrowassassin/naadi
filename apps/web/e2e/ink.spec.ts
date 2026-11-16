@@ -652,33 +652,83 @@ test.describe("ink lab", () => {
     await expect
       .poll(() => page.evaluate(() => window.naadiInkLab?.stress()?.renderPending() ?? true), { timeout: 30_000 })
       .toBe(false);
-    const measure = async () => {
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await page.waitForTimeout(300);
-      await page.getByRole("button", { name: "Measure scroll", exact: true }).click();
-      await expect(page.getByRole("button", { name: "Measuring scroll…" })).toBeVisible();
-      await expect(page.getByRole("button", { name: "Measure scroll", exact: true })).toBeVisible({ timeout: 20_000 });
-      return Number(await page.getByTestId("scroll-result").getAttribute("data-fps"));
-    };
-    const setInkVisible = (visible: boolean) =>
-      page.evaluate((v) => {
-        for (const el of document.querySelectorAll<HTMLElement>("[data-ink-layer]"))
-          el.style.visibility = v ? "" : "hidden";
-      }, visible);
-    // Paired runs on the same page: ink layers shown, and hidden. The hidden run is what this runner can
-    // scroll at all (software rendering on shared CI runners is often below 60 fps even without ink), so the
-    // ink is judged by what it costs on top of that. Five interleaved pairs, judged by the median of the
-    // per-pair ratios: a noisy neighbour hits both halves of a pair alike. The order alternates (ink first,
-    // then hidden first), so load that rises or falls during the test does not favour either half.
+    // The lab's own measurement once, as a student would run it: the button works and reports a rate.
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.getByRole("button", { name: "Measure scroll", exact: true }).click();
+    await expect(page.getByRole("button", { name: "Measuring scroll…" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Measure scroll", exact: true })).toBeVisible({ timeout: 20_000 });
+    expect(Number(await page.getByTestId("scroll-result").getAttribute("data-fps"))).toBeGreaterThan(0);
+    // The gate: five rounds, each one continuous scroll across the stress page (down, then back up) in which
+    // the ink layers are shown and hidden in alternating 250 ms slices. Each frame counts for the state it
+    // was drawn in, and the first frame after each switch is left out (it repaints for the switch, not for
+    // the scroll). Both states are measured within a quarter of a second of each other, so a neighbour's load
+    // on a shared runner, which swings over seconds, hits them alike; separate 3 s runs per state could not
+    // tell that load from the ink. A round's ratio is ink-shown fps over ink-hidden fps, and the rounds are
+    // judged by their median.
+    const round = () =>
+      page.evaluate(
+        ({ sliceMs, durationMs }) =>
+          new Promise<{ ink: number; base: number }>((resolve) => {
+            const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
+            const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
+            if (!surface) throw new Error("stress surface missing");
+            const top = surface.getBoundingClientRect().top + window.scrollY;
+            const from = Math.max(0, top - 80);
+            const to = top + surface.offsetHeight - window.innerHeight * 0.5;
+            const time = { ink: 0, base: 0 };
+            const frames = { ink: 0, base: 0 };
+            let shown = true;
+            let start = -1;
+            let prev = -1;
+            let skip = true;
+            const show = (v: boolean) => {
+              shown = v;
+              for (const el of layers) el.style.visibility = v ? "" : "hidden";
+            };
+            window.scrollTo(0, from);
+            show(true);
+            const step = (ts: number) => {
+              if (start < 0) {
+                start = ts;
+                prev = ts;
+                requestAnimationFrame(step);
+                return;
+              }
+              const k = shown ? "ink" : "base";
+              if (!skip) {
+                time[k] += ts - prev;
+                frames[k] += 1;
+              }
+              skip = false;
+              prev = ts;
+              const t = Math.min(1, (ts - start) / durationMs);
+              // Down over the first half, back up over the second.
+              const pos = t < 0.5 ? t * 2 : 2 - t * 2;
+              window.scrollTo(0, from + (to - from) * pos);
+              const want = Math.floor((ts - start) / sliceMs) % 2 === 0;
+              if (want !== shown) {
+                show(want);
+                skip = true;
+              }
+              if (t < 1) {
+                requestAnimationFrame(step);
+                return;
+              }
+              show(true);
+              const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
+              resolve({ ink: fps("ink"), base: fps("base") });
+            };
+            requestAnimationFrame(step);
+          }),
+        { sliceMs: 250, durationMs: 6000 },
+      );
     const ink: number[] = [];
     const base: number[] = [];
     for (let i = 0; i < 5; i++) {
-      for (const shown of i % 2 === 0 ? [true, false] : [false, true]) {
-        await setInkVisible(shown);
-        (shown ? ink : base).push(await measure());
-      }
+      const r = await round();
+      ink.push(r.ink);
+      base.push(r.base);
     }
-    await setInkVisible(true);
     const median = (a: number[]) => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)] as number;
     const ratios = ink.map((v, i) => v / (base[i] as number));
     const ratio = median(ratios);
