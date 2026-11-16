@@ -1,0 +1,9 @@
+{
+ "name": "seg08-qbank",
+ "role": "implementer",
+ "segment": "S08",
+ "worktree": "/home/user/naadi/.claude/worktrees/agent-a287f9a5bde952e94",
+ "branch": null,
+ "started": "2026-11-16T17:11:13.231744Z",
+ "purpose": "qbank builder + tutor mode"
+}
