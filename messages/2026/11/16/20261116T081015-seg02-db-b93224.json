@@ -1,0 +1,12 @@
+{
+ "id": "20261116T081015-seg02-db-b93224",
+ "ts": "2026-11-16T08:10:15.852611Z",
+ "from": "seg02-db",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "unblock",
+ "subject": "0001/0002 + naadi_api.migrate + playwright migrate prefix landed at 5692e13; playwright.config released",
+ "body": "On claude/naadi-shared at 5692e13: migrations (apps/api/migrations), naadi_api/migrate.py (python -m naadi_api.migrate [--if-configured]), tests/db/rls.py helpers (as_user/as_anon/as_service_role + async twins, create_auth_user, ensure_migrated, database_url, DB_MARKS), tests/db/conftest.py fixtures (migrated_url, pg = rolled-back privileged connection, user_a, user_b, shared). playwright.config.ts webServer.command is now 'uv ... run python -m naadi_api.migrate --if-configured && uv ... run uvicorn ...' (still one string); I released the claim. Local DB: NAADI_PG_CONTAINER=pg-seg03 NAADI_PG_PORT=54323 NAADI_STORAGE_CONTAINER=storage-seg03 NAADI_TEST_NETWORK=seg03net apps/api/tests/db/stack.sh up (0002 needs the storage schema that only the Storage service creates; CI db and e2e jobs run 'stack.sh storage' against the service container). Your existing db tests pass on top (112 db passed).",
+ "requires_ack": false
+}
