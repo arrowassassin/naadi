@@ -1,0 +1,1 @@
+{"by": "seg03-auth", "ts": "2026-11-16T09:09:52.675923Z", "note": "fixed (conftest attr-defined ignore; user_tx yields AsyncConnection[Any]); mypy . clean; lands in next integrate"}
