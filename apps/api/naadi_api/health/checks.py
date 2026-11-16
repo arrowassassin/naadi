@@ -5,7 +5,8 @@
 - openrouter: SDK `api_keys.get_current_key_metadata()` (key metadata is free; no completion is made)
 - nvidia:     one-token probe of each NVIDIA model in the role chains (`naadi_api.llm.probe_nvidia`); the
               service caches it for an hour so the public endpoint cannot burn the NVIDIA quota
-- tavily:     GET https://api.tavily.com/usage (free; reports credits used this month)
+- tavily:     the stored daily reading (agent_health kind tavily_usage, written by the agent system cron
+              from Tavily's free usage endpoint) and our own search_usage ledger; never calls Tavily
 """
 
 from __future__ import annotations
@@ -13,8 +14,9 @@ from __future__ import annotations
 import asyncio
 from collections.abc import Awaitable, Callable, Sequence
 from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
+from typing import Any
 
-import httpx
 from openrouter import OpenRouter
 from pydantic import SecretStr
 from supabase import AsyncClient, acreate_client
@@ -125,33 +127,70 @@ def openrouter_check(settings: Settings) -> CheckFn:
     return run
 
 
+@dataclass(frozen=True)
+class TavilyReading:
+    """The latest `agent_health` row of kind `tavily_usage` (the daily system cron's reading of Tavily's usage
+    endpoint), and our own `search_usage` ledger for the current UTC month."""
+
+    reading_ok: bool | None  # None: no reading recorded yet
+    detail: dict[str, Any]
+    read_at: datetime | None
+    ledger_month_credits: int
+
+
+TavilyReader = Callable[[], Awaitable[TavilyReading]]
+TAVILY_READING_STALE_AFTER = timedelta(hours=48)
+_TAVILY_READING_SQL = (
+    "select ok, detail, created_at from public.agent_health where kind = 'tavily_usage'"
+    " order by created_at desc limit 1"
+)
+_TAVILY_LEDGER_SQL = (
+    "select coalesce(sum(credits), 0) from public.search_usage where source = 'tavily'"
+    " and created_at >= (date_trunc('month', now() at time zone 'utc') at time zone 'utc')"
+)
+
+
+def tavily_db_reader(db: Database) -> TavilyReader:
+    async def read() -> TavilyReading:
+        if not db.configured:
+            raise NotConfigured("DATABASE_URL not set (the Tavily usage reading is stored there)")
+        if db.pool is None:
+            await db.open()
+        assert db.pool is not None
+        async with db.pool.connection(timeout=5.0) as conn:
+            cur = await conn.execute(_TAVILY_READING_SQL)
+            row = await cur.fetchone()
+            cur = await conn.execute(_TAVILY_LEDGER_SQL)
+            ledger = await cur.fetchone()
+        credits = int(ledger[0]) if ledger else 0
+        if row is None:
+            return TavilyReading(None, {}, None, credits)
+        return TavilyReading(bool(row[0]), dict(row[1] or {}), row[2], credits)
+
+    return read
+
+
 def tavily_check(
-    settings: Settings, monthly_credit_guard: int, transport: httpx.AsyncBaseTransport | None = None
+    settings: Settings,
+    monthly_credit_guard: int,
+    reader: TavilyReader,
+    clock: Callable[[], datetime] = lambda: datetime.now(UTC),
 ) -> CheckFn:
+    """Tavily's state from what is already stored, never a call to Tavily: the daily `tavily_usage` reading
+    (agent system cron, naadi_api/agent/graphs/tavily_usage.py) and our own ledger, which is always current.
+    Used credits are the larger of the two, so the guard holds between readings."""
+
     async def run() -> CheckOutcome:
         if settings.tavily_api_key is None:
             raise NotConfigured("TAVILY_API_KEY not set")
-        # tavily-python has no usage method; this documented endpoint is free (spends no credit).
-        async with httpx.AsyncClient(timeout=5.0, transport=transport) as http:
-            r = await http.get(
-                TAVILY_USAGE_URL, headers={"Authorization": f"Bearer {settings.tavily_api_key.get_secret_value()}"}
-            )
-        if r.status_code in (401, 403):
-            return CheckOutcome("down", f"API key rejected (HTTP {r.status_code})")
-        if r.status_code == 429:
-            # The key was accepted but the usage endpoint is throttled: credits are unknown, search still works.
-            return CheckOutcome("degraded", "Usage endpoint rate-limited (HTTP 429); credit count unknown for now")
-        if r.status_code != 200:
-            return CheckOutcome("down", f"Usage endpoint returned HTTP {r.status_code}")
-        body = r.json()
-        account = body.get("account") or {}
-        key = body.get("key") or {}
-        used = _int_or_none(account.get("plan_usage"))
-        if used is None:
-            used = _int_or_none(key.get("usage")) or 0
-        limit = _int_or_none(account.get("plan_limit"))
-        if limit is None:
-            limit = _int_or_none(key.get("limit"))
+        r = await reader()
+        now = clock()
+        month_start = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        d = r.detail
+        limit = _int_or_none(d.get("tavily_limit")) if r.reading_ok else None
+        this_month = r.read_at is not None and r.read_at >= month_start
+        reported = _int_or_none(d.get("tavily_used")) if (r.reading_ok and this_month) else None
+        used = max(reported or 0, r.ledger_month_credits)
         guard = min(monthly_credit_guard, limit) if limit is not None else monthly_credit_guard
         quota = Quota(
             used=used,
@@ -161,9 +200,22 @@ def tavily_check(
             period="month",
             guard=guard,
         )
+        outcome = str(d.get("outcome") or "")
+        if r.reading_ok is False and outcome in ("http_401", "http_403"):
+            return CheckOutcome("down", f"API key rejected (HTTP {outcome[5:]}) at the last usage reading", quota)
         if used >= guard:
             return CheckOutcome("degraded", f"Credit guard reached ({used} of {guard}); web search is paused", quota)
-        return CheckOutcome("ok", "Key valid; web search available", quota)
+        if r.reading_ok is None:
+            return CheckOutcome(
+                "ok", f"Key set; no usage reading yet, our ledger shows {used} credits this month", quota
+            )
+        assert r.read_at is not None
+        when = r.read_at.astimezone(UTC).strftime("%Y-%m-%d %H:%M UTC")
+        if now - r.read_at > TAVILY_READING_STALE_AFTER:
+            return CheckOutcome("degraded", f"Last usage reading is from {when}; the daily check is not running", quota)
+        if r.reading_ok is False:
+            return CheckOutcome("degraded", f"Last usage reading failed ({outcome or 'unknown'}) at {when}", quota)
+        return CheckOutcome("ok", f"Key valid; web search available (usage read {when})", quota)
 
     return run
 

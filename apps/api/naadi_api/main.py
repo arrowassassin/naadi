@@ -16,7 +16,14 @@ from .config_api.routes import install_app_config
 from .courses import install_courses_routes
 from .db import Database
 from .errors import install_error_handlers
-from .health.checks import database_check, nvidia_check, openrouter_check, storage_check, tavily_check
+from .health.checks import (
+    database_check,
+    nvidia_check,
+    openrouter_check,
+    storage_check,
+    tavily_check,
+    tavily_db_reader,
+)
 from .health.service import Check, HealthService
 from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
@@ -52,7 +59,9 @@ def default_health_service(settings: Settings, db: Database) -> HealthService:
                 timeout_s=nvidia_timeout + 5.0,  # probes run concurrently; each has its own deadline
                 failure_ttl_s=NVIDIA_PROBE_TTL_S,
             ),
-            "tavily": Check("tavily", tavily_check(settings, models.search.monthly_credit_guard), ttl_s=300.0),
+            "tavily": Check(
+                "tavily", tavily_check(settings, models.search.monthly_credit_guard, tavily_db_reader(db)), ttl_s=60.0
+            ),
         },
         version=settings.app_version,
         environment=settings.app_env,

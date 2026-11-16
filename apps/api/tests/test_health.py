@@ -4,6 +4,7 @@ import asyncio
 import copy
 import json
 from collections.abc import Callable
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -15,9 +16,9 @@ from pydantic import SecretStr
 
 from naadi_api.db import Database
 from naadi_api.health.checks import (
-    TAVILY_USAGE_URL,
     CheckOutcome,
     NotConfigured,
+    TavilyReading,
     database_check,
     openrouter_check,
     storage_check,
@@ -227,50 +228,90 @@ async def test_openrouter_not_configured() -> None:
         await openrouter_check(make_settings())()
 
 
-def _tavily(status: int, body: dict[str, Any]) -> httpx.MockTransport:
-    def handler(request: httpx.Request) -> httpx.Response:
-        assert str(request.url) == TAVILY_USAGE_URL
-        assert request.method == "GET"  # never /search: health must not spend a credit
-        assert request.headers["authorization"] == "Bearer tvly-test-key"
-        return httpx.Response(status, json=body)
-
-    return httpx.MockTransport(handler)
+NOW = datetime(2026, 11, 16, 12, 0, tzinfo=UTC)
 
 
-async def test_tavily_fixture_ok() -> None:
-    s = make_settings(tavily_api_key="tvly-test-key")
-    out = await tavily_check(s, 950, transport=_tavily(200, _fixture("tavily_usage.json")))()
+def _reader(
+    ok: bool | None, detail: dict[str, Any] | None = None, read_at: datetime | None = NOW, ledger: int = 0
+) -> Callable[[], Any]:
+    async def read() -> TavilyReading:
+        return TavilyReading(ok, detail or {}, read_at if ok is not None else None, ledger)
+
+    return read
+
+
+def _tavily(reader: Callable[[], Any], guard: int = 950) -> Callable[[], Any]:
+    return tavily_check(make_settings(tavily_api_key="tvly-test-key"), guard, reader, clock=lambda: NOW)
+
+
+READING = {"outcome": "ok", "tavily_used": 120, "tavily_limit": 1000, "ledger_month_credits": 100}
+
+
+async def test_tavily_reading_ok() -> None:
+    out = await _tavily(_reader(True, READING, ledger=100))()
     assert out.status == "ok"
     assert out.quota is not None
-    assert (out.quota.limit, out.quota.guard, out.quota.unit, out.quota.period) == (1000, 950, "credits", "month")
+    assert (out.quota.used, out.quota.limit, out.quota.guard, out.quota.unit, out.quota.period) == (
+        120,
+        1000,
+        950,
+        "credits",
+        "month",
+    )
 
 
-async def test_tavily_guard_reached_is_degraded() -> None:
-    body = copy.deepcopy(_fixture("tavily_usage.json"))
-    body["account"]["plan_usage"] = 951
-    out = await tavily_check(make_settings(tavily_api_key="tvly-test-key"), 950, transport=_tavily(200, body))()
+async def test_tavily_ledger_wins_when_it_is_ahead_of_the_reading() -> None:
+    """The reading is up to a day old; our ledger is current, so the guard holds between readings."""
+    out = await _tavily(_reader(True, READING, ledger=951))()
     assert out.status == "degraded"
     assert out.quota is not None and out.quota.used == 951 and out.quota.remaining == 49
 
 
-async def test_tavily_rejected_key_is_down() -> None:
-    out = await tavily_check(make_settings(tavily_api_key="tvly-test-key"), 950, transport=_tavily(401, {}))()
-    assert out.status == "down"
-    assert out.detail == "API key rejected (HTTP 401)"
-
-
-async def test_tavily_usage_rate_limited_is_degraded() -> None:
-    out = await tavily_check(make_settings(tavily_api_key="tvly-test-key"), 950, transport=_tavily(429, {}))()
+async def test_tavily_guard_reached_from_the_reading() -> None:
+    out = await _tavily(_reader(True, {**READING, "tavily_used": 960}))()
     assert out.status == "degraded"
-    assert out.quota is None
-    assert "HTTP 429" in out.detail
+    assert "guard reached" in out.detail
 
 
-async def test_tavily_key_only_payload() -> None:
-    body = {"key": {"usage": 12, "limit": 500}}
-    out = await tavily_check(make_settings(tavily_api_key="tvly-test-key"), 950, transport=_tavily(200, body))()
-    assert out.quota is not None
-    assert (out.quota.used, out.quota.limit, out.quota.guard) == (12, 500, 500)
+async def test_tavily_last_months_reading_does_not_count_as_this_months_usage() -> None:
+    old = datetime(2026, 10, 31, 23, 0, tzinfo=UTC)
+    out = await _tavily(_reader(True, {**READING, "tavily_used": 990}, read_at=old, ledger=3))()
+    assert out.quota is not None and out.quota.used == 3 and out.quota.limit == 1000
+
+
+async def test_tavily_no_reading_yet_uses_the_ledger() -> None:
+    out = await _tavily(_reader(None, ledger=7))()
+    assert out.status == "ok"
+    assert out.quota is not None and (out.quota.used, out.quota.limit) == (7, None)
+
+
+async def test_tavily_rejected_key_at_the_last_reading_is_down() -> None:
+    out = await _tavily(_reader(False, {"outcome": "http_401"}))()
+    assert out.status == "down"
+    assert "API key rejected (HTTP 401)" in out.detail
+
+
+async def test_tavily_failed_or_stale_reading_is_degraded() -> None:
+    out = await _tavily(_reader(False, {"outcome": "http_429"}))()
+    assert out.status == "degraded" and "http_429" in out.detail
+    stale = await _tavily(_reader(True, READING, read_at=NOW - timedelta(hours=49)))()
+    assert stale.status == "degraded" and "not running" in stale.detail
+
+
+async def test_tavily_not_configured() -> None:
+    with pytest.raises(NotConfigured, match="TAVILY_API_KEY"):
+        await tavily_check(make_settings(), 950, _reader(None))()
+
+
+async def test_tavily_health_never_calls_tavily(monkeypatch: pytest.MonkeyPatch) -> None:
+    """S04 re-review R3: /api/health reads the stored daily reading; it sends no request anywhere."""
+
+    async def refuse(*_: Any, **__: Any) -> Any:
+        raise AssertionError("the tavily health check made a network request")
+
+    monkeypatch.setattr(httpx.AsyncClient, "send", refuse)
+    out = await _tavily(_reader(True, READING))()
+    assert out.status == "ok"
 
 
 async def test_storage_not_configured() -> None:
