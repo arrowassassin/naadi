@@ -7,6 +7,7 @@ import csv
 import datetime as dt
 import io
 import uuid
+from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
@@ -173,13 +174,76 @@ def test_item_status_only_for_own_items(
     assert again["plan"]["now_item"] == today["plan"]["items"][1]["id"]
 
 
-def test_diagnostic_is_unavailable_until_timed_blocks_ship(
-    client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID]
+@pytest.fixture
+def pool(pg: psycopg.Connection[Any]) -> Iterator[list[str]]:
+    """50 non-mock Step 1 questions over two weighted systems, plus a mock question that must never be chosen."""
+    tag = uuid.uuid4().hex[:8]
+    src, sys_a, sys_b = f"t{tag}-src", f"t{tag}.sys.a", f"t{tag}.sys.b"
+    pg.execute("insert into public.sources (id, name, license) values (%s, 'T', 'proprietary-naadi')", (src,))
+    for i, (sid, lo, hi) in enumerate(((sys_a, 10, 14), (sys_b, 4, 8))):
+        pg.execute(
+            "insert into public.taxonomy_nodes (id, kind, label, exam, weight_min, weight_max, sort)"
+            " values (%s, 'system', %s, '{step1}', %s, %s, %s)",
+            (sid, f"Diag {tag} {i}", lo, hi, 960 + i),
+        )
+    ids = [f"t{tag}-d{i:02d}" for i in range(50)]
+    opts = Jsonb([{"label": "A", "html": "a"}, {"label": "B", "html": "b"}])
+    for i, qid in enumerate(ids):
+        pg.execute(
+            "insert into public.questions (id, exam, stem_html, options, answer, difficulty, taxonomy_ids, source_id)"
+            " values (%s, 'step1', '<p>s</p>', %s, 'B', %s, %s, %s)",
+            (qid, opts, ("easy", "medium", "hard")[i % 3], [sys_a if i < 30 else sys_b], src),
+        )
+    mock = f"t{tag}-mock"
+    pg.execute(
+        "insert into public.questions (id, exam, block, stem_html, options, answer, taxonomy_ids, source_id)"
+        " values (%s, 'step1', 1, '<p>m</p>', %s, 'B', %s, %s)",
+        (mock, opts, [sys_a], src),
+    )
+    yield [*ids, mock]
+    pg.execute("delete from public.blocks where %s && question_ids", ([*ids, mock],))
+    pg.execute("delete from public.questions where id = any(%s)", ([*ids, mock],))
+    pg.execute("delete from public.taxonomy_nodes where id = any(%s)", ([sys_a, sys_b],))
+    pg.execute("delete from public.sources where id = %s", (src,))
+
+
+def test_diagnostic_is_a_timed_40_question_block_and_idempotent(
+    client: TestClient,
+    key: SigningKey,
+    users: tuple[uuid.UUID, uuid.UUID],
+    pg: psycopg.Connection[Any],
+    pool: list[str],
 ) -> None:
-    res = client.post("/api/diagnostic", headers=auth(key, users[0]))
-    assert res.status_code == 404
-    assert res.json()["error"]["code"] == "diagnostic_unavailable"
-    assert client.get("/api/onboarding", headers=auth(key, users[0])).json()["diagnostic"]["available"] is False
+    a, b = users
+    assert client.get("/api/onboarding", headers=auth(key, a)).json()["diagnostic"]["available"] is True
+    res = client.post("/api/diagnostic", headers=auth(key, a))
+    assert res.status_code == 201, res.text
+    first = res.json()
+    assert first["questions"] == 40 and first["created"] is True
+    row = pg.execute(
+        "select config, question_ids, user_id from public.blocks where id = %s", (first["block_id"],)
+    ).fetchone()
+    assert row is not None and row[2] == a
+    cfg, qids = row[0], row[1]
+    assert cfg["mode"] == "timed" and cfg["purpose"] == "diagnostic"
+    assert len(qids) == len(set(qids)) == 40
+    mock = pool[-1]
+    assert mock not in qids
+    # Idempotent: the open diagnostic comes back, nothing new is created.
+    again = client.post("/api/diagnostic", headers=auth(key, a))
+    assert again.status_code == 200 and again.json()["block_id"] == first["block_id"]
+    assert again.json()["created"] is False
+    assert (
+        client.get("/api/onboarding", headers=auth(key, a)).json()["diagnostic"]["open_block_id"] == first["block_id"]
+    )
+    # Today offers to resume it (counts only, no answers) and B sees nothing of it.
+    today = client.get("/api/today", headers=auth(key, a)).json()
+    assert today["resume"]["kind"] == "block" and today["resume"]["diagnostic"] is True
+    assert today["resume"]["block_id"] == first["block_id"] and today["resume"]["next_n"] == 1
+    assert client.get("/api/today", headers=auth(key, b)).json()["resume"] is None
+    # Deterministic per student: a second student gets a different but equally sized block.
+    other = client.post("/api/diagnostic", headers=auth(key, b)).json()
+    assert other["questions"] == 40 and other["block_id"] != first["block_id"]
 
 
 # ── Today's numbers against direct SQL ──
