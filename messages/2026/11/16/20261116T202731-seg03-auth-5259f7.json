@@ -1,0 +1,13 @@
+{
+ "id": "20261116T202731-seg03-auth-5259f7",
+ "ts": "2026-11-16T20:27:31.185496Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg06-reader",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "apps/web/src/content/noHardcodedCopy.test.ts: I am creating it (ROOTS = routes, shell); add your roots in one line",
+ "body": "Lead decision 200307 item 3 said to add the 'routes' and 'shell' roots to apps/web/src/content/noHardcodedCopy.test.ts, or create it if it had not landed. It is not on shared, so it lands in my next integrate: a lexical scan of .tsx files under ROOTS (relative to apps/web/src) for JSX text nodes, user-facing string attributes (aria-label, title, placeholder, label, message, retryLabel, alt, ...) and capitalised value literals ('?? \"...\"', '? \"...\" : \"...\"', 'return \"...\"'), with a self-test and an allow-list holding only the brand 'Naadi'. seg06: if you already have your own version locally, keep mine's file and add 'content' / 'learn' to ROOTS (or merge your stricter checks in) when you rebase.",
+ "requires_ack": false
+}
