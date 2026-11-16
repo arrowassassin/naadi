@@ -1,0 +1,228 @@
+# Naadi CI. Public repo: ubuntu runners only (free), one secret (HF_TOKEN, deploy job only).
+# install -> lint -> typecheck -> unit -> contracts drift -> requirements drift -> check_models -> build
+# -> db integration (supabase/postgres service) -> e2e (WebKit, Chromium, Firefox x 6 viewports)
+# -> on main: deploy to the Space + live smoke.
+name: ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "24.22.3"
+  PYTHON_VERSION: "3.13"
+  UV_VERSION: "0.11.32"
+  SPACE_ID: arrowassassin/naadi
+  SPACE_URL: https://arrowassassin-naadi.hf.space
+  FORCE_COLOR: "1"
+
+jobs:
+  checks:
+    name: lint · typecheck · unit · drift · models · build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Enable pnpm (corepack, version from package.json)
+        run: |
+          corepack enable
+          echo "PNPM_STORE=$(pnpm store path --silent)" >> "$GITHUB_ENV"
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ env.PNPM_STORE }}
+          key: pnpm-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: pnpm-${{ runner.os }}-
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - name: Install
+        run: |
+          pnpm install --frozen-lockfile
+          uv --directory apps/api sync --frozen
+      - name: Lint (biome, ruff)
+        run: pnpm lint
+      - name: Typecheck (tsc, mypy)
+        run: pnpm typecheck
+      - name: Unit tests (vitest)
+        run: pnpm test
+      - name: Unit tests (pytest, no external services)
+        run: uv --directory apps/api run pytest -m "not integration"
+      - name: Contracts drift (OpenAPI -> zod + TS client)
+        run: |
+          pnpm gen:contracts
+          git diff --exit-code -- packages/shared || { echo "::error::Generated contracts are stale: run 'pnpm gen:contracts' and commit"; exit 1; }
+      - name: Requirements drift (uv.lock -> requirements.txt)
+        run: |
+          pnpm gen:requirements
+          git diff --exit-code -- apps/api/requirements.txt || { echo "::error::apps/api/requirements.txt is stale: run 'pnpm gen:requirements' and commit"; exit 1; }
+      - name: Model chains (free-only, catalog, capabilities)
+        # No NVIDIA key in CI: NVIDIA models are listed as "not probed in CI"; the Space health check probes them.
+        run: uv --directory apps/api run python ../../tools/check_models.py
+      - name: Build web
+        run: pnpm build
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: web-dist
+          path: apps/web/dist
+          retention-days: 7
+
+  db:
+    name: integration (db, supabase/postgres)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres: # real Supabase Postgres: anon/authenticated/service_role roles + auth schema
+        image: supabase/postgres:17.11.0.019
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres -h localhost"
+          --health-interval 5s --health-timeout 5s --health-retries 30
+    env:
+      # Throwaway service-container credentials, not a secret.
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      APP_ENV: staging
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - run: uv --directory apps/api sync --frozen
+      - name: DB integration tests
+        # Only the `db` tests: the other integration tests need service keys that live on the Space, not in CI.
+        run: uv --directory apps/api run pytest -m db -v
+
+  e2e:
+    name: e2e (${{ matrix.browser }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [webkit, chromium, firefox]
+    services:
+      postgres: # real Supabase Postgres: anon/authenticated/service_role roles + auth schema
+        image: supabase/postgres:17.11.0.019
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres -h localhost"
+          --health-interval 5s --health-timeout 5s --health-retries 30
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      E2E_EXPECT_DB_OK: "1"
+      CI: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          echo "PNPM_STORE=$(pnpm store path --silent)" >> "$GITHUB_ENV"
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ env.PNPM_STORE }}
+          key: pnpm-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: pnpm-${{ runner.os }}-
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - name: Install
+        run: |
+          pnpm install --frozen-lockfile
+          uv --directory apps/api sync --frozen
+      - name: Install ${{ matrix.browser }} for the pinned @playwright/test
+        run: pnpm --filter @naadi/web exec playwright install --with-deps ${{ matrix.browser }}
+      - name: Build and run e2e (served by uvicorn from the production build)
+        run: |
+          pnpm --filter @naadi/web build
+          pnpm --filter @naadi/web exec playwright test --project "${{ matrix.browser }}-*"
+      - if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: e2e-${{ matrix.browser }}
+          path: |
+            test-results/screens/01
+            playwright-report
+            test-results/playwright
+          retention-days: 14
+          if-no-files-found: ignore
+
+  deploy:
+    name: deploy to the Space + live smoke
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [checks, db, e2e]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    concurrency:
+      group: deploy-space
+      cancel-in-progress: false
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_SPACE_ID: arrowassassin/naadi
+    steps:
+      - name: Require HF_TOKEN
+        run: |
+          if [ -z "${HF_TOKEN}" ]; then
+            echo "::error::Missing GitHub Actions secret HF_TOKEN (Settings -> Secrets and variables -> Actions). See docs/SECRETS.md."
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: corepack enable
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - name: Install
+        run: |
+          pnpm install --frozen-lockfile
+          uv --directory apps/api sync --frozen
+      - name: Deploy (upload, wait for RUNNING on cpu-basic, smoke /api/health + / + /api/ready)
+        run: scripts/deploy_space.sh --space "$HF_SPACE_ID" --hardware cpu-basic
+      - name: Install WebKit
+        run: pnpm --filter @naadi/web exec playwright install --with-deps webkit
+      - name: Live WebKit smoke (HF token header; database must be ok)
+        env:
+          E2E_BASE_URL: ${{ env.SPACE_URL }}
+          E2E_EXPECT_DB_OK: "1"
+          CI: "1"
+        run: pnpm --filter @naadi/web exec playwright test --project "webkit-*"
+      - if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: live-smoke
+          path: |
+            test-results/screens/01-live
+            playwright-report
+          retention-days: 14
+          if-no-files-found: ignore

@@ -16,4 +16,4 @@ One container serves the built web app (`/`) and the API (`/api/*`) from the sam
 
 - Source: the Naadi monorepo; this Space is deployed by `scripts/deploy_space.sh` (CI on `main`).
 - Runtime secrets arrive as environment variables from the Space settings (see `docs/SECRETS.md` in the repo).
-- Health: `GET /api/health` (database, storage, OpenRouter quota, Tavily credits) and `GET /api/ready`.
+- Health: `GET /api/health` (database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits) and `GET /api/ready`.

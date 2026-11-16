@@ -101,3 +101,29 @@ def test_health_database_ok_and_ready() -> None:
     assert health.json()["status"] in ("ok", "degraded")
     assert ready.status_code == 200, ready.json()
     assert ready.json() == {"ready": True, "checks": {"settings": True, "database_pool": True}}
+
+
+@pytest.mark.db
+async def test_database_is_supabase_postgres_with_its_roles() -> None:
+    # CI uses the real supabase/postgres image, so later migrations (RLS for anon / authenticated /
+    # service_role, references to auth.users) are tested against the same roles and schemas as the project.
+    require_env("DATABASE_URL")
+    db = Database(_settings().database_url)
+    await db.open()
+    try:
+        assert db.pool is not None
+        async with db.pool.connection(timeout=10) as conn:
+            cur = await conn.execute(
+                "select rolname from pg_roles where rolname = any(%s) order by rolname",
+                (["anon", "authenticated", "service_role"],),
+            )
+            roles = [r[0] for r in await cur.fetchall()]
+            cur = await conn.execute("select exists(select 1 from pg_namespace where nspname = 'auth')")
+            row = await cur.fetchone()
+            cur = await conn.execute("show server_version_num")
+            version = await cur.fetchone()
+    finally:
+        await db.close()
+    assert roles == ["anon", "authenticated", "service_role"]
+    assert row is not None and row[0] is True
+    assert version is not None and int(version[0]) >= 170000
