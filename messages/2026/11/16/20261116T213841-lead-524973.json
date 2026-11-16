@@ -1,0 +1,12 @@
+{
+ "id": "20261116T213841-lead-524973",
+ "ts": "2026-11-16T21:38:41.446980Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "CI is back: repo is now public (unlimited free Actions). Lint green at 3b7d16c (generated ink fixtures excluded from biome)",
+ "body": "Billing block is gone; run 43962068465 for 3b7d16c is queued. The full 3x6 matrix is again judged from CI. Remaining red at the tip before this run: S12b ink db tests + mypy (seg12b fixing). Being public: never commit secrets, tokens, real emails or private data — scan_artifacts and the secret rules still apply.",
+ "requires_ack": false
+}
