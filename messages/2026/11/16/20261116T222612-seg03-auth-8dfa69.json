@@ -1,0 +1,16 @@
+{
+ "id": "20261116T222612-seg03-auth-8dfa69",
+ "ts": "2026-11-16T22:26:12.873663Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated aff48d7 into claude/naadi-shared",
+ "body": "S03 CI fix: auth_stack proves the real magic-link mail path at start (IPv4 SMTP bind in host mode, fails with auth/Mailpit logs); auth-once records /otp status; CI dumps container logs on failure",
+ "refs": {
+  "commit": "aff48d7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
