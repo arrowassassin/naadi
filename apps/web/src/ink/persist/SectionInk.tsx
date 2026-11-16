@@ -10,6 +10,14 @@ import { InkSaveStatus } from "./InkSaveStatus";
 import { useInkSettings } from "./settings";
 import { useInkLayer } from "./useInkLayer";
 
+/** Blocks with their own fills (tables, figures, callouts, embeds): markers multiply over them (markerModeFor). */
+const OPAQUE_BLOCKS = new Set(["table", "figure", "video", "pdf", "questionEmbed", "mermaid", "math", "callout"]);
+
+export function hasOpaqueBlocks(doc: unknown): boolean {
+  const content = (doc as { content?: unknown } | null)?.content;
+  return Array.isArray(content) && content.some((b) => OPAQUE_BLOCKS.has((b as { type?: string })?.type ?? ""));
+}
+
 export interface SectionInkProps {
   sectionId: string;
   /** The section body (TipTap JSON): re-measure block anchors when it changes. */
@@ -73,6 +81,7 @@ export function SectionInk({ sectionId, doc, on, onToggle, offline, children, cl
           {...layer.canvasProps}
           enabled={on}
           surfaceType="section"
+          hasOpaqueBlocks={hasOpaqueBlocks(doc)}
           theme="dark"
           anchors={anchors}
           penOnly={settings.pen_only}

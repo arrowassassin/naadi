@@ -306,3 +306,13 @@ describe("block anchors across widths", () => {
     expect((phone?.offset(80) ?? 0) + (a?.dy ?? 0)).toBeCloseTo(1.04, 6);
   });
 });
+
+describe("section marker placement", async () => {
+  const { hasOpaqueBlocks } = await import("./SectionInk");
+  it("multiplies markers over tables and figures, sits under plain text", () => {
+    expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "paragraph" }, { type: "table" }] })).toBe(true);
+    expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "figure" }] })).toBe(true);
+    expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "paragraph" }, { type: "heading" }] })).toBe(false);
+    expect(hasOpaqueBlocks(null)).toBe(false);
+  });
+});
