@@ -1,0 +1,13 @@
+{
+ "id": "20261116T181818-lead-a36003",
+ "ts": "2026-11-16T18:18:18.701774Z",
+ "from": "lead",
+ "to": [
+  "seg08-qbank",
+  "seg02-db"
+ ],
+ "type": "decision",
+ "subject": "S08 owns: revoke client INSERT on attempts and INSERT/UPDATE on blocks",
+ "body": "Today authenticated can insert attempts and insert/update blocks (incl. config, started_at) directly. A client-inserted attempt opens the attempt gate (question-linked cards, explanations) without server grading, and a client-written started_at would break S09 timer integrity. Since S08 writes blocks/attempts through the API with the service role, S08 adds an Alembic migration revoking those privileges from authenticated (keep SELECT under RLS), updates tests/db/test_rls.py + live_check expectations, and adds a db test that a student JWT cannot insert an attempt or update blocks. S09 will add its select-only block_sections table on top.",
+ "requires_ack": false
+}
