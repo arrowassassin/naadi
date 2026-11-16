@@ -1,1 +1,751 @@
-{"comment":"A points value \"$points:N\" expands to N points [0.1, 0.1, 0.5, i] before parsing. InkItem parity fixtures: InkItemSchema (zod, packages/shared/src/ink.fixtures.test.ts) and the pydantic mirror (apps/api/tests/ink/test_models.py) must agree on every case.","cases":[{"name":"pen stroke","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"marker with shape","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"marker","color":"lime","size":0.02,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"shape":"line"}},{"name":"text box with anchor","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"Type 4 = aldo ↓","createdAt":1763000000000,"updatedAt":1763000000000,"anchor":{"pm":42,"dy":0.01}}},{"name":"anchor with dx and dy","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"anchor":{"pm":0,"dx":-0.5,"dy":1.25}}},{"name":"tombstone","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"deleted":true}},{"name":"integer-valued float timestamp","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000.0,"updatedAt":1763000000000}},{"name":"unrounded su precision is accepted","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1234567891,0.98765432,0.333333333,0]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"negative su inside the bound","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[-10000,10000,0,86400000]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"one point","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.5,0.5,1,0]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"max size pen","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.1,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text of 2000 ascii chars","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text of 2000 emoji (zod counts code points)","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"max points","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":"$points:10000","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text box w at max","valid":true,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":4,"text":"Type 4 = aldo ↓","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"no points","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"too many points","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":"$points:10001","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"pressure above 1","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0,0,1.5,0]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"fractional point time","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0,0,0.5,1.5]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"point time over a day","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0,0,0.5,86400001]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"point with five values","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0,0,0.5,0,1]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"point with three values","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0,0,0.5]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"su out of bound","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[10000.5,0,0.5,0]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"string coordinate","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[["0.1",0,0.5,0]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"boolean pressure","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0,0,true,0]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"hex colour","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"#ff0000","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"extra key","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"extra":1}},{"name":"not a uuid","valid":false,"item":{"id":"not-a-uuid","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"uuid v4","valid":false,"item":{"id":"0190a0b2-7c3d-4e5f-8a1b-2c3d4e5f6a7b","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"uppercase uuid v7","valid":false,"item":{"id":"019A8C4E-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"null anchor","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"anchor":null}},{"name":"null shape","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"shape":null}},{"name":"deleted false","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"deleted":false}},{"name":"deleted null","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"deleted":null}},{"name":"string updatedAt","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":"1763000000000"}},{"name":"fractional updatedAt","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000.5}},{"name":"negative createdAt","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":-1,"updatedAt":1763000000000}},{"name":"unsafe integer","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":9007199254740992}},{"name":"boolean size","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":true,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"zero size","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"pen size over max","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.11,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"unknown tool","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"brush","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text tool on a stroke","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"text","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"stroke with text fields","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"pen","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"Type 4 = aldo ↓","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"empty text","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text of 2001 chars","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text of 2001 emoji","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":0.4,"text":"😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text box w over max","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"x":0.1,"y":0.3,"w":4.01,"text":"Type 4 = aldo ↓","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"text box missing x","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000002","tool":"text","color":"violet","size":0.02,"y":0.3,"w":0.4,"text":"Type 4 = aldo ↓","createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"anchor fractional pm","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"anchor":{"pm":1.5}}},{"name":"anchor negative pm","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"anchor":{"pm":-1}}},{"name":"anchor extra key","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"anchor":{"pm":1,"dz":0}}},{"name":"anchor without pm","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"anchor":{"dy":0.1}}},{"name":"unknown shape","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","color":"ink","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000,"shape":"star"}},{"name":"missing color","valid":false,"item":{"id":"019a8c4e-0000-7000-8000-000000000001","tool":"pen","size":0.002,"points":[[0.1,0.1,0.5,0],[0.2,0.15,0.6,8]],"createdAt":1763000000000,"updatedAt":1763000000000}},{"name":"array instead of object","valid":false,"item":[1,2]},{"name":"null item","valid":false,"item":null}]}
+{
+  "comment": "A points value \"$points:N\" expands to N points [0.1, 0.1, 0.5, i] before parsing. InkItem parity fixtures: InkItemSchema (zod, packages/shared/src/ink.fixtures.test.ts) and the pydantic mirror (apps/api/tests/ink/test_models.py) must agree on every case.",
+  "cases": [
+    {
+      "name": "pen stroke",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "marker with shape",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "marker",
+        "color": "lime",
+        "size": 0.02,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "shape": "line"
+      }
+    },
+    {
+      "name": "text box with anchor",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "Type 4 = aldo ↓",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 42, "dy": 0.01 }
+      }
+    },
+    {
+      "name": "anchor with dx and dy",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 0, "dx": -0.5, "dy": 1.25 }
+      }
+    },
+    {
+      "name": "tombstone",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "deleted": true
+      }
+    },
+    {
+      "name": "integer-valued float timestamp",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000.0,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "unrounded su precision is accepted",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1234567891, 0.98765432, 0.333333333, 0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "negative su inside the bound",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[-10000, 10000, 0, 86400000]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "one point",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.5, 0.5, 1, 0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "max size pen",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.1,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text of 2000 ascii chars",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text of 2000 emoji (zod counts code points)",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "max points",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": "$points:10000",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text box w at max",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 4,
+        "text": "Type 4 = aldo ↓",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "no points",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "too many points",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": "$points:10001",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "pressure above 1",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0, 0, 1.5, 0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "fractional point time",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0, 0, 0.5, 1.5]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "point time over a day",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0, 0, 0.5, 86400001]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "point with five values",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0, 0, 0.5, 0, 1]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "point with three values",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0, 0, 0.5]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "su out of bound",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[10000.5, 0, 0.5, 0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "string coordinate",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [["0.1", 0, 0.5, 0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "boolean pressure",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0, 0, true, 0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "hex colour",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "#ff0000",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "extra key",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "extra": 1
+      }
+    },
+    {
+      "name": "not a uuid",
+      "valid": false,
+      "item": {
+        "id": "not-a-uuid",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "uuid v4",
+      "valid": false,
+      "item": {
+        "id": "0190a0b2-7c3d-4e5f-8a1b-2c3d4e5f6a7b",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "uppercase uuid v7",
+      "valid": false,
+      "item": {
+        "id": "019A8C4E-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "null anchor",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": null
+      }
+    },
+    {
+      "name": "null shape",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "shape": null
+      }
+    },
+    {
+      "name": "deleted false",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "deleted": false
+      }
+    },
+    {
+      "name": "deleted null",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "deleted": null
+      }
+    },
+    {
+      "name": "string updatedAt",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": "1763000000000"
+      }
+    },
+    {
+      "name": "fractional updatedAt",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000.5
+      }
+    },
+    {
+      "name": "negative createdAt",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": -1,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "unsafe integer",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 9007199254740992
+      }
+    },
+    {
+      "name": "boolean size",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": true,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "zero size",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "pen size over max",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.11,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "unknown tool",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "brush",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text tool on a stroke",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "text",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "stroke with text fields",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "pen",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "Type 4 = aldo ↓",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "empty text",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text of 2001 chars",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text of 2001 emoji",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text box w over max",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "x": 0.1,
+        "y": 0.3,
+        "w": 4.01,
+        "text": "Type 4 = aldo ↓",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "text box missing x",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000002",
+        "tool": "text",
+        "color": "violet",
+        "size": 0.02,
+        "y": 0.3,
+        "w": 0.4,
+        "text": "Type 4 = aldo ↓",
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    {
+      "name": "anchor fractional pm",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 1.5 }
+      }
+    },
+    {
+      "name": "anchor negative pm",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": -1 }
+      }
+    },
+    {
+      "name": "anchor extra key",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 1, "dz": 0 }
+      }
+    },
+    {
+      "name": "anchor without pm",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "dy": 0.1 }
+      }
+    },
+    {
+      "name": "unknown shape",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "shape": "star"
+      }
+    },
+    {
+      "name": "missing color",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000
+      }
+    },
+    { "name": "array instead of object", "valid": false, "item": [1, 2] },
+    { "name": "null item", "valid": false, "item": null }
+  ]
+}

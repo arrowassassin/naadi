@@ -4,6 +4,7 @@ import { agentDiagnosticsRoute } from "./agent/route";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
 import { cardsRoute } from "./cards/routes";
+import { InkSettingsPage } from "./ink/persist/InkSettingsPage";
 import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
 import { practiceRoutes } from "./practice/routes";
@@ -124,6 +125,7 @@ const settingsRoute = createRoute({
   component: Outlet,
 });
 const accountRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/account", component: AccountPage });
+const inkSettingsRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/ink", component: InkSettingsPage });
 
 export const routeTree = rootRoute.addChildren([
   signInRoute,
@@ -137,7 +139,7 @@ export const routeTree = rootRoute.addChildren([
     practiceRoutes(appRoute),
     cardsRoute(appRoute),
     searchRoute(appRoute),
-    settingsRoute.addChildren([accountRoute]),
+    settingsRoute.addChildren([accountRoute, inkSettingsRoute]),
     agentDiagnosticsRoute(appRoute),
   ]),
 ]);

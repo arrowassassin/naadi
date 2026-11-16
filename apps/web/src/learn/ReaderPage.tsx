@@ -17,6 +17,7 @@ import { ApiError } from "../auth/apiError";
 import { ContentRenderer } from "../content/ContentRenderer";
 import type { TextLookup, UnknownContent } from "../content/types";
 import { useUiText } from "../copy/useUiText";
+import { SectionInk } from "../ink/persist/SectionInk";
 import { useShellBottomSlot } from "../shell/chrome";
 import { useChapter, usePositions } from "./api";
 import { ContentsSheet } from "./ContentsSheet";
@@ -176,6 +177,8 @@ function Reader({
   const barRef = useRef<HTMLElement>(null);
   const [contentsOpen, setContentsOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
+  // Ink on (12b): the ink toolbar takes the page bar's place, so the view keeps one lime action.
+  const [inkOn, setInkOn] = useState(false);
   const total = detail.sections.length;
   useReaderBarVar(barRef, slot === null);
 
@@ -417,17 +420,19 @@ function Reader({
         </h1>
         <div className="mx-auto w-full max-w-[46rem]">
           {section.body ? (
-            <div ref={rootRef} className="contents">
-              <ContentRenderer
-                key={section.id}
-                doc={section.body}
-                sectionId={section.id}
-                media={detail.media}
-                questions={detail.questions}
-                onUnknown={logUnknown}
-                text={t}
-              />
-            </div>
+            <SectionInk sectionId={section.id} doc={section.body} on={inkOn} onToggle={setInkOn}>
+              <div ref={rootRef} className="contents">
+                <ContentRenderer
+                  key={section.id}
+                  doc={section.body}
+                  sectionId={section.id}
+                  media={detail.media}
+                  questions={detail.questions}
+                  onUnknown={logUnknown}
+                  text={t}
+                />
+              </div>
+            </SectionInk>
           ) : (
             <p className="m-0 text-text-2">{t("learn.section_empty")}</p>
           )}
@@ -446,8 +451,9 @@ function Reader({
         </div>
       </article>
 
-      {/* Page bar: previous · where · next (the one lime action). On phone it joins the shell's bottom bar. */}
-      {slot ? (
+      {/* Page bar: previous · where · next (the one lime action). On phone it joins the shell's bottom bar.
+          While ink is on, the ink toolbar takes its place, so the view keeps one lime action. */}
+      {inkOn ? null : slot ? (
         createPortal(<nav aria-label={t("learn.sections_nav")}>{barRow}</nav>, slot)
       ) : (
         <nav

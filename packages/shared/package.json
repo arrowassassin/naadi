@@ -6,7 +6,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./content": "./src/content/index.ts",
-    "./content/convert": "./src/content/convert.ts"
+    "./content/convert": "./src/content/convert.ts",
+    "./content/positions": "./src/content/positions.ts"
   },
   "//": "Type-checking uses the repo's TypeScript 7.0.2 (root devDependency). The local typescript 6.0.3 exists only as the peer of @hey-api/openapi-ts, which needs the JavaScript compiler API that TypeScript 7 (native) does not ship; 6.0.3 is the version openapi-ts itself is built and tested with.",
   "scripts": {

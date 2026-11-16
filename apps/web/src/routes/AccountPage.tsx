@@ -8,6 +8,7 @@ import { ApiError } from "../auth/apiError";
 import { type SignOutScope, signOut } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { SettingsNav } from "./SettingsNav";
 
 function timeZones(current: string): string[] {
   let all: string[] = [];
@@ -194,6 +195,7 @@ export function AccountPage() {
         <h1 id="account-h" className="m-0 font-display text-headline">
           {t("account.heading")}
         </h1>
+        <SettingsNav current="account" />
       </div>
 
       {me.isPending && !me.data ? (

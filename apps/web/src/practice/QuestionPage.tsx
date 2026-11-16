@@ -8,6 +8,9 @@ import { SaveAsFlashcard } from "../cards/hooks";
 import { SafeHtml } from "../content/SafeHtml";
 import { ExamPage } from "../exam/ExamPage";
 import { InkCanvas } from "../ink/InkCanvas";
+import { InkSaveStatus } from "../ink/persist/InkSaveStatus";
+import { useInkSettings } from "../ink/persist/settings";
+import { useInkLayer } from "../ink/persist/useInkLayer";
 import { ReportIssueDialog } from "../learn/ReportIssueDialog";
 import {
   isUnreachable,
@@ -127,6 +130,9 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
   const [labsOpen, setLabsOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
   const [inkOn, setInkOn] = useState(false);
+  // Ink on the stem and options (12b): saved per question; the explanation never carries ink.
+  const ink = useInkLayer("question", qid);
+  const inkSettings = useInkSettings().settings;
 
   const answered = view.attempt !== null;
   const chosen = view.attempt?.chosen ?? pending?.body.chosen ?? choice;
@@ -261,7 +267,18 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
         </p>
       ) : null}
 
-      <InkCanvas enabled={inkOn} surfaceType="question" theme="dark" label={t("practice.ink")} className="rounded-tile">
+      {inkOn || ink.state === "local" || ink.state === "error" ? <InkSaveStatus layer={ink} className="-mb-3" /> : null}
+      <InkCanvas
+        key={qid}
+        {...ink.canvasProps}
+        enabled={inkOn}
+        surfaceType="question"
+        theme="dark"
+        penOnly={inkSettings.pen_only}
+        predict={inkSettings.predict}
+        label={t("practice.ink")}
+        className="rounded-tile"
+      >
         <div className="flex flex-col gap-6 tablet:gap-8">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             {view.question.topics.length ? (
