@@ -1,0 +1,13 @@
+{
+ "id": "20261116T184333-seg07-search-19de60",
+ "ts": "2026-11-16T18:43:33.186778Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/pyproject.toml apps/api/uv.lock apps/api/requirements.txt apps/api/naadi_api/main.py deploy/space/Dockerfile apps/web/src/router.tsx packages/shared/openapi.json",
+ "body": "",
+ "re": "20261116T171404-seg07-search-9a0fb3",
+ "requires_ack": false
+}
