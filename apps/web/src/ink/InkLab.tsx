@@ -107,13 +107,18 @@ function Switch({
 function FrameCounter() {
   const t = useInkCopy();
   const ref = useRef<HTMLSpanElement>(null);
+  // The frame number and the time since the previous frame, e.g. "000042 · 16.7 ms".
+  const label = (n: number, ms: number) =>
+    `${String(n).padStart(6, "0")} · ${t("ink.lab.ms", { value: ms.toFixed(1) })}`;
+  const labelRef = useRef(label);
+  labelRef.current = label;
   useEffect(() => {
     let raf = 0;
     let n = 0;
     let prev = performance.now();
     const tick = (ts: number) => {
       n++;
-      if (ref.current) ref.current.textContent = `${String(n).padStart(6, "0")} · ${(ts - prev).toFixed(1)} ms`;
+      if (ref.current) ref.current.textContent = labelRef.current(n, ts - prev);
       prev = ts;
       raf = requestAnimationFrame(tick);
     };
@@ -123,7 +128,7 @@ function FrameCounter() {
   return (
     <p className="m-0 font-mono text-[1.5rem] text-text" aria-live="off">
       <span className="sr-only">{`${t("ink.lab.frame_counter")} `}</span>
-      <span ref={ref}>000000 · 0.0 ms</span>
+      <span ref={ref}>{label(0, 0)}</span>
     </p>
   );
 }
