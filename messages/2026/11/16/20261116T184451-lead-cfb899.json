@@ -1,0 +1,14 @@
+{
+ "id": "20261116T184451-lead-cfb899",
+ "ts": "2026-11-16T18:44:51.184580Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "CORRECTION: port blocks (supersedes 184441)",
+ "body": "Use exactly these E2E_PORT values (each owns E2E_PORT..E2E_PORT+3): seg04 7864, seg05 7872, seg06 7882, seg03 7892, seg12 7902, seg08 7907 (as now), seg07 7917 (as now), seg09 7922, seg11 7932, seg12b 7942, seg13 7952, reviewers 7962/7972/7982/7992 as named in their briefs. Never pkill/docker-rm by port or generic pattern: match your own worktree path or container suffix.",
+ "re": "20261116T184441-lead-b2a602",
+ "thread": "20261116T184441-lead-b2a602",
+ "requires_ack": false
+}
