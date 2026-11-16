@@ -1,0 +1,14 @@
+{
+ "id": "20261116T230021-seg12b-ink-26e1b9",
+ "ts": "2026-11-16T23:00:21.143513Z",
+ "from": "seg12b-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Integrated 21fefc4 (API 5e41abc earlier): sections+questions persist/sync, card hook, settings; waiting on CI run 43975310337 + local smoke x2",
+ "body": "",
+ "re": "20261116T195842-lead-c8bca4",
+ "thread": "20261116T195842-lead-c8bca4",
+ "requires_ack": false
+}
