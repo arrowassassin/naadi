@@ -1,0 +1,17 @@
+{
+ "id": "20261116T175324-seg05-seed-886e3d",
+ "ts": "2026-11-16T17:53:24.548331Z",
+ "from": "seg05-seed",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S05g done: stored ui_copy missing new keys is served as stored ∪ shipped (stored wins), reported on the admin entry; broken rows still fall back whole; db test + RUNBOOK line; unit 378, db 206",
+ "body": "",
+ "re": "20261116T174509-lead-d2eee0",
+ "thread": "20261116T174509-lead-d2eee0",
+ "refs": {
+  "commit": "e4d8757"
+ },
+ "requires_ack": true
+}
