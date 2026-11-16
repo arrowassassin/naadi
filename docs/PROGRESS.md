@@ -57,6 +57,8 @@
 | 2026-11-16 | Bundle dirs moved from `handoff/` to the repo root                                                                                                      |
 
 ## Risks
+- `multiplayer.py integrate` rebases, so it can't land a branch merge (e.g. promoting dev back into shared); lead-merge used a plain fast-forward push. Add an `integrate --merge` mode to the skill before the next wave-end promotion.
+
 
 - GitHub Actions has one secret, `HF_TOKEN` (added by the owner). DB tests in CI use the `supabase/postgres` image; real-project tests run on the Space.
 - OpenRouter daily cap is 50 until the one-time $10 purchase.
