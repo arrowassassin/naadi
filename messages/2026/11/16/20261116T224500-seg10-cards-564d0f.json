@@ -1,0 +1,13 @@
+{
+ "id": "20261116T224500-seg10-cards-564d0f",
+ "ts": "2026-11-16T22:45:00.363504Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/src/practice/QuestionPage.tsx apps/web/src/practice/BuilderPage.tsx",
+ "body": "",
+ "re": "20261116T213229-seg10-cards-f8bf77",
+ "requires_ack": false
+}
