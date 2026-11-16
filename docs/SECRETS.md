@@ -18,6 +18,7 @@ Kind: **secret** = private everywhere. **public** = may reach the browser. **con
 | `SUPABASE_ANON_KEY` | public | Supabase → Project Settings → API Keys → anon / publishable | variable `SUPABASE_ANON_KEY` | variable `SUPABASE_ANON_KEY` | API, e2e sign-in |
 | `SUPABASE_SERVICE_ROLE_KEY` | secret | Supabase → Project Settings → API Keys → service_role / secret | secret `SUPABASE_SERVICE_ROLE_KEY` | secret `SUPABASE_SERVICE_ROLE_KEY` | API (shared-content writes, storage signing), seed, test-user setup |
 | `SUPABASE_JWT_SECRET` | secret | Supabase → Project Settings → JWT Keys → Legacy JWT secret. Optional if the project only uses asymmetric keys (JWKS) | secret `SUPABASE_JWT_SECRET` | secret `SUPABASE_JWT_SECRET` | API JWT verification |
+| `SUPABASE_ACCESS_TOKEN` | secret, build session only | supabase.com → Account preferences → Access Tokens (`sbp_…`). Account-wide power: keep it out of the Space and CI | — | — | Cloud build sandbox: SQL over the HTTPS Management API (the sandbox can't open raw Postgres connections) |
 | `VITE_SUPABASE_URL` | public | = `SUPABASE_URL` | variable `VITE_SUPABASE_URL` | variable `VITE_SUPABASE_URL` | Web build (Vite) |
 | `VITE_SUPABASE_ANON_KEY` | public | = `SUPABASE_ANON_KEY` | variable `VITE_SUPABASE_ANON_KEY` | variable `VITE_SUPABASE_ANON_KEY` | Web build (Vite) |
 | `OPENROUTER_API_KEY` | secret | openrouter.ai → Settings → Keys | secret `OPENROUTER_API_KEY` | secret `OPENROUTER_API_KEY` | `naadi_api/llm.py`, `tools/check_models.py`, health check |

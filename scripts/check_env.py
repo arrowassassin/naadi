@@ -50,6 +50,7 @@ KEYS: list[Key] = [
     Key("SUPABASE_ANON_KEY", False, True),
     Key("SUPABASE_SERVICE_ROLE_KEY", True, True),
     Key("SUPABASE_JWT_SECRET", True, False),  # optional when the project uses JWKS (asymmetric keys)
+    Key("SUPABASE_ACCESS_TOKEN", True, False),  # build-sandbox only: SQL via the HTTPS Management API
     Key("VITE_SUPABASE_URL", False, True),
     Key("VITE_SUPABASE_ANON_KEY", False, True),
     Key("OPENROUTER_API_KEY", True, True),
@@ -310,6 +311,30 @@ def check_supabase() -> None:
             report("FAIL", "Supabase JWKS", f"{type(e).__name__}: {e}")
 
 
+def check_supabase_mgmt() -> None:
+    """select 1 over HTTPS via the Supabase Management API (works where raw TCP 5432 cannot)."""
+    tok, su = get("SUPABASE_ACCESS_TOKEN"), get("SUPABASE_URL")
+    if not tok:
+        report("SKIP", "Supabase Mgmt API select 1", "SUPABASE_ACCESS_TOKEN not set (optional)", False)
+        return
+    m = re.match(r"https://([a-z0-9]{20})\.supabase\.co", su or "")
+    if not m:
+        report("FAIL", "Supabase Mgmt API select 1", "cannot derive project ref from SUPABASE_URL", False)
+        return
+    try:
+        r = httpx.post(f"https://api.supabase.com/v1/projects/{m.group(1)}/database/query",
+                       headers={"Authorization": f"Bearer {tok}"},
+                       json={"query": "select 1 as one, current_setting('server_version') as v"}, timeout=TIMEOUT)
+        if r.status_code in (200, 201):
+            row = (r.json() or [{}])[0]
+            ok = row.get("one") == 1
+            report("PASS" if ok else "FAIL", "Supabase Mgmt API select 1", f"server {row.get('v')}", False)
+        else:
+            report("FAIL", "Supabase Mgmt API select 1", f"HTTP {r.status_code}", False)
+    except Exception as e:  # noqa: BLE001
+        report("FAIL", "Supabase Mgmt API select 1", f"{type(e).__name__}: {e}", False)
+
+
 def check_openrouter() -> None:
     key = get("OPENROUTER_API_KEY")
     if not key:
@@ -423,6 +448,7 @@ def main() -> int:
     print("\nLive checks")
     check_postgres()
     check_supabase()
+    check_supabase_mgmt()
     check_openrouter()
     check_tavily(not args.no_tavily)
     check_hf()
