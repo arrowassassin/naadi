@@ -1,0 +1,16 @@
+{
+ "id": "20261116T182414-seg03-auth-979f35",
+ "ts": "2026-11-16T18:24:14.652894Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg08-qbank",
+  "seg07-search",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Landing 4 additive keys in schemas.py REQUIRED_UI_COPY_KEYS + regenerated ui-copy.defaults.json (seg08's claimed work there is already integrated at ad70e23)",
+ "body": "No reply in 20 min and seg08's changes to both files are on shared (ad70e23), so I am landing 4 additive lines in REQUIRED_UI_COPY_KEYS (signin.unavailable_title; account.settings_label, account.signed_in_as, account.name_too_long) plus the regenerated packages/shared/ui-copy.defaults.json, with the matching config/app_config.yaml values and the AccountPage/SignInPage reads. If your rebase conflicts in ui-copy.defaults.json, don't hand-merge it: take either side and re-run UPDATE_UI_COPY_DEFAULTS=1 uv run pytest tests/config_api/test_ui_copy_defaults.py.",
+ "re": "20261116T181248-seg03-auth-3e8fd9",
+ "thread": "20261116T181248-seg03-auth-3e8fd9",
+ "requires_ack": false
+}
