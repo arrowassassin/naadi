@@ -9,9 +9,10 @@
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "e2e": "vite build && playwright test"
+    "e2e": "VITE_FEATURE_INK_LAB=true vite build && playwright test"
   },
   "dependencies": {
+    "@naadi/ink": "workspace:*",
     "@naadi/shared": "workspace:*",
     "@naadi/ui": "workspace:*",
     "@tanstack/react-query": "5.107.1",

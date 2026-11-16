@@ -1,4 +1,5 @@
 import { createRootRoute, createRoute, createRouter, Link, Outlet } from "@tanstack/react-router";
+import { inkLabRoute } from "./ink/route";
 import { SystemPage } from "./system/SystemPage";
 
 function RootLayout() {
@@ -33,7 +34,12 @@ const rootRoute = createRootRoute({ component: RootLayout, notFoundComponent: No
 const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", component: SystemPage });
 const systemRoute = createRoute({ getParentRoute: () => rootRoute, path: "/system", component: SystemPage });
 
-export const routeTree = rootRoute.addChildren([indexRoute, systemRoute]);
+export const routeTree = rootRoute.addChildren([
+  indexRoute,
+  systemRoute,
+  // Same condition as ink/featureFlag.ts, written inline so the production build drops the lab chunk.
+  ...(import.meta.env.DEV || import.meta.env.VITE_FEATURE_INK_LAB === "true" ? [inkLabRoute(rootRoute)] : []),
+]);
 
 export const router = createRouter({ routeTree, defaultPreload: "intent", scrollRestoration: true });
 

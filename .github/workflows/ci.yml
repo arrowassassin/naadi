@@ -167,6 +167,9 @@ jobs:
       - name: Install ${{ matrix.browser }} for the pinned @playwright/test
         run: pnpm --filter @naadi/web exec playwright install --with-deps ${{ matrix.browser }}
       - name: Build and run e2e (served by uvicorn from the production build)
+        env:
+          # The e2e build includes the /system/ink-lab dev tool; the Space build never sets this.
+          VITE_FEATURE_INK_LAB: "true"
         run: |
           pnpm --filter @naadi/web build
           pnpm --filter @naadi/web exec playwright test --project "${{ matrix.browser }}-*"
@@ -176,6 +179,7 @@ jobs:
           name: e2e-${{ matrix.browser }}
           path: |
             test-results/screens/01
+            test-results/screens/12a
             playwright-report
             test-results/playwright
           retention-days: 14

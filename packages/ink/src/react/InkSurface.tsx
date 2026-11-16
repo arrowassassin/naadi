@@ -1,0 +1,128 @@
+import type { InkColor, InkDiff, InkItem } from "@naadi/shared";
+import { type CSSProperties, type ReactNode, type Ref, useEffect, useRef } from "react";
+import {
+  type EraserMode,
+  InkEngine,
+  type InkEngineState,
+  type InkSelectionPayload,
+  type InkToolName,
+  type SelectionInfo,
+  type ToolSizes,
+} from "../engine";
+import type { LatencyRecorder } from "../latency";
+import type { InkTheme, Palette } from "../render";
+
+export interface InkSurfaceProps {
+  /** Initial items; changing the array identity reloads the layer (clears undo history). */
+  items?: readonly InkItem[];
+  enabled?: boolean;
+  tool?: InkToolName;
+  color?: InkColor;
+  eraserMode?: EraserMode;
+  penOnly?: boolean;
+  predict?: boolean;
+  theme?: InkTheme;
+  palette?: Partial<Palette>;
+  sizes?: Partial<ToolSizes>;
+  latency?: LatencyRecorder;
+  onStrokesChange?: (diff: InkDiff) => void;
+  onLasso?: (selection: SelectionInfo, png: Blob) => void;
+  onConvertToText?: (payload: InkSelectionPayload) => void;
+  onAsk?: (payload: InkSelectionPayload) => void;
+  onStateChange?: (state: InkEngineState) => void;
+  onPenActiveChange?: (active: boolean) => void;
+  onError?: (message: string) => void;
+  /** Imperative handle: undo/redo/clear/selection actions. */
+  engineRef?: Ref<InkEngine | null>;
+  /** The content the ink sits on. */
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+  /** Accessible name of the surface region. */
+  label?: string;
+}
+
+/**
+ * React binding: renders the content with an ink layer over it and keeps the engine in sync with props.
+ * The engine is created once per mount; callbacks are read through refs so they can change freely.
+ */
+export function InkSurface(props: InkSurfaceProps) {
+  const hostRef = useRef<HTMLDivElement>(null);
+  const engine = useRef<InkEngine | null>(null);
+  const cb = useRef(props);
+  cb.current = props;
+
+  // The engine is created once per mount; the effects below keep it in sync with props.
+  useEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    const p = cb.current;
+    const e = new InkEngine({
+      host,
+      items: p.items,
+      enabled: p.enabled,
+      tool: p.tool,
+      color: p.color,
+      eraserMode: p.eraserMode,
+      penOnly: p.penOnly,
+      predict: p.predict,
+      theme: p.theme,
+      palette: p.palette,
+      sizes: p.sizes,
+      latency: p.latency,
+      onStrokesChange: (d) => cb.current.onStrokesChange?.(d),
+      onLasso: (s, png) => cb.current.onLasso?.(s, png),
+      onConvertToText: (x) => cb.current.onConvertToText?.(x),
+      onAsk: (x) => cb.current.onAsk?.(x),
+      onStateChange: (s) => cb.current.onStateChange?.(s),
+      onPenActiveChange: (a) => cb.current.onPenActiveChange?.(a),
+      onError: (m) => cb.current.onError?.(m),
+    });
+    engine.current = e;
+    if (typeof p.engineRef === "function") p.engineRef(e);
+    else if (p.engineRef) (p.engineRef as { current: InkEngine | null }).current = e;
+    return () => {
+      e.destroy();
+      engine.current = null;
+      const r = cb.current.engineRef;
+      if (typeof r === "function") r(null);
+      else if (r) (r as { current: InkEngine | null }).current = null;
+    };
+  }, []);
+
+  const first = useRef(true);
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    if (props.items) engine.current?.load(props.items);
+  }, [props.items]);
+  useEffect(() => engine.current?.setEnabled(props.enabled ?? true), [props.enabled]);
+  useEffect(() => {
+    if (props.tool) engine.current?.setTool(props.tool);
+  }, [props.tool]);
+  useEffect(() => {
+    if (props.color) engine.current?.setColor(props.color);
+  }, [props.color]);
+  useEffect(() => {
+    if (props.eraserMode) engine.current?.setEraserMode(props.eraserMode);
+  }, [props.eraserMode]);
+  useEffect(() => engine.current?.setPenOnly(props.penOnly ?? true), [props.penOnly]);
+  useEffect(() => engine.current?.setPredict(props.predict ?? true), [props.predict]);
+  useEffect(() => {
+    if (props.theme) engine.current?.setTheme(props.theme, props.palette);
+  }, [props.theme, props.palette]);
+
+  return (
+    <section
+      aria-label={props.label ?? "Ink surface"}
+      className={props.className}
+      style={{ position: "relative", isolation: "isolate", ...props.style }}
+      data-ink-surface=""
+    >
+      {props.children}
+      <div ref={hostRef} data-ink-host="" style={{ position: "absolute", inset: 0 }} />
+    </section>
+  );
+}
