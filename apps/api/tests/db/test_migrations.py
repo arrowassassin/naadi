@@ -101,13 +101,26 @@ def test_round_trip_from_empty(local_url: str, aegra_version_table: None) -> Non
         assert _scalar(c, "select version_num from public.naadi_alembic_version") == head
 
     try:
-        # down to 0001: drops 0003 (reading positions, figure sizes) and 0002 (storage), keeps the core data
+        # down to 0001: drops 0004 (seed tables), 0003 (reading positions, figure sizes) and 0002 (storage);
+        # keeps the core data
         migrate.downgrade(local_url, "0001")
         with psycopg.connect(local_url, autocommit=True) as c:
             assert _scalar(c, "select version_num from public.naadi_alembic_version") == "0001"
             assert _buckets(c) == set()
             assert _naadi_storage_policies(c) == set()
             assert _scalar(c, "select to_regclass('public.reading_positions')") is None
+            for table in ("seed_runs", "pathway_guides", "plan_templates", "plan_template_days"):  # 0004
+                assert _scalar(c, "select to_regclass(%s)", (f"public.{table}",)) is None, table
+            assert _scalar(c, "select to_regprocedure('public.naadi_app_config_notify()')") is None
+            assert (
+                _scalar(
+                    c,
+                    "select count(*) from information_schema.columns where table_schema = 'public'"
+                    " and (table_name, column_name) in (('sources', 'verified'), ('sources', 'verified_url'),"
+                    " ('media_assets', 'content_sha256'))",
+                )
+                == 0
+            )
             assert (
                 _scalar(
                     c,

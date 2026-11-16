@@ -16,7 +16,7 @@ import jwt
 import pytest
 
 # Same value as TEST_JWT_SECRET in stack.sh (local container only).
-LOCAL_STORAGE_JWT_SECRET = "naadi-local-test-only-jwt-secret-0000"  # noqa: S105 - local test container secret
+LOCAL_STORAGE_JWT_SECRET = "naadi-local-test-only-jwt-secret-0000"
 
 
 def local_service_key(secret: str = LOCAL_STORAGE_JWT_SECRET) -> str:

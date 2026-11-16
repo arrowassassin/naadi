@@ -72,10 +72,34 @@ def test_anon_has_no_privileges_on_user_or_admin_tables(pg: psycopg.Connection) 
                 "llm_usage",
                 "embeddings",
                 "naadi_alembic_version",
+                "seed_runs",
             ],
         ),
     ).fetchall()
     assert rows == []
+
+
+def test_seed_runs_is_admin_only(pg: psycopg.Connection) -> None:
+    row = pg.execute(
+        "select relrowsecurity, relforcerowsecurity, has_table_privilege('authenticated', oid, 'select')"
+        " from pg_class where oid = 'public.seed_runs'::regclass"
+    ).fetchone()
+    assert row == (True, True, False)
+
+
+def test_seed_content_tables_are_read_only_for_clients(pg: psycopg.Connection) -> None:
+    for table in ("pathway_guides", "plan_templates", "plan_template_days"):
+        for role in ("anon", "authenticated"):
+            row = pg.execute(
+                "select has_table_privilege(%s, %s, 'select'),"
+                " has_table_privilege(%s, %s, 'insert,update,delete,truncate')",
+                (role, f"public.{table}", role, f"public.{table}"),
+            ).fetchone()
+            assert row == (True, False), (table, role)
+        policies = pg.execute(
+            "select cmd, roles::text[] from pg_policies where schemaname = 'public' and tablename = %s", (table,)
+        ).fetchall()
+        assert policies == [("SELECT", ["anon", "authenticated"])], table
 
 
 def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psycopg.Connection) -> None:
@@ -84,7 +108,7 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         " has_function_privilege('authenticated', p.oid, 'execute')"
         " from pg_proc p where p.pronamespace = 'public'::regnamespace and p.proname like 'naadi\\_%'"
     ).fetchall()
-    assert {r[0] for r in rows} == {"naadi_touch_updated_at", "naadi_app_config_history"}
+    assert {r[0] for r in rows} == {"naadi_touch_updated_at", "naadi_app_config_history", "naadi_app_config_notify"}
     for name, config, anon_exec, auth_exec in rows:
         assert config == ['search_path=""'], name
         assert not anon_exec and not auth_exec, name

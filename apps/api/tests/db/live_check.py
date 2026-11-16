@@ -1,6 +1,9 @@
 """Read-only check of the REAL Supabase project's schema after a deploy (the Space migrates at startup).
 
-    cd apps/api && uv run python -m tests.db.live_check
+    cd apps/api && uv run python -m tests.db.live_check [--seed]
+
+`--seed` adds read-only checks that the seed import landed (counts from data/ and config/, every figure
+node resolving to an approved media row with a Storage object); run it after the admin seed job.
 
 Needs SUPABASE_URL (for the project ref) and SUPABASE_ACCESS_TOKEN. Uses the Supabase Management API SQL
 endpoint over HTTPS with `read_only: true` (the build sandbox has no raw Postgres egress). Prints only
@@ -54,7 +57,14 @@ HIDDEN_QUESTION_COLUMNS = (
     "review",
     "stats",
 )
-CLIENT_CLOSED_TABLES = (*USER_TABLES, "embeddings", "app_config", "llm_usage", "naadi_alembic_version")
+CLIENT_CLOSED_TABLES = (
+    *USER_TABLES,
+    "embeddings",
+    "app_config",
+    "llm_usage",
+    "naadi_alembic_version",
+    "seed_runs",
+)
 
 Rows = Sequence[dict[str, Any]]
 
@@ -124,8 +134,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "34 Naadi tables present",
-            "select count(*) = 34 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "38 Naadi tables present",
+            "select count(*) = 38 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')",
         ),
         Check("18 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
@@ -143,7 +153,7 @@ def checks(head: str) -> list[Check]:
             " as detail from information_schema.role_table_grants where table_schema = 'public'"
             f" and grantee = 'anon' and table_name = any({_array(CLIENT_CLOSED_TABLES)})"
             " or table_schema = 'public' and grantee = 'authenticated'"
-            " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version'])",
+            " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version','seed_runs'])",
         ),
         Check(
             "default privileges closed for anon/authenticated",
@@ -171,6 +181,98 @@ def checks(head: str) -> list[Check]:
     ]
 
 
+def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> list[Check]:
+    """Read-only checks that the seed import landed (`--seed`): counts from the bundle, figures resolvable."""
+
+    def count(name: str, query: str, want: int) -> Check:
+        return Check(f"seed: {name} = {want}", f"select count(*) = {want} as ok, count(*)::text as detail {query}")
+
+    e = expected
+    return [
+        count(
+            "chapters",
+            "from public.chapters where owner_user_id is null and status = 'published'"
+            " and kind in ('chapter','mock_exam')",
+            e["chapters"],
+        ),
+        count(
+            "chapter_sections",
+            "from public.chapter_sections s join public.chapters c on c.id = s.chapter_id"
+            " where c.owner_user_id is null and c.kind in ('chapter','mock_exam')",
+            e["chapter_sections"],
+        ),
+        count(
+            "questions (published, original)",
+            "from public.questions where status = 'published' and source_id = 'naadi-original-v1'",
+            e["questions"],
+        ),
+        count(
+            "approved SVG figures",
+            "from public.media_assets where kind = 'svg' and review_status = 'approved'"
+            " and source_id = 'naadi-original-v1'",
+            e["media_assets"],
+        ),
+        count(
+            "section_media",
+            "from public.section_media m join public.media_assets a on a.id = m.media_id"
+            " where a.kind = 'svg' and a.source_id = 'naadi-original-v1'",
+            e["section_media"],
+        ),
+        count("taxonomy_nodes", "from public.taxonomy_nodes", e["taxonomy_nodes"]),
+        count(
+            "questions with taxonomy",
+            "from public.questions where source_id = 'naadi-original-v1' and cardinality(taxonomy_ids) > 0",
+            e["question_map_entries"],
+        ),
+        count("pathway_stages", "from public.pathway_stages", e["pathway_stages"]),
+        count("pathway_tasks", "from public.pathway_tasks", e["pathway_tasks"]),
+        count("pathway_guides", "from public.pathway_guides", e["pathway_guides"]),
+        count(
+            "plan_template_days",
+            "from public.plan_template_days where template_id = 'step1-60d'",
+            e["plan_template_days"],
+        ),
+        count("sources", "from public.sources", e["sources"]),
+        count(
+            "app_config keys",
+            f"from public.app_config where key = any({_array(app_config_keys)})",
+            len(app_config_keys),
+        ),
+        Check(
+            "seed: no [[figure: placeholder left",
+            "select count(*) = 0 as ok, count(*)::text as detail from public.chapter_sections"
+            " where body::text like '%[[figure:%' or coalesce(body_html, '') like '%[[figure:%'",
+        ),
+        Check(
+            "seed: every figure node resolves to an approved media row with a Storage object",
+            "select count(*) = 0 as ok, coalesce(string_agg(distinct n.id, ','), '') as detail from ("
+            " select j.v #>> '{}' as id from public.chapter_sections s"
+            " cross join lateral jsonb_path_query(s.body, 'strict $.** ? (@.type == \"figure\").attrs.mediaId') j(v)) n"
+            " left join public.media_assets m on m.id = n.id and m.review_status = 'approved'"
+            " left join storage.objects o on o.bucket_id = split_part(m.url, '/', 1)"
+            "  and o.name = substr(m.url, length(split_part(m.url, '/', 1)) + 2)"
+            " where o.id is null",
+        ),
+        Check(
+            "seed: last admin seed job succeeded (if any ran)",
+            "select coalesce((select status <> 'failed' from public.seed_runs where not (options ? 'dry_run'"
+            " and (options->>'dry_run')::boolean) order by started_at desc limit 1), true) as ok,"
+            " coalesce((select status from public.seed_runs order by started_at desc limit 1), 'none') as detail",
+        ),
+    ]
+
+
+def bundle_expectations() -> tuple[dict[str, int], list[str]]:
+    """Expected seed counts from the repo's data/ and config/ (the same numbers the importer verifies)."""
+    from naadi_api.config_api.defaults import file_values
+    from naadi_api.seed.data import load_bundle
+    from naadi_api.seed.importer import expected_counts
+    from naadi_api.settings import REPO_ROOT
+
+    b = load_bundle(REPO_ROOT / "data", REPO_ROOT / "config")
+    return expected_counts(b), sorted(file_values(REPO_ROOT / "config"))
+
+
 def run_sql(client: httpx.Client, ref: str, token: str, query: str) -> list[dict[str, Any]]:
     # No SDK covers the Management API SQL endpoint (supabase-py wraps the project APIs only).
     r = client.post(
@@ -191,6 +293,9 @@ def main() -> int:
     ref = (urlparse(url).hostname or "").split(".")[0]
     head = migrate.head_revision()
     all_checks = checks(head)
+    if "--seed" in sys.argv[1:]:
+        expected, keys = bundle_expectations()
+        all_checks += seed_checks(expected, keys)
     failed = 0
     with httpx.Client(timeout=60) as client:
         for c in all_checks:

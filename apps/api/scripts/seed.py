@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from naadi_api.seed.cli import main  # noqa: E402 - after the path setup above
+from naadi_api.seed.cli import main
 
 if __name__ == "__main__":
     sys.exit(main())

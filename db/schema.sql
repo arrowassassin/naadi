@@ -1,6 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py; version table
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py; version table
 -- public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -32,7 +32,10 @@ create table public.sources (
   allow_commercial boolean not null default false,
   allow_ai_ingest boolean not null default false,
   attribution_template text,
-  notes text
+  notes text,
+  -- 0004: license terms checked at a cited URL (config/sources.yaml `verified` / `verified_url`)
+  verified boolean not null default false,
+  verified_url text check (verified_url is null or verified_url ~ '^https://')
 );
 
 create table public.taxonomy_nodes (
@@ -69,6 +72,47 @@ create table public.pathway_tasks (
   last_verified date
 );
 create index pathway_tasks_stage_idx on public.pathway_tasks (stage_key, sort);
+
+-- 0004: long-form pathway guides (data/pathway/*.md): key 'overview' (stage_key null) + one per stage.
+create table public.pathway_guides (
+  key text primary key check (key ~ '^[a-z0-9_]{1,64}$'),
+  stage_key text unique references public.pathway_stages(key) on delete cascade,
+  sort smallint not null,
+  title text not null check (char_length(title) between 1 and 200),
+  body_md text not null,
+  source_id text not null references public.sources(id) default 'naadi-original-v1',
+  updated_at timestamptz not null default now()
+);
+
+-- 0004: study-plan templates (data/study_plan_step1_60d.csv = 'step1-60d'), one row per day. Per-student
+-- status/score/notes live in plan_items, never here.
+create table public.plan_templates (
+  id text primary key check (id ~ '^[a-z0-9-]{1,64}$'),
+  exam text not null check (exam in ('step1','step2ck','step3')),
+  title text not null,
+  days smallint not null check (days between 1 and 366),
+  source_id text not null references public.sources(id) default 'naadi-original-v1',
+  updated_at timestamptz not null default now()
+);
+
+create table public.plan_template_days (
+  template_id text not null references public.plan_templates(id) on delete cascade,
+  day smallint not null check (day >= 1),
+  example_date date,
+  weekday text check (weekday in ('Mon','Tue','Wed','Thu','Fri','Sat','Sun')),
+  week smallint check (week >= 1),
+  phase text,
+  chapter_ref text,
+  chapter_ids text[] not null default '{}',
+  topic text,
+  chapter_questions text,
+  qbank text,
+  self_assessment text,
+  admin_task text,
+  extra_resource text,
+  target_hours numeric(4,1) check (target_hours is null or target_hours between 0 and 24),
+  primary key (template_id, day)
+);
 
 -- ───────────── Users ─────────────
 create table public.profiles (
@@ -145,7 +189,9 @@ create table public.media_assets (
   review_status text not null default 'unreviewed' check (review_status in ('unreviewed','approved','rejected')),
   -- 0003: intrinsic size in px (an SVG's viewBox) so the reader reserves the space of a lazy figure
   width int check (width is null or width > 0),
-  height int check (height is null or height > 0)
+  height int check (height is null or height > 0),
+  -- 0004: sha256 of the stored (sanitised) object; the seed importer skips unchanged uploads
+  content_sha256 text check (content_sha256 is null or content_sha256 ~ '^[0-9a-f]{64}$')
 );
 
 create table public.section_media (
@@ -502,6 +548,33 @@ create trigger app_config_history_update before update on public.app_config
 create trigger app_config_history_delete before delete on public.app_config
   for each row execute function public.naadi_app_config_history();
 
+-- 0004: every app_config write notifies channel 'naadi_app_config' (payload = key) so each API process drops
+-- its 60 s cache entry at once.
+create function public.naadi_app_config_notify() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  perform pg_notify('naadi_app_config', coalesce(new.key, old.key));
+  return null;
+end
+$$;
+create trigger app_config_notify after insert or update or delete on public.app_config
+  for each row execute function public.naadi_app_config_notify();
+
+-- 0004: admin seed jobs (POST /api/admin/seed). At most one row is 'running'.
+create table public.seed_runs (
+  id uuid primary key default gen_random_uuid(),
+  started_by uuid references auth.users(id) on delete set null,
+  options jsonb not null default '{}' check (jsonb_typeof(options) = 'object'),
+  status text not null default 'running' check (status in ('running','succeeded','failed')),
+  started_at timestamptz not null default now(),
+  finished_at timestamptz,
+  report jsonb,
+  error text check (error is null or char_length(error) <= 2000),
+  check ((status = 'running') = (finished_at is null))
+);
+create unique index seed_runs_one_running_idx on public.seed_runs ((true)) where status = 'running';
+create index seed_runs_started_idx on public.seed_runs (started_at desc);
+
 -- ───────────── Free-tier budget guards (admin only) ─────────────
 create table public.search_cache (
   query_norm text primary key,
@@ -531,6 +604,7 @@ create index llm_usage_provider_created_idx on public.llm_usage (provider, creat
 -- ───────────── Function privileges ─────────────
 revoke all on function public.naadi_touch_updated_at() from public, anon, authenticated;
 revoke all on function public.naadi_app_config_history() from public, anon, authenticated;
+revoke all on function public.naadi_app_config_notify() from public, anon, authenticated;
 
 -- ───────────── updated_at triggers ─────────────
 create trigger profiles_touch_updated_at before update on public.profiles for each row execute function public.naadi_touch_updated_at();
@@ -542,6 +616,8 @@ create trigger uploads_touch_updated_at before update on public.uploads for each
 create trigger kb_sources_touch_updated_at before update on public.kb_sources for each row execute function public.naadi_touch_updated_at();
 create trigger ingest_items_touch_updated_at before update on public.ingest_items for each row execute function public.naadi_touch_updated_at();
 create trigger reading_positions_touch_updated_at before update on public.reading_positions for each row execute function public.naadi_touch_updated_at();
+create trigger pathway_guides_touch_updated_at before update on public.pathway_guides for each row execute function public.naadi_touch_updated_at();
+create trigger plan_templates_touch_updated_at before update on public.plan_templates for each row execute function public.naadi_touch_updated_at();
 
 -- ───────────── Grants and row-level security (0001) ─────────────
 -- Every table in public has RLS enabled (tests/db/test_rls_coverage.py enforces it).
@@ -585,6 +661,7 @@ create trigger reading_positions_touch_updated_at before update on public.readin
 --   taxonomy_nodes: true
 --   pathway_stages: true
 --   pathway_tasks: true
+--   pathway_guides, plan_templates, plan_template_days (0004): true (select only, to anon and authenticated)
 --   chapters: (owner_user_id is null and status = 'published') or owner_user_id = (select auth.uid())
 --   chapter_sections: exists (select 1 from public.chapters c where c.id = chapter_sections.chapter_id)
 --   media_assets: review_status = 'approved'
@@ -599,11 +676,12 @@ create trigger reading_positions_touch_updated_at before update on public.readin
 --   not readable by anon/authenticated at all (the API serves them after an attempt).
 --
 -- Server-side only (RLS enabled and forced, no client privileges, service role only):
---   app_config, app_config_history, chapter_section_revisions, search_cache, llm_usage, embeddings, naadi_alembic_version
+--   app_config, app_config_history, chapter_section_revisions, search_cache, llm_usage, embeddings, seed_runs (0004),
+--   naadi_alembic_version
 --   (embeddings: retrieval runs in the API; question and draft chunks would leak answers)
 --
--- Functions naadi_touch_updated_at() and naadi_app_config_history() pin search_path = '' and are not
--- executable by clients.
+-- Functions naadi_touch_updated_at(), naadi_app_config_history() and naadi_app_config_notify() pin
+-- search_path = '' and are not executable by clients.
 
 -- ───────────── Storage (0002) ─────────────
 -- Buckets (storage.buckets; schema owned by the Supabase Storage service). No catch-all MIME type

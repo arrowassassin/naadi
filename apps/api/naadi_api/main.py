@@ -13,6 +13,7 @@ from . import api
 from .auth import TokenVerifier, install_auth
 from .auth_routes import install_auth_routes
 from .config import load_models_config
+from .config_api.routes import install_app_config
 from .courses import install_courses_routes
 from .db import Database
 from .errors import install_error_handlers
@@ -20,6 +21,8 @@ from .health.checks import database_check, nvidia_check, openrouter_check, stora
 from .health.service import Check, HealthService
 from .logs import configure_logging, get_logger
 from .middleware import RequestContextMiddleware
+from .seed.jobs import drain_seed_tasks
+from .seed.jobs import router as seed_router
 from .settings import Settings, get_settings
 from .spa import install_spa
 
@@ -72,6 +75,7 @@ def create_app(
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         await db.open()
+        await app.state.app_config.start()
         log.info(
             "startup",
             environment=settings.app_env,
@@ -82,6 +86,8 @@ def create_app(
         try:
             yield
         finally:
+            await drain_seed_tasks(app)
+            await app.state.app_config.stop()
             await db.close()
             log.info("shutdown")
 
@@ -103,6 +109,8 @@ def create_app(
     app.include_router(api.router)
     install_auth_routes(app)
     install_courses_routes(app)
+    install_app_config(app, settings)
+    app.include_router(seed_router)
     install_spa(app, settings.static_dir)
     # Chapter JSON is large and repetitive; Starlette's GZip skips text/event-stream, so SSE is untouched.
     app.add_middleware(GZipMiddleware, minimum_size=1024)
