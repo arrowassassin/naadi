@@ -114,6 +114,7 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         "naadi_touch_updated_at",
         "naadi_app_config_history",
         "naadi_app_config_notify",
+        "naadi_mark_section_edited",
         "naadi_secure_aegra_tables",
     }
     for name, config, anon_exec, auth_exec in rows:

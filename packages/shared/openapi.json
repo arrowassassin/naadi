@@ -1210,29 +1210,6 @@
         "type": "object"
       },
       "JsonValue": {},
-      "MeFeatures": {
-        "properties": {
-          "assistant": {
-            "title": "Assistant",
-            "type": "boolean"
-          },
-          "ink_lab": {
-            "title": "Ink Lab",
-            "type": "boolean"
-          },
-          "search": {
-            "title": "Search",
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "assistant",
-          "search",
-          "ink_lab"
-        ],
-        "title": "MeFeatures",
-        "type": "object"
-      },
       "MeResponse": {
         "properties": {
           "email": {
@@ -1252,7 +1229,12 @@
             "type": "boolean"
           },
           "features": {
-            "$ref": "#/components/schemas/MeFeatures"
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Feature flags resolved for this user (admins see admin flags)",
+            "title": "Features",
+            "type": "object"
           },
           "is_admin": {
             "title": "Is Admin",
@@ -1667,24 +1649,6 @@
         "title": "NavEntry",
         "type": "object"
       },
-      "NavFeatures": {
-        "properties": {
-          "assistant": {
-            "title": "Assistant",
-            "type": "boolean"
-          },
-          "search": {
-            "title": "Search",
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "assistant",
-          "search"
-        ],
-        "title": "NavFeatures",
-        "type": "object"
-      },
       "NavItem": {
         "properties": {
           "feature": {
@@ -1724,7 +1688,12 @@
       "NavResponse": {
         "properties": {
           "features": {
-            "$ref": "#/components/schemas/NavFeatures"
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Feature flags resolved for this user",
+            "title": "Features",
+            "type": "object"
           },
           "items": {
             "description": "Enabled items only, in display order",
@@ -1735,9 +1704,10 @@
             "type": "array"
           },
           "source": {
+            "description": "file_fallback = app_config could not be read; config/app_config.yaml was used (logged)",
             "enum": [
               "app_config",
-              "server_default"
+              "file_fallback"
             ],
             "title": "Source",
             "type": "string"
@@ -1887,46 +1857,6 @@
         "title": "Profile",
         "type": "object"
       },
-      "PublicAppConfig": {
-        "description": "What every client needs before and after sign-in. Never models, budgets, search or storage settings.",
-        "properties": {
-          "exam_rules": {
-            "$ref": "#/components/schemas/ExamRules"
-          },
-          "features": {
-            "additionalProperties": {
-              "type": "boolean"
-            },
-            "description": "Feature flags resolved for a signed-out visitor",
-            "title": "Features",
-            "type": "object"
-          },
-          "nav": {
-            "description": "Navigation items whose feature flag is on, in display order",
-            "items": {
-              "$ref": "#/components/schemas/NavEntry"
-            },
-            "title": "Nav",
-            "type": "array"
-          },
-          "ui_copy": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "description": "Editable UI strings; {name} marks a placeholder",
-            "title": "Ui Copy",
-            "type": "object"
-          }
-        },
-        "required": [
-          "features",
-          "nav",
-          "exam_rules",
-          "ui_copy"
-        ],
-        "title": "PublicAppConfig",
-        "type": "object"
-      },
       "PublicConfig": {
         "description": "Everything the web app needs before sign-in. Nothing here is secret.",
         "properties": {
@@ -1950,12 +1880,28 @@
             "title": "Auth Configured",
             "type": "boolean"
           },
+          "exam_rules": {
+            "$ref": "#/components/schemas/ExamRules"
+          },
           "features": {
-            "$ref": "#/components/schemas/PublicFeatures"
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Feature flags (app_config.feature_flags) resolved for a signed-out visitor, e.g. ink_lab",
+            "title": "Features",
+            "type": "object"
           },
           "google_oauth_enabled": {
             "title": "Google Oauth Enabled",
             "type": "boolean"
+          },
+          "nav": {
+            "description": "Navigation items whose flag is on for a signed-out visitor",
+            "items": {
+              "$ref": "#/components/schemas/NavEntry"
+            },
+            "title": "Nav",
+            "type": "array"
           },
           "supabase_anon_key": {
             "anyOf": [
@@ -1979,6 +1925,14 @@
               }
             ],
             "title": "Supabase Url"
+          },
+          "ui_copy": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Editable UI strings (app_config.ui_copy); {name} = placeholder",
+            "title": "Ui Copy",
+            "type": "object"
           }
         },
         "required": [
@@ -1988,23 +1942,12 @@
           "google_oauth_enabled",
           "app_base_url",
           "app_version",
-          "features"
+          "features",
+          "nav",
+          "exam_rules",
+          "ui_copy"
         ],
         "title": "PublicConfig",
-        "type": "object"
-      },
-      "PublicFeatures": {
-        "properties": {
-          "ink_lab": {
-            "description": "The /system/ink-lab tool is available (not in production)",
-            "title": "Ink Lab",
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "ink_lab"
-        ],
-        "title": "PublicFeatures",
         "type": "object"
       },
       "QuestionOption": {
@@ -2789,6 +2732,16 @@
             },
             "description": "The value changed since you read it"
           },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request body is larger than 64 KB"
+          },
           "422": {
             "content": {
               "application/json": {
@@ -3292,27 +3245,6 @@
         "summary": "A chapter with its ordered sections (TipTap JSON), resolved media and embedded questions",
         "tags": [
           "courses"
-        ]
-      }
-    },
-    "/api/config/public": {
-      "get": {
-        "operationId": "getPublicAppConfig",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PublicAppConfig"
-                }
-              }
-            },
-            "description": "Successful Response"
-          }
-        },
-        "summary": "Runtime client config (no auth): feature flags, navigation, exam rules, UI copy",
-        "tags": [
-          "config"
         ]
       }
     },

@@ -695,24 +695,6 @@ export type HealthResponse = {
 export type JsonValue = unknown;
 
 /**
- * MeFeatures
- */
-export type MeFeatures = {
-  /**
-   * Assistant
-   */
-  assistant: boolean;
-  /**
-   * Ink Lab
-   */
-  ink_lab: boolean;
-  /**
-   * Search
-   */
-  search: boolean;
-};
-
-/**
  * MeResponse
  */
 export type MeResponse = {
@@ -726,7 +708,14 @@ export type MeResponse = {
    * Email Verified
    */
   email_verified: boolean;
-  features: MeFeatures;
+  /**
+   * Features
+   *
+   * Feature flags resolved for this user (admins see admin flags)
+   */
+  features: {
+    [key: string]: boolean;
+  };
   /**
    * Is Admin
    */
@@ -938,20 +927,6 @@ export type NavEntry = {
 };
 
 /**
- * NavFeatures
- */
-export type NavFeatures = {
-  /**
-   * Assistant
-   */
-  assistant: boolean;
-  /**
-   * Search
-   */
-  search: boolean;
-};
-
-/**
  * NavItem
  */
 export type NavItem = {
@@ -987,7 +962,14 @@ export type NavItem = {
  * NavResponse
  */
 export type NavResponse = {
-  features: NavFeatures;
+  /**
+   * Features
+   *
+   * Feature flags resolved for this user
+   */
+  features: {
+    [key: string]: boolean;
+  };
   /**
    * Items
    *
@@ -996,8 +978,10 @@ export type NavResponse = {
   items: Array<NavItem>;
   /**
    * Source
+   *
+   * file_fallback = app_config could not be read; config/app_config.yaml was used (logged)
    */
-  source: "app_config" | "server_default";
+  source: "app_config" | "file_fallback";
 };
 
 /**
@@ -1081,37 +1065,6 @@ export type Profile = {
 };
 
 /**
- * PublicAppConfig
- *
- * What every client needs before and after sign-in. Never models, budgets, search or storage settings.
- */
-export type PublicAppConfig = {
-  exam_rules: ExamRules;
-  /**
-   * Features
-   *
-   * Feature flags resolved for a signed-out visitor
-   */
-  features: {
-    [key: string]: boolean;
-  };
-  /**
-   * Nav
-   *
-   * Navigation items whose feature flag is on, in display order
-   */
-  nav: Array<NavEntry>;
-  /**
-   * Ui Copy
-   *
-   * Editable UI strings; {name} marks a placeholder
-   */
-  ui_copy: {
-    [key: string]: string;
-  };
-};
-
-/**
  * PublicConfig
  *
  * Everything the web app needs before sign-in. Nothing here is secret.
@@ -1131,11 +1084,25 @@ export type PublicConfig = {
    * Auth Configured
    */
   auth_configured: boolean;
-  features: PublicFeatures;
+  exam_rules: ExamRules;
+  /**
+   * Features
+   *
+   * Feature flags (app_config.feature_flags) resolved for a signed-out visitor, e.g. ink_lab
+   */
+  features: {
+    [key: string]: boolean;
+  };
   /**
    * Google Oauth Enabled
    */
   google_oauth_enabled: boolean;
+  /**
+   * Nav
+   *
+   * Navigation items whose flag is on for a signed-out visitor
+   */
+  nav: Array<NavEntry>;
   /**
    * Supabase Anon Key
    *
@@ -1146,18 +1113,14 @@ export type PublicConfig = {
    * Supabase Url
    */
   supabase_url: string | null;
-};
-
-/**
- * PublicFeatures
- */
-export type PublicFeatures = {
   /**
-   * Ink Lab
+   * Ui Copy
    *
-   * The /system/ink-lab tool is available (not in production)
+   * Editable UI strings (app_config.ui_copy); {name} = placeholder
    */
-  ink_lab: boolean;
+  ui_copy: {
+    [key: string]: string;
+  };
 };
 
 /**
@@ -1615,6 +1578,10 @@ export type PutAppConfigErrors = {
    */
   409: ErrorResponse;
   /**
+   * The request body is larger than 64 KB
+   */
+  413: ErrorResponse;
+  /**
    * The value is not valid for this key
    */
   422: ErrorResponse;
@@ -1898,22 +1865,6 @@ export type GetChapterResponses = {
 };
 
 export type GetChapterResponse = GetChapterResponses[keyof GetChapterResponses];
-
-export type GetPublicAppConfigData = {
-  body?: never;
-  path?: never;
-  query?: never;
-  url: "/api/config/public";
-};
-
-export type GetPublicAppConfigResponses = {
-  /**
-   * Successful Response
-   */
-  200: PublicAppConfig;
-};
-
-export type GetPublicAppConfigResponse = GetPublicAppConfigResponses[keyof GetPublicAppConfigResponses];
 
 export type GetCoursesData = {
   body?: never;

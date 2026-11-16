@@ -1,4 +1,5 @@
-"""HTTP for `app_config`: the public client config and the admin editor (with history)."""
+"""HTTP for `app_config`: the admin editor (with history). Clients get flags, nav, exam rules and UI copy from
+GET /api/public-config (auth_routes.py), which reads the same AppConfigService."""
 
 from __future__ import annotations
 
@@ -7,32 +8,22 @@ import uuid
 from typing import Annotated, Any
 
 import psycopg
-from fastapi import APIRouter, HTTPException, Path, Query, Request
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter, Depends, HTTPException, Path, Query, Request
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, ValidationError
 
 from ..auth import AdminUser
 from ..errors import ErrorResponse, FieldError, error_response
 from ..logs import get_logger
 from ..settings import Settings
-from .schemas import KEY_SPECS, ExamRules, NavEntry, UnknownConfigKey
+from .schemas import KEY_SPECS, UnknownConfigKey
 from .service import AppConfigService, ConfigRow, CrossKeyInvalid, HistoryRow, StaleWrite
 
 log = get_logger("naadi.app_config.http")
 
-PUBLIC_CACHE = "public, max-age=60"
 KEY_PATTERN = r"^[a-z][a-z0-9_.]{1,47}$"
+MAX_PUT_BYTES = 64 * 1024
 
 router = APIRouter(prefix="/api")
-
-
-class PublicAppConfig(BaseModel):
-    """What every client needs before and after sign-in. Never models, budgets, search or storage settings."""
-
-    features: dict[str, bool] = Field(description="Feature flags resolved for a signed-out visitor")
-    nav: list[NavEntry] = Field(description="Navigation items whose feature flag is on, in display order")
-    exam_rules: ExamRules
-    ui_copy: dict[str, str] = Field(description="Editable UI strings; {name} marks a placeholder")
 
 
 class ConfigKeySummary(BaseModel):
@@ -105,6 +96,15 @@ def _hit_admin_limit(request: Request, admin_id: uuid.UUID) -> None:
         limiters["admin"].hit(str(admin_id))
 
 
+async def _body_within_limit(request: Request) -> None:
+    """Refuse oversized admin writes before parsing them (413); the declared length is checked first."""
+    declared = request.headers.get("content-length")
+    if declared is not None and declared.isdigit() and int(declared) > MAX_PUT_BYTES:
+        raise HTTPException(413, f"The value is larger than {MAX_PUT_BYTES // 1024} KB.")
+    if len(await request.body()) > MAX_PUT_BYTES:
+        raise HTTPException(413, f"The value is larger than {MAX_PUT_BYTES // 1024} KB.")
+
+
 def _known(key: str) -> None:
     if key not in KEY_SPECS:
         raise HTTPException(404, f"Unknown config key {key!r}.")
@@ -125,25 +125,6 @@ def _entry(row: ConfigRow) -> ConfigEntry:
 def _db_down(exc: Exception) -> HTTPException:
     log.warning("app_config_db_unavailable", error=type(exc).__name__)
     return HTTPException(503, "The database cannot be reached right now. Try again in a moment.")
-
-
-@router.get(
-    "/config/public",
-    operation_id="getPublicAppConfig",
-    summary="Runtime client config (no auth): feature flags, navigation, exam rules, UI copy",
-    response_model=PublicAppConfig,
-    tags=["config"],
-)
-async def public_app_config(request: Request) -> JSONResponse:
-    svc = _service(request)
-    settings: Settings = request.app.state.settings
-    body = PublicAppConfig(
-        features=await svc.resolved_features(is_admin=False, app_env=settings.app_env),
-        nav=[NavEntry.model_validate(i) for i in await svc.nav_for(is_admin=False, app_env=settings.app_env)],
-        exam_rules=ExamRules.model_validate(await svc.get("exam_rules")),
-        ui_copy=await svc.get("ui_copy"),
-    )
-    return JSONResponse(body.model_dump(mode="json"), headers={"cache-control": PUBLIC_CACHE})
 
 
 @router.get(
@@ -196,9 +177,11 @@ async def get_config(request: Request, admin: AdminUser, key: ConfigKey) -> Conf
     responses={
         **_ADMIN_ERRORS,
         409: {"model": ErrorResponse, "description": "The value changed since you read it"},
+        413: {"model": ErrorResponse, "description": "The request body is larger than 64 KB"},
         422: {"model": ErrorResponse, "description": "The value is not valid for this key"},
     },
     tags=["admin"],
+    dependencies=[Depends(_body_within_limit)],
 )
 async def put_config(request: Request, admin: AdminUser, key: ConfigKey, body: ConfigUpdate) -> Any:
     _hit_admin_limit(request, admin.user_id)

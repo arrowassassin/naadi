@@ -9,18 +9,20 @@ from __future__ import annotations
 import json
 from collections.abc import Iterator
 from dataclasses import replace
+from pathlib import Path
 
 import psycopg
 import pytest
 from psycopg.types.json import Jsonb
 
 from naadi_api.seed.data import SeedBundle
-from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedLocked, run_seed
+from naadi_api.seed.importer import FIGURE_FOLDER, LOCK_KEY, SeedFailed, SeedLocked, run_seed
 from naadi_api.seed.report import SeedReport
 from naadi_api.seed.storage import list_folder
+from naadi_api.settings import get_settings
 
 from .rls import DB_MARKS, as_anon, as_user, create_auth_user, require_local
-from .seed_helpers import BUCKET, bundle, options, remove_seed, storage
+from .seed_helpers import BUCKET, CONFIG, DATA, bundle, options, remove_seed, storage
 
 pytestmark = DB_MARKS
 
@@ -197,7 +199,10 @@ def test_admin_edits_survive_a_reseed_and_force_overwrites(first_run: object, ur
         admin = create_auth_user(c)
         edited = {"agent.quota_reset": "Quota back at {time}", "content.report_issue": "Report a problem"}
         c.execute(
-            "update public.app_config set value = %s, updated_by = %s where key = 'ui_copy'", (Jsonb(edited), admin)
+            # what the admin PUT writes; the mark, not updated_by, is what protects the row (the admin's account
+            # may be deleted later)
+            "update public.app_config set value = %s, updated_by = %s, admin_edited_at = now() where key = 'ui_copy'",
+            (Jsonb(edited), admin),
         )
         c.execute(
             "insert into public.chapter_section_revisions (section_id, body, body_html, author_user_id, origin)"
@@ -221,7 +226,15 @@ def test_admin_edits_survive_a_reseed_and_force_overwrites(first_run: object, ur
         assert forced.tables["app_config"].updated == 1
         assert forced.tables["chapter_sections"].updated == 1
         assert forced.tables["chapter_section_revisions"].inserted == 1
-        assert _count(url, "select count(*) from public.app_config where key = 'ui_copy' and updated_by is null") == 1
+        assert (
+            _count(
+                url,
+                "select count(*) from public.app_config where key = 'ui_copy' and updated_by is null"
+                " and admin_edited_at is null",
+            )
+            == 1
+        )
+        assert _count(url, "select count(*) from public.chapter_sections where admin_edited_at is not null") == 0
         # the replaced (admin) body is kept as a 'seed' revision
         assert (
             _count(
@@ -305,6 +318,74 @@ def test_live_check_seed_checks_pass_and_catch_a_missing_figure(first_run: objec
         c.execute("delete from storage.objects where bucket_id = 'content-public' and name = 'figures/ch01-fig01.svg'")
         failing = [k for k, ok in run(c).items() if not ok]
         assert failing == ["seed: every figure node resolves to an approved media row with a Storage object"]
+
+
+def test_admin_mark_survives_deleting_the_admin(first_run: object, url: str, b: SeedBundle) -> None:
+    with psycopg.connect(url, autocommit=True) as c:
+        admin = create_auth_user(c)
+        c.execute(
+            'update public.app_config set value = value || \'{"agent.offline": "Offline."}\','
+            " updated_by = %s, admin_edited_at = now() where key = 'ui_copy'",
+            (admin,),
+        )
+        c.execute("delete from auth.users where id = %s", (admin,))  # updated_by -> null
+    try:
+        r = run_seed(options(url, only=("app_config",)), bundle=b)
+        assert r.tables["app_config"].kept == 1
+        assert _count(url, "select count(*) from public.app_config where value->>'agent.offline' = 'Offline.'") == 1
+    finally:
+        run_seed(options(url, only=("app_config",), force=True), bundle=b)
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.app_config_history where key = 'ui_copy'")
+
+
+def test_a_count_mismatch_fails_the_seed_and_the_cli(
+    first_run: object, url: str, b: SeedBundle, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from naadi_api.seed import cli, importer
+
+    real = importer.expected_counts
+
+    def off_by_one(bundle: SeedBundle) -> dict[str, int]:
+        out = real(bundle)
+        out["chapters"] += 1
+        return out
+
+    monkeypatch.setattr(importer, "expected_counts", off_by_one)
+    with pytest.raises(SeedFailed) as e:
+        run_seed(options(url, dry_run=True, only=("chapters", "sources")), bundle=b)
+    assert not e.value.report.ok
+    assert [c.name for c in e.value.report.checks if not c.ok] == ["count chapters"]
+
+    monkeypatch.setenv("DATABASE_URL", url)
+    for name in ("SUPABASE_URL", "VITE_SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "NAADI_STORAGE_URL"):
+        monkeypatch.delenv(name, raising=False)
+    get_settings.cache_clear()
+    try:
+        code = cli.main(["--dry-run", "--only", "sources,chapters", "--data", str(DATA), "--config", str(CONFIG)])
+    finally:
+        get_settings.cache_clear()
+    assert code == 1
+    assert "[FAIL] count chapters" in capsys.readouterr().out
+
+
+def test_license_gate_rejections_are_reported_not_fatal(url: str, b: SeedBundle, tmp_path: Path) -> None:
+    import shutil
+
+    config = tmp_path / "config"
+    shutil.copytree(CONFIG, config)
+    sources = config / "sources.yaml"
+    sources.write_text(sources.read_text() + "\n  - id: no-license\n    name: Missing license fields\n")
+    from naadi_api.seed.data import load_bundle
+
+    gated = load_bundle(DATA, config)
+    assert gated.sources.rejected == [
+        ("no-license", "missing license fields: license, allow_copy, allow_modify, allow_commercial, allow_ai_ingest")
+    ]
+    r = run_seed(replace(options(url, dry_run=True, only=("sources",)), config_dir=config), bundle=gated)
+    assert r.ok
+    assert r.license_gate["rejected"][0]["id"] == "no-license"
+    assert "1 rejected" in r.summary()
 
 
 def test_report_round_trips_as_json(first_run: tuple[SeedReport, SeedReport]) -> None:

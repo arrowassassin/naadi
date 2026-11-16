@@ -20,6 +20,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from .auth import AdminUser, AuthError, AuthUnavailable, CurrentUser, get_account_user, get_current_user
 from .auth_db import user_tx
 from .auth_limits import RateLimiter
+from .config_api.schemas import ExamRules, NavEntry
+from .config_api.service import AppConfigService
 from .db import Database, DatabaseNotConfigured
 from .errors import ErrorResponse
 from .logs import get_logger
@@ -29,7 +31,8 @@ log = get_logger("naadi.me")
 
 MAX_SETTINGS_PATCH_BYTES = 16 * 1024
 MAX_SETTINGS_TOTAL_BYTES = 64 * 1024
-PUBLIC_CONFIG_CACHE = "public, max-age=300"
+# Short: feature flags, navigation and UI copy are edited at runtime (app_config) and must show up quickly.
+PUBLIC_CONFIG_CACHE = "public, max-age=60"
 
 router = APIRouter(prefix="/api")
 
@@ -43,10 +46,6 @@ _AUTH_ERRORS: dict[int | str, dict[str, Any]] = {
 # ── Models ──
 
 
-class PublicFeatures(BaseModel):
-    ink_lab: bool = Field(description="The /system/ink-lab tool is available (not in production)")
-
-
 class PublicConfig(BaseModel):
     """Everything the web app needs before sign-in. Nothing here is secret."""
 
@@ -56,7 +55,12 @@ class PublicConfig(BaseModel):
     google_oauth_enabled: bool
     app_base_url: str | None = Field(description="Canonical origin used for auth redirects")
     app_version: str
-    features: PublicFeatures
+    features: dict[str, bool] = Field(
+        description="Feature flags (app_config.feature_flags) resolved for a signed-out visitor, e.g. ink_lab"
+    )
+    nav: list[NavEntry] = Field(description="Navigation items whose flag is on for a signed-out visitor")
+    exam_rules: ExamRules
+    ui_copy: dict[str, str] = Field(description="Editable UI strings (app_config.ui_copy); {name} = placeholder")
 
 
 ExamTarget = Literal["step1", "step2ck", "step3"]
@@ -76,18 +80,12 @@ class Profile(BaseModel):
     updated_at: dt.datetime
 
 
-class MeFeatures(BaseModel):
-    assistant: bool
-    search: bool
-    ink_lab: bool
-
-
 class MeResponse(BaseModel):
     profile: Profile
     email: str | None = Field(description="The signed-in user's own email, from the verified token")
     email_verified: bool
     is_admin: bool
-    features: MeFeatures
+    features: dict[str, bool] = Field(description="Feature flags resolved for this user (admins see admin flags)")
 
 
 def _valid_timezone(v: str) -> str:
@@ -143,15 +141,12 @@ class NavItem(BaseModel):
     feature: str = Field(description="Feature flag that must be on for the item to be shown")
 
 
-class NavFeatures(BaseModel):
-    assistant: bool
-    search: bool
-
-
 class NavResponse(BaseModel):
     items: list[NavItem] = Field(description="Enabled items only, in display order")
-    features: NavFeatures
-    source: Literal["app_config", "server_default"]
+    features: dict[str, bool] = Field(description="Feature flags resolved for this user")
+    source: Literal["app_config", "file_fallback"] = Field(
+        description="file_fallback = app_config could not be read; config/app_config.yaml was used (logged)"
+    )
 
 
 class AdminOverview(BaseModel):
@@ -159,30 +154,6 @@ class AdminOverview(BaseModel):
     version: str
     admins_configured: int
     profiles: int
-
-
-# ── Server defaults (until app_config.ui.nav is seeded by segment 05) ──
-
-# Every planned top-level destination with the flag that gates it. Only enabled ones are returned, so the
-# shell never shows a link to a screen that does not exist yet.
-DEFAULT_NAV: tuple[NavItem, ...] = (
-    NavItem(id="today", label="Today", path="/", icon="sun", feature="today"),
-    NavItem(id="learn", label="Learn", path="/learn", icon="book-open", feature="courses"),
-    NavItem(id="practice", label="Practice", path="/practice", icon="list-checks", feature="qbank"),
-    NavItem(id="plan", label="Plan", path="/plan", icon="calendar", feature="planner"),
-    NavItem(id="notes", label="Notes", path="/notes", icon="notebook-pen", feature="notes"),
-    NavItem(id="pathway", label="Pathway", path="/pathway", icon="route", feature="pathway"),
-)
-DEFAULT_FEATURES: dict[str, bool] = {
-    "today": True,
-    "courses": True,  # /learn (segment 06)
-    "qbank": False,
-    "planner": False,
-    "notes": False,
-    "pathway": False,
-    "assistant": False,
-    "search": False,
-}
 
 
 # ── Dependencies ──
@@ -220,8 +191,9 @@ def default_rate_limiters() -> dict[str, RateLimiter]:
     }
 
 
-def _ink_lab(settings: Settings) -> bool:
-    return settings.app_env != "prod"
+def _config(request: Request) -> AppConfigService:
+    c: AppConfigService = request.app.state.app_config
+    return c
 
 
 # ── Routes ──
@@ -236,6 +208,7 @@ def _ink_lab(settings: Settings) -> bool:
 )
 async def public_config(request: Request) -> JSONResponse:
     s = _settings(request)
+    cfg = _config(request)
     body = PublicConfig(
         auth_configured=bool(s.supabase_url and s.supabase_anon_key),
         supabase_url=s.supabase_url,
@@ -243,7 +216,10 @@ async def public_config(request: Request) -> JSONResponse:
         google_oauth_enabled=bool(s.google_oauth_configured and s.supabase_url),
         app_base_url=s.app_base_url.rstrip("/") if s.app_base_url else None,
         app_version=s.app_version,
-        features=PublicFeatures(ink_lab=_ink_lab(s)),
+        features=await cfg.resolved_features(is_admin=False, app_env=s.app_env),
+        nav=[NavEntry.model_validate(i) for i in await cfg.nav_for(is_admin=False, app_env=s.app_env)],
+        exam_rules=ExamRules.model_validate(await cfg.get("exam_rules")),
+        ui_copy=await cfg.get("ui_copy"),
     )
     return JSONResponse(body.model_dump(mode="json"), headers={"cache-control": PUBLIC_CONFIG_CACHE})
 
@@ -278,17 +254,14 @@ async def _ensure_profile(conn: psycopg.AsyncConnection[Any]) -> dict[str, Any]:
     return dict(row)
 
 
-def _me(user: CurrentUser, row: dict[str, Any], s: Settings) -> MeResponse:
+async def _me(request: Request, user: CurrentUser, row: dict[str, Any]) -> MeResponse:
+    features = await _config(request).resolved_features(is_admin=user.is_admin, app_env=_settings(request).app_env)
     return MeResponse(
         profile=Profile.model_validate(row),
         email=user.email,
         email_verified=user.email_verified,
         is_admin=user.is_admin,
-        features=MeFeatures(
-            assistant=DEFAULT_FEATURES["assistant"],
-            search=DEFAULT_FEATURES["search"],
-            ink_lab=user.is_admin or _ink_lab(s),
-        ),
+        features=features,
     )
 
 
@@ -317,7 +290,7 @@ async def _as_user(db: Database, user: CurrentUser, fn: Any) -> Any:
 )
 async def get_me(request: Request, user: Annotated[CurrentUser, user_limited("me_read")]) -> MeResponse:
     row = await _as_user(_db(request), user, _ensure_profile)
-    return _me(user, row, _settings(request))
+    return await _me(request, user, row)
 
 
 @router.patch(
@@ -374,7 +347,7 @@ async def update_me(
     except psycopg.errors.CheckViolation as exc:
         raise _validation("body", "One of the values is out of range.") from exc
     log.info("profile_updated", fields=sorted(sent))
-    return _me(user, row, _settings(request))
+    return await _me(request, user, row)
 
 
 class _FieldInvalid(Exception):
@@ -408,12 +381,14 @@ async def _field_invalid_handler(_: Request, exc: Exception) -> JSONResponse:
     responses=_AUTH_ERRORS,
     tags=["auth"],
 )
-async def get_nav(user: Annotated[CurrentUser, user_limited("me_read", account=False)]) -> NavResponse:
-    items = [i for i in DEFAULT_NAV if DEFAULT_FEATURES.get(i.feature, False)]
+async def get_nav(request: Request, user: Annotated[CurrentUser, user_limited("me_read")]) -> NavResponse:
+    cfg = _config(request)
+    env = _settings(request).app_env
+    rows = (await cfg.row("feature_flags"), await cfg.row("ui.nav"))
     return NavResponse(
-        items=items,
-        features=NavFeatures(assistant=DEFAULT_FEATURES["assistant"], search=DEFAULT_FEATURES["search"]),
-        source="server_default",
+        items=[NavItem.model_validate(i) for i in await cfg.nav_for(is_admin=user.is_admin, app_env=env)],
+        features=await cfg.resolved_features(is_admin=user.is_admin, app_env=env),
+        source="app_config" if all(r.source == "db" for r in rows) else "file_fallback",
     )
 
 

@@ -31,13 +31,10 @@ def storage() -> StorageTarget:
 
 
 def options(url: str, **over: object) -> SeedOptions:
-    base: dict[str, object] = {
-        "database_url": url,
-        "data_dir": DATA,
-        "config_dir": CONFIG,
-        "storage": storage(),
-    }
+    base: dict[str, object] = {"database_url": url, "data_dir": DATA, "config_dir": CONFIG}
     base.update(over)
+    if "storage" not in over:
+        base["storage"] = storage()
     return SeedOptions(**base)  # type: ignore[arg-type]
 
 

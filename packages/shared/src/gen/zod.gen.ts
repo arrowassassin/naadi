@@ -192,15 +192,6 @@ export const zConfigUpdate = z.object({
 });
 
 /**
- * MeFeatures
- */
-export const zMeFeatures = z.object({
-  assistant: z.boolean(),
-  ink_lab: z.boolean(),
-  search: z.boolean(),
-});
-
-/**
  * MeUpdate
  *
  * Only the fields sent are changed. `settings` is merged one level deep; a `null` value removes a key.
@@ -306,14 +297,6 @@ export const zNavEntry = z.object({
 });
 
 /**
- * NavFeatures
- */
-export const zNavFeatures = z.object({
-  assistant: z.boolean(),
-  search: z.boolean(),
-});
-
-/**
  * NavItem
  */
 export const zNavItem = z.object({
@@ -328,9 +311,9 @@ export const zNavItem = z.object({
  * NavResponse
  */
 export const zNavResponse = z.object({
-  features: zNavFeatures,
+  features: z.record(z.string(), z.boolean()),
   items: z.array(zNavItem),
-  source: z.enum(["app_config", "server_default"]),
+  source: z.enum(["app_config", "file_fallback"]),
 });
 
 /**
@@ -382,28 +365,9 @@ export const zProfile = z.object({
 export const zMeResponse = z.object({
   email: z.string().nullable(),
   email_verified: z.boolean(),
-  features: zMeFeatures,
+  features: z.record(z.string(), z.boolean()),
   is_admin: z.boolean(),
   profile: zProfile,
-});
-
-/**
- * PublicAppConfig
- *
- * What every client needs before and after sign-in. Never models, budgets, search or storage settings.
- */
-export const zPublicAppConfig = z.object({
-  exam_rules: zExamRules,
-  features: z.record(z.string(), z.boolean()),
-  nav: z.array(zNavEntry),
-  ui_copy: z.record(z.string(), z.string()),
-});
-
-/**
- * PublicFeatures
- */
-export const zPublicFeatures = z.object({
-  ink_lab: z.boolean(),
 });
 
 /**
@@ -415,10 +379,13 @@ export const zPublicConfig = z.object({
   app_base_url: z.string().nullable(),
   app_version: z.string(),
   auth_configured: z.boolean(),
-  features: zPublicFeatures,
+  exam_rules: zExamRules,
+  features: z.record(z.string(), z.boolean()),
   google_oauth_enabled: z.boolean(),
+  nav: z.array(zNavEntry),
   supabase_anon_key: z.string().nullable(),
   supabase_url: z.string().nullable(),
+  ui_copy: z.record(z.string(), z.string()),
 });
 
 /**
@@ -718,11 +685,6 @@ export const zGetChapterPath = z.object({
  * Successful Response
  */
 export const zGetChapterResponse = zChapterDetail;
-
-/**
- * Successful Response
- */
-export const zGetPublicAppConfigResponse = zPublicAppConfig;
 
 export const zGetCoursesQuery = z.object({
   exam: z

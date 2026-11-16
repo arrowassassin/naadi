@@ -2,7 +2,7 @@
 
     uv run python scripts/seed.py --data ../../data --config ../../config [--dry-run]
         [--only sources,taxonomy,figures,chapters,questions,pathway,plan,app_config]
-        [--force] [--report out.json] [--storage-url http://localhost:54335]
+        [--force] [--report out.json] [--storage-url http://localhost:54335] [--allow-split-target]
 
 Database: DATABASE_URL. Storage: SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (a Supabase project) or
 `--storage-url` / NAADI_STORAGE_URL (a bare storage-api, local stack and CI) with the service key in
@@ -51,6 +51,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--force", action="store_true", help="also overwrite admin-edited sections and app_config keys")
     p.add_argument("--report", help="write the JSON report to this file")
     p.add_argument(
+        "--allow-split-target",
+        action="store_true",
+        help="allow a local database with a remote Storage (or the reverse); refused by default",
+    )
+    p.add_argument(
         "--storage-url",
         default=os.environ.get("NAADI_STORAGE_URL") or None,
         help="a bare storage-api URL (local stack / CI) instead of SUPABASE_URL",
@@ -72,6 +77,7 @@ def main(argv: list[str] | None = None) -> int:
         dry_run=args.dry_run,
         only=only,
         force=args.force,
+        allow_split_target=args.allow_split_target,
     )
     try:
         report = run_seed(opts)

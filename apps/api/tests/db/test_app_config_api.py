@@ -66,7 +66,12 @@ def client(url: str, key: SigningKey, static_dir: Path, monkeypatch: pytest.Monk
         database_url=SecretStr(url),
         admin_emails=ADMIN_EMAIL,
         app_env="prod",
-        supabase_service_role_key=None,  # never send the environment's real key to the test issuer's host
+        # every secret explicitly absent: these tests only ever talk to the local database
+        supabase_service_role_key=None,
+        supabase_jwt_secret=None,
+        openrouter_api_key=None,
+        nvidia_api_key=None,
+        tavily_api_key=None,
     )
     app = create_app(
         s,
@@ -84,11 +89,12 @@ def _h(key: SigningKey, user: uuid.UUID, email: str) -> dict[str, str]:
 
 
 def test_public_config(client: TestClient) -> None:
-    r = client.get("/api/config/public")
+    assert client.get("/api/config/public").status_code in (404, 405)  # one public config endpoint only
+    r = client.get("/api/public-config")
     assert r.status_code == 200, r.text
     assert r.headers["cache-control"] == "public, max-age=60"
     body = r.json()
-    assert set(body) == {"features", "nav", "exam_rules", "ui_copy"}
+    assert {"features", "nav", "exam_rules", "ui_copy", "supabase_url"} <= set(body)
     assert body["features"]["today"] is True
     assert body["features"]["assistant"] is False
     assert body["features"]["ink_lab"] is False  # admins only in prod
@@ -98,6 +104,69 @@ def test_public_config(client: TestClient) -> None:
     # nothing from the server-only keys (model routing, budgets, search rules, buckets, generation)
     for server_only in ("nemotron", "daily_request_cap", "monthly_credit_guard", "content-private", "space_id"):
         assert server_only not in r.text
+
+
+def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
+    client: TestClient, key: SigningKey, users: dict[str, uuid.UUID], url: str
+) -> None:
+    admin = _h(key, users["admin"], ADMIN_EMAIL)
+    student = _h(key, users["student"], "student@example.com")
+    me = client.get("/api/me", headers=student).json()
+    assert me["features"]["assistant"] is False
+    assert me["features"]["ink_lab"] is False  # prod: admins only
+    assert client.get("/api/me", headers=admin).json()["features"]["ink_lab"] is True
+    nav = client.get("/api/nav", headers=student).json()
+    assert nav["source"] == "app_config"
+    assert "notes" not in [i["id"] for i in nav["items"]]
+
+    flags = client.get("/api/admin/config/feature_flags", headers=admin).json()
+    on = {**flags["value"], "notes": {"enabled": True}}
+    r = client.put(
+        "/api/admin/config/feature_flags", headers=admin, json={"value": on, "expected_updated_at": flags["updated_at"]}
+    )
+    assert r.status_code == 200, r.text
+    nav_cfg = client.get("/api/admin/config/ui.nav", headers=admin).json()
+    items = [
+        *nav_cfg["value"],
+        {"id": "notes", "label": "Notes", "path": "/notes", "icon": "notebook-pen", "feature": "notes"},
+    ]
+    r = client.put(
+        "/api/admin/config/ui.nav", headers=admin, json={"value": items, "expected_updated_at": nav_cfg["updated_at"]}
+    )
+    assert r.status_code == 200, r.text
+    copy = client.get("/api/admin/config/ui_copy", headers=admin).json()
+    r = client.put(
+        "/api/admin/config/ui_copy",
+        headers=admin,
+        json={
+            "value": {**copy["value"], "signin.tagline": "Study in one place"},
+            "expected_updated_at": copy["updated_at"],
+        },
+    )
+    assert r.status_code == 200, r.text
+    try:
+        assert "notes" in [i["id"] for i in client.get("/api/nav", headers=student).json()["items"]]
+        assert client.get("/api/me", headers=student).json()["features"]["notes"] is True
+        public = client.get("/api/public-config").json()
+        assert public["features"]["notes"] is True
+        assert "notes" in [i["id"] for i in public["nav"]]
+        assert public["ui_copy"]["signin.tagline"] == "Study in one place"
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.app_config where key = any(%s)", (["feature_flags", "ui.nav", "ui_copy"],))
+            c.execute(
+                "delete from public.app_config_history where key = any(%s)", (["feature_flags", "ui.nav", "ui_copy"],)
+            )
+        run_seed(options(url, only=("app_config",), storage=None), bundle=bundle())
+        client.app.state.app_config.invalidate()  # type: ignore[attr-defined]
+
+
+def test_put_body_is_capped(client: TestClient, key: SigningKey, users: dict[str, uuid.UUID]) -> None:
+    admin = _h(key, users["admin"], ADMIN_EMAIL)
+    big = {f"x.k{i}": "v" * 400 for i in range(200)}  # ~90 KB
+    r = client.put("/api/admin/config/ui_copy", headers=admin, json={"value": big, "expected_updated_at": None})
+    assert r.status_code == 413
+    assert r.json()["error"]["code"] == "payload_too_large"
 
 
 def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: dict[str, uuid.UUID]) -> None:
@@ -128,7 +197,7 @@ def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: 
     assert saved["updated_by"] == str(users["admin"])
     assert saved["value"]["agent.offline"].startswith("No connection")
     # this process sees the change at once (cache invalidated on write)
-    assert client.get("/api/config/public").json()["ui_copy"]["agent.offline"].startswith("No connection")
+    assert client.get("/api/public-config").json()["ui_copy"]["agent.offline"].startswith("No connection")
 
     stale = client.put(
         "/api/admin/config/ui_copy", headers=admin, json={"value": new, "expected_updated_at": entry["updated_at"]}

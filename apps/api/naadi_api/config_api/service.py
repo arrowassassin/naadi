@@ -211,8 +211,10 @@ class AppConfigService:
             if current_at != expected_updated_at:
                 raise StaleWrite(current_at)
             await cur.execute(
-                "insert into public.app_config (key, value, updated_by) values (%s, %s::jsonb, %s)"
-                " on conflict (key) do update set value = excluded.value, updated_by = excluded.updated_by"
+                "insert into public.app_config (key, value, updated_by, admin_edited_at)"
+                " values (%s, %s::jsonb, %s, now())"
+                " on conflict (key) do update set value = excluded.value, updated_by = excluded.updated_by,"
+                " admin_edited_at = excluded.admin_edited_at"
                 " returning value, updated_at, updated_by",
                 (key, json.dumps(normalized, separators=(",", ":")), user_id),
             )
