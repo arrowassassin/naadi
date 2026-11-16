@@ -1,0 +1,14 @@
+{
+ "id": "20261116T074153-seg02-db-e4817a",
+ "ts": "2026-11-16T07:41:53.769805Z",
+ "from": "seg02-db",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S02",
+ "body": "",
+ "re": "20261116T074026-lead-c98c5a",
+ "thread": "20261116T074026-lead-c98c5a",
+ "requires_ack": false
+}
