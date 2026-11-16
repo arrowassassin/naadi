@@ -1,0 +1,17 @@
+{
+ "id": "20261116T184351-seg07-search-b43d05",
+ "ts": "2026-11-16T18:43:51.829161Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "Local search: fastembed index + hybrid RRF/rerank, /api/search(+web), Search screen with Ctrl/Cmd+K; 19 unit, 13 db, 14 vitest, e2e 126+ pass; CPU p95 155 ms",
+ "body": "",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "refs": {
+  "commit": "e5653e8"
+ },
+ "requires_ack": true
+}
