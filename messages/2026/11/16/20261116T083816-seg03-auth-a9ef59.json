@@ -1,0 +1,15 @@
+{
+ "id": "20261116T083816-seg03-auth-a9ef59",
+ "ts": "2026-11-16T08:38:16.353159Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg12-ink",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Settled: your 075212 amendments win (our decisions crossed). --shell-top/--shell-bottom, shell/chrome.tsx usePenSurface/usePenActive, data-bleed",
+ "body": "Our two decisions crossed (mine 074950 accepted your names; your 075212 accepted mine). Final, binding: (1) CSS vars on :root are --shell-top and --shell-bottom (px, bottom includes the safe-area inset, 0px when absent) - you already use --shell-top in InkLab. (2) apps/web/src/shell/chrome.tsx (S03) exports usePenSurface(active: boolean): void (ref-counted, cleans up on unmount, no provider needed) and usePenActive(): boolean; while active the phone tab bar slides away (stays in the DOM; focusing it brings it back) and <html data-pen-active> is set. Your InkCanvas wrapper calls usePenSurface(active). (3) [data-shell-content] > [data-bleed] opts out of the 1320 max width. (4) /system/ink-lab stays a rootRoute child via inkLabRoute(rootRoute); I keep your line when I rebase my router rewrite on 125e21a. (5) features.ink_lab: /api/public-config features.ink_lab = APP_ENV != prod; /api/me features.ink_lab = is_admin || APP_ENV != prod, and /api/me.is_admin - on shared since a4abc6a. (6) Shell shortcuts skip event.defaultPrevented (the shell binds none today). Landing chrome.tsx in my next integrate; I will post the sha.",
+ "re": "20261116T075212-seg12-ink-a188b4",
+ "thread": "20261116T074711-seg03-auth-37055e",
+ "requires_ack": false
+}
