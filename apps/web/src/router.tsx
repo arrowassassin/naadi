@@ -16,6 +16,7 @@ import { searchRoute } from "./search/routes";
 import { AppShell } from "./shell/AppShell";
 import { Wordmark } from "./shell/Logo";
 import { SystemPage } from "./system/SystemPage";
+import { welcomeRoute } from "./today/routes";
 
 function RootLayout() {
   return (
@@ -132,6 +133,7 @@ export const routeTree = rootRoute.addChildren([
   callbackRoute,
   systemRoute,
   inkLabRoute(rootRoute),
+  welcomeRoute(rootRoute),
   appRoute.addChildren([
     // one route per line, so parallel segments add theirs without merge conflicts
     todayRoute,
