@@ -79,6 +79,9 @@ test.describe("admin", () => {
 
   test("offline: the self-test is disabled and says why", async ({ page, context, consoleErrors }, info) => {
     await openDiagnostics(page);
+    // Fetch every declared font face first: a face first used by the offline banner would otherwise fail to
+    // load once the network is gone (a test artefact, not an app error).
+    await page.evaluate(() => Promise.all([...document.fonts].map((f) => f.load().catch(() => undefined))));
     await context.setOffline(true);
     await expect(panel(page).getByRole("status").filter({ hasText: "Offline" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Run ping" })).toBeDisabled();

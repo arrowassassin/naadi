@@ -107,7 +107,7 @@ function PingRun() {
           ) : null}
           {agent.text ? (
             <blockquote
-              className="m-0 rounded-block border border-assistant/40 bg-assistant/10 p-4 text-text"
+              className="m-0 rounded-block border border-violet-line bg-violet-ground p-4 text-violet-text"
               data-testid="ping-reply"
             >
               {agent.text}
@@ -139,7 +139,7 @@ function PingRun() {
       ) : null}
 
       {agent.phase === "interrupted" ? (
-        <Tile className="flex flex-col gap-3 border border-assistant/40" data-testid="ping-confirm">
+        <Tile className="flex flex-col gap-3 border border-violet-line" data-testid="ping-confirm">
           <p className="m-0 font-semibold">{String(agent.interrupt?.question ?? "")}</p>
           <div className="flex flex-wrap gap-3">
             <Button variant="assistant" onClick={() => void agent.resume({ confirmed: true })}>

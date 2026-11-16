@@ -100,11 +100,11 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     {
       ...common,
       // Same database and code; OPENROUTER_DAILY_CAP=0 and no NVIDIA key, so every model call is refused by
-      // the budget guard (BudgetExhausted), never by a missing provider. Its cron scheduler is off.
+      // the budget guard (BudgetExhausted), never by a missing provider. Aegra claims each cron firing, so two schedulers never fire one twice.
       command: `${migrate} && ${serve(BUDGET_ZERO_PORT, "naadi_api.agent.host:app")}`,
       url: `http://127.0.0.1:${BUDGET_ZERO_PORT}/`,
       timeout: 180_000,
-      env: env({ OPENROUTER_DAILY_CAP: "0", NVIDIA_API_KEY: "", CRON_ENABLED: "false" }),
+      env: env({ OPENROUTER_DAILY_CAP: "0", NVIDIA_API_KEY: "" }),
     },
   ];
 }
