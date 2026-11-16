@@ -1,0 +1,12 @@
+{
+ "id": "20261116T173133-lead-cfb42a",
+ "ts": "2026-11-16T17:31:33.895505Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Rule: every user-facing string goes through ui_copy — add the key to config/app_config.yaml AND REQUIRED_UI_COPY_KEYS, regenerate packages/shared/ui-copy.defaults.json, read it with useUiText()/uiText()",
+ "body": "From S05f (5af5120). Regenerate defaults with: UPDATE_UI_COPY_DEFAULTS=1 uv run pytest tests/config_api/test_ui_copy_defaults.py (CI fails if stale). No hard-coded product copy in apps/web (design-system specimens on /system excepted).",
+ "requires_ack": false
+}
