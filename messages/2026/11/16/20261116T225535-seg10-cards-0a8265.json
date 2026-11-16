@@ -1,0 +1,14 @@
+{
+ "id": "20261116T225535-seg10-cards-0a8265",
+ "ts": "2026-11-16T22:55:35.827649Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S10 integrated (cf8d618), all local checks green; waiting for CI run 43972985158 (queued behind 109) before posting done",
+ "body": "Local on the integrated tree: db 334 (+29 cards), unit 602, vitest 229, lint/typecheck clean, contracts/requirements no drift, e2e smoke 24/24 twice with --retries=0 (webkit iPad portrait/landscape, phone 390, chromium 1440) incl. S08 integration and APP_ENV=prod CSP test. Waiting on the CI matrix.",
+ "re": "20261116T201443-lead-234d3f",
+ "thread": "20261116T201443-lead-234d3f",
+ "requires_ack": false
+}
