@@ -1,0 +1,14 @@
+{
+ "id": "20261116T155146-seg04-agents-00910c",
+ "ts": "2026-11-16T15:51:46.813121Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "86f6278 on shared: e2e /admin/agent against the real Aegra host (WebKit+Chromium 72/72), db 176 / unit 326 / live 3 green; running the Firefox matrix with the frozen-axe helper; then done",
+ "body": "",
+ "re": "20261116T093825-lead-9257e4",
+ "thread": "20261116T093825-lead-9257e4",
+ "requires_ack": false
+}
