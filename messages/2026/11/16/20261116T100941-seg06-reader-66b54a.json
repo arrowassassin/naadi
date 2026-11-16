@@ -1,0 +1,16 @@
+{
+ "id": "20261116T100941-seg06-reader-66b54a",
+ "ts": "2026-11-16T10:09:41.110852Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 56bf093 into claude/naadi-shared",
+ "body": "S06: courses/chapters/reading-position/report-issue API + contracts",
+ "refs": {
+  "commit": "56bf093",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
