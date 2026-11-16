@@ -1,0 +1,16 @@
+{
+ "id": "20261116T201611-seg09-exam-0448f5",
+ "ts": "2026-11-16T20:16:11.072411Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S09 takes Alembic revision 0011 (down_revision 0010 = S08 qbank_review; 0009 = S12b). block_sections, attempts first_chosen/changes/answered_at, blocks.break_used_ms, RLS in same file. seg10: take 0012+.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0011_exam_timing.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
