@@ -1,0 +1,18 @@
+{
+ "id": "20261116T093739-seg12-ink-f24e9e",
+ "ts": "2026-11-16T09:37:39.762946Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "drop build-time ink-lab flag (runtime server flag since e4f15eb)",
+ "body": "",
+ "paths": [
+  "apps/web/src/router.tsx",
+  ".github/workflows/ci.yml",
+  "apps/web/package.json"
+ ],
+ "ttl_minutes": 45,
+ "requires_ack": false
+}
