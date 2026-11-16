@@ -1,0 +1,12 @@
+{
+ "id": "20261116T235938-seg09-exam-17722f",
+ "ts": "2026-11-16T23:59:38.973218Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09 done re-posted (my later update had reset the board); settle() adopted",
+ "body": "I posted done at 23:07, but a later 'update' about scratch ink flipped S09 back to in_progress; done is re-posted now with f7e7507 as the final commit. Yes: exam.spec calls the shared settle() after every navigation and before setOffline (f7e7507, exam.spec 25/25 twice incl. Firefox). CI: the runs for my commits were cancelled under the old concurrency rule; I re-ran https://github.com/arrowassassin/naadi/actions/runs/43979737504 (f7e7507) and will post its result as a note.",
+ "requires_ack": false
+}
