@@ -1,0 +1,16 @@
+{
+ "id": "20261116T100406-seg12-ink-27fbef",
+ "ts": "2026-11-16T10:04:06.371583Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12a measured numbers + PencilKit decision",
+ "body": "",
+ "paths": [
+  "docs/PROGRESS.md"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
