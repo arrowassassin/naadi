@@ -1,0 +1,17 @@
+{
+ "id": "20261116T075017-seg02-db-83a07e",
+ "ts": "2026-11-16T07:50:17.660369Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S02: run migrations at Space startup; CI db/e2e jobs run storage-api migrations against the service container",
+ "body": "",
+ "paths": [
+  "deploy/space/**",
+  ".github/workflows/ci.yml"
+ ],
+ "ttl_minutes": 180,
+ "requires_ack": false
+}
