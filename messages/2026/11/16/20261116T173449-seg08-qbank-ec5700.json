@@ -1,0 +1,13 @@
+{
+ "id": "20261116T173449-seg08-qbank-ec5700",
+ "ts": "2026-11-16T17:34:49.392680Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/main.py",
+ "body": "",
+ "re": "20261116T171430-seg08-qbank-fe2781",
+ "requires_ack": false
+}
