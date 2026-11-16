@@ -71,6 +71,9 @@
       "includes": ["packages/shared/src/gen/**"],
       "linter": {
         "enabled": false
+      },
+      "assist": {
+        "enabled": false
       }
     },
     {
