@@ -1,0 +1,13 @@
+{
+ "id": "20261116T093638-seg03-auth-605434",
+ "ts": "2026-11-16T09:36:38.782257Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/src/router.tsx apps/web/package.json pnpm-lock.yaml */workflows/ci.yml apps/api/naadi_api/settings.py package.json",
+ "body": "",
+ "re": "20261116T090117-seg03-auth-eb4c5c",
+ "requires_ack": false
+}
