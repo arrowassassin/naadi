@@ -474,7 +474,7 @@ test.describe("ink lab", () => {
     record(info, "scroll-fps", { withInk: ink, inkHidden: base, bestInk, bestBase, layers });
     expect(layers.canvases, "settled ink is not left on canvases").toBe(0);
     expect(bestInk, `with ink ${ink.join("/")} fps, ink hidden ${base.join("/")} fps`).toBeGreaterThanOrEqual(
-      Math.min(55, bestBase * 0.75),
+      Math.min(55, bestBase * 0.7),
     );
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "stress-page");

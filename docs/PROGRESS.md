@@ -12,6 +12,18 @@
 
 - Segment 01 — M0 scaffold, tokens, contracts, health, CI, Docker Space deploy (`implementer-opus`).
 
+- **S12a — ink engine** (seg12-ink, in review): `@naadi/ink` + `/system/ink-lab` (server flag `features.ink_lab`).
+  Measured on CI (GitHub `ubuntu-24.04`, headless, software rendering, synthetic pen events at 4 ms):
+  input-to-paint p50 2.4–3.2 ms / p95 4.3–7 ms; input-to-next-frame p50 16.3–19.1 ms / p95 20.5–46.5 ms
+  (Chromium, six viewports). 5,000-stroke page, rAF-driven scroll, best of paired runs (ink shown / hidden):
+  phones 59.7–60 / 59.3–59.7 fps; iPad portrait 49.7 / 56.4; iPad landscape 49.4 / 55.7; laptop 50.7 / 55.4;
+  desktop 39.5 / 45.4 fps. The runner itself does not reach 60 fps on large viewports with the ink hidden,
+  so the e2e gate is min(55 fps, 70 % of the ink-hidden run). WebKit (CI, best of 3, shown / hidden): phones 56.1 / 59.3, iPad portrait 41.3 / 50.2, iPad landscape 37.5 / 47.5, laptop 27.5 / 39.6, desktop 28.2 / 31.9; Firefox 54–59 with ink, within 2 fps of hidden. WebKit input-to-paint p50 4–5 ms / p95 8–9 ms; Firefox 3–4 / 6–10 ms.
+  **Capacitor/PencilKit decision: not yet.** Stay on the web engine; decide from the owner's 240 fps slow-motion
+  run on the iPad (lab → Slow-motion mode; `docs/DEVICE_CHECKLIST.md`). Rule: if the median tip-to-ink time with
+  predicted ink on is above 20 ms (more than ~5 frames at 240 fps), plan Capacitor + PencilKit for the ink
+  surfaces only. Record device, iPadOS version, median of 10 strokes with prediction on and off here.
+
 ## Next
 
 - Segment 02 — Alembic migrations + RLS + storage policies (`naadi_alembic_version`).
