@@ -364,7 +364,18 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "search.web_unavailable",
         "search.web_limit",
         "search.web_opens",
-        "search.unlinked",
+        "search.meta.question",
+        "search.meta.note_section",
+        "search.meta.note_question",
+        "search.meta.note_video",
+        "search.meta.note_pdf",
+        "search.meta.note_free",
+        "search.meta.ink",
+        "search.meta.guide",
+        "search.error_body",
+        "search.error_busy",
+        "search.soon",
+        "search.type_label",
     }
 )
 

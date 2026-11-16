@@ -2124,6 +2124,18 @@ export type ReportIssueOut = {
  */
 export type SearchHit = {
   /**
+   * Anchor
+   *
+   * A note's anchor type (section, question, video, pdf, free)
+   */
+  anchor: string | null;
+  /**
+   * Context
+   *
+   * Chapter, stage or exam name; the client words the line
+   */
+  context: string | null;
+  /**
    * Group
    */
   group: "chapters" | "notes" | "handwriting" | "questions" | "uploads" | "pathway";
@@ -2133,10 +2145,6 @@ export type SearchHit = {
    * Stable per result: `<type>:<ref id>`
    */
   id: string;
-  /**
-   * Meta
-   */
-  meta: string;
   /**
    * Score
    */

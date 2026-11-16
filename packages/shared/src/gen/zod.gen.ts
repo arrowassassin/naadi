@@ -974,9 +974,10 @@ export const zTarget = z.object({
  * SearchHit
  */
 export const zSearchHit = z.object({
+  anchor: z.string().nullable(),
+  context: z.string().nullable(),
   group: z.enum(["chapters", "notes", "handwriting", "questions", "uploads", "pathway"]),
   id: z.string(),
-  meta: z.string(),
   score: z.number(),
   snippet: z.array(zSegment),
   target: zTarget,

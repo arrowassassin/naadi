@@ -3621,6 +3621,30 @@
       },
       "SearchHit": {
         "properties": {
+          "anchor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A note's anchor type (section, question, video, pdf, free)",
+            "title": "Anchor"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Chapter, stage or exam name; the client words the line",
+            "title": "Context"
+          },
           "group": {
             "enum": [
               "chapters",
@@ -3636,10 +3660,6 @@
           "id": {
             "description": "Stable per result: `<type>:<ref id>`",
             "title": "Id",
-            "type": "string"
-          },
-          "meta": {
-            "title": "Meta",
             "type": "string"
           },
           "score": {
@@ -3679,7 +3699,8 @@
           "type",
           "group",
           "title",
-          "meta",
+          "context",
+          "anchor",
           "snippet",
           "target",
           "score"

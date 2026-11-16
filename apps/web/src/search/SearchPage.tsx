@@ -20,6 +20,7 @@ export interface SearchRouteSearch {
 const SCOPES: Scope[] = ["all", "chapters", "notes", "handwriting", "questions", "uploads", "pathway", "web"];
 const DEBOUNCE_MS = 250;
 const MIN_CHARS = 2;
+const AUTO_WEB_MIN_CHARS = 4;
 
 type Copy = SearchCopy;
 type LocalGroup = "chapters" | "notes" | "questions" | "uploads" | "pathway";
@@ -58,6 +59,24 @@ function Snippet({ segments }: { segments: Segment[] }) {
 const ROW =
   "grid min-h-[72px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 border-line-soft border-t py-3 text-text no-underline hover:text-text";
 
+/** The line under a title, worded from the structured fields the server sends. */
+function metaLine(hit: SearchHit, copy: Copy): string {
+  switch (hit.type) {
+    case "question":
+      return copy("search.meta.question", { context: hit.context ?? "" });
+    case "note":
+      return copy(
+        `search.meta.note_${["section", "question", "video", "pdf"].includes(hit.anchor ?? "") ? hit.anchor : "free"}` as SearchCopyKey,
+      );
+    case "ink":
+      return copy("search.meta.ink");
+    case "pathway":
+      return hit.context ?? copy("search.meta.guide");
+    default:
+      return hit.context ?? "";
+  }
+}
+
 function HitRow({ hit, copy }: { hit: SearchHit; copy: Copy }) {
   const router = useRouter();
   const dest = resolveTarget(hit.target, router.routesByPath as Record<string, unknown>);
@@ -74,10 +93,10 @@ function HitRow({ hit, copy }: { hit: SearchHit; copy: Copy }) {
         >
           {hit.title}
         </span>
-        <span className="text-text-3 text-ui-sm">{hit.meta}</span>
+        <span className="text-text-3 text-ui-sm">{metaLine(hit, copy)}</span>
         {hit.snippet.length > 0 ? <Snippet segments={hit.snippet} /> : null}
       </span>
-      <Chip tone="meta" srPrefix="Type">
+      <Chip tone="meta" srPrefix={copy("search.type_label")}>
         {kind}
       </Chip>
     </>
@@ -94,8 +113,14 @@ function HitRow({ hit, copy }: { hit: SearchHit; copy: Copy }) {
           {body}
         </Link>
       ) : (
-        <div className={ROW} data-unlinked="" title={copy("search.unlinked")}>
+        <div className={ROW} data-unlinked="" aria-disabled="true" aria-describedby={`${hit.id}-soon`}>
           {body}
+          <span
+            id={`${hit.id}-soon`}
+            className="col-span-2 font-mono text-label-sm text-text-3 uppercase tracking-[0.1em]"
+          >
+            {copy("search.soon")}
+          </span>
         </div>
       )}
     </li>
@@ -123,7 +148,7 @@ function WebRow({ r, copy }: { r: WebResult; copy: Copy }) {
         </span>
         {r.snippet ? <span className="line-clamp-3 text-text-2 text-ui-sm">{r.snippet}</span> : null}
       </span>
-      <Chip tone="meta" srPrefix="Type">
+      <Chip tone="meta" srPrefix={copy("search.type_label")}>
         {copy("search.kind.web")}
       </Chip>
       {href ? <span className="sr-only">{copy("search.web_opens")}</span> : null}
@@ -166,9 +191,12 @@ function RowSkeletons() {
   );
 }
 
-function errorText(err: unknown): { message: string; requestId: string | null } {
-  if (err instanceof ApiError) return { message: err.message, requestId: err.requestId };
-  return { message: err instanceof Error ? err.message : "Something went wrong.", requestId: null };
+/** Our own wording (ui_copy), never the server's English; the request id still helps a report. */
+function errorText(err: unknown, copy: Copy): { message: string; requestId: string | null } {
+  if (err instanceof ApiError) {
+    return { message: copy(err.status === 429 ? "search.error_busy" : "search.error_body"), requestId: err.requestId };
+  }
+  return { message: copy("search.error_body"), requestId: null };
 }
 
 /** Arrow keys move between the field and the result links. */
@@ -242,7 +270,10 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
   const webOnly = scope === "web";
   const local = useLocalSearch(q, webOnly ? "all" : scope, online && !webOnly);
   const askedWeb = webOnly || search.web === 1;
-  const autoWeb = !webOnly && scope === "all" && local.data?.suggest_web === true;
+  // The web is fetched by itself only for a settled query: the typing has stopped (the URL holds what the
+  // field holds), the local answer is in, and the query is long enough to mean something.
+  const settled = text.trim() === committed && !local.isFetching && committed.length >= AUTO_WEB_MIN_CHARS;
+  const autoWeb = !webOnly && scope === "all" && settled && local.data?.suggest_web === true;
   const webEnabled = online && q.length > 0 && (askedWeb || autoWeb);
   const web = useWebSearch(q, askedWeb, webEnabled);
 
@@ -364,7 +395,7 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
           {!webOnly && local.isError && !local.data ? (
             <ErrorState
               title={copy("search.error_title")}
-              {...errorText(local.error)}
+              {...errorText(local.error, copy)}
               onRetry={() => void local.refetch()}
               retryLabel={copy("search.error_retry")}
               retrying={local.isFetching}
@@ -399,7 +430,7 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
               ) : web.isError ? (
                 <ErrorState
                   title={copy("search.error_title")}
-                  {...errorText(web.error)}
+                  {...errorText(web.error, copy)}
                   onRetry={() => void web.refetch()}
                   retryLabel={copy("search.error_retry")}
                   retrying={web.isFetching}

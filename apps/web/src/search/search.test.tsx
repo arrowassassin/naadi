@@ -10,13 +10,18 @@ import {
   Outlet,
   RouterProvider,
 } from "@tanstack/react-router";
-import { render, screen, within } from "@testing-library/react";
+import { cleanup, render, renderHook, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ApiError } from "../auth/apiError";
 import { parseSearchSearch } from "./routes";
 import { SearchPage } from "./SearchPage";
-import { isSearchShortcut } from "./shortcut";
+import {
+  isSearchShortcut,
+  searchShortcutSuppressed,
+  shortcutBelongsToTarget,
+  useSuppressSearchShortcut,
+} from "./shortcut";
 import { resolveTarget } from "./targets";
 
 // The page's data hooks are the boundary: the API contract is covered by the db tests and the e2e suite.
@@ -41,7 +46,8 @@ vi.mock("../copy/useUiText", () => ({
 
 function hit(over: Partial<SearchHit> & Pick<SearchHit, "id" | "type" | "group" | "title">): SearchHit {
   return {
-    meta: "Step 1 · Renal",
+    context: "Step 1 · Renal",
+    anchor: null,
     snippet: [
       { text: "Type 4 ", hit: false },
       { text: "RTA", hit: true },
@@ -104,7 +110,7 @@ describe("Search screen", () => {
           type: "ink",
           group: "handwriting",
           title: "4 → aldo problem",
-          meta: "Found in your handwriting",
+          context: null, anchor: null,
           target: {
             type: "ink",
             surface_type: "section",
@@ -135,6 +141,14 @@ describe("Search screen", () => {
     const questions = screen.getByRole("region", { name: "Questions" });
     expect(within(questions).queryByRole("link")).toBeNull();
     expect(within(questions).getByText("A 7-year-old boy")).toBeVisible();
+    // the unlinked row says so in words, is aria-disabled and points at that text
+    const row = questions.querySelector("[data-unlinked]") as HTMLElement;
+    expect(row).toHaveAttribute("aria-disabled", "true");
+    expect(within(questions).getByText("Available soon")).toBeVisible();
+    expect(document.getElementById(row.getAttribute("aria-describedby") as string)).toHaveTextContent("Available soon");
+    // structured context, worded by ui_copy
+    expect(within(questions).getByText("Question · Step 1 · Renal")).toBeVisible();
+    expect(screen.getByText("Found in your handwriting")).toBeVisible();
   });
 
   it("empty result offers the web and nothing is fetched until it is asked for", async () => {
@@ -221,7 +235,7 @@ describe("Search screen", () => {
       refetch,
     };
     renderPage({ q: "renal" });
-    expect(await screen.findByText("Search is not ready yet. Try again in a moment.")).toBeVisible();
+    expect(await screen.findByText(uiText(null, "search.error_body"))).toBeVisible(); // our wording, not the server's
     expect(screen.getByText("Request ID req-1")).toBeVisible();
     await userEvent.click(screen.getByRole("button", { name: "Try again" }));
     expect(refetch).toHaveBeenCalled();
@@ -243,6 +257,21 @@ describe("Search screen", () => {
   });
 });
 
+describe("web auto-fetch", () => {
+  it("waits for a settled query of 4+ characters", async () => {
+    hooks.local = { ...data([], true), isPending: false, isError: false, isFetching: true };
+    renderPage({ q: "qzxv wplk" });
+    await screen.findByRole("searchbox");
+    expect(hooks.webArgs.every((a) => a[2] === false)).toBe(true); // local still fetching: no web yet
+    hooks.webArgs = [];
+    hooks.local = { ...data([], true), isPending: false, isError: false, isFetching: false };
+    cleanup();
+    renderPage({ q: "abc" }); // 3 characters
+    expect(await screen.findByText("Nothing found for “abc”")).toBeVisible();
+    expect(hooks.webArgs.every((a) => a[2] === false)).toBe(true);
+  });
+});
+
 describe("targets", () => {
   const routes = { "/learn/$chapterId/$sectionId": {}, "/practice/question/$questionId": {} };
   it("resolves only routes that exist", () => {
@@ -259,6 +288,28 @@ describe("targets", () => {
 });
 
 describe("shortcut and URL state", () => {
+  it("does not fire inside inputs, dialogs, editors or media", () => {
+    document.body.innerHTML =
+      '<input id="i"><div role="dialog"><button id="d"></button></div><div data-no-shortcuts><p id="n"></p></div>' +
+      '<video id="v"></video><div contenteditable="true" id="c"></div><button id="ok"></button>';
+    for (const id of ["i", "d", "n", "v", "c"]) expect(shortcutBelongsToTarget(document.getElementById(id))).toBe(true);
+    expect(shortcutBelongsToTarget(document.getElementById("ok"))).toBe(false);
+    expect(shortcutBelongsToTarget(null)).toBe(false);
+  });
+
+  it("a screen can suppress Ctrl/Cmd+K while mounted, and nested suppressors stack", () => {
+    const a = renderHook(() => useSuppressSearchShortcut(true));
+    const b = renderHook(() => useSuppressSearchShortcut(true));
+    expect(searchShortcutSuppressed()).toBe(true);
+    a.unmount();
+    expect(searchShortcutSuppressed()).toBe(true);
+    b.unmount();
+    expect(searchShortcutSuppressed()).toBe(false);
+    const off = renderHook(() => useSuppressSearchShortcut(false));
+    expect(searchShortcutSuppressed()).toBe(false);
+    off.unmount();
+  });
+
   it("recognises Ctrl+K and Cmd+K only", () => {
     const base = { key: "k", ctrlKey: false, metaKey: false, shiftKey: false, altKey: false };
     expect(isSearchShortcut({ ...base, ctrlKey: true })).toBe(true);

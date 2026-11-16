@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import type { Browser, Page, TestInfo } from "@playwright/test";
 import { canMintUsers } from "./auth-users";
 import {
@@ -99,9 +100,9 @@ test("question results show the stem and never an answer or explanation", async 
   page.on("response", async (r) => {
     if (r.url().includes("/api/search?")) responses.push(await r.text());
   });
-  await page.goto("/search?q=kussmaul+respirations+type+1+diabetes+abdominal+pain&scope=questions");
+  await page.goto("/search?q=thyroid+nodule+heat+intolerance+TSH&scope=questions");
   const group = page.getByRole("region", { name: "Questions" });
-  await expect(group.getByText(/type 1 diabetes has abdominal pain/i).first()).toBeVisible();
+  await expect(group.getByText(/palpable nodule in the right thyroid lobe/i).first()).toBeVisible();
   expect(responses.length).toBeGreaterThan(0);
   for (const body of responses) {
     expect(body).not.toMatch(/explanation|why_not|educational_objective|"answer"/i);
@@ -202,4 +203,68 @@ test("only one lime thing per view: the search icon", async ({ page }) => {
     }).length;
   });
   expect(lime).toBe(1);
+});
+
+test("phone tab bar: icon above label, no label truncated or overflowing", async ({ page }) => {
+  await page.goto("/search");
+  const phone = (page.viewportSize()?.width ?? 1000) < 768;
+  test.skip(!phone, "the tab bar is the phone and small-tablet layout");
+  const tabs = page.getByRole("navigation", { name: "Tabs" });
+  await expect(tabs.getByRole("link", { name: "Search" })).toBeVisible();
+  const fits = await tabs.locator("a").evaluateAll((links) =>
+    links.map((a) => {
+      const label = a.querySelector("span");
+      const box = a.getBoundingClientRect();
+      const l = label?.getBoundingClientRect();
+      return {
+        text: label?.textContent ?? "",
+        fits:
+          !!label &&
+          label.scrollWidth <= label.clientWidth &&
+          !!l &&
+          l.left >= box.left - 0.5 &&
+          l.right <= box.right + 0.5,
+        stacked:
+          !!l && !!a.querySelector("svg") && (a.querySelector("svg")?.getBoundingClientRect().bottom ?? 0) <= l.top + 1,
+      };
+    }),
+  );
+  expect(fits.length).toBeGreaterThanOrEqual(3);
+  for (const t of fits) {
+    expect(t.fits, `label "${t.text}" fits its tab`).toBe(true);
+    expect(t.stacked, `icon sits above "${t.text}"`).toBe(true);
+  }
+});
+
+test("on the production-mode server (strict CSP) search runs with zero console errors", async ({ browser }, info) => {
+  const prod = process.env.E2E_PROD_URL;
+  test.skip(!prod, "needs the APP_ENV=prod server of the local/CI webServer set");
+  // The student's session moved to the https prod origin (self-signed loopback certificate): signing in again
+  // there would send the Supabase calls through upgrade-insecure-requests, which breaks the http local auth stack.
+  const file = await signedInState(browser, info.project.use.baseURL as string, "student");
+  const saved = JSON.parse(readFileSync(file, "utf8")) as {
+    origins: { origin: string; localStorage: { name: string; value: string }[] }[];
+  };
+  const origin = new URL(prod as string).origin;
+  const context = await browser.newContext({
+    ...info.project.use,
+    baseURL: prod,
+    ignoreHTTPSErrors: true,
+    storageState: { cookies: [], origins: saved.origins.map((o) => ({ ...o, origin })) },
+  });
+  const page = await context.newPage();
+  const errors: string[] = [];
+  page.on("console", (m) => {
+    if (m.type() === "error") errors.push(m.text());
+  });
+  page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
+  try {
+    await page.goto("/search?q=thyroid");
+    await expect(page.getByRole("region", { name: "Chapters" })).toBeVisible();
+    await expect(page.getByRole("region", { name: "Questions" })).toBeVisible();
+    await page.evaluate(() => document.fonts.ready.then(() => undefined));
+    expect(errors, "console errors on the prod-mode server").toEqual([]);
+  } finally {
+    await context.close();
+  }
 });

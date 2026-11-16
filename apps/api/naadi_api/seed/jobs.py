@@ -25,6 +25,7 @@ from pydantic import BaseModel, ConfigDict, Field, JsonValue
 
 from ..auth import AdminUser
 from ..db import Database
+from ..embeddings.jobs import schedule_reindex
 from ..errors import ErrorResponse
 from ..logs import get_logger
 from ..scrub import scrub
@@ -146,6 +147,9 @@ async def _run(app: Any, run_id: uuid.UUID, req: SeedRequest) -> None:
         svc = getattr(app.state, "app_config", None)
         if svc is not None:
             svc.invalidate()
+    if status == "succeeded" and not req.dry_run and {"chapters", "questions", "pathway"} & set(req.only):
+        # Search follows the content: reconcile the index (unchanged chunks cost a read, not a model call).
+        schedule_reindex(app)
     log.info("seed_job_finished", run_id=str(run_id), status=status, dry_run=req.dry_run)
 
 

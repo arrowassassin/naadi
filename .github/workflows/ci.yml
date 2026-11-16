@@ -213,6 +213,11 @@ jobs:
       - name: Build the local search index over the seeded content (fastembed, every core for this one-off run)
         working-directory: apps/api
         run: uv run --frozen python -m naadi_api.embeddings reindex --threads 4
+      - name: Search latency on the seeded corpus (CPU p95 < 300 ms; wall p95 < 1000 ms on a shared runner, numbers in the log)
+        working-directory: apps/api
+        env:
+          NAADI_PERF_WALL_BUDGET_MS: "1000"
+        run: uv run --frozen pytest tests/embeddings/test_perf.py -m db -s -q
       - name: Build and run e2e (served by uvicorn from the production build)
         run: |
           pnpm --filter @naadi/web build

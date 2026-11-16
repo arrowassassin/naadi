@@ -6,11 +6,13 @@ Rules (segment 07 brief, CLAUDE.md):
 - questions: stem and options only. Answer, explanations, educational objective and review data are never
   selected here, so no code path in this module can put them in an index row or a snippet;
 - shared rows must be published (the same rule RLS applies); drafts and retired rows are removed;
+- mock exams are never indexed (sections or questions): their answer keys are not content;
 - notes and handwriting belong to their owner (`owner_user_id`), nothing else sees them.
 """
 
 from __future__ import annotations
 
+import re
 import uuid
 from collections.abc import AsyncIterator, Mapping, Sequence
 from dataclasses import dataclass
@@ -96,7 +98,8 @@ async def section_docs(
         " from public.chapter_sections s"
         " join public.chapters c on c.id = s.chapter_id"
         " left join public.sources src on src.id = c.source_id"
-        " where ((c.owner_user_id is null and c.status = 'published' and coalesce(src.allow_ai_ingest, false))"
+        " where c.kind <> 'mock_exam'"
+        "   and ((c.owner_user_id is null and c.status = 'published' and coalesce(src.allow_ai_ingest, false))"
         "     or (c.owner_user_id is not null and coalesce(src.allow_ai_ingest, true)))"
         f"{where} order by s.id",
         params,
@@ -122,7 +125,8 @@ async def question_docs(
         " left join public.chapters c on c.id = q.chapter_id"
         " left join public.sources src on src.id = q.source_id"
         " where q.status = 'published' and coalesce(src.allow_ai_ingest, false)"
-        "   and (q.chapter_id is null or (c.owner_user_id is null and c.status = 'published'))"
+        "   and (q.chapter_id is null"
+        "        or (c.owner_user_id is null and c.status = 'published' and c.kind <> 'mock_exam'))"
         f"{where} order by q.id",
         params,
     )
@@ -130,6 +134,17 @@ async def question_docs(
         text = question_text(r["stem_html"], r["options"])
         if text:
             yield Doc(None, "question", r["id"], (text,))
+
+
+_ID_TOKEN = re.compile(r"\b[a-z0-9]+-\d{2}\b")
+
+
+def pathway_task_text(stage_title: str | None, title: str | None, detail_md: str | None) -> tuple[str, str]:
+    """(heading, body) of a pathway task: the heading carries stage and title once; the body drops a repeated title
+    line and internal ids (`eras-08`) so neither reaches an embedding or a snippet."""
+    heading = " - ".join(x for x in (stage_title, title) if x)
+    lines = [ln for ln in markdown_to_text(detail_md).split("\n") if ln.strip() and ln.strip() != (title or "").strip()]
+    return heading, _ID_TOKEN.sub("", "\n".join(lines)).strip()
 
 
 async def pathway_docs(
@@ -149,9 +164,8 @@ async def pathway_docs(
         ref = f"task:{r['id']}"
         if wanted is not None and ref not in wanted:
             continue
-        body = markdown_to_text(r["detail_md"])
-        heading = " - ".join(x for x in (r["stage_title"], r["title"]) if x)
-        chunks = chunk_text("\n".join(x for x in (r["title"], body) if x), heading=heading)
+        heading, body = pathway_task_text(r["stage_title"], r["title"], r["detail_md"])
+        chunks = chunk_text(body, heading=heading)
         if chunks:
             yield Doc(None, "pathway", ref, tuple(chunks))
     guides = await _rows(

@@ -38,6 +38,7 @@ from psycopg import sql
 from ..config_api.defaults import file_values
 from ..logs import get_logger
 from .data import ORIGINAL_SOURCE, SeedBundle, load_bundle, topological_taxonomy
+from .mock import strip_answer_key
 from .report import Check, SeedReport, StorageCounts, TableCounts
 from .storage import StorageTarget, md5_hex, sync_objects
 from .svg import SvgError, sanitize_svg
@@ -318,14 +319,18 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
     sections = []
     for c, i, s in b.sections:
         body = b.bodies.sections[s.id]
+        sec_body: Any = body.body
+        sec_html: Any = body.body_html
+        if c.kind == "mock_exam":  # answer keys are never content (seed/mock.py)
+            sec_body, sec_html = strip_answer_key(sec_body, sec_html)
         sections.append(
             {
                 "id": s.id,
                 "chapter_id": c.id,
                 "sort": i,
                 "heading": s.heading,
-                "body": body.body,
-                "body_html": body.body_html,
+                "body": sec_body,
+                "body_html": sec_html,
                 "reading_minutes": body.reading_minutes,
                 "admin_edited_at": None,  # a forced run takes the section back from the editor
             }

@@ -510,3 +510,77 @@ def test_web_reports_unavailable_empty_and_limit(client: TestClient, key: Signin
         assert client.get("/api/search/web", params={"q": "rta"}, headers=a).json()["status"] == "empty"
     finally:
         set_search(None)
+
+
+# ── review fixes: mock exams, source rule, current text ──
+
+
+def add_mock(pg: psycopg.Connection[Any], w: World) -> tuple[str, str]:
+    """A mock exam chapter whose section carries a key-like sentence, and one mock question."""
+    exam = f"x{w.tag}"
+    src = f"src{w.tag}-ok"
+    pg.execute(
+        "insert into public.chapters (id, exam, kind, title, source_id) values (%s, %s, 'mock_exam', 'Mock', %s)",
+        (f"c{w.tag}-mock", exam, src),
+    )
+    sid, qid = f"s{w.tag}-mock-1", f"q{w.tag}-mock-1"
+    pg.execute(
+        "insert into public.chapter_sections (id, chapter_id, sort, heading, body) values (%s, %s, 1, %s, %s)",
+        (sid, f"c{w.tag}-mock", f"Instructions {w.word}", Jsonb(doc(f"Answer key {w.word}: 1 B, 2 D"))),
+    )
+    pg.execute(
+        "insert into public.questions (id, chapter_id, exam, stem_html, options, answer, source_id, status, block)"
+        " values (%s, %s, %s, %s, %s, 'B', %s, 'published', 1)",
+        (qid, f"c{w.tag}-mock", exam, f"<p>Mock {w.word} stem</p>", Jsonb([{"label": "A", "html": "x"}]), src),
+    )
+    return sid, qid
+
+
+def test_mock_sections_and_questions_are_never_indexed_or_shown(
+    client: TestClient, key: SigningKey, url: str, engine: Engine, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    sid, qid = add_mock(pg, world)
+    run(_reconcile(url, engine, world))
+    run(_reconcile(url, engine, world, ["sections", "questions"], ref_ids=[sid, qid]))
+    held = pg.execute("select count(*) from public.embeddings where ref_id = any(%s)", ([sid, qid],)).fetchone()
+    assert held == (0,)
+    # a row indexed before the rule existed is deleted by the next reconcile ...
+    pg.execute(
+        "insert into public.embeddings (owner_user_id, ref_type, ref_id, chunk_index, content)"
+        " values (null, 'section', %s, 0, %s)",
+        (sid, f"Instructions {world.word} answer key"),
+    )
+    a = signed_in(key, world.a)
+    # ... and, until then, it is never shown (hydration drops mock chapters)
+    assert f"section:{sid}" not in ids(client.get("/api/search", params={"q": f"answer key {world.word}"}, headers=a))
+    run(_reconcile(url, engine, world, ["sections"], ref_ids=[sid]))
+    assert pg.execute("select count(*) from public.embeddings where ref_id = %s", (sid,)).fetchone() == (0,)
+
+
+def test_a_source_that_stops_allowing_ingest_disappears_without_a_reindex(
+    client: TestClient, key: SigningKey, url: str, engine: Engine, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    run(_reconcile(url, engine, world))
+    a = signed_in(key, world.a)
+    q = {"q": f"{world.word} hyperkalemia"}
+    assert f"section:{world.shared_s}" in ids(client.get("/api/search", params=q, headers=a))
+    pg.execute("update public.sources set allow_ai_ingest = false where id = %s", (f"src{world.tag}-ok",))
+    after = ids(client.get("/api/search", params=q, headers=a))
+    assert f"section:{world.shared_s}" not in after and f"question:{world.q}" not in after
+
+
+def test_snippets_come_from_the_current_text_not_the_stored_chunk(
+    client: TestClient, key: SigningKey, url: str, engine: Engine, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    run(_reconcile(url, engine, world))
+    pg.execute(
+        "update public.chapter_sections set body = %s where id = %s",
+        (
+            Jsonb(doc(f"The {world.word} syndrome now reads: freshly edited sentence about fludrocortisone.")),
+            world.shared_s,
+        ),
+    )
+    res = client.get("/api/search", params={"q": f"{world.word} syndrome"}, headers=signed_in(key, world.a))
+    hit = next(h for h in res.json()["hits"] if h["id"] == f"section:{world.shared_s}")
+    text = "".join(s["text"] for s in hit["snippet"])
+    assert "freshly edited" in text and "low aldosterone" not in text

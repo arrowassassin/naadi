@@ -6,6 +6,7 @@ HTTP path (token check, vector + full text, fusion, rerank, hydration under RLS,
 content to be indexed (`python -m naadi_api.embeddings reindex`); on a smaller index the test reports and
 skips, because a toy corpus proves nothing about the budget.
 
+`NAADI_PERF_WALL_BUDGET_MS`, when set (CI), also gates wall p95.
 `NAADI_PERF_BUDGET_MS` overrides the budget (default 300). The report also gives CPU time per query: on a
 shared machine wall time includes waiting for the CPU, CPU time does not.
 """
@@ -132,3 +133,6 @@ def test_local_search_p95_on_the_seeded_corpus(
         print(f"\n[perf] {report}")
     # Asserted on CPU time: wall time on a shared runner includes waiting for the CPU, which is not the code's cost.
     assert pct(cpu, 95) < budget, report
+    wall_budget = os.environ.get("NAADI_PERF_WALL_BUDGET_MS")  # CI: a loose wall gate on a shared runner
+    if wall_budget:
+        assert pct(wall, 95) < float(wall_budget), report

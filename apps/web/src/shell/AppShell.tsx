@@ -113,12 +113,12 @@ function TabItem({ to, label, icon, current }: { to: string; label: string; icon
         to={to}
         aria-current={current ? "page" : undefined}
         className={cx(
-          "flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-pill px-3 text-[0.75rem] no-underline",
+          "flex min-h-14 min-w-0 flex-1 flex-col items-center justify-center gap-0.5 rounded-pill px-1 py-1.5 text-[0.6875rem] leading-tight no-underline",
           current ? "bg-paper font-semibold text-ground hover:text-ground" : "text-text-2 hover:text-text",
         )}
       >
-        <NavIcon name={icon} size={16} />
-        <span className="truncate">{label}</span>
+        <NavIcon name={icon} size={18} />
+        <span className="max-w-full text-center">{label}</span>
       </Link>
     </li>
   );

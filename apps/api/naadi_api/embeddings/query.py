@@ -30,7 +30,8 @@ from ..db import Database
 from ..logs import get_logger
 from . import ranking
 from .engine import Engine, vector_literal
-from .text import html_to_text
+from .sources import pathway_task_text, question_text
+from .text import html_to_text, markdown_to_text, tiptap_to_text
 
 log = get_logger("naadi.embeddings.query")
 
@@ -96,7 +97,8 @@ class Hit:
     ref_id: str
     group: GroupName
     title: str
-    meta: str
+    context: str | None  # chapter, stage or exam name; the client words it
+    anchor: str | None  # a note's anchor type
     snippet: list[ranking.Segment]
     target: dict[str, str | None]
     score: float
@@ -205,183 +207,162 @@ def _first_line(text: str, n: int = 140) -> str:
     return line if len(line) <= n else line[: n - 1].rstrip() + "…"
 
 
-async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], terms: Sequence[str]) -> list[Hit]:
-    """Titles, links and metadata, read as the caller. Anything RLS hides is dropped."""
-    by_type: dict[str, list[Candidate]] = defaultdict(list)
-    for c in cands:
-        by_type[c.ref_type].append(c)
+async def _load_meta(
+    conn: psycopg.AsyncConnection[Any], by_type: dict[str, list[Candidate]]
+) -> dict[tuple[str, str], dict[str, Any]]:
+    """Everything a hit shows, read as the caller. Each row also carries `current`: the text as it is now (so a
+    snippet never shows a stale index row), and shared rows are re-checked against their source's
+    `allow_ai_ingest` and for mock exams, so a row indexed before a rule changed is dropped, not shown."""
     meta: dict[tuple[str, str], dict[str, Any]] = {}
-    async with user_tx(db, user, deadline_s=DB_DEADLINE_S) as conn:
-        conn.row_factory = dict_row
-        for rt in ("section", "upload", "kb_doc"):
-            ids = [c.ref_id for c in by_type.get(rt, [])]
-            if not ids:
+    for rt in ("section", "upload", "kb_doc"):
+        ids = [c.ref_id for c in by_type.get(rt, [])]
+        if not ids:
+            continue
+        cur = await conn.execute(
+            "select s.id, s.heading, s.body, s.body_html, s.chapter_id, c.title as chapter_title, c.kind,"
+            " c.owner_user_id, src.allow_ai_ingest from public.chapter_sections s"
+            " join public.chapters c on c.id = s.chapter_id"
+            " left join public.sources src on src.id = c.source_id where s.id = any(%s)",
+            (ids,),
+        )
+        for r in await cur.fetchall():
+            shared = r["owner_user_id"] is None
+            if r["kind"] == "mock_exam" or (shared and not r["allow_ai_ingest"]):
                 continue
-            cur = await conn.execute(
-                "select s.id, s.heading, s.chapter_id, c.title as chapter_title, c.kind from public.chapter_sections s"
-                " join public.chapters c on c.id = s.chapter_id where s.id = any(%s)",
-                (ids,),
-            )
-            for r in await cur.fetchall():
-                meta[(rt, r["id"])] = r
-        qids = [c.ref_id for c in by_type.get("question", [])]
-        if qids:
-            # Column list = the client-readable columns (no answer, explanation or objective: they are not granted).
-            cur = await conn.execute(
-                "select q.id, q.stem_html, q.chapter_id, q.exam, q.difficulty, c.title as chapter_title"
-                " from public.questions q left join public.chapters c on c.id = q.chapter_id where q.id = any(%s)",
-                (qids,),
-            )
-            for r in await cur.fetchall():
-                meta[("question", r["id"])] = r
-        nids = [c.ref_id for c in by_type.get("note", [])]
-        if nids:
-            cur = await conn.execute(
-                "select id::text as id, anchor_type, anchor_id, highlight_color from public.notes"
-                " where id::text = any(%s)",
-                (nids,),
-            )
-            for r in await cur.fetchall():
-                meta[("note", r["id"])] = r
-        iids = [c.ref_id for c in by_type.get("ink", [])]
-        if iids:
-            cur = await conn.execute(
-                "select surface_type, surface_id, (surface_type || ':' || surface_id) as id from public.ink_layers"
-                " where (surface_type || ':' || surface_id) = any(%s)",
-                (iids,),
-            )
-            for r in await cur.fetchall():
-                meta[("ink", r["id"])] = r
-        # Notes and handwriting anchored to a section link to it: resolve the chapter (under RLS, so a section
-        # the caller cannot read yields no link target).
-        anchored = {
-            str(m["anchor_id"] if k[0] == "note" else m["surface_id"])
-            for k, m in meta.items()
-            if (k[0] == "note" and m["anchor_type"] == "section" and m["anchor_id"])
-            or (k[0] == "ink" and m["surface_type"] == "section")
-        }
-        chapter_of: dict[str, str] = {}
-        if anchored:
-            cur = await conn.execute(
-                "select id, chapter_id from public.chapter_sections where id = any(%s)", (sorted(anchored),)
-            )
-            chapter_of = {r["id"]: r["chapter_id"] for r in await cur.fetchall()}
+            text = tiptap_to_text(r["body"]) if r["body"] else html_to_text(r["body_html"])
+            meta[(rt, r["id"])] = {**r, "current": text}
+    qids = [c.ref_id for c in by_type.get("question", [])]
+    if qids:
+        # Only client-readable question columns: the answer, explanations and objective are not granted to this role.
+        cur = await conn.execute(
+            "select q.id, q.stem_html, q.options, q.chapter_id, q.exam, c.title as chapter_title, c.kind,"
+            " src.allow_ai_ingest from public.questions q"
+            " left join public.chapters c on c.id = q.chapter_id"
+            " left join public.sources src on src.id = q.source_id where q.id = any(%s)",
+            (qids,),
+        )
+        for r in await cur.fetchall():
+            if r["kind"] == "mock_exam" or not r["allow_ai_ingest"]:
+                continue
+            meta[("question", r["id"])] = {**r, "current": question_text(r["stem_html"], r["options"])}
+    nids = [c.ref_id for c in by_type.get("note", [])]
+    if nids:
+        cur = await conn.execute(
+            "select id::text as id, anchor_type, anchor_id, body, ocr_text from public.notes where id::text = any(%s)",
+            (nids,),
+        )
+        for r in await cur.fetchall():
+            text = "\n".join(x for x in (tiptap_to_text(r["body"]), (r["ocr_text"] or "").strip()) if x)
+            meta[("note", r["id"])] = {**r, "current": text}
+    iids = [c.ref_id for c in by_type.get("ink", [])]
+    if iids:
+        cur = await conn.execute(
+            "select surface_type, surface_id, recognized_text, (surface_type || ':' || surface_id) as id"
+            " from public.ink_layers where (surface_type || ':' || surface_id) = any(%s)",
+            (iids,),
+        )
+        for r in await cur.fetchall():
+            meta[("ink", r["id"])] = {**r, "current": (r["recognized_text"] or "").strip()}
+    # Notes and handwriting anchored to a section link to it: resolve the chapter (under RLS, so a section the
+    # caller cannot read yields no link target).
+    anchored = {
+        str(m["anchor_id"] if k[0] == "note" else m["surface_id"])
+        for k, m in meta.items()
+        if (k[0] == "note" and m["anchor_type"] == "section" and m["anchor_id"])
+        or (k[0] == "ink" and m["surface_type"] == "section")
+    }
+    if anchored:
+        cur = await conn.execute(
+            "select id, chapter_id from public.chapter_sections where id = any(%s)", (sorted(anchored),)
+        )
+        chapter_of = {r["id"]: r["chapter_id"] for r in await cur.fetchall()}
         for k, m in meta.items():
             if k[0] == "note" and m["anchor_type"] == "section":
                 m["chapter_id"] = chapter_of.get(str(m["anchor_id"]))
             elif k[0] == "ink" and m["surface_type"] == "section":
                 m["chapter_id"] = chapter_of.get(str(m["surface_id"]))
-        pids = [c.ref_id for c in by_type.get("pathway", [])]
-        if pids:
-            tasks = [p.removeprefix("task:") for p in pids if p.startswith("task:")]
-            guides = [p.removeprefix("guide:") for p in pids if p.startswith("guide:")]
-            if tasks:
-                cur = await conn.execute(
-                    "select 'task:' || t.id as id, t.id as task_id, t.title, t.stage_key, st.title as stage_title"
-                    " from public.pathway_tasks t join public.pathway_stages st on st.key = t.stage_key"
-                    " where t.id = any(%s)",
-                    (tasks,),
-                )
-                for r in await cur.fetchall():
-                    meta[("pathway", r["id"])] = r
-            if guides:
-                cur = await conn.execute(
-                    "select 'guide:' || key as id, key as guide_key, title, stage_key from public.pathway_guides"
-                    " where key = any(%s)",
-                    (guides,),
-                )
-                for r in await cur.fetchall():
-                    meta[("pathway", r["id"])] = r
+    pids = [c.ref_id for c in by_type.get("pathway", [])]
+    tasks = [p.removeprefix("task:") for p in pids if p.startswith("task:")]
+    guides = [p.removeprefix("guide:") for p in pids if p.startswith("guide:")]
+    if tasks:
+        cur = await conn.execute(
+            "select 'task:' || t.id as id, t.id as task_id, t.title, t.detail_md, t.stage_key, st.title as stage_title"
+            " from public.pathway_tasks t join public.pathway_stages st on st.key = t.stage_key"
+            " where t.id = any(%s)",
+            (tasks,),
+        )
+        for r in await cur.fetchall():
+            _, body = pathway_task_text(r["stage_title"], r["title"], r["detail_md"])
+            meta[("pathway", r["id"])] = {**r, "current": body}
+    if guides:
+        cur = await conn.execute(
+            "select 'guide:' || g.key as id, g.key as guide_key, g.title, g.body_md, g.stage_key,"
+            " src.allow_ai_ingest from public.pathway_guides g left join public.sources src on src.id = g.source_id"
+            " where g.key = any(%s)",
+            (guides,),
+        )
+        for r in await cur.fetchall():
+            if r["allow_ai_ingest"]:
+                meta[("pathway", r["id"])] = {**r, "current": markdown_to_text(r["body_md"])}
+    return meta
+
+
+async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], terms: Sequence[str]) -> list[Hit]:
+    """Titles, links, metadata and snippets, read as the caller from the current content. Anything RLS hides, or
+    that is no longer allowed in search, is dropped."""
+    by_type: dict[str, list[Candidate]] = defaultdict(list)
+    for c in cands:
+        by_type[c.ref_type].append(c)
+    async with user_tx(db, user, deadline_s=DB_DEADLINE_S) as conn:
+        conn.row_factory = dict_row
+        meta = await _load_meta(conn, by_type)
 
     hits: list[Hit] = []
     for c in cands:
         info = meta.get((c.ref_type, c.ref_id))
         if info is None:
-            continue  # not visible to this caller (RLS), or gone since indexing
+            continue  # not visible to this caller (RLS), not allowed any more, or gone since indexing
         group: GroupName = GROUP_OF[c.ref_type]  # type: ignore[assignment]
-        body = ranking.drop_heading(c.content, info.get("heading") or info.get("title"))
-        snippet = ranking.highlight(ranking.best_window(body, terms), terms)
+        current = info["current"]
+        snippet = ranking.highlight(ranking.best_window(current, terms), terms)
         score = c.rerank if c.rerank is not None else c.fused
+        context: str | None
+        anchor: str | None = None
         if c.ref_type in ("section", "upload", "kb_doc"):
-            hit = Hit(
-                c.ref_type,
-                c.ref_id,
-                group,
-                info["heading"],
-                info["chapter_title"],
-                snippet,
-                {"type": "section", "chapter_id": info["chapter_id"], "section_id": info["id"]},
-                score,
-            )
+            title, context = info["heading"], info["chapter_title"]
+            target = {"type": "section", "chapter_id": info["chapter_id"], "section_id": info["id"]}
         elif c.ref_type == "question":
-            stem = html_to_text(info["stem_html"])
-            ctx = info["chapter_title"] or str(info["exam"])
-            hit = Hit(
-                c.ref_type,
-                c.ref_id,
-                group,
-                _first_line(stem, 160),
-                f"Question · {ctx}",
-                snippet,
-                {"type": "question", "question_id": info["id"], "chapter_id": info["chapter_id"]},
-                score,
-            )
+            title, context = _first_line(html_to_text(info["stem_html"]), 160), info["chapter_title"] or info["exam"]
+            target = {"type": "question", "question_id": info["id"], "chapter_id": info["chapter_id"]}
         elif c.ref_type == "note":
-            where = {"section": "a chapter", "question": "a question", "video": "a video", "pdf": "a PDF"}.get(
-                info["anchor_type"] or "", "your notebook"
-            )
-            hit = Hit(
-                c.ref_type,
-                c.ref_id,
-                group,
-                _first_line(c.content),
-                f"Your note on {where}",
-                snippet,
-                {
-                    "type": "note",
-                    "note_id": info["id"],
-                    "anchor_type": info["anchor_type"],
-                    "anchor_id": info["anchor_id"],
-                    "chapter_id": info.get("chapter_id"),
-                    "section_id": info["anchor_id"] if info.get("chapter_id") else None,
-                },
-                score,
-            )
+            title, context, anchor = _first_line(current), None, info["anchor_type"]
+            target = {
+                "type": "note",
+                "note_id": info["id"],
+                "anchor_type": info["anchor_type"],
+                "anchor_id": info["anchor_id"],
+                "chapter_id": info.get("chapter_id"),
+                "section_id": info["anchor_id"] if info.get("chapter_id") else None,
+            }
         elif c.ref_type == "ink":
-            hit = Hit(
-                c.ref_type,
-                c.ref_id,
-                group,
-                _first_line(c.content),
-                "Found in your handwriting",
-                snippet,
-                {
-                    "type": "ink",
-                    "surface_type": info["surface_type"],
-                    "surface_id": info["surface_id"],
-                    "chapter_id": info.get("chapter_id"),
-                    "section_id": info["surface_id"] if info.get("chapter_id") else None,
-                },
-                score,
-            )
+            title, context = _first_line(current), None
+            target = {
+                "type": "ink",
+                "surface_type": info["surface_type"],
+                "surface_id": info["surface_id"],
+                "chapter_id": info.get("chapter_id"),
+                "section_id": info["surface_id"] if info.get("chapter_id") else None,
+            }
         else:  # pathway
-            is_task = "task_id" in info
-            hit = Hit(
-                c.ref_type,
-                c.ref_id,
-                group,
-                info["title"],
-                info["stage_title"] if is_task else "Pathway guide",
-                snippet,
-                {
-                    "type": "pathway",
-                    "stage_key": info["stage_key"],
-                    "task_id": info.get("task_id"),
-                    "guide_key": info.get("guide_key"),
-                },
-                score,
-            )
-        hits.append(hit)
+            title = info["title"]
+            context = info["stage_title"] if "task_id" in info else None
+            target = {
+                "type": "pathway",
+                "stage_key": info["stage_key"],
+                "task_id": info.get("task_id"),
+                "guide_key": info.get("guide_key"),
+            }
+        hits.append(Hit(c.ref_type, c.ref_id, group, title, context, anchor, snippet, target, score))
     return hits
 
 

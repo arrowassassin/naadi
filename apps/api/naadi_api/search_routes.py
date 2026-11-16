@@ -95,7 +95,8 @@ class SearchHit(BaseModel):
     type: Literal["section", "upload", "kb_doc", "question", "note", "ink", "pathway"]
     group: Literal["chapters", "notes", "handwriting", "questions", "uploads", "pathway"]
     title: str
-    meta: str
+    context: str | None = Field(description="Chapter, stage or exam name; the client words the line")
+    anchor: str | None = Field(description="A note's anchor type (section, question, video, pdf, free)")
     snippet: list[Segment]
     target: Target
     score: float
@@ -184,7 +185,8 @@ def _hit(h: Hit) -> SearchHit:
         type=cast("Any", h.ref_type),
         group=h.group,
         title=h.title,
-        meta=h.meta,
+        context=h.context,
+        anchor=h.anchor,
         snippet=[Segment(text=s.text, hit=s.hit) for s in h.snippet],
         target=Target.model_validate(h.target),
         score=round(h.score, 4),
@@ -340,7 +342,8 @@ async def reindex(request: Request, _admin: AdminUser, body: ReindexRequest | No
     jobs.schedule(kinds)
     await asyncio.sleep(0)  # let the task mark itself running before the status is read
     rows = await index_counts(jobs.db)
-    return IndexStatus(rows=rows, models_ready=True, job=_job(jobs))
+    ready = await asyncio.to_thread(models_cached, jobs.engine)
+    return IndexStatus(rows=rows, models_ready=ready, job=_job(jobs))
 
 
 # ── Wiring ──

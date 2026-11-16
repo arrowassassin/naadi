@@ -91,3 +91,10 @@ What it does, in WebKit at iPad portrait:
 Side effects on the owner's account to know about: `--owner` generates a magic-link token for the owner,
 which **replaces any magic link the owner has outstanding** (an unopened sign-in email stops working), and
 the verification **updates the owner's "last sign-in" time** in Supabase Auth. Nothing else changes.
+
+
+## Local search (S07)
+
+- **Index:** `public.embeddings` is built from the content by fastembed (models named in `config/models.yaml` `roles.embeddings`, cached in `FASTEMBED_CACHE_PATH`; the image prefetches them). It is reconciled at API start (`EMBEDDINGS_AUTOSTART`, default on), after every successful non-dry-run seed job that touches chapters, questions or pathway, by an admin (`POST /api/admin/embeddings/reindex`, status at `GET /api/admin/embeddings`: row counts per type, `models_ready`, last job), or from a shell: `python -m naadi_api.embeddings reindex [--kinds ...] [--refs ID,ID] [--threads N]`. Unchanged chunks are skipped, so a repeat run costs a read. A first full run embeds about 1,600 chunks; it runs on a low-priority thread so searches stay responsive.
+- **What is never indexed:** mock exam sections and questions (their answer keys are not content; the seed importer also strips the key tables), anything whose source lacks `allow_ai_ingest`, drafts and retired rows, question answers and explanations.
+- **Post-deploy smoke (lead runs it at deploy):** with a signed-in user's access token in `SMOKE_ACCESS_TOKEN` (never on the command line), `cd apps/api && uv run python scripts/smoke_search.py --base-url https://<ns>-naadi.hf.space`. It queries with the live chapter titles and exits 1 unless wall-clock p95 of `GET /api/search` is under 300 ms and every request answered. CI's e2e job runs the same measurement on a shared runner with a looser gate (p95 < 1000 ms, numbers in the job log), because shared runners are not the Space.

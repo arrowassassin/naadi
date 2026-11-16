@@ -11,6 +11,10 @@ own, so a long run never blocks the event loop and a crash resumes where it stop
 from __future__ import annotations
 
 import asyncio
+import concurrent.futures
+import contextlib
+import os
+import threading
 import time
 import uuid
 from collections.abc import Sequence
@@ -53,6 +57,30 @@ class IndexReport:
 
     def to_dict(self) -> dict[str, Any]:
         return {"seconds": round(self.seconds, 2), "kinds": {k: asdict(v) for k, v in self.kinds.items()}}
+
+
+INDEX_NICE = 10  # niceness added to the indexing thread: request threads keep the CPU
+
+
+def _lower_priority() -> None:
+    """Initializer of the dedicated indexing thread (Linux: niceness is per thread; elsewhere a no-op)."""
+    with contextlib.suppress(AttributeError, OSError):
+        tid = threading.get_native_id()
+        os.setpriority(os.PRIO_PROCESS, tid, min(19, os.getpriority(os.PRIO_PROCESS, tid) + INDEX_NICE))
+
+
+_POOL: concurrent.futures.ThreadPoolExecutor | None = None
+
+
+def _index_pool() -> concurrent.futures.ThreadPoolExecutor:
+    """One worker thread, started at a lower priority than the asyncio default pool that serves queries and
+    reranking, so a long index run slows searches as little as the scheduler allows."""
+    global _POOL
+    if _POOL is None:
+        _POOL = concurrent.futures.ThreadPoolExecutor(
+            max_workers=1, thread_name_prefix="embeddings-index", initializer=_lower_priority
+        )
+    return _POOL
 
 
 Key = tuple[uuid.UUID | None, str, str, int]
@@ -113,7 +141,9 @@ async def reconcile(
         stale = [v[0] for k, v in existing.items() if k not in wanted]
         for start in range(0, len(todo), BATCH):
             batch = todo[start : start + BATCH]
-            vectors = await asyncio.to_thread(engine.embed_passages, [c for _, _, c in batch])
+            vectors = await asyncio.get_running_loop().run_in_executor(
+                _index_pool(), engine.embed_passages, [c for _, _, c in batch]
+            )
             async with db.pool.connection(timeout=DB_DEADLINE_S) as conn, conn.transaction(), conn.cursor() as cur:
                 await cur.executemany(
                     _UPSERT,
