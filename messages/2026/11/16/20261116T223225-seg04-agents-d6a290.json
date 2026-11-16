@@ -1,0 +1,13 @@
+{
+ "id": "20261116T223225-seg04-agents-d6a290",
+ "ts": "2026-11-16T22:32:25.040654Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/health/checks.py apps/api/tests/test_health.py apps/api/tests/test_integration.py",
+ "body": "R3 integrated at c0cb47f",
+ "re": "20261116T221512-seg04-agents-07f97e",
+ "requires_ack": false
+}
