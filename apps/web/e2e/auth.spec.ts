@@ -144,6 +144,10 @@ test.describe("sign-in screen", () => {
   test("offline disables sending and says why", async ({ page, context, consoleErrors }, info) => {
     await page.goto("/sign-in");
     await expect(emailBox(page)).toBeVisible();
+    // Faces the page has not needed yet, fetched while online (a returning visitor's cache has them).
+    await page.evaluate(() =>
+      Promise.all([...document.fonts].filter((f) => f.family.includes("JetBrains")).map((f) => f.load())),
+    );
     await context.setOffline(true);
     await expect(page.getByRole("status").filter({ hasText: "Offline" })).toContainText(
       "Connect to the internet to sign in.",
