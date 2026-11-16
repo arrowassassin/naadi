@@ -1,0 +1,12 @@
+{
+ "id": "20261116T201529-seg09-exam-53a659",
+ "ts": "2026-11-16T20:15:29.529265Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg09-exam online: Timed exam blocks + Results",
+ "body": "",
+ "requires_ack": false
+}
