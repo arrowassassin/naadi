@@ -1,3 +1,4 @@
+import type { AgentRuntimeFacts } from "@naadi/shared";
 import { Button, Chip, ErrorState, OfflineBanner, Skeleton, Tile, TileLabel } from "@naadi/ui";
 import { Activity, AlertTriangle, Check, Clock, Sparkles, X } from "lucide-react";
 import { useMe } from "../auth/api";
@@ -13,6 +14,7 @@ interface PingState extends Record<string, unknown> {
 }
 
 type T = ReturnType<typeof useUiText>;
+type AgentRuntimeCheck = NonNullable<AgentRuntimeFacts["failing"]>[number];
 
 const utcTime = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" });
 const CHIP = "self-start";
@@ -37,9 +39,45 @@ function RuntimeStatus({ t }: { t: T }) {
         <TileLabel>{t("agent.diag.runtime_label")}</TileLabel>
         <StatusChip status={rt ? rt.status : "down"} prefix={`${t("agent.diag.runtime_label")}:`} />
       </div>
-      <p className="m-0 text-text-2">{rt ? rt.detail : t("agent.diag.runtime_absent")}</p>
+      <p className="m-0 text-text-2" data-testid="agent-runtime-summary">
+        {rt ? runtimeSummary(rt.agent ?? null, t) : t("agent.diag.runtime_absent")}
+      </p>
     </Tile>
   );
+}
+
+const CHECK_KEYS: Record<AgentRuntimeCheck, string> = {
+  graphs_loaded: "agent.diag.check_graphs_loaded",
+  database: "agent.diag.check_database",
+  broker: "agent.diag.check_broker",
+  cron_scheduler: "agent.diag.check_cron_scheduler",
+};
+
+/** The runtime status in words, from the server's structured facts (never its English `detail`). */
+export function runtimeSummary(facts: AgentRuntimeFacts | null, t: T): string {
+  if (!facts) return t("agent.diag.runtime_unknown");
+  const time = facts.last_cron_ping ? `${utcTime.format(new Date(facts.last_cron_ping))} UTC` : "";
+  switch (facts.reason) {
+    case "ok": {
+      const count = facts.graphs?.length ?? 0;
+      return t(count === 1 ? "agent.diag.runtime_ok_one" : "agent.diag.runtime_ok_many", {
+        count: String(count),
+        time,
+      });
+    }
+    case "not_installed":
+      return t("agent.diag.runtime_not_installed");
+    case "not_hosted":
+      return t("agent.diag.runtime_absent");
+    case "checks_failed":
+      return t("agent.diag.runtime_checks_failed", {
+        checks: (facts.failing ?? []).map((c) => t(CHECK_KEYS[c])).join(", "),
+      });
+    case "no_cron_ping":
+      return t("agent.diag.runtime_no_cron_ping");
+    case "cron_stale":
+      return t("agent.diag.runtime_cron_stale", { time });
+  }
 }
 
 function PingResult({ block, t }: { block: ReceivedBlock; t: T }) {

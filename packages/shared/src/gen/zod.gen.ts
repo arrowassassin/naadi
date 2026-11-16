@@ -13,6 +13,18 @@ export const zAdminOverview = z.object({
 });
 
 /**
+ * AgentRuntimeFacts
+ *
+ * agent_runtime only: what the status is based on, as codes and values the client words with ui_copy.
+ */
+export const zAgentRuntimeFacts = z.object({
+  failing: z.array(z.enum(["graphs_loaded", "database", "broker", "cron_scheduler"])).optional(),
+  graphs: z.array(z.string()).max(50).optional(),
+  last_cron_ping: z.iso.datetime().nullish(),
+  reason: z.enum(["ok", "not_installed", "not_hosted", "checks_failed", "no_cron_ping", "cron_stale"]),
+});
+
+/**
  * AttemptIn
  */
 export const zAttemptIn = z.object({
@@ -721,6 +733,7 @@ export const zQuota = z.object({
  * ComponentHealth
  */
 export const zComponentHealth = z.object({
+  agent: zAgentRuntimeFacts.nullish(),
   cached: z.boolean(),
   checked_at: z.iso.datetime(),
   configured: z.boolean().optional().default(true),

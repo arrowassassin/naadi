@@ -29,6 +29,19 @@ class ModelProbe(BaseModel):
     detail: str = Field(max_length=80, description="`answers`, or why the call failed (e.g. `HTTP 410 (retired)`)")
 
 
+AgentRuntimeReason = Literal["ok", "not_installed", "not_hosted", "checks_failed", "no_cron_ping", "cron_stale"]
+AgentRuntimeCheck = Literal["graphs_loaded", "database", "broker", "cron_scheduler"]
+
+
+class AgentRuntimeFacts(BaseModel):
+    """agent_runtime only: what the status is based on, as codes and values the client words with ui_copy."""
+
+    reason: AgentRuntimeReason
+    graphs: list[str] = Field(default_factory=list, max_length=50, description="Graph ids Aegra has loaded")
+    failing: list[AgentRuntimeCheck] = Field(default_factory=list, description="Runtime checks that are not ok")
+    last_cron_ping: datetime | None = Field(default=None, description="When the hourly system ping last recorded")
+
+
 class ComponentHealth(BaseModel):
     status: Status
     latency_ms: float | None = Field(description="Time the check took; None if it could not run")
@@ -39,6 +52,9 @@ class ComponentHealth(BaseModel):
     free_tier: bool | None = Field(default=None, description="OpenRouter only: account has no credit purchase")
     configured: bool = Field(default=True, description="False when the settings this check needs are absent")
     models: list[ModelProbe] | None = Field(default=None, description="NVIDIA only: per-model probe results")
+    agent: AgentRuntimeFacts | None = Field(
+        default=None, description="agent_runtime only: structured facts behind the status (None if the check failed)"
+    )
 
 
 class HealthComponents(BaseModel):

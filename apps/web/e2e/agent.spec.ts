@@ -70,6 +70,11 @@ test.describe("admin", () => {
   }, info) => {
     await openDiagnostics(page);
     await expect(page.getByTestId("agent-runtime").getByText(/OK|Degraded|Down/)).toBeVisible();
+    // Worded from the server's structured facts with ui_copy, never the server's English `detail`.
+    await expect(page.getByTestId("agent-runtime-summary")).toHaveText(
+      /^(\d+ graphs? loaded; crons are firing \(last hourly ping \d\d:\d\d UTC\)\.|Running, but .+\.)$/,
+    );
+    await expect(page.getByTestId("agent-runtime-summary")).not.toContainText(/Runtime up|Not ok:/);
     await snap(page, info, consoleErrors, "populated");
 
     await page.getByRole("button", { name: "Run ping" }).click();
@@ -220,5 +225,47 @@ test.describe("student", () => {
       data: { assistant_id: "ping", schedule: "* * * * *", input: { trigger: "background" } },
     });
     expect(res.status()).toBe(403);
+  });
+});
+
+test.describe("admin, production server (APP_ENV=prod, production CSP)", () => {
+  const PROD = process.env.E2E_PROD_URL;
+
+  test("the diagnostics page renders with zero console errors and says this server hosts no runtime", async ({
+    browser,
+    baseURL,
+  }) => {
+    test.skip(!PROD, "needs the local APP_ENV=prod API");
+    // The admin session from the main origin, moved to the https prod origin (as in ink-gate.spec): signing in
+    // again there would send the Supabase calls through production's upgrade-insecure-requests.
+    const file = await signedInState(browser, baseURL as string, "admin");
+    const state = JSON.parse(readFileSync(file, "utf8")) as {
+      origins: { origin: string; localStorage: { name: string; value: string }[] }[];
+    };
+    const origin = new URL(PROD as string).origin;
+    const ctx = await browser.newContext({
+      baseURL: PROD,
+      ignoreHTTPSErrors: true,
+      storageState: { cookies: [], origins: state.origins.map((o) => ({ ...o, origin })) },
+    });
+    try {
+      const page = await ctx.newPage();
+      const errors: string[] = [];
+      page.on("console", (m) => {
+        if (m.type() === "error") errors.push(`${m.text()} @ ${m.location().url}`);
+      });
+      page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
+      await page.goto("/admin/agent");
+      await expect(page.getByRole("heading", { level: 1, name: "Agent diagnostics" })).toBeVisible();
+      // The plain production app (naadi_api.main:app) reports no agent_runtime component.
+      await expect(page.getByTestId("agent-runtime-summary")).toHaveText(
+        "This server does not host the agent runtime.",
+      );
+      await expect(page.getByRole("button", { name: "Run ping" })).toBeVisible();
+      await page.evaluate(() => document.fonts.ready);
+      expect(errors, "console errors under the production CSP").toEqual([]);
+    } finally {
+      await ctx.close();
+    }
   });
 });

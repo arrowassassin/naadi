@@ -22,7 +22,7 @@ from supabase import AsyncClient, acreate_client
 from ..db import Database
 from ..llm import ProbeResult, probe_nvidia
 from ..settings import Settings
-from .models import ModelProbe, Quota, Status
+from .models import AgentRuntimeFacts, ModelProbe, Quota, Status
 
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 
@@ -34,6 +34,7 @@ class CheckOutcome:
     quota: Quota | None = None
     free_tier: bool | None = None
     models: list[ModelProbe] | None = None
+    agent: AgentRuntimeFacts | None = None
 
 
 CheckFn = Callable[[], Awaitable[CheckOutcome]]
@@ -203,6 +204,12 @@ def agent_runtime_check(db: Database | None) -> CheckFn:
         from ..agent.health import runtime_status
 
         st = await runtime_status(db)
-        return CheckOutcome(st.status, st.detail)
+        facts = AgentRuntimeFacts(
+            reason=st.reason,
+            graphs=st.graphs,
+            failing=[k for k, v in st.checks.items() if not v],
+            last_cron_ping=st.last_cron_ping,
+        )
+        return CheckOutcome(st.status, st.detail, agent=facts)
 
     return run

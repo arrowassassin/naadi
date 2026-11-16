@@ -92,7 +92,12 @@ async def test_system_cron_exists_and_fires(host: Host) -> None:
     else:
         pytest.fail(f"the system cron did not record a ping; see {host.log_path}")
     r = (await asyncio.to_thread(httpx.get, f"{host.url}/api/health", timeout=30)).json()
-    assert r["components"]["agent_runtime"]["status"] == "ok", r["components"]["agent_runtime"]
+    rt = r["components"]["agent_runtime"]
+    assert rt["status"] == "ok", rt
+    # Structured facts for the client to word (ui_copy); the English `detail` is for logs and ops only.
+    assert rt["agent"]["reason"] == "ok", rt
+    assert "ping" in rt["agent"]["graphs"] and rt["agent"]["failing"] == []
+    assert rt["agent"]["last_cron_ping"] is not None
 
 
 async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:

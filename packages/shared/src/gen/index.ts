@@ -40,6 +40,7 @@ export {
 } from "./sdk.gen";
 export type {
   AdminOverview,
+  AgentRuntimeFacts,
   AttemptIn,
   AttemptOut,
   AttemptState,

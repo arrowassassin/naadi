@@ -9,12 +9,14 @@ from __future__ import annotations
 
 import asyncio
 import json
+import sys
 import time
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from typing import Any, Literal
 
 from ..db import Database
+from ..health.models import AgentRuntimeCheck, AgentRuntimeReason
 from ..logs import get_logger
 
 log = get_logger("naadi.agent.health")
@@ -93,9 +95,10 @@ async def last_ping(db: Database, trigger: Trigger | None = None) -> dict[str, A
 @dataclass
 class RuntimeStatus:
     status: Literal["ok", "degraded", "down"]
+    reason: AgentRuntimeReason
     detail: str
     graphs: list[str] = field(default_factory=list)
-    checks: dict[str, bool] = field(default_factory=dict)
+    checks: dict[AgentRuntimeCheck, bool] = field(default_factory=dict)
     last_cron_ping: datetime | None = None
 
 
@@ -107,12 +110,12 @@ async def runtime_status(db: Database | None) -> RuntimeStatus:
         from aegra_api.services.cron_scheduler import cron_scheduler
         from aegra_api.services.langgraph_service import get_langgraph_service
     except ImportError:
-        return RuntimeStatus("down", "Aegra is not installed")
-    from . import host
-
-    if not host.HOSTED:
-        return RuntimeStatus("down", "The agent runtime is not running in this process")
-    checks: dict[str, bool] = {}
+        return RuntimeStatus("down", "not_installed", "Aegra is not installed")
+    # Look the host module up rather than import it: importing it builds the whole Aegra app (`app = build()`).
+    host = sys.modules.get(f"{__package__}.host")
+    if host is None or not getattr(host, "HOSTED", False):
+        return RuntimeStatus("down", "not_hosted", "The agent runtime is not running in this process")
+    checks: dict[AgentRuntimeCheck, bool] = {}
     graphs = sorted(get_langgraph_service().list_graphs())
     checks["graphs_loaded"] = "ping" in graphs
     try:
@@ -137,14 +140,20 @@ async def runtime_status(db: Database | None) -> RuntimeStatus:
             last = None
     if not all(checks.values()):
         bad = ", ".join(k for k, v in checks.items() if not v)
-        return RuntimeStatus("down", f"Not ok: {bad}", graphs, checks, last)
+        return RuntimeStatus("down", "checks_failed", f"Not ok: {bad}", graphs, checks, last)
     if last is None:
-        return RuntimeStatus("degraded", "Runtime up; no cron ping recorded yet", graphs, checks, last)
+        return RuntimeStatus("degraded", "no_cron_ping", "Runtime up; no cron ping recorded yet", graphs, checks, last)
     if datetime.now(UTC) - last > CRON_STALE_AFTER:
         return RuntimeStatus(
-            "degraded", f"Runtime up; last cron ping {last.isoformat(timespec='minutes')}", graphs, checks, last
+            "degraded",
+            "cron_stale",
+            f"Runtime up; last cron ping {last.isoformat(timespec='minutes')}",
+            graphs,
+            checks,
+            last,
         )
     return RuntimeStatus(
+        "ok",
         "ok",
         f"{len(graphs)} graph{'' if len(graphs) == 1 else 's'}, crons firing"
         f" (last ping {last.isoformat(timespec='minutes')})",

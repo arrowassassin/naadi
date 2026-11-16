@@ -29,6 +29,64 @@
         "title": "AdminOverview",
         "type": "object"
       },
+      "AgentRuntimeFacts": {
+        "description": "agent_runtime only: what the status is based on, as codes and values the client words with ui_copy.",
+        "properties": {
+          "failing": {
+            "description": "Runtime checks that are not ok",
+            "items": {
+              "enum": [
+                "graphs_loaded",
+                "database",
+                "broker",
+                "cron_scheduler"
+              ],
+              "type": "string"
+            },
+            "title": "Failing",
+            "type": "array"
+          },
+          "graphs": {
+            "description": "Graph ids Aegra has loaded",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50,
+            "title": "Graphs",
+            "type": "array"
+          },
+          "last_cron_ping": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the hourly system ping last recorded",
+            "title": "Last Cron Ping"
+          },
+          "reason": {
+            "enum": [
+              "ok",
+              "not_installed",
+              "not_hosted",
+              "checks_failed",
+              "no_cron_ping",
+              "cron_stale"
+            ],
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason"
+        ],
+        "title": "AgentRuntimeFacts",
+        "type": "object"
+      },
       "AttemptIn": {
         "additionalProperties": false,
         "properties": {
@@ -859,6 +917,17 @@
       },
       "ComponentHealth": {
         "properties": {
+          "agent": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AgentRuntimeFacts"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "agent_runtime only: structured facts behind the status (None if the check failed)"
+          },
           "cached": {
             "description": "True when served from the check cache",
             "title": "Cached",

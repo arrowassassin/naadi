@@ -27,6 +27,36 @@ export type AdminOverview = {
 };
 
 /**
+ * AgentRuntimeFacts
+ *
+ * agent_runtime only: what the status is based on, as codes and values the client words with ui_copy.
+ */
+export type AgentRuntimeFacts = {
+  /**
+   * Failing
+   *
+   * Runtime checks that are not ok
+   */
+  failing?: Array<"graphs_loaded" | "database" | "broker" | "cron_scheduler">;
+  /**
+   * Graphs
+   *
+   * Graph ids Aegra has loaded
+   */
+  graphs?: Array<string>;
+  /**
+   * Last Cron Ping
+   *
+   * When the hourly system ping last recorded
+   */
+  last_cron_ping?: string | null;
+  /**
+   * Reason
+   */
+  reason: "ok" | "not_installed" | "not_hosted" | "checks_failed" | "no_cron_ping" | "cron_stale";
+};
+
+/**
  * AttemptIn
  */
 export type AttemptIn = {
@@ -487,6 +517,10 @@ export type ChapterProgress = {
  * ComponentHealth
  */
 export type ComponentHealth = {
+  /**
+   * agent_runtime only: structured facts behind the status (None if the check failed)
+   */
+  agent?: AgentRuntimeFacts | null;
   /**
    * Cached
    *

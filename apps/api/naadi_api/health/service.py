@@ -88,6 +88,7 @@ class HealthService:
             free_tier=outcome.free_tier,
             configured=configured,
             models=outcome.models,
+            agent=outcome.agent,
         )
 
     async def component(self, name: str) -> ComponentHealth:
