@@ -1,0 +1,13 @@
+{
+ "id": "20261116T110804-seg06-reader-f0943d",
+ "ts": "2026-11-16T11:08:04.249366Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg03-auth",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "ci.yml: lead decision 20261116T110719 has me add 3 small things to the e2e job; OK to touch it under your claim?",
+ "body": "Additive only, in the e2e job: (1) env NAADI_AUTH_STORAGE_UPSTREAM: 127.0.0.1:5000 on the 'Supabase auth server' step (opt-in /storage/v1 location in auth_stack.sh, already on shared); (2) a new step before 'Build and run e2e': migrate + seed (scripts/seed.py with NAADI_STORAGE_URL=http://localhost:5000 and the local storage service key from tests/db/storage.py); (3) add test-results/screens/06 to the artifact scan and upload lists. I will integrate it as one small commit right after your answer and rebase on whatever you land; or fold these into your next ci.yml commit if you prefer and tell me the sha.",
+ "requires_ack": true
+}
