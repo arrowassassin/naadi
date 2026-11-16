@@ -28,6 +28,7 @@ from urllib.parse import urlparse
 
 import psycopg
 from supabase import Client, create_client
+from supabase_auth.errors import AuthApiError
 
 TEST_EMAIL = re.compile(r"^naadi-e2e-[a-z]+-[a-z0-9-]{4,40}@example\.com$")
 
@@ -81,7 +82,13 @@ def link(email: str, local_db: str | None, *, create: bool = True) -> dict[str, 
     if user is None:
         if not create:
             raise SystemExit("that account does not exist")
-        user = sb.auth.admin.create_user({"email": email, "email_confirm": True}).user
+        try:
+            user = sb.auth.admin.create_user({"email": email, "email_confirm": True}).user
+        except AuthApiError:
+            # Another worker created it a moment ago (parallel projects share the run's users).
+            user = _find_user(sb, email)
+            if user is None:
+                raise
     res = sb.auth.admin.generate_link({"type": "magiclink", "email": email})
     props = res.properties
     if local_db:

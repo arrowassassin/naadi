@@ -1,5 +1,5 @@
 import type { Page, Route, TestInfo } from "@playwright/test";
-import { callbackPath, emailFor, magicLink } from "./auth-users";
+import { callbackPath, canMintUsers, emailFor, magicLink } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
@@ -14,8 +14,10 @@ import {
  * deliberate exceptions: the *send* of a magic-link email is intercepted (sending real email to test
  * addresses bounces, and Supabase's free sender allows only a few emails an hour), and Supabase's own
  * redirect for an expired link is replayed as the URL it produces. Real magic-link sign-ins (server-side
- * generated tokens) run in one project per browser engine, because Supabase rate-limits verifications.
+ * generated tokens) run in every project against the CI auth container; against the hosted project only in
+ * one project per browser engine, because hosted Supabase rate-limits verifications per IP.
  */
+const HOSTED_AUTH = (process.env.SUPABASE_URL ?? "").startsWith("https://");
 const REAL_LINK_PROJECTS = new Set(["webkit-ipad-portrait", "chromium-laptop-1440", "firefox-phone-390"]);
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string) =>
@@ -223,7 +225,8 @@ test.describe("route protection", () => {
     for (const path of ["/api/me", "/api/nav", "/api/admin/overview"]) {
       const none = await request.get(path);
       expect(none.status()).toBe(401);
-      expect((await none.json()).error.code).toBe("unauthorized");
+      // a private Space's proxy forwards the HF token header, which the API then rejects as invalid
+      expect((await none.json()).error.code).toMatch(/^(unauthorized|invalid_token)$/);
       const forged = await request.get(path, {
         headers: {
           authorization: "Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Im5vcGUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJ4In0.c2lnbmF0dXJl",
@@ -236,7 +239,8 @@ test.describe("route protection", () => {
 
 test.describe("magic link, end to end", () => {
   test("sign in from a real link, survive reload, sign out", async ({ page, consoleErrors }, info) => {
-    test.skip(!REAL_LINK_PROJECTS.has(info.project.name), "real verification runs once per browser engine");
+    test.skip(!canMintUsers(), "needs the service role (live: pnpm e2e:live-auth)");
+    test.skip(HOSTED_AUTH && !REAL_LINK_PROJECTS.has(info.project.name), "hosted: once per browser engine");
     const meCalls: number[] = [];
     page.on("response", (r) => {
       if (new URL(r.url()).pathname === "/api/me") meCalls.push(r.status());
@@ -263,6 +267,7 @@ test.describe("magic link, end to end", () => {
   });
 
   test("sign out of all devices revokes the session everywhere", async ({ browser, baseURL }, info) => {
+    test.skip(!canMintUsers(), "needs the service role (live: pnpm e2e:live-auth)");
     test.skip(info.project.name !== "chromium-laptop-1440", "global sign-out runs once");
     const a = await browser.newContext({ baseURL });
     const b = await browser.newContext({ baseURL });

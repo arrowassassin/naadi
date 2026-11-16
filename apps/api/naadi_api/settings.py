@@ -123,9 +123,14 @@ class Settings(BaseSettings):
         if not self.supabase_url:
             return None
         u = urlparse(self.supabase_url)
-        if u.scheme != "https" or not u.hostname:
+        if not u.hostname:
             return None
-        return f"https://{u.netloc}"
+        if u.scheme == "https":
+            return f"https://{u.netloc}"
+        # Plain http only for a local auth server (CI's Supabase auth container, local dev); never remote.
+        if u.scheme == "http" and u.hostname in {"localhost", "127.0.0.1", "::1"}:
+            return f"http://{u.netloc}"
+        return None
 
     @property
     def is_local(self) -> bool:

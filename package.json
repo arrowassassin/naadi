@@ -16,6 +16,7 @@
     "typecheck": "pnpm -r --parallel typecheck && uv --directory apps/api run mypy",
     "test": "pnpm -r test",
     "e2e": "pnpm --filter @naadi/web e2e",
+    "e2e:live-auth": "pnpm --filter @naadi/web e2e:live-auth",
     "gen:contracts": "uv --directory apps/api run python -m naadi_api.export_openapi ../../packages/shared/openapi.json && pnpm --filter @naadi/shared gen",
     "gen:requirements": "uv --directory apps/api export --frozen --no-dev --no-emit-project --format requirements-txt -o requirements.txt"
   },

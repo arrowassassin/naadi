@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "e2e": "VITE_FEATURE_INK_LAB=true vite build && playwright test"
+    "e2e": "VITE_FEATURE_INK_LAB=true vite build && playwright test",
+    "e2e:live-auth": "playwright test -c playwright.live-auth.config.ts"
   },
   "dependencies": {
     "@naadi/ink": "workspace:*",

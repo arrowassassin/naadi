@@ -129,11 +129,11 @@ def logs() -> Iterator[LogCapture]:
     def patched(level: str = "INFO", stream: Any = None) -> None:
         original(level, stream=cap.stream)
 
-    main_mod.configure_logging = patched  # type: ignore[assignment]
+    main_mod.configure_logging = patched  # type: ignore[attr-defined]
     try:
         yield cap
     finally:
-        main_mod.configure_logging = original  # type: ignore[assignment]
+        main_mod.configure_logging = original  # type: ignore[attr-defined]
         logging.getLogger().handlers = handler_before
 
 

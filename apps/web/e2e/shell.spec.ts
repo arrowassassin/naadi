@@ -1,5 +1,5 @@
 import type { Page, TestInfo } from "@playwright/test";
-import { authStatePath, emailFor, storedAccessToken } from "./auth-users";
+import { canMintUsers, type E2ERole, emailFor } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
@@ -8,8 +8,20 @@ import {
   snapSegment,
   test,
 } from "./fixtures";
+import { signedInState } from "./session";
 
-/** The signed-in shell: real sessions from global-setup, real /api/me and /api/nav against the real DB. */
+/**
+ * The signed-in shell: real Supabase sessions (throwaway users, signed in through /auth/callback), real
+ * /api/me and /api/nav against the real database. Against the live Space these run in `pnpm e2e:live-auth`.
+ */
+test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
+
+const signedInAs = (role: E2ERole) => ({
+  storageState: async (
+    { browser, baseURL }: { browser: import("@playwright/test").Browser; baseURL: string | undefined },
+    use: (path: string) => Promise<void>,
+  ) => use(await signedInState(browser, baseURL as string, role)),
+});
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string, full = false) =>
   snapSegment(page, info, guard, "03", state, full);
 
@@ -49,7 +61,7 @@ async function bearer(page: Page): Promise<string> {
 }
 
 test.describe("signed in as a student", () => {
-  test.use({ storageState: authStatePath("student") });
+  test.use(signedInAs("student"));
 
   test("Today is populated from the profile", async ({ page, consoleErrors }, info) => {
     await page.goto("/");
@@ -217,7 +229,7 @@ test.describe("signed in as a student", () => {
 });
 
 test.describe("signed in as an editor", () => {
-  test.use({ storageState: authStatePath("editor") });
+  test.use(signedInAs("editor"));
 
   test("saving a display name updates the greeting", async ({ page, consoleErrors }, info) => {
     const name = `Editor ${info.project.name}`.slice(0, 60);
@@ -236,13 +248,14 @@ test.describe("signed in as an editor", () => {
   });
 });
 
-/**
- * Admin, checked through the API only (no page renders the account): locally a throwaway admin, live the
- * owner's own account, about which only booleans and counts are asserted.
- */
+/** Admin: the API gate and the UI marker, for a throwaway admin (ADMIN_EMAILS of the API under test). */
 test.describe("admin", () => {
-  test("is an admin and passes the server-side admin gate", async ({ request }) => {
-    const authorization = `Bearer ${storedAccessToken("admin")}`;
+  test.use(signedInAs("admin"));
+
+  test("is an admin and passes the server-side admin gate", async ({ page, request }) => {
+    await page.goto("/settings/account");
+    await expect(page.getByText("Admin", { exact: true })).toBeVisible();
+    const authorization = await bearer(page);
     const me = await request.get("/api/me", { headers: { authorization } });
     expect(me.status()).toBe(200);
     expect((await me.json()).is_admin).toBe(true);
@@ -251,14 +264,5 @@ test.describe("admin", () => {
     const body = await res.json();
     expect(body.admins_configured).toBeGreaterThanOrEqual(1);
     expect(body.profiles).toBeGreaterThanOrEqual(1);
-  });
-
-  test("the admin UI marker shows only for admins", async ({ browser, baseURL }) => {
-    test.skip(Boolean(process.env.E2E_BASE_URL), "never render the owner's account page in a test");
-    const ctx = await browser.newContext({ baseURL, storageState: authStatePath("admin") });
-    const page = await ctx.newPage();
-    await page.goto("/settings/account");
-    await expect(page.getByText("Admin", { exact: true })).toBeVisible();
-    await ctx.close();
   });
 });

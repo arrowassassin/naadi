@@ -18,6 +18,7 @@ import json
 import uuid
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
+from typing import Any
 
 from psycopg import AsyncConnection
 from psycopg.rows import dict_row, tuple_row
@@ -33,7 +34,7 @@ def claims_json(user_id: uuid.UUID) -> str:
 
 
 @asynccontextmanager
-async def user_tx(db: Database, user_id: uuid.UUID, *, deadline_s: float = 5.0) -> AsyncIterator[AsyncConnection]:
+async def user_tx(db: Database, user_id: uuid.UUID, *, deadline_s: float = 5.0) -> AsyncIterator[AsyncConnection[Any]]:
     """Yield a connection inside a transaction running as `authenticated` with `sub = user_id`."""
     if not db.configured:
         raise DatabaseNotConfigured("DATABASE_URL is not set")

@@ -444,3 +444,27 @@ def test_tokens_and_emails_never_logged(
         assert needle not in text
     reasons = [line.get("reason") for line in logs.lines() if line.get("event") == "auth_rejected"]
     assert "invalid_token" in reasons
+
+
+def test_hs256_project_tokens_work_end_to_end(static_dir: Path) -> None:
+    """Legacy shared-secret projects and CI's auth container: no JWKS, HS256 with SUPABASE_JWT_SECRET."""
+    secret = "ci-only-throwaway-secret-at-least-32-bytes"
+    s = make_settings(static_dir=static_dir, supabase_url=SUPABASE_URL, supabase_jwt_secret=secret)
+    with TestClient(create_app(s, health=fake_service(), db=Database(None)), raise_server_exceptions=False) as c:
+        good = jwt.encode(claims(), secret, algorithm="HS256")
+        assert c.get("/api/nav", headers=bearer(good)).status_code == 200
+        forged = jwt.encode(claims(), "another-secret-of-at-least-32-bytes!!", algorithm="HS256")
+        assert c.get("/api/nav", headers=bearer(forged)).status_code == 401
+
+
+@pytest.mark.parametrize(
+    ("url", "origin"),
+    [
+        ("https://abc.supabase.co", "https://abc.supabase.co"),
+        ("http://localhost:54329", "http://localhost:54329"),
+        ("http://127.0.0.1:9999/", "http://127.0.0.1:9999"),
+        ("http://auth.example.org", None),
+    ],
+)
+def test_supabase_origin_allows_plain_http_only_on_loopback(url: str, origin: str | None) -> None:
+    assert make_settings(supabase_url=url).supabase_origin == origin
