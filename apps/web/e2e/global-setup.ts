@@ -21,4 +21,12 @@ export default async function globalSetup(): Promise<void> {
       "e2e needs SUPABASE_URL, SUPABASE_ANON_KEY and SUPABASE_SERVICE_ROLE_KEY (hosted project, or the CI auth container)",
     );
   }
+  // The webkit-auth-once project (real magic-link email, global sign-out) only exists when the mail catcher
+  // does (playwright.config.ts). A run without it must fail here, not quietly drop those flows.
+  if (!isLive() && !process.env.MAILPIT_URL) {
+    throw new Error(
+      "e2e needs MAILPIT_URL: start the local auth stack (apps/api/tests/auth/auth_stack.sh up|ci), which runs " +
+        "Mailpit next to Supabase's auth server and exports it; the webkit-auth-once project depends on it.",
+    );
+  }
 }

@@ -323,6 +323,72 @@ def test_every_user_data_route_refuses_a_revoked_session_within_the_cache_window
         res = _poll_status(call, 401)
         assert res.status_code == 401, (path, res.status_code, res.text[:200])
         assert res.json()["error"]["code"] == "session_revoked"
-    if path.startswith("/api/reading-position") and method == "put":
-        n = pg.execute("select count(*) from public.reading_positions where user_id = %s", (a,)).fetchone()
-        assert n == (0,)  # nothing was written after the revocation
+
+
+def _user_rows(pg: psycopg.Connection[Any], uid: uuid.UUID) -> dict[str, int]:
+    """Everything the student-facing write paths can create for a user."""
+    q = {
+        "reading_positions": "select count(*) from public.reading_positions where user_id = %s",
+        "blocks": "select count(*) from public.blocks where user_id = %s",
+        "attempts": "select count(*) from public.attempts where user_id = %s",
+        "ink_layers": "select count(*) from public.ink_layers where user_id = %s",
+        "ink_items": "select count(*) from public.ink_items i join public.ink_layers l on l.id = i.layer_id"
+        " where l.user_id = %s",
+    }
+    out: dict[str, int] = {}
+    for name, sql in q.items():
+        row = pg.execute(sql, (uid,)).fetchone()
+        out[name] = int(row[0]) if row else 0
+    return out
+
+
+def test_a_revoked_session_reads_and_writes_nothing_anywhere(
+    url: str, key: SigningKey, static_dir: Path, pg: psycopg.Connection[Any], users: list[uuid.UUID]
+) -> None:
+    """Global sign-out with the directory cache off (TTL 0): every student route (courses, reading position,
+    qbank, search, ink, /api/me, admin) answers 401 session_revoked and no user row changes. The position write
+    is first shown to work on a real seeded section, so "nothing written" is not a write that never could."""
+    from tests.db.fixtures import seed_shared
+
+    a, _ = users
+    pg.execute("update auth.users set email = %s where id = %s", (ADMIN, a))
+    sec = seed_shared(pg)
+    position = {"chapter_id": sec.chapter_id, "section_id": sec.section_id, "offset": 1.0}
+    with make_client(url, key, static_dir, ttl_s=0) as c:
+        headers = h(key, pg, a)
+        live = c.put("/api/reading-position", headers=headers, json=position)
+        assert live.status_code == 200, live.text
+        before = _user_rows(pg, a)
+        assert before["reading_positions"] == 1
+        name_before = pg.execute("select display_name from public.profiles where user_id = %s", (a,)).fetchone()
+
+        pg.execute("delete from auth.sessions where user_id = %s", (a,))  # "sign out of all devices"
+        calls: list[tuple[str, str, dict[str, Any] | None]] = [
+            ("get", "/api/courses", None),
+            ("put", "/api/reading-position", {**position, "offset": 2.0, "completed": True}),
+            ("get", f"/api/reading-position?chapter_id={sec.chapter_id}", None),
+            ("get", "/api/qbank/pool", None),
+            ("post", "/api/blocks", {}),
+            ("get", "/api/blocks", None),
+            ("get", "/api/lab-values", None),
+            ("get", "/api/search?q=heart", None),
+            ("get", "/api/search/web?q=heart", None),
+            ("get", f"/api/ink/section/{sec.section_id}", None),
+            ("post", f"/api/ink/section/{sec.section_id}/changes", {"base_rev": 0, "items": []}),
+            ("get", "/api/me", None),
+            ("patch", "/api/me", {"display_name": "after revocation"}),
+            ("get", "/api/admin/overview", None),
+        ]
+        refused = []
+        for method, path, body in calls:
+            res = getattr(c, method)(path, headers=headers, **({"json": body} if body is not None else {}))
+            code = res.json().get("error", {}).get("code") if res.status_code == 401 else None
+            refused.append((method, path, res.status_code, code))
+        assert all(s == 401 and code == "session_revoked" for _, _, s, code in refused), refused
+    assert _user_rows(pg, a) == before
+    position_row = pg.execute(
+        "select scroll_position, completed_at from public.reading_positions where user_id = %s", (a,)
+    ).fetchone()
+    assert position_row == (1.0, None)  # the post-revocation write (offset 2, completed) never landed
+    name_after = pg.execute("select display_name from public.profiles where user_id = %s", (a,)).fetchone()
+    assert name_after == name_before
