@@ -136,7 +136,7 @@ create policy coach_suggestions_insert_own on public.coach_suggestions for inser
 create policy coach_suggestions_delete_own on public.coach_suggestions for delete to authenticated using ({OWN});
 create policy coach_suggestions_update_own on public.coach_suggestions for update to authenticated
   using ({OWN}) with check ({OWN});
-"""
+"""  # noqa: S608 - DDL built from constants
 
 
 def upgrade() -> None:

@@ -362,7 +362,11 @@ def seed_shared(conn: psycopg.Connection, owner_for_private: uuid.UUID | None = 
         conn, "taxonomy_nodes", {"id": f"test.sys.{tag}", "kind": "system", "label": "Cardio", "exam": ["step1"]}
     )
     insert_row(conn, "embeddings", {"ref_type": "section", "ref_id": s.section_id, "content": "shared chunk"})
-    insert_row(conn, "plan_templates", {"id": s.plan_template_id, "exam": "step1", "title": "Test plan", "days": 1, "source_id": s.source_id})
+    insert_row(
+        conn,
+        "plan_templates",
+        {"id": s.plan_template_id, "exam": "step1", "title": "Test plan", "days": 1, "source_id": s.source_id},
+    )
     return s
 
 
