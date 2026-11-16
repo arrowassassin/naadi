@@ -19,7 +19,6 @@ export class HealthRequestError extends Error {
   }
 }
 
-/** GET /api/health through the generated client (zod-validated). A 503 still carries a valid report. */
 const UNREACHABLE = "The API could not be reached. Check your connection and try again.";
 const CONTRACT = "The API sent a response this version of the app does not understand.";
 

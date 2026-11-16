@@ -14,7 +14,34 @@ from typing import Any
 import structlog
 from structlog.types import EventDict, Processor
 
+from .scrub import redact
+
 _CONFIGURED_LEVEL: str | None = None
+# Secret values registered by the app factory; every rendered line is redacted against them (and against
+# the secret-shaped patterns in scrub.py), including exception messages and formatted tracebacks.
+_SECRETS: set[str] = set()
+
+
+def register_secrets(values: list[str]) -> None:
+    _SECRETS.update(v for v in values if v and len(v) >= 4)
+
+
+def _redact_value(v: Any) -> Any:
+    if isinstance(v, str):
+        return redact(v, _SECRETS)
+    if isinstance(v, dict):
+        return {k: _redact_value(x) for k, x in v.items()}
+    if isinstance(v, (list, tuple)):
+        return [_redact_value(x) for x in v]
+    return v
+
+
+def _redact_secrets(_: Any, __: str, event_dict: EventDict) -> EventDict:
+    """Runs after exceptions are formatted, so tracebacks are covered too."""
+    for k, v in list(event_dict.items()):
+        event_dict[k] = _redact_value(v)
+    return event_dict
+
 
 # Keys that must never appear in a log line, whatever a caller passes.
 _FORBIDDEN_KEYS = frozenset(
@@ -39,19 +66,26 @@ def _shared_processors() -> list[Processor]:
     ]
 
 
+def json_formatter() -> logging.Formatter:
+    """The one JSON line formatter. Also referenced by `uvicorn_logging.json`, so uvicorn's own lines
+    (including the parent process of `--workers N`, which never imports the app) are JSON too."""
+    return structlog.stdlib.ProcessorFormatter(
+        foreign_pre_chain=_shared_processors(),
+        processors=[
+            structlog.stdlib.ProcessorFormatter.remove_processors_meta,
+            structlog.processors.format_exc_info,
+            _redact_secrets,
+            structlog.processors.JSONRenderer(sort_keys=False),
+        ],
+    )
+
+
 def configure_logging(level: str = "INFO", stream: Any = None) -> None:
     """Idempotent: safe to call from every app factory (tests create many apps)."""
     global _CONFIGURED_LEVEL
     lvl = getattr(logging, level.upper(), logging.INFO)
 
-    formatter = structlog.stdlib.ProcessorFormatter(
-        foreign_pre_chain=_shared_processors(),
-        processors=[
-            structlog.stdlib.ProcessorFormatter.remove_processors_meta,
-            structlog.processors.format_exc_info,
-            structlog.processors.JSONRenderer(sort_keys=False),
-        ],
-    )
+    formatter = json_formatter()
     handler = logging.StreamHandler(stream or sys.stdout)
     handler.setFormatter(formatter)
 

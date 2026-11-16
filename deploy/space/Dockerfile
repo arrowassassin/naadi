@@ -40,5 +40,7 @@ ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/confi
 USER user
 EXPOSE 7860
 # --no-access-log: our middleware writes one JSON line per request without query strings.
+# --log-config: uvicorn's own lines (also from the --workers parent process) use the same JSON formatter.
 CMD ["uvicorn", "naadi_api.main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "2", \
-     "--proxy-headers", "--forwarded-allow-ips", "*", "--no-access-log", "--timeout-graceful-shutdown", "10"]
+     "--proxy-headers", "--forwarded-allow-ips", "*", "--no-access-log", "--timeout-graceful-shutdown", "10", \
+     "--log-config", "naadi_api/uvicorn_logging.json"]

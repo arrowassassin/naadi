@@ -67,7 +67,7 @@ def _nvidia_call(model: str, api_key: str, timeout_s: float) -> None:
     llm.invoke(PROBE_PROMPT)
 
 
-async def probe_nvidia(model: str, api_key: SecretStr, timeout_s: float = 15.0) -> ProbeResult:
+async def probe_nvidia(model: str, api_key: SecretStr, timeout_s: float = 30.0) -> ProbeResult:
     """One-token call to `model` on the NVIDIA API catalog. Never raises; failures come back as `ok=False`.
 
     The sync client runs in a worker thread: its `requests` session honours HTTPS_PROXY (the build

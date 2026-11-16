@@ -11,6 +11,8 @@
       "!**/node_modules",
       "!**/dist",
       "!**/.venv",
+      "!docs",
+      "!research",
       "!design",
       "!handoff",
       "!data",
@@ -58,7 +60,10 @@
         "noConsole": {
           "level": "error",
           "options": {
-            "allow": ["error", "warn"]
+            "allow": [
+              "error",
+              "warn"
+            ]
           }
         }
       },
@@ -67,13 +72,19 @@
   },
   "overrides": [
     {
-      "includes": ["packages/shared/src/gen/**"],
+      "includes": [
+        "packages/shared/src/gen/**"
+      ],
       "linter": {
         "enabled": false
       }
     },
     {
-      "includes": ["**/*.test.ts", "**/*.test.tsx", "**/e2e/**"],
+      "includes": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/e2e/**"
+      ],
       "linter": {
         "rules": {
           "suspicious": {

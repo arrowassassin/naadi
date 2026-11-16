@@ -3,15 +3,16 @@
 - `/assets/*` (content-hashed by Vite): long immutable cache; a missing asset is a 404, never HTML.
 - other existing files (favicon, robots.txt, manifest): short cache.
 - anything else that is not `/api/*`: `index.html` with `no-cache`, so a deploy is picked up at once.
-- unknown `/api/*`: JSON 404 (any method).
+- unknown `/api/*`: JSON 404 (any method); a known `/api` path with the wrong method: JSON 405 + `Allow`.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
+from starlette.routing import BaseRoute, Match
 
 ASSET_CACHE = "public, max-age=31536000, immutable"
 FILE_CACHE = "public, max-age=3600"
@@ -28,6 +29,23 @@ def _safe_file(root: Path, rel: str) -> Path | None:
     return candidate
 
 
+METHODS = ("GET", "HEAD", "POST", "PUT", "PATCH", "DELETE")
+
+
+def _allowed_methods(app: FastAPI, request: Request, skip: tuple[object, ...]) -> list[str]:
+    """Methods another route accepts for this exact path (works for included routers of any kind)."""
+    out: list[str] = []
+    for method in METHODS:
+        probe = {**request.scope, "method": method}
+        for route in app.router.routes:
+            if getattr(route, "endpoint", None) in skip:
+                continue
+            if isinstance(route, BaseRoute) and route.matches(probe)[0] is Match.FULL:
+                out.append(method)
+                break
+    return out
+
+
 def install_spa(app: FastAPI, static_dir: Path) -> None:
     root = static_dir.resolve()
 
@@ -36,7 +54,12 @@ def install_spa(app: FastAPI, static_dir: Path) -> None:
         methods=["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         include_in_schema=False,
     )
-    async def api_not_found(rest: str) -> None:
+    async def api_not_found(rest: str, request: Request) -> None:
+        allowed = _allowed_methods(app, request, skip=(api_not_found, spa))
+        if allowed:
+            raise HTTPException(
+                405, "This API path does not accept that method.", headers={"Allow": ", ".join(allowed)}
+            )
         raise HTTPException(404, "No API route matches this path.")
 
     @app.api_route("/{full_path:path}", methods=["GET", "HEAD"], include_in_schema=False)

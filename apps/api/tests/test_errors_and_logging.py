@@ -45,6 +45,17 @@ def test_unknown_api_path_is_json_404(client_factory: Callable[..., TestClient])
         assert body["error"]["request_id"] == r.headers["x-request-id"]
 
 
+def test_wrong_method_on_known_api_path_is_405_with_allow(client_factory: Callable[..., TestClient]) -> None:
+    c = client_factory()
+    for method in ("POST", "PUT", "DELETE"):
+        r = c.request(method, "/api/health")
+        assert r.status_code == 405, method
+        assert r.json()["error"]["code"] == "method_not_allowed"
+        assert r.headers["allow"] == "GET"
+        assert r.json()["error"]["request_id"] == r.headers["x-request-id"]
+    assert c.post("/api/openapi.json").headers["allow"] == "GET, HEAD"
+
+
 def test_validation_error_shape_never_echoes_input(client_factory: Callable[..., TestClient]) -> None:
     c = _with_router(client_factory())
     r = c.post("/api/echo", json={"n": "my private note text"})
@@ -71,6 +82,34 @@ def test_unhandled_exception_prod_has_no_trace(client_factory: Callable[..., Tes
     assert len(entries) == 1
     assert entries[0]["request_id"] == "req-boom-0001"
     assert "RuntimeError" in entries[0]["exception"]
+    assert "Traceback" in entries[0]["exception"]
+    assert "topsecretpw" not in logs.text
+
+
+def test_registered_secret_is_redacted_from_every_log_path(
+    client_factory: Callable[..., TestClient], logs: LogCapture, static_dir: object
+) -> None:
+    """A secret with no recognisable shape (so only the registered value can catch it) raised from a route
+    and logged through a plain stdlib logger, with and without a traceback."""
+    import logging
+
+    secret = "plain-db-password-9f8e7d"
+    settings = make_settings(static_dir=static_dir, database_url=f"postgresql://u:{secret}@h:5432/db")
+    c = client_factory(settings=settings)
+    r = APIRouter()
+
+    @r.get("/api/leak")
+    async def leak() -> None:
+        raise RuntimeError(f"auth failed, password was {secret}")
+
+    c.app.router.routes[0:0] = r.routes  # type: ignore[attr-defined]
+    assert c.get("/api/leak").status_code == 500
+    try:
+        raise ValueError(f"third-party said {secret}")
+    except ValueError:
+        logging.getLogger("psycopg.pool").exception("pool error %s", secret)
+    assert secret not in logs.text
+    assert logs.text.count("***") >= 3
 
 
 def test_unhandled_exception_local_shows_scrubbed_message(

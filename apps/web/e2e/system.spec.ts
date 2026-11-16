@@ -197,6 +197,48 @@ test.describe("health panel", () => {
     await expect(healthPanel(page).locator("[data-component]")).toHaveCount(COMPONENTS.length);
   });
 
+  test("a failed refetch keeps the last result, labelled stale, with the error", async ({
+    page,
+    consoleErrors,
+  }, testInfo) => {
+    const first = page.waitForResponse("**/api/health");
+    await page.goto("/");
+    const status = (await first).status();
+    if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
+    const panel = healthPanel(page);
+    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
+
+    consoleErrors.allowHttpError({ urlPart: "/api/health", status: 500 });
+    await page.route("**/api/health", (route) =>
+      route.fulfill({
+        status: 500,
+        contentType: "application/json",
+        headers: { "x-request-id": "e2e-stale-500" },
+        body: JSON.stringify({
+          error: { code: "internal_error", message: "Something went wrong on our side.", request_id: "e2e-stale-500" },
+        }),
+      }),
+    );
+    await panel.getByRole("button", { name: /Check again/ }).click();
+    const alert = panel.getByRole("alert").filter({ hasText: "The latest check failed" });
+    await expect(alert).toContainText("Something went wrong on our side. (HTTP 500)");
+    await expect(alert).toContainText("may be out of date");
+    await expect(alert).toContainText("Request ID e2e-stale-500");
+    await expect(panel.locator("[data-tone]").filter({ hasText: "Stale" }).first()).toBeVisible();
+    await expect(panel.locator("ul[data-stale='true'] > [data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.getByText(/^Stale · Version/)).toBeVisible();
+    await expectNoHorizontalOverflow(page);
+    await expectNoAxeViolations(page);
+    await snap(page, testInfo, consoleErrors, "stale");
+
+    await page.unroute("**/api/health");
+    const retried = page.waitForResponse("**/api/health");
+    await alert.getByRole("button", { name: "Try again" }).click();
+    const again = (await retried).status();
+    if (again === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status: again });
+    await expect(panel.locator("ul[data-stale='false']")).toHaveCount(1);
+  });
+
   test("offline shows the banner and keeps the last result", async ({ page, context, consoleErrors }, testInfo) => {
     const healthResponse = page.waitForResponse("**/api/health");
     await page.goto("/");

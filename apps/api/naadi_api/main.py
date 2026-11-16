@@ -4,17 +4,16 @@ from __future__ import annotations
 
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from importlib.metadata import PackageNotFoundError, version
 
 from fastapi import FastAPI
 
-from . import api
+from . import __version__, api
 from .config import load_models_config
 from .db import Database
 from .errors import install_error_handlers
 from .health.checks import database_check, nvidia_check, openrouter_check, storage_check, tavily_check
 from .health.service import Check, HealthService
-from .logs import configure_logging, get_logger
+from .logs import configure_logging, get_logger, register_secrets
 from .middleware import RequestContextMiddleware
 from .settings import Settings, get_settings
 from .spa import install_spa
@@ -24,14 +23,12 @@ NVIDIA_PROBE_TTL_S = 3600.0
 
 
 def package_version() -> str:
-    try:
-        return version("naadi-api")
-    except PackageNotFoundError:
-        return "0.0.0"
+    return __version__
 
 
 def default_health_service(settings: Settings, db: Database) -> HealthService:
     models = load_models_config(settings.config_dir)
+    nvidia_timeout = models.providers["nvidia"].probe_timeout_s if "nvidia" in models.providers else 30.0
     return HealthService(
         checks={
             "database": Check("database", database_check(db), ttl_s=5.0),
@@ -40,9 +37,9 @@ def default_health_service(settings: Settings, db: Database) -> HealthService:
             # Real model calls: cached for an hour whatever the result, so /api/health cannot burn quota.
             "nvidia": Check(
                 "nvidia",
-                nvidia_check(settings, models.models_for("nvidia")),
+                nvidia_check(settings, models.models_for("nvidia"), timeout_s=nvidia_timeout),
                 ttl_s=NVIDIA_PROBE_TTL_S,
-                timeout_s=20.0,
+                timeout_s=nvidia_timeout + 5.0,  # probes run concurrently; each has its own deadline
                 failure_ttl_s=NVIDIA_PROBE_TTL_S,
             ),
             "tavily": Check("tavily", tavily_check(settings, models.search.monthly_credit_guard), ttl_s=300.0),
@@ -60,6 +57,7 @@ def create_app(
     db: Database | None = None,
 ) -> FastAPI:
     settings = settings or get_settings()
+    register_secrets(settings.secret_values())
     configure_logging(settings.log_level)
     db = db or Database(settings.database_url)
     health = health or default_health_service(settings, db)

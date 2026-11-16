@@ -167,7 +167,9 @@ def tavily_check(
     return run
 
 
-def nvidia_check(settings: Settings, models: Sequence[str], probe: NvidiaProbe = probe_nvidia) -> CheckFn:
+def nvidia_check(
+    settings: Settings, models: Sequence[str], probe: NvidiaProbe | None = None, timeout_s: float = 30.0
+) -> CheckFn:
     """Probe every NVIDIA model the role chains use. NVIDIA is optional (OpenRouter chains back it up),
     so a missing key is `degraded`; some models failing is `degraded`; all failing is `down`."""
 
@@ -177,7 +179,8 @@ def nvidia_check(settings: Settings, models: Sequence[str], probe: NvidiaProbe =
         key = settings.nvidia_api_key
         if key is None:
             raise NotConfigured("NVIDIA_API_KEY is not set on this deployment", status="degraded")
-        results = await asyncio.gather(*(probe(m, key) for m in models))
+        call: NvidiaProbe = probe or (lambda m, k: probe_nvidia(m, k, timeout_s=timeout_s))
+        results = await asyncio.gather(*(call(m, key) for m in models))
         probes = [
             ModelProbe(provider=r.provider, model=r.model, ok=r.ok, latency_ms=r.latency_ms, detail=r.detail[:80])
             for r in results

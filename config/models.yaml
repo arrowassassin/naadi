@@ -33,6 +33,7 @@ providers:
     key_env: NVIDIA_API_KEY
     rpm: 35                       # verify the account limit in segment 04; token bucket per provider
     probe_before_use: true        # catalog lists retired models: check_models must call each one
+    probe_timeout_s: 30           # one-token probe deadline (/api/health); slow fallbacks have taken ~15 s
   openrouter:
     sdk: langchain-openrouter==0.2.9            # ChatOpenRouter (+ openrouter SDK for key/model metadata)
     key_env: OPENROUTER_API_KEY
