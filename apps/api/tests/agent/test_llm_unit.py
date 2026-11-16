@@ -519,3 +519,42 @@ async def test_turn_cap_stops_a_chain_mid_walk() -> None:
     with pytest.raises(TurnLimitReached):
         await gw.ainvoke("router", [HumanMessage("x")], gw.context_for_run("chat", "run-mid"))
     assert len(led.rows) == 2
+
+
+# ── PII patterns leave measurements alone (review item 8) ──
+
+
+@pytest.mark.parametrize(
+    "clinical",
+    [
+        "Platelets 150000-450000 /uL",
+        "Platelet count 150000-450000",
+        "HIV viral load 12000000 copies/mL",
+        "WBC 11000000 cells/L",
+        "glucose 250 mg/dL, Na 135 mEq/L, PaCO2 28 mmHg",
+        "reference range 3500000-10500000",
+        "ferritin 1200000 ng/L",
+        "dose 1000000 units of penicillin G",
+    ],
+)
+def test_measurements_are_not_scrubbed(clinical: str) -> None:
+    from naadi_api.llm_privacy import scrub_generic
+
+    assert scrub_generic(clinical) == clinical
+
+
+@pytest.mark.parametrize(
+    ("raw", "kept_out"),
+    [
+        ("call 98765-43210 now", "98765"),
+        ("+91 98765 43210", "98765"),
+        ("(415) 555-0134", "555"),
+        ("my number 9876543210", "9876543210"),
+        ("passport K1234567", "K1234567"),
+        ("member id 12345678", "12345678"),
+    ],
+)
+def test_identifiers_are_still_scrubbed(raw: str, kept_out: str) -> None:
+    from naadi_api.llm_privacy import scrub_generic
+
+    assert kept_out not in scrub_generic(raw)

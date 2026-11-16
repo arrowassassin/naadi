@@ -34,6 +34,25 @@ _DOC_ID = re.compile(r"\b(?:[A-Z]{1,3}\d{6,12}|\d{8,})\b")
 _CITATION_ID = re.compile(r"^(?:NCT|PMC)\d+$")
 _CITATION_PREFIX = re.compile(r"(?:PMID|PubMed|doi|DOI|ISBN|ISSN)[:\s#]*$")
 _DIGIT = re.compile(r"\d")
+# A number followed by a unit, or preceded by a lab/measure word, is a measurement, not an identifier:
+# "150000-450000 /uL", "12000000 copies/mL", "250 mg/dL", "platelets 150000-450000".
+_UNIT_AFTER = re.compile(
+    r"^\s*(?:%|/|x\s*10|×\s*10|copies|cells|IU|U\b|units?\b|mg|mcg|µg|ug|g\b|kg|ng|pg|mmol|µmol|umol|nmol|pmol"
+    r"|mol|mEq|mL|ml|L\b|dL|fL|mm|cm|µm|um|nm|mmHg|kPa|bpm|Hz|kcal|cal|per\b|/\s*(?:uL|µL|mm3|L|mL|dL|hpf))",
+    re.IGNORECASE,
+)
+_MEASURE_BEFORE = re.compile(
+    r"(?:platelets?|wbc|rbc|count|range|level|titer|titre|load|copies|cells|between|from|to|normal|ref(?:erence)?"
+    r"|plt|hb|hgb|ldh|ck|alt|ast|alp|tsh|bnp|dose|dosing)[\s:=]*$",
+    re.IGNORECASE,
+)
+_RANGE_HEAD = re.compile(r"\d+\s*[-–]\s*$")
+
+
+def _is_measurement(text: str, start: int, end: int) -> bool:
+    return bool(_UNIT_AFTER.match(text[end : end + 14]) or _MEASURE_BEFORE.search(text[max(0, start - 24) : start]))
+
+
 MIN_NAME_PART = 3
 
 
@@ -169,7 +188,13 @@ def _strings(value: Any, depth: int = 0) -> Iterable[str]:
 
 
 def _phone_sub(m: re.Match[str]) -> str:
-    return "[phone]" if len(_DIGIT.findall(m.group(0))) >= 10 else m.group(0)
+    token = m.group(0)
+    if len(_DIGIT.findall(token)) < 10:
+        return token
+    # Numbers with a unit after them or a lab/measure word before them are measurements, not phones.
+    if _is_measurement(m.string, m.start(), m.end()):
+        return token
+    return "[phone]"
 
 
 def scrub_generic(text: str) -> str:
@@ -184,6 +209,12 @@ def _doc_id_sub(m: re.Match[str], text: str) -> str:
     token = m.group(0)
     if _CITATION_ID.match(token) or _CITATION_PREFIX.search(text[max(0, m.start() - 12) : m.start()]):
         return token
+    if token.isdigit():
+        # The upper end of a range ("3500000-10500000") is judged by the context of the whole range.
+        head = _RANGE_HEAD.search(text[max(0, m.start() - 16) : m.start()])
+        start = m.start() - len(head.group(0)) if head else m.start()
+        if _is_measurement(text, start, m.end()):
+            return token
     return "[id]"
 
 
