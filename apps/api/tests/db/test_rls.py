@@ -77,12 +77,20 @@ def test_user_b_cannot_touch_user_a_rows(
 
     with as_user(pg, user_b) as conn:
         assert _count(conn, table.name, user_a) == 0, "B can see A's rows"
-        assert _update(conn, table, user_a) == 0, "B updated A's rows"
+        if table.name == "blocks":
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _update(conn, table, user_a)
+        else:
+            assert _update(conn, table, user_a) == 0, "B updated A's rows"
         assert _delete(conn, table, user_a) == 0, "B deleted A's rows"
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             insert_row(conn, table.name, table.row(user_a, shared))
+    if table.name in API_WRITTEN:
+        insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
+    with as_user(pg, user_b) as conn:
         # B also cannot move one of its own rows over to A.
-        insert_row(conn, table.name, table.row(user_b, shared))
+        if table.name not in API_WRITTEN:
+            insert_row(conn, table.name, table.row(user_b, shared))
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
                 sql.SQL("update public.{} set user_id = %s where user_id = %s").format(sql.Identifier(table.name)),
@@ -108,11 +116,58 @@ def test_user_a_can_select_update_delete_insert_own_rows(
     seed_user_rows(pg, user_a, shared)
     with as_user(pg, user_a) as conn:
         assert _count(conn, table.name, user_a) == 1
-        assert _update(conn, table, user_a) == 1
+        if table.name == "blocks":
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _update(conn, table, user_a)  # the API owns blocks
+        else:
+            assert _update(conn, table, user_a) == 1
         assert _delete(conn, table, user_a) == 1
         assert _count(conn, table.name, user_a) == 0
-        insert_row(conn, table.name, table.row(user_a, shared))
-        assert _count(conn, table.name, user_a) == 1
+        if table.name in API_WRITTEN:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table.name, table.row(user_a, shared))
+        else:
+            insert_row(conn, table.name, table.row(user_a, shared))
+            assert _count(conn, table.name, user_a) == 1
+
+
+# Written by the API (it grades and owns block state); students may only read them (and delete their own rows).
+API_WRITTEN = ("attempts", "blocks")
+
+
+@pytest.mark.parametrize("table", API_WRITTEN)
+def test_a_student_cannot_insert_attempts_or_write_blocks(
+    pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str
+) -> None:
+    ut = next(t for t in USER_TABLES if t.name == table)
+    seed_user_rows(pg, user_a, shared)
+    with as_user(pg, user_a) as conn:
+        for row in (
+            ut.row(user_a, shared),
+            {**ut.row(user_a, shared), "id": uuid.uuid4()} if table == "blocks" else {},
+        ):
+            if not row:
+                continue
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table, row)
+        if table == "blocks":
+            for stmt in (
+                "update public.blocks set started_at = now()",
+                "update public.blocks set config = '{}'::jsonb",
+                "update public.blocks set question_ids = '{}'",
+                "update public.blocks set score = 100",
+                "update public.blocks set finished_at = now()",
+            ):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    conn.execute(stmt)
+        else:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("update public.attempts set correct = true")
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("update public.attempts set chosen = 'B'")
+        assert _count(conn, table, user_a) == 1  # reading their own row still works
+    with as_service_role(pg) as conn:  # the API can write both
+        insert_row(conn, table, {**ut.row(user_a, shared), **({"id": uuid.uuid4()} if table == "blocks" else {})})
 
 
 @pytest.mark.parametrize("table", USER_TABLES, ids=lambda t: t.name)
@@ -147,19 +202,6 @@ BACKEND_ONLY: list[tuple[str, dict[str, object], list[str], list[dict[str, objec
         {"ref_type": "other", "body": "b"},
         ["update public.report_issues set status = 'resolved'"],
         [{"status": "resolved"}],
-    ),
-    # grading is the API's job
-    (
-        "attempts",
-        {"question_id": "{question}", "chosen": "A"},
-        ["update public.attempts set correct = true", "update public.attempts set chosen = 'B'"],
-        [{"correct": True}],
-    ),
-    (
-        "blocks",
-        {"config": Jsonb({"count": 1}), "question_ids": ["{question}"]},
-        ["update public.blocks set score = 100", "update public.blocks set finished_at = now()"],
-        [{"score": 100}, {"finished_at": "2026-12-01T00:00:00Z"}],
     ),
     # ingest pipeline state
     (
@@ -224,7 +266,6 @@ def test_references_must_be_visible_to_the_caller(
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 insert_row(conn, table, row)
         # visible parents are fine
-        insert_row(conn, "attempts", {"user_id": user_b, "question_id": shared.question_id, "chosen": "A"})
         insert_row(conn, "card_reviews", {"user_id": user_b, "card_id": shared.flashcard_id, "due": "2026-12-01"})
         insert_row(conn, "user_pathway_tasks", {"user_id": user_b, "task_id": other_task})
         insert_row(conn, "costs", {"user_id": user_b, "task_id": other_task, "amount": 1})
@@ -521,6 +562,6 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
         assert visible(conn) == {plain}
 
     # A attempts it through the normal client path, and then sees it.
+    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B"})  # the API's write
     with as_user(pg, user_a) as conn:
-        insert_row(conn, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B"})
         assert visible(conn) == {plain, linked}

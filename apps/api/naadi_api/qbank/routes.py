@@ -326,6 +326,10 @@ where block_id = %s and user_id = (select auth.uid())
 
 async def _detail(conn: psycopg.AsyncConnection[Any], row: Row) -> BlockDetail:
     attempts = {a["question_id"]: a for a in await _rows(conn, _BLOCK_ATTEMPTS, (row["id"],))}
+    return _detail_of(row, attempts)
+
+
+def _detail_of(row: Row, attempts: dict[str, Row]) -> BlockDetail:
     cfg = BlockConfig.model_validate(row["config"])
     reveal = cfg.mode == "tutor" or row["finished_at"] is not None
     states: list[BlockQuestionState] = []
@@ -350,17 +354,20 @@ async def _detail(conn: psycopg.AsyncConnection[Any], row: Row) -> BlockDetail:
     return BlockDetail(**summary.model_dump(), questions=states, next_n=next_n or 1)
 
 
-async def _insert_block(
-    conn: psycopg.AsyncConnection[Any], user: CurrentUser, cfg: BlockConfig, question_ids: list[str]
-) -> BlockDetail:
-    rows = await _rows(
-        conn,
-        "insert into public.blocks (id, user_id, config, question_ids, started_at) "
-        "values (%s, (select auth.uid()), %s, %s, now()) "
-        "returning id, created_at, started_at, finished_at, config, question_ids, score",
-        (uuid.uuid4(), Jsonb(cfg.model_dump(mode="json")), question_ids),
-    )
-    return await _detail(conn, rows[0])
+async def _insert_block(db: Database, user: CurrentUser, cfg: BlockConfig, question_ids: list[str]) -> BlockDetail:
+    """Blocks are written with the privileged role (clients cannot insert them), for the verified caller only."""
+
+    async def write(conn: psycopg.AsyncConnection[Any]) -> Row:
+        rows = await _rows(
+            conn,
+            "insert into public.blocks (id, user_id, config, question_ids, started_at) "
+            "values (%s, %s, %s, %s, now()) "
+            "returning id, created_at, started_at, finished_at, config, question_ids, score",
+            (uuid.uuid4(), user.user_id, Jsonb(cfg.model_dump(mode="json")), question_ids),
+        )
+        return rows[0]
+
+    return _detail_of(await as_service(db, write), {})
 
 
 def _check_count(rules: dict[str, Any], count: int) -> None:
@@ -391,7 +398,7 @@ async def create_block(
     await _check_mode(request, user, body.mode)
     seed = body.seed if body.seed is not None else secrets.randbits(48)
 
-    async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
+    async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[BlockConfig, list[str]]:
         questions, history = await _load_pool(conn, body.exam)
         pool = filter_pool(
             questions,
@@ -418,9 +425,10 @@ async def create_block(
             seed=seed,
             weak_spot=False,
         )
-        return await _insert_block(conn, user, cfg, ids)
+        return cfg, ids
 
-    return await as_user(_db(request), user, run)
+    cfg, ids = await as_user(_db(request), user, run)
+    return await _insert_block(_db(request), user, cfg, ids)
 
 
 @router.post(
@@ -434,7 +442,7 @@ async def create_block(
 async def create_single_block(
     request: Request, body: SingleBlockCreate, user: Annotated[CurrentUser, limited("qbank_write")]
 ) -> BlockDetail:
-    async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
+    async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[BlockConfig, list[str]]:
         # Read under RLS: a question the caller may not see (draft, hidden chapter) is simply not found.
         found = await _first(conn, "select id, exam from public.questions where id = %s", (body.question_id,))
         if found is None:
@@ -449,9 +457,10 @@ async def create_single_block(
             seed=0,
             weak_spot=False,
         )
-        return await _insert_block(conn, user, cfg, [found["id"]])
+        return cfg, [found["id"]]
 
-    return await as_user(_db(request), user, run)
+    cfg, ids = await as_user(_db(request), user, run)
+    return await _insert_block(_db(request), user, cfg, ids)
 
 
 _GRADED = """
@@ -480,7 +489,7 @@ async def create_weak_spot_block(
     wanted = min(body.count or WEAK_SPOT_DEFAULT, hi)
     _check_count(rules, wanted)
 
-    async def run(conn: psycopg.AsyncConnection[Any]) -> WeakSpotBlock:
+    async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[BlockConfig, list[str], list[WeakCellOut]]:
         graded_rows = await _rows(conn, _GRADED, (body.exam,))
         nodes = {n["id"]: n for n in await _load_taxonomy(conn, body.exam)}
         taxonomy = {r["question_id"]: tuple(r["taxonomy_ids"]) for r in graded_rows}
@@ -507,15 +516,11 @@ async def create_weak_spot_block(
             seed=seed,
             weak_spot=True,
         )
-        block = await _insert_block(conn, user, cfg, ids)
-        return WeakSpotBlock(
-            block=block,
-            cells=[
-                WeakCellOut(id=c.id, label=nodes[c.id]["label"], attempts=c.attempts, correct=c.correct) for c in cells
-            ],
-        )
+        out = [WeakCellOut(id=c.id, label=nodes[c.id]["label"], attempts=c.attempts, correct=c.correct) for c in cells]
+        return cfg, ids, out
 
-    return await as_user(_db(request), user, run)
+    cfg, ids, out = await as_user(_db(request), user, run)
+    return WeakSpotBlock(block=await _insert_block(_db(request), user, cfg, ids), cells=out)
 
 
 @router.get(
