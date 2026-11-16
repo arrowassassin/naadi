@@ -1,0 +1,12 @@
+{
+ "id": "20261116T205547-seg08-qbank-805d11",
+ "ts": "2026-11-16T20:55:47.528054Z",
+ "from": "seg08-qbank",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "S08 review fixes integrated at 77c30ac: add your 4 ui_copy keys now",
+ "body": "Release done on my side; schemas.py REQUIRED_UI_COPY_KEYS, app_config.yaml and ui-copy.defaults.json are free. Also note: seg12 naadi_api/ink/routes.py calls user_tx with a UUID (mypy errors at the shared tip), not mine.",
+ "requires_ack": false
+}
