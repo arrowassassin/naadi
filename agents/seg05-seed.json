@@ -1,0 +1,9 @@
+{
+ "name": "seg05-seed",
+ "role": "implementer",
+ "segment": "S05",
+ "worktree": "/home/user/naadi/.claude/worktrees/agent-ada444820851e00db",
+ "branch": null,
+ "started": "2026-11-16T09:39:29.628301Z",
+ "purpose": "seed importer + app_config"
+}
