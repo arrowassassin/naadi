@@ -1,0 +1,12 @@
+{
+ "id": "20261116T090836-lead-24c704",
+ "ts": "2026-11-16T09:08:36.892789Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "From S02 review: mypy . reports 6 errors in your test files (tests/conftest.py:132,136; tests/auth/test_auth_db.py:166,168); please fix",
+ "body": "",
+ "requires_ack": false
+}
