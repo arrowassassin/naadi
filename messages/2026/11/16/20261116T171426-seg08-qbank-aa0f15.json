@@ -1,0 +1,16 @@
+{
+ "id": "20261116T171426-seg08-qbank-aa0f15",
+ "ts": "2026-11-16T17:14:26.168754Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S08: lab_values app_config key",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/config_api/schemas.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
