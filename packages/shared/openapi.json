@@ -372,6 +372,19 @@
       },
       "ConfigEntry": {
         "properties": {
+          "admin_edited_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set while the seed must not overwrite this key",
+            "title": "Admin Edited At"
+          },
           "invalid_reason": {
             "anyOf": [
               {
@@ -434,6 +447,7 @@
           "source",
           "updated_at",
           "updated_by",
+          "admin_edited_at",
           "invalid_reason",
           "json_schema"
         ],
@@ -607,6 +621,12 @@
       "ConfigUpdate": {
         "additionalProperties": false,
         "properties": {
+          "admin_edited": {
+            "default": true,
+            "description": "Mark the key as admin-edited (the seed then keeps it). false hands it back to the seed, e.g. after restoring the shipped value",
+            "title": "Admin Edited",
+            "type": "boolean"
+          },
           "expected_updated_at": {
             "anyOf": [
               {

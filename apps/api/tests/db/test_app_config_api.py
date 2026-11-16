@@ -161,6 +161,39 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
         client.app.state.app_config.invalidate()  # type: ignore[attr-defined]
 
 
+def test_required_copy_cannot_be_removed_and_a_restore_clears_the_edit_mark(
+    client: TestClient, key: SigningKey, users: dict[str, uuid.UUID], url: str
+) -> None:
+    admin = _h(key, users["admin"], ADMIN_EMAIL)
+    entry = client.get("/api/admin/config/ui_copy", headers=admin).json()
+    assert entry["admin_edited_at"] is None
+    without = {k: v for k, v in entry["value"].items() if k not in ("signin.submit", "account.sign_out")}
+    r = client.put(
+        "/api/admin/config/ui_copy", headers=admin, json={"value": without, "expected_updated_at": entry["updated_at"]}
+    )
+    assert r.status_code == 422
+    assert "account.sign_out, signin.submit" in r.text
+    edited = {**entry["value"], "signin.submit": "Send the link"}
+    saved = client.put(
+        "/api/admin/config/ui_copy", headers=admin, json={"value": edited, "expected_updated_at": entry["updated_at"]}
+    ).json()
+    assert saved["admin_edited_at"] is not None
+    restored = client.put(
+        "/api/admin/config/ui_copy",
+        headers=admin,
+        json={"value": entry["value"], "expected_updated_at": saved["updated_at"], "admin_edited": False},
+    )
+    assert restored.status_code == 200, restored.text
+    assert restored.json()["admin_edited_at"] is None
+    with psycopg.connect(url) as c:
+        row = c.execute("select admin_edited_at from public.app_config where key = 'ui_copy'").fetchone()
+    assert row == (None,)
+    with psycopg.connect(url, autocommit=True) as c:
+        # (deleting the admin later would null updated_by, which itself writes a history row)
+        c.execute("update public.app_config set updated_by = null where key = 'ui_copy'")
+        c.execute("delete from public.app_config_history where key = 'ui_copy'")
+
+
 def test_put_body_is_capped(client: TestClient, key: SigningKey, users: dict[str, uuid.UUID]) -> None:
     admin = _h(key, users["admin"], ADMIN_EMAIL)
     big = {f"x.k{i}": "v" * 400 for i in range(200)}  # ~90 KB

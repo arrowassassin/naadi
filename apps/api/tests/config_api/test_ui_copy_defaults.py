@@ -41,7 +41,7 @@ def test_defaults_file_is_current() -> None:
 
 def test_every_required_key_is_seeded_and_non_empty() -> None:
     copy = file_values(REPO / "config")["ui_copy"]
-    assert REQUIRED_UI_COPY_KEYS <= set(copy)
+    assert set(copy) >= REQUIRED_UI_COPY_KEYS
     assert all(copy[k].strip() for k in REQUIRED_UI_COPY_KEYS)
 
 

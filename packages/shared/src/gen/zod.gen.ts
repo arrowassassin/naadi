@@ -154,6 +154,7 @@ export const zJsonValue = z.unknown();
  * ConfigEntry
  */
 export const zConfigEntry = z.object({
+  admin_edited_at: z.iso.datetime().nullable(),
   invalid_reason: z.string().nullable(),
   json_schema: z.record(z.string(), zJsonValue),
   key: z.string(),
@@ -187,6 +188,7 @@ export const zConfigHistory = z.object({
  * ConfigUpdate
  */
 export const zConfigUpdate = z.object({
+  admin_edited: z.boolean().optional().default(true),
   expected_updated_at: z.iso.datetime().nullable(),
   value: zJsonValue,
 });

@@ -188,6 +188,17 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "account.cancel",
         "account.sign_out_failed_title",
         "account.sign_out_failed",
+        # reader and content renderer (S06)
+        "content.report_issue",
+        "content.report_issue_prompt",
+        "content.report_issue_question",
+        "content.report_issue_hint",
+        "content.report_issue_send",
+        "content.report_issue_sent",
+        "content.figure_missing",
+        "content.video_missing",
+        "content.pdf_missing",
+        "content.question_missing",
     }
 )
 

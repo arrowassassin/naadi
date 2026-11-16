@@ -220,6 +220,12 @@ export type ComponentHealth = {
  */
 export type ConfigEntry = {
   /**
+   * Admin Edited At
+   *
+   * Set while the seed must not overwrite this key
+   */
+  admin_edited_at: string | null;
+  /**
    * Invalid Reason
    */
   invalid_reason: string | null;
@@ -349,6 +355,12 @@ export type ConfigKeySummary = {
  * ConfigUpdate
  */
 export type ConfigUpdate = {
+  /**
+   * Admin Edited
+   *
+   * Mark the key as admin-edited (the seed then keeps it). false hands it back to the seed, e.g. after restoring the shipped value
+   */
+  admin_edited?: boolean;
   /**
    * Expected Updated At
    *
