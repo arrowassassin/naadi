@@ -1,5 +1,6 @@
 import type { InkColor, InkDiff, InkItem, InkSurfaceType } from "@naadi/shared";
 import { type CSSProperties, type ReactNode, type Ref, useEffect, useRef } from "react";
+import type { InkAnchorResolver } from "../anchors";
 import {
   type EraserMode,
   InkEngine,
@@ -35,6 +36,8 @@ export interface InkSurfaceProps {
   palette?: Partial<Palette>;
   sizes?: Partial<ToolSizes>;
   latency?: LatencyRecorder;
+  /** Reflow anchoring for text surfaces (12b); a new resolver re-places anchored items. */
+  anchors?: InkAnchorResolver | null;
   onStrokesChange?: (diff: InkDiff) => void;
   /** A lasso closed; `png` is an ink-only picture, null when the loop selected no ink (region only). */
   onLasso?: (selection: SelectionInfo, png: Blob | null) => void;
@@ -83,6 +86,7 @@ export function InkSurface(props: InkSurfaceProps) {
       palette: p.palette,
       sizes: p.sizes,
       latency: p.latency,
+      anchors: p.anchors ?? null,
       onStrokesChange: (d) => cb.current.onStrokesChange?.(d),
       onLasso: (s, png) => cb.current.onLasso?.(s, png),
       onConvertToText: (x) => cb.current.onConvertToText?.(x),
@@ -116,6 +120,14 @@ export function InkSurface(props: InkSurfaceProps) {
     if (props.items) engine.current?.load(props.items);
   }, [props.items]);
   useEffect(() => engine.current?.setEnabled(props.enabled), [props.enabled]);
+  const firstAnchors = useRef(true);
+  useEffect(() => {
+    if (firstAnchors.current) {
+      firstAnchors.current = false;
+      return;
+    }
+    engine.current?.setAnchors(props.anchors ?? null);
+  }, [props.anchors]);
   useEffect(
     () =>
       engine.current?.setMarkerMode(

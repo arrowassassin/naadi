@@ -1,4 +1,5 @@
 import { type InkDiff, type InkItem, InkItemsSchema } from "@naadi/shared";
+import { type InkAnchorResolver, resolveAnchor, stampAnchor } from "./anchors";
 import { bboxOfItem, EMPTY_RECT, type Rect, unionRect } from "./geometry";
 import { GridIndex } from "./spatial";
 
@@ -37,9 +38,87 @@ export class InkDocument {
   version = 0;
   private readonly now: () => number;
 
+  /** Reflow anchoring (12b): stamps anchors on edits, places anchored items for the current layout. */
+  private anchors: InkAnchorResolver | null;
+
   /** `now` stamps undo/redo re-applications (epoch ms), so they win last-writer-wins merges. */
-  constructor(opts: { now?: () => number } = {}) {
+  constructor(opts: { now?: () => number; anchors?: InkAnchorResolver | null } = {}) {
     this.now = opts.now ?? Date.now;
+    this.anchors = opts.anchors ?? null;
+  }
+
+  /** Replace the anchor resolver (e.g. after the content's blocks are measured); call reanchor() to re-place. */
+  setAnchors(anchors: InkAnchorResolver | null): void {
+    this.anchors = anchors;
+  }
+
+  /** Every item the user's edit produced gets the anchor of the block under its top edge (or loses a stale one). */
+  private stamp(change: Change): Change {
+    if (!this.anchors) return change;
+    const after = change.after.map((e) => {
+      const item = stampAnchor(e.item, this.anchors);
+      return item === e.item ? e : { item, seq: e.seq };
+    });
+    return { before: change.before, after };
+  }
+
+  /**
+   * Re-place anchored items for the current layout (after the content reflowed). Same ids, anchors and
+   * updatedAt, so nothing is emitted, nothing is recorded and sync sees no change.
+   */
+  reanchor(): void {
+    if (!this.anchors || this.tx) return;
+    let dirty = EMPTY_RECT;
+    for (const [id, e] of this.entries) {
+      const item = resolveAnchor(e.item, this.anchors);
+      if (item === e.item) continue;
+      dirty = unionRect(unionRect(dirty, bboxOfItem(e.item)), bboxOfItem(item));
+      this.entries.set(id, { item, seq: e.seq });
+      this.index.remove(id);
+      this.index.insert(id, bboxOfItem(item));
+    }
+    if (dirty === EMPTY_RECT) return;
+    this.version++;
+    this.emitDirty(dirty);
+  }
+
+  /**
+   * Merge a sync replica's items into the live layer (12b): per id the incoming version wins when it is newer
+   * (higher updatedAt; on a tie a tombstone beats a live item), the order of mergeInkItems. On a full tie the local
+   * copy stays (it may differ only by anchor placement). A tombstone removes; an unknown live item is added on top.
+   * A live item this layer deleted at or after the incoming version is not resurrected.
+   *
+   * It is not a user action: no undo step, history untouched, no onDiff. Undo/redo after it still re-stamp what
+   * they bring back strictly newer than every incoming version, so the local action wins (as for any replica).
+   * Returns what changed, or null.
+   */
+  applyRemote(items: readonly InkItem[]): InkDiff | null {
+    if (this.tx) throw new Error("InkDocument: applyRemote during a transaction");
+    const before: Entry[] = [];
+    const after: Entry[] = [];
+    const seen = new Set<string>();
+    for (const raw of items) {
+      if (seen.has(raw.id)) continue; // callers pass one version per id (mergeInkItems output); keep the first
+      seen.add(raw.id);
+      const cur = this.entries.get(raw.id);
+      const stamp = this.replicaStamp.get(raw.id);
+      this.replicaStamp.set(raw.id, Math.max(stamp ?? 0, raw.updatedAt));
+      if (cur) {
+        const a = cur.item;
+        const wins = raw.updatedAt > a.updatedAt || (raw.updatedAt === a.updatedAt && !!raw.deleted && !a.deleted);
+        if (!wins) continue;
+        before.push(cur);
+        if (!raw.deleted) after.push({ item: raw, seq: cur.seq });
+      } else if (!raw.deleted) {
+        // Deleted here at or after this version (a pending tombstone ties or beats it): stay deleted.
+        if (stamp !== undefined && stamp >= raw.updatedAt) continue;
+        after.push({ item: raw, seq: this.nextSeq++ });
+      }
+    }
+    if (before.length === 0 && after.length === 0) return null;
+    // applyRaw bumps replicaStamp for removals the way a local delete would; that only makes later undo stamps
+    // larger, never smaller than what a replica holds.
+    return this.applyRaw({ before, after });
   }
 
   /**
@@ -123,8 +202,9 @@ export class InkDocument {
     this.undoStack = [];
     this.redoStack = [];
     this.nextSeq = 1;
-    for (const item of parsed) {
-      if (item.deleted) continue;
+    for (const raw of parsed) {
+      if (raw.deleted) continue;
+      const item = resolveAnchor(raw, this.anchors);
       this.entries.set(item.id, { item, seq: this.nextSeq++ });
       this.index.insert(item.id, bboxOfItem(item));
     }
@@ -138,7 +218,8 @@ export class InkDocument {
   }
 
   /** Apply a change, record it for undo, and emit its diff. */
-  commit(change: Change): InkDiff | null {
+  commit(input: Change): InkDiff | null {
+    const change = this.stamp(input);
     if (this.tx) {
       this.applyInTransaction(change);
       return null;
@@ -251,7 +332,13 @@ export class InkDocument {
       this.entries.delete(e.item.id);
       this.index.remove(e.item.id);
     }
-    for (const e of change.after) {
+    for (let i = 0; i < change.after.length; i++) {
+      // Anchored items land where their block is in the current layout (undo/redo/remote bring back versions
+      // placed for another layout); fresh edits are already in place, so this is a no-op for them.
+      const placed = change.after[i] as Entry;
+      const item = resolveAnchor(placed.item, this.anchors);
+      const e = item === placed.item ? placed : { item, seq: placed.seq };
+      change.after[i] = e;
       this.replicaStamp.set(e.item.id, Math.max(this.replicaStamp.get(e.item.id) ?? 0, e.item.updatedAt));
       this.entries.set(e.item.id, { item: e.item, seq: e.seq });
       if (e.seq >= this.nextSeq) this.nextSeq = Math.floor(e.seq) + 1;

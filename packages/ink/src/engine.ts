@@ -11,6 +11,7 @@ import {
   roundSu,
   uuidv7,
 } from "@naadi/shared";
+import type { InkAnchorResolver } from "./anchors";
 import { type CanvasLease, canvasBudget } from "./budget";
 import { clientToSurface, type SurfaceFrame } from "./coords";
 import { InkDocument } from "./document";
@@ -171,6 +172,8 @@ export interface InkEngineOptions {
   predict?: boolean;
   latency?: LatencyRecorder;
   now?: () => number;
+  /** Reflow anchoring for text surfaces (12b): see anchors.ts. Call reanchor() after the content reflows. */
+  anchors?: InkAnchorResolver | null;
   onStrokesChange?: (diff: InkDiff) => void;
   /** A lasso closed: with the ink it selected (png = ink-only picture) or none (png = null). */
   onLasso?: (selection: SelectionInfo, png: Blob | null) => void;
@@ -306,7 +309,7 @@ export class InkEngine {
 
   constructor(options: InkEngineOptions) {
     this.o = options;
-    this.doc = new InkDocument({ now: () => this.now() });
+    this.doc = new InkDocument({ now: () => this.now(), anchors: options.anchors ?? null });
     this.host = options.host;
     this.theme = options.theme ?? "paper";
     this.markerMode = options.markerMode ?? "under";
@@ -396,6 +399,33 @@ export class InkEngine {
     this.doc.load(items);
     this.prewarm();
     this.emitState();
+  }
+
+  /**
+   * Merge items from another replica (sync, 12b) without touching undo history: see InkDocument.applyRemote.
+   * Returns what changed (null for nothing). Emits no onStrokesChange (it is not this user's edit).
+   */
+  applyRemote(items: readonly InkItem[]): InkDiff | null {
+    if (this.destroyed) return null;
+    const diff = this.doc.applyRemote(items);
+    if (diff) {
+      this.refreshSelectionAfterChange();
+      this.emitState();
+    }
+    return diff;
+  }
+
+  /** Replace the anchor resolver (the content's blocks were measured again) and re-place anchored items. */
+  setAnchors(anchors: InkAnchorResolver | null): void {
+    this.doc.setAnchors(anchors);
+    this.reanchor();
+  }
+
+  /** Re-place anchored items for the current layout (no diff, no undo step). */
+  reanchor(): void {
+    if (this.destroyed || this.doc.inTransaction) return;
+    this.doc.reanchor();
+    this.refreshSelectionAfterChange();
   }
 
   setEnabled(enabled: boolean): void {
