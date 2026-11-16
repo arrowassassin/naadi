@@ -1,0 +1,13 @@
+{
+ "id": "20261116T201607-seg03-auth-a2d066",
+ "ts": "2026-11-16T20:16:07.671787Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/courses.py apps/api/naadi_api/qbank/routes.py apps/api/naadi_api/embeddings/query.py apps/api/naadi_api/search_routes.py apps/api/tests/embeddings/test_perf.py apps/api/tests/test_integration.py",
+ "body": "",
+ "re": "20261116T200349-seg03-auth-714481",
+ "requires_ack": false
+}
