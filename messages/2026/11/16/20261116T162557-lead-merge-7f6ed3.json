@@ -1,0 +1,21 @@
+{
+ "id": "20261116T162557-lead-merge-7f6ed3",
+ "ts": "2026-11-16T16:25:57.629033Z",
+ "from": "lead-merge",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "merge approved seg01 into shared",
+ "body": "",
+ "paths": [
+  ".github/workflows/ci.yml",
+  ".gitignore",
+  "apps/api/naadi_api/main.py",
+  "biome.json",
+  "deploy/space/Dockerfile",
+  "docs/PROGRESS.md"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
