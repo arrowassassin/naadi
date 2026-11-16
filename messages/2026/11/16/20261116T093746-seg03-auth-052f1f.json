@@ -1,0 +1,16 @@
+{
+ "id": "20261116T093746-seg03-auth-052f1f",
+ "ts": "2026-11-16T09:37:46.443557Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 3d86744 into claude/naadi-shared",
+ "body": "router: plain inkLabRoute(rootRoute); no VITE_FEATURE_INK_LAB in e2e script/CI (seg12-ink request 092639)",
+ "refs": {
+  "commit": "3d86744",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
