@@ -40,7 +40,7 @@ const VIEWPORTS = [
 
 const BROWSERS = ["webkit", "chromium", "firefox"] as const;
 
-const projects: PlaywrightTestConfig["projects"] = BROWSERS.flatMap((browserName) =>
+const projects: NonNullable<PlaywrightTestConfig["projects"]> = BROWSERS.flatMap((browserName) =>
   VIEWPORTS.map((v) => ({
     name: `${browserName}-${v.name}`,
     use: {
@@ -54,8 +54,28 @@ const projects: PlaywrightTestConfig["projects"] = BROWSERS.flatMap((browserName
   })),
 );
 
+// The real iPad renders at device pixel ratio 2: ink canvases hold 4x the pixels, which the canvas memory
+// budget and the ink scroll test must hold up to.
+projects.push({
+  name: "webkit-ipad-portrait-dpr2",
+  testMatch: /ink.*\.spec\.ts/,
+  use: {
+    browserName: "webkit",
+    viewport: { width: 820, height: 1180 },
+    hasTouch: true,
+    isMobile: true,
+    deviceScaleFactor: 2,
+  },
+});
+
 /** Port of the second API server, whose LLM budget is forced to zero (the degradation path, segment 04). */
 const BUDGET_ZERO_PORT = port + 1;
+/**
+ * Port of the third API server, in APP_ENV=prod (same build and database), for production-only behaviour
+ * such as the ink lab being admin-only (ink-gate.spec). Specs find it through E2E_PROD_URL.
+ */
+const PROD_PORT = port + 2;
+if (!liveBaseUrl) process.env.E2E_PROD_URL = `http://127.0.0.1:${PROD_PORT}`;
 
 /**
  * With a database the API under test is the production entrypoint: Aegra hosting the Naadi app
@@ -80,13 +100,22 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     `uv --directory ${api} run uvicorn ${app} --host 127.0.0.1 --port ${p} --workers 1 --no-access-log`;
   const common = { reuseExistingServer: !process.env.CI, stdout: "ignore" as const, stderr: "pipe" as const };
   if (!dbUrl) {
-    return {
-      ...common,
-      command: `uv --directory ${api} run python -m naadi_api.migrate --if-configured && ${serve(port, "naadi_api.main:app")}`,
-      url: `${baseURL}/`,
-      timeout: 120_000,
-      env: env(),
-    };
+    return [
+      {
+        ...common,
+        command: `uv --directory ${api} run python -m naadi_api.migrate --if-configured && ${serve(port, "naadi_api.main:app")}`,
+        url: `${baseURL}/`,
+        timeout: 120_000,
+        env: env(),
+      },
+      {
+        ...common,
+        command: serve(PROD_PORT, "naadi_api.main:app"),
+        url: `http://127.0.0.1:${PROD_PORT}/api/public-config`,
+        timeout: 120_000,
+        env: env({ APP_ENV: "prod" }),
+      },
+    ];
   }
   const migrate = `uv --directory ${api} run python -m naadi_api.agent.migrate_all`;
   return [
@@ -105,6 +134,14 @@ function webServers(): PlaywrightTestConfig["webServer"] {
       url: `http://127.0.0.1:${BUDGET_ZERO_PORT}/`,
       timeout: 180_000,
       env: env({ OPENROUTER_DAILY_CAP: "0", NVIDIA_API_KEY: "" }),
+    },
+    {
+      ...common,
+      // Same database and code in production mode (the migrations above have run or are idempotent).
+      command: `${migrate} && ${serve(PROD_PORT, "naadi_api.agent.host:app")}`,
+      url: `http://127.0.0.1:${PROD_PORT}/api/public-config`,
+      timeout: 180_000,
+      env: env({ APP_ENV: "prod" }),
     },
   ];
 }

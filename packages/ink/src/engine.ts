@@ -6,12 +6,15 @@ import {
   type InkItem,
   type InkPoint,
   type InkStroke,
+  type InkSurfaceType,
   type InkTextBox,
   roundSu,
   uuidv7,
 } from "@naadi/shared";
+import { type CanvasLease, canvasBudget } from "./budget";
 import { clientToSurface, type SurfaceFrame } from "./coords";
 import { InkDocument } from "./document";
+import { encodePng } from "./encode";
 import {
   bboxOfItem,
   EMPTY_RECT,
@@ -38,12 +41,22 @@ import {
 } from "./input";
 import type { LatencyRecorder } from "./latency";
 import { markPenPresent, onPenPresence, penPresent } from "./presence";
-import { drawItem, type InkTheme, type Palette, prepareItem, REF, resolvePalette } from "./render";
+import { drawItem, type InkTheme, LiveStroke, type Palette, prepareItem, REF, resolvePalette } from "./render";
 import { recognizeShape } from "./shapes";
 import { activateShortcutTarget, registerShortcutTarget, type ShortcutAction } from "./shortcuts";
 
 export type InkToolName = "pen" | "marker" | "eraser" | "lasso" | "shapes" | "text";
 export type EraserMode = "stroke" | "pixel";
+/**
+ * Where marker ink sits: "under" the surface content (plain text: the highlight shows through the glyphs)
+ * or "multiply" over it with a multiply blend (images, PDF pages, tables with opaque fills).
+ */
+export type MarkerMode = "under" | "multiply";
+
+/** The marker placement that suits each kind of surface (HANDOFF §5.3). */
+export function markerModeFor(surface: InkSurfaceType): MarkerMode {
+  return surface === "pdf_page" ? "multiply" : "under";
+}
 
 /** Default tool sizes in CSS px at the moment of drawing (stored in su, so ink then scales with the page). */
 export interface ToolSizes {
@@ -65,21 +78,33 @@ export interface PxRect {
   height: number;
 }
 
+/**
+ * A lasso selection. It may hold no ink at all ("circle to ask" around printed text or a figure): then
+ * `ids` is empty and `bbox`/`path` describe the circled region.
+ */
 export interface SelectionInfo {
   ids: string[];
-  /** Bounding box in su. */
+  /** Bounding box in su: of the selected ink, or of the lasso loop when no ink was selected. */
   bbox: Rect;
-  /** Bounding box in CSS px relative to the surface. */
+  /** `bbox` in CSS px relative to the surface. */
   rect: PxRect;
+  /** The lasso loop in su (the bbox outline for selections made by copy). */
+  path: Vec[];
 }
 
-/** What "Convert to text", "Circle to ask Naadi" and lasso receive: the ink, where it is, and a picture of it. */
+/**
+ * What "Convert to text", "Circle to ask Naadi" and lasso receive: the selected ink, the circled region,
+ * and an ink-only picture of the selection (`png` is null when no ink was selected). The PNG never contains
+ * the page under the ink: the consumer (assistant, ingest) composites the page content and the surrounding
+ * text for the region itself, since only it knows what the surface shows.
+ */
 export interface InkSelectionPayload {
   ids: string[];
   items: InkItem[];
   bbox: Rect;
   rect: PxRect;
-  png: Blob;
+  path: Vec[];
+  png: Blob | null;
 }
 
 export interface InkEngineState {
@@ -115,6 +140,8 @@ export interface InkEngineOptions {
   tool?: InkToolName;
   color?: InkColor;
   eraserMode?: EraserMode;
+  /** Marker placement; defaults to "under" (see markerModeFor). */
+  markerMode?: MarkerMode;
   penOnly?: boolean;
   sizes?: Partial<ToolSizes>;
   /** Use getPredictedEvents() for the live preview (default true). */
@@ -122,7 +149,8 @@ export interface InkEngineOptions {
   latency?: LatencyRecorder;
   now?: () => number;
   onStrokesChange?: (diff: InkDiff) => void;
-  onLasso?: (selection: SelectionInfo, png: Blob) => void;
+  /** A lasso closed: with the ink it selected (png = ink-only picture) or none (png = null). */
+  onLasso?: (selection: SelectionInfo, png: Blob | null) => void;
   onConvertToText?: (payload: InkSelectionPayload) => void;
   onAsk?: (payload: InkSelectionPayload) => void;
   onStateChange?: (state: InkEngineState) => void;
@@ -132,8 +160,8 @@ export interface InkEngineOptions {
 
 /** Device pixels per slab canvas: bounds memory on tall surfaces at high device pixel ratios. */
 const MAX_SLAB_PIXELS = 8_000_000;
-/** Device pixels of ink canvases kept alive per surface (~64 MB): most pages fit whole. */
-const MAX_TOTAL_PIXELS = 16_000_000;
+/** Slabs (canvas elements + settled images) kept per surface, in device px: most pages fit whole. */
+const MAX_SLABS_PIXELS = 16_000_000;
 /** Quiet time after the last change before canvases are swapped for images. */
 const SETTLE_MS = 700;
 /** Committed layers are repainted in TILE×TILE CSS px tiles. */
@@ -154,7 +182,7 @@ type Gesture =
       holdTimer: ReturnType<typeof setTimeout> | null;
       snapped: boolean;
     }
-  | { kind: "erase"; pointerId: number; last: Vec; lastT: number }
+  | { kind: "erase"; pointerId: number; last: Vec; lastT: number; pending: Vec[] }
   | { kind: "lasso"; pointerId: number; path: Vec[]; lastT: number }
   | { kind: "drag"; pointerId: number; start: Vec; dx: number; dy: number; lastT: number }
   | { kind: "tap"; pointerId: number; startClient: Vec; lastT: number };
@@ -216,16 +244,24 @@ export class InkEngine {
   private prewarmTimer: ReturnType<typeof setTimeout> | null = null;
   private settleTimer: ReturnType<typeof setTimeout> | null = null;
   private settling = 0;
+  private liveLease: CanvasLease | null = null;
+  /** The visible part of the surface (surface CSS px), refreshed on scroll/resize. */
+  private vis = { top: 0, bottom: 0 };
+  private markerMode: MarkerMode;
+  /** Main-thread time spent starting settle encodes (the encode itself runs in a worker where possible). */
+  readonly renderStats = { settleMainMs: 0 };
+  private readonly liveStroke = new LiveStroke();
 
   constructor(options: InkEngineOptions) {
     this.o = options;
     this.doc = new InkDocument({ now: () => this.now() });
     this.host = options.host;
     this.theme = options.theme ?? "paper";
+    this.markerMode = options.markerMode ?? "under";
     this.sizes = { ...DEFAULT_SIZES, ...options.sizes };
     this.palm = new PalmRejection({ penOnly: options.penOnly ?? true, penPresent: penPresent() });
     this.state = {
-      enabled: options.enabled ?? true,
+      enabled: options.enabled ?? false,
       tool: options.tool ?? "pen",
       color: options.color ?? "ink",
       eraserMode: options.eraserMode ?? "stroke",
@@ -364,6 +400,14 @@ export class InkEngine {
     this.emitState();
   }
 
+  setMarkerMode(mode: MarkerMode): void {
+    if (this.markerMode === mode) return;
+    this.markerMode = mode;
+    this.applyThemeBlend();
+    this.liveDirty = true;
+    this.requestFrame();
+  }
+
   setTheme(theme: InkTheme, palette?: Partial<Palette>): void {
     this.theme = theme;
     this.palette = resolvePalette(this.host, theme, palette ?? this.o.palette);
@@ -397,7 +441,7 @@ export class InkEngine {
 
   deleteSelection(): void {
     const sel = this.selection;
-    if (!sel) return;
+    if (!sel || sel.ids.length === 0) return;
     const entries = sel.ids.map((id) => this.doc.entry(id)).filter((e) => e !== undefined);
     this.clearSelection();
     this.doc.commit({ before: entries, after: [] });
@@ -406,7 +450,7 @@ export class InkEngine {
   /** Copy the selection (slightly offset) and select the copies. */
   duplicateSelection(): void {
     const sel = this.selection;
-    if (!sel) return;
+    if (!sel || sel.ids.length === 0) return;
     const now = this.now();
     const offset = 16 / Math.max(1, this.widthPx);
     const copies = sel.ids
@@ -480,6 +524,10 @@ export class InkEngine {
     for (const c of this.cleanups) c();
     for (const slab of this.slabs.values()) this.releaseSlab(slab);
     this.slabs.clear();
+    this.liveLease?.release();
+    this.liveLease = null;
+    this.liveCanvas.width = 0;
+    this.liveCanvas.height = 0;
     this.layer.remove();
     if (this.lastPenActive) this.o.onPenActiveChange?.(false);
   }
@@ -678,18 +726,20 @@ export class InkEngine {
   }
 
   /**
-   * Keep the slabs nearest the visible part of the surface, as many as the memory budget allows (all of
-   * them on most pages, so a page is fully painted before it is scrolled), and release the rest,
-   * farthest first.
+   * Keep slab objects (a canvas element and a settled image per kind) for the slabs nearest the visible
+   * part, as many as MAX_SLABS_PIXELS allows; release the rest, farthest first. Backing stores are
+   * allocated only while a slab is being painted and released once it has settled into images, all under
+   * the page-wide canvas budget.
    */
   private updateSlabs(): void {
     const w = this.widthPx;
     const h = this.heightPx;
     if (w <= 0 || h <= 0 || this.slabH <= 0) return;
     const { top, bottom } = this.visibleRange();
+    this.vis = { top, bottom };
     const count = Math.ceil(h / this.slabH);
     const perSlab = Math.max(1, Math.round(w * this.dpr) * Math.round(this.slabH * this.dpr));
-    const max = Math.max(1, Math.floor(MAX_TOTAL_PIXELS / perSlab));
+    const max = Math.max(1, Math.floor(MAX_SLABS_PIXELS / perSlab));
     const dist = (i: number) => {
       const y0 = i * this.slabH;
       const y1 = y0 + this.slabH;
@@ -708,64 +758,118 @@ export class InkEngine {
     for (const i of keep) if (!this.slabs.has(i)) this.createSlab(i);
   }
 
-  private slabCanvas(name: string, slab: Pick<Slab, "i" | "y0" | "h">): HTMLCanvasElement {
-    const c = this.makeCanvas(name);
-    c.width = Math.max(1, Math.round(this.widthPx * this.dpr));
-    c.height = Math.max(1, Math.round(slab.h * this.dpr));
-    Object.assign(c.style, { width: `${this.widthPx}px`, height: `${slab.h}px`, top: `${slab.y0}px`, display: "none" });
-    c.dataset.slab = String(slab.i);
-    return c;
+  /** A slab on screen (or being drawn on) is never evicted from the canvas budget. */
+  private slabPinned(slab: Slab): boolean {
+    if (this.destroyed) return false;
+    const margin = 64;
+    return slab.y0 < this.vis.bottom + margin && slab.y0 + slab.h > this.vis.top - margin;
   }
 
   private createSlab(i: number): void {
     const y0 = i * this.slabH;
     const h = Math.min(this.slabH, this.heightPx - y0);
     if (h <= 0) return;
-    const ink = this.slabCanvas("ink", { i, y0, h });
-    this.layer.insertBefore(ink, this.liveCanvas);
-    const slab: Slab = {
-      i,
-      y0,
-      h,
-      marker: null,
-      ink,
-      mctx: null,
-      ictx: ink.getContext("2d"),
-      markerImg: null,
-      inkImg: null,
-      has: { m: false, k: false },
+    const layer = (kind: SlabKind): SlabLayer => ({
+      kind,
+      canvas: null,
+      ctx: null,
+      lease: null,
+      img: null,
+      settledVersion: -1,
       version: 0,
-      settledVersion: { markerImg: -1, inkImg: -1 },
-    };
-    if (!slab.ictx) this.fail("This browser could not create a drawing canvas (out of canvas memory).");
+      touched: false,
+      stale: false,
+    });
+    const slab: Slab = { i, y0, h, marker: layer("marker"), ink: layer("ink"), has: { m: false, k: false } };
     this.slabs.set(i, slab);
-    this.applySlabStyle(slab);
     this.markDirtyPx({ x0: 0, y0, x1: this.widthPx, y1: y0 + h });
   }
 
-  /** The marker canvas is only allocated for slabs that hold marker strokes. */
-  private markerCtxFor(slab: Slab): CanvasRenderingContext2D | null {
-    if (slab.marker) return slab.mctx;
-    const c = this.slabCanvas("marker", slab);
-    this.layer.insertBefore(c, slab.ink);
-    slab.marker = c;
-    slab.mctx = c.getContext("2d");
-    this.applySlabStyle(slab);
-    return slab.mctx;
+  /** Allocate (or touch) a layer's backing store; restores the settled pixels when it was released. */
+  private backing(slab: Slab, layer: SlabLayer): CanvasRenderingContext2D | null {
+    if (layer.lease && layer.ctx) {
+      layer.lease.touch();
+      return layer.ctx;
+    }
+    const devW = Math.max(1, Math.round(this.widthPx * this.dpr));
+    const devH = Math.max(1, Math.round(slab.h * this.dpr));
+    const lease = canvasBudget.acquire(
+      `ink:${layer.kind}:${slab.i}`,
+      devW * devH,
+      () => this.slabPinned(slab),
+      () => this.evictLayer(slab, layer),
+    );
+    let c = layer.canvas;
+    if (!c) {
+      c = this.makeCanvas(layer.kind);
+      c.dataset.slab = String(slab.i);
+      Object.assign(c.style, {
+        width: `${this.widthPx}px`,
+        height: `${slab.h}px`,
+        top: `${slab.y0}px`,
+        display: "none",
+      });
+      // DOM order is paint order within a z-index: marker below ink, both below the live canvas.
+      const before = layer.kind === "marker" ? (slab.ink.canvas ?? slab.ink.img ?? this.liveCanvas) : this.liveCanvas;
+      this.layer.insertBefore(c, before);
+      layer.canvas = c;
+      this.applySlabStyle(slab);
+    }
+    c.width = devW;
+    c.height = devH;
+    const ctx = c.getContext("2d");
+    if (!ctx) {
+      lease.release();
+      this.fail("This browser could not create a drawing canvas (out of canvas memory).");
+      return null;
+    }
+    layer.lease = lease;
+    layer.ctx = ctx;
+    const img = layer.img;
+    if (layer.stale) {
+      // Evicted before it settled: the pixels are gone, repaint the slab from the document.
+      layer.stale = false;
+      this.markDirtyPx({ x0: 0, y0: slab.y0, x1: this.widthPx, y1: slab.y0 + slab.h });
+    } else if (img && layer.settledVersion >= 0) {
+      if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 0, 0, devW, devH);
+      else this.markDirtyPx({ x0: 0, y0: slab.y0, x1: this.widthPx, y1: slab.y0 + slab.h });
+    }
+    return ctx;
+  }
+
+  /** Give a layer's backing store back (its content lives on in the settled image, or is stale). */
+  private dropBacking(layer: SlabLayer): void {
+    if (layer.canvas) {
+      layer.canvas.width = 0;
+      layer.canvas.height = 0;
+    }
+    layer.ctx = null;
+    layer.lease?.release();
+    layer.lease = null;
+  }
+
+  /** The canvas budget took this layer's memory (it was off screen and least recently used). */
+  private evictLayer(_slab: Slab, layer: SlabLayer): void {
+    layer.lease = null; // already removed from the budget
+    if (layer.canvas) {
+      layer.canvas.width = 0;
+      layer.canvas.height = 0;
+      layer.canvas.style.display = "none";
+    }
+    layer.ctx = null;
+    const settled = layer.img !== null && layer.settledVersion === layer.version;
+    if (settled && layer.img) layer.img.style.display = "";
+    else layer.stale = true;
   }
 
   private releaseSlab(slab: Slab): void {
-    // Shrinking first returns the backing store at once (Safari keeps detached canvases' memory a while).
-    for (const c of [slab.marker, slab.ink]) {
-      if (!c) continue;
-      c.width = 0;
-      c.height = 0;
-      c.remove();
-    }
-    for (const img of [slab.markerImg, slab.inkImg]) {
-      if (!img) continue;
-      if (img.dataset.url) URL.revokeObjectURL(img.dataset.url);
-      img.remove();
+    for (const layer of [slab.marker, slab.ink]) {
+      this.dropBacking(layer);
+      layer.canvas?.remove();
+      if (layer.img) {
+        if (layer.img.dataset.url) URL.revokeObjectURL(layer.img.dataset.url);
+        layer.img.remove();
+      }
     }
     for (const key of [...this.tileKinds.keys()]) {
       const ty = Number(key.split(",")[1]);
@@ -773,13 +877,22 @@ export class InkEngine {
     }
   }
 
+  /**
+   * Marker placement. "under": the marker layer sits under the surface's content (z-index -1 inside its
+   * stacking context) and strokes multiply with each other, so on plain text the highlight shows through
+   * the dark glyphs like a multiply would, at no compositing cost. "multiply": over the content with
+   * `mix-blend-mode: multiply`, for surfaces whose content is opaque (images, PDF pages, tables with row
+   * fills) that would hide an under-layer. On a dark surface the marker is translucent instead.
+   */
   private applySlabStyle(slab: Slab): void {
-    for (const el of [slab.marker, slab.markerImg]) {
+    const over = this.markerMode === "multiply";
+    for (const el of [slab.marker.canvas, slab.marker.img]) {
       if (!el) continue;
-      el.style.zIndex = "-1";
+      el.style.zIndex = over ? "1" : "-1";
+      el.style.mixBlendMode = over && this.theme === "paper" ? "multiply" : "normal";
       el.style.opacity = this.theme === "paper" ? "1" : "0.45";
     }
-    for (const el of [slab.ink, slab.inkImg]) if (el) el.style.zIndex = "1";
+    for (const el of [slab.ink.canvas, slab.ink.img]) if (el) el.style.zIndex = "1";
   }
 
   /** Size the live canvas to the visible part of the surface (it is cleared, not scrolled). */
@@ -789,10 +902,24 @@ export class InkEngine {
     const { top, bottom } = this.visibleRange();
     const y0 = Math.floor(top);
     const h = Math.max(1, Math.ceil(bottom) - y0);
-    if (!force && this.live.y0 === y0 && this.live.h === h) return;
     const c = this.liveCanvas;
+    if (!force && this.liveLease && this.live.y0 === y0 && this.live.h === h) return;
     const devW = Math.max(1, Math.round(w * this.dpr));
     const devH = Math.max(1, Math.round(h * this.dpr));
+    if (!this.liveLease) {
+      this.liveLease = canvasBudget.acquire(
+        "ink:live",
+        devW * devH,
+        () => !this.destroyed && (this.gesture !== null || this.selection !== null || this.hover !== null),
+        () => {
+          this.liveLease = null;
+          c.width = 0;
+          c.height = 0;
+          c.style.display = "none";
+          this.liveRect = EMPTY_RECT;
+        },
+      );
+    } else this.liveLease.resize(devW * devH);
     if (c.width !== devW || c.height !== devH) {
       c.width = devW;
       c.height = devH;
@@ -818,7 +945,7 @@ export class InkEngine {
     this.markDirtyPx({ x0: p.x0 * w, y0: p.y0 * w, x1: p.x1 * w, y1: p.y1 * w });
   }
 
-  /** Mark tiles dirty for a rectangle in CSS px (surface-relative); only tiles of live slabs matter. */
+  /** Mark tiles dirty for a rectangle in CSS px (surface-relative); only tiles of existing slabs matter. */
   private markDirtyPx(r: Rect): void {
     const x0 = Math.max(0, r.x0);
     const x1 = Math.min(this.widthPx, r.x1);
@@ -838,7 +965,7 @@ export class InkEngine {
     this.raf = requestAnimationFrame((ts) => this.onFrame(ts));
   }
 
-  /** Show a slab's marker/ink canvas only when one of its tiles has something of that kind. */
+  /** After painting tiles: show the canvases that hold the newest pixels, hide stale images, re-settle. */
   private updateSlabVisibility(slab: Slab): void {
     let m = false;
     let k = false;
@@ -852,20 +979,32 @@ export class InkEngine {
       if (m && k) break;
     }
     slab.has = { m, k };
-    slab.version++;
-    // The canvases hold the newest pixels: show them (and not a stale settled image) until it settles again.
-    if (slab.marker) slab.marker.style.display = m ? "" : "none";
-    slab.ink.style.display = k ? "" : "none";
-    for (const img of [slab.markerImg, slab.inkImg]) if (img) img.style.display = "none";
+    for (const [layer, on] of [
+      [slab.marker, m],
+      [slab.ink, k],
+    ] as const) {
+      if (!on) {
+        // Nothing of this kind left in the slab: no memory, nothing shown.
+        this.dropBacking(layer);
+        if (layer.canvas) layer.canvas.style.display = "none";
+        if (layer.img) layer.img.style.display = "none";
+        layer.version++;
+        continue;
+      }
+      if (!layer.touched) continue; // untouched layers keep showing what they showed
+      layer.touched = false;
+      layer.version++;
+      if (layer.canvas) layer.canvas.style.display = layer.ctx ? "" : "none";
+      if (layer.img) layer.img.style.display = "none";
+    }
     this.scheduleSettle();
   }
 
   /**
    * Settling: once the ink has been still for a moment, each slab's canvases are swapped for plain
-   * images of the same pixels. Images are painted into the page's own (cached) raster tiles, whereas
-   * every visible canvas is a layer the compositor re-blends on each scrolled frame, which halves the
-   * scroll frame rate of a big page under software compositing. The canvases keep their bitmaps, so
-   * the next edit just shows them again.
+   * images of the same pixels and their backing stores are released. Images are painted into the
+   * page's own cached raster tiles, whereas every visible canvas is a layer the compositor re-blends on
+   * each scrolled frame. PNG encoding runs in a worker where the browser allows it.
    */
   private scheduleSettle(): void {
     if (this.settleTimer) clearTimeout(this.settleTimer);
@@ -881,26 +1020,28 @@ export class InkEngine {
   }
 
   private settleSlab(slab: Slab): void {
-    const v = slab.version;
-    const jobs: [HTMLCanvasElement, "markerImg" | "inkImg"][] = [];
-    if (slab.has.m && slab.marker) jobs.push([slab.marker, "markerImg"]);
-    if (slab.has.k) jobs.push([slab.ink, "inkImg"]);
-    for (const [canvas, key] of jobs) {
-      if (slab.settledVersion[key] === v) continue;
+    for (const layer of [slab.marker, slab.ink]) {
+      const v = layer.version;
+      const on = layer.kind === "marker" ? slab.has.m : slab.has.k;
+      const canvas = layer.canvas;
+      if (!on || !canvas || !layer.ctx || layer.settledVersion === v) continue;
       this.settling++;
-      canvas.toBlob((blob) => {
+      const t0 = performance.now();
+      const encoding = encodePng(canvas);
+      this.renderStats.settleMainMs += performance.now() - t0;
+      void encoding.then((blob) => {
         const done = () => {
           this.settling--;
         };
-        if (!blob || this.destroyed || this.slabs.get(slab.i) !== slab || slab.version !== v) return done();
+        if (!blob || this.destroyed || this.slabs.get(slab.i) !== slab || layer.version !== v) return done();
         const url = URL.createObjectURL(blob);
-        let img = slab[key];
+        let img = layer.img;
         if (!img) {
           img = this.host.ownerDocument.createElement("img");
           img.alt = "";
           img.setAttribute("aria-hidden", "true");
           img.draggable = false;
-          img.dataset.inkImage = key === "markerImg" ? "marker" : "ink";
+          img.dataset.inkImage = layer.kind;
           Object.assign(img.style, {
             position: "absolute",
             left: "0",
@@ -911,7 +1052,7 @@ export class InkEngine {
             display: "none",
           });
           canvas.after(img);
-          slab[key] = img;
+          layer.img = img;
           this.applySlabStyle(slab);
         }
         const target = img;
@@ -923,14 +1064,15 @@ export class InkEngine {
           .then(() => {
             if (previous) URL.revokeObjectURL(previous);
             target.dataset.url = url;
-            if (this.slabs.get(slab.i) === slab && slab.version === v && !this.destroyed) {
+            if (this.slabs.get(slab.i) === slab && layer.version === v && !this.destroyed) {
               target.style.display = "";
               canvas.style.display = "none";
-              slab.settledVersion[key] = v;
+              layer.settledVersion = v;
+              this.dropBacking(layer);
             }
             done();
           });
-      }, "image/png");
+      });
     }
   }
 
@@ -938,6 +1080,14 @@ export class InkEngine {
     this.raf = 0;
     if (this.destroyed) return;
     const start = performance.now();
+    // Eraser work queued by the input handler runs here, never inside the pointer event.
+    const g = this.gesture;
+    if (g?.kind === "erase" && g.pending.length > 0) {
+      const path = [g.last, ...g.pending];
+      g.last = path[path.length - 1] as Vec;
+      g.pending = [];
+      this.eraseAlong(path);
+    }
     if (this.liveDirty) {
       this.liveDirty = false;
       this.renderLive();
@@ -949,17 +1099,14 @@ export class InkEngine {
         requestAnimationFrame((next) => rec.recordFrame(evTs, next));
       }
     }
+    this.pendingLatencyTs = null;
     // Committed tiles: keep frames short while a stroke is live, finish the rest next frame.
     const budget = this.gesture ? 4 : 10;
     if (this.dirtyTiles.size > 0) {
       const touched = new Set<Slab>();
       // Visible tiles first, so a slab coming into view fills where the student is looking.
-      const { top, bottom } = this.visibleRange();
-      const tiles = [...this.dirtyTiles].sort((a, b) => {
-        const da = tileDistance(a, top, bottom);
-        const db = tileDistance(b, top, bottom);
-        return da - db;
-      });
+      const { top, bottom } = this.vis;
+      const tiles = [...this.dirtyTiles].sort((a, b) => tileDistance(a, top, bottom) - tileDistance(b, top, bottom));
       for (const key of tiles) {
         this.dirtyTiles.delete(key);
         const slab = this.renderTile(key);
@@ -998,8 +1145,26 @@ export class InkEngine {
     const w = this.widthPx;
     const query = { x0: x0 / w, y0: y0 / w, x1: x1 / w, y1: y1 / w };
     const entries = this.doc.query(padRect(query, 1 / w)).filter((e) => !this.hidden.has(e.item.id));
-    const mctx = slab.marker || entries.some((e) => e.item.tool === "marker") ? this.markerCtxFor(slab) : null;
-    for (const ctx of [mctx, slab.ictx]) {
+    // A layer is painted when the tile has (or had) something of its kind, or it is already allocated.
+    const before = this.tileKinds.get(key);
+    const needs = (layer: SlabLayer, now: boolean, had: boolean) => now || had || layer.ctx !== null || layer.stale;
+    const mctx = needs(
+      slab.marker,
+      entries.some((e) => e.item.tool === "marker"),
+      before?.m ?? false,
+    )
+      ? this.backing(slab, slab.marker)
+      : null;
+    const ictx = needs(
+      slab.ink,
+      entries.some((e) => e.item.tool !== "marker"),
+      before?.k ?? false,
+    )
+      ? this.backing(slab, slab.ink)
+      : null;
+    if (mctx) slab.marker.touched = true;
+    if (ictx) slab.ink.touched = true;
+    for (const ctx of [mctx, ictx]) {
       if (!ctx) continue;
       ctx.save();
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -1012,7 +1177,7 @@ export class InkEngine {
     const kinds = { m: false, k: false };
     for (const e of entries) {
       const marker = e.item.tool === "marker";
-      const ctx = marker ? mctx : slab.ictx;
+      const ctx = marker ? mctx : ictx;
       if (!ctx) continue;
       if (marker) kinds.m = true;
       else kinds.k = true;
@@ -1020,7 +1185,7 @@ export class InkEngine {
       drawItem(ctx, e.item, this.palette, this.font);
     }
     mctx?.restore();
-    slab.ictx?.restore();
+    ictx?.restore();
     if (kinds.m || kinds.k) this.tileKinds.set(key, kinds);
     else this.tileKinds.delete(key);
     return slab;
@@ -1041,17 +1206,19 @@ export class InkEngine {
     const toDev = (r: Rect): Rect => ({ x0: r.x0 * k, y0: r.y0 * k - liveTop, x1: r.x1 * k, y1: r.y1 * k - liveTop });
     this.setDrawTransform(ctx, this.live.y0);
     const g = this.gesture;
-    // A live marker stroke is previewed under the content, where it will land; everything else on top.
-    this.liveCanvas.style.zIndex = g?.kind === "stroke" && g.item.tool === "marker" ? "-1" : "1";
+    // A live marker stroke is previewed where it will land (under the content, or multiplied over it).
+    const liveMarker = g?.kind === "stroke" && g.item.tool === "marker";
+    const over = this.markerMode === "multiply";
+    this.liveCanvas.style.zIndex = liveMarker && !over ? "-1" : "1";
+    this.liveCanvas.style.mixBlendMode = liveMarker && over && this.theme === "paper" ? "multiply" : "normal";
+    // Translucent marker on dark surfaces: the whole live layer fades, so chunk overlaps don't darken.
+    this.liveCanvas.style.opacity = liveMarker && this.theme !== "paper" ? "0.45" : "1";
     if (g?.kind === "stroke") {
-      const item: InkStroke =
-        g.predicted.length > 0 && this.state.predict
-          ? { ...g.item, points: [...g.item.points, ...g.predicted] }
-          : g.item;
-      ctx.globalAlpha = item.tool === "marker" && this.theme !== "paper" ? 0.45 : 1;
-      drawItem(ctx, item, this.palette, this.font, true);
-      ctx.globalAlpha = 1;
-      drawn = unionRect(drawn, toDev(bboxOfItem(item)));
+      const predicted = this.state.predict ? g.predicted : [];
+      if (g.item.shape) drawItem(ctx, g.item, this.palette, this.font, true);
+      else this.liveStroke.draw(ctx, g.item, predicted, this.palette);
+      const box = bboxOfItem(predicted.length > 0 ? { ...g.item, points: [...g.item.points, ...predicted] } : g.item);
+      drawn = unionRect(drawn, toDev(box));
     }
     const lineW = REF / Math.max(1, this.widthPx); // 1 CSS px in reference units
     if (g?.kind === "lasso" && g.path.length > 1) {
@@ -1090,7 +1257,18 @@ export class InkEngine {
       ctx.strokeStyle = this.palette.selection;
       ctx.lineWidth = 1.5 * lineW;
       ctx.setLineDash([6 * lineW, 4 * lineW]);
-      ctx.strokeRect(box.x0 * REF, box.y0 * REF, (box.x1 - box.x0) * REF, (box.y1 - box.y0) * REF);
+      if (this.selection.ids.length > 0) {
+        ctx.strokeRect(box.x0 * REF, box.y0 * REF, (box.x1 - box.x0) * REF, (box.y1 - box.y0) * REF);
+      } else {
+        // A region with no ink: show the loop the student drew.
+        ctx.beginPath();
+        for (const [i, p] of this.selection.path.entries()) {
+          if (i === 0) ctx.moveTo(p.x * REF, p.y * REF);
+          else ctx.lineTo(p.x * REF, p.y * REF);
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }
       ctx.restore();
       drawn = unionRect(drawn, padRect(toDev(box), 4));
     }
@@ -1168,13 +1346,15 @@ export class InkEngine {
     }
     if (tool === "eraser") {
       this.doc.begin();
-      this.gesture = { kind: "erase", pointerId: e.pointerId, last: pt, lastT: t };
-      this.eraseAlong([pt]);
+      // The erase itself runs in the next animation frame, never inside the input handler.
+      this.gesture = { kind: "erase", pointerId: e.pointerId, last: pt, lastT: t, pending: [pt] };
+      this.requestFrame();
       return;
     }
     if (tool === "lasso") {
       if (
         this.selection &&
+        this.selection.ids.length > 0 &&
         rectContainsPoint(padRect(this.selection.bbox, 12 / Math.max(1, this.widthPx)), pt.x, pt.y)
       ) {
         this.gesture = { kind: "drag", pointerId: e.pointerId, start: pt, dx: 0, dy: 0, lastT: t };
@@ -1219,7 +1399,7 @@ export class InkEngine {
       snapped: false,
     };
     this.armHold();
-    this.pendingLatencyTs = t;
+    if (this.pendingLatencyTs === null) this.pendingLatencyTs = t;
     this.liveDirty = true;
     this.requestFrame();
   }
@@ -1242,12 +1422,11 @@ export class InkEngine {
     const samples = coalescedSamples(e, g.lastT, this.stats);
     if (samples.length === 0) return;
     g.lastT = (samples[samples.length - 1] as Sample).t;
-    this.pendingLatencyTs = e.timeStamp;
+    // Latency is measured from the first input not yet painted (the oldest one waiting for a frame).
+    if (this.pendingLatencyTs === null) this.pendingLatencyTs = e.timeStamp;
     if (g.kind === "stroke") this.extendStroke(g, samples, e);
     else if (g.kind === "erase") {
-      const path = [g.last, ...samples.map((s) => this.toSu(s))];
-      g.last = path[path.length - 1] as Vec;
-      this.eraseAlong(path);
+      for (const s of samples) g.pending.push(this.toSu(s));
     } else if (g.kind === "lasso") {
       for (const s of samples) g.path.push(this.toSu(s));
     } else if (g.kind === "drag") {
@@ -1335,6 +1514,7 @@ export class InkEngine {
       }
       this.commitStroke(item);
     } else if (g.kind === "erase") {
+      if (g.pending.length > 0) this.eraseAlong([g.last, ...g.pending]);
       this.gesture = null;
       this.doc.end();
     } else if (g.kind === "lasso") {
@@ -1415,33 +1595,47 @@ export class InkEngine {
       .query(box)
       .filter((e) => selectedByLasso(e.item, path, box))
       .map((e) => e.item.id);
-    if (ids.length === 0) return;
-    this.setSelection(ids);
+    // Even with no ink inside, the circled region is a selection: "Ask Naadi" works on printed content.
+    if (Math.min(box.x1 - box.x0, box.y1 - box.y0) * this.widthPx < 8) return;
+    this.setSelection(ids, path);
     const sel = this.selection;
     if (sel && this.o.onLasso) {
       void this.renderPng(sel).then((png) => {
-        if (png && this.selection === sel) this.o.onLasso?.(sel, png);
+        if (this.selection === sel) this.o.onLasso?.(sel, png);
       });
     }
   }
 
-  private setSelection(ids: string[]): void {
+  private setSelection(ids: string[], path?: Vec[]): void {
     let bbox = EMPTY_RECT;
     for (const id of ids) {
       const item = this.doc.get(id);
       if (item) bbox = unionRect(bbox, bboxOfItem(item));
     }
-    this.selection = ids.length > 0 ? { ids, bbox, rect: this.suRectToPx(bbox) } : null;
+    if (ids.length === 0 && path && path.length >= 3) {
+      for (const p of path) bbox = unionRect(bbox, { x0: p.x, y0: p.y, x1: p.x, y1: p.y });
+    }
+    const loop =
+      path && path.length >= 3
+        ? path
+        : [
+            { x: bbox.x0, y: bbox.y0 },
+            { x: bbox.x1, y: bbox.y0 },
+            { x: bbox.x1, y: bbox.y1 },
+            { x: bbox.x0, y: bbox.y1 },
+          ];
+    this.selection = rectIsEmpty(bbox) ? null : { ids, bbox, rect: this.suRectToPx(bbox), path: loop };
     this.liveDirty = true;
     this.requestFrame();
     this.emitState();
   }
 
   private refreshSelectionAfterChange(): void {
-    if (!this.selection) return;
-    const ids = this.selection.ids.filter((id) => this.doc.get(id));
+    const sel = this.selection;
+    if (!sel || sel.ids.length === 0) return; // a region-only selection is unaffected by ink changes
+    const ids = sel.ids.filter((id) => this.doc.get(id));
     if (ids.length === 0) this.clearSelection();
-    else this.setSelection(ids);
+    else this.setSelection(ids, sel.path);
   }
 
   private refreshSelectionRect(): void {
@@ -1468,13 +1662,13 @@ export class InkEngine {
     const sel = this.selection;
     if (!sel) return null;
     const png = await this.renderPng(sel);
-    if (!png) return null;
     const items = sel.ids.map((id) => this.doc.get(id)).filter((i) => i !== undefined);
-    return { ids: sel.ids, items, bbox: sel.bbox, rect: sel.rect, png };
+    return { ids: sel.ids, items, bbox: sel.bbox, rect: sel.rect, path: sel.path, png };
   }
 
   /** A cropped picture of the selected ink on the surface colour, at 2× (max 2048 px a side). */
   private renderPng(sel: SelectionInfo): Promise<Blob | null> {
+    if (sel.ids.length === 0) return Promise.resolve(null);
     const padPx = 12;
     const w = this.widthPx;
     const cssW = (sel.bbox.x1 - sel.bbox.x0) * w + padPx * 2;
@@ -1679,21 +1873,33 @@ function clampPressure(p: number): number {
   return !Number.isFinite(p) || p <= 0 ? 0.5 : Math.min(1, Math.max(0.02, p));
 }
 
+type SlabKind = "marker" | "ink";
+
+interface SlabLayer {
+  kind: SlabKind;
+  /** The canvas element (kept); its backing store exists only while `lease` is held. */
+  canvas: HTMLCanvasElement | null;
+  ctx: CanvasRenderingContext2D | null;
+  lease: CanvasLease | null;
+  /** The settled image of this layer. */
+  img: HTMLImageElement | null;
+  settledVersion: number;
+  /** Bumped whenever tiles were painted into the layer. */
+  version: number;
+  /** Painted since the last visibility update. */
+  touched: boolean;
+  /** Evicted before it settled: its pixels must be repainted from the document. */
+  stale: boolean;
+}
+
 interface Slab {
   i: number;
   /** Top edge and height in surface CSS px. */
   y0: number;
   h: number;
-  marker: HTMLCanvasElement | null;
-  ink: HTMLCanvasElement;
-  mctx: CanvasRenderingContext2D | null;
-  ictx: CanvasRenderingContext2D | null;
-  /** Settled images of the canvases (see scheduleSettle). */
-  markerImg: HTMLImageElement | null;
-  inkImg: HTMLImageElement | null;
+  marker: SlabLayer;
+  ink: SlabLayer;
   has: { m: boolean; k: boolean };
-  version: number;
-  settledVersion: { markerImg: number; inkImg: number };
 }
 
 /** How far a tile ("tx,ty") is from the visible range, in CSS px (0 = visible). */

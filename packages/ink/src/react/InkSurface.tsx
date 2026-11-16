@@ -1,4 +1,4 @@
-import type { InkColor, InkDiff, InkItem } from "@naadi/shared";
+import type { InkColor, InkDiff, InkItem, InkSurfaceType } from "@naadi/shared";
 import { type CSSProperties, type ReactNode, type Ref, useEffect, useRef } from "react";
 import {
   type EraserMode,
@@ -6,6 +6,8 @@ import {
   type InkEngineState,
   type InkSelectionPayload,
   type InkToolName,
+  type MarkerMode,
+  markerModeFor,
   type SelectionInfo,
   type ToolSizes,
 } from "../engine";
@@ -15,7 +17,11 @@ import type { InkTheme, Palette } from "../render";
 export interface InkSurfaceProps {
   /** Initial items; changing the array identity reloads the layer (clears undo history). */
   items?: readonly InkItem[];
-  enabled?: boolean;
+  /** Ink is on (the surface takes pen/finger input). Required: a surface never captures input by accident. */
+  enabled: boolean;
+  /** What the surface shows; picks the marker placement (see markerModeFor) unless `markerMode` is set. */
+  surfaceType?: InkSurfaceType;
+  markerMode?: MarkerMode;
   tool?: InkToolName;
   color?: InkColor;
   eraserMode?: EraserMode;
@@ -26,7 +32,8 @@ export interface InkSurfaceProps {
   sizes?: Partial<ToolSizes>;
   latency?: LatencyRecorder;
   onStrokesChange?: (diff: InkDiff) => void;
-  onLasso?: (selection: SelectionInfo, png: Blob) => void;
+  /** A lasso closed; `png` is an ink-only picture, null when the loop selected no ink (region only). */
+  onLasso?: (selection: SelectionInfo, png: Blob | null) => void;
   onConvertToText?: (payload: InkSelectionPayload) => void;
   onAsk?: (payload: InkSelectionPayload) => void;
   onStateChange?: (state: InkEngineState) => void;
@@ -61,6 +68,7 @@ export function InkSurface(props: InkSurfaceProps) {
       host,
       items: p.items,
       enabled: p.enabled,
+      markerMode: p.markerMode ?? markerModeFor(p.surfaceType ?? "section"),
       tool: p.tool,
       color: p.color,
       eraserMode: p.eraserMode,
@@ -98,7 +106,11 @@ export function InkSurface(props: InkSurfaceProps) {
     }
     if (props.items) engine.current?.load(props.items);
   }, [props.items]);
-  useEffect(() => engine.current?.setEnabled(props.enabled ?? true), [props.enabled]);
+  useEffect(() => engine.current?.setEnabled(props.enabled), [props.enabled]);
+  useEffect(
+    () => engine.current?.setMarkerMode(props.markerMode ?? markerModeFor(props.surfaceType ?? "section")),
+    [props.markerMode, props.surfaceType],
+  );
   useEffect(() => {
     if (props.tool) engine.current?.setTool(props.tool);
   }, [props.tool]);

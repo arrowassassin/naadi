@@ -3,6 +3,9 @@ import { ErrorState, Skeleton } from "@naadi/ui";
 import { useQuery } from "@tanstack/react-query";
 import { type AnyRoute, createRoute, Link } from "@tanstack/react-router";
 import { lazy, type ReactNode, Suspense } from "react";
+import { useMe } from "../auth/api";
+import { ApiError } from "../auth/apiError";
+import { useAuth } from "../auth/session";
 
 const InkLab = lazy(() => import("./InkLab").then((m) => ({ default: m.InkLab })));
 
@@ -57,49 +60,75 @@ function Loading() {
   );
 }
 
-/**
- * The ink lab is a developer/admin tool. Whether it exists is the server's call
- * (`features.ink_lab` in /api/public-config: on everywhere except production), never the bundle's;
- * the lab's code is only downloaded once the flag says yes.
- */
-export function InkLabGate() {
+function NotFound() {
+  return (
+    <Shell>
+      <h1 className="m-0 font-display text-headline">Page not found</h1>
+      <p className="m-0 text-text-2">There is nothing at this address.</p>
+      <p className="m-0">
+        <Link to="/system">Open the design system</Link>
+      </p>
+    </Shell>
+  );
+}
+
+function Failed({ error, onRetry, retrying }: { error: Error; onRetry: () => void; retrying: boolean }) {
+  const requestId = error instanceof PublicConfigError || error instanceof ApiError ? error.requestId : null;
+  return (
+    <Shell>
+      <h1 className="m-0 font-display text-headline">Ink lab</h1>
+      <ErrorState
+        title="The ink lab could not be opened"
+        message={error.message}
+        requestId={requestId}
+        onRetry={onRetry}
+        retrying={retrying}
+      />
+    </Shell>
+  );
+}
+
+function Lab() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <InkLab />
+    </Suspense>
+  );
+}
+
+/** Signed in: the server decides per user (/api/me `features.ink_lab`: admins, or everyone outside prod). */
+function SignedInGate() {
+  const me = useMe();
+  if (me.isError && !me.data)
+    return <Failed error={me.error} onRetry={() => void me.refetch()} retrying={me.isFetching} />;
+  if (!me.data) return <Loading />;
+  return me.data.features.ink_lab ? <Lab /> : <NotFound />;
+}
+
+/** Auth not configured or unreachable: fall back to the public flag. */
+function PublicGate() {
   const q = useQuery({
     queryKey: ["public-config"],
     queryFn: ({ signal }) => fetchPublicConfig(signal),
     staleTime: 60_000,
   });
   if (q.isPending) return <Loading />;
-  if (q.isError) {
-    const err = q.error;
-    return (
-      <Shell>
-        <h1 className="m-0 font-display text-headline">Ink lab</h1>
-        <ErrorState
-          title="The ink lab could not be opened"
-          message={err.message}
-          requestId={err instanceof PublicConfigError ? err.requestId : null}
-          onRetry={() => void q.refetch()}
-          retrying={q.isFetching}
-        />
-      </Shell>
-    );
-  }
-  if (!q.data.features.ink_lab) {
-    return (
-      <Shell>
-        <h1 className="m-0 font-display text-headline">Page not found</h1>
-        <p className="m-0 text-text-2">There is nothing at this address.</p>
-        <p className="m-0">
-          <Link to="/system">Open the design system</Link>
-        </p>
-      </Shell>
-    );
-  }
-  return (
-    <Suspense fallback={<Loading />}>
-      <InkLab />
-    </Suspense>
-  );
+  if (q.isError) return <Failed error={q.error} onRetry={() => void q.refetch()} retrying={q.isFetching} />;
+  return q.data.features.ink_lab ? <Lab /> : <NotFound />;
+}
+
+/**
+ * The ink lab is a developer/admin tool, and whether it exists is the server's call, never the bundle's:
+ * signed in, `features.ink_lab` from /api/me (the app_config flag with its audience, e.g. admins only
+ * in production); signed out, the public flag from /api/public-config. The lab's code is only
+ * downloaded once the flag says yes.
+ */
+export function InkLabGate() {
+  const auth = useAuth();
+  if (auth.status === "loading") return <Loading />;
+  if (auth.status === "signed-in") return <SignedInGate />;
+  if (auth.status === "signed-out") return auth.config.features.ink_lab ? <Lab /> : <NotFound />;
+  return <PublicGate />;
 }
 
 /** `/system/ink-lab`: latency harness and demo surface for the ink engine. */

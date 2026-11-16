@@ -151,6 +151,50 @@ export function drawStroke(ctx: CanvasRenderingContext2D, item: InkStroke, palet
   ctx.fill(path);
 }
 
+const LIVE_CHUNK = 64;
+const LIVE_OVERLAP = 4;
+
+/**
+ * The stroke being drawn, rendered with bounded work per frame: points older than the last chunk are
+ * frozen into cached Path2D chunks (overlapping by a few points so the joins are invisible), and only the
+ * tail plus the predicted points go through perfect-freehand each frame. The committed stroke is built
+ * once from all points when the pen lifts.
+ */
+export class LiveStroke {
+  private id = "";
+  private chunks: Path2D[] = [];
+  private frozen = 0;
+
+  reset(): void {
+    this.id = "";
+    this.chunks = [];
+    this.frozen = 0;
+  }
+
+  /** Chunks computed so far (for tests and diagnostics). */
+  get frozenPoints(): number {
+    return this.frozen;
+  }
+
+  draw(ctx: CanvasRenderingContext2D, item: InkStroke, predicted: readonly InkPoint[], palette: Palette): void {
+    if (item.id !== this.id) {
+      this.reset();
+      this.id = item.id;
+    }
+    const pts = item.points;
+    while (pts.length - this.frozen > LIVE_CHUNK * 2) {
+      const start = Math.max(0, this.frozen - LIVE_OVERLAP);
+      const end = this.frozen + LIVE_CHUNK;
+      this.chunks.push(outlineToPath(strokeOutline({ ...item, points: pts.slice(start, end + 1) }, false)));
+      this.frozen = end;
+    }
+    ctx.fillStyle = palette[item.color];
+    for (const c of this.chunks) ctx.fill(c);
+    const tail = [...pts.slice(Math.max(0, this.frozen - LIVE_OVERLAP)), ...predicted];
+    ctx.fill(outlineToPath(strokeOutline({ ...item, points: tail }, false)));
+  }
+}
+
 /** Wrap text to the box width; returns lines. */
 export function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
   const out: string[] = [];

@@ -65,7 +65,8 @@ export function InkToolbar({
       role="toolbar"
       aria-label="Ink tools"
       className={cx(
-        "flex flex-wrap items-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5",
+        // One row at every width; on a phone it scrolls sideways instead of wrapping into three rows.
+        "flex flex-nowrap items-center gap-0.5 overflow-x-auto overscroll-x-contain rounded-[28px] border border-line-strong bg-ground p-1.5 [scrollbar-width:none] [&>*]:shrink-0",
         className,
       )}
     >
@@ -73,11 +74,8 @@ export function InkToolbar({
         type="button"
         aria-pressed={state.enabled}
         onClick={() => onEnabled(!state.enabled)}
-        className={cx(
-          toolBtn,
-          "font-semibold",
-          state.enabled ? "bg-paper text-ground" : "border border-line-control text-text hover:bg-surface-2",
-        )}
+        // The one lime control on the page: turning ink on/off is the student's next action (Ink board).
+        className={cx(toolBtn, "bg-lime px-4 font-semibold text-lime-ink hover:bg-lime-hover")}
       >
         {state.enabled ? "Ink on" : "Ink off"}
       </button>
@@ -148,7 +146,8 @@ export function InkToolbar({
                 className={cx(
                   "size-11 rounded-full border-[3px]",
                   c.swatch[theme],
-                  checked ? "border-paper outline-2 outline-offset-1 outline-ground" : "border-ground",
+                  // Unselected swatches keep a visible ring (WCAG 1.4.11): the black one sits on a black bar.
+                  checked ? "border-paper outline-2 outline-offset-1 outline-ground" : "border-text-3",
                   (!state.enabled || colourless) && "cursor-not-allowed opacity-50",
                 )}
               />

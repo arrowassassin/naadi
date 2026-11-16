@@ -2,6 +2,7 @@
  * @naadi/ink: a framework-light ink engine any surface can mount (chapter section, question, flashcard,
  * PDF page, notebook page, exam scratch). No network calls. React binding: `@naadi/ink/react`.
  */
+export { CanvasBudget, type CanvasLease, canvasBudget, DEFAULT_CANVAS_BUDGET } from "./budget";
 export * from "./coords";
 export * from "./document";
 export {
@@ -12,6 +13,8 @@ export {
   type InkEngineState,
   type InkSelectionPayload,
   type InkToolName,
+  type MarkerMode,
+  markerModeFor,
   type PxRect,
   type SelectionInfo,
   type ToolSizes,

@@ -11,7 +11,16 @@ import {
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { ApiError } from "../auth/apiError";
 import { inkLabRoute } from "./route";
+
+// The gate's inputs: the auth state and /api/me. The lab itself is replaced by a marker (its engine
+// needs a real canvas, which the e2e suite covers).
+const auth = vi.hoisted(() => ({ state: { status: "loading" } as Record<string, unknown> }));
+const me = vi.hoisted(() => ({ result: {} as Record<string, unknown> }));
+vi.mock("../auth/session", () => ({ useAuth: () => auth.state }));
+vi.mock("../auth/api", () => ({ useMe: () => me.result }));
+vi.mock("./InkLab", () => ({ InkLab: () => <h1>Ink lab (loaded)</h1> }));
 
 /** Shape of GET /api/public-config as served by the API (values neutral; nothing secret in a fixture). */
 function config(inkLab: boolean) {
@@ -61,35 +70,72 @@ afterEach(() => {
 });
 
 describe("ink lab gate", () => {
-  it("shows a busy state while the server flag loads", async () => {
-    fetchMock.mockReturnValue(new Promise(() => {}));
+  it("shows a busy state while auth starts", async () => {
+    auth.state = { status: "loading" };
     renderAt("/system/ink-lab");
     expect(await screen.findByRole("status")).toHaveTextContent("Opening the ink lab…");
     expect(screen.getByRole("main")).toHaveAttribute("aria-busy", "true");
   });
 
-  it("is not found when the server turns the flag off (production)", async () => {
-    fetchMock.mockResolvedValue(json(200, config(false)));
+  it("signed out: follows the public flag (production says no)", async () => {
+    auth.state = { status: "signed-out", config: config(false) };
     renderAt("/system/ink-lab");
     expect(await screen.findByRole("heading", { name: "Page not found" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Open the design system" })).toHaveAttribute("href", "/system");
-    const [req] = fetchMock.mock.calls[0] as [Request];
-    expect(new URL(req.url).pathname).toBe("/api/public-config");
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it("shows the error with its request id and retries", async () => {
+  it("signed out outside production: opens the lab", async () => {
+    auth.state = { status: "signed-out", config: config(true) };
+    renderAt("/system/ink-lab");
+    expect(await screen.findByRole("heading", { name: "Ink lab (loaded)" })).toBeInTheDocument();
+  });
+
+  it("signed in: /api/me decides per user (admin yes, student no)", async () => {
+    auth.state = { status: "signed-in", config: config(false) };
+    me.result = { data: { features: { ink_lab: true } }, isError: false, isFetching: false };
+    const admin = renderAt("/system/ink-lab");
+    expect(await screen.findByRole("heading", { name: "Ink lab (loaded)" })).toBeInTheDocument();
+    admin.unmount();
+    me.result = { data: { features: { ink_lab: false } }, isError: false, isFetching: false };
+    renderAt("/system/ink-lab");
+    expect(await screen.findByRole("heading", { name: "Page not found" })).toBeInTheDocument();
+  });
+
+  it("signed in: /api/me failing shows the error with its request id and retries", async () => {
+    auth.state = { status: "signed-in", config: config(true) };
+    const refetch = vi.fn();
+    me.result = {
+      data: undefined,
+      isError: true,
+      isFetching: false,
+      error: new ApiError("Your profile cannot be loaded right now.", 503, "unavailable", "req-me-1"),
+      refetch,
+    };
+    renderAt("/system/ink-lab");
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("The ink lab could not be opened");
+    expect(alert).toHaveTextContent("Request ID req-me-1");
+    await userEvent.click(screen.getByRole("button", { name: "Try again" }));
+    expect(refetch).toHaveBeenCalled();
+  });
+
+  it("auth unavailable: falls back to /api/public-config, with error and retry", async () => {
+    auth.state = { status: "unavailable" };
     fetchMock.mockResolvedValueOnce(json(500, { error: { code: "internal_error", message: "x", request_id: "r" } }));
     fetchMock.mockResolvedValueOnce(json(200, config(false)));
     renderAt("/system/ink-lab");
     const alert = await screen.findByRole("alert");
-    expect(alert).toHaveTextContent("The ink lab could not be opened");
     expect(alert).toHaveTextContent("The app configuration could not be loaded (HTTP 500).");
     expect(alert).toHaveTextContent("Request ID req-ink-gate-1");
     await userEvent.click(screen.getByRole("button", { name: "Try again" }));
     expect(await screen.findByRole("heading", { name: "Page not found" })).toBeInTheDocument();
+    const [req] = fetchMock.mock.calls[0] as [Request];
+    expect(new URL(req.url).pathname).toBe("/api/public-config");
   });
 
-  it("rejects a response that breaks the contract", async () => {
+  it("auth unavailable: rejects a public config that breaks the contract", async () => {
+    auth.state = { status: "unavailable" };
     fetchMock.mockResolvedValue(json(200, { features: {} }));
     renderAt("/system/ink-lab");
     expect(await screen.findByRole("alert")).toHaveTextContent("does not understand");

@@ -1,4 +1,5 @@
 import {
+  canvasBudget,
   DEFAULT_SIZES,
   type EraserMode,
   type InkEngine,
@@ -33,13 +34,17 @@ declare global {
     naadiInkLab?: {
       page: () => InkEngine | null;
       stress: () => InkEngine | null;
+      pages: () => (InkEngine | null)[];
       latency: LatencyRecorder;
+      budget: typeof canvasBudget;
     };
   }
 }
 
 const STRESS_COUNT = 5000;
 const STRESS_HEIGHT_SU = 4;
+const MANY_PAGES = 12;
+const MANY_PAGE_STROKES = 400;
 
 function SectionHeading({ id, children }: { id: string; children: string }) {
   return (
@@ -145,9 +150,19 @@ export function InkLab() {
   const [error, setError] = useState<string | null>(null);
   const eventN = useRef(0);
   const stressRef = useRef<HTMLDivElement>(null);
+  const [content, setContent] = useState<"text" | "opaque">("text");
+  const [manyPages, setManyPages] = useState<InkItem[][] | null>(null);
+  const pageEngines = useRef<(InkEngine | null)[]>([]);
+  const [budget, setBudget] = useState(() => canvasBudget.stats());
 
   useEffect(() => {
-    window.naadiInkLab = { page: () => pageEngine.current, stress: () => stressEngine.current, latency };
+    window.naadiInkLab = {
+      page: () => pageEngine.current,
+      stress: () => stressEngine.current,
+      pages: () => pageEngines.current,
+      latency,
+      budget: canvasBudget,
+    };
     return () => {
       window.naadiInkLab = undefined;
     };
@@ -160,11 +175,13 @@ export function InkLab() {
     const id = window.setInterval(() => {
       const summary = latency.summary();
       const stats = { ...(pageEngine.current?.stats ?? {}) };
-      const key = JSON.stringify([summary, stats]);
+      const mem = canvasBudget.stats();
+      const key = JSON.stringify([summary, stats, mem]);
       if (key === last) return;
       last = key;
       setSummary(summary);
       setStats(stats);
+      setBudget(mem);
     }, 250);
     return () => window.clearInterval(id);
   }, [latency]);
@@ -190,7 +207,14 @@ export function InkLab() {
     [log],
   );
   const onLasso = useCallback(
-    (sel: SelectionInfo, blob: Blob) => {
+    (sel: SelectionInfo, blob: Blob | null) => {
+      if (!blob) {
+        log(
+          "lasso",
+          `Lasso circled a region with no ink: ${Math.round(sel.rect.width)}×${Math.round(sel.rect.height)} px (region only)`,
+        );
+        return;
+      }
       log(
         "lasso",
         `Lasso selected ${sel.ids.length} item${sel.ids.length === 1 ? "" : "s"} (PNG ${Math.round(blob.size / 1024)} KB)`,
@@ -211,7 +235,7 @@ export function InkLab() {
     (p: InkSelectionPayload) =>
       log(
         "ask",
-        `Circle to ask Naadi: ${p.ids.length} items, ${Math.round(p.rect.width)}×${Math.round(p.rect.height)} px`,
+        `Circle to ask Naadi: ${p.ids.length} items, ${Math.round(p.rect.width)}×${Math.round(p.rect.height)} px, ${p.path.length}-point loop${p.png ? "" : ", no ink picture"}`,
       ),
     [log],
   );
@@ -238,6 +262,10 @@ export function InkLab() {
     const result = await measureScroll(Math.max(0, top - 80), top + el.offsetHeight - window.innerHeight * 0.5, 3000);
     setScroll(result);
     setMeasuring(false);
+  };
+
+  const mountManyPages = () => {
+    setManyPages(Array.from({ length: MANY_PAGES }, (_, i) => stressStrokes(MANY_PAGE_STROKES, 1180 / 820, 100 + i)));
   };
 
   const sizes = slowMo ? { ...DEFAULT_SIZES, pen: 6 } : DEFAULT_SIZES;
@@ -330,6 +358,13 @@ export function InkLab() {
           >
             {theme === "paper" ? "Paper theme" : "Dark theme"}
           </Button>
+          <Button
+            variant="secondary"
+            aria-pressed={content === "opaque"}
+            onClick={() => setContent(content === "text" ? "opaque" : "text")}
+          >
+            {content === "text" ? "Page content: text" : "Page content: opaque (PDF, image)"}
+          </Button>
         </div>
       </section>
 
@@ -349,6 +384,7 @@ export function InkLab() {
               surfaceTheme === "paper" ? "ink-paper-dotted" : "ink-dark-dotted",
             )}
             style={{ aspectRatio: "820 / 1180" }}
+            surfaceType={content === "opaque" ? "pdf_page" : "section"}
             enabled={enabled}
             tool={tool}
             color={slowMo ? "ink" : color}
@@ -370,7 +406,29 @@ export function InkLab() {
             onConvertToText={onConvert}
             onAsk={onAsk}
             onError={onError}
-          />
+          >
+            <div
+              className={cx(
+                "flex flex-col gap-4 p-[6%] text-ui",
+                surfaceTheme === "paper" ? "text-ground" : "text-text",
+              )}
+            >
+              <p className="m-0 max-w-[48ch] text-reading">
+                Write anywhere on this page. Highlight the rows below with the marker: on a plain row the highlight sits
+                under the text, on an opaque row it has to blend over it.
+              </p>
+              <table className="w-full max-w-[520px] border-collapse">
+                <tbody>
+                  <tr data-testid="plain-row">
+                    <td className="border-y border-line-dashed px-3 py-3">Plain row</td>
+                  </tr>
+                  <tr data-testid="opaque-row" className="bg-mark-amber text-ground">
+                    <td className="px-3 py-3">Opaque row (a table fill, an image or a PDF page)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </InkCanvas>
           {selection && enabled && tool === "lasso" ? (
             <div
               role="toolbar"
@@ -381,16 +439,31 @@ export function InkLab() {
                 top: `${selection.rect.top + selection.rect.height + 12}px`,
               }}
             >
-              <span className="sr-only">Drag the selection to move it.</span>
-              <Button variant="secondary" className="min-h-11" onClick={() => pageEngine.current?.duplicateSelection()}>
+              <span className="sr-only">
+                {selection.ids.length > 0
+                  ? "Drag the selection to move it."
+                  : "No ink in this loop: ask about the region."}
+              </span>
+              <Button
+                variant="secondary"
+                className="min-h-11"
+                disabled={selection.ids.length === 0}
+                onClick={() => pageEngine.current?.duplicateSelection()}
+              >
                 Copy
               </Button>
-              <Button variant="secondary" className="min-h-11" onClick={() => pageEngine.current?.deleteSelection()}>
+              <Button
+                variant="secondary"
+                className="min-h-11"
+                disabled={selection.ids.length === 0}
+                onClick={() => pageEngine.current?.deleteSelection()}
+              >
                 Delete
               </Button>
               <Button
                 variant="secondary"
                 className="min-h-11"
+                disabled={selection.ids.length === 0}
                 onClick={() => void pageEngine.current?.convertSelection()}
               >
                 Convert to text
@@ -542,6 +615,50 @@ export function InkLab() {
               {`${stressCount.toLocaleString("en")} items`}
             </p>
           </div>
+        ) : null}
+      </section>
+      <section aria-labelledby="ink-many-h" className="flex flex-col gap-3" data-testid="many-pages">
+        <SectionHeading id="ink-many-h">Many pages and canvas memory</SectionHeading>
+        <p className="m-0 max-w-[68ch] text-text-2">
+          Every surface on a page shares one canvas memory budget. Mount {MANY_PAGES} pages of ink and scroll:
+          off-screen pages give their memory back and repaint when they return.
+        </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <Button variant="secondary" disabled={manyPages !== null} onClick={mountManyPages}>
+            {`Mount ${MANY_PAGES} pages`}
+          </Button>
+          <p className="m-0 font-mono text-[0.8125rem] text-text-2" data-testid="budget">
+            {`Canvas memory ${(budget.total / 1e6).toFixed(1)} of ${(budget.limit / 1e6).toFixed(0)} Mpx · ${budget.canvases} canvases · ${budget.evictions} evictions`}
+          </p>
+        </div>
+        {manyPages ? (
+          <ol className="m-0 flex list-none flex-col gap-4 p-0">
+            {manyPages.map((items, i) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: the list is fixed once mounted
+              <li key={i}>
+                <InkCanvas
+                  label={`Ink page ${i + 1} of ${MANY_PAGES}`}
+                  className={cx(
+                    "w-full overflow-hidden rounded-tile-sm",
+                    surfaceTheme === "paper" ? "bg-paper" : "bg-surface-1",
+                  )}
+                  style={{ aspectRatio: "820 / 1180" }}
+                  items={items}
+                  enabled={enabled}
+                  tool={tool}
+                  color={color}
+                  penOnly={penOnly}
+                  predict={predict}
+                  theme={surfaceTheme}
+                  latency={latency}
+                  engineRef={(e) => {
+                    pageEngines.current[i] = e;
+                  }}
+                  onError={onError}
+                />
+              </li>
+            ))}
+          </ol>
         ) : null}
       </section>
     </main>
