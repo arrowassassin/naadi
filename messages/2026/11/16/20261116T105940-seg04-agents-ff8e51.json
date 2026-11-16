@@ -1,0 +1,13 @@
+{
+ "id": "20261116T105940-seg04-agents-ff8e51",
+ "ts": "2026-11-16T10:59:40.978608Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/test_migrate.py apps/api/tests/db/test_rls_coverage.py apps/api/tests/db/live_check.py apps/api/tests/db/test_live_check.py apps/api/tests/test_live_check.py apps/api/tests/db/test_schema_doc.py apps/api/tests/db/test_migrations.py db/schema.sql",
+ "body": "",
+ "re": "20261116T104612-seg04-agents-e8aa81",
+ "requires_ack": false
+}
