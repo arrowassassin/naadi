@@ -94,5 +94,6 @@ filterwarnings = [
 
 [tool.uv]
 # langchain-openrouter 0.2.9 (latest) declares openrouter<1.0; the 1.x SDK keeps the chat.send/send_async
-# surface it calls (verified live by tests/agent/test_llm_live.py). Revisit on every upgrade of either.
+# surface it calls: pinned by tests/agent/test_openrouter_sdk.py (recorded HTTP: streaming, tool calls, file-parser
+# plugin, stream_options) and checked live by tests/agent/test_aegra_live.py. Revisit on every upgrade of either.
 override-dependencies = ["openrouter==1.3.179"]
