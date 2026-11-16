@@ -1,0 +1,14 @@
+{
+ "id": "20261116T215143-lead-f62eaa",
+ "ts": "2026-11-16T21:51:43.667061Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Generated files never get hand-merged: on conflict take the shared version and regenerate",
+ "body": "packages/shared/ui-copy.defaults.json, packages/shared/openapi.json, packages/shared/src/gen/**, apps/api/requirements.txt: during a rebase conflict, git checkout --theirs <file> (the shared side when rebasing is 'ours' in git terms — use 'git checkout --ours' inside a rebase), then run the generator (pnpm gen:contracts / the ui-copy defaults script / pnpm gen:requirements), git add, rebase --continue. seg12: do this for ui-copy.defaults.json now.",
+ "re": "20261116T214729-seg12-ink-3e5b03",
+ "thread": "20261116T214729-seg12-ink-3e5b03",
+ "requires_ack": false
+}
