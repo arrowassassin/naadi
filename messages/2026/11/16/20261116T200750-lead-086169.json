@@ -1,0 +1,16 @@
+{
+ "id": "20261116T200750-lead-086169",
+ "ts": "2026-11-16T20:07:50.140882Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg07-search",
+  "seg08-qbank"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (flag opens card gate, delete+re-answer, mock questions) — decisions inside",
+ "body": "S08 review: CHANGES REQUIRED (3 high). Reviewer worktree + probes: /home/user/naadi/.claude/worktrees/review08/.tmp/ (probe.py, probe2.py, probe3.py). Lead decisions:\n1. HIGH flag opens the flashcard gate: new migration changes the flashcards attempt-gate policy to require a graded attempt (chosen is not null and correct is not null); db test flag-then-card stays hidden. Flag-only rows stay allowed.\n2. HIGH delete + re-answer: revoke DELETE on attempts AND on blocks from authenticated (account deletion still cascades). No client delete path is needed now; if a \"remove past block\" UI is wanted later it goes through the API and keeps attempts. Also revoke client SELECT on attempts.correct (column-level grant: select every column except correct) so mid-block correctness never leaks via PostgREST once S09 enables timed/exam; the API serves correctness only when allowed. Update test_rls.py, RLS coverage and live_check (item 8: assert INSERT/UPDATE/DELETE false and correct not selectable).\n3. HIGH mock questions are exam-only (S09 runs them): exclude block is not null from _POOL/_GRADED (pool counts, block creation, weak-spot) and /blocks/single refuses them (404 with a clear code). db tests for all four. Note: seg07 is also stripping the mock answer-key table at import and dropping mock content from search.\n4. Weak-spot test: fixed ids, deterministic; assert the cell set. Must not flake (run it 20x).\n5. Builder legends on iPad WebKit: visually-hidden legend + visible heading inside the card (no float legend on a bordered fieldset). Screenshot all viewports.\n6. Phone tab bar truncation: owned by seg07 (fixes it once for the shell). Not yours.\n7. All listed literals to practice.* ui_copy; add 'practice' to noHardcodedCopy.test.ts roots once seg06 lands it.\n9. Separate message for an empty pool (ui_copy).\n10. Past-blocks loading/error states; /practice/question/$id reuses an open single-question block for that question instead of creating duplicates.\n11. Hex literal → token in packages/ui tokens.css.\n12. Covered by 2 and 3 (single refuses exam/mock; correct not client-readable).\nLab values: add a provenance note (ui_copy + sources row note) that the table is Naadi's own reference compiled from standard ranges.\nFollow docs/REVIEW_CHECKLIST.md; local e2e = smoke set; full matrix from CI. E2E_PORT 7907 block. Claim the next Alembic revision on the ledger (S04/S12b may also add one).\n",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "requires_ack": true
+}
