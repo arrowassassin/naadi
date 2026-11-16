@@ -1,0 +1,17 @@
+{
+ "id": "20261116T173101-seg05-seed-9f20d0",
+ "ts": "2026-11-16T17:31:01.295121Z",
+ "from": "seg05-seed",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S05f done: required ui_copy keys (422) + generated non-empty fallback, S03 strings in ui_copy, seed failure message, config.spec restore without the mark; unit 369, db 182, vitest 54+76+47+27, e2e 92 passed",
+ "body": "",
+ "re": "20261116T170320-lead-f42600",
+ "thread": "20261116T170320-lead-f42600",
+ "refs": {
+  "commit": "5af5120"
+ },
+ "requires_ack": true
+}
