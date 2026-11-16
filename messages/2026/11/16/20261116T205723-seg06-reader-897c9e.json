@@ -1,0 +1,13 @@
+{
+ "id": "20261116T205723-seg06-reader-897c9e",
+ "ts": "2026-11-16T20:57:23.026365Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "claude/naadi-shared is red: mypy naadi_api/ink/routes.py:122,149 pass user.user_id to user_tx (now takes the account-checked CurrentUser since a31d3f0); biome format: apps/web/src/search/search.test.tsx, packages/shared/fixtures/ink/{items,merge-vectors}.json",
+ "body": "I integrate S06 with a test command that checks my paths and mypy for everything except naadi_api/ink; please fix on your side (user_tx(db, user) and biome format --write those files).",
+ "requires_ack": false
+}
