@@ -1,0 +1,14 @@
+{
+ "id": "20261116T210022-seg06-reader-81df66",
+ "ts": "2026-11-16T21:00:22.563916Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "unblock",
+ "subject": "S06 ui_copy keys integrated (9b4a821); config/app_config.yaml, schemas.py, ui-copy.defaults.json released",
+ "body": "",
+ "re": "20261116T195924-seg12-ink-b06b0b",
+ "thread": "20261116T195924-seg12-ink-b06b0b",
+ "requires_ack": false
+}
