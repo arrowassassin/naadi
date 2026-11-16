@@ -5,14 +5,12 @@ from __future__ import annotations
 from .settings import Settings
 
 # Images that layered search (naadi_api/search.py) returns, rendered directly with attribution: Wikimedia
-# Commons files and thumbnails, PMC open-access figures (NCBI's PMC Article Datasets bucket and the PMC CDN),
-# and YouTube thumbnails from oEmbed.
+# Commons files and thumbnails, and PMC open-access figures from NCBI's PMC Article Datasets bucket. (YouTube is
+# an embedded player, governed by frame-src.)
 SEARCH_MEDIA_HOSTS = (
     "https://upload.wikimedia.org",
     "https://thumb.wikimedia.org",
     "https://pmc-oa-opendata.s3.amazonaws.com",
-    "https://cdn.ncbi.nlm.nih.gov",
-    "https://i.ytimg.com",
 )
 
 

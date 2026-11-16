@@ -225,3 +225,41 @@ async def test_concurrent_requests_all_authenticate_within_the_connection_budget
     await watcher
     # Every client of this test database (this host, the test's own connections); far below max_connections.
     assert peak <= 30, peak
+
+
+async def test_checkpoint_retention_keeps_only_the_latest_state(host: Host) -> None:
+    """aegra.json keeps_latest after 30 days; the test host sweeps every 3 s. An expired thread loses its
+    checkpoint history but keeps its latest state, and its TTL is re-armed."""
+    c = client(host, host.admin_token)
+    thread = await c.threads.create()
+    tid = thread["thread_id"]
+    for _ in range(2):
+        run = await c.runs.create(tid, "ping", input={"trigger": "background"})
+        await c.runs.join(tid, run["run_id"])
+
+    def checkpoints() -> int:
+        with pg() as conn:
+            row = conn.execute("select count(*) from public.checkpoints where thread_id = %s", (tid,)).fetchone()
+        return int(row[0]) if row else 0
+
+    before = checkpoints()
+    assert before > 1
+    with pg() as conn:
+        assert conn.execute("select strategy from public.thread_ttl where thread_id = %s", (tid,)).fetchone() == (
+            "keep_latest",
+        )
+        conn.execute(
+            "update public.thread_ttl set expires_at = now() - interval '1 second' where thread_id = %s", (tid,)
+        )
+    for _ in range(60):  # the sweeper runs every 3 s
+        if checkpoints() <= 1:
+            break
+        await asyncio.sleep(1)
+    assert checkpoints() == 1
+    state = await c.threads.get_state(tid)
+    assert state["values"]["recorded_id"]  # the latest state survives
+    with pg() as conn:
+        rearmed = conn.execute(
+            "select expires_at > now() + interval '29 days' from public.thread_ttl where thread_id = %s", (tid,)
+        ).fetchone()
+    assert rearmed == (True,)

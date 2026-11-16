@@ -72,6 +72,8 @@ def _env(database_url: str, port: int, *, live: bool) -> dict[str, str]:
             "ADMIN_EMAILS": ADMIN_EMAIL,
             "APP_ENV": "local",
             "CRON_POLL_INTERVAL_SECONDS": "2",
+            # Production retention policy (keep_latest after 30 days) with a 3 s sweep, so the test can see it.
+            "AEGRA_THREAD_TTL": '{"strategy": "keep_latest", "default_ttl": 43200, "sweep_interval_minutes": 0.05}',
             "NAADI_STATIC_DIR": str(API_DIR / "tests" / "agent" / "no-static"),
             "PORT": str(port),
         }

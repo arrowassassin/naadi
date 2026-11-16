@@ -808,7 +808,9 @@ class SearchService:
             if layer is None:
                 layers["tavily"] = "skipped:disabled"
             else:
-                domains = cfg.include_domains if intent == "pathway" else []
+                # Pathway and "latest" questions stay on the official domains in app_config.search; only an
+                # explicit "search the web" request (web=True) goes unrestricted.
+                domains = [] if web else cfg.include_domains
                 try:
                     results.extend(await self._tavily(query, user_id, cfg, layer, layers, domains))
                 except TavilyGuardExhausted as exc:

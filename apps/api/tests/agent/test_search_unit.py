@@ -413,3 +413,12 @@ async def test_searxng_is_not_called_when_a_better_layer_answered() -> None:
     assert ans.layers["tavily"] == "hit"
     assert "searxng" not in ans.layers
     assert not [r for r in seen if r.url.host == "127.0.0.1"]
+
+
+async def test_latest_questions_stay_on_official_domains_unless_the_web_is_asked_for() -> None:
+    calls: list[dict[str, Any]] = []
+    svc = service(MemStore(), tavily_calls=calls)
+    await svc.search("latest ECFMG fee update", user_id=uuid.uuid4())
+    assert "ecfmg.org" in calls[-1]["include_domains"]
+    await svc.search("pharmacology podcast recommendations", user_id=uuid.uuid4(), web=True)
+    assert calls[-1]["include_domains"] is None
