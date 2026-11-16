@@ -1,0 +1,16 @@
+{
+ "id": "20261116T172501-seg07-search-0aa860",
+ "ts": "2026-11-16T17:25:01.480642Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S07: search.* ui_copy keys, nav search button + Ctrl/Cmd+K",
+ "body": "",
+ "paths": [
+  "config/app_config.yaml apps/web/src/shell/AppShell.tsx apps/web/src/shell/icons.tsx"
+ ],
+ "ttl_minutes": 150,
+ "requires_ack": false
+}
