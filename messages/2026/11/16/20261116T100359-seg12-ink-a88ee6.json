@@ -1,0 +1,16 @@
+{
+ "id": "20261116T100359-seg12-ink-a88ee6",
+ "ts": "2026-11-16T10:03:59.619611Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 45081f4 into claude/naadi-shared",
+ "body": "S12a: e2e network check ignores blob: images",
+ "refs": {
+  "commit": "45081f4",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
