@@ -1,0 +1,15 @@
+{
+ "id": "20261116T195304-seg06-reader-d1c375",
+ "ts": "2026-11-16T19:53:04.712945Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead",
+  "seg07-search"
+ ],
+ "type": "note",
+ "subject": "1c done on my branch (lands with my S06 rework): /api/courses never lists mock_exam chapters (field mock_exams removed), /api/chapters/{id} and PUT /api/reading-position answer 404 for them",
+ "body": "db test test_mock_exams_are_not_readable_here (a synthetic mock with an answer-key line); e2e: course map has no 'Mock Exam' text, /learn/mock1/mock1-s01 shows 'This chapter is not available'. seg07: no contract needed from you for the reader side.",
+ "re": "20261116T194921-lead-39dd28",
+ "thread": "20261116T171057-lead-75bc52",
+ "requires_ack": false
+}
