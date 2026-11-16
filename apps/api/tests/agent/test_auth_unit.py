@@ -121,3 +121,77 @@ async def test_concurrent_first_open_creates_one_pool(monkeypatch: pytest.Monkey
     await asyncio.gather(*(db.open() for _ in range(50)))
     assert len(created) == 1
     assert db.pool is created[0]
+
+
+# ── S04 re-review R2: a stalled database never hangs an agent request ──
+
+
+class _StalledConn:
+    async def execute(self, *_: Any, **__: Any) -> Any:
+        await asyncio.Event().wait()  # the server never answers (e.g. a paused Postgres)
+
+
+class _StalledCtx:
+    def __init__(self, stall: bool) -> None:
+        self.stall = stall
+
+    async def __aenter__(self) -> _StalledConn:
+        if self.stall:
+            await asyncio.Event().wait()
+        return _StalledConn()
+
+    async def __aexit__(self, *_: object) -> None:
+        return None
+
+
+class _StalledPool:
+    def __init__(self, stall_checkout: bool) -> None:
+        self.stall_checkout = stall_checkout
+
+    def connection(self, timeout: float | None = None) -> _StalledCtx:
+        return _StalledCtx(self.stall_checkout)
+
+
+class _StalledDb:
+    configured = True
+
+    def __init__(self, *, stall_open: bool = False, stall_checkout: bool = False) -> None:
+        self.pool: _StalledPool | None = None if stall_open else _StalledPool(stall_checkout)
+
+    async def open(self) -> None:
+        await asyncio.Event().wait()
+
+
+@pytest.mark.parametrize(
+    "db",
+    [_StalledDb(), _StalledDb(stall_checkout=True), _StalledDb(stall_open=True)],
+    ids=["query", "checkout", "open"],
+)
+async def test_stalled_database_is_unavailable_within_the_deadline(db: _StalledDb) -> None:
+    from naadi_api.auth import AccountDirectory
+
+    accounts = AccountDirectory(db, frozenset(), deadline_s=0.2)
+    user = CurrentUser(user_id=uuid.uuid4(), email=None, email_verified=False, is_admin=False, session_id="s1")
+    loop = asyncio.get_running_loop()
+    started = loop.time()
+    with pytest.raises(AuthUnavailable):
+        await asyncio.wait_for(accounts.resolve(user), timeout=5)
+    assert loop.time() - started < 2
+
+
+async def test_stalled_database_makes_agent_auth_answer_503() -> None:
+    from naadi_api.auth import AccountDirectory
+
+    agent_auth.configure(
+        FixedVerifier(uuid.uuid4()),  # type: ignore[arg-type]
+        AccountDirectory(_StalledDb(), frozenset(), deadline_s=0.2),
+    )
+    flag = {"unavailable": False}
+    token = agent_auth.unavailable_flag.set(flag)
+    try:
+        with pytest.raises(Auth.exceptions.HTTPException) as e:
+            await asyncio.wait_for(agent_auth.authenticate({"authorization": "Bearer a.b.c"}), timeout=5)
+    finally:
+        agent_auth.unavailable_flag.reset(token)
+    assert e.value.status_code == 503
+    assert flag["unavailable"] is True

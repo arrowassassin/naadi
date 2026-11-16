@@ -137,7 +137,9 @@ class AccountDirectory:
       which together with ADMIN_EMAILS decide `is_admin`.
 
     Results are cached per (user, session) for `ttl_s` (default 30 s), so a revoked session stops
-    working within that time; the cache is bounded.
+    working within that time; the cache is bounded. One lookup (pool open, checkout and query) has
+    `deadline_s` (default 5 s): a stalled database is AuthUnavailable (503 + Retry-After) at the deadline,
+    never a hang.
     """
 
     def __init__(
@@ -148,8 +150,11 @@ class AccountDirectory:
         ttl_s: float = 30.0,
         max_entries: int = 10_000,
         clock: Any = time.monotonic,
+        deadline_s: float = 5.0,
     ) -> None:
         self._db = db
+        self._deadline = deadline_s
+        self._abandoned: set[asyncio.Future[Any]] = set()
         self._admins = admin_emails
         self._ttl = ttl_s
         self._max = max_entries
@@ -161,12 +166,20 @@ class AccountDirectory:
 
         if not getattr(self._db, "configured", False):
             raise AuthUnavailable("Your account cannot be checked right now. Try again in a moment.")
-        if self._db.pool is None:
-            await self._db.open()
+        # The lookup runs as its own task and the caller waits at most `deadline_s` for it. Cancelling a
+        # psycopg query in the caller's task would not do: psycopg then waits for a server-side cancel (up to
+        # 5 s) and for the query to end (5 s more) before the task can finish, so a stalled server would still
+        # hold the request ~15 s. A task past the deadline is cancelled and cleans up in the background.
+        task = asyncio.ensure_future(self._query(user_id, session_id))
+        done, _ = await asyncio.wait({task}, timeout=self._deadline)
+        if not done:
+            task.cancel()
+            self._abandoned.add(task)
+            task.add_done_callback(self._forget)
+            log.warning("account_lookup_unavailable", error="TimeoutError")
+            raise AuthUnavailable("Your account cannot be checked right now. Try again in a moment.")
         try:
-            async with self._db.pool.connection(timeout=5.0) as conn:
-                cur = await conn.execute(_ACCOUNT_SQL, {"uid": user_id, "sid": session_id})
-                row = await cur.fetchone()
+            row = task.result()
         except (psycopg.OperationalError, TimeoutError) as exc:
             log.warning("account_lookup_unavailable", error=type(exc).__name__)
             raise AuthUnavailable("Your account cannot be checked right now. Try again in a moment.") from exc
@@ -175,6 +188,19 @@ class AccountDirectory:
         if row is None:
             return None
         return _Account(email=row[0], confirmed=bool(row[1]), live=bool(row[2]), at=self._clock())
+
+    async def _query(self, user_id: uuid.UUID, session_id: str) -> Any:
+        if self._db.pool is None:
+            await self._db.open()
+        async with self._db.pool.connection(timeout=self._deadline) as conn:
+            cur = await conn.execute(_ACCOUNT_SQL, {"uid": user_id, "sid": session_id})
+            return await cur.fetchone()
+
+    def _forget(self, task: asyncio.Future[Any]) -> None:
+        """Drop an abandoned lookup once it has cleaned up, reading its outcome so asyncio does not warn."""
+        self._abandoned.discard(task)
+        if not task.cancelled():
+            task.exception()
 
     async def resolve(self, user: CurrentUser) -> CurrentUser:
         if not user.session_id:
