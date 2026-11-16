@@ -30,6 +30,7 @@ dependencies = [
     "tavily-python==0.8.5",
     "biopython==1.88",
     "sse-starlette==3.7.0",
+    "fastembed==0.9.1",
 ]
 
 [dependency-groups]
