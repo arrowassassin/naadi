@@ -45,7 +45,9 @@ Endpoint uptime (OpenRouter endpoints API, last 1 day): nemotron-3-ultra 95 %, l
 
 **Rendering (Chromium):** all four images decoded (960–1600 px). YouTube embed: "Error 153 Video player configuration error" from a `file://` page with no referrer; **plays correctly** when served over HTTP with `origin` + `referrerpolicy="strict-origin-when-cross-origin"`.
 
-Not yet tested: SearXNG (self-hosted in segment 04), Tavily-free fallbacks such as You.com (not adopted).
+Not yet tested live: SearXNG (deferred to segment 22, below), Tavily-free fallbacks such as You.com (not adopted).
+
+**SearXNG (search layer 8) is deferred to segment 22.** The client (`naadi_api/search.py` `_searxng`, `parse_searxng`) and its routing are in place and unit-tested against SearXNG's documented `format=json` shape (`tests/agent/test_search_unit.py`: https-only results, fallback when every medical layer is empty and when Tavily's guard is exhausted, never called when a better layer answered). It is off (`search.layers.searxng.enabled: false`) because SearXNG is not installed in the Space image: it needs its own process (uWSGI/granian), a settings file with the JSON format enabled and a limiter, and its engines may throttle the Space's IP. To enable it: run SearXNG in the container on `127.0.0.1:8888` (or set `search.layers.searxng.base_url`), allow `format: json` in its `settings.yml`, then set `enabled: true` in `app_config.search` (admin editor, no redeploy) and re-run the search integration tests.
 
 ## Agent platform (segment 04, 2026-11-16, live from the sandbox through `naadi_api/llm.py`)
 

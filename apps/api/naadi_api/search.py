@@ -267,7 +267,8 @@ def parse_europepmc(body: Mapping[str, Any], limit: int) -> list[SearchResult]:
                 source="europepmc",
                 title=strip_html(r.get("title") or ""),
                 url=url,
-                snippet=strip_html(r.get("abstractText") or "")[:500],
+                # Abstract text only for reusable licences; otherwise title + citation + link, like PubMed.
+                snippet=strip_html(r.get("abstractText") or "")[:500] if license_is_storable(lic) else "",
                 license=lic or "unknown",
                 storable=license_is_storable(lic),
                 published=r.get("firstPublicationDate") or r.get("pubYear"),

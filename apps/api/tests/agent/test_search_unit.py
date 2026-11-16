@@ -330,3 +330,86 @@ async def test_user_search_without_privacy_directory_is_refused() -> None:
     # Anonymous (system) searches still run with the generic patterns.
     ans = await svc.search("anion gap", user_id=None)
     assert ans.intent == "medical"
+
+
+def test_europepmc_copies_abstracts_only_for_reusable_licences() -> None:
+    rs = parse_europepmc(load("europepmc.json"), 5)
+    for r in rs:
+        if r.storable:
+            assert r.snippet
+        else:
+            assert r.snippet == ""
+            assert r.title and r.url and r.citation
+    body = load("europepmc.json")
+    first = dict(body["resultList"]["result"][0], license="cc by-nc")
+    only = parse_europepmc({"resultList": {"result": [first]}}, 1)
+    assert only[0].snippet == ""
+    assert only[0].storable is False
+
+
+# ── SearXNG: parser and the fallback rule (review item 4). The layer is off in config/models.yaml until
+# segment 22 installs SearXNG; these tests switch it on in a config copy. The fixture follows SearXNG's
+# documented `format=json` response shape (snippets written for the test). ──
+
+
+class SearxRuntime(RuntimeConfig):
+    """The repo config with the SearXNG layer enabled."""
+
+    async def get(self) -> Any:
+        cfg = await super().get()
+        layers = dict(cfg.search.layers)
+        layers["searxng"] = layers["searxng"].model_copy(update={"enabled": True})
+        return cfg.model_copy(update={"search": cfg.search.model_copy(update={"layers": layers})})
+
+
+def test_searxng_parser_keeps_https_results_only() -> None:
+    from naadi_api.search import parse_searxng
+
+    rs = parse_searxng(load("searxng.json"), 5)
+    assert [r.url for r in rs] == [
+        "https://www.ncbi.nlm.nih.gov/books/NBK519044/",
+        "https://medlineplus.gov/ency/article/000493.htm",
+    ]
+    assert all(r.source == "searxng" and not r.storable and r.license == "unknown" for r in rs)
+    assert "<b>" not in rs[1].snippet
+
+
+def _searx_service(store: MemStore, seen: list[httpx.Request]) -> SearchService:
+    def handler(req: httpx.Request) -> httpx.Response:
+        seen.append(req)
+        if req.url.host == "127.0.0.1":
+            return httpx.Response(200, json=load("searxng.json"))
+        return httpx.Response(200, json={"resultList": {"result": []}, "studies": [], "results": []})
+
+    svc = service(store, handler=handler)
+    svc._runtime = SearxRuntime(None, CONFIG_DIR)
+    return svc
+
+
+async def test_searxng_answers_when_every_medical_layer_is_empty() -> None:
+    seen: list[httpx.Request] = []
+    svc = _searx_service(MemStore(), seen)
+    ans = await svc.search("renal tubular acidosis type 4", user_id=None)
+    assert ans.layers["searxng"] == "hit"
+    assert {r.source for r in ans.results} == {"searxng"}
+    searx = [r for r in seen if r.url.host == "127.0.0.1"]
+    assert searx and searx[0].url.params["format"] == "json"
+
+
+async def test_searxng_answers_when_the_tavily_guard_is_exhausted() -> None:
+    seen: list[httpx.Request] = []
+    store = MemStore()
+    store.month_offset = 10_000
+    svc = _searx_service(store, seen)
+    ans = await svc.search("NRMP match day timeline", user_id=uuid.uuid4())
+    assert ans.layers["tavily"] == "skipped:monthly_credits"
+    assert ans.layers["searxng"] == "hit"
+
+
+async def test_searxng_is_not_called_when_a_better_layer_answered() -> None:
+    seen: list[httpx.Request] = []
+    svc = _searx_service(MemStore(), seen)
+    ans = await svc.search("J-1 visa waiver", user_id=uuid.uuid4())
+    assert ans.layers["tavily"] == "hit"
+    assert "searxng" not in ans.layers
+    assert not [r for r in seen if r.url.host == "127.0.0.1"]

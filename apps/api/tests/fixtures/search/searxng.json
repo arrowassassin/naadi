@@ -1,0 +1,49 @@
+{
+  "query": "renal tubular acidosis type 4",
+  "number_of_results": 0,
+  "results": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519044/",
+      "title": "Renal Tubular Acidosis - StatPearls - NCBI Bookshelf",
+      "content": "Sample snippet written for this test fixture (not copied from the page).",
+      "engine": "duckduckgo",
+      "parsed_url": [
+        "https",
+        "www.ncbi.nlm.nih.gov",
+        "/books/NBK519044/",
+        "",
+        "",
+        ""
+      ],
+      "engines": [
+        "duckduckgo",
+        "brave"
+      ],
+      "positions": [
+        1,
+        2
+      ],
+      "score": 4.0,
+      "category": "general"
+    },
+    {
+      "url": "http://example.com/insecure-page",
+      "title": "Plain HTTP result (dropped)",
+      "content": "Dropped: Naadi only links https pages.",
+      "engine": "brave",
+      "category": "general"
+    },
+    {
+      "url": "https://medlineplus.gov/ency/article/000493.htm",
+      "title": "Renal tubular acidosis - type IV: MedlinePlus Medical Encyclopedia",
+      "content": "Sample <b>snippet</b> with markup, written for this fixture.",
+      "engine": "brave",
+      "category": "general"
+    }
+  ],
+  "answers": [],
+  "corrections": [],
+  "infoboxes": [],
+  "suggestions": [],
+  "unresponsive_engines": []
+}
