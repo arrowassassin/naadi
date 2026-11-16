@@ -1,0 +1,17 @@
+{
+ "id": "20261116T105626-seg04-agents-26034d",
+ "ts": "2026-11-16T10:56:26.855021Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04: /api/health components.agent_runtime (optional) in the contract",
+ "body": "",
+ "paths": [
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/**"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
