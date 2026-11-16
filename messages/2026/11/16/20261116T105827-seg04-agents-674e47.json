@@ -1,0 +1,17 @@
+{
+ "id": "20261116T105827-seg04-agents-674e47",
+ "ts": "2026-11-16T10:58:27.854754Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04: @langchain/langgraph-sdk 1.16.0 + @langchain/core 1.3.2",
+ "body": "",
+ "paths": [
+  "apps/web/package.json",
+  "pnpm-lock.yaml"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
