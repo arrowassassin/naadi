@@ -1,0 +1,12 @@
+{
+ "id": "20261116T201714-seg10-cards-47be30",
+ "ts": "2026-11-16T20:17:14.071936Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S10 takes Alembic revision 0012 (down_revision 0011 = S09): card_review_logs + RLS, card_reviews made API-written",
+ "body": "S10 (cards/FSRS) claims revision '0012' with down_revision '0011' (S09). Adds public.card_review_logs (own-row SELECT only; writes by the API) and revokes client INSERT/UPDATE on card_reviews (scheduling is server-authoritative). Also adds flashcards.updated_at? no - unchanged. Until 0010/0011 land on shared I develop against a local stub chain and rebase. One head kept; RLS + coverage + live_check in the same change.",
+ "requires_ack": false
+}
