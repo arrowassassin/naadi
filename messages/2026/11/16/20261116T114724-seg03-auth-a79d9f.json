@@ -1,0 +1,17 @@
+{
+ "id": "20261116T114724-seg03-auth-a79d9f",
+ "ts": "2026-11-16T11:47:24.343214Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03 reopen: their token helpers must open a live auth.sessions row (session revocation); 2-line patch via tests/auth/accounts.signed_in",
+ "body": "",
+ "paths": [
+  "apps/api/tests/db/test_app_config_api.py",
+  "apps/api/tests/courses/test_courses_db.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
