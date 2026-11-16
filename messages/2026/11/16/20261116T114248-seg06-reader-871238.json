@@ -1,0 +1,16 @@
+{
+ "id": "20261116T114248-seg06-reader-871238",
+ "ts": "2026-11-16T11:42:48.451869Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d0b0d23 into claude/naadi-shared",
+ "body": "S06: CI e2e seeds + Storage via gateway + screens/06; courses db tests local-only, secrets None",
+ "refs": {
+  "commit": "d0b0d23",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
