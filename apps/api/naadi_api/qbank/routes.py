@@ -423,6 +423,8 @@ async def create_block(
             status=body.status,
             difficulty=body.difficulty,
         )
+        if not pool:
+            raise HTTPException(422, "No questions match these filters. Widen them or choose another status.")
         if len(pool) < body.count:
             noun = "question matches" if len(pool) == 1 else "questions match"
             raise HTTPException(

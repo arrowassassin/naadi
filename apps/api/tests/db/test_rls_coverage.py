@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import uuid
+
 import psycopg
 
-from .fixtures import USER_TABLE_NAMES
+from .fixtures import USER_TABLE_NAMES, Shared, insert_row
 from .rls import DB_MARKS
 
 pytestmark = DB_MARKS
@@ -191,3 +193,40 @@ def test_migration_and_startup_secure_the_same_aegra_tables() -> None:
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     assert tuple(mod.AEGRA_TABLES) == tuple(AEGRA_TABLES)
+
+
+# Every SECURITY DEFINER function in `public` is listed here on purpose: it runs with its owner's rights, so a new
+# one must be reviewed (pinned search_path, not callable by anon, answers only for the caller's own rows).
+DEFINER_ALLOWLIST = {"qbank_has_graded_attempt": {"anon": False, "authenticated": True}}
+
+
+def test_security_definer_functions_are_an_explicit_allowlist(pg: psycopg.Connection) -> None:
+    rows = pg.execute(
+        "select p.proname, p.proconfig, has_function_privilege('anon', p.oid, 'execute'),"
+        " has_function_privilege('authenticated', p.oid, 'execute')"
+        " from pg_proc p where p.pronamespace = 'public'::regnamespace and p.prosecdef order by 1"
+    ).fetchall()
+    naadi = {r[0] for r in rows if r[0].startswith("naadi_")}  # internal helpers: closed to clients
+    for name, config, anon_exec, auth_exec in rows:
+        if name in naadi:
+            assert not anon_exec and not auth_exec, name
+            continue
+        assert name in DEFINER_ALLOWLIST, f"unreviewed SECURITY DEFINER function public.{name}"
+        assert config == ['search_path=""'], name
+        assert {"anon": anon_exec, "authenticated": auth_exec} == DEFINER_ALLOWLIST[name], name
+    assert {r[0] for r in rows} - naadi == set(DEFINER_ALLOWLIST)
+
+
+def test_graded_attempt_function_answers_only_for_the_caller(
+    pg: psycopg.Connection, user_a: uuid.UUID, user_b: uuid.UUID, shared: Shared
+) -> None:
+
+    from .rls import as_user
+
+    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "A", "correct": True})
+    insert_row(pg, "attempts", {"user_id": user_b, "question_id": shared.question_id, "flagged": True})
+    q = "select public.qbank_has_graded_attempt(%s)"
+    with as_user(pg, user_a) as conn:
+        assert conn.execute(q, (shared.question_id,)).fetchone() == (True,)
+    with as_user(pg, user_b) as conn:  # B has only a flag-only row and cannot see A's graded one
+        assert conn.execute(q, (shared.question_id,)).fetchone() == (False,)

@@ -337,6 +337,7 @@ test.describe("tutor block", () => {
         seed: 4,
       });
       expect(made.status).toBe(201);
+      await loadAllFonts(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
 
@@ -348,7 +349,12 @@ test.describe("tutor block", () => {
         "href",
         /^https:\/\/www\.nbme\.org\//,
       );
-      await expect(sheet.getByText(/written by Naadi/)).toBeVisible();
+      // the provenance note is whatever the server's ui_copy says (editable without a redeploy)
+      const served = (await (await page.request.get("/api/public-config")).json()) as {
+        ui_copy: Record<string, string>;
+      };
+      expect(served.ui_copy["practice.labs_source"]).toBeTruthy();
+      await expect(sheet.getByText(served.ui_copy["practice.labs_source"] as string)).toBeVisible();
       await expectNoAxeViolations(page);
       await snap(page, info, guard, "lab-values");
       await page.keyboard.press("Escape");
@@ -458,9 +464,11 @@ test.describe("tutor block", () => {
         status: "all",
         seed: 2,
       });
+      await loadAllFonts(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
       await page.waitForTimeout(800); // the next question is read ahead and saved on this device
+      await loadAllFonts(page); // no font download may be cut off by going offline
       await context.setOffline(true);
       await page.keyboard.press("b");
       await page.keyboard.press("Control+Enter");
@@ -492,6 +500,7 @@ test.describe("phone layout", () => {
         status: "all",
         seed: 6,
       });
+      await loadAllFonts(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
       for (const name of ["Flag", "Lab values", "Submit"]) {

@@ -342,6 +342,16 @@ def test_single_question_block_for_search_hits(client: TestClient, key: SigningK
     assert client.post("/api/blocks/single", json={"question_id": "x", "mode": "exam"}, headers=h).status_code == 422
 
 
+def test_an_empty_pool_has_its_own_message(client: TestClient, key: SigningKey, world: World) -> None:
+    res = client.post(
+        "/api/blocks",
+        json={"exam": "step1", "systems": [world.sys_a], "status": "flagged", "count": 3, "mode": "tutor"},
+        headers=auth(key, world.owner),
+    )
+    assert res.status_code == 422
+    assert res.json()["error"]["message"].startswith("No questions match these filters.")
+
+
 # ── The answer-leak proof ──
 
 
