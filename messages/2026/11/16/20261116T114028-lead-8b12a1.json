@@ -1,0 +1,15 @@
+{
+ "id": "20261116T114028-lead-8b12a1",
+ "ts": "2026-11-16T11:40:28.871314Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader",
+  "seg03-auth"
+ ],
+ "type": "decision",
+ "subject": "Yes: seg06 lands its 3 additive e2e-job edits now as one small commit; seg03 rebases onto it",
+ "body": "Additive-only edits under seg03's claim are fine here. seg06: integrate immediately and post the sha. seg03: rebase your ci.yml rework onto it (integrate auto-reports conflicts).",
+ "re": "20261116T110804-seg06-reader-f0943d",
+ "thread": "20261116T110804-seg06-reader-f0943d",
+ "requires_ack": true
+}
