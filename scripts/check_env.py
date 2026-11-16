@@ -7,6 +7,7 @@
 #   "supabase==2.34.1",
 #   "openrouter==1.3.179",
 #   "tavily-python==0.8.5",
+#   "langchain-nvidia-ai-endpoints==1.5.0",
 # ]
 # ///
 """Verify Naadi's environment without ever printing a value.
@@ -60,6 +61,7 @@ KEYS: list[Key] = [
     Key("VITE_SUPABASE_URL", False, True),
     Key("VITE_SUPABASE_ANON_KEY", False, True),
     Key("OPENROUTER_API_KEY", True, True),
+    Key("NVIDIA_API_KEY", True, False),  # NVIDIA API catalog (build.nvidia.com): higher-limit provider
     Key("OPENROUTER_DAILY_CAP", False, True),
     Key("OPENROUTER_APP_URL", False, True),
     Key("OPENROUTER_APP_TITLE", False, True),
@@ -373,6 +375,23 @@ def check_supabase_mgmt() -> None:
         report("WARN", "DATABASE_URL matches pooler", f"{type(e).__name__}: {e}", False)
 
 
+def check_nvidia() -> None:
+    """NVIDIA API catalog via the official LangChain integration (ChatNVIDIA). Lists models; no generation."""
+    key = get("NVIDIA_API_KEY")
+    if not key:
+        report("SKIP", "NVIDIA API models", "NVIDIA_API_KEY not set (optional)", False)
+        return
+    try:
+        from langchain_nvidia_ai_endpoints import ChatNVIDIA
+
+        models = ChatNVIDIA.get_available_models(api_key=key)
+        n = len(models)
+        tool_capable = sum(1 for m in models if getattr(m, "supports_tools", False))
+        report("PASS" if n else "FAIL", "NVIDIA API models", f"{n} chat model(s), {tool_capable} with tool calling", False)
+    except Exception as e:  # noqa: BLE001
+        report("FAIL", "NVIDIA API models", f"{type(e).__name__}: {e}", False)
+
+
 def check_openrouter() -> None:
     key = get("OPENROUTER_API_KEY")
     if not key:
@@ -482,6 +501,7 @@ def main() -> int:
     check_supabase()
     check_supabase_mgmt()
     check_openrouter()
+    check_nvidia()
     check_tavily(not args.no_tavily)
     check_hf()
     check_optional()
