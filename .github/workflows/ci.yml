@@ -1,7 +1,8 @@
-# Naadi CI. Public repo: ubuntu runners only (free), one secret (HF_TOKEN, deploy job only).
+# Naadi CI. Public repo: ubuntu runners only (free). No secrets here: HF_TOKEN is used by deploy.yml only.
 # install -> lint -> typecheck -> unit -> contracts drift -> requirements drift -> check_models -> build
 # -> db integration (supabase/postgres service) -> e2e (WebKit, Chromium, Firefox x 6 viewports)
-# -> on main: deploy to the Space + live smoke.
+# Deploying is a separate workflow (deploy.yml) that runs when this one succeeds on main, so a newer push
+# can cancel a superseded CI run but never a deploy that is uploading.
 name: ci
 
 on:
@@ -12,7 +13,9 @@ on:
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  # Superseded runs on branches and PRs are cancelled; a running main run is never cancelled, so the
+  # newest main commit always reaches deploy.yml.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 permissions:
   contents: read
@@ -170,59 +173,5 @@ jobs:
             test-results/screens/01
             playwright-report
             test-results/playwright
-          retention-days: 14
-          if-no-files-found: ignore
-
-  deploy:
-    name: deploy to the Space + live smoke
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [checks, db, e2e]
-    runs-on: ubuntu-24.04
-    timeout-minutes: 60
-    concurrency:
-      group: deploy-space
-      cancel-in-progress: false
-    env:
-      HF_TOKEN: ${{ secrets.HF_TOKEN }}
-      HF_SPACE_ID: arrowassassin/naadi
-    steps:
-      - name: Require HF_TOKEN
-        run: |
-          if [ -z "${HF_TOKEN}" ]; then
-            echo "::error::Missing GitHub Actions secret HF_TOKEN (Settings -> Secrets and variables -> Actions). See docs/SECRETS.md."
-            exit 1
-          fi
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - run: corepack enable
-      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
-        with:
-          version: ${{ env.UV_VERSION }}
-          python-version: ${{ env.PYTHON_VERSION }}
-          enable-cache: true
-          cache-dependency-glob: apps/api/uv.lock
-      - name: Install
-        run: |
-          pnpm install --frozen-lockfile
-          uv --directory apps/api sync --frozen
-      - name: Deploy (upload, wait for RUNNING on cpu-basic, smoke /api/health + / + /api/ready)
-        run: scripts/deploy_space.sh --space "$HF_SPACE_ID" --hardware cpu-basic
-      - name: Install WebKit
-        run: pnpm --filter @naadi/web exec playwright install --with-deps webkit
-      - name: Live WebKit smoke (HF token header; database must be ok)
-        env:
-          E2E_BASE_URL: ${{ env.SPACE_URL }}
-          E2E_EXPECT_DB_OK: "1"
-          CI: "1"
-        run: pnpm --filter @naadi/web exec playwright test --project "webkit-*"
-      - if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: live-smoke
-          path: |
-            test-results/screens/01-live
-            playwright-report
           retention-days: 14
           if-no-files-found: ignore
