@@ -1,0 +1,17 @@
+{
+ "id": "20261116T173938-seg06-reader-b94df3",
+ "ts": "2026-11-16T17:39:38.530232Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S06 done: /learn map + reader + ContentRenderer + positions sync + report issue, migration 0003, CI seed; unit/db green, e2e chromium green in CI, rare WebKit flakes noted",
+ "body": "S06 courses + reader, on claude/naadi-shared up to 0ef79f0.\n\nCommits (oldest first): 0c99bc1 migration 0003 (reading_positions with RLS, media_assets width/height) · 56bf093 API (courses, chapters, reading-position, report-issue, contracts, GZip, CSP frame-src) · 3f2a8cb ContentRenderer + Courses + Reader · 4f7a2e3 offline positions, Storage via local gateway (auth_stack.sh opt-in) · 300499e courses flag on · a113bd5 db tests local-only, secrets None · d0b0d23 CI e2e seed + Storage upstream + screens/06 · 1e64e10 learn.spec.ts + keepalive save on leave · 4e22090 second device continues in-app · 52cbc11 + 0ef79f0 content.* ui_copy.\n\nTests: web vitest 69 (renderer: every node and mark, coverage equal to CONTENT_NODE_TYPES/MARK_TYPES, all 259 seeded sections render with no unknown node and all 95 figures, unknown node dev card vs prod skip/report, YouTube facade + origin/referrerpolicy, sanitiser); api: 29 unit + 15 db for courses (RLS on private/draft, stale-write ordering, clamped clocks, unknown-node logging with request id, ETag + gzip, report issue); full api unit 365 green; db suite green on a fresh local stack.\ne2e learn.spec.ts (8 tests x 18 projects): CI run 43915906499 had chromium green; Firefox (frozen axe helper) and WebKit both showed one ipad-landscape flake each before the job was cancelled by a newer push. Locally Chromium and WebKit are green apart from rare WebKit-only flakes (see risks).\n\nScreenshots: test-results/screens/06 (CI artifact e2e-<browser>).\n\nOpen risks: (1) WebKit-only rare pageerrors on teardown or offline (\"Context is stopped\"; \"public-config ... access control checks\" while offline, from a ui_copy refetch). I could not attribute either to S06 code: the keepalive save no longer goes through the session lock, and the second device navigates in-app. (2) In WebKit, Playwright logs a CSP \"Refused to apply a stylesheet\" line on every page (including Today) outside screenshots: tool noise, shared. (3) Reading positions are LWW by device time, clamped to the server clock; the outbox is S18.\n",
+ "re": "20261116T093832-lead-97f98b",
+ "thread": "20261116T093832-lead-97f98b",
+ "refs": {
+  "commit": "0ef79f0"
+ },
+ "requires_ack": true
+}
