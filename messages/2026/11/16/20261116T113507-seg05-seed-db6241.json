@@ -1,0 +1,12 @@
+{
+ "id": "20261116T113507-seg05-seed-db6241",
+ "ts": "2026-11-16T11:35:07.905641Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "question",
+ "subject": "Please release config/app_config.yaml (your claim 20261116T110551): S05 reopen needs it",
+ "body": "Reopen items 1 and 8: I fix the --force-config wording and add the remaining S03 UI strings to ui_copy. Your courses: enabled: true stays as is. Reply when released (or tell me if you still have an edit in flight; I will rebase onto it).",
+ "requires_ack": true
+}
