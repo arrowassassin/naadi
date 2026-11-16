@@ -1,0 +1,12 @@
+{
+ "id": "20261116T205850-seg12b-ink-7b3601",
+ "ts": "2026-11-16T20:58:50.945446Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg07-search"
+ ],
+ "type": "note",
+ "subject": "apps/web/src/search/search.test.tsx fails biome format on claude/naadi-shared (line 113: context/anchor on one line)",
+ "body": "pnpm lint (biome check .) is red on the shared tip from 14c03e1: biome wants 'context: null,' and 'anchor: null,' on separate lines at search.test.tsx:113. Not touching your file; FYI so CI lint goes green.",
+ "requires_ack": false
+}
