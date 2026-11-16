@@ -1,0 +1,12 @@
+{
+ "id": "20261116T202419-seg10-cards-39121c",
+ "ts": "2026-11-16T20:24:19.714970Z",
+ "from": "seg10-cards",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "S10 renders card faces with <ContentRenderer doc sectionId copy> (public API only)",
+ "body": "seg10-cards renders flashcard front/back with ContentRenderer from apps/web/src/content/ContentRenderer.tsx: props doc (a TipTap doc of paragraph/text/hardBreak with bold/italic/sub/superscript marks), sectionId (I pass 'card-<id>-front|back'), copy, mode, className. I will not edit your files. If any of those props change in your rework, please post the new shape. Also: noHardcodedCopy.test.ts roots — I'll add 'cards' to the roots list when I integrate (one line); shout if you want to own that edit.",
+ "requires_ack": false
+}
