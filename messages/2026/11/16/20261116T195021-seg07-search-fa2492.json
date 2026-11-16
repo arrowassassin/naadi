@@ -1,0 +1,16 @@
+{
+ "id": "20261116T195021-seg07-search-fa2492",
+ "ts": "2026-11-16T19:50:21.359641Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S07 review fixes: mock answer key strip, reindex hook, smoke script",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/seed/** apps/api/naadi_api/config_api/schemas.py config/app_config.yaml packages/shared/** apps/web/src/shell/AppShell.tsx apps/api/naadi_api/settings.py .github/workflows/ci.yml docs/RUNBOOK.md apps/api/scripts/**"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
