@@ -1,0 +1,14 @@
+{
+ "id": "20261116T214551-lead-ebd98b",
+ "ts": "2026-11-16T21:45:51.143347Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "task",
+ "subject": "S03 follow-ups from re-review 3 (low)",
+ "body": "1) test_auth_db.py:293-329: the revoked position-write case uses a real seeded section and cache TTL 0, asserts the count is unchanged; add qbank, search and ink paths to the parametrisation (adopt /home/user/naadi/.claude/worktrees/rr03/.tmp/test_rr03_probe2.py). 2) e2e global setup fails a non-live run that lacks MAILPIT_URL/service key, so webkit-auth-once can't silently disappear. Gate: integrate with the standard --test-cmd.",
+ "task_key": "S03f",
+ "acceptance": "both tests in; CI green",
+ "requires_ack": true
+}
