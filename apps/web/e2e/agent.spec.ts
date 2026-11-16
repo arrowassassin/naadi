@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { Browser, Page, TestInfo } from "@playwright/test";
 import { canMintUsers, type E2ERole } from "./auth-users";
+import { isLoopbackDatabaseUrl } from "./databaseUrl";
 import {
   type ConsoleGuard,
   expect,
@@ -41,9 +42,12 @@ const RECORDED_STREAM = readFileSync(path.join(import.meta.dirname, "fixtures/pi
 
 /** Recorded search results for the self-test's media block (Commons image, PMC figure, YouTube video) go
  * into search_cache, so every run renders the same media without a search call. */
+const DB_URL = process.env.E2E_DATABASE_URL ?? process.env.DATABASE_URL;
+/** The recorded results are seeded only into a local test database (E2E_ALLOW_HOSTED=1 runs skip the media test). */
+const canSeedMedia = isLoopbackDatabaseUrl(DB_URL ?? "");
 test.beforeAll(() => {
-  const db = process.env.E2E_DATABASE_URL ?? process.env.DATABASE_URL;
-  if (!db || !hasRuntime) return;
+  const db = DB_URL;
+  if (!db || !hasRuntime || !canSeedMedia) return;
   execFileSync(
     "uv",
     ["--directory", API_DIR, "run", "--frozen", "python", "-m", "tests.agent.seed_media_cache", "--database-url", db],
@@ -136,6 +140,7 @@ test.describe("admin, answer blocks", () => {
     page,
     consoleErrors,
   }, info) => {
+    test.skip(!canSeedMedia, "the recorded media results are seeded only into a local test database");
     await openDiagnostics(page);
     await page.getByRole("button", { name: "Run ping" }).click();
     const media = page.getByTestId("agent-block-media");

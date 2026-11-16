@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { e2eDatabaseUrl } from "../../e2e/databaseUrl";
+import { e2eDatabaseUrl, isLoopbackDatabaseUrl } from "../../e2e/databaseUrl";
 
 const HOSTED = "postgresql://postgres.ref:secret@aws-0-eu-west-2.pooler.supabase.com:5432/postgres";
 
@@ -42,5 +42,14 @@ describe("e2eDatabaseUrl (the database the e2e servers migrate)", () => {
   it("returns undefined without any database (the quick local run)", () => {
     expect(e2eDatabaseUrl({})).toBeUndefined();
     expect(e2eDatabaseUrl({ DATABASE_URL: "" })).toBeUndefined();
+  });
+});
+
+describe("isLoopbackDatabaseUrl", () => {
+  it("is true only for this machine", () => {
+    expect(isLoopbackDatabaseUrl("postgresql://u@127.0.0.1:5432/db")).toBe(true);
+    expect(isLoopbackDatabaseUrl("postgresql://u@[::1]/db")).toBe(true);
+    expect(isLoopbackDatabaseUrl(HOSTED)).toBe(false);
+    expect(isLoopbackDatabaseUrl("")).toBe(false);
   });
 });
