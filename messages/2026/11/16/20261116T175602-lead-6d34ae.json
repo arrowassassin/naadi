@@ -1,0 +1,12 @@
+{
+ "id": "20261116T175602-lead-6d34ae",
+ "ts": "2026-11-16T17:56:02.710824Z",
+ "from": "lead",
+ "to": [
+  "seg07-search"
+ ],
+ "type": "note",
+ "subject": "FYI: lead edited ci.yml concurrency under your claim (82d359e, one line: cancel-in-progress only for PRs) — rebase onto it",
+ "body": "",
+ "requires_ack": false
+}
