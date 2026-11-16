@@ -126,6 +126,7 @@ function WebRow({ r, copy }: { r: WebResult; copy: Copy }) {
       <Chip tone="meta" srPrefix="Type">
         {copy("search.kind.web")}
       </Chip>
+      {href ? <span className="sr-only">{copy("search.web_opens")}</span> : null}
     </>
   );
   return (
@@ -136,7 +137,6 @@ function WebRow({ r, copy }: { r: WebResult; copy: Copy }) {
           target="_blank"
           rel="noopener noreferrer"
           data-result=""
-          aria-label={`${r.title}, ${r.source_label}, ${copy("search.web_opens")}`}
           className={cx(ROW, "rounded-inner focus-visible:outline-2 focus-visible:outline-offset-2")}
         >
           {inner}
@@ -222,8 +222,13 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
     return () => window.clearTimeout(id);
   }, [text]);
 
+  const title = copy("search.title");
   useEffect(() => {
-    document.title = `${copy("search.title")} · Naadi`;
+    document.title = `${title} · Naadi`;
+  }, [title]);
+
+  // Focus the field once on arrival, and again whenever Ctrl/Cmd+K is pressed on this screen.
+  useEffect(() => {
     inputRef.current?.focus();
     const focus = () => {
       inputRef.current?.focus();
@@ -231,7 +236,7 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
     };
     window.addEventListener(SEARCH_FOCUS_EVENT, focus);
     return () => window.removeEventListener(SEARCH_FOCUS_EVENT, focus);
-  }, [copy]);
+  }, []);
 
   const q = committed.length >= MIN_CHARS ? committed : "";
   const webOnly = scope === "web";
