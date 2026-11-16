@@ -535,6 +535,14 @@ async def test_turn_cap_stops_a_chain_mid_walk() -> None:
         "reference range 3500000-10500000",
         "ferritin 1200000 ng/L",
         "dose 1000000 units of penicillin G",
+        "platelets between 150000 and 450000",
+        "platelet count of 250000000",
+        "viral load of 12000000",
+        "normal range 150000 to 450000",
+        "CD4 count 12000000",
+        "WBC: 11000000",
+        "4500000000 /L",
+        "120000000 x 10^9/L",
     ],
 )
 def test_measurements_are_not_scrubbed(clinical: str) -> None:
@@ -552,6 +560,29 @@ def test_measurements_are_not_scrubbed(clinical: str) -> None:
         ("my number 9876543210", "9876543210"),
         ("passport K1234567", "K1234567"),
         ("member id 12345678", "12345678"),
+        # Re-review R1: generic words before a number never make it a measurement.
+        ("send it to +1 415 555 0134", "555"),
+        ("reply to 9876543210", "9876543210"),
+        ("from 9876543210 call", "9876543210"),
+        ("normal 9876543210", "9876543210"),
+        ("my account 12345678901", "12345678901"),
+        ("ref 12345678", "12345678"),
+        ("reference 987654321", "987654321"),
+        ("between 10000000 and 20000000", "10000000"),
+        ("between 10000000 and 20000000", "20000000"),
+        ("count 9876543210", "9876543210"),
+        ("level 9876543210", "9876543210"),
+        ("load 9876543210", "9876543210"),
+        ("range 12345678", "12345678"),
+        # Lab words count only as whole words: "salt" is not "alt", "shalt" is not "alt".
+        ("salt 9876543210", "9876543210"),
+        ("cast 12345678", "12345678"),
+        # Unit words count only as whole words: "call" is not "cal", "gross" is not "g", "later" is not "L".
+        ("9876543210 call me", "9876543210"),
+        ("12345678 gross", "12345678"),
+        ("ring 9876543210 later", "9876543210"),
+        # A +country code is a phone even after a lab word.
+        ("platelets +44 7911 123456", "7911"),
     ],
 )
 def test_identifiers_are_still_scrubbed(raw: str, kept_out: str) -> None:

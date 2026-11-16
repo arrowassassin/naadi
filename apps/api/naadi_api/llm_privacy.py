@@ -36,21 +36,30 @@ _CITATION_PREFIX = re.compile(r"(?:PMID|PubMed|doi|DOI|ISBN|ISSN)[:\s#]*$")
 _DIGIT = re.compile(r"\d")
 # A number followed by a unit, or preceded by a lab/measure word, is a measurement, not an identifier:
 # "150000-450000 /uL", "12000000 copies/mL", "250 mg/dL", "platelets 150000-450000".
+# Unit words must end there ("cal" is a unit, "call" is not); "%", "/…" and "x 10^…" need no word end.
 _UNIT_AFTER = re.compile(
-    r"^\s*(?:%|/|x\s*10|×\s*10|copies|cells|IU|U\b|units?\b|mg|mcg|µg|ug|g\b|kg|ng|pg|mmol|µmol|umol|nmol|pmol"
-    r"|mol|mEq|mL|ml|L\b|dL|fL|mm|cm|µm|um|nm|mmHg|kPa|bpm|Hz|kcal|cal|per\b|/\s*(?:uL|µL|mm3|L|mL|dL|hpf))",
+    r"^\s*(?:%|/|[x×]\s*10|(?:copies|cells|IU|U|units?|mg|mcg|µg|ug|g|kg|ng|pg|mmol|µmol|umol|nmol|pmol"
+    r"|mol|mEq|mL|ml|L|dL|fL|mm|cm|µm|um|nm|mmHg|kPa|bpm|Hz|kcal|cal|per)(?![A-Za-zµ]))",
     re.IGNORECASE,
 )
-_MEASURE_BEFORE = re.compile(
-    r"(?:platelets?|wbc|rbc|count|range|level|titer|titre|load|copies|cells|between|from|to|normal|ref(?:erence)?"
-    r"|plt|hb|hgb|ldh|ck|alt|ast|alp|tsh|bnp|dose|dosing)[\s:=]*$",
-    re.IGNORECASE,
+# Before a number, only a lab-specific word (a whole word) makes it a measurement. Generic words ("to", "from",
+# "count", "range", "normal", "ref", "between", "level", "load") never do on their own, since "reply to
+# 9876543210" or "ref 12345678" are identifiers; they are allowed only as connectors after a lab word
+# ("platelet count 250000", "viral load of 12000000"). "range" needs "reference/normal range".
+_LAB_WORD = (
+    r"(?:platelets?|plt|wbc|rbc|hb|hgb|hct|ldh|ck|alt|ast|alp|ggt|tsh|bnp|crp|esr|ferritin|cd4|neutrophils?"
+    r"|lymphocytes?|titers?|titres?|copies|cells|dose|dosing|(?:viral|bacterial|parasite)\s+load"
+    r"|(?:reference|ref|normal)\s+(?:range|interval|values?))"
 )
-_RANGE_HEAD = re.compile(r"\d+\s*[-–]\s*$")
+_CONNECTOR = r"(?:\s+(?:count|counts|level|levels|of|is|was|between|from|range|at))*"
+_MEASURE_BEFORE = re.compile(rf"\b{_LAB_WORD}{_CONNECTOR}[\s:=]*$", re.IGNORECASE)
+# The upper end of a range is judged from the range's start: "150000-450000", "150000 to 450000", "… and …".
+_RANGE_HEAD = re.compile(r"\d+\s*(?:[-–]|\bto\b|\band\b)\s*$", re.IGNORECASE)
 
 
 def _is_measurement(text: str, start: int, end: int) -> bool:
-    return bool(_UNIT_AFTER.match(text[end : end + 14]) or _MEASURE_BEFORE.search(text[max(0, start - 24) : start]))
+    """The unit after the number decides first; failing that, a lab word immediately before it."""
+    return bool(_UNIT_AFTER.match(text[end : end + 14]) or _MEASURE_BEFORE.search(text[max(0, start - 40) : start]))
 
 
 MIN_NAME_PART = 3
@@ -191,8 +200,9 @@ def _phone_sub(m: re.Match[str]) -> str:
     token = m.group(0)
     if len(_DIGIT.findall(token)) < 10:
         return token
-    # Numbers with a unit after them or a lab/measure word before them are measurements, not phones.
-    if _is_measurement(m.string, m.start(), m.end()):
+    # A +country code is a phone, whatever surrounds it. Otherwise numbers with a unit after them or a lab word
+    # before them are measurements, not phones.
+    if not token.startswith("+") and _is_measurement(m.string, m.start(), m.end()):
         return token
     return "[phone]"
 
@@ -210,8 +220,8 @@ def _doc_id_sub(m: re.Match[str], text: str) -> str:
     if _CITATION_ID.match(token) or _CITATION_PREFIX.search(text[max(0, m.start() - 12) : m.start()]):
         return token
     if token.isdigit():
-        # The upper end of a range ("3500000-10500000") is judged by the context of the whole range.
-        head = _RANGE_HEAD.search(text[max(0, m.start() - 16) : m.start()])
+        # The upper end of a range ("3500000-10500000", "150000 to 450000") is judged from the range start.
+        head = _RANGE_HEAD.search(text[max(0, m.start() - 32) : m.start()])
         start = m.start() - len(head.group(0)) if head else m.start()
         if _is_measurement(text, start, m.end()):
             return token
