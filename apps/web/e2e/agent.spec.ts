@@ -135,6 +135,10 @@ test.describe("admin", () => {
 
 test.describe("admin, answer blocks", () => {
   test.use(signedInAs("admin"));
+  // The media loads from Wikimedia, NCBI's PMC bucket and YouTube. Behind a TLS-intercepting proxy (an agent
+  // sandbox) Firefox rejects the proxy's certificate (it keeps its own trust store), so such a run opts in
+  // with E2E_IGNORE_HTTPS_ERRORS=1, for these tests only. CI and real devices have no such proxy.
+  test.use({ ignoreHTTPSErrors: process.env.E2E_IGNORE_HTTPS_ERRORS === "1" });
 
   test("media: Commons image, PMC figure and YouTube embed with credits, licences and links", async ({
     page,
