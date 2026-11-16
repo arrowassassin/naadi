@@ -52,7 +52,8 @@ export default defineConfig({
   outputDir: path.join(repoRoot, "test-results/playwright"),
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
-  retries: 0,
+  // One retry in CI only, for browser-process crashes on shared runners; Playwright still reports such tests as flaky.
+  retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 2 : 4,
   timeout: 60_000,
   expect: { timeout: 15_000 },
