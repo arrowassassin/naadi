@@ -8,6 +8,8 @@
 #   apps/api/tests/db/stack.sh down      # remove the containers
 #
 # Env (defaults in brackets): NAADI_PG_CONTAINER [pg-naadi-test], NAADI_PG_PORT [54322],
+# NAADI_STORAGE_PORT [unset: Storage is reachable only inside the docker network; set it (e.g. 54335) to publish
+# storage-api on localhost for the seed importer's Storage uploads, NAADI_STORAGE_URL=http://localhost:<port>],
 # NAADI_STORAGE_CONTAINER [storage-naadi-test], NAADI_PG_HOST for `storage` [localhost], NAADI_PG_PASSWORD
 # [postgres]. Every credential here is a throwaway for a local container, never a real secret.
 set -euo pipefail
@@ -19,6 +21,7 @@ PG_PORT="${NAADI_PG_PORT:-54322}"
 PG_HOST="${NAADI_PG_HOST:-localhost}"
 PG_PASSWORD="${NAADI_PG_PASSWORD:-postgres}"
 STORAGE_CONTAINER="${NAADI_STORAGE_CONTAINER:-storage-naadi-test}"
+STORAGE_PORT="${NAADI_STORAGE_PORT:-}"
 NETWORK="${NAADI_TEST_NETWORK:-naadi-test-net}"
 API_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 # Local-only JWT secret for the throwaway Storage container (it must be >= 32 chars).
@@ -98,6 +101,7 @@ start_storage() {
     -e ANON_KEY=local-test-anon -e SERVICE_KEY=local-test-service \
     -e STORAGE_BACKEND=file -e FILE_STORAGE_BACKEND_PATH=/tmp/storage \
     -e TENANT_ID=stub -e REGION=stub -e GLOBAL_S3_BUCKET=stub -e DB_INSTALL_ROLES=false \
+    -e FILE_SIZE_LIMIT=52428800 \
     "$STORAGE_IMAGE" >/dev/null
   wait_storage_migrated
 }
@@ -115,7 +119,12 @@ case "$cmd" in
       docker network connect "$NETWORK" "$PG_CONTAINER" >/dev/null 2>&1 || true
     fi
     wait_pg
-    start_storage "${PG_CONTAINER}:5432" --network "$NETWORK"
+    if [ -n "$STORAGE_PORT" ]; then
+      start_storage "${PG_CONTAINER}:5432" --network "$NETWORK" -p "${STORAGE_PORT}:5000"
+      log "storage-api on http://localhost:${STORAGE_PORT} (service key: tests/db/storage.py mints it)"
+    else
+      start_storage "${PG_CONTAINER}:5432" --network "$NETWORK"
+    fi
     log "ready: DATABASE_URL=$(pg_url postgres)"
     ;;
   storage)

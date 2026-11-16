@@ -1,0 +1,83 @@
+# Naadi runtime configuration seeded into `app_config` (HANDOFF §7.5) by the seed importer
+# (apps/api/naadi_api/seed). Edited later in the admin console with history; a re-seed only rewrites keys an
+# admin has never edited (`--force-config` overwrites). Each key is validated by its pydantic model in
+# apps/api/naadi_api/config_api/schemas.py. models / budget / search / generation come from models.yaml;
+# nothing in here is secret.
+
+# Publishing gates for content licenses (config/sources.yaml header, HANDOFF §7.1).
+sources_policy:
+  block_without_license: true
+  block_noncommercial_on_paid: true
+  block_share_alike_in_proprietary: true
+  block_non_ai_ingest_from_rag: true
+  youtube_metadata_max_age_days: 30
+  original_source_id: naadi-original-v1
+
+# Feature flags. audience "admins" = only admins see it; everyone_outside_prod = also everyone when
+# APP_ENV is not prod (local / staging). A screen's flag is switched on by the segment that ships the screen.
+feature_flags:
+  today: {enabled: true}
+  courses: {enabled: false}       # S06 Courses + Reader
+  qbank: {enabled: false}         # S08/S09
+  planner: {enabled: false}       # S11
+  notes: {enabled: false}         # S13
+  pathway: {enabled: false}       # S17
+  search: {enabled: false}        # S07
+  assistant: {enabled: false}     # S14 (also always off in exam mode)
+  ink_lab: {enabled: true, audience: admins, everyone_outside_prod: true}
+
+# Top-level navigation, in display order. An item shows only while its feature flag is on, so the shell never
+# links to a screen that does not exist yet. Paths are in-app routes; icons are names from the web icon set.
+ui.nav:
+  - {id: today, label: Today, path: /, icon: sun, feature: today}
+  - {id: learn, label: Learn, path: /learn, icon: book-open, feature: courses}
+
+# USMLE block format (usmle.org bulletin: Step 1 = 7 one-hour blocks, Step 2 CK = 8, up to 40 items each)
+# and the three practice modes (HANDOFF §8 Builder/Qbank/Exam).
+exam_rules:
+  block:
+    min_questions: 1
+    max_questions: 40
+    default_questions: 40
+  diagnostic_questions: 40
+  exams:
+    step1: {label: "Step 1", blocks: 7, questions_per_block: 40, minutes_per_block: 60}
+    step2ck: {label: "Step 2 CK", blocks: 8, questions_per_block: 40, minutes_per_block: 60}
+  modes:
+    tutor:
+      timed: false
+      seconds_per_question: null
+      explanations: after_each_question
+      assistant: true
+    timed:
+      timed: true
+      seconds_per_question: 90
+      explanations: after_block
+      assistant: true
+    exam:
+      timed: true
+      seconds_per_question: 90
+      explanations: after_block
+      assistant: false             # the assistant is silent in exam mode (CLAUDE.md)
+
+# Supabase Storage bucket names (created by migration 0002).
+storage:
+  content_public: content-public
+  content_private: content-private
+  user_uploads: user-uploads
+  vault: vault
+  generated_media: generated-media
+
+# UI strings that may change without a redeploy. Flat dotted keys; {name} marks a placeholder the client fills.
+ui_copy:
+  agent.quota_reset: "AI quota resets at {time}"
+  agent.rate_limited: "The assistant is busy. Try again in a moment."
+  agent.offline: "You're offline. The assistant needs a connection."
+  agent.exam_mode: "The assistant is off during exam mode."
+  agent.unavailable: "The assistant could not answer right now."
+  signin.tagline: "One place to study"
+  signin.privacy: "Your notes and ink are private to your account."
+  signin.link_expired_title: "That sign-in link has expired"
+  signin.link_expired_body: "Links work once and for one hour. Request a new one below."
+  content.figure_missing: "This figure could not be loaded."
+  content.report_issue: "Report an issue"

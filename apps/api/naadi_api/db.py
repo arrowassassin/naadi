@@ -27,6 +27,12 @@ class Database:
     def configured(self) -> bool:
         return self._url is not None
 
+    def conninfo(self) -> str:
+        """The connection string, for a dedicated (non-pooled) connection such as a LISTEN session."""
+        if self._url is None:
+            raise DatabaseNotConfigured("DATABASE_URL is not set")
+        return self._url.get_secret_value()
+
     @property
     def opened(self) -> bool:
         return self.pool is not None and not self.pool.closed
