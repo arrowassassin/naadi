@@ -6,7 +6,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { type Scope, useLocalSearch, useWebSearch } from "./api";
-import { type SearchCopyKey, useSearchCopy } from "./copy";
+import { type SearchCopy, type SearchCopyKey, useSearchCopy } from "./copy";
 import { SEARCH_FOCUS_EVENT } from "./shortcut";
 import { resolveTarget } from "./targets";
 
@@ -21,7 +21,7 @@ const SCOPES: Scope[] = ["all", "chapters", "notes", "handwriting", "questions",
 const DEBOUNCE_MS = 250;
 const MIN_CHARS = 2;
 
-type Copy = (key: SearchCopyKey, vars?: Record<string, string>) => string;
+type Copy = SearchCopy;
 type LocalGroup = "chapters" | "notes" | "questions" | "uploads" | "pathway";
 const GROUP_ORDER: LocalGroup[] = ["chapters", "notes", "questions", "uploads", "pathway"];
 

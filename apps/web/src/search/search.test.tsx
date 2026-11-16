@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import type { SearchHit, SearchResponse, WebResponse } from "@naadi/shared";
+import { REQUIRED_UI_COPY_KEYS, type SearchHit, type SearchResponse, uiText, type WebResponse } from "@naadi/shared";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   createMemoryHistory,
@@ -14,7 +14,6 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ApiError } from "../auth/apiError";
-import { SEARCH_COPY_FALLBACK } from "./copy";
 import { parseSearchSearch } from "./routes";
 import { SearchPage } from "./SearchPage";
 import { isSearchShortcut } from "./shortcut";
@@ -35,7 +34,10 @@ vi.mock("./api", () => ({
   },
 }));
 vi.mock("../health/useOnlineStatus", () => ({ useOnlineStatus: () => hooks.online }));
-vi.mock("../agent/uiCopy", () => ({ useUiCopy: () => () => null }));
+// The wording is the shipped default (what the screen shows before the config loads).
+vi.mock("../copy/useUiText", () => ({
+  useUiText: () => (key: string, vars?: Record<string, string>) => uiText(null, key, vars),
+}));
 
 function hit(over: Partial<SearchHit> & Pick<SearchHit, "id" | "type" | "group" | "title">): SearchHit {
   return {
@@ -89,7 +91,7 @@ beforeEach(() => {
 describe("Search screen", () => {
   it("shows the intro before anything is typed", async () => {
     renderPage({});
-    expect(await screen.findByText(SEARCH_COPY_FALLBACK["search.intro_title"])).toBeVisible();
+    expect(await screen.findByText(uiText(null, "search.intro_title"))).toBeVisible();
     expect(screen.getByRole("searchbox", { name: "Search everything" })).toHaveFocus();
   });
 
@@ -189,7 +191,7 @@ describe("Search screen", () => {
       isError: false,
     };
     renderPage({ q: "latest news", scope: "web" });
-    expect(await screen.findByText(SEARCH_COPY_FALLBACK["search.web_limit"])).toBeVisible();
+    expect(await screen.findByText(uiText(null, "search.web_limit"))).toBeVisible();
   });
 
   it("shows the offline state instead of results", async () => {
@@ -272,14 +274,32 @@ describe("shortcut and URL state", () => {
 });
 
 describe("wording", () => {
-  it("the built-in fallback text equals app_config.ui_copy for every search.* key", () => {
-    const yaml = readFileSync(path.resolve(import.meta.dirname, "../../../../config/app_config.yaml"), "utf8");
-    const configured = new Map<string, string>();
-    for (const line of yaml.split("\n")) {
-      const m = /^ {2}(search\.[a-z_.]+): "(.*)"$/.exec(line);
-      if (m?.[1]) configured.set(m[1], m[2] ?? "");
+  const scopes = ["all", "chapters", "notes", "handwriting", "questions", "uploads", "pathway", "web"];
+  const groups = ["chapters", "notes", "questions", "uploads", "pathway", "web"];
+  const kinds = ["section", "upload", "question", "note", "ink", "pathway", "web"];
+  const literal = /["'`](search\.[a-z_.]+)["'`]/g;
+
+  it("every key the screen reads is required (so it can never be blanked) and has shipped text", () => {
+    const here = path.resolve(import.meta.dirname);
+    const files = ["SearchPage.tsx", "routes.tsx", "../shell/AppShell.tsx"];
+    const used = new Set<string>([
+      ...scopes.map((s) => `search.filter.${s}`),
+      ...groups.map((g) => `search.group.${g}`),
+      ...kinds.map((k) => `search.kind.${k}`),
+    ]);
+    for (const f of files) {
+      for (const m of readFileSync(path.resolve(here, f), "utf8").matchAll(literal)) used.add(m[1] as string);
     }
-    expect([...configured.keys()].sort()).toEqual(Object.keys(SEARCH_COPY_FALLBACK).sort());
-    for (const [k, v] of Object.entries(SEARCH_COPY_FALLBACK)) expect(configured.get(k)).toBe(v);
+    expect(used.size).toBeGreaterThan(30);
+    for (const key of used) {
+      expect(REQUIRED_UI_COPY_KEYS, key).toContain(key);
+      expect(uiText(null, key), key).not.toBe(key);
+    }
+  });
+
+  it("the placeholders in the shipped text are the ones the screen fills", () => {
+    expect(uiText(null, "search.empty_title", { query: "rta" })).toBe("Nothing found for “rta”");
+    expect(uiText(null, "search.count", { count: "7" })).toBe("7 results");
+    expect(uiText(null, "search.web_label", { sources: "Tavily" })).toBe("Web results from Tavily");
   });
 });
