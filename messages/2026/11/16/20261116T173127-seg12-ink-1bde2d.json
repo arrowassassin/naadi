@@ -1,0 +1,16 @@
+{
+ "id": "20261116T173127-seg12-ink-1bde2d",
+ "ts": "2026-11-16T17:31:27.690720Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12a re-recorded numbers",
+ "body": "",
+ "paths": [
+  "docs/PROGRESS.md"
+ ],
+ "ttl_minutes": 20,
+ "requires_ack": false
+}
