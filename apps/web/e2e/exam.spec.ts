@@ -231,7 +231,13 @@ test.describe("mock exam A", () => {
       await page.keyboard.press("a");
       await expect(page.getByRole("button", { name: /^A, your answer/ })).toHaveAttribute("aria-pressed", "true");
       for (let i = 1; i <= 40; i++) {
-        const sent = page.waitForResponse((r) => r.url().endsWith(`/api/blocks/${blockId}/attempts`));
+        // the new question is on screen (five options, none chosen yet, except question 1 chosen above)
+        const options = page.getByRole("group", { name: "Answer options" }).getByRole("button");
+        await expect(options).toHaveCount(5);
+        if (i > 1) await expect(page.getByRole("button", { pressed: true, name: /your answer/ })).toHaveCount(0);
+        const sent = page.waitForResponse((r) => r.url().endsWith(`/api/blocks/${blockId}/attempts`), {
+          timeout: 20_000,
+        });
         await page.keyboard.press("b");
         expect((await sent).status()).toBe(200);
         await expect(page.getByRole("button", { name: /^B, your answer/ })).toHaveAttribute("aria-pressed", "true");
