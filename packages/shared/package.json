@@ -7,7 +7,8 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "gen": "openapi-ts -f openapi-ts.config.ts && biome format --write src/gen",
+    "gen": "openapi-ts -f openapi-ts.config.ts && biome format --write src/gen && pnpm gen:ink",
+    "gen:ink": "UPDATE_INK_SCHEMA=1 vitest run src/ink.test.ts && biome format --write ink.schema.json",
     "typecheck": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json",
     "test": "vitest run"
   },

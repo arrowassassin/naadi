@@ -11,3 +11,5 @@ export { client } from "./gen/client.gen";
 export * from "./gen/sdk.gen";
 export type * from "./gen/types.gen";
 export * from "./gen/zod.gen";
+// Hand-written (no endpoint carries strokes yet); its JSON Schema is committed as ink.schema.json.
+export * from "./ink";
