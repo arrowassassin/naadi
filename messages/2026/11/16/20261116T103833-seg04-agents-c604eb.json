@@ -1,0 +1,18 @@
+{
+ "id": "20261116T103833-seg04-agents-c604eb",
+ "ts": "2026-11-16T10:38:33.309600Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04: admin agent diagnostics panel + e2e; webServer runs the Aegra host",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts",
+  "apps/web/src/agent/**",
+  "apps/web/e2e/agent*"
+ ],
+ "ttl_minutes": 180,
+ "requires_ack": false
+}
