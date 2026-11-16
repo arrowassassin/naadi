@@ -27,7 +27,7 @@ def test_all_eighteen_pass() -> None:
         (lambda rows: rows[4].update(cmds=["INSERT", "SELECT", "UPDATE"]), "notes: policies"),
         (lambda rows: rows[0].update(forced=False), "profiles: RLS not forced"),
         (lambda rows: rows[7].update(exists=False, cmds=[]), "uploads: missing"),
-        (lambda rows: rows.pop(), "reading_positions: missing"),
+        (lambda rows: rows.pop(), "ink_items: missing"),
         (lambda rows: rows[5].update(cmds=[*ALL, "SELECT"]), "notebooks: policies"),
     ],
 )
