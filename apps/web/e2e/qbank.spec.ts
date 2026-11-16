@@ -56,6 +56,10 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
   return { open, done };
 }
 
+/** Load every declared font face (all unicode-range subsets) so a navigation does not abort a download. */
+const loadAllFonts = (page: Page) =>
+  page.evaluate(() => Promise.all([...document.fonts].map((f) => f.load().catch(() => f))).then(() => undefined));
+
 const isPhone = (page: Page) => (page.viewportSize()?.width ?? 1000) < 640;
 
 /** Console errors of pages opened outside the fixture's own page, with the fixture's rule for the screenshot tool. */
@@ -197,6 +201,7 @@ test.describe("builder", () => {
           }),
         });
       });
+      await loadAllFonts(page); // Firefox logs aborted font loads
       await page.reload();
       await expect(page.getByText("Practice could not be loaded")).toBeVisible();
       await expect(page.getByText("Request ID e2e-pool-503")).toBeVisible();
@@ -216,6 +221,7 @@ test.describe("tutor block", () => {
     browser,
     baseURL,
   }, info) => {
+    test.setTimeout(150_000); // three axe audits, a screenshot per state and a busy CI host
     const student = await freshStudent(browser, baseURL as string, info);
     try {
       const { page } = await student.open();
@@ -317,6 +323,7 @@ test.describe("tutor block", () => {
   });
 
   test("finishing a block, the Lab values panel and the lesson link", async ({ browser, baseURL }, info) => {
+    test.setTimeout(150_000); // three axe audits, a screenshot per state and a busy CI host
     const student = await freshStudent(browser, baseURL as string, info);
     try {
       const { page } = await student.open();
@@ -425,6 +432,8 @@ test.describe("tutor block", () => {
       await expect(page.getByRole("radio")).toHaveCount(5);
       await expect(page.getByText(/Why it's/)).toHaveCount(0);
       await expect(page.getByText(/xeroderma|Endonuclease excision/)).toHaveCount(1); // the option text only
+      // let pending font loads finish, so the navigation does not abort them (Firefox logs aborted font loads)
+      await loadAllFonts(page);
       await page.goto("/practice/question/does-not-exist");
       await expect(page.getByText("This question is not available")).toBeVisible();
       expect(errors.filter((e) => !/404/.test(e))).toEqual([]);
@@ -495,6 +504,7 @@ test.describe("phone layout", () => {
       await expectNoHorizontalOverflow(page);
       if (isPhone(page)) await snap(page, info, guard, "question-phone");
       else await snap(page, info, guard, "question-wide");
+      await loadAllFonts(page);
       expect(errors).toEqual([]);
     } finally {
       await student.done();
@@ -516,6 +526,7 @@ test("the practice entry is in the navigation", async ({ browser, baseURL }, inf
       ? page.getByRole("navigation", { name: "Tabs" })
       : page.getByRole("navigation", { name: "Main" });
     await expect(nav.getByRole("link", { name: "Practice" })).toHaveAttribute("aria-current", "page");
+    await loadAllFonts(page);
     expect(errors).toEqual([]);
   } finally {
     await student.done();
