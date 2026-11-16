@@ -39,6 +39,21 @@ test.describe("token sheet", () => {
     });
   }
 
+  test("token values appear even when the stylesheet arrives after the script", async ({ page, consoleErrors }) => {
+    // Reproduces the live-Space race: WebKit may run the module before a slow stylesheet has applied.
+    await page.route("**/assets/*.css", async (route) => {
+      const res = await route.fetch();
+      await new Promise((r) => setTimeout(r, 1500));
+      await route.fulfill({ response: res });
+    });
+    const health = page.waitForResponse("**/api/health");
+    await page.goto("/");
+    const status = (await health).status();
+    if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
+    await expect(page.getByText("#C6FF3D · action")).toBeVisible();
+    await expect(page.getByText("#050506 · page")).toBeVisible();
+  });
+
   test("fonts and assets are same-origin only", async ({ page, baseURL, consoleErrors }) => {
     const foreign: string[] = [];
     page.on("request", (req) => {
