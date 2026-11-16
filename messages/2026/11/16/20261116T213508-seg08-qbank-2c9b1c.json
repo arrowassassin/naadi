@@ -1,0 +1,17 @@
+{
+ "id": "20261116T213508-seg08-qbank-2c9b1c",
+ "ts": "2026-11-16T21:35:08.091038Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S08 re-review: labs copy assertion follows served ui_copy, fonts before offline/nav, empty-pool message, SECURITY DEFINER allowlist test",
+ "body": "",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "refs": {
+  "commit": "a231dc8"
+ },
+ "requires_ack": true
+}
