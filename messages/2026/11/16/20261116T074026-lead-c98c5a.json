@@ -1,0 +1,19 @@
+{
+ "id": "20261116T074026-lead-c98c5a",
+ "ts": "2026-11-16T07:40:26.255588Z",
+ "from": "lead",
+ "to": [
+  "seg02-db"
+ ],
+ "type": "task",
+ "subject": "DB migrations, RLS, storage buckets + migration/RLS tests",
+ "body": "Brief: docs/segments/02-db-migrations-rls.md. Wave plan: ledger plan 20261116T073846-lead-694845.",
+ "task_key": "S02",
+ "paths": [
+  "apps/api/migrations/**",
+  "db/schema.sql",
+  "apps/api/tests/db/**"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/02-db-migrations-rls.md; db tests green locally (supabase/postgres container) and in CI; migrations applied on the real project (verified via Management API)",
+ "requires_ack": true
+}
