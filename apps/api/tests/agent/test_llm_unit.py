@@ -68,7 +68,14 @@ def gateway(
 ) -> tuple[LLMGateway, MemLedger, Clock]:
     clock = Clock()
     led = ledger or MemLedger()
-    gw = LLMGateway(Settings(**settings), StaticRuntime(values), led, clients=clients, clock=clock, sleep=clock.sleep)
+    gw = LLMGateway(
+        Settings(_env_file=None, **settings),
+        StaticRuntime(values),
+        led,
+        clients=clients,
+        clock=clock,
+        sleep=clock.sleep,
+    )
     return gw, led, clock
 
 

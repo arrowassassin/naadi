@@ -85,7 +85,7 @@ def running_host(database_url: str, log_dir: Path) -> Iterator[Host]:
     from naadi_api.agent import migrate_all
     from naadi_api.settings import Settings
 
-    assert migrate_all.run(Settings(database_url=database_url)) == 0
+    assert migrate_all.run(Settings(_env_file=None, database_url=database_url)) == 0
     with psycopg.connect(database_url, autocommit=True) as conn:
         ids = [uuid.uuid4() for _ in range(3)]
         emails = [ADMIN_EMAIL, f"{ids[1].hex[:10]}@test.invalid", f"{ids[2].hex[:10]}@test.invalid"]

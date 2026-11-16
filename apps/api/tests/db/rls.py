@@ -58,7 +58,9 @@ def ensure_migrated(url: str) -> str:
 
     head = migrate.head_revision()
     if is_local(url):
-        assert migrate_all.run(Settings(database_url=url)) == 0, "migrate_all failed (see the log line above)"
+        assert migrate_all.run(Settings(_env_file=None, database_url=url)) == 0, (
+            "migrate_all failed (see the log line above)"
+        )
         return head
     engine = migrate.make_engine(url)
     try:

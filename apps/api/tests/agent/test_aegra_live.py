@@ -83,7 +83,7 @@ async def test_ping_streams_tokens_a_block_and_interrupts_then_resumes(host: Hos
 async def test_real_free_openrouter_call_lands_an_llm_usage_row() -> None:
     url = database_url()
     require_local(url)
-    settings = Settings(database_url=url)
+    settings = Settings(_env_file=None, database_url=url)
     assert settings.openrouter_api_key is not None, "OPENROUTER_API_KEY is required for the live tests"
     db = Database(settings.database_url)
     await db.open()
@@ -110,7 +110,7 @@ async def test_real_free_openrouter_call_lands_an_llm_usage_row() -> None:
 async def test_real_tavily_search_is_cached_on_the_second_call() -> None:
     url = database_url()
     require_local(url)
-    settings = Settings(database_url=url)
+    settings = Settings(_env_file=None, database_url=url)
     assert settings.tavily_api_key is not None, "TAVILY_API_KEY is required for the live tests"
     db = Database(settings.database_url)
     await db.open()
