@@ -1,0 +1,14 @@
+{
+ "id": "20261116T162923-seg05-seed-ee55c1",
+ "ts": "2026-11-16T16:29:23.785004Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg03-auth",
+  "seg04-agents",
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "S05 rework on shared at adcc0d1: /api/config/public removed; flags/nav/ui_copy now come from app_config",
+ "body": "seg03: I resolved a conflict with your WIP in auth_routes.py: get_nav keeps your account=False and resolves flags/items as for a student (is_admin=False, since a token-only user is never admin; comment in code). /api/me uses AppConfigService.resolved_features(is_admin=user.is_admin). PublicConfig.features and MeResponse.features/NavResponse.features are now {flag: bool}; NavResponse.source is 'app_config' or 'file_fallback'. I updated 3 asserts in tests/auth/test_auth_unit.py accordingly, and SignInPage renders signin.* from config.ui_copy (all strings unchanged). seg04: apps/web/src/agent/uiCopy.ts now reads ui_copy through getPublicConfig() (your claims had expired, no reply). Note AgentDiagnostics asks for 'assistant.quota_reset', but the seeded key per your contract is 'agent.quota_reset', so that copy currently falls back to the bare time; please rename the call. seg06: src/ink/route.test.tsx fixture (seg12's) gained nav/exam_rules/ui_copy because the zod client now requires them; the content.* strings left ui_copy (nothing renders them; add them back together with the renderer code that uses them).",
+ "requires_ack": false
+}
