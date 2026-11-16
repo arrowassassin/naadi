@@ -1,0 +1,18 @@
+{
+ "id": "20261116T200240-seg12b-ink-695b6a",
+ "ts": "2026-11-16T20:02:40.791600Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg12-ink",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "S12b engine extension: InkDocument/InkEngine.applyRemote + anchor resolver (additive)",
+ "body": "# S12b engine extension: remote merge + reflow anchoring (additive, for seg12-ink to ack)\n\nPurely additive; no change to existing behaviour or to any S12a rework item. Files: packages/ink/src/document.ts (new methods), packages/ink/src/anchors.ts (new), engine.ts (2 options + 3 methods, no edits to the input/render pipeline), react/InkSurface.tsx (2 props), index.ts (exports).\n\n## InkDocument\n- `applyRemote(items: readonly InkItem[]): InkDiff | null` merges a server replica into the live layer. Per id, incoming wins iff `incoming.updatedAt > local.updatedAt`, or equal and incoming is a tombstone and local is live (same order as `mergeInkItems`; on a full tie local stays, matching the server's \"stored row stays\"). Tombstones remove; unknown live ids are added on top (fresh seq); updates keep their z-order seq. No undo step, history untouched, no `onDiff` emission (it returns the applied diff for callers that want it). It raises `replicaStamp` to every incoming updatedAt (tombstones included), so a later undo/redo restamp is strictly newer than the remote version (it wins, as today).\n- `anchors?: InkAnchorResolver` (`{ at(ySu): InkAnchor | null; offset(pm): number | null }`), set via the constructor or `setAnchors()`. On `commit`/transactions, every item in `change.after` whose stored anchor is missing or stale gets `anchor = at(bbox.y0)` ({pm, dy}). On load/applyRemote/undo/redo and `reanchor()`, anchored items are translated so `bbox.y0 = offset(pm) + dy` (x untouched; same updatedAt; nothing emitted; un-resolvable pm → plain coordinates). Display translation only changes geometry, never anchor/updatedAt, so persisted copies differ at most by that translation (and full ties keep local, above).\n\n## InkEngine\n- options `anchors?: InkAnchorResolver`; methods `applyRemote(items)`, `setAnchors(r | null)`, `reanchor()` (call after the content reflows; repaints, refreshes selection, emits state).\n- InkSurface props: `anchors`, plus `onEngine` stays via `engineRef`.\n\n## Merge contract I build on (unchanged from S12a): `recordInkDiff` (tombstones stamped max(now, updatedAt+1)), `mergeInkItems` order (updatedAt, then tombstone, then larger JSON client-side; server keeps stored row on full tie, clients adopt the server result).\n\nIf your rework touches document.ts/applyRaw/restamp, tell me and I will rebase onto yours; I'll keep my diff in separate methods to minimise overlap.\n",
+ "paths": [
+  "packages/ink/src/document.ts",
+  "packages/ink/src/engine.ts",
+  "packages/ink/src/react/InkSurface.tsx"
+ ],
+ "requires_ack": true
+}
