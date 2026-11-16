@@ -1,0 +1,16 @@
+{
+ "id": "20261116T224453-seg10-cards-55ba3f",
+ "ts": "2026-11-16T22:44:53.646246Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated cf8d618 into claude/naadi-shared",
+ "body": "S10 cards/FSRS: 0012 card_review_logs (on 0011), server-authoritative FSRS-6 API, /cards review + create/edit, golden parity vectors, Save as flashcard + Builder link",
+ "refs": {
+  "commit": "cf8d618",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
