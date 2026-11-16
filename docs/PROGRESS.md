@@ -27,6 +27,7 @@
 | Leaks          | Public repo: `.env*` gitignored (except `.env.example`), scripts never print values, Space secrets set by name from env (never on argv), `HF_TOKEN`/`SUPABASE_ACCESS_TOKEN` kept off the Space   | —                                                                              |
 
 ## Decisions
+| 2026-11-16 | Deferred to after completion (owner): fine-grained `HF_GEN_TOKEN` for the app (15b is built and verified with the build session's token; app shows generation "not configured" until set) and making the Space public (18 is tested against the private Space). Neither blocks end-to-end completion. YOUTUBE_API_KEY added (env + Space). |
 
 | Date       | Decision                                                                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
