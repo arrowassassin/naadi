@@ -1,0 +1,15 @@
+{
+ "id": "20261116T155637-seg12-ink-fbbdac",
+ "ts": "2026-11-16T15:56:37.227342Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/web/playwright.config.ts",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/web/playwright.config.ts\n\nRecent integration commits touching them:\nfix(web): assistant reply and confirm tile use the violet tokens; e2e: fonts loaded before going offline, budget server keeps its cron scheduler\ntest(e2e): keep Playwright's DEBUG out of the API process (Aegra parses DEBUG as a boolean)\ntest(e2e): agent diagnostics against the real Aegra host (webServer runs migrate_all + host; a second server with the LLM budget at zero), per-origin auth state; fire the system ping on first boot\nfeat(web): pen-surface registration (shell/chrome.tsx), --shell-top/--shell-bottom, per-run e2e users, owner-only-boolean live admin check\nfeat(web): Supabase sign-in (magic link + Google, PKCE), callback, protected app shell, Today, Account\nfeat(db): Alembic migrations 0001 core schema + RLS, 0002 storage buckets/policies; migrate at startup\ntest(e2e): one retry in CI for browser crashes on shared runners\nwip(m0): checkpoint segment 01 progress (e2e suite, playwright config, UI updates)\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/web/playwright.config.ts"
+ ],
+ "requires_ack": true
+}
