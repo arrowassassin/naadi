@@ -249,7 +249,13 @@ def check_postgres() -> None:
                "vector, pg_trgm" if not missing else f"missing: {', '.join(sorted(missing))}")
     except Exception as e:  # noqa: BLE001
         host = urlparse(db).hostname
-        report("FAIL", "Postgres select 1", f"{type(e).__name__}: {e} (host {host}, TCP 5432)")
+        sandbox = "failed to resolve host" in str(e) and get("SUPABASE_ACCESS_TOKEN")
+        if sandbox:
+            # Claude Code cloud sandbox: no DNS / raw TCP egress. The Mgmt API checks below verify the DB;
+            # the real pooler connection is exercised in GitHub Actions and on the Space (/api/health).
+            report("WARN", "Postgres select 1", f"no raw TCP/DNS in this sandbox (host {host}:5432); see Mgmt API checks", False)
+        else:
+            report("FAIL", "Postgres select 1", f"{type(e).__name__}: {e} (host {host}, TCP 5432)")
 
 
 def check_supabase() -> None:
@@ -333,6 +339,32 @@ def check_supabase_mgmt() -> None:
             report("FAIL", "Supabase Mgmt API select 1", f"HTTP {r.status_code}", False)
     except Exception as e:  # noqa: BLE001
         report("FAIL", "Supabase Mgmt API select 1", f"{type(e).__name__}: {e}", False)
+
+    # Compare DATABASE_URL's host/port/user with the project's real session pooler (password not compared).
+    db = get("DATABASE_URL")
+    if not db:
+        return
+    try:
+        r = httpx.get(f"https://api.supabase.com/v1/projects/{m.group(1)}/config/database/pooler",
+                      headers={"Authorization": f"Bearer {tok}"}, timeout=TIMEOUT)
+        if r.status_code != 200:
+            report("WARN", "DATABASE_URL matches pooler", f"pooler config HTTP {r.status_code}", False)
+            return
+        cfgs = r.json() if isinstance(r.json(), list) else [r.json()]
+        want = urlparse(db)
+        match = None
+        for c in cfgs:
+            cu = urlparse(re.sub(r"\[[^\]]*\]", "x", c.get("connection_string", "") or ""))
+            if cu.hostname == want.hostname and cu.username == want.username:
+                match = c
+                break
+        if match:
+            report("PASS", "DATABASE_URL matches pooler", "host + user match the session pooler; password is verified in CI and on the Space", False)
+        else:
+            hosts = sorted({urlparse(re.sub(r"\[[^\]]*\]", "x", c.get('connection_string', '') or '')).hostname for c in cfgs} - {None})
+            report("FAIL", "DATABASE_URL matches pooler", f"host/user differ from project pooler (expected host one of: {', '.join(hosts)})", True)
+    except Exception as e:  # noqa: BLE001
+        report("WARN", "DATABASE_URL matches pooler", f"{type(e).__name__}: {e}", False)
 
 
 def check_openrouter() -> None:
