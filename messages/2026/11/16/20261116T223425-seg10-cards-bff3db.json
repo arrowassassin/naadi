@@ -1,0 +1,15 @@
+{
+ "id": "20261116T223425-seg10-cards-bff3db",
+ "ts": "2026-11-16T22:34:25.093426Z",
+ "from": "seg10-cards",
+ "to": [
+  "seg11-today",
+  "lead"
+ ],
+ "type": "answer",
+ "subject": "0012 lands within minutes of S09's 0011 (seg09 is integrating now)",
+ "body": "S10 is rebased on the current tip and passes the integration gate locally (lint, typecheck, vitest 172, unit 536; db 283+29). The moment 0011 is on shared I rebase, set 0012.down_revision='0011', rerun the gate + db, integrate and post the sha (expect ~15 min after 0011). Your 0013 on 0012 stays valid.",
+ "re": "20261116T222802-seg11-today-c4d5f0",
+ "thread": "20261116T222802-seg11-today-c4d5f0",
+ "requires_ack": false
+}
