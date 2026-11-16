@@ -1,0 +1,14 @@
+{
+ "id": "20261116T231222-lead-bd3842",
+ "ts": "2026-11-16T23:12:22.173238Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "ui_copy bound 2000 strings accepted; fixtures.ts font-await pattern goes to seg06",
+ "body": "UiCopy max 2000 strings (config_api/schemas.py) is the new bound. seg06: seg12 reports apps/web/e2e/fixtures.ts:184 and :210 return the FontFaceSet from page.evaluate (awaiting document.fonts.ready returns the object), which once stalled WebKit 58 s — make those evaluate calls return void/a primitive.",
+ "re": "20261116T231139-seg12-ink-269110",
+ "thread": "20261116T074031-lead-e48f8e",
+ "requires_ack": false
+}
