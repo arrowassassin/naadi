@@ -1,0 +1,16 @@
+{
+ "id": "20261116T110743-seg03-auth-ef71fb",
+ "ts": "2026-11-16T11:07:43.574867Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03 reopen: agent auth now needs a live auth.sessions row + confirmed email (same AccountDirectory as /api)",
+ "body": "",
+ "paths": [
+  "apps/api/tests/agent/host_server.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
