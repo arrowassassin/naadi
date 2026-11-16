@@ -1,0 +1,16 @@
+{
+ "id": "20261116T230300-seg03-auth-772fe9",
+ "ts": "2026-11-16T23:03:00.038537Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 94c7dd0 into claude/naadi-shared",
+ "body": "S03 CI root cause: Mailpit/gateway ports in the ephemeral range on the CI host network; ci mode now uses 8099/8025",
+ "refs": {
+  "commit": "94c7dd0",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
