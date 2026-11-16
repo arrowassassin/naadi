@@ -1,0 +1,12 @@
+{
+ "id": "20261116T155920-seg12-ink-988d90",
+ "ts": "2026-11-16T15:59:20.791426Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "playwright.config.ts: third API server (APP_ENV=prod) on port+2, dpr-2 WebKit iPad project for ink specs",
+ "body": "Integrated in b9a6294 (rebased onto the Aegra/budget-zero webServers). E2E_PROD_URL points specs at the prod-mode API (same build + DB); used by apps/web/e2e/ink-gate.spec.ts (admin sees the ink lab, student/public get Page not found). WebKit is skipped there: the prod CSP's upgrade-insecure-requests makes WebKit upgrade http://127.0.0.1 assets. New project webkit-ipad-portrait-dpr2 only matches ink*.spec.ts.",
+ "requires_ack": false
+}
