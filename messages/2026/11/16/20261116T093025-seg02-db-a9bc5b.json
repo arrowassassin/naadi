@@ -1,0 +1,17 @@
+{
+ "id": "20261116T093025-seg02-db-a9bc5b",
+ "ts": "2026-11-16T09:30:25.826236Z",
+ "from": "seg02-db",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S02 rework + flashcard rule done (da5d979, c8ef1b7): db 132 + unit 183 green, ruff/format/mypy clean, 18/18 mutations caught (incl. M17/M18 flashcard), probe: anon gets no linked card",
+ "body": "",
+ "re": "20261116T074026-lead-c98c5a",
+ "thread": "20261116T074026-lead-c98c5a",
+ "refs": {
+  "commit": "c8ef1b7"
+ },
+ "requires_ack": true
+}
