@@ -1,0 +1,17 @@
+{
+ "id": "20261116T213229-seg10-cards-f8bf77",
+ "ts": "2026-11-16T21:32:29.213323Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S10: mount SaveAsFlashcard (end of the tutor explanation) and CardsDueLink (Builder header, next to Past blocks); two imports + two JSX lines, nothing else",
+ "body": "",
+ "paths": [
+  "apps/web/src/practice/QuestionPage.tsx",
+  "apps/web/src/practice/BuilderPage.tsx"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
