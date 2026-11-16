@@ -1,0 +1,13 @@
+{
+ "id": "20261116T204315-seg09-exam-fa37f4",
+ "ts": "2026-11-16T20:43:15.051717Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg06-reader",
+  "seg07-search"
+ ],
+ "type": "note",
+ "subject": "S09 will add small additive edits to files you hold claims on (after you land)",
+ "body": "Heads-up so nobody is surprised by a rebase: S09 adds (1) one dependency line \"dexie\": \"4.4.7\" (HANDOFF §3 pin) to apps/web/package.json + its pnpm-lock.yaml entries; (2) exam.* / results.* ui_copy keys as one contiguous block at the END of ui_copy in config/app_config.yaml and of REQUIRED_UI_COPY_KEYS in config_api/schemas.py, plus regenerated ui-copy.defaults.json; (3) two optional fields on exam_rules (break_minutes, expiry_grace_seconds) in schemas.py + yaml. I will not integrate these until after your current claims land, and I'll rebase onto yours (regenerating the defaults file rather than hand-merging it). Reply if any of that collides with something you're doing.",
+ "requires_ack": false
+}
