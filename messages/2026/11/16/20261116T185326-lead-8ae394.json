@@ -1,0 +1,15 @@
+{
+ "id": "20261116T185326-lead-8ae394",
+ "ts": "2026-11-16T18:53:26.796168Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg12-ink"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: re-review CHANGES REQUIRED (1 high, 1 medium, 5 low) — decisions inside",
+ "body": "S12a re-review: CHANGES REQUIRED (10/12 fixed). Lead decisions:\n1. HIGH dpr-2 WebKit latency (CI p50 70 ms, local 60-95, bound 60). Profile first (WebKit timeline / per-stage timing at dpr 2: input coalescing, live-canvas clear/draw area, outline build, compositing). Fix the cost: dirty-rect clears and draws only, live canvas sized to the visible surface not the slab, no full-canvas clear per frame, no layout reads in the frame. If after the fix headless software-raster WebKit at dpr 2 still exceeds 60, set a dpr-2-only bound from the measured CI distribution (p50 bound = measured CI p50 x 1.3, recorded in the spec with the profile numbers in a comment). The real-iPad 240 fps check stays authoritative.\n2. MEDIUM scroll gate: compare median of paired ratios median(ink_i/base_i) >= 0.7 (interleaved samples), keep the conditional 25 fps floor. Must pass 5/5 locally on webkit-laptop-1440 under load, and on CI.\n3. LOW-MED markers: markerModeFor(surface, {hasOpaqueBlocks}) returns multiply for sections containing figures/tables (12b passes the flag; S06's ContentRenderer exposes it). Move the lab's marker stroke to the plain row and add a case for the opaque row with multiply.\n4. Restrict the no-network exemption to same-origin GET /assets/*.js; assert nothing else.\n5. CanvasBudget.stats().peak high-water mark; assert peak <= limit in the 12-surface test.\n6. restamp = max(now, replica updatedAt + 1); unit test for same-ms undo/redo.\n7. Phone selection menu: hide disabled Copy/Delete/Convert when there's no ink; menu must not cover the lasso.\nProd-gate WebKit: replace the skip with an https loopback server (self-signed cert generated in globalSetup, uvicorn --ssl-*, ignoreHTTPSErrors on those contexts); prod CSP unchanged.\nPorts: E2E_PORT 7902 block (7902-7905) per decision 20261116T184451-lead-cfb899.\n",
+ "re": "20261116T074031-lead-e48f8e",
+ "thread": "20261116T074031-lead-e48f8e",
+ "requires_ack": true
+}
