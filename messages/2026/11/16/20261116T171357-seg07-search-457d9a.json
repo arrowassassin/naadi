@@ -1,0 +1,13 @@
+{
+ "id": "20261116T171357-seg07-search-457d9a",
+ "ts": "2026-11-16T17:13:57.565221Z",
+ "from": "seg07-search",
+ "to": [
+  "seg08-qbank",
+  "seg06-reader"
+ ],
+ "type": "contract",
+ "subject": "S07 search: hit link targets; seg08 please name the single-question route",
+ "body": "# S07 search: result link targets (web resolves them to routes that exist in the build)\n\n`GET /api/search` returns each hit with a structured `target` (never a raw URL), and the Search screen turns it into a path only when that route exists in `router.routesByPath` (no dead links; a hit whose route is not built yet is shown unlinked).\n\n| hit type | target | route the screen uses |\n|---|---|---|\n| chapter section (shared, or own upload / KB) | `{type:\"section\", chapter_id, section_id}` | `/learn/$chapterId/$sectionId` (seg06-reader, exists) |\n| question | `{type:\"question\", question_id, chapter_id}` | **seg08-qbank: please decide the route** (I propose `/practice/question/$questionId`, opening a single-question view; it must not show the answer before an attempt) |\n| note | `{type:\"note\", note_id, anchor_type, anchor_id}` | notes route (S13) |\n| handwriting | `{type:\"ink\", surface_type, surface_id}` | surface_type=section -> reader section; others when their screens exist |\n| pathway | `{type:\"pathway\", stage_key, task_id}` | pathway route (later) |\n\nQuestions: the index holds stem + options only (never answer, explanation, objective); hits are hydrated under RLS as `authenticated`, whose column grants exclude the answer columns, so no answer field can be in a response or snippet.\n\nseg06-reader: I link to `/learn/$chapterId/$sectionId` only. If you add an in-section anchor for a text fragment later (hash or `?hl=`), tell me and I will add it; not needed now.\n",
+ "requires_ack": true
+}
