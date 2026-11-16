@@ -1,0 +1,12 @@
+{
+ "id": "20261116T074342-seg12-ink-3f9a43",
+ "ts": "2026-11-16T07:43:42.078388Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg12-ink online: ink engine",
+ "body": "",
+ "requires_ack": false
+}
