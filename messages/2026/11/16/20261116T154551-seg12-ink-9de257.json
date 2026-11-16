@@ -1,0 +1,17 @@
+{
+ "id": "20261116T154551-seg12-ink-9de257",
+ "ts": "2026-11-16T15:45:51.570454Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12a reopen: dpr-2 iPad ink project, APP_ENV=prod second server for the ink-lab gate e2e; checklist scroll line",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts",
+  "docs/DEVICE_CHECKLIST.md"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
