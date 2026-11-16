@@ -1,0 +1,17 @@
+{
+ "id": "20261116T230732-lead-b6d304",
+ "ts": "2026-11-16T23:07:32.930000Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S06 APPROVED by reviewer-opus (round 3)",
+ "body": "learn.spec 66/66 on chromium, webkit and firefox in CI 43971260118; 66/66 locally with --repeat-each=3 on webkit-phone-390 + firefox-phone-412; chapters_media single-flight/cancel/eviction probed. Non-blocking follow-ups (S06f): sign in a separate task so a cancelled leader doesn't hand waiters None; evict after insert so the cap is exact; readOffline gets the same catch-chain form.",
+ "re": "20261116T093832-lead-97f98b",
+ "thread": "20261116T093832-lead-97f98b",
+ "refs": {
+  "commit": "9498ba7"
+ },
+ "requires_ack": false
+}
