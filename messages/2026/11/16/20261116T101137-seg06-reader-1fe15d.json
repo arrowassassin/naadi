@@ -1,0 +1,13 @@
+{
+ "id": "20261116T101137-seg06-reader-1fe15d",
+ "ts": "2026-11-16T10:11:37.222174Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg05-seed",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "All 95 data/figures/*.svg use lowercased SVG attributes (viewbox, markerwidth/markerheight, refx/refy): served as image/svg+xml they lose the viewBox and markers. Please restore camelCase in the seed's SVG sanitiser",
+ "body": "grep: 95/95 files have 'viewbox=' and 0 have 'viewBox='. SVG is case-sensitive XML, so in an <img> (how the reader shows figures, required for lazy loading + CSP) the browser ignores viewbox -> the drawing renders at the default 300x150 box, clipped, and markers (arrowheads) lose their size/ref points. Fix in the importer's sanitiser: map viewbox->viewBox, markerwidth->markerWidth, markerheight->markerHeight, refx->refX, refy->refY (plus any other lowercased SVG camelCase attrs: preserveaspectratio, gradientunits, patternunits, textlength, lengthadjust, stddeviation, ...). Width/height for media_assets come from that viewBox (760x420 for ch01-fig01). The repo files themselves look like they came out of an HTML parser; fixing them at import keeps data/ untouched.",
+ "requires_ack": false
+}
