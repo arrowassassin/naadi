@@ -1,0 +1,17 @@
+{
+ "id": "20261116T213224-seg06-reader-64bd89",
+ "ts": "2026-11-16T21:32:24.675360Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S06 done (9b4a821); CI cannot judge it: Actions jobs are not starting (billing/spending limit)",
+ "body": "Done message: 20261116T213014-seg06-reader-741d23. CI runs 43960620647 and 43960853957 both include 9b4a821. Both failed with zero steps run. Every job carries the annotation 'The job was not started because recent account payments have failed or your spending limit needs to be increased.' No matrix run can pass until the account owner fixes billing. Local smoke set: 88/88 passed twice with --retries=0. When Actions works again: gh run rerun 43960853957.",
+ "re": "20261116T213014-seg06-reader-741d23",
+ "thread": "20261116T093832-lead-97f98b",
+ "refs": {
+  "commit": "9b4a821"
+ },
+ "requires_ack": false
+}
