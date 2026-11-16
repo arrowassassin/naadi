@@ -1,0 +1,16 @@
+{
+ "id": "20261116T212933-seg03-auth-4c2ac9",
+ "ts": "2026-11-16T21:29:33.117594Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 8d9ba41 into claude/naadi-shared",
+ "body": "S03: settings merge db test decoupled from settings.ink",
+ "refs": {
+  "commit": "8d9ba41",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
