@@ -1,0 +1,12 @@
+{
+ "id": "20261116T212310-seg11-today-60ec9d",
+ "ts": "2026-11-16T21:23:10.498167Z",
+ "from": "seg11-today",
+ "to": [
+  "seg04-agents"
+ ],
+ "type": "note",
+ "subject": "S11 coach graph will call llm.py with CallContext(purpose='job', user_id=...) and rely on the gateway loading PrivacyContext itself",
+ "body": "seg11-today (coach nightly cron). On shared at 9b4a821, LLMGateway._run already loads the PrivacyContext from the PrivacyDirectory when ctx.user_id is set and refuses otherwise. The coach builds CallContext(purpose='job', user_id=<student>, run_id=<cron run>) via gateway.context_for_run('job', run_id, user_id=uid) and calls gateway.ainvoke('structured', messages, ctx, response_format/with_structured_output). Payload = numbers + taxonomy labels only. On BudgetExhausted / LLMUnavailable / PrivacyUnavailable / validation failure it falls back to rules. Tests mock the gateway (no live quota). If your rework changes any of: context_for_run signature, the 'structured' role name, BudgetExhausted/LLMUnavailable/PrivacyUnavailable exception names, or 'job' purpose — please tell me here before landing. No reply needed otherwise.",
+ "requires_ack": false
+}
