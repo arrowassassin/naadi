@@ -82,7 +82,7 @@ def test_user_b_cannot_touch_user_a_rows(
                 _update(conn, table, user_a)
         else:
             assert _update(conn, table, user_a) == 0, "B updated A's rows"
-        if table.name in SELECT_ONLY:
+        if table.name in SELECT_ONLY or table.name in API_WRITTEN:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 _delete(conn, table, user_a)
         else:
@@ -138,8 +138,13 @@ def test_user_a_can_select_update_delete_insert_own_rows(
                 _update(conn, table, user_a)  # the API owns blocks
         else:
             assert _update(conn, table, user_a) == 1
-        assert _delete(conn, table, user_a) == 1
-        assert _count(conn, table.name, user_a) == 0
+        if table.name in API_WRITTEN:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _delete(conn, table, user_a)  # no client delete: a student cannot erase an answer and redo it
+            assert _count(conn, table.name, user_a) == 1
+        else:
+            assert _delete(conn, table, user_a) == 1
+            assert _count(conn, table.name, user_a) == 0
         if table.name in API_WRITTEN:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 insert_row(conn, table.name, table.row(user_a, shared))
@@ -184,7 +189,17 @@ def test_a_student_cannot_insert_attempts_or_write_blocks(
                 conn.execute("update public.attempts set correct = true")
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 conn.execute("update public.attempts set chosen = 'B'")
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(sql.SQL("delete from public.{}").format(sql.Identifier(table)))
         assert _count(conn, table, user_a) == 1  # reading their own row still works
+        if table == "attempts":
+            # the grade is the API's to show: `correct` is not selectable by clients, every other column is
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("select correct from public.attempts")
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute("select * from public.attempts")
+            row = conn.execute("select chosen, flagged, question_id, block_id from public.attempts").fetchone()
+            assert row is not None
     with as_service_role(pg) as conn:  # the API can write both
         insert_row(conn, table, {**ut.row(user_a, shared), **({"id": uuid.uuid4()} if table == "blocks" else {})})
 
@@ -569,7 +584,7 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
             insert_row(conn, "card_reviews", {"user_id": user_a, "card_id": linked, "due": "2026-12-01"})
 
     # B attempts the question; that does not unlock the card for A.
-    insert_row(pg, "attempts", {"user_id": user_b, "question_id": shared.question_id, "chosen": "A"})
+    insert_row(pg, "attempts", {"user_id": user_b, "question_id": shared.question_id, "chosen": "A", "correct": False})
     with as_user(pg, user_a) as conn:
         assert visible(conn) == {plain}, "another user's attempt unlocked the card"
     with as_user(pg, user_b) as conn:
@@ -581,6 +596,11 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
         assert visible(conn) == {plain}
 
     # A attempts it through the normal client path, and then sees it.
-    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B"})  # the API's write
+    # a flag-only row (no choice, not graded) does not open the gate; a graded attempt, written by the API, does
+    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "flagged": True})
+    with as_user(pg, user_a) as conn:
+        assert visible(conn) == {plain}, "a flag opened the card gate"
+    pg.execute("delete from public.attempts where user_id = %s", (user_a,))
+    insert_row(pg, "attempts", {"user_id": user_a, "question_id": shared.question_id, "chosen": "B", "correct": True})
     with as_user(pg, user_a) as conn:
         assert visible(conn) == {plain, linked}

@@ -16,7 +16,8 @@ import {
  */
 test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
 
-const STEP1_QUESTIONS = 380;
+// 380 seeded Step 1 questions, 80 of them mock-exam items (exam-only: never in a tutor pool)
+const STEP1_QUESTIONS = 300;
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string, full = false) =>
   guard.duringTool(async () => {

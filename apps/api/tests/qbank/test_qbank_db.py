@@ -217,32 +217,116 @@ def test_block_validation(client: TestClient, key: SigningKey, world: World) -> 
 
 
 def test_weak_spot_needs_history_then_targets_the_weakest_cell(
-    client: TestClient, key: SigningKey, world: World
+    client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
 ) -> None:
+    """Fixed questions and a fixed seed: three misses and one hit, all in system A and in no discipline, so the
+    weak cells are exactly {A} and the three missed questions come first."""
     w, h = world, auth(key, world.owner)
     none = client.post("/api/blocks/weak-spot", json={"exam": "step1"}, headers=h)
     assert none.status_code == 422 and "practice history" in none.json()["error"]["message"]
 
-    block = make_block(client, key, w, systems=[w.sys_a], count=4)
-    ids = [question(client, key, w, block["id"], n).json()["question"]["id"] for n in range(1, 5)]
-    for qid in ids[:3]:
-        assert answer(client, key, w, block["id"], qid, "A").status_code == 200  # three misses in system A
-    assert answer(client, key, w, block["id"], ids[3], "B").status_code == 200
+    odd = [w.questions[i] for i in (0, 2, 4, 6)]  # q1 q3 q5 q7: system A, not the discipline (even ones carry it)
+    row = pg.execute(
+        "insert into public.blocks (user_id, config, question_ids, started_at) values (%s, %s::jsonb, %s, now())"
+        " returning id",
+        (
+            w.owner,
+            json.dumps(
+                {
+                    "exam": "step1",
+                    "mode": "tutor",
+                    "status": "all",
+                    "difficulty": None,
+                    "systems": [],
+                    "disciplines": [],
+                    "seed": 1,
+                    "weak_spot": False,
+                }
+            ),
+            odd,
+        ),
+    ).fetchone()
+    assert row is not None
+    bid = str(row[0])
+    for qid in odd[:3]:
+        assert answer(client, key, w, bid, qid, "A").status_code == 200  # wrong: the answer is B
+    assert answer(client, key, w, bid, odd[3], "B").status_code == 200
 
+    # a graded attempt on an exam-only question never counts toward a weak spot
+    pg.execute(
+        "insert into public.attempts (user_id, question_id, chosen, correct, mode)"
+        " values (%s, %s, 'A', false, 'tutor')",
+        (w.owner, w.mock),
+    )
     res = client.post("/api/blocks/weak-spot", json={"exam": "step1", "count": 5, "seed": 3}, headers=h)
     assert res.status_code == 201, res.text
     out = res.json()
-    assert out["cells"][0]["id"] == w.sys_a and out["cells"][0]["label"] == "Alpha system"
+    assert [c["id"] for c in out["cells"]] == [w.sys_a]
+    assert out["cells"][0]["label"] == "Alpha system"
     assert out["cells"][0]["attempts"] == 4 and out["cells"][0]["correct"] == 1
-    assert out["block"]["config"]["weak_spot"] is True
+    assert out["block"]["config"]["weak_spot"] is True and out["block"]["config"]["systems"] == [w.sys_a]
     assert out["block"]["total"] == 5
     picked = [question(client, key, w, out["block"]["id"], n).json()["question"]["id"] for n in range(1, 6)]
-    assert picked[:3] and set(picked[:3]) == set(ids[:3])  # the missed questions come first
-    assert len(set(picked)) == 5
-    assert out["cells"][0]["id"] in out["block"]["config"]["systems"]
-    # nothing about another student's history
+    assert set(picked[:3]) == set(odd[:3])  # the missed questions come first
+    assert len(set(picked)) == 5 and w.mock not in picked
     other = client.post("/api/blocks/weak-spot", json={"exam": "step1"}, headers=auth(key, w.other))
-    assert other.status_code == 422
+    assert other.status_code == 422  # nothing about another student's history
+
+
+def test_exam_only_questions_never_enter_tutor_blocks(
+    client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    w, h = world, auth(key, world.owner)
+    pool = client.get("/api/qbank/pool", params={"exam": "step1", "systems": [w.sys_a]}, headers=h).json()
+    assert pool["total"] == 8  # the mock question is also tagged system A but is not counted
+    for seed in range(1, 6):
+        block = make_block(client, key, w, systems=[w.sys_a], count=8, seed=seed)
+        ids = {question(client, key, w, block["id"], q["n"]).json()["question"]["id"] for q in block["questions"]}
+        assert w.mock not in ids
+    refused = client.post("/api/blocks/single", json={"question_id": w.mock}, headers=h)
+    assert refused.status_code == 404 and refused.json()["error"]["code"] == "exam_only"
+    assert_no_secrets(refused.text)
+
+
+def test_flagging_alone_does_not_open_the_flashcard_gate(
+    client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    w = world
+    block = make_block(client, key, w, systems=[w.sys_a], count=8, seed=2)
+    ids = [question(client, key, w, block["id"], n).json()["question"]["id"] for n in range(1, 9)]
+    first = w.questions[0]  # the question a shared card restates
+    assert first in ids
+
+    def cards() -> int:
+        with pg.transaction():
+            pg.execute("set local role authenticated")
+            pg.execute("select set_config('request.jwt.claims', %s, true)", (json.dumps({"sub": str(w.owner)}),))
+            pg.execute("select set_config('request.jwt.claim.sub', %s, true)", (str(w.owner),))
+            row = pg.execute("select count(*) from public.flashcards where question_id = %s", (first,)).fetchone()
+        assert row is not None
+        return int(row[0])
+
+    flag = client.patch(
+        f"/api/blocks/{block['id']}/attempts/{first}", json={"flagged": True}, headers=auth(key, w.owner)
+    )
+    assert flag.status_code == 200
+    assert cards() == 0, "a flag opened the card gate"
+    assert answer(client, key, w, block["id"], first, "B").status_code == 200
+    assert cards() == 1
+
+
+def test_single_question_blocks_are_reused_while_open(client: TestClient, key: SigningKey, world: World) -> None:
+    w, h = world, auth(key, world.owner)
+    a = client.post("/api/blocks/single", json={"question_id": w.questions[2]}, headers=h)
+    b = client.post("/api/blocks/single", json={"question_id": w.questions[2]}, headers=h)
+    assert a.status_code == 201 and b.status_code == 201
+    assert a.json()["id"] == b.json()["id"]
+    # answered (finished) blocks are history: asking again starts a fresh one
+    assert answer(client, key, w, a.json()["id"], w.questions[2], "B").json()["finished"] is True
+    c = client.post("/api/blocks/single", json={"question_id": w.questions[2]}, headers=h)
+    assert c.json()["id"] != a.json()["id"]
+    other = client.post("/api/blocks/single", json={"question_id": w.questions[2]}, headers=auth(key, w.other))
+    assert other.json()["id"] not in (a.json()["id"], c.json()["id"])
 
 
 def test_single_question_block_for_search_hits(client: TestClient, key: SigningKey, world: World) -> None:

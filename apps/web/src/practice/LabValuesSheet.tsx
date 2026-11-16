@@ -16,7 +16,7 @@ export function LabValuesSheet({ open, onClose }: { open: boolean; onClose: () =
       {labs.isPending ? (
         <div aria-busy="true" className="flex flex-col gap-3">
           <p role="status" className="sr-only">
-            Loading lab values…
+            {t("practice.loading_labs")}
           </p>
           <Skeleton className="h-8 w-1/2" />
           <Skeleton className="h-48 rounded-block" />
@@ -31,9 +31,9 @@ export function LabValuesSheet({ open, onClose }: { open: boolean; onClose: () =
               <table className="w-full table-fixed border-collapse text-left text-ui-sm">
                 <thead className="sr-only">
                   <tr>
-                    <th scope="col">Test</th>
-                    <th scope="col">Reference range</th>
-                    <th scope="col">SI units</th>
+                    <th scope="col">{t("practice.labs_col_test")}</th>
+                    <th scope="col">{t("practice.labs_col_range")}</th>
+                    <th scope="col">{t("practice.labs_col_si")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -60,15 +60,16 @@ export function LabValuesSheet({ open, onClose }: { open: boolean; onClose: () =
             >
               {t("practice.labs_official")}
               <ExternalLink aria-hidden="true" size={15} />
-              <span className="sr-only"> (opens in a new tab)</span>
+              <span className="sr-only"> {t("practice.new_tab")}</span>
             </a>
           ) : null}
         </div>
       ) : (
         <ErrorState
           title={t("practice.load_error_title")}
-          message={labs.error?.message ?? ""}
+          message={labs.error?.message ?? t("practice.generic_error")}
           onRetry={() => void labs.refetch()}
+          retryLabel={t("practice.retry")}
           retrying={labs.isFetching}
         />
       )}

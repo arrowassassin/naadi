@@ -27,10 +27,11 @@ const ROW =
 const DOT = "flex size-11 shrink-0 items-center justify-center rounded-full font-display font-bold text-[1.125rem]";
 
 function Loading() {
+  const t = useCopy();
   return (
     <section aria-busy="true" className="flex flex-col gap-6 pt-6">
       <p role="status" className="sr-only">
-        Loading the question…
+        {t("practice.loading_question")}
       </p>
       <Skeleton className="h-6 w-1/3" />
       <Skeleton className="h-40 rounded-block" />
@@ -316,7 +317,7 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
                       isCorrect
                         ? "bg-lime-ink text-lime"
                         : wrong
-                          ? "bg-amber text-[#201200]"
+                          ? "bg-amber text-amber-ink"
                           : mine
                             ? "bg-ground text-text"
                             : "bg-surface-2 text-text",
@@ -475,10 +476,13 @@ export function QuestionPage({ blockId, n }: { blockId: string; n: number }) {
         <ErrorState
           title={gone ? t("practice.question_gone_title") : t("practice.question_error_title")}
           message={
-            err instanceof ApiError && err.status === null ? t("practice.offline_question") : (err?.message ?? "")
+            err instanceof ApiError && err.status === null
+              ? t("practice.offline_question")
+              : (err?.message ?? t("practice.generic_error"))
           }
           requestId={err instanceof ApiError ? err.requestId : null}
           onRetry={gone ? undefined : () => void q.refetch()}
+          retryLabel={t("practice.retry")}
           retrying={q.isFetching}
         />
         <p className="m-0">

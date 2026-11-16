@@ -42,6 +42,7 @@
   --color-violet-line: #2c2552; /* border of AI tiles */
   --color-violet-text: #c4baff; /* text on violet ground; formula highlight */
   --color-amber: #ffb454; /* weak area / wrong answer */
+  --color-amber-ink: #201200; /* text on an amber badge (wrong answer) */
   --color-mark-amber: #ffcb85; /* "my mistake" highlight */
   --color-ink-violet: #5b45d6; /* pen colour on paper */
 

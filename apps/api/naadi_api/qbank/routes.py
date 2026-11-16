@@ -19,6 +19,7 @@ from typing import Annotated, Any
 
 import psycopg
 from fastapi import APIRouter, Depends, Path, Query, Request
+from fastapi.responses import JSONResponse
 from psycopg.rows import dict_row, tuple_row
 from psycopg.types.json import Jsonb
 from starlette.exceptions import HTTPException
@@ -28,7 +29,7 @@ from ..auth_db import user_tx
 from ..auth_limits import RateLimiter
 from ..config_api.service import AppConfigService
 from ..db import Database, DatabaseNotConfigured
-from ..errors import ErrorResponse
+from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
 from .models import (
     ID_PATTERN,
@@ -173,6 +174,19 @@ async def _rows(
     return [dict(r) for r in await cur.fetchall()]
 
 
+async def _priv_rows(
+    conn: psycopg.AsyncConnection[Any], query: str, params: tuple[Any, ...] | dict[str, Any] = ()
+) -> list[Row]:
+    """Rows of `attempts` (its `correct` column is not client-readable): the transaction steps out of the
+    `authenticated` role for this one statement. The caller's claims stay, and every such query filters on
+    `auth.uid()` itself."""
+    await conn.execute("reset role")
+    try:
+        return await _rows(conn, query, params)
+    finally:
+        await conn.execute("set local role authenticated")
+
+
 async def _first(
     conn: psycopg.AsyncConnection[Any], query: str, params: tuple[Any, ...] | dict[str, Any] = ()
 ) -> Row | None:
@@ -200,7 +214,8 @@ def _check_exam(rules: dict[str, Any], exam: str) -> None:
 
 # ── Reads under RLS ──
 
-_POOL = "select id, taxonomy_ids, difficulty from public.questions where exam = %s order by id"
+# Mock exam questions (`block` set) are exam-only: they run in the exam flow (S09), never in a tutor pool.
+_POOL = "select id, taxonomy_ids, difficulty from public.questions where exam = %s and block is null order by id"
 _HISTORY = """
 select question_id,
   bool_or(chosen is not null and correct is not null) as answered,
@@ -221,7 +236,7 @@ async def _load_pool(conn: psycopg.AsyncConnection[Any], exam: str) -> tuple[lis
     ]
     history = {
         r["question_id"]: History(bool(r["answered"]), r["last_correct"], bool(r["flagged"]))
-        for r in await _rows(conn, _HISTORY)
+        for r in await _priv_rows(conn, _HISTORY)
     }
     return questions, history
 
@@ -325,7 +340,7 @@ where block_id = %s and user_id = (select auth.uid())
 
 
 async def _detail(conn: psycopg.AsyncConnection[Any], row: Row) -> BlockDetail:
-    attempts = {a["question_id"]: a for a in await _rows(conn, _BLOCK_ATTEMPTS, (row["id"],))}
+    attempts = {a["question_id"]: a for a in await _priv_rows(conn, _BLOCK_ATTEMPTS, (row["id"],))}
     return _detail_of(row, attempts)
 
 
@@ -441,12 +456,23 @@ async def create_block(
 )
 async def create_single_block(
     request: Request, body: SingleBlockCreate, user: Annotated[CurrentUser, limited("qbank_write")]
-) -> BlockDetail:
-    async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[BlockConfig, list[str]]:
+) -> BlockDetail | JSONResponse:
+    async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail | tuple[BlockConfig, list[str]] | None:
         # Read under RLS: a question the caller may not see (draft, hidden chapter) is simply not found.
-        found = await _first(conn, "select id, exam from public.questions where id = %s", (body.question_id,))
+        found = await _first(conn, "select id, exam, block from public.questions where id = %s", (body.question_id,))
         if found is None:
             raise HTTPException(404, "This question does not exist or is not available to you.")
+        if found["block"] is not None:
+            return None
+        # An open one-question block for this question is reused, so a search hit opened twice makes one block.
+        open_block = await _first(
+            conn,
+            f"{_BLOCK_ROW} where user_id = (select auth.uid()) and question_ids = %s and finished_at is null"
+            " and config->>'seed' = '0' order by created_at desc limit 1",
+            ([found["id"]],),
+        )
+        if open_block is not None:
+            return await _detail(conn, open_block)
         cfg = BlockConfig(
             exam=found["exam"],
             mode="tutor",
@@ -459,14 +485,21 @@ async def create_single_block(
         )
         return cfg, [found["id"]]
 
-    cfg, ids = await as_user(_db(request), user, run)
+    out = await as_user(_db(request), user, run)
+    if out is None:
+        return error_response(
+            404, "This question belongs to a mock exam and is not available for practice.", "exam_only"
+        )
+    if isinstance(out, BlockDetail):
+        return out
+    cfg, ids = out
     return await _insert_block(_db(request), user, cfg, ids)
 
 
 _GRADED = """
 select a.question_id, a.correct, a.created_at, q.taxonomy_ids
 from public.attempts a join public.questions q on q.id = a.question_id
-where a.user_id = (select auth.uid()) and a.correct is not null and q.exam = %s
+where a.user_id = (select auth.uid()) and a.correct is not null and q.exam = %s and q.block is null
 """
 
 
@@ -490,7 +523,7 @@ async def create_weak_spot_block(
     _check_count(rules, wanted)
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[BlockConfig, list[str], list[WeakCellOut]]:
-        graded_rows = await _rows(conn, _GRADED, (body.exam,))
+        graded_rows = await _priv_rows(conn, _GRADED, (body.exam,))
         nodes = {n["id"]: n for n in await _load_taxonomy(conn, body.exam)}
         taxonomy = {r["question_id"]: tuple(r["taxonomy_ids"]) for r in graded_rows}
         graded = [Graded(r["question_id"], bool(r["correct"]), r["created_at"]) for r in graded_rows]
@@ -536,7 +569,7 @@ async def list_blocks(
     limit: Annotated[int, Query(ge=1, le=100)] = 30,
 ) -> BlockList:
     async def run(conn: psycopg.AsyncConnection[Any]) -> BlockList:
-        rows = await _rows(
+        rows = await _priv_rows(
             conn,
             """
             select b.id, b.created_at, b.started_at, b.finished_at, b.config, b.question_ids, b.score,
@@ -639,7 +672,8 @@ async def get_block_question(
         if not questions:
             raise HTTPException(404, "This question is no longer available.")
         q = questions[0]
-        attempt = await _first(conn, _OWN_ATTEMPT, (block_id, qid))
+        own = await _priv_rows(conn, _OWN_ATTEMPT, (block_id, qid))
+        attempt = own[0] if own else None
         lesson = None
         if q["chapter_id"]:
             lesson = await _first(conn, "select id, title from public.chapters where id = %s", (q["chapter_id"],))

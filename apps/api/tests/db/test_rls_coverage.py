@@ -23,7 +23,7 @@ def test_every_user_owned_table_is_covered_by_the_rls_suite(pg: psycopg.Connecti
         "select c.relname from pg_class c join pg_namespace n on n.oid = c.relnamespace"
         " join pg_attribute a on a.attrelid = c.oid and a.attname = 'user_id' and not a.attisdropped"
         " where n.nspname = 'public' and c.relkind = 'r'"
-        "   and has_table_privilege('authenticated', c.oid, 'select') order by 1"
+        "   and has_any_column_privilege('authenticated', c.oid, 'select') order by 1"
     ).fetchall()
     assert sorted(r[0] for r in rows) == sorted(USER_TABLE_NAMES)
 

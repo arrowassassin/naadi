@@ -37,6 +37,7 @@ class World:
     disc: str
     questions: list[str]  # 12 ids: 8 in sys_a (q1..q8), 4 in sys_b (q9..q12)
     chapter: str
+    mock: str  # an exam-only (mock exam) question, tagged with sys_a
     owner: uuid.UUID
     other: uuid.UUID
 
@@ -81,6 +82,7 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
         disc=f"t{tag}.disc.one",
         questions=[f"t{tag}-q{i}" for i in range(1, 13)],
         chapter=f"t{tag}-ch",
+        mock=f"t{tag}-mock",
         owner=create_auth_user(pg),
         other=create_auth_user(pg),
     )
@@ -123,10 +125,25 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
                 "source_id": src,
             },
         )
+    insert(
+        pg,
+        "questions",
+        {
+            "id": w.mock,
+            "exam": "step1",
+            "block": 1,
+            "stem_html": "<p>Mock stem</p>",
+            "options": opts,
+            "answer": "B",
+            "explanation_html": f"<p>{SECRET_EXPLANATION}mock</p>",
+            "taxonomy_ids": [w.sys_a],
+            "source_id": src,
+        },
+    )
     # A shared flashcard that restates question 1's answer: only attempt-gated (RLS), never in the block payload.
     insert(pg, "flashcards", {"front_html": "f", "back_html": "b", "origin": "seed", "question_id": w.questions[0]})
     yield w
-    qs = w.questions
+    qs = [*w.questions, w.mock]
     pg.execute("delete from public.flashcards where question_id = any(%s)", (qs,))
     pg.execute("delete from public.blocks where user_id = any(%s)", ([w.owner, w.other],))
     pg.execute("delete from public.attempts where question_id = any(%s)", (qs,))

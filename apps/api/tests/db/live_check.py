@@ -175,6 +175,15 @@ def checks(head: str) -> list[Check]:
             " from unnest(array['public.ink_layers','public.ink_items']) t",
         ),
         Check(
+            "attempts and blocks are written by the API only; attempts.correct is not client-readable",
+            "select not has_any_column_privilege('authenticated', 'public.attempts', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.attempts', 'delete')"
+            " and not has_column_privilege('authenticated', 'public.attempts', 'correct', 'select')"
+            " and has_column_privilege('authenticated', 'public.attempts', 'chosen', 'select')"
+            " and not has_any_column_privilege('authenticated', 'public.blocks', 'insert,update')"
+            " and not has_table_privilege('authenticated', 'public.blocks', 'delete') as ok, '' as detail",
+        ),
+        Check(
             "default privileges closed for anon/authenticated",
             "select count(*) = 0 as ok, count(*)::text as detail from pg_default_acl d"
             " cross join lateral aclexplode(d.defaclacl) a where d.defaclrole = 'postgres'::regrole"

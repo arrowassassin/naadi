@@ -1,5 +1,6 @@
 import type { BlockSummary, PoolFacet, PoolResponse } from "@naadi/shared";
 import { Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
+import type { UseQueryResult } from "@tanstack/react-query";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Minus, Plus } from "lucide-react";
 import { useId, useState } from "react";
@@ -54,8 +55,11 @@ function Chipbutton({
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <fieldset className="m-0 flex min-w-0 flex-col gap-3.5 rounded-tile border border-line-soft bg-surface-1 p-6 tablet:p-7">
-      <legend className="float-left p-0 font-bold font-display text-[1.5rem] tracking-[-0.02em]">{title}</legend>
-      <div className="clear-both flex flex-wrap gap-2">{children}</div>
+      <legend className="sr-only">{title}</legend>
+      <p aria-hidden="true" className="m-0 font-bold font-display text-[1.5rem] tracking-[-0.02em]">
+        {title}
+      </p>
+      <div className="flex flex-wrap gap-2">{children}</div>
     </fieldset>
   );
 }
@@ -65,13 +69,14 @@ function toggle(list: string[], id: string): string[] {
 }
 
 function Loading() {
+  const t = useCopy();
   return (
     <section aria-labelledby="practice-h" aria-busy="true" className="flex flex-col gap-8 pt-6 tablet:pt-10">
       <h1 id="practice-h" className="sr-only">
-        Practice
+        {t("practice.headline")} {t("practice.headline_muted")}
       </h1>
       <p role="status" className="sr-only">
-        Loading practice…
+        {t("practice.loading")}
       </p>
       <Skeleton className="h-[clamp(5rem,12vw,9rem)] w-2/3 rounded-block" />
       <div className="grid gap-5 laptop:grid-cols-[2fr_1fr]">
@@ -99,14 +104,31 @@ function Headline({ lead, muted }: { lead: string; muted: string }) {
   );
 }
 
-function PastBlocks({ blocks }: { blocks: BlockSummary[] }) {
+function PastBlocks({ query }: { query: UseQueryResult<{ blocks: BlockSummary[] }, Error> }) {
   const t = useCopy();
+  const blocks = query.data?.blocks;
   return (
     <section id="past-blocks" aria-labelledby="past-h" className="flex scroll-mt-24 flex-col gap-4">
       <h2 id="past-h" className="m-0 font-bold font-display text-[1.5rem] tracking-[-0.02em]">
         {t("practice.past_blocks")}
       </h2>
-      {blocks.length === 0 ? (
+      {query.isPending ? (
+        <div aria-busy="true">
+          <p role="status" className="sr-only">
+            {t("practice.past_loading")}
+          </p>
+          <Skeleton className="h-24 rounded-tile" />
+        </div>
+      ) : !blocks ? (
+        <ErrorState
+          title={t("practice.past_error")}
+          message={query.error?.message ?? t("practice.generic_error")}
+          requestId={query.error instanceof ApiError ? query.error.requestId : null}
+          onRetry={() => void query.refetch()}
+          retrying={query.isFetching}
+          retryLabel={t("practice.retry")}
+        />
+      ) : blocks.length === 0 ? (
         <p className="m-0 rounded-block border border-line-soft border-dashed px-5 py-6 text-text-2">
           {t("practice.past_empty")}
         </p>
@@ -161,6 +183,9 @@ function BuilderBody(props: BodyProps) {
   const topics = picked.length ? picked.map((f) => f.label).join(", ") : t("practice.all_systems");
   const error = (props.create.error ?? props.weak.error) as Error | null;
   const busy = props.create.isPending || props.weak.isPending;
+  // nothing at all to practise (not just filtered out): a different message from "widen the filters"
+  const noFilters =
+    props.systems.length === 0 && props.disciplines.length === 0 && props.difficulty === null && pool.status.all === 0;
 
   const start = () =>
     props.create.mutate(
@@ -313,7 +338,7 @@ function BuilderBody(props: BodyProps) {
           </p>
           {total === 0 ? (
             <p role="status" className="m-0 font-semibold">
-              {t("practice.empty_pool")}
+              {noFilters ? t("practice.empty_exam") : t("practice.empty_pool")}
             </p>
           ) : null}
           <button
@@ -392,7 +417,8 @@ export function BuilderPage({ exam }: { exam?: string }) {
         <Headline lead={t("practice.headline")} muted={t("practice.headline_muted")} />
         <ErrorState
           title={t("practice.load_error_title")}
-          message={err?.message ?? "Something went wrong."}
+          message={err?.message ?? t("practice.generic_error")}
+          retryLabel={t("practice.retry")}
           requestId={err instanceof ApiError ? err.requestId : null}
           onRetry={() => void pool.refetch()}
           retrying={pool.isFetching}
@@ -433,7 +459,7 @@ export function BuilderPage({ exam }: { exam?: string }) {
           nav,
         }}
       />
-      {blocks.data ? <PastBlocks blocks={blocks.data.blocks} /> : null}
+      <PastBlocks query={blocks} />
     </section>
   );
 }
