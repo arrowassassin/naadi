@@ -131,7 +131,11 @@ export interface InkEngineOptions {
 }
 
 /** Device pixels per slab canvas: bounds memory on tall surfaces at high device pixel ratios. */
-const MAX_SLAB_PIXELS = 2_000_000;
+const MAX_SLAB_PIXELS = 8_000_000;
+/** Device pixels of ink canvases kept alive per surface (~64 MB): most pages fit whole. */
+const MAX_TOTAL_PIXELS = 16_000_000;
+/** Quiet time after the last change before canvases are swapped for images. */
+const SETTLE_MS = 700;
 /** Committed layers are repainted in TILE×TILE CSS px tiles. */
 const TILE = 256;
 const HOLD_MS = 550;
@@ -210,6 +214,8 @@ export class InkEngine {
   private lastPenActive = false;
   private lastStateJson = "";
   private prewarmTimer: ReturnType<typeof setTimeout> | null = null;
+  private settleTimer: ReturnType<typeof setTimeout> | null = null;
+  private settling = 0;
 
   constructor(options: InkEngineOptions) {
     this.o = options;
@@ -431,7 +437,13 @@ export class InkEngine {
   /** CSS px bounds of an item relative to the surface (used by tests and overlays). */
   /** True while committed tiles or stroke geometry are still being built (first paint of a big page). */
   renderPending(): boolean {
-    return this.dirtyTiles.size > 0 || this.raf !== 0 || this.prewarmTimer !== null;
+    return (
+      this.dirtyTiles.size > 0 ||
+      this.raf !== 0 ||
+      this.prewarmTimer !== null ||
+      this.settleTimer !== null ||
+      this.settling > 0
+    );
   }
 
   itemRect(id: string): PxRect | null {
@@ -463,6 +475,7 @@ export class InkEngine {
     this.closeEditor();
     cancelAnimationFrame(this.raf);
     if (this.prewarmTimer) clearTimeout(this.prewarmTimer);
+    if (this.settleTimer) clearTimeout(this.settleTimer);
     for (const c of this.cleanups) c();
     for (const slab of this.slabs.values()) this.releaseSlab(slab);
     this.slabs.clear();
@@ -663,57 +676,95 @@ export class InkEngine {
     return { top, bottom, vh };
   }
 
-  /** Create the slabs within half a viewport of the visible part; release those beyond two viewports. */
+  /**
+   * Keep the slabs nearest the visible part of the surface, as many as the memory budget allows (all of
+   * them on most pages, so a page is fully painted before it is scrolled), and release the rest,
+   * farthest first.
+   */
   private updateSlabs(): void {
     const w = this.widthPx;
     const h = this.heightPx;
     if (w <= 0 || h <= 0 || this.slabH <= 0) return;
-    const { top, bottom, vh } = this.visibleRange();
-    const keepFrom = Math.floor(Math.max(0, top - vh * 0.5) / this.slabH);
-    const keepTo = Math.floor(Math.max(0, Math.min(h - 1, bottom + vh * 0.5)) / this.slabH);
+    const { top, bottom } = this.visibleRange();
+    const count = Math.ceil(h / this.slabH);
+    const perSlab = Math.max(1, Math.round(w * this.dpr) * Math.round(this.slabH * this.dpr));
+    const max = Math.max(1, Math.floor(MAX_TOTAL_PIXELS / perSlab));
+    const dist = (i: number) => {
+      const y0 = i * this.slabH;
+      const y1 = y0 + this.slabH;
+      return y1 < top ? top - y1 : y0 > bottom ? y0 - bottom : 0;
+    };
+    const keep = new Set(
+      Array.from({ length: count }, (_, i) => i)
+        .sort((x, y) => dist(x) - dist(y))
+        .slice(0, max),
+    );
     for (const [i, slab] of this.slabs) {
-      const slabTop = i * this.slabH;
-      if (slabTop + slab.h < top - vh * 2 || slabTop > bottom + vh * 2) {
-        this.releaseSlab(slab);
-        this.slabs.delete(i);
-      }
+      if (keep.has(i)) continue;
+      this.releaseSlab(slab);
+      this.slabs.delete(i);
     }
-    for (let i = keepFrom; i <= keepTo; i++) if (!this.slabs.has(i)) this.createSlab(i);
+    for (const i of keep) if (!this.slabs.has(i)) this.createSlab(i);
+  }
+
+  private slabCanvas(name: string, slab: Pick<Slab, "i" | "y0" | "h">): HTMLCanvasElement {
+    const c = this.makeCanvas(name);
+    c.width = Math.max(1, Math.round(this.widthPx * this.dpr));
+    c.height = Math.max(1, Math.round(slab.h * this.dpr));
+    Object.assign(c.style, { width: `${this.widthPx}px`, height: `${slab.h}px`, top: `${slab.y0}px`, display: "none" });
+    c.dataset.slab = String(slab.i);
+    return c;
   }
 
   private createSlab(i: number): void {
     const y0 = i * this.slabH;
     const h = Math.min(this.slabH, this.heightPx - y0);
     if (h <= 0) return;
-    const dpr = this.dpr;
-    const devW = Math.max(1, Math.round(this.widthPx * dpr));
-    const devH = Math.max(1, Math.round(h * dpr));
-    const make = (name: string) => {
-      const c = this.makeCanvas(name);
-      c.width = devW;
-      c.height = devH;
-      Object.assign(c.style, { width: `${this.widthPx}px`, height: `${h}px`, top: `${y0}px`, display: "none" });
-      return c;
-    };
-    const marker = make("marker");
-    const ink = make("ink");
-    marker.dataset.slab = String(i);
-    ink.dataset.slab = String(i);
+    const ink = this.slabCanvas("ink", { i, y0, h });
     this.layer.insertBefore(ink, this.liveCanvas);
-    this.layer.insertBefore(marker, ink);
-    const slab: Slab = { i, y0, h, marker, ink, mctx: marker.getContext("2d"), ictx: ink.getContext("2d") };
-    if (!slab.mctx || !slab.ictx) this.fail("This browser could not create a drawing canvas (out of canvas memory).");
+    const slab: Slab = {
+      i,
+      y0,
+      h,
+      marker: null,
+      ink,
+      mctx: null,
+      ictx: ink.getContext("2d"),
+      markerImg: null,
+      inkImg: null,
+      has: { m: false, k: false },
+      version: 0,
+      settledVersion: { markerImg: -1, inkImg: -1 },
+    };
+    if (!slab.ictx) this.fail("This browser could not create a drawing canvas (out of canvas memory).");
     this.slabs.set(i, slab);
     this.applySlabStyle(slab);
     this.markDirtyPx({ x0: 0, y0, x1: this.widthPx, y1: y0 + h });
   }
 
+  /** The marker canvas is only allocated for slabs that hold marker strokes. */
+  private markerCtxFor(slab: Slab): CanvasRenderingContext2D | null {
+    if (slab.marker) return slab.mctx;
+    const c = this.slabCanvas("marker", slab);
+    this.layer.insertBefore(c, slab.ink);
+    slab.marker = c;
+    slab.mctx = c.getContext("2d");
+    this.applySlabStyle(slab);
+    return slab.mctx;
+  }
+
   private releaseSlab(slab: Slab): void {
     // Shrinking first returns the backing store at once (Safari keeps detached canvases' memory a while).
     for (const c of [slab.marker, slab.ink]) {
+      if (!c) continue;
       c.width = 0;
       c.height = 0;
       c.remove();
+    }
+    for (const img of [slab.markerImg, slab.inkImg]) {
+      if (!img) continue;
+      if (img.dataset.url) URL.revokeObjectURL(img.dataset.url);
+      img.remove();
     }
     for (const key of [...this.tileKinds.keys()]) {
       const ty = Number(key.split(",")[1]);
@@ -722,9 +773,12 @@ export class InkEngine {
   }
 
   private applySlabStyle(slab: Slab): void {
-    slab.marker.style.zIndex = "-1";
-    slab.marker.style.opacity = this.theme === "paper" ? "1" : "0.45";
-    slab.ink.style.zIndex = "1";
+    for (const el of [slab.marker, slab.markerImg]) {
+      if (!el) continue;
+      el.style.zIndex = "-1";
+      el.style.opacity = this.theme === "paper" ? "1" : "0.45";
+    }
+    for (const el of [slab.ink, slab.inkImg]) if (el) el.style.zIndex = "1";
   }
 
   /** Size the live canvas to the visible part of the surface (it is cleared, not scrolled). */
@@ -796,8 +850,87 @@ export class InkEngine {
       k ||= kinds.k;
       if (m && k) break;
     }
-    slab.marker.style.display = m ? "" : "none";
+    slab.has = { m, k };
+    slab.version++;
+    // The canvases hold the newest pixels: show them (and not a stale settled image) until it settles again.
+    if (slab.marker) slab.marker.style.display = m ? "" : "none";
     slab.ink.style.display = k ? "" : "none";
+    for (const img of [slab.markerImg, slab.inkImg]) if (img) img.style.display = "none";
+    this.scheduleSettle();
+  }
+
+  /**
+   * Settling: once the ink has been still for a moment, each slab's canvases are swapped for plain
+   * images of the same pixels. Images are painted into the page's own (cached) raster tiles, whereas
+   * every visible canvas is a layer the compositor re-blends on each scrolled frame, which halves the
+   * scroll frame rate of a big page under software compositing. The canvases keep their bitmaps, so
+   * the next edit just shows them again.
+   */
+  private scheduleSettle(): void {
+    if (this.settleTimer) clearTimeout(this.settleTimer);
+    this.settleTimer = setTimeout(() => {
+      this.settleTimer = null;
+      if (this.destroyed) return;
+      if (this.gesture || this.dirtyTiles.size > 0) {
+        this.scheduleSettle();
+        return;
+      }
+      for (const slab of this.slabs.values()) this.settleSlab(slab);
+    }, SETTLE_MS);
+  }
+
+  private settleSlab(slab: Slab): void {
+    const v = slab.version;
+    const jobs: [HTMLCanvasElement, "markerImg" | "inkImg"][] = [];
+    if (slab.has.m && slab.marker) jobs.push([slab.marker, "markerImg"]);
+    if (slab.has.k) jobs.push([slab.ink, "inkImg"]);
+    for (const [canvas, key] of jobs) {
+      if (slab.settledVersion[key] === v) continue;
+      this.settling++;
+      canvas.toBlob((blob) => {
+        const done = () => {
+          this.settling--;
+        };
+        if (!blob || this.destroyed || this.slabs.get(slab.i) !== slab || slab.version !== v) return done();
+        const url = URL.createObjectURL(blob);
+        let img = slab[key];
+        if (!img) {
+          img = this.host.ownerDocument.createElement("img");
+          img.alt = "";
+          img.setAttribute("aria-hidden", "true");
+          img.draggable = false;
+          img.dataset.inkImage = key === "markerImg" ? "marker" : "ink";
+          Object.assign(img.style, {
+            position: "absolute",
+            left: "0",
+            top: `${slab.y0}px`,
+            width: `${this.widthPx}px`,
+            height: `${slab.h}px`,
+            pointerEvents: "none",
+            display: "none",
+          });
+          canvas.after(img);
+          slab[key] = img;
+          this.applySlabStyle(slab);
+        }
+        const target = img;
+        const previous = target.dataset.url;
+        target.src = url;
+        target
+          .decode()
+          .catch(() => undefined)
+          .then(() => {
+            if (previous) URL.revokeObjectURL(previous);
+            target.dataset.url = url;
+            if (this.slabs.get(slab.i) === slab && slab.version === v && !this.destroyed) {
+              target.style.display = "";
+              canvas.style.display = "none";
+              slab.settledVersion[key] = v;
+            }
+            done();
+          });
+      }, "image/png");
+    }
   }
 
   private onFrame(_ts: number): void {
@@ -861,7 +994,11 @@ export class InkEngine {
       w: Math.ceil((x1 - x0) * dpr) + 1,
       h: Math.ceil((y1 - y0) * dpr) + 1,
     };
-    for (const ctx of [slab.mctx, slab.ictx]) {
+    const w = this.widthPx;
+    const query = { x0: x0 / w, y0: y0 / w, x1: x1 / w, y1: y1 / w };
+    const entries = this.doc.query(padRect(query, 1 / w)).filter((e) => !this.hidden.has(e.item.id));
+    const mctx = slab.marker || entries.some((e) => e.item.tool === "marker") ? this.markerCtxFor(slab) : null;
+    for (const ctx of [mctx, slab.ictx]) {
       if (!ctx) continue;
       ctx.save();
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -871,20 +1008,17 @@ export class InkEngine {
       ctx.clip();
       this.setDrawTransform(ctx, slab.y0);
     }
-    const w = this.widthPx;
-    const query = { x0: x0 / w, y0: y0 / w, x1: x1 / w, y1: y1 / w };
     const kinds = { m: false, k: false };
-    for (const e of this.doc.query(padRect(query, 1 / w))) {
-      if (this.hidden.has(e.item.id)) continue;
+    for (const e of entries) {
       const marker = e.item.tool === "marker";
-      const ctx = marker ? slab.mctx : slab.ictx;
+      const ctx = marker ? mctx : slab.ictx;
       if (!ctx) continue;
       if (marker) kinds.m = true;
       else kinds.k = true;
       ctx.globalCompositeOperation = marker ? "multiply" : "source-over";
       drawItem(ctx, e.item, this.palette, this.font);
     }
-    slab.mctx?.restore();
+    mctx?.restore();
     slab.ictx?.restore();
     if (kinds.m || kinds.k) this.tileKinds.set(key, kinds);
     else this.tileKinds.delete(key);
@@ -1549,10 +1683,16 @@ interface Slab {
   /** Top edge and height in surface CSS px. */
   y0: number;
   h: number;
-  marker: HTMLCanvasElement;
+  marker: HTMLCanvasElement | null;
   ink: HTMLCanvasElement;
   mctx: CanvasRenderingContext2D | null;
   ictx: CanvasRenderingContext2D | null;
+  /** Settled images of the canvases (see scheduleSettle). */
+  markerImg: HTMLImageElement | null;
+  inkImg: HTMLImageElement | null;
+  has: { m: boolean; k: boolean };
+  version: number;
+  settledVersion: { markerImg: number; inkImg: number };
 }
 
 /** How far a tile ("tx,ty") is from the visible range, in CSS px (0 = visible). */
