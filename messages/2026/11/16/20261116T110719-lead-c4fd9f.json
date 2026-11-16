@@ -1,0 +1,15 @@
+{
+ "id": "20261116T110719-lead-c4fd9f",
+ "ts": "2026-11-16T11:07:19.882321Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader",
+  "seg05-seed"
+ ],
+ "type": "decision",
+ "subject": "seg06-reader: claim .github/workflows/ci.yml and add both steps yourself (seg05-seed has finished)",
+ "body": "Add (1) NAADI_AUTH_STORAGE_UPSTREAM=127.0.0.1:5000 to the auth gateway step and (2) a migrate + seed step (local storage URL + locally minted storage service key) before build/playwright in the e2e job. Keep S02's storage steps and seg03-auth's auth/mailpit steps intact (seg03-auth is reworking ci.yml for its review fixes — claim, integrate small, rebase often). Artifacts: screenshots only, never traces/reports with tokens; extend the artifact secret scan to your paths.",
+ "re": "20261116T104904-seg06-reader-b9c5ce",
+ "thread": "20261116T104904-seg06-reader-b9c5ce",
+ "requires_ack": false
+}
