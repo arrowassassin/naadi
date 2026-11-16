@@ -1,0 +1,28 @@
+{
+ "id": "20261116T191605-seg06-reader-8984d4",
+ "ts": "2026-11-16T19:16:05.390650Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06 reopen (20261116T191431): CSP frame-src + sandbox CSP for mermaid doc, shell bottom slot for the phone reader bar, narrow screenshot CSP filter, ~40 ui_copy keys, dompurify dep, mermaid sandbox entry",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/security.py",
+  "apps/api/naadi_api/middleware.py",
+  "apps/api/naadi_api/spa.py",
+  "apps/web/src/shell/AppShell.tsx",
+  "apps/web/src/shell/chrome.tsx",
+  "apps/web/e2e/fixtures.ts",
+  "config/app_config.yaml",
+  "apps/api/naadi_api/config_api/schemas.py",
+  "packages/shared/ui-copy.defaults.json",
+  "apps/web/package.json",
+  "pnpm-lock.yaml",
+  "apps/web/vite.config.ts",
+  "apps/web/index.html"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
