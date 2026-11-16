@@ -1,0 +1,49 @@
+<svg aria-label="Hepatitis B serologic markers over time with window period" font-family="sans-serif" role="img" viewbox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#fef3c7" height="230" opacity="0.8" stroke="none" width="45" x="320" y="70"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="342" y="64">Window</text>
+<path d="M120,300 C160,85 280,85 320,300 Z" fill="#e0f2fe" opacity="0.9" stroke="#334155" stroke-width="1.6"></path>
+<path d="M140,300 C170,175 230,175 262,300 Z" fill="#fde68a" opacity="0.85" stroke="#334155" stroke-width="1.4"></path>
+<path d="M180,300 C215,150 280,160 440,300 Z" fill="#fee2e2" opacity="0.75" stroke="#334155" stroke-width="1.4"></path>
+<path d="M365,300 C400,210 460,150 620,140 L620,300 Z" fill="#dcfce7" opacity="0.9" stroke="#334155" stroke-width="1.6"></path>
+<path d="M185,300 C230,115 300,105 620,105" fill="none" stroke="#334155" stroke-dasharray="8,5" stroke-width="2.2"></path>
+<path d="M250,300 C290,235 350,222 620,220" fill="none" stroke="#334155" stroke-dasharray="2,4" stroke-width="2"></path>
+<line stroke="#334155" stroke-width="1.5" x1="80" x2="630" y1="300" y2="300"></line>
+<line stroke="#334155" stroke-width="1.5" x1="80" x2="80" y1="300" y2="60"></line>
+<line stroke="#334155" x1="80" x2="80" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="80" y="322">0</text>
+<line stroke="#334155" x1="160" x2="160" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="160" y="322">8</text>
+<line stroke="#334155" x1="240" x2="240" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="240" y="322">16</text>
+<line stroke="#334155" x1="320" x2="320" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="320" y="322">24</text>
+<line stroke="#334155" x1="400" x2="400" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="400" y="322">32</text>
+<line stroke="#334155" x1="480" x2="480" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="480" y="322">40</text>
+<line stroke="#334155" x1="560" x2="560" y1="300" y2="306"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="560" y="322">48</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="355" y="342">Weeks after exposure (typical acute infection that resolves)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" transform="rotate(-90 30 185)" x="30" y="185">Relative titer</text>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="220" y="128">HBsAg</text>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="200" y="250">HBeAg</text>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="388" y="286">IgM anti-HBc</text>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="560" y="175">anti-HBs</text>
+<rect fill="#e0f2fe" height="14" stroke="#334155" width="22" x="650" y="79"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="680" y="90">HBsAg (infection)</text>
+<rect fill="#fde68a" height="14" stroke="#334155" width="22" x="650" y="107"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="680" y="118">HBeAg (replication)</text>
+<rect fill="#fee2e2" height="14" stroke="#334155" width="22" x="650" y="135"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="680" y="146">IgM anti-HBc (acute)</text>
+<rect fill="#dcfce7" height="14" stroke="#334155" width="22" x="650" y="163"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="680" y="174">anti-HBs (immunity)</text>
+<line stroke="#334155" stroke-dasharray="8,5" stroke-width="2.2" x1="650" x2="672" y1="202" y2="202"></line>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="680" y="206">Total anti-HBc (IgG, lifelong)</text>
+<line stroke="#334155" stroke-dasharray="2,4" stroke-width="2" x1="650" x2="672" y1="230" y2="230"></line>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="680" y="234">anti-HBe (low infectivity)</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="650" y="272">Window: HBsAg − and anti-HBs −;</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="650" y="289">only IgM anti-HBc is positive.</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="650" y="315">Chronic HBV: HBsAg &gt; 6 months,</text>
+<text fill="#0f172a" font-size="12" text-anchor="start" x="650" y="332">anti-HBs never appears.</text>
+</svg>

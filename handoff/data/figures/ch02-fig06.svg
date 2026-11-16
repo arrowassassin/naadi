@@ -1,0 +1,96 @@
+<svg aria-label="HIV life cycle with antiretroviral drug targets" font-family="sans-serif" role="img" viewbox="0 0 980 405" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#ffffff" height="150" rx="16" stroke="#334155" stroke-dasharray="7,4" stroke-width="1.5" width="960" x="10" y="60"></rect>
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="490" y="30">HIV replication cycle in a CD4+ T cell (top) and the drug class that blocks each step (bottom)</text>
+<text fill="#0f172a" font-size="12" font-style="italic" text-anchor="end" x="940" y="78">host cell</text>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="14" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="75" y="124">1. Attachment</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="75" y="139">gp120 → CD4,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="75" y="154">then CCR5/CXCR4</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="136" x2="149" y1="135" y2="135"></line>
+<rect fill="#fee2e2" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="11" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="75" y="279">CCR5 antagonist:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="75" y="294">maraviroc</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="75" y="309">(tropism assay)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="75" y="324">Attachment inh.:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="75" y="339">fostemsavir</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="75" x2="75" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="65" x2="85" y1="172" y2="172"></line>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="151" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="212" y="124">2. Fusion</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="212" y="139">gp41 6-helix</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="212" y="154">bundle</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="273" x2="286" y1="135" y2="135"></line>
+<rect fill="#fee2e2" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="148" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="212" y="279">Fusion inhibitor:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="212" y="294">enfuvirtide</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="212" y="309">(binds gp41)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="212" y="324">Post-attach.:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="212" y="339">ibalizumab</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="212" x2="212" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="202" x2="222" y1="172" y2="172"></line>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="288" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="349" y="124">3. Reverse</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="139">transcription</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="154">RNA → dsDNA</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="410" x2="423" y1="135" y2="135"></line>
+<rect fill="#fee2e2" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="285" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="349" y="264">NRTIs: tenofovir,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="279">emtricitabine,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="294">lamivudine,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="309">abacavir, AZT</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="324">NNRTIs: efavirenz,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="339">rilpivirine,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="349" y="354">doravirine</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="349" x2="349" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="339" x2="359" y1="172" y2="172"></line>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="425" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="486" y="124">4. Integration</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="486" y="139">provirus into</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="486" y="154">host DNA</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="547" x2="560" y1="135" y2="135"></line>
+<rect fill="#fee2e2" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="422" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="486" y="279">INSTIs:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="486" y="294">bictegravir,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="486" y="309">dolutegravir,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="486" y="324">raltegravir,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="486" y="339">cabotegravir</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="486" x2="486" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="476" x2="496" y1="172" y2="172"></line>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="562" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="623" y="124">5. Transcription</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="623" y="139">/ translation</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="623" y="154">(host machinery)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="684" x2="697" y1="135" y2="135"></line>
+<rect fill="#dcfce7" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="559" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="623" y="302">No approved</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="623" y="317">drug class</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="623" x2="623" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="613" x2="633" y1="172" y2="172"></line>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="699" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="760" y="124">6. Assembly</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="760" y="139">capsid (p24)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="760" y="154">trafficking</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="821" x2="834" y1="135" y2="135"></line>
+<rect fill="#fee2e2" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="696" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="760" y="287">Capsid inhibitor:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="760" y="302">lenacapavir</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="760" y="317">(also blocks</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="760" y="332">nuclear import)</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="760" x2="760" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="750" x2="770" y1="172" y2="172"></line>
+<rect fill="#e0f2fe" height="70" rx="7" stroke="#334155" stroke-width="1.3" width="122" x="836" y="100"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="897" y="124">7. Budding &amp;</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="139">maturation</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="154">gag-pol cleaved</text>
+<rect fill="#fee2e2" height="125" rx="7" stroke="#334155" stroke-width="1.3" width="128" x="833" y="242"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="897" y="272">Protease inh.:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="287">darunavir,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="302">atazanavir</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="317">(boost with</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="332">ritonavir or</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="897" y="347">cobicistat)</text>
+<line stroke="#334155" stroke-dasharray="4,3" stroke-width="1.4" x1="897" x2="897" y1="170" y2="240"></line>
+<line stroke="#334155" stroke-width="3" x1="887" x2="907" y1="172" y2="172"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="490" y="392">Bar (⊥) = step inhibited. Preferred initial ART (DHHS): INSTI + 2 NRTIs, e.g., bictegravir/TAF/emtricitabine.</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg aria-label="Murmur timing chart showing systolic and diastolic murmurs relative to S1 and S2" role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="400" width="640" x="0" y="0"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="215" y="24">S1</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="405" y="24">S2</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="605" y="24">S1</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="310" y="24">systole</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="505" y="24">diastole</text>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text x="10" y="60">Aortic stenosis</text>
+<text font-size="12" x="10" y="74">RUSB → carotids; ± click</text>
+<text x="10" y="108">MR / TR</text>
+<text x="10" y="122">apex → axilla / LLSB</text>
+<text x="10" y="156">VSD</text>
+<text x="10" y="170">LLSB, harsh</text>
+<text x="10" y="204">Mitral valve prolapse</text>
+<text x="10" y="218">apex; click + late murmur</text>
+<text x="10" y="252">Aortic regurgitation</text>
+<text x="10" y="266">LSB, blowing</text>
+<text x="10" y="300">Mitral stenosis</text>
+<text x="10" y="314">apex; OS + rumble</text>
+<text x="10" y="348">PDA</text>
+<text x="10" y="362">infraclavicular, machine-like</text>
+</g>
+<g stroke="#334155" stroke-width="3">
+<line x1="215" x2="215" y1="44" y2="80"></line><line x1="405" x2="405" y1="44" y2="80"></line><line x1="605" x2="605" y1="44" y2="80"></line>
+<line x1="215" x2="215" y1="92" y2="128"></line><line x1="405" x2="405" y1="92" y2="128"></line><line x1="605" x2="605" y1="92" y2="128"></line>
+<line x1="215" x2="215" y1="140" y2="176"></line><line x1="405" x2="405" y1="140" y2="176"></line><line x1="605" x2="605" y1="140" y2="176"></line>
+<line x1="215" x2="215" y1="188" y2="224"></line><line x1="405" x2="405" y1="188" y2="224"></line><line x1="605" x2="605" y1="188" y2="224"></line>
+<line x1="215" x2="215" y1="236" y2="272"></line><line x1="405" x2="405" y1="236" y2="272"></line><line x1="605" x2="605" y1="236" y2="272"></line>
+<line x1="215" x2="215" y1="284" y2="320"></line><line x1="405" x2="405" y1="284" y2="320"></line><line x1="605" x2="605" y1="284" y2="320"></line>
+<line x1="215" x2="215" y1="332" y2="368"></line><line x1="405" x2="405" y1="332" y2="368"></line><line x1="605" x2="605" y1="332" y2="368"></line>
+</g>
+<polygon fill="#fee2e2" points="232,78 310,46 390,78" stroke="#334155" stroke-width="1.5"></polygon>
+<line stroke="#334155" stroke-width="1.5" x1="228" x2="228" y1="54" y2="80"></line>
+<rect fill="#fee2e2" height="28" stroke="#334155" stroke-width="1.5" width="182" x="220" y="98"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="311" y="116">holosystolic (blowing)</text>
+<rect fill="#fee2e2" height="28" stroke="#334155" stroke-width="1.5" width="182" x="220" y="146"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="311" y="164">holosystolic (harsh)</text>
+<line stroke="#334155" stroke-width="2.5" x1="300" x2="300" y1="190" y2="224"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="270" y="202">click</text>
+<polygon fill="#fee2e2" points="306,222 306,206 402,196 402,222" stroke="#334155" stroke-width="1.5"></polygon>
+<polygon fill="#fee2e2" points="410,240 410,270 540,270" stroke="#334155" stroke-width="1.5"></polygon>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="470" y="250">decrescendo</text>
+<line stroke="#334155" stroke-width="2.5" x1="440" x2="440" y1="286" y2="320"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="436" y="300">OS</text>
+<polygon fill="#fee2e2" points="448,318 460,302 530,306 560,310 600,290 600,318" stroke="#334155" stroke-width="1.5"></polygon>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="520" y="298">rumble</text>
+<polygon fill="#fee2e2" points="220,366 405,336 600,366" stroke="#334155" stroke-width="1.5"></polygon>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="410" y="360">continuous, peaks at S2</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="10" y="392">MS: shorter S2–OS interval = more severe; presystolic accentuation lost in AF. AS: later peak = more severe.</text>
+</svg>

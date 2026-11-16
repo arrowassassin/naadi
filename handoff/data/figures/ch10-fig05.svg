@@ -1,0 +1,70 @@
+<svg aria-label="Map of abdominal pain location in nine regions with likely differential diagnoses" role="img" viewbox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#ffffff" height="380" rx="40" stroke="#334155" stroke-width="2" width="600" x="20" y="20"></rect>
+<line stroke="#334155" stroke-dasharray="5,4" x1="220" x2="220" y1="20" y2="400"></line>
+<line stroke="#334155" stroke-dasharray="5,4" x1="420" x2="420" y1="20" y2="400"></line>
+<line stroke="#334155" stroke-dasharray="5,4" x1="20" x2="620" y1="146" y2="146"></line>
+<line stroke="#334155" stroke-dasharray="5,4" x1="20" x2="620" y1="272" y2="272"></line>
+<!-- RUQ (patient's right = viewer's left) -->
+<rect fill="#fef3c7" height="104" rx="8" width="176" x="34" y="34"></rect>
+<text font-size="13" font-weight="bold" x="44" y="52">Right upper quadrant</text>
+<text x="44" y="70">Biliary colic, cholecystitis</text>
+<text x="44" y="86">Cholangitis, hepatitis</text>
+<text x="44" y="102">Liver abscess, Budd-Chiari</text>
+<text x="44" y="118">RLL pneumonia, Fitz-Hugh-</text>
+<text x="44" y="132">Curtis</text>
+<rect fill="#fee2e2" height="104" rx="8" width="180" x="230" y="34"></rect>
+<text font-size="13" font-weight="bold" x="240" y="52">Epigastric</text>
+<text x="240" y="70">PUD / perforation</text>
+<text x="240" y="86">Pancreatitis, gastritis</text>
+<text x="240" y="102">Inferior MI (get ECG!)</text>
+<text x="240" y="118">Early appendicitis</text>
+<text x="240" y="132">AAA, esophagitis</text>
+<rect fill="#e0f2fe" height="104" rx="8" width="176" x="430" y="34"></rect>
+<text font-size="13" font-weight="bold" x="440" y="52">Left upper quadrant</text>
+<text x="440" y="70">Splenic infarct/rupture</text>
+<text x="440" y="86">Pancreatitis (tail)</text>
+<text x="440" y="102">Gastric ulcer</text>
+<text x="440" y="118">LLL pneumonia</text>
+<!-- middle row -->
+<rect fill="#e0f2fe" height="104" rx="8" width="176" x="34" y="160"></rect>
+<text font-size="13" font-weight="bold" x="44" y="178">Right flank</text>
+<text x="44" y="196">Nephrolithiasis</text>
+<text x="44" y="212">Pyelonephritis</text>
+<text x="44" y="228">Retrocecal appendicitis</text>
+<rect fill="#fee2e2" height="104" rx="8" width="180" x="230" y="160"></rect>
+<text font-size="13" font-weight="bold" x="240" y="178">Periumbilical / diffuse</text>
+<text x="240" y="196">Early appendicitis, SBO</text>
+<text x="240" y="212">Mesenteric ischemia (pain</text>
+<text x="240" y="228">out of proportion to exam)</text>
+<text x="240" y="244">Ruptured AAA, DKA, gastro-</text>
+<text x="240" y="258">enteritis, sickle crisis</text>
+<rect fill="#e0f2fe" height="104" rx="8" width="176" x="430" y="160"></rect>
+<text font-size="13" font-weight="bold" x="440" y="178">Left flank</text>
+<text x="440" y="196">Nephrolithiasis</text>
+<text x="440" y="212">Pyelonephritis</text>
+<text x="440" y="228">Splenic flexure ischemic</text>
+<text x="440" y="244">colitis</text>
+<!-- bottom row -->
+<rect fill="#dcfce7" height="104" rx="8" width="176" x="34" y="286"></rect>
+<text font-size="13" font-weight="bold" x="44" y="304">Right lower quadrant</text>
+<text x="44" y="322">Appendicitis</text>
+<text x="44" y="338">Ectopic pregnancy, ovarian</text>
+<text x="44" y="354">torsion, ruptured cyst, PID</text>
+<text x="44" y="370">Crohn ileitis, Meckel,</text>
+<text x="44" y="384">cecal diverticulitis</text>
+<rect fill="#fef3c7" height="104" rx="8" width="180" x="230" y="286"></rect>
+<text font-size="13" font-weight="bold" x="240" y="304">Suprapubic</text>
+<text x="240" y="322">Cystitis, urinary retention</text>
+<text x="240" y="338">PID, endometritis</text>
+<text x="240" y="354">Ectopic pregnancy</text>
+<text x="240" y="370">Sigmoid diverticulitis</text>
+<rect fill="#dcfce7" height="104" rx="8" width="176" x="430" y="286"></rect>
+<text font-size="13" font-weight="bold" x="440" y="304">Left lower quadrant</text>
+<text x="440" y="322">Diverticulitis (age &gt; 50)</text>
+<text x="440" y="338">Ectopic, ovarian torsion,</text>
+<text x="440" y="354">PID; sigmoid volvulus</text>
+<text x="440" y="370">Ischemic colitis, IBD,</text>
+<text x="440" y="384">inguinal hernia</text>
+</g>
+</svg>

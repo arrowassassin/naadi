@@ -1,0 +1,58 @@
+<svg aria-label="Map of autonomic and somatic pathways showing neurotransmitters and receptors, and a G-protein key." role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch03-arrow4" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#e0f2fe" height="270" rx="8" stroke="#334155" width="62" x="8" y="30"></rect>
+<text font-weight="bold" text-anchor="middle" x="39" y="160">CNS</text>
+<text text-anchor="middle" x="39" y="178">(brain,</text><text text-anchor="middle" x="39" y="192">cord)</text>
+<text font-weight="bold" text-anchor="middle" x="160" y="20">Preganglionic</text>
+<text font-weight="bold" text-anchor="middle" x="345" y="20">Postganglionic</text>
+<text font-weight="bold" text-anchor="middle" x="530" y="20">Target receptor</text>
+<!-- row 1 parasympathetic -->
+<text x="78" y="44">Parasympathetic (CN III, VII, IX, X; S2–S4)</text>
+<line stroke="#334155" stroke-width="2" x1="70" x2="240" y1="55" y2="55"></line><text text-anchor="middle" x="150" y="70">ACh</text>
+<circle cx="250" cy="55" fill="#fef3c7" r="10" stroke="#334155"></circle><text text-anchor="middle" x="250" y="80">Nn</text>
+<line marker-end="url(#ch03-arrow4)" stroke="#334155" stroke-width="2" x1="260" x2="420" y1="55" y2="55"></line><text text-anchor="middle" x="345" y="70">ACh</text>
+<rect fill="#dcfce7" height="30" rx="4" stroke="#334155" width="210" x="425" y="40"></rect><text text-anchor="middle" x="530" y="60">M (M2 heart, M3 glands/SM)</text>
+<!-- row 2 sympathetic -->
+<text x="78" y="92">Sympathetic (T1–L2), most effectors</text>
+<line stroke="#334155" stroke-width="2" x1="70" x2="240" y1="102" y2="102"></line><text text-anchor="middle" x="150" y="117">ACh</text>
+<circle cx="250" cy="102" fill="#fef3c7" r="10" stroke="#334155"></circle><text text-anchor="middle" x="250" y="127">Nn</text>
+<line marker-end="url(#ch03-arrow4)" stroke="#334155" stroke-width="2" x1="260" x2="420" y1="102" y2="102"></line><text text-anchor="middle" x="345" y="117">NE</text>
+<rect fill="#fee2e2" height="30" rx="4" stroke="#334155" width="210" x="425" y="87"></rect><text text-anchor="middle" x="530" y="107">α1, α2, β1, β2</text>
+<!-- row 3 sweat -->
+<text x="78" y="139">Sympathetic to eccrine sweat glands</text>
+<line stroke="#334155" stroke-width="2" x1="70" x2="240" y1="149" y2="149"></line><text text-anchor="middle" x="150" y="164">ACh</text>
+<circle cx="250" cy="149" fill="#fef3c7" r="10" stroke="#334155"></circle><text text-anchor="middle" x="250" y="174">Nn</text>
+<line marker-end="url(#ch03-arrow4)" stroke="#334155" stroke-width="2" x1="260" x2="420" y1="149" y2="149"></line><text text-anchor="middle" x="345" y="164">ACh (!)</text>
+<rect fill="#dcfce7" height="30" rx="4" stroke="#334155" width="210" x="425" y="134"></rect><text text-anchor="middle" x="530" y="154">M3 (sweating)</text>
+<!-- row 4 renal -->
+<text x="78" y="186">Sympathetic to renal vasculature</text>
+<line stroke="#334155" stroke-width="2" x1="70" x2="240" y1="196" y2="196"></line><text text-anchor="middle" x="150" y="211">ACh</text>
+<circle cx="250" cy="196" fill="#fef3c7" r="10" stroke="#334155"></circle><text text-anchor="middle" x="250" y="221">Nn</text>
+<line marker-end="url(#ch03-arrow4)" stroke="#334155" stroke-width="2" x1="260" x2="420" y1="196" y2="196"></line><text text-anchor="middle" x="345" y="211">Dopamine</text>
+<rect fill="#e0f2fe" height="30" rx="4" stroke="#334155" width="210" x="425" y="181"></rect><text text-anchor="middle" x="530" y="201">D1 (renal vasodilation)</text>
+<!-- row 5 adrenal -->
+<text x="78" y="233">Adrenal medulla (a modified ganglion)</text>
+<line stroke="#334155" stroke-width="2" x1="70" x2="240" y1="243" y2="243"></line><text text-anchor="middle" x="150" y="258">ACh</text>
+<rect fill="#fef3c7" height="20" stroke="#334155" width="20" x="240" y="233"></rect><text text-anchor="middle" x="250" y="270">Nn</text>
+<line marker-end="url(#ch03-arrow4)" stroke="#334155" stroke-dasharray="6 4" stroke-width="2" x1="260" x2="420" y1="243" y2="243"></line><text text-anchor="middle" x="345" y="258">Epi 80% / NE 20%</text>
+<rect fill="#fee2e2" height="30" rx="4" stroke="#334155" width="210" x="425" y="228"></rect><text text-anchor="middle" x="530" y="248">Bloodstream → α, β</text>
+<!-- row 6 somatic -->
+<text x="78" y="280">Somatic motor (no ganglion)</text>
+<line marker-end="url(#ch03-arrow4)" stroke="#334155" stroke-width="2" x1="70" x2="420" y1="290" y2="290"></line><text text-anchor="middle" x="250" y="305">ACh</text>
+<rect fill="#fef3c7" height="30" rx="4" stroke="#334155" width="210" x="425" y="275"></rect><text text-anchor="middle" x="530" y="295">Nm (skeletal muscle NMJ)</text>
+<!-- key -->
+<rect fill="#fef3c7" height="72" rx="6" stroke="#334155" width="200" x="8" y="320"></rect>
+<text font-weight="bold" text-anchor="middle" x="108" y="338">Gq → PLC → IP3/Ca²⁺</text>
+<text text-anchor="middle" x="108" y="356">α1 · M1 · M3 · H1 · V1</text>
+<text text-anchor="middle" x="108" y="374">contract / secrete</text>
+<rect fill="#dcfce7" height="72" rx="6" stroke="#334155" width="200" x="220" y="320"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="338">Gs → ↑cAMP</text>
+<text text-anchor="middle" x="320" y="356">β1 · β2 · β3 · D1 · H2 · V2</text>
+<text text-anchor="middle" x="320" y="374">heart ↑; smooth muscle relaxes</text>
+<rect fill="#fee2e2" height="72" rx="6" stroke="#334155" width="200" x="432" y="320"></rect>
+<text font-weight="bold" text-anchor="middle" x="532" y="338">Gi → ↓cAMP</text>
+<text text-anchor="middle" x="532" y="356">α2 · M2 · D2</text>
+<text text-anchor="middle" x="532" y="374">↓NE release, ↓HR</text>
+</g>
+</svg>

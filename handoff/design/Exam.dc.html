@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi — Practice exam mode</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.5; padding: 16px 16px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 8px 8px 8px 20px; border-radius: 28px; background: #0E0F12; border: 1px solid #26282E">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px">Practice exam</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C9CBD1">Block 3 of 7 · Question 14 of 40</span>
+<span style="flex: 1 1 40px"></span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C9CBD1">Break left 32:00</span>
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #F4F4F0; color: #050506; font-family: 'JetBrains Mono', monospace; font-size: 15px">38:52</span>
+<button type="button" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #3A3D45; background: transparent; color: #F4F4F0; font-size: 14px">Pause is off in exam mode</button>
+<a href="Results.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #FFB454; color: #FFB454; text-decoration: none; font-size: 14px">End block</a>
+</header>
+
+<div style="flex: 1; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<nav aria-label="Questions in this block" style="flex: 1 1 200px; max-width: 280px; min-width: 0; padding: 16px; border-radius: 28px; background: #0E0F12; border: 1px solid #1F2126; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px">
+<sc-for list="{{qs}}" as="q" hint-placeholder-count="40">
+<button type="button" aria-label="{{q.label}}" style="{{q.style}}">{{q.n}}</button>
+</sc-for>
+</nav>
+
+<main style="flex: 999 1 520px; min-width: 0; max-width: 900px; padding: 40px clamp(20px, 4vw, 56px); border-radius: 28px; background: #0E0F12; border: 1px solid #1F2126; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 19px; line-height: 1.65">A 34-year-old woman comes to the physician because of fatigue and two episodes of kidney stones in the past year. Laboratory studies show:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px">
+<sc-for list="{{labs}}" as="l" hint-placeholder-count="5">
+<div style="padding: 14px 16px; border-radius: 18px; background: #050506; border: 1px solid #26282E; display: flex; flex-direction: column"><span style="font-size: 12px; color: #9C9EA6">{{l.name}}</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px">{{l.value}}</span></div>
+</sc-for>
+</div>
+<h1 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.5">Which of the following is the most likely underlying defect?</h1>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{options}}" as="o" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{o.on}}" style="{{o.style}}"><span style="{{o.badge}}">{{o.id}}</span><span style="flex: 1; text-align: left">{{o.text}}</span></button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between">
+<button type="button" style="min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1px solid #3A3D45; background: transparent; color: #F4F4F0; font-size: 15px">Previous</button>
+<button type="button" style="min-height: 52px; padding: 0 28px; border-radius: 999px; border: 0; background: #C6FF3D; color: #0B1400; font-weight: 600; font-size: 15px">Next question</button>
+</div>
+</main>
+
+<aside aria-label="Exam tools" style="flex: 1 1 180px; max-width: 240px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{tools}}" as="t" hint-placeholder-count="7">
+<button type="button" style="min-height: 52px; padding: 0 20px; border-radius: 18px; border: 1px solid #26282E; background: #0E0F12; color: #F4F4F0; font-size: 15px; text-align: left">{{t}}</button>
+</sc-for>
+<p style="margin: 8px 4px 0; font-size: 13px; color: #9C9EA6">Naadi stays silent during an exam, just like test day. It reviews the whole thing with you afterwards.</p>
+</aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const b = 'height:44px;border-radius:12px;font-family:JetBrains Mono,monospace;font-size:13px;box-sizing:border-box;';
+    const flagged = [4, 9];
+    const qs = Array.from({ length: 40 }, (_, i) => {
+      const n = i + 1;
+      let style = b + 'border:1px dashed #5A5D66;background:transparent;color:#C9CBD1'; let label = 'Question ' + n + ', not answered';
+      if (n < 14) { style = b + 'border:0;background:#26282E;color:#F4F4F0'; label = 'Question ' + n + ', answered'; }
+      if (flagged.includes(n)) { style = b + 'border:2px solid #FFB454;background:transparent;color:#FFB454'; label = 'Question ' + n + ', flagged'; }
+      if (n === 14) { style = b + 'border:0;background:#C6FF3D;color:#0B1400;font-weight:700'; label = 'Question 14, current'; }
+      return { n, style, label };
+    });
+    const labs = [['Na⁺', '140'], ['Cl⁻', '114'], ['HCO₃⁻', '16'], ['K⁺', '3.1'], ['Urine pH', '6.8']].map(([name, value]) => ({ name, value }));
+    const row = 'display:flex;align-items:center;gap:14px;width:100%;min-height:60px;padding:8px 18px 8px 8px;border-radius:18px;font-size:17px;box-sizing:border-box;';
+    const dot = 'width:44px;height:44px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;';
+    const options = [['A', 'Impaired bicarbonate reabsorption in the proximal tubule'], ['B', 'Impaired hydrogen ion secretion in the collecting duct'], ['C', 'Decreased aldosterone production'], ['D', 'Increased production of lactic acid'], ['E', 'Loss of bicarbonate in the stool']].map(([id, text]) => {
+      const on = id === 'B';
+      return { id, text, on: on ? 'true' : 'false',
+        style: row + (on ? 'background:#F4F4F0;border:1px solid #F4F4F0;color:#050506' : 'background:#050506;border:1px solid #26282E;color:#F4F4F0'),
+        badge: dot + (on ? 'background:#050506;color:#F4F4F0' : 'background:#1B1D22;color:#F4F4F0') };
+    });
+    const tools = ['Flag question', 'Highlight text', 'Strike out an option', 'Lab values', 'Calculator', 'Scratch paper — ink', 'Zoom and contrast'];
+    return { qs, labs, options, tools };
+  }
+}
+</script>
+</body>
+</html>

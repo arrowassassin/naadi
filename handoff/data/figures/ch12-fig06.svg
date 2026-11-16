@@ -1,0 +1,39 @@
+<svg aria-label="Surrogate decision-maker hierarchy" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch12-arrow5" markerheight="7" markerwidth="7" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fee2e2" height="36" rx="6" stroke="#334155" width="340" x="150" y="6"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="22">Patient lacks capacity for this decision</text>
+<text text-anchor="middle" x="320" y="36">Emergency + no surrogate available → treat (implied consent)</text>
+<line marker-end="url(#ch12-arrow5)" stroke="#334155" x1="320" x2="320" y1="42" y2="56"></line>
+<rect fill="#dcfce7" height="34" rx="6" stroke="#334155" width="400" x="120" y="58"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="74">0. Patient's own advance directive / POLST / documented wishes</text>
+<text text-anchor="middle" x="320" y="87">(binding: the surrogate interprets, not overrides)</text>
+<g>
+<rect fill="#e0f2fe" height="30" rx="5" stroke="#334155" width="360" x="140" y="102"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="122">1. Health care agent (DPOA-HC) named by patient</text>
+<rect fill="#e0f2fe" height="30" rx="5" stroke="#334155" width="330" x="155" y="138"></rect>
+<text text-anchor="middle" x="320" y="158">2. Court-appointed guardian (with health authority)</text>
+<rect fill="#fef3c7" height="30" rx="5" stroke="#334155" width="300" x="170" y="174"></rect>
+<text text-anchor="middle" x="320" y="194">3. Spouse / domestic partner</text>
+<rect fill="#fef3c7" height="30" rx="5" stroke="#334155" width="270" x="185" y="210"></rect>
+<text text-anchor="middle" x="320" y="230">4. Adult children (majority if they disagree)</text>
+<rect fill="#fef3c7" height="30" rx="5" stroke="#334155" width="240" x="200" y="246"></rect>
+<text text-anchor="middle" x="320" y="266">5. Parents</text>
+<rect fill="#fef3c7" height="30" rx="5" stroke="#334155" width="210" x="215" y="282"></rect>
+<text text-anchor="middle" x="320" y="302">6. Adult siblings</text>
+<rect fill="#fef3c7" height="30" rx="5" stroke="#334155" width="180" x="230" y="318"></rect>
+<text text-anchor="middle" x="320" y="338">7. Other relatives / close friend</text>
+</g>
+<line marker-end="url(#ch12-arrow5)" stroke="#334155" stroke-width="2" x1="560" x2="560" y1="104" y2="344"></line>
+<text font-size="12" x="575" y="200">descend</text>
+<text font-size="12" x="575" y="215">only if</text>
+<text font-size="12" x="575" y="230">higher</text>
+<text font-size="12" x="575" y="245">tier</text>
+<text font-size="12" x="575" y="260">absent</text>
+<text font-size="12" x="20" y="200">Standard:</text>
+<text font-size="12" x="20" y="215">substituted</text>
+<text font-size="12" x="20" y="230">judgment →</text>
+<text font-size="12" x="20" y="245">best interest</text>
+<text text-anchor="middle" x="320" y="372">No one available / unresolvable conflict → ethics consult → court (guardianship)</text>
+</g>
+</svg>

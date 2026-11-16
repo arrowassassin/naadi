@@ -1,0 +1,62 @@
+<svg aria-label="ATLS primary survey flowchart from airway to exposure with key interventions" role="img" viewbox="0 0 640 470" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch10-a1" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" width="240" x="200" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="30">Trauma patient arrives</text>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="320" x2="320" y1="42" y2="58"></line>
+<!-- A -->
+<rect fill="#e0f2fe" height="62" rx="6" stroke="#334155" width="200" x="20" y="60"></rect>
+<text font-weight="bold" x="30" y="80">A · Airway + C-spine</text>
+<text font-size="12" x="30" y="97">Talking = patent. Gurgling,</text>
+<text font-size="12" x="30" y="112">stridor, GCS ≤ 8 → definitive airway</text>
+<rect fill="#fee2e2" height="62" rx="6" stroke="#334155" width="380" x="240" y="60"></rect>
+<text font-size="12" x="250" y="80">Jaw thrust, suction, oral airway → RSI with manual</text>
+<text font-size="12" x="250" y="96">in-line stabilization. Cannot intubate/oxygenate →</text>
+<text font-size="12" x="250" y="112">surgical cricothyrotomy (needle cric if age &lt; 12 y)</text>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="220" x2="238" y1="91" y2="91"></line>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="120" x2="120" y1="122" y2="138"></line>
+<!-- B -->
+<rect fill="#e0f2fe" height="62" rx="6" stroke="#334155" width="200" x="20" y="140"></rect>
+<text font-weight="bold" x="30" y="160">B · Breathing</text>
+<text font-size="12" x="30" y="177">Expose chest, breath sounds,</text>
+<text font-size="12" x="30" y="192">trachea, SpO2, chest wall</text>
+<rect fill="#fee2e2" height="62" rx="6" stroke="#334155" width="380" x="240" y="140"></rect>
+<text font-size="12" x="250" y="160">Tension PTX → needle/finger decompression → chest tube</text>
+<text font-size="12" x="250" y="176">Open PTX → 3-sided occlusive dressing → chest tube</text>
+<text font-size="12" x="250" y="192">Massive hemothorax → chest tube ± thoracotomy</text>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="220" x2="238" y1="171" y2="171"></line>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="120" x2="120" y1="202" y2="218"></line>
+<!-- C -->
+<rect fill="#e0f2fe" height="78" rx="6" stroke="#334155" width="200" x="20" y="220"></rect>
+<text font-weight="bold" x="30" y="240">C · Circulation</text>
+<text font-size="12" x="30" y="257">HR, BP, skin, mental status;</text>
+<text font-size="12" x="30" y="272">find bleeding: chest, abdomen,</text>
+<text font-size="12" x="30" y="287">pelvis, long bones, floor</text>
+<rect fill="#fee2e2" height="78" rx="6" stroke="#334155" width="380" x="240" y="220"></rect>
+<text font-size="12" x="250" y="240">Pressure/tourniquet; 2 large-bore IVs (or IO)</text>
+<text font-size="12" x="250" y="256">1 L warm crystalloid → early pRBC:plasma:platelets 1:1:1</text>
+<text font-size="12" x="250" y="272">TXA within 3 h; pelvic binder; FAST in the bay</text>
+<text font-size="12" x="250" y="288">Tamponade → pericardiocentesis/thoracotomy</text>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="220" x2="238" y1="259" y2="259"></line>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="120" x2="120" y1="298" y2="314"></line>
+<!-- D -->
+<rect fill="#e0f2fe" height="50" rx="6" stroke="#334155" width="200" x="20" y="316"></rect>
+<text font-weight="bold" x="30" y="336">D · Disability</text>
+<text font-size="12" x="30" y="354">GCS, pupils, lateralizing signs</text>
+<rect fill="#fee2e2" height="50" rx="6" stroke="#334155" width="380" x="240" y="316"></rect>
+<text font-size="12" x="250" y="336">Check glucose; prevent hypoxia &amp; hypotension (2° brain</text>
+<text font-size="12" x="250" y="352">injury); herniation → HOB 30°, osmotherapy, neurosurgery</text>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="220" x2="238" y1="341" y2="341"></line>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="120" x2="120" y1="366" y2="382"></line>
+<!-- E -->
+<rect fill="#e0f2fe" height="50" rx="6" stroke="#334155" width="200" x="20" y="384"></rect>
+<text font-weight="bold" x="30" y="404">E · Exposure</text>
+<text font-size="12" x="30" y="422">Undress fully, log-roll</text>
+<rect fill="#fee2e2" height="50" rx="6" stroke="#334155" width="380" x="240" y="384"></rect>
+<text font-size="12" x="250" y="404">Prevent hypothermia (warm blankets, warm fluids);</text>
+<text font-size="12" x="250" y="420">hypothermia + acidosis + coagulopathy = lethal triad</text>
+<line marker-end="url(#ch10-a1)" stroke="#334155" x1="220" x2="238" y1="409" y2="409"></line>
+<rect fill="#dcfce7" height="24" rx="6" stroke="#334155" width="600" x="20" y="442"></rect>
+<text font-size="12" text-anchor="middle" x="320" y="459">Stabilized → adjuncts (CXR, pelvic XR, FAST/eFAST) → secondary survey (AMPLE, head-to-toe) → CT</text>
+</g>
+</svg>

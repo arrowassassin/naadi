@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naadi design system</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050506}
+a{color:#C6FF3D}a:hover{color:#E2FF94}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1560px; box-sizing: border-box; overflow: hidden; background: #050506; color: #F4F4F0; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.5; padding: 64px; display: flex; flex-direction: column; gap: 48px">
+
+<header style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 120px; line-height: 0.86; letter-spacing: -0.05em">Naadi<span style="color: #C6FF3D">.</span> <span style="color: #8A8C92">system</span></h1>
+<p style="margin: 0; max-width: 380px; font-size: 16px; color: #C9CBD1">One black ground, one lime for the student's actions, one violet for the assistant. Everything else is neutral.</p>
+</header>
+
+<!-- Color -->
+<section aria-labelledby="c-h" style="display: flex; flex-direction: column; gap: 16px">
+<h2 id="c-h" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6; font-weight: 500">Color tokens</h2>
+<div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{colors}}" as="c" hint-placeholder-count="16">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="{{c.sw}}"></div>
+<span style="font-weight: 600; font-size: 13px">{{c.name}}</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">{{c.hex}} · {{c.use}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<div style="display: flex; gap: 48px">
+<!-- Type -->
+<section aria-labelledby="t-h" style="flex: 1.2; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h2 id="t-h" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6; font-weight: 500">Type</h2>
+<div style="display: flex; align-items: baseline; gap: 20px; padding-bottom: 14px; border-bottom: 1px solid #1F2126"><span style="width: 150px; flex: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">display · 800 · 72–216</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 88px; line-height: 0.9; letter-spacing: -0.05em">38 days.</span></div>
+<div style="display: flex; align-items: baseline; gap: 20px; padding-bottom: 14px; border-bottom: 1px solid #1F2126"><span style="width: 150px; flex: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">headline · 700 · 28–60</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: -0.03em">Acid–base, step by step.</span></div>
+<div style="display: flex; align-items: baseline; gap: 20px; padding-bottom: 14px; border-bottom: 1px solid #1F2126"><span style="width: 150px; flex: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">lead · 400 · 24–38</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Today is renal day. One lesson, forty questions.</span></div>
+<div style="display: flex; align-items: baseline; gap: 20px; padding-bottom: 14px; border-bottom: 1px solid #1F2126"><span style="width: 150px; flex: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">reading · Inter 400 · 17–19</span><span style="font-size: 18px; line-height: 1.6; color: #C9CBD1">A raised gap means an unmeasured acid has been added.</span></div>
+<div style="display: flex; align-items: baseline; gap: 20px; padding-bottom: 14px; border-bottom: 1px solid #1F2126"><span style="width: 150px; flex: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">label · Mono 500 · 11–13</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase">Renal · Lesson 6 of 14</span></div>
+<div style="display: flex; align-items: baseline; gap: 20px"><span style="width: 150px; flex: none; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9C9EA6">ink · Caveat 700</span><span style="font-family: Caveat, cursive; font-weight: 700; font-size: 34px; line-height: 1">Handwritten notes preview</span></div>
+</section>
+
+<!-- Shape -->
+<section aria-labelledby="s-h" style="flex: 0.8; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h2 id="s-h" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6; font-weight: 500">Radius · spacing · targets</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 88px; border-radius: 12px; background: #1B1D22; border: 1px solid #34363D"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C9CBD1">12 · inner</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 88px; border-radius: 22px; background: #1B1D22; border: 1px solid #34363D"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C9CBD1">22 · block</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 88px; border-radius: 32px; background: #1B1D22; border: 1px solid #34363D"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C9CBD1">32 · tile</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 88px; border-radius: 999px; background: #1B1D22; border: 1px solid #34363D"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C9CBD1">pill · controls</span></div>
+</div>
+<div style="display: flex; align-items: flex-end; gap: 10px; margin-top: 8px">
+<sc-for list="{{space}}" as="sp" hint-placeholder-count="8">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="{{sp.box}}"></div><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C9CBD1">{{sp.n}}</span></div>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 14px; color: #C9CBD1">Touch targets are 44 px minimum, 48 px in the assistant bar. Breakpoints: phone under 640, tablet 640–1100, laptop above. Motion: 200 ms for controls, 400 ms for sheets, ease-out; all motion off under reduced-motion.</p>
+</section>
+</div>
+
+<!-- Components -->
+<section aria-labelledby="k-h" style="display: flex; flex-direction: column; gap: 16px">
+<h2 id="k-h" style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9C9EA6; font-weight: 500">Components</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+
+<div style="padding: 28px; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">Buttons</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 0; background: #C6FF3D; color: #0B1400; font-weight: 600; font-size: 14px">Primary</button>
+<button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 0; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 14px">Strong</button>
+<button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid #3A3D45; background: transparent; color: #F4F4F0; font-size: 14px">Secondary</button>
+<button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 0; background: #9D8CFF; color: #0D0828; font-weight: 600; font-size: 14px">Assistant</button>
+<button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 2px solid #F4F4F0; outline: 3px solid #9D8CFF; outline-offset: 2px; background: transparent; color: #F4F4F0; font-size: 14px">Focus</button>
+<button type="button" disabled style="min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px dashed #5A5D66; background: transparent; color: #8A8C92; font-size: 14px">Disabled</button>
+</div>
+<span style="font-size: 13px; color: #9C9EA6">Lime = the student's next step, one per view. Violet = anything the assistant does.</span>
+</div>
+
+<div style="padding: 28px; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">Navigation &amp; assistant bar</span>
+<div style="display: flex; align-items: center; gap: 4px; padding: 6px; width: fit-content; border-radius: 999px; background: #141519; border: 1px solid #26282E">
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #F4F4F0; color: #050506; font-weight: 600; font-size: 14px">Today</span>
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; color: #C9CBD1; font-size: 14px">Learn</span>
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; color: #C9CBD1; font-size: 14px">Practice</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 999px; background: #141519; border: 1px solid #34363D">
+<span style="width: 48px; height: 48px; flex: none; border-radius: 50%; background: #23252B; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4F4F0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+<span style="flex: 1; color: #9C9EA6; font-size: 15px">Ask Naadi…</span>
+<span style="width: 48px; height: 48px; flex: none; border-radius: 50%; background: #C6FF3D; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1400" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></span>
+</div>
+<span style="font-size: 13px; color: #9C9EA6">Floating pill at top, assistant bar pinned to the bottom of every page. On phone the bar opens a full-screen sheet.</span>
+</div>
+
+<div style="padding: 28px; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">Highlights &amp; status</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.8"><mark style="background: #C6FF3D; color: #050506; padding: 1px 4px; border-radius: 4px">Key fact</mark> · <mark style="background: #C4BAFF; color: #050506; padding: 1px 4px; border-radius: 4px">Formula</mark> · <mark style="background: #FFCB85; color: #050506; padding: 1px 4px; border-radius: 4px">My mistake</mark></p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: #C6FF3D; color: #0B1400">Now</span>
+<span style="font-size: 12px; padding: 5px 12px; border-radius: 999px; background: #1B1D22; color: #F4F4F0">Done</span>
+<span style="font-size: 12px; padding: 5px 12px; border-radius: 999px; border: 1px dashed #5A5D66; color: #C9CBD1">Planned</span>
+<span style="font-size: 12px; padding: 5px 12px; border-radius: 999px; border: 1px solid #FFB454; color: #FFB454">Weak area</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border-radius: 999px; border: 1px solid #2A2D34">4K HDR</span>
+</div>
+<span style="font-size: 13px; color: #9C9EA6">Each highlight colour has a fixed meaning, so the Notes page can filter by it. Status never relies on colour alone — every chip carries a word.</span>
+</div>
+
+<div style="padding: 28px; border-radius: 32px; background: #0E0F12; border: 1px solid #1F2126; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #9C9EA6">Tile · default</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">Today's flow</span>
+<span style="font-size: 14px; color: #C9CBD1">Surface 1, 1 px line, 32 radius, 32 padding.</span>
+</div>
+<div style="padding: 28px; border-radius: 32px; background: #17132E; border: 1px solid #2C2552; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C4BAFF">Tile · assistant</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 24px; line-height: 1.2">Naadi noticed something.</span>
+<span style="font-size: 14px; color: #C4BAFF">Violet ground, used only for AI-written content.</span>
+</div>
+<div style="padding: 28px; border-radius: 32px; background: #F4F4F0; color: #050506; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #55575E">Tile · paper</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Her own notes</span>
+<span style="font-size: 14px; color: #55575E">Light ground, used only for what the student writes or draws.</span>
+</div>
+
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const colors = [
+      ['ground', '#050506', 'page'], ['surface-1', '#0E0F12', 'tiles'], ['surface-2', '#1B1D22', 'inner'], ['line', '#26282E', 'borders'],
+      ['text', '#F4F4F0', 'primary'], ['text-2', '#C9CBD1', 'body'], ['text-3', '#9C9EA6', 'labels'], ['paper', '#F4F4F0', 'notes'],
+      ['lime', '#C6FF3D', 'action'], ['lime-ink', '#0B1400', 'on lime'], ['violet', '#9D8CFF', 'assistant'], ['violet-ground', '#17132E', 'AI tiles'],
+      ['violet-text', '#C4BAFF', 'on violet'], ['amber', '#FFB454', 'weak / wrong'], ['mark-amber', '#FFCB85', 'highlight'], ['ink-violet', '#5B45D6', 'pen on paper']
+    ].map(([name, hex, use]) => ({ name, hex, use, sw: 'height:72px;border-radius:18px;border:1px solid #34363D;background:' + hex }));
+    const space = [4, 8, 12, 16, 20, 24, 32, 48].map((n) => ({ n, box: 'width:' + n + 'px;height:' + n + 'px;border-radius:3px;background:#C6FF3D' }));
+    return { colors, space };
+  }
+}
+</script>
+</body>
+</html>

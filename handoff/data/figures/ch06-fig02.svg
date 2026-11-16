@@ -1,0 +1,74 @@
+<svg aria-label="Bilirubin metabolism from heme breakdown to excretion, with prehepatic, hepatic and posthepatic jaundice patterns" role="img" viewbox="0 0 640 450" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch06-arrow2" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fee2e2" height="88" rx="6" stroke="#334155" width="200" x="15" y="15"></rect>
+<text font-weight="bold" x="25" y="33">Splenic macrophage</text>
+<text x="25" y="51">Hemoglobin → heme</text>
+<text x="25" y="67">heme oxygenase → biliverdin</text>
+<text x="25" y="83">biliverdin reductase →</text>
+<text x="25" y="98">unconjugated bilirubin (UCB)</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="215" x2="243" y1="59" y2="59"></line>
+<rect fill="#fef3c7" height="88" rx="6" stroke="#334155" width="160" x="245" y="15"></rect>
+<text font-weight="bold" x="255" y="33">Plasma</text>
+<text x="255" y="51">UCB bound to albumin</text>
+<text x="255" y="67">Lipid-soluble, not</text>
+<text x="255" y="83">filtered by kidney →</text>
+<text x="255" y="98">never in urine</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="405" x2="433" y1="59" y2="59"></line>
+<rect fill="#e0f2fe" height="103" rx="6" stroke="#334155" width="190" x="435" y="15"></rect>
+<text font-weight="bold" x="445" y="33">Hepatocyte</text>
+<text x="445" y="51">1 Uptake (OATP1B1/1B3)</text>
+<text x="445" y="67">2 Conjugation with</text>
+<text x="445" y="83">glucuronate (UGT1A1)</text>
+<text x="445" y="99">3 Canalicular export (MRP2)</text>
+<text x="445" y="114">— rate-limiting step</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="530" x2="530" y1="118" y2="146"></line>
+<rect fill="#dcfce7" height="44" rx="6" stroke="#334155" width="190" x="435" y="148"></rect>
+<text x="445" y="166">Bile → duodenum: conjugated</text>
+<text x="445" y="182">bilirubin (water-soluble)</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="530" x2="530" y1="192" y2="218"></line>
+<rect fill="#dcfce7" height="44" rx="6" stroke="#334155" width="190" x="435" y="220"></rect>
+<text x="445" y="238">Gut bacteria (β-glucuronidase,</text>
+<text x="445" y="254">reduction) → urobilinogen</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="530" x2="530" y1="264" y2="290"></line>
+<rect fill="#dcfce7" height="30" rx="6" stroke="#334155" width="190" x="435" y="292"></rect>
+<text x="445" y="312">→ stercobilin: brown stool</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="435" x2="407" y1="242" y2="242"></line>
+<rect fill="#fef3c7" height="44" rx="6" stroke="#334155" width="160" x="245" y="220"></rect>
+<text x="255" y="238">~10–20% reabsorbed</text>
+<text x="255" y="254">(enterohepatic)</text>
+<line marker-end="url(#ch06-arrow2)" stroke="#334155" stroke-width="2" x1="325" x2="325" y1="264" y2="290"></line>
+<rect fill="#fef3c7" height="30" rx="6" stroke="#334155" width="160" x="245" y="292"></rect>
+<text x="255" y="312">Kidney → urobilin (yellow)</text>
+<rect fill="#e0f2fe" height="187" rx="6" stroke="#334155" width="200" x="15" y="135"></rect>
+<text font-weight="bold" x="25" y="153">Neonates</text>
+<text x="25" y="171">Low UGT1A1 activity + high</text>
+<text x="25" y="187">RBC turnover + sterile gut →</text>
+<text x="25" y="203">physiologic UCB jaundice</text>
+<text x="25" y="219">(day 2–5). UCB crosses BBB →</text>
+<text x="25" y="235">kernicterus (basal ganglia).</text>
+<text x="25" y="253">Phototherapy isomerizes UCB</text>
+<text x="25" y="269">to water-soluble lumirubin.</text>
+<text x="25" y="287">Breast-milk jaundice:</text>
+<text x="25" y="303">β-glucuronidase in milk →</text>
+<text x="25" y="318">↑ enterohepatic recycling</text>
+<rect fill="#fee2e2" height="100" rx="6" stroke="#334155" width="195" x="15" y="340"></rect>
+<text font-weight="bold" x="23" y="358">PREHEPATIC (hemolysis)</text>
+<text x="23" y="376">↑ UCB</text>
+<text x="23" y="392">Urine bilirubin: absent</text>
+<text x="23" y="408">Urine urobilinogen: ↑</text>
+<text x="23" y="424">↑ LDH, ↓ haptoglobin</text>
+<rect fill="#e0f2fe" height="100" rx="6" stroke="#334155" width="200" x="222" y="340"></rect>
+<text font-weight="bold" x="230" y="358">HEPATIC</text>
+<text x="230" y="376">Uptake/conjugation ↓ → ↑ UCB</text>
+<text x="230" y="392">(Gilbert, Crigler-Najjar)</text>
+<text x="230" y="408">Excretion defect → ↑CB (Dubin-</text>
+<text x="230" y="424">Johnson, Rotor); hepatitis → mixed</text>
+<rect fill="#dcfce7" height="100" rx="6" stroke="#334155" width="195" x="434" y="340"></rect>
+<text font-weight="bold" x="442" y="358">POSTHEPATIC (obstruction)</text>
+<text x="442" y="376">↑ CB; urine bilirubin present</text>
+<text x="442" y="392">(dark urine); urobilinogen ↓</text>
+<text x="442" y="408">Pale (acholic) stool, pruritus</text>
+<text x="442" y="424">↑↑ ALP, GGT</text>
+</g>
+</svg>

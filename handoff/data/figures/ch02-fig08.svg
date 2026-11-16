@@ -1,0 +1,55 @@
+<svg aria-label="Map of antibiotic target sites on a bacterial cell" font-family="sans-serif" role="img" viewbox="0 0 760 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#fef3c7" height="310" rx="80" stroke="#334155" stroke-width="5" width="370" x="190" y="45"></rect>
+<rect fill="#ffffff" height="280" rx="68" stroke="#334155" stroke-dasharray="6,3" stroke-width="1.5" width="340" x="205" y="60"></rect>
+<text fill="#0f172a" font-size="12" font-style="italic" text-anchor="middle" x="375" y="80">Peptidoglycan wall (thick) + membrane (dashed)</text>
+<path d="M260,140 C280,110 320,110 330,140 C340,170 300,195 280,180 C255,165 245,150 260,140 Z" fill="#e0f2fe" stroke="#334155" stroke-width="1.5"></path>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="292" y="152">DNA</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="292" y="210">gyrase / topo IV</text>
+<rect fill="#dcfce7" height="34" rx="6" stroke="#334155" width="95" x="250" y="245"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="297" y="266">RNA pol.</text>
+<ellipse cx="460" cy="140" fill="#fee2e2" rx="45" ry="28" stroke="#334155" stroke-width="1.5"></ellipse>
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="460" y="144">50S</text>
+<ellipse cx="460" cy="186" fill="#fee2e2" rx="32" ry="18" stroke="#334155" stroke-width="1.5"></ellipse>
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="460" y="190">30S</text>
+<rect fill="#e0f2fe" height="50" rx="6" stroke="#334155" width="130" x="395" y="250"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="270">PABA → DHF</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="288">→ THF</text>
+<rect fill="#fef3c7" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="175" x="4" y="39"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="92" y="57">CELL WALL SYNTHESIS</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="72">β-lactams → PBPs</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="87">Vancomycin → D-Ala-D-Ala</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="102">Bacitracin, fosfomycin</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="180" x2="192" y1="75" y2="90"></line>
+<rect fill="#fef3c7" height="57" rx="7" stroke="#334155" stroke-width="1.3" width="175" x="4" y="142"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="92" y="159">CELL MEMBRANE</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="174">Daptomycin (G+ only)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="189">Polymyxin/colistin (G−)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="180" x2="205" y1="170" y2="175"></line>
+<rect fill="#e0f2fe" height="57" rx="7" stroke="#334155" stroke-width="1.3" width="175" x="4" y="222"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="92" y="239">DNA</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="254">Fluoroquinolones</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="269">Metronidazole (radicals)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="180" x2="262" y1="250" y2="175"></line>
+<rect fill="#dcfce7" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="175" x="4" y="309"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="92" y="327">mRNA SYNTHESIS</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="92" y="342">Rifampin (rifamycins)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="180" x2="255" y1="330" y2="278"></line>
+<rect fill="#fee2e2" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="185" x="570" y="44"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="662" y="62">50S SUBUNIT</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="77">Macrolides, clindamycin,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="92">chloramphenicol, linezolid,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="107">streptogramins</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="570" x2="503" y1="90" y2="135"></line>
+<rect fill="#fee2e2" height="57" rx="7" stroke="#334155" stroke-width="1.3" width="185" x="570" y="166"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="662" y="184">30S SUBUNIT</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="199">Aminoglycosides</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="214">Tetracyclines, tigecycline</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="570" x2="494" y1="195" y2="188"></line>
+<rect fill="#e0f2fe" height="57" rx="7" stroke="#334155" stroke-width="1.3" width="185" x="570" y="272"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="662" y="289">FOLATE SYNTHESIS</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="304">Sulfonamides → DHPS</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="662" y="319">Trimethoprim → DHFR</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="570" x2="527" y1="290" y2="278"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="380" y="385">Bactericidal: wall, membrane, DNA, aminoglycosides. Bacteriostatic: most other 30S/50S drugs.</text>
+</svg>

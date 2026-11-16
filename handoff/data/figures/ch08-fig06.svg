@@ -1,0 +1,50 @@
+<svg aria-label="Shock types hemodynamic comparison chart" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="34" stroke="#334155" width="620" x="10" y="10"></rect>
+<g fill="#0f172a" font-weight="bold">
+<text x="80" y="32">Shock type</text>
+<text x="200" y="32">CO / CI</text>
+<text x="270" y="32">PCWP</text>
+<text x="340" y="32">SVR</text>
+<text x="410" y="32">SvO2</text>
+<text x="530" y="32">First-line treatment</text>
+</g>
+<rect fill="#fef3c7" height="50" stroke="#334155" width="620" x="10" y="44"></rect>
+<text font-weight="bold" x="80" y="66">Hypovolemic</text>
+<text x="80" y="83">hemorrhage, GI loss</text>
+<text x="200" y="74">↓</text><text x="270" y="74">↓</text><text x="340" y="74">↑</text><text x="410" y="74">↓</text>
+<text x="530" y="66">Crystalloid; blood</text>
+<text x="530" y="83">products if bleeding</text>
+<rect fill="#fee2e2" height="50" stroke="#334155" width="620" x="10" y="94"></rect>
+<text font-weight="bold" x="80" y="116">Cardiogenic</text>
+<text x="80" y="133">MI, HF, arrhythmia</text>
+<text x="200" y="124">↓</text><text x="270" y="124">↑</text><text x="340" y="124">↑</text><text x="410" y="124">↓</text>
+<text x="530" y="116">Revascularise; NE ±</text>
+<text x="530" y="133">dobutamine; MCS</text>
+<rect fill="#e0f2fe" height="50" stroke="#334155" width="620" x="10" y="144"></rect>
+<text font-weight="bold" x="80" y="166">Obstructive: PE</text>
+<text x="80" y="183">tension PTX similar</text>
+<text x="200" y="174">↓</text><text x="270" y="174">↓/nl</text><text x="340" y="174">↑</text><text x="410" y="174">↓</text>
+<text x="530" y="166">Thrombolysis / needle</text>
+<text x="530" y="183">decompression; RA ↑</text>
+<rect fill="#e0f2fe" height="50" stroke="#334155" width="620" x="10" y="194"></rect>
+<text font-weight="bold" x="80" y="216">Obstructive:</text>
+<text x="80" y="233">tamponade</text>
+<text x="200" y="224">↓</text><text x="270" y="224">↑ (=RA)</text><text x="340" y="224">↑</text><text x="410" y="224">↓</text>
+<text x="530" y="216">Pericardiocentesis;</text>
+<text x="530" y="233">equal diastolic pressures</text>
+<rect fill="#dcfce7" height="50" stroke="#334155" width="620" x="10" y="244"></rect>
+<text font-weight="bold" x="80" y="266">Distributive:</text>
+<text x="80" y="283">septic, anaphylaxis</text>
+<text x="200" y="274">↑ (early)</text><text x="270" y="274">↓/nl</text><text x="340" y="274">↓↓</text><text x="410" y="274">↑</text>
+<text x="530" y="266">Fluids + norepinephrine;</text>
+<text x="530" y="283">IM epinephrine if anaphylaxis</text>
+<rect fill="#dcfce7" height="50" stroke="#334155" width="620" x="10" y="294"></rect>
+<text font-weight="bold" x="80" y="316">Neurogenic</text>
+<text x="80" y="333">spinal cord injury</text>
+<text x="200" y="324">↓</text><text x="270" y="324">↓/nl</text><text x="340" y="324">↓</text><text x="410" y="324">↓/nl</text>
+<text x="530" y="316">Fluids + NE/phenylephrine;</text>
+<text x="530" y="333">bradycardia: atropine</text>
+<text x="320" y="368">Warm skin + low SVR = distributive · high PCWP = cardiogenic/tamponade · low HR = neurogenic</text>
+</g>
+</svg>

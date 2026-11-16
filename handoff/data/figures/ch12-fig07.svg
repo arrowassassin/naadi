@@ -1,0 +1,23 @@
+<svg aria-label="Two by two table with test characteristic formulas" role="img" viewbox="0 0 640 330" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="270" y="22">Disease (gold standard)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="120" x="150" y="32"></rect><text font-weight="bold" text-anchor="middle" x="210" y="52">Present</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="120" x="270" y="32"></rect><text font-weight="bold" text-anchor="middle" x="330" y="52">Absent</text>
+<rect fill="#e0f2fe" height="60" stroke="#334155" width="110" x="40" y="62"></rect><text font-weight="bold" text-anchor="middle" x="95" y="96">Test +</text>
+<rect fill="#e0f2fe" height="60" stroke="#334155" width="110" x="40" y="122"></rect><text font-weight="bold" text-anchor="middle" x="95" y="156">Test −</text>
+<rect fill="#dcfce7" height="60" stroke="#334155" width="120" x="150" y="62"></rect><text font-weight="bold" text-anchor="middle" x="210" y="90">a = TP</text>
+<rect fill="#fee2e2" height="60" stroke="#334155" width="120" x="270" y="62"></rect><text font-weight="bold" text-anchor="middle" x="330" y="90">b = FP</text><text text-anchor="middle" x="330" y="108">(type I-like)</text>
+<rect fill="#fee2e2" height="60" stroke="#334155" width="120" x="150" y="122"></rect><text font-weight="bold" text-anchor="middle" x="210" y="150">c = FN</text><text text-anchor="middle" x="210" y="168">(type II-like)</text>
+<rect fill="#dcfce7" height="60" stroke="#334155" width="120" x="270" y="122"></rect><text font-weight="bold" text-anchor="middle" x="330" y="150">d = TN</text>
+<text x="410" y="96">PPV = a/(a+b)</text>
+<text x="410" y="156">NPV = d/(c+d)</text>
+<text text-anchor="middle" x="210" y="202">Sens = a/(a+c)</text>
+<text text-anchor="middle" x="330" y="202">Spec = d/(b+d)</text>
+<rect fill="#fef3c7" height="104" rx="6" stroke="#334155" width="600" x="20" y="218"></rect>
+<text x="30" y="238">LR+ = sens/(1 − spec)   LR− = (1 − sens)/spec   Post-test odds = pre-test odds × LR</text>
+<text x="30" y="256">Prevalence ↑ → PPV ↑, NPV ↓ (sens/spec unchanged). Lower the cutoff → sens ↑, spec ↓.</text>
+<text x="30" y="274">SnNout: highly sensitive test, negative result rules out. SpPin: specific, positive rules in.</text>
+<text x="30" y="292">ARR = CER − EER   RRR = ARR/CER   NNT = 1/ARR   NNH = 1/ARI</text>
+<text x="30" y="310">RR = [a/(a+b)] / [c/(c+d)] (cohort/RCT)   OR = ad/bc (case-control)</text>
+</g>
+</svg>

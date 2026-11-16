@@ -1,0 +1,40 @@
+<svg aria-label="Cross-section of cervical spinal cord showing dorsal columns, lateral corticospinal tract, spinothalamic tract, and gray matter horns" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch07-arrow" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<ellipse cx="250" cy="190" fill="#e0f2fe" rx="180" ry="140" stroke="#334155" stroke-width="2"></ellipse>
+<!-- gray matter butterfly -->
+<path d="M250,110 C215,70 170,60 175,95 C180,130 215,150 220,175 C205,215 170,250 180,285 C195,300 230,250 250,225 C270,250 305,300 320,285 C330,250 295,215 280,175 C285,150 320,130 325,95 C330,60 285,70 250,110 Z" fill="#fef3c7" stroke="#334155" stroke-width="1.5"></path>
+<!-- dorsal columns -->
+<path d="M250,55 L250,140 L225,120 L205,58 Z" fill="#dcfce7" stroke="#334155"></path>
+<path d="M250,55 L250,140 L275,120 L295,58 Z" fill="#dcfce7" stroke="#334155"></path>
+<!-- lateral CST -->
+<ellipse cx="365" cy="165" fill="#fee2e2" rx="38" ry="40" stroke="#334155"></ellipse>
+<ellipse cx="135" cy="165" fill="#fee2e2" rx="38" ry="40" stroke="#334155"></ellipse>
+<!-- spinothalamic -->
+<ellipse cx="345" cy="255" fill="#e0f2fe" rx="35" ry="28" stroke="#334155" stroke-dasharray="5,3"></ellipse>
+<ellipse cx="155" cy="255" fill="#e0f2fe" rx="35" ry="28" stroke="#334155" stroke-dasharray="5,3"></ellipse>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" text-anchor="middle" x="250" y="40">DORSAL (posterior)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" text-anchor="middle" x="250" y="348">VENTRAL (anterior)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="230" y="100">G</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="212" y="80">C</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="365" y="170">LCST</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="345" y="260">STT</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="250" y="270">AWC</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="300" y="275">VH</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="300" y="105">DH</text>
+<!-- legend -->
+<rect fill="#ffffff" height="300" stroke="#334155" width="180" x="450" y="40"></rect>
+<rect fill="#dcfce7" height="16" stroke="#334155" width="16" x="460" y="55"></rect><text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="68">Dorsal columns</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="84">G gracilis (legs)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="99">C cuneatus (arms, &gt;T6)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="114">ipsilateral; crosses medulla</text>
+<rect fill="#fee2e2" height="16" stroke="#334155" width="16" x="460" y="128"></rect><text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="141">LCST lateral corticospinal</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="157">ipsilateral UMN in cord</text>
+<rect fill="#e0f2fe" height="16" stroke="#334155" stroke-dasharray="4,2" width="16" x="460" y="172"></rect><text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="185">STT spinothalamic</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="201">contralateral pain/temp</text>
+<rect fill="#fef3c7" height="16" stroke="#334155" width="16" x="460" y="216"></rect><text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="229">Gray matter</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="245">DH dorsal horn (sensory)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="261">VH ventral horn (LMN)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="277">AWC anterior white</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="482" y="293">commissure (STT cross)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="460" y="320">Sacral fibers lateral in LCST/STT</text>
+</svg>

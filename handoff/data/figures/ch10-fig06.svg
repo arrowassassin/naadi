@@ -1,0 +1,66 @@
+<svg aria-label="Postoperative fever timeline from intraoperative period through week 4" role="img" viewbox="0 0 640 350" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch10-a3" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="320" y="20">Postoperative fever: timing → cause</text>
+<line marker-end="url(#ch10-a3)" stroke="#334155" stroke-width="2" x1="20" x2="625" y1="60" y2="60"></line>
+<text font-weight="bold" x="30" y="50">Intra-op/hours</text>
+<text font-weight="bold" x="170" y="50">POD 1–2</text>
+<text font-weight="bold" x="290" y="50">POD 3–5</text>
+<text font-weight="bold" x="410" y="50">POD 5–7</text>
+<text font-weight="bold" x="530" y="50">&gt; POD 7</text>
+<line stroke="#334155" x1="150" x2="150" y1="54" y2="66"></line>
+<line stroke="#334155" x1="275" x2="275" y1="54" y2="66"></line>
+<line stroke="#334155" x1="395" x2="395" y1="54" y2="66"></line>
+<line stroke="#334155" x1="515" x2="515" y1="54" y2="66"></line>
+<rect fill="#fee2e2" height="190" rx="6" stroke="#334155" width="124" x="20" y="76"></rect>
+<text font-weight="bold" x="28" y="96">Immediate</text>
+<text x="28" y="114">Malignant</text>
+<text x="28" y="129">hyperthermia</text>
+<text x="28" y="147">Transfusion</text>
+<text x="28" y="162">reaction</text>
+<text x="28" y="180">Pre-existing</text>
+<text x="28" y="195">infection</text>
+<text x="28" y="213">Bacteremia from</text>
+<text x="28" y="228">instrumentation</text>
+<rect fill="#fef3c7" height="190" rx="6" stroke="#334155" width="120" x="150" y="76"></rect>
+<text font-weight="bold" x="158" y="96">"Wind"</text>
+<text x="158" y="114">Atelectasis (link</text>
+<text x="158" y="129">to fever debated)</text>
+<text x="158" y="147">Aspiration</text>
+<text x="158" y="165">Necrotizing SSI</text>
+<text x="158" y="180">(GAS, Clostridium)</text>
+<text x="158" y="195">— within 24–48 h</text>
+<text x="158" y="213">Early leak/MI,</text>
+<text x="158" y="228">adrenal crisis</text>
+<rect fill="#e0f2fe" height="190" rx="6" stroke="#334155" width="114" x="276" y="76"></rect>
+<text font-weight="bold" x="284" y="96">"Water"</text>
+<text x="284" y="114">UTI (Foley)</text>
+<text x="284" y="132">Pneumonia</text>
+<text x="284" y="147">(HAP/VAP)</text>
+<text x="284" y="165">Line infection</text>
+<text x="284" y="183">Anastomotic</text>
+<text x="284" y="198">leak (POD 3–7)</text>
+<rect fill="#dcfce7" height="190" rx="6" stroke="#334155" width="114" x="396" y="76"></rect>
+<text font-weight="bold" x="404" y="96">"Wound" and</text>
+<text font-weight="bold" x="404" y="111">"Walking"</text>
+<text x="404" y="129">Surgical site</text>
+<text x="404" y="144">infection</text>
+<text x="404" y="162">DVT / PE</text>
+<text x="404" y="180">Thrombophlebitis</text>
+<text x="404" y="198"><i>C. difficile</i></text>
+<rect fill="#fef3c7" height="190" rx="6" stroke="#334155" width="110" x="516" y="76"></rect>
+<text font-weight="bold" x="524" y="96">"Wonder</text>
+<text font-weight="bold" x="524" y="111">drugs"/deep</text>
+<text x="524" y="129">Intra-abdominal</text>
+<text x="524" y="144">abscess</text>
+<text x="524" y="162">Drug fever</text>
+<text x="524" y="177">(β-lactams,</text>
+<text x="524" y="192">sulfa, phenytoin)</text>
+<text x="524" y="210">Prosthesis</text>
+<text x="524" y="225">infection</text>
+<rect fill="#ffffff" height="64" rx="6" stroke="#334155" width="606" x="20" y="276"></rect>
+<text x="30" y="294">Workup of persistent fever: examine wound, lines, legs, lungs, abdomen; CBC,</text>
+<text x="30" y="311">UA/culture, blood cultures, CXR; CT abdomen/pelvis with contrast for suspected</text>
+<text x="30" y="328">abscess/leak (POD ≥ 5); duplex US for DVT; C. difficile testing if diarrhea.</text>
+</g>
+</svg>

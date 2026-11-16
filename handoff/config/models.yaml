@@ -1,0 +1,76 @@
+# Naadi — FREE model routing via OpenRouter (https://openrouter.ai/api/v1)
+# Catalog read from /api/v1/models on 2026-11-15 (467 models, ~15 ":free" LLMs).
+# Free models change often: run tools/check_models.py at startup/CI and keep IDs ONLY here.
+#
+# Free-tier limits (OpenRouter FAQ, Nov 2026):
+#   • 20 requests/minute on :free models
+#   • 50 requests/day account-wide if lifetime credit purchases < $10
+#   • 1,000 requests/day once you have EVER bought ≥ $10 of credits (one-time; the credits are not spent by :free calls)
+#   → Strongly recommended: a one-time $10 top-up. Falling back between free models does NOT bypass the daily cap.
+# Privacy: free endpoints are mostly single-provider (NVIDIA, Google AI Studio). NVIDIA free endpoints LOG prompts.
+#   Never send PII or vault documents to free models; strip the student's name/email/IDs before every call.
+#   Do NOT set zdr / data_collection:deny on free chains — no eligible provider would remain.
+
+budget:
+  daily_request_cap: 1000          # set 50 until the one-time $10 top-up is made
+  reserve_for_chat: 0.7            # 70% of the daily cap for the tutor; jobs (authoring, OCR) use the rest
+  max_llm_calls_per_turn: 4        # tutor tool loop hard stop
+  rpm: 18                          # stay under 20 rpm with a token bucket
+  on_cap_reached: degrade          # answer from course retrieval only + "AI quota resets at 00:00 UTC"
+  pdf_engine: cloudflare-ai        # ALWAYS set; the default (mistral-ocr) is paid ($2/1k pages)
+  only_free_ids_in_chains: true    # a paid model in a fallback chain is billed at the paid price
+
+roles:
+  tutor:                           # page-aware chat with tool calling
+    model: nvidia/nemotron-3-ultra-550b-a55b:free     # 1M ctx; tools; best free GPQA/MMLU-Pro (86.7% / 85.8%)
+    fallbacks: [google/gemma-4-31b-it:free, inclusionai/ling-3.2-flash:free, openrouter/free]
+    temperature: 0.3
+  vision:                          # photos, handwriting, page images, diagrams (rasterize PDFs in browser)
+    model: nvidia/nemotron-3.5-super-vl:free          # text+image+video, structured outputs, 1M ctx
+    fallbacks: [google/gemma-4-31b-it:free, inclusionai/ling-3.2-flash:free]
+  structured:                      # flashcards, plans, JSON (json_schema), Mermaid text
+    model: inclusionai/ling-3.2-flash:free            # has structured_outputs
+    fallbacks: [baidu/ernie-5.5-flash-preview:free, nvidia/nemotron-3.5-super-vl:free]
+    validate: pydantic + retry once; mermaid.parse on server
+  long_context:                    # chapter / PDF summaries
+    model: nvidia/nemotron-3.5-super-vl:free          # best long-context evidence among free (AA-LCR 69%)
+    fallbacks: [inclusionai/ling-3.2-flash:free, baidu/ernie-5.5-flash-preview:free]
+  author:                          # offline question authoring jobs (night-time, within budget)
+    model: nvidia/nemotron-3-ultra-550b-a55b:free
+    fallbacks: [baidu/ernie-5.5-flash-preview:free]
+  reviewer:                        # blind solver — MUST be a different family from the author (Google ≠ NVIDIA)
+    model: google/gemma-4-31b-it:free
+    fallbacks: [baidu/ernie-5.5-flash-preview:free, inclusionai/ling-3.2-flash:free]
+    if_fallback_family_equals_author: mark_review_not_independent
+  router:                          # prefer deterministic Python rules first (costs no request)
+    model: liquid/lfm-3-1.7b:free
+    fallbacks: [nvidia/nemotron-3.5-lightning:free]
+  embeddings:                      # LOCAL, free, private, no rate limit
+    engine: fastembed==0.9.1
+    model: BAAI/bge-small-en-v1.5   # 384 dims, 67 MB, MIT
+    dimensions: 384                # = halfvec(384) in db/schema.sql
+    reranker: Xenova/ms-marco-MiniLM-L-6-v2
+    cloud_fallback: nvidia/nemotron-3.5-embed-1b:free   # 2048 dims, separate index, NON-PII course text only
+  speech_to_text:
+    order:
+      - ipados_dictation           # free, on-device, zero code
+      - browser: "@huggingface/transformers@4.3.2 onnx-community/whisper-base (WebGPU → WASM)"
+      - server: "faster-whisper==1.2.1 base.en int8 on Space CPU"
+      - last_resort: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free   # uses daily quota; NVIDIA logs audio
+
+search:
+  provider: tavily                 # FREE plan: 1,000 credits/month (~33/day), 100 rpm
+  depth: basic                     # 1 credit (advanced = 2)
+  max_results: 5
+  include_answer: false            # use snippets; avoid extract calls
+  cache_ttl_days: 7                # normalized-query cache in Postgres (search_cache table)
+  per_user_daily_cap: 25
+  monthly_credit_guard: 950        # stop at 950 and fall back to course retrieval only
+  only_when: course_retrieval_score < 0.55 or user explicitly asks for "latest" / web
+  never_call: [research, crawl, map]
+  include_domains: [usmle.org, ecfmg.org, intealth.org, nrmp.org, aamc.org, ncbi.nlm.nih.gov, cdc.gov,
+                    uspreventiveservicestaskforce.org, fda.gov, who.int, travel.state.gov, uscis.gov]
+
+# Upgrade path (paid, only if quality or quotas demand it) — swap per role, nothing else changes:
+#   tutor: anthropic/claude-sonnet-5.5 ($2/$10) · vision/long: google/gemini-3.8-flash · author: anthropic/claude-opus-5.5
+#   reviewer: google/gemini-4-argon · embeddings: openai/text-embedding-3-large (then migrate the index)

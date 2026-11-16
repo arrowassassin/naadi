@@ -1,0 +1,51 @@
+<svg aria-label="Chart of chromosomal translocations in leukemias and lymphomas with fusion genes and clinical clues" role="img" viewbox="0 0 680 408" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#ffffff" height="34" stroke="#334155" width="110" x="10" y="10"></rect><text font-size="13" font-weight="bold" x="18" y="32">Translocation</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="150" x="120" y="10"></rect><text font-size="13" font-weight="bold" x="128" y="32">Fusion genes</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="190" x="270" y="10"></rect><text font-size="13" font-weight="bold" x="278" y="32">Disease</text>
+<rect fill="#ffffff" height="34" stroke="#334155" width="210" x="460" y="10"></rect><text font-size="13" font-weight="bold" x="468" y="32">Key clue</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="110" x="10" y="44"></rect><text font-weight="bold" x="18" y="64">t(9;22)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="150" x="120" y="44"></rect><text x="128" y="64">BCR::ABL1</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="190" x="270" y="44"></rect><text x="278" y="64">CML; Ph+ B-ALL (adults)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="210" x="460" y="44"></rect><text x="468" y="64">TKI (imatinib); poor in ALL</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="110" x="10" y="74"></rect><text font-weight="bold" x="18" y="94">t(15;17)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="150" x="120" y="74"></rect><text x="128" y="94">PML::RARA</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="190" x="270" y="74"></rect><text x="278" y="94">APL (AML subtype)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="210" x="460" y="74"></rect><text x="468" y="94">DIC risk; ATRA + arsenic</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="110" x="10" y="104"></rect><text font-weight="bold" x="18" y="124">t(8;21)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="150" x="120" y="104"></rect><text x="128" y="124">RUNX1::RUNX1T1</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="190" x="270" y="104"></rect><text x="278" y="124">AML with maturation</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="210" x="460" y="104"></rect><text x="468" y="124">Favorable prognosis</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="110" x="10" y="134"></rect><text font-weight="bold" x="18" y="154">inv(16)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="150" x="120" y="134"></rect><text x="128" y="154">CBFB::MYH11</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="190" x="270" y="134"></rect><text x="278" y="154">AML + abnormal eosinophils</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="210" x="460" y="134"></rect><text x="468" y="154">Favorable prognosis</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="110" x="10" y="164"></rect><text font-weight="bold" x="18" y="184">t(12;21)</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="150" x="120" y="164"></rect><text x="128" y="184">ETV6::RUNX1</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="190" x="270" y="164"></rect><text x="278" y="184">Childhood B-ALL</text>
+<rect fill="#fef3c7" height="30" stroke="#334155" width="210" x="460" y="164"></rect><text x="468" y="184">Most common; favorable</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="110" x="10" y="194"></rect><text font-weight="bold" x="18" y="214">t(8;14)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="150" x="120" y="194"></rect><text x="128" y="214">MYC::IGH</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="190" x="270" y="194"></rect><text x="278" y="214">Burkitt lymphoma</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="210" x="460" y="194"></rect><text x="468" y="214">Starry sky; Ki-67 ~100%</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="110" x="10" y="224"></rect><text font-weight="bold" x="18" y="244">t(14;18)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="150" x="120" y="224"></rect><text x="128" y="244">IGH::BCL2</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="190" x="270" y="224"></rect><text x="278" y="244">Follicular lymphoma</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="210" x="460" y="224"></rect><text x="468" y="244">Blocks apoptosis; indolent</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="110" x="10" y="254"></rect><text font-weight="bold" x="18" y="274">t(11;14)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="150" x="120" y="254"></rect><text x="128" y="274">CCND1::IGH</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="190" x="270" y="254"></rect><text x="278" y="274">Mantle cell lymphoma</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="210" x="460" y="254"></rect><text x="468" y="274">Cyclin D1+, CD5+, aggressive</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="110" x="10" y="284"></rect><text font-weight="bold" x="18" y="304">t(11;18)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="150" x="120" y="284"></rect><text x="128" y="304">BIRC3::MALT1</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="190" x="270" y="284"></rect><text x="278" y="304">Gastric MALT lymphoma</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="210" x="460" y="284"></rect><text x="468" y="304">Resists H. pylori therapy</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="110" x="10" y="314"></rect><text font-weight="bold" x="18" y="334">t(2;5)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="150" x="120" y="314"></rect><text x="128" y="334">NPM1::ALK</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="190" x="270" y="314"></rect><text x="278" y="334">Anaplastic large cell (T)</text>
+<rect fill="#e0f2fe" height="30" stroke="#334155" width="210" x="460" y="314"></rect><text x="468" y="334">CD30+, children/young adults</text>
+<rect fill="#fef3c7" height="14" stroke="#334155" width="16" x="10" y="358"></rect><text x="32" y="370">Leukemia (myeloid / lymphoblastic)</text>
+<rect fill="#e0f2fe" height="14" stroke="#334155" width="16" x="270" y="358"></rect><text x="292" y="370">Lymphoma</text>
+<text x="10" y="394">"::" = fusion gene. In B-cell lymphomas the IGH enhancer (chr 14) drives the partner gene.</text>
+</g>
+</svg>

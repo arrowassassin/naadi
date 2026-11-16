@@ -1,0 +1,43 @@
+<svg aria-label="Acute ischemic stroke management timeline" role="img" viewbox="0 0 640 370" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch12-arrow3" markerheight="7" markerwidth="7" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#e0f2fe" height="44" rx="6" stroke="#334155" width="320" x="160" y="6"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="23">Suspected stroke: ABCs, glucose, LKW, NIHSS</text>
+<text text-anchor="middle" x="320" y="40">Noncontrast CT ± CTA/CTP within 20–25 min of arrival</text>
+<line marker-end="url(#ch12-arrow3)" stroke="#334155" x1="320" x2="320" y1="50" y2="66"></line>
+<rect fill="#fee2e2" height="28" rx="6" stroke="#334155" width="240" x="200" y="68"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="87">Hemorrhage? → ICH pathway</text>
+<line marker-end="url(#ch12-arrow3)" stroke="#334155" x1="320" x2="320" y1="96" y2="112"></line>
+<text x="330" y="108">No</text>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="320" y="128">Time from last known well</text>
+<line marker-end="url(#ch12-arrow3)" stroke="#334155" stroke-width="2" x1="30" x2="620" y1="140" y2="140"></line>
+<g text-anchor="middle">
+<text x="30" y="156">0 h</text><text x="220" y="156">4.5 h</text><text x="320" y="156">6 h</text><text x="600" y="156">24 h</text>
+<line stroke="#334155" x1="220" x2="220" y1="134" y2="146"></line>
+<line stroke="#334155" x1="320" x2="320" y1="134" y2="146"></line>
+<line stroke="#334155" x1="600" x2="600" y1="134" y2="146"></line>
+</g>
+<rect fill="#dcfce7" height="64" rx="5" stroke="#334155" width="190" x="30" y="166"></rect>
+<text font-weight="bold" text-anchor="middle" x="125" y="182">IV thrombolysis</text>
+<text text-anchor="middle" x="125" y="197">Alteplase 0.9 mg/kg (max 90)</text>
+<text text-anchor="middle" x="125" y="211">or tenecteplase 0.25 mg/kg</text>
+<text text-anchor="middle" x="125" y="225">(max 25 mg, single bolus)</text>
+<rect fill="#fef3c7" height="52" rx="5" stroke="#334155" width="290" x="30" y="240"></rect>
+<text font-weight="bold" text-anchor="middle" x="175" y="257">Thrombectomy 0–6 h</text>
+<text text-anchor="middle" x="175" y="272">LVO (ICA/M1), NIHSS ≥6, ASPECTS ≥6</text>
+<text text-anchor="middle" x="175" y="286">(large-core trials: ASPECTS 3–5 also benefit)</text>
+<rect fill="#fef3c7" height="52" rx="5" stroke="#334155" width="280" x="320" y="240"></rect>
+<text font-weight="bold" text-anchor="middle" x="460" y="257">Thrombectomy 6–24 h</text>
+<text text-anchor="middle" x="460" y="272">LVO + favorable perfusion/MRI mismatch</text>
+<text text-anchor="middle" x="460" y="286">(DAWN / DEFUSE-3 criteria)</text>
+<rect fill="#e0f2fe" height="64" rx="5" stroke="#334155" width="370" x="230" y="166"></rect>
+<text font-weight="bold" text-anchor="middle" x="415" y="182">Not eligible for lytic / beyond window</text>
+<text text-anchor="middle" x="415" y="197">Aspirin 160–325 mg within 24–48 h</text>
+<text text-anchor="middle" x="415" y="211">Minor stroke (NIHSS ≤3) / high-risk TIA: DAPT 21 d</text>
+<text text-anchor="middle" x="415" y="225">Unknown onset: MRI DWI–FLAIR mismatch → may lyse</text>
+<rect fill="#fee2e2" height="62" rx="6" stroke="#334155" width="600" x="20" y="302"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="319">Blood pressure rules</text>
+<text text-anchor="middle" x="320" y="335">Before lytic: &lt;185/110 (IV labetalol, nicardipine, clevidipine) · After lytic: &lt;180/105 for 24 h</text>
+<text text-anchor="middle" x="320" y="351">No lytic: permissive HTN — treat only if &gt;220/120 (lower ~15% in first 24 h) · No antithrombotics for 24 h after lytic</text>
+</g>
+</svg>

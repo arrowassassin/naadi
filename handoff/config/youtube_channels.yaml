@@ -1,0 +1,241 @@
+# Candidate YouTube channel allowlist for Naadi (consumed by tools/youtube_mapper.py).
+#
+# Generated 2026-11-15 from research_notes/.../content_sources.md (Q1).
+# Only Ninja Nerd, MedCram and Dr. Najeeb (plus two extra channels the research surfaced)
+# have channel IDs confirmed against a third-party stats page (vidIQ). Every other
+# handle below is a BEST GUESS and is marked verified: false - resolve each with the
+# YouTube Data API `channels.list?part=id,snippet,contentDetails,statistics&forHandle=@handle`
+# (1 quota unit), confirm the returned title is the intended channel, then record
+# channel_id here and set verified: true. Do not hard-code subscriber counts or cadence.
+# Embeddability is per video (videos.list status.embeddable), never per channel.
+#
+# Fields
+#   handle      YouTube @handle (null when only the channel ID is known)
+#   channel_id  UC... id when known (verified via cited page); else null
+#   subjects    Naadi taxonomy domains (cardio, resp, renal, gi, endo, repro, preg, heme,
+#               immune, neuro, psych, msk, derm, multi, nutrition, biostat, social, dev, all)
+#   exams       step1 / step2ck / step3
+#   commercial_brand  true = free teaser videos from a paid platform; embed only, never copy slides/notes
+#   include     whether youtube_mapper.py should crawl it
+
+channels:
+  - handle: "@ninjanerdofficial"
+    channel_id: UC6QYFutt9cluQ3uSM963_KQ
+    name: Ninja Nerd
+    url: https://www.youtube.com/@ninjanerdofficial
+    subjects: [all]
+    exams: [step1, step2ck]
+    commercial_brand: false
+    include: true
+    verified: true
+    verified_url: https://vidiq.com/youtube-stats/channel/UC6QYFutt9cluQ3uSM963_KQ
+    notes: Handle and channel ID confirmed via vidIQ; subscriber count not shown there.
+
+  - handle: "@medcram"
+    channel_id: UCG-iSMVtWbbwDDXgXXypARQ
+    name: "MedCram - Medical Lectures Explained CLEARLY"
+    url: https://www.youtube.com/@medcram
+    subjects: [cardio, resp, renal, multi, heme]
+    exams: [step1, step2ck, step3]
+    commercial_brand: true
+    include: true
+    verified: true
+    verified_url: https://vidiq.com/youtube-stats/channel/UCG-iSMVtWbbwDDXgXXypARQ
+    notes: Handle and channel ID confirmed via vidIQ. Also sells paid courses; embed free videos only.
+
+  - handle: null
+    channel_id: UCPHpx55tgrbm8FrYYCflAHw
+    name: Dr. Najeeb Lectures (free subset)
+    url: https://www.youtube.com/channel/UCPHpx55tgrbm8FrYYCflAHw
+    subjects: [all]
+    exams: [step1]
+    commercial_brand: true
+    include: true
+    verified: true
+    verified_url: https://vidiq.com/youtube-stats/channel/UCPHpx55tgrbm8FrYYCflAHw
+    notes: >-
+      Channel ID confirmed via vidIQ (~2.3M subs, ~1.57K videos, ~0.5 uploads/week as of
+      2025-05-14 - stale, do not display). Links to paid DrNajeebLectures.com; only part of the
+      catalog is free on YouTube. Handle unknown.
+
+  - handle: "@DirtyMedicine"
+    channel_id: null
+    name: Dirty Medicine
+    url: https://www.youtube.com/@DirtyMedicine
+    subjects: [multi, biostat, heme, immune, neuro]
+    exams: [step1]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@armandohasudungan"
+    channel_id: null
+    name: Armando Hasudungan
+    url: https://www.youtube.com/@armandohasudungan
+    subjects: [all]
+    exams: [step1]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@osmosis"
+    channel_id: null
+    name: Osmosis from Elsevier (free videos)
+    url: https://www.youtube.com/@osmosis
+    subjects: [all]
+    exams: [step1, step2ck]
+    commercial_brand: true
+    include: true
+    verified: false
+    notes: "Elsevier-owned; free YouTube teasers only, full library paywalled. Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@RandyNeilMD"
+    channel_id: null
+    name: Randy Neil, MD
+    url: https://www.youtube.com/@RandyNeilMD
+    subjects: [all]
+    exams: [step1, step2ck]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@mehlmanmedical"
+    channel_id: null
+    name: Mehlman Medical
+    url: https://www.youtube.com/@mehlmanmedical
+    subjects: [all]
+    exams: [step1, step2ck, step3]
+    commercial_brand: true
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@divineinterventionpodcasts"
+    channel_id: null
+    name: Divine Intervention Podcasts
+    url: https://www.youtube.com/@divineinterventionpodcasts
+    subjects: [all]
+    exams: [step1, step2ck, step3]
+    commercial_brand: false
+    include: false
+    verified: false
+    notes: >-
+      Primarily a podcast on public podcast platforms; YouTube presence and handle unverified.
+      Prefer official Spotify/Apple embed widgets (content_sources.md Q5). Handle is a guess.
+      resolve channelId via YouTube Data API channels.list?forHandle=
+
+  - handle: "@StrongMed"
+    channel_id: null
+    name: Strong Medicine
+    url: https://www.youtube.com/@StrongMed
+    subjects: [cardio, resp, renal, endo, heme, multi, gi]
+    exams: [step2ck, step3]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@khanacademymedicine"
+    channel_id: null
+    name: Khan Academy Medicine
+    url: https://www.youtube.com/@khanacademymedicine
+    subjects: [all]
+    exams: [step1]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@RhesusMedicine"
+    channel_id: null
+    name: Rhesus Medicine
+    url: https://www.youtube.com/@RhesusMedicine
+    subjects: [multi, heme, immune, cardio, renal]
+    exams: [step1]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@ZeroToFinals"
+    channel_id: null
+    name: Zero to Finals
+    url: https://www.youtube.com/@ZeroToFinals
+    subjects: [all]
+    exams: [step2ck]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "UK finals focus - guideline content (NICE) may differ from US practice; reviewer must check. Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@TheNotedAnatomist"
+    channel_id: null
+    name: The Noted Anatomist
+    url: https://www.youtube.com/@TheNotedAnatomist
+    subjects: [msk, neuro, cardio, resp, gi]
+    exams: [step1]
+    commercial_brand: false
+    include: true
+    verified: false
+    notes: "Anatomy-focused. Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@AMBOSSMedical"
+    channel_id: null
+    name: AMBOSS
+    url: https://www.youtube.com/@AMBOSSMedical
+    subjects: [all]
+    exams: [step1, step2ck, step3]
+    commercial_brand: true
+    include: true
+    verified: false
+    notes: "Commercial Qbank brand: embed free videos only; never copy AMBOSS text, questions or images. Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@LecturioMedical"
+    channel_id: null
+    name: Lecturio Medical
+    url: https://www.youtube.com/@LecturioMedical
+    subjects: [all]
+    exams: [step1, step2ck]
+    commercial_brand: true
+    include: true
+    verified: false
+    notes: "Commercial brand: free teasers only. Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  - handle: "@crashcourse"
+    channel_id: null
+    name: CrashCourse
+    url: https://www.youtube.com/@crashcourse
+    subjects: [multi, dev, psych]
+    exams: [step1]
+    commercial_brand: false
+    include: false
+    verified: false
+    notes: "General-audience A&P/psychology; below USMLE depth - use only for primers. Handle is a guess. resolve channelId via YouTube Data API channels.list?forHandle="
+
+  # Extra channels surfaced by the research (IDs confirmed via vidIQ; not on the original list)
+  - handle: null
+    channel_id: UCl-J-ovSJhA3or73Q2uVpow
+    name: Medicosis Perfectionalis
+    url: https://www.youtube.com/channel/UCl-J-ovSJhA3or73Q2uVpow
+    subjects: [all]
+    exams: [step1]
+    commercial_brand: false
+    include: false
+    verified: true
+    verified_url: https://vidiq.com/youtube-stats/channel/UCl-J-ovSJhA3or73Q2uVpow
+    notes: Channel ID confirmed via vidIQ; editorial review pending, so not crawled by default.
+
+  - handle: null
+    channel_id: UCrtd2wePvAl6RN_D-9jWVQQ
+    name: Drbeen Medical Lectures
+    url: https://www.youtube.com/channel/UCrtd2wePvAl6RN_D-9jWVQQ
+    subjects: [all]
+    exams: [step1, step2ck]
+    commercial_brand: true
+    include: false
+    verified: true
+    verified_url: https://vidiq.com/youtube-stats/channel/UCrtd2wePvAl6RN_D-9jWVQQ
+    notes: Channel ID confirmed via vidIQ; editorial review pending, so not crawled by default.

@@ -1,0 +1,32 @@
+<svg aria-label="Plan Do Study Act improvement cycle" role="img" viewbox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch12-arrow6" markerheight="8" markerwidth="8" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="320" y="20">Model for Improvement: Aim · Measure · Change → PDSA</text>
+<rect fill="#e0f2fe" height="70" rx="8" stroke="#334155" width="260" x="190" y="34"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="54">PLAN</text>
+<text text-anchor="middle" x="320" y="70">SMART aim, predict outcome,</text>
+<text text-anchor="middle" x="320" y="85">who/what/where/when, choose measures</text>
+<text text-anchor="middle" x="320" y="99">(e.g., ↑ sepsis bundle to 90% in 3 mo)</text>
+<rect fill="#dcfce7" height="80" rx="8" stroke="#334155" width="200" x="430" y="140"></rect>
+<text font-weight="bold" text-anchor="middle" x="530" y="160">DO</text>
+<text text-anchor="middle" x="530" y="176">Run small-scale test</text>
+<text text-anchor="middle" x="530" y="191">(one unit, one shift)</text>
+<text text-anchor="middle" x="530" y="206">document problems/data</text>
+<rect fill="#fef3c7" height="70" rx="8" stroke="#334155" width="260" x="190" y="256"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="276">STUDY</text>
+<text text-anchor="middle" x="320" y="292">Analyze data (run chart), compare</text>
+<text text-anchor="middle" x="320" y="307">to prediction, check balancing measures</text>
+<rect fill="#fee2e2" height="80" rx="8" stroke="#334155" width="200" x="10" y="140"></rect>
+<text font-weight="bold" text-anchor="middle" x="110" y="160">ACT</text>
+<text text-anchor="middle" x="110" y="176">Adopt, adapt, or abandon;</text>
+<text text-anchor="middle" x="110" y="191">scale up or start the</text>
+<text text-anchor="middle" x="110" y="206">next cycle</text>
+<path d="M450,80 Q540,90 535,138" fill="none" marker-end="url(#ch12-arrow6)" stroke="#334155" stroke-width="2"></path>
+<path d="M530,220 Q530,290 452,292" fill="none" marker-end="url(#ch12-arrow6)" stroke="#334155" stroke-width="2"></path>
+<path d="M190,292 Q110,290 110,222" fill="none" marker-end="url(#ch12-arrow6)" stroke="#334155" stroke-width="2"></path>
+<path d="M110,140 Q100,80 188,70" fill="none" marker-end="url(#ch12-arrow6)" stroke="#334155" stroke-width="2"></path>
+<text font-weight="bold" text-anchor="middle" x="320" y="190">Rapid, iterative,</text>
+<text font-weight="bold" text-anchor="middle" x="320" y="206">small tests of change</text>
+<text text-anchor="middle" x="320" y="350">Repeated PDSA ramps → spread. Contrast: RCA looks back at one event; FMEA looks ahead at a process.</text>
+</g>
+</svg>

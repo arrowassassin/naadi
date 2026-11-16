@@ -1,0 +1,37 @@
+<svg aria-label="Spirogram of lung volumes and capacities" role="img" viewbox="0 0 640 385" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch05-arrow-f6" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#ffffff" height="370" width="640" x="0" y="0"></rect>
+<line stroke="#334155" stroke-width="1.5" x1="50" x2="320" y1="330" y2="330"></line>
+<line stroke="#334155" stroke-width="1.5" x1="50" x2="50" y1="330" y2="40"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" transform="rotate(-90 22 190)" x="22" y="190">Volume (L)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="45" y="334">0</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="45" y="64">6</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="45" y="226">2.4</text>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="50" x2="600" y1="60" y2="60"></line>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="50" x2="600" y1="200" y2="200"></line>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="50" x2="600" y1="222" y2="222"></line>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="50" x2="600" y1="276" y2="276"></line>
+<path d="M55,222 Q67,196 80,200 Q92,204 104,222 Q116,196 128,200 Q140,204 152,222 C165,160 175,60 185,60 C200,60 210,240 225,276 C235,290 245,230 255,222 Q267,196 279,200 Q291,204 303,222" fill="none" stroke="#2563eb" stroke-width="2.5"></path>
+<rect fill="#e0f2fe" height="140" stroke="#334155" width="60" x="340" y="60"></rect>
+<rect fill="#dcfce7" height="22" stroke="#334155" width="60" x="340" y="200"></rect>
+<rect fill="#fef3c7" height="54" stroke="#334155" width="60" x="340" y="222"></rect>
+<rect fill="#fee2e2" height="54" stroke="#334155" width="60" x="340" y="276"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="370" y="134">IRV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="370" y="215">TV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="370" y="253">ERV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="370" y="307">RV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="370" y="350">Volumes</text>
+<line marker-end="url(#ch05-arrow-f6)" marker-start="url(#ch05-arrow-f6)" stroke="#334155" stroke-width="1.5" x1="425" x2="425" y1="60" y2="222"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="145">IC</text>
+<line marker-end="url(#ch05-arrow-f6)" marker-start="url(#ch05-arrow-f6)" stroke="#334155" stroke-width="1.5" x1="425" x2="425" y1="222" y2="330"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="280">FRC</text>
+<line marker-end="url(#ch05-arrow-f6)" marker-start="url(#ch05-arrow-f6)" stroke="#334155" stroke-width="1.5" x1="475" x2="475" y1="60" y2="276"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="480" y="170">VC</text>
+<line marker-end="url(#ch05-arrow-f6)" marker-start="url(#ch05-arrow-f6)" stroke="#334155" stroke-width="1.5" x1="520" x2="520" y1="60" y2="330"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="525" y="200">TLC</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="470" y="350">Capacities</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="560" y="100">IC = IRV+TV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="560" y="250">FRC =</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="560" y="265">ERV+RV</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="50" y="378">RV, FRC and TLC cannot be measured by spirometry</text>
+</svg>

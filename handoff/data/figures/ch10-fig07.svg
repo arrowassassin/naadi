@@ -1,0 +1,62 @@
+<svg aria-label="Breast mass workup algorithm by age with imaging and biopsy steps" role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch10-a4" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fef3c7" height="36" rx="6" stroke="#334155" width="240" x="200" y="8"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="320" y="31">Palpable breast mass</text>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="270" x2="150" y1="44" y2="70"></line>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="370" x2="490" y1="44" y2="70"></line>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="220" x="40" y="72"></rect>
+<text font-weight="bold" text-anchor="middle" x="150" y="89">Age &lt; 30 (or pregnant/lactating)</text>
+<text text-anchor="middle" x="150" y="105">Targeted ULTRASOUND first</text>
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="220" x="380" y="72"></rect>
+<text font-weight="bold" text-anchor="middle" x="490" y="89">Age ≥ 30</text>
+<text text-anchor="middle" x="490" y="105">Diagnostic MAMMOGRAM + US</text>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="150" x2="150" y1="112" y2="138"></line>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="490" x2="490" y1="112" y2="138"></line>
+<line marker-end="url(#ch10-a4)" stroke="#334155" stroke-dasharray="4,3" x1="260" x2="378" y1="92" y2="92"></line>
+<text font-size="12" text-anchor="middle" x="319" y="130">add mammo if suspicious</text>
+<rect fill="#ffffff" height="30" rx="6" stroke="#334155" width="620" x="10" y="140"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="160">Classify imaging (BI-RADS)</text>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="90" x2="90" y1="170" y2="196"></line>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="250" x2="250" y1="170" y2="196"></line>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="410" x2="410" y1="170" y2="196"></line>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="560" x2="560" y1="170" y2="196"></line>
+<rect fill="#dcfce7" height="104" rx="6" stroke="#334155" width="150" x="10" y="198"></rect>
+<text font-weight="bold" x="18" y="216">Simple cyst</text>
+<text x="18" y="234">Asymptomatic →</text>
+<text x="18" y="249">reassure/routine</text>
+<text x="18" y="264">Symptomatic → aspirate</text>
+<text x="18" y="282">Bloody fluid, residual</text>
+<text x="18" y="297">mass, recurs → biopsy</text>
+<rect fill="#dcfce7" height="104" rx="6" stroke="#334155" width="150" x="170" y="198"></rect>
+<text font-weight="bold" x="178" y="216">BI-RADS 1–2</text>
+<text x="178" y="234">(benign)</text>
+<text x="178" y="252">BUT a clinically</text>
+<text x="178" y="267">suspicious mass still</text>
+<text x="178" y="282">needs biopsy —</text>
+<text x="178" y="297">imaging ≠ exclusion</text>
+<rect fill="#fef3c7" height="104" rx="6" stroke="#334155" width="150" x="330" y="198"></rect>
+<text font-weight="bold" x="338" y="216">BI-RADS 3</text>
+<text x="338" y="234">(probably benign,</text>
+<text x="338" y="249">&lt; 2% malignant,</text>
+<text x="338" y="264">e.g., fibroadenoma)</text>
+<text x="338" y="282">Short-interval imaging</text>
+<text x="338" y="297">in 6 mo (or biopsy)</text>
+<rect fill="#fee2e2" height="104" rx="6" stroke="#334155" width="140" x="490" y="198"></rect>
+<text font-weight="bold" x="498" y="216">BI-RADS 4–5</text>
+<text x="498" y="234">(suspicious/highly</text>
+<text x="498" y="249">suggestive)</text>
+<text x="498" y="267">Image-guided CORE</text>
+<text x="498" y="282">NEEDLE BIOPSY</text>
+<text x="498" y="297">(+ clip placement)</text>
+<line marker-end="url(#ch10-a4)" stroke="#334155" x1="560" x2="560" y1="302" y2="326"></line>
+<rect fill="#fee2e2" height="64" rx="6" stroke="#334155" width="380" x="250" y="328"></rect>
+<text x="260" y="346">Malignant → ER/PR/HER2, staging, surgery ± SLNB</text>
+<text x="260" y="364">Benign &amp; concordant → follow-up imaging</text>
+<text x="260" y="382">Benign but DISCORDANT, atypia → surgical excision</text>
+<rect fill="#e0f2fe" height="64" rx="6" stroke="#334155" width="230" x="10" y="328"></rect>
+<text x="18" y="346">Not first-line: MRI (high-risk</text>
+<text x="18" y="364">screening, extent), FNA alone,</text>
+<text x="18" y="382">open excisional biopsy</text>
+</g>
+</svg>

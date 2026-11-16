@@ -1,0 +1,55 @@
+<svg aria-label="Hypercalcemia diagnostic algorithm" role="img" viewbox="0 0 640 460" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch09-arrow5" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="340" x="150" y="8"></rect>
+<text font-weight="bold" x="320" y="25">Hypercalcemia confirmed</text>
+<text x="320" y="41">(albumin-corrected or ionized) → intact PTH</text>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="240" x2="160" y1="48" y2="66"></line>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="400" x2="480" y1="48" y2="66"></line>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="300" x="10" y="68"></rect>
+<text font-weight="bold" x="160" y="85">PTH high or inappropriately</text>
+<text font-weight="bold" x="160" y="101">normal (PTH-mediated)</text>
+<rect fill="#fee2e2" height="40" rx="6" stroke="#334155" width="300" x="330" y="68"></rect>
+<text font-weight="bold" x="480" y="85">PTH suppressed (&lt;20 pg/mL)</text>
+<text x="480" y="101">(PTH-independent)</text>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="160" x2="160" y1="108" y2="124"></line>
+<rect fill="#ffffff" height="40" rx="6" stroke="#334155" width="300" x="10" y="126"></rect>
+<text x="160" y="143">24-h urine Ca + Ca/Cr clearance ratio</text>
+<text x="160" y="159">(also check 25-OH vitamin D, eGFR)</text>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="90" x2="85" y1="166" y2="182"></line>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="230" x2="235" y1="166" y2="182"></line>
+<rect fill="#dcfce7" height="96" rx="6" stroke="#334155" width="145" x="10" y="184"></rect>
+<text font-weight="bold" x="82" y="202">Ratio &lt;0.01</text>
+<text x="82" y="220">Familial</text>
+<text x="82" y="236">hypocalciuric</text>
+<text x="82" y="252">hypercalcemia (CASR)</text>
+<text x="82" y="270">→ no surgery</text>
+<rect fill="#fef3c7" height="96" rx="6" stroke="#334155" width="145" x="165" y="184"></rect>
+<text font-weight="bold" x="237" y="202">Ratio &gt;0.02</text>
+<text x="237" y="220">Primary HPT</text>
+<text x="237" y="236">(adenoma 85%)</text>
+<text x="237" y="252">also: lithium,</text>
+<text x="237" y="268">tertiary HPT (CKD)</text>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="480" x2="480" y1="108" y2="124"></line>
+<rect fill="#ffffff" height="154" rx="6" stroke="#334155" width="300" x="330" y="126"></rect>
+<text font-weight="bold" x="480" y="144">Measure PTHrP, 25-OH D, 1,25-(OH)₂D</text>
+<text text-anchor="start" x="340" y="166">↑PTHrP → humoral hypercalcemia of malignancy</text>
+<text text-anchor="start" x="352" y="181">(squamous lung/head-neck, renal, breast)</text>
+<text text-anchor="start" x="340" y="201">↑1,25-(OH)₂D → sarcoid, TB, fungal, lymphoma</text>
+<text text-anchor="start" x="340" y="221">↑25-OH D → vitamin D intoxication</text>
+<text text-anchor="start" x="340" y="241">All normal → SPEP/free light chains (myeloma),</text>
+<text text-anchor="start" x="352" y="256">bone scan (lytic mets), TSH, vitamin A,</text>
+<text text-anchor="start" x="352" y="271">milk-alkali, immobilization</text>
+<line marker-end="url(#ch09-arrow5)" stroke="#334155" x1="237" x2="237" y1="280" y2="296"></line>
+<rect fill="#fef3c7" height="54" rx="6" stroke="#334155" width="620" x="10" y="298"></rect>
+<text font-weight="bold" x="320" y="316">Parathyroidectomy if symptomatic, or ANY: Ca &gt;1 mg/dL above ULN · age &lt;50</text>
+<text x="320" y="332">T-score ≤ −2.5 or vertebral fracture · eGFR &lt;60 · stones/nephrocalcinosis · urine Ca &gt;400 mg/day</text>
+<text x="320" y="347">(localize with sestamibi/US only AFTER biochemical diagnosis; otherwise monitor ± cinacalcet)</text>
+<rect fill="#fee2e2" height="88" rx="6" stroke="#334155" width="620" x="10" y="364"></rect>
+<text font-weight="bold" x="320" y="382">Acute treatment: Ca &gt;14 mg/dL or symptomatic</text>
+<text x="320" y="400">1) IV 0.9% saline 200–300 mL/h (volume repletion) + SC/IM calcitonin (fast, tachyphylaxis 48 h)</text>
+<text x="320" y="416">2) IV zoledronic acid (onset 2–4 days) — denosumab if severe renal impairment</text>
+<text x="320" y="432">3) Glucocorticoids for 1,25-D–mediated (granulomatous, lymphoma) · dialysis if refractory/renal failure</text>
+<text x="320" y="447">Loop diuretic only after volume repletion with overload · stop thiazides, Ca, vitamin D, lithium</text>
+</g>
+</svg>

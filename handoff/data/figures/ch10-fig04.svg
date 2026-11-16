@@ -1,0 +1,49 @@
+<svg aria-label="Rule of nines body chart for adult and differences in a child" role="img" viewbox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="13" stroke="#334155">
+<text font-weight="bold" stroke="none" text-anchor="middle" x="160" y="22">Adult (anterior + posterior)</text>
+<circle cx="160" cy="62" fill="#fef3c7" r="26"></circle>
+<text font-size="12" stroke="none" text-anchor="middle" x="160" y="58">Head</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="160" y="73">9%</text>
+<rect fill="#e0f2fe" height="120" rx="6" width="90" x="115" y="92"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="160" y="124">Ant. trunk</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="160" y="140">18%</text>
+<text font-size="12" stroke="none" text-anchor="middle" x="160" y="166">Post. trunk</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="160" y="182">18%</text>
+<text font-size="12" stroke="none" x="282" y="140">Trunk split:</text>
+<text font-size="12" stroke="none" x="282" y="156">chest 9 + abd 9;</text>
+<text font-size="12" stroke="none" x="282" y="172">upper back 9 +</text>
+<text font-size="12" stroke="none" x="282" y="188">lower back 9</text>
+<rect fill="#dcfce7" height="120" rx="12" width="40" x="70" y="94"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="90" y="150">Arm</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="90" y="166">9%</text>
+<rect fill="#dcfce7" height="120" rx="12" width="40" x="210" y="94"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="230" y="150">Arm</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="230" y="166">9%</text>
+<rect fill="#fee2e2" height="140" rx="12" width="40" x="117" y="216"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="137" y="280">Leg</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="137" y="296">18%</text>
+<rect fill="#fee2e2" height="140" rx="12" width="40" x="163" y="216"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="183" y="280">Leg</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="183" y="296">18%</text>
+<text font-size="12" stroke="none" text-anchor="middle" x="160" y="374">Perineum/genitalia 1%  ·  Total 100%</text>
+<!-- Child -->
+<text font-weight="bold" stroke="none" text-anchor="middle" x="470" y="22">Infant / young child</text>
+<circle cx="470" cy="70" fill="#fef3c7" r="36"></circle>
+<text font-size="12" stroke="none" text-anchor="middle" x="470" y="66">Head/neck</text>
+<text font-weight="bold" stroke="none" text-anchor="middle" x="470" y="82">18%</text>
+<rect fill="#e0f2fe" height="100" rx="6" width="80" x="430" y="110"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="470" y="150">Trunk</text>
+<text font-size="12" stroke="none" text-anchor="middle" x="470" y="166">18% + 18%</text>
+<rect fill="#dcfce7" height="96" rx="12" width="36" x="390" y="112"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="408" y="164">9%</text>
+<rect fill="#dcfce7" height="96" rx="12" width="36" x="514" y="112"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="532" y="164">9%</text>
+<rect fill="#fee2e2" height="104" rx="12" width="36" x="432" y="214"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="450" y="270">14%</text>
+<rect fill="#fee2e2" height="104" rx="12" width="36" x="472" y="214"></rect>
+<text font-size="12" stroke="none" text-anchor="middle" x="490" y="270">14%</text>
+<rect fill="#fef3c7" height="46" rx="6" width="300" x="330" y="328"></rect>
+<text font-size="12" stroke="none" x="340" y="346">Child: head larger (18%), each leg smaller (14%).</text>
+<text font-size="12" stroke="none" x="340" y="364">Patchy burns: patient's palm + fingers ≈ 1% TBSA.</text>
+</g>
+</svg>

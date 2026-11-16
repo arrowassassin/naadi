@@ -1,0 +1,2859 @@
+[
+ {
+  "id": "step1",
+  "kind": "exam",
+  "parent_id": null,
+  "label": "USMLE Step 1",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "step2ck",
+  "kind": "exam",
+  "parent_id": null,
+  "label": "USMLE Step 2 CK",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "step3",
+  "kind": "exam",
+  "parent_id": null,
+  "label": "USMLE Step 3",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "step1.sys.human_development",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Human Development (incl. Normal Age-Related Findings, Care of the Well Patient)",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 1,
+  "weight_max": 3,
+  "sort": 1
+ },
+ {
+  "id": "step1.sys.blood_immune",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Blood & Lymphoreticular/Immune Systems",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 9,
+  "weight_max": 13,
+  "sort": 2
+ },
+ {
+  "id": "step1.sys.behavioral_nervous",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Behavioral Health & Nervous Systems/Special Senses",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 10,
+  "weight_max": 14,
+  "sort": 3
+ },
+ {
+  "id": "step1.sys.msk_skin",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Musculoskeletal, Skin & Subcutaneous Tissue",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 8,
+  "weight_max": 12,
+  "sort": 4
+ },
+ {
+  "id": "step1.sys.cardiovascular",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Cardiovascular System",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 7,
+  "weight_max": 11,
+  "sort": 5
+ },
+ {
+  "id": "step1.sys.respiratory_renal",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Respiratory & Renal/Urinary Systems",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 11,
+  "weight_max": 15,
+  "sort": 6
+ },
+ {
+  "id": "step1.sys.gastrointestinal",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Gastrointestinal System",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 6,
+  "weight_max": 10,
+  "sort": 7
+ },
+ {
+  "id": "step1.sys.reproductive_endocrine",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Reproductive & Endocrine Systems",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 12,
+  "weight_max": 16,
+  "sort": 8
+ },
+ {
+  "id": "step1.sys.multisystem",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Multisystem Processes & Disorders",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 8,
+  "weight_max": 12,
+  "sort": 9
+ },
+ {
+  "id": "step1.sys.biostat_epi",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Biostatistics & Epidemiology/Population Health",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 4,
+  "weight_max": 6,
+  "sort": 10
+ },
+ {
+  "id": "step1.sys.social_sciences",
+  "kind": "system",
+  "parent_id": "step1",
+  "label": "Social Sciences: Communication and Interpersonal Skills",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 6,
+  "weight_max": 9,
+  "sort": 11
+ },
+ {
+  "id": "step1.comp.medical_knowledge",
+  "kind": "competency",
+  "parent_id": "step1",
+  "label": "Medical Knowledge: Applying Foundational Science Concepts",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 60,
+  "weight_max": 70,
+  "sort": 1
+ },
+ {
+  "id": "step1.comp.pc_diagnosis",
+  "kind": "competency",
+  "parent_id": "step1",
+  "label": "Patient Care: Diagnosis",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 20,
+  "weight_max": 25,
+  "sort": 2
+ },
+ {
+  "id": "step1.comp.pc_diagnosis.history_pe",
+  "kind": "competency",
+  "parent_id": "step1.comp.pc_diagnosis",
+  "label": "History/Physical Examination",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "step1.comp.pc_diagnosis.diagnosis",
+  "kind": "competency",
+  "parent_id": "step1.comp.pc_diagnosis",
+  "label": "Diagnosis",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "step1.comp.communication",
+  "kind": "competency",
+  "parent_id": "step1",
+  "label": "Communication and Interpersonal Skills",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 6,
+  "weight_max": 9,
+  "sort": 5
+ },
+ {
+  "id": "step1.comp.pbli",
+  "kind": "competency",
+  "parent_id": "step1",
+  "label": "Practice-based Learning & Improvement",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 4,
+  "weight_max": 6,
+  "sort": 6
+ },
+ {
+  "id": "step1.disc.pathology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Pathology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 45,
+  "weight_max": 55,
+  "sort": 1
+ },
+ {
+  "id": "step1.disc.physiology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Physiology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 30,
+  "weight_max": 40,
+  "sort": 2
+ },
+ {
+  "id": "step1.disc.nutrition",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Nutrition",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 15,
+  "weight_max": 20,
+  "sort": 3
+ },
+ {
+  "id": "step1.disc.anatomy_embryology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Gross Anatomy & Embryology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 10,
+  "weight_max": 20,
+  "sort": 4
+ },
+ {
+  "id": "step1.disc.microbiology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Microbiology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 10,
+  "weight_max": 20,
+  "sort": 5
+ },
+ {
+  "id": "step1.disc.pharmacology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Pharmacology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 10,
+  "weight_max": 20,
+  "sort": 6
+ },
+ {
+  "id": "step1.disc.behavioral_sciences",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Behavioral Sciences",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 10,
+  "weight_max": 15,
+  "sort": 7
+ },
+ {
+  "id": "step1.disc.biochemistry",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Biochemistry",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 5,
+  "weight_max": 15,
+  "sort": 8
+ },
+ {
+  "id": "step1.disc.histology_cell_biology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Histology & Cell Biology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 5,
+  "weight_max": 15,
+  "sort": 9
+ },
+ {
+  "id": "step1.disc.immunology",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Immunology",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 5,
+  "weight_max": 15,
+  "sort": 10
+ },
+ {
+  "id": "step1.disc.genetics",
+  "kind": "discipline",
+  "parent_id": "step1",
+  "label": "Genetics",
+  "exam": [
+   "step1"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 11
+ },
+ {
+  "id": "step2ck.sys.nutrition",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Nutrition (co-coded with a system)",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 15,
+  "weight_max": 20,
+  "sort": 1
+ },
+ {
+  "id": "step2ck.sys.social_sciences",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Social Sciences: Legal/Ethical Issues & Professionalism/Systems-based Practice & Patient Safety",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 10,
+  "weight_max": 15,
+  "sort": 2
+ },
+ {
+  "id": "step2ck.sys.renal_reproductive",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Renal & Urinary System & Reproductive Systems",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 7,
+  "weight_max": 13,
+  "sort": 3
+ },
+ {
+  "id": "step2ck.sys.cardiovascular",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Cardiovascular System",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 6,
+  "weight_max": 12,
+  "sort": 4
+ },
+ {
+  "id": "step2ck.sys.msk_skin",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Musculoskeletal System/Skin & Subcutaneous Tissue",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 6,
+  "weight_max": 12,
+  "sort": 5
+ },
+ {
+  "id": "step2ck.sys.behavioral_health",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Behavioral Health",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 6
+ },
+ {
+  "id": "step2ck.sys.blood_immune",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Blood & Lymphoreticular/Immune Systems",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 7
+ },
+ {
+  "id": "step2ck.sys.gastrointestinal",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Gastrointestinal System",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 8
+ },
+ {
+  "id": "step2ck.sys.nervous",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Nervous System & Special Senses",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 9
+ },
+ {
+  "id": "step2ck.sys.respiratory",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Respiratory System",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 10
+ },
+ {
+  "id": "step2ck.sys.multisystem",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Multisystem Processes & Disorders",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 4,
+  "weight_max": 8,
+  "sort": 11
+ },
+ {
+  "id": "step2ck.sys.endocrine",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Endocrine System",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 3,
+  "weight_max": 7,
+  "sort": 12
+ },
+ {
+  "id": "step2ck.sys.pregnancy",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Pregnancy, Childbirth & the Puerperium",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 3,
+  "weight_max": 7,
+  "sort": 13
+ },
+ {
+  "id": "step2ck.sys.biostat_epi",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Biostatistics & Epidemiology/Population Health/Interpretation of Medical Literature",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 3,
+  "weight_max": 5,
+  "sort": 14
+ },
+ {
+  "id": "step2ck.sys.human_development",
+  "kind": "system",
+  "parent_id": "step2ck",
+  "label": "Human Development",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 2,
+  "weight_max": 4,
+  "sort": 15
+ },
+ {
+  "id": "step2ck.comp.pc_diagnosis",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Diagnosis",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 16,
+  "weight_max": 20,
+  "sort": 1
+ },
+ {
+  "id": "step2ck.comp.pc_lab_diagnostic",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Laboratory/Diagnostic Studies",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 13,
+  "weight_max": 17,
+  "sort": 2
+ },
+ {
+  "id": "step2ck.comp.pc_mixed_management",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Mixed Management",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 12,
+  "weight_max": 16,
+  "sort": 3
+ },
+ {
+  "id": "step2ck.comp.pc_pharmacotherapy",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Pharmacotherapy",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 8,
+  "weight_max": 12,
+  "sort": 4
+ },
+ {
+  "id": "step2ck.comp.pc_clinical_interventions",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Clinical Interventions",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 6,
+  "weight_max": 10,
+  "sort": 5
+ },
+ {
+  "id": "step2ck.comp.pc_health_maintenance",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Health Maintenance/Disease Prevention",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 10,
+  "sort": 6
+ },
+ {
+  "id": "step2ck.comp.pc_prognosis",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: Prognosis/Outcome",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 9,
+  "sort": 7
+ },
+ {
+  "id": "step2ck.comp.systems_based_practice",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Systems-based Practice & Patient Safety",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 7,
+  "sort": 8
+ },
+ {
+  "id": "step2ck.comp.professionalism",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Professionalism",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 7,
+  "sort": 9
+ },
+ {
+  "id": "step2ck.comp.pbli",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Practice-based Learning & Improvement",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 3,
+  "weight_max": 5,
+  "sort": 10
+ },
+ {
+  "id": "step2ck.comp.medical_knowledge",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Medical Knowledge: Applying Foundational Science Concepts (may be co-assessed)",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 0,
+  "weight_max": 0,
+  "sort": 11
+ },
+ {
+  "id": "step2ck.comp.pc_history_pe",
+  "kind": "competency",
+  "parent_id": "step2ck",
+  "label": "Patient Care: History and Physical Exam (covered on Step 1 and Step 3)",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 0,
+  "weight_max": 0,
+  "sort": 12
+ },
+ {
+  "id": "step2ck.clin.medicine",
+  "kind": "clinical_science",
+  "parent_id": "step2ck",
+  "label": "Medicine",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 55,
+  "weight_max": 65,
+  "sort": 1
+ },
+ {
+  "id": "step2ck.clin.pediatrics",
+  "kind": "clinical_science",
+  "parent_id": "step2ck",
+  "label": "Pediatrics",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 17,
+  "weight_max": 27,
+  "sort": 2
+ },
+ {
+  "id": "step2ck.clin.obgyn",
+  "kind": "clinical_science",
+  "parent_id": "step2ck",
+  "label": "Obstetrics & Gynecology",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 10,
+  "weight_max": 20,
+  "sort": 3
+ },
+ {
+  "id": "step2ck.clin.psychiatry",
+  "kind": "clinical_science",
+  "parent_id": "step2ck",
+  "label": "Psychiatry",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 10,
+  "weight_max": 15,
+  "sort": 4
+ },
+ {
+  "id": "step2ck.clin.surgery",
+  "kind": "clinical_science",
+  "parent_id": "step2ck",
+  "label": "Surgery",
+  "exam": [
+   "step2ck"
+  ],
+  "weight_min": 5,
+  "weight_max": 15,
+  "sort": 5
+ },
+ {
+  "id": "step3.sys.human_development",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Human Development",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 1,
+  "weight_max": 3,
+  "sort": 1
+ },
+ {
+  "id": "step3.sys.immune_blood_multisystem",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Immune System, Blood & Lymphoreticular System, and Multisystem Processes/Disorders",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 6,
+  "weight_max": 8,
+  "sort": 2
+ },
+ {
+  "id": "step3.sys.behavioral_health",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Behavioral Health",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 4,
+  "weight_max": 6,
+  "sort": 3
+ },
+ {
+  "id": "step3.sys.nervous",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Nervous System & Special Senses",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 8,
+  "weight_max": 10,
+  "sort": 4
+ },
+ {
+  "id": "step3.sys.skin",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Skin & Subcutaneous Tissue",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 4,
+  "weight_max": 6,
+  "sort": 5
+ },
+ {
+  "id": "step3.sys.msk",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Musculoskeletal System",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 5,
+  "weight_max": 7,
+  "sort": 6
+ },
+ {
+  "id": "step3.sys.cardiovascular",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Cardiovascular System",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 9,
+  "weight_max": 11,
+  "sort": 7
+ },
+ {
+  "id": "step3.sys.respiratory",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Respiratory System",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 8,
+  "weight_max": 10,
+  "sort": 8
+ },
+ {
+  "id": "step3.sys.gastrointestinal",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Gastrointestinal System",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 6,
+  "weight_max": 8,
+  "sort": 9
+ },
+ {
+  "id": "step3.sys.renal_male_repro",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Renal/Urinary & Male Reproductive Systems",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 4,
+  "weight_max": 6,
+  "sort": 10
+ },
+ {
+  "id": "step3.sys.pregnancy_female_repro",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Pregnancy/Childbirth & Female Reproductive System & Breast",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 7,
+  "weight_max": 9,
+  "sort": 11
+ },
+ {
+  "id": "step3.sys.endocrine",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Endocrine System",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 5,
+  "weight_max": 7,
+  "sort": 12
+ },
+ {
+  "id": "step3.sys.biostat_epi",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Biostatistics & Epidemiology/Population Health & Interpretation of the Medical Literature",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 11,
+  "weight_max": 13,
+  "sort": 13
+ },
+ {
+  "id": "step3.sys.social_sciences",
+  "kind": "system",
+  "parent_id": "step3",
+  "label": "Social Sciences: Communication Skills/Ethics/Patient Safety",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 7,
+  "weight_max": 9,
+  "sort": 14
+ },
+ {
+  "id": "step3.comp.medical_knowledge",
+  "kind": "competency",
+  "parent_id": "step3",
+  "label": "Medical Knowledge: Applying Foundational Science Concepts (Day 1)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 11,
+  "weight_max": 12,
+  "sort": 1
+ },
+ {
+  "id": "step3.comp.pc_diagnosis",
+  "kind": "competency",
+  "parent_id": "step3",
+  "label": "Patient Care: Diagnosis",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 33,
+  "weight_max": 36,
+  "sort": 2
+ },
+ {
+  "id": "step3.comp.pc_diagnosis.history_pe",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_diagnosis",
+  "label": "History/Physical Exam (Day 1)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 5,
+  "weight_max": 9,
+  "sort": 3
+ },
+ {
+  "id": "step3.comp.pc_diagnosis.lab_diagnostic",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_diagnosis",
+  "label": "Laboratory/Diagnostic Studies (Day 1)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 9,
+  "weight_max": 12,
+  "sort": 4
+ },
+ {
+  "id": "step3.comp.pc_diagnosis.diagnosis",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_diagnosis",
+  "label": "Diagnosis (Day 1)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 6,
+  "weight_max": 10,
+  "sort": 5
+ },
+ {
+  "id": "step3.comp.pc_diagnosis.prognosis",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_diagnosis",
+  "label": "Prognosis/Outcome (Day 2)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 8,
+  "weight_max": 11,
+  "sort": 6
+ },
+ {
+  "id": "step3.comp.pc_management",
+  "kind": "competency",
+  "parent_id": "step3",
+  "label": "Patient Care: Management (Day 2)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 32,
+  "weight_max": 35,
+  "sort": 7
+ },
+ {
+  "id": "step3.comp.pc_management.health_maintenance",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_management",
+  "label": "Health Maintenance/Disease Prevention",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 6,
+  "weight_max": 11,
+  "sort": 8
+ },
+ {
+  "id": "step3.comp.pc_management.pharmacotherapy",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_management",
+  "label": "Pharmacotherapy",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 9,
+  "weight_max": 13,
+  "sort": 9
+ },
+ {
+  "id": "step3.comp.pc_management.clinical_interventions",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_management",
+  "label": "Clinical Interventions",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 5,
+  "weight_max": 9,
+  "sort": 10
+ },
+ {
+  "id": "step3.comp.pc_management.mixed_management",
+  "kind": "competency",
+  "parent_id": "step3.comp.pc_management",
+  "label": "Mixed Management",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 6,
+  "weight_max": 11,
+  "sort": 11
+ },
+ {
+  "id": "step3.comp.pbli",
+  "kind": "competency",
+  "parent_id": "step3",
+  "label": "Practice-based Learning & Improvement (Day 1)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 11,
+  "weight_max": 13,
+  "sort": 12
+ },
+ {
+  "id": "step3.comp.communication_professionalism_sbp",
+  "kind": "competency",
+  "parent_id": "step3",
+  "label": "Communication/Professionalism/Systems-based Practice & Patient Safety (Day 1) / Communication & Professionalism (Day 2)",
+  "exam": [
+   "step3"
+  ],
+  "weight_min": 7,
+  "weight_max": 9,
+  "sort": 13
+ },
+ {
+  "id": "topic.dev.milestones",
+  "kind": "topic",
+  "parent_id": "step1.sys.human_development",
+  "label": "Developmental milestones",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.dev.growth_puberty",
+  "kind": "topic",
+  "parent_id": "step1.sys.human_development",
+  "label": "Growth & puberty",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.dev.neonatal",
+  "kind": "topic",
+  "parent_id": "step1.sys.human_development",
+  "label": "Normal newborn & neonatal care",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.dev.adolescent",
+  "kind": "topic",
+  "parent_id": "step1.sys.human_development",
+  "label": "Adolescent health",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.dev.aging",
+  "kind": "topic",
+  "parent_id": "step1.sys.human_development",
+  "label": "Normal aging & geriatrics",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.dev.well_care",
+  "kind": "topic",
+  "parent_id": "step1.sys.human_development",
+  "label": "Care of the well patient & preventive care",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.heme.anemia",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Anemias (microcytic, macrocytic, normocytic)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.heme.hemolysis_hemoglobinopathy",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Hemolysis & hemoglobinopathies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.heme.hemostasis",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Hemostasis, bleeding & thrombotic disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.heme.anticoagulation_vte",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "VTE & anticoagulant/antiplatelet therapy",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.heme.heme_malignancy",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Leukemias, lymphomas & plasma cell disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.heme.transfusion",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Blood products & transfusion medicine",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.heme.heme_onc_pharm",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Heme/Onc pharmacology & oncologic emergencies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.immune.immune_basics",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Innate & adaptive immunity, complement, cytokines",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.immune.hypersensitivity",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Hypersensitivity & allergy",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.immune.immunodeficiency",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Immunodeficiencies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.immune.transplant_immunosuppression",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Transplantation & immunosuppressants",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.immune.vaccines",
+  "kind": "topic",
+  "parent_id": "step1.sys.blood_immune",
+  "label": "Vaccines & immunization",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.neuro.stroke_hemorrhage",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Stroke & intracranial hemorrhage",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.neuro.localization",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Neuroanatomy & lesion localization (cord, brainstem, cranial nerves)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.neuro.seizures",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Seizures & epilepsy",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.neuro.headache",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Headache & facial pain",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.neuro.neurodegenerative_demyelinating",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Neurodegenerative, movement & demyelinating disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.neuro.neuromuscular",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Neuromuscular junction & peripheral nerve",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.neuro.tumors_icp_coma",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "CNS tumors, raised ICP, coma & brain death",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.neuro.special_senses",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Eye, ear & special senses",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.psych.mood",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Depressive & bipolar disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.psych.psychosis",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Psychotic disorders & antipsychotics",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.psych.anxiety_trauma_ocd",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Anxiety, trauma & obsessive-compulsive disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.psych.substance_use",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Substance use, intoxication & withdrawal",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.psych.personality_somatic_defense",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Personality, somatic disorders & defense mechanisms",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 13
+ },
+ {
+  "id": "topic.psych.child_eating",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Child psychiatry & eating disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 14
+ },
+ {
+  "id": "topic.psych.sleep_suicide",
+  "kind": "topic",
+  "parent_id": "step1.sys.behavioral_nervous",
+  "label": "Sleep disorders, suicide risk & involuntary holds",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 15
+ },
+ {
+  "id": "topic.msk.limb_anatomy_nerve_injury",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Limb anatomy, brachial plexus & nerve injuries",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.msk.arthritis_crystal",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Arthritis & crystal arthropathies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.msk.autoimmune_ctd",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Systemic lupus & connective tissue diseases",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.msk.bone",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Bone disorders & bone tumors",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.msk.orthopedics_trauma",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Orthopedics, fractures & sports injuries",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.msk.muscle_disorders",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Muscle disorders & muscular dystrophies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.msk.msk_pharm",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "MSK & anti-inflammatory pharmacology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.derm.blistering",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Blistering & immunobullous diseases",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.derm.skin_cancer",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Skin cancer & pigmented lesions",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.derm.inflammatory_dermatoses",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Inflammatory dermatoses",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.derm.skin_infections_drug_eruptions",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Skin infections & drug eruptions",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.derm.burns_wounds",
+  "kind": "topic",
+  "parent_id": "step1.sys.msk_skin",
+  "label": "Burns & wound healing",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.cardio.embryology_congenital",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Cardiac embryology & congenital heart disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.cardio.physiology_hemodynamics",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Cardiac physiology & hemodynamics",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.cardio.ischemic_heart_disease",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Ischemic heart disease & acute coronary syndromes",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.cardio.heart_failure_cardiomyopathy",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Heart failure & cardiomyopathies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.cardio.arrhythmia",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Arrhythmias & conduction",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.cardio.valvular",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Valvular heart disease & murmurs",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.cardio.hypertension",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Hypertension",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.cardio.lipids_atherosclerosis",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Lipids & atherosclerosis",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.cardio.endocarditis_pericardial",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Endocarditis, myocarditis & pericardial disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.cardio.vascular_aorta",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Aorta, PAD & vascular disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.cardio.vasculitis",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Vasculitides",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.cardio.shock_syncope",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Shock & syncope",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.cardio.cardio_pharm",
+  "kind": "topic",
+  "parent_id": "step1.sys.cardiovascular",
+  "label": "Cardiovascular pharmacology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 13
+ },
+ {
+  "id": "topic.resp.physiology",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Respiratory physiology (V/Q, A-a gradient, O2-Hb curve, PFTs)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.resp.obstructive",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Obstructive lung disease (asthma, COPD, bronchiectasis, CF)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.resp.restrictive_ild",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Restrictive & interstitial lung disease, sarcoidosis, pneumoconioses",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.resp.pulmonary_vascular",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Pulmonary embolism & pulmonary hypertension",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.resp.lung_cancer_nodules",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Lung nodules & lung cancer",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.resp.pneumonia_infection",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Pneumonia & respiratory infection",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.resp.pleural",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Pleural disease & pneumothorax",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.resp.critical_care_ventilation",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "ARDS, respiratory failure, ventilation & sleep apnea",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.renal.physiology",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Renal physiology (GFR, clearance, tubular transport)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.renal.acid_base_electrolytes",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Acid-base, sodium & potassium disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.renal.glomerular",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Glomerular disease (nephrotic & nephritic)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.renal.aki_ckd",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Acute kidney injury & chronic kidney disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.renal.stones_urinary_tract",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Nephrolithiasis, UTI & lower urinary tract",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 13
+ },
+ {
+  "id": "topic.renal.cystic_tumors",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Cystic kidney disease & renal tumors",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 14
+ },
+ {
+  "id": "topic.renal.renal_pharm",
+  "kind": "topic",
+  "parent_id": "step1.sys.respiratory_renal",
+  "label": "Diuretics & renal pharmacology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 15
+ },
+ {
+  "id": "topic.gi.embryology_anatomy",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "GI embryology & anatomy",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.gi.physiology_hormones",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "GI physiology, hormones & bilirubin",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.gi.esophagus_stomach",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "Esophagus, stomach & peptic ulcer disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.gi.malabsorption_ibd",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "Malabsorption & inflammatory bowel disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.gi.liver",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "Liver disease & hepatitis",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.gi.biliary_pancreas",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "Biliary tract & pancreas",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.gi.gi_bleeding",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "GI bleeding",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.gi.colorectal",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "Colon: polyps, colorectal cancer & diverticular disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.gi.acute_abdomen",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "Acute abdomen, bowel obstruction & hernias",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.gi.gi_pharm",
+  "kind": "topic",
+  "parent_id": "step1.sys.gastrointestinal",
+  "label": "GI pharmacology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.endo.diabetes",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Diabetes mellitus, DKA/HHS & hypoglycemia",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.endo.thyroid",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Thyroid disorders",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.endo.adrenal",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Adrenal disorders (Cushing, aldosteronism, CAH, insufficiency, pheo)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.endo.pituitary",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Pituitary & hypothalamus",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.endo.calcium_parathyroid",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Calcium, parathyroid & vitamin D",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.endo.men_neuroendocrine",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "MEN syndromes & neuroendocrine tumors",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.repro.menstrual_amenorrhea_pcos",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Menstrual cycle, amenorrhea, AUB, PCOS & disorders of sex development",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.repro.contraception_infertility_menopause",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Contraception, infertility & menopause",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.repro.gyn_oncology",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Gynecologic oncology & cervical screening",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.repro.breast",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Breast disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.repro.vaginitis_pid_sti",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Vaginitis, PID & sexually transmitted infections",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.male.male_repro",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Male reproductive system (testis, prostate, ED)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.preg.prenatal_physiology",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Prenatal care, pregnancy physiology & screening",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 13
+ },
+ {
+  "id": "topic.preg.pregnancy_complications",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Pregnancy complications (HTN, GDM, ectopic, bleeding, GTD, preterm)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 14
+ },
+ {
+  "id": "topic.preg.labor_postpartum",
+  "kind": "topic",
+  "parent_id": "step1.sys.reproductive_endocrine",
+  "label": "Labor, delivery & the puerperium",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 15
+ },
+ {
+  "id": "topic.multi.bacteria",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Bacteriology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.multi.viruses_hiv",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Virology & HIV",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.multi.fungi_parasites",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Mycology & parasitology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.multi.antimicrobials",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Antimicrobial pharmacology & resistance",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.multi.sepsis_systemic_infection",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Sepsis & systems-based infectious disease",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.multi.neoplasia",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Neoplasia, oncogenes & paraneoplastic syndromes",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.multi.cell_injury_inflammation",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Cell injury, inflammation, repair & amyloidosis",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.multi.genetics",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Medical genetics & inheritance",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ },
+ {
+  "id": "topic.multi.metabolism_inborn_errors",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Metabolism & inborn errors",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 9
+ },
+ {
+  "id": "topic.multi.molecular_cell_biology",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Molecular & cell biology, lab techniques",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 10
+ },
+ {
+  "id": "topic.nutrition.vitamins_minerals",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Vitamins, minerals & nutrition",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 11
+ },
+ {
+  "id": "topic.multi.pharm_principles",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Pharmacokinetics, pharmacodynamics & autonomic pharmacology",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 12
+ },
+ {
+  "id": "topic.multi.toxicology_environmental",
+  "kind": "topic",
+  "parent_id": "step1.sys.multisystem",
+  "label": "Toxicology, antidotes & environmental emergencies",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 13
+ },
+ {
+  "id": "topic.multi.trauma_surgery_periop",
+  "kind": "topic",
+  "parent_id": "step2ck.sys.multisystem",
+  "label": "Trauma, perioperative & critical care principles",
+  "exam": [
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.biostat.diagnostic_tests",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Diagnostic test evaluation (Sn, Sp, PPV, NPV, LR, cutoffs)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.biostat.risk_measures",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Measures of frequency & risk (incidence, prevalence, RR, OR, NNT)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.biostat.study_design",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Study design",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.biostat.bias_confounding",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Bias & confounding",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.biostat.hypothesis_testing",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Hypothesis testing, power & confidence intervals",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.biostat.prevention_screening",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Prevention levels & screening programs",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.biostat.ebm_literature",
+  "kind": "topic",
+  "parent_id": "step1.sys.biostat_epi",
+  "label": "Evidence-based medicine & interpreting the literature",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.social.capacity_consent",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Decision-making capacity & informed consent",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 1
+ },
+ {
+  "id": "topic.social.confidentiality_reporting",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Confidentiality, HIPAA & mandatory reporting",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 2
+ },
+ {
+  "id": "topic.social.minors",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Minors, parental consent & emancipation",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 3
+ },
+ {
+  "id": "topic.social.end_of_life_surrogates",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Advance directives, surrogates & end-of-life care",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 4
+ },
+ {
+  "id": "topic.social.communication",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Communication skills (bad news, interpreters, difficult conversations)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 5
+ },
+ {
+  "id": "topic.social.patient_safety_qi",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Patient safety, medical error & quality improvement",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 6
+ },
+ {
+  "id": "topic.social.professionalism",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Professionalism, gifts, conflicts of interest & impaired colleagues",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 7
+ },
+ {
+  "id": "topic.social.legal_health_systems",
+  "kind": "topic",
+  "parent_id": "step1.sys.social_sciences",
+  "label": "Law & health systems (EMTALA, malpractice, insurance)",
+  "exam": [
+   "step1",
+   "step2ck",
+   "step3"
+  ],
+  "weight_min": null,
+  "weight_max": null,
+  "sort": 8
+ }
+]

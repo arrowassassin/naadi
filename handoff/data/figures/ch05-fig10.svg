@@ -1,0 +1,93 @@
+<svg aria-label="Acid-base interpretation algorithm" role="img" viewbox="0 0 680 450" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch05-arrow-f10" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#ffffff" height="450" width="680" x="0" y="0"></rect>
+<rect fill="#fef3c7" height="30" rx="6" stroke="#334155" width="140" x="270" y="6"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" x="340" y="26">1. Check pH</text>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="300" x2="190" y1="36" y2="64"></line>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="380" x2="500" y1="36" y2="64"></line>
+<rect fill="#fee2e2" height="30" rx="6" stroke="#334155" width="170" x="100" y="66"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="185" y="86">pH &lt; 7.35: acidemia</text>
+<rect fill="#e0f2fe" height="30" rx="6" stroke="#334155" width="170" x="420" y="66"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="505" y="86">pH &gt; 7.45: alkalemia</text>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="150" x2="95" y1="96" y2="124"></line>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="220" x2="265" y1="96" y2="124"></line>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="470" x2="445" y1="96" y2="124"></line>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="545" x2="600" y1="96" y2="124"></line>
+<rect fill="#ffffff" height="46" rx="6" stroke="#334155" width="165" x="10" y="126"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="144">PaCO₂ &gt; 45</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="18" y="162">Respiratory acidosis</text>
+<rect fill="#ffffff" height="46" rx="6" stroke="#334155" width="165" x="185" y="126"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="193" y="144">HCO₃⁻ &lt; 22</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="193" y="162">Metabolic acidosis</text>
+<rect fill="#ffffff" height="46" rx="6" stroke="#334155" width="160" x="365" y="126"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="144">PaCO₂ &lt; 35</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="373" y="162">Respiratory alkalosis</text>
+<rect fill="#ffffff" height="46" rx="6" stroke="#334155" width="140" x="535" y="126"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="144">HCO₃⁻ &gt; 28</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="543" y="162">Metabolic alkalosis</text>
+<rect fill="#fef3c7" height="110" rx="6" stroke="#334155" width="165" x="10" y="182"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="198">Renal compensation:</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="214">acute ↑ HCO₃⁻ 1 per 10</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="230">chronic ↑ 3.5 per 10</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="250">Hypoventilation: opioids,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="266">COPD, airway obstruction,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="18" y="282">neuromuscular weakness</text>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="267" x2="267" y1="172" y2="184"></line>
+<rect fill="#fef3c7" height="50" rx="6" stroke="#334155" width="165" x="185" y="186"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="193" y="204">2. Anion gap =</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="193" y="222">Na⁺ − (Cl⁻ + HCO₃⁻)</text>
+<rect fill="#fef3c7" height="50" rx="6" stroke="#334155" width="165" x="185" y="244"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="193" y="262">3. Winter's: expected</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="193" y="280">PaCO₂ = 1.5[HCO₃⁻]+8 ±2</text>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="230" x2="140" y1="294" y2="306"></line>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="300" x2="300" y1="294" y2="306"></line>
+<rect fill="#fee2e2" height="134" rx="6" stroke="#334155" width="175" x="40" y="308"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="48" y="326">AG &gt; 12 (HAGMA)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="344">Ketoacidosis (DKA,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="360">  alcohol, starvation)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="376">Lactic acidosis</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="392">Renal failure (uremia)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="408">Methanol, ethylene glycol</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="424">Salicylates (late), iron,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="48" y="438">  isoniazid, 5-oxoproline</text>
+<rect fill="#e0f2fe" height="134" rx="6" stroke="#334155" width="150" x="225" y="308"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="233" y="326">Normal AG (NAGMA)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="233" y="344">(hyperchloremic)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="233" y="362">Diarrhea</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="233" y="378">Renal tubular acidosis</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="233" y="394">Acetazolamide</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="233" y="410">Large-volume saline</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="233" y="426">Addison, spironolactone</text>
+<rect fill="#fef3c7" height="112" rx="6" stroke="#334155" width="160" x="365" y="182"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="198">Compensation: acute</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="214">↓ HCO₃⁻ 2 per 10;</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="230">chronic ↓ 4–5 per 10</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="250">Hyperventilation: anxiety,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="266">hypoxemia/altitude, PE,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="373" y="282">early salicylate, sepsis</text>
+<rect fill="#fef3c7" height="62" rx="6" stroke="#334155" width="140" x="535" y="182"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="198">Expected PaCO₂</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="214">↑ 0.7 per 1 HCO₃⁻</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="232">4. Check urine Cl⁻</text>
+<line marker-end="url(#ch05-arrow-f10)" stroke="#334155" stroke-width="1.5" x1="605" x2="605" y1="244" y2="254"></line>
+<rect fill="#dcfce7" height="80" rx="6" stroke="#334155" width="140" x="535" y="256"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="543" y="272">U-Cl⁻ &lt; 20</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="288">saline-responsive:</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="304">vomiting, NG suction,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="320">remote diuretic use</text>
+<rect fill="#fee2e2" height="98" rx="6" stroke="#334155" width="140" x="535" y="344"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="543" y="360">U-Cl⁻ &gt; 20</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="376">HTN: aldosteronism,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="392">Cushing, Liddle</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="408">Normal BP: current</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="424">diuretics, Bartter,</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="543" y="438">Gitelman</text>
+<rect fill="#ffffff" height="134" rx="6" stroke="#334155" width="140" x="385" y="308"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="393" y="326">5. Delta–delta</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="393" y="344">(in HAGMA)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="393" y="362">ΔAG ÷ ΔHCO₃⁻</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="393" y="382">&lt; 1: + NAGMA</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="393" y="400">1–2: pure HAGMA</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="393" y="418">&gt; 2: + metabolic</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="393" y="434">  alkalosis</text>
+</svg>

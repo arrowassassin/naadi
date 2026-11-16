@@ -1,0 +1,54 @@
+<svg aria-label="Fetal heart rate decelerations: early, variable, late, with NICHD categories" font-family="sans-serif" role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-size="12">
+<rect fill="#dcfce7" fill-opacity="0.35" height="122" rx="6" stroke="#334155" width="395" x="10" y="8"></rect>
+<text font-weight="bold" x="18" y="24">EARLY: mirrors contraction; head compression (benign)</text>
+<rect fill="#fef3c7" fill-opacity="0.45" height="122" rx="6" stroke="#334155" width="395" x="10" y="136"></rect>
+<text font-weight="bold" x="18" y="152">VARIABLE: abrupt V/U, any timing; cord compression</text>
+<rect fill="#fee2e2" fill-opacity="0.5" height="128" rx="6" stroke="#334155" width="395" x="10" y="264"></rect>
+<text font-weight="bold" x="18" y="280">LATE: nadir after peak; uteroplacental insufficiency</text>
+<text x="18" y="56">FHR</text><text x="18" y="118">UC</text>
+<text x="18" y="184">FHR</text><text x="18" y="246">UC</text>
+<text x="18" y="312">FHR</text><text x="18" y="378">UC</text>
+</g>
+<g fill="none" stroke-width="2">
+<path d="M45,52 L130,52 C165,52 175,80 200,80 C225,80 235,52 270,52 L395,52" stroke="#0f172a"></path>
+<path d="M45,120 L130,120 C165,120 175,92 200,92 C225,92 235,120 270,120 L395,120" stroke="#334155" stroke-dasharray="6,3"></path>
+<path d="M45,180 L150,180 L157,175 L164,180 L172,212 L188,214 L196,180 L203,175 L210,180 L395,180" stroke="#0f172a"></path>
+<path d="M45,248 L130,248 C165,248 175,220 200,220 C225,220 235,248 270,248 L395,248" stroke="#334155" stroke-dasharray="6,3"></path>
+<path d="M45,308 L170,308 C205,308 215,336 240,336 C265,336 275,308 310,308 L395,308" stroke="#0f172a"></path>
+<path d="M45,380 L130,380 C165,380 175,352 200,352 C225,352 235,380 270,380 L395,380" stroke="#334155" stroke-dasharray="6,3"></path>
+</g>
+<g stroke="#334155" stroke-dasharray="4,3" stroke-width="1">
+<line x1="200" x2="200" y1="40" y2="124"></line><line x1="200" x2="200" y1="296" y2="384"></line><line x1="240" x2="240" y1="296" y2="384"></line>
+</g>
+<g fill="#0f172a" font-size="12">
+<text x="285" y="78">nadir = UC peak</text>
+<text x="225" y="206">abrupt (&lt;30 s to nadir)</text>
+<text x="320" y="334">lag</text>
+<text x="206" y="364">peak</text><text x="246" y="364">nadir</text>
+</g>
+<g fill="#0f172a" font-size="12">
+<rect fill="#dcfce7" height="122" rx="6" stroke="#334155" width="215" x="415" y="8"></rect>
+<text font-weight="bold" x="423" y="26">Category I (normal)</text>
+<text x="423" y="44">• Baseline 110–160 bpm</text>
+<text x="423" y="60">• Moderate variability 6–25</text>
+<text x="423" y="76">• ± early decels, ± accels</text>
+<text x="423" y="92">• No late or variable decels</text>
+<text x="423" y="112">→ Routine monitoring</text>
+<rect fill="#fef3c7" height="122" rx="6" stroke="#334155" width="215" x="415" y="136"></rect>
+<text font-weight="bold" x="423" y="154">Category II (indeterminate)</text>
+<text x="423" y="172">• Everything not I or III</text>
+<text x="423" y="188">• e.g., tachycardia, minimal</text>
+<text x="423" y="204">  variability, recurrent</text>
+<text x="423" y="220">  variables, prolonged decel</text>
+<text x="423" y="240">→ Evaluate + resuscitate</text>
+<rect fill="#fee2e2" height="128" rx="6" stroke="#334155" width="215" x="415" y="264"></rect>
+<text font-weight="bold" x="423" y="282">Category III (abnormal)</text>
+<text x="423" y="300">• ABSENT variability with</text>
+<text x="423" y="316">  recurrent lates, recurrent</text>
+<text x="423" y="332">  variables, or bradycardia</text>
+<text x="423" y="348">• OR sinusoidal pattern</text>
+<text x="423" y="368">→ Resuscitate; expedite</text>
+<text x="423" y="384">  delivery if not resolved</text>
+</g>
+</svg>

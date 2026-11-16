@@ -1,0 +1,40 @@
+<svg aria-label="Michaelis-Menten curves and Lineweaver-Burk plot for no inhibitor, competitive inhibitor and noncompetitive inhibitor." role="img" viewbox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch03-arrow2" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="170" y="22">A. Michaelis–Menten</text>
+<line marker-end="url(#ch03-arrow2)" stroke="#334155" stroke-width="1.5" x1="50" x2="300" y1="300" y2="300"></line>
+<line marker-end="url(#ch03-arrow2)" stroke="#334155" stroke-width="1.5" x1="50" x2="50" y1="300" y2="45"></line>
+<text text-anchor="middle" x="175" y="335">[S]</text>
+<text text-anchor="middle" transform="rotate(-90 25 180)" x="25" y="180">Velocity (V)</text>
+<line stroke="#334155" stroke-dasharray="4 4" x1="50" x2="295" y1="80" y2="80"></line><text x="56" y="74">Vmax</text>
+<line stroke="#334155" stroke-dasharray="3 3" x1="50" x2="80" y1="190" y2="190"></line>
+<line stroke="#334155" stroke-dasharray="3 3" x1="80" x2="80" y1="190" y2="300"></line>
+<text text-anchor="middle" x="80" y="316">Km</text>
+<text x="8" y="194">½Vmax</text>
+<polyline fill="none" points="50,300 60,245 70,212 80,190 100,162.5 130,140 170,124 230,111.4 290,104.4" stroke="#334155" stroke-width="2.5"></polyline>
+<polyline fill="none" points="50,300 60,278 70,260 80,245 100,221.4 130,196.5 170,174.3 230,153.3 290,140" stroke="#334155" stroke-dasharray="8 5" stroke-width="2.5"></polyline>
+<polyline fill="none" points="50,300 60,272.5 70,256 80,245 100,231.3 130,220 170,212 230,205.7 290,202.2" stroke="#334155" stroke-dasharray="2 4" stroke-width="2.5"></polyline>
+<text x="190" y="104">No inhibitor</text>
+<text x="190" y="154">Competitive</text>
+<text x="190" y="226">Noncompetitive</text>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="500" y="22">B. Lineweaver–Burk</text>
+<line marker-end="url(#ch03-arrow2)" stroke="#334155" stroke-width="1.5" x1="335" x2="630" y1="300" y2="300"></line>
+<line marker-end="url(#ch03-arrow2)" stroke="#334155" stroke-width="1.5" x1="440" x2="440" y1="320" y2="45"></line>
+<text text-anchor="middle" x="600" y="320">1/[S]</text>
+<text x="455" y="52">1/V</text>
+<line stroke="#334155" stroke-width="2.5" x1="380" x2="620" y1="300" y2="140"></line>
+<line stroke="#334155" stroke-dasharray="8 5" stroke-width="2.5" x1="410" x2="560" y1="300" y2="100"></line>
+<line stroke="#334155" stroke-dasharray="2 4" stroke-width="2.5" x1="380" x2="590" y1="300" y2="55"></line>
+<circle cx="440" cy="260" fill="#fef3c7" r="4" stroke="#334155"></circle>
+<circle cx="440" cy="230" fill="#fee2e2" r="4" stroke="#334155"></circle>
+<circle cx="380" cy="300" fill="#e0f2fe" r="4" stroke="#334155"></circle>
+<circle cx="410" cy="300" fill="#fef3c7" r="4" stroke="#334155"></circle>
+<text x="446" y="275">1/Vmax</text>
+<text text-anchor="end" x="436" y="226">↑1/Vmax</text>
+<text text-anchor="middle" x="372" y="318">−1/Km</text>
+<text text-anchor="middle" x="425" y="338">competitive: x-int → 0 (↑Km)</text>
+<text x="590" y="150">None</text>
+<text x="565" y="98">Comp.</text>
+<text x="595" y="60">Noncomp.</text>
+</g>
+</svg>

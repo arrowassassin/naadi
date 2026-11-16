@@ -1,0 +1,90 @@
+<svg aria-label="Comparison of Gell and Coombs hypersensitivity types I to IV" role="img" viewbox="0 0 760 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch01-arr-hypersens" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif">
+<rect fill="#fef3c7" height="380" rx="12" stroke="#334155" stroke-width="1.5" width="178" x="10" y="10"></rect>
+<text font-size="15" font-weight="bold" text-anchor="middle" x="99" y="34">Type I</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="99" y="52">IgE · immediate</text>
+<rect fill="#fee2e2" height="380" rx="12" stroke="#334155" stroke-width="1.5" width="178" x="198" y="10"></rect>
+<text font-size="15" font-weight="bold" text-anchor="middle" x="287" y="34">Type II</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="287" y="52">IgG/IgM vs cell antigen</text>
+<rect fill="#e0f2fe" height="380" rx="12" stroke="#334155" stroke-width="1.5" width="178" x="386" y="10"></rect>
+<text font-size="15" font-weight="bold" text-anchor="middle" x="475" y="34">Type III</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="475" y="52">Immune complexes</text>
+<rect fill="#dcfce7" height="380" rx="12" stroke="#334155" stroke-width="1.5" width="178" x="574" y="10"></rect>
+<text font-size="15" font-weight="bold" text-anchor="middle" x="663" y="34">Type IV</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="663" y="52">T cell · delayed 48–72 h</text>
+<circle cx="99" cy="150" fill="#ffffff" r="48" stroke="#334155" stroke-width="1.5"></circle>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="99" y="154">mast cell</text>
+<g transform="translate(62.2,119.1) rotate(-50)"><path d="M0,0 L0,-14.0 M0,-14.0 L-9.799999999999999,-25.2 M0,-14.0 L9.799999999999999,-25.2" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(82.6,104.9) rotate(-20)"><path d="M0,0 L0,-14.0 M0,-14.0 L-9.799999999999999,-25.2 M0,-14.0 L9.799999999999999,-25.2" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(115.4,104.9) rotate(20)"><path d="M0,0 L0,-14.0 M0,-14.0 L-9.799999999999999,-25.2 M0,-14.0 L9.799999999999999,-25.2" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(135.8,119.1) rotate(50)"><path d="M0,0 L0,-14.0 M0,-14.0 L-9.799999999999999,-25.2 M0,-14.0 L9.799999999999999,-25.2" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<rect fill="#334155" height="10" rx="4" stroke="#334155" stroke-width="1.5" width="38" x="80" y="76"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="99" y="72">allergen cross-links IgE</text>
+<circle cx="69" cy="205" fill="#fef3c7" r="5" stroke="#334155" stroke-width="1.5"></circle>
+<circle cx="99" cy="215" fill="#fef3c7" r="5" stroke="#334155" stroke-width="1.5"></circle>
+<circle cx="129" cy="205" fill="#fef3c7" r="5" stroke="#334155" stroke-width="1.5"></circle>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="99" y="240">histamine, tryptase</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="99" y="256">then leukotrienes</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="24" y="290">• Anaphylaxis</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="24" y="310">• Allergic asthma</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="24" y="330">• Urticaria, hay fever</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="24" y="350">• Rx: IM epinephrine</text>
+<circle cx="268" cy="150" fill="#ffffff" r="42" stroke="#334155" stroke-width="1.5"></circle>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="268" y="154">RBC</text>
+<g transform="translate(231.6,129.0) rotate(-60)"><path d="M0,0 L0,-12.6 M0,-12.6 L-8.819999999999999,-22.68 M0,-12.6 L8.819999999999999,-22.68" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(253.6,110.5) rotate(-20)"><path d="M0,0 L0,-12.6 M0,-12.6 L-8.819999999999999,-22.68 M0,-12.6 L8.819999999999999,-22.68" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(282.4,110.5) rotate(20)"><path d="M0,0 L0,-12.6 M0,-12.6 L-8.819999999999999,-22.68 M0,-12.6 L8.819999999999999,-22.68" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(304.4,129.0) rotate(60)"><path d="M0,0 L0,-12.6 M0,-12.6 L-8.819999999999999,-22.68 M0,-12.6 L8.819999999999999,-22.68" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(304.4,171.0) rotate(120)"><path d="M0,0 L0,-12.6 M0,-12.6 L-8.819999999999999,-22.68 M0,-12.6 L8.819999999999999,-22.68" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<rect fill="#ffffff" height="24" rx="6" stroke="#334155" stroke-width="1.5" width="52" x="318" y="88"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="344.0" y="104.2">MAC</text>
+<rect fill="#ffffff" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="60" x="310" y="178"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="340.0" y="192.7">macro-</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="340.0" y="207.7">phage</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="287" y="240">lysis, phagocytosis,</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="287" y="256">ADCC, receptor block</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="212" y="290">• AIHA, ITP, HDN</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="212" y="310">• Goodpasture</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="212" y="330">• Graves, myasthenia</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="212" y="350">• Test: Coombs</text>
+<rect fill="#ffffff" height="26" rx="3" stroke="#334155" stroke-width="1.5" width="138" x="406" y="190"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="475" y="208">vessel / glomerulus</text>
+<circle cx="431" cy="120" fill="#fef3c7" r="7" stroke="#334155" stroke-width="1.5"></circle>
+<g transform="translate(422,132) rotate(-35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(440,132) rotate(35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<circle cx="481" cy="105" fill="#fef3c7" r="7" stroke="#334155" stroke-width="1.5"></circle>
+<g transform="translate(472,117) rotate(-35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(490,117) rotate(35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<circle cx="521" cy="135" fill="#fef3c7" r="7" stroke="#334155" stroke-width="1.5"></circle>
+<g transform="translate(512,147) rotate(-35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(530,147) rotate(35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<circle cx="456" cy="175" fill="#fef3c7" r="7" stroke="#334155" stroke-width="1.5"></circle>
+<g transform="translate(447,187) rotate(-35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(465,187) rotate(35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<circle cx="506" cy="180" fill="#fef3c7" r="7" stroke="#334155" stroke-width="1.5"></circle>
+<g transform="translate(497,192) rotate(-35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<g transform="translate(515,192) rotate(35)"><path d="M0,0 L0,-8.4 M0,-8.4 L-5.88,-15.120000000000001 M0,-8.4 L5.88,-15.120000000000001" fill="none" stroke="#334155" stroke-width="2.2"></path></g>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="475" y="240">complement (↓ C3),</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="475" y="256">neutrophils</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="400" y="290">• SLE, PSGN</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="400" y="310">• Serum sickness</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="400" y="330">• Arthus reaction</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="400" y="350">• Granular IF</text>
+<circle cx="624" cy="130" fill="#ffffff" r="30" stroke="#334155" stroke-width="1.5"></circle>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="624" y="134">Th1</text>
+<circle cx="704" cy="130" fill="#ffffff" r="30" stroke="#334155" stroke-width="1.5"></circle>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="704" y="134">CD8</text>
+<line marker-end="url(#ch01-arr-hypersens)" stroke="#334155" stroke-width="1.6" x1="624" x2="644" y1="160" y2="189"></line>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="610" y="182">IFN-γ</text>
+<rect fill="#ffffff" height="30" rx="6" stroke="#334155" stroke-width="1.5" width="100" x="614" y="190"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="664.0" y="209.2">macrophage</text>
+<line marker-end="url(#ch01-arr-hypersens)" stroke="#334155" stroke-width="1.6" x1="704" x2="704" y1="160" y2="189"></line>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="663" y="240">no antibody;</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="663" y="256">cytokines + killing</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="588" y="290">• Contact dermatitis</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="588" y="310">• PPD reaction</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="588" y="330">• SJS/TEN, GVHD</text>
+<text font-size="12" font-weight="normal" text-anchor="start" x="588" y="350">• Test: patch test</text>
+</g>
+</svg>

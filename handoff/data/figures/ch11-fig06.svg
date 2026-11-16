@@ -1,0 +1,70 @@
+<svg aria-label="Postpartum hemorrhage four Ts management flow" font-family="sans-serif" role="img" viewbox="0 0 640 430" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch11-arrow3" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-size="12">
+<rect fill="#fee2e2" height="44" rx="6" stroke="#334155" width="600" x="20" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="26">PPH: ≥1000 mL or bleeding with hypovolemia within 24 h</text>
+<text text-anchor="middle" x="320" y="44">Call for help · 2 large-bore IVs · CBC, type &amp; cross, coags, fibrinogen · warm fluids / blood</text>
+<rect fill="#fef3c7" height="30" rx="6" stroke="#334155" width="600" x="20" y="64"></rect>
+<text text-anchor="middle" x="320" y="84">At once: bimanual uterine massage + oxytocin + tranexamic acid 1 g IV (within 3 h of birth)</text>
+</g>
+<g marker-end="url(#ch11-arrow3)" stroke="#334155" stroke-width="1.5">
+<line x1="92" x2="92" y1="94" y2="112"></line><line x1="244" x2="244" y1="94" y2="112"></line><line x1="396" x2="396" y1="94" y2="112"></line><line x1="548" x2="548" y1="94" y2="112"></line>
+</g>
+<g fill="#0f172a" font-size="12">
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" width="145" x="20" y="114"></rect><text font-weight="bold" text-anchor="middle" x="92" y="133">TONE (~70%)</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" width="145" x="172" y="114"></rect><text font-weight="bold" text-anchor="middle" x="244" y="133">TRAUMA (~20%)</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" width="145" x="324" y="114"></rect><text font-weight="bold" text-anchor="middle" x="396" y="133">TISSUE (~10%)</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" width="145" x="476" y="114"></rect><text font-weight="bold" text-anchor="middle" x="548" y="133">THROMBIN (&lt;1%)</text>
+<rect fill="none" height="150" rx="6" stroke="#334155" width="145" x="20" y="148"></rect>
+<text x="27" y="165">Boggy, soft uterus</text>
+<text x="27" y="182">Massage, oxytocin</text>
+<text x="27" y="199">Methylergonovine</text>
+<text x="27" y="216">  ✗ HTN/preeclampsia</text>
+<text x="27" y="233">Carboprost</text>
+<text x="27" y="250">  ✗ asthma</text>
+<text x="27" y="267">Misoprostol</text>
+<text x="27" y="284">Empty the bladder</text>
+<rect fill="none" height="150" rx="6" stroke="#334155" width="145" x="172" y="148"></rect>
+<text x="179" y="165">Firm uterus, still</text>
+<text x="179" y="182">bleeding</text>
+<text x="179" y="199">Inspect cervix/vagina</text>
+<text x="179" y="216">Repair lacerations</text>
+<text x="179" y="233">Drain hematoma</text>
+<text x="179" y="250">Inversion: replace,</text>
+<text x="179" y="267">  placenta in situ</text>
+<text x="179" y="284">Rupture → laparotomy</text>
+<rect fill="none" height="150" rx="6" stroke="#334155" width="145" x="324" y="148"></rect>
+<text x="331" y="165">Placenta incomplete</text>
+<text x="331" y="182">or not out &gt;30 min</text>
+<text x="331" y="199">Inspect placenta</text>
+<text x="331" y="216">Bedside ultrasound</text>
+<text x="331" y="233">Manual removal</text>
+<text x="331" y="250">Suction curettage</text>
+<text x="331" y="267">Accreta suspected →</text>
+<text x="331" y="284">  OR / hysterectomy</text>
+<rect fill="none" height="150" rx="6" stroke="#334155" width="145" x="476" y="148"></rect>
+<text x="483" y="165">Oozing, no clots</text>
+<text x="483" y="182">Abruption, AFE,</text>
+<text x="483" y="199">  HELLP, dilution</text>
+<text x="483" y="216">Massive transfusion</text>
+<text x="483" y="233">  RBC:FFP:plt 1:1:1</text>
+<text x="483" y="250">Cryo/fibrinogen if</text>
+<text x="483" y="267">  &lt;200 mg/dL</text>
+<text x="483" y="284">Treat vWD, anticoag</text>
+</g>
+<g marker-end="url(#ch11-arrow3)" stroke="#334155" stroke-width="1.5">
+<line x1="320" x2="320" y1="300" y2="318"></line>
+</g>
+<g fill="#0f172a" font-size="12">
+<rect fill="#fef3c7" height="28" rx="6" stroke="#334155" width="600" x="20" y="320"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="339">Refractory bleeding: escalate (choice depends on stability)</text>
+<rect fill="#dcfce7" height="48" rx="6" stroke="#334155" width="140" x="20" y="360"></rect><text text-anchor="middle" x="90" y="379">Intrauterine balloon</text><text text-anchor="middle" x="90" y="396">tamponade (Bakri)</text>
+<rect fill="#dcfce7" height="48" rx="6" stroke="#334155" width="140" x="173" y="360"></rect><text text-anchor="middle" x="243" y="379">Uterine artery</text><text text-anchor="middle" x="243" y="396">embolization (stable)</text>
+<rect fill="#fef3c7" height="48" rx="6" stroke="#334155" width="140" x="326" y="360"></rect><text text-anchor="middle" x="396" y="379">Laparotomy: B-Lynch,</text><text text-anchor="middle" x="396" y="396">artery ligation</text>
+<rect fill="#fee2e2" height="48" rx="6" stroke="#334155" width="140" x="479" y="360"></rect><text text-anchor="middle" x="549" y="379">Hysterectomy</text><text text-anchor="middle" x="549" y="396">(definitive)</text>
+</g>
+<g marker-end="url(#ch11-arrow3)" stroke="#334155" stroke-width="1.5">
+<line x1="160" x2="171" y1="384" y2="384"></line><line x1="313" x2="324" y1="384" y2="384"></line><line x1="466" x2="477" y1="384" y2="384"></line>
+</g>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="320" y="424">Afterward: watch for Sheehan syndrome (failed lactation, amenorrhea, hypopituitarism).</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg aria-label="PFT interpretation algorithm" role="img" viewbox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch08-arrow4" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#e0f2fe" height="40" rx="6" stroke="#334155" width="240" x="200" y="8"></rect>
+<text font-weight="bold" x="320" y="33">FEV1/FVC &lt;0.70 (or &lt;LLN)?</text>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="240" x2="160" y1="48" y2="78"></line>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="400" x2="480" y1="48" y2="78"></line>
+<text x="185" y="62">Yes: OBSTRUCTION</text>
+<text x="460" y="62">No</text>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="240" x="40" y="80"></rect>
+<text x="160" y="105">Bronchodilator response?</text>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="110" x2="85" y1="120" y2="150"></line>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="210" x2="235" y1="120" y2="150"></line>
+<rect fill="#dcfce7" height="52" rx="6" stroke="#334155" width="150" x="10" y="152"></rect>
+<text font-weight="bold" x="85" y="173">Yes: asthma</text>
+<text x="85" y="190">(normal/↑ DLCO)</text>
+<rect fill="#fee2e2" height="52" rx="6" stroke="#334155" width="140" x="170" y="152"></rect>
+<text font-weight="bold" x="240" y="173">No: COPD</text>
+<text x="240" y="190">(fixed obstruction)</text>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="240" x2="240" y1="204" y2="226"></line>
+<rect fill="#fee2e2" height="56" rx="6" stroke="#334155" width="200" x="140" y="228"></rect>
+<text x="240" y="248">DLCO ↓: emphysema</text>
+<text x="240" y="268">DLCO normal: chronic bronchitis</text>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="250" x="360" y="80"></rect>
+<text x="485" y="105">FVC low? → measure TLC</text>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="420" x2="420" y1="120" y2="150"></line>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="560" x2="560" y1="120" y2="150"></line>
+<rect fill="#fee2e2" height="52" rx="6" stroke="#334155" width="140" x="350" y="152"></rect>
+<text font-weight="bold" x="420" y="173">TLC &lt;80%:</text>
+<text x="420" y="190">RESTRICTION</text>
+<rect fill="#dcfce7" height="52" rx="6" stroke="#334155" width="130" x="500" y="152"></rect>
+<text x="565" y="173">Normal spirometry</text>
+<text x="565" y="190">and volumes</text>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="420" x2="420" y1="204" y2="226"></line>
+<rect fill="#e0f2fe" height="80" rx="6" stroke="#334155" width="140" x="350" y="228"></rect>
+<text font-weight="bold" x="420" y="248">DLCO ↓</text>
+<text x="420" y="265">Parenchymal: ILD</text>
+<text x="420" y="282">(IPF, sarcoid,</text>
+<text x="420" y="299">drug, asbestosis)</text>
+<rect fill="#e0f2fe" height="80" rx="6" stroke="#334155" width="140" x="350" y="318"></rect>
+<text font-weight="bold" x="420" y="338">DLCO normal</text>
+<text x="420" y="355">Extraparenchymal:</text>
+<text x="420" y="372">obesity, kyphosis,</text>
+<text x="420" y="389">neuromuscular</text>
+<line marker-end="url(#ch08-arrow4)" stroke="#334155" x1="565" x2="565" y1="204" y2="226"></line>
+<rect fill="#e0f2fe" height="80" rx="6" stroke="#334155" width="130" x="500" y="228"></rect>
+<text font-weight="bold" x="565" y="248">Isolated DLCO ↓</text>
+<text x="565" y="265">Pulmonary vascular</text>
+<text x="565" y="282">(PAH, chronic PE),</text>
+<text x="565" y="299">anemia, early ILD</text>
+<rect fill="#fef3c7" height="80" rx="6" stroke="#334155" width="320" x="10" y="318"></rect>
+<text font-weight="bold" x="170" y="338">DLCO ↑</text>
+<text x="170" y="356">Asthma, polycythemia, alveolar</text>
+<text x="170" y="373">hemorrhage (Goodpasture, GPA),</text>
+<text x="170" y="390">obesity, left-to-right shunt</text>
+</g>
+</svg>

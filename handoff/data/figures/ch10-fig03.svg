@@ -1,0 +1,55 @@
+<svg aria-label="Blunt abdominal trauma algorithm based on hemodynamic stability and FAST result" role="img" viewbox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch10-a2" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="260" x="190" y="8"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="25">Blunt abdominal trauma</text>
+<text font-size="12" text-anchor="middle" x="320" y="41">Primary survey + resuscitation + FAST</text>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="260" x2="160" y1="48" y2="78"></line>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="380" x2="480" y1="48" y2="78"></line>
+<rect fill="#fee2e2" height="36" rx="6" stroke="#334155" width="240" x="40" y="80"></rect>
+<text font-weight="bold" text-anchor="middle" x="160" y="103">Hemodynamically UNSTABLE</text>
+<rect fill="#dcfce7" height="36" rx="6" stroke="#334155" width="240" x="360" y="80"></rect>
+<text font-weight="bold" text-anchor="middle" x="480" y="103">Hemodynamically STABLE</text>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="110" x2="80" y1="116" y2="146"></line>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="210" x2="240" y1="116" y2="146"></line>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="140" x="10" y="148"></rect>
+<text text-anchor="middle" x="80" y="171">FAST positive</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="150" x="170" y="148"></rect>
+<text text-anchor="middle" x="245" y="171">FAST negative</text>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="80" x2="80" y1="184" y2="214"></line>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="245" x2="245" y1="184" y2="214"></line>
+<rect fill="#fee2e2" height="56" rx="6" stroke="#334155" width="140" x="10" y="216"></rect>
+<text font-weight="bold" text-anchor="middle" x="80" y="238">Exploratory</text>
+<text font-weight="bold" text-anchor="middle" x="80" y="256">laparotomy</text>
+<rect fill="#fef3c7" height="110" rx="6" stroke="#334155" width="150" x="170" y="216"></rect>
+<text font-size="12" x="180" y="234">Search other sources:</text>
+<text font-size="12" x="180" y="250">• chest (CXR, eFAST)</text>
+<text font-size="12" x="180" y="266">• pelvis (XR) → binder,</text>
+<text font-size="12" x="180" y="282">   angioembolization</text>
+<text font-size="12" x="180" y="298">• long bones, scalp</text>
+<text font-size="12" x="180" y="314">• repeat FAST or DPA</text>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="480" x2="480" y1="116" y2="146"></line>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="240" x="360" y="148"></rect>
+<text text-anchor="middle" x="480" y="171">CT abdomen/pelvis with IV contrast</text>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="420" x2="400" y1="184" y2="214"></line>
+<line marker-end="url(#ch10-a2)" stroke="#334155" x1="540" x2="560" y1="184" y2="214"></line>
+<rect fill="#dcfce7" height="110" rx="6" stroke="#334155" width="135" x="340" y="216"></rect>
+<text font-size="12" font-weight="bold" x="350" y="234">Solid organ</text>
+<text font-size="12" x="350" y="250">(spleen/liver)</text>
+<text font-size="12" x="350" y="266">→ nonoperative:</text>
+<text font-size="12" x="350" y="282">ICU/serial exams,</text>
+<text font-size="12" x="350" y="298">serial Hb</text>
+<text font-size="12" x="350" y="314">Blush → angioembo</text>
+<rect fill="#fee2e2" height="110" rx="6" stroke="#334155" width="145" x="485" y="216"></rect>
+<text font-size="12" font-weight="bold" x="495" y="234">Laparotomy if:</text>
+<text font-size="12" x="495" y="250">• peritonitis</text>
+<text font-size="12" x="495" y="266">• free air / hollow</text>
+<text font-size="12" x="495" y="282">   viscus injury</text>
+<text font-size="12" x="495" y="298">• becomes unstable</text>
+<text font-size="12" x="495" y="314">• diaphragm injury</text>
+<rect fill="#e0f2fe" height="70" rx="6" stroke="#334155" width="620" x="10" y="342"></rect>
+<text font-size="12" x="20" y="362">Nonoperative management FAILS (falling Hb despite transfusion, instability,</text>
+<text font-size="12" x="20" y="380">peritonitis) → laparotomy (splenectomy). After splenectomy or splenic embolization:</text>
+<text font-size="12" x="20" y="398">vaccinate against pneumococcus, meningococcus (MenACWY + MenB) and Hib.</text>
+</g>
+</svg>

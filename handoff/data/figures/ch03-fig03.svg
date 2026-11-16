@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Log dose-response curves: a competitive antagonist shifts the curve right with the same maximum; a noncompetitive antagonist lowers the maximum with the same EC50." role="img" viewbox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch03-arrow3" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="175" y="22">A. Competitive antagonist</text>
+<line marker-end="url(#ch03-arrow3)" stroke="#334155" stroke-width="1.5" x1="50" x2="305" y1="300" y2="300"></line>
+<line marker-end="url(#ch03-arrow3)" stroke="#334155" stroke-width="1.5" x1="50" x2="50" y1="300" y2="45"></line>
+<line stroke="#334155" stroke-dasharray="4 4" x1="50" x2="300" y1="64" y2="64"></line>
+<text text-anchor="end" x="44" y="68">100%</text><text text-anchor="end" x="44" y="184">50%</text>
+<line stroke="#334155" stroke-dasharray="3 3" x1="50" x2="200" y1="180" y2="180"></line>
+<path d="M50,296 C100,296 110,180 130,180 S160,64 210,64 L300,64" fill="none" stroke="#334155" stroke-width="2.5"></path>
+<path d="M50,296 C170,296 180,180 200,180 S230,64 280,64 L300,64" fill="none" stroke="#334155" stroke-dasharray="8 5" stroke-width="2.5"></path>
+<line stroke="#334155" stroke-dasharray="3 3" x1="130" x2="130" y1="180" y2="300"></line>
+<line stroke="#334155" stroke-dasharray="3 3" x1="200" x2="200" y1="180" y2="300"></line>
+<text text-anchor="middle" x="130" y="316">EC50</text><text text-anchor="middle" x="200" y="316">↑EC50</text>
+<line marker-end="url(#ch03-arrow3)" stroke="#334155" stroke-width="1.5" x1="138" x2="190" y1="200" y2="200"></line>
+<text x="60" y="90">Agonist alone</text>
+<text x="215" y="235">+ competitive</text>
+<text x="215" y="250">antagonist</text>
+<text text-anchor="middle" x="175" y="338">log [agonist] → right shift, same Emax</text>
+<text text-anchor="middle" x="175" y="354">(surmountable: ↓ potency)</text>
+<text text-anchor="middle" transform="rotate(-90 20 180)" x="20" y="180">% maximal response</text>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="495" y="22">B. Noncompetitive antagonist</text>
+<line marker-end="url(#ch03-arrow3)" stroke="#334155" stroke-width="1.5" x1="370" x2="625" y1="300" y2="300"></line>
+<line marker-end="url(#ch03-arrow3)" stroke="#334155" stroke-width="1.5" x1="370" x2="370" y1="300" y2="45"></line>
+<line stroke="#334155" stroke-dasharray="4 4" x1="370" x2="620" y1="64" y2="64"></line>
+<text text-anchor="end" x="364" y="68">100%</text>
+<path d="M370,296 C420,296 430,180 450,180 S480,64 530,64 L620,64" fill="none" stroke="#334155" stroke-width="2.5"></path>
+<path d="M370,296 C420,296 430,238 450,238 S480,180 530,180 L620,180" fill="none" stroke="#334155" stroke-dasharray="8 5" stroke-width="2.5"></path>
+<line stroke="#334155" stroke-dasharray="3 3" x1="450" x2="450" y1="180" y2="300"></line>
+<text text-anchor="middle" x="450" y="316">same EC50</text>
+<line marker-end="url(#ch03-arrow3)" stroke="#334155" stroke-width="1.5" x1="580" x2="580" y1="70" y2="172"></line>
+<text x="586" y="125">↓Emax</text>
+<text x="380" y="90">Agonist alone</text>
+<text x="465" y="262">+ noncompetitive antagonist</text>
+<text x="465" y="277">(e.g., phenoxybenzamine)</text>
+<text text-anchor="middle" x="495" y="338">log [agonist] → Emax falls</text>
+<text text-anchor="middle" x="495" y="354">(not surmountable: ↓ efficacy)</text>
+</g>
+</svg>

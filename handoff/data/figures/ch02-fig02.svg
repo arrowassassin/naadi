@@ -1,0 +1,101 @@
+<svg aria-label="Gram-positive identification algorithm" font-family="sans-serif" role="img" viewbox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#fef3c7" height="27" rx="7" stroke="#334155" stroke-width="1.3" width="170" x="415" y="16"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="500" y="34">Gram-positive (purple)</text>
+<rect fill="#e0f2fe" height="27" rx="7" stroke="#334155" stroke-width="1.3" width="120" x="200" y="78"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="260" y="96">Cocci</text>
+<rect fill="#e0f2fe" height="27" rx="7" stroke="#334155" stroke-width="1.3" width="120" x="760" y="78"></rect>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="820" y="96">Rods (bacilli)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="450" x2="300" y1="45" y2="78"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="550" x2="780" y1="45" y2="78"></line>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="200" x="30" y="144"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="130" y="162">Catalase + · clusters</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="130" y="177">Staphylococcus</text>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="230" x="345" y="144"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="162">Catalase − · chains / pairs</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="177">Streptococcus / Enterococcus</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="230" x2="150" y1="107" y2="145"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="290" x2="440" y1="107" y2="145"></line>
+<rect fill="#fee2e2" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="110" x="5" y="234"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="60" y="252">Coagulase +</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="60" y="267">S. aureus</text>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="120" x="135" y="234"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="195" y="252">Coagulase −</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="195" y="267">(CoNS)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="110" x2="70" y1="187" y2="236"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="150" x2="190" y1="187" y2="236"></line>
+<rect fill="#dcfce7" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="140" x="125" y="314"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="195" y="332">Novobiocin S:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="195" y="347">S. epidermidis</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="195" y="362">Novobiocin R:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="195" y="377">S. saprophyticus</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="195" x2="195" y1="274" y2="312"></line>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="112" x="284" y="234"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="252">α-hemolysis</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="267">(partial, green)</text>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="112" x="404" y="234"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="252">β-hemolysis</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="267">(complete)</text>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="112" x="524" y="234"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="252">γ-hemolysis</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="267">(none)</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="420" x2="350" y1="187" y2="233"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="460" x2="460" y1="187" y2="233"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="500" x2="570" y1="187" y2="233"></line>
+<rect fill="#dcfce7" height="87" rx="7" stroke="#334155" stroke-width="1.3" width="112" x="284" y="316"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="334">Optochin S,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="349">bile soluble:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="364">S. pneumoniae</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="379">Optochin R:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="340" y="394">viridans group</text>
+<rect fill="#dcfce7" height="87" rx="7" stroke="#334155" stroke-width="1.3" width="112" x="404" y="316"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="334">Bacitracin S:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="349">GAS (pyogenes)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="364">Bacitracin R:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="379">GBS (agalactiae)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="460" y="394">CAMP +</text>
+<rect fill="#dcfce7" height="87" rx="7" stroke="#334155" stroke-width="1.3" width="112" x="524" y="316"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="334">6.5% NaCl +:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="349">Enterococcus</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="364">(PYR +)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="379">6.5% NaCl −:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="580" y="394">S. gallolyticus</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="340" x2="340" y1="277" y2="315"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="460" x2="460" y1="277" y2="315"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="580" x2="580" y1="277" y2="315"></line>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="105" x="662" y="144"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="715" y="162">Spore-</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="715" y="177">forming</text>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="105" x="778" y="144"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="162">Non-spore</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="177">forming</text>
+<rect fill="#e0f2fe" height="42" rx="7" stroke="#334155" stroke-width="1.3" width="105" x="892" y="144"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="162">Branching</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="177">filaments</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="790" x2="730" y1="107" y2="145"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="820" x2="828" y1="107" y2="145"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="850" x2="935" y1="107" y2="145"></line>
+<rect fill="#dcfce7" height="72" rx="7" stroke="#334155" stroke-width="1.3" width="105" x="662" y="239"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="715" y="257">Aerobic:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="715" y="272">Bacillus</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="715" y="287">Anaerobic:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="715" y="302">Clostridium</text>
+<rect fill="#dcfce7" height="87" rx="7" stroke="#334155" stroke-width="1.3" width="105" x="778" y="232"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="249">Listeria</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="264">(tumbling,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="279">β-hemolytic)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="294">Coryne-</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="309">bacterium</text>
+<rect fill="#dcfce7" height="87" rx="7" stroke="#334155" stroke-width="1.3" width="105" x="892" y="232"></rect>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="249">Aerobic, weak</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="264">acid-fast:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="279">Nocardia</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="294">Anaerobic,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="945" y="309">Actinomyces</text>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="715" x2="715" y1="187" y2="233"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="830" x2="830" y1="187" y2="233"></line>
+<line marker-end="url(#ch02-arrow)" stroke="#334155" stroke-width="1.4" x1="945" x2="945" y1="187" y2="233"></line>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="360">Metachromatic granules → Corynebacterium</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="378">Sulfur granules → Actinomyces (penicillin)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="830" y="396">Nocardia → TMP-SMX ("SNAP")</text>
+</svg>

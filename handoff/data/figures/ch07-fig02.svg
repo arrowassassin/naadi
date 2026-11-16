@@ -1,0 +1,20 @@
+<svg aria-label="Ventral view schematic of brainstem with levels and cranial nerve exit points" role="img" viewbox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fef3c7" height="90" rx="20" stroke="#334155" stroke-width="2" width="180" x="230" y="40"></rect>
+<rect fill="#e0f2fe" height="120" rx="30" stroke="#334155" stroke-width="2" width="210" x="215" y="135"></rect>
+<path d="M250,260 L390,260 L370,370 L270,370 Z" fill="#dcfce7" stroke="#334155" stroke-width="2"></path>
+<text fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="320" y="62">MIDBRAIN</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="320" y="160">PONS</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="320" y="285">MEDULLA</text>
+<!-- CN labels left side -->
+<line stroke="#334155" x1="300" x2="160" y1="100" y2="80"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="84">III oculomotor (ventral,</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="99">between PCA &amp; SCA)</text>
+<line stroke="#334155" stroke-dasharray="4,3" x1="410" x2="470" y1="75" y2="60"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="475" y="55">IV trochlear (only CN</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="475" y="70">exiting dorsally; crosses)</text>
+<line stroke="#334155" x1="230" x2="140" y1="190" y2="175"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="165">V trigeminal</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="180">(mid-lateral pons)</text>
+<line stroke="#334155" x1="305" x2="160" y1="255" y2="235"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="225">VI abducens</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="240">(pontomedullary jn, medial)</text>
+<line stroke="#334155" x1="415" x2="480" y1="245" y2="230"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="485" y="225">VII, VIII at</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="485" y="240">cerebellopontine angle</text>
+<line stroke="#334155" x1="380" x2="480" y1="300" y2="290"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="485" y="285">IX, X, XI</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="485" y="300">(postolivary sulcus)</text>
+<line stroke="#334155" x1="290" x2="160" y1="320" y2="310"></line><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="300">XII hypoglossal</text><text fill="#0f172a" font-family="sans-serif" font-size="12" x="20" y="315">(preolivary sulcus, medial)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="320" y="390">Rule of 4: 4 CN above pons (I–IV), 4 in pons (V–VIII), 4 in medulla (IX–XII)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="320" y="110">Cerebral peduncles (CST)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="320" y="210">Basilar artery (midline)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle" x="320" y="335">Pyramids + olives</text>
+</svg>

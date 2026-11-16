@@ -1,0 +1,40 @@
+<svg aria-label="Thyroid function test interpretation algorithm starting with TSH then free T4 then radioactive iodine uptake" role="img" viewbox="0 0 640 450" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch06-arrow5" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#e0f2fe" height="34" rx="6" stroke="#334155" width="150" x="245" y="10"></rect><text font-weight="bold" text-anchor="middle" x="320" y="32">Measure TSH first</text>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="270" x2="120" y1="44" y2="78"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="320" x2="320" y1="44" y2="78"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="370" x2="520" y1="44" y2="78"></line>
+<rect fill="#fee2e2" height="34" rx="6" stroke="#334155" width="160" x="40" y="80"></rect><text font-weight="bold" text-anchor="middle" x="120" y="102">TSH LOW → free T4</text>
+<rect fill="#dcfce7" height="50" rx="6" stroke="#334155" width="140" x="250" y="80"></rect><text text-anchor="middle" x="320" y="100">TSH normal →</text><text text-anchor="middle" x="320" y="118">euthyroid (usually)</text>
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" width="160" x="440" y="80"></rect><text font-weight="bold" text-anchor="middle" x="520" y="102">TSH HIGH → free T4</text>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="80" x2="55" y1="114" y2="148"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="120" x2="140" y1="114" y2="148"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="170" x2="230" y1="114" y2="148"></line>
+<rect fill="#fee2e2" height="50" rx="6" stroke="#334155" width="100" x="10" y="150"></rect><text text-anchor="middle" x="60" y="170">FT4 ↑ = overt</text><text text-anchor="middle" x="60" y="188">hyperthyroid</text>
+<rect fill="#fee2e2" height="82" rx="6" stroke="#334155" width="99" x="113" y="150"></rect><text text-anchor="middle" x="162" y="168">FT4 normal →</text><text text-anchor="middle" x="162" y="184">check T3:</text><text text-anchor="middle" x="162" y="200">↑ T3 toxicosis</text><text text-anchor="middle" x="162" y="216">nl subclinical</text>
+<rect fill="#e0f2fe" height="66" rx="6" stroke="#334155" width="120" x="215" y="150"></rect><text text-anchor="middle" x="275" y="168">FT4 ↓ → central</text><text text-anchor="middle" x="275" y="184">hypothyroidism or</text><text text-anchor="middle" x="275" y="200">nonthyroidal illness</text>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="60" x2="60" y1="200" y2="243"></line>
+<rect fill="#fef3c7" height="34" rx="6" stroke="#334155" width="210" x="10" y="245"></rect><text font-weight="bold" text-anchor="middle" x="115" y="267">Radioactive iodine uptake</text>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="40" x2="40" y1="279" y2="313"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="115" x2="115" y1="279" y2="313"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="190" x2="215" y1="279" y2="313"></line>
+<rect fill="#fee2e2" height="80" rx="6" stroke="#334155" width="80" x="5" y="315"></rect><text text-anchor="middle" x="45" y="333">↑ diffuse:</text><text text-anchor="middle" x="45" y="349">Graves</text><text text-anchor="middle" x="45" y="365">(TSI; TRAb</text><text text-anchor="middle" x="45" y="381">confirms)</text>
+<rect fill="#fee2e2" height="80" rx="6" stroke="#334155" width="90" x="90" y="315"></rect><text text-anchor="middle" x="135" y="333">↑ patchy/focal:</text><text text-anchor="middle" x="135" y="349">toxic MNG,</text><text text-anchor="middle" x="135" y="365">toxic adenoma</text>
+<rect fill="#e0f2fe" height="125" rx="6" stroke="#334155" width="175" x="185" y="315"></rect><text x="193" y="333">↓ uptake:</text><text x="193" y="349">• subacute (painful, ↑ESR)</text><text x="193" y="365">• painless/postpartum</text><text x="193" y="381">  (anti-TPO +)</text><text x="193" y="397">• iodine load, amiodarone</text><text x="193" y="413">• exogenous T4: ↓ Tg</text><text x="193" y="429">  (↑ in thyroiditis)</text>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="480" x2="440" y1="114" y2="148"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="520" x2="520" y1="114" y2="243"></line>
+<line marker-end="url(#ch06-arrow5)" stroke="#334155" stroke-width="2" x1="570" x2="600" y1="114" y2="148"></line>
+<rect fill="#fef3c7" height="80" rx="6" stroke="#334155" width="130" x="375" y="150"></rect><text text-anchor="middle" x="440" y="168">FT4 ↓ = primary</text><text text-anchor="middle" x="440" y="184">hypothyroidism</text><text text-anchor="middle" x="440" y="200">(Hashimoto:</text><text text-anchor="middle" x="440" y="216">anti-TPO +)</text>
+<rect fill="#fee2e2" height="80" rx="6" stroke="#334155" width="100" x="535" y="150"></rect><text text-anchor="middle" x="585" y="168">FT4 ↑ → TSH-</text><text text-anchor="middle" x="585" y="184">oma (↑ α-sub)</text><text text-anchor="middle" x="585" y="200">or hormone</text><text text-anchor="middle" x="585" y="216">resistance</text>
+<rect fill="#dcfce7" height="50" rx="6" stroke="#334155" width="180" x="430" y="245"></rect><text text-anchor="middle" x="520" y="265">FT4 normal = subclinical</text><text text-anchor="middle" x="520" y="283">hypothyroidism</text>
+<rect fill="#e0f2fe" height="120" rx="6" stroke="#334155" width="250" x="380" y="320"></rect>
+<text font-weight="bold" x="388" y="338">Pitfalls</text>
+<text x="388" y="356">• Pregnancy/OCP: total T4 ↑, FT4 normal</text>
+<text x="388" y="372">• High hCG (1st trimester, mole):</text>
+<text x="388" y="388">  TSH ↓, FT4 ↑ (α-subunit cross-talk)</text>
+<text x="388" y="404">• Biotin supplements distort assays</text>
+<text x="388" y="420">• Recovery from sick euthyroid:</text>
+<text x="388" y="436">  transient TSH ↑</text>
+</g>
+</svg>

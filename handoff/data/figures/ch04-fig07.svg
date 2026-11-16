@@ -1,0 +1,42 @@
+<svg aria-label="Cell cycle phases with sites of action of chemotherapy drugs" role="img" viewbox="0 0 680 400" xmlns="http://www.w3.org/2000/svg">
+<g fill="#0f172a" font-family="sans-serif" font-size="13">
+<path d="M220,200 L220,80 A120,120 0 0 1 280,303.9 Z" fill="#dcfce7" stroke="#334155" stroke-width="1.5"></path>
+<path d="M220,200 L280,303.9 A120,120 0 0 1 101.8,220.8 Z" fill="#fef3c7" stroke="#334155" stroke-width="1.5"></path>
+<path d="M220,200 L101.8,220.8 A120,120 0 0 1 142.9,108.1 Z" fill="#e0f2fe" stroke="#334155" stroke-width="1.5"></path>
+<path d="M220,200 L142.9,108.1 A120,120 0 0 1 220,80 Z" fill="#fee2e2" stroke="#334155" stroke-width="1.5"></path>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="282" y="178">G1</text>
+<text font-size="12" text-anchor="middle" x="282" y="196">(growth)</text>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="190" y="262">S</text>
+<text font-size="12" text-anchor="middle" x="190" y="279">(DNA synthesis)</text>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="152" y="182">G2</text>
+<text font-size="16" font-weight="bold" text-anchor="middle" x="194" y="138">M</text>
+<text font-size="12" text-anchor="middle" x="220" y="70">mitosis → G1 (clockwise)</text>
+<path d="M352,190 A135,135 0 0 1 300,302" fill="none" marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2"></path>
+<rect fill="#ffffff" height="44" rx="6" stroke="#334155" stroke-dasharray="4,3" width="240" x="20" y="340"></rect>
+<text font-size="12" font-weight="bold" x="30" y="358">G0 (quiescent)</text>
+<text font-size="12" x="30" y="375">resistant to phase-specific drugs</text>
+<line marker-end="url(#ch04-arrow)" stroke="#334155" stroke-width="2" x1="260" x2="270" y1="352" y2="318"></line>
+<rect fill="#dcfce7" height="62" rx="6" stroke="#334155" width="280" x="390" y="14"></rect>
+<text font-size="12" font-weight="bold" x="400" y="33">G1 (arrest)</text>
+<text font-size="12" x="400" y="50">CDK4/6 inhibitors: palbociclib,</text>
+<text font-size="12" x="400" y="66">ribociclib, abemaciclib</text>
+<rect fill="#fef3c7" height="96" rx="6" stroke="#334155" width="280" x="390" y="86"></rect>
+<text font-size="12" font-weight="bold" x="400" y="105">S phase (antimetabolites)</text>
+<text font-size="12" x="400" y="122">MTX, pemetrexed (DHFR); 5-FU (TS)</text>
+<text font-size="12" x="400" y="138">6-MP, 6-TG (purine synthesis)</text>
+<text font-size="12" x="400" y="154">Cytarabine, gemcitabine; hydroxyurea</text>
+<text font-size="12" x="400" y="170">Topo I: irinotecan, topotecan (S/G2)</text>
+<rect fill="#e0f2fe" height="62" rx="6" stroke="#334155" width="280" x="390" y="192"></rect>
+<text font-size="12" font-weight="bold" x="400" y="211">G2 phase</text>
+<text font-size="12" x="400" y="228">Bleomycin (free radical DNA breaks)</text>
+<text font-size="12" x="400" y="244">Etoposide (topo II; late S–G2)</text>
+<rect fill="#fee2e2" height="62" rx="6" stroke="#334155" width="280" x="390" y="264"></rect>
+<text font-size="12" font-weight="bold" x="400" y="283">M phase (microtubules)</text>
+<text font-size="12" x="400" y="300">Vincristine, vinblastine: ↓ polymerize</text>
+<text font-size="12" x="400" y="316">Paclitaxel, docetaxel: ↓ depolymerize</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#334155" stroke-dasharray="4,3" width="280" x="390" y="336"></rect>
+<text font-size="12" font-weight="bold" x="400" y="355">Cell cycle–nonspecific</text>
+<text font-size="12" x="400" y="371">Alkylators, platinums, anthracyclines,</text>
+<text font-size="12" x="400" y="387">dactinomycin (also act on G0 cells)</text>
+</g>
+</svg>

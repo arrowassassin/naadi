@@ -1,0 +1,64 @@
+<svg aria-label="Upper GI bleed management algorithm" role="img" viewbox="0 0 640 460" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch09-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<rect fill="#fee2e2" height="40" rx="6" stroke="#334155" width="300" x="170" y="10"></rect>
+<text font-weight="bold" x="320" y="27">Suspected upper GI bleed</text>
+<text x="320" y="43">hematemesis · melena · BUN:Cr &gt;30</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="320" x2="320" y1="50" y2="64"></line>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="420" x="110" y="66"></rect>
+<text x="320" y="83">Resuscitate: 2 large-bore IVs, crystalloid, type &amp; crossmatch</text>
+<text x="320" y="99">RBCs if Hb &lt;7 g/dL (&lt;8 if cardiovascular disease)</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="260" x2="170" y1="106" y2="124"></line>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="380" x2="470" y1="106" y2="124"></line>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="280" x="20" y="126"></rect>
+<text font-weight="bold" x="160" y="149">Cirrhosis / suspected varices</text>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="290" x="330" y="126"></rect>
+<text font-weight="bold" x="475" y="149">Non-variceal (PUD most common)</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="160" x2="160" y1="162" y2="178"></line>
+<rect fill="#dcfce7" height="70" rx="6" stroke="#334155" width="280" x="20" y="180"></rect>
+<text x="160" y="199">IV octreotide (3–5 days)</text>
+<text x="160" y="215">+ IV ceftriaxone 1 g/day (≤7 days)</text>
+<text x="160" y="231">EGD within 12 h → band ligation</text>
+<text font-size="11" x="160" y="245">restrictive transfusion (target Hb 7–8)</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="160" x2="160" y1="250" y2="266"></line>
+<rect fill="#fef3c7" height="64" rx="6" stroke="#334155" width="280" x="20" y="268"></rect>
+<text x="160" y="286">Failure / early rebleed:</text>
+<text x="160" y="302">rescue TIPS (pre-emptive TIPS if Child C)</text>
+<text x="160" y="318">balloon tamponade = bridge only</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="160" x2="160" y1="332" y2="348"></line>
+<rect fill="#dcfce7" height="56" rx="6" stroke="#334155" width="280" x="20" y="350"></rect>
+<text x="160" y="369">Secondary prophylaxis: NSBB</text>
+<text x="160" y="385">(propranolol, nadolol, or carvedilol)</text>
+<text x="160" y="400">+ serial band ligation</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="475" x2="475" y1="162" y2="178"></line>
+<rect fill="#dcfce7" height="46" rx="6" stroke="#334155" width="290" x="330" y="180"></rect>
+<text x="475" y="198">Glasgow-Blatchford score 0–1</text>
+<text x="475" y="215">→ discharge, outpatient EGD</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="475" x2="475" y1="226" y2="240"></line>
+<rect fill="#fef3c7" height="46" rx="6" stroke="#334155" width="290" x="330" y="242"></rect>
+<text x="475" y="260">GBS ≥2: IV PPI ± IV erythromycin</text>
+<text x="475" y="277">EGD within 24 h</text>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="420" x2="376" y1="288" y2="304"></line>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="475" x2="475" y1="288" y2="304"></line>
+<line marker-end="url(#ch09-arrow)" stroke="#334155" x1="530" x2="574" y1="288" y2="304"></line>
+<rect fill="#fee2e2" height="74" rx="6" stroke="#334155" width="92" x="330" y="306"></rect>
+<text x="376" y="323">Active bleed /</text>
+<text x="376" y="338">visible vessel</text>
+<text x="376" y="353">→ endo Rx +</text>
+<text x="376" y="368">PPI 72 h</text>
+<rect fill="#fef3c7" height="74" rx="6" stroke="#334155" width="92" x="429" y="306"></rect>
+<text x="475" y="323">Adherent</text>
+<text x="475" y="338">clot</text>
+<text x="475" y="353">→ consider</text>
+<text x="475" y="368">endo Rx + PPI</text>
+<rect fill="#dcfce7" height="74" rx="6" stroke="#334155" width="92" x="528" y="306"></rect>
+<text x="574" y="323">Clean base /</text>
+<text x="574" y="338">flat spot</text>
+<text x="574" y="353">→ oral PPI,</text>
+<text x="574" y="368">early discharge</text>
+<rect fill="#e0f2fe" height="56" rx="6" stroke="#334155" width="290" x="330" y="394"></rect>
+<text x="475" y="412">Rebleed → repeat EGD → IR embolization</text>
+<text x="475" y="427">→ surgery</text>
+<text x="475" y="443">Always: test/treat H. pylori, stop NSAIDs</text>
+</g>
+</svg>

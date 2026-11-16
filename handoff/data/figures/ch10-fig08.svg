@@ -1,0 +1,62 @@
+<svg aria-label="Acetaminophen overdose management flowchart using time of ingestion, nomogram and NAC" role="img" viewbox="0 0 640 470" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch10-a5" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="5"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="300" x="170" y="8"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="320" y="25">Suspected acetaminophen ingestion</text>
+<text text-anchor="middle" x="320" y="41">ABCs, glucose, APAP + salicylate levels, LFTs, INR</text>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="240" x2="130" y1="48" y2="76"></line>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="400" x2="510" y1="48" y2="76"></line>
+<rect fill="#e0f2fe" height="36" rx="6" stroke="#334155" width="300" x="10" y="78"></rect>
+<text font-weight="bold" text-anchor="middle" x="160" y="101">Single acute ingestion, known time</text>
+<rect fill="#e0f2fe" height="52" rx="6" stroke="#334155" width="300" x="330" y="78"></rect>
+<text font-weight="bold" text-anchor="middle" x="480" y="98">Unknown time, repeated/staggered</text>
+<text font-weight="bold" text-anchor="middle" x="480" y="116">supratherapeutic, or &gt; 24 h</text>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="80" x2="80" y1="114" y2="140"></line>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="240" x2="240" y1="114" y2="140"></line>
+<rect fill="#dcfce7" height="92" rx="6" stroke="#334155" width="140" x="10" y="142"></rect>
+<text font-weight="bold" x="18" y="160">&lt; 4 h since</text>
+<text x="18" y="176">Charcoal if ≤ 1–2 h</text>
+<text x="18" y="192">(airway safe)</text>
+<text x="18" y="210">Draw level AT 4 h</text>
+<text x="18" y="226">(not before)</text>
+<rect fill="#dcfce7" height="92" rx="6" stroke="#334155" width="150" x="160" y="142"></rect>
+<text font-weight="bold" x="168" y="160">4–24 h since</text>
+<text x="168" y="176">Draw level now</text>
+<text x="168" y="192">If 8–24 h or result</text>
+<text x="168" y="208">will be late → START</text>
+<text x="168" y="224">NAC while waiting</text>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="80" x2="150" y1="234" y2="262"></line>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="235" x2="170" y1="234" y2="262"></line>
+<rect fill="#ffffff" height="36" rx="6" stroke="#334155" width="220" x="50" y="264"></rect>
+<text font-weight="bold" text-anchor="middle" x="160" y="287">Plot on Rumack–Matthew nomogram</text>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="110" x2="80" y1="300" y2="326"></line>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="210" x2="240" y1="300" y2="326"></line>
+<rect fill="#fee2e2" height="62" rx="6" stroke="#334155" width="140" x="10" y="328"></rect>
+<text font-weight="bold" x="18" y="346">On/above line</text>
+<text x="18" y="362">(≥ 150 mcg/mL at 4 h)</text>
+<text font-weight="bold" x="18" y="378">→ N-acetylcysteine</text>
+<rect fill="#dcfce7" height="62" rx="6" stroke="#334155" width="150" x="160" y="328"></rect>
+<text font-weight="bold" x="168" y="346">Below line</text>
+<text x="168" y="362">No NAC; stop empiric</text>
+<text x="168" y="378">NAC; psychiatry eval</text>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="480" x2="480" y1="130" y2="156"></line>
+<rect fill="#fee2e2" height="76" rx="6" stroke="#334155" width="300" x="330" y="158"></rect>
+<text font-weight="bold" x="340" y="176">Nomogram NOT valid</text>
+<text x="340" y="194">Give NAC if APAP level detectable</text>
+<text x="340" y="210">(e.g., &gt; 10–20 mcg/mL) OR AST/ALT elevated</text>
+<text x="340" y="226">OR history suggests toxic dose</text>
+<line marker-end="url(#ch10-a5)" stroke="#334155" x1="480" x2="480" y1="234" y2="262"></line>
+<rect fill="#fef3c7" height="126" rx="6" stroke="#334155" width="300" x="330" y="264"></rect>
+<text font-weight="bold" x="340" y="282">NAC: IV (21-h regimen) or PO (72 h)</text>
+<text x="340" y="298">Best if started within 8 h of ingestion</text>
+<text x="340" y="314">Anaphylactoid rash → pause, antihistamine,</text>
+<text x="340" y="330">restart slower (not a true allergy)</text>
+<text x="340" y="348">Stop when: APAP undetectable, AST/ALT</text>
+<text x="340" y="364">falling/normal, INR &lt; 2, patient well</text>
+<text x="340" y="382">Otherwise continue infusion</text>
+<rect fill="#ffffff" height="58" rx="6" stroke="#334155" width="620" x="10" y="404"></rect>
+<text x="20" y="420">King's College criteria → transplant referral: arterial pH &lt; 7.30 after fluids, OR all of</text>
+<text x="20" y="436">INR &gt; 6.5, creatinine &gt; 3.4 mg/dL and grade III–IV encephalopathy.</text>
+<text x="20" y="452">Massive ingestion: higher NAC dose ± hemodialysis (toxicology consult).</text>
+</g>
+</svg>

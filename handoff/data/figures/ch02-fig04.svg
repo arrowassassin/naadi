@@ -1,0 +1,31 @@
+<svg aria-label="Schematic US map of regional fungal and vector-borne infections" font-family="sans-serif" role="img" viewbox="0 0 820 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch02-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<path d="M40,90 L180,60 L420,55 L560,70 L700,45 L780,70 L790,120 L740,170 L720,240 L680,300 L640,340 L600,300 L520,300 L430,345 L360,300 L230,300 L150,250 L60,230 L40,160 Z" fill="#ffffff" stroke="#334155" stroke-width="2"></path>
+<text fill="#0f172a" font-size="13" font-weight="bold" text-anchor="middle" x="410" y="25">Schematic of the contiguous US (not to scale): where key fungi and vector-borne infections cluster</text>
+<ellipse cx="150" cy="215" fill="#fef3c7" opacity="0.9" rx="95" ry="50" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="150" y="205">Southwest (AZ, CA</text>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="150" y="221">San Joaquin Valley):</text>
+<text fill="#0f172a" font-size="12" font-style="italic" text-anchor="middle" x="150" y="237">Coccidioides</text>
+<ellipse cx="285" cy="140" fill="#fee2e2" opacity="0.85" rx="62" ry="36" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="285" y="133">Four Corners:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="285" y="149">Hantavirus, plague</text>
+<ellipse cx="500" cy="200" fill="#e0f2fe" opacity="0.85" rx="105" ry="62" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="500" y="190">Ohio &amp; Mississippi</text>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="500" y="206">River valleys:</text>
+<text fill="#0f172a" font-size="12" font-style="italic" text-anchor="middle" x="500" y="222">Histoplasma (+ Blastomyces)</text>
+<ellipse cx="545" cy="108" fill="#dcfce7" opacity="0.85" rx="118" ry="36" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="545" y="103">Great Lakes / upper Midwest:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="545" y="119">Blastomyces; Lyme, Anaplasma</text>
+<ellipse cx="735" cy="125" fill="#dcfce7" opacity="0.85" rx="78" ry="46" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="735" y="113">Northeast:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="735" y="129">Lyme, Babesia,</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="735" y="145">Anaplasma, Powassan</text>
+<ellipse cx="625" cy="285" fill="#fee2e2" opacity="0.85" rx="150" ry="34" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="625" y="280">South-central / Southeast:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="625" y="296">RMSF, Ehrlichia (NC, AR, MO, TN, OK)</text>
+<ellipse cx="420" cy="300" fill="#fef3c7" opacity="0.9" rx="55" ry="24" stroke="#334155"></ellipse>
+<text fill="#0f172a" font-size="12" font-weight="bold" text-anchor="middle" x="420" y="297">Gulf coast:</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="420" y="312">Vibrio vulnificus</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="410" y="372">Vectors: Ixodes (Lyme, Babesia, Anaplasma) · Dermacentor (RMSF, tularemia) · Amblyomma lone star (Ehrlichia, alpha-gal)</text>
+<text fill="#0f172a" font-size="12" text-anchor="middle" x="410" y="390">India contrast: scrub typhus (Orientia, chiggers), Japanese encephalitis, kala-azar, Talaromyces (NE India), mucormycosis</text>
+</svg>

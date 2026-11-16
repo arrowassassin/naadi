@@ -1,0 +1,83 @@
+<svg aria-label="De novo pyrimidine and purine synthesis, salvage and degradation with drug targets" role="img" viewbox="0 0 830 440" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch01-arr-nucleotide" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif">
+<text font-size="14" font-weight="bold" text-anchor="middle" x="105" y="22">PYRIMIDINES (ring first)</text>
+<text font-size="14" font-weight="bold" text-anchor="middle" x="630" y="22">PURINES (built on PRPP)</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="36"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="54.55">Glutamine + CO₂</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="84"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="102.55">Carbamoyl phosphate</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="132"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="150.55">Orotate</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="180"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="198.55">UMP</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="228"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="246.55">UDP → CDP, dUDP</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="276"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="294.55">dUMP</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="150" x="30" y="324"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="105.0" y="342.55">dTMP</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="105" x2="105" y1="64" y2="83"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="190" y="78.0">CPS II (cytosol; −UTP)</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="105" x2="105" y1="112" y2="131"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="190" y="126.0">+ Asp; DHODH</text>
+<rect fill="#fee2e2" height="18" rx="6" stroke="#334155" stroke-width="1.5" width="91.2" x="280.0" y="113.0"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="325.6" y="126.2">leflunomide</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="105" x2="105" y1="160" y2="179"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="190" y="174.0">UMP synthase + PRPP</text>
+<rect fill="#fee2e2" height="18" rx="6" stroke="#334155" stroke-width="1.5" width="120.0" x="329.0" y="161.0"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="389.0" y="174.2">orotic aciduria</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="105" x2="105" y1="208" y2="227"></line>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="105" x2="105" y1="256" y2="275"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="190" y="270.0">ribonucleotide reductase</text>
+<rect fill="#fee2e2" height="18" rx="6" stroke="#334155" stroke-width="1.5" width="91.2" x="364.0" y="257.0"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="409.6" y="270.2">hydroxyurea</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="105" x2="105" y1="304" y2="323"></line>
+<text font-size="12" font-weight="normal" text-anchor="start" x="190" y="318.0">thymidylate synthase</text>
+<rect fill="#fee2e2" height="18" rx="6" stroke="#334155" stroke-width="1.5" width="112.8" x="336.0" y="305.0"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="392.4" y="318.2">5-fluorouracil</text>
+<rect fill="#fee2e2" height="40" rx="6" stroke="#334155" stroke-width="1.5" width="330" x="30" y="368"></rect>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="195.0" y="384.7">DHFR regenerates THF for thymidylate synthase:</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="195.0" y="399.7">methotrexate, trimethoprim, pyrimethamine</text>
+<rect fill="#dcfce7" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="480" y="36"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="535.0" y="54.55">Ribose-5-P</text>
+<rect fill="#fef3c7" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="660" y="36"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="715.0" y="54.55">PRPP</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="590" x2="659" y1="50" y2="50"></line>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="660" y="106"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="715.0" y="124.55">IMP</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="715" x2="715" y1="64" y2="105"></line>
+<text font-size="12" font-weight="normal" text-anchor="end" x="707" y="82">PRPP amidotransferase</text>
+<text font-size="12" font-weight="normal" text-anchor="end" x="707" y="98">(6-MP, azathioprine ⊣)</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="90" x="520" y="176"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="565.0" y="194.55">AMP</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="90" x="670" y="176"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="715.0" y="194.55">GMP</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="670" x2="600" y1="130" y2="175"></line>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="715" x2="715" y1="134" y2="175"></line>
+<text font-size="12" font-weight="bold" text-anchor="start" x="723" y="160">IMP DH</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="100" x="480" y="236"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="530.0" y="254.55">Adenosine</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="560" x2="540" y1="204" y2="235"></line>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="90" x="610" y="236"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="655.0" y="254.55">Inosine</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="580" x2="609" y1="250" y2="250"></line>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="595" y="230">ADA</text>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="120" x="670" y="296"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="730.0" y="314.55">Hypoxanthine</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="670" x2="710" y1="264" y2="295"></line>
+<rect fill="#e0f2fe" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="120" x="670" y="360"></rect>
+<text font-size="13" font-weight="normal" text-anchor="middle" x="730.0" y="378.55">Xanthine</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="730" x2="730" y1="324" y2="359"></line>
+<rect fill="#fef3c7" height="28" rx="6" stroke="#334155" stroke-width="1.5" width="110" x="490" y="360"></rect>
+<text font-size="13" font-weight="bold" text-anchor="middle" x="545.0" y="378.55">Uric acid</text>
+<line marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-width="1.6" x1="670" x2="601" y1="374" y2="374"></line>
+<text font-size="12" font-weight="bold" text-anchor="end" x="665" y="352">XO</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="600" y="408">xanthine oxidase (XO) ⊣ allopurinol, febuxostat</text>
+<text font-size="12" font-weight="normal" text-anchor="middle" x="600" y="426">IMP dehydrogenase ⊣ mycophenolate, ribavirin</text>
+<path d="M 790 306 L 815 306 L 815 120 L 771 120" fill="none" marker-end="url(#ch01-arr-nucleotide)" stroke="#334155" stroke-dasharray="6 4" stroke-width="1.6"></path>
+<rect fill="#ffffff" height="36" rx="6" stroke="#334155" stroke-width="1.5" width="86" x="738" y="220"></rect>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="781.0" y="234.7">HGPRT</text>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="781.0" y="249.7">salvage</text>
+</g>
+</svg>

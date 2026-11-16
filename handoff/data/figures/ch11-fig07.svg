@@ -1,0 +1,59 @@
+<svg aria-label="Amenorrhea workup algorithm for primary and secondary amenorrhea" font-family="sans-serif" role="img" viewbox="0 0 640 500" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch11-arrow4" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-size="12">
+<rect fill="#fee2e2" height="30" rx="6" stroke="#334155" width="320" x="160" y="6"></rect>
+<text font-weight="bold" text-anchor="middle" x="320" y="26">Amenorrhea → β-hCG FIRST (pregnancy)</text>
+<rect fill="#e0f2fe" height="50" rx="6" stroke="#334155" width="150" x="10" y="110"></rect>
+<text font-weight="bold" text-anchor="middle" x="85" y="130">PRIMARY</text>
+<text text-anchor="middle" x="85" y="148">no menses by 15 y</text>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="150" x="180" y="62"></rect>
+<text text-anchor="middle" x="255" y="79">Breasts ABSENT</text>
+<text text-anchor="middle" x="255" y="95">(no estrogen) → FSH</text>
+<rect fill="#fef3c7" height="40" rx="6" stroke="#334155" width="150" x="180" y="170"></rect>
+<text text-anchor="middle" x="255" y="187">Breasts PRESENT</text>
+<text text-anchor="middle" x="255" y="203">→ pelvic US: uterus?</text>
+<rect fill="#dcfce7" height="70" rx="6" stroke="#334155" width="280" x="350" y="48"></rect>
+<text x="358" y="66">↑ FSH = gonadal failure → karyotype</text>
+<text x="358" y="82">(Turner 45,X; Swyer 46,XY → gonadectomy)</text>
+<text x="358" y="98">↓/normal FSH = CDGP, Kallmann (anosmia),</text>
+<text x="358" y="114">hypothalamic, pituitary → consider MRI</text>
+<rect fill="#dcfce7" height="102" rx="6" stroke="#334155" width="280" x="350" y="138"></rect>
+<text x="358" y="156">Uterus ABSENT → karyotype + testosterone:</text>
+<text x="358" y="172">  46,XX, female T → Müllerian agenesis</text>
+<text x="358" y="188">  46,XY, male T → androgen insensitivity</text>
+<text x="358" y="206">Uterus PRESENT → outflow tract</text>
+<text x="358" y="222">obstruction (imperforate hymen, septum)?</text>
+<text x="358" y="236">If none → work up as secondary</text>
+<line stroke="#334155" stroke-dasharray="5,4" x1="10" x2="630" y1="248" y2="248"></line>
+<rect fill="#e0f2fe" height="50" rx="6" stroke="#334155" width="150" x="10" y="340"></rect>
+<text font-weight="bold" text-anchor="middle" x="85" y="360">SECONDARY</text>
+<text text-anchor="middle" x="85" y="378">≥3 mo (6 if irregular)</text>
+<rect fill="#fef3c7" height="86" rx="6" stroke="#334155" width="150" x="180" y="322"></rect>
+<text text-anchor="middle" x="255" y="342">TSH, prolactin,</text>
+<text text-anchor="middle" x="255" y="358">FSH ± estradiol;</text>
+<text text-anchor="middle" x="255" y="374">testosterone/DHEAS</text>
+<text text-anchor="middle" x="255" y="390">if hyperandrogenic</text>
+<rect fill="#dcfce7" height="30" rx="6" stroke="#334155" width="280" x="350" y="262"></rect>
+<text x="358" y="282">↑ TSH → hypothyroidism (TRH can ↑ PRL)</text>
+<rect fill="#dcfce7" height="30" rx="6" stroke="#334155" width="280" x="350" y="298"></rect>
+<text x="358" y="318">↑ PRL → meds, prolactinoma → MRI pituitary</text>
+<rect fill="#dcfce7" height="46" rx="6" stroke="#334155" width="280" x="350" y="334"></rect>
+<text x="358" y="352">↑ FSH (repeat) &lt;40 y → POI: karyotype,</text>
+<text x="358" y="370">FMR1 premutation; estrogen + progestin</text>
+<rect fill="#dcfce7" height="46" rx="6" stroke="#334155" width="280" x="350" y="386"></rect>
+<text x="358" y="404">Low/normal FSH: FHA (↓E2; athletes, low</text>
+<text x="358" y="422">weight, stress) or PCOS (androgen excess)</text>
+<rect fill="#fee2e2" height="54" rx="6" stroke="#334155" width="280" x="350" y="438"></rect>
+<text x="358" y="456">Normal labs + prior D&amp;C/infection →</text>
+<text x="358" y="472">Asherman: no bleed after E+P challenge</text>
+<text x="358" y="488">→ hysteroscopy (lysis of adhesions)</text>
+</g>
+<g fill="none" marker-end="url(#ch11-arrow4)" stroke="#334155" stroke-width="1.5">
+<path d="M240,36 L85,108"></path>
+<path d="M480,21 L636,21 L636,256 L85,256 L85,338"></path>
+<path d="M160,125 L180,85"></path><path d="M160,145 L180,190"></path>
+<path d="M330,82 L348,82"></path><path d="M330,190 L348,190"></path>
+<path d="M160,365 L178,365"></path>
+<path d="M330,345 L348,277"></path><path d="M330,352 L348,313"></path><path d="M330,362 L348,357"></path><path d="M330,372 L348,409"></path><path d="M330,385 L348,465"></path>
+</g>
+</svg>

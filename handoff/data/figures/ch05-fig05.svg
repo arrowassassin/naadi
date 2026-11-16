@@ -1,0 +1,36 @@
+<svg aria-label="Ventricular myocyte action potential versus SA nodal pacemaker action potential with phases and ion currents" role="img" viewbox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="360" width="640" x="0" y="0"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" x="170" y="24">Ventricular myocyte</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" x="480" y="24">SA node (pacemaker)</text>
+<line stroke="#334155" stroke-width="1.5" x1="35" x2="305" y1="290" y2="290"></line>
+<line stroke="#334155" stroke-width="1.5" x1="35" x2="35" y1="290" y2="60"></line>
+<line stroke="#334155" stroke-width="1.5" x1="340" x2="625" y1="290" y2="290"></line>
+<line stroke="#334155" stroke-width="1.5" x1="340" x2="340" y1="290" y2="60"></line>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="35" x2="305" y1="116" y2="116"></line>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="340" x2="625" y1="116" y2="116"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="30" y="120">0</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="30" y="284">−90</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="338" y="211">−40</text>
+<line stroke="#cbd5e1" stroke-dasharray="3,3" x1="340" x2="625" y1="207" y2="207"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" transform="rotate(-90 12 200)" x="12" y="200">mV</text>
+<path d="M40,280 L80,280 L84,84 L96,110 C130,106 180,112 200,125 C220,150 240,262 258,280 L300,280" fill="none" stroke="#2563eb" stroke-width="3"></path>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="72" y="160">0</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="96" y="80">1</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="150" y="100">2</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="238" y="200">3</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="275" y="272">4</text>
+<rect fill="#e0f2fe" height="52" rx="4" stroke="#334155" width="255" x="45" y="300"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="52" y="316">0: Na⁺ in · 1: I_to K⁺ out</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="52" y="331">2: Ca²⁺ in (L-type) = K⁺ out</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="52" y="346">3: K⁺ out · 4: I_K1, stable</text>
+<path d="M345,226 L398,207 C408,190 418,140 435,116 C452,120 470,190 492,226 L548,207 C558,190 568,140 585,116 C600,125 612,170 622,200" fill="none" stroke="#dc2626" stroke-width="3"></path>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="368" y="240">4</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end" x="405" y="160">0</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="468" y="160">3</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="505" y="240">4</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="420" y="270">threshold ≈ −40 mV</text>
+<rect fill="#fee2e2" height="52" rx="4" stroke="#334155" width="280" x="345" y="300"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="352" y="316">4: I_f (HCN, Na⁺ in) + T-type Ca²⁺</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="352" y="331">0: L-type Ca²⁺ in · 3: K⁺ out</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="352" y="346">ACh/adenosine ↓ slope; NE ↑ slope</text>
+</svg>

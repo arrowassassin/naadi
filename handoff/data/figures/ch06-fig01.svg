@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Map of the GI blood supply from the abdominal aorta: celiac trunk, superior mesenteric artery and inferior mesenteric artery with their territories and watershed zones" role="img" viewbox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch06-arrow" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<g fill="#0f172a" font-family="sans-serif" font-size="12">
+<rect fill="#fee2e2" height="370" rx="6" stroke="#334155" width="34" x="60" y="20"></rect>
+<text font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-90 77 210)" x="77" y="210">Abdominal aorta</text>
+<text x="12" y="74">T12</text><text x="12" y="174">L1</text><text x="12" y="294">L3</text>
+<line marker-end="url(#ch06-arrow)" stroke="#334155" stroke-width="2" x1="94" x2="140" y1="70" y2="70"></line>
+<line marker-end="url(#ch06-arrow)" stroke="#334155" stroke-width="2" x1="94" x2="140" y1="170" y2="170"></line>
+<line marker-end="url(#ch06-arrow)" stroke="#334155" stroke-width="2" x1="94" x2="140" y1="290" y2="290"></line>
+<rect fill="#e0f2fe" height="95" rx="6" stroke="#334155" width="250" x="142" y="25"></rect>
+<text font-weight="bold" x="152" y="43">Celiac trunk → FOREGUT</text>
+<text x="152" y="61">Branches: left gastric, splenic,</text>
+<text x="152" y="77">common hepatic (→ GDA, proper hepatic)</text>
+<text x="152" y="95">Abd. esophagus → proximal duodenum,</text>
+<text x="152" y="111">liver, gallbladder, pancreas (part), spleen</text>
+<rect fill="#dcfce7" height="95" rx="6" stroke="#334155" width="250" x="142" y="135"></rect>
+<text font-weight="bold" x="152" y="153">SMA → MIDGUT</text>
+<text x="152" y="171">Inf. pancreaticoduodenal, jejunal/ileal,</text>
+<text x="152" y="187">ileocolic, right colic, middle colic</text>
+<text x="152" y="205">Distal duodenum → proximal 2/3 of</text>
+<text x="152" y="221">transverse colon</text>
+<rect fill="#fef3c7" height="95" rx="6" stroke="#334155" width="250" x="142" y="245"></rect>
+<text font-weight="bold" x="152" y="263">IMA → HINDGUT</text>
+<text x="152" y="281">Left colic, sigmoid, superior rectal</text>
+<text x="152" y="299">Distal 1/3 transverse colon →</text>
+<text x="152" y="315">upper rectum (above pectinate line)</text>
+<text x="152" y="331">Lower rectum: middle/inf. rectal aa.</text>
+<rect fill="#e0f2fe" height="95" rx="6" stroke="#334155" width="233" x="402" y="25"></rect>
+<text font-weight="bold" x="410" y="43">Clinical hooks (foregut)</text>
+<text x="410" y="61">Posterior duodenal ulcer → GDA</text>
+<text x="410" y="77">Lesser-curve ulcer → L gastric a.</text>
+<text x="410" y="95">Short gastrics: few collaterals →</text>
+<text x="410" y="111">fundus at risk if splenic a. lost</text>
+<rect fill="#e0f2fe" height="95" rx="6" stroke="#334155" width="233" x="402" y="135"></rect>
+<text font-weight="bold" x="410" y="153">Clinical hooks (midgut)</text>
+<text x="410" y="171">Embolic acute mesenteric ischemia</text>
+<text x="410" y="187">(AF): pain out of proportion</text>
+<text x="410" y="205">SMA syndrome: 3rd part duodenum</text>
+<text x="410" y="221">trapped between SMA and aorta</text>
+<rect fill="#fee2e2" height="95" rx="6" stroke="#334155" width="233" x="402" y="245"></rect>
+<text font-weight="bold" x="410" y="263">Watershed zones</text>
+<text x="410" y="281">Splenic flexure (SMA ↔ IMA)</text>
+<text x="410" y="299">Rectosigmoid junction (sigmoid ↔</text>
+<text x="410" y="315">superior rectal) → ischemic colitis</text>
+<text x="410" y="331">after hypotension</text>
+<text x="142" y="370">Collaterals: superior ↔ inferior pancreaticoduodenal (celiac–SMA);</text>
+<text x="142" y="388">marginal artery of Drummond and arc of Riolan (SMA–IMA);</text>
+<text x="142" y="406">superior rectal ↔ middle/inferior rectal (IMA–internal iliac)</text>
+</g>
+</svg>

@@ -1,0 +1,38 @@
+<svg aria-label="Oxygen-hemoglobin dissociation curve with right and left shifts" role="img" viewbox="0 0 640 370" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ch05-arrow-f7" markerheight="7" markerwidth="7" orient="auto-start-reverse" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0 L10,5 L0,10 z" fill="#334155"></path></marker></defs>
+<rect fill="#ffffff" height="370" width="640" x="0" y="0"></rect>
+<line marker-end="url(#ch05-arrow-f7)" stroke="#334155" stroke-width="2" x1="80" x2="395" y1="320" y2="320"></line>
+<line marker-end="url(#ch05-arrow-f7)" stroke="#334155" stroke-width="2" x1="80" x2="80" y1="320" y2="30"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" text-anchor="middle" x="235" y="355">PO₂ (mmHg)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="13" text-anchor="middle" transform="rotate(-90 30 180)" x="30" y="180">Hb saturation (%)</text>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="middle">
+<text x="80" y="336">0</text><text x="140" y="336">20</text><text x="200" y="336">40</text><text x="260" y="336">60</text><text x="320" y="336">80</text><text x="380" y="336">100</text>
+</g>
+<g fill="#0f172a" font-family="sans-serif" font-size="12" text-anchor="end">
+<text x="74" y="324">0</text><text x="74" y="184">50</text><text x="74" y="44">100</text>
+</g>
+<line stroke="#94a3b8" stroke-dasharray="4,4" x1="80" x2="200" y1="180" y2="180"></line>
+<polyline fill="none" points="80,320 110,298 140,253 185,180 200,158 260,90 320,65 380,54" stroke="#dc2626" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<polyline fill="none" points="80,320 110,284 140,222 161,180 200,110 260,68 320,54 380,47" stroke="#334155" stroke-linejoin="round" stroke-width="3"></polyline>
+<polyline fill="none" points="80,320 110,250 134,180 170,110 200,79 260,54 320,47 380,44" stroke="#2563eb" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<line stroke="#94a3b8" stroke-dasharray="4,4" x1="161" x2="161" y1="180" y2="320"></line>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="164" y="312">P50 ≈ 26–27</text>
+<text fill="#dc2626" font-family="sans-serif" font-size="12" x="205" y="196">Right shift</text>
+<text fill="#2563eb" font-family="sans-serif" font-size="12" x="112" y="140">Left shift</text>
+<text fill="#334155" font-family="sans-serif" font-size="12" x="270" y="105">Normal</text>
+<rect fill="#fee2e2" height="140" rx="6" stroke="#334155" width="210" x="420" y="35"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="430" y="55">Right shift (↓ affinity, ↑ P50)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="75">↑ PCO₂, ↑ H⁺ (Bohr effect)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="93">↑ 2,3-BPG (altitude, anemia)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="111">↑ temperature, exercise</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="129">HbS</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="150">→ unloads O₂ to tissues</text>
+<rect fill="#e0f2fe" height="150" rx="6" stroke="#334155" width="210" x="420" y="190"></rect>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="bold" x="430" y="210">Left shift (↑ affinity, ↓ P50)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="230">↓ PCO₂, ↓ H⁺, ↓ 2,3-BPG, ↓ temp</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="248">Fetal Hb (γ chains bind 2,3-BPG</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="264">  poorly)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="282">CO (also ↓ capacity)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="300">Methemoglobin (Fe³⁺)</text>
+<text fill="#0f172a" font-family="sans-serif" font-size="12" x="430" y="318">Stored blood (↓ 2,3-BPG)</text>
+</svg>
