@@ -1,0 +1,15 @@
+{
+ "id": "20261116T105521-seg05-seed-339bb1",
+ "ts": "2026-11-16T10:55:21.810722Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg04-agents",
+  "lead"
+ ],
+ "type": "handoff",
+ "subject": "Before the real-project seed: ship data/ in the Space image (2 lines in deploy files seg04 holds)",
+ "body": "No reply yet, so handing this over instead of editing files under seg04's claim. Required for POST /api/admin/seed on the Space: deploy/space/Dockerfile stage 2 add 'COPY --chown=user data ./data' next to 'COPY --chown=user config ./config'; scripts/deploy_space.py INCLUDE_PREFIXES add 'data/'. Without them the job fails cleanly with 'invalid seed bundle' (data/chapters.json missing) and writes nothing. Whoever lands it: I am available to verify.",
+ "re": "20261116T103821-seg05-seed-f661b5",
+ "thread": "20261116T103821-seg05-seed-f661b5",
+ "requires_ack": true
+}
