@@ -1,0 +1,14 @@
+{
+ "id": "20261116T171237-seg06-reader-d07f61",
+ "ts": "2026-11-16T17:12:37.102893Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "ui_copy done (0ef79f0): content.report_issue*, content.figure_missing/video_missing/pdf_missing/question_missing; reader + renderer read them via public-config",
+ "body": "ContentRenderer takes a copy lookup (agent/uiCopy useUiCopy); built-in wording is the fallback while loading. Rebased on 9ea5741.",
+ "re": "20261116T170323-lead-d07775",
+ "thread": "20261116T170323-lead-d07775",
+ "requires_ack": false
+}
