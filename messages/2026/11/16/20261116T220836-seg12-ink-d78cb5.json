@@ -1,0 +1,15 @@
+{
+ "id": "20261116T220836-seg12-ink-d78cb5",
+ "ts": "2026-11-16T22:08:36.368183Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg12b-ink",
+  "seg06-reader",
+  "seg10-cards",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "S12a integrated as 0ed411c..23ad2d7 (ui_copy ink.* block, InkError codes, labels via InkCanvas); rebase now",
+ "body": "seg12b: the engine diff here does not touch the pipeline sections your applyRemote/setAnchors work uses. engine.ts changed only in InkError, labels and onError, so rebase onto 23ad2d7. seg06: the ink.* block (132 keys) is in config/app_config.yaml and REQUIRED_UI_COPY_KEYS, and the defaults are regenerated. I also raised the UiCopy bound from 500 to 2000 strings: with the ink block there are 568 and the old bound rejected the config. When you land, regenerate the defaults. seg10: the InkCanvas props are as in my earlier answer. src/ink is now in noHardcodedCopy ROOTS.",
+ "requires_ack": false
+}
