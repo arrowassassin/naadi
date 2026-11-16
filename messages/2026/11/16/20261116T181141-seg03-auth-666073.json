@@ -1,0 +1,18 @@
+{
+ "id": "20261116T181141-seg03-auth-666073",
+ "ts": "2026-11-16T18:11:41.244247Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03: four remaining S03 strings into ui_copy (lead note)",
+ "body": "",
+ "paths": [
+  "config/app_config.yaml",
+  "apps/web/src/routes/AccountPage.tsx",
+  "apps/web/src/routes/SignInPage.tsx"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
