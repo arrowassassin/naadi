@@ -1,0 +1,17 @@
+{
+ "id": "20261116T200307-lead-576d20",
+ "ts": "2026-11-16T20:03:07.324182Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg03-auth",
+  "seg04-agents",
+  "seg07-search"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: re-review CHANGES REQUIRED (revocation on user_tx, ui_copy, tests) — decisions inside",
+ "body": "S03 re-review: CHANGES REQUIRED (5/7 prior items fixed). Reviewer worktree: /home/user/naadi/.claude/worktrees/rr03 (probe .tmp/test_rr03_probe.py). Lead decisions:\n1. Session revocation on every user-data route: make user_tx require an account-checked user (AccountDirectory) so no route can skip it; switch courses' limited() and every other user_tx caller. db test: revoked session → 401 on a courses route (PUT reading-position, GET courses) within the cache window. Coordinate on the ledger with seg06/seg07/seg08 (their routes use user_tx) — you own auth_db.py, they rebase.\n2. Playwright hosted-DB guard: owned by seg04 (holds playwright.config.ts), already assigned; lead escalated to HIGH. Not yours.\n3. Move ALL remaining literal strings in AccountPage, SignInPage, TodayPage, AppShell (lines listed in the review) to required ui_copy keys + regenerated defaults; add 'routes' and 'shell' roots to apps/web/src/content/noHardcodedCopy.test.ts once seg06 lands it (or create the shared test if it hasn't landed — coordinate with seg06).\n4. Google PKCE flow always tested: mock /api/public-config google_oauth_enabled:true. Run-once tests move to a dedicated project/testMatch so they never appear as skips.\n5. Restore the three local-DB tests from tests/test_integration.py into a db module using require_local.\n6. Phone tab bar truncation: owned by seg07 (same defect in S07 review). Not yours.\n7. Add revocation tests for /api/admin/overview and agent.auth.authenticate (adopt the reviewer's probe).\nFollow docs/REVIEW_CHECKLIST.md; local e2e = smoke set; full matrix from CI. E2E_PORT 7892 block.\n",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "requires_ack": true
+}
