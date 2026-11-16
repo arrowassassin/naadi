@@ -1,0 +1,205 @@
+{
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT06586632",
+     "orgStudyIdInfo": {
+      "id": "ID 2401691"
+     },
+     "organization": {
+      "fullName": "University of Aarhus",
+      "class": "OTHER"
+     },
+     "briefTitle": "The Steno Free Trial: AID to Adults with New-onset of Type 1 Diabetes",
+     "officialTitle": "Automated Insulin Pumps and On-demand Consultations to Adults with New-onset of Type 1 Diabetes"
+    },
+    "statusModule": {
+     "statusVerifiedDate": "2024-08",
+     "overallStatus": "NOT_YET_RECRUITING",
+     "expandedAccessInfo": {
+      "hasExpandedAccess": false
+     },
+     "startDateStruct": {
+      "date": "2024-10-01",
+      "type": "ESTIMATED"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2028-10-01",
+      "type": "ESTIMATED"
+     },
+     "completionDateStruct": {
+      "date": "2028-10-01",
+      "type": "ESTIMATED"
+     },
+     "studyFirstSubmitDate": "2024-08-22",
+     "studyFirstSubmitQcDate": "2024-09-04",
+     "studyFirstPostDateStruct": {
+      "date": "2024-09-19",
+      "type": "ACTUAL"
+     },
+     "lastUpdateSubmitDate": "2024-09-04",
+     "lastUpdatePostDateStruct": {
+      "date": "2024-09-19",
+      "type": "ACTUAL"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Type 1 Diabetes"
+     ]
+    },
+    "descriptionModule": {
+     "briefSummary": "Since the introduction of insulin therapy 100 years ago, significant progress has continuously been made in the treatment of people with type 1 diabetes. In the last 10 years, the focus has largely been on technology, and the introduction of automated insulin delivery (AID) systems has revolutionized the treatment of type 1 diabetes. AID is an automated system that works by enabling the insulin pump and continuous glucose monitor (CGM) to communicate with each other, automatically adjusting the subcutaneous insulin dosage according to blood glucose levels. AID technology is predominantly used for individuals with long duration of type 1 diabetes, and due to economic limitations in access to the treatment, it is especially used for those with treatment-related challenges in diabetes regulation. The aim of the Steno Free trials is to investigate whether AID technology combined with on-demand consultations for adults with newly diagnosed type 1 diabetes, compared to conventional standard treatment with a CGM after 1 year of treatment, leads to:\n\n1. less diabetes distress, improved quality of life, and increased health literacy,\n2. better diabetes regulation,\n3. less disease burden and, therefore, a greater degree of freedom in their daily lives."
+    }
+   },
+   "derivedSection": {
+    "miscInfoModule": {
+     "versionHolder": "2026-11-13"
+    },
+    "conditionBrowseModule": {
+     "meshes": [
+      {
+       "id": "D003922",
+       "term": "Diabetes Mellitus, Type 1"
+      }
+     ],
+     "ancestors": [
+      {
+       "id": "D003920",
+       "term": "Diabetes Mellitus"
+      },
+      {
+       "id": "D044882",
+       "term": "Glucose Metabolism Disorders"
+      },
+      {
+       "id": "D008659",
+       "term": "Metabolic Diseases"
+      },
+      {
+       "id": "D009750",
+       "term": "Nutritional and Metabolic Diseases"
+      },
+      {
+       "id": "D004700",
+       "term": "Endocrine System Diseases"
+      },
+      {
+       "id": "D001327",
+       "term": "Autoimmune Diseases"
+      },
+      {
+       "id": "D007154",
+       "term": "Immune System Diseases"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT06687434",
+     "orgStudyIdInfo": {
+      "id": "RMC-0411-24ctil"
+     },
+     "organization": {
+      "fullName": "Rabin Medical Center",
+      "class": "OTHER"
+     },
+     "briefTitle": "Carb Counting vs. Simplified Qualitative Meal-Size Estimation",
+     "officialTitle": "Carb Counting vs. Simplified Qualitative Meal-Size Estimation- A Randomized Control Trial"
+    },
+    "statusModule": {
+     "statusVerifiedDate": "2024-10",
+     "overallStatus": "RECRUITING",
+     "expandedAccessInfo": {
+      "hasExpandedAccess": false
+     },
+     "startDateStruct": {
+      "date": "2024-12-15",
+      "type": "ACTUAL"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-11-01",
+      "type": "ESTIMATED"
+     },
+     "completionDateStruct": {
+      "date": "2027-12-15",
+      "type": "ESTIMATED"
+     },
+     "studyFirstSubmitDate": "2024-10-21",
+     "studyFirstSubmitQcDate": "2024-11-12",
+     "studyFirstPostDateStruct": {
+      "date": "2024-11-13",
+      "type": "ACTUAL"
+     },
+     "lastUpdateSubmitDate": "2025-05-15",
+     "lastUpdatePostDateStruct": {
+      "date": "2025-05-20",
+      "type": "ACTUAL"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Type 1 Diabetes Mellitus"
+     ],
+     "keywords": [
+      "Automated insulin delivery system",
+      "carb counting"
+     ]
+    },
+    "descriptionModule": {
+     "briefSummary": "The goal of this study is to compare qualitative meal-size estimation to accurate carb counting in adolescents with Type One Diabetes using all available AID (Automated Insulin Delivery) systems. We will compare glucose control parameters and patient related outcome measures between the groups. 120 children and adolescents with type 1 Diabetes who begin using AID system will be randomly assigned to one of two groups: simplified qualitative meal size estimation or accurate carb counting. The study will last 6 months, with an additional optional follow up points at 12 and 24 months.\n\nIn the first visit all patients will receive nutrition guidance from the dietitian. In the accurate carb counting group, participants will use precise carb counting to manage their meals. In the simplified qualitative meal-size estimation group, participants will use a simplified meal announcement based on three presets for each meal, small, medium, or large, which will be personalized based on the dietitian's assessment. During the study, the dietitian will evaluate the insulin-to-carb ratio and meal estimation at least once in the first two weeks.\n\nFollow-up visits will be scheduled at 4-6 weeks, 3, and 6 months after the study's initiation. At each visit participants will upload their data from their AID systems. Evaluation of their diabetes control will be made and an assessment regarding the carbohydrates calculation method. Digital questionnaires assessing diabetes distress, disordered eating behaviors, dietary regimen, and eating patterns will be provided at the beginning of the study and after 6 months, with an additional optional follow-up points that will be held at 12 and 24 months after the study's initiation."
+    }
+   },
+   "derivedSection": {
+    "miscInfoModule": {
+     "versionHolder": "2026-11-13"
+    },
+    "conditionBrowseModule": {
+     "meshes": [
+      {
+       "id": "D003922",
+       "term": "Diabetes Mellitus, Type 1"
+      }
+     ],
+     "ancestors": [
+      {
+       "id": "D003920",
+       "term": "Diabetes Mellitus"
+      },
+      {
+       "id": "D044882",
+       "term": "Glucose Metabolism Disorders"
+      },
+      {
+       "id": "D008659",
+       "term": "Metabolic Diseases"
+      },
+      {
+       "id": "D009750",
+       "term": "Nutritional and Metabolic Diseases"
+      },
+      {
+       "id": "D004700",
+       "term": "Endocrine System Diseases"
+      },
+      {
+       "id": "D001327",
+       "term": "Autoimmune Diseases"
+      },
+      {
+       "id": "D007154",
+       "term": "Immune System Diseases"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  }
+ ],
+ "nextPageToken": "ZVNj7o2Elu8o3lpyWc35o-32mpOQJJxuZvOi2fg"
+}
