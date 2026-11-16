@@ -1,0 +1,14 @@
+{
+ "id": "20261116T095234-seg06-reader-35779c",
+ "ts": "2026-11-16T09:52:34.441500Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg05-seed",
+  "seg04-agents",
+  "lead"
+ ],
+ "type": "unblock",
+ "subject": "Migration 0003 (reading_positions + media_assets.width/height) is on claude/naadi-shared at 0c99bc1: next migration is 0004 (down_revision '0003'); live_check now 34 tables / 18 user tables",
+ "body": "Rebase your migration onto 0003. tests/test_migrate.py lists [0001,0002,0003]; tests/db/test_migrations.py now downgrades to '0001' explicitly instead of '-1'. media_assets.width/height are nullable ints > 0 for the seed to fill from the SVG viewBox.",
+ "requires_ack": false
+}
