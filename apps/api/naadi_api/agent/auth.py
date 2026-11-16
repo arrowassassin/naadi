@@ -11,11 +11,21 @@
 
 from __future__ import annotations
 
+import json
+from contextvars import ContextVar
 from typing import Any
 
 from langgraph_sdk import Auth
 
-from ..auth import AccountDirectory, AuthError, TokenVerifier, build_verifier, parse_admin_emails, user_from_claims
+from ..auth import (
+    AccountDirectory,
+    AuthError,
+    AuthUnavailable,
+    TokenVerifier,
+    build_verifier,
+    parse_admin_emails,
+    user_from_claims,
+)
 from ..db import Database
 from ..logs import get_logger
 from ..settings import get_settings
@@ -24,6 +34,23 @@ from .identity import ADMIN_PERMISSION
 log = get_logger("naadi.agent.auth")
 
 auth = Auth()
+
+# Set per request by host.AuthUnavailableAs503; True when the account could not be checked (-> 503).
+unavailable_flag: ContextVar[dict[str, bool] | None] = ContextVar("naadi_agent_auth_unavailable", default=None)
+UNAVAILABLE = json.dumps(
+    {
+        "error": "service_unavailable",
+        "message": "Your account cannot be checked right now. Try again in a moment.",
+        "details": {"retry_after_s": 5},
+    }
+).encode()
+
+
+def mark_unavailable() -> None:
+    flag = unavailable_flag.get()
+    if flag is not None:  # mutated, not re-set: the middleware holds the same dict across task boundaries
+        flag["unavailable"] = True
+
 
 _verifier: TokenVerifier | None = None
 _accounts: AccountDirectory | None = None
@@ -57,6 +84,10 @@ async def authenticate(headers: dict[str, Any]) -> Auth.types.MinimalUserDict:
     try:
         claims = await verifier.verify(token.strip())
         user = await accounts.resolve(user_from_claims(claims))
+    except AuthUnavailable as exc:
+        log.warning("agent_auth_unavailable", reason=exc.code)
+        mark_unavailable()
+        raise Auth.exceptions.HTTPException(status_code=503, detail=exc.message) from exc
     except AuthError as exc:
         log.info("agent_auth_rejected", reason=exc.code)
         raise Auth.exceptions.HTTPException(status_code=exc.status, detail=exc.message) from exc

@@ -190,3 +190,38 @@ def test_spa_fallback_does_not_shadow_agent_routes(host: Host, tmp_path: Path) -
     assert r.status_code == 200
     r = httpx.get(f"{host.url}/api/nope", timeout=10)
     assert r.status_code == 404
+
+
+async def test_concurrent_requests_all_authenticate_within_the_connection_budget(host: Host) -> None:
+    """Regression (S04 review item 1): bursts of authenticated Agent Protocol calls never come back 401/503,
+    and the process stays within its connection budget (Aegra pools sized in naadi_api.agent.host)."""
+    tokens = [host.admin_token, host.student_token, host.other_token]
+    peak = 0
+
+    async def watch(stop: asyncio.Event) -> None:
+        nonlocal peak
+        while not stop.is_set():
+            with pg() as c:
+                n = c.execute(
+                    "select count(*) from pg_stat_activity where backend_type = 'client backend'"
+                    " and client_port is not null and pid <> pg_backend_pid()"
+                ).fetchone()
+            peak = max(peak, int(n[0]) if n else 0)
+            await asyncio.sleep(0.05)
+
+    stop = asyncio.Event()
+    watcher = asyncio.create_task(watch(stop))
+    async with httpx.AsyncClient(timeout=30) as c:
+
+        async def one(i: int) -> int:
+            hdr = {"authorization": f"Bearer {tokens[i % 3]}"}
+            r = await c.post(f"{host.url}/threads/search", json={"limit": 1}, headers=hdr)
+            return r.status_code
+
+        for n in (20, 120):
+            codes = await asyncio.gather(*(one(i) for i in range(n)))
+            assert set(codes) == {200}, codes
+    stop.set()
+    await watcher
+    # Every client of this test database (this host, the test's own connections); far below max_connections.
+    assert peak <= 30, peak

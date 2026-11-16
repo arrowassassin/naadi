@@ -108,10 +108,16 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     // The local API is checked against throwaway test accounts, never the owner's address.
     ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
     ...(dbUrl ? { DATABASE_URL: dbUrl } : {}),
+    // No provider keys unless asked for (E2E_LIVE_LLM=1): the suite must not spend model or search quota,
+    // and the agent runtime then records "unavailable" instead of calling a model.
+    ...(process.env.E2E_LIVE_LLM === "1" ? {} : { NVIDIA_API_KEY: "", OPENROUTER_API_KEY: "", TAVILY_API_KEY: "" }),
     ...extra,
   });
+  // E2E_SERVER_LOG_DIR: keep each API server's JSON log (one file per port) for diagnosing a failed run.
+  const logTo = (p: number) =>
+    process.env.E2E_SERVER_LOG_DIR ? ` >> ${path.join(process.env.E2E_SERVER_LOG_DIR, `api-${p}.log`)} 2>&1` : "";
   const serve = (p: number, app: string) =>
-    `uv --directory ${api} run uvicorn ${app} --host 127.0.0.1 --port ${p} --workers 1 --no-access-log`;
+    `uv --directory ${api} run uvicorn ${app} --host 127.0.0.1 --port ${p} --workers 1 --no-access-log${logTo(p)}`;
   const common = { reuseExistingServer: !process.env.CI, stdout: "ignore" as const, stderr: "pipe" as const };
   if (!dbUrl) {
     return [

@@ -40,6 +40,14 @@ _AEGRA_DEFAULTS = {
     "RUN_MIGRATIONS_ON_STARTUP": "false",
     "PROJECT_NAME": "Naadi agent runtime",
     "LOG_VERBOSITY": "standard",
+    # Connection budget. Aegra's defaults (SQLAlchemy 10 + 20 overflow, LangGraph up to 20) would open ~50
+    # connections per process: two processes exhausted the local Postgres (max_connections 100) under the
+    # e2e matrix, and Supabase Free's pooler allows far fewer. Per process now: Aegra metadata 2 + 2,
+    # LangGraph checkpoints/store 1..4, Naadi API 3, agent runtime 4 (= at most 15).
+    "SQLALCHEMY_POOL_SIZE": "2",
+    "SQLALCHEMY_MAX_OVERFLOW": "2",
+    "LANGGRAPH_MIN_POOL_SIZE": "1",
+    "LANGGRAPH_MAX_POOL_SIZE": "4",
 }
 for _k, _v in _AEGRA_DEFAULTS.items():
     os.environ.setdefault(_k, _v)
@@ -60,6 +68,46 @@ SYSTEM_CRON_KEY = "naadi.ping.hourly"
 SYSTEM_CRON_SCHEDULE = "17 * * * *"
 
 naadi_app: FastAPI = create_app()
+
+
+class AuthUnavailableAs503:
+    """Aegra turns every failure of the auth handler into 401, which tells the client to sign in again. When
+    the account could not be CHECKED (database briefly unreachable), the right answer is 503 + Retry-After:
+    the session is fine. The handler marks that case (agent.auth.mark_unavailable) and this ASGI middleware
+    rewrites that one response."""
+
+    def __init__(self, app: Any) -> None:
+        self.app = app
+
+    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
+        if scope.get("type") != "http":
+            await self.app(scope, receive, send)
+            return
+        from .auth import UNAVAILABLE, unavailable_flag
+
+        flag = {"unavailable": False}
+        token = unavailable_flag.set(flag)
+        rewriting = False
+
+        async def wrapped(message: Any) -> None:
+            nonlocal rewriting
+            if message["type"] == "http.response.start" and message.get("status") == 401 and flag["unavailable"]:
+                rewriting = True
+                headers = [(k, v) for k, v in message.get("headers", []) if k.lower() not in (b"content-length",)]
+                body = UNAVAILABLE
+                headers += [(b"retry-after", b"5"), (b"content-length", str(len(body)).encode())]
+                await send({**message, "status": 503, "headers": headers})
+                return
+            if rewriting and message["type"] == "http.response.body":
+                if not message.get("more_body"):
+                    await send({"type": "http.response.body", "body": UNAVAILABLE, "more_body": False})
+                return
+            await send(message)
+
+        try:
+            await self.app(scope, receive, wrapped)
+        finally:
+            unavailable_flag.reset(token)
 
 
 def _endpoint_name(route: BaseRoute) -> str | None:
@@ -174,6 +222,11 @@ def build() -> FastAPI:
     if get_auth_instance() is None:
         raise RuntimeError("Aegra auth handler did not load: refusing to serve with a shared anonymous identity")
     cron_scheduler._validate_cron_user = validate_cron_user  # Aegra's documented liveness hook
+    # The agent auth handler uses the app's own verifier and account directory (one DB pool, one cache).
+    from . import auth as agent_auth
+
+    agent_auth.configure(verifier=aegra_app.state.auth, accounts=aegra_app.state.accounts)
+    aegra_app.add_middleware(AuthUnavailableAs503)
     from ..health.checks import agent_runtime_check
     from ..health.service import Check
 

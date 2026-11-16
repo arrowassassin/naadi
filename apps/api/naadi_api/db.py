@@ -38,8 +38,17 @@ class Database:
         return self.pool is not None and not self.pool.closed
 
     async def open(self) -> None:
+        """Open the pool once. Concurrent first callers (lazy opens from several requests) wait on one lock,
+        so a second pool is never created and leaked."""
         if self._url is None or self.opened:
             return
+        async with self._open_lock:
+            if self.opened:
+                return
+            await self._open_locked()
+
+    async def _open_locked(self) -> None:
+        assert self._url is not None
         self.pool = AsyncConnectionPool(
             conninfo=self._url.get_secret_value(),
             min_size=1,
@@ -50,6 +59,9 @@ class Database:
             max_idle=300.0,
             reconnect_timeout=60.0,
             kwargs={"autocommit": True, "connect_timeout": 5, "application_name": "naadi-api"},
+            # A connection the server closed (restart, pooler recycle) is replaced on checkout instead of
+            # failing the request that drew it.
+            check=AsyncConnectionPool.check_connection,
         )
         await self.pool.open(wait=False)
 
@@ -64,8 +76,7 @@ class Database:
             raise DatabaseNotConfigured("DATABASE_URL is not set")
         if self.pool is None:
             # Lazy open: a host process (e.g. an outer ASGI server) may not run this app's lifespan.
-            async with self._open_lock:
-                await self.open()
+            await self.open()
         assert self.pool is not None
         # pool.connection() raises PoolTimeout ("couldn't get a connection after N sec") on its own deadline;
         # the statement itself is bounded by an asyncio timeout.
