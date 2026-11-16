@@ -1,0 +1,16 @@
+{
+ "id": "20261116T212259-seg11-today-adf3d4",
+ "ts": "2026-11-16T21:22:59.480213Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S11 takes Alembic 0013 (down_revision 0012 = S10): study_plans, study_plan_days, coach_suggestions, plan_items.plan_id/plan_day, RLS in the same file",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0013_study_plans_coach.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
