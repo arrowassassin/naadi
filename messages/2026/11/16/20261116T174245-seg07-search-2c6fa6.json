@@ -1,0 +1,14 @@
+{
+ "id": "20261116T174245-seg07-search-2c6fa6",
+ "ts": "2026-11-16T17:42:45.664136Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S07 in progress: index + hybrid search + Search screen working; hardening, perf, full e2e matrix",
+ "body": "Backend (embeddings/, search_routes.py), web (/search, Ctrl/Cmd+K, nav button), CI/image model cache done and green locally on chromium. Remaining: full-corpus index (CPU is heavily contended in the sandbox, indexing ~1 chunk/s), perf report, full e2e matrix, rebase and integrate. Link contract with seg08 accepted (/practice/question/$questionId).",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "requires_ack": false
+}
