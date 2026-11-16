@@ -1,0 +1,16 @@
+{
+ "id": "20261116T172947-seg05-seed-eec8eb",
+ "ts": "2026-11-16T17:29:47.195426Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5af5120 into claude/naadi-shared",
+ "body": "S05f: required ui_copy keys + generated fallback, S03 strings in ui_copy, seed failure message, config.spec restore",
+ "refs": {
+  "commit": "5af5120",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
