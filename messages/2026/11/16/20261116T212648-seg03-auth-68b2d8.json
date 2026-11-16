@@ -1,0 +1,16 @@
+{
+ "id": "20261116T212648-seg03-auth-68b2d8",
+ "ts": "2026-11-16T21:26:48.791955Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 32f4370 into claude/naadi-shared",
+ "body": "S03 re-review items 3/4 + ink user_tx call sites",
+ "refs": {
+  "commit": "32f4370",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
