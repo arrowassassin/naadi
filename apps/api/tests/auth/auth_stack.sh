@@ -143,6 +143,27 @@ wait_auth() {
   return 1
 }
 
+# Host network only: every port the stack listens on must be free first. If one is taken, name the socket
+# (and its process, where `ss` may show it) instead of letting a container exit with "address in use".
+check_ports_free() {
+  local busy="" p lines
+  for p in "$@"; do
+    if command -v ss >/dev/null 2>&1; then
+      lines="$(ss -Htanp "( sport = :${p} )" 2>/dev/null || true)"
+    elif (exec 3<>"/dev/tcp/127.0.0.1/${p}") 2>/dev/null; then
+      lines="a listener answers on 127.0.0.1:${p}"
+    else
+      lines=""
+    fi
+    if [ -n "$lines" ]; then
+      busy=1
+      log "port ${p} is already in use on this host:"
+      printf '%s\n' "$lines" >&2
+    fi
+  done
+  [ -z "$busy" ]
+}
+
 wait_mail() {
   for _ in $(seq 1 60); do
     if curl -fsS "http://localhost:${MAIL_PORT}/api/v1/info" >/dev/null 2>&1; then
@@ -205,6 +226,7 @@ start() {
   docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" "$MAIL_CONTAINER" >/dev/null 2>&1 || true
   local mail_net=("${net_args[@]}")
   if [ "${net_args[1]:-}" = "host" ]; then
+    check_ports_free "$MAIL_PORT" 1025 9999 "$AUTH_PORT"
     # Explicit IPv4 binds: Mailpit's default "[::]" listeners are not reachable the same way on every host.
     mail_net+=(-e "MP_UI_BIND_ADDR=0.0.0.0:${MAIL_PORT}" -e "MP_SMTP_BIND_ADDR=0.0.0.0:1025")
   else
