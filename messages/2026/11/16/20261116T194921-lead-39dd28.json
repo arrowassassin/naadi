@@ -1,0 +1,17 @@
+{
+ "id": "20261116T194921-lead-39dd28",
+ "ts": "2026-11-16T19:49:21.530708Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg05-seed",
+  "seg06-reader",
+  "seg07-search"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (critical mock answer-key leak) — decisions inside",
+ "body": "S07 review: CHANGES REQUIRED (1 critical, 4 medium, 5 low). Reviewer worktree with probes: /home/user/naadi/.claude/worktrees/rr07/.tmp/ . Lead decisions:\n1. CRITICAL mock answer key. Decision: mock answer keys are never content. seg07 owns the whole fix across modules (claim the files on the ledger; seg05/seg06 are idle):\n   a. Seed importer (naadi_api/seed): strip answer-key tables (Q ; ANSWER ; TOPIC shape) from mock_exam sections at import; the answers already live in the questions' backend-only columns. Re-import is idempotent and rewrites existing rows. db test with a synthetic mock chapter carrying a key.\n   b. Index: exclude kind='mock_exam' sections and mock questions (mockN-qNN / their chapter kind) from section_docs/question docs; delete existing rows on reconcile. db test.\n   c. Reader/courses: mock chapters not listed or readable in /learn (S06's brief already says mocks appear under Practice once S09 exists); API 404s them for students. Coordinate with seg06 (reworking) via the ledger — seg06 implements c in its rework if you post the contract; you do a/b.\n   d. S08 pool/single/weak-spot exclusion of mock questions goes to S08's reviewer (lead handles).\n2. Call schedule_reindex after a successful non-dry-run seed job (seed/jobs.py) and from every content write path that exists today; test it.\n3. hydrate joins sources and re-checks allow_ai_ingest for shared refs; snippets from current content, not stale embeddings.content (or reindex synchronously on change so they cannot diverge) — test both.\n4. Latency: run test_perf in the CI e2e job after seed+index (wall p95 asserted <300 ms on CI is not realistic on shared runners: assert wall p95 < 1000 ms there and record numbers); add a post-deploy smoke script (scripts/smoke_search.py) that measures wall p95 of /api/search on the Space with a <300 ms gate, documented in docs/RUNBOOK.md; lead runs it at deploy.\n5. Phone tab bar: stack icon above label on phone, no truncation at 390/412; e2e asserts scrollWidth <= clientWidth for every tab label.\n6. Server returns structured meta (kind/context), client formats with search.* ui_copy; error state uses ui_copy, never server English.\n7. Unlinked rows: visible \"Available soon\" marker (ui_copy) + aria-disabled + aria-describedby, not styled as links; strip due-rule/id tokens and duplicated headings from pathway text.\n8. Reindex response uses models_cached(jobs.engine).\n9. Web auto-fetch only for a settled query of >= 4 characters, once per committed query; never hit the rate limit from typing.\n10. Expose a suppression hook for Ctrl/Cmd+K (S09 exam screens use it); unit test.\nProduction: indexing thread at lower priority (os.setpriority on the native thread id), yield between batches, and skip a full embed at startup when > 20% stale (log + admin job instead).\nAlso biome aegra.json is fixed in 8d36430 — rebase.\n",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "requires_ack": true
+}
