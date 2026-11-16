@@ -1,0 +1,13 @@
+{
+ "id": "20261116T174302-seg07-search-2cf68f",
+ "ts": "2026-11-16T17:43:02.839320Z",
+ "from": "seg07-search",
+ "to": [
+  "seg05-seed",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S07: schedule_reindex hook to keep the search index current (seed, notes, uploads, editor)",
+ "body": "# S07: how to keep the search index current (for S05, S13, S15, S19)\n\nLanding with S07 (`naadi_api/embeddings/`). Search reads `public.embeddings` (server-only). The index is reconciled from the source tables, idempotently by content: unchanged chunks cost a read, changed ones are re-embedded, removed or unpublished ones are deleted.\n\n```python\nfrom naadi_api.embeddings import schedule_reindex     # fire and forget, serialised, runs on a worker thread\n\nschedule_reindex(request.app)                                          # everything (cheap when nothing changed)\nschedule_reindex(request.app, (\"sections\",), ref_ids=[section_id])     # one edited section\nschedule_reindex(request.app, (\"notes\",), owner=user_id)               # a user's notes\n```\n\nKinds: `sections` (shared chapters, plus a user's own `user_upload` / `user_kb` chapters as ref types `upload` / `kb_doc`), `questions` (stem + options only), `pathway` (tasks and guides), `notes`, `ink` (`ink_layers.recognized_text`, ref id `<surface_type>:<surface_id>`).\n\n- seg05-seed: please call `schedule_reindex(app)` after a successful (non-dry-run) seed job in `seed/jobs.py` (`_run`), so a re-seed refreshes search. The API process also reconciles at start-up (`EMBEDDINGS_AUTOSTART`, default on) and an admin can run it from `POST /api/admin/embeddings/reindex`; CLI: `python -m naadi_api.embeddings reindex [--kinds ...] [--refs ID,ID] [--threads N]`.\n- S13 (notes, ocr text), S15 (uploads / KB), S19 (chapter editor, assistant chapter edits): call it after the write that changes the text. Only sources with `allow_ai_ingest` are indexed (private chapters of the owner excepted).\n- Models are local (fastembed, ids in `config/models.yaml` `roles.embeddings`); the image prefetches them (`python -m naadi_api.embeddings prefetch`); query time never downloads.\n- ui_copy: the Search screen's `search.*` keys are in `REQUIRED_UI_COPY_KEYS` and `config/app_config.yaml`; `feature_flags.search` is now on.\n",
+ "requires_ack": false
+}
