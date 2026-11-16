@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import pytest
 
 from naadi_api.settings import Settings
-from tests.conftest import is_local_url
+from tests.conftest import SECRET_NAME, is_local_url, make_settings
 
 _SECRET_FIELDS = (
     "supabase_service_role_key",
@@ -51,3 +52,20 @@ def test_a_dotenv_file_is_ignored(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
     env.write_text("SUPABASE_URL=https://abcdefghijklmnopqrst.supabase.co\nTAVILY_API_KEY=tvly-abcdefghijklmnop\n")
     monkeypatch.chdir(tmp_path)
     assert leaks(Settings()) == []
+
+
+# Placeholder values tests may set on purpose (never real credentials).
+CANARIES = frozenset({"nvapi-proxy-injected"})
+
+
+def test_no_secret_or_hosted_endpoint_is_visible_to_a_non_live_test() -> None:
+    seen = sorted(n for n, v in os.environ.items() if SECRET_NAME.search(n) and v and v not in CANARIES)
+    assert seen == []
+    assert "DATABASE_URL" not in os.environ  # unit tests get no database at all
+
+
+@pytest.mark.db
+def test_db_tests_only_ever_see_a_local_database() -> None:
+    url = os.environ.get("DATABASE_URL")
+    assert url is None or is_local_url(url)
+    assert make_settings().database_url is None  # secrets default to None unless a test passes one

@@ -166,7 +166,8 @@ function SignOutPanel() {
       {confirmGlobal ? (
         <div className="flex flex-col gap-3 rounded-block border border-line-strong bg-surface-2 p-4">
           <p className="m-0 text-text">
-            This signs you out on every device, including installed apps. You will need a new sign-in link on each.
+            This signs you out on every device, including installed apps, within about 30 seconds. You will need a new
+            sign-in link on each.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button variant="strong" disabled={busy !== null} onClick={() => void run("global")}>

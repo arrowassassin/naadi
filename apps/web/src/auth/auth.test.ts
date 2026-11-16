@@ -107,8 +107,8 @@ describe("completeSignIn", () => {
     expect(!r.ok && r.kind).toBe("expired");
   });
 
-  it("reads errors and implicit tokens from the fragment", async () => {
-    const { client, auth } = fakeClient();
+  it("reads errors from the fragment", async () => {
+    const { client } = fakeClient();
     const expired = await completeSignIn(
       client,
       new URL("https://a.org/auth/callback#error=access_denied&error_code=otp_expired"),
@@ -116,9 +116,19 @@ describe("completeSignIn", () => {
     expect(!expired.ok && expired.kind).toBe("expired");
     const denied = await completeSignIn(client, new URL("https://a.org/auth/callback?error=access_denied"));
     expect(!denied.ok && denied.kind).toBe("denied");
-    const ok = await completeSignIn(client, new URL("https://a.org/auth/callback#access_token=a&refresh_token=r"));
-    expect(ok.ok).toBe(true);
-    expect(auth.setSession).toHaveBeenCalledWith({ access_token: "a", refresh_token: "r" });
+  });
+
+  it("ignores a session handed over in the fragment (login CSRF)", async () => {
+    const { client, auth } = fakeClient();
+    const r = await completeSignIn(
+      client,
+      new URL("https://a.org/auth/callback#access_token=attacker&refresh_token=attacker&token_type=bearer"),
+    );
+    expect(r.ok).toBe(false);
+    expect(!r.ok && r.kind).toBe("invalid");
+    expect(auth.setSession).not.toHaveBeenCalled();
+    expect(auth.exchangeCodeForSession).not.toHaveBeenCalled();
+    expect(auth.verifyOtp).not.toHaveBeenCalled();
   });
 
   it("never follows an off-site next", async () => {

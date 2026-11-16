@@ -59,3 +59,24 @@ One-off container alternative (same code path): `python -m naadi_api.seed --dry-
   Every change is in `app_config_history` (GET `/api/admin/config/{key}/history`).
 - Chapter sections: a non-seed revision (admin editor, assistant) protects the section. When the seed itself
   replaces a body, the previous body is stored as a `seed` revision in `chapter_section_revisions`.
+
+## Sign-in check on the live Space (S03): `pnpm e2e:live-auth`
+
+Run from the sandbox after every deploy (the CI live smoke is public-only). Needs `E2E_BASE_URL` (the Space
+URL), `HF_TOKEN` + `HF_SPACE_ID` (private Space: the token is exchanged for the Space's own cookie),
+`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` and `ADMIN_EMAILS`. The task sets `E2E_ALLOW_HOSTED=1` itself;
+every other e2e entry point refuses a non-local `SUPABASE_URL` without it.
+
+What it does, in WebKit at iPad portrait:
+
+1. Deletes leftover `naadi-e2e-live-*@example.com` users from a crashed earlier run.
+2. Creates a throwaway `naadi-e2e-live-<run>@example.com` user, signs it in through the Space's own
+   `/auth/callback` with a server-generated magic-link token, checks `/api/me` (profile, `is_admin` false)
+   and a 403 from `/api/admin/overview`, and deletes the user at the end whatever happens.
+3. Checks that the owner (the first `ADMIN_EMAILS` address) is an admin, through the API only: the address
+   is never printed and no page renders that account. The session created for the check is revoked at
+   once (the test asserts the logout returns 204).
+
+Side effects on the owner's account to know about: `--owner` generates a magic-link token for the owner,
+which **replaces any magic link the owner has outstanding** (an unopened sign-in email stops working), and
+the verification **updates the owner's "last sign-in" time** in Supabase Auth. Nothing else changes.

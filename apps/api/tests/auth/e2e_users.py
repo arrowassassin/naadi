@@ -8,6 +8,7 @@ hour; callers must not log it.
     uv run python -m tests.auth.e2e_users link --email naadi-e2e-student-<run>@example.com [--local-db URL]
     uv run python -m tests.auth.e2e_users delete --email naadi-e2e-student-<run>@example.com [--local-db URL]
     uv run python -m tests.auth.e2e_users link --owner     # live admin check only; never deleted or printed
+    uv run python -m tests.auth.e2e_users sweep --prefix naadi-e2e-live-   # leftovers of a crashed run
 
 `--local-db` mirrors the user into a local Postgres `auth.users` (only localhost URLs are accepted), so a
 local API whose database is not the Supabase project can still satisfy the profiles -> auth.users FK.
@@ -38,6 +39,8 @@ def _client() -> Client:
     key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not url or not key:
         raise SystemExit("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set")
+    if urlparse(url).hostname not in {"localhost", "127.0.0.1", "::1"} and os.environ.get("E2E_ALLOW_HOSTED") != "1":
+        raise SystemExit("SUPABASE_URL is not the local auth stack; set E2E_ALLOW_HOSTED=1 to use a hosted project")
     return create_client(url, key)
 
 
@@ -112,15 +115,38 @@ def delete(email: str, local_db: str | None) -> dict[str, Any]:
     return {"deleted": user is not None}
 
 
+def sweep(prefix: str) -> dict[str, Any]:
+    """Delete leftover throwaway users whose address starts with `prefix` (a crashed earlier run)."""
+    if not re.fullmatch(r"naadi-e2e-[a-z]+-", prefix):
+        raise SystemExit("--prefix must look like naadi-e2e-<role>-")
+    sb = _client()
+    stale: list[Any] = []
+    page = 1
+    while True:
+        users = sb.auth.admin.list_users(page=page, per_page=200)
+        stale += [u for u in users if (u.email or "").startswith(prefix) and TEST_EMAIL.match(u.email or "")]
+        if len(users) < 200:
+            break
+        page += 1
+    for u in stale:
+        sb.auth.admin.delete_user(u.id)
+    return {"deleted": len(stale)}
+
+
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("action", choices=["link", "delete"])
+    ap.add_argument("action", choices=["link", "delete", "sweep"])
     who = ap.add_mutually_exclusive_group(required=True)
+    who.add_argument("--prefix")
     who.add_argument("--email")
     who.add_argument("--owner", action="store_true")
     ap.add_argument("--local-db")
     a = ap.parse_args(argv)
-    if a.owner:
+    if a.prefix:
+        if a.action != "sweep":
+            raise SystemExit("--prefix is only for `sweep`")
+        out = sweep(a.prefix)
+    elif a.owner:
         if a.action != "link" or a.local_db:
             raise SystemExit("--owner is only for `link` against the live project")
         out = link(_owner_email(), None, create=False)

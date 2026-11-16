@@ -149,7 +149,7 @@ start() {
     mail_net+=(-p "${MAIL_PORT}:8025")
   fi
   docker run -d --name "$MAIL_CONTAINER" "${mail_net[@]}" \
-    -e MP_SMTP_AUTH_ACCEPT_ANY=1 -e MP_SMTP_AUTH_ALLOW_INSECURE=1 "$MAIL_IMAGE" >/dev/null
+    "$MAIL_IMAGE" >/dev/null
   set_auth_password
   local secret anon service
   read -r secret anon service < <(mint)
@@ -167,8 +167,11 @@ start() {
     -e GOTRUE_DISABLE_SIGNUP=false -e GOTRUE_EXTERNAL_EMAIL_ENABLED=true -e GOTRUE_MAILER_AUTOCONFIRM=true \
     -e GOTRUE_RATE_LIMIT_VERIFY=100000 -e GOTRUE_RATE_LIMIT_TOKEN_REFRESH=100000 \
     -e GOTRUE_RATE_LIMIT_OTP=100000 -e GOTRUE_RATE_LIMIT_EMAIL_SENT=100000 -e GOTRUE_LOG_LEVEL=warn \
-    -e GOTRUE_SMTP_HOST="$smtp_host" -e GOTRUE_SMTP_PORT=1025 -e GOTRUE_SMTP_USER=naadi -e GOTRUE_SMTP_PASS=local \
+    -e GOTRUE_SMTP_HOST="$smtp_host" -e GOTRUE_SMTP_PORT=1025 \
     -e GOTRUE_SMTP_ADMIN_EMAIL=auth@naadi.test -e GOTRUE_SMTP_SENDER_NAME=Naadi \
+    -e GOTRUE_MAILER_URLPATHS_MAGIC_LINK=/auth/v1/verify -e GOTRUE_MAILER_URLPATHS_CONFIRMATION=/auth/v1/verify \
+    -e GOTRUE_MAILER_URLPATHS_INVITE=/auth/v1/verify -e GOTRUE_MAILER_URLPATHS_RECOVERY=/auth/v1/verify \
+    -e GOTRUE_MAILER_URLPATHS_EMAIL_CHANGE=/auth/v1/verify \
     "$AUTH_IMAGE" >/dev/null
 
   local conf_dir

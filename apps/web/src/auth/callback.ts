@@ -8,7 +8,7 @@ export type CallbackResult =
 const OTP_TYPES: ReadonlySet<string> = new Set(["magiclink", "email", "signup", "invite", "recovery", "email_change"]);
 
 function params(url: URL): URLSearchParams {
-  // Supabase reports errors (and implicit-flow tokens) in the fragment, PKCE codes in the query.
+  // Supabase reports errors in the fragment, PKCE codes in the query.
   const merged = new URLSearchParams(url.search);
   const hash = url.hash.startsWith("#") ? url.hash.slice(1) : url.hash;
   for (const [k, v] of new URLSearchParams(hash)) if (!merged.has(k)) merged.set(k, v);
@@ -30,8 +30,11 @@ function failure(kind: Exclude<CallbackResult, { ok: true }>["kind"], next: stri
  * Finish a sign-in that came back to /auth/callback, whatever form Supabase used:
  * - `?code=` (PKCE: Google, and magic links requested from this browser)
  * - `?token_hash=&type=` (email templates that link straight to the app; works across browsers)
- * - `#access_token=&refresh_token=` (implicit links, e.g. generated server-side)
  * - `?error=` / `#error=` (expired or refused)
+ *
+ * Tokens in the fragment (`#access_token=`, the implicit flow) are deliberately ignored: anyone can craft
+ * such a URL with their own session and sign a victim in to the attacker's account (login CSRF). Only
+ * PKCE codes (bound to this browser's verifier) and email token hashes are redeemed.
  */
 export async function completeSignIn(client: SupabaseClient, url: URL): Promise<CallbackResult> {
   const p = params(url);
@@ -59,15 +62,6 @@ export async function completeSignIn(client: SupabaseClient, url: URL): Promise<
     const { error: vErr } = await client.auth.verifyOtp({ token_hash: tokenHash, type: type as EmailOtpType });
     if (!vErr) return { ok: true, next };
     return failure(vErr.status === 403 || vErr.code === "otp_expired" ? "expired" : "invalid", next);
-  }
-
-  const accessToken = p.get("access_token");
-  const refreshToken = p.get("refresh_token");
-  if (accessToken && refreshToken) {
-    // setSession validates the access token with Supabase (getUser) before storing it.
-    const { error: sErr } = await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
-    if (!sErr) return { ok: true, next };
-    return failure("expired", next);
   }
 
   return failure("invalid", next);

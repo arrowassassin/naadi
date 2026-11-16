@@ -19,7 +19,8 @@ from naadi_api.settings import Settings
 
 from .conftest import REPO_ROOT, require_env
 
-pytestmark = pytest.mark.integration
+# Real external services and the real project's database: `live` only (never in the unit or db jobs).
+pytestmark = [pytest.mark.integration, pytest.mark.live]
 
 
 def _settings() -> Settings:
@@ -75,7 +76,6 @@ def test_health_endpoint_reports_real_external_components() -> None:
         assert secret not in r.text
 
 
-@pytest.mark.db
 async def test_database_select_1() -> None:
     require_env("DATABASE_URL")
     db = Database(_settings().database_url)
@@ -87,7 +87,6 @@ async def test_database_select_1() -> None:
         await db.close()
 
 
-@pytest.mark.db
 def test_health_database_ok_and_ready() -> None:
     # Only DATABASE_URL is required: in CI it points at the supabase/postgres service container and the
     # external components (no secrets there) report `down: not configured`, which keeps the overall
@@ -103,7 +102,6 @@ def test_health_database_ok_and_ready() -> None:
     assert ready.json() == {"ready": True, "checks": {"settings": True, "database_pool": True}}
 
 
-@pytest.mark.db
 async def test_database_is_supabase_postgres_with_its_roles() -> None:
     # CI uses the real supabase/postgres image, so later migrations (RLS for anon / authenticated /
     # service_role, references to auth.users) are tested against the same roles and schemas as the project.

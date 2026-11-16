@@ -281,6 +281,12 @@ test.describe("magic link, end to end", () => {
     await expect(pa.getByRole("heading", { name: "Account", level: 1 })).toBeVisible();
     await pb.goto(callbackPath(magicLink("global"), "/"));
     await expect(pb).toHaveURL(/\/$/);
+    const tokenB = await pb.evaluate(() => {
+      const raw = localStorage.getItem("naadi.auth");
+      return raw ? (JSON.parse(raw) as { access_token: string }).access_token : "";
+    });
+    const meB = () => b.request.get("/api/me", { headers: { authorization: `Bearer ${tokenB}` } });
+    expect((await meB()).status()).toBe(200);
 
     await pa.getByRole("button", { name: "Sign out of all devices" }).click();
     await pa.getByRole("button", { name: "Sign out everywhere" }).click();
@@ -300,7 +306,62 @@ test.describe("magic link, end to end", () => {
       return r.status;
     });
     expect(refreshed).not.toBe(200);
+    // And device B's still-unexpired access token no longer opens the API (session lookup, cached <= 30 s).
+    await expect
+      .poll(
+        async () => {
+          const r = await meB();
+          return r.status() === 401 ? (await r.json()).error.code : r.status();
+        },
+        { timeout: 45_000, intervals: [2_000] },
+      )
+      .toBe("session_revoked");
     await a.close();
     await b.close();
+  });
+
+  test("a real magic-link email: send, open the link, signed in (PKCE)", async ({ page, request }, info) => {
+    const mailpit = process.env.MAILPIT_URL;
+    test.skip(!mailpit, "needs the local auth stack's mail catcher (auth_stack.sh)");
+    test.skip(info.project.name !== "webkit-ipad-portrait", "one WebKit run: the email path is browser-independent");
+    const address = emailFor("mail");
+    await page.goto("/sign-in?redirect=%2Fsettings%2Faccount");
+    await emailBox(page).fill(address);
+    await sendButton(page).click();
+    await expect(page.getByRole("heading", { name: "Check your email" })).toBeVisible();
+
+    // The email Supabase's auth server actually sent, caught by Mailpit.
+    let link = "";
+    await expect
+      .poll(
+        async () => {
+          const search = await request.get(`${mailpit}/api/v1/search`, { params: { query: `to:"${address}"` } });
+          const found = (await search.json()) as { messages?: { ID: string }[] };
+          const id = found.messages?.[0]?.ID;
+          if (!id) return "";
+          const msg = (await (await request.get(`${mailpit}/api/v1/message/${id}`)).json()) as {
+            HTML?: string;
+            Text?: string;
+          };
+          const body = `${msg.HTML ?? ""} ${msg.Text ?? ""}`.replaceAll("&amp;", "&");
+          link = /https?:\/\/[^\s"'<>]+\/verify\?[^\s"'<>]+/.exec(body)?.[0] ?? "";
+          return link;
+        },
+        { timeout: 30_000, intervals: [1_000] },
+      )
+      .not.toBe("");
+    expect(new URL(link).searchParams.get("type")).toBe("magiclink");
+    expect(new URL(link).searchParams.get("redirect_to")).toContain("/auth/callback");
+
+    // Opening it: /verify -> redirect to /auth/callback?code=... -> the app exchanges the code (PKCE).
+    const codes: string[] = [];
+    page.on("request", (r) => {
+      const u = new URL(r.url());
+      if (u.pathname === "/auth/callback" && u.searchParams.has("code")) codes.push("code");
+    });
+    await page.goto(link);
+    await expect(page).toHaveURL(/\/settings\/account$/);
+    expect(codes).toEqual(["code"]);
+    await expect(page.getByRole("heading", { name: address })).toBeVisible();
   });
 });

@@ -30,6 +30,10 @@ async function spaceSignature(request: APIRequestContext, baseURL: string): Prom
   return ((await res.json()) as { token: string }).token;
 }
 
+test.beforeAll(() => {
+  runUsers(["sweep", "--prefix", "naadi-e2e-live-"], false); // a crashed earlier run left its user behind
+});
+
 test.afterAll(() => {
   runUsers(["delete", "--email", EMAIL], false);
 });
@@ -83,8 +87,9 @@ test("real sign-in on the live Space; /api/me; owner is admin", async ({ page, c
     expect(ownerMe.status()).toBe(200);
     expect(((await ownerMe.json()) as { is_admin: boolean }).is_admin).toBe(true);
   } finally {
-    await context.request.post(`${cfg.supabase_url}/auth/v1/logout?scope=local`, {
+    const out = await context.request.post(`${cfg.supabase_url}/auth/v1/logout?scope=local`, {
       headers: { apikey: cfg.supabase_anon_key, authorization: `Bearer ${ownerToken}` },
     });
+    expect(out.status(), "the owner session created for this check is revoked").toBe(204);
   }
 });

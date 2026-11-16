@@ -4,6 +4,7 @@ import io
 import json
 import logging
 import os
+import re
 from collections.abc import Callable, Iterator
 from pathlib import Path
 from typing import Any
@@ -49,8 +50,12 @@ ENV_NAMES = [
 ]
 
 
-# Secret-bearing names beyond what Settings reads (CLIs, deploy, live checks): never visible to unit/db tests.
+# Secret-bearing names beyond what Settings reads (CLIs, deploy, live checks).
 SECRET_ENV_NAMES = ["HF_TOKEN", "SUPABASE_ACCESS_TOKEN", "YOUTUBE_API_KEY", "GOOGLE_API_KEY"]
+# Any other variable whose name looks like a credential or a service endpoint is cleared too.
+SECRET_NAME = re.compile(r"(KEY|TOKEN|SECRET|PASSWORD|PASSWD|CREDENTIAL)S?$|^(SUPABASE|VITE_SUPABASE|R2|AWS)_")
+# Local test plumbing a `db` test may keep, and only when it points at this machine.
+LOCAL_PLUMBING = ("DATABASE_URL", "NAADI_STORAGE_URL", "NAADI_STORAGE_PORT")
 LOCAL_HOSTS = frozenset({"localhost", "127.0.0.1", "::1"})
 
 
@@ -58,23 +63,42 @@ def is_local_url(url: str | None) -> bool:
     return bool(url) and (urlparse(url).hostname or "") in LOCAL_HOSTS
 
 
+def _keep_local(name: str, value: str) -> bool:
+    return value.isdigit() if name.endswith("_PORT") else is_local_url(value)
+
+
 @pytest.fixture(autouse=True)
 def _clean_env(request: pytest.FixtureRequest, monkeypatch: pytest.MonkeyPatch) -> None:
-    """Unit tests, and db tests not marked integration, start from a cleared environment (no `.env`
-    either) and get back only explicit local values: a local DATABASE_URL for `db` tests. Only tests
-    marked `integration` (real external services) see the process environment."""
-    if request.node.get_closest_marker("integration"):
+    """Every test not marked `live` starts from a cleared environment (no `.env` either): no secrets and
+    no endpoints of the real project. `db` tests get back only local plumbing (a loopback DATABASE_URL,
+    the local storage-api); anything pointing elsewhere is dropped, so a db test can never write to a
+    hosted database. Only `live` tests (real external services, budget-aware) see the environment."""
+    if request.node.get_closest_marker("live"):
         return
-    database_url = os.environ.get("DATABASE_URL")
-    for name in [*ENV_NAMES, *SECRET_ENV_NAMES]:
+    keep = {n: os.environ[n] for n in LOCAL_PLUMBING if n in os.environ and _keep_local(n, os.environ[n])}
+    for name in {*ENV_NAMES, *SECRET_ENV_NAMES, *LOCAL_PLUMBING, *(n for n in os.environ if SECRET_NAME.search(n))}:
         monkeypatch.delenv(name, raising=False)
     monkeypatch.setitem(Settings.model_config, "env_file", None)
-    if request.node.get_closest_marker("db") and is_local_url(database_url):
-        monkeypatch.setenv("DATABASE_URL", database_url or "")
+    if request.node.get_closest_marker("db"):
+        for name, value in keep.items():
+            monkeypatch.setenv(name, value)
+
+
+# Every secret a Settings can carry: None unless a test passes a value explicitly.
+_SECRET_SETTINGS = (
+    "database_url",
+    "supabase_service_role_key",
+    "supabase_jwt_secret",
+    "openrouter_api_key",
+    "nvidia_api_key",
+    "tavily_api_key",
+    "admin_emails",
+)
 
 
 def make_settings(**overrides: Any) -> Settings:
     base: dict[str, Any] = {"app_env": "prod", "config_dir": REPO_ROOT / "config"}
+    base.update(dict.fromkeys(_SECRET_SETTINGS))
     base.update(overrides)
     return Settings(_env_file=None, **base)
 

@@ -12,7 +12,7 @@ import path from "node:path";
  */
 const API_DIR = path.resolve(import.meta.dirname, "../../api");
 
-export const ROLES = ["student", "editor", "admin", "link", "global"] as const;
+export const ROLES = ["student", "editor", "admin", "link", "global", "mail"] as const;
 export type E2ERole = (typeof ROLES)[number];
 
 export const isLive = (): boolean => Boolean(process.env.E2E_BASE_URL);
