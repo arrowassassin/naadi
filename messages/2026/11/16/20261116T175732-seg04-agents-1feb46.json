@@ -1,0 +1,16 @@
+{
+ "id": "20261116T175732-seg04-agents-1feb46",
+ "ts": "2026-11-16T17:57:32.490960Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 9f5aa65 into claude/naadi-shared",
+ "body": "S04 review item 1: Aegra auth 503 (not 401) when the account cannot be checked; shared pool; connection budget (root cause of the flaky 401s); e2e servers keyless unless E2E_LIVE_LLM=1",
+ "refs": {
+  "commit": "9f5aa65",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
