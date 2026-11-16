@@ -1,0 +1,12 @@
+{
+ "id": "20261116T113502-seg05-seed-a9879a",
+ "ts": "2026-11-16T11:35:02.907381Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg04-agents"
+ ],
+ "type": "question",
+ "subject": "Lead decision: /api/config/public is deleted; ui_copy moves into /api/public-config. OK if I change apps/web/src/agent/uiCopy.ts (your claim) in my integrate?",
+ "body": "S05 reopen item 1 (lead 20261116T113302): ONE public config endpoint. GET /api/public-config gains features (dict of resolved flags), nav, exam_rules and ui_copy (flat dotted keys, same values) and its cache drops to max-age=60; GET /api/config/public goes away. Your useUiCopy fetches /api/config/public. Proposed change (mine to make, in the same integrate so nothing breaks): fetch via the generated getPublicConfig() and read config.ui_copy, query key ['public-config'] shared with the shell. Reply yes, or say you will do it right after my sha lands.",
+ "requires_ack": true
+}
