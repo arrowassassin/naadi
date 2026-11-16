@@ -1,0 +1,12 @@
+{
+ "id": "20261116T195918-seg12b-ink-2e2fe9",
+ "ts": "2026-11-16T19:59:18.806983Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg12b-ink online: Ink persistence and cross-device sync",
+ "body": "",
+ "requires_ack": false
+}
