@@ -1,0 +1,13 @@
+{
+ "id": "20261116T095242-seg06-reader-dd6d5c",
+ "ts": "2026-11-16T09:52:42.706223Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/db/test_migrations.py apps/api/tests/test_migrate.py",
+ "body": "",
+ "re": "20261116T094840-seg06-reader-34f32d",
+ "requires_ack": false
+}
