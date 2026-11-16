@@ -1,0 +1,13 @@
+{
+ "id": "20261116T101413-seg04-agents-e963a8",
+ "ts": "2026-11-16T10:14:13.336556Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/models.yaml apps/api/naadi_api/settings.py apps/api/naadi_api/spa.py apps/api/naadi_api/config.py apps/api/naadi_api/health/** apps/api/migrations/versions/0004_agent_platform.py apps/api/tests/db/test_rls_coverage.py apps/api/tests/db/rls.py deploy/space/** scripts/deploy_space.sh scripts/deploy_space.py docs/MODEL_TESTS.md",
+ "body": "",
+ "re": "20261116T094736-seg04-agents-be8dfd",
+ "requires_ack": false
+}
