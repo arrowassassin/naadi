@@ -1,0 +1,14 @@
+{
+ "id": "20261116T075913-seg03-auth-20f481",
+ "ts": "2026-11-16T07:59:13.845890Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "API auth landed (a4abc6a): JWKS verify, admin gate, /api/me, /api/nav, /api/public-config; 69 unit + 7 DB integration tests green locally. Next: web auth + shell (waiting on seg12-ink's package.json/router.tsx release)",
+ "body": "",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "requires_ack": false
+}
