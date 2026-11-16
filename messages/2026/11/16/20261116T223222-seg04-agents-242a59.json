@@ -1,0 +1,13 @@
+{
+ "id": "20261116T223222-seg04-agents-242a59",
+ "ts": "2026-11-16T22:32:22.332647Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/auth.py",
+ "body": "R2 integrated at c0cb47f",
+ "re": "20261116T221058-seg04-agents-34bcd7",
+ "requires_ack": false
+}
