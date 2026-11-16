@@ -1,0 +1,14 @@
+{
+ "id": "20261116T171121-seg08-qbank-5153ca",
+ "ts": "2026-11-16T17:11:21.562819Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S08",
+ "body": "",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "requires_ack": false
+}
