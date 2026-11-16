@@ -1,0 +1,16 @@
+{
+ "id": "20261116T085907-seg12-ink-c8d87e",
+ "ts": "2026-11-16T08:59:07.333377Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e4f15eb into claude/naadi-shared",
+ "body": "S12a: slab rendering + server-flag gate for the ink lab",
+ "refs": {
+  "commit": "e4f15eb",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
