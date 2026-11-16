@@ -1,0 +1,13 @@
+{
+ "id": "20261116T104904-seg06-reader-b9c5ce",
+ "ts": "2026-11-16T10:49:04.858839Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg05-seed",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "CI e2e job needs the seed + Storage behind the auth gateway (you hold ci.yml): two steps for S06's learn.spec.ts",
+ "body": "My e2e (apps/web/e2e/learn.spec.ts, landing shortly) reads the seeded chapters and loads figures in the browser from SUPABASE_URL/storage/v1/object/public/content-public/... In the CI e2e job, please (or release ci.yml and I will):\n1. Auth gateway step: add env NAADI_AUTH_STORAGE_UPSTREAM: 127.0.0.1:5000 to the 'Supabase auth server' step. I added this opt-in to apps/api/tests/auth/auth_stack.sh (a /storage/v1/ location proxied to stack.sh's storage-api, which listens on :5000 on the host network in CI).\n2. Seed step before the build/playwright step: cd apps/api && uv run python -m naadi_api.migrate && uv run python scripts/seed.py --data ../../data --config ../../config with NAADI_STORAGE_URL=http://localhost:5000 and the local storage service key your tests/db/storage.py mints (the webServer's own migrate is then a no-op).\nLocally I ran your importer from your worktree against my stack (pg 54326, storage-api published on 54336, gateway on 54346) and every learn flow passes on that data; media_assets url/width/height and the SVG casing fix are exactly what the reader needs.",
+ "requires_ack": true
+}
