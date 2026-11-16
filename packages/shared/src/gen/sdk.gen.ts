@@ -47,6 +47,9 @@ import type {
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
+  GetInkLayerData,
+  GetInkLayerErrors,
+  GetInkLayerResponses,
   GetLabValuesData,
   GetLabValuesErrors,
   GetLabValuesResponses,
@@ -79,6 +82,9 @@ import type {
   ListSeedRunsData,
   ListSeedRunsErrors,
   ListSeedRunsResponses,
+  PostInkChangesData,
+  PostInkChangesErrors,
+  PostInkChangesResponses,
   PutAppConfigData,
   PutAppConfigErrors,
   PutAppConfigResponses,
@@ -133,6 +139,9 @@ import {
   zGetCoursesResponse,
   zGetEmbeddingsStatusResponse,
   zGetHealthResponse,
+  zGetInkLayerPath,
+  zGetInkLayerQuery,
+  zGetInkLayerResponse,
   zGetLabValuesResponse,
   zGetMeResponse,
   zGetNavResponse,
@@ -148,6 +157,9 @@ import {
   zListBlocksQuery,
   zListBlocksResponse,
   zListSeedRunsResponse,
+  zPostInkChangesBody,
+  zPostInkChangesPath,
+  zPostInkChangesResponse,
   zPutAppConfigBody,
   zPutAppConfigPath,
   zPutAppConfigResponse,
@@ -635,6 +647,50 @@ export const getHealth = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zGetHealthResponse.parseAsync(data),
     url: "/api/health",
     ...options,
+  });
+
+/**
+ * The caller's ink on one surface: a full load, or the changes since a sync cursor
+ */
+export const getInkLayer = <ThrowOnError extends boolean = false>(
+  options: Options<GetInkLayerData, ThrowOnError>,
+): RequestResult<GetInkLayerResponses, GetInkLayerErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetInkLayerResponses, GetInkLayerErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetInkLayerPath,
+          query: zGetInkLayerQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetInkLayerResponse.parseAsync(data),
+    url: "/api/ink/{surface_type}/{surface_id}",
+    ...options,
+  });
+
+/**
+ * Send ink upserts and tombstones; merged per item (last writer wins, tombstone on a tie); idempotent
+ */
+export const postInkChanges = <ThrowOnError extends boolean = false>(
+  options: Options<PostInkChangesData, ThrowOnError>,
+): RequestResult<PostInkChangesResponses, PostInkChangesErrors, ThrowOnError> =>
+  (options.client ?? client).post<PostInkChangesResponses, PostInkChangesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPostInkChangesBody,
+          path: zPostInkChangesPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPostInkChangesResponse.parseAsync(data),
+    url: "/api/ink/{surface_type}/{surface_id}/changes",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });
 
 /**

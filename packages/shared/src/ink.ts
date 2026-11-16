@@ -1,6 +1,7 @@
 /**
- * Ink stroke data model: the exact content of `ink_layers.strokes` (jsonb), shared by the ink engine
- * (12a), persistence (12b), notebooks and handwriting OCR (13) and offline sync (18).
+ * Ink stroke data model, shared by the ink engine (12a), persistence (12b), notebooks and handwriting OCR (13)
+ * and offline sync (18). Persisted one item per row in `ink_items.item` (jsonb, migration 0009) and merged by the
+ * ink API with mergeInkItems' order; the API's pydantic mirror is checked against fixtures/ink (parity tests).
  *
  * Units: coordinates and sizes are **surface units (su)**. The surface's content-box width is 1.0 on
  * both axes (y is divided by the width too), so the aspect ratio is kept and ink scales uniformly when
@@ -93,7 +94,7 @@ export type InkTextBox = z.infer<typeof InkTextBoxSchema>;
 export const InkItemSchema = z.discriminatedUnion("tool", [InkStrokeSchema, InkTextBoxSchema]);
 export type InkItem = z.infer<typeof InkItemSchema>;
 
-/** The content of `ink_layers.strokes`. Ids are unique. */
+/** A whole layer (the items of one surface). Ids are unique. */
 export const InkItemsSchema = z
   .array(InkItemSchema)
   .max(INK_MAX_ITEMS)
@@ -210,7 +211,7 @@ export function recordInkDiff(items: readonly InkItem[], diff: InkDiff, now: num
   return out;
 }
 
-/** JSON Schema of `ink_layers.strokes`, for the API side (Pydantic / jsonschema validation). */
+/** JSON Schema of a layer's items, for the API side (its pydantic mirror is checked against it). */
 export function inkItemsJsonSchema(): Record<string, unknown> {
   return z.toJSONSchema(z.array(InkItemSchema).max(INK_MAX_ITEMS), { target: "draft-2020-12" }) as Record<
     string,

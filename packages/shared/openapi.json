@@ -2022,6 +2022,209 @@
         "title": "IndexStatus",
         "type": "object"
       },
+      "InkChangesIn": {
+        "additionalProperties": false,
+        "properties": {
+          "base_rev": {
+            "description": "The `rev` this client last merged",
+            "minimum": 0.0,
+            "title": "Base Rev",
+            "type": "integer"
+          },
+          "items": {
+            "description": "Upserts and tombstones (InkItem objects), at most 500 and 2 MB per request",
+            "items": {},
+            "maxItems": 500,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "base_rev",
+          "items"
+        ],
+        "title": "InkChangesIn",
+        "type": "object"
+      },
+      "InkChangesOut": {
+        "properties": {
+          "applied": {
+            "description": "Ids written by this request",
+            "items": {
+              "type": "string"
+            },
+            "title": "Applied",
+            "type": "array"
+          },
+          "hash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hash"
+          },
+          "item_count": {
+            "title": "Item Count",
+            "type": "integer"
+          },
+          "layer_id": {
+            "title": "Layer Id",
+            "type": "string"
+          },
+          "rejected": {
+            "items": {
+              "$ref": "#/components/schemas/InkRejected"
+            },
+            "title": "Rejected",
+            "type": "array"
+          },
+          "remote": {
+            "description": "Items with seq > base_rev (other devices' changes, tombstones included) plus the server's version of every stale item; apply them with InkEngine.applyRemote",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Remote",
+            "type": "array"
+          },
+          "reset": {
+            "description": "base_rev is older than the tombstone horizon: `remote` is a full load",
+            "title": "Reset",
+            "type": "boolean"
+          },
+          "rev": {
+            "title": "Rev",
+            "type": "integer"
+          },
+          "server_now": {
+            "title": "Server Now",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "layer_id",
+          "rev",
+          "applied",
+          "rejected",
+          "remote",
+          "reset",
+          "hash",
+          "item_count",
+          "server_now"
+        ],
+        "title": "InkChangesOut",
+        "type": "object"
+      },
+      "InkLayerOut": {
+        "properties": {
+          "hash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "sha256 of every id:updatedAt:deleted sorted by id (convergence check)",
+            "title": "Hash"
+          },
+          "item_count": {
+            "description": "Live (not deleted) items on the surface",
+            "title": "Item Count",
+            "type": "integer"
+          },
+          "items": {
+            "description": "InkItem objects (@naadi/shared InkItemSchema). A full load omits tombstones; `since` includes them",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "layer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null until the first item is saved on this surface",
+            "title": "Layer Id"
+          },
+          "outdated": {
+            "description": "Live items drawn on an earlier revision of the surface content (section/question/card text)",
+            "title": "Outdated",
+            "type": "integer"
+          },
+          "reset": {
+            "description": "true when `since` is older than the tombstone horizon: `items` is then a full load and the client must replace its replica (keeping its own unsent changes) instead of merging",
+            "title": "Reset",
+            "type": "boolean"
+          },
+          "rev": {
+            "description": "Sync cursor: send it back as `since` (GET) or `base_rev` (POST)",
+            "title": "Rev",
+            "type": "integer"
+          },
+          "server_now": {
+            "description": "Server clock, epoch ms",
+            "title": "Server Now",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "layer_id",
+          "rev",
+          "items",
+          "reset",
+          "hash",
+          "item_count",
+          "outdated",
+          "server_now"
+        ],
+        "title": "InkLayerOut",
+        "type": "object"
+      },
+      "InkRejected": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The item id as sent, when it had one",
+            "title": "Id"
+          },
+          "reason": {
+            "description": "invalid: not a valid InkItem. stale: the server holds a newer or equal version (it is in `remote`). duplicate: the same id was sent twice in this request (the newer copy was used)",
+            "enum": [
+              "invalid",
+              "stale",
+              "duplicate"
+            ],
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "reason"
+        ],
+        "title": "InkRejected",
+        "type": "object"
+      },
       "JsonValue": {},
       "LabGroupOut": {
         "properties": {
@@ -5939,6 +6142,237 @@
         "summary": "System health: database, storage, OpenRouter quota, NVIDIA model probes, Tavily credits",
         "tags": [
           "system"
+        ]
+      }
+    },
+    "/api/ink/{surface_type}/{surface_id}": {
+      "get": {
+        "operationId": "getInkLayer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "surface_type",
+            "required": true,
+            "schema": {
+              "title": "Surface Type",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "surface_id",
+            "required": true,
+            "schema": {
+              "title": "Surface Id",
+              "type": "string"
+            }
+          },
+          {
+            "description": "`rev` from the last response; omit for a full load",
+            "in": "query",
+            "name": "since",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "`rev` from the last response; omit for a full load",
+              "title": "Since"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InkLayerOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unknown surface, or not visible to the caller"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The caller's ink on one surface: a full load, or the changes since a sync cursor",
+        "tags": [
+          "ink"
+        ]
+      }
+    },
+    "/api/ink/{surface_type}/{surface_id}/changes": {
+      "post": {
+        "operationId": "postInkChanges",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "surface_type",
+            "required": true,
+            "schema": {
+              "title": "Surface Type",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "surface_id",
+            "required": true,
+            "schema": {
+              "title": "Surface Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InkChangesIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InkChangesOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unknown surface, or not visible to the caller"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The layer would hold more than 20000 items"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "The request body is larger than 2 MB"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not a change set (more than 500 items?)"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Send ink upserts and tombstones; merged per item (last writer wins, tombstone on a tie); idempotent",
+        "tags": [
+          "ink"
         ]
       }
     },

@@ -16,8 +16,8 @@ def good_rows() -> list[dict[str, Any]]:
 
 
 def test_all_eighteen_pass() -> None:
-    assert len(USER_TABLES) == 18
-    assert evaluate_user_tables(good_rows()) == (True, "18 tables")
+    assert len(USER_TABLES) == 19
+    assert evaluate_user_tables(good_rows()) == (True, "19 tables")
 
 
 @pytest.mark.parametrize(

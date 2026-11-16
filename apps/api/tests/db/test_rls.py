@@ -77,19 +77,26 @@ def test_user_b_cannot_touch_user_a_rows(
 
     with as_user(pg, user_b) as conn:
         assert _count(conn, table.name, user_a) == 0, "B can see A's rows"
-        if table.name == "blocks":
+        if table.name == "blocks" or table.name in SELECT_ONLY:
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 _update(conn, table, user_a)
         else:
             assert _update(conn, table, user_a) == 0, "B updated A's rows"
-        assert _delete(conn, table, user_a) == 0, "B deleted A's rows"
+        if table.name in SELECT_ONLY:
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                _delete(conn, table, user_a)
+        else:
+            assert _delete(conn, table, user_a) == 0, "B deleted A's rows"
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             insert_row(conn, table.name, table.row(user_a, shared))
-    if table.name in API_WRITTEN:
+    if table.name in API_WRITTEN or table.name in SELECT_ONLY:
+        if table.name == "ink_items":  # an item needs its own user's layer
+            layers = next(t for t in USER_TABLES if t.name == "ink_layers")
+            insert_row(pg, "ink_layers", layers.row(user_b, shared))
         insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
     with as_user(pg, user_b) as conn:
         # B also cannot move one of its own rows over to A.
-        if table.name not in API_WRITTEN:
+        if table.name not in API_WRITTEN and table.name not in SELECT_ONLY:
             insert_row(conn, table.name, table.row(user_b, shared))
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
@@ -114,6 +121,16 @@ def test_user_a_can_select_update_delete_insert_own_rows(
     pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: UserTable
 ) -> None:
     seed_user_rows(pg, user_a, shared)
+    if table.name in SELECT_ONLY:
+        with as_user(pg, user_a) as conn:
+            assert _count(conn, table.name, user_a) == 1  # reading their own rows works
+            for write in (_update, _delete):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    write(conn, table, user_a)
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                insert_row(conn, table.name, table.row(user_a, shared))
+            assert _count(conn, table.name, user_a) == 1
+        return
     with as_user(pg, user_a) as conn:
         assert _count(conn, table.name, user_a) == 1
         if table.name == "blocks":
@@ -133,6 +150,8 @@ def test_user_a_can_select_update_delete_insert_own_rows(
 
 # Written by the API (it grades and owns block state); students may only read them (and delete their own rows).
 API_WRITTEN = ("attempts", "blocks")
+# Ink (0009): every item is validated and merged by the API; students may only read their own layers and items.
+SELECT_ONLY = ("ink_layers", "ink_items")
 
 
 @pytest.mark.parametrize("table", API_WRITTEN)

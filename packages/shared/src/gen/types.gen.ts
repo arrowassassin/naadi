@@ -1140,6 +1140,148 @@ export type IndexStatus = {
   };
 };
 
+/**
+ * InkChangesIn
+ */
+export type InkChangesIn = {
+  /**
+   * Base Rev
+   *
+   * The `rev` this client last merged
+   */
+  base_rev: number;
+  /**
+   * Items
+   *
+   * Upserts and tombstones (InkItem objects), at most 500 and 2 MB per request
+   */
+  items: Array<unknown>;
+};
+
+/**
+ * InkChangesOut
+ */
+export type InkChangesOut = {
+  /**
+   * Applied
+   *
+   * Ids written by this request
+   */
+  applied: Array<string>;
+  /**
+   * Hash
+   */
+  hash: string | null;
+  /**
+   * Item Count
+   */
+  item_count: number;
+  /**
+   * Layer Id
+   */
+  layer_id: string;
+  /**
+   * Rejected
+   */
+  rejected: Array<InkRejected>;
+  /**
+   * Remote
+   *
+   * Items with seq > base_rev (other devices' changes, tombstones included) plus the server's version of every stale item; apply them with InkEngine.applyRemote
+   */
+  remote: Array<{
+    [key: string]: unknown;
+  }>;
+  /**
+   * Reset
+   *
+   * base_rev is older than the tombstone horizon: `remote` is a full load
+   */
+  reset: boolean;
+  /**
+   * Rev
+   */
+  rev: number;
+  /**
+   * Server Now
+   */
+  server_now: number;
+};
+
+/**
+ * InkLayerOut
+ */
+export type InkLayerOut = {
+  /**
+   * Hash
+   *
+   * sha256 of every id:updatedAt:deleted sorted by id (convergence check)
+   */
+  hash: string | null;
+  /**
+   * Item Count
+   *
+   * Live (not deleted) items on the surface
+   */
+  item_count: number;
+  /**
+   * Items
+   *
+   * InkItem objects (@naadi/shared InkItemSchema). A full load omits tombstones; `since` includes them
+   */
+  items: Array<{
+    [key: string]: unknown;
+  }>;
+  /**
+   * Layer Id
+   *
+   * null until the first item is saved on this surface
+   */
+  layer_id: string | null;
+  /**
+   * Outdated
+   *
+   * Live items drawn on an earlier revision of the surface content (section/question/card text)
+   */
+  outdated: number;
+  /**
+   * Reset
+   *
+   * true when `since` is older than the tombstone horizon: `items` is then a full load and the client must replace its replica (keeping its own unsent changes) instead of merging
+   */
+  reset: boolean;
+  /**
+   * Rev
+   *
+   * Sync cursor: send it back as `since` (GET) or `base_rev` (POST)
+   */
+  rev: number;
+  /**
+   * Server Now
+   *
+   * Server clock, epoch ms
+   */
+  server_now: number;
+};
+
+/**
+ * InkRejected
+ */
+export type InkRejected = {
+  /**
+   * Id
+   *
+   * The item id as sent, when it had one
+   */
+  id: string | null;
+  /**
+   * Reason
+   *
+   * invalid: not a valid InkItem. stale: the server holds a newer or equal version (it is in `remote`). duplicate: the same id was sent twice in this request (the newer copy was used)
+   */
+  reason: "invalid" | "stale" | "duplicate";
+};
+
 export type JsonValue = unknown;
 
 /**
@@ -3357,6 +3499,121 @@ export type GetHealthResponses = {
 };
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
+
+export type GetInkLayerData = {
+  body?: never;
+  path: {
+    /**
+     * Surface Type
+     */
+    surface_type: string;
+    /**
+     * Surface Id
+     */
+    surface_id: string;
+  };
+  query?: {
+    /**
+     * Since
+     *
+     * `rev` from the last response; omit for a full load
+     */
+    since?: number | null;
+  };
+  url: "/api/ink/{surface_type}/{surface_id}";
+};
+
+export type GetInkLayerErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Unknown surface, or not visible to the caller
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetInkLayerError = GetInkLayerErrors[keyof GetInkLayerErrors];
+
+export type GetInkLayerResponses = {
+  /**
+   * Successful Response
+   */
+  200: InkLayerOut;
+};
+
+export type GetInkLayerResponse = GetInkLayerResponses[keyof GetInkLayerResponses];
+
+export type PostInkChangesData = {
+  body: InkChangesIn;
+  path: {
+    /**
+     * Surface Type
+     */
+    surface_type: string;
+    /**
+     * Surface Id
+     */
+    surface_id: string;
+  };
+  query?: never;
+  url: "/api/ink/{surface_type}/{surface_id}/changes";
+};
+
+export type PostInkChangesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Unknown surface, or not visible to the caller
+   */
+  404: ErrorResponse;
+  /**
+   * The layer would hold more than 20000 items
+   */
+  409: ErrorResponse;
+  /**
+   * The request body is larger than 2 MB
+   */
+  413: ErrorResponse;
+  /**
+   * Not a change set (more than 500 items?)
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PostInkChangesError = PostInkChangesErrors[keyof PostInkChangesErrors];
+
+export type PostInkChangesResponses = {
+  /**
+   * Successful Response
+   */
+  200: InkChangesOut;
+};
+
+export type PostInkChangesResponse = PostInkChangesResponses[keyof PostInkChangesResponses];
 
 export type GetLabValuesData = {
   body?: never;

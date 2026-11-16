@@ -45,6 +45,23 @@ def _id() -> uuid.UUID:
     return uuid.uuid4()
 
 
+def ink_layer_id(user_id: uuid.UUID) -> uuid.UUID:
+    """The fixture's ink layer id per user, so the ink_items row can reference its own user's layer."""
+    return uuid.uuid5(user_id, "ink-layer")
+
+
+INK_ITEM_ID = "019a8c4e-0000-7000-8000-000000000001"
+INK_ITEM: dict[str, Any] = {
+    "id": INK_ITEM_ID,
+    "tool": "pen",
+    "color": "ink",
+    "size": 0.002,
+    "points": [[0.1, 0.1, 0.5, 0]],
+    "createdAt": 1_763_280_000_000,
+    "updatedAt": 1_763_280_000_000,
+}
+
+
 USER_TABLES: tuple[UserTable, ...] = (
     UserTable(
         "profiles", lambda u, s: {"user_id": u, "display_name": "Test"}, ("user_id",), ("display_name", "Renamed")
@@ -78,7 +95,7 @@ USER_TABLES: tuple[UserTable, ...] = (
     ),
     UserTable(
         "ink_layers",
-        lambda u, s: {"id": _id(), "user_id": u, "surface_type": "section", "surface_id": s.section_id},
+        lambda u, s: {"id": ink_layer_id(u), "user_id": u, "surface_type": "section", "surface_id": s.section_id},
         ("user_id",),
         ("recognized_text", "ink"),
     ),
@@ -150,6 +167,18 @@ USER_TABLES: tuple[UserTable, ...] = (
         },
         ("user_id", "section_id"),
         ("scroll_position", 2.25),
+    ),
+    UserTable(
+        "ink_items",
+        lambda u, s: {
+            "user_id": u,
+            "layer_id": ink_layer_id(u),
+            "item_id": INK_ITEM_ID,
+            "updated_at_ms": 1_763_280_000_000,
+            "item": Jsonb(INK_ITEM),
+        },
+        ("user_id",),
+        ("content_rev", "r2"),
     ),
 )
 

@@ -349,11 +349,39 @@ create table public.ink_layers (
   surface_type text not null
     check (surface_type in ('section','question','flashcard','pdf_page','notebook_page','exam_scratch')),
   surface_id text not null,
-  strokes jsonb not null default '[]',
   recognized_text text,
   updated_at timestamptz not null default now(),
-  unique (user_id, surface_type, surface_id)
+  -- 0009: written by the API only; rev = max(ink_items.seq), item_count = live items, content_hash = sha256 over
+  -- every item's id:updatedAt:deleted (sorted by id), purged_rev = highest seq of a purged tombstone
+  rev bigint not null default 0 check (rev >= 0),
+  item_count int not null default 0 check (item_count >= 0),
+  content_hash text,
+  purged_rev bigint not null default 0 check (purged_rev >= 0),
+  unique (user_id, surface_type, surface_id),
+  unique (id, user_id)
 );
+
+-- 0009: one row per InkItem (packages/shared/src/ink.ts), merged by the API with mergeInkItems' order
+-- (higher updated_at_ms, then a tombstone, then the stored row stays). seq comes from public.ink_items_seq and
+-- is bumped on every write (incremental sync cursor). Tombstones older than 90 days are purged daily.
+create table public.ink_items (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  layer_id uuid not null,
+  item_id uuid not null,
+  updated_at_ms bigint not null check (updated_at_ms >= 0),
+  deleted boolean not null default false,
+  item jsonb not null,
+  content_rev text,
+  seq bigint not null default nextval('public.ink_items_seq'),
+  written_at timestamptz not null default now(),
+  primary key (layer_id, item_id),
+  foreign key (layer_id, user_id) references public.ink_layers (id, user_id) on delete cascade,
+  check (item ->> 'id' = item_id::text and (item ->> 'updatedAt')::bigint = updated_at_ms
+         and coalesce((item ->> 'deleted')::boolean, false) = deleted)
+);
+create index ink_items_layer_seq_idx on public.ink_items (layer_id, seq);
+create index ink_items_user_idx on public.ink_items (user_id);
+create index ink_items_tombstones_idx on public.ink_items (written_at) where deleted;
 
 create table public.uploads (
   id uuid primary key default gen_random_uuid(),
@@ -694,7 +722,8 @@ create trigger plan_templates_touch_updated_at before update on public.plan_temp
 --     + insert/update check: exists (select 1 from public.flashcards p where p.id = card_reviews.card_id)
 --   notes
 --   notebooks
---   ink_layers
+--   ink_layers  (0009: select only for clients; the ink API writes layers and items)
+--   ink_items (0009)  (select only for clients)
 --   uploads  (client insert: id, user_id, kind, storage_path, original_name, bytes; client update: original_name)
 --   plan_items
 --   user_pathway_tasks

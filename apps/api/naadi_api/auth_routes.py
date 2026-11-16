@@ -24,6 +24,7 @@ from .config_api.schemas import ExamRules, NavEntry
 from .config_api.service import AppConfigService
 from .db import Database, DatabaseNotConfigured
 from .errors import ErrorResponse
+from .ink.models import InkSettings
 from .logs import get_logger
 from .settings import Settings
 
@@ -130,6 +131,9 @@ class MeUpdate(BaseModel):
             raise ValueError(f"settings must be at most {MAX_SETTINGS_PATCH_BYTES // 1024} KB")
         if any(not k or len(k) > 64 for k in v):
             raise ValueError("settings keys must be 1-64 characters")
+        if v.get("ink") is not None:
+            # Settings -> Pencil & ink (segment 12b): replaced whole (the merge is one level deep), so validate whole.
+            v = {**v, "ink": InkSettings.model_validate(v["ink"]).model_dump(exclude_none=True)}
         return v
 
 

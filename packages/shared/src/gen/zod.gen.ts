@@ -324,6 +324,51 @@ export const zIndexStatus = z.object({
   rows: z.record(z.string(), z.int()),
 });
 
+/**
+ * InkChangesIn
+ */
+export const zInkChangesIn = z.object({
+  base_rev: z.int().gte(0),
+  items: z.array(z.unknown()).max(500),
+});
+
+/**
+ * InkLayerOut
+ */
+export const zInkLayerOut = z.object({
+  hash: z.string().nullable(),
+  item_count: z.int(),
+  items: z.array(z.record(z.string(), z.unknown())),
+  layer_id: z.string().nullable(),
+  outdated: z.int(),
+  reset: z.boolean(),
+  rev: z.int(),
+  server_now: z.int(),
+});
+
+/**
+ * InkRejected
+ */
+export const zInkRejected = z.object({
+  id: z.string().nullable(),
+  reason: z.enum(["invalid", "stale", "duplicate"]),
+});
+
+/**
+ * InkChangesOut
+ */
+export const zInkChangesOut = z.object({
+  applied: z.array(z.string()),
+  hash: z.string().nullable(),
+  item_count: z.int(),
+  layer_id: z.string(),
+  rejected: z.array(zInkRejected),
+  remote: z.array(z.record(z.string(), z.unknown())),
+  reset: z.boolean(),
+  rev: z.int(),
+  server_now: z.int(),
+});
+
 export const zJsonValue = z.unknown();
 
 /**
@@ -1199,6 +1244,32 @@ export const zGetCoursesResponse = zCoursesResponse;
  * Successful Response
  */
 export const zGetHealthResponse = zHealthResponse;
+
+export const zGetInkLayerPath = z.object({
+  surface_type: z.string(),
+  surface_id: z.string(),
+});
+
+export const zGetInkLayerQuery = z.object({
+  since: z.int().gte(0).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetInkLayerResponse = zInkLayerOut;
+
+export const zPostInkChangesBody = zInkChangesIn;
+
+export const zPostInkChangesPath = z.object({
+  surface_type: z.string(),
+  surface_id: z.string(),
+});
+
+/**
+ * Successful Response
+ */
+export const zPostInkChangesResponse = zInkChangesOut;
 
 /**
  * Successful Response

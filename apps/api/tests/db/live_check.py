@@ -27,7 +27,7 @@ import httpx
 from naadi_api import migrate
 from naadi_api.agent.migrate_all import AEGRA_TABLES
 
-# The fixed contract: these 18 user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
+# The fixed contract: these 19 user-owned tables, each with RLS forced and exactly four `<t>_<cmd>_own` policies.
 USER_TABLES = (
     "profiles",
     "attempts",
@@ -47,6 +47,7 @@ USER_TABLES = (
     "generated_media",
     "report_issues",
     "reading_positions",
+    "ink_items",
 )
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
 HIDDEN_QUESTION_COLUMNS = (
@@ -137,8 +138,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "40 Naadi tables present",
-            "select count(*) = 40 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "41 Naadi tables present",
+            "select count(*) = 41 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -150,7 +151,7 @@ def checks(head: str) -> list[Check]:
             " and not has_table_privilege('authenticated', oid, 'select')) as ok, count(*)::text as detail"
             f" from pg_class where relnamespace = 'public'::regnamespace and relname = any({_array(AEGRA_TABLES)})",
         ),
-        Check("18 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
+        Check("19 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
         Check(
             "question answers hidden from anon and authenticated",
             "select to_regclass('public.questions') is not null and not exists (select 1"
@@ -166,6 +167,12 @@ def checks(head: str) -> list[Check]:
             f" and grantee = 'anon' and table_name = any({_array(CLIENT_CLOSED_TABLES)})"
             " or table_schema = 'public' and grantee = 'authenticated'"
             " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version','seed_runs'])",
+        ),
+        Check(
+            "ink layers and items are select-only for clients",
+            "select bool_and(has_table_privilege('authenticated', t, 'select')"
+            " and not has_table_privilege('authenticated', t, 'insert,update,delete,truncate')) as ok, '' as detail"
+            " from unnest(array['public.ink_layers','public.ink_items']) t",
         ),
         Check(
             "default privileges closed for anon/authenticated",
