@@ -1,0 +1,15 @@
+{
+ "id": "20261116T155632-seg05-seed-d59cb1",
+ "ts": "2026-11-16T15:56:32.923755Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/naadi_api/auth_routes.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/naadi_api/auth_routes.py\n\nRecent integration commits touching them:\nwip(auth): S03 reopen fixes in progress\nfeat(web): ContentRenderer for every content node, Courses map and chapter Reader\nfeat(api): Supabase JWT auth via JWKS, admin gate, /api/me, /api/nav, /api/public-config\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/naadi_api/auth_routes.py"
+ ],
+ "requires_ack": true
+}
