@@ -2,7 +2,8 @@
 # Supabase's own auth server (supabase/auth, a.k.a. GoTrue) for CI and local e2e, so sign-in is tested for
 # real without any hosted-project secret. It runs against the same supabase/postgres as the db tests
 # (apps/api/tests/db/stack.sh) and is published behind a tiny nginx at http://localhost:<port>/auth/v1,
-# the path supabase-js and the API expect.
+# the path supabase-js and the API expect. Outgoing auth email goes to a local mail catcher (Mailpit), so the
+# real magic-link email path (send -> /verify -> /auth/callback?code=) is tested end to end.
 #
 #   apps/api/tests/auth/auth_stack.sh up   # local: Postgres container from stack.sh (same network)
 #   apps/api/tests/auth/auth_stack.sh ci   # CI: Postgres is a service container on the host network
@@ -10,7 +11,7 @@
 #
 # Each `up`/`ci` mints a fresh random HS256 secret and matching anon / service_role JWTs. They are
 # throwaway values for a local container, not secrets of the real project; they are never committed.
-# Output: env lines SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_JWT_SECRET,
+# Output: env lines SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_JWT_SECRET, MAILPIT_URL,
 # written to $GITHUB_ENV (values masked) in CI, else to $NAADI_AUTH_ENV_FILE
 # [test-results/.auth-stack.env, mode 600].
 #
@@ -21,10 +22,12 @@
 # NAADI_AUTH_STORAGE_UPSTREAM [unset] host:port of the storage-api from stack.sh (e.g. storage-naadi-test:5000
 # locally, 127.0.0.1:5000 in CI): when set, the same gateway also serves `/storage/v1/`, so the browser loads
 # public figures from SUPABASE_URL/storage/v1/object/public/... exactly as on the hosted project.
+# NAADI_MAIL_CONTAINER [mail-naadi-test], NAADI_MAIL_PORT [54324] (Mailpit HTTP API).
 set -euo pipefail
 
 AUTH_IMAGE="supabase/auth:v2.197.0"
 PROXY_IMAGE="nginx:1.29.0-alpine"
+MAIL_IMAGE="axllent/mailpit:v1.28.0"
 PG_CONTAINER="${NAADI_PG_CONTAINER:-pg-naadi-test}"
 PG_HOST="${NAADI_PG_HOST:-localhost}"
 PG_PORT="${NAADI_PG_PORT:-54322}"
@@ -33,6 +36,8 @@ NETWORK="${NAADI_TEST_NETWORK:-naadi-test-net}"
 AUTH_CONTAINER="${NAADI_AUTH_CONTAINER:-auth-naadi-test}"
 PROXY_CONTAINER="${NAADI_AUTH_PROXY_CONTAINER:-auth-proxy-naadi-test}"
 AUTH_PORT="${NAADI_AUTH_PORT:-54329}"
+MAIL_CONTAINER="${NAADI_MAIL_CONTAINER:-mail-naadi-test}"
+MAIL_PORT="${NAADI_MAIL_PORT:-54324}"
 SITE_URL="${NAADI_AUTH_SITE_URL:-http://127.0.0.1:7860}"
 STORAGE_UPSTREAM="${NAADI_AUTH_STORAGE_UPSTREAM:-}"
 API_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -133,10 +138,18 @@ wait_auth() {
 }
 
 start() {
-  local db_host="$1" upstream="$2"
-  shift 2
+  local db_host="$1" upstream="$2" smtp_host="$3"
+  shift 3
   local net_args=("$@")
-  docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" >/dev/null 2>&1 || true
+  docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" "$MAIL_CONTAINER" >/dev/null 2>&1 || true
+  local mail_net=("${net_args[@]}")
+  if [ "${net_args[1]:-}" = "host" ]; then
+    mail_net+=(-e "MP_UI_BIND_ADDR=0.0.0.0:${MAIL_PORT}")
+  else
+    mail_net+=(-p "${MAIL_PORT}:8025")
+  fi
+  docker run -d --name "$MAIL_CONTAINER" "${mail_net[@]}" \
+    -e MP_SMTP_AUTH_ACCEPT_ANY=1 -e MP_SMTP_AUTH_ALLOW_INSECURE=1 "$MAIL_IMAGE" >/dev/null
   set_auth_password
   local secret anon service
   read -r secret anon service < <(mint)
@@ -153,7 +166,9 @@ start() {
     -e GOTRUE_JWT_DEFAULT_GROUP_NAME=authenticated -e GOTRUE_JWT_ADMIN_ROLES=service_role \
     -e GOTRUE_DISABLE_SIGNUP=false -e GOTRUE_EXTERNAL_EMAIL_ENABLED=true -e GOTRUE_MAILER_AUTOCONFIRM=true \
     -e GOTRUE_RATE_LIMIT_VERIFY=100000 -e GOTRUE_RATE_LIMIT_TOKEN_REFRESH=100000 \
-    -e GOTRUE_RATE_LIMIT_OTP=100000 -e GOTRUE_LOG_LEVEL=warn \
+    -e GOTRUE_RATE_LIMIT_OTP=100000 -e GOTRUE_RATE_LIMIT_EMAIL_SENT=100000 -e GOTRUE_LOG_LEVEL=warn \
+    -e GOTRUE_SMTP_HOST="$smtp_host" -e GOTRUE_SMTP_PORT=1025 -e GOTRUE_SMTP_USER=naadi -e GOTRUE_SMTP_PASS=local \
+    -e GOTRUE_SMTP_ADMIN_EMAIL=auth@naadi.test -e GOTRUE_SMTP_SENDER_NAME=Naadi \
     "$AUTH_IMAGE" >/dev/null
 
   local conf_dir
@@ -172,6 +187,7 @@ start() {
     "SUPABASE_ANON_KEY=${anon}"
     "SUPABASE_SERVICE_ROLE_KEY=${service}"
     "SUPABASE_JWT_SECRET=${secret}"
+    "MAILPIT_URL=http://localhost:${MAIL_PORT}"
   )
   if [ -n "${GITHUB_ENV:-}" ]; then
     echo "::add-mask::${anon}"
@@ -190,13 +206,13 @@ cmd="${1:-up}"
 case "$cmd" in
   up)
     docker network connect "$NETWORK" "$PG_CONTAINER" >/dev/null 2>&1 || true
-    start "${PG_CONTAINER}:5432" "${AUTH_CONTAINER}:9999" --network "$NETWORK"
+    start "${PG_CONTAINER}:5432" "${AUTH_CONTAINER}:9999" "$MAIL_CONTAINER" --network "$NETWORK"
     ;;
   ci)
-    start "${PG_HOST}:${PG_PORT}" "127.0.0.1:9999" --network host
+    start "${PG_HOST}:${PG_PORT}" "127.0.0.1:9999" 127.0.0.1 --network host
     ;;
   down)
-    docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" >/dev/null 2>&1 || true
+    docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" "$MAIL_CONTAINER" >/dev/null 2>&1 || true
     rm -f "$ENV_FILE"
     ;;
   *)

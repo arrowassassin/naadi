@@ -31,7 +31,7 @@ def free_port() -> int:
         return int(s.getsockname()[1])
 
 
-def token(user_id: uuid.UUID, email: str, *, ttl_s: int = 3600) -> str:
+def token(user_id: uuid.UUID, email: str, session_id: uuid.UUID, *, ttl_s: int = 3600) -> str:
     now = int(time.time())
     return jwt.encode(
         {
@@ -42,7 +42,7 @@ def token(user_id: uuid.UUID, email: str, *, ttl_s: int = 3600) -> str:
             "iat": now,
             "exp": now + ttl_s,
             "email": email,
-            "user_metadata": {"email_verified": True},
+            "session_id": str(session_id),
             "is_anonymous": False,
         },
         TEST_JWT_SECRET,
@@ -90,10 +90,17 @@ def running_host(database_url: str, log_dir: Path) -> Iterator[Host]:
         ids = [uuid.uuid4() for _ in range(3)]
         emails = [ADMIN_EMAIL, f"{ids[1].hex[:10]}@test.invalid", f"{ids[2].hex[:10]}@test.invalid"]
         conn.execute("delete from auth.users where email = %s", (ADMIN_EMAIL,))
-        for uid, email in zip(ids, emails, strict=True):
+        sessions = [uuid.uuid4() for _ in ids]
+        # Accounts as after a magic-link sign-in: confirmed email and a live session (the API checks both).
+        for uid, email, sid in zip(ids, emails, sessions, strict=True):
             conn.execute(
-                "insert into auth.users (id, email, aud, role) values (%s, %s, 'authenticated', 'authenticated')",
+                "insert into auth.users (id, email, aud, role, email_confirmed_at)"
+                " values (%s, %s, 'authenticated', 'authenticated', now())",
                 (uid, email),
+            )
+            conn.execute(
+                "insert into auth.sessions (id, user_id, created_at, updated_at) values (%s, %s, now(), now())",
+                (sid, uid),
             )
     port = free_port()
     log_path = log_dir / f"agent-host-{port}.log"
@@ -134,9 +141,9 @@ def running_host(database_url: str, log_dir: Path) -> Iterator[Host]:
             ids[0],
             ids[1],
             ids[2],
-            token(ids[0], emails[0]),
-            token(ids[1], emails[1]),
-            token(ids[2], emails[2]),
+            token(ids[0], emails[0], sessions[0]),
+            token(ids[1], emails[1], sessions[1]),
+            token(ids[2], emails[2], sessions[2]),
             log_path,
         )
     finally:

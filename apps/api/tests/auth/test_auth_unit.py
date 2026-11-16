@@ -18,13 +18,21 @@ from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 from fastapi.testclient import TestClient
 from pydantic import SecretStr
 
-from naadi_api.auth import AuthError, AuthUnavailable, TokenVerifier, parse_admin_emails, user_from_claims
+from naadi_api.auth import (
+    AccountDirectory,
+    AuthError,
+    AuthUnavailable,
+    TokenVerifier,
+    parse_admin_emails,
+    user_from_claims,
+)
 from naadi_api.auth_limits import RateLimited, RateLimiter
 from naadi_api.db import Database
 from naadi_api.main import create_app
 from naadi_api.settings import Settings
 from tests.conftest import LogCapture, fake_service, make_settings
 
+from .fake_accounts import FakeAuthDb
 from .jwt_helpers import ISSUER, SUPABASE_URL, JwksServer, SigningKey, claims, mint
 
 ADMIN = "Owner@Example.com"
@@ -213,21 +221,84 @@ def test_admin_emails_parsing() -> None:
     }
 
 
-def test_admin_requires_verified_email_case_insensitive() -> None:
-    admins = parse_admin_emails(ADMIN)
-    assert user_from_claims(claims(email="OWNER@example.COM"), admins).is_admin is True
-    assert user_from_claims(claims(email="owner@example.com", verified=False), admins).is_admin is False
-    assert user_from_claims(claims(email="someone@example.com"), admins).is_admin is False
-    assert user_from_claims(claims(email=None), admins).is_admin is False
-    # email_verified must be literally true, not a truthy string
-    c = claims(email="owner@example.com")
-    c["user_metadata"] = {"email_verified": "true"}
-    assert user_from_claims(c, admins).is_admin is False
+def test_token_alone_never_decides_admin_or_verified() -> None:
+    u = user_from_claims(claims(email="owner@example.com", user_metadata={"email_verified": True}))
+    assert (u.is_admin, u.email_verified) == (False, False)
 
 
 def test_current_user_repr_has_no_email() -> None:
-    u = user_from_claims(claims(email="private.person@example.com"), frozenset())
+    u = user_from_claims(claims(email="private.person@example.com"))
     assert "private.person" not in repr(u)
+
+
+async def _resolve(db: FakeAuthDb, token_claims: dict[str, Any], **kw: Any) -> Any:
+    return await AccountDirectory(db, parse_admin_emails(ADMIN), **kw).resolve(user_from_claims(token_claims))
+
+
+async def test_admin_needs_a_confirmed_listed_email_in_auth_users() -> None:
+    db = FakeAuthDb()
+    owner = db.add_user("Owner@Example.com")
+    unconfirmed = db.add_user("owner@example.com", confirmed=False)
+    student = db.add_user("student@example.com")
+    for uid, admin in ((owner, True), (unconfirmed, False), (student, False)):
+        u = await _resolve(db, claims(uid, session_id=db.open_session(uid)))
+        assert u.is_admin is admin
+
+
+async def test_user_metadata_cannot_grant_or_revoke_admin() -> None:
+    db = FakeAuthDb()
+    student = db.add_user("student@example.com", confirmed=False)
+    # The token claims a verified owner address: user_metadata and the token email are ignored.
+    forged = claims(student, session_id=db.open_session(student), email="owner@example.com")
+    forged["user_metadata"] = {"email_verified": True}
+    u = await _resolve(db, forged)
+    assert (u.is_admin, u.email_verified, u.email) == (False, False, "student@example.com")
+    # And a real admin stays admin even if they set email_verified=false in their own metadata.
+    owner = db.add_user("owner@example.com")
+    c = claims(owner, session_id=db.open_session(owner), email="owner@example.com")
+    c["user_metadata"] = {"email_verified": False}
+    assert (await _resolve(db, c)).is_admin is True
+
+
+async def test_revoked_or_missing_session_is_401() -> None:
+    db = FakeAuthDb()
+    uid = db.add_user("student@example.com")
+    sid = db.open_session(uid)
+    clock = Clock()
+    directory = AccountDirectory(db, frozenset(), ttl_s=30, clock=clock)
+    await directory.resolve(user_from_claims(claims(uid, session_id=sid)))
+    del db.sessions[sid]  # "sign out of all devices"
+    clock.t += 29  # still cached
+    await directory.resolve(user_from_claims(claims(uid, session_id=sid)))
+    clock.t += 2  # cache expired: the revocation is seen
+    with pytest.raises(AuthError) as ei:
+        await directory.resolve(user_from_claims(claims(uid, session_id=sid)))
+    assert (ei.value.code, ei.value.status) == ("session_revoked", 401)
+    no_sid = claims(uid)
+    no_sid.pop("session_id")
+    with pytest.raises(AuthError) as ei:
+        await directory.resolve(user_from_claims(no_sid))
+    assert ei.value.code == "session_revoked"
+    with pytest.raises(AuthError) as ei:
+        await directory.resolve(user_from_claims(claims(uuid.uuid4(), session_id=sid)))
+    assert ei.value.code == "account_missing"
+
+
+async def test_lookups_are_cached_per_session() -> None:
+    db = FakeAuthDb()
+    uid = db.add_user("student@example.com")
+    sid = db.open_session(uid)
+    directory = AccountDirectory(db, frozenset(), clock=Clock())
+    for _ in range(5):
+        await directory.resolve(user_from_claims(claims(uid, session_id=sid)))
+    assert db.queries == 1
+
+
+async def test_directory_without_database_is_unavailable() -> None:
+    with pytest.raises(AuthUnavailable):
+        await AccountDirectory(Database(None), frozenset()).resolve(
+            user_from_claims(claims(session_id=str(uuid.uuid4())))
+        )
 
 
 def test_rate_limiter_window() -> None:
@@ -259,10 +330,15 @@ def signing_key() -> SigningKey:
 
 
 @pytest.fixture
-def auth_client(static_dir: Path, signing_key: SigningKey) -> Iterator[Callable[..., TestClient]]:
+def accounts() -> FakeAuthDb:
+    return FakeAuthDb()
+
+
+@pytest.fixture
+def auth_client(static_dir: Path, signing_key: SigningKey, accounts: FakeAuthDb) -> Iterator[Callable[..., TestClient]]:
     clients: list[TestClient] = []
 
-    def make(**kw: Any) -> TestClient:
+    def make(*, real_accounts: bool = False, **kw: Any) -> TestClient:
         base: dict[str, Any] = {
             "static_dir": static_dir,
             "supabase_url": SUPABASE_URL,
@@ -274,7 +350,8 @@ def auth_client(static_dir: Path, signing_key: SigningKey) -> Iterator[Callable[
         base.update(kw)
         s: Settings = make_settings(**base)
         v = TokenVerifier(SUPABASE_URL, transport=JwksServer(signing_key).transport())
-        app = create_app(s, health=fake_service(), db=Database(None), verifier=v)
+        directory = None if real_accounts else AccountDirectory(accounts, parse_admin_emails(s.admin_emails))
+        app = create_app(s, health=fake_service(), db=Database(None), verifier=v, accounts=directory)
         c = TestClient(app, raise_server_exceptions=False)
         c.__enter__()
         clients.append(c)
@@ -340,21 +417,35 @@ def test_nav_returns_only_enabled_items(auth_client: Callable[..., TestClient], 
 
 
 def test_admin_route_403_for_non_admin_200_for_admin(
-    auth_client: Callable[..., TestClient], signing_key: SigningKey
+    auth_client: Callable[..., TestClient], signing_key: SigningKey, accounts: FakeAuthDb
 ) -> None:
     c = auth_client()
-    res = c.get("/api/admin/overview", headers=bearer(mint(signing_key, claims(email="student@example.com"))))
+    res = c.get("/api/admin/overview", headers=bearer(accounts.login(signing_key, "student@example.com")))
     assert res.status_code == 403
     assert res.json()["error"]["code"] == "forbidden"
-    unverified = mint(signing_key, claims(email="owner@example.com", verified=False))
-    assert c.get("/api/admin/overview", headers=bearer(unverified)).status_code == 403
-    ok = c.get("/api/admin/overview", headers=bearer(mint(signing_key, claims(email="owner@EXAMPLE.com"))))
+    unconfirmed = accounts.login(signing_key, "owner@example.com", confirmed=False)
+    assert c.get("/api/admin/overview", headers=bearer(unconfirmed)).status_code == 403
+    ok = c.get("/api/admin/overview", headers=bearer(accounts.login(signing_key, "owner@EXAMPLE.com")))
     assert ok.status_code == 200
     assert ok.json() == {"environment": "prod", "version": "test-1", "admins_configured": 1, "profiles": 0}
 
 
+def test_revoked_session_is_401_on_account_routes(
+    auth_client: Callable[..., TestClient], signing_key: SigningKey, accounts: FakeAuthDb
+) -> None:
+    c = auth_client()
+    token = accounts.login(signing_key, "owner@example.com")
+    assert c.get("/api/admin/overview", headers=bearer(token)).status_code == 200
+    c.app.state.accounts._cache.clear()  # type: ignore[attr-defined]
+    accounts.sessions.clear()
+    for method, path in (("get", "/api/admin/overview"), ("get", "/api/me"), ("patch", "/api/me")):
+        res = getattr(c, method)(path, headers=bearer(token), **({"json": {}} if method == "patch" else {}))
+        assert res.status_code == 401, path
+        assert res.json()["error"]["code"] == "session_revoked"
+
+
 def test_me_without_database_is_503(auth_client: Callable[..., TestClient], signing_key: SigningKey) -> None:
-    res = auth_client().get("/api/me", headers=bearer(mint(signing_key, claims())))
+    res = auth_client(real_accounts=True).get("/api/me", headers=bearer(mint(signing_key, claims())))
     assert res.status_code == 503
     assert res.json()["error"]["code"] == "auth_unavailable"
     assert res.headers["retry-after"]
@@ -375,8 +466,11 @@ def test_me_without_database_is_503(auth_client: Callable[..., TestClient], sign
     ],
     ids=["bad-tz", "path-tz", "null-tz", "long-name", "big-settings", "settings-type", "email", "is_admin", "user_id"],
 )
-def test_patch_me_validation(auth_client: Callable[..., TestClient], signing_key: SigningKey, body: Any) -> None:
-    res = auth_client().patch("/api/me", headers=bearer(mint(signing_key, claims())), json=body)
+def test_patch_me_validation(
+    auth_client: Callable[..., TestClient], signing_key: SigningKey, accounts: FakeAuthDb, body: Any
+) -> None:
+    token = accounts.login(signing_key, "student@example.com")
+    res = auth_client().patch("/api/me", headers=bearer(token), json=body)
     assert res.status_code == 422, res.text
     assert res.json()["error"]["code"] == "validation_error"
     assert "x" * 50 not in res.text  # never echoes input
@@ -429,10 +523,10 @@ def test_public_config_has_no_secrets(auth_client: Callable[..., TestClient]) ->
 
 
 def test_tokens_and_emails_never_logged(
-    auth_client: Callable[..., TestClient], signing_key: SigningKey, logs: LogCapture
+    auth_client: Callable[..., TestClient], signing_key: SigningKey, accounts: FakeAuthDb, logs: LogCapture
 ) -> None:
     c = auth_client()
-    good = mint(signing_key, claims(email="owner@example.com"))
+    good = accounts.login(signing_key, "owner@example.com")
     bad = mint(SigningKey(), claims(email="intruder@example.com"))
     c.get("/api/admin/overview", headers=bearer(good))
     c.get("/api/nav", headers=bearer(bad))
@@ -450,7 +544,8 @@ def test_hs256_project_tokens_work_end_to_end(static_dir: Path) -> None:
     """Legacy shared-secret projects and CI's auth container: no JWKS, HS256 with SUPABASE_JWT_SECRET."""
     secret = "ci-only-throwaway-secret-at-least-32-bytes"
     s = make_settings(static_dir=static_dir, supabase_url=SUPABASE_URL, supabase_jwt_secret=secret)
-    with TestClient(create_app(s, health=fake_service(), db=Database(None)), raise_server_exceptions=False) as c:
+    app = create_app(s, health=fake_service(), db=Database(None))
+    with TestClient(app, raise_server_exceptions=False) as c:
         good = jwt.encode(claims(), secret, algorithm="HS256")
         assert c.get("/api/nav", headers=bearer(good)).status_code == 200
         forged = jwt.encode(claims(), "another-secret-of-at-least-32-bytes!!", algorithm="HS256")

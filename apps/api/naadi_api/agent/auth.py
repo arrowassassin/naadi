@@ -2,8 +2,9 @@
 
 - `identity` = the Supabase user id (`sub`); Aegra scopes every assistant, thread, run, cron and store item
   to it, so user B gets 404 for user A's objects.
-- `permissions` = ["admin"] for verified admin emails. No email or name is placed in the identity (it is
-  copied into run configs and logs).
+- `permissions` = ["admin"] for admin accounts: a confirmed email (`auth.users.email_confirmed_at`) listed in
+  ADMIN_EMAILS, and the token's session still live in `auth.sessions` (same `AccountDirectory` as `/api/*`).
+  No email or name is placed in the identity (it is copied into run configs and logs).
 - Crons and assistant writes are admin-only: a student never schedules model calls or reconfigures a graph.
   System crons are owned by `SYSTEM_IDENTITY`, which no token can produce.
 """
@@ -14,7 +15,8 @@ from typing import Any
 
 from langgraph_sdk import Auth
 
-from ..auth import AuthError, TokenVerifier, build_verifier, parse_admin_emails, user_from_claims
+from ..auth import AccountDirectory, AuthError, TokenVerifier, build_verifier, parse_admin_emails, user_from_claims
+from ..db import Database
 from ..logs import get_logger
 from ..settings import get_settings
 from .identity import ADMIN_PERMISSION
@@ -24,23 +26,23 @@ log = get_logger("naadi.agent.auth")
 auth = Auth()
 
 _verifier: TokenVerifier | None = None
-_admins: frozenset[str] | None = None
+_accounts: AccountDirectory | None = None
 
 
-def configure(verifier: TokenVerifier | None = None, admin_emails: frozenset[str] | None = None) -> None:
-    """Set the verifier (tests inject one with a local JWKS / HS256 secret)."""
-    global _verifier, _admins
+def configure(verifier: TokenVerifier | None = None, accounts: AccountDirectory | None = None) -> None:
+    """Set the verifier and account directory (tests inject a local JWKS / HS256 secret and database)."""
+    global _verifier, _accounts
     _verifier = verifier
-    _admins = admin_emails
+    _accounts = accounts
 
 
-def _get() -> tuple[TokenVerifier, frozenset[str]]:
-    global _verifier, _admins
-    if _verifier is None:
+def _get() -> tuple[TokenVerifier, AccountDirectory]:
+    global _verifier, _accounts
+    if _verifier is None or _accounts is None:
         s = get_settings()
-        _verifier = build_verifier(s)
-        _admins = parse_admin_emails(s.admin_emails)
-    return _verifier, _admins or frozenset()
+        _verifier = _verifier or build_verifier(s)
+        _accounts = _accounts or AccountDirectory(Database(s.database_url), parse_admin_emails(s.admin_emails))
+    return _verifier, _accounts
 
 
 @auth.authenticate
@@ -51,13 +53,13 @@ async def authenticate(headers: dict[str, Any]) -> Auth.types.MinimalUserDict:
     scheme, _, token = str(raw).partition(" ")
     if scheme.lower() != "bearer" or not token.strip():
         raise Auth.exceptions.HTTPException(status_code=401, detail="Sign in to continue.")
-    verifier, admins = _get()
+    verifier, accounts = _get()
     try:
         claims = await verifier.verify(token.strip())
-        user = user_from_claims(claims, admins)
+        user = await accounts.resolve(user_from_claims(claims))
     except AuthError as exc:
         log.info("agent_auth_rejected", reason=exc.code)
-        raise Auth.exceptions.HTTPException(status_code=401, detail=exc.message) from exc
+        raise Auth.exceptions.HTTPException(status_code=exc.status, detail=exc.message) from exc
     return {
         "identity": str(user.user_id),
         "display_name": "student",

@@ -17,7 +17,7 @@ from fastapi.responses import JSONResponse
 from psycopg import sql
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .auth import AdminUser, AuthError, AuthUnavailable, CurrentUser, get_current_user
+from .auth import AdminUser, AuthError, AuthUnavailable, CurrentUser, get_account_user, get_current_user
 from .auth_db import user_tx
 from .auth_limits import RateLimiter
 from .db import Database, DatabaseNotConfigured
@@ -198,10 +198,13 @@ def _db(request: Request) -> Database:
     return d
 
 
-def user_limited(bucket: str) -> Any:
-    """Dependency factory: authenticate, then count the request against the user's bucket."""
+def user_limited(bucket: str, *, account: bool = True) -> Any:
+    """Dependency factory: authenticate, then count the request against the user's bucket. With `account`
+    (the default) the session and account are checked in `auth` too (revoked sessions get 401)."""
+    who = get_account_user if account else get_current_user
 
-    async def dep(request: Request, user: Annotated[CurrentUser, Depends(get_current_user)]) -> CurrentUser:
+    # A default value, not an annotation: annotations are strings here and could not see the local `who`.
+    async def dep(request: Request, user: CurrentUser = Depends(who)) -> CurrentUser:  # noqa: B008
         limiters: dict[str, RateLimiter] = request.app.state.rate_limiters
         limiters[bucket].hit(str(user.user_id))
         return user
@@ -405,7 +408,7 @@ async def _field_invalid_handler(_: Request, exc: Exception) -> JSONResponse:
     responses=_AUTH_ERRORS,
     tags=["auth"],
 )
-async def get_nav(user: Annotated[CurrentUser, user_limited("me_read")]) -> NavResponse:
+async def get_nav(user: Annotated[CurrentUser, user_limited("me_read", account=False)]) -> NavResponse:
     items = [i for i in DEFAULT_NAV if DEFAULT_FEATURES.get(i.feature, False)]
     return NavResponse(
         items=items,

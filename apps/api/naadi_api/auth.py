@@ -10,7 +10,10 @@ Rules:
   `jwks_ttl_s`, refetched on an unknown `kid` (rate-limited, so random kids cannot hammer Supabase);
 - `SUPABASE_JWT_SECRET` (HS256) only as a fallback when it is configured;
 - `aud = authenticated`, `iss = <SUPABASE_URL>/auth/v1`, `exp`/`nbf`/`iat` with at most 60 s skew;
-- `role = authenticated`, `sub` is a UUID, anonymous sessions are refused.
+- `role = authenticated`, `sub` is a UUID, anonymous sessions are refused;
+- for user data and admin decisions (`AccountUser`, `AdminUser`), the session must still exist in
+  `auth.sessions` and admin needs a confirmed email (`auth.users.email_confirmed_at`) listed in
+  ADMIN_EMAILS: nothing user-editable in the token (`user_metadata`) decides it.
 
 Tokens and emails are never logged: failures log only a reason code.
 """
@@ -82,14 +85,9 @@ class CurrentUser:
     session_id: str | None = field(default=None, repr=False)
 
 
-def _email_verified(claims: Mapping[str, Any]) -> bool:
-    """Supabase puts the verified flag in `user_metadata.email_verified` (set for magic-link and OAuth
-    sign-ins once the address is confirmed). Only an explicit `true` counts."""
-    meta = claims.get("user_metadata")
-    return isinstance(meta, Mapping) and meta.get("email_verified") is True
-
-
-def user_from_claims(claims: Mapping[str, Any], admin_emails: frozenset[str]) -> CurrentUser:
+def user_from_claims(claims: Mapping[str, Any]) -> CurrentUser:
+    """Identity from a verified token only. The token cannot decide `email_verified` or `is_admin`
+    (`user_metadata` is editable by the user): `AccountDirectory.resolve` fills them from `auth.users`."""
     sub = claims.get("sub")
     try:
         user_id = uuid.UUID(str(sub))
@@ -97,16 +95,109 @@ def user_from_claims(claims: Mapping[str, Any], admin_emails: frozenset[str]) ->
         raise AuthError("invalid_token", "The sign-in token is not valid.") from exc
     email_raw = claims.get("email")
     email = email_raw.strip() if isinstance(email_raw, str) and email_raw.strip() else None
-    verified = email is not None and _email_verified(claims)
-    is_admin = verified and email is not None and email.lower() in admin_emails
     sid = claims.get("session_id")
     return CurrentUser(
         user_id=user_id,
         email=email,
-        email_verified=verified,
-        is_admin=is_admin,
-        session_id=sid if isinstance(sid, str) else None,
+        email_verified=False,
+        is_admin=False,
+        session_id=sid if isinstance(sid, str) and sid else None,
     )
+
+
+_ACCOUNT_SQL = """
+select u.email,
+       u.email_confirmed_at is not null as confirmed,
+       exists (
+         select 1 from auth.sessions s
+         where s.id = %(sid)s and s.user_id = u.id and (s.not_after is null or s.not_after > now())
+       ) as live
+from auth.users u
+where u.id = %(uid)s
+"""
+
+
+@dataclass(frozen=True, slots=True)
+class _Account:
+    email: str | None = field(repr=False)
+    confirmed: bool
+    live: bool
+    at: float
+
+
+class AccountDirectory:
+    """Account facts the token cannot be trusted with, read from Supabase's `auth` schema with the API's
+    own database role (no row leaves the database except the caller's own):
+
+    - the session still exists (`auth.sessions`, so "sign out of all devices" revokes API access too);
+    - the account still exists, its email and whether that email is confirmed (`email_confirmed_at`),
+      which together with ADMIN_EMAILS decide `is_admin`.
+
+    Results are cached per (user, session) for `ttl_s` (default 30 s), so a revoked session stops
+    working within that time; the cache is bounded.
+    """
+
+    def __init__(
+        self,
+        db: Any,
+        admin_emails: frozenset[str],
+        *,
+        ttl_s: float = 30.0,
+        max_entries: int = 10_000,
+        clock: Any = time.monotonic,
+    ) -> None:
+        self._db = db
+        self._admins = admin_emails
+        self._ttl = ttl_s
+        self._max = max_entries
+        self._clock = clock
+        self._cache: dict[tuple[uuid.UUID, str], _Account] = {}
+
+    async def _fetch(self, user_id: uuid.UUID, session_id: str) -> _Account | None:
+        import psycopg  # local: keeps `naadi_api.auth` importable without the DB driver loaded
+
+        if not getattr(self._db, "configured", False):
+            raise AuthUnavailable("Your account cannot be checked right now. Try again in a moment.")
+        if self._db.pool is None:
+            await self._db.open()
+        try:
+            async with self._db.pool.connection(timeout=5.0) as conn:
+                cur = await conn.execute(_ACCOUNT_SQL, {"uid": user_id, "sid": session_id})
+                row = await cur.fetchone()
+        except (psycopg.OperationalError, TimeoutError) as exc:
+            log.warning("account_lookup_unavailable", error=type(exc).__name__)
+            raise AuthUnavailable("Your account cannot be checked right now. Try again in a moment.") from exc
+        except psycopg.errors.InvalidTextRepresentation:
+            return _Account(email=None, confirmed=False, live=False, at=self._clock())
+        if row is None:
+            return None
+        return _Account(email=row[0], confirmed=bool(row[1]), live=bool(row[2]), at=self._clock())
+
+    async def resolve(self, user: CurrentUser) -> CurrentUser:
+        if not user.session_id:
+            raise AuthError("session_revoked", "This session has ended. Sign in again.")
+        key = (user.user_id, user.session_id)
+        acct = self._cache.get(key)
+        if acct is None or self._clock() - acct.at >= self._ttl:
+            fetched = await self._fetch(user.user_id, user.session_id)
+            if fetched is None:
+                self._cache.pop(key, None)
+                raise AuthError("account_missing", "This account no longer exists. Sign in again.")
+            acct = fetched
+            if len(self._cache) >= self._max:
+                self._cache.clear()
+            self._cache[key] = acct
+        if not acct.live:
+            raise AuthError("session_revoked", "This session has ended. Sign in again.")
+        email = acct.email.strip() if acct.email else None
+        verified = email is not None and acct.confirmed
+        return CurrentUser(
+            user_id=user.user_id,
+            email=email,
+            email_verified=verified,
+            is_admin=verified and email is not None and email.lower() in self._admins,
+            session_id=user.session_id,
+        )
 
 
 class TokenVerifier:
@@ -240,20 +331,32 @@ def _bearer(request: Request) -> str:
 
 
 async def get_current_user(request: Request) -> CurrentUser:
+    """A verified token's identity (no database). Routes that read or write user data, or decide admin,
+    use `AccountUser` / `AdminUser`, which also check the session and account in `auth`."""
     verifier: TokenVerifier = request.app.state.auth
-    admins: frozenset[str] = request.app.state.admin_emails
     token = _bearer(request)
     try:
         claims = await verifier.verify(token)
     except AuthError as exc:
         log.info("auth_rejected", reason=exc.code)
         raise
-    user = user_from_claims(claims, admins)
+    user = user_from_claims(claims)
     request.state.user = user
     return user
 
 
-async def require_admin(user: Annotated[CurrentUser, Depends(get_current_user)]) -> CurrentUser:
+async def get_account_user(request: Request, user: Annotated[CurrentUser, Depends(get_current_user)]) -> CurrentUser:
+    directory: AccountDirectory = request.app.state.accounts
+    try:
+        account = await directory.resolve(user)
+    except AuthError as exc:
+        log.info("auth_rejected", reason=exc.code)
+        raise
+    request.state.user = account
+    return account
+
+
+async def require_admin(user: Annotated[CurrentUser, Depends(get_account_user)]) -> CurrentUser:
     """Server-side admin gate. The client only hides admin UI; this is the enforcement."""
     if not user.is_admin:
         log.info("admin_denied")
@@ -262,6 +365,7 @@ async def require_admin(user: Annotated[CurrentUser, Depends(get_current_user)])
 
 
 AuthUser = Annotated[CurrentUser, Depends(get_current_user)]
+AccountUser = Annotated[CurrentUser, Depends(get_account_user)]
 AdminUser = Annotated[CurrentUser, Depends(require_admin)]
 
 
@@ -280,7 +384,13 @@ async def _auth_error_handler(_: Request, exc: Exception) -> Any:
     return error_response(exc.status, exc.message, exc.code, headers=headers)
 
 
-def install_auth(app: Any, settings: Settings, verifier: TokenVerifier | None = None) -> None:
+def install_auth(
+    app: Any,
+    settings: Settings,
+    verifier: TokenVerifier | None = None,
+    accounts: AccountDirectory | None = None,
+) -> None:
     app.state.auth = verifier or build_verifier(settings)
     app.state.admin_emails = parse_admin_emails(settings.admin_emails)
+    app.state.accounts = accounts or AccountDirectory(app.state.db, app.state.admin_emails)
     app.add_exception_handler(AuthError, _auth_error_handler)

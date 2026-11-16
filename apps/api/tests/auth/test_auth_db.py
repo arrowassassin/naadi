@@ -1,8 +1,11 @@
-"""Integration (real Postgres with the migrated schema): `/api/me` and RLS really applied.
+"""DB tests (local Postgres with the migrated schema and Supabase's auth schema): `/api/me`, the account
+directory (sessions, confirmed email) and RLS really applied.
 
-Runs in the CI `db` job against `supabase/postgres` and locally against any migrated database
-(`DATABASE_URL`). Tokens are minted locally and verified against a test JWKS, so the full HTTP path runs:
-bearer token -> JWKS verification -> CurrentUser -> `user_tx` (role authenticated + claims) -> RLS.
+Runs in the CI `db` job and locally against a LOCAL database only (`require_local`): Postgres from
+`tests/db/stack.sh up`, with the auth schema migrated by `tests/auth/auth_stack.sh up` (Supabase's auth
+server), as on the hosted project. Tokens are minted locally and verified against a test JWKS, so the full
+HTTP path runs: bearer token -> JWKS verification -> session + account lookup in `auth` -> `user_tx`
+(role authenticated + claims) -> RLS. Not marked `integration`: no external service is involved.
 """
 
 from __future__ import annotations
@@ -17,7 +20,7 @@ import pytest
 from fastapi.testclient import TestClient
 from pydantic import SecretStr
 
-from naadi_api.auth import TokenVerifier
+from naadi_api.auth import AccountDirectory, TokenVerifier, parse_admin_emails
 from naadi_api.auth_db import user_tx
 from naadi_api.db import Database
 from naadi_api.main import create_app
@@ -25,16 +28,26 @@ from tests.conftest import fake_service, make_settings
 
 from .jwt_helpers import SUPABASE_URL, JwksServer, SigningKey, claims, mint
 
-pytestmark = [pytest.mark.integration, pytest.mark.db]
+pytestmark = [pytest.mark.db]
+
+ADMIN = "owner@example.com"
 
 
 @pytest.fixture(scope="module")
 def url() -> str:
     # seg02-db's helpers (tests/db/rls.py); imported here so unit-only runs do not need them.
-    from tests.db.rls import database_url, ensure_migrated
+    from tests.db.rls import database_url, ensure_migrated, require_local
 
     u = database_url()
+    require_local(u)
     ensure_migrated(u)
+    with psycopg.connect(u, autocommit=True) as conn:
+        row = conn.execute(
+            "select to_regclass('auth.sessions') is not null and exists (select 1 from information_schema.columns"
+            " where table_schema = 'auth' and table_name = 'users' and column_name = 'email_confirmed_at')"
+        ).fetchone()
+    if not (row and row[0]):
+        pytest.fail("the auth schema is not migrated: run apps/api/tests/auth/auth_stack.sh up (or ci)")
     return u
 
 
@@ -46,19 +59,13 @@ def pg(url: str) -> Iterator[psycopg.Connection[Any]]:
 
 @pytest.fixture
 def users(pg: psycopg.Connection[Any]) -> Iterator[list[uuid.UUID]]:
+    """A student and a second user, both with confirmed emails (as after a magic-link sign-in)."""
     from tests.db.rls import create_auth_user
 
-    created: list[uuid.UUID] = []
-
-    def make() -> uuid.UUID:
-        uid = create_auth_user(pg)
-        created.append(uid)
-        return uid
-
-    ids = [make(), make()]
+    ids = [create_auth_user(pg, email=f"{uuid.uuid4().hex[:12]}@example.com") for _ in range(2)]
+    pg.execute("update auth.users set email_confirmed_at = now() where id = any(%s)", (ids,))
     yield ids
-    for uid in created:
-        pg.execute("delete from auth.users where id = %s", (uid,))
+    pg.execute("delete from auth.users where id = any(%s)", (ids,))
 
 
 @pytest.fixture
@@ -66,19 +73,45 @@ def key() -> SigningKey:
     return SigningKey()
 
 
-@pytest.fixture
-def client(url: str, key: SigningKey, static_dir: Path) -> Iterator[TestClient]:
-    s = make_settings(
-        static_dir=static_dir, supabase_url=SUPABASE_URL, database_url=SecretStr(url), admin_emails="owner@example.com"
-    )
+def make_client(url: str, key: SigningKey, static_dir: Path, *, ttl_s: float = 30.0) -> TestClient:
+    s = make_settings(static_dir=static_dir, supabase_url=SUPABASE_URL, database_url=SecretStr(url), admin_emails=ADMIN)
     db = Database(s.database_url)
     v = TokenVerifier(SUPABASE_URL, transport=JwksServer(key).transport())
-    app = create_app(s, health=fake_service(), db=db, verifier=v)
-    with TestClient(app, raise_server_exceptions=False) as c:
+    accounts = AccountDirectory(db, parse_admin_emails(ADMIN), ttl_s=ttl_s)
+    return TestClient(
+        create_app(s, health=fake_service(), db=db, verifier=v, accounts=accounts), raise_server_exceptions=False
+    )
+
+
+@pytest.fixture
+def client(url: str, key: SigningKey, static_dir: Path) -> Iterator[TestClient]:
+    with make_client(url, key, static_dir) as c:
         yield c
 
 
-def h(key: SigningKey, uid: uuid.UUID, **kw: Any) -> dict[str, str]:
+def open_session(pg: psycopg.Connection[Any], uid: uuid.UUID) -> str:
+    sid = uuid.uuid4()
+    pg.execute(
+        "insert into auth.sessions (id, user_id, created_at, updated_at) values (%s, %s, now(), now())", (sid, uid)
+    )
+    return str(sid)
+
+
+def email_of(pg: psycopg.Connection[Any], uid: uuid.UUID) -> str:
+    row = pg.execute("select email from auth.users where id = %s", (uid,)).fetchone()
+    assert row is not None
+    return str(row[0])
+
+
+def h(key: SigningKey, pg: psycopg.Connection[Any], uid: uuid.UUID, **kw: Any) -> dict[str, str]:
+    """A token for a fresh live session of `uid`, carrying the account's email as Supabase issues it.
+    For a user who does not exist (a deleted account) the token names a session that does not exist."""
+    row = pg.execute("select email from auth.users where id = %s", (uid,)).fetchone()
+    if row is not None:
+        kw.setdefault("email", row[0])
+        kw.setdefault("session_id", open_session(pg, uid))
+    else:
+        kw.setdefault("session_id", str(uuid.uuid4()))
     return {"authorization": f"Bearer {mint(key, claims(uid, **kw))}"}
 
 
@@ -86,33 +119,57 @@ def test_me_creates_profile_once(
     client: TestClient, key: SigningKey, users: list[uuid.UUID], pg: psycopg.Connection[Any]
 ) -> None:
     a, _ = users
-    first = client.get("/api/me", headers=h(key, a))
+    first = client.get("/api/me", headers=h(key, pg, a))
     assert first.status_code == 200, first.text
     body = first.json()
     assert body["profile"]["user_id"] == str(a)
     assert body["profile"]["exam_target"] == "step1"
     assert body["profile"]["settings"] == {}
-    assert body["email"] == "student@example.com"
+    assert body["email"] == email_of(pg, a)
+    assert body["email_verified"] is True
     assert body["is_admin"] is False
-    second = client.get("/api/me", headers=h(key, a))
+    second = client.get("/api/me", headers=h(key, pg, a))
     assert second.json()["profile"]["created_at"] == body["profile"]["created_at"]
     row = pg.execute("select count(*) from public.profiles where user_id = %s", (a,)).fetchone()
     assert row is not None and row[0] == 1
 
 
-def test_admin_flag_from_verified_email(client: TestClient, key: SigningKey, users: list[uuid.UUID]) -> None:
+def test_admin_comes_from_auth_users_not_the_token(
+    client: TestClient, key: SigningKey, pg: psycopg.Connection[Any], users: list[uuid.UUID]
+) -> None:
     a, _ = users
-    assert client.get("/api/me", headers=h(key, a, email="Owner@Example.com")).json()["is_admin"] is True
-    assert (
-        client.get("/api/me", headers=h(key, a, email="owner@example.com", verified=False)).json()["is_admin"] is False
-    )
+    # A student whose token claims the owner's address and email_verified: still not an admin.
+    forged = h(key, pg, a, email=ADMIN, user_metadata={"email_verified": True})
+    assert client.get("/api/me", headers=forged).json()["is_admin"] is False
+    # The owner's account, unconfirmed: not an admin; confirmed: admin, whatever user_metadata says.
+    pg.execute("update auth.users set email = %s, email_confirmed_at = null where id = %s", ("Owner@Example.com", a))
+    assert client.get("/api/me", headers=h(key, pg, a)).json()["is_admin"] is False
+    pg.execute("update auth.users set email_confirmed_at = now() where id = %s", (a,))
+    me = client.get("/api/me", headers=h(key, pg, a, user_metadata={"email_verified": False})).json()
+    assert (me["is_admin"], me["email_verified"]) == (True, True)
+    assert client.get("/api/admin/overview", headers=h(key, pg, a)).status_code == 200
 
 
-def test_patch_me_updates_and_merges_settings(client: TestClient, key: SigningKey, users: list[uuid.UUID]) -> None:
+def test_signing_out_everywhere_revokes_api_access(
+    url: str, key: SigningKey, static_dir: Path, pg: psycopg.Connection[Any], users: list[uuid.UUID]
+) -> None:
+    a, _ = users
+    with make_client(url, key, static_dir, ttl_s=0) as c:
+        headers = h(key, pg, a)
+        assert c.get("/api/me", headers=headers).status_code == 200
+        pg.execute("delete from auth.sessions where user_id = %s", (a,))  # what global sign-out does
+        res = c.get("/api/me", headers=headers)
+        assert res.status_code == 401
+        assert res.json()["error"]["code"] == "session_revoked"
+
+
+def test_patch_me_updates_and_merges_settings(
+    client: TestClient, key: SigningKey, pg: psycopg.Connection[Any], users: list[uuid.UUID]
+) -> None:
     a, _ = users
     res = client.patch(
         "/api/me",
-        headers=h(key, a),
+        headers=h(key, pg, a),
         json={
             "display_name": "  Asha   R ",
             "timezone": "Europe/London",
@@ -124,29 +181,31 @@ def test_patch_me_updates_and_merges_settings(client: TestClient, key: SigningKe
     assert p["display_name"] == "Asha R"
     assert p["timezone"] == "Europe/London"
     assert p["settings"] == {"ink": {"penOnly": True}, "x": 1}
-    res = client.patch("/api/me", headers=h(key, a), json={"settings": {"x": None, "theme": "dark"}})
+    res = client.patch("/api/me", headers=h(key, pg, a), json={"settings": {"x": None, "theme": "dark"}})
     assert res.json()["profile"]["settings"] == {"ink": {"penOnly": True}, "theme": "dark"}
-    res = client.patch("/api/me", headers=h(key, a), json={"display_name": None})
+    res = client.patch("/api/me", headers=h(key, pg, a), json={"display_name": None})
     assert res.json()["profile"]["display_name"] is None
     assert res.json()["profile"]["timezone"] == "Europe/London"  # untouched when not sent
 
 
-def test_settings_total_size_is_capped(client: TestClient, key: SigningKey, users: list[uuid.UUID]) -> None:
+def test_settings_total_size_is_capped(
+    client: TestClient, key: SigningKey, pg: psycopg.Connection[Any], users: list[uuid.UUID]
+) -> None:
     a, _ = users
     chunk = "y" * 15000
     for i in range(4):
-        assert client.patch("/api/me", headers=h(key, a), json={"settings": {f"k{i}": chunk}}).status_code == 200
-    res = client.patch("/api/me", headers=h(key, a), json={"settings": {"k9": chunk}})
+        assert client.patch("/api/me", headers=h(key, pg, a), json={"settings": {f"k{i}": chunk}}).status_code == 200
+    res = client.patch("/api/me", headers=h(key, pg, a), json={"settings": {"k9": chunk}})
     assert res.status_code == 422
     # rolled back: the oversized merge did not persist
-    assert "k9" not in client.get("/api/me", headers=h(key, a)).json()["profile"]["settings"]
+    assert "k9" not in client.get("/api/me", headers=h(key, pg, a)).json()["profile"]["settings"]
 
 
 def test_deleted_account_with_valid_token_is_401(
     client: TestClient, key: SigningKey, pg: psycopg.Connection[Any]
 ) -> None:
     ghost = uuid.uuid4()  # never existed in auth.users
-    res = client.get("/api/me", headers=h(key, ghost))
+    res = client.get("/api/me", headers=h(key, pg, ghost))
     assert res.status_code == 401
     assert res.json()["error"]["code"] == "account_missing"
     assert pg.execute("select count(*) from public.profiles where user_id = %s", (ghost,)).fetchone() == (0,)

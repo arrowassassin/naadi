@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from starlette.middleware.gzip import GZipMiddleware
 
 from . import api
-from .auth import TokenVerifier, install_auth
+from .auth import AccountDirectory, TokenVerifier, install_auth
 from .auth_routes import install_auth_routes
 from .config import load_models_config
 from .config_api.routes import install_app_config
@@ -66,6 +66,7 @@ def create_app(
     health: HealthService | None = None,
     db: Database | None = None,
     verifier: TokenVerifier | None = None,
+    accounts: AccountDirectory | None = None,
 ) -> FastAPI:
     settings = settings or get_settings()
     configure_logging(settings.log_level)
@@ -105,7 +106,7 @@ def create_app(
     app.state.health = health
 
     install_error_handlers(app)
-    install_auth(app, settings, verifier)
+    install_auth(app, settings, verifier, accounts)
     app.include_router(api.router)
     install_auth_routes(app)
     install_courses_routes(app)

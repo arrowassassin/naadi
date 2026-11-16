@@ -7,6 +7,7 @@ import os
 from collections.abc import Callable, Iterator
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import pytest
 from fastapi.testclient import TestClient
@@ -48,12 +49,28 @@ ENV_NAMES = [
 ]
 
 
+# Secret-bearing names beyond what Settings reads (CLIs, deploy, live checks): never visible to unit/db tests.
+SECRET_ENV_NAMES = ["HF_TOKEN", "SUPABASE_ACCESS_TOKEN", "YOUTUBE_API_KEY", "GOOGLE_API_KEY"]
+LOCAL_HOSTS = frozenset({"localhost", "127.0.0.1", "::1"})
+
+
+def is_local_url(url: str | None) -> bool:
+    return bool(url) and (urlparse(url).hostname or "") in LOCAL_HOSTS
+
+
 @pytest.fixture(autouse=True)
 def _clean_env(request: pytest.FixtureRequest, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Unit tests, and db tests not marked integration, start from a cleared environment (no `.env`
+    either) and get back only explicit local values: a local DATABASE_URL for `db` tests. Only tests
+    marked `integration` (real external services) see the process environment."""
     if request.node.get_closest_marker("integration"):
         return
-    for name in ENV_NAMES:
+    database_url = os.environ.get("DATABASE_URL")
+    for name in [*ENV_NAMES, *SECRET_ENV_NAMES]:
         monkeypatch.delenv(name, raising=False)
+    monkeypatch.setitem(Settings.model_config, "env_file", None)
+    if request.node.get_closest_marker("db") and is_local_url(database_url):
+        monkeypatch.setenv("DATABASE_URL", database_url or "")
 
 
 def make_settings(**overrides: Any) -> Settings:
