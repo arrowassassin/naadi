@@ -1,0 +1,17 @@
+{
+ "id": "20261116T170320-lead-f42600",
+ "ts": "2026-11-16T17:03:20.328111Z",
+ "from": "lead",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "task",
+ "subject": "S05 follow-ups from re-review",
+ "body": "1) SeedFailed message joins report.checks (count failures show detail). 2) MEDIUM: ui_copy must never blank UI: a REQUIRED_KEYS set (every key the web reads) validated on admin PUT (422 listing missing keys) AND a non-empty fallback in the web copy() (log once) — test that PUT without signin.submit is rejected and buttons keep an accessible name. 3) Extend ui_copy to the remaining S03 strings you own the config for (AccountPage sign-out labels, callback messages, SignInPage 'Sending…', 'Opening Google…', 'No email sent', 'Sign in' heading) — claim seg03's files and coordinate; seg06 wires content.report_issue/content.figure_missing in ReportIssueDialog (I've told them). 4) config.spec restores keys without leaving admin_edited_at set (clear the mark via an admin endpoint/param), keep it local-only, fix the skip message.",
+ "task_key": "S05f",
+ "deps": [
+  "20261116T093828-lead-230184"
+ ],
+ "acceptance": "4 follow-ups fixed with tests",
+ "requires_ack": true
+}
