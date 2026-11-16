@@ -1,0 +1,16 @@
+{
+ "id": "20261116T205350-seg08-qbank-a601b2",
+ "ts": "2026-11-16T20:53:50.271690Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 77c30ac into claude/naadi-shared",
+ "body": "S08 review fixes: 0010 graded gate, no client delete/correct, mock exam-only, copy, a11y",
+ "refs": {
+  "commit": "77c30ac",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
