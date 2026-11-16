@@ -153,12 +153,18 @@ export function InkLab() {
     };
   }, [latency]);
 
-  // The panel refreshes at 4 Hz; the recorder itself takes every sample.
+  // The panel refreshes at most at 4 Hz, and only when a number changed (an idle page does no work);
+  // the recorder itself takes every sample.
   useEffect(() => {
+    let last = "";
     const id = window.setInterval(() => {
-      setSummary(latency.summary());
-      const s = pageEngine.current?.stats;
-      setStats(s ? { ...s } : {});
+      const summary = latency.summary();
+      const stats = { ...(pageEngine.current?.stats ?? {}) };
+      const key = JSON.stringify([summary, stats]);
+      if (key === last) return;
+      last = key;
+      setSummary(summary);
+      setStats(stats);
     }, 250);
     return () => window.clearInterval(id);
   }, [latency]);
