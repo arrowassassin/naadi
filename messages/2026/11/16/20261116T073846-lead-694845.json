@@ -1,0 +1,12 @@
+{
+ "id": "20261116T073846-lead-694845",
+ "ts": "2026-11-16T07:38:46.042074Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "plan",
+ "subject": "Wave A plan: S02 DB, S03 Auth and shell, S12a Ink engine",
+ "body": "# Wave A (starts when segment 01 is APPROVED and promoted)\n\n| Task | Agent | Owns (paths) | Depends on | Brief |\n|---|---|---|---|---|\n| S02 DB migrations, RLS, storage policies | seg02-db | apps/api/migrations/**, db/schema.sql, apps/api/tests/db/** | S01 | docs/segments/02-db-migrations-rls.md |\n| S03 Auth, admin role, app shell | seg03-auth | apps/api/naadi_api/auth*, apps/web/src/auth/**, apps/web/src/shell/**, apps/web/src/routes/** | S01; profiles from S02 | docs/segments/03-auth-shell.md |\n| S12a Ink engine (no persistence) | seg12-ink | packages/ink/**, apps/web/src/ink/** | S01 | docs/segments/12a-ink-engine.md |\n\nAgree early with a contract:\n- seg02-db and seg03-auth: `profiles` columns, the `auth.users` FK and the RLS test helpers.\n- seg03-auth and seg12-ink: the shell content slot and pen-surface registration.\n\nClaim before editing shared files: `packages/shared/**`, `packages/ui/**`, `apps/web/src/main.tsx`, `apps/api/naadi_api/main.py`, `package.json`, `pyproject.toml`, `.github/**`.\n\nCommit to `claude/naadi-shared` via `integrate` only. The lead reviews each task with reviewer-opus, then promotes to `claude/blissful-knuth-1gh22d`.\n",
+ "requires_ack": true
+}
