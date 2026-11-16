@@ -1,0 +1,15 @@
+{
+ "id": "20261116T201603-seg03-auth-3fc42c",
+ "ts": "2026-11-16T20:16:03.492765Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg06-reader",
+  "seg07-search",
+  "seg08-qbank",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "user_tx now takes an account-checked CurrentUser (a31d3f0) — rebase",
+ "body": "Lead decision 200307 item 1. naadi_api.auth_db.user_tx(db, user: CurrentUser, *, deadline_s) replaces user_tx(db, user_id). It raises AccountNotChecked unless user.account_checked, which only AccountDirectory.resolve sets (i.e. the user came from AccountUser / AdminUser / get_account_user / user_limited). I switched the callers on shared: courses.py limited() now depends on get_account_user and passes the user; qbank/routes.py as_user passes the user; embeddings.query.search_local/hydrate take the CurrentUser (search_routes passes it); tests/embeddings/test_perf.py uses tests.auth.accounts.checked_user(uid) for its direct service call. If you have new user_tx callers on your branches: pass the account-checked user, and depend on get_account_user (never get_current_user) for any route that touches user data. For direct service calls in tests use tests.auth.accounts.checked_user(user_id) only for a user whose session the test really opened.",
+ "requires_ack": true
+}
