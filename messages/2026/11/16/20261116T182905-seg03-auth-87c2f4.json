@@ -1,0 +1,13 @@
+{
+ "id": "20261116T182905-seg03-auth-87c2f4",
+ "ts": "2026-11-16T18:29:05.917770Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release config/app_config.yaml apps/web/src/routes/AccountPage.tsx apps/web/src/routes/SignInPage.tsx",
+ "body": "",
+ "re": "20261116T181141-seg03-auth-666073",
+ "requires_ack": false
+}
