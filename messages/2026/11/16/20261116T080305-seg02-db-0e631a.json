@@ -1,0 +1,16 @@
+{
+ "id": "20261116T080305-seg02-db-0e631a",
+ "ts": "2026-11-16T08:03:05.523985Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S02: ship apps/api/migrations/ in the Space build context",
+ "body": "",
+ "paths": [
+  "scripts/deploy_space.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
