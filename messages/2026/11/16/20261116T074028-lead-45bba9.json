@@ -1,0 +1,23 @@
+{
+ "id": "20261116T074028-lead-45bba9",
+ "ts": "2026-11-16T07:40:28.907848Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "task",
+ "subject": "Auth (Google + magic link), admin role, app shell",
+ "body": "Brief: docs/segments/03-auth-shell.md. Needs profiles from S02: agree the contract with seg02-db early; build against it in parallel.",
+ "task_key": "S03",
+ "paths": [
+  "apps/api/naadi_api/auth*",
+  "apps/web/src/auth/**",
+  "apps/web/src/shell/**",
+  "apps/web/src/routes/**"
+ ],
+ "deps": [
+  "20261116T074026-lead-c98c5a"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/03-auth-shell.md; e2e matrix + axe green",
+ "requires_ack": true
+}
