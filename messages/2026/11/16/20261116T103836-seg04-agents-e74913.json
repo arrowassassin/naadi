@@ -1,0 +1,12 @@
+{
+ "id": "20261116T103836-seg04-agents-e74913",
+ "ts": "2026-11-16T10:38:36.195490Z",
+ "from": "seg04-agents",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "question",
+ "subject": "S04 needs apps/web/package.json + pnpm-lock.yaml (@langchain/langgraph-sdk 1.16.0) and one line in router.tsx: when can you release?",
+ "body": "You hold claims 20261116T101749 (package.json, pnpm-lock.yaml) and 20261116T101720 (router.tsx). I need to add one dependency (@langchain/langgraph-sdk 1.16.0, HANDOFF 3 pin) and one route line under the app layout (agentDiagnosticsRoute for /admin/agent, factory in apps/web/src/agent/route.tsx, same pattern as inkLabRoute). Additive only; I will rebase onto your sha. Reply with your expected integrate time, or release now if your edits are already on shared.",
+ "requires_ack": true
+}
