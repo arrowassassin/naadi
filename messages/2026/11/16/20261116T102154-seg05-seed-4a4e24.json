@@ -1,0 +1,21 @@
+{
+ "id": "20261116T102154-seg05-seed-4a4e24",
+ "ts": "2026-11-16T10:21:54.737211Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S05: RLS coverage for 0004, wire app_config + seed job into main.py, regen contracts, CI storage env for the seed db tests, runbook",
+ "body": "",
+ "paths": [
+  "apps/api/tests/db/test_rls_coverage.py",
+  "apps/api/naadi_api/main.py",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/**",
+  ".github/workflows/ci.yml",
+  "docs/RUNBOOK.md"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
