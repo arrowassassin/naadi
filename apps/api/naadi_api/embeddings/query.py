@@ -106,7 +106,6 @@ class Hit:
 class LocalResult:
     hits: list[Hit]
     suggest_web: bool
-    reranked: bool
     candidates: int
     timings_ms: dict[str, float]
 
@@ -158,7 +157,7 @@ async def retrieve(
 def rerank_candidates(engine: Engine, q: str, cands: list[Candidate], terms: Sequence[str]) -> None:
     """Re-order the top fused candidates with the cross-encoder, reading each one's best window."""
     top = cands[: ranking.RERANK_TOP_N]
-    if len(top) < 2:
+    if not top:
         return
     docs = [ranking.best_window(c.content, terms, ranking.RERANK_WORDS) or c.content for c in top]
     for c, s in zip(top, engine.rerank(q, docs), strict=True):
@@ -169,6 +168,17 @@ def order(cands: list[Candidate]) -> list[Candidate]:
     """Reranked head first (by cross-encoder score), then the rest in fused order."""
     head = sorted((c for c in cands if c.rerank is not None), key=lambda c: -(c.rerank or 0.0))
     tail = [c for c in cands if c.rerank is None]
+    return head + tail
+
+
+def relevant(cands: list[Candidate]) -> list[Candidate]:
+    """Drop what the cross-encoder scores below the floor. The tail (never reranked) survives only on a full-text
+    match or a close vector, and only when the reranked head held something relevant at all."""
+    ordered = order(cands)
+    head = [c for c in ordered if c.rerank is not None and c.rerank >= ranking.RERANK_FLOOR]
+    if not head:
+        return []
+    tail = [c for c in ordered if c.rerank is None and (c.lexical or (c.cosine or 0.0) >= ranking.TAIL_COSINE)]
     return head + tail
 
 
@@ -381,16 +391,13 @@ async def search_local(
     terms = ranking.query_terms(q)
     cands, timings = await retrieve(db, engine, user_id, q, SCOPE_TYPES[scope])
     t = time.perf_counter()
-    reranked = False
-    if len(cands) > 1:
-        await asyncio.to_thread(rerank_candidates, engine, q, cands, terms)
-        reranked = True
+    await asyncio.to_thread(rerank_candidates, engine, q, cands, terms)
     timings["rerank"] = (time.perf_counter() - t) * 1000
-    chosen = select(order(cands), scope, limit)
+    kept = relevant(cands)
+    chosen = select(kept, scope, limit)
     t = time.perf_counter()
     hits = await hydrate(db, user_id, chosen, terms)
     timings["hydrate"] = (time.perf_counter() - t) * 1000
-    best_cos = max((c.cosine for c in cands if c.cosine is not None), default=0.0)
-    any_lexical = any(c.lexical for c in cands)
-    suggest_web = not hits or (not any_lexical and best_cos < ranking.LOW_COSINE)
-    return LocalResult(hits, suggest_web, reranked, len(cands), {k: round(v, 1) for k, v in timings.items()})
+    best = max((c.rerank for c in kept if c.rerank is not None), default=None)
+    suggest_web = not hits or best is None or best < ranking.WEAK_RERANK
+    return LocalResult(hits, suggest_web, len(cands), {k: round(v, 1) for k, v in timings.items()})

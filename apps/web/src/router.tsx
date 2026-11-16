@@ -10,6 +10,7 @@ import { AccountPage } from "./routes/AccountPage";
 import { CallbackPage } from "./routes/CallbackPage";
 import { SignInPage } from "./routes/SignInPage";
 import { TodayPage } from "./routes/TodayPage";
+import { searchRoute } from "./search/routes";
 import { AppShell } from "./shell/AppShell";
 import { Wordmark } from "./shell/Logo";
 import { SystemPage } from "./system/SystemPage";
@@ -133,6 +134,7 @@ export const routeTree = rootRoute.addChildren([
     todayRoute,
     learnRoutes(appRoute),
     practiceRoutes(appRoute),
+    searchRoute(appRoute),
     settingsRoute.addChildren([accountRoute]),
     agentDiagnosticsRoute(appRoute),
   ]),

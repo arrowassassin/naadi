@@ -14,7 +14,12 @@ RERANK_TOP_N = 8  # fused candidates the cross-encoder re-orders; the rest keep 
 RERANK_WORDS = 48  # the reranker reads the best window of the chunk, not the whole chunk
 SNIPPET_WORDS = 42
 PER_GROUP = 6  # results kept per result group when searching everything
-LOW_COSINE = 0.55  # best vector similarity below this, with no full-text match, means "local has nothing"
+# Cross-encoder scores are logits. Measured on the seeded corpus: a real match scores above -4 (typically -1 to +7);
+# unrelated queries ("how do I cook pasta", gibberish) score -8.5 to -11 against their nearest neighbours. Vector
+# search always returns neighbours, so this floor is what makes "nothing found" possible.
+RERANK_FLOOR = -7.0  # below this a candidate is not a result
+WEAK_RERANK = -3.0  # best score below this: the local answer is weak, so the screen also offers the web
+TAIL_COSINE = 0.65  # candidates beyond the reranked head are kept on a full-text match or this similarity
 
 STOP = frozenset(
     (  # noqa: SIM905 - a long word list reads better as one string
@@ -59,7 +64,8 @@ def rrf[T: Hashable](rankings: Sequence[Sequence[T]], k: int = RRF_K) -> dict[T,
 
 
 def _stem(term: str) -> str:
-    return term[: max(3, len(term) - 2)] if len(term) >= 5 else term
+    """Words match by prefix: a short term in full, a long one without its last letter (hyperkalemic ~ hyperkalemia)."""
+    return term[:-1] if len(term) >= 8 else term
 
 
 def term_pattern(terms: Sequence[str]) -> re.Pattern[str] | None:

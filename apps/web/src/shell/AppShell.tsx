@@ -1,11 +1,13 @@
 import type { NavItem } from "@naadi/shared";
 import { cx, ErrorState, OfflineBanner, Skeleton } from "@naadi/ui";
 import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router";
-import { UserRound } from "lucide-react";
+import { Search, UserRound } from "lucide-react";
 import { type RefObject, useLayoutEffect, useRef } from "react";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { useSearchCopy } from "../search/copy";
+import { useSearchShortcut } from "../search/shortcut";
 import { usePenActive } from "./chrome";
 import { NavIcon } from "./icons";
 import { LogoMark } from "./Logo";
@@ -60,6 +62,26 @@ function Avatar({ initial, current }: { initial: string; current: boolean }) {
       )}
     >
       {initial ? <span aria-hidden="true">{initial}</span> : <UserRound aria-hidden="true" size={18} />}
+    </Link>
+  );
+}
+
+/** The round search control from the Nav board: opens Search (Ctrl/Cmd+K does the same from anywhere). */
+function SearchButton({ current, label }: { current: boolean; label: string }) {
+  return (
+    <Link
+      to="/search"
+      aria-label={label}
+      aria-keyshortcuts="Control+K Meta+K"
+      aria-current={current ? "page" : undefined}
+      className={cx(
+        "flex size-11 shrink-0 items-center justify-center rounded-pill no-underline",
+        current
+          ? "bg-paper text-ground hover:text-ground"
+          : "bg-surface-2 text-text hover:bg-line-strong hover:text-text",
+      )}
+    >
+      <Search aria-hidden="true" size={18} strokeWidth={2} />
     </Link>
   );
 }
@@ -121,6 +143,10 @@ export function AppShell() {
   const email = auth.status === "signed-in" ? auth.session.user.email : null;
   const initial = initialOf(me.data?.profile.display_name, me.data?.email ?? email);
   const onAccount = isCurrent("/settings", pathname);
+  // Search shows once the server turns the feature on and this build has the screen.
+  const searchOn = me.data?.features.search === true && "/search" in routes;
+  const searchCopy = useSearchCopy();
+  useSearchShortcut(searchOn);
   const navLoading = nav.isPending && !nav.data;
   const offline = !online || (auth.status === "signed-in" && auth.offline);
 
@@ -152,6 +178,9 @@ export function AppShell() {
                 ))
               : items.map((item) => <PillItem key={item.id} item={item} current={isCurrent(item.path, pathname)} />)}
           </ul>
+          {searchOn ? (
+            <SearchButton current={isCurrent("/search", pathname)} label={searchCopy("search.title")} />
+          ) : null}
           <Avatar initial={initial} current={onAccount} />
         </nav>
       </header>
@@ -218,6 +247,14 @@ export function AppShell() {
                 />
               ))
             )}
+            {searchOn ? (
+              <TabItem
+                to="/search"
+                label={searchCopy("search.tab")}
+                icon="search"
+                current={isCurrent("/search", pathname)}
+              />
+            ) : null}
             <TabItem to={ACCOUNT_PATH} label="Account" icon="user-round" current={onAccount} />
           </ul>
         </nav>

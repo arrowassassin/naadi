@@ -39,8 +39,12 @@ COPY --chown=user apps/api/VERSION ./VERSION
 COPY --chown=user config ./config
 COPY --chown=user data ./data
 COPY --chown=user --from=web /src/apps/web/dist ./static
-ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/config
+ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/config \
+    FASTEMBED_CACHE_PATH=/home/user/.cache/fastembed
 USER user
+# Local search (segment 07): download the embedding and reranker models (ids from config/models.yaml) into the
+# image, so a query never touches the network. Serving loads them with local_files_only.
+RUN python -m naadi_api.embeddings prefetch
 EXPOSE 7860
 # Startup (naadi_api/agent/migrate_all.py): Aegra's Alembic migrations + LangGraph checkpoint/store tables, then
 # Naadi's (advisory-locked), then RLS on Aegra's tables and a tripwire that every public table has RLS. A failure

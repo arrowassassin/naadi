@@ -1093,6 +1093,53 @@ export type HealthResponse = {
   version: string;
 };
 
+/**
+ * IndexJob
+ */
+export type IndexJob = {
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Finished At
+   */
+  finished_at: string | null;
+  /**
+   * Report
+   */
+  report: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Started At
+   */
+  started_at: string | null;
+  /**
+   * Status
+   */
+  status: "idle" | "running" | "succeeded" | "failed";
+};
+
+/**
+ * IndexStatus
+ */
+export type IndexStatus = {
+  job: IndexJob;
+  /**
+   * Models Ready
+   */
+  models_ready: boolean;
+  /**
+   * Rows
+   *
+   * Index rows per ref type
+   */
+  rows: {
+    [key: string]: number;
+  };
+};
+
 export type JsonValue = unknown;
 
 /**
@@ -1885,6 +1932,16 @@ export type ReadyResponse = {
 };
 
 /**
+ * ReindexRequest
+ */
+export type ReindexRequest = {
+  /**
+   * Kinds
+   */
+  kinds?: Array<"sections" | "questions" | "pathway" | "notes" | "ink">;
+};
+
+/**
  * ReportIssueIn
  */
 export type ReportIssueIn = {
@@ -1918,6 +1975,67 @@ export type ReportIssueOut = {
    * Status
    */
   status: "open" | "triaged" | "resolved" | "dismissed";
+};
+
+/**
+ * SearchHit
+ */
+export type SearchHit = {
+  /**
+   * Group
+   */
+  group: "chapters" | "notes" | "handwriting" | "questions" | "uploads" | "pathway";
+  /**
+   * Id
+   *
+   * Stable per result: `<type>:<ref id>`
+   */
+  id: string;
+  /**
+   * Meta
+   */
+  meta: string;
+  /**
+   * Score
+   */
+  score: number;
+  /**
+   * Snippet
+   */
+  snippet: Array<Segment>;
+  target: Target;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Type
+   */
+  type: "section" | "upload" | "kb_doc" | "question" | "note" | "ink" | "pathway";
+};
+
+/**
+ * SearchResponse
+ */
+export type SearchResponse = {
+  /**
+   * Hits
+   */
+  hits: Array<SearchHit>;
+  /**
+   * Scope
+   */
+  scope: "all" | "chapters" | "questions" | "notes" | "handwriting" | "uploads" | "pathway";
+  /**
+   * Suggest Web
+   *
+   * True when nothing matched locally or the best match is weak
+   */
+  suggest_web: boolean;
+  /**
+   * Took Ms
+   */
+  took_ms: number;
 };
 
 /**
@@ -2031,6 +2149,22 @@ export type SeedRunList = {
 };
 
 /**
+ * Segment
+ *
+ * A run of snippet text; `hit` runs matched the query (render as <mark>). Plain text, never HTML.
+ */
+export type Segment = {
+  /**
+   * Hit
+   */
+  hit: boolean;
+  /**
+   * Text
+   */
+  text: string;
+};
+
+/**
  * SingleBlockCreate
  */
 export type SingleBlockCreate = {
@@ -2074,6 +2208,62 @@ export type SystemRef = {
    * Label
    */
   label: string;
+};
+
+/**
+ * Target
+ *
+ * Where a hit opens. The screen turns it into a route only when that route exists in the build.
+ */
+export type Target = {
+  /**
+   * Anchor Id
+   */
+  anchor_id?: string | null;
+  /**
+   * Anchor Type
+   */
+  anchor_type?: string | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Guide Key
+   */
+  guide_key?: string | null;
+  /**
+   * Note Id
+   */
+  note_id?: string | null;
+  /**
+   * Question Id
+   */
+  question_id?: string | null;
+  /**
+   * Section Id
+   */
+  section_id?: string | null;
+  /**
+   * Stage Key
+   */
+  stage_key?: string | null;
+  /**
+   * Surface Id
+   */
+  surface_id?: string | null;
+  /**
+   * Surface Type
+   */
+  surface_type?: string | null;
+  /**
+   * Task Id
+   */
+  task_id?: string | null;
+  /**
+   * Type
+   */
+  type: "section" | "question" | "note" | "ink" | "pathway";
 };
 
 /**
@@ -2161,6 +2351,74 @@ export type WeakSpotCreate = {
    * Seed
    */
   seed?: number | null;
+};
+
+/**
+ * WebResponse
+ */
+export type WebResponse = {
+  /**
+   * Labels
+   *
+   * Sources that answered, for the panel's label
+   */
+  labels: Array<string>;
+  /**
+   * Message
+   */
+  message?: string | null;
+  /**
+   * Results
+   */
+  results: Array<WebResult>;
+  /**
+   * Status
+   *
+   * `limit`: a daily or monthly search allowance is used up; `unavailable`: no web source answered
+   */
+  status: "ok" | "empty" | "unavailable" | "limit";
+};
+
+/**
+ * WebResult
+ */
+export type WebResult = {
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * License
+   */
+  license: string;
+  /**
+   * Published
+   */
+  published?: string | null;
+  /**
+   * Snippet
+   */
+  snippet: string;
+  /**
+   * Source
+   *
+   * Source id, e.g. tavily, pubmed
+   */
+  source: string;
+  /**
+   * Source Label
+   *
+   * Display name of the source, e.g. Tavily, PubMed
+   */
+  source_label: string;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Url
+   */
+  url: string;
 };
 
 export type ListAppConfigData = {
@@ -2372,6 +2630,91 @@ export type GetAppConfigHistoryResponses = {
 };
 
 export type GetAppConfigHistoryResponse = GetAppConfigHistoryResponses[keyof GetAppConfigHistoryResponses];
+
+export type GetEmbeddingsStatusData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/embeddings";
+};
+
+export type GetEmbeddingsStatusErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Search or the database is unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetEmbeddingsStatusError = GetEmbeddingsStatusErrors[keyof GetEmbeddingsStatusErrors];
+
+export type GetEmbeddingsStatusResponses = {
+  /**
+   * Successful Response
+   */
+  200: IndexStatus;
+};
+
+export type GetEmbeddingsStatusResponse = GetEmbeddingsStatusResponses[keyof GetEmbeddingsStatusResponses];
+
+export type ReindexEmbeddingsData = {
+  /**
+   * Body
+   */
+  body?: ReindexRequest | null;
+  path?: never;
+  query?: never;
+  url: "/api/admin/embeddings/reindex";
+};
+
+export type ReindexEmbeddingsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * A run is already in progress
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Search or the database is unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ReindexEmbeddingsError = ReindexEmbeddingsErrors[keyof ReindexEmbeddingsErrors];
+
+export type ReindexEmbeddingsResponses = {
+  /**
+   * Successful Response
+   */
+  202: IndexStatus;
+};
+
+export type ReindexEmbeddingsResponse = ReindexEmbeddingsResponses[keyof ReindexEmbeddingsResponses];
 
 export type GetAdminOverviewData = {
   body?: never;
@@ -3373,3 +3716,105 @@ export type ReportIssueResponses = {
 };
 
 export type ReportIssueResponse = ReportIssueResponses[keyof ReportIssueResponses];
+
+export type SearchLocalData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Q
+     *
+     * What to look for
+     */
+    q: string;
+    /**
+     * Scope
+     *
+     * Result type filter; `all` searches everything
+     */
+    scope?: "all" | "chapters" | "questions" | "notes" | "handwriting" | "uploads" | "pathway";
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/search";
+};
+
+export type SearchLocalErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Search or the database is unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SearchLocalError = SearchLocalErrors[keyof SearchLocalErrors];
+
+export type SearchLocalResponses = {
+  /**
+   * Successful Response
+   */
+  200: SearchResponse;
+};
+
+export type SearchLocalResponse = SearchLocalResponses[keyof SearchLocalResponses];
+
+export type SearchWebData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Q
+     */
+    q: string;
+    /**
+     * Web
+     *
+     * The student asked for the web or for the latest: Tavily first
+     */
+    web?: boolean;
+  };
+  url: "/api/search/web";
+};
+
+export type SearchWebErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Search or the database is unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SearchWebError = SearchWebErrors[keyof SearchWebErrors];
+
+export type SearchWebResponses = {
+  /**
+   * Successful Response
+   */
+  200: WebResponse;
+};
+
+export type SearchWebResponse = SearchWebResponses[keyof SearchWebResponses];

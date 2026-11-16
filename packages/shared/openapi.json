@@ -1928,6 +1928,100 @@
         "title": "HealthResponse",
         "type": "object"
       },
+      "IndexJob": {
+        "properties": {
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "status": {
+            "enum": [
+              "idle",
+              "running",
+              "succeeded",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "started_at",
+          "finished_at",
+          "error",
+          "report"
+        ],
+        "title": "IndexJob",
+        "type": "object"
+      },
+      "IndexStatus": {
+        "properties": {
+          "job": {
+            "$ref": "#/components/schemas/IndexJob"
+          },
+          "models_ready": {
+            "title": "Models Ready",
+            "type": "boolean"
+          },
+          "rows": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "description": "Index rows per ref type",
+            "title": "Rows",
+            "type": "object"
+          }
+        },
+        "required": [
+          "rows",
+          "models_ready",
+          "job"
+        ],
+        "title": "IndexStatus",
+        "type": "object"
+      },
       "JsonValue": {},
       "LabGroupOut": {
         "properties": {
@@ -3236,6 +3330,28 @@
         "title": "ReadyResponse",
         "type": "object"
       },
+      "ReindexRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "kinds": {
+            "items": {
+              "enum": [
+                "sections",
+                "questions",
+                "pathway",
+                "notes",
+                "ink"
+              ],
+              "type": "string"
+            },
+            "minItems": 1,
+            "title": "Kinds",
+            "type": "array"
+          }
+        },
+        "title": "ReindexRequest",
+        "type": "object"
+      },
       "ReportIssueIn": {
         "additionalProperties": false,
         "properties": {
@@ -3298,6 +3414,115 @@
           "created_at"
         ],
         "title": "ReportIssueOut",
+        "type": "object"
+      },
+      "SearchHit": {
+        "properties": {
+          "group": {
+            "enum": [
+              "chapters",
+              "notes",
+              "handwriting",
+              "questions",
+              "uploads",
+              "pathway"
+            ],
+            "title": "Group",
+            "type": "string"
+          },
+          "id": {
+            "description": "Stable per result: `<type>:<ref id>`",
+            "title": "Id",
+            "type": "string"
+          },
+          "meta": {
+            "title": "Meta",
+            "type": "string"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "snippet": {
+            "items": {
+              "$ref": "#/components/schemas/Segment"
+            },
+            "title": "Snippet",
+            "type": "array"
+          },
+          "target": {
+            "$ref": "#/components/schemas/Target"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "section",
+              "upload",
+              "kb_doc",
+              "question",
+              "note",
+              "ink",
+              "pathway"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "group",
+          "title",
+          "meta",
+          "snippet",
+          "target",
+          "score"
+        ],
+        "title": "SearchHit",
+        "type": "object"
+      },
+      "SearchResponse": {
+        "properties": {
+          "hits": {
+            "items": {
+              "$ref": "#/components/schemas/SearchHit"
+            },
+            "title": "Hits",
+            "type": "array"
+          },
+          "scope": {
+            "enum": [
+              "all",
+              "chapters",
+              "questions",
+              "notes",
+              "handwriting",
+              "uploads",
+              "pathway"
+            ],
+            "title": "Scope",
+            "type": "string"
+          },
+          "suggest_web": {
+            "description": "True when nothing matched locally or the best match is weak",
+            "title": "Suggest Web",
+            "type": "boolean"
+          },
+          "took_ms": {
+            "title": "Took Ms",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scope",
+          "hits",
+          "suggest_web",
+          "took_ms"
+        ],
+        "title": "SearchResponse",
         "type": "object"
       },
       "SectionOut": {
@@ -3495,6 +3720,25 @@
         "title": "SeedRunList",
         "type": "object"
       },
+      "Segment": {
+        "description": "A run of snippet text; `hit` runs matched the query (render as <mark>). Plain text, never HTML.",
+        "properties": {
+          "hit": {
+            "title": "Hit",
+            "type": "boolean"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "hit"
+        ],
+        "title": "Segment",
+        "type": "object"
+      },
       "SingleBlockCreate": {
         "additionalProperties": false,
         "properties": {
@@ -3561,6 +3805,148 @@
           "label"
         ],
         "title": "SystemRef",
+        "type": "object"
+      },
+      "Target": {
+        "description": "Where a hit opens. The screen turns it into a route only when that route exists in the build.",
+        "properties": {
+          "anchor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Id"
+          },
+          "anchor_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Type"
+          },
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Id"
+          },
+          "guide_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Guide Key"
+          },
+          "note_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note Id"
+          },
+          "question_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question Id"
+          },
+          "section_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Section Id"
+          },
+          "stage_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stage Key"
+          },
+          "surface_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Surface Id"
+          },
+          "surface_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Surface Type"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task Id"
+          },
+          "type": {
+            "enum": [
+              "section",
+              "question",
+              "note",
+              "ink",
+              "pathway"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "Target",
         "type": "object"
       },
       "ValidationError": {
@@ -3702,6 +4088,110 @@
           "exam"
         ],
         "title": "WeakSpotCreate",
+        "type": "object"
+      },
+      "WebResponse": {
+        "properties": {
+          "labels": {
+            "description": "Sources that answered, for the panel's label",
+            "items": {
+              "type": "string"
+            },
+            "title": "Labels",
+            "type": "array"
+          },
+          "message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Message"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/WebResult"
+            },
+            "title": "Results",
+            "type": "array"
+          },
+          "status": {
+            "description": "`limit`: a daily or monthly search allowance is used up; `unavailable`: no web source answered",
+            "enum": [
+              "ok",
+              "empty",
+              "unavailable",
+              "limit"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "labels",
+          "results"
+        ],
+        "title": "WebResponse",
+        "type": "object"
+      },
+      "WebResult": {
+        "properties": {
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "license": {
+            "title": "License",
+            "type": "string"
+          },
+          "published": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published"
+          },
+          "snippet": {
+            "title": "Snippet",
+            "type": "string"
+          },
+          "source": {
+            "description": "Source id, e.g. tavily, pubmed",
+            "title": "Source",
+            "type": "string"
+          },
+          "source_label": {
+            "description": "Display name of the source, e.g. Tavily, PubMed",
+            "title": "Source Label",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "url",
+          "snippet",
+          "source",
+          "source_label",
+          "kind",
+          "license"
+        ],
+        "title": "WebResult",
         "type": "object"
       }
     }
@@ -4104,6 +4594,167 @@
         },
         "summary": "Admin only: previous values of one app_config key, newest first",
         "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/embeddings": {
+      "get": {
+        "operationId": "getEmbeddingsStatus",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IndexStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Search or the database is unavailable"
+          }
+        },
+        "summary": "Search index: rows per type, whether the models are cached, the last index job",
+        "tags": [
+          "search",
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/embeddings/reindex": {
+      "post": {
+        "operationId": "reindexEmbeddings",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/ReindexRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IndexStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "A run is already in progress"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Search or the database is unavailable"
+          }
+        },
+        "summary": "Bring the search index in line with the content (idempotent; unchanged chunks are skipped)",
+        "tags": [
+          "search",
           "admin"
         ]
       }
@@ -5953,6 +6604,201 @@
         "summary": "Report a problem with a section, chapter, figure or question (stored for review)",
         "tags": [
           "courses"
+        ]
+      }
+    },
+    "/api/search": {
+      "get": {
+        "operationId": "searchLocal",
+        "parameters": [
+          {
+            "description": "What to look for",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "description": "What to look for",
+              "maxLength": 300,
+              "minLength": 1,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Result type filter; `all` searches everything",
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "schema": {
+              "default": "all",
+              "description": "Result type filter; `all` searches everything",
+              "enum": [
+                "all",
+                "chapters",
+                "questions",
+                "notes",
+                "handwriting",
+                "uploads",
+                "pathway"
+              ],
+              "title": "Scope",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 24,
+              "maximum": 50,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Search or the database is unavailable"
+          }
+        },
+        "summary": "Search chapters, questions, notes, handwriting, uploads and the pathway (local, ranked, as you)",
+        "tags": [
+          "search"
+        ]
+      }
+    },
+    "/api/search/web": {
+      "get": {
+        "operationId": "searchWeb",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "maxLength": 300,
+              "minLength": 1,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The student asked for the web or for the latest: Tavily first",
+            "in": "query",
+            "name": "web",
+            "required": false,
+            "schema": {
+              "default": false,
+              "description": "The student asked for the web or for the latest: Tavily first",
+              "title": "Web",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Search or the database is unavailable"
+          }
+        },
+        "summary": "Web results through the layered search (PubMed and other medical sources; Tavily for latest and pathway)",
+        "tags": [
+          "search"
         ]
       }
     }

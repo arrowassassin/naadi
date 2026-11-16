@@ -2,6 +2,7 @@
 
     python -m naadi_api.embeddings prefetch            # download the models into FASTEMBED_CACHE_PATH (build time)
     python -m naadi_api.embeddings reindex [--kinds sections,questions,pathway,notes,ink] [--owner UUID]
+                                           [--refs ID,ID] [--threads N]
 
 `reindex` is idempotent: unchanged chunks are skipped, removed content is deleted. It needs DATABASE_URL and
 the cached models; it never prints text from the corpus.
@@ -32,7 +33,7 @@ def prefetch() -> int:
     return 0
 
 
-async def reindex(kinds: list[Kind], owner: uuid.UUID | None, threads: int) -> int:
+async def reindex(kinds: list[Kind], owner: uuid.UUID | None, threads: int, refs: list[str] | None) -> int:
     settings = get_settings()
     db = Database(settings.database_url, max_size=2)
     if not db.configured:
@@ -42,7 +43,7 @@ async def reindex(kinds: list[Kind], owner: uuid.UUID | None, threads: int) -> i
     try:
         engine = Engine(spec_from_config(settings.config_dir), threads=threads)
         try:
-            report = await reconcile(db, engine, kinds=kinds, owner=owner)
+            report = await reconcile(db, engine, kinds=kinds, owner=owner, ref_ids=refs)
         except ModelsNotCached as exc:
             print(str(exc), file=sys.stderr)
             return 2
@@ -60,6 +61,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--kinds", default=",".join(KINDS), help=f"comma list of {', '.join(KINDS)}")
     r.add_argument("--owner", type=uuid.UUID, default=None, help="only this user's private rows")
     r.add_argument("--threads", type=int, default=ONNX_THREADS, help="ONNX threads (a one-off run can use every core)")
+    r.add_argument("--refs", default=None, help="comma list of ref ids (section ids, question ids, ...): only these")
     args = p.parse_args(argv)
     configure_logging("WARNING")
     if args.cmd == "prefetch":
@@ -68,7 +70,8 @@ def main(argv: list[str] | None = None) -> int:
     bad = [k for k in kinds if k not in KINDS]
     if bad:
         p.error(f"unknown kinds: {', '.join(bad)}")
-    return asyncio.run(reindex(cast("list[Kind]", kinds), args.owner, args.threads))
+    refs = [x.strip() for x in args.refs.split(",") if x.strip()] if args.refs else None
+    return asyncio.run(reindex(cast("list[Kind]", kinds), args.owner, args.threads, refs))
 
 
 if __name__ == "__main__":

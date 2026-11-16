@@ -11,7 +11,7 @@ import pytest
 from naadi_api.embeddings import ranking, sources
 from naadi_api.embeddings.chunker import MAX_TOKENS, chunk_text, estimate_tokens
 from naadi_api.embeddings.engine import EMBEDDING_DIM, spec_from_config, vector_literal
-from naadi_api.embeddings.query import Candidate, order, select
+from naadi_api.embeddings.query import Candidate, order, relevant, select
 from naadi_api.embeddings.text import html_to_text, markdown_to_text, tiptap_to_text
 from tests.conftest import REPO_ROOT
 
@@ -217,3 +217,28 @@ def test_engine_spec_comes_from_models_yaml_and_matches_the_column() -> None:
     assert spec.dimensions == EMBEDDING_DIM == 384
     assert spec.model and spec.reranker
     assert vector_literal([0.5, -1.0, 0.123456789]) == "[0.5,-1,0.123457]"
+
+
+def scored(i: int, rerank: float | None, *, lexical: bool = False, cosine: float | None = None) -> Candidate:
+    c = cand(i, "section", 1 - i / 100, rerank=rerank)
+    c.lexical, c.cosine = lexical, cosine
+    return c
+
+
+def test_relevance_floor_makes_nothing_found_possible() -> None:
+    """Vector search always returns neighbours; unrelated queries score far below the floor."""
+    assert relevant([scored(1, -9.1), scored(2, -10.4), scored(3, None, cosine=0.7)]) == []
+    kept = relevant([scored(1, -9.0), scored(2, 1.5), scored(3, -2.0)])
+    assert [c.id for c in kept] == [2, 3]
+
+
+def test_tail_needs_a_text_match_or_a_close_vector_and_a_relevant_head() -> None:
+    cs = [
+        scored(1, 2.0),
+        scored(2, None, lexical=True, cosine=0.4),
+        scored(3, None, cosine=0.7),
+        scored(4, None, cosine=0.5),
+    ]
+    assert [c.id for c in relevant(cs)] == [1, 2, 3]
+    assert [c.id for c in relevant([scored(1, -9.0), scored(2, None, lexical=True)])] == []
+    assert ranking.RERANK_FLOOR < ranking.WEAK_RERANK < 0

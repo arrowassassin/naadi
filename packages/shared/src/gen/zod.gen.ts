@@ -304,6 +304,26 @@ export const zFlagOut = z.object({
   question_id: z.string(),
 });
 
+/**
+ * IndexJob
+ */
+export const zIndexJob = z.object({
+  error: z.string().nullable(),
+  finished_at: z.string().nullable(),
+  report: z.record(z.string(), z.unknown()).nullable(),
+  started_at: z.string().nullable(),
+  status: z.enum(["idle", "running", "succeeded", "failed"]),
+});
+
+/**
+ * IndexStatus
+ */
+export const zIndexStatus = z.object({
+  job: zIndexJob,
+  models_ready: z.boolean(),
+  rows: z.record(z.string(), z.int()),
+});
+
 export const zJsonValue = z.unknown();
 
 /**
@@ -750,6 +770,16 @@ export const zReadyResponse = z.object({
 });
 
 /**
+ * ReindexRequest
+ */
+export const zReindexRequest = z.object({
+  kinds: z
+    .array(z.enum(["sections", "questions", "pathway", "notes", "ink"]))
+    .min(1)
+    .optional(),
+});
+
+/**
  * ReportIssueIn
  */
 export const zReportIssueIn = z.object({
@@ -813,6 +843,16 @@ export const zSeedRunList = z.object({
 });
 
 /**
+ * Segment
+ *
+ * A run of snippet text; `hit` runs matched the query (render as <mark>). Plain text, never HTML.
+ */
+export const zSegment = z.object({
+  hit: z.boolean(),
+  text: z.string(),
+});
+
+/**
  * SingleBlockCreate
  */
 export const zSingleBlockCreate = z.object({
@@ -866,6 +906,50 @@ export const zChapterDetail = z.object({
 });
 
 /**
+ * Target
+ *
+ * Where a hit opens. The screen turns it into a route only when that route exists in the build.
+ */
+export const zTarget = z.object({
+  anchor_id: z.string().nullish(),
+  anchor_type: z.string().nullish(),
+  chapter_id: z.string().nullish(),
+  guide_key: z.string().nullish(),
+  note_id: z.string().nullish(),
+  question_id: z.string().nullish(),
+  section_id: z.string().nullish(),
+  stage_key: z.string().nullish(),
+  surface_id: z.string().nullish(),
+  surface_type: z.string().nullish(),
+  task_id: z.string().nullish(),
+  type: z.enum(["section", "question", "note", "ink", "pathway"]),
+});
+
+/**
+ * SearchHit
+ */
+export const zSearchHit = z.object({
+  group: z.enum(["chapters", "notes", "handwriting", "questions", "uploads", "pathway"]),
+  id: z.string(),
+  meta: z.string(),
+  score: z.number(),
+  snippet: z.array(zSegment),
+  target: zTarget,
+  title: z.string(),
+  type: z.enum(["section", "upload", "kb_doc", "question", "note", "ink", "pathway"]),
+});
+
+/**
+ * SearchResponse
+ */
+export const zSearchResponse = z.object({
+  hits: z.array(zSearchHit),
+  scope: z.enum(["all", "chapters", "questions", "notes", "handwriting", "uploads", "pathway"]),
+  suggest_web: z.boolean(),
+  took_ms: z.int(),
+});
+
+/**
  * ValidationError
  */
 export const zValidationError = z.object({
@@ -912,6 +996,30 @@ export const zWeakSpotCreate = z.object({
 });
 
 /**
+ * WebResult
+ */
+export const zWebResult = z.object({
+  kind: z.string(),
+  license: z.string(),
+  published: z.string().nullish(),
+  snippet: z.string(),
+  source: z.string(),
+  source_label: z.string(),
+  title: z.string(),
+  url: z.string(),
+});
+
+/**
+ * WebResponse
+ */
+export const zWebResponse = z.object({
+  labels: z.array(z.string()),
+  message: z.string().nullish(),
+  results: z.array(zWebResult),
+  status: z.enum(["ok", "empty", "unavailable", "limit"]),
+});
+
+/**
  * Successful Response
  */
 export const zListAppConfigResponse = zConfigKeyList;
@@ -948,6 +1056,21 @@ export const zGetAppConfigHistoryQuery = z.object({
  * Successful Response
  */
 export const zGetAppConfigHistoryResponse = zConfigHistory;
+
+/**
+ * Successful Response
+ */
+export const zGetEmbeddingsStatusResponse = zIndexStatus;
+
+/**
+ * Body
+ */
+export const zReindexEmbeddingsBody = zReindexRequest.nullable();
+
+/**
+ * Successful Response
+ */
+export const zReindexEmbeddingsResponse = zIndexStatus;
 
 /**
  * Successful Response
@@ -1147,3 +1270,27 @@ export const zReportIssueBody = zReportIssueIn;
  * Successful Response
  */
 export const zReportIssueResponse = zReportIssueOut;
+
+export const zSearchLocalQuery = z.object({
+  q: z.string().min(1).max(300),
+  scope: z
+    .enum(["all", "chapters", "questions", "notes", "handwriting", "uploads", "pathway"])
+    .optional()
+    .default("all"),
+  limit: z.int().gte(1).lte(50).optional().default(24),
+});
+
+/**
+ * Successful Response
+ */
+export const zSearchLocalResponse = zSearchResponse;
+
+export const zSearchWebQuery = z.object({
+  q: z.string().min(1).max(300),
+  web: z.boolean().optional().default(false),
+});
+
+/**
+ * Successful Response
+ */
+export const zSearchWebResponse = zWebResponse;

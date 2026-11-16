@@ -41,6 +41,9 @@ import type {
   GetCoursesData,
   GetCoursesErrors,
   GetCoursesResponses,
+  GetEmbeddingsStatusData,
+  GetEmbeddingsStatusErrors,
+  GetEmbeddingsStatusResponses,
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
@@ -82,9 +85,18 @@ import type {
   PutReadingPositionData,
   PutReadingPositionErrors,
   PutReadingPositionResponses,
+  ReindexEmbeddingsData,
+  ReindexEmbeddingsErrors,
+  ReindexEmbeddingsResponses,
   ReportIssueData,
   ReportIssueErrors,
   ReportIssueResponses,
+  SearchLocalData,
+  SearchLocalErrors,
+  SearchLocalResponses,
+  SearchWebData,
+  SearchWebErrors,
+  SearchWebResponses,
   StartSeedData,
   StartSeedErrors,
   StartSeedResponses,
@@ -119,6 +131,7 @@ import {
   zGetChapterResponse,
   zGetCoursesQuery,
   zGetCoursesResponse,
+  zGetEmbeddingsStatusResponse,
   zGetHealthResponse,
   zGetLabValuesResponse,
   zGetMeResponse,
@@ -140,8 +153,14 @@ import {
   zPutAppConfigResponse,
   zPutReadingPositionBody,
   zPutReadingPositionResponse,
+  zReindexEmbeddingsBody,
+  zReindexEmbeddingsResponse,
   zReportIssueBody,
   zReportIssueResponse,
+  zSearchLocalQuery,
+  zSearchLocalResponse,
+  zSearchWebQuery,
+  zSearchWebResponse,
   zStartSeedBody,
   zStartSeedResponse,
   zUpdateMeBody,
@@ -248,6 +267,50 @@ export const getAppConfigHistory = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zGetAppConfigHistoryResponse.parseAsync(data),
     url: "/api/admin/config/{key}/history",
     ...options,
+  });
+
+/**
+ * Search index: rows per type, whether the models are cached, the last index job
+ */
+export const getEmbeddingsStatus = <ThrowOnError extends boolean = false>(
+  options?: Options<GetEmbeddingsStatusData, ThrowOnError>,
+): RequestResult<GetEmbeddingsStatusResponses, GetEmbeddingsStatusErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetEmbeddingsStatusResponses, GetEmbeddingsStatusErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetEmbeddingsStatusResponse.parseAsync(data),
+    url: "/api/admin/embeddings",
+    ...options,
+  });
+
+/**
+ * Bring the search index in line with the content (idempotent; unchanged chunks are skipped)
+ */
+export const reindexEmbeddings = <ThrowOnError extends boolean = false>(
+  options?: Options<ReindexEmbeddingsData, ThrowOnError>,
+): RequestResult<ReindexEmbeddingsResponses, ReindexEmbeddingsErrors, ThrowOnError> =>
+  (options?.client ?? client).post<ReindexEmbeddingsResponses, ReindexEmbeddingsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReindexEmbeddingsBody.optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReindexEmbeddingsResponse.parseAsync(data),
+    url: "/api/admin/embeddings/reindex",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options?.headers,
+    },
   });
 
 /**
@@ -784,4 +847,44 @@ export const reportIssue = <ThrowOnError extends boolean = false>(
       "Content-Type": "application/json",
       ...options.headers,
     },
+  });
+
+/**
+ * Search chapters, questions, notes, handwriting, uploads and the pathway (local, ranked, as you)
+ */
+export const searchLocal = <ThrowOnError extends boolean = false>(
+  options: Options<SearchLocalData, ThrowOnError>,
+): RequestResult<SearchLocalResponses, SearchLocalErrors, ThrowOnError> =>
+  (options.client ?? client).get<SearchLocalResponses, SearchLocalErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zSearchLocalQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSearchLocalResponse.parseAsync(data),
+    url: "/api/search",
+    ...options,
+  });
+
+/**
+ * Web results through the layered search (PubMed and other medical sources; Tavily for latest and pathway)
+ */
+export const searchWeb = <ThrowOnError extends boolean = false>(
+  options: Options<SearchWebData, ThrowOnError>,
+): RequestResult<SearchWebResponses, SearchWebErrors, ThrowOnError> =>
+  (options.client ?? client).get<SearchWebResponses, SearchWebErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zSearchWebQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSearchWebResponse.parseAsync(data),
+    url: "/api/search/web",
+    ...options,
   });
