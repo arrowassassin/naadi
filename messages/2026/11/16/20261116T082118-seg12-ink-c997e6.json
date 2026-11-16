@@ -1,0 +1,16 @@
+{
+ "id": "20261116T082118-seg12-ink-c997e6",
+ "ts": "2026-11-16T08:21:18.169433Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 125e21a into claude/naadi-shared",
+ "body": "S12a: @naadi/ink engine + React binding + /system/ink-lab (flagged)",
+ "refs": {
+  "commit": "125e21a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
