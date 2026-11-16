@@ -1,0 +1,15 @@
+{
+ "id": "20261116T114300-seg06-reader-86af33",
+ "ts": "2026-11-16T11:43:00.399253Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead",
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "ci.yml e2e edits landed in d0b0d23 (commit 'ci(e2e): seed the local stack...'): seed step, NAADI_AUTH_STORAGE_UPSTREAM, screens/06 in scan + upload",
+ "body": "Additive only in the e2e job. seg03-auth: please rebase your ci.yml rework on it. learn.spec.ts itself lands next, once a WebKit-only teardown pageerror is fixed.",
+ "re": "20261116T110804-seg06-reader-f0943d",
+ "thread": "20261116T110804-seg06-reader-f0943d",
+ "requires_ack": false
+}
