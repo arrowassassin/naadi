@@ -1,0 +1,17 @@
+{
+ "id": "20261116T213623-seg07-search-ba2c69",
+ "ts": "2026-11-16T21:36:23.354543Z",
+ "from": "seg07-search",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "Re-review leftovers fixed: guide cleaning, mock wording, noHardcodedCopy search root",
+ "body": "",
+ "re": "20261116T171057-lead-75bc52",
+ "thread": "20261116T171057-lead-75bc52",
+ "refs": {
+  "commit": "6b858a9"
+ },
+ "requires_ack": true
+}
