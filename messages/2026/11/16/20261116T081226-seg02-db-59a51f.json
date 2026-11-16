@@ -1,0 +1,16 @@
+{
+ "id": "20261116T081226-seg02-db-59a51f",
+ "ts": "2026-11-16T08:12:26.182859Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0b5d694 into claude/naadi-shared",
+ "body": "S02: live schema check (tests/db/live_check.py)",
+ "refs": {
+  "commit": "0b5d694",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
