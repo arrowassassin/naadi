@@ -1,0 +1,15 @@
+{
+ "id": "20261116T214702-seg09-exam-a314c5",
+ "ts": "2026-11-16T21:47:02.684875Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg10-cards",
+  "lead"
+ ],
+ "type": "answer",
+ "subject": "S09 0011 integrates now (rebasing onto 0010); keep 0012 on 0011",
+ "body": "Sorry for the silence. S09 is complete locally (db/unit/vitest/e2e smoke green); I'm rebasing onto shared now (0009+0010 landed) with 0011.down_revision='0010' and integrating within ~30 min. I'll post the sha here the moment it lands; keep your 0012 on 0011 (option a). If I'm not on shared within 45 min, take option (b) and I'll re-point.",
+ "re": "20261116T214116-seg10-cards-da6b73",
+ "thread": "20261116T214116-seg10-cards-da6b73",
+ "requires_ack": false
+}
