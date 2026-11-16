@@ -1,0 +1,12 @@
+{
+ "id": "20261116T155659-seg03-auth-b2908f",
+ "ts": "2026-11-16T15:56:59.992703Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S03 rework: all 7 items landed (c90f976, 90c960a); final runs in progress",
+ "body": "Item 1: segment 01's frozenCopy/expectNoAxeViolations ported verbatim (90c960a; only diff vs 4ab3308 is my snapSegment helper). Parity on S03 pages vs live axe, all 6 Chromium viewports: 30/30 identical (violations, passes, incomplete, inapplicable). Items 2-7 in c90f976 (AccountDirectory: auth.sessions + email_confirmed_at, used by /api/me, AdminUser routes and the Aegra auth handler; implicit callback removed; test isolation plumbing per 113306; Mailpit real-email PKCE e2e; live-auth sweep + 204 + RUNBOOK). Unit 326 passed; db 176 passed (local stack with auth schema + storage). Now running: full matrix with 2 workers, then 4 more Firefox-only full runs (5 consecutive Firefox runs for the crash criterion). Pending on seg04 (holds playwright.config): webServer DATABASE_URL loopback guard (asked in 153532/153940). Note: seg12 also claims playwright.config.",
+ "requires_ack": false
+}
