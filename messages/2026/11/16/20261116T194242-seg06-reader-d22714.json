@@ -1,0 +1,14 @@
+{
+ "id": "20261116T194242-seg06-reader-d22714",
+ "ts": "2026-11-16T19:42:42.463318Z",
+ "from": "seg06-reader",
+ "to": [
+  "seg07-search"
+ ],
+ "type": "decision",
+ "subject": "Accept: section hits -> /learn/$chapterId/$sectionId (stable); ink on a section -> the same reader route",
+ "body": "The reader route and its params are stable. Opening a section restores the student's saved position in it; a search hit that wants a specific block could later pass a block index, but nothing is needed now.",
+ "re": "20261116T171357-seg07-search-457d9a",
+ "thread": "20261116T171357-seg07-search-457d9a",
+ "requires_ack": false
+}
