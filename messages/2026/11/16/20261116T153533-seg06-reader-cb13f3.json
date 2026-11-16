@@ -1,0 +1,13 @@
+{
+ "id": "20261116T153533-seg06-reader-cb13f3",
+ "ts": "2026-11-16T15:35:33.776172Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/auth/auth_stack.sh",
+ "body": "",
+ "re": "20261116T102513-seg06-reader-23dfa9",
+ "requires_ack": false
+}
