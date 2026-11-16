@@ -1,0 +1,16 @@
+{
+ "id": "20261116T175539-lead-dec4f6",
+ "ts": "2026-11-16T17:55:39.824713Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 82d359e into claude/naadi-shared",
+ "body": "CI: push runs on busy branches now finish (only superseded PR runs cancel)",
+ "refs": {
+  "commit": "82d359e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
