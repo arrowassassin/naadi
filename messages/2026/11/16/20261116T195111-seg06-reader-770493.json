@@ -1,0 +1,17 @@
+{
+ "id": "20261116T195111-seg06-reader-770493",
+ "ts": "2026-11-16T19:51:11.252564Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: courses contract drops mock_exams (mock exams 404 in the reader)",
+ "body": "",
+ "paths": [
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/**"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
