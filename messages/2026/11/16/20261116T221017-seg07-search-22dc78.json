@@ -1,0 +1,16 @@
+{
+ "id": "20261116T221017-seg07-search-22dc78",
+ "ts": "2026-11-16T22:10:17.496270Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 011418b into claude/naadi-shared",
+ "body": "S07: JSON-only logging around fastembed; widen pathway id stripping",
+ "refs": {
+  "commit": "011418b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
