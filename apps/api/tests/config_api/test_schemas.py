@@ -156,7 +156,7 @@ async def test_service_falls_back_to_files_without_a_database_and_caches(values:
     assert await svc.feature_enabled("ink_lab", is_admin=False, app_env="prod") is False
     assert await svc.feature_enabled("ink_lab", is_admin=True, app_env="prod") is True
     assert await svc.feature_enabled("ghost", is_admin=True, app_env="local") is False
-    assert [i["id"] for i in await svc.nav_for(is_admin=False, app_env="prod")] == ["today"]
+    assert [i["id"] for i in await svc.nav_for(is_admin=False, app_env="prod")] == ["today", "learn"]
     assert (await svc.row("feature_flags")) is row  # cached
     clock.t += 61
     assert (await svc.row("feature_flags")) is not row  # expired

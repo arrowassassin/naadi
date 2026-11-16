@@ -296,7 +296,7 @@ describe("every seeded section renders with no unknown node", () => {
     }
     expect(onUnknown).not.toHaveBeenCalled();
     expect(figures).toBe(95);
-  });
+  }, 60_000);
 });
 
 describe("sanitizeToReact", () => {

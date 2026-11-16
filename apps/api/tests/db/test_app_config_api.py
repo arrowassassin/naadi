@@ -90,7 +90,7 @@ def test_public_config(client: TestClient) -> None:
     assert body["features"]["today"] is True
     assert body["features"]["assistant"] is False
     assert body["features"]["ink_lab"] is False  # admins only in prod
-    assert [i["id"] for i in body["nav"]] == ["today"]
+    assert [i["id"] for i in body["nav"]] == ["today", "learn"]
     assert body["exam_rules"]["modes"]["exam"]["assistant"] is False
     assert body["ui_copy"]["agent.quota_reset"] == "AI quota resets at {time}"
     # nothing from the server-only keys (model routing, budgets, search rules, buckets, generation)

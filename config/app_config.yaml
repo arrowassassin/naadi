@@ -17,7 +17,7 @@ sources_policy:
 # APP_ENV is not prod (local / staging). A screen's flag is switched on by the segment that ships the screen.
 feature_flags:
   today: {enabled: true}
-  courses: {enabled: false}       # S06 Courses + Reader
+  courses: {enabled: true}        # S06 Courses + Reader
   qbank: {enabled: false}         # S08/S09
   planner: {enabled: false}       # S11
   notes: {enabled: false}         # S13
