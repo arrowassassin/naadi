@@ -72,6 +72,44 @@ def _get() -> tuple[TokenVerifier, AccountDirectory]:
     return _verifier, _accounts
 
 
+class AuthUnavailableAs503:
+    """Aegra turns every failure of the auth handler into 401, which tells the client to sign in again. When
+    the account could not be CHECKED (database briefly unreachable), the right answer is 503 + Retry-After:
+    the session is fine. The handler marks that case (agent.auth.mark_unavailable) and this ASGI middleware
+    rewrites that one response."""
+
+    def __init__(self, app: Any) -> None:
+        self.app = app
+
+    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
+        if scope.get("type") != "http":
+            await self.app(scope, receive, send)
+            return
+        flag = {"unavailable": False}
+        token = unavailable_flag.set(flag)
+        rewriting = False
+
+        async def wrapped(message: Any) -> None:
+            nonlocal rewriting
+            if message["type"] == "http.response.start" and message.get("status") == 401 and flag["unavailable"]:
+                rewriting = True
+                headers = [(k, v) for k, v in message.get("headers", []) if k.lower() not in (b"content-length",)]
+                body = UNAVAILABLE
+                headers += [(b"retry-after", b"5"), (b"content-length", str(len(body)).encode())]
+                await send({**message, "status": 503, "headers": headers})
+                return
+            if rewriting and message["type"] == "http.response.body":
+                if not message.get("more_body"):
+                    await send({"type": "http.response.body", "body": UNAVAILABLE, "more_body": False})
+                return
+            await send(message)
+
+        try:
+            await self.app(scope, receive, wrapped)
+        finally:
+            unavailable_flag.reset(token)
+
+
 @auth.authenticate
 async def authenticate(headers: dict[str, Any]) -> Auth.types.MinimalUserDict:
     raw = headers.get("authorization") or headers.get("Authorization") or ""

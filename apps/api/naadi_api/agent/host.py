@@ -70,46 +70,6 @@ SYSTEM_CRON_SCHEDULE = "17 * * * *"
 naadi_app: FastAPI = create_app()
 
 
-class AuthUnavailableAs503:
-    """Aegra turns every failure of the auth handler into 401, which tells the client to sign in again. When
-    the account could not be CHECKED (database briefly unreachable), the right answer is 503 + Retry-After:
-    the session is fine. The handler marks that case (agent.auth.mark_unavailable) and this ASGI middleware
-    rewrites that one response."""
-
-    def __init__(self, app: Any) -> None:
-        self.app = app
-
-    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
-        if scope.get("type") != "http":
-            await self.app(scope, receive, send)
-            return
-        from .auth import UNAVAILABLE, unavailable_flag
-
-        flag = {"unavailable": False}
-        token = unavailable_flag.set(flag)
-        rewriting = False
-
-        async def wrapped(message: Any) -> None:
-            nonlocal rewriting
-            if message["type"] == "http.response.start" and message.get("status") == 401 and flag["unavailable"]:
-                rewriting = True
-                headers = [(k, v) for k, v in message.get("headers", []) if k.lower() not in (b"content-length",)]
-                body = UNAVAILABLE
-                headers += [(b"retry-after", b"5"), (b"content-length", str(len(body)).encode())]
-                await send({**message, "status": 503, "headers": headers})
-                return
-            if rewriting and message["type"] == "http.response.body":
-                if not message.get("more_body"):
-                    await send({"type": "http.response.body", "body": UNAVAILABLE, "more_body": False})
-                return
-            await send(message)
-
-        try:
-            await self.app(scope, receive, wrapped)
-        finally:
-            unavailable_flag.reset(token)
-
-
 def _endpoint_name(route: BaseRoute) -> str | None:
     ep = getattr(route, "endpoint", None)
     return getattr(ep, "__name__", None)
@@ -224,6 +184,7 @@ def build() -> FastAPI:
     cron_scheduler._validate_cron_user = validate_cron_user  # Aegra's documented liveness hook
     # The agent auth handler uses the app's own verifier and account directory (one DB pool, one cache).
     from . import auth as agent_auth
+    from .auth import AuthUnavailableAs503
 
     agent_auth.configure(verifier=aegra_app.state.auth, accounts=aegra_app.state.accounts)
     aegra_app.add_middleware(AuthUnavailableAs503)

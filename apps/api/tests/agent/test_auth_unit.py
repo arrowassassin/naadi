@@ -13,7 +13,7 @@ from langgraph_sdk import Auth
 from pydantic import SecretStr
 
 from naadi_api.agent import auth as agent_auth
-from naadi_api.agent.host import AuthUnavailableAs503
+from naadi_api.agent.auth import AuthUnavailableAs503
 from naadi_api.auth import AuthUnavailable, CurrentUser
 from naadi_api.db import Database
 
