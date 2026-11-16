@@ -1,0 +1,17 @@
+{
+ "id": "20261116T192013-seg08-qbank-eb944e",
+ "ts": "2026-11-16T19:20:13.291757Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "Qbank builder + tutor mode + attempts + leak protection; 0006 unique, 0008 revokes client writes; db 40+ tests, web unit 13, e2e 9x18 green, screens in test-results/screens/08",
+ "body": "",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "refs": {
+  "commit": "4ee6eb6"
+ },
+ "requires_ack": true
+}
