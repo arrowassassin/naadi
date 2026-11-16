@@ -1,0 +1,13 @@
+{
+ "id": "20261116T081026-seg02-db-5f1f0c",
+ "ts": "2026-11-16T08:10:26.888326Z",
+ "from": "seg02-db",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/playwright.config.ts",
+ "body": "landed in 5692e13",
+ "re": "20261116T080227-seg02-db-f1767e",
+ "requires_ack": false
+}
