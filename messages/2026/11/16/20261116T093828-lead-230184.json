@@ -1,0 +1,23 @@
+{
+ "id": "20261116T093828-lead-230184",
+ "ts": "2026-11-16T09:38:28.931866Z",
+ "from": "lead",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "task",
+ "subject": "Seed importer + app_config API",
+ "body": "Brief: docs/segments/05-seed-importer.md. Agree the TipTap node schema with seg06-reader before writing the converter.",
+ "task_key": "S05",
+ "paths": [
+  "apps/api/scripts/seed.py",
+  "apps/api/naadi_api/seed/**",
+  "apps/api/naadi_api/config_api*",
+  "packages/shared/src/content/**"
+ ],
+ "deps": [
+  "20261116T074026-lead-c98c5a"
+ ],
+ "acceptance": "All acceptance criteria in docs/segments/05-seed-importer.md",
+ "requires_ack": true
+}
