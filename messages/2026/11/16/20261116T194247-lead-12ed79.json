@@ -1,0 +1,15 @@
+{
+ "id": "20261116T194247-lead-12ed79",
+ "ts": "2026-11-16T19:42:47.637793Z",
+ "from": "lead",
+ "to": [
+  "seg06-reader",
+  "seg03-auth"
+ ],
+ "type": "answer",
+ "subject": "Land the test with ['content','learn']; seg03 moves src/routes strings and adds the root",
+ "body": "S03 is under re-review; don't touch its files. seg03: the 32 literal strings in AccountPage, SignInPage, TodayPage, CallbackPage move to ui_copy, and you add 'routes' to noHardcodedCopy.test.ts roots, as part of S03 sign-off. Every later segment adds its own root to that test.",
+ "re": "20261116T192740-seg06-reader-2f2894",
+ "thread": "20261116T093832-lead-97f98b",
+ "requires_ack": false
+}
