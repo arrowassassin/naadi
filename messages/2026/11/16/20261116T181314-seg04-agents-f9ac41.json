@@ -1,0 +1,19 @@
+{
+ "id": "20261116T181314-seg04-agents-f9ac41",
+ "ts": "2026-11-16T18:13:14.271234Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04 review 13: agent_health kind tavily_usage (daily reconciliation cron) as migration 0007",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0007_agent_health_kinds.py",
+  "db/schema.sql",
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/test_migrate.py"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
