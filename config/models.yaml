@@ -23,31 +23,63 @@ budget:
   pdf_engine: cloudflare-ai        # ALWAYS set; the default (mistral-ocr) is paid ($2/1k pages)
   only_free_ids_in_chains: true    # a paid model in a fallback chain is billed at the paid price
 
+# Providers (2026-11-16 live tests through LangGraph: streaming, tool-calling agent, structured output, image input).
+# NVIDIA API catalog lists 143 chat models but only 4 answer (others 410 retired / 404): its own Nemotrons + Meta muse-glimmer.
+# Nemotron therefore goes DIRECT via NVIDIA (owner's higher limits); other families via OpenRouter :free.
+# Both free tiers may log prompts: PII is stripped before every call and vault content never reaches either.
+providers:
+  nvidia:
+    sdk: langchain-nvidia-ai-endpoints==1.5.0   # ChatNVIDIA
+    key_env: NVIDIA_API_KEY
+    rpm: 35                       # verify the account limit in segment 04; token bucket per provider
+    probe_before_use: true        # catalog lists retired models: check_models must call each one
+  openrouter:
+    sdk: langchain-openrouter==0.2.9            # ChatOpenRouter (+ openrouter SDK for key/model metadata)
+    key_env: OPENROUTER_API_KEY
+    rpm: 18
+    only_free_ids: true           # every id ends with :free, or the free router openrouter/free
+
+# Each role is an ordered chain of {provider, model}; llm.py walks it on 429/5xx/timeout/410,
+# skipping providers whose rpm bucket or daily cap is exhausted. Prefer newer models.
 roles:
-  tutor:                           # page-aware chat with tool calling
-    model: google/gemma-4-31b-it:free   # Google AI Studio, 100% 1d uptime; tools; image+video input
-    fallbacks: [baidu/ernie-5.5-flash-preview:free, nvidia/nemotron-3.5-super-vl:free, thinkingmachines/inkling-2-small:free, openrouter/free]
+  tutor:                          # page-aware chat with tools; vision so lasso crops go straight in
     temperature: 0.3
-  vision:                          # photos, handwriting, page images, diagrams (rasterize PDFs in browser)
-    model: nvidia/nemotron-3.5-super-vl:free   # 99.8% 1d; image+video; structured outputs
-    fallbacks: [google/gemma-4-26b-a4b-it:free, dots-studio/dots-3-note-preview:free]
-  structured:                      # flashcards, plans, JSON (json_schema), Mermaid text
-    model: baidu/ernie-5.5-flash-preview:free   # 100% 1d; structured_outputs
-    fallbacks: [inclusionai/ling-3.2-flash:free, nvidia/nemotron-3.5-super-vl:free]
-    validate: pydantic + retry once; mermaid.parse on server
-  long_context:                    # chapter / PDF summaries
-    model: nvidia/nemotron-3.5-super-vl:free   # 1M ctx; 99.8% 1d
-    fallbacks: [baidu/ernie-5.5-flash-preview:free, thinkingmachines/inkling-2-small:free]
-  author:                          # offline question authoring jobs (night-time, within budget)
-    model: nvidia/nemotron-3-ultra-550b-a55b:free   # strongest reasoning; 95% uptime is fine for night jobs
-    fallbacks: [baidu/ernie-5.5-flash-preview:free]
-  reviewer:                        # blind solver — MUST be a different family from the author (Google ≠ NVIDIA)
-    model: google/gemma-4-31b-it:free   # different family from author (never NVIDIA/Baidu)
-    fallbacks: [thinkingmachines/inkling-2-small:free, particle-ai/particle-1:free]
-    if_fallback_family_equals_author: mark_review_not_independent
-  router:                          # prefer deterministic Python rules first (costs no request)
-    model: nvidia/nemotron-3.5-lightning:free   # 99.8% 1d, ~430 ms p50 (lfm-3-1.7b was 69% 1d)
-    fallbacks: [nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free]
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # tools+json+image; ttft 1.5s, tool 1.4s
+      - {provider: openrouter, model: particle-ai/particle-1:free}           # tools+json+image; tool 1.4s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # tools+json; 1M ctx
+      - {provider: nvidia, model: meta/muse-glimmer-30b}                     # tools; different family on NVIDIA
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}  # tools+json+image
+      - {provider: openrouter, model: openrouter/free}
+  vision:                         # photos, handwriting, page images, diagrams
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # read a test ABG image correctly in 1.1s
+      - {provider: openrouter, model: particle-ai/particle-1:free}
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}
+  structured:                     # flashcards, plans, classification, JSON (validate with pydantic + retry once)
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # json 2.1s
+      - {provider: openrouter, model: particle-ai/particle-1:free}           # json 2.0s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # json 2.3s
+  long_context:                   # chapter / PDF summaries
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # 1M ctx
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # 1M ctx
+      - {provider: openrouter, model: particle-ai/particle-1:free}           # 1M ctx
+  author:                         # night-time question authoring (strongest reasoning; latency irrelevant)
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3-ultra-550b-a55b}        # tools+json; correct tool use 2.5s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}
+  reviewer:                       # blind solver: MUST be a different family from every author model (not NVIDIA, not Baidu)
+    chain:
+      - {provider: openrouter, model: particle-ai/particle-1:free}
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}
+      - {provider: openrouter, model: inclusionai/ling-3.2-flash:free}
+    if_family_equals_author: mark_review_not_independent
+  router:                         # Python rules first; small fast model only when ambiguous
+    chain:
+      - {provider: nvidia, model: nvidia/nemotron-3.5-lightning-30b-a3b}    # 0.3s probe
+      - {provider: openrouter, model: nvidia/nemotron-3.5-lightning:free}
   embeddings:                      # LOCAL, free, private, no rate limit
     engine: fastembed==0.9.1
     model: BAAI/bge-small-en-v1.5   # 384 dims, 67 MB, MIT
