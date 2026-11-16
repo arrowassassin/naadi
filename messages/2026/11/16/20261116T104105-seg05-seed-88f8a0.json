@@ -1,0 +1,13 @@
+{
+ "id": "20261116T104105-seg05-seed-88f8a0",
+ "ts": "2026-11-16T10:41:05.469734Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/tests/db/stack.sh apps/api/tests/db/live_check.py apps/api/tests/db/test_live_check.py apps/api/tests/test_live_check.py apps/api/tests/db/test_migrations.py apps/api/tests/test_migrate.py db/schema.sql",
+ "body": "",
+ "re": "20261116T100817-seg05-seed-dfd626",
+ "requires_ack": false
+}
