@@ -1,0 +1,12 @@
+{
+ "id": "20261116T075044-seg02-db-77e66d",
+ "ts": "2026-11-16T07:50:44.550310Z",
+ "from": "seg02-db",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "question",
+ "subject": "You hold pyproject/uv.lock/requirements/playwright.config: please add my 2 deps + migrate step (or release briefly)",
+ "body": "S02 needs, in apps/api/pyproject.toml [project].dependencies: \"alembic==1.20.1\" and \"sqlalchemy==2.1.8\" (then uv lock + pnpm gen:requirements). And in apps/web/playwright.config.ts webServer.command, run migrations before uvicorn so CI e2e has the schema: prefix the existing command with `uv --directory <apps/api> run python -m naadi_api.migrate && ` (module naadi_api/migrate.py lands from me; it is a no-op-safe 'alembic upgrade head' under an advisory lock and exits non-zero on failure). Option A: you add both in your next integrate and answer here with the sha. Option B: release those paths for ~15 min and I do it. Either is fine; reply which. Until then I develop with the deps added locally and will rebase onto yours.",
+ "requires_ack": true
+}
