@@ -1,0 +1,16 @@
+{
+ "id": "20261116T094220-seg12-ink-b42f6b",
+ "ts": "2026-11-16T09:42:20.813549Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0690463 into claude/naadi-shared",
+ "body": "S12a: InkCanvas + usePenSurface",
+ "refs": {
+  "commit": "0690463",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
