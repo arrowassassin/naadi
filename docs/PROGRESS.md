@@ -8,7 +8,9 @@
 - Segment 01 — M0 scaffold, tokens, contracts, health, CI, Docker Space deploy (`implementer-opus`).
 
 ## Next
-- Segment 02 — Alembic migrations + RLS + storage policies.
+- Segment 02 — Alembic migrations + RLS + storage policies (`naadi_alembic_version`).
+- Segment 03 — Auth + app shell.
+- Segment 04 — Agent platform (brief written: `docs/segments/04-agent-platform.md`).
 
 ## Decisions
 | Date | Decision |
@@ -19,10 +21,12 @@
 | 2026-11-16 | Official SDKs only (supabase, openrouter, tavily-python, huggingface_hub, langgraph); raw HTTPS only where no SDK method exists |
 | 2026-11-16 | Pydantic → OpenAPI → generated zod + TS client |
 | 2026-11-16 | DB-backed tests run in GitHub Actions + on the Space (sandbox has no raw TCP) |
+| 2026-11-16 | Agent platform: Aegra (Apache-2.0, LangGraph-SDK compatible) hosts every agent graph and our FastAPI app in one container; pulled forward to segment 04 |
 | 2026-11-16 | Bundle dirs moved from `handoff/` to the repo root |
 
 ## Risks
 - GitHub Actions secrets must be added by the owner (this session can't write them).
 - OpenRouter daily cap is 50 until the one-time $10 purchase.
 - Private Space blocks PWA install on iPad; decide public vs custom domain before M5.
+- Aegra is pre-1.0; pinned, with an in-process `langgraph` fallback if it blocks us.
 - Supabase region is us-west-2 (HANDOFF suggested Mumbai); fine, the Space runs in the US.
