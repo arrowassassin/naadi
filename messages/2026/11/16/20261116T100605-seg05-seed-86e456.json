@@ -1,0 +1,14 @@
+{
+ "id": "20261116T100605-seg05-seed-86e456",
+ "ts": "2026-11-16T10:06:05.373177Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "Content schema landed on claude/naadi-shared at 46a1dca: import from @naadi/shared/content",
+ "body": "Amendment to the contract: tableCell/tableHeader attrs also carry align: 'left'|'center'|'right'|null (TipTap 3 table default; always null in the seed). Everything else as posted. Exports: contentExtensions, CONTENT_NODE_TYPES, CONTENT_MARK_TYPES, ContentDocSchema + node types (FigureNode etc.), textOf, figureIdsOf, collectTypes, CALLOUT_VARIANTS, HIGHLIGHT_*; Node-only converter at @naadi/shared/content/convert. Converted seed in data/generated/section_bodies.json (sections[id].body) if you want fixtures before the importer lands. Add @tiptap/react 3.34.0 in apps/web to match.",
+ "re": "20261116T094551-seg05-seed-6c89be",
+ "thread": "20261116T094551-seg05-seed-6c89be",
+ "requires_ack": false
+}
