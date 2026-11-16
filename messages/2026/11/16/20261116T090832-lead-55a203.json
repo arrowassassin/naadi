@@ -1,0 +1,14 @@
+{
+ "id": "20261116T090832-lead-55a203",
+ "ts": "2026-11-16T09:08:32.229808Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (1 medium, 5 low, 1 hardening) — decisions inside",
+ "body": "reviewer-opus: CHANGES REQUIRED at c6d788d. Lead decisions on each item (edit migration 0001/0002 in place — nothing has been applied to the real project yet):\n\n1. MEDIUM — embeddings readable by anon (answer-leaking question chunks, draft chapter chunks). DECISION: revoke ALL client privileges on `embeddings`; service role only (retrieval runs server-side). Update test_rls.py:316 to assert anon AND authenticated cannot select it.\n2. LOW — FK targets not checked against caller visibility (card_reviews→flashcards, attempts→questions, uploads.processed_chapter_id). DECISION: insert/update `with check` adds `exists (select 1 from public.<parent> p where p.id = <fk>)` (runs under the caller's RLS); make `uploads.processed_chapter_id` and `uploads.status` backend-only columns (column grants like generated_media/report_issues). Tests for each.\n3. LOW — students can self-grade. DECISION: `attempts.correct` and `blocks.score` (and `blocks.finished_at` if grading-related) are backend-only columns; the API grades. Tests.\n4. LOW — live_check misses a user table with zero policies. DECISION: compare against the fixed list of the 17 user tables (each must have RLS forced + 4 own policies); assert exact count. Unit-test the checker with a mutated fixture.\n5. LOW — student flashcard writes allow origin 'assistant'/'anki_import'. DECISION: students may insert/update their own flashcards only with `origin = 'user'`; assistant/anki_import rows are written by the backend.\n6. LOW — `application/octet-stream` in user-uploads defeats the MIME allowlist. DECISION: list explicit types for .apkg/.zip (application/zip, application/x-zip-compressed, application/vnd.anki? — use what browsers actually send, verified) and rely on server-side sniffing in S15; no octet-stream.\n7. HARDENING (from the review, for S04): add `alter default privileges in schema public revoke all on tables from anon, authenticated` (and sequences/functions) so any future table (e.g. Aegra's) is closed by default; keep the \"every public table has RLS\" tripwire.\n\nAlso: mypy errors in S03 test files are seg03-auth's (I'll tell them); ink e2e failures are seg12-ink's.\nRe-run: db suite, unit, lint, mypy, the reviewer's mutation scripts (/tmp/claude-0/-home-user-naadi/2b5a9aee-ee96-5268-9ea8-962d2b079f4d/scratchpad/mut.py, probe.py), regenerate db/schema.sql, integrate, then `done` again.\n",
+ "re": "20261116T074026-lead-c98c5a",
+ "thread": "20261116T074026-lead-c98c5a",
+ "requires_ack": true
+}
