@@ -236,3 +236,27 @@ export function InkToolbar({
     </div>
   );
 }
+
+const STICKY = {
+  top: "sticky top-[calc(var(--shell-top,0px)+8px)] z-10",
+  bottom: "sticky bottom-[calc(var(--shell-bottom,0px)+12px)] z-10",
+} as const;
+
+/**
+ * The ink toolbar pinned to the top or bottom of the scrolling page: use this instead of a sticky wrapper
+ * of your own. The wrapper gets its own compositing layer (will-change: transform). Without one, WebKit
+ * repaints the whole scrolled page, ink pictures included, on every scroll frame to keep the bar in place;
+ * on webkit-laptop-1440 that cost the 5,000-stroke page 20-40 % of its frame rate. The clear dialog is
+ * modal (top layer), so the containing block will-change creates does not affect it.
+ */
+export function StickyInkToolbar({
+  placement,
+  wrapperClassName,
+  ...toolbar
+}: InkToolbarProps & { placement: keyof typeof STICKY; wrapperClassName?: string }) {
+  return (
+    <div className={cx(STICKY[placement], "will-change-transform", wrapperClassName)} data-sticky-ink-toolbar="">
+      <InkToolbar {...toolbar} />
+    </div>
+  );
+}

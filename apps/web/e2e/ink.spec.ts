@@ -641,114 +641,202 @@ test.describe("ink lab", () => {
     await snap(page, info, consoleErrors, "latency-panel", true);
   });
 
+  /** Build the stress page (`heightSu` surface widths tall) and wait until every tile has settled. */
+  async function buildStress(page: Page, heightSu?: number) {
+    await page.goto(heightSu ? `/system/ink-lab?stress_height=${heightSu}` : "/system/ink-lab");
+    await expect(page.getByRole("heading", { level: 1, name: "Ink lab" })).toBeVisible();
+    await page.getByRole("button", { name: "Build 5,000-stroke page" }).click();
+    await expect(page.getByTestId("stress-count")).toHaveText("5,000 items");
+    await settle(page);
+  }
+
+  const settle = (page: Page) =>
+    expect
+      .poll(() => page.evaluate(() => window.naadiInkLab?.stress()?.renderPending() ?? true), { timeout: 90_000 })
+      .toBe(false);
+
+  /**
+   * The first pass: scroll the stress page from top to bottom and back a viewport at a time, letting every
+   * slab paint and settle into its picture. After it, scrolling should paint nothing: slabs that leave
+   * the keep window park their pictures and show them again when they return.
+   */
+  async function firstPass(page: Page) {
+    const { from, to, step } = await page.evaluate(() => {
+      const s = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
+      if (!s) throw new Error("stress surface missing");
+      const top = s.getBoundingClientRect().top + window.scrollY;
+      return {
+        from: Math.max(0, top - 80),
+        to: top + s.offsetHeight - window.innerHeight * 0.5,
+        step: window.innerHeight * 0.8,
+      };
+    });
+    const stops: number[] = [];
+    for (let y = from; y < to; y += step) stops.push(y);
+    stops.push(to);
+    for (const y of [...stops, ...[...stops].reverse()]) {
+      await page.evaluate((y) => window.scrollTo(0, y), y);
+      await settle(page);
+    }
+  }
+
+  const engineStats = (page: Page) =>
+    page.evaluate(() => {
+      const r = window.naadiInkLab?.stress()?.renderStats;
+      return { tilesPainted: r?.tilesPainted ?? 0, repaints: r?.repaints ?? 0, slabsRestored: r?.slabsRestored ?? 0 };
+    });
+
+  interface Round {
+    ink: number;
+    base: number;
+    frames: { ink: number; base: number };
+    frameMs: number;
+    /** Main-thread time of every ink engine on the page, per animation frame of the round (ms). */
+    engineMs: number[];
+  }
+
+  /**
+   * One round: a continuous scroll across the stress page (down, then back up) in which the ink layers are
+   * shown and hidden in alternating slices, while every engine's main-thread probe runs.
+   */
+  const scrollRound = (page: Page, sliceMs: number) =>
+    page.evaluate(
+      ({ sliceMs, durationMs }) =>
+        new Promise<Round>((resolve) => {
+          const lab = window.naadiInkLab;
+          const engines = [lab?.page(), lab?.stress(), ...(lab?.pages() ?? [])].filter((e) => e != null);
+          const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
+          const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
+          if (!surface) throw new Error("stress surface missing");
+          const top = surface.getBoundingClientRect().top + window.scrollY;
+          const from = Math.max(0, top - 80);
+          const to = top + surface.offsetHeight - window.innerHeight * 0.5;
+          const time = { ink: 0, base: 0 };
+          const frames = { ink: 0, base: 0 };
+          const stamps: number[] = [];
+          let shown = true;
+          let start = -1;
+          let prev = -1;
+          let skip = true;
+          const show = (v: boolean) => {
+            shown = v;
+            for (const el of layers) el.style.visibility = v ? "" : "hidden";
+          };
+          window.scrollTo(0, from);
+          show(true);
+          for (const e of engines) e.startProbe();
+          const step = (ts: number) => {
+            stamps.push(ts);
+            if (start < 0) {
+              start = ts;
+              prev = ts;
+              requestAnimationFrame(step);
+              return;
+            }
+            const k = shown ? "ink" : "base";
+            if (!skip) {
+              time[k] += ts - prev;
+              frames[k] += 1;
+            }
+            skip = false;
+            prev = ts;
+            const t = Math.min(1, (ts - start) / durationMs);
+            // Down over the first half, back up over the second.
+            const pos = t < 0.5 ? t * 2 : 2 - t * 2;
+            window.scrollTo(0, from + (to - from) * pos);
+            const want = Math.floor((ts - start) / sliceMs) % 2 === 0;
+            if (want !== shown) {
+              show(want);
+              skip = true;
+            }
+            if (t < 1) {
+              requestAnimationFrame(step);
+              return;
+            }
+            show(true);
+            // Engine callbacks belong to the frame they started in: [stamp i, stamp i+1).
+            const engineMs = new Array<number>(stamps.length).fill(0);
+            for (const e of engines) {
+              const p = e.stopProbe();
+              for (let j = 0; j < p.length; j += 2) {
+                const t0 = p[j] as number;
+                let f = stamps.length - 1;
+                while (f > 0 && (stamps[f] as number) > t0) f--;
+                engineMs[f] = (engineMs[f] as number) + (p[j + 1] as number);
+              }
+            }
+            const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
+            const n = stamps.length - 1;
+            resolve({ ink: fps("ink"), base: fps("base"), frames, frameMs: (ts - start) / Math.max(1, n), engineMs });
+          };
+          requestAnimationFrame(step);
+        }),
+      { sliceMs, durationMs: Math.max(6000, sliceMs * 16) },
+    );
+
+  const percentile = (a: number[], q: number) => {
+    const s = [...a].sort((x, y) => x - y);
+    return s[Math.min(s.length - 1, Math.max(0, Math.ceil(s.length * q) - 1))] ?? 0;
+  };
+
   test("5,000-stroke page scrolls without the ink costing frames (measured against this runner)", async ({
     page,
     consoleErrors,
   }, info) => {
-    test.setTimeout(360_000);
-    await openLab(page);
-    await page.getByRole("button", { name: "Build 5,000-stroke page" }).click();
-    await expect(page.getByTestId("stress-count")).toHaveText("5,000 items");
-    // Measure scrolling, not the first paint: wait until every tile and stroke path is built.
-    await expect
-      .poll(() => page.evaluate(() => window.naadiInkLab?.stress()?.renderPending() ?? true), { timeout: 90_000 })
-      .toBe(false);
+    test.setTimeout(480_000);
+    // dpr 2: a page 12 widths tall is more than the engine keeps as slabs (16 Mpx), so slabs are released
+    // and come back during the rounds.
+    const tall = info.project.name.includes("dpr2");
+    await buildStress(page, tall ? 12 : undefined);
     // The lab's own measurement once, as a student would run it: the button works and reports a rate.
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.getByRole("button", { name: "Measure scroll", exact: true }).click();
     await expect(page.getByRole("button", { name: "Measuring scroll…" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Measure scroll", exact: true })).toBeVisible({ timeout: 20_000 });
     expect(Number(await page.getByTestId("scroll-result").getAttribute("data-fps"))).toBeGreaterThan(0);
-    // The gate: five rounds, each one continuous scroll across the stress page (down, then back up) in which
-    // the ink layers are shown and hidden in alternating slices. Each frame counts for the state it was drawn
-    // in, and the first frame after each switch is left out (it repaints for the switch, not for the scroll).
-    // Both states are measured within a fraction of a second of each other, so a neighbour's load on a shared
-    // runner, which swings over seconds, hits them alike; separate 3 s runs per state could not tell that
-    // load from the ink. A slice is 250 ms, or eight frames at the rate the previous round drew where that
-    // is below 32 fps, so every slice keeps frames after the one it leaves out. A round's ratio is ink-shown fps over ink-hidden fps;
-    // the rounds are judged by their median, and a round with fewer than 12 counted frames in either state
-    // is repeated (at most five extra rounds).
-    const round = (sliceMs: number) =>
-      page.evaluate(
-        ({ sliceMs, durationMs }) =>
-          new Promise<{ ink: number; base: number; frames: { ink: number; base: number }; frameMs: number }>(
-            (resolve) => {
-              const surface = document.querySelector<HTMLElement>('[data-testid="stress"] [data-ink-surface]');
-              const layers = [...document.querySelectorAll<HTMLElement>("[data-ink-layer]")];
-              if (!surface) throw new Error("stress surface missing");
-              const top = surface.getBoundingClientRect().top + window.scrollY;
-              const from = Math.max(0, top - 80);
-              const to = top + surface.offsetHeight - window.innerHeight * 0.5;
-              const time = { ink: 0, base: 0 };
-              const frames = { ink: 0, base: 0 };
-              let shown = true;
-              let start = -1;
-              let prev = -1;
-              let skip = true;
-              let n = 0;
-              const show = (v: boolean) => {
-                shown = v;
-                for (const el of layers) el.style.visibility = v ? "" : "hidden";
-              };
-              window.scrollTo(0, from);
-              show(true);
-              const step = (ts: number) => {
-                if (start < 0) {
-                  start = ts;
-                  prev = ts;
-                  requestAnimationFrame(step);
-                  return;
-                }
-                n++;
-                const k = shown ? "ink" : "base";
-                if (!skip) {
-                  time[k] += ts - prev;
-                  frames[k] += 1;
-                }
-                skip = false;
-                prev = ts;
-                const t = Math.min(1, (ts - start) / durationMs);
-                // Down over the first half, back up over the second.
-                const pos = t < 0.5 ? t * 2 : 2 - t * 2;
-                window.scrollTo(0, from + (to - from) * pos);
-                const want = Math.floor((ts - start) / sliceMs) % 2 === 0;
-                if (want !== shown) {
-                  show(want);
-                  skip = true;
-                }
-                if (t < 1) {
-                  requestAnimationFrame(step);
-                  return;
-                }
-                show(true);
-                const fps = (k2: "ink" | "base") => Math.round((frames[k2] / Math.max(1, time[k2])) * 10000) / 10;
-                resolve({ ink: fps("ink"), base: fps("base"), frames, frameMs: (ts - start) / Math.max(1, n) });
-              };
-              requestAnimationFrame(step);
-            },
-          ),
-        { sliceMs, durationMs: Math.max(6000, sliceMs * 16) },
-      );
+    await firstPass(page);
+    const afterFirst = await engineStats(page);
+    // Three gates.
+    // 1. Frames: five rounds, each one continuous scroll with the ink layers shown and hidden in alternating
+    //    slices. Each frame counts for the state it was drawn in, and the first frame after each switch is
+    //    left out (it repaints for the switch, not for the scroll). Both states are measured within a
+    //    fraction of a second of each other, so a neighbour's load on a shared runner, which swings over
+    //    seconds, hits them alike. A slice is 250 ms, or eight frames at the rate the previous round drew
+    //    where that is below 32 fps. A round's ratio is ink-shown fps over ink-hidden fps; the rounds are
+    //    judged by their median, and a round with fewer than 12 counted frames in either state is repeated
+    //    (at most five extra rounds). Hiding the layers removes their compositing cost only.
+    // 2. Engine time: the engine's scroll and frame work runs whether the layers are shown or not, so the
+    //    ratio cannot see it. Every engine's main-thread time is probed during the rounds and summed per
+    //    animation frame; its p95 must stay under 2 ms. Proof that this sees what the ratio cannot: the test
+    //    below adds 12 ms of work to the stress engine's scroll handler and requires this measure to exceed
+    //    2 ms. (Reviewer's manual check of the old gate: the same 12 ms cost 25-29 % of the frame rate and
+    //    the ratio still passed.)
+    // 3. Paint: after the first pass, the rounds paint no tile (tilesPainted unchanged, no wasted repaint);
+    //    on the tall dpr 2 page, slabs that come back show their parked pictures (slabsRestored > 0).
     const ink: number[] = [];
     const base: number[] = [];
+    const engineMs: number[] = [];
     let rounds = 0;
     let sliceMs = 250;
     let frameMs = 0;
     while (ink.length < 5 && rounds < 10) {
       rounds++;
-      const r = await round(sliceMs);
+      const r = await scrollRound(page, sliceMs);
       frameMs = r.frameMs;
+      engineMs.push(...r.engineMs);
       // Eight frames per slice at the rate this round drew (250 ms down to 32 fps, 2 s at most).
       sliceMs = Math.min(2000, Math.max(sliceMs, Math.ceil(r.frameMs * 8)));
       if (r.frames.ink < 12 || r.frames.base < 12) continue;
       ink.push(r.ink);
       base.push(r.base);
     }
+    const afterRounds = await engineStats(page);
     const median = (a: number[]) => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)] as number;
     const ratios = ink.map((v, i) => v / (base[i] as number));
     const ratio = median(ratios);
     const medInk = median(ink);
     const medBase = median(base);
+    const engineP95 = percentile(engineMs, 0.95);
     // Settled ink is shown as images (canvases only while editing); record what the page actually had.
     const layers = await page.evaluate(() => {
       const shown = (sel: string) =>
@@ -765,10 +853,17 @@ test.describe("ink lab", () => {
       frameMs,
       sliceMs,
       rounds,
+      engine: { frames: engineMs.length, p95Ms: engineP95, maxMs: Math.max(0, ...engineMs) },
+      paint: { afterFirst, afterRounds },
+      tall,
       layers,
     });
     expect(ink.length, `rounds with at least 12 frames per state (slice ${sliceMs} ms, ${rounds} rounds)`).toBe(5);
     expect(layers.canvases, "settled ink is not left on canvases").toBe(0);
+    expect(engineP95, `engine main-thread time per frame, p95 over ${engineMs.length} frames`).toBeLessThan(2);
+    expect(afterRounds.tilesPainted - afterFirst.tilesPainted, "tiles painted after the first pass").toBe(0);
+    expect(afterRounds.repaints, "wasted repaints").toBe(0);
+    if (tall) expect(afterRounds.slabsRestored, "slabs shown again from parked pictures").toBeGreaterThan(0);
     // The ink may cost at most 30 % of what this runner scrolls at with the ink hidden. (Software rendering on
     // shared CI runners is below 60 fps on large viewports even without ink; the device number is measured
     // on the iPad, docs/DEVICE_CHECKLIST.md.)
@@ -789,5 +884,29 @@ test.describe("ink lab", () => {
       });
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "stress-page");
+  });
+
+  test("the engine-time gate sees main-thread work that the frame ratio cancels out", async ({ page }, info) => {
+    // A negative check of gate 2 above, on one WebKit and one Chromium profile: 12 ms of work added to the
+    // stress engine's scroll handler (the engine itself is unchanged; the handler is wrapped at runtime).
+    test.skip(!info.project.name.includes("laptop-1440"), "runs on the laptop profiles");
+    test.setTimeout(240_000);
+    await buildStress(page);
+    await page.evaluate(() => {
+      const e = window.naadiInkLab?.stress() as unknown as { onScroll: () => void } | null;
+      if (!e) throw new Error("stress engine missing");
+      const original = e.onScroll.bind(e);
+      e.onScroll = () => {
+        const t = performance.now();
+        while (performance.now() - t < 12) {
+          // busy-wait: the regression the gate must catch
+        }
+        original();
+      };
+    });
+    const r = await scrollRound(page, 250);
+    const p95 = percentile(r.engineMs, 0.95);
+    record(info, "scroll-engine-negative", { engineP95Ms: p95, frames: r.engineMs.length, ink: r.ink, base: r.base });
+    expect(p95, "12 ms of scroll-handler work shows in the engine-time gate").toBeGreaterThanOrEqual(2);
   });
 });

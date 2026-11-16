@@ -2,7 +2,7 @@ import type { InkEngineState } from "@naadi/ink";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { InkToolbar } from "./InkToolbar";
+import { InkToolbar, StickyInkToolbar } from "./InkToolbar";
 
 // ui_copy comes from /api/public-config; these tests use the shipped defaults (the same text) directly.
 vi.mock("../agent/uiCopy", async () => {
@@ -83,5 +83,30 @@ describe("InkToolbar", () => {
   it("clear is disabled on an empty page", () => {
     setup({ count: 0 });
     expect(screen.getByRole("button", { name: "Clear page" })).toBeDisabled();
+  });
+});
+
+describe("StickyInkToolbar", () => {
+  it("pins the toolbar on its own compositing layer, top or bottom", () => {
+    const noop = () => undefined;
+    const handlers = {
+      onEnabled: noop,
+      onTool: noop,
+      onColor: noop,
+      onEraserMode: noop,
+      onUndo: noop,
+      onRedo: noop,
+      onClear: noop,
+    };
+    const { container, rerender } = render(
+      <StickyInkToolbar placement="top" state={base} theme="dark" {...handlers} />,
+    );
+    const wrapper = container.querySelector("[data-sticky-ink-toolbar]");
+    expect(wrapper?.className).toMatch(/\bsticky\b/);
+    expect(wrapper?.className).toMatch(/\bwill-change-transform\b/);
+    expect(wrapper?.className).toMatch(/\btop-/);
+    expect(screen.getByRole("toolbar", { name: "Ink tools" })).toBeInTheDocument();
+    rerender(<StickyInkToolbar placement="bottom" state={base} theme="dark" {...handlers} />);
+    expect(container.querySelector("[data-sticky-ink-toolbar]")?.className).toMatch(/\bbottom-/);
   });
 });

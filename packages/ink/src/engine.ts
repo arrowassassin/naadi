@@ -193,6 +193,12 @@ const MAX_SLAB_PIXELS = 8_000_000;
 const MAX_SLABS_PIXELS = 16_000_000;
 /** Quiet time after the last change before canvases are swapped for images. */
 const SETTLE_MS = 700;
+/**
+ * Settled pictures of slabs that scrolled out of the keep window stay as compressed PNGs (no canvas, no
+ * decoded element), so a slab coming back shows its picture again instead of being repainted tile by
+ * tile while the student scrolls. Bounded by their encoded size.
+ */
+const MAX_PARKED_BYTES = 48 * 1024 * 1024;
 /** Room the live canvas keeps around its content, so a stroke rarely outgrows it. */
 const LIVE_MARGIN_PX = 48;
 /** Side of the (square) tail canvas around the stroke tip, CSS px; grows only for a very fast stroke. */
@@ -291,7 +297,19 @@ export class InkEngine {
     liveFrames: 0,
     liveMs: 0,
     livePixels: 0,
+    /** Committed tiles painted, and of those, tiles painted again with nothing changed in them (wasted). */
+    tilesPainted: 0,
+    repaints: 0,
+    /** Slabs shown again from their parked picture instead of being repainted. */
+    slabsRestored: 0,
   };
+  /** Main-thread time of each engine callback (scroll, frame, resize, settle) while a probe runs. */
+  private probe: number[] | null = null;
+  /** Parked pictures of released slabs, by slab index (see MAX_PARKED_BYTES). */
+  private parked = new Map<number, ParkedSlab>();
+  private parkedBytes = 0;
+  /** Dirty tiles of off-screen slabs that found no canvas memory last frame (they wait for a settle). */
+  private memoryWait = new Set<string>();
   private readonly liveStroke = new LiveStroke();
   /**
    * The tip of the stroke being drawn lives on its own small canvas: the browser re-uploads a whole canvas
@@ -603,6 +621,34 @@ export class InkEngine {
     return true;
   }
 
+  /**
+   * Main-thread probe: from now on, every engine callback (scroll, animation frame, resize, settle) records
+   * when it started and how long it ran. stopProbe() returns [start, ms, start, ms, ...] (performance.now()
+   * time base) and ends recording. Costs one array push per callback while on, nothing while off.
+   */
+  startProbe(): void {
+    this.probe = [];
+  }
+
+  stopProbe(): number[] {
+    const p = this.probe ?? [];
+    this.probe = null;
+    return p;
+  }
+
+  private timed(fn: () => void): void {
+    if (!this.probe) {
+      fn();
+      return;
+    }
+    const t0 = performance.now();
+    try {
+      fn();
+    } finally {
+      if (this.probe && this.probe.length < 200_000) this.probe.push(t0, performance.now() - t0);
+    }
+  }
+
   destroy(): void {
     if (this.destroyed) return;
     this.destroyed = true;
@@ -613,8 +659,9 @@ export class InkEngine {
     if (this.settleTimer) clearTimeout(this.settleTimer);
     if (this.retryTimer) clearTimeout(this.retryTimer);
     for (const c of this.cleanups) c();
-    for (const slab of this.slabs.values()) this.releaseSlab(slab);
+    for (const slab of this.slabs.values()) this.releaseSlab(slab, false);
     this.slabs.clear();
+    this.dropParked(() => true);
     this.liveLease?.release();
     this.liveLease = null;
     this.tailLease?.release();
@@ -723,10 +770,11 @@ export class InkEngine {
     on(l, "contextmenu", (e: Event) => {
       if (this.state.enabled) e.preventDefault();
     });
-    on(window, "scroll", () => this.onScroll(), { passive: true, capture: true });
-    on(window, "resize", () => this.measure(), { passive: true });
-    if (window.visualViewport) on(window.visualViewport, "resize", () => this.measure(), { passive: true });
-    const ro = new ResizeObserver(() => this.measure());
+    on(window, "scroll", () => this.timed(() => this.onScroll()), { passive: true, capture: true });
+    on(window, "resize", () => this.timed(() => this.measure()), { passive: true });
+    if (window.visualViewport)
+      on(window.visualViewport, "resize", () => this.timed(() => this.measure()), { passive: true });
+    const ro = new ResizeObserver(() => this.timed(() => this.measure()));
     ro.observe(this.host);
     this.cleanups.push(() => ro.disconnect());
   }
@@ -791,8 +839,9 @@ export class InkEngine {
     this.heightPx = h;
     this.dpr = dpr;
     if (changed) {
-      for (const slab of this.slabs.values()) this.releaseSlab(slab);
+      for (const slab of this.slabs.values()) this.releaseSlab(slab, false);
       this.slabs.clear();
+      this.dropParked(() => true);
       this.tileKinds.clear();
       this.dirtyTiles.clear();
       const rows = Math.floor(MAX_SLAB_PIXELS / Math.max(1, w * dpr * dpr) / TILE);
@@ -860,7 +909,7 @@ export class InkEngine {
     );
     for (const [i, slab] of this.slabs) {
       if (keep.has(i)) continue;
-      this.releaseSlab(slab);
+      this.releaseSlab(slab, true);
       this.slabs.delete(i);
     }
     for (const i of keep) if (!this.slabs.has(i)) this.createSlab(i);
@@ -889,9 +938,91 @@ export class InkEngine {
       touched: false,
       stale: false,
     });
-    const slab: Slab = { i, y0, h, marker: layer("marker"), ink: layer("ink"), has: { m: false, k: false } };
+    const slab: Slab = {
+      i,
+      y0,
+      h,
+      marker: layer("marker"),
+      ink: layer("ink"),
+      has: { m: false, k: false },
+      clean: new Set(),
+    };
     this.slabs.set(i, slab);
+    if (this.restoreParked(slab)) return;
     this.markDirtyPx({ x0: 0, y0, x1: this.widthPx, y1: y0 + h });
+  }
+
+  /** Show a slab from its parked pictures (same geometry, content unchanged since): no tile is painted. */
+  private restoreParked(slab: Slab): boolean {
+    const p = this.parked.get(slab.i);
+    if (!p) return false;
+    this.parked.delete(slab.i);
+    this.parkedBytes -= p.bytes;
+    if (p.widthPx !== this.widthPx || p.dpr !== this.dpr || p.h !== slab.h) {
+      for (const pic of [p.m, p.k]) if (pic) URL.revokeObjectURL(pic.url);
+      return false;
+    }
+    for (const [key, kinds] of p.kinds) {
+      this.tileKinds.set(key, kinds);
+      slab.clean.add(key);
+    }
+    slab.has = { m: p.m !== null, k: p.k !== null };
+    for (const [layer, pic] of [
+      [slab.marker, p.m],
+      [slab.ink, p.k],
+    ] as const) {
+      if (!pic) continue;
+      const img = this.slabImage(slab, layer);
+      img.dataset.url = pic.url;
+      img.dataset.bytes = String(pic.bytes);
+      layer.version = 1;
+      layer.settledVersion = 1;
+      img.src = pic.url;
+      img
+        .decode()
+        .catch(() => undefined)
+        .then(() => {
+          if (this.slabs.get(slab.i) === slab && layer.settledVersion === layer.version && !this.destroyed)
+            img.style.display = "";
+        });
+    }
+    this.renderStats.slabsRestored++;
+    return true;
+  }
+
+  /** Forget parked pictures that match (their content changed, or the geometry did). */
+  private dropParked(match: (i: number, p: ParkedSlab) => boolean): void {
+    for (const [i, p] of this.parked) {
+      if (!match(i, p)) continue;
+      for (const pic of [p.m, p.k]) if (pic) URL.revokeObjectURL(pic.url);
+      this.parkedBytes -= p.bytes;
+      this.parked.delete(i);
+    }
+  }
+
+  /** The settled-picture element of a layer, created in paint order (marker below ink) when missing. */
+  private slabImage(slab: Slab, layer: SlabLayer): HTMLImageElement {
+    if (layer.img) return layer.img;
+    const img = this.host.ownerDocument.createElement("img");
+    img.alt = "";
+    img.setAttribute("aria-hidden", "true");
+    img.draggable = false;
+    img.dataset.inkImage = layer.kind;
+    Object.assign(img.style, {
+      position: "absolute",
+      left: "0",
+      top: `${slab.y0}px`,
+      width: `${this.widthPx}px`,
+      height: `${slab.h}px`,
+      pointerEvents: "none",
+      display: "none",
+    });
+    const other = layer.kind === "marker" ? slab.ink : null;
+    const before = layer.canvas?.nextSibling ?? other?.canvas ?? other?.img ?? this.liveCanvas;
+    this.layer.insertBefore(img, before);
+    layer.img = img;
+    this.applySlabStyle(slab);
+    return img;
   }
 
   /** Allocate (or touch) a layer's backing store; restores the settled pixels when it was released. */
@@ -980,18 +1111,53 @@ export class InkEngine {
     else layer.stale = true;
   }
 
-  private releaseSlab(slab: Slab): void {
+  private releaseSlab(slab: Slab, park: boolean): void {
+    const kinds: [string, { m: boolean; k: boolean }][] = [];
+    for (const [key, k] of this.tileKinds) {
+      const ty = Number(key.split(",")[1]);
+      if (ty * TILE >= slab.y0 && ty * TILE < slab.y0 + slab.h) kinds.push([key, k]);
+    }
+    for (const [key] of kinds) this.tileKinds.delete(key);
+    // Parkable: nothing waiting to be painted in it, and every kind it has is settled in a picture.
+    const picture = (layer: SlabLayer, on: boolean) => {
+      if (!on) return null;
+      const url = layer.img?.dataset.url;
+      if (!url || layer.settledVersion !== layer.version || layer.stale) return undefined;
+      return { url, bytes: Number(layer.img?.dataset.bytes ?? 0) };
+    };
+    const pending = [...this.dirtyTiles].some((key) => {
+      const ty = Number(key.split(",")[1]);
+      return ty * TILE >= slab.y0 && ty * TILE < slab.y0 + slab.h;
+    });
+    const m = picture(slab.marker, slab.has.m);
+    const k = picture(slab.ink, slab.has.k);
+    const keep = park && !pending && m !== undefined && k !== undefined && (m !== null || k !== null);
     for (const layer of [slab.marker, slab.ink]) {
       this.dropBacking(layer);
       layer.canvas?.remove();
       if (layer.img) {
-        if (layer.img.dataset.url) URL.revokeObjectURL(layer.img.dataset.url);
+        if (!keep && layer.img.dataset.url) URL.revokeObjectURL(layer.img.dataset.url);
+        layer.img.removeAttribute("src");
         layer.img.remove();
       }
     }
-    for (const key of [...this.tileKinds.keys()]) {
-      const ty = Number(key.split(",")[1]);
-      if (ty * TILE >= slab.y0 && ty * TILE < slab.y0 + slab.h) this.tileKinds.delete(key);
+    if (!keep) return;
+    const bytes = (m?.bytes ?? 0) + (k?.bytes ?? 0);
+    this.dropParked((i) => i === slab.i);
+    this.parked.set(slab.i, {
+      widthPx: this.widthPx,
+      dpr: this.dpr,
+      h: slab.h,
+      m: m ?? null,
+      k: k ?? null,
+      kinds,
+      bytes,
+    });
+    this.parkedBytes += bytes;
+    // Over the bound: forget the oldest parked pictures first (Map order is insertion order).
+    for (const [i] of this.parked) {
+      if (this.parkedBytes <= MAX_PARKED_BYTES) break;
+      this.dropParked((j) => j === i);
     }
   }
 
@@ -1155,7 +1321,8 @@ export class InkEngine {
   }
 
   private invalidateAll(): void {
-    this.markDirtyPx({ x0: 0, y0: 0, x1: this.widthPx, y1: this.heightPx });
+    this.dropParked(() => true);
+    this.markDirtyPx({ x0: 0, y0: 0, x1: this.widthPx, y1: this.heightPx }, true);
     this.liveDirty = true;
     this.requestFrame();
   }
@@ -1165,27 +1332,36 @@ export class InkEngine {
     if (rectIsEmpty(r)) return;
     const w = this.widthPx;
     const p = padRect(r, 2 / Math.max(1, w));
-    this.markDirtyPx({ x0: p.x0 * w, y0: p.y0 * w, x1: p.x1 * w, y1: p.y1 * w });
+    const px = { x0: p.x0 * w, y0: p.y0 * w, x1: p.x1 * w, y1: p.y1 * w };
+    if (this.slabH > 0) this.dropParked((i) => i * this.slabH < px.y1 && (i + 1) * this.slabH > px.y0);
+    this.markDirtyPx(px, true);
   }
 
-  /** Mark tiles dirty for a rectangle in CSS px (surface-relative); only tiles of existing slabs matter. */
-  private markDirtyPx(r: Rect): void {
+  /**
+   * Mark tiles dirty for a rectangle in CSS px (surface-relative); only tiles of existing slabs matter.
+   * `content`: what is drawn there changed, so painting those tiles again is not a wasted repaint.
+   */
+  private markDirtyPx(r: Rect, content = false): void {
     const x0 = Math.max(0, r.x0);
     const x1 = Math.min(this.widthPx, r.x1);
     const y0 = Math.max(0, r.y0);
     const y1 = Math.min(this.heightPx, r.y1);
     if (!(x1 > x0 && y1 > y0) || this.slabH <= 0) return;
     for (let ty = Math.floor(y0 / TILE); ty <= Math.floor((y1 - 0.001) / TILE); ty++) {
-      if (!this.slabs.has(Math.floor((ty * TILE) / this.slabH))) continue;
-      for (let tx = Math.floor(x0 / TILE); tx <= Math.floor((x1 - 0.001) / TILE); tx++)
-        this.dirtyTiles.add(`${tx},${ty}`);
+      const slab = this.slabs.get(Math.floor((ty * TILE) / this.slabH));
+      if (!slab) continue;
+      for (let tx = Math.floor(x0 / TILE); tx <= Math.floor((x1 - 0.001) / TILE); tx++) {
+        const key = `${tx},${ty}`;
+        this.dirtyTiles.add(key);
+        if (content) slab.clean.delete(key);
+      }
     }
     this.requestFrame();
   }
 
   private requestFrame(): void {
     if (this.raf || this.destroyed) return;
-    this.raf = requestAnimationFrame((ts) => this.onFrame(ts));
+    this.raf = requestAnimationFrame((ts) => this.timed(() => this.onFrame(ts)));
   }
 
   /** After painting tiles: show the canvases that hold the newest pixels, hide stale images, re-settle. */
@@ -1231,15 +1407,21 @@ export class InkEngine {
    */
   private scheduleSettle(): void {
     if (this.settleTimer) clearTimeout(this.settleTimer);
-    this.settleTimer = setTimeout(() => {
-      this.settleTimer = null;
-      if (this.destroyed) return;
-      if (this.gesture || this.dirtyTiles.size > 0) {
-        this.scheduleSettle();
-        return;
-      }
-      for (const slab of this.slabs.values()) this.settleSlab(slab);
-    }, SETTLE_MS);
+    this.settleTimer = setTimeout(
+      () =>
+        this.timed(() => {
+          this.settleTimer = null;
+          if (this.destroyed) return;
+          // Tiles that wait for canvas memory do not hold settling back: settling is what releases it (on a
+          // page taller than the budget, waiting for them would wait forever).
+          if (this.gesture || [...this.dirtyTiles].some((key) => !this.memoryWait.has(key))) {
+            this.scheduleSettle();
+            return;
+          }
+          for (const slab of this.slabs.values()) this.settleSlab(slab);
+        }),
+      SETTLE_MS,
+    );
   }
 
   private settleSlab(slab: Slab): void {
@@ -1258,27 +1440,7 @@ export class InkEngine {
         };
         if (!blob || this.destroyed || this.slabs.get(slab.i) !== slab || layer.version !== v) return done();
         const url = URL.createObjectURL(blob);
-        let img = layer.img;
-        if (!img) {
-          img = this.host.ownerDocument.createElement("img");
-          img.alt = "";
-          img.setAttribute("aria-hidden", "true");
-          img.draggable = false;
-          img.dataset.inkImage = layer.kind;
-          Object.assign(img.style, {
-            position: "absolute",
-            left: "0",
-            top: `${slab.y0}px`,
-            width: `${this.widthPx}px`,
-            height: `${slab.h}px`,
-            pointerEvents: "none",
-            display: "none",
-          });
-          canvas.after(img);
-          layer.img = img;
-          this.applySlabStyle(slab);
-        }
-        const target = img;
+        const target = this.slabImage(slab, layer);
         const previous = target.dataset.url;
         target.src = url;
         target
@@ -1287,6 +1449,7 @@ export class InkEngine {
           .then(() => {
             if (previous) URL.revokeObjectURL(previous);
             target.dataset.url = url;
+            target.dataset.bytes = String(blob.size);
             if (this.slabs.get(slab.i) === slab && layer.version === v && !this.destroyed) {
               target.style.display = "";
               canvas.style.display = "none";
@@ -1342,6 +1505,7 @@ export class InkEngine {
       }
       for (const slab of touched) this.updateSlabVisibility(slab);
       for (const key of waiting) this.dirtyTiles.add(key);
+      this.memoryWait = new Set(waiting);
       if (this.dirtyTiles.size > waiting.length) this.requestFrame();
       else if (waiting.length > 0) this.retryLater();
     }
@@ -1417,6 +1581,12 @@ export class InkEngine {
     ictx?.restore();
     if (kinds.m || kinds.k) this.tileKinds.set(key, kinds);
     else this.tileKinds.delete(key);
+    // A tile whose other layer found no memory is painted again in full later: count it then.
+    if ((mctx || ictx) && !this.deferred) {
+      this.renderStats.tilesPainted++;
+      if (slab.clean.has(key)) this.renderStats.repaints++;
+      slab.clean.add(key);
+    }
     return slab;
   }
 
@@ -2174,6 +2344,19 @@ interface Slab {
   marker: SlabLayer;
   ink: SlabLayer;
   has: { m: boolean; k: boolean };
+  /** Tiles painted since their content last changed: painting one again is a wasted repaint. */
+  clean: Set<string>;
+}
+
+/** A released slab's settled pictures (blob URLs) and tile kinds, for the same geometry only. */
+interface ParkedSlab {
+  widthPx: number;
+  dpr: number;
+  h: number;
+  m: { url: string; bytes: number } | null;
+  k: { url: string; bytes: number } | null;
+  kinds: [string, { m: boolean; k: boolean }][];
+  bytes: number;
 }
 
 /** How far a tile ("tx,ty") is from the visible range, in CSS px (0 = visible). */

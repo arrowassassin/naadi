@@ -21,7 +21,7 @@ import type React from "react";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { type InkCopy, inkErrorText, useInkCopy } from "./copy";
 import { InkCanvas } from "./InkCanvas";
-import { InkToolbar } from "./InkToolbar";
+import { StickyInkToolbar } from "./InkToolbar";
 import "./ink-lab.css";
 import { measureScroll, type ScrollMeasurement, stressStrokes } from "./stress";
 
@@ -46,6 +46,15 @@ declare global {
 
 const STRESS_COUNT = 5000;
 const STRESS_HEIGHT_SU = 4;
+
+/**
+ * The stress page's height in surface widths: 4, or `?stress_height=N` (2-16). A taller page (the e2e
+ * suite uses 12 at dpr 2) is more than the engine keeps as slabs, so slabs are released and come back.
+ */
+function stressHeightSu(): number {
+  const n = Number(new URLSearchParams(window.location.search).get("stress_height"));
+  return Number.isFinite(n) && n >= 2 && n <= 16 ? n : STRESS_HEIGHT_SU;
+}
 const MANY_PAGES = 12;
 const MANY_PAGE_STROKES = 400;
 
@@ -226,6 +235,7 @@ export function InkLab() {
   const [manyPages, setManyPages] = useState<InkItem[][] | null>(null);
   const pageEngines = useRef<(InkEngine | null)[]>([]);
   const [budget, setBudget] = useState(() => canvasBudget.stats());
+  const [stressHeight] = useState(stressHeightSu);
   const t = useInkCopy();
 
   useEffect(() => {
@@ -329,7 +339,7 @@ export function InkLab() {
   );
 
   const buildStress = () => {
-    const items = stressStrokes(STRESS_COUNT, STRESS_HEIGHT_SU);
+    const items = stressStrokes(STRESS_COUNT, stressHeight);
     setStressItems(items);
     setStressCount(items.length);
     setScroll(null);
@@ -411,24 +421,20 @@ export function InkLab() {
         </p>
       ) : null}
 
-      {/* Its own compositing layer: without one, WebKit repaints the whole scrolled page (ink images
-          included) on every scroll frame to keep the sticky bar in place. The clear dialog is modal (top
-          layer), so the containing block will-change creates does not affect it. */}
-      <div className="sticky top-[calc(var(--shell-top,0px)+8px)] z-10 will-change-transform">
-        {state ? (
-          <InkToolbar
-            state={{ ...state, enabled, tool, color, eraserMode }}
-            theme={surfaceTheme}
-            onEnabled={setEnabled}
-            onTool={setTool}
-            onColor={setColor}
-            onEraserMode={setEraserMode}
-            onUndo={() => pageEngine.current?.undo()}
-            onRedo={() => pageEngine.current?.redo()}
-            onClear={() => pageEngine.current?.clear()}
-          />
-        ) : null}
-      </div>
+      {state ? (
+        <StickyInkToolbar
+          placement="top"
+          state={{ ...state, enabled, tool, color, eraserMode }}
+          theme={surfaceTheme}
+          onEnabled={setEnabled}
+          onTool={setTool}
+          onColor={setColor}
+          onEraserMode={setEraserMode}
+          onUndo={() => pageEngine.current?.undo()}
+          onRedo={() => pageEngine.current?.redo()}
+          onClear={() => pageEngine.current?.clear()}
+        />
+      ) : null}
 
       <section aria-labelledby="ink-settings-h" className="flex flex-col gap-3">
         <SectionHeading id="ink-settings-h">{t("ink.lab.settings")}</SectionHeading>
@@ -652,7 +658,7 @@ export function InkLab() {
                 "w-full overflow-hidden rounded-tile-sm",
                 surfaceTheme === "paper" ? "bg-paper" : "bg-surface-1",
               )}
-              style={{ aspectRatio: `1 / ${STRESS_HEIGHT_SU}` }}
+              style={{ aspectRatio: `1 / ${stressHeight}` }}
               items={stressItems}
               enabled={enabled}
               tool={tool}
