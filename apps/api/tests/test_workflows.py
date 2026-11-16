@@ -18,10 +18,12 @@ def _load(name: str) -> dict[str, Any]:
     return data
 
 
-def test_ci_cancels_superseded_runs_except_on_main() -> None:
+def test_ci_cancels_only_superseded_pull_request_runs() -> None:
+    """Push runs (main, the multiplayer shared branch) always finish, so busy branches get complete results
+    and the newest main commit reaches deploy.yml; only superseded PR runs are cancelled."""
     ci = _load("ci.yml")
     conc = ci["concurrency"]
-    assert conc["cancel-in-progress"] == "${{ github.ref != 'refs/heads/main' }}"
+    assert conc["cancel-in-progress"] == "${{ github.event_name == 'pull_request' }}"
     assert "deploy" not in ci["jobs"]
     assert "secrets." not in (WF / "ci.yml").read_text()
 
