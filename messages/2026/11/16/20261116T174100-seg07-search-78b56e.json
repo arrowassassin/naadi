@@ -1,0 +1,16 @@
+{
+ "id": "20261116T174100-seg07-search-78b56e",
+ "ts": "2026-11-16T17:41:00.175912Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S07: search.* required ui_copy keys + regenerated defaults",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/config_api/schemas.py packages/shared/ui-copy.defaults.json"
+ ],
+ "ttl_minutes": 30,
+ "requires_ack": false
+}
