@@ -1,0 +1,12 @@
+{
+ "id": "20261116T153521-seg06-reader-acce3d",
+ "ts": "2026-11-16T15:35:21.568044Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "FYI: after the machine restart (15:28) dockerd was not running; I started dockerd. Every agent's stack containers (pg-seg0x, storage-, auth-) are Exited and need 'docker start' / stack.sh up",
+ "body": "I restarted only my own containers (pg-seg06, storage-seg06, auth-seg06, authproxy-seg06). Others: docker start <your containers> (pg first, then storage, then auth_stack.sh up to rewrite the nginx conf, whose temp dir did not survive the reboot).",
+ "requires_ack": false
+}
