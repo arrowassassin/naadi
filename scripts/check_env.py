@@ -4,12 +4,18 @@
 #   "httpx==0.28.1",
 #   "psycopg[binary]==3.3.9",
 #   "huggingface_hub==2.4.0",
+#   "supabase==2.34.1",
+#   "openrouter==1.3.179",
+#   "tavily-python==0.8.5",
 # ]
 # ///
 """Verify Naadi's environment without ever printing a value.
 
 Usage:  uv run scripts/check_env.py            (all checks; Tavily costs 1 credit)
         uv run scripts/check_env.py --no-tavily
+
+Uses the official SDKs (supabase, openrouter, tavily-python, huggingface_hub, psycopg). Raw HTTPS is used
+only where no SDK method exists: Supabase auth settings + JWKS endpoints and the Supabase Management API.
 
 Reads os.environ first, then `.env` in the repo root as a local-dev fallback.
 Prints PASS / FAIL / WARN / SKIP per key and per live check. Exit code 1 if any required check fails.
@@ -263,6 +269,7 @@ def check_supabase() -> None:
     if not (su and anon):
         report("SKIP", "Supabase auth settings", "SUPABASE_URL / SUPABASE_ANON_KEY missing")
         return
+    # No SDK method exposes GET /auth/v1/settings, so this one call is raw HTTPS.
     try:
         r = httpx.get(f"{su}/auth/v1/settings", headers={"apikey": anon}, timeout=TIMEOUT)
         if r.status_code == 200:
@@ -282,14 +289,13 @@ def check_supabase() -> None:
     except Exception as e:  # noqa: BLE001
         report("FAIL", "Supabase auth settings", f"{type(e).__name__}: {e}")
 
-    # service role: list storage buckets (requires elevated key)
+    # service role: list storage buckets via the SDK (requires the elevated key)
     if srv:
+        from supabase import create_client
+
         try:
-            r = httpx.get(f"{su}/storage/v1/bucket", headers={"apikey": srv, "Authorization": f"Bearer {srv}"}, timeout=TIMEOUT)
-            if r.status_code == 200:
-                report("PASS", "Supabase service role key", f"storage admin OK ({len(r.json())} bucket(s))")
-            else:
-                report("FAIL", "Supabase service role key", f"HTTP {r.status_code} on storage bucket list")
+            n = len(create_client(su, srv).storage.list_buckets())
+            report("PASS", "Supabase service role key", f"storage admin OK via SDK ({n} bucket(s))")
         except Exception as e:  # noqa: BLE001
             report("FAIL", "Supabase service role key", f"{type(e).__name__}: {e}")
 
@@ -370,16 +376,15 @@ def check_supabase_mgmt() -> None:
 def check_openrouter() -> None:
     key = get("OPENROUTER_API_KEY")
     if not key:
-        report("SKIP", "OpenRouter GET /api/v1/key", "OPENROUTER_API_KEY missing")
+        report("SKIP", "OpenRouter key metadata", "OPENROUTER_API_KEY missing")
         return
+    from openrouter import OpenRouter
+
     try:
-        r = httpx.get("https://openrouter.ai/api/v1/key", headers={"Authorization": f"Bearer {key}"}, timeout=TIMEOUT)
-        if r.status_code != 200:
-            report("FAIL", "OpenRouter GET /api/v1/key", f"HTTP {r.status_code}")
-            return
-        d = r.json().get("data", {})
-        free_tier = d.get("is_free_tier")
-        report("PASS", "OpenRouter GET /api/v1/key", f"valid; is_free_tier={free_tier}")
+        with OpenRouter(api_key=key) as client:
+            d = client.api_keys.get_current_key_metadata().data
+        free_tier = d.is_free_tier
+        report("PASS", "OpenRouter key metadata", f"valid (SDK api_keys.get_current_key_metadata); is_free_tier={free_tier}")
         cap = get("OPENROUTER_DAILY_CAP")
         if free_tier is True and cap == "1000":
             report("WARN", "OpenRouter daily cap", "cap=1000 but account has no credit purchase yet (real cap is 50/day)")
@@ -387,11 +392,11 @@ def check_openrouter() -> None:
             report("WARN", "OpenRouter daily cap", "credits purchased: you can raise OPENROUTER_DAILY_CAP to 1000")
         elif cap:
             report("PASS", "OpenRouter daily cap", f"{cap}/day consistent with account")
-        rem = d.get("free_model_daily_requests") or d.get("rate_limit")
-        if rem is not None:
-            report("PASS", "OpenRouter free quota visible", "free_model_daily_requests reported" if "free_model_daily_requests" in d else "rate_limit reported")
+        fmdr = getattr(d, "free_model_daily_requests", None)
+        report("PASS" if fmdr is not None else "WARN", "OpenRouter free quota visible",
+               "free_model_daily_requests reported" if fmdr is not None else "free_model_daily_requests absent")
     except Exception as e:  # noqa: BLE001
-        report("FAIL", "OpenRouter GET /api/v1/key", f"{type(e).__name__}: {e}")
+        report("FAIL", "OpenRouter key metadata", f"{type(e).__name__}: {e}")
 
 
 def check_tavily(enabled: bool) -> None:
@@ -402,19 +407,14 @@ def check_tavily(enabled: bool) -> None:
     if not enabled:
         report("SKIP", "Tavily basic search", "--no-tavily", False)
         return
+    from tavily import TavilyClient
+
     try:
-        r = httpx.post(
-            "https://api.tavily.com/search",
-            headers={"Authorization": f"Bearer {key}"},
-            json={"query": "USMLE Step 1 content outline", "search_depth": "basic", "max_results": 1,
-                  "include_answer": False, "include_domains": ["usmle.org"]},
-            timeout=TIMEOUT,
+        res = TavilyClient(api_key=key).search(
+            "USMLE Step 1 content outline", search_depth="basic", max_results=1,
+            include_answer=False, include_domains=["usmle.org"],
         )
-        if r.status_code == 200:
-            n = len(r.json().get("results", []))
-            report("PASS", "Tavily basic search", f"{n} result(s), 1 credit used")
-        else:
-            report("FAIL", "Tavily basic search", f"HTTP {r.status_code}")
+        report("PASS", "Tavily basic search", f"{len(res.get('results', []))} result(s), 1 credit used (SDK)")
     except Exception as e:  # noqa: BLE001
         report("FAIL", "Tavily basic search", f"{type(e).__name__}: {e}")
 
