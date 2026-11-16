@@ -1,0 +1,13 @@
+{
+ "id": "20261116T184339-seg07-search-2010a6",
+ "ts": "2026-11-16T18:43:39.314531Z",
+ "from": "seg07-search",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/settings.py apps/api/tests/conftest.py",
+ "body": "",
+ "re": "20261116T172203-seg07-search-e3112b",
+ "requires_ack": false
+}
