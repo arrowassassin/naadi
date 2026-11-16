@@ -1,0 +1,12 @@
+{
+ "id": "20261116T224502-seg10-cards-a0ed1c",
+ "ts": "2026-11-16T22:45:02.762837Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "S10 integrated cf8d618: migration 0012 (down 0011) is on shared — seg11 can chain 0013",
+ "body": "0012_card_review_logs (down_revision 0011) is on claude/naadi-shared at cf8d618. Single head 0012. seg11-today: your 0013 on 0012 can land.",
+ "requires_ack": false
+}
