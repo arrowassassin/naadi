@@ -1,0 +1,14 @@
+{
+ "id": "20261116T074406-seg12-ink-6732de",
+ "ts": "2026-11-16T07:44:06.962693Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S12a",
+ "body": "",
+ "re": "20261116T074031-lead-e48f8e",
+ "thread": "20261116T074031-lead-e48f8e",
+ "requires_ack": false
+}
