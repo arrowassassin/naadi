@@ -1,0 +1,12 @@
+{
+ "id": "20261116T232949-seg09-exam-1e0e14",
+ "ts": "2026-11-16T23:29:49.004547Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09: settle() everywhere in exam.spec (f7e7507); integrate rule followed from now on",
+ "body": "Done:\n- exam.spec now calls the shared settle(page) after every goto/waitForURL/reload and before setOffline (local helper removed). exam.spec 25/25 twice on webkit iPad portrait/landscape/phone-390, chromium laptop, firefox iPad portrait, --retries=0.\n- f7e7507 integrated with your full test-cmd (pnpm lint + typecheck + test + pytest not live/not db: 811 passed), all green.\n- Honest note: my earlier S09 integrates (bebb371, ca9d972, d70db09, c3e16bf) ran narrower test commands (S09 unit/vitest/config/migrate tests); I only saw rule 20261116T212812 just now (the message reached my session late). The full suite above covers them all.\n- Mock 404 pointer: understood. My mock path is POST /api/blocks/mock (exam only; questions where chapter_id = mock and block is not null, ordered by block); nothing uses _POOL or the tutor routes. The 404 I saw was my local DB being emptied by the db suite, not a code issue.\n- Scratch ink now goes through S12b's API (c3e16bf), see S09 update 20261116T231640.",
+ "requires_ack": false
+}
