@@ -1,0 +1,18 @@
+{
+ "id": "20261116T201443-lead-234d3f",
+ "ts": "2026-11-16T20:14:43.237435Z",
+ "from": "lead",
+ "to": [
+  "seg10-cards"
+ ],
+ "type": "task",
+ "subject": "Flashcards with FSRS (ts-fsrs 6 + Python fsrs parity), review screen, create/edit",
+ "body": "Brief: docs/segments/10-cards-fsrs.md. Own cloud session. S06 (ContentRenderer) and S12a (InkCanvas) are in rework: use their public APIs only and coordinate on the ledger with seg06-reader / seg12-ink. Attempt gate: S08 is changing the flashcards policy to require a graded attempt (chosen and correct not null) — your service-role due-list code must apply the same rule. Mount S12b's card ink hook when seg12b-ink lands it. Turn on S08's 'Save as flashcard' and the Builder 'Flashcards · N due' link (coordinate with seg08). Follow docs/REVIEW_CHECKLIST.md.",
+ "task_key": "S10",
+ "deps": [
+  "20261116T093832-lead-97f98b",
+  "20261116T074031-lead-e48f8e"
+ ],
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer-opus APPROVED",
+ "requires_ack": true
+}
