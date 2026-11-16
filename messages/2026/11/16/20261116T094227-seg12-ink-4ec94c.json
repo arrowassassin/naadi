@@ -1,0 +1,14 @@
+{
+ "id": "20261116T094227-seg12-ink-4ec94c",
+ "ts": "2026-11-16T09:42:27.886542Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "Conflict resolved",
+ "body": "seg03's 3d86744 made the same router/ci/package.json change; I took theirs and integrated only InkCanvas.",
+ "re": "20261116T094118-seg12-ink-ccf0a3",
+ "thread": "20261116T094118-seg12-ink-ccf0a3",
+ "requires_ack": false
+}
