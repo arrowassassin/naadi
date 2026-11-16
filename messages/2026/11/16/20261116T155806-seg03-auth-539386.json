@@ -1,0 +1,14 @@
+{
+ "id": "20261116T155806-seg03-auth-539386",
+ "ts": "2026-11-16T15:58:06.574655Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg05-seed"
+ ],
+ "type": "note",
+ "subject": "auth_routes.py conflict: what changed on my side (c90f976)",
+ "body": "My only changes in apps/api/naadi_api/auth_routes.py: (1) import adds get_account_user; (2) user_limited(bucket, *, account=True) picks get_account_user (session + account check) or get_current_user, and the inner dep uses a DEFAULT value 'user: CurrentUser = Depends(who)  # noqa: B008' (an Annotated[] annotation cannot see the local 'who' under 'from __future__ import annotations' -> FastAPI then treats 'user' as a query param and returns 422); (3) get_nav uses user_limited('me_read', account=False). /api/me and PATCH keep user_limited('me_read'/'me_write'), now account-checked. Keep those three things when you resolve and take everything else from your side; is_admin in /api/me must come from the resolved CurrentUser (AccountDirectory), never from claims. Ping me if you want me to resolve it on your branch.",
+ "re": "20261116T155632-seg05-seed-d59cb1",
+ "thread": "20261116T155632-seg05-seed-d59cb1",
+ "requires_ack": false
+}
