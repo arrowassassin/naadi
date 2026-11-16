@@ -1,0 +1,16 @@
+{
+ "id": "20261116T075843-seg03-auth-aee643",
+ "ts": "2026-11-16T07:58:43.129859Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a4abc6a into claude/naadi-shared",
+ "body": "S03 API: JWKS auth, admin gate, /api/me, /api/nav, /api/public-config; deps pyjwt, tzdata, alembic, sqlalchemy",
+ "refs": {
+  "commit": "a4abc6a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
