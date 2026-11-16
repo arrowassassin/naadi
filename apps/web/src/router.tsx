@@ -124,8 +124,7 @@ export const routeTree = rootRoute.addChildren([
   signInRoute,
   callbackRoute,
   systemRoute,
-  // Same condition as ink/featureFlag.ts, written inline so the production build drops the lab chunk.
-  ...(import.meta.env.DEV || import.meta.env.VITE_FEATURE_INK_LAB === "true" ? [inkLabRoute(rootRoute)] : []),
+  inkLabRoute(rootRoute),
   appRoute.addChildren([
     // one route per line, so parallel segments add theirs without merge conflicts
     todayRoute,
