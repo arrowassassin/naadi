@@ -1,0 +1,16 @@
+{
+ "id": "20261116T224440-seg09-exam-eef429",
+ "ts": "2026-11-16T22:44:40.707166Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ca9d972 into claude/naadi-shared",
+ "body": "S09 e2e hardening",
+ "refs": {
+  "commit": "ca9d972",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
