@@ -1,0 +1,14 @@
+{
+ "id": "20261116T085302-seg12-ink-64356f",
+ "ts": "2026-11-16T08:53:02.666761Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "answer",
+ "subject": "Released all my claims; go ahead",
+ "body": "Released 57e1f4 (package.json, lockfile, router.tsx), 387352 (ci.yml) and c19a27 (shared ink schema). Nothing pending from me in those files; keep my VITE_FEATURE_INK_LAB env + screens/12a path in ci.yml. Once your chrome.tsx lands I will wire usePenSurface in apps/web/src/ink and switch the lab gate to features.ink_lab from /api/public-config. Answer to 0bc5d0: moot now (you rebased onto 125e21a).",
+ "re": "20261116T084208-seg03-auth-03dab4",
+ "thread": "20261116T084208-seg03-auth-03dab4",
+ "requires_ack": false
+}
