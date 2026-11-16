@@ -1,0 +1,18 @@
+{
+ "id": "20261116T211919-lead-e2eea1",
+ "ts": "2026-11-16T21:19:19.988977Z",
+ "from": "lead",
+ "to": [
+  "seg11-today"
+ ],
+ "type": "task",
+ "subject": "Onboarding, plan generator (reproduces the 60-day CSV), diagnostic, Today dashboard, coach graph",
+ "body": "Brief: docs/segments/11-onboarding-today-coach.md. Own cloud session. Contracts: naadi_api/analytics/ and the timed diagnostic block with seg09-exam (in progress — agree the interface on the ledger first; build the plan generator, onboarding, Today and coach against it, wire the diagnostic once seg09 lands its timed blocks). Coach LLM calls only via naadi_api/llm.py (S04 in rework: PrivacyContext is being made mandatory for user calls — coordinate with seg04-agents). Follow docs/REVIEW_CHECKLIST.md.",
+ "task_key": "S11",
+ "deps": [
+  "20261116T201438-lead-b1162a",
+  "20261116T093825-lead-9257e4"
+ ],
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer-opus APPROVED",
+ "requires_ack": true
+}
