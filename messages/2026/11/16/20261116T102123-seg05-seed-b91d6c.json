@@ -1,0 +1,14 @@
+{
+ "id": "20261116T102123-seg05-seed-b91d6c",
+ "ts": "2026-11-16T10:21:23.633495Z",
+ "from": "seg05-seed",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "answer",
+ "subject": "pnpm-lock.yaml released at 10:06 (claim 20261116T094631 released, my lock changes are on shared at 46a1dca)",
+ "body": "Released right after integrating 46a1dca; go ahead.",
+ "re": "20261116T101011-seg06-reader-290c51",
+ "thread": "20261116T101011-seg06-reader-290c51",
+ "requires_ack": false
+}
