@@ -26,6 +26,7 @@ const INPUT =
   "min-h-14 w-full rounded-swatch border border-line-control bg-ground px-[18px] text-[1.0625rem] text-text disabled:text-text-muted aria-invalid:border-amber";
 
 function ProfileForm({ me }: { me: MeResponse }) {
+  const t = useUiText();
   const online = useOnlineStatus();
   const update = useUpdateMe();
   const [name, setName] = useState(me.profile.display_name ?? "");
@@ -68,7 +69,7 @@ function ProfileForm({ me }: { me: MeResponse }) {
             setSaved(false);
           }}
         />
-        {tooLong ? <span className="text-amber">Use at most 120 characters.</span> : null}
+        {tooLong ? <span className="text-amber">{t("account.name_too_long")}</span> : null}
       </label>
       <label htmlFor={tzId} className="flex flex-col gap-2 text-[0.875rem] text-text-2">
         Time zone
@@ -184,11 +185,12 @@ function SignOutPanel() {
 }
 
 export function AccountPage() {
+  const t = useUiText();
   const me = useMe();
   return (
     <section aria-labelledby="account-h" className="flex flex-col gap-8 pt-6 tablet:pt-12">
       <div className="flex flex-col gap-3">
-        <span className="font-mono text-label text-text-3 uppercase">Settings</span>
+        <span className="font-mono text-label text-text-3 uppercase">{t("account.settings_label")}</span>
         <h1 id="account-h" className="m-0 font-display text-headline">
           Account
         </h1>
@@ -220,7 +222,7 @@ export function AccountPage() {
           </Tile>
           <div className="flex flex-col gap-5">
             <Tile as="section" aria-labelledby="signin-h" className="flex flex-col gap-4">
-              <TileLabel>Signed in as</TileLabel>
+              <TileLabel>{t("account.signed_in_as")}</TileLabel>
               <h2 id="signin-h" className="m-0 break-all font-semibold text-[1.0625rem]">
                 {me.data.email ?? "No email on this account"}
               </h2>

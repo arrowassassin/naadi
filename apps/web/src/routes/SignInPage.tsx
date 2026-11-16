@@ -158,7 +158,7 @@ export function SignInPage({ next, notice }: SignInPageProps) {
 
             {unavailable ? (
               <ErrorState
-                title="Sign-in is unavailable"
+                title={copy("signin.unavailable_title")}
                 message={auth.error.message}
                 requestId={auth.error.requestId}
                 onRetry={() => window.location.reload()}
