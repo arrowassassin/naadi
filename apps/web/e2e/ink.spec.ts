@@ -94,6 +94,25 @@ async function openLab(page: Page) {
   await expect(page.getByRole("toolbar", { name: "Ink tools" })).toBeVisible();
 }
 
+/** Mean RGB of a PNG screenshot, decoded in the page (no image library on the test side). */
+async function meanColour(page: Page, png: Buffer): Promise<number[]> {
+  return page.evaluate(async (b64) => {
+    const img = new Image();
+    img.src = `data:image/png;base64,${b64}`;
+    await img.decode();
+    const c = document.createElement("canvas");
+    c.width = img.naturalWidth;
+    c.height = img.naturalHeight;
+    const ctx = c.getContext("2d") as CanvasRenderingContext2D;
+    ctx.drawImage(img, 0, 0);
+    const d = ctx.getImageData(0, 0, c.width, c.height).data;
+    const sum = [0, 0, 0];
+    for (let i = 0; i < d.length; i += 4) for (let k = 0; k < 3; k++) sum[k] = (sum[k] ?? 0) + (d[i + k] as number);
+    const n = d.length / 4;
+    return sum.map((v) => v / n);
+  }, png.toString("base64"));
+}
+
 /**
  * Is there committed ink at this fraction of the surface? Ink is on a slab canvas while it is being
  * edited and on a settled image otherwise; read whichever is shown (or the canvas, if it still holds pixels).
@@ -487,8 +506,11 @@ test.describe("ink lab", () => {
         width: 24,
         height: Math.max(6, row.height * 0.4),
       };
-      return consoleErrors.duringTool(() => page.screenshot({ clip, animations: "disabled" }));
+      const png = await consoleErrors.duringTool(() => page.screenshot({ clip, animations: "disabled" }));
+      return meanColour(page, png);
     };
+    // Largest per-channel change of the mean colour (screenshots differ by a few levels run to run).
+    const moved = (a: number[], b: number[]) => Math.max(...a.map((v, i) => Math.abs(v - (b[i] ?? 0))));
     const markRow = async (testId: string) => {
       const { host, row, fy } = await rowBox(testId);
       const fx0 = (row.x - host.x + row.width * 0.1) / host.width;
@@ -502,17 +524,18 @@ test.describe("ink lab", () => {
     await markRow("plain-row");
     await markRow("opaque-row");
     await page.waitForTimeout(300);
-    expect((await shot("plain-row")).equals(plainBefore), "marker shows on a plain row").toBe(false);
-    expect((await shot("opaque-row")).equals(opaqueBefore), "under-layer marker is hidden by an opaque fill").toBe(
-      true,
-    );
+    expect(moved(await shot("plain-row"), plainBefore), "marker shows on a plain row").toBeGreaterThan(20);
+    expect(
+      moved(await shot("opaque-row"), opaqueBefore),
+      "under-layer marker is hidden by an opaque fill",
+    ).toBeLessThan(6);
 
     // PDF/image surface: the marker multiplies over the content, so the opaque row is highlighted too.
     await page.getByRole("button", { name: "Page content: text" }).click();
     const marker = page.locator(`${PAGE} canvas[data-ink-canvas="marker"]`).first();
     await expect.poll(() => marker.evaluate((c) => getComputedStyle(c).mixBlendMode)).toBe("multiply");
     expect(await marker.evaluate((c) => getComputedStyle(c).zIndex)).toBe("1");
-    await expect.poll(async () => (await shot("opaque-row")).equals(opaqueBefore)).toBe(false);
+    await expect.poll(async () => moved(await shot("opaque-row"), opaqueBefore)).toBeGreaterThan(20);
   });
 
   test("12 surfaces share one canvas memory budget", async ({ page }, info) => {

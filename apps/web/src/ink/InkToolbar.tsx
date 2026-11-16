@@ -66,7 +66,7 @@ export function InkToolbar({
       aria-label="Ink tools"
       className={cx(
         // One row at every width; on a phone it scrolls sideways instead of wrapping into three rows.
-        "flex flex-nowrap items-center gap-0.5 overflow-x-auto overscroll-x-contain rounded-[28px] border border-line-strong bg-ground p-1.5 [scrollbar-width:none] [&>*]:shrink-0",
+        "relative flex flex-nowrap items-center gap-0.5 overflow-x-auto overscroll-x-contain rounded-[28px] border border-line-strong bg-ground p-1.5 [scrollbar-width:none] [&>*]:shrink-0",
         className,
       )}
     >
