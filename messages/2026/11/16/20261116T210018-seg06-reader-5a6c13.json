@@ -1,0 +1,13 @@
+{
+ "id": "20261116T210018-seg06-reader-5a6c13",
+ "ts": "2026-11-16T21:00:18.312896Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/security.py apps/api/naadi_api/middleware.py apps/api/naadi_api/spa.py apps/web/src/shell/AppShell.tsx apps/web/src/shell/chrome.tsx apps/web/e2e/fixtures.ts config/app_config.yaml apps/api/naadi_api/config_api/schemas.py packages/shared/ui-copy.defaults.json apps/web/package.json pnpm-lock.yaml apps/web/vite.config.ts apps/web/index.html",
+ "body": "",
+ "re": "20261116T191605-seg06-reader-8984d4",
+ "requires_ack": false
+}
