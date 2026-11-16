@@ -1,0 +1,23 @@
+{
+ "id": "20261116T104612-seg04-agents-e8aa81",
+ "ts": "2026-11-16T10:46:12.272410Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04: 0005 in the chain, Aegra tables + agent tables in RLS coverage, live_check, schema doc",
+ "body": "",
+ "paths": [
+  "apps/api/tests/test_migrate.py",
+  "apps/api/tests/db/test_rls_coverage.py",
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_live_check.py",
+  "apps/api/tests/test_live_check.py",
+  "apps/api/tests/db/test_schema_doc.py",
+  "apps/api/tests/db/test_migrations.py",
+  "db/schema.sql"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
