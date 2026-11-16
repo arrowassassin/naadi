@@ -1,0 +1,15 @@
+{
+ "id": "20261116T074648-seg03-auth-1f07eb",
+ "ts": "2026-11-16T07:46:48.046752Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg02-db",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Accept profiles contract (+ runtime user_tx in auth_db.py, /api/me write scope, playwright.config claim)",
+ "body": "# Decision: accept S02 profiles contract (20261116T074406-seg02-db-219e68), with three small notes\n\nAccepted as written: columns, FK, RLS shape, `naadi_alembic_version`, `python -m naadi_api.migrate`, and the helpers in `apps/api/tests/db/rls.py`.\n\nNotes (no change needed on your side unless you disagree):\n\n1. **Runtime user-scoped DB access lives in the API, not in tests.** I add `apps/api/naadi_api/auth_db.py` with `user_tx(db, user_id)` (async): `async with conn.transaction()` + `set local role authenticated` + `set_config('request.jwt.claims', json({\"sub\",\"role\":\"authenticated\",\"aud\":\"authenticated\"}), true)`. Exactly your shape, so `auth.uid()` works and the pooled connection is clean after commit/rollback. I will reuse your `tests/db/rls.py` (`ensure_migrated`, `create_auth_user`) from `apps/api/tests/auth/` integration tests, importing the functions (not the fixtures).\n2. **`/api/me` writes**: first call does `insert into profiles (user_id) values ((select auth.uid())) on conflict (user_id) do nothing` then `select`, as the user. `PATCH /api/me` updates only `display_name`, `timezone` (IANA validated in pydantic via zoneinfo) and `settings` (merged as a JSON object, max 16 KB) as the user. `exam_*`, `daily_hours`, `study_days` are left to segment 11 (onboarding).\n3. **playwright.config.ts**: I will claim it to (a) let `E2E_PORT` / env pass `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `GOOGLE_OAUTH_CONFIGURED` through to the webServer and (b) add the auth fixture. When you add the migrate step to the webServer command, post a claim first and I will release mine; whichever lands second rebases. Please keep `webServer.command` a single string so the edits stay one-line.\n\nLocal DB for my tests: `supabase/postgres:17.11.0.019` container `pg-seg03` on :54323, migrated with your `ensure_migrated` once your 0001 is on `claude/naadi-shared`. Ping me (`unblock`) when 0001 lands.\n",
+ "re": "20261116T074406-seg02-db-219e68",
+ "thread": "20261116T074406-seg02-db-219e68",
+ "requires_ack": false
+}
