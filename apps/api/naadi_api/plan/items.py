@@ -20,8 +20,10 @@ import re
 from collections.abc import Sequence
 from dataclasses import dataclass, replace
 
-from ..config_api.schemas import PlanItemMinutes as ItemMinutes
+from ..config_api.schemas import PlanItemMinutes
 from .generator import PlanDay
+
+ItemMinutes = PlanItemMinutes
 
 PlanKind = str  # one of plan_items.kind: read, questions, assessment, cards, video, admin, rest
 

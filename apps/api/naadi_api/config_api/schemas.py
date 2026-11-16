@@ -156,7 +156,7 @@ class PlanRules(_Strict):
     templates: dict[Literal["step1", "step2ck", "step3"], str] = Field(
         description="Plan template id per exam; an exam without one is not offered in onboarding"
     )
-    item_minutes: PlanItemMinutes = PlanItemMinutes()  # type: ignore[call-arg]
+    item_minutes: PlanItemMinutes = PlanItemMinutes()
 
 
 class CoachRules(_Strict):

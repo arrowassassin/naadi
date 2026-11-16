@@ -29,6 +29,7 @@ from .health.service import Check, HealthService
 from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import RequestContextMiddleware
+from .plan.routes import install_plan_routes
 from .qbank.routes import install_qbank_routes
 from .search_routes import install_search_routes, start_search, stop_search
 from .seed.jobs import drain_seed_tasks
@@ -127,6 +128,7 @@ def create_app(
     install_courses_routes(app)
     install_qbank_routes(app)
     install_cards_routes(app)
+    install_plan_routes(app)
     install_search_routes(app)
     install_ink_routes(app)
     install_app_config(app, settings)
