@@ -151,7 +151,8 @@ async def test_budget_exhausted_switches_the_whole_pass_to_rules() -> None:
 
 async def test_unavailable_model_or_all_dropped_fall_back_to_rules() -> None:
     stats = PassStats()
-    out = await word(FakeGateway(LLMUnavailable("structured", [])), offered(), user_id=UID, run_id=None, limit=2, stats=stats)
+    down = FakeGateway(LLMUnavailable("structured", []))
+    out = await word(down, offered(), user_id=UID, run_id=None, limit=2, stats=stats)
     assert [w.source for w in out] == ["rules", "rules"]
     gw = FakeGateway(_reply([{"kind": "review_misses", "title": "Misses", "body": "You missed 99."}]))
     out = await word(gw, offered(), user_id=UID, run_id=None, limit=3, stats=stats)

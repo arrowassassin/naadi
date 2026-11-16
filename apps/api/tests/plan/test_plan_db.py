@@ -298,3 +298,16 @@ def test_template_rows_round_trip_through_the_database(pg: psycopg.Connection[An
         to_csv(generate(template_days(db_rows), inputs))
         == (Path(__file__).resolve().parents[4] / "data" / "study_plan_step1_60d.csv").read_bytes()
     )
+
+
+def test_concurrent_first_requests_all_see_the_profile(
+    client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID]
+) -> None:
+    """A new student's first page load sends /api/me, /api/today and /api/onboarding at once: none may 500."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    a, _ = users
+    paths = ["/api/me", "/api/today", "/api/onboarding"] * 4
+    with ThreadPoolExecutor(max_workers=len(paths)) as pool:
+        codes = list(pool.map(lambda p: client.get(p, headers=auth(key, a)).status_code, paths))
+    assert codes == [200] * len(paths)

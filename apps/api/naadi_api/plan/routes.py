@@ -172,12 +172,15 @@ def _summary_out(days: list[PlanDay], inputs: PlanInputs) -> PlanSummaryOut:
 
 
 def _timed_block_creator() -> Any:
-    """`naadi_api.qbank.exam.create_timed_block` (segment 09), or None while timed blocks have not shipped."""
+    """`naadi_api.qbank.timed_blocks.create_timed_block` (segment 09, ledger decision 20261116T215440), or None
+    while timed blocks have not shipped."""
+    import importlib
+
     try:
-        from ..qbank import exam  # type: ignore[attr-defined, unused-ignore]
+        mod = importlib.import_module("naadi_api.qbank.timed_blocks")
     except ImportError:
         return None
-    return getattr(exam, "create_timed_block", None)
+    return getattr(mod, "create_timed_block", None)
 
 
 async def _diagnostic_available(request: Request, user: CurrentUser) -> bool:
@@ -567,7 +570,7 @@ async def create_diagnostic(
     cfg_any: Any = cfg
     if "purpose" in type(cfg).model_fields:
         cfg_any = cfg.model_copy(update={"purpose": "diagnostic"})
-    block = await creator(_db(request), user, cfg_any, ids, sections=1)
+    block = await creator(_db(request), user, cfg_any, ids, rules=rules, sections=1)
     return DiagnosticOut(block_id=block.id, questions=len(ids), created=True)
 
 
@@ -682,7 +685,8 @@ async def get_today(request: Request, user: Annotated[CurrentUser, limited("plan
                     mode=mode,
                     answered=b["answered"],
                     total=total,
-                    next_n=min(b["answered"] + 1, total),
+                    # The timed/exam player resumes its own section and clock from question 1 (segment 09).
+                    next_n=min(b["answered"] + 1, total) if mode == "tutor" else 1,
                     diagnostic=(b["config"] or {}).get("purpose") == "diagnostic",
                 )
         if resume is None:

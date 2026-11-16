@@ -250,9 +250,19 @@ limit 1
 ).format(cols=_PROFILE_COLS)
 
 
+_PROFILE_SQL = sql.SQL("select {cols} from public.profiles where user_id = (select auth.uid())").format(
+    cols=_PROFILE_COLS
+)
+
+
 async def _ensure_profile(conn: psycopg.AsyncConnection[Any]) -> dict[str, Any]:
     cur = await conn.execute(_ENSURE_SQL)
     row = await cur.fetchone()
+    if row is None:
+        # A concurrent first request inserted the row after this statement's snapshot was taken (on conflict
+        # waited for it, then did nothing): a new statement sees the committed row.
+        cur = await conn.execute(_PROFILE_SQL)
+        row = await cur.fetchone()
     if row is None:
         raise RuntimeError("profile upsert returned no row")
     return dict(row)

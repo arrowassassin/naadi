@@ -75,7 +75,8 @@ function watchConsole(page: Page): { errors: string[]; guard: ConsoleGuard } {
   const errors: string[] = [];
   let tool = 0;
   page.on("console", (m) => {
-    if (m.type() === "error" && !(tool > 0 && m.text() === TOOL_CSP_NOISE)) errors.push(m.text());
+    if (m.type() === "error" && !(tool > 0 && m.text() === TOOL_CSP_NOISE))
+      errors.push(`${m.text()} @ ${m.location().url}`);
   });
   page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
   const guard: ConsoleGuard = {
