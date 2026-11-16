@@ -68,6 +68,8 @@ function webServers(): PlaywrightTestConfig["webServer"] {
   const env = (extra: Record<string, string> = {}) => ({
     NAADI_STATIC_DIR: path.join(here, "dist"),
     APP_ENV: "local",
+    // Aegra reads DEBUG as a boolean; Playwright's own DEBUG=pw:* must not reach the API process.
+    DEBUG: "false",
     APP_VERSION: process.env.APP_VERSION ?? "e2e",
     // The local API is checked against throwaway test accounts, never the owner's address.
     ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
