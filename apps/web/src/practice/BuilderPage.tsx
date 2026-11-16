@@ -5,6 +5,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { Minus, Plus } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
+import { CardsDueLink } from "../cards/hooks";
 import { useBlocks, useCreateBlock, useCreateWeakSpotBlock, usePool } from "./api";
 import { useCopy } from "./copy";
 import { resumeIndex, shortDate } from "./format";
@@ -617,12 +618,15 @@ export function BuilderPage({ exam, mock }: { exam?: string; mock?: MockId }) {
     <section aria-labelledby="practice-h" className="flex flex-col gap-8 pt-6 pb-8 tablet:gap-10 tablet:pt-10">
       <header className="flex flex-wrap items-end justify-between gap-6">
         <Headline lead={t("practice.headline")} muted={t("practice.headline_muted")} />
-        <a
-          href="#past-blocks"
-          className="inline-flex min-h-12 items-center rounded-pill border border-line-control px-5 text-[0.875rem] text-text no-underline hover:bg-surface-2 hover:text-text"
-        >
-          {t("practice.past_blocks")}
-        </a>
+        <span className="flex flex-wrap items-center gap-3">
+          <CardsDueLink className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-line-control px-5 text-[0.875rem] text-text no-underline hover:bg-surface-2 hover:text-text" />
+          <a
+            href="#past-blocks"
+            className="inline-flex min-h-12 items-center rounded-pill border border-line-control px-5 text-[0.875rem] text-text no-underline hover:bg-surface-2 hover:text-text"
+          >
+            {t("practice.past_blocks")}
+          </a>
+        </span>
       </header>
       <BuilderBody
         {...{

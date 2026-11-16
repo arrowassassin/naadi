@@ -512,7 +512,7 @@ export function ReviewPage() {
           key={`${current.id}-${flipped ? "back" : "front"}`}
           doc={face}
           sectionId={`card-${current.id}-${flipped ? "back" : "front"}`}
-          copy={(key) => t(key)}
+          text={t}
           headingBase={3}
           className={cx(faceSize(faceText), flipped ? "text-ground! [&_strong]:text-ground!" : "text-text!")}
         />

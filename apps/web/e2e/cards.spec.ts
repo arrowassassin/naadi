@@ -354,6 +354,67 @@ test.describe("review", () => {
   });
 });
 
+test.describe("from practice (segment 08)", () => {
+  test("Save as flashcard after a graded tutor answer; the Builder links to the due cards", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    const student = await freshStudent(browser, baseURL as string, info);
+    try {
+      const { page } = await student.open("/practice");
+      const { errors, guard } = watchConsole(page);
+      // the Builder links to the cards with today's count
+      await expect(page.getByRole("link", { name: "Flashcards · none due" })).toBeVisible();
+
+      const made = await api<{ id: string }>(page, "POST", "/api/blocks", {
+        exam: "step1",
+        count: 1,
+        mode: "tutor",
+        status: "all",
+        seed: 3,
+      });
+      expect(made.status).toBe(201);
+      const q = await api<{ question: { id: string } }>(page, "GET", `/api/blocks/${made.json.id}/questions/1`);
+      const qid = q.json.question.id;
+      // before answering there is no way to make a card from the question
+      expect(
+        (await api(page, "POST", "/api/cards", { front_text: "Q", back_text: "A", question_id: qid })).status,
+      ).toBe(404);
+      await page.goto(`/practice/blocks/${made.json.id}/1`);
+      await expect(page.getByRole("button", { name: "Save as flashcard" })).toHaveCount(0);
+      await expect(page.getByRole("radio")).toHaveCount(5);
+      await page.keyboard.press("1");
+      await page.keyboard.press("Control+Enter");
+      await expect(page.getByRole("region", { name: "Explanation" })).toBeVisible();
+      const save = page.getByRole("button", { name: "Save as flashcard" });
+      await expect(save).toBeVisible();
+      await save.click();
+      const dialog = page.getByRole("dialog", { name: "New card" });
+      await expect(dialog.getByLabel("Front")).not.toHaveValue("");
+      await dialog.getByLabel("Back").fill("My own takeaway");
+      await snap(page, info, guard, "save-as-flashcard", false);
+      await dialog.getByRole("button", { name: "Save card" }).click();
+      await expect(dialog).toBeHidden();
+      await expect(page.getByText("Saved to your cards")).toBeVisible();
+
+      await page.goto("/practice");
+      const link = page.getByRole("link", { name: "Flashcards · 1 due" });
+      await expect(link).toBeVisible();
+      await expect.poll(() => limeCount(page)).toBe(1);
+      await snap(page, info, guard, "builder-link");
+      await link.click();
+      await page.waitForURL((u) => u.pathname === "/cards");
+      await page.getByRole("button", { name: "Show answer" }).click();
+      const source = page.getByRole("link", { name: "Open source page" });
+      await expect(source).toHaveAttribute("href", `/practice/question/${qid}`);
+      // the one refused request is the probe above (no card from an unanswered question)
+      expect(errors.filter((e) => !/status of 404/.test(e))).toEqual([]);
+    } finally {
+      await student.done();
+    }
+  });
+});
+
 test.describe("production server (strict CSP)", () => {
   const PROD = process.env.E2E_PROD_URL;
   test.skip(!PROD, "needs the local APP_ENV=prod API (not available against the live Space)");

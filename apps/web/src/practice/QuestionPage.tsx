@@ -4,6 +4,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { BookOpen, Check, ChevronLeft, ChevronRight, Flag, FlaskConical, PenLine, TriangleAlert } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
+import { SaveAsFlashcard } from "../cards/hooks";
 import { SafeHtml } from "../content/SafeHtml";
 import { ExamPage } from "../exam/ExamPage";
 import { InkCanvas } from "../ink/InkCanvas";
@@ -41,6 +42,11 @@ function Loading() {
       ))}
     </section>
   );
+}
+
+/** The text of trusted-but-unrendered HTML (DOMParser runs no scripts and loads nothing). */
+function htmlText(html: string): string {
+  return new DOMParser().parseFromString(html, "text/html").body.textContent?.trim() ?? "";
 }
 
 function Explanation({ view, correct }: { view: QuestionView; correct: boolean | null }) {
@@ -82,6 +88,13 @@ function Explanation({ view, correct }: { view: QuestionView; correct: boolean |
       {correct === null ? null : (
         <span className="sr-only">{correct ? t("practice.correct") : t("practice.incorrect")}</span>
       )}
+      {/* Segment 10: the explanation exists only after the student's graded attempt. */}
+      <SaveAsFlashcard
+        questionId={view.question.id}
+        graded
+        prefill={{ front: htmlText(view.question.stem_html), back: ex.educational_objective ?? "" }}
+        className="self-start"
+      />
     </section>
   );
 }
