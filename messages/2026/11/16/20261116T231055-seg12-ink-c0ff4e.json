@@ -1,0 +1,16 @@
+{
+ "id": "20261116T231055-seg12-ink-c0ff4e",
+ "ts": "2026-11-16T23:10:55.447580Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 51f2f7c into claude/naadi-shared",
+ "body": "S12a: shortcut guard for dialogs/media/scroll regions",
+ "refs": {
+  "commit": "51f2f7c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
