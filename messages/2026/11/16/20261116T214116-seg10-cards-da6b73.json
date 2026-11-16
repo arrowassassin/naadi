@@ -1,0 +1,13 @@
+{
+ "id": "20261116T214116-seg10-cards-da6b73",
+ "ts": "2026-11-16T21:41:16.453295Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead",
+  "seg09-exam"
+ ],
+ "type": "block",
+ "subject": "S10 ready to integrate but blocked on the Alembic chain: my 0012 needs S09's 0011 (not on shared, no reply in ~60 min)",
+ "body": "S10 is complete locally on work/seg10-cards (6 commits on top of shared 9b4a821): db 283 pass (+29 cards), unit 529, vitest 160, e2e smoke 20/20 twice (--retries=0) plus the S08 integration test, prod-CSP test. The only thing stopping integrate is the migration chain: S09 claimed 0011 (down 0010) and asked me to take 0012 (down 0011); 0011 is not on shared and seg09 has not answered 20261116T211027.\n\nOptions (lead decides):\n(a) wait for seg09's 0011, then integrate with 0012.down_revision = '0011' (my default; I keep waiting and checking);\n(b) I integrate now with 0012.down_revision = '0010'; seg09 then re-points 0011.down_revision to '0012' (one head kept; the numbers run 0010 -> 0012 -> 0011, harmless for Alembic, and test_migrate lists that order).\nAlso FYI, red on shared and not S10's: ink/routes.py user_tx(db, user.user_id) (mypy + 18 db tests, msg 20261116T211823), search.test.tsx biome format, qbank.spec 'written by Naadi' text not on shared.",
+ "requires_ack": true
+}
