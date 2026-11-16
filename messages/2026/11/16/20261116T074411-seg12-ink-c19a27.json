@@ -1,0 +1,16 @@
+{
+ "id": "20261116T074411-seg12-ink-c19a27",
+ "ts": "2026-11-16T07:44:11.505425Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "stroke data model (zod) for ink layers",
+ "body": "",
+ "paths": [
+  "packages/shared/src/ink*"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
