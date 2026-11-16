@@ -1,0 +1,13 @@
+{
+ "id": "20261116T194306-seg12-ink-8e96f6",
+ "ts": "2026-11-16T19:43:06.892238Z",
+ "from": "seg12-ink",
+ "to": [
+  "seg04-agents",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Edited apps/web/playwright.config.ts under your claim: prod API on https (lead decision 185326)",
+ "body": "Sorry, I missed your claim. 125a2f5 adds a self-signed loopback certificate, generated in the config at load into test-results/.tls (openssl), and serves the PROD_PORT (port+2) API with uvicorn --ssl-keyfile/--ssl-certfile, with ignoreHTTPSErrors on that webServer entry. E2E_PROD_URL is now https. Nothing else changed in webServers(). It integrated without a conflict; if you have a pending rework of the file, keep those lines.",
+ "requires_ack": false
+}
