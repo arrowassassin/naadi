@@ -1,0 +1,17 @@
+{
+ "id": "20261116T201438-lead-b1162a",
+ "ts": "2026-11-16T20:14:38.954391Z",
+ "from": "lead",
+ "to": [
+  "seg09-exam"
+ ],
+ "type": "task",
+ "subject": "Timed/exam modes, server-authoritative timer, navigator, Results analytics",
+ "body": "Brief: docs/segments/09-timed-exam-results.md. Own cloud session. S08 is in rework (ledger 20261116T200750-lead-086169: mock questions exam-only, attempts DELETE/correct-column revokes, flag gate): build on its API and coordinate on the ledger with seg08-qbank before touching naadi_api/qbank/ or apps/web/src/practice/. Mocks A/B run only as timed exam blocks here. Use S07's Ctrl/Cmd+K suppression hook in exam screens (seg07 adding it). Follow docs/REVIEW_CHECKLIST.md.",
+ "task_key": "S09",
+ "deps": [
+  "20261116T171101-lead-738182"
+ ],
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer-opus APPROVED",
+ "requires_ack": true
+}
