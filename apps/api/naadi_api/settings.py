@@ -84,6 +84,9 @@ class Settings(BaseSettings):
     openrouter_app_title: str = "Naadi"
     nvidia_api_key: SecretStr | None = None
     tavily_api_key: SecretStr | None = None
+    # Local search (segment 07): bring the embeddings index in line with the content when the API starts
+    # (a background task; a no-op when nothing changed or the models are not cached).
+    embeddings_autostart: bool = True
 
     # ── Auth / admin (PII, so a secret) ──
     admin_emails: SecretStr | None = None

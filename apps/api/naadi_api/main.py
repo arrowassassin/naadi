@@ -21,6 +21,7 @@ from .health.service import Check, HealthService
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import RequestContextMiddleware
 from .qbank.routes import install_qbank_routes
+from .search_routes import install_search_routes, start_search, stop_search
 from .seed.jobs import drain_seed_tasks
 from .seed.jobs import router as seed_router
 from .settings import Settings, get_settings
@@ -76,6 +77,7 @@ def create_app(
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         await db.open()
         await app.state.app_config.start()
+        await start_search(app)
         log.info(
             "startup",
             environment=settings.app_env,
@@ -87,6 +89,7 @@ def create_app(
             yield
         finally:
             await drain_seed_tasks(app)
+            await stop_search(app)
             await app.state.app_config.stop()
             await db.close()
             log.info("shutdown")
@@ -110,6 +113,7 @@ def create_app(
     install_auth_routes(app)
     install_courses_routes(app)
     install_qbank_routes(app)
+    install_search_routes(app)
     install_app_config(app, settings)
     app.include_router(seed_router)
     install_spa(app, settings.static_dir)

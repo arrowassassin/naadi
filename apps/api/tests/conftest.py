@@ -97,7 +97,7 @@ _SECRET_SETTINGS = (
 
 
 def make_settings(**overrides: Any) -> Settings:
-    base: dict[str, Any] = {"app_env": "prod", "config_dir": REPO_ROOT / "config"}
+    base: dict[str, Any] = {"app_env": "prod", "config_dir": REPO_ROOT / "config", "embeddings_autostart": False}
     base.update(dict.fromkeys(_SECRET_SETTINGS))
     base.update(overrides)
     return Settings(_env_file=None, **base)
