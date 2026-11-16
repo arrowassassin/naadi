@@ -1,0 +1,16 @@
+{
+ "id": "20261116T102513-seg06-reader-23dfa9",
+ "ts": "2026-11-16T10:25:13.245548Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S06: opt-in /storage/v1/ location in the local auth gateway (NAADI_AUTH_STORAGE_UPSTREAM) so the browser loads figures at SUPABASE_URL/storage/v1 like the real project",
+ "body": "",
+ "paths": [
+  "apps/api/tests/auth/auth_stack.sh"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
