@@ -27,6 +27,8 @@ export interface InkLayerHandle {
   /** The device copy has been read (the canvas may show ink); the network may still be loading. */
   ready: boolean;
   state: InkSaveState;
+  /** Loaded from the server and nothing in flight or pending. */
+  idle: boolean;
   failure: InkFailure | null;
   /** Live items drawn on an earlier revision of the surface content (section text changed since). */
   outdated: number;
@@ -155,6 +157,7 @@ export function useInkLayer(
   return {
     ready: items !== undefined,
     state: sync?.state ?? "loading",
+    idle: (sync?.idle ?? false) && !query.isFetching,
     failure: sync?.lastFailure ?? null,
     outdated: query.data?.outdated ?? 0,
     retry,

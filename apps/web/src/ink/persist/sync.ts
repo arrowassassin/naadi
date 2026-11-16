@@ -104,6 +104,7 @@ export class InkSync {
   /** IndexedDB accepted our writes (false in private mode or when storage is full). */
   private durable = true;
   private stopped = false;
+  private loadedOnce = false;
   outdated = 0;
 
   constructor(options: InkSyncOptions) {
@@ -125,6 +126,11 @@ export class InkSync {
     if (this.failure === "server" || this.failure === "limit") return "error";
     if (this.failure === "offline") return this.durable ? "local" : "error";
     return "saving";
+  }
+
+  /** The server has answered at least once and nothing is in flight or waiting to be sent (tests, navigation). */
+  get idle(): boolean {
+    return this.loadedOnce && !this.busy && this.pending.size === 0;
   }
 
   get lastFailure(): InkFailure | null {
@@ -280,6 +286,7 @@ export class InkSync {
         throw err;
       }
       this.hadSnapshot = true;
+      this.loadedOnce = true;
       this.outdated = out.outdated;
       this.applyServer(out.items, out.reset || since === null);
       this.rev = out.rev;

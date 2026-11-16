@@ -86,6 +86,7 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
     await page.waitForURL((u) => u.pathname === SECTION, { timeout: 30_000 });
     await page.evaluate(() => document.fonts.ready);
     await expect(page.locator(SAVE)).toHaveAttribute("data-ink-save", "saved", { timeout: 20_000 });
+    await expect(page.locator("[data-ink-idle]")).toBeAttached({ timeout: 20_000 }); // loaded, nothing in flight
     return page;
   };
   const done = async () => {

@@ -40,7 +40,11 @@ export function SectionInk({ sectionId, doc, on, onToggle, offline, children, cl
   const onState = useCallback((s: InkEngineState) => setState(s), []);
 
   return (
-    <div className={cx("flex flex-col gap-4", className)}>
+    <div
+      className={cx("flex flex-col gap-4", className)}
+      data-section-ink=""
+      data-ink-idle={layer.idle ? "" : undefined}
+    >
       <div className="flex min-h-11 flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <Button
           variant="secondary"
