@@ -5,6 +5,7 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  settle,
   snapSegment,
   test,
 } from "./fixtures";
@@ -56,10 +57,6 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
   };
   return { open, done };
 }
-
-/** Load every declared font face (all unicode-range subsets) so a navigation does not abort a download. */
-const loadAllFonts = (page: Page) =>
-  page.evaluate(() => Promise.all([...document.fonts].map((f) => f.load().catch(() => f))).then(() => undefined));
 
 const isPhone = (page: Page) => (page.viewportSize()?.width ?? 1000) < 640;
 
@@ -202,7 +199,7 @@ test.describe("builder", () => {
           }),
         });
       });
-      await loadAllFonts(page); // Firefox logs aborted font loads
+      await settle(page); // Firefox logs aborted font loads
       await page.reload();
       await expect(page.getByText("Practice could not be loaded")).toBeVisible();
       await expect(page.getByText("Request ID e2e-pool-503")).toBeVisible();
@@ -337,7 +334,7 @@ test.describe("tutor block", () => {
         seed: 4,
       });
       expect(made.status).toBe(201);
-      await loadAllFonts(page);
+      await settle(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
 
@@ -355,6 +352,8 @@ test.describe("tutor block", () => {
       };
       expect(served.ui_copy["practice.labs_source"]).toBeTruthy();
       await expect(sheet.getByText(served.ui_copy["practice.labs_source"] as string)).toBeVisible();
+      // the sheet slides in: audit it once the animation has finished, not mid-flight
+      await sheet.evaluate((d) => Promise.all(d.getAnimations().map((a) => a.finished)).then(() => undefined));
       await expectNoAxeViolations(page);
       await snap(page, info, guard, "lab-values");
       await page.keyboard.press("Escape");
@@ -440,7 +439,7 @@ test.describe("tutor block", () => {
       await expect(page.getByText(/Why it's/)).toHaveCount(0);
       await expect(page.getByText(/xeroderma|Endonuclease excision/)).toHaveCount(1); // the option text only
       // let pending font loads finish, so the navigation does not abort them (Firefox logs aborted font loads)
-      await loadAllFonts(page);
+      await settle(page);
       await page.goto("/practice/question/does-not-exist");
       await expect(page.getByText("This question is not available")).toBeVisible();
       expect(errors.filter((e) => !/404/.test(e))).toEqual([]);
@@ -464,11 +463,11 @@ test.describe("tutor block", () => {
         status: "all",
         seed: 2,
       });
-      await loadAllFonts(page);
+      await settle(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
       await page.waitForTimeout(800); // the next question is read ahead and saved on this device
-      await loadAllFonts(page); // no font download may be cut off by going offline
+      await settle(page); // no font download may be cut off by going offline
       await context.setOffline(true);
       await page.keyboard.press("b");
       await page.keyboard.press("Control+Enter");
@@ -500,7 +499,7 @@ test.describe("phone layout", () => {
         status: "all",
         seed: 6,
       });
-      await loadAllFonts(page);
+      await settle(page);
       await page.goto(`/practice/blocks/${made.json.id}/1`);
       await expect(page.getByRole("radio")).toHaveCount(5);
       for (const name of ["Flag", "Lab values", "Submit"]) {
@@ -514,7 +513,7 @@ test.describe("phone layout", () => {
       await expectNoHorizontalOverflow(page);
       if (isPhone(page)) await snap(page, info, guard, "question-phone");
       else await snap(page, info, guard, "question-wide");
-      await loadAllFonts(page);
+      await settle(page);
       expect(errors).toEqual([]);
     } finally {
       await student.done();
@@ -536,7 +535,7 @@ test("the practice entry is in the navigation", async ({ browser, baseURL }, inf
       ? page.getByRole("navigation", { name: "Tabs" })
       : page.getByRole("navigation", { name: "Main" });
     await expect(nav.getByRole("link", { name: "Practice" })).toHaveAttribute("aria-current", "page");
-    await loadAllFonts(page);
+    await settle(page);
     expect(errors).toEqual([]);
   } finally {
     await student.done();
