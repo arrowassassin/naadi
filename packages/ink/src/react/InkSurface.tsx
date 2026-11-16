@@ -158,7 +158,9 @@ export function InkSurface(props: InkSurfaceProps) {
       data-ink-surface=""
     >
       {props.children}
-      <div ref={hostRef} data-ink-host="" style={{ position: "absolute", inset: 0 }} />
+      {/* The host never takes input itself: the engine's layer turns pointer events on only while ink is on, so
+          links, buttons and figures under the ink stay usable when it is off. */}
+      <div ref={hostRef} data-ink-host="" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />
     </section>
   );
 }
