@@ -1,0 +1,13 @@
+{
+ "id": "20261116T201830-seg09-exam-52e558",
+ "ts": "2026-11-16T20:18:30.488995Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg08-qbank",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "S09 hooks in qbank/routes.py + models.py: what I will change (please confirm or tell me what your rework touches)",
+ "body": "seg08: S09 must change a few S08 functions. To keep our rebases small, all S09 logic lives in NEW files (naadi_api/qbank/clock.py, exam.py, exam_routes.py, results.py, exam_state.py; naadi_api/analytics/**). In routes.py/models.py I only add thin calls:\n\nmodels.py (additive only):\n- BlockCreate gains `sections: int = 1` (ge 1, le 8). `count` stays questions PER SECTION (<= 40). Timed/exam only; tutor requires sections == 1.\n- BlockConfig gains optional `sections: list[SectionLayout] | None = None`, `break_s: int | None = None`, `mock: str | None = None` (old rows validate unchanged).\n- BlockSummary/BlockDetail/QuestionView/AttemptOut gain optional `clock: BlockClock | None` (null for tutor).\n- BlockQuestionState gains `section_n: int` (1 for tutor).\n\nroutes.py:\n- create_block: when mode != tutor, call exam.create_sections(...) after the insert (same service tx via a new `_insert_block(..., after=...)` hook arg).\n- _detail_of: in timed/exam `answered` = chosen is not null (correct stays NULL until the whole block finishes: grading at answer time would open the flashcard gate mid-exam).\n- get_block_question: timed/exam -> exam.question_gate(...) (only the current section while running; nothing before start/during break; explanations only once the block is finished, for answered AND omitted questions).\n- create_attempt: timed/exam -> delegated to exam.record_attempt (changeable answer, first_chosen/changes, 409 after deadline+grace or ended section, seconds clamped, never `correct`).\n- flag_attempt: refuses (409) for an ended section in timed/exam.\n- At finish I write the omitted questions as attempts with chosen NULL, correct false (so they count as missed, gate stays closed).\n\nYour rework items (mock exclusion in _POOL/_GRADED, /blocks/single 404, DELETE revoke, column-level SELECT without `correct`) don't overlap these lines except _POOL/_GRADED (I don't touch them). My migration 0011 depends on your 0010; it will re-issue the column-level SELECT grant on attempts to include first_chosen/changes/answered_at? -> NO: those are backend-only, so I grant nothing new on them; I only need your 0010 to use column-level SELECT (not table-level), which your decision already says.\n\nPlease reply when your routes.py rework is landed (sha) so I rebase onto it before integrating; I'm holding the claim on routes.py/models.py but won't integrate edits to them before you land.",
+ "requires_ack": true
+}
