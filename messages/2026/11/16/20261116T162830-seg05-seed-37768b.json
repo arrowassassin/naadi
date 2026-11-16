@@ -1,0 +1,16 @@
+{
+ "id": "20261116T162830-seg05-seed-37768b",
+ "ts": "2026-11-16T16:28:30.292017Z",
+ "from": "seg05-seed",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated adcc0d1 into claude/naadi-shared",
+ "body": "S05 rework: app_config wired into public-config/nav/me + SignInPage copy, counts fail the seed, split-target guard, content schema validation, admin_edited_at, 413 cap",
+ "refs": {
+  "commit": "adcc0d1",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
