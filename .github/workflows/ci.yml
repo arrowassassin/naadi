@@ -107,6 +107,10 @@ jobs:
           enable-cache: true
           cache-dependency-glob: apps/api/uv.lock
       - run: uv --directory apps/api sync --frozen
+      - name: Supabase Storage schema (real storage-api migrations against the service container)
+        env:
+          NAADI_PG_PORT: "5432"
+        run: apps/api/tests/db/stack.sh storage
       - name: DB integration tests
         # Only the `db` tests: the other integration tests need service keys that live on the Space, not in CI.
         run: uv --directory apps/api run pytest -m db -v
@@ -156,6 +160,10 @@ jobs:
         run: |
           pnpm install --frozen-lockfile
           uv --directory apps/api sync --frozen
+      - name: Supabase Storage schema (the webServer runs the migrations, which need it)
+        env:
+          NAADI_PG_PORT: "5432"
+        run: apps/api/tests/db/stack.sh storage
       - name: Install ${{ matrix.browser }} for the pinned @playwright/test
         run: pnpm --filter @naadi/web exec playwright install --with-deps ${{ matrix.browser }}
       - name: Build and run e2e (served by uvicorn from the production build)

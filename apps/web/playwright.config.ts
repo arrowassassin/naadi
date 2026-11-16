@@ -70,7 +70,7 @@ export default defineConfig({
   webServer: liveBaseUrl
     ? undefined
     : {
-        command: `uv --directory ${path.join(repoRoot, "apps/api")} run uvicorn naadi_api.main:app --host 127.0.0.1 --port ${port} --no-access-log`,
+        command: `uv --directory ${path.join(repoRoot, "apps/api")} run python -m naadi_api.migrate --if-configured && uv --directory ${path.join(repoRoot, "apps/api")} run uvicorn naadi_api.main:app --host 127.0.0.1 --port ${port} --no-access-log`,
         url: `${baseURL}/`,
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,

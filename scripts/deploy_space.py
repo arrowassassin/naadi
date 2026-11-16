@@ -7,7 +7,7 @@
     uv run scripts/deploy_space.py [--space arrowassassin/naadi] [--hardware cpu-basic] [--dry-run]
 
 1. Assembles a clean build context from git-tracked (and untracked, non-ignored) files only: root
-   workspace files + lockfile, packages/, apps/web, apps/api (code + hash-locked requirements), config/,
+   workspace files + lockfile, packages/, apps/web, apps/api (code, migrations + hash-locked requirements), config/,
    plus deploy/space/{Dockerfile,README.md,.dockerignore}. `.env*` can never be included, and the context is
    scanned for every secret value in the environment before anything is uploaded.
 2. Requests the hardware (cpu-basic) if the Space is on something else, then uploads the context with
@@ -38,7 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SPACE_DIR = ROOT / "deploy" / "space"
 
 INCLUDE_FILES = {"package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "tsconfig.base.json"}
-INCLUDE_PREFIXES = ("packages/", "apps/web/", "apps/api/naadi_api/", "config/")
+INCLUDE_PREFIXES = ("packages/", "apps/web/", "apps/api/naadi_api/", "apps/api/migrations/", "config/")
 INCLUDE_EXTRA = {"apps/api/requirements.txt"}
 EXCLUDE_PARTS = ("/e2e/", "/__fixtures__/", "/test/", "__pycache__")
 EXCLUDE_SUFFIXES = (".test.ts", ".test.tsx", ".pyc")

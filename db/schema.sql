@@ -1,296 +1,582 @@
--- Naadi — Postgres 17 schema (Supabase or Neon). Requires: pgvector, pg_trgm.
--- All user-owned tables carry user_id and are protected by row-level security (RLS) policies at the bottom.
-create extension if not exists vector;
-create extension if not exists pg_trgm;
+-- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
+-- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
+-- (0001_core_schema.py, 0002_storage_buckets.py; version table public.naadi_alembic_version).
+-- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
+-- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
 
--- ───────────── Users & settings ─────────────
-create table profiles (
-  user_id uuid primary key,                       -- = auth.users.id (Supabase) or your auth provider id
-  display_name text,
-  exam_target text check (exam_target in ('step1','step2ck','step3')) default 'step1',
-  exam_date date,
-  daily_hours numeric(4,1) default 8,
-  study_days smallint[] default '{1,2,3,4,5,6}',  -- ISO weekday numbers
-  timezone text default 'Asia/Kolkata',
-  pathway_stage text,                              -- see pathway_stages.key
-  settings jsonb not null default '{}',            -- ink, appearance, assistant prefs
-  created_at timestamptz default now()
-);
+-- ───────────── Functions ─────────────
+create function public.naadi_touch_updated_at() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  new.updated_at := now();
+  return new;
+end
+$$;
 
--- ───────────── Taxonomy (official USMLE outline + internal topics) ─────────────
-create table taxonomy_nodes (
-  id text primary key,                 -- e.g. 'sys.cardio', 'disc.pathology', 'comp.diagnosis', 'topic.cardio.murmurs'
-  kind text not null check (kind in ('exam','system','discipline','competency','clinical_science','topic')),
-  parent_id text references taxonomy_nodes(id),
-  label text not null,
-  exam text[] not null,                 -- which Steps it applies to
-  weight_min numeric, weight_max numeric,   -- official % range where published
-  sort smallint default 0
-);
-
--- ───────────── Content library ─────────────
-create table sources (                 -- every external or internal origin of content, with its license
-  id text primary key,                 -- 'naadi-original-v1', 'youtube:UCxxxx', 'statpearls', 'cdc-phil' …
+-- ───────────── Content sources, taxonomy, pathway ─────────────
+-- pathway_stages.key: the 16 keys of data/pathway/pathway_stages.json (eligibility, step1, oet_pathway, step2ck,
+-- usce, specialty_choice, eras_application, interviews_ranking, match_day, visa_j1, pre_departure,
+-- arrival_first_30_days, residency_life, step3_and_licensure, post_residency, california_bay_area).
+create table public.sources (
+  id text primary key,
   name text not null,
   url text,
-  license text not null,               -- SPDX-ish: 'proprietary-naadi', 'CC-BY-4.0', 'CC-BY-NC-ND-4.0', 'public-domain-us-gov', 'youtube-embed-only', 'link-only'
+  license text not null,
   allow_copy boolean not null default false,
   allow_modify boolean not null default false,
   allow_commercial boolean not null default false,
-  allow_ai_ingest boolean not null default false,  -- may it enter RAG / LLM prompts?
+  allow_ai_ingest boolean not null default false,
   attribution_template text,
   notes text
 );
 
-create table chapters (
-  id text primary key,                 -- 'ch05'
+create table public.taxonomy_nodes (
+  id text primary key,
+  kind text not null check (kind in ('exam','system','discipline','competency','clinical_science','topic')),
+  parent_id text references public.taxonomy_nodes(id) on delete cascade,
+  label text not null,
+  exam text[] not null,
+  weight_min numeric,
+  weight_max numeric,
+  sort smallint not null default 0,
+  check (weight_min is null or weight_max is null or weight_min <= weight_max)
+);
+create index taxonomy_nodes_parent_idx on public.taxonomy_nodes (parent_id);
+
+create table public.pathway_stages (
+  key text primary key,
+  sort smallint,
+  title text,
+  summary_md text,
+  official_links jsonb,
+  last_verified date
+);
+
+create table public.pathway_tasks (
+  id text primary key,
+  stage_key text not null references public.pathway_stages(key) on delete cascade,
+  sort smallint,
+  title text,
+  detail_md text,
+  due_rule text,
+  cost_usd numeric,
+  official_url text,
+  last_verified date
+);
+create index pathway_tasks_stage_idx on public.pathway_tasks (stage_key, sort);
+
+-- ───────────── Users ─────────────
+create table public.profiles (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  display_name text check (char_length(display_name) between 1 and 120),
+  exam_target text not null default 'step1' check (exam_target in ('step1','step2ck','step3')),
+  exam_date date,
+  daily_hours numeric(4,1) not null default 8 check (daily_hours between 0 and 24),
+  study_days smallint[] not null default '{1,2,3,4,5,6}' check (study_days <@ '{1,2,3,4,5,6,7}'::smallint[]),
+  timezone text not null default 'Asia/Kolkata' check (char_length(timezone) between 1 and 64),
+  pathway_stage text references public.pathway_stages(key) on delete set null,
+  settings jsonb not null default '{}' check (jsonb_typeof(settings) = 'object'),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+-- ───────────── Content library ─────────────
+create table public.chapters (
+  id text primary key,
   exam text not null,
-  kind text not null check (kind in ('chapter','mock_exam','pathway','user_upload')),
+  kind text not null check (kind in ('chapter','mock_exam','pathway','user_upload','user_kb')),
   title text not null,
   meta text,
   sort smallint,
   status text not null default 'published' check (status in ('draft','in_review','published','retired')),
-  owner_user_id uuid,                  -- set for user-uploaded chapters (private)
-  source_id text references sources(id) default 'naadi-original-v1',
-  updated_at timestamptz default now()
+  owner_user_id uuid references auth.users(id) on delete cascade,
+  source_id text references public.sources(id) default 'naadi-original-v1',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  -- private chapters (uploads, knowledge-base documents) always have an owner; shared ones never do
+  check ((kind in ('user_upload','user_kb')) = (owner_user_id is not null))
 );
+create index chapters_owner_idx on public.chapters (owner_user_id) where owner_user_id is not null;
 
-create table chapter_sections (        -- "pages" of a chapter
-  id text primary key,                 -- 'ch05-s03'
-  chapter_id text not null references chapters(id) on delete cascade,
+create table public.chapter_sections (
+  id text primary key,
+  chapter_id text not null references public.chapters(id) on delete cascade,
   sort smallint not null,
   heading text not null,
-  body jsonb,                          -- TipTap/ProseMirror JSON (canonical)
-  body_html text,                      -- rendered/seed HTML (import path from the review book)
+  body jsonb,
+  body_html text,
   reading_minutes smallint,
-  taxonomy_ids text[] default '{}'
+  taxonomy_ids text[] not null default '{}',
+  updated_at timestamptz not null default now()
 );
+create index chapter_sections_chapter_idx on public.chapter_sections (chapter_id, sort);
 
-create table media_assets (            -- figures, images, own videos, YouTube embeds, podcasts, PDFs
-  id text primary key,                 -- 'ch05-fig01', 'yt:dQw4w9WgXcQ'
+create table public.chapter_section_revisions (
+  id bigint generated by default as identity primary key,
+  section_id text not null references public.chapter_sections(id) on delete cascade,
+  body jsonb,
+  body_html text,
+  author_user_id uuid references auth.users(id) on delete set null,
+  origin text not null check (origin in ('admin','assistant','seed')),
+  note text,
+  created_at timestamptz not null default now()
+);
+create index chapter_section_revisions_section_idx on public.chapter_section_revisions (section_id, created_at desc);
+
+create table public.media_assets (
+  id text primary key,
   kind text not null check (kind in ('svg','image','video_own','video_youtube','audio','pdf','link')),
-  source_id text not null references sources(id),
-  title text, caption text,
-  url text,                            -- storage URL, YouTube watch URL, or external link
-  youtube_id text, channel_id text, duration_s int,
-  embeddable boolean,                  -- from YouTube videos.list status.embeddable
-  metadata_fetched_at timestamptz,     -- YouTube API policy: refresh or drop metadata within 30 days
+  source_id text not null references public.sources(id),
+  title text,
+  caption text,
+  url text,
+  youtube_id text,
+  channel_id text,
+  duration_s int check (duration_s is null or duration_s >= 0),
+  embeddable boolean,
+  metadata_fetched_at timestamptz,
   attribution text,
-  taxonomy_ids text[] default '{}',
-  review_status text default 'unreviewed' check (review_status in ('unreviewed','approved','rejected'))
+  taxonomy_ids text[] not null default '{}',
+  review_status text not null default 'unreviewed' check (review_status in ('unreviewed','approved','rejected'))
 );
 
-create table section_media (           -- ordered placement of media inside a section
-  section_id text references chapter_sections(id) on delete cascade,
-  media_id text references media_assets(id) on delete cascade,
-  sort smallint, start_s int, end_s int,  -- video clip window
+create table public.section_media (
+  section_id text not null references public.chapter_sections(id) on delete cascade,
+  media_id text not null references public.media_assets(id) on delete cascade,
+  sort smallint,
+  start_s int check (start_s is null or start_s >= 0),
+  end_s int check (end_s is null or start_s is null or end_s > start_s),
   primary key (section_id, media_id)
 );
+create index section_media_media_idx on public.section_media (media_id);
 
-create table questions (
-  id text primary key,                 -- 'ch05-q12'
-  chapter_id text references chapters(id),
+create table public.questions (
+  id text primary key,
+  chapter_id text references public.chapters(id),
   exam text not null,
-  block smallint,                      -- for mock exams
+  block smallint,
   stem_html text not null,
-  options jsonb not null,              -- [{label:'A', html:'…'}]
-  answer char(1) not null,
-  answer_html text, explanation_html text, why_not_html text,
+  options jsonb not null check (jsonb_typeof(options) = 'array'),
+  answer char(1) not null check (answer between 'A' and 'J'),
+  answer_html text,
+  explanation_html text,
+  why_not_html text,
   educational_objective text,
   difficulty text check (difficulty in ('easy','medium','hard')),
-  taxonomy_ids text[] default '{}',
-  tags text[] default '{}',
-  source_id text references sources(id) default 'naadi-original-v1',
-  status text not null default 'published' check (status in ('draft','auto_checked','in_review','published','retired')),
-  review jsonb default '{}',           -- {authorModel, reviewerModel, humanReviewers:[…], flags:[…]}
-  stats jsonb default '{}',            -- {n, pCorrect, pointBiserial, optionCounts}
-  created_at timestamptz default now()
+  taxonomy_ids text[] not null default '{}',
+  tags text[] not null default '{}',
+  source_id text references public.sources(id) default 'naadi-original-v1',
+  status text not null default 'published'
+    check (status in ('draft','auto_checked','in_review','published','retired')),
+  review jsonb not null default '{}',
+  stats jsonb not null default '{}',
+  created_at timestamptz not null default now()
 );
+create index questions_chapter_idx on public.questions (chapter_id);
+create index questions_taxonomy_idx on public.questions using gin (taxonomy_ids);
 
-create table flashcards (
+create table public.flashcards (
   id uuid primary key default gen_random_uuid(),
-  owner_user_id uuid,                  -- null = shared deck card
+  owner_user_id uuid references auth.users(id) on delete cascade,
   deck text not null default 'Naadi core',
-  front_html text not null, back_html text not null,
-  question_id text references questions(id),
-  section_id text references chapter_sections(id),
-  taxonomy_ids text[] default '{}',
-  origin text check (origin in ('seed','user','assistant','anki_import')) default 'user',
-  created_at timestamptz default now()
+  front_html text not null,
+  back_html text not null,
+  question_id text references public.questions(id) on delete set null,
+  section_id text references public.chapter_sections(id) on delete set null,
+  taxonomy_ids text[] not null default '{}',
+  origin text not null default 'user' check (origin in ('seed','user','assistant','anki_import')),
+  created_at timestamptz not null default now()
 );
+create index flashcards_owner_idx on public.flashcards (owner_user_id);
 
--- Retrieval index (RAG) over sections, questions, notes, uploads — only rows whose source allows AI ingest
-create table embeddings (
-  id bigserial primary key,
-  owner_user_id uuid,                  -- null = shared content
-  ref_type text not null check (ref_type in ('section','question','note','upload','pathway')),
+-- Retrieval index (RAG). Only rows whose source allows AI ingest; vault content never enters it.
+create table public.embeddings (
+  id bigint generated by default as identity primary key,
+  owner_user_id uuid references auth.users(id) on delete cascade,
+  ref_type text not null
+    check (ref_type in ('section','question','note','upload','pathway','url','ink','kb_doc')),
   ref_id text not null,
-  chunk_index int not null default 0,
+  chunk_index int not null default 0 check (chunk_index >= 0),
   content text not null,
-  embedding halfvec(384),              -- fastembed BAAI/bge-small-en-v1.5 (384d); halfvec halves storage on the 500 MB free DB
-  tsv tsvector generated always as (to_tsvector('english', content)) stored
+  embedding extensions.halfvec(384),
+  tsv tsvector generated always as (to_tsvector('english'::regconfig, content)) stored,
+  created_at timestamptz not null default now(),
+  unique nulls not distinct (owner_user_id, ref_type, ref_id, chunk_index)
 );
-create index on embeddings using hnsw (embedding halfvec_cosine_ops);
-create index on embeddings using gin (tsv);
+create index embeddings_hnsw_idx on public.embeddings using hnsw (embedding extensions.halfvec_cosine_ops);
+create index embeddings_tsv_idx on public.embeddings using gin (tsv);
+create index embeddings_ref_idx on public.embeddings (ref_type, ref_id);
 
 -- ───────────── Student activity ─────────────
-create table attempts (
-  id bigserial primary key,
-  user_id uuid not null,
-  question_id text not null references questions(id),
-  block_id uuid,
-  chosen char(1), correct boolean,
-  seconds int, flagged boolean default false,
-  mode text check (mode in ('tutor','timed','exam')),
-  created_at timestamptz default now()
-);
-
-create table blocks (                  -- Qbank blocks / practice exams
+create table public.blocks (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
-  config jsonb not null,               -- {exam, systems, disciplines, status:'unused|incorrect|flagged', count, mode, timeLimit}
+  user_id uuid not null references auth.users(id) on delete cascade,
+  config jsonb not null check (jsonb_typeof(config) = 'object'),
   question_ids text[] not null,
-  started_at timestamptz, finished_at timestamptz,
-  score numeric
+  started_at timestamptz,
+  finished_at timestamptz,
+  score numeric,
+  created_at timestamptz not null default now(),
+  unique (id, user_id)
 );
+create index blocks_user_idx on public.blocks (user_id, created_at desc);
 
-create table card_reviews (            -- FSRS state per user per card
-  user_id uuid not null,
-  card_id uuid not null references flashcards(id) on delete cascade,
+create table public.attempts (
+  id bigint generated by default as identity primary key,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  question_id text not null references public.questions(id),
+  block_id uuid,
+  chosen char(1) check (chosen between 'A' and 'J'),
+  correct boolean,
+  seconds int check (seconds is null or seconds >= 0),
+  flagged boolean not null default false,
+  mode text check (mode in ('tutor','timed','exam')),
+  created_at timestamptz not null default now(),
+  -- a block can only be referenced by its own user's attempts
+  foreign key (block_id, user_id) references public.blocks (id, user_id) on delete set null (block_id)
+);
+create index attempts_user_question_idx on public.attempts (user_id, question_id, created_at desc);
+create index attempts_user_created_idx on public.attempts (user_id, created_at desc);
+create index attempts_block_idx on public.attempts (block_id) where block_id is not null;
+
+create table public.card_reviews (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  card_id uuid not null references public.flashcards(id) on delete cascade,
   due timestamptz not null,
-  stability double precision, difficulty double precision,
-  elapsed_days int, scheduled_days int, reps int, lapses int,
-  state smallint,                       -- ts-fsrs State enum
+  stability double precision,
+  difficulty double precision,
+  elapsed_days int,
+  scheduled_days int,
+  reps int,
+  lapses int,
+  state smallint,
   last_review timestamptz,
   primary key (user_id, card_id)
 );
+create index card_reviews_user_due_idx on public.card_reviews (user_id, due);
+create index card_reviews_card_idx on public.card_reviews (card_id);
 
-create table notes (
+create table public.notebooks (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  title text not null,
+  cover text,
+  paper text not null default 'ruled' check (paper in ('ruled','dotted','grid','cornell','blank')),
+  created_at timestamptz not null default now(),
+  unique (id, user_id)
+);
+create index notebooks_user_idx on public.notebooks (user_id);
+
+create table public.notes (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
   notebook_id uuid,
   anchor_type text check (anchor_type in ('section','question','video','pdf','free')),
-  anchor_id text,                      -- section id, question id, media id, upload id
-  anchor_pos jsonb,                    -- {from,to} text range | {t: seconds} | {page, rect}
-  highlight_color text check (highlight_color in ('lime','violet','amber')),  -- key fact / formula / my mistake
-  body jsonb,                          -- TipTap JSON
-  ocr_text text,                       -- handwriting recognition result (for search)
-  created_at timestamptz default now(), updated_at timestamptz default now()
+  anchor_id text,
+  anchor_pos jsonb,
+  highlight_color text check (highlight_color in ('lime','violet','amber')),
+  body jsonb,
+  ocr_text text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  foreign key (notebook_id, user_id) references public.notebooks (id, user_id) on delete set null (notebook_id)
 );
+create index notes_user_anchor_idx on public.notes (user_id, anchor_type, anchor_id);
+create index notes_notebook_idx on public.notes (notebook_id) where notebook_id is not null;
 
-create table notebooks (
+create table public.ink_layers (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
-  title text not null, cover text, paper text check (paper in ('ruled','dotted','grid','cornell','blank')) default 'ruled',
-  created_at timestamptz default now()
-);
-
-create table ink_layers (              -- vector strokes per surface (chapter page, question, card, pdf page, notebook page)
-  id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
-  surface_type text not null check (surface_type in ('section','question','flashcard','pdf_page','notebook_page','exam_scratch')),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  surface_type text not null
+    check (surface_type in ('section','question','flashcard','pdf_page','notebook_page','exam_scratch')),
   surface_id text not null,
-  strokes jsonb not null default '[]', -- [{id, tool, color, size, points:[[x,y,pressure,t]…]}] in surface-relative coords
+  strokes jsonb not null default '[]',
   recognized_text text,
-  updated_at timestamptz default now(),
+  updated_at timestamptz not null default now(),
   unique (user_id, surface_type, surface_id)
 );
 
-create table uploads (
+create table public.uploads (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
-  kind text check (kind in ('pdf','image','video','link','anki')),
-  storage_path text, original_name text, bytes bigint,
-  processed_chapter_id text references chapters(id),
-  status text default 'uploaded' check (status in ('uploaded','processing','ready','failed')),
-  created_at timestamptz default now()
+  user_id uuid not null references auth.users(id) on delete cascade,
+  kind text not null check (kind in ('pdf','docx','pptx','xlsx','csv','txt','md','html','epub','rtf',
+                                     'image','audio','video','link','anki','zip','paste')),
+  storage_path text,
+  original_name text,
+  bytes bigint check (bytes is null or bytes >= 0),
+  processed_chapter_id text references public.chapters(id) on delete set null,
+  status text not null default 'uploaded' check (status in ('uploaded','processing','ready','failed')),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (id, user_id)
 );
+create index uploads_user_idx on public.uploads (user_id, created_at desc);
 
-create table plan_items (
+create table public.kb_sources (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  kind text not null check (kind in ('url','file','paste')),
+  url text,
+  title text,
+  upload_id uuid,
+  status text not null default 'processing' check (status in ('processing','ready','failed','needs_confirmation')),
+  error text,
+  content_hash text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (id, user_id),
+  foreign key (upload_id, user_id) references public.uploads (id, user_id) on delete set null (upload_id),
+  check (kind <> 'url' or url is not null)
+);
+create index kb_sources_user_idx on public.kb_sources (user_id, created_at desc);
+create index kb_sources_hash_idx on public.kb_sources (user_id, content_hash) where content_hash is not null;
+
+create table public.ingest_items (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  upload_id uuid,
+  kb_source_id uuid,
+  detected_kind text,
+  sensitivity text not null default 'normal' check (sensitivity in ('normal','personal')),
+  proposed_placement jsonb,
+  confirmed_placement jsonb,
+  status text not null default 'received'
+    check (status in ('received','extracting','needs_confirmation','placing','ready','failed','vaulted')),
+  error text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  foreign key (upload_id, user_id) references public.uploads (id, user_id) on delete cascade,
+  foreign key (kb_source_id, user_id) references public.kb_sources (id, user_id) on delete cascade
+);
+create index ingest_items_user_status_idx on public.ingest_items (user_id, status);
+create index ingest_items_upload_idx on public.ingest_items (upload_id) where upload_id is not null;
+create index ingest_items_kb_source_idx on public.ingest_items (kb_source_id) where kb_source_id is not null;
+
+create table public.plan_items (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
   day date not null,
   kind text check (kind in ('read','questions','assessment','cards','video','admin','rest')),
   title text not null,
-  ref_type text, ref_id text,          -- chapter/section/block/pathway task
-  target_minutes int, target_count int,
-  status text default 'planned' check (status in ('planned','now','done','skipped','behind')),
-  origin text default 'generator' check (origin in ('generator','user','assistant','seed')),
+  ref_type text,
+  ref_id text,
+  target_minutes int check (target_minutes is null or target_minutes >= 0),
+  target_count int check (target_count is null or target_count >= 0),
+  status text not null default 'planned' check (status in ('planned','now','done','skipped','behind')),
+  origin text not null default 'generator' check (origin in ('generator','user','assistant','seed')),
   sort smallint
 );
+create index plan_items_user_day_idx on public.plan_items (user_id, day, sort);
 
--- ───────────── Pathway (MBBS → Match → landing in the USA → practice) ─────────────
-create table pathway_stages (
-  key text primary key,                -- see data/pathway/pathway_stages.json (16 keys: eligibility … california_bay_area)
-  sort smallint, title text, summary_md text,
-  official_links jsonb,                -- [{label,url}]
-  last_verified date                   -- every stage must be re-verified on a schedule
+create table public.user_pathway_tasks (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  task_id text not null references public.pathway_tasks(id) on delete cascade,
+  status text not null default 'todo' check (status in ('todo','doing','done','na')),
+  due date,
+  notes text,
+  primary key (user_id, task_id)
 );
-create table pathway_tasks (
-  id text primary key, stage_key text references pathway_stages(key),
-  sort smallint, title text, detail_md text,
-  due_rule text,                       -- e.g. 'match_day+14d', 'start_date-30d'
-  cost_usd numeric, official_url text, last_verified date
-);
-create table user_pathway_tasks (
-  user_id uuid, task_id text references pathway_tasks(id),
-  status text default 'todo' check (status in ('todo','doing','done','na')),
-  due date, notes text, primary key (user_id, task_id)
-);
-create table vault_documents (         -- passport, MBBS diploma, transcripts, OET result, DS-2019 …
+create index user_pathway_tasks_task_idx on public.user_pathway_tasks (task_id);
+
+create table public.vault_documents (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null, doc_type text, title text, storage_path text,
-  expires_on date, created_at timestamptz default now()
+  user_id uuid not null references auth.users(id) on delete cascade,
+  doc_type text,
+  title text,
+  storage_path text,
+  expires_on date,
+  created_at timestamptz not null default now()
 );
-create table costs (
+create index vault_documents_user_idx on public.vault_documents (user_id);
+
+create table public.costs (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null, task_id text, label text, amount numeric, currency text default 'USD',
-  paid_on date, created_at timestamptz default now()
+  user_id uuid not null references auth.users(id) on delete cascade,
+  task_id text references public.pathway_tasks(id) on delete set null,
+  label text,
+  amount numeric(12,2) check (amount is null or amount >= 0),
+  currency text not null default 'USD' check (currency ~ '^[A-Z]{3}$'),
+  paid_on date,
+  created_at timestamptz not null default now()
 );
+create index costs_user_idx on public.costs (user_id);
+create index costs_task_idx on public.costs (task_id) where task_id is not null;
 
 -- ───────────── Assistant ─────────────
-create table assistant_threads (
+-- LangGraph / Aegra checkpoint tables are created by Aegra's own migrations (segment 04).
+create table public.assistant_threads (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null, title text, created_at timestamptz default now()
+  user_id uuid not null references auth.users(id) on delete cascade,
+  title text,
+  created_at timestamptz not null default now()
 );
--- LangGraph's PostgresSaver creates its own checkpoint tables (checkpoints, checkpoint_writes, checkpoint_blobs).
+create index assistant_threads_user_idx on public.assistant_threads (user_id, created_at desc);
 
--- ───────────── Runtime configuration (nothing hardcoded in the app) ─────────────
-create table app_config (              -- seeded from config/*.yaml; edited in the admin console; cached 60 s by the API
-  key text primary key,                -- 'models', 'budget', 'search', 'feature_flags', 'ui_copy', 'exam_rules', 'storage'
+create table public.generated_media (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  kind text not null check (kind in ('image','video')),
+  title text,
+  prompt text not null,
+  model text not null,
+  storage_path text,
+  width int check (width is null or width > 0),
+  height int check (height is null or height > 0),
+  duration_s numeric(5,2) check (duration_s is null or duration_s > 0),
+  ai_generated boolean not null default true check (ai_generated),
+  approved_for_publish boolean not null default false,
+  created_at timestamptz not null default now()
+);
+create index generated_media_user_idx on public.generated_media (user_id, created_at desc);
+
+create table public.report_issues (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  ref_type text not null
+    check (ref_type in ('section','question','flashcard','media','chapter','pathway_task','assistant_message','other')),
+  ref_id text,
+  body text not null check (char_length(body) between 1 and 4000),
+  status text not null default 'open' check (status in ('open','triaged','resolved','dismissed')),
+  created_at timestamptz not null default now()
+);
+create index report_issues_user_idx on public.report_issues (user_id, created_at desc);
+create index report_issues_open_idx on public.report_issues (status, created_at) where status in ('open','triaged');
+
+-- ───────────── Runtime configuration (admin only) ─────────────
+create table public.app_config (
+  key text primary key,
   value jsonb not null,
-  updated_by uuid, updated_at timestamptz default now()
+  updated_by uuid references auth.users(id) on delete set null,
+  updated_at timestamptz not null default now()
 );
-create table app_config_history (key text, value jsonb, updated_by uuid, updated_at timestamptz default now());
 
--- Storage layout (Supabase Storage buckets, created by migration 0002):
---   content-public  : figures (SVG/PNG), chapter images, posters, PDF thumbnails   (public read, service-role write)
---   content-private : licensed/internal PDFs, source files                          (signed URLs only)
---   user-uploads    : student uploads (PDF/image)                                   (RLS by user folder: {user_id}/...)
---   vault           : passport, diploma, DS-2019 ...                                 (RLS by user folder; never sent to LLMs)
--- Own videos (large) live in Cloudflare R2 (10 GB free, $0 egress) with HLS/MP4 URLs stored in media_assets.url;
--- YouTube videos are stored as media_assets rows (kind='video_youtube', youtube_id) and rendered with the IFrame API.
-
--- ───────────── Free-tier budget guards ─────────────
-create table search_cache (            -- Tavily results cached 7 days (free plan = 1,000 credits/month)
-  query_norm text primary key, results jsonb not null, credits smallint not null default 1,
-  created_at timestamptz default now()
+create table public.app_config_history (
+  id bigint generated by default as identity primary key,
+  key text not null,
+  value jsonb not null,
+  updated_by uuid,
+  updated_at timestamptz,
+  op text not null check (op in ('update','delete')),
+  replaced_at timestamptz not null default now()
 );
-create table llm_usage (               -- one row per OpenRouter call; enforces the free daily request cap
-  id bigserial primary key, user_id uuid, role text, model text,
-  ok boolean, status int, prompt_tokens int, completion_tokens int,
-  created_at timestamptz default now()
-);
-create index on llm_usage (created_at);
+create index app_config_history_key_idx on public.app_config_history (key, replaced_at desc);
 
--- ───────────── Row-level security ─────────────
-do $$ declare t text; begin
-  foreach t in array array['profiles','attempts','blocks','card_reviews','notes','notebooks','ink_layers','uploads',
-                           'plan_items','user_pathway_tasks','vault_documents','costs','assistant_threads'] loop
-    execute format('alter table %I enable row level security', t);
-    execute format('create policy own_rows on %I using (user_id = auth.uid()) with check (user_id = auth.uid())', t);
-  end loop;
-end $$;
--- Shared content tables (chapters, sections, questions, media, taxonomy, sources, pathway_*) are read-only to users:
--- enable RLS and add `for select using (status = 'published' or owner_user_id = auth.uid())` where applicable.
--- Writes to shared content happen only from the backend with the service role.
+create function public.naadi_app_config_history() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  insert into public.app_config_history (key, value, updated_by, updated_at, op)
+  values (old.key, old.value, old.updated_by, old.updated_at, lower(tg_op));
+  if tg_op = 'UPDATE' then
+    new.updated_at := now();
+    return new;
+  end if;
+  return old;
+end
+$$;
+create trigger app_config_history_update before update on public.app_config
+  for each row when (old.* is distinct from new.*) execute function public.naadi_app_config_history();
+create trigger app_config_history_delete before delete on public.app_config
+  for each row execute function public.naadi_app_config_history();
+
+-- ───────────── Free-tier budget guards (admin only) ─────────────
+create table public.search_cache (
+  query_norm text primary key,
+  results jsonb not null,
+  credits smallint not null default 1,
+  created_at timestamptz not null default now()
+);
+create index search_cache_created_idx on public.search_cache (created_at);
+
+create table public.llm_usage (
+  id bigint generated by default as identity primary key,
+  user_id uuid references auth.users(id) on delete set null,
+  provider text not null check (provider in ('nvidia','openrouter')),
+  role text,
+  model text,
+  run_id text,
+  ok boolean,
+  status int,
+  prompt_tokens int,
+  completion_tokens int,
+  latency_ms int check (latency_ms is null or latency_ms >= 0),
+  created_at timestamptz not null default now()
+);
+create index llm_usage_created_idx on public.llm_usage (created_at);
+create index llm_usage_provider_created_idx on public.llm_usage (provider, created_at);
+
+-- ───────────── Function privileges ─────────────
+revoke all on function public.naadi_touch_updated_at() from public, anon, authenticated;
+revoke all on function public.naadi_app_config_history() from public, anon, authenticated;
+
+-- ───────────── updated_at triggers ─────────────
+create trigger profiles_touch_updated_at before update on public.profiles for each row execute function public.naadi_touch_updated_at();
+create trigger chapters_touch_updated_at before update on public.chapters for each row execute function public.naadi_touch_updated_at();
+create trigger chapter_sections_touch_updated_at before update on public.chapter_sections for each row execute function public.naadi_touch_updated_at();
+create trigger notes_touch_updated_at before update on public.notes for each row execute function public.naadi_touch_updated_at();
+create trigger ink_layers_touch_updated_at before update on public.ink_layers for each row execute function public.naadi_touch_updated_at();
+create trigger uploads_touch_updated_at before update on public.uploads for each row execute function public.naadi_touch_updated_at();
+create trigger kb_sources_touch_updated_at before update on public.kb_sources for each row execute function public.naadi_touch_updated_at();
+create trigger ingest_items_touch_updated_at before update on public.ingest_items for each row execute function public.naadi_touch_updated_at();
+
+-- ───────────── Grants and row-level security (0001) ─────────────
+-- Every table in public has RLS enabled (tests/db/test_rls_coverage.py enforces it).
+--
+-- User-owned tables: RLS enabled AND forced; `anon` has no privileges; `authenticated` has
+-- select/insert/update/delete (column-restricted where noted); four policies `to authenticated`,
+-- each `(select auth.uid()) = user_id`: <t>_select_own, <t>_insert_own, <t>_update_own, <t>_delete_own.
+--   profiles
+--   attempts
+--   blocks
+--   card_reviews
+--   notes
+--   notebooks
+--   ink_layers
+--   uploads
+--   plan_items
+--   user_pathway_tasks
+--   vault_documents
+--   costs
+--   assistant_threads
+--   kb_sources
+--   ingest_items
+--   generated_media  (client insert: id, user_id, kind, title, prompt, model, storage_path, width, height, duration_s; client update: title)
+--   report_issues  (client insert: id, user_id, ref_type, ref_id, body; client update: body)
+--
+-- Shared content: RLS enabled; select to anon, authenticated with the row filter below; writes by the
+-- service role (backend) only, except that a student may insert/update/delete their own private
+-- flashcards (owner_user_id = auth.uid(), origin <> 'seed').
+--   sources: true
+--   taxonomy_nodes: true
+--   pathway_stages: true
+--   pathway_tasks: true
+--   chapters: (owner_user_id is null and status = 'published') or owner_user_id = (select auth.uid())
+--   chapter_sections: exists (select 1 from public.chapters c where c.id = chapter_sections.chapter_id)
+--   media_assets: review_status = 'approved'
+--   section_media: exists (select 1 from public.chapter_sections s where s.id = section_media.section_id) and exists (select 1 from public.media_assets m where m.id = section_media.media_id)
+--   questions: status = 'published' and (chapter_id is null or exists (select 1 from public.chapters c where c.id = questions.chapter_id))
+--   flashcards: owner_user_id is null or owner_user_id = (select auth.uid())
+--   embeddings: owner_user_id is null or owner_user_id = (select auth.uid())
+--
+-- questions: clients get column-level select only on
+--   (id, chapter_id, exam, block, stem_html, options, difficulty, taxonomy_ids, tags, source_id, status, created_at);
+--   answer, answer_html, explanation_html, why_not_html, educational_objective, review and stats are
+--   not readable by anon/authenticated at all (the API serves them after an attempt).
+--
+-- Admin-only (RLS enabled and forced, no client privileges, service role only):
+--   app_config, app_config_history, chapter_section_revisions, search_cache, llm_usage, naadi_alembic_version
+--
+-- Functions naadi_touch_updated_at() and naadi_app_config_history() pin search_path = '' and are not
+-- executable by clients.
+
+-- ───────────── Storage (0002) ─────────────
+-- Buckets (storage.buckets; schema owned by the Supabase Storage service):
+--   content-public  : public read; 10 MB; images incl. SVG        (service-role writes)
+--   content-private : signed URLs only; 50 MB; PDF/EPUB/media      (service-role writes)
+--   user-uploads    : private; 50 MB; documents, images, audio, video, zip/apkg; {auth.uid()}/... only
+--   vault           : private; 20 MB; PDF and photos; {auth.uid()}/... only; NEVER sent to any AI path
+--   generated-media : private; 50 MB; AI images/clips; {auth.uid()}/... only
+-- storage.objects policies: naadi_user_folders_select/insert/update/delete (authenticated, buckets
+-- user-uploads|vault|generated-media, (storage.foldername(name))[1] = auth.uid()::text) and
+-- naadi_content_public_read (anon, authenticated, bucket content-public).
+-- Own large videos live in Cloudflare R2 with URLs in media_assets.url; YouTube videos are media_assets
+-- rows (kind = 'video_youtube') rendered with the IFrame player.

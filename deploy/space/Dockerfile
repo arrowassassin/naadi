@@ -33,12 +33,15 @@ WORKDIR /home/user/app
 COPY --chown=user apps/api/requirements.txt ./requirements.txt
 RUN pip install --require-hashes --no-deps -r requirements.txt
 COPY --chown=user apps/api/naadi_api ./naadi_api
+COPY --chown=user apps/api/migrations ./migrations
 COPY --chown=user apps/api/VERSION ./VERSION
 COPY --chown=user config ./config
 COPY --chown=user --from=web /src/apps/web/dist ./static
 ENV NAADI_STATIC_DIR=/home/user/app/static NAADI_CONFIG_DIR=/home/user/app/config
 USER user
 EXPOSE 7860
+# Startup: `alembic upgrade head` under a Postgres advisory lock (naadi_api/migrate.py), once per container
+# before the workers fork; a failed migration logs one `migrate.failed` line and the container exits, so the
+# app never serves on a half-migrated schema. Then uvicorn replaces the shell (exec) and receives signals.
 # --no-access-log: our middleware writes one JSON line per request without query strings.
-CMD ["uvicorn", "naadi_api.main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "2", \
-     "--proxy-headers", "--forwarded-allow-ips", "*", "--no-access-log", "--timeout-graceful-shutdown", "10"]
+CMD ["sh", "-c", "python -m naadi_api.migrate && exec uvicorn naadi_api.main:app --host 0.0.0.0 --port 7860 --workers 2 --proxy-headers --forwarded-allow-ips '*' --no-access-log --timeout-graceful-shutdown 10"]
