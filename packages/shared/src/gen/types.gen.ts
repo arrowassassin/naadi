@@ -5,6 +5,30 @@ export type ClientOptions = {
 };
 
 /**
+ * ActiveExam
+ *
+ * The caller's timed/exam session that has not finished (the shell and the assistant guard read it).
+ */
+export type ActiveExam = {
+  /**
+   * Block Id
+   */
+  block_id: string;
+  clock: BlockClock;
+  /**
+   * Mode
+   */
+  mode: "timed" | "exam";
+};
+
+/**
+ * ActiveExamOut
+ */
+export type ActiveExamOut = {
+  active: ActiveExam | null;
+};
+
+/**
  * AdminOverview
  */
 export type AdminOverview = {
@@ -93,6 +117,10 @@ export type AttemptOut = {
    */
   chosen: string;
   /**
+   * Timed/exam blocks: the server's clock
+   */
+  clock?: BlockClock | null;
+  /**
    * Correct
    *
    * Only in tutor mode (with the explanation)
@@ -131,8 +159,10 @@ export type AttemptOut = {
 export type AttemptState = {
   /**
    * Chosen
+   *
+   * null for a question left unanswered in a finished timed/exam block
    */
-  chosen: string;
+  chosen: string | null;
   /**
    * Correct
    *
@@ -146,9 +176,90 @@ export type AttemptState = {
 };
 
 /**
+ * BlockClock
+ *
+ * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
+ * where offset is estimated from `server_now`; it never counts down on its own.
+ */
+export type BlockClock = {
+  /**
+   * Break Left Ms
+   *
+   * The shared break pool still unused (counting down during a break)
+   */
+  break_left_ms: number;
+  /**
+   * Break Remaining Ms
+   *
+   * Break time left in the shared pool, during a break only
+   */
+  break_remaining_ms: number | null;
+  /**
+   * Deadline At
+   *
+   * When the running section ends (moves while paused)
+   */
+  deadline_at: string | null;
+  /**
+   * Grace Ms
+   *
+   * Answers sent this long after the deadline are still recorded
+   */
+  grace_ms: number;
+  /**
+   * Pausable
+   *
+   * false in exam mode
+   */
+  pausable: boolean;
+  /**
+   * Paused
+   */
+  paused: boolean;
+  /**
+   * Remaining Ms
+   *
+   * Time left in the section (frozen while paused; full before start)
+   */
+  remaining_ms: number | null;
+  /**
+   * Section N
+   *
+   * The section running, paused, or next after a break; null when finished
+   */
+  section_n: number | null;
+  /**
+   * Sections
+   *
+   * Number of sections in the session
+   */
+  sections: number;
+  /**
+   * Server Now
+   */
+  server_now: string;
+  /**
+   * State
+   */
+  state: "not_started" | "running" | "paused" | "break" | "finished";
+  /**
+   * Time Limit Ms
+   *
+   * The current section's full length
+   */
+  time_limit_ms: number | null;
+};
+
+/**
  * BlockConfig
  */
 export type BlockConfig = {
+  /**
+   * Break S
+   *
+   * Timed/exam: the shared break pool, seconds
+   */
+  break_s?: number | null;
   /**
    * Difficulty
    */
@@ -162,9 +273,27 @@ export type BlockConfig = {
    */
   exam: string;
   /**
+   * Mock
+   *
+   * The mock exam chapter this block runs, if any
+   */
+  mock?: string | null;
+  /**
    * Mode
    */
   mode: "tutor" | "timed" | "exam";
+  /**
+   * Purpose
+   *
+   * Set by S11 for the onboarding diagnostic
+   */
+  purpose?: "diagnostic" | null;
+  /**
+   * Sections
+   *
+   * Timed/exam: the session's sections
+   */
+  sections?: Array<SectionLayout> | null;
   /**
    * Seed
    */
@@ -190,7 +319,7 @@ export type BlockCreate = {
   /**
    * Count
    *
-   * Bounded by app_config.exam_rules.block
+   * Questions per section; bounded by app_config.exam_rules.block
    */
   count: number;
   /**
@@ -209,6 +338,12 @@ export type BlockCreate = {
    * Mode
    */
   mode?: "tutor" | "timed" | "exam";
+  /**
+   * Sections
+   *
+   * Timed/exam only: sections of `count` questions (<= exams[exam].blocks)
+   */
+  sections?: number;
   /**
    * Seed
    *
@@ -233,6 +368,10 @@ export type BlockDetail = {
    * Answered
    */
   answered: number;
+  /**
+   * Timed/exam blocks: the server's clock
+   */
+  clock?: BlockClock | null;
   config: BlockConfig;
   /**
    * Correct
@@ -330,6 +469,89 @@ export type BlockQuestionState = {
    * 1-based position in the block
    */
   n: number;
+  /**
+   * Section N
+   *
+   * The section holding the question (1 in tutor mode)
+   */
+  section_n?: number;
+};
+
+/**
+ * BlockResults
+ */
+export type BlockResults = {
+  /**
+   * Block Id
+   */
+  block_id: string;
+  changes: ChangeStats;
+  /**
+   * Competencies
+   */
+  competencies: Array<TopicStat>;
+  /**
+   * Correct
+   */
+  correct: number;
+  /**
+   * Disciplines
+   *
+   * Disciplines (Step 1) or clinical sciences (Step 2 CK)
+   */
+  disciplines: Array<TopicStat>;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Finished At
+   */
+  finished_at: string;
+  flags: FlagStats;
+  /**
+   * Insights
+   */
+  insights: Array<Insight>;
+  /**
+   * Mock
+   */
+  mock: string | null;
+  /**
+   * Mode
+   */
+  mode: "timed" | "exam";
+  /**
+   * Omitted
+   */
+  omitted: number;
+  /**
+   * Percent
+   */
+  percent: number;
+  /**
+   * Questions
+   */
+  questions: Array<ResultQuestion>;
+  /**
+   * Systems
+   */
+  systems: Array<TopicStat>;
+  time: TimeStats;
+  /**
+   * Total
+   */
+  total: number;
+  /**
+   * Trend
+   *
+   * The caller's last 10 finished timed/exam blocks, oldest first
+   */
+  trend: Array<TrendPoint>;
+  /**
+   * Weights
+   */
+  weights: Array<WeightOverlay>;
 };
 
 /**
@@ -358,6 +580,10 @@ export type BlockSummary = {
    * Answered
    */
   answered: number;
+  /**
+   * Timed/exam blocks: the server's clock
+   */
+  clock?: BlockClock | null;
   config: BlockConfig;
   /**
    * Correct
@@ -391,6 +617,28 @@ export type BlockSummary = {
    * Total
    */
   total: number;
+};
+
+/**
+ * ChangeStats
+ */
+export type ChangeStats = {
+  /**
+   * Changed
+   */
+  changed: number;
+  /**
+   * Right To Wrong
+   */
+  right_to_wrong: number;
+  /**
+   * Wrong To Right
+   */
+  wrong_to_right: number;
+  /**
+   * Wrong To Wrong
+   */
+  wrong_to_wrong: number;
 };
 
 /**
@@ -925,6 +1173,12 @@ export type ErrorResponse = {
  */
 export type ExamChoice = {
   /**
+   * Blocks
+   *
+   * Most blocks in a timed/exam session of this exam
+   */
+  blocks?: number;
+  /**
    * Id
    */
   id: string;
@@ -932,6 +1186,18 @@ export type ExamChoice = {
    * Label
    */
   label: string;
+  /**
+   * Minutes Per Block
+   *
+   * A mock block's length (official format)
+   */
+  minutes_per_block?: number;
+  /**
+   * Mock Ids
+   *
+   * Seeded mock exams of this exam (S09)
+   */
+  mock_ids?: Array<string>;
 };
 
 /**
@@ -989,6 +1255,10 @@ export type ExamOption = {
 export type ExamRules = {
   block: BlockRules;
   /**
+   * Break Minutes
+   */
+  break_minutes?: number;
+  /**
    * Diagnostic Questions
    */
   diagnostic_questions: number;
@@ -998,6 +1268,10 @@ export type ExamRules = {
   exams: {
     [key: string]: ExamFormat;
   };
+  /**
+   * Expiry Grace Seconds
+   */
+  expiry_grace_seconds?: number;
   modes: ExamModes;
 };
 
@@ -1073,6 +1347,20 @@ export type FlagOut = {
    * Question Id
    */
   question_id: string;
+};
+
+/**
+ * FlagStats
+ */
+export type FlagStats = {
+  /**
+   * Flagged
+   */
+  flagged: number;
+  /**
+   * Flagged Correct
+   */
+  flagged_correct: number;
 };
 
 /**
@@ -1312,6 +1600,34 @@ export type InkRejected = {
   reason: "invalid" | "stale" | "duplicate";
 };
 
+/**
+ * Insight
+ *
+ * One "What Naadi sees" sentence, as a ui_copy template key (`results.insight.<kind>`) plus its values.
+ */
+export type Insight = {
+  /**
+   * Kind
+   */
+  kind:
+    | "weakest_topic"
+    | "strongest_topic"
+    | "pace_slow"
+    | "pace_fast"
+    | "changes_hurt"
+    | "changes_helped"
+    | "flags_right"
+    | "underweighted"
+    | "trend_up"
+    | "trend_down";
+  /**
+   * Vars
+   */
+  vars: {
+    [key: string]: string | number | number;
+  };
+};
+
 export type JsonValue = unknown;
 
 /**
@@ -1506,6 +1822,16 @@ export type MediaSource = {
    * Url
    */
   url: string | null;
+};
+
+/**
+ * MockBlockCreate
+ */
+export type MockBlockCreate = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: "mock1" | "mock2";
 };
 
 /**
@@ -1715,6 +2041,32 @@ export type PoolFacet = {
 };
 
 /**
+ * PoolMock
+ *
+ * A seeded mock exam the Builder can start (POST /api/blocks/mock); it runs only as an exam-mode session.
+ */
+export type PoolMock = {
+  /**
+   * Blocks
+   *
+   * Sections (seeded blocks) in the mock
+   */
+  blocks: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Questions
+   */
+  questions: number;
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
  * PoolResponse
  */
 export type PoolResponse = {
@@ -1742,6 +2094,12 @@ export type PoolResponse = {
   exams: Array<ExamChoice>;
   limits: BlockLimits;
   /**
+   * Mocks
+   *
+   * The selected exam's mock exams (S09)
+   */
+  mocks?: Array<PoolMock>;
+  /**
    * Modes
    */
   modes: Array<ModeChoice>;
@@ -1758,11 +2116,35 @@ export type PoolResponse = {
    */
   systems: Array<PoolFacet>;
   /**
+   * Timed/exam session rules (S09)
+   */
+  timing?: PoolTiming | null;
+  /**
    * Total
    *
    * Questions matching every filter
    */
   total: number;
+};
+
+/**
+ * PoolTiming
+ *
+ * What the Builder shows about timed/exam sessions (from app_config.exam_rules).
+ */
+export type PoolTiming = {
+  /**
+   * Break Minutes
+   */
+  break_minutes: number;
+  /**
+   * Seconds Per Question
+   *
+   * Per mode: tutor (null), timed, exam
+   */
+  seconds_per_question: {
+    [key: string]: number | null;
+  };
 };
 
 /**
@@ -1930,7 +2312,11 @@ export type QuestionView = {
    */
   block_id: string;
   /**
-   * Present only after the student's graded attempt, and only in tutor mode
+   * Timed/exam blocks: the server's clock
+   */
+  clock?: BlockClock | null;
+  /**
+   * Tutor: after the student's graded attempt. Timed/exam: only once the whole block is finished
    */
   explanation: Explanation | null;
   /**
@@ -1947,6 +2333,12 @@ export type QuestionView = {
    */
   n: number;
   question: QuestionBody;
+  /**
+   * Section N
+   *
+   * The section holding the question
+   */
+  section_n?: number;
   /**
    * Total
    */
@@ -2128,6 +2520,42 @@ export type ReportIssueOut = {
 };
 
 /**
+ * ResultQuestion
+ */
+export type ResultQuestion = {
+  /**
+   * Change
+   *
+   * How the final answer differs from the first choice, if it does
+   */
+  change: "right_to_wrong" | "wrong_to_right" | "wrong_to_wrong" | null;
+  /**
+   * Flagged
+   */
+  flagged: boolean;
+  /**
+   * N
+   */
+  n: number;
+  /**
+   * Outcome
+   */
+  outcome: "correct" | "incorrect" | "omitted";
+  /**
+   * Question Id
+   */
+  question_id: string;
+  /**
+   * Seconds
+   */
+  seconds: number | null;
+  /**
+   * Section N
+   */
+  section_n: number;
+};
+
+/**
  * SearchHit
  */
 export type SearchHit = {
@@ -2194,6 +2622,30 @@ export type SearchResponse = {
    * Took Ms
    */
   took_ms: number;
+};
+
+/**
+ * SectionLayout
+ *
+ * One section of a timed/exam block: a consecutive slice of `question_ids`.
+ */
+export type SectionLayout = {
+  /**
+   * Count
+   */
+  count: number;
+  /**
+   * First Index
+   */
+  first_index: number;
+  /**
+   * N
+   */
+  n: number;
+  /**
+   * Time Limit S
+   */
+  time_limit_s: number;
 };
 
 /**
@@ -2425,6 +2877,92 @@ export type Target = {
 };
 
 /**
+ * TimeStats
+ */
+export type TimeStats = {
+  /**
+   * Mean S
+   */
+  mean_s: number | null;
+  /**
+   * Median S
+   */
+  median_s: number | null;
+  /**
+   * Target S
+   *
+   * exam_rules.modes[mode].seconds_per_question
+   */
+  target_s: number | null;
+  /**
+   * Total S
+   */
+  total_s: number;
+};
+
+/**
+ * TopicStat
+ */
+export type TopicStat = {
+  /**
+   * Correct
+   */
+  correct: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "system" | "discipline" | "competency" | "clinical_science";
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Percent
+   */
+  percent: number;
+  /**
+   * Total
+   */
+  total: number;
+  /**
+   * Weak
+   *
+   * Below the weak threshold (60 %)
+   */
+  weak: boolean;
+};
+
+/**
+ * TrendPoint
+ */
+export type TrendPoint = {
+  /**
+   * Block Id
+   */
+  block_id: string;
+  /**
+   * Current
+   */
+  current: boolean;
+  /**
+   * Finished At
+   */
+  finished_at: string;
+  /**
+   * Mode
+   */
+  mode: "timed" | "exam";
+  /**
+   * Score
+   */
+  score: number;
+};
+
+/**
  * ValidationError
  */
 export type ValidationError = {
@@ -2577,6 +3115,50 @@ export type WebResult = {
    * Url
    */
   url: string;
+};
+
+/**
+ * WeightOverlay
+ */
+export type WeightOverlay = {
+  /**
+   * Correct
+   */
+  correct: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Percent
+   *
+   * Accuracy in the system; null when the block had none
+   */
+  percent: number | null;
+  /**
+   * Share
+   *
+   * This block's share of questions in the system, percent
+   */
+  share: number;
+  /**
+   * Total
+   */
+  total: number;
+  /**
+   * Weight Max
+   */
+  weight_max: number | null;
+  /**
+   * Weight Min
+   *
+   * Official share of the exam, percent (low end)
+   */
+  weight_min: number | null;
 };
 
 export type ListAppConfigData = {
@@ -3110,6 +3692,47 @@ export type CreateBlockResponses = {
 
 export type CreateBlockResponse = CreateBlockResponses[keyof CreateBlockResponses];
 
+export type CreateMockBlockData = {
+  body: MockBlockCreate;
+  path?: never;
+  query?: never;
+  url: "/api/blocks/mock";
+};
+
+export type CreateMockBlockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Timed modes are off
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateMockBlockError = CreateMockBlockErrors[keyof CreateMockBlockErrors];
+
+export type CreateMockBlockResponses = {
+  /**
+   * Successful Response
+   */
+  201: BlockDetail;
+};
+
+export type CreateMockBlockResponse = CreateMockBlockResponses[keyof CreateMockBlockResponses];
+
 export type CreateSingleQuestionBlockData = {
   body: SingleBlockCreate;
   path?: never;
@@ -3337,6 +3960,110 @@ export type FlagAttemptResponses = {
 
 export type FlagAttemptResponse = FlagAttemptResponses[keyof FlagAttemptResponses];
 
+export type GetBlockClockData = {
+  body?: never;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/clock";
+};
+
+export type GetBlockClockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Not possible in the session's current state (see error.code)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetBlockClockError = GetBlockClockErrors[keyof GetBlockClockErrors];
+
+export type GetBlockClockResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlockClock;
+};
+
+export type GetBlockClockResponse = GetBlockClockResponses[keyof GetBlockClockResponses];
+
+export type FinishBlockData = {
+  body?: never;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/finish";
+};
+
+export type FinishBlockErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Not possible in the session's current state (see error.code)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type FinishBlockError = FinishBlockErrors[keyof FinishBlockErrors];
+
+export type FinishBlockResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlockDetail;
+};
+
+export type FinishBlockResponse = FinishBlockResponses[keyof FinishBlockResponses];
+
 export type GetBlockQuestionData = {
   body?: never;
   path: {
@@ -3390,6 +4117,118 @@ export type GetBlockQuestionResponses = {
 };
 
 export type GetBlockQuestionResponse = GetBlockQuestionResponses[keyof GetBlockQuestionResponses];
+
+export type GetBlockResultsData = {
+  body?: never;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/results";
+};
+
+export type GetBlockResultsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Not possible in the session's current state (see error.code)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetBlockResultsError = GetBlockResultsErrors[keyof GetBlockResultsErrors];
+
+export type GetBlockResultsResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlockResults;
+};
+
+export type GetBlockResultsResponse = GetBlockResultsResponses[keyof GetBlockResultsResponses];
+
+export type ChangeBlockSectionData = {
+  body?: never;
+  path: {
+    /**
+     * Block Id
+     *
+     * Block id
+     */
+    block_id: string;
+    /**
+     * N
+     */
+    n: number;
+    /**
+     * Action
+     */
+    action: "start" | "pause" | "resume" | "end";
+  };
+  query?: never;
+  url: "/api/blocks/{block_id}/sections/{n}/{action}";
+};
+
+export type ChangeBlockSectionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not found or not visible
+   */
+  404: ErrorResponse;
+  /**
+   * Not possible in the session's current state (see error.code)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ChangeBlockSectionError = ChangeBlockSectionErrors[keyof ChangeBlockSectionErrors];
+
+export type ChangeBlockSectionResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlockDetail;
+};
+
+export type ChangeBlockSectionResponse = ChangeBlockSectionResponses[keyof ChangeBlockSectionResponses];
 
 export type GetChapterData = {
   body?: never;
@@ -3486,6 +4325,39 @@ export type GetCoursesResponses = {
 };
 
 export type GetCoursesResponse = GetCoursesResponses[keyof GetCoursesResponses];
+
+export type GetActiveExamData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/exam/active";
+};
+
+export type GetActiveExamErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetActiveExamError = GetActiveExamErrors[keyof GetActiveExamErrors];
+
+export type GetActiveExamResponses = {
+  /**
+   * Successful Response
+   */
+  200: ActiveExamOut;
+};
+
+export type GetActiveExamResponse = GetActiveExamResponses[keyof GetActiveExamResponses];
 
 export type GetHealthData = {
   body?: never;

@@ -130,7 +130,7 @@ interface QuestionOut {
 }
 
 test.describe("builder", () => {
-  test("shows live pool counts from the database, one lime CTA, timed and exam disabled with a reason", async ({
+  test("shows live pool counts from the database, one lime CTA, timed and exam available", async ({
     browser,
     baseURL,
   }, info) => {
@@ -154,10 +154,10 @@ test.describe("builder", () => {
         "aria-pressed",
         "true",
       );
+      // qbank_timed is on (segment 09): timed and exam can be chosen
       for (const name of ["Timed", "Exam simulation"]) {
-        await expect(mode.getByRole("button", { name })).toHaveAttribute("aria-disabled", "true");
+        await expect(mode.getByRole("button", { name })).not.toHaveAttribute("aria-disabled", "true");
       }
-      await expect(mode.getByText(/coming soon/)).toBeVisible(); // a reason, not a dead link
 
       expect(await limeCount(page)).toBe(1);
       await expect(page.getByRole("button", { name: "Start block" })).toBeVisible();

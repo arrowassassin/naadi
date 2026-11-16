@@ -62,6 +62,14 @@ INK_ITEM: dict[str, Any] = {
 }
 
 
+_BLOCKS = uuid.UUID("5e09a1b2-0000-4000-8000-000000000009")
+
+
+def block_id_of(user_id: uuid.UUID) -> uuid.UUID:
+    """The fixture block of a user (stable, so `block_sections` can reference its own user's block)."""
+    return uuid.uuid5(_BLOCKS, str(user_id))
+
+
 USER_TABLES: tuple[UserTable, ...] = (
     UserTable(
         "profiles", lambda u, s: {"user_id": u, "display_name": "Test"}, ("user_id",), ("display_name", "Renamed")
@@ -74,9 +82,28 @@ USER_TABLES: tuple[UserTable, ...] = (
     ),
     UserTable(
         "blocks",
-        lambda u, s: {"id": _id(), "user_id": u, "config": Jsonb({"count": 1}), "question_ids": [s.question_id]},
+        lambda u, s: {
+            "id": block_id_of(u),
+            "user_id": u,
+            "config": Jsonb({"count": 1}),
+            "question_ids": [s.question_id],
+        },
         ("user_id",),
         ("started_at", "2026-12-01T08:00:00Z"),
+    ),
+    # Timing of a timed/exam block's sections (S09): select-only for the student, written by the API.
+    UserTable(
+        "block_sections",
+        lambda u, s: {
+            "block_id": block_id_of(u),
+            "user_id": u,
+            "n": 1,
+            "first_index": 0,
+            "count": 1,
+            "time_limit_s": 90,
+        },
+        ("user_id", "block_id", "n"),
+        ("deadline_at", "2026-12-01T09:00:00Z"),
     ),
     UserTable(
         "card_reviews",

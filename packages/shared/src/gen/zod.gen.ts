@@ -38,23 +38,48 @@ export const zAttemptIn = z.object({
  * AttemptState
  */
 export const zAttemptState = z.object({
-  chosen: z.string(),
+  chosen: z.string().nullable(),
   correct: z.boolean().nullable(),
   seconds: z.int().nullable(),
 });
 
 /**
- * BlockConfig
+ * BlockClock
+ *
+ * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
+ * where offset is estimated from `server_now`; it never counts down on its own.
  */
-export const zBlockConfig = z.object({
-  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
-  disciplines: z.array(z.string()),
-  exam: z.string(),
-  mode: z.enum(["tutor", "timed", "exam"]),
-  seed: z.int(),
-  status: z.enum(["all", "unused", "incorrect", "flagged", "correct"]),
-  systems: z.array(z.string()),
-  weak_spot: z.boolean(),
+export const zBlockClock = z.object({
+  break_left_ms: z.int(),
+  break_remaining_ms: z.int().nullable(),
+  deadline_at: z.iso.datetime().nullable(),
+  grace_ms: z.int(),
+  pausable: z.boolean(),
+  paused: z.boolean(),
+  remaining_ms: z.int().nullable(),
+  section_n: z.int().nullable(),
+  sections: z.int(),
+  server_now: z.iso.datetime(),
+  state: z.enum(["not_started", "running", "paused", "break", "finished"]),
+  time_limit_ms: z.int().nullable(),
+});
+
+/**
+ * ActiveExam
+ *
+ * The caller's timed/exam session that has not finished (the shell and the assistant guard read it).
+ */
+export const zActiveExam = z.object({
+  block_id: z.uuid(),
+  clock: zBlockClock,
+  mode: z.enum(["timed", "exam"]),
+});
+
+/**
+ * ActiveExamOut
+ */
+export const zActiveExamOut = z.object({
+  active: zActiveExam.nullable(),
 });
 
 /**
@@ -66,6 +91,7 @@ export const zBlockCreate = z.object({
   disciplines: z.array(z.string()).max(40).optional(),
   exam: z.string().regex(/^[a-z0-9]{2,16}$/),
   mode: z.enum(["tutor", "timed", "exam"]).optional().default("tutor"),
+  sections: z.int().gte(1).lte(12).optional().default(1),
   seed: z.int().gte(0).lte(4611686018427388000).nullish(),
   status: z.enum(["all", "unused", "incorrect", "flagged", "correct"]).optional().default("all"),
   systems: z.array(z.string()).max(40).optional(),
@@ -88,23 +114,7 @@ export const zBlockQuestionState = z.object({
   correct: z.boolean().nullable(),
   flagged: z.boolean(),
   n: z.int(),
-});
-
-/**
- * BlockDetail
- */
-export const zBlockDetail = z.object({
-  answered: z.int(),
-  config: zBlockConfig,
-  correct: z.int().nullable(),
-  created_at: z.iso.datetime(),
-  finished_at: z.iso.datetime().nullable(),
-  id: z.uuid(),
-  next_n: z.int(),
-  questions: z.array(zBlockQuestionState),
-  score: z.number().nullable(),
-  started_at: z.iso.datetime().nullable(),
-  total: z.int(),
+  section_n: z.int().optional().default(1),
 });
 
 /**
@@ -117,25 +127,13 @@ export const zBlockRules = z.object({
 });
 
 /**
- * BlockSummary
+ * ChangeStats
  */
-export const zBlockSummary = z.object({
-  answered: z.int(),
-  config: zBlockConfig,
-  correct: z.int().nullable(),
-  created_at: z.iso.datetime(),
-  finished_at: z.iso.datetime().nullable(),
-  id: z.uuid(),
-  score: z.number().nullable(),
-  started_at: z.iso.datetime().nullable(),
-  total: z.int(),
-});
-
-/**
- * BlockList
- */
-export const zBlockList = z.object({
-  blocks: z.array(zBlockSummary),
+export const zChangeStats = z.object({
+  changed: z.int(),
+  right_to_wrong: z.int(),
+  wrong_to_right: z.int(),
+  wrong_to_wrong: z.int(),
 });
 
 /**
@@ -224,8 +222,11 @@ export const zCourseSystem = z.object({
  * ExamChoice
  */
 export const zExamChoice = z.object({
+  blocks: z.int().optional().default(1),
   id: z.string(),
   label: z.string(),
+  minutes_per_block: z.int().optional().default(60),
+  mock_ids: z.array(z.string()).optional(),
 });
 
 /**
@@ -264,6 +265,7 @@ export const zExplanation = z.object({
 export const zAttemptOut = z.object({
   answered: z.int(),
   chosen: z.string(),
+  clock: zBlockClock.nullish(),
   correct: z.boolean().nullable(),
   explanation: zExplanation.nullable(),
   finished: z.boolean(),
@@ -314,6 +316,14 @@ export const zFlagOut = z.object({
   flagged: z.boolean(),
   n: z.int(),
   question_id: z.string(),
+});
+
+/**
+ * FlagStats
+ */
+export const zFlagStats = z.object({
+  flagged: z.int(),
+  flagged_correct: z.int(),
 });
 
 /**
@@ -379,6 +389,27 @@ export const zInkChangesOut = z.object({
   reset: z.boolean(),
   rev: z.int(),
   server_now: z.int(),
+});
+
+/**
+ * Insight
+ *
+ * One "What Naadi sees" sentence, as a ui_copy template key (`results.insight.<kind>`) plus its values.
+ */
+export const zInsight = z.object({
+  kind: z.enum([
+    "weakest_topic",
+    "strongest_topic",
+    "pace_slow",
+    "pace_fast",
+    "changes_hurt",
+    "changes_helped",
+    "flags_right",
+    "underweighted",
+    "trend_up",
+    "trend_down",
+  ]),
+  vars: z.record(z.string(), z.union([z.string(), z.int(), z.number()])),
 });
 
 export const zJsonValue = z.unknown();
@@ -492,6 +523,13 @@ export const zMediaOut = z.object({
 });
 
 /**
+ * MockBlockCreate
+ */
+export const zMockBlockCreate = z.object({
+  chapter_id: z.enum(["mock1", "mock2"]),
+});
+
+/**
  * ModeChoice
  */
 export const zModeChoice = z.object({
@@ -523,8 +561,10 @@ export const zExamModes = z.object({
  */
 export const zExamRules = z.object({
   block: zBlockRules,
+  break_minutes: z.int().gte(0).lte(240).optional().default(45),
   diagnostic_questions: z.int().gte(1).lte(80),
   exams: z.record(z.string(), zExamFormat),
+  expiry_grace_seconds: z.int().gte(0).lte(30).optional().default(2),
   modes: zExamModes,
 });
 
@@ -610,6 +650,28 @@ export const zPoolFacet = z.object({
 });
 
 /**
+ * PoolMock
+ *
+ * A seeded mock exam the Builder can start (POST /api/blocks/mock); it runs only as an exam-mode session.
+ */
+export const zPoolMock = z.object({
+  blocks: z.int(),
+  id: z.string(),
+  questions: z.int(),
+  title: z.string(),
+});
+
+/**
+ * PoolTiming
+ *
+ * What the Builder shows about timed/exam sessions (from app_config.exam_rules).
+ */
+export const zPoolTiming = z.object({
+  break_minutes: z.int(),
+  seconds_per_question: z.record(z.string(), z.int().nullable()),
+});
+
+/**
  * PoolResponse
  */
 export const zPoolResponse = z.object({
@@ -618,9 +680,11 @@ export const zPoolResponse = z.object({
   exam: z.string(),
   exams: z.array(zExamChoice),
   limits: zBlockLimits,
+  mocks: z.array(zPoolMock).optional(),
   modes: z.array(zModeChoice),
   status: z.record(z.string(), z.int()),
   systems: z.array(zPoolFacet),
+  timing: zPoolTiming.nullish(),
   total: z.int(),
 });
 
@@ -708,12 +772,14 @@ export const zQuestionBody = z.object({
 export const zQuestionView = z.object({
   attempt: zAttemptState.nullable(),
   block_id: z.uuid(),
+  clock: zBlockClock.nullish(),
   explanation: zExplanation.nullable(),
   flagged: z.boolean(),
   lesson: zLessonLink.nullable(),
   mode: z.enum(["tutor", "timed", "exam"]),
   n: z.int(),
   question: zQuestionBody,
+  section_n: z.int().optional().default(1),
   total: z.int(),
 });
 
@@ -842,6 +908,90 @@ export const zReportIssueOut = z.object({
   created_at: z.iso.datetime(),
   id: z.uuid(),
   status: z.enum(["open", "triaged", "resolved", "dismissed"]),
+});
+
+/**
+ * ResultQuestion
+ */
+export const zResultQuestion = z.object({
+  change: z.enum(["right_to_wrong", "wrong_to_right", "wrong_to_wrong"]).nullable(),
+  flagged: z.boolean(),
+  n: z.int(),
+  outcome: z.enum(["correct", "incorrect", "omitted"]),
+  question_id: z.string(),
+  seconds: z.int().nullable(),
+  section_n: z.int(),
+});
+
+/**
+ * SectionLayout
+ *
+ * One section of a timed/exam block: a consecutive slice of `question_ids`.
+ */
+export const zSectionLayout = z.object({
+  count: z.int().gte(1).lte(80),
+  first_index: z.int().gte(0),
+  n: z.int().gte(1).lte(12),
+  time_limit_s: z.int().gte(1).lte(86400),
+});
+
+/**
+ * BlockConfig
+ */
+export const zBlockConfig = z.object({
+  break_s: z.int().nullish(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  disciplines: z.array(z.string()),
+  exam: z.string(),
+  mock: z.string().nullish(),
+  mode: z.enum(["tutor", "timed", "exam"]),
+  purpose: z.literal("diagnostic").nullish(),
+  sections: z.array(zSectionLayout).nullish(),
+  seed: z.int(),
+  status: z.enum(["all", "unused", "incorrect", "flagged", "correct"]),
+  systems: z.array(z.string()),
+  weak_spot: z.boolean(),
+});
+
+/**
+ * BlockDetail
+ */
+export const zBlockDetail = z.object({
+  answered: z.int(),
+  clock: zBlockClock.nullish(),
+  config: zBlockConfig,
+  correct: z.int().nullable(),
+  created_at: z.iso.datetime(),
+  finished_at: z.iso.datetime().nullable(),
+  id: z.uuid(),
+  next_n: z.int(),
+  questions: z.array(zBlockQuestionState),
+  score: z.number().nullable(),
+  started_at: z.iso.datetime().nullable(),
+  total: z.int(),
+});
+
+/**
+ * BlockSummary
+ */
+export const zBlockSummary = z.object({
+  answered: z.int(),
+  clock: zBlockClock.nullish(),
+  config: zBlockConfig,
+  correct: z.int().nullable(),
+  created_at: z.iso.datetime(),
+  finished_at: z.iso.datetime().nullable(),
+  id: z.uuid(),
+  score: z.number().nullable(),
+  started_at: z.iso.datetime().nullable(),
+  total: z.int(),
+});
+
+/**
+ * BlockList
+ */
+export const zBlockList = z.object({
+  blocks: z.array(zBlockSummary),
 });
 
 /**
@@ -998,6 +1148,40 @@ export const zSearchResponse = z.object({
 });
 
 /**
+ * TimeStats
+ */
+export const zTimeStats = z.object({
+  mean_s: z.number().nullable(),
+  median_s: z.number().nullable(),
+  target_s: z.int().nullable(),
+  total_s: z.int(),
+});
+
+/**
+ * TopicStat
+ */
+export const zTopicStat = z.object({
+  correct: z.int(),
+  id: z.string(),
+  kind: z.enum(["system", "discipline", "competency", "clinical_science"]),
+  label: z.string(),
+  percent: z.number(),
+  total: z.int(),
+  weak: z.boolean(),
+});
+
+/**
+ * TrendPoint
+ */
+export const zTrendPoint = z.object({
+  block_id: z.uuid(),
+  current: z.boolean(),
+  finished_at: z.iso.datetime(),
+  mode: z.enum(["timed", "exam"]),
+  score: z.number(),
+});
+
+/**
  * ValidationError
  */
 export const zValidationError = z.object({
@@ -1065,6 +1249,45 @@ export const zWebResponse = z.object({
   message: z.string().nullish(),
   results: z.array(zWebResult),
   status: z.enum(["ok", "empty", "unavailable", "limit"]),
+});
+
+/**
+ * WeightOverlay
+ */
+export const zWeightOverlay = z.object({
+  correct: z.int(),
+  id: z.string(),
+  label: z.string(),
+  percent: z.number().nullable(),
+  share: z.number(),
+  total: z.int(),
+  weight_max: z.number().nullable(),
+  weight_min: z.number().nullable(),
+});
+
+/**
+ * BlockResults
+ */
+export const zBlockResults = z.object({
+  block_id: z.uuid(),
+  changes: zChangeStats,
+  competencies: z.array(zTopicStat),
+  correct: z.int(),
+  disciplines: z.array(zTopicStat),
+  exam: z.string(),
+  finished_at: z.iso.datetime(),
+  flags: zFlagStats,
+  insights: z.array(zInsight),
+  mock: z.string().nullable(),
+  mode: z.enum(["timed", "exam"]),
+  omitted: z.int(),
+  percent: z.number(),
+  questions: z.array(zResultQuestion),
+  systems: z.array(zTopicStat),
+  time: zTimeStats,
+  total: z.int(),
+  trend: z.array(zTrendPoint),
+  weights: z.array(zWeightOverlay),
 });
 
 /**
@@ -1162,6 +1385,13 @@ export const zCreateBlockBody = zBlockCreate;
  */
 export const zCreateBlockResponse = zBlockDetail;
 
+export const zCreateMockBlockBody = zMockBlockCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateMockBlockResponse = zBlockDetail;
+
 export const zCreateSingleQuestionBlockBody = zSingleBlockCreate;
 
 /**
@@ -1208,6 +1438,24 @@ export const zFlagAttemptPath = z.object({
  */
 export const zFlagAttemptResponse = zFlagOut;
 
+export const zGetBlockClockPath = z.object({
+  block_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetBlockClockResponse = zBlockClock;
+
+export const zFinishBlockPath = z.object({
+  block_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zFinishBlockResponse = zBlockDetail;
+
 export const zGetBlockQuestionPath = z.object({
   block_id: z.uuid(),
   n: z.int().gte(1).lte(200),
@@ -1217,6 +1465,26 @@ export const zGetBlockQuestionPath = z.object({
  * Successful Response
  */
 export const zGetBlockQuestionResponse = zQuestionView;
+
+export const zGetBlockResultsPath = z.object({
+  block_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetBlockResultsResponse = zBlockResults;
+
+export const zChangeBlockSectionPath = z.object({
+  block_id: z.uuid(),
+  n: z.int().gte(1).lte(12),
+  action: z.enum(["start", "pause", "resume", "end"]),
+});
+
+/**
+ * Successful Response
+ */
+export const zChangeBlockSectionResponse = zBlockDetail;
 
 export const zGetChapterPath = z.object({
   chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),
@@ -1242,6 +1510,11 @@ export const zGetCoursesQuery = z.object({
  * Successful Response
  */
 export const zGetCoursesResponse = zCoursesResponse;
+
+/**
+ * Successful Response
+ */
+export const zGetActiveExamResponse = zActiveExamOut;
 
 /**
  * Successful Response

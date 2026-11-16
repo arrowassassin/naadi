@@ -15,9 +15,9 @@ def good_rows() -> list[dict[str, Any]]:
     return [{"table_name": t, "exists": True, "forced": True, "cmds": list(ALL)} for t in USER_TABLES]
 
 
-def test_all_eighteen_pass() -> None:
-    assert len(USER_TABLES) == 19
-    assert evaluate_user_tables(good_rows()) == (True, "19 tables")
+def test_all_user_tables_pass() -> None:
+    assert len(USER_TABLES) == 20
+    assert evaluate_user_tables(good_rows()) == (True, "20 tables")
 
 
 @pytest.mark.parametrize(
@@ -27,7 +27,7 @@ def test_all_eighteen_pass() -> None:
         (lambda rows: rows[4].update(cmds=["INSERT", "SELECT", "UPDATE"]), "notes: policies"),
         (lambda rows: rows[0].update(forced=False), "profiles: RLS not forced"),
         (lambda rows: rows[7].update(exists=False, cmds=[]), "uploads: missing"),
-        (lambda rows: rows.pop(), "ink_items: missing"),
+        (lambda rows: rows.pop(), "block_sections: missing"),
         (lambda rows: rows[5].update(cmds=[*ALL, "SELECT"]), "notebooks: policies"),
     ],
 )

@@ -2,7 +2,10 @@ import { ErrorState } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate, Outlet } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import { ApiError } from "../auth/apiError";
-import { useCreateSingleBlock } from "./api";
+import { ExamPage } from "../exam/ExamPage";
+import { ResultsPage } from "../exam/results/ResultsPage";
+import { parseReviewSearch, ReviewPage } from "../exam/results/ReviewPage";
+import { useBlock, useCreateSingleBlock } from "./api";
 import { BuilderPage } from "./BuilderPage";
 import { useCopy } from "./copy";
 import { QuestionPage } from "./QuestionPage";
@@ -11,13 +14,25 @@ const ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const EXAM = /^[a-z0-9]{2,16}$/;
 
+const MOCK = /^mock[12]$/;
+
 export interface PracticeSearch {
   exam?: string;
+  /** From the Courses page's Mock exams group: preselect its exam and bring the Mock exams group into view. */
+  mock?: "mock1" | "mock2";
 }
 
 export function parsePracticeSearch(s: Record<string, unknown>): PracticeSearch {
-  return { exam: typeof s.exam === "string" && EXAM.test(s.exam) ? s.exam : undefined };
+  return {
+    exam: typeof s.exam === "string" && EXAM.test(s.exam) ? s.exam : undefined,
+    mock: typeof s.mock === "string" && MOCK.test(s.mock) ? (s.mock as "mock1" | "mock2") : undefined,
+  };
 }
+
+const parseBlockParams = (p: Record<string, string>) => {
+  if (!UUID.test(p.blockId ?? "")) throw new Error("invalid block");
+  return { blockId: p.blockId as string };
+};
 
 /**
  * `/practice/question/$questionId`: where a search hit for a question lands. It opens a one-question tutor
@@ -56,6 +71,24 @@ function SingleQuestion({ questionId }: { questionId: string }) {
   );
 }
 
+/**
+ * A block's question route: timed and exam blocks run on the exam view (segment 09, server clock), tutor
+ * blocks on the question view. Without the block (offline), the question view decides from its cached copy.
+ */
+function BlockQuestion({ blockId, n }: { blockId: string; n: number }) {
+  const t = useCopy();
+  const block = useBlock(blockId);
+  if (block.isPending && !block.data) {
+    return (
+      <p role="status" className="m-0 pt-10 text-text-2">
+        {t("exam.loading")}
+      </p>
+    );
+  }
+  if (block.data && block.data.config.mode !== "tutor") return <ExamPage blockId={blockId} n={n} />;
+  return <QuestionPage blockId={blockId} n={n} />;
+}
+
 /** One route tree under the protected app layout: `router.tsx` adds `practiceRoutes(appRoute)`. */
 export function practiceRoutes(parent: AnyRoute) {
   const practice = createRoute({ getParentRoute: () => parent, path: "/practice", component: Outlet });
@@ -64,8 +97,8 @@ export function practiceRoutes(parent: AnyRoute) {
     path: "/",
     validateSearch: parsePracticeSearch,
     component: function BuilderRoute() {
-      const { exam } = builder.useSearch();
-      return <BuilderPage key={exam ?? ""} exam={exam} />;
+      const { exam, mock } = builder.useSearch();
+      return <BuilderPage key={exam ?? ""} exam={exam} mock={mock} />;
     },
   });
   const question = createRoute({
@@ -81,7 +114,7 @@ export function practiceRoutes(parent: AnyRoute) {
     },
     component: function QuestionRoute() {
       const { blockId, n } = question.useParams();
-      return <QuestionPage blockId={blockId} n={n} />;
+      return <BlockQuestion blockId={blockId} n={n} />;
     },
   });
   const single = createRoute({
@@ -98,5 +131,32 @@ export function practiceRoutes(parent: AnyRoute) {
       return <SingleQuestion questionId={single.useParams().questionId} />;
     },
   });
-  return practice.addChildren([builder, question, single]);
+  // Results and review of a finished timed/exam block (segment 09). Static segments outrank `$n`.
+  const results = createRoute({
+    getParentRoute: () => practice,
+    path: "blocks/$blockId/results",
+    params: { parse: parseBlockParams, stringify: (p: { blockId: string }) => p },
+    component: function ResultsRoute() {
+      return <ResultsPage blockId={results.useParams().blockId} />;
+    },
+  });
+  const review = createRoute({
+    getParentRoute: () => practice,
+    path: "blocks/$blockId/review/$n",
+    validateSearch: parseReviewSearch,
+    params: {
+      parse: (p: Record<string, string>) => {
+        const n = Number(p.n);
+        if (!Number.isInteger(n) || n < 1 || n > 1000) throw new Error("invalid question");
+        return { ...parseBlockParams(p), n };
+      },
+      stringify: (p: { blockId: string; n: number }) => ({ blockId: p.blockId, n: String(p.n) }),
+    },
+    component: function ReviewRoute() {
+      const { blockId, n } = review.useParams();
+      const { filter } = review.useSearch();
+      return <ReviewPage key={blockId} blockId={blockId} n={n} filter={filter} />;
+    },
+  });
+  return practice.addChildren([builder, question, results, review, single]);
 }

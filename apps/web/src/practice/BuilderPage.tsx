@@ -3,11 +3,22 @@ import { Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import type { UseQueryResult } from "@tanstack/react-query";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Minus, Plus } from "lucide-react";
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useBlocks, useCreateBlock, useCreateWeakSpotBlock, usePool } from "./api";
 import { useCopy } from "./copy";
 import { resumeIndex, shortDate } from "./format";
+import {
+  type BuilderRules,
+  examOfMock as findExamOfMock,
+  type MockId,
+  maxSections,
+  mocksOf,
+  rulesOf,
+  type StartableMock,
+  sectionsThatFit,
+  useCreateMockBlock,
+} from "./timed";
 
 type Mode = "tutor" | "timed" | "exam";
 type Status = "all" | "unused" | "incorrect" | "flagged" | "correct";
@@ -168,6 +179,126 @@ function PastBlocks({ query }: { query: UseQueryResult<{ blocks: BlockSummary[] 
   );
 }
 
+/** Blocks of a timed/exam session (segment 09): `count` stays the questions per block. */
+function SectionsGroup(props: {
+  t: ReturnType<typeof useCopy>;
+  most: number;
+  fit: number;
+  sections: number;
+  setSections: (n: number) => void;
+  count: number;
+  minutes: number | null;
+  breakMinutes: number | null;
+}) {
+  const { t } = props;
+  const reasonId = useId();
+  const chips = Array.from({ length: props.most }, (_, i) => i + 1);
+  return (
+    <Group title={t("practice.sections_group")}>
+      {chips.map((n) => (
+        <Chipbutton
+          key={n}
+          on={props.sections === n}
+          disabled={n > props.fit}
+          describedBy={reasonId}
+          onClick={() => props.setSections(n)}
+        >
+          {String(n)}
+        </Chipbutton>
+      ))}
+      <p className="m-0 basis-full text-text-2 text-ui-sm">
+        {props.minutes === null
+          ? t("practice.sections_hint_untimed", { sections: props.sections, count: props.count })
+          : t("practice.sections_hint", { sections: props.sections, count: props.count, minutes: props.minutes })}
+        {props.sections > 1 && props.breakMinutes !== null
+          ? ` ${t("practice.sections_break", { minutes: props.breakMinutes })}`
+          : ""}
+      </p>
+      {props.fit < props.most ? (
+        <p id={reasonId} className="m-0 basis-full text-text-3 text-ui-sm">
+          {t("practice.sections_not_enough")}
+        </p>
+      ) : null}
+    </Group>
+  );
+}
+
+/** The seeded mock exams of the selected exam; each starts an exam-mode session in its fixed order. */
+function MockExamsGroup(props: {
+  t: ReturnType<typeof useCopy>;
+  mocks: StartableMock[];
+  available: boolean;
+  starting: MockId | null;
+  busy: boolean;
+  focus: MockId | undefined;
+  start: (id: MockId) => void;
+}) {
+  const { t } = props;
+  const reasonId = useId();
+  const focused = useRef(false);
+  const refs = useRef(new Map<string, HTMLButtonElement>());
+  const { focus, mocks } = props;
+  useEffect(() => {
+    // From the Courses page (`?mock=`): bring the mock into view and focus it; it never starts by itself.
+    if (focused.current || !focus || !mocks.some((m) => m.id === focus)) return;
+    const el = refs.current.get(focus);
+    if (!el) return;
+    focused.current = true;
+    el.scrollIntoView?.({ block: "center" });
+    el.focus({ preventScroll: true });
+  }, [focus, mocks]);
+  return (
+    <fieldset
+      id="mock-exams"
+      className="m-0 flex min-w-0 scroll-mt-24 flex-col gap-3.5 rounded-tile border border-line-soft bg-surface-1 p-6 tablet:p-7"
+    >
+      <legend className="float-left p-0 font-bold font-display text-[1.5rem] tracking-[-0.02em]">
+        {t("practice.mock_group")}
+      </legend>
+      <div className="clear-both flex flex-col gap-2">
+        {props.mocks.map((m) => {
+          const disabled = !props.available || props.busy;
+          return (
+            <button
+              key={m.id}
+              ref={(el) => {
+                if (el) refs.current.set(m.id, el);
+                else refs.current.delete(m.id);
+              }}
+              type="button"
+              data-mock={m.id}
+              aria-disabled={disabled || undefined}
+              aria-describedby={props.available ? undefined : reasonId}
+              onClick={disabled ? undefined : () => props.start(m.id)}
+              className={cx(
+                "flex min-h-14 w-full flex-col items-start gap-0.5 rounded-block px-5 py-3 text-left transition-colors duration-(--duration-control) ease-out",
+                props.available
+                  ? "border border-line-control bg-transparent text-text hover:bg-surface-2"
+                  : CHIP_DISABLED,
+                props.busy && props.available && "opacity-60",
+              )}
+            >
+              <span className="font-semibold">{props.starting === m.id ? t("practice.mock_building") : m.title}</span>
+              <span className="text-text-3 text-ui-sm">{t("practice.mock_meta", { count: m.question_count })}</span>
+            </button>
+          );
+        })}
+        {props.available ? null : (
+          <p id={reasonId} className="m-0 text-text-3 text-ui-sm">
+            {t("practice.mock_unavailable")}
+          </p>
+        )}
+      </div>
+    </fieldset>
+  );
+}
+
+/** A refusal the student can act on, in ui_copy words when its code has some. */
+function errorText(t: ReturnType<typeof useCopy>, err: Error): string {
+  if (err instanceof ApiError && err.code === "mock_not_found") return t("practice.mock_not_found");
+  return err.message;
+}
+
 function BuilderBody(props: BodyProps) {
   const { t, pool } = props;
   const reasonId = useId();
@@ -181,11 +312,24 @@ function BuilderBody(props: BodyProps) {
     (f) => props.systems.includes(f.id) || props.disciplines.includes(f.id),
   );
   const topics = picked.length ? picked.map((f) => f.label).join(", ") : t("practice.all_systems");
-  const error = (props.create.error ?? props.weak.error) as Error | null;
-  const busy = props.create.isPending || props.weak.isPending;
+  const error = (props.create.error ?? props.weak.error ?? props.mock.error) as Error | null;
+  const busy = props.create.isPending || props.weak.isPending || props.mock.isPending;
+  const timed = props.mode !== "tutor";
+  const rules = props.rules;
+  const most = maxSections(rules, pool.exam);
+  const fit = sectionsThatFit(total, count, most);
+  const sections = timed ? Math.min(props.sections, fit) : 1;
+  const perQuestion = timed ? (rules?.modes[props.mode]?.seconds_per_question ?? null) : null;
+  const examModeOn = pool.modes.some((m) => m.id === "exam" && m.available);
+
   // nothing at all to practise (not just filtered out): a different message from "widen the filters"
   const noFilters =
     props.systems.length === 0 && props.disciplines.length === 0 && props.difficulty === null && pool.status.all === 0;
+
+  const startMock = (id: MockId) =>
+    props.mock.mutate(id, {
+      onSuccess: (b) => void props.nav({ to: "/practice/blocks/$blockId/$n", params: { blockId: b.id, n: 1 } }),
+    });
 
   const start = () =>
     props.create.mutate(
@@ -197,6 +341,7 @@ function BuilderBody(props: BodyProps) {
         difficulty: props.difficulty ?? undefined,
         count,
         mode: props.mode,
+        ...(timed ? { sections } : {}),
       },
       { onSuccess: (b) => void props.nav({ to: "/practice/blocks/$blockId/$n", params: { blockId: b.id, n: 1 } }) },
     );
@@ -255,6 +400,29 @@ function BuilderBody(props: BodyProps) {
             </p>
           ) : null}
         </Group>
+        {timed ? (
+          <SectionsGroup
+            t={t}
+            most={most}
+            fit={fit}
+            sections={sections}
+            setSections={props.setSections}
+            count={count}
+            minutes={perQuestion === null ? null : Math.round((count * perQuestion) / 60)}
+            breakMinutes={rules?.break_minutes ?? null}
+          />
+        ) : null}
+        {props.mocks.length ? (
+          <MockExamsGroup
+            t={t}
+            mocks={props.mocks}
+            available={examModeOn}
+            starting={props.mock.isPending ? (props.mock.variables ?? null) : null}
+            busy={busy}
+            focus={props.focusMock}
+            start={startMock}
+          />
+        ) : null}
         <Group title={t("practice.group_systems")}>
           <Chipbutton on={props.systems.length === 0} onClick={() => props.setSystems([])}>
             {t("practice.all_systems")}
@@ -334,7 +502,8 @@ function BuilderBody(props: BodyProps) {
               topics,
               status: t(`practice.status_${props.status}`).toLowerCase(),
             })}
-            . {total === 1 ? t("practice.matches_one") : t("practice.matches", { n: total })}
+            {sections > 1 ? ` · ${t("practice.sections_summary", { sections, total: sections * count })}` : ""}.{" "}
+            {total === 1 ? t("practice.matches_one") : t("practice.matches", { n: total })}
           </p>
           {total === 0 ? (
             <p role="status" className="m-0 font-semibold">
@@ -366,7 +535,7 @@ function BuilderBody(props: BodyProps) {
 
         {error ? (
           <p role="alert" className="m-0 rounded-block border border-amber px-4 py-3 text-amber">
-            {error.message}
+            {errorText(t, error)}
           </p>
         ) : null}
       </aside>
@@ -392,9 +561,15 @@ interface BodyProps {
   create: ReturnType<typeof useCreateBlock>;
   weak: ReturnType<typeof useCreateWeakSpotBlock>;
   nav: ReturnType<typeof useNavigate>;
+  sections: number;
+  setSections: (n: number) => void;
+  rules: BuilderRules | undefined;
+  mocks: StartableMock[];
+  mock: ReturnType<typeof useCreateMockBlock>;
+  focusMock: MockId | undefined;
 }
 
-export function BuilderPage({ exam }: { exam?: string }) {
+export function BuilderPage({ exam, mock }: { exam?: string; mock?: MockId }) {
   const t = useCopy();
   // The filters live here so the pool query can follow them; the chips below only report changes.
   const [mode, setMode] = useState<Mode>("tutor");
@@ -408,6 +583,17 @@ export function BuilderPage({ exam }: { exam?: string }) {
   const create = useCreateBlock();
   const weak = useCreateWeakSpotBlock();
   const nav = useNavigate();
+  const [sections, setSections] = useState(1);
+  const rules = { data: rulesOf(pool.data) };
+  const mocks = { data: mocksOf(pool.data) };
+  const mockStart = useCreateMockBlock();
+  // A `?mock=` link without an exam (the Courses page): find the exam that lists the mock, then show that one.
+  const examOfMock = exam === undefined ? findExamOfMock(mock, pool.data) : null;
+  const shownExam = pool.data?.exam;
+  useEffect(() => {
+    if (exam !== undefined || !mock || !examOfMock || !shownExam || examOfMock === shownExam) return;
+    void nav({ to: "/practice", search: { exam: examOfMock, mock }, replace: true });
+  }, [exam, mock, examOfMock, shownExam, nav]);
 
   if (pool.isPending && !pool.data) return <Loading />;
   if (!pool.data) {
@@ -457,6 +643,12 @@ export function BuilderPage({ exam }: { exam?: string }) {
           create,
           weak,
           nav,
+          sections,
+          setSections,
+          rules: rules.data,
+          mocks: mocks.data ?? [],
+          mock: mockStart,
+          focusMock: mock,
         }}
       />
       <PastBlocks query={blocks} />

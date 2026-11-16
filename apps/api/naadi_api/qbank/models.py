@@ -9,6 +9,8 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from .exam_models import BlockClock, SectionLayout
+
 ID_PATTERN = r"^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$"
 EXAM_PATTERN = r"^[a-z0-9]{2,16}$"
 TAXONOMY_PATTERN = r"^[A-Za-z0-9][A-Za-z0-9._\-]{0,127}$"
@@ -36,6 +38,25 @@ class BlockLimits(BaseModel):
 class ExamChoice(BaseModel):
     id: str
     label: str
+    mock_ids: list[str] = Field(default_factory=list, description="Seeded mock exams of this exam (S09)")
+    blocks: int = Field(default=1, description="Most blocks in a timed/exam session of this exam")
+    minutes_per_block: int = Field(default=60, description="A mock block's length (official format)")
+
+
+class PoolTiming(BaseModel):
+    """What the Builder shows about timed/exam sessions (from app_config.exam_rules)."""
+
+    break_minutes: int
+    seconds_per_question: dict[str, int | None] = Field(description="Per mode: tutor (null), timed, exam")
+
+
+class PoolMock(BaseModel):
+    """A seeded mock exam the Builder can start (POST /api/blocks/mock); it runs only as an exam-mode session."""
+
+    id: str
+    title: str
+    blocks: int = Field(description="Sections (seeded blocks) in the mock")
+    questions: int
 
 
 class ModeChoice(BaseModel):
@@ -53,6 +74,8 @@ class PoolResponse(BaseModel):
     disciplines: list[PoolFacet] = Field(description="Disciplines (Step 1) or clinical sciences (Step 2 CK)")
     status: dict[str, int] = Field(description="Counts per status filter: all, unused, incorrect, flagged, correct")
     difficulty: dict[str, int] = Field(description="Counts per difficulty: easy, medium, hard, all")
+    mocks: list[PoolMock] = Field(default_factory=list, description="The selected exam's mock exams (S09)")
+    timing: PoolTiming | None = Field(default=None, description="Timed/exam session rules (S09)")
 
 
 # ── Blocks ──
@@ -66,9 +89,12 @@ class BlockCreate(BaseModel):
     disciplines: list[str] = Field(default_factory=list, max_length=40)
     status: Status = "all"
     difficulty: Difficulty | None = None
-    count: int = Field(ge=1, le=80, description="Bounded by app_config.exam_rules.block")
+    count: int = Field(ge=1, le=80, description="Questions per section; bounded by app_config.exam_rules.block")
     mode: Mode = "tutor"
     seed: int | None = Field(default=None, ge=0, le=2**62, description="Same seed + filters give the same questions")
+    sections: int = Field(
+        default=1, ge=1, le=12, description="Timed/exam only: sections of `count` questions (<= exams[exam].blocks)"
+    )
 
     @field_validator("systems", "disciplines")
     @classmethod
@@ -102,6 +128,10 @@ class BlockConfig(BaseModel):
     disciplines: list[str]
     seed: int
     weak_spot: bool
+    sections: list[SectionLayout] | None = Field(default=None, description="Timed/exam: the session's sections")
+    break_s: int | None = Field(default=None, description="Timed/exam: the shared break pool, seconds")
+    mock: str | None = Field(default=None, description="The mock exam chapter this block runs, if any")
+    purpose: Literal["diagnostic"] | None = Field(default=None, description="Set by S11 for the onboarding diagnostic")
 
 
 class BlockSummary(BaseModel):
@@ -114,10 +144,12 @@ class BlockSummary(BaseModel):
     answered: int
     correct: int | None = Field(description="Right answers so far; only in tutor mode or once the block is finished")
     score: float | None = Field(description="Percent correct, set when the block finishes")
+    clock: BlockClock | None = Field(default=None, description="Timed/exam blocks: the server's clock")
 
 
 class BlockQuestionState(BaseModel):
     n: int = Field(description="1-based position in the block")
+    section_n: int = Field(default=1, description="The section holding the question (1 in tutor mode)")
     answered: bool
     flagged: bool
     correct: bool | None = Field(description="Only in tutor mode or once the block is finished")
@@ -176,7 +208,7 @@ class Explanation(BaseModel):
 
 
 class AttemptState(BaseModel):
-    chosen: str
+    chosen: str | None = Field(description="null for a question left unanswered in a finished timed/exam block")
     seconds: int | None
     correct: bool | None = Field(description="Only in tutor mode (with the explanation)")
 
@@ -191,8 +223,10 @@ class QuestionView(BaseModel):
     flagged: bool
     attempt: AttemptState | None
     explanation: Explanation | None = Field(
-        description="Present only after the student's graded attempt, and only in tutor mode"
+        description="Tutor: after the student's graded attempt. Timed/exam: only once the whole block is finished"
     )
+    section_n: int = Field(default=1, description="The section holding the question")
+    clock: BlockClock | None = Field(default=None, description="Timed/exam blocks: the server's clock")
 
 
 class AttemptIn(BaseModel):
@@ -215,6 +249,7 @@ class AttemptOut(BaseModel):
     answered: int = Field(description="Questions answered in the block, this one included")
     total: int
     finished: bool
+    clock: BlockClock | None = Field(default=None, description="Timed/exam blocks: the server's clock")
 
 
 class FlagIn(BaseModel):

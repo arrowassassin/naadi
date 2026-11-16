@@ -93,6 +93,8 @@ def test_user_b_cannot_touch_user_a_rows(
         if table.name == "ink_items":  # an item needs its own user's layer
             layers = next(t for t in USER_TABLES if t.name == "ink_layers")
             insert_row(pg, "ink_layers", layers.row(user_b, shared))
+        if table.name == "block_sections":  # a section belongs to its own user's block
+            insert_row(pg, "blocks", next(t for t in USER_TABLES if t.name == "blocks").row(user_b, shared))
         insert_row(pg, table.name, table.row(user_b, shared))  # written by the API, never by the client
     with as_user(pg, user_b) as conn:
         # B also cannot move one of its own rows over to A.
@@ -156,10 +158,11 @@ def test_user_a_can_select_update_delete_insert_own_rows(
 # Written by the API (it grades and owns block state); students may only read them (and delete their own rows).
 API_WRITTEN = ("attempts", "blocks")
 # Ink (0009): every item is validated and merged by the API; students may only read their own layers and items.
-SELECT_ONLY = ("ink_layers", "ink_items")
+# Exam timing (0011): every timing write is the API's own clock; students may only read their sections.
+SELECT_ONLY = ("ink_layers", "ink_items", "block_sections")
 
 
-@pytest.mark.parametrize("table", API_WRITTEN)
+@pytest.mark.parametrize("table", [*API_WRITTEN, "block_sections"])
 def test_a_student_cannot_insert_attempts_or_write_blocks(
     pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared, table: str
 ) -> None:
@@ -174,8 +177,19 @@ def test_a_student_cannot_insert_attempts_or_write_blocks(
                 continue
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 insert_row(conn, table, row)
-        if table == "blocks":
+        if table == "block_sections":
             for stmt in (
+                "update public.block_sections set started_at = now(), deadline_at = now()",
+                "update public.block_sections set ended_at = null, ended_reason = null",
+                "update public.block_sections set paused_total_ms = 0",
+                "update public.block_sections set time_limit_s = 99999",
+                "delete from public.block_sections",
+            ):
+                with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                    conn.execute(stmt)
+        elif table == "blocks":
+            for stmt in (
+                "update public.blocks set break_used_ms = 0",
                 "update public.blocks set started_at = now()",
                 "update public.blocks set config = '{}'::jsonb",
                 "update public.blocks set question_ids = '{}'",
@@ -201,7 +215,8 @@ def test_a_student_cannot_insert_attempts_or_write_blocks(
             row = conn.execute("select chosen, flagged, question_id, block_id from public.attempts").fetchone()
             assert row is not None
     with as_service_role(pg) as conn:  # the API can write both
-        insert_row(conn, table, {**ut.row(user_a, shared), **({"id": uuid.uuid4()} if table == "blocks" else {})})
+        extra: dict[str, object] = {"blocks": {"id": uuid.uuid4()}, "block_sections": {"n": 2}}.get(table, {})
+        insert_row(conn, table, {**ut.row(user_a, shared), **extra})
 
 
 @pytest.mark.parametrize("table", USER_TABLES, ids=lambda t: t.name)

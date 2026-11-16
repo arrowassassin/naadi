@@ -5,21 +5,33 @@ import * as z from "zod";
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from "./client";
 import { client } from "./client.gen";
 import type {
+  ChangeBlockSectionData,
+  ChangeBlockSectionErrors,
+  ChangeBlockSectionResponses,
   CreateAttemptData,
   CreateAttemptErrors,
   CreateAttemptResponses,
   CreateBlockData,
   CreateBlockErrors,
   CreateBlockResponses,
+  CreateMockBlockData,
+  CreateMockBlockErrors,
+  CreateMockBlockResponses,
   CreateSingleQuestionBlockData,
   CreateSingleQuestionBlockErrors,
   CreateSingleQuestionBlockResponses,
   CreateWeakSpotBlockData,
   CreateWeakSpotBlockErrors,
   CreateWeakSpotBlockResponses,
+  FinishBlockData,
+  FinishBlockErrors,
+  FinishBlockResponses,
   FlagAttemptData,
   FlagAttemptErrors,
   FlagAttemptResponses,
+  GetActiveExamData,
+  GetActiveExamErrors,
+  GetActiveExamResponses,
   GetAdminOverviewData,
   GetAdminOverviewErrors,
   GetAdminOverviewResponses,
@@ -29,12 +41,18 @@ import type {
   GetAppConfigHistoryErrors,
   GetAppConfigHistoryResponses,
   GetAppConfigResponses,
+  GetBlockClockData,
+  GetBlockClockErrors,
+  GetBlockClockResponses,
   GetBlockData,
   GetBlockErrors,
   GetBlockQuestionData,
   GetBlockQuestionErrors,
   GetBlockQuestionResponses,
   GetBlockResponses,
+  GetBlockResultsData,
+  GetBlockResultsErrors,
+  GetBlockResultsResponses,
   GetChapterData,
   GetChapterErrors,
   GetChapterResponses,
@@ -111,28 +129,39 @@ import type {
   UpdateMeResponses,
 } from "./types.gen";
 import {
+  zChangeBlockSectionPath,
+  zChangeBlockSectionResponse,
   zCreateAttemptBody,
   zCreateAttemptPath,
   zCreateAttemptResponse,
   zCreateBlockBody,
   zCreateBlockResponse,
+  zCreateMockBlockBody,
+  zCreateMockBlockResponse,
   zCreateSingleQuestionBlockBody,
   zCreateSingleQuestionBlockResponse,
   zCreateWeakSpotBlockBody,
   zCreateWeakSpotBlockResponse,
+  zFinishBlockPath,
+  zFinishBlockResponse,
   zFlagAttemptBody,
   zFlagAttemptPath,
   zFlagAttemptResponse,
+  zGetActiveExamResponse,
   zGetAdminOverviewResponse,
   zGetAppConfigHistoryPath,
   zGetAppConfigHistoryQuery,
   zGetAppConfigHistoryResponse,
   zGetAppConfigPath,
   zGetAppConfigResponse,
+  zGetBlockClockPath,
+  zGetBlockClockResponse,
   zGetBlockPath,
   zGetBlockQuestionPath,
   zGetBlockQuestionResponse,
   zGetBlockResponse,
+  zGetBlockResultsPath,
+  zGetBlockResultsResponse,
   zGetChapterPath,
   zGetChapterResponse,
   zGetCoursesQuery,
@@ -454,6 +483,30 @@ export const createBlock = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Start a seeded mock exam: its questions in their fixed order, one exam-mode section per seeded block
+ */
+export const createMockBlock = <ThrowOnError extends boolean = false>(
+  options: Options<CreateMockBlockData, ThrowOnError>,
+): RequestResult<CreateMockBlockResponses, CreateMockBlockErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateMockBlockResponses, CreateMockBlockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateMockBlockBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateMockBlockResponse.parseAsync(data),
+    url: "/api/blocks/mock",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
  * A one-question tutor block for a question found elsewhere (search); answers stay hidden until answered
  */
 export const createSingleQuestionBlock = <ThrowOnError extends boolean = false>(
@@ -570,6 +623,46 @@ export const flagAttempt = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * The server's clock for a timed/exam block (state, deadline, time left, break left)
+ */
+export const getBlockClock = <ThrowOnError extends boolean = false>(
+  options: Options<GetBlockClockData, ThrowOnError>,
+): RequestResult<GetBlockClockResponses, GetBlockClockErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetBlockClockResponses, GetBlockClockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetBlockClockPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetBlockClockResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/clock",
+    ...options,
+  });
+
+/**
+ * End the whole timed/exam session now and grade it (idempotent); answers unlock for review
+ */
+export const finishBlock = <ThrowOnError extends boolean = false>(
+  options: Options<FinishBlockData, ThrowOnError>,
+): RequestResult<FinishBlockResponses, FinishBlockErrors, ThrowOnError> =>
+  (options.client ?? client).post<FinishBlockResponses, FinishBlockErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zFinishBlockPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zFinishBlockResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/finish",
+    ...options,
+  });
+
+/**
  * Question n of a block: no answer or explanation unless the caller has a graded attempt (tutor mode)
  */
 export const getBlockQuestion = <ThrowOnError extends boolean = false>(
@@ -586,6 +679,46 @@ export const getBlockQuestion = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetBlockQuestionResponse.parseAsync(data),
     url: "/api/blocks/{block_id}/questions/{n}",
+    ...options,
+  });
+
+/**
+ * Results of a finished timed/exam block: score, time, changes, flags, topics, weights, trend
+ */
+export const getBlockResults = <ThrowOnError extends boolean = false>(
+  options: Options<GetBlockResultsData, ThrowOnError>,
+): RequestResult<GetBlockResultsResponses, GetBlockResultsErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetBlockResultsResponses, GetBlockResultsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetBlockResultsPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetBlockResultsResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/results",
+    ...options,
+  });
+
+/**
+ * Start, pause (timed mode only), resume or end a section; answers 409 with a code when not possible
+ */
+export const changeBlockSection = <ThrowOnError extends boolean = false>(
+  options: Options<ChangeBlockSectionData, ThrowOnError>,
+): RequestResult<ChangeBlockSectionResponses, ChangeBlockSectionErrors, ThrowOnError> =>
+  (options.client ?? client).post<ChangeBlockSectionResponses, ChangeBlockSectionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zChangeBlockSectionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zChangeBlockSectionResponse.parseAsync(data),
+    url: "/api/blocks/{block_id}/sections/{n}/{action}",
     ...options,
   });
 
@@ -626,6 +759,26 @@ export const getCourses = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetCoursesResponse.parseAsync(data),
     url: "/api/courses",
+    ...options,
+  });
+
+/**
+ * The caller's timed/exam session that is running, paused or on a break, if any
+ */
+export const getActiveExam = <ThrowOnError extends boolean = false>(
+  options?: Options<GetActiveExamData, ThrowOnError>,
+): RequestResult<GetActiveExamResponses, GetActiveExamErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetActiveExamResponses, GetActiveExamErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetActiveExamResponse.parseAsync(data),
+    url: "/api/exam/active",
     ...options,
   });
 

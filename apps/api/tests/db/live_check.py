@@ -48,6 +48,7 @@ USER_TABLES = (
     "report_issues",
     "reading_positions",
     "ink_items",
+    "block_sections",
 )
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
 HIDDEN_QUESTION_COLUMNS = (
@@ -138,8 +139,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "41 Naadi tables present",
-            "select count(*) = 41 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "42 Naadi tables present",
+            "select count(*) = 42 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -151,7 +152,7 @@ def checks(head: str) -> list[Check]:
             " and not has_table_privilege('authenticated', oid, 'select')) as ok, count(*)::text as detail"
             f" from pg_class where relnamespace = 'public'::regnamespace and relname = any({_array(AEGRA_TABLES)})",
         ),
-        Check("19 user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
+        Check("user tables: RLS forced + 4 own policies each", USER_TABLES_SQL, evaluate_user_tables),
         Check(
             "question answers hidden from anon and authenticated",
             "select to_regclass('public.questions') is not null and not exists (select 1"

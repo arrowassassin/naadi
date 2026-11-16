@@ -7,7 +7,7 @@ import { describe, expect, it } from "vitest";
  * the reading surfaces (S06) and the sign-in, Today, Account and shell screens (S03) for literal text between
  * tags and for literal user-facing attributes. Segments add their roots to ROOTS.
  */
-const ROOTS = ["agent", "content", "ink", "learn", "routes", "search", "shell"];
+const ROOTS = ["agent", "content", "exam", "ink", "learn", "routes", "search", "shell"];
 const SRC = path.resolve(__dirname, "..");
 
 // Text that is not copy: punctuation and separators that are layout, not wording.

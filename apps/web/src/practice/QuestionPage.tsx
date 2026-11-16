@@ -5,6 +5,7 @@ import { BookOpen, Check, ChevronLeft, ChevronRight, Flag, FlaskConical, PenLine
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { SafeHtml } from "../content/SafeHtml";
+import { ExamPage } from "../exam/ExamPage";
 import { InkCanvas } from "../ink/InkCanvas";
 import { ReportIssueDialog } from "../learn/ReportIssueDialog";
 import {
@@ -493,17 +494,8 @@ export function QuestionPage({ blockId, n }: { blockId: string; n: number }) {
   }
 
   const view = q.data.data;
-  if (view.mode !== "tutor") {
-    // Timed and exam blocks have their own screens (segment 09); this view only runs tutor blocks.
-    return (
-      <section className="flex flex-col gap-6 pt-8">
-        <ErrorState title={t("practice.question_gone_title")} message={t("practice.mode_unavailable")} live={false} />
-        <p className="m-0">
-          <Link to="/practice">{t("practice.back_to_practice")}</Link>
-        </p>
-      </section>
-    );
-  }
+  // Timed and exam blocks run on the exam view (segment 09), which reads the server's clock.
+  if (view.mode !== "tutor") return <ExamPage blockId={blockId} n={n} />;
   return (
     <QuestionBody
       key={`${blockId}:${n}`}

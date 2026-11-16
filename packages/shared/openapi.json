@@ -1,6 +1,53 @@
 {
   "components": {
     "schemas": {
+      "ActiveExam": {
+        "description": "The caller's timed/exam session that has not finished (the shell and the assistant guard read it).",
+        "properties": {
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "clock": {
+            "$ref": "#/components/schemas/BlockClock"
+          },
+          "mode": {
+            "enum": [
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "block_id",
+          "mode",
+          "clock"
+        ],
+        "title": "ActiveExam",
+        "type": "object"
+      },
+      "ActiveExamOut": {
+        "properties": {
+          "active": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ActiveExam"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "active"
+        ],
+        "title": "ActiveExamOut",
+        "type": "object"
+      },
       "AdminOverview": {
         "properties": {
           "admins_configured": {
@@ -131,6 +178,17 @@
             "title": "Chosen",
             "type": "string"
           },
+          "clock": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BlockClock"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam blocks: the server's clock"
+          },
           "correct": {
             "anyOf": [
               {
@@ -203,8 +261,16 @@
       "AttemptState": {
         "properties": {
           "chosen": {
-            "title": "Chosen",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null for a question left unanswered in a finished timed/exam block",
+            "title": "Chosen"
           },
           "correct": {
             "anyOf": [
@@ -238,8 +304,142 @@
         "title": "AttemptState",
         "type": "object"
       },
+      "BlockClock": {
+        "description": "The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,\nwhere offset is estimated from `server_now`; it never counts down on its own.",
+        "properties": {
+          "break_left_ms": {
+            "description": "The shared break pool still unused (counting down during a break)",
+            "title": "Break Left Ms",
+            "type": "integer"
+          },
+          "break_remaining_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Break time left in the shared pool, during a break only",
+            "title": "Break Remaining Ms"
+          },
+          "deadline_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the running section ends (moves while paused)",
+            "title": "Deadline At"
+          },
+          "grace_ms": {
+            "description": "Answers sent this long after the deadline are still recorded",
+            "title": "Grace Ms",
+            "type": "integer"
+          },
+          "pausable": {
+            "description": "false in exam mode",
+            "title": "Pausable",
+            "type": "boolean"
+          },
+          "paused": {
+            "title": "Paused",
+            "type": "boolean"
+          },
+          "remaining_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Time left in the section (frozen while paused; full before start)",
+            "title": "Remaining Ms"
+          },
+          "section_n": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The section running, paused, or next after a break; null when finished",
+            "title": "Section N"
+          },
+          "sections": {
+            "description": "Number of sections in the session",
+            "title": "Sections",
+            "type": "integer"
+          },
+          "server_now": {
+            "format": "date-time",
+            "title": "Server Now",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "not_started",
+              "running",
+              "paused",
+              "break",
+              "finished"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "time_limit_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The current section's full length",
+            "title": "Time Limit Ms"
+          }
+        },
+        "required": [
+          "server_now",
+          "state",
+          "section_n",
+          "sections",
+          "deadline_at",
+          "remaining_ms",
+          "break_remaining_ms",
+          "break_left_ms",
+          "paused",
+          "time_limit_ms",
+          "pausable",
+          "grace_ms"
+        ],
+        "title": "BlockClock",
+        "type": "object"
+      },
       "BlockConfig": {
         "properties": {
+          "break_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam: the shared break pool, seconds",
+            "title": "Break S"
+          },
           "difficulty": {
             "anyOf": [
               {
@@ -267,6 +467,18 @@
             "title": "Exam",
             "type": "string"
           },
+          "mock": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The mock exam chapter this block runs, if any",
+            "title": "Mock"
+          },
           "mode": {
             "enum": [
               "tutor",
@@ -275,6 +487,34 @@
             ],
             "title": "Mode",
             "type": "string"
+          },
+          "purpose": {
+            "anyOf": [
+              {
+                "const": "diagnostic",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set by S11 for the onboarding diagnostic",
+            "title": "Purpose"
+          },
+          "sections": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/SectionLayout"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam: the session's sections",
+            "title": "Sections"
           },
           "seed": {
             "title": "Seed",
@@ -320,7 +560,7 @@
         "additionalProperties": false,
         "properties": {
           "count": {
-            "description": "Bounded by app_config.exam_rules.block",
+            "description": "Questions per section; bounded by app_config.exam_rules.block",
             "maximum": 80.0,
             "minimum": 1.0,
             "title": "Count",
@@ -364,6 +604,14 @@
             ],
             "title": "Mode",
             "type": "string"
+          },
+          "sections": {
+            "default": 1,
+            "description": "Timed/exam only: sections of `count` questions (<= exams[exam].blocks)",
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "Sections",
+            "type": "integer"
           },
           "seed": {
             "anyOf": [
@@ -412,6 +660,17 @@
           "answered": {
             "title": "Answered",
             "type": "integer"
+          },
+          "clock": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BlockClock"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam blocks: the server's clock"
           },
           "config": {
             "$ref": "#/components/schemas/BlockConfig"
@@ -572,6 +831,12 @@
             "description": "1-based position in the block",
             "title": "N",
             "type": "integer"
+          },
+          "section_n": {
+            "default": 1,
+            "description": "The section holding the question (1 in tutor mode)",
+            "title": "Section N",
+            "type": "integer"
           }
         },
         "required": [
@@ -581,6 +846,142 @@
           "correct"
         ],
         "title": "BlockQuestionState",
+        "type": "object"
+      },
+      "BlockResults": {
+        "properties": {
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "changes": {
+            "$ref": "#/components/schemas/ChangeStats"
+          },
+          "competencies": {
+            "items": {
+              "$ref": "#/components/schemas/TopicStat"
+            },
+            "title": "Competencies",
+            "type": "array"
+          },
+          "correct": {
+            "title": "Correct",
+            "type": "integer"
+          },
+          "disciplines": {
+            "description": "Disciplines (Step 1) or clinical sciences (Step 2 CK)",
+            "items": {
+              "$ref": "#/components/schemas/TopicStat"
+            },
+            "title": "Disciplines",
+            "type": "array"
+          },
+          "exam": {
+            "title": "Exam",
+            "type": "string"
+          },
+          "finished_at": {
+            "format": "date-time",
+            "title": "Finished At",
+            "type": "string"
+          },
+          "flags": {
+            "$ref": "#/components/schemas/FlagStats"
+          },
+          "insights": {
+            "items": {
+              "$ref": "#/components/schemas/Insight"
+            },
+            "title": "Insights",
+            "type": "array"
+          },
+          "mock": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mock"
+          },
+          "mode": {
+            "enum": [
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "omitted": {
+            "title": "Omitted",
+            "type": "integer"
+          },
+          "percent": {
+            "title": "Percent",
+            "type": "number"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/ResultQuestion"
+            },
+            "title": "Questions",
+            "type": "array"
+          },
+          "systems": {
+            "items": {
+              "$ref": "#/components/schemas/TopicStat"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "time": {
+            "$ref": "#/components/schemas/TimeStats"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "trend": {
+            "description": "The caller's last 10 finished timed/exam blocks, oldest first",
+            "items": {
+              "$ref": "#/components/schemas/TrendPoint"
+            },
+            "title": "Trend",
+            "type": "array"
+          },
+          "weights": {
+            "items": {
+              "$ref": "#/components/schemas/WeightOverlay"
+            },
+            "title": "Weights",
+            "type": "array"
+          }
+        },
+        "required": [
+          "block_id",
+          "exam",
+          "mode",
+          "mock",
+          "finished_at",
+          "total",
+          "correct",
+          "omitted",
+          "percent",
+          "time",
+          "changes",
+          "flags",
+          "questions",
+          "systems",
+          "disciplines",
+          "competencies",
+          "weights",
+          "trend",
+          "insights"
+        ],
+        "title": "BlockResults",
         "type": "object"
       },
       "BlockRules": {
@@ -618,6 +1019,17 @@
           "answered": {
             "title": "Answered",
             "type": "integer"
+          },
+          "clock": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BlockClock"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam blocks: the server's clock"
           },
           "config": {
             "$ref": "#/components/schemas/BlockConfig"
@@ -697,6 +1109,34 @@
           "score"
         ],
         "title": "BlockSummary",
+        "type": "object"
+      },
+      "ChangeStats": {
+        "properties": {
+          "changed": {
+            "title": "Changed",
+            "type": "integer"
+          },
+          "right_to_wrong": {
+            "title": "Right To Wrong",
+            "type": "integer"
+          },
+          "wrong_to_right": {
+            "title": "Wrong To Right",
+            "type": "integer"
+          },
+          "wrong_to_wrong": {
+            "title": "Wrong To Wrong",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "changed",
+          "right_to_wrong",
+          "wrong_to_right",
+          "wrong_to_wrong"
+        ],
+        "title": "ChangeStats",
         "type": "object"
       },
       "ChapterDetail": {
@@ -1624,6 +2064,12 @@
       },
       "ExamChoice": {
         "properties": {
+          "blocks": {
+            "default": 1,
+            "description": "Most blocks in a timed/exam session of this exam",
+            "title": "Blocks",
+            "type": "integer"
+          },
           "id": {
             "title": "Id",
             "type": "string"
@@ -1631,6 +2077,20 @@
           "label": {
             "title": "Label",
             "type": "string"
+          },
+          "minutes_per_block": {
+            "default": 60,
+            "description": "A mock block's length (official format)",
+            "title": "Minutes Per Block",
+            "type": "integer"
+          },
+          "mock_ids": {
+            "description": "Seeded mock exams of this exam (S09)",
+            "items": {
+              "type": "string"
+            },
+            "title": "Mock Ids",
+            "type": "array"
           }
         },
         "required": [
@@ -1727,6 +2187,13 @@
           "block": {
             "$ref": "#/components/schemas/BlockRules"
           },
+          "break_minutes": {
+            "default": 45,
+            "maximum": 240.0,
+            "minimum": 0.0,
+            "title": "Break Minutes",
+            "type": "integer"
+          },
           "diagnostic_questions": {
             "maximum": 80.0,
             "minimum": 1.0,
@@ -1746,6 +2213,13 @@
             },
             "title": "Exams",
             "type": "object"
+          },
+          "expiry_grace_seconds": {
+            "default": 2,
+            "maximum": 30.0,
+            "minimum": 0.0,
+            "title": "Expiry Grace Seconds",
+            "type": "integer"
           },
           "modes": {
             "$ref": "#/components/schemas/ExamModes"
@@ -1890,6 +2364,24 @@
           "flagged"
         ],
         "title": "FlagOut",
+        "type": "object"
+      },
+      "FlagStats": {
+        "properties": {
+          "flagged": {
+            "title": "Flagged",
+            "type": "integer"
+          },
+          "flagged_correct": {
+            "title": "Flagged Correct",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "flagged",
+          "flagged_correct"
+        ],
+        "title": "FlagStats",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -2284,6 +2776,50 @@
         "title": "InkRejected",
         "type": "object"
       },
+      "Insight": {
+        "description": "One \"What Naadi sees\" sentence, as a ui_copy template key (`results.insight.<kind>`) plus its values.",
+        "properties": {
+          "kind": {
+            "enum": [
+              "weakest_topic",
+              "strongest_topic",
+              "pace_slow",
+              "pace_fast",
+              "changes_hurt",
+              "changes_helped",
+              "flags_right",
+              "underweighted",
+              "trend_up",
+              "trend_down"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "vars": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            },
+            "title": "Vars",
+            "type": "object"
+          }
+        },
+        "required": [
+          "kind",
+          "vars"
+        ],
+        "title": "Insight",
+        "type": "object"
+      },
       "JsonValue": {},
       "LabGroupOut": {
         "properties": {
@@ -2655,6 +3191,24 @@
         "title": "MediaSource",
         "type": "object"
       },
+      "MockBlockCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "chapter_id": {
+            "enum": [
+              "mock1",
+              "mock2"
+            ],
+            "title": "Chapter Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapter_id"
+        ],
+        "title": "MockBlockCreate",
+        "type": "object"
+      },
       "ModeChoice": {
         "properties": {
           "available": {
@@ -2948,6 +3502,36 @@
         "title": "PoolFacet",
         "type": "object"
       },
+      "PoolMock": {
+        "description": "A seeded mock exam the Builder can start (POST /api/blocks/mock); it runs only as an exam-mode session.",
+        "properties": {
+          "blocks": {
+            "description": "Sections (seeded blocks) in the mock",
+            "title": "Blocks",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "questions": {
+            "title": "Questions",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "blocks",
+          "questions"
+        ],
+        "title": "PoolMock",
+        "type": "object"
+      },
       "PoolResponse": {
         "properties": {
           "difficulty": {
@@ -2980,6 +3564,14 @@
           "limits": {
             "$ref": "#/components/schemas/BlockLimits"
           },
+          "mocks": {
+            "description": "The selected exam's mock exams (S09)",
+            "items": {
+              "$ref": "#/components/schemas/PoolMock"
+            },
+            "title": "Mocks",
+            "type": "array"
+          },
           "modes": {
             "items": {
               "$ref": "#/components/schemas/ModeChoice"
@@ -3002,6 +3594,17 @@
             "title": "Systems",
             "type": "array"
           },
+          "timing": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PoolTiming"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam session rules (S09)"
+          },
           "total": {
             "description": "Questions matching every filter",
             "title": "Total",
@@ -3020,6 +3623,36 @@
           "difficulty"
         ],
         "title": "PoolResponse",
+        "type": "object"
+      },
+      "PoolTiming": {
+        "description": "What the Builder shows about timed/exam sessions (from app_config.exam_rules).",
+        "properties": {
+          "break_minutes": {
+            "title": "Break Minutes",
+            "type": "integer"
+          },
+          "seconds_per_question": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "description": "Per mode: tutor (null), timed, exam",
+            "title": "Seconds Per Question",
+            "type": "object"
+          }
+        },
+        "required": [
+          "break_minutes",
+          "seconds_per_question"
+        ],
+        "title": "PoolTiming",
         "type": "object"
       },
       "Profile": {
@@ -3300,6 +3933,17 @@
             "title": "Block Id",
             "type": "string"
           },
+          "clock": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BlockClock"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Timed/exam blocks: the server's clock"
+          },
           "explanation": {
             "anyOf": [
               {
@@ -3309,7 +3953,7 @@
                 "type": "null"
               }
             ],
-            "description": "Present only after the student's graded attempt, and only in tutor mode"
+            "description": "Tutor: after the student's graded attempt. Timed/exam: only once the whole block is finished"
           },
           "flagged": {
             "title": "Flagged",
@@ -3340,6 +3984,12 @@
           },
           "question": {
             "$ref": "#/components/schemas/QuestionBody"
+          },
+          "section_n": {
+            "default": 1,
+            "description": "The section holding the question",
+            "title": "Section N",
+            "type": "integer"
           },
           "total": {
             "title": "Total",
@@ -3643,6 +4293,74 @@
         "title": "ReportIssueOut",
         "type": "object"
       },
+      "ResultQuestion": {
+        "properties": {
+          "change": {
+            "anyOf": [
+              {
+                "enum": [
+                  "right_to_wrong",
+                  "wrong_to_right",
+                  "wrong_to_wrong"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "How the final answer differs from the first choice, if it does",
+            "title": "Change"
+          },
+          "flagged": {
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "n": {
+            "title": "N",
+            "type": "integer"
+          },
+          "outcome": {
+            "enum": [
+              "correct",
+              "incorrect",
+              "omitted"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          },
+          "question_id": {
+            "title": "Question Id",
+            "type": "string"
+          },
+          "seconds": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seconds"
+          },
+          "section_n": {
+            "title": "Section N",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "n",
+          "section_n",
+          "question_id",
+          "outcome",
+          "flagged",
+          "change",
+          "seconds"
+        ],
+        "title": "ResultQuestion",
+        "type": "object"
+      },
       "SearchHit": {
         "properties": {
           "anchor": {
@@ -3771,6 +4489,42 @@
           "took_ms"
         ],
         "title": "SearchResponse",
+        "type": "object"
+      },
+      "SectionLayout": {
+        "description": "One section of a timed/exam block: a consecutive slice of `question_ids`.",
+        "properties": {
+          "count": {
+            "maximum": 80.0,
+            "minimum": 1.0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "first_index": {
+            "minimum": 0.0,
+            "title": "First Index",
+            "type": "integer"
+          },
+          "n": {
+            "maximum": 12.0,
+            "minimum": 1.0,
+            "title": "N",
+            "type": "integer"
+          },
+          "time_limit_s": {
+            "maximum": 86400.0,
+            "minimum": 1.0,
+            "title": "Time Limit S",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "n",
+          "first_index",
+          "count",
+          "time_limit_s"
+        ],
+        "title": "SectionLayout",
         "type": "object"
       },
       "SectionOut": {
@@ -4197,6 +4951,145 @@
         "title": "Target",
         "type": "object"
       },
+      "TimeStats": {
+        "properties": {
+          "mean_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean S"
+          },
+          "median_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Median S"
+          },
+          "target_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "exam_rules.modes[mode].seconds_per_question",
+            "title": "Target S"
+          },
+          "total_s": {
+            "title": "Total S",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "mean_s",
+          "median_s",
+          "target_s",
+          "total_s"
+        ],
+        "title": "TimeStats",
+        "type": "object"
+      },
+      "TopicStat": {
+        "properties": {
+          "correct": {
+            "title": "Correct",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "system",
+              "discipline",
+              "competency",
+              "clinical_science"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "percent": {
+            "title": "Percent",
+            "type": "number"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "weak": {
+            "description": "Below the weak threshold (60 %)",
+            "title": "Weak",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "kind",
+          "total",
+          "correct",
+          "percent",
+          "weak"
+        ],
+        "title": "TopicStat",
+        "type": "object"
+      },
+      "TrendPoint": {
+        "properties": {
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "current": {
+            "title": "Current",
+            "type": "boolean"
+          },
+          "finished_at": {
+            "format": "date-time",
+            "title": "Finished At",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "timed",
+              "exam"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          }
+        },
+        "required": [
+          "block_id",
+          "finished_at",
+          "score",
+          "mode",
+          "current"
+        ],
+        "title": "TrendPoint",
+        "type": "object"
+      },
       "ValidationError": {
         "properties": {
           "ctx": {
@@ -4440,6 +5333,78 @@
           "license"
         ],
         "title": "WebResult",
+        "type": "object"
+      },
+      "WeightOverlay": {
+        "properties": {
+          "correct": {
+            "title": "Correct",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Accuracy in the system; null when the block had none",
+            "title": "Percent"
+          },
+          "share": {
+            "description": "This block's share of questions in the system, percent",
+            "title": "Share",
+            "type": "number"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "weight_max": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weight Max"
+          },
+          "weight_min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Official share of the exam, percent (low end)",
+            "title": "Weight Min"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "weight_min",
+          "weight_max",
+          "share",
+          "total",
+          "correct",
+          "percent"
+        ],
+        "title": "WeightOverlay",
         "type": "object"
       }
     }
@@ -5427,6 +6392,87 @@
         ]
       }
     },
+    "/api/blocks/mock": {
+      "post": {
+        "operationId": "createMockBlock",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MockBlockCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Timed modes are off"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Start a seeded mock exam: its questions in their fixed order, one exam-mode section per seeded block",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
     "/api/blocks/single": {
       "post": {
         "operationId": "createSingleQuestionBlock",
@@ -5864,6 +6910,196 @@
         ]
       }
     },
+    "/api/blocks/{block_id}/clock": {
+      "get": {
+        "operationId": "getBlockClock",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockClock"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not possible in the session's current state (see error.code)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The server's clock for a timed/exam block (state, deadline, time left, break left)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}/finish": {
+      "post": {
+        "operationId": "finishBlock",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not possible in the session's current state (see error.code)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "End the whole timed/exam session now and grade it (idempotent); answers unlock for review",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
     "/api/blocks/{block_id}/questions/{n}": {
       "get": {
         "operationId": "getBlockQuestion",
@@ -5957,6 +7193,222 @@
           }
         },
         "summary": "Question n of a block: no answer or explanation unless the caller has a graded attempt (tutor mode)",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}/results": {
+      "get": {
+        "operationId": "getBlockResults",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockResults"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not possible in the session's current state (see error.code)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Results of a finished timed/exam block: score, time, changes, flags, topics, weights, trend",
+        "tags": [
+          "qbank"
+        ]
+      }
+    },
+    "/api/blocks/{block_id}/sections/{n}/{action}": {
+      "post": {
+        "operationId": "changeBlockSection",
+        "parameters": [
+          {
+            "description": "Block id",
+            "in": "path",
+            "name": "block_id",
+            "required": true,
+            "schema": {
+              "description": "Block id",
+              "format": "uuid",
+              "title": "Block Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "schema": {
+              "maximum": 12,
+              "minimum": 1,
+              "title": "N",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "schema": {
+              "enum": [
+                "start",
+                "pause",
+                "resume",
+                "end"
+              ],
+              "title": "Action",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not possible in the session's current state (see error.code)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Start, pause (timed mode only), resume or end a section; answers 409 with a code when not possible",
         "tags": [
           "qbank"
         ]
@@ -6146,6 +7598,57 @@
         "summary": "Course map: chapters by system with coverage and the caller's progress, plus the next action",
         "tags": [
           "courses"
+        ]
+      }
+    },
+    "/api/exam/active": {
+      "get": {
+        "operationId": "getActiveExam",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActiveExamOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "The caller's timed/exam session that is running, paused or on a break, if any",
+        "tags": [
+          "qbank"
         ]
       }
     },

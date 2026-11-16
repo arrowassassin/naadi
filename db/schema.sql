@@ -274,6 +274,8 @@ create table public.blocks (
   finished_at timestamptz,
   score numeric,
   created_at timestamptz not null default now(),
+  -- 0011 (backend-only): break time already spent from a timed/exam session's shared pool
+  break_used_ms bigint not null default 0 check (break_used_ms >= 0),
   unique (id, user_id)
 );
 create index blocks_user_idx on public.blocks (user_id, created_at desc);
@@ -289,6 +291,10 @@ create table public.attempts (
   flagged boolean not null default false,
   mode text check (mode in ('tutor','timed','exam')),
   created_at timestamptz not null default now(),
+  -- 0011 (backend-only): timed/exam answer history; `correct` stays null until the whole block is finished
+  first_chosen char(1) check (first_chosen between 'A' and 'J'),
+  changes smallint not null default 0 check (changes >= 0),
+  answered_at timestamptz,
   -- a block can only be referenced by its own user's attempts
   foreign key (block_id, user_id) references public.blocks (id, user_id) on delete set null (block_id)
 );
@@ -297,6 +303,30 @@ create index attempts_user_created_idx on public.attempts (user_id, created_at d
 create index attempts_block_idx on public.attempts (block_id) where block_id is not null;
 -- 0006: one row per (block, question), so answering is idempotent and the flag shares the answer's row
 create unique index attempts_block_question_key on public.attempts (block_id, question_id) where block_id is not null;
+
+-- 0011: the server-authoritative clock of a timed/exam block, one row per section. Clients: SELECT own rows only
+-- (the four _own policies exist; INSERT/UPDATE/DELETE are not granted). A missing row counts as expired.
+create table public.block_sections (
+  block_id uuid not null,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  n smallint not null check (n between 1 and 12),
+  first_index smallint not null check (first_index >= 0),
+  count smallint not null check (count between 1 and 80),
+  time_limit_s int not null check (time_limit_s between 1 and 86400),
+  started_at timestamptz,
+  deadline_at timestamptz,
+  paused_at timestamptz,
+  paused_total_ms bigint not null default 0 check (paused_total_ms >= 0),
+  ended_at timestamptz,
+  ended_reason text check (ended_reason in ('submitted','expired')),
+  created_at timestamptz not null default now(),
+  primary key (block_id, n),
+  foreign key (block_id, user_id) references public.blocks (id, user_id) on delete cascade,
+  check ((ended_at is null) = (ended_reason is null)),
+  check ((started_at is null) = (deadline_at is null)),
+  check (paused_at is null or (started_at is not null and ended_at is null))
+);
+create index block_sections_user_open_idx on public.block_sections (user_id, block_id) where ended_at is null;
 
 create table public.card_reviews (
   user_id uuid not null references auth.users(id) on delete cascade,
@@ -716,6 +746,7 @@ create trigger plan_templates_touch_updated_at before update on public.plan_temp
 --   profiles
 --     + insert/update check: pathway_stage is null or exists (select 1 from public.pathway_stages p where p.key = profiles.pathway_stage)
 --   attempts  (client insert: user_id, question_id, block_id, chosen, seconds, flagged, mode; client update: flagged)
+--   block_sections (0011): select only; every timing write is the API's (0008 also revoked client writes on blocks)
 --     + insert/update check: exists (select 1 from public.questions p where p.id = attempts.question_id)
 --   blocks  (client insert: id, user_id, config, question_ids, started_at; client update: started_at)
 --   card_reviews

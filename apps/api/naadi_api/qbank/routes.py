@@ -31,6 +31,8 @@ from ..config_api.service import AppConfigService
 from ..db import Database, DatabaseNotConfigured
 from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
+from . import exam
+from .clock import Session
 from .models import (
     ID_PATTERN,
     TAXONOMY_PATTERN,
@@ -55,7 +57,9 @@ from .models import (
     LessonLink,
     ModeChoice,
     PoolFacet,
+    PoolMock,
     PoolResponse,
+    PoolTiming,
     QuestionBody,
     QuestionOption,
     QuestionView,
@@ -262,7 +266,6 @@ async def get_pool(
     difficulty: Difficulty | None = None,
 ) -> PoolResponse:
     rules = await _rules(request)
-    exams = [ExamChoice(id=k, label=v["label"]) for k, v in rules["exams"].items()]
     timed_ok = await _timed_available(request, user)
     for ids in (systems or [], disciplines or []):
         if any(not _match_taxonomy(i) for i in ids):
@@ -277,6 +280,23 @@ async def get_pool(
         _check_exam(rules, chosen)
         questions, history = await _load_pool(conn, chosen)
         nodes = await _load_taxonomy(conn, chosen)
+        # Seeded mock exams (S09): visible chapters of kind mock_exam with their seeded blocks, under RLS.
+        mock_rows = await _rows(
+            conn,
+            "select c.id, c.exam, c.title, count(distinct q.block)::int as blocks, count(q.id)::int as questions"
+            " from public.chapters c join public.questions q on q.chapter_id = c.id and q.block is not null"
+            " where c.kind = 'mock_exam' group by c.id, c.exam, c.title, c.sort order by c.sort, c.id",
+        )
+        exams = [
+            ExamChoice(
+                id=k,
+                label=v["label"],
+                mock_ids=[m["id"] for m in mock_rows if m["exam"] == k],
+                blocks=int(v["blocks"]),
+                minutes_per_block=int(v["minutes_per_block"]),
+            )
+            for k, v in rules["exams"].items()
+        ]
         sys_nodes = [n for n in nodes if n["kind"] == "system"]
         disc_nodes = [n for n in nodes if n["kind"] in SECOND_GROUP_KINDS]
         f = facet_counts(
@@ -304,6 +324,15 @@ async def get_pool(
             disciplines=[PoolFacet(id=n["id"], label=n["label"], count=f.disciplines[n["id"]]) for n in disc_nodes],
             status=f.status,
             difficulty=f.difficulty,
+            mocks=[
+                PoolMock(id=m["id"], title=m["title"], blocks=m["blocks"], questions=m["questions"])
+                for m in mock_rows
+                if m["exam"] == chosen
+            ],
+            timing=PoolTiming(
+                break_minutes=int(rules.get("break_minutes", 45)),
+                seconds_per_question={k: v["seconds_per_question"] for k, v in rules["modes"].items()},
+            ),
         )
 
     return await as_user(_db(request), user, run)
@@ -316,10 +345,11 @@ def _match_taxonomy(value: str) -> bool:
 # ── Blocks ──
 
 
-def _summary(row: Row, answered: int, correct: int) -> BlockSummary:
+def _summary(row: Row, answered: int, correct: int, clock: Any = None) -> BlockSummary:
     cfg = BlockConfig.model_validate(row["config"])
     reveal = cfg.mode == "tutor" or row["finished_at"] is not None
     return BlockSummary(
+        clock=clock,
         id=row["id"],
         created_at=row["created_at"],
         started_at=row["started_at"],
@@ -344,45 +374,84 @@ async def _detail(conn: psycopg.AsyncConnection[Any], row: Row) -> BlockDetail:
     return _detail_of(row, attempts)
 
 
-def _detail_of(row: Row, attempts: dict[str, Row]) -> BlockDetail:
+def _detail_of(
+    row: Row, attempts: dict[str, Row], *, session: Session | None = None, now: dt.datetime | None = None
+) -> BlockDetail:
     cfg = BlockConfig.model_validate(row["config"])
     reveal = cfg.mode == "tutor" or row["finished_at"] is not None
+    timed = exam.is_timed(cfg.mode)
     states: list[BlockQuestionState] = []
     answered = correct = 0
     next_n = 0
     for i, qid in enumerate(row["question_ids"], start=1):
         a = attempts.get(qid)
-        done = a is not None and a["chosen"] is not None and a["correct"] is not None
+        # Timed/exam answers stay ungraded until the whole block is finished: a choice is an answer.
+        done = a is not None and a["chosen"] is not None and (timed or a["correct"] is not None)
+        section = session.section_of(i - 1) if session is not None else None
         answered += 1 if done else 0
-        correct += 1 if a is not None and done and a["correct"] else 0
+        correct += 1 if a is not None and done and a["correct"] else 0  # NULL until graded
         if not done and not next_n:
             next_n = i
         states.append(
             BlockQuestionState(
                 n=i,
+                section_n=section.n if section is not None else 1,
                 answered=done,
                 flagged=bool(a and a["flagged"]),
-                correct=bool(a["correct"]) if done and reveal and a is not None else None,
+                correct=bool(a["correct"]) if done and reveal and a is not None and a["correct"] is not None else None,
             )
         )
-    summary = _summary(row, answered, correct)
+    clock = exam.clock_out(session, now) if session is not None and now is not None else None
+    summary = _summary(row, answered, correct, clock)
     return BlockDetail(**summary.model_dump(), questions=states, next_n=next_n or 1)
 
 
-async def _insert_block(db: Database, user: CurrentUser, cfg: BlockConfig, question_ids: list[str]) -> BlockDetail:
-    """Blocks are written with the privileged role (clients cannot insert them), for the verified caller only."""
+async def _insert_block(
+    db: Database,
+    user: CurrentUser,
+    cfg: BlockConfig,
+    question_ids: list[str],
+    *,
+    rules: dict[str, Any] | None = None,
+    now: dt.datetime | None = None,
+) -> BlockDetail:
+    """Blocks are written with the privileged role (clients cannot insert them), for the verified caller only.
+    A timed/exam block gets its `block_sections` rows in the same transaction; its clock starts at section 1."""
+    timed = exam.is_timed(cfg.mode) and cfg.sections
 
-    async def write(conn: psycopg.AsyncConnection[Any]) -> Row:
+    async def write(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
         rows = await _rows(
             conn,
             "insert into public.blocks (id, user_id, config, question_ids, started_at) "
-            "values (%s, %s, %s, %s, now()) "
-            "returning id, created_at, started_at, finished_at, config, question_ids, score",
-            (uuid.uuid4(), user.user_id, Jsonb(cfg.model_dump(mode="json")), question_ids),
+            "values (%s, %s, %s, %s, case when %s then null else now() end) "
+            "returning id, created_at, started_at, finished_at, config, question_ids, score, break_used_ms",
+            (uuid.uuid4(), user.user_id, Jsonb(cfg.model_dump(mode="json")), question_ids, bool(timed)),
         )
-        return rows[0]
+        block = rows[0]
+        if not timed:
+            return _detail_of(block, {})
+        assert cfg.sections is not None
+        assert rules is not None
+        assert now is not None
+        await exam.create_sections(conn, block["id"], user.user_id, cfg.sections)
+        session = await exam.sync(conn, block, user.user_id, rules, now)
+        return _detail_of(block, {}, session=session, now=now)
 
-    return _detail_of(await as_service(db, write), {})
+    return await as_service(db, write)
+
+
+def _timed_layout(rules: dict[str, Any], exam_id: str, mode: str, count: int, sections: int) -> tuple[Any, Any]:
+    """(sections, break_s) of a new block: None for tutor; for timed/exam `sections` x `count` questions, each
+    section timed at count x seconds_per_question, with the session's shared break pool."""
+    if not exam.is_timed(mode):
+        if sections != 1:
+            raise HTTPException(422, "Tutor blocks have one section.")
+        return None, None
+    most = int(rules["exams"][exam_id]["blocks"])
+    if not 1 <= sections <= most:
+        raise HTTPException(422, f"A timed or exam session has 1 to {most} blocks.")
+    per_q = int(rules["modes"][mode]["seconds_per_question"])
+    return exam.plan_sections(count, sections, count * per_q), exam.break_s(rules) if sections > 1 else 0
 
 
 def _check_count(rules: dict[str, Any], count: int) -> None:
@@ -412,6 +481,9 @@ async def create_block(
     _check_count(rules, body.count)
     await _check_mode(request, user, body.mode)
     seed = body.seed if body.seed is not None else secrets.randbits(48)
+    layout, break_s = _timed_layout(rules, body.exam, body.mode, body.count, body.sections)
+    wanted = body.count * body.sections
+    now = exam.default_now() if layout is None else _now(request)
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[BlockConfig, list[str]]:
         questions, history = await _load_pool(conn, body.exam)
@@ -425,13 +497,13 @@ async def create_block(
         )
         if not pool:
             raise HTTPException(422, "No questions match these filters. Widen them or choose another status.")
-        if len(pool) < body.count:
+        if len(pool) < wanted:
             noun = "question matches" if len(pool) == 1 else "questions match"
             raise HTTPException(
                 422,
                 f"Only {len(pool)} {noun} these filters. Choose {len(pool)} or fewer, or widen the filters.",
             )
-        ids = choose((q.id for q in pool), body.count, seed)
+        ids = choose((q.id for q in pool), wanted, seed)
         cfg = BlockConfig(
             exam=body.exam,
             mode=body.mode,
@@ -441,11 +513,18 @@ async def create_block(
             disciplines=body.disciplines,
             seed=seed,
             weak_spot=False,
+            sections=layout,
+            break_s=break_s,
         )
         return cfg, ids
 
     cfg, ids = await as_user(_db(request), user, run)
-    return await _insert_block(_db(request), user, cfg, ids)
+    return await _insert_block(_db(request), user, cfg, ids, rules=rules, now=now)
+
+
+def _now(request: Request) -> dt.datetime:
+    fn = getattr(request.app.state, "now", None)
+    return fn() if callable(fn) else exam.default_now()
 
 
 @router.post(
@@ -541,6 +620,7 @@ async def create_weak_spot_block(
         if len(ordered) < lo:
             raise HTTPException(422, "There are not enough questions on your weak topics yet.")
         ids = ordered[: min(wanted, len(ordered))]
+        layout, break_s = _timed_layout(rules, body.exam, body.mode, len(ids), 1)
         cfg = BlockConfig(
             exam=body.exam,
             mode=body.mode,
@@ -550,12 +630,15 @@ async def create_weak_spot_block(
             disciplines=sorted(c.id for c in cells if nodes[c.id]["kind"] != "system"),
             seed=seed,
             weak_spot=True,
+            sections=layout,
+            break_s=break_s,
         )
         out = [WeakCellOut(id=c.id, label=nodes[c.id]["label"], attempts=c.attempts, correct=c.correct) for c in cells]
         return cfg, ids, out
 
     cfg, ids, out = await as_user(_db(request), user, run)
-    return WeakSpotBlock(block=await _insert_block(_db(request), user, cfg, ids), cells=out)
+    block = await _insert_block(_db(request), user, cfg, ids, rules=rules, now=_now(request))
+    return WeakSpotBlock(block=block, cells=out)
 
 
 @router.get(
@@ -578,7 +661,8 @@ async def list_blocks(
               coalesce(a.answered, 0) as answered, coalesce(a.correct, 0) as correct
             from public.blocks b
             left join lateral (
-              select count(*) filter (where chosen is not null and correct is not null) as answered,
+              select count(*) filter (where chosen is not null
+                       and (correct is not null or b.config->>'mode' <> 'tutor')) as answered,
                      count(*) filter (where correct) as correct
               from public.attempts t where t.block_id = b.id and t.user_id = b.user_id
             ) a on true
@@ -616,7 +700,30 @@ async def get_block(
     async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
         return await _detail(conn, await _block_row(conn, block_id))
 
-    return await as_user(_db(request), user, run)
+    detail = await as_user(_db(request), user, run)
+    if not exam.is_timed(detail.config.mode):
+        return detail
+    rules = await _rules(request)
+    now = _now(request)
+
+    async def timed(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
+        # Timed/exam: advance the clock (and grade on the last deadline) with the server's time, then answer.
+        block = await exam.lock_block(conn, block_id, user.user_id)
+        if block is None:
+            raise HTTPException(404, NOT_FOUND)
+        session = await exam.sync(conn, block, user.user_id, rules, now)
+        attempts = {
+            a["question_id"]: a
+            for a in await _rows(
+                conn,
+                "select question_id, chosen, correct, flagged from public.attempts"
+                " where block_id = %s and user_id = %s",
+                (block_id, user.user_id),
+            )
+        }
+        return _detail_of(block, attempts, session=session, now=now)
+
+    return await as_service(_db(request), timed)
 
 
 # ── Questions ──
@@ -695,6 +802,32 @@ async def get_block_question(
     cfg = BlockConfig.model_validate(block["config"])
     graded = attempt is not None and attempt["chosen"] is not None and attempt["correct"] is not None
     reveal = graded and cfg.mode == "tutor"
+    clock_now: Any = None
+    section_n = 1
+    if exam.is_timed(cfg.mode):
+        rules = await _rules(request)
+        now = _now(request)
+
+        async def gate(conn: psycopg.AsyncConnection[Any]) -> tuple[Any, int, bool, Row | None]:
+            # Only the running section's questions are served; answers only once the whole block is finished.
+            locked = await exam.lock_block(conn, block_id, user.user_id)
+            if locked is None:
+                raise HTTPException(404, NOT_FOUND)
+            session = await exam.sync(conn, locked, user.user_id, rules, now)
+            finished = locked["finished_at"] is not None
+            sec = exam.question_gate(session, n - 1, finished)
+            mine = await _first(
+                conn,
+                "select id, chosen, correct, seconds, flagged from public.attempts"
+                " where block_id = %s and question_id = %s and user_id = %s",
+                (block_id, qid, user.user_id),
+            )
+            return exam.clock_out(session, now), sec, finished, mine
+
+        clock_now, section_n, finished, attempt = await as_service(db, gate)
+        # Finished: every question is graded (an unanswered one as omitted) and reviewable with its explanation.
+        reveal = finished
+        graded = attempt is not None and (attempt["chosen"] is not None or finished)
     explanation: Explanation | None = None
     if reveal:
 
@@ -721,12 +854,14 @@ async def get_block_question(
             AttemptState(
                 chosen=attempt["chosen"],
                 seconds=attempt["seconds"],
-                correct=bool(attempt["correct"]) if reveal else None,
+                correct=bool(attempt["correct"]) if reveal and attempt["correct"] is not None else None,
             )
             if graded and attempt is not None
             else None
         ),
         explanation=explanation,
+        section_n=section_n,
+        clock=clock_now,
     )
 
 
@@ -757,8 +892,13 @@ async def create_attempt(
     request: Request, block_id: BlockId, body: AttemptIn, user: Annotated[CurrentUser, limited("qbank_write")]
 ) -> AttemptOut:
     uid = user.user_id
+    rules = await _rules(request)
+    now = _now(request)
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[AttemptOut, bool]:
+        locked = await exam.lock_block(conn, block_id, uid)
+        if locked is not None and exam.is_timed(locked["config"].get("mode", "tutor")):
+            return await _timed_attempt(conn, locked, body, uid, rules, now), False
         blocks = await _rows(conn, _LOCK_BLOCK, (block_id, uid))
         if not blocks:
             raise HTTPException(404, NOT_FOUND)
@@ -837,6 +977,51 @@ async def create_attempt(
     return out
 
 
+async def _timed_attempt(
+    conn: psycopg.AsyncConnection[Any], block: Row, body: AttemptIn, uid: uuid.UUID, rules: dict[str, Any], now: Any
+) -> AttemptOut:
+    """Timed/exam: record or change the choice while the question's section runs; never graded or explained here."""
+    ids: list[str] = block["question_ids"]
+    if body.question_id not in ids:
+        raise HTTPException(404, "This question is not in this block.")
+    # Not graded yet: an answer in flight inside the grace window of the last deadline still counts.
+    session = await exam.sync(conn, block, uid, rules, now, grade_now=False)
+    if block["finished_at"] is not None:
+        raise exam.conflict("finished")
+    questions = await _rows(
+        conn, "select options from public.questions where id = %s and status = 'published'", (body.question_id,)
+    )
+    if not questions:
+        raise HTTPException(404, "This question is no longer available.")
+    if body.chosen not in {o["label"] for o in questions[0]["options"]}:
+        raise HTTPException(422, "Choose one of the listed options.")
+    row = await exam.record_attempt(
+        conn, block, uid, session, body.question_id, body.chosen, body.seconds, body.flagged, now
+    )
+    await exam.persist(conn, block, uid, session, now)
+    answered = (
+        await _rows(
+            conn,
+            "select count(*) filter (where chosen is not null) as answered from public.attempts"
+            " where block_id = %s and user_id = %s",
+            (block["id"], uid),
+        )
+    )[0]["answered"]
+    return AttemptOut(
+        question_id=body.question_id,
+        n=ids.index(body.question_id) + 1,
+        chosen=row["chosen"],
+        correct=None,
+        flagged=bool(row["flagged"]),
+        seconds=row["seconds"],
+        explanation=None,
+        answered=int(answered),
+        total=len(ids),
+        finished=False,
+        clock=exam.clock_out(session, now),
+    )
+
+
 @router.patch(
     "/blocks/{block_id}/attempts/{question_id}",
     operation_id="flagAttempt",
@@ -852,6 +1037,8 @@ async def flag_attempt(
     user: Annotated[CurrentUser, limited("qbank_write")],
 ) -> FlagOut:
     uid = user.user_id
+    rules = await _rules(request)
+    now = _now(request)
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> FlagOut:
         blocks = await _rows(conn, _LOCK_BLOCK, (block_id, uid))
@@ -861,6 +1048,11 @@ async def flag_attempt(
         ids: list[str] = blocks[0]["question_ids"]
         if question_id not in ids:
             raise HTTPException(404, "This question is not in this block.")
+        if exam.is_timed(cfg.mode):
+            locked = await exam.lock_block(conn, block_id, uid)
+            assert locked is not None
+            session = await exam.sync(conn, locked, uid, rules, now)
+            exam.check_flag(session, ids.index(question_id), locked["finished_at"] is not None, now)
         updated = await _rows(
             conn,
             "update public.attempts set flagged = %s"
@@ -918,6 +1110,9 @@ def install_qbank_routes(app: Any) -> None:
         limiters.setdefault(k, v)
     app.state.rate_limiters = limiters
     app.include_router(router)
+    from .exam_routes import router as exam_router  # imports this module: registered after it is complete
+
+    app.include_router(exam_router)
 
 
 __all__ = ["install_qbank_routes", "router"]

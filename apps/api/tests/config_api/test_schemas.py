@@ -61,7 +61,7 @@ def test_paid_model_id_is_rejected(values: dict[str, Any]) -> None:
 def test_seeded_defaults_match_the_contract(values: dict[str, Any]) -> None:
     flags = values["feature_flags"]
     assert flags["assistant"]["enabled"] is False
-    assert flags["qbank"]["enabled"] is True and flags["qbank_timed"]["enabled"] is False
+    assert flags["qbank"]["enabled"] is True and flags["qbank_timed"]["enabled"] is True
     assert flags["ink_lab"] == {"enabled": True, "audience": "admins", "everyone_outside_prod": True}
     assert [i["path"] for i in values["ui.nav"]] == ["/", "/learn", "/practice"]
     assert values["exam_rules"]["modes"]["exam"]["assistant"] is False

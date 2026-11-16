@@ -100,7 +100,7 @@ def test_pool_counts_follow_filters_history_and_taxonomy(client: TestClient, key
     assert body["difficulty"]["all"] == 12 and sum(body["difficulty"][d] for d in ("easy", "medium", "hard")) == 12
     assert body["limits"] == {"min_questions": 1, "max_questions": 40, "default_questions": 40}
     assert [m["id"] for m in body["modes"]] == ["tutor", "timed", "exam"]
-    assert [m["available"] for m in body["modes"]] == [True, False, False]  # S09 screens are not on yet
+    assert [m["available"] for m in body["modes"]] == [True, True, True]  # qbank_timed is on (S09)
     assert {e["id"] for e in body["exams"]} == {"step1", "step2ck"}
 
     only_a = client.get(
@@ -211,9 +211,12 @@ def test_block_validation(client: TestClient, key: SigningKey, world: World) -> 
     assert big.status_code == 422 and "Only 12 questions match" in big.json()["error"]["message"]
     assert client.post("/api/blocks", json={**base, "exam": "step3", "count": 5}, headers=h).status_code == 422
     assert client.post("/api/blocks", json={**base, "count": 5, "correct": True}, headers=h).status_code == 422
-    timed = client.post("/api/blocks", json={**base, "count": 5, "mode": "timed"}, headers=h)
-    assert timed.status_code == 422 and "not available yet" in timed.json()["error"]["message"]
-    assert client.post("/api/blocks", json={**base, "count": 5, "mode": "exam"}, headers=h).status_code == 422
+    # timed/exam: sections of `count` questions (S09; with the flag off they are refused, see test_exam_db)
+    assert client.post("/api/blocks", json={**base, "count": 5, "mode": "timed"}, headers=h).status_code == 201
+    assert (
+        client.post("/api/blocks", json={**base, "count": 5, "mode": "tutor", "sections": 2}, headers=h).status_code
+        == 422
+    )
 
 
 def test_weak_spot_needs_history_then_targets_the_weakest_cell(
@@ -433,39 +436,22 @@ def test_timed_and_exam_blocks_never_explain_during_the_block(
     client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
 ) -> None:
     w = world
-    qids = w.questions[:2]
     for mode in ("timed", "exam"):
-        cfg = json.dumps(
-            {
-                "exam": "step1",
-                "mode": mode,
-                "status": "all",
-                "difficulty": None,
-                "systems": [],
-                "disciplines": [],
-                "seed": 1,
-                "weak_spot": False,
-            }
-        )
-        row = pg.execute(
-            "insert into public.blocks (user_id, config, question_ids, started_at)"
-            " values (%s, %s::jsonb, %s, now()) returning id",
-            (w.owner, cfg, qids),
-        ).fetchone()
-        assert row is not None
-        bid = str(row[0])
+        bid = make_block(client, key, w, count=2, mode=mode)["id"]
+        assert client.post(f"/api/blocks/{bid}/sections/1/start", headers=auth(key, w.owner)).status_code == 200
+        qids = [question(client, key, w, bid, n).json()["question"]["id"] for n in (1, 2)]
         res = answer(client, key, w, bid, qids[0], "A")
         assert res.status_code == 200
         out = res.json()
         assert out["explanation"] is None and out["correct"] is None and out["finished"] is False
         again = question(client, key, w, bid, 1)
         assert_no_secrets(again.text)
-        assert again.json()["attempt"] == {"chosen": "A", "seconds": 12, "correct": None}
+        assert again.json()["attempt"]["chosen"] == "A" and again.json()["attempt"]["correct"] is None
         detail = client.get(f"/api/blocks/{bid}", headers=auth(key, w.owner)).json()
         assert detail["correct"] is None and all(q["correct"] is None for q in detail["questions"])
         listed = client.get("/api/blocks", headers=auth(key, w.owner)).json()["blocks"]
         assert next(b for b in listed if b["id"] == bid)["correct"] is None
-        # even answering every question never finishes it here: timed/exam results are S09's flow
+        # answering every question never finishes a timed/exam block: its clock or "End block" does (S09)
         assert answer(client, key, w, bid, qids[1], "B").json()["finished"] is False
 
 
@@ -511,7 +497,7 @@ def test_the_server_grades_and_ignores_client_claims(client: TestClient, key: Si
     right = answer(client, key, w, block["id"], qid, "B").json()
     assert right["correct"] is True and right["explanation"]["answer"] == "B"
     stored = client.get(f"/api/blocks/{block['id']}", headers=h).json()
-    assert stored["questions"][0] == {"n": 1, "answered": True, "flagged": False, "correct": True}
+    assert stored["questions"][0] == {"n": 1, "section_n": 1, "answered": True, "flagged": False, "correct": True}
 
 
 def test_answering_is_idempotent_per_block_and_question(

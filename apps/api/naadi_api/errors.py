@@ -77,11 +77,20 @@ def error_response(
     return JSONResponse(error_payload(status, message, code, details), status_code=status, headers=headers)
 
 
+class CodedHTTPException(StarletteHTTPException):
+    """An HTTP error with a stable `code` the client maps to its own (ui_copy) wording."""
+
+    def __init__(self, status_code: int, code: str, detail: str | None = None) -> None:
+        super().__init__(status_code, detail)
+        self.code = code
+
+
 async def _http_exc(_: Request, exc: Exception) -> JSONResponse:
     assert isinstance(exc, StarletteHTTPException)
     # Only pass through messages we chose; Starlette's defaults are the status phrase anyway.
     msg = exc.detail if isinstance(exc.detail, str) else None
-    return error_response(exc.status_code, msg, headers=getattr(exc, "headers", None))
+    code = exc.code if isinstance(exc, CodedHTTPException) else None
+    return error_response(exc.status_code, msg, code, headers=getattr(exc, "headers", None))
 
 
 async def _validation_exc(_: Request, exc: Exception) -> JSONResponse:

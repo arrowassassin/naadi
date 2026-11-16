@@ -32,10 +32,10 @@ MUTATIONS = [
     (
         "drop policy costs_select_own on public.costs; drop policy costs_insert_own on public.costs;"
         " drop policy costs_update_own on public.costs; drop policy costs_delete_own on public.costs",
-        "19 user tables",
+        "user tables:",
     ),
-    ("drop policy notes_delete_own on public.notes", "19 user tables"),
-    ("alter table public.blocks no force row level security", "19 user tables"),
+    ("drop policy notes_delete_own on public.notes", "user tables:"),
+    ("alter table public.blocks no force row level security", "user tables:"),
     ("create table public.naadi_probe (id int)", "every public table has RLS"),
     ("grant insert on public.ink_items to authenticated", "ink layers and items are select-only"),
     ("grant delete on public.ink_layers to authenticated", "ink layers and items are select-only"),
