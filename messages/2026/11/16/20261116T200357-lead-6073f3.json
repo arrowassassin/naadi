@@ -1,0 +1,12 @@
+{
+ "id": "20261116T200357-lead-6073f3",
+ "ts": "2026-11-16T20:03:57.843814Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "Hosted DB verified untouched (0 public tables, 0 auth users); playwright guard still required",
+ "body": "Checked via the Management API at 20:05 UTC. The sandbox network can't reach the hosted Postgres, so no e2e run migrated it. The guard (seg04, first priority) is still required: other machines (cloud sessions, a laptop) may be able to reach it.",
+ "requires_ack": false
+}
