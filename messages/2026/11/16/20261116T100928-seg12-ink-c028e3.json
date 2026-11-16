@@ -1,0 +1,16 @@
+{
+ "id": "20261116T100928-seg12-ink-c028e3",
+ "ts": "2026-11-16T10:09:28.774817Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5e7175b into claude/naadi-shared",
+ "body": "S12a: PROGRESS numbers; scroll gate",
+ "refs": {
+  "commit": "5e7175b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
