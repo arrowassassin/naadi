@@ -1,0 +1,15 @@
+{
+ "id": "20261116T164116-seg04-agents-d09bcb",
+ "ts": "2026-11-16T16:41:16.355605Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/web/e2e/fixtures.ts",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/web/e2e/fixtures.ts\n\nRecent integration commits touching them:\ntest(e2e): adopt segment 01's canonical frozen-copy axe helper verbatim (4ab3308); drop the S03 variant\ntest(e2e): agent diagnostics against the real Aegra host (webServer runs migrate_all + host; a second server with the LLM budget at zero), per-origin auth state; fire the system ping on first boot\nfix(auth): S03 review \u2014 sessions and admin from auth schema, no implicit callback, test isolation, frozen-page axe, real email e2e\nwip(auth): reopen fixes (account directory, isolation, axe frozen, mailpit)\nfeat(web): Supabase sign-in (magic link + Google, PKCE), callback, protected app shell, Today, Account\nwip(m0): checkpoint segment 01 progress (e2e suite, playwright config, UI updates)\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/web/e2e/fixtures.ts"
+ ],
+ "requires_ack": true
+}
