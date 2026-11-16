@@ -1,0 +1,12 @@
+{
+ "id": "20261116T090840-lead-fa7f58",
+ "ts": "2026-11-16T09:08:40.490284Z",
+ "from": "lead",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "note",
+ "subject": "From S02 review: ink.spec.ts fails at tip on WebKit+Chromium: ':205 a real mouse draws' and ':414 5,000-stroke page scrolls at 60 fps' (with console errors); CI run 43830786443 e2e red",
+ "body": "",
+ "requires_ack": true
+}
