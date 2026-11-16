@@ -18,6 +18,7 @@ from typing import Any, Literal
 
 import psycopg
 
+from ..cards.routes import VISIBLE as CARDS_VISIBLE
 from .blueprint import SystemWeight, system_weights, weighted_accuracy
 
 Row = dict[str, Any]
@@ -197,11 +198,25 @@ where i.user_id = (select auth.uid()) and i.kind in ('read', 'questions', 'cards
   and i.day >= %(today)s - 14
 """
 
-_CARDS = """
-select count(*) filter (where due <= %(now)s)::int as due,
-       coalesce(sum(reps), 0)::int as reps, coalesce(sum(lapses), 0)::int as lapses
-from public.card_reviews where user_id = (select auth.uid())
-"""
+# Cards due now, counted exactly as the Cards screen counts them (segment 10: visible cards, new ones included).
+# VISIBLE reads attempts.correct (the question-linked card gate), so this runs as a privileged statement for
+# the caller's own id.
+_CARDS = (
+    "select count(*) filter (where r.card_id is null or r.due <= %(now)s)::int as due,"  # noqa: S608 - VISIBLE is a constant
+    " coalesce(sum(r.reps), 0)::int as reps, coalesce(sum(r.lapses), 0)::int as lapses"
+    " from public.flashcards f left join public.card_reviews r on r.card_id = f.id and r.user_id = %(uid)s"
+    " where %(uid)s = (select auth.uid()) and " + CARDS_VISIBLE
+)
+
+
+async def cards_due(conn: psycopg.AsyncConnection[Any], *, now: dt.datetime) -> dict[str, int]:
+    """{"due", "reps", "lapses"} for the caller (the same `due_now` as GET /api/cards/stats)."""
+    row = (await privileged_rows(conn, _CARDS, {"now": now, "uid": await _uid(conn)}))[0]
+    return {k: int(v) for k, v in row.items()}
+
+
+async def _uid(conn: psycopg.AsyncConnection[Any]) -> Any:
+    return (await _rows(conn, "select auth.uid() as uid", {}))[0]["uid"]
 
 
 @dataclass(frozen=True, slots=True)
@@ -272,7 +287,7 @@ async def coach_facts(
         row = (await privileged_rows(conn, _CHANGED, {"now": now, "days": window_days}))[0]
         changed, r2w = int(row["changed"]), int(row["right_to_wrong"])
     plan = (await _rows(conn, _PLAN, {"today": today}))[0]
-    cards = (await _rows(conn, _CARDS, {"now": now}))[0]
+    cards = await cards_due(conn, now=now)
     reps, lapses = int(cards["reps"]), int(cards["lapses"])
     return CoachFacts(
         exam=exam,

@@ -7,7 +7,7 @@ import type {
   TodayOut,
 } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton, Tile, TileLabel } from "@naadi/ui";
-import { Navigate, useNavigate } from "@tanstack/react-router";
+import { Link, Navigate, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, Check, Circle, ExternalLink } from "lucide-react";
 import { useId, useState } from "react";
 import { useMe } from "../auth/api";
@@ -107,7 +107,7 @@ function useRunAction() {
         void nav({ to: "/practice" });
         return;
       case "cards":
-        window.location.assign("/cards");
+        void nav({ to: "/cards" });
         return;
       case "weak_spot":
         weak.mutate(
@@ -418,9 +418,9 @@ function Cards({ today }: { today: TodayOut }) {
       <p className="m-0 font-display font-extrabold text-[3.5rem] leading-none tracking-[-0.04em]">{c.due}</p>
       <p className="m-0 text-text-2">{t(c.due > 0 ? "today.cards_caption" : "today.cards_none")}</p>
       {c.reviewable && c.due > 0 ? (
-        <a href="/cards" className={cx(SECONDARY_LINK, "self-start")}>
+        <Link to="/cards" className={cx(SECONDARY_LINK, "self-start")}>
           {t("today.cards_review")}
-        </a>
+        </Link>
       ) : null}
     </Tile>
   );

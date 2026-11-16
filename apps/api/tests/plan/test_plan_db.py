@@ -375,3 +375,30 @@ def test_concurrent_first_requests_all_see_the_profile(
     with ThreadPoolExecutor(max_workers=len(paths)) as pool:
         codes = list(pool.map(lambda p: client.get(p, headers=auth(key, a)).status_code, paths))
     assert codes == [200] * len(paths)
+
+
+def test_today_cards_due_matches_the_cards_screen(
+    client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID], pg: psycopg.Connection[Any]
+) -> None:
+    a, _ = users
+    assert onboard(client, key, a).status_code == 200
+    own = [uuid.uuid4() for _ in range(3)]
+    for i, cid in enumerate(own):
+        pg.execute(
+            "insert into public.flashcards (id, owner_user_id, front_html, back_html) values (%s, %s, 'f', 'b')",
+            (cid, a),
+        )
+        if i == 0:  # reviewed and not due yet
+            pg.execute(
+                "insert into public.card_reviews (user_id, card_id, due, reps, lapses, state)"
+                " values (%s, %s, now() + interval '3 days', 1, 0, 2)",
+                (a, cid),
+            )
+    try:
+        stats = client.get("/api/cards/stats", headers=auth(key, a))
+        assert stats.status_code == 200, stats.text
+        today = client.get("/api/today", headers=auth(key, a)).json()
+        assert today["cards"]["due"] == stats.json()["due_now"]
+        assert today["cards"]["reviewable"] is True
+    finally:
+        pg.execute("delete from public.flashcards where id = any(%s)", (own,))

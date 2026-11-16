@@ -25,7 +25,7 @@ from fastapi import APIRouter, Depends, Path, Query, Request
 from fastapi.responses import JSONResponse, Response
 from starlette.exceptions import HTTPException
 
-from ..analytics.student import by_system, load_cells, load_weights, readiness
+from ..analytics.student import by_system, cards_due, load_cells, load_weights, readiness
 from ..auth import CurrentUser, get_account_user
 from ..auth_limits import RateLimiter
 from ..config_api.schemas import CoachRules, PlanRules
@@ -595,7 +595,6 @@ order by b.created_at desc limit 1
 _SECTION_N = """
 select count(*)::int as n from public.chapter_sections where chapter_id = %s and sort <= %s
 """
-_CARDS_DUE = "select count(*)::int as n from public.card_reviews where user_id = (select auth.uid()) and due <= %s"
 _COACH = """
 select id, for_date, kind, source, title, body, facts, action, status from public.coach_suggestions
 where user_id = (select auth.uid()) and status = 'new' and for_date between %s and %s
@@ -702,7 +701,7 @@ async def get_today(request: Request, user: Annotated[CurrentUser, limited("plan
                     section_heading=r["section_heading"],
                     section_n=n[0]["n"],
                 )
-        due = (await rows(conn, _CARDS_DUE, (now,)))[0]["n"]
+        due = (await cards_due(conn, now=now))["due"]
         suggestions: list[CoachSuggestionOut] = []
         if features.get("coach", False):
             suggestions = [
