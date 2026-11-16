@@ -9,6 +9,7 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  fromThirdPartyEmbed,
   snapSegment,
   test,
 } from "./fixtures";
@@ -37,6 +38,9 @@ const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string) =>
   snapSegment(page, info, guard, "04", state, true);
 
 const panel = (page: Page) => page.getByTestId("ping-panel");
+/** The runtime status as the page words it from the server's structured facts (never the server's `detail`). */
+const RUNTIME_SUMMARY =
+  /^(\d+ graphs? loaded; crons are firing \(last hourly ping \d\d:\d\d UTC\)\.|Running, but .+\.)$/;
 const API_DIR = path.resolve(import.meta.dirname, "../../api");
 const RECORDED_STREAM = readFileSync(path.join(import.meta.dirname, "fixtures/ping-stream.sse"), "utf8");
 
@@ -71,9 +75,7 @@ test.describe("admin", () => {
     await openDiagnostics(page);
     await expect(page.getByTestId("agent-runtime").getByText(/OK|Degraded|Down/)).toBeVisible();
     // Worded from the server's structured facts with ui_copy, never the server's English `detail`.
-    await expect(page.getByTestId("agent-runtime-summary")).toHaveText(
-      /^(\d+ graphs? loaded; crons are firing \(last hourly ping \d\d:\d\d UTC\)\.|Running, but .+\.)$/,
-    );
+    await expect(page.getByTestId("agent-runtime-summary")).toHaveText(RUNTIME_SUMMARY);
     await expect(page.getByTestId("agent-runtime-summary")).not.toContainText(/Runtime up|Not ok:/);
     await snap(page, info, consoleErrors, "populated");
 
@@ -231,11 +233,12 @@ test.describe("student", () => {
 test.describe("admin, production server (APP_ENV=prod, production CSP)", () => {
   const PROD = process.env.E2E_PROD_URL;
 
-  test("the diagnostics page renders with zero console errors and says this server hosts no runtime", async ({
+  test("the diagnostics page renders with zero console errors and shows the media block", async ({
     browser,
     baseURL,
   }) => {
     test.skip(!PROD, "needs the local APP_ENV=prod API");
+    test.skip(!canSeedMedia, "the recorded media results are seeded only into a local test database");
     // The admin session from the main origin, moved to the https prod origin (as in ink-gate.spec): signing in
     // again there would send the Supabase calls through production's upgrade-insecure-requests.
     const file = await signedInState(browser, baseURL as string, "admin");
@@ -252,16 +255,29 @@ test.describe("admin, production server (APP_ENV=prod, production CSP)", () => {
       const page = await ctx.newPage();
       const errors: string[] = [];
       page.on("console", (m) => {
-        if (m.type() === "error") errors.push(`${m.text()} @ ${m.location().url}`);
+        if (m.type() === "error" && !fromThirdPartyEmbed(m.location().url)) {
+          errors.push(`${m.text()} @ ${m.location().url}`);
+        }
       });
       page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
       await page.goto("/admin/agent");
       await expect(page.getByRole("heading", { level: 1, name: "Agent diagnostics" })).toBeVisible();
-      // The plain production app (naadi_api.main:app) reports no agent_runtime component.
-      await expect(page.getByTestId("agent-runtime-summary")).toHaveText(
-        "This server does not host the agent runtime.",
-      );
-      await expect(page.getByRole("button", { name: "Run ping" })).toBeVisible();
+      await expect(page.getByTestId("agent-runtime-summary")).toHaveText(RUNTIME_SUMMARY);
+      // The media answer block under production's CSP: img-src and frame-src must admit exactly these hosts.
+      await page.getByRole("button", { name: "Run ping" }).click();
+      const media = page.getByTestId("agent-block-media");
+      await expect(media).toBeVisible({ timeout: 45_000 });
+      for (const id of ["media-commons", "media-pmc_figure"]) {
+        const img = media.getByTestId(id).locator("img");
+        await img.scrollIntoViewIfNeeded();
+        await expect
+          .poll(() => img.evaluate((i: HTMLImageElement) => i.complete && i.naturalWidth > 0), { timeout: 20_000 })
+          .toBe(true);
+      }
+      await expect(media.getByTestId("media-youtube").locator("iframe")).toBeVisible();
+      await expect(page.getByTestId("ping-confirm")).toBeVisible({ timeout: 45_000 });
+      await page.getByRole("button", { name: "Discard" }).click();
+      await expect(page.getByTestId("ping-done")).toHaveText("Not recorded.", { timeout: 30_000 });
       await page.evaluate(() => document.fonts.ready);
       expect(errors, "console errors under the production CSP").toEqual([]);
     } finally {

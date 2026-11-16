@@ -49,7 +49,7 @@ export const TOOL_CSP_NOISE =
  */
 const THIRD_PARTY_EMBED_ORIGINS = new Set(["https://www.youtube-nocookie.com"]);
 
-function fromThirdPartyEmbed(url: string): boolean {
+export function fromThirdPartyEmbed(url: string): boolean {
   try {
     return THIRD_PARTY_EMBED_ORIGINS.has(new URL(url).origin);
   } catch {
