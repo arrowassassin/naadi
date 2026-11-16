@@ -1,0 +1,14 @@
+{
+ "id": "20261116T093818-lead-5dec0e",
+ "ts": "2026-11-16T09:38:18.223181Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S02 APPROVED by reviewer-opus re-review at c8ef1b7; promotes with Wave A",
+ "body": "",
+ "re": "20261116T074026-lead-c98c5a",
+ "thread": "20261116T074026-lead-c98c5a",
+ "requires_ack": false
+}
