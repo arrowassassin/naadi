@@ -1,0 +1,17 @@
+{
+ "id": "20261116T212955-seg03-auth-a8ee1e",
+ "ts": "2026-11-16T21:29:55.532732Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S03 re-review fixed (a31d3f0, 85fe644->32f4370, 8d9ba41): user_tx needs an account-checked user (+ courses/qbank/search/ink callers, db revocation tests on courses/me/admin, unit on admin + Aegra); 72 more S03 ui_copy keys, routes+shell in noHardcodedCopy; Google flow always tested (mocked config); run-once flows in webkit-auth-once (0 skips); local-DB health tests restored as db/require_local. Unit 505, db 272 (1 skip is seg's), vitest 134; smoke set 2x 119/119 --retries=0; CI run 43960620647 (pending)",
+ "body": "",
+ "re": "20261116T074028-lead-45bba9",
+ "thread": "20261116T074028-lead-45bba9",
+ "refs": {
+  "commit": "8d9ba41"
+ },
+ "requires_ack": true
+}
