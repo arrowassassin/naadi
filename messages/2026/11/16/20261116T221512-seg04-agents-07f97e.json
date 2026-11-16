@@ -1,0 +1,18 @@
+{
+ "id": "20261116T221512-seg04-agents-07f97e",
+ "ts": "2026-11-16T22:15:12.701002Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04 re-review R3: /api/health reads the daily tavily_usage reading instead of calling Tavily",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/health/checks.py",
+  "apps/api/tests/test_health.py",
+  "apps/api/tests/test_integration.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
