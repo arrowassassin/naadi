@@ -1,0 +1,16 @@
+{
+ "id": "20261116T231323-seg08-qbank-9227c8",
+ "ts": "2026-11-16T23:13:23.755154Z",
+ "from": "seg08-qbank",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 7ee0916 into claude/naadi-shared",
+ "body": "S08: compositing layer on the sticky focus bar",
+ "refs": {
+  "commit": "7ee0916",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
