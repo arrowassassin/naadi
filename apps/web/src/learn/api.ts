@@ -113,9 +113,8 @@ export function useSavePosition(chapterId: string) {
   const userId = useUserId();
   const qc = useQueryClient();
   return useMutation({
-    // keepalive: the last save of a page that is being closed still reaches the server.
-    mutationFn: ({ body, keepalive = false }: { body: ReadingPositionIn; keepalive?: boolean }) =>
-      authed<ReadingPositionWrite>((headers) => putReadingPosition({ headers, body, keepalive })),
+    mutationFn: ({ body }: { body: ReadingPositionIn }) =>
+      authed<ReadingPositionWrite>((headers) => putReadingPosition({ headers, body })),
     onSuccess: (res) => {
       qc.setQueryData<Offline<ChapterPositions>>(positionsKey(userId, chapterId), (old) => {
         const prev = old?.data.sections ?? [];

@@ -1,5 +1,6 @@
-import type { ReadingPosition } from "@naadi/shared";
+import { putReadingPosition, type ReadingPosition, type ReadingPositionIn } from "@naadi/shared";
 import { type RefObject, useCallback, useEffect, useRef } from "react";
+import { getAuthState } from "../auth/session";
 import { useSavePosition } from "./api";
 
 /*
@@ -11,6 +12,29 @@ import { useSavePosition } from "./api";
 
 const SAVE_AFTER_MS = 1500;
 const MIN_CHANGE = 0.05;
+const TOKEN_MARGIN_MS = 10_000;
+
+/**
+ * The last save of a page that is being hidden or closed: one keepalive request with the session's current
+ * access token, read synchronously. Going through the session client here (an async lock) can run after the
+ * page's script context has stopped, which WebKit reports as an uncaught "Context is stopped". If the token
+ * is about to expire the save is skipped; the position is saved again on the next scroll or section change.
+ */
+function sendOnLeave(body: ReadingPositionIn): void {
+  const auth = getAuthState();
+  if (auth.status !== "signed-in") return;
+  const expiresAt = (auth.session.expires_at ?? 0) * 1000;
+  if (expiresAt < Date.now() + TOKEN_MARGIN_MS) return;
+  try {
+    void putReadingPosition({
+      body,
+      keepalive: true,
+      headers: { authorization: `Bearer ${auth.session.access_token}` },
+    }).catch(() => undefined);
+  } catch {
+    // the page is already gone
+  }
+}
 
 function anchorY(): number {
   const top = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--shell-top")) || 0;
@@ -77,16 +101,15 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
       if (typeof navigator !== "undefined" && navigator.onLine === false) return;
       s.sent = s.offset;
       s.sentCompleted = s.completed;
-      saveRef.current({
-        body: {
-          chapter_id: chapterId,
-          section_id: sectionId,
-          offset: s.offset,
-          completed: s.completed,
-          client_updated_at: new Date().toISOString(),
-        },
-        keepalive,
-      });
+      const body: ReadingPositionIn = {
+        chapter_id: chapterId,
+        section_id: sectionId,
+        offset: s.offset,
+        completed: s.completed,
+        client_updated_at: new Date().toISOString(),
+      };
+      if (keepalive) sendOnLeave(body);
+      else saveRef.current({ body });
     },
     [chapterId, sectionId, enabled],
   );
