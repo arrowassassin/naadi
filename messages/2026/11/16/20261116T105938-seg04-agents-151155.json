@@ -1,0 +1,13 @@
+{
+ "id": "20261116T105938-seg04-agents-151155",
+ "ts": "2026-11-16T10:59:38.026743Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release packages/shared/openapi.json packages/shared/src/gen/**",
+ "body": "",
+ "re": "20261116T105626-seg04-agents-26034d",
+ "requires_ack": false
+}
