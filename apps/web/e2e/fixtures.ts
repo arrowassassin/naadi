@@ -40,6 +40,22 @@ interface Fixtures {
 const TOOL_CSP_NOISE =
   "Refused to apply a stylesheet because its hash, its nonce, or 'unsafe-inline' does not appear in the style-src directive";
 
+/**
+ * Origins of third-party embeds whose own documents log to the console: the YouTube IFrame player probes
+ * features the embed is not granted (e.g. "Permissions policy violation: compute-pressure", now and then).
+ * Its script runs in its own cross-origin frame, so its lines are not the app's errors. Lines whose source
+ * is the app (or any other origin) are still failures.
+ */
+const THIRD_PARTY_EMBED_ORIGINS = new Set(["https://www.youtube-nocookie.com"]);
+
+function fromThirdPartyEmbed(url: string): boolean {
+  try {
+    return THIRD_PARTY_EMBED_ORIGINS.has(new URL(url).origin);
+  } catch {
+    return false;
+  }
+}
+
 export const test = base.extend<Fixtures>({
   consoleErrors: async ({ page }, use) => {
     const errors: string[] = [];
@@ -48,6 +64,7 @@ export const test = base.extend<Fixtures>({
     page.on("console", (msg) => {
       if (msg.type() !== "error") return;
       if (toolActive > 0 && msg.text().startsWith(TOOL_CSP_NOISE)) return;
+      if (fromThirdPartyEmbed(msg.location().url)) return;
       errors.push(`${msg.text()} @ ${msg.location().url}`);
     });
     page.on("pageerror", (err) => errors.push(`pageerror: ${err.message}`));
