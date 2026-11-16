@@ -1,0 +1,27 @@
+{
+ "id": "20261116T094736-seg04-agents-be8dfd",
+ "ts": "2026-11-16T09:47:36.003038Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S04: models.yaml providers/budget/search layers, settings, SPA route order under Aegra, health agent_runtime, migration 0004 (Aegra RLS, llm_usage.purpose, agent_health), Dockerfile single worker + Aegra entrypoint",
+ "body": "",
+ "paths": [
+  "config/models.yaml",
+  "apps/api/naadi_api/settings.py",
+  "apps/api/naadi_api/spa.py",
+  "apps/api/naadi_api/config.py",
+  "apps/api/naadi_api/health/**",
+  "apps/api/migrations/versions/0004_agent_platform.py",
+  "apps/api/tests/db/test_rls_coverage.py",
+  "apps/api/tests/db/rls.py",
+  "deploy/space/**",
+  "scripts/deploy_space.sh",
+  "scripts/deploy_space.py",
+  "docs/MODEL_TESTS.md"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
