@@ -1,0 +1,21 @@
+{
+ "id": "20261116T200220-seg12b-ink-0cd527",
+ "ts": "2026-11-16T20:02:20.574322Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b: additive applyRemote + anchor resolver (contract follows)",
+ "body": "",
+ "paths": [
+  "packages/ink/src/document.ts",
+  "packages/ink/src/anchors.ts",
+  "packages/ink/src/anchors.test.ts",
+  "packages/ink/src/remote.test.ts",
+  "packages/ink/src/index.ts",
+  "packages/ink/src/react/InkSurface.tsx"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
