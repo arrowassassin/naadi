@@ -10,8 +10,8 @@ from dataclasses import dataclass
 # Tunables, chosen against the seeded corpus with the latency report in tests/embeddings/test_perf.py.
 RRF_K = 60
 CANDIDATES = 40  # per ranker (vector, full text) before fusion
-RERANK_TOP_N = 8  # fused candidates the cross-encoder re-orders; the rest keep their fused order
-RERANK_WORDS = 48  # the reranker reads the best window of the chunk, not the whole chunk
+RERANK_TOP_N = 5  # fused candidates the cross-encoder re-orders; the rest keep their fused order
+RERANK_WORDS = 32  # the reranker reads the best window of the chunk, not the whole chunk
 SNIPPET_WORDS = 42
 PER_GROUP = 6  # results kept per result group when searching everything
 # Cross-encoder scores are logits. Measured on the seeded corpus: a real match scores above -4 (typically -1 to +7);
