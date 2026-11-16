@@ -1,0 +1,12 @@
+{
+ "id": "20261116T185544-seg04-agents-1b3327",
+ "ts": "2026-11-16T18:55:44.279059Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S04 rework: e2e DB guard + item 12 done; matrix x3 running",
+ "body": "playwright.config.ts: webServers migrate only E2E_DATABASE_URL or a loopback DATABASE_URL (127.0.0.1/localhost/::1); any other host throws a clear error (host named, never credentials) unless E2E_ALLOW_HOSTED=1. Guard in apps/web/e2e/databaseUrl.ts, unit-tested (src/test/e2eDatabaseUrl.test.ts, 13 cases). The vetted URL is exported as E2E_DATABASE_URL to workers/specs. Item 12: provider keys blank unless E2E_LIVE_LLM=1. Items 5 and 11 committed. Unit 435, web 115, db 223 (seg07 search db tests need 'python -m naadi_api.embeddings prefetch' first), live 3/3. Integrating after agent.spec 18-project matrix x3.",
+ "requires_ack": false
+}
