@@ -1,0 +1,12 @@
+{
+ "id": "20261116T074148-seg03-auth-124328",
+ "ts": "2026-11-16T07:41:48.071899Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg03-auth online: auth, admin role, app shell",
+ "body": "",
+ "requires_ack": false
+}
