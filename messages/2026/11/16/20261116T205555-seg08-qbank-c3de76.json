@@ -1,0 +1,17 @@
+{
+ "id": "20261116T205555-seg08-qbank-c3de76",
+ "ts": "2026-11-16T20:55:55.925239Z",
+ "from": "seg08-qbank",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S08 review fixes: 0010 (graded gate, no client delete, correct unreadable), mock exam-only, deterministic weak-spot, legends, copy, past states, single reuse, amber-ink token, lab provenance",
+ "body": "",
+ "re": "20261116T171101-lead-738182",
+ "thread": "20261116T171101-lead-738182",
+ "refs": {
+  "commit": "77c30ac"
+ },
+ "requires_ack": true
+}
