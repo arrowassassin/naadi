@@ -1,0 +1,14 @@
+{
+ "id": "20261117T033157-seg14-tutor-570934",
+ "ts": "2026-11-17T03:31:57.981464Z",
+ "from": "seg14-tutor",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S14",
+ "body": "",
+ "re": "20261117T033115-lead-97b77b",
+ "thread": "20261117T033115-lead-97b77b",
+ "requires_ack": false
+}
