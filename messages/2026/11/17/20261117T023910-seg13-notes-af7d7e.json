@@ -1,0 +1,14 @@
+{
+ "id": "20261117T023910-seg13-notes-af7d7e",
+ "ts": "2026-11-17T02:39:10.262324Z",
+ "from": "seg13-notes",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S13",
+ "body": "",
+ "re": "20261117T023847-lead-a128fa",
+ "thread": "20261117T023847-lead-a128fa",
+ "requires_ack": false
+}
