@@ -330,6 +330,11 @@ export default defineConfig({
     trace: liveBaseUrl ? "off" : "retain-on-failure",
     video: "off",
     screenshot: "only-on-failure",
+    // The app registers /sw.js (push handlers). In WebKit a page that worker controls sends its fetches past
+    // page.route, so a stubbed /api failure or delay would never reach the page and its error and loading
+    // states could not be tested. Every context blocks service workers unless a test opts in with
+    // `serviceWorkers: "allow"` (the push and installability flows).
+    serviceWorkers: "block",
   },
   projects,
   webServer: liveBaseUrl ? undefined : webServers(),

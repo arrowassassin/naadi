@@ -483,6 +483,8 @@ test.describe("push service worker", () => {
     const context = await browser.newContext({
       ...info.project.use,
       baseURL: prod,
+      // The push flow needs the service worker (the config blocks workers by default).
+      serviceWorkers: "allow",
       permissions: ["notifications"],
     });
     await context.grantPermissions(["notifications"], { origin: new URL(prod).origin });
