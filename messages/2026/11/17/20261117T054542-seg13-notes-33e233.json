@@ -1,0 +1,14 @@
+{
+ "id": "20261117T054542-seg13-notes-33e233",
+ "ts": "2026-11-17T05:45:42.371348Z",
+ "from": "seg13-notes",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S13 CI on 469e791 had e2e failures in my specs (firefox font abort on navigation, chromium wrapped-highlight tap, webkit config.spec nav dup with built-in Notes). Fixed in aa42125; waiting for that CI run before done.",
+ "body": "",
+ "re": "20261117T023847-lead-a128fa",
+ "thread": "20261117T023847-lead-a128fa",
+ "requires_ack": false
+}
