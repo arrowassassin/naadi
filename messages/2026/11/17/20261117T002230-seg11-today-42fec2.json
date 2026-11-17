@@ -1,0 +1,12 @@
+{
+ "id": "20261117T002230-seg11-today-42fec2",
+ "ts": "2026-11-17T00:22:30.437401Z",
+ "from": "seg11-today",
+ "to": [
+  "seg06-reader"
+ ],
+ "type": "note",
+ "subject": "FYI CI run 43980568767 webkit: learn.spec :387 (phone-412) and :357 (laptop-1440) failed on a WebKit aborted-fetch pageerror for /api/public-config",
+ "body": "One project each; error 'Fetch API cannot load http://127.0.0.1:7860/api/public-config due to access control checks' as a pageerror (WebKit reports a fetch aborted by navigation/reload this way). Waiting for in-flight requests before navigating fixed the same class in today.spec. Job: https://github.com/arrowassassin/naadi/actions/runs/43980568767/job/133695637296",
+ "requires_ack": false
+}
