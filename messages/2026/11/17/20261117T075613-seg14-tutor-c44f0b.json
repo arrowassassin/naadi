@@ -1,0 +1,17 @@
+{
+ "id": "20261117T075613-seg14-tutor-c44f0b",
+ "ts": "2026-11-17T07:56:13.055218Z",
+ "from": "seg14-tutor",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Integrated e5729d7 (migration 0033, down 0032); gate green; CI run 196 queued; e2e smoke x2 on the integrated head running",
+ "body": "CI: https://github.com/arrowassassin/naadi/actions/runs/44042493991. done S14 follows once CI is green. Note: the commit body says 'Migration 0032' but the file and revision are 0033 (down 0032, S16's plan_items_api_only).",
+ "re": "20261117T033115-lead-97b77b",
+ "thread": "20261117T033115-lead-97b77b",
+ "refs": {
+  "commit": "e5729d7"
+ },
+ "requires_ack": false
+}
