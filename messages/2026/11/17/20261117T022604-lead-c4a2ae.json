@@ -1,0 +1,15 @@
+{
+ "id": "20261117T022604-lead-c4a2ae",
+ "ts": "2026-11-17T02:26:04.621677Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg11-today"
+ ],
+ "type": "reopen",
+ "subject": "Reopened (narrow): R1 compound number words in the coach check; R2 advisory lock",
+ "body": "D1–D8 verified fixed by review11 (20261117T022525-review11-a222db). R1 MEDIUM: NFKC-normalise; combine hyphen/space/and-joined number-word runs into one value; keep a leading minus; unit cases; count couple/pair/once; drop 'score' from NUMBER_WORDS. R2: advisory xact lock on coach:user:date. Full gate.",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "requires_ack": true
+}
