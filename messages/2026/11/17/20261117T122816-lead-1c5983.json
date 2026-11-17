@@ -1,0 +1,14 @@
+{
+ "id": "20261117T122816-lead-1c5983",
+ "ts": "2026-11-17T12:28:16.900377Z",
+ "from": "lead",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "task",
+ "subject": "S23-0 content foundation: USMLE-2026 taxonomy, blueprint, content packs, validators, sources.yaml, practice forms, official-practice links, card generation",
+ "body": "Brief: docs/segments/23-content-library.md (S23-0). Land in two phases. Phase 1, as soon as possible, because the authors are blocked on it: the taxonomy plus blueprint plus the pack layout and importer, with a short author guide in docs/CONTENT_AUTHORING.md. Post 'update phase1 landed <sha>'. Phase 2: validators, form assembler, coverage page, official-practice page, card generation.",
+ "task_key": "S23-0",
+ "acceptance": "See the brief: acceptance and S23-0.",
+ "requires_ack": true
+}
