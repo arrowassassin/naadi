@@ -1,0 +1,16 @@
+{
+ "id": "20261117T062935-seg17-pathway-255bdc",
+ "ts": "2026-11-17T06:29:35.299126Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 7abab9a into claude/naadi-shared",
+ "body": "S17: pathway, vault, costs, weekly pathway_verify (migration 0029)",
+ "refs": {
+  "commit": "7abab9a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
