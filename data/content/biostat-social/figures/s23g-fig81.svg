@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" role="img" aria-label="Four linked boxes show the elements of negligence in order: duty, breach, causation and damages, each with an example. A broken link below shows that the claim fails if any element is missing.">
+<title>The four elements of negligence as a chain</title>
+<defs>
+<marker id="s23g-fig81-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+</defs>
+<rect x="0" y="0" width="720" height="340" fill="#ffffff"/>
+<text x="360" y="28" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">Every link must be proven (more likely than not)</text>
+<g font-family="sans-serif" fill="#0f172a">
+<rect x="14" y="50" width="150" height="56" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="89" y="74" font-size="15" font-weight="bold" text-anchor="middle">1. Duty</text>
+<text x="89" y="94" font-size="12" text-anchor="middle">relationship exists</text>
+<rect x="194" y="50" width="150" height="56" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="269" y="74" font-size="15" font-weight="bold" text-anchor="middle">2. Breach</text>
+<text x="269" y="94" font-size="12" text-anchor="middle">below standard of care</text>
+<rect x="374" y="50" width="150" height="56" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="449" y="74" font-size="15" font-weight="bold" text-anchor="middle">3. Causation</text>
+<text x="449" y="94" font-size="12" text-anchor="middle">breach caused harm</text>
+<rect x="554" y="50" width="150" height="56" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="629" y="74" font-size="15" font-weight="bold" text-anchor="middle">4. Damages</text>
+<text x="629" y="94" font-size="12" text-anchor="middle">real, compensable loss</text>
+</g>
+<g stroke="#334155" stroke-width="2" fill="none">
+<line x1="164" y1="78" x2="192" y2="78" marker-end="url(#s23g-fig81-arrow)"/>
+<line x1="344" y1="78" x2="372" y2="78" marker-end="url(#s23g-fig81-arrow)"/>
+<line x1="524" y1="78" x2="552" y2="78" marker-end="url(#s23g-fig81-arrow)"/>
+</g>
+<g font-family="sans-serif" font-size="12" fill="#0f172a">
+<text x="20" y="132">Example: a clinic</text>
+<text x="20" y="148">physician sees a</text>
+<text x="20" y="164">patient and orders</text>
+<text x="20" y="180">a potassium level</text>
+<text x="200" y="132">The result is critically</text>
+<text x="200" y="148">high and no one acts</text>
+<text x="200" y="164">on it; a careful peer</text>
+<text x="200" y="180">would have called</text>
+<text x="380" y="132">Untreated high</text>
+<text x="380" y="148">potassium leads to</text>
+<text x="380" y="164">an arrhythmia the</text>
+<text x="380" y="180">next day</text>
+<text x="560" y="132">Cardiac arrest,</text>
+<text x="560" y="148">ICU stay, lost work</text>
+<text x="560" y="164">and lasting injury</text>
+</g>
+<line x1="14" y1="204" x2="706" y2="204" stroke="#334155" stroke-width="1"/>
+<text x="20" y="232" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">If one link breaks, the claim fails:</text>
+<g font-family="sans-serif" fill="#0f172a">
+<rect x="20" y="248" width="120" height="40" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="80" y="273" font-size="13" text-anchor="middle">Breach</text>
+<line x1="140" y1="268" x2="176" y2="268" stroke="#b45309" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="188" y="275" font-size="20" font-weight="bold" fill="#b45309">✕</text>
+<line x1="210" y1="268" x2="246" y2="268" stroke="#b45309" stroke-width="3" stroke-dasharray="6 5"/>
+<rect x="248" y="248" width="120" height="40" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<text x="308" y="273" font-size="13" text-anchor="middle">Harm</text>
+<text x="390" y="262" font-size="12">Dashed, broken link: the harm came from</text>
+<text x="390" y="278" font-size="12">an unrelated cause, so causation is not shown.</text>
+<text x="390" y="300" font-size="12">An error caught with no lasting injury</text>
+<text x="390" y="316" font-size="12">breaks the last link (no damages).</text>
+</g>
+</svg>

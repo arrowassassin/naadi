@@ -28,13 +28,16 @@ def bundle():  # type: ignore[no-untyped-def]
 
 
 def test_real_bundle_has_the_expected_counts(bundle) -> None:  # type: ignore[no-untyped-def]
-    assert len(bundle.chapters) == 14
+    # The legacy bundle is fixed; content packs (data/content/*, S23 authors) grow, so count legacy rows only.
+    legacy_chapters = [c for c in bundle.chapters if c.pack_id is None]
+    assert len(legacy_chapters) == 14
     assert [c.id for c in bundle.chapters if c.kind == "mock_exam"] == ["mock1", "mock2"]
-    assert len(bundle.sections) == 259
-    assert len(bundle.questions) == 685
-    assert len(bundle.figures) == 95
+    assert sum(len(c.sections) for c in legacy_chapters) == 259
+    assert len([q for q in bundle.questions if q.pack_id is None]) == 685
+    assert len([f for f in bundle.figures if f.pack_id is None]) == 95
     assert len(bundle.taxonomy) == 688  # 217 legacy + 471 USMLE-2026
-    assert len(bundle.question_map) == 685
+    legacy_ids = {q.id for q in bundle.questions if q.pack_id is None}
+    assert len([k for k in bundle.question_map if k in legacy_ids]) == 685
     assert len(bundle.stages) == 16
     assert len(bundle.tasks) == 186
     assert len(bundle.plan.days) == 60
@@ -42,7 +45,7 @@ def test_real_bundle_has_the_expected_counts(bundle) -> None:  # type: ignore[no
     assert {g.key for g in bundle.guides} == {"overview"} | {s.key for s in bundle.stages}
     assert len(bundle.sources.accepted) == 31  # catalog, internal, user-provided, pathway links, outline, 10 S23 rows
     assert bundle.sources.rejected == []
-    assert sum(len(bundle.bodies.sections[s.id].figure_ids) for _c, _i, s in bundle.sections) == 95
+    assert sum(len(bundle.bodies.sections[s.id].figure_ids) for c, _i, s in bundle.sections if c.pack_id is None) == 95
 
 
 def test_mock_questions_keep_blocks_and_reviews_stay_unreviewed(bundle) -> None:  # type: ignore[no-untyped-def]

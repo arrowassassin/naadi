@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" width="720" height="580" role="img" aria-label="Ladder showing who decides when a patient cannot: the patient's own prior instructions in an advance directive, then the health-care agent the patient named, then the default surrogate order set by state law, then an ethics consultation and, if still unresolved, a court. Each surrogate uses substituted judgment first and best interests when the patient's wishes are unknown.">
+  <title>Who decides when the patient cannot</title>
+  <defs>
+    <marker id="s23g-fig62-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="720" height="580" fill="#ffffff"/>
+  <g font-family="sans-serif" fill="#0f172a">
+    <text x="20" y="30" font-size="15" font-weight="bold">Use this only after the patient lacks capacity for this decision</text>
+    <!-- Rung 1 -->
+    <rect x="20" y="48" width="440" height="80" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+    <text x="36" y="74" font-size="15" font-weight="bold">Rung 1 · The patient's own written wishes</text>
+    <text x="36" y="96" font-size="13">Living will or other advance directive that fits this</text>
+    <text x="36" y="114" font-size="13">situation (check its trigger conditions)</text>
+    <line x1="240" y1="128" x2="240" y2="152" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig62-arrow)"/>
+    <!-- Rung 2 -->
+    <rect x="20" y="154" width="440" height="80" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="36" y="180" font-size="15" font-weight="bold">Rung 2 · The agent the patient chose</text>
+    <text x="36" y="202" font-size="13">Health-care proxy (durable power of attorney for</text>
+    <text x="36" y="220" font-size="13">health care); outranks relatives who were not named</text>
+    <line x1="240" y1="234" x2="240" y2="258" stroke="#334155" stroke-width="2" marker-end="url(#s23g-fig62-arrow)"/>
+    <!-- Rung 3 -->
+    <rect x="20" y="260" width="440" height="98" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+    <text x="36" y="286" font-size="15" font-weight="bold">Rung 3 · Default surrogate set by state law</text>
+    <text x="36" y="308" font-size="13">Usual order: spouse → adult children → parents →</text>
+    <text x="36" y="326" font-size="13">adult siblings → others (some states add partners or</text>
+    <text x="36" y="344" font-size="13">close friends); a guardian if a court has named one</text>
+    <line x1="240" y1="358" x2="240" y2="382" stroke="#334155" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s23g-fig62-arrow)"/>
+    <!-- Rung 4 -->
+    <rect x="20" y="384" width="440" height="80" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="3" stroke-dasharray="7 4"/>
+    <text x="36" y="410" font-size="15" font-weight="bold">Rung 4 · Conflict or no one available</text>
+    <text x="36" y="432" font-size="13">Family meeting, then ethics consultation;</text>
+    <text x="36" y="450" font-size="13">court (guardianship) only if still unresolved</text>
+    <!-- Side panel -->
+    <rect x="480" y="48" width="220" height="200" rx="8" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+    <text x="496" y="74" font-size="14" font-weight="bold">How every rung decides</text>
+    <text x="496" y="98" font-size="13" font-weight="bold">1st: substituted judgment</text>
+    <text x="496" y="118" font-size="12">"What would she choose</text>
+    <text x="496" y="134" font-size="12">if she could tell us?"</text>
+    <text x="496" y="162" font-size="13" font-weight="bold">2nd: best interests</text>
+    <text x="496" y="182" font-size="12">Only when her wishes and</text>
+    <text x="496" y="198" font-size="12">values are unknown: weigh</text>
+    <text x="496" y="214" font-size="12">benefit and burden for her</text>
+    <text x="496" y="236" font-size="12" font-style="italic">Not: "What would I want?"</text>
+    <rect x="480" y="268" width="220" height="130" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+    <text x="496" y="294" font-size="14" font-weight="bold">Emergency override</text>
+    <text x="496" y="316" font-size="12">Life or limb at risk and no</text>
+    <text x="496" y="332" font-size="12">directive or surrogate can be</text>
+    <text x="496" y="348" font-size="12">reached in time: treat under</text>
+    <text x="496" y="364" font-size="12">implied consent, then find</text>
+    <text x="496" y="380" font-size="12">the right decision-maker.</text>
+    <text x="20" y="500" font-size="13">Solid blue border = the patient's own voice (strongest). Dashed amber border = last resort.</text>
+    <text x="20" y="522" font-size="13">The physician's job at every rung: inform, recommend, and keep the focus on the patient's values.</text>
+    <text x="20" y="544" font-size="12">Exact default orders vary by state; the principle that a named agent outranks unnamed relatives does not.</text>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 410" width="760" height="410" role="img" aria-label="Two-by-two table with cells a, b, c and d and the formulas built from them" font-family="sans-serif">
+<title>The 2×2 table and its formulas</title>
+<rect x="0" y="0" width="760" height="410" fill="#ffffff"/>
+<text x="270.0" y="40.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Outcome (disease) by reference standard</text>
+<text x="210.0" y="75.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">Present (+)</text>
+<text x="330.0" y="75.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">Absent (−)</text>
+<text x="140.0" y="119.0" font-size="13" text-anchor="end" font-weight="normal" fill="#0f172a">Exposed /</text>
+<text x="140.0" y="135.0" font-size="13" text-anchor="end" font-weight="normal" fill="#0f172a">test positive</text>
+<text x="140.0" y="189.0" font-size="13" text-anchor="end" font-weight="normal" fill="#0f172a">Unexposed /</text>
+<text x="140.0" y="205.0" font-size="13" text-anchor="end" font-weight="normal" fill="#0f172a">test negative</text>
+<rect x="150" y="90" width="120" height="70" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="210.0" y="122.0" font-size="22" text-anchor="middle" font-weight="bold" fill="#2563eb">a</text>
+<text x="210.0" y="144.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">true positive</text>
+<rect x="270" y="90" width="120" height="70" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="122.0" font-size="22" text-anchor="middle" font-weight="bold" fill="#b45309">b</text>
+<text x="330.0" y="144.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">false positive</text>
+<rect x="150" y="160" width="120" height="70" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="210.0" y="192.0" font-size="22" text-anchor="middle" font-weight="bold" fill="#b45309">c</text>
+<text x="210.0" y="214.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">false negative</text>
+<rect x="270" y="160" width="120" height="70" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="192.0" font-size="22" text-anchor="middle" font-weight="bold" fill="#2563eb">d</text>
+<text x="330.0" y="214.0" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">true negative</text>
+<text x="210.0" y="252.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">a + c</text>
+<text x="330.0" y="252.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">b + d</text>
+<text x="400.0" y="129.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">a + b</text>
+<text x="400.0" y="199.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">c + d</text>
+<text x="40.0" y="372.0" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Labels in blue (a, d) are correct results; amber (b, c) are errors.</text>
+<text x="40.0" y="392.0" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Rows = exposure or test result; columns = outcome or true disease status.</text>
+<text x="460.0" y="40.0" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">Association (cohort, trial, case-control)</text>
+<text x="460.0" y="64.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Risk exposed = a / (a + b)</text>
+<text x="460.0" y="84.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Risk unexposed = c / (c + d)</text>
+<text x="460.0" y="104.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">RR = [a/(a + b)] ÷ [c/(c + d)]</text>
+<text x="460.0" y="124.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Risk difference = a/(a + b) − c/(c + d)</text>
+<text x="460.0" y="144.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">NNT or NNH = 1 ÷ |risk difference|</text>
+<text x="460.0" y="164.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Odds ratio = (a × d) ÷ (b × c)</text>
+<text x="460.0" y="205.0" font-size="14" text-anchor="start" font-weight="bold" fill="#0f172a">Test accuracy (diagnostic study)</text>
+<text x="460.0" y="229.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Sensitivity = a / (a + c)</text>
+<text x="460.0" y="249.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Specificity = d / (b + d)</text>
+<text x="460.0" y="269.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">PPV = a / (a + b)</text>
+<text x="460.0" y="289.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">NPV = d / (c + d)</text>
+<text x="460.0" y="309.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">LR+ = sens ÷ (1 − spec)</text>
+<text x="460.0" y="329.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">LR− = (1 − sens) ÷ spec</text>
+<text x="460.0" y="349.0" font-size="13" text-anchor="start" font-weight="normal" fill="#0f172a">Prevalence = (a + c) ÷ total</text>
+</svg>

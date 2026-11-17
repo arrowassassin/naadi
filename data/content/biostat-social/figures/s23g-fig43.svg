@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" aria-label="Type I and type II error grid with power, and confidence intervals for a difference and a ratio relative to their null values" font-family="sans-serif">
+<title>Type I and type II error grid with power, and confidence intervals for a difference and a ratio relative to their null values</title>
+<rect x="0" y="0" width="720" height="450" fill="#ffffff"/>
+<text x="20" y="28" font-size="15" text-anchor="start" font-weight="bold" fill="#0f172a">A. Decisions from a significance test</text>
+<text x="255.0" y="52" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">No real effect (H0 true)</text>
+<text x="425.0" y="52" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Real effect (H0 false)</text>
+<text x="160" y="91.0" font-size="13" text-anchor="end" font-weight="bold" fill="#0f172a">Reject H0</text>
+<text x="160" y="106.0" font-size="12" text-anchor="end" font-weight="normal" fill="#0f172a">(P &lt; alpha)</text>
+<text x="160" y="153.0" font-size="13" text-anchor="end" font-weight="bold" fill="#0f172a">Do not reject H0</text>
+<rect x="170" y="60" width="170" height="62" fill="#ffffff" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="255.0" y="86" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Type I error</text>
+<text x="255.0" y="105" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">rate = alpha</text>
+<rect x="340" y="60" width="170" height="62" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="425.0" y="86" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Correct</text>
+<text x="425.0" y="105" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">power = 1 − beta</text>
+<rect x="170" y="122" width="170" height="62" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="255.0" y="148" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Correct</text>
+<text x="255.0" y="167" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">probability 1 − alpha</text>
+<rect x="340" y="122" width="170" height="62" fill="#ffffff" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="425.0" y="148" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Type II error</text>
+<text x="425.0" y="167" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">rate = beta</text>
+<text x="530" y="90" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Dashed boxes = errors</text>
+<text x="530" y="108" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Solid boxes = correct</text>
+<text x="530" y="134" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">Power rises with larger n,</text>
+<text x="530" y="150" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">bigger true effect, less</text>
+<text x="530" y="166" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">variability, higher alpha</text>
+<text x="20" y="222" font-size="15" text-anchor="start" font-weight="bold" fill="#0f172a">B. 95% confidence intervals and the null value</text>
+<line x1="40" y1="390" x2="330" y2="390" stroke="#334155" stroke-width="1.5"/>
+<line x1="40.0" y1="390" x2="40.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="40.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">−4</text>
+<line x1="136.66666666666669" y1="390" x2="136.66666666666669" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="136.66666666666669" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0</text>
+<line x1="233.33333333333334" y1="390" x2="233.33333333333334" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="233.33333333333334" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">4</text>
+<line x1="330.0" y1="390" x2="330.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">8</text>
+<line x1="136.66666666666669" y1="280" x2="136.66666666666669" y2="390" stroke="#0f172a" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="136.66666666666669" y="274" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a">null = 0</text>
+<text x="185.0" y="430" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Difference in means (mm Hg)</text>
+<line x1="112.5" y1="310" x2="281.6666666666667" y2="310" stroke="#b45309" stroke-width="3"/>
+<path d="M112.5,303 L112.5,317 M281.6666666666667,303 L281.6666666666667,317" stroke="#b45309" stroke-width="3"/>
+<circle cx="197.08333333333334" cy="310" r="6" fill="#b45309"/>
+<text x="197.08333333333334" y="298" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">crosses 0: P &gt; 0.05</text>
+<line x1="172.91666666666669" y1="350" x2="293.75" y2="350" stroke="#2563eb" stroke-width="3"/>
+<path d="M172.91666666666669,343 L172.91666666666669,357 M293.75,343 L293.75,357" stroke="#2563eb" stroke-width="3"/>
+<rect x="227.33333333333334" y="344" width="12" height="12" fill="#2563eb"/>
+<text x="233.33333333333334" y="338" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">excludes 0: P &lt; 0.05</text>
+<line x1="400" y1="390" x2="700" y2="390" stroke="#334155" stroke-width="1.5"/>
+<line x1="400.0" y1="390" x2="400.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="400.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.25</text>
+<line x1="475.0" y1="390" x2="475.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">0.5</text>
+<line x1="550.0" y1="390" x2="550.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="550.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">1</text>
+<line x1="625.0" y1="390" x2="625.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="625.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">2</text>
+<line x1="700.0" y1="390" x2="700.0" y2="396" stroke="#334155" stroke-width="1.5"/>
+<text x="700.0" y="411" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">4</text>
+<line x1="550.0" y1="280" x2="550.0" y2="390" stroke="#0f172a" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="550.0" y="274" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a">null = 1</text>
+<text x="550.0" y="430" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">Ratio (RR, OR or HR), log scale</text>
+<line x1="463.59976799162126" y1="310" x2="586.4070120377681" y2="310" stroke="#b45309" stroke-width="3"/>
+<path d="M463.59976799162126,303 L463.59976799162126,317 M586.4070120377681,303 L586.4070120377681,317" stroke="#b45309" stroke-width="3"/>
+<circle cx="525.8553928834478" cy="310" r="6" fill="#b45309"/>
+<text x="525.8553928834478" y="298" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">crosses 1: P &gt; 0.05</text>
+<line x1="436.40701203776814" y1="350" x2="532.4151059772232" y2="350" stroke="#2563eb" stroke-width="3"/>
+<path d="M436.40701203776814,343 L436.40701203776814,357 M532.4151059772232,343 L532.4151059772232,357" stroke="#2563eb" stroke-width="3"/>
+<rect x="479.3127642812451" y="344" width="12" height="12" fill="#2563eb"/>
+<text x="485.3127642812451" y="338" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a">excludes 1: P &lt; 0.05</text>
+
+</svg>

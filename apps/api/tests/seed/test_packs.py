@@ -47,7 +47,7 @@ def test_sample_pack_loads(tmp_path: Path) -> None:
         "sample-pack",
     )
     assert q.answer_html == "Answer: B. Primary PCI"
-    assert [s.id for _p, s in b.sets] == ["smp-set01", "smp-set02"]
+    assert [s.id for p, s in b.sets if p == "sample-pack"] == ["smp-set01", "smp-set02"]
     assert "usmle2026.08.08.01" in b.question_map["ch05-q01"]
     fig = next(f for f in b.figures if f.id == "smp-fig01")
     assert fig.file == "content/sample-pack/figures/smp-fig01.svg"
