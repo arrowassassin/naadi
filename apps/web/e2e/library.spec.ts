@@ -256,7 +256,7 @@ test.describe("PDF viewer layout", () => {
     try {
       const file = makePdf(path.join(work, "layout.pdf"), "notes", `Layout ${tag(info)}`, "layout");
       const page = await student.open("/learn/library");
-      const { errors } = watchConsole(page);
+      const { errors, guard } = watchConsole(page);
       await upload(page, file);
       const open = card(page, "layout.pdf").getByRole("link", { name: "Open PDF" });
       await expect(open).toBeVisible({ timeout: 90_000 });
@@ -279,7 +279,7 @@ test.describe("PDF viewer layout", () => {
         expect(box, "in the layout").not.toBeNull();
         expect(box?.y ?? 0, "starts below the nav pill").toBeGreaterThanOrEqual(pillBottom - 1);
       }
-      await shot(page, info, "pdf-open");
+      await guard.duringTool(() => shot(page, info, "pdf-open"));
       for (const name of ["Previous page", "Next page"]) {
         const button = page.getByRole("button", { name });
         // Nothing (the pill included) covers the middle of the button.
@@ -296,6 +296,24 @@ test.describe("PDF viewer layout", () => {
       await page.getByRole("button", { name: "Write" }).click();
       const bar = page.getByRole("toolbar", { name: "Ink tools" });
       await expect(bar).toBeVisible();
+      // With ink on, the shell slides its bottom bar out of the pen's way (--shell-bottom 0): once it has, no
+      // control of the toolbar is covered by it (or by anything else).
+      await expect
+        .poll(
+          () =>
+            bar.evaluate((el) =>
+              [...el.querySelectorAll<HTMLElement>("button")]
+                .filter((b) => b.offsetParent !== null)
+                .filter((b) => {
+                  const br = b.getBoundingClientRect();
+                  const hit = document.elementFromPoint(br.left + br.width / 2, br.top + br.height / 2);
+                  return !(hit && (hit === b || b.contains(hit)));
+                })
+                .map((b) => b.getAttribute("aria-label") || b.textContent?.trim() || b.tagName),
+            ),
+          { message: "no toolbar control is covered", timeout: 5_000 },
+        )
+        .toEqual([]);
       const fit = await bar.evaluate((el) => {
         const r = el.getBoundingClientRect();
         const clipped = [...el.querySelectorAll<HTMLElement>("button, [role=radio], label")]
@@ -306,12 +324,17 @@ test.describe("PDF viewer layout", () => {
             return br.left < r.left - 1 || br.right > r.right + 1 || br.right > window.innerWidth || textCut;
           })
           .map((b) => b.getAttribute("aria-label") || b.textContent?.trim() || b.tagName);
-        return { clipped, scrolls: el.scrollWidth > el.clientWidth + 1, right: r.right, vw: window.innerWidth };
+        return {
+          clipped,
+          scrolls: el.scrollWidth > el.clientWidth + 1,
+          right: r.right,
+          vw: window.innerWidth,
+        };
       });
       expect(fit.clipped, "no toolbar control is clipped").toEqual([]);
       expect(fit.scrolls, "the toolbar does not scroll sideways").toBe(false);
       expect(fit.right).toBeLessThanOrEqual(fit.vw);
-      await shot(page, info, "pdf-ink");
+      await guard.duringTool(() => shot(page, info, "pdf-ink"));
       await expectNoHorizontalOverflow(page);
       await quiet(page);
       expect(appErrors(errors)).toEqual([]);
@@ -326,7 +349,8 @@ test.describe("PDF viewer layout", () => {
 async function shot(page: Page, info: TestInfo, state: string): Promise<void> {
   const dir = path.resolve(import.meta.dirname, "../../../test-results/screens/15");
   mkdirSync(dir, { recursive: true });
-  await page.screenshot({ path: path.join(dir, `${state}--${info.project.name}.png`), animations: "disabled" });
+  // Taken inside watchConsole's duringTool: WebKit's screenshot injects a <style> the strict CSP refuses.
+  await page.screenshot({ path: path.join(dir, `${state}--${info.project.name}.png`) });
 }
 
 /** True when the element itself (or something inside it) is what a tap at its centre hits. */
