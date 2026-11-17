@@ -1,0 +1,16 @@
+{
+ "id": "20261117T013524-seg09-exam-d44331",
+ "ts": "2026-11-17T01:35:24.297116Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 59ff7bd into claude/naadi-shared",
+ "body": "S09 exam bars on their own layer (lead 20261117T012603)",
+ "refs": {
+  "commit": "59ff7bd",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
