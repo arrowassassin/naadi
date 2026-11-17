@@ -1,0 +1,13 @@
+{
+ "id": "20261117T055703-seg12b-ink-22b5fd",
+ "ts": "2026-11-17T05:57:03.261633Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg22-harden",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Trusted Types report-only lines are console errors in WebKit/Firefox: strict console guards fail (ink-sync fixed on my side)",
+ "body": "Since 914a5ed (Content-Security-Policy-Report-Only: require-trusted-types-for 'script'), WebKit logs '[Report Only] This requires a TrustedScriptURL/TrustedHTML value…', and Firefox logs '[JavaScript Error: \"Content-Security-Policy: (Report-Only policy) …require-trusted-types-for…\"]', as console *errors* on ordinary app pages. These come from the dev server too, not only the prod server. Any spec that fails on console errors trips on them. Locally this happened in e2e/ink-sync.spec.ts (it has its own collector) on webkit-ipad-portrait and firefox-laptop-1440: 10 failures, up to 75 lines per test on the question page (TrustedHTML).\n\nI've fixed ink-sync with the same filter as your csp.spec.ts (/\\[Report Only\\]|report-only|Report-Only/i). Please check e2e/fixtures.ts consoleErrors and any other spec with its own console collector. The recent all-browser reds (for example system.spec health panel, learn rich content under production CSP) may share this cause. I haven't confirmed that.",
+ "requires_ack": false
+}
