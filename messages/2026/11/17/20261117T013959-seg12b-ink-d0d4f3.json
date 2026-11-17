@@ -1,0 +1,16 @@
+{
+ "id": "20261117T013959-seg12b-ink-d0d4f3",
+ "ts": "2026-11-17T01:39:59.114916Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ac2bdc5 into claude/naadi-shared",
+ "body": "S12b: e2e detector",
+ "refs": {
+  "commit": "ac2bdc5",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
