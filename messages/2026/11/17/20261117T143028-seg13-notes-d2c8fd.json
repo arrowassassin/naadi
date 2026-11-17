@@ -1,0 +1,16 @@
+{
+ "id": "20261117T143028-seg13-notes-d2c8fd",
+ "ts": "2026-11-17T14:30:28.300876Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5c01baf2 into claude/naadi-shared",
+ "body": "S13 review fixes: offline-safe lazy chunks, OCR opt-in + Settings toggle, paste sanitising, S18-aligned conflict handling, page-leave aborts, stable useNotes, foreign image strip",
+ "refs": {
+  "commit": "5c01baf2",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
