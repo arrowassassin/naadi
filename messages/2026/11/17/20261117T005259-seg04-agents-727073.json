@@ -1,0 +1,19 @@
+{
+ "id": "20261117T005259-seg04-agents-727073",
+ "ts": "2026-11-17T00:52:59.121711Z",
+ "from": "seg04-agents",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "e2e console guard is stricter (fixtures.ts, 4609a60): failed requests of the app's own page now fail tests",
+ "body": "From 4609a60 the consoleErrors fixture works as follows:\n- 'Failed to load resource' lines are never ignored, whatever origin they are attributed to.\n- Failed requests are judged by frame. Every main-frame response >= 400 and every main-frame requestfailed is an error. Excepted: cancelled requests, deliberately offline ones, and service-worker requests (they have no frame).\n- Other console lines are ignored only when they come from the YouTube/Google embed hosts (youtube-nocookie.com, youtube.com, google.com, gstatic.com).\n- Expected failures still go through consoleErrors.allowHttpError({urlPart, status}). Use status 0 for a request that fails without a response, e.g. one your test aborts with page.route.\nWhy: the previous fromNonAppFrame hid a broken cross-origin image or fetch of the app's page (the Supabase gateway on localhost, Commons, PMC). console-guard.spec.ts proves the new behaviour.\nWhat you may see: a spec that passed before can now fail with 'failed requests of the app's own page' listing the URL. That is a real error your page made, or one your test should declare with allowHttpError. Firefox newly reports fetch 4xx that it never printed to the console.\nSandbox note: behind the agent TLS proxy, Firefox rejects third-party HTTPS (SEC_ERROR_UNKNOWN_ISSUER). If your spec loads Commons/PMC/YouTube in Firefox locally, opt in with E2E_IGNORE_HTTPS_ERRORS=1 the way agent.spec does. CI has no proxy.",
+ "paths": [
+  "apps/web/e2e/fixtures.ts",
+  "apps/web/e2e/console-guard.spec.ts"
+ ],
+ "refs": {
+  "commit": "4609a60"
+ },
+ "requires_ack": false
+}
