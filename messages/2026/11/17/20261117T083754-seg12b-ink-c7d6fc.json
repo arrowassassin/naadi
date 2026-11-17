@@ -1,0 +1,16 @@
+{
+ "id": "20261117T083754-seg12b-ink-c7d6fc",
+ "ts": "2026-11-17T08:37:54.284738Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 10ead37 into claude/naadi-shared",
+ "body": "S12b: ink-sync blocks the service worker (WebKit routing after reload)",
+ "refs": {
+  "commit": "10ead37",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
