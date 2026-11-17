@@ -192,7 +192,8 @@ def test_pause_is_refused_in_exam_mode_and_freezes_timed_mode(
     post(client, key, w, f"/api/blocks/{ex}/sections/1/start")
     refused = post(client, key, w, f"/api/blocks/{ex}/sections/1/pause")
     assert refused.status_code == 409 and code_of(refused) == "pause_exam_mode"
-    assert refused.json()["error"]["message"] == "Pause is off in exam mode."
+    assert refused.json()["error"]["message"] == "pause_exam_mode"  # a code only: the client words it
+    post(client, key, w, f"/api/blocks/{ex}/finish")  # one session at a time
 
     tb = timed_block(client, key, w, mode="timed", count=2)
     t = tb["id"]
@@ -539,7 +540,7 @@ def test_timed_modes_are_refused_while_the_flag_is_off(
     w, h = world, auth(key, world.owner)
     base = {"exam": "step1", "systems": both(w), "count": 2}
     timed = client.post("/api/blocks", json={**base, "mode": "timed"}, headers=h)
-    assert timed.status_code == 422 and "not available yet" in timed.json()["error"]["message"]
+    assert timed.status_code == 422 and code_of(timed) == "timed_unavailable"
     assert client.post("/api/blocks", json={**base, "mode": "exam"}, headers=h).status_code == 422
     mock = client.post("/api/blocks/mock", json={"chapter_id": "mock1"}, headers=h)
     assert mock.status_code == 422 and code_of(mock) == "timed_unavailable"
@@ -597,3 +598,69 @@ def test_create_timed_block_for_the_diagnostic(
                 Database(SecretStr(url)), None, cfg.model_copy(update={"mode": "tutor"}), [], rules=rules
             )
         )  # type: ignore[arg-type]
+
+
+# ── One session at a time; no tutor practice while it runs (S09 review 2 and 6) ──
+
+
+def test_a_running_exam_blocks_every_tutor_path_and_a_second_session(
+    client: TestClient, key: SigningKey, world: World, now: Clock, pg: psycopg.Connection[Any]
+) -> None:
+    w = world
+    h = auth(key, w.owner)
+    tutor = client.post(
+        "/api/blocks", json={"exam": "step1", "systems": both(w), "count": 2, "seed": 4}, headers=h
+    ).json()
+    bid = timed_block(client, key, w, count=3)["id"]
+    ids = ids_of(pg, bid)
+    # a session that has not started is not active: tutor practice still works
+    assert client.post("/api/blocks/single", json={"question_id": ids[0]}, headers=h).status_code in (200, 201)
+    post(client, key, w, f"/api/blocks/{bid}/sections/1/start")
+    now.to(5)
+
+    def refused(res: Any) -> None:
+        assert res.status_code == 409, res.text
+        assert code_of(res) == "exam_active"
+        assert_no_secrets(res.text)
+
+    refused(client.post("/api/blocks/single", json={"question_id": ids[1]}, headers=h))
+    refused(client.post("/api/blocks", json={"exam": "step1", "systems": both(w), "count": 2, "seed": 9}, headers=h))
+    refused(client.post("/api/blocks/weak-spot", json={"exam": "step1"}, headers=h))
+    tq = question(client, key, w, tutor["id"], 1).json()["question"]["id"]
+    refused(answer(client, key, w, tutor["id"], tq, "B"))
+    # a second timed/exam session cannot be created or started
+    refused(
+        client.post("/api/blocks", json={"exam": "step1", "systems": both(w), "count": 2, "mode": "timed"}, headers=h)
+    )
+    # the same refusal while paused (timed) or on a break would apply; after the finish everything opens again
+    now.to(30)
+    post(client, key, w, f"/api/blocks/{bid}/finish")
+    assert client.post("/api/blocks/single", json={"question_id": ids[1]}, headers=h).status_code in (200, 201)
+    assert timed_block(client, key, w, count=2, mode="timed")["clock"]["state"] == "not_started"
+
+
+def test_a_second_session_cannot_start_while_one_runs(
+    client: TestClient, key: SigningKey, world: World, now: Clock
+) -> None:
+    w = world
+    first = timed_block(client, key, w, count=2)["id"]
+    second = timed_block(client, key, w, count=2)["id"]  # created before either started: allowed
+    post(client, key, w, f"/api/blocks/{first}/sections/1/start")
+    res = post(client, key, w, f"/api/blocks/{second}/sections/1/start")
+    assert res.status_code == 409 and code_of(res) == "exam_active"
+    assert post(client, key, w, f"/api/blocks/{first}/sections/1/start").status_code == 200  # its own: idempotent
+
+
+def test_no_study_hints_mid_session(
+    client: TestClient, key: SigningKey, world: World, now: Clock, pg: psycopg.Connection[Any]
+) -> None:
+    w = world
+    bid = timed_block(client, key, w, count=12)["id"]  # the whole world: question 1 links a lesson
+    n = ids_of(pg, bid).index(w.questions[0]) + 1
+    post(client, key, w, f"/api/blocks/{bid}/sections/1/start")
+    mid = question(client, key, w, bid, n).json()
+    assert mid["lesson"] is None and mid["question"]["topics"] == []
+    now.to(20)
+    post(client, key, w, f"/api/blocks/{bid}/finish")
+    after = question(client, key, w, bid, n).json()
+    assert after["lesson"] is not None and after["question"]["topics"]

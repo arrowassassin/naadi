@@ -453,6 +453,7 @@ def test_timed_and_exam_blocks_never_explain_during_the_block(
         assert next(b for b in listed if b["id"] == bid)["correct"] is None
         # answering every question never finishes a timed/exam block: its clock or "End block" does (S09)
         assert answer(client, key, w, bid, qids[1], "B").json()["finished"] is False
+        client.post(f"/api/blocks/{bid}/finish", headers=auth(key, w.owner))  # one timed/exam session at a time
 
 
 def test_flashcards_linked_to_a_question_are_attempt_gated_by_rls(pg: psycopg.Connection[Any], world: World) -> None:

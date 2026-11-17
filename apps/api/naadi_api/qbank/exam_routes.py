@@ -20,6 +20,7 @@ from ..auth import CurrentUser
 from ..errors import CodedHTTPException, ErrorResponse
 from . import clock, exam, results
 from .exam_models import ActiveExam, ActiveExamOut, BlockClock, BlockResults, MockBlockCreate, TrendPoint
+from .exam_state import active_exam
 from .models import BlockConfig, BlockDetail
 from .routes import (
     _ERRORS,
@@ -83,7 +84,7 @@ async def create_mock_block(
     request: Request, body: MockBlockCreate, user: Annotated[CurrentUser, limited("qbank_write")]
 ) -> BlockDetail:
     if not await _timed_available(request, user):
-        raise CodedHTTPException(422, "timed_unavailable", "Timed and exam blocks are not available yet.")
+        raise exam.invalid("timed_unavailable")
     rules = await _rules(request)
     now = now_of(request)
 
@@ -93,20 +94,20 @@ async def create_mock_block(
             conn, "select id, exam from public.chapters where id = %s and kind = 'mock_exam'", (body.chapter_id,)
         )
         if not chapters:
-            raise CodedHTTPException(404, "mock_not_found", "This mock exam is not available.")
+            raise CodedHTTPException(404, "mock_not_found", "mock_not_found")
         qs = await _rows(
             conn,
             "select id, block from public.questions where chapter_id = %s and block is not null order by block, id",
             (body.chapter_id,),
         )
         if not qs:
-            raise CodedHTTPException(404, "mock_not_found", "This mock exam is not available.")
+            raise CodedHTTPException(404, "mock_not_found", "mock_not_found")
         return chapters[0]["exam"], [q["id"] for q in qs], [int(q["block"]) for q in qs]
 
     exam_id, ids, blocks = await as_user(db_of(request), user, read)
     fmt = rules["exams"].get(exam_id)
     if fmt is None:
-        raise CodedHTTPException(404, "mock_not_found", "This mock exam is not available.")
+        raise CodedHTTPException(404, "mock_not_found", "mock_not_found")
     layout = exam.mock_layout(ids, blocks, int(fmt["minutes_per_block"]))
     cfg = BlockConfig(
         exam=exam_id,
@@ -124,6 +125,8 @@ async def create_mock_block(
     uid = user.user_id
 
     async def write(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
+        if await active_exam(conn, uid, rules=rules, now=now) is not None:
+            raise exam.conflict("exam_active")  # one timed/exam session at a time
         rows = await _rows(
             conn,
             "insert into public.blocks (id, user_id, config, question_ids, started_at) values (%s, %s, %s, %s, null)"
@@ -183,6 +186,11 @@ async def change_section(
     step = {"start": clock.start, "pause": clock.pause, "resume": clock.resume, "end": clock.end}[action]
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
+        if action == "start":
+            # One timed/exam session at a time: another one running, paused or on a break blocks this start.
+            other = await active_exam(conn, user.user_id, rules=rules, now=now)
+            if other is not None and other[0] != block_id:
+                raise exam.conflict("exam_active")
         block = await _locked(conn, block_id, user)
         session = await exam.apply(conn, block, user.user_id, rules, now, lambda s: step(s, n, now))
         if action == "start" and block["started_at"] is None:
@@ -228,8 +236,6 @@ async def finish_block(
     responses={**_ERRORS},
 )
 async def get_active_exam(request: Request, user: Annotated[CurrentUser, limited("qbank_read")]) -> ActiveExamOut:
-    from .exam_state import active_exam
-
     rules = await _rules(request)
     now = now_of(request)
 

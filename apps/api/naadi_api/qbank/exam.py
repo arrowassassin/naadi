@@ -28,23 +28,33 @@ from .exam_models import BlockClock, SectionLayout
 Row = dict[str, Any]
 Now = Callable[[], dt.datetime]
 
-# 409 codes the client maps to ui_copy (practice.exam.error.<code>).
-CONFLICT_MESSAGES = {
-    "pause_exam_mode": "Pause is off in exam mode.",
-    "not_started": "This section has not started.",
-    "not_current": "This section is not the current one.",
-    "section_ended": "This section has ended. Answers can no longer change.",
-    "paused": "The block is paused. Resume to continue.",
-    "on_break": "You are on a break. Start the next section to continue.",
-    "finished": "This block is finished.",
-    "no_such_section": "This block has no such section.",
-    "not_timed": "This block is not timed.",
-    "not_finished": "Results are ready once the whole block is finished.",
-}
+# 409 codes the client words with ui_copy (practice.exam.error.<code> / exam.error.<code>). The body carries the
+# code only: no English sentence ever leaves the server for these (REVIEW_CHECKLIST, structured fields).
+CONFLICT_CODES = frozenset(
+    {
+        "pause_exam_mode",
+        "not_started",
+        "not_current",
+        "section_ended",
+        "paused",
+        "on_break",
+        "finished",
+        "no_such_section",
+        "not_timed",
+        "not_finished",
+        "exam_active",
+    }
+)
 
 
 def conflict(code: str) -> CodedHTTPException:
-    return CodedHTTPException(409, code, CONFLICT_MESSAGES.get(code, "This action is not possible now."))
+    assert code in CONFLICT_CODES, code
+    return CodedHTTPException(409, code, code)
+
+
+def invalid(code: str) -> CodedHTTPException:
+    """A 422 for a timed/exam request the rules refuse, as a code only."""
+    return CodedHTTPException(422, code, code)
 
 
 def default_now() -> dt.datetime:

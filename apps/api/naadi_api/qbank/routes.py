@@ -33,6 +33,7 @@ from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
 from . import exam
 from .clock import Session
+from .exam_state import active_exam
 from .models import (
     ID_PATTERN,
     TAXONOMY_PATTERN,
@@ -420,6 +421,9 @@ async def _insert_block(
     timed = exam.is_timed(cfg.mode) and cfg.sections
 
     async def write(conn: psycopg.AsyncConnection[Any]) -> BlockDetail:
+        if timed:
+            assert rules is not None
+            await _no_active_exam(conn, user.user_id, rules, now)
         rows = await _rows(
             conn,
             "insert into public.blocks (id, user_id, config, question_ids, started_at) "
@@ -445,11 +449,11 @@ def _timed_layout(rules: dict[str, Any], exam_id: str, mode: str, count: int, se
     section timed at count x seconds_per_question, with the session's shared break pool."""
     if not exam.is_timed(mode):
         if sections != 1:
-            raise HTTPException(422, "Tutor blocks have one section.")
+            raise exam.invalid("tutor_single_section")
         return None, None
     most = int(rules["exams"][exam_id]["blocks"])
     if not 1 <= sections <= most:
-        raise HTTPException(422, f"A timed or exam session has 1 to {most} blocks.")
+        raise exam.invalid("sections_out_of_range")
     per_q = int(rules["modes"][mode]["seconds_per_question"])
     return exam.plan_sections(count, sections, count * per_q), exam.break_s(rules) if sections > 1 else 0
 
@@ -462,7 +466,26 @@ def _check_count(rules: dict[str, Any], count: int) -> None:
 
 async def _check_mode(request: Request, user: CurrentUser, mode: str) -> None:
     if mode != "tutor" and not await _timed_available(request, user):
-        raise HTTPException(422, "Timed and exam blocks are not available yet. Use tutor mode.")
+        raise exam.invalid("timed_unavailable")
+
+
+async def _no_active_exam(
+    conn: psycopg.AsyncConnection[Any], user_id: uuid.UUID, rules: dict[str, Any], now: Any
+) -> None:
+    """S09: while a timed/exam session runs (running, paused or on a break), no tutor practice and no second
+    session: a tutor block would reveal that session's answers before it is finished (409 exam_active)."""
+    if await active_exam(conn, user_id, rules=rules, now=now) is not None:
+        raise exam.conflict("exam_active")
+
+
+async def _exam_guard(request: Request, user: CurrentUser) -> None:
+    rules = await _rules(request)
+    now = _now(request)
+
+    async def run(conn: psycopg.AsyncConnection[Any]) -> None:
+        await _no_active_exam(conn, user.user_id, rules, now)
+
+    await as_service(_db(request), run)
 
 
 @router.post(
@@ -482,6 +505,8 @@ async def create_block(
     await _check_mode(request, user, body.mode)
     seed = body.seed if body.seed is not None else secrets.randbits(48)
     layout, break_s = _timed_layout(rules, body.exam, body.mode, body.count, body.sections)
+    if layout is None:
+        await _exam_guard(request, user)
     wanted = body.count * body.sections
     now = exam.default_now() if layout is None else _now(request)
 
@@ -538,6 +563,8 @@ def _now(request: Request) -> dt.datetime:
 async def create_single_block(
     request: Request, body: SingleBlockCreate, user: Annotated[CurrentUser, limited("qbank_write")]
 ) -> BlockDetail | JSONResponse:
+    await _exam_guard(request, user)  # S09: a search hit must not reveal a running exam's answer
+
     async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail | tuple[BlockConfig, list[str]] | None:
         # Read under RLS: a question the caller may not see (draft, hidden chapter) is simply not found.
         found = await _first(conn, "select id, exam, block from public.questions where id = %s", (body.question_id,))
@@ -598,6 +625,8 @@ async def create_weak_spot_block(
     rules = await _rules(request)
     _check_exam(rules, body.exam)
     await _check_mode(request, user, body.mode)
+    if not exam.is_timed(body.mode):
+        await _exam_guard(request, user)
     seed = body.seed if body.seed is not None else secrets.randbits(48)
     lo, hi = rules["block"]["min_questions"], rules["block"]["max_questions"]
     wanted = min(body.count or WEAK_SPOT_DEFAULT, hi)
@@ -825,6 +854,9 @@ async def get_block_question(
             return exam.clock_out(session, now), sec, finished, mine
 
         clock_now, section_n, finished, attempt = await as_service(db, gate)
+        if not finished:
+            # Mid-session the question carries no study hints: no lesson link and no topic labels (S09 review 5).
+            lesson, labels = None, []
         # Finished: every question is graded (an unanswered one as omitted) and reviewable with its explanation.
         reveal = finished
         graded = attempt is not None and (attempt["chosen"] is not None or finished)
@@ -899,6 +931,8 @@ async def create_attempt(
         locked = await exam.lock_block(conn, block_id, uid)
         if locked is not None and exam.is_timed(locked["config"].get("mode", "tutor")):
             return await _timed_attempt(conn, locked, body, uid, rules, now), False
+        # S09: no tutor answer (and so no explanation) while a timed/exam session runs.
+        await _no_active_exam(conn, uid, rules, now)
         blocks = await _rows(conn, _LOCK_BLOCK, (block_id, uid))
         if not blocks:
             raise HTTPException(404, NOT_FOUND)
