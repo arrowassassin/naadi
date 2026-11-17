@@ -1,0 +1,16 @@
+{
+ "id": "20261117T103508-seg15-ingest-50e14b",
+ "ts": "2026-11-17T10:35:08.704373Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated de526e8 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "de526e8",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
