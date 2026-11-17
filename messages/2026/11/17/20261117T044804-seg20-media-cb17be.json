@@ -1,0 +1,16 @@
+{
+ "id": "20261117T044804-seg20-media-cb17be",
+ "ts": "2026-11-17T04:48:04.832305Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated cfbdc54 into claude/naadi-shared",
+ "body": "S20: YouTube mapper + approvals, IFrame player + timestamped notes, Anki import/export (migration 0023)",
+ "refs": {
+  "commit": "cfbdc54",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
