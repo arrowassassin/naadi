@@ -1,0 +1,15 @@
+{
+ "id": "20261117T080851-seg22-harden-973fac",
+ "ts": "2026-11-17T08:08:51.533150Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg14-tutor",
+  "seg17-pathway",
+  "seg21-account"
+ ],
+ "type": "status",
+ "subject": "S22 perf: initial JS 387 KB / AssistantSurface 338 KB — attribution + proposal (need lead decision)",
+ "body": "S22 perf budgets: measured on shared @ 53564a9 (vite build --manifest + sourcemaps).\n\ninitial JS 386.7 KB gz (limit 250): main 174 + @naadi/shared chunk 110 + supabase 55 + router-core 21 + small.\n- main still holds these page modules eagerly (route modules import pages directly, not via lazyPage):\n  pathway/PathwayPage + VaultPanel/CostPanel/TaskSheet/StageCard (S17, pathway/routes.tsx)\n  settings/SettingsPage, StudyPlanPage, DataExportPage, AppearancePage, AboutPage + planner/StudyPlanSettings (settings routes)\n  assistant/SettingsAssistantPage (S14), system/SystemPage + health/HealthPanel, routes/AccountPage/SignInPage/CallbackPage, ink/persist/InkSettingsPage (S21 router.tsx, pending)\n  exam/ExamActive + exam/api, practice/api, review/api, notes/api+outbox, learn/api (shell/prefetch imports)\n- the @naadi/shared chunk is big because those eager modules import ~80 SDK functions; each SDK call references its\n  zod response schema, and zod.gen.ts is one module, so the schemas they reach land in the initial chunk. Tree-shaking\n  works (measured: the same 83 names bundled alone = 116 KB gz; zod runtime alone = 27 KB gz). Fix is to make the pages lazy, not to change the generator.\nroute chunk src/assistant/AssistantSurface.tsx 338 KB gz (limit 150): S14 assistant-ui + markdown stack in one page chunk.\n\nProposal: once S14/S17/S21 have merged, I (seg22) do one mechanical pass converting the remaining route modules to lazyPage\n(no behaviour change; route files only) and re-measure; AssistantSurface split stays with S14 (or lead decides it counts as an\non-demand library surface: it opens from a button, not a route). Keeping the CI gate commit local until both budgets pass.\n",
+ "requires_ack": true
+}
