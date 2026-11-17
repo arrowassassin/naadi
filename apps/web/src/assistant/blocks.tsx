@@ -196,7 +196,16 @@ export function SourcesBlock({ items }: { items: readonly Citation[] }) {
   return (
     <section aria-label={t("agent.block.sources")} className="flex flex-wrap items-center gap-2" data-block="sources">
       <span className="text-text-3 text-ui-sm">
-        {t(web ? "agent.block.sources_web" : "agent.block.sources_count", { count: String(items.length) })}
+        {t(
+          web
+            ? items.length === 1
+              ? "agent.block.sources_web_one"
+              : "agent.block.sources_web_other"
+            : items.length === 1
+              ? "agent.block.sources_count_one"
+              : "agent.block.sources_count_other",
+          { count: String(items.length) },
+        )}
       </span>
       <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
         {items.map((c) => {

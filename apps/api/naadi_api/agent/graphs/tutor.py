@@ -115,27 +115,37 @@ def _canvas(left: list[Any] | None, right: list[Any] | None) -> list[Any]:
 
 # ── messages: append-only for everything but the guard ──
 
-_SERVER_MESSAGES = "__naadi_server_messages__"
+
+class ServerMessages(list[Any]):
+    """A `messages` update the guard made. Recognised by its class, never by a key: a client's input is JSON and
+    can never become one. If a checkpoint stores it and a crash replays it, it comes back as a plain list and is
+    treated like client input (append-only), the safe direction."""
 
 
-def server_messages(items: list[Any]) -> dict[str, list[Any]]:
+def server_messages(items: list[Any]) -> ServerMessages:
     """A `messages` update from the guard: it may remove what a client slipped in and replace the turn's own new
     message with its cleaned copy. Every other write, client input included, only appends."""
-    return {_SERVER_MESSAGES: list(items)}
+    return ServerMessages(items)
 
 
 def append_only_messages(left: list[AnyMessage] | None, right: Any) -> list[AnyMessage]:
     """The `messages` reducer: a client's input can add new messages but never rewrite or remove an earlier one (an
-    item reusing an existing id, or a RemoveMessage, is dropped). The guard's own updates (`server_messages`) keep
-    add_messages' full semantics."""
+    item reusing an existing id, or a RemoveMessage, is dropped; so is anything that is not a message). The guard's
+    own updates (`server_messages`) keep add_messages' full semantics."""
     left = list(left or [])
-    if isinstance(right, dict) and _SERVER_MESSAGES in right:
-        return add_messages(left, right[_SERVER_MESSAGES])  # type: ignore[return-value,arg-type]
+    if type(right) is ServerMessages:
+        return add_messages(left, list(right))  # type: ignore[return-value,arg-type]
     items = right if isinstance(right, list) else [right]
     existing = {m.id for m in left if getattr(m, "id", None)}
-    keep = [
-        m for m in convert_to_messages(items) if not isinstance(m, RemoveMessage) and not (m.id and m.id in existing)
-    ]
+    keep: list[BaseMessage] = []
+    for item in items:
+        try:
+            [m] = convert_to_messages([item])
+        except (ValueError, TypeError, NotImplementedError):
+            continue  # not a message (e.g. a dict pretending to be a server update): dropped
+        if isinstance(m, RemoveMessage) or (m.id and m.id in existing):
+            continue
+        keep.append(m)
     return add_messages(left, keep)  # type: ignore[return-value,arg-type]
 
 

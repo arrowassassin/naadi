@@ -45,6 +45,15 @@ const citation = (n: number, over: Record<string, unknown> = {}) => ({
 afterEach(() => resetCanvasForTests());
 
 describe("answer blocks", () => {
+  it("sources: the count is singular for one source and plural otherwise (review14 r3)", async () => {
+    const one = show(block({ type: "sources", data: { items: [citation(1)] } }));
+    expect(await screen.findByText("From 1 source")).toBeInTheDocument();
+    expect(screen.queryByText(/From 1 sources/)).toBeNull();
+    one.unmount();
+    show(block({ type: "sources", data: { items: [citation(1), citation(2)] } }));
+    expect(await screen.findByText("From 2 sources")).toBeInTheDocument();
+  });
+
   it("flowchart: label + the sandboxed diagram", async () => {
     show(block({ type: "flowchart", data: { mermaid: "flowchart TD\nA-->B" } }));
     expect(await screen.findByRole("region", { name: "Flowchart" })).toBeInTheDocument();
