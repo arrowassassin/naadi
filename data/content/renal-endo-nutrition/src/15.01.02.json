@@ -1,0 +1,1243 @@
+{
+ "area": "usmle2026.15.01.02",
+ "sections": [
+  {
+   "id": "s23c-s150102-1-1",
+   "exam": "step1",
+   "heading": "Hypoglycemia and islet cell tumours: physiology and pathology",
+   "html": "<p><strong>Hypoglycemia</strong> is a plasma glucose low enough to cause symptoms or harm. In a person without diabetes it is investigated only when <strong>Whipple's triad</strong> is present: symptoms consistent with hypoglycemia, a low plasma glucose measured at the time (in practice below 55 mg/dL, 3.0 mmol/L), and relief of symptoms when glucose is raised. In diabetes care, glucose below 70 mg/dL is level 1, below 54 mg/dL is level 2, and any episode with altered thinking that needs another person's help is level 3 (severe).</p>\n<h3>The defence against a falling glucose</h3>\n<p>As glucose falls, the body responds in a fixed order. First, <strong>insulin secretion stops</strong>. Next, <strong>glucagon</strong> rises (alpha cells), stimulating hepatic glycogenolysis and gluconeogenesis; this is the main fast defence. <strong>Epinephrine</strong> follows, raising hepatic glucose output, limiting peripheral uptake and producing the warning symptoms. <strong>Cortisol and growth hormone</strong> act over hours. The brain depends on a steady glucose supply, so prolonged neuroglycopenia causes confusion, seizures, coma and permanent injury.</p>\n<ul><li><strong>Autonomic (adrenergic and cholinergic) symptoms</strong>: tremor, palpitations, anxiety, sweating, hunger, tingling.</li><li><strong>Neuroglycopenic symptoms</strong>: confusion, odd behaviour, slurred speech, focal deficits, seizures, coma.</li></ul>\n<h3>Reading insulin, C-peptide and proinsulin</h3>\n<p>Beta cells make <strong>proinsulin</strong>, which prohormone convertases cleave in secretory granules into insulin and <strong>C-peptide</strong> in equal molar amounts. Pharmaceutical insulin contains no C-peptide. So, during hypoglycemia:</p>\n[[figure:s23c-fig150102-1]]\n<ul><li>High insulin with <strong>low C-peptide</strong> means injected insulin.</li><li>High insulin with <strong>high C-peptide and proinsulin</strong> means the patient's own beta cells are secreting: an insulinoma or a drug that forces secretion (sulfonylurea or meglitinide). Only a drug screen separates these.</li><li><strong>Beta-hydroxybutyrate</strong> is low whenever insulin (or an insulin-like factor) is acting, because insulin blocks lipolysis and ketogenesis. A high ketone level points away from insulin-mediated causes.</li></ul>\n<h3>Causes</h3>\n<table><tr><th>Mechanism</th><th>Examples</th><th>Clue</th></tr>\n<tr><td>Drugs</td><td>Insulin, sulfonylureas (especially long-acting ones such as glyburide, worse with kidney failure), meglitinides; less often quinine, pentamidine, fluoroquinolones</td><td>The commonest cause overall</td></tr>\n<tr><td>Ethanol</td><td>Binge drinking after a period of poor food intake</td><td>Ethanol oxidation raises the NADH/NAD<sup>+</sup> ratio, diverting pyruvate to lactate and oxaloacetate to malate, so gluconeogenesis stalls once glycogen is gone</td></tr>\n<tr><td>Hormone deficiency</td><td>Adrenal insufficiency, hypopituitarism (cortisol and growth hormone loss)</td><td>Hypoglycemia with hyponatremia, hypotension; children with hypopituitarism</td></tr>\n<tr><td>Critical illness</td><td>Sepsis, liver failure, kidney failure, starvation</td><td>Less gluconeogenesis, less insulin clearance</td></tr>\n<tr><td>Non-islet cell tumour hypoglycemia</td><td>Large mesenchymal tumours (for example a solitary fibrous tumour) or hepatocellular carcinoma</td><td>Tumour secretes incompletely processed (\"big\") IGF-2, which activates insulin receptors; insulin, C-peptide and ketones are all low</td></tr>\n<tr><td>Endogenous hyperinsulinism</td><td>Insulinoma; post-bariatric hypoglycemia; insulin autoimmune hypoglycemia</td><td>See below</td></tr></table>\n<h3>Insulinoma</h3>\n<p>An insulinoma is a beta-cell neuroendocrine tumour that secretes insulin without regard to glucose. Most are small, solitary and benign and can lie anywhere in the pancreas; multiple tumours suggest MEN1. Hypoglycemia typically occurs during fasting or exercise, and patients often gain weight from eating to prevent symptoms. Because the tumour also releases incompletely processed hormone, the <strong>proinsulin</strong> fraction is high.</p>\n<h3>Other forms of endogenous hyperinsulinism</h3>\n<ul><li><strong>Post-bariatric hypoglycemia</strong>: after Roux-en-Y gastric bypass, food reaches the small bowel quickly, glucose and GLP-1 surge, and insulin overshoots. Symptoms come 1–3 hours <em>after meals</em>, not during fasting.</li><li><strong>Insulin autoimmune hypoglycemia</strong>: antibodies to insulin bind it after meals and release it hours later. Insulin levels are extremely high. It has been linked to sulfhydryl-containing drugs such as methimazole and is more often reported in East Asian populations.</li><li><strong>Neonatal hypoglycemia in an infant of a mother with diabetes</strong>: maternal glucose crosses the placenta, fetal beta cells become hyperplastic, and when the cord is clamped the infant's high insulin output persists while the glucose supply stops.</li></ul>\n<h3>Other islet cell tumours</h3>\n<table><tr><th>Tumour (cell)</th><th>Hormone action</th><th>Picture</th></tr>\n<tr><td>Glucagonoma (alpha)</td><td>Glucagon drives glycogenolysis, gluconeogenesis and amino acid catabolism</td><td>Necrolytic migratory erythema (red, crusting, spreading rash, often groin and buttocks), diabetes, weight loss, glossitis, deep venous thrombosis, low amino acids</td></tr>\n<tr><td>Somatostatinoma (delta)</td><td>Somatostatin inhibits insulin, gastrin, cholecystokinin, pancreatic enzymes</td><td>Diabetes, gallstones, steatorrhea, achlorhydria</td></tr>\n<tr><td>VIPoma (non-beta islet cell)</td><td>Vasoactive intestinal peptide raises cAMP in intestinal epithelium, driving chloride and water secretion</td><td>Large-volume watery diarrhea that persists with fasting, hypokalemia, low or absent gastric acid (WDHA)</td></tr>\n<tr><td>Gastrinoma (G cells, pancreas or duodenum)</td><td>Gastrin drives acid secretion and parietal cell growth</td><td>Multiple or distal ulcers, diarrhea; covered with MEN1</td></tr></table>\n<div class=\"trap\"><p><strong>Exam trap:</strong> high insulin with high C-peptide does not prove an insulinoma. A sulfonylurea gives the same pattern, so a drug screen comes before any pancreatic imaging.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>The needle leaves no peptide</em>\": injected insulin brings no C-peptide with it.</p></div>",
+   "figureIds": [
+    "s23c-fig150102-1"
+   ],
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hypoglycemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK534841/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Insulinoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK544299/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Glucagonoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519500/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: VIPoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK507698/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Neonatal Hypoglycemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK537105/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150102-2-1",
+   "exam": "step2ck",
+   "heading": "Hypoglycemia: emergency treatment, evaluation and management",
+   "html": "<h3>Treat first</h3>\n<p>Hypoglycemia is treated before it is explained.</p>\n<table><tr><th>Situation</th><th>Treatment</th></tr>\n<tr><td>Awake and able to swallow</td><td>15–20 g of fast-acting carbohydrate (glucose tablets or gel, juice, regular soda); recheck glucose after 15 minutes and repeat if still low; then a snack or meal once glucose is normal</td></tr>\n<tr><td>Unable to swallow safely, no IV access (home, community)</td><td><strong>Glucagon</strong>: intramuscular or subcutaneous injection, or intranasal powder; turn the person on their side because vomiting is common. Never put food or fluid in the mouth of a person who cannot swallow.</td></tr>\n<tr><td>Hospital with IV access</td><td>IV dextrose bolus, then a dextrose infusion if the cause is long-acting</td></tr></table>\n<p>Glucagon works only if liver glycogen is present, so it may fail in starvation, alcohol-related hypoglycemia and advanced liver disease. Anyone treated with insulin, or with a history of level 2 or 3 hypoglycemia, should have glucagon prescribed and family members taught to use it.</p>\n<h3>Sulfonylurea-induced hypoglycemia</h3>\n<p>Sulfonylureas, especially long-acting agents and those cleared by the kidney (glyburide), cause prolonged and recurrent hypoglycemia, most of all in older adults and in chronic kidney disease. Dextrose alone can make it worse, because each glucose bolus stimulates more insulin release. <strong>Octreotide</strong>, a somatostatin analogue, inhibits insulin secretion and prevents recurrence. Patients are admitted for monitoring because the drug effect can outlast a day. In older adults with diabetes, avoid long-acting sulfonylureas and relax glycemic targets.</p>\n<h3>Hypoglycemia unawareness</h3>\n<p>Repeated hypoglycemia in long-standing type 1 diabetes blunts the glucagon response and lowers the glucose level that triggers adrenergic warning symptoms, so the first sign may be confusion or a seizure. Management: <strong>continuous glucose monitoring with alerts</strong>, review of insulin doses, and a period of <strong>strict avoidance of hypoglycemia with temporarily higher glucose targets</strong>, which partly restores awareness over weeks. Automated insulin delivery systems further reduce hypoglycemia.</p>\n<h3>Evaluating hypoglycemia in a person without diabetes</h3>\n<ol><li><strong>Confirm Whipple's triad.</strong> A healthy-looking person with vague symptoms and a normal glucose during symptoms needs no further testing.</li><li><strong>Look for an obvious cause</strong>: drugs (including access to a relative's diabetes medicines), alcohol, critical illness, adrenal insufficiency, a large tumour.</li><li><strong>Draw blood during hypoglycemia</strong> (spontaneous, or provoked by a supervised fast of up to 72 hours, or a mixed-meal test if symptoms follow meals): glucose, insulin, C-peptide, proinsulin, beta-hydroxybutyrate and a screen for sulfonylureas and meglitinides; insulin antibodies if insulin is very high. At the end of the fast, glucagon is given: a brisk glucose rise shows that insulin had kept glycogen in the liver.</li><li><strong>Localise only after biochemistry proves endogenous hyperinsulinism</strong> with a negative drug screen: multiphase contrast CT or MRI of the pancreas, then endoscopic ultrasonography; specialised functional imaging or selective arterial calcium stimulation for small tumours that remain hidden.</li></ol>\n<h3>Management of the causes</h3>\n<ul><li><strong>Insulinoma</strong>: surgical removal (enucleation or partial pancreatectomy) cures most patients. Diazoxide, which opens beta-cell potassium channels and inhibits insulin release, or a somatostatin analogue controls symptoms when surgery is not possible.</li><li><strong>Post-bariatric hypoglycemia</strong>: dietary change first: small, frequent meals with protein and fat and few rapidly absorbed carbohydrates; acarbose next; specialist options after that.</li><li><strong>Factitious hypoglycemia</strong> (secret use of insulin or a secretagogue): share the results with the patient privately and without blame, and offer psychiatric care. Check for a pharmacy dispensing error before assuming deliberate use.</li><li><strong>Adrenal insufficiency</strong>: glucocorticoid replacement.</li><li><strong>Neonates at risk</strong> (infant of a mother with diabetes, large or small for gestational age, preterm): check glucose in the first hours; early feeding, oral dextrose gel, and IV dextrose if low glucose persists or the infant has symptoms.</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> do not start imaging the pancreas in a patient with hypoglycemia until insulin-mediated hypoglycemia has been proven and a sulfonylurea screen is negative.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Non-Diabetic Hypoglycemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK573079/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Factitious Hypoglycemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK542310/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Postbariatric Surgery Hypoglycemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK592417/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Hypoglycemia",
+     "url": "https://medlineplus.gov/hypoglycemia.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150102-1",
+   "caption": "Figure. Hypoglycemia: the laboratory pattern of each cause, using blood drawn while glucose is low. C-peptide marks the body's own insulin; low ketones mean insulin or IGF-2 is acting.",
+   "file": "figures/s23c-fig150102-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150102-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Unexplained hypoglycemia in a receptionist",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150102-1-01",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 46-year-old woman has had episodes of confusion and sweating before breakfast and after missing meals for 6 months, relieved by eating. She has gained 7 kg. She takes no medications and has no diabetes in her household. During a supervised fast she becomes confused at 18 hours. Blood drawn at that moment shows:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Glucose</td><td>41 mg/dL (2.3 mmol/L)</td></tr><tr><td>Insulin</td><td>14 µU/mL (N below 3 during hypoglycemia)</td></tr><tr><td>C-peptide</td><td>1.9 ng/mL (N below 0.6 during hypoglycemia)</td></tr><tr><td>Proinsulin</td><td>28 pmol/L (N below 5 during hypoglycemia)</td></tr><tr><td>Beta-hydroxybutyrate</td><td>0.2 mmol/L (low)</td></tr><tr><td>Sulfonylurea and meglitinide screen</td><td>Negative</td></tr><tr><td>Insulin antibodies</td><td>Negative</td></tr></table><p>After 1 mg of intravenous glucagon, glucose rises by 40 mg/dL. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Adrenal insufficiency"
+    },
+    {
+     "label": "B",
+     "html": "Insulin autoimmune hypoglycemia"
+    },
+    {
+     "label": "C",
+     "html": "Insulin-secreting beta-cell tumour"
+    },
+    {
+     "label": "D",
+     "html": "Surreptitious insulin injection"
+    },
+    {
+     "label": "E",
+     "html": "Tumour secreting incompletely processed IGF-2"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Fasting hypoglycemia with inappropriately high insulin, <strong>high C-peptide and high proinsulin</strong>, suppressed ketones, a brisk glucose response to glucagon and a negative secretagogue screen shows endogenous hyperinsulinism without a drug: an <strong>insulinoma</strong>. Weight gain from eating to avoid symptoms is typical.</p><p><strong>Takeaway:</strong> endogenous insulin (high C-peptide and proinsulin) with a negative drug screen during fasting hypoglycemia means insulinoma.</p>",
+   "whyNot": {
+    "A": "Cortisol deficiency causes hypoglycemia with suppressed insulin and C-peptide, and ketones would be high.",
+    "B": "Insulin antibodies are negative, and that disorder typically causes symptoms hours after meals with extremely high insulin levels.",
+    "D": "Injected insulin suppresses the patient's own secretion, so C-peptide and proinsulin would be low.",
+    "E": "IGF-2 suppresses insulin secretion, so insulin and C-peptide would both be low."
+   },
+   "objective": "Diagnose insulinoma from the insulin, C-peptide, proinsulin and drug-screen pattern during fasting hypoglycemia.",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "insulinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old man is brought to the emergency department after being found confused on a Sunday morning. He drank heavily through Saturday and ate little for 2 days. Plasma glucose is 36 mg/dL, and blood lactate is mildly elevated. Insulin and C-peptide are appropriately suppressed. He improves with intravenous dextrose. Which of the following best explains his hypoglycemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Ethanol activates hepatic glucokinase and traps glucose in the liver"
+    },
+    {
+     "label": "B",
+     "html": "Ethanol directly stimulates insulin release from beta cells"
+    },
+    {
+     "label": "C",
+     "html": "Ethanol inhibits glucagon release from alpha cells"
+    },
+    {
+     "label": "D",
+     "html": "Ethanol metabolism raises the hepatic NADH/NAD<sup>+</sup> ratio and limits gluconeogenesis"
+    },
+    {
+     "label": "E",
+     "html": "Ethanol speeds intestinal transit and reduces glucose absorption"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Alcohol dehydrogenase and aldehyde dehydrogenase both reduce NAD<sup>+</sup> to NADH. The high <strong>NADH/NAD<sup>+</sup> ratio</strong> pushes pyruvate to lactate and oxaloacetate to malate, removing the substrates of gluconeogenesis. After 1–2 days of poor intake, liver glycogen is gone, gluconeogenesis is the only source of glucose, and glucose falls. The same redox shift explains the lactate rise.</p><p><strong>Takeaway:</strong> alcohol causes fasting hypoglycemia by blocking gluconeogenesis through a high NADH/NAD<sup>+</sup> ratio once glycogen is depleted.</p>",
+   "whyNot": {
+    "A": "Glucokinase traps glucose after meals; ethanol does not lower glucose this way.",
+    "B": "Ethanol does not trigger insulin secretion; his insulin and C-peptide are suppressed.",
+    "C": "Glucagon release is intact; the problem is that there is little glycogen or gluconeogenic substrate for glucagon to act on.",
+    "E": "He has eaten little, so absorption is not the issue, and alcohol does not cause hypoglycemia by speeding transit."
+   },
+   "objective": "Explain alcohol-related fasting hypoglycemia through the NADH/NAD+ ratio and gluconeogenesis.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.16.05.02"
+   ],
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "alcohol",
+    "gluconeogenesis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 57-year-old woman has lost 9 kg over 6 months and has a painful, red, crusting rash that spreads outward with central healing over her groin, buttocks and thighs. She has a sore, smooth red tongue. Fasting glucose is 188 mg/dL; she has no previous diabetes. She was treated last month for a deep venous thrombosis. CT shows a 5-cm mass in the tail of the pancreas. The tumour most likely arises from which cell type, and what does that cell normally secrete?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Alpha cells, which secrete glucagon"
+    },
+    {
+     "label": "B",
+     "html": "Beta cells, which secrete insulin"
+    },
+    {
+     "label": "C",
+     "html": "Delta cells, which secrete somatostatin"
+    },
+    {
+     "label": "D",
+     "html": "Enterochromaffin cells, which secrete serotonin"
+    },
+    {
+     "label": "E",
+     "html": "G cells, which secrete gastrin"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p><strong>Necrolytic migratory erythema</strong>, new diabetes, weight loss, glossitis and venous thrombosis with a pancreatic tail mass are the picture of a <strong>glucagonoma</strong>, an alpha-cell tumour. Excess glucagon drives gluconeogenesis and amino acid catabolism; low amino acids are thought to contribute to the rash.</p><p><strong>Takeaway:</strong> necrolytic migratory erythema plus diabetes and thrombosis means an alpha-cell glucagonoma.</p>",
+   "whyNot": {
+    "B": "An insulinoma causes hypoglycemia and weight gain, not diabetes, weight loss and a rash.",
+    "C": "Somatostatinoma causes diabetes with gallstones and steatorrhea, not necrolytic migratory erythema.",
+    "D": "Carcinoid tumours cause flushing, diarrhea and right heart valve disease when they reach the liver.",
+    "E": "Gastrinoma causes peptic ulcers and diarrhea, not a migratory rash or diabetes."
+   },
+   "objective": "Recognise glucagonoma as an alpha-cell tumour from its clinical features.",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "glucagonoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man has had 3 months of watery diarrhea, about 4 L a day, that continues during a 48-hour fast. He is weak. Serum potassium is 2.6 mEq/L and bicarbonate 17 mEq/L. Stool osmotic gap is 20 mOsm/kg. Gastric acid output is very low. CT shows a 4-cm pancreatic mass. The hormone secreted by this tumour causes the diarrhea mainly by which of the following mechanisms?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Damage to the brush border, which causes lactose malabsorption"
+    },
+    {
+     "label": "B",
+     "html": "Increased cAMP in intestinal epithelial cells, which drives chloride secretion"
+    },
+    {
+     "label": "C",
+     "html": "Inactivation of pancreatic lipase by excess gastric acid"
+    },
+    {
+     "label": "D",
+     "html": "Increased intestinal motility through serotonin receptors"
+    },
+    {
+     "label": "E",
+     "html": "Inhibition of bile acid reabsorption in the terminal ileum"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Large-volume diarrhea that continues during fasting with a small osmotic gap is <strong>secretory</strong>. With hypokalemia and achlorhydria this is a <strong>VIPoma</strong>. Vasoactive intestinal peptide binds Gs-coupled receptors on enterocytes, <strong>raises cAMP</strong> and opens CFTR chloride channels; water and potassium follow into the lumen. VIP also inhibits gastric acid secretion.</p><p><strong>Takeaway:</strong> VIPoma causes secretory diarrhea, hypokalemia and achlorhydria through cAMP-driven chloride secretion.</p>",
+   "whyNot": {
+    "A": "Lactose malabsorption is an osmotic diarrhea with a large osmotic gap that stops with fasting.",
+    "C": "Acid inactivating lipase is the gastrinoma mechanism, and this patient has low acid output.",
+    "D": "Serotonin-driven motility fits carcinoid syndrome, which also causes flushing and wheezing.",
+    "E": "Bile acid diarrhea follows ileal disease or resection and usually improves with fasting."
+   },
+   "objective": "Explain the cAMP-mediated secretory diarrhea of VIPoma.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.10.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "VIPoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 68-year-old man has a 15-cm mass in the right hemithorax, which biopsy shows to be a solitary fibrous tumour of the pleura. He has had several early-morning episodes of confusion. During one, plasma glucose is 34 mg/dL, and insulin, C-peptide and proinsulin are all undetectable. Beta-hydroxybutyrate is low. A sulfonylurea screen is negative. Which of the following most likely causes his hypoglycemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antibodies that activate the insulin receptor"
+    },
+    {
+     "label": "B",
+     "html": "Destruction of the adrenal glands by metastases"
+    },
+    {
+     "label": "C",
+     "html": "Glucose consumption by the tumour's large mass"
+    },
+    {
+     "label": "D",
+     "html": "Ectopic secretion of insulin by the tumour"
+    },
+    {
+     "label": "E",
+     "html": "Secretion of incompletely processed IGF-2 by the tumour"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Hypoglycemia with <strong>suppressed insulin and C-peptide but also low ketones</strong> means something insulin-like is acting. Large mesenchymal tumours can secrete incompletely processed (\"big\") <strong>IGF-2</strong>, which binds insulin receptors, increases glucose uptake, suppresses hepatic glucose output and ketogenesis, and suppresses growth hormone and the patient's own insulin. This is non-islet cell tumour hypoglycemia; removing the tumour cures it.</p><p><strong>Takeaway:</strong> low insulin, low C-peptide and low ketones with a large tumour points to IGF-2-mediated hypoglycemia.</p>",
+   "whyNot": {
+    "A": "Insulin-receptor antibodies are rare, occur mainly with autoimmune disease, and do not explain a link to a large pleural tumour.",
+    "B": "Adrenal insufficiency would allow ketone production, so beta-hydroxybutyrate would be high.",
+    "C": "Glucose use by the tumour contributes little and would not suppress ketogenesis.",
+    "D": "Ectopic insulin secretion is extremely rare, and insulin is undetectable here."
+   },
+   "objective": "Recognise IGF-2-mediated non-islet cell tumour hypoglycemia from its laboratory pattern.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.16.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "IGF-2",
+    "paraneoplastic"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A boy is born at 38 weeks' gestation to a mother with poorly controlled type 1 diabetes. Birth weight is 4,600 g. At 2 hours of age he is jittery and feeds poorly, and plasma glucose is 28 mg/dL. Which of the following best explains his hypoglycemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Absent hepatic glycogen stores due to placental insufficiency"
+    },
+    {
+     "label": "B",
+     "html": "Congenital deficiency of glucose-6-phosphatase"
+    },
+    {
+     "label": "C",
+     "html": "Fetal beta-cell hyperplasia that continues to secrete insulin after birth"
+    },
+    {
+     "label": "D",
+     "html": "Maternal insulin that crossed the placenta and persists in his blood"
+    },
+    {
+     "label": "E",
+     "html": "Transient neonatal adrenal insufficiency"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Maternal glucose crosses the placenta, but maternal insulin does not. Chronic fetal hyperglycemia stimulates <strong>fetal beta-cell hyperplasia and hyperinsulinemia</strong>, which also drives growth (macrosomia). When the cord is clamped, the glucose supply stops abruptly while insulin output stays high, so glucose falls within hours of birth.</p><p><strong>Takeaway:</strong> infants of mothers with diabetes become hypoglycemic after birth because their own hyperplastic beta cells keep secreting insulin.</p>",
+   "whyNot": {
+    "A": "A large-for-gestational-age infant of a mother with diabetes has ample glycogen; low stores fit growth-restricted infants.",
+    "B": "Glucose-6-phosphatase deficiency (von Gierke disease) causes hypoglycemia with lactic acidosis and hepatomegaly, usually after the first months when feeds space out.",
+    "D": "Insulin is a large peptide that does not cross the placenta in meaningful amounts.",
+    "E": "Neonatal adrenal insufficiency is rare and not linked to maternal diabetes."
+   },
+   "objective": "Explain neonatal hypoglycemia in the infant of a mother with diabetes.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.12.05.02"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "neonatal hypoglycemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 24-year-old man with type 1 diabetes feels shaky, sweaty and hungry during an afternoon at work, 3 hours after taking his usual insulin and eating a smaller lunch than usual. His fingerstick glucose is 52 mg/dL. He is alert, answering questions normally and able to swallow. Which of the following is the most appropriate immediate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Eat 15–20 g of glucose tablets and recheck glucose in 15 minutes"
+    },
+    {
+     "label": "B",
+     "html": "Eat a high-fat meal such as a cheese sandwich and recheck in 1 hour"
+    },
+    {
+     "label": "C",
+     "html": "Inject glucagon 1 mg intramuscularly"
+    },
+    {
+     "label": "D",
+     "html": "Skip his next insulin dose and rest until symptoms pass"
+    },
+    {
+     "label": "E",
+     "html": "Take his rapid-acting insulin dose early to correct the timing"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A conscious patient who can swallow is treated with <strong>15–20 g of fast-acting carbohydrate</strong>, preferably glucose, and glucose is rechecked after 15 minutes, repeating if still low; a snack or meal follows once glucose is normal.</p><p><strong>Takeaway:</strong> conscious hypoglycemia: 15–20 g of glucose, recheck in 15 minutes.</p>",
+   "whyNot": {
+    "B": "Fat slows gastric emptying and delays the glucose rise.",
+    "C": "Glucagon is for a person who cannot safely take sugar by mouth.",
+    "D": "Rest without carbohydrate lets glucose keep falling while insulin is still acting.",
+    "E": "More insulin would deepen the hypoglycemia."
+   },
+   "objective": "Treat mild symptomatic hypoglycemia with oral glucose and recheck after 15 minutes.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hypoglycemia treatment"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 16-year-old girl with type 1 diabetes is found by her mother at home, unresponsive and sweaty, 2 hours after an evening of intense soccer practice. Her meter reads 34 mg/dL. She is breathing normally and has a pulse. She does not respond to her name. Emergency services have been called and are 20 minutes away. Which of the following should her mother do now?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Give intranasal or intramuscular glucagon and turn her onto her side"
+    },
+    {
+     "label": "B",
+     "html": "Give a glass of orange juice slowly by mouth"
+    },
+    {
+     "label": "C",
+     "html": "Inject her rapid-acting insulin to cover the exercise"
+    },
+    {
+     "label": "D",
+     "html": "Rub honey between her cheek and gum and wait"
+    },
+    {
+     "label": "E",
+     "html": "Wait for emergency services, because glucagon is unsafe at home"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>She has severe (level 3) hypoglycemia and cannot swallow safely. Family members of insulin-treated patients should give <strong>glucagon</strong>, by intramuscular or subcutaneous injection or as intranasal powder. Placing her in the recovery position protects the airway, because vomiting is common after glucagon. Once awake and able to swallow, she should eat.</p><p><strong>Takeaway:</strong> unconscious hypoglycemia outside hospital: glucagon, recovery position, nothing by mouth.</p>",
+   "whyNot": {
+    "B": "Fluid by mouth in an unresponsive patient risks aspiration.",
+    "C": "Insulin would worsen the hypoglycemia.",
+    "D": "Food in the mouth of a person who cannot swallow risks choking and aspiration and is unreliable.",
+    "E": "Glucagon is designed for use by trained lay people; delay prolongs neuroglycopenia."
+   },
+   "objective": "Treat severe hypoglycemia in an unconscious patient outside hospital with glucagon.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "glucagon"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman with type 2 diabetes and stage 4 chronic kidney disease (eGFR 22 mL/min/1.73 m²) is brought in confused. She takes glyburide and lisinopril. Plasma glucose is 38 mg/dL. She wakes after 25 g of intravenous dextrose, but 2 hours later glucose is 49 mg/dL despite a 10% dextrose infusion, and she becomes drowsy again. Which of the following is the most appropriate additional treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continuous intravenous insulin infusion"
+    },
+    {
+     "label": "B",
+     "html": "Hydrocortisone 100 mg intravenously"
+    },
+    {
+     "label": "C",
+     "html": "Repeated intramuscular glucagon every hour"
+    },
+    {
+     "label": "D",
+     "html": "Subcutaneous octreotide"
+    },
+    {
+     "label": "E",
+     "html": "Switch glyburide to glipizide and discharge home"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Glyburide is long-acting, and its active metabolites accumulate in kidney failure, so hypoglycemia recurs. Each dextrose load stimulates further insulin release from the drug-primed beta cells. <strong>Octreotide</strong> inhibits beta-cell insulin secretion and prevents recurrent hypoglycemia; she needs admission with glucose monitoring for at least a day and permanent withdrawal of the sulfonylurea.</p><p><strong>Takeaway:</strong> recurrent hypoglycemia from a sulfonylurea: dextrose plus octreotide, and admit.</p>",
+   "whyNot": {
+    "A": "Insulin is the wrong direction; she already has too much.",
+    "B": "Steroids are for adrenal insufficiency, which nothing here suggests.",
+    "C": "Glucagon gives only a brief rise and also stimulates insulin secretion; repeated doses are not the answer.",
+    "E": "Any sulfonylurea is risky in an 81-year-old with advanced CKD, and she is still hypoglycemic."
+   },
+   "objective": "Use octreotide for recurrent sulfonylurea-induced hypoglycemia.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.15.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "sulfonylurea",
+    "octreotide",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman has had type 1 diabetes for 22 years and uses multiple daily insulin injections with fingerstick monitoring. Her hemoglobin A1c is 6.1%. In the past month she has had two episodes of confusion at work that colleagues treated with juice; she had no shaking or sweating beforehand. Her fingerstick log shows several readings between 45 and 60 mg/dL without symptoms. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add a sulfonylurea at bedtime to smooth overnight glucose"
+    },
+    {
+     "label": "B",
+     "html": "Begin a beta-blocker to reduce work-related anxiety"
+    },
+    {
+     "label": "C",
+     "html": "Increase basal insulin to bring her A1c below 6%"
+    },
+    {
+     "label": "D",
+     "html": "Continuous glucose monitoring with alerts and looser targets"
+    },
+    {
+     "label": "E",
+     "html": "Referral for pancreas transplantation this month"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Recurrent hypoglycemia without warning symptoms is <strong>hypoglycemia unawareness</strong>, from blunted glucagon and adrenergic responses after repeated lows. A <strong>continuous glucose monitor with low alerts</strong>, adjustment of insulin and a period of <strong>strict hypoglycemia avoidance with temporarily higher targets</strong> can restore some awareness. Her A1c of 6.1% is lower than is safe for her.</p><p><strong>Takeaway:</strong> hypoglycemia unawareness: CGM with alerts and relaxed targets for weeks.</p>",
+   "whyNot": {
+    "A": "Sulfonylureas need working beta cells and would add hypoglycemia risk.",
+    "B": "Beta-blockers can mask the remaining adrenergic warning signs.",
+    "C": "Lowering glucose further would cause more hypoglycemia and worsen unawareness.",
+    "E": "Transplantation is a specialist option for refractory severe hypoglycemia after technology and education have failed."
+   },
+   "objective": "Manage hypoglycemia unawareness in type 1 diabetes with CGM and relaxed targets.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypoglycemia unawareness",
+    "CGM"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 41-year-old woman had a Roux-en-Y gastric bypass 2 years ago and has lost 48 kg. For 4 months she has had sweating, palpitations and confusion about 2 hours after meals, especially those with bread or sweets. Fingerstick glucose during an episode was 46 mg/dL. Fasting glucose is normal, and she has never had symptoms before breakfast. She takes no diabetes medications. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Distal pancreatectomy to remove excess beta cells"
+    },
+    {
+     "label": "B",
+     "html": "Small, frequent meals low in refined carbohydrate"
+    },
+    {
+     "label": "C",
+     "html": "Surgical reversal of the gastric bypass"
+    },
+    {
+     "label": "D",
+     "html": "Somatostatin-receptor imaging of the pancreas"
+    },
+    {
+     "label": "E",
+     "html": "Supervised 72-hour fast in hospital"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Symptoms 1–3 hours <em>after meals</em> years after gastric bypass, with normal fasting glucose, fit <strong>post-bariatric hypoglycemia</strong>: rapid delivery of carbohydrate to the small bowel causes an exaggerated insulin response. First-line treatment is <strong>dietary</strong>: small, frequent meals with protein and fat, avoiding rapidly absorbed carbohydrate. Acarbose is the usual next step.</p><p><strong>Takeaway:</strong> post-meal hypoglycemia after gastric bypass is treated with diet first.</p>",
+   "whyNot": {
+    "A": "Pancreatic resection is no longer used for this condition and does not address the cause.",
+    "C": "Reversal is reserved for rare refractory cases after diet and drugs fail.",
+    "D": "Imaging for an insulinoma is not indicated; the pattern is postprandial and the history explains it.",
+    "E": "A prolonged fast tests for fasting hypoglycemia; a mixed-meal test is the provocation that fits postprandial symptoms."
+   },
+   "objective": "Treat post-bariatric hypoglycemia with dietary changes first.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.10.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "post-bariatric hypoglycemia",
+    "nutrition"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 36-year-old man has had three episodes over 2 months of confusion and sweating late in the morning when he skipped breakfast; each resolved after paramedics gave glucose. One paramedic record documents a glucose of 39 mg/dL. He does not drink alcohol, takes no medications, and no one in his household has diabetes. Examination and basic chemistry, including cortisol, are normal. Glucose today is 82 mg/dL. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Multiphase contrast CT of the pancreas"
+    },
+    {
+     "label": "B",
+     "html": "Endoscopic ultrasonography of the pancreas"
+    },
+    {
+     "label": "C",
+     "html": "Hemoglobin A1c and fasting lipid panel"
+    },
+    {
+     "label": "D",
+     "html": "Oral glucose tolerance test over 5 hours"
+    },
+    {
+     "label": "E",
+     "html": "Supervised fast with hormone and drug testing at hypoglycemia"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>He has documented Whipple's triad without an obvious cause, so endogenous hyperinsulinism must be tested for. The episodes are fasting-related, so the next step is a <strong>supervised fast of up to 72 hours</strong>, drawing glucose, insulin, C-peptide, proinsulin, beta-hydroxybutyrate and a sulfonylurea/meglitinide screen when glucose falls below 55 mg/dL, then giving glucagon and measuring the glucose response.</p><p><strong>Takeaway:</strong> prove insulin-mediated hypoglycemia biochemically before imaging the pancreas.</p>",
+   "whyNot": {
+    "A": "Imaging comes only after biochemical proof; small insulinomas are often missed and incidental findings mislead.",
+    "B": "Endoscopic ultrasonography is a localisation test, used after the diagnosis is established.",
+    "C": "A1c says nothing about the cause of fasting hypoglycemia.",
+    "D": "Prolonged glucose tolerance tests produce low readings in healthy people and are not used to diagnose hypoglycemia."
+   },
+   "objective": "Investigate documented fasting hypoglycemia with a supervised fast and full biochemistry.",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "72-hour fast",
+    "insulinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 49-year-old woman has endogenous hyperinsulinemic hypoglycemia confirmed during a supervised fast, with high insulin, C-peptide and proinsulin, a negative sulfonylurea and meglitinide screen, and negative insulin antibodies. Serum calcium and prolactin are normal, and she has no family history of endocrine tumours. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Blind distal pancreatectomy"
+    },
+    {
+     "label": "B",
+     "html": "FDG positron emission tomography"
+    },
+    {
+     "label": "C",
+     "html": "Long-term diazoxide without imaging"
+    },
+    {
+     "label": "D",
+     "html": "Multiphase contrast CT or MRI of the pancreas"
+    },
+    {
+     "label": "E",
+     "html": "Selective arterial calcium stimulation as the first test"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>With the biochemical diagnosis of insulinoma made, the tumour is localised, starting with <strong>multiphase contrast CT or MRI of the pancreas</strong>; endoscopic ultrasonography follows if these are negative, and invasive or specialised tests are reserved for tumours that stay hidden. Most insulinomas are solitary and benign, and surgical removal is curative.</p><p><strong>Takeaway:</strong> after biochemical confirmation, localise an insulinoma with pancreatic CT or MRI, then EUS, and remove it.</p>",
+   "whyNot": {
+    "A": "Blind resection is not done; most tumours can be localised and enucleated.",
+    "B": "Most insulinomas are well differentiated and FDG-avid only uncommonly.",
+    "C": "Diazoxide is for patients who cannot have surgery; a likely curable tumour should be found.",
+    "E": "Arterial calcium stimulation is invasive and reserved for tumours not found by noninvasive imaging and EUS."
+   },
+   "objective": "Localise a biochemically confirmed insulinoma with cross-sectional imaging first.",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "insulinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150102-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 33-year-old woman who works as a receptionist has had four episodes of confusion and sweating in 3 weeks; glucose was below 45 mg/dL each time. She has no diabetes and takes only an oral contraceptive. Her husband has type 2 diabetes. During an episode in hospital, blood shows:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Glucose</td><td>38 mg/dL</td></tr><tr><td>Insulin</td><td>22 µU/mL (N below 3 during hypoglycemia)</td></tr><tr><td>C-peptide</td><td>2.4 ng/mL (N below 0.6 during hypoglycemia)</td></tr><tr><td>Proinsulin</td><td>18 pmol/L (N below 5 during hypoglycemia)</td></tr><tr><td>Beta-hydroxybutyrate</td><td>0.1 mmol/L (low)</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT of the abdomen"
+    },
+    {
+     "label": "B",
+     "html": "Endoscopic ultrasonography"
+    },
+    {
+     "label": "C",
+     "html": "Plasma screen for sulfonylureas and meglitinides"
+    },
+    {
+     "label": "D",
+     "html": "Serum insulin-like growth factor 2"
+    },
+    {
+     "label": "E",
+     "html": "Start diazoxide"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The pattern is endogenous hyperinsulinism (high insulin, C-peptide and proinsulin, low ketones). That pattern is shared by an insulinoma and an <strong>insulin secretagogue</strong>. With access to her husband's diabetes medicines, a <strong>sulfonylurea and meglitinide screen</strong> must be done before any imaging.</p><p><strong>Takeaway:</strong> high insulin plus high C-peptide needs a secretagogue screen before pancreatic imaging.</p>",
+   "whyNot": {
+    "A": "Imaging before excluding a drug risks chasing an incidental finding.",
+    "B": "EUS is for localising a tumour once a drug cause is excluded.",
+    "D": "IGF-2 tumours suppress insulin and C-peptide, which are high here.",
+    "E": "Treatment without a diagnosis would miss a drug cause."
+   },
+   "objective": "Screen for insulin secretagogues when insulin and C-peptide are both high.",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "factitious hypoglycemia",
+    "sulfonylurea"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150102-2-09",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150102-1",
+   "setOrder": 2,
+   "stemHtml": "<p>The screen is positive for glipizide. The pharmacy confirms that her own prescriptions were dispensed correctly and that she has never been prescribed glipizide. She is alone in her hospital room and asks whether the tests have found anything. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Arrange pancreatic imaging to be thorough before discussing results"
+    },
+    {
+     "label": "B",
+     "html": "Discharge her without discussing the result to avoid conflict"
+    },
+    {
+     "label": "C",
+     "html": "Discuss the result with her privately and without blame, and offer psychiatric support"
+    },
+    {
+     "label": "D",
+     "html": "Inform her husband first so he can confront her at home"
+    },
+    {
+     "label": "E",
+     "html": "Search her belongings for tablets while she is out of the room"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A positive glipizide screen with no prescription or dispensing error points to surreptitious secretagogue use (factitious disorder, or harm by another person, which must also be considered). The physician should <strong>share the finding honestly and privately, without accusation</strong>, explore what happened, assess her safety and offer psychiatric care. Withholding the result or involving others without consent breaches trust and confidentiality.</p><p><strong>Takeaway:</strong> disclose a positive secretagogue screen to the patient privately and supportively, and offer psychiatric care.</p>",
+   "whyNot": {
+    "A": "Imaging is unnecessary once the cause is identified and delays honest disclosure.",
+    "B": "Discharging her without discussion leaves a dangerous cause unaddressed and is dishonest.",
+    "D": "Telling her husband first breaches confidentiality; he could also be the source of the drug.",
+    "E": "Searching a patient's belongings without consent violates her autonomy and trust."
+   },
+   "objective": "Disclose evidence of factitious hypoglycemia honestly and supportively.",
+   "areas": [
+    "usmle2026.15.01.02",
+    "usmle2026.18.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "psychiatry"
+   ],
+   "tasks": [
+    "communication",
+    "professionalism"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "factitious hypoglycemia",
+    "ethics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150102-01",
+   "frontHtml": "Whipple's triad?",
+   "backHtml": "Symptoms of hypoglycemia, a low plasma glucose measured at the time (below 55 mg/dL in people without diabetes), and relief when glucose is raised.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-02",
+   "frontHtml": "Order of the counterregulatory response to falling glucose?",
+   "backHtml": "Insulin secretion stops, then glucagon rises, then epinephrine; cortisol and growth hormone act over hours.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-03",
+   "frontHtml": "Why does C-peptide separate injected insulin from the body's own insulin?",
+   "backHtml": "C-peptide is cleaved from proinsulin inside beta cells and released with insulin; drug insulin contains none.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-04",
+   "frontHtml": "High insulin, high C-peptide, high proinsulin: two possible causes?",
+   "backHtml": "Insulinoma or an insulin secretagogue (sulfonylurea, meglitinide); a drug screen separates them.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-05",
+   "frontHtml": "Low insulin, low C-peptide and low ketones during hypoglycemia with a large tumour?",
+   "backHtml": "Non-islet cell tumour hypoglycemia from incompletely processed (\"big\") IGF-2.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-06",
+   "frontHtml": "How does alcohol cause fasting hypoglycemia?",
+   "backHtml": "A high NADH/NAD<sup>+</sup> ratio diverts pyruvate and oxaloacetate away from gluconeogenesis once glycogen is depleted.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-07",
+   "frontHtml": "Necrolytic migratory erythema, new diabetes, weight loss and DVT?",
+   "backHtml": "Glucagonoma (alpha-cell tumour).",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-08",
+   "frontHtml": "Watery diarrhea despite fasting, hypokalemia, achlorhydria?",
+   "backHtml": "VIPoma: VIP raises enterocyte cAMP and drives chloride secretion.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-09",
+   "frontHtml": "Somatostatinoma triad?",
+   "backHtml": "Diabetes, gallstones and steatorrhea (with achlorhydria).",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-10",
+   "frontHtml": "Why do infants of mothers with diabetes become hypoglycemic after birth?",
+   "backHtml": "Fetal beta-cell hyperplasia keeps secreting insulin after the maternal glucose supply stops.",
+   "sectionId": "s23c-s150102-1-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-11",
+   "frontHtml": "Hypoglycemia in a conscious patient who can swallow?",
+   "backHtml": "15–20 g fast-acting carbohydrate; recheck after 15 minutes; repeat if low; then eat.",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-12",
+   "frontHtml": "Hypoglycemia in a person who cannot swallow, outside hospital?",
+   "backHtml": "Glucagon (IM, SC or intranasal) and recovery position; nothing by mouth.",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-13",
+   "frontHtml": "Recurrent hypoglycemia from a sulfonylurea despite dextrose: added drug?",
+   "backHtml": "Octreotide (inhibits insulin secretion); admit for monitoring.",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-14",
+   "frontHtml": "Management of hypoglycemia unawareness in type 1 diabetes?",
+   "backHtml": "CGM with alerts, insulin review, and weeks of strict hypoglycemia avoidance with higher targets.",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-15",
+   "frontHtml": "Post-bariatric hypoglycemia: timing and first-line treatment?",
+   "backHtml": "1–3 hours after meals; small frequent meals low in refined carbohydrate (then acarbose).",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-16",
+   "frontHtml": "When is the pancreas imaged in suspected insulinoma?",
+   "backHtml": "Only after endogenous hyperinsulinism is proven and the secretagogue screen is negative: CT or MRI, then EUS.",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150102-17",
+   "frontHtml": "Drug that controls insulinoma hypoglycemia when surgery is not possible?",
+   "backHtml": "Diazoxide (opens beta-cell K<sub>ATP</sub> channels), or a somatostatin analogue.",
+   "sectionId": "s23c-s150102-2-1",
+   "areas": [
+    "usmle2026.15.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

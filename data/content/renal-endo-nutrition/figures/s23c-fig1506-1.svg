@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" role="img" aria-label="Hypothalamic nuclei and what happens when each is damaged">
+<title>Hypothalamic nuclei: function and lesion</title>
+<rect x="0" y="0" width="720" height="400" fill="#ffffff"/>
+<ellipse cx="180" cy="190" rx="155" ry="120" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="180" y="62" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Hypothalamus (sagittal sketch)</text>
+<text x="40" y="200" font-family="sans-serif" font-size="11" fill="#475569">anterior</text><text x="285" y="200" font-family="sans-serif" font-size="11" fill="#475569">posterior</text>
+<g font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">
+<circle cx="95" cy="130" r="18" fill="#fde68a" stroke="#334155"/><text x="95" y="134">PVN</text>
+<circle cx="95" cy="235" r="18" fill="#fde68a" stroke="#334155"/><text x="95" y="239">SON</text>
+<circle cx="140" cy="270" r="18" fill="#e9d5ff" stroke="#334155"/><text x="140" y="274">SCN</text>
+<circle cx="150" cy="180" r="18" fill="#fecaca" stroke="#334155"/><text x="150" y="184">Ant</text>
+<circle cx="205" cy="145" r="18" fill="#bbf7d0" stroke="#334155"/><text x="205" y="149">LH</text>
+<circle cx="205" cy="215" r="18" fill="#bbf7d0" stroke="#334155"/><text x="205" y="219">VMN</text>
+<circle cx="190" cy="270" r="18" fill="#bfdbfe" stroke="#334155"/><text x="190" y="274">Arc</text>
+<circle cx="265" cy="170" r="18" fill="#fecaca" stroke="#334155"/><text x="265" y="174">Post</text>
+</g>
+<g font-family="sans-serif" font-size="12" fill="#0f172a">
+<text x="360" y="60" font-weight="bold">Nucleus → normal role → effect of a lesion</text>
+<text x="360" y="88">PVN, SON: ADH and oxytocin → central diabetes insipidus</text>
+<text x="360" y="112">PVN: CRH, TRH; MC4R satiety signalling</text>
+<text x="360" y="136">Arc (arcuate): dopamine, GnRH, GHRH; leptin sensing</text>
+<text x="360" y="152">   (POMC/α-MSH vs NPY/AgRP) → ↑ prolactin, hypogonadism</text>
+<text x="360" y="176">VMN (ventromedial): satiety → hyperphagia, obesity</text>
+<text x="360" y="200">LH (lateral area): hunger → anorexia, weight loss</text>
+<text x="360" y="224">Ant (anterior/preoptic): heat loss → hyperthermia</text>
+<text x="360" y="248">Post (posterior): heat conservation → poikilothermia</text>
+<text x="360" y="272">SCN (suprachiasmatic): circadian clock (retinal input,</text>
+<text x="360" y="288">   melatonin rhythm) → disrupted sleep-wake cycle</text>
+</g>
+<rect x="20" y="330" width="680" height="56" rx="8" fill="#fffbeb" stroke="#b45309"/>
+<text x="32" y="352" font-family="sans-serif" font-size="12" fill="#0f172a">Naadi memory aid: the lateral area makes you Look for food; the ventromedial nucleus says "Very Much, stop".</text>
+<text x="32" y="372" font-family="sans-serif" font-size="12" fill="#0f172a">Anterior cools (A/C); posterior keeps heat in.</text>
+</svg>

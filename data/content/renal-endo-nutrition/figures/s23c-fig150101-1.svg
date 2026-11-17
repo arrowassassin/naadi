@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-label="Glucose-stimulated insulin secretion in the beta cell, with the sites where diabetes drugs act">
+<title>Beta-cell insulin secretion and drug targets</title>
+<defs><marker id="s23c-f150101-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+<rect x="40" y="40" width="440" height="340" rx="40" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="260" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Pancreatic beta cell</text>
+<rect x="20" y="70" width="40" height="34" rx="6" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="40" y="92" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">GLUT2</text>
+<text x="20" y="62" font-family="sans-serif" font-size="12" fill="#0f172a">Glucose in</text>
+<line x1="62" y1="87" x2="110" y2="87" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-arrow)"/>
+<text x="115" y="92" font-family="sans-serif" font-size="12" fill="#0f172a">Glucokinase → glycolysis</text>
+<line x1="180" y1="100" x2="180" y2="140" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-arrow)"/>
+<text x="120" y="158" font-family="sans-serif" font-size="12" fill="#0f172a">Mitochondria: ↑ ATP/ADP</text>
+<line x1="180" y1="166" x2="180" y2="206" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-arrow)"/>
+<rect x="105" y="210" width="150" height="40" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+<text x="180" y="228" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">K-ATP channel closes</text>
+<text x="180" y="243" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">(Kir6.2 / SUR1)</text>
+<line x1="180" y1="252" x2="180" y2="282" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-arrow)"/>
+<text x="180" y="298" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Depolarisation → voltage-gated Ca²⁺ influx</text>
+<line x1="260" y1="305" x2="330" y2="325" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-arrow)"/>
+<circle cx="370" cy="330" r="22" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="370" y="334" font-family="sans-serif" font-size="10" fill="#0f172a" text-anchor="middle">granule</text>
+<line x1="392" y1="330" x2="500" y2="330" stroke="#15803d" stroke-width="2.5" marker-end="url(#s23c-f150101-arrow)"/>
+<text x="505" y="326" font-family="sans-serif" font-size="12" fill="#0f172a">Insulin + C-peptide</text>
+<text x="505" y="342" font-family="sans-serif" font-size="11" fill="#0f172a">(equimolar release)</text>
+<rect x="300" y="120" width="160" height="56" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="380" y="140" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">GLP-1 receptor (Gs)</text>
+<text x="380" y="158" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">↑ cAMP amplifies secretion</text>
+<text x="380" y="171" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">only when glucose is high</text>
+<line x1="380" y1="178" x2="370" y2="305" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#s23c-f150101-arrow)"/>
+<rect x="500" y="40" width="205" height="250" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+<text x="512" y="62" font-family="sans-serif" font-size="13" font-weight="bold" fill="#78350f">Where drugs act</text>
+<text x="512" y="86" font-family="sans-serif" font-size="12" fill="#0f172a">• Sulfonylureas, meglitinides:</text>
+<text x="522" y="102" font-family="sans-serif" font-size="12" fill="#0f172a">bind SUR1, close K-ATP</text>
+<text x="522" y="118" font-family="sans-serif" font-size="12" fill="#0f172a">(glucose-independent)</text>
+<text x="512" y="142" font-family="sans-serif" font-size="12" fill="#0f172a">• GLP-1 RAs, tirzepatide:</text>
+<text x="522" y="158" font-family="sans-serif" font-size="12" fill="#0f172a">incretin receptors, ↑ cAMP</text>
+<text x="512" y="182" font-family="sans-serif" font-size="12" fill="#0f172a">• DPP-4 inhibitors: keep</text>
+<text x="522" y="198" font-family="sans-serif" font-size="12" fill="#0f172a">endogenous GLP-1/GIP active</text>
+<text x="512" y="222" font-family="sans-serif" font-size="12" fill="#0f172a">• Diazoxide: opens K-ATP</text>
+<text x="522" y="238" font-family="sans-serif" font-size="12" fill="#0f172a">(blocks secretion)</text>
+<text x="512" y="262" font-family="sans-serif" font-size="12" fill="#0f172a">• Glucokinase loss (MODY):</text>
+<text x="522" y="278" font-family="sans-serif" font-size="12" fill="#0f172a">higher glucose set point</text>
+<text x="40" y="408" font-family="sans-serif" font-size="12" fill="#0f172a">Endogenous insulin brings C-peptide; injected insulin does not, and sulfonylureas raise both.</text>
+</svg>

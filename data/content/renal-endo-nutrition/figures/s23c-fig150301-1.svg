@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-label="Calcium, phosphate, PTH and other laboratory patterns that separate the main disorders of calcium metabolism">
+<title>Calcium disorders by laboratory pattern</title>
+<rect x="0" y="0" width="760" height="380" fill="#ffffff"/>
+<g font-family="sans-serif" font-size="13" fill="#0f172a">
+<rect x="10" y="12" width="740" height="34" fill="#e2e8f0" stroke="#334155"/>
+<text x="20" y="34" font-weight="bold">Disorder</text>
+<text x="300" y="34" font-weight="bold">Calcium</text>
+<text x="390" y="34" font-weight="bold">Phosphate</text>
+<text x="490" y="34" font-weight="bold">PTH</text>
+<text x="620" y="34" font-weight="bold">Other clue</text>
+<text x="20" y="72">Primary hyperparathyroidism</text>
+<text x="300" y="72">high</text>
+<text x="390" y="72">low-normal</text>
+<text x="490" y="72">high or normal</text>
+<text x="620" y="72">urine Ca normal/high</text>
+<rect x="10" y="88" width="740" height="40" fill="#f8fafc"/>
+<text x="20" y="112">Familial hypocalciuric hypercalcemia</text>
+<text x="300" y="112">high</text>
+<text x="390" y="112">normal</text>
+<text x="490" y="112">normal/mild ↑</text>
+<text x="620" y="112">urine Ca very low</text>
+<text x="20" y="152">Hypercalcemia of malignancy (PTHrP)</text>
+<text x="300" y="152">high</text>
+<text x="390" y="152">low</text>
+<text x="490" y="152">suppressed</text>
+<text x="620" y="152">PTHrP high</text>
+<rect x="10" y="168" width="740" height="40" fill="#f8fafc"/>
+<text x="20" y="192">Granulomas / lymphoma (calcitriol)</text>
+<text x="300" y="192">high</text>
+<text x="390" y="192">high-normal</text>
+<text x="490" y="192">suppressed</text>
+<text x="620" y="192">calcitriol high</text>
+<text x="20" y="232">Hypoparathyroidism</text>
+<text x="300" y="232">low</text>
+<text x="390" y="232">high</text>
+<text x="490" y="232">low</text>
+<text x="620" y="232">calcitriol low</text>
+<rect x="10" y="248" width="740" height="40" fill="#f8fafc"/>
+<text x="20" y="272">Pseudohypoparathyroidism</text>
+<text x="300" y="272">low</text>
+<text x="390" y="272">high</text>
+<text x="490" y="272">high</text>
+<text x="620" y="272">PTH resistance</text>
+<text x="20" y="312">Vitamin D deficiency (2° HPT)</text>
+<text x="300" y="312">low/normal</text>
+<text x="390" y="312">low</text>
+<text x="490" y="312">high</text>
+<text x="620" y="312">25-OH D low</text>
+<rect x="10" y="328" width="740" height="40" fill="#f8fafc"/>
+<text x="20" y="352">Chronic kidney disease (2° HPT)</text>
+<text x="300" y="352">low/normal</text>
+<text x="390" y="352">high</text>
+<text x="490" y="352">high</text>
+<text x="620" y="352">calcitriol low</text>
+<line x1="10" y1="368" x2="750" y2="368" stroke="#334155"/>
+</g>
+</svg>

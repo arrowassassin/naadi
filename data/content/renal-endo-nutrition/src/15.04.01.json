@@ -1,0 +1,1310 @@
+{
+ "area": "usmle2026.15.04.01",
+ "sections": [
+  {
+   "id": "s23c-s150401-1-1",
+   "exam": "step1",
+   "heading": "Adrenal cortex and medulla: hormone excess, deficiency and tumours",
+   "html": "<p>The adrenal gland is two organs in one capsule. The <strong>cortex</strong> (mesoderm) makes steroids from cholesterol; the <strong>medulla</strong> (neural crest) is a modified sympathetic ganglion that makes catecholamines.</p>\n<table><tr><th>Layer</th><th>Main product</th><th>Main regulator</th></tr>\n<tr><td>Zona glomerulosa</td><td>Aldosterone</td><td>Angiotensin II and serum potassium (ACTH only minor)</td></tr>\n<tr><td>Zona fasciculata</td><td>Cortisol</td><td>ACTH</td></tr>\n<tr><td>Zona reticularis</td><td>Androgen precursors (DHEA, DHEA sulfate)</td><td>ACTH</td></tr>\n<tr><td>Medulla</td><td>Epinephrine (mostly), norepinephrine</td><td>Preganglionic sympathetic (acetylcholine, nicotinic receptors); cortisol from the cortex induces PNMT, which makes epinephrine</td></tr></table>\n<h3>Adrenal insufficiency</h3>\n<ul><li><strong>Primary</strong> (Addison disease): the gland itself fails. In high-income countries autoimmune adrenalitis is most common (antibodies to 21-hydroxylase, often with other autoimmune endocrine disease); worldwide, tuberculosis. Other causes: bilateral hemorrhage (anticoagulation, antiphospholipid syndrome, meningococcal sepsis as <em>Waterhouse-Friderichsen syndrome</em>), metastases (lung, breast), fungal infection, adrenoleukodystrophy in boys and young men.</li>\n<li>Both cortisol and aldosterone are lost. Low aldosterone gives <strong>hyponatremia, hyperkalemia, mild metabolic acidosis</strong> and salt craving with volume depletion. Low cortisol removes negative feedback, so the pituitary makes more <strong>pro-opiomelanocortin (POMC)</strong>; its cleavage products ACTH and melanocyte-stimulating hormone darken skin creases, scars and the buccal mucosa.</li>\n<li><strong>Secondary</strong> (pituitary) and <strong>tertiary</strong> (hypothalamic, including after stopping long-term glucocorticoids): ACTH is low, so there is <em>no hyperpigmentation</em>, and because renin-angiotensin still drives the glomerulosa, aldosterone is preserved and <em>hyperkalemia is absent</em>. Hyponatremia can still occur, because cortisol deficiency raises ADH release.</li></ul>\n<h3>Cushing syndrome (cortisol excess)</h3>\n<p>Features: central obesity with thin limbs, facial rounding, dorsocervical fat, wide purple striae, easy bruising, proximal muscle weakness, hypertension, hyperglycemia, osteoporosis, infections, mood change; in children, weight gain with <em>slowing</em> linear growth.</p>\n<table><tr><th>Cause</th><th>ACTH</th><th>Clue</th></tr>\n<tr><td>Exogenous glucocorticoid (most common overall)</td><td>Low</td><td>Includes inhaled, topical or injected steroids, especially with CYP3A4 inhibitors such as ritonavir; the adrenals are atrophic</td></tr>\n<tr><td>Pituitary corticotroph adenoma (Cushing disease; most common endogenous cause)</td><td>Normal or high</td><td>Usually a microadenoma; cortisol suppresses with high-dose dexamethasone; bilateral adrenal hyperplasia</td></tr>\n<tr><td>Ectopic ACTH (small cell lung cancer, bronchial and other carcinoids)</td><td>Often very high</td><td>Rapid onset, hypokalemia and alkalosis (cortisol overwhelms renal 11β-HSD2), hyperpigmentation; no suppression with high-dose dexamethasone</td></tr>\n<tr><td>Adrenal adenoma or carcinoma</td><td>Suppressed</td><td>Contralateral adrenal atrophic; carcinoma is large and often also makes androgens</td></tr></table>\n<h3>Mineralocorticoid excess</h3>\n<p><strong>Primary aldosteronism</strong> (bilateral zona glomerulosa hyperplasia or an aldosterone-producing adenoma) is the commonest curable cause of hypertension. Aldosterone raises ENaC activity in principal cells, so sodium is retained and potassium and hydrogen ions are lost: hypertension, <strong>low renin</strong>, metabolic alkalosis and, in a minority, hypokalemia. Edema is absent because of \"aldosterone escape\" (pressure natriuresis and natriuretic peptides).</p>\n<table><tr><th>Condition</th><th>Renin</th><th>Aldosterone</th><th>Mechanism</th></tr>\n<tr><td>Primary aldosteronism</td><td>Low</td><td>High</td><td>Autonomous aldosterone</td></tr>\n<tr><td>Renovascular hypertension, renin-secreting tumour, diuretics</td><td>High</td><td>High</td><td>Secondary aldosteronism</td></tr>\n<tr><td>Liddle syndrome</td><td>Low</td><td>Low</td><td>Gain-of-function ENaC (autosomal dominant); treated with amiloride or triamterene</td></tr>\n<tr><td>Apparent mineralocorticoid excess, heavy licorice intake</td><td>Low</td><td>Low</td><td>11β-HSD2 deficient or inhibited, so cortisol activates the mineralocorticoid receptor</td></tr>\n<tr><td>11β-hydroxylase or 17α-hydroxylase deficiency</td><td>Low</td><td>Low</td><td>Excess 11-deoxycorticosterone acts as a mineralocorticoid</td></tr></table>\n<h3>Adrenal medulla and tumours</h3>\n<ul><li><strong>Pheochromocytoma</strong>: a catecholamine-secreting chromaffin-cell tumour (a <em>paraganglioma</em> if outside the adrenal). Paroxysms of headache, sweating and palpitations with hypertension (sustained or episodic), pallor, anxiety, hyperglycemia. Chromogranin-positive nests of cells (\"zellballen\") with sustentacular cells. Roughly a third or more carry a germline variant: <em>RET</em> (MEN2), <em>VHL</em>, <em>NF1</em>, succinate dehydrogenase genes (paragangliomas, higher malignancy risk), so genetic testing is offered to everyone.</li>\n<li><strong>Neuroblastoma</strong>: the most common extracranial solid tumour of early childhood, arising from neural crest cells of the medulla or sympathetic chain. A firm, irregular abdominal mass that may cross the midline, with periorbital bruising from orbital metastases, Horner syndrome, opsoclonus-myoclonus (paraneoplastic) or hypertension. Small round blue cells, Homer Wright rosettes; urine homovanillic acid and vanillylmandelic acid raised. <strong><em>MYCN</em> amplification</strong> predicts aggressive disease.</li>\n<li><strong>Adrenocortical carcinoma</strong>: rare, usually large (often over 6 cm) and heterogeneous, frequently secreting cortisol and androgens together (rapid Cushing syndrome with virilisation); associated with Li-Fraumeni (<em>TP53</em>) and Beckwith-Wiedemann syndromes.</li></ul>\n<table><tr><th></th><th>Neuroblastoma</th><th>Wilms tumour</th></tr>\n<tr><td>Age</td><td>Most under 5 years (median under 2)</td><td>Usually 2–5 years</td></tr>\n<tr><td>Mass</td><td>Irregular, may cross the midline, calcified on imaging</td><td>Smooth, rarely crosses the midline</td></tr>\n<tr><td>Markers</td><td>Raised urine HVA and VMA</td><td>None; hematuria in some</td></tr>\n<tr><td>Genetics</td><td><em>MYCN</em> amplification (poor prognosis)</td><td><em>WT1</em>, <em>WT2</em> region</td></tr></table>\n<div class=\"trap\"><p><strong>Exam trap:</strong> hyperkalemia and hyperpigmentation both point to a <em>primary</em> adrenal problem. A patient with adrenal insufficiency and a normal potassium and no pigmentation more likely has pituitary disease or glucocorticoid withdrawal.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Salt, Sugar, Sex</em>\" from the outside in: glomerulosa keeps salt, fasciculata raises sugar, reticularis makes sex steroid precursors.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Addison Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441994/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypercortisolism (Cushing Syndrome)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK551526/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hyperaldosteronism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499983/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Pheochromocytoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK589700/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Neuroblastoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK448111/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Adrenocortical Carcinoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK546580/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Adrenal Gland Disorders",
+     "url": "https://medlineplus.gov/adrenalglanddisorders.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150401-2-1",
+   "exam": "step2ck",
+   "heading": "Adrenal insufficiency, Cushing syndrome and primary aldosteronism: diagnosis and management",
+   "html": "<h3>Adrenal insufficiency</h3>\n<ul><li><strong>Diagnose</strong>: an early-morning serum cortisol with plasma ACTH. A very low cortisol (below about 3–5 µg/dL) strongly suggests insufficiency; a clearly normal value (above about 15–18 µg/dL) makes it unlikely. Confirm with the <strong>cosyntropin (ACTH) stimulation test</strong>: a peak cortisol below about 18 µg/dL (lower cut-offs, near 14–15 µg/dL, apply to newer specific assays) means insufficiency. High ACTH means primary; low or normal means secondary. In primary disease check 21-hydroxylase antibodies; if negative, image the adrenals (CT).</li>\n<li><strong>Treat</strong> primary insufficiency with <strong>hydrocortisone</strong> (split doses, the larger one on waking) <strong>plus fludrocortisone</strong>; secondary insufficiency needs glucocorticoid only. Teach <strong>sick-day rules</strong>: double or triple the oral dose during fever or illness, inject hydrocortisone intramuscularly if vomiting, give stress doses for surgery, and wear medical identification.</li>\n<li><strong>Adrenal crisis</strong> (hypotension or shock, vomiting, abdominal pain, confusion, hyponatremia, hyperkalemia, hypoglycemia): do not wait for test results. Draw cortisol and ACTH if it causes no delay, then give <strong>hydrocortisone 100 mg IV</strong> immediately, followed by 200 mg per 24 hours, with rapid IV isotonic saline (and dextrose if hypoglycemic). Look for the precipitant (infection, missed doses).</li></ul>\n<h3>Cushing syndrome</h3>\n<ol><li>Exclude exogenous glucocorticoid, including inhaled, topical, intra-articular and herbal products, and interactions with CYP3A4 inhibitors.</li>\n<li>Screen with a test that fits the patient: <strong>late-night salivary cortisol</strong> (at least two samples), the <strong>1-mg overnight dexamethasone suppression test</strong> (morning cortisol above 1.8 µg/dL is abnormal), or <strong>24-hour urine free cortisol</strong> (at least two collections). Use two abnormal tests to confirm. Estrogen raises cortisol-binding globulin and gives false positives on the dexamethasone test; severe depression, alcohol use disorder and poorly controlled diabetes can mimic mild hypercortisolism.</li>\n<li>Measure <strong>plasma ACTH</strong>. Suppressed: adrenal CT. Normal or high (ACTH-dependent): pituitary MRI. A clear adenoma (about 10 mm or larger) with concordant tests points to Cushing disease; a small or absent lesion calls for <strong>bilateral inferior petrosal sinus sampling</strong> with CRH or desmopressin, where a central-to-peripheral ACTH gradient identifies a pituitary source. No gradient: search for an ectopic source (CT chest and abdomen, functional imaging).</li>\n<li><strong>Treat the source</strong>: transsphenoidal adenoma resection, adrenalectomy, or resection of the ectopic tumour. Medical options when surgery fails or must wait: steroidogenesis inhibitors (ketoconazole, metyrapone, osilodrostat), the receptor blocker mifepristone, and pituitary-directed pasireotide or cabergoline. After successful surgery the remaining axis is suppressed, so glucocorticoid replacement is needed until it recovers.</li></ol>\n<h3>Primary aldosteronism</h3>\n<ul><li><strong>Who to screen</strong>: current Endocrine Society guidance favours screening broadly, including adults with hypertension generally; it is clearly indicated with resistant hypertension, hypertension with hypokalemia (spontaneous or diuretic-induced), an adrenal incidentaloma, sleep apnea, atrial fibrillation, or a family history of early hypertension or stroke.</li>\n<li><strong>Screening test</strong>: morning plasma aldosterone with renin (activity or concentration). Suppressed renin with an inappropriately high aldosterone is positive. Correct hypokalemia first (it lowers aldosterone). Mineralocorticoid antagonists and diuretics can raise renin and mask the diagnosis.</li>\n<li><strong>Confirm</strong> (for example, with saline or oral sodium loading showing failure of aldosterone suppression) unless the result is unequivocal (spontaneous hypokalemia, renin suppressed, aldosterone very high).</li>\n<li><strong>Subtype</strong>: adrenal CT (mainly to exclude carcinoma), then <strong>adrenal vein sampling</strong> in a patient who wants surgery, because small nodules on CT are often nonfunctioning and bilateral disease is common, especially after about age 35–40.</li>\n<li><strong>Treat</strong>: unilateral disease, laparoscopic adrenalectomy; bilateral disease or a patient who declines surgery, a mineralocorticoid receptor antagonist (spironolactone, or eplerenone if gynecomastia or sexual side effects are a problem), titrated until renin is no longer suppressed.</li></ul>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Adrenal Crisis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499968/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Addison Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441994/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hypercortisolism (Cushing Syndrome)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK551526/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Hyperaldosteronism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499983/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Cushing Syndrome",
+     "url": "https://medlineplus.gov/cushingssyndrome.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150401-2-2",
+   "exam": "step2ck",
+   "heading": "Pheochromocytoma, adrenal incidentaloma and disorders of pubertal timing",
+   "html": "<h3>Pheochromocytoma and paraganglioma</h3>\n<ul><li><strong>Test</strong>: plasma free metanephrines (drawn supine after rest) or 24-hour urine fractionated metanephrines. Metanephrines are produced continuously inside the tumour, so they are more sensitive than catecholamines. Mild rises are common with tricyclic antidepressants, some antipsychotics, levodopa and sympathomimetics; levels several times the upper limit are highly specific.</li>\n<li><strong>Locate</strong> after biochemical confirmation: CT or MRI of the abdomen and pelvis (bright on T2-weighted MRI); functional imaging for extra-adrenal, multiple or metastatic disease.</li>\n<li><strong>Prepare for surgery</strong> with <strong>alpha blockade first</strong> (phenoxybenzamine or a selective alpha-1 blocker such as doxazosin) for 1–2 weeks, with a high-sodium diet and fluids to restore volume. Add a beta blocker only after adequate alpha blockade, for tachycardia. A beta blocker alone removes beta-2 vasodilation and leaves alpha-mediated vasoconstriction unopposed, which can cause a hypertensive crisis.</li>\n<li>After resection: watch for hypotension and hypoglycemia; offer <strong>genetic testing</strong> to every patient and lifelong biochemical follow-up.</li></ul>\n<h3>Adrenal incidentaloma</h3>\n<p>Masses found on imaging done for another reason are common, especially in older adults. Two questions apply to every mass (see the figure):</p>\n[[figure:s23c-fig150401-1]]\n<ul><li><strong>Hormone excess</strong>: a 1-mg overnight dexamethasone suppression test for every patient (autonomous cortisol secretion is the most frequent finding); plasma or urine metanephrines unless the mass is clearly a lipid-rich adenoma (10 Hounsfield units or less on noncontrast CT), in which pheochromocytoma is very unlikely; aldosterone and renin if there is hypertension or hypokalemia.</li>\n<li><strong>Malignancy</strong>: a homogeneous mass with attenuation of 10 Hounsfield units or less on noncontrast CT is a lipid-rich adenoma. If it is under 4 cm and nonfunctioning, no further imaging is needed. Larger, heterogeneous or higher-attenuation masses need further imaging (contrast washout CT, MRI or FDG-PET) or surgery. Never biopsy before excluding pheochromocytoma; biopsy is reserved mainly for suspected metastasis when it would change management.</li>\n<li><strong>Mild autonomous cortisol secretion</strong> (cortisol not suppressed after dexamethasone without overt Cushing features) is linked to hypertension, diabetes, osteoporosis and cardiovascular events; screen for these and treat them, and consider adrenalectomy case by case.</li></ul>\n<h3>Puberty that comes early or late</h3>\n<table><tr><th></th><th>Central (gonadotropin-dependent)</th><th>Peripheral (gonadotropin-independent)</th></tr>\n<tr><td>Mechanism</td><td>Early activation of hypothalamic GnRH pulses</td><td>Sex steroids from the adrenal, gonad, a tumour or outside source</td></tr>\n<tr><td>LH (basal or after GnRH or GnRH-agonist stimulation)</td><td>Pubertal</td><td>Suppressed</td></tr>\n<tr><td>Examples</td><td>Idiopathic (most girls); CNS lesions such as hypothalamic hamartoma, tumours, hydrocephalus, prior irradiation (more often in boys)</td><td>Congenital adrenal hyperplasia, McCune-Albright syndrome, ovarian cyst or tumour, Leydig cell tumour, hCG-secreting tumour, exogenous testosterone or estrogen</td></tr>\n<tr><td>Treatment</td><td>GnRH agonist after brain MRI where indicated</td><td>Treat the source</td></tr></table>\n<ul><li><strong>Precocious puberty</strong>: secondary sexual characteristics before about age 8 in girls or 9 in boys. Start with growth velocity and <strong>bone age</strong> (advanced in true puberty). Brain MRI is indicated in all boys with central precocious puberty and in younger girls (under about 6 years) or any child with neurologic signs. Testicular enlargement points to central puberty or a Leydig cell tumour (unilateral); prepubertal testes with virilisation point to an adrenal source.</li>\n<li><strong>McCune-Albright syndrome</strong>: a postzygotic activating <em>GNAS</em> variant (mosaic), giving peripheral precocious puberty from autonomous ovarian cysts, irregular \"coast of Maine\" café-au-lait macules and polyostotic fibrous dysplasia, sometimes with other hormone excess.</li>\n<li><strong>Delayed puberty</strong>: no breast development by about 13 in girls, or testes under 4 mL by about 14 in boys. <strong>Constitutional delay</strong> is the most common cause (short with a delayed bone age, often a parent who matured late, normal growth velocity for bone age). Low LH and FSH also occur with hypogonadotropic hypogonadism (Kallmann syndrome with anosmia, pituitary disease, anorexia, chronic illness); high LH and FSH mean gonadal failure (Turner syndrome, Klinefelter syndrome).</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> never start a beta blocker before alpha blockade in suspected pheochromocytoma, and never send a patient with suspected adrenal crisis for a stimulation test before giving hydrocortisone.</p></div>",
+   "figureIds": [
+    "s23c-fig150401-1"
+   ],
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Pheochromocytoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK589700/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Perioperative Management of Pheochromocytoma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK589634/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Precocious Puberty",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK544313/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Delayed Puberty",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK544322/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150401-1",
+   "caption": "Figure. Work-up of an adrenal incidentaloma: test every mass for hormone excess and judge cancer risk from size and CT attenuation.",
+   "file": "figures/s23c-fig150401-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150401-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Fatigue and darkening skin",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150401-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old woman has 6 months of fatigue, a 5-kg weight loss, nausea and craving for salty food. She has vitiligo and takes levothyroxine for Hashimoto thyroiditis. Blood pressure is 92/58 mm Hg supine. Her palmar creases, knuckles and gums are darkly pigmented. Serum sodium is 130 mEq/L and potassium 5.7 mEq/L. Which of the following best explains the change in her skin?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Autoantibodies that stimulate melanocyte tyrosinase"
+    },
+    {
+     "label": "B",
+     "html": "Increased cleavage of pro-opiomelanocortin in the pituitary"
+    },
+    {
+     "label": "C",
+     "html": "Increased conversion of cortisol to cortisone in the skin"
+    },
+    {
+     "label": "D",
+     "html": "Loss of aldosterone action on skin melanocytes"
+    },
+    {
+     "label": "E",
+     "html": "Loss of cortisol-mediated suppression of melanin degradation"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Autoimmune destruction of the adrenal cortex (with other autoimmune disease) removes cortisol feedback, so corticotrophs make much more <strong>pro-opiomelanocortin (POMC)</strong>. POMC is cleaved into ACTH and melanocyte-stimulating hormone, both of which stimulate melanocortin-1 receptors on melanocytes. Pigmentation, together with hyperkalemia from aldosterone loss, marks <em>primary</em> adrenal insufficiency.</p><p><strong>Takeaway:</strong> hyperpigmentation in adrenal insufficiency comes from high POMC-derived peptides, so it occurs only in primary disease.</p>",
+   "whyNot": {
+    "A": "Antibodies against melanocytes cause vitiligo (loss of pigment), not increased pigment.",
+    "C": "Skin 11β-HSD activity does not control pigmentation, and cortisol is low here.",
+    "D": "Aldosterone has no direct action on melanocytes; its loss explains the hyperkalemia and salt craving.",
+    "E": "Cortisol does not regulate melanin breakdown; the pigment comes from melanocortin receptor stimulation."
+   },
+   "objective": "Explain hyperpigmentation in primary adrenal insufficiency through increased POMC cleavage.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Addison disease"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old girl has a firm, irregular abdominal mass that crosses the midline, bruising around both eyes and irritability. CT shows a calcified mass arising from the right adrenal gland. Urine homovanillic and vanillylmandelic acid levels are raised. Biopsy shows sheets of small round blue cells with rosettes around a central fibrillary core. Which of the following findings in the tumour cells would best predict aggressive behaviour?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amplification of <em>MYCN</em>"
+    },
+    {
+     "label": "B",
+     "html": "Deletion of <em>WT1</em>"
+    },
+    {
+     "label": "C",
+     "html": "Fusion of <em>EWSR1</em> and <em>FLI1</em>"
+    },
+    {
+     "label": "D",
+     "html": "Loss of both <em>RB1</em> alleles"
+    },
+    {
+     "label": "E",
+     "html": "Translocation of <em>MYC</em> to the immunoglobulin heavy-chain locus"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An adrenal mass crossing the midline with orbital metastases (\"raccoon eyes\"), calcification, raised catecholamine metabolites and Homer Wright rosettes is <strong>neuroblastoma</strong>, a neural crest tumour. <strong><em>MYCN</em> amplification</strong> is the key adverse prognostic marker and moves a child into the high-risk group.</p><p><strong>Takeaway:</strong> in neuroblastoma, <em>MYCN</em> amplification predicts aggressive disease.</p>",
+   "whyNot": {
+    "B": "<em>WT1</em> loss is linked to Wilms tumour, which arises from the kidney, rarely crosses the midline and does not raise urine catecholamine metabolites.",
+    "C": "<em>EWSR1-FLI1</em> fusion defines Ewing sarcoma, a bone tumour of older children.",
+    "D": "Biallelic <em>RB1</em> loss causes retinoblastoma (and osteosarcoma).",
+    "E": "The <em>MYC</em>-immunoglobulin translocation defines Burkitt lymphoma."
+   },
+   "objective": "Identify neuroblastoma and its main adverse prognostic marker (MYCN amplification).",
+   "areas": [
+    "usmle2026.15.04.01",
+    "usmle2026.16.02.02"
+   ],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "neuroblastoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 44-year-old man is seen for headaches, sweating and palpitations in brief attacks. Blood pressure is 168/104 mm Hg. Before any testing, a clinician starts propranolol for his tachycardia. Two hours after the first dose he has a severe headache and blood pressure of 236/132 mm Hg. Plasma free metanephrines are later found to be 9 times the upper limit of normal. Which of the following best explains the rise in blood pressure after propranolol?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Blockade of presynaptic beta receptors increased catecholamine release from sympathetic nerves"
+    },
+    {
+     "label": "B",
+     "html": "Loss of beta-1 inhibition of renin release"
+    },
+    {
+     "label": "C",
+     "html": "Loss of beta-2-mediated vasodilation left alpha-1-mediated vasoconstriction unopposed"
+    },
+    {
+     "label": "D",
+     "html": "Propranolol directly stimulated alpha-1 receptors on arterioles"
+    },
+    {
+     "label": "E",
+     "html": "Propranolol inhibited the breakdown of circulating catecholamines"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The attacks and very high metanephrines indicate a <strong>pheochromocytoma</strong>. Circulating epinephrine and norepinephrine act on vascular alpha-1 receptors (vasoconstriction) and beta-2 receptors (vasodilation, mainly in skeletal muscle). A nonselective beta blocker removes the beta-2 vasodilation, leaving <strong>alpha-mediated vasoconstriction unopposed</strong>, and also removes some cardiac compensation, so blood pressure can surge. This is why alpha blockade must come first.</p><p><strong>Takeaway:</strong> in pheochromocytoma, give alpha blockade before any beta blocker.</p>",
+   "whyNot": {
+    "A": "Presynaptic receptor effects are minor; the catecholamines here come from the tumour, not from nerve terminals.",
+    "B": "Beta-1 blockade lowers renin, which would tend to lower, not raise, blood pressure.",
+    "D": "Propranolol has no alpha-agonist activity.",
+    "E": "Catecholamine breakdown by COMT and MAO is unaffected by propranolol."
+   },
+   "objective": "Explain why beta blockade without prior alpha blockade causes a hypertensive crisis in pheochromocytoma.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pheochromocytoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-1-04",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 26-year-old man is evaluated for new hypertension and muscle cramps. Over 3 months he has eaten several large bags of imported black licorice candy daily. He takes no medications.</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Blood pressure</td><td>158/98 mm Hg</td></tr><tr><td>Serum sodium</td><td>144 mEq/L</td></tr><tr><td>Serum potassium</td><td>2.9 mEq/L</td></tr><tr><td>Serum bicarbonate</td><td>32 mEq/L</td></tr><tr><td>Plasma renin activity</td><td>0.2 ng/mL/h (N = 0.6–4.3)</td></tr><tr><td>Plasma aldosterone</td><td>2 ng/dL (N = 4–31)</td></tr></table><p>Which of the following best explains these findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Activation of the mineralocorticoid receptor by cortisol"
+    },
+    {
+     "label": "B",
+     "html": "Constitutive activation of the epithelial sodium channel"
+    },
+    {
+     "label": "C",
+     "html": "Excess 11-deoxycorticosterone from an adrenal enzyme block"
+    },
+    {
+     "label": "D",
+     "html": "Increased secretion of aldosterone by the zona glomerulosa"
+    },
+    {
+     "label": "E",
+     "html": "Increased secretion of renin by juxtaglomerular cells"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hypertension, hypokalemia and metabolic alkalosis with <em>both</em> renin and aldosterone suppressed mean a mineralocorticoid effect that is not aldosterone. Glycyrrhetinic acid in licorice inhibits <strong>11β-hydroxysteroid dehydrogenase type 2</strong> in the collecting duct, which normally inactivates cortisol to cortisone. Cortisol, present at far higher concentrations than aldosterone, then <strong>activates the mineralocorticoid receptor</strong>. It resolves after licorice is stopped.</p><p><strong>Takeaway:</strong> low renin, low aldosterone hypertension with hypokalemia and a history of licorice is apparent mineralocorticoid excess.</p>",
+   "whyNot": {
+    "B": "Liddle syndrome gives the same laboratory pattern, but it is inherited and not explained by licorice intake.",
+    "C": "11β- and 17α-hydroxylase deficiencies are congenital and present earlier, with abnormal sex-steroid development.",
+    "D": "Primary aldosteronism would raise aldosterone, not suppress it.",
+    "E": "High renin would raise aldosterone; both are low here."
+   },
+   "objective": "Recognise licorice-induced apparent mineralocorticoid excess from a low-renin, low-aldosterone pattern.",
+   "areas": [
+    "usmle2026.15.04.01",
+    "usmle2026.15.09.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "apparent mineralocorticoid excess",
+    "licorice"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man who smokes 40 cigarettes a day has 6 weeks of rapidly worsening proximal weakness, leg edema and new hyperglycemia. Blood pressure is 172/100 mm Hg. He is thin, with darkened skin but no striae. Serum potassium is 2.6 mEq/L and bicarbonate 34 mEq/L. Late-night salivary cortisol is markedly raised. Plasma ACTH is 310 pg/mL (N = 10–60). Cortisol does not suppress after 8 mg of dexamethasone. Pituitary MRI is normal. Which of the following is the most likely source of the ACTH?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Adrenocortical carcinoma"
+    },
+    {
+     "label": "B",
+     "html": "Corticotroph microadenoma of the pituitary"
+    },
+    {
+     "label": "C",
+     "html": "Hypothalamic CRH-secreting gangliocytoma"
+    },
+    {
+     "label": "D",
+     "html": "Small cell carcinoma of the lung"
+    },
+    {
+     "label": "E",
+     "html": "Squamous cell carcinoma of the lung"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A very high ACTH that does not suppress with high-dose dexamethasone, rapid onset, hyperpigmentation and severe hypokalemic alkalosis in a heavy smoker point to <strong>ectopic ACTH secretion</strong>, most often from <strong>small cell lung carcinoma</strong> (a neuroendocrine tumour). Such high cortisol levels saturate renal 11β-HSD2, so cortisol acts as a mineralocorticoid, causing hypokalemia and edema.</p><p><strong>Takeaway:</strong> very high, nonsuppressible ACTH with rapid Cushing features and hypokalemia in a smoker suggests ectopic ACTH from small cell lung cancer.</p>",
+   "whyNot": {
+    "A": "Adrenal carcinoma secretes cortisol autonomously, so ACTH would be suppressed.",
+    "B": "Pituitary adenomas usually give modestly raised ACTH that partly suppresses with high-dose dexamethasone, and the MRI is normal.",
+    "C": "CRH-secreting tumours are very rare and would usually show partial dexamethasone suppression; smoking points to the lung.",
+    "E": "Squamous cell lung cancer causes hypercalcemia through PTH-related peptide, not ACTH secretion."
+   },
+   "objective": "Localise ACTH-dependent Cushing syndrome with nonsuppressible ACTH to an ectopic small cell lung carcinoma.",
+   "areas": [
+    "usmle2026.15.04.01",
+    "usmle2026.16.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ectopic ACTH",
+    "Cushing syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 46-year-old woman with primary adrenal insufficiency diagnosed 3 years ago takes hydrocortisone and fludrocortisone. For 2 days she has had vomiting and diarrhea and could not keep her tablets down. She is drowsy. Temperature is 37.9°C (100.2°F), pulse 124/min and blood pressure 76/42 mm Hg. Serum sodium is 127 mEq/L, potassium 5.9 mEq/L and glucose 58 mg/dL. A blood sample for cortisol has been drawn. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cosyntropin stimulation test before any treatment"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous hydrocortisone 100 mg and rapid intravenous normal saline with dextrose"
+    },
+    {
+     "label": "C",
+     "html": "Norepinephrine infusion and await the cortisol result"
+    },
+    {
+     "label": "D",
+     "html": "Oral fludrocortisone at double the usual dose"
+    },
+    {
+     "label": "E",
+     "html": "Oral hydrocortisone at triple the usual dose"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is an <strong>adrenal crisis</strong> in a patient with known Addison disease who could not absorb her medicine. Give <strong>hydrocortisone 100 mg IV at once</strong> (then 200 mg per 24 hours), rapid isotonic saline and dextrose for hypoglycemia, and look for the trigger. At this dose hydrocortisone has enough mineralocorticoid effect, so fludrocortisone is not needed acutely.</p><p><strong>Takeaway:</strong> suspected adrenal crisis: IV hydrocortisone and saline immediately, never delayed for tests.</p>",
+   "whyNot": {
+    "A": "The diagnosis is already established, and testing would delay life-saving treatment.",
+    "C": "Vasopressors without glucocorticoid work poorly in adrenal crisis; hydrocortisone restores vascular responsiveness.",
+    "D": "Fludrocortisone is not a treatment for crisis; she cannot absorb oral drugs and needs glucocorticoid.",
+    "E": "Sick-day oral dosing is for mild illness; she is vomiting and in shock."
+   },
+   "objective": "Treat adrenal crisis with immediate IV hydrocortisone and saline.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "adrenal crisis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150401-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 32-year-old woman has 4 months of fatigue, a 6-kg weight loss, light-headedness on standing and darkening of her elbows and an old scar. Blood pressure is 98/64 mm Hg supine and 84/56 mm Hg standing. She is otherwise stable and eating normally. Serum sodium is 131 mEq/L and potassium 5.4 mEq/L. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT of the adrenal glands with contrast"
+    },
+    {
+     "label": "B",
+     "html": "Morning cortisol and ACTH, then cosyntropin stimulation"
+    },
+    {
+     "label": "C",
+     "html": "Pituitary MRI with gadolinium"
+    },
+    {
+     "label": "D",
+     "html": "Random cortisol, stopping if it is normal"
+    },
+    {
+     "label": "E",
+     "html": "Two late-night salivary cortisol samples"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pigmentation, orthostatic hypotension, weight loss, hyponatremia and hyperkalemia suggest <strong>primary adrenal insufficiency</strong>. In a stable patient, measure <strong>early-morning cortisol with ACTH</strong> and confirm with a <strong>cosyntropin stimulation test</strong>; a high ACTH shows the problem is in the adrenal. Imaging comes after biochemical confirmation and antibody testing.</p><p><strong>Takeaway:</strong> suspected adrenal insufficiency in a stable patient: morning cortisol and ACTH, then cosyntropin stimulation.</p>",
+   "whyNot": {
+    "A": "Imaging is for after the diagnosis is confirmed, and only if 21-hydroxylase antibodies are negative.",
+    "C": "Pituitary imaging is for secondary insufficiency; pigmentation and hyperkalemia point to the adrenal.",
+    "D": "A random cortisol can be misleadingly normal; a single normal value does not exclude the diagnosis.",
+    "E": "Late-night salivary cortisol screens for cortisol excess, not deficiency."
+   },
+   "objective": "Choose morning cortisol, ACTH and cosyntropin stimulation to diagnose primary adrenal insufficiency.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Addison disease"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-03",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150401-1",
+   "setOrder": 2,
+   "stemHtml": "<p>Her 8 AM cortisol is 2.1 µg/dL and ACTH 480 pg/mL (N = 10–60). After 250 µg of cosyntropin, cortisol peaks at 2.6 µg/dL. Antibodies to 21-hydroxylase are positive. Which of the following is the most appropriate long-term treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Dexamethasone once daily alone"
+    },
+    {
+     "label": "B",
+     "html": "Fludrocortisone alone"
+    },
+    {
+     "label": "C",
+     "html": "Hydrocortisone alone"
+    },
+    {
+     "label": "D",
+     "html": "Hydrocortisone and fludrocortisone, with sick-day rules"
+    },
+    {
+     "label": "E",
+     "html": "Prednisone and spironolactone"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The test confirms <strong>autoimmune primary adrenal insufficiency</strong>, so both cortisol and aldosterone must be replaced: <strong>hydrocortisone</strong> in divided doses (largest on waking) and <strong>fludrocortisone</strong>, titrated to blood pressure, potassium and renin. Teach sick-day dose increases, emergency injectable hydrocortisone and medical identification, and screen periodically for other autoimmune endocrine disease.</p><p><strong>Takeaway:</strong> primary adrenal insufficiency needs glucocorticoid plus mineralocorticoid replacement and sick-day education.</p>",
+   "whyNot": {
+    "A": "Dexamethasone has no mineralocorticoid action and is long-acting, which raises the risk of overtreatment.",
+    "B": "Fludrocortisone alone leaves her cortisol deficient and at risk of crisis.",
+    "C": "Hydrocortisone alone at replacement doses does not adequately replace aldosterone in primary disease.",
+    "E": "Spironolactone blocks the mineralocorticoid receptor and would worsen her salt loss and hyperkalemia."
+   },
+   "objective": "Replace glucocorticoid and mineralocorticoid in primary adrenal insufficiency.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Addison disease"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 41-year-old woman with HIV infection, well controlled on a ritonavir-boosted protease inhibitor regimen, has asthma treated with high-dose inhaled fluticasone for the past 5 months. She has gained 9 kg, mainly in her face and abdomen, and has new purple striae and easy bruising. She takes no oral or topical steroids. Her 8 AM serum cortisol is 1.4 µg/dL and ACTH is 4 pg/mL (N = 10–60). Which of the following is the most likely cause of her findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "ACTH-secreting pituitary adenoma"
+    },
+    {
+     "label": "B",
+     "html": "Adrenal cortisol-secreting adenoma"
+    },
+    {
+     "label": "C",
+     "html": "Ectopic ACTH secretion"
+    },
+    {
+     "label": "D",
+     "html": "Excess fluticasone exposure from inhibited hepatic metabolism"
+    },
+    {
+     "label": "E",
+     "html": "Pseudo-Cushing state from HIV lipodystrophy"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Ritonavir strongly inhibits <strong>CYP3A4</strong>, which normally clears fluticasone. The inhaled steroid then accumulates systemically and causes <strong>iatrogenic Cushing syndrome</strong>. Exogenous glucocorticoid suppresses ACTH and the patient's own cortisol, so measured cortisol is <em>low</em> despite cushingoid features. Switch to an inhaled steroid less dependent on CYP3A4 (for example beclomethasone) or change the antiretroviral, and watch for adrenal insufficiency as the exposure falls.</p><p><strong>Takeaway:</strong> cushingoid features with low cortisol and low ACTH mean exogenous glucocorticoid, including inhaled steroid boosted by ritonavir.</p>",
+   "whyNot": {
+    "A": "A pituitary source would give a normal or high ACTH and a high cortisol.",
+    "B": "An adrenal adenoma suppresses ACTH but makes measured cortisol high, not low.",
+    "C": "Ectopic ACTH gives very high ACTH and cortisol.",
+    "E": "Lipodystrophy changes fat distribution but does not cause striae, bruising or a suppressed axis."
+   },
+   "objective": "Recognise iatrogenic Cushing syndrome from a ritonavir–inhaled fluticasone interaction.",
+   "areas": [
+    "usmle2026.15.04.01",
+    "usmle2026.15.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "iatrogenic Cushing syndrome",
+    "drug interaction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-05",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 35-year-old woman has 18 months of weight gain, proximal weakness, purple striae and new hypertension. She takes no glucocorticoids or estrogen.</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>24-hour urine free cortisol (two collections)</td><td>3 and 4 times the upper limit of normal</td></tr><tr><td>Late-night salivary cortisol (two samples)</td><td>Raised</td></tr><tr><td>Plasma ACTH, 9 AM</td><td>58 pg/mL (N = 10–60)</td></tr><tr><td>Pituitary MRI</td><td>No visible adenoma</td></tr><tr><td>Serum potassium</td><td>3.9 mEq/L</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Adrenal CT"
+    },
+    {
+     "label": "B",
+     "html": "Bilateral adrenalectomy"
+    },
+    {
+     "label": "C",
+     "html": "Bilateral inferior petrosal sinus sampling with stimulation"
+    },
+    {
+     "label": "D",
+     "html": "CT of the chest, abdomen and pelvis to look for a carcinoid"
+    },
+    {
+     "label": "E",
+     "html": "Transsphenoidal exploration of the pituitary"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Cushing syndrome is confirmed by two different tests, and an unsuppressed ACTH shows it is <strong>ACTH-dependent</strong>. Most such cases are pituitary, but the MRI is negative, so <strong>inferior petrosal sinus sampling</strong> with CRH or desmopressin is needed to show a central-to-peripheral ACTH gradient before pituitary surgery. No gradient would send the search to an ectopic source.</p><p><strong>Takeaway:</strong> ACTH-dependent Cushing syndrome with a negative or equivocal pituitary MRI: petrosal sinus sampling.</p>",
+   "whyNot": {
+    "A": "Adrenal imaging is for ACTH-independent disease, when ACTH is suppressed.",
+    "B": "Bilateral adrenalectomy is a last resort for uncontrollable disease, not a diagnostic step.",
+    "D": "Body imaging for an ectopic tumour comes only if sampling shows no pituitary gradient.",
+    "E": "Operating without localisation risks a failed exploration; the source must first be confirmed as pituitary."
+   },
+   "objective": "Use inferior petrosal sinus sampling for ACTH-dependent Cushing syndrome with a negative pituitary MRI.",
+   "areas": [
+    "usmle2026.15.04.01",
+    "usmle2026.15.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 5,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Cushing disease",
+    "IPSS"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 56-year-old man with hypertension on three drugs including a diuretic has a serum potassium of 3.2 mEq/L. Plasma aldosterone is 28 ng/dL with suppressed renin, and aldosterone fails to suppress after an intravenous saline load. Adrenal CT shows a 1.2-cm left adrenal nodule with a normal right adrenal. He wants a surgical cure if one is possible. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Adrenal vein sampling"
+    },
+    {
+     "label": "B",
+     "html": "FDG-PET of the adrenal glands"
+    },
+    {
+     "label": "C",
+     "html": "Laparoscopic left adrenalectomy"
+    },
+    {
+     "label": "D",
+     "html": "Repeat CT in 12 months"
+    },
+    {
+     "label": "E",
+     "html": "Start eplerenone and stop testing"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Primary aldosteronism is confirmed. At his age, small adrenal nodules are often nonfunctioning, and bilateral hyperplasia is common, so CT cannot reliably show which side is making aldosterone. <strong>Adrenal vein sampling</strong> compares aldosterone (corrected for cortisol) from each side; lateralisation to the left would justify adrenalectomy.</p><p><strong>Takeaway:</strong> in primary aldosteronism, confirm the side with adrenal vein sampling before adrenalectomy in most patients who want surgery.</p>",
+   "whyNot": {
+    "B": "FDG-PET assesses malignancy, which a small homogeneous nodule does not suggest, and it does not show aldosterone production.",
+    "C": "Removing the left gland on CT alone risks removing a nonfunctioning nodule while a bilateral or right-sided source remains.",
+    "D": "Waiting does not answer the question of which gland is secreting.",
+    "E": "A mineralocorticoid antagonist is appropriate if he declines surgery or has bilateral disease, but he wants a cure."
+   },
+   "objective": "Use adrenal vein sampling to lateralise primary aldosteronism before surgery.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "primary aldosteronism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 39-year-old woman has episodic headaches, sweating and palpitations. Blood pressure is 172/102 mm Hg and pulse 104/min. Plasma free normetanephrine is 8 times the upper limit of normal. MRI shows a 4-cm left adrenal mass that is bright on T2-weighted images. Laparoscopic adrenalectomy is planned. Which of the following is the most appropriate preoperative management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Fine-needle biopsy of the mass to confirm the diagnosis"
+    },
+    {
+     "label": "B",
+     "html": "Immediate surgery without medical preparation"
+    },
+    {
+     "label": "C",
+     "html": "Metoprolol for 2 weeks, then surgery"
+    },
+    {
+     "label": "D",
+     "html": "Phenoxybenzamine or doxazosin for 1–2 weeks with liberal salt and fluids"
+    },
+    {
+     "label": "E",
+     "html": "Radioactive iodine-labelled MIBG therapy"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Before removing a <strong>pheochromocytoma</strong>, block alpha receptors for 1–2 weeks (phenoxybenzamine or a selective alpha-1 blocker), with a high-sodium diet and fluids to re-expand the contracted plasma volume. This prevents intraoperative hypertensive crises during tumour handling and reduces hypotension after removal. A beta blocker can be added only after alpha blockade if tachycardia persists.</p><p><strong>Takeaway:</strong> prepare for pheochromocytoma surgery with alpha blockade and volume expansion.</p>",
+   "whyNot": {
+    "A": "Biopsy of a pheochromocytoma can precipitate a hypertensive crisis and is not needed after biochemical confirmation.",
+    "B": "Unprepared surgery carries a high risk of severe intraoperative hypertension and arrhythmia.",
+    "C": "Beta blockade first leaves alpha vasoconstriction unopposed and can cause a crisis.",
+    "E": "MIBG therapy is for metastatic or unresectable disease, not routine preparation."
+   },
+   "objective": "Prepare a patient with pheochromocytoma for surgery with alpha blockade before beta blockade.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "pheochromocytoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-08",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 61-year-old woman had CT for abdominal pain, which resolved. It showed a 3.1-cm right adrenal mass, which has been fully evaluated.</p><table><tr><th>Evaluation</th><th>Result</th></tr><tr><td>Noncontrast CT</td><td>Homogeneous, smooth margins, 6 Hounsfield units</td></tr><tr><td>Blood pressure, potassium</td><td>118/74 mm Hg; 4.3 mEq/L</td></tr><tr><td>Cortisol after 1 mg dexamethasone overnight</td><td>1.1 µg/dL (normal below 1.8)</td></tr><tr><td>Plasma free metanephrines</td><td>Normal</td></tr><tr><td>Clinical features of cortisol or androgen excess</td><td>None</td></tr></table><p>Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT-guided biopsy"
+    },
+    {
+     "label": "B",
+     "html": "Laparoscopic right adrenalectomy"
+    },
+    {
+     "label": "C",
+     "html": "No further imaging or hormone testing for the mass"
+    },
+    {
+     "label": "D",
+     "html": "Repeat CT every 6 months for 5 years"
+    },
+    {
+     "label": "E",
+     "html": "Start spironolactone"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The mass is a <strong>lipid-rich adenoma</strong> (homogeneous, 10 Hounsfield units or less) under 4 cm, and hormone testing shows no cortisol excess or pheochromocytoma; aldosterone testing is not needed with normal blood pressure and potassium. Current guidance says such a benign, nonfunctioning mass needs <strong>no further imaging</strong> or routine repeat testing unless new features appear.</p><p><strong>Takeaway:</strong> a small, homogeneous, low-attenuation, nonfunctioning adrenal adenoma needs no follow-up imaging.</p>",
+   "whyNot": {
+    "A": "Biopsy adds risk and no information for a typical adenoma.",
+    "B": "Surgery is for functioning masses or those with suspicious imaging.",
+    "D": "Serial CT scans add radiation and cost without benefit for a lipid-rich adenoma.",
+    "E": "There is no evidence of aldosterone excess to treat."
+   },
+   "objective": "Manage a benign-appearing, nonfunctioning adrenal incidentaloma without further follow-up.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management",
+    "systems_based_practice"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "adrenal incidentaloma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150401-2-09",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 7-year-old boy has had pubic hair and acne for 6 months and has grown 9 cm in the past year. Both testes measure 8 mL (prepubertal is under 4 mL), and the penis is enlarged. Bone age is 10.5 years. A GnRH-agonist stimulation test gives a pubertal LH rise. He has no headaches or visual symptoms, and neurologic examination is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin a GnRH agonist without imaging"
+    },
+    {
+     "label": "B",
+     "html": "MRI of the brain"
+    },
+    {
+     "label": "C",
+     "html": "Serum 17-hydroxyprogesterone"
+    },
+    {
+     "label": "D",
+     "html": "Serum beta-hCG"
+    },
+    {
+     "label": "E",
+     "html": "Testicular ultrasonography"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Bilateral testicular enlargement, advanced bone age and a pubertal LH response mean <strong>central precocious puberty</strong>. In boys a CNS cause (hypothalamic hamartoma, glioma, other tumours, hydrocephalus) is common enough that every boy needs <strong>brain MRI</strong>, even with a normal examination. Treatment with a GnRH agonist follows.</p><p><strong>Takeaway:</strong> central precocious puberty in a boy requires brain MRI.</p>",
+   "whyNot": {
+    "A": "A GnRH agonist is the treatment, but an underlying brain lesion must first be excluded.",
+    "C": "17-hydroxyprogesterone screens for congenital adrenal hyperplasia, a peripheral cause in which the testes stay small.",
+    "D": "hCG-secreting tumours cause peripheral puberty with suppressed LH.",
+    "E": "Testicular ultrasonography is for a unilateral enlargement suggesting a Leydig cell tumour."
+   },
+   "objective": "Evaluate central precocious puberty in a boy with brain MRI.",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "precocious puberty"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150401-01",
+   "frontHtml": "Adrenal cortex zones and products, outside in?",
+   "backHtml": "Glomerulosa: aldosterone (angiotensin II, potassium). Fasciculata: cortisol (ACTH). Reticularis: androgen precursors (ACTH).",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-02",
+   "frontHtml": "Why does primary adrenal insufficiency cause hyperpigmentation?",
+   "backHtml": "Low cortisol removes feedback, so POMC rises; its products ACTH and MSH stimulate melanocortin-1 receptors.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-03",
+   "frontHtml": "Which electrolyte finding separates primary from secondary adrenal insufficiency?",
+   "backHtml": "Hyperkalemia: only primary disease loses aldosterone; in secondary disease renin-angiotensin still drives aldosterone.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-04",
+   "frontHtml": "Most common cause of primary adrenal insufficiency in high-income countries, and worldwide?",
+   "backHtml": "Autoimmune adrenalitis (21-hydroxylase antibodies); tuberculosis worldwide.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-05",
+   "frontHtml": "Cushing syndrome with suppressed ACTH: where is the problem?",
+   "backHtml": "Adrenal (adenoma or carcinoma) or exogenous glucocorticoid.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-06",
+   "frontHtml": "Very high ACTH, no suppression with high-dose dexamethasone, hypokalemia, in a smoker?",
+   "backHtml": "Ectopic ACTH, most often small cell lung carcinoma.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-07",
+   "frontHtml": "Hypertension and hypokalemia with low renin and low aldosterone: three causes?",
+   "backHtml": "Liddle syndrome, apparent mineralocorticoid excess (or licorice), 11β- or 17α-hydroxylase deficiency.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-08",
+   "frontHtml": "How does licorice cause hypertension?",
+   "backHtml": "Glycyrrhetinic acid inhibits 11β-HSD2, so cortisol activates the renal mineralocorticoid receptor.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-09",
+   "frontHtml": "Neuroblastoma: marker of poor prognosis and urine tests?",
+   "backHtml": "<em>MYCN</em> amplification; raised urine HVA and VMA.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-10",
+   "frontHtml": "Germline variant frequency in pheochromocytoma and paraganglioma?",
+   "backHtml": "Roughly a third or more (RET, VHL, NF1, SDH genes), so offer genetic testing to all.",
+   "sectionId": "s23c-s150401-1-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-11",
+   "frontHtml": "First step in suspected adrenal crisis?",
+   "backHtml": "Hydrocortisone 100 mg IV plus isotonic saline (and dextrose), without waiting for tests.",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-12",
+   "frontHtml": "Confirmatory test for adrenal insufficiency in a stable patient?",
+   "backHtml": "Cosyntropin stimulation: peak cortisol below about 18 µg/dL (about 14–15 with newer assays) is abnormal.",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-13",
+   "frontHtml": "Treatment of primary adrenal insufficiency?",
+   "backHtml": "Hydrocortisone plus fludrocortisone, sick-day rules, injectable emergency hydrocortisone, medical ID.",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-14",
+   "frontHtml": "Screening tests for Cushing syndrome?",
+   "backHtml": "Late-night salivary cortisol, 1-mg overnight dexamethasone suppression, 24-hour urine free cortisol (two abnormal to confirm).",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-15",
+   "frontHtml": "ACTH-dependent Cushing syndrome with no adenoma on pituitary MRI: next test?",
+   "backHtml": "Inferior petrosal sinus sampling with CRH or desmopressin stimulation.",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-16",
+   "frontHtml": "Primary aldosteronism: screening test?",
+   "backHtml": "Plasma aldosterone with renin: high aldosterone with suppressed renin; correct hypokalemia first.",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-17",
+   "frontHtml": "Before adrenalectomy for primary aldosteronism, how is the side confirmed?",
+   "backHtml": "Adrenal vein sampling (CT nodules are often nonfunctioning).",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-18",
+   "frontHtml": "Medical treatment of bilateral adrenal hyperplasia causing aldosteronism?",
+   "backHtml": "Spironolactone or eplerenone, titrated until renin rises.",
+   "sectionId": "s23c-s150401-2-1",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-19",
+   "frontHtml": "Best biochemical test for pheochromocytoma?",
+   "backHtml": "Plasma free metanephrines or 24-hour urine fractionated metanephrines.",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-20",
+   "frontHtml": "Preoperative preparation for pheochromocytoma?",
+   "backHtml": "Alpha blockade (phenoxybenzamine or doxazosin) for 1–2 weeks with salt and fluids; beta blocker only afterwards.",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-21",
+   "frontHtml": "Hormone tests for every adrenal incidentaloma?",
+   "backHtml": "1-mg dexamethasone suppression test; metanephrines unless clearly a lipid-rich adenoma; aldosterone and renin if hypertension or hypokalemia.",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-22",
+   "frontHtml": "Adrenal mass under 4 cm, homogeneous, 10 HU or less, nonfunctioning: follow-up?",
+   "backHtml": "None needed: lipid-rich adenoma.",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-23",
+   "frontHtml": "Central precocious puberty in a boy: required test?",
+   "backHtml": "Brain MRI (hypothalamic hamartoma and other CNS lesions).",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-24",
+   "frontHtml": "Triad of McCune-Albright syndrome?",
+   "backHtml": "Peripheral precocious puberty, irregular café-au-lait macules, polyostotic fibrous dysplasia (mosaic activating GNAS).",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150401-25",
+   "frontHtml": "Most common cause of delayed puberty?",
+   "backHtml": "Constitutional delay: short, delayed bone age, family history of late maturation.",
+   "sectionId": "s23c-s150401-2-2",
+   "areas": [
+    "usmle2026.15.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

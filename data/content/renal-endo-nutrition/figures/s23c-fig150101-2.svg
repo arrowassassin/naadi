@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380" role="img" aria-label="Schematic time-action profiles of insulin preparations: rapid-acting, regular, NPH and long-acting basal">
+<title>Insulin time-action profiles (schematic)</title>
+<defs><marker id="s23c-f150101-ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="380" fill="#ffffff"/>
+<line x1="70" y1="310" x2="680" y2="310" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-ax)"/>
+<line x1="70" y1="310" x2="70" y2="40" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f150101-ax)"/>
+<text x="375" y="350" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle">Hours after subcutaneous injection</text>
+<text x="30" y="175" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle" transform="rotate(-90 30 175)">Insulin effect</text>
+<text x="70" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">0</text>
+<text x="170" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">4</text>
+<text x="270" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">8</text>
+<text x="370" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">12</text>
+<text x="470" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">16</text>
+<text x="570" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">20</text>
+<text x="670" y="328" font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">24</text>
+<path d="M70,310 C82,150 100,70 115,80 C135,95 160,250 195,305" fill="none" stroke="#dc2626" stroke-width="3"/>
+<path d="M70,310 C100,230 120,140 150,140 C190,140 220,260 270,306" fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="8,4"/>
+<path d="M70,310 C140,280 180,170 230,165 C290,160 360,260 470,306" fill="none" stroke="#2563eb" stroke-width="3"/>
+<path d="M70,310 C100,240 130,232 200,230 L600,230 C640,232 660,262 675,300" fill="none" stroke="#15803d" stroke-width="3"/>
+<text x="120" y="70" font-family="sans-serif" font-size="12" fill="#991b1b">Rapid-acting (lispro, aspart, glulisine)</text>
+<text x="160" y="132" font-family="sans-serif" font-size="12" fill="#78350f">Regular</text>
+<text x="240" y="158" font-family="sans-serif" font-size="12" fill="#1e40af">NPH (intermediate)</text>
+<text x="420" y="222" font-family="sans-serif" font-size="12" fill="#14532d">Long-acting basal (glargine, detemir, degludec): flat</text>
+<text x="70" y="22" font-family="sans-serif" font-size="12" fill="#0f172a">Schematic only; durations vary with dose and patient. Only regular insulin is routinely given intravenously.</text>
+</svg>

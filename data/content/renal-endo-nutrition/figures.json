@@ -94,5 +94,109 @@
   "file": "figures/s23c-fig110801-1.svg",
   "source": "naadi-original-v1",
   "attribution": null
+ },
+ {
+  "id": "s23c-fig150101-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Glucose-stimulated insulin secretion in the beta cell and where glucose-lowering drugs act.",
+  "file": "figures/s23c-fig150101-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150101-2",
+  "chapterId": "s23c-ch15-s2",
+  "caption": "Figure. Schematic time-action profiles of insulin preparations after subcutaneous injection.",
+  "file": "figures/s23c-fig150101-2.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150102-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Hypoglycemia: the laboratory pattern of each cause, using blood drawn while glucose is low. C-peptide marks the body's own insulin; low ketones mean insulin or IGF-2 is acting.",
+  "file": "figures/s23c-fig150102-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150201-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Thyroid hormone synthesis in the follicular cell (trapping, organification, coupling, release) and the step each drug blocks.",
+  "file": "figures/s23c-fig150201-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150201-2",
+  "chapterId": "s23c-ch15-s2",
+  "caption": "Figure. Reading TSH together with free T4. Primary disease moves TSH opposite to free T4; pituitary disease does not.",
+  "file": "figures/s23c-fig150201-2.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150301-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Calcium, phosphate and PTH patterns that separate the main disorders of calcium metabolism.",
+  "file": "figures/s23c-fig150301-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150401-1",
+  "chapterId": "s23c-ch15-s2",
+  "caption": "Figure. Work-up of an adrenal incidentaloma: test every mass for hormone excess and judge cancer risk from size and CT attenuation.",
+  "file": "figures/s23c-fig150401-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150501-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Hypothalamic-pituitary axes and their feedback loops. The posterior pituitary stores ADH and oxytocin made in hypothalamic nuclei.",
+  "file": "figures/s23c-fig150501-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150501-2",
+  "chapterId": "s23c-ch15-s2",
+  "caption": "Figure. Reading a water deprivation test: urine osmolality after deprivation and after desmopressin in primary polydipsia, central and nephrogenic diabetes insipidus (illustrative values).",
+  "file": "figures/s23c-fig150501-2.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig1506-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Hypothalamic nuclei, their normal roles and the effect of a lesion in each.",
+  "file": "figures/s23c-fig1506-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig1507-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Multiple endocrine neoplasia: MEN1 is loss of the menin tumour suppressor; MEN2A and MEN2B are activating RET variants affecting neural crest-derived C cells and chromaffin cells.",
+  "file": "figures/s23c-fig1507-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150801-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Adrenal steroid synthesis. The 21-hydroxylase block lowers cortisol and aldosterone and diverts precursors to androgens; 11β- and 17α-hydroxylase blocks raise 11-deoxycorticosterone and blood pressure.",
+  "file": "figures/s23c-fig150801-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig150901-1",
+  "chapterId": "s23c-ch15-s1",
+  "caption": "Figure. Exogenous glucocorticoids suppress CRH and ACTH; the adrenal cortex atrophies, so abrupt withdrawal causes secondary adrenal insufficiency with preserved aldosterone.",
+  "file": "figures/s23c-fig150901-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
  }
 ]

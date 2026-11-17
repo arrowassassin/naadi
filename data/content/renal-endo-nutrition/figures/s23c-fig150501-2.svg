@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380" role="img" aria-label="Water deprivation test: urine osmolality after water deprivation and after desmopressin in primary polydipsia, central diabetes insipidus and nephrogenic diabetes insipidus">
+<title>Reading a water deprivation test</title>
+<rect x="0" y="0" width="720" height="380" fill="#ffffff"/>
+<line x1="80" y1="40" x2="80" y2="300" stroke="#334155" stroke-width="2"/>
+<line x1="80" y1="300" x2="700" y2="300" stroke="#334155" stroke-width="2"/>
+<g font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="end">
+<text x="72" y="304">0</text><text x="72" y="239">200</text><text x="72" y="174">400</text><text x="72" y="109">600</text><text x="72" y="44">800</text>
+</g>
+<line x1="80" y1="202" x2="700" y2="202" stroke="#94a3b8" stroke-dasharray="5,4"/>
+<text x="695" y="196" font-family="sans-serif" font-size="11" fill="#475569" text-anchor="end">≈ 300 mOsm/kg (plasma)</text>
+<text x="22" y="170" font-family="sans-serif" font-size="12" fill="#0f172a" transform="rotate(-90 22 170)" text-anchor="middle">Urine osmolality, mOsm/kg</text>
+<g font-family="sans-serif" font-size="11">
+<rect x="110" y="98" width="50" height="202" fill="#cbd5e1" stroke="#334155"/><rect x="165" y="90" width="50" height="210" fill="#334155"/>
+<rect x="300" y="248" width="50" height="52" fill="#cbd5e1" stroke="#334155"/><rect x="355" y="138" width="50" height="162" fill="#334155"/>
+<rect x="490" y="252" width="50" height="48" fill="#cbd5e1" stroke="#334155"/><rect x="545" y="246" width="50" height="54" fill="#334155"/>
+</g>
+<g font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">
+<text x="162" y="322">Primary polydipsia</text><text x="352" y="322">Central DI (AVP deficiency)</text><text x="542" y="322">Nephrogenic DI (AVP resistance)</text>
+</g>
+<g font-family="sans-serif" font-size="11" fill="#0f172a" text-anchor="middle">
+<text x="162" y="340">concentrates; little extra rise</text><text x="352" y="340">stays dilute, then rises sharply</text><text x="542" y="340">stays dilute; little or no rise</text>
+<text x="162" y="355">with desmopressin</text><text x="352" y="355">(often &gt; 50%) with desmopressin</text><text x="542" y="355">with desmopressin</text>
+</g>
+<rect x="470" y="40" width="14" height="14" fill="#cbd5e1" stroke="#334155"/><text x="490" y="52" font-family="sans-serif" font-size="12" fill="#0f172a">after water deprivation</text>
+<rect x="470" y="62" width="14" height="14" fill="#334155"/><text x="490" y="74" font-family="sans-serif" font-size="12" fill="#0f172a">after desmopressin</text>
+<text x="80" y="374" font-family="sans-serif" font-size="11" fill="#475569">Illustrative values. Partial forms fall in between; stimulated copeptin can separate them more cleanly.</text>
+</svg>

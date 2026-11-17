@@ -1,0 +1,1244 @@
+{
+ "area": "usmle2026.15.03.01",
+ "sections": [
+  {
+   "id": "s23c-s150301-1-1",
+   "exam": "step1",
+   "heading": "Calcium homeostasis and hypercalcemia: PTH, vitamin D and the calcium-sensing receptor",
+   "html": "<p>Serum calcium is held in a narrow range by three hormones acting on three organs: bone, kidney and gut. About 40% of total calcium is bound to albumin, so a low albumin lowers total calcium without changing the ionised fraction. A common bedside correction adds 0.8 mg/dL for every 1 g/dL that albumin falls below 4 g/dL; measuring ionised calcium is more reliable. Alkalosis increases albumin binding and lowers ionised calcium, which is why hyperventilation causes perioral tingling.</p>\n<h3>The three hormones</h3>\n<table><tr><th>Hormone</th><th>Source and trigger</th><th>Main actions</th></tr>\n<tr><td>Parathyroid hormone (PTH)</td><td>Chief cells; secreted when ionised calcium falls, sensed by the calcium-sensing receptor (CaSR, a G protein-coupled receptor)</td><td>Bone: stimulates osteoblasts to express RANKL, which activates osteoclasts and releases calcium and phosphate. Kidney: raises calcium reabsorption in the distal convoluted tubule, blocks phosphate reabsorption in the proximal tubule (phosphaturia), stimulates 1-alpha-hydroxylase.</td></tr>\n<tr><td>Calcitriol (1,25-dihydroxyvitamin D)</td><td>Skin (cholecalciferol) → liver 25-hydroxylation → proximal tubule 1-alpha-hydroxylation, driven by PTH and low phosphate, inhibited by FGF23</td><td>Raises intestinal absorption of calcium and phosphate; needed for normal mineralisation; feeds back to suppress PTH.</td></tr>\n<tr><td>Calcitonin</td><td>Parafollicular C cells of the thyroid, released by high calcium</td><td>Inhibits osteoclasts; minor physiologic role in adults; tumour marker for medullary thyroid cancer.</td></tr></table>\n<p>FGF23 from osteocytes lowers phosphate by blocking proximal tubular phosphate reabsorption and suppressing 1-alpha-hydroxylase; it rises early in chronic kidney disease. Magnesium is needed both for PTH release and for target-organ response, so severe hypomagnesemia causes functional hypoparathyroidism that does not correct until magnesium is replaced.</p>\n<h3>Hypercalcemia</h3>\n<p>Primary hyperparathyroidism and malignancy cause about 90% of cases. The first test after confirming true hypercalcemia is an intact PTH.</p>\n<ul><li><strong>PTH high or inappropriately normal (PTH-dependent):</strong> primary hyperparathyroidism (single adenoma in about 85%, four-gland hyperplasia, rarely carcinoma), familial hypocalciuric hypercalcemia (FHH), lithium, tertiary hyperparathyroidism.</li>\n<li><strong>PTH suppressed (PTH-independent):</strong> PTH-related peptide (PTHrP) from squamous cell, renal, bladder, breast and ovarian cancers; osteolytic metastases or multiple myeloma; calcitriol made by granulomas (sarcoidosis, tuberculosis) or lymphoma macrophages; vitamin D or A excess; thiazides; milk-alkali syndrome; immobilisation; thyrotoxicosis.</li></ul>\n<p>Symptoms reflect calcium level and speed of rise: kidney stones, polyuria from nephrogenic diabetes insipidus, bone pain and osteitis fibrosa cystica (subperiosteal resorption of the radial side of the middle phalanges, \"salt-and-pepper\" skull, brown tumours), constipation, peptic ulcer and pancreatitis, fatigue, depression and confusion, and a short QT interval.</p>\n<p><strong>FHH</strong> is usually caused by a heterozygous loss-of-function variant in <em>CASR</em> (autosomal dominant). The parathyroids and kidney \"read\" calcium as low, so PTH is normal or mildly high and the kidney avidly reabsorbs calcium: urine calcium is low, with a calcium-to-creatinine clearance ratio usually below 0.01. It is benign and parathyroidectomy does not help. A homozygous loss of CaSR in a newborn causes severe neonatal hyperparathyroidism.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> mild hypercalcemia with a normal-to-high PTH is not always primary hyperparathyroidism. Check urine calcium; a very low calcium-to-creatinine clearance ratio and a family history of the same labs point to FHH.</p></div>[[figure:s23c-fig150301-1]]",
+   "figureIds": [
+    "s23c-fig150301-1"
+   ],
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Primary Hyperparathyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441895/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Familial Hypocalciuric Hypercalcemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK459190/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Malignancy-Related Hypercalcemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482423/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Parathyroid Disorders",
+     "url": "https://medlineplus.gov/parathyroiddisorders.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150301-1-2",
+   "exam": "step1",
+   "heading": "Hypocalcemia, pseudohypoparathyroidism and metabolic bone disease",
+   "html": "<h3>Hypocalcemia</h3>\n<p>Low ionised calcium raises neuromuscular excitability: perioral and fingertip paresthesia, muscle cramps, carpopedal spasm (Trousseau sign with a blood pressure cuff), facial twitching on tapping the facial nerve (Chvostek sign), laryngospasm, seizures and a <strong>prolonged QT interval</strong>.</p>\n<table><tr><th>Cause</th><th>Calcium</th><th>Phosphate</th><th>PTH</th><th>Clue</th></tr>\n<tr><td>Hypoparathyroidism (surgical, autoimmune, 22q11.2 deletion)</td><td>Low</td><td>High</td><td>Low</td><td>Neck surgery; candidiasis and adrenal failure in autoimmune polyglandular syndrome type 1; thymic aplasia, conotruncal heart defects and cleft palate in 22q11.2 deletion</td></tr>\n<tr><td>Hypomagnesemia</td><td>Low</td><td>Variable</td><td>Low or inappropriately normal</td><td>Alcohol use, proton pump inhibitors, diuretics, diarrhea, cisplatin</td></tr>\n<tr><td>Pseudohypoparathyroidism type 1A</td><td>Low</td><td>High</td><td>High</td><td>End-organ resistance; Albright hereditary osteodystrophy</td></tr>\n<tr><td>Vitamin D deficiency</td><td>Low or normal</td><td>Low</td><td>High</td><td>Low 25-hydroxyvitamin D; osteomalacia</td></tr>\n<tr><td>Chronic kidney disease</td><td>Low or normal</td><td>High</td><td>High</td><td>Low calcitriol, high FGF23</td></tr></table>\n<p><strong>Pseudohypoparathyroidism type 1A</strong> results from a loss-of-function variant in <em>GNAS</em>, which encodes the stimulatory G protein alpha subunit (Gs-alpha) that couples the PTH receptor to adenylyl cyclase. In the kidney and some other tissues only the maternal allele is expressed (imprinting), so the variant inherited from the mother gives PTH resistance plus Albright hereditary osteodystrophy: short stature, round face, obesity, shortened fourth and fifth metacarpals and subcutaneous ossification. Resistance to TSH and gonadotropins can coexist. When the same variant comes from the father, the child has the body habitus without hormone resistance (<strong>pseudopseudohypoparathyroidism</strong>), with normal calcium and PTH.</p>\n<h3>Metabolic bone disease</h3>\n<table><tr><th>Disorder</th><th>Defect</th><th>Calcium, phosphate, ALP, PTH</th><th>Key feature</th></tr>\n<tr><td>Osteoporosis</td><td>Low bone mass with normal mineralisation</td><td>All normal</td><td>Fragility fractures (vertebrae, hip, distal radius); thin trabeculae</td></tr>\n<tr><td>Osteomalacia / rickets</td><td>Defective mineralisation of osteoid (vitamin D deficiency, phosphate wasting)</td><td>Ca low or normal, phosphate low, ALP high, PTH high</td><td>Bone pain, proximal weakness, pseudofractures (Looser zones); in children bowed legs, rachitic rosary, widened growth plates</td></tr>\n<tr><td>Paget disease of bone</td><td>Disordered osteoclast then osteoblast activity</td><td>Ca and phosphate normal, ALP isolated high</td><td>Mosaic lamellar bone with cement lines; skull enlargement, hearing loss, bowed tibia, high-output heart failure, osteosarcoma (rare)</td></tr>\n<tr><td>Osteitis fibrosa cystica</td><td>PTH excess</td><td>Ca high, phosphate low, ALP high, PTH high</td><td>Subperiosteal resorption, brown tumours</td></tr>\n<tr><td>Renal osteodystrophy</td><td>CKD mineral and bone disorder</td><td>Phosphate high, PTH high, calcitriol low</td><td>High-turnover or adynamic bone, vascular calcification</td></tr></table>\n<p><strong>Drugs for bone</strong> by mechanism: bisphosphonates bind hydroxyapatite and are taken up by osteoclasts; nitrogen-containing ones (alendronate, risedronate, zoledronic acid) inhibit farnesyl pyrophosphate synthase and trigger osteoclast apoptosis. Denosumab is a monoclonal antibody to RANKL. Teriparatide and abaloparatide (PTH and PTHrP analogues) given as intermittent daily injections stimulate bone formation more than resorption. Romosozumab blocks sclerostin, increasing formation and decreasing resorption. Raloxifene is an estrogen agonist in bone and antagonist in breast. Cinacalcet is a calcimimetic that sensitises the CaSR and lowers PTH.</p>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Continuous PTH digs, pulsed PTH builds</em>\": sustained PTH excess resorbs bone, while a once-daily pulse of teriparatide is anabolic.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Hypoparathyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441899/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Pseudohypoparathyroidism and Related Disorders",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK547709/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Osteomalacia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK551616/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Rickets",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK562285/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Paget Bone Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430805/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150301-2-1",
+   "exam": "step2ck",
+   "heading": "Hypercalcemia and hyperparathyroidism: work-up and management",
+   "html": "<h3>Hypercalcemia: work-up and management</h3>\n<ol><li>Confirm: repeat calcium with albumin, or measure ionised calcium.</li>\n<li>Measure intact PTH. High or inappropriately normal: primary hyperparathyroidism versus FHH (24-hour urine calcium and creatinine; calcium-to-creatinine clearance ratio below 0.01 suggests FHH). Suppressed: measure PTHrP, 25-hydroxy and 1,25-dihydroxyvitamin D, serum and urine protein electrophoresis with free light chains, and look for cancer.</li></ol>\n<p><strong>Acute severe hypercalcemia</strong> (usually above 14 mg/dL, or any level with confusion): give <strong>intravenous isotonic saline</strong> to restore volume, because hypercalcemia causes a nephrogenic diabetes insipidus and volume depletion that further reduce calcium excretion. Add <strong>calcitonin</strong> for a fast but short-lived fall (tachyphylaxis within about 2 days), and an <strong>intravenous bisphosphonate</strong> (zoledronic acid) for a sustained effect over 2–4 days. Denosumab is an option when kidney function precludes bisphosphonates. Loop diuretics are used only after volume is restored, if fluid overload develops. Glucocorticoids treat calcitriol-mediated hypercalcemia (granulomatous disease, lymphoma). Hemodialysis is for life-threatening hypercalcemia with kidney failure.</p>\n<h3>Primary hyperparathyroidism</h3>\n<p>Most patients are found on routine testing and have no symptoms. Parathyroidectomy by an experienced surgeon is the only cure and is recommended for anyone with symptoms (stones, fractures, symptomatic hypercalcemia). In asymptomatic patients, surgery is advised when any of the following is present:</p>\n<ul><li>serum calcium more than 1 mg/dL above the upper limit of normal;</li>\n<li>osteoporosis by DXA (T-score −2.5 or less at any site) or a vertebral fracture on imaging;</li>\n<li>eGFR below 60 mL/min/1.73 m², kidney stones or nephrocalcinosis, or high urinary calcium excretion;</li>\n<li>age below 50 years.</li></ul>\n<p>Imaging (sestamibi scan, neck ultrasonography, 4D-CT) <strong>localises</strong> an adenoma once the decision to operate is made; it does not make the diagnosis, which is biochemical. Patients who do not meet criteria or decline surgery are monitored with yearly calcium and creatinine and periodic DXA; cinacalcet lowers calcium, and a bisphosphonate protects bone, but neither cures the disease. Thiazides should be avoided because they raise calcium. After surgery, watch for <strong>hungry bone syndrome</strong> (falling calcium, phosphate and magnesium as the starved skeleton remineralises).</p>\n<p><strong>Secondary hyperparathyroidism</strong> (vitamin D deficiency, CKD) is a physiologic response to low calcium or high phosphate. In CKD, manage phosphate (diet, binders), replete 25-hydroxyvitamin D, and use calcitriol or a calcimimetic for progressive PTH elevation. <strong>Tertiary hyperparathyroidism</strong> is autonomous gland hyperplasia after long-standing secondary disease, typically after kidney transplant, with hypercalcemia; treatment is parathyroidectomy or cinacalcet.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a sestamibi scan is not the next step for a new hypercalcemia. First prove the diagnosis biochemically and decide on surgery; image only to plan the operation.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Primary Hyperparathyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441895/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Malignancy-Related Hypercalcemia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482423/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Parathyroid Disorders",
+     "url": "https://medlineplus.gov/parathyroiddisorders.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s150301-2-2",
+   "exam": "step2ck",
+   "heading": "Hypocalcemia, osteoporosis and Paget disease: management",
+   "html": "<h3>Hypocalcemia: management</h3>\n<ul><li><strong>Severe or symptomatic</strong> (tetany, seizures, laryngospasm, prolonged QT): intravenous calcium gluconate, then a continuous infusion with oral calcium and calcitriol. Check and replace <strong>magnesium</strong> first or at the same time.</li>\n<li><strong>Chronic hypoparathyroidism</strong>: oral calcium plus <strong>calcitriol</strong> (or alfacalcidol), because without PTH the kidney cannot make enough 1,25-dihydroxyvitamin D from ordinary vitamin D. Aim for a low-normal serum calcium to limit hypercalciuria, stones and nephrocalcinosis; a thiazide can reduce urinary calcium. Recombinant PTH replacement is reserved for patients poorly controlled on conventional therapy.</li>\n<li><strong>Vitamin D deficiency</strong>: cholecalciferol (or ergocalciferol) replacement with adequate calcium intake.</li></ul>\n<h3>Osteoporosis</h3>\n<p><strong>Screening:</strong> DXA of the hip and lumbar spine for all women 65 years or older, and for younger postmenopausal women at increased risk (for example by FRAX or another risk tool). Evidence is insufficient to screen men routinely, although men with risk factors (glucocorticoids, hypogonadism, androgen deprivation therapy) are commonly assessed.</p>\n<p><strong>Diagnosis:</strong> T-score −2.5 or less at the femoral neck, total hip or lumbar spine; or a hip or vertebral fragility fracture regardless of T-score; or osteopenia (T-score between −1 and −2.5) with a high 10-year FRAX fracture probability. Look for secondary causes: glucocorticoids, hypogonadism, hyperthyroidism, primary hyperparathyroidism, vitamin D deficiency, celiac disease, myeloma, chronic kidney or liver disease, alcohol use, aromatase inhibitors.</p>\n<p><strong>Treatment:</strong></p>\n<table><tr><th>Option</th><th>Use</th><th>Cautions</th></tr>\n<tr><td>Oral bisphosphonate (alendronate, risedronate)</td><td>First line for most</td><td>Take fasting, upright for 30–60 minutes with water; avoid with esophageal stricture or inability to stay upright, and with eGFR below about 30–35. Rare osteonecrosis of the jaw and atypical femoral fractures; consider a drug holiday after 3–5 years in lower-risk patients.</td></tr>\n<tr><td>Zoledronic acid (yearly infusion)</td><td>Cannot take oral bisphosphonate; after hip fracture</td><td>Acute-phase reaction; correct vitamin D deficiency and hypocalcemia first.</td></tr>\n<tr><td>Denosumab (every 6 months)</td><td>CKD where bisphosphonates are avoided; intolerance</td><td>Hypocalcemia in advanced CKD. <strong>Stopping causes rebound bone loss and multiple vertebral fractures</strong>, so follow it with a bisphosphonate.</td></tr>\n<tr><td>Anabolic agents (teriparatide, abaloparatide, romosozumab)</td><td>Very high risk: recent or multiple vertebral fractures, very low T-score</td><td>Follow with an antiresorptive. Romosozumab is avoided after a recent myocardial infarction or stroke.</td></tr></table>\n<p>All patients need adequate calcium and vitamin D, weight-bearing and resistance exercise, fall prevention, smoking cessation and limited alcohol.</p>\n<p><strong>Paget disease</strong>: an isolated raised alkaline phosphatase with typical radiographs (thickened cortex, lytic and sclerotic areas); confirm extent with a bone scan. Treat symptomatic disease or disease at high-risk sites with a bisphosphonate, usually a single infusion of zoledronic acid.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a patient asking to stop denosumab cannot simply stop. Plan a bisphosphonate to prevent rebound vertebral fractures.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Osteoporosis in Females",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559156/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Secondary Osteoporosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470166/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "USPSTF: Osteoporosis to prevent fractures, screening",
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening",
+     "sourceId": "uspstf"
+    },
+    {
+     "label": "StatPearls: Hypoparathyroidism",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441899/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Osteoporosis",
+     "url": "https://medlineplus.gov/osteoporosis.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig150301-1",
+   "caption": "Figure. Calcium, phosphate and PTH patterns that separate the main disorders of calcium metabolism.",
+   "file": "figures/s23c-fig150301-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set150301-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Osteoporosis treatment with esophageal disease",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q150301-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 9-year-old girl is evaluated for short stature. She has a round face, obesity and mild developmental delay. Her fourth and fifth fingers are short, and radiographs show shortened fourth and fifth metacarpals. Serum calcium is 7.2 mg/dL, phosphorus 6.4 mg/dL and intact PTH 210 pg/mL (N = 10–65). Infusion of synthetic PTH fails to raise urinary cyclic AMP. Her mother has the same hand findings but normal calcium and PTH. A variant in the gene encoding which of the following proteins is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Calcium-sensing receptor"
+    },
+    {
+     "label": "B",
+     "html": "Fibroblast growth factor 23"
+    },
+    {
+     "label": "C",
+     "html": "Gs-alpha subunit of a heterotrimeric G protein"
+    },
+    {
+     "label": "D",
+     "html": "PTH receptor ligand-binding domain"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin D receptor"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Low calcium, high phosphate and high PTH mean end-organ <strong>PTH resistance</strong>. Failure of PTH to raise urinary cyclic AMP localises the block between the receptor and adenylyl cyclase, which is coupled by <strong>Gs-alpha</strong> (encoded by <em>GNAS</em>). Albright hereditary osteodystrophy (short stature, round face, short fourth and fifth metacarpals) completes pseudohypoparathyroidism type 1A. Because the kidney expresses only the maternal <em>GNAS</em> allele, the child who inherited the variant from her mother has hormone resistance, whereas the mother (who presumably inherited it from her father) has only the body habitus: pseudopseudohypoparathyroidism.</p><p><strong>Takeaway:</strong> PTH resistance with Albright hereditary osteodystrophy is pseudohypoparathyroidism type 1A, a maternally inherited <em>GNAS</em> (Gs-alpha) defect.</p>",
+   "whyNot": {
+    "A": "Loss of CaSR function causes hypercalcemia with low urine calcium, not hypocalcemia.",
+    "B": "Excess FGF23 causes phosphate wasting with low phosphate; she has high phosphate.",
+    "D": "A receptor-binding defect is possible in theory, but the Albright phenotype and imprinting pattern fit a Gs-alpha defect.",
+    "E": "Vitamin D receptor defects cause hereditary vitamin D-resistant rickets with low phosphate and alopecia, not Albright features."
+   },
+   "objective": "Explain pseudohypoparathyroidism type 1A as Gs-alpha (GNAS) loss with maternal imprinting.",
+   "areas": [
+    "usmle2026.15.03.01",
+    "usmle2026.15.08.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "pseudohypoparathyroidism",
+    "GNAS",
+    "imprinting"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 17-year-old boy has a serum calcium of 10.9 mg/dL found during a sports physical. He has no symptoms, stones or fractures. Serum phosphorus is 3.2 mg/dL, and intact PTH is 58 pg/mL (N = 10–65). The 24-hour urine calcium is 40 mg, and the calcium-to-creatinine clearance ratio is 0.004. His father and a sister have had similar calcium values for years without complications. Which of the following best explains the urine findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Excess calcitriol production by macrophages"
+    },
+    {
+     "label": "B",
+     "html": "Increased PTH secretion from a parathyroid adenoma"
+    },
+    {
+     "label": "C",
+     "html": "Reduced sensitivity of the calcium-sensing receptor in parathyroid and kidney"
+    },
+    {
+     "label": "D",
+     "html": "Reduced tubular secretion of calcium caused by low GFR"
+    },
+    {
+     "label": "E",
+     "html": "Suppressed PTH from a PTH-related peptide"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Mild lifelong hypercalcemia, normal PTH, very low urinary calcium (clearance ratio below 0.01) and affected relatives are <strong>familial hypocalciuric hypercalcemia</strong>, usually from a heterozygous inactivating <em>CASR</em> variant. The parathyroids need a higher calcium to suppress PTH, and in the thick ascending limb the less sensitive receptor allows more calcium reabsorption, so urine calcium is low.</p><p><strong>Takeaway:</strong> Hypercalcemia with normal PTH and a calcium-to-creatinine clearance ratio below 0.01 in a family is FHH, a CaSR loss-of-function disorder.</p>",
+   "whyNot": {
+    "A": "Calcitriol excess suppresses PTH and raises urinary calcium.",
+    "B": "Primary hyperparathyroidism usually raises urine calcium because the filtered load is high; the family history and low clearance ratio argue against it.",
+    "D": "Calcium is filtered and reabsorbed, not secreted, and his kidney function is normal.",
+    "E": "PTHrP-mediated hypercalcemia suppresses intact PTH, which is normal here."
+   },
+   "objective": "Explain the hypocalciuria of familial hypocalciuric hypercalcemia through CaSR loss of function.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "FHH",
+    "calcium-sensing receptor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 71-year-old man has had dull pain in his right thigh for a year. His hat no longer fits, and he has noticed reduced hearing. Serum calcium and phosphorus are normal. Alkaline phosphatase is 640 U/L, and AST, ALT, GGT and bilirubin are normal. Radiographs show a thickened, bowed right femur with coarse trabeculae and a thickened skull. Which of the following is most likely seen on bone biopsy?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Excess unmineralised osteoid seams"
+    },
+    {
+     "label": "B",
+     "html": "Fibrous tissue with hemosiderin-laden giant cells and cysts"
+    },
+    {
+     "label": "C",
+     "html": "Lamellar bone in a mosaic pattern with irregular cement lines"
+    },
+    {
+     "label": "D",
+     "html": "Thin trabeculae with normal mineralisation"
+    },
+    {
+     "label": "E",
+     "html": "Woven bone trabeculae in fibrous stroma shaped like Chinese letters"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>An isolated high alkaline phosphatase with normal calcium, a growing skull, deafness and a bowed, thickened long bone is <strong>Paget disease of bone</strong>. Bursts of osteoclast resorption followed by disorganised osteoblast repair leave lamellar bone with haphazard <strong>cement lines in a mosaic pattern</strong>. The bone is thick but weak. Complications include fractures, nerve compression, high-output heart failure and, rarely, osteosarcoma.</p><p><strong>Takeaway:</strong> Isolated high alkaline phosphatase with enlarging bones and mosaic lamellar bone is Paget disease.</p>",
+   "whyNot": {
+    "A": "Wide osteoid seams are osteomalacia, which lowers phosphate and raises PTH.",
+    "B": "Brown tumours of hyperparathyroidism contain giant cells and hemosiderin but come with hypercalcemia.",
+    "D": "Thin, normally mineralised trabeculae are osteoporosis, which leaves alkaline phosphatase normal.",
+    "E": "Curvilinear woven bone in fibrous tissue is fibrous dysplasia, usually in younger patients."
+   },
+   "objective": "Recognise the histology and laboratory pattern of Paget disease of bone.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Paget disease"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man with alcohol use disorder who also takes omeprazole daily is admitted with muscle cramps and hand spasms. Serum calcium is 6.9 mg/dL, albumin 4.0 g/dL, phosphorus 3.6 mg/dL, magnesium 0.6 mEq/L (N = 1.5–2.0) and intact PTH 14 pg/mL (N = 10–65). Intravenous calcium gluconate brings temporary relief, but calcium falls again within hours. Which of the following best explains the persistent hypocalcemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Autoimmune destruction of parathyroid chief cells"
+    },
+    {
+     "label": "B",
+     "html": "Hungry bone syndrome after alcohol withdrawal"
+    },
+    {
+     "label": "C",
+     "html": "Impaired PTH secretion and action due to magnesium deficiency"
+    },
+    {
+     "label": "D",
+     "html": "Loss-of-function variant in the Gs-alpha subunit"
+    },
+    {
+     "label": "E",
+     "html": "Vitamin D deficiency from malabsorption"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Severe <strong>hypomagnesemia</strong> (here from alcohol use and a proton pump inhibitor) blocks PTH release from the parathyroid and blunts the response of bone and kidney to PTH. PTH is therefore low or inappropriately normal despite hypocalcemia, and calcium replacement alone fails until magnesium is repleted.</p><p><strong>Takeaway:</strong> Refractory hypocalcemia with low or normal PTH: check and replace magnesium.</p>",
+   "whyNot": {
+    "A": "Autoimmune hypoparathyroidism does not explain the very low magnesium; with two clear causes of magnesium loss, the low PTH is best explained by magnesium depletion, which is reversible.",
+    "B": "Hungry bone syndrome follows parathyroidectomy or thyroidectomy for hyperthyroidism, not alcohol withdrawal.",
+    "D": "Gs-alpha loss causes PTH resistance with high PTH, not a low PTH.",
+    "E": "Vitamin D deficiency causes secondary hyperparathyroidism with high PTH and low phosphate."
+   },
+   "objective": "Explain how hypomagnesemia causes functional hypoparathyroidism.",
+   "areas": [
+    "usmle2026.15.03.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "hypomagnesemia",
+    "hypocalcemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 46-year-old woman who had Roux-en-Y gastric bypass 8 years ago has had diffuse bone pain, difficulty climbing stairs and a waddling gait for 6 months. She stopped her supplements years ago. Serum calcium is 8.3 mg/dL, phosphorus 2.2 mg/dL, alkaline phosphatase 290 U/L, intact PTH 160 pg/mL (N = 10–65) and 25-hydroxyvitamin D 6 ng/mL (N = 20–50). Radiographs show bilateral linear lucencies perpendicular to the cortex of the femoral necks. Which of the following is the most likely histologic finding in her bone?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Increased osteoclast numbers with peritrabecular fibrosis only"
+    },
+    {
+     "label": "B",
+     "html": "Mosaic lamellar bone with prominent cement lines"
+    },
+    {
+     "label": "C",
+     "html": "Normal mineralised trabeculae that are reduced in number"
+    },
+    {
+     "label": "D",
+     "html": "Thick seams of unmineralised osteoid on bone surfaces"
+    },
+    {
+     "label": "E",
+     "html": "Woven bone produced by malignant osteoblasts"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Malabsorption after gastric bypass has caused vitamin D deficiency with low calcium and phosphate, high alkaline phosphatase and secondary hyperparathyroidism: <strong>osteomalacia</strong>. Without enough calcium and phosphate, osteoid is laid down but not mineralised, leaving <strong>wide osteoid seams</strong>. The lucencies are pseudofractures (Looser zones). Proximal myopathy and bone pain are typical.</p><p><strong>Takeaway:</strong> Low calcium and phosphate, high alkaline phosphatase and PTH, and pseudofractures mean osteomalacia: unmineralised osteoid.</p>",
+   "whyNot": {
+    "A": "Peritrabecular fibrosis with osteoclast activity is the PTH effect, but on its own it does not explain the pseudofractures and defective mineralisation.",
+    "B": "Mosaic bone is Paget disease, which has normal calcium and phosphate.",
+    "C": "Reduced, normally mineralised trabeculae is osteoporosis, with normal laboratory values.",
+    "E": "Malignant osteoid is osteosarcoma, a focal tumour, not a diffuse metabolic process."
+   },
+   "objective": "Recognise osteomalacia from vitamin D deficiency after bariatric surgery.",
+   "areas": [
+    "usmle2026.15.03.01",
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [
+    "pathology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "osteomalacia",
+    "bariatric surgery",
+    "vitamin D"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 69-year-old woman with osteoporosis begins a weekly oral drug that must be taken fasting with a full glass of water while she stays upright for 30 minutes. The drug binds to hydroxyapatite and is taken up by bone-resorbing cells. Which of the following best describes its molecular action?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Binds RANKL and blocks its interaction with RANK"
+    },
+    {
+     "label": "B",
+     "html": "Binds sclerostin and releases inhibition of Wnt signalling"
+    },
+    {
+     "label": "C",
+     "html": "Inhibits farnesyl pyrophosphate synthase in osteoclasts"
+    },
+    {
+     "label": "D",
+     "html": "Selectively activates estrogen receptors in bone"
+    },
+    {
+     "label": "E",
+     "html": "Stimulates the PTH type 1 receptor intermittently"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Weekly oral dosing with strict fasting and upright instructions describes a nitrogen-containing <strong>bisphosphonate</strong> such as alendronate. It concentrates on bone surfaces, is ingested by osteoclasts and inhibits <strong>farnesyl pyrophosphate synthase</strong> in the mevalonate pathway; loss of protein prenylation disrupts the osteoclast ruffled border and causes apoptosis. The upright instruction prevents pill esophagitis.</p><p><strong>Takeaway:</strong> Nitrogen-containing bisphosphonates inhibit farnesyl pyrophosphate synthase and kill osteoclasts.</p>",
+   "whyNot": {
+    "A": "Blocking RANKL is denosumab, a subcutaneous antibody given every 6 months.",
+    "B": "Sclerostin inhibition is romosozumab, a monthly injection.",
+    "D": "Selective estrogen receptor modulation is raloxifene, which has no fasting or upright requirement.",
+    "E": "Intermittent PTH receptor stimulation is teriparatide or abaloparatide, given by daily injection."
+   },
+   "objective": "Describe the mechanism of nitrogen-containing bisphosphonates.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "bisphosphonate",
+    "osteoporosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old woman has a serum calcium of 11.6 mg/dL (N = 8.4–10.2) on two occasions. She has no symptoms and no history of kidney stones or fractures. Phosphorus is 2.5 mg/dL, intact PTH 96 pg/mL (N = 10–65), 25-hydroxyvitamin D 34 ng/mL, eGFR 82 mL/min/1.73 m², and 24-hour urine calcium 290 mg. DXA shows a T-score of −2.7 at the distal radius and −1.6 at the lumbar spine. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Annual calcium and creatinine monitoring only"
+    },
+    {
+     "label": "B",
+     "html": "Begin hydrochlorothiazide to reduce urinary calcium"
+    },
+    {
+     "label": "C",
+     "html": "Referral for parathyroidectomy with preoperative localisation imaging"
+    },
+    {
+     "label": "D",
+     "html": "Start cinacalcet as definitive therapy"
+    },
+    {
+     "label": "E",
+     "html": "Start oral alendronate and repeat DXA in 2 years"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has <strong>primary hyperparathyroidism</strong> (high calcium, high PTH, normal vitamin D, urine calcium not low). Although asymptomatic, she meets criteria for surgery: calcium more than 1 mg/dL above the upper limit, and osteoporosis at the distal radius (a site PTH particularly affects). <strong>Parathyroidectomy</strong> is curative; localisation imaging (sestamibi, ultrasonography or 4D-CT) is done once surgery is planned.</p><p><strong>Takeaway:</strong> Primary hyperparathyroidism with calcium >1 mg/dL above normal, osteoporosis, eGFR <60, stones or hypercalciuria, or age <50: refer for parathyroidectomy.</p>",
+   "whyNot": {
+    "A": "Observation is for patients who meet no surgical criteria; she meets two.",
+    "B": "Thiazides raise serum calcium and are avoided in primary hyperparathyroidism.",
+    "D": "Cinacalcet lowers calcium but does not improve bone density or cure the disease; it is for patients who cannot have surgery.",
+    "E": "A bisphosphonate protects bone but leaves the hyperparathyroidism, and its calcium elevation, untreated."
+   },
+   "objective": "Apply surgical criteria in asymptomatic primary hyperparathyroidism.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "primary hyperparathyroidism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old woman with metastatic breast cancer to the spine and pelvis is brought to the emergency department with 4 days of increasing confusion, thirst, constipation and poor oral intake. Blood pressure is 98/60 mm Hg and pulse 110/min. Mucous membranes are dry. Serum calcium is 14.6 mg/dL, albumin 3.8 g/dL, creatinine 1.6 mg/dL (baseline 0.8) and intact PTH 6 pg/mL (N = 10–65). ECG shows a short QT interval. Which of the following is the most appropriate initial management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous furosemide followed by oral alendronate"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous isotonic saline, subcutaneous calcitonin and intravenous zoledronic acid"
+    },
+    {
+     "label": "C",
+     "html": "Oral prednisone and a low-calcium diet"
+    },
+    {
+     "label": "D",
+     "html": "Subcutaneous denosumab alone without intravenous fluids"
+    },
+    {
+     "label": "E",
+     "html": "Urgent hemodialysis with a low-calcium bath"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Severe, symptomatic <strong>hypercalcemia of malignancy</strong> with volume depletion and prerenal AKI is treated with <strong>intravenous isotonic saline</strong> to restore volume and calcium excretion, <strong>calcitonin</strong> for a rapid fall over hours, and an <strong>intravenous bisphosphonate</strong> (zoledronic acid, with the dose adjusted to kidney function) for a sustained effect over days. Suppressed PTH confirms a PTH-independent cause, here osteolytic metastases (with or without PTHrP).</p><p><strong>Takeaway:</strong> Severe hypercalcemia: saline first, calcitonin for speed, a bisphosphonate (or denosumab) for durability.</p>",
+   "whyNot": {
+    "A": "Furosemide before volume repletion worsens dehydration and kidney injury, and oral bisphosphonates act too slowly and absorb poorly.",
+    "C": "Glucocorticoids treat calcitriol-mediated hypercalcemia (lymphoma, granulomas), not bone metastases from breast cancer.",
+    "D": "Denosumab is useful, especially when bisphosphonates cannot be used, but leaving the volume depletion untreated is unsafe.",
+    "E": "Dialysis is reserved for life-threatening hypercalcemia with severe kidney failure or failure of standard therapy."
+   },
+   "objective": "Manage severe hypercalcemia of malignancy with saline, calcitonin and a bisphosphonate.",
+   "areas": [
+    "usmle2026.15.03.01",
+    "usmle2026.16.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypercalcemia of malignancy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-03",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 66-year-old man with newly diagnosed diffuse large B-cell lymphoma has fatigue and constipation. Laboratory studies after 2 L of intravenous saline show:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Calcium</td><td>12.4 mg/dL</td></tr><tr><td>Phosphorus</td><td>4.1 mg/dL</td></tr><tr><td>Intact PTH</td><td>5 pg/mL (N = 10–65)</td></tr><tr><td>PTH-related peptide</td><td>Undetectable</td></tr><tr><td>25-hydroxyvitamin D</td><td>28 ng/mL (N = 20–50)</td></tr><tr><td>1,25-dihydroxyvitamin D</td><td>118 pg/mL (N = 18–72)</td></tr></table><p>Which of the following is the most appropriate additional treatment to lower his calcium?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cinacalcet"
+    },
+    {
+     "label": "B",
+     "html": "Glucocorticoids"
+    },
+    {
+     "label": "C",
+     "html": "Hydrochlorothiazide"
+    },
+    {
+     "label": "D",
+     "html": "Oral phosphate binder"
+    },
+    {
+     "label": "E",
+     "html": "Parathyroidectomy"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Suppressed PTH, absent PTHrP and a high <strong>1,25-dihydroxyvitamin D</strong> with a normal 25-hydroxyvitamin D mean the lymphoma's macrophages are making calcitriol through unregulated 1-alpha-hydroxylase, raising gut calcium absorption. <strong>Glucocorticoids</strong> inhibit this enzyme activity and are effective, alongside treatment of the lymphoma. The same approach applies to sarcoidosis and other granulomatous disease.</p><p><strong>Takeaway:</strong> Calcitriol-mediated hypercalcemia (lymphoma, granulomas) responds to glucocorticoids.</p>",
+   "whyNot": {
+    "A": "Cinacalcet lowers PTH, which is already suppressed.",
+    "C": "Thiazides reduce calcium excretion and would worsen hypercalcemia.",
+    "D": "Phosphate binders lower phosphate; they do not address calcitriol-driven calcium absorption.",
+    "E": "The parathyroids are suppressed and not the cause."
+   },
+   "objective": "Recognise calcitriol-mediated hypercalcemia and treat it with glucocorticoids.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypercalcemia",
+    "lymphoma",
+    "calcitriol"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old woman developed permanent hypoparathyroidism after total thyroidectomy for papillary thyroid cancer 1 year ago. She takes levothyroxine and calcium carbonate 1 g three times daily, but still has occasional tingling. Serum calcium is 7.6 mg/dL, phosphorus 5.2 mg/dL, magnesium 1.9 mEq/L, 25-hydroxyvitamin D 36 ng/mL and PTH undetectable. Which of the following is the most appropriate addition to her treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Calcitriol"
+    },
+    {
+     "label": "B",
+     "html": "Cholecalciferol at a higher dose"
+    },
+    {
+     "label": "C",
+     "html": "Ergocalciferol at a higher dose"
+    },
+    {
+     "label": "D",
+     "html": "Hydrochlorothiazide alone"
+    },
+    {
+     "label": "E",
+     "html": "Magnesium oxide"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Without PTH, the proximal tubule cannot adequately activate 1-alpha-hydroxylase, so ordinary vitamin D (already replete here) is not converted to the active hormone. <strong>Calcitriol</strong>, the active form, restores intestinal calcium absorption. The aim is a low-normal calcium, which limits hypercalciuria and kidney stones; urinary calcium is monitored, and a thiazide can be added if it is high.</p><p><strong>Takeaway:</strong> Hypoparathyroidism needs calcium plus active vitamin D (calcitriol); target low-normal calcium.</p>",
+   "whyNot": {
+    "B": "Her 25-hydroxyvitamin D is replete; the missing step is 1-alpha-hydroxylation, which needs PTH.",
+    "C": "Ergocalciferol also requires PTH-dependent activation and has the same limitation.",
+    "D": "A thiazide reduces urinary calcium losses but will not correct hypocalcemia on its own.",
+    "E": "Her magnesium is normal, so it is not limiting PTH or its action."
+   },
+   "objective": "Use calcitriol in chronic hypoparathyroidism.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hypoparathyroidism",
+    "calcitriol"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old woman comes for a health maintenance visit. She has never had a fracture, takes no medications and drinks alcohol rarely. Her mother did not have a hip fracture. BMI is 24 kg/m². She has never had bone density testing. Which of the following is the most appropriate recommendation regarding osteoporosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bone density testing is not needed without a prior fracture"
+    },
+    {
+     "label": "B",
+     "html": "DXA of the hip and lumbar spine"
+    },
+    {
+     "label": "C",
+     "html": "Plain radiographs of the thoracic and lumbar spine"
+    },
+    {
+     "label": "D",
+     "html": "Serum alkaline phosphatase and calcium only"
+    },
+    {
+     "label": "E",
+     "html": "Start alendronate empirically without testing"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>All women aged <strong>65 years or older</strong> should be screened for osteoporosis with bone density testing, usually <strong>DXA</strong> of the hip and lumbar spine. Younger postmenopausal women are screened when a risk assessment shows increased risk.</p><p><strong>Takeaway:</strong> Screen all women 65 and older for osteoporosis with DXA.</p>",
+   "whyNot": {
+    "A": "Screening is aimed at finding osteoporosis before the first fracture.",
+    "C": "Radiographs detect fractures but are insensitive for low bone mass.",
+    "D": "Blood tests are normal in osteoporosis and do not measure bone density.",
+    "E": "Treatment decisions need a measured T-score or a fragility fracture."
+   },
+   "objective": "Screen women 65 and older for osteoporosis with DXA.",
+   "areas": [
+    "usmle2026.15.03.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "uspstf"
+   ],
+   "figureIds": [],
+   "tags": [
+    "osteoporosis screening"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 74-year-old woman with osteoporosis has received denosumab every 6 months for 5 years after a vertebral fracture. Her most recent DXA shows a lumbar spine T-score of −2.1, up from −3.0. She asks to stop treatment because she is tired of the injections. Creatinine clearance is 58 mL/min. Which of the following is the most appropriate plan?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Stop denosumab and give no further therapy"
+    },
+    {
+     "label": "B",
+     "html": "Stop denosumab and start a bisphosphonate around the time the next dose would be due"
+    },
+    {
+     "label": "C",
+     "html": "Stop denosumab and start calcium and vitamin D supplements only"
+    },
+    {
+     "label": "D",
+     "html": "Stop denosumab and start raloxifene"
+    },
+    {
+     "label": "E",
+     "html": "Stop denosumab and repeat DXA in 5 years"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Denosumab's effect wears off rapidly. Stopping it without follow-on therapy causes a <strong>rebound</strong> in bone turnover, rapid loss of the density gained and a risk of <strong>multiple vertebral fractures</strong>, especially in someone with a prior vertebral fracture. Transition to a <strong>bisphosphonate</strong> (often zoledronic acid or alendronate) timed to when the next denosumab dose would be due.</p><p><strong>Takeaway:</strong> Never stop denosumab without starting a bisphosphonate.</p>",
+   "whyNot": {
+    "A": "No follow-on therapy risks rebound vertebral fractures.",
+    "C": "Calcium and vitamin D are needed but are too weak to prevent rebound bone loss.",
+    "D": "Raloxifene has not been shown to prevent post-denosumab rebound and raises venous thromboembolism risk.",
+    "E": "Waiting 5 years without therapy is unsafe after stopping denosumab."
+   },
+   "objective": "Prevent rebound vertebral fractures when stopping denosumab.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "denosumab",
+    "osteoporosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150301-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 76-year-old woman has a DXA T-score of −2.9 at the femoral neck. She has a peptic esophageal stricture that has required dilation twice and recurrent esophagitis. Creatinine clearance is 64 mL/min. She is otherwise independent. Which of the following is the most appropriate treatment for her osteoporosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Daily oral calcium and vitamin D only"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous zoledronic acid once yearly"
+    },
+    {
+     "label": "C",
+     "html": "Oral alendronate weekly"
+    },
+    {
+     "label": "D",
+     "html": "Oral risedronate monthly"
+    },
+    {
+     "label": "E",
+     "html": "Teriparatide daily for life"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Oral bisphosphonates can cause pill esophagitis and are avoided in patients with <strong>esophageal stricture</strong>, achalasia or inability to stay upright. <strong>Intravenous zoledronic acid</strong> once a year avoids the esophagus and is effective; her kidney function permits it.</p><p><strong>Takeaway:</strong> Use intravenous zoledronic acid (or denosumab) when oral bisphosphonates are contraindicated by esophageal disease.</p>",
+   "whyNot": {
+    "A": "Calcium and vitamin D alone do not adequately reduce fracture risk at this T-score.",
+    "C": "Weekly alendronate is contraindicated with an esophageal stricture.",
+    "D": "Risedronate is also an oral bisphosphonate with the same esophageal risk.",
+    "E": "Anabolic therapy is limited to about 2 years and is reserved for very high risk; it is not lifelong."
+   },
+   "objective": "Choose intravenous zoledronic acid when oral bisphosphonates are contraindicated.",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "osteoporosis",
+    "zoledronic acid"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q150301-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set150301-1",
+   "setOrder": 2,
+   "stemHtml": "<p>Before the planned zoledronic acid infusion, laboratory studies show serum calcium 8.1 mg/dL (albumin 4.0 g/dL), phosphorus 2.6 mg/dL, alkaline phosphatase 142 U/L, 25-hydroxyvitamin D 9 ng/mL (N = 20–50) and intact PTH 94 pg/mL (N = 10–65). Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Give the infusion as planned and recheck calcium in 1 year"
+    },
+    {
+     "label": "B",
+     "html": "Give the infusion with a single dose of calcitriol"
+    },
+    {
+     "label": "C",
+     "html": "Replete vitamin D and calcium, then give the infusion once levels are corrected"
+    },
+    {
+     "label": "D",
+     "html": "Switch to romosozumab immediately"
+    },
+    {
+     "label": "E",
+     "html": "Start cinacalcet to treat the high PTH"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>She has <strong>vitamin D deficiency with secondary hyperparathyroidism</strong> and low-normal calcium. A potent antiresorptive given now can cause symptomatic <strong>hypocalcemia</strong>, because bone can no longer release calcium to buffer the deficit. Replete vitamin D (cholecalciferol) and ensure adequate calcium first, then infuse. Untreated vitamin D deficiency also blunts the drug's benefit and may hide osteomalacia.</p><p><strong>Takeaway:</strong> Correct vitamin D deficiency and hypocalcemia before zoledronic acid or denosumab.</p>",
+   "whyNot": {
+    "A": "Infusing now risks hypocalcemia.",
+    "B": "One dose of calcitriol does not correct the deficiency and can cause hypercalciuria; the store of 25-hydroxyvitamin D needs replacing.",
+    "D": "Romosozumab also needs replete vitamin D and calcium, and the problem is the deficiency, not the drug class.",
+    "E": "The PTH rise is secondary to vitamin D deficiency; cinacalcet would worsen the hypocalcemia."
+   },
+   "objective": "Correct vitamin D deficiency before giving a potent antiresorptive.",
+   "areas": [
+    "usmle2026.15.03.01",
+    "usmle2026.16.04.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vitamin D deficiency",
+    "secondary hyperparathyroidism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c150301-01",
+   "frontHtml": "First test after confirming true hypercalcemia?",
+   "backHtml": "Intact PTH: high or inappropriately normal is PTH-dependent (primary hyperparathyroidism, FHH, lithium); suppressed means look for PTHrP, calcitriol, myeloma or metastases.",
+   "sectionId": "s23c-s150301-1-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-02",
+   "frontHtml": "PTH actions on the kidney?",
+   "backHtml": "More calcium reabsorption in the distal convoluted tubule, less phosphate reabsorption in the proximal tubule, more 1-alpha-hydroxylase activity.",
+   "sectionId": "s23c-s150301-1-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-03",
+   "frontHtml": "Familial hypocalciuric hypercalcemia: gene, inheritance and urine finding?",
+   "backHtml": "Heterozygous loss-of-function <em>CASR</em>, autosomal dominant; calcium-to-creatinine clearance ratio below 0.01. Benign; no surgery.",
+   "sectionId": "s23c-s150301-1-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-04",
+   "frontHtml": "Which hormone lowers phosphate and suppresses 1-alpha-hydroxylase, rising early in CKD?",
+   "backHtml": "FGF23 (from osteocytes).",
+   "sectionId": "s23c-s150301-1-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-05",
+   "frontHtml": "Why does severe hypomagnesemia cause hypocalcemia?",
+   "backHtml": "Magnesium is needed for PTH secretion and for PTH action on bone and kidney; replace magnesium first.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-06",
+   "frontHtml": "Pseudohypoparathyroidism type 1A: defect and labs?",
+   "backHtml": "Maternally inherited <em>GNAS</em> (Gs-alpha) loss; low calcium, high phosphate, high PTH, with Albright hereditary osteodystrophy.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-07",
+   "frontHtml": "Same <em>GNAS</em> variant inherited from the father?",
+   "backHtml": "Pseudopseudohypoparathyroidism: Albright features with normal calcium and PTH.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-08",
+   "frontHtml": "Osteomalacia labs?",
+   "backHtml": "Calcium low or normal, phosphate low, alkaline phosphatase high, PTH high, 25-hydroxyvitamin D usually low; histology shows wide osteoid seams.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-09",
+   "frontHtml": "Paget disease: lab hallmark and histology?",
+   "backHtml": "Isolated high alkaline phosphatase with normal calcium and phosphate; mosaic lamellar bone with cement lines.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-10",
+   "frontHtml": "Mechanism of denosumab?",
+   "backHtml": "Monoclonal antibody against RANKL, blocking osteoclast formation and activation.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-11",
+   "frontHtml": "Why is intermittent teriparatide anabolic when continuous PTH excess resorbs bone?",
+   "backHtml": "Daily pulses favour osteoblast activity over osteoclast activation; sustained PTH drives RANKL-mediated resorption.",
+   "sectionId": "s23c-s150301-1-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-12",
+   "frontHtml": "Acute treatment of severe hypercalcemia?",
+   "backHtml": "IV isotonic saline, calcitonin (rapid, short-lived), IV zoledronic acid (sustained); denosumab if kidney function bars bisphosphonates.",
+   "sectionId": "s23c-s150301-2-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-13",
+   "frontHtml": "Surgical criteria in asymptomatic primary hyperparathyroidism?",
+   "backHtml": "Calcium >1 mg/dL above normal; T-score ≤ −2.5 or vertebral fracture; eGFR <60, stones, nephrocalcinosis or hypercalciuria; age <50.",
+   "sectionId": "s23c-s150301-2-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-14",
+   "frontHtml": "Role of a sestamibi scan in primary hyperparathyroidism?",
+   "backHtml": "Localisation before surgery only; the diagnosis is biochemical.",
+   "sectionId": "s23c-s150301-2-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-15",
+   "frontHtml": "Hypercalcemia with high 1,25-dihydroxyvitamin D and suppressed PTH: treatment?",
+   "backHtml": "Glucocorticoids (granulomatous disease or lymphoma), plus treat the cause.",
+   "sectionId": "s23c-s150301-2-1",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-16",
+   "frontHtml": "Which vitamin D form for chronic hypoparathyroidism, and what calcium target?",
+   "backHtml": "Calcitriol; aim for low-normal serum calcium to limit hypercalciuria.",
+   "sectionId": "s23c-s150301-2-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-17",
+   "frontHtml": "Who should be screened for osteoporosis?",
+   "backHtml": "All women 65 and older; younger postmenopausal women at increased risk.",
+   "sectionId": "s23c-s150301-2-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c150301-18",
+   "frontHtml": "What must follow when denosumab is stopped?",
+   "backHtml": "A bisphosphonate, to prevent rebound bone loss and multiple vertebral fractures.",
+   "sectionId": "s23c-s150301-2-2",
+   "areas": [
+    "usmle2026.15.03.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

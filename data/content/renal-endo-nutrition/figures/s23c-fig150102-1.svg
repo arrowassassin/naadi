@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Laboratory pattern of hypoglycemia causes, drawn at the time of a glucose below 55 mg/dL: insulin, C-peptide, proinsulin, beta-hydroxybutyrate, sulfonylurea screen and insulin antibodies">
+<title>Hypoglycemia: blood drawn during the low glucose</title>
+<rect x="0" y="0" width="720" height="360" fill="#ffffff"/>
+<text x="16" y="26" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Blood drawn while glucose is below 55 mg/dL (3.0 mmol/L)</text>
+<g font-family="sans-serif" font-size="12" fill="#0f172a">
+<rect x="10" y="40" width="700" height="30" fill="#e2e8f0"/>
+<text x="18" y="60" font-weight="bold">Cause</text>
+<text x="250" y="60" font-weight="bold">Insulin</text>
+<text x="320" y="60" font-weight="bold">C-peptide</text>
+<text x="400" y="60" font-weight="bold">Proinsulin</text>
+<text x="480" y="60" font-weight="bold">β-OH-butyrate</text>
+<text x="575" y="60" font-weight="bold">SU screen</text>
+<text x="645" y="60" font-weight="bold">Ab</text>
+<text x="18" y="95">Insulinoma (beta-cell tumour)</text>
+<text x="250" y="95">high</text><text x="320" y="95">high</text><text x="400" y="95">high</text><text x="480" y="95">low</text><text x="575" y="95">neg</text><text x="645" y="95">neg</text>
+<rect x="10" y="105" width="700" height="30" fill="#f8fafc"/>
+<text x="18" y="125">Sulfonylurea or meglitinide</text>
+<text x="250" y="125">high</text><text x="320" y="125">high</text><text x="400" y="125">high</text><text x="480" y="125">low</text><text x="575" y="125" font-weight="bold">pos</text><text x="645" y="125">neg</text>
+<text x="18" y="155">Injected insulin</text>
+<text x="250" y="155" font-weight="bold">very high</text><text x="320" y="155" font-weight="bold">low</text><text x="400" y="155">low</text><text x="480" y="155">low</text><text x="575" y="155">neg</text><text x="645" y="155">±</text>
+<rect x="10" y="165" width="700" height="30" fill="#f8fafc"/>
+<text x="18" y="185">Insulin autoimmune hypoglycemia</text>
+<text x="250" y="185" font-weight="bold">very high</text><text x="320" y="185">high</text><text x="400" y="185">high</text><text x="480" y="185">low</text><text x="575" y="185">neg</text><text x="645" y="185" font-weight="bold">pos</text>
+<text x="18" y="215">Tumour making IGF-2 (non-islet)</text>
+<text x="250" y="215">low</text><text x="320" y="215">low</text><text x="400" y="215">low</text><text x="480" y="215" font-weight="bold">low</text><text x="575" y="215">neg</text><text x="645" y="215">neg</text>
+<rect x="10" y="225" width="700" height="30" fill="#f8fafc"/>
+<text x="18" y="245">Not insulin-mediated (alcohol, adrenal</text>
+<text x="18" y="258" font-size="11">insufficiency, starvation, liver failure)</text>
+<text x="250" y="245">low</text><text x="320" y="245">low</text><text x="400" y="245">low</text><text x="480" y="245" font-weight="bold">high</text><text x="575" y="245">neg</text><text x="645" y="245">neg</text>
+</g>
+<line x1="10" y1="270" x2="710" y2="270" stroke="#334155" stroke-width="1"/>
+<g font-family="sans-serif" font-size="12" fill="#0f172a">
+<text x="18" y="292">• C-peptide is cut from proinsulin inside the beta cell, so it rises only with the body's own insulin release.</text>
+<text x="18" y="312">• Low β-hydroxybutyrate means something insulin-like is acting (insulin or IGF-2) and blocking ketogenesis.</text>
+<text x="18" y="332">• High insulin with high C-peptide is endogenous: insulinoma or an insulin secretagogue. The drug screen separates them.</text>
+</g>
+</svg>

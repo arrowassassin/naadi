@@ -2132,5 +2132,2260 @@
   ],
   "source": "naadi-original-v1",
   "tags": []
+ },
+ {
+  "id": "s23c-c150101-01",
+  "frontHtml": "Which product of proinsulin processing best reflects endogenous insulin secretion, and why?",
+  "backHtml": "C-peptide: released in equal amounts with insulin, not cleared on first pass through the liver, longer half-life; absent from injected insulin.",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-02",
+  "frontHtml": "Which beta-cell enzyme acts as the glucose sensor?",
+  "backHtml": "Glucokinase (high Km, not inhibited by product). Loss of function causes GCK-MODY.",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-03",
+  "frontHtml": "Sequence of glucose-stimulated insulin release?",
+  "backHtml": "GLUT2 uptake → glucokinase → ↑ ATP/ADP → K-ATP channels close → depolarisation → Ca²⁺ influx → exocytosis.",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-04",
+  "frontHtml": "Why does oral glucose release more insulin than the same IV glucose?",
+  "backHtml": "Incretin effect: GLP-1 and GIP from the gut amplify glucose-dependent insulin secretion.",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-05",
+  "frontHtml": "Islet histology: type 1 vs type 2 diabetes?",
+  "backHtml": "Type 1: insulitis (lymphocytes) with beta-cell loss. Type 2: islet amyloid (amylin).",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-06",
+  "frontHtml": "HLA types associated with type 1 diabetes?",
+  "backHtml": "HLA-DR3 and HLA-DR4 (DQ2 and DQ8).",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-07",
+  "frontHtml": "Autoantibodies of type 1 diabetes?",
+  "backHtml": "GAD65, IA-2, ZnT8 and insulin autoantibodies.",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-08",
+  "frontHtml": "HNF1A-MODY: two clinical clues?",
+  "backHtml": "Glycosuria from a low renal threshold and marked sensitivity to sulfonylureas.",
+  "sectionId": "s23c-s150101-1-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-09",
+  "frontHtml": "Why do patients with HHS have little ketosis?",
+  "backHtml": "Residual insulin restrains lipolysis and ketogenesis but not hepatic glucose output.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-10",
+  "frontHtml": "Serum potassium in DKA vs total-body potassium?",
+  "backHtml": "Serum often normal or high (insulin lack, acidosis shift K⁺ out of cells); total-body K⁺ is depleted by urinary losses.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-11",
+  "frontHtml": "Enzyme that converts glucose to sorbitol, and tissues harmed?",
+  "backHtml": "Aldose reductase; lens (cataract), Schwann cells (neuropathy), retina, kidney.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-12",
+  "frontHtml": "Kidney lesion specific for diabetic nephropathy?",
+  "backHtml": "Nodular (Kimmelstiel-Wilson) glomerulosclerosis, with GBM thickening and hyaline arteriolosclerosis of afferent and efferent arterioles.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-13",
+  "frontHtml": "Sulfonylurea mechanism and main adverse effects?",
+  "backHtml": "Bind SUR1 → close K-ATP → glucose-independent insulin release; hypoglycemia and weight gain.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-14",
+  "frontHtml": "Pioglitazone: mechanism and adverse effects?",
+  "backHtml": "PPAR-gamma agonist (nuclear receptor with RXR); weight gain, fluid retention and heart failure, fractures.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-15",
+  "frontHtml": "SGLT2 inhibitor adverse effects?",
+  "backHtml": "Genital mycotic infections, volume depletion, euglycemic DKA, rare perineal necrotising fasciitis.",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-16",
+  "frontHtml": "GLP-1 receptor agonists are avoided with which history?",
+  "backHtml": "Personal or family history of medullary thyroid carcinoma or MEN2 (also caution with prior pancreatitis).",
+  "sectionId": "s23c-s150101-1-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-17",
+  "frontHtml": "Diagnostic thresholds for diabetes?",
+  "backHtml": "A1c ≥ 6.5%; fasting glucose ≥ 126 mg/dL; 2-h OGTT ≥ 200 mg/dL; random ≥ 200 mg/dL with symptoms.",
+  "sectionId": "s23c-s150101-2-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-18",
+  "frontHtml": "Two screening tests disagree (one diabetic, one not): next step?",
+  "backHtml": "Repeat the test that was abnormal.",
+  "sectionId": "s23c-s150101-2-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-19",
+  "frontHtml": "Type 2 diabetes with heart failure: preferred added drug class?",
+  "backHtml": "SGLT2 inhibitor, regardless of A1c.",
+  "sectionId": "s23c-s150101-2-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-20",
+  "frontHtml": "When is a less strict A1c target (about 8%) appropriate?",
+  "backHtml": "Older adults with multiple illnesses, cognitive impairment, falls or limited life expectancy.",
+  "sectionId": "s23c-s150101-2-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-21",
+  "frontHtml": "When to start retinopathy screening in type 1 vs type 2 diabetes?",
+  "backHtml": "Type 1: within 5 years of onset. Type 2: at diagnosis. Then every 1–2 years if normal.",
+  "sectionId": "s23c-s150101-2-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-22",
+  "frontHtml": "Key treatment for a noninfected neuropathic diabetic foot ulcer?",
+  "backHtml": "Offloading (total contact cast or walker) plus debridement.",
+  "sectionId": "s23c-s150101-2-1",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-23",
+  "frontHtml": "DKA or HHS with K⁺ below 3.3 mEq/L: what first?",
+  "backHtml": "Hold insulin; give IV potassium until at least 3.3 mEq/L.",
+  "sectionId": "s23c-s150101-2-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-24",
+  "frontHtml": "When is dextrose added to fluids in DKA and HHS?",
+  "backHtml": "DKA: glucose about 250 mg/dL. HHS: about 300 mg/dL. Keep insulin running.",
+  "sectionId": "s23c-s150101-2-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-25",
+  "frontHtml": "How to stop an insulin infusion after DKA resolves?",
+  "backHtml": "Give subcutaneous basal insulin 1–2 hours before stopping the infusion.",
+  "sectionId": "s23c-s150101-2-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-26",
+  "frontHtml": "Sick-day rule for basal insulin in type 1 diabetes?",
+  "backHtml": "Never stop it; monitor glucose and ketones and use correction doses.",
+  "sectionId": "s23c-s150101-2-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150101-27",
+  "frontHtml": "Drugs to stop before pregnancy in a woman with diabetes?",
+  "backHtml": "ACE inhibitors/ARBs and statins; start folic acid and aim for A1c below 6.5% if safe.",
+  "sectionId": "s23c-s150101-2-2",
+  "areas": [
+   "usmle2026.15.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-01",
+  "frontHtml": "Whipple's triad?",
+  "backHtml": "Symptoms of hypoglycemia, a low plasma glucose measured at the time (below 55 mg/dL in people without diabetes), and relief when glucose is raised.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-02",
+  "frontHtml": "Order of the counterregulatory response to falling glucose?",
+  "backHtml": "Insulin secretion stops, then glucagon rises, then epinephrine; cortisol and growth hormone act over hours.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-03",
+  "frontHtml": "Why does C-peptide separate injected insulin from the body's own insulin?",
+  "backHtml": "C-peptide is cleaved from proinsulin inside beta cells and released with insulin; drug insulin contains none.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-04",
+  "frontHtml": "High insulin, high C-peptide, high proinsulin: two possible causes?",
+  "backHtml": "Insulinoma or an insulin secretagogue (sulfonylurea, meglitinide); a drug screen separates them.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-05",
+  "frontHtml": "Low insulin, low C-peptide and low ketones during hypoglycemia with a large tumour?",
+  "backHtml": "Non-islet cell tumour hypoglycemia from incompletely processed (\"big\") IGF-2.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-06",
+  "frontHtml": "How does alcohol cause fasting hypoglycemia?",
+  "backHtml": "A high NADH/NAD<sup>+</sup> ratio diverts pyruvate and oxaloacetate away from gluconeogenesis once glycogen is depleted.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-07",
+  "frontHtml": "Necrolytic migratory erythema, new diabetes, weight loss and DVT?",
+  "backHtml": "Glucagonoma (alpha-cell tumour).",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-08",
+  "frontHtml": "Watery diarrhea despite fasting, hypokalemia, achlorhydria?",
+  "backHtml": "VIPoma: VIP raises enterocyte cAMP and drives chloride secretion.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-09",
+  "frontHtml": "Somatostatinoma triad?",
+  "backHtml": "Diabetes, gallstones and steatorrhea (with achlorhydria).",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-10",
+  "frontHtml": "Why do infants of mothers with diabetes become hypoglycemic after birth?",
+  "backHtml": "Fetal beta-cell hyperplasia keeps secreting insulin after the maternal glucose supply stops.",
+  "sectionId": "s23c-s150102-1-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-11",
+  "frontHtml": "Hypoglycemia in a conscious patient who can swallow?",
+  "backHtml": "15–20 g fast-acting carbohydrate; recheck after 15 minutes; repeat if low; then eat.",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-12",
+  "frontHtml": "Hypoglycemia in a person who cannot swallow, outside hospital?",
+  "backHtml": "Glucagon (IM, SC or intranasal) and recovery position; nothing by mouth.",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-13",
+  "frontHtml": "Recurrent hypoglycemia from a sulfonylurea despite dextrose: added drug?",
+  "backHtml": "Octreotide (inhibits insulin secretion); admit for monitoring.",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-14",
+  "frontHtml": "Management of hypoglycemia unawareness in type 1 diabetes?",
+  "backHtml": "CGM with alerts, insulin review, and weeks of strict hypoglycemia avoidance with higher targets.",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-15",
+  "frontHtml": "Post-bariatric hypoglycemia: timing and first-line treatment?",
+  "backHtml": "1–3 hours after meals; small frequent meals low in refined carbohydrate (then acarbose).",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-16",
+  "frontHtml": "When is the pancreas imaged in suspected insulinoma?",
+  "backHtml": "Only after endogenous hyperinsulinism is proven and the secretagogue screen is negative: CT or MRI, then EUS.",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150102-17",
+  "frontHtml": "Drug that controls insulinoma hypoglycemia when surgery is not possible?",
+  "backHtml": "Diazoxide (opens beta-cell K<sub>ATP</sub> channels), or a somatostatin analogue.",
+  "sectionId": "s23c-s150102-2-1",
+  "areas": [
+   "usmle2026.15.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-01",
+  "frontHtml": "Embryologic origin of the thyroid and the clue to a thyroglossal duct cyst?",
+  "backHtml": "Foramen cecum of the tongue; a midline neck mass that rises with tongue protrusion or swallowing.",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-02",
+  "frontHtml": "Which enzyme performs both organification and coupling?",
+  "backHtml": "Thyroid peroxidase (TPO), the target of methimazole and PTU.",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-03",
+  "frontHtml": "What does the sodium-iodide symporter do, and what blocks it?",
+  "backHtml": "Concentrates iodide into follicular cells; perchlorate and pertechnetate compete with it.",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-04",
+  "frontHtml": "Wolff-Chaikoff effect?",
+  "backHtml": "A large iodide load transiently inhibits organification; normal glands escape within days.",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-05",
+  "frontHtml": "Estrogen or pregnancy: effect on total T4, free T4 and TSH?",
+  "backHtml": "TBG rises: total T4 high, free T4 and TSH normal.",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-06",
+  "frontHtml": "Extra action of PTU compared with methimazole?",
+  "backHtml": "Inhibits peripheral 5′-deiodinase (T4 to T3).",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-07",
+  "frontHtml": "Two serious PTU-specific adverse effects?",
+  "backHtml": "Severe hepatocellular injury and ANCA-associated vasculitis (plus agranulocytosis, shared with methimazole).",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-08",
+  "frontHtml": "Methimazole embryopathy?",
+  "backHtml": "First-trimester exposure: aplasia cutis, choanal or esophageal atresia; so use PTU in the first trimester.",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-09",
+  "frontHtml": "How does lithium cause hypothyroidism?",
+  "backHtml": "It inhibits thyroid hormone release (and causes goiter).",
+  "sectionId": "s23c-s150201-1-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-10",
+  "frontHtml": "Hashimoto histology?",
+  "backHtml": "Lymphoid follicles with germinal centres, atrophic follicles and Hürthle (oncocytic) cells.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-11",
+  "frontHtml": "Which malignancy is more likely after years of Hashimoto thyroiditis?",
+  "backHtml": "Primary lymphoma of the thyroid, a B-cell tumour (diffuse large B-cell or marginal-zone/MALT type); suspect it when the gland enlarges quickly.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-12",
+  "frontHtml": "Mechanism of Graves orbitopathy?",
+  "backHtml": "TSH-receptor-bearing orbital fibroblasts make glycosaminoglycans and fat, swelling muscles (tendons spared) and orbital fat.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-13",
+  "frontHtml": "Painful thyroid after a viral illness, high ESR, low uptake?",
+  "backHtml": "Subacute granulomatous (de Quervain) thyroiditis: granulomas with giant cells; NSAIDs and β-blocker.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-14",
+  "frontHtml": "Rock-hard, fixed thyroid with fibrosis into neck tissues?",
+  "backHtml": "Riedel thyroiditis, part of IgG4-related disease.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-15",
+  "frontHtml": "Papillary carcinoma features?",
+  "backHtml": "Clear grooved nuclei with pseudoinclusions, psammoma bodies; BRAF V600E or RET/PTC; lymphatic spread; good prognosis.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-16",
+  "frontHtml": "What defines follicular carcinoma versus adenoma?",
+  "backHtml": "Capsular or vascular invasion (so FNA cannot tell them apart); spreads hematogenously.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-17",
+  "frontHtml": "Medullary carcinoma: cell, stroma, markers?",
+  "backHtml": "Parafollicular C cells; amyloid from calcitonin; calcitonin and CEA; RET.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-18",
+  "frontHtml": "Thyroid hormone pattern in euthyroid sick syndrome?",
+  "backHtml": "Low T3, high reverse T3, normal or low TSH and T4; don't treat.",
+  "sectionId": "s23c-s150201-1-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-19",
+  "frontHtml": "Best single screening test for primary thyroid disease, and when it fails?",
+  "backHtml": "TSH; it fails in pituitary or hypothalamic disease, where free T4 is followed.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-20",
+  "frontHtml": "Thyrotoxicosis with low radioiodine uptake: causes and the test that splits them?",
+  "backHtml": "Thyroiditis, exogenous hormone, iodine load; thyroglobulin is high in thyroiditis and low with exogenous hormone.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-21",
+  "frontHtml": "Levothyroxine on confirmed pregnancy?",
+  "backHtml": "Increase the dose by about 25–30% straight away; check TSH about every 4 weeks in the first half.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-22",
+  "frontHtml": "When is subclinical hypothyroidism treated?",
+  "backHtml": "Persistent TSH of 10 or more; individualise below that (symptoms, anti-TPO, pregnancy plans). Repeat testing first.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-23",
+  "frontHtml": "Myxedema coma treatment?",
+  "backHtml": "IV levothyroxine with IV hydrocortisone, ventilatory support, passive rewarming, ICU.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-24",
+  "frontHtml": "Thyroid storm drug order?",
+  "backHtml": "β-blocker, then PTU, then iodine at least 1 hour later, plus hydrocortisone; avoid aspirin.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-25",
+  "frontHtml": "Fever and sore throat on methimazole?",
+  "backHtml": "Stop it and check a CBC with differential; do not switch to PTU.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-26",
+  "frontHtml": "When is radioiodine avoided in Graves disease?",
+  "backHtml": "Pregnancy, breastfeeding and moderate-to-severe active orbitopathy.",
+  "sectionId": "s23c-s150201-2-1",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-27",
+  "frontHtml": "First test for a thyroid nodule, and what if it is low?",
+  "backHtml": "TSH; if low, radionuclide scan (a hot nodule needs no FNA).",
+  "sectionId": "s23c-s150201-2-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-28",
+  "frontHtml": "Benign (Bethesda II) FNA in a low- or intermediate-suspicion nodule?",
+  "backHtml": "Ultrasound surveillance at about 12–24 months; repeat FNA only for growth or new suspicious features.",
+  "sectionId": "s23c-s150201-2-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-29",
+  "frontHtml": "Tumour marker after total thyroidectomy for differentiated cancer?",
+  "backHtml": "Thyroglobulin.",
+  "sectionId": "s23c-s150201-2-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-30",
+  "frontHtml": "Amiodarone-induced thyrotoxicosis types and treatment?",
+  "backHtml": "Type 1 (iodine-driven synthesis): thionamide; type 2 (destructive): glucocorticoids.",
+  "sectionId": "s23c-s150201-2-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150201-31",
+  "frontHtml": "Supplement that falsely mimics Graves on immunoassays?",
+  "backHtml": "Biotin; stop it for a few days and retest.",
+  "sectionId": "s23c-s150201-2-2",
+  "areas": [
+   "usmle2026.15.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-01",
+  "frontHtml": "First test after confirming true hypercalcemia?",
+  "backHtml": "Intact PTH: high or inappropriately normal is PTH-dependent (primary hyperparathyroidism, FHH, lithium); suppressed means look for PTHrP, calcitriol, myeloma or metastases.",
+  "sectionId": "s23c-s150301-1-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-02",
+  "frontHtml": "PTH actions on the kidney?",
+  "backHtml": "More calcium reabsorption in the distal convoluted tubule, less phosphate reabsorption in the proximal tubule, more 1-alpha-hydroxylase activity.",
+  "sectionId": "s23c-s150301-1-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-03",
+  "frontHtml": "Familial hypocalciuric hypercalcemia: gene, inheritance and urine finding?",
+  "backHtml": "Heterozygous loss-of-function <em>CASR</em>, autosomal dominant; calcium-to-creatinine clearance ratio below 0.01. Benign; no surgery.",
+  "sectionId": "s23c-s150301-1-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-04",
+  "frontHtml": "Which hormone lowers phosphate and suppresses 1-alpha-hydroxylase, rising early in CKD?",
+  "backHtml": "FGF23 (from osteocytes).",
+  "sectionId": "s23c-s150301-1-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-05",
+  "frontHtml": "Why does severe hypomagnesemia cause hypocalcemia?",
+  "backHtml": "Magnesium is needed for PTH secretion and for PTH action on bone and kidney; replace magnesium first.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-06",
+  "frontHtml": "Pseudohypoparathyroidism type 1A: defect and labs?",
+  "backHtml": "Maternally inherited <em>GNAS</em> (Gs-alpha) loss; low calcium, high phosphate, high PTH, with Albright hereditary osteodystrophy.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-07",
+  "frontHtml": "Same <em>GNAS</em> variant inherited from the father?",
+  "backHtml": "Pseudopseudohypoparathyroidism: Albright features with normal calcium and PTH.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-08",
+  "frontHtml": "Osteomalacia labs?",
+  "backHtml": "Calcium low or normal, phosphate low, alkaline phosphatase high, PTH high, 25-hydroxyvitamin D usually low; histology shows wide osteoid seams.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-09",
+  "frontHtml": "Paget disease: lab hallmark and histology?",
+  "backHtml": "Isolated high alkaline phosphatase with normal calcium and phosphate; mosaic lamellar bone with cement lines.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-10",
+  "frontHtml": "Mechanism of denosumab?",
+  "backHtml": "Monoclonal antibody against RANKL, blocking osteoclast formation and activation.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-11",
+  "frontHtml": "Why is intermittent teriparatide anabolic when continuous PTH excess resorbs bone?",
+  "backHtml": "Daily pulses favour osteoblast activity over osteoclast activation; sustained PTH drives RANKL-mediated resorption.",
+  "sectionId": "s23c-s150301-1-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-12",
+  "frontHtml": "Acute treatment of severe hypercalcemia?",
+  "backHtml": "IV isotonic saline, calcitonin (rapid, short-lived), IV zoledronic acid (sustained); denosumab if kidney function bars bisphosphonates.",
+  "sectionId": "s23c-s150301-2-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-13",
+  "frontHtml": "Surgical criteria in asymptomatic primary hyperparathyroidism?",
+  "backHtml": "Calcium >1 mg/dL above normal; T-score ≤ −2.5 or vertebral fracture; eGFR <60, stones, nephrocalcinosis or hypercalciuria; age <50.",
+  "sectionId": "s23c-s150301-2-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-14",
+  "frontHtml": "Role of a sestamibi scan in primary hyperparathyroidism?",
+  "backHtml": "Localisation before surgery only; the diagnosis is biochemical.",
+  "sectionId": "s23c-s150301-2-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-15",
+  "frontHtml": "Hypercalcemia with high 1,25-dihydroxyvitamin D and suppressed PTH: treatment?",
+  "backHtml": "Glucocorticoids (granulomatous disease or lymphoma), plus treat the cause.",
+  "sectionId": "s23c-s150301-2-1",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-16",
+  "frontHtml": "Which vitamin D form for chronic hypoparathyroidism, and what calcium target?",
+  "backHtml": "Calcitriol; aim for low-normal serum calcium to limit hypercalciuria.",
+  "sectionId": "s23c-s150301-2-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-17",
+  "frontHtml": "Who should be screened for osteoporosis?",
+  "backHtml": "All women 65 and older; younger postmenopausal women at increased risk.",
+  "sectionId": "s23c-s150301-2-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150301-18",
+  "frontHtml": "What must follow when denosumab is stopped?",
+  "backHtml": "A bisphosphonate, to prevent rebound bone loss and multiple vertebral fractures.",
+  "sectionId": "s23c-s150301-2-2",
+  "areas": [
+   "usmle2026.15.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-01",
+  "frontHtml": "Adrenal cortex zones and products, outside in?",
+  "backHtml": "Glomerulosa: aldosterone (angiotensin II, potassium). Fasciculata: cortisol (ACTH). Reticularis: androgen precursors (ACTH).",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-02",
+  "frontHtml": "Why does primary adrenal insufficiency cause hyperpigmentation?",
+  "backHtml": "Low cortisol removes feedback, so POMC rises; its products ACTH and MSH stimulate melanocortin-1 receptors.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-03",
+  "frontHtml": "Which electrolyte finding separates primary from secondary adrenal insufficiency?",
+  "backHtml": "Hyperkalemia: only primary disease loses aldosterone; in secondary disease renin-angiotensin still drives aldosterone.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-04",
+  "frontHtml": "Most common cause of primary adrenal insufficiency in high-income countries, and worldwide?",
+  "backHtml": "Autoimmune adrenalitis (21-hydroxylase antibodies); tuberculosis worldwide.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-05",
+  "frontHtml": "Cushing syndrome with suppressed ACTH: where is the problem?",
+  "backHtml": "Adrenal (adenoma or carcinoma) or exogenous glucocorticoid.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-06",
+  "frontHtml": "Very high ACTH, no suppression with high-dose dexamethasone, hypokalemia, in a smoker?",
+  "backHtml": "Ectopic ACTH, most often small cell lung carcinoma.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-07",
+  "frontHtml": "Hypertension and hypokalemia with low renin and low aldosterone: three causes?",
+  "backHtml": "Liddle syndrome, apparent mineralocorticoid excess (or licorice), 11β- or 17α-hydroxylase deficiency.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-08",
+  "frontHtml": "How does licorice cause hypertension?",
+  "backHtml": "Glycyrrhetinic acid inhibits 11β-HSD2, so cortisol activates the renal mineralocorticoid receptor.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-09",
+  "frontHtml": "Neuroblastoma: marker of poor prognosis and urine tests?",
+  "backHtml": "<em>MYCN</em> amplification; raised urine HVA and VMA.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-10",
+  "frontHtml": "Germline variant frequency in pheochromocytoma and paraganglioma?",
+  "backHtml": "Roughly a third or more (RET, VHL, NF1, SDH genes), so offer genetic testing to all.",
+  "sectionId": "s23c-s150401-1-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-11",
+  "frontHtml": "First step in suspected adrenal crisis?",
+  "backHtml": "Hydrocortisone 100 mg IV plus isotonic saline (and dextrose), without waiting for tests.",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-12",
+  "frontHtml": "Confirmatory test for adrenal insufficiency in a stable patient?",
+  "backHtml": "Cosyntropin stimulation: peak cortisol below about 18 µg/dL (about 14–15 with newer assays) is abnormal.",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-13",
+  "frontHtml": "Treatment of primary adrenal insufficiency?",
+  "backHtml": "Hydrocortisone plus fludrocortisone, sick-day rules, injectable emergency hydrocortisone, medical ID.",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-14",
+  "frontHtml": "Screening tests for Cushing syndrome?",
+  "backHtml": "Late-night salivary cortisol, 1-mg overnight dexamethasone suppression, 24-hour urine free cortisol (two abnormal to confirm).",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-15",
+  "frontHtml": "ACTH-dependent Cushing syndrome with no adenoma on pituitary MRI: next test?",
+  "backHtml": "Inferior petrosal sinus sampling with CRH or desmopressin stimulation.",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-16",
+  "frontHtml": "Primary aldosteronism: screening test?",
+  "backHtml": "Plasma aldosterone with renin: high aldosterone with suppressed renin; correct hypokalemia first.",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-17",
+  "frontHtml": "Before adrenalectomy for primary aldosteronism, how is the side confirmed?",
+  "backHtml": "Adrenal vein sampling (CT nodules are often nonfunctioning).",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-18",
+  "frontHtml": "Medical treatment of bilateral adrenal hyperplasia causing aldosteronism?",
+  "backHtml": "Spironolactone or eplerenone, titrated until renin rises.",
+  "sectionId": "s23c-s150401-2-1",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-19",
+  "frontHtml": "Best biochemical test for pheochromocytoma?",
+  "backHtml": "Plasma free metanephrines or 24-hour urine fractionated metanephrines.",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-20",
+  "frontHtml": "Preoperative preparation for pheochromocytoma?",
+  "backHtml": "Alpha blockade (phenoxybenzamine or doxazosin) for 1–2 weeks with salt and fluids; beta blocker only afterwards.",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-21",
+  "frontHtml": "Hormone tests for every adrenal incidentaloma?",
+  "backHtml": "1-mg dexamethasone suppression test; metanephrines unless clearly a lipid-rich adenoma; aldosterone and renin if hypertension or hypokalemia.",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-22",
+  "frontHtml": "Adrenal mass under 4 cm, homogeneous, 10 HU or less, nonfunctioning: follow-up?",
+  "backHtml": "None needed: lipid-rich adenoma.",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-23",
+  "frontHtml": "Central precocious puberty in a boy: required test?",
+  "backHtml": "Brain MRI (hypothalamic hamartoma and other CNS lesions).",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-24",
+  "frontHtml": "Triad of McCune-Albright syndrome?",
+  "backHtml": "Peripheral precocious puberty, irregular café-au-lait macules, polyostotic fibrous dysplasia (mosaic activating GNAS).",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150401-25",
+  "frontHtml": "Most common cause of delayed puberty?",
+  "backHtml": "Constitutional delay: short, delayed bone age, family history of late maturation.",
+  "sectionId": "s23c-s150401-2-2",
+  "areas": [
+   "usmle2026.15.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-01",
+  "frontHtml": "Embryologic origin of the anterior vs posterior pituitary?",
+  "backHtml": "Anterior: Rathke pouch (oral surface ectoderm). Posterior: diencephalon floor (neuroectoderm).",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-02",
+  "frontHtml": "Why does a nonfunctioning macroadenoma raise prolactin modestly?",
+  "backHtml": "Stalk effect: dopamine from the arcuate nucleus can no longer reach lactotrophs.",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-03",
+  "frontHtml": "Order in which pituitary axes usually fail with a growing mass?",
+  "backHtml": "GH, then LH/FSH, then TSH, then ACTH.",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-04",
+  "frontHtml": "Visual field defect from a pituitary macroadenoma pressing on the chiasm?",
+  "backHtml": "Bitemporal hemianopia (crossing nasal retinal fibres).",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-05",
+  "frontHtml": "Calcified, cystic suprasellar mass with oily fluid in a child?",
+  "backHtml": "Craniopharyngioma, from Rathke pouch remnants (adamantinomatous type: beta-catenin mutations).",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-06",
+  "frontHtml": "Earliest sign of Sheehan syndrome?",
+  "backHtml": "Failure to lactate after severe postpartum hemorrhage.",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-07",
+  "frontHtml": "Pegvisomant: mechanism and monitoring test?",
+  "backHtml": "GH receptor antagonist; monitor IGF-1 (GH levels rise).",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-08",
+  "frontHtml": "Very large prolactinoma with only a modestly raised prolactin result: what assay pitfall?",
+  "backHtml": "Hook effect; repeat on a diluted sample.",
+  "sectionId": "s23c-s150501-1-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-09",
+  "frontHtml": "First-line treatment of a macroprolactinoma with visual field loss?",
+  "backHtml": "Cabergoline (dopamine agonist); surgery if resistant, intolerant or apoplexy.",
+  "sectionId": "s23c-s150501-2-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-10",
+  "frontHtml": "Acromegaly: screening test and confirmatory test?",
+  "backHtml": "Screen: IGF-1. Confirm: GH fails to suppress after an oral glucose load. Then MRI.",
+  "sectionId": "s23c-s150501-2-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-11",
+  "frontHtml": "Pituitary apoplexy: first treatment?",
+  "backHtml": "Stress-dose IV hydrocortisone, then urgent neurosurgical review.",
+  "sectionId": "s23c-s150501-2-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-12",
+  "frontHtml": "Hypopituitarism: which hormone is replaced first?",
+  "backHtml": "Cortisol, before levothyroxine (thyroid hormone can precipitate adrenal crisis).",
+  "sectionId": "s23c-s150501-2-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-13",
+  "frontHtml": "How do you dose levothyroxine in central hypothyroidism?",
+  "backHtml": "By free T4; TSH is unreliable.",
+  "sectionId": "s23c-s150501-2-1",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-14",
+  "frontHtml": "Water deprivation test: central DI pattern?",
+  "backHtml": "Urine stays dilute with dehydration, then rises sharply (often more than 50%) after desmopressin.",
+  "sectionId": "s23c-s150501-2-2",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-15",
+  "frontHtml": "SIADH diagnostic criteria (labs)?",
+  "backHtml": "Hypotonic hyponatremia, euvolemia, urine osmolality above about 100 mOsm/kg, urine sodium above about 30 mEq/L, normal thyroid and adrenal function, no diuretics.",
+  "sectionId": "s23c-s150501-2-2",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-16",
+  "frontHtml": "Maximum sodium rise in chronic hyponatremia in a high-risk patient?",
+  "backHtml": "About 8 mEq/L in 24 hours, to avoid osmotic demyelination.",
+  "sectionId": "s23c-s150501-2-2",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150501-17",
+  "frontHtml": "Constitutional delay of growth vs familial short stature: bone age?",
+  "backHtml": "Constitutional delay: bone age delayed. Familial short stature: bone age equals chronological age.",
+  "sectionId": "s23c-s150501-2-2",
+  "areas": [
+   "usmle2026.15.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-01",
+  "frontHtml": "Which hypothalamic nucleus mainly makes ADH, and which mainly makes oxytocin?",
+  "backHtml": "ADH: supraoptic. Oxytocin: paraventricular. Both are released from the posterior pituitary.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-02",
+  "frontHtml": "Lesion of the ventromedial vs lateral hypothalamus?",
+  "backHtml": "Ventromedial: hyperphagia and obesity. Lateral: anorexia and weight loss.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-03",
+  "frontHtml": "Lesion of the anterior vs posterior hypothalamus (temperature)?",
+  "backHtml": "Anterior: hyperthermia (no heat loss). Posterior: poikilothermia.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-04",
+  "frontHtml": "Suprachiasmatic nucleus function?",
+  "backHtml": "Circadian clock, driven by light via the retinohypothalamic tract; controls melatonin rhythm.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-05",
+  "frontHtml": "Satiety pathway from leptin?",
+  "backHtml": "Leptin → arcuate POMC neurons → alpha-MSH → MC4R (paraventricular) → satiety.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-06",
+  "frontHtml": "Commonest single-gene cause of severe early-onset obesity?",
+  "backHtml": "Loss-of-function MC4R variants.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-07",
+  "frontHtml": "Kallmann syndrome: cause and key findings?",
+  "backHtml": "Failed GnRH neuron migration from the olfactory placode: anosmia, low LH/FSH and sex steroids.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-08",
+  "frontHtml": "Pulsatile vs continuous GnRH?",
+  "backHtml": "Pulsatile stimulates LH/FSH; continuous (depot agonist) suppresses them.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-09",
+  "frontHtml": "Functional hypothalamic amenorrhea hormone pattern?",
+  "backHtml": "Low or normal LH and FSH, low estradiol, normal prolactin and TSH.",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-10",
+  "frontHtml": "Gelastic seizures plus central precocious puberty?",
+  "backHtml": "Hypothalamic hamartoma (contains GnRH neurons).",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-11",
+  "frontHtml": "Child with lytic skull lesions, scalp rash and central DI?",
+  "backHtml": "Langerhans cell histiocytosis (CD1a, langerin, Birbeck granules).",
+  "sectionId": "s23c-s1506-1-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-12",
+  "frontHtml": "First-line treatment of functional hypothalamic amenorrhea?",
+  "backHtml": "Restore energy balance: more calories, less training, nutrition and psychological support.",
+  "sectionId": "s23c-s1506-2-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-13",
+  "frontHtml": "Bone protection if menses do not return in functional hypothalamic amenorrhea?",
+  "backHtml": "Short-term transdermal estradiol with cyclic oral progestin; not the combined pill or bisphosphonates.",
+  "sectionId": "s23c-s1506-2-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-14",
+  "frontHtml": "Man with hypogonadotropic hypogonadism wants fertility: treatment?",
+  "backHtml": "Stop testosterone; give hCG, adding FSH if needed (or pulsatile GnRH).",
+  "sectionId": "s23c-s1506-2-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-15",
+  "frontHtml": "Common drug cause of secondary hypogonadism in men?",
+  "backHtml": "Long-term opioids (GnRH suppression); also glucocorticoids and anabolic steroids.",
+  "sectionId": "s23c-s1506-2-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-16",
+  "frontHtml": "Central precocious puberty: who needs brain MRI?",
+  "backHtml": "All boys, and girls who are very young (especially under 6) or have neurologic signs.",
+  "sectionId": "s23c-s1506-2-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1506-17",
+  "frontHtml": "Triphasic response after pituitary or hypothalamic surgery?",
+  "backHtml": "Diabetes insipidus, then SIADH-like phase (about a week later), then permanent DI.",
+  "sectionId": "s23c-s1506-2-1",
+  "areas": [
+   "usmle2026.15.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-01",
+  "frontHtml": "MEN1: gene, protein and mechanism?",
+  "backHtml": "<em>MEN1</em> on 11q13, menin; tumour suppressor, loss of function (two hits).",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-02",
+  "frontHtml": "Three main tumour sites in MEN1?",
+  "backHtml": "Parathyroid hyperplasia, pancreatic/duodenal neuroendocrine tumours, anterior pituitary adenomas (mostly prolactinoma).",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-03",
+  "frontHtml": "Usually the first manifestation of MEN1?",
+  "backHtml": "Primary hyperparathyroidism from multigland hyperplasia.",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-04",
+  "frontHtml": "MEN2: gene and mechanism?",
+  "backHtml": "<em>RET</em> proto-oncogene (receptor tyrosine kinase) on 10q11; gain of function, one hit.",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-05",
+  "frontHtml": "MEN2A components?",
+  "backHtml": "Medullary thyroid carcinoma, pheochromocytoma, parathyroid hyperplasia; also cutaneous lichen amyloidosis and Hirschsprung disease in some families.",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-06",
+  "frontHtml": "MEN2B components?",
+  "backHtml": "MTC (earliest, most aggressive), pheochromocytoma, mucosal neuromas, intestinal ganglioneuromatosis, marfanoid habitus; no hyperparathyroidism.",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-07",
+  "frontHtml": "Cell of origin and markers of medullary thyroid carcinoma?",
+  "backHtml": "Neural crest-derived parafollicular C cells; calcitonin and CEA; amyloid stroma from calcitonin.",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-08",
+  "frontHtml": "Why is radioiodine useless in medullary thyroid carcinoma?",
+  "backHtml": "C cells do not concentrate iodine (and are not TSH-dependent).",
+  "sectionId": "s23c-s1507-1-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-09",
+  "frontHtml": "Who gets germline RET testing?",
+  "backHtml": "Every patient with MTC, anyone with MEN2 features, and relatives of known carriers.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-10",
+  "frontHtml": "First test before surgery in a patient with MTC or a RET variant?",
+  "backHtml": "Plasma free (or urine fractionated) metanephrines to exclude pheochromocytoma.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-11",
+  "frontHtml": "Order of surgery in MEN2 with pheochromocytoma and MTC?",
+  "backHtml": "Alpha-blockade, adrenalectomy, then total thyroidectomy.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-12",
+  "frontHtml": "Timing of prophylactic thyroidectomy by RET risk?",
+  "backHtml": "M918T (MEN2B): first year of life; codon 634: at or before about age 5, by calcitonin; moderate risk: when calcitonin rises.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-13",
+  "frontHtml": "Parathyroid operation for MEN1 hyperparathyroidism?",
+  "backHtml": "Subtotal (three-and-a-half gland) or total parathyroidectomy with autotransplant, plus transcervical thymectomy.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-14",
+  "frontHtml": "Levothyroxine goal after thyroidectomy for MTC?",
+  "backHtml": "Normal TSH (replacement); no TSH suppression.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c1507-15",
+  "frontHtml": "Why does treating hyperparathyroidism help Zollinger-Ellison syndrome in MEN1?",
+  "backHtml": "Hypercalcemia stimulates gastrin release; normal calcium lowers gastrin and acid output.",
+  "sectionId": "s23c-s1507-2-1",
+  "areas": [
+   "usmle2026.15.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-01",
+  "frontHtml": "Which gene starts testis development?",
+  "backHtml": "<em>SRY</em> on the Y chromosome.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-02",
+  "frontHtml": "What does anti-Müllerian hormone do, and which cell makes it?",
+  "backHtml": "Sertoli cells; it causes regression of the Müllerian ducts (no uterus, tubes or upper vagina).",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-03",
+  "frontHtml": "Which hormone forms male external genitalia and prostate?",
+  "backHtml": "Dihydrotestosterone, made from testosterone by 5α-reductase type 2.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-04",
+  "frontHtml": "46,XY, female at birth, virilises at puberty, normal testosterone, high testosterone-to-DHT ratio?",
+  "backHtml": "5α-reductase type 2 deficiency.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-05",
+  "frontHtml": "Complete androgen insensitivity: internal and external anatomy?",
+  "backHtml": "Testes, no uterus, no Wolffian structures; female external genitalia, breasts at puberty, sparse pubic and axillary hair.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-06",
+  "frontHtml": "Most common CAH enzyme and its electrolyte picture?",
+  "backHtml": "21-hydroxylase (about 95%); salt wasting with hyponatremia and hyperkalemia in the classic form.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-07",
+  "frontHtml": "CAH forms that cause hypertension?",
+  "backHtml": "11β-hydroxylase (with virilisation) and 17α-hydroxylase (with absent sex steroids), from excess 11-deoxycorticosterone.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-08",
+  "frontHtml": "Commonest cause of congenital hypothyroidism where iodine intake is adequate?",
+  "backHtml": "Thyroid dysgenesis (aplasia, hypoplasia or ectopic gland).",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-09",
+  "frontHtml": "Why do most hypothyroid newborns look normal at birth?",
+  "backHtml": "Maternal T4 crosses the placenta.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-10",
+  "frontHtml": "Signs of untreated congenital hypothyroidism?",
+  "backHtml": "Prolonged jaundice, poor feeding, constipation, hypotonia, large tongue, umbilical hernia, large posterior fontanelle.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-11",
+  "frontHtml": "Kallmann syndrome mechanism and clues?",
+  "backHtml": "Failed migration of GnRH neurons from the olfactory placode: hypogonadotropic hypogonadism with anosmia.",
+  "sectionId": "s23c-s150801-1-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-12",
+  "frontHtml": "Virilised newborn with nonpalpable gonads: most likely diagnosis and urgent tests?",
+  "backHtml": "46,XX with 21-hydroxylase CAH; electrolytes, glucose, 17-hydroxyprogesterone, karyotype, pelvic ultrasonography.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-13",
+  "frontHtml": "When is sex assigned in a newborn with atypical genitalia?",
+  "backHtml": "After the evaluation, with a multidisciplinary team; not on appearance alone.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-14",
+  "frontHtml": "Why is newborn 17-hydroxyprogesterone hard to interpret in preterm infants?",
+  "backHtml": "It is physiologically higher in preterm, sick or stressed infants and early samples; cut-offs are adjusted for birth weight or gestational age.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-15",
+  "frontHtml": "Treatment of salt-wasting CAH crisis?",
+  "backHtml": "IV isotonic saline, dextrose and stress-dose hydrocortisone.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-16",
+  "frontHtml": "Glucocorticoid of choice for children with CAH, and why?",
+  "backHtml": "Hydrocortisone: least growth-suppressive.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-17",
+  "frontHtml": "Levothyroxine starting dose in congenital hypothyroidism?",
+  "backHtml": "10–15 µg/kg/day, started as soon as confirmatory blood is drawn, ideally within 2 weeks of birth.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-18",
+  "frontHtml": "How should infant levothyroxine be given?",
+  "backHtml": "Crushed in a small volume by spoon; separate from soy formula, iron and calcium.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-19",
+  "frontHtml": "First evaluation after diagnosing Turner syndrome?",
+  "backHtml": "Cardiac and aortic imaging (bicuspid valve, coarctation, aortic dilation), plus renal ultrasonography.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150801-20",
+  "frontHtml": "Hypospadias with an undescended testis: what to do before surgery?",
+  "backHtml": "DSD evaluation; postpone circumcision.",
+  "sectionId": "s23c-s150801-2-1",
+  "areas": [
+   "usmle2026.15.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-01",
+  "frontHtml": "After how long on a supraphysiologic glucocorticoid dose should HPA suppression be assumed?",
+  "backHtml": "About 3 weeks or more (also evening dosing or cushingoid features); taper rather than stop.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-02",
+  "frontHtml": "Why is potassium usually normal in adrenal insufficiency after stopping glucocorticoids?",
+  "backHtml": "It is secondary (ACTH-deficient); aldosterone is controlled by renin-angiotensin and is preserved.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-03",
+  "frontHtml": "Anabolic steroid use: LH, FSH and testis size?",
+  "backHtml": "LH and FSH suppressed; small testes, azoospermia; also erythrocytosis and low HDL.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-04",
+  "frontHtml": "Amiodarone hypothyroidism mechanism?",
+  "backHtml": "Iodine excess inhibits organification (Wolff-Chaikoff effect) and an autoimmune-damaged gland fails to escape.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-05",
+  "frontHtml": "Type 1 versus type 2 amiodarone-induced thyrotoxicosis?",
+  "backHtml": "Type 1: iodine-fuelled synthesis in nodular or Graves gland (methimazole). Type 2: destructive thyroiditis in a normal gland (glucocorticoids).",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-06",
+  "frontHtml": "How does lithium cause hypercalcemia?",
+  "backHtml": "Raises the CaSR set point, so PTH is high or inappropriately normal; it can also lead to parathyroid hyperplasia or adenoma.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-07",
+  "frontHtml": "Which checkpoint inhibitor class most often causes hypophysitis, and which thyroiditis?",
+  "backHtml": "Anti-CTLA-4 (ipilimumab): hypophysitis. Anti-PD-1/PD-L1 (nivolumab, pembrolizumab): thyroiditis.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-08",
+  "frontHtml": "Enzyme inhibited by etomidate and metyrapone?",
+  "backHtml": "11-beta-hydroxylase: cortisol falls, 11-deoxycortisol rises.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-09",
+  "frontHtml": "Why do SGLT2 inhibitors cause euglycemic DKA?",
+  "backHtml": "Glucosuria keeps glucose low, insulin falls and glucagon rises, so ketogenesis proceeds with near-normal glucose.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-10",
+  "frontHtml": "Thiazide hyperglycemia mechanism?",
+  "backHtml": "Hypokalemia reduces insulin secretion from beta cells.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-11",
+  "frontHtml": "Antipsychotic galactorrhea: pathway?",
+  "backHtml": "D2 blockade in the tuberoinfundibular pathway removes dopamine inhibition of prolactin.",
+  "sectionId": "s23c-s150901-1-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-12",
+  "frontHtml": "Suspected adrenal crisis: first treatment?",
+  "backHtml": "IV hydrocortisone at once with isotonic saline and dextrose; draw cortisol first only if it causes no delay.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-13",
+  "frontHtml": "Sick-day rules for patients on long-term glucocorticoids?",
+  "backHtml": "Double or triple the dose during febrile illness, injectable hydrocortisone if vomiting, medical identification, stress dosing for surgery.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-14",
+  "frontHtml": "Checkpoint-inhibitor thyroiditis management?",
+  "backHtml": "Beta-blocker for the thyrotoxic phase, continue immunotherapy, monitor for hypothyroidism and start levothyroxine when it appears.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-15",
+  "frontHtml": "Hypophysitis with low cortisol and low free T4: which hormone first?",
+  "backHtml": "Glucocorticoid before levothyroxine, to avoid precipitating adrenal crisis.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-16",
+  "frontHtml": "Checkpoint-inhibitor diabetes treatment?",
+  "backHtml": "Insulin; it is permanent and not reversed by glucocorticoids.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-17",
+  "frontHtml": "Biotin effect on thyroid immunoassays?",
+  "backHtml": "Falsely low TSH (sandwich assay) and falsely high free T4 and T3 (competitive assays); stop biotin 2–3 days and repeat.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c150901-18",
+  "frontHtml": "Why is radioiodine ineffective soon after iodinated contrast?",
+  "backHtml": "The iodine load saturates the gland, so tracer uptake is suppressed for weeks.",
+  "sectionId": "s23c-s150901-2-1",
+  "areas": [
+   "usmle2026.15.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
  }
 ]

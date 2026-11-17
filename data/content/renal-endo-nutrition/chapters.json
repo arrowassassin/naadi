@@ -508,6 +508,477 @@
   ]
  },
  {
+  "id": "s23c-ch15-s1",
+  "exam": "step1",
+  "order": 315,
+  "title": "Step 1 · Endocrine system",
+  "meta": "Naadi original · USMLE-2026 outline",
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23c-s150101-1-1",
+    "heading": "Insulin secretion and action; types of diabetes",
+    "html": "<p>Insulin is made in pancreatic beta cells as preproinsulin; cleavage in the endoplasmic reticulum gives proinsulin, and cleavage in secretory granules gives <strong>insulin plus C-peptide in equal amounts</strong>. C-peptide is not cleared by the liver on first pass and has a longer half-life, so it is the better marker of the patient's own insulin secretion. Injected insulin contains no C-peptide.</p><h3>How glucose triggers secretion</h3><ol><li>Glucose enters through <strong>GLUT2</strong>, a high-capacity transporter that keeps intracellular glucose close to plasma glucose.</li><li><strong>Glucokinase</strong> (high Km, not inhibited by its product) phosphorylates it, so it acts as the beta cell's glucose sensor.</li><li>Glycolysis and oxidation raise the ATP/ADP ratio, which <strong>closes ATP-sensitive K<sup>+</sup> channels</strong> (Kir6.2 pore with the SUR1 subunit).</li><li>The membrane depolarises, voltage-gated Ca<sup>2+</sup> channels open, and Ca<sup>2+</sup> drives granule exocytosis.</li><li>Incretins (GLP-1 and GIP from the gut after a meal) act on Gs-coupled receptors and amplify secretion only when glucose is raised. This is why an oral glucose load releases more insulin than the same glucose given intravenously.</li></ol>[[figure:s23c-fig150101-1]]<h3>What insulin and glucagon do</h3><table><tr><th>Process</th><th>Insulin (fed state)</th><th>Glucagon (fasting state)</th></tr><tr><td>Glucose uptake</td><td>Moves GLUT4 to the membrane in skeletal muscle and adipose tissue</td><td>No direct effect on muscle</td></tr><tr><td>Liver glucose output</td><td>Suppresses glycogenolysis and gluconeogenesis; stimulates glycogen synthesis</td><td>Stimulates glycogenolysis and gluconeogenesis (cAMP, protein kinase A)</td></tr><tr><td>Fat</td><td>Stimulates lipogenesis; inhibits hormone-sensitive lipase</td><td>Lipolysis; with low insulin, fatty acids go to ketogenesis in the liver</td></tr><tr><td>Protein</td><td>Anabolic</td><td>Promotes amino acid use for gluconeogenesis</td></tr><tr><td>Potassium</td><td>Drives K<sup>+</sup> into cells (Na<sup>+</sup>/K<sup>+</sup>-ATPase)</td><td>—</td></tr></table><p>The insulin receptor is a receptor tyrosine kinase; its metabolic effects run mainly through the PI3K-Akt pathway. Brain, red blood cells, kidney medulla and hepatocytes take up glucose without insulin (non-GLUT4 transporters).</p><h3>Types of diabetes</h3><table><tr><th>Feature</th><th>Type 1</th><th>Type 2</th></tr><tr><td>Mechanism</td><td>T-cell-mediated autoimmune destruction of beta cells</td><td>Insulin resistance plus progressive relative beta-cell failure</td></tr><tr><td>Genetics</td><td>HLA-DR3 and HLA-DR4 (DQ2/DQ8) association; weaker family concordance</td><td>Strongly polygenic; very high concordance in identical twins</td></tr><tr><td>Islet histology</td><td><strong>Insulitis</strong> (lymphocytes in islets), then loss of beta cells</td><td><strong>Islet amyloid</strong> (amylin, also called islet amyloid polypeptide)</td></tr><tr><td>Markers</td><td>Autoantibodies to GAD65, IA-2, ZnT8 and insulin; low C-peptide</td><td>No autoantibodies; C-peptide normal or high early</td></tr><tr><td>Typical start</td><td>Childhood or young adulthood, often with DKA</td><td>Adulthood with obesity; increasingly in adolescents</td></tr><tr><td>Acute crisis</td><td>Diabetic ketoacidosis</td><td>Hyperosmolar hyperglycemic state (DKA can occur too)</td></tr></table><ul><li><strong>Latent autoimmune diabetes in adults (LADA)</strong>: adult-onset autoimmune diabetes, autoantibody positive, that does not need insulin at first but progresses to insulin dependence over months to years.</li><li><strong>Monogenic diabetes (MODY)</strong>: autosomal dominant, young onset, not obese, antibody negative. <em>GCK</em> loss raises the glucose set point and gives lifelong mild, stable fasting hyperglycemia with few complications; it usually needs no treatment. <em>HNF1A</em> variants give progressive diabetes with low renal glucose threshold (glycosuria) and marked sensitivity to sulfonylureas.</li><li><strong>Secondary diabetes</strong>: pancreatic disease (chronic pancreatitis, cystic fibrosis, hemochromatosis, pancreatectomy), endocrine excess (Cushing syndrome, acromegaly, glucagonoma, pheochromocytoma) and drugs (glucocorticoids, thiazides, second-generation antipsychotics, calcineurin inhibitors, some HIV protease inhibitors, niacin).</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> islet amyloid points to type 2, insulitis to type 1. Hemosiderin in islets with bronze skin is hemochromatosis, a secondary cause.</p></div>",
+    "figureIds": [
+     "s23c-fig150101-1"
+    ],
+    "areas": [
+     "usmle2026.15.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Type 1 Diabetes",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507713/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Type 2 Diabetes",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK513253/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Maturity Onset Diabetes in the Young",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532900/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Diabetes",
+      "url": "https://medlineplus.gov/diabetes.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150101-1-2",
+    "heading": "Diabetes: complications and drugs by mechanism",
+    "html": "<h3>Acute crises: why ketones in one and not the other</h3><table><tr><th>Feature</th><th>Diabetic ketoacidosis (DKA)</th><th>Hyperosmolar hyperglycemic state (HHS)</th></tr><tr><td>Insulin</td><td>Absent or nearly so</td><td>Some insulin remains: enough to restrain lipolysis and ketogenesis, not enough to control glucose</td></tr><tr><td>Glucose</td><td>Raised, often 250–600 mg/dL; can be near normal with SGLT2 inhibitors (euglycemic DKA)</td><td>Very high, often above 600 mg/dL</td></tr><tr><td>Acid-base</td><td>Anion gap metabolic acidosis from beta-hydroxybutyrate and acetoacetate</td><td>Little or no acidosis</td></tr><tr><td>Osmolality and mental status</td><td>Mildly raised</td><td>Markedly raised; confusion to coma tracks osmolality</td></tr><tr><td>Course</td><td>Hours to a day</td><td>Days of osmotic diuresis and dehydration, often in older adults</td></tr></table><p>Glucagon, cortisol and catecholamines rise in both. Without insulin, hormone-sensitive lipase releases fatty acids that the liver turns into ketoacids. Insulin deficiency also shifts potassium out of cells, so <strong>serum K<sup>+</sup> may be normal or high while total-body K<sup>+</sup> is depleted</strong> by urinary losses. Kussmaul breathing is respiratory compensation; acetone gives a fruity breath odour. Cerebral edema is the feared complication of treatment, especially in children.</p><h3>Chronic complications</h3><ul><li><strong>Nonenzymatic glycation</strong>: glucose attaches to proteins without an enzyme (hemoglobin A1c is the measurable example). Advanced glycation end-products cross-link collagen and basement membranes, trap LDL and plasma proteins and activate inflammatory receptors. Result: thickened capillary basement membranes, <strong>hyaline arteriolosclerosis</strong> of afferent and efferent arterioles, accelerated atherosclerosis.</li><li><strong>Polyol (sorbitol) pathway</strong>: in tissues that take up glucose without insulin (lens, Schwann cells, retina, kidney papillae), <strong>aldose reductase</strong> reduces excess glucose to sorbitol, which these cells convert slowly. Sorbitol draws in water and depletes NADPH, causing <strong>cataracts</strong> and <strong>peripheral neuropathy</strong>.</li><li><strong>Diabetic kidney disease</strong>: early glomerular hyperfiltration, then mesangial expansion, diffuse and then <strong>nodular (Kimmelstiel-Wilson) glomerulosclerosis</strong> with PAS-positive nodules, GBM thickening and albuminuria.</li><li><strong>Retinopathy</strong>: pericyte loss, microaneurysms, dot-blot hemorrhages and hard exudates (nonproliferative), then VEGF-driven neovascularisation (proliferative).</li><li><strong>Neuropathy</strong>: distal symmetric \"stocking-glove\" sensory loss, autonomic neuropathy (gastroparesis, orthostatic hypotension, erectile dysfunction), mononeuropathies (cranial nerve III palsy that spares the pupil).</li></ul><h3>Drugs by mechanism</h3><table><tr><th>Class</th><th>Mechanism</th><th>Main adverse effects</th></tr><tr><td>Insulins: rapid (lispro, aspart, glulisine), short (regular), intermediate (NPH), long (glargine, detemir, degludec)</td><td>Replace insulin; differ only in absorption profile</td><td>Hypoglycemia, weight gain, lipohypertrophy at injection sites, hypokalemia</td></tr><tr><td>Metformin (biguanide)</td><td>Lowers hepatic gluconeogenesis (in part through AMP-activated protein kinase); improves insulin sensitivity</td><td>GI upset, vitamin B12 deficiency, lactic acidosis in kidney failure or hypoperfusion; no hypoglycemia alone; weight neutral</td></tr><tr><td>Sulfonylureas (glipizide, glimepiride, glyburide); meglitinides (repaglinide)</td><td>Bind SUR1 and close K-ATP channels, so insulin is released regardless of glucose</td><td>Hypoglycemia (worst with glyburide, in older adults and in kidney failure), weight gain</td></tr><tr><td>Thiazolidinediones (pioglitazone)</td><td>PPAR-gamma agonists (nuclear receptor): raise insulin sensitivity in fat, muscle, liver</td><td>Fluid retention and heart failure, weight gain, fractures</td></tr><tr><td>GLP-1 receptor agonists (semaglutide, liraglutide, dulaglutide); tirzepatide (GIP and GLP-1 agonist)</td><td>Glucose-dependent insulin release, less glucagon, slower gastric emptying, satiety</td><td>Nausea and vomiting, gallbladder disease, pancreatitis; avoid with personal or family history of medullary thyroid cancer or MEN2</td></tr><tr><td>DPP-4 inhibitors (sitagliptin, linagliptin)</td><td>Block breakdown of endogenous GLP-1 and GIP</td><td>Generally mild; weight neutral; pancreatitis rarely</td></tr><tr><td>SGLT2 inhibitors (empagliflozin, dapagliflozin, canagliflozin)</td><td>Block sodium-glucose cotransporter 2 in the proximal tubule, causing glycosuria</td><td>Genital mycotic infections, volume depletion, euglycemic DKA; rare necrotising fasciitis of the perineum</td></tr><tr><td>Alpha-glucosidase inhibitors (acarbose)</td><td>Slow carbohydrate digestion at the brush border</td><td>Flatulence, diarrhea; treat hypoglycemia with glucose, not sucrose</td></tr><tr><td>Pramlintide</td><td>Amylin analogue: slows gastric emptying, lowers glucagon</td><td>Hypoglycemia with insulin (mealtime insulin is reduced), nausea</td></tr></table><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Closing the door raises the voltage</em>\": anything that closes the beta-cell K-ATP door (ATP, sulfonylureas) depolarises the cell and releases insulin; diazoxide props the door open.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Adult Diabetic Ketoacidosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560723/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hyperosmolar Hyperglycemic Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482142/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Metformin",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK518983/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Sulfonylureas",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK513225/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Euglycemic Diabetic Ketoacidosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554570/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150102-1-1",
+    "heading": "Hypoglycemia and islet cell tumours: physiology and pathology",
+    "html": "<p><strong>Hypoglycemia</strong> is a plasma glucose low enough to cause symptoms or harm. In a person without diabetes it is investigated only when <strong>Whipple's triad</strong> is present: symptoms consistent with hypoglycemia, a low plasma glucose measured at the time (in practice below 55 mg/dL, 3.0 mmol/L), and relief of symptoms when glucose is raised. In diabetes care, glucose below 70 mg/dL is level 1, below 54 mg/dL is level 2, and any episode with altered thinking that needs another person's help is level 3 (severe).</p>\n<h3>The defence against a falling glucose</h3>\n<p>As glucose falls, the body responds in a fixed order. First, <strong>insulin secretion stops</strong>. Next, <strong>glucagon</strong> rises (alpha cells), stimulating hepatic glycogenolysis and gluconeogenesis; this is the main fast defence. <strong>Epinephrine</strong> follows, raising hepatic glucose output, limiting peripheral uptake and producing the warning symptoms. <strong>Cortisol and growth hormone</strong> act over hours. The brain depends on a steady glucose supply, so prolonged neuroglycopenia causes confusion, seizures, coma and permanent injury.</p>\n<ul><li><strong>Autonomic (adrenergic and cholinergic) symptoms</strong>: tremor, palpitations, anxiety, sweating, hunger, tingling.</li><li><strong>Neuroglycopenic symptoms</strong>: confusion, odd behaviour, slurred speech, focal deficits, seizures, coma.</li></ul>\n<h3>Reading insulin, C-peptide and proinsulin</h3>\n<p>Beta cells make <strong>proinsulin</strong>, which prohormone convertases cleave in secretory granules into insulin and <strong>C-peptide</strong> in equal molar amounts. Pharmaceutical insulin contains no C-peptide. So, during hypoglycemia:</p>\n[[figure:s23c-fig150102-1]]\n<ul><li>High insulin with <strong>low C-peptide</strong> means injected insulin.</li><li>High insulin with <strong>high C-peptide and proinsulin</strong> means the patient's own beta cells are secreting: an insulinoma or a drug that forces secretion (sulfonylurea or meglitinide). Only a drug screen separates these.</li><li><strong>Beta-hydroxybutyrate</strong> is low whenever insulin (or an insulin-like factor) is acting, because insulin blocks lipolysis and ketogenesis. A high ketone level points away from insulin-mediated causes.</li></ul>\n<h3>Causes</h3>\n<table><tr><th>Mechanism</th><th>Examples</th><th>Clue</th></tr>\n<tr><td>Drugs</td><td>Insulin, sulfonylureas (especially long-acting ones such as glyburide, worse with kidney failure), meglitinides; less often quinine, pentamidine, fluoroquinolones</td><td>The commonest cause overall</td></tr>\n<tr><td>Ethanol</td><td>Binge drinking after a period of poor food intake</td><td>Ethanol oxidation raises the NADH/NAD<sup>+</sup> ratio, diverting pyruvate to lactate and oxaloacetate to malate, so gluconeogenesis stalls once glycogen is gone</td></tr>\n<tr><td>Hormone deficiency</td><td>Adrenal insufficiency, hypopituitarism (cortisol and growth hormone loss)</td><td>Hypoglycemia with hyponatremia, hypotension; children with hypopituitarism</td></tr>\n<tr><td>Critical illness</td><td>Sepsis, liver failure, kidney failure, starvation</td><td>Less gluconeogenesis, less insulin clearance</td></tr>\n<tr><td>Non-islet cell tumour hypoglycemia</td><td>Large mesenchymal tumours (for example a solitary fibrous tumour) or hepatocellular carcinoma</td><td>Tumour secretes incompletely processed (\"big\") IGF-2, which activates insulin receptors; insulin, C-peptide and ketones are all low</td></tr>\n<tr><td>Endogenous hyperinsulinism</td><td>Insulinoma; post-bariatric hypoglycemia; insulin autoimmune hypoglycemia</td><td>See below</td></tr></table>\n<h3>Insulinoma</h3>\n<p>An insulinoma is a beta-cell neuroendocrine tumour that secretes insulin without regard to glucose. Most are small, solitary and benign and can lie anywhere in the pancreas; multiple tumours suggest MEN1. Hypoglycemia typically occurs during fasting or exercise, and patients often gain weight from eating to prevent symptoms. Because the tumour also releases incompletely processed hormone, the <strong>proinsulin</strong> fraction is high.</p>\n<h3>Other forms of endogenous hyperinsulinism</h3>\n<ul><li><strong>Post-bariatric hypoglycemia</strong>: after Roux-en-Y gastric bypass, food reaches the small bowel quickly, glucose and GLP-1 surge, and insulin overshoots. Symptoms come 1–3 hours <em>after meals</em>, not during fasting.</li><li><strong>Insulin autoimmune hypoglycemia</strong>: antibodies to insulin bind it after meals and release it hours later. Insulin levels are extremely high. It has been linked to sulfhydryl-containing drugs such as methimazole and is more often reported in East Asian populations.</li><li><strong>Neonatal hypoglycemia in an infant of a mother with diabetes</strong>: maternal glucose crosses the placenta, fetal beta cells become hyperplastic, and when the cord is clamped the infant's high insulin output persists while the glucose supply stops.</li></ul>\n<h3>Other islet cell tumours</h3>\n<table><tr><th>Tumour (cell)</th><th>Hormone action</th><th>Picture</th></tr>\n<tr><td>Glucagonoma (alpha)</td><td>Glucagon drives glycogenolysis, gluconeogenesis and amino acid catabolism</td><td>Necrolytic migratory erythema (red, crusting, spreading rash, often groin and buttocks), diabetes, weight loss, glossitis, deep venous thrombosis, low amino acids</td></tr>\n<tr><td>Somatostatinoma (delta)</td><td>Somatostatin inhibits insulin, gastrin, cholecystokinin, pancreatic enzymes</td><td>Diabetes, gallstones, steatorrhea, achlorhydria</td></tr>\n<tr><td>VIPoma (non-beta islet cell)</td><td>Vasoactive intestinal peptide raises cAMP in intestinal epithelium, driving chloride and water secretion</td><td>Large-volume watery diarrhea that persists with fasting, hypokalemia, low or absent gastric acid (WDHA)</td></tr>\n<tr><td>Gastrinoma (G cells, pancreas or duodenum)</td><td>Gastrin drives acid secretion and parietal cell growth</td><td>Multiple or distal ulcers, diarrhea; covered with MEN1</td></tr></table>\n<div class=\"trap\"><p><strong>Exam trap:</strong> high insulin with high C-peptide does not prove an insulinoma. A sulfonylurea gives the same pattern, so a drug screen comes before any pancreatic imaging.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>The needle leaves no peptide</em>\": injected insulin brings no C-peptide with it.</p></div>",
+    "figureIds": [
+     "s23c-fig150102-1"
+    ],
+    "areas": [
+     "usmle2026.15.01.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Hypoglycemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534841/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Insulinoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544299/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Glucagonoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519500/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: VIPoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507698/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Neonatal Hypoglycemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537105/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150201-1-1",
+    "heading": "Thyroid development, hormone synthesis and drugs",
+    "html": "<p>The thyroid makes thyroxine (T4) and, in smaller amounts, the active hormone triiodothyronine (T3). Almost every Step 1 thyroid question rests on four ideas: where the gland comes from, how iodide becomes hormone, how the axis is regulated, and where drugs act.</p><h3>Development</h3><ul><li>The thyroid begins as an endodermal outgrowth at the <strong>foramen cecum</strong>, at the junction of the anterior two thirds and posterior third of the tongue. It descends in front of the hyoid and larynx, attached by the <strong>thyroglossal duct</strong>, which normally disappears.</li><li><strong>Thyroglossal duct cyst</strong>: a midline neck mass, usually at or just below the hyoid, that <em>rises when the tongue is protruded or with swallowing</em>. Surgical excision removes the central part of the hyoid with the tract to prevent recurrence. A lateral neck mass at the anterior border of the sternocleidomastoid is a branchial cleft cyst instead.</li><li><strong>Lingual thyroid</strong>: failure of descent leaves thyroid tissue at the tongue base; it may be the only thyroid tissue the patient has, so it is imaged before any removal.</li><li>Parafollicular <strong>C cells</strong> (calcitonin) come from the ultimobranchial body of the fourth pharyngeal pouch, with neural crest contribution.</li></ul>[[figure:s23c-fig150201-1]]<h3>Hormone synthesis</h3><ol><li><strong>Trapping</strong>: the sodium-iodide symporter (NIS) on the basolateral membrane concentrates iodide. Perchlorate and pertechnetate compete for it.</li><li><strong>Oxidation and organification</strong>: at the apical membrane, thyroid peroxidase (TPO) oxidises iodide and attaches it to tyrosine residues on thyroglobulin, forming monoiodotyrosine (MIT) and diiodotyrosine (DIT).</li><li><strong>Coupling</strong>: TPO joins DIT + DIT to make T4, and MIT + DIT to make T3.</li><li><strong>Release</strong>: TSH drives endocytosis of colloid; lysosomal proteases free T4 and T3. Large iodide doses and lithium inhibit release.</li></ol><p>The gland secretes mostly T4. Peripheral <strong>5′-deiodinase</strong> (types 1 and 2) converts T4 to T3, the form that binds nuclear receptors; type 3 deiodinase makes inactive reverse T3. Over 99% of circulating hormone is protein-bound, mostly to <strong>thyroxine-binding globulin (TBG)</strong>, and only the free fraction acts.</p><table><tr><th>TBG change</th><th>Causes</th><th>Total T4</th><th>Free T4 and TSH</th></tr><tr><td>Increased</td><td>Pregnancy, estrogen (oral contraceptives, hormone therapy), acute hepatitis, tamoxifen</td><td>High</td><td>Normal</td></tr><tr><td>Decreased</td><td>Androgens, glucocorticoids, nephrotic syndrome, cirrhosis</td><td>Low</td><td>Normal</td></tr></table><h3>Regulation</h3><p>Hypothalamic TRH stimulates pituitary TSH, which acts through a G<sub>s</sub>-coupled receptor (cAMP) to drive every step of synthesis and to cause follicular hypertrophy. T3 inside thyrotrophs and the hypothalamus feeds back negatively. Because TSH responds steeply to small changes in free T4, <strong>TSH is the most sensitive screening test</strong> in primary thyroid disease, but it is unreliable when the pituitary itself is diseased.</p><h3>Actions of thyroid hormone</h3><ul><li>Raises basal metabolic rate through more Na<sup>+</sup>/K<sup>+</sup>-ATPase activity and heat production.</li><li>Increases cardiac β<sub>1</sub>-receptor expression: tachycardia, raised contractility and cardiac output.</li><li>Essential for brain maturation and bone growth in infancy (untreated congenital deficiency causes permanent intellectual disability).</li><li>Increases glycogenolysis, gluconeogenesis and lipolysis; lowers LDL by raising hepatic LDL receptors.</li></ul><h3>Pharmacology by mechanism</h3><table><tr><th>Drug</th><th>Mechanism</th><th>Key adverse effects</th></tr><tr><td>Methimazole</td><td>Blocks TPO (organification and coupling)</td><td>Agranulocytosis (rare, early), rash, cholestatic hepatitis; first-trimester embryopathy (aplasia cutis, choanal or esophageal atresia)</td></tr><tr><td>Propylthiouracil (PTU)</td><td>Blocks TPO <em>and</em> peripheral 5′-deiodinase</td><td>Agranulocytosis; severe hepatocellular injury (boxed warning); ANCA-associated vasculitis</td></tr><tr><td>Levothyroxine (T4)</td><td>Replacement; converted to T3 in tissues</td><td>Over-replacement: atrial fibrillation, bone loss</td></tr><tr><td>Propranolol and other β-blockers</td><td>Control adrenergic symptoms; propranolol at high dose slightly reduces T4 to T3 conversion</td><td>Bronchospasm, bradycardia</td></tr><tr><td>Radioactive iodine (<sup>131</sup>I)</td><td>Taken up by NIS; β-emission destroys follicular cells</td><td>Permanent hypothyroidism (expected); can worsen active Graves orbitopathy; contraindicated in pregnancy and breastfeeding</td></tr><tr><td>Potassium iodide (iodine solution)</td><td>Large doses acutely block organification (Wolff-Chaikoff) and hormone release</td><td>Given only after a thionamide in hyperthyroidism, or it fuels new hormone synthesis</td></tr></table><p><strong>Drugs that disturb thyroid function</strong>: <em>amiodarone</em> (about a third iodine by weight) can cause hypothyroidism (failure to escape Wolff-Chaikoff, especially with underlying Hashimoto) or thyrotoxicosis (type 1: iodine-driven synthesis in a nodular or Graves gland; type 2: destructive thyroiditis); <em>lithium</em> blocks hormone release and causes goiter and hypothyroidism; immune checkpoint inhibitors cause thyroiditis.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a woman on oral contraceptives with a high <em>total</em> T4 and a normal TSH is euthyroid. The extra hormone is bound to the extra TBG; free T4 is normal.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"PTU works <em>Peripherally Too</em>\": it is the thionamide that also blocks T4-to-T3 conversion.</p></div>",
+    "figureIds": [
+     "s23c-fig150201-1"
+    ],
+    "areas": [
+     "usmle2026.15.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Thyroglossal Duct Cyst",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519057/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hypothyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519536/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Thyroid Diseases",
+      "url": "https://medlineplus.gov/thyroiddiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150201-1-2",
+    "heading": "Thyroid pathology: thyroiditis, Graves disease and neoplasms",
+    "html": "<h3>Hypothyroidism: Hashimoto thyroiditis</h3><p>Chronic autoimmune (lymphocytic) thyroiditis is the commonest cause of hypothyroidism where iodine intake is adequate. It is much more common in women and associated with HLA-DR3 and DR5 and with other autoimmune diseases. <strong>Anti-TPO</strong> (and anti-thyroglobulin) antibodies are present; destruction is mostly cell-mediated (cytotoxic T cells, apoptosis). Early follicular destruction may release stored hormone and cause brief thyrotoxicosis (\"hashitoxicosis\").</p><ul><li><strong>Gross</strong>: diffusely enlarged, firm, painless goiter; late in the disease the gland may shrink.</li><li><strong>Microscopy</strong>: dense lymphocytic infiltrate with <strong>germinal centres</strong>; atrophic follicles; <strong>Hürthle (oncocytic) cells</strong>, large follicular cells with granular pink cytoplasm full of mitochondria.</li><li><strong>Risk</strong>: primary <strong>thyroid B-cell lymphoma</strong> (diffuse large B-cell or MALT type), which presents as a rapidly enlarging thyroid in a patient with long-standing Hashimoto.</li></ul><p>Other causes of hypothyroidism: iodine deficiency (endemic goiter, worldwide the leading cause), prior radioiodine or thyroidectomy, drugs (amiodarone, lithium, checkpoint inhibitors), central (pituitary or hypothalamic) disease, and congenital dysgenesis. Clinical effects of deficiency include cold intolerance, weight gain, constipation, bradycardia, delayed relaxation of tendon reflexes, dry skin, menorrhagia, hyperlipidemia, hyponatremia, raised creatine kinase and nonpitting myxedema from glycosaminoglycan accumulation.</p><h3>Hyperthyroidism: Graves disease</h3><ul><li><strong>Thyroid-stimulating immunoglobulin</strong> (IgG against the TSH receptor) mimics TSH: diffuse hyperplasia, a smooth goiter with a bruit, high radioiodine uptake, suppressed TSH. It is a type II (antibody-mediated, receptor-stimulating) hypersensitivity. The antibody crosses the placenta and can cause transient neonatal thyrotoxicosis.</li><li><strong>Microscopy</strong>: tall, crowded follicular cells with papillary infoldings; pale colloid with \"scalloped\" edges where it is being resorbed.</li><li><strong>Orbitopathy</strong>: orbital fibroblasts and preadipocytes express TSH receptors (and IGF-1 receptors). Autoantibodies and T-cell cytokines drive fibroblasts to secrete hydrophilic glycosaminoglycans (hyaluronan) and to become fat cells, expanding extraocular muscles and orbital fat: proptosis, lid retraction, diplopia, and in severe cases optic nerve compression. Smoking and radioiodine worsen it.</li><li><strong>Dermopathy</strong>: pretibial myxedema, the same glycosaminoglycan deposition in the shin dermis.</li></ul><p>Other causes of thyrotoxicosis: toxic multinodular goiter and toxic adenoma (autonomous nodules, often activating TSH-receptor mutations, no orbitopathy), thyroiditis (leakage of stored hormone, low uptake), exogenous hormone, iodine load (Jod-Basedow), hCG-mediated (hyperemesis, molar pregnancy), struma ovarii and, rarely, a TSH-secreting adenoma.</p><h3>Thyroiditis compared</h3><table><tr><th>Type</th><th>Setting and clues</th><th>Pathology</th><th>Course</th></tr><tr><td>Subacute granulomatous (de Quervain)</td><td>After a viral upper respiratory illness; <strong>painful, tender gland</strong>, fever, very high ESR</td><td>Granulomatous inflammation with multinucleated giant cells around damaged follicles</td><td>Thyrotoxic, then hypothyroid, then usually normal over months; low radioiodine uptake while thyrotoxic</td></tr><tr><td>Painless (silent) and postpartum</td><td>Painless; postpartum form within a year of delivery; anti-TPO often positive</td><td>Lymphocytic infiltrate without the germinal centres and fibrosis of Hashimoto</td><td>Same three-phase course; recurs after later pregnancies; some develop permanent hypothyroidism</td></tr><tr><td>Hashimoto</td><td>Painless goiter, hypothyroidism</td><td>Lymphoid follicles, Hürthle cells</td><td>Permanent hypothyroidism common</td></tr><tr><td>Riedel (fibrous)</td><td><strong>Rock-hard, fixed</strong> gland that can compress the trachea; mimics cancer</td><td>Dense fibrosis extending beyond the capsule; IgG4-positive plasma cells (part of IgG4-related disease)</td><td>Variable; may need steroids or surgery</td></tr></table><h3>Nonthyroidal illness (euthyroid sick syndrome)</h3><p>Severe illness, starvation and high-dose glucocorticoids reduce 5′-deiodinase activity, so <strong>T3 falls and reverse T3 rises</strong>; with longer, more severe illness T4 and TSH can also fall. Thyroid hormone is not given; values recover as the illness resolves, sometimes with a transient TSH overshoot.</p><h3>Thyroid neoplasms</h3><table><tr><th>Tumour</th><th>Cell and genetics</th><th>Histology</th><th>Behaviour</th></tr><tr><td>Follicular adenoma</td><td>Follicular cell</td><td>Encapsulated, no capsular or vascular invasion</td><td>Benign; FNA cannot tell it from carcinoma</td></tr><tr><td>Papillary carcinoma (about 80–85%)</td><td>Follicular cell; <em>BRAF</em> V600E, <em>RET/PTC</em> rearrangements; childhood radiation exposure</td><td>Papillae; nuclei with clear \"ground glass\" chromatin, grooves and pseudoinclusions; <strong>psammoma bodies</strong></td><td>Spreads to cervical lymph nodes; excellent prognosis</td></tr><tr><td>Follicular carcinoma</td><td>Follicular cell; <em>RAS</em> mutations, <em>PAX8-PPARG</em></td><td>Diagnosis needs <strong>capsular or vascular invasion</strong></td><td>Hematogenous spread (bone, lung)</td></tr><tr><td>Medullary carcinoma</td><td>Parafollicular C cell; <em>RET</em> (sporadic or MEN2)</td><td>Nests of cells in <strong>amyloid stroma derived from calcitonin</strong> (Congo red)</td><td>Calcitonin and CEA are tumour markers; does not take up iodine</td></tr><tr><td>Anaplastic carcinoma</td><td>Follicular cell, dedifferentiated; <em>TP53</em></td><td>Pleomorphic, spindle and giant cells</td><td>Older adults; rapidly growing, invasive; very poor prognosis</td></tr><tr><td>Primary lymphoma</td><td>B cell; arises in Hashimoto</td><td>Sheets of lymphoid cells</td><td>Rapidly enlarging gland; treated with chemotherapy and radiation</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a painful thyroid with thyrotoxicosis and low radioiodine uptake is subacute thyroiditis, not Graves. Thionamides do nothing, because no new hormone is being made.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Hashimoto Thyroiditis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459262/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Graves Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448195/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: De Quervain Thyroiditis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK526066/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Papillary Thyroid Carcinoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536943/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Euthyroid Sick Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482219/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150301-1-1",
+    "heading": "Calcium homeostasis and hypercalcemia: PTH, vitamin D and the calcium-sensing receptor",
+    "html": "<p>Serum calcium is held in a narrow range by three hormones acting on three organs: bone, kidney and gut. About 40% of total calcium is bound to albumin, so a low albumin lowers total calcium without changing the ionised fraction. A common bedside correction adds 0.8 mg/dL for every 1 g/dL that albumin falls below 4 g/dL; measuring ionised calcium is more reliable. Alkalosis increases albumin binding and lowers ionised calcium, which is why hyperventilation causes perioral tingling.</p>\n<h3>The three hormones</h3>\n<table><tr><th>Hormone</th><th>Source and trigger</th><th>Main actions</th></tr>\n<tr><td>Parathyroid hormone (PTH)</td><td>Chief cells; secreted when ionised calcium falls, sensed by the calcium-sensing receptor (CaSR, a G protein-coupled receptor)</td><td>Bone: stimulates osteoblasts to express RANKL, which activates osteoclasts and releases calcium and phosphate. Kidney: raises calcium reabsorption in the distal convoluted tubule, blocks phosphate reabsorption in the proximal tubule (phosphaturia), stimulates 1-alpha-hydroxylase.</td></tr>\n<tr><td>Calcitriol (1,25-dihydroxyvitamin D)</td><td>Skin (cholecalciferol) → liver 25-hydroxylation → proximal tubule 1-alpha-hydroxylation, driven by PTH and low phosphate, inhibited by FGF23</td><td>Raises intestinal absorption of calcium and phosphate; needed for normal mineralisation; feeds back to suppress PTH.</td></tr>\n<tr><td>Calcitonin</td><td>Parafollicular C cells of the thyroid, released by high calcium</td><td>Inhibits osteoclasts; minor physiologic role in adults; tumour marker for medullary thyroid cancer.</td></tr></table>\n<p>FGF23 from osteocytes lowers phosphate by blocking proximal tubular phosphate reabsorption and suppressing 1-alpha-hydroxylase; it rises early in chronic kidney disease. Magnesium is needed both for PTH release and for target-organ response, so severe hypomagnesemia causes functional hypoparathyroidism that does not correct until magnesium is replaced.</p>\n<h3>Hypercalcemia</h3>\n<p>Primary hyperparathyroidism and malignancy cause about 90% of cases. The first test after confirming true hypercalcemia is an intact PTH.</p>\n<ul><li><strong>PTH high or inappropriately normal (PTH-dependent):</strong> primary hyperparathyroidism (single adenoma in about 85%, four-gland hyperplasia, rarely carcinoma), familial hypocalciuric hypercalcemia (FHH), lithium, tertiary hyperparathyroidism.</li>\n<li><strong>PTH suppressed (PTH-independent):</strong> PTH-related peptide (PTHrP) from squamous cell, renal, bladder, breast and ovarian cancers; osteolytic metastases or multiple myeloma; calcitriol made by granulomas (sarcoidosis, tuberculosis) or lymphoma macrophages; vitamin D or A excess; thiazides; milk-alkali syndrome; immobilisation; thyrotoxicosis.</li></ul>\n<p>Symptoms reflect calcium level and speed of rise: kidney stones, polyuria from nephrogenic diabetes insipidus, bone pain and osteitis fibrosa cystica (subperiosteal resorption of the radial side of the middle phalanges, \"salt-and-pepper\" skull, brown tumours), constipation, peptic ulcer and pancreatitis, fatigue, depression and confusion, and a short QT interval.</p>\n<p><strong>FHH</strong> is usually caused by a heterozygous loss-of-function variant in <em>CASR</em> (autosomal dominant). The parathyroids and kidney \"read\" calcium as low, so PTH is normal or mildly high and the kidney avidly reabsorbs calcium: urine calcium is low, with a calcium-to-creatinine clearance ratio usually below 0.01. It is benign and parathyroidectomy does not help. A homozygous loss of CaSR in a newborn causes severe neonatal hyperparathyroidism.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> mild hypercalcemia with a normal-to-high PTH is not always primary hyperparathyroidism. Check urine calcium; a very low calcium-to-creatinine clearance ratio and a family history of the same labs point to FHH.</p></div>[[figure:s23c-fig150301-1]]",
+    "figureIds": [
+     "s23c-fig150301-1"
+    ],
+    "areas": [
+     "usmle2026.15.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Primary Hyperparathyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441895/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Familial Hypocalciuric Hypercalcemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459190/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Malignancy-Related Hypercalcemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482423/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Parathyroid Disorders",
+      "url": "https://medlineplus.gov/parathyroiddisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150301-1-2",
+    "heading": "Hypocalcemia, pseudohypoparathyroidism and metabolic bone disease",
+    "html": "<h3>Hypocalcemia</h3>\n<p>Low ionised calcium raises neuromuscular excitability: perioral and fingertip paresthesia, muscle cramps, carpopedal spasm (Trousseau sign with a blood pressure cuff), facial twitching on tapping the facial nerve (Chvostek sign), laryngospasm, seizures and a <strong>prolonged QT interval</strong>.</p>\n<table><tr><th>Cause</th><th>Calcium</th><th>Phosphate</th><th>PTH</th><th>Clue</th></tr>\n<tr><td>Hypoparathyroidism (surgical, autoimmune, 22q11.2 deletion)</td><td>Low</td><td>High</td><td>Low</td><td>Neck surgery; candidiasis and adrenal failure in autoimmune polyglandular syndrome type 1; thymic aplasia, conotruncal heart defects and cleft palate in 22q11.2 deletion</td></tr>\n<tr><td>Hypomagnesemia</td><td>Low</td><td>Variable</td><td>Low or inappropriately normal</td><td>Alcohol use, proton pump inhibitors, diuretics, diarrhea, cisplatin</td></tr>\n<tr><td>Pseudohypoparathyroidism type 1A</td><td>Low</td><td>High</td><td>High</td><td>End-organ resistance; Albright hereditary osteodystrophy</td></tr>\n<tr><td>Vitamin D deficiency</td><td>Low or normal</td><td>Low</td><td>High</td><td>Low 25-hydroxyvitamin D; osteomalacia</td></tr>\n<tr><td>Chronic kidney disease</td><td>Low or normal</td><td>High</td><td>High</td><td>Low calcitriol, high FGF23</td></tr></table>\n<p><strong>Pseudohypoparathyroidism type 1A</strong> results from a loss-of-function variant in <em>GNAS</em>, which encodes the stimulatory G protein alpha subunit (Gs-alpha) that couples the PTH receptor to adenylyl cyclase. In the kidney and some other tissues only the maternal allele is expressed (imprinting), so the variant inherited from the mother gives PTH resistance plus Albright hereditary osteodystrophy: short stature, round face, obesity, shortened fourth and fifth metacarpals and subcutaneous ossification. Resistance to TSH and gonadotropins can coexist. When the same variant comes from the father, the child has the body habitus without hormone resistance (<strong>pseudopseudohypoparathyroidism</strong>), with normal calcium and PTH.</p>\n<h3>Metabolic bone disease</h3>\n<table><tr><th>Disorder</th><th>Defect</th><th>Calcium, phosphate, ALP, PTH</th><th>Key feature</th></tr>\n<tr><td>Osteoporosis</td><td>Low bone mass with normal mineralisation</td><td>All normal</td><td>Fragility fractures (vertebrae, hip, distal radius); thin trabeculae</td></tr>\n<tr><td>Osteomalacia / rickets</td><td>Defective mineralisation of osteoid (vitamin D deficiency, phosphate wasting)</td><td>Ca low or normal, phosphate low, ALP high, PTH high</td><td>Bone pain, proximal weakness, pseudofractures (Looser zones); in children bowed legs, rachitic rosary, widened growth plates</td></tr>\n<tr><td>Paget disease of bone</td><td>Disordered osteoclast then osteoblast activity</td><td>Ca and phosphate normal, ALP isolated high</td><td>Mosaic lamellar bone with cement lines; skull enlargement, hearing loss, bowed tibia, high-output heart failure, osteosarcoma (rare)</td></tr>\n<tr><td>Osteitis fibrosa cystica</td><td>PTH excess</td><td>Ca high, phosphate low, ALP high, PTH high</td><td>Subperiosteal resorption, brown tumours</td></tr>\n<tr><td>Renal osteodystrophy</td><td>CKD mineral and bone disorder</td><td>Phosphate high, PTH high, calcitriol low</td><td>High-turnover or adynamic bone, vascular calcification</td></tr></table>\n<p><strong>Drugs for bone</strong> by mechanism: bisphosphonates bind hydroxyapatite and are taken up by osteoclasts; nitrogen-containing ones (alendronate, risedronate, zoledronic acid) inhibit farnesyl pyrophosphate synthase and trigger osteoclast apoptosis. Denosumab is a monoclonal antibody to RANKL. Teriparatide and abaloparatide (PTH and PTHrP analogues) given as intermittent daily injections stimulate bone formation more than resorption. Romosozumab blocks sclerostin, increasing formation and decreasing resorption. Raloxifene is an estrogen agonist in bone and antagonist in breast. Cinacalcet is a calcimimetic that sensitises the CaSR and lowers PTH.</p>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Continuous PTH digs, pulsed PTH builds</em>\": sustained PTH excess resorbs bone, while a once-daily pulse of teriparatide is anabolic.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Hypoparathyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441899/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Pseudohypoparathyroidism and Related Disorders",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547709/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Osteomalacia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551616/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Rickets",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562285/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Paget Bone Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430805/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150401-1-1",
+    "heading": "Adrenal cortex and medulla: hormone excess, deficiency and tumours",
+    "html": "<p>The adrenal gland is two organs in one capsule. The <strong>cortex</strong> (mesoderm) makes steroids from cholesterol; the <strong>medulla</strong> (neural crest) is a modified sympathetic ganglion that makes catecholamines.</p>\n<table><tr><th>Layer</th><th>Main product</th><th>Main regulator</th></tr>\n<tr><td>Zona glomerulosa</td><td>Aldosterone</td><td>Angiotensin II and serum potassium (ACTH only minor)</td></tr>\n<tr><td>Zona fasciculata</td><td>Cortisol</td><td>ACTH</td></tr>\n<tr><td>Zona reticularis</td><td>Androgen precursors (DHEA, DHEA sulfate)</td><td>ACTH</td></tr>\n<tr><td>Medulla</td><td>Epinephrine (mostly), norepinephrine</td><td>Preganglionic sympathetic (acetylcholine, nicotinic receptors); cortisol from the cortex induces PNMT, which makes epinephrine</td></tr></table>\n<h3>Adrenal insufficiency</h3>\n<ul><li><strong>Primary</strong> (Addison disease): the gland itself fails. In high-income countries autoimmune adrenalitis is most common (antibodies to 21-hydroxylase, often with other autoimmune endocrine disease); worldwide, tuberculosis. Other causes: bilateral hemorrhage (anticoagulation, antiphospholipid syndrome, meningococcal sepsis as <em>Waterhouse-Friderichsen syndrome</em>), metastases (lung, breast), fungal infection, adrenoleukodystrophy in boys and young men.</li>\n<li>Both cortisol and aldosterone are lost. Low aldosterone gives <strong>hyponatremia, hyperkalemia, mild metabolic acidosis</strong> and salt craving with volume depletion. Low cortisol removes negative feedback, so the pituitary makes more <strong>pro-opiomelanocortin (POMC)</strong>; its cleavage products ACTH and melanocyte-stimulating hormone darken skin creases, scars and the buccal mucosa.</li>\n<li><strong>Secondary</strong> (pituitary) and <strong>tertiary</strong> (hypothalamic, including after stopping long-term glucocorticoids): ACTH is low, so there is <em>no hyperpigmentation</em>, and because renin-angiotensin still drives the glomerulosa, aldosterone is preserved and <em>hyperkalemia is absent</em>. Hyponatremia can still occur, because cortisol deficiency raises ADH release.</li></ul>\n<h3>Cushing syndrome (cortisol excess)</h3>\n<p>Features: central obesity with thin limbs, facial rounding, dorsocervical fat, wide purple striae, easy bruising, proximal muscle weakness, hypertension, hyperglycemia, osteoporosis, infections, mood change; in children, weight gain with <em>slowing</em> linear growth.</p>\n<table><tr><th>Cause</th><th>ACTH</th><th>Clue</th></tr>\n<tr><td>Exogenous glucocorticoid (most common overall)</td><td>Low</td><td>Includes inhaled, topical or injected steroids, especially with CYP3A4 inhibitors such as ritonavir; the adrenals are atrophic</td></tr>\n<tr><td>Pituitary corticotroph adenoma (Cushing disease; most common endogenous cause)</td><td>Normal or high</td><td>Usually a microadenoma; cortisol suppresses with high-dose dexamethasone; bilateral adrenal hyperplasia</td></tr>\n<tr><td>Ectopic ACTH (small cell lung cancer, bronchial and other carcinoids)</td><td>Often very high</td><td>Rapid onset, hypokalemia and alkalosis (cortisol overwhelms renal 11β-HSD2), hyperpigmentation; no suppression with high-dose dexamethasone</td></tr>\n<tr><td>Adrenal adenoma or carcinoma</td><td>Suppressed</td><td>Contralateral adrenal atrophic; carcinoma is large and often also makes androgens</td></tr></table>\n<h3>Mineralocorticoid excess</h3>\n<p><strong>Primary aldosteronism</strong> (bilateral zona glomerulosa hyperplasia or an aldosterone-producing adenoma) is the commonest curable cause of hypertension. Aldosterone raises ENaC activity in principal cells, so sodium is retained and potassium and hydrogen ions are lost: hypertension, <strong>low renin</strong>, metabolic alkalosis and, in a minority, hypokalemia. Edema is absent because of \"aldosterone escape\" (pressure natriuresis and natriuretic peptides).</p>\n<table><tr><th>Condition</th><th>Renin</th><th>Aldosterone</th><th>Mechanism</th></tr>\n<tr><td>Primary aldosteronism</td><td>Low</td><td>High</td><td>Autonomous aldosterone</td></tr>\n<tr><td>Renovascular hypertension, renin-secreting tumour, diuretics</td><td>High</td><td>High</td><td>Secondary aldosteronism</td></tr>\n<tr><td>Liddle syndrome</td><td>Low</td><td>Low</td><td>Gain-of-function ENaC (autosomal dominant); treated with amiloride or triamterene</td></tr>\n<tr><td>Apparent mineralocorticoid excess, heavy licorice intake</td><td>Low</td><td>Low</td><td>11β-HSD2 deficient or inhibited, so cortisol activates the mineralocorticoid receptor</td></tr>\n<tr><td>11β-hydroxylase or 17α-hydroxylase deficiency</td><td>Low</td><td>Low</td><td>Excess 11-deoxycorticosterone acts as a mineralocorticoid</td></tr></table>\n<h3>Adrenal medulla and tumours</h3>\n<ul><li><strong>Pheochromocytoma</strong>: a catecholamine-secreting chromaffin-cell tumour (a <em>paraganglioma</em> if outside the adrenal). Paroxysms of headache, sweating and palpitations with hypertension (sustained or episodic), pallor, anxiety, hyperglycemia. Chromogranin-positive nests of cells (\"zellballen\") with sustentacular cells. Roughly a third or more carry a germline variant: <em>RET</em> (MEN2), <em>VHL</em>, <em>NF1</em>, succinate dehydrogenase genes (paragangliomas, higher malignancy risk), so genetic testing is offered to everyone.</li>\n<li><strong>Neuroblastoma</strong>: the most common extracranial solid tumour of early childhood, arising from neural crest cells of the medulla or sympathetic chain. A firm, irregular abdominal mass that may cross the midline, with periorbital bruising from orbital metastases, Horner syndrome, opsoclonus-myoclonus (paraneoplastic) or hypertension. Small round blue cells, Homer Wright rosettes; urine homovanillic acid and vanillylmandelic acid raised. <strong><em>MYCN</em> amplification</strong> predicts aggressive disease.</li>\n<li><strong>Adrenocortical carcinoma</strong>: rare, usually large (often over 6 cm) and heterogeneous, frequently secreting cortisol and androgens together (rapid Cushing syndrome with virilisation); associated with Li-Fraumeni (<em>TP53</em>) and Beckwith-Wiedemann syndromes.</li></ul>\n<table><tr><th></th><th>Neuroblastoma</th><th>Wilms tumour</th></tr>\n<tr><td>Age</td><td>Most under 5 years (median under 2)</td><td>Usually 2–5 years</td></tr>\n<tr><td>Mass</td><td>Irregular, may cross the midline, calcified on imaging</td><td>Smooth, rarely crosses the midline</td></tr>\n<tr><td>Markers</td><td>Raised urine HVA and VMA</td><td>None; hematuria in some</td></tr>\n<tr><td>Genetics</td><td><em>MYCN</em> amplification (poor prognosis)</td><td><em>WT1</em>, <em>WT2</em> region</td></tr></table>\n<div class=\"trap\"><p><strong>Exam trap:</strong> hyperkalemia and hyperpigmentation both point to a <em>primary</em> adrenal problem. A patient with adrenal insufficiency and a normal potassium and no pigmentation more likely has pituitary disease or glucocorticoid withdrawal.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Salt, Sugar, Sex</em>\" from the outside in: glomerulosa keeps salt, fasciculata raises sugar, reticularis makes sex steroid precursors.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Addison Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441994/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hypercortisolism (Cushing Syndrome)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551526/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hyperaldosteronism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499983/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Pheochromocytoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK589700/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Neuroblastoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448111/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Adrenocortical Carcinoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK546580/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Adrenal Gland Disorders",
+      "url": "https://medlineplus.gov/adrenalglanddisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150501-1-1",
+    "heading": "Pituitary: development, hormones, tumours and water balance",
+    "html": "<h3>Development and anatomy</h3><p>The <strong>anterior pituitary (adenohypophysis)</strong> grows up from the roof of the primitive mouth as <strong>Rathke pouch</strong> (surface ectoderm). The <strong>posterior pituitary (neurohypophysis)</strong> grows down from the floor of the diencephalon (neuroectoderm) and is really a bundle of hypothalamic axon terminals. The anterior lobe has no direct arterial supply of note: it receives hypothalamic releasing hormones through the low-pressure <strong>hypophyseal portal veins</strong> of the stalk, which is why it is vulnerable to ischemia and why stalk damage changes its output. The gland sits in the sella turcica under the <strong>optic chiasm</strong>, with the cavernous sinuses (cranial nerves III, IV, V1, V2 and VI, and the internal carotid artery) on each side.</p>[[figure:s23c-fig150501-1]]<h3>Hormones and signalling</h3><table><tr><th>Hormone</th><th>Cell</th><th>Receptor signalling</th><th>Main control</th></tr><tr><td>GH</td><td>Somatotroph (acidophil)</td><td>Cytokine-type receptor, JAK2-STAT</td><td>GHRH up; somatostatin and IGF-1 down; sleep, exercise, hypoglycemia raise it; hyperglycemia lowers it</td></tr><tr><td>Prolactin</td><td>Lactotroph (acidophil)</td><td>Cytokine-type receptor, JAK2-STAT</td><td>Tonic <strong>inhibition by dopamine</strong> (D2) from the arcuate nucleus; TRH and estrogen raise it</td></tr><tr><td>ACTH</td><td>Corticotroph (basophil), cut from POMC</td><td>MC2R, cAMP</td><td>CRH and ADH up; cortisol down</td></tr><tr><td>TSH, LH, FSH</td><td>Basophils; share an alpha subunit with hCG</td><td>Gs, cAMP</td><td>TRH; pulsatile GnRH; sex steroids and inhibin feed back</td></tr><tr><td>ADH (vasopressin)</td><td>Hypothalamic neurons, released from posterior lobe</td><td>V2 (Gs, cAMP, aquaporin-2) in collecting duct; V1 (Gq) on vessels</td><td>Plasma osmolality (main), volume and pressure, nausea, pain</td></tr><tr><td>Oxytocin</td><td>Hypothalamic neurons, posterior lobe</td><td>Gq</td><td>Suckling, cervical stretch</td></tr></table><h3>Pituitary adenomas</h3><p>Most are benign monoclonal tumours. <strong>Microadenomas</strong> are under 1 cm; <strong>macroadenomas</strong> are 1 cm or more and cause mass effects:</p><ul><li><strong>Bitemporal hemianopia</strong> from pressure on the crossing nasal retinal fibres in the chiasm.</li><li><strong>Hypopituitarism</strong>, typically losing GH and gonadotropins first, then TSH, then ACTH.</li><li><strong>Stalk effect</strong>: compression of the stalk stops dopamine reaching the lactotrophs, so prolactin rises modestly (usually below about 100 ng/mL) even though the tumour does not make prolactin.</li><li>Lateral spread into the cavernous sinus causes diplopia from cranial nerve palsies.</li></ul><p><strong>Prolactinoma</strong> is the commonest functioning adenoma. Prolactin suppresses GnRH, giving amenorrhea, infertility and galactorrhea in women, and low libido, erectile dysfunction and infertility in men (who present later, often with macroadenomas). <strong>Dopamine agonists</strong> (cabergoline, bromocriptine) act on D2 receptors to cut secretion and shrink the tumour.</p><p><strong>Somatotroph adenoma</strong> causes <strong>gigantism</strong> if it starts before the epiphyses close and <strong>acromegaly</strong> after: coarse features, frontal bossing, prognathism, widened tooth gaps, large hands and feet, carpal tunnel syndrome, sweating, sleep apnea, insulin resistance, hypertension and cardiomyopathy, arthropathy and colonic polyps. Many tumours carry activating <em>GNAS</em> mutations (constitutive Gs signalling); McCune-Albright syndrome is the mosaic form. Treatment options by mechanism: somatostatin receptor ligands (octreotide, lanreotide, pasireotide) reduce GH release; <strong>pegvisomant</strong> blocks the GH receptor, so IGF-1 falls while GH rises (monitor IGF-1, not GH).</p><p><strong>Craniopharyngioma</strong> arises from <strong>Rathke pouch remnants</strong>. It is the commonest supratentorial tumour of childhood that affects the pituitary, with a second peak in older adults. It is suprasellar, cystic and often <strong>calcified</strong>, filled with dark, oily fluid. The adamantinomatous (childhood) type has beta-catenin (<em>CTNNB1</em>) mutations and wet keratin; the papillary (adult) type carries <em>BRAF</em> V600E. It causes headache, bitemporal field loss, growth failure, diabetes insipidus and, after surgery, hypothalamic obesity.</p><h3>Ischemia: Sheehan syndrome and apoplexy</h3><p>In pregnancy the anterior lobe nearly doubles in size (lactotroph hyperplasia) but its portal blood supply does not. Severe postpartum hemorrhage with hypotension can then cause ischemic necrosis (<strong>Sheehan syndrome</strong>). The first sign is often <strong>failure to lactate</strong>, followed by no return of menses, fatigue, hypotension and hyponatremia from cortisol and thyroid deficiency. <strong>Pituitary apoplexy</strong> is sudden hemorrhage or infarction of an adenoma: thunderclap headache, visual loss, ophthalmoplegia and acute adrenal insufficiency.</p><h3>Water balance</h3><p><strong>Central diabetes insipidus</strong> (now also called AVP deficiency) is lack of ADH; <strong>nephrogenic diabetes insipidus</strong> (AVP resistance) is a collecting duct that cannot respond (V2 receptor or aquaporin-2 variants, lithium, hypercalcemia, hypokalemia). Both give large volumes of dilute urine. <strong>SIADH</strong> is the opposite: ADH secreted despite low plasma osmolality, so free water is retained. The patient is clinically <strong>euvolemic</strong> because volume expansion triggers natriuresis (natriuretic peptides up, renin-aldosterone down), so urine sodium is high. Causes include small cell lung cancer (ectopic ADH), CNS disease, lung disease, drugs (SSRIs, carbamazepine, cyclophosphamide, vincristine), pain, nausea and postoperative states.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a modestly raised prolactin with a large sellar mass is not necessarily a prolactinoma. Prolactinomas big enough to compress the chiasm usually raise prolactin far higher. Think stalk effect from a nonfunctioning adenoma, and remember the opposite pitfall, the <em>hook effect</em>: with a giant prolactinoma, very high prolactin can saturate the assay and read falsely low unless the sample is diluted.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> the pituitary loses its jobs in the order \"<em>Grow, Get pregnant, Thyroid, Then stress</em>\": GH, gonadotropins, TSH, then ACTH.</p></div>",
+    "figureIds": [
+     "s23c-fig150501-1"
+    ],
+    "areas": [
+     "usmle2026.15.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Prolactinoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459347/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Acromegaly",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK431086/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Craniopharyngioma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519027/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Sheehan Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459166/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Pituitary Disorders",
+      "url": "https://medlineplus.gov/pituitarydisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s1506-1-1",
+    "heading": "Hypothalamus: nuclei, appetite, GnRH and hypothalamic disease",
+    "html": "<p>The hypothalamus links the nervous and endocrine systems. It makes the releasing and inhibiting hormones that reach the anterior pituitary through the portal veins, makes ADH and oxytocin for the posterior pituitary, and controls appetite, temperature, thirst and circadian rhythm.</p>[[figure:s23c-fig1506-1]]<h3>Nuclei worth knowing</h3><table><tr><th>Region</th><th>Main role</th><th>Damage causes</th></tr><tr><td>Supraoptic and paraventricular nuclei</td><td>ADH (mainly supraoptic) and oxytocin (mainly paraventricular); paraventricular also makes CRH and TRH</td><td>Central diabetes insipidus</td></tr><tr><td>Arcuate nucleus</td><td>Dopamine (prolactin inhibition), GnRH, GHRH; senses leptin and insulin</td><td>Hyperprolactinemia, hypogonadism, appetite dysregulation</td></tr><tr><td>Ventromedial nucleus</td><td>Satiety</td><td>Hyperphagia and obesity</td></tr><tr><td>Lateral hypothalamic area</td><td>Hunger, arousal (orexin neurons)</td><td>Anorexia and weight loss; loss of orexin neurons causes narcolepsy with cataplexy</td></tr><tr><td>Anterior hypothalamus (preoptic)</td><td>Heat loss (sweating, vasodilation); sets the febrile set point under prostaglandin E2</td><td>Hyperthermia</td></tr><tr><td>Posterior hypothalamus</td><td>Heat conservation (shivering, vasoconstriction)</td><td>Poikilothermia (body temperature drifts with the environment)</td></tr><tr><td>Suprachiasmatic nucleus</td><td>Circadian clock, driven by light through the retinohypothalamic tract; controls pineal melatonin</td><td>Disrupted sleep-wake rhythm</td></tr></table><h3>Appetite signalling</h3><p><strong>Leptin</strong> from fat cells and insulin act on the arcuate nucleus. They stimulate <strong>POMC neurons</strong>, which release <strong>alpha-MSH</strong> onto <strong>MC4 receptors</strong> in the paraventricular nucleus to signal satiety, and they inhibit neuropeptide Y/AgRP neurons, which drive hunger. <strong>Ghrelin</strong> from the stomach does the opposite. Loss-of-function variants in <em>MC4R</em> are the commonest single-gene cause of severe early-onset obesity; congenital leptin deficiency (treated with leptin) is rare. In ordinary obesity leptin is high, reflecting leptin resistance.</p><h3>GnRH and reproduction</h3><p>GnRH must be released in <strong>pulses</strong>. Pulsatile GnRH stimulates LH and FSH; continuous GnRH (or a long-acting GnRH agonist) desensitises gonadotrophs and <em>suppresses</em> them, which is the basis of agonist therapy for precocious puberty and prostate cancer.</p><ul><li><strong>Kallmann syndrome</strong>: GnRH neurons start in the olfactory placode and migrate along olfactory axons into the forebrain. Variants such as <em>ANOS1</em> (X-linked) or <em>FGFR1</em> disrupt this migration, giving <strong>hypogonadotropic hypogonadism with anosmia or hyposmia</strong> (low GnRH, low LH and FSH, low sex steroids). Other features: cleft lip or palate, renal agenesis, mirror movements. The same deficiency with a normal sense of smell is normosmic idiopathic hypogonadotropic hypogonadism.</li><li><strong>Functional hypothalamic amenorrhea</strong>: energy deficit (restricted eating, heavy exercise) and psychological stress slow GnRH pulses through low leptin, high cortisol and other signals. LH and FSH are low or normal and estradiol is low, so there is no withdrawal bleed after progestin. Long-term risk: loss of bone density and stress fractures.</li><li><strong>Hypothalamic hamartoma</strong>: a benign malformation containing GnRH-producing neurons (and glial cells that stimulate GnRH release) that drives <strong>central precocious puberty</strong>, sometimes with <strong>gelastic (laughing) seizures</strong>.</li><li>Opioids, high-dose glucocorticoids, hyperprolactinemia and critical illness all suppress GnRH.</li></ul><h3>Structural and infiltrative disease</h3><p>Masses (craniopharyngioma, germinoma, glioma), radiation, trauma and infiltration damage the hypothalamus. <strong>Langerhans cell histiocytosis</strong> (CD1a- and langerin-positive cells with Birbeck granules, often with <em>BRAF</em> V600E) and <strong>sarcoidosis</strong> (noncaseating granulomas) classically thicken the stalk and cause <strong>central diabetes insipidus</strong>, often with anterior pituitary deficiencies. Damage to the osmoreceptors can cause <strong>adipsic diabetes insipidus</strong>: no thirst, so hypernatremia is severe. <strong>Prader-Willi syndrome</strong> (loss of paternally expressed genes at 15q11-q13) shows hypothalamic dysfunction: infant hypotonia and poor feeding, then hyperphagia, obesity, short stature and hypogonadism.</p><div class=\"trap\"><p><strong>Exam trap:</strong> hypogonadism with low LH and FSH is a hypothalamic or pituitary problem; with high LH and FSH it is a gonadal problem. Ask about smell before ordering anything else.</p></div>",
+    "figureIds": [
+     "s23c-fig1506-1"
+    ],
+    "areas": [
+     "usmle2026.15.06"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Hypothalamic Dysfunction",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560743/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Kallmann Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538210/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hypothalamic Hamartoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560663/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Hormones",
+      "url": "https://medlineplus.gov/hormones.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s1507-1-1",
+    "heading": "Multiple endocrine neoplasia: genetics and tumours",
+    "html": "<p>The <strong>multiple endocrine neoplasia (MEN) syndromes</strong> are autosomal dominant conditions in which tumours arise in several endocrine glands, often in young adults, often in more than one gland, and often bilaterally. Two different genetic mechanisms explain the two main families.</p>\n[[figure:s23c-fig1507-1]]\n<h3>MEN1: loss of a tumour suppressor</h3>\n<p>The <em>MEN1</em> gene on chromosome 11q13 encodes <strong>menin</strong>, a nuclear protein that restrains cell proliferation through effects on transcription and chromatin. Affected people inherit one inactive copy; a tumour forms when the second copy is lost in a cell (the two-hit model), which is why tumours are multiple and appear in several glands over time.</p>\n<ul><li><strong>Parathyroid</strong>: hyperplasia of all four glands, the commonest and usually the earliest feature, presenting with hypercalcemia, stones or bone loss at a younger age than sporadic primary hyperparathyroidism.</li><li><strong>Pancreas and duodenum</strong>: neuroendocrine tumours. Gastrinomas in MEN1 are usually small, multiple and in the duodenal wall; insulinomas and nonfunctioning tumours also occur. Pancreatic neuroendocrine tumours are a leading cause of death in MEN1.</li><li><strong>Anterior pituitary</strong>: adenomas, most often prolactinomas.</li><li>Others: foregut carcinoid tumours (thymic, bronchial, gastric), adrenal cortical nodules, facial angiofibromas and collagenomas, lipomas.</li></ul>\n<p>Hypercalcemia stimulates gastrin release, so uncontrolled hyperparathyroidism makes Zollinger-Ellison syndrome in MEN1 worse.</p>\n<h3>MEN2: gain of function of a receptor tyrosine kinase</h3>\n<p>The <em>RET</em> proto-oncogene (chromosome 10q11) encodes a receptor tyrosine kinase expressed in neural crest derivatives. In MEN2, a <strong>single activating (gain-of-function) mutation</strong> makes the receptor signal without its ligand. The neural crest cells involved are the thyroid <strong>parafollicular C cells</strong> and the <strong>adrenal medullary chromaffin cells</strong>.</p>\n<table><tr><th></th><th>MEN2A</th><th>MEN2B</th></tr>\n<tr><td>Medullary thyroid carcinoma (MTC)</td><td>Nearly all carriers, preceded by C-cell hyperplasia</td><td>Nearly all, earlier (childhood) and more aggressive</td></tr>\n<tr><td>Pheochromocytoma</td><td>About half, often bilateral</td><td>About half</td></tr>\n<tr><td>Primary hyperparathyroidism</td><td>A minority (hyperplasia)</td><td>Absent</td></tr>\n<tr><td>Other</td><td>Cutaneous lichen amyloidosis (itchy plaques over the upper back); Hirschsprung disease in some families</td><td>Mucosal neuromas of lips, tongue and eyelids; intestinal ganglioneuromatosis (constipation, megacolon); marfanoid habitus without lens or aortic disease</td></tr>\n<tr><td>Typical RET variant</td><td>Cysteine codons in the extracellular domain (634 is the classic high-risk codon)</td><td>M918T in the kinase domain</td></tr></table>\n<h3>Medullary thyroid carcinoma</h3>\n<p>MTC arises from <strong>C cells</strong>, which secrete <strong>calcitonin</strong>; the tumour also releases <strong>CEA</strong>, and both serve as tumour markers. Microscopically, nests of polygonal or spindle cells sit in a stroma of amyloid derived from calcitonin, which stains with Congo red. Serum calcium is usually normal despite high calcitonin. Because C cells neither concentrate iodine nor depend on TSH, radioactive iodine and TSH suppression have no role. About a quarter of MTC is hereditary, which is why every patient with MTC is offered germline <em>RET</em> testing.</p>\n<h3>Hirschsprung disease and RET</h3>\n<p>Loss-of-function <em>RET</em> variants impair migration of neural crest cells to the distal bowel and cause Hirschsprung disease. Some MEN2A families carry variants that both activate the receptor in C cells and reduce its signalling at the cell surface in enteric neurons, so the two conditions can occur together.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> MEN1 is a loss-of-function tumour suppressor (two hits); MEN2 is a gain-of-function proto-oncogene (one hit). Hyperparathyroidism belongs to MEN1 and MEN2A, never MEN2B.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>MEN1 counts the glands from the neck down to the belly and up to the head</em>\": parathyroid, pancreas, pituitary. MEN2 is the neural crest pair: C cells and chromaffin cells.</p></div>",
+    "figureIds": [
+     "s23c-fig1507-1"
+    ],
+    "areas": [
+     "usmle2026.15.07"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Multiple Endocrine Neoplasia Type 1",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536980/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Multiple Endocrine Neoplasia Type 2",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519054/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Medullary Thyroid Cancer",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459354/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus Genetics: Multiple endocrine neoplasia",
+      "url": "https://medlineplus.gov/genetics/condition/multiple-endocrine-neoplasia/",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150801-1-1",
+    "heading": "Sex development, congenital adrenal hyperplasia and congenital hypothyroidism",
+    "html": "<h3>Normal sex development</h3>\n<p>Until about week 7 the gonads are bipotential and both duct systems are present. On the Y chromosome, <strong><em>SRY</em></strong> starts testis development; without it an ovary forms.</p>\n<table><tr><th>Testis cell</th><th>Product</th><th>Effect</th></tr>\n<tr><td>Sertoli cell</td><td>Anti-Müllerian hormone (AMH)</td><td>Regression of the Müllerian (paramesonephric) ducts, so no uterus, fallopian tubes or upper vagina</td></tr>\n<tr><td>Leydig cell</td><td>Testosterone</td><td>Wolffian (mesonephric) ducts become epididymis, vas deferens and seminal vesicles</td></tr>\n<tr><td>Target tissues</td><td>Dihydrotestosterone (DHT), made by 5α-reductase type 2</td><td>Penis, scrotum, prostate; male external genitalia</td></tr></table>\n<p>Without AMH the Müllerian ducts persist; without testosterone the Wolffian ducts regress; without DHT the external genitalia look female or ambiguous. Androgens, not ovaries, are needed to virilise, which is why androgen exposure masculinises a 46,XX fetus.</p>\n<h3>Differences (disorders) of sex development</h3>\n<p>The term covers congenital conditions in which chromosomal, gonadal or anatomic sex develops atypically. Use neutral, respectful language with families.</p>\n<table><tr><th>Condition</th><th>Karyotype</th><th>Internal</th><th>External genitalia</th><th>Key labs</th></tr>\n<tr><td>21-hydroxylase deficiency (classic CAH)</td><td>46,XX</td><td>Uterus and ovaries</td><td>Virilised (clitoromegaly, fused labioscrotal folds); 46,XY infants look typical</td><td>High 17-hydroxyprogesterone; salt-wasting form: low Na, high K</td></tr>\n<tr><td>Complete androgen insensitivity (<em>AR</em> variant, X-linked)</td><td>46,XY</td><td>Testes (often inguinal); no uterus (AMH works); no Wolffian structures</td><td>Female; sparse pubic and axillary hair; breasts develop at puberty from aromatised testosterone</td><td>Testosterone and LH high or high-normal; estrogen in the male range</td></tr>\n<tr><td>Partial androgen insensitivity</td><td>46,XY</td><td>Testes</td><td>Ambiguous to undervirilised male</td><td>As above</td></tr>\n<tr><td>5α-reductase type 2 deficiency (autosomal recessive)</td><td>46,XY</td><td>Testes, Wolffian structures present, no uterus</td><td>Ambiguous or female at birth; marked virilisation at puberty (type 1 enzyme and high testosterone); little body hair, small prostate</td><td>Normal testosterone, low DHT, high testosterone-to-DHT ratio</td></tr>\n<tr><td>17α-hydroxylase deficiency</td><td>46,XX or 46,XY</td><td>XY: testes, no uterus</td><td>Female or undervirilised; no puberty</td><td>Low cortisol and sex steroids; high 11-deoxycorticosterone: hypertension, hypokalemia, low renin</td></tr>\n<tr><td>Turner syndrome (45,X or mosaic)</td><td>45,X</td><td>Streak ovaries</td><td>Female; absent or arrested puberty</td><td>High FSH and LH (primary ovarian insufficiency)</td></tr>\n<tr><td>Klinefelter syndrome</td><td>47,XXY</td><td>Small firm testes</td><td>Male; incomplete virilisation, gynecomastia</td><td>Low testosterone, high FSH and LH</td></tr></table>\n<h3>Congenital adrenal hyperplasia</h3>\n<p>An autosomal recessive defect in cortisol synthesis. Low cortisol raises ACTH, which enlarges both adrenals and pushes precursors into whichever pathways remain open (see the figure).</p>\n[[figure:s23c-fig150801-1]]\n<table><tr><th>Enzyme</th><th>Mineralocorticoid effect</th><th>Androgens</th><th>Typical picture</th></tr>\n<tr><td>21-hydroxylase (about 95% of cases)</td><td>Aldosterone low: salt wasting, hypotension, hyperkalemia (classic salt-wasting form)</td><td>High</td><td>Virilised 46,XX newborn; adrenal crisis at 1–3 weeks, often unrecognised in boys; nonclassic form presents later with hirsutism or early pubarche</td></tr>\n<tr><td>11β-hydroxylase</td><td>11-deoxycorticosterone high: hypertension, hypokalemia</td><td>High</td><td>Virilisation with hypertension</td></tr>\n<tr><td>17α-hydroxylase</td><td>11-deoxycorticosterone high: hypertension, hypokalemia</td><td>Low</td><td>Undervirilised 46,XY or absent puberty in 46,XX, with hypertension</td></tr></table>\n<h3>Congenital hypothyroidism</h3>\n<ul><li>Worldwide the leading cause is maternal iodine deficiency. Where iodine intake is adequate, most cases are <strong>thyroid dysgenesis</strong>: an absent, small or <em>ectopic</em> gland (often at the tongue base, from failed descent along the thyroglossal duct from the foramen cecum). The rest are defects in hormone synthesis (dyshormonogenesis, for example thyroid peroxidase variants, often with goiter); a few are central or transient (maternal blocking antibodies, iodine exposure).</li>\n<li>Maternal T4 crosses the placenta, so most newborns look normal at birth. Untreated infants develop prolonged jaundice, poor feeding, constipation, hypotonia, a large tongue, umbilical hernia, a large posterior fontanelle and dry skin, followed by irreversible intellectual disability and growth failure. Newborn screening exists to prevent this.</li></ul>\n<h3>Kallmann syndrome</h3>\n<p>Failure of GnRH neurons to migrate from the olfactory placode to the hypothalamus during development: hypogonadotropic hypogonadism (delayed puberty, low LH, FSH and sex steroids) with anosmia or hyposmia.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a uterus is present in any 46,XX condition and absent in any 46,XY condition with working Sertoli cells (androgen insensitivity, 5α-reductase deficiency), because AMH depends on the testis, not on androgen action.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> in CAH the enzyme number tells the blood pressure: <em>21</em> drops it (salt lost), <em>11</em> and <em>17</em> lift it (deoxycorticosterone builds up).</p></div>",
+    "figureIds": [
+     "s23c-fig150801-1"
+    ],
+    "areas": [
+     "usmle2026.15.08.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Congenital Adrenal Hyperplasia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448098/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Androgen Insensitivity Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK542206/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Congenital Hypothyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK558913/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus Genetics: 5-alpha reductase deficiency",
+      "url": "https://medlineplus.gov/genetics/condition/5-alpha-reductase-deficiency/",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150901-1-1",
+    "heading": "Drug effects on endocrine glands: mechanisms",
+    "html": "<p>Many drugs change endocrine function by acting on a hormone's feedback loop, its synthesis, its receptor or the assay that measures it. Thinking in those four steps makes most questions predictable.</p>\n<h3>Exogenous glucocorticoids</h3>\n<p>Supraphysiologic glucocorticoids (roughly more than 5 mg/day of prednisone or equivalent) suppress CRH and ACTH by negative feedback. Without ACTH the zona fasciculata and reticularis atrophy, so cortisol and adrenal androgens fall. The zona glomerulosa is controlled mainly by angiotensin II and potassium, so <strong>aldosterone is preserved</strong>. Suppression is likely after about 3 weeks of a supraphysiologic dose, and recovery can take months.</p>\n[[figure:s23c-fig150901-1]]\n<p>Effects of glucocorticoid excess by mechanism: gluconeogenesis and insulin resistance (hyperglycemia), protein catabolism (proximal myopathy, thin skin, striae, poor wound healing), reduced osteoblast function and gut calcium absorption (osteoporosis, osteonecrosis of the femoral head), central fat redistribution, immunosuppression with lymphopenia and neutrophil demargination (a raised neutrophil count), eosinopenia, cataracts, glaucoma, mood change and growth suppression in children.</p>\n<h3>Drugs acting on the adrenal and steroid pathways</h3>\n<table><tr><th>Drug</th><th>Action</th><th>Endocrine consequence</th></tr>\n<tr><td>Etomidate</td><td>Inhibits 11-beta-hydroxylase</td><td>Transient cortisol suppression after a single induction dose</td></tr>\n<tr><td>Ketoconazole</td><td>Inhibits several cytochrome P450 steroidogenic enzymes</td><td>Lowers cortisol and testosterone; gynecomastia; used for Cushing syndrome</td></tr>\n<tr><td>Metyrapone</td><td>Inhibits 11-beta-hydroxylase</td><td>Lowers cortisol; 11-deoxycortisol rises</td></tr>\n<tr><td>Mitotane</td><td>Adrenolytic to the cortex</td><td>Adrenal insufficiency; used for adrenocortical carcinoma</td></tr>\n<tr><td>Spironolactone</td><td>Mineralocorticoid and androgen receptor antagonist</td><td>Hyperkalemia, gynecomastia</td></tr>\n<tr><td>Fludrocortisone</td><td>Mineralocorticoid agonist</td><td>Replaces aldosterone; excess causes hypertension and hypokalemia</td></tr>\n<tr><td>Opioids (long-term)</td><td>Suppress hypothalamic GnRH and CRH</td><td>Hypogonadotropic hypogonadism; occasionally central adrenal insufficiency</td></tr></table>\n<h3>Anabolic-androgenic steroids</h3>\n<p>Exogenous testosterone and its analogues suppress GnRH, LH and FSH. Low LH means low intratesticular testosterone, so the testes shrink and spermatogenesis stops (infertility). Other effects: erythrocytosis, low HDL and high LDL, acne, gynecomastia (aromatisation to estradiol), hepatotoxicity and hepatic adenoma with oral 17-alpha-alkylated agents, mood change and, in adolescents, premature epiphyseal closure. After stopping, hypogonadism can persist for months.</p>\n<h3>The thyroid and iodine-rich drugs</h3>\n<ul><li><strong>Amiodarone</strong> is about one third iodine by weight and inhibits type 1 deiodinase (less T4 to T3 conversion, higher reverse T3).<ul><li><em>Hypothyroidism</em>: the iodine load triggers the Wolff-Chaikoff effect (iodine excess inhibits organification); glands with underlying autoimmune thyroiditis fail to escape it.</li><li><em>Type 1 thyrotoxicosis</em>: iodine fuels excess hormone synthesis in a gland with nodules or latent Graves disease (Jod-Basedow phenomenon).</li><li><em>Type 2 thyrotoxicosis</em>: a destructive thyroiditis from direct drug toxicity, releasing stored hormone.</li></ul></li>\n<li><strong>Iodinated contrast</strong> can cause Jod-Basedow thyrotoxicosis in an older patient with multinodular goiter.</li>\n<li><strong>Lithium</strong> is concentrated by the thyroid and inhibits hormone release, causing goiter and hypothyroidism. It also raises the calcium set point of the CaSR, giving hypercalcemia with high PTH, and causes nephrogenic diabetes insipidus.</li>\n<li>Drugs that raise thyroxine-binding globulin (oral estrogen, tamoxifen) raise total T4 with normal free T4; in a patient on levothyroxine, estrogen increases the dose needed. Drugs that impair levothyroxine absorption include calcium, iron, proton pump inhibitors and bile acid sequestrants.</li></ul>\n<h3>Glucose</h3>\n<p>Drugs that raise glucose: glucocorticoids, thiazides (hypokalemia reduces insulin release), atypical antipsychotics (weight gain, insulin resistance; olanzapine and clozapine most), protease inhibitors, calcineurin inhibitors (tacrolimus is toxic to beta cells), statins (small rise in diabetes incidence), niacin and nonselective beta-blockers (which can also mask the adrenergic warning signs of hypoglycemia). <strong>SGLT2 inhibitors</strong> cause glucosuria, lower insulin needs and raise glucagon, so ketogenesis can proceed with near-normal glucose: <strong>euglycemic DKA</strong>, triggered by surgery, fasting, illness or reduced insulin dose.</p>\n<h3>Immune checkpoint inhibitors</h3>\n<p>Releasing T-cell brakes can cause autoimmune endocrine disease. <strong>Anti-CTLA-4</strong> agents (ipilimumab) most often cause <strong>hypophysitis</strong> (headache, central adrenal insufficiency, central hypothyroidism, hypogonadism). <strong>Anti-PD-1/PD-L1</strong> agents (nivolumab, pembrolizumab) most often cause <strong>thyroiditis</strong> (transient thyrotoxicosis followed by hypothyroidism) and, rarely, abrupt insulin-deficient diabetes. Unlike most immune adverse events, endocrinopathies are usually permanent and are managed with hormone replacement rather than high-dose glucocorticoids.</p>\n<h3>Prolactin</h3>\n<p>Dopamine from the tuberoinfundibular pathway tonically inhibits prolactin. D2 antagonists (risperidone and first-generation antipsychotics, metoclopramide) and dopamine-depleting drugs raise prolactin, causing galactorrhea, amenorrhea, infertility, low libido and, over time, low bone density.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> secondary adrenal insufficiency from stopping glucocorticoids spares aldosterone, so potassium is usually normal. Hyperkalemia points to primary adrenal failure.</p></div>\n<div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>CTLA-4 hits the head, PD-1 hits the neck</em>\": hypophysitis with ipilimumab, thyroiditis with nivolumab and pembrolizumab.</p></div>",
+    "figureIds": [
+     "s23c-fig150901-1"
+    ],
+    "areas": [
+     "usmle2026.15.09.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK594266/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Anabolic Steroid Toxicity",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544259/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Amiodarone",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482154/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hyperprolactinemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537331/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Steroids",
+      "url": "https://medlineplus.gov/steroids.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   }
+  ]
+ },
+ {
   "id": "s23c-ch11-s2",
   "exam": "step2ck",
   "order": 411,
@@ -982,6 +1453,499 @@
       "label": "MedlinePlus: Kidney Diseases",
       "url": "https://medlineplus.gov/kidneydiseases.html",
       "sourceId": "medlineplus-federal"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s23c-ch15-s2",
+  "exam": "step2ck",
+  "order": 415,
+  "title": "Step 2 CK · Endocrine system",
+  "meta": "Naadi original · USMLE-2026 outline",
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23c-s150101-2-1",
+    "heading": "Diabetes: diagnosis, screening and outpatient management",
+    "html": "<h3>Diagnosis</h3><table><tr><th>Test</th><th>Diabetes</th><th>Prediabetes</th></tr><tr><td>Hemoglobin A1c</td><td>6.5% or higher</td><td>5.7–6.4%</td></tr><tr><td>Fasting plasma glucose (8 h or more without calories)</td><td>126 mg/dL (7.0 mmol/L) or higher</td><td>100–125 mg/dL</td></tr><tr><td>2-hour glucose on a 75-g oral glucose tolerance test</td><td>200 mg/dL (11.1 mmol/L) or higher</td><td>140–199 mg/dL</td></tr><tr><td>Random glucose with classic symptoms or a hyperglycemic crisis</td><td>200 mg/dL or higher</td><td>—</td></tr></table><p>Without unequivocal hyperglycemia, diagnosis needs two abnormal results: two different tests from the same sample, or the same test repeated. If two tests disagree, <strong>repeat the test that was abnormal</strong>. A1c is unreliable when red cell lifespan is altered (hemolysis, recent bleeding or transfusion, pregnancy, iron deficiency, hemoglobin variants, advanced CKD); use glucose-based tests then.</p><h3>Screening</h3><ul><li>USPSTF: adults aged 35–70 with overweight or obesity, every 3 years if normal.</li><li>ADA: everyone from age 35, and earlier in adults with overweight or obesity plus a risk factor (first-degree relative, high-risk ethnicity, hypertension, dyslipidemia, polycystic ovary syndrome, inactivity, history of gestational diabetes).</li><li>Prediabetes: intensive lifestyle programme aiming for about 7% weight loss and 150 minutes a week of activity; metformin can be considered in younger, heavier patients or after gestational diabetes.</li></ul><h3>Treating type 2 diabetes</h3><ol><li><strong>Lifestyle</strong> for everyone: nutrition therapy, activity, weight loss; diabetes self-management education.</li><li><strong>Choose drugs by comorbidity first, then by glucose and weight goals.</strong><ul><li>Established atherosclerotic cardiovascular disease or high risk: a GLP-1 receptor agonist or an SGLT2 inhibitor with proven cardiovascular benefit, <em>regardless of A1c</em>.</li><li>Heart failure (reduced or preserved ejection fraction): an SGLT2 inhibitor.</li><li>CKD with albuminuria or reduced eGFR: an SGLT2 inhibitor (and RAS blockade); a GLP-1 receptor agonist if more glucose lowering is needed.</li><li>Obesity: a GLP-1 receptor agonist or tirzepatide gives the most weight loss.</li><li>Metformin remains a sound, cheap foundation when none of these drives the choice.</li></ul></li><li>Add or intensify every 3 months if the individual A1c target is not reached. Consider insulin early when A1c is above 10%, glucose is 300 mg/dL or higher, or there is catabolism (weight loss) or symptomatic hyperglycemia.</li><li><strong>Insulin</strong>: start basal insulin at about 10 units a day or 0.1–0.2 units/kg/day and titrate by a few units every few days until fasting glucose is at target. If fasting glucose is controlled but A1c is still high, add a GLP-1 receptor agonist or prandial insulin rather than pushing basal insulin ever higher.</li></ol><h3>Targets</h3><ul><li>A1c below 7% for many nonpregnant adults; tighter if achievable without hypoglycemia; <strong>less strict (for example below 8.0%) in older adults with multiple illnesses, cognitive impairment or limited life expectancy</strong>, in whom hypoglycemia causes falls and harm. Stop or avoid sulfonylureas (especially glyburide) and deintensify when glucose is overtreated.</li><li>Blood pressure below 130/80 mm Hg for most; ACE inhibitor or ARB when there is albuminuria.</li><li>Statin: at least moderate intensity for ages 40–75; high intensity with ASCVD or multiple risk factors.</li><li>Aspirin for secondary prevention; for primary prevention only after weighing bleeding risk.</li></ul><h3>Complication surveillance</h3><table><tr><th>Check</th><th>Type 1</th><th>Type 2</th></tr><tr><td>Dilated eye examination</td><td>Within 5 years of onset, then every 1–2 years</td><td>At diagnosis, then every 1–2 years if normal</td></tr><tr><td>Urine albumin-to-creatinine ratio and eGFR</td><td>Yearly from 5 years after onset</td><td>At diagnosis, then at least yearly</td></tr><tr><td>Neuropathy and comprehensive foot examination (monofilament, vibration, pulses)</td><td>From 5 years after onset, then yearly</td><td>At diagnosis, then yearly</td></tr></table><p><strong>Diabetic foot</strong>: a neuropathic plantar ulcer heals only with <strong>offloading</strong> (total contact cast or removable walker), debridement and good perfusion; check pulses and the ankle-brachial index. A positive probe-to-bone test or exposed bone suggests osteomyelitis: radiographs first, then MRI. Antibiotics are for clinically infected wounds only.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in an older patient with recurrent hypoglycemia and an A1c of 6.2% on a sulfonylurea, the answer is to stop the sulfonylurea, not to add snacks.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Type 2 Diabetes",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK513253/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Diabetic Foot Ulceration and Complications",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499887/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "USPSTF: Prediabetes and type 2 diabetes, screening",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes",
+      "sourceId": "uspstf"
+     },
+     {
+      "label": "MedlinePlus: Diabetes",
+      "url": "https://medlineplus.gov/diabetes.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150101-2-2",
+    "heading": "Hyperglycemic crises, sick days and planning pregnancy",
+    "html": "<h3>Diabetic ketoacidosis and hyperosmolar hyperglycemic state</h3><p><strong>DKA</strong>: glucose above about 200 mg/dL (or known diabetes), ketonemia (beta-hydroxybutyrate raised) and acidosis (pH below 7.3 or bicarbonate below 18 mEq/L), with a raised anion gap. Precipitants: missed insulin, infection, new-onset type 1, myocardial infarction, pancreatitis, SGLT2 inhibitors, cocaine. <strong>HHS</strong>: glucose usually above 600 mg/dL, markedly raised osmolality (total osmolality classically above about 320 mOsm/kg), little ketosis or acidosis, and often altered mental status.</p><h3>Management (same backbone for both)</h3><ol><li><strong>Fluids first</strong>: isotonic saline (or a balanced crystalloid) about 1–1.5 L in the first hour, then guided by volume status and the corrected sodium. Patients with HHS have the larger deficit.</li><li><strong>Potassium before insulin decisions</strong>:<ul><li>K<sup>+</sup> below 3.3 mEq/L: hold insulin and give IV potassium until 3.3 or higher; insulin would drive K<sup>+</sup> into cells and risk arrhythmia.</li><li>3.3–5.0 mEq/L: add potassium to each litre of fluid.</li><li>Above 5.0 mEq/L: no potassium yet; recheck every 1–2 hours.</li></ul></li><li><strong>Insulin</strong>: continuous IV regular insulin (about 0.1 units/kg/hour). In mild DKA, subcutaneous rapid-acting insulin is an alternative.</li><li><strong>Add dextrose</strong> when glucose falls to about 250 mg/dL in DKA (about 300 mg/dL in HHS) and continue insulin until the ketoacidosis resolves. In DKA, insulin is being given to clear ketones, not just to lower glucose.</li><li><strong>Bicarbonate</strong> only for severe acidemia (pH below about 7.0). Phosphate only if severely low.</li><li><strong>Transition</strong> when the anion gap has closed and the patient can eat: give subcutaneous basal insulin 1–2 hours <em>before</em> stopping the infusion to avoid rebound ketoacidosis.</li><li>Monitor glucose hourly and electrolytes every 2–4 hours; look for and treat the precipitant. Lower glucose and sodium gradually, particularly in children, to reduce the risk of cerebral edema.</li></ol>[[figure:s23c-fig150101-2]]<h3>Sick-day rules</h3><ul><li>Type 1 diabetes: <strong>never stop basal insulin</strong>, even when not eating; check glucose every 2–4 hours and ketones when glucose is high or vomiting occurs; drink carbohydrate-containing fluids if not eating; seek care for persistent vomiting, moderate or large ketones, or confusion.</li><li>Pause SGLT2 inhibitors, metformin, diuretics and ACE inhibitors/ARBs during dehydrating illness. Stop SGLT2 inhibitors at least 3 days before planned surgery.</li></ul><h3>Type 1 diabetes and pregnancy planning</h3><p>Hyperglycemia at conception and in the first trimester raises the risk of miscarriage and congenital anomalies (cardiac defects, neural tube defects, caudal regression). Before conception: reliable contraception until glucose is controlled, an A1c below 6.5% if this can be reached without significant hypoglycemia, folic acid, a dilated eye examination, and stopping teratogenic drugs such as ACE inhibitors, ARBs and statins. Insulin needs fall slightly in the first trimester and rise steeply in the second and third.</p><div class=\"trap\"><p><strong>Exam trap:</strong> \"the glucose is now 220 mg/dL, so stop the insulin drip\" is wrong in DKA. Add dextrose and keep the insulin running until the anion gap closes.</p></div>",
+    "figureIds": [
+     "s23c-fig150101-2"
+    ],
+    "areas": [
+     "usmle2026.15.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Adult Diabetic Ketoacidosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560723/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hyperosmolar Hyperglycemic Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482142/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Pediatric Diabetic Ketoacidosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470282/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Type 1 Diabetes",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507713/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150102-2-1",
+    "heading": "Hypoglycemia: emergency treatment, evaluation and management",
+    "html": "<h3>Treat first</h3>\n<p>Hypoglycemia is treated before it is explained.</p>\n<table><tr><th>Situation</th><th>Treatment</th></tr>\n<tr><td>Awake and able to swallow</td><td>15–20 g of fast-acting carbohydrate (glucose tablets or gel, juice, regular soda); recheck glucose after 15 minutes and repeat if still low; then a snack or meal once glucose is normal</td></tr>\n<tr><td>Unable to swallow safely, no IV access (home, community)</td><td><strong>Glucagon</strong>: intramuscular or subcutaneous injection, or intranasal powder; turn the person on their side because vomiting is common. Never put food or fluid in the mouth of a person who cannot swallow.</td></tr>\n<tr><td>Hospital with IV access</td><td>IV dextrose bolus, then a dextrose infusion if the cause is long-acting</td></tr></table>\n<p>Glucagon works only if liver glycogen is present, so it may fail in starvation, alcohol-related hypoglycemia and advanced liver disease. Anyone treated with insulin, or with a history of level 2 or 3 hypoglycemia, should have glucagon prescribed and family members taught to use it.</p>\n<h3>Sulfonylurea-induced hypoglycemia</h3>\n<p>Sulfonylureas, especially long-acting agents and those cleared by the kidney (glyburide), cause prolonged and recurrent hypoglycemia, most of all in older adults and in chronic kidney disease. Dextrose alone can make it worse, because each glucose bolus stimulates more insulin release. <strong>Octreotide</strong>, a somatostatin analogue, inhibits insulin secretion and prevents recurrence. Patients are admitted for monitoring because the drug effect can outlast a day. In older adults with diabetes, avoid long-acting sulfonylureas and relax glycemic targets.</p>\n<h3>Hypoglycemia unawareness</h3>\n<p>Repeated hypoglycemia in long-standing type 1 diabetes blunts the glucagon response and lowers the glucose level that triggers adrenergic warning symptoms, so the first sign may be confusion or a seizure. Management: <strong>continuous glucose monitoring with alerts</strong>, review of insulin doses, and a period of <strong>strict avoidance of hypoglycemia with temporarily higher glucose targets</strong>, which partly restores awareness over weeks. Automated insulin delivery systems further reduce hypoglycemia.</p>\n<h3>Evaluating hypoglycemia in a person without diabetes</h3>\n<ol><li><strong>Confirm Whipple's triad.</strong> A healthy-looking person with vague symptoms and a normal glucose during symptoms needs no further testing.</li><li><strong>Look for an obvious cause</strong>: drugs (including access to a relative's diabetes medicines), alcohol, critical illness, adrenal insufficiency, a large tumour.</li><li><strong>Draw blood during hypoglycemia</strong> (spontaneous, or provoked by a supervised fast of up to 72 hours, or a mixed-meal test if symptoms follow meals): glucose, insulin, C-peptide, proinsulin, beta-hydroxybutyrate and a screen for sulfonylureas and meglitinides; insulin antibodies if insulin is very high. At the end of the fast, glucagon is given: a brisk glucose rise shows that insulin had kept glycogen in the liver.</li><li><strong>Localise only after biochemistry proves endogenous hyperinsulinism</strong> with a negative drug screen: multiphase contrast CT or MRI of the pancreas, then endoscopic ultrasonography; specialised functional imaging or selective arterial calcium stimulation for small tumours that remain hidden.</li></ol>\n<h3>Management of the causes</h3>\n<ul><li><strong>Insulinoma</strong>: surgical removal (enucleation or partial pancreatectomy) cures most patients. Diazoxide, which opens beta-cell potassium channels and inhibits insulin release, or a somatostatin analogue controls symptoms when surgery is not possible.</li><li><strong>Post-bariatric hypoglycemia</strong>: dietary change first: small, frequent meals with protein and fat and few rapidly absorbed carbohydrates; acarbose next; specialist options after that.</li><li><strong>Factitious hypoglycemia</strong> (secret use of insulin or a secretagogue): share the results with the patient privately and without blame, and offer psychiatric care. Check for a pharmacy dispensing error before assuming deliberate use.</li><li><strong>Adrenal insufficiency</strong>: glucocorticoid replacement.</li><li><strong>Neonates at risk</strong> (infant of a mother with diabetes, large or small for gestational age, preterm): check glucose in the first hours; early feeding, oral dextrose gel, and IV dextrose if low glucose persists or the infant has symptoms.</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> do not start imaging the pancreas in a patient with hypoglycemia until insulin-mediated hypoglycemia has been proven and a sulfonylurea screen is negative.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.01.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Non-Diabetic Hypoglycemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK573079/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Factitious Hypoglycemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK542310/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Postbariatric Surgery Hypoglycemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK592417/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Hypoglycemia",
+      "url": "https://medlineplus.gov/hypoglycemia.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150201-2-1",
+    "heading": "Thyroid function tests, hypothyroidism and hyperthyroidism: management",
+    "html": "<h3>Testing strategy</h3><ul><li>Start with <strong>TSH</strong>. If abnormal, add <strong>free T4</strong> (and total or free T3 when TSH is suppressed but free T4 is normal, to find T3 toxicosis).</li><li>When pituitary or hypothalamic disease is known or suspected, TSH is misleading: measure free T4 and follow free T4 on treatment.</li><li>Antibodies: anti-TPO supports Hashimoto (and predicts progression of subclinical hypothyroidism); TSH-receptor antibodies (TRAb or TSI) confirm Graves.</li><li><strong>Radioactive iodine uptake and scan</strong> sorts thyrotoxicosis once TSH is suppressed: diffuse high uptake (Graves), patchy uptake (toxic multinodular goiter), one hot nodule with the rest suppressed (toxic adenoma), and low uptake (thyroiditis, exogenous hormone, recent iodine load). Serum <strong>thyroglobulin</strong> is low with exogenous hormone and high with thyroiditis.</li></ul>[[figure:s23c-fig150201-2]]<h3>Hypothyroidism</h3><ul><li><strong>Treatment</strong>: levothyroxine, about 1.6 µg/kg/day in a healthy adult; start low (25–50 µg) in older adults or with coronary disease. Recheck TSH 6–8 weeks after each change.</li><li><strong>Absorption</strong>: take on an empty stomach, 30–60 minutes before breakfast. Calcium, iron, proton pump inhibitors, bile acid sequestrants, sucralfate and some fibres reduce absorption; separate them by about 4 hours. Estrogen raises TBG and dose needs; enzyme inducers raise clearance.</li><li><strong>Pregnancy</strong>: requirements rise early. A woman already on levothyroxine increases her dose by roughly 25–30% (for example two extra doses a week) as soon as pregnancy is confirmed, with TSH checked about every 4 weeks in the first half of pregnancy.</li><li><strong>Subclinical hypothyroidism</strong> (high TSH, normal free T4): repeat TSH with free T4 in about 2–3 months, because many values normalise. Treat persistent TSH of 10 mU/L or more; for lower values, treatment is individualised (symptoms, positive anti-TPO, pregnancy or plans for pregnancy). The normal TSH range shifts upward with age, so older adults with mild elevation are usually observed.</li><li><strong>Myxedema coma</strong>: decompensated hypothyroidism, often triggered by infection, cold or sedatives, with hypothermia, depressed consciousness, bradycardia, hypotension, hypoventilation (hypercapnia), hyponatremia and hypoglycemia. Give <strong>IV glucocorticoid (hydrocortisone) first or together with IV levothyroxine</strong> until adrenal insufficiency is excluded (thyroid hormone raises cortisol clearance and can precipitate adrenal crisis), plus ventilatory support, passive rewarming and correction of sodium and glucose in an ICU.</li></ul><h3>Hyperthyroidism and thyrotoxicosis</h3><ul><li><strong>Symptom control</strong>: a β-blocker (propranolol, atenolol) for palpitations, tremor and anxiety, unless contraindicated.</li><li><strong>Graves</strong>: three options. <em>Methimazole</em> for 12–18 months (lasting remission in roughly a third to a half); <em>radioactive iodine</em> (definitive, then lifelong levothyroxine); <em>thyroidectomy</em> (large goiter with compression, suspicious nodule, moderate-to-severe active orbitopathy, pregnancy planned soon, or patient preference). Avoid radioiodine in pregnancy, breastfeeding and moderate-to-severe active orbitopathy; if radioiodine is chosen with mild active orbitopathy, give glucocorticoid cover. Stop smoking.</li><li><strong>Pregnancy</strong>: PTU in the first trimester (methimazole embryopathy); switch to methimazole afterwards (PTU hepatotoxicity). Aim for free T4 at the upper end of normal with the lowest dose.</li><li><strong>Thionamide toxicity</strong>: fever, sore throat or mouth ulcers mean agranulocytosis until proven otherwise: stop the drug and check a CBC with differential. Do not switch to the other thionamide (cross-reactivity). Check liver tests for jaundice or right upper quadrant pain.</li><li><strong>Toxic adenoma or toxic multinodular goiter</strong>: radioiodine or surgery; thionamides control but do not cure.</li><li><strong>Thyroiditis</strong>: β-blocker only; NSAIDs (or prednisone if severe) for painful subacute thyroiditis; no thionamides; watch for the hypothyroid phase.</li><li><strong>Subclinical hyperthyroidism</strong> (low TSH, normal free T4 and T3): treat when TSH is below about 0.1 mU/L in patients 65 or older, or with heart disease, osteoporosis or symptoms; otherwise monitor.</li><li><strong>Thyroid storm</strong>: life-threatening thyrotoxicosis with fever, tachyarrhythmia, heart failure, delirium and GI or hepatic dysfunction, often triggered by infection, surgery or iodine. In order: <strong>β-blocker</strong> (propranolol); <strong>thionamide</strong> (PTU preferred, as it also blocks conversion); <strong>iodine solution at least 1 hour after</strong> the thionamide; <strong>hydrocortisone</strong>; cooling with acetaminophen (avoid aspirin, which frees hormone from TBG); treat the trigger in an ICU.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> in hypopituitarism, a \"normal\" TSH on levothyroxine says nothing. Titrate to free T4 in the upper half of normal.</p></div>",
+    "figureIds": [
+     "s23c-fig150201-2"
+    ],
+    "areas": [
+     "usmle2026.15.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Hypothyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519536/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Subclinical Hypothyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536970/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Graves Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448195/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Thyroid Storm",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448095/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Myxedema Coma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK545193/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Thyroid Diseases",
+      "url": "https://medlineplus.gov/thyroiddiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150201-2-2",
+    "heading": "Thyroid nodules, thyroid cancer, illness and drug effects",
+    "html": "<h3>Thyroid nodules</h3><p>Nodules are very common, especially in older women, and most are benign. The approach:</p><ol><li><strong>TSH first</strong>. If TSH is low, do a radionuclide scan: a <em>hyperfunctioning (hot)</em> nodule is almost never malignant and needs no biopsy; treat the hyperthyroidism.</li><li>Otherwise, <strong>neck ultrasonography</strong> of the thyroid and cervical nodes. High-risk features: solid hypoechoic nodule, irregular or infiltrative margins, microcalcifications, taller-than-wide shape, extrathyroidal extension, suspicious nodes.</li><li><strong>Fine-needle aspiration</strong> by sonographic pattern and size: high or intermediate suspicion at 1 cm or more; low suspicion at about 1.5 cm or more; very low suspicion (spongiform) at about 2 cm or more, or observation. Purely cystic nodules are not biopsied. Abnormal lymph nodes are sampled directly.</li></ol><table><tr><th>Bethesda category</th><th>Meaning</th><th>Usual next step</th></tr><tr><td>I</td><td>Nondiagnostic</td><td>Repeat ultrasound-guided FNA</td></tr><tr><td>II</td><td>Benign</td><td>Ultrasound follow-up (interval set by the sonographic pattern); repeat FNA if it grows significantly or the pattern is high suspicion</td></tr><tr><td>III and IV</td><td>Atypia of undetermined significance; follicular neoplasm</td><td>Repeat FNA or molecular testing; diagnostic lobectomy when risk stays high</td></tr><tr><td>V and VI</td><td>Suspicious for malignancy; malignant</td><td>Surgery</td></tr></table><h3>Differentiated thyroid cancer, in outline</h3><ul><li>Papillary and follicular cancers are treated with surgery (lobectomy for many small low-risk tumours; total thyroidectomy for larger, multifocal or node-positive disease), selective radioiodine ablation after total thyroidectomy for higher-risk disease, and TSH suppression tailored to risk. <strong>Thyroglobulin</strong> is the tumour marker after total thyroidectomy.</li><li>Very small, low-risk papillary microcarcinomas may be managed by active surveillance in selected patients.</li><li><strong>Medullary</strong> cancer: test for <em>RET</em> germline variants and exclude pheochromocytoma before surgery (MEN2); total thyroidectomy; follow calcitonin and CEA. Radioiodine is useless.</li><li><strong>Anaplastic</strong> cancer and <strong>lymphoma</strong> both present as a rapidly enlarging neck mass with compressive symptoms; core biopsy distinguishes them because treatment differs completely.</li></ul><h3>Nonthyroidal illness in hospital</h3><p>Critically ill patients often have low T3, low or normal T4 and low or normal TSH. Do not order thyroid tests in the ICU without strong suspicion of thyroid disease, and do not treat these values; repeat after recovery. Dopamine and high-dose glucocorticoids also suppress TSH.</p><h3>Drug effects to recognise</h3><ul><li><strong>Amiodarone</strong>: check TSH before starting and every few months. Hypothyroidism is treated with levothyroxine and the amiodarone often continued. Thyrotoxicosis: type 1 (iodine-driven synthesis) responds to thionamides; type 2 (destructive) responds to glucocorticoids; mixed forms get both.</li><li><strong>Lithium</strong>: goiter and hypothyroidism; treat with levothyroxine and usually continue lithium.</li><li><strong>Immune checkpoint inhibitors</strong>: painless thyroiditis (transient thyrotoxicosis then hypothyroidism) and hypophysitis (central hypothyroidism with central adrenal insufficiency).</li><li><strong>Iodinated contrast</strong> in a patient with nodular goiter can trigger thyrotoxicosis (Jod-Basedow).</li><li><strong>Biotin</strong> supplements interfere with many immunoassays and can mimic Graves (low TSH, high free T4); stop biotin for a few days and repeat.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a benign FNA does not end follow-up, and a hot nodule on scan does not need FNA. Order of thinking: TSH, then scan or ultrasound, then FNA by pattern.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Thyroid Nodule",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK535422/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Thyroid Nodule Biopsy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557883/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Papillary Thyroid Carcinoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536943/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Euthyroid Sick Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482219/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150301-2-1",
+    "heading": "Hypercalcemia and hyperparathyroidism: work-up and management",
+    "html": "<h3>Hypercalcemia: work-up and management</h3>\n<ol><li>Confirm: repeat calcium with albumin, or measure ionised calcium.</li>\n<li>Measure intact PTH. High or inappropriately normal: primary hyperparathyroidism versus FHH (24-hour urine calcium and creatinine; calcium-to-creatinine clearance ratio below 0.01 suggests FHH). Suppressed: measure PTHrP, 25-hydroxy and 1,25-dihydroxyvitamin D, serum and urine protein electrophoresis with free light chains, and look for cancer.</li></ol>\n<p><strong>Acute severe hypercalcemia</strong> (usually above 14 mg/dL, or any level with confusion): give <strong>intravenous isotonic saline</strong> to restore volume, because hypercalcemia causes a nephrogenic diabetes insipidus and volume depletion that further reduce calcium excretion. Add <strong>calcitonin</strong> for a fast but short-lived fall (tachyphylaxis within about 2 days), and an <strong>intravenous bisphosphonate</strong> (zoledronic acid) for a sustained effect over 2–4 days. Denosumab is an option when kidney function precludes bisphosphonates. Loop diuretics are used only after volume is restored, if fluid overload develops. Glucocorticoids treat calcitriol-mediated hypercalcemia (granulomatous disease, lymphoma). Hemodialysis is for life-threatening hypercalcemia with kidney failure.</p>\n<h3>Primary hyperparathyroidism</h3>\n<p>Most patients are found on routine testing and have no symptoms. Parathyroidectomy by an experienced surgeon is the only cure and is recommended for anyone with symptoms (stones, fractures, symptomatic hypercalcemia). In asymptomatic patients, surgery is advised when any of the following is present:</p>\n<ul><li>serum calcium more than 1 mg/dL above the upper limit of normal;</li>\n<li>osteoporosis by DXA (T-score −2.5 or less at any site) or a vertebral fracture on imaging;</li>\n<li>eGFR below 60 mL/min/1.73 m², kidney stones or nephrocalcinosis, or high urinary calcium excretion;</li>\n<li>age below 50 years.</li></ul>\n<p>Imaging (sestamibi scan, neck ultrasonography, 4D-CT) <strong>localises</strong> an adenoma once the decision to operate is made; it does not make the diagnosis, which is biochemical. Patients who do not meet criteria or decline surgery are monitored with yearly calcium and creatinine and periodic DXA; cinacalcet lowers calcium, and a bisphosphonate protects bone, but neither cures the disease. Thiazides should be avoided because they raise calcium. After surgery, watch for <strong>hungry bone syndrome</strong> (falling calcium, phosphate and magnesium as the starved skeleton remineralises).</p>\n<p><strong>Secondary hyperparathyroidism</strong> (vitamin D deficiency, CKD) is a physiologic response to low calcium or high phosphate. In CKD, manage phosphate (diet, binders), replete 25-hydroxyvitamin D, and use calcitriol or a calcimimetic for progressive PTH elevation. <strong>Tertiary hyperparathyroidism</strong> is autonomous gland hyperplasia after long-standing secondary disease, typically after kidney transplant, with hypercalcemia; treatment is parathyroidectomy or cinacalcet.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a sestamibi scan is not the next step for a new hypercalcemia. First prove the diagnosis biochemically and decide on surgery; image only to plan the operation.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Primary Hyperparathyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441895/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Malignancy-Related Hypercalcemia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482423/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Parathyroid Disorders",
+      "url": "https://medlineplus.gov/parathyroiddisorders.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150301-2-2",
+    "heading": "Hypocalcemia, osteoporosis and Paget disease: management",
+    "html": "<h3>Hypocalcemia: management</h3>\n<ul><li><strong>Severe or symptomatic</strong> (tetany, seizures, laryngospasm, prolonged QT): intravenous calcium gluconate, then a continuous infusion with oral calcium and calcitriol. Check and replace <strong>magnesium</strong> first or at the same time.</li>\n<li><strong>Chronic hypoparathyroidism</strong>: oral calcium plus <strong>calcitriol</strong> (or alfacalcidol), because without PTH the kidney cannot make enough 1,25-dihydroxyvitamin D from ordinary vitamin D. Aim for a low-normal serum calcium to limit hypercalciuria, stones and nephrocalcinosis; a thiazide can reduce urinary calcium. Recombinant PTH replacement is reserved for patients poorly controlled on conventional therapy.</li>\n<li><strong>Vitamin D deficiency</strong>: cholecalciferol (or ergocalciferol) replacement with adequate calcium intake.</li></ul>\n<h3>Osteoporosis</h3>\n<p><strong>Screening:</strong> DXA of the hip and lumbar spine for all women 65 years or older, and for younger postmenopausal women at increased risk (for example by FRAX or another risk tool). Evidence is insufficient to screen men routinely, although men with risk factors (glucocorticoids, hypogonadism, androgen deprivation therapy) are commonly assessed.</p>\n<p><strong>Diagnosis:</strong> T-score −2.5 or less at the femoral neck, total hip or lumbar spine; or a hip or vertebral fragility fracture regardless of T-score; or osteopenia (T-score between −1 and −2.5) with a high 10-year FRAX fracture probability. Look for secondary causes: glucocorticoids, hypogonadism, hyperthyroidism, primary hyperparathyroidism, vitamin D deficiency, celiac disease, myeloma, chronic kidney or liver disease, alcohol use, aromatase inhibitors.</p>\n<p><strong>Treatment:</strong></p>\n<table><tr><th>Option</th><th>Use</th><th>Cautions</th></tr>\n<tr><td>Oral bisphosphonate (alendronate, risedronate)</td><td>First line for most</td><td>Take fasting, upright for 30–60 minutes with water; avoid with esophageal stricture or inability to stay upright, and with eGFR below about 30–35. Rare osteonecrosis of the jaw and atypical femoral fractures; consider a drug holiday after 3–5 years in lower-risk patients.</td></tr>\n<tr><td>Zoledronic acid (yearly infusion)</td><td>Cannot take oral bisphosphonate; after hip fracture</td><td>Acute-phase reaction; correct vitamin D deficiency and hypocalcemia first.</td></tr>\n<tr><td>Denosumab (every 6 months)</td><td>CKD where bisphosphonates are avoided; intolerance</td><td>Hypocalcemia in advanced CKD. <strong>Stopping causes rebound bone loss and multiple vertebral fractures</strong>, so follow it with a bisphosphonate.</td></tr>\n<tr><td>Anabolic agents (teriparatide, abaloparatide, romosozumab)</td><td>Very high risk: recent or multiple vertebral fractures, very low T-score</td><td>Follow with an antiresorptive. Romosozumab is avoided after a recent myocardial infarction or stroke.</td></tr></table>\n<p>All patients need adequate calcium and vitamin D, weight-bearing and resistance exercise, fall prevention, smoking cessation and limited alcohol.</p>\n<p><strong>Paget disease</strong>: an isolated raised alkaline phosphatase with typical radiographs (thickened cortex, lytic and sclerotic areas); confirm extent with a bone scan. Treat symptomatic disease or disease at high-risk sites with a bisphosphonate, usually a single infusion of zoledronic acid.</p>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a patient asking to stop denosumab cannot simply stop. Plan a bisphosphonate to prevent rebound vertebral fractures.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Osteoporosis in Females",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559156/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Secondary Osteoporosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470166/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "USPSTF: Osteoporosis to prevent fractures, screening",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening",
+      "sourceId": "uspstf"
+     },
+     {
+      "label": "StatPearls: Hypoparathyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441899/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Osteoporosis",
+      "url": "https://medlineplus.gov/osteoporosis.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150401-2-1",
+    "heading": "Adrenal insufficiency, Cushing syndrome and primary aldosteronism: diagnosis and management",
+    "html": "<h3>Adrenal insufficiency</h3>\n<ul><li><strong>Diagnose</strong>: an early-morning serum cortisol with plasma ACTH. A very low cortisol (below about 3–5 µg/dL) strongly suggests insufficiency; a clearly normal value (above about 15–18 µg/dL) makes it unlikely. Confirm with the <strong>cosyntropin (ACTH) stimulation test</strong>: a peak cortisol below about 18 µg/dL (lower cut-offs, near 14–15 µg/dL, apply to newer specific assays) means insufficiency. High ACTH means primary; low or normal means secondary. In primary disease check 21-hydroxylase antibodies; if negative, image the adrenals (CT).</li>\n<li><strong>Treat</strong> primary insufficiency with <strong>hydrocortisone</strong> (split doses, the larger one on waking) <strong>plus fludrocortisone</strong>; secondary insufficiency needs glucocorticoid only. Teach <strong>sick-day rules</strong>: double or triple the oral dose during fever or illness, inject hydrocortisone intramuscularly if vomiting, give stress doses for surgery, and wear medical identification.</li>\n<li><strong>Adrenal crisis</strong> (hypotension or shock, vomiting, abdominal pain, confusion, hyponatremia, hyperkalemia, hypoglycemia): do not wait for test results. Draw cortisol and ACTH if it causes no delay, then give <strong>hydrocortisone 100 mg IV</strong> immediately, followed by 200 mg per 24 hours, with rapid IV isotonic saline (and dextrose if hypoglycemic). Look for the precipitant (infection, missed doses).</li></ul>\n<h3>Cushing syndrome</h3>\n<ol><li>Exclude exogenous glucocorticoid, including inhaled, topical, intra-articular and herbal products, and interactions with CYP3A4 inhibitors.</li>\n<li>Screen with a test that fits the patient: <strong>late-night salivary cortisol</strong> (at least two samples), the <strong>1-mg overnight dexamethasone suppression test</strong> (morning cortisol above 1.8 µg/dL is abnormal), or <strong>24-hour urine free cortisol</strong> (at least two collections). Use two abnormal tests to confirm. Estrogen raises cortisol-binding globulin and gives false positives on the dexamethasone test; severe depression, alcohol use disorder and poorly controlled diabetes can mimic mild hypercortisolism.</li>\n<li>Measure <strong>plasma ACTH</strong>. Suppressed: adrenal CT. Normal or high (ACTH-dependent): pituitary MRI. A clear adenoma (about 10 mm or larger) with concordant tests points to Cushing disease; a small or absent lesion calls for <strong>bilateral inferior petrosal sinus sampling</strong> with CRH or desmopressin, where a central-to-peripheral ACTH gradient identifies a pituitary source. No gradient: search for an ectopic source (CT chest and abdomen, functional imaging).</li>\n<li><strong>Treat the source</strong>: transsphenoidal adenoma resection, adrenalectomy, or resection of the ectopic tumour. Medical options when surgery fails or must wait: steroidogenesis inhibitors (ketoconazole, metyrapone, osilodrostat), the receptor blocker mifepristone, and pituitary-directed pasireotide or cabergoline. After successful surgery the remaining axis is suppressed, so glucocorticoid replacement is needed until it recovers.</li></ol>\n<h3>Primary aldosteronism</h3>\n<ul><li><strong>Who to screen</strong>: current Endocrine Society guidance favours screening broadly, including adults with hypertension generally; it is clearly indicated with resistant hypertension, hypertension with hypokalemia (spontaneous or diuretic-induced), an adrenal incidentaloma, sleep apnea, atrial fibrillation, or a family history of early hypertension or stroke.</li>\n<li><strong>Screening test</strong>: morning plasma aldosterone with renin (activity or concentration). Suppressed renin with an inappropriately high aldosterone is positive. Correct hypokalemia first (it lowers aldosterone). Mineralocorticoid antagonists and diuretics can raise renin and mask the diagnosis.</li>\n<li><strong>Confirm</strong> (for example, with saline or oral sodium loading showing failure of aldosterone suppression) unless the result is unequivocal (spontaneous hypokalemia, renin suppressed, aldosterone very high).</li>\n<li><strong>Subtype</strong>: adrenal CT (mainly to exclude carcinoma), then <strong>adrenal vein sampling</strong> in a patient who wants surgery, because small nodules on CT are often nonfunctioning and bilateral disease is common, especially after about age 35–40.</li>\n<li><strong>Treat</strong>: unilateral disease, laparoscopic adrenalectomy; bilateral disease or a patient who declines surgery, a mineralocorticoid receptor antagonist (spironolactone, or eplerenone if gynecomastia or sexual side effects are a problem), titrated until renin is no longer suppressed.</li></ul>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Adrenal Crisis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499968/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Addison Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441994/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hypercortisolism (Cushing Syndrome)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551526/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hyperaldosteronism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499983/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Cushing Syndrome",
+      "url": "https://medlineplus.gov/cushingssyndrome.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150401-2-2",
+    "heading": "Pheochromocytoma, adrenal incidentaloma and disorders of pubertal timing",
+    "html": "<h3>Pheochromocytoma and paraganglioma</h3>\n<ul><li><strong>Test</strong>: plasma free metanephrines (drawn supine after rest) or 24-hour urine fractionated metanephrines. Metanephrines are produced continuously inside the tumour, so they are more sensitive than catecholamines. Mild rises are common with tricyclic antidepressants, some antipsychotics, levodopa and sympathomimetics; levels several times the upper limit are highly specific.</li>\n<li><strong>Locate</strong> after biochemical confirmation: CT or MRI of the abdomen and pelvis (bright on T2-weighted MRI); functional imaging for extra-adrenal, multiple or metastatic disease.</li>\n<li><strong>Prepare for surgery</strong> with <strong>alpha blockade first</strong> (phenoxybenzamine or a selective alpha-1 blocker such as doxazosin) for 1–2 weeks, with a high-sodium diet and fluids to restore volume. Add a beta blocker only after adequate alpha blockade, for tachycardia. A beta blocker alone removes beta-2 vasodilation and leaves alpha-mediated vasoconstriction unopposed, which can cause a hypertensive crisis.</li>\n<li>After resection: watch for hypotension and hypoglycemia; offer <strong>genetic testing</strong> to every patient and lifelong biochemical follow-up.</li></ul>\n<h3>Adrenal incidentaloma</h3>\n<p>Masses found on imaging done for another reason are common, especially in older adults. Two questions apply to every mass (see the figure):</p>\n[[figure:s23c-fig150401-1]]\n<ul><li><strong>Hormone excess</strong>: a 1-mg overnight dexamethasone suppression test for every patient (autonomous cortisol secretion is the most frequent finding); plasma or urine metanephrines unless the mass is clearly a lipid-rich adenoma (10 Hounsfield units or less on noncontrast CT), in which pheochromocytoma is very unlikely; aldosterone and renin if there is hypertension or hypokalemia.</li>\n<li><strong>Malignancy</strong>: a homogeneous mass with attenuation of 10 Hounsfield units or less on noncontrast CT is a lipid-rich adenoma. If it is under 4 cm and nonfunctioning, no further imaging is needed. Larger, heterogeneous or higher-attenuation masses need further imaging (contrast washout CT, MRI or FDG-PET) or surgery. Never biopsy before excluding pheochromocytoma; biopsy is reserved mainly for suspected metastasis when it would change management.</li>\n<li><strong>Mild autonomous cortisol secretion</strong> (cortisol not suppressed after dexamethasone without overt Cushing features) is linked to hypertension, diabetes, osteoporosis and cardiovascular events; screen for these and treat them, and consider adrenalectomy case by case.</li></ul>\n<h3>Puberty that comes early or late</h3>\n<table><tr><th></th><th>Central (gonadotropin-dependent)</th><th>Peripheral (gonadotropin-independent)</th></tr>\n<tr><td>Mechanism</td><td>Early activation of hypothalamic GnRH pulses</td><td>Sex steroids from the adrenal, gonad, a tumour or outside source</td></tr>\n<tr><td>LH (basal or after GnRH or GnRH-agonist stimulation)</td><td>Pubertal</td><td>Suppressed</td></tr>\n<tr><td>Examples</td><td>Idiopathic (most girls); CNS lesions such as hypothalamic hamartoma, tumours, hydrocephalus, prior irradiation (more often in boys)</td><td>Congenital adrenal hyperplasia, McCune-Albright syndrome, ovarian cyst or tumour, Leydig cell tumour, hCG-secreting tumour, exogenous testosterone or estrogen</td></tr>\n<tr><td>Treatment</td><td>GnRH agonist after brain MRI where indicated</td><td>Treat the source</td></tr></table>\n<ul><li><strong>Precocious puberty</strong>: secondary sexual characteristics before about age 8 in girls or 9 in boys. Start with growth velocity and <strong>bone age</strong> (advanced in true puberty). Brain MRI is indicated in all boys with central precocious puberty and in younger girls (under about 6 years) or any child with neurologic signs. Testicular enlargement points to central puberty or a Leydig cell tumour (unilateral); prepubertal testes with virilisation point to an adrenal source.</li>\n<li><strong>McCune-Albright syndrome</strong>: a postzygotic activating <em>GNAS</em> variant (mosaic), giving peripheral precocious puberty from autonomous ovarian cysts, irregular \"coast of Maine\" café-au-lait macules and polyostotic fibrous dysplasia, sometimes with other hormone excess.</li>\n<li><strong>Delayed puberty</strong>: no breast development by about 13 in girls, or testes under 4 mL by about 14 in boys. <strong>Constitutional delay</strong> is the most common cause (short with a delayed bone age, often a parent who matured late, normal growth velocity for bone age). Low LH and FSH also occur with hypogonadotropic hypogonadism (Kallmann syndrome with anosmia, pituitary disease, anorexia, chronic illness); high LH and FSH mean gonadal failure (Turner syndrome, Klinefelter syndrome).</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> never start a beta blocker before alpha blockade in suspected pheochromocytoma, and never send a patient with suspected adrenal crisis for a stimulation test before giving hydrocortisone.</p></div>",
+    "figureIds": [
+     "s23c-fig150401-1"
+    ],
+    "areas": [
+     "usmle2026.15.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Pheochromocytoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK589700/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Perioperative Management of Pheochromocytoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK589634/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Precocious Puberty",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544313/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Delayed Puberty",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544322/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150501-2-1",
+    "heading": "Pituitary tumours, apoplexy and hypopituitarism: diagnosis and management",
+    "html": "<h3>Approach to a sellar mass</h3><p>Image with <strong>pituitary-protocol MRI</strong>. Test every patient with a macroadenoma for both <em>hormone excess</em> (prolactin, IGF-1, and a cortisol excess screen if Cushing features) and <em>deficiency</em> (8 AM cortisol, free T4 with TSH, LH, FSH and testosterone or estradiol). Check formal visual fields when the mass reaches the chiasm. An incidental microadenoma that secretes nothing is followed with repeat MRI; a nonfunctioning macroadenoma with visual loss goes to <strong>transsphenoidal surgery</strong>.</p><h3>Hyperprolactinemia</h3><table><tr><th>Cause</th><th>Clue</th></tr><tr><td>Pregnancy, lactation</td><td>Always exclude pregnancy first</td></tr><tr><td>Drugs that block dopamine</td><td>Risperidone, haloperidol, metoclopramide, domperidone; also verapamil, opioids; onset follows the drug</td></tr><tr><td>Primary hypothyroidism</td><td>High TRH stimulates lactotrophs; the pituitary may enlarge (thyrotroph hyperplasia) and shrinks on levothyroxine</td></tr><tr><td>Kidney failure, cirrhosis</td><td>Reduced clearance</td></tr><tr><td>Stalk compression</td><td>Nonfunctioning macroadenoma, craniopharyngioma; prolactin usually below about 100 ng/mL</td></tr><tr><td>Prolactinoma</td><td>Level roughly parallels tumour size</td></tr><tr><td>Macroprolactin</td><td>Big, inactive prolactin-IgG complexes; high level, no symptoms</td></tr></table><p>For a suspected drug cause, the safest step is to <strong>stop or switch the drug</strong> (for example from risperidone to aripiprazole, with the psychiatrist) and repeat the level; image if prolactin stays high or the drug cannot be changed.</p><p><strong>Prolactinoma treatment</strong>: a <strong>dopamine agonist, usually cabergoline</strong>, is first line for symptomatic micro- and macroadenomas, <em>even with visual field loss</em>, because it shrinks most tumours within weeks. Surgery is for intolerance, resistance or apoplexy. An asymptomatic microadenoma in a woman who does not want pregnancy can simply be watched (or treated with a combined hormonal contraceptive for estrogen replacement). In pregnancy, a microadenoma rarely grows, and the agonist is usually stopped once pregnancy is confirmed; macroadenomas need closer follow-up with visual fields.</p><h3>Acromegaly</h3><ul><li><strong>Screen</strong> with serum <strong>IGF-1</strong> (age- and sex-adjusted); a single GH level is useless because GH is pulsatile.</li><li><strong>Confirm</strong> when IGF-1 is high or equivocal with an <strong>oral glucose tolerance test</strong>: GH fails to suppress (to below about 1 ng/mL).</li><li>Then pituitary MRI. Look for complications: colonoscopy, echocardiography, sleep study, glucose, blood pressure.</li><li><strong>Treat</strong> with transsphenoidal surgery; if disease persists, a somatostatin receptor ligand (octreotide, lanreotide), pegvisomant, or a dopamine agonist for mild cases; radiotherapy for resistant tumours. Cardiovascular disease is the main cause of excess mortality.</li></ul><h3>Pituitary apoplexy</h3><p>Sudden severe headache, vomiting, visual loss or ophthalmoplegia, meningism and hypotension in a patient with (often unknown) adenoma. Give <strong>stress-dose intravenous hydrocortisone immediately</strong>, before imaging results if necessary, because acute ACTH loss can kill. MRI (or CT if MRI is not available) confirms it; neurosurgical decompression is for severe or worsening visual loss or reduced consciousness.</p><h3>Hypopituitarism</h3><ul><li>Causes: tumours and their treatment (surgery, radiation), apoplexy, Sheehan syndrome, trauma, infiltration (sarcoidosis, hemochromatosis, Langerhans cell histiocytosis), hypophysitis (including immune checkpoint inhibitors), empty sella.</li><li>Secondary adrenal insufficiency has low or inappropriately normal ACTH with low cortisol; aldosterone is preserved (renin-angiotensin control), so hyperkalemia is absent.</li><li>Central hypothyroidism has a <strong>low free T4 with a low or normal TSH</strong>: follow free T4, not TSH, to adjust levothyroxine.</li><li><strong>Replace cortisol before thyroid hormone.</strong> Levothyroxine speeds cortisol clearance and can precipitate adrenal crisis in untreated ACTH deficiency.</li><li>Then sex steroids (or gonadotropins for fertility), GH in selected adults and children, and desmopressin if posterior deficiency.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> in a patient with hypopituitarism, a normal TSH does not mean the thyroid is fine. Check free T4.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Prolactinoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459347/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Acromegaly",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK431086/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Pituitary Apoplexy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559222/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Hypopituitarism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470414/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Pituitary Tumor",
+      "url": "https://medlineplus.gov/pituitarytumors.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150501-2-2",
+    "heading": "Polyuria, SIADH and short stature: diagnosis and management",
+    "html": "<h3>Polyuria: diabetes insipidus or not?</h3><p>Polyuria is more than about 3 L/day in adults. First exclude osmotic diuresis (glucose), then measure plasma and urine osmolality and sodium together.</p><ul><li>Dilute urine (below about 300 mOsm/kg) with <strong>high-normal or high serum sodium</strong> suggests diabetes insipidus.</li><li>Dilute urine with <strong>low-normal serum sodium</strong> suggests primary polydipsia.</li><li>Check calcium and potassium and ask about lithium (nephrogenic causes).</li></ul><p>A <strong>water deprivation test</strong> separates the three; it ends with a dose of desmopressin. Where available, <strong>stimulated copeptin</strong> (copeptin is cleaved from the same precursor as ADH and is stable to measure, after hypertonic saline or arginine) separates primary polydipsia from central DI more accurately, and a high <em>baseline</em> copeptin points to nephrogenic DI.</p>[[figure:s23c-fig150501-2]]<table><tr><th></th><th>Primary polydipsia</th><th>Central DI</th><th>Nephrogenic DI</th></tr><tr><td>Serum sodium at baseline</td><td>Low-normal</td><td>High-normal or high</td><td>High-normal or high</td></tr><tr><td>Urine osmolality after deprivation</td><td>Rises well</td><td>Stays low</td><td>Stays low</td></tr><tr><td>Rise after desmopressin</td><td>Small</td><td>Large (often more than 50%)</td><td>Little or none</td></tr><tr><td>Treatment</td><td>Reduce intake; treat the cause</td><td>Desmopressin; MRI for the cause</td><td>Remove the cause; low-sodium, low-protein diet, thiazide; amiloride for lithium</td></tr></table><p>Once central DI is confirmed, image the hypothalamus and pituitary to find the cause (tumour, infiltration, trauma, surgery). With desmopressin, the main risk is <strong>hyponatremia</strong>, so patients should drink only to thirst.</p><h3>SIADH</h3><p>Diagnose SIADH only after confirming <strong>hypotonic hyponatremia</strong> (low serum osmolality) in a <strong>clinically euvolemic</strong> patient with <strong>inappropriately concentrated urine</strong> (above about 100 mOsm/kg) and <strong>urine sodium above about 30 mEq/L</strong>, and after excluding hypothyroidism, adrenal insufficiency and diuretics.</p><ul><li><strong>Severe symptoms</strong> (seizures, coma, vomiting with confusion): bolus 3% hypertonic saline.</li><li><strong>Chronic or mild</strong>: fluid restriction first; then oral sodium chloride or urea; vaptans (V2 antagonists such as tolvaptan) in selected hospitalised patients with close sodium checks and not in liver disease.</li><li><strong>Correction limit</strong>: in chronic hyponatremia raise sodium by no more than about 8 mEq/L in 24 hours in high-risk patients (alcohol use, malnutrition, hypokalemia, liver disease) and about 10–12 in others, to avoid <strong>osmotic demyelination</strong>. If correction overshoots, give free water and desmopressin to bring sodium back down.</li><li>Isotonic saline can make SIADH hyponatremia <em>worse</em>: the salt is excreted in concentrated urine and the water is kept.</li></ul><h3>Short stature and growth hormone deficiency</h3><table><tr><th></th><th>Familial short stature</th><th>Constitutional delay</th><th>GH deficiency or other disease</th></tr><tr><td>Growth velocity</td><td>Normal</td><td>Normal (dips before a late growth spurt)</td><td>Low</td></tr><tr><td>Bone age</td><td>Equal to chronological age</td><td>Delayed</td><td>Delayed</td></tr><tr><td>Family</td><td>Short parents; final height near target</td><td>A parent who matured late</td><td>Variable</td></tr><tr><td>Action</td><td>Reassure</td><td>Reassure; reach normal adult height</td><td>IGF-1 (and IGFBP-3), then GH stimulation testing and MRI; recombinant GH</td></tr></table><p>A child whose growth velocity falls (crossing percentiles downward) needs evaluation: check thyroid function, celiac serology, blood count, metabolic panel, and in girls a karyotype for Turner syndrome. Weight falling before height suggests a nutritional or systemic cause; height falling with weight preserved suggests an endocrine cause.</p><div class=\"trap\"><p><strong>Exam trap:</strong> hyponatremia with a concentrated urine is not always SIADH. Low cortisol (secondary adrenal insufficiency) gives the identical lab picture and is fixed by hydrocortisone, not fluid restriction.</p></div>",
+    "figureIds": [
+     "s23c-fig150501-2"
+    ],
+    "areas": [
+     "usmle2026.15.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Arginine Vasopressin Disorder (Diabetes Insipidus)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470458/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Syndrome of Inappropriate Antidiuretic Hormone Secretion",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507777/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Short Stature",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK556031/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s1506-2-1",
+    "heading": "Hypothalamic disorders: amenorrhea, hypogonadism, precocious puberty and central DI",
+    "html": "<h3>Functional hypothalamic amenorrhea</h3><ul><li>A diagnosis of exclusion in a woman with amenorrhea of 3 months or more: exclude <strong>pregnancy</strong> first, then measure prolactin, TSH, FSH, LH and estradiol; check androgens if there are signs of hyperandrogenism (polycystic ovary syndrome). Image the pituitary if headache, visual change or unexplained low gonadotropins point to a lesion.</li><li>Typical pattern: low or low-normal LH and FSH, low estradiol, normal prolactin and TSH, in someone with energy deficit, weight loss, intense training or stress. Screen for an eating disorder.</li><li><strong>Treatment</strong> is to correct the energy balance: increase calories, reduce training load, and give psychological support. Menses usually return with weight and energy restoration.</li><li>Measure bone density (DXA) if amenorrhea has lasted 6 months or more. Give adequate calcium and vitamin D. If menses do not return after an adequate trial of nutritional and behavioural treatment, short-term <strong>transdermal estradiol with cyclic oral progestin</strong> is suggested for bone protection. Combined oral contraceptives do not protect bone well in this setting and mask whether menses have returned, and bisphosphonates are avoided in young women who may become pregnant.</li></ul><h3>Hypogonadotropic hypogonadism</h3><ul><li><strong>Work-up</strong>: confirm low sex steroid with low or inappropriately normal LH and FSH (testosterone measured fasting in the morning, twice). Check prolactin, iron studies (hemochromatosis), other pituitary axes, and ask about opioids, glucocorticoids, anabolic steroids and weight. Image the hypothalamus and pituitary when no functional cause explains it.</li><li><strong>Opioid-induced</strong>: long-term opioids suppress GnRH; LH and testosterone are low. Options are tapering the opioid where possible, or testosterone replacement.</li><li><strong>Treatment depends on fertility goals</strong>: testosterone (men) or estrogen with progestin (women) for puberty and bone; <strong>gonadotropins</strong> (hCG, adding FSH) or pulsatile GnRH when fertility is wanted. Exogenous testosterone suppresses spermatogenesis and must not be used for fertility.</li></ul><h3>Central precocious puberty</h3><ul><li>Pubertal signs before age 8 in girls or 9 in boys with accelerated growth and <strong>advanced bone age</strong>.</li><li>Central (gonadotropin-dependent): raised basal LH on a sensitive assay or an LH rise after GnRH-agonist stimulation. Peripheral (gonadotropin-independent) causes have suppressed LH: congenital adrenal hyperplasia, ovarian or testicular tumours, McCune-Albright syndrome, exogenous steroids.</li><li><strong>MRI of the brain</strong> for every boy with central precocious puberty and for girls who are very young (especially under 6) or have neurologic signs; boys more often have a lesion.</li><li><strong>Treatment</strong>: a long-acting <strong>GnRH agonist</strong> (depot leuprolide, triptorelin, or a histrelin implant) to halt progression and preserve adult height, plus treatment of any underlying lesion. A hypothalamic hamartoma is usually managed medically unless seizures are refractory.</li></ul><h3>Central diabetes insipidus after sellar surgery</h3><p>Polyuria with dilute urine and a rising sodium in the first days after transsphenoidal or hypothalamic surgery is <strong>central diabetes insipidus</strong>; treat with <strong>desmopressin</strong> while the patient drinks to thirst, and monitor sodium closely. A <em>triphasic</em> course can follow: DI, then a SIADH-like phase about a week later as damaged neurons release stored ADH, then permanent DI if most neurons are lost. Patients with impaired thirst need fixed fluid plans.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a man who wants children and has low testosterone from hypogonadotropic hypogonadism should get hCG, not testosterone. Testosterone shuts down LH and FSH and stops sperm production.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.06"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Secondary Amenorrhea",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK431055/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Precocious Puberty",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544313/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Kallmann Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538210/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Arginine Vasopressin Disorder (Diabetes Insipidus)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470458/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s1507-2-1",
+    "heading": "Multiple endocrine neoplasia: testing, surgery and surveillance",
+    "html": "<h3>Who should be tested</h3>\n<ul><li><strong>Germline <em>RET</em> testing</strong> for every patient with medullary thyroid carcinoma, even without a family history, and for anyone with features of MEN2 (bilateral or young-onset pheochromocytoma, mucosal neuromas).</li><li><strong>Germline <em>MEN1</em> testing</strong> for a patient with two or more of the main MEN1 tumours, primary hyperparathyroidism at a young age or with multigland disease, or a gastrinoma.</li><li><strong>First-degree relatives</strong> of a person with a known pathogenic variant are offered targeted testing, after genetic counselling. Those who test negative need no further screening; carriers enter surveillance.</li></ul>\n<h3>MEN2: the order of operations</h3>\n<ol><li>Before any operation in a patient with MTC or a <em>RET</em> variant, <strong>exclude pheochromocytoma</strong> with plasma free (or urine fractionated) metanephrines. An undiagnosed pheochromocytoma can cause a hypertensive crisis under anaesthesia.</li><li>If a pheochromocytoma is present, give <strong>alpha-adrenergic blockade</strong> (for example phenoxybenzamine or doxazosin) for 1–2 weeks, adding a beta-blocker only after alpha-blockade is established, with salt and fluid loading; then remove the adrenal tumour laparoscopically, preserving the cortex when the disease is bilateral where possible.</li><li>Then perform <strong>total thyroidectomy</strong> with central neck dissection as indicated by tumour size, nodal disease and calcitonin.</li></ol>\n<h3>Prophylactic thyroidectomy in carriers</h3>\n<p>Because MTC develops in nearly every carrier, children who inherit a <em>RET</em> variant have the thyroid removed before cancer spreads. The timing follows the variant's risk:</p>\n<table><tr><th>Risk class</th><th>Example</th><th>Timing of total thyroidectomy</th></tr>\n<tr><td>Highest</td><td>M918T (MEN2B)</td><td>In the first year of life</td></tr>\n<tr><td>High</td><td>Codon 634</td><td>At or before about 5 years, guided by calcitonin</td></tr>\n<tr><td>Moderate</td><td>Other codons</td><td>When calcitonin starts to rise, or in childhood if the family prefers not to wait</td></tr></table>\n<p>Carriers are also screened for pheochromocytoma (from late childhood in high-risk variants) and, in MEN2A, for hyperparathyroidism.</p>\n<h3>After thyroidectomy for MTC</h3>\n<ul><li>Replace levothyroxine to a <strong>normal TSH</strong>, not a suppressed one.</li><li>Follow <strong>calcitonin and CEA</strong>; their doubling times predict progression. Thyroglobulin is not a marker for MTC.</li><li>Radioactive iodine is not used. Advanced, progressive disease is treated with systemic kinase inhibitors, including selective RET inhibitors, by specialists.</li></ul>\n<h3>MEN1 management</h3>\n<ul><li><strong>Primary hyperparathyroidism</strong>: because all glands are hyperplastic, the operation is <strong>subtotal (three-and-a-half gland) parathyroidectomy</strong> or total parathyroidectomy with autotransplantation, plus transcervical thymectomy (supernumerary glands and thymic carcinoids). Removing one enlarged gland leads to persistence or early recurrence.</li><li><strong>Gastrinoma</strong>: high-dose proton pump inhibitor controls acid; correcting hypercalcemia lowers gastrin; surgery is individualised because tumours are often multiple and small.</li><li><strong>Prolactinoma</strong>: a dopamine agonist (cabergoline) first, as in sporadic disease.</li><li><strong>Surveillance</strong> of carriers: periodic calcium and PTH, prolactin, fasting glucose and gastrin, chromogranin-related markers as used locally, and pancreatic and pituitary imaging at intervals.</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> in a patient with a <em>RET</em> variant or MTC, the first preoperative test is plasma metanephrines, and the first operation, if positive, is the adrenalectomy after alpha-blockade.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.07"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Multiple Endocrine Neoplasia Type 2",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519054/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Multiple Endocrine Neoplasia Type 1",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536980/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Medullary Thyroid Cancer",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459354/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus Genetics: Multiple endocrine neoplasia",
+      "url": "https://medlineplus.gov/genetics/condition/multiple-endocrine-neoplasia/",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150801-2-1",
+    "heading": "Congenital endocrine disorders: newborn evaluation and management",
+    "html": "<h3>The newborn with atypical genitalia</h3>\n<ul><li>Treat it as urgent: the most common cause, <strong>salt-wasting 21-hydroxylase deficiency</strong>, can cause adrenal crisis in the first weeks. Bilateral nonpalpable gonads in a virilised infant suggest a 46,XX infant with CAH until proven otherwise.</li>\n<li><strong>First tests</strong>: serum electrolytes and glucose, 17-hydroxyprogesterone (after the first 24–48 hours), rapid karyotype or sex-chromosome testing, pelvic and abdominal ultrasonography for a uterus and gonads; then testosterone, DHT, AMH, LH and FSH, and ACTH stimulation or genetic panels as needed.</li>\n<li><strong>Do not assign sex</strong> before the evaluation, and say so kindly to the family. Care is led by a multidisciplinary team (endocrinology, urology, genetics, psychology). Irreversible genital surgery is increasingly deferred where it is not medically necessary, so the person can take part in decisions.</li>\n<li><strong>Hypospadias with undescended testes</strong>, especially if either testis is nonpalpable or the hypospadias is proximal, warrants a DSD evaluation (karyotype, hormones) before any surgery; circumcision is postponed because the foreskin may be needed for repair.</li></ul>\n<h3>Congenital adrenal hyperplasia</h3>\n<ul><li><strong>Newborn screening</strong> measures 17-hydroxyprogesterone. Levels are higher in preterm, sick or stressed infants and in samples taken in the first day, so screening cut-offs depend on gestational age or birth weight; a positive screen in a preterm infant is confirmed with serum 17-hydroxyprogesterone (ideally by mass spectrometry) and electrolytes rather than treated immediately if the baby is well.</li>\n<li><strong>Salt-wasting crisis</strong> (vomiting, poor feeding, dehydration, hyponatremia, hyperkalemia, hypoglycemia at 1–3 weeks): IV isotonic saline, dextrose and <strong>stress-dose hydrocortisone</strong> (for example about 50–100 mg/m² IV), then maintenance.</li>\n<li><strong>Maintenance</strong>: hydrocortisone (preferred in children because it is least suppressive of growth), fludrocortisone and, in infants, sodium chloride supplements. Monitor growth velocity, bone age, 17-hydroxyprogesterone and androstenedione. Overtreatment slows growth; undertreatment advances bone age and causes early virilisation and short adult height.</li>\n<li><strong>Sick-day rules</strong>: double or triple the oral glucocorticoid dose for fever or illness; give intramuscular hydrocortisone and seek care if vomiting; fludrocortisone is not increased.</li></ul>\n<h3>Congenital hypothyroidism</h3>\n<ul><li>A raised screening TSH is confirmed with <strong>serum TSH and free T4</strong>. When the screening TSH is markedly high (around 40 mU/L or more) or free T4 is low, start <strong>levothyroxine 10–15 µg/kg/day</strong> as soon as the confirmatory blood is drawn, ideally within the first 2 weeks of life; imaging (ultrasonography or scintigraphy) is optional and must not delay treatment.</li>\n<li>Give the tablet crushed in a little breast milk, formula or water by spoon; keep it apart from soy formula, iron and calcium, which reduce absorption. Recheck TSH and free T4 2 weeks after starting and then frequently in infancy, keeping free T4 in the upper half of the reference range.</li>\n<li>If no permanent cause is shown, a trial off treatment after about age 3 can identify transient hypothyroidism.</li></ul>\n<h3>Turner and Klinefelter syndromes: endocrine care</h3>\n<ul><li><strong>Turner syndrome</strong>: suspect with short stature, absent puberty or primary amenorrhea, lymphedema at birth, or a coarctation. At diagnosis: <strong>cardiac imaging</strong> (bicuspid aortic valve, coarctation, aortic dilation; risk of dissection), renal ultrasonography (horseshoe kidney), hearing and thyroid and celiac screening. Growth hormone for short stature; estrogen started around age 11–12 to induce puberty, with progestin added later.</li>\n<li><strong>Klinefelter syndrome</strong>: testosterone replacement for hypogonadism; infertility counselling (sperm retrieval from the testis is sometimes possible).</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> a 2-week-old boy with typical genitalia, vomiting, hyponatremia and hyperkalemia may have salt-wasting CAH; the normal genitalia hide the diagnosis, and pyloric stenosis gives the opposite electrolytes (hypokalemic, hypochloremic alkalosis).</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.08.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Congenital Adrenal Hyperplasia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448098/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Congenital Hypothyroidism",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK558913/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Delayed Puberty",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544322/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s150901-2-1",
+    "heading": "Drug-induced endocrine disorders: recognition and management",
+    "html": "<h3>Glucocorticoid therapy: safe use and withdrawal</h3>\n<ul><li><strong>Who is at risk of HPA suppression?</strong> Assume suppression after more than about 3 weeks of a supraphysiologic dose, with evening dosing, or with cushingoid features. Short courses (under 3 weeks) can usually be stopped without taper.</li>\n<li><strong>Tapering:</strong> reduce gradually toward a physiologic dose, then more slowly. If symptoms suggest insufficiency, a morning cortisol (taken 24 hours after the last hydrocortisone dose) helps decide whether the axis has recovered.</li>\n<li><strong>Stress dosing:</strong> patients on long-term glucocorticoids, or who stopped them recently, need extra doses during major surgery, severe illness or trauma. Teach sick-day rules (double or triple the dose during febrile illness), carry an emergency injection and wear medical identification.</li>\n<li><strong>Adrenal crisis</strong> (hypotension, vomiting, abdominal pain, hypoglycemia, hyponatremia, confusion): give <strong>intravenous hydrocortisone immediately</strong> with isotonic saline and dextrose; draw cortisol and ACTH first if it does not delay treatment, but never wait for results.</li>\n<li><strong>Bone protection:</strong> for patients on 2.5 mg/day or more of prednisone for 3 months or longer, give calcium and vitamin D, assess fracture risk, and start a bisphosphonate when risk is moderate or high.</li>\n<li><strong>Hyperglycemia:</strong> prednisone given in the morning raises afternoon and evening glucose most; NPH insulin given with the morning steroid dose matches this pattern.</li></ul>\n<h3>Thyroid effects of drugs: what to do</h3>\n<table><tr><th>Situation</th><th>Findings</th><th>Management</th></tr>\n<tr><td>Amiodarone, type 1 thyrotoxicosis</td><td>Nodular goiter or Graves disease; increased Doppler vascularity; uptake may be low-normal despite iodine load</td><td>Thionamide (methimazole), beta-blocker; perchlorate where available</td></tr>\n<tr><td>Amiodarone, type 2 thyrotoxicosis</td><td>Normal gland, low or absent vascularity and uptake</td><td>Glucocorticoids; amiodarone can often continue if needed for the arrhythmia, decided with cardiology</td></tr>\n<tr><td>Amiodarone hypothyroidism</td><td>High TSH</td><td>Levothyroxine; amiodarone can continue</td></tr>\n<tr><td>Checkpoint-inhibitor thyroiditis</td><td>Thyrotoxicosis with low uptake, then hypothyroidism weeks later</td><td>Beta-blocker for symptoms, monitor TSH and free T4 every few weeks, levothyroxine when hypothyroid; immunotherapy usually continues</td></tr>\n<tr><td>Iodine-induced (Jod-Basedow) thyrotoxicosis</td><td>Older patient with nodular goiter after contrast</td><td>Beta-blocker and methimazole</td></tr></table>\n<h3>Checkpoint inhibitors: other endocrinopathies</h3>\n<ul><li><strong>Hypophysitis:</strong> headache and fatigue, low ACTH and cortisol, often low TSH with low free T4. Start <strong>glucocorticoid replacement before levothyroxine</strong>, because thyroid hormone speeds cortisol clearance and can precipitate adrenal crisis.</li>\n<li><strong>Insulin-deficient diabetes:</strong> rapid onset, often with DKA, low C-peptide. Treat with insulin; glucocorticoids do not reverse it.</li>\n<li><strong>Primary adrenalitis</strong> is rare; treat with hydrocortisone and fludrocortisone.</li></ul>\n<h3>Other drug-related problems</h3>\n<ul><li><strong>SGLT2 inhibitor euglycemic DKA:</strong> anion-gap acidosis with ketones and glucose often below 250 mg/dL. Stop the drug, give fluids and an insulin infusion <strong>with dextrose</strong>. Hold SGLT2 inhibitors before planned surgery (3 days for most agents, 4 days for ertugliflozin) and during acute illness.</li>\n<li><strong>Antipsychotic hyperprolactinemia:</strong> if psychiatric illness allows, switch to a prolactin-sparing agent (aripiprazole) or add low-dose aripiprazole; check a pregnancy test and consider pituitary imaging if prolactin is very high or there are mass symptoms.</li>\n<li><strong>Biotin interference:</strong> high-dose biotin (hair, skin and nail supplements) interferes with streptavidin-biotin immunoassays, falsely lowering results of sandwich assays (TSH) and falsely raising results of competitive assays (free T4, T3), mimicking hyperthyroidism. Stop biotin for at least 2–3 days and repeat the tests.</li>\n<li><strong>Testosterone therapy:</strong> monitor hematocrit; it suppresses spermatogenesis and should not be used by men trying to conceive.</li></ul>\n<div class=\"trap\"><p><strong>Exam trap:</strong> in suspected central hypothyroidism with possible ACTH deficiency (hypophysitis, pituitary disease), give glucocorticoid before levothyroxine.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.15.09.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Adrenal Insufficiency",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441832/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Euglycemic Diabetic Ketoacidosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554570/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Endocrine-Related Adverse Events From Immune Checkpoint Inhibitors",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK594266/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Amiodarone",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482154/",
+      "sourceId": "statpearls"
      }
     ]
    }
