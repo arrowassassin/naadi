@@ -42,7 +42,7 @@ const GROUPS = [
   { id: "ink", path: "/settings/ink", name: "Pencil & ink" },
   { id: "plan", path: "/settings/plan", name: "Study plan" },
   { id: "appearance", path: "/settings/appearance", name: "Appearance" },
-  // S14: shown while the assistant feature is on (it is on for the e2e students).
+  // S14: shown only while the assistant feature is on (the test filters it by /api/me's features).
   { id: "assistant", path: "/settings/assistant", name: "Assistant" },
   { id: "data", path: "/settings/data", name: "Data & export" },
   { id: "about", path: "/settings/about", name: "About & privacy" },
@@ -145,11 +145,16 @@ test.describe("Settings shell and groups", () => {
       await ready(page, "Account");
 
       const nav = page.getByRole("navigation", { name: "Settings sections" });
+      // Assistant follows the server's `assistant` flag (on by default since S14; a database whose feature_flags an
+      // admin saved before then keeps it off through reseeds). Whichever it is, the nav must match it exactly.
+      const features = (await api<{ features: Record<string, boolean> }>(page, "GET", "/api/me")).json.features;
+      const groups = GROUPS.filter((g) => g.id !== "assistant" || features.assistant === true);
       const links = await nav.getByRole("link").evaluateAll((as) => as.map((a) => (a as HTMLAnchorElement).pathname));
-      expect(links).toEqual(GROUPS.map((g) => g.path));
+      expect(links).toEqual(groups.map((g) => g.path));
       await expect(nav.getByRole("link", { name: "Offline" })).toHaveCount(0);
+      if (features.assistant !== true) await expect(nav.getByRole("link", { name: "Assistant" })).toHaveCount(0);
 
-      for (const g of GROUPS) {
+      for (const g of groups) {
         await page.goto(g.path);
         await ready(page, g.name === "Account" ? "Account" : g.name);
         await expect(page.getByText("Page not found")).toHaveCount(0);
