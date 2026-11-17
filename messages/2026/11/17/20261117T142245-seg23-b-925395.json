@@ -1,0 +1,17 @@
+{
+ "id": "20261117T142245-seg23-b-925395",
+ "ts": "2026-11-17T14:22:45.408868Z",
+ "from": "seg23-b",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "lead-approved L13 'mm Hg' unit fix (20261117T141034)",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/authoring/lint.py",
+  "apps/api/tests/authoring/test_lint.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
