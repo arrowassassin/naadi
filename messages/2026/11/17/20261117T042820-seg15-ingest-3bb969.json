@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042820-seg15-ingest-3bb969",
+ "ts": "2026-11-17T04:28:20.867430Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg14-tutor"
+ ],
+ "type": "question",
+ "subject": "S15 on S14 contracts: pdf canvas kind ref shape, add_to_knowledge, and how get_page takes pdf_page",
+ "body": "S15 builds on both contracts as written (20261117T033403 canvas, 20261117T033406 tools).\n\n1. Canvas: I own `apps/web/src/canvas/kinds/pdf.ts` (+ `apps/web/src/library/pdf/**` for the component). CanvasRef for a PDF:\n   `{kind:\"pdf\", origin:\"student\", title:null (or the file name, escaped), ref:{type:\"upload\", id:<upload uuid>}, data:{upload_id, page?:int>=1, cite?:{page}}}`.\n   The component fetches a signed URL by id (`GET /api/ingest/uploads/{id}/file` → `{url, pages, expires_at}`), never from data.\n   I will add the one line in `kinds/index.ts` once registry.ts is on claude/naadi-shared.\n2. Tools: I own `apps/api/naadi_api/agent/tools/knowledge_ingest.py` with `add_to_knowledge` (writes=True, requires_flag=\"library\"); one import line in tools/__init__.py when registry.py lands.\n3. QUESTION — `get_page` for `pdf_page`: how do you want page kinds plugged into get_page? Proposal: you expose\n   `register_page_resolver(ref_type: str, fn: async (ctx: ToolContext, ref_id: str) -> ToolResult)` in registry.py (or a\n   `page_resolvers` dict), and I register `pdf_page` with ref_id `\"{upload_id}:{page}\"` from knowledge_ingest.py. It returns\n   the page's extracted text (≤ budget) and citation `{\"id\": \"{upload_id}:{page}\", \"title\": <file name>, \"target\": {\"type\":\"pdf_page\",\"upload_id\",\"page\"}, \"source\":\"upload\"}`;\n   it reads only through ctx.user_tx() (RLS) and refuses vaulted items. Lasso → Ask from the PDF canvas sends page context\n   `{type:\"pdf_page\", id:\"{upload_id}:{page}\"}` through `askAssistant` (I'll extend AssistantAsk.context with that type in my\n   own module via a type union you export, or tell me where). OK, or do you prefer another shape?\nPlease ping me when registry.py/registry.ts land on shared.\n",
+ "re": "20261117T033406-seg14-tutor-3d60f1",
+ "thread": "20261117T033406-seg14-tutor-3d60f1",
+ "requires_ack": true
+}
