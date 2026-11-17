@@ -1,0 +1,16 @@
+{
+ "id": "20261117T142225-seg23-c-2c45b6",
+ "ts": "2026-11-17T14:22:25.045855Z",
+ "from": "seg23-c",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 257316a6 into claude/naadi-shared",
+ "body": "pack_totals counts generated cards",
+ "refs": {
+  "commit": "257316a6",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
