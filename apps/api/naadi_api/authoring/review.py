@@ -19,7 +19,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Any, Literal
 
-from .models import Decision, Ratings
+from .models import Decision, ReviewRatings
 
 State = Literal["awaiting", "adjudication", "approved", "revise", "rejected"]
 DECIDED: frozenset[str] = frozenset({"approved", "revise", "rejected"})
@@ -80,7 +80,11 @@ class ReviewRefused(ValueError):
 
 
 def check_submission(
-    reviewer_id: uuid.UUID, rows: Sequence[ReviewRow], required_approvals: int, ratings: Ratings, decision: Decision
+    reviewer_id: uuid.UUID,
+    rows: Sequence[ReviewRow],
+    required_approvals: int,
+    ratings: ReviewRatings,
+    decision: Decision,
 ) -> bool:
     """Raise `ReviewRefused` for a submission that may not be made; return whether it is an adjudication."""
     res = resolve(rows, required_approvals)
@@ -134,7 +138,7 @@ def publish_blockers(g: Gates) -> list[str]:
 
 
 def human_reviewers(rows: Sequence[ReviewRow]) -> list[dict[str, Any]]:
-    """`review.humanReviewers[]`: reviewer id, decision and date. Ratings stay in `question_reviews`."""
+    """`review.humanReviewers[]`: reviewer id, decision and date. ReviewRatings stay in `question_reviews`."""
     return [
         {
             "reviewerId": str(r.reviewer_id) if r.reviewer_id else None,

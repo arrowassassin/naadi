@@ -8,7 +8,7 @@ from datetime import UTC, datetime
 
 import pytest
 
-from naadi_api.authoring.models import Ratings
+from naadi_api.authoring.models import ReviewRatings
 from naadi_api.authoring.psychometrics import (
     FirstAttempt,
     PsychometricRules,
@@ -34,7 +34,7 @@ from naadi_api.authoring.review import (
 A, B, C = (uuid.UUID(int=i) for i in (1, 2, 3))
 
 
-def good_ratings(**kw: object) -> Ratings:
+def good_ratings(**kw: object) -> ReviewRatings:
     base: dict[str, object] = {
         "accuracy": "correct",
         "single_best_answer": True,
@@ -44,7 +44,7 @@ def good_ratings(**kw: object) -> Ratings:
         "taxonomy_ok": True,
     }
     base.update(kw)
-    return Ratings.model_validate(base)
+    return ReviewRatings.model_validate(base)
 
 
 def row(who: uuid.UUID, decision: str, **kw: object) -> ReviewRow:
@@ -107,7 +107,7 @@ def test_a_closed_round_takes_no_more_reviews() -> None:
     "ratings",
     [good_ratings(accuracy="incorrect"), good_ratings(single_best_answer=False), good_ratings(taxonomy_ok=False)],
 )
-def test_an_approval_cannot_contradict_the_ratings(ratings: Ratings) -> None:
+def test_an_approval_cannot_contradict_the_ratings(ratings: ReviewRatings) -> None:
     with pytest.raises(ReviewRefused) as e:
         check_submission(A, [], 1, ratings, "approve")
     assert e.value.code == "approve_contradicts_ratings"

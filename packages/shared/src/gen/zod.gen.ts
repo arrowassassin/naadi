@@ -134,14 +134,67 @@ export const zAttemptState = z.object({
 });
 
 /**
- * AuthorInfo
+ * AuthoringGap
  */
-export const zAuthorInfo = z.object({
-  at: z.string().nullable(),
-  excerpt_ids: z.array(z.string()),
-  model: z.string().nullable(),
-  prompt_hash: z.string().nullable(),
-  run_id: z.string().nullable(),
+export const zAuthoringGap = z.object({
+  exam: z.string(),
+  label: z.string(),
+  pending: z.int(),
+  published: z.int(),
+  topic_id: z.string(),
+});
+
+/**
+ * AuthoringGapList
+ */
+export const zAuthoringGapList = z.object({
+  items: z.array(zAuthoringGap),
+  min_published: z.int(),
+});
+
+/**
+ * AuthoringRunIn
+ */
+export const zAuthoringRunIn = z.object({
+  competency_id: z.string().max(120).nullish(),
+  count: z.int().gte(1).lte(3).optional().default(1),
+  difficulty: z.enum(["easy", "medium", "hard"]).optional().default("medium"),
+  exam: z.enum(["step1", "step2ck"]),
+  objective: z.string().max(300).nullish(),
+  second_id: z.string().max(120).nullish(),
+  topic_id: z.string().max(120),
+});
+
+/**
+ * AuthoringRunJob
+ */
+export const zAuthoringRunJob = z.object({
+  count: z.int(),
+  error: z.string().nullable(),
+  finished_at: z.iso.datetime().nullable(),
+  id: z.uuid(),
+  outcomes: z.array(z.string()),
+  started_at: z.iso.datetime(),
+  status: z.enum(["running", "done", "failed"]),
+});
+
+/**
+ * AuthoringTaxonomyRef
+ */
+export const zAuthoringTaxonomyRef = z.object({
+  id: z.string(),
+  kind: z.string(),
+  label: z.string(),
+});
+
+/**
+ * AuthoringTaxonomyList
+ */
+export const zAuthoringTaxonomyList = z.object({
+  competencies: z.array(zAuthoringTaxonomyRef),
+  seconds: z.array(zAuthoringTaxonomyRef),
+  systems: z.array(zAuthoringTaxonomyRef),
+  topics: z.array(zAuthoringTaxonomyRef),
 });
 
 /**
@@ -343,13 +396,6 @@ export const zChapterProgress = z.object({
   sections_read: z.int(),
   sections_total: z.int(),
   status: z.enum(["not_started", "in_progress", "done"]),
-});
-
-/**
- * ChecksIn
- */
-export const zChecksIn = z.object({
-  solver: z.boolean().optional().default(false),
 });
 
 /**
@@ -654,36 +700,6 @@ export const zFsrsSchedulerConfig = z.object({
 });
 
 /**
- * GapOut
- */
-export const zGapOut = z.object({
-  exam: z.string(),
-  label: z.string(),
-  pending: z.int(),
-  published: z.int(),
-  topic_id: z.string(),
-});
-
-/**
- * GapList
- */
-export const zGapList = z.object({
-  items: z.array(zGapOut),
-  min_published: z.int(),
-});
-
-/**
- * GatesOut
- */
-export const zGatesOut = z.object({
-  blockers: z.array(z.string()),
-  cross_check_ok: z.boolean(),
-  independent: z.boolean(),
-  lint_ok: z.boolean(),
-  source_ok: z.boolean(),
-});
-
-/**
  * GeneratedApproveBody
  */
 export const zGeneratedApproveBody = z.object({
@@ -876,6 +892,21 @@ export const zInsight = z.object({
 });
 
 /**
+ * ItemStatsOut
+ */
+export const zItemStatsOut = z.object({
+  can_act: z.boolean(),
+  computed_at: z.string().nullable(),
+  flags: z.array(z.string()),
+  median_seconds: z.number().nullable(),
+  n: z.int(),
+  option_counts: z.record(z.string(), z.int()),
+  p_correct: z.number().nullable(),
+  point_biserial: z.number().nullable(),
+  report_count: z.int(),
+});
+
+/**
  * ItemStatusIn
  */
 export const zItemStatusIn = z.object({
@@ -883,6 +914,29 @@ export const zItemStatusIn = z.object({
 });
 
 export const zJsonValue = z.unknown();
+
+/**
+ * AuthoringRunRow
+ */
+export const zAuthoringRunRow = z.object({
+  attempts: z.int(),
+  cell: z.record(z.string(), zJsonValue),
+  created_at: z.iso.datetime(),
+  difficulty: z.string().nullable(),
+  id: z.uuid(),
+  llm_calls: z.int(),
+  outcome: z.string(),
+  question_id: z.string().nullable(),
+  trigger: z.string(),
+});
+
+/**
+ * AuthoringRunList
+ */
+export const zAuthoringRunList = z.object({
+  active: z.array(zAuthoringRunJob),
+  items: z.array(zAuthoringRunRow),
+});
 
 /**
  * ConfigEntry
@@ -925,16 +979,6 @@ export const zConfigUpdate = z.object({
   admin_edited: z.boolean().optional().default(true),
   expected_updated_at: z.iso.datetime().nullable(),
   value: zJsonValue,
-});
-
-/**
- * Finding
- */
-export const zFinding = z.object({
-  params: z.record(z.string(), zJsonValue),
-  rule: z.string(),
-  severity: z.enum(["error", "warn", "info"]),
-  target: z.string(),
 });
 
 /**
@@ -1245,14 +1289,6 @@ export const zOnboardingValues = z.object({
 });
 
 /**
- * OptionOut
- */
-export const zOptionOut = z.object({
-  html: z.string(),
-  label: z.string(),
-});
-
-/**
  * PageCreate
  */
 export const zPageCreate = z.object({
@@ -1284,14 +1320,6 @@ export const zPathwayStageOut = z.object({
   key: z.string(),
   title: z.string().nullable(),
   total: z.int(),
-});
-
-/**
- * Permission
- */
-export const zPermission = z.object({
-  allowed: z.boolean(),
-  reason: z.string().nullish(),
 });
 
 /**
@@ -1485,16 +1513,9 @@ export const zMeResponse = z.object({
 });
 
 /**
- * PsychIn
+ * PsychometricsRunOut
  */
-export const zPsychIn = z.object({
-  action: z.enum(["keep", "revise", "retire"]),
-});
-
-/**
- * PsychRunOut
- */
-export const zPsychRunOut = z.object({
+export const zPsychometricsRunOut = z.object({
   flagged: z.int(),
   items: z.int(),
   updated: z.int(),
@@ -1569,25 +1590,6 @@ export const zQuestionView = z.object({
 });
 
 /**
- * QueueItem
- */
-export const zQueueItem = z.object({
-  difficulty: z.string().nullable(),
-  errors: z.int(),
-  exam: z.string(),
-  id: z.string(),
-  mine_submitted: z.boolean(),
-  needed: z.int(),
-  origin: z.enum(["ai", "seed"]),
-  psych_flags: z.array(z.string()),
-  state: z.string(),
-  status: z.string(),
-  stem_preview: z.string(),
-  submitted: z.int(),
-  warnings: z.int(),
-});
-
-/**
  * Quota
  */
 export const zQuota = z.object({
@@ -1638,51 +1640,6 @@ export const zHealthResponse = z.object({
   environment: z.enum(["local", "staging", "prod"]),
   status: z.enum(["ok", "degraded", "down"]),
   version: z.string(),
-});
-
-/**
- * Ratings
- *
- * Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy.
- */
-export const zRatings = z.object({
-  accuracy: z.enum(["correct", "minor_issue", "incorrect"]),
-  cognitive_level: z.enum(["recall", "application", "analysis"]),
-  difficulty: z.enum(["easy", "medium", "hard"]),
-  flaws: z
-    .array(
-      z.enum([
-        "not_homogeneous",
-        "key_too_long",
-        "grammatical_cue",
-        "logical_cue",
-        "word_repeat",
-        "convergence",
-        "absolute_terms",
-        "negative_lead_in",
-        "cannot_cover_options",
-        "irrelevant_difficulty",
-        "hinged",
-        "stereotyped",
-        "other",
-      ]),
-    )
-    .max(13)
-    .optional(),
-  single_best_answer: z.boolean(),
-  taxonomy_ok: z.boolean(),
-});
-
-/**
- * RatingsOut
- */
-export const zRatingsOut = z.object({
-  accuracy: z.string().nullish(),
-  cognitive_level: z.string().nullish(),
-  difficulty: z.string().nullish(),
-  flaws: z.array(z.string()).optional(),
-  single_best_answer: z.boolean().nullish(),
-  taxonomy_ok: z.boolean().nullish(),
 });
 
 /**
@@ -1774,16 +1731,6 @@ export const zReportIssueOut = z.object({
 });
 
 /**
- * ResolutionOut
- */
-export const zResolutionOut = z.object({
-  needed: z.int(),
-  round: z.int(),
-  state: z.string(),
-  submitted: z.int(),
-});
-
-/**
  * ResultQuestion
  */
 export const zResultQuestion = z.object({
@@ -1847,10 +1794,251 @@ export const zCardStats = z.object({
 });
 
 /**
- * ReviewQueue
+ * ReviewAuthorInfo
  */
-export const zReviewQueue = z.object({
-  items: z.array(zQueueItem),
+export const zReviewAuthorInfo = z.object({
+  at: z.string().nullable(),
+  excerpt_ids: z.array(z.string()),
+  model: z.string().nullable(),
+  prompt_hash: z.string().nullable(),
+  run_id: z.string().nullable(),
+});
+
+/**
+ * ReviewChecksIn
+ */
+export const zReviewChecksIn = z.object({
+  solver: z.boolean().optional().default(false),
+});
+
+/**
+ * ReviewFinding
+ */
+export const zReviewFinding = z.object({
+  params: z.record(z.string(), zJsonValue),
+  rule: z.string(),
+  severity: z.enum(["error", "warn", "info"]),
+  target: z.string(),
+});
+
+/**
+ * ReviewGatesOut
+ */
+export const zReviewGatesOut = z.object({
+  blockers: z.array(z.string()),
+  cross_check_ok: z.boolean(),
+  independent: z.boolean(),
+  lint_ok: z.boolean(),
+  source_ok: z.boolean(),
+});
+
+/**
+ * ReviewIn
+ */
+export const zReviewIn = z.object({
+  client_review_id: z.uuid(),
+  duration_ms: z.int().gte(0).lte(3600000).nullish(),
+  rating: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
+  reviewed_at: z.iso.datetime().nullish(),
+});
+
+/**
+ * ReviewOptionOut
+ */
+export const zReviewOptionOut = z.object({
+  html: z.string(),
+  label: z.string(),
+});
+
+/**
+ * ReviewOut
+ */
+export const zReviewOut = z.object({
+  card_id: z.uuid(),
+  client_review_id: z.uuid(),
+  rating: z.int(),
+  replayed: z.boolean(),
+  reviewed_at: z.iso.datetime(),
+  schedule: zCardSchedule,
+  scheduled_days: z.int(),
+});
+
+/**
+ * ReviewPermission
+ */
+export const zReviewPermission = z.object({
+  allowed: z.boolean(),
+  reason: z.string().nullish(),
+});
+
+/**
+ * ReviewPsychometricsIn
+ */
+export const zReviewPsychometricsIn = z.object({
+  action: z.enum(["keep", "revise", "retire"]),
+});
+
+/**
+ * ReviewQueueItem
+ */
+export const zReviewQueueItem = z.object({
+  difficulty: z.string().nullable(),
+  errors: z.int(),
+  exam: z.string(),
+  id: z.string(),
+  mine_submitted: z.boolean(),
+  needed: z.int(),
+  origin: z.enum(["ai", "seed"]),
+  psych_flags: z.array(z.string()),
+  state: z.string(),
+  status: z.string(),
+  stem_preview: z.string(),
+  submitted: z.int(),
+  warnings: z.int(),
+});
+
+/**
+ * ReviewQueueList
+ */
+export const zReviewQueueList = z.object({
+  items: z.array(zReviewQueueItem),
+});
+
+/**
+ * ReviewRatings
+ *
+ * Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy.
+ */
+export const zReviewRatings = z.object({
+  accuracy: z.enum(["correct", "minor_issue", "incorrect"]),
+  cognitive_level: z.enum(["recall", "application", "analysis"]),
+  difficulty: z.enum(["easy", "medium", "hard"]),
+  flaws: z
+    .array(
+      z.enum([
+        "not_homogeneous",
+        "key_too_long",
+        "grammatical_cue",
+        "logical_cue",
+        "word_repeat",
+        "convergence",
+        "absolute_terms",
+        "negative_lead_in",
+        "cannot_cover_options",
+        "irrelevant_difficulty",
+        "hinged",
+        "stereotyped",
+        "other",
+      ]),
+    )
+    .max(13)
+    .optional(),
+  single_best_answer: z.boolean(),
+  taxonomy_ok: z.boolean(),
+});
+
+/**
+ * QuestionReviewIn
+ *
+ * A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the
+ * same fields the approval uses.
+ */
+export const zQuestionReviewIn = z.object({
+  decision: z.enum(["approve", "revise", "reject"]),
+  note: z.string().max(2000).nullish(),
+  ratings: zReviewRatings,
+  request_second: z.boolean().optional().default(false),
+});
+
+/**
+ * ReviewRatingsOut
+ */
+export const zReviewRatingsOut = z.object({
+  accuracy: z.string().nullish(),
+  cognitive_level: z.string().nullish(),
+  difficulty: z.string().nullish(),
+  flaws: z.array(z.string()).optional(),
+  single_best_answer: z.boolean().nullish(),
+  taxonomy_ok: z.boolean().nullish(),
+});
+
+/**
+ * ReviewEntryOut
+ */
+export const zReviewEntryOut = z.object({
+  adjudication: z.boolean(),
+  created_at: z.iso.datetime(),
+  decision: z.enum(["approve", "revise", "reject"]),
+  id: z.int(),
+  is_mine: z.boolean(),
+  note: z.string().nullable(),
+  ratings: zReviewRatingsOut,
+  request_second: z.boolean(),
+  round: z.int(),
+});
+
+/**
+ * ReviewResolutionOut
+ */
+export const zReviewResolutionOut = z.object({
+  needed: z.int(),
+  round: z.int(),
+  state: z.string(),
+  submitted: z.int(),
+});
+
+/**
+ * ReviewSolverOut
+ */
+export const zReviewSolverOut = z.object({
+  agrees: z.boolean().nullable(),
+  choice: z.string().nullable(),
+  confidence: z.number().nullable(),
+  cover_matches: z.boolean().nullable(),
+  defensibility: z.record(z.string(), z.number()),
+  error: z.string().nullable(),
+  independent: z.boolean(),
+  model: z.string().nullable(),
+});
+
+/**
+ * ReviewItemDetail
+ */
+export const zReviewItemDetail = z.object({
+  answer: z.string(),
+  answer_html: z.string().nullable(),
+  author: zReviewAuthorInfo.nullable(),
+  can_review: zReviewPermission,
+  created_at: z.iso.datetime(),
+  difficulty: z.string().nullable(),
+  educational_objective: z.string().nullable(),
+  exam: z.string(),
+  explanation_html: z.string().nullable(),
+  gates: zReviewGatesOut,
+  hidden_reviews: z.int(),
+  id: z.string(),
+  lint: z.array(zReviewFinding),
+  options: z.array(zReviewOptionOut),
+  origin: z.enum(["ai", "seed"]),
+  required_approvals: z.int(),
+  resolution: zReviewResolutionOut,
+  reviews: z.array(zReviewEntryOut),
+  solver: zReviewSolverOut.nullable(),
+  solver_findings: z.array(zReviewFinding),
+  source_id: z.string().nullable(),
+  stats: zItemStatsOut.nullable(),
+  status: z.string(),
+  stem_html: z.string(),
+  taxonomy: z.array(zAuthoringTaxonomyRef),
+  why_not_html: z.string().nullable(),
+});
+
+/**
+ * ReviewSubmitResult
+ */
+export const zReviewSubmitResult = z.object({
+  item: zReviewItemDetail,
+  outcome: z.enum(["recorded", "published", "revise", "rejected", "adjudication"]),
 });
 
 /**
@@ -1863,55 +2051,6 @@ export const zReviewSummary = z.object({
   psychometric_flags: z.int(),
   required_approvals: z.int(),
   seed_spot_check: z.int(),
-});
-
-/**
- * RunIn
- */
-export const zRunIn = z.object({
-  competency_id: z.string().max(120).nullish(),
-  count: z.int().gte(1).lte(3).optional().default(1),
-  difficulty: z.enum(["easy", "medium", "hard"]).optional().default("medium"),
-  exam: z.enum(["step1", "step2ck"]),
-  objective: z.string().max(300).nullish(),
-  second_id: z.string().max(120).nullish(),
-  topic_id: z.string().max(120),
-});
-
-/**
- * RunJobOut
- */
-export const zRunJobOut = z.object({
-  count: z.int(),
-  error: z.string().nullable(),
-  finished_at: z.iso.datetime().nullable(),
-  id: z.uuid(),
-  outcomes: z.array(z.string()),
-  started_at: z.iso.datetime(),
-  status: z.enum(["running", "done", "failed"]),
-});
-
-/**
- * RunRow
- */
-export const zRunRow = z.object({
-  attempts: z.int(),
-  cell: z.record(z.string(), zJsonValue),
-  created_at: z.iso.datetime(),
-  difficulty: z.string().nullable(),
-  id: z.uuid(),
-  llm_calls: z.int(),
-  outcome: z.string(),
-  question_id: z.string().nullable(),
-  trigger: z.string(),
-});
-
-/**
- * RunList
- */
-export const zRunList = z.object({
-  active: z.array(zRunJobOut),
-  items: z.array(zRunRow),
 });
 
 /**
@@ -2048,20 +2187,6 @@ export const zSingleBlockCreate = z.object({
 });
 
 /**
- * SolverOut
- */
-export const zSolverOut = z.object({
-  agrees: z.boolean().nullable(),
-  choice: z.string().nullable(),
-  confidence: z.number().nullable(),
-  cover_matches: z.boolean().nullable(),
-  defensibility: z.record(z.string(), z.number()),
-  error: z.string().nullable(),
-  independent: z.boolean(),
-  model: z.string().nullable(),
-});
-
-/**
  * SourceRef
  */
 export const zSourceRef = z.object({
@@ -2078,21 +2203,6 @@ export const zLabValuesOut = z.object({
   groups: z.array(zLabGroupOut),
   official: zSourceRef,
   source: zSourceRef,
-});
-
-/**
- * StatsOut
- */
-export const zStatsOut = z.object({
-  can_act: z.boolean(),
-  computed_at: z.string().nullable(),
-  flags: z.array(z.string()),
-  median_seconds: z.number().nullable(),
-  n: z.int(),
-  option_counts: z.record(z.string(), z.int()),
-  p_correct: z.number().nullable(),
-  point_biserial: z.number().nullable(),
-  report_count: z.int(),
 });
 
 /**
@@ -2188,25 +2298,6 @@ export const zSearchResponse = z.object({
   scope: z.enum(["all", "chapters", "questions", "notes", "handwriting", "uploads", "pathway"]),
   suggest_web: z.boolean(),
   took_ms: z.int(),
-});
-
-/**
- * TaxonomyRef
- */
-export const zTaxonomyRef = z.object({
-  id: z.string(),
-  kind: z.string(),
-  label: z.string(),
-});
-
-/**
- * TaxonomyList
- */
-export const zTaxonomyList = z.object({
-  competencies: z.array(zTaxonomyRef),
-  seconds: z.array(zTaxonomyRef),
-  systems: z.array(zTaxonomyRef),
-  topics: z.array(zTaxonomyRef),
 });
 
 /**
@@ -2505,97 +2596,6 @@ export const zBlockResults = z.object({
 });
 
 /**
- * ReviewIn
- *
- * A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the
- * same fields the approval uses.
- */
-export const zNaadiApiAuthoringModelsReviewIn = z.object({
-  decision: z.enum(["approve", "revise", "reject"]),
-  note: z.string().max(2000).nullish(),
-  ratings: zRatings,
-  request_second: z.boolean().optional().default(false),
-});
-
-/**
- * ReviewOut
- */
-export const zNaadiApiAuthoringRoutesReviewOut = z.object({
-  adjudication: z.boolean(),
-  created_at: z.iso.datetime(),
-  decision: z.enum(["approve", "revise", "reject"]),
-  id: z.int(),
-  is_mine: z.boolean(),
-  note: z.string().nullable(),
-  ratings: zRatingsOut,
-  request_second: z.boolean(),
-  round: z.int(),
-});
-
-/**
- * ItemDetail
- */
-export const zItemDetail = z.object({
-  answer: z.string(),
-  answer_html: z.string().nullable(),
-  author: zAuthorInfo.nullable(),
-  can_review: zPermission,
-  created_at: z.iso.datetime(),
-  difficulty: z.string().nullable(),
-  educational_objective: z.string().nullable(),
-  exam: z.string(),
-  explanation_html: z.string().nullable(),
-  gates: zGatesOut,
-  hidden_reviews: z.int(),
-  id: z.string(),
-  lint: z.array(zFinding),
-  options: z.array(zOptionOut),
-  origin: z.enum(["ai", "seed"]),
-  required_approvals: z.int(),
-  resolution: zResolutionOut,
-  reviews: z.array(zNaadiApiAuthoringRoutesReviewOut),
-  solver: zSolverOut.nullable(),
-  solver_findings: z.array(zFinding),
-  source_id: z.string().nullable(),
-  stats: zStatsOut.nullable(),
-  status: z.string(),
-  stem_html: z.string(),
-  taxonomy: z.array(zTaxonomyRef),
-  why_not_html: z.string().nullable(),
-});
-
-/**
- * ReviewResult
- */
-export const zReviewResult = z.object({
-  item: zItemDetail,
-  outcome: z.enum(["recorded", "published", "revise", "rejected", "adjudication"]),
-});
-
-/**
- * ReviewIn
- */
-export const zNaadiApiCardsModelsReviewIn = z.object({
-  client_review_id: z.uuid(),
-  duration_ms: z.int().gte(0).lte(3600000).nullish(),
-  rating: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
-  reviewed_at: z.iso.datetime().nullish(),
-});
-
-/**
- * ReviewOut
- */
-export const zNaadiApiCardsModelsReviewOut = z.object({
-  card_id: z.uuid(),
-  client_review_id: z.uuid(),
-  rating: z.int(),
-  replayed: z.boolean(),
-  reviewed_at: z.iso.datetime(),
-  schedule: zCardSchedule,
-  scheduled_days: z.int(),
-});
-
-/**
  * ExamOption
  */
 export const zNaadiApiCoursesExamOption = z.object({
@@ -2720,7 +2720,7 @@ export const zGetAdminOverviewResponse = zAdminOverview;
 /**
  * Successful Response
  */
-export const zListAuthoringGapsResponse = zGapList;
+export const zListAuthoringGapsResponse = zAuthoringGapList;
 
 export const zListReviewItemsQuery = z.object({
   filter: z
@@ -2734,7 +2734,7 @@ export const zListReviewItemsQuery = z.object({
 /**
  * Successful Response
  */
-export const zListReviewItemsResponse = zReviewQueue;
+export const zListReviewItemsResponse = zReviewQueueList;
 
 export const zGetReviewItemPath = z.object({
   item_id: z.string().regex(/^[A-Za-z0-9._:-]{1,80}$/),
@@ -2743,9 +2743,9 @@ export const zGetReviewItemPath = z.object({
 /**
  * Successful Response
  */
-export const zGetReviewItemResponse = zItemDetail;
+export const zGetReviewItemResponse = zReviewItemDetail;
 
-export const zRunReviewChecksBody = zChecksIn;
+export const zRunReviewChecksBody = zReviewChecksIn;
 
 export const zRunReviewChecksPath = z.object({
   item_id: z.string().regex(/^[A-Za-z0-9._:-]{1,80}$/),
@@ -2754,9 +2754,9 @@ export const zRunReviewChecksPath = z.object({
 /**
  * Successful Response
  */
-export const zRunReviewChecksResponse = zItemDetail;
+export const zRunReviewChecksResponse = zReviewItemDetail;
 
-export const zActOnPsychometricsBody = zPsychIn;
+export const zActOnPsychometricsBody = zReviewPsychometricsIn;
 
 export const zActOnPsychometricsPath = z.object({
   item_id: z.string().regex(/^[A-Za-z0-9._:-]{1,80}$/),
@@ -2765,7 +2765,7 @@ export const zActOnPsychometricsPath = z.object({
 /**
  * Successful Response
  */
-export const zActOnPsychometricsResponse = zItemDetail;
+export const zActOnPsychometricsResponse = zReviewItemDetail;
 
 export const zResubmitReviewItemPath = z.object({
   item_id: z.string().regex(/^[A-Za-z0-9._:-]{1,80}$/),
@@ -2774,9 +2774,9 @@ export const zResubmitReviewItemPath = z.object({
 /**
  * Successful Response
  */
-export const zResubmitReviewItemResponse = zItemDetail;
+export const zResubmitReviewItemResponse = zReviewItemDetail;
 
-export const zSubmitReviewBody = zNaadiApiAuthoringModelsReviewIn;
+export const zSubmitReviewBody = zQuestionReviewIn;
 
 export const zSubmitReviewPath = z.object({
   item_id: z.string().regex(/^[A-Za-z0-9._:-]{1,80}$/),
@@ -2785,24 +2785,24 @@ export const zSubmitReviewPath = z.object({
 /**
  * Successful Response
  */
-export const zSubmitReviewResponse = zReviewResult;
+export const zSubmitReviewResponse = zReviewSubmitResult;
 
 /**
  * Successful Response
  */
-export const zRunPsychometricsResponse = zPsychRunOut;
+export const zRunPsychometricsResponse = zPsychometricsRunOut;
 
 /**
  * Successful Response
  */
-export const zListAuthoringRunsResponse = zRunList;
+export const zListAuthoringRunsResponse = zAuthoringRunList;
 
-export const zStartAuthoringRunBody = zRunIn;
+export const zStartAuthoringRunBody = zAuthoringRunIn;
 
 /**
  * Successful Response
  */
-export const zStartAuthoringRunResponse = zRunJobOut;
+export const zStartAuthoringRunResponse = zAuthoringRunJob;
 
 /**
  * Successful Response
@@ -2816,7 +2816,7 @@ export const zGetAuthoringTaxonomyQuery = z.object({
 /**
  * Successful Response
  */
-export const zGetAuthoringTaxonomyResponse = zTaxonomyList;
+export const zGetAuthoringTaxonomyResponse = zAuthoringTaxonomyList;
 
 export const zStartSeedBody = zSeedRequest;
 
@@ -3080,7 +3080,7 @@ export const zUpdateCardPath = z.object({
  */
 export const zUpdateCardResponse = zCardOut;
 
-export const zReviewCardBody = zNaadiApiCardsModelsReviewIn;
+export const zReviewCardBody = zReviewIn;
 
 export const zReviewCardPath = z.object({
   card_id: z.uuid(),
@@ -3089,7 +3089,7 @@ export const zReviewCardPath = z.object({
 /**
  * Successful Response
  */
-export const zReviewCardResponse = zNaadiApiCardsModelsReviewOut;
+export const zReviewCardResponse = zReviewOut;
 
 export const zGetChapterPath = z.object({
   chapter_id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,127}$/),

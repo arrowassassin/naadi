@@ -14,7 +14,7 @@ import psycopg
 from psycopg.types.json import Jsonb
 
 from .lint import LintContext, LintReport, SourceInfo, flat, lint_question
-from .models import Decision, Ratings
+from .models import Decision, ReviewRatings
 from .review import Gates, Resolution, ReviewRow, human_reviewers, resolve
 
 FILTERS = ("ai_drafts", "seed_spot_check", "psychometric_flags", "adjudication", "needs_check", "all")
@@ -241,7 +241,7 @@ async def insert_review(
     reviewer: uuid.UUID,
     round_: int,
     decision: Decision,
-    ratings: Ratings,
+    ratings: ReviewRatings,
     note: str | None,
     request_second: bool,
     adjudication: bool,

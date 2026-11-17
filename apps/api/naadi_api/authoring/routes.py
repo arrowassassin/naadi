@@ -38,7 +38,7 @@ from .checks import CallBudget, blind_solve
 from .deps import build_deps
 from .jobs import AuthoringJobs
 from .lint import lab_refs
-from .models import ReviewIn
+from .models import QuestionReviewIn
 from .pipeline import DIFFICULTY_CYCLE, Deps
 from .review import ReviewRefused, ReviewRow, check_submission, publish_blockers, resolve, visible_rows
 from .selection import CellError, TaxNode, build_cell
@@ -78,7 +78,7 @@ class ReviewSummary(BaseModel):
     required_approvals: int
 
 
-class QueueItem(BaseModel):
+class ReviewQueueItem(BaseModel):
     id: str
     exam: str
     status: str
@@ -94,24 +94,24 @@ class QueueItem(BaseModel):
     psych_flags: list[str]
 
 
-class ReviewQueue(BaseModel):
-    items: list[QueueItem]
+class ReviewQueueList(BaseModel):
+    items: list[ReviewQueueItem]
 
 
-class Finding(BaseModel):
+class ReviewFinding(BaseModel):
     rule: str
     severity: Literal["error", "warn", "info"]
     target: str
     params: dict[str, JsonValue]
 
 
-class TaxonomyRef(BaseModel):
+class AuthoringTaxonomyRef(BaseModel):
     id: str
     kind: str
     label: str
 
 
-class AuthorInfo(BaseModel):
+class ReviewAuthorInfo(BaseModel):
     model: str | None
     prompt_hash: str | None
     run_id: str | None
@@ -119,7 +119,7 @@ class AuthorInfo(BaseModel):
     at: str | None
 
 
-class SolverOut(BaseModel):
+class ReviewSolverOut(BaseModel):
     agrees: bool | None
     choice: str | None
     confidence: float | None
@@ -130,7 +130,7 @@ class SolverOut(BaseModel):
     error: str | None
 
 
-class GatesOut(BaseModel):
+class ReviewGatesOut(BaseModel):
     lint_ok: bool
     source_ok: bool
     cross_check_ok: bool
@@ -138,14 +138,14 @@ class GatesOut(BaseModel):
     blockers: list[str]
 
 
-class ResolutionOut(BaseModel):
+class ReviewResolutionOut(BaseModel):
     state: str
     needed: int
     submitted: int
     round: int
 
 
-class RatingsOut(BaseModel):
+class ReviewRatingsOut(BaseModel):
     model_config = ConfigDict(extra="allow")
     accuracy: str | None = None
     single_best_answer: bool | None = None
@@ -155,24 +155,24 @@ class RatingsOut(BaseModel):
     taxonomy_ok: bool | None = None
 
 
-class ReviewOut(BaseModel):
+class ReviewEntryOut(BaseModel):
     id: int
     round: int
     decision: Literal["approve", "revise", "reject"]
     adjudication: bool
     request_second: bool
     is_mine: bool
-    ratings: RatingsOut
+    ratings: ReviewRatingsOut
     note: str | None
     created_at: dt.datetime
 
 
-class Permission(BaseModel):
+class ReviewPermission(BaseModel):
     allowed: bool
     reason: str | None = None
 
 
-class StatsOut(BaseModel):
+class ItemStatsOut(BaseModel):
     n: int
     p_correct: float | None
     point_biserial: float | None
@@ -184,56 +184,56 @@ class StatsOut(BaseModel):
     can_act: bool
 
 
-class OptionOut(BaseModel):
+class ReviewOptionOut(BaseModel):
     label: str
     html: str
 
 
-class ItemDetail(BaseModel):
+class ReviewItemDetail(BaseModel):
     id: str
     exam: str
     status: str
     origin: Literal["ai", "seed"]
     difficulty: str | None
     stem_html: str
-    options: list[OptionOut]
+    options: list[ReviewOptionOut]
     answer: str
     answer_html: str | None
     explanation_html: str | None
     why_not_html: str | None
     educational_objective: str | None
-    taxonomy: list[TaxonomyRef]
+    taxonomy: list[AuthoringTaxonomyRef]
     source_id: str | None
     created_at: dt.datetime
-    author: AuthorInfo | None
-    lint: list[Finding]
-    solver: SolverOut | None
-    solver_findings: list[Finding]
-    gates: GatesOut
-    resolution: ResolutionOut
-    reviews: list[ReviewOut]
+    author: ReviewAuthorInfo | None
+    lint: list[ReviewFinding]
+    solver: ReviewSolverOut | None
+    solver_findings: list[ReviewFinding]
+    gates: ReviewGatesOut
+    resolution: ReviewResolutionOut
+    reviews: list[ReviewEntryOut]
     hidden_reviews: int
-    can_review: Permission
-    stats: StatsOut | None
+    can_review: ReviewPermission
+    stats: ItemStatsOut | None
     required_approvals: int
 
 
-class ReviewResult(BaseModel):
+class ReviewSubmitResult(BaseModel):
     outcome: Literal["recorded", "published", "revise", "rejected", "adjudication"]
-    item: ItemDetail
+    item: ReviewItemDetail
 
 
-class ChecksIn(BaseModel):
+class ReviewChecksIn(BaseModel):
     model_config = ConfigDict(extra="forbid")
     solver: bool = False
 
 
-class PsychIn(BaseModel):
+class ReviewPsychometricsIn(BaseModel):
     model_config = ConfigDict(extra="forbid")
     action: Literal["keep", "revise", "retire"]
 
 
-class GapOut(BaseModel):
+class AuthoringGap(BaseModel):
     exam: str
     topic_id: str
     label: str
@@ -241,19 +241,19 @@ class GapOut(BaseModel):
     pending: int
 
 
-class GapList(BaseModel):
-    items: list[GapOut]
+class AuthoringGapList(BaseModel):
+    items: list[AuthoringGap]
     min_published: int
 
 
-class TaxonomyList(BaseModel):
-    systems: list[TaxonomyRef]
-    seconds: list[TaxonomyRef]
-    competencies: list[TaxonomyRef]
-    topics: list[TaxonomyRef]
+class AuthoringTaxonomyList(BaseModel):
+    systems: list[AuthoringTaxonomyRef]
+    seconds: list[AuthoringTaxonomyRef]
+    competencies: list[AuthoringTaxonomyRef]
+    topics: list[AuthoringTaxonomyRef]
 
 
-class RunIn(BaseModel):
+class AuthoringRunIn(BaseModel):
     model_config = ConfigDict(extra="forbid")
     exam: Literal["step1", "step2ck"]
     topic_id: str = Field(max_length=120)
@@ -264,7 +264,7 @@ class RunIn(BaseModel):
     count: int = Field(default=1, ge=1, le=3)
 
 
-class RunJobOut(BaseModel):
+class AuthoringRunJob(BaseModel):
     id: uuid.UUID
     status: Literal["running", "done", "failed"]
     count: int
@@ -274,7 +274,7 @@ class RunJobOut(BaseModel):
     error: str | None
 
 
-class RunRow(BaseModel):
+class AuthoringRunRow(BaseModel):
     id: uuid.UUID
     trigger: str
     cell: dict[str, JsonValue]
@@ -286,12 +286,12 @@ class RunRow(BaseModel):
     created_at: dt.datetime
 
 
-class RunList(BaseModel):
-    active: list[RunJobOut]
-    items: list[RunRow]
+class AuthoringRunList(BaseModel):
+    active: list[AuthoringRunJob]
+    items: list[AuthoringRunRow]
 
 
-class PsychRunOut(BaseModel):
+class PsychometricsRunOut(BaseModel):
     items: int
     flagged: int
     updated: int
@@ -339,17 +339,19 @@ async def _taxonomy_and_sources(db: Database) -> tuple[dict[str, TaxNode], dict[
     return await store.taxonomy(), await store.sources()
 
 
-def _finding(d: dict[str, Any]) -> Finding:
-    return Finding(rule=d["rule"], severity=d["severity"], target=d.get("target", ""), params=d.get("params") or {})
+def _finding(d: dict[str, Any]) -> ReviewFinding:
+    return ReviewFinding(
+        rule=d["rule"], severity=d["severity"], target=d.get("target", ""), params=d.get("params") or {}
+    )
 
 
-def _stats_out(item: dict[str, Any], rules: AuthoringRules) -> StatsOut | None:
+def _stats_out(item: dict[str, Any], rules: AuthoringRules) -> ItemStatsOut | None:
     st = item["stats"] or {}
     if not st:
         return None
     flags = review_store.psych_flags_of(item)
     n = int(st.get("n") or 0)
-    return StatsOut(
+    return ItemStatsOut(
         n=n,
         p_correct=st.get("pCorrect"),
         point_biserial=st.get("pointBiserial"),
@@ -370,7 +372,7 @@ async def build_detail(
     taxonomy: dict[str, TaxNode],
     sources: dict[str, Any],
     labs: list[Any],
-) -> ItemDetail:
+) -> ReviewItemDetail:
     review = item["review"] or {}
     round_ = int(review.get("round", 1))
     all_rows = await review_store.reviews_of(conn, item["id"], round_)
@@ -383,51 +385,51 @@ async def build_detail(
     gates = review_store.gates_of(item, report)
     solver = review.get("solver") or None
     author = review.get("authorModel")
-    permission = Permission(allowed=True)
+    permission = ReviewPermission(allowed=True)
     status = item["status"]
     if status in ("draft", "retired"):
-        permission = Permission(allowed=False, reason="status_not_reviewable")
+        permission = ReviewPermission(allowed=False, reason="status_not_reviewable")
     elif status == "published" and review.get("humanExpertReviewed") is not False:
-        permission = Permission(allowed=False, reason="already_reviewed")
+        permission = ReviewPermission(allowed=False, reason="already_reviewed")
     elif res.decided:
-        permission = Permission(allowed=False, reason="round_closed")
+        permission = ReviewPermission(allowed=False, reason="round_closed")
     elif any(r["reviewer_user_id"] == me for r in all_rows):
-        permission = Permission(allowed=False, reason="already_reviewed_by_you")
+        permission = ReviewPermission(allowed=False, reason="already_reviewed_by_you")
 
-    def out(r: dict[str, Any]) -> ReviewOut:
-        return ReviewOut(
+    def out(r: dict[str, Any]) -> ReviewEntryOut:
+        return ReviewEntryOut(
             id=r["id"],
             round=r["round"],
             decision=r["decision"],
             adjudication=r["adjudication"],
             request_second=r["request_second"],
             is_mine=r["reviewer_user_id"] == me,
-            ratings=RatingsOut.model_validate(r["ratings"] or {}),
+            ratings=ReviewRatingsOut.model_validate(r["ratings"] or {}),
             note=r["note"],
             created_at=r["created_at"],
         )
 
-    return ItemDetail(
+    return ReviewItemDetail(
         id=item["id"],
         exam=item["exam"],
         status=status,
         origin=review_store.origin_of(item),
         difficulty=item["difficulty"],
         stem_html=item["stem_html"],
-        options=[OptionOut(label=str(o["label"]), html=str(o["html"])) for o in item["options"]],
+        options=[ReviewOptionOut(label=str(o["label"]), html=str(o["html"])) for o in item["options"]],
         answer=str(item["answer"]).strip(),
         answer_html=item["answer_html"],
         explanation_html=item["explanation_html"],
         why_not_html=item["why_not_html"],
         educational_objective=item["educational_objective"],
         taxonomy=[
-            TaxonomyRef(id=t, kind=taxonomy[t].kind, label=taxonomy[t].label)
+            AuthoringTaxonomyRef(id=t, kind=taxonomy[t].kind, label=taxonomy[t].label)
             for t in item["taxonomy_ids"]
             if t in taxonomy
         ],
         source_id=item["source_id"],
         created_at=item["created_at"],
-        author=AuthorInfo(
+        author=ReviewAuthorInfo(
             model=author.get("model"),
             prompt_hash=author.get("promptHash"),
             run_id=author.get("runId"),
@@ -437,7 +439,7 @@ async def build_detail(
         if author
         else None,
         lint=[_finding(f.as_dict()) for f in report.findings],
-        solver=SolverOut(
+        solver=ReviewSolverOut(
             agrees=solver.get("agrees"),
             choice=solver.get("choice"),
             confidence=solver.get("confidence"),
@@ -450,14 +452,14 @@ async def build_detail(
         if solver
         else None,
         solver_findings=[_finding(f) for f in (solver or {}).get("findings", [])],
-        gates=GatesOut(
+        gates=ReviewGatesOut(
             lint_ok=gates.lint_ok,
             source_ok=gates.source_ok,
             cross_check_ok=gates.cross_check_ok,
             independent=gates.independent,
             blockers=publish_blockers(gates),
         ),
-        resolution=ResolutionOut(state=res.state, needed=res.needed, submitted=res.submitted, round=round_),
+        resolution=ReviewResolutionOut(state=res.state, needed=res.needed, submitted=res.submitted, round=round_),
         reviews=[out(r) for r in [*past, *shown]],
         hidden_reviews=len(all_rows) - len(shown),
         can_review=permission,
@@ -466,7 +468,7 @@ async def build_detail(
     )
 
 
-async def _load(request: Request, conn: Any, item_id: str, me: uuid.UUID) -> ItemDetail:
+async def _load(request: Request, conn: Any, item_id: str, me: uuid.UUID) -> ReviewItemDetail:
     item = await review_store.get_item(conn, item_id)
     if item is None:
         raise AuthoringError(404, "item_not_found")
@@ -490,14 +492,14 @@ async def summary(request: Request, admin: AdminUser) -> ReviewSummary:
     return ReviewSummary(**c, required_approvals=rules.required_approvals)
 
 
-@router.get("/items", operation_id="listReviewItems", response_model=ReviewQueue, responses=_ERRORS)
+@router.get("/items", operation_id="listReviewItems", response_model=ReviewQueueList, responses=_ERRORS)
 async def items(
     request: Request,
     admin: AdminUser,
     filter: Annotated[QueueFilter, Query()] = "ai_drafts",
     limit: Annotated[int, Query(ge=1, le=200)] = 100,
     offset: Annotated[int, Query(ge=0, le=100_000)] = 0,
-) -> ReviewQueue:
+) -> ReviewQueueList:
     _hit(request, admin.user_id)
     rules = await _rules(request)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
@@ -513,9 +515,9 @@ async def items(
             limit,
             offset,
         )
-    return ReviewQueue(
+    return ReviewQueueList(
         items=[
-            QueueItem(
+            ReviewQueueItem(
                 id=r.id,
                 exam=r.exam,
                 status=r.status,
@@ -535,8 +537,8 @@ async def items(
     )
 
 
-@router.get("/items/{item_id}", operation_id="getReviewItem", response_model=ItemDetail, responses=_ERRORS)
-async def item(request: Request, admin: AdminUser, item_id: ItemId) -> ItemDetail:
+@router.get("/items/{item_id}", operation_id="getReviewItem", response_model=ReviewItemDetail, responses=_ERRORS)
+async def item(request: Request, admin: AdminUser, item_id: ItemId) -> ReviewItemDetail:
     _hit(request, admin.user_id)
     async with service_conn(_db(request)) as conn:
         return await _load(request, conn, item_id, admin.user_id)
@@ -548,7 +550,7 @@ async def item(request: Request, admin: AdminUser, item_id: ItemId) -> ItemDetai
 @router.post(
     "/items/{item_id}/reviews",
     operation_id="submitReview",
-    response_model=ReviewResult,
+    response_model=ReviewSubmitResult,
     responses={
         **_ERRORS,
         409: {
@@ -558,7 +560,9 @@ async def item(request: Request, admin: AdminUser, item_id: ItemId) -> ItemDetai
         422: {"model": ErrorResponse, "description": "validation_error or approve_contradicts_ratings"},
     },
 )
-async def submit_review(request: Request, admin: AdminUser, item_id: ItemId, body: ReviewIn) -> ReviewResult:
+async def submit_review(
+    request: Request, admin: AdminUser, item_id: ItemId, body: QuestionReviewIn
+) -> ReviewSubmitResult:
     _hit(request, admin.user_id)
     rules = await _rules(request)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
@@ -618,11 +622,13 @@ async def submit_review(request: Request, admin: AdminUser, item_id: ItemId, bod
     if outcome in ("published", "rejected", "revise"):
         schedule_reindex(request.app, ("questions",), ref_ids=[item_id])
     log.info("authoring.review", item=item_id, decision=body.decision, outcome=outcome)
-    return ReviewResult(outcome=outcome, item=detail)
+    return ReviewSubmitResult(outcome=outcome, item=detail)
 
 
-@router.post("/items/{item_id}/checks", operation_id="runReviewChecks", response_model=ItemDetail, responses=_ERRORS)
-async def checks(request: Request, admin: AdminUser, item_id: ItemId, body: ChecksIn) -> ItemDetail:
+@router.post(
+    "/items/{item_id}/checks", operation_id="runReviewChecks", response_model=ReviewItemDetail, responses=_ERRORS
+)
+async def checks(request: Request, admin: AdminUser, item_id: ItemId, body: ReviewChecksIn) -> ReviewItemDetail:
     """Re-run the linter; with `solver`, the blind solver too (model calls, job reserve). The result is stored on the
     item so the publish gate reads it."""
     _hit(request, admin.user_id)
@@ -669,9 +675,9 @@ def _ctx() -> Any:
 
 
 @router.post(
-    "/items/{item_id}/resubmit", operation_id="resubmitReviewItem", response_model=ItemDetail, responses=_ERRORS
+    "/items/{item_id}/resubmit", operation_id="resubmitReviewItem", response_model=ReviewItemDetail, responses=_ERRORS
 )
-async def resubmit(request: Request, admin: AdminUser, item_id: ItemId) -> ItemDetail:
+async def resubmit(request: Request, admin: AdminUser, item_id: ItemId) -> ReviewItemDetail:
     """A revised draft goes back to review as a new round (statistics reset). The linter must pass first."""
     _hit(request, admin.user_id)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
@@ -692,9 +698,14 @@ async def resubmit(request: Request, admin: AdminUser, item_id: ItemId) -> ItemD
 
 
 @router.post(
-    "/items/{item_id}/psychometrics", operation_id="actOnPsychometrics", response_model=ItemDetail, responses=_ERRORS
+    "/items/{item_id}/psychometrics",
+    operation_id="actOnPsychometrics",
+    response_model=ReviewItemDetail,
+    responses=_ERRORS,
 )
-async def psychometric_action(request: Request, admin: AdminUser, item_id: ItemId, body: PsychIn) -> ItemDetail:
+async def psychometric_action(
+    request: Request, admin: AdminUser, item_id: ItemId, body: ReviewPsychometricsIn
+) -> ReviewItemDetail:
     """Keep (acknowledge the flags), revise (back to draft) or retire a flagged item. Retiring needs `act_min_n`
     responses: below that a flag is all the data supports."""
     _hit(request, admin.user_id)
@@ -729,39 +740,39 @@ async def psychometric_action(request: Request, admin: AdminUser, item_id: ItemI
 # ── what to author ──
 
 
-@router.get("/gaps", operation_id="listAuthoringGaps", response_model=GapList, responses=_ERRORS)
-async def gaps(request: Request, admin: AdminUser) -> GapList:
+@router.get("/gaps", operation_id="listAuthoringGaps", response_model=AuthoringGapList, responses=_ERRORS)
+async def gaps(request: Request, admin: AdminUser) -> AuthoringGapList:
     _hit(request, admin.user_id)
     rules = await _rules(request)
     found = await PgAuthoringStore(_db(request)).gaps(rules.target_exams, rules.min_published_per_topic, 60)
-    return GapList(
+    return AuthoringGapList(
         items=[
-            GapOut(exam=g.exam, topic_id=g.topic_id, label=g.label, published=g.published, pending=g.pending)
+            AuthoringGap(exam=g.exam, topic_id=g.topic_id, label=g.label, published=g.published, pending=g.pending)
             for g in found
         ],
         min_published=rules.min_published_per_topic,
     )
 
 
-@router.get("/taxonomy", operation_id="getAuthoringTaxonomy", response_model=TaxonomyList, responses=_ERRORS)
+@router.get("/taxonomy", operation_id="getAuthoringTaxonomy", response_model=AuthoringTaxonomyList, responses=_ERRORS)
 async def taxonomy_for(
     request: Request, admin: AdminUser, exam: Annotated[Literal["step1", "step2ck"], Query()]
-) -> TaxonomyList:
+) -> AuthoringTaxonomyList:
     _hit(request, admin.user_id)
     tax = await PgAuthoringStore(_db(request)).taxonomy()
     second = "discipline" if exam == "step1" else "clinical_science"
 
-    def pick(kind: str) -> list[TaxonomyRef]:
+    def pick(kind: str) -> list[AuthoringTaxonomyRef]:
         nodes = sorted((n for n in tax.values() if n.kind == kind and exam in n.exam), key=lambda n: (n.sort, n.id))
-        return [TaxonomyRef(id=n.id, kind=n.kind, label=n.label) for n in nodes]
+        return [AuthoringTaxonomyRef(id=n.id, kind=n.kind, label=n.label) for n in nodes]
 
-    return TaxonomyList(
+    return AuthoringTaxonomyList(
         systems=pick("system"), seconds=pick(second), competencies=pick("competency"), topics=pick("topic")
     )
 
 
-def _job_out(j: Any) -> RunJobOut:
-    return RunJobOut(
+def _job_out(j: Any) -> AuthoringRunJob:
+    return AuthoringRunJob(
         id=j.id,
         status=j.status,
         count=j.count,
@@ -790,14 +801,14 @@ async def deps_for(request: Request, rules: AuthoringRules) -> Deps:
     "/runs",
     operation_id="startAuthoringRun",
     status_code=202,
-    response_model=RunJobOut,
+    response_model=AuthoringRunJob,
     responses={
         **_ERRORS,
         409: {"model": ErrorResponse, "description": "run_active"},
         422: {"model": ErrorResponse, "description": "cell_invalid"},
     },
 )
-async def start_run(request: Request, admin: AdminUser, body: RunIn) -> RunJobOut:
+async def start_run(request: Request, admin: AdminUser, body: AuthoringRunIn) -> AuthoringRunJob:
     """Draft `count` items for one taxonomy cell in the background. They land in the review queue; nothing is
     published. Model calls go through the gateway's free chains and the job reserve."""
     _hit(request, admin.user_id)
@@ -826,8 +837,8 @@ async def start_run(request: Request, admin: AdminUser, body: RunIn) -> RunJobOu
     return _job_out(job)
 
 
-@router.get("/runs", operation_id="listAuthoringRuns", response_model=RunList, responses=_ERRORS)
-async def runs(request: Request, admin: AdminUser) -> RunList:
+@router.get("/runs", operation_id="listAuthoringRuns", response_model=AuthoringRunList, responses=_ERRORS)
+async def runs(request: Request, admin: AdminUser) -> AuthoringRunList:
     _hit(request, admin.user_id)
     async with service_conn(_db(request)) as conn:
         cur = await conn.execute(
@@ -835,17 +846,19 @@ async def runs(request: Request, admin: AdminUser) -> RunList:
             " from public.authoring_runs order by created_at desc limit 50"
         )
         rows = await cur.fetchall()
-    return RunList(
+    return AuthoringRunList(
         active=[_job_out(j) for j in sorted(_jobs(request).jobs.values(), key=lambda j: j.started_at, reverse=True)],
-        items=[RunRow(**r) for r in rows],
+        items=[AuthoringRunRow(**r) for r in rows],
     )
 
 
-@router.post("/psychometrics/run", operation_id="runPsychometrics", response_model=PsychRunOut, responses=_ERRORS)
-async def run_psychometrics(request: Request, admin: AdminUser) -> PsychRunOut:
+@router.post(
+    "/psychometrics/run", operation_id="runPsychometrics", response_model=PsychometricsRunOut, responses=_ERRORS
+)
+async def run_psychometrics(request: Request, admin: AdminUser) -> PsychometricsRunOut:
     _hit(request, admin.user_id)
     stats = await psychometrics_job.run(_db(request), await _rules(request))
-    return PsychRunOut(**stats.as_dict())
+    return PsychometricsRunOut(**stats.as_dict())
 
 
 # ── errors and install ──

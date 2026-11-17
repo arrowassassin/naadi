@@ -119,7 +119,7 @@ def to_row(
 # ── review ──
 
 
-class Ratings(_Strict):
+class ReviewRatings(_Strict):
     """Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy."""
 
     accuracy: Accuracy
@@ -135,11 +135,11 @@ class Ratings(_Strict):
         return list(dict.fromkeys(v))
 
 
-class ReviewIn(_Strict):
+class QuestionReviewIn(_Strict):
     """A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the
     same fields the approval uses."""
 
     decision: Decision
-    ratings: Ratings
+    ratings: ReviewRatings
     note: Annotated[str | None, Field(max_length=2000)] = None
     request_second: bool = False

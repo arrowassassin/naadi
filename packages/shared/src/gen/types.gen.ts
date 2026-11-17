@@ -404,29 +404,209 @@ export type AttemptState = {
 };
 
 /**
- * AuthorInfo
+ * AuthoringGap
  */
-export type AuthorInfo = {
+export type AuthoringGap = {
   /**
-   * At
+   * Exam
    */
-  at: string | null;
+  exam: string;
   /**
-   * Excerpt Ids
+   * Label
    */
-  excerpt_ids: Array<string>;
+  label: string;
   /**
-   * Model
+   * Pending
    */
-  model: string | null;
+  pending: number;
   /**
-   * Prompt Hash
+   * Published
    */
-  prompt_hash: string | null;
+  published: number;
   /**
-   * Run Id
+   * Topic Id
    */
-  run_id: string | null;
+  topic_id: string;
+};
+
+/**
+ * AuthoringGapList
+ */
+export type AuthoringGapList = {
+  /**
+   * Items
+   */
+  items: Array<AuthoringGap>;
+  /**
+   * Min Published
+   */
+  min_published: number;
+};
+
+/**
+ * AuthoringRunIn
+ */
+export type AuthoringRunIn = {
+  /**
+   * Competency Id
+   */
+  competency_id?: string | null;
+  /**
+   * Count
+   */
+  count?: number;
+  /**
+   * Difficulty
+   */
+  difficulty?: "easy" | "medium" | "hard";
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck";
+  /**
+   * Objective
+   */
+  objective?: string | null;
+  /**
+   * Second Id
+   */
+  second_id?: string | null;
+  /**
+   * Topic Id
+   */
+  topic_id: string;
+};
+
+/**
+ * AuthoringRunJob
+ */
+export type AuthoringRunJob = {
+  /**
+   * Count
+   */
+  count: number;
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Finished At
+   */
+  finished_at: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Outcomes
+   */
+  outcomes: Array<string>;
+  /**
+   * Started At
+   */
+  started_at: string;
+  /**
+   * Status
+   */
+  status: "running" | "done" | "failed";
+};
+
+/**
+ * AuthoringRunList
+ */
+export type AuthoringRunList = {
+  /**
+   * Active
+   */
+  active: Array<AuthoringRunJob>;
+  /**
+   * Items
+   */
+  items: Array<AuthoringRunRow>;
+};
+
+/**
+ * AuthoringRunRow
+ */
+export type AuthoringRunRow = {
+  /**
+   * Attempts
+   */
+  attempts: number;
+  /**
+   * Cell
+   */
+  cell: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Difficulty
+   */
+  difficulty: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Llm Calls
+   */
+  llm_calls: number;
+  /**
+   * Outcome
+   */
+  outcome: string;
+  /**
+   * Question Id
+   */
+  question_id: string | null;
+  /**
+   * Trigger
+   */
+  trigger: string;
+};
+
+/**
+ * AuthoringTaxonomyList
+ */
+export type AuthoringTaxonomyList = {
+  /**
+   * Competencies
+   */
+  competencies: Array<AuthoringTaxonomyRef>;
+  /**
+   * Seconds
+   */
+  seconds: Array<AuthoringTaxonomyRef>;
+  /**
+   * Systems
+   */
+  systems: Array<AuthoringTaxonomyRef>;
+  /**
+   * Topics
+   */
+  topics: Array<AuthoringTaxonomyRef>;
+};
+
+/**
+ * AuthoringTaxonomyRef
+ */
+export type AuthoringTaxonomyRef = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Label
+   */
+  label: string;
 };
 
 /**
@@ -1349,16 +1529,6 @@ export type ChapterProgress = {
 };
 
 /**
- * ChecksIn
- */
-export type ChecksIn = {
-  /**
-   * Solver
-   */
-  solver?: boolean;
-};
-
-/**
  * CoachActionOut
  */
 export type CoachActionOut = {
@@ -2175,30 +2345,6 @@ export type FieldError = {
 };
 
 /**
- * Finding
- */
-export type Finding = {
-  /**
-   * Params
-   */
-  params: {
-    [key: string]: JsonValue;
-  };
-  /**
-   * Rule
-   */
-  rule: string;
-  /**
-   * Severity
-   */
-  severity: "error" | "warn" | "info";
-  /**
-   * Target
-   */
-  target: string;
-};
-
-/**
  * FlagIn
  */
 export type FlagIn = {
@@ -2292,72 +2438,6 @@ export type FsrsSchedulerConfig = {
     number,
     number,
   ];
-};
-
-/**
- * GapList
- */
-export type GapList = {
-  /**
-   * Items
-   */
-  items: Array<GapOut>;
-  /**
-   * Min Published
-   */
-  min_published: number;
-};
-
-/**
- * GapOut
- */
-export type GapOut = {
-  /**
-   * Exam
-   */
-  exam: string;
-  /**
-   * Label
-   */
-  label: string;
-  /**
-   * Pending
-   */
-  pending: number;
-  /**
-   * Published
-   */
-  published: number;
-  /**
-   * Topic Id
-   */
-  topic_id: string;
-};
-
-/**
- * GatesOut
- */
-export type GatesOut = {
-  /**
-   * Blockers
-   */
-  blockers: Array<string>;
-  /**
-   * Cross Check Ok
-   */
-  cross_check_ok: boolean;
-  /**
-   * Independent
-   */
-  independent: boolean;
-  /**
-   * Lint Ok
-   */
-  lint_ok: boolean;
-  /**
-   * Source Ok
-   */
-  source_ok: boolean;
 };
 
 /**
@@ -2909,95 +2989,47 @@ export type Insight = {
 };
 
 /**
- * ItemDetail
+ * ItemStatsOut
  */
-export type ItemDetail = {
+export type ItemStatsOut = {
   /**
-   * Answer
+   * Can Act
    */
-  answer: string;
+  can_act: boolean;
   /**
-   * Answer Html
+   * Computed At
    */
-  answer_html: string | null;
-  author: AuthorInfo | null;
-  can_review: Permission;
+  computed_at: string | null;
   /**
-   * Created At
+   * Flags
    */
-  created_at: string;
+  flags: Array<string>;
   /**
-   * Difficulty
+   * Median Seconds
    */
-  difficulty: string | null;
+  median_seconds: number | null;
   /**
-   * Educational Objective
+   * N
    */
-  educational_objective: string | null;
+  n: number;
   /**
-   * Exam
+   * Option Counts
    */
-  exam: string;
+  option_counts: {
+    [key: string]: number;
+  };
   /**
-   * Explanation Html
+   * P Correct
    */
-  explanation_html: string | null;
-  gates: GatesOut;
+  p_correct: number | null;
   /**
-   * Hidden Reviews
+   * Point Biserial
    */
-  hidden_reviews: number;
+  point_biserial: number | null;
   /**
-   * Id
+   * Report Count
    */
-  id: string;
-  /**
-   * Lint
-   */
-  lint: Array<Finding>;
-  /**
-   * Options
-   */
-  options: Array<OptionOut>;
-  /**
-   * Origin
-   */
-  origin: "ai" | "seed";
-  /**
-   * Required Approvals
-   */
-  required_approvals: number;
-  resolution: ResolutionOut;
-  /**
-   * Reviews
-   */
-  reviews: Array<NaadiApiAuthoringRoutesReviewOut>;
-  solver: SolverOut | null;
-  /**
-   * Solver Findings
-   */
-  solver_findings: Array<Finding>;
-  /**
-   * Source Id
-   */
-  source_id: string | null;
-  stats: StatsOut | null;
-  /**
-   * Status
-   */
-  status: string;
-  /**
-   * Stem Html
-   */
-  stem_html: string;
-  /**
-   * Taxonomy
-   */
-  taxonomy: Array<TaxonomyRef>;
-  /**
-   * Why Not Html
-   */
-  why_not_html: string | null;
+  report_count: number;
 };
 
 /**
@@ -3987,20 +4019,6 @@ export type OnboardingValues = {
 };
 
 /**
- * OptionOut
- */
-export type OptionOut = {
-  /**
-   * Html
-   */
-  html: string;
-  /**
-   * Label
-   */
-  label: string;
-};
-
-/**
  * PageCreate
  */
 export type PageCreate = {
@@ -4076,20 +4094,6 @@ export type PathwayStageOut = {
    * Total
    */
   total: number;
-};
-
-/**
- * Permission
- */
-export type Permission = {
-  /**
-   * Allowed
-   */
-  allowed: boolean;
-  /**
-   * Reason
-   */
-  reason?: string | null;
 };
 
 /**
@@ -4552,19 +4556,9 @@ export type Profile = {
 };
 
 /**
- * PsychIn
+ * PsychometricsRunOut
  */
-export type PsychIn = {
-  /**
-   * Action
-   */
-  action: "keep" | "revise" | "retire";
-};
-
-/**
- * PsychRunOut
- */
-export type PsychRunOut = {
+export type PsychometricsRunOut = {
   /**
    * Flagged
    */
@@ -4691,6 +4685,28 @@ export type QuestionOption = {
 };
 
 /**
+ * QuestionReviewIn
+ *
+ * A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the
+ * same fields the approval uses.
+ */
+export type QuestionReviewIn = {
+  /**
+   * Decision
+   */
+  decision: "approve" | "revise" | "reject";
+  /**
+   * Note
+   */
+  note?: string | null;
+  ratings: ReviewRatings;
+  /**
+   * Request Second
+   */
+  request_second?: boolean;
+};
+
+/**
  * QuestionView
  */
 export type QuestionView = {
@@ -4734,64 +4750,6 @@ export type QuestionView = {
 };
 
 /**
- * QueueItem
- */
-export type QueueItem = {
-  /**
-   * Difficulty
-   */
-  difficulty: string | null;
-  /**
-   * Errors
-   */
-  errors: number;
-  /**
-   * Exam
-   */
-  exam: string;
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Mine Submitted
-   */
-  mine_submitted: boolean;
-  /**
-   * Needed
-   */
-  needed: number;
-  /**
-   * Origin
-   */
-  origin: "ai" | "seed";
-  /**
-   * Psych Flags
-   */
-  psych_flags: Array<string>;
-  /**
-   * State
-   */
-  state: string;
-  /**
-   * Status
-   */
-  status: string;
-  /**
-   * Stem Preview
-   */
-  stem_preview: string;
-  /**
-   * Submitted
-   */
-  submitted: number;
-  /**
-   * Warnings
-   */
-  warnings: number;
-};
-
-/**
  * Quota
  */
 export type Quota = {
@@ -4823,83 +4781,6 @@ export type Quota = {
    * Used
    */
   used: number;
-};
-
-/**
- * Ratings
- *
- * Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy.
- */
-export type Ratings = {
-  /**
-   * Accuracy
-   */
-  accuracy: "correct" | "minor_issue" | "incorrect";
-  /**
-   * Cognitive Level
-   */
-  cognitive_level: "recall" | "application" | "analysis";
-  /**
-   * Difficulty
-   */
-  difficulty: "easy" | "medium" | "hard";
-  /**
-   * Flaws
-   */
-  flaws?: Array<
-    | "not_homogeneous"
-    | "key_too_long"
-    | "grammatical_cue"
-    | "logical_cue"
-    | "word_repeat"
-    | "convergence"
-    | "absolute_terms"
-    | "negative_lead_in"
-    | "cannot_cover_options"
-    | "irrelevant_difficulty"
-    | "hinged"
-    | "stereotyped"
-    | "other"
-  >;
-  /**
-   * Single Best Answer
-   */
-  single_best_answer: boolean;
-  /**
-   * Taxonomy Ok
-   */
-  taxonomy_ok: boolean;
-};
-
-/**
- * RatingsOut
- */
-export type RatingsOut = {
-  /**
-   * Accuracy
-   */
-  accuracy?: string | null;
-  /**
-   * Cognitive Level
-   */
-  cognitive_level?: string | null;
-  /**
-   * Difficulty
-   */
-  difficulty?: string | null;
-  /**
-   * Flaws
-   */
-  flaws?: Array<string>;
-  /**
-   * Single Best Answer
-   */
-  single_best_answer?: boolean | null;
-  /**
-   * Taxonomy Ok
-   */
-  taxonomy_ok?: boolean | null;
-  [key: string]: unknown;
 };
 
 /**
@@ -5077,28 +4958,6 @@ export type ReportIssueOut = {
 };
 
 /**
- * ResolutionOut
- */
-export type ResolutionOut = {
-  /**
-   * Needed
-   */
-  needed: number;
-  /**
-   * Round
-   */
-  round: number;
-  /**
-   * State
-   */
-  state: string;
-  /**
-   * Submitted
-   */
-  submitted: number;
-};
-
-/**
  * ResultQuestion
  */
 export type ResultQuestion = {
@@ -5223,20 +5082,533 @@ export type RetentionOut = {
 };
 
 /**
- * ReviewQueue
+ * ReviewAuthorInfo
  */
-export type ReviewQueue = {
+export type ReviewAuthorInfo = {
   /**
-   * Items
+   * At
    */
-  items: Array<QueueItem>;
+  at: string | null;
+  /**
+   * Excerpt Ids
+   */
+  excerpt_ids: Array<string>;
+  /**
+   * Model
+   */
+  model: string | null;
+  /**
+   * Prompt Hash
+   */
+  prompt_hash: string | null;
+  /**
+   * Run Id
+   */
+  run_id: string | null;
 };
 
 /**
- * ReviewResult
+ * ReviewChecksIn
  */
-export type ReviewResult = {
-  item: ItemDetail;
+export type ReviewChecksIn = {
+  /**
+   * Solver
+   */
+  solver?: boolean;
+};
+
+/**
+ * ReviewEntryOut
+ */
+export type ReviewEntryOut = {
+  /**
+   * Adjudication
+   */
+  adjudication: boolean;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Decision
+   */
+  decision: "approve" | "revise" | "reject";
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Is Mine
+   */
+  is_mine: boolean;
+  /**
+   * Note
+   */
+  note: string | null;
+  ratings: ReviewRatingsOut;
+  /**
+   * Request Second
+   */
+  request_second: boolean;
+  /**
+   * Round
+   */
+  round: number;
+};
+
+/**
+ * ReviewFinding
+ */
+export type ReviewFinding = {
+  /**
+   * Params
+   */
+  params: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Rule
+   */
+  rule: string;
+  /**
+   * Severity
+   */
+  severity: "error" | "warn" | "info";
+  /**
+   * Target
+   */
+  target: string;
+};
+
+/**
+ * ReviewGatesOut
+ */
+export type ReviewGatesOut = {
+  /**
+   * Blockers
+   */
+  blockers: Array<string>;
+  /**
+   * Cross Check Ok
+   */
+  cross_check_ok: boolean;
+  /**
+   * Independent
+   */
+  independent: boolean;
+  /**
+   * Lint Ok
+   */
+  lint_ok: boolean;
+  /**
+   * Source Ok
+   */
+  source_ok: boolean;
+};
+
+/**
+ * ReviewIn
+ */
+export type ReviewIn = {
+  /**
+   * Client Review Id
+   *
+   * Idempotency key: the same id returns the first result
+   */
+  client_review_id: string;
+  /**
+   * Duration Ms
+   */
+  duration_ms?: number | null;
+  /**
+   * Rating
+   *
+   * 1 Again, 2 Hard, 3 Good, 4 Easy
+   */
+  rating: 1 | 2 | 3 | 4;
+  /**
+   * Reviewed At
+   *
+   * When the student rated (offline reviews); default now, never in the future
+   */
+  reviewed_at?: string | null;
+};
+
+/**
+ * ReviewItemDetail
+ */
+export type ReviewItemDetail = {
+  /**
+   * Answer
+   */
+  answer: string;
+  /**
+   * Answer Html
+   */
+  answer_html: string | null;
+  author: ReviewAuthorInfo | null;
+  can_review: ReviewPermission;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Difficulty
+   */
+  difficulty: string | null;
+  /**
+   * Educational Objective
+   */
+  educational_objective: string | null;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Explanation Html
+   */
+  explanation_html: string | null;
+  gates: ReviewGatesOut;
+  /**
+   * Hidden Reviews
+   */
+  hidden_reviews: number;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Lint
+   */
+  lint: Array<ReviewFinding>;
+  /**
+   * Options
+   */
+  options: Array<ReviewOptionOut>;
+  /**
+   * Origin
+   */
+  origin: "ai" | "seed";
+  /**
+   * Required Approvals
+   */
+  required_approvals: number;
+  resolution: ReviewResolutionOut;
+  /**
+   * Reviews
+   */
+  reviews: Array<ReviewEntryOut>;
+  solver: ReviewSolverOut | null;
+  /**
+   * Solver Findings
+   */
+  solver_findings: Array<ReviewFinding>;
+  /**
+   * Source Id
+   */
+  source_id: string | null;
+  stats: ItemStatsOut | null;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+  /**
+   * Taxonomy
+   */
+  taxonomy: Array<AuthoringTaxonomyRef>;
+  /**
+   * Why Not Html
+   */
+  why_not_html: string | null;
+};
+
+/**
+ * ReviewOptionOut
+ */
+export type ReviewOptionOut = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
+ * ReviewOut
+ */
+export type ReviewOut = {
+  /**
+   * Card Id
+   */
+  card_id: string;
+  /**
+   * Client Review Id
+   */
+  client_review_id: string;
+  /**
+   * Rating
+   */
+  rating: number;
+  /**
+   * Replayed
+   *
+   * true when this client_review_id was already applied
+   */
+  replayed: boolean;
+  /**
+   * Reviewed At
+   */
+  reviewed_at: string;
+  schedule: CardSchedule;
+  /**
+   * Scheduled Days
+   */
+  scheduled_days: number;
+};
+
+/**
+ * ReviewPermission
+ */
+export type ReviewPermission = {
+  /**
+   * Allowed
+   */
+  allowed: boolean;
+  /**
+   * Reason
+   */
+  reason?: string | null;
+};
+
+/**
+ * ReviewPsychometricsIn
+ */
+export type ReviewPsychometricsIn = {
+  /**
+   * Action
+   */
+  action: "keep" | "revise" | "retire";
+};
+
+/**
+ * ReviewQueueItem
+ */
+export type ReviewQueueItem = {
+  /**
+   * Difficulty
+   */
+  difficulty: string | null;
+  /**
+   * Errors
+   */
+  errors: number;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Mine Submitted
+   */
+  mine_submitted: boolean;
+  /**
+   * Needed
+   */
+  needed: number;
+  /**
+   * Origin
+   */
+  origin: "ai" | "seed";
+  /**
+   * Psych Flags
+   */
+  psych_flags: Array<string>;
+  /**
+   * State
+   */
+  state: string;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Stem Preview
+   */
+  stem_preview: string;
+  /**
+   * Submitted
+   */
+  submitted: number;
+  /**
+   * Warnings
+   */
+  warnings: number;
+};
+
+/**
+ * ReviewQueueList
+ */
+export type ReviewQueueList = {
+  /**
+   * Items
+   */
+  items: Array<ReviewQueueItem>;
+};
+
+/**
+ * ReviewRatings
+ *
+ * Part C: accuracy, single best answer, cognitive level, flaws, difficulty, taxonomy.
+ */
+export type ReviewRatings = {
+  /**
+   * Accuracy
+   */
+  accuracy: "correct" | "minor_issue" | "incorrect";
+  /**
+   * Cognitive Level
+   */
+  cognitive_level: "recall" | "application" | "analysis";
+  /**
+   * Difficulty
+   */
+  difficulty: "easy" | "medium" | "hard";
+  /**
+   * Flaws
+   */
+  flaws?: Array<
+    | "not_homogeneous"
+    | "key_too_long"
+    | "grammatical_cue"
+    | "logical_cue"
+    | "word_repeat"
+    | "convergence"
+    | "absolute_terms"
+    | "negative_lead_in"
+    | "cannot_cover_options"
+    | "irrelevant_difficulty"
+    | "hinged"
+    | "stereotyped"
+    | "other"
+  >;
+  /**
+   * Single Best Answer
+   */
+  single_best_answer: boolean;
+  /**
+   * Taxonomy Ok
+   */
+  taxonomy_ok: boolean;
+};
+
+/**
+ * ReviewRatingsOut
+ */
+export type ReviewRatingsOut = {
+  /**
+   * Accuracy
+   */
+  accuracy?: string | null;
+  /**
+   * Cognitive Level
+   */
+  cognitive_level?: string | null;
+  /**
+   * Difficulty
+   */
+  difficulty?: string | null;
+  /**
+   * Flaws
+   */
+  flaws?: Array<string>;
+  /**
+   * Single Best Answer
+   */
+  single_best_answer?: boolean | null;
+  /**
+   * Taxonomy Ok
+   */
+  taxonomy_ok?: boolean | null;
+  [key: string]: unknown;
+};
+
+/**
+ * ReviewResolutionOut
+ */
+export type ReviewResolutionOut = {
+  /**
+   * Needed
+   */
+  needed: number;
+  /**
+   * Round
+   */
+  round: number;
+  /**
+   * State
+   */
+  state: string;
+  /**
+   * Submitted
+   */
+  submitted: number;
+};
+
+/**
+ * ReviewSolverOut
+ */
+export type ReviewSolverOut = {
+  /**
+   * Agrees
+   */
+  agrees: boolean | null;
+  /**
+   * Choice
+   */
+  choice: string | null;
+  /**
+   * Confidence
+   */
+  confidence: number | null;
+  /**
+   * Cover Matches
+   */
+  cover_matches: boolean | null;
+  /**
+   * Defensibility
+   */
+  defensibility: {
+    [key: string]: number;
+  };
+  /**
+   * Error
+   */
+  error: string | null;
+  /**
+   * Independent
+   */
+  independent: boolean;
+  /**
+   * Model
+   */
+  model: string | null;
+};
+
+/**
+ * ReviewSubmitResult
+ */
+export type ReviewSubmitResult = {
+  item: ReviewItemDetail;
   /**
    * Outcome
    */
@@ -5271,132 +5643,6 @@ export type ReviewSummary = {
    * Seed Spot Check
    */
   seed_spot_check: number;
-};
-
-/**
- * RunIn
- */
-export type RunIn = {
-  /**
-   * Competency Id
-   */
-  competency_id?: string | null;
-  /**
-   * Count
-   */
-  count?: number;
-  /**
-   * Difficulty
-   */
-  difficulty?: "easy" | "medium" | "hard";
-  /**
-   * Exam
-   */
-  exam: "step1" | "step2ck";
-  /**
-   * Objective
-   */
-  objective?: string | null;
-  /**
-   * Second Id
-   */
-  second_id?: string | null;
-  /**
-   * Topic Id
-   */
-  topic_id: string;
-};
-
-/**
- * RunJobOut
- */
-export type RunJobOut = {
-  /**
-   * Count
-   */
-  count: number;
-  /**
-   * Error
-   */
-  error: string | null;
-  /**
-   * Finished At
-   */
-  finished_at: string | null;
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Outcomes
-   */
-  outcomes: Array<string>;
-  /**
-   * Started At
-   */
-  started_at: string;
-  /**
-   * Status
-   */
-  status: "running" | "done" | "failed";
-};
-
-/**
- * RunList
- */
-export type RunList = {
-  /**
-   * Active
-   */
-  active: Array<RunJobOut>;
-  /**
-   * Items
-   */
-  items: Array<RunRow>;
-};
-
-/**
- * RunRow
- */
-export type RunRow = {
-  /**
-   * Attempts
-   */
-  attempts: number;
-  /**
-   * Cell
-   */
-  cell: {
-    [key: string]: JsonValue;
-  };
-  /**
-   * Created At
-   */
-  created_at: string;
-  /**
-   * Difficulty
-   */
-  difficulty: string | null;
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Llm Calls
-   */
-  llm_calls: number;
-  /**
-   * Outcome
-   */
-  outcome: string;
-  /**
-   * Question Id
-   */
-  question_id: string | null;
-  /**
-   * Trigger
-   */
-  trigger: string;
 };
 
 /**
@@ -5629,46 +5875,6 @@ export type SingleBlockCreate = {
 };
 
 /**
- * SolverOut
- */
-export type SolverOut = {
-  /**
-   * Agrees
-   */
-  agrees: boolean | null;
-  /**
-   * Choice
-   */
-  choice: string | null;
-  /**
-   * Confidence
-   */
-  confidence: number | null;
-  /**
-   * Cover Matches
-   */
-  cover_matches: boolean | null;
-  /**
-   * Defensibility
-   */
-  defensibility: {
-    [key: string]: number;
-  };
-  /**
-   * Error
-   */
-  error: string | null;
-  /**
-   * Independent
-   */
-  independent: boolean;
-  /**
-   * Model
-   */
-  model: string | null;
-};
-
-/**
  * SourceRef
  */
 export type SourceRef = {
@@ -5688,50 +5894,6 @@ export type SourceRef = {
    * Url
    */
   url: string | null;
-};
-
-/**
- * StatsOut
- */
-export type StatsOut = {
-  /**
-   * Can Act
-   */
-  can_act: boolean;
-  /**
-   * Computed At
-   */
-  computed_at: string | null;
-  /**
-   * Flags
-   */
-  flags: Array<string>;
-  /**
-   * Median Seconds
-   */
-  median_seconds: number | null;
-  /**
-   * N
-   */
-  n: number;
-  /**
-   * Option Counts
-   */
-  option_counts: {
-    [key: string]: number;
-  };
-  /**
-   * P Correct
-   */
-  p_correct: number | null;
-  /**
-   * Point Biserial
-   */
-  point_biserial: number | null;
-  /**
-   * Report Count
-   */
-  report_count: number;
 };
 
 /**
@@ -5862,46 +6024,6 @@ export type Target = {
    * Type
    */
   type: "section" | "question" | "note" | "ink" | "pathway";
-};
-
-/**
- * TaxonomyList
- */
-export type TaxonomyList = {
-  /**
-   * Competencies
-   */
-  competencies: Array<TaxonomyRef>;
-  /**
-   * Seconds
-   */
-  seconds: Array<TaxonomyRef>;
-  /**
-   * Systems
-   */
-  systems: Array<TaxonomyRef>;
-  /**
-   * Topics
-   */
-  topics: Array<TaxonomyRef>;
-};
-
-/**
- * TaxonomyRef
- */
-export type TaxonomyRef = {
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Kind
-   */
-  kind: string;
-  /**
-   * Label
-   */
-  label: string;
 };
 
 /**
@@ -6300,128 +6422,6 @@ export type WeightOverlay = {
    * Official share of the exam, percent (low end)
    */
   weight_min: number | null;
-};
-
-/**
- * ReviewIn
- *
- * A reviewer's submission. `ratings` is required for every decision: a revise or a reject says why in the
- * same fields the approval uses.
- */
-export type NaadiApiAuthoringModelsReviewIn = {
-  /**
-   * Decision
-   */
-  decision: "approve" | "revise" | "reject";
-  /**
-   * Note
-   */
-  note?: string | null;
-  ratings: Ratings;
-  /**
-   * Request Second
-   */
-  request_second?: boolean;
-};
-
-/**
- * ReviewOut
- */
-export type NaadiApiAuthoringRoutesReviewOut = {
-  /**
-   * Adjudication
-   */
-  adjudication: boolean;
-  /**
-   * Created At
-   */
-  created_at: string;
-  /**
-   * Decision
-   */
-  decision: "approve" | "revise" | "reject";
-  /**
-   * Id
-   */
-  id: number;
-  /**
-   * Is Mine
-   */
-  is_mine: boolean;
-  /**
-   * Note
-   */
-  note: string | null;
-  ratings: RatingsOut;
-  /**
-   * Request Second
-   */
-  request_second: boolean;
-  /**
-   * Round
-   */
-  round: number;
-};
-
-/**
- * ReviewIn
- */
-export type NaadiApiCardsModelsReviewIn = {
-  /**
-   * Client Review Id
-   *
-   * Idempotency key: the same id returns the first result
-   */
-  client_review_id: string;
-  /**
-   * Duration Ms
-   */
-  duration_ms?: number | null;
-  /**
-   * Rating
-   *
-   * 1 Again, 2 Hard, 3 Good, 4 Easy
-   */
-  rating: 1 | 2 | 3 | 4;
-  /**
-   * Reviewed At
-   *
-   * When the student rated (offline reviews); default now, never in the future
-   */
-  reviewed_at?: string | null;
-};
-
-/**
- * ReviewOut
- */
-export type NaadiApiCardsModelsReviewOut = {
-  /**
-   * Card Id
-   */
-  card_id: string;
-  /**
-   * Client Review Id
-   */
-  client_review_id: string;
-  /**
-   * Rating
-   */
-  rating: number;
-  /**
-   * Replayed
-   *
-   * true when this client_review_id was already applied
-   */
-  replayed: boolean;
-  /**
-   * Reviewed At
-   */
-  reviewed_at: string;
-  schedule: CardSchedule;
-  /**
-   * Scheduled Days
-   */
-  scheduled_days: number;
 };
 
 /**
@@ -6942,7 +6942,7 @@ export type ListAuthoringGapsResponses = {
   /**
    * Successful Response
    */
-  200: GapList;
+  200: AuthoringGapList;
 };
 
 export type ListAuthoringGapsResponse = ListAuthoringGapsResponses[keyof ListAuthoringGapsResponses];
@@ -7000,7 +7000,7 @@ export type ListReviewItemsResponses = {
   /**
    * Successful Response
    */
-  200: ReviewQueue;
+  200: ReviewQueueList;
 };
 
 export type ListReviewItemsResponse = ListReviewItemsResponses[keyof ListReviewItemsResponses];
@@ -7050,13 +7050,13 @@ export type GetReviewItemResponses = {
   /**
    * Successful Response
    */
-  200: ItemDetail;
+  200: ReviewItemDetail;
 };
 
 export type GetReviewItemResponse = GetReviewItemResponses[keyof GetReviewItemResponses];
 
 export type RunReviewChecksData = {
-  body: ChecksIn;
+  body: ReviewChecksIn;
   path: {
     /**
      * Item Id
@@ -7100,13 +7100,13 @@ export type RunReviewChecksResponses = {
   /**
    * Successful Response
    */
-  200: ItemDetail;
+  200: ReviewItemDetail;
 };
 
 export type RunReviewChecksResponse = RunReviewChecksResponses[keyof RunReviewChecksResponses];
 
 export type ActOnPsychometricsData = {
-  body: PsychIn;
+  body: ReviewPsychometricsIn;
   path: {
     /**
      * Item Id
@@ -7150,7 +7150,7 @@ export type ActOnPsychometricsResponses = {
   /**
    * Successful Response
    */
-  200: ItemDetail;
+  200: ReviewItemDetail;
 };
 
 export type ActOnPsychometricsResponse = ActOnPsychometricsResponses[keyof ActOnPsychometricsResponses];
@@ -7200,13 +7200,13 @@ export type ResubmitReviewItemResponses = {
   /**
    * Successful Response
    */
-  200: ItemDetail;
+  200: ReviewItemDetail;
 };
 
 export type ResubmitReviewItemResponse = ResubmitReviewItemResponses[keyof ResubmitReviewItemResponses];
 
 export type SubmitReviewData = {
-  body: NaadiApiAuthoringModelsReviewIn;
+  body: QuestionReviewIn;
   path: {
     /**
      * Item Id
@@ -7254,7 +7254,7 @@ export type SubmitReviewResponses = {
   /**
    * Successful Response
    */
-  200: ReviewResult;
+  200: ReviewSubmitResult;
 };
 
 export type SubmitReviewResponse = SubmitReviewResponses[keyof SubmitReviewResponses];
@@ -7295,7 +7295,7 @@ export type RunPsychometricsResponses = {
   /**
    * Successful Response
    */
-  200: PsychRunOut;
+  200: PsychometricsRunOut;
 };
 
 export type RunPsychometricsResponse = RunPsychometricsResponses[keyof RunPsychometricsResponses];
@@ -7336,13 +7336,13 @@ export type ListAuthoringRunsResponses = {
   /**
    * Successful Response
    */
-  200: RunList;
+  200: AuthoringRunList;
 };
 
 export type ListAuthoringRunsResponse = ListAuthoringRunsResponses[keyof ListAuthoringRunsResponses];
 
 export type StartAuthoringRunData = {
-  body: RunIn;
+  body: AuthoringRunIn;
   path?: never;
   query?: never;
   url: "/api/admin/review/runs";
@@ -7385,7 +7385,7 @@ export type StartAuthoringRunResponses = {
   /**
    * Successful Response
    */
-  202: RunJobOut;
+  202: AuthoringRunJob;
 };
 
 export type StartAuthoringRunResponse = StartAuthoringRunResponses[keyof StartAuthoringRunResponses];
@@ -7476,7 +7476,7 @@ export type GetAuthoringTaxonomyResponses = {
   /**
    * Successful Response
    */
-  200: TaxonomyList;
+  200: AuthoringTaxonomyList;
 };
 
 export type GetAuthoringTaxonomyResponse = GetAuthoringTaxonomyResponses[keyof GetAuthoringTaxonomyResponses];
@@ -8868,7 +8868,7 @@ export type UpdateCardResponses = {
 export type UpdateCardResponse = UpdateCardResponses[keyof UpdateCardResponses];
 
 export type ReviewCardData = {
-  body: NaadiApiCardsModelsReviewIn;
+  body: ReviewIn;
   path: {
     /**
      * Card Id
@@ -8912,7 +8912,7 @@ export type ReviewCardResponses = {
   /**
    * Successful Response
    */
-  200: NaadiApiCardsModelsReviewOut;
+  200: ReviewOut;
 };
 
 export type ReviewCardResponse = ReviewCardResponses[keyof ReviewCardResponses];
