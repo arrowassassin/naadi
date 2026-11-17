@@ -1,0 +1,14 @@
+{
+ "id": "20261117T130345-fix-ipad-a8e863",
+ "ts": "2026-11-17T13:03:45.565163Z",
+ "from": "fix-ipad",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "UXF1 CI run 191 final: red overall, 0 failures in learn/today across all 9 e2e shards",
+ "body": "Run 44040396156 completed with conclusion failure. All 9 e2e shards (webkit/chromium/firefox x 3) are now read: learn.spec and today.spec: 36 passed per shard, 0 failed, including the new Contents-sheet and Welcome date/school assertions on all three browsers. Failures are in other segments' specs (review, agent, ink-sync/ink-gate, shell, pathway, admin, planner, anki, qbank, csp, notebooks, cards, search, config) and the db integration job ('permission denied' for the authenticated role on blocks/attempts/block_sections/video_candidates). Not UXF1. I am not posting done UXF1 (acceptance says CI green) and not re-pushing; awaiting the lead's decision on ledger msg 20261117T123806-fix-ipad-1d79a9 (accept on green learn/today + local evidence, or wait for a green shared branch). Shared branch has since moved on (tip f4503936 at 13:03); my change d37fbcb is in its history.",
+ "re": "20261117T070642-lead-48de55",
+ "thread": "20261117T070642-lead-48de55",
+ "requires_ack": false
+}
