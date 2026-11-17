@@ -1,0 +1,16 @@
+{
+ "id": "20261117T135546-integ-green-2-68c55f",
+ "ts": "2026-11-17T13:55:46.400985Z",
+ "from": "integ-green-2",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e7e80271 into claude/naadi-shared",
+ "body": "anki.spec creates .tmp before mkdtemp (CI fresh-checkout ordering failure)",
+ "refs": {
+  "commit": "e7e80271",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
