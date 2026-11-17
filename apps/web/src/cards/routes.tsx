@@ -1,7 +1,9 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate } from "@tanstack/react-router";
 import { useMe } from "../auth/api";
-import { ReviewPage } from "./ReviewPage";
+import { lazyPage } from "../shell/lazyPage";
+
+const ReviewPage = lazyPage(() => import("./ReviewPage").then((m) => m.ReviewPage));
 
 /** `/cards`: only while the server's `features.cards` is on (the flag that also shows the Builder link). */
 function CardsGate() {

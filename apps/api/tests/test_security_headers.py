@@ -121,3 +121,20 @@ def test_each_sandbox_document_is_served_with_its_own_policy(static_dir: Path) -
     mm = c.get("/sandbox/mermaid.html").headers["content-security-policy"]
     assert "https://www.youtube.com" in yt and "https://www.youtube.com" not in mm
     assert "sandbox allow-scripts" in yt
+
+
+def test_sandbox_documents_skip_the_trusted_types_rollout(
+    client_factory: Callable[..., TestClient], static_dir: Path
+) -> None:
+    """The opaque-origin sandbox pages exist to run their own scripts (Mermaid, the YouTube API): they keep their own
+    strict CSP and do not get the app's Trusted Types report-only policy; every app page does."""
+    (static_dir / "sandbox").mkdir()
+    for name in ("mermaid.html", "youtube.html"):
+        (static_dir / "sandbox" / name).write_text("<!doctype html><title>x</title>")
+    c = client_factory()
+    for name in ("mermaid.html", "youtube.html"):
+        h = c.get(f"/sandbox/{name}").headers
+        assert "sandbox" in h["content-security-policy"] or "frame-src" in h["content-security-policy"], name
+        assert "content-security-policy-report-only" not in h, name
+    for path in ("/", "/learn", "/api/health"):
+        assert "require-trusted-types-for" in c.get(path).headers["content-security-policy-report-only"], path

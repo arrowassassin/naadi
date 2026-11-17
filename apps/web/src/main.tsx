@@ -1,3 +1,6 @@
+// First import: installs the Trusted Types default policy before any other module can reach a script sink.
+import "./security/trustedTypes";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";

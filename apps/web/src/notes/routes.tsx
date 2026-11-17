@@ -1,7 +1,10 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate } from "@tanstack/react-router";
 import { useMe } from "../auth/api";
-import { NotesPage, type NotesSearch } from "./NotesPage";
+import { lazyPage } from "../shell/lazyPage";
+import type { NotesSearch } from "./NotesPage";
+
+const NotesPage = lazyPage(() => import("./NotesPage").then((m) => m.NotesPage));
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const COLORS = new Set(["lime", "violet", "amber"]);

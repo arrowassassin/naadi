@@ -1,4 +1,5 @@
 import { createElement, Fragment, type ReactNode } from "react";
+import { parseInertHtml } from "../security/trustedTypes";
 
 /**
  * Renders a small HTML fragment (question stems and options) as React elements through an allowlist:
@@ -73,7 +74,7 @@ function convert(node: Node, key: string, budget: Walk): ReactNode {
 
 export function sanitizeToReact(html: string, decorate?: HtmlTextDecorator): ReactNode {
   if (typeof DOMParser === "undefined") return html.replace(/<[^>]*>/g, "");
-  const doc = new DOMParser().parseFromString(`<body>${html}</body>`, "text/html");
+  const doc = parseInertHtml(`<body>${html}</body>`);
   const budget: Walk = { left: MAX_NODES, offset: 0, decorate };
   return Array.from(doc.body.childNodes).map((c, i) => convert(c, String(i), budget));
 }

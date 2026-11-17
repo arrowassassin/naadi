@@ -2,13 +2,16 @@ import { ErrorState } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate, Outlet } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import { ApiError } from "../auth/apiError";
-import { ExamPage } from "../exam/ExamPage";
-import { ResultsPage } from "../exam/results/ResultsPage";
-import { parseReviewSearch, ReviewPage } from "../exam/results/ReviewPage";
+import { parseReviewSearch } from "../exam/results/model";
+import { lazyPage } from "../shell/lazyPage";
 import { useBlock, useCreateSingleBlock } from "./api";
-import { BuilderPage } from "./BuilderPage";
 import { useCopy } from "./copy";
-import { QuestionPage } from "./QuestionPage";
+
+const ExamPage = lazyPage(() => import("../exam/ExamPage").then((m) => m.ExamPage));
+const ReviewPage = lazyPage(() => import("../exam/results/ReviewPage").then((m) => m.ReviewPage));
+const ResultsPage = lazyPage(() => import("../exam/results/ResultsPage").then((m) => m.ResultsPage));
+const BuilderPage = lazyPage(() => import("./BuilderPage").then((m) => m.BuilderPage));
+const QuestionPage = lazyPage(() => import("./QuestionPage").then((m) => m.QuestionPage));
 
 const ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;

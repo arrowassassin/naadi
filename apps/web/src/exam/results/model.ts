@@ -202,3 +202,12 @@ export function insightText(t: Translate, insight: Insight): string | null {
   if (!text.trim() || text === key || /\{\w+\}/.test(text)) return null;
   return text;
 }
+
+/** `/practice/blocks/$blockId/review/$n?filter=` (validated by the route before this page's chunk loads). */
+export interface ReviewSearch {
+  filter: ReviewFilter;
+}
+
+export function parseReviewSearch(s: Record<string, unknown>): ReviewSearch {
+  return { filter: isReviewFilter(s.filter) ? s.filter : "all" };
+}

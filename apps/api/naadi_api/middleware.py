@@ -61,8 +61,13 @@ class RequestContextMiddleware:
                 state["started"] = True
                 state["status"] = message["status"]
                 headers = MutableHeaders(scope=message)
+                # A route that sets its own complete CSP (the sandboxed Mermaid / YouTube documents, which exist to
+                # run their own scripts in an opaque origin) does not get the app's Trusted Types rollout either.
+                own_csp = "content-security-policy" in headers
                 for k, v in self._headers:
                     name = k.decode("latin-1")
+                    if own_csp and name == "content-security-policy-report-only":
+                        continue
                     if name not in headers:
                         headers.raw.append((k, v))
                 headers["x-request-id"] = rid

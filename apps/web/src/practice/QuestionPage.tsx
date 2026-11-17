@@ -14,6 +14,7 @@ import { useInkSettings } from "../ink/persist/settings";
 import { useInkLayer } from "../ink/persist/useInkLayer";
 import { ReportIssueDialog } from "../learn/ReportIssueDialog";
 import { QuickNoteDialog } from "../notes/QuickNoteDialog";
+import { parseInertHtml } from "../security/trustedTypes";
 import {
   isUnreachable,
   useBlock,
@@ -48,7 +49,7 @@ function Loading() {
 
 /** The text of trusted-but-unrendered HTML (DOMParser runs no scripts and loads nothing). */
 function htmlText(html: string): string {
-  return new DOMParser().parseFromString(html, "text/html").body.textContent?.trim() ?? "";
+  return parseInertHtml(html).body.textContent?.trim() ?? "";
 }
 
 function Explanation({ view, correct }: { view: QuestionView; correct: boolean | null }) {

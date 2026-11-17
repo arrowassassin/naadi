@@ -1,8 +1,11 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate } from "@tanstack/react-router";
 import { useMe } from "../auth/api";
+import { lazyPage } from "../shell/lazyPage";
 import type { Scope } from "./api";
-import { SearchPage, type SearchRouteSearch } from "./SearchPage";
+import type { SearchRouteSearch } from "./SearchPage";
+
+const SearchPage = lazyPage(() => import("./SearchPage").then((m) => m.SearchPage));
 
 const SCOPES: readonly Scope[] = ["all", "chapters", "notes", "handwriting", "questions", "uploads", "pathway", "web"];
 

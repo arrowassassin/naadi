@@ -2,8 +2,10 @@ import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate, Outlet } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { useMe } from "../auth/api";
-import { NotebookPage } from "./NotebookPage";
-import { NotebooksShelf } from "./NotebooksShelf";
+import { lazyPage } from "../shell/lazyPage";
+
+const NotebookPage = lazyPage(() => import("./NotebookPage").then((m) => m.NotebookPage));
+const NotebooksShelf = lazyPage(() => import("./NotebooksShelf").then((m) => m.NotebooksShelf));
 
 /** Notebook and page ids are UUIDs; the page is a 1-based number (clamped by the view). */
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;

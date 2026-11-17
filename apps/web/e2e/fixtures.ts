@@ -74,6 +74,18 @@ export function ignorableConsoleLine(text: string, sourceUrl: string): boolean {
 const BENIGN_FAILURE =
   /ERR_ABORTED|NS_BINDING_ABORTED|cancelled|canceled|ERR_INTERNET_DISCONNECTED|NS_ERROR_OFFLINE|appears to be offline/i;
 
+/**
+ * The browser's own CSP report delivery (report-uri, segment 22) is not a request of the app: a violation is judged
+ * from its own console line; the report POST itself may fail (e.g. while a test is offline).
+ */
+export function isCspReport(url: string): boolean {
+  try {
+    return new URL(url).pathname === "/api/csp-report";
+  } catch {
+    return false;
+  }
+}
+
 export function isBenignRequestFailure(errorText: string): boolean {
   return BENIGN_FAILURE.test(errorText);
 }
@@ -88,6 +100,7 @@ export const test = base.extend<Fixtures>({
       if (msg.type() !== "error") return;
       if (toolActive > 0 && msg.text() === TOOL_CSP_NOISE) return;
       if (ignorableConsoleLine(msg.text(), msg.location().url)) return;
+      if (msg.text().includes(FAILED_RESOURCE) && isCspReport(msg.location().url)) return;
       errors.push(`${msg.text()} @ ${msg.location().url}`);
     });
     page.on("pageerror", (err) => errors.push(`pageerror: ${err.message}`));
@@ -98,6 +111,7 @@ export const test = base.extend<Fixtures>({
     // makes (images, fetches, scripts, on any origin) counts; requests of embedded third-party frames do not.
     // Service-worker requests have no frame and are the worker's own business (it retries and caches).
     const fromMainFrame = (req: import("@playwright/test").Request): boolean => {
+      if (isCspReport(req.url())) return false;
       try {
         return req.frame() === page.mainFrame();
       } catch {

@@ -10,7 +10,8 @@
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
     "e2e": "vite build && playwright test",
-    "e2e:live-auth": "E2E_ALLOW_HOSTED=1 playwright test -c playwright.live-auth.config.ts"
+    "e2e:live-auth": "E2E_ALLOW_HOSTED=1 playwright test -c playwright.live-auth.config.ts",
+    "size": "vite build --manifest && size-limit"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "0.18.1",
@@ -49,7 +50,9 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
+    "@lhci/cli": "0.15.1",
     "@playwright/test": "1.65.1",
+    "@size-limit/file": "14.3.0",
     "@tailwindcss/vite": "4.3.5",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "7.0.1",
@@ -62,6 +65,7 @@
     "fake-indexeddb": "6.2.7",
     "jsdom": "31.0.1",
     "pdfjs-dist": "6.5.438",
+    "size-limit": "14.3.0",
     "tailwindcss": "4.3.5",
     "typescript": "7.0.2",
     "vite": "8.3.8",

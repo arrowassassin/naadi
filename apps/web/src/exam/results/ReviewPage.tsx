@@ -12,7 +12,6 @@ import { isFinal, useBlockResults, useReviewQuestion } from "./api";
 import {
   filterCounts,
   filterList,
-  isReviewFilter,
   landingFor,
   neighbours,
   ownsArrowKeys,
@@ -23,16 +22,9 @@ import {
 } from "./model";
 import { ResultsNotFinished } from "./ResultsPage";
 
+// The search parser lives in ./model so the route module can validate the URL without loading this page.
+export { parseReviewSearch, type ReviewSearch } from "./model";
 export type { ReviewFilter };
-
-export interface ReviewSearch {
-  filter: ReviewFilter;
-}
-
-/** `?filter=` of the review route: one of all, missed, flagged, changed (anything else is all). */
-export function parseReviewSearch(s: Record<string, unknown>): ReviewSearch {
-  return { filter: isReviewFilter(s.filter) ? s.filter : "all" };
-}
 
 const ROW =
   "box-border flex w-full min-h-[68px] items-center gap-4 rounded-block border p-3 pr-5 text-[1.0625rem] text-text";
