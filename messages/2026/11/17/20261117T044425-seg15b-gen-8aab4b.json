@@ -1,0 +1,16 @@
+{
+ "id": "20261117T044425-seg15b-gen-8aab4b",
+ "ts": "2026-11-17T04:44:25.602789Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S15b: media-src includes the Supabase origin for signed generated clips (one line)",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/security.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
