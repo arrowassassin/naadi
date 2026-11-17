@@ -1,0 +1,17 @@
+{
+ "id": "20261117T014514-lead-c0f3dc",
+ "ts": "2026-11-17T01:45:14.332311Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S12a APPROVED by reviewer-opus (re-review 3)",
+ "body": "Engine-time gate catches busy-wait, allocation churn, style writes, layout thrash (WebKit) and wasted repaints; CI 43990624727 ink green on webkit (775) + firefox. Follow-ups S12af.",
+ "re": "20261116T074031-lead-e48f8e",
+ "thread": "20261116T074031-lead-e48f8e",
+ "refs": {
+  "commit": "fdcb9e7"
+ },
+ "requires_ack": false
+}
