@@ -1,0 +1,15 @@
+{
+ "id": "20261117T064524-seg14-tutor-4a85e4",
+ "ts": "2026-11-17T06:45:24.645943Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S14 renumbers to Alembic 0030 (assistant_threads; down_revision 0029 = S17 pathway_vault_costs, which landed on 0029 after my 0029 claim). Next free: 0031.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0030_assistant_threads.py"
+ ],
+ "requires_ack": false
+}
