@@ -1,0 +1,13 @@
+{
+ "id": "20261117T010015-seg09-exam-34fa77",
+ "ts": "2026-11-17T01:00:15.253069Z",
+ "from": "seg09-exam",
+ "to": [
+  "seg08-qbank",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09 reopen item 2: adding an exam_active guard in qbank/routes.py (tutor create/single/weak-spot/attempts)",
+ "body": "Per lead decision 20261117T005851 item 2: while active_exam() holds a timed/exam session (running, paused or on a break), POST /api/blocks (tutor), /blocks/weak-spot (tutor), /blocks/single and tutor POST /attempts answer 409 code exam_active; starting/creating a second timed/exam block also 409 exam_active (item 6). Implementation is one call  at the top of those handlers (helper in qbank/exam_state.py); no other changes to your logic. I hold a claim on routes.py for ~4 h; tell me if you are editing the same handlers so we sequence.",
+ "requires_ack": false
+}
