@@ -68,15 +68,23 @@ with psycopg.connect(sys.argv[1], autocommit=True, connect_timeout=5) as c:
 PY
 }
 
+# The storage-api of stack.sh verifies JWTs with a fixed throwaway secret. When it sits behind this gateway the
+# browser and the API reach Storage with the keys minted here (signed upload and download URLs of the vault), so the
+# auth server and the minted keys use that same secret instead of a random one. Still local-only, never a real secret.
+if [ -n "$STORAGE_UPSTREAM" ]; then
+  export NAADI_AUTH_JWT_SECRET="${NAADI_AUTH_JWT_SECRET:-naadi-local-test-only-jwt-secret-0000}"
+fi
+
 mint() {
   # Prints: <secret> <anon jwt> <service_role jwt>
   py - <<'PY'
+import os
 import secrets
 import time
 
 import jwt
 
-secret = secrets.token_urlsafe(48)
+secret = os.environ.get("NAADI_AUTH_JWT_SECRET") or secrets.token_urlsafe(48)
 now = int(time.time())
 def key(role: str) -> str:
     return jwt.encode({"iss": "supabase", "role": role, "iat": now, "exp": now + 7 * 86400}, secret, algorithm="HS256")
@@ -89,6 +97,15 @@ storage_location() {
   cat <<NGINX
     # Supabase's gateway path for Storage (stack.sh's storage-api serves it at the root).
     location /storage/v1/ {
+      # CORS preflight as Supabase's API gateway answers it: the browser sends vault files straight to Storage on a
+      # signed URL (PUT with extra headers), which it only does after a successful OPTIONS.
+      if (\$request_method = OPTIONS) {
+        add_header Access-Control-Allow-Origin \$http_origin always;
+        add_header Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD" always;
+        add_header Access-Control-Allow-Headers \$http_access_control_request_headers always;
+        add_header Access-Control-Max-Age 600 always;
+        return 204;
+      }
       proxy_pass http://${STORAGE_UPSTREAM}/;
       proxy_set_header Host \$host;
       proxy_hide_header Access-Control-Allow-Origin;

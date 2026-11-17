@@ -306,7 +306,7 @@ jobs:
       - name: Scan artifacts for credentials (minted CI keys, session storage, API keys)
         id: scan
         if: ${{ !cancelled() }}
-        run: uv --directory apps/api run --frozen python -m tests.auth.scan_artifacts ../../test-results/screens/01 ../../test-results/screens/12a ../../test-results/screens/03 ../../test-results/screens/06 ../../test-results/screens/04 ../../test-results/screens/07 ../../test-results/screens/08 ../../test-results/screens/09 ../../test-results/screens/10 ../../test-results/screens/11 ../../test-results/screens/12b ../../test-results/screens/21
+        run: uv --directory apps/api run --frozen python -m tests.auth.scan_artifacts ../../test-results/screens/01 ../../test-results/screens/12a ../../test-results/screens/03 ../../test-results/screens/06 ../../test-results/screens/04 ../../test-results/screens/07 ../../test-results/screens/08 ../../test-results/screens/09 ../../test-results/screens/10 ../../test-results/screens/11 ../../test-results/screens/12b ../../test-results/screens/21 ../../test-results/screens/17
       - if: ${{ !cancelled() && steps.scan.outcome == 'success' }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
@@ -325,5 +325,6 @@ jobs:
             test-results/screens/11
             test-results/screens/12b
             test-results/screens/21
+            test-results/screens/17
           retention-days: 14
           if-no-files-found: ignore

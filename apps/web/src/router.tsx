@@ -11,6 +11,7 @@ import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
 import { notebooksRoutes } from "./notebooks/routes";
 import { notesRoutes } from "./notes/routes";
+import { pathwayRoutes } from "./pathway/routes";
 import { plannerRoute } from "./planner/routes";
 import { practiceRoutes } from "./practice/routes";
 import { AccountPage } from "./routes/AccountPage";
@@ -149,6 +150,7 @@ export const routeTree = rootRoute.addChildren([
     searchRoute(appRoute),
     notebooksRoutes(appRoute),
     ...notesRoutes(appRoute),
+    ...pathwayRoutes(appRoute),
     settingsRoute.addChildren([accountRoute, inkSettingsRoute]),
     agentDiagnosticsRoute(appRoute),
     adminGeneratedRoute(appRoute),

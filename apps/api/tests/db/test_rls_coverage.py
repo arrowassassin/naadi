@@ -5,6 +5,8 @@ from __future__ import annotations
 import uuid
 
 import psycopg
+import pytest
+from psycopg import errors
 
 from .fixtures import USER_TABLE_NAMES, Shared, insert_row
 from .rls import DB_MARKS
@@ -81,6 +83,7 @@ def test_anon_has_no_privileges_on_user_or_admin_tables(pg: psycopg.Connection) 
                 "admin_audit",
                 "question_revisions",
                 "ingest_extracts",
+                "pathway_task_checks",
             ],
         ),
     ).fetchall()
@@ -249,3 +252,51 @@ def test_ingest_extracts_are_server_only(pg: psycopg.Connection) -> None:
         " from pg_class where oid = 'public.ingest_extracts'::regclass"
     ).fetchone()
     assert row == (True, True, False, False)
+
+
+def test_pathway_task_checks_is_closed_to_clients(pg: psycopg.Connection) -> None:
+    """The weekly check's findings are backend-only: RLS forced, no privilege for anon or authenticated (admins read
+    them through /api/admin/pathway/checks)."""
+    row = pg.execute(
+        "select relrowsecurity, relforcerowsecurity from pg_class where oid = 'public.pathway_task_checks'::regclass"
+    ).fetchone()
+    assert row == (True, True)
+    for role in ("anon", "authenticated"):
+        assert pg.execute(
+            "select has_table_privilege(%s, 'public.pathway_task_checks', 'select,insert,update,delete,truncate')",
+            (role,),
+        ).fetchone() == (False,)
+        assert pg.execute(
+            "select has_sequence_privilege(%s, 'public.pathway_task_checks_id_seq', 'usage,select,update')", (role,)
+        ).fetchone() == (False,)
+    assert pg.execute(
+        "select has_table_privilege('service_role', 'public.pathway_task_checks', 'select,insert,update,delete')"
+    ).fetchone() == (True,)
+
+
+def test_pathway_tasks_verification_columns_are_not_client_writable(pg: psycopg.Connection) -> None:
+    for role in ("anon", "authenticated"):
+        row = pg.execute(
+            "select has_table_privilege(%s, 'public.pathway_tasks', 'select'),"
+            " has_table_privilege(%s, 'public.pathway_tasks', 'insert,update,delete,truncate')",
+            (role, role),
+        ).fetchone()
+        assert row == (True, False), role
+
+
+def test_vault_documents_pin_the_object_path(pg: psycopg.Connection) -> None:
+    """The row's storage path is always `{user_id}/{id}`, so a row can never point at someone else's object."""
+    from .rls import create_auth_user
+
+    with pg.transaction(force_rollback=True):
+        a, b = create_auth_user(pg), create_auth_user(pg)
+        doc = uuid.uuid4()
+        with pytest.raises(errors.CheckViolation), pg.transaction():
+            pg.execute(
+                "insert into public.vault_documents (id, user_id, title, storage_path) values (%s, %s, 'x', %s)",
+                (doc, a, f"{b}/{doc}"),
+            )
+        pg.execute(
+            "insert into public.vault_documents (id, user_id, title, storage_path) values (%s, %s, 'x', %s)",
+            (doc, a, f"{a}/{doc}"),
+        )

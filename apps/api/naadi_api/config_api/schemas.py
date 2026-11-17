@@ -10,7 +10,7 @@ from __future__ import annotations
 import re
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel, TypeAdapter, field_validator, model_validator
 
@@ -299,6 +299,38 @@ class IngestRules(_Strict):
     near_dup_cosine: float = Field(0.97, ge=0.8, le=1.0, description="Chunk similarity counted as the same")
     near_dup_share: float = Field(0.8, ge=0.5, le=1.0, description="Share of chunks that makes a near-duplicate")
     undo_days: int = Field(7, ge=1, le=90, description="Days an item's extracted text is kept for Undo")
+
+
+# ── pathway, vault and costs (S17) ──
+
+
+class PathwayRules(_Strict):
+    """Pathway: when a task shows "Re-verify", the weekly verification's bounds, the vault's limits."""
+
+    reverify_days: int = Field(
+        90, ge=7, le=730, description="A task last verified longer ago than this shows Re-verify"
+    )
+    verify_max_tasks_per_run: int = Field(60, ge=1, le=500, description="Official pages the weekly check fetches")
+    verify_max_llm_calls: int = Field(20, ge=0, le=100, description="Model calls the weekly check may make per run")
+    verify_page_timeout_s: int = Field(15, ge=3, le=60)
+    verify_max_page_bytes: int = Field(2_000_000, ge=50_000, le=10_000_000)
+    signed_url_seconds: int = Field(60, ge=10, le=600, description="How long a vault signed URL works")
+    expiry_soon_days: int = Field(
+        60, ge=1, le=365, description="A vault document under this many days from expiry is flagged"
+    )
+    vault_max_bytes: int = Field(20 * 1024 * 1024, ge=1024, le=20 * 1024 * 1024)
+    vault_max_documents: int = Field(100, ge=1, le=1000)
+    vault_types: list[Annotated[str, Field(pattern=r"^[a-z][a-z0-9_]{0,31}$")]] = Field(min_length=1, max_length=24)
+    currencies: list[Annotated[str, Field(pattern=r"^[A-Z]{3}$")]] = Field(min_length=1, max_length=12)
+    max_costs_per_user: int = Field(2000, ge=1, le=20_000)
+
+    @model_validator(mode="after")
+    def _unique(self) -> PathwayRules:
+        if len(set(self.vault_types)) != len(self.vault_types) or "other" not in self.vault_types:
+            raise ValueError("vault_types must be unique and include 'other'")
+        if len(set(self.currencies)) != len(self.currencies):
+            raise ValueError("currencies must be unique")
+        return self
 
 
 # ── storage, ui_copy, sources_policy ──
@@ -2573,6 +2605,207 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "push.reminder_body",
         "push.nudge_body",
         "push.test_body",
+        # pathway, vault and costs (S17)
+        "costs.add",
+        "costs.add_for_task",
+        "costs.add_title",
+        "costs.amount_label",
+        "costs.by_stage",
+        "costs.currency_label",
+        "costs.delete_body",
+        "costs.delete_confirm",
+        "costs.delete_named",
+        "costs.delete_title",
+        "costs.edit_named",
+        "costs.edit_title",
+        "costs.empty",
+        "costs.error_invalid",
+        "costs.for_task",
+        "costs.label_label",
+        "costs.loading",
+        "costs.next_fee",
+        "costs.no_stage",
+        "costs.not_paid",
+        "costs.paid_label",
+        "costs.paid_on",
+        "costs.paid_on_hint",
+        "costs.paid_on_label",
+        "costs.planned_line",
+        "costs.save",
+        "costs.saved_copy",
+        "costs.stage_label",
+        "costs.stage_paid",
+        "costs.stage_upcoming",
+        "costs.title",
+        "costs.upcoming_line",
+        "pathway.admin_hint",
+        "pathway.admin_no_findings",
+        "pathway.admin_title",
+        "pathway.anchor.arrival",
+        "pathway.anchor.eras_open",
+        "pathway.anchor.eras_submit",
+        "pathway.anchor.match_day",
+        "pathway.anchor.observership_start",
+        "pathway.anchor.oet_date",
+        "pathway.anchor.residency_end",
+        "pathway.anchor.residency_start",
+        "pathway.anchor.rol_deadline",
+        "pathway.anchor.start",
+        "pathway.anchor.step1_date",
+        "pathway.anchor.step2ck_date",
+        "pathway.cancel",
+        "pathway.check_all_current",
+        "pathway.check_label",
+        "pathway.check_line",
+        "pathway.check_none",
+        "pathway.check_reverify",
+        "pathway.checked_against",
+        "pathway.checked_on",
+        "pathway.close",
+        "pathway.cost_estimate",
+        "pathway.cost_free",
+        "pathway.cost_label",
+        "pathway.cost_paid",
+        "pathway.cost_planned",
+        "pathway.cost_unknown",
+        "pathway.due_after",
+        "pathway.due_annual",
+        "pathway.due_at",
+        "pathway.due_before",
+        "pathway.due_date",
+        "pathway.due_label",
+        "pathway.due_on",
+        "pathway.due_rule_hint",
+        "pathway.error.cost_currency_not_offered",
+        "pathway.error.cost_id_conflict",
+        "pathway.error.cost_limit",
+        "pathway.error.cost_not_found",
+        "pathway.error.generic",
+        "pathway.error.invalid",
+        "pathway.error.pathway_stage_not_found",
+        "pathway.error.pathway_task_not_found",
+        "pathway.error.pathway_unavailable",
+        "pathway.error.pathway_url_not_official",
+        "pathway.error.rate_limited",
+        "pathway.error.unreachable",
+        "pathway.error.vault_file_too_large",
+        "pathway.error.vault_file_type",
+        "pathway.error.vault_id_conflict",
+        "pathway.error.vault_limit",
+        "pathway.error.vault_not_found",
+        "pathway.error.vault_storage_unavailable",
+        "pathway.error.vault_type_unknown",
+        "pathway.error.vault_unavailable",
+        "pathway.error.vault_upload_missing",
+        "pathway.error_title",
+        "pathway.finding.baseline",
+        "pathway.finding.changed",
+        "pathway.finding.http_error",
+        "pathway.finding.moved",
+        "pathway.finding.network_error",
+        "pathway.finding.off_domain_redirect",
+        "pathway.finding.page_changed_differences",
+        "pathway.finding.page_changed_no_difference",
+        "pathway.finding.page_changed_unreviewed",
+        "pathway.finding.robots_disallowed",
+        "pathway.finding.too_many_redirects",
+        "pathway.finding.unchanged",
+        "pathway.finding.unreachable",
+        "pathway.finding_when",
+        "pathway.headline_a",
+        "pathway.headline_b",
+        "pathway.headline_c",
+        "pathway.hide_tasks",
+        "pathway.intro",
+        "pathway.mark_done",
+        "pathway.mark_verified",
+        "pathway.needs_connection",
+        "pathway.never_checked",
+        "pathway.next_cta",
+        "pathway.next_label",
+        "pathway.no_tasks_match",
+        "pathway.not_official_note",
+        "pathway.notes_label",
+        "pathway.notes_placeholder",
+        "pathway.nothing_to_reverify",
+        "pathway.official_link",
+        "pathway.offline",
+        "pathway.open_guide",
+        "pathway.open_official",
+        "pathway.open_source",
+        "pathway.refused",
+        "pathway.retry",
+        "pathway.reverify",
+        "pathway.reverify_count",
+        "pathway.reverify_reason.age",
+        "pathway.reverify_reason.flagged",
+        "pathway.route_label",
+        "pathway.saved_copy",
+        "pathway.set_current",
+        "pathway.show_all",
+        "pathway.show_changed",
+        "pathway.show_tasks",
+        "pathway.side_label",
+        "pathway.source_link",
+        "pathway.source_title",
+        "pathway.source_unknown",
+        "pathway.stage_planned",
+        "pathway.stage_progress",
+        "pathway.stage_state.current",
+        "pathway.stage_state.done",
+        "pathway.stage_state.started",
+        "pathway.stage_state.upcoming",
+        "pathway.stages_label",
+        "pathway.status.doing",
+        "pathway.status.done",
+        "pathway.status.na",
+        "pathway.status.todo",
+        "pathway.status_label",
+        "pathway.tasks_of",
+        "pathway.undo_done",
+        "pathway.verified_done",
+        "pathway.will_sync",
+        "today.pathway_open",
+        "vault.banner",
+        "vault.delete_body",
+        "vault.delete_confirm",
+        "vault.delete_named",
+        "vault.delete_title",
+        "vault.edit_named",
+        "vault.edit_title",
+        "vault.empty",
+        "vault.error_title",
+        "vault.error_title_required",
+        "vault.expired",
+        "vault.expires_on",
+        "vault.expires_soon",
+        "vault.expiry_label",
+        "vault.offline_list",
+        "vault.offline_reason",
+        "vault.open",
+        "vault.open_named",
+        "vault.save",
+        "vault.scan",
+        "vault.tap_to_open",
+        "vault.title",
+        "vault.title_label",
+        "vault.type.diploma",
+        "vault.type.ds2019",
+        "vault.type.ecfmg",
+        "vault.type.id_proof",
+        "vault.type.licence",
+        "vault.type.other",
+        "vault.type.passport",
+        "vault.type.transcript",
+        "vault.type.visa",
+        "vault.type_label",
+        "vault.upload",
+        "vault.upload_failed",
+        "vault.upload_offline",
+        "vault.upload_size",
+        "vault.upload_title",
+        "vault.upload_type",
+        "vault.uploading",
     }
 )
 
@@ -2591,6 +2824,9 @@ class UiCopy(RootModel[dict[str, str]]):
         # real ceiling (at most 4000 strings of up to 500 chars would not fit it either way).
         if len(v) > 4000:
             raise ValueError("at most 4000 ui_copy strings")
+        # S12a's ink block landed, over 1500 by S17), so the bound leaves room for the remaining segments.
+        if len(v) > 3000:
+            raise ValueError("at most 3000 ui_copy strings")
         missing = sorted(REQUIRED_UI_COPY_KEYS - set(v))
         if missing:
             raise ValueError(f"ui_copy is missing keys the app shows: {', '.join(missing)}")
@@ -2819,6 +3055,14 @@ KEY_SPECS: dict[str, KeySpec] = {
             "app_config.yaml",
             "Universal ingest: file caps, ZIP and image guards, vision budget, storage allowance (S15)",
             _schema_of(IngestRules),
+        ),
+        KeySpec(
+            "pathway",
+            _model_validator(PathwayRules),
+            False,
+            "app_config.yaml",
+            "Pathway: re-verify age, weekly check bounds, vault and cost limits (S17)",
+            _schema_of(PathwayRules),
         ),
         KeySpec(
             "ui_copy", _model_validator(UiCopy), True, "app_config.yaml", "Editable UI strings", _schema_of(UiCopy)

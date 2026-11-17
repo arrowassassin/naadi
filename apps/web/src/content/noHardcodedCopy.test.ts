@@ -20,6 +20,7 @@ const ROOTS = [
   "learn",
   "notebooks",
   "notes",
+  "pathway",
   "pdf",
   "planner",
   "routes",

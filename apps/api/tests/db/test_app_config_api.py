@@ -99,7 +99,7 @@ def test_public_config(client: TestClient) -> None:
     assert body["features"]["today"] is True
     assert body["features"]["assistant"] is False
     assert body["features"]["ink_lab"] is False  # admins only in prod
-    assert [i["id"] for i in body["nav"]] == ["today", "learn", "practice", "notes", "plan"]
+    assert [i["id"] for i in body["nav"]] == ["today", "learn", "practice", "notes", "plan", "pathway"]
     assert body["exam_rules"]["modes"]["exam"]["assistant"] is False
     assert body["ui_copy"]["agent.quota_reset"] == "AI quota resets at {time}"
     # nothing from the server-only keys (model routing, budgets, search rules, buckets, generation)
@@ -118,10 +118,10 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     assert client.get("/api/me", headers=admin).json()["features"]["ink_lab"] is True
     nav = client.get("/api/nav", headers=student).json()
     assert nav["source"] == "app_config"
-    assert "pathway" not in [i["id"] for i in nav["items"]]
+    assert "planner" not in [i["id"] for i in nav["items"]]
 
     flags = client.get("/api/admin/config/feature_flags", headers=admin).json()
-    on = {**flags["value"], "pathway": {"enabled": True}}
+    on = {**flags["value"], "planner": {"enabled": True}}
     r = client.put(
         "/api/admin/config/feature_flags", headers=admin, json={"value": on, "expected_updated_at": flags["updated_at"]}
     )
@@ -129,7 +129,7 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     nav_cfg = client.get("/api/admin/config/ui.nav", headers=admin).json()
     items = [
         *nav_cfg["value"],
-        {"id": "pathway", "label": "Pathway", "path": "/pathway", "icon": "route", "feature": "pathway"},
+        {"id": "planner", "label": "Planner", "path": "/planner", "icon": "route", "feature": "planner"},
     ]
     r = client.put(
         "/api/admin/config/ui.nav", headers=admin, json={"value": items, "expected_updated_at": nav_cfg["updated_at"]}
@@ -146,11 +146,11 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     )
     assert r.status_code == 200, r.text
     try:
-        assert "pathway" in [i["id"] for i in client.get("/api/nav", headers=student).json()["items"]]
-        assert client.get("/api/me", headers=student).json()["features"]["pathway"] is True
+        assert "planner" in [i["id"] for i in client.get("/api/nav", headers=student).json()["items"]]
+        assert client.get("/api/me", headers=student).json()["features"]["planner"] is True
         public = client.get("/api/public-config").json()
-        assert public["features"]["pathway"] is True
-        assert "pathway" in [i["id"] for i in public["nav"]]
+        assert public["features"]["planner"] is True
+        assert "planner" in [i["id"] for i in public["nav"]]
         assert public["ui_copy"]["signin.tagline"] == "Study in one place"
     finally:
         with psycopg.connect(url, autocommit=True) as c:
@@ -251,6 +251,9 @@ def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: 
     listed = client.get("/api/admin/config", headers=admin).json()["items"]
     assert {i["key"]: i["source"] for i in listed} == {i["key"]: "db" for i in listed}
     assert len(listed) == 19  # fsrs, plan, coach, ink_ocr, planner (S16), youtube, authoring, ingest (S15)
+    assert (
+        len(listed) == 19
+    )  # S10 fsrs, S11 plan + coach, S13 ink_ocr, S16 planner, S17 pathway, S20 youtube, S21 authoring
 
     entry = client.get("/api/admin/config/ui_copy", headers=admin).json()
     assert entry["source"] == "db"

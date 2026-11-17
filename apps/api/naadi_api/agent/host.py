@@ -85,6 +85,8 @@ SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
     ("naadi.backup.nightly", "backup", "0 3 * * *", {"mode": "db"}, False),
     ("naadi.backup.storage_weekly", "backup", "30 3 * * 0", {"mode": "storage"}, False),  # Sunday 03:30 UTC
     ("naadi.prune.daily", "prune", "11 4 * * *", {}, False),
+    # Pathway (S17): the official pages behind the pathway tasks, Mondays 04:13 UTC (09:43 IST).
+    ("naadi.pathway_verify.weekly", "pathway_verify", "13 4 * * 1", {}, False),
 )
 
 naadi_app: FastAPI = create_app()

@@ -60,6 +60,8 @@ USER_TABLES = (
 )
 # Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017),
 # export jobs (0024), knowledge-base entries (S15).
+# Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017).
+# Pathway progress, costs and the vault (0029) are the API's too: last-writer-wins and the path are checked there.
 SELECT_ONLY_TABLES = (
     "public.ink_layers",
     "public.ink_items",
@@ -67,6 +69,9 @@ SELECT_ONLY_TABLES = (
     "public.notebooks",
     "public.export_jobs",
     "public.kb_sources",
+    "public.user_pathway_tasks",
+    "public.costs",
+    "public.vault_documents",
 )
 # Card scheduling: only the API writes it (the client may only SELECT its own rows).
 API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
@@ -95,6 +100,7 @@ CLIENT_CLOSED_TABLES = (
     "admin_audit",
     "question_revisions",
     "ingest_extracts",
+    "pathway_task_checks",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -238,7 +244,7 @@ def checks(head: str) -> list[Check]:
             " ('ink_layers','ocr_hash'), ('ink_layers','ocr_at'), ('notes','body_text'))",
         ),
         Check(
-            "ingest (0028): uploads/ingest_items API-written (rename + confirmed_placement only), owned media and"
+            "ingest (0029): uploads/ingest_items API-written (rename + confirmed_placement only), owned media and"
             " questions, user-provided source",
             "select has_column_privilege('authenticated', 'public.uploads', 'original_name', 'update')"
             " and not has_column_privilege('authenticated', 'public.uploads', 'status', 'update')"

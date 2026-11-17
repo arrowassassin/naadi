@@ -30,7 +30,7 @@ export function TabBar({
   const renderTab = (item: NavItem) => {
     const current = item.id === currentId;
     const cls = cx(
-      "flex min-h-12 min-w-11 flex-col items-center justify-center gap-0.5 rounded-block-sm px-2 text-[0.6875rem] no-underline",
+      "flex min-h-12 min-w-11 flex-col items-center justify-center gap-0.5 rounded-block-sm px-1 text-[0.6875rem] no-underline",
       current ? "font-semibold text-text" : "text-text-3 hover:text-text",
     );
     const content = (

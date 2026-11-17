@@ -446,9 +446,17 @@ function Pathway({ stages }: { stages: PathwayStageOut[] }) {
   if (stages.length === 0) return null;
   return (
     <Tile as="section" aria-labelledby="today-pathway" className="flex flex-col gap-4">
-      <h2 id="today-pathway" className="m-0">
-        <TileLabel>{t("today.pathway_label")}</TileLabel>
-      </h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 id="today-pathway" className="m-0">
+          <TileLabel>{t("today.pathway_label")}</TileLabel>
+        </h2>
+        <Link
+          to="/pathway"
+          className="inline-flex min-h-11 items-center text-text-2 text-ui-sm underline underline-offset-4"
+        >
+          {t("today.pathway_open")}
+        </Link>
+      </div>
       <ol className="m-0 flex list-none flex-wrap gap-2 p-0">
         {stages.map((s, i) => (
           <li key={s.key} className="flex items-center gap-2 rounded-pill border border-line-chip px-3 py-2 text-ui-sm">

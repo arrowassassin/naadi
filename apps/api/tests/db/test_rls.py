@@ -178,7 +178,7 @@ API_WRITTEN = ("attempts", "blocks")
 # Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
 # Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
 # Export jobs (0024): the export service writes them; students only read their own.
-# Knowledge-base entries (0028): created and updated by the ingest pipeline only.
+# Knowledge-base entries (0029): created and updated by the ingest pipeline only.
 SELECT_ONLY = (
     "ink_layers",
     "ink_items",
@@ -192,6 +192,10 @@ SELECT_ONLY = (
     "plan_rebalances",
     "calendar_feeds",
     "kb_sources",
+    # Pathway progress, costs and the vault (0029): last-writer-wins and the object path are the API's to check.
+    "user_pathway_tasks",
+    "costs",
+    "vault_documents",
 )
 # Generated media (0022): the API creates and updates rows (it counts the daily caps from them and writes status
 # and approval); students may read and delete their own. Planner (0027): the same for push subscriptions (students
@@ -199,7 +203,7 @@ SELECT_ONLY = (
 CREATE_BLOCKED = ("generated_media", "push_subscriptions")
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
-# Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and
+# Uploads and ingest items (0029): rows come from the ingest API; the student may rename a file (original_name) and
 # set an item's confirmed_placement, nothing else.
 API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items", "uploads", "ingest_items")
 
@@ -404,12 +408,30 @@ def test_references_must_be_visible_to_the_caller(
                 insert_row(conn, table, row)
         # visible parents are fine
         # (card_reviews: only the API writes them since 0012; its visibility check is in tests/cards)
-        insert_row(conn, "user_pathway_tasks", {"user_id": user_b, "task_id": other_task})
-        insert_row(conn, "costs", {"user_id": user_b, "task_id": other_task, "amount": 1})
+        # (user_pathway_tasks and costs: only the API writes them since 0029; the API's own insert is checked below)
         insert_row(conn, "profiles", {"user_id": user_b, "pathway_stage": shared.stage_key})
         # re-pointing an existing row at hidden content is refused too
         with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
             conn.execute("update public.card_reviews set card_id = %s where user_id = %s", (a_card, user_b))
+
+
+def test_pathway_progress_and_costs_are_written_by_the_api_only(
+    pg: psycopg.Connection, user_b: uuid.UUID, shared: Shared
+) -> None:
+    """0029: a student reads their own progress, costs and vault rows but cannot write them."""
+    other_task = f"{shared.task_id}-y"
+    insert_row(pg, "pathway_tasks", {"id": other_task, "stage_key": shared.stage_key, "title": "T"})
+    insert_row(pg, "user_pathway_tasks", {"user_id": user_b, "task_id": other_task})
+    insert_row(pg, "costs", {"user_id": user_b, "task_id": other_task, "amount": 1})
+    with as_user(pg, user_b) as conn:
+        for table in ("user_pathway_tasks", "costs", "vault_documents"):
+            assert _count(conn, table, user_b) >= 0
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(f"update public.{table} set user_id = user_id")  # noqa: S608
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(f"delete from public.{table}")  # noqa: S608
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            insert_row(conn, "costs", {"user_id": user_b, "amount": 1})
 
 
 def test_composite_foreign_keys_keep_parents_per_user(
@@ -714,7 +736,7 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
 def test_ingest_rows_take_a_rename_and_a_confirmation_only(
     pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared
 ) -> None:
-    """0028: the ingest API creates uploads, KB entries and items and owns every status column; the student may
+    """0029: the ingest API creates uploads, KB entries and items and owns every status column; the student may
     rename a file and set an item's confirmed placement, nothing else."""
     upload, item, kb = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
     for conn in (pg,):  # the pipeline writes as a privileged role

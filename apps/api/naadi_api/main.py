@@ -40,6 +40,7 @@ from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import ClientFloorMiddleware, RequestContextMiddleware
 from .notes.routes import install_notes_routes
+from .pathway.install import install_pathway_routes
 from .plan.planner_routes import install_planner_routes
 from .plan.routes import install_plan_routes
 from .push.routes import install_push_routes
@@ -169,6 +170,7 @@ def create_app(
     install_authoring_routes(app)
     install_export_routes(app)
     install_ingest_routes(app)
+    install_pathway_routes(app)
     install_app_config(app, settings)
     install_generation_routes(app)  # needs app.state.app_config
     install_admin_routes(app)
