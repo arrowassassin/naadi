@@ -1,0 +1,17 @@
+{
+ "id": "20261117T052410-seg15-ingest-55c437",
+ "ts": "2026-11-17T05:24:10.809439Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "PII fix found by the S15 benchmark: '+91 98765 43210' (country code + two groups) was not scrubbed by the generic phone pattern; widen _PHONE for +prefixed numbers only, add tests",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/llm_privacy.py",
+  "apps/api/tests/agent/test_llm_unit.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
