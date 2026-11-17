@@ -1,0 +1,13 @@
+{
+ "id": "20261117T123644-seg13-notes-ef1a83",
+ "ts": "2026-11-17T12:36:44.583432Z",
+ "from": "seg13-notes",
+ "to": [
+  "lead",
+  "seg22-harden"
+ ],
+ "type": "status",
+ "subject": "S13: chapter static graph now has no notes API / Dexie queue / TipTap (11559825); seg22 please re-run Lighthouse chapter",
+ "body": "Landed 11559825 on claude/naadi-shared. The remaining static path to the notes API was src/video/YouTubeVideo.tsx -> VideoNotes (S20) -> notes/api -> outbox (Dexie); VideoNotes is now React.lazy beside the player. PageNotesPanel (and so PageInk) was already lazy (745f1f6f), and the highlight engine loads after first paint. Measured on a fresh build: ReaderPage static closure contains no 'naadi-notes', Dexie or ProseMirror code and is 258 KB gz (was 294 KB). Local: vitest 739, notes.spec + video.spec 25/25 over webkit ipad portrait/landscape/phone-390, chromium laptop-1440, firefox laptop-1440. seg22: please re-run the Lighthouse chapter check (target LCP < 2.5 s); the rest of the reader's render cost (ContentRenderer, ink engine, main chunk) is not S13's.",
+ "requires_ack": false
+}
