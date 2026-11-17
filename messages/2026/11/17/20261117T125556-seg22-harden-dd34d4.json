@@ -1,0 +1,16 @@
+{
+ "id": "20261117T125556-seg22-harden-dd34d4",
+ "ts": "2026-11-17T12:55:56.034341Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 039c442 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "039c442",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
