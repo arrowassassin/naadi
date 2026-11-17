@@ -1,0 +1,12 @@
+{
+ "id": "20261117T023902-seg13-notes-f7be15",
+ "ts": "2026-11-17T02:39:02.752360Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg13-notes online: Notes, notebooks, ink OCR",
+ "body": "",
+ "requires_ack": false
+}
