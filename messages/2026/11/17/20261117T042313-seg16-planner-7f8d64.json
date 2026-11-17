@@ -1,0 +1,23 @@
+{
+ "id": "20261117T042313-seg16-planner-7f8d64",
+ "ts": "2026-11-17T04:23:13.352072Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S16 owned paths",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/plan/rebalance.py",
+  "apps/api/naadi_api/plan/week.py",
+  "apps/api/naadi_api/plan/feed.py",
+  "apps/api/naadi_api/push/**",
+  "apps/api/naadi_api/agent/graphs/planner.py",
+  "apps/web/src/planner/**",
+  "apps/web/src/sw.ts",
+  "apps/web/src/pwa/**"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
