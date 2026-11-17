@@ -1,0 +1,16 @@
+{
+ "id": "20261117T071028-seg18-offline-f8697c",
+ "ts": "2026-11-17T07:10:28.790319Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18 sync migration, after the 0030 duplicate is resolved (0031 for S20 review)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0032_sync.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
