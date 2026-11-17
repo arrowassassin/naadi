@@ -1,4 +1,5 @@
-import { readFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
@@ -81,6 +82,10 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
     const context = await browser.newContext({ ...info.project.use, ...(viewport ? { viewport } : {}), baseURL });
     contexts.push(context);
     const page = await context.newPage();
+    if (process.env.INK_CPU_THROTTLE && info.project.use.browserName === "chromium") {
+      const cdp = await context.newCDPSession(page);
+      await cdp.send("Emulation.setCPUThrottlingRate", { rate: Number(process.env.INK_CPU_THROTTLE) });
+    }
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, SECTION));
     await page.waitForURL((u) => u.pathname === SECTION, { timeout: 30_000 });
@@ -168,6 +173,7 @@ async function blockTop(page: Page, n: number): Promise<number> {
  */
 async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<number | null> {
   await showBand(page, (fromPx + toPx) / 2);
+  await page.evaluate(() => window.getSelection()?.removeAllRanges());
   const box = await page.locator(SURFACE).boundingBox();
   if (!box) throw new Error("no surface");
   const top = Math.max(0, fromPx);
@@ -178,6 +184,18 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
   // WebKit reports the screenshot tool's <style> as refused by our CSP: the tool's noise, not the app's.
   const g = guards.get(page);
   const png = g ? await g.duringTool(shoot) : await shoot();
+  if (process.env.CI) {
+    // What the detector saw, kept with the run's screenshots (the CI artifact) so a red run can be read.
+    const dir = path.resolve(import.meta.dirname, "../../..", "test-results/screens/12b/probe");
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(
+      path.join(
+        dir,
+        `${test.info().title.slice(0, 24).replace(/\W+/g, "-")}-${test.info().project.name}-${Date.now()}.png`,
+      ),
+      png,
+    );
+  }
   const centre = await page.evaluate(async (b64) => {
     const img = new Image();
     img.src = `data:image/png;base64,${b64}`;
@@ -196,8 +214,10 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
         const r = d[i] ?? 0;
         const g = d[i + 1] ?? 0;
         const bl = d[i + 2] ?? 0;
-        const v = bl - Math.max(r * 0.6, g); // violet: blue well above green
-        if (v > 40 && bl > 120) {
+        // Ink violet (#c4baff on dark): blue well above green AND red above green. A blue text-selection
+        // highlight (red below green) is not ink.
+        const v = bl - g;
+        if (v > 40 && bl > 120 && r > g + 4) {
           sum += (y + 0.5) * v;
           weight += v;
         }
@@ -305,6 +325,7 @@ test.describe("ink on a reader section", () => {
       await b.route(/\/api\/ink\/section\/[^/]+\?since=/, (route) => route.abort("internetdisconnected"));
       // A erases it (whole-stroke eraser) ...
       await a.getByRole("button", { name: "Eraser", exact: true }).click();
+      await expect(a.getByRole("button", { name: "Eraser", exact: true })).toHaveAttribute("aria-pressed", "true");
       const erased = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
       await penStroke(a, 0.25, 0.3, (await violetCentre(a, y - 12, y + 12)) ?? y, 4);
       await erased;
@@ -313,6 +334,7 @@ test.describe("ink on a reader section", () => {
       // re-stamps the stroke with B's (later) time, so B's version is the last write.
       await turnInkOn(b);
       await b.getByRole("button", { name: "Eraser", exact: true }).click();
+      await expect(b.getByRole("button", { name: "Eraser", exact: true })).toHaveAttribute("aria-pressed", "true");
       await penStroke(b, 0.25, 0.3, (await violetCentre(b, y - 12, y + 12)) ?? y, 5);
       const bSent = b.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
       await b.getByRole("button", { name: "Undo" }).click();
