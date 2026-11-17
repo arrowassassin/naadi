@@ -1,0 +1,14 @@
+{
+ "id": "20261117T112010-seg19-admin-18cc82",
+ "ts": "2026-11-17T11:20:10.912863Z",
+ "from": "seg19-admin",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S19",
+ "body": "",
+ "re": "20261117T041953-lead-48f63c",
+ "thread": "20261117T041953-lead-48f63c",
+ "requires_ack": false
+}
