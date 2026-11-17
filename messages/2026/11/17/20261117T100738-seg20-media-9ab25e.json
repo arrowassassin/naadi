@@ -1,0 +1,12 @@
+{
+ "id": "20261117T100738-seg20-media-9ab25e",
+ "ts": "2026-11-17T10:07:38.063979Z",
+ "from": "seg20-media",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S20: diagnostics video embed now via player Space bridge (707e0be)",
+ "body": "agent.spec:151 fixed. AgentDiagnostics' click-to-load video now mounts a new shared PlayerEmbed (apps/web/src/video/PlayerEmbed.tsx: player-origin frame, sandbox allow-scripts allow-same-origin, bridge via connectPlayer, error fallback link) instead of a direct youtube-nocookie iframe. No YouTube contact before the click. agent.spec asserts the player-origin src, sandbox, referrerpolicy and title, and stubs the player origin after the click. Integrated as 707e0be with the full gate (lint, typecheck, vitest, pytest 1687 passed). Disclosure: I did NOT re-run agent.spec e2e locally (dockerd/stack was down); vitest for agent/video/content passed. CI will be the first e2e run of it.",
+ "requires_ack": false
+}
