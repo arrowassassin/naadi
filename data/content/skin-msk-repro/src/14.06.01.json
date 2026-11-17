@@ -11,7 +11,10 @@
      "statpearls": "Gynecomastia"
     },
     {
-     "statpearls": "Phosphodiesterase-5 Inhibitors"
+     "statpearls": "Phosphodiesterase Inhibitors"
+    },
+    {
+     "statpearls": "Sildenafil"
     }
    ]
   },
@@ -28,7 +31,10 @@
      "statpearls": "Priapism"
     },
     {
-     "statpearls": "Anabolic Steroid Use and Abuse"
+     "statpearls": "Anabolic Steroid Toxicity"
+    },
+    {
+     "statpearls": "Finasteride"
     }
    ]
   }
@@ -237,7 +243,7 @@
    "tasks": [
     "pc_pharmacotherapy"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [
@@ -277,7 +283,7 @@
    "tasks": [
     "medical_knowledge"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [
@@ -514,7 +520,7 @@
    "tasks": [
     "pc_pharmacotherapy"
    ],
-   "difficulty": 3,
+   "difficulty": 4,
    "references": [],
    "figures": [],
    "tags": [

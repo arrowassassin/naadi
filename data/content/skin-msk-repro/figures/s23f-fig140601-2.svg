@@ -22,6 +22,6 @@
 <text x="380.0" y="232.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">PDE5 INHIBITORS</tspan><tspan x="380.0" dy="15">(sildenafil, tadalafil)</tspan><tspan x="380.0" dy="15">block breakdown</tspan></text>
 <line x1="480" y1="243" x2="538" y2="243" stroke="#0f172a" stroke-width="3"/>
 <text x="509" y="236" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">X</text>
-<rect x="60" y="300" width="640" height="70" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="380.0" y="331.6" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">Nitrate + PDE5 inhibitor: more cGMP made and less broken down in vascular smooth muscle</tspan><tspan x="380.0" dy="16">result = profound hypotension (contraindicated). Retinal PDE6 inhibition = blue-tinged vision.</tspan></text>
+<rect x="60" y="295" width="640" height="80" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="380.0" y="323.6" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="380.0" dy="0">Nitrate + PDE5 inhibitor: more cGMP made, less broken down in vessels</tspan><tspan x="380.0" dy="16">= profound hypotension (contraindicated)</tspan><tspan x="380.0" dy="16">Retinal PDE6 inhibition (sildenafil) = blue-tinged vision</tspan></text>
 </svg>

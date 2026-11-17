@@ -8,8 +8,8 @@
 <text x="380.0" y="74.9" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Hypothalamus: GnRH</text>
 <rect x="280" y="135" width="200" height="40" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
 <text x="380.0" y="159.9" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Pituitary: LH, FSH</text>
-<rect x="280" y="220" width="200" height="46" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
-<text x="380.0" y="239.7" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="380.0" dy="0">Testis: Leydig (testosterone)</tspan><tspan x="380.0" dy="15">Sertoli (sperm)</tspan></text>
+<rect x="270" y="214" width="220" height="58" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="380.0" y="232.2" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="380.0" dy="0">Testis: Leydig cells make</tspan><tspan x="380.0" dy="15">testosterone; Sertoli</tspan><tspan x="380.0" dy="15">cells support sperm</tspan></text>
 <rect x="250" y="320" width="260" height="52" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
 <text x="380.0" y="335.2" font-size="12" text-anchor="middle" font-weight="bold" fill="#0f172a"><tspan x="380.0" dy="0">Tissues: testosterone to DHT</tspan><tspan x="380.0" dy="15">(5-alpha-reductase) and to</tspan><tspan x="380.0" dy="15">estradiol (aromatase)</tspan></text>
 <line x1="380" y1="90" x2="380" y2="133" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
@@ -33,7 +33,7 @@
 <rect x="15" y="320" width="220" height="56" rx="8" fill="#fef9c3" stroke="#334155" stroke-width="1.5"/>
 <text x="125.0" y="337.2" font-size="12" text-anchor="middle" font-weight="normal" fill="#0f172a"><tspan x="125.0" dy="0">Spironolactone, cimetidine,</tspan><tspan x="125.0" dy="15">antiandrogens: block</tspan><tspan x="125.0" dy="15">androgen receptor</tspan></text>
 <line x1="235" y1="348" x2="248" y2="348" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr)"/>
-<rect x="150" y="410" width="460" height="46" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="120" y="410" width="520" height="46" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="380.0" y="437.6" font-size="13" text-anchor="middle" font-weight="normal" fill="#0f172a">Gynecomastia = estrogen effect rises relative to androgen effect</text>
 <path d="M482 240 C 560 240, 560 155, 482 155" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arr)"/>
 <text x="575" y="200" font-size="12" text-anchor="start" font-weight="normal" fill="#0f172a">feedback (-)</text>
