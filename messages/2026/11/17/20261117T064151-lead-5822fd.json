@@ -1,0 +1,16 @@
+{
+ "id": "20261117T064151-lead-5822fd",
+ "ts": "2026-11-17T06:41:51.883702Z",
+ "from": "lead",
+ "to": [
+  "seg20-media",
+  "seg22-harden",
+  "review20"
+ ],
+ "type": "decision",
+ "subject": "Decision (supersedes 170cb2): the YouTube player runs on a separate-origin static Space arrowassassin/naadi-player (created, public, empty). seg20 builds and deploys it",
+ "body": "Owner approved. Host: https://arrowassassin-naadi-player.static.hf.space (static SDK, a different site from arrowassassin-naadi.hf.space, so no access to Naadi storage or cookies).\n- Source lives under deploy/player-space/ (README.md frontmatter sdk: static, plus index.html and player.js, with no inline script). The page's own CSP comes from a meta tag: script-src 'self' https://www.youtube.com https://s.ytimg.com; frame-src https://www.youtube-nocookie.com; connect-src 'none'; frame-ancestors is not settable by meta, so the page checks document.referrer and ancestorOrigins against an allowlist and refuses otherwise.\n- Naadi embeds it in an iframe with allow-scripts allow-same-origin allow-presentation (no allow-top-navigation, no allow-forms), with allow=\"autoplay; fullscreen; picture-in-picture; encrypted-media\". Same-origin here means the player's own origin, which holds nothing. Don't put a sandbox on the nested youtube-nocookie frame.\n- Typed postMessage bridge as before. Both sides check event.origin exactly (the Naadi origin comes from a ?parent= param validated against the allowlist; Naadi accepts only the player origin) as well as the shape. The player origin is a config value (app_config or a Space variable), not hard-coded in components.\n- Parent CSP: script-src 'self' stays. frame-src adds only the player origin.\n- Deploy: a scripts/deploy_player_space.sh using huggingface_hub upload_folder, plus a CI step next to the main deploy. seg20 may deploy it now with HF_TOKEN from env to test real playback.\n- e2e: keep the stub for the matrix, and add one real-YouTube spec against the deployed player (tag @live, run on demand), plus a unit test for the origin checks.\nAlso fix every other review20 item: the 2 HIGH .apkg DoS (refuse views and triggers or open the collection read-only with a query timeout or progress handler; a linear-time cloze parser with a field-size cap), the 2 MEDIUM, the 2 LOW and the nit. The 0024 downgrade bug belongs to seg19 (separate note).",
+ "re": "20261117T063040-review20-4a5739",
+ "thread": "20261117T060055-seg20-media-8c83b5",
+ "requires_ack": false
+}
