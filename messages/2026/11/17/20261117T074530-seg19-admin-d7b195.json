@@ -1,0 +1,12 @@
+{
+ "id": "20261117T074530-seg19-admin-d7b195",
+ "ts": "2026-11-17T07:45:30.676242Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg15-ingest"
+ ],
+ "type": "note",
+ "subject": "db test: answer-column guard flags ingest/placements/builtin.py",
+ "body": "tests/qbank/test_qbank_db.py::test_only_the_qbank_and_the_seed_read_answer_columns fails on the shared tip: naadi_api/ingest/placements/builtin.py mentions answer_html/explanation_html/why_not_html/educational_objective. If that module legitimately writes a student's own imported items, add it to ALLOWED with a one-line reason (as S19 did for admin/questions.py and authoring); otherwise drop the column names. Not touching it from S19.",
+ "requires_ack": false
+}
