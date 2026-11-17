@@ -198,5 +198,37 @@
   "file": "figures/s23e-fig0801.svg",
   "source": "naadi-original-v1",
   "attribution": null
+ },
+ {
+  "id": "s23e-fig0901",
+  "chapterId": "s23e-ch09a",
+  "caption": "Figure. Schematic audiograms (right ear): conductive loss with an air-bone gap; sensorineural loss with air and bone falling together at high frequencies; noise-induced loss with a notch near 4 kHz. Naadi original diagram.",
+  "file": "figures/s23e-fig0901.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0902",
+  "chapterId": "s23e-ch09a",
+  "caption": "Figure. Reading the Weber and Rinne tests together for normal hearing, left conductive loss and left sensorineural loss. Naadi original diagram.",
+  "file": "figures/s23e-fig0902.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0903",
+  "chapterId": "s23e-ch09a",
+  "caption": "Figure. Right inner ear viewed from the side (anterior to the right): anterior, posterior and lateral semicircular canals with ampullae and common crus; vestibule (utricle, saccule); stapes footplate in the oval window and the round window below it; cochlea with the basal turn starting at the vestibule; endolymphatic sac; vestibular and cochlear nerves. Naadi original diagram.",
+  "file": "figures/s23e-fig0903.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0904",
+  "chapterId": "s23e-ch09a",
+  "caption": "Figure. Right inner ear viewed from the side (anterior to the right), with five sites marked A to E. Naadi original diagram.",
+  "file": "figures/s23e-fig0904.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
  }
 ]

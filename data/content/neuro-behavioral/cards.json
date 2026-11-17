@@ -4918,5 +4918,929 @@
   ],
   "source": "naadi-original-v1",
   "tags": []
+ },
+ {
+  "id": "s23e-c09001",
+  "frontHtml": "Why do young children get acute otitis media more often than adults?",
+  "backHtml": "Their eustachian tube is <strong>shorter, more horizontal and floppier</strong>, so it ventilates and drains the middle ear poorly.",
+  "sectionId": "s23e-s09a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09002",
+  "frontHtml": "Which otitis media organism is typical when purulent conjunctivitis is also present?",
+  "backHtml": "Nontypeable <em>Haemophilus influenzae</em>, often beta-lactamase producing.",
+  "sectionId": "s23e-s09a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09003",
+  "frontHtml": "Mechanism of pneumococcal penicillin resistance, and why high-dose amoxicillin helps?",
+  "backHtml": "<strong>Altered penicillin-binding proteins</strong>; higher drug levels restore binding (a beta-lactamase inhibitor does not help).",
+  "sectionId": "s23e-s09a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09004",
+  "frontHtml": "Organism and typical host in necrotizing (malignant) otitis externa?",
+  "backHtml": "<em>Pseudomonas aeruginosa</em>, in older patients with diabetes or immune compromise; it is skull-base osteomyelitis.",
+  "sectionId": "s23e-s09a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09005",
+  "frontHtml": "What is a cholesteatoma made of?",
+  "backHtml": "<strong>Keratinizing stratified squamous epithelium</strong> shedding keratin; it erodes bone. It contains no cholesterol.",
+  "sectionId": "s23e-s09a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09006",
+  "frontHtml": "Where does varicella-zoster reactivate in Ramsay Hunt syndrome?",
+  "backHtml": "The <strong>geniculate ganglion</strong> of the facial nerve.",
+  "sectionId": "s23e-s09a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09007",
+  "frontHtml": "Cell of origin and histology of vestibular schwannoma?",
+  "backHtml": "<strong>Schwann cells</strong>; Antoni A (palisading, Verocay bodies) and Antoni B areas; S-100 positive.",
+  "sectionId": "s23e-s09a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09008",
+  "frontHtml": "Bilateral vestibular schwannomas: gene, chromosome and protein?",
+  "backHtml": "<em>NF2</em> on chromosome 22, encoding <strong>merlin</strong> (NF2-related schwannomatosis).",
+  "sectionId": "s23e-s09a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09009",
+  "frontHtml": "Pulsatile tinnitus with a red mass behind an intact drum suggests what tumor?",
+  "backHtml": "A <strong>paraganglioma</strong> (glomus tympanicum or jugulare), from neural crest chief cells.",
+  "sectionId": "s23e-s09a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09010",
+  "frontHtml": "Which enzyme's genes are most often mutated in hereditary head and neck paraganglioma?",
+  "backHtml": "<strong>Succinate dehydrogenase</strong> (citric acid cycle and complex II).",
+  "sectionId": "s23e-s09a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09011",
+  "frontHtml": "An adult with a one-sided middle-ear effusion and a neck node: what tumor, and which virus?",
+  "backHtml": "<strong>Nasopharyngeal carcinoma</strong>, linked to Epstein-Barr virus.",
+  "sectionId": "s23e-s09a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09012",
+  "frontHtml": "Which part of the cochlea codes high frequencies?",
+  "backHtml": "The <strong>base</strong> (narrow, stiff basilar membrane), where noise and age damage starts.",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09013",
+  "frontHtml": "Weber and Rinne in left conductive loss?",
+  "backHtml": "Weber to the <strong>left</strong>; left Rinne negative (bone louder than air).",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09014",
+  "frontHtml": "Weber and Rinne in left sensorineural loss?",
+  "backHtml": "Weber to the <strong>right</strong> (good ear); left Rinne still positive (air louder than bone).",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09015",
+  "frontHtml": "Most common genetic cause of non-syndromic congenital deafness?",
+  "backHtml": "<em>GJB2</em> variants (<strong>connexin 26</strong>), autosomal recessive.",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09016",
+  "frontHtml": "Hearing loss plus goiter plus an enlarged vestibular aqueduct?",
+  "backHtml": "<strong>Pendred syndrome</strong> (pendrin, <em>SLC26A4</em>).",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09017",
+  "frontHtml": "Which ion depolarizes cochlear hair cells, and why?",
+  "backHtml": "<strong>K<sup>+</sup></strong>, flowing in from potassium-rich endolymph held at about +80 mV.",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09018",
+  "frontHtml": "Most common non-genetic cause of congenital sensorineural hearing loss?",
+  "backHtml": "<strong>Congenital cytomegalovirus</strong>; the loss may be delayed or progressive.",
+  "sectionId": "s23e-s09a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09019",
+  "frontHtml": "What do semicircular canals sense, and what do otolith organs sense?",
+  "backHtml": "Canals: <strong>angular</strong> acceleration. Utricle and saccule: <strong>linear</strong> acceleration and tilt.",
+  "sectionId": "s23e-s09a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09020",
+  "frontHtml": "Mechanism of BPPV?",
+  "backHtml": "Otoconia loose in a semicircular canal (usually the <strong>posterior</strong> canal), moving with gravity.",
+  "sectionId": "s23e-s09a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09021",
+  "frontHtml": "Pathologic basis of Ménière disease?",
+  "backHtml": "<strong>Endolymphatic hydrops</strong> (excess endolymph).",
+  "sectionId": "s23e-s09a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09022",
+  "frontHtml": "Right vestibular neuritis: which way does the fast phase of nystagmus beat?",
+  "backHtml": "To the <strong>left</strong>, away from the damaged side.",
+  "sectionId": "s23e-s09a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09023",
+  "frontHtml": "Vertigo plus sudden one-sided deafness and facial palsy: which artery?",
+  "backHtml": "The <strong>anterior inferior cerebellar artery</strong> (it gives off the labyrinthine artery).",
+  "sectionId": "s23e-s09a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09024",
+  "frontHtml": "How can a scopolamine patch cause a red, painful eye?",
+  "backHtml": "Muscarinic blockade dilates the pupil and can precipitate <strong>angle-closure glaucoma</strong>.",
+  "sectionId": "s23e-s09a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09025",
+  "frontHtml": "Why does an undrained auricular hematoma cause cauliflower ear?",
+  "backHtml": "The cartilage loses its <strong>perichondrial</strong> blood supply, necroses and is replaced by disorganized fibrocartilage.",
+  "sectionId": "s23e-s09a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09026",
+  "frontHtml": "Best test to confirm CSF otorrhea?",
+  "backHtml": "<strong>Beta-2 transferrin</strong>.",
+  "sectionId": "s23e-s09a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09027",
+  "frontHtml": "Temporal bone fracture through the otic capsule: typical deficits?",
+  "backHtml": "<strong>Sensorineural</strong> loss, vertigo and a higher rate of facial palsy.",
+  "sectionId": "s23e-s09a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09028",
+  "frontHtml": "Which muscle opens the eustachian tube, and what nerve supplies it?",
+  "backHtml": "<strong>Tensor veli palatini</strong>, mandibular division of the trigeminal nerve (V3).",
+  "sectionId": "s23e-s09a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09029",
+  "frontHtml": "Organ most often injured by a primary blast wave?",
+  "backHtml": "The <strong>tympanic membrane</strong>.",
+  "sectionId": "s23e-s09a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09030",
+  "frontHtml": "How does a button battery injure tissue?",
+  "backHtml": "Electrolysis makes hydroxide, causing <strong>alkaline liquefactive necrosis</strong> within hours.",
+  "sectionId": "s23e-s09a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09031",
+  "frontHtml": "Which aminoglycosides are mainly vestibulotoxic?",
+  "backHtml": "<strong>Gentamicin</strong> and <strong>streptomycin</strong>.",
+  "sectionId": "s23e-s09a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09032",
+  "frontHtml": "Maternally inherited deafness after a single aminoglycoside dose?",
+  "backHtml": "Mitochondrial <em>MT-RNR1</em> (12S rRNA) <strong>m.1555A&gt;G</strong>.",
+  "sectionId": "s23e-s09a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09033",
+  "frontHtml": "How do loop diuretics cause ototoxicity?",
+  "backHtml": "They block <strong>NKCC1 in the stria vascularis</strong>, collapsing the endocochlear potential; usually reversible.",
+  "sectionId": "s23e-s09a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09034",
+  "frontHtml": "Which ototoxic drug's effects reliably reverse within days of stopping?",
+  "backHtml": "<strong>Salicylates</strong> (high-dose aspirin).",
+  "sectionId": "s23e-s09a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09035",
+  "frontHtml": "Symptoms of bilateral aminoglycoside vestibulotoxicity?",
+  "backHtml": "<strong>Oscillopsia</strong> and unsteadiness in the dark, without spinning vertigo; bilateral abnormal head impulses.",
+  "sectionId": "s23e-s09a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09036",
+  "frontHtml": "First-line antibiotic for acute otitis media?",
+  "backHtml": "<strong>High-dose amoxicillin</strong> (80-90 mg/kg/day).",
+  "sectionId": "s23e-s09b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09037",
+  "frontHtml": "When is amoxicillin-clavulanate used for AOM?",
+  "backHtml": "Amoxicillin in the past 30 days, purulent conjunctivitis as well, or amoxicillin failure.",
+  "sectionId": "s23e-s09b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09038",
+  "frontHtml": "Which children with AOM can be observed without antibiotics?",
+  "backHtml": "Non-severe AOM at age 2 or older, or one-sided non-severe AOM at 6-23 months, with reliable follow-up at 48-72 hours.",
+  "sectionId": "s23e-s09b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09039",
+  "frontHtml": "Management of otitis media with effusion in a well child?",
+  "backHtml": "<strong>Watchful waiting</strong> for 3 months; no antibiotics, steroids or decongestants. Tubes if it persists with hearing loss.",
+  "sectionId": "s23e-s09b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09040",
+  "frontHtml": "Treatment of uncomplicated otitis externa?",
+  "backHtml": "<strong>Topical antibiotic drops</strong> (with or without a steroid), a wick if the canal is swollen, keep dry.",
+  "sectionId": "s23e-s09b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09041",
+  "frontHtml": "Treatment of necrotizing otitis externa?",
+  "backHtml": "Weeks of systemic <strong>antipseudomonal</strong> antibiotics, glucose control, imaging and ENT care.",
+  "sectionId": "s23e-s09b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09042",
+  "frontHtml": "Best test for asymmetric sensorineural hearing loss?",
+  "backHtml": "<strong>Gadolinium MRI of the internal auditory canals</strong>.",
+  "sectionId": "s23e-s09b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09043",
+  "frontHtml": "Next step for an adult with new one-sided middle-ear effusion?",
+  "backHtml": "<strong>Endoscopic examination of the nasopharynx</strong> to exclude carcinoma.",
+  "sectionId": "s23e-s09b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09044",
+  "frontHtml": "Why avoid biopsy of a red pulsatile mass behind the drum?",
+  "backHtml": "It is likely a <strong>paraganglioma</strong> and can bleed heavily; image with CT and MRI instead.",
+  "sectionId": "s23e-s09b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09045",
+  "frontHtml": "Management of a small vestibular schwannoma in an older patient with other illnesses?",
+  "backHtml": "<strong>Serial MRI</strong> (wait and scan); radiosurgery or surgery if it grows.",
+  "sectionId": "s23e-s09b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09046",
+  "frontHtml": "Test to perform before paraganglioma surgery?",
+  "backHtml": "<strong>Plasma free metanephrines</strong>; secreting tumors need alpha-blockade first.",
+  "sectionId": "s23e-s09b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09047",
+  "frontHtml": "Definition of sudden sensorineural hearing loss?",
+  "backHtml": "A loss of <strong>30 dB or more at 3 neighboring frequencies</strong> developing within 72 hours.",
+  "sectionId": "s23e-s09b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09048",
+  "frontHtml": "Treatment of sudden sensorineural hearing loss?",
+  "backHtml": "A <strong>corticosteroid</strong> (oral or intratympanic) as early as possible, ideally within 2 weeks; plus MRI of the internal auditory canals.",
+  "sectionId": "s23e-s09b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09049",
+  "frontHtml": "Newborn hearing timeline?",
+  "backHtml": "Screen by 1 month, diagnose by 3 months, intervene by 6 months (1-3-6).",
+  "sectionId": "s23e-s09b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09050",
+  "frontHtml": "Treatment of symptomatic congenital CMV?",
+  "backHtml": "<strong>Oral valganciclovir for 6 months</strong>, started in the first month; serial hearing tests.",
+  "sectionId": "s23e-s09b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09051",
+  "frontHtml": "Audiogram pattern of noise-induced hearing loss?",
+  "backHtml": "A sensorineural <strong>notch near 4 kHz</strong> with partial recovery at 8 kHz.",
+  "sectionId": "s23e-s09b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09052",
+  "frontHtml": "Treatment of posterior canal BPPV?",
+  "backHtml": "A <strong>canalith repositioning (Epley) maneuver</strong>; no imaging or routine drugs.",
+  "sectionId": "s23e-s09b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09053",
+  "frontHtml": "Bedside signs suggesting stroke in acute continuous vertigo?",
+  "backHtml": "A <strong>normal head impulse</strong>, direction-changing nystagmus, or skew deviation (and new hearing loss).",
+  "sectionId": "s23e-s09b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09054",
+  "frontHtml": "Best imaging for suspected posterior circulation stroke with vertigo?",
+  "backHtml": "<strong>MRI with diffusion-weighted imaging</strong>; CT is insensitive.",
+  "sectionId": "s23e-s09b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09055",
+  "frontHtml": "First-line maintenance for Ménière disease?",
+  "backHtml": "<strong>Low-salt diet</strong> (with or without a diuretic); suppressants only during attacks.",
+  "sectionId": "s23e-s09b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09056",
+  "frontHtml": "Persistent imbalance weeks after vestibular neuritis: what helps?",
+  "backHtml": "<strong>Vestibular rehabilitation</strong>, and stop vestibular suppressants.",
+  "sectionId": "s23e-s09b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09057",
+  "frontHtml": "Treatment of auricular hematoma?",
+  "backHtml": "Prompt <strong>drainage</strong> plus a <strong>compressive bolster</strong>; recheck within a day or so.",
+  "sectionId": "s23e-s09b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09058",
+  "frontHtml": "Management of a small traumatic eardrum perforation without inner-ear symptoms?",
+  "backHtml": "Keep the ear dry, avoid ototoxic drops, follow up; most heal on their own.",
+  "sectionId": "s23e-s09b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09059",
+  "frontHtml": "Button battery in a child's ear: what to do?",
+  "backHtml": "<strong>Immediate removal</strong> under direct vision, with no irrigation.",
+  "sectionId": "s23e-s09b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09060",
+  "frontHtml": "Management of traumatic CSF otorrhea?",
+  "backHtml": "Head elevation, no straining, observation; <strong>no prophylactic antibiotics</strong>; surgery if it persists.",
+  "sectionId": "s23e-s09b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09061",
+  "frontHtml": "Delayed, incomplete facial palsy after a temporal bone fracture: management and prognosis?",
+  "backHtml": "<strong>Corticosteroids and observation</strong>; the prognosis is excellent.",
+  "sectionId": "s23e-s09b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09062",
+  "frontHtml": "Before a long course of amikacin, what test is needed?",
+  "backHtml": "<strong>Baseline audiometry</strong>, including high frequencies, then serial tests.",
+  "sectionId": "s23e-s09b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09063",
+  "frontHtml": "Which drug reduces cisplatin hearing loss in children with localized solid tumors?",
+  "backHtml": "<strong>Sodium thiosulfate</strong>, given about 6 hours after cisplatin.",
+  "sectionId": "s23e-s09b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09064",
+  "frontHtml": "Ototoxicity appears on gentamicin: what next?",
+  "backHtml": "<strong>Stop it</strong> and switch to an effective alternative; check kidney function and levels; arrange testing.",
+  "sectionId": "s23e-s09b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09065",
+  "frontHtml": "How do you prevent loop diuretic ototoxicity?",
+  "backHtml": "Avoid rapid high-dose IV pushes; give large doses as a <strong>slow infusion</strong>, especially in kidney failure.",
+  "sectionId": "s23e-s09b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
+ },
+ {
+  "id": "s23e-c09066",
+  "frontHtml": "Why is quinine not recommended for leg cramps?",
+  "backHtml": "It causes cinchonism (tinnitus, hearing loss, blurred vision) and serious <strong>hematologic toxicity</strong> such as thrombocytopenia.",
+  "sectionId": "s23e-s09b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.18.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "ear"
+  ]
  }
 ]
