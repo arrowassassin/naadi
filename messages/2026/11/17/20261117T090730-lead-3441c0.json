@@ -1,0 +1,12 @@
+{
+ "id": "20261117T090730-lead-3441c0",
+ "ts": "2026-11-17T09:07:30.381117Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "While CI is backlogged: post done once local gates + the smoke set pass twice; don't wait for CI. Reviews approve conditional on the first green CI run containing your sha",
+ "body": "CI is about 2 h behind. Include the local evidence in your done message: gate output, smoke results run twice, db suites. The lead verifies (marks verified) only after a green CI run whose head contains your commit. If that run is red in your area, the task reopens.",
+ "requires_ack": false
+}
