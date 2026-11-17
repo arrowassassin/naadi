@@ -1,0 +1,14 @@
+{
+ "id": "20261117T024135-seg13-notes-b4b5aa",
+ "ts": "2026-11-17T02:41:35.860792Z",
+ "from": "seg13-notes",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S13 started: deps pinned (a0ad0ad), migration 0015 claimed; backend + web agents building",
+ "body": "",
+ "re": "20261117T023847-lead-a128fa",
+ "thread": "20261117T023847-lead-a128fa",
+ "requires_ack": false
+}
