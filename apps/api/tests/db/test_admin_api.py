@@ -22,6 +22,7 @@ import psycopg
 import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
+from psycopg.types.json import Jsonb
 from pydantic import SecretStr
 
 from naadi_api.admin.media import VideoMeta
@@ -756,3 +757,42 @@ def test_queues_reports_and_generated_media(
     assert client.get("/api/admin/queues/nope", headers=a).status_code == 404
     audit = [r["action"] for r in _ok(client.get("/api/admin/audit", headers=a))["items"]]
     assert "queue.generated_media.approve" in audit and "queue.report_issues.approve" in audit
+
+
+def test_pathway_checks_queue_verifies_or_dismisses(client: TestClient, h: dict[str, dict[str, str]], url: str) -> None:
+    a = h["admin"]
+    with psycopg.connect(url, autocommit=True) as c:
+        c.execute("insert into public.pathway_stages (key, sort, title) values ('admin_test_stage', 99, 'Test stage')")
+        c.execute(
+            "insert into public.pathway_tasks (id, stage_key, sort, title, official_url, needs_review)"
+            " values ('admin-test-task', 'admin_test_stage', 1, 'Test task', 'https://example.org/a', true)"
+        )
+        ids = [
+            c.execute(
+                "insert into public.pathway_task_checks (task_id, url, http_status, changed, finding)"
+                " values ('admin-test-task', 'https://example.org/a', 200, true, %s) returning id",
+                (Jsonb({"status": "changed", "summary_key": "fee_changed", "quotes": []}),),
+            ).fetchone()[0]  # type: ignore[index]
+            for _ in range(2)
+        ]
+    try:
+        page = _ok(client.get("/api/admin/queues/pathway_checks", headers=a))
+        mine = [i for i in page["items"] if i["detail"]["task_id"] == "admin-test-task"]
+        assert len(mine) == 2 and mine[0]["ref"] == {"type": "pathway_task", "id": "admin-test-task"}
+        assert mine[0]["detail"]["status"] == "changed"
+        _ok(client.post(f"/api/admin/queues/pathway_checks/{ids[0]}/reject", json={"note": "noise"}, headers=a))
+        with psycopg.connect(url) as c:
+            assert c.execute(
+                "select needs_review from public.pathway_tasks where id = 'admin-test-task'"
+            ).fetchone() == (True,)
+        _ok(client.post(f"/api/admin/queues/pathway_checks/{ids[1]}/approve", json={}, headers=a))
+        with psycopg.connect(url) as c:
+            row = c.execute(
+                "select needs_review, last_verified is not null from public.pathway_tasks where id = 'admin-test-task'"
+            ).fetchone()
+            assert row == (False, True)
+        assert client.post(f"/api/admin/queues/pathway_checks/{ids[1]}/approve", json={}, headers=a).status_code == 404
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.pathway_tasks where id = 'admin-test-task'")
+            c.execute("delete from public.pathway_stages where key = 'admin_test_stage'")

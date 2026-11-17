@@ -9,10 +9,14 @@
 
 from __future__ import annotations
 
+import datetime as dt
+from typing import Any
+
 from pydantic import JsonValue
 
 from ..authoring import review_store
 from ..config_api.schemas import AuthoringRules
+from ..pathway import store as pathway_store
 from ..youtube import queue as yt
 from .common import one, rows
 from .licence import GateRefused, check_media_row
@@ -176,3 +180,84 @@ register_queue(
 )
 
 __all__ = ["REVIEW_FILTERS"]
+
+
+# ── pathway_checks (segment 17) ──
+# The weekly official-page check flags a task whose page changed (open = changed and unresolved). Approve = the
+# admin confirms the task is still right (S17's verify_task: last_verified today, flag cleared, open checks
+# resolved); reject = this check is noise (resolved without verifying the task).
+
+
+async def _pc_list(ctx: QueueContext, *, limit: int, cursor: str | None) -> QueuePage:
+    offset = _offset(cursor)
+    found, total = await pathway_store.list_checks(ctx.conn, only_open=True, limit=offset + limit + 1)
+    page = found[offset : offset + limit]
+    items = []
+    for r in page:
+        finding = r["finding"] if isinstance(r["finding"], dict) else {}
+        items.append(
+            QueueItem(
+                id=str(r["id"]),
+                kind="pathway_checks",
+                created_at=r["checked_at"],
+                title=r["task_title"],
+                ref=QueueRef(type="pathway_task", id=r["task_id"]),
+                detail={
+                    "task_id": r["task_id"],
+                    "stage_key": r["stage_key"],
+                    "url": r["url"],
+                    "http_status": r["http_status"],
+                    "status": finding.get("status"),
+                    "summary_key": finding.get("summary_key"),
+                    "quotes": [q for q in (finding.get("quotes") or []) if isinstance(q, dict)][:5],
+                    "last_verified": r["last_verified"].isoformat() if r["last_verified"] else None,
+                },
+            )
+        )
+    return QueuePage(items=items, next_cursor=str(offset + limit) if len(found) > offset + limit else None, total=total)
+
+
+async def _open_check(ctx: QueueContext, item_id: str) -> dict[str, Any]:
+    if not item_id.isdigit():
+        raise ItemGone()
+    r = await one(
+        ctx.conn,
+        "select id, task_id, resolved_at from public.pathway_task_checks"
+        " where id = %s and resolved_at is null and changed for update",
+        (int(item_id),),
+    )
+    if r is None:
+        raise ItemGone()
+    return r
+
+
+async def _pc_approve(ctx: QueueContext, item_id: str, note: str | None, params: dict[str, JsonValue]) -> QueueDecision:
+    check = await _open_check(ctx, item_id)
+    task = await pathway_store.verify_task(
+        ctx.conn, check["task_id"], ctx.admin.user_id, dt.datetime.now(dt.UTC).date()
+    )
+    return QueueDecision(
+        id=item_id,
+        status="approved",
+        before={"check": item_id},
+        after={"task": check["task_id"], "verified": str(task["last_verified"])},
+    )
+
+
+async def _pc_reject(ctx: QueueContext, item_id: str, note: str | None) -> QueueDecision:
+    check = await _open_check(ctx, item_id)
+    await ctx.conn.execute(
+        "update public.pathway_task_checks set resolved_by = %s, resolved_at = now() where id = %s",
+        (ctx.admin.user_id, check["id"]),
+    )
+    return QueueDecision(id=item_id, status="rejected", before={"check": item_id}, after={"resolved": True})
+
+
+async def _pc_count(ctx: QueueContext) -> int:
+    r = await one(
+        ctx.conn, "select count(*)::int as n from public.pathway_task_checks where resolved_at is null and changed"
+    )
+    return int(r["n"]) if r else 0
+
+
+register_queue("pathway_checks", _pc_list, _pc_approve, _pc_reject, ref_type="pathway_task", count_fn=_pc_count)
