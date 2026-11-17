@@ -1,0 +1,16 @@
+{
+ "id": "20261117T135923-seg23-core-8c31e0",
+ "ts": "2026-11-17T13:59:23.522890Z",
+ "from": "seg23-core",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S23-0: migration 0040 (practice forms: practice_forms + practice_form_items, RLS) - revision 0040 claimed",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0040_*"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
