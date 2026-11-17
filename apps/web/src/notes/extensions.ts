@@ -8,6 +8,8 @@ import { isHighlightColor } from "../highlights/anchor";
 import { MARK_CLASS } from "../highlights/Mark";
 import { NoteImageView } from "./NoteImage";
 
+export { EMPTY_DOC, isEmptyDoc } from "./doc";
+
 /**
  * The note sheet's schema (TipTap 3.34.0): paragraphs, headings (2–3), bullet and numbered lists, quotes, bold,
  * italic, the three highlight colours and images from the student's own uploads. Nothing renders an inline
@@ -76,9 +78,6 @@ export function noteExtensions(placeholder: string, images: boolean): AnyExtensi
   return list;
 }
 
-/** An empty TipTap document. */
-export const EMPTY_DOC = { type: "doc", content: [{ type: "paragraph" }] } as const;
-
 /** A document holding `quote` as a blockquote followed by an empty paragraph to write in. */
 export function quoteDoc(quote: string): Record<string, unknown> {
   return {
@@ -88,16 +87,4 @@ export function quoteDoc(quote: string): Record<string, unknown> {
       { type: "paragraph" },
     ],
   };
-}
-
-/** True when a TipTap document holds no text and no image. */
-export function isEmptyDoc(doc: unknown): boolean {
-  const walk = (n: unknown): boolean => {
-    if (!n || typeof n !== "object") return true;
-    const node = n as { type?: unknown; text?: unknown; content?: unknown };
-    if (node.type === "text") return !(typeof node.text === "string" && node.text.trim());
-    if (node.type === "image") return false;
-    return Array.isArray(node.content) ? node.content.every(walk) : true;
-  };
-  return walk(doc);
 }

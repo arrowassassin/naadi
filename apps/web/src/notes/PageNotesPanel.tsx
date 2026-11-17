@@ -1,7 +1,7 @@
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
 import type { Editor } from "@tiptap/react";
 import { PenLine } from "lucide-react";
-import { type Ref, useCallback, useEffect, useId, useImperativeHandle, useRef, useState } from "react";
+import { lazy, type Ref, Suspense, useCallback, useEffect, useId, useImperativeHandle, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
@@ -15,10 +15,15 @@ import {
   usePendingOps,
   useUserId,
 } from "./api";
-import { EMPTY_DOC, isEmptyDoc } from "./extensions";
-import { NoteEditor } from "./NoteEditor";
+import { EMPTY_DOC, isEmptyDoc } from "./doc";
 import { NoteInk } from "./NoteInk";
 import { NoteSaveStatus } from "./SaveStatus";
+
+/**
+ * TipTap and ProseMirror (about 130 KB gzipped) are their own chunk: the Reader renders the section first and loads
+ * the editor beside it. A quote sent before the editor exists waits in `pendingQuote` (see `onEditor`).
+ */
+const NoteEditor = lazy(() => import("./NoteEditor").then((m) => ({ default: m.NoteEditor })));
 
 export type PanelMode = "type" | "write" | "both";
 const MODES: PanelMode[] = ["type", "write", "both"];
@@ -165,13 +170,23 @@ export function PageNotesPanel({
   );
 
   const insertQuote = useCallback((ed: Editor, quote: string) => {
-    ed.chain()
-      .focus("end")
-      .insertContent([
-        { type: "blockquote", content: [{ type: "paragraph", content: [{ type: "text", text: quote }] }] },
-        { type: "paragraph" },
-      ])
-      .run();
+    const insert = () =>
+      ed
+        .chain()
+        .focus("end")
+        .insertContent([
+          { type: "blockquote", content: [{ type: "paragraph", content: [{ type: "text", text: quote }] }] },
+          { type: "paragraph" },
+        ])
+        .run();
+    // A freshly made editor's view is attached to the page a frame later: insert once it is (bounded retries).
+    let tries = 0;
+    const attempt = () => {
+      if (ed.isDestroyed) return;
+      if (ed.view.dom.isConnected || tries++ >= 60) insert();
+      else window.requestAnimationFrame(attempt);
+    };
+    attempt();
   }, []);
 
   useImperativeHandle(
@@ -192,8 +207,7 @@ export function PageNotesPanel({
       if (ed && pendingQuote.current) {
         const q = pendingQuote.current;
         pendingQuote.current = null;
-        // After the first render of the editor's content.
-        window.setTimeout(() => insertQuote(ed, q), 0);
+        insertQuote(ed, q);
       }
     },
     [insertQuote],
@@ -269,17 +283,28 @@ export function PageNotesPanel({
                   {t("notes.panel_typed")}
                 </span>
               ) : null}
-              <NoteEditor
-                // One editor per note; a note made here keeps the editor it was typed in.
-                key={madeId ? "local" : (note?.id ?? "local")}
-                noteId={noteId ?? sectionId}
-                initial={note?.body ?? EMPTY_DOC}
-                onChange={onChange}
-                label={t("notes.panel_editor", { section: sectionHeading })}
-                placeholder={t("notes.panel_placeholder")}
-                onEditor={onEditor}
-                compact
-              />
+              <Suspense
+                fallback={
+                  <div aria-busy="true" className="flex flex-col gap-3">
+                    <p role="status" className="sr-only">
+                      {t("notes.panel_loading")}
+                    </p>
+                    <Skeleton className="h-24 w-full rounded-block-sm bg-ground/10" />
+                  </div>
+                }
+              >
+                <NoteEditor
+                  // One editor per note; a note made here keeps the editor it was typed in.
+                  key={madeId ? "local" : (note?.id ?? "local")}
+                  noteId={noteId ?? sectionId}
+                  initial={note?.body ?? EMPTY_DOC}
+                  onChange={onChange}
+                  label={t("notes.panel_editor", { section: sectionHeading })}
+                  placeholder={t("notes.panel_placeholder")}
+                  onEditor={onEditor}
+                  compact
+                />
+              </Suspense>
             </div>
           ) : null}
           {showWrite ? (
