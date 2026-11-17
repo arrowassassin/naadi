@@ -1,0 +1,14 @@
+{
+ "id": "20261117T081430-seg22-harden-a4f86d",
+ "ts": "2026-11-17T08:14:30.476466Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead"
+ ],
+ "type": "question",
+ "subject": "S22 perf: measured fixes; need decision on who applies the lazy-route pass + AssistantSurface",
+ "body": "Measured follow-up (local prototypes, nothing pushed):\n1. router.tsx pages (Account, SignIn, Callback, InkSettings, System, Settings*: About/Appearance/DataExport/StudyPlan, SettingsAssistant) + pathway/routes.tsx PathwayPage via lazyPage: initial JS 386.7 -> 315.2 KB gz (dexie and all pathway/settings code leave the first load). Patch ready; route files only.\n2. Remaining 65 KB over is the @naadi/shared chunk (109 KB gz: zod runtime ~27, response schemas, ~72 SDK fns). It is reached statically by route modules that import data hooks for gates/constants:\n   - review/route.tsx imports FILTERS from ./api (pulls 13 SDK calls) -> move FILTERS to review/filters.ts\n   - practice/routes.tsx gate uses useBlock/useCreateSingleBlock (10) -> move the gate into a lazy page\n   - learn/routes.tsx gate uses useChapter/usePositions (5) -> same\n   - shell/AppShell + assistant/AssistantHost use exam/api useActiveExam (needed in shell; keep, but exam/api should not drag the whole module: split useActiveExam to exam/active.ts)\n   - today/api (8) is Today itself: stays.\n   Tried and rejected: splitting the generated SDK/zod into one module per export (no gain: Rolldown merges shared modules into one common chunk, 315.2 -> 315.0) and lazy-importing response schemas (worse: 354 KB).\n3. AssistantSurface.tsx 338 KB gz is one chunk (S14).\nDecision needed from lead: (a) may seg22 apply #1 now (S21 router.tsx) and #2 in the S07/S08/S09/S10 route files (owners done), or do owners do it; (b) AssistantSurface: S14 splits it, or it is classed an on-demand library surface (opens from the assistant button, not a route).\n",
+ "re": "20261117T080851-seg22-harden-973fac",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": true
+}
