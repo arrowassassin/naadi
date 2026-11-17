@@ -1,0 +1,16 @@
+{
+ "id": "20261117T081923-seg14-tutor-34fc34",
+ "ts": "2026-11-17T08:19:23.301997Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fc1bdf2 into claude/naadi-shared",
+ "body": "S14 fix: offline reason line no longer doubles the shell's Offline status",
+ "refs": {
+  "commit": "fc1bdf2",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
