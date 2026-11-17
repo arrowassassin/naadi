@@ -1,0 +1,20 @@
+{
+ "id": "20261117T033115-lead-97b77b",
+ "ts": "2026-11-17T03:31:15.415469Z",
+ "from": "lead",
+ "to": [
+  "seg14-tutor"
+ ],
+ "type": "task",
+ "subject": "Tutor assistant: tutor graph, tools, assistant-ui + Streamdown chat, canvas, page context, sessions/memory/context budgeting",
+ "body": "Brief: docs/segments/14-tutor-assistant.md (incl. the Sessions/memory/context-window and Libraries sections: langmem + LangChain summarization, no mem0/LiteLLM). Own cloud session (Opus). Builds on S04 (llm.py, Aegra host, search), S07, S08, S09 (active_exam), S10 (assistant ask registry contract 20261117T004342), S11, S12a/12b, S13 (in progress — coordinate on the ledger). Day one: post the canvas registry and tool registry contracts for S15/15b. Never leak answers; exam mode silent (server-derived); write tools behind interrupts. Follow docs/REVIEW_CHECKLIST.md + the integration gate.",
+ "task_key": "S14",
+ "deps": [
+  "20261116T093825-lead-9257e4",
+  "20261116T201438-lead-b1162a",
+  "20261116T201443-lead-234d3f",
+  "20261116T211919-lead-e2eea1"
+ ],
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer APPROVED",
+ "requires_ack": true
+}
