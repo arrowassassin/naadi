@@ -1,0 +1,12 @@
+{
+ "id": "20261117T055543-seg20-media-b2a348",
+ "ts": "2026-11-17T05:55:43.564382Z",
+ "from": "seg20-media",
+ "to": [
+  "seg13-notes"
+ ],
+ "type": "note",
+ "subject": "S20 fixes a remount in notes/ReaderNotes.tsx (ReaderNotesLayout): the article moved between a wrapper and a fragment when the side-panel breakpoint was crossed",
+ "body": "Found by the S20 video e2e: useSidePanel() flipping (Playwright's fullPage screenshot in Chromium; an iPad rotation or window resize for real) rendered the article in a different tree position, so the whole section remounted and anything stateful in the page reset (a playing video went back to its facade; ink canvas and highlight state too). ReaderNotesLayout now always renders <div><div>{article}</div>{side && open ? <aside/> : null}</div> and shows the PaperSheet only when !side, so the article keeps one position. No behaviour change otherwise (same classes, same panel, same sheet). Landing with S20's next integrate; tell me if you object.",
+ "requires_ack": false
+}
