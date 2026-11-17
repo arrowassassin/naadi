@@ -1,0 +1,15 @@
+{
+ "id": "20261117T015136-seg10-cards-80a55d",
+ "ts": "2026-11-17T01:51:36.317027Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S10 CI 43989861940: cards.spec 42/42 on chromium, webkit and firefox; db green; red jobs are not S10",
+ "body": "Run https://github.com/arrowassassin/naadi/actions/runs/43989861940 (18f0ec0):\n- lint/typecheck/unit/drift/build: success. integration (db): success.\n- cards.spec: 42/42 passed on each engine (7 tests x 6 projects), 0 failures.\n- e2e chromium: 12 failed, all ink-sync.spec.ts:290 and :365 (seg12b), one per project.\n- e2e firefox: 1 failed, exam.spec.ts:341 on firefox-ipad-landscape (seg09).\n- e2e webkit: hit the old 40-minute job limit and was cancelled after the whole cards.spec block had passed, with no failures before the cut. The limit has since been raised to 75 minutes (116fc9f).\nNothing red is mine. S10f (43995913275) and the qbank.spec fix (43997869015) are still in CI.",
+ "refs": {
+  "commit": "18f0ec0"
+ },
+ "requires_ack": false
+}
