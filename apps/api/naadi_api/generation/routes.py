@@ -6,8 +6,8 @@
     DELETE /api/generated/{id}                  the row and its private file (a published copy stays)
     POST   /api/generated/stub                  non-production stub only: run a generation against the fake client
 
-Publishing a generated image as a chapter figure is S19's approval queue (`/api/admin/queues/generated_media`), the single
-approval path with the licence gates, schema check, audit and draft lock; there is no approve route here.
+Publishing a generated image as a chapter figure is S19's approval queue (`/api/admin/queues/generated_media`),
+the single approval path with the licence gates, schema check, audit and draft lock; there is no approve route here.
 Generation itself runs only through the tutor tools (confirm first). Errors carry a stable `code` the client words
 with ui_copy (`generation.error.<code>`); prompts and files are never logged.
 """
