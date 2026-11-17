@@ -53,7 +53,9 @@ and only a human can retire or revise; below 100 the only outcome is "flag for r
 ## Settings and export-all
 
 `/settings/*` is a shell over groups, each shown only while its feature flag is on. **Export everything** (`POST /api/export`) builds a
-ZIP on the server: one JSON array per user table, the student's uploaded files and generated media, the vault only when
+ZIP on the server: one JSON array per user table, the student's own rows without a `user_id` (their private chapters with sections and
+figures, their media and their flashcards; a card made from a question they have not attempted keeps no back), the student's uploaded files
+and generated media, the vault only when
 "Include Vault documents" is ticked (rows and files). It is uploaded to `user-uploads/{user_id}/exports/{id}.zip` (further parts
 `-2`, `-3`, ...: the bucket caps an object at 50 MB), offered by signed URL for 24 hours, then deleted. A file larger than a part is listed
 under `skipped` in `manifest.json` and stays downloadable from Library. A running exam's grading (`attempts.correct`) is withheld until the

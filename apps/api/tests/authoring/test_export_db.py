@@ -162,7 +162,10 @@ def test_export_everything_builds_a_zip_of_my_rows_and_files_without_the_vault(
     z = fetch_zip(storage_url, job["downloads"][0]["url"])
     names = set(z.namelist())
     assert "manifest.json" in names and "data/costs.json" in names and "data/profiles.json" in names
-    assert {"data/questions.json", "data/chapters.json", "data/sources.json", "data/embeddings.json"}.isdisjoint(names)
+    assert {"data/questions.json", "data/sources.json", "data/embeddings.json", "data/taxonomy_nodes.json"}.isdisjoint(
+        names
+    )
+    assert json.loads(z.read("data/chapters.json")) == []  # only chapters I own (private uploads), never shared ones
     assert "data/vault_documents.json" not in names and "data/export_jobs.json" not in names
     assert [c["label"] for c in json.loads(z.read("data/costs.json"))] == ["mine fee"]
     assert [c["body"] for c in json.loads(z.read("data/report_issues.json"))] == ["mine report"]
@@ -316,3 +319,83 @@ def test_export_needs_configured_storage(url: str, key: SigningKey, static_dir: 
     with TestClient(app, raise_server_exceptions=False) as c:
         r = c.post("/api/export", json={}, headers=me.h)
     assert r.status_code == 503 and r.json()["error"]["code"] == "export_unavailable"
+
+
+def test_the_students_private_chapters_and_cards_are_exported_but_never_a_key_they_have_not_earned(
+    client: TestClient, me: Student, storage_url: str, pg: psycopg.Connection[Any]
+) -> None:
+    other: Student = me.other  # type: ignore[attr-defined]
+    tag = uuid.uuid4().hex[:6]
+    src = f"t{tag}-src"
+    insert_row(pg, "sources", {"id": src, "name": "x", "license": "proprietary-naadi"})
+    for owner, name in ((me.id, "mine"), (other.id, "theirs")):
+        cid = f"t{tag}-{name}"
+        insert_row(
+            pg,
+            "chapters",
+            {
+                "id": cid,
+                "exam": "step1",
+                "kind": "user_upload",
+                "title": f"{name} chapter",
+                "owner_user_id": owner,
+                "source_id": src,
+            },
+        )
+        insert_row(
+            pg, "chapter_sections", {"id": f"{cid}-s1", "chapter_id": cid, "sort": 1, "heading": f"{name} section"}
+        )
+    qs = [f"t{tag}-q{i}" for i in range(2)]
+    for qid in qs:
+        insert_row(
+            pg,
+            "questions",
+            {
+                "id": qid,
+                "exam": "step1",
+                "stem_html": "<p>s</p>",
+                "options": json.dumps([{"label": "A", "html": "a"}]),
+                "answer": "A",
+                "source_id": src,
+            },
+        )
+    pg.execute(
+        "insert into public.attempts (user_id, question_id, chosen, correct, mode) values (%s, %s, 'A', true, 'tutor')",
+        (me.id, qs[0]),
+    )
+    cards = {
+        "own": {"front_html": "own front", "back_html": "own back", "origin": "user", "owner_user_id": me.id},
+        "attempted": {
+            "front_html": "f1",
+            "back_html": "KEY-OF-ATTEMPTED",
+            "origin": "assistant",
+            "owner_user_id": me.id,
+            "question_id": qs[0],
+        },
+        "unattempted": {
+            "front_html": "f2",
+            "back_html": "KEY-OF-UNATTEMPTED",
+            "origin": "assistant",
+            "owner_user_id": me.id,
+            "question_id": qs[1],
+        },
+        "theirs": {"front_html": "their front", "back_html": "their back", "origin": "user", "owner_user_id": other.id},
+    }
+    try:
+        for c in cards.values():
+            insert_row(pg, "flashcards", {"id": uuid.uuid4(), **c})
+        job = wait_ready(client, me, client.post("/api/export", json={}, headers=me.h).json()["id"])
+        z = fetch_zip(storage_url, job["downloads"][0]["url"])
+        assert [c["title"] for c in json.loads(z.read("data/chapters.json"))] == ["mine chapter"]
+        assert [s["heading"] for s in json.loads(z.read("data/chapter_sections.json"))] == ["mine section"]
+        got = {c["front_html"]: c["back_html"] for c in json.loads(z.read("data/flashcards.json"))}
+        assert got == {"own front": "own back", "f1": "KEY-OF-ATTEMPTED", "f2": None}
+        blob = b"".join(z.read(n) for n in z.namelist())
+        assert b"KEY-OF-UNATTEMPTED" not in blob and b"their front" not in blob and b"theirs chapter" not in blob
+        assert "data/questions.json" not in z.namelist() and "data/sources.json" not in z.namelist()
+    finally:
+        pg.execute("delete from public.attempts where user_id = %s", (me.id,))
+        pg.execute("delete from public.flashcards where owner_user_id = any(%s)", ([me.id, other.id],))
+        pg.execute("delete from public.chapters where id like %s", (f"t{tag}-%",))
+        pg.execute("delete from public.questions where source_id = %s", (src,))
+        pg.execute("delete from public.sources where id = %s", (src,))

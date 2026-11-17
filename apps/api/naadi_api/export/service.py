@@ -45,6 +45,29 @@ COLUMN_OVERRIDES: dict[str, dict[str, str]] = {
 }
 
 
+# Rows the student owns without a `user_id` column: their private chapters (uploads, knowledge-base documents), those
+# chapters' sections and figures, their own media and their flashcards. Shared content is never exported. `{u}` is
+# the student's id. A card made from a question the student has not attempted keeps no back: it could restate the key.
+OWNER_TABLES: dict[str, str] = {
+    "chapters": "t.owner_user_id = %(u)s",
+    "chapter_sections": "t.chapter_id in (select id from public.chapters where owner_user_id = %(u)s)",
+    "section_media": (
+        "t.section_id in (select s.id from public.chapter_sections s join public.chapters c on c.id = s.chapter_id"
+        " where c.owner_user_id = %(u)s)"
+    ),
+    "media_assets": "t.owner_user_id = %(u)s",
+    "flashcards": "t.owner_user_id = %(u)s",
+}
+OWNER_OVERRIDES: dict[str, dict[str, str]] = {
+    "flashcards": {
+        "back_html": (
+            "case when t.question_id is null or exists (select 1 from public.attempts a"
+            " where a.user_id = t.owner_user_id and a.question_id = t.question_id) then t.back_html end"
+        )
+    }
+}
+
+
 class ExportError(Exception):
     def __init__(self, status: int, code: str) -> None:
         super().__init__(code)
@@ -77,7 +100,13 @@ class DbSource:
                 " where n.nspname = 'public' and c.relkind = 'r'"
                 "   and has_any_column_privilege('authenticated', c.oid, 'select') order by 1"
             )
-            self._tables = [r["relname"] for r in await cur.fetchall() if r["relname"] not in EXCLUDED_TABLES]
+            names = [r["relname"] for r in await cur.fetchall() if r["relname"] not in EXCLUDED_TABLES]
+            cur = await conn.execute(
+                "select relname from pg_class where relnamespace = 'public'::regnamespace and relname = any(%s)",
+                (list(OWNER_TABLES),),
+            )
+            owned = [r["relname"] for r in await cur.fetchall()]
+        self._tables = sorted({*names, *owned})
         return self._tables
 
     def tables(self, include_vault: bool) -> Sequence[str]:
@@ -93,7 +122,7 @@ class DbSource:
                 (f"public.{table}",),
             )
             cols = [r["attname"] for r in await cur.fetchall()]
-            over = COLUMN_OVERRIDES.get(table, {})
+            over = {**COLUMN_OVERRIDES.get(table, {}), **OWNER_OVERRIDES.get(table, {})}
             cols = [*cols, *(c for c in over if c not in cols)]  # a column clients cannot read, exported under a rule
             select_list = sql.SQL(", ").join(
                 sql.SQL("{} as {}").format(sql.SQL(over[c]), sql.Identifier(c))
@@ -102,12 +131,12 @@ class DbSource:
                 for c in cols
             )
             order = sql.SQL("t.{}").format(sql.Identifier("created_at" if "created_at" in cols else cols[0]))
+            where = sql.SQL(OWNER_TABLES.get(table, "t.user_id = %(u)s"))
             query = sql.SQL(
-                "select to_jsonb(x) as j from"
-                " (select {cols} from public.{table} t where t.user_id = %s order by {order}) x"
-            ).format(cols=select_list, table=sql.Identifier(table), order=order)
+                "select to_jsonb(x) as j from (select {cols} from public.{table} t where {where} order by {order}) x"
+            ).format(cols=select_list, table=sql.Identifier(table), where=where, order=order)
             async with conn.cursor(name=f"export_{uuid.uuid4().hex[:8]}") as cur2:
-                await cur2.execute(query, (self.user_id,))
+                await cur2.execute(query, {"u": self.user_id})
                 while True:
                     batch = await cur2.fetchmany(500)
                     if not batch:
