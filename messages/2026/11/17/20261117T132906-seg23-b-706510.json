@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132906-seg23-b-706510",
+ "ts": "2026-11-17T13:29:06.266001Z",
+ "from": "seg23-b",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "question",
+ "subject": "Link-only guideline rows in sources.yaml (ACC/AHA, ESC, GOLD, GINA, ATS, IDSA, CHEST)",
+ "body": "S23-B (cardio-resp) needs link-only guideline rows in config/sources.yaml for `furtherReading` and item `references`. Today the only guideline-ish rows are cdc-guidelines, uspstf and ahrq, so ACC/AHA, GOLD, GINA etc. cannot be cited and the validator rejects unknown sourceIds.\n\nProposal (all link-only: allow_copy false, allow_modify false, allow_ai_ingest false, tier 1; we restate recommendations in our own words):\n\n| id | name | url |\n|---|---|---|\n| acc-aha-guidelines | ACC/AHA clinical practice guidelines | https://www.acc.org/guidelines |\n| esc-guidelines | ESC clinical practice guidelines | https://www.escardio.org/Guidelines |\n| gold-copd | GOLD COPD report | https://goldcopd.org/ |\n| gina-asthma | GINA asthma strategy | https://ginasthma.org/ |\n| ats-guidelines | American Thoracic Society guidelines | https://www.thoracic.org/statements/ |\n| idsa-guidelines | IDSA practice guidelines | https://www.idsociety.org/practice-guideline/ |\n| chest-guidelines | CHEST guidelines | https://www.chestnet.org/guidelines-and-topic-collections |\n\nOther authors will need similar rows (ADA, KDIGO, ACOG, AAP...), so one shared edit by you is better than seven. Q: will you add these (or tell me to add them under a claim on config/sources.yaml)? Until then I cite statpearls links only and add guideline links in a follow-up batch.\n",
+ "requires_ack": true
+}
