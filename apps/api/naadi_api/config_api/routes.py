@@ -223,7 +223,20 @@ async def put_config(request: Request, admin: AdminUser, key: ConfigKey, body: C
         raise HTTPException(404, f"Unknown config key {key!r}.") from exc
     except (psycopg.OperationalError, TimeoutError) as exc:
         raise _db_down(exc) from exc
+    await _audit_put(request, admin, key, row.value)
     return _entry(row)
+
+
+async def _audit_put(request: Request, admin: Any, key: str, value: Any) -> None:
+    """`admin_audit` row for the save (segment 19). The save itself is already committed and in
+    app_config_history, so an audit failure is logged, never turned into an error for a write that happened."""
+    from ..admin.common import audit, service_tx
+
+    try:
+        async with service_tx(request.app.state.db) as conn:
+            await audit(conn, admin, "config.update", "app_config", key, after={"value": value})
+    except Exception as exc:  # noqa: BLE001 - see docstring
+        log.warning("app_config_audit_failed", key=key, error=type(exc).__name__)
 
 
 @router.get(

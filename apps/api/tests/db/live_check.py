@@ -87,6 +87,8 @@ CLIENT_CLOSED_TABLES = (
     "video_candidates",
     "question_reviews",
     "authoring_runs",
+    "admin_audit",
+    "question_revisions",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -157,8 +159,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "50 Naadi tables present",
-            "select count(*) = 50 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "52 Naadi tables present",
+            "select count(*) = 52 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),

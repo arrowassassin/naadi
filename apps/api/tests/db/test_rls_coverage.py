@@ -78,6 +78,8 @@ def test_anon_has_no_privileges_on_user_or_admin_tables(pg: psycopg.Connection) 
                 "search_usage",
                 "agent_health",
                 "video_candidates",
+                "admin_audit",
+                "question_revisions",
             ],
         ),
     ).fetchall()
@@ -120,6 +122,8 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         "naadi_mark_section_edited",
         "naadi_secure_aegra_tables",
         "naadi_coach_status_guard",  # 0014: trigger function (fires for clients without EXECUTE)
+        "naadi_revision_guard",  # 0024: published section revisions are immutable
+        "naadi_publish_section_revision",  # 0024: the live body is the latest published revision
     }
     for name, config, anon_exec, auth_exec in rows:
         assert config == ['search_path=""'], name
