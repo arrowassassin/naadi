@@ -148,8 +148,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "46 Naadi tables present",
-            "select count(*) = 46 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "47 Naadi tables present",
+            "select count(*) = 47 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
