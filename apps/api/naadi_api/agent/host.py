@@ -212,6 +212,10 @@ def build() -> FastAPI:
 
     agent_auth.configure(verifier=aegra_app.state.auth, accounts=aegra_app.state.accounts)
     aegra_app.add_middleware(AuthUnavailableAs503)
+    # Per-student limits on Aegra's own protocol routes (segment 22; the Naadi routes have their own buckets).
+    from .limits import AgentRateLimit
+
+    aegra_app.add_middleware(AgentRateLimit)
     from ..health.checks import agent_runtime_check
     from ..health.service import Check
 

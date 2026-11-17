@@ -2,6 +2,8 @@ import type { Route } from "@playwright/test";
 import { expect, expectNoAxeViolations, expectNoHorizontalOverflow, healthPanel, snap, test } from "./fixtures";
 
 const COMPONENTS = ["database", "storage", "tavily", "openrouter", "nvidia"] as const;
+/** The five always-present tiles. Optional ones (generation, backups, searxng) appear only when the API reports them. */
+const CORE = COMPONENTS.map((n) => `[data-component="${n}"]`).join(", ");
 // The chip reads "<Component> status: <Word>" to assistive tech; the visible word is the last token.
 const STATUS_WORDS = /status: (OK|Degraded|Down)$/;
 
@@ -116,6 +118,10 @@ test.describe("health panel", () => {
       await expect(card.locator("[data-tone]")).toHaveText(STATUS_WORDS);
       await expect(card).toContainText(body.components[name].detail);
     }
+    // Backups (segment 22): until the owner sets HF_BACKUP_TOKEN + BACKUP_AGE_RECIPIENT the tile says so in words.
+    if (body.components.backup?.configured === false) {
+      await expect(panel.locator('[data-component="backups"]')).toContainText("Not configured");
+    }
     const probes = body.components.nvidia.models ?? [];
     const modelList = panel.locator('[data-component="nvidia"]').getByRole("list", { name: "Configured models" });
     if (probes.length > 0) {
@@ -161,7 +167,7 @@ test.describe("health panel", () => {
     release();
     const status = (await done).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
-    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(CORE)).toHaveCount(COMPONENTS.length);
   });
 
   test("error shows a message and retry recovers", async ({ page, consoleErrors }, testInfo) => {
@@ -194,7 +200,7 @@ test.describe("health panel", () => {
     await alert.getByRole("button", { name: "Try again" }).click();
     const status = (await retried).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
-    await expect(healthPanel(page).locator("[data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(healthPanel(page).locator(CORE)).toHaveCount(COMPONENTS.length);
   });
 
   test("a failed refetch keeps the last result, labelled stale, with the error", async ({
@@ -206,7 +212,7 @@ test.describe("health panel", () => {
     const status = (await first).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     const panel = healthPanel(page);
-    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(CORE)).toHaveCount(COMPONENTS.length);
 
     consoleErrors.allowHttpError({ urlPart: "/api/health", status: 500 });
     await page.route("**/api/health", (route) =>
@@ -225,7 +231,7 @@ test.describe("health panel", () => {
     await expect(alert).toContainText("may be out of date");
     await expect(alert).toContainText("Request ID e2e-stale-500");
     await expect(panel.locator("[data-tone]").filter({ hasText: "Stale" }).first()).toBeVisible();
-    await expect(panel.locator("ul[data-stale='true'] > [data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(`ul[data-stale='true'] > :is(${CORE})`)).toHaveCount(COMPONENTS.length);
     await expect(panel.getByText(/^Stale · Version/)).toBeVisible();
     await expectNoHorizontalOverflow(page);
     await expectNoAxeViolations(page);
@@ -249,7 +255,7 @@ test.describe("health panel", () => {
     const status = (await first).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     const panel = healthPanel(page);
-    await expect(panel.locator("ul[data-stale='false'] > [data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(`ul[data-stale='false'] > :is(${CORE})`)).toHaveCount(COMPONENTS.length);
 
     // The refetch the 60 s interval fires is answered by a server error; no click, no focus change.
     let refetches = 0;
@@ -271,7 +277,7 @@ test.describe("health panel", () => {
     await expect(alert).toContainText("Request ID e2e-interval-502");
     await expect(alert).toContainText(/last successful check at .+ and may be out of date/);
     expect(refetches).toBe(1);
-    await expect(panel.locator("ul[data-stale='true'] > [data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(`ul[data-stale='true'] > :is(${CORE})`)).toHaveCount(COMPONENTS.length);
     await expect(panel.getByText(/^Stale · Version/)).toBeVisible();
     await expect(panel.locator("[data-tone]").filter({ hasText: "Stale" }).first()).toBeVisible();
     await expectNoHorizontalOverflow(page);
@@ -285,7 +291,7 @@ test.describe("health panel", () => {
     const status = (await healthResponse).status();
     if (status === 503) consoleErrors.allowHttpError({ urlPart: "/api/health", status });
     const panel = healthPanel(page);
-    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(CORE)).toHaveCount(COMPONENTS.length);
     // Faces are fetched on first use; the offline banner can be the first user of one. Fetch them all while
     // online, or the browser logs a "download failed" error that no app code can prevent.
     await page.evaluate(() => Promise.all(Array.from(document.fonts, (f) => f.load())).then(() => undefined));
@@ -294,7 +300,7 @@ test.describe("health panel", () => {
     const banner = panel.getByRole("status").filter({ hasText: "Offline" });
     await expect(banner).toBeVisible();
     await expect(banner).toContainText("Showing the last result from");
-    await expect(panel.locator("[data-component]")).toHaveCount(COMPONENTS.length);
+    await expect(panel.locator(CORE)).toHaveCount(COMPONENTS.length);
     await expect(panel.getByRole("button", { name: /Check again/ })).toBeDisabled();
     await expectNoHorizontalOverflow(page);
     await expectNoAxeViolations(page);
