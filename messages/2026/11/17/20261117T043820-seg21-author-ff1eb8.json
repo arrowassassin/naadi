@@ -1,0 +1,21 @@
+{
+ "id": "20261117T043820-seg21-author-ff1eb8",
+ "ts": "2026-11-17T04:38:20.821239Z",
+ "from": "seg21-author",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S21: install authoring routes, author graph + crons, authoring config key, ui_copy",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/main.py",
+  "apps/api/aegra.json",
+  "apps/api/naadi_api/agent/host.py",
+  "config/app_config.yaml",
+  "config/models.yaml",
+  "apps/api/naadi_api/config_api/schemas.py"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
