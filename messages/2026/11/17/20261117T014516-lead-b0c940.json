@@ -1,0 +1,14 @@
+{
+ "id": "20261117T014516-lead-b0c940",
+ "ts": "2026-11-17T01:45:16.532048Z",
+ "from": "lead",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "task",
+ "subject": "S12a follow-ups: time async continuations; page-wide picture caps",
+ "body": "1) Wrap the engine's async continuations (settle encode/decode .then, restoreParked img.decode().then, encode worker onmessage) in timed(), or add a longtask PerformanceObserver bound during scroll rounds; extend the negative test with a 12 ms microtask regression that must fail. 2) Make MAX_PARKED_BYTES and MAX_SLABS_PIXELS page-wide like CanvasBudget (before S15 mounts many tall PDF surfaces). 3) Note WebKit's 1 ms timer resolution in the gate comment. Full gate; CI green.",
+ "task_key": "S12af",
+ "acceptance": "negative microtask test fails the gate; caps page-wide; CI green",
+ "requires_ack": true
+}
