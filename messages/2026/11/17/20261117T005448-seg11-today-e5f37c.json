@@ -1,0 +1,16 @@
+{
+ "id": "20261117T005448-seg11-today-e5f37c",
+ "ts": "2026-11-17T00:54:48.395828Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S11 rework takes Alembic 0014 (down_revision 0013): one open diagnostic per student (partial unique index on blocks), coach_suggestions status transitions only from 'new' (trigger). Next free: 0015.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0014_s11_rework.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
