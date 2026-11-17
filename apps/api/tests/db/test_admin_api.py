@@ -379,8 +379,8 @@ def test_edit_rollback_diff_and_stale_drafts(client: TestClient, h: dict[str, di
     # published revisions are immutable in the database itself
     with (
         pytest.raises(psycopg.errors.CheckViolation),
-        psycopg.connect(client.app.state.settings.database_url.get_secret_value()) as c,
-    ):  # type: ignore[attr-defined]
+        psycopg.connect(client.app.state.settings.database_url.get_secret_value()) as c,  # type: ignore[attr-defined]
+    ):
         c.execute("update public.chapter_section_revisions set body = '{}'::jsonb where id = %s", (first["id"],))
 
 
@@ -564,6 +564,86 @@ def test_media_uploads_gates_and_youtube(client: TestClient, h: dict[str, dict[s
 
 
 # ── questions ──
+
+
+def test_review_moves_a_file_only_after_the_row_commits(
+    client: TestClient,
+    h: dict[str, dict[str, str]],
+    store: MemoryStore,
+    url: str,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """review19 R2: copy, commit, then delete. A failed transaction leaves the staged file and the row as they were
+    (the new copy is cleaned up); a failed delete after commit leaves an orphan, never a row pointing at nothing."""
+    import naadi_api.admin.media as media_mod
+
+    a = h["admin"]
+    q = {"source_id": "naadi-original-v1", "title": "R2 figure", "caption": "Moves after commit"}
+    fig = _ok(
+        client.post("/api/admin/media/files", params=q, content=SVG, headers={**a, "content-type": "image/svg+xml"}),
+        201,
+    )
+    staged = ("content-private", f"staging/figures/{fig['id']}.svg")
+    public = ("content-public", f"figures/admin/{fig['id']}.svg")
+
+    def state() -> tuple[str, str]:
+        with psycopg.connect(url) as c:
+            row = c.execute("select review_status, url from public.media_assets where id = %s", (fig["id"],)).fetchone()
+        assert row is not None
+        return row[0], row[1]
+
+    def keys() -> list[tuple[str, str]]:
+        return sorted(k for k in store.objects if fig["id"] in k[1])
+
+    # 1. The transaction fails after the copy (injected at the audit write): nothing moved, nothing recorded.
+    async def broken_audit(*_a: Any, **_k: Any) -> None:
+        raise psycopg.OperationalError("injected")
+
+    monkeypatch.setattr(media_mod, "audit", broken_audit)
+    r = client.post(f"/api/admin/media/{fig['id']}/review", json={"status": "approved"}, headers=a)
+    assert r.status_code == 503, r.text
+    assert keys() == [staged]
+    assert state() == ("unreviewed", "/".join(staged))
+    monkeypatch.undo()
+
+    # 2. The delete after commit fails: the row points at the new copy, which exists; the old one is an orphan.
+    def broken_delete(bucket: str, path: str) -> None:
+        raise OSError("injected")
+
+    monkeypatch.setattr(store, "delete", broken_delete)
+    _ok(client.post(f"/api/admin/media/{fig['id']}/review", json={"status": "approved"}, headers=a))
+    assert state() == ("approved", "/".join(public))
+    assert keys() == sorted([staged, public])
+    monkeypatch.undo()
+
+    # 3. A normal reject moves it back and removes the public copy.
+    _ok(client.post(f"/api/admin/media/{fig['id']}/review", json={"status": "rejected"}, headers=a))
+    assert state() == ("rejected", "/".join(staged))
+    assert keys() == [staged]
+
+
+def test_removing_a_seed_figure_on_publish_removes_its_placement(
+    client: TestClient, h: dict[str, dict[str, str]], url: str
+) -> None:
+    """review19 R3: the published body decides a section's figures, whoever placed them."""
+    with psycopg.connect(url) as c:
+        row = c.execute(
+            "select sm.section_id, sm.media_id from public.section_media sm"
+            " join public.chapter_sections s on s.id = sm.section_id join public.chapters ch on ch.id = s.chapter_id"
+            " where sm.origin = 'seed' and ch.status = 'published' order by sm.section_id, sm.media_id limit 1"
+        ).fetchone()
+    assert row is not None, "the fixture seeds placed figures"
+    sid, mid = row
+    try:
+        _ok(_publish(client, h, sid, _doc(_para("An admin rewrite without the figure.")))["response"])
+        with psycopg.connect(url) as c:
+            left = c.execute(
+                "select count(*) from public.section_media where section_id = %s and media_id = %s", (sid, mid)
+            ).fetchone()
+            edited = c.execute("select admin_edited_at is not null from public.chapter_sections where id = %s", (sid,))
+            assert left == (0,) and edited.fetchone() == (True,)
+    finally:
+        run_seed(options(url, only=("chapters",), force=True), bundle=bundle())
 
 
 def _question(**kw: Any) -> dict[str, Any]:

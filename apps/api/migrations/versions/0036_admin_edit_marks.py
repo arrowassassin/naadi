@@ -12,8 +12,10 @@ Create Date: 2026-11-17
   unless it runs with `--force`, which clears the mark.
 - `section_media` gains `origin` ('seed' | 'admin'), default 'admin'. Every writer other than the seed (admin
   console, YouTube approvals, generated-media approvals) owns its placements, and the importer only replaces or
-  deletes 'seed' rows. Existing placements of the seed's own figures (SVGs in the seed figure folder) are
-  backfilled as 'seed'; everything else stays 'admin', so it is never deleted.
+  deletes 'seed' rows. The back-fill is exact (review19 R4): a placement is 'seed' only when it is what the seed
+  itself makes, i.e. a seed figure (`<bucket>/figures/<id>.svg`, never `figures/admin/` or `figures/generated/`)
+  shown by a figure node in a section the admin has not edited. Anything else, including an admin attaching a
+  seed figure to another section before 0036, stays 'admin', so it is never deleted.
 - Storage: `content-private` also accepts `image/svg+xml`, because unreviewed admin figures wait there (review19 #7)
   until an admin approves them into `content-public`. Every staged SVG has already been through the seed's
   sanitiser (seed/svg.py), as figures in `content-public` have; `user-uploads` still refuses SVG.
@@ -39,8 +41,11 @@ alter table public.media_assets add column admin_edited_at timestamptz;
 alter table public.section_media
   add column origin text not null default 'admin' check (origin in ('seed','admin'));
 update public.section_media sm set origin = 'seed'
-  from public.media_assets m
- where m.id = sm.media_id and m.kind = 'svg' and m.url ~ '^[a-z0-9-]+/figures/[^/]+$';
+  from public.media_assets m, public.chapter_sections s
+ where m.id = sm.media_id and s.id = sm.section_id
+   and m.kind = 'svg' and m.url = split_part(m.url, '/', 1) || '/figures/' || m.id || '.svg'
+   and s.admin_edited_at is null
+   and jsonb_path_exists(s.body, '$.** ? (@.type == "figure" && @.attrs.mediaId == $m)', jsonb_build_object('m', m.id));
 
 update storage.buckets set allowed_mime_types = array_append(allowed_mime_types, 'image/svg+xml')
  where id = 'content-private' and not ('image/svg+xml' = any(allowed_mime_types));

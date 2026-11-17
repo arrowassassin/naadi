@@ -331,6 +331,34 @@ def test_admin_edits_and_attachments_survive_a_seed_unless_forced(first_run: obj
         run_seed(options(url, force=True), bundle=b)
 
 
+def test_a_seed_figure_an_admin_removed_stays_removed(first_run: object, url: str, b: SeedBundle) -> None:
+    """review19 R3: in an admin-edited section the published body decides the figures; a non-forced seed neither
+    re-adds the seed placement the admin removed nor fails its checks, and --force takes the section back."""
+    sec = next(s for _c, _i, s in b.sections if b.bodies.sections[s.id].figure_ids)
+    fid = b.bodies.sections[sec.id].figure_ids[0]
+    with psycopg.connect(url, autocommit=True) as c:
+        # What an admin publish of a body without the figure does (admin/chapters.py publish_body).
+        c.execute("update public.chapter_sections set admin_edited_at = now() where id = %s", (sec.id,))
+        c.execute("delete from public.section_media where section_id = %s and media_id = %s", (sec.id, fid))
+    try:
+        r = run_seed(options(url), bundle=b)
+        assert r.ok, [ch for ch in r.checks if not ch.ok]
+        with psycopg.connect(url) as c:
+            n = c.execute(
+                "select count(*) from public.section_media where section_id = %s and media_id = %s", (sec.id, fid)
+            ).fetchone()
+        assert n == (0,)
+    finally:
+        forced = run_seed(options(url, force=True), bundle=b)
+    assert forced.ok
+    with psycopg.connect(url) as c:
+        n = c.execute(
+            "select count(*) from public.section_media where section_id = %s and media_id = %s and origin = 'seed'",
+            (sec.id, fid),
+        ).fetchone()
+    assert n == (1,)
+
+
 def test_a_missing_storage_object_is_restored(first_run: object, url: str, b: SeedBundle) -> None:
     bucket = storage().client().from_(BUCKET)
     bucket.remove([f"{FIGURE_FOLDER}/ch05-fig02.svg"])

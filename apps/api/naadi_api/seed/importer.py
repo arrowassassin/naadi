@@ -380,9 +380,19 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
     )
     out["chapter_section_revisions"] = TableCounts(total=cur.rowcount, inserted=cur.rowcount)
 
+    # An admin-edited section's placements follow its published body (admin/chapters.py), not the seed's: a non-forced
+    # run neither re-adds a seed figure the admin removed nor deletes anything there (review19 R3).
+    edited: set[str] = set()
+    if not force:
+        cur.execute(
+            "select id from public.chapter_sections where id = any(%s) and admin_edited_at is not null",
+            ([s.id for _c, _i, s in b.sections],),
+        )
+        edited = {str(r[0]) for r in cur.fetchall()}
     placements = [
         {"section_id": s.id, "media_id": fid, "sort": n, "origin": "seed"}
         for _c, _i, s in b.sections
+        if s.id not in edited
         for n, fid in enumerate(b.bodies.sections[s.id].figure_ids)
     ]
     # Only the seed's own placements are replaced: an admin's attachment of the same media keeps its row.
@@ -394,7 +404,7 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
         " select 1 from jsonb_to_recordset(%s::jsonb) as x(section_id text, media_id text)"
         " where x.section_id = m.section_id and x.media_id = m.media_id)",
         (
-            [s.id for _c, _i, s in b.sections],
+            [s.id for _c, _i, s in b.sections if s.id not in edited],
             _payload([{k: p[k] for k in ("section_id", "media_id")} for p in placements]),
         ),
     )
@@ -554,10 +564,21 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
         " where q.taxonomy_ids = array(select jsonb_array_elements_text(m.value))",
         json.dumps(b.question_map),
     )
+    # Every placement the data has is there, unless its section is admin-edited (then its body decides, R3).
     actual["section_media"] = one(
         cur,
-        "select count(*) from public.section_media where section_id = any(%s) and origin = 'seed'",
-        section_ids,
+        "select count(*) from jsonb_to_recordset(%s::jsonb) as x(section_id text, media_id text)"
+        " where exists (select 1 from public.chapter_sections s where s.id = x.section_id"
+        "               and s.admin_edited_at is not null)"
+        "    or exists (select 1 from public.section_media m where m.section_id = x.section_id"
+        "               and m.media_id = x.media_id and m.origin = 'seed')",
+        _payload(
+            [
+                {"section_id": s.id, "media_id": fid}
+                for _c, _i, s in b.sections
+                for fid in b.bodies.sections[s.id].figure_ids
+            ]
+        ),
     )
     actual["app_config"] = one(
         cur, "select count(*) from public.app_config where key = any(%s)", list(file_values(b.config_dir))

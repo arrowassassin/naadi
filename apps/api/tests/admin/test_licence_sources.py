@@ -30,7 +30,7 @@ EXPECTED: dict[str, tuple[str | None, str | None, str | None]] = {
     "user-provided": ("private_source", "private_source", "private_source"),
     "youtube": ("embed_only", "embed_only", "embed_only"),
     "statpearls": ("no_derivatives", "no_derivatives", "no_derivatives"),
-    "openstax": ("noncommercial", "noncommercial", "noncommercial"),
+    "openstax": ("link_only", "link_only", "link_only"),  # its generative-AI clause (LINK_ONLY_SOURCES)
     "radiopaedia": ("noncommercial", "noncommercial", "noncommercial"),
     "medlineplus-federal": (None, None, None),
     "medlineplus-licensed": ("link_only", "link_only", "link_only"),
@@ -90,10 +90,33 @@ def test_never_storable_whatever_the_flags_say(sid: str) -> None:
         assert decide(terms(row), AssetFacts(kind), use, confirmed, now=NOW) is not None, (sid, use, kind)  # type: ignore[arg-type]
 
 
-def test_owner_confirmed_noncommercial_opens_nc_but_never_nd_or_sa_in_proprietary() -> None:
+# The same table with `owner_confirms_noncommercial: true` (review19 R1): NC opens only where nothing else refuses.
+# Share-alike never reaches question or chapter text (both proprietary), and OpenStax stays link-only (its
+# generative-AI clause). Only host differs from the default for radiopaedia (SA files live in their own partition).
+EXPECTED_NC_CONFIRMED: dict[str, tuple[str | None, str | None, str | None]] = {
+    **EXPECTED,
+    "radiopaedia": (None, "share_alike_in_proprietary", "share_alike_in_proprietary"),
+}
+
+
+@pytest.mark.parametrize("row", SOURCES, ids=lambda r: r["id"])
+def test_gate_per_source_with_owner_confirmed_noncommercial(row: dict[str, Any]) -> None:
+    confirmed = SourcesPolicy(owner_confirms_noncommercial=True)
+    host, page, text = EXPECTED_NC_CONFIRMED[row["id"]]
+    t = terms(row)
+    assert decide(t, AssetFacts("svg"), "host", confirmed, now=NOW) == host
+    assert decide(t, AssetFacts("svg"), "page", confirmed, now=NOW) == page
+    assert decide(t, AssetFacts("text"), "text", confirmed, now=NOW) == text
+    assert "text" not in usable_for(t, confirmed) or not t.share_alike
+
+
+def test_owner_confirmed_noncommercial_never_opens_nd_sa_text_or_openstax() -> None:
     confirmed = SourcesPolicy(owner_confirms_noncommercial=True)
     by_id = {s["id"]: terms(s) for s in SOURCES}
-    assert decide(by_id["openstax"], AssetFacts("svg"), "host", confirmed, now=NOW) is None
-    assert decide(by_id["openstax"], AssetFacts("text"), "text", confirmed, now=NOW) is None
-    assert decide(by_id["openstax"], AssetFacts("svg"), "page", confirmed, now=NOW) == "share_alike_in_proprietary"
+    for use, kind in (("host", "svg"), ("page", "svg"), ("text", "text")):
+        assert decide(by_id["openstax"], AssetFacts(kind), use, confirmed, now=NOW) == "link_only"  # type: ignore[arg-type]
+    assert usable_for(by_id["openstax"], confirmed) == []
+    assert usable_for(by_id["radiopaedia"], confirmed) == ["host"]
+    sa = SourceTerms("x", "CC-BY-SA-4.0", True, True, True, False)
+    assert decide(sa, AssetFacts("text"), "text", SourcesPolicy(), now=NOW) == "share_alike_in_proprietary"
     assert decide(by_id["statpearls"], AssetFacts("pdf"), "host", confirmed, now=NOW) == "no_derivatives"

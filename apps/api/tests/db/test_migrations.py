@@ -238,3 +238,77 @@ def test_cli_entry_point(local_url: str) -> None:
     assert out.returncode == 0, out.stderr[-2000:]
     assert '"event": "migrate.ok"' in out.stdout
     assert "postgres:postgres" not in out.stdout + out.stderr
+
+
+def test_0036_backfills_only_the_seeds_own_placements(local_url: str) -> None:
+    """review19 R4: `section_media.origin = 'seed'` only for a seed figure shown by a figure node in a section the
+    admin has not edited. An admin attaching a seed figure elsewhere, an admin-edited section and an admin upload
+    (figures/admin/) all stay 'admin', so the next seed never deletes them."""
+    tag = uuid.uuid4().hex[:8]
+    src, ch = f"test-src-{tag}", f"test-ch-{tag}"
+    seed_fig, admin_fig = f"test-fig-{tag}", f"test-admfig-{tag}"
+
+    def body(*figs: str) -> str:
+        return json.dumps({"type": "doc", "content": [{"type": "figure", "attrs": {"mediaId": f}} for f in figs]})
+
+    migrate.downgrade(local_url, "0034")
+    try:
+        with psycopg.connect(local_url, autocommit=True) as c:
+            c.execute("insert into public.sources (id, name, license) values (%s, 'T', 'proprietary-naadi')", (src,))
+            c.execute(
+                "insert into public.chapters (id, exam, kind, title, source_id)"
+                " values (%s, 'step1', 'chapter', 'T', %s)",
+                (ch, src),
+            )
+            for fid, url in (
+                (seed_fig, f"content-public/figures/{seed_fig}.svg"),
+                (admin_fig, f"content-public/figures/admin/{admin_fig}.svg"),
+            ):
+                c.execute(
+                    "insert into public.media_assets (id, kind, source_id, review_status, url)"
+                    " values (%s, 'svg', %s, 'approved', %s)",
+                    (fid, src, url),
+                )
+            sections = {  # section -> (body figures, admin-edited)
+                f"{ch}-s01": ((seed_fig, admin_fig), False),  # the seed's own placement + an admin upload
+                f"{ch}-s02": ((), False),  # an admin attached the seed figure here (no node)
+                f"{ch}-s03": ((seed_fig,), True),  # the admin edited this section
+            }
+            for n, (sid, (figs, edited)) in enumerate(sections.items()):
+                c.execute(
+                    "insert into public.chapter_sections (id, chapter_id, sort, heading, body, admin_edited_at)"
+                    " values (%s, %s, %s, 'H', %s::jsonb, case when %s then now() end)",
+                    (sid, ch, n, body(*figs), edited),
+                )
+            for sid, mid in (
+                (f"{ch}-s01", seed_fig),
+                (f"{ch}-s01", admin_fig),
+                (f"{ch}-s02", seed_fig),
+                (f"{ch}-s03", seed_fig),
+            ):
+                c.execute(
+                    "insert into public.section_media (section_id, media_id, sort) values (%s, %s, 1)", (sid, mid)
+                )
+        migrate.upgrade(local_url)
+        with psycopg.connect(local_url) as c:
+            got = dict(
+                ((r[0], r[1]), r[2])
+                for r in c.execute(
+                    "select section_id, media_id, origin from public.section_media where section_id like %s",
+                    (f"{ch}-%",),
+                ).fetchall()
+            )
+        assert got == {
+            (f"{ch}-s01", seed_fig): "seed",
+            (f"{ch}-s01", admin_fig): "admin",
+            (f"{ch}-s02", seed_fig): "admin",
+            (f"{ch}-s03", seed_fig): "admin",
+        }
+    finally:
+        migrate.upgrade(local_url)
+        with psycopg.connect(local_url, autocommit=True) as c:
+            c.execute("delete from public.section_media where section_id like %s", (f"{ch}-%",))
+            c.execute("delete from public.chapter_sections where chapter_id = %s", (ch,))
+            c.execute("delete from public.media_assets where id = any(%s)", ([seed_fig, admin_fig],))
+            c.execute("delete from public.chapters where id = %s", (ch,))
+            c.execute("delete from public.sources where id = %s", (src,))

@@ -7,6 +7,8 @@ Every asset references a `sources` row. Before an admin publishes it, the asset'
             video embeddable and its metadata fresh (`youtube_metadata_max_age_days`).
 - `page`  : the asset appears in a chapter page: everything above for its kind, then NC/ND on a paid page and
             share-alike inside a proprietary composite (a Naadi chapter) are refused.
+- `text`  : a question or chapter body written from the source: a stored, modified copy inside a proprietary
+            composite, so share-alike is refused too.
 - `rag`   : the asset's text would go into prompts, RAG or embeddings: the source must allow AI ingest.
 
 A refusal raises `GateRefused` with a stable reason code (the web shows `admin.gate.<reason>`). The decision is a
@@ -53,6 +55,11 @@ NO_DERIVATIVES = re.compile(r"(^|[-_ ])ND([-_ ]|$)", re.IGNORECASE)
 NONCOMMERCIAL = re.compile(r"(^|[-_ ])NC([-_ ]|$)", re.IGNORECASE)
 YOUTUBE_LICENSE = "youtube-embed-only"
 LINK_ONLY = frozenset({"link-only"})
+# Sources whose terms forbid more than the licence string says, so they stay link-only whatever `sources_policy`
+# says (review19 R1). OpenStax 2e (CC BY-NC-SA) adds that its content "may not be used to train large language
+# models or ingested into generative AI systems" without written permission. Anything stored in Naadi reaches the
+# assistant (retrieval, tools), so even a non-commercial Naadi can only link to it (HANDOFF §7.1: link-only).
+LINK_ONLY_SOURCES = frozenset({"openstax"})
 # A student's own material (uploads, knowledge base): never shared content, whatever the flags say.
 PRIVATE_LICENSES = frozenset({"user-own-material", "private-user-content"})
 
@@ -100,7 +107,7 @@ class SourceTerms:
 
     @property
     def link_only(self) -> bool:
-        return self.license.strip().lower() in LINK_ONLY
+        return self.license.strip().lower() in LINK_ONLY or self.id in LINK_ONLY_SOURCES
 
     @property
     def private(self) -> bool:
@@ -183,7 +190,12 @@ def decide(
     if use == "rag":
         return None if source.allow_ai_ingest or not policy.block_non_ai_ingest_from_rag else "no_ai_ingest"
     if use == "text":
-        return stored_copy_refusal(source, policy, modified=True)
+        # Question and chapter text always lands in a proprietary composite (the qbank, a Naadi chapter), so the
+        # share-alike rule applies here too, whatever the non-commercial flag says (review19 R1).
+        reason = stored_copy_refusal(source, policy, modified=True)
+        if reason is None and policy.block_share_alike_in_proprietary and source.share_alike:
+            return "share_alike_in_proprietary"
+        return reason
     if asset.kind == "video_youtube":
         if not source.youtube:
             return "no_license"

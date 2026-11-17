@@ -340,6 +340,9 @@ def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> lis
         # Admins add chapters, sections and questions through the console (S19), so shared totals only have a floor.
         return Check(f"seed: {name} >= {want}", f"select count(*) >= {want} as ok, count(*)::text as detail {query}")
 
+    def at_most(name: str, query: str, want: int) -> Check:
+        return Check(f"seed: {name} <= {want}", f"select count(*) <= {want} as ok, count(*)::text as detail {query}")
+
     e = expected
     return [
         at_least(
@@ -366,8 +369,8 @@ def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> lis
             " and source_id = 'naadi-original-v1'",
             e["media_assets"],
         ),
-        count(
-            "section_media",
+        at_most(
+            "section_media (seed placements; an admin may remove one, review19 R3)",
             "from public.section_media m join public.media_assets a on a.id = m.media_id"
             " where m.origin = 'seed' and a.kind = 'svg' and a.source_id = 'naadi-original-v1'",
             e["section_media"],

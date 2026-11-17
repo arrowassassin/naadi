@@ -698,9 +698,17 @@ async def review_media(
     request: Request, admin: ConsoleAdmin, media_id: Annotated[str, Path(pattern=MEDIA_ID)], body: MediaReview
 ) -> AdminMedia:
     sections: list[str] = []
+    # Storage is not transactional, so a moving figure is written first, then the row, then the old copy is
+    # removed (review19 R2): the database never points at a file that is gone, whatever fails or rolls back.
+    current = await run_tx(request, lambda conn: load_media(conn, media_id))
+    move = _plan_move(request, current, body.status)
+    if move is not None:
+        await _copy(request, move)
 
     async def run(conn: AsyncConnection[Any]) -> Row:
         before = await load_media(conn, media_id, lock=True)
+        if move is not None and before["url"] != current["url"]:
+            raise HTTPException(409, "This file changed while it was being reviewed. Reload and try again.")
         if body.status == "approved":
             review_use: Use = "embed" if before["kind"] == "video_youtube" else "host"
             await check_media_row(conn, media_id, use=review_use, require_approved=False)
@@ -715,17 +723,23 @@ async def review_media(
             )
             if live:
                 raise GateRefused("media_in_use", live[0]["id"])
-        new_url = await _move_for_review(request, before, body.status)
         await conn.execute(
             "update public.media_assets set review_status = %s, url = coalesce(%s, url) where id = %s",
-            (body.status, new_url, media_id),
+            (body.status, move.url if move else None, media_id),
         )
         after = await load_media(conn, media_id)
         sections.extend(after["section_ids"])
         await audit(conn, admin, f"media.{body.status}", "media", media_id, before=before, after=after, note=body.note)
         return after
 
-    row = await run_tx(request, run)
+    try:
+        row = await run_tx(request, run)
+    except BaseException:
+        if move is not None and not await _references(request, media_id, move.url):
+            await _remove_quietly(request, move.dest)  # compensate: the new copy was never referenced
+        raise
+    if move is not None:  # committed: the old copy is no longer referenced
+        await _remove_quietly(request, move.src)
     if sections:
         from ..embeddings.jobs import schedule_reindex
 
@@ -733,33 +747,65 @@ async def review_media(
     return media_out(row, await media_previews(request, [row]))
 
 
-async def _move_for_review(request: Request, row: Row, status: str) -> str | None:
-    """Approve: a staged figure is copied to the public bucket (and the private copy removed). Reject: a public
-    admin figure goes back to the private staging folder, so a rejected file is never world-readable. Returns the
-    new `url`, or None when nothing moves (PDFs and videos, seed figures, already in place)."""
+@dataclass(frozen=True)
+class _Move:
+    src: tuple[str, str]
+    dest: tuple[str, str]
+
+    @property
+    def url(self) -> str:
+        return f"{self.dest[0]}/{self.dest[1]}"
+
+
+def _plan_move(request: Request, row: Row, status: str) -> _Move | None:
+    """Approve: a staged figure goes to the public bucket. Reject: a public admin figure goes back to the private
+    staging folder, so a rejected file is never world-readable. None when nothing moves (PDFs and videos, seed
+    figures, already in place)."""
     sp = parse_storage_path(row["url"]) if row["url"] else None
     if sp is None or row["kind"] not in ("svg", "image"):
         return None
     public, private = _buckets(request)
     name = sp.path.rsplit("/", 1)[-1]
     if status == "approved" and sp.bucket == private and sp.path.startswith(STAGING_FOLDER + "/"):
-        src, dest = (private, sp.path), (public, f"{FIGURE_FOLDER}/{name}")
-    elif status == "rejected" and sp.bucket == public and sp.path.startswith(FIGURE_FOLDER + "/"):
-        src, dest = (public, sp.path), (private, f"{STAGING_FOLDER}/{name}")
-    else:
-        return None
+        return _Move((private, sp.path), (public, f"{FIGURE_FOLDER}/{name}"))
+    if status == "rejected" and sp.bucket == public and sp.path.startswith(FIGURE_FOLDER + "/"):
+        return _Move((public, sp.path), (private, f"{STAGING_FOLDER}/{name}"))
+    return None
+
+
+async def _copy(request: Request, move: _Move) -> None:
     store = object_store(request)
     if store is None:
         raise HTTPException(503, "File storage is not configured on this server.")
+    name = move.dest[1].rsplit("/", 1)[-1]
     ctype = CONTENT_TYPES.get(name.rsplit(".", 1)[-1].lower(), "application/octet-stream")
     try:
-        data = await asyncio.to_thread(store.get, *src)
-        await asyncio.to_thread(store.put, dest[0], dest[1], data, ctype)
-        await asyncio.to_thread(store.delete, *src)
-    except Exception as exc:  # storage outage: the review is not recorded
+        data = await asyncio.to_thread(store.get, *move.src)
+        await asyncio.to_thread(store.put, move.dest[0], move.dest[1], data, ctype)
+    except Exception as exc:  # storage outage: nothing is recorded, the source is untouched
         log.warning("admin_media_move_failed", error=type(exc).__name__)
         raise HTTPException(503, "File storage cannot be reached right now. Try again in a moment.") from exc
-    return f"{dest[0]}/{dest[1]}"
+
+
+async def _references(request: Request, media_id: str, url: str) -> bool:
+    """Does the row point at `url` now? (A concurrent review of the same file may have committed the same move.)
+    True when unsure, so a cleanup never removes a file that might be live: an orphan is the safe failure."""
+    try:
+        row = await run_tx(request, lambda conn: load_media(conn, media_id))
+    except Exception:  # noqa: BLE001
+        return True
+    return bool(row["url"] == url)
+
+
+async def _remove_quietly(request: Request, where: tuple[str, str]) -> None:
+    """Best-effort removal of an unreferenced copy. A failure leaves an orphan object (logged), never a broken row."""
+    store = object_store(request)
+    if store is None:
+        return
+    try:
+        await asyncio.to_thread(store.delete, *where)
+    except Exception as exc:  # noqa: BLE001
+        log.warning("admin_media_orphan_left", bucket=where[0], error=type(exc).__name__)
 
 
 @router.put(

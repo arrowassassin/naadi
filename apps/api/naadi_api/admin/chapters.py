@@ -398,8 +398,10 @@ def reading_minutes(body: Any) -> int:
 
 async def _sync_section_media(conn: AsyncConnection[Any], section_id: str, body: Any) -> None:
     """Keep `section_media` in step with the published body for media that only appear through body nodes
-    (figures and PDFs); videos attached through approvals (S20) without a node are left alone, and the seed's own
-    placements (origin 'seed') are the seed's to manage."""
+    (figures and PDFs): what the body has is placed, what it no longer has is removed, whoever placed it (an
+    admin removing a seed figure removes its seed placement too, review19 R3; the section is admin-edited from
+    now on, so the seed leaves its placements alone). Videos attached through approvals (S20) without a node are
+    left alone."""
     media, _ = refs_of(body)
     ids = [mid for _k, mid in media]
     for n, mid in enumerate(ids):
@@ -410,7 +412,7 @@ async def _sync_section_media(conn: AsyncConnection[Any], section_id: str, body:
         )
     await conn.execute(
         "delete from public.section_media sm using public.media_assets m"
-        " where sm.section_id = %s and m.id = sm.media_id and m.kind in ('svg','image','pdf') and sm.origin = 'admin'"
+        " where sm.section_id = %s and m.id = sm.media_id and m.kind in ('svg','image','pdf')"
         " and not (sm.media_id = any(%s))",
         (section_id, ids),
     )
