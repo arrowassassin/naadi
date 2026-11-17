@@ -80,9 +80,8 @@ async def test_run_keeps_embeddable_public_videos_and_writes_pending_candidates(
         (media(world, 1),),
     ).fetchone()
     assert m == ("video_youtube", "youtube", "unreviewed", vid(world, 1), True, True, True)
-    assert pg.execute(
-        "select count(*) from public.media_assets where id like %s", (f"yt-{world.tag}%",)
-    ).fetchone() == (2,)
+    stored = {r[0] for r in pg.execute("select id from public.media_assets where id like %s", (f"yt-{world.tag}%",))}
+    assert {media(world, 1), media(world, 2)} <= stored and not {media(world, 3), media(world, 4)} & stored
     # a student sees neither the unapproved video nor any candidate
     with as_user(pg, world.a) as conn:
         assert conn.execute(

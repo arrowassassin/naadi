@@ -13,7 +13,8 @@ Create Date: 2026-11-17
   (YouTube policy: non-authorised metadata is kept at most 30 days).
 - `media_assets.owner_user_id`: private media (pictures of an imported Anki deck). Null = shared as before. The read
   policy now shows an approved private row only to its owner, so a student's images never reach another student.
-  `youtube_id` becomes unique among YouTube rows (one media row per video).
+  `youtube_id` gets an index (the mapper looks videos up by it). It is not unique: one row per video is kept by the
+  deterministic id `yt-<id>` instead, and e2e helpers may seed several rows for one demo video.
 - `flashcards` gains `tags`, `anki_guid` and `anki_note_type`. `(owner_user_id, anki_guid)` is unique, which makes a
   re-import of the same deck idempotent. These are written by the import API (privileged role); a student's own
   `origin 'user'` card can carry none of them.
@@ -65,7 +66,7 @@ on conflict (id) do nothing;
 alter table public.media_assets
   add column owner_user_id uuid references auth.users(id) on delete cascade;
 create index media_assets_owner_idx on public.media_assets (owner_user_id) where owner_user_id is not null;
-create unique index media_assets_youtube_id_idx on public.media_assets (youtube_id) where kind = 'video_youtube';
+create index media_assets_youtube_id_idx on public.media_assets (youtube_id) where kind = 'video_youtube';
 drop policy media_assets_read on public.media_assets;
 create policy media_assets_read on public.media_assets for select to anon, authenticated
   using (review_status = 'approved' and (owner_user_id is null or owner_user_id = (select auth.uid())));
