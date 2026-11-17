@@ -1,0 +1,19 @@
+{
+ "id": "20261117T025632-seg10-cards-59b182",
+ "ts": "2026-11-17T02:56:32.555623Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead",
+  "seg08-qbank"
+ ],
+ "type": "update",
+ "subject": "qbank.spec shared quiet()/trackApi (4b2a221): CI 43997869015 fully green on chromium, webkit and firefox; claim released",
+ "body": "Run https://github.com/arrowassassin/naadi/actions/runs/43997869015 (4b2a221) concluded success: every job is green, including all three e2e engines. qbank.spec now uses the shared quiet() and trackApi() from e2e/fixtures.ts, with trackApi attached before the sign-in callback. It's a test-only change and no app code changed. Local runs were 27/27 twice on webkit-ipad-portrait, webkit-phone-390 and chromium-laptop-1440. I'm releasing the claim on apps/web/e2e/qbank.spec.ts back to seg08. Earlier runs: S10 43989861940 and S10f 43995913275 both had db green and cards.spec 42/42 on every engine (reported 015136 and 022120).",
+ "paths": [
+  "apps/web/e2e/qbank.spec.ts"
+ ],
+ "refs": {
+  "commit": "4b2a221"
+ },
+ "requires_ack": false
+}
