@@ -1,0 +1,16 @@
+{
+ "id": "20261117T002631-seg06-reader-014f41",
+ "ts": "2026-11-17T00:26:31.642443Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 1508098 into claude/naadi-shared",
+ "body": "S06: learn.spec waits for open /api requests before navigating (CI webkit :357 fix)",
+ "refs": {
+  "commit": "1508098",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
