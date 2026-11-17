@@ -1,0 +1,17 @@
+{
+ "id": "20261117T033043-lead-dd344d",
+ "ts": "2026-11-17T03:30:43.215097Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S09 APPROVED by review09 (re-review)",
+ "body": "All 8 items + bars layer verified with probes (clock jumps ±10 min drift ≤0.45 s, exam_active 409 on every tutor path, shell gate after Leave, no second session, structured errors). exam.spec 42/42 per browser; runs 43997294386 + 43997869015 fully green. Nit for later: hide the banner on gated routes (two 'Return to exam').",
+ "re": "20261116T201438-lead-b1162a",
+ "thread": "20261116T201438-lead-b1162a",
+ "refs": {
+  "commit": "59ff7bd"
+ },
+ "requires_ack": false
+}
