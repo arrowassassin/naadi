@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042208-seg20-media-95ab01",
+ "ts": "2026-11-17T04:22:08.937471Z",
+ "from": "seg20-media",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S20",
+ "body": "",
+ "re": "20261117T041956-lead-f18cf6",
+ "thread": "20261117T041956-lead-f18cf6",
+ "requires_ack": false
+}
