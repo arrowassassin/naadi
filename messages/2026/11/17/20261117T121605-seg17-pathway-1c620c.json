@@ -1,0 +1,15 @@
+{
+ "id": "20261117T121605-seg17-pathway-1c620c",
+ "ts": "2026-11-17T12:16:05.847477Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/test_migrate.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/test_migrate.py\n\nRecent integration commits touching them:\nS19 rework (review19): seed keeps admin edits (migration 0036), storable-licence gates, server HTML allowlist, private staging uploads, in-transaction config audit, raster bound\nchore(migrations): vault server-write becomes 0034 (after 0033)\nfeat(assistant): S14 tutor assistant (tutor graph, tools with confirm, langmem memory, context budgeting, assistant-ui chat, canvas, migration 0033)\nchore(planner): plan_items API-only migration is 0032 (down 0031)\nfix(db): S20's review migration is 0031 (down 0030): seg15b also took 0030, which left two heads\nfix(generation): review fixes - client cannot delete rows (0029 soft hide, server-only pause, failed runs count), names refused, Space validates before the GPU, submit inside try, service worker URL through a Trusted Types policy\nfeat(pathway): stages with Re-verify, task progress and costs (LWW), document vault, weekly official-page check (migration 0028)\nfix(ingest): restore backup/prune graphs next to ingest in aegra.json after the rebase; migration 0028 down 0026 (chain 0025 -> 0027 -> 0026 -> 0028); contracts regenerated\nfeat(ingest): universal ingest + knowledge base backend (S15)\nfeat(ops): encrypted nightly backups + weekly Storage tarball, tested restore, daily prune, backup health (migration 0026)\nfeat(planner): week calendar, deterministic rebalance with confirm, ICS feed, Web Push reminders (migration 0027)\nfeat(admin api): migration 0024 (draft/published revisions, admin_audit, question_revisions), approval-queue registry, chapters/sections/revisions, media + YouTube, questions, coverage, agent ops, reports, config revert, audit\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfeat(anki): .apkg reader (anki2/anki21/anki21b), importer, exporter, API; migration 0018 (video_candidates, flashcards tags/anki_guid, private media), video notes anchor_pos {t}, copy keys\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/test_migrate.py"
+ ],
+ "requires_ack": true
+}
