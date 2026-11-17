@@ -17,6 +17,7 @@ from ...logs import get_logger
 from ...search import SearchResult, TavilyGuardExhausted, get_search
 from .executor import ToolRefused
 from .registry import ToolContext, ToolResult, register_tool, web_url_key
+from .untrusted import frame
 
 log = get_logger("naadi.agent.tools.web")
 
@@ -60,7 +61,10 @@ async def web_search(ctx: ToolContext, args: WebSearchArgs) -> ToolResult:
         return ToolResult(content="No web results.")
     start = 101  # web citations are numbered apart from knowledge-base ones
     citations = [web_citation(start + i, r) for i, r in enumerate(results)]
-    lines = [f"[{c['n']}] {r.title} ({r.source}): {r.snippet[:500]}" for c, r in zip(citations, results, strict=True)]
+    lines = [
+        f"[{c['n']}] " + frame(f"{r.title} ({r.source}): {r.snippet[:500]}", source="web")
+        for c, r in zip(citations, results, strict=True)
+    ]
     return ToolResult(
         content="\n".join(lines),
         citations=citations,
@@ -98,7 +102,7 @@ async def web_extract(ctx: ToolContext, args: WebExtractArgs) -> ToolResult:
         kind="web",
     )
     cite = web_citation(150, page)
-    return ToolResult(content=f"[150] {page.url}:\n{page.snippet}", citations=[cite])
+    return ToolResult(content=f"[150] {page.url}:\n" + frame(page.snippet, source="web"), citations=[cite])
 
 
 register_tool("web_search", web_search, writes=False)

@@ -24,7 +24,16 @@ from ...ingest.routes import IngestError, check_startable, create_link, read_pag
 from ...ingest.sensitivity import scan
 from ...settings import get_settings
 from .executor import ToolRefused
-from .registry import Proposal, ToolContext, ToolResult, WriteTool, register_page_resolver, register_tool
+from .registry import (
+    Proposal,
+    ToolContext,
+    ToolResult,
+    WriteTool,
+    register_page_resolver,
+    register_tool,
+    web_url_key,
+)
+from .untrusted import frame
 
 FLAG = "library"
 # Item states past the sensitivity gate whose text the pipeline extracted (received/vaulted/failed are not).
@@ -80,6 +89,10 @@ async def _add_prepare(ctx: ToolContext, args: AddToKnowledgeArgs) -> Proposal:
     """Add a link or a file the student uploaded to their knowledge base. Naadi reads it in the background and the
     student chooses where it goes on the Library page. Give exactly one of `url` or `upload_id`; the student
     confirms first."""
+    if args.url is not None and web_url_key(args.url) not in ctx.web_urls:
+        # Only a link the student typed this turn or one web_search returned: a URL written inside a document,
+        # a page or a search snippet must not be able to make the tutor propose adding it (review15 #3).
+        raise ToolRefused("url_not_from_student")
     await _rules(ctx)
     if args.url is not None:
         host = urlsplit(args.url).hostname or ""
@@ -191,7 +204,7 @@ async def pdf_page(ctx: ToolContext, ref_id: str) -> ToolResult:
         "target": {"type": "pdf_page", "upload_id": str(upload_id), "page": str(page)},
         "license": None,
     }
-    return ToolResult(content=f"PDF page {page} of {out.pages}:\n{text}", citations=[cite])
+    return ToolResult(content=f"PDF page {page} of {out.pages}:\n" + frame(text, source="pdf_page"), citations=[cite])
 
 
 register_page_resolver("pdf_page", pdf_page, requires_flag=FLAG)

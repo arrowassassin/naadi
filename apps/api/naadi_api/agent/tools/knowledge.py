@@ -24,6 +24,7 @@ from ...logs import get_logger
 from ...settings import get_settings
 from .executor import ToolRefused
 from .registry import ToolContext, ToolResult, page_resolver, register_tool
+from .untrusted import UNTRUSTED_REF_TYPES, frame
 
 log = get_logger("naadi.agent.tools.knowledge")
 
@@ -78,7 +79,11 @@ async def search_knowledge(ctx: ToolContext, args: SearchKnowledgeArgs) -> ToolR
     for i, h in enumerate(hits, start=1):
         snippet = "".join(seg.text for seg in h.snippet).strip()
         where = f" ({h.context})" if h.context else ""
-        lines.append(f"[{i}] {h.title}{where}: {snippet}")
+        if h.ref_type in UNTRUSTED_REF_TYPES:
+            # A student's upload, KB entry or link: someone else's text, data and never instructions.
+            lines.append(f"[{i}] " + frame(f"{h.title}{where}: {snippet}", source=h.ref_type))
+        else:
+            lines.append(f"[{i}] {h.title}{where}: {snippet}")
         citations.append(citation_of_hit(i, h))
     return ToolResult(
         content="\n".join(lines),

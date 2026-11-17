@@ -16,7 +16,7 @@ import pytest
 
 from naadi_api.agent.tools import knowledge, tools_for
 from naadi_api.agent.tools.executor import run_tool_call
-from naadi_api.agent.tools.registry import PageRef, ToolContext
+from naadi_api.agent.tools.registry import PageRef, ToolContext, web_url_key
 from naadi_api.db import Database
 from naadi_api.ingest import pipeline
 from naadi_api.ingest import routes as ingest_routes
@@ -66,7 +66,13 @@ def runner() -> Iterator[RecordingRunner]:
     ingest_runner.set_runner(None)
 
 
-def tc(db: Database, user: uuid.UUID, flags: dict[str, bool] | None = None, page: PageRef | None = None) -> ToolContext:
+def tc(
+    db: Database,
+    user: uuid.UUID,
+    flags: dict[str, bool] | None = None,
+    page: PageRef | None = None,
+    urls: tuple[str, ...] = (),
+) -> ToolContext:
     return ToolContext(
         user_id=user,
         is_admin=False,
@@ -78,6 +84,7 @@ def tc(db: Database, user: uuid.UUID, flags: dict[str, bool] | None = None, page
         gateway=None,  # type: ignore[arg-type]  # these tools call no model
         call=CallContext(purpose="chat"),
         flags=ON if flags is None else flags,
+        web_urls={web_url_key(u) for u in urls},
     )
 
 
@@ -103,12 +110,15 @@ async def test_add_a_link_cancel_writes_nothing_accept_starts_the_run(
 ) -> None:
     a, _ = users
     link = "https://example.org/renal/acid-base-review"
-    preview, out = await flow(tc(db, a), "add_to_knowledge", {"url": link}, {"decision": "cancel"})
+    # A link the student did not type this turn (e.g. written inside a document) is refused before any confirm.
+    r = await run_tool_call(tc(db, a), "add_to_knowledge", {"url": link}, {"add_to_knowledge"})
+    assert r.content == "[refused: url_not_from_student]" and not runner.started
+    preview, out = await flow(tc(db, a, urls=(link,)), "add_to_knowledge", {"url": link}, {"decision": "cancel"})
     assert preview == {"kind": "knowledge", "source": "link", "label": link, "host": "example.org"}
     assert out["status"] == "declined" and not runner.started
     assert rows(url, "select id from public.ingest_items where user_id = %s", a) == []
 
-    _, out = await flow(tc(db, a), "add_to_knowledge", {"url": link}, {"decision": "accept"})
+    _, out = await flow(tc(db, a, urls=(link,)), "add_to_knowledge", {"url": link}, {"decision": "accept"})
     assert out["status"] == "ok" and "Library" in out["content"]
     assert out["blocks"][0]["data"]["items"][0]["action"] == "open_library"
     made = rows(
