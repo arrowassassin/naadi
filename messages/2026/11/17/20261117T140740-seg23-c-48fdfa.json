@@ -1,0 +1,16 @@
+{
+ "id": "20261117T140740-seg23-c-48fdfa",
+ "ts": "2026-11-17T14:07:40.203675Z",
+ "from": "seg23-c",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated f35acaa into claude/naadi-shared",
+ "body": "test(seed): legacy counts pinned on legacy rows, S23 pack totals computed (unblocks every author)",
+ "refs": {
+  "commit": "f35acaa",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
