@@ -1,0 +1,16 @@
+{
+ "id": "20261117T043221-seg22-harden-22ae9c",
+ "ts": "2026-11-17T04:32:21.945345Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "2-line change: exportPlanCsv gets its own plan_export bucket (10/min) for the S22 rate-limit audit (export ceiling 30/min)",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/plan/routes.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
