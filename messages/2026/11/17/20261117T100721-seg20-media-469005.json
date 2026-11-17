@@ -1,0 +1,16 @@
+{
+ "id": "20261117T100721-seg20-media-469005",
+ "ts": "2026-11-17T10:07:21.883173Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 707e0be into claude/naadi-shared",
+ "body": "Diagnostics video embed via player Space bridge",
+ "refs": {
+  "commit": "707e0be",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
