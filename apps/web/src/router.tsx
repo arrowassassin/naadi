@@ -2,12 +2,10 @@ import { ErrorState } from "@naadi/ui";
 import { createRootRoute, createRoute, createRouter, Link, Outlet, redirect } from "@tanstack/react-router";
 import { adminRoutes } from "./admin/routes";
 import { agentDiagnosticsRoute } from "./agent/route";
-import { SettingsAssistantPage } from "./assistant/SettingsAssistantPage";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
 import { cardsRoute } from "./cards/routes";
 import { adminGeneratedRoute, generatedRoute } from "./generation/route";
-import { InkSettingsPage } from "./ink/persist/InkSettingsPage";
 import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
 import { notebooksRoutes } from "./notebooks/routes";
@@ -16,19 +14,26 @@ import { pathwayRoutes } from "./pathway/routes";
 import { plannerRoute } from "./planner/routes";
 import { practiceRoutes } from "./practice/routes";
 import { adminReviewRoutes } from "./review/route";
-import { AccountPage } from "./routes/AccountPage";
-import { CallbackPage } from "./routes/CallbackPage";
-import { SignInPage } from "./routes/SignInPage";
 import { TodayPage } from "./routes/TodayPage";
 import { searchRoute } from "./search/routes";
-import { AboutPage } from "./settings/AboutPage";
-import { AppearancePage } from "./settings/AppearancePage";
-import { DataExportPage } from "./settings/DataExportPage";
-import { StudyPlanPage } from "./settings/StudyPlanPage";
 import { AppShell } from "./shell/AppShell";
 import { Wordmark } from "./shell/Logo";
-import { SystemPage } from "./system/SystemPage";
+import { lazyPage } from "./shell/lazyPage";
 import { welcomeRoute } from "./today/routes";
+
+// Pages other than Today load as their own chunks (segment 22 budget: initial JS <= 250 KB gzip).
+const SettingsAssistantPage = lazyPage(() =>
+  import("./assistant/SettingsAssistantPage").then((m) => m.SettingsAssistantPage),
+);
+const InkSettingsPage = lazyPage(() => import("./ink/persist/InkSettingsPage").then((m) => m.InkSettingsPage));
+const AccountPage = lazyPage(() => import("./routes/AccountPage").then((m) => m.AccountPage));
+const CallbackPage = lazyPage(() => import("./routes/CallbackPage").then((m) => m.CallbackPage));
+const SignInPage = lazyPage(() => import("./routes/SignInPage").then((m) => m.SignInPage));
+const AboutPage = lazyPage(() => import("./settings/AboutPage").then((m) => m.AboutPage));
+const AppearancePage = lazyPage(() => import("./settings/AppearancePage").then((m) => m.AppearancePage));
+const DataExportPage = lazyPage(() => import("./settings/DataExportPage").then((m) => m.DataExportPage));
+const StudyPlanPage = lazyPage(() => import("./settings/StudyPlanPage").then((m) => m.StudyPlanPage));
+const SystemPage = lazyPage(() => import("./system/SystemPage").then((m) => m.SystemPage));
 
 function RootLayout() {
   return (
