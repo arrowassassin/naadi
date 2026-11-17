@@ -373,7 +373,7 @@ test.describe("from practice (segment 08)", () => {
         status: "all",
         seed: 3,
       });
-      expect(made.status).toBe(201);
+      expect(made.status, JSON.stringify(made.json)).toBe(201);
       const q = await api<{ question: { id: string } }>(page, "GET", `/api/blocks/${made.json.id}/questions/1`);
       const qid = q.json.question.id;
       // before answering there is no way to make a card from the question
@@ -409,6 +409,79 @@ test.describe("from practice (segment 08)", () => {
       await expect(source).toHaveAttribute("href", `/practice/question/${qid}`);
       // the one refused request is the probe above (no card from an unanswered question)
       expect(errors.filter((e) => !/status of 404/.test(e))).toEqual([]);
+    } finally {
+      await student.done();
+    }
+  });
+});
+
+test.describe("scratch ink (segment 12b)", () => {
+  test("ink on a card's pad is saved, comes back after a reload, and Clear asks first", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    const student = await freshStudent(browser, baseURL as string, info);
+    try {
+      const { page } = await student.open();
+      const { errors, guard } = watchConsole(page);
+      await expect(page.getByRole("heading", { level: 2, name: "No cards due" })).toBeVisible();
+      const made = await api<{ id: string }>(page, "POST", "/api/cards", { front_text: "Ink card", back_text: "B" });
+      expect(made.status).toBe(201);
+      const cardId = made.json.id;
+      await page.reload();
+      await expect(page.getByRole("region", { name: "Flashcard" }).getByText("Ink card")).toBeVisible();
+      const PAD = '[data-ink-surface][aria-label="Scratch pad for this card"]';
+      await expect(page.locator("[data-ink-save]")).toHaveAttribute("data-ink-save", "saved");
+
+      const sent = page.waitForResponse(
+        (r) => r.url().includes(`/api/ink/flashcard/${cardId}`) && r.request().method() === "POST",
+      );
+      await page.evaluate(async (sel) => {
+        const layer = document.querySelector(`${sel} [data-ink-layer]`) as HTMLElement;
+        const r = layer.getBoundingClientRect();
+        const ev = (k: string, f: number, b: number) =>
+          new PointerEvent(k, {
+            pointerId: 9,
+            pointerType: "pen",
+            isPrimary: true,
+            bubbles: true,
+            cancelable: true,
+            clientX: r.left + r.width * f,
+            clientY: r.top + r.height / 2,
+            pressure: b ? 0.6 : 0,
+            buttons: b,
+          });
+        layer.dispatchEvent(ev("pointerdown", 0.1, 1));
+        for (let i = 1; i <= 20; i++) {
+          layer.dispatchEvent(ev("pointermove", 0.1 + i * 0.02, 1));
+          await new Promise((res) => setTimeout(res, 8));
+        }
+        layer.dispatchEvent(ev("pointerup", 0.5, 0));
+      }, PAD);
+      expect((await sent).status()).toBe(200);
+      await expect(page.locator("[data-ink-save]")).toHaveAttribute("data-ink-save", "saved");
+      const count = async () =>
+        (await api<{ item_count: number }>(page, "GET", `/api/ink/flashcard/${cardId}`)).json.item_count;
+      expect(await count()).toBe(1);
+      await snap(page, info, guard, "scratch-ink-saved");
+
+      // a reload keeps the card's ink
+      await page.reload();
+      await expect(page.getByRole("region", { name: "Flashcard" }).getByText("Ink card")).toBeVisible();
+      await expect(page.locator(`${PAD} [data-ink-layer]`)).toBeAttached();
+      expect(await count()).toBe(1);
+
+      // Clear: the first tap only arms it, the second wipes the pad (saved as a tombstone)
+      await page.getByRole("button", { name: "Clear" }).click();
+      await expect(page.getByRole("button", { name: "Tap again to clear" })).toBeVisible();
+      expect(await count()).toBe(1);
+      const cleared = page.waitForResponse(
+        (r) => r.url().includes(`/api/ink/flashcard/${cardId}`) && r.request().method() === "POST",
+      );
+      await page.getByRole("button", { name: "Tap again to clear" }).click();
+      expect((await cleared).status()).toBe(200);
+      await expect.poll(count).toBe(0);
+      expect(errors).toEqual([]);
     } finally {
       await student.done();
     }

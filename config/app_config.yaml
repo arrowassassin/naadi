@@ -1182,6 +1182,7 @@ ui_copy:
   cards.scratch: "Scratch — write your answer"
   cards.scratch_write: "Write"
   cards.scratch_clear: "Clear"
+  cards.scratch_clear_confirm: "Tap again to clear"
   cards.scratch_label: "Scratch pad for this card"
   cards.stuck: "Stuck?"
   cards.hint: "Give me a hint"

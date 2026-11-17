@@ -1,3 +1,4 @@
+import type { InkEngine } from "@naadi/ink";
 import type { CardOut, DueResponse, ReviewIn } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
@@ -7,6 +8,9 @@ import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { ContentRenderer } from "../content/ContentRenderer";
 import { InkCanvas } from "../ink/InkCanvas";
+import { InkSaveStatus } from "../ink/persist/InkSaveStatus";
+import { useInkSettings } from "../ink/persist/settings";
+import { useInkLayer } from "../ink/persist/useInkLayer";
 import { errorKey, isUnreachable, sendReview, useDueCards, usePendingReviews } from "./api";
 import { CardDialog, type CardDraft } from "./CardDialog";
 import { useCardsCopy } from "./copy";
@@ -121,15 +125,26 @@ function SourceLink({ card }: { card: CardOut }) {
   return null;
 }
 
+/** The scratch pad is this card's ink surface (`flashcard`, id = card id), saved and synced by segment 12b. */
 function ScratchPad({ cardId }: { cardId: string }) {
   const t = useCardsCopy();
   const [writing, setWriting] = useState(true);
-  const [generation, setGeneration] = useState(0);
+  const [confirmClear, setConfirmClear] = useState(false);
+  const engine = useRef<InkEngine | null>(null);
+  const layer = useInkLayer("flashcard", cardId, { engineRef: engine });
+  const { settings } = useInkSettings();
+  // A first tap arms Clear for a few seconds; a second one wipes the pad (it is saved, so ask first).
+  useEffect(() => {
+    if (!confirmClear) return;
+    const id = window.setTimeout(() => setConfirmClear(false), 4000);
+    return () => window.clearTimeout(id);
+  }, [confirmClear]);
   return (
     <div className="flex min-w-0 flex-[2_1_360px] flex-col gap-3 rounded-tile-sm border border-line-soft bg-surface-1 p-4 [background-image:radial-gradient(var(--color-line-strong)_1.2px,transparent_1.2px)] [background-size:22px_22px]">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="font-mono text-label-sm text-text-3 uppercase tracking-[0.1em]">{t("cards.scratch")}</span>
-        <span className="flex gap-2">
+        <span className="flex flex-wrap items-center gap-2">
+          <InkSaveStatus layer={layer} />
           <button
             type="button"
             aria-pressed={writing}
@@ -144,20 +159,29 @@ function ScratchPad({ cardId }: { cardId: string }) {
           </button>
           <button
             type="button"
-            onClick={() => setGeneration((g) => g + 1)}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-pill border border-line-control px-3.5 text-text text-ui-sm"
+            onClick={() => {
+              if (!confirmClear) return setConfirmClear(true);
+              engine.current?.clear();
+              setConfirmClear(false);
+            }}
+            className={cx(
+              "inline-flex min-h-11 items-center gap-1.5 rounded-pill border px-3.5 text-ui-sm",
+              confirmClear ? "border-amber text-amber" : "border-line-control text-text",
+            )}
           >
             <Eraser aria-hidden="true" size={16} />
-            {t("cards.scratch_clear")}
+            {confirmClear ? t("cards.scratch_clear_confirm") : t("cards.scratch_clear")}
           </button>
         </span>
       </div>
-      {/* No persistence yet (segment 12b): the pad clears for each card. */}
       <InkCanvas
-        key={`${cardId}-${generation}`}
+        key={cardId}
+        {...layer.canvasProps}
         enabled={writing}
         surfaceType="flashcard"
         theme="dark"
+        penOnly={settings.pen_only}
+        predict={settings.predict}
         label={t("cards.scratch_label")}
         className="h-44 rounded-block tablet:h-52"
       />
@@ -554,7 +578,7 @@ export function ReviewPage() {
       <p className="m-0 hidden text-text-3 text-ui-sm laptop:block">{t("cards.keys_hint")}</p>
 
       <div className="flex flex-wrap gap-5">
-        <ScratchPad key={`${current.id}-${session.rated}`} cardId={current.id} />
+        <ScratchPad key={current.id} cardId={current.id} />
         {assistantOn ? <StuckPanel card={current} /> : null}
       </div>
       {live}

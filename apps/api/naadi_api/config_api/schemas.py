@@ -1184,6 +1184,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "cards.scratch",
         "cards.scratch_write",
         "cards.scratch_clear",
+        "cards.scratch_clear_confirm",
         "cards.scratch_label",
         "cards.stuck",
         "cards.hint",
