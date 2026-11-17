@@ -1,8 +1,8 @@
 import type { NavItem } from "@naadi/shared";
 import { cx, ErrorState, OfflineBanner, Skeleton } from "@naadi/ui";
 import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router";
-import { Search, UserRound } from "lucide-react";
-import { type RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Search, UserRound, X } from "lucide-react";
+import { type RefObject, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { AssistantHost, AssistantTabButton } from "../assistant/AssistantHost";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
@@ -136,6 +136,106 @@ function TabItem({ to, label, icon, current }: { to: string; label: string; icon
   );
 }
 
+/** The phone tab bar shows at most this many tabs (More included): eight labels do not fit a 390 px pill. */
+const MAX_TABS = 5;
+
+interface TabSpec {
+  id: string;
+  to: string;
+  label: string;
+  icon: string;
+}
+
+/** A tab that opens the More sheet; current when the open page is one of the tabs the sheet holds. */
+function MoreTab({ label, current, onOpen }: { label: string; current: boolean; onOpen: () => void }) {
+  return (
+    <li className="flex min-w-0 flex-1">
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-haspopup="dialog"
+        aria-current={current ? "page" : undefined}
+        className={cx(
+          "flex min-h-14 min-w-0 flex-1 flex-col items-center justify-center gap-0.5 rounded-pill border-0 px-1 py-1.5 text-[0.6875rem] leading-tight",
+          current ? "bg-paper font-semibold text-ground" : "bg-transparent text-text-2 hover:text-text",
+        )}
+      >
+        <NavIcon name="ellipsis" size={18} />
+        <span className="max-w-full text-center">{label}</span>
+      </button>
+    </li>
+  );
+}
+
+/** Everything that did not fit the tab bar, as large links in a sheet. */
+function MoreSheet({
+  open,
+  tabs,
+  pathname,
+  onClose,
+}: {
+  open: boolean;
+  tabs: TabSpec[];
+  pathname: string;
+  onClose: () => void;
+}) {
+  const t = useUiText();
+  const ref = useRef<HTMLDialogElement>(null);
+  const ids = useId();
+  useEffect(() => {
+    const d = ref.current;
+    if (!d) return;
+    if (open && !d.open) d.showModal();
+    else if (!open && d.open) d.close();
+  }, [open]);
+  return (
+    <dialog
+      ref={ref}
+      aria-labelledby={`${ids}-h`}
+      onClose={onClose}
+      data-more-sheet=""
+      className="m-auto mb-3 w-[min(100%-24px,28rem)] rounded-tile-sm border border-line-soft bg-surface-1 p-0 text-text backdrop:bg-ground/80"
+    >
+      <div className="flex flex-col gap-3 p-5">
+        <div className="flex items-center justify-between gap-3">
+          <h2 id={`${ids}-h`} className="m-0 font-display font-bold text-[1.375rem]">
+            {t("shell.more_title")}
+          </h2>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label={t("shell.more_close")}
+            className="flex size-11 items-center justify-center rounded-full border border-line-control bg-transparent text-text"
+          >
+            <X aria-hidden="true" size={18} />
+          </button>
+        </div>
+        <ul className="m-0 flex list-none flex-col gap-1 p-0">
+          {tabs.map((tab) => {
+            const current = isCurrent(tab.to, pathname);
+            return (
+              <li key={tab.id}>
+                <Link
+                  to={tab.to}
+                  onClick={onClose}
+                  aria-current={current ? "page" : undefined}
+                  className={cx(
+                    "flex min-h-12 items-center gap-3 rounded-pill px-4 text-[1rem] no-underline",
+                    current ? "bg-paper font-semibold text-ground hover:text-ground" : "text-text hover:bg-surface-2",
+                  )}
+                >
+                  <NavIcon name={tab.icon} size={20} />
+                  {tab.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </dialog>
+  );
+}
+
 export function AppShell() {
   const auth = useAuth();
   const me = useMe();
@@ -179,6 +279,16 @@ export function AppShell() {
   const t = useUiText();
   useSearchShortcut(searchOn);
   const navLoading = nav.isPending && !nav.data;
+  const [moreOpen, setMoreOpen] = useState(false);
+  const allTabs: TabSpec[] = [
+    ...items.map((i) => ({ id: i.id, to: i.path, label: i.label, icon: i.icon })),
+    ...(searchOn ? [{ id: "search", to: "/search", label: searchCopy("search.tab"), icon: "search" }] : []),
+    { id: "account", to: ACCOUNT_PATH, label: t("shell.account_tab"), icon: "user-round" },
+  ];
+  // Up to five tabs fit; beyond that, four tabs and a More tab that opens the rest.
+  const overflow = allTabs.length > MAX_TABS;
+  const shownTabs = overflow ? allTabs.slice(0, MAX_TABS - 1) : allTabs;
+  const moreTabs = overflow ? allTabs.slice(MAX_TABS - 1) : [];
   const offline = !online || (auth.status === "signed-in" && auth.offline);
 
   return (
@@ -273,37 +383,40 @@ export function AppShell() {
                   <Skeleton className="h-12 w-full rounded-pill" />
                 </li>
               ) : (
-                items.flatMap((item, i) => {
-                  const tab = (
+                (() => {
+                  const slots = shownTabs.length + (overflow ? 1 : 0);
+                  const mid = Math.floor((slots + 1) / 2) - 1;
+                  const nodes = shownTabs.map((tab) => (
                     <TabItem
-                      key={item.id}
-                      to={item.path}
-                      label={item.label}
-                      icon={item.icon}
-                      current={isCurrent(item.path, pathname)}
+                      key={tab.id}
+                      to={tab.to}
+                      label={tab.label}
+                      icon={tab.icon}
+                      current={isCurrent(tab.to, pathname)}
                     />
-                  );
+                  ));
+                  if (overflow) {
+                    nodes.push(
+                      <MoreTab
+                        key="more"
+                        label={t("shell.more_tab")}
+                        current={moreTabs.some((tab) => isCurrent(tab.to, pathname))}
+                        onOpen={() => setMoreOpen(true)}
+                      />,
+                    );
+                  }
                   // The assistant's centre button (Phone board), present only while it can answer.
-                  return i === Math.floor((items.length + (searchOn ? 1 : 0) + 1) / 2) - 1
-                    ? [tab, <AssistantTabButton key="assistant" />]
-                    : [tab];
-                })
+                  nodes.splice(mid + 1, 0, <AssistantTabButton key="assistant" />);
+                  return nodes;
+                })()
               )}
-              {searchOn ? (
-                <TabItem
-                  to="/search"
-                  label={searchCopy("search.tab")}
-                  icon="search"
-                  current={isCurrent("/search", pathname)}
-                />
-              ) : null}
-              <TabItem to={ACCOUNT_PATH} label={t("shell.account_tab")} icon="user-round" current={onAccount} />
             </ul>
           </nav>
         </div>
         <div ref={dockRef} data-assistant-dock="" className="hidden tablet:block" />
       </div>
       <AssistantHost dockSlot={dockEl} onExamRoute={active !== null && onExamRoute(pathname, active)} />
+      <MoreSheet open={moreOpen} tabs={moreTabs} pathname={pathname} onClose={() => setMoreOpen(false)} />
     </div>
   );
 }

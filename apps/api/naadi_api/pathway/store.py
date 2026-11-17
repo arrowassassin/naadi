@@ -449,6 +449,10 @@ async def verify_task(conn: Conn, task_id: str, admin_id: uuid.UUID, today: dt.d
 async def patch_task_admin(conn: Conn, task_id: str, fields: dict[str, Any]) -> Row:
     allowed = {k: v for k, v in fields.items() if k in ("detail_md", "cost_usd", "official_url")}
     assignments = ", ".join(f"{k} = %s" for k in allowed)
+    if "official_url" in allowed:
+        # A new page has no hash to compare with: the next weekly run takes a new baseline, not a "changed" flag.
+        assignments += ", content_hash = case when official_url is distinct from %s then null else content_hash end"
+        allowed = {**allowed, "_same_url": allowed["official_url"]}
     row = await fetch_one(
         conn,
         f"update public.pathway_tasks set {assignments} where id = %s"  # noqa: S608

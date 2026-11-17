@@ -1443,6 +1443,9 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "shell.nav_failed_title",
         "shell.account_tab",
         "shell.account_label",
+        "shell.more_tab",
+        "shell.more_title",
+        "shell.more_close",
         # reader and content renderer (S06)
         # Qbank builder and tutor mode (S08)
         "practice.headline",

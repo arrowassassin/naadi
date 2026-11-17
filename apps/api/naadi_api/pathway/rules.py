@@ -92,6 +92,15 @@ def https_host(url: str | None) -> str | None:
     return parts.hostname.lower()
 
 
+def port_ok(url: str) -> bool:
+    """No port in the URL, or 443: nothing else is fetched."""
+    try:
+        port = urlsplit(url).port
+    except ValueError:
+        return False
+    return port in (None, 443)
+
+
 def is_official_url(url: str | None, domains: Iterable[str]) -> bool:
     host = https_host(url)
     return host is not None and host_matches(host, domains)

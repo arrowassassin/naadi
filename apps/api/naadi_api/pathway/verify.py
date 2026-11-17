@@ -22,8 +22,10 @@ from __future__ import annotations
 import asyncio
 import datetime as dt
 import hashlib
+import ipaddress
 import json
 import re
+import socket
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
@@ -126,9 +128,40 @@ def _path_key(url: str) -> tuple[str, str]:
     return (parts.hostname or "").lower(), parts.path.rstrip("/") or "/"
 
 
+Resolver = Callable[[str], Awaitable[list[str]]]
+ROBOTS_MAX_BYTES = 500_000
+
+
+async def system_resolver(host: str) -> list[str]:
+    """Every address `host` resolves to (the system resolver, off the event loop's thread)."""
+    infos = await asyncio.get_running_loop().getaddrinfo(host, 443, type=socket.SOCK_STREAM)
+    return sorted({str(i[4][0]) for i in infos})
+
+
+def all_public(addresses: list[str]) -> bool:
+    """True only when there is an address and every one is globally routable: no loopback, private (RFC 1918 / ULA),
+    link-local, multicast, reserved or unspecified address, and no IPv4-mapped IPv6 wrapper around one."""
+    if not addresses:
+        return False
+    for raw in addresses:
+        try:
+            ip = ipaddress.ip_address(raw.split("%")[0])
+        except ValueError:
+            return False
+        if isinstance(ip, ipaddress.IPv6Address) and ip.ipv4_mapped is not None:
+            ip = ip.ipv4_mapped
+        if not ip.is_global:
+            return False
+    return True
+
+
 class HttpFetcher:
-    """`httpx` page fetch: 15 s timeout, our user agent, robots.txt obeyed, redirects followed one hop at a time and
-    only inside the official domains, size capped."""
+    """`httpx` page fetch: 15 s timeout, our user agent, robots.txt obeyed, size capped.
+
+    SSRF guard (the host list is a name allowlist, DNS and redirects can still point inside): every hop must be https
+    on port 443 (or none) on an official host; the host is resolved here and refused unless every address is public;
+    the connection is then made to that resolved address (pinned, with the host name as SNI and `Host`), so a second
+    lookup cannot be rebound to a private one; a redirect may only stay on the SAME host."""
 
     def __init__(
         self,
@@ -139,9 +172,12 @@ class HttpFetcher:
         transport: httpx.AsyncBaseTransport | None = None,
         delay_s: float = HOST_DELAY_S,
         sleep: Callable[[float], Awaitable[None]] = asyncio.sleep,
+        resolver: Resolver = system_resolver,
     ) -> None:
         self._domains = domains
         self._max_bytes = max_bytes
+        self._pin = transport is None  # a test transport answers by name; the real one connects to the checked address
+        self._resolver = resolver
         self._client = httpx.AsyncClient(
             timeout=httpx.Timeout(timeout_s),
             headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml,text/plain;q=0.8,*/*;q=0.1"},
@@ -157,25 +193,61 @@ class HttpFetcher:
     async def aclose(self) -> None:
         await self._client.aclose()
 
-    async def _allowed(self, url: str) -> bool:
+    async def _target(self, url: str) -> tuple[str, dict[str, str], dict[str, Any]] | None:
+        """Where to send a request for `url`: `(url to request, extra headers, extensions)`, or None when the URL is
+        not allowed (not https, a port other than 443, not an official host, or a host that resolves inside)."""
+        host = rules.https_host(url)
+        if host is None or not rules.host_matches(host, self._domains) or not rules.port_ok(url):
+            return None
+        try:
+            addresses = await self._resolver(host)
+        except OSError:
+            return None
+        if not all_public(addresses):
+            return None
+        if not self._pin:
+            return url, {}, {}
+        ip = addresses[0]
+        literal = f"[{ip}]" if ":" in ip else ip
+        parts = urlsplit(url)
+        pinned = parts._replace(netloc=literal).geturl()
+        return pinned, {"Host": host}, {"sni_hostname": host}
+
+    async def _robots_for(self, url: str) -> RobotFileParser | None:
         parts = urlsplit(url)
         origin = f"{parts.scheme}://{parts.netloc}"
-        if origin not in self._robots:
-            rp: RobotFileParser | None = RobotFileParser()
-            try:
-                r = await self._client.get(origin + "/robots.txt")
-                if r.status_code == 200:
-                    assert rp is not None
-                    rp.parse(r.text.splitlines())
-                elif r.status_code in (401, 403):
-                    assert rp is not None
-                    rp.parse(["User-agent: *", "Disallow: /"])
-                else:
-                    rp = None  # no robots file: everything is allowed
-            except httpx.HTTPError:
-                rp = None
-            self._robots[origin] = rp
-        rp = self._robots[origin]
+        if origin in self._robots:
+            return self._robots[origin]
+        rp: RobotFileParser | None = RobotFileParser()
+        target = await self._target(origin + "/robots.txt")
+        try:
+            if target is None:
+                raise httpx.ConnectError("not allowed")
+            t_url, headers, ext = target
+            async with self._client.stream("GET", t_url, headers=headers, extensions=ext) as r:
+                body = bytearray()
+                async for chunk in r.aiter_bytes():
+                    body += chunk
+                    if len(body) > ROBOTS_MAX_BYTES:
+                        break
+                status = r.status_code
+            assert rp is not None
+            if status == 200:
+                rp.parse(bytes(body[:ROBOTS_MAX_BYTES]).decode("utf-8", "replace").splitlines())
+            elif status in (401, 403) or status >= 500:
+                rp.parse(
+                    ["User-agent: *", "Disallow: /"]
+                )  # RFC 9309: unreachable (5xx) means disallow; so does 401/403
+            else:
+                rp = None  # no robots file: everything is allowed
+        except httpx.HTTPError:
+            assert rp is not None
+            rp.parse(["User-agent: *", "Disallow: /"])  # cannot read it: do not guess
+        self._robots[origin] = rp
+        return rp
+
+    async def _allowed(self, url: str) -> bool:
+        rp = await self._robots_for(url)
         return rp is None or rp.can_fetch(USER_AGENT, url)
 
     async def fetch(self, url: str) -> Fetched:
@@ -185,14 +257,15 @@ class HttpFetcher:
         self._cache[url] = result
         return result
 
-    async def _get(self, url: str) -> httpx.Response:
+    async def _get(self, url: str, target: tuple[str, dict[str, str], dict[str, Any]]) -> httpx.Response:
         host = urlsplit(url).hostname or ""
         loop = asyncio.get_running_loop()
         wait = self._last_at.get(host, 0.0) + self._delay - loop.time()
         if wait > 0:
             await self._sleep(wait)
         self._last_at[host] = loop.time()
-        async with self._client.stream("GET", url) as resp:
+        t_url, headers, ext = target
+        async with self._client.stream("GET", t_url, headers=headers, extensions=ext) as resp:
             body = bytearray()
             async for chunk in resp.aiter_bytes():
                 body += chunk
@@ -204,15 +277,17 @@ class HttpFetcher:
 
     async def _fetch(self, url: str) -> Fetched:
         current = url
+        origin_host = rules.https_host(url)
         moved = False
         for _ in range(MAX_REDIRECTS + 1):
             host = rules.https_host(current)
-            if host is None or not rules.host_matches(host, self._domains):
+            target = await self._target(current) if host == origin_host else None
+            if target is None:
                 return Fetched(current, None, None, None, "off_domain_redirect", moved=True)
             if not await self._allowed(current):
                 return Fetched(current, None, None, None, "robots_disallowed")
             try:
-                resp = await self._get(current)
+                resp = await self._get(current, target)
             except httpx.HTTPError:
                 return Fetched(current, None, None, None, "network_error", moved=moved)
             if resp.status_code in (301, 302, 303, 307, 308) and resp.headers.get("location"):

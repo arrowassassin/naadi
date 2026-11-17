@@ -2,6 +2,7 @@ import {
   BookOpen,
   Calendar,
   ClipboardCheck,
+  Ellipsis,
   ListChecks,
   type LucideIcon,
   NotebookPen,
@@ -22,6 +23,7 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   route: Route,
   "user-round": UserRound,
   search: Search,
+  ellipsis: Ellipsis,
 };
 
 export function NavIcon({ name, size = 18 }: { name: string; size?: number }) {

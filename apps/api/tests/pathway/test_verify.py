@@ -28,6 +28,11 @@ PAGE = (
 )
 
 
+async def public_resolver(host: str) -> list[str]:
+    """Every official host resolves to a public address in these tests (no real DNS)."""
+    return ["93.184.216.34"]
+
+
 def site(pages: dict[str, tuple[int, str, dict[str, str]]], robots: str | None = None) -> httpx.MockTransport:
     seen: list[str] = []
 
@@ -47,7 +52,7 @@ def fetcher(transport: httpx.MockTransport, **kw: Any) -> verify.HttpFetcher:
     async def no_sleep(_: float) -> None:
         return None
 
-    return verify.HttpFetcher(DOMAINS, transport=transport, delay_s=0, sleep=no_sleep, **kw)
+    return verify.HttpFetcher(DOMAINS, transport=transport, delay_s=0, sleep=no_sleep, resolver=public_resolver, **kw)
 
 
 # ── normalising and hashing ──
@@ -76,7 +81,7 @@ async def test_fetch_ok_sends_our_user_agent_and_normalises() -> None:
             headers={"content-type": "text/html; charset=utf-8"},
         )
 
-    f = verify.HttpFetcher(DOMAINS, transport=httpx.MockTransport(handler), delay_s=0)
+    f = verify.HttpFetcher(DOMAINS, transport=httpx.MockTransport(handler), delay_s=0, resolver=public_resolver)
     out = await f.fetch("https://www.usmle.org/fees")
     await f.aclose()
     assert out.outcome == "ok" and out.status == 200 and out.moved is False
@@ -107,7 +112,7 @@ async def test_a_network_failure_is_unreachable() -> None:
             return httpx.Response(404)
         raise httpx.ConnectTimeout("slow", request=req)
 
-    f = verify.HttpFetcher(DOMAINS, transport=httpx.MockTransport(boom), delay_s=0)
+    f = verify.HttpFetcher(DOMAINS, transport=httpx.MockTransport(boom), delay_s=0, resolver=public_resolver)
     out = await f.fetch("https://www.usmle.org/x")
     await f.aclose()
     assert out.outcome == "network_error" and out.status is None
@@ -187,6 +192,123 @@ async def test_a_pdf_is_hashed_but_not_read() -> None:
     out = await f.fetch("https://www.usmle.org/b.pdf")
     await f.aclose()
     assert out.outcome == "ok" and out.text is None and out.content_hash and len(out.content_hash) == 64
+
+
+# ── SSRF guard ──
+
+
+@pytest.mark.parametrize(
+    ("addresses", "ok"),
+    [
+        (["93.184.216.34"], True),
+        (["2606:2800:220:1:248:1893:25c8:1946"], True),
+        (["127.0.0.1"], False),
+        (["10.0.0.5"], False),
+        (["172.16.3.4"], False),
+        (["192.168.1.1"], False),
+        (["169.254.169.254"], False),
+        (["100.64.0.1"], False),
+        (["0.0.0.0"], False),  # noqa: S104 - a test vector: an unspecified address must be refused
+        (["::1"], False),
+        (["fd00::1"], False),
+        (["fe80::1"], False),
+        (["::ffff:127.0.0.1"], False),
+        (["93.184.216.34", "10.0.0.1"], False),  # one private answer spoils the lot
+        ([], False),
+        (["not-an-ip"], False),
+    ],
+)
+def test_only_public_addresses_pass(addresses: list[str], ok: bool) -> None:
+    assert verify.all_public(addresses) is ok
+
+
+async def test_a_host_that_resolves_inside_is_never_requested() -> None:
+    async def inside(host: str) -> list[str]:
+        return ["10.1.2.3"]
+
+    t = site({"https://www.usmle.org/x": (200, PAGE, {})})
+    f = verify.HttpFetcher(DOMAINS, transport=t, delay_s=0, resolver=inside)
+    out = await f.fetch("https://www.usmle.org/x")
+    await f.aclose()
+    assert out.outcome == "off_domain_redirect" and out.text is None
+    assert t.seen == []  # type: ignore[attr-defined]
+
+
+async def test_a_name_that_does_not_resolve_is_refused() -> None:
+    async def nothing(host: str) -> list[str]:
+        raise OSError("no such host")
+
+    f = verify.HttpFetcher(DOMAINS, transport=site({}), delay_s=0, resolver=nothing)
+    out = await f.fetch("https://www.usmle.org/x")
+    await f.aclose()
+    assert out.outcome == "off_domain_redirect"
+
+
+async def test_only_port_443_is_fetched_and_a_redirect_to_another_port_is_refused() -> None:
+    t = site(
+        {
+            "https://www.ecfmg.org/page": (302, "", {"location": "https://www.ecfmg.org:6379/admin"}),
+            "https://www.ecfmg.org:6379/admin": (200, "secret", {}),
+            "https://www.usmle.org:8443/x": (200, PAGE, {}),
+            "https://www.usmle.org/ok": (200, PAGE, {}),
+        }
+    )
+    f = fetcher(t)
+    a = await f.fetch("https://www.ecfmg.org/page")
+    b = await f.fetch("https://www.usmle.org:8443/x")
+    c = await f.fetch("https://www.usmle.org:443/ok")
+    await f.aclose()
+    assert (a.outcome, b.outcome) == ("off_domain_redirect", "off_domain_redirect")
+    assert c.outcome == "ok"
+    assert not any(":6379" in u or ":8443" in u for u in t.seen)  # type: ignore[attr-defined]
+
+
+async def test_a_redirect_may_only_stay_on_the_same_host() -> None:
+    t = site(
+        {
+            "https://www.ecfmg.org/page": (302, "", {"location": "https://internal.ecfmg.org/admin"}),
+            "https://internal.ecfmg.org/admin": (200, "internal", {}),
+        }
+    )
+    f = fetcher(t)
+    out = await f.fetch("https://www.ecfmg.org/page")
+    await f.aclose()
+    assert out.outcome == "off_domain_redirect" and out.text is None
+    assert not any("internal.ecfmg.org" in u for u in t.seen)  # type: ignore[attr-defined]
+
+
+async def test_robots_5xx_means_disallow_and_robots_is_size_capped() -> None:
+    def handler(req: httpx.Request) -> httpx.Response:
+        if req.url.path == "/robots.txt":
+            return httpx.Response(503)
+        return httpx.Response(200, text=PAGE, headers={"content-type": "text/html"})
+
+    f = verify.HttpFetcher(DOMAINS, transport=httpx.MockTransport(handler), delay_s=0, resolver=public_resolver)
+    out = await f.fetch("https://www.usmle.org/x")
+    await f.aclose()
+    assert out.outcome == "robots_disallowed"
+
+    huge = "User-agent: *\nAllow: /\n" + "# pad\n" * 200_000  # far over the cap: read only up to it
+
+    def big(req: httpx.Request) -> httpx.Response:
+        if req.url.path == "/robots.txt":
+            return httpx.Response(200, text=huge)
+        return httpx.Response(200, text=PAGE, headers={"content-type": "text/html"})
+
+    f2 = verify.HttpFetcher(DOMAINS, transport=httpx.MockTransport(big), delay_s=0, resolver=public_resolver)
+    assert (await f2.fetch("https://www.usmle.org/x")).outcome == "ok"
+    await f2.aclose()
+
+
+async def test_the_real_transport_connects_to_the_checked_address_with_the_host_as_sni() -> None:
+    f = verify.HttpFetcher(DOMAINS, resolver=public_resolver)  # no test transport: pinned
+    target = await f._target("https://www.usmle.org/a/b?x=1")
+    await f.aclose()
+    assert target == (
+        "https://93.184.216.34/a/b?x=1",
+        {"Host": "www.usmle.org"},
+        {"sni_hostname": "www.usmle.org"},
+    )
 
 
 # ── quotes and the model's answer ──
@@ -417,7 +539,7 @@ async def run_pass(
     db = Database(SecretStr(url))
     await db.open()
     domains = [tasks["host"]]
-    f = verify.HttpFetcher(domains, transport=site(pages), delay_s=0)
+    f = verify.HttpFetcher(domains, transport=site(pages), delay_s=0, resolver=public_resolver)
     try:
         return await verify.verify_pass(db, gateway, cfg, domains, f, run_id="run-test")
     finally:

@@ -382,3 +382,31 @@ def test_notes_labels_and_amounts_are_never_logged(
     out = capfd.readouterr()
     assert secret_note not in out.out + out.err and secret_label not in out.out + out.err
     assert "123456.78" not in out.out + out.err
+
+
+def test_a_new_official_url_resets_the_baseline_hash_but_the_same_url_keeps_it(
+    client: TestClient, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    h = world.h(world.admin)
+    pg.execute("update public.pathway_tasks set content_hash = %s where id = %s", ("b" * 64, world.t_fresh))
+    url = pg.execute("select official_url from public.pathway_tasks where id = %s", (world.t_fresh,)).fetchone()
+    assert url is not None
+    same = client.patch(
+        f"/api/admin/pathway/tasks/{world.t_fresh}", json={"official_url": url[0], "cost_usd": 3}, headers=h
+    )
+    assert same.status_code == 200, same.text
+    kept = pg.execute("select content_hash from public.pathway_tasks where id = %s", (world.t_fresh,)).fetchone()
+    assert kept == ("b" * 64,)
+    moved = client.patch(
+        f"/api/admin/pathway/tasks/{world.t_fresh}", json={"official_url": "https://www.ecfmg.org/new-page"}, headers=h
+    )
+    assert moved.status_code == 200
+    assert pg.execute("select content_hash from public.pathway_tasks where id = %s", (world.t_fresh,)).fetchone() == (
+        None,
+    )
+    # a detail-only edit never touches the hash
+    pg.execute("update public.pathway_tasks set content_hash = %s where id = %s", ("c" * 64, world.t_fresh))
+    client.patch(f"/api/admin/pathway/tasks/{world.t_fresh}", json={"detail_md": "New"}, headers=h)
+    assert pg.execute("select content_hash from public.pathway_tasks where id = %s", (world.t_fresh,)).fetchone() == (
+        "c" * 64,
+    )

@@ -515,6 +515,9 @@ export function useUploadVault() {
         .from(started.bucket)
         .uploadToSignedUrl(started.path, started.token, input.file, {
           contentType: mime,
+          // Hosted Storage serves an object's Cache-Control from its upload metadata: a vault file must not stay in the
+          // browser's HTTP cache after it is opened through a 60 s signed URL.
+          cacheControl: "0", // seconds: sent as max-age=0
         });
       if (up.error) throw new UploadError("failed");
       return authed<VaultDocOut>((headers) => completeVaultUpload({ headers, path: { doc_id: started.id } }));

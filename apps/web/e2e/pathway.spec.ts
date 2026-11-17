@@ -66,7 +66,7 @@ function watchConsole(page: Page) {
   let tool = 0;
   page.on("console", (m) => {
     // Trusted Types ship report-only: WebKit and Firefox log those reports as console errors (csp.spec collects them).
-    if (/\[Report Only\]|report-only|Report-Only/i.test(m.text())) return;
+    if (/trusted[ -]types?/i.test(m.text()) && /report[ -]only/i.test(m.text())) return;
     if (m.type() === "error" && !(tool > 0 && m.text() === TOOL_CSP_NOISE)) errors.push(m.text());
   });
   page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
@@ -666,6 +666,60 @@ test.describe("offline", () => {
       expect(list.json.items.map((c) => [c.label, c.amount])).toEqual([["Offline fee", "42.00"]]);
       await quiet(page);
       expect(errors.filter((e) => !/ERR_INTERNET_DISCONNECTED|offline|Failed to load resource/i.test(e))).toEqual([]);
+    } finally {
+      await student.done();
+    }
+  });
+});
+
+test.describe("phone tab bar", () => {
+  test("five tabs fit in the bar, the rest are in a More sheet, labels never overflow", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.skip((info.project.use.viewport?.width ?? 1000) >= 640, "the tab bar is the phone layout");
+    test.setTimeout(150_000);
+    const student = await freshStudent(browser, baseURL as string, info, "tabs");
+    try {
+      const { page } = await student.open("/pathway");
+      const { errors, guard } = watchConsole(page);
+      const bar = page.getByRole("navigation", { name: "Tabs" });
+      const items = bar.locator("li > a, li > button");
+      const count = await items.count();
+      expect(count).toBeLessThanOrEqual(5);
+      // every label sits inside its own tab, and no two tabs overlap
+      const boxes = await items.evaluateAll((els) =>
+        els.map((el) => {
+          const label = el.querySelector("span") as HTMLElement;
+          const r = el.getBoundingClientRect();
+          const l = label.getBoundingClientRect();
+          return {
+            left: r.left,
+            right: r.right,
+            labelLeft: l.left,
+            labelRight: l.right,
+            scroll: label.scrollWidth,
+            client: label.clientWidth,
+          };
+        }),
+      );
+      for (const [i, b] of boxes.entries()) {
+        expect(b.labelLeft, `tab ${i} label starts inside`).toBeGreaterThanOrEqual(b.left - 0.5);
+        expect(b.labelRight, `tab ${i} label ends inside`).toBeLessThanOrEqual(b.right + 0.5);
+        expect(b.scroll).toBeLessThanOrEqual(b.client + 1);
+        if (i > 0) expect(b.left).toBeGreaterThanOrEqual((boxes[i - 1] as { right: number }).right - 0.5);
+      }
+      await snap(page, info, guard, "tabs");
+      // More holds the rest: Pathway is there, and it opens
+      await bar.getByRole("button", { name: "More" }).click();
+      const sheet = page.getByRole("dialog", { name: "More" });
+      await expect(sheet.getByRole("link", { name: "Pathway" })).toHaveAttribute("aria-current", "page");
+      await expect(sheet.getByRole("link", { name: "Account" })).toBeVisible();
+      await expectNoAxeViolations(page);
+      await snap(page, info, guard, "tabs-more");
+      await sheet.getByRole("link", { name: "Account" }).click();
+      await page.waitForURL((u) => u.pathname === "/settings/account");
+      expect(errors).toEqual([]);
     } finally {
       await student.done();
     }
