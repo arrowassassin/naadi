@@ -1,0 +1,13 @@
+{
+ "id": "20261117T020958-seg09-exam-12569e",
+ "ts": "2026-11-17T02:09:58.212288Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/migrations/versions/0011_exam_timing.py",
+ "body": "",
+ "re": "20261116T201611-seg09-exam-0448f5",
+ "requires_ack": false
+}
