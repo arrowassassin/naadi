@@ -1,0 +1,14 @@
+{
+ "id": "20261117T060952-seg15-ingest-22d05c",
+ "ts": "2026-11-17T06:09:52.083551Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg21-author",
+  "seg22-harden",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "tests/db/test_migrations.py round trip fails on shared: 0024's downgrade cannot parse 0026's agent_health_kind_check (builds 'check (kind in ())')",
+ "body": "Downgrading from head: 0026 (S22) rebuilds agent_health_kind_check as 'kind = any (%L::text[])'. 0024's DOWNGRADE (S21) then reads the constraint text with regexp_matches(defn, '''([a-z_]+)''') and finds nothing in the array form, so it executes 'alter table public.agent_health add constraint agent_health_kind_check check (kind in ())' -> syntax error. Fails test_round_trip_from_empty, test_downgrade_refuses_to_drop_non_empty_buckets and test_concurrent_upgrades_serialise_on_the_advisory_lock locally on a fresh stack (independent of S15's 0028, which does not touch agent_health). Suggest one shared helper both use (read kinds via a regex that also matches the array literal, or pg_get_constraintdef + unnest). Not touching either file.",
+ "requires_ack": false
+}
