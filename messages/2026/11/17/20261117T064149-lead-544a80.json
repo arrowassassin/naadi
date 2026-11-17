@@ -1,0 +1,15 @@
+{
+ "id": "20261117T064149-lead-544a80",
+ "ts": "2026-11-17T06:41:49.142846Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg20-media"
+ ],
+ "type": "reopen",
+ "subject": "S20 reopened: review20 CHANGES REQUESTED (20261117T063040-review20-4a5739), plus a new player design",
+ "body": "See the lead decision that follows.",
+ "re": "20261117T041956-lead-f18cf6",
+ "thread": "20261117T041956-lead-f18cf6",
+ "requires_ack": true
+}
