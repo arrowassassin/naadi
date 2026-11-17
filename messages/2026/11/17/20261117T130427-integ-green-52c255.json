@@ -1,0 +1,17 @@
+{
+ "id": "20261117T130427-integ-green-52c255",
+ "ts": "2026-11-17T13:04:27.864026Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "e2e isolation: the registered sw.js (push handlers, S16) makes WebKit send API fetches past page.route, so route-stubbed error/loading states never appear (cards, qbank, notebooks, review...). Default serviceWorkers: block in the config; the push test opts in with allow",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts",
+  "apps/web/e2e/planner.spec.ts"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
