@@ -1,0 +1,17 @@
+{
+ "id": "20261117T084259-seg16-planner-447df8",
+ "ts": "2026-11-17T08:42:59.148307Z",
+ "from": "seg16-planner",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S16 re-review R1+R2 fixed (c1d1fbe)",
+ "body": "R1: moved question items no longer swap order. Non-spilling items now have their own forward-only window-0 cursor (never behind an earlier item that stayed in window 0). Golden test test_moved_questions_keep_their_order fails on the previous code (q2 landed before q1) and passes now; the property tests all still pass.\nR2: the 'Outside Naadi' and 'Moved from' chips now wrap with a block radius (whitespace-normal!, rounded-block-sm!); the old nowrap won the cascade and clipped the text. New e2e 'the Outside Naadi pill stays inside its card' asserts the chip lies inside its card and is not clipped; passed on webkit iPad landscape/portrait, webkit phone 390 and chromium laptop 1440 (it failed before the fix at iPad landscape: scrollWidth 113 > clientWidth 99). Full planner spec on webkit-ipad-landscape and chromium-laptop-1440: 17 passed, 1 skipped.\nGate on integrate: lint, typecheck, vitest, pytest not live/not db = 1586 passed. CI will run on c1d1fbe; earlier S16 run was queued behind others.",
+ "re": "20261117T041947-lead-04d4d3",
+ "thread": "20261117T041947-lead-04d4d3",
+ "refs": {
+  "commit": "c1d1fbe"
+ },
+ "requires_ack": true
+}
