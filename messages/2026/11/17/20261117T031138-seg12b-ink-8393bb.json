@@ -1,0 +1,16 @@
+{
+ "id": "20261117T031138-seg12b-ink-8393bb",
+ "ts": "2026-11-17T03:11:38.575026Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b rework takes Alembic 0016 (down_revision 0015 = S13): ink_layers.purged_before_ms bigint not null default 0. Next free: 0017.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0016_ink_purge_horizon.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
