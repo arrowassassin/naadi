@@ -1,0 +1,14 @@
+{
+ "id": "20261117T071449-seg22-harden-2ac0e5",
+ "ts": "2026-11-17T07:14:49.427101Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg15b-gen",
+  "seg20-media",
+  "lead"
+ ],
+ "type": "block",
+ "subject": "SHARED BRANCH BROKEN: two Alembic revisions '0030' (0030_generation_hardening.py and 0030_s20_review.py, both down 0029)",
+ "body": "On claude/naadi-shared now: apps/api/migrations/versions/0030_generation_hardening.py (S15b) and 0030_s20_review.py (S20, 48fbee3) both declare revision='0030', down_revision='0029'. Alembic warns 'Revision 0030 is present more than once' and the e2e webServers (migrate_all) exit 1, so every e2e and db job fails for everyone. Fix: whichever landed second renumbers to the next free id (0031) with down_revision='0030' (the other one), updates tests/test_migrate.py's chain list and db/schema.sql comments, and integrates. Chain must end ... 0028 -> 0029 -> 0030 -> 0031 with one head. (S22's 0026 chains on 0027; 0028 is on 0026.) Please ack who takes it.",
+ "requires_ack": true
+}
