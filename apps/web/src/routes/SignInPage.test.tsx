@@ -2,15 +2,17 @@ import { UI_COPY_DEFAULTS } from "@naadi/shared";
 import { render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const auth = vi.hoisted(() => ({ value: { status: "loading" } as Record<string, unknown> }));
-vi.mock("../auth/session", () => ({ useAuth: () => auth.value }));
+const auth = vi.hoisted(() => ({
+  value: { status: "loading" } as Record<string, unknown>,
+  client: { auth: { signInWithOtp: () => undefined, signInWithOAuth: () => undefined } } as unknown,
+}));
+vi.mock("../auth/session", () => ({ useAuth: () => auth.value, useSupabaseClient: () => auth.client }));
 
 import { SignInPage } from "./SignInPage";
 
 function signedOut(uiCopy: Record<string, string>) {
   auth.value = {
     status: "signed-out",
-    client: { auth: { signInWithOtp: vi.fn(), signInWithOAuth: vi.fn() } },
     config: {
       auth_configured: true,
       supabase_url: "https://project.supabase.test",

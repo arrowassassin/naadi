@@ -1,6 +1,6 @@
 import type { LibraryOut, UploadTicket } from "@naadi/shared";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { getAuthState } from "../auth/session";
+import { getAuthState, supabaseClient } from "../auth/session";
 import { reserveUploads, startBatch, uploads } from "./api";
 
 /**
@@ -110,9 +110,8 @@ export interface UploadOutcome {
   failed: number;
 }
 
-function storageClient(): SupabaseClient | null {
-  const s = getAuthState();
-  return s.status === "signed-in" ? s.client : null;
+async function storageClient(): Promise<SupabaseClient | null> {
+  return getAuthState().status === "signed-in" ? supabaseClient().catch(() => null) : null;
 }
 
 async function uploadOne(client: SupabaseClient, ticket: UploadTicket, file: File, contentType: string) {
@@ -131,7 +130,7 @@ export async function uploadFiles(
   accepted: readonly Checked[],
   refresh: () => Promise<unknown>,
 ): Promise<UploadOutcome> {
-  const client = storageClient();
+  const client = await storageClient();
   if (!client) throw new Error("not signed in");
   const reserved = await reserveUploads(
     accepted.map((c) => ({ name: c.file.name, size: c.file.size, content_type: c.contentType })),

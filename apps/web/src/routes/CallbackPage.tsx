@@ -3,7 +3,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { Loader2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { type CallbackResult, completeSignInOnce } from "../auth/callback";
-import { useAuth } from "../auth/session";
+import { supabaseClient, useAuth } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
 import { Wordmark } from "../shell/Logo";
 
@@ -27,17 +27,20 @@ export function CallbackPage() {
     const url = new URL(window.location.href);
     if (startedFor.current === url.href) return;
     startedFor.current = url.href;
-    void completeSignInOnce(auth.client, url).then((r) => {
-      // Never leave codes or tokens in the address bar or the history.
-      window.history.replaceState(window.history.state, "", "/auth/callback");
-      if (r.ok) {
-        void navigate({ href: r.next, replace: true });
-      } else if (r.kind === "expired") {
-        void navigate({ to: "/sign-in", search: { error: "expired", redirect: r.next }, replace: true });
-      } else {
-        setResult(r);
-      }
-    });
+    void supabaseClient()
+      .then((client) => completeSignInOnce(client, url))
+      .catch((): CallbackResult => ({ ok: false, kind: "invalid", next: "/" }))
+      .then((r) => {
+        // Never leave codes or tokens in the address bar or the history.
+        window.history.replaceState(window.history.state, "", "/auth/callback");
+        if (r.ok) {
+          void navigate({ href: r.next, replace: true });
+        } else if (r.kind === "expired") {
+          void navigate({ to: "/sign-in", search: { error: "expired", redirect: r.next }, replace: true });
+        } else {
+          setResult(r);
+        }
+      });
   }, [auth, navigate]);
 
   const failed = result && !result.ok ? result : null;

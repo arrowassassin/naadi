@@ -1,5 +1,4 @@
-import type { SupabaseClient } from "@supabase/supabase-js";
-import { getAuthState } from "../auth/session";
+import { getAuthState, supabaseClient } from "../auth/session";
 import { userUploadsBucket } from "../notebooks/whiteboard/files";
 
 /**
@@ -14,7 +13,6 @@ export const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
 const SIGNED_SECONDS = 60 * 60;
 
 interface Storage {
-  client: SupabaseClient;
   bucket: string;
   userId: string;
 }
@@ -23,7 +21,7 @@ function storage(): Storage | null {
   const s = getAuthState();
   if (s.status !== "signed-in") return null;
   const bucket = userUploadsBucket(s.config);
-  return bucket ? { client: s.client, bucket, userId: s.session.user.id } : null;
+  return bucket ? { bucket, userId: s.session.user.id } : null;
 }
 
 export function imagesAvailable(): boolean {
@@ -49,7 +47,9 @@ export async function uploadNoteImage(
   if (!ext) return { error: "type" };
   if (file.size > MAX_IMAGE_BYTES) return { error: "size" };
   const path = `${st.userId}/notes/${noteId}/${crypto.randomUUID()}.${ext}`;
-  const { error } = await st.client.storage
+  const client = await supabaseClient().catch(() => null);
+  if (!client) return { error: "unavailable" };
+  const { error } = await client.storage
     .from(st.bucket)
     .upload(path, file, { contentType: file.type, upsert: false, cacheControl: "3600" });
   return error ? { error: "failed" } : { path };
@@ -63,7 +63,9 @@ export async function signedImageUrl(path: string): Promise<string | null> {
   if (hit && hit.until > Date.now()) return hit.url;
   const st = storage();
   if (!st || !path.startsWith(`${st.userId}/`)) return null;
-  const { data, error } = await st.client.storage.from(st.bucket).createSignedUrl(path, SIGNED_SECONDS);
+  const client = await supabaseClient().catch(() => null);
+  if (!client) return null;
+  const { data, error } = await client.storage.from(st.bucket).createSignedUrl(path, SIGNED_SECONDS);
   if (error || !data?.signedUrl) return null;
   signed.set(path, { url: data.signedUrl, until: Date.now() + (SIGNED_SECONDS - 120) * 1000 });
   return data.signedUrl;

@@ -1,9 +1,8 @@
 import { Button, ErrorState, OfflineBanner } from "@naadi/ui";
-import type { SupabaseClient } from "@supabase/supabase-js";
 import { Clock, MailCheck } from "lucide-react";
 import { type FormEvent, type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { callbackUrl, redirectOrigin } from "../auth/redirect";
-import { useAuth } from "../auth/session";
+import { useAuth, useSupabaseClient } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { Wordmark } from "../shell/Logo";
@@ -74,8 +73,8 @@ export function SignInPage({ next, notice }: SignInPageProps) {
   const sentHeading = useRef<HTMLHeadingElement>(null);
   const now = useNow(phase.name === "sent");
 
-  const client: SupabaseClient | null =
-    auth.status === "signed-out" || auth.status === "signed-in" ? auth.client : null;
+  // Loaded on demand (not part of the first load); the buttons stay disabled until it is ready.
+  const client = useSupabaseClient();
   const config = auth.status === "signed-out" || auth.status === "signed-in" ? auth.config : null;
   const redirectTo = callbackUrl(redirectOrigin(config?.app_base_url), next);
   // Editable strings from app_config.ui_copy (served with /api/public-config); never empty (see useUiText).

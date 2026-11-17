@@ -27,7 +27,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 import { authed, useMe } from "../auth/api";
 import { ApiError, UNREACHABLE } from "../auth/apiError";
-import { getAuthState, useAuth } from "../auth/session";
+import { getAuthState, supabaseClient, useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { serverNow } from "../ink/persist/clock";
 import { installOfflineCacheReset, readOffline, writeOffline } from "../learn/offlineCache";
@@ -511,14 +511,14 @@ export function useUploadVault() {
       const client = getAuthState();
       if (client.status !== "signed-in") throw new UploadError("failed");
       // The bytes go straight from the browser to Storage on the signed URL (supabase-js); the API never carries them.
-      const up = await client.client.storage
-        .from(started.bucket)
-        .uploadToSignedUrl(started.path, started.token, input.file, {
-          contentType: mime,
-          // Hosted Storage serves an object's Cache-Control from its upload metadata: a vault file must not stay in the
-          // browser's HTTP cache after it is opened through a 60 s signed URL.
-          cacheControl: "0", // seconds: sent as max-age=0
-        });
+      const storage = await supabaseClient().catch(() => null);
+      if (!storage) throw new UploadError("failed");
+      const up = await storage.storage.from(started.bucket).uploadToSignedUrl(started.path, started.token, input.file, {
+        contentType: mime,
+        // Hosted Storage serves an object's Cache-Control from its upload metadata: a vault file must not stay in the
+        // browser's HTTP cache after it is opened through a 60 s signed URL.
+        cacheControl: "0", // seconds: sent as max-age=0
+      });
       if (up.error) throw new UploadError("failed");
       return authed<VaultDocOut>((headers) => completeVaultUpload({ headers, path: { doc_id: started.id } }));
     },

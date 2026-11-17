@@ -6,7 +6,7 @@
  * device queue as a data: URL); reads use short-lived signed URLs and are cached for the page's lifetime.
  */
 import type { PublicConfig } from "@naadi/shared";
-import { getAuthState } from "../../auth/session";
+import { getAuthState, supabaseClient } from "../../auth/session";
 import { isStoredFile, type SceneFile, type StoredFile } from "./scene";
 
 /** Image types the bucket accepts and Excalidraw can show (SVG is refused: user SVGs could carry script). */
@@ -24,12 +24,12 @@ export function userUploadsBucket(config: PublicConfig | null | undefined): stri
   return typeof b === "string" && /^[a-z0-9-]{3,63}$/.test(b) ? b : null;
 }
 
-function signedIn() {
+async function signedIn() {
   const auth = getAuthState();
   if (auth.status !== "signed-in") throw new Error("whiteboard files: not signed in");
   const bucket = userUploadsBucket(auth.config);
   if (!bucket) throw new Error("whiteboard files: no user-uploads bucket configured");
-  return { client: auth.client, userId: auth.session.user.id, bucket };
+  return { client: await supabaseClient(), userId: auth.session.user.id, bucket };
 }
 
 export function filePath(userId: string, noteId: string, fileId: string, mimeType: string): string {
@@ -72,7 +72,7 @@ export async function prepareSceneForUpload(
   if (!files || typeof files !== "object") return body;
   const pending = Object.entries(files).filter(([, f]) => !isStoredFile(f) && typeof f?.dataURL === "string");
   if (!pending.length) return body;
-  const { client, userId, bucket } = signedIn();
+  const { client, userId, bucket } = await signedIn();
   const out: Record<string, SceneFile> = { ...files };
   for (const [id, f] of pending) {
     if (!f || isStoredFile(f) || !f.dataURL) continue;
@@ -125,7 +125,7 @@ export async function loadSceneFiles(
     else missing.push([id, f]);
   }
   if (!missing.length) return out;
-  const { client, bucket } = signedIn();
+  const { client, bucket } = await signedIn();
   const { data, error } = await client.storage.from(bucket).createSignedUrls(
     missing.map(([, f]) => f.path),
     600,

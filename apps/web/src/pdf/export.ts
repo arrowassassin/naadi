@@ -12,7 +12,7 @@
  */
 import { type InkItem, mergeInkItems, type NotebookDetail, type NoteOut } from "@naadi/shared";
 import { PDFDocument, type PDFImage } from "pdf-lib";
-import { getAuthState } from "../auth/session";
+import { getAuthState, supabaseClient } from "../auth/session";
 import { dexieStore } from "../ink/persist/db";
 import { apiTransport } from "../ink/persist/transport";
 import { pagePaper } from "../notebooks/pageOps";
@@ -110,7 +110,9 @@ async function signedUrls(paths: string[]): Promise<Map<string, string>> {
   const bucket = userUploadsBucket(auth.config);
   if (!bucket) return out;
   const own = paths.filter((p) => p.startsWith(`${auth.session.user.id}/`));
-  const { data } = await auth.client.storage.from(bucket).createSignedUrls(own, 300);
+  const client = await supabaseClient().catch(() => null);
+  if (!client) return out;
+  const { data } = await client.storage.from(bucket).createSignedUrls(own, 300);
   for (const d of data ?? []) if (d.path && d.signedUrl) out.set(d.path, d.signedUrl);
   return out;
 }
