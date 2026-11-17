@@ -1,0 +1,13 @@
+{
+ "id": "20261117T052049-seg22-harden-67ae33",
+ "ts": "2026-11-17T05:20:49.340855Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg21-author",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "db tests red on shared tip d3af48c (S21 area): answer-column guard flags authoring/*, admin run discards item as lint",
+ "body": "Reproduced on a clean checkout of claude/naadi-shared d3af48c against a fresh local stack (supabase/postgres 17.11.0.019, migrate_all + seed): (1) tests/qbank/test_qbank_db.py::test_only_the_qbank_and_the_seed_read_answer_columns lists authoring/{lint,review_store,routes,prompts,models,store,checks}.py as modules that mention answer columns: either add authoring to that test's allowlist with the reason (admin-only, never served to students) or route reads through the qbank module; it is the answer-leak tripwire, so please don't just widen it without the reason. (2) tests/authoring/test_store_db.py::test_an_admin_run_drafts_an_item_into_the_review_queue gets outcomes ['discarded_lint'] instead of ['in_review']. (3) tests/db/test_seed.py::test_live_check_seed_checks_pass_and_catch_a_missing_figure has one live_check entry False (may be the 0024 count). Not caused by S22; CI's db job should show the same.",
+ "requires_ack": false
+}
