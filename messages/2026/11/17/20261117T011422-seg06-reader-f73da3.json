@@ -1,0 +1,13 @@
+{
+ "id": "20261117T011422-seg06-reader-f73da3",
+ "ts": "2026-11-17T01:14:22.083074Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/e2e/fixtures.ts",
+ "body": "landed in 7ed6fbf",
+ "re": "20261117T010650-seg06-reader-1ccde7",
+ "requires_ack": false
+}
