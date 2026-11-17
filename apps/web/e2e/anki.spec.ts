@@ -16,7 +16,10 @@ test.describe("Anki import and export", () => {
   test("import → review → export → re-import is a no-op", async ({ browser, baseURL }, info) => {
     test.setTimeout(180_000);
     const student = await freshStudent(browser, baseURL as string, info, "anki");
-    const work = mkdtempSync(path.join(path.resolve(import.meta.dirname, "../../../.tmp"), "anki-"));
+    // .tmp/ is gitignored, so a fresh checkout (CI) has none until some spec makes it: create it here.
+    const tmpRoot = path.resolve(import.meta.dirname, "../../../.tmp");
+    mkdirSync(tmpRoot, { recursive: true });
+    const work = mkdtempSync(path.join(tmpRoot, "anki-"));
     try {
       const file = writeApkg(path.join(work, "bio.apkg"), "Biology::Cells", [
         ["What organelle makes ATP?", "Mitochondria"],
