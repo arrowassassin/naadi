@@ -342,13 +342,17 @@ async def test_ink_ocr_graph_runs_in_the_host_on_its_crons(host: Host) -> None:
 
 
 async def test_ink_saved_in_the_host_is_queued_and_read_through_the_real_gateway(host: Host) -> None:
-    """The whole path in one process: the notes API makes a notebook page, the ink API's save hook queues its layer,
-    the admin-run sweep reads it through the real LLM gateway (privacy directory included). No provider key is
-    configured in this host, so the gateway answers `LLMUnavailable` and the layer waits as `deferred`."""
+    """The whole path in one process: the student opts in to handwriting search (off by default), the notes API
+    makes a notebook page, the ink API's save hook queues its layer, the admin-run sweep reads it through the real
+    LLM gateway (privacy directory included). No provider key is configured in this host, so the gateway answers
+    `LLMUnavailable` and the layer waits as `deferred`."""
     from ..ink.test_ink_db import stroke
 
     h = {"authorization": f"Bearer {host.student_token}"}
     async with httpx.AsyncClient(base_url=host.url, timeout=20.0) as http:
+        # Handwriting search is opt-in (off by default): the student turns it on first.
+        r = await http.patch("/api/me", json={"settings": {"handwriting_search": True}}, headers=h)
+        assert r.status_code == 200, r.text
         nb = (await http.post("/api/notebooks", json={"title": "Renal"}, headers=h)).json()
         page = nb["pages"][0]["id"]
         items = [stroke(points=[[0.1, 0.1 + i / 20, 0.5, 0], [0.5, 0.1 + i / 20, 0.5, 9]]) for i in range(3)]

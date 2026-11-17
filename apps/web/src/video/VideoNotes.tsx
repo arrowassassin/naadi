@@ -4,7 +4,7 @@ import { useUiText } from "../copy/useUiText";
 import { errorKey as noteErrorKey, useNotes, useNoteWriter, usePendingOps, useUserId } from "../notes/api";
 import { formatClock } from "./format";
 
-interface Props {
+export interface VideoNotesProps {
   mediaId: string;
   /** Whole seconds of the playhead right now. */
   getTime: () => number;
@@ -38,7 +38,7 @@ function toDoc(text: string) {
 const FILTERS = { anchor_type: "video", kind: "note", limit: 200 } as const;
 
 /** Notes taken at moments of one video: "Note at 12:22", listed by time, tap to jump there. */
-export function VideoNotes({ mediaId, getTime, seek }: Props) {
+export function VideoNotes({ mediaId, getTime, seek }: VideoNotesProps) {
   const t = useUiText();
   const userId = useUserId();
   const ids = useId();

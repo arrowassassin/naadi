@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
+import type { Browser, BrowserContext, BrowserContextOptions, Page, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
   type ConsoleGuard,
@@ -88,8 +88,8 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
   const email = emailFor(info, tag);
   runUsers(["delete", "--email", email]);
   const contexts: BrowserContext[] = [];
-  const open = async (path: string, base = baseURL) => {
-    const context = await browser.newContext({ ...info.project.use, baseURL: base, acceptDownloads: true });
+  const open = async (path: string, base = baseURL, extra: BrowserContextOptions = {}) => {
+    const context = await browser.newContext({ ...info.project.use, baseURL: base, acceptDownloads: true, ...extra });
     contexts.push(context);
     const page = await context.newPage();
     const w = watch(page);
@@ -463,7 +463,11 @@ test.describe("notebooks", () => {
     test.setTimeout(120_000);
     const s = await student(browser, baseURL as string, info, "st");
     try {
-      const { page, context, guard, errors, allowOffline } = await s.open("/notes/notebooks");
+      // serviceWorkers: "block": WebKit hands a reloaded page's requests to the worker, which page.route cannot see, so
+      // the held and failed list requests below would never reach the routes.
+      const { page, context, guard, errors, allowOffline } = await s.open("/notes/notebooks", baseURL as string, {
+        serviceWorkers: "block",
+      });
       await expect(page.locator("[data-notebooks-empty]")).toBeVisible();
       const created = await api<Detail>(page, "POST", "/api/notebooks", { title: "Biostats", cover: "surface-2" });
       expect(created.status).toBe(201);

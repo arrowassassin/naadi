@@ -11,6 +11,10 @@ failing); `failed` (a reply that is not the JSON asked for: not retried until th
 limit leaves the layer `pending` and ends the pass (the next sweep, two minutes later, tries again). The first
 daily-cap refusal ends the pass too: no other layer could be read today.
 
+Opt-in: only layers of students whose `profiles.settings.handwriting_search` is exactly `true` are claimed, and
+`layer` checks it again before anything is rendered: a student who never opted in never has ink sent to a model.
+The nightly pass first clears what is left for every student who is not opted in.
+
 Logs carry counts and outcomes only, never recognised text.
 """
 
@@ -59,7 +63,7 @@ class PassStats:
     rate_limited: int = 0
     superseded: int = 0
     vision_calls: int = 0
-    opted_out_cleared: int = 0
+    not_opted_in_cleared: int = 0
     stopped: str | None = None
     errors: int = 0
     locked: bool = False
@@ -69,7 +73,7 @@ class PassStats:
 
     @property
     def worked(self) -> bool:
-        return self.claimed > 0 or self.opted_out_cleared > 0
+        return self.claimed > 0 or self.not_opted_in_cleared > 0
 
 
 @dataclass
@@ -138,7 +142,7 @@ class OcrPass:
     async def _run_locked(self, mode: Mode, stats: PassStats) -> None:
         if mode == "nightly":
             async with _tx(self.db) as conn:
-                stats.opted_out_cleared = len(await queue.clear_opted_out(conn))
+                stats.not_opted_in_cleared = len(await queue.clear_not_opted_in(conn))
         if not self.rules.enabled:
             stats.stopped = "disabled"
             return
@@ -198,7 +202,8 @@ class OcrPass:
             if got is None:
                 return LayerResult("skipped")
             layer = dict(got)
-            if layer["opted_out"]:
+            if layer["not_opted_in"]:
+                # Never rendered or sent: handwriting search is off for this student (opt-in, see queue.py).
                 await queue.clear_user(conn, layer["user_id"])
                 return LayerResult("cleared")
             cur = await conn.execute(queue.LOAD_ITEMS, (layer_id,))

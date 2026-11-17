@@ -1,9 +1,12 @@
 """Integration (real Postgres, full HTTP save path, mocked vision gateway): handwriting OCR.
 
-Queueing on save (content hash, min items, idle time, surfaces), the sweep and the nightly pass, `done` / `deferred`
-/ `failed` / rate limited / superseded outcomes, the per-student daily cap, the opt-out (cleared at once, nothing
-queued, nightly safety net), stale text cleared after erasing, OCR columns closed to clients, PII never in the
-prompt, and `POST /api/ink/convert`. No live model is called.
+Handwriting search is opt-in (`profiles.settings.handwriting_search` must be exactly true): a student who never
+opted in never has a layer queued, claimed or sent across save -> sweep -> nightly. For opted-in students: queueing
+on save (content hash, min items, idle time, surfaces), the sweep and the nightly pass, `done` / `deferred` /
+`failed` / rate limited / superseded outcomes, the per-student daily cap, turning it on (existing ink queued) and
+off (cleared at once, nothing queued, nightly safety net), settings merged without wiping `ink` or the flag, stale
+text cleared after erasing, OCR columns closed to clients, PII never in the prompt, and `POST /api/ink/convert`
+(explicit, never implicit). No live model is called.
 """
 
 from __future__ import annotations
@@ -120,6 +123,41 @@ def _only_mine(pg: psycopg.Connection[Any]) -> None:
     pg.execute("update public.ink_layers set ocr_status = null where ocr_status in ('pending', 'deferred')")
 
 
+def set_flag(pg: psycopg.Connection[Any], uid: uuid.UUID, value: Any) -> None:
+    """Write `profiles.settings.handwriting_search` directly (any path other than PATCH /api/me); `...` removes it."""
+    pg.execute("insert into public.profiles (user_id) values (%s) on conflict do nothing", (uid,))
+    if value is ...:
+        pg.execute("update public.profiles set settings = settings - 'handwriting_search' where user_id = %s", (uid,))
+    else:
+        pg.execute(
+            "update public.profiles set settings = settings || jsonb_build_object('handwriting_search', %s::jsonb)"
+            " where user_id = %s",
+            (json.dumps(value), uid),
+        )
+
+
+@pytest.fixture
+def opted_in(ink: Ink, pg: psycopg.Connection[Any]) -> None:
+    """The student turned handwriting search on (it is off by default)."""
+    set_flag(pg, ink.owner, True)
+
+
+def ink_rows(pg: psycopg.Connection[Any], uid: uuid.UUID) -> int:
+    row = pg.execute(
+        "select count(*) from public.embeddings where owner_user_id = %s and ref_type = 'ink'", (uid,)
+    ).fetchone()
+    assert row is not None
+    return int(row[0])
+
+
+def add_ink_row(pg: psycopg.Connection[Any], ink: Ink, text: str = "Loop of Henle") -> None:
+    pg.execute(
+        "insert into public.embeddings (owner_user_id, ref_type, ref_id, chunk_index, content)"
+        " values (%s, 'ink', %s, 0, %s)",
+        (ink.owner, f"section:{ink.section}", text),
+    )
+
+
 def save(
     client: TestClient, key: SigningKey, ink: Ink, items: list[Any], surface: str = "section", sid: str | None = None
 ) -> None:
@@ -130,6 +168,7 @@ def save(
 # ── queueing and the sweep ──
 
 
+@pytest.mark.usefixtures("opted_in")
 def test_a_save_queues_and_the_idle_sweep_recognises(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
@@ -162,6 +201,7 @@ def test_a_save_queues_and_the_idle_sweep_recognises(
     assert layer(pg, ink)["ocr_status"] == "pending"
 
 
+@pytest.mark.usefixtures("opted_in")
 def test_too_little_ink_exam_scratch_and_unchanged_content_are_not_queued(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any]
 ) -> None:
@@ -180,6 +220,7 @@ def test_too_little_ink_exam_scratch_and_unchanged_content_are_not_queued(
     assert layer(pg, ink)["ocr_status"] == "done"
 
 
+@pytest.mark.usefixtures("opted_in")
 def test_budget_and_daily_cap_defer_and_the_nightly_pass_retries(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
@@ -196,6 +237,7 @@ def test_budget_and_daily_cap_defer_and_the_nightly_pass_retries(
     assert stats.done == 1 and layer(pg, ink)["ocr_status"] == "done"
 
 
+@pytest.mark.usefixtures("opted_in")
 def test_the_students_daily_cap_defers_without_a_model_call(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
@@ -224,6 +266,7 @@ def test_the_students_daily_cap_defers_without_a_model_call(
         (BudgetExhausted("rate_limited", datetime.now(UTC)), "pending", "rate_limited"),
     ],
 )
+@pytest.mark.usefixtures("opted_in")
 def test_unreadable_replies_fail_and_outages_wait(
     client: TestClient,
     key: SigningKey,
@@ -246,6 +289,7 @@ def test_unreadable_replies_fail_and_outages_wait(
         assert layer(pg, ink)["ocr_status"] == "pending"
 
 
+@pytest.mark.usefixtures("opted_in")
 def test_a_save_during_the_call_keeps_the_layer_pending(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
@@ -259,6 +303,7 @@ def test_a_save_during_the_call_keeps_the_layer_pending(
     assert lay["ocr_status"] == "pending" and lay["ocr_hash"] != lay["content_hash"]
 
 
+@pytest.mark.usefixtures("opted_in")
 def test_erasing_below_the_threshold_clears_stale_text(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
@@ -285,9 +330,103 @@ def test_erasing_below_the_threshold_clears_stale_text(
     ).fetchone() == (0,)
 
 
-# ── opt-out ──
+# ── opt-in (off by default) ──
 
 
+@pytest.fixture
+def global_gateway() -> Iterator[FakeGateway]:
+    """Installed as the process gateway too, so any implicit path (convert included) would be caught."""
+    gw = FakeGateway()
+    set_gateway(gw)  # type: ignore[arg-type]
+    yield gw
+    set_gateway(None)
+
+
+@pytest.mark.parametrize(
+    "state",
+    ["no_profile", "key_absent", "null", "false", "string_true", "number_one"],
+)
+def test_a_student_who_never_opted_in_never_has_ink_sent(
+    client: TestClient,
+    key: SigningKey,
+    ink: Ink,
+    pg: psycopg.Connection[Any],
+    url: str,
+    global_gateway: FakeGateway,
+    state: str,
+) -> None:
+    """Absent, null, false or anything but JSON true is off: save -> sweep -> nightly never reaches the model."""
+    if state == "no_profile":
+        pg.execute("delete from public.profiles where user_id = %s", (ink.owner,))
+    else:
+        set_flag(pg, ink.owner, {"key_absent": ..., "null": None, "false": False, "string_true": "true"}.get(state, 1))
+    card = ink.card
+    save(client, key, ink, [*strokes(5), text_box(f"call {EMAIL}")])
+    save(client, key, ink, strokes(4), surface="flashcard", sid=card)
+    assert layer(pg, ink)["ocr_status"] is None  # nothing queued while off
+    assert layer(pg, ink, "flashcard", card)["ocr_status"] is None
+    age(pg, ink.owner)
+    stats, _ = run_pass(url, global_gateway)
+    assert stats.claimed == 0 and stats.vision_calls == 0
+    # Even a layer left `pending` by an older build (or set by hand) is never claimed or read while off.
+    pg.execute("update public.ink_layers set ocr_status = 'pending' where user_id = %s", (ink.owner,))
+    pg.execute(
+        "update public.ink_layers set recognized_text = 'old' where user_id = %s and surface_type = 'section'",
+        (ink.owner,),
+    )
+    add_ink_row(pg, ink)
+    age(pg, ink.owner)
+    stats, _ = run_pass(url, global_gateway)
+    assert stats.claimed == 0 and stats.vision_calls == 0
+    # ... and a direct read of the layer clears it without rendering or sending anything.
+    res = asyncio.run(_one_layer(url, global_gateway, layer(pg, ink)["id"]))
+    assert res == "cleared"
+    pg.execute(
+        "update public.ink_layers set ocr_status = 'deferred', recognized_text = 'old' where user_id = %s", (ink.owner,)
+    )
+    add_ink_row(pg, ink)
+    stats, _ = run_pass(url, global_gateway, "nightly")
+    assert stats.claimed == 0 and stats.vision_calls == 0 and stats.not_opted_in_cleared >= 1
+    for surface, sid in (("section", ink.section), ("flashcard", card)):
+        lay = layer(pg, ink, surface, sid)
+        assert (lay["recognized_text"], lay["ocr_status"], lay["ocr_hash"], lay["ocr_at"]) == (None, None, None, None)
+    assert ink_rows(pg, ink.owner) == 0
+    assert global_gateway.calls == []
+
+
+async def _one_layer(url: str, gw: FakeGateway, layer_id: str) -> str:
+    db = Database(SecretStr(url))
+    await db.open()
+    try:
+        return (await OcrPass(db, gw, RULES).layer(layer_id)).outcome
+    finally:
+        await db.close()
+
+
+def test_turning_it_on_queues_existing_ink_and_it_is_recognised(
+    client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
+) -> None:
+    h = ink.h(key)
+    small = ink.card
+    save(client, key, ink, strokes(4))
+    save(client, key, ink, strokes(2), surface="flashcard", sid=small)  # below min_items: never queued
+    assert layer(pg, ink)["ocr_status"] is None
+    r = client.patch("/api/me", json={"settings": {"handwriting_search": True}}, headers=h)
+    assert r.status_code == 200 and r.json()["profile"]["settings"]["handwriting_search"] is True
+    assert layer(pg, ink)["ocr_status"] == "pending"
+    assert layer(pg, ink, "flashcard", small)["ocr_status"] is None
+    age(pg, ink.owner)
+    gw = FakeGateway()
+    stats, indexed = run_pass(url, gw)
+    assert stats.done == 1 and len(gw.calls) == 1
+    assert layer(pg, ink)["recognized_text"] == "Loop of Henle"
+    assert indexed == [(ink.owner, f"section:{ink.section}")]
+    # New ink after opting in is queued by the save itself.
+    save(client, key, ink, strokes(1, y=0.7))
+    assert layer(pg, ink)["ocr_status"] == "pending"
+
+
+@pytest.mark.usefixtures("opted_in")
 def test_turning_handwriting_search_off_clears_now_and_stops_runs(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
@@ -295,43 +434,96 @@ def test_turning_handwriting_search_off_clears_now_and_stops_runs(
     save(client, key, ink, strokes(3))
     age(pg, ink.owner)
     run_pass(url, FakeGateway())
-    pg.execute(
-        "insert into public.embeddings (owner_user_id, ref_type, ref_id, chunk_index, content)"
-        " values (%s, 'ink', %s, 0, 'Loop of Henle')",
-        (ink.owner, f"section:{ink.section}"),
-    )
+    add_ink_row(pg, ink)
     assert client.patch("/api/me", json={"settings": {"handwriting_search": "no"}}, headers=h).status_code == 422
+    assert client.patch("/api/me", json={"settings": {"handwriting_search": 1}}, headers=h).status_code == 422
     r = client.patch("/api/me", json={"settings": {"handwriting_search": False}}, headers=h)
     assert r.status_code == 200 and r.json()["profile"]["settings"]["handwriting_search"] is False
     lay = layer(pg, ink)
     assert (lay["recognized_text"], lay["ocr_status"], lay["ocr_hash"]) == (None, None, None)
-    assert pg.execute(
-        "select count(*) from public.embeddings where owner_user_id = %s and ref_type = 'ink'", (ink.owner,)
-    ).fetchone() == (0,)
+    assert ink_rows(pg, ink.owner) == 0
+    gw = FakeGateway()
     save(client, key, ink, strokes(3, y=0.5))
     assert layer(pg, ink)["ocr_status"] is None  # nothing is queued while off
-    # Back on (null = the default, on): the ink already there is queued.
+    age(pg, ink.owner)
+    assert run_pass(url, gw)[0].claimed == 0 and gw.calls == []
+    # null removes the key: the default, which is off. Nothing is queued.
     r = client.patch("/api/me", json={"settings": {"handwriting_search": None}}, headers=h)
     assert r.status_code == 200 and "handwriting_search" not in r.json()["profile"]["settings"]
-    assert layer(pg, ink)["ocr_status"] == "pending"
+    assert layer(pg, ink)["ocr_status"] is None
+    # Back on (true): the ink already there is queued.
+    r = client.patch("/api/me", json={"settings": {"handwriting_search": True}}, headers=h)
+    assert r.status_code == 200 and layer(pg, ink)["ocr_status"] == "pending"
 
 
+@pytest.mark.usefixtures("opted_in")
+def test_null_turns_it_off_and_clears_like_false(
+    client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
+) -> None:
+    save(client, key, ink, strokes(3))
+    age(pg, ink.owner)
+    run_pass(url, FakeGateway())
+    add_ink_row(pg, ink)
+    assert layer(pg, ink)["recognized_text"] == "Loop of Henle"
+    r = client.patch("/api/me", json={"settings": {"handwriting_search": None}}, headers=ink.h(key))
+    assert r.status_code == 200 and "handwriting_search" not in r.json()["profile"]["settings"]
+    assert layer(pg, ink)["recognized_text"] is None and ink_rows(pg, ink.owner) == 0
+
+
+@pytest.mark.usefixtures("opted_in")
 def test_the_nightly_pass_clears_an_opt_out_made_by_any_path(
     client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
 ) -> None:
     save(client, key, ink, strokes(3))
     age(pg, ink.owner)
     run_pass(url, FakeGateway())
-    pg.execute("insert into public.profiles (user_id) values (%s) on conflict do nothing", (ink.owner,))
-    pg.execute(
-        "update public.profiles set settings = settings || '{\"handwriting_search\": false}' where user_id = %s",
-        (ink.owner,),
-    )
-    stats, _ = run_pass(url, FakeGateway(), "nightly")
-    assert stats.opted_out_cleared >= 1
-    assert layer(pg, ink)["recognized_text"] is None
+    add_ink_row(pg, ink)
+    set_flag(pg, ink.owner, ...)  # the key removed by another path: off
+    gw = FakeGateway()
+    stats, _ = run_pass(url, gw, "nightly")
+    assert stats.not_opted_in_cleared >= 1 and gw.calls == []
+    assert layer(pg, ink)["recognized_text"] is None and ink_rows(pg, ink.owner) == 0
 
 
+def test_the_nightly_pass_keeps_what_opted_in_students_have(
+    client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any], url: str
+) -> None:
+    set_flag(pg, ink.owner, True)
+    save(client, key, ink, strokes(3))
+    age(pg, ink.owner)
+    run_pass(url, FakeGateway())
+    add_ink_row(pg, ink)
+    run_pass(url, FakeGateway(), "nightly")
+    assert layer(pg, ink)["recognized_text"] == "Loop of Henle" and ink_rows(pg, ink.owner) == 1
+
+
+# ── settings merge: the ink saver and the handwriting toggle never wipe each other ──
+
+
+def test_ink_settings_and_handwriting_search_merge_both_ways(
+    client: TestClient, key: SigningKey, ink: Ink, pg: psycopg.Connection[Any]
+) -> None:
+    h = ink.h(key)
+    ink_settings = {"pen_only": False, "predict": True, "tool": "marker", "color": "violet"}
+    r = client.patch("/api/me", json={"settings": {"handwriting_search": True}}, headers=h)
+    assert r.status_code == 200
+    # The ink saver sends the whole `ink` object: the flag stays.
+    r = client.patch("/api/me", json={"settings": {"ink": ink_settings}}, headers=h)
+    assert r.status_code == 200
+    got = r.json()["profile"]["settings"]
+    assert got["handwriting_search"] is True and got["ink"] == ink_settings
+    # The toggle sends only the flag: `ink` stays.
+    r = client.patch("/api/me", json={"settings": {"handwriting_search": False}}, headers=h)
+    got = r.json()["profile"]["settings"]
+    assert got["handwriting_search"] is False and got["ink"] == ink_settings
+    r = client.patch("/api/me", json={"settings": {"ink": {**ink_settings, "pen_only": True}}}, headers=h)
+    got = r.json()["profile"]["settings"]
+    assert got["handwriting_search"] is False and got["ink"]["pen_only"] is True
+    row = pg.execute("select settings from public.profiles where user_id = %s", (ink.owner,)).fetchone()
+    assert row is not None and row[0]["handwriting_search"] is False and row[0]["ink"]["pen_only"] is True
+
+
+@pytest.mark.usefixtures("opted_in")
 def test_ocr_columns_are_backend_only(
     ink: Ink, pg: psycopg.Connection[Any], client: TestClient, key: SigningKey
 ) -> None:

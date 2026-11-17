@@ -1,6 +1,6 @@
 import { mkdirSync } from "node:fs";
 import path from "node:path";
-import type { Browser, BrowserContext, Page, Response, TestInfo } from "@playwright/test";
+import type { Browser, BrowserContext, BrowserContextOptions, Page, Response, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
   type ConsoleGuard,
@@ -73,8 +73,11 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo, k
   const who = email(info, kind);
   runUsers(["delete", "--email", who]);
   const contexts: BrowserContext[] = [];
-  const open = async (to: string): Promise<{ page: Page; context: BrowserContext }> => {
-    const context = await browser.newContext({ ...info.project.use, baseURL });
+  const open = async (
+    to: string,
+    extra: BrowserContextOptions = {},
+  ): Promise<{ page: Page; context: BrowserContext }> => {
+    const context = await browser.newContext({ ...info.project.use, baseURL, ...extra });
     contexts.push(context);
     const page = await context.newPage();
     trackApi(page);
@@ -429,6 +432,8 @@ test.describe("highlights, notes and the selection toolbar", () => {
   }, info) => {
     const PROD = process.env.E2E_PROD_URL;
     test.skip(!PROD, "needs the local APP_ENV=prod API (not available against the live Space)");
+    // Two sessions, a highlight, a note, a paste and the Notes page: slow on a shared CI runner.
+    test.setTimeout(150_000);
     const student = await freshStudent(browser, baseURL as string, info, "notesprod");
     try {
       const { context } = await student.open("/learn");
@@ -457,6 +462,22 @@ test.describe("highlights, notes and the selection toolbar", () => {
         await editor.click();
         await page.keyboard.type("Strict CSP");
         await panel.getByRole("button", { name: "Formula" }).click();
+        // Rich text copied from a web page or Word carries style attributes: pasted under the strict CSP it must
+        // log no violation (and no CSP report), and keep its text.
+        await editor.evaluate((el) => {
+          const data = new DataTransfer();
+          data.setData(
+            "text/html",
+            '<meta charset="utf-8"><style>p{color:red}</style><p style="color:rgb(1,2,3);font-size:14px" class="MsoNormal" onclick="void 0">Pasted <b style="font-weight:700">loop</b> note</p>',
+          );
+          data.setData("text/plain", "Pasted loop note");
+          const paste = new ClipboardEvent("paste", { bubbles: true, cancelable: true });
+          // Firefox ignores `clipboardData` in the constructor: define it, as the editor reads that property.
+          Object.defineProperty(paste, "clipboardData", { value: data });
+          el.dispatchEvent(paste);
+        });
+        await expect(editor).toContainText("Pasted loop note");
+        await expect(editor.locator("[style], [onclick]")).toHaveCount(0);
         await expect(panel.locator("[data-note-save=saved]")).toBeVisible({ timeout: 20_000 });
         await quiet(page);
         await page.goto("/notes");
@@ -521,6 +542,56 @@ test.describe("highlights, notes and the selection toolbar", () => {
       expect(errors).toEqual([]);
     } finally {
       await student.done();
+    }
+  });
+  test("offline before the lazy chunks load: the reader stays usable and they load when the connection is back", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.setTimeout(150_000);
+    const s = await freshStudent(browser, baseURL as string, info, "chunks");
+    try {
+      // The service worker would answer for the routed chunks: block it so the route is what the page sees.
+      const { page, context } = await s.open("/", { serviceWorkers: "block" });
+      const { errors, guard } = watchConsole(page);
+      let offline = true;
+      await context.route(/\/assets\/(HighlightEngine|PageNotesPanel|NoteEditor)-[^/]+\.js/, (route) =>
+        offline ? route.abort("internetdisconnected") : route.continue(),
+      );
+      await page.goto(READER);
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      await settle(page);
+
+      // The engine could not load: the page is still the readable chapter, with a notice and no crash.
+      const engineNote = page.locator("[data-highlightable] [data-chunk-unavailable]");
+      await expect(engineNote).toBeVisible({ timeout: 20_000 });
+      await expect(page.locator(CONTENT)).toBeVisible();
+      await expect(page.getByText("Something went wrong")).toHaveCount(0);
+
+      // Page notes: opening them offline shows the reason in the panel, not an error page.
+      await page.locator("[data-page-notes-toggle]:visible").first().click();
+      const panel = page.locator("[data-page-notes-sheet] [data-chunk-unavailable], aside [data-chunk-unavailable]");
+      await expect(panel.first()).toBeVisible({ timeout: 20_000 });
+      await expect(page.getByText("Something went wrong")).toHaveCount(0);
+      await snap(page, info, guard, "chunks-offline");
+      await expectNoAxeViolations(page);
+      await expectNoHorizontalOverflow(page);
+
+      // Back online: the notice's button (and the browser's online event) fetch the chunks again.
+      offline = false;
+      await panel.first().getByRole("button", { name: "Try again" }).click();
+      const editor = page.getByRole("textbox", { name: /^Your notes on / });
+      await expect(editor).toBeVisible({ timeout: 20_000 });
+      await context.setOffline(true);
+      await context.setOffline(false);
+      await expect(engineNote).toHaveCount(0, { timeout: 20_000 });
+      await selectWords(page, CONTENT, 0);
+      await expect(toolbar(page)).toBeVisible();
+
+      // Only the blocked chunk requests may be reported; nothing else, and no uncaught error.
+      expect(errors.filter((e) => !/Failed to load resource/.test(e))).toEqual([]);
+    } finally {
+      await s.done();
     }
   });
 });

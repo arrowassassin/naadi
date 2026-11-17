@@ -1,9 +1,10 @@
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { PenLine } from "lucide-react";
-import { lazy, type Ref, Suspense, useCallback, useEffect, useId, useImperativeHandle, useRef, useState } from "react";
+import { type Ref, useCallback, useEffect, useId, useImperativeHandle, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { lazyWithFallback } from "../shell/lazyPage";
 import {
   beaconNotes,
   errorKey,
@@ -14,15 +15,24 @@ import {
   usePendingOps,
   useUserId,
 } from "./api";
+import { ConflictNotices, useConflictRevision } from "./conflicts";
 import { EMPTY_DOC, isEmptyDoc } from "./doc";
 import { NoteInk } from "./NoteInk";
+import { PAPER_NOTICE } from "./paperNotice";
 import { NoteSaveStatus } from "./SaveStatus";
 
 /**
  * TipTap and ProseMirror (about 130 KB gzipped) are their own chunk: the Reader renders the section first and loads
  * the editor beside it. A quote sent before the editor exists waits in state and is inserted by the editor once it is attached.
  */
-const NoteEditor = lazy(() => import("./NoteEditor").then((m) => ({ default: m.NoteEditor })));
+const NoteEditor = lazyWithFallback(() => import("./NoteEditor").then((m) => m.NoteEditor), {
+  fallback: (
+    <div aria-busy="true" className="flex flex-col gap-3">
+      <Skeleton className="h-24 w-full rounded-block-sm bg-ground/10" />
+    </div>
+  ),
+  unavailable: "inline",
+});
 
 export type PanelMode = "type" | "write" | "both";
 const MODES: PanelMode[] = ["type", "write", "both"];
@@ -52,6 +62,17 @@ export interface PageNotesHandle {
   addQuote(quote: string): void;
 }
 
+export interface PageNotesPanelProps {
+  sectionId: string;
+  sectionHeading: string;
+  /** Ink on in the panel (the Reader hides its page bar and turns section ink off). */
+  onInkChange: (on: boolean) => void;
+  /** Called once the panel is mounted and `ref` is set. */
+  onMounted?: () => void;
+  ref?: Ref<PageNotesHandle>;
+  className?: string;
+}
+
 /**
  * The Reader's page-notes panel (Chapter / Tablet / PhoneChapter boards): the one note a student keeps per section
  * (`kind 'note'`, anchored to the section), typed (TipTap), handwritten (the `notebook_page` ink layer keyed by the
@@ -64,16 +85,7 @@ export function PageNotesPanel({
   onMounted,
   ref,
   className,
-}: {
-  sectionId: string;
-  sectionHeading: string;
-  /** Ink on in the panel (the Reader hides its page bar and turns section ink off). */
-  onInkChange: (on: boolean) => void;
-  /** Called once the panel is mounted and `ref` is set. */
-  onMounted?: () => void;
-  ref?: Ref<PageNotesHandle>;
-  className?: string;
-}) {
+}: PageNotesPanelProps) {
   const t = useUiText();
   const ids = useId();
   const online = useOnlineStatus();
@@ -87,6 +99,8 @@ export function PageNotesPanel({
   // The note id: the stored one, or one made here on the first edit.
   const [madeId, setMadeId] = useState<string | null>(null);
   const noteId = note?.id ?? madeId;
+  // A newer copy adopted after a conflict replaces the stale text in the editor (instead of being saved over it).
+  const conflictRevision = useConflictRevision(noteId);
   // Read synchronously by the editor's change handler (two keystrokes before a re-render must not make two notes).
   const idRef = useRef<string | null>(noteId);
   idRef.current = noteId ?? idRef.current;
@@ -257,19 +271,10 @@ export function PageNotesPanel({
                   {t("notes.panel_typed")}
                 </span>
               ) : null}
-              <Suspense
-                fallback={
-                  <div aria-busy="true" className="flex flex-col gap-3">
-                    <p role="status" className="sr-only">
-                      {t("notes.panel_loading")}
-                    </p>
-                    <Skeleton className="h-24 w-full rounded-block-sm bg-ground/10" />
-                  </div>
-                }
-              >
+              <div className={PAPER_NOTICE}>
                 <NoteEditor
                   // One editor per note; a note made here keeps the editor it was typed in.
-                  key={madeId ? "local" : (note?.id ?? "local")}
+                  key={`${madeId ? "local" : (note?.id ?? "local")}:${conflictRevision}`}
                   noteId={noteId ?? sectionId}
                   initial={note?.body ?? EMPTY_DOC}
                   onChange={onChange}
@@ -279,7 +284,7 @@ export function PageNotesPanel({
                   onQuoteInserted={quoteInserted}
                   compact
                 />
-              </Suspense>
+              </div>
             </div>
           ) : null}
           {showWrite ? (
@@ -323,6 +328,9 @@ export function PageNotesPanel({
               )}
             </div>
           ) : null}
+          <div className={PAPER_NOTICE}>
+            <ConflictNotices filter={{ scope: "notes", anchorId: sectionId }} />
+          </div>
           {noteId ? <NoteSaveStatus ids={[noteId]} tone="paper" dirty={dirty} /> : null}
         </>
       )}

@@ -143,7 +143,8 @@ class MeUpdate(BaseModel):
             and v["handwriting_search"] is not None
             and not isinstance(v["handwriting_search"], bool)
         ):
-            # Settings -> Pencil & ink -> Handwriting search (segment 13): true / false, or null for the default (on).
+            # Settings -> Pencil & ink -> Handwriting search (segment 13, opt-in): true turns it on; false, or null
+            # (removes the key: the default, off), turns it off.
             raise ValueError("settings.handwriting_search must be true or false")
         if v.get("ink") is not None:
             # Settings -> Pencil & ink (segment 12b): replaced whole (the merge is one level deep), so validate whole.
@@ -379,13 +380,15 @@ async def update_me(
         raise _validation("body", "One of the values is out of range.") from exc
     log.info("profile_updated", fields=sorted(sent))
     if patch.settings is not None and "handwriting_search" in patch.settings:
-        await _handwriting_changed(request, user, patch.settings["handwriting_search"] is not False)
+        # Opt-in: only an explicit `true` is on; false and null (key removed) are off.
+        await _handwriting_changed(request, user, patch.settings["handwriting_search"] is True)
     return await _me(request, user, row)
 
 
 async def _handwriting_changed(request: Request, user: CurrentUser, enabled: bool) -> None:
     """Off: recognised handwriting and its index rows go now. On: the ink already there is queued for OCR. A failure
-    here is logged only: the OCR pass checks the setting itself and its nightly run clears what is left."""
+    here is logged only: the OCR pass checks the setting itself (it never reads a layer of a student who is not
+    opted in) and its nightly run clears what is left."""
     from .config_api.schemas import InkOcrRules
     from .ink.ocr.queue import apply_handwriting_setting
 

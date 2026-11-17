@@ -7,6 +7,10 @@
   that are not deleted are read top to bottom, then left to right; freehand, shapes and images contribute nothing
   (Excalidraw freehand is not OCR'd, segment 13 decision).
 
+Image references are the student's own: `own_images` drops a TipTap image node, or an Excalidraw scene file,
+whose storage `path` is not under `{user_id}/notes/` (a pasted `<img data-path="someone-else/...">`, a hand-made
+body). The signer would refuse to show it anyway; dropping it keeps junk references out of the store and the PDF.
+
 Both walks are bounded: at most `MAX_NODES` nodes are visited and the result is cut at `MAX_BODY_TEXT` characters,
 so a hostile body costs a bounded amount of work. Nesting depth is checked separately by `json_depth`, before any
 walk, so the recursive TipTap walk cannot run out of stack.
@@ -88,6 +92,59 @@ def valid_tiptap(body: Any) -> bool:
     return True
 
 
+MAX_PATH = 512
+
+
+def own_path(path: Any, user_id: str) -> bool:
+    """A storage key in the student's notes folder: `{user_id}/notes/...`, no `..` or empty segment, no backslash."""
+    if not isinstance(path, str) or len(path) > MAX_PATH or "\\" in path:
+        return False
+    prefix = f"{user_id}/notes/"
+    if not path.startswith(prefix) or len(path) == len(prefix):
+        return False
+    return all(seg not in ("", ".", "..") for seg in path.split("/"))
+
+
+def _tiptap_own(node: Any, user_id: str) -> tuple[Any, int]:
+    if not isinstance(node, Mapping):
+        return node, 0
+    content = node.get("content")
+    if not isinstance(content, list):
+        return node, 0
+    kept: list[Any] = []
+    dropped = 0
+    for child in content:
+        if isinstance(child, Mapping) and child.get("type") == "image":
+            attrs = child.get("attrs")
+            if not (isinstance(attrs, Mapping) and own_path(attrs.get("path"), user_id)):
+                dropped += 1
+                continue
+        new_child, n = _tiptap_own(child, user_id)
+        dropped += n
+        kept.append(new_child)
+    return ({**node, "content": kept}, dropped) if dropped else (node, 0)
+
+
+def _foreign_file(f: Any, user_id: str) -> bool:
+    return isinstance(f, Mapping) and "path" in f and not own_path(f["path"], user_id)
+
+
+def own_images(body: Mapping[str, Any] | None, canvas: Canvas, user_id: str) -> tuple[Any, int]:
+    """`body` without image references outside `{user_id}/notes/` (see the module docstring), and how many were
+    dropped. Deterministic; an unchanged body is returned as is. Call after `json_depth` was checked (the TipTap
+    walk recurses once per nesting level)."""
+    if not isinstance(body, Mapping):
+        return body, 0
+    if canvas == "whiteboard":
+        files = body.get("files")
+        if not isinstance(files, Mapping):
+            return body, 0
+        kept = {k: f for k, f in files.items() if not _foreign_file(f, user_id)}
+        dropped = len(files) - len(kept)
+        return ({**body, "files": kept}, dropped) if dropped else (body, 0)
+    return _tiptap_own(body, user_id)
+
+
 def _num(v: Any) -> float:
     return float(v) if isinstance(v, int | float) and not isinstance(v, bool) and math.isfinite(v) else 0.0
 
@@ -145,5 +202,7 @@ __all__ = [
     "excalidraw_text",
     "excerpt",
     "json_depth",
+    "own_images",
+    "own_path",
     "valid_tiptap",
 ]

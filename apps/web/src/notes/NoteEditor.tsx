@@ -6,6 +6,7 @@ import { useUiText } from "../copy/useUiText";
 import { HIGHLIGHT_COLORS, type HighlightColor } from "../highlights/anchor";
 import { SWATCH_CLASS, WORD_KEY } from "../highlights/Mark";
 import { EMPTY_DOC, noteExtensions } from "./extensions";
+import { stripPastedHtml } from "./pasteHtml";
 import { IMAGE_TYPES, imagesAvailable, type UploadFailure, uploadNoteImage } from "./storage";
 import "./notes.css";
 
@@ -117,6 +118,8 @@ export function NoteEditor({
       // The production CSP allows no inline <style>: the editor's base CSS is in notes.css.
       injectCSS: false,
       editorProps: {
+        // Copied pages carry style attributes: strip them before parsing, so the strict CSP logs nothing.
+        transformPastedHTML: stripPastedHtml,
         attributes: {
           "aria-label": label,
           "aria-multiline": "true",

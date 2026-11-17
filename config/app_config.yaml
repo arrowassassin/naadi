@@ -226,8 +226,10 @@ fsrs:
 # layers idle for idle_seconds with at least min_items live items and new content: Pillow renders the ink alone
 # (black on white, 1600 px wide, tiles of at most 2048 px, at most max_tiles), one `vision` call per tile (purpose
 # job). per_user_daily caps OCR calls per student per UTC day; over the cap or the job budget the layer is
-# `deferred` and the nightly pass (00:23 UTC, after the caps reset) retries it. Students can turn it off in
-# Settings -> Pencil & ink (profiles.settings.handwriting_search = false).
+# `deferred` and the nightly pass (00:23 UTC, after the caps reset) retries it. Opt-in: OFF for every student until
+# they turn it on in Settings -> Pencil & ink (profiles.settings.handwriting_search = true; absent, null or false =
+# off). While off no layer is queued or sent, and the nightly pass clears any recognised text and 'ink' index rows
+# left for students who are not opted in. Convert to text (POST /api/ink/convert) is separate: one call per tap.
 ink_ocr:
   enabled: true
   idle_seconds: 120
@@ -1914,10 +1916,15 @@ ui_copy:
   settings.saving: "Saving…"
   settings.saved_on_account: "Saved to your account, on every device"
   settings.save_failed: "The setting could not be saved"
-  # Settings -> Pencil & ink: handwriting search (S13)
-  ink.ocr.setting_label: "Handwriting search"
-  ink.ocr.setting_note: "Sends images of your ink, and nothing else, to the AI model so Search can find your handwriting. Turning it off deletes the recognised text."
-  ink.ocr.cleared: "Recognised handwriting deleted"
+  # Settings -> Pencil & ink: handwriting search (S13, opt-in: off until the student turns it on)
+  ink.ocr.group: "Search and privacy"
+  ink.ocr.setting_label: "Handwriting search (sends ink images to the AI model)"
+  ink.ocr.setting_note: "Off until you turn it on. When on, Search can find the words you write with Pencil. Turning it off deletes the recognised text."
+  ink.ocr.privacy_note: "What is sent: only your handwriting, drawn as an image. Never your name, your account or your typed notes. Where it goes: from our server to a free third-party AI model, with data collection by the model provider denied. It is used only to make your handwriting searchable. Convert to text is separate: it sends the ink you selected only when you tap it."
+  ink.ocr.state_on: "Handwriting search is on. New ink is read a few minutes after you stop writing."
+  ink.ocr.state_off: "Handwriting search is off. No ink images are sent."
+  ink.ocr.cleared: "Handwriting search is off. Recognised handwriting deleted."
+  ink.ocr.save_error: "Handwriting search could not be changed. Your previous choice is kept."
   # ── S13 WEB-A: highlights, selection toolbar, page notes, Notes page (keys notes.*, highlights.*) ──
   highlights.word.lime: "Key fact"
   highlights.word.violet: "Formula"
@@ -2011,6 +2018,16 @@ ui_copy:
   notes.save_saved: "Saved"
   notes.save_saving: "Saving…"
   notes.save_local: "Saved on this device · will sync"
+  notes.conflict_label: "Changed on another device"
+  notes.conflict_note_copy: "A newer version of “{title}” was saved on another device, so it is shown here. What you wrote on this device is kept as a separate note."
+  notes.conflict_note_kept: "A newer version of “{title}” was saved on another device, so it is shown here instead of the change made on this device."
+  notes.conflict_note_delete_kept: "“{title}” was edited on another device after you deleted it here, so it was kept."
+  notes.conflict_open_copy: "Open your copy"
+  notes.conflict_open_note: "Open the note"
+  notes.conflict_dismiss: "Dismiss this message"
+  notes.conflict_untitled: "Untitled note"
+  notes.conflict_copy_title: "Conflict copy: {title}"
+  notes.conflict_copy_title_untitled: "Conflict copy"
   notes.save_discard: "Discard this change"
   notes.reader_toggle: "Page notes"
   notes.reader_toggle_open: "Notes open"
@@ -2102,6 +2119,17 @@ ui_copy:
   notebooks.save.local: "{count} changes saved on this device · will sync"
   notebooks.save.local_one: "Saved on this device · will sync"
   notebooks.save.dismiss: "OK"
+  notebooks.conflict_label: "Changed on another device"
+  notebooks.conflict_page_copy: "A page of “{title}” was changed on another device after you edited it here. The newer page is shown, and your version is kept as a new page at the end of the notebook."
+  notebooks.conflict_page_kept: "A page of “{title}” was changed on another device after you edited it here, so the newer page is kept."
+  notebooks.conflict_page_delete_kept: "A page of “{title}” was edited on another device after you deleted it here, so it was kept."
+  notebooks.conflict_notebook_kept: "“{title}” was changed on another device after you changed it here, so the newer version is kept."
+  notebooks.conflict_notebook_delete_kept: "“{title}” was edited on another device after you deleted it here, so it was kept."
+  notebooks.conflict_open_copy: "Open your copy"
+  notebooks.conflict_open_notebook: "Open the notebook"
+  notebooks.conflict_dismiss: "Dismiss this message"
+  notebooks.conflict_untitled: "Untitled notebook"
+  notebooks.conflict_page_title: "Conflict copy of page {page}"
   notebooks.page.position: "page {page} of {count}"
   notebooks.page.surface: "{title}, page {page}"
   notebooks.page.loading: "Opening the notebook…"

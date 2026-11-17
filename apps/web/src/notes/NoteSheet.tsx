@@ -6,6 +6,7 @@ import { askAssistant, useAssistantAvailable } from "../assistant/ask";
 import { useRegisterPageContext } from "../assistant/pageContext";
 import { useUiText } from "../copy/useUiText";
 import { beaconNotes, type Note, useNoteWriter, useUserId } from "./api";
+import { ConflictNotices } from "./conflicts";
 import { ExportNotePdf } from "./ExportPdf";
 import { EMPTY_DOC } from "./extensions";
 import { editedLabel, sourceLabel } from "./format";
@@ -105,6 +106,7 @@ export function NoteSheet({ note, onBack, onDeleted }: { note: Note; onBack?: ()
         </span>
         <NoteSaveStatus ids={[note.id]} tone="paper" dirty={dirty} />
       </div>
+      <ConflictNotices filter={{ scope: "notes", noteId: note.id }} />
       <label htmlFor={`${ids}-title`} className="sr-only">
         {t("notes.title_label")}
       </label>

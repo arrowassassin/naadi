@@ -12,13 +12,6 @@ export interface AnchoredHighlights {
   fromCache: boolean;
 }
 
-function sameRanges(a: readonly PaintRange[], b: readonly PaintRange[]): boolean {
-  return (
-    a.length === b.length &&
-    a.every((r, i) => r.id === b[i]?.id && r.from === b[i]?.from && r.to === b[i]?.to && r.color === b[i]?.color)
-  );
-}
-
 /**
  * The student's highlights on one surface (a section, or a question's explanation), located in the current text.
  * A highlight whose text moved is repaired on the server (new positions, same quote); one whose quote is gone is
@@ -74,13 +67,10 @@ export function useAnchoredHighlights(
     }
   }, [located.fixes, repair, list.fromCache, list.isFetching, writer]);
 
-  // The list is rebuilt on every render (its filter object is new each time): hand out the same ranges while their
-  // content is the same, so anything keyed on them (the painter, the engine's state) settles.
-  const stable = useRef<PaintRange[]>(located.ranges);
-  if (!sameRanges(stable.current, located.ranges)) stable.current = located.ranges;
-
+  // `list.items` is keyed on the filters' value inside useNotes, so `located` (and its ranges) only changes when the
+  // highlights, the text runs or the revision do.
   return {
-    ranges: stable.current,
+    ranges: located.ranges,
     detached: located.detached,
     notes: located.notes,
     isPending: list.isPending,

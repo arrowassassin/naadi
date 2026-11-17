@@ -8,5 +8,6 @@ import * as z from "zod";
  * PageOrder
  */
 export const zPageOrder = z.object({
+  client_updated_at: z.int().gte(0).lte(8640000000000000).nullish(),
   page_ids: z.array(z.uuid()).max(1000),
 });

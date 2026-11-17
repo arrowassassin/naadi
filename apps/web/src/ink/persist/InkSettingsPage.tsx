@@ -5,6 +5,7 @@ import { ApiError } from "../../auth/apiError";
 import { useUiText } from "../../copy/useUiText";
 import { useOnlineStatus } from "../../health/useOnlineStatus";
 import { SettingsNav } from "../../routes/SettingsNav";
+import { useHandwritingSearch } from "./handwritingSearch";
 import { type InkSettings, useInkSettings } from "./settings";
 
 function SwitchRow({
@@ -13,12 +14,15 @@ function SwitchRow({
   on,
   disabled,
   onChange,
+  detailId,
 }: {
   name: string;
   note: string;
   on: boolean;
   disabled: boolean;
   onChange: (on: boolean) => void;
+  /** Another element that describes the switch too (e.g. a privacy note below the row). */
+  detailId?: string;
 }) {
   const t = useUiText();
   const id = useId();
@@ -37,7 +41,7 @@ function SwitchRow({
         role="switch"
         aria-checked={on}
         aria-labelledby={`${id}-n`}
-        aria-describedby={`${id}-d`}
+        aria-describedby={detailId ? `${id}-d ${detailId}` : `${id}-d`}
         disabled={disabled}
         onClick={() => onChange(!on)}
         className="flex min-h-11 shrink-0 items-center gap-2 rounded-pill border border-line-control px-2 text-ui-sm disabled:opacity-50"
@@ -58,7 +62,65 @@ function SwitchRow({
   );
 }
 
-/** Settings → Pencil & ink: pen-only drawing and predicted ink, saved to profiles.settings.ink. */
+/**
+ * Handwriting search (segment 13): opt-in, off until the student turns it on. Saved as
+ * profiles.settings.handwriting_search (top level, not inside `ink`); the API clears the recognised text when it is
+ * turned off and queues the ink already there when it is turned on.
+ */
+function HandwritingSearchTile({ online }: { online: boolean }) {
+  const t = useUiText();
+  const id = useId();
+  const hw = useHandwritingSearch();
+  const err = hw.error;
+  return (
+    <Tile as="section" aria-labelledby={`${id}-h`} className="flex max-w-2xl flex-col gap-2">
+      <h2 id={`${id}-h`} className="m-0 font-display font-bold text-[1.5rem]">
+        {t("ink.ocr.group")}
+      </h2>
+      <div className="flex flex-col">
+        <SwitchRow
+          name={t("ink.ocr.setting_label")}
+          note={t("ink.ocr.setting_note")}
+          on={hw.on}
+          disabled={!online || hw.saving}
+          onChange={hw.set}
+          detailId={`${id}-p`}
+        />
+      </div>
+      <p id={`${id}-p`} className="m-0 max-w-prose text-text-2 text-ui-sm">
+        {t("ink.ocr.privacy_note")}
+      </p>
+      <p role="status" className="m-0 flex min-h-6 items-center gap-1.5 text-text-2 text-ui-sm">
+        {!online ? (
+          t("settings.offline")
+        ) : hw.saving ? (
+          t("settings.saving")
+        ) : err ? null : hw.cleared ? (
+          <>
+            <Check aria-hidden="true" size={16} />
+            {t("ink.ocr.cleared")}
+          </>
+        ) : hw.on ? (
+          t("ink.ocr.state_on")
+        ) : (
+          t("ink.ocr.state_off")
+        )}
+      </p>
+      {err ? (
+        <ErrorState
+          title={t("ink.ocr.save_error")}
+          message={err.message}
+          requestId={err instanceof ApiError ? err.requestId : null}
+        />
+      ) : null}
+    </Tile>
+  );
+}
+
+/**
+ * Settings → Pencil & ink: pen-only drawing and predicted ink, saved to profiles.settings.ink, and the handwriting
+ * search opt-in.
+ */
 export function InkSettingsPage() {
   const t = useUiText();
   const online = useOnlineStatus();
@@ -120,6 +182,7 @@ export function InkSettingsPage() {
           ) : null}
         </Tile>
       )}
+      {ink.loaded ? <HandwritingSearchTile online={online} /> : null}
     </section>
   );
 }

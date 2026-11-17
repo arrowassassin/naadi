@@ -1,10 +1,13 @@
-import { lazy, type ReactNode, Suspense, useEffect, useRef, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import type { TextDecorator } from "../content/types";
+import { prefetchChunks } from "../notes/prefetch";
+import { lazyWithFallback } from "../shell/lazyPage";
 import type { TextRun } from "./anchor";
 import type { SelectionInfo } from "./SelectionToolbar";
 
 /** Highlight data, the selection toolbar and the offline queue: loaded once the content has painted. */
-const HighlightEngine = lazy(() => import("./HighlightEngine"));
+const loadEngine = () => import("./HighlightEngine").then((m) => m.default);
+const HighlightEngine = lazyWithFallback(loadEngine, { fallback: null, unavailable: "inline" });
 
 export interface HighlightableTextProps {
   anchorType: "section" | "question";
@@ -50,17 +53,15 @@ export function HighlightableText({ children, ...engine }: HighlightableTextProp
   const [ready, setReady] = useState(false);
   const [decorate, setDecorate] = useState<TextDecorator | undefined>(undefined);
   useEffect(() => afterFirstPaint(() => setReady(true)), []);
+  // Fetched while the student reads, so highlighting still works if they go offline before using it.
+  useEffect(() => prefetchChunks(loadEngine), []);
   // A function in state: wrap it, or React would call it as an updater.
   const [onDecorate] = useState(() => (d: TextDecorator) => setDecorate(() => d));
 
   return (
     <div ref={ref} className="relative" data-highlightable={engine.anchorType}>
       {children(decorate)}
-      {ready ? (
-        <Suspense fallback={null}>
-          <HighlightEngine {...engine} hostRef={ref} onDecorate={onDecorate} />
-        </Suspense>
-      ) : null}
+      {ready ? <HighlightEngine {...engine} hostRef={ref} onDecorate={onDecorate} /> : null}
     </div>
   );
 }

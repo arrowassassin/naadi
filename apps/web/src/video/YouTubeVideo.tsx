@@ -1,7 +1,8 @@
 import type { MediaOut } from "@naadi/shared";
 import { cx } from "@naadi/ui";
-import { Component, type ReactNode, Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { Component, type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import type { ContentEnv } from "../content/types";
+import { prefetchChunks } from "../notes/prefetch";
 import { lazyWithFallback } from "../shell/lazyPage";
 import { playerUrl, SANDBOX_ATTR } from "./bridge";
 import { type BridgePlayer, connectPlayer, STATE_PLAYING } from "./bridgePlayer";
@@ -11,10 +12,8 @@ import { clearVideoPosition, publishVideoPosition } from "./playback";
 import { playerOrigin } from "./playerConfig";
 
 /** The timestamped notes (the notes API and its offline queue) load beside the player, never with the chapter. */
-const VideoNotes = lazyWithFallback(() => import("./VideoNotes").then((m) => m.VideoNotes), {
-  fallback: null,
-  unavailable: "inline",
-});
+const loadVideoNotes = () => import("./VideoNotes").then((m) => m.VideoNotes);
+const VideoNotes = lazyWithFallback(loadVideoNotes, { fallback: null, unavailable: "inline" });
 
 const DEFAULT_RATES = [0.5, 0.75, 1, 1.25, 1.5, 2];
 
@@ -51,6 +50,8 @@ interface Props {
 export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Props) {
   const t = env.text;
   const [loaded, setLoaded] = useState(false);
+  // The notes panel is a separate chunk: fetched at rest, so it opens even if the student goes offline first.
+  useEffect(() => prefetchChunks(loadVideoNotes), []);
   const [apiFailed, setApiFailed] = useState(false);
   const [playerError, setPlayerError] = useState(false);
   const [ready, setReady] = useState(false);
@@ -211,9 +212,7 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
 
       {controls ? (
         <QuietBoundary>
-          <Suspense fallback={null}>
-            <VideoNotes mediaId={media.id} getTime={time} seek={(s) => seek(s)} />
-          </Suspense>
+          <VideoNotes mediaId={media.id} getTime={time} seek={(s) => seek(s)} />
         </QuietBoundary>
       ) : null}
 

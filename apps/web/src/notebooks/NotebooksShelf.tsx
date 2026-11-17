@@ -5,6 +5,7 @@ import { BookPlus, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { ConflictNotices } from "../notes/conflicts";
 import { errorKey, useNotebookSync, useNotebooks } from "./api";
 import { coverClass } from "./covers";
 import { ConfirmDialog, NotebookFormDialog } from "./dialogs";
@@ -126,6 +127,7 @@ export function NotebooksShelf({ className, headingLevel = 2 }: { className?: st
     <div className="flex flex-wrap items-center justify-between gap-3">
       <H className="m-0 font-display text-headline">{t("notebooks.title")}</H>
       {sync ? <NotebookSaveStatus sync={sync} notebookId={null} /> : null}
+      <ConflictNotices filter={{ scope: "notebooks" }} className="w-full" />
     </div>
   );
 

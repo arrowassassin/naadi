@@ -4,8 +4,12 @@ Queueing (naadi_api/ink/ocr/queue.py): the ink save path marks a layer `pending`
 save restarts its idle clock. Two system crons (naadi_api.agent.host) run this graph:
 
 - `{"mode": "sweep"}` every two minutes: `pending` layers idle for `app_config.ink_ocr.idle_seconds`;
-- `{"mode": "nightly"}` at 00:23 UTC, after the daily caps reset: `deferred` and `pending` layers, plus the opt-out
-  safety net (recognised text of students who turned handwriting search off is cleared).
+- `{"mode": "nightly"}` at 00:23 UTC, after the daily caps reset: `deferred` and `pending` layers, plus the opt-in
+  safety net (recognised text, OCR state and handwriting index rows of every student who has not opted in are
+  cleared).
+
+Handwriting search is opt-in: OFF unless `profiles.settings.handwriting_search` is exactly `true` (Settings ->
+Pencil & ink). Layers of a student who has not opted in are never claimed, rendered or sent (ink/ocr/queue.py).
 
 Each layer is rasterized with Pillow (ink only, black on white, 1600 px wide, tiles <= 2048 px, <= `max_tiles`),
 one `vision` call per tile through `naadi_api/llm.py` (purpose `job`: the gateway scrubs text and enforces the job

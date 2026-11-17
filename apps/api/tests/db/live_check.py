@@ -257,6 +257,12 @@ def checks(head: str) -> list[Check]:
             " ('ink_layers','ocr_hash'), ('ink_layers','ocr_at'), ('notes','body_text'))",
         ),
         Check(
+            "notes and notebooks keep their edit time (0039: edited_at, not null, bounded last-writer-wins)",
+            "select count(*) = 2 as ok, count(*)::text as detail from information_schema.columns"
+            " where table_schema = 'public' and is_nullable = 'NO' and column_name = 'edited_at'"
+            " and table_name in ('notes', 'notebooks')",
+        ),
+        Check(
             "ingest (0028): uploads/ingest_items API-written (rename + confirmed_placement only), owned media and"
             " questions, user-provided source",
             "select has_column_privilege('authenticated', 'public.uploads', 'original_name', 'update')"

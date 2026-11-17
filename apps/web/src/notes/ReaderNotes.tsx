@@ -1,11 +1,16 @@
 import { cx } from "@naadi/ui";
 import { X } from "lucide-react";
-import { lazy, type ReactNode, type RefObject, Suspense, useEffect, useId, useRef, useSyncExternalStore } from "react";
+import { type ReactNode, type RefObject, useEffect, useId, useRef, useSyncExternalStore } from "react";
 import { useUiText } from "../copy/useUiText";
+import { lazyWithFallback } from "../shell/lazyPage";
 import type { PageNotesHandle } from "./PageNotesPanel";
+import { PAPER_NOTICE } from "./paperNotice";
+import { prefetchChunks } from "./prefetch";
 
 /** The panel (the notes API, the offline queue, the ink page) loads when it is first opened, never with the page. */
-const PageNotesPanel = lazy(() => import("./PageNotesPanel").then((m) => ({ default: m.PageNotesPanel })));
+const loadPanel = () => import("./PageNotesPanel").then((m) => m.PageNotesPanel);
+const loadEditor = () => import("./NoteEditor");
+const PageNotesPanel = lazyWithFallback(loadPanel, { fallback: null, unavailable: "inline" });
 
 /** Laptop and iPad landscape (≥ 1100 px, the `laptop` breakpoint): the panel sits beside the page. */
 const SIDE_QUERY = "(min-width: 68.75rem)";
@@ -129,8 +134,11 @@ export function ReaderNotesLayout({
 }) {
   const side = useSidePanel();
   const t = useUiText();
+  // The panel and its editor are fetched once the page has settled, so they are on the device before the student
+  // can go offline.
+  useEffect(() => prefetchChunks(loadPanel, loadEditor), []);
   const panel = (
-    <Suspense fallback={null}>
+    <div className={PAPER_NOTICE}>
       <PageNotesPanel
         key={sectionId}
         ref={panelRef}
@@ -139,7 +147,7 @@ export function ReaderNotesLayout({
         onInkChange={onInkChange}
         onMounted={onPanelMounted}
       />
-    </Suspense>
+    </div>
   );
   // The article keeps ONE position in the tree whatever the viewport: moving it between a wrapper and a fragment when
   // the side-panel breakpoint is crossed (an iPad turned, a window resized) would remount it and reset everything

@@ -38,6 +38,7 @@ export function localPage(
     has_ink: false,
     created_at: iso(at),
     updated_at: iso(at),
+    edited_at: iso(at),
   };
 }
 
@@ -65,6 +66,7 @@ export function overlayList(items: readonly NotebookOut[], queue: readonly Queue
               note_count: 0,
               created_at: iso(queuedAt),
               updated_at: iso(queuedAt),
+              edited_at: iso(queuedAt),
             },
             ...out,
           ];
@@ -121,6 +123,7 @@ export function overlayDetail(
             note_count: 0,
             created_at: iso(queuedAt),
             updated_at: iso(queuedAt),
+            edited_at: iso(queuedAt),
             pages: [localPage(op.body.first_page_id, id, {}, queuedAt)],
           };
         break;

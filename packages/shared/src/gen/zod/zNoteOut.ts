@@ -21,6 +21,7 @@ export const zNoteOut = z.object({
   canvas: z.enum(["paper", "whiteboard"]),
   client_updated_at_ms: z.int().nullish(),
   created_at: z.iso.datetime(),
+  edited_at: z.iso.datetime(),
   excerpt: z.string(),
   has_ink: z.boolean(),
   highlight_color: z.enum(["lime", "violet", "amber"]).nullable(),

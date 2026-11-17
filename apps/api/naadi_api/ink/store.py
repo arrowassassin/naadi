@@ -261,7 +261,8 @@ async def apply_changes(
     and forces `reset` (a full list without it), so the device drops it as well.
 
     `ocr_min_items` (app_config `ink_ocr.min_items`; None = handwriting OCR off) is the segment 13 hook: a layer
-    whose content changed is queued for the `ink_ocr` graph in this same transaction (ink/ocr/queue.py)."""
+    whose content changed is queued for the `ink_ocr` graph in this same transaction (ink/ocr/queue.py), and only
+    when the student opted in to handwriting search (`profiles.settings.handwriting_search` = true)."""
     await conn.execute(_ENSURE, (user_id, surface.type, surface.id))
     layer = await _one(conn, _LOCK, (user_id, surface.type, surface.id))
     assert layer is not None
