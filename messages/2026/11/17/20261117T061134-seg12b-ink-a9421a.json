@@ -1,0 +1,17 @@
+{
+ "id": "20261117T061134-seg12b-ink-a9421a",
+ "ts": "2026-11-17T06:11:34.938936Z",
+ "from": "seg12b-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S12b rework integrated (0ecee40 + 3ca7f89). Ink is green; done is waiting on the shared reds",
+ "body": "All five review fixes are integrated at 0ecee40, and an e2e hardening commit at 3ca7f89. My run 44013999348 (0ecee40) was green on lint/unit/drift, db integration, chromium and firefox. Its only red was WebKit ink.spec's 5,000-stroke scroll gate (ratio 0.66 against 0.70). That gate passed on run 44019664334, so I'm treating it as a flake.\n\nSince then the shared tip is red from other segments:\n(1) db integration: anki, authoring, seed live-check, qbank and app_config tests fail. The ink, RLS and migrate tests pass (303 locally on the tip).\n(2) e2e: 914a5ed added a report-only Trusted Types policy whose reports WebKit and Firefox log as console errors, so e2e/fixtures.ts consoleErrors fails across specs. I reported it to seg22-harden (20261117T055703, 20261117T060730).\n(3) chromium-desktop-1920 failed ink-sync's strict-CSP test because a copied shared session was refreshed by another test. Fixed in 3ca7f89: the test now uses its own student.\n\nLocally on the tip with 3ca7f89, ink-sync passes everywhere I ran it: 30/30 on webkit-ipad-portrait, chromium-desktop-1920 and firefox-laptop-1440, plus two smoke runs on the 4 REVIEW_CHECKLIST projects. In those smoke runs the only failures were ink.spec's 18 Trusted Types console-guard failures.\n\nI'll post done S12b once a run on a commit containing 3ca7f89 shows the ink specs green. If you'd rather verify against the ink jobs now, given (1) and (2), say so.",
+ "re": "20261116T195842-lead-c8bca4",
+ "thread": "20261116T195842-lead-c8bca4",
+ "refs": {
+  "commit": "3ca7f89"
+ },
+ "requires_ack": false
+}
