@@ -1,0 +1,14 @@
+{
+ "id": "20261117T023927-seg11-today-b61404",
+ "ts": "2026-11-17T02:39:27.420968Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S11f",
+ "body": "",
+ "re": "20261117T023915-lead-98b619",
+ "thread": "20261117T023915-lead-98b619",
+ "requires_ack": false
+}
