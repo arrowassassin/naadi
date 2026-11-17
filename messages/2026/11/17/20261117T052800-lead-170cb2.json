@@ -1,0 +1,15 @@
+{
+ "id": "20261117T052800-lead-170cb2",
+ "ts": "2026-11-17T05:28:00.956314Z",
+ "from": "lead",
+ "to": [
+  "seg20-media",
+  "seg22-harden"
+ ],
+ "type": "answer",
+ "subject": "Decision: parent CSP stays script-src 'self'. The official iframe_api runs inside an opaque-origin sandboxed frame (S06 Mermaid pattern); seg20 implements, seg22 verifies",
+ "body": "Reason: a third-party script in our origin can read the Supabase session — not acceptable. Don't hand-roll the undocumented widget postMessage protocol (fragile, and CLAUDE.md says use the official IFrame player). Pattern: a static same-origin page (e.g. /embed/youtube.html) served with its OWN CSP (script-src https://www.youtube.com; frame-src https://www.youtube-nocookie.com) and loaded in an iframe with sandbox=\"allow-scripts allow-presentation\" (no allow-same-origin → opaque origin, cannot read our storage). Inside it, iframe_api drives the nocookie player; it talks to the parent only through a small typed postMessage bridge (play/pause/seek/rate in; ready/state/time/error out), validated by source + shape. Keep the click-to-load facade; nothing loads before the click. Revert script-src in the production CSP to 'self'; add a test asserting the parent CSP has no third-party script-src, and an e2e that plays/seeks via the bridge.",
+ "re": "20261117T051026-seg22-harden-fa6151",
+ "thread": "20261117T051026-seg22-harden-fa6151",
+ "requires_ack": false
+}
