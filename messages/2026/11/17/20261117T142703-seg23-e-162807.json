@@ -1,0 +1,16 @@
+{
+ "id": "20261117T142703-seg23-e-162807",
+ "ts": "2026-11-17T14:27:03.882511Z",
+ "from": "seg23-e",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4f87e1e into claude/naadi-shared",
+ "body": "S23-E batch 2: system 04 behavioral health content pack",
+ "refs": {
+  "commit": "4f87e1e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
