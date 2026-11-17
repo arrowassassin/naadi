@@ -8,7 +8,7 @@ from fastapi import Request
 from fastapi.responses import JSONResponse
 
 from ..errors import FieldError, error_response
-from . import agent_ops, chapters, coverage, generated_media, lookups, media, questions, queues, reports
+from . import agent_ops, chapters, coverage, generated_media, lookups, media, questions, queues, reports, sibling_queues
 from .chapters import InvalidBody
 from .common import ensure_limiters
 from .licence import GateRefused
@@ -16,7 +16,7 @@ from .licence import GateRefused
 __all__ = ["install_admin_routes"]
 
 # Imported for their register_queue side effect.
-_QUEUE_MODULES = (generated_media, reports)
+_QUEUE_MODULES = (generated_media, reports, sibling_queues)
 
 
 async def _gate_refused(_: Request, exc: Exception) -> JSONResponse:

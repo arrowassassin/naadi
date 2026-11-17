@@ -9,8 +9,8 @@ from fastapi import FastAPI
 from starlette.middleware.gzip import GZipMiddleware
 
 from . import __version__, api
-from .anki.routes import install_anki_routes
 from .admin import install_admin_routes
+from .anki.routes import install_anki_routes
 from .auth import AccountDirectory, TokenVerifier, install_auth
 from .auth_limits import RateLimiter, register_limiters
 from .auth_routes import install_auth_routes

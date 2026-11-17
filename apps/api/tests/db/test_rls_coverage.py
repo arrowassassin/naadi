@@ -122,8 +122,9 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         "naadi_mark_section_edited",
         "naadi_secure_aegra_tables",
         "naadi_coach_status_guard",  # 0014: trigger function (fires for clients without EXECUTE)
-        "naadi_revision_guard",  # 0024: published section revisions are immutable
-        "naadi_publish_section_revision",  # 0024: the live body is the latest published revision
+        "naadi_revision_guard",  # 0025: published section revisions are immutable
+        "naadi_publish_section_revision",  # 0025: the live body is the latest published revision
+        "naadi_question_revision_version",  # 0025: question_revisions.version numbered per question
     }
     for name, config, anon_exec, auth_exec in rows:
         assert config == ['search_path=""'], name

@@ -71,8 +71,7 @@ def url(migrated_url: str) -> Iterator[str]:
             "insert into public.sources"
             " (id, name, license, allow_copy, allow_modify, allow_commercial, allow_ai_ingest)"
             " values ('test-sa', 'SA test', 'CC-BY-SA-4.0', true, true, true, false),"
-            " ('test-linkonly', 'Link only', 'link-only', false, false, false, false),"
-            " ('naadi-ai-generated', 'AI generated', 'proprietary-naadi', true, true, true, false)"
+            " ('test-linkonly', 'Link only', 'link-only', false, false, false, false)"
             " on conflict (id) do nothing"
         )
     yield migrated_url
@@ -93,7 +92,7 @@ def url(migrated_url: str) -> Iterator[str]:
         )
     remove_seed(migrated_url, b)
     with psycopg.connect(migrated_url, autocommit=True) as c:
-        c.execute("delete from public.sources where id in ('test-sa', 'test-linkonly', 'naadi-ai-generated')")
+        c.execute("delete from public.sources where id in ('test-sa', 'test-linkonly')")
 
 
 @pytest.fixture
@@ -144,6 +143,11 @@ def client(url: str, key: SigningKey, static_dir: Path, store: MemoryStore) -> I
         return VideoMeta(youtube_id, "Cardiac cycle", "UCtest", "Test channel", youtube_id != "noembed0000", 615)
 
     app.state.admin_video_lookup = lookup
+
+    async def sign(bucket: str, path: str) -> str:
+        return f"https://storage.test/sign/{bucket}/{path}"
+
+    app.state.admin_generated_signer = sign
     with TestClient(app, raise_server_exceptions=False) as c:
         yield c
 
@@ -548,7 +552,11 @@ def _question(**kw: Any) -> dict[str, Any]:
         "stem_html": "<p>A 7-year-old boy has blistering after sun exposure. Which process is defective?</p>",
         "options": [{"label": c, "html": f"<p>Process {c}</p>"} for c in "ABCDE"],
         "answer": "C",
-        "explanation_html": "<p>Nucleotide excision repair.</p>",
+        "explanation_html": "<p>Nucleotide excision repair removes the pyrimidine dimers that UV light creates.</p>",
+        "why_not_html": (
+            "<p>Why the others are wrong: of A, B, C, D and E, only the key names a process that acts on dimers.</p>"
+        ),
+        "educational_objective": "Xeroderma pigmentosum is a defect of nucleotide excision repair.",
         "difficulty": "easy",
         "taxonomy_ids": ["topic.dev.milestones", "step1.disc.pathology"],
         "source_id": "naadi-original-v1",
@@ -697,9 +705,9 @@ def test_queues_reports_and_generated_media(
             (users["student"], sid),
         ).fetchone()
         gen = c.execute(
-            "insert into public.generated_media (user_id, kind, title, prompt, model, storage_path, width, height)"
-            " values (%s, 'image', 'Heart', 'a heart diagram', 'flux', %s, 64, 32) returning id",
-            (users["student"], f"generated-media/{users['student']}/heart.png"),
+            "insert into public.generated_media (user_id, kind, title, prompt, model, storage_path, width, height,"
+            " status) values (%s, 'image', 'Heart', 'a heart diagram', 'flux', %s, 64, 32, 'ready') returning id",
+            (users["student"], f"{users['student']}/heart.png"),
         ).fetchone()
     assert rep and gen
     png = io.BytesIO()
@@ -708,6 +716,13 @@ def test_queues_reports_and_generated_media(
     counts = {i["kind"]: i for i in _ok(client.get("/api/admin/queues", headers=a))["items"]}
     assert counts["report_issues"]["count"] >= 1 and counts["report_issues"]["decides_here"]
     assert counts["generated_media"]["count"] >= 1
+    gen_item = next(
+        i for i in _ok(client.get("/api/admin/queues/generated_media", headers=a))["items"] if i["id"] == str(gen[0])
+    )
+    assert (
+        gen_item["detail"]["preview_url"] == f"https://storage.test/sign/generated-media/{users['student']}/heart.png"
+    )
+    assert gen_item["detail"]["ai_generated"] is True
     page = _ok(client.get("/api/admin/queues/report_issues", headers=a))
     item = next(i for i in page["items"] if i["id"] == str(rep[0]))
     assert item["ref"] == {"type": "section", "id": sid} and item["detail"]["body"] == "Typo"

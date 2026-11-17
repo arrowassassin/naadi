@@ -1,11 +1,11 @@
 """The `generated_media` approval queue (segment 19; moves segment 15b's admin approve into the registry).
 
-A student's AI-generated image or video never becomes shared content by itself. Approving one (params
-`section_id`, `caption`) copies the file out of the private `generated-media` bucket (images to `content-public`,
-videos to `content-private`), creates an approved shared `media_assets` row whose source is `naadi-ai-generated`
-and whose caption ends with the AI label (config/models.yaml `generation.label`), and publishes a new revision of
-the section with the figure (image) or video node appended. Rejecting marks it decided without publishing. The
-licence gates run as for any upload.
+A student's AI-generated image never becomes shared content by itself (videos never do; segment 15b). Approving
+one (params `section_id`, `caption`) copies the file out of the private `generated-media` bucket into
+`content-public`, creates an approved shared `media_assets` row whose source is `naadi-ai-generated` and whose
+caption ends with the AI label (config/models.yaml `generation.label`), and publishes a new revision of the section
+with the figure appended (a valid `figure` node: the caption lives on the media row). Rejecting marks it decided
+without publishing. The licence gates run as for any upload.
 """
 
 from __future__ import annotations
@@ -33,7 +33,6 @@ from .queues import ItemGone, QueueContext, QueueDecision, QueueItem, QueuePage,
 
 AI_SOURCE = "naadi-ai-generated"
 IMAGE_TYPES = {"png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg", "webp": "image/webp"}
-VIDEO_TYPES = {"mp4": "video/mp4", "webm": "video/webm"}
 
 
 @lru_cache(maxsize=4)
@@ -58,7 +57,8 @@ async def _pending_sql(conn: AsyncConnection[Any]) -> str:
     cols = await _columns(conn)
     # Segment 15b adds status/approved_at: only finished items wait for a decision; a decided item has approved_at
     # (approved) or approved_by set with approved_for_publish false (rejected).
-    sql = "g.approved_for_publish = false and g.storage_path is not null"
+    # Only images are publishable (segment 15b: a generated video never becomes shared content).
+    sql = "g.approved_for_publish = false and g.storage_path is not null and g.kind = 'image'"
     if "status" in cols:
         sql += " and g.status = 'ready'"
     if "approved_by" in cols:
@@ -70,7 +70,7 @@ async def _list(ctx: QueueContext, *, limit: int, cursor: str | None) -> QueuePa
     where = await _pending_sql(ctx.conn)
     params: dict[str, Any] = {"limit": limit + 1}
     sql = (
-        "select g.id, g.kind, g.title, g.prompt, g.width, g.height, g.duration_s, g.created_at"  # noqa: S608 - constant where
+        "select g.id, g.kind, g.title, g.prompt, g.width, g.height, g.duration_s, g.created_at, g.storage_path"  # noqa: S608 - constant where
         f" from public.generated_media g where {where}"
     )
     if cursor:
@@ -80,6 +80,7 @@ async def _list(ctx: QueueContext, *, limit: int, cursor: str | None) -> QueuePa
     total = await one(ctx.conn, f"select count(*)::int as n from public.generated_media g where {where}")  # noqa: S608
     more = len(found) > limit
     found = found[:limit]
+    previews = await _sign(ctx, [str(r["storage_path"]) for r in found])
     items = [
         QueueItem(
             id=str(r["id"]),
@@ -94,6 +95,7 @@ async def _list(ctx: QueueContext, *, limit: int, cursor: str | None) -> QueuePa
                 "height": r["height"],
                 "duration_s": float(r["duration_s"]) if r["duration_s"] is not None else None,
                 "ai_generated": True,
+                "preview_url": previews.get(str(r["storage_path"])),
             },
         )
         for r in found
@@ -101,6 +103,27 @@ async def _list(ctx: QueueContext, *, limit: int, cursor: str | None) -> QueuePa
     return QueuePage(
         items=items, next_cursor=str(found[-1]["id"]) if more and found else None, total=int(total["n"]) if total else 0
     )
+
+
+async def _sign(ctx: QueueContext, paths: list[str]) -> dict[str, str | None]:
+    """Short-lived signed URLs for the admin preview (segment 15b's store; `admin_generated_signer` in tests).
+    A preview is a convenience: a signing failure shows the item without one."""
+    signer = getattr(ctx.app.state, "admin_generated_signer", None)
+    bucket = configured_buckets(ctx.app.state.settings).generated_media
+    if signer is None:
+        settings = ctx.app.state.settings
+        if not settings.supabase_url or settings.supabase_service_role_key is None:
+            return {}
+        from ..generation.store import SupabaseMediaStore
+
+        signer = SupabaseMediaStore(settings).sign
+    out: dict[str, str | None] = {}
+    for p in paths:
+        try:
+            out[p] = await signer(bucket, p.removeprefix(f"{bucket}/"))
+        except Exception:  # noqa: BLE001 - see docstring
+            out[p] = None
+    return out
 
 
 def _uuid(item_id: str) -> uuid.UUID:
@@ -134,7 +157,7 @@ async def _approve(ctx: QueueContext, item_id: str, note: str | None, params: di
     section_id = _param_str(params, "section_id", 128)
     caption = _param_str(params, "caption", 800)
     g = await _load_pending(conn, item_id)
-    media_kind = "image" if g["kind"] == "image" else "video_own"
+    media_kind = "image"
     await check_asset(conn, AI_SOURCE, use="host", asset=AssetFacts(media_kind), ref_id=item_id)
     await check_asset(conn, AI_SOURCE, use="page", asset=AssetFacts(media_kind), ref_id=item_id)
     section = await one(
@@ -147,15 +170,12 @@ async def _approve(ctx: QueueContext, item_id: str, note: str | None, params: di
         raise GateRefused("section_missing", section_id)
     settings = ctx.app.state.settings
     buckets = configured_buckets(settings)
-    src = parse_storage_path(str(g["storage_path"]))
-    if src is None:
-        src_bucket, src_path = buckets.generated_media, str(g["storage_path"])
-    else:
-        src_bucket, src_path = src.bucket, src.path
-    if src_bucket != buckets.generated_media:
+    # 15b stores the object path inside the generated-media bucket (`<user id>/<file>`).
+    src_bucket, src_path = buckets.generated_media, str(g["storage_path"]).removeprefix(f"{buckets.generated_media}/")
+    if parse_storage_path(f"{src_bucket}/{src_path}") is None:
         raise GateRefused("bad_storage_path", item_id)
     ext = src_path.rsplit(".", 1)[-1].lower()
-    types = IMAGE_TYPES if g["kind"] == "image" else VIDEO_TYPES
+    types = IMAGE_TYPES
     if ext not in types:
         raise GateRefused("bad_storage_path", item_id)
     store = object_store_of(ctx.app)
@@ -163,8 +183,8 @@ async def _approve(ctx: QueueContext, item_id: str, note: str | None, params: di
         raise GateRefused("storage_unavailable", item_id)
     data = await asyncio.to_thread(store.get, src_bucket, src_path)
     mid = f"gen-{secrets.token_hex(5)}"
-    dest_bucket = buckets.content_public if g["kind"] == "image" else buckets.content_private
-    dest_path = f"{'figures' if g['kind'] == 'image' else 'videos'}/generated/{mid}.{ext}"
+    dest_bucket = buckets.content_public
+    dest_path = f"figures/generated/{mid}.{ext}"
     await asyncio.to_thread(store.put, dest_bucket, dest_path, data, types[ext])
     label = ai_label(settings.config_dir)
     full_caption = caption if caption.endswith(label) else f"{caption} — {label}"
@@ -186,11 +206,7 @@ async def _approve(ctx: QueueContext, item_id: str, note: str | None, params: di
         ),
     )
     body = copy.deepcopy(section["body"]) if isinstance(section["body"], dict) else {"type": "doc", "content": []}
-    node: dict[str, Any] = (
-        {"type": "figure", "attrs": {"mediaId": mid}}
-        if g["kind"] == "image"
-        else {"type": "video", "attrs": {"mediaId": mid, "startS": None, "endS": None}}
-    )
+    node: dict[str, Any] = {"type": "figure", "attrs": {"mediaId": mid}}
     content = body.get("content")
     if not isinstance(content, list):
         content = []

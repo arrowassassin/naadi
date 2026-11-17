@@ -296,11 +296,9 @@ async def snapshot_question(
     snap = {k: (v.isoformat() if isinstance(v, dt.datetime) else v) for k, v in r.items()}
     out = await one(
         conn,
-        "insert into public.question_revisions (question_id, version, snapshot, author_user_id, origin, note)"
-        " select %s, coalesce(max(version), 0) + 1, %s, %s, %s, %s from public.question_revisions"
-        " where question_id = %s"
-        " returning version",
-        (question_id, Jsonb(snap), author, origin, note, question_id),
+        "insert into public.question_revisions (question_id, snapshot, author_user_id, origin, note)"
+        " values (%s, %s, %s, %s, %s) returning version",  # version: the 0025 insert trigger
+        (question_id, Jsonb(snap), author, origin, note),
     )
     assert out is not None
     return int(out["version"])
@@ -585,6 +583,8 @@ def run_lint(r: Row) -> LintResult:
         raw = report
     out: list[LintFinding] = []
     for f in raw or []:
+        if hasattr(f, "as_dict"):
+            f = f.as_dict()
         data: dict[str, Any] = (
             f.model_dump(mode="json")
             if hasattr(f, "model_dump")
@@ -597,7 +597,7 @@ def run_lint(r: Row) -> LintResult:
             LintFinding(
                 rule=str(data.get("rule", "unknown")),
                 severity=sev if sev in ("error", "warning", "info") else "warning",
-                field=data.get("field") if isinstance(data.get("field"), str) else None,
+                field=next((v for v in (data.get("field"), data.get("target")) if isinstance(v, str) and v), None),
                 detail={k: v for k, v in params.items() if isinstance(v, str | int | float | bool) or v is None},
             )
         )

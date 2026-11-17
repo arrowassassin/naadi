@@ -637,8 +637,9 @@ def test_lab_values_come_from_app_config_with_their_sources(
 # ── No other code path reads the answer columns ──
 
 SECRET_COLUMN = re.compile(r"\b(answer_html|explanation_html|why_not_html|educational_objective)\b")
-# admin/questions.py: the S19 question editor, behind require_admin; no student route imports it.
-ALLOWED = {"qbank/routes.py", "qbank/models.py", "seed", "agent", "admin/questions.py"}
+# admin/questions.py (S19 question editor) and authoring (S21 review pipeline) are behind require_admin; no student
+# route imports them.
+ALLOWED = {"qbank/routes.py", "qbank/models.py", "seed", "agent", "admin/questions.py", "authoring"}
 
 
 def test_only_the_qbank_and_the_seed_read_answer_columns() -> None:
