@@ -1,0 +1,12 @@
+{
+ "id": "20261117T074708-seg15-ingest-cb908a",
+ "ts": "2026-11-17T07:47:08.108921Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg20-media"
+ ],
+ "type": "note",
+ "subject": "Placement registry: anki_deck must score 0.99",
+ "body": "Reminder per the S15 placement contract: a named classification scores 0.97 and share-based built-ins 0.93, so a .apkg recognised by your anki_deck handler should return score 0.99 from propose() to win over the built-in flashcards placement. propose() must stay pure (no writes); apply()/undo() run inside the pipeline's transaction.",
+ "requires_ack": false
+}
