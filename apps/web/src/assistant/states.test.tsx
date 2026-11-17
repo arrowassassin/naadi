@@ -2,7 +2,7 @@ import { act, renderHook, screen, waitFor, within } from "@testing-library/react
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fakeTutor, renderInApp } from "../test/assistant";
-import { AssistantHost } from "./AssistantHost";
+import { AssistantHost, setSurfaceLoaderForTests } from "./AssistantHost";
 import { useAssistantAvailable } from "./ask";
 import { Composer } from "./Composer";
 import { parseCustomEvent, parseInterrupt } from "./protocol";
@@ -75,6 +75,33 @@ describe("assistant in the shell", () => {
     expect(await screen.findByRole("form", { name: "Ask Naadi" })).toBeInTheDocument();
     expect(available.result.current).toBe(true);
     expect(screen.getByRole("button", { name: "Search the web" })).toHaveAttribute("aria-pressed", "false");
+  });
+
+  it("surface chunk unavailable (offline): a notice in the bar's place, no Ask; back online it loads", async () => {
+    const real = () => import("./AssistantSurface");
+    let fail = true;
+    setSurfaceLoaderForTests(() =>
+      fail ? Promise.reject(new TypeError("Failed to fetch dynamically imported module: x.js")) : real(),
+    );
+    try {
+      const available = renderHook(() => useAssistantAvailable());
+      renderInApp(() => <Host />);
+      const notice = await screen.findByRole("status");
+      expect(notice).toHaveAttribute("data-chunk-unavailable", "inline");
+      // portalled into the dock slot (where the bar would be), not rendered in place
+      expect(notice.closest('[data-assistant="unavailable"]')).not.toBeNull();
+      expect(within(notice).getByRole("button", { name: /try again/i })).toBeInTheDocument();
+      expect(available.result.current).toBe(false);
+      fail = false;
+      await act(async () => {
+        window.dispatchEvent(new Event("online"));
+      });
+      expect(await screen.findByRole("form", { name: "Ask Naadi" })).toBeInTheDocument();
+      expect(available.result.current).toBe(true);
+      expect(screen.queryByText(/needs a connection/i)).toBeNull();
+    } finally {
+      setSurfaceLoaderForTests(null);
+    }
   });
 });
 

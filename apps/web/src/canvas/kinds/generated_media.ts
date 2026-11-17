@@ -1,5 +1,4 @@
 import { type GeneratedMediaData, GeneratedMediaDataSchema } from "@naadi/shared";
-import { lazy } from "react";
 
 /**
  * Canvas kind `generated_media` (segment 15b), shaped like S14's `CanvasKind` contract
@@ -18,5 +17,3 @@ export const generatedMediaCanvasKind = {
   icon: "sparkles",
   requires_flag: "generation",
 } as const;
-
-export const LazyGeneratedMediaCanvas = lazy(() => import("../../generation/GeneratedMediaCanvas"));

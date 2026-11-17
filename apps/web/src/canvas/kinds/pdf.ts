@@ -1,5 +1,4 @@
 import { type PdfCanvasData, PdfCanvasDataSchema } from "@naadi/shared";
-import { lazy } from "react";
 
 /**
  * Canvas kind `pdf` (segment 15), shaped like S14's `CanvasKind` contract (apps/web/src/canvas/registry.ts):
@@ -19,5 +18,3 @@ export const pdfCanvasKind = {
   icon: "file-text",
   requires_flag: "library",
 } as const;
-
-export const LazyPdfCanvas = lazy(() => import("../../library/pdf/PdfCanvas"));

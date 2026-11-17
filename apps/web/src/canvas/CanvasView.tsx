@@ -11,11 +11,12 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import { type ComponentType, lazy, Suspense, useEffect, useRef } from "react";
+import { type ComponentType, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useKnownCopy } from "../assistant/copy";
 import { useMe } from "../auth/api";
 import { useUiText } from "../copy/useUiText";
+import { lazyWithFallback } from "../shell/lazyPage";
 import {
   type CanvasKind,
   type CanvasKindProps,
@@ -40,7 +41,12 @@ const lazyByKind = new WeakMap<CanvasKind, ComponentType<CanvasKindProps>>();
 function lazyFor(kind: CanvasKind): ComponentType<CanvasKindProps> {
   let C = lazyByKind.get(kind);
   if (!C) {
-    C = lazy(kind.load);
+    // seg22's helper: a kind whose chunk cannot load (offline) shows the inline "needs a connection" notice and
+    // retries on `online`, instead of crashing the canvas.
+    C = lazyWithFallback(() => kind.load().then((m) => m.default), {
+      fallback: <Skeleton className="h-48 w-full rounded-block" />,
+      unavailable: "inline",
+    });
     lazyByKind.set(kind, C);
   }
   return C;
@@ -112,13 +118,11 @@ export function CanvasItemView({ item }: { item: CanvasRef }) {
       >
         {t(item.origin === "student" ? "canvas.origin_student" : "canvas.origin_assistant")}
       </span>
-      <Suspense fallback={<Skeleton className="h-48 w-full rounded-block" />}>
-        <Component
-          item={{ ...item, data: parsed.data as Record<string, unknown> }}
-          close={() => closeCanvasItem(item.key)}
-          update={(next) => updateCanvasItem(item.key, next)}
-        />
-      </Suspense>
+      <Component
+        item={{ ...item, data: parsed.data as Record<string, unknown> }}
+        close={() => closeCanvasItem(item.key)}
+        update={(next) => updateCanvasItem(item.key, next)}
+      />
     </div>
   );
 }
