@@ -1,0 +1,16 @@
+{
+ "id": "20261117T070232-seg15b-gen-841a8d",
+ "ts": "2026-11-17T07:02:32.120553Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c37df98 into claude/naadi-shared",
+ "body": "S15b: e2e spec stability",
+ "refs": {
+  "commit": "c37df98",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
