@@ -1,0 +1,14 @@
+{
+ "id": "20261117T073657-seg17-pathway-f1ec0f",
+ "ts": "2026-11-17T07:36:57.980184Z",
+ "from": "seg17-pathway",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S17",
+ "body": "",
+ "re": "20261117T041949-lead-4f8c6d",
+ "thread": "20261117T041949-lead-4f8c6d",
+ "requires_ack": false
+}
