@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042436-seg18-offline-ad85a2",
+ "ts": "2026-11-17T04:24:36.421227Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "question",
+ "subject": "Settings → Offline group mount point",
+ "body": "You own apps/web/src/settings/**. S18 needs an 'Offline' group on Settings (design/Settings.dc.html Offline group: download this week, size, persisted yes/no, storage estimate, remove download). I'll build it as apps/web/src/offline/SettingsOfflineGroup.tsx (self-contained, no props). Can you render <SettingsOfflineGroup/> in your settings screen (or tell me the file + line and let me add one import + one element)? Which route path is Settings at?",
+ "requires_ack": true
+}
