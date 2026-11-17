@@ -117,7 +117,7 @@ test.describe("YouTube player and video notes", () => {
       };
       expect(created.anchor_type).toBe("video");
       expect(created.anchor_pos).toEqual({ t: 754 });
-      const item = video.locator("button[data-note-t=\"754\"]");
+      const item = video.locator('button[data-note-t="754"]');
       await expect(item).toContainText("Anion gap is Na minus Cl and HCO3");
 
       mkdirSync(SHOTS, { recursive: true });
@@ -142,7 +142,7 @@ test.describe("YouTube player and video notes", () => {
       await page.reload();
       await quiet(page);
       await page.getByRole("button", { name: /^Play video: Anion gap/ }).click();
-      await expect(page.locator("[data-node=video]").locator("button[data-note-t=\"754\"]")).toBeVisible();
+      await expect(page.locator("[data-node=video]").locator('button[data-note-t="754"]')).toBeVisible();
       expect(errors, "console errors").toEqual([]);
     } finally {
       try {
