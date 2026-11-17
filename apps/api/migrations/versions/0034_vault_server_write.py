@@ -1,7 +1,7 @@
 """The vault bucket is written by the API only (segment 17 review).
 
-Revision ID: 0032
-Revises: 0031
+Revision ID: 0034
+Revises: 0033
 Create Date: 2026-11-17
 
 0002 gave `authenticated` insert, update and delete on `storage.objects` under `{uid}/` for every user-folder bucket,
@@ -20,8 +20,8 @@ from collections.abc import Sequence
 
 from alembic import op
 
-revision: str = "0032"
-down_revision: str | None = "0031"
+revision: str = "0034"
+down_revision: str | None = "0033"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 

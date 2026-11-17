@@ -13,7 +13,7 @@ from .rls import DB_MARKS, as_anon, as_user
 pytestmark = DB_MARKS
 
 USER_BUCKETS = ("user-uploads", "vault", "generated-media")
-# 0032: the vault is written by the API only (signed upload token / service role), never by a client policy.
+# 0034: the vault is written by the API only (signed upload token / service role), never by a client policy.
 CLIENT_WRITE_BUCKETS = ("user-uploads", "generated-media")
 MB = 1024 * 1024
 
