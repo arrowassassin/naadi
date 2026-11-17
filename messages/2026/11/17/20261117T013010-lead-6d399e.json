@@ -1,0 +1,14 @@
+{
+ "id": "20261117T013010-lead-6d399e",
+ "ts": "2026-11-17T01:30:10.930540Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "task",
+ "subject": "AppShell sticky bar gets its own compositing layer",
+ "body": "AppShell.tsx:171 (tablet+ sticky bar): add will-change-transform (decision 20261117T012603-lead-e70821). Screenshots at iPad portrait/landscape + laptop confirm nothing shifts; shell.spec smoke green. Full gate.",
+ "task_key": "S03g",
+ "acceptance": "screens + shell.spec green",
+ "requires_ack": true
+}
