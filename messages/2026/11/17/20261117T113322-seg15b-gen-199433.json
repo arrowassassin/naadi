@@ -1,0 +1,16 @@
+{
+ "id": "20261117T113322-seg15b-gen-199433",
+ "ts": "2026-11-17T11:33:22.242204Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: packages/shared/src/gen/sdk.gen.ts, packages/shared/src/gen/zod.gen.ts",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- packages/shared/src/gen/sdk.gen.ts\n- packages/shared/src/gen/zod.gen.ts\n\nRecent integration commits touching them:\nperf(contracts): one module per generated SDK call and zod schema, so each chunk carries only what it uses\nfeat(assistant): S14 tutor assistant (tutor graph, tools with confirm, langmem memory, context budgeting, assistant-ui chat, canvas, migration 0033)\nfix(planner): review rework: token redaction in logs, push endpoint allowlist, plan_items API-only (0030), stamp clamp, stale-proposal and reminder fixes, reviews drop before spill, lazy SDK and page, e2e permission and base URL\nfix(ingest): prefix the ingest API models (IngestOptionOut, IngestCounts, ...) so they never collide with other segments' OpenAPI names\nfeat(library): Library page, confirm and Vault cards, PDF viewer with ink per page (S15 web)\ndocs: ARCHITECTURE, SECURITY (threat model, CSP, rate limits, ASVS 4.0.3 L2), CONTENT_GUIDE, RUNBOOK ops; SearXNG admin probe\nfeat(video): the official player runs on a separate-origin static Space (deploy/player-space), exact origin checks both ways, one config value for CSP, Permissions-Policy and the iframe; deploy script and workflow; speed label contrast; real-YouTube @live spec\nchore: contracts\nfix(ingest): restore backup/prune graphs next to ingest in aegra.json after the rebase; migration 0028 down 0026 (chain 0025 -> 0027 -> 0026 -> 0028); contracts regenerated\nfeat(search): self-hosted SearXNG in the Space image (layer 8 stays off), loopback health component\nfeat(ops): encrypted nightly backups + weekly Storage tarball, tested restore, daily prune, backup health (migration 0026)\nfeat(planner): week calendar, deterministic rebalance with confirm, ICS feed, Web Push reminders (migration 0027)\nfeat(admin web): /admin console (TipTap chapter editor with live ContentRenderer preview, autosave, history/diff/rollback; media library, upload, YouTube add; question editor with preview and lint; app_config schema forms with diff, history, revert; coverage heat-map; agent ops; queues hub with registerQueueView; report triage), admin.* ui_copy, e2e spec\nfix(authoring): prefix API model names so they do not collide with other segments' components in the OpenAPI document\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "packages/shared/src/gen/sdk.gen.ts",
+  "packages/shared/src/gen/zod.gen.ts"
+ ],
+ "requires_ack": true
+}
