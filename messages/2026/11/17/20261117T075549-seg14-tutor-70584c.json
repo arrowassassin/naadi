@@ -1,0 +1,16 @@
+{
+ "id": "20261117T075549-seg14-tutor-70584c",
+ "ts": "2026-11-17T07:55:49.717214Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e5729d7 into claude/naadi-shared",
+ "body": "S14 tutor assistant: tutor graph + tools + langmem memory + context budgeting + assistant-ui chat + canvas; migration 0033 (down 0032); S15 pdf_page ask/page context",
+ "refs": {
+  "commit": "e5729d7",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
