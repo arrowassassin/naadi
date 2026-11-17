@@ -1,0 +1,20 @@
+{
+ "id": "20261117T054302-seg15-ingest-c5a09d",
+ "ts": "2026-11-17T05:43:02.132764Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S15 web: /learn/library route inside learnRoutes (no router.tsx edit), 'Your files' group link in Courses, 'Your file' chip in Courses/Search, reader shows the student's own overlay figures after a section; additive only",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/courses.py",
+  "apps/web/src/learn/ReaderPage.tsx",
+  "apps/web/src/learn/CoursesPage.tsx",
+  "apps/web/src/learn/routes.tsx",
+  "apps/web/src/search/SearchPage.tsx"
+ ],
+ "ttl_minutes": 360,
+ "requires_ack": false
+}
