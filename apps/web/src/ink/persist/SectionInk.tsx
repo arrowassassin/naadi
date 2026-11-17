@@ -4,7 +4,7 @@ import { PenLine, TriangleAlert } from "lucide-react";
 import { type ReactNode, useCallback, useRef, useState } from "react";
 import { useUiText } from "../../copy/useUiText";
 import { InkCanvas } from "../InkCanvas";
-import { InkToolbar } from "../InkToolbar";
+import { StickyInkToolbar } from "../InkToolbar";
 import { useBlockAnchors } from "./blockAnchors";
 import { InkSaveStatus } from "./InkSaveStatus";
 import { useInkSettings } from "./settings";
@@ -95,25 +95,24 @@ export function SectionInk({ sectionId, doc, on, onToggle, offline, children, cl
         </InkCanvas>
       </div>
       {on && state ? (
-        <div className="sticky bottom-[calc(var(--shell-bottom,0px)+12px)] z-10">
-          <InkToolbar
-            state={state}
-            theme="dark"
-            onEnabled={onToggle}
-            onTool={(tool) => {
-              engine.current?.setTool(tool);
-              save({ tool }, { debounceMs: 1500 });
-            }}
-            onColor={(color) => {
-              engine.current?.setColor(color);
-              save({ color }, { debounceMs: 1500 });
-            }}
-            onEraserMode={(mode) => engine.current?.setEraserMode(mode)}
-            onUndo={() => engine.current?.undo()}
-            onRedo={() => engine.current?.redo()}
-            onClear={() => engine.current?.clear()}
-          />
-        </div>
+        <StickyInkToolbar
+          placement="bottom"
+          state={state}
+          theme="dark"
+          onEnabled={onToggle}
+          onTool={(tool) => {
+            engine.current?.setTool(tool);
+            save({ tool }, { debounceMs: 1500 });
+          }}
+          onColor={(color) => {
+            engine.current?.setColor(color);
+            save({ color }, { debounceMs: 1500 });
+          }}
+          onEraserMode={(mode) => engine.current?.setEraserMode(mode)}
+          onUndo={() => engine.current?.undo()}
+          onRedo={() => engine.current?.redo()}
+          onClear={() => engine.current?.clear()}
+        />
       ) : null}
     </div>
   );
