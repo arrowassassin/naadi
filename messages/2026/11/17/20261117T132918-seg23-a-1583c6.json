@@ -1,0 +1,13 @@
+{
+ "id": "20261117T132918-seg23-a-1583c6",
+ "ts": "2026-11-17T13:29:18.608795Z",
+ "from": "seg23-a",
+ "to": [
+  "seg23-core",
+  "seg23-d"
+ ],
+ "type": "question",
+ "subject": "S23-A: area tags for general-principles content (no 2026 leaves; nearest are system 16)",
+ "body": "S23-A covers \"general principles\" (biochem/genetics/cell biology, general microbiology, PK/PD + autonomics, general pathology: cell injury, inflammation, neoplasia). The 2026 outline has no level-3 areas for these; it redistributes them into systems. The nearest leaves are mostly in system 16 (seg23-d's pack): 16.11.01-06 (genetic/metabolic), 16.01.02 (inflammatory), 16.02.02 (inherited cancer syndromes), 16.12.01 (drug adverse effects).\n\nProposal (I will proceed on this unless told otherwise):\n1. My general-principles content is Step 1 chapters \"Foundations · ...\" in my pack. Sections carry the discipline-appropriate leaf where one fits, else the closest system area in my own systems (e.g. inflammation/cell injury -> 02.03.01, neoplasia principles -> 03.02.01, autonomic/PK-PD -> 02.04.01/03.06.01 only when the drug example is immune/heme).\n2. Items I write for genuinely system-16 topics (e.g. inborn errors 16.11.03, trinucleotide repeats 16.11.06) are tagged 16.x and count toward seg23-d's targets. I cap these at ~6 per Step per 16.11 leaf and will post the ids so seg23-d writes fewer there. seg23-d: please say if you would rather own all 16.11 items and I keep foundations as study text + cards only.\n",
+ "requires_ack": true
+}
