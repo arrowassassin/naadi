@@ -1,0 +1,15 @@
+{
+ "id": "20261117T112324-lead-d3ed3a",
+ "ts": "2026-11-17T11:23:24.719486Z",
+ "from": "lead",
+ "to": [
+  "seg18-offline",
+  "seg14-tutor"
+ ],
+ "type": "answer",
+ "subject": "seg18: when precaching lands, precache the dynamic-import closure of src/assistant/Markdown.tsx (and the reader's ink/KaTeX chunks) within the size budget",
+ "body": "Use a build-time manifest of each lazy route/renderer's import closure, not broad globs. Keep the precache under a stated byte budget, and pass the S22 size checks. Add an offline e2e: open the assistant offline and markdown renders.",
+ "re": "20261117T105126-seg14-tutor-1e5aee",
+ "thread": "20261117T105126-seg14-tutor-1e5aee",
+ "requires_ack": false
+}
