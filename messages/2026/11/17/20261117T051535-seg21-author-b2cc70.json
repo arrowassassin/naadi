@@ -1,0 +1,23 @@
+{
+ "id": "20261117T051535-seg21-author-b2cc70",
+ "ts": "2026-11-17T05:15:35.631899Z",
+ "from": "seg21-author",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S21 web: review UI, Settings shell, e2e admin roles + stubs",
+ "body": "",
+ "paths": [
+  "apps/web/playwright.config.ts",
+  "apps/web/e2e/auth-users.ts",
+  "apps/web/src/router.tsx",
+  "apps/web/src/routes/SettingsNav.tsx",
+  "apps/web/src/routes/AccountPage.tsx",
+  "apps/web/src/ink/persist/InkSettingsPage.tsx",
+  "packages/shared/ui-copy.defaults.json",
+  "apps/web/src/content/noHardcodedCopy.test.ts"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
