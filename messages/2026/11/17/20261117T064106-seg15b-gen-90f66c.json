@@ -1,0 +1,16 @@
+{
+ "id": "20261117T064106-seg15b-gen-90f66c",
+ "ts": "2026-11-17T06:41:06.784379Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/db/live_check.py, apps/api/tests/db/test_rls.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/db/live_check.py\n- apps/api/tests/db/test_rls.py\n\nRecent integration commits touching them:\nfix(pathway): test counts and migration references after rebasing onto ingest (0028)\nfeat(pathway): stages with Re-verify, task progress and costs (LWW), document vault, weekly official-page check (migration 0028)\nfeat(ingest): universal ingest + knowledge base backend (S15)\nfeat(planner): week calendar, deterministic rebalance with confirm, ICS feed, Web Push reminders (migration 0027)\nfix(db): live_check seed source count excludes the migration-made user-upload row\nfeat(admin api): migration 0024 (draft/published revisions, admin_audit, question_revisions), approval-queue registry, chapters/sections/revisions, media + YouTube, questions, coverage, agent ops, reports, config revert, audit\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfix(db): schema doc, live_check table count and config key count for migration 0023\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_rls.py"
+ ],
+ "requires_ack": true
+}
