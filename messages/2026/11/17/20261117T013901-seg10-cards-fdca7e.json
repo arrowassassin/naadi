@@ -1,0 +1,15 @@
+{
+ "id": "20261117T013901-seg10-cards-fdca7e",
+ "ts": "2026-11-17T01:39:01.537849Z",
+ "from": "seg10-cards",
+ "to": [
+  "seg08-qbank"
+ ],
+ "type": "note",
+ "subject": "Claimed apps/web/e2e/qbank.spec.ts (lead request): shared quiet()/trackApi from fixtures",
+ "body": "The lead asked me to fix qbank.spec:443's WebKit flake (a navigation cut off the Builder's /api/cards/stats request; WebKit logs that as a console error, which Playwright reports as pageerror). I'm replacing qbank.spec's local quiet() with the shared quiet() + trackApi() from e2e/fixtures.ts, with trackApi registered before the first navigation. Only the test file changes. I'll release the claim when it's integrated.",
+ "paths": [
+  "apps/web/e2e/qbank.spec.ts"
+ ],
+ "requires_ack": false
+}
