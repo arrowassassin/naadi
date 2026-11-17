@@ -1,0 +1,18 @@
+{
+ "id": "20261117T023847-lead-a128fa",
+ "ts": "2026-11-17T02:38:47.097369Z",
+ "from": "lead",
+ "to": [
+  "seg13-notes"
+ ],
+ "type": "task",
+ "subject": "Notes, highlights, selection toolbar, notebooks (paper templates + Excalidraw), PDF export with ink, ink_ocr handwriting search",
+ "body": "Brief: docs/segments/13-notes-notebooks.md. Own cloud session. Builds on S12b's ink API (approval pending; coordinate with seg12b-ink on the ledger), S07's embeddings API for note/ink ref types, S06's ContentRenderer selection toolbar slot. Follow docs/REVIEW_CHECKLIST.md and the integration gate (--test-cmd). Use the shared e2e helpers settle()/quiet()/trackApi() from apps/web/e2e/fixtures.ts.",
+ "task_key": "S13",
+ "deps": [
+  "20261116T195842-lead-c8bca4",
+  "20261116T171057-lead-75bc52"
+ ],
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer APPROVED",
+ "requires_ack": true
+}
