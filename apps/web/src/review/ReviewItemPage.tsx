@@ -1,3 +1,5 @@
+// The review queue's shipped ui_copy defaults load with this chunk (segment 22: not in the first load).
+import "@naadi/shared/ui-copy-admin";
 import { listReviewItems } from "@naadi/shared";
 import { Button, Chip, ErrorState, OfflineBanner, Skeleton, Tile } from "@naadi/ui";
 import { useQueryClient } from "@tanstack/react-query";

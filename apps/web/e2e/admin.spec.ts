@@ -27,11 +27,14 @@ import { signedInState } from "./session";
  */
 test.skip(!canMintUsers(), "needs the local auth stack's service role to mint the admin and the student");
 
-const COPY = (
-  JSON.parse(
-    readFileSync(path.resolve(import.meta.dirname, "../../../packages/shared/ui-copy.defaults.json"), "utf8"),
-  ) as { values: Record<string, string> }
-).values;
+const shipped = (name: string) =>
+  (
+    JSON.parse(readFileSync(path.resolve(import.meta.dirname, `../../../packages/shared/${name}`), "utf8")) as {
+      values: Record<string, string>;
+    }
+  ).values;
+// The core strings and the admin console's (split so the admin strings stay out of the first load).
+const COPY = { ...shipped("ui-copy.defaults.json"), ...shipped("ui-copy.admin.defaults.json") };
 /** A ui_copy string with its {placeholders} filled. */
 function c(key: string, vars: Record<string, string> = {}): string {
   const s = COPY[key];

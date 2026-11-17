@@ -1,4 +1,6 @@
 import "@testing-library/jest-dom/vitest";
+// Unit tests render admin pages without their chunk boundary: load every shipped default up front.
+import "@naadi/shared/ui-copy-admin";
 import { cleanup } from "@testing-library/react";
 import { afterEach } from "vitest";
 

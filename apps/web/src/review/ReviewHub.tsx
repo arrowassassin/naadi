@@ -1,3 +1,5 @@
+// The review queue's shipped ui_copy defaults load with this chunk (segment 22: not in the first load).
+import "@naadi/shared/ui-copy-admin";
 import { Button, Chip, ErrorState, OfflineBanner, Skeleton, Tile } from "@naadi/ui";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Check, RefreshCw } from "lucide-react";

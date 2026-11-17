@@ -31,7 +31,10 @@ describe("uiText", () => {
     expect(uiText({}, "nowhere.key")).toBe("nowhere.key");
   });
 
-  it("ships a non-empty default for every required key", () => {
+  it("keeps the admin strings out until the admin chunk registers them, then ships every required key", async () => {
+    expect(UI_COPY_DEFAULTS["admin.chapters.title"]).toBeUndefined();
+    expect(UI_COPY_DEFAULTS["admin.account_link"]?.trim()).toBeTruthy(); // shown on the Account page
+    await import("./uiCopyAdmin");
     expect(REQUIRED_UI_COPY_KEYS.length).toBeGreaterThan(30);
     for (const key of REQUIRED_UI_COPY_KEYS) expect(UI_COPY_DEFAULTS[key]?.trim(), key).toBeTruthy();
   });
