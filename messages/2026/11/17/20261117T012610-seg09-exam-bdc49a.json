@@ -1,0 +1,16 @@
+{
+ "id": "20261117T012610-seg09-exam-bdc49a",
+ "ts": "2026-11-17T01:26:10.026614Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 6f41c86 into claude/naadi-shared",
+ "body": "S09 review fixes: monotonic timer, exam_active guard, shell gate, codes, CI screens",
+ "refs": {
+  "commit": "6f41c86",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
