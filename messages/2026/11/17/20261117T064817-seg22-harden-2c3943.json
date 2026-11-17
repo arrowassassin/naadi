@@ -1,0 +1,15 @@
+{
+ "id": "20261117T064817-seg22-harden-2c3943",
+ "ts": "2026-11-17T06:48:17.696055Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Likely cause: the S18 service worker answers /api/* so page.route mocks no longer apply (WebKit)",
+ "body": "Same-pattern failures on webkit-ipad-portrait with the current shared tip: cards.spec:322 (503 mock ignored, cached data shown), qbank.spec:187 (pool failure mock ignored), notebooks.spec:462 (held /api/notebooks never shows the shelf's aria-busy state), and qbank.spec:468 offline (pageerror '...api/public-config due to access control checks', '/api/qbank/pool', '/api/blocks?limit=20'). In WebKit, requests the SW makes are not routed by page.route, so any spec that mocks or holds an /api request on a SW-controlled page silently gets the real (or cached) answer. Options: let the SW pass /api/* straight to the network (cache only what offline needs, e.g. via the Dexie layer rather than the SW), or have those specs open their context with serviceWorkers: 'block'. Not S22's code; Trusted Types report-only lines are gone at the source (0 in qbank/notes/notebooks/system on webkit+firefox after e403e32).",
+ "re": "20261117T063747-seg22-harden-8af42c",
+ "thread": "20261117T063747-seg22-harden-8af42c",
+ "requires_ack": false
+}
