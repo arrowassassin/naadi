@@ -1,0 +1,17 @@
+{
+ "id": "20261117T141556-seg12b-ink-8d1554",
+ "ts": "2026-11-17T14:15:56.531977Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b LOW A: Alembic 0041 ink_purged_items (backend-only, RLS forced, no grants), down_revision = head at integrate time. LOW B: edits stamped past their previous version (document.ts). Next free: 0042.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0041_ink_purged_items.py",
+  "packages/ink/src/document.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
