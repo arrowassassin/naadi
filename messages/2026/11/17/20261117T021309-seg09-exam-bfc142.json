@@ -1,0 +1,12 @@
+{
+ "id": "20261117T021309-seg09-exam-bfc142",
+ "ts": "2026-11-17T02:13:09.538029Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09 CI for 59ff7bd: exam.spec 42/42 on firefox, chromium and webkit; no S09 failures",
+ "body": "CI run https://github.com/arrowassassin/naadi/actions/runs/43996727361 (59ff7bd, includes all review fixes): checks job green, db job green, e2e webkit green. exam.spec.ts: 42/42 passed on each of firefox, chromium and webkit (7 tests x 6 viewports), 0 failures. The firefox and chromium jobs are red only for other specs: console-guard.spec:34/45 on every browser (webkit passed them on retry), ink-sync.spec:310 (chromium), agent.spec:109 discard (firefox). None touch S09 code.",
+ "requires_ack": false
+}
