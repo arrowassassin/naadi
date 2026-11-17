@@ -70,6 +70,9 @@ export function ImportDialog({
 
   function close() {
     if (busy) return;
+    // The card list is refreshed only now: the empty-state page this dialog may live in is replaced by the review
+    // page as soon as cards exist, which would take the report away before it was read.
+    if (phase.name === "done") invalidate();
     setFile(null);
     setPrefix("");
     setPhase({ name: "idle" });
@@ -82,7 +85,6 @@ export function ImportDialog({
     setPhase({ name: "busy" });
     try {
       const report = await importDeck(file, prefix.trim() || null);
-      invalidate();
       setPhase({ name: "done", report });
     } catch (err) {
       setPhase({ name: "error", key: errorKey(err) });

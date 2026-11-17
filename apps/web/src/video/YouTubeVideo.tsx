@@ -213,10 +213,6 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
                   type="button"
                   disabled={!controls}
                   aria-current={active === c ? "true" : undefined}
-                  aria-label={t("video.chapter_item", {
-                    title: t("video.chapter_untitled", { n: String(i + 1) }),
-                    time: formatClock(c.startS),
-                  })}
                   onClick={() => seek(c.startS, { start: c.startS, end: c.endS })}
                   className={cx(
                     "flex min-h-11 w-full items-center gap-3 rounded-block border px-3 py-2 text-left text-text disabled:opacity-60",

@@ -137,7 +137,7 @@ export function VideoNotes({ mediaId, getTime, seek }: Props) {
                 type="button"
                 data-note-t={n.t}
                 onClick={() => seek(n.t)}
-                aria-label={t("video.note_go", { time: formatClock(n.t) })}
+                title={t("video.note_go", { time: formatClock(n.t) })}
                 className="flex min-h-11 w-full items-start gap-3 rounded-block border border-line bg-surface-1 px-3 py-2 text-left text-text hover:border-text-3"
               >
                 <span className="shrink-0 font-mono text-label-sm text-text-2">{formatClock(n.t)}</span>

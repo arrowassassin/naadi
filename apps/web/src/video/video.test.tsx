@@ -142,7 +142,7 @@ describe("YouTube player", () => {
     act(() => window.onYouTubeIframeAPIReady?.());
     await waitFor(() => expect(fake.onReady).toBeDefined());
     act(() => fake.onReady?.());
-    fireEvent.click((await screen.findAllByRole("button", { name: /starts at 1:30/ }))[0] as HTMLElement);
+    fireEvent.click((await screen.findAllByRole("button", { name: /^1:30\s*Part/ }))[0] as HTMLElement);
     expect(fake.seeks).toEqual([90]);
     fireEvent.click(screen.getAllByRole("button", { name: "1.5×" })[0] as HTMLElement);
     expect(fake.rate).toBe(1.5);

@@ -93,7 +93,7 @@ test.describe("YouTube player and video notes", () => {
       );
 
       // chapters (the node starts at 0:30) seek on tap; speed uses the player's rates
-      await video.getByRole("button", { name: /starts at 0:30/ }).click();
+      await video.getByRole("button", { name: /^0:30\s*Part/ }).click();
       await expect.poll(() => page.evaluate(() => window.__yt.seeks)).toEqual([30]);
       await video.getByRole("button", { name: "1.5×", exact: true }).click();
       await expect.poll(() => page.evaluate(() => window.__yt.rate)).toBe(1.5);
@@ -117,7 +117,7 @@ test.describe("YouTube player and video notes", () => {
       };
       expect(created.anchor_type).toBe("video");
       expect(created.anchor_pos).toEqual({ t: 754 });
-      const item = video.getByRole("button", { name: "Go to 12:34" });
+      const item = video.locator("button[data-note-t=\"754\"]");
       await expect(item).toContainText("Anion gap is Na minus Cl and HCO3");
 
       mkdirSync(SHOTS, { recursive: true });
@@ -142,7 +142,7 @@ test.describe("YouTube player and video notes", () => {
       await page.reload();
       await quiet(page);
       await page.getByRole("button", { name: /^Play video: Anion gap/ }).click();
-      await expect(page.locator("[data-node=video]").getByRole("button", { name: "Go to 12:34" })).toBeVisible();
+      await expect(page.locator("[data-node=video]").locator("button[data-note-t=\"754\"]")).toBeVisible();
       expect(errors, "console errors").toEqual([]);
     } finally {
       try {
