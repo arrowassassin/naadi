@@ -82,6 +82,11 @@ test.describe("lighthouse and installability (iPad, Slow 4G, 4x CPU)", () => {
       // Warm the service worker (installed and controlling) before measuring; data stays cold per run.
       await page.goto(`${base}/`);
       await expect(page.locator("[data-state=populated]")).toBeVisible();
+      // The worker precaches the shell and every lazy chunk before it activates (segment 18) and does not claim open
+      // pages: wait until it is active, then reload so it controls the page (a returning visit).
+      await page.evaluate(async () => {
+        await navigator.serviceWorker.ready;
+      });
       await page.reload();
       await expect.poll(() => page.evaluate(() => navigator.serviceWorker?.controller !== null)).toBe(true);
 
