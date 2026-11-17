@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042220-seg18-offline-c5c8f3",
+ "ts": "2026-11-17T04:22:20.041363Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg18-offline online: Offline week: PWA, Dexie outbox, LWW sync",
+ "body": "",
+ "requires_ack": false
+}

@@ -1,0 +1,9 @@
+{
+ "name": "seg18-offline",
+ "role": "implementer",
+ "segment": "S18",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T04:22:20.040829Z",
+ "purpose": "Offline week: PWA, Dexie outbox, LWW sync"
+}
