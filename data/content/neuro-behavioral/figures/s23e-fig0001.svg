@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-label="Facial motor pathway: both motor cortices project to the part of the facial nucleus that supplies the forehead, but only the opposite cortex projects to the part that supplies the lower face. Lesion A in one motor cortex weakens the opposite lower face and spares the forehead. Lesion B in the facial nerve weakens the whole face on the same side.">
+<defs><marker id="s23e-fig0001-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="760" height="430" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="26" font-size="16" font-weight="bold" text-anchor="middle">Facial motor pathway: why the forehead is spared in a cortical lesion</text>
+<rect x="70" y="50" width="200" height="56" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="170" y="74" font-size="13" text-anchor="middle">Left motor cortex</text>
+<text x="170" y="92" font-size="12" text-anchor="middle">(face area)</text>
+<rect x="490" y="50" width="200" height="56" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="590" y="74" font-size="13" text-anchor="middle">Right motor cortex</text>
+<text x="590" y="92" font-size="12" text-anchor="middle">(face area)</text>
+<rect x="440" y="230" width="230" height="44" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="555" y="257" font-size="13" text-anchor="middle">Right nucleus: upper-face part</text>
+<rect x="440" y="286" width="230" height="44" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<text x="555" y="313" font-size="13" text-anchor="middle">Right nucleus: lower-face part</text>
+<text x="440" y="220" font-size="12" font-style="italic">Right facial nucleus (pons)</text>
+<path d="M240,106 C320,170 380,220 438,248" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#s23e-fig0001-arr)"/>
+<path d="M230,106 C330,200 390,270 438,304" fill="none" stroke="#334155" stroke-width="2.4" marker-end="url(#s23e-fig0001-arr)"/>
+<path d="M645,106 C655,150 655,190 645,228" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#s23e-fig0001-arr)"/>
+<text x="330" y="150" font-size="12">crossed input to both parts</text>
+<text x="505" y="132" font-size="12">uncrossed input,</text>
+<text x="505" y="148" font-size="12">upper-face part only</text>
+<path d="M670,252 L720,252 L720,372" fill="none" stroke="#334155" stroke-width="2.4"/>
+<path d="M670,308 L720,308" fill="none" stroke="#334155" stroke-width="2.4"/>
+<path d="M720,372 L620,372" fill="none" stroke="#334155" stroke-width="2.4" marker-end="url(#s23e-fig0001-arr)"/>
+<text x="520" y="378" font-size="13" text-anchor="middle">Right facial nerve</text>
+<text x="520" y="396" font-size="12" text-anchor="middle">to the whole right hemiface</text>
+<circle cx="170" cy="130" r="15" fill="#0f172a"/>
+<text x="170" y="135" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">A</text>
+<circle cx="720" cy="340" r="15" fill="#0f172a"/>
+<text x="720" y="345" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">B</text>
+<text x="40" y="262" font-size="13" font-weight="bold">A: cortex or corticobulbar tract</text>
+<text x="40" y="282" font-size="12">Weak opposite lower face; forehead</text>
+<text x="40" y="298" font-size="12">still wrinkles (bilateral input)</text>
+<text x="40" y="330" font-size="13" font-weight="bold">B: nucleus or facial nerve</text>
+<text x="40" y="350" font-size="12">Whole same-side face weak,</text>
+<text x="40" y="366" font-size="12">forehead included</text>
+<text x="40" y="410" font-size="11" fill="#334155">Dashed lines: input to the upper-face part. Solid: input to the lower-face part.</text>
+</g>
+</svg>

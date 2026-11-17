@@ -1,1 +1,126 @@
-{"sets": [], "items": []}
+{
+ "sets": [],
+ "items": [
+  {
+   "id": "s23e-q00001",
+   "exam": "step1",
+   "format": "single",
+   "chapterId": "s23e-ch00a",
+   "stemHtml": "<p>A 68-year-old man is brought to the emergency department 1 hour after his wife noticed that his speech was slurred and the left corner of his mouth was drooping. On examination, he cannot bare his teeth on the left side, but he wrinkles his forehead symmetrically when asked to look up. His left hand grip is weak. A lesion in which of the following locations best explains his facial findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Left facial nerve in the facial canal"
+    },
+    {
+     "label": "B",
+     "html": "Left facial nucleus in the pons"
+    },
+    {
+     "label": "C",
+     "html": "Right internal capsule, posterior limb"
+    },
+    {
+     "label": "D",
+     "html": "Right cerebellopontine angle"
+    },
+    {
+     "label": "E",
+     "html": "Left stylomastoid foramen"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Lower-face weakness with a preserved forehead is an <strong>upper motor neuron</strong> pattern. The part of the facial nucleus that drives the forehead receives input from both hemispheres, so one cortical or capsular lesion leaves the forehead working. The weak left face and weak left hand point to a lesion of the right corticobulbar and corticospinal fibres, which run together in the posterior limb of the right internal capsule.</p><p><strong>Takeaway:</strong> a spared forehead means a central lesion on the side opposite the facial droop.</p>",
+   "whyNot": {
+    "A": "A facial canal lesion is lower motor neuron and would weaken the left forehead as well, without hand weakness.",
+    "B": "A lesion of the left facial nucleus weakens the whole left face, forehead included.",
+    "D": "A right cerebellopontine angle lesion would weaken the right side of the face and usually affects hearing.",
+    "E": "A lesion at the left stylomastoid foramen paralyses the entire left face, including the forehead."
+   },
+   "objective": "Localise facial weakness that spares the forehead to the contralateral upper motor neuron pathway.",
+   "areas": [
+    "usmle2026.05.05.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "facial nerve",
+    "lesion localisation"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-e"
+   }
+  },
+  {
+   "id": "s23e-q00002",
+   "exam": "step2ck",
+   "format": "single",
+   "chapterId": "s23e-ch00b",
+   "stemHtml": "<p>A 34-year-old woman comes to the clinic because she woke up this morning unable to close her right eye. Yesterday she had an ache behind her right ear. She has no rash, hearing loss or limb symptoms. She lives in a city and has not travelled or noticed tick bites. Temperature is 36.8°C (98.2°F) and blood pressure is 118/74 mm Hg. She cannot raise her right eyebrow, close her right eye fully or lift the right corner of her mouth. The ear canals and tympanic membranes are normal. The rest of the neurological examination is normal. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "MRI of the brain with gadolinium"
+    },
+    {
+     "label": "B",
+     "html": "Oral prednisone and eye lubrication with nighttime taping"
+    },
+    {
+     "label": "C",
+     "html": "Oral valacyclovir alone"
+    },
+    {
+     "label": "D",
+     "html": "Lyme serology before any treatment"
+    },
+    {
+     "label": "E",
+     "html": "Nerve conduction studies of the facial nerve"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is a typical <strong>Bell palsy</strong>: sudden, whole-hemiface lower motor neuron weakness with retroauricular pain and no other deficit. An oral corticosteroid started within 72 hours raises the chance of complete recovery. The eye cannot close, so protect the cornea with lubricating drops, ointment and taping at night.</p><p><strong>Takeaway:</strong> typical Bell palsy needs a steroid within 72 hours and eye protection; it does not need tests.</p>",
+   "whyNot": {
+    "A": "Imaging is reserved for atypical features: gradual onset, recurrence, other cranial nerve or limb signs.",
+    "C": "An antiviral alone has not been shown to help; at most it is added to a corticosteroid in severe cases.",
+    "D": "She has no tick exposure or endemic-area risk, and treatment should not wait for serology.",
+    "E": "Electrodiagnostic testing is a prognostic option for complete palsy after the first days, not a first step."
+   },
+   "objective": "Treat typical Bell palsy with an early oral corticosteroid and eye protection, without routine testing.",
+   "areas": [
+    "usmle2026.05.05.01"
+   ],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Bell palsy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-e"
+   }
+  }
+ ]
+}
