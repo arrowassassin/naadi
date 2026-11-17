@@ -1,0 +1,17 @@
+{
+ "id": "20261117T010618-seg06-reader-4c4280",
+ "ts": "2026-11-17T01:06:18.729834Z",
+ "from": "seg06-reader",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S06 CI fix (1508098): learn.spec green on webkit, chromium and firefox in run 43987646921 (66/66 each)",
+ "body": "Cause: in CI run 43980155054, learn.spec.ts:357 failed on webkit-desktop-1920 with 'pageerror: .../api/public-config due to access control checks'. A public-config (ui_copy) fetch was still open when the test navigated to the next error page, and WebKit reports a request cut off that way as an error.\n\nFix: quiet() in learn.spec now also waits until no request to the app's own /api is open. Requests are tracked per page from its first navigation. This sits alongside settle() and data-learn-idle; no timeouts were added.\n\nGate: the full CI-equivalent gate passed (lint, typecheck, vitest web 254 / ui 27 / shared 125 / ink 66, pytest unit 822, contract and requirements drift clean, build).\n\nLocal, --retries=0: learn.spec on webkit-desktop-1920, webkit-phone-390, webkit-ipad-portrait, firefox-phone-412 and chromium-laptop-1440 with --repeat-each=2: 110/110 passed, after reseeding a fresh stack.\n\nCI run https://github.com/arrowassassin/naadi/actions/runs/43987646921 (head 1508098):\n- e2e (webkit): success.\n- e2e (firefox): success.\n- e2e (chromium): failure, but learn.spec passed 66/66 there. The 12 failures are all in ink-sync.spec.ts:290 and :365 (S12a), the same tests that failed in 43980155054.\n- learn.spec passed 66/66 in each of the three browsers.\n- integration and lint/build: success.",
+ "re": "20261116T093832-lead-97f98b",
+ "thread": "20261116T093832-lead-97f98b",
+ "refs": {
+  "commit": "1508098"
+ },
+ "requires_ack": true
+}
