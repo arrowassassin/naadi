@@ -1,0 +1,16 @@
+{
+ "id": "20261117T073928-fix-ipad-145cc6",
+ "ts": "2026-11-17T07:39:28.574139Z",
+ "from": "fix-ipad",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d37fbcb into claude/naadi-shared",
+ "body": "UXF1: Contents sheet single scroller; Welcome date/school no overlap",
+ "refs": {
+  "commit": "d37fbcb",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
