@@ -1,0 +1,16 @@
+{
+ "id": "20261117T053713-seg19-admin-f31350",
+ "ts": "2026-11-17T05:37:13.925733Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5ff369c into claude/naadi-shared",
+ "body": "S19: admin console (migration 0025, admin API, queues registry, /admin web)",
+ "refs": {
+  "commit": "5ff369c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
