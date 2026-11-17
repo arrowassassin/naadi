@@ -1,0 +1,16 @@
+{
+ "id": "20261117T121841-seg13-notes-a75dd5",
+ "ts": "2026-11-17T12:18:41.904113Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 745f1f6f into claude/naadi-shared",
+ "body": "S13: reader loads highlight engine and page-notes panel after first paint",
+ "refs": {
+  "commit": "745f1f6f",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
