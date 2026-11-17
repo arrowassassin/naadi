@@ -420,7 +420,9 @@ class GenerationService:
     async def _admin_item(self, row: dict[str, Any]) -> AdminGeneratedItem:
         return row_to_admin_item(row, (await self._item(row)).url)
 
-    async def approve(self, media_id: uuid.UUID, admin_id: uuid.UUID, section_id: str, caption: str) -> GeneratedApproveOut:
+    async def approve(
+        self, media_id: uuid.UUID, admin_id: uuid.UUID, section_id: str, caption: str
+    ) -> GeneratedApproveOut:
         """Publish a generated image as a shared chapter figure (admin only; the route is the gate)."""
         label = (await self._config()).label
         async with service_tx(self._db) as conn:
