@@ -334,6 +334,9 @@ importers:
       jsdom:
         specifier: 31.0.1
         version: 31.0.1(@napi-rs/canvas@1.1.1)
+      lighthouse:
+        specifier: 12.6.1
+        version: 12.6.1(bare-buffer@3.7.2)(supports-color@5.5.0)
       pdfjs-dist:
         specifier: 6.5.438
         version: 6.5.438

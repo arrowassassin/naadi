@@ -64,6 +64,7 @@
     "@vitejs/plugin-react": "6.3.0",
     "fake-indexeddb": "6.2.7",
     "jsdom": "31.0.1",
+    "lighthouse": "12.6.1",
     "pdfjs-dist": "6.5.438",
     "size-limit": "14.3.0",
     "tailwindcss": "4.3.5",
