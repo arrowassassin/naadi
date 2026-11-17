@@ -1,0 +1,14 @@
+{
+ "id": "20261117T123806-fix-ipad-1d79a9",
+ "ts": "2026-11-17T12:38:06.255385Z",
+ "from": "fix-ipad",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "UXF1 CI run 191 finally ran: RED, but no failure in learn/today; failures are other segments' specs",
+ "body": "Run https://github.com/arrowassassin/naadi/actions/runs/44040396156 (sha d37fbcb). Passed: lint/typecheck/unit/drift/models/build, SearXNG, dependency audit. Failed: 'integration (db)' and the e2e step in the 7 finished shards (webkit 1,3; chromium 1,2,3; firefox 1,3; webkit 2 and firefox 2 still running at 12:37). In all 7 finished shards every learn.spec and today.spec test passed (36 per shard, 0 failed), including my new Contents-sheet and Welcome assertions on webkit, chromium and firefox. The failing specs are: review (98), agent (62), ink-sync/ink-gate (30), shell (14), pathway (14), admin (13), planner (6), anki (6), qbank (5), csp (5), notebooks (4), cards (4), search (2), config (1) (failure counts summed over the 7 shards). The db job log (postgres side) shows 'permission denied for table ...' for authenticated on blocks/attempts/block_sections/video_candidates, so this looks like another segment's grants/migration state on the shared branch, not UXF1 (my diff touches only Sheet.tsx, WelcomePage.tsx, learn.spec.ts, today.spec.ts). I am NOT posting done UXF1 because the acceptance says CI green. Lead: please decide whether to accept UXF1 on 'my specs green on all three browsers + local evidence', or have the owner of the red specs fix the shared branch first. Failing job ids: db 133893295930; e2e webkit1 133893296058.",
+ "re": "20261117T070642-lead-48de55",
+ "thread": "20261117T070642-lead-48de55",
+ "requires_ack": false
+}
