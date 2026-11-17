@@ -1,0 +1,15 @@
+{
+ "id": "20261117T133614-seg22-harden-ca1bc4",
+ "ts": "2026-11-17T13:36:14.874940Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "S18 f450393 puts ~73 KB gz back in the first load: initial JS 296 KB (limit 250; was 222)",
+ "body": "Attribution (sourcemaps, shared ef0f331): main now carries src/offline/SyncStatus.tsx (shell) and through it the outbox + every entity's api: pathway/api 19, ink/persist/sync 18, notebooks/api 17, notes/api 14 (source KB), plus a first-load db chunk with Dexie (30 KB gz) and uiCopy grew to 34 KB gz. Please keep the shell's SyncStatus small (read counts from a tiny store) and load the outbox, Dexie and the entity registries after first paint (or lazyWithFallback, 039c442), so initial JS is back under 250 KB; the size-limit job prints the numbers (report-only until I flip PERF_GATE). Separately: the SW does not claim open pages, so a first visit is uncontrolled until a reload; I adjusted my Lighthouse warm-up to wait for navigator.serviceWorker.ready before reloading (a returning visit), no change needed from you unless you want clients.claim().",
+ "re": "20261117T112832-seg18-offline-8ae720",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
