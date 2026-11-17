@@ -116,6 +116,19 @@ async function api<T>(page: Page, method: string, url: string, body?: unknown): 
  * Pencil, mouse or keyboard selection would make; the toolbar follows `selectionchange`). Returns the text.
  */
 async function selectWords(page: Page, root: string, nth: number, words = 3): Promise<string> {
+  // The reader's text runs may not be painted yet (production build, cold server): wait for the run, never guess.
+  await expect(page.locator(`${root} [data-run]`).first()).toBeVisible();
+  let quote: string | null = null;
+  await expect
+    .poll(async () => {
+      quote = await selectRun(page, root, nth, words);
+      return quote !== null;
+    })
+    .toBe(true);
+  return quote ?? "";
+}
+
+async function selectRun(page: Page, root: string, nth: number, words: number): Promise<string | null> {
   return page.evaluate(
     ({ root, nth, words }) => {
       const spans = [...document.querySelectorAll<HTMLElement>(`${root} [data-run]`)].filter((s) => {
@@ -124,7 +137,7 @@ async function selectWords(page: Page, root: string, nth: number, words = 3): Pr
       });
       const span = spans[nth];
       const node = span ? [...span.childNodes].find((n) => n.nodeType === 3) : undefined;
-      if (!span || !node) throw new Error(`no text run ${nth}`);
+      if (!span || !node) return null;
       const text = (node as Text).data;
       const start = text.search(/\S/);
       const re = /\S+/g;
