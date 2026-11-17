@@ -23,11 +23,12 @@ import datetime as dt
 import uuid
 from typing import Annotated, Any, Literal
 
-from fastapi import APIRouter, Path, Query, Request
+from fastapi import APIRouter, Depends, Path, Query, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field, JsonValue
 
-from ..auth import AdminUser
+from ..auth import AdminUser, CurrentUser
+from ..auth_limits import RateLimiter
 from ..config_api.schemas import AuthoringRules
 from ..db import Database, DatabaseNotConfigured
 from ..embeddings.jobs import schedule_reindex
@@ -316,10 +317,22 @@ async def _labs(request: Request) -> list[Any]:
         return []
 
 
-def _hit(request: Request, admin_id: uuid.UUID) -> None:
-    limiters = getattr(request.app.state, "rate_limiters", None)
-    if limiters and "admin" in limiters:
-        limiters["admin"].hit(str(admin_id))
+def limited(bucket: str) -> Any:
+    """A rate-limit dependency on the admin (the pattern of the other routers)."""
+
+    async def dep(request: Request, admin: AdminUser) -> CurrentUser:
+        request.app.state.rate_limiters[bucket].hit(str(admin.user_id))
+        return admin
+
+    return Depends(dep)
+
+
+def default_limiters() -> dict[str, RateLimiter]:
+    return {
+        "review_read": RateLimiter(300, 60.0),
+        "review_write": RateLimiter(60, 60.0),
+        "review_heavy": RateLimiter(20, 60.0),  # model calls, background runs, whole-table passes
+    }
 
 
 def _gateway(request: Request) -> Any:
@@ -481,8 +494,7 @@ async def _load(request: Request, conn: Any, item_id: str, me: uuid.UUID) -> Rev
 
 
 @router.get("/summary", operation_id="getReviewSummary", response_model=ReviewSummary, responses=_ERRORS)
-async def summary(request: Request, admin: AdminUser) -> ReviewSummary:
-    _hit(request, admin.user_id)
+async def summary(request: Request, admin: Annotated[CurrentUser, limited("review_read")]) -> ReviewSummary:
     rules = await _rules(request)
     try:
         async with service_conn(_db(request)) as conn:
@@ -495,12 +507,11 @@ async def summary(request: Request, admin: AdminUser) -> ReviewSummary:
 @router.get("/items", operation_id="listReviewItems", response_model=ReviewQueueList, responses=_ERRORS)
 async def items(
     request: Request,
-    admin: AdminUser,
+    admin: Annotated[CurrentUser, limited("review_read")],
     filter: Annotated[QueueFilter, Query()] = "ai_drafts",
     limit: Annotated[int, Query(ge=1, le=200)] = 100,
     offset: Annotated[int, Query(ge=0, le=100_000)] = 0,
 ) -> ReviewQueueList:
-    _hit(request, admin.user_id)
     rules = await _rules(request)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
     async with service_conn(_db(request)) as conn:
@@ -538,8 +549,9 @@ async def items(
 
 
 @router.get("/items/{item_id}", operation_id="getReviewItem", response_model=ReviewItemDetail, responses=_ERRORS)
-async def item(request: Request, admin: AdminUser, item_id: ItemId) -> ReviewItemDetail:
-    _hit(request, admin.user_id)
+async def item(
+    request: Request, admin: Annotated[CurrentUser, limited("review_read")], item_id: ItemId
+) -> ReviewItemDetail:
     async with service_conn(_db(request)) as conn:
         return await _load(request, conn, item_id, admin.user_id)
 
@@ -561,9 +573,8 @@ async def item(request: Request, admin: AdminUser, item_id: ItemId) -> ReviewIte
     },
 )
 async def submit_review(
-    request: Request, admin: AdminUser, item_id: ItemId, body: QuestionReviewIn
+    request: Request, admin: Annotated[CurrentUser, limited("review_write")], item_id: ItemId, body: QuestionReviewIn
 ) -> ReviewSubmitResult:
-    _hit(request, admin.user_id)
     rules = await _rules(request)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
     labs = await _labs(request)
@@ -628,10 +639,11 @@ async def submit_review(
 @router.post(
     "/items/{item_id}/checks", operation_id="runReviewChecks", response_model=ReviewItemDetail, responses=_ERRORS
 )
-async def checks(request: Request, admin: AdminUser, item_id: ItemId, body: ReviewChecksIn) -> ReviewItemDetail:
+async def checks(
+    request: Request, admin: Annotated[CurrentUser, limited("review_heavy")], item_id: ItemId, body: ReviewChecksIn
+) -> ReviewItemDetail:
     """Re-run the linter; with `solver`, the blind solver too (model calls, job reserve). The result is stored on the
     item so the publish gate reads it."""
-    _hit(request, admin.user_id)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
     labs = await _labs(request)
     async with service_conn(_db(request)) as conn:
@@ -677,9 +689,10 @@ def _ctx() -> Any:
 @router.post(
     "/items/{item_id}/resubmit", operation_id="resubmitReviewItem", response_model=ReviewItemDetail, responses=_ERRORS
 )
-async def resubmit(request: Request, admin: AdminUser, item_id: ItemId) -> ReviewItemDetail:
+async def resubmit(
+    request: Request, admin: Annotated[CurrentUser, limited("review_write")], item_id: ItemId
+) -> ReviewItemDetail:
     """A revised draft goes back to review as a new round (statistics reset). The linter must pass first."""
-    _hit(request, admin.user_id)
     taxonomy, sources = await _taxonomy_and_sources(_db(request))
     labs = await _labs(request)
     async with service_conn(_db(request)) as conn:
@@ -704,11 +717,13 @@ async def resubmit(request: Request, admin: AdminUser, item_id: ItemId) -> Revie
     responses=_ERRORS,
 )
 async def psychometric_action(
-    request: Request, admin: AdminUser, item_id: ItemId, body: ReviewPsychometricsIn
+    request: Request,
+    admin: Annotated[CurrentUser, limited("review_write")],
+    item_id: ItemId,
+    body: ReviewPsychometricsIn,
 ) -> ReviewItemDetail:
     """Keep (acknowledge the flags), revise (back to draft) or retire a flagged item. Retiring needs `act_min_n`
     responses: below that a flag is all the data supports."""
-    _hit(request, admin.user_id)
     rules = await _rules(request)
     async with service_conn(_db(request)) as conn:
         it = await review_store.lock_item(conn, item_id)
@@ -741,8 +756,7 @@ async def psychometric_action(
 
 
 @router.get("/gaps", operation_id="listAuthoringGaps", response_model=AuthoringGapList, responses=_ERRORS)
-async def gaps(request: Request, admin: AdminUser) -> AuthoringGapList:
-    _hit(request, admin.user_id)
+async def gaps(request: Request, admin: Annotated[CurrentUser, limited("review_read")]) -> AuthoringGapList:
     rules = await _rules(request)
     found = await PgAuthoringStore(_db(request)).gaps(rules.target_exams, rules.min_published_per_topic, 60)
     return AuthoringGapList(
@@ -756,9 +770,10 @@ async def gaps(request: Request, admin: AdminUser) -> AuthoringGapList:
 
 @router.get("/taxonomy", operation_id="getAuthoringTaxonomy", response_model=AuthoringTaxonomyList, responses=_ERRORS)
 async def taxonomy_for(
-    request: Request, admin: AdminUser, exam: Annotated[Literal["step1", "step2ck"], Query()]
+    request: Request,
+    admin: Annotated[CurrentUser, limited("review_read")],
+    exam: Annotated[Literal["step1", "step2ck"], Query()],
 ) -> AuthoringTaxonomyList:
-    _hit(request, admin.user_id)
     tax = await PgAuthoringStore(_db(request)).taxonomy()
     second = "discipline" if exam == "step1" else "clinical_science"
 
@@ -808,10 +823,11 @@ async def deps_for(request: Request, rules: AuthoringRules) -> Deps:
         422: {"model": ErrorResponse, "description": "cell_invalid"},
     },
 )
-async def start_run(request: Request, admin: AdminUser, body: AuthoringRunIn) -> AuthoringRunJob:
+async def start_run(
+    request: Request, admin: Annotated[CurrentUser, limited("review_heavy")], body: AuthoringRunIn
+) -> AuthoringRunJob:
     """Draft `count` items for one taxonomy cell in the background. They land in the review queue; nothing is
     published. Model calls go through the gateway's free chains and the job reserve."""
-    _hit(request, admin.user_id)
     rules = await _rules(request)
     store = PgAuthoringStore(_db(request))
     taxonomy = await store.taxonomy()
@@ -838,8 +854,7 @@ async def start_run(request: Request, admin: AdminUser, body: AuthoringRunIn) ->
 
 
 @router.get("/runs", operation_id="listAuthoringRuns", response_model=AuthoringRunList, responses=_ERRORS)
-async def runs(request: Request, admin: AdminUser) -> AuthoringRunList:
-    _hit(request, admin.user_id)
+async def runs(request: Request, admin: Annotated[CurrentUser, limited("review_read")]) -> AuthoringRunList:
     async with service_conn(_db(request)) as conn:
         cur = await conn.execute(
             "select id, trigger, cell, difficulty, outcome, attempts, llm_calls, question_id, created_at"
@@ -855,8 +870,9 @@ async def runs(request: Request, admin: AdminUser) -> AuthoringRunList:
 @router.post(
     "/psychometrics/run", operation_id="runPsychometrics", response_model=PsychometricsRunOut, responses=_ERRORS
 )
-async def run_psychometrics(request: Request, admin: AdminUser) -> PsychometricsRunOut:
-    _hit(request, admin.user_id)
+async def run_psychometrics(
+    request: Request, admin: Annotated[CurrentUser, limited("review_heavy")]
+) -> PsychometricsRunOut:
     stats = await psychometrics_job.run(_db(request), await _rules(request))
     return PsychometricsRunOut(**stats.as_dict())
 
@@ -875,6 +891,10 @@ async def _authoring_error(_: Request, exc: Exception) -> JSONResponse:
 
 
 def install_authoring_routes(app: Any) -> None:
+    limiters: dict[str, RateLimiter] = getattr(app.state, "rate_limiters", {})
+    for k, v in default_limiters().items():
+        limiters.setdefault(k, v)
+    app.state.rate_limiters = limiters
     app.add_exception_handler(AuthoringError, _authoring_error)
     app.state.authoring_jobs = AuthoringJobs()
     app.include_router(router)

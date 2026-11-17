@@ -17,11 +17,11 @@ import datetime as dt
 import uuid
 from typing import Annotated, Any, Literal
 
-from fastapi import APIRouter, Path, Request, Response
+from fastapi import APIRouter, Depends, Path, Request, Response
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict
 
-from ..auth import AccountUser
+from ..auth import AccountUser, CurrentUser
 from ..auth_db import user_tx
 from ..auth_limits import RateLimiter
 from ..db import Database, DatabaseNotConfigured
@@ -102,8 +102,14 @@ async def _job(svc: ExportService, row: dict[str, Any]) -> ExportJob:
     )
 
 
-def _limit(request: Request, bucket: str, user_id: uuid.UUID) -> None:
-    request.app.state.rate_limiters[bucket].hit(str(user_id))
+def limited(bucket: str) -> Any:
+    """A rate-limit dependency on the signed-in student (the pattern of the other routers)."""
+
+    async def dep(request: Request, user: AccountUser) -> CurrentUser:
+        request.app.state.rate_limiters[bucket].hit(str(user.user_id))
+        return user
+
+    return Depends(dep)
 
 
 @router.post(
@@ -113,16 +119,16 @@ def _limit(request: Request, bucket: str, user_id: uuid.UUID) -> None:
     response_model=ExportJob,
     responses={**_ERRORS, 409: {"model": ErrorResponse, "description": "export_active"}},
 )
-async def start_export(request: Request, user: AccountUser, body: ExportStart) -> ExportJob:
-    _limit(request, "export_start", user.user_id)
+async def start_export(
+    request: Request, user: Annotated[CurrentUser, limited("export_start")], body: ExportStart
+) -> ExportJob:
     svc = await _service(request)
     row = await svc.start(user.user_id, body.include_vault)
     return await _job(svc, row)
 
 
 @router.get("/export", operation_id="listExports", response_model=ExportList, responses=_ERRORS)
-async def list_exports(request: Request, user: AccountUser) -> ExportList:
-    _limit(request, "export_read", user.user_id)
+async def list_exports(request: Request, user: Annotated[CurrentUser, limited("export_read")]) -> ExportList:
     svc = await _service(request)
     try:
         async with user_tx(_db(request), user) as conn:
@@ -141,8 +147,9 @@ async def list_exports(request: Request, user: AccountUser) -> ExportList:
     response_model=ExportJob,
     responses={**_ERRORS, 404: {"model": ErrorResponse, "description": "export_not_found"}},
 )
-async def get_export(request: Request, user: AccountUser, job_id: JobId) -> ExportJob:
-    _limit(request, "export_read", user.user_id)
+async def get_export(
+    request: Request, user: Annotated[CurrentUser, limited("export_read")], job_id: JobId
+) -> ExportJob:
     svc = await _service(request)
     try:
         async with user_tx(_db(request), user) as conn:
@@ -161,8 +168,9 @@ async def get_export(request: Request, user: AccountUser, job_id: JobId) -> Expo
     status_code=204,
     responses={**_ERRORS, 404: {"model": ErrorResponse, "description": "export_not_found"}},
 )
-async def delete_export(request: Request, user: AccountUser, job_id: JobId) -> Response:
-    _limit(request, "export_read", user.user_id)
+async def delete_export(
+    request: Request, user: Annotated[CurrentUser, limited("export_read")], job_id: JobId
+) -> Response:
     svc = await _service(request)
     if not await svc.delete(user.user_id, job_id):
         raise ExportError(404, "export_not_found")

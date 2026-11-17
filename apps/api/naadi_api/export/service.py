@@ -94,6 +94,7 @@ class DbSource:
             )
             cols = [r["attname"] for r in await cur.fetchall()]
             over = COLUMN_OVERRIDES.get(table, {})
+            cols = [*cols, *(c for c in over if c not in cols)]  # a column clients cannot read, exported under a rule
             select_list = sql.SQL(", ").join(
                 sql.SQL("{} as {}").format(sql.SQL(over[c]), sql.Identifier(c))
                 if c in over
@@ -209,7 +210,11 @@ class ExportService:
             return []
         out: list[dict[str, Any]] = []
         for i, path in enumerate(self.object_paths(job["user_id"], job["id"], int(job["parts"])), start=1):
-            url = await self.storage.sign(self.buckets.user_uploads, path, min(left, SIGNED_URL_SECONDS))
+            try:
+                url = await self.storage.sign(self.buckets.user_uploads, path, min(left, SIGNED_URL_SECONDS))
+            except Exception as exc:  # noqa: BLE001 - a missing object means no download, not a failed request
+                log.warning("export.object_missing", job=str(job["id"]), part=i, error=type(exc).__name__)
+                return []
             out.append({"part": i, "url": url})
         return out
 
