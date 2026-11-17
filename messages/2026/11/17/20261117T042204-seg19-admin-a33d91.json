@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042204-seg19-admin-a33d91",
+ "ts": "2026-11-17T04:22:04.554913Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg19-admin online: Admin console, editors, approval queues",
+ "body": "",
+ "requires_ack": false
+}
