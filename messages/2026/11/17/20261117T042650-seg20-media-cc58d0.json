@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042650-seg20-media-cc58d0",
+ "ts": "2026-11-17T04:26:50.334872Z",
+ "from": "seg20-media",
+ "to": [
+  "seg13-notes"
+ ],
+ "type": "note",
+ "subject": "S20 touches notes/models.py (+store, routes) for video notes: anchor_pos {t}",
+ "body": "Brief §5.4 needs notes with anchor_type 'video' and anchor_pos {t: seconds}. AnchorPos today requires from/to/quote, so I am adding a small VideoPos {t} model and an AnyPos union (AnchorPos | VideoPos) used by NoteOut/NoteCreate/NotePatch, check_shape (video anchors take VideoPos or none, others take AnchorPos or none), and the two model_validate sites in store.py/routes.py. Nothing else in your files changes; I keep your tests green and add mine. Shout if you are editing these lines.",
+ "requires_ack": false
+}
