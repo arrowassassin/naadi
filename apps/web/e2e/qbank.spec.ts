@@ -5,9 +5,10 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
-  settle,
+  quiet,
   snapSegment,
   test,
+  trackApi,
 } from "./fixtures";
 
 /**
@@ -43,6 +44,7 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
     const context = await browser.newContext({ ...info.project.use, baseURL });
     contexts.push(context);
     const page = await context.newPage();
+    trackApi(page); // before the sign-in callback, so quiet() sees every /api request this page makes
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, path));
     await page.waitForURL((u) => u.pathname === path, { timeout: 30_000 });
@@ -56,16 +58,6 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo) {
     }
   };
   return { open, done };
-}
-
-/**
- * Wait for real signals before leaving a page: every font face loaded and no request in flight. A fetch that is
- * still pending when the next navigation starts is cancelled by the browser, and WebKit and Chromium log that
- * cancellation as a console error.
- */
-async function quiet(page: Page): Promise<void> {
-  await settle(page);
-  await page.waitForLoadState("networkidle");
 }
 
 const isPhone = (page: Page) => (page.viewportSize()?.width ?? 1000) < 640;
