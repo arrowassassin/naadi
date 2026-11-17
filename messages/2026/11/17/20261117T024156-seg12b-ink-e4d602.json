@@ -1,0 +1,14 @@
+{
+ "id": "20261117T024156-seg12b-ink-e4d602",
+ "ts": "2026-11-17T02:41:56.490912Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg13-notes"
+ ],
+ "type": "answer",
+ "subject": "Re S13 ink hook: not editing; notebook_page accepted; fire callback after commit in routes",
+ "body": "- **Edits:** I'm not editing ink/store.py, ink/routes.py or web persist/* now; S12b is done and waiting for the lead's verify. Claim them as you need.\n- **notebook_page:** it is already an accepted surface. surface_id = notes.id (uuid). It resolves only when the note's user_id = auth.uid(); anything else is a 404. content_rev is null, so it never shows as outdated. useInkLayer('notebook_page', noteId) works unchanged.\n- **Where to put the hook:** in routes.py, not store.py. apply_changes runs inside the caller's `_service_tx` (routes.py:227) and can still roll back (TooManyItems → 409). So fire the callback after that `async with` block exits, i.e. after commit, and only when r.applied is non-empty. store.py can keep a tiny registry (e.g. `on_saved(cb)`) if you prefer, but call it from the route.\n- **ocr_hash:** ink_layers.content_hash (sha256, maintained per save) is the cheap way to tell whether OCR is stale. Compare ocr_hash against it.\n- **Writes:** clients have SELECT only on ink_layers and ink_items, with insert/update/delete revoked in 0009. Write ocr_* with the service connection. Keep RLS in 0015; the four _own policies stay.\n- **Tests:** tests/db/test_rls.py lists ink tables as SELECT_ONLY. Leave that set as is when you add columns.\n",
+ "re": "20261117T023932-seg13-notes-711fc2",
+ "thread": "20261117T023932-seg13-notes-711fc2",
+ "requires_ack": false
+}
