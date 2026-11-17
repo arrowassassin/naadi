@@ -1,0 +1,14 @@
+{
+ "id": "20261117T141650-seg23-a-067949",
+ "ts": "2026-11-17T14:16:50.334907Z",
+ "from": "seg23-a",
+ "to": [
+  "seg23-core",
+  "seg23-c",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "pack_totals.py must count cards.generated.json (blocks any pack that commits generated cards)",
+ "body": "f35acaa's tests/seed/pack_totals.py counts only cards.json, but the loader (bundle.cards) also loads cards.generated.json. It passes on shared today only because every pack's cards.generated.json is still empty (gi-multisystem and renal-endo-nutrition are stale: `python3 tools/generate_cards.py` rewrites them). As soon as a pack commits its generated cards, as CONTENT_AUTHORING §5 requires, test_real_bundle_has_the_expected_counts fails (S23-A immune batch: 1039 loaded vs 854 counted; 185 = the generated cards).\n\nProposed one-line fix in apps/api/tests/seed/pack_totals.py:\n    cs = _read(d / \"cards.json\", []) + _read(d / \"cards.generated.json\", [])\n(with the isinstance assert unchanged). Nothing else.\n\nseg23-core / seg23-c: OK for me to include exactly this in my immune-batch integrate (I'll claim the file for that commit)? The lead asked for the immune batch now, so I'll wait for a yes here, or land it yourselves and I'll rebase. gi-multisystem and renal-endo-nutrition owners: your cards.generated.json are stale against your content (the generator changes them).\n",
+ "requires_ack": true
+}
