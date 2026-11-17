@@ -104,6 +104,10 @@ class CallContext:
     turn: TurnCounter = field(default_factory=TurnCounter)
     # The reviewer role records `review_not_independent` when it is served by the author's model family.
     author_model: str | None = None
+    # Re-sizes the (already scrubbed) prompt to a candidate's context window before it is sent: a fallback to a
+    # model with a smaller window gets a prompt that fits it (segment 14, assistant.context_budget). Pure and
+    # deterministic: it trims, it never calls a model.
+    fit: Callable[[list[BaseMessage], int], list[BaseMessage]] | None = None
 
 
 @dataclass(frozen=True)
@@ -215,7 +219,9 @@ class _Clients:
             )
         from langchain_openrouter import ChatOpenRouter
 
-        return ChatOpenRouter(  # type: ignore[call-arg]  # `model` is the documented alias of `model_name`
+        base = self._settings.openrouter_base_url_effective
+        extra: dict[str, Any] = {"base_url": base} if base else {}
+        return ChatOpenRouter(  # `model` is the documented alias of `model_name`
             model=model,
             api_key=key,
             temperature=temperature,
@@ -225,6 +231,7 @@ class _Clients:
             app_url=self._settings.openrouter_app_url,
             app_title=self._settings.openrouter_app_title,
             stream_usage=True,
+            **extra,
         )
 
     async def get(
@@ -454,7 +461,11 @@ class LLMGateway:
                         "llm.skip_capability", role=role, provider=provider, model=entry.model, lacks=sorted(lacking)
                     )
                     continue
-                bucket = self._buckets.get(provider, pspec.rpm)
+                # The loopback fake (e2e, never in prod: Settings.openrouter_base_url_effective) has no rate limit.
+                rpm = (
+                    100_000 if provider == "openrouter" and self._settings.openrouter_base_url_effective else pspec.rpm
+                )
+                bucket = self._buckets.get(provider, rpm)
                 if not await bucket.try_take():
                     rate_waits.append(bucket.wait_s())
                     continue
@@ -474,6 +485,7 @@ class LLMGateway:
                 call_kwargs = dict(extra)
                 if provider == "openrouter" and pdf:
                     call_kwargs["plugins"] = [{"id": "file-parser", "pdf": {"engine": cfg.budget.pdf_engine}}]
+                sent = ctx.fit(clean, entry.context_window) if ctx.fit is not None else clean
                 started = self._clock()
                 status: int | None = None
                 yielded = False
@@ -490,7 +502,7 @@ class LLMGateway:
                             and model_family(ctx.author_model) == model_family(entry.model)
                         ),
                     )
-                    async for chunk in self._call(model, provider, clean, stop, stream, call_kwargs, pspec.timeout_s):
+                    async for chunk in self._call(model, provider, sent, stop, stream, call_kwargs, pspec.timeout_s):
                         if not yielded:
                             yield served
                         yielded = True

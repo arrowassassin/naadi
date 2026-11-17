@@ -1,7 +1,9 @@
 import { Button, cx } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, BookOpen, Trash2 } from "lucide-react";
+import { ArrowLeft, BookOpen, Sparkles, Trash2 } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { askAssistant, useAssistantAvailable } from "../assistant/ask";
+import { useRegisterPageContext } from "../assistant/pageContext";
 import { useUiText } from "../copy/useUiText";
 import { beaconNotes, type Note, useNoteWriter, useUserId } from "./api";
 import { ExportNotePdf } from "./ExportPdf";
@@ -14,11 +16,14 @@ import { NoteSaveStatus } from "./SaveStatus";
 /**
  * The note sheet (Notes board, centre): a paper page with the note's title, where it is from, the TipTap editor
  * and Export PDF. Edits save after a short pause through the offline queue. Summarise / Turn into flashcards /
- * Quiz me are the assistant's (segment 14) and are not shown until it exists.
+ * Quiz me hand the note to the assistant (segment 14) and show only while it can answer (feature on, no exam);
+ * flashcards end in its confirm chip, and a quiz stays in the chat (never stored as questions).
  */
 export function NoteSheet({ note, onBack, onDeleted }: { note: Note; onBack?: () => void; onDeleted: () => void }) {
   const t = useUiText();
   const ids = useId();
+  const assistantOn = useAssistantAvailable();
+  useRegisterPageContext({ type: "note", id: note.id, title: note.title ?? undefined });
   const writer = useNoteWriter();
   const [title, setTitle] = useState(note.title ?? "");
   const [confirm, setConfirm] = useState(false);
@@ -136,6 +141,29 @@ export function NoteSheet({ note, onBack, onDeleted }: { note: Note; onBack?: ()
           placeholder={t("notes.editor_placeholder")}
         />
       )}
+      {assistantOn ? (
+        <div className="flex flex-wrap items-center gap-2" data-note-assistant="">
+          {(
+            [
+              ["summarise", "agent.chip.summarise_note"],
+              ["flashcards", "agent.chip.flashcards"],
+              ["quiz", "agent.chip.quiz_me"],
+            ] as const
+          ).map(([kind, key]) => (
+            <Button
+              key={kind}
+              variant="assistant"
+              icon={<Sparkles size={16} />}
+              onClick={() => {
+                flush();
+                askAssistant({ kind, context: { type: "note", id: note.id } });
+              }}
+            >
+              {t(key)}
+            </Button>
+          ))}
+        </div>
+      ) : null}
       <div className={cx("flex flex-wrap items-center gap-2 border-ground/15 border-t pt-4")}>
         <ExportNotePdf note={note} body={() => live.current ?? note.body} title={title} />
         {confirm ? (

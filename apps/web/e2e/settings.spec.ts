@@ -42,6 +42,8 @@ const GROUPS = [
   { id: "ink", path: "/settings/ink", name: "Pencil & ink" },
   { id: "plan", path: "/settings/plan", name: "Study plan" },
   { id: "appearance", path: "/settings/appearance", name: "Appearance" },
+  // S14: shown while the assistant feature is on (it is on for the e2e students).
+  { id: "assistant", path: "/settings/assistant", name: "Assistant" },
   { id: "data", path: "/settings/data", name: "Data & export" },
   { id: "about", path: "/settings/about", name: "About & privacy" },
 ] as const;
@@ -145,7 +147,7 @@ test.describe("Settings shell and groups", () => {
       const nav = page.getByRole("navigation", { name: "Settings sections" });
       const links = await nav.getByRole("link").evaluateAll((as) => as.map((a) => (a as HTMLAnchorElement).pathname));
       expect(links).toEqual(GROUPS.map((g) => g.path));
-      for (const name of ["Offline", "Assistant"]) await expect(nav.getByRole("link", { name })).toHaveCount(0);
+      await expect(nav.getByRole("link", { name: "Offline" })).toHaveCount(0);
 
       for (const g of GROUPS) {
         await page.goto(g.path);

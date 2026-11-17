@@ -10,6 +10,8 @@ import { Button, Chip, cx, ErrorState, Skeleton, Tile, TileLabel } from "@naadi/
 import { Link, Navigate } from "@tanstack/react-router";
 import { ArrowRight, Check, Circle, ExternalLink } from "lucide-react";
 import { useId, useState } from "react";
+import { askAssistant, useAssistantAvailable } from "../assistant/ask";
+import { useRegisterPageContext } from "../assistant/pageContext";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
@@ -385,6 +387,7 @@ function Cards({ today }: { today: TodayOut }) {
 
 function Suggestion({ s, assistant }: { s: CoachSuggestionOut; assistant: boolean }) {
   const t = useUiText();
+  const canAsk = useAssistantAvailable();
   const accept = useAcceptSuggestion();
   const dismiss = useDismissSuggestion();
   const [why, setWhy] = useState(false);
@@ -416,14 +419,10 @@ function Suggestion({ s, assistant }: { s: CoachSuggestionOut; assistant: boolea
         <Button variant="secondary" onClick={() => setWhy((v) => !v)} aria-expanded={why} aria-controls={whyId}>
           {t(why ? "today.coach_hide_why" : "today.coach_why")}
         </Button>
-        {assistant ? (
+        {assistant && canAsk ? (
           <Button
             variant="secondary"
-            onClick={() =>
-              window.dispatchEvent(
-                new CustomEvent("naadi:ask", { detail: { kind: "coach", id: s.id, facts: s.facts } }),
-              )
-            }
+            onClick={() => askAssistant({ kind: "ask", context: { type: "coach_suggestion", id: s.id } })}
           >
             {t("today.coach_ask")}
           </Button>
@@ -572,6 +571,7 @@ function Populated({ cached }: { cached: CachedToday }) {
 export function TodayPage() {
   const t = useUiText();
   const today = useToday();
+  useRegisterPageContext({ type: "today" });
 
   if (today.isPending) return <Loading />;
   if (!today.data) {

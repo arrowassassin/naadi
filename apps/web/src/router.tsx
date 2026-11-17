@@ -2,6 +2,7 @@ import { ErrorState } from "@naadi/ui";
 import { createRootRoute, createRoute, createRouter, Link, Outlet, redirect } from "@tanstack/react-router";
 import { adminRoutes } from "./admin/routes";
 import { agentDiagnosticsRoute } from "./agent/route";
+import { SettingsAssistantPage } from "./assistant/SettingsAssistantPage";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
 import { cardsRoute } from "./cards/routes";
@@ -151,6 +152,11 @@ const dataSettingsRoute = createRoute({
   component: DataExportPage,
 });
 const aboutRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/about", component: AboutPage });
+const assistantSettingsRoute = createRoute({
+  getParentRoute: () => settingsRoute,
+  path: "/assistant",
+  component: SettingsAssistantPage,
+});
 
 export const routeTree = rootRoute.addChildren([
   signInRoute,
@@ -176,6 +182,7 @@ export const routeTree = rootRoute.addChildren([
       appearanceRoute,
       dataSettingsRoute,
       aboutRoute,
+      assistantSettingsRoute,
     ]),
     agentDiagnosticsRoute(appRoute),
     adminGeneratedRoute(appRoute),

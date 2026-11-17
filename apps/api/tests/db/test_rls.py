@@ -205,8 +205,9 @@ CREATE_BLOCKED = ("push_subscriptions",)
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
 # Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and
-# set an item's confirmed_placement, nothing else.
-API_ROWS = ("study_plan_days", "coach_suggestions", "uploads", "ingest_items")
+# set an item's confirmed_placement, nothing else. Assistant threads (0033): the tutor graph writes the row and the
+# API deletes it with its Aegra thread; the student may only rename (title).
+API_ROWS = ("study_plan_days", "coach_suggestions", "uploads", "ingest_items", "assistant_threads")
 
 
 @pytest.mark.parametrize(

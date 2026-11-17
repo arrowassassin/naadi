@@ -20,8 +20,7 @@ export const SETTINGS_GROUPS = [
   { id: "appearance", to: "/settings/appearance", labelKey: "settings.nav_appearance" },
   // S18 registers Offline here once apps/web/src/offline/OfflineSettingsPage.tsx exists (and adds its route line):
   // { id: "offline", to: "/settings/offline", labelKey: "settings.nav_offline", flag: "offline" },
-  // S14 registers Assistant here once its memory UI exists:
-  // { id: "assistant", to: "/settings/assistant", labelKey: "settings.nav_assistant", flag: "assistant" },
+  { id: "assistant", to: "/settings/assistant", labelKey: "settings.nav_assistant", flag: "assistant" },
   { id: "data", to: "/settings/data", labelKey: "settings.nav_data", flag: "export" },
   { id: "about", to: "/settings/about", labelKey: "settings.nav_about" },
 ] as const satisfies readonly SettingsGroup[];

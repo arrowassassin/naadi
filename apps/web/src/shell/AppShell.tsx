@@ -3,6 +3,7 @@ import { cx, ErrorState, OfflineBanner, Skeleton } from "@naadi/ui";
 import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router";
 import { Search, UserRound } from "lucide-react";
 import { type RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { AssistantHost, AssistantTabButton } from "../assistant/AssistantHost";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
@@ -34,10 +35,18 @@ function useInsetVar(ref: RefObject<HTMLElement | null>, name: string, collapsed
     const apply = () =>
       root.style.setProperty(name, collapsed ? "0px" : `${Math.round(el.getBoundingClientRect().height)}px`);
     apply();
-    const ro = new ResizeObserver(apply);
+    // Written on the next frame: a synchronous write from the observer can resize what it observes (the assistant's
+    // Dock and sheet live in the bottom bar) and WebKit then reports "ResizeObserver loop completed".
+    let frame = 0;
+    const later = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(apply);
+    };
+    const ro = new ResizeObserver(later);
     ro.observe(el);
     window.addEventListener("resize", apply);
     return () => {
+      cancelAnimationFrame(frame);
       ro.disconnect();
       window.removeEventListener("resize", apply);
       root.style.setProperty(name, "0px");
@@ -137,6 +146,8 @@ export function AppShell() {
   const topRef = useRef<HTMLElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [slotEl, slotRef] = useState<HTMLDivElement | null>(null);
+  // Tablet and up: the assistant's Dock bar (S14) lives in the same bottom bar, so --shell-bottom covers it.
+  const [dockEl, dockRef] = useState<HTMLDivElement | null>(null);
   // The bottom slot exists only where the tab bar is shown (phone, < 640 px).
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 639.98px)");
@@ -242,7 +253,9 @@ export function AppShell() {
       <div
         ref={bottomRef}
         data-collapsed={penActive || undefined}
+        data-shell-bottom=""
         className={cx(
+          // Hidden from tablet up unless the assistant's Dock is in it (assistant/assistant.css).
           "fixed inset-x-0 bottom-0 z-20 px-3 pt-2 pb-[max(12px,env(safe-area-inset-bottom))] tablet:hidden",
           "transition-transform duration-(--duration-sheet) ease-out",
           // While the pen is down the tab bar slides away; keyboard focus inside brings it back.
@@ -251,7 +264,7 @@ export function AppShell() {
       >
         {/* One surface on phone: a page's own bottom row (the reader's page bar, via a portal into the slot)
             sits above the tabs inside it; the slot is collapsed while empty. */}
-        <div className="flex flex-col gap-1 rounded-[28px] border border-line-strong bg-bar/95 p-1.5 backdrop-blur-[18px]">
+        <div className="flex flex-col gap-1 rounded-[28px] border border-line-strong bg-bar/95 p-1.5 backdrop-blur-[18px] tablet:hidden">
           <div ref={slotRef} data-shell-bottom-slot="" className="empty:hidden" />
           <nav aria-label={t("shell.nav_tabs")} aria-busy={navLoading || undefined}>
             <ul className="m-0 flex list-none items-center gap-1 p-0">
@@ -260,15 +273,21 @@ export function AppShell() {
                   <Skeleton className="h-12 w-full rounded-pill" />
                 </li>
               ) : (
-                items.map((item) => (
-                  <TabItem
-                    key={item.id}
-                    to={item.path}
-                    label={item.label}
-                    icon={item.icon}
-                    current={isCurrent(item.path, pathname)}
-                  />
-                ))
+                items.flatMap((item, i) => {
+                  const tab = (
+                    <TabItem
+                      key={item.id}
+                      to={item.path}
+                      label={item.label}
+                      icon={item.icon}
+                      current={isCurrent(item.path, pathname)}
+                    />
+                  );
+                  // The assistant's centre button (Phone board), present only while it can answer.
+                  return i === Math.floor((items.length + (searchOn ? 1 : 0) + 1) / 2) - 1
+                    ? [tab, <AssistantTabButton key="assistant" />]
+                    : [tab];
+                })
               )}
               {searchOn ? (
                 <TabItem
@@ -282,7 +301,9 @@ export function AppShell() {
             </ul>
           </nav>
         </div>
+        <div ref={dockRef} data-assistant-dock="" className="hidden tablet:block" />
       </div>
+      <AssistantHost dockSlot={dockEl} onExamRoute={active !== null && onExamRoute(pathname, active)} />
     </div>
   );
 }

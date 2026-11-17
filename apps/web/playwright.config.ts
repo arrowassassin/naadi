@@ -106,6 +106,8 @@ const BUDGET_ZERO_PORT = port + 1;
  * such as the ink lab being admin-only (ink-gate.spec). Specs find it through E2E_PROD_URL.
  */
 const PROD_PORT = port + 2;
+/** Port of the scripted fake LLM the main server's tutor talks to (S14, tests/e2e_fake_llm.py). */
+const FAKE_LLM_PORT = port + 3;
 /**
  * The prod-mode API is served over https with a throwaway self-signed certificate for 127.0.0.1: production's
  * CSP carries upgrade-insecure-requests, which WebKit applies to http loopback too, so an http prod server
@@ -230,13 +232,37 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     ];
   }
   const migrate = `uv --directory ${api} run python -m naadi_api.agent.migrate_all`;
+  // S14: the main server's OpenRouter calls go to a scripted fake on loopback (tests/e2e_fake_llm.py), so the tutor
+  // streams deterministic answers, tool calls and confirms with no provider key; anything that is not the tutor
+  // gets 404 from it, exactly as with no provider. Skipped when E2E_LIVE_LLM=1 (real providers).
+  const fakeLlm: Record<string, string> =
+    process.env.E2E_LIVE_LLM === "1"
+      ? {}
+      : {
+          OPENROUTER_API_KEY: "e2e-fake",
+          NAADI_OPENROUTER_BASE_URL: `http://127.0.0.1:${FAKE_LLM_PORT}/api/v1`,
+          // The fake costs nothing: the free-tier daily cap (50 until the one-time top-up) would otherwise be spent
+          // after a few projects of the matrix. The budget-zero server keeps testing the cap itself.
+          OPENROUTER_DAILY_CAP: "100000",
+        };
   return [
+    ...(process.env.E2E_LIVE_LLM === "1"
+      ? []
+      : [
+          {
+            ...common,
+            command: `uv --directory ${api} run python tests/e2e_fake_llm.py --port ${FAKE_LLM_PORT}`,
+            url: `http://127.0.0.1:${FAKE_LLM_PORT}/health`,
+            timeout: 60_000,
+            env: { DEBUG: "false" },
+          },
+        ]),
     {
       ...common,
       command: `${migrate} && ${serve(port, "naadi_api.agent.host:app")}`,
       url: `${baseURL}/`,
       timeout: 180_000,
-      env: env(),
+      env: env(fakeLlm),
     },
     {
       ...common,

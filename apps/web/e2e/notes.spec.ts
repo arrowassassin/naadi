@@ -216,14 +216,14 @@ test.describe("highlights, notes and the selection toolbar", () => {
       const { errors, guard } = watchConsole(page);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-      // The toolbar on a selection: three words, Note, Card; no Ask while the assistant is off.
+      // The toolbar on a selection: three words, Note, Card, and Ask (the assistant is on: S14).
       const first = await selectWords(page, CONTENT, 0);
       const bar = toolbar(page);
       await expect(bar).toBeVisible();
       for (const name of ["Key fact", "Formula", "My mistake", "Note", "Card"]) {
         await expect(bar.getByRole("button", { name, exact: true })).toBeVisible();
       }
-      await expect(bar.getByRole("button", { name: "Ask" })).toHaveCount(0);
+      await expect(bar.getByRole("button", { name: "Ask" })).toHaveCount(1);
       expect(await limeCount(page)).toBeLessThanOrEqual(1);
       await snap(page, info, guard, "reader-toolbar");
       await expectNoAxeViolations(page);

@@ -797,13 +797,20 @@ create index costs_task_idx on public.costs (task_id) where task_id is not null;
 -- checkpoint_blobs, checkpoint_writes, checkpoint_migrations, store, store_migrations, alembic_version) are
 -- created by Aegra's own migrations at container start (naadi_api/agent/migrate_all.py) and are NOT documented
 -- here; 0005's public.naadi_secure_aegra_tables() enables RLS on them and revokes every client privilege.
+-- One row per Aegra thread (0033). Written by the tutor graph; the client may only rename it. Long-term memory
+-- lives in the Aegra store, namespace ("memories", user_id), never in a Naadi table.
 create table public.assistant_threads (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
-  title text,
-  created_at timestamptz not null default now()
+  title text check (title is null or char_length(title) between 1 and 120),
+  created_at timestamptz not null default now(),
+  aegra_thread_id uuid unique,
+  last_message_at timestamptz,
+  page_ref jsonb,  -- {route, type, id} only
+  memory_reflected_at timestamptz
 );
-create index assistant_threads_user_idx on public.assistant_threads (user_id, created_at desc);
+create index assistant_threads_user_recent_idx
+  on public.assistant_threads (user_id, (coalesce(last_message_at, created_at)) desc);
 
 create table public.generated_media (
   id uuid primary key default gen_random_uuid(),
@@ -1183,7 +1190,7 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 --   vault_documents
 --   costs
 --     + insert/update check: task_id is null or exists (select 1 from public.pathway_tasks p where p.id = costs.task_id)
---   assistant_threads
+--   assistant_threads  (API rows: client select; client update: title)
 --   kb_sources
 --   ingest_items
 --   generated_media  (client insert: id, user_id, kind, title, prompt, model, storage_path, width, height, duration_s; client update: title)

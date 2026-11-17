@@ -6,6 +6,7 @@ import { Eraser, PenLine, Plus } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnkiActions } from "../anki/AnkiActions";
 import { askAssistant, useAssistantAvailable } from "../assistant/ask";
+import { useRegisterPageContext } from "../assistant/pageContext";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { ContentRenderer } from "../content/ContentRenderer";
@@ -238,6 +239,8 @@ export function ReviewPage() {
   const scheduler = useMemo(() => (data ? new Scheduler(configFromServer(data.scheduler)) : null), [data]);
   const currentId = session?.queue[0] ?? null;
   const current = currentId ? session?.cards[currentId] : undefined;
+  // The assistant reads the card through the Cards API (attempt gate included); only its id goes as context.
+  useRegisterPageContext(current ? { type: "flashcard", id: current.id } : { type: "cards" });
   const memory = currentId ? session?.memory[currentId] : undefined;
   const [previewAt, setPreviewAt] = useState(() => new Date());
   const preview = useMemo(

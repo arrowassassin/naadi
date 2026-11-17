@@ -49,6 +49,9 @@ AEGRA_TABLES = (
     "checkpoint_migrations",
     "store",
     "store_migrations",
+    # The store's semantic index (segment 14, long-term memory): see naadi_api.assistant.store_index.
+    "store_vectors",
+    "vector_migrations",
 )
 
 
@@ -95,6 +98,21 @@ async def langgraph_setup(database_url: str) -> None:
     ) as conn:
         await AsyncPostgresSaver(conn).setup()
         await AsyncPostgresStore(conn).setup()
+
+
+async def store_vector_setup(database_url: str) -> None:
+    """The store's semantic index tables (segment 14: long-term memory, local embeddings), with the same index the
+    runtime opens. Runs AFTER Naadi's migrations: LangGraph's vector migration creates the `vector` extension when
+    it is missing, which on a fresh database would put it in `public` instead of `extensions` (0001)."""
+    from langgraph.store.postgres.aio import AsyncPostgresStore
+    from psycopg.rows import dict_row
+
+    from ..assistant.store_index import store_config
+
+    async with await psycopg.AsyncConnection.connect(
+        database_url, autocommit=True, prepare_threshold=None, row_factory=dict_row
+    ) as conn:
+        await AsyncPostgresStore(conn, index=store_config()["index"]).setup()
 
 
 def secure_aegra_tables(database_url: str) -> int:
@@ -164,6 +182,8 @@ def run(settings: Settings) -> int:
         asyncio.run(langgraph_setup(url))
         step = "naadi"
         before, after = migrate.upgrade(url)
+        step = "store_vectors"
+        asyncio.run(store_vector_setup(url))
         step = "secure_aegra_tables"
         secured = secure_aegra_tables(url)
         step = "rls_tripwire"

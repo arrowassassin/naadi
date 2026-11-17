@@ -107,7 +107,10 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
     tid = thread["thread_id"]
     run = await a.runs.create(tid, "ping", input={"trigger": "background"})
     await a.runs.join(tid, run["run_id"])
-    await a.store.put_item(["notes"], "k1", {"v": 1})
+    # The store holds long-term memory (S14): it is server-only, so no client can write or read it directly.
+    with pytest.raises(httpx.HTTPStatusError) as denied:
+        await a.store.put_item(["notes"], "k1", {"v": 1})
+    assert denied.value.response.status_code in (403, 404)
     probe = uuid.uuid4().hex
     await a.crons.create("ping", schedule="0 3 * * *", input={"trigger": "background"}, metadata={"probe": probe})
     with pg() as conn:
@@ -141,14 +144,12 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
 
     await expect_404(stream_other)
     assert all(t["thread_id"] != tid for t in await b.threads.search(limit=100))
-    assert (
-        await b.store.search_items(["notes"]) == {"items": []} or not (await b.store.search_items(["notes"]))["items"]
-    )
-    await expect_404(lambda: b.store.get_item(["notes"], "k1"))
+    for who in (a, b):
+        with pytest.raises(httpx.HTTPStatusError):
+            await who.store.search_items(["notes"])
     assert all(c["cron_id"] != cron["cron_id"] for c in await b.crons.search())
     # The owner still sees everything.
     assert (await a.threads.get(tid))["thread_id"] == tid
-    assert (await a.store.get_item(["notes"], "k1"))["value"] == {"v": 1}
     await a.crons.delete(cron["cron_id"])
 
 

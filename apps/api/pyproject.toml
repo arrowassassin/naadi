@@ -48,6 +48,8 @@ dependencies = [
     "pillow-heif==1.8.1",
     "faster-whisper==1.2.1",
     "av==18.1.0",  # faster-whisper 1.2.1 calls av.open(metadata_errors=...), removed in PyAV 19
+    "langmem==0.0.30",
+    "langchain==1.4.8",
 ]
 
 [dependency-groups]
@@ -91,7 +93,7 @@ plugins = ["pydantic.mypy"]
 packages = ["naadi_api"]
 
 [[tool.mypy.overrides]]
-module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*", "gradio_client.*", "pywebpush.*"]
+module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*", "gradio_client.*", "pywebpush.*", "langmem.*", "trustcall.*"]
 follow_untyped_imports = true
 
 [[tool.mypy.overrides]]
@@ -113,6 +115,8 @@ filterwarnings = [
     # Third-party deprecations we cannot act on (jsonpath via openrouter, supabase storage options).
     "ignore::DeprecationWarning:jsonpath.*",
     "ignore::DeprecationWarning:supabase.*",
+    # trustcall (via langmem) still imports Send from langgraph.constants.
+    "ignore:Importing Send from langgraph.constants:DeprecationWarning",
     "ignore:.*DEPRECATED.*This will be removed:DeprecationWarning",
 ]
 

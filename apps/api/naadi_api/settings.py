@@ -90,6 +90,9 @@ class Settings(BaseSettings):
     openrouter_daily_cap: int = 50
     openrouter_app_url: str | None = None
     openrouter_app_title: str = "Naadi"
+    # Test hook (e2e only): send OpenRouter calls to a scripted fake on loopback. Honoured only outside prod and
+    # only for a loopback http(s) URL (`openrouter_base_url_effective`); production always talks to OpenRouter.
+    openrouter_base_url: str | None = Field(default=None, validation_alias="NAADI_OPENROUTER_BASE_URL")
     nvidia_api_key: SecretStr | None = None
     tavily_api_key: SecretStr | None = None
     # Image/video generation (segment 15b): a fine-grained Hugging Face token with access to the private
@@ -200,6 +203,15 @@ class Settings(BaseSettings):
     def push_configured(self) -> bool:
         """True when the owner has provided the whole VAPID triple (public key, private key, contact)."""
         return bool(self.vapid_public_key and self.vapid_private_key and self.vapid_subject)
+
+    @property
+    def openrouter_base_url_effective(self) -> str | None:
+        if not self.openrouter_base_url or self.app_env == "prod":
+            return None
+        u = urlparse(self.openrouter_base_url)
+        if u.scheme in ("http", "https") and u.hostname in {"127.0.0.1", "localhost", "::1"}:
+            return self.openrouter_base_url.rstrip("/")
+        return None
 
     @property
     def is_local(self) -> bool:

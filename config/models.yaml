@@ -48,49 +48,51 @@ providers:
 # Each role is an ordered chain of {provider, model}; llm.py walks it on 429/5xx/timeout/410,
 # skipping providers whose rpm bucket or daily cap is exhausted, and any model whose SDK profile says it lacks
 # what the call needs (bound tools, image input, JSON output). Prefer newer models.
+# context_tokens: the model's context window (provider docs); the tutor sizes every prompt to it (segment 14).
+# An entry without it is sized as 32k.
 roles:
   tutor:                          # page-aware chat with tools; vision so lasso crops go straight in
     temperature: 0.3
     chain:
-      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # tools+json+image; ttft 1.5s, tool 1.4s
-      - {provider: openrouter, model: particle-ai/particle-1:free}           # tools+json+image; tool 1.4s
-      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # tools+json; 1M ctx
-      - {provider: nvidia, model: meta/muse-glimmer-30b}                     # tools; different family on NVIDIA
-      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}  # tools+json+image
-      - {provider: openrouter, model: openrouter/free}
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # tools+json+image; ttft 1.5s, tool 1.4s
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}           # tools+json+image; tool 1.4s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}    # tools+json; 1M ctx
+      - {provider: nvidia, model: meta/muse-glimmer-30b, context_tokens: 131072}                     # tools; different family on NVIDIA
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free, context_tokens: 131072}  # tools+json+image
+      - {provider: openrouter, model: openrouter/free, context_tokens: 32768}
   vision:                         # photos, handwriting, page images, diagrams
     chain:
-      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # read a test ABG image correctly in 1.1s
-      - {provider: openrouter, model: particle-ai/particle-1:free}
-      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # read a test ABG image correctly in 1.1s
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free, context_tokens: 131072}
   structured:                     # flashcards, plans, classification, JSON (validate with pydantic + retry once)
     chain:
-      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # json 2.1s
-      - {provider: openrouter, model: particle-ai/particle-1:free}           # json 2.0s
-      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # json 2.3s
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # json 2.1s
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}           # json 2.0s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}    # json 2.3s
   long_context:                   # chapter / PDF summaries
     chain:
-      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b}   # 1M ctx
-      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}    # 1M ctx
-      - {provider: openrouter, model: particle-ai/particle-1:free}           # 1M ctx
+      - {provider: nvidia, model: nvidia/nemotron-3.5-super-vl-120b-a12b, context_tokens: 1000000}   # 1M ctx
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}    # 1M ctx
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}           # 1M ctx
   author:                         # night-time question authoring (strongest reasoning; latency irrelevant)
     temperature: 0.7
     max_tokens: 6000              # a full item is ~1,200 tokens of JSON; the reasoning model needs room to think first
     chain:
-      - {provider: nvidia, model: nvidia/nemotron-3-ultra-550b-a55b}        # tools+json; correct tool use 2.5s
-      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free}
+      - {provider: nvidia, model: nvidia/nemotron-3-ultra-550b-a55b, context_tokens: 1000000}        # tools+json; correct tool use 2.5s
+      - {provider: openrouter, model: baidu/ernie-5.5-flash-preview:free, context_tokens: 1000000}
   reviewer:                       # blind solver: MUST be a different family from every author model (not NVIDIA, not Baidu)
     temperature: 0                # Part B: the blind solver runs at temperature 0
     max_tokens: 1200
     chain:
-      - {provider: openrouter, model: particle-ai/particle-1:free}
-      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free}
-      - {provider: openrouter, model: inclusionai/ling-3.2-flash:free}
+      - {provider: openrouter, model: particle-ai/particle-1:free, context_tokens: 1000000}
+      - {provider: openrouter, model: dots-studio/dots-3-note-preview:free, context_tokens: 131072}
+      - {provider: openrouter, model: inclusionai/ling-3.2-flash:free, context_tokens: 131072}
     if_family_equals_author: mark_review_not_independent
   router:                         # Python rules first; small fast model only when ambiguous
     chain:
-      - {provider: nvidia, model: nvidia/nemotron-3.5-lightning-30b-a3b}    # 0.3s probe
-      - {provider: openrouter, model: nvidia/nemotron-3.5-lightning:free}
+      - {provider: nvidia, model: nvidia/nemotron-3.5-lightning-30b-a3b, context_tokens: 131072}    # 0.3s probe
+      - {provider: openrouter, model: nvidia/nemotron-3.5-lightning:free, context_tokens: 131072}
   embeddings:                      # LOCAL, free, private, no rate limit
     engine: fastembed==0.9.1
     model: BAAI/bge-small-en-v1.5   # 384 dims, 67 MB, MIT

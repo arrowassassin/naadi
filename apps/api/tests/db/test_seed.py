@@ -162,7 +162,7 @@ def test_seeded_rows_have_the_contracted_shape(first_run: object, url: str) -> N
         assert src == (True, "https://developers.google.com/youtube/terms/developer-policies")
         cfg = c.execute("select value, updated_by from public.app_config where key = 'feature_flags'").fetchone()
         assert cfg is not None
-        assert cfg[0]["assistant"]["enabled"] is False
+        assert cfg[0]["assistant"]["enabled"] is True
         assert cfg[1] is None
 
 

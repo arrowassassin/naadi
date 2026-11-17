@@ -11,6 +11,8 @@ const ROOTS = [
   "admin",
   "agent",
   "anki",
+  "assistant",
+  "canvas",
   "cards",
   "content",
   "exam",

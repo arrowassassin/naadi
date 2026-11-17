@@ -1,5 +1,15 @@
 export { AssistantBar, type AssistantBarProps } from "./components/AssistantBar";
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./components/Button";
+export {
+  BarChart,
+  type ChartLabels,
+  type ChartProps,
+  type ChartSeries,
+  type ChartValue,
+  LineChart,
+  MAX_SERIES,
+  niceMax,
+} from "./components/Chart";
 export { Chip, type ChipProps, type ChipTone } from "./components/Chip";
 export { ErrorState, type ErrorStateProps } from "./components/ErrorState";
 export { HIGHLIGHT_LABEL, Highlight, type HighlightKind, type HighlightProps } from "./components/Highlight";

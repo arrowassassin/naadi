@@ -1,6 +1,6 @@
 import { useStream } from "@langchain/langgraph-sdk/react";
 import { useCallback, useMemo, useRef, useState } from "react";
-import { useAuth } from "../auth/session";
+import { accessToken, useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 
 /**
@@ -16,7 +16,12 @@ import { useOnlineStatus } from "../health/useOnlineStatus";
  * - `error`: the run failed or the runtime could not be reached (`error.status` + `error.requestId` let the
  *   surface explain it without showing raw response text).
  *
- * Every `start` begins a new thread, so a surface shows only the latest run.
+ * By default every `start` begins a new thread, so a surface shows only the latest run (the diagnostics panel).
+ * With `keepThread`, `start` continues the open thread (the tutor: one thread per conversation), `openThread`
+ * reopens a past one (its latest state is read from the checkpoint) and `continueRun` resumes a cancelled or
+ * failed run from its last checkpoint (after a session refresh, for instance).
+ *
+ * Every request carries a current access token (read at call time, so a refreshed session is used at once).
  */
 export type AgentPhase = "idle" | "streaming" | "interrupted" | "budget_exhausted" | "error" | "offline" | "exam_mode";
 
@@ -59,9 +64,20 @@ const STREAM_MODE = ["messages-tuple", "custom", "updates", "values"] as const;
 export interface UseAgentOptions {
   assistantId: string;
   examMode?: boolean;
+  /** Continue the open thread on `start` instead of beginning a new one. */
+  keepThread?: boolean;
+  /** Every custom event as received (the surface validates it), in addition to the generic block list. */
+  onCustomEvent?: (data: unknown) => void;
 }
 
-export function useAgent<State extends Record<string, unknown>>({ assistantId, examMode = false }: UseAgentOptions) {
+type SubmitOptions = Record<string, unknown>;
+
+export function useAgent<State extends Record<string, unknown>>({
+  assistantId,
+  examMode = false,
+  keepThread = false,
+  onCustomEvent,
+}: UseAgentOptions) {
   const auth = useAuth();
   const online = useOnlineStatus();
   const token = auth.status === "signed-in" ? auth.session.access_token : null;
@@ -71,12 +87,19 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
   const [threadId, setThreadId] = useState<string | null>(null);
   // The request id of the runtime's latest answer (both our middleware and Aegra's echo X-Request-ID).
   const lastRequestId = useRef<string | null>(null);
+  const customRef = useRef(onCustomEvent);
+  customRef.current = onCustomEvent;
 
   const headers = useMemo(() => (token ? { authorization: `Bearer ${token}` } : undefined), [token]);
   const callerOptions = useMemo(
     () => ({
       fetch: async (input: RequestInfo | URL, init?: RequestInit) => {
-        const res = await fetch(input, init);
+        // A current token per request: supabase-js refreshes it near expiry, and after an explicit refresh the
+        // next call uses the new one without waiting for a re-render.
+        const fresh = await accessToken();
+        const headers = new Headers(init?.headers);
+        if (fresh) headers.set("authorization", `Bearer ${fresh}`);
+        const res = await fetch(input, { ...init, headers });
         lastRequestId.current = res.headers.get("x-request-id");
         return res;
       },
@@ -97,6 +120,7 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
     onThreadId: setThreadId,
     fetchStateHistory: false,
     onCustomEvent: (data: unknown) => {
+      customRef.current?.(data);
       if (!isCustomEvent(data) || data.type !== "block" || !data.block) return;
       const block = data.block;
       if (
@@ -126,16 +150,41 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
   );
 
   const start = useCallback(
-    async (input: Partial<State>) => {
+    async (input: Partial<State>, options: SubmitOptions = {}) => {
       if (examMode || !online) return;
       setBlocks([]);
       setBudget(null);
       setRunError(null);
-      stream.switchThread(null); // a new run starts a new thread: the surface shows only the latest run
-      await submitSafely(input as Parameters<typeof stream.submit>[0], { streamMode: [...STREAM_MODE] });
+      if (!keepThread) stream.switchThread(null); // a new thread per run: the surface shows only the latest run
+      await submitSafely(
+        input as Parameters<typeof stream.submit>[0],
+        {
+          ...options,
+          streamMode: [...STREAM_MODE],
+        } as Parameters<typeof stream.submit>[1],
+      );
     },
-    [examMode, online, stream, submitSafely],
+    [examMode, keepThread, online, stream, submitSafely],
   );
+
+  /** Reopen a past thread (null: a new, empty conversation). Its state is read from the latest checkpoint. */
+  const openThread = useCallback(
+    (id: string | null) => {
+      setBlocks([]);
+      setBudget(null);
+      setRunError(null);
+      stream.switchThread(id);
+      setThreadId(id);
+    },
+    [stream],
+  );
+
+  /** Resume a cancelled or failed run of the open thread from its last checkpoint. */
+  const continueRun = useCallback(async () => {
+    if (examMode || !online || !threadId) return;
+    setRunError(null);
+    await submitSafely(null, { streamMode: [...STREAM_MODE] });
+  }, [examMode, online, threadId, submitSafely]);
 
   const resume = useCallback(
     async (value: unknown) => {
@@ -168,9 +217,13 @@ export function useAgent<State extends Record<string, unknown>>({ assistantId, e
     error: runError ?? (stream.error ? { status: statusOf(stream.error), requestId: lastRequestId.current } : null),
     interrupt: stream.interrupt?.value as Record<string, unknown> | undefined,
     values: stream.values,
+    messages: stream.messages,
+    isLoading: stream.isLoading,
     threadId,
     start,
     resume,
+    openThread,
+    continueRun,
     stop: stream.stop,
   };
 }

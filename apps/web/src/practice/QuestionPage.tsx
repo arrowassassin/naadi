@@ -3,6 +3,8 @@ import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { BookOpen, Check, ChevronLeft, ChevronRight, Flag, FlaskConical, PenLine, TriangleAlert } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { AskNaadiCard } from "../assistant/AskNaadiCard";
+import { useRegisterPageContext } from "../assistant/pageContext";
 import { ApiError } from "../auth/apiError";
 import { SaveAsFlashcard } from "../cards/hooks";
 import { htmlTextRuns, SafeHtml } from "../content/SafeHtml";
@@ -146,6 +148,8 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const shownAt = useRef(Date.now());
   const qid = view.question.id;
+  // Only the question id: whether it was answered (and what was chosen) the server reads from the attempts.
+  useRegisterPageContext({ type: "question", id: qid, question: { id: qid } });
 
   const [choice, setChoice] = useState<string | null>(null);
   const [pending, setPending] = useState<QueuedAttempt | null>(() =>
@@ -396,6 +400,8 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
       ) : null}
 
       <Explanation view={view} correct={view.attempt?.correct ?? null} />
+      {/* Qbank board: the assistant's coaching card, only once the attempt is graded. */}
+      {revealed && answered ? <AskNaadiCard context={{ type: "question", id: qid }} /> : null}
 
       {finished && tutor ? (
         <section className="flex flex-col gap-3 rounded-tile border border-line-soft bg-surface-1 p-6">

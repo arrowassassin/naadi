@@ -6,7 +6,7 @@ const ids = (gs: readonly SettingsGroup[]) => gs.map((g) => g.id);
 
 describe("settings groups registry", () => {
   it("lists the groups in the board's order", () => {
-    expect(ids(visibleGroups(ALL))).toEqual(["account", "ink", "plan", "appearance", "data", "about"]);
+    expect(ids(visibleGroups(ALL))).toEqual(["account", "ink", "plan", "appearance", "assistant", "data", "about"]);
   });
 
   it("hides a group whose flag is off and keeps the always-on ones", () => {
@@ -18,10 +18,11 @@ describe("settings groups registry", () => {
     expect(ids(visibleGroups(undefined))).toEqual(["account", "ink", "appearance", "about"]);
   });
 
-  it("does not show Offline or Assistant until their segments register them", () => {
+  it("does not show Offline until its segment registers it; Assistant (S14) follows its flag", () => {
     expect(ids(SETTINGS_GROUPS)).not.toContain("offline");
-    expect(ids(SETTINGS_GROUPS)).not.toContain("assistant");
     expect(ids(visibleGroups(ALL))).not.toContain("offline");
+    expect(ids(visibleGroups(ALL))).toContain("assistant");
+    expect(ids(visibleGroups({ ...ALL, assistant: false }))).not.toContain("assistant");
   });
 
   it("never lists a group whose route does not exist in this build", () => {

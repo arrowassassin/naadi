@@ -197,8 +197,9 @@ def test_migration_and_startup_secure_the_same_aegra_tables() -> None:
     from naadi_api import migrate
     from naadi_api.agent.migrate_all import AEGRA_TABLES
 
+    # The latest migration that redefines naadi_secure_aegra_tables() (0005, extended by 0033).
     spec = importlib.util.spec_from_file_location(
-        "m0005", migrate.MIGRATIONS_DIR / "versions" / "0005_agent_platform.py"
+        "m0033", migrate.MIGRATIONS_DIR / "versions" / "0033_assistant_threads.py"
     )
     assert spec is not None and spec.loader is not None
     mod = importlib.util.module_from_spec(spec)

@@ -45,9 +45,10 @@ def test_config_files_define_every_key(values: dict[str, Any]) -> None:
         "authoring",
         "ingest",
         "pathway",
+        "assistant",
         "ui_copy",
     }
-    assert set(PUBLIC_KEYS) == {"feature_flags", "ui.nav", "exam_rules", "ui_copy"}
+    assert set(PUBLIC_KEYS) == {"feature_flags", "ui.nav", "exam_rules", "ui_copy", "assistant"}
 
 
 def test_agent_keys_are_llm_config_shapes(values: dict[str, Any]) -> None:
@@ -69,7 +70,7 @@ def test_paid_model_id_is_rejected(values: dict[str, Any]) -> None:
 
 def test_seeded_defaults_match_the_contract(values: dict[str, Any]) -> None:
     flags = values["feature_flags"]
-    assert flags["assistant"]["enabled"] is False
+    assert flags["assistant"]["enabled"] is True
     assert flags["qbank"]["enabled"] is True and flags["qbank_timed"]["enabled"] is True
     assert flags["ink_lab"] == {"enabled": True, "audience": "admins", "everyone_outside_prod": True}
     nav_paths = [i["path"] for i in values["ui.nav"]]

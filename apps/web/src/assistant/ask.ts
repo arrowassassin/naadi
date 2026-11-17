@@ -2,21 +2,37 @@ import { useSyncExternalStore } from "react";
 
 /**
  * How a page hands a question to the assistant (segment 14) without importing it. The assistant registers one
- * handler while its panel can answer; pages show their "ask" affordances (the review page's Stuck? panel) only
- * while a handler is registered, so a button never does nothing.
+ * handler while it can answer (the `assistant` feature is on and no exam-mode session is active); pages show
+ * their "ask" affordances only while a handler is registered (`useAssistantAvailable()`), so a button never
+ * does nothing.
  *
- * Contract for segment 14: call `registerAssistantAsk(handler)` when the panel mounts and call the returned
- * function when it unmounts. `handler` opens the panel and answers `ask.kind` with `ask.context` as the page
- * context (for a flashcard: its id; read the card through the Cards API, which applies the attempt gate).
- * The assistant is disabled in exam mode: do not register there.
+ * - `kind: "ask"` without `draft` opens the panel focused, with the context attached as a chip; the student
+ *   types the question. With `draft`, the draft is put in the input (still not sent).
+ * - Every other kind sends at once ("hint", "explain", "summarise", "flashcards", "quiz").
+ * - Context carries ids only; the server reads the thing through its own API (attempt gate included). A
+ *   question context never says whether it was answered: the server checks the attempts.
  */
+export type AssistantAskKind = "hint" | "explain" | "ask" | "summarise" | "flashcards" | "quiz";
+
+export type AssistantSurfaceType = "section" | "note" | "question";
+
+export type AssistantAskContext =
+  | { type: "flashcard"; id: string }
+  | { type: "section"; id: string; chapter_id: string }
+  | { type: "selection"; surface: { type: AssistantSurfaceType; id: string }; text: string }
+  | { type: "question"; id: string }
+  | { type: "note"; id: string }
+  | { type: "coach_suggestion"; id: string }
+  | { type: "ink_lasso"; surface: { type: string; id: string }; png: Blob; text: string }
+  /** Segment 15, lasso → Ask on a PDF page: `id` is the ink surface `{upload_id}:{page}` (the server reads the
+   * page text through S15's `pdf_page` resolver); `image` is the circled region as a PNG (page + ink). */
+  | { type: "pdf_page"; id: string; image: Blob | null };
+
 export interface AssistantAsk {
-  kind: "hint" | "explain";
-  context:
-    | { type: "flashcard"; id: string }
-    /** Segment 15, lasso → Ask on a PDF page: `id` is the ink surface `{upload_id}:{page}` (read the page text
-     * through GET /api/ingest/uploads/{id}/pages/{n}); `image` is the circled region as a PNG (page + ink). */
-    | { type: "pdf_page"; id: string; image: Blob | null };
+  kind: AssistantAskKind;
+  context: AssistantAskContext;
+  /** Prefilled input text for `kind: "ask"` (never sent without the student). */
+  draft?: string;
 }
 
 export type AssistantAskHandler = (ask: AssistantAsk) => void;
@@ -47,6 +63,11 @@ export function askAssistant(ask: AssistantAsk): boolean {
   if (!handler) return false;
   handler(ask);
   return true;
+}
+
+/** Whether an ask of this kind is sent straight away (true) or opens the panel for the student to type. */
+export function sendsAtOnce(ask: AssistantAsk): boolean {
+  return ask.kind !== "ask";
 }
 
 function subscribe(cb: () => void): () => void {

@@ -1,6 +1,6 @@
-import type { InkEngine, InkEngineState } from "@naadi/ink";
+import type { InkEngine, InkEngineState, InkSelectionPayload } from "@naadi/ink";
 import { Button, cx } from "@naadi/ui";
-import { PenLine, TriangleAlert } from "lucide-react";
+import { PenLine, Sparkles, TriangleAlert } from "lucide-react";
 import { type ReactNode, useCallback, useRef, useState } from "react";
 import { useUiText } from "../../copy/useUiText";
 import { InkCanvas } from "../InkCanvas";
@@ -29,6 +29,8 @@ export interface SectionInkProps {
   offline?: boolean;
   /** The content (ContentRenderer, whose top-level blocks carry data-block-pm). */
   children: ReactNode;
+  /** Ask the assistant about a lasso selection (S14); the "Ask Naadi" action shows only when given. */
+  onAsk?: (payload: InkSelectionPayload) => void;
   className?: string;
 }
 
@@ -37,7 +39,7 @@ export interface SectionInkProps {
  * paragraph under each stroke so it survives reflow between iPad and phone, with the save state as icon + word and
  * a notice when the section text changed after the ink was drawn (the ink is never dropped).
  */
-export function SectionInk({ sectionId, doc, on, onToggle, offline, children, className }: SectionInkProps) {
+export function SectionInk({ sectionId, doc, on, onToggle, offline, children, className, onAsk }: SectionInkProps) {
   const t = useUiText();
   const engine = useRef<InkEngine | null>(null);
   const surface = useRef<HTMLDivElement>(null);
@@ -89,11 +91,22 @@ export function SectionInk({ sectionId, doc, on, onToggle, offline, children, cl
           tool={settings.tool}
           color={settings.color}
           onStateChange={onState}
+          onAsk={onAsk}
           label={t("ink.page.surface")}
         >
           {children}
         </InkCanvas>
       </div>
+      {on && state?.selection && onAsk ? (
+        <Button
+          variant="assistant"
+          icon={<Sparkles size={16} />}
+          className="min-h-11 self-start"
+          onClick={() => void engine.current?.askAboutSelection()}
+        >
+          {t("ink.select.ask")}
+        </Button>
+      ) : null}
       {on && state ? (
         <StickyInkToolbar
           placement="bottom"

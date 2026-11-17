@@ -196,7 +196,12 @@ test.describe("signed in as a student", () => {
       await page.goto("/");
       await expect(page.locator("[data-state=populated]")).toBeVisible();
       await expectChromeFor(page, width);
+      // The assistant (S14) lives in the bottom bar: on tablet and up its Dock is the bar, so it counts in
+      // --shell-bottom like the phone tab bar does. It mounts lazily, after the page is populated.
+      const dock = width >= 640 ? page.locator('[data-assistant="dock"]') : null;
+      if (dock) await expect(dock).toBeVisible();
       await expectNoHorizontalOverflow(page);
+      await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
       const insets = await page.evaluate(() => {
         const s = getComputedStyle(document.documentElement);
         return {
@@ -209,7 +214,7 @@ test.describe("signed in as a student", () => {
         expect(insets.bottom).toBeGreaterThan(48);
       } else {
         expect(insets.top).toBeGreaterThan(44);
-        expect(insets.bottom).toBe(0);
+        expect(insets.bottom).toBeGreaterThan(48); // the assistant's Dock (48 px targets) and its padding
       }
       await expectNoAxeViolations(page);
       await snap(page, info, consoleErrors, `split-${width}`);
@@ -224,6 +229,9 @@ test.describe("signed in as a student", () => {
     test.skip(width < 640, "the sticky top bar is tablet and up; phones use the bottom tab bar");
     await page.goto("/");
     await expect(page.locator("[data-state=populated]")).toBeVisible();
+    // Measure once the assistant's Dock (S14, mounted lazily into the bottom bar) has taken its space.
+    await expect(page.locator('[data-assistant="dock"]')).toBeVisible();
+    await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
     const header = page.locator("[data-shell] > header");
     // will-change: transform promotes the bar, so WebKit composites it instead of repainting the page per frame.
     await expect(header).toHaveCSS("will-change", "transform");

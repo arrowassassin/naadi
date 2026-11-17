@@ -113,6 +113,15 @@ import type {
   CreateWeakSpotBlockData,
   CreateWeakSpotBlockErrors,
   CreateWeakSpotBlockResponses,
+  DecideAssistantMemorySuggestionData,
+  DecideAssistantMemorySuggestionErrors,
+  DecideAssistantMemorySuggestionResponses,
+  DeleteAssistantMemoryData,
+  DeleteAssistantMemoryErrors,
+  DeleteAssistantMemoryResponses,
+  DeleteAssistantThreadData,
+  DeleteAssistantThreadErrors,
+  DeleteAssistantThreadResponses,
   DeleteCardData,
   DeleteCardErrors,
   DeleteCardResponses,
@@ -375,6 +384,12 @@ import type {
   ListAppConfigData,
   ListAppConfigErrors,
   ListAppConfigResponses,
+  ListAssistantMemoriesData,
+  ListAssistantMemoriesErrors,
+  ListAssistantMemoriesResponses,
+  ListAssistantThreadsData,
+  ListAssistantThreadsErrors,
+  ListAssistantThreadsResponses,
   ListAuthoringGapsData,
   ListAuthoringGapsErrors,
   ListAuthoringGapsResponses,
@@ -477,6 +492,9 @@ import type {
   RejectYoutubeCandidateData,
   RejectYoutubeCandidateErrors,
   RejectYoutubeCandidateResponses,
+  RenameAssistantThreadData,
+  RenameAssistantThreadErrors,
+  RenameAssistantThreadResponses,
   ReorderAdminChaptersData,
   ReorderAdminChaptersErrors,
   ReorderAdminChaptersResponses,
@@ -675,6 +693,13 @@ import {
   zCreateVaultUploadResponse,
   zCreateWeakSpotBlockBody,
   zCreateWeakSpotBlockResponse,
+  zDecideAssistantMemorySuggestionBody,
+  zDecideAssistantMemorySuggestionPath,
+  zDecideAssistantMemorySuggestionResponse,
+  zDeleteAssistantMemoryPath,
+  zDeleteAssistantMemoryResponse,
+  zDeleteAssistantThreadPath,
+  zDeleteAssistantThreadResponse,
   zDeleteCardPath,
   zDeleteCardResponse,
   zDeleteCostHeaders,
@@ -831,6 +856,9 @@ import {
   zListAdminTaxonomyQuery,
   zListAdminTaxonomyResponse,
   zListAppConfigResponse,
+  zListAssistantMemoriesResponse,
+  zListAssistantThreadsQuery,
+  zListAssistantThreadsResponse,
   zListAuthoringGapsResponse,
   zListAuthoringRunsResponse,
   zListBlocksQuery,
@@ -905,6 +933,9 @@ import {
   zRejectAdminQueueItemResponse,
   zRejectYoutubeCandidatePath,
   zRejectYoutubeCandidateResponse,
+  zRenameAssistantThreadBody,
+  zRenameAssistantThreadPath,
+  zRenameAssistantThreadResponse,
   zReorderAdminChaptersBody,
   zReorderAdminChaptersResponse,
   zReorderAdminSectionsBody,
@@ -2837,6 +2868,138 @@ export const importAnkiDeck = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zImportAnkiDeckResponse.parseAsync(data),
     url: "/api/anki/import",
     ...options,
+  });
+
+/**
+ * List Memories
+ */
+export const listAssistantMemories = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAssistantMemoriesData, ThrowOnError>,
+): RequestResult<ListAssistantMemoriesResponses, ListAssistantMemoriesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAssistantMemoriesResponses, ListAssistantMemoriesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAssistantMemoriesResponse.parseAsync(data),
+    url: "/api/assistant/memories",
+    ...options,
+  });
+
+/**
+ * Decide Suggestion
+ */
+export const decideAssistantMemorySuggestion = <ThrowOnError extends boolean = false>(
+  options: Options<DecideAssistantMemorySuggestionData, ThrowOnError>,
+): RequestResult<DecideAssistantMemorySuggestionResponses, DecideAssistantMemorySuggestionErrors, ThrowOnError> =>
+  (options.client ?? client).post<
+    DecideAssistantMemorySuggestionResponses,
+    DecideAssistantMemorySuggestionErrors,
+    ThrowOnError
+  >({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zDecideAssistantMemorySuggestionBody,
+          path: zDecideAssistantMemorySuggestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDecideAssistantMemorySuggestionResponse.parseAsync(data),
+    url: "/api/assistant/memories/suggestions/{key}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Delete Memory
+ */
+export const deleteAssistantMemory = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteAssistantMemoryData, ThrowOnError>,
+): RequestResult<DeleteAssistantMemoryResponses, DeleteAssistantMemoryErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteAssistantMemoryResponses, DeleteAssistantMemoryErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteAssistantMemoryPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteAssistantMemoryResponse.parseAsync(data),
+    url: "/api/assistant/memories/{key}",
+    ...options,
+  });
+
+/**
+ * List Threads
+ */
+export const listAssistantThreads = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAssistantThreadsData, ThrowOnError>,
+): RequestResult<ListAssistantThreadsResponses, ListAssistantThreadsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAssistantThreadsResponses, ListAssistantThreadsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAssistantThreadsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAssistantThreadsResponse.parseAsync(data),
+    url: "/api/assistant/threads",
+    ...options,
+  });
+
+/**
+ * Delete Thread
+ */
+export const deleteAssistantThread = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteAssistantThreadData, ThrowOnError>,
+): RequestResult<DeleteAssistantThreadResponses, DeleteAssistantThreadErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteAssistantThreadResponses, DeleteAssistantThreadErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteAssistantThreadPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteAssistantThreadResponse.parseAsync(data),
+    url: "/api/assistant/threads/{thread_id}",
+    ...options,
+  });
+
+/**
+ * Rename Thread
+ */
+export const renameAssistantThread = <ThrowOnError extends boolean = false>(
+  options: Options<RenameAssistantThreadData, ThrowOnError>,
+): RequestResult<RenameAssistantThreadResponses, RenameAssistantThreadErrors, ThrowOnError> =>
+  (options.client ?? client).patch<RenameAssistantThreadResponses, RenameAssistantThreadErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zRenameAssistantThreadBody,
+          path: zRenameAssistantThreadPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRenameAssistantThreadResponse.parseAsync(data),
+    url: "/api/assistant/threads/{thread_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });
 
 /**

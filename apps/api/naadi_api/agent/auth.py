@@ -155,3 +155,11 @@ async def assistant_writes_admin_only(ctx: Auth.types.AuthContext, value: Any) -
         return True
     log.info("agent_auth_denied", resource="assistants", action=ctx.action)
     return False
+
+
+@auth.on.store
+async def store_server_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    """The store holds long-term memory; clients reach it only through /api/assistant/memories and the tutor's
+    confirmed tools, never through the Agent Protocol /store routes."""
+    log.info("agent_auth_denied", resource="store", action=ctx.action)
+    return False

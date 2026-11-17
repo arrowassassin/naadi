@@ -5267,6 +5267,42 @@ export type MediaSource = {
 };
 
 /**
+ * MemoriesOut
+ */
+export type MemoriesOut = {
+  /**
+   * Items
+   */
+  items: Array<MemoryOut>;
+  /**
+   * Max Items
+   */
+  max_items: number;
+  /**
+   * Suggestions
+   */
+  suggestions: Array<MemoryOut>;
+};
+
+/**
+ * MemoryOut
+ */
+export type MemoryOut = {
+  /**
+   * Created At
+   */
+  created_at: string | null;
+  /**
+   * Fact
+   */
+  fact: string;
+  /**
+   * Key
+   */
+  key: string;
+};
+
+/**
  * MilestoneOut
  */
 export type MilestoneOut = {
@@ -6226,6 +6262,24 @@ export type PageOrder = {
    * Every page of the notebook exactly once, in the new order
    */
   page_ids: Array<string>;
+};
+
+/**
+ * PageRefOut
+ */
+export type PageRefOut = {
+  /**
+   * Id
+   */
+  id?: string | null;
+  /**
+   * Route
+   */
+  route?: string | null;
+  /**
+   * Type
+   */
+  type?: string | null;
 };
 
 /**
@@ -9278,6 +9332,16 @@ export type StudentItemsOut = {
 };
 
 /**
+ * SuggestionDecision
+ */
+export type SuggestionDecision = {
+  /**
+   * Decision
+   */
+  decision: "keep" | "discard";
+};
+
+/**
  * SystemCoverage
  */
 export type SystemCoverage = {
@@ -9614,6 +9678,53 @@ export type TaxonomyNode = {
    * Parent Id
    */
   parent_id: string | null;
+};
+
+/**
+ * ThreadOut
+ */
+export type ThreadOut = {
+  /**
+   * Aegra Thread Id
+   */
+  aegra_thread_id: string;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Last Message At
+   */
+  last_message_at: string | null;
+  page_ref: PageRefOut | null;
+  /**
+   * Title
+   */
+  title: string | null;
+};
+
+/**
+ * ThreadRename
+ */
+export type ThreadRename = {
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * ThreadsOut
+ */
+export type ThreadsOut = {
+  /**
+   * Items
+   */
+  items: Array<ThreadOut>;
 };
 
 /**
@@ -14903,6 +15014,305 @@ export type ImportAnkiDeckResponses = {
 };
 
 export type ImportAnkiDeckResponse = ImportAnkiDeckResponses[keyof ImportAnkiDeckResponses];
+
+export type ListAssistantMemoriesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/assistant/memories";
+};
+
+export type ListAssistantMemoriesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * assistant_off, or not found
+   */
+  404: ErrorResponse;
+  /**
+   * exam_active: a timed/exam session is running
+   */
+  409: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * assistant_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAssistantMemoriesError = ListAssistantMemoriesErrors[keyof ListAssistantMemoriesErrors];
+
+export type ListAssistantMemoriesResponses = {
+  /**
+   * Successful Response
+   */
+  200: MemoriesOut;
+};
+
+export type ListAssistantMemoriesResponse = ListAssistantMemoriesResponses[keyof ListAssistantMemoriesResponses];
+
+export type DecideAssistantMemorySuggestionData = {
+  body: SuggestionDecision;
+  path: {
+    /**
+     * Key
+     */
+    key: string;
+  };
+  query?: never;
+  url: "/api/assistant/memories/suggestions/{key}";
+};
+
+export type DecideAssistantMemorySuggestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * assistant_off, or not found
+   */
+  404: ErrorResponse;
+  /**
+   * exam_active: a timed/exam session is running
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * assistant_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DecideAssistantMemorySuggestionError =
+  DecideAssistantMemorySuggestionErrors[keyof DecideAssistantMemorySuggestionErrors];
+
+export type DecideAssistantMemorySuggestionResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DecideAssistantMemorySuggestionResponse =
+  DecideAssistantMemorySuggestionResponses[keyof DecideAssistantMemorySuggestionResponses];
+
+export type DeleteAssistantMemoryData = {
+  body?: never;
+  path: {
+    /**
+     * Key
+     */
+    key: string;
+  };
+  query?: never;
+  url: "/api/assistant/memories/{key}";
+};
+
+export type DeleteAssistantMemoryErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * assistant_off, or not found
+   */
+  404: ErrorResponse;
+  /**
+   * exam_active: a timed/exam session is running
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * assistant_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteAssistantMemoryError = DeleteAssistantMemoryErrors[keyof DeleteAssistantMemoryErrors];
+
+export type DeleteAssistantMemoryResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteAssistantMemoryResponse = DeleteAssistantMemoryResponses[keyof DeleteAssistantMemoryResponses];
+
+export type ListAssistantThreadsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Q
+     *
+     * Match in the title
+     */
+    q?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/assistant/threads";
+};
+
+export type ListAssistantThreadsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * assistant_off, or not found
+   */
+  404: ErrorResponse;
+  /**
+   * exam_active: a timed/exam session is running
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * assistant_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAssistantThreadsError = ListAssistantThreadsErrors[keyof ListAssistantThreadsErrors];
+
+export type ListAssistantThreadsResponses = {
+  /**
+   * Successful Response
+   */
+  200: ThreadsOut;
+};
+
+export type ListAssistantThreadsResponse = ListAssistantThreadsResponses[keyof ListAssistantThreadsResponses];
+
+export type DeleteAssistantThreadData = {
+  body?: never;
+  path: {
+    /**
+     * Thread Id
+     */
+    thread_id: string;
+  };
+  query?: never;
+  url: "/api/assistant/threads/{thread_id}";
+};
+
+export type DeleteAssistantThreadErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * assistant_off, or not found
+   */
+  404: ErrorResponse;
+  /**
+   * exam_active: a timed/exam session is running
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * assistant_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteAssistantThreadError = DeleteAssistantThreadErrors[keyof DeleteAssistantThreadErrors];
+
+export type DeleteAssistantThreadResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteAssistantThreadResponse = DeleteAssistantThreadResponses[keyof DeleteAssistantThreadResponses];
+
+export type RenameAssistantThreadData = {
+  body: ThreadRename;
+  path: {
+    /**
+     * Thread Id
+     */
+    thread_id: string;
+  };
+  query?: never;
+  url: "/api/assistant/threads/{thread_id}";
+};
+
+export type RenameAssistantThreadErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * assistant_off, or not found
+   */
+  404: ErrorResponse;
+  /**
+   * exam_active: a timed/exam session is running
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * assistant_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RenameAssistantThreadError = RenameAssistantThreadErrors[keyof RenameAssistantThreadErrors];
+
+export type RenameAssistantThreadResponses = {
+  /**
+   * Successful Response
+   */
+  200: ThreadOut;
+};
+
+export type RenameAssistantThreadResponse = RenameAssistantThreadResponses[keyof RenameAssistantThreadResponses];
 
 export type ListBlocksData = {
   body?: never;

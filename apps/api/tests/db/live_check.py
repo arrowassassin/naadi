@@ -286,6 +286,16 @@ def checks(head: str) -> list[Check]:
             " and has_table_privilege('authenticated', 'public.push_subscriptions', 'delete') as ok, '' as detail",
         ),
         Check(
+            "assistant threads are written by the tutor graph; clients may only rename them",
+            "select has_table_privilege('authenticated', 'public.assistant_threads', 'select')"
+            " and not has_any_column_privilege('authenticated', 'public.assistant_threads', 'insert')"
+            " and not has_table_privilege('authenticated', 'public.assistant_threads', 'delete')"
+            " and has_column_privilege('authenticated', 'public.assistant_threads', 'title', 'update')"
+            " and not has_column_privilege('authenticated', 'public.assistant_threads', 'aegra_thread_id', 'update')"
+            " and not has_column_privilege('authenticated', 'public.assistant_threads', 'page_ref', 'update')"
+            " as ok, '' as detail",
+        ),
+        Check(
             "attempts and blocks are written by the API only; attempts.correct is not client-readable",
             "select not has_any_column_privilege('authenticated', 'public.attempts', 'insert')"
             " and not has_table_privilege('authenticated', 'public.attempts', 'delete')"

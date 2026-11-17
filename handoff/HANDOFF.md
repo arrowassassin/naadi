@@ -131,7 +131,8 @@ Sources: [Supabase pricing](https://supabase.com/pricing), [Neon free-plan limit
 | Ink | perfect-freehand (+ custom Pointer Events canvas) | 1.2.3 |
 | PDF view / export | pdfjs-dist · pdf-lib | 6.5.438 · 1.17.1 |
 | Diagrams / math / code | mermaid · katex · shiki | 12.3.0 · 0.19.1 · 4.6.0 |
-| Markdown in chat | react-markdown · remark-gfm · rehype-katex | 10.1.0 · 4.0.1 · 7.0.1 |
+| Markdown in chat | streamdown · @streamdown/math · @streamdown/code (GFM, KaTeX via the app's katex through a pnpm override, Shiki; Mermaid through our own sandboxed mermaid renderer, not @streamdown/mermaid) | 2.7.1 · 1.0.3 · 2.0.0 |
+| Assistant UI | @assistant-ui/react · @assistant-ui/react-langgraph (external-store runtime over `useStream`; assistant-cloud never configured) | 0.15.32 · 0.14.38 |
 | Spaced repetition | ts-fsrs (FSRS-6, MIT) | 6.0.0 |
 | Offline | vite-plugin-pwa (Workbox) · dexie (IndexedDB) | 2.0.0 · 4.4.7 |
 | LangGraph client (optional) | @langchain/langgraph-sdk | 1.16.0 (not needed with our own SSE endpoint) |
@@ -147,6 +148,7 @@ Avoid **tldraw 5.6.0**: it shows a watermark unless you buy a Business License. 
 | Package | Version |
 |---|---|
 | fastapi · uvicorn[standard] · pydantic · sse-starlette | 0.163.1 · 0.54.0 · 2.14.3 · 3.7.0 |
+| langmem (long-term memory on the Aegra store + rolling summary) · langchain | 0.0.30 · 1.4.8 (segment 14; no mem0, no LiteLLM) |
 | langgraph · langgraph-checkpoint-postgres · langchain-core | 1.2.22 · 3.2.1 · 1.8.1 |
 | langchain-openai (OpenRouter via `base_url`) · langchain-tavily | 1.8.0 · 0.2.18 |
 | psycopg[binary,pool] · pgvector · sqlalchemy · alembic | 3.3.9 · 0.5.1 · 2.1.8 · 1.20.1 |

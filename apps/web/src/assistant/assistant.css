@@ -1,0 +1,100 @@
+/*
+ * The assistant's place in the shell. Plain CSS (not layered utilities) so it wins over the shell's
+ * `tablet:hidden` on the bottom bar without touching its classes.
+ */
+
+/* Tablet and up: the shell's bottom bar shows only while the assistant's Dock (or the sheet, or the exam
+   notice) is in it; its height then goes into --shell-bottom, so page content scrolls clear of it. */
+@media (min-width: 40rem) {
+  [data-shell-bottom]:has([data-assistant-dock] > *) {
+    display: block;
+  }
+}
+
+/* Side panel open (laptop, iPad landscape): the page makes room on the right; the nav pill centres over it. */
+@media (min-width: 40rem) {
+  html[data-assistant-panel] [data-shell-content],
+  html[data-assistant-panel] [data-shell] > header {
+    padding-right: calc(var(--assistant-panel-w, 0px) + 32px);
+  }
+}
+
+/* Streamdown's code blocks and controls, on the tokens (its built-in classes name shadcn colours). */
+.naadi-md [data-streamdown="code-block"] {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-inner);
+  background: var(--color-surface-2);
+}
+.naadi-md [data-streamdown="code-block-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 4px 12px;
+  color: var(--color-text-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-label-sm);
+}
+.naadi-md [data-streamdown="code-block-body"] {
+  overflow-x: auto;
+  padding: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+.naadi-md [data-streamdown="code-block-body"] pre {
+  margin: 0;
+  background: transparent;
+}
+.naadi-md [data-streamdown="code-block-copy-button"] {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text-2);
+}
+.naadi-md [data-streamdown="code-block-copy-button"]:hover {
+  background: var(--color-control);
+  color: var(--color-text);
+}
+.naadi-md math {
+  font-size: 1.05em;
+}
+.naadi-md math[display="block"] {
+  display: block;
+  overflow-x: auto;
+  margin: 4px 0;
+}
+
+/* ProseMirror's base rules (TipTap's injected <style> is off: the CSP allows no inline style elements). */
+.ProseMirror {
+  position: relative;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+  -webkit-user-modify: read-write-plaintext-only;
+}
+.ProseMirror li {
+  position: relative;
+}
+.ProseMirror[contenteditable="false"] {
+  -webkit-user-modify: read-only;
+}
+.ProseMirror-hideselection *::selection {
+  background: transparent;
+}
+.ProseMirror-separator {
+  display: inline;
+  border: none;
+  margin: 0;
+}
+.ProseMirror-gapcursor {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+}
+.ProseMirror:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}

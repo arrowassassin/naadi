@@ -7,6 +7,8 @@ httpx==0.28.1
 langgraph==1.2.22
 langgraph-checkpoint-postgres==3.2.1
 langchain-core==1.8.1
+langchain==1.4.8                 # S14: langmem dependency (SummarizationMiddleware lives here)
+langmem==0.0.30                  # S14: long-term memory on the Aegra store + rolling conversation summary
 langchain-openai==1.8.0          # ChatOpenAI(base_url="https://openrouter.ai/api/v1")
 langchain-tavily==0.2.18
 langchain-text-splitters==1.1.3

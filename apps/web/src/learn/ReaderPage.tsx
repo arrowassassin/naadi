@@ -13,6 +13,8 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
+import { askAssistant, useAssistantAvailable } from "../assistant/ask";
+import { useRegisterPageContext } from "../assistant/pageContext";
 import { ApiError } from "../auth/apiError";
 import { CardDialog, type CardDraft } from "../cards/CardDialog";
 import { ContentRenderer } from "../content/ContentRenderer";
@@ -144,9 +146,16 @@ function useReaderBarVar(ref: RefObject<HTMLElement | null>, inPage: boolean): v
     const apply = () =>
       root.style.setProperty("--reader-bar", `${Math.round(el.getBoundingClientRect().height + 12)}px`);
     apply();
-    const ro = new ResizeObserver(apply);
+    let frame = 0;
+    // Deferred a frame: writing the variable inside the observer's callback can resize what it observes (WebKit
+    // reports "ResizeObserver loop completed with undelivered notifications" as a page error).
+    const ro = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(apply);
+    });
     ro.observe(el);
     return () => {
+      cancelAnimationFrame(frame);
       ro.disconnect();
       root.style.setProperty("--reader-bar", "0px");
     };
@@ -185,6 +194,12 @@ function Reader({
   const [reportOpen, setReportOpen] = useState(false);
   // Ink on (12b): the ink toolbar takes the page bar's place, so the view keeps one lime action.
   const [inkOn, setInkOn] = useState(false);
+  const canAsk = useAssistantAvailable();
+  useRegisterPageContext(
+    section
+      ? { type: "section", id: section.id, title: section.heading, chapter_id: detail.id }
+      : { type: "page", title: detail.title },
+  );
   // Page notes (segment 13): the panel beside the page (laptop) or a sheet; its ink also takes the page bar's place.
   const [notesOpen, setNotesOpen] = useState(readNotesOpen);
   const [panelInk, setPanelInk] = useState(false);
@@ -489,6 +504,24 @@ function Reader({
                     if (on) setPanelInk(false);
                   }}
                   offline={fromCache}
+                  onAsk={
+                    canAsk
+                      ? (p) => {
+                          // "Circle to ask": the lasso crop goes as an image attachment (no PNG: nothing to send).
+                          if (p.png) {
+                            askAssistant({
+                              kind: "ask",
+                              context: {
+                                type: "ink_lasso",
+                                surface: { type: "section", id: section.id },
+                                png: p.png,
+                                text: "",
+                              },
+                            });
+                          }
+                        }
+                      : undefined
+                  }
                 >
                   <div ref={rootRef} className="contents">
                     {/* Segment 13: highlights and the selection toolbar (Highlight / Note / Card; Ask with S14). */}
@@ -508,6 +541,19 @@ function Reader({
                       }}
                       onCard={(sel) =>
                         setCardDraft({ front_text: "", back_text: sel.anchor.quote, section_id: section.id })
+                      }
+                      onAsk={
+                        canAsk
+                          ? (sel) =>
+                              askAssistant({
+                                kind: "ask",
+                                context: {
+                                  type: "selection",
+                                  surface: { type: "section", id: section.id },
+                                  text: sel.anchor.quote,
+                                },
+                              })
+                          : undefined
                       }
                     >
                       {(decorate) => (

@@ -46,6 +46,18 @@
   --color-mark-amber: #ffcb85; /* "my mistake" highlight */
   --color-ink-violet: #5b45d6; /* pen colour on paper */
 
+  /* ── Colour: chart series (assistant charts on violet ground / surface 1). Fixed order, never cycled;
+     validated as a set (dark band, adjacent CVD ΔE ≥ 8.4, normal-vision ΔE ≥ 19.3, ≥ 3:1 on #17132e and
+     #0e0f12). Lime and amber stay reserved for their roles and are not series colours. ── */
+  --color-series-1: #9085e9;
+  --color-series-2: #d95926;
+  --color-series-3: #199e70;
+  --color-series-4: #c98500;
+  --color-series-5: #d55181;
+  --color-series-6: #0ca30c;
+  --color-series-7: #3987e5;
+  --color-series-8: #e66767;
+
   /* ── Type ── */
   --font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;

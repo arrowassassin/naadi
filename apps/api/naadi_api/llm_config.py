@@ -64,9 +64,19 @@ class ProviderSpec(_Strict):
     probe_timeout_s: float | None = Field(default=None, gt=0, le=120)
 
 
+# A chain entry without `context_tokens` is sized as if it had this window (conservative; segment 14).
+DEFAULT_CONTEXT_TOKENS = 32_768
+
+
 class ChainEntry(_Strict):
     provider: ProviderName
     model: str = Field(min_length=3, max_length=200)
+    # The model's context window in tokens (provider docs); the tutor sizes every prompt to it.
+    context_tokens: int | None = Field(default=None, ge=4_096, le=4_194_304)
+
+    @property
+    def context_window(self) -> int:
+        return self.context_tokens or DEFAULT_CONTEXT_TOKENS
 
 
 class RoleSpec(_Strict):

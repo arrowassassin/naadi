@@ -43,6 +43,10 @@
     "ingest": {
       "path": "./naadi_api/agent/graphs/ingest.py:graph",
       "description": "Universal ingest: one background run per file, link or paste -> sniff and secure -> local sensitivity gate (Vault prompt) -> sandboxed extraction, vision for scans -> understand -> confirm placement -> place -> index"
+    },
+    "tutor": {
+      "path": "./naadi_api/agent/graphs/tutor.py:graph",
+      "description": "Page-aware study assistant: guard (server exam mode) -> tutor with tools (confirm interrupts) -> compose"
     }
   },
   "auth": {

@@ -182,7 +182,11 @@ def _wrap_lifespan(app: FastAPI) -> None:
     async def lifespan(a: Any) -> AsyncIterator[None]:
         from .runtime import close_runtime, init_runtime
 
-        await init_runtime(get_settings())
+        rt = await init_runtime(get_settings())
+        from ..assistant import memory as assistant_memory
+        from ..llm_privacy import PrivacyDirectory
+
+        assistant_memory.set_privacy(PrivacyDirectory(rt.db))
         try:
             async with inner(a):
                 await ensure_system_crons()
@@ -206,6 +210,13 @@ def build() -> FastAPI:
     if get_auth_instance() is None:
         raise RuntimeError("Aegra auth handler did not load: refusing to serve with a shared anonymous identity")
     cron_scheduler._validate_cron_user = validate_cron_user  # Aegra's documented liveness hook
+    # Long-term memory (S14): the store's semantic index uses the local fastembed engine. aegra.json can only name
+    # a hosted embeddings provider, so the loader Aegra reads when it opens the store is replaced here.
+    import aegra_api.core.database as aegra_database
+
+    from ..assistant.store_index import store_config
+
+    aegra_database.load_store_config = store_config  # type: ignore[assignment,attr-defined]
     # The agent auth handler uses the app's own verifier and account directory (one DB pool, one cache).
     from . import auth as agent_auth
     from .auth import AuthUnavailableAs503

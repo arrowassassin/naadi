@@ -27,7 +27,7 @@ from starlette.exceptions import HTTPException
 from .auth import AdminUser, get_account_user
 from .auth_limits import RateLimiter
 from .db import Database, DatabaseNotConfigured
-from .embeddings.engine import Engine, ModelsNotCached, spec_from_config
+from .embeddings.engine import Engine, ModelsNotCached, get_engine
 from .embeddings.index import index_counts
 from .embeddings.jobs import IndexJobs, register_index_jobs
 from .embeddings.query import Hit, Scope, search_local
@@ -383,7 +383,8 @@ def install_search_routes(app: Any, engine: Engine | None = None) -> None:
         limiters.setdefault(k, v)
     app.state.rate_limiters = limiters
     db: Database = app.state.db
-    eng = engine or Engine(spec_from_config(app.state.settings.config_dir))
+    # One process-wide engine (models load once): the tutor graph's search_knowledge uses the same instance.
+    eng = engine or get_engine(app.state.settings.config_dir)
     app.state.embedding_jobs = IndexJobs(db, eng)
     register_index_jobs(app.state.embedding_jobs)
     app.include_router(router)

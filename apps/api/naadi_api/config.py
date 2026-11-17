@@ -40,6 +40,7 @@ class ChainEntry(BaseModel):
     model_config = ConfigDict(extra="forbid")
     provider: ProviderName
     model: str = Field(min_length=3)
+    context_tokens: int | None = Field(default=None, ge=4_096, le=4_194_304)
 
 
 class RoleConfig(_Loose):

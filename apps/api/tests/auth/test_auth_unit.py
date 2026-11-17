@@ -413,7 +413,7 @@ def test_nav_returns_only_enabled_items(auth_client: Callable[..., TestClient], 
     assert [i["id"] for i in body["items"]] == ["today", "learn", "practice", "notes", "plan", "pathway"]
     assert body["items"][0]["path"] == "/"
     # no database in unit tests: app_config's logged fail-safe (config/app_config.yaml) answers
-    assert body["features"]["assistant"] is False
+    assert body["features"]["assistant"] is True
     assert body["features"]["today"] is True
     assert body["source"] == "file_fallback"
 

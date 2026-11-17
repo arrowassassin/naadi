@@ -3,6 +3,7 @@ import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { FileText, Search as SearchIcon, X } from "lucide-react";
 import { type RefObject, useEffect, useId, useMemo, useRef, useState } from "react";
+import { useRegisterPageContext } from "../assistant/pageContext";
 import { ApiError } from "../auth/apiError";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { type Scope, useLocalSearch, useWebSearch } from "./api";
@@ -277,6 +278,7 @@ export function SearchPage({ search }: { search: SearchRouteSearch }) {
   }, []);
 
   const q = committed.length >= MIN_CHARS ? committed : "";
+  useRegisterPageContext({ type: "search", title: q || null });
   const webOnly = scope === "web";
   const local = useLocalSearch(q, webOnly ? "all" : scope, online && !webOnly);
   const askedWeb = webOnly || search.web === 1;

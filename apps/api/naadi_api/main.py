@@ -11,6 +11,7 @@ from starlette.middleware.gzip import GZipMiddleware
 from . import __version__, api
 from .admin import install_admin_routes
 from .anki.routes import install_anki_routes
+from .assistant.routes import install_assistant_routes
 from .auth import AccountDirectory, TokenVerifier, install_auth
 from .auth_limits import RateLimiter, register_limiters
 from .auth_routes import install_auth_routes
@@ -173,6 +174,7 @@ def create_app(
     install_export_routes(app)
     install_ingest_routes(app)
     install_pathway_routes(app)
+    install_assistant_routes(app)
     install_app_config(app, settings)
     install_generation_routes(app)  # needs app.state.app_config
     install_admin_routes(app)

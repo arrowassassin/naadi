@@ -1879,6 +1879,24 @@ export const zDueResponse = z.object({
 });
 
 /**
+ * MemoryOut
+ */
+export const zMemoryOut = z.object({
+  created_at: z.iso.datetime().nullable(),
+  fact: z.string(),
+  key: z.string(),
+});
+
+/**
+ * MemoriesOut
+ */
+export const zMemoriesOut = z.object({
+  items: z.array(zMemoryOut),
+  max_items: z.int(),
+  suggestions: z.array(zMemoryOut),
+});
+
+/**
  * MilestoneOut
  */
 export const zMilestoneOut = z.object({
@@ -2198,6 +2216,15 @@ export const zPageCreate = z.object({
  */
 export const zPageOrder = z.object({
   page_ids: z.array(z.uuid()).max(1000),
+});
+
+/**
+ * PageRefOut
+ */
+export const zPageRefOut = z.object({
+  id: z.string().nullish(),
+  route: z.string().nullish(),
+  type: z.string().nullish(),
 });
 
 /**
@@ -3674,6 +3701,13 @@ export const zStudentItemsOut = z.object({
 });
 
 /**
+ * SuggestionDecision
+ */
+export const zSuggestionDecision = z.object({
+  decision: z.enum(["keep", "discard"]),
+});
+
+/**
  * SystemCoverage
  */
 export const zSystemCoverage = z.object({
@@ -3883,6 +3917,32 @@ export const zTaxonomyNode = z.object({
  */
 export const zTaxonomyList = z.object({
   items: z.array(zTaxonomyNode),
+});
+
+/**
+ * ThreadOut
+ */
+export const zThreadOut = z.object({
+  aegra_thread_id: z.uuid(),
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  last_message_at: z.iso.datetime().nullable(),
+  page_ref: zPageRefOut.nullable(),
+  title: z.string().nullable(),
+});
+
+/**
+ * ThreadRename
+ */
+export const zThreadRename = z.object({
+  title: z.string().min(1).max(120),
+});
+
+/**
+ * ThreadsOut
+ */
+export const zThreadsOut = z.object({
+  items: z.array(zThreadOut),
 });
 
 /**
@@ -5347,6 +5407,61 @@ export const zImportAnkiDeckQuery = z.object({
  * Successful Response
  */
 export const zImportAnkiDeckResponse = zImportReport;
+
+/**
+ * Successful Response
+ */
+export const zListAssistantMemoriesResponse = zMemoriesOut;
+
+export const zDecideAssistantMemorySuggestionBody = zSuggestionDecision;
+
+export const zDecideAssistantMemorySuggestionPath = z.object({
+  key: z.string().length(36),
+});
+
+/**
+ * Successful Response
+ */
+export const zDecideAssistantMemorySuggestionResponse = z.void();
+
+export const zDeleteAssistantMemoryPath = z.object({
+  key: z.string().length(36),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteAssistantMemoryResponse = z.void();
+
+export const zListAssistantThreadsQuery = z.object({
+  q: z.string().max(120).nullish(),
+  limit: z.int().gte(1).lte(100).optional().default(50),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAssistantThreadsResponse = zThreadsOut;
+
+export const zDeleteAssistantThreadPath = z.object({
+  thread_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteAssistantThreadResponse = z.void();
+
+export const zRenameAssistantThreadBody = zThreadRename;
+
+export const zRenameAssistantThreadPath = z.object({
+  thread_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zRenameAssistantThreadResponse = zThreadOut;
 
 export const zListBlocksQuery = z.object({
   limit: z.int().gte(1).lte(100).optional().default(30),

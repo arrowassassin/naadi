@@ -164,7 +164,10 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("amount", 1010),
     ),
     UserTable(
-        "assistant_threads", lambda u, s: {"id": _id(), "user_id": u, "title": "Murmurs"}, ("user_id",), ("title", "x")
+        "assistant_threads",
+        lambda u, s: {"id": _id(), "user_id": u, "title": "Murmurs", "aegra_thread_id": _id()},
+        ("user_id",),
+        ("title", "x"),
     ),
     UserTable(
         "kb_sources",

@@ -97,7 +97,7 @@ def test_public_config(client: TestClient) -> None:
     body = r.json()
     assert {"features", "nav", "exam_rules", "ui_copy", "supabase_url"} <= set(body)
     assert body["features"]["today"] is True
-    assert body["features"]["assistant"] is False
+    assert body["features"]["assistant"] is True  # S14 shipped (exam mode still silences it)
     assert body["features"]["ink_lab"] is False  # admins only in prod
     assert [i["id"] for i in body["nav"]] == ["today", "learn", "practice", "notes", "plan", "pathway"]
     assert body["exam_rules"]["modes"]["exam"]["assistant"] is False
@@ -113,7 +113,7 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     admin = _h(key, users["admin"], ADMIN_EMAIL)
     student = _h(key, users["student"], "student@example.com")
     me = client.get("/api/me", headers=student).json()
-    assert me["features"]["assistant"] is False
+    assert me["features"]["assistant"] is True
     assert me["features"]["ink_lab"] is False  # prod: admins only
     assert client.get("/api/me", headers=admin).json()["features"]["ink_lab"] is True
     nav = client.get("/api/nav", headers=student).json()
@@ -250,8 +250,8 @@ def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: 
 
     listed = client.get("/api/admin/config", headers=admin).json()["items"]
     assert {i["key"]: i["source"] for i in listed} == {i["key"]: "db" for i in listed}
-    # fsrs, plan, coach, ink_ocr, planner (S16), pathway (S17), youtube, authoring, ingest (S15)
-    assert len(listed) == 20
+    # fsrs, plan, coach, ink_ocr, planner (S16), pathway (S17), youtube, authoring, ingest (S15), assistant (S14)
+    assert len(listed) == 21
 
     entry = client.get("/api/admin/config/ui_copy", headers=admin).json()
     assert entry["source"] == "db"
