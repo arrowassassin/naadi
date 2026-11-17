@@ -22,7 +22,7 @@ log = get_logger("naadi.health")
 
 COMPONENTS = ("database", "storage", "openrouter", "nvidia", "tavily")
 # Reported only when registered (the Aegra host adds `agent_runtime`; a plain API process has no runtime).
-OPTIONAL_COMPONENTS = ("agent_runtime", "generation")
+OPTIONAL_COMPONENTS = ("agent_runtime", "generation", "backup")
 FAILURE_TTL_CAP_S = 15.0
 
 
@@ -69,7 +69,8 @@ class HealthService:
                 outcome = await check.run()
             latency = round((time.perf_counter() - started) * 1000, 1)
         except NotConfigured as exc:
-            outcome, latency, configured = CheckOutcome(exc.status, f"Not configured: {exc}"), None, False
+            outcome = CheckOutcome(exc.status, f"Not configured: {exc}", backup=exc.backup)
+            latency, configured = None, False
         except TimeoutError:
             outcome = CheckOutcome("down", f"Timed out after {check.timeout_s:g} s")
             latency = round((time.perf_counter() - started) * 1000, 1)
@@ -90,6 +91,7 @@ class HealthService:
             models=outcome.models,
             agent=outcome.agent,
             generation=outcome.generation,
+            backup=outcome.backup,
         )
 
     async def component(self, name: str) -> ComponentHealth:
@@ -124,6 +126,11 @@ def overall_status(comps: dict[str, ComponentHealth]) -> Status:
     if comps["database"].status == "down":
         return "down"
     # `generation` is optional and a ZeroGPU quota pause is expected, so it never degrades the whole app.
-    if any(c.status != "ok" for name, c in comps.items() if name != "generation"):
+    # `backup` before the owner configures it is a known, deferred gap (shown on the panel), not an outage.
+    if any(
+        c.status != "ok"
+        for name, c in comps.items()
+        if name != "generation" and not (name == "backup" and not c.configured)
+    ):
         return "degraded"
     return "ok"

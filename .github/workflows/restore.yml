@@ -1,0 +1,98 @@
+# Weekly restore test (segment 22): back up a seeded database with the real backup code, restore it into a second,
+# fresh supabase/postgres, and require the Alembic head, every live_check schema/RLS/Storage-policy check and an
+# exact row-count match on every table. Real backups (the private HF dataset) are encrypted to the owner's key and
+# are never read here: this proves the mechanism, the owner's manual drill (docs/RUNBOOK.md "Restore") the data.
+# Also runs when the backup/restore code or the migrations change.
+name: restore
+
+on:
+  schedule:
+    - cron: "29 4 * * 0" # Sundays 04:29 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - apps/api/naadi_api/ops/**
+      - apps/api/scripts/backup.py
+      - apps/api/scripts/restore.py
+      - apps/api/migrations/**
+      - apps/api/naadi_api/agent/migrate_all.py
+      - .github/workflows/restore.yml
+
+concurrency:
+  group: restore-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.13"
+  UV_VERSION: "0.11.32"
+  PG_BIN: /usr/lib/postgresql/17/bin
+  # Throwaway service-container credentials, not secrets.
+  SOURCE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+  TARGET_DATABASE_URL: postgresql://postgres:postgres@localhost:5433/postgres
+
+jobs:
+  restore:
+    name: backup -> restore into a fresh database
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    services:
+      source:
+        image: supabase/postgres:17.11.0.019
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres -h localhost"
+          --health-interval 5s --health-timeout 5s --health-retries 30
+      target:
+        image: supabase/postgres:17.11.0.019
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres -h localhost"
+          --health-interval 5s --health-timeout 5s --health-retries 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - run: uv --directory apps/api sync --frozen
+      - name: PostgreSQL 17 client
+        run: |
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y -q postgresql-client-17
+      - name: Target is a fresh "project" (Supabase Auth and Storage schemas, nothing of Naadi's)
+        run: |
+          NAADI_PG_PORT=5433 apps/api/tests/auth/auth_stack.sh migrate
+          NAADI_PG_PORT=5433 NAADI_STORAGE_CONTAINER=storage-restore-target apps/api/tests/db/stack.sh storage
+          docker rm -f storage-restore-target
+      - name: Source like the Space (auth + storage schemas, migrate_all, seed, a user)
+        env:
+          NAADI_PG_PORT: "5432"
+          NAADI_STORAGE_URL: http://localhost:5000
+        working-directory: apps/api
+        run: |
+          tests/auth/auth_stack.sh migrate
+          NAADI_STORAGE_CONTAINER=storage-restore-source tests/db/stack.sh storage
+          DATABASE_URL="$SOURCE_URL" uv run --frozen python -m naadi_api.agent.migrate_all
+          DATABASE_URL="$SOURCE_URL" SUPABASE_SERVICE_ROLE_KEY="$(uv run --frozen python -c 'from tests.db.storage import local_service_key; print(local_service_key())')" \
+            uv run --frozen python scripts/seed.py --data ../../data --config ../../config
+          psql "$SOURCE_URL" -v ON_ERROR_STOP=1 -qc "insert into auth.users (id, email, aud, role) values (gen_random_uuid(), 'restore-ci@example.com', 'authenticated', 'authenticated')"
+      - name: Back up (the nightly job's code, to a local test path, throwaway age key)
+        working-directory: apps/api
+        run: DATABASE_URL="$SOURCE_URL" uv run --frozen python scripts/backup.py --to-dir "$RUNNER_TEMP/backups" --new-key "$RUNNER_TEMP/restore.agekey" --pg-bin "$PG_BIN"
+      - name: Restore into the target and verify (head, live_check, row counts)
+        working-directory: apps/api
+        run: |
+          uv run --frozen python scripts/restore.py --date "$(date -u +%F)" --identity "$RUNNER_TEMP/restore.agekey" \
+            --from-dir "$RUNNER_TEMP/backups" --pg-bin "$PG_BIN" --compare-env SOURCE_URL
+      - name: Delete the test backups and key
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/backups" "$RUNNER_TEMP/restore.agekey"

@@ -395,6 +395,20 @@ export const zAuthoringTaxonomyList = z.object({
 });
 
 /**
+ * BackupFacts
+ *
+ * backup only (segment 22): what the status is based on, as codes and times the client words with ui_copy.
+ */
+export const zBackupFacts = z.object({
+  last_db_ok_at: z.iso.datetime().nullish(),
+  last_outcome: z.string().max(40).nullish(),
+  last_storage_ok_at: z.iso.datetime().nullish(),
+  missing: z.array(z.string()).max(5).optional(),
+  reason: z.enum(["ok", "not_configured", "never_ran", "failed", "stale"]),
+  retention_days: z.int().optional().default(30),
+});
+
+/**
  * BlockClock
  *
  * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
@@ -2302,6 +2316,7 @@ export const zQuota = z.object({
  */
 export const zComponentHealth = z.object({
   agent: zAgentRuntimeFacts.nullish(),
+  backup: zBackupFacts.nullish(),
   cached: z.boolean(),
   checked_at: z.iso.datetime(),
   configured: z.boolean().optional().default(true),
@@ -2319,6 +2334,7 @@ export const zComponentHealth = z.object({
  */
 export const zHealthComponents = z.object({
   agent_runtime: zComponentHealth.nullish(),
+  backup: zComponentHealth.nullish(),
   database: zComponentHealth,
   generation: zComponentHealth.nullish(),
   nvidia: zComponentHealth,

@@ -8,7 +8,8 @@ import { useOnlineStatus } from "./useOnlineStatus";
 type Status = HealthResponse["status"];
 // `agent_runtime` is optional (only the Aegra host reports it) and has its own panel at /admin/agent.
 // `generation` is optional too: it shows "Not configured" until HF_GEN_TOKEN is set (segment 15b).
-type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime" | "generation">;
+// `backup` is optional: "Not configured" until the owner sets HF_BACKUP_TOKEN + BACKUP_AGE_RECIPIENT (segment 22).
+type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime" | "generation" | "backup">;
 
 /** Display order: infrastructure first, then the two LLM providers side by side (NVIDIA spans two columns
  * from tablet up so its per-model list has room and the grid stays full). */
@@ -21,6 +22,15 @@ const COMPONENTS: Array<{ key: ComponentName; name: string; what: string; wide?:
 ];
 
 const GENERATION_CARD = { name: "Generation", what: "naadi-gen ZeroGPU Space" };
+const BACKUP_CARD = { name: "Backups", what: "Encrypted, private HF dataset" };
+
+const dateFmt = new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" });
+
+function formatWhen(iso: string | null | undefined): string {
+  if (!iso) return "never";
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime()) ? iso : dateFmt.format(d);
+}
 
 const STATUS_WORD: Record<Status, string> = { ok: "OK", degraded: "Degraded", down: "Down" };
 const STATUS_TONE: Record<Status, ChipTone> = { ok: "done", degraded: "warning", down: "critical" };
@@ -117,7 +127,7 @@ function ComponentCard({ name, what, c, wide }: { name: string; what: string; c:
           <h3 className="m-0 font-display text-[1.125rem] font-bold">{name}</h3>
           <span className="font-mono text-label-sm text-text-3 uppercase tracking-[0.1em]">{what}</span>
         </div>
-        {c.configured === false && c.status === "ok" ? (
+        {c.configured === false && (c.status === "ok" || c.backup?.reason === "not_configured") ? (
           <Chip tone="meta" icon={<X size={14} strokeWidth={2.8} />} srPrefix={`${name} status`}>
             Not configured
           </Chip>
@@ -130,6 +140,18 @@ function ComponentCard({ name, what, c, wide }: { name: string; what: string; c:
         <p className="m-0 text-ui-sm font-semibold text-amber">
           Quota paused until {formatTime(c.generation.resets_at)}
         </p>
+      ) : null}
+      {c.backup && c.backup.reason !== "not_configured" ? (
+        <dl className="m-0 flex flex-col gap-1 text-ui-sm text-text-2" data-backup={c.backup.reason}>
+          <div className="flex flex-wrap gap-1.5">
+            <dt className="font-semibold">Database</dt>
+            <dd className="m-0">{formatWhen(c.backup.last_db_ok_at)}</dd>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            <dt className="font-semibold">Storage</dt>
+            <dd className="m-0">{formatWhen(c.backup.last_storage_ok_at)}</dd>
+          </div>
+        </dl>
       ) : null}
       {c.quota ? <QuotaLine quota={c.quota} /> : null}
       {c.models && c.models.length > 0 ? <ModelList models={c.models} /> : null}
@@ -209,6 +231,9 @@ export function HealthPanel() {
           ))}
           {health.components.generation ? (
             <ComponentCard key="generation" {...GENERATION_CARD} c={health.components.generation} />
+          ) : null}
+          {health.components.backup ? (
+            <ComponentCard key="backup" {...BACKUP_CARD} c={health.components.backup} />
           ) : null}
         </ul>
         <p className="m-0 font-mono text-label-sm text-text-3">

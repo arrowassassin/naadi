@@ -2293,6 +2293,81 @@
         "title": "AuthoringTaxonomyRef",
         "type": "object"
       },
+      "BackupFacts": {
+        "description": "backup only (segment 22): what the status is based on, as codes and times the client words with ui_copy.",
+        "properties": {
+          "last_db_ok_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "End of the last successful database backup",
+            "title": "Last Db Ok At"
+          },
+          "last_outcome": {
+            "anyOf": [
+              {
+                "maxLength": 40,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Outcome code of the latest run",
+            "title": "Last Outcome"
+          },
+          "last_storage_ok_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "End of the last successful Storage backup",
+            "title": "Last Storage Ok At"
+          },
+          "missing": {
+            "description": "Names of the unset settings (never values)",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 5,
+            "title": "Missing",
+            "type": "array"
+          },
+          "reason": {
+            "enum": [
+              "ok",
+              "not_configured",
+              "never_ran",
+              "failed",
+              "stale"
+            ],
+            "title": "Reason",
+            "type": "string"
+          },
+          "retention_days": {
+            "default": 30,
+            "description": "Days a database backup is kept",
+            "title": "Retention Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "reason"
+        ],
+        "title": "BackupFacts",
+        "type": "object"
+      },
       "BlockClock": {
         "description": "The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,\nwhere offset is estimated from `server_now`; it never counts down on its own.",
         "properties": {
@@ -4345,6 +4420,17 @@
             ],
             "description": "agent_runtime only: structured facts behind the status (None if the check failed)"
           },
+          "backup": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BackupFacts"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "backup only: structured facts behind the status"
+          },
           "cached": {
             "description": "True when served from the check cache",
             "title": "Cached",
@@ -6275,6 +6361,17 @@
               }
             ],
             "description": "Aegra agent runtime (graphs loaded, its DB pool, broker, cron scheduler, last hourly ping); present when the process is the Aegra host"
+          },
+          "backup": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComponentHealth"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Encrypted backups to the private HF dataset (nightly database, weekly Storage): `configured: false` until HF_BACKUP_TOKEN and BACKUP_AGE_RECIPIENT are set, which leaves the overall status alone; a failed or stale backup degrades it"
           },
           "database": {
             "$ref": "#/components/schemas/ComponentHealth"

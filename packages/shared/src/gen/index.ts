@@ -254,6 +254,7 @@ export type {
   AuthoringRunRow,
   AuthoringTaxonomyList,
   AuthoringTaxonomyRef,
+  BackupFacts,
   BlockClock,
   BlockConfig,
   BlockCreate,

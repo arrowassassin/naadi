@@ -1254,6 +1254,48 @@ export type AuthoringTaxonomyRef = {
 };
 
 /**
+ * BackupFacts
+ *
+ * backup only (segment 22): what the status is based on, as codes and times the client words with ui_copy.
+ */
+export type BackupFacts = {
+  /**
+   * Last Db Ok At
+   *
+   * End of the last successful database backup
+   */
+  last_db_ok_at?: string | null;
+  /**
+   * Last Outcome
+   *
+   * Outcome code of the latest run
+   */
+  last_outcome?: string | null;
+  /**
+   * Last Storage Ok At
+   *
+   * End of the last successful Storage backup
+   */
+  last_storage_ok_at?: string | null;
+  /**
+   * Missing
+   *
+   * Names of the unset settings (never values)
+   */
+  missing?: Array<string>;
+  /**
+   * Reason
+   */
+  reason: "ok" | "not_configured" | "never_ran" | "failed" | "stale";
+  /**
+   * Retention Days
+   *
+   * Days a database backup is kept
+   */
+  retention_days?: number;
+};
+
+/**
  * BlockClock
  *
  * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
@@ -2406,6 +2448,10 @@ export type ComponentHealth = {
    * agent_runtime only: structured facts behind the status (None if the check failed)
    */
   agent?: AgentRuntimeFacts | null;
+  /**
+   * backup only: structured facts behind the status
+   */
+  backup?: BackupFacts | null;
   /**
    * Cached
    *
@@ -3581,6 +3627,10 @@ export type HealthComponents = {
    * Aegra agent runtime (graphs loaded, its DB pool, broker, cron scheduler, last hourly ping); present when the process is the Aegra host
    */
   agent_runtime?: ComponentHealth | null;
+  /**
+   * Encrypted backups to the private HF dataset (nightly database, weekly Storage): `configured: false` until HF_BACKUP_TOKEN and BACKUP_AGE_RECIPIENT are set, which leaves the overall status alone; a failed or stale backup degrades it
+   */
+  backup?: ComponentHealth | null;
   database: ComponentHealth;
   /**
    * Image/video generation on the naadi-gen Space: `configured: false` until HF_GEN_TOKEN is set. Never changes the overall status (a quota pause is expected, not an outage)

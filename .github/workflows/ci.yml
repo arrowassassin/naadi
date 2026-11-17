@@ -166,8 +166,16 @@ jobs:
         env:
           NAADI_PG_PORT: "5432"
         run: apps/api/tests/auth/auth_stack.sh ci
+      - name: PostgreSQL 17 client (pg_dump / pg_restore for the backup dry run in the db tests)
+        run: |
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y -q postgresql-client-17
       - name: DB integration tests
         # Only the `db` tests: the other integration tests need service keys that live on the Space, not in CI.
+        # Includes the backup dry run (segment 22): pg_dump -> age-encrypt to a throwaway key -> a local test path
+        # -> decrypt -> pg_restore --list -> delete (tests/db/test_ops_db.py).
+        env:
+          NAADI_PG_BIN: /usr/lib/postgresql/17/bin
         run: uv --directory apps/api run pytest -m db -v
 
   e2e:

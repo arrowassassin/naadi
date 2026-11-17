@@ -24,7 +24,7 @@ from supabase import AsyncClient, acreate_client
 from ..db import Database
 from ..llm import ProbeResult, probe_nvidia
 from ..settings import Settings
-from .models import AgentRuntimeFacts, GenerationFacts, ModelProbe, Quota, Status
+from .models import AgentRuntimeFacts, BackupFacts, GenerationFacts, ModelProbe, Quota, Status
 
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 
@@ -38,6 +38,7 @@ class CheckOutcome:
     models: list[ModelProbe] | None = None
     agent: AgentRuntimeFacts | None = None
     generation: GenerationFacts | None = None
+    backup: BackupFacts | None = None
 
 
 CheckFn = Callable[[], Awaitable[CheckOutcome]]
@@ -50,9 +51,10 @@ class NotConfigured(Exception):
     `status` is `down` for components the app cannot work without, `degraded` for optional ones.
     """
 
-    def __init__(self, message: str, status: Status = "down") -> None:
+    def __init__(self, message: str, status: Status = "down", *, backup: BackupFacts | None = None) -> None:
         super().__init__(message)
         self.status: Status = status
+        self.backup = backup  # structured facts for the panel (segment 22: which settings are missing)
 
 
 def _int_or_none(v: object) -> int | None:
@@ -264,5 +266,60 @@ def agent_runtime_check(db: Database | None) -> CheckFn:
             last_cron_ping=st.last_cron_ping,
         )
         return CheckOutcome(st.status, st.detail, agent=facts)
+
+    return run
+
+
+# ── Backups (segment 22) ──
+BACKUP_DB_STALE_AFTER = timedelta(hours=30)  # nightly at 03:00 UTC, so one missed night shows
+BACKUP_STORAGE_STALE_AFTER = timedelta(days=8)  # weekly
+_BACKUP_SQL = (
+    "select ok, detail ->> 'kind', detail ->> 'outcome', created_at from public.agent_health"
+    " where kind = 'backup' order by created_at desc limit 50"
+)
+
+
+def backup_check(settings: Settings, db: Database, *, clock: Callable[[], datetime] | None = None) -> CheckFn:
+    """The latest `agent_health` rows of kind `backup` (the Space's system crons, naadi_api.agent.graphs.backup)."""
+
+    async def run() -> CheckOutcome:
+        missing = [
+            name
+            for name, value in (
+                ("HF_BACKUP_TOKEN", settings.hf_backup_token),
+                ("BACKUP_AGE_RECIPIENT", settings.backup_age_recipient),
+            )
+            if not value
+        ]
+        if missing:
+            facts = BackupFacts(reason="not_configured", missing=missing)
+            raise NotConfigured(", ".join(missing), status="degraded", backup=facts)
+        if not db.configured:
+            raise NotConfigured("DATABASE_URL not set (backup runs are recorded there)", status="degraded")
+        if db.pool is None:
+            await db.open()
+        assert db.pool is not None
+        async with db.pool.connection(timeout=5.0) as conn:
+            cur = await conn.execute(_BACKUP_SQL)
+            rows = await cur.fetchall()
+        now = (clock or (lambda: datetime.now(UTC)))()
+        last_db = next((r[3] for r in rows if r[0] and r[1] == "db"), None)
+        last_st = next((r[3] for r in rows if r[0] and r[1] == "storage"), None)
+        latest = rows[0] if rows else None
+        outcome = str(latest[2])[:40] if latest and latest[2] else None
+        if latest is None:
+            reason, status, detail = "never_ran", "degraded", "No backup has run yet"
+        elif not latest[0]:
+            reason, status, detail = "failed", "degraded", f"Last backup failed: {outcome}"
+        elif (
+            last_db is None
+            or now - last_db > BACKUP_DB_STALE_AFTER
+            or (last_st is not None and now - last_st > BACKUP_STORAGE_STALE_AFTER)
+        ):
+            reason, status, detail = "stale", "degraded", "The last successful backup is too old"
+        else:
+            reason, status, detail = "ok", "ok", "Nightly database and weekly Storage backups are current"
+        facts = BackupFacts(reason=reason, last_db_ok_at=last_db, last_storage_ok_at=last_st, last_outcome=outcome)
+        return CheckOutcome(status, detail, backup=facts)  # type: ignore[arg-type]
 
     return run

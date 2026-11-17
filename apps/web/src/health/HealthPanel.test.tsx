@@ -193,6 +193,51 @@ describe("HealthPanel", () => {
     expect(card.getByText(/Quota paused until/)).toBeInTheDocument();
   });
 
+  it("shows backups as not configured until the owner sets the token and key", async () => {
+    const report = structuredClone(healthy);
+    (report.components as Record<string, Json>).backup = {
+      status: "degraded",
+      latency_ms: null,
+      detail: "Not configured: HF_BACKUP_TOKEN, BACKUP_AGE_RECIPIENT",
+      checked_at: "2026-11-17T05:51:11.430770Z",
+      cached: false,
+      configured: false,
+      backup: { reason: "not_configured", missing: ["HF_BACKUP_TOKEN", "BACKUP_AGE_RECIPIENT"], retention_days: 30 },
+    };
+    fetchMock.mockResolvedValue(jsonResponse(200, report));
+    renderPanel();
+    const card = within((await screen.findByRole("heading", { name: "Backups" })).closest("li") as HTMLElement);
+    expect(card.getByText("Not configured")).toBeInTheDocument();
+    expect(card.getByText(/HF_BACKUP_TOKEN/)).toBeInTheDocument();
+    expect(card.queryByText("Database")).not.toBeInTheDocument();
+  });
+
+  it("shows a failed backup as degraded with the last successful times", async () => {
+    const report = structuredClone(healthy);
+    (report.components as Record<string, Json>).backup = {
+      status: "degraded",
+      latency_ms: 3,
+      detail: "Last backup failed: pg_dump_failed",
+      checked_at: "2026-11-17T05:51:11.430770Z",
+      cached: false,
+      configured: true,
+      backup: {
+        reason: "failed",
+        missing: [],
+        last_db_ok_at: "2026-11-16T03:01:00Z",
+        last_storage_ok_at: null,
+        last_outcome: "pg_dump_failed",
+        retention_days: 30,
+      },
+    };
+    fetchMock.mockResolvedValue(jsonResponse(200, report));
+    renderPanel();
+    const card = within((await screen.findByRole("heading", { name: "Backups" })).closest("li") as HTMLElement);
+    expect(card.getByText("Degraded")).toBeInTheDocument();
+    expect(card.getByText(/pg_dump_failed/)).toBeInTheDocument();
+    expect(card.getByText("never")).toBeInTheDocument(); // no Storage backup yet
+  });
+
   it("labels the last result stale when a refetch fails, with the request id and a retry", async () => {
     fetchMock.mockResolvedValueOnce(jsonResponse(200, healthy));
     renderPanel();

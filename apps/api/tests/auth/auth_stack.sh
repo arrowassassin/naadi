@@ -7,6 +7,7 @@
 #
 #   apps/api/tests/auth/auth_stack.sh up   # local: Postgres container from stack.sh (same network)
 #   apps/api/tests/auth/auth_stack.sh ci   # CI: Postgres is a service container on the host network
+#   apps/api/tests/auth/auth_stack.sh migrate  # only the auth schema migrations, on NAADI_PG_HOST:NAADI_PG_PORT
 #   apps/api/tests/auth/auth_stack.sh down
 #
 # Each `up`/`ci` mints a fresh random HS256 secret and matching anon / service_role JWTs. They are
@@ -299,12 +300,23 @@ case "$cmd" in
   ci)
     start "${PG_HOST}:${PG_PORT}" "127.0.0.1:9999" 127.0.0.1 --network host
     ;;
+  migrate)
+    # Only Supabase Auth's own schema migrations (no server, no mail, no keys): a fresh supabase/postgres then has
+    # the auth schema a hosted project has, e.g. as the target of the weekly restore test (segment 22).
+    set_auth_password
+    docker run --rm --network host --entrypoint auth \
+      -e GOTRUE_DB_DRIVER=postgres \
+      -e GOTRUE_DB_DATABASE_URL="postgres://supabase_auth_admin:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/postgres" \
+      -e API_EXTERNAL_URL=http://127.0.0.1 -e GOTRUE_SITE_URL=http://127.0.0.1 -e GOTRUE_JWT_SECRET=migrate-only-unused-0000000000000 \
+      "$AUTH_IMAGE" migrate >/dev/null
+    log "auth schema migrated on ${PG_HOST}:${PG_PORT}"
+    ;;
   down)
     docker rm -f "$AUTH_CONTAINER" "$PROXY_CONTAINER" "$MAIL_CONTAINER" >/dev/null 2>&1 || true
     rm -f "$ENV_FILE"
     ;;
   *)
-    echo "usage: $0 up|ci|down" >&2
+    echo "usage: $0 up|ci|migrate|down" >&2
     exit 2
     ;;
 esac

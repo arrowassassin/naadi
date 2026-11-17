@@ -80,6 +80,11 @@ SYSTEM_CRONS: tuple[tuple[str, str, str, dict[str, Any], bool], ...] = (
     ("naadi.author.psychometrics", "author", "11 23 * * *", {"mode": "psychometrics"}, False),
     # Planner (S16): the daily Web Push reminders, per student's local time (a 15-minute tick; once per device per day).
     ("naadi.planner.reminders", "planner", "*/15 * * * *", {"mode": "reminders"}, False),
+    # Ops (S22): encrypted backups to the private HF dataset (records not_configured until the owner sets the token
+    # and key), then the retention pass.
+    ("naadi.backup.nightly", "backup", "0 3 * * *", {"mode": "db"}, False),
+    ("naadi.backup.storage_weekly", "backup", "30 3 * * 0", {"mode": "storage"}, False),  # Sunday 03:30 UTC
+    ("naadi.prune.daily", "prune", "11 4 * * *", {}, False),
 )
 
 naadi_app: FastAPI = create_app()

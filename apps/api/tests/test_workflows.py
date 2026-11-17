@@ -105,3 +105,15 @@ def test_e2e_is_sharded_per_browser() -> None:
     assert e2e["timeout-minutes"] <= 60
     run = next(s["run"] for s in e2e["steps"] if s.get("name", "").startswith("Build and run e2e"))
     assert '--shard "${{ matrix.shard }}/3"' in run
+
+
+def test_weekly_restore_test_and_backup_dry_run() -> None:
+    wf = _load("restore.yml")
+    assert any(s.get("cron") for s in wf["on"]["schedule"])
+    job = wf["jobs"]["restore"]
+    assert set(job["services"]) == {"source", "target"}
+    runs = "\n".join(s.get("run", "") for s in job["steps"])
+    assert "scripts/backup.py" in runs and "scripts/restore.py" in runs and "--compare-env SOURCE_URL" in runs
+    assert "${{ secrets." not in (WF / "restore.yml").read_text()  # never the real dataset or the owner's key
+    db = _load("ci.yml")["jobs"]["db"]
+    assert any(s.get("env", {}).get("NAADI_PG_BIN") for s in db["steps"])

@@ -97,6 +97,7 @@ _SECRET_SETTINGS = (
     "hf_gen_token",
     "youtube_api_key",
     "admin_emails",
+    "hf_backup_token",
 )
 
 

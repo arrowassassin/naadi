@@ -70,6 +70,8 @@ KEYS: list[Key] = [
     Key("HF_GEN_TOKEN", True, False),  # fine-grained, naadi-gen Space only; generation is hidden until it is set
     Key("HF_SPACE_ID", False, True),
     Key("HF_BACKUP_DATASET", False, True),
+    Key("HF_BACKUP_TOKEN", True, False),  # fine-grained, backup dataset only; backups report not configured until set
+    Key("BACKUP_AGE_RECIPIENT", False, False),  # owner's age public key; the private key never leaves the owner
     Key("ADMIN_EMAILS", False, True),
     Key("GOOGLE_OAUTH_CONFIGURED", False, True),
     Key("YOUTUBE_API_KEY", True, False),

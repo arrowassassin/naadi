@@ -52,6 +52,22 @@ class GenerationFacts(BaseModel):
     resets_at: datetime | None = Field(default=None, description="End of an active ZeroGPU quota pause")
 
 
+BackupReason = Literal["ok", "not_configured", "never_ran", "failed", "stale"]
+
+
+class BackupFacts(BaseModel):
+    """backup only (segment 22): what the status is based on, as codes and times the client words with ui_copy."""
+
+    reason: BackupReason
+    missing: list[str] = Field(
+        default_factory=list, max_length=5, description="Names of the unset settings (never values)"
+    )
+    last_db_ok_at: datetime | None = Field(default=None, description="End of the last successful database backup")
+    last_storage_ok_at: datetime | None = Field(default=None, description="End of the last successful Storage backup")
+    last_outcome: str | None = Field(default=None, max_length=40, description="Outcome code of the latest run")
+    retention_days: int = Field(default=30, description="Days a database backup is kept")
+
+
 class ComponentHealth(BaseModel):
     status: Status
     latency_ms: float | None = Field(description="Time the check took; None if it could not run")
@@ -68,6 +84,7 @@ class ComponentHealth(BaseModel):
     generation: GenerationFacts | None = Field(
         default=None, description="generation only: state and pause reset time (None if not configured)"
     )
+    backup: BackupFacts | None = Field(default=None, description="backup only: structured facts behind the status")
 
 
 class HealthComponents(BaseModel):
@@ -81,6 +98,13 @@ class HealthComponents(BaseModel):
         exclude_if=lambda v: v is None,
         description="Image/video generation on the naadi-gen Space: `configured: false` until HF_GEN_TOKEN is set. "
         "Never changes the overall status (a quota pause is expected, not an outage)",
+    )
+    backup: ComponentHealth | None = Field(
+        default=None,
+        exclude_if=lambda v: v is None,
+        description="Encrypted backups to the private HF dataset (nightly database, weekly Storage): "
+        "`configured: false` until HF_BACKUP_TOKEN and BACKUP_AGE_RECIPIENT are set, which leaves the overall "
+        "status alone; a failed or stale backup degrades it",
     )
     agent_runtime: ComponentHealth | None = Field(
         default=None,

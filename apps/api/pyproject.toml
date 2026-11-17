@@ -87,7 +87,7 @@ module = ["supabase.*", "openrouter.*", "psycopg_pool.*", "aegra_api.*", "gradio
 follow_untyped_imports = true
 
 [[tool.mypy.overrides]]
-module = ["genanki.*", "googleapiclient.*"]
+module = ["genanki.*", "googleapiclient.*", "pyrage", "pyrage.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

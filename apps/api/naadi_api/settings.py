@@ -113,6 +113,15 @@ class Settings(BaseSettings):
     vapid_private_key: SecretStr | None = None
     vapid_subject: str | None = None
 
+    # ── Backups (segment 22): owner-provided; until both are set the job reports `not_configured` ──
+    # Fine-grained HF write token scoped to the one private backup dataset (Space secret).
+    hf_backup_token: SecretStr | None = None
+    # The owner's age public key (`age1...`, Space variable). The private key never leaves the owner.
+    backup_age_recipient: str | None = None
+    backup_repo_id: str = Field(
+        default="arrowassassin/naadi-backups", validation_alias=AliasChoices("HF_BACKUP_DATASET", "BACKUP_REPO_ID")
+    )
+
     # ── Auth / admin (PII, so a secret) ──
     admin_emails: SecretStr | None = None
     google_oauth_configured: bool = False
@@ -139,6 +148,8 @@ class Settings(BaseSettings):
         "vapid_subject",
         "admin_emails",
         "app_base_url",
+        "hf_backup_token",
+        "backup_age_recipient",
         mode="before",
     )
     @classmethod
@@ -194,6 +205,7 @@ class Settings(BaseSettings):
             self.youtube_api_key,
             self.vapid_private_key,
             self.admin_emails,
+            self.hf_backup_token,
         ):
             if s is not None:
                 out.append(s.get_secret_value())

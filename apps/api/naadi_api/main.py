@@ -26,6 +26,7 @@ from .export.routes import install_export_routes, start_export_gc, stop_export_g
 from .generation.health import generation_check
 from .generation.routes import install_generation_routes
 from .health.checks import (
+    backup_check,
     database_check,
     nvidia_check,
     openrouter_check,
@@ -77,6 +78,7 @@ def default_health_service(settings: Settings, db: Database) -> HealthService:
                 "tavily", tavily_check(settings, models.search.monthly_credit_guard, tavily_db_reader(db)), ttl_s=60.0
             ),
             "generation": Check("generation", generation_check(settings, db), ttl_s=30.0),
+            "backup": Check("backup", backup_check(settings, db), ttl_s=60.0),
         },
         version=settings.app_version,
         environment=settings.app_env,

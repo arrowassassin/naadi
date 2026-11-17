@@ -21,6 +21,9 @@ RUN pnpm --filter @naadi/web build
 
 # ── Stage 2: API + static files (Python 3.13, FastAPI) ──────────────────────────────────────────
 FROM python:3.13.18-slim
+# pg_dump/pg_restore 17 for the nightly backup (segment 22; Debian trixie's PostgreSQL 17 = Supabase's major).
+RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client-17 \
+    && rm -rf /var/lib/apt/lists/*
 RUN useradd -m -u 1000 user
 ENV HOME=/home/user \
     PATH=/home/user/.local/bin:$PATH \

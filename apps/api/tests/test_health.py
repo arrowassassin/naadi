@@ -343,3 +343,24 @@ def test_models_yaml_guard_is_used(tmp_path: Path) -> None:
     assert load_models_config(REPO_ROOT / "config").search.monthly_credit_guard == 950
     with pytest.raises(ConfigError, match=r"models\.yaml"):
         load_models_config(tmp_path)
+
+
+def test_unconfigured_backups_leave_the_overall_status_but_a_failed_backup_degrades_it() -> None:
+    from datetime import UTC, datetime
+
+    from naadi_api.health.models import ComponentHealth
+    from naadi_api.health.service import overall_status
+
+    def comp(status: str, configured: bool = True) -> ComponentHealth:
+        return ComponentHealth(
+            status=status,  # type: ignore[arg-type]
+            latency_ms=None,
+            detail="x",
+            checked_at=datetime.now(UTC),
+            cached=False,
+            configured=configured,
+        )
+
+    base = {n: comp("ok") for n in ("database", "storage", "openrouter", "nvidia", "tavily")}
+    assert overall_status({**base, "backup": comp("degraded", configured=False)}) == "ok"
+    assert overall_status({**base, "backup": comp("degraded", configured=True)}) == "degraded"
