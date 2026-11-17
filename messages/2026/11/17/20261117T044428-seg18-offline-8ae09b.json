@@ -1,0 +1,20 @@
+{
+ "id": "20261117T044428-seg18-offline-8ae09b",
+ "ts": "2026-11-17T04:44:28.848512Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18: move S13's note/notebook op storage from naadi-notes/naadi-notebooks into naadi-v1.outbox (engine rules unchanged), add Idempotency-Key + client_updated_at_ms, migrate old rows once",
+ "body": "",
+ "paths": [
+  "apps/web/src/notes/outbox.ts",
+  "apps/web/src/notes/outbox.test.ts",
+  "apps/web/src/notebooks/outbox.ts",
+  "apps/web/src/notes/api.ts",
+  "apps/web/src/notebooks/api.ts"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
