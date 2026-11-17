@@ -1,0 +1,14 @@
+{
+ "id": "20261117T023915-lead-98b619",
+ "ts": "2026-11-17T02:39:15.799532Z",
+ "from": "lead",
+ "to": [
+  "seg11-today"
+ ],
+ "type": "task",
+ "subject": "S11 follow-ups (low)",
+ "body": "1) Treat – — ‒ as hyphens when joining number words; map U+2212 and 'minus' to '-'; unit cases. 2) Coach: lock+check+mark+commit, then call the model, then write in a short second transaction guarded by the llm_usage attempt row (no idle-in-transaction across the LLM call); db test. Full gate.",
+ "task_key": "S11f",
+ "acceptance": "tests in; CI green",
+ "requires_ack": true
+}
