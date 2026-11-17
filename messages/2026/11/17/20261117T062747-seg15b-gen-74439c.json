@@ -1,0 +1,14 @@
+{
+ "id": "20261117T062747-seg15b-gen-74439c",
+ "ts": "2026-11-17T06:27:47.415357Z",
+ "from": "seg15b-gen",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S15b",
+ "body": "",
+ "re": "20261117T041944-lead-5eab52",
+ "thread": "20261117T041944-lead-5eab52",
+ "requires_ack": false
+}
