@@ -2,7 +2,8 @@
 """Build the renal-endo-nutrition pack files from the per-area authoring fragments in src/.
 
     cd apps/api
-    uv run python ../../data/content/renal-endo-nutrition/build.py --check ../../data/content/renal-endo-nutrition/src/11.01.01.json
+    P=../../data/content/renal-endo-nutrition
+    uv run python $P/build.py --check $P/src/11.01.01.json
     uv run python ../../data/content/renal-endo-nutrition/build.py          # check every fragment, write the pack files
 
 One fragment per USMLE-2026 leaf area (src/<code>.json), so several writers can work at once without touching the
@@ -235,7 +236,9 @@ def build(frags: list[dict]) -> tuple[list, dict, list, list]:
                 fig_chapter.setdefault(fid, q["chapterId"])
             items.append(q)
         for f in frag.get("figures", []):
-            figures.append({"id": f["id"], "chapterId": fig_chapter[f["id"]], **{k: v for k, v in f.items() if k != "id"}})
+            figures.append(
+                {"id": f["id"], "chapterId": fig_chapter[f["id"]], **{k: v for k, v in f.items() if k != "id"}}
+            )
         sets += frag.get("sets", [])
         cards += frag.get("cards", [])
     # items may name a chapter that has no section yet (no section for that Step): drop the link then.

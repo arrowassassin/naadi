@@ -76,7 +76,7 @@
    "id": "s23c-s150101-2-1",
    "exam": "step2ck",
    "heading": "Diabetes: diagnosis, screening and outpatient management",
-   "html": "<h3>Diagnosis</h3><table><tr><th>Test</th><th>Diabetes</th><th>Prediabetes</th></tr><tr><td>Hemoglobin A1c</td><td>6.5% or higher</td><td>5.7–6.4%</td></tr><tr><td>Fasting plasma glucose (8 h or more without calories)</td><td>126 mg/dL (7.0 mmol/L) or higher</td><td>100–125 mg/dL</td></tr><tr><td>2-hour glucose on a 75-g oral glucose tolerance test</td><td>200 mg/dL (11.1 mmol/L) or higher</td><td>140–199 mg/dL</td></tr><tr><td>Random glucose with classic symptoms or a hyperglycemic crisis</td><td>200 mg/dL or higher</td><td>—</td></tr></table><p>Without unequivocal hyperglycemia, diagnosis needs two abnormal results: two different tests from the same sample, or the same test repeated. If two tests disagree, <strong>repeat the test that was abnormal</strong>. A1c is unreliable when red cell lifespan is altered (hemolysis, recent bleeding or transfusion, pregnancy, iron deficiency, hemoglobin variants, advanced CKD); use glucose-based tests then.</p><h3>Screening</h3><ul><li>USPSTF: <span class=\"hy\">adults aged 35–70 with overweight or obesity</span>, every 3 years if normal.</li><li>ADA: everyone from age 35, and earlier in adults with overweight or obesity plus a risk factor (first-degree relative, high-risk ethnicity, hypertension, dyslipidemia, polycystic ovary syndrome, inactivity, history of gestational diabetes).</li><li>Prediabetes: intensive lifestyle programme aiming for about 7% weight loss and 150 minutes a week of activity; metformin can be considered in younger, heavier patients or after gestational diabetes.</li></ul><h3>Treating type 2 diabetes</h3><ol><li><strong>Lifestyle</strong> for everyone: nutrition therapy, activity, weight loss; diabetes self-management education.</li><li><strong>Choose drugs by comorbidity first, then by glucose and weight goals.</strong><ul><li>Established atherosclerotic cardiovascular disease or high risk: a GLP-1 receptor agonist or an SGLT2 inhibitor with proven cardiovascular benefit, <em>regardless of A1c</em>.</li><li>Heart failure (reduced or preserved ejection fraction): an SGLT2 inhibitor.</li><li>CKD with albuminuria or reduced eGFR: an SGLT2 inhibitor (and RAS blockade); a GLP-1 receptor agonist if more glucose lowering is needed.</li><li>Obesity: a GLP-1 receptor agonist or tirzepatide gives the most weight loss.</li><li>Metformin remains a sound, cheap foundation when none of these drives the choice.</li></ul></li><li>Add or intensify every 3 months if the individual A1c target is not reached. Consider insulin early when A1c is <span class=\"hy\">above 10%</span>, glucose is 300 mg/dL or higher, or there is catabolism (weight loss) or symptomatic hyperglycemia.</li><li><strong>Insulin</strong>: start basal insulin at about 10 units a day or 0.1–0.2 units/kg/day and titrate by a few units every few days until fasting glucose is at target. If fasting glucose is controlled but A1c is still high, add a GLP-1 receptor agonist or prandial insulin rather than pushing basal insulin ever higher.</li></ol><h3>Targets</h3><ul><li>A1c below 7% for many nonpregnant adults; tighter if achievable without hypoglycemia; <strong>less strict (for example below 8.0%) in older adults with multiple illnesses, cognitive impairment or limited life expectancy</strong>, in whom hypoglycemia causes falls and harm. Stop or avoid sulfonylureas (especially glyburide) and deintensify when glucose is overtreated.</li><li>Blood pressure <span class=\"hy\">below 130/80 mm Hg</span> for most; ACE inhibitor or ARB when there is albuminuria.</li><li>Statin: at least moderate intensity for ages 40–75; high intensity with ASCVD or multiple risk factors.</li><li>Aspirin for secondary prevention; for primary prevention only after weighing bleeding risk.</li></ul><h3>Complication surveillance</h3><table><tr><th>Check</th><th>Type 1</th><th>Type 2</th></tr><tr><td>Dilated eye examination</td><td>Within 5 years of onset, then every 1–2 years</td><td>At diagnosis, then every 1–2 years if normal</td></tr><tr><td>Urine albumin-to-creatinine ratio and eGFR</td><td>Yearly from 5 years after onset</td><td>At diagnosis, then at least yearly</td></tr><tr><td>Neuropathy and comprehensive foot examination (monofilament, vibration, pulses)</td><td>From 5 years after onset, then yearly</td><td>At diagnosis, then yearly</td></tr></table><p><strong>Diabetic foot</strong>: a neuropathic plantar ulcer heals only with <strong>offloading</strong> (total contact cast or removable walker), debridement and good perfusion; check pulses and the ankle-brachial index. A positive probe-to-bone test or exposed bone suggests osteomyelitis: radiographs first, then MRI. Antibiotics are for clinically infected wounds only.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in an older patient with recurrent hypoglycemia and an A1c of 6.2% on a sulfonylurea, the answer is to stop the sulfonylurea, not to add snacks.</p></div>",
+   "html": "<h3>Diagnosis</h3><table><tr><th>Test</th><th>Diabetes</th><th>Prediabetes</th></tr><tr><td>Hemoglobin A1c</td><td>6.5% or higher</td><td>5.7–6.4%</td></tr><tr><td>Fasting plasma glucose (8 h or more without calories)</td><td>126 mg/dL (7.0 mmol/L) or higher</td><td>100–125 mg/dL</td></tr><tr><td>2-hour glucose on a 75-g oral glucose tolerance test</td><td>200 mg/dL (11.1 mmol/L) or higher</td><td>140–199 mg/dL</td></tr><tr><td>Random glucose with classic symptoms or a hyperglycemic crisis</td><td>200 mg/dL or higher</td><td>—</td></tr></table><p>Without unequivocal hyperglycemia, diagnosis needs two abnormal results: two different tests from the same sample, or the same test repeated. If two tests disagree, <strong>repeat the test that was abnormal</strong>. A1c is unreliable when red cell lifespan is altered (hemolysis, recent bleeding or transfusion, pregnancy, iron deficiency, hemoglobin variants, advanced CKD); use glucose-based tests then.</p><h3>Screening</h3><ul><li>USPSTF: <span class=\"hy\">adults aged 35–70 with overweight or obesity</span>, every 3 years if normal.</li><li>ADA: everyone from age 35, and earlier in adults with overweight or obesity plus a risk factor (first-degree relative, high-risk ethnicity, hypertension, dyslipidemia, polycystic ovary syndrome, inactivity, history of gestational diabetes).</li><li>Prediabetes: intensive lifestyle programme aiming for about 7% weight loss and 150 minutes a week of activity; metformin can be considered in younger, heavier patients or after gestational diabetes.</li></ul><h3>Treating type 2 diabetes</h3><ol><li><strong>Lifestyle</strong> for everyone: nutrition therapy, activity, weight loss; diabetes self-management education.</li><li><strong>Choose drugs by comorbidity first, then by glucose and weight goals.</strong><ul><li>Established atherosclerotic cardiovascular disease or high risk: a GLP-1 receptor agonist or an SGLT2 inhibitor with proven cardiovascular benefit, <em>regardless of A1c</em>.</li><li>Heart failure (reduced or preserved ejection fraction): an SGLT2 inhibitor.</li><li>CKD with albuminuria or reduced eGFR: an SGLT2 inhibitor (with RAS blockade) <em>and</em> a GLP-1 receptor agonist with proven benefit (semaglutide reduced major kidney events in the FLOW trial), each chosen for kidney and cardiovascular protection, not only for glucose; add finerenone for persistent albuminuria.</li><li>Obesity: a GLP-1 receptor agonist or tirzepatide gives the most weight loss.</li><li>Metformin remains a sound, cheap foundation when none of these drives the choice.</li></ul></li><li>Add or intensify every 3 months if the individual A1c target is not reached. Consider insulin early when A1c is <span class=\"hy\">above 10%</span>, glucose is 300 mg/dL or higher, or there is catabolism (weight loss) or symptomatic hyperglycemia.</li><li><strong>Insulin</strong>: start basal insulin at about 10 units a day or 0.1–0.2 units/kg/day and titrate by a few units every few days until fasting glucose is at target. If fasting glucose is controlled but A1c is still high, add a GLP-1 receptor agonist or prandial insulin rather than pushing basal insulin ever higher.</li></ol><h3>Targets</h3><ul><li>A1c below 7% for many nonpregnant adults; tighter if achievable without hypoglycemia; <strong>less strict (for example below 8.0%) in older adults with multiple illnesses, cognitive impairment or limited life expectancy</strong>, in whom hypoglycemia causes falls and harm. Stop or avoid sulfonylureas (especially glyburide) and deintensify when glucose is overtreated.</li><li>Blood pressure <span class=\"hy\">below 130/80 mm Hg</span> for most; ACE inhibitor or ARB when there is albuminuria.</li><li>Statin: at least moderate intensity for ages 40–75; high intensity with ASCVD or multiple risk factors.</li><li>Aspirin for secondary prevention; for primary prevention only after weighing bleeding risk.</li></ul><h3>Complication surveillance</h3><table><tr><th>Check</th><th>Type 1</th><th>Type 2</th></tr><tr><td>Dilated eye examination</td><td>Within 5 years of onset, then every 1–2 years</td><td>At diagnosis, then every 1–2 years if normal</td></tr><tr><td>Urine albumin-to-creatinine ratio and eGFR</td><td>Yearly from 5 years after onset</td><td>At diagnosis, then at least yearly</td></tr><tr><td>Neuropathy and comprehensive foot examination (monofilament, vibration, pulses)</td><td>From 5 years after onset, then yearly</td><td>At diagnosis, then yearly</td></tr></table><p><strong>Diabetic foot</strong>: a neuropathic plantar ulcer heals only with <strong>offloading</strong> (total contact cast or removable walker), debridement and good perfusion; check pulses and the ankle-brachial index. A positive probe-to-bone test or exposed bone suggests osteomyelitis: radiographs first, then MRI. Antibiotics are for clinically infected wounds only.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in an older patient with recurrent hypoglycemia and an A1c of 6.2% on a sulfonylurea, the answer is to stop the sulfonylurea, not to add snacks.</p></div>",
    "figureIds": [],
    "areas": [
     "usmle2026.15.01.01"
@@ -1036,7 +1036,7 @@
    "options": [
     {
      "label": "A",
-     "html": "Give IV potassium and start insulin once potassium is at least 3.3 mEq/L"
+     "html": "Replace potassium IV; start insulin once it is above 3.5 mEq/L"
     },
     {
      "label": "B",
@@ -1048,7 +1048,7 @@
     },
     {
      "label": "D",
-     "html": "Switch fluids to 5% dextrose in water"
+     "html": "Change the IV fluid to 5% dextrose in water"
     },
     {
      "label": "E",
@@ -1056,14 +1056,14 @@
     }
    ],
    "answer": "A",
-   "explanationHtml": "<p>Insulin shifts potassium into cells. Starting it with a serum potassium of 3.0 mEq/L (with U waves) risks dangerous hypokalemia and arrhythmia. The rule: if potassium is below 3.3 mEq/L, <strong>hold insulin and replace potassium IV</strong> until it is 3.3 or higher, then start the insulin infusion with potassium in the fluids.</p><p><strong>Takeaway:</strong> in DKA and HHS, potassium below 3.3 mEq/L means potassium first, insulin second.</p>",
+   "explanationHtml": "<p>Insulin shifts potassium into cells. Starting it with a serum potassium of 3.0 mEq/L (with U waves) risks dangerous hypokalemia and arrhythmia. The 2024 international consensus on hyperglycemic crises: if potassium is 3.5 mEq/L or lower, <strong>hold insulin and replace potassium IV</strong> until it is above 3.5, then start the insulin infusion with potassium in the fluids (at 3.5–5.0 mEq/L).</p><p><strong>Takeaway:</strong> in DKA and HHS, potassium at or below 3.5 mEq/L means potassium first, insulin second.</p>",
    "whyNot": {
     "B": "Insulin now would drop his potassium further and risk ventricular arrhythmia.",
     "C": "Six hours is far too long between potassium checks during insulin treatment.",
-    "D": "Dextrose-only fluid is added when glucose falls to about 300 mg/dL in HHS; glucose is still 690 mg/dL.",
+    "D": "Dextrose is added only once glucose falls below about 250 mg/dL; glucose is still 690 mg/dL.",
     "E": "Subcutaneous basal insulin and oral potassium are too slow and unreliable in this setting."
    },
-   "objective": "Replace potassium before starting insulin when it is below 3.3 mEq/L.",
+   "objective": "Replace potassium before starting insulin when it is 3.5 mEq/L or lower.",
    "areas": [
     "usmle2026.15.01.01",
     "usmle2026.16.07.01"
@@ -1096,38 +1096,38 @@
    "format": "sequential",
    "setId": "s23c-set150101-1",
    "setOrder": 3,
-   "stemHtml": "<p>Potassium is corrected and an insulin infusion is started. Eight hours later he is more alert. Glucose is 286 mg/dL, sodium 146 mEq/L, potassium 4.1 mEq/L and calculated serum osmolality 318 mOsm/kg. Which of the following is the most appropriate change to his treatment?</p>",
+   "stemHtml": "<p>Potassium is corrected and an insulin infusion is started. Eight hours later he is more alert. Glucose is 238 mg/dL, sodium 146 mEq/L, potassium 4.1 mEq/L and calculated serum osmolality 318 mOsm/kg. Which of the following is the most appropriate change to his treatment?</p>",
    "options": [
     {
      "label": "A",
-     "html": "Add dextrose to the intravenous fluids and reduce the insulin infusion rate"
+     "html": "Add dextrose to the IV fluids and lower the insulin rate"
     },
     {
      "label": "B",
-     "html": "Give a bolus of 3% saline"
+     "html": "Give a 100-mL bolus of 3% hypertonic saline"
     },
     {
      "label": "C",
-     "html": "Increase the insulin infusion to lower glucose below 150 mg/dL quickly"
+     "html": "Raise the insulin rate to bring glucose below 150 mg/dL"
     },
     {
      "label": "D",
-     "html": "Stop the insulin infusion and observe"
+     "html": "Stop the insulin infusion and observe for 2 hours"
     },
     {
      "label": "E",
-     "html": "Stop intravenous fluids and encourage oral intake"
+     "html": "Stop the IV fluids and encourage oral intake instead"
     }
    ],
    "answer": "A",
-   "explanationHtml": "<p>In HHS, once glucose falls to about <strong>300 mg/dL</strong>, dextrose is added to the fluids and the insulin rate is reduced, keeping glucose roughly in the 200–300 mg/dL range until osmolality and mental status normalise. This avoids hypoglycemia and too-rapid falls in osmolality, which can shift water into brain cells.</p><p><strong>Takeaway:</strong> add dextrose when glucose reaches about 300 mg/dL in HHS (about 250 mg/dL in DKA) and keep insulin going at a lower rate.</p>",
+   "explanationHtml": "<p>The 2024 international consensus on hyperglycemic crises adds dextrose to the fluids once glucose falls <strong>below about 250 mg/dL</strong>, in HHS as in DKA, and reduces the insulin rate, keeping glucose roughly 150–250 mg/dL until osmolality and mental status have normalised. This avoids hypoglycemia and too-rapid falls in osmolality, which can shift water into brain cells.</p><p><strong>Takeaway:</strong> add dextrose when glucose falls below about 250 mg/dL in HHS or DKA and keep insulin going at a lower rate.</p>",
    "whyNot": {
     "B": "Hypertonic saline is for severe symptomatic hyponatremia; his sodium is already high.",
     "C": "Lowering glucose quickly drops osmolality too fast and risks hypoglycemia and cerebral edema.",
     "D": "Stopping insulin abruptly lets glucose climb again before he is ready for subcutaneous insulin.",
     "E": "Osmolality is still high and he is not yet fully alert; IV fluids should continue."
    },
-   "objective": "Add dextrose and lower the insulin rate when glucose reaches about 300 mg/dL in HHS.",
+   "objective": "Add dextrose and lower the insulin rate when glucose falls below about 250 mg/dL in HHS.",
    "areas": [
     "usmle2026.15.01.01"
    ],
@@ -1586,8 +1586,8 @@
   },
   {
    "id": "s23c-c150101-23",
-   "frontHtml": "DKA or HHS with K⁺ below 3.3 mEq/L: what first?",
-   "backHtml": "Hold insulin; give IV potassium until at least 3.3 mEq/L.",
+   "frontHtml": "DKA or HHS with K⁺ at or below 3.5 mEq/L: what first?",
+   "backHtml": "Hold insulin; give IV potassium until it is above 3.5 mEq/L (2024 consensus), then start insulin with potassium in the fluids.",
    "sectionId": "s23c-s150101-2-2",
    "areas": [
     "usmle2026.15.01.01"
@@ -1598,7 +1598,7 @@
   {
    "id": "s23c-c150101-24",
    "frontHtml": "When is dextrose added to fluids in DKA and HHS?",
-   "backHtml": "DKA: glucose about 250 mg/dL. HHS: about 300 mg/dL. Keep insulin running.",
+   "backHtml": "Once glucose falls below about 250 mg/dL, in both DKA and HHS (2024 consensus). Keep insulin running at a lower rate.",
    "sectionId": "s23c-s150101-2-2",
    "areas": [
     "usmle2026.15.01.01"
