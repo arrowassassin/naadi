@@ -388,10 +388,10 @@ importers:
         version: 7.0.2
       vite:
         specifier: 8.3.8
-        version: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)
+        version: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2)
       vitest:
         specifier: 5.1.0
-        version: 5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0))
+        version: 5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2))
 
   packages/shared:
     dependencies:
@@ -434,7 +434,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 5.1.0
-        version: 5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0))
+        version: 5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2))
 
   packages/ui:
     dependencies:
@@ -459,7 +459,7 @@ importers:
         version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 7.0.1
-        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)))
+        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2)))
       '@testing-library/react':
         specifier: 16.3.3
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -474,7 +474,7 @@ importers:
         version: 19.3.0(@types/react@19.3.0)
       '@vitejs/plugin-react':
         specifier: 6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0))
+        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2))
       jsdom:
         specifier: 31.0.1
         version: 31.0.1(@napi-rs/canvas@1.1.1)
@@ -489,10 +489,10 @@ importers:
         version: 7.0.2
       vite:
         specifier: 8.3.8
-        version: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)
+        version: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2)
       vitest:
         specifier: 5.1.0
-        version: 5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0))
+        version: 5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2))
 
 packages:
 
@@ -7006,11 +7006,6 @@ snapshots:
       '@rolldown/pluginutils': 1.1.1
       vite: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2)
 
-  '@vitejs/plugin-react@6.3.0(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0))':
-    dependencies:
-      '@rolldown/pluginutils': 1.1.1
-      vite: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)
-
   '@vitest/mocker@5.1.0(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
@@ -7019,15 +7014,6 @@ snapshots:
       magic-string: 1.4.5
     optionalDependencies:
       vite: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2)
-
-  '@vitest/mocker@5.1.0(vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0))':
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.31
-      '@vitest/spy': 5.1.0
-      estree-walker: 3.0.3
-      magic-string: 1.4.5
-    optionalDependencies:
-      vite: 8.3.8(@types/node@24.19.2)(jiti@2.7.0)
 
   '@vitest/spy@5.1.0': {}
 
@@ -9125,18 +9111,6 @@ snapshots:
       workbox-window: 7.4.1
     transitivePeerDependencies:
       - supports-color
-
-  vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0):
-    dependencies:
-      lightningcss: 1.33.0
-      picomatch: 4.0.7
-      postcss: 8.5.33
-      rolldown: 1.2.19
-      tinyglobby: 0.2.17
-    optionalDependencies:
-      '@types/node': 24.19.2
-      fsevents: 2.3.3
-      jiti: 2.7.0
 
   vite@8.3.8(@types/node@24.19.2)(jiti@2.7.0)(terser@5.51.2):
     dependencies:
