@@ -1,0 +1,16 @@
+{
+ "id": "20261117T063733-seg22-harden-4e7224",
+ "ts": "2026-11-17T06:37:33.495453Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated e403e32 into claude/naadi-shared",
+ "body": "S22 slice 3: lazy route pages + size-limit config, Trusted Types default/inert policies, sandbox docs skip TT report-only, guard ignores report beacons",
+ "refs": {
+  "commit": "e403e32",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
