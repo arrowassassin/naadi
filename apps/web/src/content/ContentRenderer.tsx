@@ -1,5 +1,5 @@
 import { type EmbeddedQuestion, type MediaOut, uiText } from "@naadi/shared";
-import { topLevelBlockPositions } from "@naadi/shared/content/positions";
+import { topLevelBlocks } from "@naadi/shared/content/positions";
 import { cx, Highlight, type HighlightKind } from "@naadi/ui";
 import { AlertTriangle, ArrowLeftRight, Gem, OctagonAlert } from "lucide-react";
 import { createElement, type ReactNode, useEffect, useMemo, useRef } from "react";
@@ -27,7 +27,8 @@ import {
  * id). It is never dropped silently.
  *
  * Every top-level block carries `data-block-index`, the anchor the reader uses for reading positions, and
- * `data-block-pm`, its ProseMirror position, which section ink anchors to (segment 12b).
+ * `data-block-pm`, its ProseMirror position, and `data-block-fp`, its fingerprint: section ink anchors to the
+ * pair (segment 12b), so ink beside a block that was later edited is not moved beside another one.
  */
 
 export interface ContentRendererProps {
@@ -375,13 +376,14 @@ export function ContentRenderer({
       text: (key, vars) => textRef.current(key, vars),
     };
     const w = new Walker(env);
-    const pms = topLevelBlockPositions(doc);
+    const pms = topLevelBlocks(doc);
     const nodes = (doc.content ?? []).map((c, i) => (
       <div
         // biome-ignore lint/suspicious/noArrayIndexKey: blocks are positional; the index is the reading-position anchor
         key={`${sectionId}-${i}`}
         data-block-index={i}
-        data-block-pm={pms[i]}
+        data-block-pm={pms[i]?.pm}
+        data-block-fp={pms[i]?.fp}
       >
         {w.node(c, `${sectionId} › block ${i}`, i)}
       </div>

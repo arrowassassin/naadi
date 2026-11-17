@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { type Ref, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "../../auth/session";
 import { useOnlineStatus } from "../../health/useOnlineStatus";
+import { serverNow } from "./clock";
 import { dexieStore, type PendingStore } from "./db";
 import { type InkFailure, type InkSaveState, InkSync, type InkTransport } from "./sync";
 import { apiTransport, classifyInkError } from "./transport";
@@ -32,12 +33,19 @@ export interface InkLayerHandle {
   failure: InkFailure | null;
   /** Live items drawn on an earlier revision of the surface content (section text changed since). */
   outdated: number;
+  /** Items the server refused, kept on this device (failure "rejected") until retried or discarded. */
+  rejected: number;
+  /** Resend now; with quarantined items, sends them again too. */
   retry: () => void;
+  /** Drop the quarantined items (removed from the canvas and the device). */
+  discard: () => void;
   /** Spread into <InkCanvas> (key the canvas by surface id). */
   canvasProps: {
     items: readonly InkItem[] | undefined;
     onStrokesChange: (diff: InkDiff) => void;
     engineRef: (engine: InkEngine | null) => void;
+    /** The server-corrected clock the engine stamps edits with. */
+    now: () => number;
   };
 }
 
@@ -63,7 +71,7 @@ export function useInkLayer(
   const opts = useRef(options);
   opts.current = options;
   const engine = useRef<InkEngine | null>(null);
-  const queued = useRef<InkItem[]>([]);
+  const queued = useRef<{ items: InkItem[]; authoritative: boolean }[]>([]);
   // The live object (edits are recorded even before the device copy is read); `sync` turns the network on.
   const live = useRef<InkSync | null>(null);
   const [sync, setSync] = useState<InkSync | null>(null);
@@ -78,9 +86,10 @@ export function useInkLayer(
       transport: opts.current.transport ?? apiTransport(surfaceType, surfaceId),
       store: opts.current.store ?? dexieStore(userId, key),
       classify: classifyInkError,
-      onRemote: (remote) => {
-        if (engine.current) engine.current.applyRemote(remote);
-        else queued.current.push(...remote);
+      now: serverNow,
+      onRemote: (remote, o) => {
+        if (engine.current) engine.current.applyRemote(remote, o);
+        else queued.current.push({ items: remote, authoritative: Boolean(o?.authoritative) });
       },
       onChange: () => setTick((t) => t + 1),
     });
@@ -142,25 +151,32 @@ export function useInkLayer(
   const engineRef = useCallback((e: InkEngine | null) => {
     engine.current = e;
     if (e && queued.current.length) {
-      e.applyRemote(queued.current);
+      for (const q of queued.current) e.applyRemote(q.items, { authoritative: q.authoritative });
       queued.current = [];
     }
     assignRef(opts.current.engineRef, e);
   }, []);
 
   const retry = useCallback(() => {
-    void sync?.retry();
+    void sync?.retry({ rejected: true });
     void query.refetch();
   }, [sync, query]);
 
-  const canvasProps = useMemo(() => ({ items, onStrokesChange, engineRef }), [items, onStrokesChange, engineRef]);
+  const discard = useCallback(() => sync?.discardRejected(), [sync]);
+
+  const canvasProps = useMemo(
+    () => ({ items, onStrokesChange, engineRef, now: serverNow }),
+    [items, onStrokesChange, engineRef],
+  );
   return {
     ready: items !== undefined,
     state: sync?.state ?? "loading",
     idle: (sync?.idle ?? false) && !query.isFetching,
     failure: sync?.lastFailure ?? null,
     outdated: query.data?.outdated ?? 0,
+    rejected: sync?.rejectedCount ?? 0,
     retry,
+    discard,
     canvasProps,
   };
 }

@@ -1261,6 +1261,8 @@ ui_copy:
   ink.save.error: "Couldn't save"
   ink.save.full: "This page holds as much ink as it can. Erase some to keep saving"
   ink.save.retry: "Retry"
+  ink.save.rejected: "Some ink couldn't be saved"
+  ink.save.discard: "Discard"
   ink.page.toggle: "Write"
   ink.page.toggle_on: "Writing"
   ink.page.outdated: "This section was updated; your ink may be out of place"

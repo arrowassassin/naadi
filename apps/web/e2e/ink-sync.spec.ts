@@ -78,9 +78,16 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
   const email = emailFor(info, tag);
   runUsers(["delete", "--email", email]);
   const contexts: BrowserContext[] = [];
-  const device = async (viewport?: { width: number; height: number }) => {
+  const device = async (viewport?: { width: number; height: number }, opts: { clockAheadMs?: number } = {}) => {
     const context = await browser.newContext({ ...info.project.use, ...(viewport ? { viewport } : {}), baseURL });
     contexts.push(context);
+    if (opts.clockAheadMs) {
+      // This device's clock runs fast (Date.now only: timers and animation frames run as usual).
+      await context.addInitScript((ms) => {
+        const real = Date.now.bind(Date);
+        Date.now = () => real() + ms;
+      }, opts.clockAheadMs);
+    }
     const page = await context.newPage();
     if (process.env.INK_CPU_THROTTLE && info.project.use.browserName === "chromium") {
       const cdp = await context.newCDPSession(page);
@@ -356,6 +363,52 @@ test.describe("ink on a reader section", () => {
     }
   });
 
+  test("a device whose clock runs 10 minutes fast stamps server time; another device's delete sticks", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    const s = await student(browser, baseURL as string, info, "clock");
+    try {
+      const a = await s.device(undefined, { clockAheadMs: 600_000 });
+      expect(await a.evaluate(() => Date.now() - performance.timeOrigin - performance.now())).toBeGreaterThan(590_000);
+      await turnInkOn(a);
+      await pickViolet(a);
+      const y = (await blockTop(a, 2)) + 10;
+      const sent = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
+      await penStroke(a, 0.1, 0.45, y);
+      const res = await sent;
+      const out = (await res.json()) as { server_now: number; applied: string[] };
+      const body = res.request().postDataJSON() as { items: { updatedAt: number }[] };
+      // Stamped with the server's clock (learned from the load), not 10 minutes ahead.
+      for (const item of body.items) expect(Math.abs(item.updatedAt - out.server_now)).toBeLessThan(30_000);
+      expect(out.applied.length).toBeGreaterThan(0);
+      // B (correct clock) erases it a moment later ...
+      const b = await s.device();
+      await expect.poll(() => violetCentre(b, y - 12, y + 12)).not.toBeNull();
+      await turnInkOn(b);
+      await b.getByRole("button", { name: "Eraser", exact: true }).click();
+      const erased = b.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
+      await penStroke(b, 0.25, 0.3, (await violetCentre(b, y - 12, y + 12)) ?? y, 4);
+      await erased;
+      expect(await violetCentre(b, y - 12, y + 12)).toBeNull();
+      // ... and A takes the deletion on its next refetch: the fast clock does not keep the stroke alive.
+      await expect.poll(() => refetchThen(a, () => violetCentre(a, y - 12, y + 12)), POLL).toBeNull();
+      // A keeps writing elsewhere; after a reload on both, the erased stroke is still gone.
+      const y2 = (await blockTop(a, 4)) + 10;
+      const more = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
+      await penStroke(a, 0.1, 0.45, y2, 6);
+      await more;
+      await a.reload();
+      await expect(a.locator(SAVE)).toHaveAttribute("data-ink-save", "saved", { timeout: 20_000 });
+      await expect(a.locator("[data-ink-idle]")).toBeAttached({ timeout: 20_000 });
+      expect(await violetCentre(a, y - 12, y + 12)).toBeNull();
+      await expect.poll(() => violetCentre(a, y2 - 12, y2 + 12)).not.toBeNull();
+      await expect.poll(() => refetchThen(b, () => violetCentre(b, y - 12, y + 12)), POLL).toBeNull();
+    } finally {
+      await s.done();
+    }
+  });
+
   test("offline: draw → saved on this device → reload → reconnect → synced", async ({ browser, baseURL }, info) => {
     const s = await student(browser, baseURL as string, info, "off");
     try {
@@ -419,6 +472,59 @@ test.describe("ink on a reader section", () => {
     }
   });
 
+  test("an edited section: ink beside a paragraph that changed stays where it was drawn, with the notice", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    const s = await student(browser, baseURL as string, info, "edit");
+    try {
+      const a = await s.device();
+      const ca = consoleOf(a);
+      await turnInkOn(a);
+      await pickViolet(a);
+      const y = (await blockTop(a, 2)) + 10;
+      const sent = a.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
+      await penStroke(a, 0.1, 0.45, y);
+      await sent;
+      const drawn = await violetCentre(a, y - 14, y + 14);
+      expect(drawn).not.toBeNull();
+      // The author inserts a paragraph above it: every later block starts further down, and the stroke's block
+      // position now belongs to another block (served as such; the API counts the stroke as outdated).
+      const sectionId = SECTION.split("/").pop() as string;
+      await a.route(/\/api\/chapters\/[^/?]+(\?|$)/, async (route) => {
+        const res = await route.fetch();
+        const body = (await res.json()) as { sections: { id: string; body: { content: unknown[] } }[] };
+        for (const sec of body.sections) {
+          if (sec.id !== sectionId) continue;
+          const words = "An inserted paragraph that pushes the rest of the section down by a few lines. ".repeat(6);
+          sec.body.content = [{ type: "paragraph", content: [{ type: "text", text: words }] }, ...sec.body.content];
+        }
+        await route.fulfill({ response: res, json: body });
+      });
+      await a.route("**/api/ink/section/**", async (route) => {
+        if (route.request().method() !== "GET") return route.continue();
+        const res = await route.fetch();
+        const body = (await res.json()) as Record<string, unknown>;
+        await route.fulfill({ response: res, json: { ...body, outdated: 1 } });
+      });
+      await a.reload();
+      await expect(a.getByRole("note").filter({ hasText: "This section was updated" })).toBeVisible({
+        timeout: 20_000,
+      });
+      await expect(a.locator("[data-ink-idle]")).toBeAttached({ timeout: 20_000 });
+      const moved = (await blockTop(a, 3)) - (await blockTop(a, 2));
+      expect(moved).toBeGreaterThan(0);
+      // Same place as drawn (its anchor no longer matches a block), not beside whatever block took its position.
+      const now = await violetCentre(a, (drawn as number) - 20, (drawn as number) + 20);
+      expect(now).not.toBeNull();
+      expect(Math.abs((now as number) - (drawn as number))).toBeLessThanOrEqual(1);
+      await snap(a, info, ca.guard, "reader-ink-edited-section");
+      expect(ca.errors).toEqual([]);
+    } finally {
+      await s.done();
+    }
+  });
+
   test("states: saving error with retry, section updated notice, toolbar on phone", async ({
     browser,
     baseURL,
@@ -446,6 +552,26 @@ test.describe("ink on a reader section", () => {
       await a.unroute("**/api/ink/**/changes");
       await a.getByRole("button", { name: "Retry" }).click();
       await expect(a.locator(SAVE)).toHaveAttribute("data-ink-save", "saved", { timeout: 15_000 });
+      // The server refuses an item as invalid: it is kept on the device (quarantine) and the student decides.
+      await a.route("**/api/ink/**/changes", async (route) => {
+        const sent = route.request().postDataJSON() as { base_rev: number; items: { id: string }[] };
+        const res = await route.fetch({ postData: JSON.stringify({ base_rev: sent.base_rev, items: [] }) });
+        const body = (await res.json()) as Record<string, unknown>;
+        const rejected = sent.items.map((i) => ({ id: i.id, reason: "invalid" }));
+        await route.fulfill({ response: res, json: { ...body, applied: [], rejected } });
+      });
+      const y3 = (await blockTop(a, 3)) + 10;
+      await pickViolet(a);
+      await penStroke(a, 0.1, 0.45, y3, 7);
+      await expect(a.locator(SAVE)).toHaveAttribute("data-ink-save", "error", { timeout: 15_000 });
+      await expect(a.getByRole("alert")).toContainText("Some ink couldn't be saved");
+      await expect.poll(() => violetCentre(a, y3 - 12, y3 + 12)).not.toBeNull(); // still on the page
+      await expectNoAxeViolations(a);
+      await snap(a, info, ca.guard, "reader-ink-rejected");
+      await a.getByRole("button", { name: "Discard" }).click();
+      await expect(a.locator(SAVE)).toHaveAttribute("data-ink-save", "saved", { timeout: 15_000 });
+      await expect.poll(() => violetCentre(a, y3 - 12, y3 + 12)).toBeNull();
+      await a.unroute("**/api/ink/**/changes");
       // The section's text changed after this ink was drawn (served as such): the notice, ink kept.
       await a.route("**/api/ink/section/**", async (route) => {
         if (route.request().method() !== "GET") return route.continue();

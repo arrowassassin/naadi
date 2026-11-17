@@ -39,6 +39,10 @@ class FakeServer {
   offline = false;
   sent: InkItem[][] = [];
   beacons: InkItem[][] = [];
+  /** The server's clock: stamps more than 5 minutes past it are clamped and echoed, as the API does. */
+  now = () => T + 1_000;
+  /** Ids the server refuses as invalid. */
+  invalid = new Set<string>();
   transport(): InkTransport {
     return {
       load: async (since) => {
@@ -55,7 +59,17 @@ class FakeServer {
         this.sent.push(items);
         const applied: string[] = [];
         const rejected: ChangesPayload["rejected"] = [];
-        for (const it of items) {
+        const clamped = new Set<string>();
+        for (const sent of items) {
+          if (this.invalid.has(sent.id)) {
+            rejected.push({ id: sent.id, reason: "invalid" });
+            continue;
+          }
+          let it = sent;
+          if (it.updatedAt > this.now() + 300_000) {
+            it = { ...it, updatedAt: this.now() };
+            clamped.add(it.id);
+          }
           const cur = this.rows.get(it.id);
           if (!cur || beats(it, cur.item)) {
             this.rows.set(it.id, { item: it, seq: ++this.seq });
@@ -64,7 +78,12 @@ class FakeServer {
         }
         const mine = new Set(applied);
         const remote = [...this.rows.values()]
-          .filter((r) => (r.seq > base && !mine.has(r.item.id)) || rejected.some((x) => x.id === r.item.id))
+          .filter(
+            (r) =>
+              (r.seq > base && !mine.has(r.item.id)) ||
+              rejected.some((x) => x.id === r.item.id) ||
+              (clamped.has(r.item.id) && mine.has(r.item.id)),
+          )
           .map((r) => r.item);
         return { rev: this.seq, applied, rejected, remote, reset: false };
       },
@@ -82,16 +101,17 @@ function make(
   over: Partial<ConstructorParameters<typeof InkSync>[0]> = {},
 ) {
   const remote: InkItem[][] = [];
+  const adopted: InkItem[][] = [];
   const s = new InkSync({
     transport: server.transport(),
     store: dexieStore("u1", surface),
-    onRemote: (items) => remote.push(items),
+    onRemote: (items, o) => (o?.authoritative ? adopted : remote).push(items),
     classify: () => "offline",
     setTimer: () => 0, // flushes are driven by the tests
     clearTimer: () => undefined,
     ...over,
   });
-  return { s, remote };
+  return { s, remote, adopted };
 }
 
 const add = (...items: InkItem[]): InkDiff => ({ added: items, updated: [], removed: [] });
@@ -293,18 +313,21 @@ describe("remote changes", () => {
 describe("block anchors across widths", () => {
   it("the same paragraph, two layouts: an anchored stroke follows its block", () => {
     const landscape = blockResolver([
-      { pm: 0, y: 0 },
-      { pm: 31, y: 0.12 },
-      { pm: 80, y: 0.31 },
+      { pm: 0, y: 0, fp: "heading:00000001" },
+      { pm: 31, y: 0.12, fp: "paragraph:00000002" },
+      { pm: 80, y: 0.31, fp: "paragraph:00000003" },
     ]);
     const phone = blockResolver([
-      { pm: 0, y: 0 },
-      { pm: 31, y: 0.38 },
-      { pm: 80, y: 1.02 },
+      { pm: 0, y: 0, fp: "heading:00000001" },
+      { pm: 31, y: 0.38, fp: "paragraph:00000002" },
+      { pm: 80, y: 1.02, fp: "paragraph:00000003" },
     ]);
     const a = landscape?.at(0.33);
     expect(a?.pm).toBe(80);
-    expect((phone?.offset(80) ?? 0) + (a?.dy ?? 0)).toBeCloseTo(1.04, 6);
+    expect(a?.fp).toBe("paragraph:00000003");
+    expect((phone?.offset(80, a?.fp) ?? 0) + (a?.dy ?? 0)).toBeCloseTo(1.04, 6);
+    expect(phone?.offset(80, "paragraph:0000beef")).toBeNull(); // the paragraph was edited: no snapping
+    expect(phone?.offset(80, undefined)).toBeNull();
   });
 });
 
@@ -314,5 +337,147 @@ describe("section marker placement", () => {
     expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "figure" }] })).toBe(true);
     expect(hasOpaqueBlocks({ type: "doc", content: [{ type: "paragraph" }, { type: "heading" }] })).toBe(false);
     expect(hasOpaqueBlocks(null)).toBe(false);
+  });
+});
+
+describe("review fixes", () => {
+  it("P1: a clock running ahead adopts the server's stamp, so a deletion on another device sticks", async () => {
+    const server = new FakeServer();
+    const ahead = () => T + 1_000 + 600_000; // device A is 10 minutes fast
+    const A = make(server, "section:s1", { now: ahead });
+    const B = make(server, "section:s1");
+    await A.s.restore();
+    await B.s.restore();
+    const x = stroke({ updatedAt: ahead() });
+    A.s.record(add(x));
+    await A.s.flush();
+    // The server clamped X to its own time and sent its copy back: A adopted it (authoritative), stamp included.
+    expect(server.rows.get(x.id)?.item.updatedAt).toBe(T + 1_000);
+    expect(A.adopted.flat().map((i) => [i.id, i.updatedAt])).toEqual([[x.id, T + 1_000]]);
+    expect(A.s.replicaItems().find((i) => i.id === x.id)?.updatedAt).toBe(T + 1_000);
+    // B erases X a moment later (server time); A's next refresh brings the tombstone and A drops X.
+    await B.s.refresh();
+    B.s.record({ added: [], updated: [], removed: [x.id] });
+    expect(server.now() + 5).toBeGreaterThan(T + 1_000);
+    await B.s.flush();
+    expect(server.rows.get(x.id)?.item.deleted).toBe(true);
+    await A.s.refresh();
+    expect(A.s.liveItems().map((i) => i.id)).not.toContain(x.id);
+    expect(A.remote.flat().some((i) => i.id === x.id && i.deleted)).toBe(true);
+    expect(server.rows.get(x.id)?.item.deleted).toBe(true);
+  });
+
+  it("P1: a newer local edit made while the clamped write was in flight is not overwritten", async () => {
+    const server = new FakeServer();
+    server.now = () => T + 1_000 + server.sent.length; // the server's clock moves between requests
+    const t = server.transport();
+    let release: () => void = () => undefined;
+    let started: () => void = () => undefined;
+    const inFlight = new Promise<void>((r) => {
+      started = r;
+    });
+    const gate = new Promise<void>((r) => {
+      release = r;
+    });
+    const A = make(server, "section:s1", {
+      now: () => T + 2_000_000,
+      transport: {
+        ...t,
+        send: async (b, items, o) => {
+          started();
+          await gate;
+          return t.send(b, items, o);
+        },
+      },
+    });
+    await A.s.restore();
+    const x = stroke({ updatedAt: T + 2_000_000 });
+    A.s.record(add(x));
+    const flushing = A.s.flush();
+    await inFlight;
+    A.s.record({ added: [], updated: [{ ...x, color: "violet", updatedAt: T + 2_000_001 }], removed: [] });
+    release();
+    await flushing;
+    // The first answer's copy (the ink colour) was not adopted over the newer violet edit; the violet one was sent
+    // next and is the one adopted.
+    expect(A.adopted.flat().map((i) => i.color)).toEqual(["violet"]);
+    expect(A.s.replicaItems().find((i) => i.id === x.id)?.color).toBe("violet");
+    expect(A.s.pendingCount).toBe(0);
+  });
+
+  it("P5: an item the server refuses is quarantined on the device, shown as an error, and can be retried or discarded", async () => {
+    const server = new FakeServer();
+    const A = make(server);
+    await A.s.restore();
+    const bad = stroke();
+    const good = stroke();
+    server.invalid.add(bad.id);
+    A.s.record(add(bad, good));
+    await A.s.flush();
+    expect(A.s.state).toBe("error");
+    expect(A.s.lastFailure).toBe("rejected");
+    expect(A.s.rejectedCount).toBe(1);
+    expect(A.s.pendingCount).toBe(0); // the rest of the queue is not blocked
+    expect(server.rows.has(good.id)).toBe(true);
+    expect(A.s.liveItems().map((i) => i.id)).toContain(bad.id); // still on the canvas
+    expect((await inkDb().inkRejected.toArray()).map((r) => r.id)).toEqual([bad.id]);
+    expect(await inkDb().inkPending.count()).toBe(0);
+    // A reload keeps it quarantined (and on the canvas).
+    const again = make(server);
+    expect((await again.s.restore()).map((i) => i.id)).toContain(bad.id);
+    expect(again.s.state).toBe("error");
+    // Retry sends it again; the server now takes it.
+    server.invalid.clear();
+    await again.s.retry({ rejected: true });
+    expect(server.rows.has(bad.id)).toBe(true);
+    expect(again.s.state).toBe("saved");
+    expect(await inkDb().inkRejected.count()).toBe(0);
+  });
+
+  it("P5: Discard removes the quarantined item from the canvas and the device", async () => {
+    const server = new FakeServer();
+    const A = make(server);
+    await A.s.restore();
+    const bad = stroke();
+    server.invalid.add(bad.id);
+    A.s.record(add(bad));
+    await A.s.flush();
+    A.s.discardRejected();
+    expect(A.s.state).toBe("saved");
+    expect(A.s.liveItems()).toEqual([]);
+    expect(A.remote.flat()).toEqual([{ ...bad, deleted: true }]);
+    await new Promise((r) => setTimeout(r, 0));
+    expect(await inkDb().inkRejected.count()).toBe(0);
+    expect(server.rows.has(bad.id)).toBe(false);
+  });
+
+  it("P3: a stale edit with reset (purged deletion) leaves the device without the stroke", async () => {
+    const server = new FakeServer();
+    const A = make(server);
+    await A.s.restore();
+    const x = stroke();
+    const t = server.transport();
+    // The server answers like the API below the purge horizon: stale, reset, a full list without X.
+    A.s.record(add(x));
+    const keep = stroke();
+    server.rows.set(keep.id, { item: keep, seq: ++server.seq });
+    const s2 = make(server, "section:s1", {
+      transport: {
+        ...t,
+        send: async () => ({
+          rev: server.seq,
+          applied: [],
+          rejected: [{ id: x.id, reason: "stale" }],
+          remote: [keep],
+          reset: true,
+        }),
+      },
+    });
+    s2.s.record(add(x));
+    await s2.s.restore();
+    await s2.s.flush();
+    expect(s2.s.liveItems().map((i) => i.id)).toEqual([keep.id]);
+    expect(s2.remote.flat().some((i) => i.id === x.id && i.deleted)).toBe(true);
+    expect(s2.s.pendingCount).toBe(0);
   });
 });

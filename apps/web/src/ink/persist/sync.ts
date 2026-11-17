@@ -14,11 +14,16 @@ import type { PendingStore } from "./db";
  *   sent), an older one is dropped (the server's copy won). Remote changes reach the engine through `onRemote`
  *   (InkEngine.applyRemote: no undo steps).
  *
+ * - The server clamps a stamp from a clock running ahead and sends its stored copy back; this device adopts it
+ *   (`onRemote(items, { authoritative: true })`), so its future stamp never outlives the request.
+ * - An item the server refuses as `invalid` moves to a quarantine on the device (never dropped silently): the
+ *   state is "error" with failure "rejected" until the student retries (resend) or discards it.
+ *
  * Network operations run one at a time (a refresh never races a send over the sync cursor).
  */
 
 export type InkSaveState = "loading" | "saved" | "saving" | "local" | "error";
-export type InkFailure = "offline" | "server" | "limit";
+export type InkFailure = "offline" | "server" | "limit" | "rejected";
 
 export interface LayerPayload {
   rev: number;
@@ -49,8 +54,9 @@ export interface InkTransport {
 export interface InkSyncOptions {
   transport: InkTransport;
   store: PendingStore;
-  /** Remote versions the engine must merge (InkEngine.applyRemote). */
-  onRemote: (items: InkItem[]) => void;
+  /** Remote versions the engine must merge (InkEngine.applyRemote); `authoritative`: the server's copy of this
+   * device's own write, adopted whatever its stamp. */
+  onRemote: (items: InkItem[], opts?: { authoritative?: boolean }) => void;
   onChange?: () => void;
   /** Classifies a send/load error: no connection (ink is safe on the device) vs refused by the server. */
   classify: (err: unknown) => InkFailure;
@@ -91,6 +97,7 @@ export class InkSync {
   private readonly o: Required<Omit<InkSyncOptions, "onChange">> & Pick<InkSyncOptions, "onChange">;
   private readonly replica = new Map<string, InkItem>();
   private readonly pending = new Map<string, InkItem>();
+  private readonly rejected = new Map<string, InkItem>();
   private rev = 0;
   private restored = false;
   private hadSnapshot = false;
@@ -122,6 +129,7 @@ export class InkSync {
 
   get state(): InkSaveState {
     if (!this.restored) return "loading";
+    if (this.rejected.size > 0 && !this.busy) return "error";
     if (this.pending.size === 0 && !this.busy) return "saved";
     if (this.failure === "server" || this.failure === "limit") return "error";
     if (this.failure === "offline") return this.durable ? "local" : "error";
@@ -134,7 +142,13 @@ export class InkSync {
   }
 
   get lastFailure(): InkFailure | null {
+    if (this.rejected.size > 0 && this.failure === null) return "rejected";
     return this.failure;
+  }
+
+  /** Items the server refused, kept on the device until retried or discarded. */
+  get rejectedCount(): number {
+    return this.rejected.size;
   }
 
   get pendingCount(): number {
@@ -168,17 +182,25 @@ export class InkSync {
   async restore(): Promise<InkItem[]> {
     let snapshot: { rev: number; items: InkItem[] } | null = null;
     let pending: InkItem[] = [];
+    let rejected: InkItem[] = [];
     try {
-      [snapshot, pending] = await Promise.all([this.o.store.readLayer(), this.o.store.readPending()]);
+      [snapshot, pending, rejected] = await Promise.all([
+        this.o.store.readLayer(),
+        this.o.store.readPending(),
+        this.o.store.readRejected(),
+      ]);
     } catch {
       this.durable = false;
     }
     const valid = (items: readonly InkItem[]) => items.filter((i) => InkItemSchema.safeParse(i).success);
     const snap = valid(snapshot?.items ?? []);
     const mine = valid(pending);
+    for (const item of rejected) this.rejected.set(item.id, item);
     this.hadSnapshot = snapshot !== null;
     this.rev = snapshot?.rev ?? 0;
-    for (const item of mergeInkItems(snap, mine)) this.replica.set(item.id, item);
+    // Quarantined items are still shown (the student decides): they join the replica like pending ones.
+    for (const item of mergeInkItems(mergeInkItems(snap, mine), [...this.rejected.values()]))
+      this.replica.set(item.id, item);
     // A pending version that the snapshot already beats is obsolete (the server had a newer copy).
     for (const item of mine) {
       const r = this.replica.get(item.id);
@@ -308,12 +330,45 @@ export class InkSync {
     this.o.transport.abort?.();
   }
 
-  /** Retry now (the "Retry" button, the `online` event). */
-  retry(): Promise<void> {
+  /** Retry now (the "Retry" button, the `online` event). Only the button (`rejected: true`) resends quarantined
+   * items: the server refused them once, so only the student's choice sends them again. */
+  retry(opts: { rejected?: boolean } = {}): Promise<void> {
+    if (opts.rejected && this.rejected.size > 0) {
+      const again = [...this.rejected.values()].filter((i) => {
+        const cur = this.pending.get(i.id);
+        return !cur || !beats(cur, i);
+      });
+      const ids = [...this.rejected.keys()];
+      this.rejected.clear();
+      for (const item of again) this.pending.set(item.id, item);
+      this.persist(again);
+      this.persisted = this.persisted.then(() => this.o.store.releaseRejected(ids).catch(() => undefined));
+      this.changed();
+    }
     this.retryMs = 0;
     if (this.retryTimer !== null) this.o.clearTimer(this.retryTimer);
     this.retryTimer = null;
     return this.flush();
+  }
+
+  /** Drop the quarantined items from this device and from the canvas (the "Discard" button). */
+  discardRejected(): void {
+    if (this.rejected.size === 0) return;
+    const gone: InkItem[] = [];
+    for (const [id, item] of this.rejected) {
+      const cur = this.replica.get(id);
+      // Only what is still the quarantined version: a newer edit of the same stroke stays.
+      if (cur && !beats(cur, item)) {
+        this.replica.delete(id);
+        if (!item.deleted) gone.push({ ...item, deleted: true }); // same stamp: a tombstone wins the tie locally
+      }
+    }
+    const ids = [...this.rejected.keys()];
+    this.rejected.clear();
+    void this.o.store.releaseRejected(ids).catch(() => undefined);
+    if (gone.length) this.o.onRemote(gone);
+    this.snapshot();
+    this.changed();
   }
 
   stop(): void {
@@ -347,35 +402,58 @@ export class InkSync {
     for (const id of applied) settled.set(id, "applied");
     for (const r of out.rejected) if (r.id && !settled.has(r.id)) settled.set(r.id, r.reason);
     const done: InkItem[] = [];
+    const refused: InkItem[] = [];
     for (const item of batch) {
       const reason = settled.get(item.id);
       if (!reason) continue;
-      if (reason === "invalid") console.warn("naadi: the server refused an ink item as invalid; it was dropped");
       const cur = this.pending.get(item.id);
       if (cur === item) this.pending.delete(item.id); // a newer local edit stays pending
-      done.push(item);
+      if (reason === "invalid") {
+        refused.push(item);
+        this.rejected.set(item.id, item);
+      } else done.push(item);
     }
     // An item the server neither applied nor rejected (should not happen) stays pending and is resent.
     try {
-      await this.o.store.ackPending(done);
+      await Promise.all([this.o.store.ackPending(done), this.o.store.quarantine(refused)]);
     } catch {
       this.durable = false;
     }
-    this.applyServer(out.remote, out.reset);
+    // The server's copy of something this request sent is the merge result for that id, whatever the stamps say
+    // here: applied with a clamped stamp, or stale (the stored row won, including a full tie, and a clamped stamp
+    // that lost). Adopt it, unless the student has edited the item again since (that version is pending).
+    const sent = new Map(batch.map((i) => [i.id, i]));
+    const adopt: InkItem[] = [];
+    const rest: InkItem[] = [];
+    for (const item of out.remote) {
+      const mine = sent.get(item.id);
+      const why = settled.get(item.id);
+      if (mine && (why === "applied" || why === "stale") && InkItemSchema.safeParse(item).success) {
+        const cur = this.pending.get(item.id);
+        if (!cur || cur === mine) {
+          this.replica.set(item.id, item);
+          adopt.push(item);
+        }
+        continue;
+      }
+      rest.push(item);
+    }
+    if (adopt.length) this.o.onRemote(adopt, { authoritative: true });
+    this.applyServer(rest, out.reset, adopt);
     this.rev = Math.max(this.rev, out.rev);
     this.snapshot();
   }
 
   /** Merge server versions into the replica and hand the engine what it must change. */
-  private applyServer(items: readonly InkItem[], full: boolean): void {
+  private applyServer(items: readonly InkItem[], full: boolean, alsoLive: readonly InkItem[] = []): void {
     const toEngine: InkItem[] = [];
     const drop: InkItem[] = [];
     const valid = items.filter((i) => InkItemSchema.safeParse(i).success);
     if (full) {
       // A full load lists every live item: anything else this device shows (and has not just drawn) is gone.
-      const live = new Set(valid.map((i) => i.id));
+      const live = new Set([...valid, ...alsoLive].map((i) => i.id));
       for (const [id, item] of this.replica) {
-        if (live.has(id) || this.pending.has(id)) continue;
+        if (live.has(id) || this.pending.has(id) || this.rejected.has(id)) continue;
         if (!item.deleted) toEngine.push({ ...item, deleted: true }); // same stamp: a tombstone wins the tie
         this.replica.delete(id);
       }

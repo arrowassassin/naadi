@@ -1,23 +1,28 @@
-import { blockResolver, type InkAnchorResolver } from "@naadi/ink";
+import { type AnchorBlock, blockResolver, type InkAnchorResolver } from "@naadi/ink";
 import { type RefObject, useEffect, useState } from "react";
 
-/** Block tops (su) of every `[data-block-pm]` element inside the ink surface, measured against its ink host. */
-export function measureBlocks(surface: HTMLElement): { pm: number; y: number }[] {
+/** Block tops (su) of every `[data-block-pm]` element inside the ink surface, measured against its ink host, with
+ * the block's fingerprint (`data-block-fp`). */
+export function measureBlocks(surface: HTMLElement): AnchorBlock[] {
   const host = surface.querySelector<HTMLElement>("[data-ink-host]") ?? surface;
   const width = host.clientWidth;
   if (width <= 0) return [];
   const top = host.getBoundingClientRect().top;
-  const out: { pm: number; y: number }[] = [];
+  const out: AnchorBlock[] = [];
   for (const el of surface.querySelectorAll<HTMLElement>("[data-block-pm]")) {
     const pm = Number(el.dataset.blockPm);
-    if (!Number.isInteger(pm) || pm < 0) continue;
-    out.push({ pm, y: (el.getBoundingClientRect().top - top) / width });
+    const fp = el.dataset.blockFp;
+    if (!Number.isInteger(pm) || pm < 0 || !fp) continue;
+    out.push({ pm, fp, y: (el.getBoundingClientRect().top - top) / width });
   }
   return out.sort((a, b) => a.y - b.y);
 }
 
-function same(a: { pm: number; y: number }[], b: { pm: number; y: number }[]): boolean {
-  return a.length === b.length && a.every((x, i) => x.pm === b[i]?.pm && Math.abs(x.y - (b[i]?.y ?? 0)) < 1e-6);
+function same(a: AnchorBlock[], b: AnchorBlock[]): boolean {
+  return (
+    a.length === b.length &&
+    a.every((x, i) => x.pm === b[i]?.pm && x.fp === b[i]?.fp && Math.abs(x.y - (b[i]?.y ?? 0)) < 1e-6)
+  );
 }
 
 /**
@@ -42,7 +47,7 @@ export function liveBlockResolver(surface: HTMLElement): InkAnchorResolver {
   };
   return {
     at: (y) => current()?.at(y) ?? null,
-    offset: (pm) => current()?.offset(pm) ?? null,
+    offset: (pm, fp) => current()?.offset(pm, fp) ?? null,
   };
 }
 
@@ -59,7 +64,7 @@ export function useBlockAnchors(surface: RefObject<HTMLElement | null>, key: unk
   useEffect(() => {
     const el = surface.current;
     if (!el) return;
-    let last: { pm: number; y: number }[] = [];
+    let last: AnchorBlock[] = [];
     let raf = 0;
     const run = () => {
       raf = 0;

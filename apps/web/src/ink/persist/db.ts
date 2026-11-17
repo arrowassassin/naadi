@@ -9,6 +9,9 @@ import { Dexie, type EntityTable } from "dexie";
  *   server has confirmed that exact version. Segment 18 folds this table into the general outbox (same POST).
  * - `inkLayers`: the last merged layer from the server (items + sync cursor), so an offline reload still shows the
  *   ink that was already synced.
+ * - `inkRejected`: items the server refused as invalid (quarantine). They leave `inkPending`, so they don't block
+ *   the rest of the queue, but they are never dropped silently. The surface shows an error until the student
+ *   retries (back to pending) or discards them.
  *
  * Unsent ink is never cleared on sign-out (it is resent when that user signs in again on this device); the
  * snapshots are, since the server holds them.
@@ -29,9 +32,18 @@ export interface LayerRow {
   savedAt: number;
 }
 
+export interface RejectedRow {
+  user: string;
+  surface: string;
+  id: string;
+  item: InkItem;
+  rejectedAt: number;
+}
+
 export type InkDb = Dexie & {
   inkPending: EntityTable<PendingRow, "id">;
   inkLayers: EntityTable<LayerRow, "surface">;
+  inkRejected: EntityTable<RejectedRow, "id">;
 };
 
 let db: InkDb | null = null;
@@ -42,6 +54,11 @@ export function inkDb(): InkDb {
     d.version(1).stores({
       inkPending: "[user+surface+id], [user+surface]",
       inkLayers: "[user+surface], user",
+    });
+    d.version(2).stores({
+      inkPending: "[user+surface+id], [user+surface]",
+      inkLayers: "[user+surface], user",
+      inkRejected: "[user+surface+id], [user+surface]",
     });
     db = d;
   }
@@ -62,6 +79,11 @@ export interface PendingStore {
   ackPending(items: readonly InkItem[]): Promise<void>;
   readLayer(): Promise<{ rev: number; items: InkItem[] } | null>;
   writeLayer(rev: number, items: readonly InkItem[]): Promise<void>;
+  readRejected(): Promise<InkItem[]>;
+  /** Move these versions from pending to the quarantine (one transaction). */
+  quarantine(items: readonly InkItem[]): Promise<void>;
+  /** Remove these ids from the quarantine (retried: they are pending again; or discarded). */
+  releaseRejected(ids: readonly string[]): Promise<void>;
 }
 
 function sameVersion(a: InkItem, b: InkItem): boolean {
@@ -93,6 +115,30 @@ export function dexieStore(user: string, surface: string): PendingStore {
         });
         if (drop.length) await t.bulkDelete(drop);
       });
+    },
+    async readRejected() {
+      const rows = await d().inkRejected.where("[user+surface]").equals([user, surface]).toArray();
+      return rows.map((r) => r.item);
+    },
+    async quarantine(items) {
+      if (items.length === 0) return;
+      const { inkPending, inkRejected } = d();
+      await d().transaction("rw", inkPending, inkRejected, async () => {
+        const rejectedAt = Date.now();
+        await inkRejected.bulkPut(items.map((item) => ({ user, surface, id: item.id, item, rejectedAt })));
+        const keys = items.map((i) => [user, surface, i.id] as unknown as string);
+        const rows = await inkPending.bulkGet(keys);
+        const drop = keys.filter((_, n) => {
+          const row = rows[n];
+          const sent = items[n];
+          return row && sent && sameVersion(row.item, sent);
+        });
+        if (drop.length) await inkPending.bulkDelete(drop);
+      });
+    },
+    async releaseRejected(ids) {
+      if (ids.length === 0) return;
+      await d().inkRejected.bulkDelete(ids.map((id) => [user, surface, id] as unknown as string));
     },
     async readLayer() {
       const row = await d().inkLayers.get([user, surface] as unknown as string);

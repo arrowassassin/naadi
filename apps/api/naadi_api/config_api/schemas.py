@@ -1264,6 +1264,8 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "ink.save.error",
         "ink.save.full",
         "ink.save.retry",
+        "ink.save.rejected",
+        "ink.save.discard",
         "ink.page.toggle",
         "ink.page.toggle_on",
         "ink.page.outdated",

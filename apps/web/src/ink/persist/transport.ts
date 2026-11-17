@@ -9,6 +9,7 @@ import {
 import { authed } from "../../auth/api";
 import { ApiError, UNREACHABLE } from "../../auth/apiError";
 import { accessToken } from "../../auth/session";
+import { observeServerClock } from "./clock";
 import type { ChangesPayload, InkFailure, InkTransport, LayerPayload } from "./sync";
 
 /** No HTTP answer, or a server that is down: the ink is safe on the device and is sent later. */
@@ -46,19 +47,23 @@ export function apiTransport(surfaceType: InkSurfaceType, surfaceId: string): In
   return {
     async load(since): Promise<LayerPayload> {
       assertOnline();
+      const sentAt = Date.now();
       const out = await authed<InkLayerOut>((headers) =>
         // keepalive: a load still running when the page navigates away is not torn down by the unload (WebKit
         // reports such a cancelled request as a page error); it has no body, so the 64 KB limit does not apply.
         getInkLayer({ path, query: since === null ? undefined : { since }, headers, keepalive: true }),
       );
+      observeServerClock(out.server_now, sentAt, Date.now());
       remember();
       return { rev: out.rev, items: out.items as InkItem[], reset: out.reset, outdated: out.outdated };
     },
     async send(baseRev, items, { keepalive }): Promise<ChangesPayload> {
       assertOnline();
+      const sentAt = Date.now();
       const out = await authed<InkChangesOut>((headers) =>
         postInkChanges({ path, body: { base_rev: baseRev, items }, headers, keepalive, signal: inflight.signal }),
       );
+      observeServerClock(out.server_now, sentAt, Date.now());
       remember();
       return {
         rev: out.rev,
