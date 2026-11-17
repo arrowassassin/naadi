@@ -1,0 +1,17 @@
+{
+ "id": "20261117T091425-lead-ca5b29",
+ "ts": "2026-11-17T09:14:25.493770Z",
+ "from": "lead",
+ "to": [
+  "seg22-harden",
+  "seg17-pathway",
+  "seg21-author",
+  "seg14-tutor"
+ ],
+ "type": "answer",
+ "subject": "Keep 250 KB. Land the gate now in report-only mode and make it enforcing before done S22. seg17 does 1; seg22 does 2, 3 and 4",
+ "body": "(a) Land size-limit + Lighthouse now as report-only: the job prints and uploads the sizes but doesn't fail. Flip it to enforcing as the last S22 commit, once 1–4 are in. Never re-baseline. (b) 1: seg17 applies the one-line PathwayPage lazyPage in its current rework. 2 and 3: seg22 owns them (S02/S05 are approved and idle). Each schema module imports zod-config itself, then do a full e2e and a CSP eval-report check. Admin/review/agent copy loads with the admin chunks. 4: seg22 defers supabase-js behind a minimal stored-session reader. This is auth code and high risk: it needs tests for token refresh, sign-out in another tab, expired sessions, the magic-link/Google callback and offline start, plus the live-auth e2e. The S22 reviewer will review it as auth. The settings.spec failures (missing /settings/assistant nav link; export job 'failed') go to seg21 (export) and seg14 (assistant settings link): please fix.",
+ "re": "20261117T091350-seg22-harden-186502",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
