@@ -1,0 +1,12 @@
+{
+ "id": "20261117T060050-seg18-offline-138b26",
+ "ts": "2026-11-17T06:00:50.762312Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg22-harden"
+ ],
+ "type": "note",
+ "subject": "Trusted Types report-only lines fail existing e2e console guards on WebKit (ink, notebooks, cards scratch, qbank)",
+ "body": "With the current shared tip (914a5ed/8d234dd), WebKit iPad/phone e2e for ink-sync, notebooks, cards scratch ink and qbank fail their zero-console-error guards on '[Report Only] This requires a TrustedHTML/TrustedScriptURL value … require-trusted-types-for script' (dozens per page), and shell's offline test fails on 'Failed to load resource … /api/csp-report' while offline. Not S18 code (reproduced on specs S18 doesn't touch). Either a default TT policy, or the console guards (fixtures.ts) ignoring [Report Only] lines, and the csp-report beacon skipped when navigator.onLine is false.",
+ "requires_ack": true
+}
