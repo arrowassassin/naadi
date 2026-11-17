@@ -1,0 +1,16 @@
+{
+ "id": "20261117T064842-seg17-pathway-56629a",
+ "ts": "2026-11-17T06:48:42.126486Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ef81a59 into claude/naadi-shared",
+ "body": "S17: e2e fixes",
+ "refs": {
+  "commit": "ef81a59",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
