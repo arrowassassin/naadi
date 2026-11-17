@@ -22,6 +22,10 @@ test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:
 const SECTION = "/learn/ch05/ch05-s02";
 const SURFACE = '[data-ink-surface][aria-label="Your ink on this section"]';
 const SAVE = "[data-ink-save]";
+// The production build registers a service worker (Web Push). In WebKit, page.route no longer sees the requests of
+// a page that worker controls (every load after the first), and these tests route the ink API. They test sync,
+// not push, so the worker is blocked.
+const NO_SW = "block" as const;
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string, full = false) =>
   guard.duringTool(async () => {
@@ -80,7 +84,12 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
   runUsers(["delete", "--email", email]);
   const contexts: BrowserContext[] = [];
   const device = async (viewport?: { width: number; height: number }, opts: { clockAheadMs?: number } = {}) => {
-    const context = await browser.newContext({ ...info.project.use, ...(viewport ? { viewport } : {}), baseURL });
+    const context = await browser.newContext({
+      ...info.project.use,
+      ...(viewport ? { viewport } : {}),
+      baseURL,
+      serviceWorkers: NO_SW,
+    });
     contexts.push(context);
     if (opts.clockAheadMs) {
       // This device's clock runs fast (Date.now only: timers and animation frames run as usual).
@@ -707,7 +716,7 @@ test.describe("on the production server (strict CSP)", () => {
     // prod origin; the first context is closed first, so nothing else ever refreshes it.
     const email = emailFor(info, "prod");
     runUsers(["delete", "--email", email]);
-    const signIn = await browser.newContext({ ...info.project.use, baseURL });
+    const signIn = await browser.newContext({ ...info.project.use, baseURL, serviceWorkers: NO_SW });
     let origins: { origin: string; localStorage: { name: string; value: string }[] }[];
     try {
       const p = await signIn.newPage();
@@ -722,6 +731,7 @@ test.describe("on the production server (strict CSP)", () => {
       ...info.project.use,
       baseURL: PROD,
       ignoreHTTPSErrors: true,
+      serviceWorkers: NO_SW,
       storageState: { cookies: [], origins: origins.map((o) => ({ ...o, origin })) },
     });
     try {
