@@ -1,0 +1,17 @@
+{
+ "id": "20261117T040434-lead-e6cafe",
+ "ts": "2026-11-17T04:04:34.983578Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S12af verified (lead): CI 44009928102 green on all jobs",
+ "body": "Microtask/async continuations timed (negative tests catch both), page-wide slab + parked-picture budgets, timer-resolution handling; found and fixed a main-thread img.decode() on restore (dpr-2 scroll handler 1.7 s → 86 ms). Watch: dpr-2 WebKit ratio 0.76–0.80 near the 0.7 bound — real-iPad check decides.",
+ "re": "20261117T014516-lead-b0c940",
+ "thread": "20261117T014516-lead-b0c940",
+ "refs": {
+  "commit": "46c0394"
+ },
+ "requires_ack": false
+}
