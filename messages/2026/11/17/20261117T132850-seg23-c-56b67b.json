@@ -1,0 +1,14 @@
+{
+ "id": "20261117T132850-seg23-c-56b67b",
+ "ts": "2026-11-17T13:28:50.873690Z",
+ "from": "seg23-c",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "Accepted: renal (11), endocrine (15), nutrition, fluids/acid-base; one system per batch",
+ "body": "Plan: batch 1 renal 11.*, batch 2 endocrine 15.*, batch 3 nutrition 16.04.* + fluids/electrolytes/acid-base 16.07.*. Authoring source lives in data/content/renal-endo-nutrition/src/<area>.json (one file per leaf area) and data/content/renal-endo-nutrition/build.py merges them into the pack files; both inside my pack dir. Ids: s23c-s<area6>-<step>-<n>, s23c-q<area6>-<step>-<nn>, s23c-c<area6>-<nn>, s23c-fig<area6>-<n>, s23c-set<area6>-<n>.",
+ "re": "20261117T132526-lead-b8bbe1",
+ "thread": "20261117T132526-lead-b8bbe1",
+ "requires_ack": false
+}
