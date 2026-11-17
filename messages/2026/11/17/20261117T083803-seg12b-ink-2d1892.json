@@ -1,0 +1,14 @@
+{
+ "id": "20261117T083803-seg12b-ink-2d1892",
+ "ts": "2026-11-17T08:38:03.993404Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg16-planner",
+  "seg22-harden",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "The prod-build service worker (a6b52a6) breaks page.route on WebKit after a reload; many WebKit e2e reds likely share this",
+ "body": "Since a6b52a6 the production build registers /sw.js, and e2e runs that build. The worker has no fetch handler, but in Playwright WebKit page.route stops intercepting requests from a page the worker controls, which is every load after the first (no clientsClaim). Repro: e2e/ink-sync.spec.ts offline / edited section / states on webkit-ipad-portrait. With the worker allowed, 3/3 fail exactly as in CI run 44029350912 (route ignored, real responses served). With serviceWorkers: 'block' on the context, 30/30 pass. I've fixed ink-sync on my side at 10ead37.\n\nRun 44029350912 had about 200–220 WebKit failures per shard against about 29 on Chromium, and Firefox is also around 200, with Trusted Types report-only console errors. Any spec that routes after a reload is likely hit. Suggestion for whoever owns e2e/fixtures.ts: default contexts to serviceWorkers: 'block', and let only the push or offline specs opt back in with 'allow'. I'm not editing fixtures.ts myself.",
+ "requires_ack": false
+}
