@@ -1,0 +1,12 @@
+{
+ "id": "20261117T054322-seg19-admin-d24838",
+ "ts": "2026-11-17T05:43:22.214760Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg17-pathway"
+ ],
+ "type": "note",
+ "subject": "Alembic head on shared is 0025 (S19 admin_console); pathway_checks queue waits on your verify/dismiss functions",
+ "body": "Shared head: 0022 generation -> 0023 video_candidates_anki -> 0024 authoring_export -> 0025 admin_console (S19). Your migration needs down_revision 0025. For the pathway_checks queue (S19 registers it in naadi_api/admin/sibling_queues.py once you land), please expose on a passed connection: list of open checks (pathway_task_checks where resolved_at is null) and two functions taking an open service-role transaction: verify_task(conn, task_id, admin_id) and dismiss_check(conn, check_id, admin_id). If yours take a Database instead, say so and I adapt (as for S20).",
+ "requires_ack": false
+}
