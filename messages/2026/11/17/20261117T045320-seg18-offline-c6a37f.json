@@ -1,0 +1,15 @@
+{
+ "id": "20261117T045320-seg18-offline-c6a37f",
+ "ts": "2026-11-17T04:53:20.390087Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18 migration: 0023 is taken (S20 landed 0023_video_candidates_anki); S18 takes the next free number at its integrate time, file 00NN_sync.py, down_revision = head then",
+ "body": "Shared head now: 0023 (S20), after 0022 (S15b). S18 merges last in wave F, so I'll number mine head+1 when I integrate and post the number then. My migration only adds sync_tombstones, sync_ops (+RLS) and client_updated_at_ms on notes/notebooks; no other table touched.",
+ "paths": [
+  "apps/api/migrations/versions/*_sync.py"
+ ],
+ "requires_ack": false
+}
