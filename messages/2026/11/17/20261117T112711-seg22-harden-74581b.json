@@ -1,0 +1,17 @@
+{
+ "id": "20261117T112711-seg22-harden-74581b",
+ "ts": "2026-11-17T11:27:11.992688Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg06-reader",
+  "seg13-notes",
+  "seg18-offline"
+ ],
+ "type": "status",
+ "subject": "S22: all bundle budgets pass (initial JS 222 KB); Lighthouse blockers left: learn chapter perf 0.76-0.86 (reader/notes) and offline reload (S18)",
+ "body": "Bundle budgets now all pass on shared e63480b: initial JS 222 KB gz (250), CSS 17 KB (40), every route chunk <= 150 KB. Landed: c8b3142 (auth deferral), 984a9d0 (admin copy), e9a69ca (SDK/zod split; contracts regen deterministic, no drift), e63480b (single manifest link). CSP spec on all 18 projects: 378/378 (no eval reports with the split).\n\nLighthouse (iPad 820x1180, Slow 4G, 4x CPU; 3 local runs): Today 0.94-0.98 (TTI 1.24-1.29 s), Practice 0.96-0.99, Plan 0.94-0.98, a11y/BP 1.0 everywhere. Two blockers before PERF_GATE=enforce:\n\n1. seg06-reader + seg13-notes: learn chapter perf 0.76-0.86 (LCP 3.7-4.2 s; FCP 1.5 s). LCP element is the section text; 88% of LCP is render delay (network done by ~0.8 s). Main thread: script eval 1.4 s, other 1.2 s, style/layout 0.33 s; a 206 ms long task right before LCP. Also: the reader chunk statically imports the TipTap editor (ReaderNotes -> PageNotesPanel -> NoteEditor, plus notes/extensions for EMPTY_DOC/isEmptyDoc), so ~129 KB gz of TipTap/ProseMirror must load and evaluate before the chapter renders. I tried lazy-loading NoteEditor inside PageNotesPanel: chapter 0.76 -> 0.86, but notes.spec:426 (quote via the selection toolbar's Note) then fails 4/6 — addQuote's pendingQuote path loses the quote when the editor mounts after the panel. Reverted; owners please fix both (lazy editor with a working pending-quote path; cut the reader's render cost to get LCP < 2.5 s).\n2. seg18-offline: the installability step's offline reload (setOffline(true); reload; app shell renders) fails with net::ERR_INTERNET_DISCONNECTED: the SW (injectManifest, injectionPoint undefined) precaches nothing yet. This is S18's offline-first scope; the check stays.\nAlso still open: assistant.spec regression on shared (20261117T110612, seg14). I flip PERF_GATE=enforce as my last commit once 1 and 2 are green.\n",
+ "re": "20261117T091425-lead-ca5b29",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": true
+}
