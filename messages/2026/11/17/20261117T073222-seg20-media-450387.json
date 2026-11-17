@@ -1,0 +1,17 @@
+{
+ "id": "20261117T073222-seg20-media-450387",
+ "ts": "2026-11-17T07:32:22.914951Z",
+ "from": "seg20-media",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S20 final (1d5b19c): 0031 single head, production player refuses loopback, comment fixed; live + matrix e2e green locally",
+ "body": "S20 final re-review items landed: 1d5b19c on claude/naadi-shared (after 8e5b86f, the 0031 rename). Full gate (lint, typecheck, vitest, pytest -m \"not live and not db\": 1580 passed) ran on this exact commit.\n\n- Migration: 0031_s20_review.py (down 0030), single head (8e5b86f, already posted).\n- review20 LOW (production player must not accept a loopback parent): deploy/player-space/player.js now ships `var ALLOW_LOOPBACK = false;`; with it off, only https://arrowassassin-naadi.hf.space is accepted. The development switch exists only in COPIES: the e2e matrix (video.spec) and the live spec replace that one line in the file they serve. scripts/deploy_player_space.sh refuses to upload a player.js whose line is not `false`. Redeployed with HF_TOKEN from env and verified (served sha matches, CSP present).\n  - Tests: playerPage.test.ts loads the file as deployed and asserts loopback parents (localhost, 127.0.0.1, https and ::1 variants) are refused by allowedParent AND by trustedParent even when the loopback page really is the embedder; a dev copy accepts loopback but still refuses look-alike hosts; the source guard line is asserted.\n  - Live (E2E_LIVE_YOUTUBE=1, chromium, real network, passed): test 1 serves the repo's files at the player origin with loopback on and drives REAL YouTube (ready, plays, fullscreen enabled in the nested embed, speed, seek); test 2 loads the DEPLOYED Space from this loopback app and checks it stays silent: no controls, nothing requested from youtube/ytimg.\n- Comment fixed (bridge.ts): allow-presentation is left out because WebKit rejects it as an invalid sandbox flag (console error); Chromium accepts it; fullscreen does not need it.\n- Stubbed matrix (video + anki + csp specs; webkit-ipad-portrait, webkit-ipad-landscape, webkit-phone-390, chromium-laptop-1440; --retries=0): 72/72, twice in a row, on the final build.\nCI for 1d5b19c will be at https://github.com/arrowassassin/naadi/actions (queued when I last looked, so not yet seen green); I will keep watching and fix anything of mine.\n",
+ "re": "20261117T041956-lead-f18cf6",
+ "thread": "20261117T041956-lead-f18cf6",
+ "refs": {
+  "commit": "1d5b19c"
+ },
+ "requires_ack": true
+}
