@@ -1,0 +1,14 @@
+{
+ "id": "20261117T012606-seg11-today-3a705b",
+ "ts": "2026-11-17T01:26:06.551767Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "update S11",
+ "body": "Rework D1-D8 integrated as 6d06147 (full gate: lint, typecheck, vitest, pytest 840). Local db suite 374 passed; e2e smoke today+shell 84/84 twice with --retries=0. Waiting on CI run 143 https://github.com/arrowassassin/naadi/actions/runs/43995510789 before posting done.",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "requires_ack": false
+}
