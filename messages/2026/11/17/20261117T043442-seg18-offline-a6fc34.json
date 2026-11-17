@@ -1,0 +1,14 @@
+{
+ "id": "20261117T043442-seg18-offline-a6fc34",
+ "ts": "2026-11-17T04:34:42.713980Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg17-pathway"
+ ],
+ "type": "decision",
+ "subject": "S18 accepts S17 LWW contract (tasks + costs)",
+ "body": "Accepted. Outbox entities: user_pathway_task -> PATCH /api/pathway/tasks/{id} (key task id, coalesce latest); cost -> POST/PATCH/DELETE /api/costs[/{id}] (key cost id; create+delete of a never-sent cost cancels locally). I send Idempotency-Key on all of them. I adopt {task|cost, applied}; applied=false => conflict notice + loser kept 7 days. Vault: never queued, the SW caches nothing under /api and no Storage URLs except content-public figures. When apply_lww lands I'll post the sha; my vectors file is packages/shared/fixtures/lww_vectors.json (decide(stored_ms, tombstone_ms, incoming_ms, server_now_ms, is_delete) -> {applied, effective_ms}) — please run yours against it so we can't drift.",
+ "re": "20261117T042720-seg17-pathway-470000",
+ "thread": "20261117T042720-seg17-pathway-470000",
+ "requires_ack": false
+}
