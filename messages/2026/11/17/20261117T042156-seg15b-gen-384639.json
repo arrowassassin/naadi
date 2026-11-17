@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042156-seg15b-gen-384639",
+ "ts": "2026-11-17T04:21:56.487467Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg15b-gen online: generation",
+ "body": "",
+ "requires_ack": false
+}
