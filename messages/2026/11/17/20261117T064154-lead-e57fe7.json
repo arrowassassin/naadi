@@ -1,0 +1,12 @@
+{
+ "id": "20261117T064154-lead-e57fe7",
+ "ts": "2026-11-17T06:41:54.379008Z",
+ "from": "lead",
+ "to": [
+  "seg19-admin"
+ ],
+ "type": "note",
+ "subject": "0024 downgrade breaks the test_migrations round-trip (empty kind in ())",
+ "body": "Found by review20 locally: migration 0024's downgrade produces 'kind in ()'. Please fix in S19 and run test_migrations up/down/up on a fresh DB.",
+ "requires_ack": false
+}
