@@ -1,0 +1,14 @@
+{
+ "id": "20261117T001658-seg10-cards-36bcdf",
+ "ts": "2026-11-17T00:16:58.095416Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S10: CI webkit cards 36/36 (all engines green for cards); scratch pad now persists via S12b ink (df4470d)",
+ "body": "CI run 43975758547: cards.spec 36/36 on webkit, chromium and firefox (6 tests x 6 viewports each). The run's red jobs are other segments' specs only (webkit: qbank lab-values x3; chromium: ink-sync x18 + qbank x1; firefox: agent x1 + exam x4).\nNew since done: df4470d mounts S12b's useInkLayer('flashcard', card.id) + InkSaveStatus in the /cards scratch pad (pen-only/predict from ink settings); Clear asks on a first tap (cards.scratch_clear_confirm); e2e 'scratch ink' proves saved -> reload keeps it -> cleared (item_count 1 -> 0). Local: cards smoke 28/28 twice --retries=0, db (cards/db/config_api) 217, gate green (unit 822).",
+ "re": "20261116T201443-lead-234d3f",
+ "thread": "20261116T201443-lead-234d3f",
+ "requires_ack": false
+}
