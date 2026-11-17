@@ -220,7 +220,8 @@ const PdfPageView = memo(function PdfPageView(props: PageProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const height = Math.round(width * (size.h / size.w));
   return (
-    <li ref={(el) => register(n, el)} data-page={n} className="scroll-mt-24">
+    // A jump lands the page just below the floating nav pill (--shell-top), never under it (review15 #4).
+    <li ref={(el) => register(n, el)} data-page={n} className="scroll-mt-[calc(var(--shell-top,0px)+16px)]">
       {near && width > 0 ? (
         <PageInk {...props} canvasRef={canvasRef} />
       ) : (
@@ -468,6 +469,8 @@ export function PdfViewer({ uploadId, page, onPageChange }: PdfViewerProps) {
     jumped.current = page;
     // The route echoing the page in view back as `?page=` is not a jump.
     if (!first && page === currentRef.current) return;
+    // Opening at page 1 stays at the top: the title, pager and thumbnails stay in view below the nav pill.
+    if (first && page <= 1) return;
     requestAnimationFrame(() => goTo(page, false));
   }, [doc, width, page, goTo]);
 

@@ -245,6 +245,99 @@ test.describe("Library", () => {
   });
 });
 
+test.describe("PDF viewer layout", () => {
+  test("opens clear of the nav pill, a jump lands below it, and the ink toolbar fits the screen", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.setTimeout(180_000);
+    const student = await freshStudent(browser, baseURL as string, info, "libl");
+    const work = workDir();
+    try {
+      const file = makePdf(path.join(work, "layout.pdf"), "notes", `Layout ${tag(info)}`, "layout");
+      const page = await student.open("/learn/library");
+      const { errors } = watchConsole(page);
+      await upload(page, file);
+      const open = card(page, "layout.pdf").getByRole("link", { name: "Open PDF" });
+      await expect(open).toBeVisible({ timeout: 90_000 });
+      await quiet(page);
+      await open.click();
+      await expect(page.locator("[data-pdf-ready]")).toBeAttached({ timeout: 30_000 });
+      await settle(page);
+
+      // review15 #4: the title, the pager (both buttons usable) and the thumbnail strip are below the nav pill.
+      // The floating nav pill (tablet and up; phones have the bottom tab bar instead).
+      const pill = page.locator("[data-shell] > header");
+      const pillBox = (await pill.isVisible()) ? await pill.boundingBox() : null;
+      const pillBottom = pillBox ? pillBox.y + pillBox.height : 0;
+      for (const target of [
+        page.getByRole("heading", { level: 1 }),
+        page.getByRole("navigation", { name: "Pages" }),
+        page.getByRole("list", { name: "Page thumbnails" }),
+      ]) {
+        const box = await target.boundingBox();
+        expect(box, "in the layout").not.toBeNull();
+        expect(box?.y ?? 0, "starts below the nav pill").toBeGreaterThanOrEqual(pillBottom - 1);
+      }
+      await shot(page, info, "pdf-open");
+      for (const name of ["Previous page", "Next page"]) {
+        const button = page.getByRole("button", { name });
+        // Nothing (the pill included) covers the middle of the button.
+        expect(await topmostIs(button), `${name} is not covered`).toBe(true);
+      }
+      await page.getByRole("button", { name: "Next page" }).click();
+      await expect(page.getByLabel("Page number")).toHaveValue("2");
+      await expect
+        .poll(async () => (await page.locator("li[data-page='2']").boundingBox())?.y ?? -1, { timeout: 5_000 })
+        .toBeGreaterThanOrEqual(pillBottom - 1);
+
+      // review15 #5 (toolbar from S12b): with ink on, every control of the toolbar is on screen and nothing is
+      // clipped or scrolled sideways, at every viewport this test runs on (phone 390 and 412 included).
+      await page.getByRole("button", { name: "Write" }).click();
+      const bar = page.getByRole("toolbar", { name: "Ink tools" });
+      await expect(bar).toBeVisible();
+      const fit = await bar.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        const clipped = [...el.querySelectorAll<HTMLElement>("button, [role=radio], label")]
+          .filter((b) => b.offsetParent !== null)
+          .filter((b) => {
+            const br = b.getBoundingClientRect();
+            const textCut = b.scrollWidth > b.clientWidth + 1;
+            return br.left < r.left - 1 || br.right > r.right + 1 || br.right > window.innerWidth || textCut;
+          })
+          .map((b) => b.getAttribute("aria-label") || b.textContent?.trim() || b.tagName);
+        return { clipped, scrolls: el.scrollWidth > el.clientWidth + 1, right: r.right, vw: window.innerWidth };
+      });
+      expect(fit.clipped, "no toolbar control is clipped").toEqual([]);
+      expect(fit.scrolls, "the toolbar does not scroll sideways").toBe(false);
+      expect(fit.right).toBeLessThanOrEqual(fit.vw);
+      await shot(page, info, "pdf-ink");
+      await expectNoHorizontalOverflow(page);
+      await quiet(page);
+      expect(appErrors(errors)).toEqual([]);
+    } finally {
+      await student.done();
+      rmSync(work, { recursive: true, force: true });
+    }
+  });
+});
+
+/** Evidence screenshot: test-results/screens/15/<state>--<project>.png. */
+async function shot(page: Page, info: TestInfo, state: string): Promise<void> {
+  const dir = path.resolve(import.meta.dirname, "../../../test-results/screens/15");
+  mkdirSync(dir, { recursive: true });
+  await page.screenshot({ path: path.join(dir, `${state}--${info.project.name}.png`), animations: "disabled" });
+}
+
+/** True when the element itself (or something inside it) is what a tap at its centre hits. */
+async function topmostIs(locator: ReturnType<Page["locator"]>): Promise<boolean> {
+  return locator.evaluate((el) => {
+    const r = el.getBoundingClientRect();
+    const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    return hit !== null && (hit === el || el.contains(hit));
+  });
+}
+
 /** Scroll a PDF page into the middle of the viewport. */
 async function showPage(page: Page, n: string, fy: number) {
   await page.evaluate(
