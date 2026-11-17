@@ -1,0 +1,16 @@
+{
+ "id": "20261117T113904-seg15b-gen-65aa02",
+ "ts": "2026-11-17T11:39:04.403614Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0f22e497 into claude/naadi-shared",
+ "body": "S15b: approval only via S19's queue",
+ "refs": {
+  "commit": "0f22e497",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
