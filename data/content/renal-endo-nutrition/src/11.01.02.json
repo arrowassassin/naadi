@@ -1,0 +1,1610 @@
+{
+ "area": "usmle2026.11.01.02",
+ "sections": [
+  {
+   "id": "s23c-s110102-1-1",
+   "exam": "step1",
+   "heading": "Nephritic glomerular disease: immune mechanisms and pathology",
+   "html": "<p>The <strong>nephritic pattern</strong> comes from inflammation inside the glomerulus: leukocytes and proliferating cells injure capillary walls, so red cells leak into Bowman space. The result is <strong>hematuria with dysmorphic red cells and red cell casts</strong>, a fall in glomerular filtration (oliguria, azotemia), sodium and water retention with <strong>hypertension and edema</strong>, and proteinuria that is usually below the nephrotic range.</p><p>Where immune complexes sit decides how much inflammation they cause. Deposits on the <em>blood side</em> of the basement membrane (subendothelial, mesangial) are reached by complement and leukocytes and drive proliferation. Deposits on the <em>urinary side</em> (subepithelial) are shielded from circulating leukocytes and mainly injure podocytes, which gives proteinuria; the large subepithelial humps of post-infectious GN are the exception because they come with intense complement activation.</p>[[figure:s23c-fig110102-1]]<h3>The main nephritic diseases</h3><table><tr><th>Disease</th><th>Immunofluorescence and EM</th><th>Serum complement</th><th>Clues</th></tr><tr><td>Post-streptococcal (post-infectious) GN</td><td>Granular IgG and C3; large subepithelial humps; hypercellular glomeruli with neutrophils</td><td>Low C3, recovers in about 6–8 weeks</td><td>Latent period: 1–3 weeks after pharyngitis, 3–6 weeks after impetigo; anti-streptolysin O or anti-DNase B; children usually recover fully</td></tr><tr><td>IgA nephropathy</td><td>Mesangial IgA (with C3); mesangial proliferation</td><td>Normal</td><td>Gross hematuria within 1–3 days of a mucosal infection; galactose-deficient IgA1 and autoantibodies against it form complexes that lodge in the mesangium</td></tr><tr><td>IgA vasculitis</td><td>Same renal lesion as IgA nephropathy</td><td>Normal</td><td>Child with palpable purpura on the legs and buttocks, arthralgia, colicky abdominal pain (intussusception risk)</td></tr><tr><td>Anti-GBM disease</td><td><strong>Linear</strong> IgG along the GBM; crescents</td><td>Normal</td><td>Autoantibody to the noncollagenous domain of the alpha-3 chain of type IV collagen (type II hypersensitivity); lung involvement gives alveolar hemorrhage</td></tr><tr><td>ANCA-associated (pauci-immune) GN</td><td>Little or no immunoglobulin or complement; necrotising lesions with crescents</td><td>Normal</td><td>Granulomatosis with polyangiitis (PR3-ANCA; sinus and lung disease), microscopic polyangiitis (MPO-ANCA; no granulomas), eosinophilic granulomatosis with polyangiitis (asthma, eosinophilia)</td></tr><tr><td>Lupus nephritis (classes III, IV)</td><td>\"Full house\" IgG, IgA, IgM, C3, C1q; subendothelial deposits thicken capillary loops (\"wire loops\")</td><td>Low C3 and C4</td><td>Anti-dsDNA titres and low complement track activity; class IV (diffuse) is the most common severe form</td></tr><tr><td>Immune-complex MPGN</td><td>Subendothelial and mesangial deposits; GBM duplicated by interposed mesangium (\"tram-track\")</td><td>Low C3 (and often C4)</td><td>Chronic antigenemia: hepatitis C (often with mixed cryoglobulins), hepatitis B, endocarditis, monoclonal gammopathy</td></tr><tr><td>C3 glomerulopathy (including dense deposit disease)</td><td>C3 alone, little immunoglobulin</td><td>Low C3, normal C4</td><td>Dysregulated alternative pathway, for example <strong>C3 nephritic factor</strong>, an autoantibody that stabilises the C3 convertase C3bBb</td></tr><tr><td>Cryoglobulinemic GN</td><td>Intraluminal \"thrombi\" of cryoglobulin; MPGN pattern</td><td>Very low C4</td><td>Hepatitis C, palpable purpura, arthralgia, neuropathy, positive rheumatoid factor</td></tr></table><h3>Lupus nephritis classes</h3><ul><li>I minimal mesangial and II mesangial proliferative: mild, usually hematuria or low-grade proteinuria.</li><li>III focal (fewer than half of glomeruli) and IV diffuse (half or more) proliferative: subendothelial deposits, active sediment, hypertension, falling GFR; need immunosuppression.</li><li>V membranous: subepithelial deposits, nephrotic syndrome; may coexist with III or IV.</li><li>VI advanced sclerosing: 90% or more of glomeruli scarred; treat as CKD.</li></ul><h3>Rapidly progressive GN</h3><p>Any of the above can form <strong>crescents</strong>: fibrin leaks through ruptured capillary walls into Bowman space and provokes proliferation of parietal epithelial cells with macrophages. Crescents in most glomeruli mean kidney function falls over days to weeks. Immunofluorescence sorts crescentic GN into three groups: linear (anti-GBM), granular (immune complex: lupus, IgA, post-infectious) and pauci-immune (ANCA).</p><h3>Hereditary basement-membrane disease</h3><ul><li><strong>Alport syndrome</strong>: abnormal type IV collagen (most often X-linked <em>COL4A5</em>, alpha-5 chain). Hematuria from childhood, then proteinuria and progressive CKD in affected males, with <strong>sensorineural hearing loss</strong> and eye changes (anterior lenticonus). EM shows an irregularly thickened, thinned and split (\"basket-weave\") GBM. Anti-GBM disease can appear in a transplanted kidney because the graft carries collagen the recipient never made.</li><li><strong>Thin basement membrane nephropathy</strong>: often a heterozygous <em>COL4A3</em> or <em>COL4A4</em> variant; persistent microscopic hematuria with a uniformly thin GBM and usually preserved function, although some patients progress, so they are followed.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> timing separates IgA nephropathy from post-streptococcal GN. Hematuria during or a day or two after the sore throat, with normal C3, is IgA nephropathy; hematuria 2 or more weeks later with low C3 is post-infectious GN.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> <em>complement tells you who is consuming it</em>. Low C3 and C4 together: immune complexes on the classical pathway (lupus, cryoglobulins, immune-complex MPGN). Low C3 with normal C4: the alternative pathway (post-infectious GN, C3 glomerulopathy). Normal complement: IgA, anti-GBM, ANCA.</p></div>",
+   "figureIds": [
+    "s23c-fig110102-1"
+   ],
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: IgA Nephropathy (Berger Disease)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538214/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Infection-Related Glomerulonephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538255/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Rapidly Progressive Glomerulonephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557430/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Lupus Nephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499817/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Goodpasture Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK459291/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Cryoglobulinemic Glomerulonephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK613279/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Alport Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470419/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110102-1-2",
+   "exam": "step1",
+   "heading": "Nephrotic glomerular disease and acute interstitial nephritis",
+   "html": "<p>The <strong>nephrotic syndrome</strong> is podocyte or filtration-barrier injury without much inflammation: proteinuria above 3.5 g/day in adults, hypoalbuminemia, edema, hyperlipidemia and lipiduria (oval fat bodies and fatty casts that show \"Maltese crosses\" under polarised light). The sediment is otherwise bland.</p><h3>Consequences of heavy proteinuria</h3><ul><li><strong>Edema</strong>: low oncotic pressure plus primary renal sodium retention in the collecting duct.</li><li><strong>Hyperlipidemia</strong>: the liver raises lipoprotein synthesis in response to low oncotic pressure, and lipoprotein clearance falls.</li><li><strong>Hypercoagulability</strong>: urinary loss of antithrombin (and proteins C and S) while the liver makes more fibrinogen and other clotting factors. Venous thrombosis, including <strong>renal vein thrombosis</strong>, is most common with membranous nephropathy.</li><li><strong>Infection</strong>: urinary loss of IgG and complement factors; children are prone to spontaneous peritonitis and cellulitis, classically with <em>Streptococcus pneumoniae</em>.</li><li>Loss of binding proteins: low total thyroxine and 25-hydroxyvitamin D with normal free hormone in many patients.</li></ul>[[figure:s23c-fig110102-2]]<h3>The main nephrotic diseases</h3><table><tr><th>Disease</th><th>Light microscopy</th><th>IF and EM</th><th>Associations</th></tr><tr><td>Minimal change disease</td><td>Normal</td><td>IF negative; EM: diffuse effacement of podocyte foot processes</td><td>Most common cause in young children; highly steroid responsive; in adults NSAIDs and Hodgkin lymphoma; autoantibodies to the podocyte protein nephrin have been found in many patients</td></tr><tr><td>Focal segmental glomerulosclerosis (FSGS)</td><td>Scarring of part of some glomeruli</td><td>IF usually negative (nonspecific IgM, C3 in scars); effacement</td><td>Common cause in adults, especially Black adults (two <em>APOL1</em> risk variants); secondary forms: HIV (collapsing variant), heroin, obesity, sickle cell disease, reduced nephron mass, lithium, pamidronate; less steroid responsive</td></tr><tr><td>Membranous nephropathy</td><td>Diffusely thickened capillary walls</td><td>Granular IgG and C3; subepithelial deposits with intervening basement-membrane \"spikes\" on silver stain</td><td>Common cause in older adults; about 70–80% of primary cases have antibodies to the podocyte <strong>phospholipase A2 receptor (PLA2R)</strong>; secondary: lupus class V, hepatitis B, solid tumours, NSAIDs, gold, penicillamine</td></tr><tr><td>Diabetic nephropathy</td><td>Mesangial expansion, GBM thickening, nodular sclerosis (Kimmelstiel-Wilson nodules), hyaline arteriolosclerosis of both afferent and efferent arterioles</td><td>Linear, nonspecific IgG along the GBM</td><td>Hyperfiltration early: glomerular capillary pressure rises because angiotensin II constricts the efferent arteriole</td></tr><tr><td>Amyloidosis</td><td>Acellular, amorphous mesangial and capillary deposits</td><td>Congo red stain with apple-green birefringence under polarised light; random 8–12 nm fibrils on EM</td><td>AL (light chains from a plasma cell clone) or AA (serum amyloid A in chronic inflammation: rheumatoid arthritis, inflammatory bowel disease, familial Mediterranean fever, chronic infection)</td></tr></table><h3>Acute interstitial nephritis</h3><p>Acute interstitial nephritis (AIN) is inflammation of the interstitium and tubules, not the glomerulus. Most cases are a <strong>drug reaction</strong> mediated mainly by T cells (type IV hypersensitivity): beta-lactams, sulfonamides, rifampin, NSAIDs, proton pump inhibitors and immune checkpoint inhibitors are frequent culprits. Onset is usually days to weeks after the drug starts (sooner on re-exposure; months with NSAIDs and proton pump inhibitors). Features: rising creatinine, sterile pyuria and <strong>white cell casts</strong>, mild proteinuria, and sometimes fever, rash and eosinophilia (the full triad is uncommon). Biopsy shows interstitial edema with lymphocytes, plasma cells and often eosinophils. Other causes are infections and systemic disease (sarcoidosis, Sjögren syndrome, IgG4-related disease).</p><div class=\"trap\"><p><strong>Exam trap:</strong> NSAIDs can cause minimal change disease (or membranous nephropathy) <em>and</em> interstitial nephritis at the same time, so heavy proteinuria with pyuria after long NSAID use does not need two diagnoses.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Normal under the light, flat under the beam</em>\": minimal change looks normal by light microscopy and shows only flattened foot processes under the electron beam.</p></div>",
+   "figureIds": [
+    "s23c-fig110102-2"
+   ],
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Nephrotic Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470444/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Minimal Change Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560639/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Focal Segmental Glomerulosclerosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532272/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Membranous Nephropathy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559169/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Diabetic Nephropathy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK534200/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110102-2-1",
+   "exam": "step2ck",
+   "heading": "Glomerular hematuria, nephritic syndrome and rapidly progressive GN: work-up and treatment",
+   "html": "<h3>Recognise glomerular bleeding</h3><p>Hematuria is glomerular when red cells are <strong>dysmorphic</strong> (acanthocytes), when there are <strong>red cell casts</strong>, or when it comes with proteinuria, hypertension or a rising creatinine. Glomerular hematuria needs a nephrology work-up rather than cystoscopy first. A patient whose creatinine is rising over days to weeks with an active sediment has <strong>rapidly progressive GN until proven otherwise</strong>, which is a medical emergency.</p><h3>First tests</h3><ul><li>Urinalysis with microscopy; spot urine protein-to-creatinine (or albumin-to-creatinine) ratio; serum creatinine and electrolytes.</li><li>Serology chosen by the picture: C3 and C4; ANA and anti-dsDNA; ANCA (MPO and PR3 by immunoassay); anti-GBM antibody; anti-streptolysin O and anti-DNase B; hepatitis B and C, HIV; cryoglobulins and rheumatoid factor; serum protein electrophoresis with free light chains in older adults.</li><li><strong>Kidney biopsy</strong> is the most accurate test and also grades activity and chronicity. In suspected rapidly progressive GN, start treatment without waiting for biopsy when serology is positive and the patient is deteriorating.</li></ul><h3>Treatment by disease</h3><table><tr><th>Disease</th><th>Management</th></tr><tr><td>Post-streptococcal GN</td><td>Supportive: sodium and fluid restriction, loop diuretic for edema and hypertension, other antihypertensives as needed; antibiotics only for persisting streptococcal infection. Immunosuppression is not used. Persistently low C3 after about 8 weeks suggests another diagnosis (for example C3 glomerulopathy or lupus).</td></tr><tr><td>IgA nephropathy</td><td>Supportive care is the base: ACE inhibitor or ARB titrated to the highest tolerated dose, blood pressure control, an SGLT2 inhibitor when eGFR allows, and lifestyle measures; aim to lower proteinuria well below 1 g/day. Patients with persistent proteinuria at high risk of progression are considered for glucocorticoid-based or newer targeted therapies.</td></tr><tr><td>Anti-GBM disease</td><td><strong>Plasma exchange</strong> to remove the antibody, plus glucocorticoids and cyclophosphamide, started urgently. Patients who need dialysis at presentation and have crescents in nearly all glomeruli rarely recover kidney function unless they have lung hemorrhage that needs treatment anyway.</td></tr><tr><td>ANCA-associated GN</td><td>Induction with glucocorticoids plus <strong>rituximab or cyclophosphamide</strong>; the C5a receptor blocker avacopan can reduce glucocorticoid exposure; plasma exchange may be added for very severe kidney failure or anti-GBM overlap. Maintenance with rituximab (or azathioprine). Screen for and prevent <em>Pneumocystis</em> infection.</td></tr><tr><td>Lupus nephritis III or IV (± V)</td><td>Glucocorticoids plus <strong>mycophenolate</strong> or low-dose IV cyclophosphamide, with add-on belimumab or a calcineurin inhibitor (voclosporin) in many patients; <strong>hydroxychloroquine</strong> for every patient with lupus unless contraindicated; ACE inhibitor or ARB for proteinuria. Mycophenolate is teratogenic: use effective contraception and switch to azathioprine before a planned pregnancy.</td></tr><tr><td>Cryoglobulinemic GN (hepatitis C)</td><td>Direct-acting antivirals; rituximab, with plasma exchange for severe disease.</td></tr></table><h3>Indications for kidney biopsy in lupus</h3><p>Biopsy a patient with lupus who has proteinuria of about 0.5 g/day or more, an active sediment (dysmorphic red cells, red cell casts) or an unexplained rise in creatinine. The class decides treatment, so it is not skipped.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a smoker with hemoptysis and kidney failure may have anti-GBM disease <em>or</em> ANCA vasculitis, and some patients have both antibodies. Send both serologies, and do not delay plasma exchange and immunosuppression while waiting for biopsy if the patient is deteriorating.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Rapidly Progressive Glomerulonephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK557430/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: ANCA-Associated Vasculitis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK554372/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: IgA Nephropathy (Berger Disease)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538214/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Lupus Nephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK499817/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Infection-Related Glomerulonephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK538255/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Diseases",
+     "url": "https://medlineplus.gov/kidneydiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110102-2-2",
+   "exam": "step2ck",
+   "heading": "Nephrotic syndrome and interstitial nephritis: diagnosis, treatment and complications",
+   "html": "<h3>Confirm and characterise</h3><ul><li>Quantify proteinuria with a spot urine protein-to-creatinine ratio (about 3–3.5 g/g or more is nephrotic range); 24-hour collection is rarely needed.</li><li>Check albumin, lipids, creatinine, glucose and hemoglobin A1c, and the secondary-cause panel: hepatitis B and C, HIV, ANA, complement, serum and urine protein electrophoresis with free light chains, and <strong>anti-PLA2R antibody</strong>.</li><li><strong>Children</strong> aged about 1 to 10 years with typical nephrotic syndrome (normal complement, no gross hematuria, normal kidney function and blood pressure) are presumed to have minimal change disease and given oral glucocorticoids <em>without biopsy</em>; biopsy is for steroid resistance or atypical features.</li><li><strong>Adults</strong> usually need a biopsy. An exception: a typical adult with nephrotic syndrome, preserved function and a positive anti-PLA2R antibody can be diagnosed with primary membranous nephropathy without biopsy.</li></ul><h3>General measures for any nephrotic patient</h3><ul><li>Dietary sodium restriction and a <strong>loop diuretic</strong> for edema (higher doses are often needed because the diuretic is protein bound in urine and less albumin carries it to the kidney).</li><li><strong>ACE inhibitor or ARB</strong> to lower intraglomerular pressure and proteinuria, with blood pressure control.</li><li>Statin for persistent hyperlipidemia when the disease is not expected to remit soon.</li><li><strong>Prophylactic anticoagulation</strong> is considered when albumin is very low (for example below about 2.0–2.5 g/dL), especially with membranous nephropathy and low bleeding risk; established venous thrombosis is treated with full anticoagulation.</li><li>Pneumococcal and seasonal influenza vaccination.</li></ul><h3>Disease-specific treatment</h3><table><tr><th>Disease</th><th>Treatment</th></tr><tr><td>Minimal change</td><td>Glucocorticoids (most remit within weeks); for frequent relapses or steroid dependence, steroid-sparing agents such as rituximab, calcineurin inhibitors or cyclophosphamide. Stop an offending NSAID; look for lymphoma in an adult with suggestive features.</td></tr><tr><td>Primary FSGS</td><td>Supportive care plus high-dose glucocorticoids; calcineurin inhibitor if resistant. Secondary FSGS is treated by addressing the cause (antiretroviral therapy for HIV-associated nephropathy, weight loss, stopping heroin or lithium) with RAS blockade; immunosuppression does not help secondary or genetic forms.</td></tr><tr><td>Membranous</td><td>Supportive care for low-risk disease, since about a third remit spontaneously; <strong>rituximab</strong> (or cyclophosphamide with glucocorticoids, or a calcineurin inhibitor) for moderate to high risk. Anti-PLA2R levels track response. For PLA2R-negative disease in an older adult, look for a secondary cause, including age-appropriate cancer screening.</td></tr><tr><td>Diabetic kidney disease</td><td>ACE inhibitor or ARB, SGLT2 inhibitor, and in type 2 diabetes with persistent albuminuria a nonsteroidal mineralocorticoid antagonist (finerenone) and a GLP-1 receptor agonist with proven kidney benefit (see the CKD section).</td></tr><tr><td>AL amyloidosis</td><td>Confirm with tissue (fat-pad or kidney biopsy with Congo red) and typing; treat the plasma cell clone.</td></tr></table><h3>Renal vein thrombosis</h3><p>Suspect it in a nephrotic patient (classically membranous) with sudden flank pain, gross hematuria, a rise in creatinine, a raised LDH or an unexplained pulmonary embolism. Confirm with <strong>CT or MR venography</strong> (Doppler ultrasonography is an alternative), and anticoagulate.</p><h3>Acute interstitial nephritis</h3><p>Suspect AIN with a rising creatinine after a new drug, especially with pyuria, white cell casts, rash, fever or eosinophilia. The first step is to <strong>stop the likely drug</strong>. If creatinine does not improve within several days, or the injury is severe, confirm with biopsy and give glucocorticoids. Checkpoint-inhibitor AIN is treated with glucocorticoids and holding the drug.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a 4-year-old with new nephrotic syndrome and normal complement does not need a biopsy first. Start prednisone, and biopsy only if there is no remission.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Nephrotic Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470444/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Membranous Nephropathy",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559169/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Minimal Change Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560639/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Focal Segmental Glomerulosclerosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532272/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Diseases",
+     "url": "https://medlineplus.gov/kidneydiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110102-1",
+   "caption": "Figure. Where immune deposits sit in the glomerular capillary wall: subendothelial and mesangial deposits drive nephritic inflammation, subepithelial deposits mainly injure podocytes, linear IgG marks anti-GBM disease, and pauci-immune GN has none.",
+   "file": "figures/s23c-fig110102-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  },
+  {
+   "id": "s23c-fig110102-2",
+   "caption": "Figure. Nephritic versus nephrotic: the dominant injury (inflammation versus podocyte damage) predicts the urine, the blood pressure and the complications.",
+   "file": "figures/s23c-fig110102-2.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110102-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Lupus nephritis from detection to pregnancy planning",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110102-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 21-year-old man notices dark red urine the day after a sore throat and fever begin. He had a similar episode 2 years ago that cleared on its own. Blood pressure is 128/80 mm Hg. Urinalysis shows red blood cells, many of them dysmorphic, a few red cell casts and 1+ protein. Serum creatinine is 1.0 mg/dL. Serum C3 is normal. A kidney biopsy is performed. Which of the following is most likely to be seen on immunofluorescence?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Granular IgG and C3 in large subepithelial deposits"
+    },
+    {
+     "label": "B",
+     "html": "Granular IgG, IgA, IgM, C3 and C1q in subendothelial deposits"
+    },
+    {
+     "label": "C",
+     "html": "Linear IgG along the glomerular basement membrane"
+    },
+    {
+     "label": "D",
+     "html": "Mesangial deposits that stain mainly for IgA"
+    },
+    {
+     "label": "E",
+     "html": "No immunoglobulin or complement deposits"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Gross hematuria that starts within a day or two of an upper respiratory infection (synpharyngitic), recurs, and comes with normal complement is <strong>IgA nephropathy</strong>, the most common primary glomerulonephritis worldwide. Immune complexes of galactose-deficient IgA1 lodge in the <strong>mesangium</strong>, where they cause mesangial proliferation.</p><p><strong>Takeaway:</strong> hematuria during a mucosal infection with normal C3 means mesangial IgA deposits.</p>",
+   "whyNot": {
+    "A": "Large subepithelial humps with granular IgG and C3 are post-infectious GN, which follows the infection by weeks and lowers C3.",
+    "B": "A \"full house\" pattern in subendothelial deposits is lupus nephritis, which usually lowers C3 and C4 and occurs with systemic features.",
+    "C": "Linear IgG is anti-GBM disease, which causes rapidly progressive kidney failure rather than self-limited recurrent episodes.",
+    "E": "Pauci-immune GN (ANCA vasculitis) usually causes a rapidly progressive course with systemic symptoms, not brief recurrent hematuria in a young man."
+   },
+   "objective": "Recognise IgA nephropathy from synpharyngitic hematuria with normal complement and predict mesangial IgA deposits.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "pathology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "IgA nephropathy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 16-year-old boy has had microscopic hematuria since early childhood. He now has 2+ protein on dipstick and serum creatinine of 1.4 mg/dL. Audiometry shows bilateral high-frequency sensorineural hearing loss. Slit-lamp examination shows a conical bulge of the anterior lens surface. His maternal uncle began dialysis at age 30. Electron microscopy of a kidney biopsy shows a glomerular basement membrane that is irregularly thickened and thinned, with splitting of the lamina densa into a layered pattern. A defect in which of the following proteins is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Alpha-5 chain of type IV collagen"
+    },
+    {
+     "label": "B",
+     "html": "Fibrillin-1"
+    },
+    {
+     "label": "C",
+     "html": "Nephrin"
+    },
+    {
+     "label": "D",
+     "html": "Phospholipase A2 receptor"
+    },
+    {
+     "label": "E",
+     "html": "Polycystin-1"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hematuria from childhood, progressive kidney failure in a male, sensorineural hearing loss, anterior lenticonus, an affected maternal uncle and a split, \"basket-weave\" GBM are <strong>Alport syndrome</strong>. The most common form is X-linked, from variants in <em>COL4A5</em>, which encodes the <strong>alpha-5 chain of type IV collagen</strong>; the same collagen network is found in the cochlea and lens capsule.</p><p><strong>Takeaway:</strong> hematuria, deafness and eye lesions with a split GBM point to an inherited type IV collagen defect (Alport syndrome).</p>",
+   "whyNot": {
+    "B": "Fibrillin-1 defects cause Marfan syndrome, with lens dislocation and aortic root dilation but no glomerular disease.",
+    "C": "Nephrin variants cause congenital nephrotic syndrome in infancy with heavy proteinuria, not hematuria and deafness.",
+    "D": "The phospholipase A2 receptor is the target antigen in membranous nephropathy, an acquired adult nephrotic disease.",
+    "E": "Polycystin-1 defects cause autosomal dominant polycystic kidney disease, with enlarged cystic kidneys rather than a split GBM."
+   },
+   "objective": "Recognise Alport syndrome as an inherited defect of type IV collagen.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Alport syndrome",
+    "hereditary nephritis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old woman with systemic lupus erythematosus has new ankle edema and blood pressure of 152/96 mm Hg. Urinalysis shows dysmorphic red cells, red cell casts and a urine protein-to-creatinine ratio of 2.6 g/g. Serum creatinine has risen from 0.8 to 1.5 mg/dL over 2 months. A kidney biopsy shows endocapillary proliferation in more than 60% of glomeruli and thickened, rigid-appearing capillary loops. Electron microscopy shows large electron-dense deposits between the endothelium and the basement membrane. Which of the following laboratory findings would best reflect the activity of this process?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "High anti-dsDNA antibody titre with low serum C3 and C4"
+    },
+    {
+     "label": "B",
+     "html": "High anti-histone antibody titre with normal complement"
+    },
+    {
+     "label": "C",
+     "html": "High anti-Ro (SSA) antibody titre with low C4 only"
+    },
+    {
+     "label": "D",
+     "html": "Positive anti-phospholipid antibodies with a prolonged aPTT"
+    },
+    {
+     "label": "E",
+     "html": "Positive anti-Smith antibody with a normal C3"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Diffuse proliferation with subendothelial (\"wire-loop\") deposits is <strong>class IV lupus nephritis</strong>. The deposits contain DNA-anti-DNA immune complexes that activate the classical pathway, so <strong>rising anti-dsDNA titres and falling C3 and C4</strong> parallel nephritis activity. Anti-Smith antibody is very specific for lupus but does not track activity.</p><p><strong>Takeaway:</strong> in lupus nephritis, anti-dsDNA and complement levels follow disease activity.</p>",
+   "whyNot": {
+    "B": "Anti-histone antibodies point to drug-induced lupus, which rarely involves the kidney.",
+    "C": "Anti-Ro antibodies are linked to neonatal lupus and Sjögren overlap, not to the activity of nephritis.",
+    "D": "Antiphospholipid antibodies cause thrombotic microangiopathy and clotting, a different kidney lesion.",
+    "E": "Anti-Smith antibody is specific for lupus but its level does not change with disease activity."
+   },
+   "objective": "Use anti-dsDNA titres and complement levels to follow activity of class IV lupus nephritis.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.16.01.02"
+   ],
+   "disciplines": [
+    "immunology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "lupus nephritis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 14-year-old girl has had edema, hypertension and tea-colored urine for 3 weeks. She had no preceding infection. Serum C3 is 28 mg/dL (N = 90–180) and C4 is 30 mg/dL (N = 15–45). Antistreptolysin O and anti-DNase B are not elevated, and anti-dsDNA is negative. Kidney biopsy shows a membranoproliferative pattern; immunofluorescence shows bright C3 staining with little or no immunoglobulin. Serum studies show an IgG autoantibody that binds the alternative-pathway C3 convertase. Which of the following best describes the effect of this antibody?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "It blocks C1 esterase inhibitor and activates the classical pathway"
+    },
+    {
+     "label": "B",
+     "html": "It cleaves C5 into C5a and C5b directly"
+    },
+    {
+     "label": "C",
+     "html": "It inactivates factor H so that C4b2a is degraded"
+    },
+    {
+     "label": "D",
+     "html": "It prevents C3 from binding to bacterial surfaces"
+    },
+    {
+     "label": "E",
+     "html": "It stabilises C3bBb and prolongs its half-life"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Low C3 with normal C4, no streptococcal evidence and dominant C3 staining define <strong>C3 glomerulopathy</strong>. A common driver is <strong>C3 nephritic factor</strong>, an autoantibody that <strong>stabilises the alternative-pathway C3 convertase (C3bBb)</strong>, protecting it from factor H-mediated decay so that C3 is consumed continuously and deposits in the glomerulus.</p><p><strong>Takeaway:</strong> C3 nephritic factor stabilises C3bBb, giving persistent alternative-pathway activation, low C3 and C3-dominant GN.</p>",
+   "whyNot": {
+    "A": "Loss of C1 esterase inhibitor function causes angioedema with low C4; it does not cause C3-only deposits.",
+    "B": "C5 convertases cleave C5; an antibody that cleaved C5 itself is not the mechanism of this disease.",
+    "C": "C4b2a is the classical-pathway convertase; C4 is normal here, so the classical pathway is not involved.",
+    "D": "Preventing C3 binding would reduce, not increase, C3 consumption and deposition."
+   },
+   "objective": "Explain how C3 nephritic factor causes C3 glomerulopathy by stabilising the alternative-pathway convertase.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "C3 glomerulopathy",
+    "complement"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old Black man with HIV infection who stopped antiretroviral therapy 3 years ago has 2 months of leg swelling. Blood pressure is 124/78 mm Hg. Urine protein-to-creatinine ratio is 9.1 g/g, serum albumin is 2.2 g/dL and creatinine is 2.4 mg/dL. CD4 count is 85/mm³. Ultrasonography shows large, echogenic kidneys. Kidney biopsy shows glomerular capillaries collapsed by wrinkled basement membranes, with overlying swollen, proliferating podocytes and microcystic tubular dilation. Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Collapsing focal segmental glomerulosclerosis"
+    },
+    {
+     "label": "B",
+     "html": "Diabetic nodular glomerulosclerosis"
+    },
+    {
+     "label": "C",
+     "html": "Immune-complex membranoproliferative glomerulonephritis"
+    },
+    {
+     "label": "D",
+     "html": "Membranous nephropathy"
+    },
+    {
+     "label": "E",
+     "html": "Minimal change disease"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Untreated HIV with heavy proteinuria, rapid loss of function and <strong>large echogenic kidneys</strong>, and a biopsy showing collapsed capillary tufts with hyperplastic podocytes and microcystic tubules, is <strong>HIV-associated nephropathy</strong>: the <strong>collapsing variant of FSGS</strong>. It is strongly linked to two <em>APOL1</em> risk variants, which are common in people of West African ancestry. Antiretroviral therapy is the key treatment.</p><p><strong>Takeaway:</strong> HIV, Black ancestry, nephrotic-range proteinuria and big echogenic kidneys mean collapsing FSGS.</p>",
+   "whyNot": {
+    "B": "Nodular glomerulosclerosis needs long-standing diabetes and shows mesangial nodules, not collapsed tufts.",
+    "C": "Immune-complex MPGN occurs with hepatitis C or B and shows a nephritic, hypocomplementemic picture with double contours.",
+    "D": "Membranous nephropathy shows thickened capillary walls with subepithelial deposits and usually preserved function at first.",
+    "E": "Minimal change disease has normal light microscopy and rarely causes this degree of kidney failure."
+   },
+   "objective": "Recognise HIV-associated nephropathy as collapsing FSGS linked to APOL1 risk variants.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.02.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "FSGS",
+    "HIVAN",
+    "APOL1"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man with nephrotic syndrome from membranous nephropathy (serum albumin 1.9 g/dL) has sudden left flank pain and gross hematuria. Serum creatinine rose from 1.1 to 1.8 mg/dL over 2 days, and serum LDH is elevated. CT venography shows a filling defect in the left renal vein. Which of the following best explains his increased tendency to thrombosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Increased hepatic synthesis of antithrombin"
+    },
+    {
+     "label": "B",
+     "html": "Increased urinary loss of factor VIII"
+    },
+    {
+     "label": "C",
+     "html": "Increased urinary loss of antithrombin"
+    },
+    {
+     "label": "D",
+     "html": "Reduced hepatic synthesis of fibrinogen"
+    },
+    {
+     "label": "E",
+     "html": "Reduced platelet aggregation from hypoalbuminemia"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>In nephrotic syndrome, small anticoagulant proteins such as <strong>antithrombin</strong> (and proteins C and S) are lost in the urine, while the liver, stimulated by low oncotic pressure, makes more large procoagulant proteins (fibrinogen, factors V and VIII) that are too big to be filtered. The balance shifts towards clotting, and <strong>renal vein thrombosis</strong> is most common with membranous nephropathy.</p><p><strong>Takeaway:</strong> nephrotic hypercoagulability comes from urinary antithrombin loss plus increased hepatic procoagulant synthesis.</p>",
+   "whyNot": {
+    "A": "Hepatic antithrombin synthesis does not rise enough to offset losses; increased synthesis would protect against clotting.",
+    "B": "Factor VIII is a large protein that is not filtered; its level rises in nephrotic syndrome.",
+    "D": "Fibrinogen synthesis increases, not decreases, in nephrotic syndrome.",
+    "E": "Hypoalbuminemia increases platelet aggregability rather than reducing it."
+   },
+   "objective": "Explain the hypercoagulable state of nephrotic syndrome and its link to renal vein thrombosis.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "nephrotic syndrome",
+    "renal vein thrombosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old woman with rheumatoid arthritis for 25 years, poorly controlled despite several drugs, has 3 months of leg swelling. Urine protein-to-creatinine ratio is 7.8 g/g and serum albumin 2.4 g/dL. Urine sediment is bland. Kidney biopsy shows acellular, pale, homogeneous material expanding the mesangium and capillary walls. With Congo red staining, the material shows apple-green birefringence under polarised light. The precursor of this material is most likely which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Beta-2 microglobulin"
+    },
+    {
+     "label": "B",
+     "html": "Immunoglobulin light chain"
+    },
+    {
+     "label": "C",
+     "html": "Serum amyloid A protein"
+    },
+    {
+     "label": "D",
+     "html": "Transthyretin"
+    },
+    {
+     "label": "E",
+     "html": "Type IV collagen"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Congo red-positive deposits with apple-green birefringence are amyloid. In long-standing, poorly controlled chronic inflammation such as rheumatoid arthritis, the liver makes large amounts of the acute-phase reactant <strong>serum amyloid A</strong>, which is cleaved and deposits as <strong>AA amyloid</strong>, with the kidney the main target organ.</p><p><strong>Takeaway:</strong> chronic inflammatory disease plus nephrotic syndrome and Congo red-positive deposits means AA amyloidosis.</p>",
+   "whyNot": {
+    "A": "Beta-2 microglobulin amyloid builds up in people on long-term dialysis and affects joints and carpal tunnels.",
+    "B": "Light-chain (AL) amyloid comes from a plasma cell clone; chronic inflammation without a paraprotein points to AA.",
+    "D": "Transthyretin amyloid mainly affects the heart and nerves (wild-type in older men, or hereditary forms).",
+    "E": "Type IV collagen is a normal basement-membrane protein and does not form amyloid."
+   },
+   "objective": "Link chronic inflammation to AA amyloidosis of the kidney.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "amyloidosis",
+    "nephrotic syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 49-year-old man has had type 2 diabetes for 15 years. Urine albumin-to-creatinine ratio is 420 mg/g and eGFR is 58 mL/min/1.73 m². A kidney biopsy for an unrelated reason shows mesangial expansion with round, acellular, PAS-positive nodules and hyaline thickening of both afferent and efferent arterioles. He is started on lisinopril. Which of the following best explains how this drug slows the progression of his kidney disease?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Afferent arteriolar constriction that lowers renal blood flow"
+    },
+    {
+     "label": "B",
+     "html": "Dilation of the efferent arteriole that lowers glomerular capillary pressure"
+    },
+    {
+     "label": "C",
+     "html": "Increased aldosterone secretion that raises sodium reabsorption"
+    },
+    {
+     "label": "D",
+     "html": "Increased permeability of the glomerular basement membrane to albumin"
+    },
+    {
+     "label": "E",
+     "html": "Inhibition of sodium-glucose cotransport in the proximal tubule"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The biopsy shows <strong>diabetic nephropathy</strong> with Kimmelstiel-Wilson nodules. Angiotensin II constricts the efferent arteriole more than the afferent, raising glomerular capillary pressure and driving hyperfiltration, proteinuria and sclerosis. ACE inhibitors and ARBs <strong>dilate the efferent arteriole</strong>, lower intraglomerular pressure and reduce albuminuria. A small, stable rise in creatinine after starting them reflects this expected fall in filtration pressure.</p><p><strong>Takeaway:</strong> RAS blockade protects the diabetic kidney by lowering intraglomerular pressure through efferent dilation.</p>",
+   "whyNot": {
+    "A": "ACE inhibitors do not constrict the afferent arteriole; afferent constriction is how NSAIDs (by blocking vasodilator prostaglandins) reduce GFR.",
+    "C": "ACE inhibitors lower aldosterone, which is why they can raise potassium.",
+    "D": "Greater permeability to albumin would worsen, not slow, the disease; RAS blockade reduces albuminuria.",
+    "E": "Blocking proximal sodium-glucose cotransport is the action of SGLT2 inhibitors, which act on the afferent side through tubuloglomerular feedback."
+   },
+   "objective": "Explain how ACE inhibitors protect the diabetic kidney through efferent arteriolar dilation.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "diabetic nephropathy",
+    "ACE inhibitor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man is treated with intravenous nafcillin for methicillin-susceptible <em>Staphylococcus aureus</em> bacteremia. Twelve days later he has fever and a diffuse maculopapular rash. Serum creatinine has risen from 0.9 to 2.6 mg/dL. Leukocyte count is 9,800/mm³ with 11% eosinophils. Urinalysis shows white blood cells, white cell casts and 1+ protein; urine culture is negative. Which of the following best describes the main immune mechanism of this kidney injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antibody to the glomerular basement membrane (type II hypersensitivity)"
+    },
+    {
+     "label": "B",
+     "html": "Circulating immune complexes deposited in glomeruli (type III hypersensitivity)"
+    },
+    {
+     "label": "C",
+     "html": "IgE-mediated mast cell degranulation (type I hypersensitivity)"
+    },
+    {
+     "label": "D",
+     "html": "Nonimmune direct tubular toxicity of the drug"
+    },
+    {
+     "label": "E",
+     "html": "T cell-mediated interstitial inflammation (type IV hypersensitivity)"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Fever, rash, eosinophilia, sterile pyuria with white cell casts and a rising creatinine 1–2 weeks after a beta-lactam is <strong>drug-induced acute interstitial nephritis</strong>. The drug or a hapten bound to tubular proteins triggers a <strong>delayed, T cell-mediated (type IV) reaction</strong>, with lymphocytes, macrophages and eosinophils in the interstitium.</p><p><strong>Takeaway:</strong> drug-induced AIN is mainly a type IV hypersensitivity reaction in the interstitium.</p>",
+   "whyNot": {
+    "A": "Anti-GBM antibodies cause crescentic glomerulonephritis with red cell casts, not drug-related interstitial inflammation.",
+    "B": "Immune-complex GN gives a nephritic sediment with red cell casts and often low complement.",
+    "C": "IgE mast cell reactions cause immediate urticaria and anaphylaxis; the 12-day delay and interstitial infiltrate fit a T cell reaction.",
+    "D": "Direct tubular toxicity (as with aminoglycosides) causes acute tubular necrosis with muddy brown casts, without rash or eosinophilia."
+   },
+   "objective": "Identify drug-induced acute interstitial nephritis as a type IV hypersensitivity reaction.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "immunology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "acute interstitial nephritis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-2-01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 71-year-old woman has 6 weeks of fatigue, arthralgia, a 4-kg weight loss and decreasing urine output. Blood pressure is 158/92 mm Hg. Lung examination is normal, and chest radiography is clear. Laboratory results:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Serum creatinine (6 weeks ago)</td><td>0.9 mg/dL</td></tr><tr><td>Serum creatinine (today)</td><td>3.8 mg/dL</td></tr><tr><td>Urinalysis</td><td>Dysmorphic red cells, red cell casts, 2+ protein</td></tr><tr><td>C3 and C4</td><td>Normal</td></tr><tr><td>Anti-myeloperoxidase (MPO) ANCA</td><td>Strongly positive</td></tr><tr><td>Anti-proteinase 3 (PR3) ANCA</td><td>Negative</td></tr><tr><td>Anti-GBM antibody</td><td>Negative</td></tr><tr><td>Antinuclear antibody</td><td>Negative</td></tr></table><p>A kidney biopsy is scheduled for tomorrow. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin glucocorticoids with rituximab now"
+    },
+    {
+     "label": "B",
+     "html": "Begin hemodialysis and await the biopsy"
+    },
+    {
+     "label": "C",
+     "html": "Begin plasma exchange alone and await the biopsy"
+    },
+    {
+     "label": "D",
+     "html": "Prescribe an ACE inhibitor and recheck in 4 weeks"
+    },
+    {
+     "label": "E",
+     "html": "Repeat the ANCA test before any treatment"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A rising creatinine over weeks with red cell casts, normal complement and a <strong>positive MPO-ANCA</strong> means rapidly progressive, pauci-immune GN from <strong>microscopic polyangiitis</strong>. Kidney function is at stake, so induction with <strong>glucocorticoids plus rituximab</strong> (cyclophosphamide is the alternative) should start without delay; the biopsy still proceeds to confirm the diagnosis and grade chronicity.</p><p><strong>Takeaway:</strong> ANCA-positive rapidly progressive GN is treated at once with glucocorticoids plus rituximab or cyclophosphamide; do not wait for the biopsy.</p>",
+   "whyNot": {
+    "B": "She has no urgent indication for dialysis (no refractory hyperkalemia, acidosis, overload or uremic complications), and dialysis does not treat the vasculitis.",
+    "C": "Plasma exchange is an adjunct in selected severe cases; it is not induction therapy on its own.",
+    "D": "Supportive therapy alone allows irreversible glomerular scarring over the next weeks.",
+    "E": "A strongly positive immunoassay in this picture is reliable; repeating it only delays treatment."
+   },
+   "objective": "Start immediate induction therapy for ANCA-associated rapidly progressive glomerulonephritis.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "ANCA vasculitis",
+    "RPGN"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 7-year-old boy has puffy eyelids, swollen ankles and brown urine for 2 days. Three weeks ago he had crusted, honey-colored sores on his legs that healed without treatment. Blood pressure is 138/90 mm Hg (above the 95th percentile for his age and height). There is mild pitting edema. He is alert and has no headache or visual change. Urinalysis shows red cells, red cell casts and 1+ protein. Serum creatinine is 0.9 mg/dL (baseline about 0.5 mg/dL), potassium 4.8 mEq/L, C3 is low and C4 is normal. Anti-DNase B is elevated. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous methylprednisolone pulses"
+    },
+    {
+     "label": "B",
+     "html": "Kidney biopsy before starting any treatment"
+    },
+    {
+     "label": "C",
+     "html": "Oral cyclophosphamide for 8 weeks"
+    },
+    {
+     "label": "D",
+     "html": "Restriction of sodium and fluid with a loop diuretic"
+    },
+    {
+     "label": "E",
+     "html": "Ten days of intravenous penicillin to clear the glomeruli"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Edema, hypertension and hematuria with red cell casts 3 weeks after impetigo, with low C3, normal C4 and a raised anti-DNase B, is <strong>post-streptococcal glomerulonephritis</strong>. It is self-limited in most children, so treatment is <strong>supportive</strong>: restrict sodium and fluid and give a <strong>loop diuretic</strong> for the volume overload and hypertension, adding another antihypertensive if needed. C3 should normalise within about 8 weeks.</p><p><strong>Takeaway:</strong> post-streptococcal GN is managed supportively; immunosuppression and biopsy are not routine.</p>",
+   "whyNot": {
+    "A": "Glucocorticoids do not change the course of typical post-streptococcal GN.",
+    "B": "Biopsy is reserved for atypical courses, such as low C3 beyond about 8 weeks or rapidly worsening function.",
+    "C": "Cytotoxic therapy has no role in this self-limited immune-complex disease.",
+    "E": "Antibiotics treat any ongoing streptococcal infection but do not reverse the glomerular immune complexes; the skin lesions have already healed."
+   },
+   "objective": "Manage post-streptococcal glomerulonephritis supportively with salt and fluid restriction and a loop diuretic.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "post-streptococcal GN"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old man had kidney biopsy-proven IgA nephropathy diagnosed 3 months ago. He takes no medicines. Blood pressure today is 136/88 mm Hg. Serum creatinine is 1.3 mg/dL (eGFR 70 mL/min/1.73 m²), potassium 4.4 mEq/L, and the urine protein-to-creatinine ratio is 1.4 g/g. The biopsy showed mesangial proliferation without crescents and little scarring. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "ACE inhibitor titrated to the maximal tolerated dose"
+    },
+    {
+     "label": "B",
+     "html": "Cyclophosphamide with high-dose glucocorticoids"
+    },
+    {
+     "label": "C",
+     "html": "Dietary protein restriction to 0.4 g/kg/day alone"
+    },
+    {
+     "label": "D",
+     "html": "Plasma exchange three times weekly"
+    },
+    {
+     "label": "E",
+     "html": "Tonsillectomy followed by observation"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>All patients with IgA nephropathy and proteinuria get optimised <strong>supportive care</strong>: an <strong>ACE inhibitor or ARB at the highest tolerated dose</strong>, a blood pressure target below about 120–130 mm Hg systolic as tolerated, an SGLT2 inhibitor when eGFR allows, salt restriction and cardiovascular risk control. Persistent proteinuria above about 0.5–1 g/day despite this marks high risk, and immunosuppressive or newer targeted therapy is then considered.</p><p><strong>Takeaway:</strong> first-line treatment for IgA nephropathy with proteinuria is maximal RAS blockade with blood pressure control (plus an SGLT2 inhibitor).</p>",
+   "whyNot": {
+    "B": "Cyclophosphamide is reserved for rapidly progressive, crescentic IgA nephropathy, which he does not have.",
+    "C": "Very low protein diets risk malnutrition and are not the main treatment; protein intake of about 0.8 g/kg/day is advised in CKD.",
+    "D": "Plasma exchange has no role in IgA nephropathy without rapidly progressive disease.",
+    "E": "Tonsillectomy is not standard treatment in most populations and does not replace RAS blockade."
+   },
+   "objective": "Start maximal RAS blockade as first-line therapy for IgA nephropathy with proteinuria.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "IgA nephropathy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man who has smoked 1 pack a day for 45 years has 2 months of leg swelling and a 6-kg weight loss. Urine protein-to-creatinine ratio is 8.2 g/g, serum albumin 2.3 g/dL and creatinine 1.1 mg/dL. Urine sediment is bland. Hepatitis B and C, HIV, ANA and serum free light chains are normal or negative, and serum anti-PLA2R antibody is negative. Kidney biopsy shows diffusely thickened capillary walls with granular IgG and C3 in subepithelial deposits; glomerular staining for PLA2R is negative. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin rituximab without further evaluation"
+    },
+    {
+     "label": "B",
+     "html": "CT of the chest"
+    },
+    {
+     "label": "C",
+     "html": "Kidney biopsy repeated in 6 months"
+    },
+    {
+     "label": "D",
+     "html": "Observation, since one third remit spontaneously"
+    },
+    {
+     "label": "E",
+     "html": "Serum IgG4 level and observation"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The biopsy shows <strong>membranous nephropathy</strong>. Negative serum and tissue PLA2R in an older heavy smoker with weight loss raises concern for <strong>secondary membranous nephropathy from a solid tumour</strong>, most often lung or gastrointestinal cancer. Before immunosuppression, he needs a malignancy evaluation, starting with <strong>chest CT</strong> given his smoking history, plus age-appropriate colorectal screening. Treating the tumour can lead to remission of the nephropathy.</p><p><strong>Takeaway:</strong> PLA2R-negative membranous nephropathy in an older adult should prompt a search for a secondary cause, especially cancer.</p>",
+   "whyNot": {
+    "A": "Immunosuppression before ruling out cancer could worsen an occult tumour and would not address the cause.",
+    "C": "Repeating the biopsy adds nothing; the diagnosis is made, and the missing step is finding the cause.",
+    "D": "Watchful waiting is reasonable for low-risk primary disease, but red flags for cancer must be investigated first.",
+    "E": "IgG4-related disease can cause membranous nephropathy but is far less likely than lung cancer in this smoker with weight loss."
+   },
+   "objective": "Evaluate for malignancy in PLA2R-negative membranous nephropathy with red flags.",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "membranous nephropathy",
+    "paraneoplastic"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 45-year-old woman with nephrotic syndrome due to membranous nephropathy diagnosed 1 month ago (serum albumin 2.0 g/dL) has sudden right flank pain and visible blood in her urine. She has had no trauma. Temperature is 37.2°C (99°F) and blood pressure 134/82 mm Hg. There is right costovertebral angle tenderness. Serum creatinine has risen from 1.0 to 1.6 mg/dL, and LDH is elevated. Urinalysis shows many red cells without casts. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Contrast CT venography of the renal veins"
+    },
+    {
+     "label": "B",
+     "html": "Cystoscopy"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous pyelography"
+    },
+    {
+     "label": "D",
+     "html": "Repeat kidney biopsy"
+    },
+    {
+     "label": "E",
+     "html": "Urine culture and observation"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Sudden flank pain, gross hematuria, a rising creatinine and a raised LDH in a patient with membranous nephropathy and very low albumin suggest <strong>renal vein thrombosis</strong>. The diagnosis is confirmed by imaging the veins, usually <strong>CT venography</strong> (MR venography or Doppler ultrasonography are alternatives). Confirmed thrombosis is treated with anticoagulation.</p><p><strong>Takeaway:</strong> acute flank pain and hematuria in a nephrotic patient means renal vein thrombosis until venous imaging says otherwise.</p>",
+   "whyNot": {
+    "B": "Cystoscopy evaluates bladder sources of bleeding and would miss a venous clot.",
+    "C": "Intravenous pyelography is outdated and does not show the renal vein.",
+    "D": "Biopsy carries a high bleeding risk and does not diagnose venous thrombosis.",
+    "E": "Without fever or pyuria, infection is unlikely, and delaying venous imaging risks propagation and pulmonary embolism."
+   },
+   "objective": "Diagnose renal vein thrombosis in nephrotic syndrome with venous imaging.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal vein thrombosis",
+    "nephrotic syndrome"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110102-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 24-year-old woman with systemic lupus erythematosus diagnosed 2 years ago comes for follow-up. Her joint symptoms are controlled with hydroxychloroquine. She has no complaints. Blood pressure is 142/90 mm Hg (previously 116/72). Urinalysis shows 2+ protein, dysmorphic red cells and occasional red cell casts. Urine protein-to-creatinine ratio is 1.6 g/g. Serum creatinine is 1.1 mg/dL (0.7 mg/dL 6 months ago). C3 and C4 are low, and anti-dsDNA titre has risen. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add an ACE inhibitor and recheck urine protein in 3 months"
+    },
+    {
+     "label": "B",
+     "html": "Increase the hydroxychloroquine dose"
+    },
+    {
+     "label": "C",
+     "html": "Kidney biopsy"
+    },
+    {
+     "label": "D",
+     "html": "Renal ultrasonography with Doppler"
+    },
+    {
+     "label": "E",
+     "html": "Start high-dose prednisone and stop hydroxychloroquine"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Proteinuria above 0.5 g/day with an active sediment and a rising creatinine in lupus means <strong>lupus nephritis</strong> is likely, and a <strong>kidney biopsy</strong> is needed: the class and the activity and chronicity scores decide treatment.</p><p><strong>Takeaway:</strong> in lupus, proteinuria of 0.5 g/day or more, an active sediment or a rising creatinine is an indication for kidney biopsy.</p>",
+   "whyNot": {
+    "A": "An ACE inhibitor helps proteinuria but does not treat active proliferative nephritis, and waiting 3 months risks permanent damage.",
+    "B": "Hydroxychloroquine is continued at standard weight-based dosing; higher doses raise retinal toxicity without treating nephritis.",
+    "D": "Ultrasonography shows kidney size and excludes obstruction but cannot classify the glomerular lesion.",
+    "E": "Hydroxychloroquine should be continued in all patients with lupus, and treatment choice depends on the biopsy class."
+   },
+   "objective": "Biopsy the kidney when a patient with lupus develops proteinuria with an active sediment.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.16.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "lupus nephritis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110102-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q110102-2-07",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>The biopsy shows class IV lupus nephritis with active lesions and little chronic scarring. She continues hydroxychloroquine. Which of the following is the most appropriate induction treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Glucocorticoids plus mycophenolate mofetil"
+    },
+    {
+     "label": "B",
+     "html": "Glucocorticoids plus plasma exchange"
+    },
+    {
+     "label": "C",
+     "html": "High-dose glucocorticoids alone for 12 months"
+    },
+    {
+     "label": "D",
+     "html": "Methotrexate with folic acid"
+    },
+    {
+     "label": "E",
+     "html": "Rituximab alone"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Class III or IV lupus nephritis needs combined induction: <strong>glucocorticoids plus mycophenolate mofetil</strong> or low-dose IV cyclophosphamide, with add-on belimumab or a calcineurin inhibitor used in many patients, plus hydroxychloroquine and RAS blockade. Mycophenolate is often preferred in young women because cyclophosphamide threatens fertility.</p><p><strong>Takeaway:</strong> induct class III or IV lupus nephritis with glucocorticoids plus mycophenolate (or low-dose cyclophosphamide).</p>",
+   "whyNot": {
+    "B": "Plasma exchange has not shown benefit in typical lupus nephritis.",
+    "C": "Glucocorticoids alone are less effective and cause more toxicity than combination therapy.",
+    "D": "Methotrexate helps lupus arthritis and skin disease but is not an induction agent for proliferative nephritis.",
+    "E": "Rituximab is used for refractory disease, not as standard first-line monotherapy."
+   },
+   "objective": "Choose glucocorticoids plus mycophenolate for induction of class IV lupus nephritis.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.16.01.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "lupus nephritis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110102-1",
+   "setOrder": 2
+  },
+  {
+   "id": "s23c-q110102-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>Eighteen months later her nephritis is in complete remission on low-dose prednisone, mycophenolate mofetil and hydroxychloroquine. She and her partner want to have a child within the next year. Which of the following is the most appropriate change to her treatment before she tries to conceive?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue mycophenolate and stop hydroxychloroquine"
+    },
+    {
+     "label": "B",
+     "html": "Replace mycophenolate with azathioprine and continue hydroxychloroquine"
+    },
+    {
+     "label": "C",
+     "html": "Replace mycophenolate with cyclophosphamide"
+    },
+    {
+     "label": "D",
+     "html": "Replace mycophenolate with methotrexate"
+    },
+    {
+     "label": "E",
+     "html": "Stop all immunosuppression and hydroxychloroquine"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Mycophenolate is <strong>teratogenic</strong> (miscarriage and malformations of the ear, face and heart) and should be replaced at least several weeks before conception. <strong>Azathioprine</strong> is compatible with pregnancy and maintains remission. <strong>Hydroxychloroquine is continued</strong> because stopping it raises the risk of flares, and it is safe in pregnancy. Pregnancy should be planned after at least about 6 months of quiescent disease.</p><p><strong>Takeaway:</strong> before pregnancy in lupus nephritis, switch mycophenolate to azathioprine and keep hydroxychloroquine.</p>",
+   "whyNot": {
+    "A": "Continuing mycophenolate exposes the fetus to a known teratogen, and stopping hydroxychloroquine increases flare risk.",
+    "C": "Cyclophosphamide is teratogenic and gonadotoxic.",
+    "D": "Methotrexate is a teratogen and abortifacient and is contraindicated in pregnancy.",
+    "E": "Stopping all therapy invites a flare of nephritis, which harms both mother and fetus."
+   },
+   "objective": "Switch mycophenolate to azathioprine and continue hydroxychloroquine before pregnancy in lupus nephritis.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.12.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "lupus nephritis",
+    "pregnancy planning"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110102-1",
+   "setOrder": 3
+  },
+  {
+   "id": "s23c-q110102-2-09",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 72-year-old man was started on omeprazole 8 weeks ago for dyspepsia. Routine laboratory tests now show serum creatinine of 2.3 mg/dL; it was 1.0 mg/dL 3 months ago. He feels well and has no rash or fever. He takes no NSAIDs. Blood pressure is 128/76 mm Hg, and he is euvolemic. Urinalysis shows 1+ protein, white blood cells and a few white cell casts; urine culture is negative. Kidney ultrasonography is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Begin hemodialysis"
+    },
+    {
+     "label": "B",
+     "html": "Discontinue omeprazole"
+    },
+    {
+     "label": "C",
+     "html": "Increase fluid intake and recheck in 3 months"
+    },
+    {
+     "label": "D",
+     "html": "Start cyclophosphamide"
+    },
+    {
+     "label": "E",
+     "html": "Start trimethoprim-sulfamethoxazole"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A rise in creatinine with sterile pyuria and white cell casts after starting a proton pump inhibitor suggests <strong>drug-induced acute interstitial nephritis</strong>. Proton pump inhibitor AIN is often subtle, without rash, fever or eosinophilia. The first step is to <strong>stop the drug</strong> (an H2 blocker can replace it). If creatinine does not improve within several days, or the injury is severe, biopsy and glucocorticoids are considered.</p><p><strong>Takeaway:</strong> suspected drug-induced AIN: stop the culprit drug first.</p>",
+   "whyNot": {
+    "A": "He has no indication for dialysis.",
+    "C": "He is not volume depleted, and continuing the drug lets the inflammation progress to fibrosis.",
+    "D": "Cyclophosphamide is not a treatment for AIN.",
+    "E": "Sterile pyuria and a negative culture do not suggest bacterial infection, and sulfonamides can themselves cause AIN."
+   },
+   "objective": "Stop the culprit drug as the first step in proton pump inhibitor-induced interstitial nephritis.",
+   "areas": [
+    "usmle2026.11.01.02",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "acute interstitial nephritis",
+    "proton pump inhibitor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110102-01",
+   "frontHtml": "Gross hematuria 1–2 days after a sore throat, normal C3: diagnosis and deposit site?",
+   "backHtml": "IgA nephropathy; mesangial IgA deposits.",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-02",
+   "frontHtml": "Hematuria 1–3 weeks after pharyngitis or 3–6 weeks after impetigo, low C3: diagnosis and EM finding?",
+   "backHtml": "Post-streptococcal GN; large subepithelial humps.",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-03",
+   "frontHtml": "Target antigen in anti-GBM disease?",
+   "backHtml": "Noncollagenous domain of the alpha-3 chain of type IV collagen (linear IgG on IF).",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-04",
+   "frontHtml": "Which three groups does immunofluorescence sort crescentic GN into?",
+   "backHtml": "Linear (anti-GBM), granular (immune complex: lupus, IgA, post-infectious), pauci-immune (ANCA).",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-05",
+   "frontHtml": "Lupus nephritis class with subendothelial \"wire-loop\" deposits in half or more of glomeruli?",
+   "backHtml": "Class IV (diffuse proliferative).",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-06",
+   "frontHtml": "Low C3 with normal C4 and C3-dominant deposits without infection: diagnosis and mechanism?",
+   "backHtml": "C3 glomerulopathy; e.g., C3 nephritic factor stabilising C3bBb (alternative pathway).",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-07",
+   "frontHtml": "Hepatitis C, palpable purpura, positive rheumatoid factor and very low C4 with an MPGN pattern?",
+   "backHtml": "Cryoglobulinemic glomerulonephritis.",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-08",
+   "frontHtml": "Hematuria, sensorineural deafness, anterior lenticonus and a split GBM?",
+   "backHtml": "Alport syndrome: type IV collagen defect, most often X-linked <em>COL4A5</em>.",
+   "sectionId": "s23c-s110102-1-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-09",
+   "frontHtml": "Normal light microscopy, negative IF, effaced foot processes?",
+   "backHtml": "Minimal change disease.",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-10",
+   "frontHtml": "Antibody found in most primary membranous nephropathy?",
+   "backHtml": "Anti-phospholipase A2 receptor (PLA2R).",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-11",
+   "frontHtml": "HIV with nephrotic syndrome and large echogenic kidneys: lesion and genetic risk factor?",
+   "backHtml": "Collapsing FSGS; two <em>APOL1</em> risk variants.",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-12",
+   "frontHtml": "Why are nephrotic patients hypercoagulable?",
+   "backHtml": "Urinary loss of antithrombin (and proteins C and S) plus increased hepatic fibrinogen and factor synthesis.",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-13",
+   "frontHtml": "Kimmelstiel-Wilson lesion?",
+   "backHtml": "Nodular PAS-positive mesangial sclerosis of diabetic nephropathy.",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-14",
+   "frontHtml": "Congo red with apple-green birefringence in a patient with long-standing rheumatoid arthritis: protein?",
+   "backHtml": "AA amyloid (from serum amyloid A).",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-15",
+   "frontHtml": "Drug-induced acute interstitial nephritis: hypersensitivity type and urine findings?",
+   "backHtml": "Type IV (T cell); sterile pyuria, white cell casts, sometimes urine eosinophils.",
+   "sectionId": "s23c-s110102-1-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-16",
+   "frontHtml": "ANCA-positive rapidly progressive GN: induction therapy?",
+   "backHtml": "Glucocorticoids plus rituximab or cyclophosphamide, started without waiting for biopsy.",
+   "sectionId": "s23c-s110102-2-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-17",
+   "frontHtml": "Anti-GBM disease: treatment?",
+   "backHtml": "Urgent plasma exchange plus glucocorticoids and cyclophosphamide.",
+   "sectionId": "s23c-s110102-2-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-18",
+   "frontHtml": "First-line treatment of IgA nephropathy with proteinuria?",
+   "backHtml": "Maximal tolerated ACE inhibitor or ARB, blood pressure control, SGLT2 inhibitor when eGFR allows.",
+   "sectionId": "s23c-s110102-2-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-19",
+   "frontHtml": "Lupus patient: when to biopsy the kidney?",
+   "backHtml": "Proteinuria about 0.5 g/day or more, an active sediment, or an unexplained rise in creatinine.",
+   "sectionId": "s23c-s110102-2-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-20",
+   "frontHtml": "Class IV lupus nephritis induction, and the change before pregnancy?",
+   "backHtml": "Glucocorticoids plus mycophenolate (or low-dose cyclophosphamide); switch mycophenolate to azathioprine and continue hydroxychloroquine.",
+   "sectionId": "s23c-s110102-2-1",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-21",
+   "frontHtml": "Child aged 1–10 years with typical nephrotic syndrome: first step?",
+   "backHtml": "Oral glucocorticoids without biopsy (presumed minimal change).",
+   "sectionId": "s23c-s110102-2-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-22",
+   "frontHtml": "PLA2R-negative membranous nephropathy in an older smoker with weight loss: next step?",
+   "backHtml": "Search for a secondary cause, especially cancer (chest CT, age-appropriate screening).",
+   "sectionId": "s23c-s110102-2-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-23",
+   "frontHtml": "Nephrotic patient with sudden flank pain, hematuria and raised LDH: diagnosis and test?",
+   "backHtml": "Renal vein thrombosis; CT or MR venography, then anticoagulation.",
+   "sectionId": "s23c-s110102-2-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110102-24",
+   "frontHtml": "Suspected drug-induced AIN: first step?",
+   "backHtml": "Stop the drug; glucocorticoids if no improvement within several days or severe injury.",
+   "sectionId": "s23c-s110102-2-2",
+   "areas": [
+    "usmle2026.11.01.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

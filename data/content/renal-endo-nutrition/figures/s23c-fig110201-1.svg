@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-label="Renal cysts compared: simple cyst, complex cyst, ADPKD, ARPKD, acquired cystic disease and medullary sponge kidney">
+<title>Renal cystic disease at a glance</title>
+<rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+<text x="360" y="26" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">Renal cysts: pattern, kidney size and what to do</text>
+<g font-family="sans-serif" font-size="12" fill="#0f172a">
+<rect x="16" y="44" width="220" height="168" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<ellipse cx="80" cy="110" rx="34" ry="48" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<circle cx="80" cy="84" r="12" fill="#e0f2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="126" y="72" font-weight="bold">Simple cyst</text>
+<text x="126" y="90">Thin wall, no septa,</text>
+<text x="126" y="106">water density,</text>
+<text x="126" y="122">no enhancement</text>
+<text x="28" y="182">Common with age; benign;</text>
+<text x="28" y="198">no follow-up needed</text>
+<rect x="250" y="44" width="220" height="168" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<ellipse cx="314" cy="110" rx="34" ry="48" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<circle cx="314" cy="104" r="16" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<line x1="298" y1="104" x2="330" y2="104" stroke="#334155" stroke-width="2"/>
+<circle cx="322" cy="96" r="4" fill="#b91c1c"/>
+<text x="360" y="72" font-weight="bold">Complex cyst</text>
+<text x="360" y="90">Thick or enhancing</text>
+<text x="360" y="106">septa, wall nodule,</text>
+<text x="360" y="122">calcification</text>
+<text x="262" y="182">Higher Bosniak class = higher</text>
+<text x="262" y="198">cancer risk: surveil or resect</text>
+<rect x="484" y="44" width="220" height="168" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+<ellipse cx="548" cy="112" rx="40" ry="56" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<circle cx="536" cy="86" r="10" fill="#fef3c7" stroke="#334155"/><circle cx="560" cy="96" r="12" fill="#fef3c7" stroke="#334155"/><circle cx="540" cy="118" r="11" fill="#fef3c7" stroke="#334155"/><circle cx="562" cy="128" r="9" fill="#fef3c7" stroke="#334155"/><circle cx="546" cy="148" r="9" fill="#fef3c7" stroke="#334155"/>
+<text x="598" y="72" font-weight="bold">ADPKD</text>
+<text x="598" y="90">Bilateral, many</text>
+<text x="598" y="106">cysts, kidneys</text>
+<text x="598" y="122">very large</text>
+<text x="496" y="182">PKD1/PKD2; liver cysts,</text>
+<text x="496" y="198">berry aneurysms; adults</text>
+<rect x="16" y="228" width="220" height="168" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+<ellipse cx="80" cy="300" rx="38" ry="54" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<line x1="58" y1="270" x2="80" y2="300" stroke="#334155"/><line x1="56" y1="300" x2="80" y2="300" stroke="#334155"/><line x1="58" y1="330" x2="80" y2="300" stroke="#334155"/><line x1="102" y1="270" x2="80" y2="300" stroke="#334155"/><line x1="104" y1="300" x2="80" y2="300" stroke="#334155"/><line x1="102" y1="330" x2="80" y2="300" stroke="#334155"/>
+<text x="128" y="256" font-weight="bold">ARPKD</text>
+<text x="128" y="274">Radially dilated</text>
+<text x="128" y="290">collecting ducts,</text>
+<text x="128" y="306">large kidneys</text>
+<text x="28" y="368">PKHD1; infants: Potter sequence,</text>
+<text x="28" y="384">congenital hepatic fibrosis</text>
+<rect x="250" y="228" width="220" height="168" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<ellipse cx="310" cy="300" rx="22" ry="32" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+<circle cx="304" cy="290" r="5" fill="#ffffff" stroke="#334155"/><circle cx="316" cy="304" r="6" fill="#ffffff" stroke="#334155"/><circle cx="306" cy="314" r="4" fill="#ffffff" stroke="#334155"/>
+<text x="348" y="256" font-weight="bold">Acquired cystic</text>
+<text x="348" y="274">Small, scarred</text>
+<text x="348" y="290">kidneys with many</text>
+<text x="348" y="306">small cysts</text>
+<text x="262" y="368">Long-term dialysis; raised</text>
+<text x="262" y="384">renal cell carcinoma risk</text>
+<rect x="484" y="228" width="220" height="168" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+<ellipse cx="548" cy="300" rx="34" ry="50" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<circle cx="540" cy="292" r="4" fill="#334155"/><circle cx="554" cy="300" r="4" fill="#334155"/><circle cx="544" cy="310" r="3" fill="#334155"/><circle cx="556" cy="316" r="3" fill="#334155"/>
+<text x="594" y="256" font-weight="bold">Medullary</text>
+<text x="594" y="272" font-weight="bold">sponge kidney</text>
+<text x="594" y="290">Dilated medullary</text>
+<text x="594" y="306">collecting ducts</text>
+<text x="496" y="368">Normal-size kidneys; stones,</text>
+<text x="496" y="384">UTIs; usually good prognosis</text>
+</g>
+</svg>

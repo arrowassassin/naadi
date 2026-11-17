@@ -1,0 +1,1720 @@
+{
+ "area": "usmle2026.11.04.01",
+ "sections": [
+  {
+   "id": "s23c-s110401-1-1",
+   "exam": "step1",
+   "heading": "Renal physiology for kidney disease: filtration, clearance and the nephron",
+   "html": "<h3>Glomerular filtration</h3><p>The glomerular filtration rate (GFR) is set by the Starling forces across the glomerular capillary: glomerular capillary hydrostatic pressure pushes fluid out, and Bowman space pressure and plasma oncotic pressure oppose it. Because the glomerular capillary bed sits <em>between two arterioles</em>, their tone controls the pressure inside it.</p><table><tr><th>Change</th><th>Renal plasma flow (RPF)</th><th>GFR</th><th>Filtration fraction (GFR/RPF)</th><th>Example</th></tr><tr><td>Afferent constriction</td><td>Down</td><td>Down</td><td>About unchanged</td><td>NSAIDs (loss of prostaglandin dilation), sympathetic tone</td></tr><tr><td>Afferent dilation</td><td>Up</td><td>Up</td><td>About unchanged</td><td>Prostaglandins, high-protein meal</td></tr><tr><td>Efferent constriction</td><td>Down</td><td>Up (modest)</td><td>Up</td><td>Angiotensin II in volume depletion</td></tr><tr><td>Efferent dilation</td><td>Up</td><td>Down</td><td>Down</td><td>ACE inhibitors, ARBs</td></tr><tr><td>Higher plasma oncotic pressure</td><td>No change</td><td>Down</td><td>Down</td><td>Multiple myeloma paraproteins, dehydration</td></tr><tr><td>Ureteral obstruction</td><td>No change</td><td>Down</td><td>Down</td><td>Raised Bowman space pressure</td></tr></table><p>The normal filtration fraction is about 20%. Prerenal states lean on efferent constriction by angiotensin II and on afferent dilation by prostaglandins to hold GFR up, which is why an ACE inhibitor or an NSAID can tip a volume-depleted patient into acute kidney injury.</p><h3>Clearance</h3><p>Clearance is the plasma volume cleared of a substance per minute: <strong>C = (U × V) / P</strong>, where U is urine concentration, V urine flow and P plasma concentration.</p><ul><li><strong>Inulin</strong> is filtered and neither reabsorbed nor secreted, so its clearance equals GFR.</li><li><strong>Creatinine</strong> is filtered and slightly secreted, so creatinine clearance slightly <em>overestimates</em> GFR. Drugs that block creatinine secretion (trimethoprim, cimetidine) raise serum creatinine without changing true GFR.</li><li><strong>Para-aminohippuric acid (PAH)</strong> is filtered and almost completely secreted, so its clearance estimates effective renal plasma flow. Renal blood flow = RPF / (1 − hematocrit).</li><li>A substance with clearance below the GFR is net reabsorbed (glucose, sodium, urea); above the GFR, net secreted.</li></ul><p>Serum creatinine rises late: the relationship between creatinine and GFR is hyperbolic, so losing half the GFR from normal only moves creatinine from about 0.8 to 1.6 mg/dL. Cystatin C is less affected by muscle mass and is used to confirm an estimated GFR.</p><h3>Segment by segment</h3>[[figure:s23c-fig110401-1]]<table><tr><th>Segment</th><th>Key transporters and functions</th><th>Drug or disease at this site</th></tr><tr><td>Proximal tubule</td><td>About two thirds of filtered sodium and water; NaHCO₃ via carbonic anhydrase and Na⁺/H⁺ exchange; glucose by SGLT2; amino acids, phosphate, urate; ammoniagenesis from glutamine; organic acid and base secretion</td><td>Acetazolamide, SGLT2 inhibitors; Fanconi syndrome, type 2 RTA, cystinuria</td></tr><tr><td>Thin descending limb</td><td>Water leaves into the hypertonic medulla</td><td>Mannitol (osmotic, acts mainly here and in the proximal tubule)</td></tr><tr><td>Thick ascending limb</td><td>NKCC2 (Na⁺-K⁺-2Cl⁻); K⁺ recycling through ROMK creates a lumen-positive voltage that drives paracellular Ca²⁺ and Mg²⁺ uptake; water-impermeable (\"diluting segment\")</td><td>Loop diuretics; Bartter syndrome</td></tr><tr><td>Distal convoluted tubule</td><td>NCC (Na⁺-Cl⁻); PTH-regulated Ca²⁺ reabsorption</td><td>Thiazides (lower urine calcium); Gitelman syndrome</td></tr><tr><td>Collecting duct, principal cell</td><td>ENaC sodium uptake and ROMK potassium secretion under aldosterone; aquaporin-2 inserted by ADH via V2 receptors</td><td>Amiloride, triamterene, mineralocorticoid antagonists; Liddle syndrome; nephrogenic diabetes insipidus</td></tr><tr><td>Collecting duct, α-intercalated cell</td><td>H⁺-ATPase and H⁺/K⁺-ATPase secrete acid; urine buffered as NH₄⁺ and titratable acid</td><td>Type 1 RTA</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a rise in creatinine of up to about 30% after starting an ACE inhibitor or ARB is expected (efferent dilation) and is not a reason to stop it; a larger rise suggests bilateral renal artery stenosis or volume depletion.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Loops lose calcium, thiazides keep it</em>\": loop diuretics raise urine calcium (useful in hypercalcemia), thiazides lower it (useful in calcium stones).</p></div>",
+   "figureIds": [
+    "s23c-fig110401-1"
+   ],
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Acute Kidney Injury",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441896/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Failure",
+     "url": "https://medlineplus.gov/kidneyfailure.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110401-1-2",
+   "exam": "step1",
+   "heading": "Acute kidney injury, chronic kidney disease and hypertensive renal disease: mechanisms and pathology",
+   "html": "<h3>Acute kidney injury (AKI)</h3><p>AKI is a fall in kidney function over hours to days. Think of it by where the problem lies.</p><table><tr><th>Feature</th><th>Prerenal</th><th>Intrinsic: acute tubular necrosis</th><th>Postrenal</th></tr><tr><td>Mechanism</td><td>Low effective perfusion; tubules intact and avidly reabsorb sodium and water</td><td>Tubular cells die and slough; casts obstruct tubules; filtrate leaks back</td><td>Obstruction raises tubular and Bowman pressure</td></tr><tr><td>BUN:creatinine</td><td>Above 20</td><td>10–15</td><td>Variable (often above 15 early)</td></tr><tr><td>Urine sodium</td><td>Below 20 mEq/L</td><td>Above 40 mEq/L</td><td>Variable</td></tr><tr><td>FENa</td><td>Below 1%</td><td>Above 2%</td><td>Variable</td></tr><tr><td>Urine osmolality</td><td>Above 500 mOsm/kg</td><td>Close to plasma (about 300)</td><td>Variable</td></tr><tr><td>Sediment</td><td>Bland, hyaline casts</td><td>Muddy brown granular and renal tubular epithelial cell casts</td><td>Bland; hydronephrosis on ultrasound</td></tr></table><p>FENa = (urine Na × plasma Cr) / (plasma Na × urine Cr) × 100. Diuretics raise FENa even in prerenal states; the fractional excretion of urea (below about 35% in prerenal AKI) is less affected.</p><h3>Acute tubular necrosis</h3><ul><li><strong>Ischemic</strong> ATN follows prolonged hypotension or shock. The <em>straight part of the proximal tubule</em> and the medullary thick ascending limb are most vulnerable, because they work hard in an area that receives little oxygen. Injury is patchy.</li><li><strong>Nephrotoxic</strong> ATN mainly damages the proximal tubule: aminoglycosides, cisplatin, amphotericin B, iodinated contrast, and pigments (myoglobin in rhabdomyolysis, hemoglobin in hemolysis).</li><li><strong>Rhabdomyolysis</strong>: crush injury, prolonged immobility, extreme exertion, statins, seizures. The dipstick is positive for blood but few red cells are seen, because the dipstick detects heme in myoglobin. Creatine kinase is very high; potassium and phosphate rise, calcium falls early.</li><li><strong>Tumor lysis</strong>: after cytotoxic therapy of bulky, fast-growing tumours (Burkitt lymphoma, acute leukemia). Uric acid and calcium phosphate crystallise in tubules. Labs: high potassium, phosphate and uric acid, low calcium.</li><li>Course: initiation, a maintenance phase with oliguria and hyperkalemia, then a recovery phase with polyuria in which hypokalemia and volume depletion are risks.</li></ul><h3>Chronic kidney disease (CKD)</h3><p>CKD is kidney damage or GFR below 60 mL/min/1.73 m² for more than 3 months. The most common causes are diabetes and hypertension. Once nephrons are lost, the survivors hyperfilter; the raised glomerular pressure injures them in turn (adaptive hyperfiltration), driving progressive glomerulosclerosis.</p><ul><li><strong>Anemia</strong>: normocytic, from low erythropoietin made by peritubular interstitial cells, plus iron deficiency and inflammation.</li><li><strong>CKD-mineral and bone disorder</strong>: phosphate retention and high FGF23 lower 1α-hydroxylase activity, so calcitriol falls; calcium falls, and <strong>secondary hyperparathyroidism</strong> follows. Bone disease (renal osteodystrophy, including osteitis fibrosa cystica) and vascular calcification result. After years, parathyroid glands can become autonomous: <strong>tertiary hyperparathyroidism</strong> with hypercalcemia, often unmasked after transplant.</li><li><strong>Metabolic acidosis</strong>: falling ammoniagenesis; first with a normal anion gap, later with a raised gap from retained sulfate, phosphate and urate.</li><li><strong>Hyperkalemia</strong>, salt and water retention, hypertension.</li><li><strong>Uremia</strong>: nausea, anorexia, pruritus, pericarditis, encephalopathy (asterixis), platelet dysfunction with bleeding, peripheral neuropathy.</li></ul><h3>Hypertensive renal disease</h3><ul><li><strong>Benign nephrosclerosis</strong> (long-standing hypertension): hyaline arteriolosclerosis narrows afferent arterioles; patchy ischemic glomerulosclerosis; small kidneys with a finely granular surface. Diabetes produces the same hyaline change.</li><li><strong>Hypertensive emergency (malignant hypertension)</strong>: hyperplastic arteriolosclerosis (concentric \"onion-skin\" smooth muscle and basement membrane layers) and fibrinoid necrosis of arterioles; petechial cortical hemorrhages (\"flea-bitten\" kidney); AKI with hematuria and microangiopathic hemolysis.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> red urine, a dipstick strongly positive for blood and almost no red cells on microscopy is myoglobinuria or hemoglobinuria, not hematuria.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Acute Renal Tubular Necrosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK507815/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Chronic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK535404/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Chronic Kidney Disease-Mineral Bone Disorder (CKD-MBD)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560742/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110401-1-3",
+   "exam": "step1",
+   "heading": "Kidney stones and tubular disorders: RTA, Fanconi syndrome, cystinuria and channelopathies",
+   "html": "<h3>Kidney stones</h3><table><tr><th>Stone</th><th>Urine and risk</th><th>Crystal and imaging</th><th>Prevention</th></tr><tr><td>Calcium oxalate (most common)</td><td>Hypercalciuria, hyperoxaluria, hypocitraturia, low urine volume; enteric hyperoxaluria after ileal disease or bypass; ethylene glycol; vitamin C excess</td><td>Dihydrate: envelope (bipyramidal); monohydrate: dumbbell or oval. Radiopaque</td><td>Fluids, low sodium, normal calcium intake, thiazide, citrate</td></tr><tr><td>Calcium phosphate</td><td>Alkaline urine: type 1 RTA, primary hyperparathyroidism</td><td>Wedge-shaped prisms. Radiopaque</td><td>Treat cause; thiazide; citrate with care</td></tr><tr><td>Uric acid</td><td><strong>Acidic urine</strong> (pH below 5.5), gout, insulin resistance, tumor lysis, high cell turnover</td><td>Rhomboid or rosette. <strong>Radiolucent</strong> on plain film, visible on CT</td><td>Alkalinise urine (potassium citrate); allopurinol if overproduction</td></tr><tr><td>Struvite (magnesium ammonium phosphate)</td><td>Alkaline urine from urease-producing organisms</td><td>Coffin-lid prisms; staghorn calculi. Radiopaque</td><td>Remove the whole stone; treat infection</td></tr><tr><td>Cystine</td><td>Autosomal recessive cystinuria, from childhood</td><td><strong>Hexagonal</strong> crystals; positive cyanide-nitroprusside test; staghorn possible; faintly radiopaque</td><td>High fluid intake, urine alkalinisation, thiol drugs (tiopronin)</td></tr></table><p><strong>Enteric hyperoxaluria</strong>: with fat malabsorption (Crohn disease, ileal resection, bariatric surgery), unabsorbed fatty acids bind calcium in the gut lumen. Oxalate that would have left as insoluble calcium oxalate stays free, and the colon absorbs it, raising urine oxalate. A <em>normal</em> calcium intake taken with meals protects; restricting calcium makes oxalate stones worse.</p><h3>Renal tubular acidosis (RTA)</h3><p>RTA causes a <strong>normal anion gap (hyperchloremic) metabolic acidosis</strong> from the kidney. The urine anion gap (Na⁺ + K⁺ − Cl⁻) estimates urine ammonium: negative when the kidney excretes ammonium normally (as in diarrhea), positive when ammonium excretion is impaired (types 1 and 4).</p>[[figure:s23c-fig110401-2]]<h3>Fanconi syndrome</h3><p>Generalised failure of the proximal tubule: glucose, amino acids, phosphate, bicarbonate and urate are lost in urine. Clues are <strong>glycosuria with a normal blood glucose</strong>, hypophosphatemia (rickets or osteomalacia), hypouricemia and a type 2 RTA. Causes: tenofovir, ifosfamide, expired tetracycline, light-chain injury in multiple myeloma, Wilson disease, lead and other heavy metals, and in children cystinosis.</p><h3>Cystinuria</h3><p>An autosomal recessive defect of the apical transporter for <em>dibasic amino acids</em> (cystine, ornithine, lysine, arginine) in the proximal tubule and intestine. Only cystine, which is poorly soluble in acidic urine, forms stones. It is a transport disorder, distinct from cystinosis, a lysosomal storage disease.</p><h3>Inherited channel disorders</h3><table><tr><th>Disorder</th><th>Defect</th><th>Blood pressure</th><th>Labs</th></tr><tr><td>Bartter syndrome</td><td>Loss of function in the thick ascending limb (NKCC2, ROMK or related channels); mimics a loop diuretic</td><td>Normal or low</td><td>Hypokalemia, metabolic alkalosis, high renin and aldosterone, <strong>high urine calcium</strong></td></tr><tr><td>Gitelman syndrome</td><td>Loss of NCC in the distal convoluted tubule; mimics a thiazide</td><td>Normal or low</td><td>Hypokalemia, alkalosis, <strong>hypomagnesemia, low urine calcium</strong></td></tr><tr><td>Liddle syndrome</td><td>Gain of function in ENaC (autosomal dominant)</td><td>High</td><td>Hypokalemia, alkalosis, <strong>low renin and low aldosterone</strong>; responds to amiloride or triamterene, not spironolactone</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> type 2 RTA can show an acidic urine pH, because once serum bicarbonate falls below the lowered proximal threshold, the distal nephron acidifies normally. Do not use urine pH alone to rule it out.</p></div>",
+   "figureIds": [
+    "s23c-fig110401-2"
+   ],
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Renal Calculi, Nephrolithiasis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK442014/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Tubular Acidosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK519044/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Fanconi Syndrome",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK534872/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Cystinuria",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470527/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110401-2-1",
+   "exam": "step2ck",
+   "heading": "Acute kidney injury: evaluation and management",
+   "html": "<h3>Definition and staging (KDIGO)</h3><p>AKI is any of: serum creatinine up by at least 0.3 mg/dL within 48 hours; creatinine at least 1.5 times baseline within the prior 7 days; or urine output below 0.5 mL/kg/h for 6 hours.</p><table><tr><th>Stage</th><th>Creatinine</th><th>Urine output</th></tr><tr><td>1</td><td>1.5–1.9 × baseline, or rise of at least 0.3 mg/dL</td><td>Below 0.5 mL/kg/h for 6–12 hours</td></tr><tr><td>2</td><td>2.0–2.9 × baseline</td><td>Below 0.5 mL/kg/h for 12 hours or more</td></tr><tr><td>3</td><td>3 × baseline, or creatinine 4.0 mg/dL or more, or start of kidney replacement therapy</td><td>Below 0.3 mL/kg/h for 24 hours or more, or anuria for 12 hours or more</td></tr></table><h3>First steps in every case</h3><ol><li>Review the history and medicines: volume losses, hypotension, contrast, nephrotoxins (NSAIDs, aminoglycosides, vancomycin with piperacillin-tazobactam), ACE inhibitors, ARBs and diuretics.</li><li>Assess volume status at the bedside.</li><li>Urinalysis with microscopy (casts, cells, crystals), urine sodium, creatinine and urea for fractional excretion.</li><li>Check for obstruction: bladder scan or catheter for retention; <strong>renal ultrasound</strong> for hydronephrosis.</li><li>Check potassium, bicarbonate and calcium/phosphate; review drug doses for the current GFR.</li></ol><h3>By cause</h3><ul><li><strong>Prerenal from volume loss</strong>: isotonic crystalloid; creatinine should improve within 24–72 hours. In heart failure or cirrhosis, \"prerenal\" means low effective volume; treat the cause (diuresis for congestion, albumin and vasoconstrictors for hepatorenal syndrome).</li><li><strong>ATN</strong>: supportive; keep euvolemia, stop nephrotoxins, adjust doses, avoid hyperkalemia, and wait for recovery over 1–3 weeks.</li><li><strong>Postrenal</strong>: relieve the obstruction (urethral catheter for bladder outlet obstruction; stent or nephrostomy for ureteral obstruction). Watch for post-obstructive diuresis.</li><li><strong>Rhabdomyolysis</strong>: early, generous isotonic fluids aiming for a high urine output; treat hyperkalemia; avoid giving calcium for asymptomatic hypocalcemia, which often rebounds during recovery.</li><li><strong>Tumor lysis syndrome</strong>: prevent in high-risk patients with IV fluids and <strong>rasburicase</strong> (converts uric acid to soluble allantoin; contraindicated in G6PD deficiency); allopurinol for intermediate risk.</li><li><strong>Contrast-associated AKI</strong>: in people at high risk (low eGFR), give isotonic IV fluid before and after contrast and stop nephrotoxins; do not withhold an indicated contrast study for fear of AKI alone.</li></ul><h3>When to start dialysis urgently</h3><p>Dialysis is started for complications that do not respond to medical treatment:</p><ul><li>severe metabolic acidosis;</li><li>hyperkalemia not controlled medically;</li><li>dialysable poisons (methanol, ethylene glycol, lithium, salicylates);</li><li>volume overload with pulmonary edema despite diuretics;</li><li>uremic complications: pericarditis, encephalopathy, uremic bleeding.</li></ul><p>A creatinine or BUN number alone is not an indication.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a pericardial friction rub in a patient with advanced kidney failure is uremic pericarditis, an indication for urgent dialysis. NSAIDs and colchicine, the usual pericarditis treatments, are not the answer.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Acute Kidney Injury",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK441896/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Acute Renal Tubular Necrosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK507815/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110401-2-2",
+   "exam": "step2ck",
+   "heading": "Chronic kidney disease: staging, slowing progression and treating complications",
+   "html": "<h3>Staging (KDIGO): cause, GFR and albuminuria</h3><table><tr><th>GFR category</th><th>eGFR (mL/min/1.73 m²)</th></tr><tr><td>G1</td><td>90 or more (with kidney damage)</td></tr><tr><td>G2</td><td>60–89 (with kidney damage)</td></tr><tr><td>G3a</td><td>45–59</td></tr><tr><td>G3b</td><td>30–44</td></tr><tr><td>G4</td><td>15–29</td></tr><tr><td>G5</td><td>Below 15 (kidney failure)</td></tr></table><p>Albuminuria by urine albumin-to-creatinine ratio (ACR): <strong>A1</strong> below 30 mg/g, <strong>A2</strong> 30–300 mg/g, <strong>A3</strong> above 300 mg/g. Risk rises with both lower GFR and higher ACR, so both are reported (for example \"G3a A3\"). Confirm abnormal ACR on repeat testing. Screen people with diabetes and hypertension yearly with eGFR and ACR.</p><h3>Slowing progression</h3><ul><li><strong>Blood pressure</strong>: KDIGO suggests a systolic target below 120 mm Hg when tolerated, measured in a standardised way.</li><li><strong>ACE inhibitor or ARB</strong> (one, not both) at the highest tolerated dose for albuminuria (especially A3, and A2 with diabetes). Check creatinine and potassium after starting; accept a creatinine rise up to about 30%.</li><li><strong>SGLT2 inhibitor</strong> for type 2 diabetes with CKD and eGFR at least 20, and for CKD without diabetes when eGFR is at least 20 and ACR is at least 200 mg/g or heart failure is present. Continue it once started, even as eGFR falls, until dialysis.</li><li><strong>Finerenone</strong> (nonsteroidal mineralocorticoid antagonist) in type 2 diabetes with persistent albuminuria despite maximal ACE inhibitor or ARB, if eGFR is at least 25 and potassium is normal.</li><li><strong>GLP-1 receptor agonist</strong> for glycemic control in type 2 diabetes with CKD when more is needed beyond metformin and SGLT2 inhibitors.</li><li>Statin for adults 50 years and older with CKD; stop smoking; avoid NSAIDs; dose-adjust drugs (metformin is reduced at eGFR below 45 and stopped below 30).</li></ul><h3>Treating complications</h3><table><tr><th>Complication</th><th>Approach</th></tr><tr><td>Anemia</td><td>Exclude other causes; replete iron first (ferritin and transferrin saturation; IV iron is often needed). An erythropoiesis-stimulating agent (ESA) is considered for persistent hemoglobin below 10 g/dL; avoid targeting normal hemoglobin (13 g/dL or more), which raises stroke and thrombosis risk</td></tr><tr><td>Mineral and bone disorder</td><td>Lower phosphate (diet, then phosphate binders); correct vitamin D deficiency; for progressive secondary hyperparathyroidism, calcitriol or a calcimimetic (cinacalcet); parathyroidectomy for refractory or tertiary disease</td></tr><tr><td>Metabolic acidosis</td><td>Oral sodium bicarbonate when serum bicarbonate is persistently low (below about 18 mEq/L)</td></tr><tr><td>Hyperkalemia</td><td>Low-potassium diet; stop potassium-raising drugs that are not essential; loop or thiazide diuretic; potassium binders (patiromer, sodium zirconium cyclosilicate) to keep RAS blockade going</td></tr><tr><td>Volume overload, edema</td><td>Sodium restriction and loop diuretics</td></tr></table><h3>Planning kidney replacement</h3><p>Refer to nephrology at eGFR below 30 (or earlier for heavy albuminuria or rapid decline). At G4, discuss the options: <strong>transplant</strong> (best survival; preemptive transplant before dialysis is ideal), hemodialysis (create an arteriovenous fistula months ahead, and protect the non-dominant arm from venipuncture), peritoneal dialysis, or conservative care. Start dialysis for symptoms or complications, not at a fixed eGFR.</p><div class=\"trap\"><p><strong>Exam trap:</strong> do not combine an ACE inhibitor with an ARB; dual blockade raises hyperkalemia and AKI without renal benefit.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Chronic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK535404/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Anemia of Chronic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK539871/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Chronic Kidney Disease-Mineral Bone Disorder (CKD-MBD)",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560742/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Chronic Kidney Disease",
+     "url": "https://medlineplus.gov/chronickidneydisease.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110401-2-3",
+   "exam": "step2ck",
+   "heading": "Nephrolithiasis: acute care, workup and prevention",
+   "html": "<h3>Presentation</h3><p>Sudden, colicky flank pain radiating to the groin, with nausea and hematuria (gross or microscopic). Pain does not ease with position, unlike peritonitis. Fever with a stone means possible infected obstruction.</p><h3>Imaging</h3><ul><li><strong>Noncontrast low-dose CT</strong> of the abdomen and pelvis is the most accurate test and shows size and location.</li><li><strong>Ultrasound first</strong> in pregnancy and in children, and reasonable in young adults with a typical recurrent episode; it shows hydronephrosis even when it misses small ureteral stones.</li></ul><h3>Acute management</h3><ul><li>Analgesia: an <strong>NSAID</strong> (for example ketorolac) is first line when kidney function allows; add opioids if needed.</li><li>Stones up to 10 mm without complications: trial of passage with hydration and pain control. For <strong>distal ureteral stones 5–10 mm</strong>, an alpha blocker (tamsulosin) improves passage. Most stones under 5 mm pass on their own. Strain the urine and send the stone for analysis.</li><li><strong>Urgent urology</strong> (decompression by stent or nephrostomy) for infection with obstruction, AKI, obstruction of a solitary or transplanted kidney, bilateral obstruction, or pain or vomiting that cannot be controlled.</li><li>Elective removal (ureteroscopy, shock wave lithotripsy, percutaneous nephrolithotomy for large or staghorn stones) for stones that do not pass in about 4–6 weeks or are too large to pass.</li></ul><h3>Workup after a stone</h3><p>Everyone: stone analysis, serum calcium, creatinine, electrolytes and uric acid, and urinalysis. High-risk or recurrent stone formers (children, solitary kidney, multiple or recurrent stones, bowel disease): a <strong>24-hour urine</strong> for volume, calcium, oxalate, citrate, uric acid, sodium and creatinine. A high serum calcium leads to PTH testing for primary hyperparathyroidism.</p><h3>Prevention</h3><table><tr><th>Finding</th><th>Prevention</th></tr><tr><td>Low urine volume (all types)</td><td>Fluids for a urine output of at least 2.5 L/day</td></tr><tr><td>Hypercalciuria</td><td>Low sodium intake, <strong>normal</strong> dietary calcium (do not restrict), limit animal protein; <strong>thiazide</strong> if stones recur</td></tr><tr><td>Hypocitraturia</td><td>Potassium citrate</td></tr><tr><td>Hyperoxaluria</td><td>Limit high-oxalate foods; calcium with meals; in enteric hyperoxaluria, low-fat diet and calcium supplements with meals</td></tr><tr><td>Uric acid stones</td><td>Potassium citrate to raise urine pH to about 6–6.5; allopurinol if hyperuricosuria persists</td></tr><tr><td>Calcium oxalate stones with hyperuricosuria</td><td>Allopurinol</td></tr><tr><td>Cystine</td><td>Very high fluid intake, alkalinisation, then tiopronin</td></tr><tr><td>Struvite</td><td>Complete stone removal and treatment of infection</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a low-calcium diet <em>raises</em> the risk of calcium oxalate stones, because less calcium is left in the gut to bind oxalate.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Renal Calculi, Nephrolithiasis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK442014/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: 24-Hour Urine Testing for Nephrolithiasis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482448/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Uric Acid Nephrolithiasis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560726/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Stones",
+     "url": "https://medlineplus.gov/kidneystones.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110401-1",
+   "caption": "Figure. Nephron segments, their main transporters and the diuretic that acts on each (red). Original Naadi diagram.",
+   "file": "figures/s23c-fig110401-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  },
+  {
+   "id": "s23c-fig110401-2",
+   "caption": "Figure. Renal tubular acidosis types 1, 2 and 4 compared: defect, serum potassium, urine pH, stones and classic causes. Original Naadi diagram.",
+   "file": "figures/s23c-fig110401-2.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110401-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Chemotherapy for a bulky lymphoma",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110401-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 70-year-old man is admitted with 3 days of vomiting. Blood pressure is 96/60 mm Hg lying and 82/54 mm Hg sitting. His glomerular filtration rate is partly preserved by angiotensin II acting on the glomerular efferent arteriole. Compared with his state before the illness, which of the following best describes the effect of this efferent arteriolar constriction on renal plasma flow (RPF), GFR and filtration fraction (FF)?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "RPF decreased, GFR decreased, FF unchanged"
+    },
+    {
+     "label": "B",
+     "html": "RPF decreased, GFR increased, FF increased"
+    },
+    {
+     "label": "C",
+     "html": "RPF increased, GFR decreased, FF decreased"
+    },
+    {
+     "label": "D",
+     "html": "RPF increased, GFR increased, FF unchanged"
+    },
+    {
+     "label": "E",
+     "html": "RPF unchanged, GFR decreased, FF decreased"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Constricting the <strong>efferent</strong> arteriole raises resistance downstream of the glomerulus, so less plasma flows through (RPF falls) but glomerular capillary pressure rises, which supports or raises GFR. With GFR up and RPF down, the <strong>filtration fraction rises</strong>. This is how angiotensin II defends GFR in volume depletion, and why blocking it with an ACE inhibitor can precipitate AKI.</p><p><strong>Takeaway:</strong> efferent constriction lowers RPF, raises GFR and raises the filtration fraction.</p>",
+   "whyNot": {
+    "A": "Equal falls in RPF and GFR with an unchanged FF describe afferent constriction, as with NSAIDs.",
+    "C": "Rising RPF with falling GFR and FF is efferent dilation, the effect of ACE inhibitors and ARBs.",
+    "D": "Rising RPF and GFR with an unchanged FF is afferent dilation, as with prostaglandins.",
+    "E": "Falling GFR and FF with unchanged RPF follows raised Bowman space pressure (obstruction) or raised plasma oncotic pressure."
+   },
+   "objective": "Predict the effects of efferent arteriolar constriction on renal plasma flow, GFR and filtration fraction.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "glomerular hemodynamics",
+    "filtration fraction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-02",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 45-year-old woman collects a 24-hour urine sample to estimate her kidney function. A blood sample is drawn during the collection.</p><table><tr><th>Measurement</th><th>Value</th></tr><tr><td>24-hour urine volume</td><td>1,440 mL</td></tr><tr><td>Urine creatinine</td><td>120 mg/dL</td></tr><tr><td>Serum creatinine</td><td>1.5 mg/dL (N = 0.6–1.2)</td></tr></table><p>Which of the following is closest to her creatinine clearance?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "40 mL/min"
+    },
+    {
+     "label": "B",
+     "html": "60 mL/min"
+    },
+    {
+     "label": "C",
+     "html": "80 mL/min"
+    },
+    {
+     "label": "D",
+     "html": "120 mL/min"
+    },
+    {
+     "label": "E",
+     "html": "180 mL/min"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Clearance = (U × V) / P. Urine flow is 1,440 mL over 1,440 minutes, or 1 mL/min. Clearance = (120 mg/dL × 1 mL/min) / 1.5 mg/dL = <strong>80 mL/min</strong>. Because creatinine is also secreted a little by the proximal tubule, this slightly overestimates the true GFR.</p><p><strong>Takeaway:</strong> clearance = UV/P; convert urine volume to mL/min first.</p>",
+   "whyNot": {
+    "A": "This is half the correct value, as if urine flow were taken as 0.5 mL/min.",
+    "B": "This does not follow from the numbers; it would need a urine creatinine of 90 mg/dL.",
+    "D": "This would need a urine creatinine of 180 mg/dL or a serum creatinine of 1.0 mg/dL.",
+    "E": "This would follow from dividing urine creatinine by a serum value of about 0.67 mg/dL, not 1.5."
+   },
+   "objective": "Calculate creatinine clearance from a timed urine collection.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "clearance",
+    "GFR"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 39-year-old man has headache and blurred vision. Blood pressure is 238/142 mm Hg. Funduscopy shows retinal hemorrhages and papilledema. Serum creatinine is 3.4 mg/dL, up from 1.0 mg/dL a year ago. Urinalysis shows protein and red blood cells. The peripheral smear shows schistocytes. A kidney biopsy is performed. Which of the following arteriolar findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amyloid deposits that show apple-green birefringence"
+    },
+    {
+     "label": "B",
+     "html": "Concentric smooth muscle layering with fibrinoid necrosis"
+    },
+    {
+     "label": "C",
+     "html": "Granulomatous inflammation with giant cells"
+    },
+    {
+     "label": "D",
+     "html": "Homogeneous pink hyaline thickening of the wall"
+    },
+    {
+     "label": "E",
+     "html": "Leukocytoclastic necrosis with immune complex deposits"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Severe hypertension with papilledema, AKI and microangiopathic hemolysis is a <strong>hypertensive emergency (malignant hypertension)</strong>. Arterioles show <strong>hyperplastic arteriolosclerosis</strong>, concentric (\"onion-skin\") layers of smooth muscle cells and reduplicated basement membrane, often with fibrinoid necrosis. The kidney surface has pinpoint cortical hemorrhages.</p><p><strong>Takeaway:</strong> onion-skin hyperplastic arteriolosclerosis and fibrinoid necrosis mark malignant hypertension; hyaline arteriolosclerosis marks long-standing benign hypertension and diabetes.</p>",
+   "whyNot": {
+    "A": "Amyloid deposits occur in AL or AA amyloidosis, which causes nephrotic-range proteinuria rather than a hypertensive crisis.",
+    "C": "Granulomatous vasculitis (granulomatosis with polyangiitis, giant cell arteritis) does not explain the papilledema with this pressure.",
+    "D": "Hyaline arteriolosclerosis is the slow lesion of chronic, milder hypertension and diabetes.",
+    "E": "Leukocytoclastic vasculitis affects small vessels in immune complex disease, not this hypertensive picture."
+   },
+   "objective": "Identify hyperplastic arteriolosclerosis as the renal lesion of malignant hypertension.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.08.10.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "malignant hypertension",
+    "arteriolosclerosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 17-year-old boy has blood pressure of 168/104 mm Hg on three visits. His father and paternal aunt developed hypertension as teenagers. Serum potassium is 3.0 mEq/L and bicarbonate 31 mEq/L. Plasma renin activity and aldosterone are both low. Blood pressure does not improve with spironolactone but falls with amiloride. Which of the following best describes the underlying defect?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Excess cortisol acting on mineralocorticoid receptors"
+    },
+    {
+     "label": "B",
+     "html": "Gain of function of the epithelial sodium channel"
+    },
+    {
+     "label": "C",
+     "html": "Loss of function of the Na⁺-Cl⁻ cotransporter"
+    },
+    {
+     "label": "D",
+     "html": "Loss of function of the Na⁺-K⁺-2Cl⁻ cotransporter"
+    },
+    {
+     "label": "E",
+     "html": "Overproduction of aldosterone by an adrenal adenoma"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Early, autosomal dominant hypertension with hypokalemic alkalosis, <strong>low renin and low aldosterone</strong> and a response to an ENaC blocker but not to spironolactone is <strong>Liddle syndrome</strong>. Mutations stop ENaC from being removed from the principal-cell membrane, so sodium is reabsorbed without aldosterone. Amiloride or triamterene blocks the channel directly.</p><p><strong>Takeaway:</strong> hypertension, hypokalemia and suppressed renin and aldosterone that respond to amiloride is Liddle syndrome.</p>",
+   "whyNot": {
+    "A": "Apparent mineralocorticoid excess also gives low renin and aldosterone, but it responds to spironolactone, which blocks the receptor that cortisol is stimulating.",
+    "C": "Loss of NCC is Gitelman syndrome, which causes low or normal blood pressure and high renin.",
+    "D": "Loss of NKCC2 is Bartter syndrome, with low or normal blood pressure and high renin and aldosterone.",
+    "E": "Primary aldosteronism has high aldosterone and responds to spironolactone."
+   },
+   "objective": "Recognise Liddle syndrome as ENaC gain of function with suppressed renin and aldosterone.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.15.04.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Liddle syndrome",
+    "ENaC"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-05",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 64-year-old man with type 2 diabetes for 18 years and stable CKD (eGFR 42 mL/min/1.73 m²) has routine laboratory studies. He takes metformin and amlodipine and no potassium supplements.</p><table><tr><th>Serum</th><th>Value</th></tr><tr><td>Sodium</td><td>138 mEq/L</td></tr><tr><td>Potassium</td><td>5.9 mEq/L</td></tr><tr><td>Chloride</td><td>112 mEq/L</td></tr><tr><td>Bicarbonate</td><td>18 mEq/L</td></tr><tr><td>Glucose</td><td>142 mg/dL</td></tr></table><p>Urine pH is 5.2. Plasma renin activity and aldosterone are low. Which of the following is the most likely cause of the acid-base disorder?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Impaired proximal bicarbonate reabsorption"
+    },
+    {
+     "label": "B",
+     "html": "Impaired distal hydrogen ion secretion by intercalated cells"
+    },
+    {
+     "label": "C",
+     "html": "Impaired renal ammonium excretion from low aldosterone effect"
+    },
+    {
+     "label": "D",
+     "html": "Ketoacid production from insulin deficiency"
+    },
+    {
+     "label": "E",
+     "html": "Lactic acid production from metformin"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The anion gap is 138 − (112 + 18) = 8, a <strong>normal anion gap acidosis with hyperkalemia</strong> and an acidic urine. This is <strong>type 4 RTA</strong> from hyporeninemic hypoaldosteronism, common in diabetic kidney disease. Low aldosterone reduces potassium secretion; the resulting hyperkalemia suppresses proximal ammoniagenesis, so the kidney cannot excrete enough acid as ammonium even though it can still lower urine pH.</p><p><strong>Takeaway:</strong> hyperkalemic normal anion gap acidosis with urine pH below 5.5 in diabetes is type 4 RTA.</p>",
+   "whyNot": {
+    "A": "Type 2 RTA causes hypokalemia, not hyperkalemia.",
+    "B": "Type 1 RTA causes hypokalemia and a urine pH that stays above 5.5.",
+    "D": "Diabetic ketoacidosis causes a high anion gap acidosis with marked hyperglycemia.",
+    "E": "Metformin-associated lactic acidosis causes a high anion gap and usually occurs in acute illness."
+   },
+   "objective": "Diagnose type 4 RTA from a hyperkalemic normal anion gap acidosis in diabetic kidney disease.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.16.07.02"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "type 4 RTA",
+    "hyperkalemia",
+    "anion gap"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-06",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 51-year-old man with HIV infection has had bone pain in his hips and feet for 4 months. He has taken a tenofovir disoproxil fumarate-containing regimen for 6 years. Laboratory studies:</p><table><tr><th>Test</th><th>Value</th></tr><tr><td>Serum glucose</td><td>88 mg/dL</td></tr><tr><td>Serum phosphorus</td><td>1.8 mg/dL</td></tr><tr><td>Serum uric acid</td><td>1.9 mg/dL</td></tr><tr><td>Serum bicarbonate</td><td>18 mEq/L</td></tr><tr><td>Serum potassium</td><td>3.2 mEq/L</td></tr><tr><td>Urine dipstick</td><td>Glucose 2+, protein 1+</td></tr></table><p>Which part of the nephron is most likely affected?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Collecting duct principal cells"
+    },
+    {
+     "label": "B",
+     "html": "Distal convoluted tubule"
+    },
+    {
+     "label": "C",
+     "html": "Glomerular podocytes"
+    },
+    {
+     "label": "D",
+     "html": "Proximal tubule"
+    },
+    {
+     "label": "E",
+     "html": "Thick ascending limb of the loop of Henle"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Glucose in the urine with a normal blood glucose, low phosphate (causing osteomalacia and bone pain), low uric acid, hypokalemia and a normal anion gap acidosis add up to <strong>Fanconi syndrome</strong>: generalised failure of <strong>proximal tubule</strong> reabsorption. Tenofovir disoproxil accumulates in proximal tubular cells and injures their mitochondria.</p><p><strong>Takeaway:</strong> glycosuria with normal blood glucose plus phosphate and bicarbonate wasting points to the proximal tubule (Fanconi syndrome).</p>",
+   "whyNot": {
+    "A": "Principal-cell disorders change sodium, potassium and water handling but do not waste glucose, phosphate or urate.",
+    "B": "Distal convoluted tubule defects (as in Gitelman syndrome) waste sodium chloride and magnesium, not glucose.",
+    "C": "Podocyte injury causes heavy albuminuria and edema, not glycosuria with phosphate wasting.",
+    "E": "Thick ascending limb defects (as in Bartter syndrome) cause hypokalemic alkalosis, not acidosis with glycosuria."
+   },
+   "objective": "Localise Fanconi syndrome to the proximal tubule and recognise tenofovir as a cause.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Fanconi syndrome",
+    "tenofovir"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 14-year-old girl has her third episode of right flank pain and hematuria since age 9. Her older brother has also had kidney stones. Urine microscopy shows flat, six-sided crystals, and a urine cyanide-nitroprusside test is positive. A defect in which of the following is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Apical transporter for dibasic amino acids in the proximal tubule"
+    },
+    {
+     "label": "B",
+     "html": "Hepatic enzyme alanine-glyoxylate aminotransferase"
+    },
+    {
+     "label": "C",
+     "html": "Lysosomal efflux transporter for cystine"
+    },
+    {
+     "label": "D",
+     "html": "Purine salvage enzyme hypoxanthine-guanine phosphoribosyltransferase"
+    },
+    {
+     "label": "E",
+     "html": "Vacuolar H⁺-ATPase of the α-intercalated cell"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hexagonal crystals and a positive cyanide-nitroprusside test mean <strong>cystine stones</strong>, from autosomal recessive <strong>cystinuria</strong>. The defect is in the apical transporter that reabsorbs cystine, ornithine, lysine and arginine from the proximal tubule (and gut). Only cystine is insoluble enough to form stones. Treatment is high fluid intake, urine alkalinisation and, if needed, tiopronin.</p><p><strong>Takeaway:</strong> hexagonal crystals = cystine = defective proximal reabsorption of dibasic amino acids.</p>",
+   "whyNot": {
+    "B": "Alanine-glyoxylate aminotransferase deficiency is primary hyperoxaluria type 1, which forms calcium oxalate stones and nephrocalcinosis.",
+    "C": "A defective lysosomal cystine transporter (cystinosin) causes cystinosis, with cystine crystals in tissues and Fanconi syndrome, not cystine stones.",
+    "D": "HGPRT deficiency (Lesch-Nyhan syndrome) causes uric acid overproduction and uric acid stones, with neurologic features.",
+    "E": "Loss of the H⁺-ATPase causes distal (type 1) RTA with calcium phosphate stones."
+   },
+   "objective": "Identify cystinuria from hexagonal crystals and explain its transporter defect.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "genetics",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "cystinuria",
+    "nephrolithiasis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 41-year-old woman had 90 cm of terminal ileum resected for Crohn disease 3 years ago. She has chronic loose, fatty stools and has now passed two radiopaque kidney stones. A 24-hour urine shows a high oxalate level with normal calcium. Which of the following is the main reason for her stones?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Excess hepatic synthesis of oxalate from glyoxylate"
+    },
+    {
+     "label": "B",
+     "html": "Free oxalate absorbed in the colon because fatty acids bind luminal calcium"
+    },
+    {
+     "label": "C",
+     "html": "Hypercalciuria from increased intestinal calcium absorption"
+    },
+    {
+     "label": "D",
+     "html": "Persistently alkaline urine from bicarbonate loss in stool"
+    },
+    {
+     "label": "E",
+     "html": "Urease-producing bacteria colonising the urinary tract"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>After ileal resection, bile acids are lost and fat is malabsorbed. In the gut lumen, unabsorbed fatty acids bind calcium, so dietary oxalate that would normally leave the body as insoluble calcium oxalate stays free and is <strong>absorbed by the colon</strong> (bile acids reaching the colon also make it more permeable). Urine oxalate rises, and calcium oxalate stones form; diarrhea adds dehydration and low urine citrate. Treatment includes a low-fat, low-oxalate diet and calcium taken with meals.</p><p><strong>Takeaway:</strong> fat malabsorption causes enteric hyperoxaluria and calcium oxalate stones.</p>",
+   "whyNot": {
+    "A": "Hepatic overproduction of oxalate is primary hyperoxaluria, a genetic disorder that typically presents in childhood.",
+    "C": "Her urine calcium is normal; malabsorption tends to lower calcium absorption, not raise it.",
+    "D": "Diarrhea causes loss of bicarbonate and an acidic, low-volume urine, which favours uric acid stones, not alkaline urine.",
+    "E": "Urease-producing organisms cause struvite stones, not hyperoxaluria."
+   },
+   "objective": "Explain enteric hyperoxaluria as the cause of calcium oxalate stones after ileal resection.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.10.05.02"
+   ],
+   "disciplines": [
+    "physiology",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "enteric hyperoxaluria",
+    "nephrolithiasis",
+    "Crohn disease"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old man has cardiac arrest during surgery and is resuscitated after 25 minutes of low blood pressure. Over the next 2 days his urine output falls to 300 mL/day, and serum creatinine rises from 1.0 to 4.2 mg/dL. Urine microscopy shows many muddy brown granular casts. Which of the following nephron segments is most susceptible to the injury causing these findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bowman capsule parietal epithelium"
+    },
+    {
+     "label": "B",
+     "html": "Glomerular endothelium"
+    },
+    {
+     "label": "C",
+     "html": "Inner medullary collecting duct"
+    },
+    {
+     "label": "D",
+     "html": "Straight segment of the proximal tubule"
+    },
+    {
+     "label": "E",
+     "html": "Thin descending limb of the loop of Henle"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Oliguric AKI with muddy brown granular casts after a period of shock is <strong>ischemic acute tubular necrosis</strong>. The <strong>straight segment of the proximal tubule</strong> in the outer medulla, together with the medullary thick ascending limb, is most vulnerable, because these cells have high energy demands for active transport and lie where oxygen delivery is lowest.</p><p><strong>Takeaway:</strong> ischemic ATN hits the proximal straight tubule and the medullary thick ascending limb first.</p>",
+   "whyNot": {
+    "A": "The parietal epithelium of Bowman capsule proliferates in crescentic glomerulonephritis, not in ischemic injury.",
+    "B": "Glomerular endothelial injury occurs in thrombotic microangiopathies and preeclampsia, not as the main lesion of ATN.",
+    "C": "Inner medullary collecting duct cells have relatively low energy needs and are less vulnerable to ischemia.",
+    "E": "The thin limbs transport passively and use little oxygen, so they tolerate ischemia well."
+   },
+   "objective": "Identify the nephron segments most vulnerable to ischemic acute tubular necrosis.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "acute tubular necrosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-1-10",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old woman has had CKD from diabetic nephropathy for 10 years; her eGFR is now 18 mL/min/1.73 m². She has bone pain. Which of the following sets of laboratory findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Calcium high, phosphate low, PTH high, calcitriol high"
+    },
+    {
+     "label": "B",
+     "html": "Calcium low, phosphate high, PTH high, calcitriol low"
+    },
+    {
+     "label": "C",
+     "html": "Calcium low, phosphate high, PTH low, calcitriol low"
+    },
+    {
+     "label": "D",
+     "html": "Calcium low, phosphate low, PTH high, calcitriol high"
+    },
+    {
+     "label": "E",
+     "html": "Calcium normal, phosphate normal, PTH low, calcitriol high"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In advanced CKD, phosphate is retained, and both high FGF23 and loss of renal mass reduce 1α-hydroxylase, so <strong>calcitriol falls</strong>. Less calcitriol means less intestinal calcium absorption, and phosphate binds calcium, so <strong>calcium falls</strong>. Low calcium, high phosphate and low calcitriol all stimulate the parathyroids: <strong>secondary hyperparathyroidism</strong> with high PTH, which drives renal osteodystrophy.</p><p><strong>Takeaway:</strong> CKD-MBD: low calcium, high phosphate, low calcitriol, high PTH and high FGF23.</p>",
+   "whyNot": {
+    "A": "High calcium with low phosphate and high PTH is primary hyperparathyroidism with normal kidneys.",
+    "C": "Low calcium and high phosphate with a low PTH is hypoparathyroidism.",
+    "D": "Low calcium and phosphate with high PTH and high calcitriol is not a CKD pattern; low phosphate with high PTH suggests vitamin D deficiency with intact kidneys, in which calcitriol is not high.",
+    "E": "Normal minerals with low PTH and high calcitriol describe a granulomatous disease such as sarcoidosis, with calcium usually high."
+   },
+   "objective": "Predict the mineral and hormone pattern of secondary hyperparathyroidism in CKD.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.15.03.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "CKD-MBD",
+    "secondary hyperparathyroidism"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-01",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 79-year-old woman has had 4 days of watery diarrhea after a viral illness in her care home. She feels dizzy on standing. She takes hydrochlorothiazide for hypertension, which was held yesterday. Blood pressure is 102/60 mm Hg lying and 84/50 mm Hg standing; pulse is 104/min. Mucous membranes are dry. Laboratory studies:</p><table><tr><th>Test</th><th>Value</th></tr><tr><td>Serum sodium</td><td>141 mEq/L</td></tr><tr><td>Serum potassium</td><td>3.4 mEq/L</td></tr><tr><td>Serum bicarbonate</td><td>20 mEq/L</td></tr><tr><td>BUN</td><td>58 mg/dL</td></tr><tr><td>Serum creatinine</td><td>2.0 mg/dL (baseline 0.9)</td></tr><tr><td>Urine sodium</td><td>11 mEq/L</td></tr><tr><td>Urine creatinine</td><td>140 mg/dL</td></tr><tr><td>Urine microscopy</td><td>Few hyaline casts; no cells</td></tr></table><p>Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous furosemide"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous isotonic crystalloid"
+    },
+    {
+     "label": "C",
+     "html": "Kidney biopsy"
+    },
+    {
+     "label": "D",
+     "html": "Renal artery duplex ultrasonography"
+    },
+    {
+     "label": "E",
+     "html": "Urgent hemodialysis"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Her FENa is (11 × 2.0) / (141 × 140) × 100 ≈ <strong>0.1%</strong>, the BUN:creatinine ratio is 29, and the sediment is bland: a <strong>prerenal AKI</strong> from volume loss. The tubules are intact and holding on to sodium. Restore volume with <strong>isotonic crystalloid</strong>; creatinine should improve within 1–3 days. Keep the thiazide held.</p><p><strong>Takeaway:</strong> FENa below 1%, BUN:creatinine above 20 and bland sediment in a volume-depleted patient: give isotonic fluids.</p>",
+   "whyNot": {
+    "A": "A diuretic would deepen her volume depletion and worsen the AKI.",
+    "C": "Biopsy is for unexplained intrinsic disease (for example suspected glomerulonephritis), not for an obvious prerenal cause.",
+    "D": "Renal artery stenosis does not explain an AKI that followed diarrhea, and imaging would delay treatment.",
+    "E": "She has no refractory acidosis, hyperkalemia, overload, poisoning or uremic complication."
+   },
+   "objective": "Recognise prerenal AKI from urine indices and treat it with isotonic fluid.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "prerenal AKI",
+    "FENa",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old man is found on the floor of his apartment after an overdose of an opioid and a sedative; he may have lain there for about 20 hours. He is now alert. His left thigh is swollen and tender. Blood pressure is 118/72 mm Hg and pulse 102/min. Urine is dark brown; the dipstick is 3+ for blood, and microscopy shows 0–2 red blood cells per high-power field. Serum creatine kinase is 52,000 U/L, potassium 5.2 mEq/L and creatinine 1.6 mg/dL (baseline 0.9). Compartment pressures in the thigh are normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous calcium gluconate"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous furosemide"
+    },
+    {
+     "label": "C",
+     "html": "Large-volume intravenous isotonic crystalloid"
+    },
+    {
+     "label": "D",
+     "html": "Oral fluids and repeat creatine kinase in 48 hours"
+    },
+    {
+     "label": "E",
+     "html": "Urgent hemodialysis"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Prolonged immobility, very high CK and a heme-positive dipstick with few red cells mean <strong>rhabdomyolysis with pigment-associated AKI</strong>. The key step is <strong>early, generous IV isotonic crystalloid</strong>, titrated to a high urine output while watching for overload, to dilute myoglobin and wash out casts. Monitor potassium, calcium, phosphate and the compartment.</p><p><strong>Takeaway:</strong> rhabdomyolysis is treated with early, aggressive isotonic fluids.</p>",
+   "whyNot": {
+    "A": "Early hypocalcemia in rhabdomyolysis is treated only if symptomatic or with dangerous hyperkalemia; giving calcium can deposit in injured muscle and cause rebound hypercalcemia later.",
+    "B": "Diuretics without volume repletion lower renal perfusion and do not prevent AKI.",
+    "D": "Oral fluids are too slow and too little for this degree of muscle injury.",
+    "E": "Dialysis is for refractory hyperkalemia, acidosis or overload; none is present yet."
+   },
+   "objective": "Treat rhabdomyolysis with early, aggressive isotonic fluids.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "rhabdomyolysis",
+    "AKI"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old man with CKD G5 from hypertension, who has refused dialysis planning, has had 1 week of sharp chest pain that improves when he leans forward, plus nausea and itching. Temperature is 37.4°C (99.3°F), blood pressure 152/90 mm Hg and pulse 92/min, without pulsus paradoxus. A three-component friction rub is heard. BUN is 148 mg/dL, creatinine 11.2 mg/dL, potassium 5.3 mEq/L and bicarbonate 17 mEq/L. ECG shows diffuse ST elevation. Echocardiography shows a small effusion without tamponade. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Colchicine and ibuprofen"
+    },
+    {
+     "label": "B",
+     "html": "Hemodialysis"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous sodium bicarbonate"
+    },
+    {
+     "label": "D",
+     "html": "Pericardiocentesis"
+    },
+    {
+     "label": "E",
+     "html": "Prednisone"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pericarditis in a patient with kidney failure and uremic symptoms is <strong>uremic pericarditis</strong>, a firm indication to start <strong>dialysis</strong>, which usually resolves it. Avoid anticoagulation with heparin during dialysis if possible, because of the risk of hemorrhagic effusion.</p><p><strong>Takeaway:</strong> uremic pericarditis is an urgent indication for dialysis.</p>",
+   "whyNot": {
+    "A": "NSAIDs and colchicine are standard for idiopathic or viral pericarditis but do not treat uremia, and NSAIDs harm residual kidney function.",
+    "C": "Bicarbonate corrects mild acidosis but does nothing for uremic pericarditis.",
+    "D": "Pericardiocentesis is for tamponade, which is absent.",
+    "E": "Steroids are not the treatment for uremic pericarditis."
+   },
+   "objective": "Recognise uremic pericarditis as an indication for dialysis.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.08.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "uremic pericarditis",
+    "dialysis indications"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-04",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 66-year-old woman with type 2 diabetes and CKD has a follow-up visit. She takes lisinopril 40 mg daily, empagliflozin 10 mg daily, metformin 500 mg twice daily and atorvastatin. She has no heart failure. Blood pressure is 124/76 mm Hg. Results of tests on two occasions 3 months apart are similar:</p><table><tr><th>Test</th><th>Value</th></tr><tr><td>eGFR</td><td>52 mL/min/1.73 m²</td></tr><tr><td>Urine albumin-to-creatinine ratio</td><td>410 mg/g</td></tr><tr><td>Serum potassium</td><td>4.4 mEq/L</td></tr><tr><td>Hemoglobin A1c</td><td>6.9%</td></tr></table><p>Which of the following is the most appropriate addition to further reduce her risk of kidney failure?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Aliskiren"
+    },
+    {
+     "label": "B",
+     "html": "Finerenone"
+    },
+    {
+     "label": "C",
+     "html": "Losartan"
+    },
+    {
+     "label": "D",
+     "html": "Spironolactone with a potassium binder"
+    },
+    {
+     "label": "E",
+     "html": "A very-low-protein diet of 0.4 g/kg/day"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has type 2 diabetes with CKD G3a A3 and persistent albuminuria despite a maximal ACE inhibitor and an SGLT2 inhibitor, with eGFR above 25 and normal potassium. Adding the nonsteroidal mineralocorticoid antagonist <strong>finerenone</strong> lowers the risk of kidney failure and cardiovascular events in this group. Recheck potassium about 4 weeks after starting.</p><p><strong>Takeaway:</strong> type 2 diabetes with residual albuminuria on RAS blockade plus SGLT2 inhibitor, eGFR at least 25 and normal potassium: add finerenone.</p>",
+   "whyNot": {
+    "A": "A direct renin inhibitor added to an ACE inhibitor is dual RAS blockade, which raises hyperkalemia and AKI without benefit.",
+    "C": "Combining an ARB with an ACE inhibitor is also dual blockade and is not recommended.",
+    "D": "Spironolactone lacks evidence for kidney outcomes in this setting and causes more hyperkalemia; finerenone is the agent with that evidence.",
+    "E": "KDIGO advises about 0.8 g/kg/day protein in CKD; very-low-protein diets risk malnutrition."
+   },
+   "objective": "Add finerenone for persistent albuminuria in type 2 diabetic CKD already on an ACE inhibitor and SGLT2 inhibitor.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "diabetic kidney disease",
+    "finerenone",
+    "albuminuria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-05",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 72-year-old man with CKD G4 (eGFR 24 mL/min/1.73 m²) from hypertensive nephrosclerosis has increasing fatigue. He has no bleeding. Colonoscopy 2 years ago was normal. Laboratory studies:</p><table><tr><th>Test</th><th>Value</th></tr><tr><td>Hemoglobin</td><td>8.9 g/dL</td></tr><tr><td>MCV</td><td>86 fL</td></tr><tr><td>Reticulocytes</td><td>0.6% of red cells</td></tr><tr><td>Serum ferritin</td><td>62 ng/mL (N = 15–200)</td></tr><tr><td>Transferrin saturation</td><td>14% (N = 20–50)</td></tr><tr><td>Vitamin B12 and folate</td><td>Normal</td></tr></table><p>Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bone marrow biopsy"
+    },
+    {
+     "label": "B",
+     "html": "Iron repletion, then reassess the hemoglobin"
+    },
+    {
+     "label": "C",
+     "html": "Red blood cell transfusion"
+    },
+    {
+     "label": "D",
+     "html": "Start epoetin alfa to a hemoglobin target of 13 g/dL"
+    },
+    {
+     "label": "E",
+     "html": "Start oral prednisone"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Anemia of CKD is caused mainly by low erythropoietin, but <strong>iron deficiency</strong> (here transferrin saturation 14% with a ferritin below 100 ng/mL) is common and must be corrected first; it may raise hemoglobin by itself, and ESAs work poorly without iron. Give iron (often IV in CKD), then reassess. If hemoglobin stays below about 10 g/dL, an ESA can be started, aiming to avoid transfusions without normalising hemoglobin.</p><p><strong>Takeaway:</strong> in anemia of CKD, replete iron before starting an ESA, and never target a normal hemoglobin.</p>",
+   "whyNot": {
+    "A": "A marrow biopsy is not needed for a normocytic, hypoproliferative anemia with a clear explanation.",
+    "C": "Transfusion is for severe symptoms or instability; it also sensitises future transplant candidates.",
+    "D": "Targeting hemoglobin of 13 g/dL with an ESA raises stroke, thrombosis and mortality, and iron should be replaced first.",
+    "E": "Corticosteroids have no role in anemia of CKD."
+   },
+   "objective": "Correct iron deficiency before starting an erythropoiesis-stimulating agent in anemia of CKD.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.03.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "anemia of CKD",
+    "iron deficiency"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old man comes to the emergency department with 5 hours of colicky left flank pain radiating to the groin and nausea. Temperature is 37.0°C (98.6°F), and other vital signs are normal. Urinalysis shows red blood cells without leukocyte esterase, nitrite or bacteria. Serum creatinine is 0.9 mg/dL. Noncontrast CT shows a 6-mm stone in the distal left ureter with mild hydronephrosis. After intravenous ketorolac his pain is controlled, and he is tolerating oral fluids. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Admission for intravenous antibiotics"
+    },
+    {
+     "label": "B",
+     "html": "Emergency ureteral stent placement"
+    },
+    {
+     "label": "C",
+     "html": "Oral tamsulosin, analgesia and urine straining, with follow-up"
+    },
+    {
+     "label": "D",
+     "html": "Percutaneous nephrolithotomy within 24 hours"
+    },
+    {
+     "label": "E",
+     "html": "Potassium citrate to dissolve the stone"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A <strong>distal ureteral stone of 5–10 mm</strong> without infection, AKI or uncontrolled pain can be managed with a trial of passage. An <strong>alpha blocker (tamsulosin)</strong> relaxes ureteral smooth muscle and improves passage; give an NSAID for pain, strain the urine to catch the stone for analysis, and arrange follow-up imaging. Refer for removal if the stone has not passed in about 4–6 weeks.</p><p><strong>Takeaway:</strong> uncomplicated distal ureteral stone 5–10 mm: medical expulsive therapy with tamsulosin.</p>",
+   "whyNot": {
+    "A": "There are no signs of infection; antibiotics are not needed.",
+    "B": "Emergency decompression is for infection with obstruction, AKI, a solitary kidney or intractable symptoms.",
+    "D": "Percutaneous nephrolithotomy is for large renal or staghorn stones, not a small distal ureteral stone.",
+    "E": "Alkalinisation can dissolve uric acid stones, but this stone is visible on CT without its composition known, and dissolution is not the first-line approach for a passable stone."
+   },
+   "objective": "Manage an uncomplicated 5–10 mm distal ureteral stone with medical expulsive therapy.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "nephrolithiasis",
+    "medical expulsive therapy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-07",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 45-year-old woman has had three calcium oxalate stones in 4 years. Serum calcium, PTH and creatinine are normal. She drinks about 1.5 L of fluid a day and eats a lot of processed food. Results of a 24-hour urine collection:</p><table><tr><th>Urine (24 hours)</th><th>Result</th><th>Usual goal</th></tr><tr><td>Volume</td><td>1.6 L/day</td><td>above 2.5 L/day</td></tr><tr><td>Calcium</td><td>340 mg/day</td><td>below 250 mg/day</td></tr><tr><td>Oxalate</td><td>36 mg/day</td><td>below 40 mg/day</td></tr><tr><td>Citrate</td><td>620 mg/day</td><td>above 450 mg/day</td></tr><tr><td>Uric acid</td><td>560 mg/day</td><td>below 750 mg/day</td></tr><tr><td>Sodium</td><td>240 mEq/day</td><td>below 100 mEq/day</td></tr></table><p>Along with more fluid, which of the following is the most appropriate recommendation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Allopurinol and a low-purine diet"
+    },
+    {
+     "label": "B",
+     "html": "Calcium restriction to below 400 mg/day"
+    },
+    {
+     "label": "C",
+     "html": "Furosemide and a high-protein diet"
+    },
+    {
+     "label": "D",
+     "html": "Potassium citrate and a high-oxalate diet"
+    },
+    {
+     "label": "E",
+     "html": "Sodium restriction, normal calcium intake and a thiazide diuretic"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Her main metabolic risks are <strong>idiopathic hypercalciuria</strong> and low urine volume, worsened by a high sodium intake (sodium increases urine calcium). Treatment is more fluid, <strong>sodium restriction</strong>, a <strong>normal calcium</strong> intake (1,000–1,200 mg/day) and, because her stones recur, a <strong>thiazide</strong>, which increases distal calcium reabsorption and lowers urine calcium.</p><p><strong>Takeaway:</strong> recurrent calcium stones with hypercalciuria: fluids, low sodium, normal calcium and a thiazide.</p>",
+   "whyNot": {
+    "A": "Her urine uric acid is normal, so allopurinol is not indicated.",
+    "B": "Calcium restriction raises oxalate absorption and stone risk and harms bone.",
+    "C": "Loop diuretics increase urine calcium, and animal protein increases calcium excretion and lowers citrate.",
+    "D": "Her citrate is normal, and a high-oxalate diet would add to the risk."
+   },
+   "objective": "Prevent recurrent calcium oxalate stones from hypercalciuria with sodium restriction, normal calcium and a thiazide.",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "disciplines": [
+    "nutrition"
+   ],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "nephrolithiasis",
+    "hypercalciuria",
+    "thiazide"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-08",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set110401-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 23-year-old man is admitted with newly diagnosed Burkitt lymphoma with bulky abdominal disease. Leukocyte count is 28,000/mm³. Serum lactate dehydrogenase is 2,400 U/L (N = 45–200), uric acid 9.8 mg/dL, potassium 4.6 mEq/L, phosphorus 4.4 mg/dL and creatinine 1.1 mg/dL. G6PD testing is normal. Intensive chemotherapy is to start tomorrow. Which of the following is the most appropriate measure to prevent kidney injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravenous fluids and rasburicase"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous fluids and sodium bicarbonate to alkalinise urine"
+    },
+    {
+     "label": "C",
+     "html": "Oral allopurinol alone"
+    },
+    {
+     "label": "D",
+     "html": "Prophylactic hemodialysis before chemotherapy"
+    },
+    {
+     "label": "E",
+     "html": "Restriction of oral fluids to prevent overload"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Burkitt lymphoma with bulky disease, high LDH and a raised uric acid puts him at <strong>high risk of tumor lysis syndrome</strong>. Prevention is vigorous <strong>IV hydration</strong> plus <strong>rasburicase</strong>, a recombinant urate oxidase that converts uric acid to soluble allantoin and lowers it within hours. G6PD deficiency must be excluded first, because rasburicase produces hydrogen peroxide and can cause hemolysis and methemoglobinemia.</p><p><strong>Takeaway:</strong> high-risk tumor lysis: IV fluids plus rasburicase (if G6PD is normal).</p>",
+   "whyNot": {
+    "B": "Urine alkalinisation is no longer recommended: it favours calcium phosphate precipitation in the tubules.",
+    "C": "Allopurinol prevents new uric acid formation but does not remove existing uric acid; it suits intermediate risk.",
+    "D": "Dialysis is for established, refractory complications, not prevention.",
+    "E": "Fluid restriction would increase crystal precipitation; high urine flow is protective."
+   },
+   "objective": "Prevent tumor lysis syndrome in a high-risk patient with IV fluids and rasburicase.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.03.02.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "tumor lysis syndrome",
+    "rasburicase"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110401-2-09",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set110401-1",
+   "setOrder": 2,
+   "stemHtml": "<p>He receives IV fluids and rasburicase, and chemotherapy begins. Forty-eight hours later he has had 150 mL of urine in 12 hours despite fluids and a trial of furosemide, and his lungs have bibasilar crackles. He has tingling around the mouth but no tetany or seizures. Serum potassium is 6.9 mEq/L, phosphorus 11.4 mg/dL, calcium 6.6 mg/dL, uric acid 3.1 mg/dL, bicarbonate 15 mEq/L and creatinine 4.3 mg/dL. ECG shows peaked T waves. Intravenous calcium gluconate, insulin with dextrose and albuterol are given. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "A second dose of rasburicase"
+    },
+    {
+     "label": "B",
+     "html": "Continuous intravenous calcium infusion to normalise calcium"
+    },
+    {
+     "label": "C",
+     "html": "Hemodialysis"
+    },
+    {
+     "label": "D",
+     "html": "Oral sevelamer and observation"
+    },
+    {
+     "label": "E",
+     "html": "Stop chemotherapy permanently"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>He now has established <strong>tumor lysis syndrome with oliguric AKI</strong>, hyperkalemia with ECG changes, severe hyperphosphatemia, volume overload and acidosis. Temporising measures shift potassium only briefly, and with oliguria the kidneys cannot clear potassium or phosphate. <strong>Kidney replacement therapy</strong> (hemodialysis, or continuous therapy if unstable) is indicated.</p><p><strong>Takeaway:</strong> tumor lysis with oliguria, refractory hyperkalemia, severe hyperphosphatemia or overload needs dialysis.</p>",
+   "whyNot": {
+    "A": "Uric acid is already low; the current problems are potassium, phosphate, volume and oliguria.",
+    "B": "Large amounts of calcium with phosphate above 11 mg/dL risk calcium phosphate precipitation in tissues; calcium is given only for ECG protection or symptomatic hypocalcemia.",
+    "D": "A phosphate binder acts slowly and cannot address oliguria, overload or dangerous hyperkalemia.",
+    "E": "Tumor lysis is managed supportively; it is not a reason to abandon curative treatment of a highly curable lymphoma."
+   },
+   "objective": "Start dialysis for established tumor lysis syndrome with oliguric AKI and refractory electrolyte disorders.",
+   "areas": [
+    "usmle2026.11.04.01",
+    "usmle2026.16.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "tumor lysis syndrome",
+    "dialysis indications",
+    "hyperkalemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110401-01",
+   "frontHtml": "Efferent arteriolar constriction (angiotensin II): effect on RPF, GFR and filtration fraction?",
+   "backHtml": "RPF down, GFR up (modestly), filtration fraction up.",
+   "sectionId": "s23c-s110401-1-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-02",
+   "frontHtml": "NSAIDs affect glomerular hemodynamics how?",
+   "backHtml": "Block prostaglandin-mediated afferent dilation: RPF and GFR fall, filtration fraction about unchanged.",
+   "sectionId": "s23c-s110401-1-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-03",
+   "frontHtml": "Clearance formula?",
+   "backHtml": "C = (U × V) / P. Inulin clearance = GFR; PAH clearance ≈ effective renal plasma flow.",
+   "sectionId": "s23c-s110401-1-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-04",
+   "frontHtml": "Why does creatinine clearance slightly overestimate GFR?",
+   "backHtml": "Creatinine is also secreted by the proximal tubule.",
+   "sectionId": "s23c-s110401-1-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-05",
+   "frontHtml": "Which nephron segment and transporter do thiazides block, and what happens to urine calcium?",
+   "backHtml": "Distal convoluted tubule NCC (Na⁺-Cl⁻ cotransporter); urine calcium falls.",
+   "sectionId": "s23c-s110401-1-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-06",
+   "frontHtml": "Urine indices of prerenal AKI?",
+   "backHtml": "FENa below 1%, urine Na below 20 mEq/L, urine osmolality above 500, BUN:Cr above 20, bland sediment.",
+   "sectionId": "s23c-s110401-1-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-07",
+   "frontHtml": "Urine sediment of acute tubular necrosis?",
+   "backHtml": "Muddy brown granular casts and renal tubular epithelial cells; FENa above 2%.",
+   "sectionId": "s23c-s110401-1-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-08",
+   "frontHtml": "Which nephron segments are most vulnerable to ischemic ATN?",
+   "backHtml": "Straight proximal tubule and medullary thick ascending limb.",
+   "sectionId": "s23c-s110401-1-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-09",
+   "frontHtml": "Dipstick 3+ blood, almost no red cells on microscopy?",
+   "backHtml": "Myoglobinuria (rhabdomyolysis) or hemoglobinuria.",
+   "sectionId": "s23c-s110401-1-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-10",
+   "frontHtml": "Mineral pattern of CKD-mineral bone disorder?",
+   "backHtml": "High phosphate and FGF23, low calcitriol, low calcium, high PTH (secondary hyperparathyroidism).",
+   "sectionId": "s23c-s110401-1-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-11",
+   "frontHtml": "Arteriolar lesion of malignant hypertension versus long-standing benign hypertension?",
+   "backHtml": "Malignant: hyperplastic (onion-skin) arteriolosclerosis with fibrinoid necrosis. Benign: hyaline arteriolosclerosis.",
+   "sectionId": "s23c-s110401-1-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-12",
+   "frontHtml": "Radiolucent kidney stone in acidic urine?",
+   "backHtml": "Uric acid; prevent with potassium citrate (urine pH about 6–6.5).",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-13",
+   "frontHtml": "Hexagonal crystals in urine?",
+   "backHtml": "Cystine (cystinuria: defective proximal reabsorption of cystine, ornithine, lysine, arginine).",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-14",
+   "frontHtml": "Why does ileal disease cause calcium oxalate stones?",
+   "backHtml": "Fatty acids bind luminal calcium, leaving oxalate free to be absorbed in the colon (enteric hyperoxaluria).",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-15",
+   "frontHtml": "Type 1 (distal) RTA: potassium, urine pH, stones?",
+   "backHtml": "Hypokalemia; urine pH above 5.5; calcium phosphate stones and nephrocalcinosis.",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-16",
+   "frontHtml": "Type 4 RTA: cause and potassium?",
+   "backHtml": "Low aldosterone effect (often hyporeninemic hypoaldosteronism in diabetes, or drugs); hyperkalemia; urine pH below 5.5.",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-17",
+   "frontHtml": "Glycosuria with normal blood glucose, hypophosphatemia, hypouricemia and acidosis?",
+   "backHtml": "Fanconi syndrome (proximal tubule); causes include tenofovir, ifosfamide, myeloma, Wilson disease, cystinosis.",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-18",
+   "frontHtml": "Hypertension, hypokalemia, low renin and low aldosterone, responds to amiloride?",
+   "backHtml": "Liddle syndrome (ENaC gain of function).",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-19",
+   "frontHtml": "Bartter versus Gitelman: urine calcium and magnesium?",
+   "backHtml": "Bartter (thick ascending limb): high urine calcium. Gitelman (DCT): low urine calcium and hypomagnesemia.",
+   "sectionId": "s23c-s110401-1-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-20",
+   "frontHtml": "KDIGO definition of AKI?",
+   "backHtml": "Creatinine up at least 0.3 mg/dL in 48 h, or at least 1.5 × baseline within 7 days, or urine output below 0.5 mL/kg/h for 6 h.",
+   "sectionId": "s23c-s110401-2-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-21",
+   "frontHtml": "Indications for urgent dialysis?",
+   "backHtml": "Refractory acidosis, refractory hyperkalemia, dialysable poisons, refractory volume overload, uremic pericarditis, encephalopathy or bleeding.",
+   "sectionId": "s23c-s110401-2-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-22",
+   "frontHtml": "Tumor lysis prevention in a high-risk patient?",
+   "backHtml": "IV fluids plus rasburicase (check G6PD first); allopurinol for intermediate risk.",
+   "sectionId": "s23c-s110401-2-1",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-23",
+   "frontHtml": "How does KDIGO grade albuminuria by urine albumin-to-creatinine ratio?",
+   "backHtml": "A1: under 30 mg/g (normal to mildly raised). A2: 30 to 300 mg/g (moderately raised). A3: over 300 mg/g (severely raised).",
+   "sectionId": "s23c-s110401-2-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-24",
+   "frontHtml": "Type 2 diabetes with CKD and persistent albuminuria on max ACE inhibitor/ARB plus SGLT2 inhibitor, normal potassium: next drug?",
+   "backHtml": "Finerenone (if eGFR at least 25).",
+   "sectionId": "s23c-s110401-2-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-25",
+   "frontHtml": "Anemia of CKD: what before an ESA, and what hemoglobin target to avoid?",
+   "backHtml": "Replete iron first; avoid targeting 13 g/dL or more (stroke, thrombosis).",
+   "sectionId": "s23c-s110401-2-2",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-26",
+   "frontHtml": "Uncomplicated distal ureteral stone 5–10 mm: treatment?",
+   "backHtml": "Trial of passage with an NSAID and tamsulosin; strain urine; remove if not passed in about 4–6 weeks.",
+   "sectionId": "s23c-s110401-2-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-27",
+   "frontHtml": "Recurrent calcium stones with hypercalciuria: prevention?",
+   "backHtml": "Fluids (urine above 2.5 L/day), low sodium, normal calcium intake, thiazide.",
+   "sectionId": "s23c-s110401-2-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110401-28",
+   "frontHtml": "Best imaging for suspected kidney stone, and the exception?",
+   "backHtml": "Noncontrast low-dose CT; ultrasound first in pregnancy and children.",
+   "sectionId": "s23c-s110401-2-3",
+   "areas": [
+    "usmle2026.11.04.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

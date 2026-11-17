@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" role="img" aria-label="Nephron segments from proximal tubule to collecting duct, with each segment's main transporter, share of filtered sodium reabsorbed and the diuretics that act there">
+<title>Nephron segments, transporters and diuretic sites</title>
+<defs><marker id="s23c-f110401-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="760" height="430" fill="#ffffff"/>
+<text x="380" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Filtrate flows left to right: where sodium is reabsorbed and where each diuretic acts</text>
+<rect x="10" y="44" width="136" height="52" rx="8" fill="#e0f2fe" stroke="#334155" stroke-width="1.5"/>
+<text x="78" y="66" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Proximal</text>
+<text x="78" y="84" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">tubule</text>
+<rect x="160" y="44" width="136" height="52" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="228" y="66" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Thin descending</text>
+<text x="228" y="84" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">limb</text>
+<rect x="310" y="44" width="136" height="52" rx="8" fill="#fef3c7" stroke="#334155" stroke-width="1.5"/>
+<text x="378" y="66" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Thick ascending</text>
+<text x="378" y="84" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">limb</text>
+<rect x="460" y="44" width="136" height="52" rx="8" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="528" y="66" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Distal convoluted</text>
+<text x="528" y="84" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">tubule</text>
+<rect x="610" y="44" width="140" height="52" rx="8" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="680" y="66" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Collecting</text>
+<text x="680" y="84" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">duct</text>
+<line x1="146" y1="70" x2="158" y2="70" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f110401-arrow)"/>
+<line x1="296" y1="70" x2="308" y2="70" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f110401-arrow)"/>
+<line x1="446" y1="70" x2="458" y2="70" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f110401-arrow)"/>
+<line x1="596" y1="70" x2="608" y2="70" stroke="#334155" stroke-width="2" marker-end="url(#s23c-f110401-arrow)"/>
+<text x="10" y="126" font-family="sans-serif" font-size="11" font-weight="bold" fill="#475569">MAIN TRANSPORTERS</text>
+<text x="14" y="146" font-family="sans-serif" font-size="11.5" fill="#0f172a">Na⁺/H⁺ exchanger (NHE3)</text>
+<text x="14" y="162" font-family="sans-serif" font-size="11.5" fill="#0f172a">carbonic anhydrase:</text>
+<text x="14" y="178" font-family="sans-serif" font-size="11.5" fill="#0f172a">HCO₃⁻ reclaimed</text>
+<text x="14" y="194" font-family="sans-serif" font-size="11.5" fill="#0f172a">SGLT2: glucose</text>
+<text x="14" y="210" font-family="sans-serif" font-size="11.5" fill="#0f172a">amino acids, phosphate</text>
+<text x="164" y="146" font-family="sans-serif" font-size="11.5" fill="#0f172a">Aquaporin-1:</text>
+<text x="164" y="162" font-family="sans-serif" font-size="11.5" fill="#0f172a">water leaves into the</text>
+<text x="164" y="178" font-family="sans-serif" font-size="11.5" fill="#0f172a">hypertonic medulla;</text>
+<text x="164" y="194" font-family="sans-serif" font-size="11.5" fill="#0f172a">little solute transport</text>
+<text x="314" y="146" font-family="sans-serif" font-size="11.5" fill="#0f172a">NKCC2</text>
+<text x="314" y="162" font-family="sans-serif" font-size="11.5" fill="#0f172a">(Na⁺-K⁺-2Cl⁻)</text>
+<text x="314" y="178" font-family="sans-serif" font-size="11.5" fill="#0f172a">impermeable to water</text>
+<text x="314" y="194" font-family="sans-serif" font-size="11.5" fill="#0f172a">Ca²⁺ and Mg²⁺ pass</text>
+<text x="314" y="210" font-family="sans-serif" font-size="11.5" fill="#0f172a">between cells</text>
+<text x="464" y="146" font-family="sans-serif" font-size="11.5" fill="#0f172a">NCC (Na⁺-Cl⁻)</text>
+<text x="464" y="162" font-family="sans-serif" font-size="11.5" fill="#0f172a">PTH-driven Ca²⁺</text>
+<text x="464" y="178" font-family="sans-serif" font-size="11.5" fill="#0f172a">uptake</text>
+<text x="614" y="146" font-family="sans-serif" font-size="11.5" fill="#0f172a">Principal cell: ENaC,</text>
+<text x="614" y="162" font-family="sans-serif" font-size="11.5" fill="#0f172a">ROMK (aldosterone);</text>
+<text x="614" y="178" font-family="sans-serif" font-size="11.5" fill="#0f172a">aquaporin-2 (ADH)</text>
+<text x="614" y="194" font-family="sans-serif" font-size="11.5" fill="#0f172a">α-intercalated cell:</text>
+<text x="614" y="210" font-family="sans-serif" font-size="11.5" fill="#0f172a">H⁺-ATPase</text>
+<text x="10" y="246" font-family="sans-serif" font-size="11" font-weight="bold" fill="#475569">SHARE OF FILTERED SODIUM REABSORBED (APPROXIMATE)</text>
+<text x="78" y="270" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">about 65%</text>
+<text x="228" y="270" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle">minimal</text>
+<text x="378" y="270" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">about 25%</text>
+<text x="528" y="270" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">about 5%</text>
+<text x="680" y="270" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">2–3%</text>
+<text x="10" y="306" font-family="sans-serif" font-size="11" font-weight="bold" fill="#b91c1c">DRUGS THAT ACT HERE</text>
+<text x="14" y="326" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Acetazolamide</text>
+<text x="14" y="342" font-family="sans-serif" font-size="11.5" fill="#b91c1c">SGLT2 inhibitors</text>
+<text x="164" y="326" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Mannitol (osmotic;</text>
+<text x="164" y="342" font-family="sans-serif" font-size="11.5" fill="#b91c1c">also proximal tubule)</text>
+<text x="314" y="326" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Loop diuretics</text>
+<text x="314" y="342" font-family="sans-serif" font-size="11.5" fill="#b91c1c">furosemide,</text>
+<text x="314" y="358" font-family="sans-serif" font-size="11.5" fill="#b91c1c">bumetanide</text>
+<text x="464" y="326" font-family="sans-serif" font-size="11.5" fill="#b91c1c">Thiazides</text>
+<text x="464" y="342" font-family="sans-serif" font-size="11.5" fill="#b91c1c">hydrochlorothiazide,</text>
+<text x="464" y="358" font-family="sans-serif" font-size="11.5" fill="#b91c1c">chlorthalidone</text>
+<text x="614" y="326" font-family="sans-serif" font-size="11.5" fill="#b91c1c">ENaC blockers:</text>
+<text x="614" y="342" font-family="sans-serif" font-size="11.5" fill="#b91c1c">amiloride, triamterene</text>
+<text x="614" y="358" font-family="sans-serif" font-size="11.5" fill="#b91c1c">MR antagonists:</text>
+<text x="614" y="374" font-family="sans-serif" font-size="11.5" fill="#b91c1c">spironolactone,</text>
+<text x="614" y="390" font-family="sans-serif" font-size="11.5" fill="#b91c1c">eplerenone, finerenone</text>
+<text x="10" y="418" font-family="sans-serif" font-size="11" fill="#475569">Red text: drugs acting at that segment. Naadi original diagram.</text>
+</svg>

@@ -1,0 +1,1431 @@
+{
+ "area": "usmle2026.11.06.01",
+ "sections": [
+  {
+   "id": "s23c-s110601-1-1",
+   "exam": "step1",
+   "heading": "Bladder control, urinary tract trauma and obstruction: anatomy and physiology",
+   "html": "<h3>Control of micturition</h3><p>The bladder stores urine at low pressure and empties it completely when the person chooses. Three pathways do this:</p><table><tr><th>Pathway</th><th>Roots and nerve</th><th>Receptor and action</th></tr><tr><td>Parasympathetic</td><td>S2–S4, pelvic splanchnic nerves</td><td>Muscarinic M3 on the detrusor: contraction (voiding)</td></tr><tr><td>Sympathetic</td><td>T10–L2, hypogastric nerve</td><td>Beta-3 on the detrusor: relaxation (storage); alpha-1 at the bladder neck and internal sphincter: closure</td></tr><tr><td>Somatic</td><td>S2–S4, pudendal nerve</td><td>Nicotinic receptors on the external urethral sphincter: voluntary closure</td></tr></table><p>The <strong>pontine micturition centre</strong> coordinates detrusor contraction with sphincter relaxation, and the frontal cortex decides when voiding is allowed. Where a lesion sits therefore predicts how the bladder behaves.</p>[[figure:s23c-fig110601-1]]<ul><li><strong>Above the pons</strong> (stroke, dementia, Parkinson disease, normal pressure hydrocephalus): loss of cortical inhibition gives detrusor overactivity with urgency, but the sphincter still relaxes in step, so residual volume stays low.</li><li><strong>Spinal cord between the pons and the sacral cord</strong> (traumatic injury, multiple sclerosis, transverse myelitis): after spinal shock (initial areflexia and retention) the bladder becomes overactive and contracts against a sphincter that closes at the same time, <strong>detrusor-sphincter dyssynergia</strong>. High storage and voiding pressures cause reflux, hydronephrosis, stones, infection and loss of kidney function. With injury at T6 or above, a distended bladder can trigger <strong>autonomic dysreflexia</strong> (severe hypertension, bradycardia, flushing and headache above the lesion).</li><li><strong>Sacral cord, cauda equina or peripheral nerves</strong> (disc herniation, spina bifida, pelvic surgery, diabetic autonomic neuropathy): the detrusor is underactive, sensation is lost and the bladder overdistends, giving retention with <strong>overflow incontinence</strong>.</li></ul><h3>Urinary incontinence: mechanisms</h3><table><tr><th>Type</th><th>Mechanism</th><th>Clue</th></tr><tr><td>Stress</td><td>Urethral hypermobility or intrinsic sphincter weakness: pelvic floor (levator ani) and pudendal nerve damage after vaginal birth, obesity, estrogen loss, prostatectomy in men</td><td>Small leaks with cough, laugh, lifting; positive cough stress test</td></tr><tr><td>Urge</td><td>Detrusor overactivity, often idiopathic; also neurologic disease, bladder irritation</td><td>Sudden strong urge, larger leaks, frequency and nocturia</td></tr><tr><td>Overflow</td><td>Underactive detrusor or outlet obstruction (prostatic enlargement, urethral stricture)</td><td>Dribbling, weak stream, large post-void residual</td></tr><tr><td>Functional</td><td>Normal bladder; patient cannot reach the toilet in time (mobility, cognition)</td><td>Frail older adult, physical or cognitive limits</td></tr></table><p>Drugs follow the receptors: <strong>antimuscarinics</strong> (oxybutynin, tolterodine, solifenacin, trospium) block M3 and reduce detrusor contractions; <strong>beta-3 agonists</strong> (mirabegron, vibegron) relax the detrusor through cAMP without anticholinergic effects; <strong>alpha-1 blockers</strong> (tamsulosin) relax the bladder neck and prostate in outlet obstruction. Drugs that cause retention include anticholinergics, opioids, alpha agonists (decongestants) and tricyclic antidepressants.</p><h3>Urinary tract trauma: anatomy</h3><ul><li><strong>Posterior urethra</strong> (prostatic and membranous parts): torn by shearing forces in pelvic fractures, usually at the membranous segment just below the prostate. Blood at the meatus, inability to void, a perineal hematoma and a high-riding or boggy prostate are the signs.</li><li><strong>Anterior urethra</strong> (bulbar and penile parts): the <strong>bulbar urethra</strong> is crushed against the pubic bone in straddle injuries. If Buck fascia tears, urine and blood spread in the superficial perineal space beneath Colles fascia into the scrotum, penis and lower anterior abdominal wall (deep to Scarpa fascia); attachment of Colles fascia to the fascia lata keeps the fluid out of the thighs.</li><li><strong>Bladder</strong>: <em>extraperitoneal</em> rupture (most common) accompanies pelvic fractures; urine collects around the bladder in the space of Retzius. <em>Intraperitoneal</em> rupture follows a blow to a full bladder, which tears at the <strong>dome</strong>, the weakest part covered by peritoneum. Urine in the peritoneal cavity causes ascites, ileus and peritonitis, and its urea and creatinine are reabsorbed across the peritoneum, raising serum levels (\"pseudo-renal failure\").</li><li><strong>Kidney</strong>: protected by ribs and fat; injured by blunt deceleration or penetrating trauma. Deceleration can tear the intima of the renal artery and cause thrombosis. Children are more vulnerable because their kidneys are relatively larger and less padded.</li><li><strong>Ureter</strong>: rarely injured by blunt trauma; most injuries are iatrogenic during gynecologic, colorectal or vascular surgery (near the uterine artery, the pelvic brim and the ovarian vessels).</li></ul><h3>Obstructive uropathy</h3><p>Obstruction anywhere from the calyx to the urethra raises pressure behind it. Early, the kidney's blood flow rises briefly and then falls as afferent arterioles constrict; GFR drops. Sustained obstruction dilates the pelvis and calyces (<strong>hydronephrosis</strong>), compresses the papillae and medulla first, and then thins the cortex through tubular atrophy and interstitial fibrosis. Bilateral obstruction or obstruction of a single kidney causes acute kidney injury that is often reversible if relieved early.</p><ul><li><strong>Causes by age</strong>: posterior urethral valves and ureteropelvic junction obstruction in infants; stones in young adults; prostatic enlargement, prostate and bladder cancer, pelvic tumours and retroperitoneal fibrosis in older adults; the gravid uterus (mild right-sided dilation is normal in pregnancy).</li><li><strong>Posterior urethral valves</strong>: obstructing membranous folds in the posterior (prostatic) urethra of boys, the commonest cause of lower tract obstruction in male infants. The fetus voids poorly, so amniotic fluid falls (oligohydramnios, with pulmonary hypoplasia if severe). Ultrasound shows a thick-walled bladder, a dilated posterior urethra (\"keyhole\" shape) and bilateral hydronephrosis; voiding cystourethrography confirms it.</li><li><strong>Post-obstructive diuresis</strong>: after relief of bilateral or solitary-kidney obstruction, large volumes of urine can follow. Causes are appropriate excretion of retained urea, salt and water, plus impaired concentrating ability from medullary washout and reduced aquaporin-2 and sodium transporter expression. Watch for hypovolemia, hyponatremia or hypernatremia, hypokalemia and hypomagnesemia.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a high serum creatinine after blunt abdominal trauma with a distended abdomen and little urine output is not necessarily kidney injury; intraperitoneal bladder rupture lets the peritoneum reabsorb urine.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Pee is Parasympathetic, Storage is Sympathetic</em>\": S2–S4 empties, T10–L2 stores.</p></div>",
+   "figureIds": [
+    "s23c-fig110601-1"
+   ],
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Neurogenic Bladder and Neurogenic Lower Urinary Tract Dysfunction",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560617/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Urinary Incontinence",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559095/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Posterior Urethral Valves",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK560881/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Postobstructive Diuresis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK459387/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Bladder Diseases",
+     "url": "https://medlineplus.gov/bladderdiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110601-2-1",
+   "exam": "step2ck",
+   "heading": "Genitourinary trauma: evaluation and management",
+   "html": "<h3>Initial approach</h3><p>Genitourinary injuries are evaluated after the primary survey. Gross hematuria, a pelvic fracture, blood at the urethral meatus, flank bruising or penetrating injury near the kidneys or pelvis prompts imaging. Hemodynamic stability decides whether a patient goes to imaging or straight to the operating room.</p><h3>Urethral injury</h3><ul><li><strong>Suspect it</strong> with blood at the meatus, inability to void, perineal or scrotal (butterfly) hematoma or a high-riding prostate.</li><li><strong>Do not pass a urethral catheter first.</strong> A <strong>retrograde urethrogram</strong> comes before any catheter, because blind catheterisation can turn a partial tear into a complete one.</li><li>If the urethrogram shows disruption, drain the bladder with a <strong>suprapubic cystostomy</strong>. Repair is delayed (urethroplasty months later) or done by early endoscopic realignment in selected patients. Late complications: stricture, erectile dysfunction, incontinence.</li></ul><h3>Bladder injury</h3><ul><li><strong>Diagnosis</strong>: CT cystography (or conventional retrograde cystography) with the bladder fully distended through a catheter (about 300–350 mL of contrast in adults). Standard CT with passive filling misses ruptures.</li><li><strong>Extraperitoneal rupture</strong>: contrast around the bladder base in a flame pattern. Most are managed with <strong>catheter drainage</strong> for about 2 weeks and a cystogram before removal. Operate if the bladder neck is involved, bone fragments lie in the bladder, or the abdomen is being opened anyway.</li><li><strong>Intraperitoneal rupture</strong>: contrast outlines bowel loops and fills the paracolic gutters. It needs <strong>surgical repair</strong>, because urine keeps leaking into the peritoneum.</li></ul><h3>Kidney injury</h3><ul><li><strong>Imaging</strong>: contrast CT with delayed (excretory) images, which show the collecting system and urine leak. Indications in adults: gross hematuria, microscopic hematuria with hypotension, or a mechanism or examination that suggests renal injury (rapid deceleration, flank wound, lower rib fractures).</li><li><strong>Grading</strong> (AAST) runs from I (contusion or small subcapsular hematoma) to V (shattered kidney or avulsion of the hilum, or devascularised kidney with active bleeding).</li><li><strong>Management</strong>: most injuries, including many high-grade ones in stable patients, are managed <strong>nonoperatively</strong> with bed rest, serial hemoglobin and observation. Active contrast extravasation or a pseudoaneurysm in a stable or transiently responsive patient is treated with <strong>angioembolisation</strong>. Persistent hemodynamic instability, an expanding or pulsatile hematoma at laparotomy, or hilar avulsion needs exploration. Urine leaks often seal; persistent ones get a ureteral stent.</li></ul><h3>Ureteral injury</h3><p>Usually iatrogenic. Recognised during surgery, it is repaired at once. Recognised later, it shows as flank pain, fever, ileus, rising creatinine, or watery vaginal discharge (ureterovaginal fistula). CT urography or retrograde pyelography confirms it; a stent or percutaneous nephrostomy diverts urine while it heals or until repair.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in a pelvic fracture with blood at the meatus, the next step is a retrograde urethrogram, not a Foley catheter and not a CT of the abdomen.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Urethral Injury",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK554575/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Bladder Rupture",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK470226/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Kidney Trauma",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK532896/",
+     "sourceId": "statpearls"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110601-2-2",
+   "exam": "step2ck",
+   "heading": "Incontinence, neurogenic bladder, obstruction, reflux and prolapse: management",
+   "html": "<h3>Urinary incontinence in practice</h3><p>Start with history, a bladder diary, examination (including pelvic examination and cough stress test), urinalysis to exclude infection and hematuria, and a <strong>post-void residual</strong> when retention is possible. Look for reversible contributors: infection, atrophic vaginitis, drugs (diuretics, sedatives, anticholinergics, alpha blockers in women), constipation, excess fluid or caffeine, poor mobility and hyperglycemia.</p><table><tr><th>Type</th><th>First line</th><th>Next steps</th></tr><tr><td>Stress</td><td>Pelvic floor muscle training, weight loss</td><td>Vaginal pessary or urethral insert; midurethral sling; bulking agents</td></tr><tr><td>Urge (overactive bladder)</td><td>Bladder training (scheduled, gradually lengthened voiding), fluid and caffeine adjustment, pelvic floor training</td><td>Beta-3 agonist or antimuscarinic; then intradetrusor onabotulinumtoxinA, sacral neuromodulation or tibial nerve stimulation</td></tr><tr><td>Mixed</td><td>Treat the most bothersome part first</td><td>Combine approaches</td></tr><tr><td>Overflow</td><td>Treat the cause (stop offending drugs, alpha blocker for prostatic obstruction)</td><td>Clean intermittent catheterisation for an underactive detrusor</td></tr><tr><td>Functional</td><td>Prompted or scheduled toileting, mobility aids, bedside commode</td><td>Address cognition, environment and caregiving</td></tr></table><p>In <strong>older adults</strong>, strongly anticholinergic drugs (oxybutynin especially) can cause confusion, constipation, dry mouth and falls, and add to the anticholinergic burden in dementia; a <strong>beta-3 agonist</strong> is preferred when a drug is needed. Mirabegron can raise blood pressure, so check it on treatment.</p><h3>Neurogenic bladder</h3><ul><li><strong>Underactive detrusor or large residual</strong> (spina bifida, cauda equina, diabetic neuropathy): <strong>clean intermittent catheterisation</strong> every 4–6 hours is preferred over an indwelling catheter.</li><li><strong>Overactive detrusor with dyssynergia</strong> (spinal cord injury, multiple sclerosis): antimuscarinic or beta-3 agonist plus intermittent catheterisation; intradetrusor onabotulinumtoxinA if needed. Monitor kidney function and the upper tracts with ultrasound because of the high pressures.</li><li><strong>Autonomic dysreflexia</strong>: sit the patient up, loosen tight clothing and look for the trigger, usually a blocked catheter or full bladder; drain it. Treat severe persistent hypertension with a fast-acting agent such as nitrates if there is no recent phosphodiesterase-5 inhibitor use.</li></ul><h3>Obstruction</h3><ul><li><strong>Acute urinary retention</strong> (often prostatic enlargement with an anticholinergic or decongestant trigger): drain with a urethral catheter (suprapubic if that fails), start an alpha-1 blocker, and attempt a trial without catheter after a few days.</li><li><strong>Hydronephrosis</strong> on ultrasound with rising creatinine: find the level. Bilateral hydronephrosis with a distended bladder means outlet obstruction (catheter first); unilateral or bilateral hydronephrosis with an empty bladder means ureteral obstruction (stent or nephrostomy).</li><li><strong>Post-obstructive diuresis</strong>: after decompression, monitor urine output, vital signs and electrolytes closely. Replace fluids with a hypotonic or isotonic solution at less than the urine output (for example about half), so as not to drive the diuresis.</li></ul><h3>Vesicoureteral reflux</h3><p>Reflux of urine from bladder to ureter through an incompetent ureterovesical junction (primary: short intramural ureter; secondary: high bladder pressure from valves or neurogenic bladder). It predisposes to pyelonephritis and renal scarring. Graded I (ureter only) to V (gross dilation and tortuosity of the ureter and pelvis with blunted calyces) on <strong>voiding cystourethrography</strong>.</p><ul><li>After a first febrile UTI in a child aged 2–24 months, obtain <strong>renal and bladder ultrasonography</strong>. Voiding cystourethrography follows if ultrasound shows hydronephrosis, scarring or other findings that suggest high-grade reflux or obstruction, or after a second febrile UTI.</li><li>Low grades often resolve with growth. Management includes treating bladder and bowel dysfunction (constipation), prompt treatment of febrile UTIs, continuous antibiotic prophylaxis for selected children (for example higher grades or recurrent infection), and surgery (ureteral reimplantation or endoscopic injection) for breakthrough infections, high grades that persist or new scarring.</li></ul><h3>Enuresis</h3><ul><li><strong>Primary nocturnal enuresis</strong> (never dry, older than 5 years): reassurance, then a <strong>bed-wetting alarm</strong> (most durable) or oral desmopressin (restrict evening fluids to avoid hyponatremia).</li><li><strong>Secondary enuresis</strong> (wetting again after at least 6 months dry): look for a cause: UTI, constipation, new-onset diabetes mellitus or diabetes insipidus (urinalysis for glucose and specific gravity), obstructive sleep apnea, psychosocial stress and, when suspected, abuse.</li></ul><h3>Other mechanical disorders</h3><ul><li><strong>Urethral diverticulum</strong> (women): a tender anterior vaginal wall mass, post-void dribbling, dysuria, dyspareunia and recurrent UTI; pus may be expressed from the meatus. MRI of the pelvis is the most accurate test; symptomatic diverticula are excised.</li><li><strong>Pelvic organ prolapse</strong> (cystocele, uterine or vaginal vault prolapse, rectocele): pressure, a vaginal bulge, voiding difficulty and incomplete emptying. Treat only if symptomatic: pelvic floor training, a pessary, or surgical repair. A large prolapse can kink the urethra and cause retention or even hydronephrosis.</li></ul>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Urinary Incontinence",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK559095/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Stress Urinary Incontinence",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK539769/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Vesicoureteral Reflux",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK563262/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Enuresis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK545181/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Pelvic Organ Prolapse",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK563229/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Urinary Incontinence",
+     "url": "https://medlineplus.gov/urinaryincontinence.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110601-1",
+   "caption": "Figure. Neurogenic bladder by level of lesion: above the pons, the bladder is overactive but coordinated; in the spinal cord above the sacral segments, overactive with detrusor-sphincter dyssynergia; at or below the sacral cord, underactive with retention.",
+   "file": "figures/s23c-fig110601-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110601-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Pelvic fracture with blood at the meatus",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110601-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 31-year-old man is brought to the emergency department after his car was struck from the side. He has a pelvic ring fracture with symphysis diastasis. He cannot void. There is blood at the urethral meatus and a perineal hematoma, and on rectal examination the prostate cannot be felt in its usual position. Which part of the urinary tract is most likely injured?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bladder dome"
+    },
+    {
+     "label": "B",
+     "html": "Bulbar urethra"
+    },
+    {
+     "label": "C",
+     "html": "Membranous urethra"
+    },
+    {
+     "label": "D",
+     "html": "Penile urethra"
+    },
+    {
+     "label": "E",
+     "html": "Ureterovesical junction"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Shearing forces in a pelvic fracture tear the <strong>posterior urethra</strong>, usually at the <strong>membranous</strong> segment where it passes through the urogenital diaphragm just below the prostate. The prostate and bladder are pushed upward by the hematoma, so the prostate feels high-riding or cannot be felt.</p><p><strong>Takeaway:</strong> pelvic fracture with blood at the meatus and a high-riding prostate means posterior (membranous) urethral injury.</p>",
+   "whyNot": {
+    "A": "A blow to a full bladder tears the dome (intraperitoneal rupture); it does not cause blood at the meatus with a displaced prostate.",
+    "B": "The bulbar urethra is injured by straddle injuries, crushing it against the pubic bone, not by pelvic fracture shearing.",
+    "D": "Penile urethral injury follows direct penile trauma such as penile fracture.",
+    "E": "The ureterovesical junction lies deep in the pelvis and is rarely injured by blunt trauma; it would not cause blood at the meatus."
+   },
+   "objective": "Localise urethral injury after pelvic fracture to the membranous urethra.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urethral trauma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>An 11-year-old boy slipped while climbing a fence and landed astride the top rail. Several hours later he has perineal pain and swelling and a few drops of blood at the urethral meatus. Over the next day, swelling and bruising spread across the perineum, scrotum and penis and up onto the lower anterior abdominal wall. The swelling stops at a sharp line at the top of each thigh. Which of the following best explains this boundary?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Attachment of the membranous layer of superficial fascia to the fascia lata"
+    },
+    {
+     "label": "B",
+     "html": "Attachment of the perineal membrane to the ischiopubic rami"
+    },
+    {
+     "label": "C",
+     "html": "Continuity of Buck fascia with the tunica albuginea"
+    },
+    {
+     "label": "D",
+     "html": "Fusion of the external spermatic fascia with the cremaster"
+    },
+    {
+     "label": "E",
+     "html": "The tendinous arch of the levator ani muscle"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A straddle injury tears the <strong>bulbar urethra</strong>. When Buck fascia is breached, blood and urine collect in the superficial perineal space beneath Colles fascia, which is continuous with the scrotal dartos and with Scarpa fascia on the abdominal wall. Laterally, the membranous layer fuses with the <strong>fascia lata</strong> just below the inguinal ligament, which keeps the fluid out of the thighs.</p><p><strong>Takeaway:</strong> extravasation from a bulbar urethral tear spreads to the scrotum, penis and abdominal wall but not the thighs, because Colles and Scarpa fascia attach to the fascia lata.</p>",
+   "whyNot": {
+    "B": "The perineal membrane bounds the space posteriorly and deeply, which keeps fluid from passing backward or into the deep pouch; it does not explain the lateral limit at the thighs.",
+    "C": "If Buck fascia were intact, the hematoma would stay confined to the penile shaft; its continuity with the tunica albuginea does not limit spread to the thighs.",
+    "D": "Spermatic cord fascial layers do not determine the lateral boundary of superficial perineal extravasation.",
+    "E": "The levator ani arch bounds the pelvic floor, above the urogenital region, and is not involved in superficial extravasation."
+   },
+   "objective": "Explain the fascial limits of urine extravasation after bulbar urethral injury.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urethral trauma",
+    "perineal fascia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 40-year-old man is brought to the emergency department 20 hours after a bicycle crash in which the handlebar struck his lower abdomen. He had been drinking beer for several hours beforehand. He has diffuse abdominal pain and distension and has passed only a small amount of blood-tinged urine. Blood pressure is 128/80 mm Hg. Serum urea nitrogen is 52 mg/dL and creatinine 3.1 mg/dL; a year ago creatinine was 0.9 mg/dL. CT cystography shows contrast outlining loops of small bowel. Which of the following best explains the laboratory findings?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acute tubular necrosis from rhabdomyolysis"
+    },
+    {
+     "label": "B",
+     "html": "Bilateral ureteral obstruction by pelvic hematoma"
+    },
+    {
+     "label": "C",
+     "html": "Contrast-induced nephropathy"
+    },
+    {
+     "label": "D",
+     "html": "Prerenal azotemia from hemorrhage"
+    },
+    {
+     "label": "E",
+     "html": "Reabsorption of urine solutes across the peritoneum"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A blow to a full bladder ruptures the <strong>dome</strong> into the peritoneal cavity. Urea and creatinine in the leaked urine diffuse back into the blood across the large peritoneal surface, so serum levels climb even when the kidneys work normally. Repair of the bladder corrects the values.</p><p><strong>Takeaway:</strong> intraperitoneal bladder rupture can raise serum urea nitrogen and creatinine by peritoneal reabsorption of urine.</p>",
+   "whyNot": {
+    "A": "Rhabdomyolysis follows crush injury or prolonged immobilisation; nothing suggests muscle injury here, and the cystogram explains the picture.",
+    "B": "Pelvic hematoma severe enough to obstruct both ureters would accompany a major pelvic fracture, and the CT shows a bladder leak instead.",
+    "C": "Contrast nephropathy, if it occurs, appears 24–72 hours after contrast, not on the arrival tests that preceded imaging.",
+    "D": "His blood pressure is normal, and hemorrhage would not explain the urine leak shown on cystography."
+   },
+   "objective": "Explain the pseudo-renal failure of intraperitoneal bladder rupture.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bladder rupture"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old man has a complete spinal cord injury at the T8 level from a fall 6 months ago. He now has frequent leakage of small volumes of urine between catheterisations and two febrile UTIs. Renal ultrasonography shows bilateral hydronephrosis and a thick-walled, trabeculated bladder. Which of the following findings on urodynamic testing is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Absent detrusor contractions with a large, compliant bladder"
+    },
+    {
+     "label": "B",
+     "html": "Detrusor contractions with simultaneous contraction of the external sphincter"
+    },
+    {
+     "label": "C",
+     "html": "Normal detrusor activity with an open bladder neck at rest"
+    },
+    {
+     "label": "D",
+     "html": "Normal storage pressure with a weak external sphincter"
+    },
+    {
+     "label": "E",
+     "html": "Uninhibited detrusor contractions with coordinated sphincter relaxation"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A spinal cord lesion between the pontine micturition centre and the sacral cord cuts the pathway that coordinates voiding. After spinal shock, reflex detrusor contractions return, but the external sphincter contracts at the same time: <strong>detrusor-sphincter dyssynergia</strong>. The resulting high pressures thicken the bladder wall and cause reflux, hydronephrosis and infection.</p><p><strong>Takeaway:</strong> suprasacral spinal cord injury gives detrusor overactivity with detrusor-sphincter dyssynergia, which threatens the upper tracts.</p>",
+   "whyNot": {
+    "A": "An areflexic, large bladder results from sacral cord, cauda equina or peripheral nerve lesions, or from the early spinal shock phase.",
+    "C": "An open bladder neck at rest suggests sympathetic denervation or prior surgery and would not explain trabeculation and hydronephrosis.",
+    "D": "Low storage pressure with sphincter weakness causes stress-type leakage without upper-tract damage.",
+    "E": "Overactivity with coordinated relaxation is the pattern of lesions above the pons, such as stroke, where the pontine centre still coordinates voiding."
+   },
+   "objective": "Predict detrusor-sphincter dyssynergia after suprasacral spinal cord injury.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.05.04.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "neurogenic bladder"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 67-year-old woman with a 25-year history of poorly controlled type 2 diabetes mellitus has constant dribbling of urine, a weak stream and a feeling of incomplete emptying. She has numbness of both feet to the ankles and orthostatic hypotension. Post-void residual volume is 520 mL (normal below 100 mL). Loss of function of which of the following is the most likely cause of her urinary symptoms?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Hypogastric sympathetic fibres to the bladder neck"
+    },
+    {
+     "label": "B",
+     "html": "Pelvic splanchnic fibres to the detrusor"
+    },
+    {
+     "label": "C",
+     "html": "Pontine micturition centre neurons"
+    },
+    {
+     "label": "D",
+     "html": "Pudendal motor fibres to the external sphincter"
+    },
+    {
+     "label": "E",
+     "html": "Upper motor neurons in the lateral corticospinal tract"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Long-standing diabetes damages autonomic and sensory fibres. Loss of bladder sensation and of the <strong>parasympathetic pelvic splanchnic (S2–S4) input that contracts the detrusor</strong> leaves an underactive, overdistended bladder that empties poorly; urine leaks when pressure exceeds outlet resistance (<strong>overflow incontinence</strong>).</p><p><strong>Takeaway:</strong> diabetic autonomic neuropathy causes an underactive detrusor with retention and overflow incontinence.</p>",
+   "whyNot": {
+    "A": "Loss of sympathetic tone would open the bladder neck and impair storage, not cause retention with a large residual.",
+    "C": "Damage to the pontine centre would cause uncoordinated voiding, and diabetes does not selectively injure it.",
+    "D": "Pudendal motor loss weakens the external sphincter and causes stress-type leakage, not a large post-void residual.",
+    "E": "Upper motor neuron lesions give an overactive (spastic) bladder, not an atonic one."
+   },
+   "objective": "Explain overflow incontinence from diabetic autonomic neuropathy.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.15.01.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "neurogenic bladder",
+    "diabetes"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 72-year-old woman with overactive bladder is started on a drug that relaxes the detrusor during bladder filling by stimulating a G<sub>s</sub>-coupled receptor and raising intracellular cAMP. Which of the following drugs was most likely prescribed?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bethanechol"
+    },
+    {
+     "label": "B",
+     "html": "Mirabegron"
+    },
+    {
+     "label": "C",
+     "html": "Oxybutynin"
+    },
+    {
+     "label": "D",
+     "html": "Tamsulosin"
+    },
+    {
+     "label": "E",
+     "html": "Tolterodine"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p><strong>Mirabegron</strong> (and vibegron) are <strong>beta-3 adrenergic agonists</strong>. Beta-3 receptors on the detrusor couple to G<sub>s</sub>, raise cAMP and relax the smooth muscle during storage, increasing bladder capacity. They avoid anticholinergic adverse effects but can raise blood pressure.</p><p><strong>Takeaway:</strong> beta-3 agonists (mirabegron, vibegron) relax the detrusor through G<sub>s</sub> and cAMP and treat overactive bladder without anticholinergic effects.</p>",
+   "whyNot": {
+    "A": "Bethanechol is a muscarinic agonist that contracts the detrusor; it is used for urinary retention, not overactive bladder.",
+    "C": "Oxybutynin relaxes the detrusor by blocking M3 (G<sub>q</sub>) receptors, not by stimulating a G<sub>s</sub> receptor.",
+    "D": "Tamsulosin blocks alpha-1A receptors in the prostate and bladder neck to ease outflow obstruction.",
+    "E": "Tolterodine is a muscarinic antagonist, not a G<sub>s</sub>-coupled receptor agonist."
+   },
+   "objective": "Identify the mechanism of beta-3 agonists for overactive bladder.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "overactive bladder",
+    "pharmacology"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 2-day-old boy born at 36 weeks has a palpable distended bladder and a weak, dribbling urinary stream. Prenatal ultrasonography at 30 weeks showed oligohydramnios, bilateral hydronephrosis and a dilated bladder with a dilated proximal urethra. He needed brief respiratory support at birth. Which of the following is the most likely cause?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bilateral ureteropelvic junction obstruction"
+    },
+    {
+     "label": "B",
+     "html": "Bilateral vesicoureteral reflux without obstruction"
+    },
+    {
+     "label": "C",
+     "html": "Membranous folds obstructing the posterior urethra"
+    },
+    {
+     "label": "D",
+     "html": "Neurogenic bladder from a sacral neural tube defect"
+    },
+    {
+     "label": "E",
+     "html": "Urethral meatal stenosis"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p><strong>Posterior urethral valves</strong> are obstructing folds in the prostatic urethra of boys. Obstruction below the bladder dilates the posterior urethra (the \"keyhole\" sign), thickens the bladder and causes bilateral hydronephrosis. Reduced fetal urine output causes oligohydramnios, which can impair lung development. Voiding cystourethrography confirms the diagnosis, and treatment is catheter drainage then endoscopic valve ablation.</p><p><strong>Takeaway:</strong> a boy with a distended bladder, dilated posterior urethra, bilateral hydronephrosis and oligohydramnios has posterior urethral valves.</p>",
+   "whyNot": {
+    "A": "Ureteropelvic junction obstruction dilates the renal pelvis but leaves the bladder and urethra normal.",
+    "B": "Reflux alone does not distend the bladder or dilate the posterior urethra, and it does not cause a weak stream.",
+    "D": "A sacral neural tube defect would be visible on examination of the back and would usually cause other lower limb or anal findings.",
+    "E": "Meatal stenosis affects the external opening and is a problem of circumcised older boys; it does not dilate the posterior urethra."
+   },
+   "objective": "Recognise posterior urethral valves from prenatal and neonatal findings.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "posterior urethral valves"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 78-year-old man with prostatic enlargement has a urinary catheter placed for painless retention of 2,100 mL. Serum creatinine falls from 4.8 to 2.0 mg/dL over 2 days, but his urine output is 400–500 mL/h. Urine osmolality is 280 mOsm/kg. Which of the following best explains the urine output?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Excess antidiuretic hormone release from pain"
+    },
+    {
+     "label": "B",
+     "html": "Hyperglycemia-induced osmotic diuresis"
+    },
+    {
+     "label": "C",
+     "html": "Overproduction of aldosterone after obstruction is relieved"
+    },
+    {
+     "label": "D",
+     "html": "Retained urea excretion plus impaired tubular concentrating ability"
+    },
+    {
+     "label": "E",
+     "html": "Spontaneous bladder hyperactivity after catheter placement"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p><strong>Post-obstructive diuresis</strong> follows relief of bilateral obstruction (or obstruction of a solitary kidney). Part is appropriate: the kidney excretes the urea, salt and water retained during obstruction. Part is maladaptive: obstruction washes out medullary tonicity and lowers aquaporin-2 and sodium transporter expression, so the tubules cannot concentrate urine for days.</p><p><strong>Takeaway:</strong> post-obstructive diuresis reflects solute (urea) excretion plus a temporary concentrating defect; monitor volume and electrolytes.</p>",
+   "whyNot": {
+    "A": "Antidiuretic hormone would concentrate urine and reduce output.",
+    "B": "Nothing suggests hyperglycemia, and glucose-driven diuresis needs very high serum glucose.",
+    "C": "Aldosterone would reduce sodium and water excretion, not increase it.",
+    "E": "Detrusor activity does not determine urine production by the kidneys; a catheter drains whatever the kidneys make."
+   },
+   "objective": "Explain the mechanisms of post-obstructive diuresis.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "post-obstructive diuresis",
+    "obstruction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 38-year-old woman, para 3, has leaked small amounts of urine when she coughs, sneezes or lifts her children since her last vaginal delivery, which involved a prolonged second stage and forceps. She has no urgency. Injury to which of the following nerves most directly contributes to weakness of the external urethral sphincter in this setting?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Genitofemoral"
+    },
+    {
+     "label": "B",
+     "html": "Iliohypogastric"
+    },
+    {
+     "label": "C",
+     "html": "Obturator"
+    },
+    {
+     "label": "D",
+     "html": "Pelvic splanchnic"
+    },
+    {
+     "label": "E",
+     "html": "Pudendal"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The external urethral sphincter and the levator ani are skeletal muscles supplied by somatic fibres from S2–S4. The <strong>pudendal nerve</strong> supplies the external sphincter, and stretch injury to it during a prolonged or instrumented vaginal delivery, together with direct pelvic floor damage, contributes to <strong>stress incontinence</strong>.</p><p><strong>Takeaway:</strong> the pudendal nerve (S2–S4) supplies the external urethral sphincter; its injury in childbirth contributes to stress incontinence.</p>",
+   "whyNot": {
+    "A": "The genitofemoral nerve supplies the cremaster and skin of the anterior genitalia and thigh.",
+    "B": "The iliohypogastric nerve supplies skin and muscles of the lower anterior abdominal wall.",
+    "C": "The obturator nerve supplies the medial thigh adductors.",
+    "D": "Pelvic splanchnic nerves are parasympathetic fibres that contract the detrusor; they do not supply the skeletal muscle sphincter."
+   },
+   "objective": "Link pudendal nerve injury in childbirth to stress urinary incontinence.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.12.03.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "stress incontinence"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-2-01",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 28-year-old man is brought to the emergency department after a motorcycle crash. After resuscitation with 1 L of crystalloid, his pulse is 104/min and blood pressure 118/74 mm Hg. Pelvic radiography shows bilateral superior and inferior pubic rami fractures. There is blood at the urethral meatus and a scrotal hematoma. He has not voided. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT of the abdomen and pelvis with intravenous contrast"
+    },
+    {
+     "label": "B",
+     "html": "Insertion of a urethral catheter"
+    },
+    {
+     "label": "C",
+     "html": "Retrograde urethrography"
+    },
+    {
+     "label": "D",
+     "html": "Suprapubic aspiration of urine for culture"
+    },
+    {
+     "label": "E",
+     "html": "Voiding cystourethrography"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Blood at the meatus after a pelvic fracture means a urethral injury until proven otherwise. A <strong>retrograde urethrogram</strong> must come before any urethral catheter, because passing a catheter blindly can convert a partial tear into a complete one and introduce infection into the hematoma.</p><p><strong>Takeaway:</strong> suspected urethral injury: retrograde urethrogram before a Foley catheter.</p>",
+   "whyNot": {
+    "A": "CT may be needed for other injuries, but it does not evaluate the urethra, and he will still need a safe route to drain his bladder.",
+    "B": "A urethral catheter before the urethra is imaged risks worsening the injury.",
+    "D": "Aspiration for culture has no role in acute trauma.",
+    "E": "Voiding cystourethrography needs a catheter in the bladder first and is used for reflux and valves in children."
+   },
+   "objective": "Order a retrograde urethrogram before catheterisation when urethral injury is suspected.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.16.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urethral trauma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110601-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q110601-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>The retrograde urethrogram shows extravasation of contrast at the membranous urethra with no contrast entering the bladder. His vital signs remain stable, and CT of the abdomen shows no other injury. His bladder is palpable above the pubic symphysis. Which of the following is the most appropriate next step in bladder management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Immediate open urethroplasty"
+    },
+    {
+     "label": "B",
+     "html": "Placement of a suprapubic cystostomy"
+    },
+    {
+     "label": "C",
+     "html": "Repeated attempts at urethral catheterisation with a coudé catheter"
+    },
+    {
+     "label": "D",
+     "html": "Observation until he voids spontaneously"
+    },
+    {
+     "label": "E",
+     "html": "Intravenous furosemide to maintain urine output"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A complete posterior urethral disruption means urine cannot pass and a urethral catheter cannot be placed safely. A <strong>suprapubic cystostomy</strong> drains the bladder. Definitive repair is usually delayed for about 3 months (delayed urethroplasty) once the hematoma has resolved, or early endoscopic realignment is done in selected patients by a urologist.</p><p><strong>Takeaway:</strong> complete urethral disruption: drain with a suprapubic catheter and repair the urethra later.</p>",
+   "whyNot": {
+    "A": "Immediate open repair through a fresh pelvic hematoma has high rates of bleeding, impotence and incontinence.",
+    "C": "Blind repeated catheterisation risks false passages and enlarging the tear.",
+    "D": "He cannot void through a disrupted urethra; waiting allows painful overdistension.",
+    "E": "Diuretics would worsen bladder distension without a route for drainage."
+   },
+   "objective": "Manage complete posterior urethral disruption with suprapubic cystostomy.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urethral trauma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110601-1",
+   "setOrder": 2
+  },
+  {
+   "id": "s23c-q110601-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 45-year-old woman is struck by a car while crossing the street. She is alert. Pulse is 96/min and blood pressure 126/80 mm Hg. She has lower abdominal tenderness and gross hematuria. CT shows no pelvic fracture or solid-organ injury. CT cystography with retrograde filling of the bladder through a catheter shows contrast tracking between loops of small bowel and into both paracolic gutters. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Angiographic embolisation"
+    },
+    {
+     "label": "B",
+     "html": "Bladder catheter drainage alone for 14 days"
+    },
+    {
+     "label": "C",
+     "html": "Cystoscopy with fulguration"
+    },
+    {
+     "label": "D",
+     "html": "Diagnostic peritoneal lavage"
+    },
+    {
+     "label": "E",
+     "html": "Surgical repair of the bladder"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Contrast around bowel loops and in the paracolic gutters shows an <strong>intraperitoneal bladder rupture</strong>, usually a tear of the dome. Urine continues to leak into the peritoneum, causing peritonitis and metabolic derangement, so it needs <strong>operative repair</strong> (open or laparoscopic) with bladder drainage afterwards.</p><p><strong>Takeaway:</strong> intraperitoneal bladder rupture needs surgical repair; most extraperitoneal ruptures heal with catheter drainage.</p>",
+   "whyNot": {
+    "A": "Embolisation controls arterial bleeding; there is no active hemorrhage described.",
+    "B": "Catheter drainage alone is the treatment for uncomplicated extraperitoneal rupture, not intraperitoneal rupture.",
+    "C": "Fulguration treats bleeding mucosal lesions, not full-thickness tears.",
+    "D": "Peritoneal lavage is a dated diagnostic test; the diagnosis is already made."
+   },
+   "objective": "Treat intraperitoneal bladder rupture surgically.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.16.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bladder rupture"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 19-year-old man is brought to the emergency department after being tackled during a football game. He has left flank pain and gross hematuria. Pulse is 88/min and blood pressure 130/78 mm Hg, unchanged over 2 hours. Hemoglobin is 13.8 g/dL. Contrast CT with delayed images shows a 2-cm-deep laceration of the left renal cortex extending into the collecting system with a small amount of urinary contrast leak, a perirenal hematoma confined by Gerota fascia, and no active arterial contrast extravasation. The right kidney is normal. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Admission for bed rest, serial hemoglobin measurement and observation"
+    },
+    {
+     "label": "B",
+     "html": "Emergency left nephrectomy"
+    },
+    {
+     "label": "C",
+     "html": "Exploratory laparotomy with renal repair"
+    },
+    {
+     "label": "D",
+     "html": "Immediate placement of a left percutaneous nephrostomy"
+    },
+    {
+     "label": "E",
+     "html": "Selective angioembolisation of the left renal artery branch"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is a high-grade (collecting-system) renal laceration in a <strong>hemodynamically stable</strong> patient without active bleeding. <strong>Nonoperative management</strong> (admission, bed rest, serial hemoglobin, repeat imaging if symptoms change) preserves the kidney in most such cases; many urine leaks seal, and a ureteral stent is placed only if a leak persists or grows.</p><p><strong>Takeaway:</strong> stable renal trauma, even high grade, is managed nonoperatively; embolise active bleeding and operate for instability.</p>",
+   "whyNot": {
+    "B": "Nephrectomy is for an unreconstructable kidney in an unstable patient.",
+    "C": "Exploration is for hemodynamic instability or an expanding hematoma, and it raises the chance of losing the kidney.",
+    "D": "Most urine leaks seal; drainage is reserved for persistent or enlarging collections.",
+    "E": "Angioembolisation is for active contrast extravasation or a pseudoaneurysm, which is absent here."
+   },
+   "objective": "Manage a stable high-grade renal laceration nonoperatively.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.16.09.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal trauma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman with mild cognitive impairment has 6 months of sudden, strong urges to void with leakage before she reaches the toilet, about four times daily, and nocturia twice nightly. She does not leak with coughing. Urinalysis is normal and post-void residual volume is 40 mL. She completed 8 weeks of bladder training and reduced her evening fluids and caffeine with partial improvement, and she wants further treatment. Blood pressure is 128/76 mm Hg. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Clean intermittent catheterisation"
+    },
+    {
+     "label": "B",
+     "html": "Desmopressin at bedtime"
+    },
+    {
+     "label": "C",
+     "html": "Midurethral sling"
+    },
+    {
+     "label": "D",
+     "html": "Oxybutynin"
+    },
+    {
+     "label": "E",
+     "html": "Vibegron"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>She has <strong>urge incontinence (overactive bladder)</strong> with only partial response to behavioural therapy. Drug therapy is reasonable, and in an older adult with cognitive impairment a <strong>beta-3 agonist</strong> (vibegron or mirabegron) is preferred over antimuscarinics, which add to anticholinergic burden and can worsen cognition, constipation and falls.</p><p><strong>Takeaway:</strong> for overactive bladder in an older adult with cognitive concerns, choose a beta-3 agonist over an antimuscarinic.</p>",
+   "whyNot": {
+    "A": "Intermittent catheterisation treats retention with a large residual; her residual is normal.",
+    "B": "Desmopressin reduces urine production, does not treat detrusor overactivity, and is generally avoided at this age because of the risk of hyponatremia.",
+    "C": "A sling treats stress incontinence, which she does not have.",
+    "D": "Oxybutynin is strongly anticholinergic and is best avoided in an older adult with cognitive impairment."
+   },
+   "objective": "Choose a beta-3 agonist for overactive bladder in an older adult with cognitive impairment.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.01.01.04"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "urge incontinence",
+    "geriatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 44-year-old woman, para 2, has leaked urine with coughing, running and lifting for a year. She has no urgency, nocturia or dysuria. BMI is 31 kg/m². Pelvic examination shows leakage of urine with a cough while supine, with mild urethral hypermobility and no prolapse beyond the hymen. Urinalysis is normal and post-void residual volume is 30 mL. Which of the following is the most appropriate initial treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intradetrusor onabotulinumtoxinA"
+    },
+    {
+     "label": "B",
+     "html": "Midurethral sling surgery"
+    },
+    {
+     "label": "C",
+     "html": "Pelvic floor muscle training"
+    },
+    {
+     "label": "D",
+     "html": "Solifenacin"
+    },
+    {
+     "label": "E",
+     "html": "Tamsulosin"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>This is <strong>stress urinary incontinence</strong>. First-line treatment is <strong>supervised pelvic floor muscle training</strong> for at least 3 months, with weight loss because obesity raises intra-abdominal pressure. A pessary or urethral insert is another conservative option; a midurethral sling is offered if conservative treatment does not satisfy her.</p><p><strong>Takeaway:</strong> first-line treatment for stress incontinence is pelvic floor muscle training (plus weight loss); surgery comes after conservative treatment.</p>",
+   "whyNot": {
+    "A": "OnabotulinumtoxinA treats refractory overactive bladder, not stress incontinence.",
+    "B": "A sling is effective but is offered after conservative treatment, or for a patient who declines it.",
+    "D": "Antimuscarinics treat urge incontinence and do not strengthen the outlet.",
+    "E": "Alpha blockers relax the bladder neck and could worsen stress leakage."
+   },
+   "objective": "Start pelvic floor muscle training for stress urinary incontinence.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.13.02.07"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "stress incontinence"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-2-07",
+   "exam": "step2ck",
+   "format": "chart",
+   "stemHtml": "<p>A 64-year-old man with spina bifida treated in infancy has a long-standing neurogenic bladder. He voids by straining and has had two febrile UTIs this year. Results:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Post-void residual volume (bladder scan)</td><td>480 mL (normal below 100 mL)</td></tr><tr><td>Urodynamics</td><td>Large-capacity bladder, no detrusor contraction during attempted voiding</td></tr><tr><td>Serum creatinine</td><td>1.3 mg/dL (1 year ago 1.0 mg/dL)</td></tr><tr><td>Renal ultrasonography</td><td>Mild bilateral hydronephrosis; no stones</td></tr></table><p>He has good hand function and is willing to learn self-care. Which of the following is the most appropriate long-term bladder management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Bethanechol three times daily"
+    },
+    {
+     "label": "B",
+     "html": "Clean intermittent self-catheterisation"
+    },
+    {
+     "label": "C",
+     "html": "Chronic indwelling urethral catheter"
+    },
+    {
+     "label": "D",
+     "html": "Mirabegron daily"
+    },
+    {
+     "label": "E",
+     "html": "Timed voiding every 2 hours"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>An <strong>areflexic detrusor</strong> with a large residual, recurrent infection, hydronephrosis and rising creatinine needs regular, complete emptying. <strong>Clean intermittent self-catheterisation</strong> every 4–6 hours is the standard: it protects the kidneys and causes fewer infections and urethral complications than an indwelling catheter.</p><p><strong>Takeaway:</strong> for an underactive neurogenic bladder with a large residual, use clean intermittent catheterisation.</p>",
+   "whyNot": {
+    "A": "Bethanechol is ineffective for long-term emptying of an areflexic bladder and causes cholinergic adverse effects.",
+    "C": "Indwelling urethral catheters cause more infections, stones, strictures and urethral erosion and are a last resort.",
+    "D": "A beta-3 agonist relaxes the detrusor further and would worsen retention.",
+    "E": "Timed voiding does not help when the detrusor cannot contract."
+   },
+   "objective": "Use clean intermittent catheterisation for an areflexic neurogenic bladder.",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "neurogenic bladder",
+    "chart"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110601-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 15-month-old girl had her first febrile UTI 2 weeks ago, with a temperature of 39.4°C (102.9°F) and pyuria; urine obtained by catheter grew more than 100,000 CFU/mL of <em>E. coli</em>. She recovered with oral cephalexin. Renal and bladder ultrasonography today shows moderate dilation of the left renal pelvis and a dilated left distal ureter. The right kidney is normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT urography"
+    },
+    {
+     "label": "B",
+     "html": "Long-term trimethoprim-sulfamethoxazole prophylaxis without further imaging"
+    },
+    {
+     "label": "C",
+     "html": "No further evaluation"
+    },
+    {
+     "label": "D",
+     "html": "Technetium-99m DMSA renal scan only"
+    },
+    {
+     "label": "E",
+     "html": "Voiding cystourethrography"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>After a first febrile UTI in a young child, renal and bladder ultrasonography comes first. Because it shows hydronephrosis with a dilated ureter, which suggests high-grade <strong>vesicoureteral reflux</strong> or obstruction, the next step is <strong>voiding cystourethrography</strong> to look for and grade reflux and to assess the urethra.</p><p><strong>Takeaway:</strong> abnormal ultrasound after a first febrile UTI in a toddler calls for voiding cystourethrography.</p>",
+   "whyNot": {
+    "A": "CT exposes a child to radiation and does not show reflux.",
+    "B": "Whether prophylaxis is indicated depends on the reflux grade, which is not yet known.",
+    "C": "Normal ultrasound would allow watchful waiting, but hers is abnormal.",
+    "D": "A DMSA scan shows renal scarring but does not diagnose or grade reflux."
+   },
+   "objective": "Order voiding cystourethrography when ultrasound is abnormal after a first febrile UTI in a young child.",
+   "areas": [
+    "usmle2026.11.06.01",
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "vesicoureteral reflux"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110601-01",
+   "frontHtml": "Which autonomic outflow contracts the detrusor, and through which receptor?",
+   "backHtml": "Parasympathetic S2–S4 (pelvic splanchnic nerves) via muscarinic M3 receptors.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-02",
+   "frontHtml": "Sympathetic receptors that help the bladder store urine?",
+   "backHtml": "Beta-3 relaxes the detrusor; alpha-1 closes the bladder neck and internal sphincter (T10–L2, hypogastric nerve).",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-03",
+   "frontHtml": "Bladder pattern after spinal cord injury between the pons and the sacral cord?",
+   "backHtml": "Detrusor overactivity with detrusor-sphincter dyssynergia: high pressures, reflux, hydronephrosis.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-04",
+   "frontHtml": "Bladder pattern with a lesion above the pons (stroke, dementia)?",
+   "backHtml": "Detrusor overactivity (urge incontinence) with coordinated sphincter relaxation and a low residual.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-05",
+   "frontHtml": "Bladder pattern with cauda equina, sacral cord or diabetic neuropathy?",
+   "backHtml": "Underactive detrusor with retention, large residual and overflow incontinence.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-06",
+   "frontHtml": "Mechanism of mirabegron and vibegron?",
+   "backHtml": "Beta-3 agonists: G<sub>s</sub>, more cAMP, detrusor relaxation during storage; can raise blood pressure.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-07",
+   "frontHtml": "Urethral segment torn in pelvic fracture versus straddle injury?",
+   "backHtml": "Pelvic fracture: posterior (membranous) urethra. Straddle injury: anterior (bulbar) urethra.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-08",
+   "frontHtml": "Why does urine from a bulbar urethral tear spread to the scrotum and abdominal wall but not the thighs?",
+   "backHtml": "Colles (and Scarpa) fascia attach to the fascia lata.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-09",
+   "frontHtml": "Blow to a full bladder: where is the tear and what lab change can follow?",
+   "backHtml": "The dome (intraperitoneal rupture); peritoneal reabsorption of urine raises serum urea nitrogen and creatinine.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-10",
+   "frontHtml": "Boy with oligohydramnios, thick bladder, dilated posterior urethra and bilateral hydronephrosis?",
+   "backHtml": "Posterior urethral valves; confirm with voiding cystourethrography; endoscopic valve ablation.",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-11",
+   "frontHtml": "Two causes of post-obstructive diuresis?",
+   "backHtml": "Excretion of retained urea, salt and water, plus a temporary concentrating defect (medullary washout, less aquaporin-2).",
+   "sectionId": "s23c-s110601-1-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-12",
+   "frontHtml": "Blood at the meatus after pelvic fracture: next step?",
+   "backHtml": "Retrograde urethrogram before any urethral catheter; if disrupted, suprapubic cystostomy.",
+   "sectionId": "s23c-s110601-2-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-13",
+   "frontHtml": "Extraperitoneal versus intraperitoneal bladder rupture: treatment?",
+   "backHtml": "Extraperitoneal: catheter drainage about 2 weeks (most). Intraperitoneal: surgical repair.",
+   "sectionId": "s23c-s110601-2-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-14",
+   "frontHtml": "Best test for suspected bladder rupture?",
+   "backHtml": "CT (or conventional) cystography with retrograde filling to full distension.",
+   "sectionId": "s23c-s110601-2-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-15",
+   "frontHtml": "Stable patient with high-grade renal laceration and no active bleeding: management?",
+   "backHtml": "Nonoperative (admit, bed rest, serial hemoglobin); embolise active extravasation; operate for instability.",
+   "sectionId": "s23c-s110601-2-1",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-16",
+   "frontHtml": "First-line treatment of stress urinary incontinence?",
+   "backHtml": "Pelvic floor muscle training (and weight loss); then pessary or midurethral sling.",
+   "sectionId": "s23c-s110601-2-2",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-17",
+   "frontHtml": "Preferred drug for overactive bladder in a frail or cognitively impaired older adult?",
+   "backHtml": "A beta-3 agonist (mirabegron or vibegron) rather than an antimuscarinic.",
+   "sectionId": "s23c-s110601-2-2",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-18",
+   "frontHtml": "Long-term management of an areflexic neurogenic bladder with a large residual?",
+   "backHtml": "Clean intermittent catheterisation every 4–6 hours.",
+   "sectionId": "s23c-s110601-2-2",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-19",
+   "frontHtml": "Secondary enuresis: what to check first?",
+   "backHtml": "Urinalysis (glucose, specific gravity, infection) and history for constipation, sleep apnea and stress; diabetes mellitus and insipidus are causes.",
+   "sectionId": "s23c-s110601-2-2",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110601-20",
+   "frontHtml": "Toddler after first febrile UTI: imaging order?",
+   "backHtml": "Renal and bladder ultrasonography; voiding cystourethrography if abnormal or after a second febrile UTI.",
+   "sectionId": "s23c-s110601-2-2",
+   "areas": [
+    "usmle2026.11.06.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

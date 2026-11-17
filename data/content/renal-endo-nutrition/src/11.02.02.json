@@ -1,0 +1,1379 @@
+{
+ "area": "usmle2026.11.02.02",
+ "sections": [
+  {
+   "id": "s23c-s110202-1-1",
+   "exam": "step1",
+   "heading": "Renal cell carcinoma: subtypes, VHL and paraneoplastic syndromes",
+   "html": "<h3>Renal cell carcinoma (RCC)</h3><p>RCC arises from renal tubular epithelium and is the main primary kidney cancer of adults, peaking in the sixth and seventh decades and more common in men. <strong>Risk factors</strong>: smoking (the strongest modifiable one), obesity, hypertension, acquired cystic kidney disease of dialysis, and inherited syndromes, chiefly <strong>von Hippel-Lindau (VHL) disease</strong>.</p>[[figure:s23c-fig110202-1]]<table><tr><th>Subtype</th><th>Share</th><th>Origin and genetics</th><th>Microscopy</th></tr><tr><td>Clear cell</td><td>About 70–75%</td><td>Proximal tubule; loss of chromosome 3p and inactivation of <em>VHL</em> (sporadic or inherited)</td><td>Cells with clear cytoplasm (glycogen and lipid washed out in processing) in nests with a delicate, richly vascular network</td></tr><tr><td>Papillary</td><td>About 10–15%</td><td>Proximal tubule; trisomy 7 and 17; hereditary form with activating <em>MET</em> mutations; common in acquired cystic disease</td><td>Papillae with foamy macrophages in the cores, psammoma bodies</td></tr><tr><td>Chromophobe</td><td>About 5%</td><td>Intercalated cells; multiple whole-chromosome losses</td><td>Pale cells with prominent cell borders and perinuclear halos; better prognosis</td></tr><tr><td>Collecting duct and medullary</td><td>Rare</td><td>Collecting duct; medullary carcinoma occurs in young people with <strong>sickle cell trait</strong></td><td>Aggressive, infiltrative</td></tr></table><h3>VHL and the hypoxia pathway</h3><p>The VHL protein is part of an <strong>E3 ubiquitin ligase</strong> that tags <strong>hypoxia-inducible factor (HIF)</strong> for destruction when oxygen is present. When both copies are lost (two hits, as for any tumour suppressor), HIF accumulates even in normal oxygen and switches on <strong>VEGF</strong>, PDGF, erythropoietin and glucose transporter genes. That explains the vascularity of clear cell RCC and why drugs that block VEGF signalling work. VHL disease (autosomal dominant) causes bilateral, multifocal clear cell RCC and renal cysts at a young age, cerebellar and retinal <strong>hemangioblastomas</strong>, pheochromocytomas and pancreatic neuroendocrine tumours.</p><h3>Clinical behaviour</h3><ul><li>Most tumours are now found <strong>incidentally</strong> on imaging. The classic triad of hematuria, flank pain and a palpable mass is uncommon and usually means advanced disease.</li><li>RCC grows into the <strong>renal vein</strong> and can extend up the inferior vena cava to the right atrium. A <strong>left varicocele</strong> that does not empty when the patient lies down suggests obstruction of the left gonadal vein where it joins the left renal vein.</li><li>Spread is hematogenous: lung (\"cannonball\" nodules), bone (purely <strong>lytic</strong> lesions), liver and brain.</li><li><strong>Paraneoplastic syndromes</strong> are common: <strong>erythropoietin</strong> (polycythemia), <strong>PTH-related peptide</strong> (hypercalcemia with low PTH), renin (hypertension), ACTH (Cushing syndrome), fever and weight loss, and a reversible cholestatic liver dysfunction without metastases (Stauffer syndrome).</li></ul><h3>Drugs used against RCC (by mechanism)</h3><ul><li><strong>VEGF receptor tyrosine kinase inhibitors</strong> (sunitinib, pazopanib, axitinib, cabozantinib): adverse effects include hypertension, proteinuria, hand-foot skin reaction, diarrhea, hypothyroidism and impaired wound healing.</li><li><strong>Immune checkpoint inhibitors</strong>: anti-PD-1 (pembrolizumab, nivolumab) and anti-CTLA-4 (ipilimumab) release T-cell brakes; adverse effects are immune-mediated (colitis, hepatitis, pneumonitis, thyroiditis, hypophysitis, adrenalitis, type 1 diabetes).</li><li><strong>mTOR inhibitors</strong> (everolimus, temsirolimus) and the <strong>HIF-2α inhibitor belzutifan</strong> (used for VHL-associated tumours).</li><li>RCC is resistant to conventional cytotoxic chemotherapy.</li></ul>",
+   "figureIds": [
+    "s23c-fig110202-1"
+   ],
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Renal Clear Cell Cancer",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK563230/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus Genetics: Von Hippel-Lindau syndrome",
+     "url": "https://medlineplus.gov/genetics/condition/von-hippel-lindau-syndrome/",
+     "sourceId": "medlineplus-federal"
+    },
+    {
+     "label": "MedlinePlus: Kidney Cancer",
+     "url": "https://medlineplus.gov/kidneycancer.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110202-1-2",
+   "exam": "step1",
+   "heading": "Wilms tumour and urothelial carcinoma",
+   "html": "<h3>Wilms tumour (nephroblastoma)</h3><p>The commonest primary kidney cancer of children, usually between 2 and 5 years. It arises from persistent <strong>metanephric blastema</strong> (nephrogenic rests) and shows a <strong>triphasic</strong> pattern: small round blue blastemal cells, primitive tubules and glomeruloid structures (epithelium), and spindle-cell stroma. It presents as a large, smooth, <strong>unilateral flank mass</strong> that rarely crosses the midline, sometimes with hematuria, abdominal pain or hypertension (renin). Lung is the usual site of metastasis. Unfavourable (anaplastic) histology carries <em>TP53</em> mutations.</p><table><tr><th>Syndrome</th><th>Genetics</th><th>Features</th></tr><tr><td>WAGR</td><td>Deletion at 11p13 including <em>WT1</em> and <em>PAX6</em></td><td>Wilms tumour, aniridia, genitourinary anomalies, intellectual disability (range of developmental delay)</td></tr><tr><td>Denys-Drash</td><td>Dominant-negative <em>WT1</em> point mutation</td><td>Early nephrotic syndrome with diffuse mesangial sclerosis, disorders of sex development, Wilms tumour</td></tr><tr><td>Beckwith-Wiedemann</td><td>Imprinting defects at 11p15.5 (for example overexpression of <em>IGF2</em>)</td><td>Macrosomia, macroglossia, omphalocele, lateralised overgrowth (hemihypertrophy), neonatal hypoglycemia; Wilms tumour and hepatoblastoma</td></tr></table><p>Neuroblastoma, the other big abdominal tumour of young children, arises from the adrenal medulla, is often calcified, crosses the midline and raises urine catecholamine metabolites; Wilms tumour does none of these.</p><h3>Urothelial carcinoma</h3><p>The urothelium lines the renal pelvis, ureters, bladder and proximal urethra, and carcinogens excreted in urine expose all of it at once. Tumours are often <strong>multifocal and recur</strong> (a \"field effect\"). Most arise in the bladder; upper-tract tumours are less common.</p><ul><li><strong>Risk factors</strong>: <strong>cigarette smoking</strong> (the leading cause); occupational <strong>aromatic amines</strong> (benzidine, 2-naphthylamine in dye, rubber and leather work); <strong>cyclophosphamide</strong> (its metabolite acrolein also causes hemorrhagic cystitis, prevented by hydration and mesna); long-term <strong>phenacetin</strong>-containing analgesics (papillary necrosis and renal pelvis tumours); <strong>aristolochic acid</strong> (some herbal remedies; upper-tract tumours); pelvic radiation. <strong>Lynch syndrome</strong> raises the risk of upper-tract tumours.</li><li><strong>Two pathways</strong>: low-grade papillary tumours recur often but rarely invade; flat <strong>carcinoma in situ</strong> and high-grade tumours tend to invade. Stage depends on depth: invasion of the <strong>muscularis propria</strong> separates non-muscle-invasive from muscle-invasive disease and is the key prognostic step.</li><li><strong>Presentation</strong>: painless gross hematuria; irritative voiding symptoms with carcinoma in situ.</li><li><strong>Intravesical BCG</strong> (live attenuated <em>Mycobacterium bovis</em>) treats high-grade non-muscle-invasive tumours and carcinoma in situ by provoking a local Th1-type immune response that kills tumour cells.</li></ul><h3>Other bladder cancers</h3><ul><li><strong>Squamous cell carcinoma</strong>: chronic irritation and squamous metaplasia: <em>Schistosoma haematobium</em>, long-term catheters, chronic stones.</li><li><strong>Adenocarcinoma</strong>: <strong>urachal remnant</strong> at the bladder dome, bladder exstrophy, glandular metaplasia.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> painless gross hematuria in an older smoker is urothelial cancer until proved otherwise, even if he is taking an anticoagulant or the bleeding stops.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Three-p, pee clear</em>\": loss of chromosome <strong>3p</strong> gives <strong>clear</strong> cell carcinoma of the kidney.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Wilms Tumor",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK442004/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Bladder Cancer",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536923/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Wilms Tumor",
+     "url": "https://medlineplus.gov/wilmstumor.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110202-2-1",
+   "exam": "step2ck",
+   "heading": "Hematuria evaluation and management of kidney and bladder cancer",
+   "html": "<h3>Hematuria: the work-up</h3><ol><li><strong>Confirm</strong>: a positive dipstick also reacts to myoglobin and free hemoglobin, so confirm with <strong>urine microscopy</strong>. Microscopic hematuria is 3 or more red cells per high-power field on a properly collected specimen.</li><li><strong>Look for benign or glomerular causes</strong>: infection (treat and repeat), menstruation, vigorous exercise or recent instrumentation (repeat later); dysmorphic red cells, red cell casts, proteinuria or a rising creatinine point to glomerular disease and nephrology referral rather than urologic imaging.</li><li><strong>Gross hematuria</strong> without an obvious benign cause, even once and even on anticoagulants, needs <strong>multiphase CT urography and cystoscopy</strong>.</li><li><strong>Microscopic hematuria</strong> is risk-stratified (age, sex, smoking, degree of hematuria, other risk factors). High-risk patients (for example older smokers or more than 25 red cells per high-power field) get CT urography and cystoscopy; low-risk patients (for example a young nonsmoking woman with 3–10 red cells) may be rechecked with a repeat urinalysis or evaluated after shared decision-making with cystoscopy and renal ultrasonography.</li></ol><h3>The solid renal mass</h3><ul><li>Characterise with <strong>renal-protocol CT or MRI</strong> (with contrast): enhancement means a solid tumour, fat means angiomyolipoma. Stage with chest imaging.</li><li><strong>Localised small masses</strong> (up to about 4 cm, T1a): <strong>partial (nephron-sparing) nephrectomy</strong> is preferred, because preserving kidney function lowers later CKD and cardiovascular risk. Thermal ablation or <strong>active surveillance</strong> suits older or frail patients; biopsy helps when the result would change management.</li><li><strong>Larger or central tumours, or renal vein involvement</strong>: radical nephrectomy, with thrombectomy for a vena caval thrombus.</li><li><strong>After nephrectomy</strong> for clear cell RCC at high risk of recurrence, adjuvant pembrolizumab is an option.</li><li><strong>Metastatic clear cell RCC</strong>: first-line systemic therapy is an <strong>immune checkpoint inhibitor-based combination</strong> (a PD-1 inhibitor with a VEGF receptor tyrosine kinase inhibitor, or nivolumab with ipilimumab). Conventional chemotherapy and hormonal therapy do not work.</li><li><strong>VHL disease</strong>: lifelong surveillance (abdominal MRI, eye examination, brain and spine MRI, plasma metanephrines); small renal tumours are watched and removed with nephron-sparing surgery once they reach about 3 cm; belzutifan is an option for VHL tumours that do not need immediate surgery.</li></ul><h3>Bladder cancer</h3><ul><li><strong>Transurethral resection of bladder tumour (TURBT)</strong> diagnoses, stages (it must sample detrusor muscle) and treats non-invasive disease.</li><li><strong>Non-muscle-invasive, low risk</strong>: TURBT, often with one immediate post-resection instillation of intravesical chemotherapy, then surveillance cystoscopy.</li><li><strong>Non-muscle-invasive, high grade or carcinoma in situ</strong>: TURBT (repeat resection for T1 tumours) followed by <strong>intravesical BCG</strong> induction and maintenance. Radical cystectomy if BCG fails.</li><li><strong>Muscle-invasive (T2 or higher), no metastases</strong>: <strong>cisplatin-based neoadjuvant chemotherapy followed by radical cystectomy</strong> with urinary diversion; bladder-sparing trimodality therapy (maximal TURBT with chemoradiation) is an alternative for selected patients.</li><li><strong>Upper-tract urothelial carcinoma</strong>: CT urography and ureteroscopy with biopsy; usually nephroureterectomy, with endoscopic treatment for small low-grade tumours. Test for Lynch syndrome when appropriate.</li></ul><h3>Wilms tumour</h3><ul><li>An abdominal mass in a young child: <strong>abdominal ultrasonography first</strong> (solid versus cystic, kidney versus adrenal, renal vein and caval involvement), then CT or MRI of the abdomen and CT of the chest. Avoid repeated palpation, which can rupture the capsule.</li><li>Treatment combines nephrectomy and chemotherapy (plus radiation for advanced stages); cure rates are high for favourable histology.</li><li><strong>Surveillance</strong> in Beckwith-Wiedemann syndrome and other high-risk syndromes: abdominal (renal) ultrasonography every 3 months until about age 7; in Beckwith-Wiedemann, alpha-fetoprotein is also checked in early childhood for hepatoblastoma.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> hematuria in a patient taking warfarin or a DOAC is still worked up fully; anticoagulation unmasks lesions, it does not explain them.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.03.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Gross and Microscopic Hematuria",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK534213/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Clear Cell Cancer",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK563230/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Bladder Cancer",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536923/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Wilms Tumor",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK442004/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Bladder Cancer",
+     "url": "https://medlineplus.gov/bladdercancer.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110202-1",
+   "caption": "Figure. Urinary tract tumours by cell of origin: clear cell and papillary carcinoma from the proximal tubule, oncocytoma and chromophobe carcinoma from intercalated cells, urothelial carcinoma from the lining of the pelvis, ureter and bladder, and Wilms tumour from metanephric blastema.",
+   "file": "figures/s23c-fig110202-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110202-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Painless gross hematuria in a smoker",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110202-1-01",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 27-year-old man has had headaches and unsteady gait for 2 months. MRI of the brain shows a cystic cerebellar mass with an enhancing mural nodule. Ophthalmoscopy shows a vascular retinal tumour. CT of the abdomen shows several solid enhancing masses in both kidneys and multiple renal and pancreatic cysts. His father had a kidney removed for cancer at age 39. Loss of the protein encoded by the gene most likely mutated in this patient causes tumour growth mainly by which of the following mechanisms?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Accumulation of hypoxia-inducible factor under normal oxygen tension"
+    },
+    {
+     "label": "B",
+     "html": "Constitutive activation of the MET receptor tyrosine kinase"
+    },
+    {
+     "label": "C",
+     "html": "Failure to repair DNA base mismatches"
+    },
+    {
+     "label": "D",
+     "html": "Loss of the Rb-mediated G1 cell-cycle checkpoint"
+    },
+    {
+     "label": "E",
+     "html": "Unrestrained mTORC1 activity from loss of the hamartin-tuberin complex"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Cerebellar and retinal <strong>hemangioblastomas</strong>, pancreatic cysts and bilateral early renal tumours in a family is <strong>von Hippel-Lindau disease</strong>. The VHL protein is part of an E3 ubiquitin ligase that marks <strong>HIF</strong> for proteasomal degradation when oxygen is present. Without it, HIF accumulates and drives VEGF and other angiogenic genes, producing highly vascular tumours such as <strong>clear cell renal cell carcinoma</strong>.</p><p><strong>Takeaway:</strong> VHL loss stabilises HIF, causing angiogenesis and clear cell RCC.</p>",
+   "whyNot": {
+    "B": "Activating MET mutations cause hereditary papillary renal carcinoma without hemangioblastomas.",
+    "C": "Mismatch repair defects (Lynch syndrome) cause colon, endometrial and upper-tract urothelial cancers.",
+    "D": "Rb loss causes retinoblastoma and osteosarcoma; retinal hemangioblastoma is a different, vascular tumour.",
+    "E": "Loss of hamartin or tuberin is tuberous sclerosis, which causes angiomyolipomas rather than hemangioblastomas."
+   },
+   "objective": "Explain how VHL loss causes clear cell renal cell carcinoma through HIF accumulation.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [
+    "genetics",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "von Hippel-Lindau",
+    "renal cell carcinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-02",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 66-year-old man has 3 weeks of constipation, thirst and confusion. He has smoked for 45 years. CT shows an 8-cm solid, enhancing mass in the right kidney and no bone lesions. Laboratory studies show:</p><table><tr><th>Test</th><th>Result</th></tr><tr><td>Calcium, total</td><td>13.4 mg/dL</td></tr><tr><td>Phosphorus</td><td>2.2 mg/dL</td></tr><tr><td>Parathyroid hormone</td><td>8 pg/mL (N = 10–65)</td></tr><tr><td>25-hydroxyvitamin D</td><td>32 ng/mL (N = 30–100)</td></tr></table><p>Which of the following is the most likely cause of his hypercalcemia?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Calcitriol produced by tumour macrophages"
+    },
+    {
+     "label": "B",
+     "html": "Ectopic parathyroid hormone secretion"
+    },
+    {
+     "label": "C",
+     "html": "Osteolytic metastases releasing calcium"
+    },
+    {
+     "label": "D",
+     "html": "Primary hyperparathyroidism"
+    },
+    {
+     "label": "E",
+     "html": "Tumour secretion of PTH-related peptide"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>A large renal mass with hypercalcemia, low phosphorus and a <strong>suppressed PTH</strong> without bone metastases is <strong>humoral hypercalcemia of malignancy</strong>. Renal cell carcinoma commonly secretes <strong>PTH-related peptide</strong>, which binds the PTH receptor in bone and kidney, raising bone resorption and renal calcium reabsorption and causing phosphaturia. Normal PTH physiology then shuts PTH off.</p><p><strong>Takeaway:</strong> hypercalcemia with low PTH and a renal mass means PTHrP from renal cell carcinoma.</p>",
+   "whyNot": {
+    "A": "Calcitriol-mediated hypercalcemia is typical of lymphoma and granulomatous disease; renal cell carcinoma does not usually work this way.",
+    "B": "True ectopic PTH secretion is extremely rare, and PTH here is suppressed.",
+    "C": "CT shows no bone lesions; local osteolysis is more typical of myeloma and breast cancer.",
+    "D": "Primary hyperparathyroidism causes high or inappropriately normal PTH, not suppressed PTH."
+   },
+   "objective": "Recognise PTH-related peptide secretion by renal cell carcinoma as a cause of hypercalcemia with suppressed PTH.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.16.02.01"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal cell carcinoma",
+    "paraneoplastic",
+    "hypercalcemia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 62-year-old man has noticed a soft, painless swelling in the left scrotum for 3 weeks. Examination while standing shows a mass of dilated, tortuous veins above the left testis; it does not decrease in size when he lies flat. The right side is normal. Which of the following is the most likely explanation?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Compression of the left common iliac vein by the right common iliac artery"
+    },
+    {
+     "label": "B",
+     "html": "Incompetent valves in the left internal spermatic vein"
+    },
+    {
+     "label": "C",
+     "html": "Left testicular torsion"
+    },
+    {
+     "label": "D",
+     "html": "Obstruction of the left renal vein by tumour"
+    },
+    {
+     "label": "E",
+     "html": "Thrombosis of the inferior vena cava below the renal veins"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The <strong>left gonadal (testicular) vein drains into the left renal vein</strong>, whereas the right drains directly into the inferior vena cava. A new left varicocele in an older man that <strong>does not empty when he lies down</strong> suggests obstruction of venous outflow, classically <strong>renal cell carcinoma growing into the left renal vein</strong>. It should prompt renal imaging.</p><p><strong>Takeaway:</strong> a new left varicocele that persists supine in an older man means look for a left renal mass.</p>",
+   "whyNot": {
+    "A": "Compression of the left common iliac vein (May-Thurner) causes left leg swelling and DVT, not a varicocele.",
+    "B": "Valve incompetence causes the common idiopathic varicocele of adolescents, which empties when lying down.",
+    "C": "Torsion is acutely painful with a high-riding, tender testis, not a painless bag of veins.",
+    "E": "Infrarenal caval thrombosis would cause bilateral leg edema and, if anything, right-sided or bilateral changes."
+   },
+   "objective": "Link a nondecompressing left varicocele to obstruction of the left renal vein by renal cell carcinoma.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.14.04.01"
+   ],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_history_pe"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal cell carcinoma",
+    "varicocele"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old boy is evaluated for a large abdominal mass found by his mother while bathing him. He was born without irises and has hypospadias and an undescended testis; his developmental milestones have been delayed. Examination shows a smooth, firm left flank mass that does not cross the midline. Blood pressure is 118/76 mm Hg. Which of the following genetic abnormalities is most likely present?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Amplification of <em>MYCN</em> on chromosome 2p"
+    },
+    {
+     "label": "B",
+     "html": "Deletion of chromosome 11p13"
+    },
+    {
+     "label": "C",
+     "html": "Imprinting defect at chromosome 11p15.5"
+    },
+    {
+     "label": "D",
+     "html": "Loss of chromosome 3p"
+    },
+    {
+     "label": "E",
+     "html": "Trisomy 18"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Aniridia, genitourinary anomalies, developmental delay and a renal mass make up <strong>WAGR syndrome</strong>. It is caused by a contiguous <strong>deletion at 11p13</strong> that removes <em>PAX6</em> (aniridia) and the tumour suppressor <em>WT1</em> (Wilms tumour and genital anomalies). The mass is a Wilms tumour (nephroblastoma).</p><p><strong>Takeaway:</strong> WAGR = 11p13 deletion of <em>WT1</em> and <em>PAX6</em>.</p>",
+   "whyNot": {
+    "A": "<em>MYCN</em> amplification marks aggressive neuroblastoma, an adrenal tumour that often crosses the midline.",
+    "C": "Imprinting defects at 11p15.5 cause Beckwith-Wiedemann syndrome (macroglossia, omphalocele, overgrowth), not aniridia.",
+    "D": "Loss of 3p is the signature of clear cell renal carcinoma in adults.",
+    "E": "Trisomy 18 causes clenched hands, rocker-bottom feet and heart defects, and few patients survive infancy."
+   },
+   "objective": "Identify WAGR syndrome and its 11p13 deletion as a cause of Wilms tumour.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Wilms tumour",
+    "WAGR"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 2-day-old girl born at 39 weeks weighs 4,700 g (above the 97th percentile). She has a large protruding tongue, a small omphalocele and an enlarged left arm and leg. Her blood glucose is 32 mg/dL. Which of the following best describes the genetic basis of her condition and the tumour she must be screened for?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Abnormal imprinting at 11p15.5 with <em>IGF2</em> overexpression; Wilms tumour"
+    },
+    {
+     "label": "B",
+     "html": "Germline <em>RB1</em> mutation; retinoblastoma"
+    },
+    {
+     "label": "C",
+     "html": "Germline <em>VHL</em> mutation; clear cell renal cell carcinoma"
+    },
+    {
+     "label": "D",
+     "html": "Inactivating <em>TSC2</em> mutation; angiomyolipoma"
+    },
+    {
+     "label": "E",
+     "html": "<em>NF1</em> mutation; neurofibromas"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Macrosomia, macroglossia, omphalocele, lateralised overgrowth and neonatal hypoglycemia are <strong>Beckwith-Wiedemann syndrome</strong>. It results from abnormal <strong>imprinting at 11p15.5</strong> (for example loss of maternal methylation, paternal uniparental disomy), which commonly causes overexpression of the growth factor <em>IGF2</em>. Children are at increased risk of embryonal tumours, especially <strong>Wilms tumour</strong> and hepatoblastoma, and are screened with regular abdominal ultrasound.</p><p><strong>Takeaway:</strong> Beckwith-Wiedemann is an 11p15.5 imprinting disorder that predisposes to Wilms tumour.</p>",
+   "whyNot": {
+    "B": "<em>RB1</em> mutations cause retinoblastoma and osteosarcoma, not overgrowth or omphalocele.",
+    "C": "VHL disease presents with hemangioblastomas and renal cancer in young adults, not neonatal overgrowth.",
+    "D": "<em>TSC2</em> mutations cause tuberous sclerosis (seizures, skin lesions, angiomyolipomas).",
+    "E": "Neurofibromatosis type 1 causes café-au-lait macules and neurofibromas, not overgrowth at birth."
+   },
+   "objective": "Recognise Beckwith-Wiedemann syndrome as an imprinting disorder at 11p15.5 that predisposes to Wilms tumour.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "Beckwith-Wiedemann",
+    "imprinting",
+    "Wilms tumour"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 49-year-old woman with granulomatosis with polyangiitis was treated with oral cyclophosphamide for 18 months several years ago. She now has painless gross hematuria. Cystoscopy shows a papillary bladder tumour. Which of the following compounds is most responsible for the bladder toxicity of her past treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Acrolein"
+    },
+    {
+     "label": "B",
+     "html": "Aminolevulinic acid"
+    },
+    {
+     "label": "C",
+     "html": "Formaldehyde"
+    },
+    {
+     "label": "D",
+     "html": "Mesna"
+    },
+    {
+     "label": "E",
+     "html": "Methotrexate polyglutamate"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Cyclophosphamide is activated in the liver; one of its metabolites, <strong>acrolein</strong>, is excreted in urine and injures the urothelium. It causes acute <strong>hemorrhagic cystitis</strong> and raises the long-term risk of <strong>urothelial carcinoma</strong>, especially after prolonged oral therapy. Vigorous hydration and <strong>mesna</strong>, which binds acrolein in urine, reduce the risk.</p><p><strong>Takeaway:</strong> cyclophosphamide's metabolite acrolein causes hemorrhagic cystitis and bladder cancer; mesna protects.</p>",
+   "whyNot": {
+    "B": "Aminolevulinic acid accumulates in lead poisoning and acute porphyrias, not with cyclophosphamide.",
+    "C": "Formaldehyde comes from methanol metabolism (to formic acid) and is not the bladder toxin of cyclophosphamide.",
+    "D": "Mesna is the protective agent that binds acrolein; it is not toxic to the bladder.",
+    "E": "Methotrexate polyglutamates are intracellular active forms of methotrexate, a different drug."
+   },
+   "objective": "Identify acrolein as the cyclophosphamide metabolite causing hemorrhagic cystitis and bladder cancer.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "cyclophosphamide",
+    "urothelial carcinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 64-year-old woman took over-the-counter analgesic combinations containing phenacetin daily for back pain for more than 20 years. Ten years ago she passed tissue fragments in her urine during an episode of flank pain. She now has painless gross hematuria. CT urography shows a filling defect in the right renal pelvis. A tumour of which of the following cell types is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Collecting duct epithelium"
+    },
+    {
+     "label": "B",
+     "html": "Intercalated cells"
+    },
+    {
+     "label": "C",
+     "html": "Metanephric blastema"
+    },
+    {
+     "label": "D",
+     "html": "Proximal tubule epithelium"
+    },
+    {
+     "label": "E",
+     "html": "Urothelium"
+    }
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>Long-term use of <strong>phenacetin</strong>-containing analgesic mixtures causes analgesic nephropathy with <strong>papillary necrosis</strong> (the sloughed papillae she passed) and a markedly raised risk of <strong>urothelial carcinoma of the renal pelvis</strong> and ureter. A filling defect in the renal pelvis with hematuria fits an upper-tract urothelial tumour.</p><p><strong>Takeaway:</strong> phenacetin causes papillary necrosis and upper-tract urothelial carcinoma.</p>",
+   "whyNot": {
+    "A": "Collecting duct carcinoma is rare and arises in the medulla rather than as a pelvic filling defect; it is not linked to phenacetin.",
+    "B": "Intercalated cells give rise to oncocytoma and chromophobe carcinoma, which are parenchymal masses.",
+    "C": "Metanephric blastema gives rise to Wilms tumour in children.",
+    "D": "Proximal tubule cells give rise to clear cell and papillary renal cell carcinoma in the cortex, not the pelvis."
+   },
+   "objective": "Associate phenacetin analgesic use with papillary necrosis and urothelial carcinoma of the renal pelvis.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "phenacetin",
+    "upper tract urothelial carcinoma"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 71-year-old man has high-grade noninvasive papillary urothelial carcinoma of the bladder with adjacent carcinoma in situ, completely resected transurethrally. He is scheduled for weekly instillations of an agent into the bladder through a catheter for 6 weeks. During treatment he develops dysuria, frequency and low-grade fever, which resolve within 48 hours after each dose. Which of the following best describes the agent and how it works?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "An alkylating agent that cross-links tumour DNA"
+    },
+    {
+     "label": "B",
+     "html": "An antibody that blocks PD-1 on T cells"
+    },
+    {
+     "label": "C",
+     "html": "An inhibitor of VEGF receptor tyrosine kinases"
+    },
+    {
+     "label": "D",
+     "html": "A live attenuated mycobacterium that triggers a local immune response against tumour cells"
+    },
+    {
+     "label": "E",
+     "html": "A topoisomerase II inhibitor that stops DNA replication"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Intravesical <strong>bacillus Calmette-Guérin (BCG)</strong>, a live attenuated strain of <em>Mycobacterium bovis</em>, is standard after resection of high-grade non-muscle-invasive bladder cancer and carcinoma in situ. It attaches to urothelium and recruits a local inflammatory, largely <strong>Th1-type immune response</strong> (cytokines, macrophages, T and NK cells) that destroys residual tumour cells. Transient cystitis and low-grade fever are expected; persistent high fever suggests disseminated BCG infection.</p><p><strong>Takeaway:</strong> intravesical BCG is live <em>M. bovis</em> immunotherapy for high-risk non-muscle-invasive bladder cancer.</p>",
+   "whyNot": {
+    "A": "Intravesical alkylating or cytotoxic chemotherapy (for example mitomycin) is used, but this pattern of weekly immunotherapy for carcinoma in situ with febrile cystitis is BCG.",
+    "B": "PD-1 inhibitors are given intravenously, mainly for advanced or BCG-unresponsive disease.",
+    "C": "VEGF receptor inhibitors are oral drugs for metastatic renal cell carcinoma.",
+    "E": "Topoisomerase II inhibitors are cytotoxic drugs given systemically, not live organisms."
+   },
+   "objective": "Describe intravesical BCG as live attenuated M. bovis immunotherapy for non-muscle-invasive bladder cancer.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "BCG",
+    "bladder cancer"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 61-year-old woman with metastatic clear cell renal cell carcinoma starts an oral drug. Over the next 2 months her blood pressure rises from 128/80 to 162/98 mm Hg, she develops painful, thickened skin on her palms and soles, and her urine dipstick shows 2+ protein. TSH rises to 11 μU/mL. Which of the following is the most likely mechanism of the drug?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antagonism of the androgen receptor"
+    },
+    {
+     "label": "B",
+     "html": "Blockade of CTLA-4 on T cells"
+    },
+    {
+     "label": "C",
+     "html": "Inhibition of microtubule polymerisation"
+    },
+    {
+     "label": "D",
+     "html": "Inhibition of the VEGF receptor tyrosine kinase"
+    },
+    {
+     "label": "E",
+     "html": "Inhibition of topoisomerase I"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Clear cell RCC depends on HIF-driven <strong>VEGF</strong> signalling, and oral <strong>VEGF receptor tyrosine kinase inhibitors</strong> (sunitinib, pazopanib, axitinib, cabozantinib) are a core treatment. Their class effects follow from blocking VEGF: <strong>hypertension</strong> and <strong>proteinuria</strong> (loss of VEGF support for endothelium and podocytes), hand-foot skin reaction, impaired wound healing and, with sunitinib especially, <strong>hypothyroidism</strong>.</p><p><strong>Takeaway:</strong> hypertension, proteinuria, hand-foot reaction and hypothyroidism on an oral RCC drug point to a VEGF receptor TKI.</p>",
+   "whyNot": {
+    "A": "Androgen receptor antagonists treat prostate cancer and cause gynecomastia and hot flashes.",
+    "B": "CTLA-4 blockers (ipilimumab) are intravenous and cause immune-mediated colitis, hepatitis and hypophysitis, not hand-foot reaction and proteinuria.",
+    "C": "Microtubule inhibitors cause neuropathy and myelosuppression and are not used for RCC.",
+    "E": "Topoisomerase I inhibitors (irinotecan, topotecan) cause diarrhea and myelosuppression and are not RCC drugs."
+   },
+   "objective": "Link the adverse-effect profile of VEGF receptor tyrosine kinase inhibitors to their use in renal cell carcinoma.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal cell carcinoma",
+    "tyrosine kinase inhibitor"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-01",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set110202-1",
+   "setOrder": 1,
+   "stemHtml": "<p>A 69-year-old man noticed red urine with small clots twice last week. He has no dysuria, fever or flank pain. He has smoked 1 pack daily for 45 years and takes apixaban for atrial fibrillation. Blood pressure is 134/80 mm Hg. Examination is unremarkable. Urinalysis shows many red blood cells with normal shape, no casts and no protein; urine culture is negative. Serum creatinine is 0.9 mg/dL. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Attribute the bleeding to apixaban and repeat urinalysis in 3 months"
+    },
+    {
+     "label": "B",
+     "html": "CT urography and cystoscopy"
+    },
+    {
+     "label": "C",
+     "html": "Renal ultrasonography only"
+    },
+    {
+     "label": "D",
+     "html": "Stop apixaban and observe"
+    },
+    {
+     "label": "E",
+     "html": "Urine cytology only"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Gross hematuria without infection is the most important warning sign of urinary tract cancer, and as a long-term smoker he is <strong>high risk</strong>. He needs a full evaluation of the upper tract with <strong>multiphase CT urography</strong> and of the bladder with <strong>cystoscopy</strong>. Anticoagulation does not explain hematuria; it often unmasks an underlying lesion.</p><p><strong>Takeaway:</strong> gross hematuria, even on anticoagulants, needs CT urography plus cystoscopy.</p>",
+   "whyNot": {
+    "A": "Blaming the anticoagulant delays the diagnosis of a possible cancer.",
+    "C": "Ultrasonography misses small upper-tract urothelial tumours and does not assess the bladder adequately; it is for low-risk patients or those who cannot have CT contrast.",
+    "D": "Stopping a needed anticoagulant without evaluation exposes him to stroke and still leaves the cause unknown.",
+    "E": "Cytology has low sensitivity for low-grade tumours and cannot replace imaging and cystoscopy."
+   },
+   "objective": "Evaluate gross hematuria in a high-risk patient with CT urography and cystoscopy.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hematuria",
+    "bladder cancer"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-02",
+   "exam": "step2ck",
+   "format": "sequential",
+   "setId": "s23c-set110202-1",
+   "setOrder": 2,
+   "stemHtml": "<p>CT urography in the patient shows a 2-cm enhancing lesion on the left lateral bladder wall and normal upper tracts. Transurethral resection removes the tumour completely. Pathology shows high-grade noninvasive papillary urothelial carcinoma (Ta) with adjacent carcinoma in situ; detrusor muscle in the specimen is free of tumour. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "External-beam radiation to the bladder"
+    },
+    {
+     "label": "B",
+     "html": "Intravesical BCG induction followed by maintenance therapy"
+    },
+    {
+     "label": "C",
+     "html": "Neoadjuvant cisplatin-based chemotherapy and radical cystectomy"
+    },
+    {
+     "label": "D",
+     "html": "Surveillance cystoscopy alone"
+    },
+    {
+     "label": "E",
+     "html": "Systemic pembrolizumab"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>He has <strong>high-risk non-muscle-invasive bladder cancer</strong> (high grade with carcinoma in situ). After complete resection, <strong>intravesical BCG</strong>, an induction course followed by maintenance instillations, reduces recurrence and progression to muscle invasion. Cystoscopy and cytology surveillance follow; radical cystectomy is reserved for BCG failure or very high-risk features.</p><p><strong>Takeaway:</strong> high-grade non-muscle-invasive bladder cancer or carcinoma in situ: TURBT then intravesical BCG.</p>",
+   "whyNot": {
+    "A": "Radiation is not standard for non-muscle-invasive disease.",
+    "C": "Neoadjuvant chemotherapy with cystectomy is the standard for muscle-invasive (T2 or higher) disease, which he does not have.",
+    "D": "Surveillance alone suits low-grade, low-risk tumours; high-grade disease with carcinoma in situ is likely to recur and progress.",
+    "E": "Systemic checkpoint inhibitors are reserved for BCG-unresponsive or advanced disease."
+   },
+   "objective": "Treat high-risk non-muscle-invasive bladder cancer with intravesical BCG after TURBT.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bladder cancer",
+    "BCG"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 34-year-old woman has a routine examination before starting a new job. She has no symptoms, takes no medications and has never smoked. A urine dipstick is positive (1+) for blood; she is not menstruating. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT urography"
+    },
+    {
+     "label": "B",
+     "html": "Cystoscopy"
+    },
+    {
+     "label": "C",
+     "html": "Microscopic examination of the urine sediment"
+    },
+    {
+     "label": "D",
+     "html": "Renal biopsy"
+    },
+    {
+     "label": "E",
+     "html": "Urine cytology"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>A positive dipstick detects the peroxidase activity of heme, so it is also positive with myoglobin and free hemoglobin. <strong>Microscopy</strong> is needed to confirm true hematuria (3 or more red cells per high-power field) before any further evaluation. If it is confirmed, the next steps depend on risk; a young, nonsmoking woman with a few red cells is low risk.</p><p><strong>Takeaway:</strong> confirm a positive dipstick with urine microscopy before working up hematuria.</p>",
+   "whyNot": {
+    "A": "CT urography is for confirmed hematuria in higher-risk patients, not an unconfirmed dipstick result.",
+    "B": "Cystoscopy is not indicated before hematuria is confirmed, and she is low risk.",
+    "D": "Biopsy is for suspected glomerular disease with proteinuria, dysmorphic red cells or casts or declining function.",
+    "E": "Cytology is not part of the initial evaluation of microscopic hematuria."
+   },
+   "objective": "Confirm dipstick hematuria with urine microscopy.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.03.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "hematuria"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 56-year-old man has CT for diverticulitis that incidentally shows a 2.8-cm solid mass in the lower pole of the right kidney. Renal-protocol CT shows that the mass enhances avidly and contains no fat. There is no renal vein involvement, lymphadenopathy or distant metastasis; chest CT is normal. He is otherwise healthy, and his eGFR is 82 mL/min/1.73 m². Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Active surveillance with CT every 6 months"
+    },
+    {
+     "label": "B",
+     "html": "Partial nephrectomy"
+    },
+    {
+     "label": "C",
+     "html": "Radical nephrectomy"
+    },
+    {
+     "label": "D",
+     "html": "Systemic immunotherapy"
+    },
+    {
+     "label": "E",
+     "html": "Systemic VEGF receptor tyrosine kinase inhibitor"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>An enhancing solid renal mass without fat is presumed to be <strong>renal cell carcinoma</strong>. For a localised tumour of 4 cm or less (T1a) in a fit patient, <strong>partial (nephron-sparing) nephrectomy</strong> cures most patients and preserves kidney function, which lowers his later risk of CKD and cardiovascular disease.</p><p><strong>Takeaway:</strong> small localised renal masses in fit patients: partial nephrectomy.</p>",
+   "whyNot": {
+    "A": "Active surveillance suits older or frail patients with small masses; in a healthy 56-year-old it risks progression.",
+    "C": "Radical nephrectomy is for larger or central tumours not amenable to partial resection; here it would sacrifice nephrons unnecessarily.",
+    "D": "Systemic therapy is for metastatic or high-risk disease, not localised small tumours.",
+    "E": "VEGF receptor inhibitors are used for metastatic disease, not as primary treatment of a resectable tumour."
+   },
+   "objective": "Treat a small localised renal mass in a fit patient with partial nephrectomy.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal cell carcinoma",
+    "small renal mass"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-05",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 63-year-old woman had a radical nephrectomy for clear cell renal cell carcinoma 2 years ago. She now has a cough and a 5-kg weight loss. CT shows multiple bilateral pulmonary nodules up to 2 cm and two lytic lesions in the pelvis; biopsy of a lung nodule confirms metastatic clear cell carcinoma. She is fully active, and her blood counts, calcium and liver tests are normal. Which of the following is the most appropriate first-line systemic treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Cisplatin and gemcitabine"
+    },
+    {
+     "label": "B",
+     "html": "Doxorubicin and ifosfamide"
+    },
+    {
+     "label": "C",
+     "html": "Immune checkpoint inhibitor-based combination therapy"
+    },
+    {
+     "label": "D",
+     "html": "Medroxyprogesterone acetate"
+    },
+    {
+     "label": "E",
+     "html": "Whole-lung radiation therapy"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>For <strong>metastatic clear cell renal cell carcinoma</strong>, first-line treatment is an <strong>immune checkpoint inhibitor-based combination</strong>: a PD-1 inhibitor with a VEGF receptor tyrosine kinase inhibitor (for example pembrolizumab with axitinib or lenvatinib, or nivolumab with cabozantinib), or nivolumab with ipilimumab. These combinations improved survival over a tyrosine kinase inhibitor alone. Bone metastases may also need radiation for pain and a bone-protective agent.</p><p><strong>Takeaway:</strong> metastatic clear cell RCC is treated first with checkpoint inhibitor-based combinations, not chemotherapy.</p>",
+   "whyNot": {
+    "A": "Platinum chemotherapy is used for urothelial carcinoma; RCC is largely resistant to cytotoxic drugs.",
+    "B": "Sarcoma chemotherapy regimens have no role in clear cell RCC.",
+    "D": "Progestins were used historically with minimal benefit and are no longer recommended.",
+    "E": "Radiation can palliate individual symptomatic lesions but is not systemic therapy for widespread disease."
+   },
+   "objective": "Choose immune checkpoint inhibitor-based combination therapy for metastatic clear cell renal cell carcinoma.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "renal cell carcinoma",
+    "immunotherapy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-06",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 3-year-old girl is brought to the clinic because her father felt a hard lump on the right side of her abdomen while dressing her. She is otherwise well. Blood pressure is 112/72 mm Hg (above the 95th percentile for her age and height). Examination shows a smooth, firm, nontender mass in the right flank that does not cross the midline. Urinalysis shows microscopic hematuria. Which of the following is the most appropriate initial diagnostic study?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Abdominal ultrasonography"
+    },
+    {
+     "label": "B",
+     "html": "Bone marrow aspiration"
+    },
+    {
+     "label": "C",
+     "html": "Fine-needle aspiration of the mass"
+    },
+    {
+     "label": "D",
+     "html": "Plain abdominal radiography"
+    },
+    {
+     "label": "E",
+     "html": "Urine homovanillic acid and vanillylmandelic acid"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A unilateral flank mass with hypertension and hematuria in a preschool child suggests <strong>Wilms tumour</strong>. <strong>Abdominal ultrasonography</strong> is the first study: it shows whether the mass is solid or cystic, whether it arises from the kidney or adrenal, and whether tumour extends into the renal vein or inferior vena cava. CT or MRI of the abdomen and chest CT follow for staging. Repeated palpation should be avoided because it can rupture the tumour.</p><p><strong>Takeaway:</strong> abdominal mass in a young child: ultrasound first.</p>",
+   "whyNot": {
+    "B": "Marrow aspiration stages neuroblastoma; Wilms tumour rarely involves marrow.",
+    "C": "Needle aspiration of a suspected Wilms tumour risks tumour spill and upstaging.",
+    "D": "Plain films add little; they may show calcification in neuroblastoma but cannot characterise the mass.",
+    "E": "Urine catecholamine metabolites help diagnose neuroblastoma, which usually crosses the midline; imaging should come first."
+   },
+   "objective": "Choose abdominal ultrasonography as the initial study for a suspected Wilms tumour.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Wilms tumour",
+    "pediatrics"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-07",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 4-month-old boy with Beckwith-Wiedemann syndrome, confirmed by methylation testing at 11p15.5, is brought for a well-child visit. He had an omphalocele repaired at birth and neonatal hypoglycemia that has resolved. He is growing along the 95th percentile. Examination shows macroglossia and asymmetric enlargement of the right leg. Which of the following is the most appropriate surveillance for tumours?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Abdominal ultrasonography every 3 months and serum alpha-fetoprotein"
+    },
+    {
+     "label": "B",
+     "html": "Chest radiography once a year until 10 years of age"
+    },
+    {
+     "label": "C",
+     "html": "MRI of the brain once a year until 5 years of age"
+    },
+    {
+     "label": "D",
+     "html": "No surveillance unless a mass is felt on examination"
+    },
+    {
+     "label": "E",
+     "html": "Urine catecholamine metabolites every 6 months until age 10"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Children with Beckwith-Wiedemann syndrome have a raised risk of embryonal tumours in early childhood, mainly <strong>Wilms tumour</strong> and <strong>hepatoblastoma</strong>. Surveillance with <strong>abdominal ultrasonography every 3 months until about 7 years</strong> finds Wilms tumours at a lower stage, and <strong>alpha-fetoprotein</strong> is measured regularly in the first years of life to detect hepatoblastoma.</p><p><strong>Takeaway:</strong> Beckwith-Wiedemann: ultrasound every 3 months until about 7, plus AFP in early childhood.</p>",
+   "whyNot": {
+    "B": "Chest radiographs do not detect the abdominal embryonal tumours this syndrome predisposes to.",
+    "C": "Brain tumours are not a characteristic risk in Beckwith-Wiedemann syndrome.",
+    "D": "Waiting for a palpable mass leads to later-stage diagnosis; structured surveillance is recommended.",
+    "E": "Neuroblastoma is not the main tumour risk in Beckwith-Wiedemann syndrome."
+   },
+   "objective": "Arrange abdominal ultrasound and AFP surveillance in Beckwith-Wiedemann syndrome.",
+   "areas": [
+    "usmle2026.11.02.02",
+    "usmle2026.11.07.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_health_maintenance"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "Beckwith-Wiedemann",
+    "tumour surveillance"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110202-2-08",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 66-year-old man with painless gross hematuria has cystoscopy and transurethral resection of a 4-cm bladder tumour. Pathology shows high-grade urothelial carcinoma invading the detrusor (muscularis propria). CT of the chest, abdomen and pelvis shows no lymphadenopathy or distant metastases. His creatinine clearance is 78 mL/min, hearing is normal and he is fully active. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Intravesical BCG induction and maintenance"
+    },
+    {
+     "label": "B",
+     "html": "Neoadjuvant cisplatin-based chemotherapy followed by radical cystectomy"
+    },
+    {
+     "label": "C",
+     "html": "Partial cystectomy without systemic therapy"
+    },
+    {
+     "label": "D",
+     "html": "Repeat transurethral resection and surveillance cystoscopy"
+    },
+    {
+     "label": "E",
+     "html": "Systemic immune checkpoint inhibitor alone"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Tumour invading the <strong>muscularis propria</strong> is <strong>muscle-invasive bladder cancer</strong> (at least T2). For localised disease in a patient fit for cisplatin, <strong>neoadjuvant cisplatin-based combination chemotherapy followed by radical cystectomy</strong> with pelvic lymph node dissection improves survival over surgery alone. Bladder-sparing trimodality therapy is an alternative for selected patients.</p><p><strong>Takeaway:</strong> muscle-invasive bladder cancer: neoadjuvant cisplatin-based chemotherapy, then radical cystectomy.</p>",
+   "whyNot": {
+    "A": "BCG treats non-muscle-invasive disease and cannot control a tumour that has invaded the detrusor.",
+    "C": "Partial cystectomy is suitable only for rare, solitary tumours in favourable sites, and omitting neoadjuvant chemotherapy loses its survival benefit.",
+    "D": "Surveillance after resection is inadequate once the tumour has invaded muscle.",
+    "E": "Checkpoint inhibitors alone are for metastatic or cisplatin-ineligible settings, not first-line curative treatment here."
+   },
+   "objective": "Treat localised muscle-invasive bladder cancer with neoadjuvant cisplatin-based chemotherapy and radical cystectomy.",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [
+    "statpearls"
+   ],
+   "figureIds": [],
+   "tags": [
+    "bladder cancer",
+    "cystectomy"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110202-01",
+   "frontHtml": "Most common renal cell carcinoma subtype, cell of origin and chromosome change?",
+   "backHtml": "Clear cell (about 70–75%), proximal tubule, loss of 3p with <em>VHL</em> inactivation.",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-02",
+   "frontHtml": "What does the VHL protein normally do?",
+   "backHtml": "It is part of an E3 ubiquitin ligase that targets HIF for degradation when oxygen is present; loss lets HIF drive VEGF.",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-03",
+   "frontHtml": "Which chromosomal and gene changes go with papillary renal cell carcinoma?",
+   "backHtml": "Sporadic tumours often gain chromosomes 7 and 17; the hereditary papillary form carries activating <em>MET</em> variants.",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-04",
+   "frontHtml": "Renal medullary carcinoma occurs in which population?",
+   "backHtml": "Young people with sickle cell trait; highly aggressive.",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-05",
+   "frontHtml": "Four paraneoplastic hormones of renal cell carcinoma?",
+   "backHtml": "Erythropoietin (polycythemia), PTHrP (hypercalcemia), renin (hypertension), ACTH (Cushing syndrome).",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-06",
+   "frontHtml": "Why can renal cell carcinoma cause a left varicocele that persists when lying down?",
+   "backHtml": "The left gonadal vein drains into the left renal vein, which the tumour can obstruct.",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-07",
+   "frontHtml": "Adverse effects of VEGF receptor tyrosine kinase inhibitors used for RCC?",
+   "backHtml": "Hypertension, proteinuria, hand-foot skin reaction, diarrhea, hypothyroidism, poor wound healing.",
+   "sectionId": "s23c-s110202-1-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-08",
+   "frontHtml": "Wilms tumour: histology pattern and cell of origin?",
+   "backHtml": "Triphasic (blastema, epithelium, stroma); persistent metanephric blastema.",
+   "sectionId": "s23c-s110202-1-2",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-09",
+   "frontHtml": "WAGR syndrome genetics?",
+   "backHtml": "11p13 deletion removing <em>WT1</em> and <em>PAX6</em> (Wilms, aniridia, GU anomalies, developmental delay).",
+   "sectionId": "s23c-s110202-1-2",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-10",
+   "frontHtml": "Beckwith-Wiedemann: locus, mechanism and tumours?",
+   "backHtml": "11p15.5 imprinting defect (often <em>IGF2</em> overexpression); Wilms tumour and hepatoblastoma.",
+   "sectionId": "s23c-s110202-1-2",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-11",
+   "frontHtml": "Leading risk factor for urothelial carcinoma, and occupational carcinogens?",
+   "backHtml": "Cigarette smoking; aromatic amines (benzidine, 2-naphthylamine) in dye, rubber and leather work.",
+   "sectionId": "s23c-s110202-1-2",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-12",
+   "frontHtml": "Cyclophosphamide bladder toxin and its antidote?",
+   "backHtml": "Acrolein (hemorrhagic cystitis, bladder cancer); mesna plus hydration.",
+   "sectionId": "s23c-s110202-1-2",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-13",
+   "frontHtml": "Bladder adenocarcinoma at the dome suggests what origin?",
+   "backHtml": "A urachal remnant.",
+   "sectionId": "s23c-s110202-1-2",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-14",
+   "frontHtml": "Gross hematuria in a smoker on an anticoagulant: evaluation?",
+   "backHtml": "CT urography plus cystoscopy; anticoagulation does not explain hematuria.",
+   "sectionId": "s23c-s110202-2-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-15",
+   "frontHtml": "Small (up to 4 cm) localised renal mass in a fit patient: treatment?",
+   "backHtml": "Partial (nephron-sparing) nephrectomy; ablation or surveillance if frail.",
+   "sectionId": "s23c-s110202-2-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-16",
+   "frontHtml": "Bladder cancer: non-muscle-invasive high grade vs muscle-invasive treatment?",
+   "backHtml": "NMIBC high grade or CIS: TURBT then intravesical BCG. MIBC: neoadjuvant cisplatin-based chemotherapy then radical cystectomy.",
+   "sectionId": "s23c-s110202-2-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110202-17",
+   "frontHtml": "First-line systemic therapy for metastatic clear cell RCC?",
+   "backHtml": "Immune checkpoint inhibitor-based combination (PD-1 inhibitor plus VEGFR TKI, or nivolumab plus ipilimumab).",
+   "sectionId": "s23c-s110202-2-1",
+   "areas": [
+    "usmle2026.11.02.02"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

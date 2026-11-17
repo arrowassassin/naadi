@@ -1,1 +1,2136 @@
-[]
+[
+ {
+  "id": "s23c-c110101-01",
+  "frontHtml": "Coagulase-negative staphylococcus, novobiocin resistant, causing cystitis in a young sexually active woman?",
+  "backHtml": "<em>Staphylococcus saprophyticus</em> (nitrite test often negative).",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-02",
+  "frontHtml": "Which <em>E. coli</em> adhesin is most linked to ascending pyelonephritis?",
+  "backHtml": "P fimbriae (bind galactose-containing glycolipids on uroepithelium). Type 1 (mannose-binding) fimbriae favour bladder colonisation.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-03",
+  "frontHtml": "Alkaline urine (pH above 7.5) and a staghorn calculus suggest what kind of organism and stone?",
+  "backHtml": "A urease producer (classically <em>Proteus mirabilis</em>) and struvite: magnesium ammonium phosphate.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-04",
+  "frontHtml": "Which urine microscopy finding places an infection in the kidney rather than the bladder?",
+  "backHtml": "White blood cell casts: casts form only in renal tubules.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-05",
+  "frontHtml": "Sterile pyuria with hematuria and moth-eaten calyces: likely diagnosis and test?",
+  "backHtml": "Genitourinary tuberculosis; acid-fast culture and nucleic acid testing of several first-morning urine samples.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-06",
+  "frontHtml": "Bladder cancer type after chronic <em>Schistosoma haematobium</em> infection?",
+  "backHtml": "Squamous cell carcinoma (after squamous metaplasia). Treat the infection with praziquantel.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-07",
+  "frontHtml": "Staghorn stone, nonfunctioning kidney and foamy lipid-laden macrophages that mimic a tumour?",
+  "backHtml": "Xanthogranulomatous pyelonephritis (<em>Proteus</em> or <em>E. coli</em>); usually nephrectomy.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-08",
+  "frontHtml": "Kidney transplant recipient, rising creatinine, urine \"decoy cells\" with intranuclear inclusions: cause and first step?",
+  "backHtml": "BK polyomavirus nephropathy; reduce immunosuppression.",
+  "sectionId": "s23c-s110101-1-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-09",
+  "frontHtml": "First-line options for acute uncomplicated cystitis in a nonpregnant woman?",
+  "backHtml": "Nitrofurantoin 5 days; trimethoprim-sulfamethoxazole 3 days (if resistance below about 20%); single-dose fosfomycin; pivmecillinam. No culture needed for a first typical episode.",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-10",
+  "frontHtml": "Why is nitrofurantoin wrong for pyelonephritis?",
+  "backHtml": "It concentrates in urine but does not reach adequate kidney tissue or blood levels.",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-11",
+  "frontHtml": "When is asymptomatic bacteriuria treated?",
+  "backHtml": "Pregnancy (screen once early with culture) and before a urologic procedure that breaches the mucosa. Not in older adults, diabetes or catheters.",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-12",
+  "frontHtml": "Septic patient with an obstructing ureteral stone and infected urine: next step after antibiotics?",
+  "backHtml": "Urgent decompression (ureteral stent or percutaneous nephrostomy); definitive stone treatment later.",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-13",
+  "frontHtml": "Gas in the renal parenchyma of a patient with diabetes and pyelonephritis: management?",
+  "backHtml": "Emphysematous pyelonephritis: IV antibiotics plus percutaneous drainage; nephrectomy if no improvement.",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-14",
+  "frontHtml": "Pyelonephritis in pregnancy: setting and drug?",
+  "backHtml": "Admit; IV beta-lactam such as ceftriaxone; then suppression or culture surveillance until delivery.",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110101-15",
+  "frontHtml": "Catheter-associated UTI in a catheter in place for more than 2 weeks: what before antibiotics?",
+  "backHtml": "Remove or replace the catheter and culture urine from the new catheter (never from the bag).",
+  "sectionId": "s23c-s110101-2-1",
+  "areas": [
+   "usmle2026.11.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-01",
+  "frontHtml": "Gross hematuria 1–2 days after a sore throat, normal C3: diagnosis and deposit site?",
+  "backHtml": "IgA nephropathy; mesangial IgA deposits.",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-02",
+  "frontHtml": "Hematuria 1–3 weeks after pharyngitis or 3–6 weeks after impetigo, low C3: diagnosis and EM finding?",
+  "backHtml": "Post-streptococcal GN; large subepithelial humps.",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-03",
+  "frontHtml": "Target antigen in anti-GBM disease?",
+  "backHtml": "Noncollagenous domain of the alpha-3 chain of type IV collagen (linear IgG on IF).",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-04",
+  "frontHtml": "Which three groups does immunofluorescence sort crescentic GN into?",
+  "backHtml": "Linear (anti-GBM), granular (immune complex: lupus, IgA, post-infectious), pauci-immune (ANCA).",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-05",
+  "frontHtml": "Lupus nephritis class with subendothelial \"wire-loop\" deposits in half or more of glomeruli?",
+  "backHtml": "Class IV (diffuse proliferative).",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-06",
+  "frontHtml": "Low C3 with normal C4 and C3-dominant deposits without infection: diagnosis and mechanism?",
+  "backHtml": "C3 glomerulopathy; e.g., C3 nephritic factor stabilising C3bBb (alternative pathway).",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-07",
+  "frontHtml": "Hepatitis C, palpable purpura, positive rheumatoid factor and very low C4 with an MPGN pattern?",
+  "backHtml": "Cryoglobulinemic glomerulonephritis.",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-08",
+  "frontHtml": "Hematuria, sensorineural deafness, anterior lenticonus and a split GBM?",
+  "backHtml": "Alport syndrome: type IV collagen defect, most often X-linked <em>COL4A5</em>.",
+  "sectionId": "s23c-s110102-1-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-09",
+  "frontHtml": "Normal light microscopy, negative IF, effaced foot processes?",
+  "backHtml": "Minimal change disease.",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-10",
+  "frontHtml": "Antibody found in most primary membranous nephropathy?",
+  "backHtml": "Anti-phospholipase A2 receptor (PLA2R).",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-11",
+  "frontHtml": "HIV with nephrotic syndrome and large echogenic kidneys: lesion and genetic risk factor?",
+  "backHtml": "Collapsing FSGS; two <em>APOL1</em> risk variants.",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-12",
+  "frontHtml": "Why are nephrotic patients hypercoagulable?",
+  "backHtml": "Urinary loss of antithrombin (and proteins C and S) plus increased hepatic fibrinogen and factor synthesis.",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-13",
+  "frontHtml": "Kimmelstiel-Wilson lesion?",
+  "backHtml": "Nodular PAS-positive mesangial sclerosis of diabetic nephropathy.",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-14",
+  "frontHtml": "Congo red with apple-green birefringence in a patient with long-standing rheumatoid arthritis: protein?",
+  "backHtml": "AA amyloid (from serum amyloid A).",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-15",
+  "frontHtml": "Drug-induced acute interstitial nephritis: hypersensitivity type and urine findings?",
+  "backHtml": "Type IV (T cell); sterile pyuria, white cell casts, sometimes urine eosinophils.",
+  "sectionId": "s23c-s110102-1-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-16",
+  "frontHtml": "ANCA-positive rapidly progressive GN: induction therapy?",
+  "backHtml": "Glucocorticoids plus rituximab or cyclophosphamide, started without waiting for biopsy.",
+  "sectionId": "s23c-s110102-2-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-17",
+  "frontHtml": "Anti-GBM disease: treatment?",
+  "backHtml": "Urgent plasma exchange plus glucocorticoids and cyclophosphamide.",
+  "sectionId": "s23c-s110102-2-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-18",
+  "frontHtml": "First-line treatment of IgA nephropathy with proteinuria?",
+  "backHtml": "Maximal tolerated ACE inhibitor or ARB, blood pressure control, SGLT2 inhibitor when eGFR allows.",
+  "sectionId": "s23c-s110102-2-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-19",
+  "frontHtml": "Lupus patient: when to biopsy the kidney?",
+  "backHtml": "Proteinuria about 0.5 g/day or more, an active sediment, or an unexplained rise in creatinine.",
+  "sectionId": "s23c-s110102-2-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-20",
+  "frontHtml": "Class IV lupus nephritis induction, and the change before pregnancy?",
+  "backHtml": "Glucocorticoids plus mycophenolate (or low-dose cyclophosphamide); switch mycophenolate to azathioprine and continue hydroxychloroquine.",
+  "sectionId": "s23c-s110102-2-1",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-21",
+  "frontHtml": "Child aged 1–10 years with typical nephrotic syndrome: first step?",
+  "backHtml": "Oral glucocorticoids without biopsy (presumed minimal change).",
+  "sectionId": "s23c-s110102-2-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-22",
+  "frontHtml": "PLA2R-negative membranous nephropathy in an older smoker with weight loss: next step?",
+  "backHtml": "Search for a secondary cause, especially cancer (chest CT, age-appropriate screening).",
+  "sectionId": "s23c-s110102-2-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-23",
+  "frontHtml": "Nephrotic patient with sudden flank pain, hematuria and raised LDH: diagnosis and test?",
+  "backHtml": "Renal vein thrombosis; CT or MR venography, then anticoagulation.",
+  "sectionId": "s23c-s110102-2-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110102-24",
+  "frontHtml": "Suspected drug-induced AIN: first step?",
+  "backHtml": "Stop the drug; glucocorticoids if no improvement within several days or severe injury.",
+  "sectionId": "s23c-s110102-2-2",
+  "areas": [
+   "usmle2026.11.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-01",
+  "frontHtml": "ADPKD genes, chromosomes and which is more severe?",
+  "backHtml": "<em>PKD1</em> (chromosome 16, polycystin-1; about 80%, earlier kidney failure) and <em>PKD2</em> (chromosome 4, polycystin-2; milder).",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-02",
+  "frontHtml": "Where do polycystins act, and what second messenger drives ADPKD cyst growth?",
+  "backHtml": "Primary cilium of tubular cells; low intracellular calcium raises cAMP, which drives proliferation and fluid secretion.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-03",
+  "frontHtml": "Most common extrarenal manifestation of ADPKD?",
+  "backHtml": "Liver cysts. Others: berry aneurysms, mitral valve prolapse, colonic diverticula, hernias.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-04",
+  "frontHtml": "ARPKD: gene, renal pattern and obligatory liver lesion?",
+  "backHtml": "<em>PKHD1</em> (fibrocystin); radially dilated collecting ducts with large echogenic kidneys; congenital hepatic fibrosis.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-05",
+  "frontHtml": "Many cysts in small, scarred kidneys after years of dialysis: name and risk?",
+  "backHtml": "Acquired cystic kidney disease; raised risk of renal cell carcinoma.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-06",
+  "frontHtml": "Normal-sized kidneys, recurrent calcium stones, brush-like contrast streaks in the papillae?",
+  "backHtml": "Medullary sponge kidney (dilated medullary collecting ducts); function usually preserved.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-07",
+  "frontHtml": "Three tissues of an angiomyolipoma, and the syndrome when tumours are multiple and bilateral?",
+  "backHtml": "Mature fat, smooth muscle, thick-walled vessels; tuberous sclerosis complex (<em>TSC1</em>/<em>TSC2</em>, mTORC1 overactivity).",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-08",
+  "frontHtml": "Renal oncocytoma: cell of origin, gross look and ultrastructure?",
+  "backHtml": "Collecting duct intercalated cells; mahogany brown with a central stellate scar; cells packed with mitochondria.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-09",
+  "frontHtml": "Why does early ADPKD cause hypertension before GFR falls?",
+  "backHtml": "Cysts compress intrarenal vessels, causing ischemia and renin-angiotensin activation.",
+  "sectionId": "s23c-s110201-1-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-10",
+  "frontHtml": "Bosniak I/II, IIF, III, IV: what to do?",
+  "backHtml": "I/II: nothing. IIF: imaging surveillance. III/IV: surgical excision (often partial nephrectomy), or surveillance if a poor surgical candidate.",
+  "sectionId": "s23c-s110201-2-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-11",
+  "frontHtml": "First-line antihypertensive in ADPKD?",
+  "backHtml": "ACE inhibitor or angiotensin receptor blocker (plus sodium restriction and good water intake).",
+  "sectionId": "s23c-s110201-2-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-12",
+  "frontHtml": "Tolvaptan in ADPKD: who gets it and what must be monitored?",
+  "backHtml": "Adults at risk of rapid progression (large kidney volume for age, fast eGFR fall); monitor liver tests (hepatotoxicity).",
+  "sectionId": "s23c-s110201-2-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-13",
+  "frontHtml": "Antibiotic choice for an infected renal cyst in ADPKD?",
+  "backHtml": "A lipid-soluble, cyst-penetrating agent: fluoroquinolone or trimethoprim-sulfamethoxazole, for several weeks; drain if no response.",
+  "sectionId": "s23c-s110201-2-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-14",
+  "frontHtml": "Which ADPKD patients get screening for intracranial aneurysm, and with what?",
+  "backHtml": "Family history of aneurysm or SAH, prior rupture, high-risk job, major elective surgery; MR angiography.",
+  "sectionId": "s23c-s110201-2-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110201-15",
+  "frontHtml": "Hemodynamically responsive patient with active bleeding from a renal angiomyolipoma: treatment?",
+  "backHtml": "Selective arterial embolisation (kidney-sparing).",
+  "sectionId": "s23c-s110201-2-1",
+  "areas": [
+   "usmle2026.11.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-01",
+  "frontHtml": "Most common renal cell carcinoma subtype, cell of origin and chromosome change?",
+  "backHtml": "Clear cell (about 70–75%), proximal tubule, loss of 3p with <em>VHL</em> inactivation.",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-02",
+  "frontHtml": "What does the VHL protein normally do?",
+  "backHtml": "It is part of an E3 ubiquitin ligase that targets HIF for degradation when oxygen is present; loss lets HIF drive VEGF.",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-03",
+  "frontHtml": "Which chromosomal and gene changes go with papillary renal cell carcinoma?",
+  "backHtml": "Sporadic tumours often gain chromosomes 7 and 17; the hereditary papillary form carries activating <em>MET</em> variants.",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-04",
+  "frontHtml": "Renal medullary carcinoma occurs in which population?",
+  "backHtml": "Young people with sickle cell trait; highly aggressive.",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-05",
+  "frontHtml": "Four paraneoplastic hormones of renal cell carcinoma?",
+  "backHtml": "Erythropoietin (polycythemia), PTHrP (hypercalcemia), renin (hypertension), ACTH (Cushing syndrome).",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-06",
+  "frontHtml": "Why can renal cell carcinoma cause a left varicocele that persists when lying down?",
+  "backHtml": "The left gonadal vein drains into the left renal vein, which the tumour can obstruct.",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-07",
+  "frontHtml": "Adverse effects of VEGF receptor tyrosine kinase inhibitors used for RCC?",
+  "backHtml": "Hypertension, proteinuria, hand-foot skin reaction, diarrhea, hypothyroidism, poor wound healing.",
+  "sectionId": "s23c-s110202-1-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-08",
+  "frontHtml": "Wilms tumour: histology pattern and cell of origin?",
+  "backHtml": "Triphasic (blastema, epithelium, stroma); persistent metanephric blastema.",
+  "sectionId": "s23c-s110202-1-2",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-09",
+  "frontHtml": "WAGR syndrome genetics?",
+  "backHtml": "11p13 deletion removing <em>WT1</em> and <em>PAX6</em> (Wilms, aniridia, GU anomalies, developmental delay).",
+  "sectionId": "s23c-s110202-1-2",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-10",
+  "frontHtml": "Beckwith-Wiedemann: locus, mechanism and tumours?",
+  "backHtml": "11p15.5 imprinting defect (often <em>IGF2</em> overexpression); Wilms tumour and hepatoblastoma.",
+  "sectionId": "s23c-s110202-1-2",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-11",
+  "frontHtml": "Leading risk factor for urothelial carcinoma, and occupational carcinogens?",
+  "backHtml": "Cigarette smoking; aromatic amines (benzidine, 2-naphthylamine) in dye, rubber and leather work.",
+  "sectionId": "s23c-s110202-1-2",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-12",
+  "frontHtml": "Cyclophosphamide bladder toxin and its antidote?",
+  "backHtml": "Acrolein (hemorrhagic cystitis, bladder cancer); mesna plus hydration.",
+  "sectionId": "s23c-s110202-1-2",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-13",
+  "frontHtml": "Bladder adenocarcinoma at the dome suggests what origin?",
+  "backHtml": "A urachal remnant.",
+  "sectionId": "s23c-s110202-1-2",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-14",
+  "frontHtml": "Gross hematuria in a smoker on an anticoagulant: evaluation?",
+  "backHtml": "CT urography plus cystoscopy; anticoagulation does not explain hematuria.",
+  "sectionId": "s23c-s110202-2-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-15",
+  "frontHtml": "Small (up to 4 cm) localised renal mass in a fit patient: treatment?",
+  "backHtml": "Partial (nephron-sparing) nephrectomy; ablation or surveillance if frail.",
+  "sectionId": "s23c-s110202-2-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-16",
+  "frontHtml": "Bladder cancer: non-muscle-invasive high grade vs muscle-invasive treatment?",
+  "backHtml": "NMIBC high grade or CIS: TURBT then intravesical BCG. MIBC: neoadjuvant cisplatin-based chemotherapy then radical cystectomy.",
+  "sectionId": "s23c-s110202-2-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110202-17",
+  "frontHtml": "First-line systemic therapy for metastatic clear cell RCC?",
+  "backHtml": "Immune checkpoint inhibitor-based combination (PD-1 inhibitor plus VEGFR TKI, or nivolumab plus ipilimumab).",
+  "sectionId": "s23c-s110202-2-1",
+  "areas": [
+   "usmle2026.11.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-01",
+  "frontHtml": "Which proteins does the dipstick protein pad detect best, and which does it miss?",
+  "backHtml": "Albumin; it misses light chains and other low-molecular-weight proteins.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-02",
+  "frontHtml": "Dysmorphic red cells (acanthocytes) and red cell casts: source of hematuria?",
+  "backHtml": "Glomerular.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-03",
+  "frontHtml": "Hematuria with clots: glomerular or nonglomerular?",
+  "backHtml": "Nonglomerular (urinary tract below the glomerulus); clots argue against glomerular bleeding.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-04",
+  "frontHtml": "Heme-positive dipstick, no red cells, clear plasma, very high CK?",
+  "backHtml": "Myoglobinuria from rhabdomyolysis.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-05",
+  "frontHtml": "Heme-positive dipstick, no red cells, pink plasma, low haptoglobin?",
+  "backHtml": "Hemoglobinuria from intravascular hemolysis.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-06",
+  "frontHtml": "Beta-2 microglobulin in urine with little albumin: what kind of proteinuria and where is the lesion?",
+  "backHtml": "Tubular proteinuria; proximal tubule.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-07",
+  "frontHtml": "Muddy brown granular casts?",
+  "backHtml": "Acute tubular necrosis.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-08",
+  "frontHtml": "Waxy and broad casts?",
+  "backHtml": "Advanced chronic kidney disease (stasis in dilated atrophic tubules).",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-09",
+  "frontHtml": "Maltese-cross bodies under polarised light in urine?",
+  "backHtml": "Oval fat bodies (lipiduria) of nephrotic syndrome.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-10",
+  "frontHtml": "Hexagonal urine crystals?",
+  "backHtml": "Cystine (cystinuria).",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-11",
+  "frontHtml": "Urine that turns black on standing, dark ear cartilage, early arthritis?",
+  "backHtml": "Alkaptonuria: homogentisate 1,2-dioxygenase deficiency.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-12",
+  "frontHtml": "Polyuria with urine osmolality at or above plasma osmolality?",
+  "backHtml": "Solute (osmotic) diuresis: glucose, urea, mannitol, saline.",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-13",
+  "frontHtml": "Painless hematuria and a urine concentrating defect in a young person with HbS 40%?",
+  "backHtml": "Sickle cell trait (medullary sickling, papillary injury).",
+  "sectionId": "s23c-s110301-1-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-14",
+  "frontHtml": "Definition of microscopic hematuria?",
+  "backHtml": "3 or more red cells per high-power field on microscopy of a properly collected specimen.",
+  "sectionId": "s23c-s110301-2-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-15",
+  "frontHtml": "High-risk microscopic hematuria (age 60+, more than 30 pack-years, more than 25 RBC/hpf, or any gross hematuria): evaluation?",
+  "backHtml": "Cystoscopy and CT urography.",
+  "sectionId": "s23c-s110301-2-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-16",
+  "frontHtml": "Does anticoagulation explain hematuria?",
+  "backHtml": "No; evaluate as for any patient.",
+  "sectionId": "s23c-s110301-2-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-17",
+  "frontHtml": "Isolated low-grade proteinuria in a healthy adolescent: first test?",
+  "backHtml": "First-morning urine (or split upright and recumbent collection) for orthostatic proteinuria.",
+  "sectionId": "s23c-s110301-2-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110301-18",
+  "frontHtml": "Sudden oliguria in an older man on anticholinergics or opioids: first step?",
+  "backHtml": "Bladder scan and catheterisation to relieve retention.",
+  "sectionId": "s23c-s110301-2-1",
+  "areas": [
+   "usmle2026.11.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-01",
+  "frontHtml": "Efferent arteriolar constriction (angiotensin II): effect on RPF, GFR and filtration fraction?",
+  "backHtml": "RPF down, GFR up (modestly), filtration fraction up.",
+  "sectionId": "s23c-s110401-1-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-02",
+  "frontHtml": "NSAIDs affect glomerular hemodynamics how?",
+  "backHtml": "Block prostaglandin-mediated afferent dilation: RPF and GFR fall, filtration fraction about unchanged.",
+  "sectionId": "s23c-s110401-1-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-03",
+  "frontHtml": "Clearance formula?",
+  "backHtml": "C = (U × V) / P. Inulin clearance = GFR; PAH clearance ≈ effective renal plasma flow.",
+  "sectionId": "s23c-s110401-1-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-04",
+  "frontHtml": "Why does creatinine clearance slightly overestimate GFR?",
+  "backHtml": "Creatinine is also secreted by the proximal tubule.",
+  "sectionId": "s23c-s110401-1-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-05",
+  "frontHtml": "Which nephron segment and transporter do thiazides block, and what happens to urine calcium?",
+  "backHtml": "Distal convoluted tubule NCC (Na⁺-Cl⁻ cotransporter); urine calcium falls.",
+  "sectionId": "s23c-s110401-1-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-06",
+  "frontHtml": "Urine indices of prerenal AKI?",
+  "backHtml": "FENa below 1%, urine Na below 20 mEq/L, urine osmolality above 500, BUN:Cr above 20, bland sediment.",
+  "sectionId": "s23c-s110401-1-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-07",
+  "frontHtml": "Urine sediment of acute tubular necrosis?",
+  "backHtml": "Muddy brown granular casts and renal tubular epithelial cells; FENa above 2%.",
+  "sectionId": "s23c-s110401-1-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-08",
+  "frontHtml": "Which nephron segments are most vulnerable to ischemic ATN?",
+  "backHtml": "Straight proximal tubule and medullary thick ascending limb.",
+  "sectionId": "s23c-s110401-1-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-09",
+  "frontHtml": "Dipstick 3+ blood, almost no red cells on microscopy?",
+  "backHtml": "Myoglobinuria (rhabdomyolysis) or hemoglobinuria.",
+  "sectionId": "s23c-s110401-1-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-10",
+  "frontHtml": "Mineral pattern of CKD-mineral bone disorder?",
+  "backHtml": "High phosphate and FGF23, low calcitriol, low calcium, high PTH (secondary hyperparathyroidism).",
+  "sectionId": "s23c-s110401-1-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-11",
+  "frontHtml": "Arteriolar lesion of malignant hypertension versus long-standing benign hypertension?",
+  "backHtml": "Malignant: hyperplastic (onion-skin) arteriolosclerosis with fibrinoid necrosis. Benign: hyaline arteriolosclerosis.",
+  "sectionId": "s23c-s110401-1-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-12",
+  "frontHtml": "Radiolucent kidney stone in acidic urine?",
+  "backHtml": "Uric acid; prevent with potassium citrate (urine pH about 6–6.5).",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-13",
+  "frontHtml": "Hexagonal crystals in urine?",
+  "backHtml": "Cystine (cystinuria: defective proximal reabsorption of cystine, ornithine, lysine, arginine).",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-14",
+  "frontHtml": "Why does ileal disease cause calcium oxalate stones?",
+  "backHtml": "Fatty acids bind luminal calcium, leaving oxalate free to be absorbed in the colon (enteric hyperoxaluria).",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-15",
+  "frontHtml": "Type 1 (distal) RTA: potassium, urine pH, stones?",
+  "backHtml": "Hypokalemia; urine pH above 5.5; calcium phosphate stones and nephrocalcinosis.",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-16",
+  "frontHtml": "Type 4 RTA: cause and potassium?",
+  "backHtml": "Low aldosterone effect (often hyporeninemic hypoaldosteronism in diabetes, or drugs); hyperkalemia; urine pH below 5.5.",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-17",
+  "frontHtml": "Glycosuria with normal blood glucose, hypophosphatemia, hypouricemia and acidosis?",
+  "backHtml": "Fanconi syndrome (proximal tubule); causes include tenofovir, ifosfamide, myeloma, Wilson disease, cystinosis.",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-18",
+  "frontHtml": "Hypertension, hypokalemia, low renin and low aldosterone, responds to amiloride?",
+  "backHtml": "Liddle syndrome (ENaC gain of function).",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-19",
+  "frontHtml": "Bartter versus Gitelman: urine calcium and magnesium?",
+  "backHtml": "Bartter (thick ascending limb): high urine calcium. Gitelman (DCT): low urine calcium and hypomagnesemia.",
+  "sectionId": "s23c-s110401-1-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-20",
+  "frontHtml": "KDIGO definition of AKI?",
+  "backHtml": "Creatinine up at least 0.3 mg/dL in 48 h, or at least 1.5 × baseline within 7 days, or urine output below 0.5 mL/kg/h for 6 h.",
+  "sectionId": "s23c-s110401-2-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-21",
+  "frontHtml": "Indications for urgent dialysis?",
+  "backHtml": "Refractory acidosis, refractory hyperkalemia, dialysable poisons, refractory volume overload, uremic pericarditis, encephalopathy or bleeding.",
+  "sectionId": "s23c-s110401-2-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-22",
+  "frontHtml": "Tumor lysis prevention in a high-risk patient?",
+  "backHtml": "IV fluids plus rasburicase (check G6PD first); allopurinol for intermediate risk.",
+  "sectionId": "s23c-s110401-2-1",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-23",
+  "frontHtml": "How does KDIGO grade albuminuria by urine albumin-to-creatinine ratio?",
+  "backHtml": "A1: under 30 mg/g (normal to mildly raised). A2: 30 to 300 mg/g (moderately raised). A3: over 300 mg/g (severely raised).",
+  "sectionId": "s23c-s110401-2-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-24",
+  "frontHtml": "Type 2 diabetes with CKD and persistent albuminuria on max ACE inhibitor/ARB plus SGLT2 inhibitor, normal potassium: next drug?",
+  "backHtml": "Finerenone (if eGFR at least 25).",
+  "sectionId": "s23c-s110401-2-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-25",
+  "frontHtml": "Anemia of CKD: what before an ESA, and what hemoglobin target to avoid?",
+  "backHtml": "Replete iron first; avoid targeting 13 g/dL or more (stroke, thrombosis).",
+  "sectionId": "s23c-s110401-2-2",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-26",
+  "frontHtml": "Uncomplicated distal ureteral stone 5–10 mm: treatment?",
+  "backHtml": "Trial of passage with an NSAID and tamsulosin; strain urine; remove if not passed in about 4–6 weeks.",
+  "sectionId": "s23c-s110401-2-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-27",
+  "frontHtml": "Recurrent calcium stones with hypercalciuria: prevention?",
+  "backHtml": "Fluids (urine above 2.5 L/day), low sodium, normal calcium intake, thiazide.",
+  "sectionId": "s23c-s110401-2-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110401-28",
+  "frontHtml": "Best imaging for suspected kidney stone, and the exception?",
+  "backHtml": "Noncontrast low-dose CT; ultrasound first in pregnancy and children.",
+  "sectionId": "s23c-s110401-2-3",
+  "areas": [
+   "usmle2026.11.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-01",
+  "frontHtml": "Three triggers of renin release from juxtaglomerular cells?",
+  "backHtml": "Low afferent arteriolar pressure, low NaCl delivery to the macula densa, and sympathetic beta-1 stimulation.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-02",
+  "frontHtml": "Unilateral renal artery stenosis: renin, aldosterone and potassium?",
+  "backHtml": "High renin, high aldosterone (secondary), low potassium; renin lateralises to the stenotic kidney.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-03",
+  "frontHtml": "Atherosclerotic vs fibromuscular renal artery stenosis: location?",
+  "backHtml": "Atherosclerotic: ostium and proximal artery. Fibromuscular dysplasia: mid and distal artery.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-04",
+  "frontHtml": "\"String of beads\" renal artery in a young woman?",
+  "backHtml": "Fibromuscular dysplasia (usually medial fibroplasia).",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-05",
+  "frontHtml": "Why does GFR fall after an ACE inhibitor in renal artery stenosis?",
+  "backHtml": "Loss of angiotensin II constriction of the efferent arteriole lowers glomerular capillary pressure.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-06",
+  "frontHtml": "Benign nephrosclerosis: vessel lesion and gross kidney?",
+  "backHtml": "Hyaline arteriolosclerosis; small, symmetric, finely granular kidneys.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-07",
+  "frontHtml": "Malignant nephrosclerosis: vessel lesions and gross kidney?",
+  "backHtml": "Hyperplastic (onion-skin) arteriolosclerosis and fibrinoid necrosis; flea-bitten petechial surface.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-08",
+  "frontHtml": "Gross and microscopic appearance of an embolic renal infarct?",
+  "backHtml": "Pale, wedge-shaped, base on the capsule; coagulative necrosis.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-09",
+  "frontHtml": "Cholesterol emboli: biopsy finding and clinical clues?",
+  "backHtml": "Biconvex needle-shaped clefts in small arteries; livedo, blue toes with pulses, eosinophilia, low complement, weeks after a procedure.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-10",
+  "frontHtml": "Nephrotic syndrome most linked to renal vein thrombosis, and one mechanism?",
+  "backHtml": "Membranous nephropathy; urinary loss of antithrombin (plus more hepatic procoagulants).",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-11",
+  "frontHtml": "New left varicocele with nephrotic syndrome?",
+  "backHtml": "Left renal vein thrombosis (left gonadal vein drains into the left renal vein).",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-12",
+  "frontHtml": "Risk factors for scleroderma renal crisis?",
+  "backHtml": "Early diffuse cutaneous disease, anti-RNA polymerase III, high-dose glucocorticoids.",
+  "sectionId": "s23c-s110501-1-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-13",
+  "frontHtml": "Clues to renovascular hypertension?",
+  "backHtml": "Onset before 30 or new severe hypertension after 55, creatinine rise above about 30% on ACE inhibitor/ARB, flash pulmonary edema, asymmetric kidneys, abdominal bruit.",
+  "sectionId": "s23c-s110501-2-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-14",
+  "frontHtml": "Atherosclerotic renal artery stenosis with controlled BP and stable creatinine: management?",
+  "backHtml": "Optimal medical therapy (BP control including ACE inhibitor/ARB, statin, antiplatelet, smoking cessation); no routine stenting.",
+  "sectionId": "s23c-s110501-2-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-15",
+  "frontHtml": "Revascularisation triggers in atherosclerotic renal artery stenosis?",
+  "backHtml": "Recurrent flash pulmonary edema, rapidly falling kidney function from the stenosis, truly refractory hypertension.",
+  "sectionId": "s23c-s110501-2-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-16",
+  "frontHtml": "Fibromuscular dysplasia with hypertension: treatment?",
+  "backHtml": "Percutaneous transluminal angioplasty without stenting; image head-to-pelvis arteries once.",
+  "sectionId": "s23c-s110501-2-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-17",
+  "frontHtml": "Scleroderma renal crisis: treatment?",
+  "backHtml": "Captopril titrated rapidly; continue even with rising creatinine or dialysis.",
+  "sectionId": "s23c-s110501-2-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110501-18",
+  "frontHtml": "Flank pain, hematuria, very high LDH, normal noncontrast CT in atrial fibrillation: next test and treatment?",
+  "backHtml": "Contrast CT (CT angiography) for renal infarction; anticoagulation.",
+  "sectionId": "s23c-s110501-2-1",
+  "areas": [
+   "usmle2026.11.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-01",
+  "frontHtml": "Which autonomic outflow contracts the detrusor, and through which receptor?",
+  "backHtml": "Parasympathetic S2–S4 (pelvic splanchnic nerves) via muscarinic M3 receptors.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-02",
+  "frontHtml": "Sympathetic receptors that help the bladder store urine?",
+  "backHtml": "Beta-3 relaxes the detrusor; alpha-1 closes the bladder neck and internal sphincter (T10–L2, hypogastric nerve).",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-03",
+  "frontHtml": "Bladder pattern after spinal cord injury between the pons and the sacral cord?",
+  "backHtml": "Detrusor overactivity with detrusor-sphincter dyssynergia: high pressures, reflux, hydronephrosis.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-04",
+  "frontHtml": "Bladder pattern with a lesion above the pons (stroke, dementia)?",
+  "backHtml": "Detrusor overactivity (urge incontinence) with coordinated sphincter relaxation and a low residual.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-05",
+  "frontHtml": "Bladder pattern with cauda equina, sacral cord or diabetic neuropathy?",
+  "backHtml": "Underactive detrusor with retention, large residual and overflow incontinence.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-06",
+  "frontHtml": "Mechanism of mirabegron and vibegron?",
+  "backHtml": "Beta-3 agonists: G<sub>s</sub>, more cAMP, detrusor relaxation during storage; can raise blood pressure.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-07",
+  "frontHtml": "Urethral segment torn in pelvic fracture versus straddle injury?",
+  "backHtml": "Pelvic fracture: posterior (membranous) urethra. Straddle injury: anterior (bulbar) urethra.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-08",
+  "frontHtml": "Why does urine from a bulbar urethral tear spread to the scrotum and abdominal wall but not the thighs?",
+  "backHtml": "Colles (and Scarpa) fascia attach to the fascia lata.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-09",
+  "frontHtml": "Blow to a full bladder: where is the tear and what lab change can follow?",
+  "backHtml": "The dome (intraperitoneal rupture); peritoneal reabsorption of urine raises serum urea nitrogen and creatinine.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-10",
+  "frontHtml": "Boy with oligohydramnios, thick bladder, dilated posterior urethra and bilateral hydronephrosis?",
+  "backHtml": "Posterior urethral valves; confirm with voiding cystourethrography; endoscopic valve ablation.",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-11",
+  "frontHtml": "Two causes of post-obstructive diuresis?",
+  "backHtml": "Excretion of retained urea, salt and water, plus a temporary concentrating defect (medullary washout, less aquaporin-2).",
+  "sectionId": "s23c-s110601-1-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-12",
+  "frontHtml": "Blood at the meatus after pelvic fracture: next step?",
+  "backHtml": "Retrograde urethrogram before any urethral catheter; if disrupted, suprapubic cystostomy.",
+  "sectionId": "s23c-s110601-2-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-13",
+  "frontHtml": "Extraperitoneal versus intraperitoneal bladder rupture: treatment?",
+  "backHtml": "Extraperitoneal: catheter drainage about 2 weeks (most). Intraperitoneal: surgical repair.",
+  "sectionId": "s23c-s110601-2-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-14",
+  "frontHtml": "Best test for suspected bladder rupture?",
+  "backHtml": "CT (or conventional) cystography with retrograde filling to full distension.",
+  "sectionId": "s23c-s110601-2-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-15",
+  "frontHtml": "Stable patient with high-grade renal laceration and no active bleeding: management?",
+  "backHtml": "Nonoperative (admit, bed rest, serial hemoglobin); embolise active extravasation; operate for instability.",
+  "sectionId": "s23c-s110601-2-1",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-16",
+  "frontHtml": "First-line treatment of stress urinary incontinence?",
+  "backHtml": "Pelvic floor muscle training (and weight loss); then pessary or midurethral sling.",
+  "sectionId": "s23c-s110601-2-2",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-17",
+  "frontHtml": "Preferred drug for overactive bladder in a frail or cognitively impaired older adult?",
+  "backHtml": "A beta-3 agonist (mirabegron or vibegron) rather than an antimuscarinic.",
+  "sectionId": "s23c-s110601-2-2",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-18",
+  "frontHtml": "Long-term management of an areflexic neurogenic bladder with a large residual?",
+  "backHtml": "Clean intermittent catheterisation every 4–6 hours.",
+  "sectionId": "s23c-s110601-2-2",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-19",
+  "frontHtml": "Secondary enuresis: what to check first?",
+  "backHtml": "Urinalysis (glucose, specific gravity, infection) and history for constipation, sleep apnea and stress; diabetes mellitus and insipidus are causes.",
+  "sectionId": "s23c-s110601-2-2",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110601-20",
+  "frontHtml": "Toddler after first febrile UTI: imaging order?",
+  "backHtml": "Renal and bladder ultrasonography; voiding cystourethrography if abnormal or after a second febrile UTI.",
+  "sectionId": "s23c-s110601-2-2",
+  "areas": [
+   "usmle2026.11.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-01",
+  "frontHtml": "Three embryonic kidneys and the fate of each?",
+  "backHtml": "Pronephros regresses; mesonephros is interim and its duct becomes male ducts and gives the ureteric bud; metanephros is permanent (from week 5).",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-02",
+  "frontHtml": "Ureteric bud derivatives?",
+  "backHtml": "Ureter, renal pelvis, major and minor calyces, collecting ducts.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-03",
+  "frontHtml": "Which parts of the kidney come from the metanephric mesenchyme (metanephric blastema)?",
+  "backHtml": "Everything from the glomerular capsule through the distal convoluted tubule, i.e. the nephron itself; the collecting system comes from the ureteric bud.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-04",
+  "frontHtml": "Signal that drives ureteric bud outgrowth?",
+  "backHtml": "GDNF from the metanephric mesenchyme acting on RET on the bud.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-05",
+  "frontHtml": "What traps a horseshoe kidney, and which syndrome is associated?",
+  "backHtml": "The inferior mesenteric artery; Turner syndrome (also trisomy 18).",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-06",
+  "frontHtml": "Cause of death in Potter sequence?",
+  "backHtml": "Pulmonary hypoplasia from oligohydramnios.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-07",
+  "frontHtml": "Commonest site of congenital urinary obstruction, and why?",
+  "backHtml": "Ureteropelvic junction, the last part of the ureter to canalise (or a crossing vessel).",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-08",
+  "frontHtml": "Complete duplex system: which ureter obstructs and which refluxes?",
+  "backHtml": "Upper-pole ureter inserts low and medial and obstructs (ectopic, ureterocele); lower-pole ureter inserts high and lateral and refluxes.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-09",
+  "frontHtml": "Histology of multicystic dysplastic kidney?",
+  "backHtml": "Noncommunicating cysts with primitive ducts in fibromuscular collars and islands of cartilage.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-10",
+  "frontHtml": "Urine from the umbilicus: which remnant, and what cancer later?",
+  "backHtml": "Patent urachus (allantois); urachal adenocarcinoma at the bladder dome.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-11",
+  "frontHtml": "Bladder exstrophy: defect and associated findings?",
+  "backHtml": "Failed infraumbilical mesoderm over the cloacal membrane; epispadias and pubic diastasis.",
+  "sectionId": "s23c-s110701-1-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-12",
+  "frontHtml": "Mild unilateral prenatal hydronephrosis: when is the newborn scan?",
+  "backHtml": "After about 48 hours of life; early only for bilateral disease or suspected valves.",
+  "sectionId": "s23c-s110701-2-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-13",
+  "frontHtml": "Management of uncomplicated multicystic dysplastic kidney?",
+  "backHtml": "Serial ultrasonography (involution, contralateral growth); check the other kidney; surgery only for complications.",
+  "sectionId": "s23c-s110701-2-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-14",
+  "frontHtml": "Test of drainage and split function in suspected ureteropelvic junction obstruction?",
+  "backHtml": "Diuretic renography (MAG3 with furosemide).",
+  "sectionId": "s23c-s110701-2-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-15",
+  "frontHtml": "Indications for pyeloplasty?",
+  "backHtml": "Symptoms, split function below about 40%, falling function or worsening dilation.",
+  "sectionId": "s23c-s110701-2-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-16",
+  "frontHtml": "Girl always damp but voids normally: first test?",
+  "backHtml": "Renal and bladder ultrasonography (duplex kidney with ectopic upper-pole ureter).",
+  "sectionId": "s23c-s110701-2-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110701-17",
+  "frontHtml": "Renal screening in Turner syndrome?",
+  "backHtml": "Renal ultrasonography at diagnosis for every patient.",
+  "sectionId": "s23c-s110701-2-1",
+  "areas": [
+   "usmle2026.11.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-01",
+  "frontHtml": "ACE inhibitors and ARBs lower GFR by which arteriolar change?",
+  "backHtml": "Dilating the efferent arteriole (removing angiotensin II tone), so glomerular pressure falls.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-02",
+  "frontHtml": "NSAIDs lower GFR by which arteriolar change, and in whom does it matter?",
+  "backHtml": "Afferent constriction from lost prostaglandins; matters in heart failure, cirrhosis, volume depletion, CKD and older age.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-03",
+  "frontHtml": "Calcineurin inhibitors: renal hemodynamic effect and electrolyte effects?",
+  "backHtml": "Afferent arteriolar constriction; hyperkalemia, hypomagnesemia, hypertension; chronic striped interstitial fibrosis.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-04",
+  "frontHtml": "How do aminoglycosides reach and injure proximal tubule cells?",
+  "backHtml": "Bind megalin on the brush border, are endocytosed and accumulate in lysosomes; nonoliguric ATN after 5–10 days.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-05",
+  "frontHtml": "Cisplatin's signature electrolyte problem?",
+  "backHtml": "Renal magnesium wasting (with ATN); prevent injury with vigorous saline hydration.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-06",
+  "frontHtml": "Tenofovir disoproxil kidney toxicity?",
+  "backHtml": "Proximal tubulopathy: Fanconi syndrome (normoglycemic glycosuria, phosphaturia, proximal RTA); less with tenofovir alafenamide.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-07",
+  "frontHtml": "Amphotericin B: which RTA and which electrolytes fall?",
+  "backHtml": "Distal (type 1) RTA with urine pH above 5.5; hypokalemia and hypomagnesemia.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-08",
+  "frontHtml": "How does lithium cause nephrogenic DI?",
+  "backHtml": "Enters principal cells via ENaC and lowers aquaporin-2 expression.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-09",
+  "frontHtml": "Drugs that cause crystal nephropathy?",
+  "backHtml": "IV acyclovir, methotrexate, sulfonamides (sulfadiazine), indinavir; prevent with hydration.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-10",
+  "frontHtml": "Classic drug causes of acute interstitial nephritis?",
+  "backHtml": "Beta-lactams, PPIs, NSAIDs, sulfonamides, rifampin, allopurinol, immune checkpoint inhibitors.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-11",
+  "frontHtml": "Biopsy of drug-induced AIN?",
+  "backHtml": "Interstitial edema with lymphocytes, plasma cells and eosinophils; tubulitis; normal glomeruli.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-12",
+  "frontHtml": "Heroin use is linked to which glomerular lesion?",
+  "backHtml": "Focal segmental glomerulosclerosis.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-13",
+  "frontHtml": "Gadolinium in eGFR below 30 or dialysis can cause what?",
+  "backHtml": "Nephrogenic systemic fibrosis: hardened skin of limbs and trunk with contractures; highest risk with linear agents.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-14",
+  "frontHtml": "Toxic metabolite and antidote for cyclophosphamide hemorrhagic cystitis?",
+  "backHtml": "Acrolein; mesna (a thiol that binds it in urine) plus hydration.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-15",
+  "frontHtml": "Drug classes that cause urinary retention?",
+  "backHtml": "Anticholinergics (antihistamines, tricyclics, antimuscarinics), alpha-1 agonists (decongestants) and opioids.",
+  "sectionId": "s23c-s110801-1-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-16",
+  "frontHtml": "Proven ways to reduce contrast-associated AKI in a high-risk patient?",
+  "backHtml": "Isotonic IV fluids before and after, lowest dose of low/iso-osmolar contrast, pause NSAIDs; N-acetylcysteine does not help.",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-17",
+  "frontHtml": "Creatinine rise after starting an ACE inhibitor that is acceptable?",
+  "backHtml": "Up to about 30%; continue the drug and recheck.",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-18",
+  "frontHtml": "Creatinine up slightly on trimethoprim with unchanged BUN and bland urine?",
+  "backHtml": "Blocked tubular creatinine secretion, not true AKI; cystatin C is unchanged.",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-19",
+  "frontHtml": "Immune checkpoint inhibitor AIN: management?",
+  "backHtml": "Hold the inhibitor and give prednisone (about 0.5–1 mg/kg/day) for moderate or worse injury.",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-20",
+  "frontHtml": "Why does hypokalemia fail to correct on cisplatin?",
+  "backHtml": "Hypomagnesemia keeps ROMK open and potassium is lost; replace magnesium.",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-21",
+  "frontHtml": "Lithium nephrogenic DI when lithium must continue: drug?",
+  "backHtml": "Amiloride (blocks ENaC lithium entry).",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23c-c110801-22",
+  "frontHtml": "Acute urinary retention after starting diphenhydramine in a man with BPH: first step?",
+  "backHtml": "Urethral catheter; then stop the drug and start an alpha-1 blocker.",
+  "sectionId": "s23c-s110801-2-1",
+  "areas": [
+   "usmle2026.11.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ }
+]

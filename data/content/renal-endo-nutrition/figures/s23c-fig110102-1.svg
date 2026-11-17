@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" role="img" aria-label="Where immune deposits sit in the glomerular capillary wall, and the diseases that put them there">
+<title>Glomerular deposit locations</title>
+<defs><marker id="s23c-f110102-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="440" fill="#ffffff"/>
+<text x="360" y="26" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">Glomerular capillary wall: where the immune deposits sit</text>
+<rect x="40" y="50" width="400" height="60" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="240" y="85" font-family="sans-serif" font-size="13" fill="#7f1d1d" text-anchor="middle">Capillary lumen (blood)</text>
+<rect x="40" y="110" width="400" height="14" fill="#e2e8f0" stroke="#334155" stroke-width="1"/>
+<rect x="90" y="110" width="12" height="14" fill="#fee2e2"/>
+<rect x="190" y="110" width="12" height="14" fill="#fee2e2"/>
+<rect x="290" y="110" width="12" height="14" fill="#fee2e2"/>
+<rect x="390" y="110" width="12" height="14" fill="#fee2e2"/>
+<text x="448" y="122" font-family="sans-serif" font-size="11" fill="#0f172a">Fenestrated endothelium</text>
+<rect x="40" y="124" width="400" height="26" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/>
+<line x1="40" y1="137" x2="440" y2="137" stroke="#1d4ed8" stroke-width="3"/>
+<text x="448" y="142" font-family="sans-serif" font-size="11" fill="#0f172a">Glomerular basement membrane</text>
+<path d="M40,150 h30 v14 h14 v-14 h30 v14 h14 v-14 h30 v14 h14 v-14 h30 v14 h14 v-14 h30 v14 h14 v-14 h30 v14 h14 v-14 h30 v14 h14 v-14 h18 v26 h-400 z" fill="#dcfce7" stroke="#334155" stroke-width="1.2"/>
+<text x="448" y="168" font-family="sans-serif" font-size="11" fill="#0f172a">Podocyte foot processes</text>
+<rect x="40" y="190" width="400" height="44" fill="#f8fafc" stroke="#334155" stroke-width="1"/>
+<text x="240" y="217" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle">Urinary (Bowman) space</text>
+<ellipse cx="150" cy="128" rx="18" ry="5" fill="#b45309"/>
+<ellipse cx="330" cy="156" rx="13" ry="9" fill="#7c2d12"/>
+<rect x="226" y="146" width="6" height="12" fill="#a16207"/><rect x="246" y="146" width="6" height="12" fill="#a16207"/>
+<line x1="150" y1="128" x2="150" y2="275" stroke="#334155" stroke-width="1.2" marker-end="url(#s23c-f110102-arrow)"/>
+<line x1="240" y1="152" x2="240" y2="275" stroke="#334155" stroke-width="1.2" marker-end="url(#s23c-f110102-arrow)"/>
+<line x1="330" y1="160" x2="330" y2="275" stroke="#334155" stroke-width="1.2" marker-end="url(#s23c-f110102-arrow)"/>
+<rect x="20" y="280" width="220" height="70" rx="6" fill="#fffbeb" stroke="#b45309"/>
+<text x="30" y="298" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a">Subendothelial (nephritic)</text>
+<text x="30" y="315" font-family="sans-serif" font-size="11" fill="#0f172a">Lupus class III/IV ("wire loops")</text>
+<text x="30" y="331" font-family="sans-serif" font-size="11" fill="#0f172a">Immune-complex MPGN (tram-track)</text>
+<text x="30" y="345" font-family="sans-serif" font-size="11" fill="#0f172a">Near blood: inflammation, low C3</text>
+<rect x="250" y="280" width="220" height="70" rx="6" fill="#fef9c3" stroke="#a16207"/>
+<text x="260" y="298" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a">Subepithelial</text>
+<text x="260" y="315" font-family="sans-serif" font-size="11" fill="#0f172a">Membranous: many small, "spikes"</text>
+<text x="260" y="331" font-family="sans-serif" font-size="11" fill="#0f172a">(nephrotic; PLA2R, lupus class V)</text>
+<text x="260" y="345" font-family="sans-serif" font-size="11" fill="#0f172a">Post-infectious GN: large "humps"</text>
+<rect x="480" y="200" width="220" height="70" rx="6" fill="#eff6ff" stroke="#1d4ed8"/>
+<text x="490" y="218" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a">Linear along the GBM</text>
+<text x="490" y="235" font-family="sans-serif" font-size="11" fill="#0f172a">Anti-GBM disease: IgG against</text>
+<text x="490" y="251" font-family="sans-serif" font-size="11" fill="#0f172a">type IV collagen (alpha-3 chain)</text>
+<text x="490" y="265" font-family="sans-serif" font-size="11" fill="#0f172a">(diabetes: linear IgG, nonspecific)</text>
+<rect x="480" y="280" width="220" height="70" rx="6" fill="#f5f3ff" stroke="#6d28d9"/>
+<text x="490" y="298" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a">Mesangial (not drawn)</text>
+<text x="490" y="315" font-family="sans-serif" font-size="11" fill="#0f172a">IgA nephropathy, IgA vasculitis</text>
+<text x="490" y="331" font-family="sans-serif" font-size="11" fill="#0f172a">Lupus class I/II</text>
+<text x="490" y="345" font-family="sans-serif" font-size="11" fill="#0f172a">Mesangium sits between capillaries</text>
+<rect x="20" y="365" width="680" height="62" rx="6" fill="#f1f5f9" stroke="#334155"/>
+<text x="30" y="385" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a">No deposits on immunofluorescence</text>
+<text x="30" y="403" font-family="sans-serif" font-size="11" fill="#0f172a">Pauci-immune crescentic GN (ANCA vasculitis): nephritic, often rapidly progressive.</text>
+<text x="30" y="419" font-family="sans-serif" font-size="11" fill="#0f172a">Minimal change disease and primary FSGS: nephrotic; electron microscopy shows effaced podocyte foot processes.</text>
+</svg>

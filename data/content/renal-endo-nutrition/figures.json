@@ -1,1 +1,98 @@
-[]
+[
+ {
+  "id": "s23c-fig110101-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Urinary tract infection by level. Most infections ascend from the urethra; fever, flank pain and white blood cell casts place the infection in the kidney.",
+  "file": "figures/s23c-fig110101-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110102-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Where immune deposits sit in the glomerular capillary wall: subendothelial and mesangial deposits drive nephritic inflammation, subepithelial deposits mainly injure podocytes, linear IgG marks anti-GBM disease, and pauci-immune GN has none.",
+  "file": "figures/s23c-fig110102-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110102-2",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Nephritic versus nephrotic: the dominant injury (inflammation versus podocyte damage) predicts the urine, the blood pressure and the complications.",
+  "file": "figures/s23c-fig110102-2.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110201-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Renal cystic disease at a glance: cyst pattern and kidney size separate simple and complex cysts, ADPKD, ARPKD, acquired cystic disease and medullary sponge kidney.",
+  "file": "figures/s23c-fig110201-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110202-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Urinary tract tumours by cell of origin: clear cell and papillary carcinoma from the proximal tubule, oncocytoma and chromophobe carcinoma from intercalated cells, urothelial carcinoma from the lining of the pelvis, ureter and bladder, and Wilms tumour from metanephric blastema.",
+  "file": "figures/s23c-fig110202-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110301-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Urine casts and what each points to. Casts are moulded in tubules, so their contents come from the kidney.",
+  "file": "figures/s23c-fig110301-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110401-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Nephron segments, their main transporters and the diuretic that acts on each (red). Original Naadi diagram.",
+  "file": "figures/s23c-fig110401-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110401-2",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Renal tubular acidosis types 1, 2 and 4 compared: defect, serum potassium, urine pH, stones and classic causes. Original Naadi diagram.",
+  "file": "figures/s23c-fig110401-2.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110501-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Unilateral renal artery stenosis. The stenotic kidney releases renin and depends on angiotensin II constriction of the efferent arteriole; the contralateral kidney suppresses its renin.",
+  "file": "figures/s23c-fig110501-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110601-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Neurogenic bladder by level of lesion: above the pons, the bladder is overactive but coordinated; in the spinal cord above the sacral segments, overactive with detrusor-sphincter dyssynergia; at or below the sacral cord, underactive with retention.",
+  "file": "figures/s23c-fig110601-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110701-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Kidney development: the ureteric bud forms the collecting system and the metanephric mesenchyme forms the nephron; a horseshoe kidney stops ascending under the inferior mesenteric artery.",
+  "file": "figures/s23c-fig110701-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23c-fig110801-1",
+  "chapterId": "s23c-ch11-s1",
+  "caption": "Figure. Where common nephrotoxic drugs act along the nephron, from the glomerular arterioles to the bladder.",
+  "file": "figures/s23c-fig110801-1.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ }
+]

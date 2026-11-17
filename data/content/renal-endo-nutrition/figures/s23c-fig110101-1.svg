@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" role="img" aria-label="Urinary tract infection by level: cystitis in the bladder versus pyelonephritis in the kidney, with the findings that separate them">
+<title>Urinary tract infection by level</title>
+<defs><marker id="s23c-f110101-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="400" fill="#ffffff"/>
+<ellipse cx="110" cy="95" rx="42" ry="62" fill="#fde2e2" stroke="#334155" stroke-width="2"/>
+<ellipse cx="290" cy="95" rx="42" ry="62" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<path d="M128,150 C150,210 175,240 192,262" fill="none" stroke="#334155" stroke-width="5"/>
+<path d="M272,150 C250,210 225,240 208,262" fill="none" stroke="#334155" stroke-width="5"/>
+<path d="M150,262 Q200,248 250,262 Q262,320 200,330 Q138,320 150,262 z" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<line x1="200" y1="330" x2="200" y2="372" stroke="#334155" stroke-width="5"/>
+<line x1="226" y1="372" x2="226" y2="140" stroke="#b45309" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#s23c-f110101-arrow)"/>
+<text x="234" y="385" font-family="sans-serif" font-size="12" fill="#0f172a">Ascending route (most UTIs): perineal flora → urethra → bladder → ureter</text>
+<text x="110" y="30" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Infected kidney</text>
+<text x="290" y="30" font-family="sans-serif" font-size="13" fill="#0f172a" text-anchor="middle">Normal kidney</text>
+<text x="200" y="298" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Bladder</text>
+<rect x="400" y="30" width="300" height="130" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="412" y="52" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7f1d1d">Upper tract: pyelonephritis</text>
+<text x="412" y="74" font-family="sans-serif" font-size="12" fill="#0f172a">• Fever, chills, flank pain, CVA tenderness</text>
+<text x="412" y="94" font-family="sans-serif" font-size="12" fill="#0f172a">• Pyuria plus white blood cell casts</text>
+<text x="412" y="114" font-family="sans-serif" font-size="12" fill="#0f172a">• Neutrophils in tubules and interstitium</text>
+<text x="412" y="134" font-family="sans-serif" font-size="12" fill="#0f172a">• Urine culture before antibiotics; imaging</text>
+<text x="412" y="150" font-family="sans-serif" font-size="12" fill="#0f172a">  only if severe, not improving or obstructed</text>
+<rect x="400" y="200" width="300" height="120" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+<text x="412" y="222" font-family="sans-serif" font-size="14" font-weight="bold" fill="#78350f">Lower tract: cystitis</text>
+<text x="412" y="244" font-family="sans-serif" font-size="12" fill="#0f172a">• Dysuria, frequency, urgency, suprapubic pain</text>
+<text x="412" y="264" font-family="sans-serif" font-size="12" fill="#0f172a">• No fever or flank pain</text>
+<text x="412" y="284" font-family="sans-serif" font-size="12" fill="#0f172a">• Pyuria, bacteriuria, nitrite ±; no casts</text>
+<text x="412" y="304" font-family="sans-serif" font-size="12" fill="#0f172a">• Casts form only in tubules, never in bladder</text>
+<line x1="395" y1="95" x2="160" y2="95" stroke="#334155" stroke-width="1.2" marker-end="url(#s23c-f110101-arrow)"/>
+<line x1="395" y1="262" x2="262" y2="290" stroke="#334155" stroke-width="1.2" marker-end="url(#s23c-f110101-arrow)"/>
+</svg>

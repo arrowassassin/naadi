@@ -1,0 +1,1276 @@
+{
+ "area": "usmle2026.11.05.01",
+ "sections": [
+  {
+   "id": "s23c-s110501-1-1",
+   "exam": "step1",
+   "heading": "Renal vascular disease: renin, nephrosclerosis, infarction, emboli and venous thrombosis",
+   "html": "<p>The kidneys receive about a fifth of the cardiac output, and the juxtaglomerular apparatus turns any fall in their perfusion into a systemic signal. Renal vascular disease therefore shows up two ways: as <strong>hypertension</strong> driven by renin, and as <strong>ischemic injury</strong> to the kidney itself.</p><h3>Renin release and renovascular hypertension</h3><p>Juxtaglomerular (granular) cells of the afferent arteriole release renin in response to three inputs: <strong>low afferent arteriolar pressure</strong> (intrarenal baroreceptor), <strong>low sodium chloride delivery to the macula densa</strong>, and <strong>sympathetic stimulation through beta-1 receptors</strong>. Renin cleaves angiotensinogen to angiotensin I; angiotensin-converting enzyme (mostly in pulmonary endothelium) makes angiotensin II, which constricts arterioles (efferent more than afferent at low concentrations), stimulates aldosterone, enhances proximal sodium reabsorption, and stimulates thirst and ADH.</p>[[figure:s23c-fig110501-1]]<p>In <strong>unilateral renal artery stenosis</strong> the poststenotic kidney releases renin; plasma renin and aldosterone are both high (secondary hyperaldosteronism), so hypokalemia and metabolic alkalosis can occur. The contralateral kidney, exposed to high pressure, suppresses its own renin and excretes sodium. The stenotic kidney keeps its GFR by angiotensin II constriction of the <strong>efferent arteriole</strong>; an ACE inhibitor or ARB removes that support, so the GFR of that kidney falls. If both kidneys (or a solitary kidney) depend on it, serum creatinine rises sharply.</p><table><tr><th></th><th>Atherosclerotic stenosis</th><th>Fibromuscular dysplasia</th></tr><tr><td>Who</td><td>Older adults with vascular risk factors and other atherosclerotic disease</td><td>Mainly women aged about 20–60 years</td></tr><tr><td>Where</td><td>Ostium and proximal third of the renal artery</td><td>Mid and distal renal artery; also carotid and vertebral arteries</td></tr><tr><td>Pathology</td><td>Atheroma with plaque, often bilateral</td><td>Noninflammatory, nonatherosclerotic; most often <strong>medial fibroplasia</strong> with alternating thickening and dilation (\"string of beads\")</td></tr><tr><td>Kidney</td><td>Ischemic nephropathy and progressive CKD possible</td><td>Function usually preserved</td></tr></table><h3>Hypertensive injury of the kidney</h3><table><tr><th></th><th>Benign nephrosclerosis</th><th>Malignant nephrosclerosis</th></tr><tr><td>Setting</td><td>Long-standing hypertension; diabetes and aging also contribute</td><td>Hypertensive emergency (very high pressure with acute organ damage)</td></tr><tr><td>Vessel lesion</td><td><strong>Hyaline arteriolosclerosis</strong>: glassy pink thickening from plasma proteins leaking into the wall</td><td><strong>Hyperplastic arteriolosclerosis</strong> (concentric \"onion-skin\" smooth muscle layers) and <strong>fibrinoid necrosis</strong> of arterioles</td></tr><tr><td>Kidney</td><td>Symmetrically shrunken, finely granular cortical surface; patchy glomerulosclerosis and tubular atrophy</td><td>Pinpoint petechial hemorrhages on the surface (\"flea-bitten\"); acute kidney injury, hematuria, proteinuria</td></tr><tr><td>Labs</td><td>Slowly falling GFR, modest proteinuria</td><td>Rising creatinine; often microangiopathic hemolysis; high renin</td></tr></table><p>In people of West African ancestry, two <strong><em>APOL1</em> risk variants</strong> raise the risk of hypertension-attributed CKD and focal segmental glomerulosclerosis; much kidney disease once labelled \"hypertensive\" in this group is APOL1-associated.</p><h3>Occlusive and embolic disease</h3><ul><li><strong>Renal infarction</strong>: usually embolic (atrial fibrillation, left ventricular thrombus, endocarditis) or from dissection or thrombosis. The kidney has end arteries, so the infarct is a pale, <strong>wedge-shaped zone of coagulative necrosis</strong> with its base on the capsule. Clues: sudden flank or abdominal pain, hematuria, and a very high serum LDH with little or no rise in aminotransferases.</li><li><strong>Atheroembolic (cholesterol crystal) disease</strong>: days to weeks after arterial catheterisation, vascular surgery or anticoagulation, cholesterol crystals from aortic plaque shower small arteries. Biopsy shows <strong>biconvex, needle-shaped clefts</strong> (crystals dissolved during processing) in arcuate and interlobular arteries with surrounding inflammation. Clues: livedo reticularis, painful blue toes with intact pulses, Hollenhorst plaques in retinal arterioles, eosinophilia, eosinophiluria and low complement. Kidney function often declines stepwise and may not recover.</li><li><strong>Renal vein thrombosis</strong>: most strongly linked to <strong>nephrotic syndrome</strong>, especially membranous nephropathy, through urinary loss of anticoagulant proteins (antithrombin), raised hepatic synthesis of fibrinogen and factors V and VIII, platelet activation and hemoconcentration. It can be silent or cause flank pain, hematuria, a rising creatinine and pulmonary emboli. A <strong>left renal vein</strong> thrombus can cause a new left varicocele, because the left gonadal vein drains into the left renal vein. In newborns, dehydration and maternal diabetes predispose.</li></ul><h3>Thrombotic microangiopathy and scleroderma renal crisis</h3><p>Thrombotic microangiopathy (hemolytic uremic syndrome, TTP, malignant hypertension, scleroderma renal crisis, antiphospholipid syndrome, some drugs such as calcineurin inhibitors and gemcitabine) injures endothelium; platelets and fibrin occlude glomerular capillaries and arterioles, and schistocytes appear in blood. In <strong>scleroderma renal crisis</strong>, intimal proliferation narrows interlobular arteries (an \"onion-skin\" look), renal perfusion falls and renin rises sharply, giving abrupt hypertension and kidney failure. Risk is highest in early diffuse cutaneous systemic sclerosis, with anti-RNA polymerase III antibodies, and after higher-dose glucocorticoids. Because the process is renin driven, <strong>ACE inhibitors</strong> are the life-saving treatment.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a rise in creatinine after starting an ACE inhibitor is expected (up to about 30%) and reflects lost efferent tone, not drug toxicity. A much larger rise suggests bilateral renal artery stenosis or volume depletion.</p></div><div class=\"pearl\"><p><strong>Naadi memory aid:</strong> \"<em>Wedge, needle, beads, onion</em>\": wedge infarct from an embolus, needle clefts from cholesterol emboli, a bead string in fibromuscular dysplasia, onion skins in malignant hypertension and scleroderma crisis.</p></div>",
+   "figureIds": [
+    "s23c-fig110501-1"
+   ],
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Renal Artery Stenosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430718/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Fibromuscular Dysplasia",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK493204/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Vein Thrombosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK536971/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Atheroembolic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482417/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "MedlinePlus: Kidney Diseases",
+     "url": "https://medlineplus.gov/kidneydiseases.html",
+     "sourceId": "medlineplus-federal"
+    }
+   ]
+  },
+  {
+   "id": "s23c-s110501-2-1",
+   "exam": "step2ck",
+   "heading": "Renovascular disease: when to suspect it, imaging and treatment",
+   "html": "<h3>When to suspect renovascular hypertension</h3><ul><li>Hypertension starting before about 30 years (think fibromuscular dysplasia, especially in women) or a new, severe or resistant hypertension after about 55 years.</li><li>A rise in serum creatinine of more than about 30% after starting an ACE inhibitor or ARB.</li><li><strong>Recurrent \"flash\" pulmonary edema</strong> with preserved ejection fraction, or unexplained kidney atrophy or a size difference of more than about 1.5 cm between kidneys.</li><li>An abdominal or flank bruit, especially one with a diastolic component; diffuse atherosclerosis.</li><li>Hypokalemia with high renin and high aldosterone (contrast primary aldosteronism: high aldosterone with <em>suppressed</em> renin).</li></ul><h3>Imaging</h3><table><tr><th>Test</th><th>Use</th></tr><tr><td>Renal artery duplex ultrasonography</td><td>Noninvasive first test in many centres; no contrast; operator dependent, limited by obesity and bowel gas</td></tr><tr><td>CT angiography</td><td>Excellent detail of the arteries and the beaded pattern of fibromuscular dysplasia; needs iodinated contrast</td></tr><tr><td>MR angiography</td><td>Alternative when iodinated contrast is undesirable; gadolinium is avoided in severe CKD (eGFR below 30) unless a lower-risk group II agent is used</td></tr><tr><td>Catheter angiography</td><td>Reference standard; done when intervention is planned, with pressure gradients across the lesion</td></tr></table><p>In fibromuscular dysplasia, image the arteries from head to pelvis once (CT angiography), because carotid, vertebral and other lesions and aneurysms are common.</p><h3>Treatment</h3><ul><li><strong>Atherosclerotic stenosis</strong>: <strong>medical therapy first</strong>: blood pressure control (an ACE inhibitor or ARB is appropriate in unilateral disease, with creatinine and potassium checked within 1–2 weeks), a high-intensity statin, antiplatelet therapy, smoking cessation and diabetes control. Large randomised trials found that adding stenting to optimal medical therapy did not reduce cardiovascular or renal events in typical patients. Revascularisation is considered for recurrent flash pulmonary edema, rapidly declining kidney function attributable to the stenosis, or truly refractory hypertension.</li><li><strong>Fibromuscular dysplasia</strong> with hypertension: <strong>percutaneous transluminal angioplasty without a stent</strong>, which often improves or cures the hypertension, especially in younger patients with short-duration disease; antiplatelet therapy is commonly given.</li></ul><h3>Renal infarction</h3><p>Suspect it in a patient with atrial fibrillation or another embolic source who has acute flank pain, hematuria and a high LDH, especially when a stone is not seen. <strong>Contrast-enhanced CT</strong> (CT angiography) shows a wedge-shaped perfusion defect; noncontrast CT for stones is normal. Treat with <strong>anticoagulation</strong> (heparin, then long-term oral anticoagulation for atrial fibrillation); catheter-directed therapy is reserved for selected early, complete occlusions.</p><h3>Atheroembolic kidney disease</h3><p>Kidney function that worsens over days to weeks after catheterisation, with livedo and eosinophilia, is atheroembolic disease, whereas contrast-associated injury appears within 24–72 hours and usually recovers within a week. Treatment is <strong>supportive</strong>: blood pressure control, statin, aspirin, avoidance of further arterial procedures and, if possible, anticoagulation; dialysis if needed. There is no proven role for glucocorticoids.</p><h3>Scleroderma renal crisis</h3><p>Abrupt hypertension (sometimes normotensive), rising creatinine and often microangiopathic hemolysis in a patient with early diffuse systemic sclerosis: start a <strong>short-acting ACE inhibitor (captopril) and titrate quickly</strong>, continuing it even when creatinine rises or dialysis is needed, because many patients recover enough to stop dialysis. Avoid high-dose glucocorticoids in at-risk patients. Prophylactic ACE inhibitors are not recommended.</p><h3>Renal vein thrombosis</h3><p>Diagnose with Doppler ultrasonography, CT or MR venography. Treat acute thrombosis with <strong>anticoagulation</strong>, continued while the nephrotic syndrome persists. In membranous nephropathy with serum albumin very low (well below about 2.5 g/dL) and low bleeding risk, prophylactic anticoagulation is sometimes considered.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in atherosclerotic renal artery stenosis the next step is almost always optimal medical therapy, not stenting. The question often hides one of the few revascularisation triggers, such as recurrent flash pulmonary edema.</p></div>",
+   "figureIds": [],
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "furtherReading": [
+    {
+     "label": "StatPearls: Renal Artery Stenosis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK430718/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Renal Infarction",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK582139/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Scleroderma and Renal Crisis",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482424/",
+     "sourceId": "statpearls"
+    },
+    {
+     "label": "StatPearls: Atheroembolic Kidney Disease",
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK482417/",
+     "sourceId": "statpearls"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "s23c-fig110501-1",
+   "caption": "Figure. Unilateral renal artery stenosis. The stenotic kidney releases renin and depends on angiotensin II constriction of the efferent arteriole; the contralateral kidney suppresses its renin.",
+   "file": "figures/s23c-fig110501-1.svg",
+   "source": "naadi-original-v1",
+   "attribution": null
+  }
+ ],
+ "sets": [
+  {
+   "id": "s23c-set110501-1",
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Sudden flank pain in atrial fibrillation",
+   "source": "naadi-original-v1"
+  }
+ ],
+ "items": [
+  {
+   "id": "s23c-q110501-1-01",
+   "exam": "step1",
+   "format": "chart",
+   "stemHtml": "<p>A 66-year-old man who smokes has blood pressure of 172/100 mm Hg despite three drugs. An epigastric bruit is heard. Serum potassium is 3.2 mEq/L and bicarbonate 30 mEq/L. Imaging shows 80% stenosis at the origin of the right renal artery and a normal left renal artery.</p><table><tr><th></th><th>Plasma renin activity</th><th>Plasma aldosterone</th><th>Renin in right renal vein vs left</th></tr><tr><td>A</td><td>High</td><td>High</td><td>Higher</td></tr><tr><td>B</td><td>High</td><td>Low</td><td>Lower</td></tr><tr><td>C</td><td>Low</td><td>High</td><td>Equal</td></tr><tr><td>D</td><td>Low</td><td>Low</td><td>Higher</td></tr><tr><td>E</td><td>Normal</td><td>High</td><td>Lower</td></tr></table><p>Which of the following sets of findings is most likely?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Row A"
+    },
+    {
+     "label": "B",
+     "html": "Row B"
+    },
+    {
+     "label": "C",
+     "html": "Row C"
+    },
+    {
+     "label": "D",
+     "html": "Row D"
+    },
+    {
+     "label": "E",
+     "html": "Row E"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The poststenotic right kidney senses low perfusion pressure and releases renin, so its venous renin is higher than the left. Angiotensin II stimulates aldosterone, producing <strong>secondary hyperaldosteronism</strong> (high renin and high aldosterone) with hypokalemia and metabolic alkalosis. The normal left kidney, exposed to high pressure, suppresses its own renin.</p><p><strong>Takeaway:</strong> unilateral renal artery stenosis gives high renin, high aldosterone, and lateralised renin from the stenotic side.</p>",
+   "whyNot": {
+    "B": "Low aldosterone with high renin suggests adrenal insufficiency or aldosterone synthase deficiency, not renovascular disease.",
+    "C": "High aldosterone with low renin is primary aldosteronism; renin is not suppressed in renovascular hypertension.",
+    "D": "Low renin and low aldosterone fit mineralocorticoid excess from another hormone (such as Liddle syndrome or apparent mineralocorticoid excess), not stenosis.",
+    "E": "Renin is not normal here, and the stenotic kidney secretes more renin, not less."
+   },
+   "objective": "Predict renin and aldosterone findings in unilateral renal artery stenosis.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal artery stenosis",
+    "renin"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-02",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 32-year-old woman has new hypertension (164/102 mm Hg). She has no family history of hypertension and takes no medications. A bruit is heard in the right upper abdomen. CT angiography shows alternating segments of narrowing and dilation in the middle and distal right renal artery. Which of the following best describes the most likely underlying lesion?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Atheromatous plaque with a necrotic lipid core"
+    },
+    {
+     "label": "B",
+     "html": "Granulomatous inflammation of the arterial wall with giant cells"
+    },
+    {
+     "label": "C",
+     "html": "Hyaline thickening of arteriolar walls"
+    },
+    {
+     "label": "D",
+     "html": "Medial fibroplasia with thinned segments between fibrous ridges"
+    },
+    {
+     "label": "E",
+     "html": "Transmural necrotising inflammation with microaneurysms of medium arteries"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>A \"string of beads\" in the middle and distal renal artery of a young woman is <strong>fibromuscular dysplasia</strong>, most often the <strong>medial fibroplasia</strong> type: fibrous ridges alternate with thinned, aneurysmal segments of the media. It is noninflammatory and nonatherosclerotic.</p><p><strong>Takeaway:</strong> young woman, mid-distal renal artery beading: fibromuscular dysplasia with medial fibroplasia.</p>",
+   "whyNot": {
+    "A": "Atheroma affects the ostium and proximal artery in older patients with risk factors.",
+    "B": "Giant cell inflammation occurs in Takayasu arteritis, which narrows the aorta and the origins of its branches, with systemic symptoms and raised inflammatory markers.",
+    "C": "Hyaline arteriolosclerosis is a small-vessel change of long-standing hypertension and diabetes, not a main renal artery lesion.",
+    "E": "Polyarteritis nodosa causes microaneurysms and segmental necrosis of medium arteries, usually with systemic illness."
+   },
+   "objective": "Recognise fibromuscular dysplasia and its usual histologic type.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "fibromuscular dysplasia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-03",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 74-year-old man with diabetes, peripheral artery disease and hypertension starts lisinopril. Two weeks later his serum creatinine has risen from 1.3 to 2.6 mg/dL. He is not volume depleted and takes no NSAIDs. Renal duplex ultrasonography later shows severe stenosis of both renal arteries. Which of the following best explains the rise in creatinine?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Angioedema of the renal arterial wall"
+    },
+    {
+     "label": "B",
+     "html": "Dilation of the afferent arteriole that raises glomerular pressure"
+    },
+    {
+     "label": "C",
+     "html": "Dilation of the efferent arteriole that lowers glomerular capillary pressure"
+    },
+    {
+     "label": "D",
+     "html": "Hyperkalemia that blocks proximal tubular creatinine secretion"
+    },
+    {
+     "label": "E",
+     "html": "Immune-mediated interstitial nephritis from the drug"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>When renal perfusion pressure is low, angiotensin II maintains GFR by constricting the <strong>efferent arteriole</strong>, which holds up glomerular capillary pressure. An ACE inhibitor removes that constriction; efferent dilation lowers glomerular pressure and GFR. With bilateral stenosis (or a solitary kidney) no kidney compensates, so creatinine rises sharply.</p><p><strong>Takeaway:</strong> ACE inhibitors and ARBs lower GFR by dilating the efferent arteriole; a large creatinine rise suggests bilateral renal artery stenosis.</p>",
+   "whyNot": {
+    "A": "Angioedema from ACE inhibitors involves the face, airway or bowel, not the renal artery.",
+    "B": "Afferent dilation would raise glomerular pressure and GFR; ACE inhibitors act mainly on the efferent side.",
+    "D": "Hyperkalemia does not block creatinine secretion; drugs such as trimethoprim and cimetidine do.",
+    "E": "Interstitial nephritis is rare with ACE inhibitors and would not be explained by the vascular finding."
+   },
+   "objective": "Explain the creatinine rise after ACE inhibition in bilateral renal artery stenosis.",
+   "areas": [
+    "usmle2026.11.05.01",
+    "usmle2026.11.08.01"
+   ],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "ACE inhibitor",
+    "renal artery stenosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-04",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>An 81-year-old woman with a 30-year history of treated hypertension dies of a stroke. At autopsy both kidneys are symmetrically small with a finely granular cortical surface. Microscopy of the renal arterioles is most likely to show which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Concentric onion-skin layering of smooth muscle cells"
+    },
+    {
+     "label": "B",
+     "html": "Fibrinoid necrosis with neutrophils"
+    },
+    {
+     "label": "C",
+     "html": "Granulomas with multinucleated giant cells"
+    },
+    {
+     "label": "D",
+     "html": "Homogeneous pink glassy thickening of the walls with a narrowed lumen"
+    },
+    {
+     "label": "E",
+     "html": "Needle-shaped clefts within the lumen"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Long-standing, moderate hypertension causes <strong>hyaline arteriolosclerosis</strong>: plasma proteins leak into the arteriolar wall and basement membrane material accumulates, giving homogeneous, glassy pink thickening that narrows the lumen. The resulting ischemia causes patchy glomerulosclerosis and tubular atrophy, so the kidneys shrink evenly with a finely granular surface (<strong>benign nephrosclerosis</strong>).</p><p><strong>Takeaway:</strong> benign nephrosclerosis equals hyaline arteriolosclerosis and small granular kidneys.</p>",
+   "whyNot": {
+    "A": "Onion-skin hyperplastic arteriolosclerosis is the lesion of malignant hypertension.",
+    "B": "Fibrinoid necrosis also marks malignant hypertension or vasculitis, not chronic stable hypertension.",
+    "C": "Granulomatous inflammation suggests a vasculitis such as giant cell arteritis or granulomatosis with polyangiitis.",
+    "E": "Needle-shaped clefts are cholesterol emboli, typically after arterial procedures."
+   },
+   "objective": "Identify hyaline arteriolosclerosis as the lesion of benign nephrosclerosis.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "nephrosclerosis",
+    "hypertension"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-05",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 44-year-old man stopped his antihypertensive drugs 6 months ago. He now has headache and blurred vision. Blood pressure is 238/142 mm Hg. Funduscopy shows papilledema and flame hemorrhages. Serum creatinine is 3.1 mg/dL, and a blood smear shows schistocytes. A kidney biopsy shows arterioles with concentric layers of smooth muscle cells and thickened basement membrane narrowing the lumen, and some arterioles with fibrinoid necrosis. Which of the following best describes the gross appearance of the kidney surface?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Large cysts replacing the parenchyma"
+    },
+    {
+     "label": "B",
+     "html": "Pale wedge-shaped scar with its base at the capsule"
+    },
+    {
+     "label": "C",
+     "html": "Pinpoint hemorrhages scattered over the cortical surface"
+    },
+    {
+     "label": "D",
+     "html": "Symmetric coarse U-shaped scars over blunted calyces"
+    },
+    {
+     "label": "E",
+     "html": "Yellow nodules with a staghorn calculus in the pelvis"
+    }
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The biopsy shows <strong>hyperplastic arteriolosclerosis</strong> (onion-skinning) and fibrinoid necrosis: <strong>malignant nephrosclerosis</strong> from a hypertensive emergency. Ruptured arterioles and glomerular capillaries produce pinpoint petechial hemorrhages on the cortical surface, the \"flea-bitten\" kidney.</p><p><strong>Takeaway:</strong> malignant hypertension: onion-skin arterioles, fibrinoid necrosis and a flea-bitten kidney surface.</p>",
+   "whyNot": {
+    "A": "Large cysts replacing the parenchyma describe polycystic kidney disease.",
+    "B": "A wedge-shaped scar is a healed infarct from embolic or thrombotic arterial occlusion.",
+    "D": "Coarse scars over blunted calyces are typical of chronic pyelonephritis with reflux.",
+    "E": "Yellow nodules with a staghorn stone suggest xanthogranulomatous pyelonephritis."
+   },
+   "objective": "Recognise the gross and microscopic kidney changes of malignant hypertension.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "malignant hypertension",
+    "nephrosclerosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-06",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 52-year-old man has had leg edema for 3 months. Urine protein is 9 g/day and serum albumin 1.8 g/dL. Kidney biopsy shows thickened glomerular capillary loops with subepithelial immune deposits and antibodies to the phospholipase A2 receptor. He now develops left flank pain, gross hematuria and a new left scrotal swelling that feels like a bag of worms. Urinary loss of which of the following most contributes to his new complication?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Antithrombin"
+    },
+    {
+     "label": "B",
+     "html": "Factor VIII"
+    },
+    {
+     "label": "C",
+     "html": "Fibrinogen"
+    },
+    {
+     "label": "D",
+     "html": "Plasminogen activator inhibitor-1"
+    },
+    {
+     "label": "E",
+     "html": "von Willebrand factor"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Membranous nephropathy carries the highest risk of <strong>renal vein thrombosis</strong> among causes of nephrotic syndrome. A key mechanism is urinary loss of the small anticoagulant protein <strong>antithrombin</strong>, while the liver increases synthesis of large procoagulants (fibrinogen, factors V and VIII) that are not filtered. Thrombosis of the <strong>left renal vein</strong> blocks drainage of the left gonadal vein, causing a new left varicocele.</p><p><strong>Takeaway:</strong> nephrotic syndrome (especially membranous) promotes renal vein thrombosis partly by urinary antithrombin loss; a left renal vein clot can cause a left varicocele.</p>",
+   "whyNot": {
+    "B": "Factor VIII is large and is increased, not lost, in nephrotic syndrome.",
+    "C": "Fibrinogen levels rise because hepatic synthesis increases; it is too large to be lost much in urine.",
+    "D": "PAI-1 is an antifibrinolytic; losing it would reduce, not increase, thrombosis.",
+    "E": "von Willebrand factor is a very large multimer that is not lost in urine and is usually raised."
+   },
+   "objective": "Explain the hypercoagulable state of nephrotic syndrome and renal vein thrombosis.",
+   "areas": [
+    "usmle2026.11.05.01",
+    "usmle2026.11.01.02"
+   ],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal vein thrombosis",
+    "membranous nephropathy",
+    "varicocele"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-07",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 71-year-old man had coronary angiography through the femoral artery 3 weeks ago. Since then his serum creatinine has risen from 1.2 to 2.8 mg/dL in steps. He has a lacy purple discolouration over both thighs and painful dusky toes with normal pedal pulses. Leukocyte count shows 9% eosinophils, and serum C3 is low. A kidney biopsy is most likely to show which of the following?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Crescents in most glomeruli with linear IgG staining"
+    },
+    {
+     "label": "B",
+     "html": "Elongated empty clefts in the lumens of arcuate and interlobular arteries"
+    },
+    {
+     "label": "C",
+     "html": "Fibrin thrombi in glomerular capillaries with no inflammation"
+    },
+    {
+     "label": "D",
+     "html": "Interstitial eosinophils and lymphocytes around normal arteries"
+    },
+    {
+     "label": "E",
+     "html": "Necrosis of proximal tubular cells with intact basement membranes only"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Subacute, stepwise kidney failure weeks after an arterial procedure, with livedo reticularis, blue toes with preserved pulses, eosinophilia and hypocomplementemia, is <strong>atheroembolic (cholesterol crystal) kidney disease</strong>. Cholesterol crystals dissolve during tissue processing and leave <strong>biconvex, needle-shaped empty clefts</strong> in small arteries, surrounded by inflammation and later fibrosis.</p><p><strong>Takeaway:</strong> after catheterisation, livedo plus eosinophilia plus slowly rising creatinine means cholesterol emboli with needle-shaped clefts.</p>",
+   "whyNot": {
+    "A": "Linear IgG with crescents is anti-GBM disease, which does not follow catheterisation or cause livedo.",
+    "C": "Fibrin thrombi without crystals indicate a thrombotic microangiopathy.",
+    "D": "Allergic interstitial nephritis also causes eosinophilia, but not livedo or blue toes, and arteries are spared.",
+    "E": "Contrast-associated tubular injury appears within days and recovers; it does not cause livedo, eosinophilia or low complement."
+   },
+   "objective": "Recognise atheroembolic kidney disease and its biopsy finding.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "atheroembolic disease",
+    "cholesterol emboli"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-08",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 48-year-old woman has had diffuse skin thickening of her hands, forearms, chest and face for 8 months, with antibodies to RNA polymerase III. She received prednisone 40 mg daily for 2 weeks for a myositis flare. She now has a severe headache. Blood pressure is 196/112 mm Hg (previously 118/76). Serum creatinine has risen from 0.8 to 2.4 mg/dL, and a blood smear shows schistocytes. Which of the following drugs acts on the main mechanism of her kidney injury?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Captopril"
+    },
+    {
+     "label": "B",
+     "html": "Cyclophosphamide"
+    },
+    {
+     "label": "C",
+     "html": "Furosemide"
+    },
+    {
+     "label": "D",
+     "html": "Hydralazine"
+    },
+    {
+     "label": "E",
+     "html": "Methylprednisolone"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>This is <strong>scleroderma renal crisis</strong>: intimal proliferation narrows interlobular arteries, renal perfusion falls, and juxtaglomerular renin release surges, which drives severe hypertension and further vasoconstriction. Early diffuse disease, anti-RNA polymerase III antibodies and glucocorticoids raise the risk. An <strong>ACE inhibitor (captopril)</strong> blocks this renin-angiotensin loop and has transformed survival.</p><p><strong>Takeaway:</strong> scleroderma renal crisis is renin driven; treat with an ACE inhibitor.</p>",
+   "whyNot": {
+    "B": "Cyclophosphamide treats interstitial lung disease or vasculitis, not the renin-driven vasculopathy of renal crisis.",
+    "C": "Furosemide does not interrupt renin release and may worsen renal perfusion.",
+    "D": "Hydralazine lowers pressure but does not block the renin-angiotensin system that drives the crisis.",
+    "E": "High-dose glucocorticoids are a risk factor for renal crisis and may worsen it."
+   },
+   "objective": "Treat scleroderma renal crisis with an ACE inhibitor because it is renin driven.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "scleroderma renal crisis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-09",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 69-year-old woman with long-standing atrial fibrillation who stopped her anticoagulant has sudden severe left flank pain and hematuria. She dies of a later stroke. At autopsy the left kidney contains a sharply demarcated, pale, triangular area whose base lies against the capsule. Which of the following best describes the change in this area?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Caseous necrosis"
+    },
+    {
+     "label": "B",
+     "html": "Coagulative necrosis"
+    },
+    {
+     "label": "C",
+     "html": "Fat necrosis"
+    },
+    {
+     "label": "D",
+     "html": "Liquefactive necrosis"
+    },
+    {
+     "label": "E",
+     "html": "Red (hemorrhagic) infarction"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Renal arteries are <strong>end arteries</strong>, so an embolus causes a wedge-shaped infarct with its base on the capsule. As in the heart and spleen, ischemic necrosis of a solid organ with a single blood supply is <strong>coagulative necrosis</strong>: cell outlines persist while nuclei disappear, and the infarct looks pale (white).</p><p><strong>Takeaway:</strong> embolic renal infarcts are pale, wedge-shaped areas of coagulative necrosis.</p>",
+   "whyNot": {
+    "A": "Caseous necrosis is the cheesy necrosis of tuberculosis and some fungal infections.",
+    "C": "Fat necrosis occurs in the pancreas and breast, from lipase action or trauma.",
+    "D": "Liquefactive necrosis occurs in the brain after ischemia and in abscesses.",
+    "E": "Red infarcts occur in organs with dual or collateral circulation (lung, intestine) or after venous occlusion, not in arterial kidney infarcts."
+   },
+   "objective": "Describe the pattern and type of necrosis in an embolic renal infarct.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal infarction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-1-10",
+   "exam": "step1",
+   "format": "single",
+   "stemHtml": "<p>A 58-year-old man with unilateral renal artery stenosis and hypertension is being evaluated for drug treatment. A drug is chosen that reduces renin release from juxtaglomerular cells by blocking their sympathetic stimulation. Which receptor does this drug block?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Alpha-1 adrenergic receptor"
+    },
+    {
+     "label": "B",
+     "html": "Alpha-2 adrenergic receptor"
+    },
+    {
+     "label": "C",
+     "html": "Angiotensin II type 1 receptor"
+    },
+    {
+     "label": "D",
+     "html": "Beta-1 adrenergic receptor"
+    },
+    {
+     "label": "E",
+     "html": "Muscarinic M3 receptor"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Sympathetic nerves stimulate renin release from juxtaglomerular cells through <strong>beta-1 adrenergic receptors</strong> (Gs, rising cAMP). Beta-blockers therefore lower plasma renin, which contributes to their antihypertensive effect. The other two triggers of renin release are low afferent arteriolar pressure and low sodium chloride delivery to the macula densa.</p><p><strong>Takeaway:</strong> beta-1 stimulation of juxtaglomerular cells releases renin; beta-blockers suppress it.</p>",
+   "whyNot": {
+    "A": "Alpha-1 receptors constrict vascular smooth muscle; blocking them lowers resistance but does not suppress renin (it can raise it reflexly).",
+    "B": "Central alpha-2 agonists (not blockers) reduce sympathetic outflow; alpha-2 blockade would raise sympathetic tone.",
+    "C": "AT1 blockers act downstream of renin and cause renin to rise by removing negative feedback.",
+    "E": "Juxtaglomerular renin release is not controlled by muscarinic receptors."
+   },
+   "objective": "Identify the receptor that mediates sympathetic renin release.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renin",
+    "beta-blocker"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-2-01",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 70-year-old man has hypertension controlled on amlodipine, lisinopril and chlorthalidone. He has coronary artery disease and quit smoking 5 years ago. He has had no episodes of pulmonary edema. Serum creatinine has been stable at 1.4 mg/dL for 2 years. CT angiography done for a suspected abdominal aortic aneurysm shows 75% stenosis at the origin of the left renal artery; kidney sizes are 11.2 cm on the right and 10.6 cm on the left. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Continue his drugs and add a high-intensity statin and aspirin"
+    },
+    {
+     "label": "B",
+     "html": "Left renal artery angioplasty with stent placement"
+    },
+    {
+     "label": "C",
+     "html": "Laparoscopic left nephrectomy to remove the renin source"
+    },
+    {
+     "label": "D",
+     "html": "Stop lisinopril and replace it with hydralazine"
+    },
+    {
+     "label": "E",
+     "html": "Surgical aortorenal bypass of the left renal artery"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>He has atherosclerotic renal artery stenosis with controlled blood pressure, stable kidney function and no flash pulmonary edema. Trials comparing stenting plus medical therapy with medical therapy alone showed no reduction in cardiovascular or renal events, so the right approach is <strong>optimal medical therapy</strong>: continue the ACE inhibitor (unilateral disease, stable creatinine), add a high-intensity statin and an antiplatelet agent, and keep risk factors controlled.</p><p><strong>Takeaway:</strong> most atherosclerotic renal artery stenosis is treated medically; revascularise only for specific triggers.</p>",
+   "whyNot": {
+    "B": "Stenting adds procedural risk without benefit in a patient with controlled pressure and stable function.",
+    "C": "Nephrectomy is not indicated for a functioning kidney with a stenosis.",
+    "D": "An ACE inhibitor is well tolerated here and protective; there is no reason to stop it.",
+    "E": "Surgical bypass is reserved for complex anatomy needing revascularisation, which he does not need."
+   },
+   "objective": "Manage incidental atherosclerotic renal artery stenosis with optimal medical therapy.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal artery stenosis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-2-02",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 26-year-old woman has had hypertension (158/98 mm Hg) for 4 months despite amlodipine. She takes no other medications or supplements and has no headaches with palpitations. Serum potassium is 3.6 mEq/L and creatinine 0.7 mg/dL. CT angiography shows a beaded appearance of the mid right renal artery with about 70% narrowing and no aneurysm; cervical and intracranial arteries are normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Add an ACE inhibitor and recheck in 1 year"
+    },
+    {
+     "label": "B",
+     "html": "Percutaneous transluminal angioplasty without stenting"
+    },
+    {
+     "label": "C",
+     "html": "Renal artery stent placement"
+    },
+    {
+     "label": "D",
+     "html": "Right nephrectomy"
+    },
+    {
+     "label": "E",
+     "html": "Start high-dose glucocorticoids"
+    }
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Hypertension from renal <strong>fibromuscular dysplasia</strong> in a young woman is the classic indication for <strong>percutaneous transluminal angioplasty, usually without a stent</strong>. It often cures or markedly improves the hypertension, especially when the hypertension is of short duration.</p><p><strong>Takeaway:</strong> renovascular hypertension from fibromuscular dysplasia is treated with balloon angioplasty without stenting.</p>",
+   "whyNot": {
+    "A": "Drug therapy alone leaves a correctable cause untreated in a young patient who could be cured.",
+    "C": "Stents are reserved for complications such as dissection during angioplasty; they are not routine in fibromuscular dysplasia.",
+    "D": "Nephrectomy is not appropriate for a functioning kidney with a treatable lesion.",
+    "E": "Fibromuscular dysplasia is not inflammatory; glucocorticoids are used for arteritis."
+   },
+   "objective": "Treat hypertension from renal fibromuscular dysplasia with angioplasty without a stent.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "fibromuscular dysplasia"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-2-03",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 51-year-old woman with diffuse cutaneous systemic sclerosis diagnosed 1 year ago has headache and fatigue for 2 days. Blood pressure is 188/110 mm Hg (usually 120/78). Serum creatinine is 2.2 mg/dL (0.9 mg/dL a month ago). Hemoglobin is 9.8 g/dL with schistocytes on the smear, and platelets are 96,000/mm³. Urinalysis shows 1+ protein and a few red cells. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Captopril, titrated up every few hours to control blood pressure"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous labetalol, aiming at normal blood pressure within 1 hour"
+    },
+    {
+     "label": "C",
+     "html": "Intravenous methylprednisolone"
+    },
+    {
+     "label": "D",
+     "html": "Plasma exchange"
+    },
+    {
+     "label": "E",
+     "html": "Rituximab"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>New severe hypertension, rising creatinine and microangiopathic hemolysis early in diffuse systemic sclerosis is <strong>scleroderma renal crisis</strong>. Start a <strong>short-acting ACE inhibitor (captopril)</strong> and titrate quickly, aiming for gradual blood pressure reduction, and continue it even if creatinine rises or dialysis is needed. Other agents such as calcium channel blockers are added only if pressure stays high on the maximum ACE inhibitor dose.</p><p><strong>Takeaway:</strong> scleroderma renal crisis is treated with a rapidly titrated ACE inhibitor, continued even on dialysis.</p>",
+   "whyNot": {
+    "B": "Beta-blockers do not address the renin-angiotensin drive, and dropping pressure to normal within an hour risks ischemia.",
+    "C": "Glucocorticoids can precipitate or worsen scleroderma renal crisis.",
+    "D": "Plasma exchange is the treatment for TTP; this microangiopathy is caused by the scleroderma vasculopathy.",
+    "E": "Rituximab has no role in the acute crisis."
+   },
+   "objective": "Treat scleroderma renal crisis with a titrated ACE inhibitor.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "scleroderma renal crisis"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-2-04",
+   "exam": "step2ck",
+   "format": "single",
+   "stemHtml": "<p>A 76-year-old man had an aortic aneurysm repaired by an endovascular approach 4 weeks ago. Since then serum creatinine has risen from 1.1 to 2.5 mg/dL. He has a mottled, lacy rash on his legs and two painful purple toes with palpable pedal pulses. Eosinophils are 8% of leukocytes. Urinalysis shows a few white cells, no red cell casts and 1+ protein. Which of the following is the most appropriate management?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "High-dose prednisone"
+    },
+    {
+     "label": "B",
+     "html": "Intravenous heparin infusion"
+    },
+    {
+     "label": "C",
+     "html": "Renal artery angiography with stent placement"
+    },
+    {
+     "label": "D",
+     "html": "Supportive care with blood pressure control and a statin"
+    },
+    {
+     "label": "E",
+     "html": "Thrombolysis with alteplase"
+    }
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>This is <strong>atheroembolic kidney disease</strong>, caused by cholesterol crystals dislodged from the aorta during the procedure. No therapy dissolves the crystals. Management is <strong>supportive</strong>: blood pressure control, a statin and aspirin, avoidance of further arterial procedures and anticoagulation when possible, and dialysis if needed.</p><p><strong>Takeaway:</strong> atheroembolic kidney disease is treated supportively; avoid anticoagulation and further procedures when possible.</p>",
+   "whyNot": {
+    "A": "Glucocorticoids have no proven benefit for cholesterol embolisation.",
+    "B": "Anticoagulation may promote further plaque instability and embolisation.",
+    "C": "More catheter manipulation risks further embolisation; the problem is in small arteries, not a main renal artery lesion.",
+    "E": "Thrombolysis does not dissolve cholesterol crystals and adds bleeding risk."
+   },
+   "objective": "Manage atheroembolic kidney disease supportively.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "atheroembolic disease"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   }
+  },
+  {
+   "id": "s23c-q110501-2-05",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>A 64-year-old woman with atrial fibrillation stopped apixaban 2 weeks ago before a dental procedure and did not restart it. She has had sudden, constant right flank pain for 8 hours with nausea. Temperature is 37.4°C (99.3°F), pulse 104/min and irregular, and blood pressure 156/92 mm Hg. Urinalysis shows 15 red cells per high-power field. Serum LDH is 1,450 U/L (N = 45–200 U/L), and AST and ALT are normal. Noncontrast CT shows no stone or hydronephrosis. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "CT of the abdomen with intravenous contrast (CT angiography)"
+    },
+    {
+     "label": "B",
+     "html": "Cystoscopy"
+    },
+    {
+     "label": "C",
+     "html": "Kidney biopsy"
+    },
+    {
+     "label": "D",
+     "html": "Repeat noncontrast CT in 24 hours"
+    },
+    {
+     "label": "E",
+     "html": "Urine culture"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Acute flank pain, hematuria and a strikingly high LDH with normal aminotransferases in a patient with atrial fibrillation off anticoagulation suggest <strong>renal infarction</strong>. Noncontrast CT excludes a stone but cannot show perfusion; <strong>contrast-enhanced CT</strong> (CT angiography) shows a wedge-shaped perfusion defect and the occluded branch.</p><p><strong>Takeaway:</strong> suspect renal infarction when flank pain with hematuria and high LDH has no stone; confirm with contrast CT.</p>",
+   "whyNot": {
+    "B": "Cystoscopy evaluates bladder sources of hematuria, not acute flank pain from an embolus.",
+    "C": "Biopsy is not needed, and is hazardous in an infarcted kidney.",
+    "D": "Repeating a noncontrast study will still not show the perfusion defect and delays treatment.",
+    "E": "She has no fever or pyuria to suggest pyelonephritis, and culture would not explain the LDH."
+   },
+   "objective": "Confirm suspected renal infarction with contrast-enhanced CT.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal infarction"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110501-1",
+   "setOrder": 1
+  },
+  {
+   "id": "s23c-q110501-2-06",
+   "exam": "step2ck",
+   "format": "sequential",
+   "stemHtml": "<p>CT angiography shows a wedge-shaped area of absent enhancement in the lower pole of the right kidney and an abrupt cutoff of a segmental renal artery branch. Serum creatinine is 1.0 mg/dL. Echocardiography shows no left ventricular thrombus. Which of the following is the most appropriate treatment?</p>",
+   "options": [
+    {
+     "label": "A",
+     "html": "Anticoagulation with heparin, then long-term oral anticoagulation"
+    },
+    {
+     "label": "B",
+     "html": "Aspirin alone"
+    },
+    {
+     "label": "C",
+     "html": "Emergency right nephrectomy"
+    },
+    {
+     "label": "D",
+     "html": "Observation without antithrombotic therapy"
+    },
+    {
+     "label": "E",
+     "html": "Surgical embolectomy of the segmental branch"
+    }
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An embolic segmental <strong>renal infarction</strong> with preserved function is treated with <strong>anticoagulation</strong>, starting with heparin and continuing long-term oral anticoagulation for atrial fibrillation to prevent further renal and systemic emboli. Catheter-directed therapy is reserved for selected early, main-artery occlusions.</p><p><strong>Takeaway:</strong> embolic renal infarction is treated with anticoagulation and secondary prevention of emboli.</p>",
+   "whyNot": {
+    "B": "Aspirin alone is inadequate stroke and embolism prevention in atrial fibrillation.",
+    "C": "Nephrectomy is not needed for a segmental infarct in a functioning kidney.",
+    "D": "Without anticoagulation she remains at high risk of stroke and further emboli.",
+    "E": "Open embolectomy of a small segmental branch is not done; the infarcted tissue cannot be salvaged this way."
+   },
+   "objective": "Treat embolic renal infarction with anticoagulation.",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "source": "naadi-original-v1",
+   "references": [],
+   "figureIds": [],
+   "tags": [
+    "renal infarction",
+    "atrial fibrillation"
+   ],
+   "status": "published",
+   "review": {
+    "status": "self_reviewed",
+    "humanExpertReviewed": false,
+    "author": "seg23-c"
+   },
+   "setId": "s23c-set110501-1",
+   "setOrder": 2
+  }
+ ],
+ "cards": [
+  {
+   "id": "s23c-c110501-01",
+   "frontHtml": "Three triggers of renin release from juxtaglomerular cells?",
+   "backHtml": "Low afferent arteriolar pressure, low NaCl delivery to the macula densa, and sympathetic beta-1 stimulation.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-02",
+   "frontHtml": "Unilateral renal artery stenosis: renin, aldosterone and potassium?",
+   "backHtml": "High renin, high aldosterone (secondary), low potassium; renin lateralises to the stenotic kidney.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-03",
+   "frontHtml": "Atherosclerotic vs fibromuscular renal artery stenosis: location?",
+   "backHtml": "Atherosclerotic: ostium and proximal artery. Fibromuscular dysplasia: mid and distal artery.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-04",
+   "frontHtml": "\"String of beads\" renal artery in a young woman?",
+   "backHtml": "Fibromuscular dysplasia (usually medial fibroplasia).",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-05",
+   "frontHtml": "Why does GFR fall after an ACE inhibitor in renal artery stenosis?",
+   "backHtml": "Loss of angiotensin II constriction of the efferent arteriole lowers glomerular capillary pressure.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-06",
+   "frontHtml": "Benign nephrosclerosis: vessel lesion and gross kidney?",
+   "backHtml": "Hyaline arteriolosclerosis; small, symmetric, finely granular kidneys.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-07",
+   "frontHtml": "Malignant nephrosclerosis: vessel lesions and gross kidney?",
+   "backHtml": "Hyperplastic (onion-skin) arteriolosclerosis and fibrinoid necrosis; flea-bitten petechial surface.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-08",
+   "frontHtml": "Gross and microscopic appearance of an embolic renal infarct?",
+   "backHtml": "Pale, wedge-shaped, base on the capsule; coagulative necrosis.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-09",
+   "frontHtml": "Cholesterol emboli: biopsy finding and clinical clues?",
+   "backHtml": "Biconvex needle-shaped clefts in small arteries; livedo, blue toes with pulses, eosinophilia, low complement, weeks after a procedure.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-10",
+   "frontHtml": "Nephrotic syndrome most linked to renal vein thrombosis, and one mechanism?",
+   "backHtml": "Membranous nephropathy; urinary loss of antithrombin (plus more hepatic procoagulants).",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-11",
+   "frontHtml": "New left varicocele with nephrotic syndrome?",
+   "backHtml": "Left renal vein thrombosis (left gonadal vein drains into the left renal vein).",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-12",
+   "frontHtml": "Risk factors for scleroderma renal crisis?",
+   "backHtml": "Early diffuse cutaneous disease, anti-RNA polymerase III, high-dose glucocorticoids.",
+   "sectionId": "s23c-s110501-1-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-13",
+   "frontHtml": "Clues to renovascular hypertension?",
+   "backHtml": "Onset before 30 or new severe hypertension after 55, creatinine rise above about 30% on ACE inhibitor/ARB, flash pulmonary edema, asymmetric kidneys, abdominal bruit.",
+   "sectionId": "s23c-s110501-2-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-14",
+   "frontHtml": "Atherosclerotic renal artery stenosis with controlled BP and stable creatinine: management?",
+   "backHtml": "Optimal medical therapy (BP control including ACE inhibitor/ARB, statin, antiplatelet, smoking cessation); no routine stenting.",
+   "sectionId": "s23c-s110501-2-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-15",
+   "frontHtml": "Revascularisation triggers in atherosclerotic renal artery stenosis?",
+   "backHtml": "Recurrent flash pulmonary edema, rapidly falling kidney function from the stenosis, truly refractory hypertension.",
+   "sectionId": "s23c-s110501-2-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-16",
+   "frontHtml": "Fibromuscular dysplasia with hypertension: treatment?",
+   "backHtml": "Percutaneous transluminal angioplasty without stenting; image head-to-pelvis arteries once.",
+   "sectionId": "s23c-s110501-2-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-17",
+   "frontHtml": "Scleroderma renal crisis: treatment?",
+   "backHtml": "Captopril titrated rapidly; continue even with rising creatinine or dialysis.",
+   "sectionId": "s23c-s110501-2-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  },
+  {
+   "id": "s23c-c110501-18",
+   "frontHtml": "Flank pain, hematuria, very high LDH, normal noncontrast CT in atrial fibrillation: next test and treatment?",
+   "backHtml": "Contrast CT (CT angiography) for renal infarction; anticoagulation.",
+   "sectionId": "s23c-s110501-2-1",
+   "areas": [
+    "usmle2026.11.05.01"
+   ],
+   "source": "naadi-original-v1",
+   "tags": []
+  }
+ ]
+}

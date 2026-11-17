@@ -1,1 +1,990 @@
-[]
+[
+ {
+  "id": "s23c-ch11-s1",
+  "exam": "step1",
+  "order": 311,
+  "title": "Step 1 · Renal & urinary system",
+  "meta": "Naadi original · USMLE-2026 outline",
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23c-s110101-1-1",
+    "heading": "Urinary tract infection: organisms, virulence and the level of infection",
+    "html": "<p>Most urinary tract infections (UTIs) are <strong>ascending</strong>: bowel flora colonise the periurethral area, enter the bladder through the urethra and can climb the ureter to the renal pelvis. Women are affected far more often because the urethra is short and close to the anus. Hematogenous seeding of the kidney is uncommon and points to <em>Staphylococcus aureus</em> bacteremia or candidemia.</p><h3>Host factors</h3><ul><li><strong>Urine flow</strong> is the main defence. Anything that causes stasis raises the risk: obstruction (stone, prostate enlargement, pregnancy-related ureteral dilation), neurogenic bladder, vesicoureteral reflux.</li><li><strong>Foreign bodies</strong>: catheters carry biofilm, which protects organisms from antibiotics and host defences.</li><li><strong>Sexual activity, spermicides and diaphragms</strong> change periurethral flora and inoculate the bladder.</li><li><strong>Low estrogen after menopause</strong> lets vaginal lactobacilli fall and uropathogens colonise.</li><li><strong>Diabetes</strong>: glycosuria, impaired neutrophil function and autonomic bladder dysfunction.</li></ul><h3>Organisms</h3><table><tr><th>Organism</th><th>Setting</th><th>Clue on the exam</th></tr><tr><td><em>Escherichia coli</em></td><td>About three quarters of community UTIs</td><td>Lactose fermenter; P fimbriae bind uroepithelial glycolipids and favour pyelonephritis; type 1 fimbriae favour cystitis</td></tr><tr><td><em>Staphylococcus saprophyticus</em></td><td>Young, sexually active women</td><td>Gram-positive cocci in clusters, coagulase negative, novobiocin resistant</td></tr><tr><td><em>Proteus mirabilis</em></td><td>Recurrent or catheter UTI, stones</td><td>Urease splits urea to ammonia, alkaline urine (pH often above 7.5), struvite (magnesium ammonium phosphate) staghorn calculi; swarming motility</td></tr><tr><td><em>Klebsiella pneumoniae</em></td><td>Hospital, diabetes, alcohol use</td><td>Mucoid, encapsulated lactose fermenter; urease positive</td></tr><tr><td><em>Enterococcus</em> species</td><td>Catheters, instrumentation, older men</td><td>Gram-positive cocci in chains; intrinsically resistant to cephalosporins</td></tr><tr><td><em>Pseudomonas aeruginosa</em></td><td>Catheters, recent hospital care</td><td>Non-lactose fermenter, oxidase positive, grape-like odour, blue-green pigment</td></tr></table><h3>Urinalysis</h3><p>Leukocyte esterase marks neutrophils (pyuria). The nitrite test turns positive when Enterobacterales reduce dietary nitrate to nitrite; it is often negative with <em>Enterococcus</em> and <em>S. saprophyticus</em>, which do not reduce nitrate, and when urine has sat in the bladder only briefly. <strong>White blood cell casts</strong> form only in renal tubules, so they place the infection (or inflammation) in the kidney.</p>[[figure:s23c-fig110101-1]]<h3>Pathology of acute pyelonephritis</h3><p>Grossly, the kidney is swollen with yellow cortical abscesses. Microscopically, neutrophils fill tubules and the interstitium while glomeruli are relatively spared. Complications include renal or perinephric abscess, <strong>papillary necrosis</strong> (diabetes, obstruction, sickle cell disease, analgesic use) and, in diabetes, <strong>emphysematous pyelonephritis</strong> with gas in the parenchyma.</p><div class=\"trap\"><p><strong>Exam trap:</strong> casts mean kidney. Pyuria with bacteria but no casts fits cystitis; pyuria with white cell casts and fever fits pyelonephritis (or, without bacteria, interstitial nephritis).</p></div><h3>Chronic and unusual infections</h3><ul><li><strong>Chronic pyelonephritis</strong>: recurrent infection on a background of reflux or obstruction gives coarse, asymmetric corticomedullary scars over blunted calyces, most marked at the poles. Tubules fill with eosinophilic casts that resemble thyroid follicles (\"thyroidization\").</li><li><strong>Xanthogranulomatous pyelonephritis</strong>: a destructive chronic infection, usually with an obstructing staghorn stone and <em>Proteus</em> or <em>E. coli</em>. Lipid-laden foamy macrophages form yellow masses that can mimic renal cell carcinoma; treatment is usually nephrectomy.</li><li><strong>Genitourinary tuberculosis</strong>: hematogenous spread, often years after the primary infection. Classic clue: <strong>sterile pyuria</strong> (white cells, routine culture negative) with hematuria; caseating granulomas, calyceal distortion, ureteral strictures. Diagnose with acid-fast culture or nucleic acid testing of several first-morning urine samples.</li><li><strong><em>Schistosoma haematobium</em></strong>: freshwater exposure in Africa or the Middle East; adult worms live in the vesical venous plexus, and eggs with a <em>terminal spine</em> lodge in the bladder wall. Terminal hematuria, granulomatous fibrosis, obstructive uropathy and, long term, <strong>squamous cell carcinoma of the bladder</strong>. Treatment: praziquantel.</li><li><strong>BK polyomavirus</strong>: reactivates in kidney transplant recipients on strong immunosuppression and causes tubulointerstitial nephritis with intranuclear inclusions (\"decoy cells\" in urine) and graft dysfunction. The main step is to reduce immunosuppression.</li><li><strong>Adenovirus</strong>: hemorrhagic cystitis in children and transplant recipients.</li></ul><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Stones that smell of ammonia</em>\": urease producers (<em>Proteus</em>, <em>Klebsiella</em>, <em>Staphylococcus saprophyticus</em>, <em>Ureaplasma</em>) make urine alkaline and build struvite.</p></div>",
+    "figureIds": [
+     "s23c-fig110101-1"
+    ],
+    "areas": [
+     "usmle2026.11.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Acute Pyelonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519537/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Xanthogranulomatous Pyelonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557399/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Genitourinary Tuberculosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557558/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Schistosomiasis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554434/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Urinary Tract Infections",
+      "url": "https://medlineplus.gov/urinarytractinfections.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110102-1-1",
+    "heading": "Nephritic glomerular disease: immune mechanisms and pathology",
+    "html": "<p>The <strong>nephritic pattern</strong> comes from inflammation inside the glomerulus: leukocytes and proliferating cells injure capillary walls, so red cells leak into Bowman space. The result is <strong>hematuria with dysmorphic red cells and red cell casts</strong>, a fall in glomerular filtration (oliguria, azotemia), sodium and water retention with <strong>hypertension and edema</strong>, and proteinuria that is usually below the nephrotic range.</p><p>Where immune complexes sit decides how much inflammation they cause. Deposits on the <em>blood side</em> of the basement membrane (subendothelial, mesangial) are reached by complement and leukocytes and drive proliferation. Deposits on the <em>urinary side</em> (subepithelial) are shielded from circulating leukocytes and mainly injure podocytes, which gives proteinuria; the large subepithelial humps of post-infectious GN are the exception because they come with intense complement activation.</p>[[figure:s23c-fig110102-1]]<h3>The main nephritic diseases</h3><table><tr><th>Disease</th><th>Immunofluorescence and EM</th><th>Serum complement</th><th>Clues</th></tr><tr><td>Post-streptococcal (post-infectious) GN</td><td>Granular IgG and C3; large subepithelial humps; hypercellular glomeruli with neutrophils</td><td>Low C3, recovers in about 6–8 weeks</td><td>Latent period: 1–3 weeks after pharyngitis, 3–6 weeks after impetigo; anti-streptolysin O or anti-DNase B; children usually recover fully</td></tr><tr><td>IgA nephropathy</td><td>Mesangial IgA (with C3); mesangial proliferation</td><td>Normal</td><td>Gross hematuria within 1–3 days of a mucosal infection; galactose-deficient IgA1 and autoantibodies against it form complexes that lodge in the mesangium</td></tr><tr><td>IgA vasculitis</td><td>Same renal lesion as IgA nephropathy</td><td>Normal</td><td>Child with palpable purpura on the legs and buttocks, arthralgia, colicky abdominal pain (intussusception risk)</td></tr><tr><td>Anti-GBM disease</td><td><strong>Linear</strong> IgG along the GBM; crescents</td><td>Normal</td><td>Autoantibody to the noncollagenous domain of the alpha-3 chain of type IV collagen (type II hypersensitivity); lung involvement gives alveolar hemorrhage</td></tr><tr><td>ANCA-associated (pauci-immune) GN</td><td>Little or no immunoglobulin or complement; necrotising lesions with crescents</td><td>Normal</td><td>Granulomatosis with polyangiitis (PR3-ANCA; sinus and lung disease), microscopic polyangiitis (MPO-ANCA; no granulomas), eosinophilic granulomatosis with polyangiitis (asthma, eosinophilia)</td></tr><tr><td>Lupus nephritis (classes III, IV)</td><td>\"Full house\" IgG, IgA, IgM, C3, C1q; subendothelial deposits thicken capillary loops (\"wire loops\")</td><td>Low C3 and C4</td><td>Anti-dsDNA titres and low complement track activity; class IV (diffuse) is the most common severe form</td></tr><tr><td>Immune-complex MPGN</td><td>Subendothelial and mesangial deposits; GBM duplicated by interposed mesangium (\"tram-track\")</td><td>Low C3 (and often C4)</td><td>Chronic antigenemia: hepatitis C (often with mixed cryoglobulins), hepatitis B, endocarditis, monoclonal gammopathy</td></tr><tr><td>C3 glomerulopathy (including dense deposit disease)</td><td>C3 alone, little immunoglobulin</td><td>Low C3, normal C4</td><td>Dysregulated alternative pathway, for example <strong>C3 nephritic factor</strong>, an autoantibody that stabilises the C3 convertase C3bBb</td></tr><tr><td>Cryoglobulinemic GN</td><td>Intraluminal \"thrombi\" of cryoglobulin; MPGN pattern</td><td>Very low C4</td><td>Hepatitis C, palpable purpura, arthralgia, neuropathy, positive rheumatoid factor</td></tr></table><h3>Lupus nephritis classes</h3><ul><li>I minimal mesangial and II mesangial proliferative: mild, usually hematuria or low-grade proteinuria.</li><li>III focal (fewer than half of glomeruli) and IV diffuse (half or more) proliferative: subendothelial deposits, active sediment, hypertension, falling GFR; need immunosuppression.</li><li>V membranous: subepithelial deposits, nephrotic syndrome; may coexist with III or IV.</li><li>VI advanced sclerosing: 90% or more of glomeruli scarred; treat as CKD.</li></ul><h3>Rapidly progressive GN</h3><p>Any of the above can form <strong>crescents</strong>: fibrin leaks through ruptured capillary walls into Bowman space and provokes proliferation of parietal epithelial cells with macrophages. Crescents in most glomeruli mean kidney function falls over days to weeks. Immunofluorescence sorts crescentic GN into three groups: linear (anti-GBM), granular (immune complex: lupus, IgA, post-infectious) and pauci-immune (ANCA).</p><h3>Hereditary basement-membrane disease</h3><ul><li><strong>Alport syndrome</strong>: abnormal type IV collagen (most often X-linked <em>COL4A5</em>, alpha-5 chain). Hematuria from childhood, then proteinuria and progressive CKD in affected males, with <strong>sensorineural hearing loss</strong> and eye changes (anterior lenticonus). EM shows an irregularly thickened, thinned and split (\"basket-weave\") GBM. Anti-GBM disease can appear in a transplanted kidney because the graft carries collagen the recipient never made.</li><li><strong>Thin basement membrane nephropathy</strong>: often a heterozygous <em>COL4A3</em> or <em>COL4A4</em> variant; persistent microscopic hematuria with a uniformly thin GBM and usually preserved function, although some patients progress, so they are followed.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> timing separates IgA nephropathy from post-streptococcal GN. Hematuria during or a day or two after the sore throat, with normal C3, is IgA nephropathy; hematuria 2 or more weeks later with low C3 is post-infectious GN.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> <em>complement tells you who is consuming it</em>. Low C3 and C4 together: immune complexes on the classical pathway (lupus, cryoglobulins, immune-complex MPGN). Low C3 with normal C4: the alternative pathway (post-infectious GN, C3 glomerulopathy). Normal complement: IgA, anti-GBM, ANCA.</p></div>",
+    "figureIds": [
+     "s23c-fig110102-1"
+    ],
+    "areas": [
+     "usmle2026.11.01.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: IgA Nephropathy (Berger Disease)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538214/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Infection-Related Glomerulonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538255/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Rapidly Progressive Glomerulonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557430/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Lupus Nephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499817/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Goodpasture Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459291/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Cryoglobulinemic Glomerulonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK613279/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Alport Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470419/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110102-1-2",
+    "heading": "Nephrotic glomerular disease and acute interstitial nephritis",
+    "html": "<p>The <strong>nephrotic syndrome</strong> is podocyte or filtration-barrier injury without much inflammation: proteinuria above 3.5 g/day in adults, hypoalbuminemia, edema, hyperlipidemia and lipiduria (oval fat bodies and fatty casts that show \"Maltese crosses\" under polarised light). The sediment is otherwise bland.</p><h3>Consequences of heavy proteinuria</h3><ul><li><strong>Edema</strong>: low oncotic pressure plus primary renal sodium retention in the collecting duct.</li><li><strong>Hyperlipidemia</strong>: the liver raises lipoprotein synthesis in response to low oncotic pressure, and lipoprotein clearance falls.</li><li><strong>Hypercoagulability</strong>: urinary loss of antithrombin (and proteins C and S) while the liver makes more fibrinogen and other clotting factors. Venous thrombosis, including <strong>renal vein thrombosis</strong>, is most common with membranous nephropathy.</li><li><strong>Infection</strong>: urinary loss of IgG and complement factors; children are prone to spontaneous peritonitis and cellulitis, classically with <em>Streptococcus pneumoniae</em>.</li><li>Loss of binding proteins: low total thyroxine and 25-hydroxyvitamin D with normal free hormone in many patients.</li></ul>[[figure:s23c-fig110102-2]]<h3>The main nephrotic diseases</h3><table><tr><th>Disease</th><th>Light microscopy</th><th>IF and EM</th><th>Associations</th></tr><tr><td>Minimal change disease</td><td>Normal</td><td>IF negative; EM: diffuse effacement of podocyte foot processes</td><td>Most common cause in young children; highly steroid responsive; in adults NSAIDs and Hodgkin lymphoma; autoantibodies to the podocyte protein nephrin have been found in many patients</td></tr><tr><td>Focal segmental glomerulosclerosis (FSGS)</td><td>Scarring of part of some glomeruli</td><td>IF usually negative (nonspecific IgM, C3 in scars); effacement</td><td>Common cause in adults, especially Black adults (two <em>APOL1</em> risk variants); secondary forms: HIV (collapsing variant), heroin, obesity, sickle cell disease, reduced nephron mass, lithium, pamidronate; less steroid responsive</td></tr><tr><td>Membranous nephropathy</td><td>Diffusely thickened capillary walls</td><td>Granular IgG and C3; subepithelial deposits with intervening basement-membrane \"spikes\" on silver stain</td><td>Common cause in older adults; about 70–80% of primary cases have antibodies to the podocyte <strong>phospholipase A2 receptor (PLA2R)</strong>; secondary: lupus class V, hepatitis B, solid tumours, NSAIDs, gold, penicillamine</td></tr><tr><td>Diabetic nephropathy</td><td>Mesangial expansion, GBM thickening, nodular sclerosis (Kimmelstiel-Wilson nodules), hyaline arteriolosclerosis of both afferent and efferent arterioles</td><td>Linear, nonspecific IgG along the GBM</td><td>Hyperfiltration early: glomerular capillary pressure rises because angiotensin II constricts the efferent arteriole</td></tr><tr><td>Amyloidosis</td><td>Acellular, amorphous mesangial and capillary deposits</td><td>Congo red stain with apple-green birefringence under polarised light; random 8–12 nm fibrils on EM</td><td>AL (light chains from a plasma cell clone) or AA (serum amyloid A in chronic inflammation: rheumatoid arthritis, inflammatory bowel disease, familial Mediterranean fever, chronic infection)</td></tr></table><h3>Acute interstitial nephritis</h3><p>Acute interstitial nephritis (AIN) is inflammation of the interstitium and tubules, not the glomerulus. Most cases are a <strong>drug reaction</strong> mediated mainly by T cells (type IV hypersensitivity): beta-lactams, sulfonamides, rifampin, NSAIDs, proton pump inhibitors and immune checkpoint inhibitors are frequent culprits. Onset is usually days to weeks after the drug starts (sooner on re-exposure; months with NSAIDs and proton pump inhibitors). Features: rising creatinine, sterile pyuria and <strong>white cell casts</strong>, mild proteinuria, and sometimes fever, rash and eosinophilia (the full triad is uncommon). Biopsy shows interstitial edema with lymphocytes, plasma cells and often eosinophils. Other causes are infections and systemic disease (sarcoidosis, Sjögren syndrome, IgG4-related disease).</p><div class=\"trap\"><p><strong>Exam trap:</strong> NSAIDs can cause minimal change disease (or membranous nephropathy) <em>and</em> interstitial nephritis at the same time, so heavy proteinuria with pyuria after long NSAID use does not need two diagnoses.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Normal under the light, flat under the beam</em>\": minimal change looks normal by light microscopy and shows only flattened foot processes under the electron beam.</p></div>",
+    "figureIds": [
+     "s23c-fig110102-2"
+    ],
+    "areas": [
+     "usmle2026.11.01.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Nephrotic Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470444/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Minimal Change Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560639/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Focal Segmental Glomerulosclerosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532272/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Membranous Nephropathy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559169/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Diabetic Nephropathy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534200/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110201-1-1",
+    "heading": "Renal cysts and benign renal tumours: genetics and pathology",
+    "html": "<p>Renal cysts range from the trivial (a simple cyst found on a scan for something else) to inherited diseases that end in kidney failure. Benign solid tumours of the kidney matter mostly because they can look like cancer. Sort them by <strong>pattern</strong> (one cyst or many, cortex or medulla), <strong>kidney size</strong> and <strong>inheritance</strong>.</p>[[figure:s23c-fig110201-1]]<h3>Simple cysts</h3><p>Fluid-filled, thin-walled cysts lined by a single layer of flattened epithelium. They become more common with age and are present in a large share of adults over 50. They are usually silent; rarely they bleed, become infected or are large enough to cause pain. A cyst with thick walls, septa, calcification or enhancing tissue is <em>complex</em> and needs a different approach (see Step 2 CK).</p><h3>Autosomal dominant polycystic kidney disease (ADPKD)</h3><ul><li><strong>Genetics</strong>: <em>PKD1</em> on chromosome 16 (about 80% of families; more severe, earlier kidney failure) or <em>PKD2</em> on chromosome 4 (milder). The proteins, polycystin-1 and polycystin-2, sit in the <strong>primary cilium</strong> of tubular cells and regulate calcium entry. A second, somatic hit in the normal allele of a single tubular cell starts each cyst, so cysts appear over decades rather than at birth.</li><li><strong>Cyst growth</strong>: low intracellular calcium raises <strong>cAMP</strong>, which drives epithelial proliferation and chloride-driven fluid secretion into the cyst (through CFTR). Vasopressin acting on V2 receptors in the collecting duct is a major source of that cAMP, which is why the V2 antagonist <strong>tolvaptan</strong> slows kidney growth.</li><li><strong>Kidneys</strong>: both enlarge massively, replaced by cysts from every part of the nephron. Expanding cysts compress intrarenal vessels, causing local ischemia, <strong>renin-angiotensin activation</strong> and early hypertension, often before the GFR falls.</li><li><strong>Renal features</strong>: flank pain, gross hematuria from cyst rupture, cyst infection, calcium oxalate and uric acid stones, a urinary concentrating defect, and progressive CKD that usually reaches kidney failure in middle age with <em>PKD1</em>.</li><li><strong>Extrarenal features</strong>: <strong>liver cysts</strong> (the commonest; larger and more common in women with estrogen exposure), <strong>saccular (berry) aneurysms</strong> of the circle of Willis (risk clusters in families), mitral valve prolapse, colonic diverticula, abdominal and inguinal hernias, pancreatic and seminal vesicle cysts.</li></ul><h3>Autosomal recessive polycystic kidney disease (ARPKD)</h3><p>Mutations in <em>PKHD1</em> (fibrocystin, also a ciliary protein). The collecting ducts dilate into cysts arranged <strong>radially</strong> from medulla to cortex, so both kidneys are large and echogenic from fetal life. Poor fetal urine output causes <strong>oligohydramnios and the Potter sequence</strong> (pulmonary hypoplasia, flattened facies, limb deformities); pulmonary hypoplasia is the main cause of neonatal death. Every child also has <strong>congenital hepatic fibrosis</strong> (ductal plate malformation), which causes portal hypertension and cholangitis in survivors.</p><h3>Other cystic kidneys</h3><table><tr><th>Condition</th><th>Kidney size</th><th>Key points</th></tr><tr><td>Acquired cystic kidney disease</td><td>Small, scarred</td><td>Develops with long-standing kidney failure, especially on dialysis; cysts can bleed; <strong>renal cell carcinoma risk</strong> is raised</td></tr><tr><td>Medullary sponge kidney</td><td>Normal</td><td>Dilated medullary (inner) collecting ducts, usually sporadic; calcium stones, nephrocalcinosis, UTIs and hematuria in young adults; urography shows linear streaks of contrast in the papillae; kidney function is usually preserved</td></tr><tr><td>Nephronophthisis (autosomal recessive)</td><td>Small or normal</td><td>Corticomedullary cysts with tubulointerstitial fibrosis; polyuria and salt wasting in childhood, kidney failure in the teens</td></tr><tr><td>Autosomal dominant tubulointerstitial kidney disease</td><td>Small or normal</td><td>Adult-onset CKD with bland urine; <em>UMOD</em> variants cause early gout</td></tr></table><h3>Benign solid tumours</h3><ul><li><strong>Angiomyolipoma</strong>: a benign tumour of perivascular epithelioid cells made of three tissues: <strong>mature fat, smooth muscle and thick-walled blood vessels</strong>. Most are sporadic and solitary; multiple, bilateral tumours suggest <strong>tuberous sclerosis complex</strong> (<em>TSC1</em> hamartin or <em>TSC2</em> tuberin, which normally restrain mTORC1). The abnormal vessels lack normal elastic tissue and form aneurysms, so large tumours can bleed into the retroperitoneum. Macroscopic fat on CT is the imaging signature. mTOR inhibitors (everolimus) shrink TSC-related tumours. Pulmonary lymphangioleiomyomatosis belongs to the same tumour family.</li><li><strong>Oncocytoma</strong>: a benign tumour from the <strong>intercalated cells</strong> of the collecting duct. Large cells with granular pink cytoplasm, packed with <strong>mitochondria</strong>; grossly mahogany-brown with a <strong>central stellate scar</strong>. It cannot be reliably told apart from carcinoma on imaging, so it is often removed.</li><li><strong>Papillary adenoma</strong>: tiny (15 mm or less) low-grade papillary tumours of the cortex found incidentally; common in scarred kidneys.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> large kidneys with many cysts and hypertension in an adult is ADPKD; small kidneys with many cysts in someone on dialysis is acquired cystic disease. Size tells them apart, and the second carries a cancer risk.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> the angiomyolipoma name lists its own recipe: <em>angio</em> (vessels), <em>myo</em> (smooth muscle), <em>lipoma</em> (fat).</p></div>",
+    "figureIds": [
+     "s23c-fig110201-1"
+    ],
+    "areas": [
+     "usmle2026.11.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Autosomal Dominant Polycystic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532934/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Autosomal Recessive Polycystic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537137/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Medullary Sponge Kidney",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470220/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Angiomyolipoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK585104/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Oncocytoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537263/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus Genetics: Polycystic kidney disease",
+      "url": "https://medlineplus.gov/genetics/condition/polycystic-kidney-disease/",
+      "sourceId": "medlineplus-federal"
+     },
+     {
+      "label": "MedlinePlus Genetics: Tuberous sclerosis complex",
+      "url": "https://medlineplus.gov/genetics/condition/tuberous-sclerosis-complex/",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110202-1-1",
+    "heading": "Renal cell carcinoma: subtypes, VHL and paraneoplastic syndromes",
+    "html": "<h3>Renal cell carcinoma (RCC)</h3><p>RCC arises from renal tubular epithelium and is the main primary kidney cancer of adults, peaking in the sixth and seventh decades and more common in men. <strong>Risk factors</strong>: smoking (the strongest modifiable one), obesity, hypertension, acquired cystic kidney disease of dialysis, and inherited syndromes, chiefly <strong>von Hippel-Lindau (VHL) disease</strong>.</p>[[figure:s23c-fig110202-1]]<table><tr><th>Subtype</th><th>Share</th><th>Origin and genetics</th><th>Microscopy</th></tr><tr><td>Clear cell</td><td>About 70–75%</td><td>Proximal tubule; loss of chromosome 3p and inactivation of <em>VHL</em> (sporadic or inherited)</td><td>Cells with clear cytoplasm (glycogen and lipid washed out in processing) in nests with a delicate, richly vascular network</td></tr><tr><td>Papillary</td><td>About 10–15%</td><td>Proximal tubule; trisomy 7 and 17; hereditary form with activating <em>MET</em> mutations; common in acquired cystic disease</td><td>Papillae with foamy macrophages in the cores, psammoma bodies</td></tr><tr><td>Chromophobe</td><td>About 5%</td><td>Intercalated cells; multiple whole-chromosome losses</td><td>Pale cells with prominent cell borders and perinuclear halos; better prognosis</td></tr><tr><td>Collecting duct and medullary</td><td>Rare</td><td>Collecting duct; medullary carcinoma occurs in young people with <strong>sickle cell trait</strong></td><td>Aggressive, infiltrative</td></tr></table><h3>VHL and the hypoxia pathway</h3><p>The VHL protein is part of an <strong>E3 ubiquitin ligase</strong> that tags <strong>hypoxia-inducible factor (HIF)</strong> for destruction when oxygen is present. When both copies are lost (two hits, as for any tumour suppressor), HIF accumulates even in normal oxygen and switches on <strong>VEGF</strong>, PDGF, erythropoietin and glucose transporter genes. That explains the vascularity of clear cell RCC and why drugs that block VEGF signalling work. VHL disease (autosomal dominant) causes bilateral, multifocal clear cell RCC and renal cysts at a young age, cerebellar and retinal <strong>hemangioblastomas</strong>, pheochromocytomas and pancreatic neuroendocrine tumours.</p><h3>Clinical behaviour</h3><ul><li>Most tumours are now found <strong>incidentally</strong> on imaging. The classic triad of hematuria, flank pain and a palpable mass is uncommon and usually means advanced disease.</li><li>RCC grows into the <strong>renal vein</strong> and can extend up the inferior vena cava to the right atrium. A <strong>left varicocele</strong> that does not empty when the patient lies down suggests obstruction of the left gonadal vein where it joins the left renal vein.</li><li>Spread is hematogenous: lung (\"cannonball\" nodules), bone (purely <strong>lytic</strong> lesions), liver and brain.</li><li><strong>Paraneoplastic syndromes</strong> are common: <strong>erythropoietin</strong> (polycythemia), <strong>PTH-related peptide</strong> (hypercalcemia with low PTH), renin (hypertension), ACTH (Cushing syndrome), fever and weight loss, and a reversible cholestatic liver dysfunction without metastases (Stauffer syndrome).</li></ul><h3>Drugs used against RCC (by mechanism)</h3><ul><li><strong>VEGF receptor tyrosine kinase inhibitors</strong> (sunitinib, pazopanib, axitinib, cabozantinib): adverse effects include hypertension, proteinuria, hand-foot skin reaction, diarrhea, hypothyroidism and impaired wound healing.</li><li><strong>Immune checkpoint inhibitors</strong>: anti-PD-1 (pembrolizumab, nivolumab) and anti-CTLA-4 (ipilimumab) release T-cell brakes; adverse effects are immune-mediated (colitis, hepatitis, pneumonitis, thyroiditis, hypophysitis, adrenalitis, type 1 diabetes).</li><li><strong>mTOR inhibitors</strong> (everolimus, temsirolimus) and the <strong>HIF-2α inhibitor belzutifan</strong> (used for VHL-associated tumours).</li><li>RCC is resistant to conventional cytotoxic chemotherapy.</li></ul>",
+    "figureIds": [
+     "s23c-fig110202-1"
+    ],
+    "areas": [
+     "usmle2026.11.02.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Renal Clear Cell Cancer",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK563230/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus Genetics: Von Hippel-Lindau syndrome",
+      "url": "https://medlineplus.gov/genetics/condition/von-hippel-lindau-syndrome/",
+      "sourceId": "medlineplus-federal"
+     },
+     {
+      "label": "MedlinePlus: Kidney Cancer",
+      "url": "https://medlineplus.gov/kidneycancer.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110202-1-2",
+    "heading": "Wilms tumour and urothelial carcinoma",
+    "html": "<h3>Wilms tumour (nephroblastoma)</h3><p>The commonest primary kidney cancer of children, usually between 2 and 5 years. It arises from persistent <strong>metanephric blastema</strong> (nephrogenic rests) and shows a <strong>triphasic</strong> pattern: small round blue blastemal cells, primitive tubules and glomeruloid structures (epithelium), and spindle-cell stroma. It presents as a large, smooth, <strong>unilateral flank mass</strong> that rarely crosses the midline, sometimes with hematuria, abdominal pain or hypertension (renin). Lung is the usual site of metastasis. Unfavourable (anaplastic) histology carries <em>TP53</em> mutations.</p><table><tr><th>Syndrome</th><th>Genetics</th><th>Features</th></tr><tr><td>WAGR</td><td>Deletion at 11p13 including <em>WT1</em> and <em>PAX6</em></td><td>Wilms tumour, aniridia, genitourinary anomalies, intellectual disability (range of developmental delay)</td></tr><tr><td>Denys-Drash</td><td>Dominant-negative <em>WT1</em> point mutation</td><td>Early nephrotic syndrome with diffuse mesangial sclerosis, disorders of sex development, Wilms tumour</td></tr><tr><td>Beckwith-Wiedemann</td><td>Imprinting defects at 11p15.5 (for example overexpression of <em>IGF2</em>)</td><td>Macrosomia, macroglossia, omphalocele, lateralised overgrowth (hemihypertrophy), neonatal hypoglycemia; Wilms tumour and hepatoblastoma</td></tr></table><p>Neuroblastoma, the other big abdominal tumour of young children, arises from the adrenal medulla, is often calcified, crosses the midline and raises urine catecholamine metabolites; Wilms tumour does none of these.</p><h3>Urothelial carcinoma</h3><p>The urothelium lines the renal pelvis, ureters, bladder and proximal urethra, and carcinogens excreted in urine expose all of it at once. Tumours are often <strong>multifocal and recur</strong> (a \"field effect\"). Most arise in the bladder; upper-tract tumours are less common.</p><ul><li><strong>Risk factors</strong>: <strong>cigarette smoking</strong> (the leading cause); occupational <strong>aromatic amines</strong> (benzidine, 2-naphthylamine in dye, rubber and leather work); <strong>cyclophosphamide</strong> (its metabolite acrolein also causes hemorrhagic cystitis, prevented by hydration and mesna); long-term <strong>phenacetin</strong>-containing analgesics (papillary necrosis and renal pelvis tumours); <strong>aristolochic acid</strong> (some herbal remedies; upper-tract tumours); pelvic radiation. <strong>Lynch syndrome</strong> raises the risk of upper-tract tumours.</li><li><strong>Two pathways</strong>: low-grade papillary tumours recur often but rarely invade; flat <strong>carcinoma in situ</strong> and high-grade tumours tend to invade. Stage depends on depth: invasion of the <strong>muscularis propria</strong> separates non-muscle-invasive from muscle-invasive disease and is the key prognostic step.</li><li><strong>Presentation</strong>: painless gross hematuria; irritative voiding symptoms with carcinoma in situ.</li><li><strong>Intravesical BCG</strong> (live attenuated <em>Mycobacterium bovis</em>) treats high-grade non-muscle-invasive tumours and carcinoma in situ by provoking a local Th1-type immune response that kills tumour cells.</li></ul><h3>Other bladder cancers</h3><ul><li><strong>Squamous cell carcinoma</strong>: chronic irritation and squamous metaplasia: <em>Schistosoma haematobium</em>, long-term catheters, chronic stones.</li><li><strong>Adenocarcinoma</strong>: <strong>urachal remnant</strong> at the bladder dome, bladder exstrophy, glandular metaplasia.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> painless gross hematuria in an older smoker is urothelial cancer until proved otherwise, even if he is taking an anticoagulant or the bleeding stops.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Three-p, pee clear</em>\": loss of chromosome <strong>3p</strong> gives <strong>clear</strong> cell carcinoma of the kidney.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.02.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Wilms Tumor",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK442004/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bladder Cancer",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536923/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Wilms Tumor",
+      "url": "https://medlineplus.gov/wilmstumor.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110301-1-1",
+    "heading": "Reading the urine: dipstick, sediment, casts, colour and volume",
+    "html": "<p>A urine sample is a liquid biopsy of the kidney. Three parts are read together: the <strong>dipstick</strong> (chemistry), <strong>microscopy</strong> of the spun sediment, and the <strong>volume and colour</strong>. Each answers a different question, and each has blind spots.</p><h3>The dipstick and its blind spots</h3><table><tr><th>Pad</th><th>What it detects</th><th>Misses or misleads</th></tr><tr><td>Protein</td><td>Mainly <strong>albumin</strong> (negatively charged)</td><td>Light chains and other low-molecular-weight proteins; very alkaline or concentrated urine gives false positives</td></tr><tr><td>Blood (heme)</td><td>Peroxidase activity of hemoglobin and <strong>myoglobin</strong></td><td>Positive with free hemoglobin or myoglobin and no red cells: always confirm with microscopy</td></tr><tr><td>Glucose</td><td>Glucose only</td><td>Positive when the filtered load exceeds tubular reabsorption (threshold about 180 mg/dL in plasma), or with an SGLT2 inhibitor, pregnancy or proximal tubule damage at normal plasma glucose</td></tr><tr><td>Leukocyte esterase, nitrite</td><td>Neutrophils; nitrate-reducing gram-negative bacteria</td><td>See urinary infections</td></tr><tr><td>Specific gravity</td><td>Concentration (roughly tracks osmolality)</td><td>Raised by glucose, contrast and protein beyond their osmotic effect</td></tr><tr><td>Bilirubin, urobilinogen</td><td>Conjugated bilirubin; urobilinogen</td><td>Conjugated bilirubin in urine means cholestasis or hepatocellular disease; unconjugated bilirubin is albumin bound and never appears</td></tr></table><h3>Hematuria: where is the blood coming from?</h3><p><strong>Glomerular</strong> bleeding forces red cells through gaps in the glomerular basement membrane and then through the osmotic and pH changes of the tubule, so they arrive <strong>dysmorphic</strong> (blebbed ring forms called acanthocytes), often with <strong>red cell casts</strong> and proteinuria, and the urine is brown or \"cola\" coloured. <strong>Nonglomerular</strong> bleeding (stones, tumours, infection, prostate, papillary necrosis) gives uniform, round red cells, sometimes <strong>clots</strong>, and usually no significant proteinuria. Clots argue strongly against a glomerular source, because urokinase in tubular fluid lyses glomerular blood.</p><p><strong>Heme-positive dipstick without red cells</strong> means a pigment:</p><ul><li><strong>Myoglobin</strong> (rhabdomyolysis: crush injury, prolonged immobility, extreme exertion, statins with interacting drugs, seizures): small (about 17 kDa), freely filtered and cleared, so plasma stays clear; creatine kinase is very high. Myoglobin is toxic to tubules and causes acute tubular necrosis.</li><li><strong>Hemoglobin</strong> (intravascular hemolysis): plasma is pink, haptoglobin is low and LDH and indirect bilirubin are high.</li></ul><p>Papillary necrosis gives painless or colicky hematuria; remember its causes: diabetes, analgesic overuse, sickle cell disease or trait, obstruction with infection, and severe pyelonephritis. In <strong>sickle cell trait</strong> the hypertonic, hypoxic renal medulla promotes sickling, so painless hematuria and an inability to concentrate urine (isosthenuria) can occur even in carriers; renal medullary carcinoma is a rare, aggressive tumour of young people with sickle trait.</p><h3>Proteinuria: how much and what kind?</h3><p>Normal excretion is below 150 mg of protein and below 30 mg of albumin a day; much of the normal protein is Tamm-Horsfall glycoprotein (uromodulin) secreted by the thick ascending limb. Spot ratios estimate daily excretion: the urine albumin-to-creatinine ratio (UACR, mg/g) and protein-to-creatinine ratio (UPCR, g/g are roughly g/day).</p><table><tr><th>Type</th><th>Mechanism</th><th>Typical amount and clue</th></tr><tr><td>Glomerular</td><td>Loss of the size or charge barrier lets albumin through</td><td>Albumin-dominant; above 3.5 g/day is nephrotic range</td></tr><tr><td>Tubular</td><td>Proximal tubule fails to reabsorb filtered small proteins (beta-2 microglobulin, retinol-binding protein)</td><td>Usually below 2 g/day; dipstick often weakly positive or negative; Fanconi syndrome, heavy metals, interstitial nephritis</td></tr><tr><td>Overflow</td><td>Plasma excess of a small protein exceeds tubular uptake</td><td>Immunoglobulin light chains in myeloma (dipstick negative, UPCR high); myoglobin; hemoglobin</td></tr><tr><td>Functional or transient</td><td>Altered glomerular hemodynamics</td><td>Fever, intense exercise, heart failure, seizures; usually below 1 g/day and gone on repeat</td></tr><tr><td>Orthostatic</td><td>Increased protein excretion when upright</td><td>Adolescents and young adults, below about 1 g/day, absent in a first-morning sample; benign</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a negative or trace dipstick with a high UPCR (or a positive sulfosalicylic acid test) means the protein is not albumin. Think <strong>light chains</strong> and look for anemia, hypercalcemia and renal failure.</p></div><h3>Microscopy: casts and crystals</h3><p>Casts are cylinders of Tamm-Horsfall protein moulded in the distal tubule and collecting duct, so anything trapped in a cast came from the kidney.</p>[[figure:s23c-fig110301-1]]<p>Crystals: calcium oxalate dihydrate looks like envelopes (monohydrate needles or dumbbells suggest ethylene glycol), uric acid forms rhomboids or rosettes in acid urine, struvite forms \"coffin lids\" in alkaline infected urine, and <strong>cystine forms hexagons</strong>, which are always abnormal.</p><h3>Urine colour</h3><table><tr><th>Colour</th><th>Causes</th></tr><tr><td>Red or pink</td><td>Red cells, hemoglobin, myoglobin, beets (in some people), rifampin (orange-red), porphyrins</td></tr><tr><td>Orange</td><td>Phenazopyridine, rifampin, concentrated urine, conjugated bilirubin</td></tr><tr><td>Brown or cola</td><td>Glomerular bleeding, myoglobin, conjugated bilirubin, metronidazole</td></tr><tr><td>Darkens to black on standing</td><td><strong>Alkaptonuria</strong> (homogentisic acid oxidises; ochronosis of cartilage); also melanuria with metastatic melanoma</td></tr><tr><td>Port-wine, darkening in light</td><td>Porphyrias (acute intermittent porphyria during attacks)</td></tr><tr><td>Green or blue</td><td>Methylene blue, propofol, amitriptyline, <em>Pseudomonas</em></td></tr><tr><td>Milky</td><td>Pyuria, phosphate crystals, chyluria (lymphatic fistula, filariasis)</td></tr></table><h3>Abnormal volume</h3><ul><li><strong>Oliguria</strong> is below about 400 mL/day (or below 0.5 mL/kg/h); <strong>anuria</strong> is below about 100 mL/day. True anuria is unusual and points to complete obstruction (including a blocked catheter), bilateral renal arterial or venous occlusion, cortical necrosis or severe rapidly progressive glomerulonephritis.</li><li><strong>Polyuria</strong> is above about 3 L/day. The urine osmolality separates a <strong>water diuresis</strong> (urine osmolality well below plasma, usually below about 250 mOsm/kg: central or nephrogenic diabetes insipidus, primary polydipsia) from a <strong>solute diuresis</strong> (urine osmolality near or above plasma, about 300 mOsm/kg or more: glucose, urea after relief of obstruction or high-protein feeding, mannitol, saline).</li></ul><div class=\"pearl\"><p><strong>Naadi memory aid:</strong> \"<em>Dip, spin, look</em>\": dip for chemistry, spin for the sediment, look at the colour and volume. A finding counts only when all three agree.</p></div>",
+    "figureIds": [
+     "s23c-fig110301-1"
+    ],
+    "areas": [
+     "usmle2026.11.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Urinalysis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557685/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Proteinuria",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK564390/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Rhabdomyolysis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448168/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Protein in Urine (medical test)",
+      "url": "https://medlineplus.gov/lab-tests/protein-in-urine/",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110401-1-1",
+    "heading": "Renal physiology for kidney disease: filtration, clearance and the nephron",
+    "html": "<h3>Glomerular filtration</h3><p>The glomerular filtration rate (GFR) is set by the Starling forces across the glomerular capillary: glomerular capillary hydrostatic pressure pushes fluid out, and Bowman space pressure and plasma oncotic pressure oppose it. Because the glomerular capillary bed sits <em>between two arterioles</em>, their tone controls the pressure inside it.</p><table><tr><th>Change</th><th>Renal plasma flow (RPF)</th><th>GFR</th><th>Filtration fraction (GFR/RPF)</th><th>Example</th></tr><tr><td>Afferent constriction</td><td>Down</td><td>Down</td><td>About unchanged</td><td>NSAIDs (loss of prostaglandin dilation), sympathetic tone</td></tr><tr><td>Afferent dilation</td><td>Up</td><td>Up</td><td>About unchanged</td><td>Prostaglandins, high-protein meal</td></tr><tr><td>Efferent constriction</td><td>Down</td><td>Up (modest)</td><td>Up</td><td>Angiotensin II in volume depletion</td></tr><tr><td>Efferent dilation</td><td>Up</td><td>Down</td><td>Down</td><td>ACE inhibitors, ARBs</td></tr><tr><td>Higher plasma oncotic pressure</td><td>No change</td><td>Down</td><td>Down</td><td>Multiple myeloma paraproteins, dehydration</td></tr><tr><td>Ureteral obstruction</td><td>No change</td><td>Down</td><td>Down</td><td>Raised Bowman space pressure</td></tr></table><p>The normal filtration fraction is about 20%. Prerenal states lean on efferent constriction by angiotensin II and on afferent dilation by prostaglandins to hold GFR up, which is why an ACE inhibitor or an NSAID can tip a volume-depleted patient into acute kidney injury.</p><h3>Clearance</h3><p>Clearance is the plasma volume cleared of a substance per minute: <strong>C = (U × V) / P</strong>, where U is urine concentration, V urine flow and P plasma concentration.</p><ul><li><strong>Inulin</strong> is filtered and neither reabsorbed nor secreted, so its clearance equals GFR.</li><li><strong>Creatinine</strong> is filtered and slightly secreted, so creatinine clearance slightly <em>overestimates</em> GFR. Drugs that block creatinine secretion (trimethoprim, cimetidine) raise serum creatinine without changing true GFR.</li><li><strong>Para-aminohippuric acid (PAH)</strong> is filtered and almost completely secreted, so its clearance estimates effective renal plasma flow. Renal blood flow = RPF / (1 − hematocrit).</li><li>A substance with clearance below the GFR is net reabsorbed (glucose, sodium, urea); above the GFR, net secreted.</li></ul><p>Serum creatinine rises late: the relationship between creatinine and GFR is hyperbolic, so losing half the GFR from normal only moves creatinine from about 0.8 to 1.6 mg/dL. Cystatin C is less affected by muscle mass and is used to confirm an estimated GFR.</p><h3>Segment by segment</h3>[[figure:s23c-fig110401-1]]<table><tr><th>Segment</th><th>Key transporters and functions</th><th>Drug or disease at this site</th></tr><tr><td>Proximal tubule</td><td>About two thirds of filtered sodium and water; NaHCO₃ via carbonic anhydrase and Na⁺/H⁺ exchange; glucose by SGLT2; amino acids, phosphate, urate; ammoniagenesis from glutamine; organic acid and base secretion</td><td>Acetazolamide, SGLT2 inhibitors; Fanconi syndrome, type 2 RTA, cystinuria</td></tr><tr><td>Thin descending limb</td><td>Water leaves into the hypertonic medulla</td><td>Mannitol (osmotic, acts mainly here and in the proximal tubule)</td></tr><tr><td>Thick ascending limb</td><td>NKCC2 (Na⁺-K⁺-2Cl⁻); K⁺ recycling through ROMK creates a lumen-positive voltage that drives paracellular Ca²⁺ and Mg²⁺ uptake; water-impermeable (\"diluting segment\")</td><td>Loop diuretics; Bartter syndrome</td></tr><tr><td>Distal convoluted tubule</td><td>NCC (Na⁺-Cl⁻); PTH-regulated Ca²⁺ reabsorption</td><td>Thiazides (lower urine calcium); Gitelman syndrome</td></tr><tr><td>Collecting duct, principal cell</td><td>ENaC sodium uptake and ROMK potassium secretion under aldosterone; aquaporin-2 inserted by ADH via V2 receptors</td><td>Amiloride, triamterene, mineralocorticoid antagonists; Liddle syndrome; nephrogenic diabetes insipidus</td></tr><tr><td>Collecting duct, α-intercalated cell</td><td>H⁺-ATPase and H⁺/K⁺-ATPase secrete acid; urine buffered as NH₄⁺ and titratable acid</td><td>Type 1 RTA</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a rise in creatinine of up to about 30% after starting an ACE inhibitor or ARB is expected (efferent dilation) and is not a reason to stop it; a larger rise suggests bilateral renal artery stenosis or volume depletion.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Loops lose calcium, thiazides keep it</em>\": loop diuretics raise urine calcium (useful in hypercalcemia), thiazides lower it (useful in calcium stones).</p></div>",
+    "figureIds": [
+     "s23c-fig110401-1"
+    ],
+    "areas": [
+     "usmle2026.11.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Acute Kidney Injury",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441896/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Failure",
+      "url": "https://medlineplus.gov/kidneyfailure.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110401-1-2",
+    "heading": "Acute kidney injury, chronic kidney disease and hypertensive renal disease: mechanisms and pathology",
+    "html": "<h3>Acute kidney injury (AKI)</h3><p>AKI is a fall in kidney function over hours to days. Think of it by where the problem lies.</p><table><tr><th>Feature</th><th>Prerenal</th><th>Intrinsic: acute tubular necrosis</th><th>Postrenal</th></tr><tr><td>Mechanism</td><td>Low effective perfusion; tubules intact and avidly reabsorb sodium and water</td><td>Tubular cells die and slough; casts obstruct tubules; filtrate leaks back</td><td>Obstruction raises tubular and Bowman pressure</td></tr><tr><td>BUN:creatinine</td><td>Above 20</td><td>10–15</td><td>Variable (often above 15 early)</td></tr><tr><td>Urine sodium</td><td>Below 20 mEq/L</td><td>Above 40 mEq/L</td><td>Variable</td></tr><tr><td>FENa</td><td>Below 1%</td><td>Above 2%</td><td>Variable</td></tr><tr><td>Urine osmolality</td><td>Above 500 mOsm/kg</td><td>Close to plasma (about 300)</td><td>Variable</td></tr><tr><td>Sediment</td><td>Bland, hyaline casts</td><td>Muddy brown granular and renal tubular epithelial cell casts</td><td>Bland; hydronephrosis on ultrasound</td></tr></table><p>FENa = (urine Na × plasma Cr) / (plasma Na × urine Cr) × 100. Diuretics raise FENa even in prerenal states; the fractional excretion of urea (below about 35% in prerenal AKI) is less affected.</p><h3>Acute tubular necrosis</h3><ul><li><strong>Ischemic</strong> ATN follows prolonged hypotension or shock. The <em>straight part of the proximal tubule</em> and the medullary thick ascending limb are most vulnerable, because they work hard in an area that receives little oxygen. Injury is patchy.</li><li><strong>Nephrotoxic</strong> ATN mainly damages the proximal tubule: aminoglycosides, cisplatin, amphotericin B, iodinated contrast, and pigments (myoglobin in rhabdomyolysis, hemoglobin in hemolysis).</li><li><strong>Rhabdomyolysis</strong>: crush injury, prolonged immobility, extreme exertion, statins, seizures. The dipstick is positive for blood but few red cells are seen, because the dipstick detects heme in myoglobin. Creatine kinase is very high; potassium and phosphate rise, calcium falls early.</li><li><strong>Tumor lysis</strong>: after cytotoxic therapy of bulky, fast-growing tumours (Burkitt lymphoma, acute leukemia). Uric acid and calcium phosphate crystallise in tubules. Labs: high potassium, phosphate and uric acid, low calcium.</li><li>Course: initiation, a maintenance phase with oliguria and hyperkalemia, then a recovery phase with polyuria in which hypokalemia and volume depletion are risks.</li></ul><h3>Chronic kidney disease (CKD)</h3><p>CKD is kidney damage or GFR below 60 mL/min/1.73 m² for more than 3 months. The most common causes are diabetes and hypertension. Once nephrons are lost, the survivors hyperfilter; the raised glomerular pressure injures them in turn (adaptive hyperfiltration), driving progressive glomerulosclerosis.</p><ul><li><strong>Anemia</strong>: normocytic, from low erythropoietin made by peritubular interstitial cells, plus iron deficiency and inflammation.</li><li><strong>CKD-mineral and bone disorder</strong>: phosphate retention and high FGF23 lower 1α-hydroxylase activity, so calcitriol falls; calcium falls, and <strong>secondary hyperparathyroidism</strong> follows. Bone disease (renal osteodystrophy, including osteitis fibrosa cystica) and vascular calcification result. After years, parathyroid glands can become autonomous: <strong>tertiary hyperparathyroidism</strong> with hypercalcemia, often unmasked after transplant.</li><li><strong>Metabolic acidosis</strong>: falling ammoniagenesis; first with a normal anion gap, later with a raised gap from retained sulfate, phosphate and urate.</li><li><strong>Hyperkalemia</strong>, salt and water retention, hypertension.</li><li><strong>Uremia</strong>: nausea, anorexia, pruritus, pericarditis, encephalopathy (asterixis), platelet dysfunction with bleeding, peripheral neuropathy.</li></ul><h3>Hypertensive renal disease</h3><ul><li><strong>Benign nephrosclerosis</strong> (long-standing hypertension): hyaline arteriolosclerosis narrows afferent arterioles; patchy ischemic glomerulosclerosis; small kidneys with a finely granular surface. Diabetes produces the same hyaline change.</li><li><strong>Hypertensive emergency (malignant hypertension)</strong>: hyperplastic arteriolosclerosis (concentric \"onion-skin\" smooth muscle and basement membrane layers) and fibrinoid necrosis of arterioles; petechial cortical hemorrhages (\"flea-bitten\" kidney); AKI with hematuria and microangiopathic hemolysis.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> red urine, a dipstick strongly positive for blood and almost no red cells on microscopy is myoglobinuria or hemoglobinuria, not hematuria.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Acute Renal Tubular Necrosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507815/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Chronic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK535404/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Chronic Kidney Disease-Mineral Bone Disorder (CKD-MBD)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560742/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110401-1-3",
+    "heading": "Kidney stones and tubular disorders: RTA, Fanconi syndrome, cystinuria and channelopathies",
+    "html": "<h3>Kidney stones</h3><table><tr><th>Stone</th><th>Urine and risk</th><th>Crystal and imaging</th><th>Prevention</th></tr><tr><td>Calcium oxalate (most common)</td><td>Hypercalciuria, hyperoxaluria, hypocitraturia, low urine volume; enteric hyperoxaluria after ileal disease or bypass; ethylene glycol; vitamin C excess</td><td>Dihydrate: envelope (bipyramidal); monohydrate: dumbbell or oval. Radiopaque</td><td>Fluids, low sodium, normal calcium intake, thiazide, citrate</td></tr><tr><td>Calcium phosphate</td><td>Alkaline urine: type 1 RTA, primary hyperparathyroidism</td><td>Wedge-shaped prisms. Radiopaque</td><td>Treat cause; thiazide; citrate with care</td></tr><tr><td>Uric acid</td><td><strong>Acidic urine</strong> (pH below 5.5), gout, insulin resistance, tumor lysis, high cell turnover</td><td>Rhomboid or rosette. <strong>Radiolucent</strong> on plain film, visible on CT</td><td>Alkalinise urine (potassium citrate); allopurinol if overproduction</td></tr><tr><td>Struvite (magnesium ammonium phosphate)</td><td>Alkaline urine from urease-producing organisms</td><td>Coffin-lid prisms; staghorn calculi. Radiopaque</td><td>Remove the whole stone; treat infection</td></tr><tr><td>Cystine</td><td>Autosomal recessive cystinuria, from childhood</td><td><strong>Hexagonal</strong> crystals; positive cyanide-nitroprusside test; staghorn possible; faintly radiopaque</td><td>High fluid intake, urine alkalinisation, thiol drugs (tiopronin)</td></tr></table><p><strong>Enteric hyperoxaluria</strong>: with fat malabsorption (Crohn disease, ileal resection, bariatric surgery), unabsorbed fatty acids bind calcium in the gut lumen. Oxalate that would have left as insoluble calcium oxalate stays free, and the colon absorbs it, raising urine oxalate. A <em>normal</em> calcium intake taken with meals protects; restricting calcium makes oxalate stones worse.</p><h3>Renal tubular acidosis (RTA)</h3><p>RTA causes a <strong>normal anion gap (hyperchloremic) metabolic acidosis</strong> from the kidney. The urine anion gap (Na⁺ + K⁺ − Cl⁻) estimates urine ammonium: negative when the kidney excretes ammonium normally (as in diarrhea), positive when ammonium excretion is impaired (types 1 and 4).</p>[[figure:s23c-fig110401-2]]<h3>Fanconi syndrome</h3><p>Generalised failure of the proximal tubule: glucose, amino acids, phosphate, bicarbonate and urate are lost in urine. Clues are <strong>glycosuria with a normal blood glucose</strong>, hypophosphatemia (rickets or osteomalacia), hypouricemia and a type 2 RTA. Causes: tenofovir, ifosfamide, expired tetracycline, light-chain injury in multiple myeloma, Wilson disease, lead and other heavy metals, and in children cystinosis.</p><h3>Cystinuria</h3><p>An autosomal recessive defect of the apical transporter for <em>dibasic amino acids</em> (cystine, ornithine, lysine, arginine) in the proximal tubule and intestine. Only cystine, which is poorly soluble in acidic urine, forms stones. It is a transport disorder, distinct from cystinosis, a lysosomal storage disease.</p><h3>Inherited channel disorders</h3><table><tr><th>Disorder</th><th>Defect</th><th>Blood pressure</th><th>Labs</th></tr><tr><td>Bartter syndrome</td><td>Loss of function in the thick ascending limb (NKCC2, ROMK or related channels); mimics a loop diuretic</td><td>Normal or low</td><td>Hypokalemia, metabolic alkalosis, high renin and aldosterone, <strong>high urine calcium</strong></td></tr><tr><td>Gitelman syndrome</td><td>Loss of NCC in the distal convoluted tubule; mimics a thiazide</td><td>Normal or low</td><td>Hypokalemia, alkalosis, <strong>hypomagnesemia, low urine calcium</strong></td></tr><tr><td>Liddle syndrome</td><td>Gain of function in ENaC (autosomal dominant)</td><td>High</td><td>Hypokalemia, alkalosis, <strong>low renin and low aldosterone</strong>; responds to amiloride or triamterene, not spironolactone</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> type 2 RTA can show an acidic urine pH, because once serum bicarbonate falls below the lowered proximal threshold, the distal nephron acidifies normally. Do not use urine pH alone to rule it out.</p></div>",
+    "figureIds": [
+     "s23c-fig110401-2"
+    ],
+    "areas": [
+     "usmle2026.11.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Renal Calculi, Nephrolithiasis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK442014/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Tubular Acidosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519044/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Fanconi Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534872/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Cystinuria",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470527/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110501-1-1",
+    "heading": "Renal vascular disease: renin, nephrosclerosis, infarction, emboli and venous thrombosis",
+    "html": "<p>The kidneys receive about a fifth of the cardiac output, and the juxtaglomerular apparatus turns any fall in their perfusion into a systemic signal. Renal vascular disease therefore shows up two ways: as <strong>hypertension</strong> driven by renin, and as <strong>ischemic injury</strong> to the kidney itself.</p><h3>Renin release and renovascular hypertension</h3><p>Juxtaglomerular (granular) cells of the afferent arteriole release renin in response to three inputs: <strong>low afferent arteriolar pressure</strong> (intrarenal baroreceptor), <strong>low sodium chloride delivery to the macula densa</strong>, and <strong>sympathetic stimulation through beta-1 receptors</strong>. Renin cleaves angiotensinogen to angiotensin I; angiotensin-converting enzyme (mostly in pulmonary endothelium) makes angiotensin II, which constricts arterioles (efferent more than afferent at low concentrations), stimulates aldosterone, enhances proximal sodium reabsorption, and stimulates thirst and ADH.</p>[[figure:s23c-fig110501-1]]<p>In <strong>unilateral renal artery stenosis</strong> the poststenotic kidney releases renin; plasma renin and aldosterone are both high (secondary hyperaldosteronism), so hypokalemia and metabolic alkalosis can occur. The contralateral kidney, exposed to high pressure, suppresses its own renin and excretes sodium. The stenotic kidney keeps its GFR by angiotensin II constriction of the <strong>efferent arteriole</strong>; an ACE inhibitor or ARB removes that support, so the GFR of that kidney falls. If both kidneys (or a solitary kidney) depend on it, serum creatinine rises sharply.</p><table><tr><th></th><th>Atherosclerotic stenosis</th><th>Fibromuscular dysplasia</th></tr><tr><td>Who</td><td>Older adults with vascular risk factors and other atherosclerotic disease</td><td>Mainly women aged about 20–60 years</td></tr><tr><td>Where</td><td>Ostium and proximal third of the renal artery</td><td>Mid and distal renal artery; also carotid and vertebral arteries</td></tr><tr><td>Pathology</td><td>Atheroma with plaque, often bilateral</td><td>Noninflammatory, nonatherosclerotic; most often <strong>medial fibroplasia</strong> with alternating thickening and dilation (\"string of beads\")</td></tr><tr><td>Kidney</td><td>Ischemic nephropathy and progressive CKD possible</td><td>Function usually preserved</td></tr></table><h3>Hypertensive injury of the kidney</h3><table><tr><th></th><th>Benign nephrosclerosis</th><th>Malignant nephrosclerosis</th></tr><tr><td>Setting</td><td>Long-standing hypertension; diabetes and aging also contribute</td><td>Hypertensive emergency (very high pressure with acute organ damage)</td></tr><tr><td>Vessel lesion</td><td><strong>Hyaline arteriolosclerosis</strong>: glassy pink thickening from plasma proteins leaking into the wall</td><td><strong>Hyperplastic arteriolosclerosis</strong> (concentric \"onion-skin\" smooth muscle layers) and <strong>fibrinoid necrosis</strong> of arterioles</td></tr><tr><td>Kidney</td><td>Symmetrically shrunken, finely granular cortical surface; patchy glomerulosclerosis and tubular atrophy</td><td>Pinpoint petechial hemorrhages on the surface (\"flea-bitten\"); acute kidney injury, hematuria, proteinuria</td></tr><tr><td>Labs</td><td>Slowly falling GFR, modest proteinuria</td><td>Rising creatinine; often microangiopathic hemolysis; high renin</td></tr></table><p>In people of West African ancestry, two <strong><em>APOL1</em> risk variants</strong> raise the risk of hypertension-attributed CKD and focal segmental glomerulosclerosis; much kidney disease once labelled \"hypertensive\" in this group is APOL1-associated.</p><h3>Occlusive and embolic disease</h3><ul><li><strong>Renal infarction</strong>: usually embolic (atrial fibrillation, left ventricular thrombus, endocarditis) or from dissection or thrombosis. The kidney has end arteries, so the infarct is a pale, <strong>wedge-shaped zone of coagulative necrosis</strong> with its base on the capsule. Clues: sudden flank or abdominal pain, hematuria, and a very high serum LDH with little or no rise in aminotransferases.</li><li><strong>Atheroembolic (cholesterol crystal) disease</strong>: days to weeks after arterial catheterisation, vascular surgery or anticoagulation, cholesterol crystals from aortic plaque shower small arteries. Biopsy shows <strong>biconvex, needle-shaped clefts</strong> (crystals dissolved during processing) in arcuate and interlobular arteries with surrounding inflammation. Clues: livedo reticularis, painful blue toes with intact pulses, Hollenhorst plaques in retinal arterioles, eosinophilia, eosinophiluria and low complement. Kidney function often declines stepwise and may not recover.</li><li><strong>Renal vein thrombosis</strong>: most strongly linked to <strong>nephrotic syndrome</strong>, especially membranous nephropathy, through urinary loss of anticoagulant proteins (antithrombin), raised hepatic synthesis of fibrinogen and factors V and VIII, platelet activation and hemoconcentration. It can be silent or cause flank pain, hematuria, a rising creatinine and pulmonary emboli. A <strong>left renal vein</strong> thrombus can cause a new left varicocele, because the left gonadal vein drains into the left renal vein. In newborns, dehydration and maternal diabetes predispose.</li></ul><h3>Thrombotic microangiopathy and scleroderma renal crisis</h3><p>Thrombotic microangiopathy (hemolytic uremic syndrome, TTP, malignant hypertension, scleroderma renal crisis, antiphospholipid syndrome, some drugs such as calcineurin inhibitors and gemcitabine) injures endothelium; platelets and fibrin occlude glomerular capillaries and arterioles, and schistocytes appear in blood. In <strong>scleroderma renal crisis</strong>, intimal proliferation narrows interlobular arteries (an \"onion-skin\" look), renal perfusion falls and renin rises sharply, giving abrupt hypertension and kidney failure. Risk is highest in early diffuse cutaneous systemic sclerosis, with anti-RNA polymerase III antibodies, and after higher-dose glucocorticoids. Because the process is renin driven, <strong>ACE inhibitors</strong> are the life-saving treatment.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a rise in creatinine after starting an ACE inhibitor is expected (up to about 30%) and reflects lost efferent tone, not drug toxicity. A much larger rise suggests bilateral renal artery stenosis or volume depletion.</p></div><div class=\"pearl\"><p><strong>Naadi memory aid:</strong> \"<em>Wedge, needle, beads, onion</em>\": wedge infarct from an embolus, needle clefts from cholesterol emboli, a bead string in fibromuscular dysplasia, onion skins in malignant hypertension and scleroderma crisis.</p></div>",
+    "figureIds": [
+     "s23c-fig110501-1"
+    ],
+    "areas": [
+     "usmle2026.11.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Renal Artery Stenosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430718/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Fibromuscular Dysplasia",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK493204/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Vein Thrombosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536971/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Atheroembolic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482417/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Diseases",
+      "url": "https://medlineplus.gov/kidneydiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110601-1-1",
+    "heading": "Bladder control, urinary tract trauma and obstruction: anatomy and physiology",
+    "html": "<h3>Control of micturition</h3><p>The bladder stores urine at low pressure and empties it completely when the person chooses. Three pathways do this:</p><table><tr><th>Pathway</th><th>Roots and nerve</th><th>Receptor and action</th></tr><tr><td>Parasympathetic</td><td>S2–S4, pelvic splanchnic nerves</td><td>Muscarinic M3 on the detrusor: contraction (voiding)</td></tr><tr><td>Sympathetic</td><td>T10–L2, hypogastric nerve</td><td>Beta-3 on the detrusor: relaxation (storage); alpha-1 at the bladder neck and internal sphincter: closure</td></tr><tr><td>Somatic</td><td>S2–S4, pudendal nerve</td><td>Nicotinic receptors on the external urethral sphincter: voluntary closure</td></tr></table><p>The <strong>pontine micturition centre</strong> coordinates detrusor contraction with sphincter relaxation, and the frontal cortex decides when voiding is allowed. Where a lesion sits therefore predicts how the bladder behaves.</p>[[figure:s23c-fig110601-1]]<ul><li><strong>Above the pons</strong> (stroke, dementia, Parkinson disease, normal pressure hydrocephalus): loss of cortical inhibition gives detrusor overactivity with urgency, but the sphincter still relaxes in step, so residual volume stays low.</li><li><strong>Spinal cord between the pons and the sacral cord</strong> (traumatic injury, multiple sclerosis, transverse myelitis): after spinal shock (initial areflexia and retention) the bladder becomes overactive and contracts against a sphincter that closes at the same time, <strong>detrusor-sphincter dyssynergia</strong>. High storage and voiding pressures cause reflux, hydronephrosis, stones, infection and loss of kidney function. With injury at T6 or above, a distended bladder can trigger <strong>autonomic dysreflexia</strong> (severe hypertension, bradycardia, flushing and headache above the lesion).</li><li><strong>Sacral cord, cauda equina or peripheral nerves</strong> (disc herniation, spina bifida, pelvic surgery, diabetic autonomic neuropathy): the detrusor is underactive, sensation is lost and the bladder overdistends, giving retention with <strong>overflow incontinence</strong>.</li></ul><h3>Urinary incontinence: mechanisms</h3><table><tr><th>Type</th><th>Mechanism</th><th>Clue</th></tr><tr><td>Stress</td><td>Urethral hypermobility or intrinsic sphincter weakness: pelvic floor (levator ani) and pudendal nerve damage after vaginal birth, obesity, estrogen loss, prostatectomy in men</td><td>Small leaks with cough, laugh, lifting; positive cough stress test</td></tr><tr><td>Urge</td><td>Detrusor overactivity, often idiopathic; also neurologic disease, bladder irritation</td><td>Sudden strong urge, larger leaks, frequency and nocturia</td></tr><tr><td>Overflow</td><td>Underactive detrusor or outlet obstruction (prostatic enlargement, urethral stricture)</td><td>Dribbling, weak stream, large post-void residual</td></tr><tr><td>Functional</td><td>Normal bladder; patient cannot reach the toilet in time (mobility, cognition)</td><td>Frail older adult, physical or cognitive limits</td></tr></table><p>Drugs follow the receptors: <strong>antimuscarinics</strong> (oxybutynin, tolterodine, solifenacin, trospium) block M3 and reduce detrusor contractions; <strong>beta-3 agonists</strong> (mirabegron, vibegron) relax the detrusor through cAMP without anticholinergic effects; <strong>alpha-1 blockers</strong> (tamsulosin) relax the bladder neck and prostate in outlet obstruction. Drugs that cause retention include anticholinergics, opioids, alpha agonists (decongestants) and tricyclic antidepressants.</p><h3>Urinary tract trauma: anatomy</h3><ul><li><strong>Posterior urethra</strong> (prostatic and membranous parts): torn by shearing forces in pelvic fractures, usually at the membranous segment just below the prostate. Blood at the meatus, inability to void, a perineal hematoma and a high-riding or boggy prostate are the signs.</li><li><strong>Anterior urethra</strong> (bulbar and penile parts): the <strong>bulbar urethra</strong> is crushed against the pubic bone in straddle injuries. If Buck fascia tears, urine and blood spread in the superficial perineal space beneath Colles fascia into the scrotum, penis and lower anterior abdominal wall (deep to Scarpa fascia); attachment of Colles fascia to the fascia lata keeps the fluid out of the thighs.</li><li><strong>Bladder</strong>: <em>extraperitoneal</em> rupture (most common) accompanies pelvic fractures; urine collects around the bladder in the space of Retzius. <em>Intraperitoneal</em> rupture follows a blow to a full bladder, which tears at the <strong>dome</strong>, the weakest part covered by peritoneum. Urine in the peritoneal cavity causes ascites, ileus and peritonitis, and its urea and creatinine are reabsorbed across the peritoneum, raising serum levels (\"pseudo-renal failure\").</li><li><strong>Kidney</strong>: protected by ribs and fat; injured by blunt deceleration or penetrating trauma. Deceleration can tear the intima of the renal artery and cause thrombosis. Children are more vulnerable because their kidneys are relatively larger and less padded.</li><li><strong>Ureter</strong>: rarely injured by blunt trauma; most injuries are iatrogenic during gynecologic, colorectal or vascular surgery (near the uterine artery, the pelvic brim and the ovarian vessels).</li></ul><h3>Obstructive uropathy</h3><p>Obstruction anywhere from the calyx to the urethra raises pressure behind it. Early, the kidney's blood flow rises briefly and then falls as afferent arterioles constrict; GFR drops. Sustained obstruction dilates the pelvis and calyces (<strong>hydronephrosis</strong>), compresses the papillae and medulla first, and then thins the cortex through tubular atrophy and interstitial fibrosis. Bilateral obstruction or obstruction of a single kidney causes acute kidney injury that is often reversible if relieved early.</p><ul><li><strong>Causes by age</strong>: posterior urethral valves and ureteropelvic junction obstruction in infants; stones in young adults; prostatic enlargement, prostate and bladder cancer, pelvic tumours and retroperitoneal fibrosis in older adults; the gravid uterus (mild right-sided dilation is normal in pregnancy).</li><li><strong>Posterior urethral valves</strong>: obstructing membranous folds in the posterior (prostatic) urethra of boys, the commonest cause of lower tract obstruction in male infants. The fetus voids poorly, so amniotic fluid falls (oligohydramnios, with pulmonary hypoplasia if severe). Ultrasound shows a thick-walled bladder, a dilated posterior urethra (\"keyhole\" shape) and bilateral hydronephrosis; voiding cystourethrography confirms it.</li><li><strong>Post-obstructive diuresis</strong>: after relief of bilateral or solitary-kidney obstruction, large volumes of urine can follow. Causes are appropriate excretion of retained urea, salt and water, plus impaired concentrating ability from medullary washout and reduced aquaporin-2 and sodium transporter expression. Watch for hypovolemia, hyponatremia or hypernatremia, hypokalemia and hypomagnesemia.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a high serum creatinine after blunt abdominal trauma with a distended abdomen and little urine output is not necessarily kidney injury; intraperitoneal bladder rupture lets the peritoneum reabsorb urine.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Pee is Parasympathetic, Storage is Sympathetic</em>\": S2–S4 empties, T10–L2 stores.</p></div>",
+    "figureIds": [
+     "s23c-fig110601-1"
+    ],
+    "areas": [
+     "usmle2026.11.06.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Neurogenic Bladder and Neurogenic Lower Urinary Tract Dysfunction",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560617/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Urinary Incontinence",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559095/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Posterior Urethral Valves",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560881/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Postobstructive Diuresis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459387/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Bladder Diseases",
+      "url": "https://medlineplus.gov/bladderdiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110701-1-1",
+    "heading": "Kidney and urinary tract development and its anomalies",
+    "html": "<h3>Three kidneys in sequence</h3><ul><li><strong>Pronephros</strong> (week 4, cervical region): never functions in humans and regresses.</li><li><strong>Mesonephros</strong> (weeks 4–8, thoracolumbar): an interim kidney in the first trimester. Its duct, the <strong>mesonephric (Wolffian) duct</strong>, persists in males as the epididymis, vas deferens, seminal vesicle and ejaculatory duct, and it gives rise to the ureteric bud in both sexes.</li><li><strong>Metanephros</strong> (from week 5, sacral region): the permanent kidney. Fetal urine production begins around weeks 10–12 and, from the second trimester on, is the main source of amniotic fluid.</li></ul><h3>Reciprocal induction</h3><p>The <strong>ureteric bud</strong> grows out of the distal mesonephric duct into the <strong>metanephric mesenchyme</strong> (blastema). Each tissue instructs the other: the mesenchyme secretes glial cell–derived neurotrophic factor (GDNF), which acts on the RET receptor of the bud to drive its outgrowth and branching, and the branching bud tips induce the mesenchyme to condense and form nephrons.</p><table><tr><th>Origin</th><th>Adult structures</th></tr><tr><td>Ureteric bud</td><td>Ureter, renal pelvis, major and minor calyces, collecting ducts</td></tr><tr><td>Metanephric mesenchyme</td><td>Glomerular (Bowman) capsule, proximal tubule, loop of Henle, distal convoluted tubule</td></tr><tr><td>Urogenital sinus (from the cloaca)</td><td>Bladder (most of it), urethra; the allantois connects the bladder dome to the umbilicus as the urachus, later the median umbilical ligament</td></tr></table>[[figure:s23c-fig110701-1]]<p>When induction fails, the kidney does not form (<strong>agenesis</strong>) or forms abnormally (<strong>dysplasia</strong>). The <strong>ureteropelvic junction</strong> is the last part of the ureter to canalise, which helps explain why it is the commonest site of congenital obstruction.</p><h3>Ascent</h3><p>The kidneys start in the pelvis and ascend to the lumbar region between weeks 6 and 9, rotating so the hilum faces medially and taking new arterial branches from the aorta as they rise (which is why accessory renal arteries are common). Failed ascent leaves a <strong>pelvic kidney</strong>. If the lower poles fuse, the isthmus of the resulting <strong>horseshoe kidney</strong> is caught under the <strong>inferior mesenteric artery</strong>. Horseshoe kidney is usually asymptomatic but predisposes to ureteropelvic junction obstruction, stones, infection and, rarely, Wilms tumour; it is associated with <strong>Turner syndrome</strong> and trisomy 18.</p><h3>Congenital anomalies of the kidney and urinary tract</h3><table><tr><th>Anomaly</th><th>Mechanism</th><th>Key features</th></tr><tr><td>Bilateral renal agenesis</td><td>Ureteric bud fails to form or induce mesenchyme</td><td>No fetal urine: severe oligohydramnios from mid-gestation, <strong>Potter sequence</strong> (pulmonary hypoplasia, flattened face, limb positioning defects such as clubfoot); lethal from pulmonary hypoplasia</td></tr><tr><td>Unilateral agenesis</td><td>Same, one side</td><td>Often incidental; compensatory hypertrophy of the other kidney; associated genital tract anomalies (for example uterine anomalies in girls)</td></tr><tr><td>Multicystic dysplastic kidney</td><td>Abnormal bud–mesenchyme interaction, often with ureteral atresia</td><td>Nonfunctioning kidney of noncommunicating cysts of varying size; histology shows primitive ducts with fibromuscular collars and islands of cartilage; usually unilateral and often involutes; contralateral anomalies (reflux, ureteropelvic junction obstruction) are common</td></tr><tr><td>Ureteropelvic junction obstruction</td><td>Narrow, poorly peristaltic segment or a crossing lower-pole vessel</td><td>Commonest cause of congenital hydronephrosis; dilated pelvis and calyces with a normal ureter; older children may have intermittent flank pain after large fluid loads</td></tr><tr><td>Duplex collecting system</td><td>Early splitting of one ureteric bud (partial) or two buds (complete)</td><td>In complete duplication, the <strong>upper-pole ureter</strong> inserts lower and more medially and tends to obstruct (ectopic insertion, ureterocele); the <strong>lower-pole ureter</strong> inserts higher and more laterally and tends to reflux</td></tr><tr><td>Ectopic ureter</td><td>Bud arises too far from its usual site</td><td>In girls the ureter may open below the sphincter (urethra, vagina): continuous dribbling despite normal voiding. In boys it always opens above the external sphincter (bladder neck, prostatic urethra, seminal vesicle, vas), so it causes infection, not continuous leakage</td></tr><tr><td>Urachal remnants</td><td>Persistence of the allantoic connection</td><td>Patent urachus (urine from the umbilicus), urachal cyst or sinus; urachal adenocarcinoma at the bladder dome in adults</td></tr><tr><td>Bladder exstrophy</td><td>Failure of mesoderm to reinforce the infraumbilical cloacal membrane</td><td>Open bladder plate on the lower abdominal wall, epispadias, widely separated pubic bones; higher later risk of bladder adenocarcinoma</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> Potter sequence is a consequence of oligohydramnios, not a single disease. Any cause of absent fetal urine (bilateral agenesis, bilateral multicystic dysplasia, autosomal recessive polycystic kidney disease, posterior urethral valves) or chronic leakage of fluid produces it, and the cause of death is pulmonary hypoplasia.</p></div><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> \"<em>Upper pole goes low</em>\": in a complete duplex system the upper-pole ureter ends lower and obstructs; the lower-pole ureter ends higher and refluxes.</p></div>",
+    "figureIds": [
+     "s23c-fig110701-1"
+    ],
+    "areas": [
+     "usmle2026.11.07.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Embryology, Kidney, Bladder, and Ureter",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547747/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Horseshoe Kidney",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK431105/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Potter Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560858/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bladder Exstrophy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK563156/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Patent Urachus",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557723/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110801-1-1",
+    "heading": "Drug toxicity to the kidney and urinary tract, nephron site by site",
+    "html": "<p>The kidney receives about a fifth of the cardiac output, concentrates drugs in its tubules and depends on finely balanced arteriolar tone, so it is one of the commonest targets of drug toxicity. The quickest way to organise nephrotoxins is by <strong>where in the nephron they act</strong>.</p>[[figure:s23c-fig110801-1]]<h3>1. Glomerular hemodynamics (prerenal pattern)</h3><p>Glomerular filtration pressure is set by the balance of afferent and efferent arteriolar tone. When renal perfusion falls (volume depletion, heart failure, cirrhosis, renal artery stenosis), two compensations keep GFR up: <strong>prostaglandins</strong> (PGE<sub>2</sub>, PGI<sub>2</sub>) dilate the afferent arteriole, and <strong>angiotensin II</strong> constricts the efferent arteriole.</p><ul><li><strong>NSAIDs</strong> (including selective COX-2 inhibitors) remove prostaglandin-mediated afferent dilation. In a well-hydrated young person this barely matters; in someone whose GFR depends on prostaglandins it causes acute kidney injury. NSAIDs also cause sodium retention, hyperkalemia (low renin and aldosterone), acute interstitial nephritis, minimal change disease (sometimes together with interstitial nephritis), and, with long-term heavy use of combination analgesics, <strong>papillary necrosis</strong> and chronic interstitial nephritis.</li><li><strong>ACE inhibitors and ARBs</strong> remove angiotensin II tone on the efferent arteriole, so glomerular capillary pressure and GFR fall. A small creatinine rise after starting them is expected and reflects lower intraglomerular pressure, which is the same effect that protects the kidney long term. A large rise suggests bilateral renal artery stenosis (or stenosis to a single kidney) or volume depletion. They also raise potassium by lowering aldosterone.</li><li><strong>Calcineurin inhibitors</strong> (cyclosporine, tacrolimus) constrict the afferent arteriole (endothelin, thromboxane, less nitric oxide). Acute toxicity is dose-related and reversible; chronic use gives striped interstitial fibrosis and arteriolar hyalinosis. They also cause hyperkalemia, hypomagnesemia, hypertension and, rarely, thrombotic microangiopathy.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> the \"triple whammy\" is an ACE inhibitor or ARB, a diuretic and an NSAID together: volume loss, no efferent constriction and no afferent dilation. Expect a prerenal picture (BUN:creatinine above 20, urine sodium low) in an older patient.</p></div><h3>2. Proximal tubule cell injury</h3><p>Proximal tubule cells reabsorb most filtered solute and take up drugs from both the lumen and the blood, which makes them the main site of direct toxic injury.</p><table><tr><th>Drug</th><th>How it injures</th><th>Pattern</th></tr><tr><td>Aminoglycosides (gentamicin, tobramycin, amikacin)</td><td>Cationic drug binds megalin on the brush border, is taken up by endocytosis and accumulates in lysosomes until they rupture</td><td>Nonoliguric acute tubular necrosis after 5–10 days; muddy brown granular casts; magnesium and potassium wasting. Risk rises with trough levels, duration, volume depletion, older age and other nephrotoxins; once-daily dosing lowers risk. Also ototoxic (worse with loop diuretics)</td></tr><tr><td>Cisplatin</td><td>Taken up by basolateral organic cation transporters; DNA damage and oxidative injury</td><td>Acute tubular necrosis and persistent <strong>magnesium wasting</strong>; prevented with vigorous isotonic hydration (amifostine is a cytoprotectant option)</td></tr><tr><td>Tenofovir disoproxil fumarate</td><td>Taken up by basolateral organic anion transporters; mitochondrial toxicity</td><td>Proximal tubulopathy: <strong>Fanconi syndrome</strong> (normoglycemic glycosuria, phosphaturia with hypophosphatemia and osteomalacia, aminoaciduria, proximal RTA). Tenofovir alafenamide gives much lower plasma tenofovir and less kidney toxicity</td></tr><tr><td>Ifosfamide</td><td>Metabolite chloroacetaldehyde</td><td>Fanconi syndrome, especially in children; also hemorrhagic cystitis</td></tr><tr><td>Iodinated contrast</td><td>Renal vasoconstriction, medullary hypoxia and direct tubular toxicity</td><td>Creatinine rise within 24–72 hours, usually transient. The main risk is an eGFR below about 30 mL/min/1.73 m², especially with diabetes or volume depletion. Prevent with isotonic IV fluids in high-risk patients and the lowest needed dose; N-acetylcysteine has no proven benefit</td></tr></table><h3>3. Tubular lumen: crystals</h3><p>Drugs that are poorly soluble in urine precipitate in the distal tubule and collecting duct when urine flow is low or the dose is high, causing obstruction and inflammation. Examples are high-dose IV <strong>acyclovir</strong> (needle-shaped birefringent crystals), <strong>methotrexate</strong> (precipitates in acidic urine; prevent with hydration and urine alkalinisation, rescue with leucovorin and, in severe toxicity, glucarpidase), <strong>sulfadiazine</strong> and other sulfonamides, and <strong>indinavir</strong> (stones and crystals). Prevention is hydration and slower infusion.</p><h3>4. Distal nephron and collecting duct</h3><ul><li><strong>Amphotericin B</strong> binds cholesterol in tubular cell membranes as well as fungal ergosterol and forms pores. In the collecting duct, H<sup>+</sup> leaks back and K<sup>+</sup> and Mg<sup>2+</sup> leak out: <strong>distal (type 1) RTA</strong> with a urine pH above 5.5, hypokalemia and hypomagnesemia. It also constricts afferent arterioles. Lipid formulations and saline loading reduce toxicity.</li><li><strong>Lithium</strong> enters principal cells through the epithelial sodium channel (ENaC), accumulates and inhibits signalling (glycogen synthase kinase-3) that maintains <strong>aquaporin-2</strong> expression, causing <strong>nephrogenic diabetes insipidus</strong>. <strong>Amiloride</strong> blocks ENaC and so reduces lithium entry. Years of use can cause chronic tubulointerstitial nephritis with microcysts and CKD; lithium also causes hypercalcemia through hyperparathyroidism.</li><li><strong>Trimethoprim</strong> (and the potassium-sparing diuretics amiloride and triamterene) blocks ENaC, causing hyperkalemia. Trimethoprim and cimetidine also block tubular <em>secretion</em> of creatinine, which raises serum creatinine without any fall in true GFR.</li></ul><h3>5. Interstitium: acute interstitial nephritis (AIN)</h3><p>A delayed (type IV, T-cell mediated) hypersensitivity reaction to a drug acting as a hapten. Classic causes are <strong>beta-lactams</strong> (methicillin historically, nafcillin, penicillins, cephalosporins), <strong>proton pump inhibitors</strong>, NSAIDs, sulfonamides, rifampin, allopurinol and <strong>immune checkpoint inhibitors</strong>. It begins days to weeks after exposure (sooner on re-exposure). Fever, rash and eosinophilia occur together in only a minority. Urine shows sterile pyuria, white blood cell casts and mild proteinuria; biopsy shows interstitial edema with lymphocytes, plasma cells and eosinophils, and tubulitis, with normal glomeruli. Stop the drug; corticosteroids are often given when the kidney does not recover promptly.</p><h3>6. Glomerular disease and other sites</h3><ul><li><strong>Heroin</strong> use is linked to focal segmental glomerulosclerosis (nephrotic syndrome); NSAIDs to minimal change disease; gold, penicillamine and NSAIDs to membranous nephropathy.</li><li><strong>Gadolinium-based contrast</strong> in patients with advanced CKD or on dialysis can cause <strong>nephrogenic systemic fibrosis</strong>: thickening and hardening of skin and connective tissue of the limbs and trunk with joint contractures. Risk is highest with older linear agents; newer macrocyclic agents carry very low risk. It is a toxicity of the skin and connective tissue, not of the kidney itself.</li><li><strong>Cyclophosphamide and ifosfamide</strong> are metabolised to <strong>acrolein</strong>, which is excreted in urine and injures bladder urothelium: <strong>hemorrhagic cystitis</strong> (and, long term, bladder cancer with cyclophosphamide). <strong>Mesna</strong> is a thiol that binds acrolein in the urine; hydration and frequent voiding help.</li><li><strong>Drug-induced urinary retention</strong>: anticholinergics (antihistamines such as diphenhydramine, tricyclic antidepressants, antimuscarinics for overactive bladder) reduce detrusor contraction; alpha-1 agonists (pseudoephedrine, phenylephrine) tighten the bladder neck; opioids reduce bladder sensation and detrusor tone. Men with prostatic enlargement are most at risk.</li></ul><div class=\"pearl\"><p><strong>Memory aid (Naadi):</strong> walk the drug down the nephron. <em>Arterioles</em> (NSAIDs, ACE inhibitors, calcineurin inhibitors) → <em>proximal cells</em> (aminoglycosides, cisplatin, tenofovir) → <em>lumen</em> (crystals) → <em>collecting duct</em> (amphotericin, lithium) → <em>interstitium</em> (allergic AIN) → <em>bladder</em> (acrolein).</p></div>",
+    "figureIds": [
+     "s23c-fig110801-1"
+    ],
+    "areas": [
+     "usmle2026.11.08.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Aminoglycosides",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK541105/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Analgesic Nephropathy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK541101/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Nephrogenic Systemic Fibrosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK567754/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Cisplatin",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547695/",
+      "sourceId": "statpearls"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s23c-ch11-s2",
+  "exam": "step2ck",
+  "order": 411,
+  "title": "Step 2 CK · Renal & urinary system",
+  "meta": "Naadi original · USMLE-2026 outline",
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23c-s110101-2-1",
+    "heading": "Urinary tract infection: diagnosis and management",
+    "html": "<h3>Classify first</h3><p>Management depends on where the infection is and who has it.</p><ul><li><strong>Acute uncomplicated cystitis</strong>: a healthy, nonpregnant, premenopausal or postmenopausal woman with dysuria, frequency and urgency, and no fever, flank pain or systemic signs.</li><li><strong>Complicated UTI</strong>: infection beyond the bladder (fever, flank pain, pyelonephritis, bacteremia) or infection in a patient with features that predict failure: pregnancy, male sex, catheter, obstruction or stones, urologic abnormality, kidney transplant or significant immunocompromise.</li><li><strong>Asymptomatic bacteriuria</strong>: bacteria in a properly collected urine without symptoms of UTI.</li></ul><h3>Uncomplicated cystitis</h3><p>A typical history is enough; a dipstick helps when the story is unclear. Urine culture is <em>not</em> needed for a first, typical episode, but is obtained for recurrence, failure, atypical symptoms or any complicated feature. First-line choices:</p><table><tr><th>Drug</th><th>Usual course</th><th>Avoid or limit when</th></tr><tr><td>Nitrofurantoin</td><td>5 days</td><td>eGFR below about 30 mL/min/1.73 m², suspected pyelonephritis (inadequate tissue levels)</td></tr><tr><td>Trimethoprim-sulfamethoxazole</td><td>3 days</td><td>Local resistance above about 20%, use in the past 3 months, sulfa allergy</td></tr><tr><td>Fosfomycin</td><td>Single dose</td><td>Slightly less effective; not for pyelonephritis</td></tr><tr><td>Pivmecillinam</td><td>3–5 days</td><td>Penicillin allergy</td></tr></table><p>Fluoroquinolones and beta-lactams are second line for cystitis: they work, but fluoroquinolones carry tendon, aortic, neurologic and <em>C. difficile</em> risks, and short beta-lactam courses fail more often.</p><h3>Pyelonephritis</h3><ul><li>Obtain a urinalysis and a <strong>urine culture before antibiotics</strong> in every case; blood cultures if septic or admitted.</li><li><strong>Outpatient</strong> (stable, able to take oral fluids): an oral fluoroquinolone for 5–7 days, or trimethoprim-sulfamethoxazole for 7–14 days when the isolate is susceptible. Where fluoroquinolone resistance is common, give one initial parenteral dose of a long-acting agent such as ceftriaxone.</li><li><strong>Admit</strong> for sepsis, vomiting, pregnancy, suspected obstruction or failure of oral therapy; start an IV agent such as ceftriaxone, broadened (for example to piperacillin-tazobactam or a carbapenem) when there is septic shock or risk of resistant organisms.</li><li><strong>Imaging</strong> (CT abdomen and pelvis, or ultrasound when contrast or radiation should be avoided) is for severe illness, suspected stone or obstruction, or no improvement after 48–72 hours. It finds abscess, obstruction and emphysematous pyelonephritis.</li><li><strong>Infected obstructed kidney</strong> is a urologic emergency: antibiotics alone fail, so decompress urgently with a ureteral stent or percutaneous nephrostomy. Stone removal waits until the infection clears.</li><li><strong>Emphysematous pyelonephritis</strong> (gas in the renal parenchyma, nearly always in diabetes): IV antibiotics with percutaneous drainage; nephrectomy if that fails.</li></ul><h3>Special populations</h3><ul><li><strong>Pregnancy</strong>: screen once with a urine culture early in pregnancy (around 12–16 weeks) and <strong>treat asymptomatic bacteriuria</strong>, because untreated bacteriuria leads to pyelonephritis and preterm birth. Safe choices include cephalexin, amoxicillin-clavulanate, fosfomycin and nitrofurantoin (avoid nitrofurantoin near term and, if alternatives exist, in the first trimester; avoid trimethoprim-sulfamethoxazole in the first trimester and near term; avoid fluoroquinolones and tetracyclines). Pyelonephritis in pregnancy is treated in hospital with IV beta-lactam therapy, and many clinicians then give suppressive therapy for the rest of the pregnancy.</li><li><strong>Asymptomatic bacteriuria outside pregnancy</strong> is <em>not</em> screened for or treated, including in older adults, people with diabetes, spinal cord injury or long-term catheters. The other exception is a planned urologic procedure that breaches the mucosa (for example transurethral resection of the prostate).</li><li><strong>Men</strong>: every UTI is treated as complicated; treat for about 7 days, longer (up to 14 days) if prostatitis is suspected or response is slow.</li><li><strong>Catheter-associated UTI</strong>: diagnose only with symptoms (fever, suprapubic or flank pain, delirium without another cause). Remove the catheter if possible, or replace a catheter that has been in place for more than about 2 weeks, and send culture from the new catheter before antibiotics.</li><li><strong>Recurrent UTI</strong> (2 or more in 6 months or 3 or more in a year): confirm each episode with culture. Options are behavioural measures, <strong>vaginal estrogen in postmenopausal women</strong>, post-coital or continuous low-dose antibiotic prophylaxis, and patient-started treatment. Image the tract only if there are atypical features (for example, recurrence with <em>Proteus</em>, hematuria between infections, or a man).</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a confused nursing-home resident with a positive urine culture and no urinary symptoms or fever does not have a UTI. Look for another cause and do not treat the bacteriuria.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.01.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Acute Cystitis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459322/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Acute Pyelonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK519537/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Emphysematous Pyelonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK599505/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Urinary Tract Infection in Pregnancy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537047/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Asymptomatic Bacteriuria",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441848/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "USPSTF: Asymptomatic bacteriuria in adults, screening",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening",
+      "sourceId": "uspstf"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110102-2-1",
+    "heading": "Glomerular hematuria, nephritic syndrome and rapidly progressive GN: work-up and treatment",
+    "html": "<h3>Recognise glomerular bleeding</h3><p>Hematuria is glomerular when red cells are <strong>dysmorphic</strong> (acanthocytes), when there are <strong>red cell casts</strong>, or when it comes with proteinuria, hypertension or a rising creatinine. Glomerular hematuria needs a nephrology work-up rather than cystoscopy first. A patient whose creatinine is rising over days to weeks with an active sediment has <strong>rapidly progressive GN until proven otherwise</strong>, which is a medical emergency.</p><h3>First tests</h3><ul><li>Urinalysis with microscopy; spot urine protein-to-creatinine (or albumin-to-creatinine) ratio; serum creatinine and electrolytes.</li><li>Serology chosen by the picture: C3 and C4; ANA and anti-dsDNA; ANCA (MPO and PR3 by immunoassay); anti-GBM antibody; anti-streptolysin O and anti-DNase B; hepatitis B and C, HIV; cryoglobulins and rheumatoid factor; serum protein electrophoresis with free light chains in older adults.</li><li><strong>Kidney biopsy</strong> is the most accurate test and also grades activity and chronicity. In suspected rapidly progressive GN, start treatment without waiting for biopsy when serology is positive and the patient is deteriorating.</li></ul><h3>Treatment by disease</h3><table><tr><th>Disease</th><th>Management</th></tr><tr><td>Post-streptococcal GN</td><td>Supportive: sodium and fluid restriction, loop diuretic for edema and hypertension, other antihypertensives as needed; antibiotics only for persisting streptococcal infection. Immunosuppression is not used. Persistently low C3 after about 8 weeks suggests another diagnosis (for example C3 glomerulopathy or lupus).</td></tr><tr><td>IgA nephropathy</td><td>Supportive care is the base: ACE inhibitor or ARB titrated to the highest tolerated dose, blood pressure control, an SGLT2 inhibitor when eGFR allows, and lifestyle measures; aim to lower proteinuria well below 1 g/day. Patients with persistent proteinuria at high risk of progression are considered for glucocorticoid-based or newer targeted therapies.</td></tr><tr><td>Anti-GBM disease</td><td><strong>Plasma exchange</strong> to remove the antibody, plus glucocorticoids and cyclophosphamide, started urgently. Patients who need dialysis at presentation and have crescents in nearly all glomeruli rarely recover kidney function unless they have lung hemorrhage that needs treatment anyway.</td></tr><tr><td>ANCA-associated GN</td><td>Induction with glucocorticoids plus <strong>rituximab or cyclophosphamide</strong>; the C5a receptor blocker avacopan can reduce glucocorticoid exposure; plasma exchange may be added for very severe kidney failure or anti-GBM overlap. Maintenance with rituximab (or azathioprine). Screen for and prevent <em>Pneumocystis</em> infection.</td></tr><tr><td>Lupus nephritis III or IV (± V)</td><td>Glucocorticoids plus <strong>mycophenolate</strong> or low-dose IV cyclophosphamide, with add-on belimumab or a calcineurin inhibitor (voclosporin) in many patients; <strong>hydroxychloroquine</strong> for every patient with lupus unless contraindicated; ACE inhibitor or ARB for proteinuria. Mycophenolate is teratogenic: use effective contraception and switch to azathioprine before a planned pregnancy.</td></tr><tr><td>Cryoglobulinemic GN (hepatitis C)</td><td>Direct-acting antivirals; rituximab, with plasma exchange for severe disease.</td></tr></table><h3>Indications for kidney biopsy in lupus</h3><p>Biopsy a patient with lupus who has proteinuria of about 0.5 g/day or more, an active sediment (dysmorphic red cells, red cell casts) or an unexplained rise in creatinine. The class decides treatment, so it is not skipped.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a smoker with hemoptysis and kidney failure may have anti-GBM disease <em>or</em> ANCA vasculitis, and some patients have both antibodies. Send both serologies, and do not delay plasma exchange and immunosuppression while waiting for biopsy if the patient is deteriorating.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.01.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Rapidly Progressive Glomerulonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557430/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: ANCA-Associated Vasculitis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554372/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: IgA Nephropathy (Berger Disease)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538214/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Lupus Nephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499817/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Infection-Related Glomerulonephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538255/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Diseases",
+      "url": "https://medlineplus.gov/kidneydiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110102-2-2",
+    "heading": "Nephrotic syndrome and interstitial nephritis: diagnosis, treatment and complications",
+    "html": "<h3>Confirm and characterise</h3><ul><li>Quantify proteinuria with a spot urine protein-to-creatinine ratio (about 3–3.5 g/g or more is nephrotic range); 24-hour collection is rarely needed.</li><li>Check albumin, lipids, creatinine, glucose and hemoglobin A1c, and the secondary-cause panel: hepatitis B and C, HIV, ANA, complement, serum and urine protein electrophoresis with free light chains, and <strong>anti-PLA2R antibody</strong>.</li><li><strong>Children</strong> aged about 1 to 10 years with typical nephrotic syndrome (normal complement, no gross hematuria, normal kidney function and blood pressure) are presumed to have minimal change disease and given oral glucocorticoids <em>without biopsy</em>; biopsy is for steroid resistance or atypical features.</li><li><strong>Adults</strong> usually need a biopsy. An exception: a typical adult with nephrotic syndrome, preserved function and a positive anti-PLA2R antibody can be diagnosed with primary membranous nephropathy without biopsy.</li></ul><h3>General measures for any nephrotic patient</h3><ul><li>Dietary sodium restriction and a <strong>loop diuretic</strong> for edema (higher doses are often needed because the diuretic is protein bound in urine and less albumin carries it to the kidney).</li><li><strong>ACE inhibitor or ARB</strong> to lower intraglomerular pressure and proteinuria, with blood pressure control.</li><li>Statin for persistent hyperlipidemia when the disease is not expected to remit soon.</li><li><strong>Prophylactic anticoagulation</strong> is considered when albumin is very low (for example below about 2.0–2.5 g/dL), especially with membranous nephropathy and low bleeding risk; established venous thrombosis is treated with full anticoagulation.</li><li>Pneumococcal and seasonal influenza vaccination.</li></ul><h3>Disease-specific treatment</h3><table><tr><th>Disease</th><th>Treatment</th></tr><tr><td>Minimal change</td><td>Glucocorticoids (most remit within weeks); for frequent relapses or steroid dependence, steroid-sparing agents such as rituximab, calcineurin inhibitors or cyclophosphamide. Stop an offending NSAID; look for lymphoma in an adult with suggestive features.</td></tr><tr><td>Primary FSGS</td><td>Supportive care plus high-dose glucocorticoids; calcineurin inhibitor if resistant. Secondary FSGS is treated by addressing the cause (antiretroviral therapy for HIV-associated nephropathy, weight loss, stopping heroin or lithium) with RAS blockade; immunosuppression does not help secondary or genetic forms.</td></tr><tr><td>Membranous</td><td>Supportive care for low-risk disease, since about a third remit spontaneously; <strong>rituximab</strong> (or cyclophosphamide with glucocorticoids, or a calcineurin inhibitor) for moderate to high risk. Anti-PLA2R levels track response. For PLA2R-negative disease in an older adult, look for a secondary cause, including age-appropriate cancer screening.</td></tr><tr><td>Diabetic kidney disease</td><td>ACE inhibitor or ARB, SGLT2 inhibitor, and in type 2 diabetes with persistent albuminuria a nonsteroidal mineralocorticoid antagonist (finerenone) and a GLP-1 receptor agonist with proven kidney benefit (see the CKD section).</td></tr><tr><td>AL amyloidosis</td><td>Confirm with tissue (fat-pad or kidney biopsy with Congo red) and typing; treat the plasma cell clone.</td></tr></table><h3>Renal vein thrombosis</h3><p>Suspect it in a nephrotic patient (classically membranous) with sudden flank pain, gross hematuria, a rise in creatinine, a raised LDH or an unexplained pulmonary embolism. Confirm with <strong>CT or MR venography</strong> (Doppler ultrasonography is an alternative), and anticoagulate.</p><h3>Acute interstitial nephritis</h3><p>Suspect AIN with a rising creatinine after a new drug, especially with pyuria, white cell casts, rash, fever or eosinophilia. The first step is to <strong>stop the likely drug</strong>. If creatinine does not improve within several days, or the injury is severe, confirm with biopsy and give glucocorticoids. Checkpoint-inhibitor AIN is treated with glucocorticoids and holding the drug.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a 4-year-old with new nephrotic syndrome and normal complement does not need a biopsy first. Start prednisone, and biopsy only if there is no remission.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.01.02"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Nephrotic Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470444/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Membranous Nephropathy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559169/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Minimal Change Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560639/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Focal Segmental Glomerulosclerosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532272/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Diseases",
+      "url": "https://medlineplus.gov/kidneydiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110201-2-1",
+    "heading": "Renal cysts and benign masses: evaluation and management",
+    "html": "<h3>The incidental renal cyst</h3><p>Cysts found on CT or ultrasound done for another reason are classified by their CT (or MRI) features, using the <strong>Bosniak classification</strong>, which estimates the chance of malignancy.</p><table><tr><th>Class</th><th>Features</th><th>Action</th></tr><tr><td>I</td><td>Thin smooth wall, no septa, calcification or solid parts, water density, no enhancement</td><td>Benign: no follow-up</td></tr><tr><td>II</td><td>A few thin septa, fine calcification, or a small uniformly high-density nonenhancing cyst</td><td>Benign: no follow-up</td></tr><tr><td>IIF</td><td>More numerous or minimally thickened septa or wall; no measurable enhancing nodule</td><td>Imaging surveillance (\"F\" for follow-up) over several years</td></tr><tr><td>III</td><td>Thickened, irregular, <strong>enhancing</strong> walls or septa</td><td>Surgical excision (often partial nephrectomy) or, for small cysts or frail patients, active surveillance</td></tr><tr><td>IV</td><td>Enhancing <strong>soft-tissue nodule</strong> within the cyst</td><td>Treat as cancer: partial or radical nephrectomy (surveillance only if surgery is a poor option)</td></tr></table><p>Ultrasound alone can confirm a simple cyst. An indeterminate lesion on ultrasound needs renal-protocol CT or MRI with contrast. Biopsy is rarely needed for cysts.</p><h3>ADPKD: diagnosis</h3><ul><li>With a family history, <strong>ultrasound</strong> is the usual test. In families of unknown genotype, the number of cysts that confirms the diagnosis rises with age (for example, at least 3 cysts in total between 15 and 39 years; at least 2 in each kidney between 40 and 59 years). A normal ultrasound after 40 essentially excludes the disease. MRI is more sensitive in younger relatives being considered as kidney donors, and genetic testing settles unclear cases.</li><li><strong>Total kidney volume</strong> (from MRI or CT) predicts the rate of decline and identifies rapid progressors.</li></ul><h3>ADPKD: management</h3><ul><li><strong>Blood pressure</strong>: an ACE inhibitor or angiotensin receptor blocker first line (the RAAS is the driver). In younger patients with preserved GFR, a lower target (around 110/75 mm Hg) slows kidney growth if tolerated.</li><li><strong>Fluids and salt</strong>: generous water intake (to suppress vasopressin) and dietary sodium restriction; avoid nephrotoxins such as NSAIDs.</li><li><strong>Tolvaptan</strong> (vasopressin V2 receptor antagonist) for adults at risk of <strong>rapidly progressive</strong> disease (for example, large total kidney volume for age, or a fast fall in eGFR). It causes polyuria, thirst and nocturia, and it can cause <strong>serious liver injury</strong>, so liver tests are checked regularly, most closely in the first 18 months.</li><li><strong>Pain and bleeding</strong>: most cyst hemorrhage settles with rest, fluids and analgesia (avoid NSAIDs when GFR is reduced).</li><li><strong>Cyst infection</strong>: fever and focal pain, sometimes with negative urine cultures. Diagnose with imaging (MRI, or PET-CT when unclear) and treat for several weeks with a <strong>lipid-soluble antibiotic that enters cysts</strong>, such as a fluoroquinolone or trimethoprim-sulfamethoxazole; drain large infected cysts that do not respond.</li><li><strong>Intracranial aneurysm screening</strong>: offer MR angiography to patients with a <strong>family history of aneurysm or subarachnoid hemorrhage</strong>, a prior rupture, a high-risk job (for example, pilots) or before major elective surgery. Routine screening of everyone is not recommended.</li><li><strong>Kidney failure</strong>: dialysis or transplant; native nephrectomy if kidneys are so large they leave no room for the graft or cause recurrent bleeding or infection.</li></ul><h3>Benign solid masses</h3><ul><li><strong>Angiomyolipoma</strong>: macroscopic fat on CT is diagnostic. Small asymptomatic tumours are watched with imaging. Treatment (selective arterial embolisation, nephron-sparing surgery or an mTOR inhibitor in tuberous sclerosis) is considered for symptoms, growth, large size or in women planning pregnancy. <strong>Acute retroperitoneal hemorrhage</strong> with shock is treated with resuscitation and emergency <strong>selective arterial embolisation</strong>, which stops bleeding while sparing kidney tissue.</li><li><strong>Oncocytoma</strong>: a central scar on imaging is suggestive but not reliable; biopsy can suggest it, but because it can resemble chromophobe carcinoma, most enhancing solid masses are managed as possible cancer.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a sudden severe headache in a young adult with ADPKD is a ruptured berry aneurysm until proved otherwise: noncontrast CT head first.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.02.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Simple Renal Cyst",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499900/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Autosomal Dominant Polycystic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532934/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Angiomyolipoma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK585104/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Cysts",
+      "url": "https://medlineplus.gov/kidneycysts.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110202-2-1",
+    "heading": "Hematuria evaluation and management of kidney and bladder cancer",
+    "html": "<h3>Hematuria: the work-up</h3><ol><li><strong>Confirm</strong>: a positive dipstick also reacts to myoglobin and free hemoglobin, so confirm with <strong>urine microscopy</strong>. Microscopic hematuria is 3 or more red cells per high-power field on a properly collected specimen.</li><li><strong>Look for benign or glomerular causes</strong>: infection (treat and repeat), menstruation, vigorous exercise or recent instrumentation (repeat later); dysmorphic red cells, red cell casts, proteinuria or a rising creatinine point to glomerular disease and nephrology referral rather than urologic imaging.</li><li><strong>Gross hematuria</strong> without an obvious benign cause, even once and even on anticoagulants, needs <strong>multiphase CT urography and cystoscopy</strong>.</li><li><strong>Microscopic hematuria</strong> is risk-stratified (age, sex, smoking, degree of hematuria, other risk factors). High-risk patients (for example older smokers or more than 25 red cells per high-power field) get CT urography and cystoscopy; low-risk patients (for example a young nonsmoking woman with 3–10 red cells) may be rechecked with a repeat urinalysis or evaluated after shared decision-making with cystoscopy and renal ultrasonography.</li></ol><h3>The solid renal mass</h3><ul><li>Characterise with <strong>renal-protocol CT or MRI</strong> (with contrast): enhancement means a solid tumour, fat means angiomyolipoma. Stage with chest imaging.</li><li><strong>Localised small masses</strong> (up to about 4 cm, T1a): <strong>partial (nephron-sparing) nephrectomy</strong> is preferred, because preserving kidney function lowers later CKD and cardiovascular risk. Thermal ablation or <strong>active surveillance</strong> suits older or frail patients; biopsy helps when the result would change management.</li><li><strong>Larger or central tumours, or renal vein involvement</strong>: radical nephrectomy, with thrombectomy for a vena caval thrombus.</li><li><strong>After nephrectomy</strong> for clear cell RCC at high risk of recurrence, adjuvant pembrolizumab is an option.</li><li><strong>Metastatic clear cell RCC</strong>: first-line systemic therapy is an <strong>immune checkpoint inhibitor-based combination</strong> (a PD-1 inhibitor with a VEGF receptor tyrosine kinase inhibitor, or nivolumab with ipilimumab). Conventional chemotherapy and hormonal therapy do not work.</li><li><strong>VHL disease</strong>: lifelong surveillance (abdominal MRI, eye examination, brain and spine MRI, plasma metanephrines); small renal tumours are watched and removed with nephron-sparing surgery once they reach about 3 cm; belzutifan is an option for VHL tumours that do not need immediate surgery.</li></ul><h3>Bladder cancer</h3><ul><li><strong>Transurethral resection of bladder tumour (TURBT)</strong> diagnoses, stages (it must sample detrusor muscle) and treats non-invasive disease.</li><li><strong>Non-muscle-invasive, low risk</strong>: TURBT, often with one immediate post-resection instillation of intravesical chemotherapy, then surveillance cystoscopy.</li><li><strong>Non-muscle-invasive, high grade or carcinoma in situ</strong>: TURBT (repeat resection for T1 tumours) followed by <strong>intravesical BCG</strong> induction and maintenance. Radical cystectomy if BCG fails.</li><li><strong>Muscle-invasive (T2 or higher), no metastases</strong>: <strong>cisplatin-based neoadjuvant chemotherapy followed by radical cystectomy</strong> with urinary diversion; bladder-sparing trimodality therapy (maximal TURBT with chemoradiation) is an alternative for selected patients.</li><li><strong>Upper-tract urothelial carcinoma</strong>: CT urography and ureteroscopy with biopsy; usually nephroureterectomy, with endoscopic treatment for small low-grade tumours. Test for Lynch syndrome when appropriate.</li></ul><h3>Wilms tumour</h3><ul><li>An abdominal mass in a young child: <strong>abdominal ultrasonography first</strong> (solid versus cystic, kidney versus adrenal, renal vein and caval involvement), then CT or MRI of the abdomen and CT of the chest. Avoid repeated palpation, which can rupture the capsule.</li><li>Treatment combines nephrectomy and chemotherapy (plus radiation for advanced stages); cure rates are high for favourable histology.</li><li><strong>Surveillance</strong> in Beckwith-Wiedemann syndrome and other high-risk syndromes: abdominal (renal) ultrasonography every 3 months until about age 7; in Beckwith-Wiedemann, alpha-fetoprotein is also checked in early childhood for hepatoblastoma.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> hematuria in a patient taking warfarin or a DOAC is still worked up fully; anticoagulation unmasks lesions, it does not explain them.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.02.02",
+     "usmle2026.11.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Gross and Microscopic Hematuria",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534213/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Clear Cell Cancer",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK563230/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bladder Cancer",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK536923/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Wilms Tumor",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK442004/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Bladder Cancer",
+      "url": "https://medlineplus.gov/bladdercancer.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110301-2-1",
+    "heading": "Approach to hematuria, proteinuria and abnormal urine output",
+    "html": "<h3>Hematuria: confirm, exclude benign causes, then stratify</h3><ol><li><strong>Confirm</strong> a positive dipstick with microscopy. Microscopic hematuria is 3 or more red cells per high-power field on a properly collected specimen; a dipstick alone is not enough to start an evaluation.</li><li><strong>Exclude benign or transient causes</strong>: menstruation, vigorous exercise, recent instrumentation, sexual activity and urinary infection. Treat an infection and repeat the urinalysis afterwards.</li><li><strong>Look for a glomerular source</strong>: dysmorphic red cells, red cell casts, proteinuria, rising creatinine or new hypertension point to the kidney; refer to nephrology (urologic evaluation may still be needed if risk is high).</li><li><strong>Stratify risk of urothelial cancer</strong> in nonglomerular hematuria. Risk rises with age, male sex, smoking (pack-years), the number of red cells per field and a history of gross hematuria. Other risk factors: occupational exposure to aromatic amines or benzene dyes, cyclophosphamide, pelvic radiation, aristolochic acid, chronic catheter.</li></ol><table><tr><th>Risk group (AUA microhematuria guidance)</th><th>Typical features</th><th>Evaluation</th></tr><tr><td>Low</td><td>Younger women and men, little or no smoking, 3–10 red cells per field, no other risk factors</td><td>Shared decision: repeat urinalysis within about 6 months, or cystoscopy with renal ultrasonography</td></tr><tr><td>Intermediate</td><td>Middle age, moderate smoking, 11–25 red cells per field, or persistent low-risk hematuria</td><td>Cystoscopy and renal ultrasonography</td></tr><tr><td>High</td><td>Age 60 years or older, more than 30 pack-years, more than 25 red cells per field, or any gross hematuria</td><td><strong>Cystoscopy and CT urography</strong> (multiphase CT with an excretory phase)</td></tr></table><p><strong>Gross hematuria</strong> without an obvious benign cause (for example, a clear infection that resolves) needs cystoscopy and CT urography in adults, even if it happened once. Anticoagulation does not explain hematuria: patients on anticoagulants are evaluated in the same way. If contrast cannot be given, use MR urography or noncontrast imaging with retrograde pyelography.</p><h3>Proteinuria: quantify and classify</h3><ul><li>A positive dipstick is followed by a <strong>quantitative spot ratio</strong> (UACR for albuminuria in diabetes and chronic kidney disease, UPCR when overall protein matters). Categories of albuminuria: A1 below 30, A2 30–300 and A3 above 300 mg/g.</li><li>Repeat a positive test: transient proteinuria from fever, exercise or acute illness disappears.</li><li>In adolescents and young adults with low-grade proteinuria, normal blood pressure and normal kidney function, check a <strong>first-morning sample</strong> (or a split collection of upright and recumbent urine). Protein only when upright is <strong>orthostatic proteinuria</strong>, which is benign and needs reassurance and perhaps a recheck.</li><li>Persistent proteinuria: serum creatinine and eGFR, urine microscopy, blood pressure, glucose and A1c, and, depending on the context, serum and urine protein electrophoresis with free light chains (age over 40, anemia, hypercalcemia), complement, ANA, hepatitis B and C, HIV. Nephrotic-range protein, active sediment or falling eGFR prompt nephrology referral and often biopsy.</li></ul><h3>Oliguria and acute retention</h3><p>In any patient with a sudden fall in urine output, first rule out <strong>obstruction</strong>: bladder scan or straight catheterisation (post-void residual above about 200 mL suggests retention), and flush or replace an existing catheter. Common causes in older men are prostatic enlargement, anticholinergic or opioid drugs and constipation. After relief of prolonged obstruction, watch for a <strong>post-obstructive diuresis</strong> (urine output above about 200 mL/h) with losses of sodium, potassium and water. Only then pursue prerenal and intrinsic causes (see acute kidney injury).</p><h3>Red or dark urine with few red cells</h3><ul><li><strong>Rhabdomyolysis</strong>: heme-positive dipstick, few red cells, creatine kinase often above about 5 times normal (often far higher), hyperkalemia, hyperphosphatemia, early hypocalcemia. Treat with early, generous isotonic fluids aiming at high urine output; stop the offending drug.</li><li><strong>Intravascular hemolysis</strong>: pink plasma, low haptoglobin, high LDH, hemoglobinuria; for example G6PD deficiency after an oxidant drug.</li></ul><div class=\"trap\"><p><strong>Exam trap:</strong> a patient taking warfarin or a direct oral anticoagulant who develops hematuria still gets the full evaluation. Anticoagulation unmasks lesions; it rarely causes bleeding from a normal urinary tract.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.03.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Gross and Microscopic Hematuria",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534213/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Orthostatic Proteinuria",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK562308/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Urine and Urination",
+      "url": "https://medlineplus.gov/urineandurination.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110401-2-1",
+    "heading": "Acute kidney injury: evaluation and management",
+    "html": "<h3>Definition and staging (KDIGO)</h3><p>AKI is any of: serum creatinine up by at least 0.3 mg/dL within 48 hours; creatinine at least 1.5 times baseline within the prior 7 days; or urine output below 0.5 mL/kg/h for 6 hours.</p><table><tr><th>Stage</th><th>Creatinine</th><th>Urine output</th></tr><tr><td>1</td><td>1.5–1.9 × baseline, or rise of at least 0.3 mg/dL</td><td>Below 0.5 mL/kg/h for 6–12 hours</td></tr><tr><td>2</td><td>2.0–2.9 × baseline</td><td>Below 0.5 mL/kg/h for 12 hours or more</td></tr><tr><td>3</td><td>3 × baseline, or creatinine 4.0 mg/dL or more, or start of kidney replacement therapy</td><td>Below 0.3 mL/kg/h for 24 hours or more, or anuria for 12 hours or more</td></tr></table><h3>First steps in every case</h3><ol><li>Review the history and medicines: volume losses, hypotension, contrast, nephrotoxins (NSAIDs, aminoglycosides, vancomycin with piperacillin-tazobactam), ACE inhibitors, ARBs and diuretics.</li><li>Assess volume status at the bedside.</li><li>Urinalysis with microscopy (casts, cells, crystals), urine sodium, creatinine and urea for fractional excretion.</li><li>Check for obstruction: bladder scan or catheter for retention; <strong>renal ultrasound</strong> for hydronephrosis.</li><li>Check potassium, bicarbonate and calcium/phosphate; review drug doses for the current GFR.</li></ol><h3>By cause</h3><ul><li><strong>Prerenal from volume loss</strong>: isotonic crystalloid; creatinine should improve within 24–72 hours. In heart failure or cirrhosis, \"prerenal\" means low effective volume; treat the cause (diuresis for congestion, albumin and vasoconstrictors for hepatorenal syndrome).</li><li><strong>ATN</strong>: supportive; keep euvolemia, stop nephrotoxins, adjust doses, avoid hyperkalemia, and wait for recovery over 1–3 weeks.</li><li><strong>Postrenal</strong>: relieve the obstruction (urethral catheter for bladder outlet obstruction; stent or nephrostomy for ureteral obstruction). Watch for post-obstructive diuresis.</li><li><strong>Rhabdomyolysis</strong>: early, generous isotonic fluids aiming for a high urine output; treat hyperkalemia; avoid giving calcium for asymptomatic hypocalcemia, which often rebounds during recovery.</li><li><strong>Tumor lysis syndrome</strong>: prevent in high-risk patients with IV fluids and <strong>rasburicase</strong> (converts uric acid to soluble allantoin; contraindicated in G6PD deficiency); allopurinol for intermediate risk.</li><li><strong>Contrast-associated AKI</strong>: in people at high risk (low eGFR), give isotonic IV fluid before and after contrast and stop nephrotoxins; do not withhold an indicated contrast study for fear of AKI alone.</li></ul><h3>When to start dialysis urgently</h3><p>Dialysis is started for complications that do not respond to medical treatment:</p><ul><li>severe metabolic acidosis;</li><li>hyperkalemia not controlled medically;</li><li>dialysable poisons (methanol, ethylene glycol, lithium, salicylates);</li><li>volume overload with pulmonary edema despite diuretics;</li><li>uremic complications: pericarditis, encephalopathy, uremic bleeding.</li></ul><p>A creatinine or BUN number alone is not an indication.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a pericardial friction rub in a patient with advanced kidney failure is uremic pericarditis, an indication for urgent dialysis. NSAIDs and colchicine, the usual pericarditis treatments, are not the answer.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Acute Kidney Injury",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK441896/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Acute Renal Tubular Necrosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK507815/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110401-2-2",
+    "heading": "Chronic kidney disease: staging, slowing progression and treating complications",
+    "html": "<h3>Staging (KDIGO): cause, GFR and albuminuria</h3><table><tr><th>GFR category</th><th>eGFR (mL/min/1.73 m²)</th></tr><tr><td>G1</td><td>90 or more (with kidney damage)</td></tr><tr><td>G2</td><td>60–89 (with kidney damage)</td></tr><tr><td>G3a</td><td>45–59</td></tr><tr><td>G3b</td><td>30–44</td></tr><tr><td>G4</td><td>15–29</td></tr><tr><td>G5</td><td>Below 15 (kidney failure)</td></tr></table><p>Albuminuria by urine albumin-to-creatinine ratio (ACR): <strong>A1</strong> below 30 mg/g, <strong>A2</strong> 30–300 mg/g, <strong>A3</strong> above 300 mg/g. Risk rises with both lower GFR and higher ACR, so both are reported (for example \"G3a A3\"). Confirm abnormal ACR on repeat testing. Screen people with diabetes and hypertension yearly with eGFR and ACR.</p><h3>Slowing progression</h3><ul><li><strong>Blood pressure</strong>: KDIGO suggests a systolic target below 120 mm Hg when tolerated, measured in a standardised way.</li><li><strong>ACE inhibitor or ARB</strong> (one, not both) at the highest tolerated dose for albuminuria (especially A3, and A2 with diabetes). Check creatinine and potassium after starting; accept a creatinine rise up to about 30%.</li><li><strong>SGLT2 inhibitor</strong> for type 2 diabetes with CKD and eGFR at least 20, and for CKD without diabetes when eGFR is at least 20 and ACR is at least 200 mg/g or heart failure is present. Continue it once started, even as eGFR falls, until dialysis.</li><li><strong>Finerenone</strong> (nonsteroidal mineralocorticoid antagonist) in type 2 diabetes with persistent albuminuria despite maximal ACE inhibitor or ARB, if eGFR is at least 25 and potassium is normal.</li><li><strong>GLP-1 receptor agonist</strong> for glycemic control in type 2 diabetes with CKD when more is needed beyond metformin and SGLT2 inhibitors.</li><li>Statin for adults 50 years and older with CKD; stop smoking; avoid NSAIDs; dose-adjust drugs (metformin is reduced at eGFR below 45 and stopped below 30).</li></ul><h3>Treating complications</h3><table><tr><th>Complication</th><th>Approach</th></tr><tr><td>Anemia</td><td>Exclude other causes; replete iron first (ferritin and transferrin saturation; IV iron is often needed). An erythropoiesis-stimulating agent (ESA) is considered for persistent hemoglobin below 10 g/dL; avoid targeting normal hemoglobin (13 g/dL or more), which raises stroke and thrombosis risk</td></tr><tr><td>Mineral and bone disorder</td><td>Lower phosphate (diet, then phosphate binders); correct vitamin D deficiency; for progressive secondary hyperparathyroidism, calcitriol or a calcimimetic (cinacalcet); parathyroidectomy for refractory or tertiary disease</td></tr><tr><td>Metabolic acidosis</td><td>Oral sodium bicarbonate when serum bicarbonate is persistently low (below about 18 mEq/L)</td></tr><tr><td>Hyperkalemia</td><td>Low-potassium diet; stop potassium-raising drugs that are not essential; loop or thiazide diuretic; potassium binders (patiromer, sodium zirconium cyclosilicate) to keep RAS blockade going</td></tr><tr><td>Volume overload, edema</td><td>Sodium restriction and loop diuretics</td></tr></table><h3>Planning kidney replacement</h3><p>Refer to nephrology at eGFR below 30 (or earlier for heavy albuminuria or rapid decline). At G4, discuss the options: <strong>transplant</strong> (best survival; preemptive transplant before dialysis is ideal), hemodialysis (create an arteriovenous fistula months ahead, and protect the non-dominant arm from venipuncture), peritoneal dialysis, or conservative care. Start dialysis for symptoms or complications, not at a fixed eGFR.</p><div class=\"trap\"><p><strong>Exam trap:</strong> do not combine an ACE inhibitor with an ARB; dual blockade raises hyperkalemia and AKI without renal benefit.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Chronic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK535404/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Anemia of Chronic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK539871/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Chronic Kidney Disease-Mineral Bone Disorder (CKD-MBD)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560742/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Chronic Kidney Disease",
+      "url": "https://medlineplus.gov/chronickidneydisease.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110401-2-3",
+    "heading": "Nephrolithiasis: acute care, workup and prevention",
+    "html": "<h3>Presentation</h3><p>Sudden, colicky flank pain radiating to the groin, with nausea and hematuria (gross or microscopic). Pain does not ease with position, unlike peritonitis. Fever with a stone means possible infected obstruction.</p><h3>Imaging</h3><ul><li><strong>Noncontrast low-dose CT</strong> of the abdomen and pelvis is the most accurate test and shows size and location.</li><li><strong>Ultrasound first</strong> in pregnancy and in children, and reasonable in young adults with a typical recurrent episode; it shows hydronephrosis even when it misses small ureteral stones.</li></ul><h3>Acute management</h3><ul><li>Analgesia: an <strong>NSAID</strong> (for example ketorolac) is first line when kidney function allows; add opioids if needed.</li><li>Stones up to 10 mm without complications: trial of passage with hydration and pain control. For <strong>distal ureteral stones 5–10 mm</strong>, an alpha blocker (tamsulosin) improves passage. Most stones under 5 mm pass on their own. Strain the urine and send the stone for analysis.</li><li><strong>Urgent urology</strong> (decompression by stent or nephrostomy) for infection with obstruction, AKI, obstruction of a solitary or transplanted kidney, bilateral obstruction, or pain or vomiting that cannot be controlled.</li><li>Elective removal (ureteroscopy, shock wave lithotripsy, percutaneous nephrolithotomy for large or staghorn stones) for stones that do not pass in about 4–6 weeks or are too large to pass.</li></ul><h3>Workup after a stone</h3><p>Everyone: stone analysis, serum calcium, creatinine, electrolytes and uric acid, and urinalysis. High-risk or recurrent stone formers (children, solitary kidney, multiple or recurrent stones, bowel disease): a <strong>24-hour urine</strong> for volume, calcium, oxalate, citrate, uric acid, sodium and creatinine. A high serum calcium leads to PTH testing for primary hyperparathyroidism.</p><h3>Prevention</h3><table><tr><th>Finding</th><th>Prevention</th></tr><tr><td>Low urine volume (all types)</td><td>Fluids for a urine output of at least 2.5 L/day</td></tr><tr><td>Hypercalciuria</td><td>Low sodium intake, <strong>normal</strong> dietary calcium (do not restrict), limit animal protein; <strong>thiazide</strong> if stones recur</td></tr><tr><td>Hypocitraturia</td><td>Potassium citrate</td></tr><tr><td>Hyperoxaluria</td><td>Limit high-oxalate foods; calcium with meals; in enteric hyperoxaluria, low-fat diet and calcium supplements with meals</td></tr><tr><td>Uric acid stones</td><td>Potassium citrate to raise urine pH to about 6–6.5; allopurinol if hyperuricosuria persists</td></tr><tr><td>Calcium oxalate stones with hyperuricosuria</td><td>Allopurinol</td></tr><tr><td>Cystine</td><td>Very high fluid intake, alkalinisation, then tiopronin</td></tr><tr><td>Struvite</td><td>Complete stone removal and treatment of infection</td></tr></table><div class=\"trap\"><p><strong>Exam trap:</strong> a low-calcium diet <em>raises</em> the risk of calcium oxalate stones, because less calcium is left in the gut to bind oxalate.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.04.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Renal Calculi, Nephrolithiasis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK442014/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: 24-Hour Urine Testing for Nephrolithiasis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482448/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Uric Acid Nephrolithiasis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560726/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Stones",
+      "url": "https://medlineplus.gov/kidneystones.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110501-2-1",
+    "heading": "Renovascular disease: when to suspect it, imaging and treatment",
+    "html": "<h3>When to suspect renovascular hypertension</h3><ul><li>Hypertension starting before about 30 years (think fibromuscular dysplasia, especially in women) or a new, severe or resistant hypertension after about 55 years.</li><li>A rise in serum creatinine of more than about 30% after starting an ACE inhibitor or ARB.</li><li><strong>Recurrent \"flash\" pulmonary edema</strong> with preserved ejection fraction, or unexplained kidney atrophy or a size difference of more than about 1.5 cm between kidneys.</li><li>An abdominal or flank bruit, especially one with a diastolic component; diffuse atherosclerosis.</li><li>Hypokalemia with high renin and high aldosterone (contrast primary aldosteronism: high aldosterone with <em>suppressed</em> renin).</li></ul><h3>Imaging</h3><table><tr><th>Test</th><th>Use</th></tr><tr><td>Renal artery duplex ultrasonography</td><td>Noninvasive first test in many centres; no contrast; operator dependent, limited by obesity and bowel gas</td></tr><tr><td>CT angiography</td><td>Excellent detail of the arteries and the beaded pattern of fibromuscular dysplasia; needs iodinated contrast</td></tr><tr><td>MR angiography</td><td>Alternative when iodinated contrast is undesirable; gadolinium is avoided in severe CKD (eGFR below 30) unless a lower-risk group II agent is used</td></tr><tr><td>Catheter angiography</td><td>Reference standard; done when intervention is planned, with pressure gradients across the lesion</td></tr></table><p>In fibromuscular dysplasia, image the arteries from head to pelvis once (CT angiography), because carotid, vertebral and other lesions and aneurysms are common.</p><h3>Treatment</h3><ul><li><strong>Atherosclerotic stenosis</strong>: <strong>medical therapy first</strong>: blood pressure control (an ACE inhibitor or ARB is appropriate in unilateral disease, with creatinine and potassium checked within 1–2 weeks), a high-intensity statin, antiplatelet therapy, smoking cessation and diabetes control. Large randomised trials found that adding stenting to optimal medical therapy did not reduce cardiovascular or renal events in typical patients. Revascularisation is considered for recurrent flash pulmonary edema, rapidly declining kidney function attributable to the stenosis, or truly refractory hypertension.</li><li><strong>Fibromuscular dysplasia</strong> with hypertension: <strong>percutaneous transluminal angioplasty without a stent</strong>, which often improves or cures the hypertension, especially in younger patients with short-duration disease; antiplatelet therapy is commonly given.</li></ul><h3>Renal infarction</h3><p>Suspect it in a patient with atrial fibrillation or another embolic source who has acute flank pain, hematuria and a high LDH, especially when a stone is not seen. <strong>Contrast-enhanced CT</strong> (CT angiography) shows a wedge-shaped perfusion defect; noncontrast CT for stones is normal. Treat with <strong>anticoagulation</strong> (heparin, then long-term oral anticoagulation for atrial fibrillation); catheter-directed therapy is reserved for selected early, complete occlusions.</p><h3>Atheroembolic kidney disease</h3><p>Kidney function that worsens over days to weeks after catheterisation, with livedo and eosinophilia, is atheroembolic disease, whereas contrast-associated injury appears within 24–72 hours and usually recovers within a week. Treatment is <strong>supportive</strong>: blood pressure control, statin, aspirin, avoidance of further arterial procedures and, if possible, anticoagulation; dialysis if needed. There is no proven role for glucocorticoids.</p><h3>Scleroderma renal crisis</h3><p>Abrupt hypertension (sometimes normotensive), rising creatinine and often microangiopathic hemolysis in a patient with early diffuse systemic sclerosis: start a <strong>short-acting ACE inhibitor (captopril) and titrate quickly</strong>, continuing it even when creatinine rises or dialysis is needed, because many patients recover enough to stop dialysis. Avoid high-dose glucocorticoids in at-risk patients. Prophylactic ACE inhibitors are not recommended.</p><h3>Renal vein thrombosis</h3><p>Diagnose with Doppler ultrasonography, CT or MR venography. Treat acute thrombosis with <strong>anticoagulation</strong>, continued while the nephrotic syndrome persists. In membranous nephropathy with serum albumin very low (well below about 2.5 g/dL) and low bleeding risk, prophylactic anticoagulation is sometimes considered.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in atherosclerotic renal artery stenosis the next step is almost always optimal medical therapy, not stenting. The question often hides one of the few revascularisation triggers, such as recurrent flash pulmonary edema.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Renal Artery Stenosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK430718/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Renal Infarction",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK582139/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Scleroderma and Renal Crisis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482424/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Atheroembolic Kidney Disease",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482417/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110601-2-1",
+    "heading": "Genitourinary trauma: evaluation and management",
+    "html": "<h3>Initial approach</h3><p>Genitourinary injuries are evaluated after the primary survey. Gross hematuria, a pelvic fracture, blood at the urethral meatus, flank bruising or penetrating injury near the kidneys or pelvis prompts imaging. Hemodynamic stability decides whether a patient goes to imaging or straight to the operating room.</p><h3>Urethral injury</h3><ul><li><strong>Suspect it</strong> with blood at the meatus, inability to void, perineal or scrotal (butterfly) hematoma or a high-riding prostate.</li><li><strong>Do not pass a urethral catheter first.</strong> A <strong>retrograde urethrogram</strong> comes before any catheter, because blind catheterisation can turn a partial tear into a complete one.</li><li>If the urethrogram shows disruption, drain the bladder with a <strong>suprapubic cystostomy</strong>. Repair is delayed (urethroplasty months later) or done by early endoscopic realignment in selected patients. Late complications: stricture, erectile dysfunction, incontinence.</li></ul><h3>Bladder injury</h3><ul><li><strong>Diagnosis</strong>: CT cystography (or conventional retrograde cystography) with the bladder fully distended through a catheter (about 300–350 mL of contrast in adults). Standard CT with passive filling misses ruptures.</li><li><strong>Extraperitoneal rupture</strong>: contrast around the bladder base in a flame pattern. Most are managed with <strong>catheter drainage</strong> for about 2 weeks and a cystogram before removal. Operate if the bladder neck is involved, bone fragments lie in the bladder, or the abdomen is being opened anyway.</li><li><strong>Intraperitoneal rupture</strong>: contrast outlines bowel loops and fills the paracolic gutters. It needs <strong>surgical repair</strong>, because urine keeps leaking into the peritoneum.</li></ul><h3>Kidney injury</h3><ul><li><strong>Imaging</strong>: contrast CT with delayed (excretory) images, which show the collecting system and urine leak. Indications in adults: gross hematuria, microscopic hematuria with hypotension, or a mechanism or examination that suggests renal injury (rapid deceleration, flank wound, lower rib fractures).</li><li><strong>Grading</strong> (AAST) runs from I (contusion or small subcapsular hematoma) to V (shattered kidney or avulsion of the hilum, or devascularised kidney with active bleeding).</li><li><strong>Management</strong>: most injuries, including many high-grade ones in stable patients, are managed <strong>nonoperatively</strong> with bed rest, serial hemoglobin and observation. Active contrast extravasation or a pseudoaneurysm in a stable or transiently responsive patient is treated with <strong>angioembolisation</strong>. Persistent hemodynamic instability, an expanding or pulsatile hematoma at laparotomy, or hilar avulsion needs exploration. Urine leaks often seal; persistent ones get a ureteral stent.</li></ul><h3>Ureteral injury</h3><p>Usually iatrogenic. Recognised during surgery, it is repaired at once. Recognised later, it shows as flank pain, fever, ileus, rising creatinine, or watery vaginal discharge (ureterovaginal fistula). CT urography or retrograde pyelography confirms it; a stent or percutaneous nephrostomy diverts urine while it heals or until repair.</p><div class=\"trap\"><p><strong>Exam trap:</strong> in a pelvic fracture with blood at the meatus, the next step is a retrograde urethrogram, not a Foley catheter and not a CT of the abdomen.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.06.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Urethral Injury",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554575/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Bladder Rupture",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470226/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Kidney Trauma",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532896/",
+      "sourceId": "statpearls"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110601-2-2",
+    "heading": "Incontinence, neurogenic bladder, obstruction, reflux and prolapse: management",
+    "html": "<h3>Urinary incontinence in practice</h3><p>Start with history, a bladder diary, examination (including pelvic examination and cough stress test), urinalysis to exclude infection and hematuria, and a <strong>post-void residual</strong> when retention is possible. Look for reversible contributors: infection, atrophic vaginitis, drugs (diuretics, sedatives, anticholinergics, alpha blockers in women), constipation, excess fluid or caffeine, poor mobility and hyperglycemia.</p><table><tr><th>Type</th><th>First line</th><th>Next steps</th></tr><tr><td>Stress</td><td>Pelvic floor muscle training, weight loss</td><td>Vaginal pessary or urethral insert; midurethral sling; bulking agents</td></tr><tr><td>Urge (overactive bladder)</td><td>Bladder training (scheduled, gradually lengthened voiding), fluid and caffeine adjustment, pelvic floor training</td><td>Beta-3 agonist or antimuscarinic; then intradetrusor onabotulinumtoxinA, sacral neuromodulation or tibial nerve stimulation</td></tr><tr><td>Mixed</td><td>Treat the most bothersome part first</td><td>Combine approaches</td></tr><tr><td>Overflow</td><td>Treat the cause (stop offending drugs, alpha blocker for prostatic obstruction)</td><td>Clean intermittent catheterisation for an underactive detrusor</td></tr><tr><td>Functional</td><td>Prompted or scheduled toileting, mobility aids, bedside commode</td><td>Address cognition, environment and caregiving</td></tr></table><p>In <strong>older adults</strong>, strongly anticholinergic drugs (oxybutynin especially) can cause confusion, constipation, dry mouth and falls, and add to the anticholinergic burden in dementia; a <strong>beta-3 agonist</strong> is preferred when a drug is needed. Mirabegron can raise blood pressure, so check it on treatment.</p><h3>Neurogenic bladder</h3><ul><li><strong>Underactive detrusor or large residual</strong> (spina bifida, cauda equina, diabetic neuropathy): <strong>clean intermittent catheterisation</strong> every 4–6 hours is preferred over an indwelling catheter.</li><li><strong>Overactive detrusor with dyssynergia</strong> (spinal cord injury, multiple sclerosis): antimuscarinic or beta-3 agonist plus intermittent catheterisation; intradetrusor onabotulinumtoxinA if needed. Monitor kidney function and the upper tracts with ultrasound because of the high pressures.</li><li><strong>Autonomic dysreflexia</strong>: sit the patient up, loosen tight clothing and look for the trigger, usually a blocked catheter or full bladder; drain it. Treat severe persistent hypertension with a fast-acting agent such as nitrates if there is no recent phosphodiesterase-5 inhibitor use.</li></ul><h3>Obstruction</h3><ul><li><strong>Acute urinary retention</strong> (often prostatic enlargement with an anticholinergic or decongestant trigger): drain with a urethral catheter (suprapubic if that fails), start an alpha-1 blocker, and attempt a trial without catheter after a few days.</li><li><strong>Hydronephrosis</strong> on ultrasound with rising creatinine: find the level. Bilateral hydronephrosis with a distended bladder means outlet obstruction (catheter first); unilateral or bilateral hydronephrosis with an empty bladder means ureteral obstruction (stent or nephrostomy).</li><li><strong>Post-obstructive diuresis</strong>: after decompression, monitor urine output, vital signs and electrolytes closely. Replace fluids with a hypotonic or isotonic solution at less than the urine output (for example about half), so as not to drive the diuresis.</li></ul><h3>Vesicoureteral reflux</h3><p>Reflux of urine from bladder to ureter through an incompetent ureterovesical junction (primary: short intramural ureter; secondary: high bladder pressure from valves or neurogenic bladder). It predisposes to pyelonephritis and renal scarring. Graded I (ureter only) to V (gross dilation and tortuosity of the ureter and pelvis with blunted calyces) on <strong>voiding cystourethrography</strong>.</p><ul><li>After a first febrile UTI in a child aged 2–24 months, obtain <strong>renal and bladder ultrasonography</strong>. Voiding cystourethrography follows if ultrasound shows hydronephrosis, scarring or other findings that suggest high-grade reflux or obstruction, or after a second febrile UTI.</li><li>Low grades often resolve with growth. Management includes treating bladder and bowel dysfunction (constipation), prompt treatment of febrile UTIs, continuous antibiotic prophylaxis for selected children (for example higher grades or recurrent infection), and surgery (ureteral reimplantation or endoscopic injection) for breakthrough infections, high grades that persist or new scarring.</li></ul><h3>Enuresis</h3><ul><li><strong>Primary nocturnal enuresis</strong> (never dry, older than 5 years): reassurance, then a <strong>bed-wetting alarm</strong> (most durable) or oral desmopressin (restrict evening fluids to avoid hyponatremia).</li><li><strong>Secondary enuresis</strong> (wetting again after at least 6 months dry): look for a cause: UTI, constipation, new-onset diabetes mellitus or diabetes insipidus (urinalysis for glucose and specific gravity), obstructive sleep apnea, psychosocial stress and, when suspected, abuse.</li></ul><h3>Other mechanical disorders</h3><ul><li><strong>Urethral diverticulum</strong> (women): a tender anterior vaginal wall mass, post-void dribbling, dysuria, dyspareunia and recurrent UTI; pus may be expressed from the meatus. MRI of the pelvis is the most accurate test; symptomatic diverticula are excised.</li><li><strong>Pelvic organ prolapse</strong> (cystocele, uterine or vaginal vault prolapse, rectocele): pressure, a vaginal bulge, voiding difficulty and incomplete emptying. Treat only if symptomatic: pelvic floor training, a pessary, or surgical repair. A large prolapse can kink the urethra and cause retention or even hydronephrosis.</li></ul>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.06.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Urinary Incontinence",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK559095/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Stress Urinary Incontinence",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK539769/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Vesicoureteral Reflux",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK563262/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Enuresis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK545181/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Pelvic Organ Prolapse",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK563229/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Urinary Incontinence",
+      "url": "https://medlineplus.gov/urinaryincontinence.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110701-2-1",
+    "heading": "Congenital anomalies of the kidney and urinary tract: evaluation and management",
+    "html": "<h3>Prenatal hydronephrosis</h3><p>Dilation of the renal pelvis is the commonest anomaly found on prenatal ultrasonography. Most mild dilation resolves. After birth:</p><ul><li><strong>Unilateral</strong> hydronephrosis with a normal bladder: renal and bladder ultrasonography after about <strong>48 hours</strong> of life (and within the first weeks). Earlier scans underestimate dilation because newborns are relatively oliguric in the first 1–2 days.</li><li><strong>Bilateral</strong> hydronephrosis, a thick bladder or a dilated posterior urethra in a boy, or oligohydramnios: suspect posterior urethral valves. Scan in the first day, place a urethral catheter, and obtain voiding cystourethrography.</li><li>Persistent or worsening dilation leads to voiding cystourethrography (reflux, valves) and a <strong>diuretic renal scan</strong> (MAG3 with furosemide), which measures split function and drainage.</li></ul><h3>Ureteropelvic junction obstruction</h3><ul><li>Ultrasonography: dilated pelvis and calyces with a non-dilated ureter.</li><li>Diuretic renography: delayed drainage after furosemide indicates obstruction; split function is measured at the same time.</li><li>Many infants are watched with serial ultrasound. <strong>Pyeloplasty</strong> (open, laparoscopic or robotic dismembered pyeloplasty) is offered for symptoms (pain, infection, stones), reduced split function (often below about 40%), falling function on follow-up or worsening dilation.</li></ul><h3>Multicystic dysplastic kidney</h3><p>Ultrasound shows noncommunicating cysts without normal parenchyma; a renal scan confirms no function. Management is <strong>conservative</strong>: serial ultrasonography to confirm involution and growth of the other kidney, and evaluation of the contralateral kidney, which has reflux or ureteropelvic junction obstruction in a meaningful share of children (voiding cystourethrography if it is dilated or the child has a febrile UTI). Nephrectomy is reserved for rare complications such as a large mass effect, hypertension or a solid component.</p><h3>Bilateral agenesis and lethal oligohydramnios</h3><p>Absent kidneys and bladder with anhydramnios at the mid-trimester anatomy scan predict lethal pulmonary hypoplasia. Counsel the family about the prognosis and the options (continuing with perinatal palliative care or ending the pregnancy), with support and genetic evaluation, because some forms recur.</p><h3>Duplex systems and ectopic ureter</h3><p>A girl who is wet all day and night yet also voids normally has an ectopic ureter until proven otherwise. Renal and bladder ultrasonography usually shows a duplex kidney with a dilated upper pole; MRI urography or cystoscopy locates the opening. Treatment is surgical (upper-pole heminephrectomy if that moiety does not function, or ureteral reimplantation or ureteroureterostomy). A ureterocele may be punctured endoscopically.</p><h3>Horseshoe and pelvic kidney</h3><p>Usually found incidentally and need no treatment. Children with <strong>Turner syndrome</strong> should have renal ultrasonography at diagnosis because of the frequent horseshoe kidney and collecting-system anomalies. Ectopic kidneys complicate trauma, abdominal aortic surgery and transplant surgery planning.</p><h3>Urachal remnants</h3><p>A newborn with persistent clear, urine-like drainage from the umbilicus may have a <strong>patent urachus</strong>; a fluid creatinine much higher than serum supports it. Ultrasonography of the umbilical region and bladder is the first test, with voiding cystourethrography to exclude bladder outlet obstruction, which can keep the urachus open. Symptomatic remnants are excised to prevent infection and later malignancy.</p><h3>Bladder exstrophy</h3><p>Diagnosed at birth (or prenatally by a non-visualised bladder with a low umbilical cord insertion). Cover the bladder plate with plastic wrap and refer for staged reconstruction; long-term issues are continence, fertility, upper-tract protection and cancer surveillance.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a newborn ultrasound on the first day after mild unilateral prenatal hydronephrosis can falsely reassure. Wait about 48 hours unless bilateral disease or a male infant with suspected valves needs earlier assessment.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.07.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Ureteropelvic Junction Obstruction",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560740/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Posterior Urethral Valves",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560881/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Potter Syndrome",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK560858/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Patent Urachus",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557723/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Diseases",
+      "url": "https://medlineplus.gov/kidneydiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   },
+   {
+    "id": "s23c-s110801-2-1",
+    "heading": "Drug-induced kidney and urinary problems: recognition and management",
+    "html": "<h3>Recognising drug-related kidney injury</h3><p>Review every drug, including over-the-counter NSAIDs, proton pump inhibitors, supplements and recent contrast, whenever creatinine rises. The urine sediment and the time course usually point to the mechanism.</p><table><tr><th>Pattern</th><th>Typical drugs</th><th>Clues</th><th>Management</th></tr><tr><td>Hemodynamic (prerenal)</td><td>NSAIDs, ACE inhibitors or ARBs, diuretics, calcineurin inhibitors</td><td>Bland sediment, BUN:creatinine above 20, low urine sodium; often a volume-depleted older patient</td><td>Hold the offending drugs, restore volume, recheck</td></tr><tr><td>Acute tubular necrosis</td><td>Aminoglycosides, cisplatin, amphotericin B, contrast</td><td>Muddy brown granular casts, urine sodium above 40 mEq/L, FENa above 2%; aminoglycoside injury is nonoliguric and appears after 5–10 days</td><td>Stop or dose-adjust, monitor levels, replace magnesium and potassium, avoid other nephrotoxins</td></tr><tr><td>Acute interstitial nephritis</td><td>Beta-lactams, PPIs, NSAIDs, sulfonamides, immune checkpoint inhibitors</td><td>Sterile pyuria, white cell casts, sometimes rash, fever or eosinophilia</td><td>Stop the drug; corticosteroids if no prompt recovery. For checkpoint inhibitors: hold the drug and start prednisone for moderate or worse injury</td></tr><tr><td>Crystal nephropathy</td><td>IV acyclovir, methotrexate, sulfadiazine, indinavir</td><td>Crystals in urine, AKI within days of a high dose</td><td>Hydrate, stop or reduce the drug; for methotrexate, leucovorin, alkalinisation and glucarpidase if severe</td></tr><tr><td>Pseudo-AKI (creatinine secretion blocked)</td><td>Trimethoprim, cimetidine; some kinase inhibitors</td><td>Creatinine up about 10–30% within days, BUN unchanged, bland urine; cystatin C unchanged</td><td>No change needed if this is the only finding; watch potassium with trimethoprim</td></tr></table><h3>ACE inhibitors and ARBs: when a creatinine rise is acceptable</h3><p>Check creatinine and potassium within about 2–4 weeks of starting or increasing the dose. A rise of up to about 30% that then stabilises is expected and the drug should be <strong>continued</strong>, because it reflects the intended fall in intraglomerular pressure. A larger rise calls for a search for volume depletion, NSAIDs or renal artery stenosis and dose reduction or a pause. Manage mild hyperkalemia with dietary advice, stopping potassium supplements, a diuretic or a potassium binder before abandoning the drug.</p><h3>Iodinated contrast</h3><ul><li>Do not withhold a clinically necessary contrast study because of kidney function; the risk is small and mostly confined to eGFR below about 30 mL/min/1.73 m² (or AKI).</li><li>For high-risk patients who are not volume overloaded: IV isotonic crystalloid before and after, the lowest needed dose of a low- or iso-osmolar agent, and pausing NSAIDs and diuretics where safe.</li><li>N-acetylcysteine and prophylactic dialysis do not help. Metformin is held after contrast in patients with eGFR below 30 or AKI.</li></ul><h3>Gadolinium</h3><p>In eGFR below 30 or dialysis, use a lower-risk (macrocyclic, group II) agent at the lowest dose only when the information is needed; for patients already on hemodialysis, dialysis soon after the scan is commonly arranged.</p><h3>Specific drugs</h3><ul><li><strong>Aminoglycosides</strong>: once-daily dosing, trough monitoring, shortest course; avoid with loop diuretics, vancomycin, contrast and NSAIDs where possible.</li><li><strong>Cisplatin</strong>: prehydrate with saline and give magnesium. <strong>Hypomagnesemia</strong> makes hypokalemia refractory (magnesium normally restrains potassium secretion through ROMK), so replace magnesium first or together with potassium.</li><li><strong>Lithium</strong>: monitor levels, creatinine, calcium and TSH. For nephrogenic DI when lithium must continue, add <strong>amiloride</strong>; thiazides also reduce polyuria but raise lithium levels.</li><li><strong>Tenofovir</strong>: monitor creatinine, urine glucose and protein and phosphate on TDF; switch to tenofovir alafenamide or another regimen if tubulopathy appears.</li><li><strong>Immune checkpoint inhibitors</strong> (pembrolizumab, nivolumab, ipilimumab): AIN is the usual kidney lesion, often weeks to months in and often with a PPI or NSAID as co-trigger. Exclude other causes, hold the inhibitor and give prednisone for moderate or worse injury; rechallenge may be possible once recovered, after discussion with oncology.</li><li><strong>Cyclophosphamide/ifosfamide</strong>: hydration and mesna to prevent hemorrhagic cystitis; evaluate later hematuria for bladder cancer.</li></ul><h3>Drug-induced urinary retention</h3><p>Suspect it in an older man with prostatic enlargement who has just started an antihistamine, antimuscarinic, tricyclic, decongestant or opioid, or after anesthesia. Confirm with a bladder scan (post-void residual). <strong>Decompress the bladder with a urethral catheter</strong> (suprapubic catheter if urethral placement fails or is contraindicated), stop the drug, and in men start an alpha-1 blocker such as tamsulosin before a trial without catheter.</p><div class=\"trap\"><p><strong>Exam trap:</strong> a creatinine rise of about 0.2–0.3 mg/dL a few days after starting trimethoprim-sulfamethoxazole with an unchanged BUN and bland urine is blocked creatinine secretion, not kidney injury. Stopping the antibiotic is not needed for that reason alone.</p></div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.11.08.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Contrast-Induced Nephropathy",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK448066/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Nonsteroidal Anti-Inflammatory Drugs Toxicity",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK526006/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Allergic and Drug-Induced Interstitial Nephritis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482323/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "StatPearls: Male Urinary Retention: Acute and Chronic",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538499/",
+      "sourceId": "statpearls"
+     },
+     {
+      "label": "MedlinePlus: Kidney Diseases",
+      "url": "https://medlineplus.gov/kidneydiseases.html",
+      "sourceId": "medlineplus-federal"
+     }
+    ]
+   }
+  ]
+ }
+]
