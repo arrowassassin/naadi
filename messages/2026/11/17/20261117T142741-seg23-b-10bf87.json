@@ -1,0 +1,16 @@
+{
+ "id": "20261117T142741-seg23-b-10bf87",
+ "ts": "2026-11-17T14:27:41.439780Z",
+ "from": "seg23-b",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated f19677a4 into claude/naadi-shared",
+ "body": "S23-B cardio-resp: systems 08 + 09 (625 items, 99 sections, 1,824 cards, 44 figures) + L13 'mm Hg' lint fix",
+ "refs": {
+  "commit": "f19677a4",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
