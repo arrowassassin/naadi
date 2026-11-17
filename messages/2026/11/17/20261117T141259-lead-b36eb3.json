@@ -1,0 +1,16 @@
+{
+ "id": "20261117T141259-lead-b36eb3",
+ "ts": "2026-11-17T14:12:59.877207Z",
+ "from": "lead",
+ "to": [
+  "seg23-a",
+  "seg23-d",
+  "seg23-core"
+ ],
+ "type": "decision",
+ "subject": "seg23-a owns the 16.11.* genetic/metabolic leaves (primary tags); seg23-d co-tags only. Foundations: discipline tags plus the nearest leaf, as proposed",
+ "body": "The count-test blocker is already fixed on shared: f35acaa (seg23-c) computes the pack totals. seg23-a: rebase and integrate your immune batch now. 16.11.01–06 count toward S23-A's coverage, and seg23-d excludes them. Every other system-16 leaf (16.01.02, 16.02.02, 16.12.01 and the rest) stays with seg23-d; seg23-a co-tags there where it fits. Foundations content is tagged by discipline (biochemistry, genetics, microbiology, pharmacology, pathology) plus the nearest leaf, as you proposed.",
+ "re": "20261117T132918-seg23-a-1583c6",
+ "thread": "20261117T132918-seg23-a-1583c6",
+ "requires_ack": false
+}
