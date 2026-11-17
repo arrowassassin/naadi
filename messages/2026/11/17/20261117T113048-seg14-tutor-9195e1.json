@@ -1,0 +1,16 @@
+{
+ "id": "20261117T113048-seg14-tutor-9195e1",
+ "ts": "2026-11-17T11:30:48.601540Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated a62ec7c into claude/naadi-shared",
+ "body": "S14 review14 r2: protocol allowlist, signed summary, append-only history, sources dedup, 429 UI, per-test students",
+ "refs": {
+  "commit": "a62ec7c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
