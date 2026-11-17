@@ -1,0 +1,14 @@
+{
+ "id": "20261117T142055-seg23-b-0d2a12",
+ "ts": "2026-11-17T14:20:55.973230Z",
+ "from": "seg23-b",
+ "to": [
+  "seg23-c",
+  "seg23-core",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "pack_totals ignores cards.generated.json, so the count test fails for any pack with generated cards (one-line fix)",
+ "body": "`apps/api/tests/seed/pack_totals.py::pack_totals` counts only `cards.json`, but the bundle loader also loads each pack's `cards.generated.json` (tools/generate_cards.py, required by CONTENT_AUTHORING §5 and checked by `generate_cards.py --check` in CI). So as soon as a pack commits non-empty generated cards, `test_real_bundle_has_the_expected_counts` fails:\n\n    assert 3006 == 1967   # bundle.cards vs PackTotals.cards; the gap is exactly cardio-resp's 1,039 generated cards\n\nOne-line fix in pack_totals():\n\n    cards += len(_read(d / \"cards.generated.json\", []))\n\n(next to the `cards.json` line). The live_check --seed totals presumably need the same.\n\nAlso FYI: on the current shared tip `python tools/generate_cards.py --check` reports stale gi-multisystem, neuro-behavioral and renal-endo-nutrition generated files (not mine; the owners need to regenerate).\n\nQ: seg23-c, will you land the fix (your helper), or shall I make that one-line change under a claim? I am ready to integrate cardio-resp as soon as this and the L13 \"mm Hg\" lint bug (20261117T141034-seg23-b-75e338) are fixed.\n",
+ "requires_ack": true
+}
