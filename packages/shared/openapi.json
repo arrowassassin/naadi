@@ -2842,6 +2842,65 @@
         "title": "Coverage",
         "type": "object"
       },
+      "DeckCount": {
+        "properties": {
+          "cards": {
+            "description": "Cards of yours in this deck",
+            "title": "Cards",
+            "type": "integer"
+          },
+          "deck": {
+            "title": "Deck",
+            "type": "string"
+          },
+          "imported": {
+            "description": "Of those, imported from an Anki package",
+            "title": "Imported",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "deck",
+          "cards",
+          "imported"
+        ],
+        "title": "DeckCount",
+        "type": "object"
+      },
+      "DecksOut": {
+        "properties": {
+          "decks": {
+            "items": {
+              "$ref": "#/components/schemas/DeckCount"
+            },
+            "title": "Decks",
+            "type": "array"
+          },
+          "total_cards": {
+            "title": "Total Cards",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "decks",
+          "total_cards"
+        ],
+        "title": "DecksOut",
+        "type": "object"
+      },
+      "DeletedOut": {
+        "properties": {
+          "deleted": {
+            "title": "Deleted",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "deleted"
+        ],
+        "title": "DeletedOut",
+        "type": "object"
+      },
       "DiagnosticOut": {
         "properties": {
           "block_id": {
@@ -3772,6 +3831,97 @@
           "default"
         ],
         "title": "HoursRange",
+        "type": "object"
+      },
+      "ImportReport": {
+        "description": "What one `.apkg` import did. Every number is a count; the web words it from `ui_copy` `anki.*`.",
+        "properties": {
+          "audio_skipped": {
+            "description": "Sounds and videos are not imported",
+            "title": "Audio Skipped",
+            "type": "integer"
+          },
+          "cards_added": {
+            "title": "Cards Added",
+            "type": "integer"
+          },
+          "cards_existing": {
+            "description": "Cards already in your library (same Anki id): left untouched",
+            "title": "Cards Existing",
+            "type": "integer"
+          },
+          "cards_skipped": {
+            "description": "Empty, too long, or of an unreadable note type",
+            "title": "Cards Skipped",
+            "type": "integer"
+          },
+          "decks": {
+            "items": {
+              "$ref": "#/components/schemas/ImportedDeck"
+            },
+            "title": "Decks",
+            "type": "array"
+          },
+          "images_added": {
+            "title": "Images Added",
+            "type": "integer"
+          },
+          "images_skipped": {
+            "description": "Pictures that could not be imported (missing, too large, unsupported)",
+            "title": "Images Skipped",
+            "type": "integer"
+          },
+          "media_manifest": {
+            "description": "ok; unreadable: pictures could not be matched, the cards came in without them; none: no media",
+            "enum": [
+              "ok",
+              "unreadable",
+              "none"
+            ],
+            "title": "Media Manifest",
+            "type": "string"
+          },
+          "notes": {
+            "description": "Notes in the package",
+            "title": "Notes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "notes",
+          "cards_added",
+          "cards_existing",
+          "cards_skipped",
+          "decks",
+          "images_added",
+          "images_skipped",
+          "audio_skipped",
+          "media_manifest"
+        ],
+        "title": "ImportReport",
+        "type": "object"
+      },
+      "ImportedDeck": {
+        "properties": {
+          "added": {
+            "title": "Added",
+            "type": "integer"
+          },
+          "deck": {
+            "title": "Deck",
+            "type": "string"
+          },
+          "existing": {
+            "title": "Existing",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "deck",
+          "added",
+          "existing"
+        ],
+        "title": "ImportedDeck",
         "type": "object"
       },
       "IndexJob": {
@@ -4870,9 +5020,13 @@
                 "$ref": "#/components/schemas/AnchorPos"
               },
               {
+                "$ref": "#/components/schemas/VideoPos"
+              },
+              {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Anchor Pos"
           },
           "anchor_type": {
             "anyOf": [
@@ -5031,9 +5185,13 @@
                 "$ref": "#/components/schemas/AnchorPos"
               },
               {
+                "$ref": "#/components/schemas/VideoPos"
+              },
+              {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Anchor Pos"
           },
           "anchor_type": {
             "anyOf": [
@@ -5238,9 +5396,13 @@
                 "$ref": "#/components/schemas/AnchorPos"
               },
               {
+                "$ref": "#/components/schemas/VideoPos"
+              },
+              {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Anchor Pos"
           },
           "anchor_type": {
             "anyOf": [
@@ -9005,6 +9167,24 @@
         "title": "ValidationError",
         "type": "object"
       },
+      "VideoPos": {
+        "additionalProperties": false,
+        "description": "Where a video note sits: seconds into the video (`anchor_type 'video'`, segment 20's player).",
+        "properties": {
+          "t": {
+            "description": "Seconds from the start of the video",
+            "maximum": 172800.0,
+            "minimum": 0.0,
+            "title": "T",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "t"
+        ],
+        "title": "VideoPos",
+        "type": "object"
+      },
       "WeakCellOut": {
         "properties": {
           "attempts": {
@@ -10387,6 +10567,341 @@
         "summary": "Admin only: one seed job with its report",
         "tags": [
           "admin"
+        ]
+      }
+    },
+    "/api/anki/decks": {
+      "delete": {
+        "operationId": "deleteImportedAnkiDeck",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deck",
+            "required": true,
+            "schema": {
+              "maxLength": 60,
+              "title": "Deck",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Anki import is switched off (code anki_unavailable)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or storage unavailable (code anki_unavailable)"
+          }
+        },
+        "summary": "Delete the cards you imported into a deck (your own typed cards stay)",
+        "tags": [
+          "anki"
+        ]
+      },
+      "get": {
+        "operationId": "getAnkiDecks",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecksOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Anki import is switched off (code anki_unavailable)"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or storage unavailable (code anki_unavailable)"
+          }
+        },
+        "summary": "Your decks with card counts (the picker for Export deck)",
+        "tags": [
+          "anki"
+        ]
+      }
+    },
+    "/api/anki/export": {
+      "get": {
+        "operationId": "exportAnkiDeck",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "deck",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 60,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Deck"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "No cards to export (code anki_no_cards_to_export)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or storage unavailable (code anki_unavailable)"
+          }
+        },
+        "summary": "Download your own cards as an .apkg (one deck with its sub-decks, or all)",
+        "tags": [
+          "anki"
+        ]
+      }
+    },
+    "/api/anki/import": {
+      "post": {
+        "operationId": "importAnkiDeck",
+        "parameters": [
+          {
+            "description": "Optional parent deck name",
+            "in": "query",
+            "name": "prefix",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 60,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional parent deck name",
+              "title": "Prefix"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportReport"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Anki import is switched off (code anki_unavailable)"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Larger than 100 MB (code anki_too_large) or over the card cap"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not a readable Anki package (anki_* code)"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database or storage unavailable (code anki_unavailable)"
+          }
+        },
+        "summary": "Import an .apkg (the raw request body) into your own flashcards; cards start new, a repeat is a no-op",
+        "tags": [
+          "anki"
         ]
       }
     },

@@ -9,6 +9,7 @@ from fastapi import FastAPI
 from starlette.middleware.gzip import GZipMiddleware
 
 from . import __version__, api
+from .anki.routes import install_anki_routes
 from .auth import AccountDirectory, TokenVerifier, install_auth
 from .auth_routes import install_auth_routes
 from .cards.routes import install_cards_routes
@@ -132,6 +133,7 @@ def create_app(
     install_courses_routes(app)
     install_qbank_routes(app)
     install_cards_routes(app)
+    install_anki_routes(app)
     install_plan_routes(app)
     install_search_routes(app)
     install_ink_routes(app)

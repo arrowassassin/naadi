@@ -26,7 +26,8 @@ from .models import (
     MAX_NOTEBOOKS_PER_USER,
     MAX_NOTES_PER_USER,
     MAX_PAGES_PER_NOTEBOOK,
-    AnchorPos,
+    AnyPos,
+    parse_pos,
 )
 from .text import excerpt
 
@@ -281,7 +282,7 @@ def shape_note(row: Row, sources: Mapping[tuple[str, str], Row]) -> dict[str, An
         "notebook_id": row["notebook_id"],
         "anchor_type": row["anchor_type"],
         "anchor_id": row["anchor_id"],
-        "anchor_pos": AnchorPos.model_validate(row["anchor_pos"]) if row["anchor_pos"] else None,
+        "anchor_pos": parse_pos(row["anchor_pos"]),
         "highlight_color": row["highlight_color"],
         "body": row["body"],
         "body_omitted": bool(row["body_omitted"]) and row["body"] is None,
@@ -300,7 +301,7 @@ def shape_note(row: Row, sources: Mapping[tuple[str, str], Row]) -> dict[str, An
 # ── Writes (privileged connection; every statement filters on the caller) ──
 
 
-def pos_json(pos: AnchorPos | None) -> Jsonb | None:
+def pos_json(pos: AnyPos | None) -> Jsonb | None:
     return Jsonb(pos.model_dump(by_alias=True, exclude_none=True)) if pos is not None else None
 
 
@@ -322,7 +323,7 @@ class NewNote:
     notebook_id: uuid.UUID | None
     anchor_type: str | None
     anchor_id: str | None
-    anchor_pos: AnchorPos | None
+    anchor_pos: AnyPos | None
     highlight_color: str | None
     body: dict[str, Any] | None
     body_text: str

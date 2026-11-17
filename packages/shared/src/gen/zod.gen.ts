@@ -401,6 +401,30 @@ export const zCourseSystem = z.object({
 });
 
 /**
+ * DeckCount
+ */
+export const zDeckCount = z.object({
+  cards: z.int(),
+  deck: z.string(),
+  imported: z.int(),
+});
+
+/**
+ * DecksOut
+ */
+export const zDecksOut = z.object({
+  decks: z.array(zDeckCount),
+  total_cards: z.int(),
+});
+
+/**
+ * DeletedOut
+ */
+export const zDeletedOut = z.object({
+  deleted: z.int(),
+});
+
+/**
  * DiagnosticOut
  */
 export const zDiagnosticOut = z.object({
@@ -613,6 +637,32 @@ export const zHoursRange = z.object({
   max: z.number(),
   min: z.number(),
   step: z.number(),
+});
+
+/**
+ * ImportedDeck
+ */
+export const zImportedDeck = z.object({
+  added: z.int(),
+  deck: z.string(),
+  existing: z.int(),
+});
+
+/**
+ * ImportReport
+ *
+ * What one `.apkg` import did. Every number is a count; the web words it from `ui_copy` `anki.*`.
+ */
+export const zImportReport = z.object({
+  audio_skipped: z.int(),
+  cards_added: z.int(),
+  cards_existing: z.int(),
+  cards_skipped: z.int(),
+  decks: z.array(zImportedDeck),
+  images_added: z.int(),
+  images_skipped: z.int(),
+  media_manifest: z.enum(["ok", "unreadable", "none"]),
+  notes: z.int(),
 });
 
 /**
@@ -946,50 +996,6 @@ export const zNoteCounts = z.object({
 });
 
 /**
- * NoteCreate
- *
- * `kind 'page'` is created with POST /api/notebooks/{id}/pages. Replaying a create with the same `id` returns
- * the stored note (200); so does a second `kind 'note'` on a section that already has one.
- */
-export const zNoteCreate = z.object({
-  anchor_id: z
-    .string()
-    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,199}$/)
-    .nullish(),
-  anchor_pos: zAnchorPos.nullish(),
-  anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullish(),
-  body: z.record(z.string(), z.unknown()).nullish(),
-  canvas: z.enum(["paper", "whiteboard"]).optional().default("paper"),
-  highlight_color: z.enum(["lime", "violet", "amber"]).nullish(),
-  id: z.uuid().nullish(),
-  kind: z.enum(["note", "highlight"]).optional().default("note"),
-  notebook_id: z.uuid().nullish(),
-  title: z.string().max(200).nullish(),
-});
-
-/**
- * NotePatch
- *
- * Partial update: only the fields sent change; `null` clears a nullable field. `kind` never changes.
- */
-export const zNotePatch = z.object({
-  anchor_id: z
-    .string()
-    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,199}$/)
-    .nullish(),
-  anchor_pos: zAnchorPos.nullish(),
-  anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullish(),
-  body: z.record(z.string(), z.unknown()).nullish(),
-  canvas: z.enum(["paper", "whiteboard"]).nullish(),
-  highlight_color: z.enum(["lime", "violet", "amber"]).nullish(),
-  if_updated_at: z.iso.datetime().nullish(),
-  notebook_id: z.uuid().nullish(),
-  paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).nullish(),
-  sort: z.int().gte(0).lte(100000).nullish(),
-  title: z.string().max(200).nullish(),
-});
-
-/**
  * NoteSource
  *
  * What a note's anchor points at, for source chips and links (structured; the web words it). Only what the
@@ -1011,40 +1017,6 @@ export const zNoteSource = z.object({
 });
 
 /**
- * NoteOut
- */
-export const zNoteOut = z.object({
-  anchor_id: z.string().nullable(),
-  anchor_pos: zAnchorPos.nullable(),
-  anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullable(),
-  body: z.record(z.string(), z.unknown()).nullable(),
-  body_omitted: z.boolean().optional().default(false),
-  body_text: z.string(),
-  canvas: z.enum(["paper", "whiteboard"]),
-  created_at: z.iso.datetime(),
-  excerpt: z.string(),
-  has_ink: z.boolean(),
-  highlight_color: z.enum(["lime", "violet", "amber"]).nullable(),
-  id: z.uuid(),
-  kind: z.enum(["note", "highlight", "page"]),
-  notebook_id: z.uuid().nullable(),
-  paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).nullable(),
-  sort: z.int(),
-  source: zNoteSource.nullable(),
-  title: z.string().nullable(),
-  updated_at: z.iso.datetime(),
-});
-
-/**
- * NoteList
- */
-export const zNoteList = z.object({
-  counts: zNoteCounts,
-  items: z.array(zNoteOut),
-  next_offset: z.int().nullable(),
-});
-
-/**
  * NotebookCreate
  *
  * Creates the notebook with its first page.
@@ -1055,21 +1027,6 @@ export const zNotebookCreate = z.object({
   id: z.uuid().nullish(),
   paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).optional().default("ruled"),
   title: z.string().min(1).max(200),
-});
-
-/**
- * NotebookDetail
- */
-export const zNotebookDetail = z.object({
-  cover: z.enum(["lime", "violet", "amber", "paper", "surface-2", "ink-violet"]).nullable(),
-  created_at: z.iso.datetime(),
-  id: z.uuid(),
-  note_count: z.int(),
-  page_count: z.int(),
-  pages: z.array(zNoteOut),
-  paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]),
-  title: z.string(),
-  updated_at: z.iso.datetime(),
 });
 
 /**
@@ -1999,6 +1956,108 @@ export const zHttpValidationError = z.object({
 });
 
 /**
+ * VideoPos
+ *
+ * Where a video note sits: seconds into the video (`anchor_type 'video'`, segment 20's player).
+ */
+export const zVideoPos = z.object({
+  t: z.int().gte(0).lte(172800),
+});
+
+/**
+ * NoteCreate
+ *
+ * `kind 'page'` is created with POST /api/notebooks/{id}/pages. Replaying a create with the same `id` returns
+ * the stored note (200); so does a second `kind 'note'` on a section that already has one.
+ */
+export const zNoteCreate = z.object({
+  anchor_id: z
+    .string()
+    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,199}$/)
+    .nullish(),
+  anchor_pos: z.union([zAnchorPos, zVideoPos]).nullish(),
+  anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullish(),
+  body: z.record(z.string(), z.unknown()).nullish(),
+  canvas: z.enum(["paper", "whiteboard"]).optional().default("paper"),
+  highlight_color: z.enum(["lime", "violet", "amber"]).nullish(),
+  id: z.uuid().nullish(),
+  kind: z.enum(["note", "highlight"]).optional().default("note"),
+  notebook_id: z.uuid().nullish(),
+  title: z.string().max(200).nullish(),
+});
+
+/**
+ * NoteOut
+ */
+export const zNoteOut = z.object({
+  anchor_id: z.string().nullable(),
+  anchor_pos: z.union([zAnchorPos, zVideoPos]).nullable(),
+  anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullable(),
+  body: z.record(z.string(), z.unknown()).nullable(),
+  body_omitted: z.boolean().optional().default(false),
+  body_text: z.string(),
+  canvas: z.enum(["paper", "whiteboard"]),
+  created_at: z.iso.datetime(),
+  excerpt: z.string(),
+  has_ink: z.boolean(),
+  highlight_color: z.enum(["lime", "violet", "amber"]).nullable(),
+  id: z.uuid(),
+  kind: z.enum(["note", "highlight", "page"]),
+  notebook_id: z.uuid().nullable(),
+  paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).nullable(),
+  sort: z.int(),
+  source: zNoteSource.nullable(),
+  title: z.string().nullable(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * NoteList
+ */
+export const zNoteList = z.object({
+  counts: zNoteCounts,
+  items: z.array(zNoteOut),
+  next_offset: z.int().nullable(),
+});
+
+/**
+ * NotePatch
+ *
+ * Partial update: only the fields sent change; `null` clears a nullable field. `kind` never changes.
+ */
+export const zNotePatch = z.object({
+  anchor_id: z
+    .string()
+    .regex(/^[A-Za-z0-9][A-Za-z0-9._:\-]{0,199}$/)
+    .nullish(),
+  anchor_pos: z.union([zAnchorPos, zVideoPos]).nullish(),
+  anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullish(),
+  body: z.record(z.string(), z.unknown()).nullish(),
+  canvas: z.enum(["paper", "whiteboard"]).nullish(),
+  highlight_color: z.enum(["lime", "violet", "amber"]).nullish(),
+  if_updated_at: z.iso.datetime().nullish(),
+  notebook_id: z.uuid().nullish(),
+  paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).nullish(),
+  sort: z.int().gte(0).lte(100000).nullish(),
+  title: z.string().max(200).nullish(),
+});
+
+/**
+ * NotebookDetail
+ */
+export const zNotebookDetail = z.object({
+  cover: z.enum(["lime", "violet", "amber", "paper", "surface-2", "ink-violet"]).nullable(),
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  note_count: z.int(),
+  page_count: z.int(),
+  pages: z.array(zNoteOut),
+  paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]),
+  title: z.string(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
  * WeakCellOut
  */
 export const zWeakCellOut = z.object({
@@ -2231,6 +2290,38 @@ export const zGetSeedRunPath = z.object({
  * Successful Response
  */
 export const zGetSeedRunResponse = zSeedRun;
+
+export const zDeleteImportedAnkiDeckQuery = z.object({
+  deck: z.string().max(60),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteImportedAnkiDeckResponse = zDeletedOut;
+
+/**
+ * Successful Response
+ */
+export const zGetAnkiDecksResponse = zDecksOut;
+
+export const zExportAnkiDeckQuery = z.object({
+  deck: z.string().max(60).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zExportAnkiDeckResponse = z.string();
+
+export const zImportAnkiDeckQuery = z.object({
+  prefix: z.string().max(60).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zImportAnkiDeckResponse = zImportReport;
 
 export const zListBlocksQuery = z.object({
   limit: z.int().gte(1).lte(100).optional().default(30),

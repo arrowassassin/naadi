@@ -1627,6 +1627,52 @@ export type Coverage = {
 };
 
 /**
+ * DeckCount
+ */
+export type DeckCount = {
+  /**
+   * Cards
+   *
+   * Cards of yours in this deck
+   */
+  cards: number;
+  /**
+   * Deck
+   */
+  deck: string;
+  /**
+   * Imported
+   *
+   * Of those, imported from an Anki package
+   */
+  imported: number;
+};
+
+/**
+ * DecksOut
+ */
+export type DecksOut = {
+  /**
+   * Decks
+   */
+  decks: Array<DeckCount>;
+  /**
+   * Total Cards
+   */
+  total_cards: number;
+};
+
+/**
+ * DeletedOut
+ */
+export type DeletedOut = {
+  /**
+   * Deleted
+   */
+  deleted: number;
+};
+
+/**
  * DiagnosticOut
  */
 export type DiagnosticOut = {
@@ -2195,6 +2241,80 @@ export type HoursRange = {
    * Step
    */
   step: number;
+};
+
+/**
+ * ImportReport
+ *
+ * What one `.apkg` import did. Every number is a count; the web words it from `ui_copy` `anki.*`.
+ */
+export type ImportReport = {
+  /**
+   * Audio Skipped
+   *
+   * Sounds and videos are not imported
+   */
+  audio_skipped: number;
+  /**
+   * Cards Added
+   */
+  cards_added: number;
+  /**
+   * Cards Existing
+   *
+   * Cards already in your library (same Anki id): left untouched
+   */
+  cards_existing: number;
+  /**
+   * Cards Skipped
+   *
+   * Empty, too long, or of an unreadable note type
+   */
+  cards_skipped: number;
+  /**
+   * Decks
+   */
+  decks: Array<ImportedDeck>;
+  /**
+   * Images Added
+   */
+  images_added: number;
+  /**
+   * Images Skipped
+   *
+   * Pictures that could not be imported (missing, too large, unsupported)
+   */
+  images_skipped: number;
+  /**
+   * Media Manifest
+   *
+   * ok; unreadable: pictures could not be matched, the cards came in without them; none: no media
+   */
+  media_manifest: "ok" | "unreadable" | "none";
+  /**
+   * Notes
+   *
+   * Notes in the package
+   */
+  notes: number;
+};
+
+/**
+ * ImportedDeck
+ */
+export type ImportedDeck = {
+  /**
+   * Added
+   */
+  added: number;
+  /**
+   * Deck
+   */
+  deck: string;
+  /**
+   * Existing
+   */
+  existing: number;
 };
 
 /**
@@ -2871,7 +2991,10 @@ export type NoteCreate = {
    * Anchor Id
    */
   anchor_id?: string | null;
-  anchor_pos?: AnchorPos | null;
+  /**
+   * Anchor Pos
+   */
+  anchor_pos?: AnchorPos | VideoPos | null;
   /**
    * Anchor Type
    */
@@ -2935,7 +3058,10 @@ export type NoteOut = {
    * Anchor Id
    */
   anchor_id: string | null;
-  anchor_pos: AnchorPos | null;
+  /**
+   * Anchor Pos
+   */
+  anchor_pos: AnchorPos | VideoPos | null;
   /**
    * Anchor Type
    */
@@ -3030,7 +3156,10 @@ export type NotePatch = {
    * Anchor Id
    */
   anchor_id?: string | null;
-  anchor_pos?: AnchorPos | null;
+  /**
+   * Anchor Pos
+   */
+  anchor_pos?: AnchorPos | VideoPos | null;
   /**
    * Anchor Type
    */
@@ -5086,6 +5215,20 @@ export type ValidationError = {
 };
 
 /**
+ * VideoPos
+ *
+ * Where a video note sits: seconds into the video (`anchor_type 'video'`, segment 20's player).
+ */
+export type VideoPos = {
+  /**
+   * T
+   *
+   * Seconds from the start of the video
+   */
+  t: number;
+};
+
+/**
  * WeakCellOut
  */
 export type WeakCellOut = {
@@ -5857,6 +6000,187 @@ export type GetSeedRunResponses = {
 };
 
 export type GetSeedRunResponse = GetSeedRunResponses[keyof GetSeedRunResponses];
+
+export type DeleteImportedAnkiDeckData = {
+  body?: never;
+  path?: never;
+  query: {
+    /**
+     * Deck
+     */
+    deck: string;
+  };
+  url: "/api/anki/decks";
+};
+
+export type DeleteImportedAnkiDeckErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Anki import is switched off (code anki_unavailable)
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database or storage unavailable (code anki_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteImportedAnkiDeckError = DeleteImportedAnkiDeckErrors[keyof DeleteImportedAnkiDeckErrors];
+
+export type DeleteImportedAnkiDeckResponses = {
+  /**
+   * Successful Response
+   */
+  200: DeletedOut;
+};
+
+export type DeleteImportedAnkiDeckResponse = DeleteImportedAnkiDeckResponses[keyof DeleteImportedAnkiDeckResponses];
+
+export type GetAnkiDecksData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/anki/decks";
+};
+
+export type GetAnkiDecksErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Anki import is switched off (code anki_unavailable)
+   */
+  404: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database or storage unavailable (code anki_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetAnkiDecksError = GetAnkiDecksErrors[keyof GetAnkiDecksErrors];
+
+export type GetAnkiDecksResponses = {
+  /**
+   * Successful Response
+   */
+  200: DecksOut;
+};
+
+export type GetAnkiDecksResponse = GetAnkiDecksResponses[keyof GetAnkiDecksResponses];
+
+export type ExportAnkiDeckData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Deck
+     */
+    deck?: string | null;
+  };
+  url: "/api/anki/export";
+};
+
+export type ExportAnkiDeckErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * No cards to export (code anki_no_cards_to_export)
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database or storage unavailable (code anki_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ExportAnkiDeckError = ExportAnkiDeckErrors[keyof ExportAnkiDeckErrors];
+
+export type ExportAnkiDeckResponses = {
+  /**
+   * Successful Response
+   */
+  200: Blob | File;
+};
+
+export type ExportAnkiDeckResponse = ExportAnkiDeckResponses[keyof ExportAnkiDeckResponses];
+
+export type ImportAnkiDeckData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Prefix
+     *
+     * Optional parent deck name
+     */
+    prefix?: string | null;
+  };
+  url: "/api/anki/import";
+};
+
+export type ImportAnkiDeckErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Anki import is switched off (code anki_unavailable)
+   */
+  404: ErrorResponse;
+  /**
+   * Larger than 100 MB (code anki_too_large) or over the card cap
+   */
+  413: ErrorResponse;
+  /**
+   * Not a readable Anki package (anki_* code)
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database or storage unavailable (code anki_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ImportAnkiDeckError = ImportAnkiDeckErrors[keyof ImportAnkiDeckErrors];
+
+export type ImportAnkiDeckResponses = {
+  /**
+   * Successful Response
+   */
+  200: ImportReport;
+};
+
+export type ImportAnkiDeckResponse = ImportAnkiDeckResponses[keyof ImportAnkiDeckResponses];
 
 export type ListBlocksData = {
   body?: never;

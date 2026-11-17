@@ -40,6 +40,13 @@ Sort = Annotated[int, Field(ge=0, le=100_000)]
 _IN = ConfigDict(extra="forbid", populate_by_name=True)
 
 
+class VideoPos(BaseModel):
+    """Where a video note sits: seconds into the video (`anchor_type 'video'`, segment 20's player)."""
+
+    model_config = _IN
+    t: Annotated[int, Field(ge=0, le=86_400 * 2, description="Seconds from the start of the video")]
+
+
 class AnchorPos(BaseModel):
     """Where a highlight sits. Section anchors: ProseMirror positions in the section body. Question anchors: UTF-16
     offsets into the text of the explanation. `quote` (+ `prefix`/`suffix`) re-anchors it when positions drift;
@@ -61,6 +68,16 @@ class AnchorPos(BaseModel):
         if self.to < self.from_:
             raise ValueError("`to` must not be before `from`")
         return self
+
+
+AnyPos = AnchorPos | VideoPos
+
+
+def parse_pos(raw: Any) -> AnyPos | None:
+    """A stored `anchor_pos` (jsonb): `{t}` for a video note, else the text-range shape."""
+    if not raw:
+        return None
+    return VideoPos.model_validate(raw) if "t" in raw and "from" not in raw else AnchorPos.model_validate(raw)
 
 
 class NoteSource(BaseModel):
@@ -90,7 +107,7 @@ class NoteOut(BaseModel):
     notebook_id: uuid.UUID | None
     anchor_type: AnchorType | None
     anchor_id: str | None
-    anchor_pos: AnchorPos | None
+    anchor_pos: AnyPos | None
     highlight_color: HighlightColor | None
     body: dict[str, Any] | None = Field(
         description="TipTap JSON (canvas paper) or an Excalidraw scene (canvas whiteboard); null in lists for "
@@ -151,7 +168,7 @@ class NoteCreate(BaseModel):
     notebook_id: uuid.UUID | None = None
     anchor_type: AnchorType | None = None
     anchor_id: AnchorId | None = None
-    anchor_pos: AnchorPos | None = None
+    anchor_pos: AnyPos | None = None
     highlight_color: HighlightColor | None = None
     body: dict[str, Any] | None = None
     canvas: Canvas = "paper"
@@ -178,7 +195,7 @@ class NotePatch(BaseModel):
     body: dict[str, Any] | None = None
     anchor_type: AnchorType | None = None
     anchor_id: AnchorId | None = None
-    anchor_pos: AnchorPos | None = None
+    anchor_pos: AnyPos | None = None
     highlight_color: HighlightColor | None = None
     notebook_id: uuid.UUID | None = None
     paper: Paper | None = None
@@ -200,17 +217,26 @@ class NotePatch(BaseModel):
         return self
 
 
+def check_pos_kind(anchor_type: str | None, pos: AnyPos | None) -> None:
+    """A video anchor takes `{t}`, every other anchor the text-range shape (migration-free: both are jsonb objects)."""
+    if pos is None:
+        return
+    if (anchor_type == "video") != isinstance(pos, VideoPos):
+        raise ValueError("anchor_pos does not fit the anchor type")
+
+
 def check_shape(
     *,
     kind: str,
     anchor_type: str | None,
     anchor_id: str | None,
-    anchor_pos: AnchorPos | None,
+    anchor_pos: AnyPos | None,
     color: str | None,
     notebook_id: uuid.UUID | None,
     canvas: str,
 ) -> None:
     """The kind rules (migration 0017 checks the same in SQL): raises ValueError (-> 422)."""
+    check_pos_kind(anchor_type, anchor_pos)
     free = anchor_type in (None, "free")
     if free and anchor_id is not None:
         raise ValueError("a free note has no anchor_id")
@@ -307,6 +333,7 @@ __all__ = [
     "AnchorCounts",
     "AnchorPos",
     "AnchorType",
+    "AnyPos",
     "Canvas",
     "ColorCounts",
     "HighlightColor",
@@ -326,5 +353,6 @@ __all__ = [
     "PageCreate",
     "PageOrder",
     "Paper",
+    "VideoPos",
     "check_shape",
 ]

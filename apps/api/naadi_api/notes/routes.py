@@ -475,9 +475,9 @@ def _clean_title(title: str | None) -> str | None:
 
 
 def _pos(raw: Any) -> Any:
-    from .models import AnchorPos
+    from .models import parse_pos
 
-    return AnchorPos.model_validate(raw) if raw else None
+    return parse_pos(raw)
 
 
 async def _touch_notebook(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, notebook_id: Any) -> None:

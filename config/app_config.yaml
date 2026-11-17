@@ -28,6 +28,7 @@ feature_flags:
   cards: {enabled: true}          # S10 Flashcards (FSRS review, create/edit; Builder link, Save as flashcard)
   assistant: {enabled: false}     # S14 (also always off in exam mode)
   generation: {enabled: true}     # S15b image/video generation; stays off until HF_GEN_TOKEN is set (not configured)
+  anki: {enabled: true}           # S20 Anki .apkg import/export (Library tile, Cards import/export)
   ink_lab: {enabled: true, audience: admins, everyone_outside_prod: true}
 
 # Top-level navigation, in display order. An item shows only while its feature flag is on, so the shell never
@@ -203,6 +204,17 @@ ink_ocr:
   per_user_daily: 40
   convert_per_user_daily: 30
   max_layers_per_run: 25
+
+# Weekly `youtube_map` graph (S20, Sunday 05:17 UTC): candidates need min_score, at most max_candidates_per_section
+# per section, metadata older than refresh_days is re-fetched (YouTube policy: never kept past 30 days), and one run
+# spends at most quota_units_per_run of the free 10,000 daily API units.
+youtube:
+  enabled: true
+  min_score: 0.42
+  max_candidates_per_section: 3
+  refresh_days: 25
+  quota_units_per_run: 2000
+  max_new_per_channel: 50
 
 # Supabase Storage bucket names (created by migration 0002).
 storage:
@@ -1560,3 +1572,85 @@ ui_copy:
   pdf.detached: "Detached"
   pdf.image_missing: "[image not available]"
   pdf.whiteboard_missing: "This whiteboard is empty or could not be drawn."
+  # video player, timestamped notes, YouTube disclosure and Anki import/export (S20)
+  video.source: "YouTube"
+  video.terms: "YouTube Terms of Service"
+  video.terms_url: "https://www.youtube.com/t/terms"
+  video.watch_on_youtube: "Watch on YouTube"
+  video.player_label: "Video player: {title}"
+  video.loading: "Loading the YouTube player…"
+  video.player_error: "This video cannot be played here. You can watch it on YouTube."
+  video.speed: "Speed"
+  video.speed_option: "{rate}×"
+  video.speed_label: "Playback speed"
+  video.chapters: "Chapters"
+  video.chapters_empty: "This video has no chapters."
+  video.chapter_item: "{title}, starts at {time}"
+  video.chapter_untitled: "Part {n}"
+  video.note_at: "Note at {time}"
+  video.notes: "Notes in this video"
+  video.notes_empty: "No notes yet. Pause where something matters and add a note."
+  video.note_go: "Go to {time}"
+  video.note_saving: "Saving…"
+  video.note_saved: "Saved"
+  video.note_failed: "The note could not be saved. Try again."
+  video.note_placeholder: "What matters at this moment?"
+  video.note_save: "Save note"
+  video.note_cancel: "Cancel"
+  video.note_open: "Open in Notes"
+  video.note_sign_in: "Sign in to take notes on a video."
+  privacy.youtube_title: "YouTube API Services"
+  privacy.youtube_body: "Naadi shows videos with the official YouTube player and uses the YouTube API Services to find them. Nothing is requested from YouTube until you press play. By watching a video you agree to the YouTube Terms of Service and Google's Privacy Policy."
+  privacy.youtube_google: "Google Privacy Policy"
+  privacy.youtube_google_url: "https://policies.google.com/privacy"
+  privacy.youtube_revoke: "You can revoke access to data YouTube holds about you in Google's security settings."
+  privacy.youtube_revoke_url: "https://myaccount.google.com/permissions"
+  anki.import_title: "Import an Anki deck"
+  anki.import_hint: "Choose an .apkg file. The cards stay private to you and start as new cards; Anki's own schedule and any audio are not imported."
+  anki.import_choose: "Choose .apkg file"
+  anki.import_deck_name: "Put the decks inside"
+  anki.import_deck_name_hint: "Optional parent deck, e.g. School"
+  anki.importing: "Importing…"
+  anki.import_done_title: "Import finished"
+  anki.report_cards_added: "{n} cards added"
+  anki.report_cards_existing: "{n} already in your library, left as they are"
+  anki.report_cards_skipped: "{n} cards skipped (empty, too long or of an unreadable type)"
+  anki.report_images_added: "{n} pictures added"
+  anki.report_images_skipped: "{n} pictures skipped (missing, too large or not a supported format)"
+  anki.report_audio_skipped: "{n} sounds and videos skipped (audio is not imported)"
+  anki.report_manifest_unreadable: "The deck's picture list could not be read, so its cards came in without pictures."
+  anki.report_decks: "Decks"
+  anki.report_deck_line: "{deck}: {added} added, {existing} already there"
+  anki.report_review: "Review these cards"
+  anki.report_close: "Done"
+  anki.export_title: "Export a deck"
+  anki.export_hint: "Downloads your own cards as an .apkg you can open in Anki. Shared Naadi cards are not included."
+  anki.export_all: "All my decks"
+  anki.export_deck_label: "Deck"
+  anki.export_deck_count: "{deck} ({n} cards)"
+  anki.export_button: "Download .apkg"
+  anki.exporting: "Preparing…"
+  anki.exported: "Downloaded {file}"
+  anki.import_action: "Import deck"
+  anki.export_action: "Export deck"
+  anki.tile_title: "Anki deck"
+  anki.tile_body: "Bring your own Anki deck in, or take your cards out."
+  anki.delete_deck: "Delete imported cards of this deck"
+  anki.delete_confirm: "Delete the {n} cards you imported into {deck}? Cards you typed yourself stay."
+  anki.deleted: "{n} cards deleted"
+  anki.close: "Close"
+  anki.error_title: "The Anki deck could not be used"
+  anki.error.anki_not_a_package: "This is not an Anki package (.apkg)."
+  anki.error.anki_no_collection: "This package has no cards in it."
+  anki.error.anki_corrupt: "This package is damaged and cannot be read."
+  anki.error.anki_unsafe_path: "This package contains unsafe file names and was not opened."
+  anki.error.anki_too_many_files: "This package has too many files."
+  anki.error.anki_too_large: "This package is too large (the limit is 100 MB)."
+  anki.error.anki_no_cards: "No importable cards were found in this package."
+  anki.error.anki_card_cap: "Your library is full. Delete some cards and try again."
+  anki.error.anki_export_too_large: "There are too many cards to export at once. Pick one deck."
+  anki.error.anki_no_cards_to_export: "There are no cards of yours to export in this deck."
+  anki.error.anki_bad_deck: "That deck name is not valid."
+  anki.error.anki_unavailable: "Anki import and export are not available right now."
+  anki.error.rate_limited: "Too many tries. Wait a few minutes and try again."
+  anki.error.unknown: "Something went wrong. Try again."
