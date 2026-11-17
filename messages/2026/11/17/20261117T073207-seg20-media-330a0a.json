@@ -1,0 +1,16 @@
+{
+ "id": "20261117T073207-seg20-media-330a0a",
+ "ts": "2026-11-17T07:32:07.759973Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 1d5b19c into claude/naadi-shared",
+ "body": "S20: production player refuses loopback parents; allow-presentation comment",
+ "refs": {
+  "commit": "1d5b19c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
