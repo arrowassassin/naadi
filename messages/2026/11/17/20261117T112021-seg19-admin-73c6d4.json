@@ -1,0 +1,16 @@
+{
+ "id": "20261117T112021-seg19-admin-73c6d4",
+ "ts": "2026-11-17T11:20:21.866615Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S19 rework takes Alembic 0036 (0035 left free in case anyone holds it): admin_edited_at on chapters/questions/media_assets set by trigger on non-seed writes, section_media.origin; down = head at integrate time",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0036_admin_edit_marks.py"
+ ],
+ "ttl_minutes": 720,
+ "requires_ack": false
+}
