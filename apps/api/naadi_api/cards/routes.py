@@ -60,6 +60,8 @@ DUE_LIMIT_DEFAULT = 50
 DUE_LIMIT_MAX = 200
 # An offline review may be this old (the offline week plus slack); older ones are refused, not back-dated.
 MAX_REVIEW_AGE = dt.timedelta(days=31)
+# How far a rating may claim to be before its card was made (device clocks run a little behind) and still count.
+CREATED_SKEW = dt.timedelta(minutes=5)
 RETENTION_WINDOW = dt.timedelta(days=30)
 STREAK_WINDOW_DAYS = 400
 
@@ -549,13 +551,18 @@ async def review_card(
         row = await _visible_card(conn, uid, card_id)
         if row is None:
             raise CardsError(404, "card_not_found")
-        if reviewed_at < row["created_at"]:
-            # A rating cannot predate the card: refusing it keeps a fresh card from carrying a made-up history.
-            raise CardsError(409, "review_before_card")
+        # A rating cannot predate the card: refusing it keeps a fresh card from carrying a made-up history. A device
+        # clock a little behind the server's would refuse the first rating of a card just made, so a claim within
+        # CREATED_SKEW before the card counts as made at its creation.
+        at = reviewed_at
+        if at < row["created_at"]:
+            if row["created_at"] - at > CREATED_SKEW:
+                raise CardsError(409, "review_before_card")
+            at = row["created_at"]
         memory = _memory(row)
-        if memory.last_review is not None and reviewed_at < memory.last_review:
+        if memory.last_review is not None and at < memory.last_review:
             raise CardsError(409, "review_out_of_order")
-        out = review(params, str(card_id), memory, body.rating, reviewed_at)
+        out = review(params, str(card_id), memory, body.rating, at)
         m = out.memory
         prev = await _first(
             conn,
@@ -586,7 +593,7 @@ async def review_card(
                 "reps": m.reps,
                 "lapses": m.lapses,
                 "state": m.state,
-                "at": reviewed_at,
+                "at": at,
                 "step": m.step,
             },
         )
@@ -605,14 +612,14 @@ async def review_card(
                 "rid": body.client_review_id,
                 "rating": body.rating,
                 "state": memory.state,
-                "due": memory.last_review or memory.due or reviewed_at,
+                "due": memory.last_review or memory.due or at,
                 "s": memory.stability,
                 "d": memory.difficulty,
                 "ed": out.elapsed_days,
                 "led": int(prev["elapsed_days"]) if prev else 0,
                 "sd": max(0, prev_scheduled),
                 "step": memory.step,
-                "at": reviewed_at,
+                "at": at,
                 "ms": body.duration_ms,
                 "ns": m.state,
                 "nstep": m.step,

@@ -331,17 +331,33 @@ def test_concurrent_reuse_of_a_review_id_across_cards_is_refused(
 def test_a_review_cannot_predate_its_card(
     client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
 ) -> None:
-    now = datetime.now(UTC)
-    made = client.post(
-        "/api/cards", json={"front_text": "New", "back_text": "Card"}, headers=auth(key, world.owner)
-    ).json()
-    card = uuid.UUID(made["id"])
-    for back in (timedelta(days=20), timedelta(hours=2), timedelta(seconds=30)):
-        res = rate(client, key, world.owner, card, 4, reviewed_at=(now - back).isoformat())
+    def new_card() -> tuple[uuid.UUID, datetime]:
+        made = client.post(
+            "/api/cards", json={"front_text": "New", "back_text": "Card"}, headers=auth(key, world.owner)
+        ).json()
+        card = uuid.UUID(made["id"])
+        row = pg.execute("select created_at from public.flashcards where id = %s", (card,)).fetchone()
+        assert row is not None
+        return card, row[0]
+
+    card, created = new_card()
+    for back in (timedelta(days=20), timedelta(hours=2), timedelta(minutes=5, seconds=1)):
+        res = rate(client, key, world.owner, card, 4, reviewed_at=(created - back).isoformat())
         assert res.status_code == 409 and res.json()["error"]["code"] == "review_before_card", res.text
     assert pg.execute("select count(*) from public.card_review_logs where card_id = %s", (card,)).fetchone() == (0,)
     assert pg.execute("select count(*) from public.card_reviews where card_id = %s", (card,)).fetchone() == (0,)
-    # from its creation on, a rating is accepted
+    # a device clock a little behind the server's: up to 5 minutes before the card counts as its creation
+    for back in (timedelta(seconds=3), timedelta(minutes=4, seconds=59)):
+        card, created = new_card()
+        res = rate(client, key, world.owner, card, 3, reviewed_at=(created - back).isoformat())
+        assert res.status_code == 200, res.text
+        assert datetime.fromisoformat(res.json()["reviewed_at"]) == created
+        expected = review(DEFAULTS, str(card), Memory(), 3, created).memory
+        assert datetime.fromisoformat(res.json()["schedule"]["due"]) == expected.due
+        logged = pg.execute("select review from public.card_review_logs where card_id = %s", (card,)).fetchone()
+        assert logged == (created,)
+    # from its creation on, a rating is accepted as claimed
+    card, created = new_card()
     assert rate(client, key, world.owner, card, 3).status_code == 200
 
 
