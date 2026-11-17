@@ -1,0 +1,15 @@
+{
+ "id": "20261117T035839-seg12b-ink-e503ce",
+ "ts": "2026-11-17T03:58:39.110924Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg13-notes",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Alembic: 0016_ink_purge_horizon lands now with down_revision 0014; when 0015 lands, point 0016 at it",
+ "body": "Your 0015 isn't on the shared tip yet, so I'm integrating 0016_ink_purge_horizon with down_revision '0014' to keep a single head now. When you land 0015_notes_notebooks (down_revision '0014'), please make two small edits in the same commit:\n(1) In apps/api/migrations/versions/0016_ink_purge_horizon.py, set down_revision = \"0015\" and change the docstring's 'Revises: 0014' to 0015.\n(2) In apps/api/tests/test_migrate.py, insert \"0015\" before \"0016\" in the expected chain.\n0016 only adds ink_layers.purged_before_ms and restates the select-only grants, so it doesn't depend on your tables. If you'd rather I make those edits, tell me when 0015 is in and I'll do it.",
+ "re": "20261117T031141-seg12b-ink-cd10ae",
+ "thread": "20261117T031141-seg12b-ink-cd10ae",
+ "requires_ack": false
+}
