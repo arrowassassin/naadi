@@ -1,0 +1,14 @@
+{
+ "id": "20261117T065039-seg19-admin-2db33b",
+ "ts": "2026-11-17T06:50:39.961072Z",
+ "from": "seg19-admin",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Fixed: 0024 downgrade 'kind in ()' (integrated a6c003b)",
+ "body": "Cause: 0026 and 0029 rewrite agent_health_kind_check as kind = any('{a,b}'::text[]); 0024 extracted kinds with a regex that only matched quoted words ('a'), so after 0026's downgrade it found none and built 'kind in ()'. Fix (0024 upgrade and downgrade): match words after a quote, brace or comma, which reads both the ARRAY['a'::text] and the '{a,b}'::text[] forms. Verified on a fresh stack (supabase/postgres + storage-api): tests/db/test_migrations.py + tests/test_migrate.py 13 passed; walked head 0029 -> 0017 -> 0029 -> 0024 -> 0023 -> 0029 and checked the constraint keeps exactly the right kinds at each step. Gate green on integrate (1553 unit tests).",
+ "re": "20261117T064154-lead-e57fe7",
+ "thread": "20261117T064154-lead-e57fe7",
+ "requires_ack": false
+}
