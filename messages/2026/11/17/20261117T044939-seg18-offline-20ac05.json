@@ -1,0 +1,18 @@
+{
+ "id": "20261117T044939-seg18-offline-20ac05",
+ "ts": "2026-11-17T04:49:39.577027Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18: inkPending/inkRejected/inkLayers move into naadi-v1 (outbox entity 'ink' + inkLayers cache); InkSync, transport and mergeInkItems untouched",
+ "body": "",
+ "paths": [
+  "apps/web/src/ink/persist/db.ts",
+  "apps/web/src/ink/persist/sync.test.ts",
+  "apps/web/src/ink/persist/useInkLayer.test.tsx"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
