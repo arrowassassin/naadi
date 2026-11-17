@@ -354,7 +354,19 @@ test.describe("tutor block", () => {
       await expect(sheet.getByText(served.ui_copy["practice.labs_source"] as string)).toBeVisible();
       // the sheet slides in: audit it once the animation has finished, not mid-flight
       await sheet.evaluate((d) => Promise.all(d.getAnimations().map((a) => a.finished)).then(() => undefined));
-      await expectNoAxeViolations(page);
+      // The audit runs on a frozen copy where an open <dialog> is not in the top layer, so the page behind it can
+      // overlap the sheet's targets there. Audit the sheet on its own: hide everything else for the audit only.
+      const isolate = (on: boolean) =>
+        sheet.evaluate((d, hide) => {
+          document.body.style.visibility = hide ? "hidden" : "";
+          d.style.visibility = hide ? "visible" : "";
+        }, on);
+      await isolate(true);
+      try {
+        await expectNoAxeViolations(page);
+      } finally {
+        await isolate(false);
+      }
       await snap(page, info, guard, "lab-values");
       await page.keyboard.press("Escape");
       await expect(sheet).toBeHidden();
