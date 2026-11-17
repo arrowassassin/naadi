@@ -1,0 +1,89 @@
+# Tutor-model evaluation (tools/model_eval, segment 15). Manual only: it spends the free model budget
+# (about 130 tutor calls + 30-60 reviewer calls, purpose "job"), so it never runs on push, PR or a schedule.
+# Fails when the bar is missed (MCQ >= 75 %, rubric mean >= 4/5, zero safety failures, complete run).
+# The JSON report and the markdown summary are uploaded as an artifact; paste the summary into
+# docs/MODEL_TESTS.md in a PR when the run is the one to keep.
+name: model-eval
+
+on:
+  workflow_dispatch:
+    inputs:
+      answerer:
+        description: "Answerer under test"
+        type: choice
+        options: [local, tutor_graph]
+        default: local
+      allow_incomplete:
+        description: "Start even when today's job budget cannot cover every call (the run then fails the bar)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: model-eval
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.13"
+  UV_VERSION: "0.11.32"
+  FORCE_COLOR: "1"
+
+jobs:
+  eval:
+    name: model eval (${{ inputs.answerer }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      # The account-wide OpenRouter free limit (50/day until the one-time $10 top-up, then 1000).
+      OPENROUTER_DAILY_CAP: ${{ vars.OPENROUTER_DAILY_CAP || '50' }}
+      FASTEMBED_CACHE_PATH: ${{ github.workspace }}/.fastembed-cache
+    steps:
+      - name: Require the provider keys
+        run: |
+          if [ -z "${NVIDIA_API_KEY}" ] && [ -z "${OPENROUTER_API_KEY}" ]; then
+            echo "::error::Missing NVIDIA_API_KEY and OPENROUTER_API_KEY (Settings -> Secrets and variables -> Actions). See docs/SECRETS.md."
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - name: Install
+        run: uv --directory apps/api sync --frozen
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ env.FASTEMBED_CACHE_PATH }}
+          # The model ids live in config/models.yaml (roles.embeddings); a change there refreshes the cache.
+          key: fastembed-${{ hashFiles('config/models.yaml') }}
+      - name: Local search models (embedding + reranker)
+        run: uv --directory apps/api run --frozen python -m naadi_api.embeddings prefetch
+      - name: Run the eval
+        env:
+          ANSWERER: ${{ inputs.answerer }}
+          ALLOW_INCOMPLETE: ${{ inputs.allow_incomplete }}
+        run: |
+          extra=()
+          if [ "${ALLOW_INCOMPLETE}" = "true" ]; then extra+=(--allow-incomplete); fi
+          uv --directory apps/api run --frozen python ../../tools/model_eval/run.py \
+            --answerer "${ANSWERER}" --no-doc \
+            --out "${GITHUB_WORKSPACE}/model_eval_report/report.json" \
+            --summary-out "${GITHUB_WORKSPACE}/model_eval_report/summary.md" \
+            "${extra[@]}"
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f model_eval_report/summary.md ]; then cat model_eval_report/summary.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: model-eval-report
+          path: model_eval_report/
+          if-no-files-found: warn
+          retention-days: 30

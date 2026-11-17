@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 import yaml
@@ -117,3 +118,29 @@ def test_weekly_restore_test_and_backup_dry_run() -> None:
     assert "${{ secrets." not in (WF / "restore.yml").read_text()  # never the real dataset or the owner's key
     db = _load("ci.yml")["jobs"]["db"]
     assert any(s.get("env", {}).get("NAADI_PG_BIN") for s in db["steps"])
+
+
+def test_model_eval_runs_only_on_manual_dispatch() -> None:
+    """tools/model_eval spends the free model budget: never on push, PR or a schedule (segment 15)."""
+    wf = _load("model_eval.yml")
+    assert list(wf["on"]) == ["workflow_dispatch"]
+    assert wf["concurrency"] == {"group": "model-eval", "cancel-in-progress": False}
+    job = wf["jobs"]["eval"]
+    assert job["env"]["NVIDIA_API_KEY"] == "${{ secrets.NVIDIA_API_KEY }}"
+    assert job["env"]["OPENROUTER_API_KEY"] == "${{ secrets.OPENROUTER_API_KEY }}"
+    text = (WF / "model_eval.yml").read_text()
+    assert "HF_TOKEN" not in text
+    assert set(re.findall(r"secrets\.([A-Z_]+)", text)) == {"NVIDIA_API_KEY", "OPENROUTER_API_KEY"}
+    steps = job["steps"]
+    run = next(s for s in steps if s.get("name") == "Run the eval")
+    assert "tools/model_eval/run.py" in run["run"]
+    assert "continue-on-error" not in run  # a missed bar fails the job
+    upload = next(s for s in steps if str(s.get("uses", "")).startswith("actions/upload-artifact"))
+    assert upload["if"] == "always()"
+    assert upload["with"]["path"] == "model_eval_report/"
+
+
+def test_no_other_workflow_runs_the_model_eval() -> None:
+    for path in WF.glob("*.yml"):
+        if path.name != "model_eval.yml":
+            assert "model_eval/run.py" not in path.read_text(), path.name
