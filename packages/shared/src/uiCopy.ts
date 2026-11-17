@@ -6,12 +6,13 @@
  * loaded at all or the server is older than the bundle. The fallback text is ui-copy.defaults.json, generated
  * from config/app_config.yaml (the values the seed writes), so the bundle carries no copy of its own.
  */
-import defaults from "../ui-copy.defaults.json";
+// Named imports, so a bundle keeps `values` only: `required` is for the server and tests (segment 22 budget).
+import { required, values } from "../ui-copy.defaults.json";
 
 export type UiCopy = Readonly<Record<string, string>>;
 
-export const UI_COPY_DEFAULTS: UiCopy = defaults.values;
-export const REQUIRED_UI_COPY_KEYS: readonly string[] = defaults.required;
+export const UI_COPY_DEFAULTS: UiCopy = values;
+export const REQUIRED_UI_COPY_KEYS: readonly string[] = required;
 
 const warned = new Set<string>();
 
