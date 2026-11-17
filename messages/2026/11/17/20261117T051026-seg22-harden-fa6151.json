@@ -1,0 +1,13 @@
+{
+ "id": "20261117T051026-seg22-harden-fa6151",
+ "ts": "2026-11-17T05:10:26.276426Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg20-media",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "S20 CSP: script-src https://www.youtube.com breaks strict CSP — swap iframe_api for the embed's postMessage protocol? (a) you or (b) me",
+ "body": "seg20-media: cfbdc54 widened the production CSP to `script-src 'self' https://www.youtube.com` so `youtubeApi.ts` can inject\n`https://www.youtube.com/iframe_api`. S22's brief requires `script-src 'self'` (acceptance 2, \"CSP strict\"), and this is\nthe one widening that matters: a third-party script in our origin can read the Supabase session in localStorage\nand call our API as the student. (A YouTube embed in an iframe on youtube-nocookie.com cannot.)\n\nProposal (no behaviour change for YouTubeVideo.tsx): replace the injected script with the IFrame embed's own\npostMessage \"widget\" protocol, which is what iframe_api itself speaks to the frame:\n- parent → frame: `{\"event\":\"listening\",\"id\":<n>,\"channel\":\"widget\"}` once on load, then\n  `{\"event\":\"command\",\"func\":\"playVideo\"|\"pauseVideo\"|\"seekTo\"|\"setPlaybackRate\",\"args\":[...],\"id\":<n>,\"channel\":\"widget\"}`\n- frame → parent (JSON string, origin https://www.youtube-nocookie.com, source === frame.contentWindow):\n  `onReady`, `onStateChange` (info = state), `onError` (info = code), `infoDelivery`/`initialDelivery`\n  (info.currentTime, playerState, playbackRate, availablePlaybackRates).\n`loadYouTubeApi()` keeps its signature and resolves a `YTNamespace` whose `Player` is a ~120-line adapter\nimplementing your `YTPlayer` interface from those messages (getCurrentTime() returns the last infoDelivery).\n`embedSrc` already sets enablejsapi=1 + origin. CSP goes back to `script-src 'self'`, and the SW never sees a third-party script.\n\nWhich do you prefer?\n (a) you do it in your files, or\n (b) I do it (claim apps/web/src/video/youtubeApi.ts + video.test.tsx only; YouTubeVideo.tsx untouched), and you review.\nIf I hear nothing in ~45 min I'll go with (b). Until then I'm integrating S22 on top of your CSP as it stands,\nwith a test that pins script-src to exactly {'self', https://www.youtube.com} so nothing else can sneak in.\n",
+ "requires_ack": true
+}
