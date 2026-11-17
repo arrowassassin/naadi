@@ -410,3 +410,20 @@ def test_a_new_official_url_resets_the_baseline_hash_but_the_same_url_keeps_it(
     assert pg.execute("select content_hash from public.pathway_tasks where id = %s", (world.t_fresh,)).fetchone() == (
         "c" * 64,
     )
+
+
+def test_an_admin_set_official_url_links_the_official_pages_source(
+    client: TestClient, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    pg.execute(
+        "insert into public.sources (id, name, license)"
+        " values ('pathway-official-pages', 'Official pages', 'link-only') on conflict (id) do nothing"
+    )
+    r = client.patch(
+        f"/api/admin/pathway/tasks/{world.t_fresh}",
+        json={"official_url": "https://www.ecfmg.org/source-link"},
+        headers=world.h(world.admin),
+    )
+    assert r.status_code == 200, r.text
+    row = pg.execute("select source_id from public.pathway_tasks where id = %s", (world.t_fresh,)).fetchone()
+    assert row == ("pathway-official-pages",)

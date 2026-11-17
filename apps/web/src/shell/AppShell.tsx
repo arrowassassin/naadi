@@ -4,6 +4,7 @@ import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router"
 import { Search, UserRound, X } from "lucide-react";
 import { type RefObject, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { AssistantHost, AssistantTabButton } from "../assistant/AssistantHost";
+import { useAssistantAvailable } from "../assistant/ask";
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
@@ -286,9 +287,11 @@ export function AppShell() {
     { id: "account", to: ACCOUNT_PATH, label: t("shell.account_tab"), icon: "user-round" },
   ];
   // Up to five tabs fit; beyond that, four tabs and a More tab that opens the rest.
-  const overflow = allTabs.length > MAX_TABS;
-  const shownTabs = overflow ? allTabs.slice(0, MAX_TABS - 1) : allTabs;
-  const moreTabs = overflow ? allTabs.slice(MAX_TABS - 1) : [];
+  // The assistant's round centre button takes a slot of its own while it can answer.
+  const slots = MAX_TABS - (useAssistantAvailable() ? 1 : 0);
+  const overflow = allTabs.length > slots;
+  const shownTabs = overflow ? allTabs.slice(0, slots - 1) : allTabs;
+  const moreTabs = overflow ? allTabs.slice(slots - 1) : [];
   const offline = !online || (auth.status === "signed-in" && auth.offline);
 
   return (

@@ -451,7 +451,11 @@ async def patch_task_admin(conn: Conn, task_id: str, fields: dict[str, Any]) -> 
     assignments = ", ".join(f"{k} = %s" for k in allowed)
     if "official_url" in allowed:
         # A new page has no hash to compare with: the next weekly run takes a new baseline, not a "changed" flag.
-        assignments += ", content_hash = case when official_url is distinct from %s then null else content_hash end"
+        # An admin only accepts an official URL (admin.py), so the task's source is the official-pages row.
+        assignments += (
+            ", content_hash = case when official_url is distinct from %s then null else content_hash end"
+            ", source_id = (select id from public.sources where id = 'pathway-official-pages')"
+        )
         allowed = {**allowed, "_same_url": allowed["official_url"]}
     row = await fetch_one(
         conn,

@@ -38,7 +38,7 @@ EXPECTED = {
     "pathway_tasks": 186,
     "pathway_guides": 17,
     "plan_template_days": 60,
-    "sources": 18,  # 17 catalog/internal sources + user-provided (S15)
+    "sources": 20,  # 17 catalog/internal sources + user-provided (S15) + two pathway link sources (S17)
     "section_media": 95,
     "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
 }

@@ -43,6 +43,11 @@ def reverify_reason(
     return None
 
 
+def stale(last_verified: dt.date, today: dt.date, reverify_days: int) -> bool:
+    """True once the last human check is more than `reverify_days` old (day 90 is fine, day 91 is stale)."""
+    return (today - last_verified).days > reverify_days
+
+
 def days_since(last_verified: dt.date | None, today: dt.date) -> int | None:
     return None if last_verified is None else max((today - last_verified).days, 0)
 

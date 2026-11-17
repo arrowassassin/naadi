@@ -71,10 +71,12 @@ create table public.pathway_tasks (
   official_url text,
   last_verified date,
   content_hash text check (content_hash is null or content_hash ~ '^[0-9a-f]{64}$'),  -- 0029: hash of the official page the facts were last compared with
-  needs_review boolean not null default false  -- 0029: set by the weekly check, cleared only by an admin confirming
+  needs_review boolean not null default false,  -- 0029: set by the weekly check, cleared only by an admin confirming
+  source_id text references public.sources(id)  -- 0037: official-pages or third-party-pages (link-only)
 );
 create index pathway_tasks_stage_idx on public.pathway_tasks (stage_key, sort);
 create index pathway_tasks_verify_idx on public.pathway_tasks (last_verified nulls first, id);
+create index pathway_tasks_source_idx on public.pathway_tasks (source_id);
 
 -- 0029: what the weekly `pathway_verify` check found, one row per official page looked at. Backend-only (RLS forced,
 -- no client privilege): admins read it through /api/admin/pathway/checks.
@@ -93,6 +95,7 @@ create table public.pathway_task_checks (
   run_id text,
   resolved_by uuid references auth.users(id) on delete set null,
   resolved_at timestamptz,
+  source_id text references public.sources(id),  -- 0037: copied from the task
   check ((resolved_by is null) or (resolved_at is not null))
 );
 create index pathway_task_checks_task_idx on public.pathway_task_checks (task_id, checked_at desc);

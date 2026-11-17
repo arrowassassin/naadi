@@ -8,8 +8,10 @@ import { signedInState } from "./session";
  * up with no redeploy: UI copy on the sign-in page, a feature flag + navigation item in /api/nav.
  *
  * The values are global, so this spec runs in one project only (WebKit on iPad portrait, the primary target)
- * and restores every key it touched. The keys it edits (signin.pitch, the pathway flag and nav item) are not
- * asserted by any other spec, and /pathway is not a route yet, so parallel specs see no difference.
+ * and restores every key it touched. The keys it edits (signin.pitch, a throwaway `config_probe` flag and a
+ * `config-probe` nav item that no screen uses) are not asserted by any other spec, so parallel specs see no
+ * difference. The nav item hangs on the shipped `today` flag (the cross-key check reads the shipped flags). It
+ * never touches a real feature's flag or nav item: Pathway is a real route now.
  */
 // Local stack only: it rewrites global app_config rows, which must never happen on a deployed Space.
 test.skip(isLive(), "edits global app_config: local stack only, never against a deployed Space");
@@ -83,7 +85,7 @@ test("an admin's flag, navigation and copy edits show up without a redeploy", as
         adminCtx.request,
         admin,
         "feature_flags",
-        { ...(flags.value as object), pathway: { enabled: true } },
+        { ...(flags.value as object), config_probe: { enabled: true } },
         flags.updated_at,
       ),
       "ui.nav": await putKey(
@@ -92,7 +94,13 @@ test("an admin's flag, navigation and copy edits show up without a redeploy", as
         "ui.nav",
         [
           ...(nav.value as object[]),
-          { id: "pathway", label: "Pathway", path: "/pathway", icon: "calendar", feature: "pathway" },
+          {
+            id: "config-probe",
+            label: "Config probe",
+            path: "/config-probe",
+            icon: "calendar",
+            feature: "today",
+          },
         ],
         nav.updated_at,
       ),
@@ -108,8 +116,8 @@ test("an admin's flag, navigation and copy edits show up without a redeploy", as
     // The student's navigation and flags change at once (the API drops its cache on write).
     const navRes = await studentCtx.request.get("/api/nav", { headers: { authorization: student } });
     const studentNav = (await navRes.json()) as { items: { id: string }[]; features: Record<string, boolean> };
-    expect(studentNav.items.map((i) => i.id)).toContain("pathway");
-    expect(studentNav.features.pathway).toBe(true);
+    expect(studentNav.items.map((i) => i.id)).toContain("config-probe");
+    expect(studentNav.features.config_probe).toBe(true);
 
     // A signed-out visitor's sign-in page renders the new copy (fresh browser cache, same server).
     const anon = await anonCtx.newPage();

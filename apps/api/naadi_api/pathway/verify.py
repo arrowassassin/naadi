@@ -79,7 +79,8 @@ class Fetched:
     status: int | None  # None: no answer
     text: str | None  # normalised text (HTML pages); None for other content
     content_hash: str | None
-    outcome: str  # ok | http_error | network_error | robots_disallowed | off_domain_redirect | too_many_redirects
+    # ok | http_error | network_error | robots_disallowed | off_domain_redirect | refused_address | too_many_redirects
+    outcome: str
     moved: bool = False
 
 
@@ -281,9 +282,11 @@ class HttpFetcher:
         moved = False
         for _ in range(MAX_REDIRECTS + 1):
             host = rules.https_host(current)
-            target = await self._target(current) if host == origin_host else None
-            if target is None:
+            if host is None or host != origin_host or not rules.host_matches(host, self._domains):
                 return Fetched(current, None, None, None, "off_domain_redirect", moved=True)
+            target = await self._target(current)
+            if target is None:  # not a public address, or a port other than 443: nothing is requested
+                return Fetched(current, None, None, None, "refused_address")
             if not await self._allowed(current):
                 return Fetched(current, None, None, None, "robots_disallowed")
             try:
@@ -450,7 +453,8 @@ async def compare_with_model(
 # ── the pass ──
 
 _SELECT = (
-    "select id, title, detail_md, cost_usd::float8 as cost_usd, official_url, content_hash from public.pathway_tasks"
+    "select id, title, detail_md, cost_usd::float8 as cost_usd, official_url, content_hash, last_verified"
+    " from public.pathway_tasks"
     " where official_url like 'https://%%' and not needs_review order by last_verified nulls first, id"
 )
 
@@ -478,6 +482,7 @@ async def verify_pass(
     run_id: str | None = None,
 ) -> VerifyStats:
     stats = VerifyStats()
+    today = dt.datetime.now(dt.UTC).date()
     if db.pool is None:
         await db.open()
     assert db.pool is not None
@@ -494,15 +499,20 @@ async def verify_pass(
             finding = await compare_with_model(gateway, task, fetched, stats, cfg, run_id)
         else:
             finding = {"status": status, "summary_key": key, "differences": [], "quotes": []}
-        flagged = status != "unchanged"
+        last = task["last_verified"]
+        if key == "baseline" and last is not None and rules.stale(last, today, cfg.reverify_days):
+            # A first look cannot tell whether the page changed since the last human check, and that check is
+            # already past the re-verify age: keep the task flagged for a person instead of silently adopting it.
+            finding["summary_key"] = "baseline_stale"
+        flagged = status != "unchanged" or finding["summary_key"] == "baseline_stale"
         stats.count(status)
         if key == "baseline":
             stats.baselined += 1
         async with db.pool.connection(timeout=10.0) as conn, conn.transaction():
             await conn.execute(
                 "insert into public.pathway_task_checks"
-                " (task_id, url, http_status, content_hash, changed, finding, run_id)"
-                " values (%s, %s, %s, %s, %s, %s, %s)",
+                " (task_id, url, http_status, content_hash, changed, finding, run_id, source_id)"
+                " values (%s, %s, %s, %s, %s, %s, %s, (select source_id from public.pathway_tasks where id = %s))",
                 (
                     task["id"],
                     fetched.url if fetched.url.startswith("https://") else task["official_url"],
@@ -511,6 +521,7 @@ async def verify_pass(
                     flagged,
                     jsonb(finding),
                     run_id,
+                    task["id"],
                 ),
             )
             if flagged:

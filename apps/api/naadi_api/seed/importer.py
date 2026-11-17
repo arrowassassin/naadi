@@ -37,10 +37,12 @@ from typing import Any, LiteralString
 from urllib.parse import urlparse
 
 import psycopg
+import yaml
 from psycopg import sql
 
 from ..config_api.defaults import file_values
 from ..logs import get_logger
+from ..pathway.rules import host_matches
 from .data import ORIGINAL_SOURCE, SeedBundle, load_bundle, topological_taxonomy
 from .mock import strip_answer_key
 from .report import Check, SeedReport, StorageCounts, TableCounts
@@ -428,19 +430,41 @@ def _questions(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[
     return {"questions": upsert(cur, "questions", ["id"], rows, guard=None if force else ADMIN_EDIT_GUARD)}
 
 
+PATHWAY_OFFICIAL_SOURCE = "pathway-official-pages"
+PATHWAY_THIRD_PARTY_SOURCE = "pathway-third-party-pages"
+
+
+def _official_domains(b: SeedBundle) -> list[str]:
+    """`search.include_domains` of config/models.yaml: the hosts Naadi calls official."""
+    with (b.config_dir / "models.yaml").open(encoding="utf-8") as fh:
+        doc = yaml.safe_load(fh) or {}
+    return [str(d) for d in (doc.get("search") or {}).get("include_domains") or []]
+
+
+def pathway_source_id(url: str | None, domains: list[str]) -> str | None:
+    """The `sources` row a pathway link belongs to: official when its host is on an official domain."""
+    if not url:
+        return None
+    host = urlparse(url).hostname or ""
+    return PATHWAY_OFFICIAL_SOURCE if host_matches(host, domains) else PATHWAY_THIRD_PARTY_SOURCE
+
+
 def _pathway(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]:
+    domains = _official_domains(b)
     stages = [
         {
             "key": s.key,
             "sort": s.sort,
             "title": s.title,
             "summary_md": s.summary_md,
-            "official_links": [link.model_dump() for link in s.official_links],
+            "official_links": [
+                {**link.model_dump(), "source_id": pathway_source_id(link.url, domains)} for link in s.official_links
+            ],
             "last_verified": s.last_verified,
         }
         for s in b.stages
     ]
-    tasks = [t.model_dump() for t in b.tasks]
+    tasks = [{**t.model_dump(), "source_id": pathway_source_id(t.official_url, domains)} for t in b.tasks]
     guides = [
         {
             "key": g.key,
@@ -641,6 +665,19 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
     checks.append(
         Check(
             name="every asset references a sources row", ok=orphan_sources == 0, detail=f"{orphan_sources} unresolved"
+        )
+    )
+    unlinked = one(
+        cur,
+        "select count(*) from (select 1 from public.pathway_tasks t where t.id = any(%s) and t.official_url is not null"
+        " and not exists (select 1 from public.sources s where s.id = t.source_id)) a",
+        ids["pathway_tasks"],
+    )
+    checks.append(
+        Check(
+            name="every pathway link references a sources row",
+            ok=unlinked == 0,
+            detail=f"{unlinked} task links without a source",
         )
     )
     return actual, checks

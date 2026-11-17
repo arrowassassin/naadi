@@ -271,6 +271,38 @@ sources:
     verified: false
     verified_url: null
 
+  - id: pathway-official-pages
+    name: Official exam, licensing and immigration pages linked from the Pathway
+    url: null
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Official page: {url}"
+    notes: >-
+      Pathway tasks and stage links point at the owner's own page (ECFMG, USMLE, NRMP, AAMC, travel.state.gov,
+      USCIS and the other hosts in search.include_domains). Naadi links out and stores only its own summary. The
+      weekly pathway_verify check keeps at most a 300-character verbatim quote with its URL as evidence for an admin;
+      it never re-hosts a page and never changes last_verified.
+    verified: false
+    verified_url: null
+
+  - id: pathway-third-party-pages
+    name: Third-party pages linked from the Pathway
+    url: null
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Source: {url}"
+    notes: >-
+      Links to pages that are not on an official domain (programme sites, vendors, explainers). Shown as "Source",
+      never "Official". Link-only: nothing is copied, and the weekly check does not fetch them.
+    verified: false
+    verified_url: null
+
   - id: usmle-official-samples
     name: USMLE official sample questions and content outlines
     url: https://www.usmle.org

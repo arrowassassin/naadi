@@ -230,7 +230,7 @@ async def test_a_host_that_resolves_inside_is_never_requested() -> None:
     f = verify.HttpFetcher(DOMAINS, transport=t, delay_s=0, resolver=inside)
     out = await f.fetch("https://www.usmle.org/x")
     await f.aclose()
-    assert out.outcome == "off_domain_redirect" and out.text is None
+    assert out.outcome == "refused_address" and out.text is None and out.moved is False
     assert t.seen == []  # type: ignore[attr-defined]
 
 
@@ -241,7 +241,7 @@ async def test_a_name_that_does_not_resolve_is_refused() -> None:
     f = verify.HttpFetcher(DOMAINS, transport=site({}), delay_s=0, resolver=nothing)
     out = await f.fetch("https://www.usmle.org/x")
     await f.aclose()
-    assert out.outcome == "off_domain_redirect"
+    assert out.outcome == "refused_address"
 
 
 async def test_only_port_443_is_fetched_and_a_redirect_to_another_port_is_refused() -> None:
@@ -258,7 +258,8 @@ async def test_only_port_443_is_fetched_and_a_redirect_to_another_port_is_refuse
     b = await f.fetch("https://www.usmle.org:8443/x")
     c = await f.fetch("https://www.usmle.org:443/ok")
     await f.aclose()
-    assert (a.outcome, b.outcome) == ("off_domain_redirect", "off_domain_redirect")
+    assert (a.outcome, b.outcome) == ("refused_address", "refused_address")
+    assert (a.moved, b.moved) == (False, False)  # a refused address is not a "moved" page
     assert c.outcome == "ok"
     assert not any(":6379" in u or ":8443" in u for u in t.seen)  # type: ignore[attr-defined]
 
@@ -696,3 +697,27 @@ async def test_old_resolved_checks_are_pruned(url: str, pg: psycopg.Connection[A
         (tid,),
     ).fetchall()
     assert left == [(True,)]  # an unresolved finding is kept however old
+
+
+@pytest.mark.db
+@pytest.mark.integration
+@pytest.mark.parametrize(("age_days", "flagged"), [(5, False), (91, True)])
+async def test_a_first_check_of_a_task_past_the_reverify_age_stays_flagged(
+    url: str, pg: psycopg.Connection[Any], tasks: dict[str, Any], age_days: int, flagged: bool
+) -> None:
+    """A baseline cannot tell whether the page changed before it: an old task is flagged, not adopted silently."""
+    tid = tasks["ids"]["fresh"]
+    pg.execute(
+        "update public.pathway_tasks set last_verified = %s where id = %s",
+        (dt.datetime.now(dt.UTC).date() - dt.timedelta(days=age_days), tid),
+    )
+    await run_pass(url, tasks, {tasks["urls"]["fresh"]: (200, PAGE, {})}, None)
+    row = pg.execute(
+        "select t.needs_review, c.changed, c.finding, c.source_id is null"
+        " from public.pathway_tasks t join public.pathway_task_checks c on c.task_id = t.id where t.id = %s",
+        (tid,),
+    ).fetchone()
+    assert row is not None
+    assert (row[0], row[1]) == (flagged, flagged)
+    assert row[2]["summary_key"] == ("baseline_stale" if flagged else "baseline")
+    assert row[2]["status"] == "unchanged"

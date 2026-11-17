@@ -1030,6 +1030,8 @@ ui_copy:
   pathway.finding.network_error: "The official page did not answer."
   pathway.finding.robots_disallowed: "The site asks automated checks to stay away from this page."
   pathway.finding.off_domain_redirect: "The page now redirects away from the official site."
+  pathway.finding.refused_address: "The check did not fetch this page because its address is not a public one."
+  pathway.finding.baseline_stale: "First check, and the last human check is already old: please compare the page with this task."
   pathway.finding.too_many_redirects: "The page redirects in a loop."
   pathway.error.generic: "Something went wrong. Try again."
   pathway.error.invalid: "That change could not be saved."

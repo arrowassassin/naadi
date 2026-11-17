@@ -684,9 +684,10 @@ test.describe("phone tab bar", () => {
       const { page } = await student.open("/pathway");
       const { errors, guard } = watchConsole(page);
       const bar = page.getByRole("navigation", { name: "Tabs" });
-      const items = bar.locator("li > a, li > button");
-      const count = await items.count();
-      expect(count).toBeLessThanOrEqual(5);
+      // the assistant's round button has no text label; it still takes one of the five slots
+      const slots = bar.locator("li > a, li > button");
+      expect(await slots.count()).toBeLessThanOrEqual(5);
+      const items = bar.locator("li > a, li > button").filter({ has: page.locator("span") });
       // every label sits inside its own tab, and no two tabs overlap
       const boxes = await items.evaluateAll((els) =>
         els.map((el) => {
