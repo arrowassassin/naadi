@@ -1,0 +1,16 @@
+{
+ "id": "20261117T064440-seg16-planner-6c2590",
+ "ts": "2026-11-17T06:44:40.632487Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S16 rework takes Alembic 0028 (plan_items select-only for clients), down_revision = head at integrate time",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0028_plan_items_api_only.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
