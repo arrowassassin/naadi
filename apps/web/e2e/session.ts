@@ -78,7 +78,7 @@ export async function ensureOnboarded(page: import("@playwright/test").Page): Pr
       materials: [],
     },
   });
-  if (!res.ok()) throw new Error(`PUT /api/onboarding: ${res.status()}`);
+  if (!res.ok()) throw new Error(`PUT /api/onboarding: ${res.status()} ${(await res.text()).slice(0, 300)}`);
 }
 
 export async function signedInState(browser: Browser, baseURL: string, role: E2ERole): Promise<string> {
