@@ -1,0 +1,12 @@
+{
+ "id": "20261117T064240-lead-64d745",
+ "ts": "2026-11-17T06:42:40.254174Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "Rules: (1) Trusted Types: script URLs only through the shared policy; (2) e2e never follows ambient APP_BASE_URL/SUPABASE_URL",
+ "body": "(1) Two segments hit the Trusted Types report-only error (S15b, S16). Rule: every TrustedScriptURL sink (serviceWorker.register, Worker, importScripts, script.src) goes through ONE policy in apps/web/src/security/trustedTypes.ts (seg22 owns it; seg16 may create it first if seg22 hasn't landed, with createScriptURL allowing only same-origin /sw.js and the hashed worker paths, then seg22 adopts it). Prod e2e must show zero TT console lines. (2) review16's calendar e2e followed the ambient APP_BASE_URL to the hosted Space (read-only GETs only, all 404). seg22: the Playwright config and the API test settings must force loopback APP_BASE_URL/SUPABASE_URL/DATABASE_URL in e2e and refuse otherwise, the same guard S04 added for DB URLs. Everyone: never read ambient deploy URLs in tests.",
+ "requires_ack": false
+}
