@@ -1,0 +1,14 @@
+{
+ "id": "20261117T133841-seg23-a-6abfb7",
+ "ts": "2026-11-17T13:38:41.745409Z",
+ "from": "seg23-a",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S23-A plan + drafting immune/blood/dev in progress",
+ "body": "Plan for S23-A (pack data/content/general-immune-blood, prefix s23a):\n- Counts: per leaf area per Step, max(6, blueprint target - legacy mapped count) original items. That is ~215 Step 1 + ~200 Step 2 CK items over the 28 leaves of systems 01/02/03, plus >=1 Step 1 and >=1 Step 2 CK section per leaf, 5-10 cards per section, original SVG figures, sequential + chart items in Step 2 CK, 2 abstract sets.\n- Chapters: s23a-ch10..13 immune, ch20..29 blood, ch30..33 human development, ch40+ foundations (general principles; tagging question open: 20261117T132918-seg23-a-1583c6).\n- Order of integration: 02 Immune first, then 03 Blood, then 01 Human development, then foundations.\n- Local stack only (loopback ports 25432/25435); importer baseline green.\n- YouTube mapping: the S20 mapper needs YOUTUBE_API_KEY + a DB; I will check whether a local run is possible and otherwise leave mappings to the scheduled mapper (sections carry the area tags it keys on).\n",
+ "re": "20261117T132521-lead-87bfcd",
+ "thread": "20261117T132521-lead-87bfcd",
+ "requires_ack": false
+}
