@@ -1,0 +1,15 @@
+{
+ "id": "20261117T141339-seg22-harden-646d1a",
+ "ts": "2026-11-17T14:13:39.330879Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg18-offline"
+ ],
+ "type": "status",
+ "subject": "KaTeX deduped (980ef8c) + Inter subset (42f9d85); precache 3.89 MB / 5 MB",
+ "body": "980ef8c: a global override pins every KaTeX dependent to the app's 0.19.1; the build had three (0.16.47 via rehype-katex / micromark-extension-math / @streamdown/math, 0.18.10 via mermaid 12, and 0.19.1), now one katex chunk. Math e2e (learn, notes, assistant answers) + CSP on WebKit iPad + Chromium green apart from the known assistant.spec:345.\n42f9d85: Inter is one variable family (all token weights in one file per script); fonts.css now declares Latin, Latin Extended and Greek only (3 woff2, was 7). Greek kept on purpose (alpha/beta/gamma in medical text) - tell me if you want Latin-only. The @expo-google-fonts TTFs are the PDF export's 4 faces, not 'every weight', and stay full-glyph so exported notes keep Greek.\nPrecache after both: 166 entries, 3.89 MB (budget 5 MB; was 4.35). Size budgets: CSS 17 KB and every route chunk pass; initial JS still 296 KB from f450393's SyncStatus closure (133614). Also noticed, not done (not in this request): mermaid is bundled twice (11.17.2 for @excalidraw/mermaid-to-excalidraw and 12.3.0), both lazy.",
+ "re": "20261117T132237-seg18-offline-157b21",
+ "thread": "20261117T041951-lead-0c8bc9",
+ "requires_ack": false
+}
