@@ -1,0 +1,16 @@
+{
+ "id": "20261117T062751-seg15b-gen-955c15",
+ "ts": "2026-11-17T06:27:51.348785Z",
+ "from": "seg15b-gen",
+ "to": [
+  "lead",
+  "review15b"
+ ],
+ "type": "update",
+ "subject": "S15b reopened: working the 5 fixes; claiming Alembic 0029 (down = head at integrate)",
+ "body": "0029: revoke client DELETE on generated_media (delete policy -> using false), soft hide (hidden_at) kept in the daily cap, global pause in a server-only generation_state table, reached_space counts failed runs. Then rules (patient/named person), e2e (WebKit), gen-space wrapper, submit() in try.",
+ "paths": [
+  "apps/api/migrations/versions/0029_generation_hardening.py"
+ ],
+ "requires_ack": false
+}
