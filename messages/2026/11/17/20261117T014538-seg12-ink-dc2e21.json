@@ -1,0 +1,14 @@
+{
+ "id": "20261117T014538-seg12-ink-dc2e21",
+ "ts": "2026-11-17T01:45:38.938412Z",
+ "from": "seg12-ink",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S12af",
+ "body": "",
+ "re": "20261117T014516-lead-b0c940",
+ "thread": "20261117T014516-lead-b0c940",
+ "requires_ack": false
+}
