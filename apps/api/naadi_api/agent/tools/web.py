@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field, HttpUrl
 from ...logs import get_logger
 from ...search import SearchResult, TavilyGuardExhausted, get_search
 from .executor import ToolRefused
-from .registry import ToolContext, ToolResult, register_tool
+from .registry import ToolContext, ToolResult, register_tool, web_url_key
 
 log = get_logger("naadi.agent.tools.web")
 
@@ -78,6 +78,10 @@ async def web_extract(ctx: ToolContext, args: WebExtractArgs) -> ToolResult:
     url = str(args.url)
     if not url.startswith("https://"):
         raise ToolRefused("https_only")
+    if web_url_key(url) not in ctx.web_urls:
+        # Only a page web_search returned this turn, or one the student typed: text injected into a section, a
+        # note or a page must not be able to send the model to a URL it made up (data could ride in the URL).
+        raise ToolRefused("url_not_from_search")
     try:
         r = await get_search().extract(url, user_id=ctx.user_id)
     except TavilyGuardExhausted as exc:

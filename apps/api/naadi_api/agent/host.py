@@ -227,6 +227,10 @@ def build() -> FastAPI:
     from .limits import AgentRateLimit
 
     aegra_app.add_middleware(AgentRateLimit)
+    # Clients never write graph state directly (review14): the tutor's guard must see every turn.
+    from .auth import ThreadStateWritesDenied
+
+    aegra_app.add_middleware(ThreadStateWritesDenied)
     from ..health.checks import agent_runtime_check
     from ..health.service import Check
 

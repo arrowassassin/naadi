@@ -202,6 +202,9 @@ def install(monkeypatch: pytest.MonkeyPatch, world: World, gw: LLMGateway) -> No
             ask_kind=ask_kind,
         )
 
+    async def _reveal_state(user_id: Any, question_id: str) -> tuple[bool, str | None]:
+        return question_id in world.revealed, ("A" if question_id in world.revealed else None)
+
     async def record_turn(db: Any, **kw: Any) -> bool:
         world.thread_rows.append(kw)
         return False
@@ -210,6 +213,7 @@ def install(monkeypatch: pytest.MonkeyPatch, world: World, gw: LLMGateway) -> No
     monkeypatch.setattr(tutor_mod, "_flags_for", _flags_for)
     monkeypatch.setattr(tutor_mod, "_exam_active", _exam_active)
     monkeypatch.setattr(tutor_mod, "verify_page", verify_page)
+    monkeypatch.setattr(tutor_mod, "_reveal_state", _reveal_state)
     monkeypatch.setattr(tutor_mod.threads, "record_turn", record_turn)
     monkeypatch.setattr(tutor_mod, "agent_db", lambda: object())
 

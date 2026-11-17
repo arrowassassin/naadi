@@ -101,6 +101,9 @@ class ToolContext:
     tool_result_max_chars: int = 4000
     store: Any = None
     memory_max_items: int = 100
+    # The pages web_extract may read this turn: URLs this turn's web_search returned and URLs the student typed
+    # (never one the model built, which injected text could point anywhere). Normalised by `web_url_key`.
+    web_urls: set[str] = field(default_factory=set)
     # Filled by tools (search_knowledge) so later tools in the same turn can apply the web guard.
     kb_best: float | None = None
 
@@ -121,6 +124,14 @@ class ToolContext:
         from ...assistant.questions import revealed_questions
 
         return await revealed_questions(self.db, self.user_id, list(question_ids))
+
+
+def web_url_key(url: str) -> str:
+    """The form web_extract compares URLs in: scheme and host lower-cased, no fragment, no trailing slash."""
+    from urllib.parse import urlsplit, urlunsplit
+
+    u = urlsplit(url.strip())
+    return urlunsplit((u.scheme.lower(), u.netloc.lower(), u.path.rstrip("/"), u.query, ""))
 
 
 @dataclass(frozen=True)
@@ -276,4 +287,5 @@ __all__ = [
     "tools_for",
     "unregister_page_resolver",
     "unregister_tool",
+    "web_url_key",
 ]

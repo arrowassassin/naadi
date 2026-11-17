@@ -129,6 +129,19 @@ test.describe("tutor assistant", () => {
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "answer-with-sources");
 
+    // §6.5: the first answer of a new thread carries the disclaimer, once, under the answer that used a tool
+    // (assistant-ui renders the tool call and the final answer as one message); the answer's sources stay with it.
+    await expect(answer.locator('[data-notice="disclaimer"]')).toHaveCount(1);
+    await expect(panel.locator('[data-notice="disclaimer"]')).toHaveCount(1);
+    await ask(page, "e2e:answer And what about the osmolal gap?");
+    const second = panel.locator('[data-message-role="assistant"]').nth(1);
+    await expect(second.getByRole("region", { name: "Sources" })).toBeVisible({ timeout: STREAM_TIMEOUT });
+    await expect(panel.locator('[data-status="thinking"], [data-status="tool"]')).toHaveCount(0, {
+      timeout: STREAM_TIMEOUT,
+    });
+    await expect(second.locator('[data-notice="disclaimer"]')).toHaveCount(0);
+    await expect(panel.locator('[data-notice="disclaimer"]')).toHaveCount(1);
+
     // the thread is kept: it is listed under Past chats, titled from the first question
     await panel.getByRole("button", { name: "Past chats" }).click();
     await expect(panel.getByRole("button", { name: /What does the anion gap tell me/ }).first()).toBeVisible();

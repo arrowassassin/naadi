@@ -122,8 +122,6 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
         "threads.get": lambda: b.threads.get(tid),
         "threads.get_state": lambda: b.threads.get_state(tid),
         "threads.get_history": lambda: b.threads.get_history(tid),
-        "threads.update": lambda: b.threads.update(tid, metadata={"x": 1}),
-        "threads.delete": lambda: b.threads.delete(tid),
         "runs.get": lambda: b.runs.get(tid, run["run_id"]),
         "runs.join": lambda: b.runs.join(tid, run["run_id"]),
         "runs.cancel": lambda: b.runs.cancel(tid, run["run_id"]),
@@ -136,6 +134,15 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
         except pytest.fail.Exception:
             not_404.append(name)
     assert not_404 == []
+    # Thread metadata patches and protocol deletes are refused for every client (S14 review: the server owns
+    # thread state and deletes threads with their list rows through /api/assistant), so B gets 403, not 404.
+    for name, call in {
+        "threads.update": lambda: b.threads.update(tid, metadata={"x": 1}),
+        "threads.delete": lambda: b.threads.delete(tid),
+    }.items():
+        with pytest.raises(httpx.HTTPStatusError) as refused:
+            await call()
+        assert refused.value.response.status_code in (403, 404), name
     assert await b.runs.list(tid) == []  # listing another user's thread's runs yields nothing
 
     async def stream_other() -> None:

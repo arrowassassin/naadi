@@ -12,6 +12,7 @@
 from __future__ import annotations
 
 import json
+import re
 from contextvars import ContextVar
 from typing import Any
 
@@ -163,3 +164,68 @@ async def store_server_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
     confirmed tools, never through the Agent Protocol /store routes."""
     log.info("agent_auth_denied", resource="store", action=ctx.action)
     return False
+
+
+# ── threads: clients start runs with input or resume an interrupt the graph raised; nothing else ──
+
+# Run fields that let a client steer a graph past its own checks: `command.goto`/`command.update` jump to any node
+# with any state, a checkpoint forks from an older state, and interrupt_before/after stop a run between nodes.
+_STATE_WRITE = re.compile(r"^/threads/[^/]+/state/?$")
+_RUN_STEERING = ("checkpoint", "checkpoint_id", "interrupt_before", "interrupt_after")
+
+
+@auth.on.threads.create_run
+async def runs_input_or_resume_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    command = value.get("command") if isinstance(value, dict) else None
+    if command is not None:
+        keys = {k for k, v in command.items() if v is not None} if isinstance(command, dict) else {"?"}
+        if keys - {"resume"}:
+            log.info("agent_auth_denied", resource="threads", action="create_run", reason="command")
+            return False
+    for field in _RUN_STEERING:
+        if isinstance(value, dict) and value.get(field):
+            log.info("agent_auth_denied", resource="threads", action="create_run", reason=field)
+            return False
+    return True
+
+
+@auth.on.threads.update
+async def thread_updates_runs_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    """`threads.update` covers cancelling a run (the Stop button; Aegra checks the run's owner), and also state
+    writes and metadata patches. Only the run operations are the client's: graph state is written by the graph,
+    and thread metadata is the server's (titles live in assistant_threads, renamed through /api/assistant)."""
+    v = value if isinstance(value, dict) else {}
+    if v.get("run_id") and not any(k in v for k in ("values", "as_node", "metadata", "checkpoint", "checkpoint_id")):
+        return True
+    log.info("agent_auth_denied", resource="threads", action="update")
+    return False
+
+
+@auth.on.threads.delete
+async def thread_deletes_server_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
+    """Deleting goes through DELETE /api/assistant/threads/{id}, which removes the thread with its list row (a
+    protocol delete would leave the row behind); runs and prune are not the client's either."""
+    log.info("agent_auth_denied", resource="threads", action="delete")
+    return False
+
+
+class ThreadStateWritesDenied:
+    """Aegra's POST /threads/{id}/state writes graph state under any node name and calls no auth handler, so it
+    is refused here for every client (the GET form of that route stays: reads use GET /state and /history). The
+    graphs write their own state; nothing in the app needs a client-side state write."""
+
+    def __init__(self, app: Any) -> None:
+        self.app = app
+
+    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
+        if (
+            scope.get("type") == "http"
+            and scope.get("method") == "POST"
+            and _STATE_WRITE.match(str(scope.get("path", "")))
+        ):
+            from ..errors import error_response
+
+            log.info("agent_auth_denied", resource="threads", action="state_write")
+            await error_response(403, "This change is not allowed.", "forbidden")(scope, receive, send)
+            return
+        await self.app(scope, receive, send)

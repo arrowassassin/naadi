@@ -20,9 +20,6 @@ import { ThreadView } from "./Thread";
 import { ThreadList } from "./ThreadList";
 import { type Tutor, useTutor } from "./useTutor";
 
-/** The browser's report of a ResizeObserver loop (benign by spec; see the surface's error listener). */
-const RO_LOOP = "ResizeObserver loop completed with undelivered notifications.";
-
 /*
  * The assistant's surface (loaded lazily by AssistantHost.tsx, so the shell bundle stays small).
  *
@@ -314,18 +311,6 @@ export default function AssistantSurface({ dockSlot }: { dockSlot: HTMLElement |
   // The markdown renderer is its own chunk (budget): start loading it now, before the first answer streams.
   useEffect(() => {
     void preloadMarkdown().catch(() => undefined);
-  }, []);
-  // assistant-ui's thread auto-scroll observes the viewport and its rows and updates its store from the observer
-  // callback; when a turn adds several blocks in one frame, the browser defers the remaining notifications to the
-  // next frame and reports "ResizeObserver loop completed with undelivered notifications". That report is benign
-  // by the ResizeObserver spec (nothing is lost). Only that exact report is cancelled, only while the surface is
-  // mounted; every other error still reaches the console and the error handlers.
-  useEffect(() => {
-    const onError = (e: ErrorEvent) => {
-      if (e.message === RO_LOOP) e.preventDefault();
-    };
-    window.addEventListener("error", onError);
-    return () => window.removeEventListener("error", onError);
   }, []);
 
   // The ask handler, registered while this surface lives (feature on, no exam).

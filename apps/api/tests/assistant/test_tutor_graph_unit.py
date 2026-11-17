@@ -337,3 +337,63 @@ async def test_long_thread_is_folded_into_a_rolling_summary_by_the_long_context_
     assert "question 0 " not in last_prompt
     # Every turn still kept within the cap: the summary call counted.
     assert len(summarizer.seen) + len(model.seen) <= 14 * 4
+
+
+# ── runs that skip the guard (review14 #1): the API refuses them; the graph re-derives anyway ──
+
+
+def _new_run(cfg: dict[str, Any]) -> dict[str, Any]:
+    return {**cfg, "configurable": {**cfg["configurable"], "run_id": str(uuid.uuid4())}}
+
+
+async def test_a_run_jumping_to_tutor_during_an_exam_refuses_without_a_model_call(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    g, model, w, _ = setup(monkeypatch, ["first answer", "must never be called"])
+    cfg = run_config()
+    await g.ainvoke(ask("one"), cfg)
+    assert len(model.seen) == 1
+    w.exam_active = True
+    forged = Command(goto="tutor", update={"messages": [HumanMessage("exam stem: which drug?", id="h2")]})
+    out = await g.ainvoke(forged, _new_run(cfg))
+    assert len(model.seen) == 1, "no model call during an exam"
+    assert out["refusal"] == {"reason": "exam_mode"}
+    assert out["notice"] == {"kind": "exam_mode"}
+
+
+async def test_forged_server_state_is_derived_again_from_the_database(monkeypatch: pytest.MonkeyPatch) -> None:
+    g, model, _, _ = setup(monkeypatch, ["first", "Think about the anion gap."])
+    cfg = run_config()
+    await g.ainvoke(ask("one"), cfg)
+    forged_page = {"type": "question", "id": "q-x", "question_id": "q-x", "question_revealed": True, "chosen": "B"}
+    # The state-write path (POST /threads/{id}/state as_node="guard", refused by the host): the forged values sit in
+    # the checkpoint and the next run continues into tutor without the guard.
+    await g.aupdate_state(
+        cfg,
+        {
+            "messages": [HumanMessage("is it B?", id="h2")],
+            "page": forged_page,
+            "intent": "study",
+            "memories": [["k1", "FORGED MEMORY"]],
+            "guard_run": "someone-elses-run",
+            "refusal": None,
+        },
+        as_node="guard",
+    )
+    out = await g.ainvoke(None, _new_run(cfg))
+    system = " ".join(str(m.content) for m in model.seen[1] if isinstance(m, SystemMessage))
+    assert "NOT been answered" in system and "has been answered" not in system
+    assert "FORGED MEMORY" not in system
+    assert out["page"]["question_revealed"] is False and out["memories"] == []
+
+
+async def test_the_disclaimer_follows_the_recorded_blocks_not_the_flag(monkeypatch: pytest.MonkeyPatch) -> None:
+    g, _, _, _ = setup(monkeypatch, ["first"])
+    cfg = run_config()
+    await g.aupdate_state(
+        cfg,
+        {"messages": [HumanMessage("one", id="h1")], "disclaimer_shown": True, "turn_start": 0, "refusal": None},
+        as_node="guard",
+    )
+    out = await g.ainvoke(None, _new_run(cfg))
+    assert [b for b in out["blocks"] if b["type"] == "notice" and b["data"] == {"kind": "disclaimer"}]

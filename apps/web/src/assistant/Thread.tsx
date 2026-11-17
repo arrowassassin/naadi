@@ -2,7 +2,7 @@ import { MessagePrimitive, ThreadPrimitive, useAuiState } from "@assistant-ui/re
 import { Button, ErrorState } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
 import { LogIn, RotateCw, Sparkles } from "lucide-react";
-import { createContext, type ReactNode, useContext, useMemo } from "react";
+import { createContext, type ReactNode, useContext, useEffect, useMemo } from "react";
 import { useUiText } from "../copy/useUiText";
 import { type ActionHandlers, BlockView, NoticeBlock, SourcesBlock } from "./blocks";
 import { ConfirmChip } from "./ConfirmChip";
@@ -167,24 +167,52 @@ function RunState({ tutor }: { tutor: Tutor }) {
   return null;
 }
 
+/** The browser's report of a ResizeObserver loop: benign by the ResizeObserver spec (delivered next frame). */
+const RO_LOOP = "ResizeObserver loop completed with undelivered notifications.";
+
 export function ThreadView({ tutor, empty, onAsk }: { tutor: Tutor; empty: ReactNode; onAsk: ActionHandlers["ask"] }) {
   const t = useUiText();
-  const aiIds = useMemo(
-    () => new Set(tutor.messages.filter((m) => m.type === "ai" && typeof m.id === "string").map((m) => m.id as string)),
-    [tutor.messages],
-  );
+  // assistant-ui's thread auto-scroll observes this viewport and its rows and updates its store from the observer
+  // callback; when a turn adds several blocks in one frame the browser defers the rest to the next frame and
+  // reports it. Only that exact report is cancelled, and only while this thread viewport is on screen.
+  useEffect(() => {
+    const onError = (e: ErrorEvent) => {
+      if (e.message === RO_LOOP) e.preventDefault();
+    };
+    window.addEventListener("error", onError);
+    return () => window.removeEventListener("error", onError);
+  }, []);
+  // assistant-ui renders one assistant turn (the AI message that called tools, the tool results and the final
+  // answer) as ONE message under the turn's FIRST AI id; the server ties blocks and citations to whichever AI
+  // message produced them. Every AI id maps to the id of the message that is actually rendered.
+  const renderedId = useMemo(() => {
+    const map = new Map<string, string>();
+    let head: string | null = null;
+    for (const m of tutor.messages) {
+      if (m.type === "human") {
+        head = null;
+        continue;
+      }
+      if (m.type !== "ai" || typeof m.id !== "string") continue;
+      head ??= m.id;
+      map.set(m.id, head);
+    }
+    return map;
+  }, [tutor.messages]);
+  const aiIds = useMemo(() => new Set(renderedId.values()), [renderedId]);
   const data = useMemo<ThreadData>(() => {
     const byMessage = new Map<string, Block[]>();
     const orphans: Block[] = [];
     for (const b of tutor.blocks) {
-      if (b.message_id && aiIds.has(b.message_id))
-        byMessage.set(b.message_id, [...(byMessage.get(b.message_id) ?? []), b]);
+      const at = b.message_id ? renderedId.get(b.message_id) : undefined;
+      if (at) byMessage.set(at, [...(byMessage.get(at) ?? []), b]);
       else orphans.push(b);
     }
     const cites = new Map<string, Citation[]>();
     const looseCites: Citation[] = [];
     for (const c of tutor.citations) {
-      if (c.message_id && aiIds.has(c.message_id)) cites.set(c.message_id, [...(cites.get(c.message_id) ?? []), c]);
+      const at = c.message_id ? renderedId.get(c.message_id) : undefined;
+      if (at) cites.set(at, [...(cites.get(at) ?? []), c]);
       else looseCites.push(c);
     }
     const last = [...aiIds].at(-1) ?? null;
@@ -198,7 +226,7 @@ export function ThreadView({ tutor, empty, onAsk }: { tutor: Tutor; empty: React
       handlers: { ask: onAsk },
       orphans,
     } as ThreadData & { orphans: Block[] };
-  }, [tutor, aiIds, onAsk]);
+  }, [tutor, aiIds, renderedId, onAsk]);
   const orphans = (data as ThreadData & { orphans: Block[] }).orphans;
   const lastAiId = [...aiIds].at(-1) ?? null;
 

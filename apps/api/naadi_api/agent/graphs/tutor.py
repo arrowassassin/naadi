@@ -46,7 +46,7 @@ from naadi_api.agent.identity import RunIdentity, run_identity
 from naadi_api.agent.runtime import agent_db, get_runtime
 from naadi_api.agent.tools import tools_for
 from naadi_api.agent.tools.executor import plan_pass, run_tool_call
-from naadi_api.agent.tools.registry import ToolContext, ToolResult, get_tool
+from naadi_api.agent.tools.registry import ToolContext, ToolResult, get_tool, web_url_key
 from naadi_api.assistant import memory as mem
 from naadi_api.assistant import threads
 from naadi_api.assistant.context_budget import (
@@ -119,6 +119,9 @@ class TutorInput(TypedDict):
 
 
 class TutorState(TutorInput):
+    # The run whose guard derived this turn's server state (not in TutorInput: no client input can set it). A node
+    # running in any other run (a resume, or a client that skipped the guard) re-derives that state itself.
+    guard_run: NotRequired[str | None]
     blocks: NotRequired[Annotated[list[dict[str, Any]], _append]]
     citations: NotRequired[Annotated[list[dict[str, Any]], _append]]
     canvas: NotRequired[Annotated[list[dict[str, Any]], _canvas]]
@@ -297,6 +300,7 @@ async def guard(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
         "msg_count": count_after,
         "memories": memories,
         "web_allowed": bool(state.get("web")),
+        "guard_run": who.run_id,
     }
 
 
@@ -322,6 +326,97 @@ async def refuse(state: TutorState) -> dict[str, Any]:
     block = _block("notice", notice, None)
     _emit({"type": "block", "block": block})
     return {"notice": notice, "blocks": [block]}
+
+
+# ── server state, re-derived in every run ──
+
+
+async def _reveal_state(user_id: uuid.UUID, question_id: str) -> tuple[bool, str | None]:
+    """Whether the student has a graded, revealed attempt on the question, and their choice (from the database)."""
+    from naadi_api.assistant.questions import revealed_choice, revealed_questions
+
+    db = agent_db()
+    revealed = question_id in await revealed_questions(db, user_id, [question_id])
+    return revealed, (await revealed_choice(db, user_id, question_id) if revealed else None)
+
+
+def _turn_text(state: TutorState) -> str:
+    msgs = list(state.get("messages") or [])
+    start = int(state.get("turn_start") or 0)
+    human = next((m for m in reversed(msgs[start:] or msgs) if isinstance(m, HumanMessage)), None)
+    return _text(human).strip() if human is not None else ""
+
+
+_URL = re.compile(r"https://[^\s<>()\[\]\"']+")
+
+
+def _turn_web_urls(state: TutorState) -> set[str]:
+    """web_extract's allow-list for this turn: the web results already returned this turn and the URLs in the
+    student's own message."""
+    msgs = list(state.get("messages") or [])
+    turn_ids = {m.id for m in msgs[int(state.get("turn_start") or 0) :] if isinstance(m, AIMessage)}
+    urls = {
+        web_url_key(c["url"])
+        for c in state.get("citations") or []
+        if c.get("layer") == "web" and isinstance(c.get("url"), str) and c.get("message_id") in turn_ids
+    }
+    urls |= {web_url_key(u.rstrip(".,;:!?")) for u in _URL.findall(_turn_text(state))}
+    return urls
+
+
+def _disclaimer_shown(state: TutorState) -> bool:
+    """From the thread's recorded blocks, never from a flag a client could have written."""
+    return any(
+        b.get("type") == "notice" and (b.get("data") or {}).get("kind") == "disclaimer"
+        for b in state.get("blocks") or []
+        if isinstance(b, dict)
+    )
+
+
+async def _recheck(
+    state: TutorState, who: RunIdentity, cfg: AssistantConfig, rules: dict[str, Any], flags: dict[str, bool]
+) -> dict[str, Any]:
+    """Every node after the guard calls this. The feature flag and the exam are checked on every call; when the
+    guard did not run in this run (a resumed confirm, or a run that reached this node without the guard), the
+    guard-derived fields are derived again from the database and the turn's own text: the page's revealed state,
+    the intent (rules; a tie takes the stricter rule without a model call) and the memories. Returns the state
+    updates, with `refusal` set when the turn must stop."""
+    assert who.user_id is not None
+    if not flags.get("assistant"):
+        return {"refusal": {"reason": "disabled"}}
+    if await _exam_active(who.user_id, rules):
+        return {"refusal": {"reason": "exam_mode"}, "exam_mode": True}
+    if state.get("guard_run") and state.get("guard_run") == who.run_id:
+        return {}
+    page = page_from_state(state.get("page"))
+    if page.question_id:
+        page.question_revealed, page.chosen = await _reveal_state(who.user_id, page.question_id)
+    else:
+        page.question_revealed, page.chosen = False, None
+    text = _turn_text(state)
+    intent, ambiguous = decide(text)
+    memories: list[list[str]] = []
+    store = _store()
+    if store is not None and cfg.memory_retrieve_k and text:
+        try:
+            found = await mem.retrieve(store, who.user_id, text, cfg.memory_retrieve_k)
+            memories = [[m.key, m.fact] for m in found]
+        except Exception as exc:  # noqa: BLE001 - memory is an aid
+            log.warning("tutor.memory_unavailable", error=type(exc).__name__)
+    return {
+        "page": page_to_state(page),
+        "intent": "dosing" if ambiguous else (intent or "study"),
+        "memories": memories,
+        "exam_mode": False,
+        "guard_run": who.run_id,
+    }
+
+
+def _stop(reason: str) -> dict[str, Any]:
+    notice = {"kind": "exam_mode"} if reason == "exam_mode" else {"kind": "unavailable"}
+    block = _block("notice", notice, None)
+    _emit({"type": "block", "block": block})
+    return {"refusal": {"reason": reason}, "notice": notice, "blocks": [block]}
 
 
 # ── tutor ──
@@ -419,8 +514,21 @@ async def budget_context(
 
 async def tutor(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
     who = run_identity(config)
-    cfg, _ = await _config()
+    if who.user_id is None or state.get("refusal"):
+        return {}
+    cfg, rules = await _config()
     flags = await _flags_for(who)
+    fix = await _recheck(state, who, cfg, rules, flags)
+    if fix.get("refusal"):
+        return {**fix, **_stop(fix["refusal"]["reason"])}
+    if fix:
+        state = {**state, **fix}  # type: ignore[typeddict-item]
+    return {**fix, **await _answer(state, who, cfg, flags, config)}
+
+
+async def _answer(
+    state: TutorState, who: RunIdentity, cfg: AssistantConfig, flags: dict[str, bool], config: RunnableConfig
+) -> dict[str, Any]:
     specs = tools_for(flags)
     schemas = [s.openai_schema() for s in specs]
     ctx = _call_ctx(state, who, cfg, extra_tokens=schema_tokens(schemas))
@@ -507,7 +615,7 @@ async def _degrade(state: TutorState, who: RunIdentity, notice: dict[str, Any], 
 def route_tutor(state: TutorState) -> Literal["tools", "compose"]:
     msgs = state.get("messages") or []
     last = msgs[-1] if msgs else None
-    if isinstance(last, AIMessage) and last.tool_calls and not state.get("degraded"):
+    if isinstance(last, AIMessage) and last.tool_calls and not state.get("degraded") and not state.get("refusal"):
         return "tools"
     return "compose"
 
@@ -526,7 +634,14 @@ async def tools(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
         return {}
     done = {m.tool_call_id for m in msgs if isinstance(m, ToolMessage)}
     batch = plan_pass(ai.tool_calls, done)
-    exam = await _exam_active(who.user_id, rules)  # re-checked on every pass, also after a confirm
+    # Flag and exam on every pass, also after a confirm; the page's revealed state again in a resumed run.
+    fix = await _recheck(state, who, cfg, rules, flags)
+    exam = (fix.get("refusal") or {}).get("reason") == "exam_mode"
+    if fix.get("refusal") and not exam:
+        return {**fix, **_stop(fix["refusal"]["reason"])}
+    fix = {k: v for k, v in fix.items() if k != "refusal"}
+    if fix:
+        state = {**state, **fix}  # type: ignore[typeddict-item]
     ctx = ToolContext(
         user_id=who.user_id,
         is_admin=who.is_admin,
@@ -544,6 +659,7 @@ async def tools(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
         store=_store(),
         memory_max_items=cfg.memory_max_items,
         kb_best=state.get("kb_best"),
+        web_urls=_turn_web_urls(state),
     )
     allowed = {s.name for s in tools_for(flags)}
     out_msgs: list[ToolMessage] = []
@@ -578,9 +694,12 @@ async def tools(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
             _emit({"type": "block", "block": blk})
         for c in result.citations:
             citations.append({**c, "message_id": ai.id})
+            if c.get("layer") == "web" and isinstance(c.get("url"), str):
+                ctx.web_urls.add(web_url_key(c["url"]))
         canvas.extend(result.canvas)
         out_msgs.append(ToolMessage(content=result.content, tool_call_id=str(call.get("id")), name=name))
     return {
+        **fix,
         "messages": out_msgs,
         "blocks": blocks,
         "citations": [{**c, "id": f"{c['id']}@{ai.id}"} for c in citations],
@@ -590,6 +709,8 @@ async def tools(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
 
 
 def route_tools(state: TutorState) -> Literal["tools", "tutor"]:
+    if state.get("refusal"):
+        return "tutor"  # tutor stops on a refusal; compose ends the turn
     msgs = state.get("messages") or []
     ai = next((m for m in reversed(msgs) if isinstance(m, AIMessage) and m.tool_calls), None)
     if ai is None:
@@ -609,6 +730,8 @@ async def compose(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
     start = int(state.get("turn_start") or 0)
     turn = msgs[start:]
     final = next((m for m in reversed(turn) if isinstance(m, AIMessage) and not m.tool_calls), None)
+    if state.get("refusal"):
+        final = None  # a turn stopped by a re-check: no answer to attach citations or the disclaimer to
     out: dict[str, Any] = {"attachments": [], "msg_count": len(msgs)}
     blocks: list[dict[str, Any]] = []
     # Citations the answer actually used ([n]), else every one this turn produced; each sent as an event.
@@ -621,7 +744,7 @@ async def compose(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
         for c in final_cites:
             _emit({"type": "citation", "citation": c})
         out["citations"] = final_cites
-    if final is not None and cfg.disclaimer_every_thread and not state.get("disclaimer_shown"):
+    if final is not None and cfg.disclaimer_every_thread and not _disclaimer_shown(state):
         b = _block("notice", {"kind": "disclaimer"}, final.id)
         blocks.append(b)
         _emit({"type": "block", "block": b})
