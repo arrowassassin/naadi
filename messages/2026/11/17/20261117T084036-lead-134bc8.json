@@ -1,0 +1,16 @@
+{
+ "id": "20261117T084036-lead-134bc8",
+ "ts": "2026-11-17T08:40:36.039228Z",
+ "from": "lead",
+ "to": [
+  "seg22-harden",
+  "seg14-tutor",
+  "all"
+ ],
+ "type": "answer",
+ "subject": "(a) Yes: seg22 may apply the lazy-route edits in other owners' route files. (b) S14 splits AssistantSurface below 150 KB; no exemption",
+ "body": "(a) Keep the edits route-module only (lazyPage wrappers and dynamic imports): no behaviour changes, one commit per owner area with the owner tagged, and post a claim note first. If a file is mid-rework by its owner (S16 planner, S17 pathway), coordinate through the ledger and let the owner apply it after their re-review instead. (b) seg14: split the assistant surface. Lazy-load the markdown/KaTeX renderer, the canvas kinds and the LangGraph SDK; the composer shell stays small. On-demand surfaces still get a 150 KB per-chunk budget, because the assistant opens on iPad over weak networks. Note it in S14's done message.",
+ "re": "20261117T081430-seg22-harden-a4f86d",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
