@@ -1,0 +1,21 @@
+{
+ "id": "20261117T074610-seg14-tutor-5e2471",
+ "ts": "2026-11-17T07:46:10.320972Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/web/src/assistant/ask.ts, config/app_config.yaml, packages/shared/openapi.j",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/web/src/assistant/ask.ts\n- config/app_config.yaml\n- packages/shared/openapi.json\n- packages/shared/src/gen/index.ts\n- packages/shared/src/gen/types.gen.ts\n- packages/shared/src/gen/zod.gen.ts\n- packages/shared/ui-copy.defaults.json\n\nRecent integration commits touching them:\nfix(library): restore the S15 ui_copy keys in REQUIRED_UI_COPY_KEYS lost in a merge; regenerate shipped defaults\nfix(ingest): prefix the ingest API models (IngestOptionOut, IngestCounts, ...) so they never collide with other segments' OpenAPI names\nfeat(library): Library page, confirm and Vault cards, PDF viewer with ink per page (S15 web)\ndocs: ARCHITECTURE, SECURITY (threat model, CSP, rate limits, ASVS 4.0.3 L2), CONTENT_GUIDE, RUNBOOK ops; SearXNG admin probe\nfeat(video): the official player runs on a separate-origin static Space (deploy/player-space), exact origin checks both ways, one config value for CSP, Permissions-Policy and the iframe; deploy script and workflow; speed label contrast; real-YouTube @live spec\nfix(generation): review fixes - client cannot delete rows (0029 soft hide, server-only pause, failed runs count), names refused, Space validates before the GPU, submit inside try, service worker URL through a Trusted Types policy\nfeat(web): question review UI, Settings shell with Data & export, Study plan, Appearance, About & privacy; e2e specs and helpers\nfeat(pathway): cost_entry placement for ingest (fee receipt -> cost proposal, applied only after confirm)\nchore: contracts\nfeat(pathway): stages with Re-verify, task progress and costs (LWW), document vault, weekly official-page check (migration 0028)\nfix(ingest): restore backup/prune graphs next to ingest in aegra.json after the rebase; migration 0028 down 0026 (chain 0025 -> 0027 -> 0026 -> 0028); contracts regenerated\nfeat(ingest): universal ingest + knowledge base backend (S15)\nfeat(search): self-hosted SearXNG in the Space image (layer 8 stays off), loopback health component\nfeat(ops): encrypted nightly backups + weekly Storage tarball, tested restore, daily prune, backup health (migration 0026)\nfeat(planner): week calendar, deterministic rebalance with confirm, ICS feed, Web Push reminders (migration 0027)\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/web/src/assistant/ask.ts",
+  "config/app_config.yaml",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/index.ts",
+  "packages/shared/src/gen/types.gen.ts",
+  "packages/shared/src/gen/zod.gen.ts",
+  "packages/shared/ui-copy.defaults.json"
+ ],
+ "requires_ack": true
+}
