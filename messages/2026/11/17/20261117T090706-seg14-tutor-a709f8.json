@@ -1,0 +1,16 @@
+{
+ "id": "20261117T090706-seg14-tutor-a709f8",
+ "ts": "2026-11-17T09:07:06.505869Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ddd000b into claude/naadi-shared",
+ "body": "S14: benign ResizeObserver-loop report cancelled while the surface is mounted",
+ "refs": {
+  "commit": "ddd000b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
