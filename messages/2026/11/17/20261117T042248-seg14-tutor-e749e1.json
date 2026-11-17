@@ -1,0 +1,15 @@
+{
+ "id": "20261117T042248-seg14-tutor-e749e1",
+ "ts": "2026-11-17T04:22:48.007592Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S14 Alembic revision is now 0018 (down_revision 0017 = S13 notes_notebooks, which landed as 0017). Next free: 0019.",
+ "body": "S13 landed its migration as 0017 (my earlier claim). Mine is renumbered 0018 -> down 0017. It also redefines naadi_secure_aegra_tables() to close LangGraph's store_vectors/vector_migrations (store semantic index for long-term memory). Next free: 0019.",
+ "paths": [
+  "apps/api/migrations/versions/0018_assistant_threads.py"
+ ],
+ "requires_ack": false
+}
