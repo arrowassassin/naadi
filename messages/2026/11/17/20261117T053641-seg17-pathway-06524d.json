@@ -1,0 +1,30 @@
+{
+ "id": "20261117T053641-seg17-pathway-06524d",
+ "ts": "2026-11-17T05:36:41.530242Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/aegra.json, apps/api/naadi_api/agent/host.py, apps/api/naadi_api/config",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/aegra.json\n- apps/api/naadi_api/agent/host.py\n- apps/api/naadi_api/config_api/schemas.py\n- apps/api/naadi_api/main.py\n- apps/api/tests/config_api/test_schemas.py\n- apps/api/tests/db/live_check.py\n- apps/api/tests/db/test_rls.py\n- apps/api/tests/db/test_rls_coverage.py\n- apps/api/tests/test_migrate.py\n- config/app_config.yaml\n- db/schema.sql\n- packages/shared/openapi.json\n- packages/shared/src/gen/index.ts\n- packages/shared/src/gen/sdk.gen.ts\n- packages/shared/src/gen/types.gen.ts\n- packages/shared/src/gen/zod.gen.ts\n\nRecent integration commits touching them:\nfix(security): admin writes share an admin_write bucket (60/min); audit names auto operation ids and bucket-parameter helpers\nfeat(security): CSP reporting + Trusted Types report-only, rate-limit audit, per-client floor, dependency audit in CI\nfix(authoring): prefix API model names so they do not collide with other segments' components in the OpenAPI document\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfix(db): schema doc, live_check table count and config key count for migration 0023\nfix(generation): unique OpenAPI names for approve models (no collision with other segments)\nfeat(generation): web (labelled media, progress, paused/failed states, Library view, admin approve), local stub, e2e, ui_copy\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(anki): .apkg reader (anki2/anki21/anki21b), importer, exporter, API; migration 0018 (video_candidates, flashcards tags/anki_guid, private media), video notes anchor_pos {t}, copy keys\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nfeat(ink web): server clock offset, adopt clamped copies, quarantine refused ink, fingerprinted block anchors\nfix(ink api): echo clamped stamps, integral floats stored as ints, purge horizon (migration 0016)\nfix(exam): S09 review - monotonic timer with wall-clock jump detection, shell gates Search/practice on /api/exam/active with Return to exam, S07 shortcut hook, e2e waits for question 41, screens 09/11 in CI scan\nS11 rework: plan day limit, number-word guard, diagnostic and coach idempotency\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/aegra.json",
+  "apps/api/naadi_api/agent/host.py",
+  "apps/api/naadi_api/config_api/schemas.py",
+  "apps/api/naadi_api/main.py",
+  "apps/api/tests/config_api/test_schemas.py",
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_rls.py",
+  "apps/api/tests/db/test_rls_coverage.py",
+  "apps/api/tests/test_migrate.py",
+  "config/app_config.yaml",
+  "db/schema.sql",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/index.ts",
+  "packages/shared/src/gen/sdk.gen.ts",
+  "packages/shared/src/gen/types.gen.ts",
+  "packages/shared/src/gen/zod.gen.ts"
+ ],
+ "requires_ack": true
+}
