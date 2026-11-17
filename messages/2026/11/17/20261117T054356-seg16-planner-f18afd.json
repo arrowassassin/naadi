@@ -1,0 +1,27 @@
+{
+ "id": "20261117T054356-seg16-planner-f18afd",
+ "ts": "2026-11-17T05:43:56.871406Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/naadi_api/config_api/schemas.py, apps/api/pyproject.toml, apps/api/test",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/naadi_api/config_api/schemas.py\n- apps/api/pyproject.toml\n- apps/api/tests/db/live_check.py\n- apps/api/tests/test_migrate.py\n- apps/api/uv.lock\n- apps/web/src/routes/AccountPage.tsx\n- config/app_config.yaml\n- db/schema.sql\n- packages/shared/openapi.json\n- packages/shared/src/gen/index.ts\n- packages/shared/src/gen/sdk.gen.ts\n- packages/shared/src/gen/types.gen.ts\n- packages/shared/src/gen/zod.gen.ts\n\nRecent integration commits touching them:\nfeat(admin): rebase on S15b/S20/S21: migration renumbered 0025 (down 0024), question_revisions.version set by trigger for every writer, youtube_candidates and question_review registered over S20/S21 functions, generated_media follows 15b (images only, bucket-relative paths, signed preview), editor returns full media rows and question stems, lint findings mapped from S21's linter, ui_copy bound 4000\nfeat(admin web): /admin console (TipTap chapter editor with live ContentRenderer preview, autosave, history/diff/rollback; media library, upload, YouTube add; question editor with preview and lint; app_config schema forms with diff, history, revert; coverage heat-map; agent ops; queues hub with registerQueueView; report triage), admin.* ui_copy, e2e spec\nfeat(admin api): migration 0024 (draft/published revisions, admin_audit, question_revisions), approval-queue registry, chapters/sections/revisions, media + YouTube, questions, coverage, agent ops, reports, config revert, audit\nfeat(security): CSP reporting + Trusted Types report-only, rate-limit audit, per-client floor, dependency audit in CI\nfix(authoring): prefix API model names so they do not collide with other segments' components in the OpenAPI document\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfix(db): schema doc, live_check table count and config key count for migration 0023\nfix(generation): unique OpenAPI names for approve models (no collision with other segments)\nfeat(generation): web (labelled media, progress, paused/failed states, Library view, admin approve), local stub, e2e, ui_copy\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(anki): .apkg reader (anki2/anki21/anki21b), importer, exporter, API; migration 0018 (video_candidates, flashcards tags/anki_guid, private media), video notes anchor_pos {t}, copy keys\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nfeat(ink web): server clock offset, adopt clamped copies, quarantine refused ink, fingerprinted block anchors\nfix(ink api): echo clamped stamps, integral floats stored as ints, purge horizon (migration 0016)\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/naadi_api/config_api/schemas.py",
+  "apps/api/pyproject.toml",
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/test_migrate.py",
+  "apps/api/uv.lock",
+  "apps/web/src/routes/AccountPage.tsx",
+  "config/app_config.yaml",
+  "db/schema.sql",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/index.ts",
+  "packages/shared/src/gen/sdk.gen.ts",
+  "packages/shared/src/gen/types.gen.ts",
+  "packages/shared/src/gen/zod.gen.ts"
+ ],
+ "requires_ack": true
+}
