@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042605-seg14-tutor-3b1066",
+ "ts": "2026-11-17T04:26:05.705795Z",
+ "from": "seg14-tutor",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S14 backend complete on work/seg14-tutor (rebased on S13); web side in progress",
+ "body": "Done (not yet integrated): tutor graph (guard with server-side active_exam, page verification, intent rules + router on ties; tutor with 4-call cap keyed per turn, last call tool-free; tools with one write per pass behind interrupt; compose with citations, disclaimer once, assistant_threads row, langmem background memory suggestions), tool registry + 17 tools, budget_context (per-candidate fit hook in llm.py, langmem asummarize_messages via long_context), long-term memory on the Aegra store with a local fastembed index (store_vectors secured in 0018), /api/assistant threads + memories REST, migration 0018, leak probe tools/model_eval/leak_probe.py (20/20 clean + negative control), scripted fake LLM for e2e. Note tools now use S13's notes store (notes are API-written). Tests: unit 73 assistant, db 19 S14 (incl. host-level isolation, interrupt, TTL sweep). Next: merge the web side, e2e smoke x2, CI, done.",
+ "re": "20261117T033115-lead-97b77b",
+ "thread": "20261117T033115-lead-97b77b",
+ "requires_ack": false
+}
