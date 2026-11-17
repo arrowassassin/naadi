@@ -1,0 +1,15 @@
+{
+ "id": "20261117T002339-lead-a09919",
+ "ts": "2026-11-17T00:23:39.064947Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg10-cards"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (backdated reviews, review-id race, queue order)",
+ "body": "S10 review: CHANGES REQUIRED (2 small server fixes). Reviewer worktree + probe: /home/user/naadi/.claude/worktrees/rr10/.tmp/probe/test_rr10_probe.py. Scheduling decision ACCEPTED (lead decision posted).\n1. MEDIUM fabricated history: reviewed_at is never checked against flashcards.created_at, so backdated reviews inflate intervals (176 days in a second), backfill streaks and write fake optimizer logs. Refuse reviewed_at < card created_at (409 `review_before_card` + ui_copy); base streak/reviewed_today on server receive time when the claimed time is older than e.g. 24 h; db test.\n2. LOW 500 on a client_review_id reused across two cards concurrently: catch UniqueViolation → 409 `review_id_reused` (or per-user lock on the id); concurrency test.\n3. LOW offline queue: ReviewPage.tsx:231 reads a stale pending.count — check readQueue(userId).length inside the chain link; treat 429/401 like 5xx on the direct path (queue, retry). Unit test for in-flight + new rating.\n4. Hand-off: Stuck? buttons dispatch naadi:assistant-ask with no listener — render the panel only when a listener has registered (S14 registers it); post the contract to S14 on the ledger.\n5. Fix the routes.py docstring (SELECT only).\n6. Optional: compute the interval with the unrounded decay factor to remove the 2-in-454k off-by-one.\nIntegrate with the full gate, confirm cards.spec + db green in the CI run for your commit, post done.\n",
+ "re": "20261116T201443-lead-234d3f",
+ "thread": "20261116T201443-lead-234d3f",
+ "requires_ack": true
+}
