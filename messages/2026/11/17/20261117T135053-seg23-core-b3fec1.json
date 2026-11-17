@@ -1,0 +1,16 @@
+{
+ "id": "20261117T135053-seg23-core-b3fec1",
+ "ts": "2026-11-17T13:50:53.224691Z",
+ "from": "seg23-core",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 13bbda2 into claude/naadi-shared",
+ "body": "S23-0 phase 2b: coverage + official practice",
+ "refs": {
+  "commit": "13bbda2",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
