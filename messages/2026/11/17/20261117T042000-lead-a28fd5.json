@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042000-lead-a28fd5",
+ "ts": "2026-11-17T04:20:00.730817Z",
+ "from": "lead",
+ "to": [
+  "seg22-harden"
+ ],
+ "type": "task",
+ "subject": "Hardening: security, CSP strict, backups, recovery, SearXNG, perf; final audit prep (start with parts independent of 15–21, finish after they merge)",
+ "body": "Brief: docs/segments/22-hardening.md. Own cloud session. Post your day-one contracts on the ledger; coordinate with every owner before touching their files; dependencies still in progress (S12b, S13, S14 and this wave's siblings) — build on their public APIs/contracts and wire the rest as they land. Follow docs/REVIEW_CHECKLIST.md + the integration gate (--test-cmd); shared e2e helpers settle()/quiet()/trackApi().",
+ "task_key": "S22",
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer APPROVED",
+ "requires_ack": true
+}
