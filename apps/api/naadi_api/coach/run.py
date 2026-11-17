@@ -91,11 +91,28 @@ async def service_conn(db: Database) -> AsyncIterator[psycopg.AsyncConnection[An
             conn.row_factory = tuple_row
 
 
+# Least recently coached first (never coached before anyone), so max_users_per_run rotates through everyone.
 _STUDENTS = """
-select p.user_id, p.timezone, p.exam_target from public.profiles p
+select p.user_id, p.timezone, p.exam_target, s.id as plan_id from public.profiles p
 join public.study_plans s on s.user_id = p.user_id and s.active
-order by p.user_id limit %s
+order by s.last_coached_at nulls first, p.user_id limit %s
 """
+
+# One model attempt per student per local date, whatever the number of runs (a second cron fire, a manual run,
+# a retried pass): every call for that date carries the same run id in llm_usage.
+_ATTEMPTED = "select exists (select 1 from public.llm_usage where user_id = %s and run_id = %s) as tried"
+_HAS_LLM_ROWS = (
+    "select exists (select 1 from public.coach_suggestions where user_id = %s and for_date = %s and source = 'llm')"
+    " as has"
+)
+
+
+_MARK_COACHED = "update public.study_plans set last_coached_at = %s where id = %s"
+
+
+def attempt_key(for_date: dt.date) -> str:
+    return f"coach:{for_date.isoformat()}"
+
 
 _SECTION = """
 select s.chapter_id, s.id as section_id, s.heading from public.chapter_sections s
@@ -157,9 +174,12 @@ async def word(
         try:
             stats.llm_calls += 1
             reply = await gateway.ainvoke(ROLE, messages, ctx)
-        except BudgetExhausted:
-            stats.budget_spent = True
-            stats.note("budget_exhausted")
+        except BudgetExhausted as exc:
+            # Only the spent daily job reserve ends model use for the rest of the pass. A rate limit (the
+            # gateway has already waited its bounded rate_wait_s) or a turn cap affects this student only.
+            if exc.reason == "daily_cap":
+                stats.budget_spent = True
+            stats.note(f"budget_{exc.reason}")
             return rules(offered, limit=limit)
         except (LLMUnavailable, PrivacyUnavailable) as exc:
             stats.note(type(exc).__name__)
@@ -240,11 +260,21 @@ async def coach_student(
     offered = candidates(
         facts, catch_up_questions=rules_cfg.catch_up_questions, section=section, limit=rules_cfg.max_suggestions + 1
     )
-    written = (
-        await word(gateway, offered, user_id=uid, run_id=run_id, limit=rules_cfg.max_suggestions, stats=stats)
-        if offered
-        else []
-    )
+    key = attempt_key(today)
+    async with service_conn(db) as conn:
+        tried = (await (await conn.execute(_ATTEMPTED, (uid, key))).fetchone() or {"tried": False})["tried"]
+        has_llm = (await (await conn.execute(_HAS_LLM_ROWS, (uid, today))).fetchone() or {"has": False})["has"]
+        await conn.execute(_MARK_COACHED, (now, student["plan_id"]))
+    if tried and has_llm:
+        stats.note("already_coached")  # tonight's model-worded rows stand; no second call, nothing rewritten
+        return 0
+    if not offered:
+        written: list[Written] = []
+    elif tried:
+        stats.note("llm_already_tried")  # an earlier run tonight called the model and got nothing usable
+        written = rules(offered, limit=rules_cfg.max_suggestions)
+    else:
+        written = await word(gateway, offered, user_id=uid, run_id=key, limit=rules_cfg.max_suggestions, stats=stats)
     if written and written[0].source == "rules":
         stats.rules_students += 1
     async with service_conn(db) as conn:
@@ -261,6 +291,7 @@ async def coach_pass(
     sleep: Callable[[float], Awaitable[Any]] = asyncio.sleep,
 ) -> PassStats:
     stats = PassStats()
+    log.info("coach.pass_start", run_id=run_id)
     if not rules_cfg.enabled:
         stats.note("disabled")
         return stats

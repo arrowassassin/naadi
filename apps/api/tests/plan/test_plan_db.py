@@ -402,3 +402,92 @@ def test_today_cards_due_matches_the_cards_screen(
         assert today["cards"]["reviewable"] is True
     finally:
         pg.execute("delete from public.flashcards where id = any(%s)", (own,))
+
+
+# ── S11 rework ──
+
+
+def test_exam_at_the_day_limit_is_accepted_and_one_day_past_is_refused(
+    client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID], pg: psycopg.Connection[Any]
+) -> None:
+    """`plan.max_study_days` (180) bounds the exam date: checked before any work, and nothing is written."""
+    a, b = users
+    state = client.get("/api/onboarding", headers=auth(key, a)).json()
+    assert state["max_days"] == 180
+    at, past = today_local() + dt.timedelta(days=180), today_local() + dt.timedelta(days=181)
+    days = "".join(f"&study_days={d}" for d in range(1, 8))
+    ok = client.get(f"/api/plan/preview?exam=step1&exam_date={at}&daily_hours=8{days}", headers=auth(key, a)).json()
+    assert ok["ok"] is True and ok["max_days"] == 180
+    far = client.get(f"/api/plan/preview?exam=step1&exam_date={past}&daily_hours=8{days}", headers=auth(key, a))
+    assert far.status_code == 200
+    assert far.json()["ok"] is False and far.json()["problem"] == "too_many_days"
+    assert onboard(client, key, a, exam_date=at.isoformat()).status_code == 200
+    res = onboard(client, key, b, exam_date=past.isoformat())
+    assert res.status_code == 422 and res.json()["error"]["code"] == "too_many_days"
+    detail = res.json()["error"]["details"][0]
+    assert detail["loc"] == ["body", "exam_date"] and detail["msg"] == "days=181,allowed=180"
+    row = pg.execute(
+        "select exam_date, settings ? 'onboarding' from public.profiles where user_id = %s", (b,)
+    ).fetchone()
+    assert row is None or row == (None, False)  # not even the answers are kept: the date itself is invalid
+    assert pg.execute("select count(*) from public.study_plans where user_id = %s", (b,)).fetchone() == (0,)
+
+
+def test_first_onboarding_saves_the_device_time_zone_with_the_plan(
+    client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID], pg: psycopg.Connection[Any]
+) -> None:
+    a, _ = users
+    assert onboard(client, key, a, timezone="Not/AZone").status_code == 422
+    res = onboard(client, key, a, timezone="America/Chicago")
+    assert res.status_code == 200, res.text
+    row = pg.execute(
+        "select p.timezone, p.settings->'onboarding' ? 'completed_at', (select count(*) from public.study_plans s"
+        " where s.user_id = p.user_id and s.active) from public.profiles p where p.user_id = %s",
+        (a,),
+    ).fetchone()
+    assert row == ("America/Chicago", True, 1)
+
+
+def test_concurrent_diagnostic_requests_create_one_block(
+    client: TestClient,
+    key: SigningKey,
+    users: tuple[uuid.UUID, uuid.UUID],
+    pg: psycopg.Connection[Any],
+    pool: list[str],
+) -> None:
+    from concurrent.futures import ThreadPoolExecutor
+
+    a, _ = users
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        out = list(ex.map(lambda _: client.post("/api/diagnostic", headers=auth(key, a)), range(6)))
+    assert sorted(r.status_code for r in out) == [200] * 5 + [201], [r.text for r in out]
+    assert len({r.json()["block_id"] for r in out}) == 1
+    assert [r.json()["created"] for r in out].count(True) == 1
+    assert pg.execute(
+        "select count(*) from public.blocks where user_id = %s and config->>'purpose' = 'diagnostic'", (a,)
+    ).fetchone() == (1,)
+
+
+def test_a_suggestion_leaves_new_once_and_clients_may_only_dismiss(
+    client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID], pg: psycopg.Connection[Any]
+) -> None:
+    from tests.db.rls import as_user
+
+    a, _ = users
+    assert onboard(client, key, a).status_code == 200
+    s1, s2 = _suggestion(pg, a), _suggestion(pg, a)
+    with pytest.raises(psycopg.errors.InsufficientPrivilege), as_user(pg, a) as conn:
+        conn.execute("update public.coach_suggestions set status = 'accepted' where id = %s", (s1,))
+    assert client.post(f"/api/coach/suggestions/{s1}/accept", headers=auth(key, a)).status_code == 200
+    for back in ("new", "dismissed"):  # not even the API's own role can reopen or flip it
+        with pytest.raises(psycopg.errors.CheckViolation):
+            pg.execute("update public.coach_suggestions set status = %s where id = %s", (back, s1))
+    with as_user(pg, a) as conn:  # dismissing is the client's one transition (rolled back by the helper)
+        conn.execute("update public.coach_suggestions set status = 'dismissed' where id = %s", (s2,))
+    pg.execute("update public.coach_suggestions set status = 'dismissed' where id = %s", (s2,))
+    with pytest.raises(psycopg.errors.CheckViolation), as_user(pg, a) as conn:
+        conn.execute("update public.coach_suggestions set status = 'new' where id = %s", (s2,))
+    assert client.post(f"/api/coach/suggestions/{s1}/accept", headers=auth(key, a)).json()["added_items"] == []
+    assert pg.execute(
+        "select count(*) from public.plan_items where user_id = %s and origin = 'assistant'", (a,)
+    ).fetchone() == (1,)

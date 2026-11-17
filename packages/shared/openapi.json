@@ -4235,6 +4235,19 @@
             "minItems": 1,
             "title": "Study Days",
             "type": "array"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The device's IANA time zone; the plan starts on today there",
+            "title": "Timezone"
           }
         },
         "required": [
@@ -4313,6 +4326,11 @@
             "title": "Materials",
             "type": "array"
           },
+          "max_days": {
+            "description": "The furthest exam date offered is today + max_days",
+            "title": "Max Days",
+            "type": "integer"
+          },
           "min_study_days": {
             "title": "Min Study Days",
             "type": "integer"
@@ -4333,6 +4351,7 @@
           "materials",
           "hours",
           "min_study_days",
+          "max_days",
           "today",
           "values",
           "completed_at",
@@ -4867,6 +4886,10 @@
             "title": "Available Days",
             "type": "integer"
           },
+          "max_days": {
+            "title": "Max Days",
+            "type": "integer"
+          },
           "needed_days": {
             "title": "Needed Days",
             "type": "integer"
@@ -4880,6 +4903,7 @@
               {
                 "enum": [
                   "too_few_study_days",
+                  "too_many_days",
                   "exam_date_not_after_start",
                   "no_template"
                 ],
@@ -4905,7 +4929,8 @@
         "required": [
           "ok",
           "available_days",
-          "needed_days"
+          "needed_days",
+          "max_days"
         ],
         "title": "PlanPreview",
         "type": "object"
@@ -5571,6 +5596,11 @@
             "title": "Coverage",
             "type": "integer"
           },
+          "days": {
+            "description": "The look-back window the score is computed over (`coach.readiness_days`)",
+            "title": "Days",
+            "type": "integer"
+          },
           "needed_answered": {
             "title": "Needed Answered",
             "type": "integer"
@@ -5597,7 +5627,8 @@
           "coverage",
           "answered",
           "needed_answered",
-          "needed_coverage"
+          "needed_coverage",
+          "days"
         ],
         "title": "ReadinessOut",
         "type": "object"
@@ -11433,6 +11464,23 @@
               "minItems": 1,
               "title": "Study Days",
               "type": "array"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tz",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Tz"
             }
           }
         ],

@@ -50,11 +50,31 @@ function addDays(iso: string, n: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-function previewText(t: T, p: PlanPreview | undefined, dateOk: boolean): { big: string | null; line: string } {
+function daysBetween(from: string, to: string): number {
+  return Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86_400_000);
+}
+
+/** The device's IANA time zone, sent with the first onboarding so "today" and the plan's dates are the student's. */
+function deviceTimeZone(): string | undefined {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function previewText(
+  t: T,
+  p: PlanPreview | undefined,
+  dateOk: boolean,
+  span: number,
+): { big: string | null; line: string } {
   if (!dateOk) return { big: null, line: t("onboarding.preview_pending") };
   if (!p) return { big: null, line: t("onboarding.preview_loading") };
   if (!p.ok || !p.summary) {
     if (p.problem === "exam_date_not_after_start") return { big: null, line: t("onboarding.preview_past") };
+    if (p.problem === "too_many_days")
+      return { big: null, line: t("onboarding.preview_too_far", { days: String(span), max: String(p.max_days) }) };
     return {
       big: null,
       line: t("onboarding.preview_short", { available: String(p.available_days), needed: String(p.needed_days) }),
@@ -108,7 +128,10 @@ function Form({ state }: { state: OnboardingState }) {
   const save = useSaveOnboarding();
   const diag = useCreateDiagnostic();
   const minDate = addDays(state.today, 1);
+  const maxDate = addDays(state.today, state.max_days);
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(date) && date >= minDate;
+  // Only a first onboarding takes the device's zone; later edits keep the one saved in Settings.
+  const [timezone] = useState(() => (state.completed_at === null ? deviceTimeZone() : undefined));
 
   // Debounced, so dragging the hours slider asks the server once it settles.
   const [input, setInput] = useState<{
@@ -116,16 +139,25 @@ function Form({ state }: { state: OnboardingState }) {
     exam_date: string;
     daily_hours: number;
     study_days: number[];
+    tz?: string;
   } | null>(null);
   useEffect(() => {
     const id = window.setTimeout(
-      () => setInput(dateOk && days.length ? { exam, exam_date: date, daily_hours: hours, study_days: days } : null),
+      () =>
+        setInput(
+          dateOk && days.length ? { exam, exam_date: date, daily_hours: hours, study_days: days, tz: timezone } : null,
+        ),
       200,
     );
     return () => window.clearTimeout(id);
-  }, [exam, date, hours, days, dateOk]);
+  }, [exam, date, hours, days, dateOk, timezone]);
   const preview = usePlanPreview(input);
-  const text = previewText(t, input ? preview.data : undefined, dateOk && days.length > 0);
+  const text = previewText(
+    t,
+    input ? preview.data : undefined,
+    dateOk && days.length > 0,
+    dateOk ? daysBetween(state.today, date) : 0,
+  );
   const ready = dateOk && days.length > 0 && preview.data?.ok === true && !preview.isPlaceholderData;
   const done = {
     goal: dateOk,
@@ -154,6 +186,7 @@ function Form({ state }: { state: OnboardingState }) {
         daily_hours: hours,
         study_days: days,
         materials,
+        ...(timezone ? { timezone } : {}),
       },
       {
         onSuccess: () => {
@@ -173,11 +206,14 @@ function Form({ state }: { state: OnboardingState }) {
     );
   };
 
-  const saveError = save.error
-    ? errorCode(save.error) === "too_few_study_days"
+  const saveCode = save.error ? errorCode(save.error) : null;
+  const saveError = !save.error
+    ? null
+    : saveCode === "too_few_study_days"
       ? t("onboarding.save_too_short")
-      : t("onboarding.save_failed")
-    : null;
+      : saveCode === "too_many_days"
+        ? t("onboarding.save_too_far", { max: String(state.max_days) })
+        : t("onboarding.save_failed");
   const busy = stage !== "idle";
 
   return (
@@ -218,10 +254,11 @@ function Form({ state }: { state: OnboardingState }) {
                 type="date"
                 required
                 min={minDate}
+                max={maxDate}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 className={FIELD}
-                aria-invalid={date !== "" && !dateOk ? true : undefined}
+                aria-invalid={date !== "" && (!dateOk || date > maxDate) ? true : undefined}
               />
             </label>
             <label className="flex flex-col gap-2 text-ui text-text-2">

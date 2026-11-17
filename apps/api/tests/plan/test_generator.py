@@ -99,7 +99,7 @@ def test_every_length_with_all_seven_days(n: int) -> None:
 def test_every_weekday_set_across_lengths() -> None:
     sets = [frozenset(c) for k in range(1, 8) for c in itertools.combinations(range(1, 8), k)]
     assert len(sets) == 127
-    for w, span in itertools.product(sets, (24, 45, 70, 100, 150, 260)):
+    for w, span in itertools.product(sets, (24, 45, 70, 100, 150, 180)):
         _check(_inputs(span, w))
 
 
@@ -140,3 +140,22 @@ def test_exam_date_must_follow_start() -> None:
     with pytest.raises(PlanError) as e:
         generate(template(), _inputs(0, frozenset(range(1, 8))))
     assert e.value.code == "exam_date_not_after_start"
+
+
+def test_exam_more_than_max_days_away_is_refused_before_any_work() -> None:
+    at_limit = _inputs(180, frozenset(range(1, 8)))
+    assert len(generate(template(), at_limit)) == 180
+    with pytest.raises(PlanError) as e:
+        generate(template(), _inputs(181, frozenset(range(1, 8))))
+    assert e.value.code == "too_many_days"
+    assert e.value.facts == {"days": 181, "allowed": 180}
+    far = replace(REFERENCE, exam_date=dt.date(2999, 12, 31))
+    with pytest.raises(PlanError, match="too_many_days"):
+        generate(template(), far)
+
+
+@pytest.mark.parametrize(("daily", "rest"), [(10, 2), (2, 2), (1, 1)])
+def test_rest_day_never_exceeds_daily_hours(daily: float, rest: float) -> None:
+    days = generate(template(), replace(REFERENCE, daily_hours=daily))
+    assert days[-1].topic and days[-1].topic.startswith("REST")
+    assert days[-1].target_hours == rest

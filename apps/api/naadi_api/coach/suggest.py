@@ -23,7 +23,28 @@ KINDS: tuple[Kind, ...] = ("catch_up_block", "review_misses", "cards_catchup", "
 MIN_MISSES = 5
 MIN_CARDS_DUE = 20
 LOW_RETENTION = 80
-_NUMBER = re.compile(r"(?<![\w.])\d+(?:[.,]\d+)?")
+# Every way a number can be written in the model's text. Digits count anywhere ("Q99", "a20" too); number words
+# and multiplicatives ("twelve", "triple", "a dozen") and multi-letter roman numerals ("XL", "III") count as their
+# value. A suggestion whose text holds any number that is not in its facts is dropped.
+_DIGITS = re.compile(r"\d+(?:[.,]\d+)?")
+_WORD = re.compile(r"[A-Za-z]+")
+_ROMAN = re.compile(r"\b[IVXL]{2,}\b")
+_UNITS = (
+    "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+    "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
+)  # fmt: skip
+_TENS = ("thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety")
+NUMBER_WORDS: dict[str, float] = {
+    **{w: float(i) for i, w in enumerate(_UNITS)},
+    **{w: float(10 * i) for i, w in enumerate(_TENS, start=3)},
+    "hundred": 100, "hundreds": 100, "thousand": 1000, "thousands": 1000, "million": 1e6, "millions": 1e6,
+    "half": 0.5, "halves": 0.5, "quarter": 0.25, "quarters": 0.25,
+    "double": 2, "doubled": 2, "twice": 2, "triple": 3, "tripled": 3, "thrice": 3, "treble": 3,
+    "quadruple": 4, "dozen": 12, "dozens": 12, "score": 20,
+    "third": 3, "fourth": 4, "fifth": 5, "sixth": 6, "seventh": 7, "eighth": 8, "ninth": 9, "tenth": 10,
+    "eleventh": 11, "twelfth": 12, "thirteenth": 13, "fourteenth": 14, "fifteenth": 15, "twentieth": 20,
+}  # fmt: skip
+_ROMAN_VALUES = {"I": 1, "V": 5, "X": 10, "L": 50}
 
 
 @dataclass(frozen=True, slots=True)
@@ -143,7 +164,7 @@ def _numbers_in(value: Any) -> set[str]:
     if isinstance(value, int | float):
         found.add(_norm(str(value)))
     elif isinstance(value, str):
-        found |= {_norm(m) for m in _NUMBER.findall(value)}
+        found |= set(numbers_in_text(value))
     elif isinstance(value, Mapping):
         for v in value.values():
             found |= _numbers_in(v)
@@ -160,10 +181,41 @@ def _norm(n: str) -> str:
     return n
 
 
+def _roman(token: str) -> int | None:
+    total, prev = 0, 0
+    for ch in reversed(token):
+        v = _ROMAN_VALUES[ch]
+        total += -v if v < prev else v
+        prev = max(prev, v)
+    # Only canonical spellings (XL, XIV, III), so an ordinary capitalised word is never read as a number.
+    return total if _to_roman(total) == token else None
+
+
+def _to_roman(n: int) -> str:
+    out = ""
+    for v, sym in ((50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")):
+        while n >= v:
+            out += sym
+            n -= v
+    return out
+
+
+def numbers_in_text(text: str) -> list[str]:
+    """Every number written in `text`, normalised: digits anywhere, number words, multi-letter roman numerals."""
+    found = [_norm(m) for m in _DIGITS.findall(text)]
+    found += [_norm(str(NUMBER_WORDS[w.lower()])) for w in _WORD.findall(text) if w.lower() in NUMBER_WORDS]
+    for tok in _ROMAN.findall(text):
+        value = _roman(tok)
+        if value is not None:
+            found.append(str(value))
+    return found
+
+
 def numbers_ok(text: str, facts: Mapping[str, Any]) -> bool:
-    """Every number written in `text` appears in `facts` (values or numbers inside fact strings)."""
+    """Every number written in `text` (digits, words or roman numerals) appears in `facts` (values or numbers
+    inside fact strings)."""
     allowed = _numbers_in(facts)
-    return all(_norm(m) in allowed for m in _NUMBER.findall(text))
+    return all(n in allowed for n in numbers_in_text(text))
 
 
 class _LlmSuggestion(BaseModel):

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cx } from "../cx";
 
-export type ChipTone = "now" | "done" | "planned" | "weak" | "meta" | "warning" | "critical" | "assistant";
+export type ChipTone = "now" | "current" | "done" | "planned" | "weak" | "meta" | "warning" | "critical" | "assistant";
 
 export interface ChipProps {
   /** The word is mandatory: status never relies on colour alone. */
@@ -15,6 +15,8 @@ export interface ChipProps {
 
 const TONES: Record<ChipTone, string> = {
   now: "bg-lime text-lime-ink font-semibold",
+  /** Neutral outline for "this one is current" where the view's single lime is already the next action. */
+  current: "border border-text text-text font-semibold",
   done: "bg-surface-2 text-text",
   planned: "border border-dashed border-line-dashed text-text-2",
   weak: "border border-amber text-amber",

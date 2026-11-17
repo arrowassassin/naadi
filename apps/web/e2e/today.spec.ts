@@ -58,13 +58,19 @@ async function fresh(browser: Browser, baseURL: string, info: TestInfo, kind: st
 
 /** Background colour of every visible button/link that is lime (the next-action colour). */
 async function limeCount(page: Page): Promise<number> {
-  return page.evaluate(() => {
+  const found = await page.evaluate(() => {
     const lime = "rgb(198, 255, 61)";
-    return Array.from(document.querySelectorAll<HTMLElement>("a, button")).filter((el) => {
-      const r = el.getBoundingClientRect();
-      return r.width > 0 && r.height > 0 && getComputedStyle(el).backgroundColor === lime;
-    }).length;
+    // Every visible element, not only controls: a lime chip, badge or bar would compete with the one next action.
+    // The brand mark (the logo's lime disc) is identity, not an action or a status.
+    return Array.from(document.querySelectorAll<HTMLElement>("body *:not([data-brand-mark])"))
+      .filter((el) => {
+        const r = el.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && getComputedStyle(el).backgroundColor === lime;
+      })
+      .map((el) => `${el.tagName.toLowerCase()} "${(el.textContent ?? "").trim().slice(0, 40)}"`);
   });
+  if (found.length !== 1) console.log(`lime elements: ${found.join(" | ")}`);
+  return found.length;
 }
 
 /**
@@ -221,6 +227,15 @@ test.describe("onboarding", () => {
       await expect(preview(page)).toContainText("A plan needs at least 21");
       await expect(page.getByRole("button", { name: "Take the diagnostic" })).toBeDisabled();
       await expect(page.getByRole("button", { name: "Later" })).toBeDisabled();
+      // The picker stops at plan.max_study_days (180) from today; a typed date past it is explained, not planned.
+      const max = (await date.getAttribute("max")) as string;
+      expect(max).toBe(addDays(min, 179));
+      await date.fill(addDays(max, 1));
+      await expect(preview(page)).toContainText("A plan covers up to 180 days");
+      await expect(date).toHaveAttribute("aria-invalid", "true");
+      await expect(page.getByRole("button", { name: "Later" })).toBeDisabled();
+      await date.fill(addDays(min, 29));
+      await expect(preview(page)).toContainText("A plan needs at least 21");
       await settle(page);
       await expectNoAxeViolations(page);
       await snap(page, info, guard, "welcome-too-short", true);

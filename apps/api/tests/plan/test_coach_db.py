@@ -31,9 +31,11 @@ class FakeGateway:
     def __init__(self, reply: Any) -> None:
         self.reply = reply
         self.calls: list[Any] = []
+        self.runs: dict[Any, Any] = {}
 
     async def ainvoke(self, role: str, messages: Any, ctx: Any, **_: Any) -> Any:
         self.calls.append((role, ctx.user_id, messages[-1].content))
+        self.runs[ctx.user_id] = ctx.run_id
         if isinstance(self.reply, Exception):
             raise self.reply
         return self.reply
@@ -115,3 +117,95 @@ async def test_disabled_coach_writes_nothing(url: str) -> None:
     finally:
         await db.close()
     assert stats.students == 0 and stats.reasons == {"disabled": 1}
+
+
+def _local_today(pg: psycopg.Connection[Any], uid: uuid.UUID) -> dt.date:
+    from zoneinfo import ZoneInfo
+
+    row = pg.execute("select coalesce(timezone, 'UTC') from public.profiles where user_id = %s", (uid,)).fetchone()
+    assert row is not None
+    return dt.datetime.now(dt.UTC).astimezone(ZoneInfo(row[0])).date()
+
+
+async def _pass(url: str, gw: Any, rules: CoachRules = RULES) -> Any:
+    db = Database(SecretStr(url), max_size=2)
+    try:
+        return await coach_pass(db, gw, rules)
+    finally:
+        await db.close()
+
+
+async def test_one_model_attempt_per_student_per_night_across_runs(
+    url: str,
+    client: TestClient,
+    key: SigningKey,
+    users: tuple[uuid.UUID, uuid.UUID],
+    pg: psycopg.Connection[Any],
+    practice: dict[str, Any],
+) -> None:
+    a, _ = users
+    assert onboard(client, key, a).status_code == 200
+    run_id = f"coach:{_local_today(pg, a).isoformat()}"
+    reply = AIMessage(
+        content=json.dumps({"suggestions": [{"kind": "catch_up_block", "title": "Catch up", "body": "Try 20 more."}]})
+    )
+    first = FakeGateway(reply)
+    await _pass(url, first, RULES)
+    mine = [c for c in first.calls if c[1] == a]
+    assert len(mine) == 1 and first.runs[a] == run_id  # every call tonight carries the night's attempt key
+    # The real gateway reserves an llm_usage row per attempt before the request; the fake does not, so add it.
+    pg.execute(
+        "insert into public.llm_usage (user_id, provider, purpose, role, run_id) values (%s, 'openrouter', 'job',"
+        " 'structured', %s)",
+        (a, run_id),
+    )
+    before = pg.execute(
+        "select id, source, title from public.coach_suggestions where user_id = %s order by id", (a,)
+    ).fetchall()
+    assert [r[1] for r in before] == ["llm"]
+    # A second run the same night: no model call, tonight's worded rows stand untouched.
+    second = FakeGateway(reply)
+    stats = await _pass(url, second, RULES)
+    assert [c for c in second.calls if c[1] == a] == []
+    assert stats.reasons.get("already_coached", 0) >= 1
+    assert (
+        pg.execute(
+            "select id, source, title from public.coach_suggestions where user_id = %s order by id", (a,)
+        ).fetchall()
+        == before
+    )
+    # Tried tonight but nothing usable came back (no llm rows): the next run uses rules, still without a call.
+    pg.execute("delete from public.coach_suggestions where user_id = %s", (a,))
+    third = FakeGateway(reply)
+    stats = await _pass(url, third, RULES)
+    assert [c for c in third.calls if c[1] == a] == []
+    assert stats.reasons.get("llm_already_tried", 0) >= 1
+    assert {r[1] for r in _rows(pg, a)} == {"rules"}
+    pg.execute("delete from public.llm_usage where user_id = %s", (a,))
+
+
+async def test_the_least_recently_coached_student_goes_first(
+    url: str, client: TestClient, key: SigningKey, users: tuple[uuid.UUID, uuid.UUID], pg: psycopg.Connection[Any]
+) -> None:
+    a, b = users
+    assert onboard(client, key, a).status_code == 200
+    assert onboard(client, key, b).status_code == 200
+    # Everyone else (other tests' students) was coached just now; A an hour ago; B never.
+    pg.execute("update public.study_plans set last_coached_at = now() where active and user_id <> all(%s)", ([a, b],))
+    pg.execute("update public.study_plans set last_coached_at = now() - interval '1 hour' where user_id = %s", (a,))
+    one = RULES.model_copy(update={"max_users_per_run": 1})
+
+    def coached() -> dict[uuid.UUID, Any]:
+        return dict(
+            pg.execute(
+                "select user_id, last_coached_at from public.study_plans where active and user_id = any(%s)", ([a, b],)
+            ).fetchall()
+        )
+
+    start = coached()
+    assert start[b] is None
+    await _pass(url, None, one)
+    after = coached()
+    assert after[b] is not None and after[a] == start[a]  # B, never coached, went first; A waited
+    await _pass(url, None, one)
+    assert coached()[a] > start[a]  # then A, now the least recently coached

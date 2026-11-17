@@ -14,7 +14,9 @@ Rules (docs/segments/11-onboarding-today-coach.md):
   chapters. Day 1 (the baseline), assessment days (`self_assessment` set) and the rest day are never dropped or
   merged, and the order of what remains never changes.
 - Week = (date − start) // 7 + 1, weekday from the date, target hours = template × daily_hours / reference_hours
-  rounded to 0.5 with a minimum of 1 (the rest day keeps its own value).
+  rounded to 0.5 with a minimum of 1 (the rest day keeps its own value, capped at daily_hours).
+- An exam more than `max_days` calendar days away is refused (`too_many_days`) before any date is generated, so
+  the work is bounded whatever date a client sends.
 """
 
 from __future__ import annotations
@@ -92,6 +94,7 @@ class PlanInputs:
     daily_hours: float
     reference_hours: float = 10.0
     min_study_days: int = 21
+    max_days: int = 180  # calendar days from start to the exam; checked before any date is generated
 
 
 @dataclass(frozen=True, slots=True)
@@ -159,6 +162,13 @@ def scaled_hours(template_hours: float | None, inputs: PlanInputs) -> float | No
     raw = Decimal(str(template_hours)) * Decimal(str(inputs.daily_hours)) / Decimal(str(inputs.reference_hours))
     halves = (raw * 2).quantize(Decimal(1), rounding=ROUND_HALF_UP)
     return max(1.0, float(halves / 2))
+
+
+def rest_hours(template_hours: float | None, inputs: PlanInputs) -> float | None:
+    """The rest day keeps its own (light) hours, but never more than the student's daily hours."""
+    if template_hours is None:
+        return None
+    return min(template_hours, float(inputs.daily_hours))
 
 
 def _evenly(candidates: Sequence[int], k: int) -> list[int]:
@@ -259,6 +269,9 @@ def generate(template: Sequence[TemplateDay], inputs: PlanInputs) -> list[PlanDa
         raise PlanError("no_study_days")
     if inputs.exam_date <= inputs.start:
         raise PlanError("exam_date_not_after_start")
+    span = (inputs.exam_date - inputs.start).days
+    if span > inputs.max_days:
+        raise PlanError("too_many_days", days=span, allowed=inputs.max_days)
     dates = available_dates(inputs)
     if len(dates) < inputs.min_study_days:
         raise PlanError("too_few_study_days", available=len(dates), needed=inputs.min_study_days)
@@ -286,7 +299,7 @@ def generate(template: Sequence[TemplateDay], inputs: PlanInputs) -> list[PlanDa
                 self_assessment=t.self_assessment,
                 admin_task=t.admin_task,
                 extra_resource=t.extra_resource,
-                target_hours=t.target_hours if is_rest else scaled_hours(t.target_hours, inputs),
+                target_hours=rest_hours(t.target_hours, inputs) if is_rest else scaled_hours(t.target_hours, inputs),
                 template_day=slot.days[0],
                 merged_days=tuple(slot.days),
                 extra=slot.extra,

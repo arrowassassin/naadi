@@ -50,6 +50,7 @@ class OnboardingState(BaseModel):
     materials: list[Material]
     hours: HoursRange
     min_study_days: int
+    max_days: int = Field(description="The furthest exam date offered is today + max_days")
     today: dt.date = Field(description="Today in the student's time zone (the plan starts here)")
     values: OnboardingValues = Field(description="Saved answers, or the defaults for a new student")
     completed_at: dt.datetime | None
@@ -65,6 +66,18 @@ class OnboardingIn(BaseModel):
     daily_hours: float = Field(ge=1, le=24)
     study_days: list[int] = Field(min_length=1, max_length=7)
     materials: list[Material] = Field(default_factory=list, max_length=len(MATERIALS))
+    timezone: str | None = Field(
+        default=None, max_length=64, description="The device's IANA time zone; the plan starts on today there"
+    )
+
+    @field_validator("timezone")
+    @classmethod
+    def _tz(cls, v: str | None) -> str | None:
+        if v is None:
+            return None
+        from ..auth_routes import _valid_timezone
+
+        return _valid_timezone(v)
 
     @field_validator("study_days")
     @classmethod
@@ -100,9 +113,10 @@ class PlanSummaryOut(BaseModel):
 
 class PlanPreview(BaseModel):
     ok: bool
-    problem: Literal["too_few_study_days", "exam_date_not_after_start", "no_template"] | None = None
+    problem: Literal["too_few_study_days", "too_many_days", "exam_date_not_after_start", "no_template"] | None = None
     available_days: int = Field(description="Dates from today to the day before the exam on a study weekday")
     needed_days: int
+    max_days: int
     summary: PlanSummaryOut | None = None
 
 
@@ -196,6 +210,7 @@ class ReadinessOut(BaseModel):
     answered: int
     needed_answered: int
     needed_coverage: int
+    days: int = Field(description="The look-back window the score is computed over (`coach.readiness_days`)")
 
 
 class SystemOut(BaseModel):

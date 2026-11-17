@@ -152,6 +152,9 @@ class PlanItemMinutes(_Strict):
 class PlanRules(_Strict):
     reference_hours: float = Field(gt=0, le=24, description="The template's daily maximum: hours scale by H / this")
     min_study_days: int = Field(ge=1, le=366)
+    max_study_days: int = Field(
+        180, ge=21, le=366, description="Furthest exam date offered: calendar days from today (bounds every plan)"
+    )
     max_daily_hours: float = Field(14, gt=0, le=24)
     templates: dict[Literal["step1", "step2ck", "step3"], str] = Field(
         description="Plan template id per exam; an exam without one is not offered in onboarding"
@@ -603,6 +606,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "onboarding.preview_loading",
         "onboarding.preview_past",
         "onboarding.preview_short",
+        "onboarding.preview_too_far",
         "onboarding.preview_unit",
         "onboarding.preview_unit_one",
         "onboarding.preview_detail",
@@ -622,6 +626,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "onboarding.starting_diagnostic",
         "onboarding.save_failed",
         "onboarding.save_too_short",
+        "onboarding.save_too_far",
         "onboarding.diagnostic_failed",
         "shell.nav_main",
         "shell.nav_tabs",

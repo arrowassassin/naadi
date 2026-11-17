@@ -200,7 +200,8 @@ function statusChip(t: T, item: PlanItemOut, isNow: boolean) {
       </Chip>
     );
   if (item.status === "skipped") return <Chip tone="planned">{t("today.item_skipped")}</Chip>;
-  if (isNow) return <Chip tone="now">{t("today.item_now")}</Chip>;
+  // Outlined, not lime: the view's one lime is the primary action button (CLAUDE.md colour roles).
+  if (isNow) return <Chip tone="current">{t("today.item_now")}</Chip>;
   return <Chip tone="planned">{t("today.item_planned")}</Chip>;
 }
 
@@ -340,7 +341,7 @@ function Readiness({ r }: { r: ReadinessOut }) {
             <Ring score={r.score} />
           </div>
           <p className="m-0 min-w-0 flex-1 basis-48 text-text-2">
-            {t("today.readiness_caption", { coverage: String(r.coverage) })}
+            {t("today.readiness_caption", { coverage: String(r.coverage), days: String(r.days) })}
           </p>
         </div>
       ) : (

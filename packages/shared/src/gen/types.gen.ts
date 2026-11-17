@@ -2493,6 +2493,12 @@ export type OnboardingIn = {
    * Study Days
    */
   study_days: Array<number>;
+  /**
+   * Timezone
+   *
+   * The device's IANA time zone; the plan starts on today there
+   */
+  timezone?: string | null;
 };
 
 /**
@@ -2530,6 +2536,12 @@ export type OnboardingState = {
    * Materials
    */
   materials: Array<"qbank" | "review_book" | "anki" | "video_course" | "own_pdfs" | "nothing">;
+  /**
+   * Max Days
+   *
+   * The furthest exam date offered is today + max_days
+   */
+  max_days: number;
   /**
    * Min Study Days
    */
@@ -2822,6 +2834,10 @@ export type PlanPreview = {
    */
   available_days: number;
   /**
+   * Max Days
+   */
+  max_days: number;
+  /**
    * Needed Days
    */
   needed_days: number;
@@ -2832,7 +2848,7 @@ export type PlanPreview = {
   /**
    * Problem
    */
-  problem?: "too_few_study_days" | "exam_date_not_after_start" | "no_template" | null;
+  problem?: "too_few_study_days" | "too_many_days" | "exam_date_not_after_start" | "no_template" | null;
   summary?: PlanSummaryOut | null;
 };
 
@@ -3245,6 +3261,12 @@ export type ReadinessOut = {
    * Coverage
    */
   coverage: number;
+  /**
+   * Days
+   *
+   * The look-back window the score is computed over (`coach.readiness_days`)
+   */
+  days: number;
   /**
    * Needed Answered
    */
@@ -6503,6 +6525,10 @@ export type PreviewPlanData = {
      * Study Days
      */
     study_days: Array<number>;
+    /**
+     * Tz
+     */
+    tz?: string | null;
   };
   url: "/api/plan/preview";
 };

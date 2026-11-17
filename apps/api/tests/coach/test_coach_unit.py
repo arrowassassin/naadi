@@ -163,3 +163,53 @@ async def test_unavailable_model_or_all_dropped_fall_back_to_rules() -> None:
 def test_rules_wording_has_no_text_only_facts() -> None:
     out = rules(offered(), limit=3)
     assert all(w.title is None and w.body is None and w.facts for w in out)
+
+
+MISSES = {"misses": 9, "days": 7, "questions": 9}
+
+
+@pytest.mark.parametrize(
+    ("text", "ok"),
+    [
+        ("You missed twelve questions this week, triple last week.", False),  # the review's repro
+        ("a hundred cards — double yesterday", False),
+        ("Do Q99 and a20 block", False),  # digits after a letter count too
+        ("Try block XL tonight.", False),  # roman numerals
+        ("Half of them were renal.", False),
+        ("A dozen more tomorrow.", False),
+        ("Twenty-five questions.", False),
+        ("Redo nine of them over seven days.", True),  # words whose value is in the facts are fine
+        ("You missed 9 questions in the last 7 days.", True),
+        ("Review your misses while they are fresh.", True),
+        ("Read the IV fluids table.", False),  # IV = 4, not in facts: strict by design
+    ],
+)
+def test_number_words_digits_and_roman_numerals_must_come_from_facts(text: str, ok: bool) -> None:
+    assert numbers_ok(text, MISSES) is ok
+
+
+async def test_a_spelled_out_invented_number_is_dropped_and_rules_used() -> None:
+    gw = FakeGateway(
+        _reply([{"kind": "review_misses", "title": "Misses", "body": "You missed twelve questions, triple last week."}])
+    )
+    stats = PassStats()
+    out = await word(gw, offered(), user_id=UID, run_id=None, limit=3, stats=stats)
+    assert [w.source for w in out] == ["rules"] * 3 and stats.dropped == 1
+
+
+@pytest.mark.parametrize("reason", ["rate_limited", "turn_limit"])
+async def test_a_rate_limit_gives_rules_to_this_student_only(reason: str) -> None:
+    """Only the spent daily cap stops the pass using the model. A rate limit (after the gateway's bounded wait) or
+    a turn cap words this one student's suggestions from rules; the next student still gets a model call."""
+    reset = dt.datetime(2026, 11, 17, tzinfo=dt.UTC)
+    gw = FakeGateway(
+        BudgetExhausted(reason, reset, purpose="job"),
+        _reply([{"kind": "cards_catchup", "title": "Cards", "body": "62 cards are due."}]),
+    )
+    stats = PassStats()
+    first = await word(gw, offered(), user_id=UID, run_id="coach:2026-11-17", limit=3, stats=stats)
+    assert [w.source for w in first] == ["rules"] * 3
+    assert stats.budget_spent is False and stats.reasons == {f"budget_{reason}": 1}
+    second = await word(gw, offered(), user_id=uuid.UUID(int=2), run_id="coach:2026-11-17", limit=3, stats=stats)
+    assert len(gw.calls) == 2 and [w.source for w in second] == ["llm"]
+    assert gw.calls[1][1].run_id == "coach:2026-11-17"

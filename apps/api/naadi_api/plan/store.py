@@ -132,29 +132,32 @@ async def write_plan(
 
 async def save_profile(
     conn: psycopg.AsyncConnection[Any],
+    user_id: uuid.UUID,
     *,
     exam: str,
     exam_date: dt.date,
     daily_hours: float,
     study_days: Sequence[int],
     onboarding: dict[str, Any],
+    timezone: str | None = None,
 ) -> Row:
-    """As the student (RLS): the profile's plan inputs and `settings.onboarding` (merged one level deep)."""
-    await conn.execute(
-        "insert into public.profiles (user_id) values ((select auth.uid())) on conflict (user_id) do nothing"
-    )
+    """The profile's plan inputs, its time zone (when given) and `settings.onboarding` (merged one level deep).
+    Works as the student (RLS: user_id is auth.uid()) or inside the API's own transaction with the plan."""
+    await conn.execute("insert into public.profiles (user_id) values (%s) on conflict (user_id) do nothing", (user_id,))
     out = await rows(
         conn,
         "update public.profiles set exam_target = %(exam)s, exam_date = %(date)s, daily_hours = %(hours)s,"
-        " study_days = %(days)s::smallint[],"
+        " study_days = %(days)s::smallint[], timezone = coalesce(%(tz)s, timezone),"
         " settings = settings || jsonb_build_object('onboarding',"
         "   coalesce(settings->'onboarding', '{}'::jsonb) || %(onb)s::jsonb)"
-        " where user_id = (select auth.uid()) returning settings",
+        " where user_id = %(uid)s returning settings",
         {
+            "uid": user_id,
             "exam": exam,
             "date": exam_date,
             "hours": daily_hours,
             "days": list(study_days),
+            "tz": timezone,
             "onb": json.dumps(onboarding, separators=(",", ":")),
         },
     )

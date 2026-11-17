@@ -72,6 +72,8 @@ export interface PreviewInput {
   exam_date: string;
   daily_hours: number;
   study_days: number[];
+  /** The device zone on a first onboarding, so the preview counts from the student's own today. */
+  tz?: string;
 }
 
 export function usePlanPreview(input: PreviewInput | null) {
@@ -87,7 +89,13 @@ export function usePlanPreview(input: PreviewInput | null) {
         previewPlan({
           signal,
           headers,
-          query: { exam: q.exam, exam_date: q.exam_date, daily_hours: q.daily_hours, study_days: q.study_days },
+          query: {
+            exam: q.exam,
+            exam_date: q.exam_date,
+            daily_hours: q.daily_hours,
+            study_days: q.study_days,
+            ...(q.tz ? { tz: q.tz } : {}),
+          },
         }),
       );
     },

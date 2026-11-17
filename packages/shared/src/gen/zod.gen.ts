@@ -809,6 +809,7 @@ export const zOnboardingIn = z.object({
     .optional(),
   medical_school: z.string().max(120).nullish(),
   study_days: z.array(z.int()).min(1).max(7),
+  timezone: z.string().max(64).nullish(),
 });
 
 /**
@@ -940,9 +941,10 @@ export const zPlanOut = z.object({
  */
 export const zPlanPreview = z.object({
   available_days: z.int(),
+  max_days: z.int(),
   needed_days: z.int(),
   ok: z.boolean(),
-  problem: z.enum(["too_few_study_days", "exam_date_not_after_start", "no_template"]).nullish(),
+  problem: z.enum(["too_few_study_days", "too_many_days", "exam_date_not_after_start", "no_template"]).nullish(),
   summary: zPlanSummaryOut.nullish(),
 });
 
@@ -1146,6 +1148,7 @@ export const zHealthResponse = z.object({
 export const zReadinessOut = z.object({
   answered: z.int(),
   coverage: z.int(),
+  days: z.int(),
   needed_answered: z.int(),
   needed_coverage: z.int(),
   score: z.int().nullable(),
@@ -1769,6 +1772,7 @@ export const zOnboardingState = z.object({
   exams: z.array(zNaadiApiPlanModelsExamOption),
   hours: zHoursRange,
   materials: z.array(z.enum(["qbank", "review_book", "anki", "video_course", "own_pdfs", "nothing"])),
+  max_days: z.int(),
   min_study_days: z.int(),
   today: z.iso.date(),
   values: zOnboardingValues,
@@ -2174,6 +2178,7 @@ export const zPreviewPlanQuery = z.object({
   exam_date: z.iso.date(),
   daily_hours: z.number().gte(1).lte(24),
   study_days: z.array(z.int()).min(1).max(7),
+  tz: z.string().max(64).nullish(),
 });
 
 /**

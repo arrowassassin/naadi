@@ -118,6 +118,7 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         "naadi_app_config_notify",
         "naadi_mark_section_edited",
         "naadi_secure_aegra_tables",
+        "naadi_coach_status_guard",  # 0014: trigger function (fires for clients without EXECUTE)
     }
     for name, config, anon_exec, auth_exec in rows:
         assert config == ['search_path=""'], name

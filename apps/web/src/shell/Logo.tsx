@@ -5,6 +5,7 @@ export function LogoMark({ size = 28 }: { size?: number }) {
   return (
     <span
       aria-hidden="true"
+      data-brand-mark=""
       className="flex shrink-0 items-center justify-center rounded-pill bg-lime"
       style={{ width: size, height: size }}
     >

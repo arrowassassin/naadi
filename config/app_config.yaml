@@ -67,11 +67,13 @@ exam_rules:
       assistant: false             # the assistant is silent in exam mode (CLAUDE.md)
 
 # Study-plan generator (S11, naadi_api/plan/generator.py). Hours scale by daily_hours / reference_hours (the
-# template's daily maximum); fewer than min_study_days available dates is refused. Exams without a template are
+# template's daily maximum); fewer than min_study_days available dates, or an exam more than max_study_days away,
+# is refused. Exams without a template are
 # not offered in onboarding. item_minutes sizes a day's items (durations only, never clock times).
 plan:
   reference_hours: 10
   min_study_days: 21
+  max_study_days: 180   # an exam further away than this is refused (422 too_many_days); the date picker stops here
   max_daily_hours: 14
   templates: {step1: step1-60d}
   item_minutes: {cards: 30, admin: 30, extra: 30, questions_untimed: 60, seconds_per_question: 90, review_factor: 1.0, min_read: 30}
@@ -527,7 +529,7 @@ ui_copy:
   today.added_reread: "Re-read: {title}"
   today.readiness_label: "Readiness"
   today.readiness_aria: "Readiness {score} percent"
-  today.readiness_caption: "Blueprint-weighted share correct on first attempts in the last 60 days. Covers {coverage}% of the exam's weight."
+  today.readiness_caption: "Blueprint-weighted share correct on first attempts in the last {days} days. Covers {coverage}% of the exam's weight."
   today.readiness_pending: "Readiness shows after {needed} first answers that cover {needed_coverage}% of the exam's weight. So far: {answered} answers, {coverage}%."
   today.systems_label: "By system"
   today.systems_caption: "% correct, last {days} days"
@@ -592,7 +594,7 @@ ui_copy:
   onboarding.day_5: "Fri"
   onboarding.day_6: "Sat"
   onboarding.day_7: "Sun"
-  onboarding.materials_legend: "What you already use — Naadi will plan around it"
+  onboarding.materials_legend: "What you already use"
   onboarding.material_qbank: "A question bank"
   onboarding.material_review_book: "A review book"
   onboarding.material_anki: "Anki decks"
@@ -603,6 +605,7 @@ ui_copy:
   onboarding.preview_pending: "Pick an exam date to see your plan."
   onboarding.preview_loading: "Working out your plan…"
   onboarding.preview_past: "Choose an exam date after today."
+  onboarding.preview_too_far: "That is {days} days away. A plan covers up to {max} days: choose an earlier exam date."
   onboarding.preview_short: "That leaves {available} study days. A plan needs at least {needed}: choose a later date or more study days."
   onboarding.preview_unit: "weeks, {days} a week."
   onboarding.preview_unit_one: "week, {days} a week."
@@ -614,7 +617,7 @@ ui_copy:
   onboarding.per_week_5: "five days"
   onboarding.per_week_6: "six days"
   onboarding.per_week_7: "seven days"
-  onboarding.next_diagnostic: "Next: a {n}-question diagnostic so the plan starts from what you already know, not from page one."
+  onboarding.next_diagnostic: "Next: a {n}-question diagnostic that shows where you stand in each system."
   onboarding.next_plan: "Your plan starts today, {date}."
   onboarding.cta_diagnostic: "Take the diagnostic"
   onboarding.cta_later: "Later"
@@ -623,6 +626,7 @@ ui_copy:
   onboarding.starting_diagnostic: "Starting the diagnostic…"
   onboarding.save_failed: "Your plan could not be saved. Try again."
   onboarding.save_too_short: "These dates leave too few study days for a plan. Choose a later date or more study days."
+  onboarding.save_too_far: "That exam date is further away than a plan can cover ({max} days). Choose an earlier date."
   onboarding.diagnostic_failed: "The diagnostic could not be started. Your plan is saved; start it later from Today."
   shell.nav_main: "Main"
   shell.nav_tabs: "Tabs"

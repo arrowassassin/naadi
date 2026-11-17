@@ -28,6 +28,7 @@ from starlette.exceptions import HTTPException
 from ..analytics.student import by_system, cards_due, load_cells, load_weights, readiness
 from ..auth import CurrentUser, get_account_user
 from ..auth_limits import RateLimiter
+from ..auth_routes import _valid_timezone
 from ..config_api.schemas import CoachRules, PlanRules
 from ..config_api.service import AppConfigService
 from ..db import Database
@@ -151,6 +152,7 @@ def _inputs(body_exam_date: dt.date, days: list[int], hours: float, start: dt.da
         daily_hours=hours,
         reference_hours=plan.reference_hours,
         min_study_days=plan.min_study_days,
+        max_days=plan.max_study_days,
     )
 
 
@@ -227,6 +229,7 @@ async def get_onboarding(request: Request, user: Annotated[CurrentUser, limited(
         materials=list(MATERIALS),
         hours=HoursRange(min=1, max=plan.max_daily_hours, step=0.5, default=hours),
         min_study_days=plan.min_study_days,
+        max_days=plan.max_study_days,
         today=local_today(prof["timezone"]),
         values=OnboardingValues(
             exam=exam,
@@ -247,9 +250,14 @@ async def get_onboarding(request: Request, user: Annotated[CurrentUser, limited(
 
 def _plan_problem(exc: PlanError) -> JSONResponse:
     facts = {k: str(v) for k, v in exc.facts.items()}
+    message = (
+        "The exam date is further away than a plan can cover."
+        if exc.code == "too_many_days"
+        else "These dates and study days do not leave enough days for a plan."
+    )
     return error_response(
         422,
-        "These dates and study days do not leave enough days for a plan.",
+        message,
         exc.code,
         details=[
             FieldError(loc=["body", "exam_date"], msg=",".join(f"{k}={v}" for k, v in facts.items()), type=exc.code)
@@ -280,46 +288,43 @@ async def save_onboarding(
         return await _profile(conn), await load_template(conn, template_id)
 
     prof, template = await as_user(_db(request), user, read)
-    start = local_today(prof["timezone"], now)
+    start = local_today(body.timezone or prof["timezone"], now)
     if not template:
         return error_response(422, "There is no plan for this exam yet.", "no_template")
+    # Bounded before anything is generated or written: a far-future date is refused, never expanded.
+    if (body.exam_date - start).days > plan.max_study_days:
+        exc = PlanError("too_many_days", days=(body.exam_date - start).days, allowed=plan.max_study_days)
+        return _plan_problem(exc)
     inputs = _inputs(body.exam_date, body.study_days, body.daily_hours, start, plan)
+    answers: dict[str, Any] = {
+        "exam": body.exam,
+        "exam_date": body.exam_date,
+        "daily_hours": body.daily_hours,
+        "study_days": body.study_days,
+        "timezone": body.timezone,
+    }
     onboarding: dict[str, Any] = {"medical_school": body.medical_school, "materials": list(body.materials)}
     try:
         days = generate(template, inputs)
     except PlanError as exc:
         # The answers are kept so the form comes back filled in; onboarding is not complete without a plan.
         async def keep(conn: psycopg.AsyncConnection[Any]) -> Row:
-            return await save_profile(
-                conn,
-                exam=body.exam,
-                exam_date=body.exam_date,
-                daily_hours=body.daily_hours,
-                study_days=body.study_days,
-                onboarding=onboarding,
-            )
+            return await save_profile(conn, user.user_id, onboarding=onboarding, **answers)
 
         await as_user(_db(request), user, keep)
         return _plan_problem(exc)
     completed_at = now.replace(microsecond=0)
-
-    async def save(conn: psycopg.AsyncConnection[Any]) -> Row:
-        return await save_profile(
-            conn,
-            exam=body.exam,
-            exam_date=body.exam_date,
-            daily_hours=body.daily_hours,
-            study_days=body.study_days,
-            onboarding={**onboarding, "completed_at": completed_at.isoformat()},
-        )
-
-    await as_user(_db(request), user, save)
     sizes = ItemMinutes.model_validate(plan.item_minutes.model_dump())
 
     async def write(conn: psycopg.AsyncConnection[Any]) -> uuid.UUID:
-        return await write_plan(
+        # One transaction: the profile, the plan, and only then completed_at. A failed plan write leaves
+        # onboarding incomplete (Today keeps sending the student to /welcome) instead of done with no plan.
+        await save_profile(conn, user.user_id, onboarding=onboarding, **answers)
+        plan_id = await write_plan(
             conn, user.user_id, template_id=template_id, exam=body.exam, inputs=inputs, days=days, sizes=sizes
         )
+        await save_profile(conn, user.user_id, onboarding={"completed_at": completed_at.isoformat()}, **answers)
+        return plan_id
 
     plan_id = await as_service(_db(request), write)
     log.info("plan_generated", days=len(days), template=template_id)
@@ -340,29 +345,38 @@ async def preview_plan(
     exam_date: dt.date,
     daily_hours: Annotated[float, Query(ge=1, le=24)],
     study_days: Annotated[list[int], Query(min_length=1, max_length=7)],
+    tz: Annotated[str | None, Query(max_length=64)] = None,
 ) -> PlanPreview:
     plan = await _plan_rules(request)
     template_id = plan.templates.get(exam)  # type: ignore[call-overload]
     if any(d < 1 or d > 7 for d in study_days):
         raise HTTPException(422, "Study days are ISO weekdays 1 to 7.")
+    if tz is not None:
+        try:
+            tz = _valid_timezone(tz)
+        except ValueError as exc:
+            raise HTTPException(422, "Use an IANA time zone name.") from exc
 
     async def read(conn: psycopg.AsyncConnection[Any]) -> tuple[Row, list[Any]]:
         return await _profile(conn), (await load_template(conn, template_id) if template_id else [])
 
     prof, template = await as_user(_db(request), user, read)
-    start = local_today(prof["timezone"])
+    start = local_today(tz or prof["timezone"])
     inputs = _inputs(exam_date, sorted(set(study_days)), min(daily_hours, plan.max_daily_hours), start, plan)
-    avail = len(available_dates(inputs)) if exam_date > start else 0
+    sizes = {"needed_days": plan.min_study_days, "max_days": plan.max_study_days}
+    span = (exam_date - start).days
+    if span > plan.max_study_days:  # checked before any date is generated: the work stays bounded
+        return PlanPreview(ok=False, problem="too_many_days", available_days=0, **sizes)
+    avail = len(available_dates(inputs)) if span > 0 else 0
     if not template:
-        return PlanPreview(ok=False, problem="no_template", available_days=avail, needed_days=plan.min_study_days)
+        return PlanPreview(ok=False, problem="no_template", available_days=avail, **sizes)
     try:
         days = generate(template, inputs)
     except PlanError as exc:
-        problem = exc.code if exc.code in ("too_few_study_days", "exam_date_not_after_start") else "too_few_study_days"
-        return PlanPreview(ok=False, problem=problem, available_days=avail, needed_days=plan.min_study_days)
-    return PlanPreview(
-        ok=True, available_days=avail, needed_days=plan.min_study_days, summary=_summary_out(days, inputs)
-    )
+        known = ("too_few_study_days", "too_many_days", "exam_date_not_after_start")
+        problem = exc.code if exc.code in known else "too_few_study_days"
+        return PlanPreview(ok=False, problem=problem, available_days=avail, **sizes)
+    return PlanPreview(ok=True, available_days=avail, summary=_summary_out(days, inputs), **sizes)
 
 
 # ── The plan ──
@@ -552,25 +566,40 @@ async def create_diagnostic(
         ]
         return None, exam, diag.choose_diagnostic(pool, weights, total, seed)
 
-    open_block, exam, ids = await as_user(_db(request), user, pick)
-    if open_block is not None:
+    def existing(block: Row) -> JSONResponse:
         return JSONResponse(
-            DiagnosticOut(
-                block_id=open_block["id"], questions=len(open_block["question_ids"]), created=False
-            ).model_dump(mode="json"),
+            DiagnosticOut(block_id=block["id"], questions=len(block["question_ids"]), created=False).model_dump(
+                mode="json"
+            ),
             status_code=200,
         )
+
+    open_block, exam, ids = await as_user(_db(request), user, pick)
+    if open_block is not None:
+        return existing(open_block)
     if len(ids) < total:
         return error_response(422, "There are not enough questions for the diagnostic yet.", "pool_too_small")
     from ..qbank.models import BlockConfig
 
     cfg = BlockConfig(
-        exam=exam, mode="timed", status="all", difficulty=None, systems=[], disciplines=[], seed=seed, weak_spot=False
+        exam=exam,
+        mode="timed",
+        status="all",
+        difficulty=None,
+        systems=[],
+        disciplines=[],
+        seed=seed,
+        weak_spot=False,
+        purpose="diagnostic",
     )
-    cfg_any: Any = cfg
-    if "purpose" in type(cfg).model_fields:
-        cfg_any = cfg.model_copy(update={"purpose": "diagnostic"})
-    block = await creator(_db(request), user, cfg_any, ids, rules=rules, sections=1)
+    try:
+        block = await creator(_db(request), user, cfg, ids, rules=rules, sections=1)
+    except psycopg.errors.UniqueViolation:
+        # A concurrent request created it first (index blocks_one_open_diagnostic, 0014): return that one.
+        raced = await as_user(_db(request), user, lambda conn: rows(conn, _OPEN_DIAGNOSTIC))
+        if not raced:
+            raise
+        return existing(raced[0])
     return DiagnosticOut(block_id=block.id, questions=len(ids), created=True)
 
 
@@ -725,6 +754,7 @@ async def get_today(request: Request, user: Annotated[CurrentUser, limited("plan
                 answered=ready.answered,
                 needed_answered=ready.needed_answered,
                 needed_coverage=ready.needed_coverage,
+                days=coach.readiness_days,
             ),
             systems=SystemsOut(
                 window_days=coach.window_days,
