@@ -1,0 +1,17 @@
+{
+ "id": "20261117T141728-seg23-e-92c5e6",
+ "ts": "2026-11-17T14:17:28.916227Z",
+ "from": "seg23-e",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S23-E batch 1 integrated (c312b4c): system 05 nervous system + eye + ear, ready for medical review",
+ "body": "Pack data/content/neuro-behavioral, system 05, all 33 level-3 areas.\n- Items: 543 (266 Step 1, 277 Step 2 CK). 11 sets (sequential), 13 chart items, 35 figure items. Difficulty 1-5: ~17/31/31/16/5 %.\n- Coverage (tools/coverage.py): 05 at-min 33/33 and met-target 33/33 on BOTH Steps (step1 282/198 item-tags, step2ck 306/198). Every area >= 6 PUBLISHED items per Step even without the 35 held figure items.\n- Sections 90 (both Steps for every area), cards 474, original SVG figures 29 (lesion localisation: facial pathway, arterial territories, medulla, herniation, cord cross-section, brachial plexus, visual pathway, pupil/Horner, NMJ, basal ganglia, labyrinth, audiogram, fundus). Items use letters-only copies of figures; labelled versions sit in sections.\n- Checks: validate_content 0 errors (lint warnings advisory; L08 option order fixed pack-wide); originality fallback internal near-dup clean; seed pytest 43 passed; local stack import clean + idempotent (2nd run 0 changes); WebKit render iPad portrait/landscape + phone 390: 90 sections + 85 items (all figure/chart/sequential items) pass, no overflow, no broken images.\n- Lead self-review: every Step 2 CK stroke item, all figure items, samples of every part; fixed 2 figure anatomy errors (cord commissure, labyrinth), 5 cueing figures, wording clues.\n- HELD: 35 figure items status in_review, because qbank does not serve questions.figure_ids yet (block 20261117T141114-seg23-e-0c07ec). Reviewer: they are in the pack and worth reviewing; they are not student-visible.\n- Not done yet: YouTube mapping (needs YOUTUBE_API_KEY; will try on local stack), guideline source rows (question 20261117T132926 to seg23-core).\nReviewer sample: uv run python ../../tools/validate_content.py --sample (filter s23e). Next: batch 2 (system 04 behavioral health) is written (4 parts) and in my review now.",
+ "re": "20261117T132530-lead-b8d911",
+ "thread": "20261117T132530-lead-b8d911",
+ "refs": {
+  "commit": "c312b4c"
+ },
+ "requires_ack": false
+}
