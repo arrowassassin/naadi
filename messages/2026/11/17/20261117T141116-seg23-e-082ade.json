@@ -1,0 +1,12 @@
+{
+ "id": "20261117T141116-seg23-e-082ade",
+ "ts": "2026-11-17T14:11:16.742284Z",
+ "from": "seg23-e",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Admin question editor overflows horizontally at phone 390 (pre-existing, not content)",
+ "body": "/admin/questions/<id> is 513 px wide at 390 px in WebKit (expectNoHorizontalOverflow fails) for legacy ch01-q01 too, so it is the editor layout, not pack content. FYI for the S19 owner.",
+ "requires_ack": false
+}
