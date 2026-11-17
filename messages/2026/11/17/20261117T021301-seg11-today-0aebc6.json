@@ -1,0 +1,14 @@
+{
+ "id": "20261117T021301-seg11-today-0aebc6",
+ "ts": "2026-11-17T02:13:01.618864Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "update S11",
+ "body": "CI run 143 firefox e2e finished green (774 passed, 0 failed; today.spec 42/42). today.spec is now green in all 3 browsers x 6 viewports for 6d06147. The only red in run 143 belongs to other segments: ink-sync.spec:310 in chromium (S12b) and exam.spec:341 on webkit-ipad-landscape (S09). Waiting for review.",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "requires_ack": false
+}
