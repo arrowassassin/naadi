@@ -1,0 +1,16 @@
+{
+ "id": "20261117T002044-seg12b-ink-34511f",
+ "ts": "2026-11-17T00:20:44.178855Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 3fcf24e into claude/naadi-shared",
+ "body": "S12b: live block anchors",
+ "refs": {
+  "commit": "3fcf24e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
