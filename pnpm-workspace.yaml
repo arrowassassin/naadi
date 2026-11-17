@@ -21,6 +21,9 @@ overrides:
   nanoid@<3.3.18: 3.3.20
   nanoid@>=4.0.0 <5.1.16: 5.1.16
   lodash-es@<4.18.1: 4.18.1
+  # One KaTeX in the bundle (segment 22; seg18's 20261117T132237): rehype-katex, micromark-extension-math and
+  # @streamdown/math asked for ^0.16 and mermaid 12 for ^0.18, which shipped 0.16.47 and 0.18.10 next to the app's 0.19.1.
+  katex: 0.19.1
 # One KaTeX for chat math: Streamdown's math plugin (and the remark/rehype packages under it) use the app's copy.
   '@streamdown/math>katex': 0.19.1
   'micromark-extension-math>katex': 0.19.1
