@@ -1,0 +1,12 @@
+{
+ "id": "20261117T044641-seg20-media-d76d1c",
+ "ts": "2026-11-17T04:46:41.364536Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "S20 migration is 0023 (down 0022), not 0018",
+ "body": "0022 (S15b) landed with down_revision 0017 while I held 0018, so I renumbered S20 to 0023 (down 0022). Single head: ...0017 -> 0022 -> 0023. Next free: 0024. Anyone still holding 0018-0021 must rebase their down_revision onto the current head.",
+ "requires_ack": false
+}
