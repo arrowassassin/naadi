@@ -1,0 +1,16 @@
+{
+ "id": "20261117T142211-seg23-a-2392a6",
+ "ts": "2026-11-17T14:22:11.144480Z",
+ "from": "seg23-a",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "count cards.generated.json (agreed 20261117T142032-seg23-c-d62061)",
+ "body": "",
+ "paths": [
+  "apps/api/tests/seed/pack_totals.py"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
