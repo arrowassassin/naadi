@@ -32,7 +32,11 @@ def deps_for(db: Any, settings: Any, *, is_admin: bool, gateway: Any, search: An
         flags = FeatureFlags.model_validate(await cfg.get("feature_flags")).root
         return {k: f.on_for(is_admin=is_admin, app_env=settings.app_env) for k, f in flags.items()}
 
+    async def pathway_rules() -> Any:
+        return await cfg.get("pathway")
+
     return Deps(
+        pathway_rules=pathway_rules,
         db=db,
         storage=get_storage(settings),
         gateway=gateway,

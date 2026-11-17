@@ -36,9 +36,6 @@ def asset_path(user_id: uuid.UUID, item_id: uuid.UUID, key: str, ext: str = "web
     return f"{user_id}/{item_id}/{key}.{ext}"
 
 
-def vault_path(user_id: uuid.UUID, item_id: uuid.UUID, ext: str) -> str:
-    return f"{user_id}/{item_id}.{ext}"
-
 
 class Storage(Protocol):
     async def signed_upload(self, bucket: str, path: str) -> dict[str, str]: ...
@@ -186,5 +183,4 @@ __all__ = [
     "get_storage",
     "set_storage",
     "upload_path",
-    "vault_path",
 ]

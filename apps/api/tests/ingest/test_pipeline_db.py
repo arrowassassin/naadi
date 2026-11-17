@@ -216,11 +216,10 @@ async def test_a_personal_document_reaches_no_model_and_goes_to_the_vault(
     assert gw.seen == []  # not one model call
     row = await item(db, item_id, a)
     assert row["status"] == "vaulted" and row["storage_path"] is None
-    assert [k for k in storage.objects if k[0] == "vault"] == [("vault", f"{a}/{item_id}.pdf")]
+    docs = as_user(url, a, "select id, doc_type, storage_path, mime from public.vault_documents")
+    assert len(docs) == 1 and docs[0][1:] == ("passport", f"{a}/{docs[0][0]}", "application/pdf")
+    assert [k for k in storage.objects if k[0] == "vault"] == [("vault", f"{a}/{docs[0][0]}")]
     assert not [k for k in storage.objects if k[0] == "user-uploads"]
-    assert as_user(url, a, "select doc_type, storage_path from public.vault_documents") == [
-        ("passport", f"vault/{a}/{item_id}.pdf")
-    ]
     async with st.service_tx(db) as conn:
         assert await st.load_extract(conn, item_id, a) is None
         emb = await st.rows(conn, "select 1 from public.embeddings where owner_user_id = %s", (a,))

@@ -201,7 +201,7 @@ def test_vault_prompt_through_the_api(
     r = client.post(f"/api/ingest/items/{item}/confirm", json={"vault": "vault"}, headers=h)
     assert r.status_code == 202 and r.json()["status"] == "vaulted"
     assert spy.seen == []
-    assert ("vault", f"{a}/{item}.pdf") in storage.objects
+    assert [k for k in storage.objects if k[0] == "vault" and k[1].startswith(f"{a}/")]
 
 
 def test_validation_quota_batches_links_and_pastes(

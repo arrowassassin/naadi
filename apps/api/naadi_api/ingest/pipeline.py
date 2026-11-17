@@ -43,7 +43,7 @@ from .kinds import KIND_MIME, VAULT_MAX_BYTES, VAULT_MIMES
 from .placements import Candidate, IngestView, PlacementContext, PlacementRecord, handler_for, propose_all
 from .secure import MB, check_size, inspect_container, list_bundle, read_member
 from .sniff import sniff
-from .storage import Storage, StorageError, StorageTooLarge, asset_path, upload_path, vault_path
+from .storage import Storage, StorageError, StorageTooLarge, asset_path, upload_path
 from .understand import Understanding, understand
 from .vision import UnreadableReply, read_image
 
@@ -65,6 +65,8 @@ class Deps:
     search: Any = None
     engine: Callable[[], Engine | None] = index.engine_or_none
     start_child: Callable[[uuid.UUID, uuid.UUID], Awaitable[None]] | None = None
+    # app_config.pathway (S17's vault rules: types, size and count caps); None = the model's defaults
+    pathway_rules: Callable[[], Awaitable[Any]] | None = None
 
 
 @dataclass
@@ -333,7 +335,7 @@ async def vault(deps: Deps, item_id: uuid.UUID, user_id: uuid.UUID, decision: st
             if row["upload_id"]:
                 await st.set_upload(conn, row["upload_id"], user_id, status="failed", storage_path=None)
         return Outcome("end", {"discarded": True})
-    # vault
+    # vault: S17's hand-off moves the object server-side (no model, no OCR, no index) and records the document
     if row["input_kind"] in ("link", "paste") or not path:
         return await _fail(deps, item_id, user_id, errors.VAULT_TYPE)
     mime = row["mime"] or ""
@@ -341,27 +343,89 @@ async def vault(deps: Deps, item_id: uuid.UUID, user_id: uuid.UUID, decision: st
         return await _fail(deps, item_id, user_id, errors.VAULT_TYPE)
     if (row["bytes"] or 0) > VAULT_MAX_BYTES:
         return await _fail(deps, item_id, user_id, errors.VAULT_TOO_LARGE)
-    data = await deps.storage.download(deps.buckets.user_uploads, path, VAULT_MAX_BYTES)
-    target = vault_path(user_id, item_id, _ext_for(mime))
-    await deps.storage.upload(deps.buckets.vault, target, data, mime)
-    del data
-    await deps.storage.remove(deps.buckets.user_uploads, [path])
+    from ..config_api.schemas import PathwayRules
+    from ..pathway.db import PathwayError
+    from ..pathway.vault import adopt_object
+
     detail = (row["stage_detail"] or {}).get("gate") or {}
-    async with st.service_tx(deps.db) as conn:
-        await conn.execute(
-            "insert into public.vault_documents (user_id, doc_type, title, storage_path) values (%s, %s, %s, %s)",
-            (
+    if deps.pathway_rules is not None:
+        raw = await deps.pathway_rules()
+    else:  # no app_config service (tests, tools): the shipped config/app_config.yaml values
+        from ..config_api.defaults import file_values
+        from ..settings import default_config_dir
+
+        raw = file_values(default_config_dir())["pathway"]
+    rules = PathwayRules.model_validate(raw)
+    doc_type = VAULT_TYPES.get(str(detail.get("doc_type") or ""), "other")
+    if doc_type not in rules.vault_types:
+        doc_type = "other" if "other" in rules.vault_types else rules.vault_types[0]
+    title = (row["original_name"] or "").strip()[:200] or None
+    try:
+        async with st.service_tx(deps.db) as conn:
+            await adopt_object(
+                conn,
+                _VaultStore(deps),
+                rules,
                 user_id,
-                detail.get("doc_type"),
-                (row["original_name"] or "")[:200] or None,
-                f"{deps.buckets.vault}/{target}",
-            ),
+                bucket=deps.buckets.user_uploads,
+                path=path,
+                title=title or doc_type,
+                doc_type=doc_type,
+            )
+            await st.set_status(conn, item_id, user_id, "vaulted", detail={"stage": "vaulted"})
+            await st.set_upload(conn, row["upload_id"], user_id, status="vaulted", storage_path=None)
+            await conn.execute("delete from public.ingest_extracts where item_id = %s", (item_id,))
+    except PathwayError as exc:
+        code = {"vault_file_too_large": errors.VAULT_TOO_LARGE, "vault_file_type": errors.VAULT_TYPE}.get(
+            exc.code, exc.code if exc.code.replace("_", "").isalnum() else errors.INTERNAL
         )
-        await st.set_status(conn, item_id, user_id, "vaulted", detail={"stage": "vaulted"})
-        await st.set_upload(conn, row["upload_id"], user_id, status="vaulted", storage_path=None)
-        await conn.execute("delete from public.ingest_extracts where item_id = %s", (item_id,))
+        return await _fail(deps, item_id, user_id, code)
     log.info("ingest.vaulted", item_id=str(item_id))
     return Outcome("end", {"vaulted": True})
+
+
+# The gate's document types -> S17's vault types (app_config.pathway.vault_types).
+VAULT_TYPES = {
+    "passport": "passport",
+    "visa": "visa",
+    "i20": "visa",
+    "ds2019": "ds2019",
+    "diploma": "diploma",
+    "aadhaar": "id_proof",
+    "pan": "id_proof",
+    "ssn": "id_proof",
+    "id_card": "id_proof",
+    "receipt": "other",
+}
+
+
+class _VaultStore:
+    """S17's VaultStorage over the ingest Storage (vault bucket for uploads; source bucket given per call)."""
+
+    def __init__(self, deps: Deps) -> None:
+        self._s = deps.storage
+        self._vault = deps.buckets.vault
+
+    async def create_signed_upload(self, path: str) -> tuple[str, str]:
+        t = await self._s.signed_upload(self._vault, path)
+        return t["url"], t["token"]
+
+    async def download(self, bucket: str, path: str) -> bytes | None:
+        try:
+            return await self._s.download(bucket, path, VAULT_MAX_BYTES)
+        except StorageTooLarge:
+            raise
+        except StorageError:
+            return None
+
+    async def upload(self, path: str, data: bytes, content_type: str) -> None:
+        await self._s.upload(self._vault, path, data, content_type)
+
+    async def signed_url(self, path: str, seconds: int) -> str:
+        return await self._s.signed_url(self._vault, path, seconds)
+
+    async def remove(self, bucket: str, path: str) -> None:
+        await self._s.remove(bucket, [path])
 
 
 # ── 3. extract (after the gate) ──
