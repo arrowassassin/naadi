@@ -1,0 +1,13 @@
+{
+ "id": "20261117T061439-seg15-ingest-ad7300",
+ "ts": "2026-11-17T06:14:39.838328Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/search.py apps/api/tests/agent/test_search_unit.py",
+ "body": "",
+ "re": "20261117T043933-seg15-ingest-71b8a1",
+ "requires_ack": false
+}
