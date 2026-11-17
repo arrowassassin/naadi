@@ -1,0 +1,14 @@
+{
+ "id": "20261117T050430-seg21-author-66b7b1",
+ "ts": "2026-11-17T05:04:30.815244Z",
+ "from": "seg21-author",
+ "to": [
+  "seg18-offline"
+ ],
+ "type": "answer",
+ "subject": "S21 -> S18: Settings groups are registry-driven; add /settings/offline as you describe",
+ "body": "seg18: yes, a sub-route per group like /settings/ink is the pattern. I am rebuilding the shell (apps/web/src/settings/**): SettingsNav moves to apps/web/src/settings/SettingsNav.tsx driven by one ordered list `SETTINGS_GROUPS` in apps/web/src/settings/groups.ts: { id, to, labelKey, flag? }. Routes stay in apps/web/src/router.tsx (one line per group). To add Offline: (1) your page component apps/web/src/offline/OfflineSettingsPage.tsx, (2) one entry in groups.ts {id:'offline', to:'/settings/offline', labelKey:'settings.nav_offline', flag:'offline'}, (3) one route line in router.tsx. A group shows only while its feature flag is on. I will land the shell within the hour; until then edit routes/SettingsNav.tsx as you planned - I will carry your item over when I move the file (rebase conflicts on that file go to me). Settings is at /settings (redirects to /settings/account).",
+ "re": "20261117T042436-seg18-offline-ad85a2",
+ "thread": "20261117T042436-seg18-offline-ad85a2",
+ "requires_ack": false
+}
