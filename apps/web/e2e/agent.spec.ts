@@ -9,7 +9,7 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
-  fromNonAppFrame,
+  ignorableConsoleLine,
   snapSegment,
   test,
 } from "./fixtures";
@@ -24,6 +24,11 @@ import { signedInState } from "./session";
  */
 const hasRuntime = Boolean(process.env.E2E_DATABASE_URL ?? process.env.DATABASE_URL) && !process.env.E2E_BASE_URL;
 test.skip(!canMintUsers() || !hasRuntime, "the agent runtime needs a local database and throwaway users");
+// Every ping's media block loads images from Wikimedia and NCBI's PMC bucket (YouTube only after a click). Behind
+// a TLS-intercepting proxy (an agent sandbox) Firefox rejects the proxy's certificate (it keeps its own trust
+// store), and the console guard rightly reports those failed requests; such a run opts in with
+// E2E_IGNORE_HTTPS_ERRORS=1. CI and real devices have no such proxy, so there certificates are checked.
+test.use({ ignoreHTTPSErrors: process.env.E2E_IGNORE_HTTPS_ERRORS === "1" });
 
 const BUDGET_ZERO_URL = `http://127.0.0.1:${Number(process.env.E2E_PORT ?? 7860) + 1}`;
 
@@ -142,10 +147,6 @@ test.describe("admin", () => {
 
 test.describe("admin, answer blocks", () => {
   test.use(signedInAs("admin"));
-  // The media loads from Wikimedia, NCBI's PMC bucket and YouTube. Behind a TLS-intercepting proxy (an agent
-  // sandbox) Firefox rejects the proxy's certificate (it keeps its own trust store), so such a run opts in
-  // with E2E_IGNORE_HTTPS_ERRORS=1, for these tests only. CI and real devices have no such proxy.
-  test.use({ ignoreHTTPSErrors: process.env.E2E_IGNORE_HTTPS_ERRORS === "1" });
 
   test("media: Commons image, PMC figure and YouTube embed with credits, licences and links", async ({
     page,
@@ -268,7 +269,7 @@ test.describe("admin, production server (APP_ENV=prod, production CSP)", () => {
       const page = await ctx.newPage();
       const errors: string[] = [];
       page.on("console", (m) => {
-        if (m.type() === "error" && !fromNonAppFrame(m.location().url, page.url())) {
+        if (m.type() === "error" && !ignorableConsoleLine(m.text(), m.location().url)) {
           errors.push(`${m.text()} @ ${m.location().url}`);
         }
       });

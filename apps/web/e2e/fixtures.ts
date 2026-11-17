@@ -12,7 +12,8 @@ const SCREENS_DIR = path.resolve(
 
 export const WCAG_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 
-/** A browser "Failed to load resource" line for a status the test itself caused or observed. */
+/** A failed request the test itself caused or observed: a "Failed to load resource" line or a main-frame
+ * response with that status (status 0: the request failed without a response, e.g. a route the test aborted). */
 export interface ExpectedHttpError {
   urlPart: string;
   status: number;
@@ -42,21 +43,39 @@ export const TOOL_CSP_NOISE =
   "Refused to apply a stylesheet because its hash, its nonce, or 'unsafe-inline' does not appear in the style-src directive of the Content Security Policy.";
 
 /**
- * True when a console line comes from a document that is not the app: a third-party frame such as the YouTube
- * IFrame player, whose own scripts (and Google's inside it) log freely and probe features the embed is not
- * granted. Those lines are not the app's errors. A line is the app's when its source has the app's origin, or
- * has no URL at all (the engine reports no location), so the app can never hide behind this. The app origin
- * is the page's current one (local, budget-zero and prod servers each have their own).
+ * Hosts of third-party embeds whose own documents log to the console: the YouTube IFrame player (and Google's
+ * scripts inside it) probes features the embed is not granted and logs freely. Only console lines whose source
+ * is one of these hosts are ignored, and never a "Failed to load resource" line: browsers attribute that line to
+ * the failed resource's URL, so a cross-origin image or fetch of the app's own page would otherwise vanish.
  */
-export function fromNonAppFrame(sourceUrl: string, pageUrl: string): boolean {
+const EMBED_HOSTS = ["youtube-nocookie.com", "youtube.com", "google.com", "gstatic.com"];
+
+const FAILED_RESOURCE = "Failed to load resource";
+
+export function fromEmbedHost(sourceUrl: string): boolean {
   if (!sourceUrl) return false;
   try {
-    const app = new URL(pageUrl).origin;
-    const src = new URL(sourceUrl).origin;
-    return app !== "null" && src !== "null" && src !== app;
+    const host = new URL(sourceUrl).hostname;
+    return EMBED_HOSTS.some((h) => host === h || host.endsWith(`.${h}`));
   } catch {
     return false;
   }
+}
+
+/** A console error line the guard may ignore: from an embed host's document, and not a network failure. */
+export function ignorableConsoleLine(text: string, sourceUrl: string): boolean {
+  return !text.includes(FAILED_RESOURCE) && fromEmbedHost(sourceUrl);
+}
+
+/**
+ * Request failures that are not errors: the browser or the test cancelled the request (a navigation, an
+ * unmounted component's aborted fetch) or the test took the context offline on purpose.
+ */
+const BENIGN_FAILURE =
+  /ERR_ABORTED|NS_BINDING_ABORTED|cancelled|canceled|ERR_INTERNET_DISCONNECTED|NS_ERROR_OFFLINE|appears to be offline/i;
+
+export function isBenignRequestFailure(errorText: string): boolean {
+  return BENIGN_FAILURE.test(errorText);
 }
 
 export const test = base.extend<Fixtures>({
@@ -64,13 +83,33 @@ export const test = base.extend<Fixtures>({
     const errors: string[] = [];
     const allowed: ExpectedHttpError[] = [];
     let toolActive = 0;
+    const network: { url: string; status: number; what: string }[] = [];
     page.on("console", (msg) => {
       if (msg.type() !== "error") return;
       if (toolActive > 0 && msg.text() === TOOL_CSP_NOISE) return;
-      if (fromNonAppFrame(msg.location().url, page.url())) return;
+      if (ignorableConsoleLine(msg.text(), msg.location().url)) return;
       errors.push(`${msg.text()} @ ${msg.location().url}`);
     });
     page.on("pageerror", (err) => errors.push(`pageerror: ${err.message}`));
+    // Network failures are judged by frame, not by console attribution: every request the app's own document
+    // makes (images, fetches, scripts, on any origin) counts; requests of embedded third-party frames do not.
+    // Service-worker requests have no frame and are the worker's own business (it retries and caches).
+    const fromMainFrame = (req: import("@playwright/test").Request): boolean => {
+      try {
+        return req.frame() === page.mainFrame();
+      } catch {
+        return false;
+      }
+    };
+    page.on("response", (res) => {
+      if (res.status() >= 400 && fromMainFrame(res.request())) {
+        network.push({ url: res.url(), status: res.status(), what: `HTTP ${res.status()}` });
+      }
+    });
+    page.on("requestfailed", (req) => {
+      const why = req.failure()?.errorText ?? "failed";
+      if (!isBenignRequestFailure(why) && fromMainFrame(req)) network.push({ url: req.url(), status: 0, what: why });
+    });
     await use({
       allowHttpError: (e) => allowed.push(e),
       duringTool: async (fn) => {
@@ -94,7 +133,11 @@ export const test = base.extend<Fixtures>({
       const status = Number(m[1]);
       return !allowed.some((a) => a.status === status && line.includes(a.urlPart));
     });
+    const failedRequests = network
+      .filter((n) => !allowed.some((a) => a.status === n.status && n.url.includes(a.urlPart)))
+      .map((n) => `${n.what} ${n.url}`);
     expect(unexpected, "console errors").toEqual([]);
+    expect(failedRequests, "failed requests of the app's own page").toEqual([]);
   },
 });
 
