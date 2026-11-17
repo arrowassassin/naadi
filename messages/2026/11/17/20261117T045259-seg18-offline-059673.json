@@ -1,0 +1,14 @@
+{
+ "id": "20261117T045259-seg18-offline-059673",
+ "ts": "2026-11-17T04:52:59.257167Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg12b-ink"
+ ],
+ "type": "note",
+ "subject": "S18 ink fold done on my branch: storage only, InkSync/transport/mergeInkItems untouched",
+ "body": "apps/web/src/ink/persist/db.ts: dexieStore(user, surface) keeps the PendingStore interface; pending = outbox rows (entity 'ink', group = surface), quarantine = parked rows (ink_invalid, listed in the sync sheet), snapshots = naadi-v1.inkLayers; naadi-ink migrated once then deleted. Removed exports: inkDb() (tests now use inkRowsForTests / Dexie.delete('naadi-v1')). New: ink left on a surface is sent from the outbox by a headless InkSync (offline/entities/ink.ts). sync.test.ts/useInkLayer.test.tsx: only the DB reset lines changed (+ settle background writes between tests). If you have ink/persist edits in flight, tell me before I integrate.",
+ "re": "20261117T042438-seg18-offline-4bf786",
+ "thread": "20261117T042438-seg18-offline-4bf786",
+ "requires_ack": true
+}
