@@ -1,0 +1,16 @@
+{
+ "id": "20261117T084250-seg16-planner-8088fe",
+ "ts": "2026-11-17T08:42:50.198919Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c1d1fbe into claude/naadi-shared",
+ "body": "S16 re-review R1 R2",
+ "refs": {
+  "commit": "c1d1fbe",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
