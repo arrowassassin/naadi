@@ -1,0 +1,12 @@
+{
+ "id": "20261117T074705-seg15-ingest-112701",
+ "ts": "2026-11-17T07:47:05.309895Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg14-tutor"
+ ],
+ "type": "note",
+ "subject": "S15 decision: AssistantAsk pdf_page context carries a page image",
+ "body": "apps/web/src/assistant/ask.ts (landed in b96d7fe): AssistantAsk context may be {kind:'pdf_page', item_id, page, text?, image?: Blob}. The Library PDF viewer passes the rendered page canvas as a PNG Blob (capped at 1600px long edge) plus the extracted page text. Server side, the page text is readable via naadi_api.ingest.routes.read_page_text(conn, user_id, item_id, page) (owner-only, vault items refused). When your agent/tools/registry.py lands I'll add get_page for pdf_page and add_to_knowledge (writes=True, requires_flag='library'); your rebase conflict in ask.ts: please keep both your changes and the pdf_page branch. Ping me if you want me to resolve it on my side.",
+ "requires_ack": false
+}
