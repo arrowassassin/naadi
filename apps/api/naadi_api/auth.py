@@ -386,12 +386,22 @@ async def get_account_user(request: Request, user: Annotated[CurrentUser, Depend
     return account
 
 
-async def require_admin(user: Annotated[CurrentUser, Depends(get_account_user)]) -> CurrentUser:
-    """Server-side admin gate. The client only hides admin UI; this is the enforcement."""
+async def require_admin(request: Request, user: Annotated[CurrentUser, Depends(get_account_user)]) -> CurrentUser:
+    """Server-side admin gate. The client only hides admin UI; this is the enforcement.
+
+    Every admin route also counts against the shared `admin_any` bucket (segment 22 rate-limit floor; the
+    routes' own stricter buckets still apply)."""
     if not user.is_admin:
         log.info("admin_denied")
         raise Forbidden("This needs an admin account.")
+    limiters = getattr(request.app.state, "rate_limiters", None)
+    if limiters and "admin_any" in limiters:
+        limiters["admin_any"].hit(str(user.user_id))
     return user
+
+
+# Read by tests/test_rate_limit_audit.py (auth_limits.RATE_LIMIT_TAG; not imported here to avoid a cycle).
+require_admin.__naadi_rate_limit__ = ("admin_any", "user")  # type: ignore[attr-defined]
 
 
 AuthUser = Annotated[CurrentUser, Depends(get_current_user)]

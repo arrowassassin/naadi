@@ -5,6 +5,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
 
+from .auth_limits import ip_limited
 from .db import Database
 from .errors import ErrorResponse
 from .health.models import HealthResponse, ReadyResponse
@@ -20,6 +21,7 @@ router = APIRouter(prefix="/api")
     response_model=HealthResponse,
     responses={503: {"model": HealthResponse, "description": "The database is down"}, 500: {"model": ErrorResponse}},
     tags=["system"],
+    dependencies=[ip_limited("health")],
 )
 async def health(request: Request) -> JSONResponse:
     service: HealthService = request.app.state.health
@@ -35,6 +37,7 @@ async def health(request: Request) -> JSONResponse:
     response_model=ReadyResponse,
     responses={503: {"model": ReadyResponse, "description": "Not ready"}},
     tags=["system"],
+    dependencies=[ip_limited("health")],
 )
 async def ready(request: Request) -> JSONResponse:
     db: Database = request.app.state.db

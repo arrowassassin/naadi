@@ -11,12 +11,14 @@ from starlette.middleware.gzip import GZipMiddleware
 from . import __version__, api
 from .anki.routes import install_anki_routes
 from .auth import AccountDirectory, TokenVerifier, install_auth
+from .auth_limits import RateLimiter, register_limiters
 from .auth_routes import install_auth_routes
 from .authoring.routes import install_authoring_routes
 from .cards.routes import install_cards_routes
 from .config import load_models_config
 from .config_api.routes import install_app_config
 from .courses import install_courses_routes
+from .csp_report import install_csp_report
 from .db import Database
 from .errors import install_error_handlers
 from .export.routes import install_export_routes, start_export_gc, stop_export_gc
@@ -33,7 +35,7 @@ from .health.checks import (
 from .health.service import Check, HealthService
 from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
-from .middleware import RequestContextMiddleware
+from .middleware import ClientFloorMiddleware, RequestContextMiddleware
 from .notes.routes import install_notes_routes
 from .plan.routes import install_plan_routes
 from .qbank.routes import install_qbank_routes
@@ -136,6 +138,16 @@ def create_app(
     install_auth(app, settings, verifier, accounts)
     app.include_router(api.router)
     install_auth_routes(app)
+    # Shared buckets (segment 22): every admin route (require_admin), and the anonymous system routes per IP.
+    register_limiters(
+        app,
+        {
+            "admin_any": RateLimiter(120, 60.0),
+            "public_read": RateLimiter(120, 60.0),
+            "health": RateLimiter(60, 60.0),
+        },
+    )
+    install_csp_report(app)
     install_courses_routes(app)
     install_qbank_routes(app)
     install_cards_routes(app)
@@ -153,6 +165,7 @@ def create_app(
     install_spa(app, settings.static_dir)
     # Chapter JSON is large and repetitive; Starlette's GZip skips text/event-stream, so SSE is untouched.
     app.add_middleware(GZipMiddleware, minimum_size=1024)
+    app.add_middleware(ClientFloorMiddleware)  # inside RequestContext: a 429 still gets headers and a log line
     app.add_middleware(RequestContextMiddleware, settings=settings)
     return app
 

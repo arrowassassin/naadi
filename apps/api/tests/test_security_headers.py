@@ -5,7 +5,13 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from naadi_api.security import SEARCH_MEDIA_HOSTS, content_security_policy
+from naadi_api.security import (
+    CSP_REPORT_PATH,
+    SEARCH_MEDIA_HOSTS,
+    YOUTUBE_IMG_HOSTS,
+    content_security_policy,
+    trusted_types_report_only_policy,
+)
 
 from .conftest import make_settings
 
@@ -28,7 +34,12 @@ def test_csp_is_strict() -> None:
     assert d["style-src"] == ["'self'"]
     assert d["font-src"] == ["'self'"]
     assert d["connect-src"] == ["'self'", SUPA, "wss://abcdefghijklmnopqrst.supabase.co"]
-    assert d["img-src"] == ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, SUPA]
+    assert d["img-src"] == ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, *YOUTUBE_IMG_HOSTS, SUPA]
+    assert d["frame-src"] == ["'self'", "https://www.youtube-nocookie.com"]
+    assert d["worker-src"] == ["'self'"]
+    assert d["base-uri"] == ["'self'"]
+    assert d["report-uri"] == [CSP_REPORT_PATH]
+    assert d["report-to"] == ["csp"]
     assert d["frame-ancestors"] == ["'self'", "https://huggingface.co"]
     assert d["object-src"] == ["'none'"]
     assert "upgrade-insecure-requests" in d
@@ -66,3 +77,19 @@ def test_only_the_youtube_player_script_and_nocookie_frames_are_allowed() -> Non
     d = _directives(content_security_policy(make_settings(supabase_url=SUPA)))
     assert d["frame-src"] == ["'self'", "https://www.youtube-nocookie.com"]
     assert [s for s in d["script-src"] if s.startswith("https://")] == ["https://www.youtube.com"]
+
+
+def test_trusted_types_ship_report_only() -> None:
+    d = _directives(trusted_types_report_only_policy())
+    assert d["require-trusted-types-for"] == ["'script'"]
+    assert d["report-uri"] == [CSP_REPORT_PATH]
+    # Report-only must never carry the enforcing policy's directives (they would only be reported, not applied).
+    assert set(d) == {"require-trusted-types-for", "report-uri", "report-to"}
+
+
+def test_report_only_and_reporting_endpoint_headers(client_factory: Callable[..., TestClient]) -> None:
+    h = client_factory(settings=make_settings(supabase_url=SUPA)).get("/api/health").headers
+    assert h["content-security-policy-report-only"] == trusted_types_report_only_policy()
+    assert h["reporting-endpoints"] == f'csp="{CSP_REPORT_PATH}"'
+    # The enforcing policy is unchanged by the report-only rollout.
+    assert "require-trusted-types-for" not in h["content-security-policy"]

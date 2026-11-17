@@ -19,7 +19,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .auth import AdminUser, AuthError, AuthUnavailable, CurrentUser, get_account_user, get_current_user
 from .auth_db import user_tx
-from .auth_limits import RateLimiter
+from .auth_limits import RateLimiter, ip_limited
 from .config_api.schemas import ExamRules, NavEntry
 from .config_api.service import AppConfigService
 from .db import Database, DatabaseNotConfigured
@@ -220,6 +220,7 @@ def _config(request: Request) -> AppConfigService:
     summary="Public client configuration (no auth): Supabase URL + anon key, sign-in options, version",
     response_model=PublicConfig,
     tags=["auth"],
+    dependencies=[ip_limited("public_read")],
 )
 async def public_config(request: Request) -> JSONResponse:
     s = _settings(request)

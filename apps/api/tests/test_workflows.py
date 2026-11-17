@@ -57,3 +57,51 @@ def test_live_playwright_run_records_no_headers() -> None:
     live = live[: live.index("}")]
     assert '"junit"' in live and '"html"' not in live
     assert "retries: 0," in cfg
+
+
+def _steps() -> list[tuple[str, str, dict[str, Any]]]:
+    out = []
+    for f in sorted(WF.glob("*.yml")):
+        for job_name, job in _load(f.name)["jobs"].items():
+            if "uses" in job:  # a reusable workflow call
+                out.append((f.name, job_name, {"uses": job["uses"]}))
+            for step in job.get("steps", []):
+                out.append((f.name, job_name, step))
+    return out
+
+
+def test_every_action_is_pinned_by_commit_sha() -> None:
+    """Segment 22: third-party actions run with the repo's token, so a moved tag must not change what runs."""
+    import re
+
+    sha = re.compile(r"^[\w.-]+/[\w./-]+@[0-9a-f]{40}$")
+    loose = [
+        f"{f}:{job}: {step['uses']}"
+        for f, job, step in _steps()
+        if "uses" in step and not step["uses"].startswith("./") and not sha.match(step["uses"])
+    ]
+    assert loose == []
+    # The trailing comment names the release, so a reviewer can read what the SHA is.
+    for f in sorted(WF.glob("*.yml")):
+        for line in f.read_text().splitlines():
+            if re.search(r"uses: [\w.-]+/[\w./-]+@[0-9a-f]{40}", line):
+                assert re.search(r"# v\d", line), f"{f.name}: {line.strip()} has no '# vX.Y.Z' comment"
+
+
+def test_ci_runs_the_dependency_audit_and_uploads_sboms() -> None:
+    audit = _load("ci.yml")["jobs"]["audit"]
+    runs = "\n".join(s.get("run", "") for s in audit["steps"])
+    assert "pnpm audit --prod --audit-level high" in runs
+    assert "pip-audit --strict --require-hashes" in runs
+    assert "--sbom-format cyclonedx" in runs and "cyclonedx-py requirements" in runs
+    assert any(s.get("with", {}).get("name") == "sbom" for s in audit["steps"])
+    # Every push, every branch.
+    assert _load("ci.yml")["on"]["push"]["branches"] == ["**"]
+
+
+def test_e2e_is_sharded_per_browser() -> None:
+    e2e = _load("ci.yml")["jobs"]["e2e"]
+    assert e2e["strategy"]["matrix"]["shard"] == [1, 2, 3]
+    assert e2e["timeout-minutes"] <= 60
+    run = next(s["run"] for s in e2e["steps"] if s.get("name", "").startswith("Build and run e2e"))
+    assert '--shard "${{ matrix.shard }}/3"' in run

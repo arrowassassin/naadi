@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
-import { randomBytes } from "node:crypto";
-import { existsSync, mkdirSync } from "node:fs";
+import { createHash, randomBytes, X509Certificate } from "node:crypto";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
@@ -147,6 +147,19 @@ if (targets) {
 if (!liveBaseUrl) {
   ensureLoopbackCert();
   process.env.E2E_PROD_URL = `https://127.0.0.1:${PROD_PORT}`;
+  // Chromium: trust exactly this throwaway certificate (its SPKI hash). With only the per-context
+  // ignoreHTTPSErrors, Chromium asks the context again for every new connection, and a credential-less
+  // (crossorigin) one such as the stylesheet's could loop on that certificate decision until it failed with
+  // ERR_TOO_MANY_RETRIES (seen in the net log, segment 22). The flag names this one key, so every other
+  // certificate is still checked.
+  const spki = createHash("sha256")
+    .update(new X509Certificate(readFileSync(TLS_CERT)).publicKey.export({ type: "spki", format: "der" }))
+    .digest("base64");
+  for (const p of projects) {
+    if (p.use?.browserName !== "chromium") continue;
+    const args = p.use.launchOptions?.args ?? [];
+    p.use.launchOptions = { ...p.use.launchOptions, args: [...args, `--ignore-certificate-errors-spki-list=${spki}`] };
+  }
 }
 
 /**

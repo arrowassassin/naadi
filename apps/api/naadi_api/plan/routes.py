@@ -83,7 +83,12 @@ _INVALID: dict[int | str, dict[str, Any]] = {422: {"model": ErrorResponse, "desc
 
 
 def default_limiters() -> dict[str, RateLimiter]:
-    return {"plan_read": RateLimiter(240, 60.0), "plan_write": RateLimiter(30, 60.0)}
+    # plan_export: the CSV export is a heavy route (segment 22 rate-limit audit: exports <= 30/min).
+    return {
+        "plan_read": RateLimiter(240, 60.0),
+        "plan_write": RateLimiter(30, 60.0),
+        "plan_export": RateLimiter(10, 60.0),
+    }
 
 
 def limited(bucket: str) -> Any:
@@ -452,7 +457,7 @@ async def get_plan(request: Request, user: Annotated[CurrentUser, limited("plan_
     responses={**_ERRORS, **_NOT_FOUND, 200: {"content": {"text/csv": {}}, "description": "The plan as CSV"}},
     response_class=Response,
 )
-async def export_plan(request: Request, user: Annotated[CurrentUser, limited("plan_read")]) -> Response:
+async def export_plan(request: Request, user: Annotated[CurrentUser, limited("plan_export")]) -> Response:
     async def run(conn: psycopg.AsyncConnection[Any]) -> list[Row] | None:
         p = await rows(conn, _ACTIVE)
         if not p:

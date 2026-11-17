@@ -91,6 +91,9 @@ export const test = base.extend<Fixtures>({
       errors.push(`${msg.text()} @ ${msg.location().url}`);
     });
     page.on("pageerror", (err) => errors.push(`pageerror: ${err.message}`));
+    // A renderer crash (out of memory, a GPU or decoder fault) kills the page without a pageerror: it is an
+    // error like any other, never a silent pass of whatever assertions ran before it (segment 22, from S04).
+    page.on("crash", () => errors.push("crash: the page's renderer crashed"));
     // Network failures are judged by frame, not by console attribution: every request the app's own document
     // makes (images, fetches, scripts, on any origin) counts; requests of embedded third-party frames do not.
     // Service-worker requests have no frame and are the worker's own business (it retries and caches).

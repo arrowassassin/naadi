@@ -1,4 +1,5 @@
-"""Outermost ASGI middleware: request id, security headers, access log, last-resort error handler.
+"""Outermost ASGI middleware: request id, security headers, access log, last-resort error handler; and the
+per-client request floor (segment 22) just inside it.
 
 Written as plain ASGI (not BaseHTTPMiddleware) so streaming responses (SSE in later segments) pass
 through untouched.
@@ -14,6 +15,7 @@ import structlog
 from starlette.datastructures import MutableHeaders
 from starlette.types import ASGIApp, Message, Receive, Scope, Send
 
+from .auth_limits import CLIENT_FLOOR_EXEMPT_PREFIXES, CLIENT_FLOOR_PER_MIN, RateLimited, RateLimiter, counted_client
 from .errors import error_response, request_id_var
 from .logs import get_logger
 from .scrub import scrub
@@ -85,3 +87,29 @@ class RequestContextMiddleware:
             getattr(log, level)("request", method=method, path=path, status=status, duration_ms=duration_ms)
             structlog.contextvars.unbind_contextvars("request_id")
             request_id_var.reset(token)
+
+
+class ClientFloorMiddleware:
+    """Per-client request floor under every bucket (auth_limits.CLIENT_FLOOR_PER_MIN): stops floods from one
+    address before they reach auth or the database. Hashed static assets are not counted."""
+
+    def __init__(self, app: ASGIApp, limit_per_min: int = CLIENT_FLOOR_PER_MIN) -> None:
+        self.app = app
+        self.limiter = RateLimiter(limit_per_min, 60.0, max_keys=50_000)
+
+    async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
+        if scope["type"] == "http" and not str(scope.get("path", "")).startswith(CLIENT_FLOOR_EXEMPT_PREFIXES):
+            key = counted_client(scope)
+            if key is not None:
+                try:
+                    self.limiter.hit(key)
+                except RateLimited as exc:
+                    log.warning("client_floor_exceeded", path=scope.get("path", ""))
+                    await error_response(
+                        429,
+                        "Too many requests. Wait a moment and try again.",
+                        "rate_limited",
+                        headers={"retry-after": str(exc.retry_after_s)},
+                    )(scope, receive, send)
+                    return
+        await self.app(scope, receive, send)
