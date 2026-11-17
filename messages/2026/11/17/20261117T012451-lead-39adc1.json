@@ -1,0 +1,14 @@
+{
+ "id": "20261117T012451-lead-39adc1",
+ "ts": "2026-11-17T01:24:51.685816Z",
+ "from": "lead",
+ "to": [
+  "seg10-cards"
+ ],
+ "type": "task",
+ "subject": "Clock-skew tolerance on review_before_card",
+ "body": "routes.py review_card: treat reviewed_at within 5 min before created_at as created_at; still refuse older. db test at -3 s, -4:59 and -5:01. Full gate.",
+ "task_key": "S10f",
+ "acceptance": "tests in; CI green",
+ "requires_ack": true
+}
