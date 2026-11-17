@@ -1,1 +1,56 @@
-[]
+[
+ {
+  "id": "s23e-ch00a",
+  "exam": "step1",
+  "order": 500,
+  "title": "Nervous system · Facial nerve lesion localisation",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s00a01",
+    "heading": "Facial nerve: upper versus lower motor neuron weakness",
+    "html": "<p>The facial nucleus in the pons has two functional parts. The part that drives the <strong>forehead and upper eyelid</strong> receives corticobulbar fibres from <em>both</em> motor cortices. The part that drives the <strong>lower face</strong> receives fibres mainly from the <em>opposite</em> cortex.</p>[[figure:s23e-fig0001]]<h3>Localising the lesion</h3><table><tr><th>Site</th><th>Facial weakness</th><th>Company it keeps</th></tr><tr><td>Motor cortex or internal capsule (upper motor neuron)</td><td>Opposite lower face; forehead wrinkles normally</td><td>Arm and hand weakness on the same side as the facial droop; aphasia if the dominant hemisphere</td></tr><tr><td>Pontine nucleus or fascicle</td><td>Whole face on the same side</td><td>Same-side abducens palsy (the facial fibres loop around the abducens nucleus), opposite-side limb weakness</td></tr><tr><td>Cerebellopontine angle</td><td>Whole face on the same side</td><td>Hearing loss, tinnitus and imbalance (vestibulocochlear nerve), reduced corneal reflex (trigeminal)</td></tr><tr><td>Facial canal or after the stylomastoid foramen</td><td>Whole face on the same side</td><td>Depends on the branches lost (below)</td></tr></table><h3>Branches inside the temporal bone</h3><ul><li><strong>Greater petrosal nerve</strong> (leaves at the geniculate ganglion): parasympathetic to the lacrimal gland. A lesion at or above the ganglion gives a dry eye.</li><li><strong>Nerve to stapedius</strong>: damps loud sound. Its loss makes ordinary sounds painfully loud on that side (hyperacusis).</li><li><strong>Chorda tympani</strong>: taste from the anterior two-thirds of the tongue and parasympathetic supply to the submandibular and sublingual glands.</li></ul><p>A lesion at the stylomastoid foramen (for example, parotid tumour or surgery) spares all three and causes pure motor weakness.</p><div class=\"trap\"><strong>Exam trap:</strong> a stroke patient with a droopy mouth who can still raise both eyebrows has a central lesion. Forehead involvement points to the nucleus or the nerve.</div><div class=\"pearl\"><strong>Pearl:</strong> the corneal reflex has a trigeminal afferent (V1) and a facial efferent. A facial nerve lesion abolishes the blink on the affected side whichever eye is touched, while the opposite eye still blinks.</div>",
+    "figureIds": [
+     "s23e-fig0001"
+    ],
+    "areas": [
+     "usmle2026.05.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Facial Nerve Anatomy and Clinical Applications (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK554569/",
+      "sourceId": "statpearls"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s23e-ch00b",
+  "exam": "step2ck",
+  "order": 501,
+  "title": "Neurology · Acute facial weakness",
+  "meta": null,
+  "source": "naadi-original-v1",
+  "sections": [
+   {
+    "id": "s23e-s00b01",
+    "heading": "Acute facial palsy: Bell palsy and its mimics",
+    "html": "<p><strong>Bell palsy</strong> is an acute, idiopathic, unilateral lower motor neuron facial palsy that develops over hours to 3 days. Reactivated herpes simplex virus is the leading suspected cause. Patients often notice ear or mastoid ache, altered taste or loud-sound sensitivity on the same side.</p><h3>Diagnosis</h3><ul><li>It is a <strong>clinical diagnosis</strong>: whole-hemiface weakness including the forehead, with no other neurological deficit.</li><li>Routine laboratory tests and imaging are not needed in a typical case.</li><li>Look for a cause when the picture is atypical, and image when weakness is gradual (over weeks), recurrent on the same side, or comes with other cranial nerve or limb signs.</li></ul><table><tr><th>Mimic</th><th>Clue</th><th>Next step</th></tr><tr><td>Stroke</td><td>Forehead spared; arm or speech involved</td><td>Emergency stroke pathway and brain imaging</td></tr><tr><td>Herpes zoster oticus (Ramsay Hunt syndrome)</td><td>Painful vesicles in the ear canal or on the palate; hearing loss or vertigo</td><td>Corticosteroid plus an antiviral</td></tr><tr><td>Lyme disease</td><td>Tick exposure in an endemic area; may be bilateral; erythema migrans</td><td>Lyme serology; doxycycline if positive</td></tr><tr><td>Parotid or skull-base tumour</td><td>Slow progression, a parotid mass, palsy of single branches</td><td>MRI with contrast</td></tr><tr><td>Otitis media or cholesteatoma</td><td>Ear discharge, conductive hearing loss</td><td>Otoscopy, ENT referral, CT of the temporal bone</td></tr></table><h3>Management</h3><ul><li><strong>Oral corticosteroid started within 72 hours</strong> of onset in patients aged 16 or older (for example, a 10-day course of prednisolone or prednisone). It improves the chance of full recovery.</li><li>An antiviral is <em>not</em> given on its own. Adding one to the steroid is optional in severe palsy, with little proven benefit.</li><li><strong>Protect the eye</strong>: lubricating drops by day, ointment and taping the lid shut at night. Incomplete closure can lead to exposure keratitis and corneal ulceration.</li><li>Refer to a specialist if there is no recovery by 3 months, or for new or worsening neurological signs.</li></ul><p><strong>Prognosis.</strong> Most patients begin to improve within 3 weeks, and most recover fully. Complete paralysis at onset, older age and no improvement by 3 weeks predict a worse outcome. Aberrant regrowth can cause synkinesis (an eye that closes when the patient smiles) and lacrimation on chewing.</p><div class=\"trap\"><strong>Exam trap:</strong> do not order MRI for a typical Bell palsy, and do not give an antiviral alone. Remember eye care: the most common preventable harm is to the cornea.</div>",
+    "figureIds": [],
+    "areas": [
+     "usmle2026.05.05.01"
+    ],
+    "furtherReading": [
+     {
+      "label": "StatPearls: Bell Palsy (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482290/",
+      "sourceId": "statpearls"
+     }
+    ]
+   }
+  ]
+ }
+]

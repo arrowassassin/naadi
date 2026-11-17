@@ -1,1 +1,86 @@
-[]
+[
+ {
+  "id": "s23e-c00001",
+  "frontHtml": "A patient has a drooping mouth on one side but wrinkles the forehead normally. Where is the lesion?",
+  "backHtml": "Upper motor neuron (cortex or corticobulbar tract) on the <strong>opposite</strong> side. The forehead part of the facial nucleus has bilateral cortical input.",
+  "sectionId": "s23e-s00a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "facial nerve"
+  ]
+ },
+ {
+  "id": "s23e-c00002",
+  "frontHtml": "Which facial nerve branch, lost in a lesion at or above the geniculate ganglion, causes a dry eye?",
+  "backHtml": "The <strong>greater petrosal nerve</strong> (parasympathetic supply to the lacrimal gland).",
+  "sectionId": "s23e-s00a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "facial nerve"
+  ]
+ },
+ {
+  "id": "s23e-c00003",
+  "frontHtml": "Facial palsy plus a same-side abducens palsy and opposite-side limb weakness: where is the lesion?",
+  "backHtml": "The <strong>pons</strong> (facial fibres loop around the abducens nucleus; the corticospinal tract has not yet crossed).",
+  "sectionId": "s23e-s00a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "lesion localisation"
+  ]
+ },
+ {
+  "id": "s23e-c00004",
+  "frontHtml": "First-line treatment of Bell palsy seen within 72 hours of onset?",
+  "backHtml": "An <strong>oral corticosteroid</strong> (for example, a 10-day prednisolone course), plus eye protection. No antiviral alone, no routine imaging.",
+  "sectionId": "s23e-s00b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "Bell palsy"
+  ]
+ },
+ {
+  "id": "s23e-c00005",
+  "frontHtml": "Facial palsy with vesicles in the ear canal and hearing loss: diagnosis and treatment?",
+  "backHtml": "<strong>Ramsay Hunt syndrome</strong> (herpes zoster oticus): a corticosteroid plus an antiviral such as valacyclovir.",
+  "sectionId": "s23e-s00b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "Bell palsy"
+  ]
+ },
+ {
+  "id": "s23e-c00006",
+  "frontHtml": "Which features of an acute facial palsy call for imaging?",
+  "backHtml": "Gradual progression over weeks, recurrence on the same side, other cranial nerve or limb signs, or a parotid mass.",
+  "sectionId": "s23e-s00b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "Bell palsy"
+  ]
+ }
+]
