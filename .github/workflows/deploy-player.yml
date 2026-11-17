@@ -1,0 +1,46 @@
+# Upload deploy/player-space to the static Space that serves the YouTube player page on its own origin
+# (https://arrowassassin-naadi-player.static.hf.space). Only when that folder changes on main, or by hand.
+# Never creates the Space and never touches settings or hardware (the owner creates it once, see
+# deploy/player-space/README.md). The post-upload check fetches the live files and compares them with the upload.
+name: deploy-player
+
+on:
+  push:
+    branches: [main]
+    paths: ["deploy/player-space/**", "scripts/deploy_player_space.sh", ".github/workflows/deploy-player.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-player
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  UV_VERSION: "0.11.32"
+  PLAYER_SPACE_ID: arrowassassin/naadi-player
+
+jobs:
+  upload:
+    name: upload naadi-player
+    if: github.repository == 'arrowassassin/naadi' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Require HF_TOKEN
+        run: |
+          if [ -z "${HF_TOKEN}" ]; then
+            echo "::error::Missing GitHub Actions secret HF_TOKEN. See docs/SECRETS.md."
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+      - name: Upload the player page and check what is served
+        run: scripts/deploy_player_space.sh --verify

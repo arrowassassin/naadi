@@ -104,6 +104,10 @@ class Settings(BaseSettings):
     authoring_fake: bool = False
     # YouTube Data API v3 (segment 20): read only by the weekly `youtube_map` graph; unset = the graph does nothing.
     youtube_api_key: SecretStr | None = None
+    # Where the YouTube player page is served (a static Space on its own origin, deploy/player-space). The app's CSP
+    # `frame-src`, the Permissions-Policy fullscreen delegation and the web's iframe all use this one value
+    # (a Space variable YOUTUBE_PLAYER_ORIGIN overrides it, e.g. for a staging player).
+    youtube_player_origin: str = "https://arrowassassin-naadi-player.static.hf.space"
     # Local search (segment 07): bring the embeddings index in line with the content when the API starts
     # (a background task; a no-op when nothing changed or the models are not cached).
     embeddings_autostart: bool = True
@@ -125,6 +129,17 @@ class Settings(BaseSettings):
     # ── Auth / admin (PII, so a secret) ──
     admin_emails: SecretStr | None = None
     google_oauth_configured: bool = False
+
+    @field_validator("youtube_player_origin")
+    @classmethod
+    def _player_origin(cls, v: str) -> str:
+        u = urlparse(v.strip())
+        loopback = u.hostname in ("localhost", "127.0.0.1")
+        if (u.scheme != "https" and not (loopback and u.scheme == "http")) or not u.hostname:
+            raise ValueError("YOUTUBE_PLAYER_ORIGIN must be an https origin")
+        if u.path not in ("", "/") or u.query or u.fragment or u.username or u.password:
+            raise ValueError("YOUTUBE_PLAYER_ORIGIN must be an origin only (no path, query or credentials)")
+        return f"{u.scheme}://{u.netloc}"
 
     @field_validator("log_level", mode="before")
     @classmethod

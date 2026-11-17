@@ -12117,6 +12117,11 @@
             "description": "Editable UI strings (app_config.ui_copy); {name} = placeholder",
             "title": "Ui Copy",
             "type": "object"
+          },
+          "video_player_origin": {
+            "description": "Origin of the YouTube player page (a Space of its own): the iframe src and its exact origin check",
+            "title": "Video Player Origin",
+            "type": "string"
           }
         },
         "required": [
@@ -12129,7 +12134,8 @@
           "features",
           "nav",
           "exam_rules",
-          "ui_copy"
+          "ui_copy",
+          "video_player_origin"
         ],
         "title": "PublicConfig",
         "type": "object"

@@ -42,7 +42,7 @@ update public.flashcards set source_id = 'naadi-original-v1' where origin = 'see
   and exists (select 1 from public.sources s where s.id = 'naadi-original-v1');
 update public.flashcards set source_id = 'user-upload' where origin = 'anki_import';
 alter table public.flashcards add constraint flashcards_anki_source_check
-  check (origin <> 'anki_import' or source_id = 'user-upload');
+  check (origin <> 'anki_import' or coalesce(source_id = 'user-upload', false));
 
 drop policy flashcards_insert_own on public.flashcards;
 drop policy flashcards_update_own on public.flashcards;

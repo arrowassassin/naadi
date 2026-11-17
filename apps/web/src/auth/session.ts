@@ -1,6 +1,7 @@
 import type { PublicConfig } from "@naadi/shared";
 import { type AuthChangeEvent, createClient, type Session, type SupabaseClient } from "@supabase/supabase-js";
 import { useSyncExternalStore } from "react";
+import { setPlayerOrigin } from "../video/playerConfig";
 import { ApiError } from "./apiError";
 import { loadPublicConfig } from "./publicConfig";
 import { clearUserCaches } from "./userCache";
@@ -91,6 +92,7 @@ async function boot(): Promise<AuthState> {
   let client: SupabaseClient;
   try {
     ({ config } = await loadPublicConfig());
+    setPlayerOrigin(config.video_player_origin);
     client = makeClient(config);
   } catch (err) {
     const error = err instanceof ApiError ? err : new ApiError(String(err), null, null, null);

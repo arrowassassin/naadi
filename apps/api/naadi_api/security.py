@@ -40,7 +40,9 @@ def content_security_policy(settings: Settings) -> str:
         f"media-src {' '.join(media)}",
         # 'self' only: the sandboxed diagram renderer and the sandboxed YouTube player page (SANDBOX_DOCUMENTS), both
         # with an opaque origin. The official YouTube player is a frame of that player page, under ITS policy.
-        "frame-src 'self'",
+        # 'self' (the sandboxed diagram renderer) and the YouTube player page on its own origin (a static Space); the
+        # official player is a frame of THAT page, under its policy. script-src stays 'self': no third-party script.
+        f"frame-src 'self' {settings.youtube_player_origin}",
         "worker-src 'self'",
         "manifest-src 'self'",
         "object-src 'none'",
@@ -66,12 +68,10 @@ def trusted_types_report_only_policy() -> str:
     return "; ".join(["require-trusted-types-for 'script'", *_reporting()])
 
 
-YOUTUBE_SANDBOX_DOCUMENT = "sandbox/youtube.html"
-
 # Documents only ever loaded in `<iframe sandbox="allow-scripts">` (opaque origin: no cookies, storage or
 # access to the app). Mermaid lays out SVG text with inline styles, so they get their own policy; the app's own
 # CSP above stays strict.
-SANDBOX_DOCUMENTS = frozenset({"sandbox/mermaid.html", YOUTUBE_SANDBOX_DOCUMENT})
+SANDBOX_DOCUMENTS = frozenset({"sandbox/mermaid.html"})
 
 
 def sandbox_content_security_policy() -> str:
@@ -91,29 +91,12 @@ def sandbox_content_security_policy() -> str:
     )
 
 
-def youtube_sandbox_content_security_policy() -> str:
-    """The YouTube player page (segment 20): the ONLY document that may load the official IFrame Player API script
-    from www.youtube.com, and the only one that may frame the privacy-enhanced player. It has an opaque origin
-    (iframe sandbox without allow-same-origin, repeated here as a CSP sandbox), so that script can never read the
-    app's storage or session. It may style itself inline (the API sets styles on its own frame) and nothing else."""
-    return "; ".join(
-        [
-            "default-src 'none'",
-            "script-src 'self' https://www.youtube.com",
-            "style-src 'self' 'unsafe-inline'",
-            "frame-src https://www.youtube-nocookie.com",
-            "img-src data:",
-            "font-src 'none'",
-            "connect-src 'none'",
-            "base-uri 'none'",
-            "form-action 'none'",
-            "frame-ancestors 'self'",
-            "sandbox allow-scripts",
-        ]
+def permissions_policy(settings: Settings) -> str:
+    """Fullscreen is delegated to the player page (the nested embed inherits it through its `allow` attribute)."""
+    return (
+        "camera=(), microphone=(), geolocation=(), payment=(), usb=(), "
+        f'fullscreen=(self "{settings.youtube_player_origin}")'
     )
-
-
-PERMISSIONS_POLICY = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"
 
 
 def security_headers(settings: Settings) -> list[tuple[bytes, bytes]]:
@@ -122,7 +105,7 @@ def security_headers(settings: Settings) -> list[tuple[bytes, bytes]]:
         "strict-transport-security": "max-age=63072000; includeSubDomains",
         "x-content-type-options": "nosniff",
         "referrer-policy": "strict-origin-when-cross-origin",
-        "permissions-policy": PERMISSIONS_POLICY,
+        "permissions-policy": permissions_policy(settings),
         "cross-origin-opener-policy": "same-origin",
         "content-security-policy-report-only": trusted_types_report_only_policy(),
         "reporting-endpoints": f'{CSP_REPORT_GROUP}="{CSP_REPORT_PATH}"',

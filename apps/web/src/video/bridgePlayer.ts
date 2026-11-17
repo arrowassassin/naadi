@@ -25,11 +25,12 @@ export const STATE_PLAYING = 1;
 
 /**
  * Connect to the sandboxed player page in `frame`. The frame says `hello` when it is ready to listen; the app then
- * sends `init` with the video id. Every incoming message must come from this frame's window, from the opaque origin
- * (`"null"`) and have a valid shape (bridge.ts); anything else is ignored.
+ * sends `init` with the video id. Every incoming message must come from this frame's window, from EXACTLY the player's
+ * origin and have a valid shape (bridge.ts); anything else is ignored.
  */
 export function connectPlayer(
   frame: HTMLIFrameElement,
+  playerOrigin: string,
   init: { videoId: string; start: number | null },
   h: BridgeHandlers,
 ): BridgePlayer {
@@ -37,14 +38,14 @@ export function connectPlayer(
   let state = -1;
   let live = true;
 
-  // The frame has an opaque origin, so `*` is the only possible target; nothing secret is ever sent.
-  const post = (msg: ToFrame) => frame.contentWindow?.postMessage(msg, "*");
+  // The target origin is the player's exact origin: if the frame ever navigates elsewhere, nothing is delivered.
+  const post = (msg: ToFrame) => frame.contentWindow?.postMessage(msg, playerOrigin);
   const command = (c: Command) => {
     if (live) post({ ns: NS, type: "cmd", ...c });
   };
 
   const onMessage = (event: MessageEvent) => {
-    if (!live || event.source !== frame.contentWindow || event.origin !== "null") return;
+    if (!live || event.source !== frame.contentWindow || event.origin !== playerOrigin) return;
     const msg: FromFrame | null = parseFromFrame(event.data);
     if (!msg) return;
     switch (msg.type) {

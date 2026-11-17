@@ -2296,6 +2296,7 @@ export const zPublicConfig = z.object({
   supabase_anon_key: z.string().nullable(),
   supabase_url: z.string().nullable(),
   ui_copy: z.record(z.string(), z.string()),
+  video_player_origin: z.string(),
 });
 
 /**

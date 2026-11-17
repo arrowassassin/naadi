@@ -4,15 +4,23 @@
  * both validate every incoming message by source window and shape before acting on it.
  *
  * Why a bridge: the official IFrame Player API is a third-party script. It must not run in the app's own origin,
- * where it could read the signed-in session, so it runs in a frame with an opaque origin (no `allow-same-origin`)
- * and the app talks to it only through these messages: commands in (play, pause, seek, rate), events out (ready,
+ * where it could read the signed-in session, so it runs on a page served from an origin of its own
+ * (deploy/player-space) and the app talks to it only through these messages: commands in (play, pause, seek, rate), events out (ready,
  * state, time, error).
  */
 export const NS = "naadi:yt" as const;
-export const SANDBOX_URL = "/sandbox/youtube.html";
-/** No `allow-same-origin`: an opaque origin. (`allow-presentation` is not a valid flag in current browsers; fullscreen
- * is the `allow` permission on the frame, not a sandbox flag.) */
-export const SANDBOX_ATTR = "allow-scripts";
+/**
+ * The player page is on an origin of its own (a static Space), so `allow-same-origin` here means THAT origin, which
+ * holds nothing of the app's. No `allow-top-navigation`, no `allow-forms`. (`allow-presentation` is not a valid
+ * sandbox flag in current Chromium and WebKit, which log an error for it; fullscreen is the frame's `allow`
+ * permission plus the Permissions-Policy, not a sandbox flag.)
+ */
+export const SANDBOX_ATTR = "allow-scripts allow-same-origin";
+
+/** The player page's URL: it learns who embeds it from `?parent=` and checks that against the real embedder. */
+export function playerUrl(playerOrigin: string, parentOrigin: string): string {
+  return `${playerOrigin}/index.html?parent=${encodeURIComponent(parentOrigin)}`;
+}
 
 export type Command =
   | { cmd: "play" }

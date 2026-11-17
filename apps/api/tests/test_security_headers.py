@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
+import pytest
 from fastapi.testclient import TestClient
 
 from naadi_api.security import (
@@ -10,8 +11,8 @@ from naadi_api.security import (
     SEARCH_MEDIA_HOSTS,
     YOUTUBE_IMG_HOSTS,
     content_security_policy,
+    permissions_policy,
     trusted_types_report_only_policy,
-    youtube_sandbox_content_security_policy,
 )
 
 from .conftest import make_settings
@@ -36,7 +37,7 @@ def test_csp_is_strict() -> None:
     assert d["font-src"] == ["'self'"]
     assert d["connect-src"] == ["'self'", SUPA, "wss://abcdefghijklmnopqrst.supabase.co"]
     assert d["img-src"] == ["'self'", "data:", "blob:", *SEARCH_MEDIA_HOSTS, *YOUTUBE_IMG_HOSTS, SUPA]
-    assert d["frame-src"] == ["'self'"]  # YouTube is framed by the sandboxed player page, not by the app
+    assert d["frame-src"] == ["'self'", "https://arrowassassin-naadi-player.static.hf.space"]  # the player page
     assert d["worker-src"] == ["'self'"]
     assert d["base-uri"] == ["'self'"]
     assert d["report-uri"] == [CSP_REPORT_PATH]
@@ -90,49 +91,49 @@ def test_report_only_and_reporting_endpoint_headers(client_factory: Callable[...
     assert "require-trusted-types-for" not in h["content-security-policy"]
 
 
-def test_the_app_csp_has_no_third_party_script_or_frame() -> None:
-    """The official YouTube player is third-party script: it runs only in the sandboxed player page, never here."""
+PLAYER = "https://arrowassassin-naadi-player.static.hf.space"
+
+
+def test_the_app_csp_allows_no_third_party_script_and_frames_only_the_player_origin() -> None:
+    """The official YouTube player is third-party script: it runs only on the player page's own origin, never here."""
     for settings in (make_settings(supabase_url=SUPA), make_settings(app_env="local")):
         d = _directives(content_security_policy(settings))
         assert d["script-src"] == ["'self'"]
-        assert d["frame-src"] == ["'self'"]
-        assert not any("youtube" in v for vals in d.values() for v in vals)
+        assert d["frame-src"] == ["'self'", PLAYER]
+        assert not any("youtube.com" in v or "nocookie" in v for vals in d.values() for v in vals)
 
 
-def test_the_youtube_player_page_has_its_own_opaque_origin_policy() -> None:
-    d = _directives(youtube_sandbox_content_security_policy())
-    assert d["script-src"] == ["'self'", "https://www.youtube.com"]
-    assert d["frame-src"] == ["https://www.youtube-nocookie.com"]
-    assert d["default-src"] == ["'none'"] and d["connect-src"] == ["'none'"]
-    assert d["sandbox"] == ["allow-scripts"]  # never allow-same-origin
-    assert d["frame-ancestors"] == ["'self'"]
+def test_the_player_origin_is_one_config_value_used_by_csp_fullscreen_and_the_web() -> None:
+    s = make_settings(youtube_player_origin="https://player.example.test/")
+    assert s.youtube_player_origin == "https://player.example.test"  # normalised to an origin
+    assert _directives(content_security_policy(s))["frame-src"] == ["'self'", "https://player.example.test"]
+    assert 'fullscreen=(self "https://player.example.test")' in permissions_policy(s)
+    for bad in (
+        "http://player.example.test",
+        "https://p.example.test/path",
+        "https://u:p@p.example.test",
+        "javascript:1",
+    ):
+        with pytest.raises(ValueError, match="YOUTUBE_PLAYER_ORIGIN"):
+            make_settings(youtube_player_origin=bad)
+    assert make_settings(youtube_player_origin="http://127.0.0.1:9999").youtube_player_origin == "http://127.0.0.1:9999"
 
 
-def test_each_sandbox_document_is_served_with_its_own_policy(static_dir: Path) -> None:
-    (static_dir / "sandbox").mkdir()
-    for name in ("mermaid", "youtube"):
-        (static_dir / "sandbox" / f"{name}.html").write_text("<!doctype html><title>x</title>")
-    from naadi_api.main import create_app
-    from tests.conftest import fake_service
-
-    app = create_app(make_settings(static_dir=static_dir), health=fake_service())
-    c = TestClient(app)
-    yt = c.get("/sandbox/youtube.html").headers["content-security-policy"]
-    mm = c.get("/sandbox/mermaid.html").headers["content-security-policy"]
-    assert "https://www.youtube.com" in yt and "https://www.youtube.com" not in mm
-    assert "sandbox allow-scripts" in yt
+def test_fullscreen_is_delegated_to_the_player_page(client_factory: Callable[..., TestClient]) -> None:
+    h = client_factory(settings=make_settings(supabase_url=SUPA)).get("/api/health").headers
+    assert f'fullscreen=(self "{PLAYER}")' in h["permissions-policy"]
 
 
 def test_sandbox_documents_skip_the_trusted_types_rollout(
     client_factory: Callable[..., TestClient], static_dir: Path
 ) -> None:
-    """The opaque-origin sandbox pages exist to run their own scripts (Mermaid, the YouTube API): they keep their own
-    strict CSP and do not get the app's Trusted Types report-only policy; every app page does."""
+    """The opaque-origin sandbox page exists to run its own script (Mermaid): it keeps its own strict CSP and does not
+    get the app's Trusted Types report-only policy; every app page does."""
     (static_dir / "sandbox").mkdir()
-    for name in ("mermaid.html", "youtube.html"):
+    for name in ("mermaid.html",):
         (static_dir / "sandbox" / name).write_text("<!doctype html><title>x</title>")
     c = client_factory()
-    for name in ("mermaid.html", "youtube.html"):
+    for name in ("mermaid.html",):
         h = c.get(f"/sandbox/{name}").headers
         assert "sandbox" in h["content-security-policy"] or "frame-src" in h["content-security-policy"], name
         assert "content-security-policy-report-only" not in h, name

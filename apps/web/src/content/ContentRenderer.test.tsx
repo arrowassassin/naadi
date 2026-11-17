@@ -198,7 +198,7 @@ describe("ContentRenderer", () => {
     expect(screen.getByText("Figure on its way back.")).toBeInTheDocument();
   });
 
-  it("YouTube is a click-to-load facade, then the sandboxed player page with a referrer policy", () => {
+  it("YouTube is a click-to-load facade, then the player page on its own origin with a referrer policy", () => {
     const { container } = render(
       <ContentRenderer
         sectionId="s1"
@@ -211,9 +211,11 @@ describe("ContentRenderer", () => {
     fireEvent.click(screen.getByRole("button", { name: /Play video: Acid–base/ }));
     const frame = container.querySelector("iframe");
     expect(frame).not.toBeNull();
-    // Same-origin static page, opaque origin: the third-party player script never shares the app's origin.
-    expect(frame?.getAttribute("src")).toBe("/sandbox/youtube.html");
-    expect(frame?.getAttribute("sandbox")).toBe("allow-scripts");
+    // A page on an origin of its own: the third-party player script never shares the app's origin.
+    const src = new URL(frame?.getAttribute("src") ?? "");
+    expect(src.origin).toBe("https://arrowassassin-naadi-player.static.hf.space");
+    expect(src.searchParams.get("parent")).toBe(window.location.origin);
+    expect(frame?.getAttribute("sandbox")).toBe("allow-scripts allow-same-origin");
     expect(frame?.getAttribute("referrerpolicy")).toBe("strict-origin-when-cross-origin");
   });
 

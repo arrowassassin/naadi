@@ -62,6 +62,9 @@ class PublicConfig(BaseModel):
     nav: list[NavEntry] = Field(description="Navigation items whose flag is on for a signed-out visitor")
     exam_rules: ExamRules
     ui_copy: dict[str, str] = Field(description="Editable UI strings (app_config.ui_copy); {name} = placeholder")
+    video_player_origin: str = Field(
+        description="Origin of the YouTube player page (a Space of its own): the iframe src and its exact origin check"
+    )
     storage_buckets: dict[str, str] = Field(
         default_factory=dict,
         description="Supabase Storage bucket names the web uploads to (app_config.storage.user_uploads); not secret",
@@ -236,6 +239,7 @@ async def public_config(request: Request) -> JSONResponse:
         nav=[NavEntry.model_validate(i) for i in await cfg.nav_for(is_admin=False, app_env=s.app_env)],
         exam_rules=ExamRules.model_validate(await cfg.get("exam_rules")),
         ui_copy=await cfg.get("ui_copy"),
+        video_player_origin=s.youtube_player_origin,
         storage_buckets={"user_uploads": str((await cfg.get("storage"))["user_uploads"])},
     )
     return JSONResponse(body.model_dump(mode="json"), headers={"cache-control": PUBLIC_CONFIG_CACHE})

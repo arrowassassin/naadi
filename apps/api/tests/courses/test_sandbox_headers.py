@@ -17,8 +17,8 @@ def _directives(csp: str) -> dict[str, str]:
 
 def test_app_csp_frames_only_self() -> None:
     d = _directives(content_security_policy(make_settings()))
-    # YouTube is framed by its own sandboxed player page (opaque origin, own CSP), never by the app document.
-    assert d["frame-src"] == "'self'"
+    # YouTube is framed by the player page on its own origin, never by the app document.
+    assert d["frame-src"] == "'self' https://arrowassassin-naadi-player.static.hf.space"
     assert d["style-src"] == "'self'"  # the app itself never allows inline styles
 
 

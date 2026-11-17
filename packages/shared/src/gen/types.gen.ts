@@ -6726,6 +6726,12 @@ export type PublicConfig = {
   ui_copy: {
     [key: string]: string;
   };
+  /**
+   * Video Player Origin
+   *
+   * Origin of the YouTube player page (a Space of its own): the iframe src and its exact origin check
+   */
+  video_player_origin: string;
 };
 
 /**

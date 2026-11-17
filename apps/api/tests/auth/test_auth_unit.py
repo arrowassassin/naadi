@@ -502,6 +502,7 @@ def test_public_config(auth_client: Callable[..., TestClient]) -> None:
     assert body.pop("exam_rules")["modes"]["exam"]["assistant"] is False
     assert body.pop("ui_copy")["signin.tagline"]
     assert body.pop("storage_buckets") == {"user_uploads": "user-uploads"}
+    assert body.pop("video_player_origin") == "https://arrowassassin-naadi-player.static.hf.space"
     assert body == {
         "auth_configured": True,
         "supabase_url": SUPABASE_URL,

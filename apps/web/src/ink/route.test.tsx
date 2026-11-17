@@ -41,6 +41,7 @@ function config(inkLab: boolean) {
     google_oauth_enabled: false,
     app_base_url: null,
     app_version: "test",
+    video_player_origin: "https://arrowassassin-naadi-player.static.hf.space",
     features: { ink_lab: inkLab },
     nav: [],
     exam_rules: {

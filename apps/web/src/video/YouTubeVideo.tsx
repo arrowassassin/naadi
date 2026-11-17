@@ -2,11 +2,12 @@ import type { MediaOut } from "@naadi/shared";
 import { cx } from "@naadi/ui";
 import { Component, type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import type { ContentEnv } from "../content/types";
-import { SANDBOX_ATTR, SANDBOX_URL } from "./bridge";
+import { playerUrl, SANDBOX_ATTR } from "./bridge";
 import { type BridgePlayer, connectPlayer, STATE_PLAYING } from "./bridgePlayer";
 import { Facade } from "./Facade";
 import { formatClock } from "./format";
 import { clearVideoPosition, publishVideoPosition } from "./playback";
+import { playerOrigin } from "./playerConfig";
 import { VideoNotes } from "./VideoNotes";
 
 const DEFAULT_RATES = [0.5, 0.75, 1, 1.25, 1.5, 2];
@@ -68,6 +69,7 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
     let live = true;
     const player = connectPlayer(
       frame,
+      playerOrigin(),
       { videoId: media.youtube_id, start: startS },
       {
         onReady: (r, current) => {
@@ -116,7 +118,7 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
   const controls = ready && !apiFailed && !playerError;
   const sorted = [...chapters].sort((a, b) => a.startS - b.startS);
   const active = [...sorted].reverse().find((c) => now >= c.startS);
-  const btn = "inline-flex min-h-11 min-w-11 items-center justify-center rounded-pill border px-4 text-ui-sm text-text";
+  const btn = "inline-flex min-h-11 min-w-11 items-center justify-center rounded-pill border px-4 text-ui-sm";
 
   return (
     <div className="flex flex-col gap-4">
@@ -125,9 +127,9 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
           <iframe
             ref={frameRef}
             title={title}
-            // The official player runs in a page with an opaque origin and its own CSP (sandbox/youtube.html): the
-            // third-party script never shares an origin with the signed-in app. See bridge.ts.
-            src={SANDBOX_URL}
+            // The official player runs on a page of its own origin (deploy/player-space), never on the app's: the
+            // third-party script cannot reach the signed-in session. See bridge.ts.
+            src={playerUrl(playerOrigin(), window.location.origin)}
             sandbox={SANDBOX_ATTR}
             referrerPolicy="strict-origin-when-cross-origin"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
@@ -167,7 +169,7 @@ export function YouTubeVideo({ media, startS, endS, chapters, env, title }: Prop
               onClick={() => setSpeed(r)}
               className={cx(
                 btn,
-                rate === r ? "border-paper bg-paper font-semibold text-ground" : "border-line-control",
+                rate === r ? "border-paper bg-paper font-semibold text-ground" : "border-line-control text-text",
               )}
             >
               {t("video.speed_option", { rate: String(r) })}

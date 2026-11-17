@@ -1,4 +1,4 @@
-import { mkdirSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import type { Page, Route } from "@playwright/test";
 import { canMintUsers } from "./auth-users";
@@ -7,10 +7,11 @@ import { freshStudent, richChapter, watchConsole } from "./support/student";
 
 /**
  * Segment 20: the YouTube IFrame Player API player, its chapter list, speed control and timestamped notes, against
- * the real API and database. The official player runs in a sandboxed page with an opaque origin and talks to the
- * app over a typed postMessage bridge (src/video/bridge.ts). CI never contacts YouTube: the API script is answered
- * here and a fake `YT.Player` stands in for the player inside that page (the real one is covered by the device
- * checklist).
+ * the real API and database. The official player runs on a page of its own origin (deploy/player-space, a static
+ * Space) and talks to the app over a typed postMessage bridge (src/video/bridge.ts). The matrix never contacts YouTube
+ * or the deployed Space: the player origin's files are served here from deploy/player-space (the real page, byte for
+ * byte), the IFrame API script is answered with a fake `YT.Player`, and the real thing is covered by video-live.spec
+ * (opt in with E2E_LIVE_YOUTUBE=1) and the device checklist.
  */
 test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
 
@@ -28,10 +29,13 @@ declare global {
   }
 }
 
-/** The fake player lives in the sandboxed player page (an opaque-origin frame), not in the app's page. */
+const PLAYER_ORIGIN = "https://arrowassassin-naadi-player.static.hf.space";
+const PLAYER_DIR = path.resolve(import.meta.dirname, "../../../deploy/player-space");
+
+/** The fake player lives in the player page's frame (its own origin), not in the app's page. */
 function sandbox(page: Page) {
-  const f = page.frames().find((fr) => fr.url().endsWith("/sandbox/youtube.html"));
-  if (!f) throw new Error("the sandboxed player frame is not there");
+  const f = page.frames().find((fr) => fr.url().startsWith(`${PLAYER_ORIGIN}/`));
+  if (!f) throw new Error("the player frame is not there");
   return f;
 }
 const fake = <T>(page: Page, read: (y: Fake) => T): Promise<T> =>
@@ -71,6 +75,15 @@ async function stubYouTube(page: Page): Promise<string[]> {
   await page.route("https://www.youtube-nocookie.com/**", (route: Route) =>
     route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>player</title>" }),
   );
+  // The player origin serves the real files of deploy/player-space (what the Space serves), from disk.
+  await page.route(`${PLAYER_ORIGIN}/**`, (route: Route) => {
+    const file = new URL(route.request().url()).pathname === "/player.js" ? "player.js" : "index.html";
+    route.fulfill({
+      status: 200,
+      contentType: file === "player.js" ? "text/javascript" : "text/html",
+      body: readFileSync(path.join(PLAYER_DIR, file)),
+    });
+  });
   return asked;
 }
 
@@ -100,18 +113,18 @@ test.describe("YouTube player and video notes", () => {
       await play.click();
       const frame = page.locator("[data-node=video] iframe");
       await expect(frame).toHaveAttribute("referrerpolicy", "strict-origin-when-cross-origin");
-      await expect(frame).toHaveAttribute("src", "/sandbox/youtube.html");
-      await expect(frame).toHaveAttribute("sandbox", "allow-scripts");
+      await expect(frame).toHaveAttribute("src", new RegExp(`^${PLAYER_ORIGIN}/index\\.html\\?parent=`));
+      await expect(frame).toHaveAttribute("sandbox", "allow-scripts allow-same-origin");
+      await expect(frame).toHaveAttribute("allow", /fullscreen/);
       // init over the bridge reached the player page, which started the (fake) official player and played
       await expect.poll(() => fake(page, (y) => y.played)).toBe(1);
-      // the app's own document allows no third-party script; the player page has its own, sandboxed policy
-      const appCsp = (await page.request.get("/")).headers()["content-security-policy"] ?? "";
+      // the app's own document allows no third-party script and frames only the player origin
+      const rootHeaders = (await page.request.get("/")).headers();
+      const appCsp = rootHeaders["content-security-policy"] ?? "";
       expect(appCsp).toContain("script-src 'self';");
+      expect(appCsp).toContain(`frame-src 'self' ${PLAYER_ORIGIN};`);
       expect(appCsp).not.toContain("youtube");
-      const playerCsp = (await page.request.get("/sandbox/youtube.html")).headers()["content-security-policy"] ?? "";
-      expect(playerCsp).toContain("script-src 'self' https://www.youtube.com");
-      expect(playerCsp).toContain("sandbox allow-scripts");
-      expect(playerCsp).not.toContain("allow-same-origin");
+      expect(rootHeaders["permissions-policy"] ?? "").toContain(`fullscreen=(self "${PLAYER_ORIGIN}")`);
 
       // source line and Terms link under the player
       const video = page.locator("[data-node=video]");
@@ -126,6 +139,22 @@ test.describe("YouTube player and video notes", () => {
       await video.getByRole("button", { name: "1.5×", exact: true }).click();
       await expect.poll(() => fake(page, (y) => y.rate)).toBe(1.5);
       await expect(video.getByRole("button", { name: "1.5×", exact: true })).toHaveAttribute("aria-pressed", "true");
+      // the selected speed's label is readable: its text colour contrasts with its fill (not fill-only status)
+      const contrast = await video.getByRole("button", { name: "1.5×", exact: true }).evaluate((el) => {
+        const rgb = (c: string) => (c.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number);
+        const lum = ([r, g, b]: number[]) => {
+          const f = (v: number) => {
+            const x = (v ?? 0) / 255;
+            return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+          };
+          return 0.2126 * f(r as number) + 0.7152 * f(g as number) + 0.0722 * f(b as number);
+        };
+        const cs = getComputedStyle(el);
+        const a = lum(rgb(cs.color));
+        const b = lum(rgb(cs.backgroundColor));
+        return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+      });
+      expect(contrast, "selected speed label contrast").toBeGreaterThan(4.5);
 
       // a note at 12:34
       await setTime(page, 754);

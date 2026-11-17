@@ -2,9 +2,10 @@ import type { MediaOut } from "@naadi/shared";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { ContentRenderer } from "../content/ContentRenderer";
-import { NS, parseFromFrame, parseToFrame, SANDBOX_ATTR, SANDBOX_URL } from "./bridge";
+import { NS, parseFromFrame, parseToFrame, playerUrl, SANDBOX_ATTR } from "./bridge";
 import { formatClock } from "./format";
 import { currentVideoPosition, VIDEO_POSITION_EVENT } from "./playback";
+import { asOrigin, DEFAULT_PLAYER_ORIGIN, playerOrigin, resetPlayerOrigin, setPlayerOrigin } from "./playerConfig";
 
 const VID: MediaOut = {
   id: "yt-abc",
@@ -37,14 +38,16 @@ function frameOf(container: HTMLElement) {
   const frame = container.querySelector("iframe") as HTMLIFrameElement;
   const win = frame.contentWindow as Window;
   const sent: unknown[] = [];
-  vi.spyOn(win, "postMessage").mockImplementation((m: unknown) => {
+  const targets: unknown[] = [];
+  vi.spyOn(win, "postMessage").mockImplementation(((m: unknown, target: unknown) => {
     sent.push(m);
-  });
-  const say = (data: unknown, origin = "null") =>
+    targets.push(target);
+  }) as never);
+  const say = (data: unknown, origin: string = DEFAULT_PLAYER_ORIGIN) =>
     act(() => {
       window.dispatchEvent(new MessageEvent("message", { data, origin, source: win }));
     });
-  return { frame, sent, say };
+  return { frame, sent, targets, say };
 }
 const from = (type: string, extra: object = {}) => ({ ns: NS, type, ...extra });
 
@@ -89,20 +92,25 @@ describe("YouTube player over the bridge", () => {
     expect(screen.getByText("YouTube")).toBeInTheDocument();
   });
 
-  it("one press adds only the sandboxed same-origin player page; the video id goes over the bridge", () => {
+  it("one press adds only the player page on its own origin; the video id goes over the bridge", () => {
     const { container } = mount(doc({ startS: 30, endS: null }));
     fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
     const frame = container.querySelector("iframe") as HTMLIFrameElement;
-    expect(frame.getAttribute("src")).toBe(SANDBOX_URL);
+    expect(frame.getAttribute("src")).toBe(playerUrl(DEFAULT_PLAYER_ORIGIN, window.location.origin));
+    expect(new URL(frame.getAttribute("src") as string).origin).not.toBe(window.location.origin);
     expect(frame.getAttribute("sandbox")).toBe(SANDBOX_ATTR);
-    expect(frame.getAttribute("sandbox")).not.toContain("allow-same-origin");
+    for (const forbidden of ["allow-top-navigation", "allow-forms", "allow-popups", "allow-modals"]) {
+      expect(frame.getAttribute("sandbox")).not.toContain(forbidden);
+    }
     expect(container.querySelector('iframe[src*="youtube.com"], iframe[src*="nocookie"]')).toBeNull();
     expect(document.querySelector('script[src*="youtube.com"]')).toBeNull();
-    const { sent, say } = frameOf(container);
+    const { sent, targets, say } = frameOf(container);
     say(from("hello"));
     expect(sent).toEqual([
       { ns: NS, type: "init", videoId: "abc_DEF-123", start: 30, parentOrigin: window.location.origin },
     ]);
+    // messages go to the player's EXACT origin, never "*"
+    expect(targets.every((t) => t === DEFAULT_PLAYER_ORIGIN)).toBe(true);
   });
 
   it("ignores messages from other windows, other origins and bad shapes", () => {
@@ -113,6 +121,9 @@ describe("YouTube player over the bridge", () => {
       window.dispatchEvent(new MessageEvent("message", { data: from("hello"), origin: "null", source: window }));
     });
     say(from("hello"), "https://evil.test");
+    say(from("hello"), "null");
+    say(from("hello"), `${DEFAULT_PLAYER_ORIGIN}.evil.test`);
+    say(from("hello"), window.location.origin); // the app's own origin is not the player's
     say({ ns: NS, type: "init" });
     expect(sent).toEqual([]);
   });
@@ -170,5 +181,45 @@ describe("YouTube player over the bridge", () => {
       "href",
       "https://www.youtube.com/watch?v=abc_DEF-123",
     );
+  });
+});
+
+describe("player origin config", () => {
+  it("accepts only an https origin (or loopback http) and keeps the old value otherwise", () => {
+    expect(asOrigin("https://p.example.test")).toBe("https://p.example.test");
+    expect(asOrigin("http://127.0.0.1:5555")).toBe("http://127.0.0.1:5555");
+    for (const bad of [
+      "http://p.example.test",
+      "https://p.example.test/x",
+      "https://u@p.example.test",
+      "javascript:1",
+      "",
+      5,
+      null,
+    ]) {
+      expect(asOrigin(bad)).toBeNull();
+    }
+    setPlayerOrigin("https://p.example.test");
+    expect(playerOrigin()).toBe("https://p.example.test");
+    setPlayerOrigin("http://evil.test");
+    expect(playerOrigin()).toBe("https://p.example.test");
+    resetPlayerOrigin();
+    expect(playerOrigin()).toBe(DEFAULT_PLAYER_ORIGIN);
+  });
+
+  it("the frame, the targets and the accepted origin follow the configured value", () => {
+    setPlayerOrigin("https://p.example.test");
+    try {
+      const { container } = mount(doc({ startS: null, endS: null }));
+      fireEvent.click(screen.getByRole("button", { name: /Play video/ }));
+      const { sent, targets, say } = frameOf(container);
+      say(from("hello"), DEFAULT_PLAYER_ORIGIN); // the old default is no longer the player
+      expect(sent).toEqual([]);
+      say(from("hello"), "https://p.example.test");
+      expect(sent).toHaveLength(1);
+      expect(targets).toEqual(["https://p.example.test"]);
+    } finally {
+      resetPlayerOrigin();
+    }
   });
 });

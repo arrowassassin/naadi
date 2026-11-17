@@ -140,8 +140,6 @@ export default defineConfig({
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         // The Mermaid renderer, served with its own CSP and only ever loaded in a sandboxed iframe.
         mermaid: fileURLToPath(new URL("./sandbox/mermaid.html", import.meta.url)),
-        // The YouTube player page: the only document whose CSP allows scripts from www.youtube.com.
-        youtube: fileURLToPath(new URL("./sandbox/youtube.html", import.meta.url)),
       },
     },
   },

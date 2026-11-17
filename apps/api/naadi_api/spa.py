@@ -17,12 +17,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from starlette.routing import BaseRoute, Match
 
-from .security import (
-    SANDBOX_DOCUMENTS,
-    YOUTUBE_SANDBOX_DOCUMENT,
-    sandbox_content_security_policy,
-    youtube_sandbox_content_security_policy,
-)
+from .security import SANDBOX_DOCUMENTS, sandbox_content_security_policy
 
 ASSET_CACHE = "public, max-age=31536000, immutable"
 FILE_CACHE = "public, max-age=3600"
@@ -89,11 +84,7 @@ def install_spa(app: FastAPI, static_dir: Path) -> None:
                     # The service worker script must always be revalidated, or a deploy would not reach devices.
                     headers = {"cache-control": INDEX_CACHE, "service-worker-allowed": "/"}
                 elif full_path in SANDBOX_DOCUMENTS:
-                    headers["content-security-policy"] = (
-                        youtube_sandbox_content_security_policy()
-                        if full_path == YOUTUBE_SANDBOX_DOCUMENT
-                        else sandbox_content_security_policy()
-                    )
+                    headers["content-security-policy"] = sandbox_content_security_policy()
                 return FileResponse(f, headers=headers)
             last = full_path.rstrip("/").rsplit("/", 1)[-1]
             if full_path.startswith("assets/") or "." in last:

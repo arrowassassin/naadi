@@ -18,6 +18,7 @@ function signedOut(uiCopy: Record<string, string>) {
       google_oauth_enabled: true,
       app_base_url: null,
       app_version: "test",
+      video_player_origin: "https://arrowassassin-naadi-player.static.hf.space",
       features: {},
       nav: [],
       ui_copy: uiCopy,

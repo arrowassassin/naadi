@@ -303,7 +303,7 @@ create table public.flashcards (
   anki_note_type text check (anki_note_type is null or char_length(anki_note_type) <= 200),
   -- 0030: the source of the text: seed cards 'naadi-original-v1', imported Anki cards 'user-upload', else null
   source_id text references public.sources(id),
-  constraint flashcards_anki_source_check check (origin <> 'anki_import' or source_id = 'user-upload')
+  constraint flashcards_anki_source_check check (origin <> 'anki_import' or coalesce(source_id = 'user-upload', false))
 );
 create index flashcards_owner_idx on public.flashcards (owner_user_id);
 create index flashcards_question_idx on public.flashcards (question_id) where question_id is not null;
