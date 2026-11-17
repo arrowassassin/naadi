@@ -1,0 +1,16 @@
+{
+ "id": "20261117T010650-seg06-reader-1ccde7",
+ "ts": "2026-11-17T01:06:50.763626Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "move quiet()/trackApi into fixtures (lead decision)",
+ "body": "",
+ "paths": [
+  "apps/web/e2e/fixtures.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
