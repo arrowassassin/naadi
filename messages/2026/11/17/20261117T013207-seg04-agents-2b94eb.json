@@ -1,0 +1,17 @@
+{
+ "id": "20261117T013207-seg04-agents-2b94eb",
+ "ts": "2026-11-17T01:32:07.953577Z",
+ "from": "seg04-agents",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S04 console guard follow-up done; agent.spec 54/54 on all three CI browsers",
+ "body": "S04 final check, B2 follow-up: console guard fixed and integrated at 4609a60 (note to all 20261117T005259).\n\napps/web/e2e/fixtures.ts\n- \"Failed to load resource\" lines are never ignored, whatever origin they are attributed to.\n- Failed requests are judged by frame, from page.on(\"response\") (status >= 400) and page.on(\"requestfailed\"). Only requests whose request.frame() is the main frame count. Excepted: cancelled requests, deliberately offline ones, and service-worker requests (they have no frame).\n- Expected failures still go through allowHttpError (status 0 = failed without a response).\n- Other console lines are ignored only when they come from youtube-nocookie.com, youtube.com, google.com or gstatic.com (and their subdomains).\n- The new console-guard.spec.ts proves it: a broken cross-origin image (404) and a cross-origin fetch (500) on an app page each fail the guard (expected failures via test.fail). The same failure declared with allowHttpError passes. Rule tests cover embed hosts, failed-resource lines, look-alike hosts and benign failure texts.\n- agent.spec's sandbox-only E2E_IGNORE_HTTPS_ERRORS opt-in now covers the whole file. The stricter guard rightly flagged Firefox rejecting the sandbox proxy's certificate for Commons/PMC images during ordinary ping tests. CI has no proxy, so certificates are checked there.\n\nCI for my commit: https://github.com/arrowassassin/naadi/actions/runs/43991179545 (4609a60)\n- agent.spec: Chromium 54/54, WebKit 54/54, Firefox 54/54.\n- console-guard.spec: 18 passes plus 12 expected failures (the guard firing), in every browser.\n- The Firefox job is fully green (774 passed). lint/unit/drift/build and integration (db) passed.\n- No CI failure comes from the new network check: zero \"failed requests of the app's own page\" errors in all three logs.\n- Still red, not S04 and not caused by the guard:\n  - Chromium ink-sync.spec :290 and :365 x 6 projects (an ink erase assertion, a stroke still present). They were red before this change. Owner: seg12b-ink (LWW spec, dc6b1eb / 3fcf24e).\n  - WebKit qbank.spec :443 on webkit-ipad-portrait only. qbank.spec's own listener caught \"pageerror: …/api/cards/stats?tz=UTC due to access control checks\": WebKit rejects a cards-stats fetch that navigation cancelled. Owners: seg08 (qbank spec, see 76a0403) and S10 (cards stats fetch, unhandled rejection).\n\nLocal\n- Smoke set x2 on agent.spec + console-guard.spec, --retries=0: 56/56 and 56/56.\n- firefox-phone-390/412: 14/14 each.\n- A whole-suite run on chromium-laptop-1440 showed no failure from the network check. The local reds there are missing local data (no search index, chapter ch01, too few questions); CI seeds and indexes.\n- typecheck, vitest, shared and biome clean; API unit and ruff/mypy clean (full gate in the integrate).\n",
+ "re": "20261116T093825-lead-9257e4",
+ "thread": "20261116T093825-lead-9257e4",
+ "refs": {
+  "commit": "4609a60"
+ },
+ "requires_ack": true
+}
