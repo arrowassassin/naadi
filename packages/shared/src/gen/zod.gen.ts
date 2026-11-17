@@ -14,6 +14,30 @@ export const zAddIn = z.object({
 });
 
 /**
+ * AdminChapter
+ */
+export const zAdminChapter = z.object({
+  created_at: z.iso.datetime(),
+  exam: z.string(),
+  id: z.string(),
+  kind: z.string(),
+  meta: z.string().nullable(),
+  section_count: z.int(),
+  sort: z.int().nullable(),
+  source_id: z.string().nullable(),
+  status: z.enum(["draft", "in_review", "published", "retired"]),
+  title: z.string(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * AdminChapterList
+ */
+export const zAdminChapterList = z.object({
+  items: z.array(zAdminChapter),
+});
+
+/**
  * AdminGeneratedItem
  */
 export const zAdminGeneratedItem = z.object({
@@ -43,6 +67,37 @@ export const zAdminGeneratedList = z.object({
 });
 
 /**
+ * AdminMedia
+ */
+export const zAdminMedia = z.object({
+  attribution: z.string().nullable(),
+  caption: z.string().nullable(),
+  channel_id: z.string().nullable(),
+  duration_s: z.int().nullable(),
+  embeddable: z.boolean().nullable(),
+  height: z.int().nullable(),
+  id: z.string(),
+  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]),
+  metadata_fetched_at: z.iso.datetime().nullable(),
+  preview_url: z.string().nullable(),
+  review_status: z.enum(["unreviewed", "approved", "rejected"]),
+  section_ids: z.array(z.string()),
+  source_id: z.string(),
+  taxonomy_ids: z.array(z.string()),
+  title: z.string().nullable(),
+  width: z.int().nullable(),
+  youtube_id: z.string().nullable(),
+});
+
+/**
+ * AdminMediaList
+ */
+export const zAdminMediaList = z.object({
+  items: z.array(zAdminMedia),
+  next_cursor: z.string().nullable(),
+});
+
+/**
  * AdminOverview
  */
 export const zAdminOverview = z.object({
@@ -50,6 +105,128 @@ export const zAdminOverview = z.object({
   environment: z.string(),
   profiles: z.int(),
   version: z.string(),
+});
+
+/**
+ * AdminQuestionSummary
+ */
+export const zAdminQuestionSummary = z.object({
+  chapter_id: z.string().nullable(),
+  created_at: z.iso.datetime(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  exam: z.string(),
+  id: z.string(),
+  source_id: z.string().nullable(),
+  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
+  stem_text: z.string(),
+  taxonomy_ids: z.array(z.string()),
+});
+
+/**
+ * AdminQuestionList
+ */
+export const zAdminQuestionList = z.object({
+  items: z.array(zAdminQuestionSummary),
+  next_cursor: z.string().nullable(),
+});
+
+/**
+ * AdminSection
+ */
+export const zAdminSection = z.object({
+  admin_edited_at: z.iso.datetime().nullable(),
+  chapter_id: z.string(),
+  draft_updated_at: z.iso.datetime().nullable(),
+  has_body: z.boolean(),
+  has_draft: z.boolean(),
+  heading: z.string(),
+  id: z.string(),
+  live_revision_id: z.int().nullable(),
+  reading_minutes: z.int().nullable(),
+  sort: z.int(),
+  taxonomy_ids: z.array(z.string()),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * AdminChapterDetail
+ */
+export const zAdminChapterDetail = z.object({
+  chapter: zAdminChapter,
+  sections: z.array(zAdminSection),
+});
+
+/**
+ * AdminSource
+ */
+export const zAdminSource = z.object({
+  allow_ai_ingest: z.boolean(),
+  allow_commercial: z.boolean(),
+  allow_copy: z.boolean(),
+  allow_modify: z.boolean(),
+  id: z.string(),
+  license: z.string(),
+  name: z.string(),
+  url: z.string().nullable(),
+  verified: z.boolean(),
+});
+
+/**
+ * AdminSourceList
+ */
+export const zAdminSourceList = z.object({
+  items: z.array(zAdminSource),
+});
+
+/**
+ * AgentCronLastRun
+ */
+export const zAgentCronLastRun = z.object({
+  at: z.iso.datetime(),
+  status: z.string(),
+});
+
+/**
+ * AgentCron
+ */
+export const zAgentCron = z.object({
+  cron_id: z.string(),
+  enabled: z.boolean(),
+  graph_id: z.string().nullable(),
+  key: z.string().nullable(),
+  last_run: zAgentCronLastRun.nullable(),
+  next_run_date: z.iso.datetime().nullable(),
+  schedule: z.string(),
+});
+
+/**
+ * AgentCronList
+ */
+export const zAgentCronList = z.object({
+  available: z.boolean(),
+  items: z.array(zAgentCron),
+});
+
+/**
+ * AgentRun
+ */
+export const zAgentRun = z.object({
+  created_at: z.iso.datetime(),
+  graph_id: z.string().nullable(),
+  has_error: z.boolean(),
+  run_id: z.string(),
+  status: z.string(),
+  system: z.boolean(),
+  thread_id: z.string(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * AgentRunList
+ */
+export const zAgentRunList = z.object({
+  available: z.boolean(),
+  items: z.array(zAgentRun),
 });
 
 /**
@@ -131,6 +308,26 @@ export const zAttemptState = z.object({
   chosen: z.string().nullable(),
   correct: z.boolean().nullable(),
   seconds: z.int().nullable(),
+});
+
+/**
+ * AuditEntry
+ */
+export const zAuditEntry = z.object({
+  action: z.string(),
+  actor_user_id: z.uuid().nullable(),
+  at: z.iso.datetime(),
+  id: z.int(),
+  note: z.string().nullable(),
+  ref_id: z.string(),
+  ref_type: z.string(),
+});
+
+/**
+ * AuditList
+ */
+export const zAuditList = z.object({
+  items: z.array(zAuditEntry),
 });
 
 /**
@@ -281,6 +478,14 @@ export const zBlockRules = z.object({
 });
 
 /**
+ * CancelOut
+ */
+export const zCancelOut = z.object({
+  run_id: z.string(),
+  status: z.string(),
+});
+
+/**
  * CandidateOut
  */
 export const zCandidateOut = z.object({
@@ -380,11 +585,40 @@ export const zChangeStats = z.object({
 });
 
 /**
+ * ChapterCreate
+ */
+export const zChapterCreate = z.object({
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9-]{1,63}$/)
+    .nullish(),
+  kind: z.enum(["chapter", "mock_exam", "pathway"]).optional().default("chapter"),
+  meta: z.string().max(300).nullish(),
+  source_id: z.string().regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/),
+  title: z.string().min(1).max(200),
+});
+
+/**
  * ChapterLink
  */
 export const zChapterLink = z.object({
   id: z.string(),
   title: z.string(),
+});
+
+/**
+ * ChapterPatch
+ */
+export const zChapterPatch = z.object({
+  clear_meta: z.boolean().optional().default(false),
+  expected_updated_at: z.iso.datetime(),
+  meta: z.string().max(300).nullish(),
+  source_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/)
+    .nullish(),
+  title: z.string().min(1).max(200).nullish(),
 });
 
 /**
@@ -396,6 +630,25 @@ export const zChapterProgress = z.object({
   sections_read: z.int(),
   sections_total: z.int(),
   status: z.enum(["not_started", "in_progress", "done"]),
+});
+
+/**
+ * ChapterReorder
+ */
+export const zChapterReorder = z.object({
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  ids: z
+    .array(z.string().regex(/^[a-z0-9][a-z0-9-]{1,63}$/))
+    .min(1)
+    .max(500),
+});
+
+/**
+ * ChapterStatusChange
+ */
+export const zChapterStatusChange = z.object({
+  note: z.string().max(1000).nullish(),
+  status: z.enum(["draft", "in_review", "published", "retired"]),
 });
 
 /**
@@ -441,6 +694,34 @@ export const zConfigKeySummary = z.object({
  */
 export const zConfigKeyList = z.object({
   items: z.array(zConfigKeySummary),
+});
+
+/**
+ * ConfigRevert
+ */
+export const zConfigRevert = z.object({
+  expected_updated_at: z.iso.datetime().nullable(),
+  history_id: z.int().gte(1),
+});
+
+/**
+ * Counts
+ */
+export const zCounts = z.object({
+  cards: z.int().optional().default(0),
+  questions: z.int().optional().default(0),
+  sections: z.int().optional().default(0),
+  videos: z.int().optional().default(0),
+});
+
+/**
+ * Cell
+ */
+export const zCell = z.object({
+  counts: zCounts,
+  discipline_id: z.string(),
+  status: z.enum(["gap", "thin", "covered"]),
+  system_id: z.string(),
 });
 
 /**
@@ -525,6 +806,25 @@ export const zDiagnosticState = z.object({
   available: z.boolean(),
   open_block_id: z.uuid().nullish(),
   questions: z.int(),
+});
+
+/**
+ * DiffBlock
+ */
+export const zDiffBlock = z.object({
+  kind: z.string(),
+  op: z.enum(["equal", "insert", "delete"]),
+  text: z.string(),
+});
+
+/**
+ * EditorQuestion
+ */
+export const zEditorQuestion = z.object({
+  exam: z.string(),
+  id: z.string(),
+  status: z.string(),
+  stem_text: z.string(),
 });
 
 /**
@@ -762,6 +1062,27 @@ export const zGenerationFacts = z.object({
 });
 
 /**
+ * Goals
+ */
+export const zGoals = z.object({
+  cards: z.int().optional().default(10),
+  questions: z.int().optional().default(15),
+  sections: z.int().optional().default(1),
+  videos: z.int().optional().default(1),
+});
+
+/**
+ * HealthRow
+ */
+export const zHealthRow = z.object({
+  created_at: z.iso.datetime(),
+  kind: z.string(),
+  latency_ms: z.int().nullable(),
+  ok: z.boolean(),
+  trigger: z.string(),
+});
+
+/**
  * HoursRange
  */
 export const zHoursRange = z.object({
@@ -982,6 +1303,16 @@ export const zConfigUpdate = z.object({
 });
 
 /**
+ * DraftSave
+ */
+export const zDraftSave = z.object({
+  body: z.record(z.string(), zJsonValue),
+  expected_updated_at: z.iso.datetime().nullable(),
+  note: z.string().max(500).nullish(),
+  parent_revision_id: z.int().nullable(),
+});
+
+/**
  * LabRowOut
  */
 export const zLabRowOut = z.object({
@@ -1008,6 +1339,32 @@ export const zLessonLink = z.object({
 });
 
 /**
+ * LintFinding
+ */
+export const zLintFinding = z.object({
+  detail: z.record(z.string(), zJsonValue).optional(),
+  field: z.string().nullish(),
+  rule: z.string(),
+  severity: z.enum(["error", "warning", "info"]),
+});
+
+/**
+ * LintResult
+ */
+export const zLintResult = z.object({
+  available: z.boolean(),
+  findings: z.array(zLintFinding),
+});
+
+/**
+ * LiveBody
+ */
+export const zLiveBody = z.object({
+  body: z.record(z.string(), zJsonValue).nullable(),
+  revision_id: z.int().nullable(),
+});
+
+/**
  * MeUpdate
  *
  * Only the fields sent are changed. `settings` is merged one level deep; a `null` value removes a key.
@@ -1016,6 +1373,28 @@ export const zMeUpdate = z.object({
   display_name: z.string().max(120).nullish(),
   settings: z.record(z.string(), z.unknown()).nullish(),
   timezone: z.string().max(64).nullish(),
+});
+
+/**
+ * MediaPatch
+ */
+export const zMediaPatch = z.object({
+  attribution: z.string().max(500).nullish(),
+  caption: z.string().max(1000).nullish(),
+  source_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/)
+    .nullish(),
+  taxonomy_ids: z.array(z.string()).max(50).nullish(),
+  title: z.string().max(300).nullish(),
+});
+
+/**
+ * MediaReview
+ */
+export const zMediaReview = z.object({
+  note: z.string().max(1000).nullish(),
+  status: z.enum(["approved", "rejected"]),
 });
 
 /**
@@ -1184,6 +1563,14 @@ export const zNextUp = z.object({
 });
 
 /**
+ * Node
+ */
+export const zNode = z.object({
+  id: z.string(),
+  label: z.string(),
+});
+
+/**
  * NoteCounts
  *
  * Over all of the caller's notes (not filtered).
@@ -1286,6 +1673,47 @@ export const zOnboardingValues = z.object({
   materials: z.array(z.enum(["qbank", "review_book", "anki", "video_course", "own_pdfs", "nothing"])),
   medical_school: z.string().nullable(),
   study_days: z.array(z.int()),
+});
+
+/**
+ * OptionIn
+ */
+export const zOptionIn = z.object({
+  html: z.string().min(1).max(2000),
+  label: z.string().regex(/^[A-J]$/),
+});
+
+/**
+ * OptionOut
+ */
+export const zOptionOut = z.object({
+  html: z.string(),
+  label: z.string(),
+});
+
+/**
+ * AdminQuestion
+ */
+export const zAdminQuestion = z.object({
+  answer: z.string(),
+  answer_html: z.string().nullable(),
+  block: z.int().nullable(),
+  chapter_id: z.string().nullable(),
+  created_at: z.iso.datetime(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  educational_objective: z.string().nullable(),
+  exam: z.string(),
+  explanation_html: z.string().nullable(),
+  id: z.string(),
+  options: z.array(zOptionOut),
+  review: z.record(z.string(), zJsonValue),
+  source_id: z.string().nullable(),
+  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
+  stem_html: z.string(),
+  tags: z.array(z.string()),
+  taxonomy_ids: z.array(z.string()),
+  version: z.string(),
+  why_not_html: z.string().nullable(),
 });
 
 /**
@@ -1541,6 +1969,42 @@ export const zPublicConfig = z.object({
 });
 
 /**
+ * PublishRequest
+ */
+export const zPublishRequest = z.object({
+  expected_updated_at: z.iso.datetime(),
+  note: z.string().max(500).nullish(),
+  revision_id: z.int(),
+});
+
+/**
+ * QuestionCreate
+ */
+export const zQuestionCreate = z.object({
+  answer: z.string().regex(/^[A-J]$/),
+  answer_html: z.string().max(5000).nullish(),
+  block: z.int().gte(1).lte(999).nullish(),
+  chapter_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9-]{1,63}$/)
+    .nullish(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullish(),
+  educational_objective: z.string().max(2000).nullish(),
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  explanation_html: z.string().max(20000).nullish(),
+  id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9_-]{1,63}$/)
+    .nullish(),
+  options: z.array(zOptionIn).min(2).max(10),
+  source_id: z.string().regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/),
+  stem_html: z.string().min(1).max(20000),
+  tags: z.array(z.string().min(1).max(60)).max(30).optional(),
+  taxonomy_ids: z.array(z.string()).max(50).optional(),
+  why_not_html: z.string().max(20000).nullish(),
+});
+
+/**
  * QuestionOption
  */
 export const zQuestionOption = z.object({
@@ -1573,6 +2037,59 @@ export const zQuestionBody = z.object({
 });
 
 /**
+ * QuestionRevisionItem
+ */
+export const zQuestionRevisionItem = z.object({
+  author_user_id: z.uuid().nullable(),
+  created_at: z.iso.datetime(),
+  id: z.int(),
+  note: z.string().nullable(),
+  origin: z.enum(["admin", "author", "review", "seed"]),
+  status: z.string().nullable(),
+  version: z.int(),
+});
+
+/**
+ * QuestionRevisionList
+ */
+export const zQuestionRevisionList = z.object({
+  items: z.array(zQuestionRevisionItem),
+});
+
+/**
+ * QuestionStatusChange
+ */
+export const zQuestionStatusChange = z.object({
+  expected_version: z.string().regex(/^[0-9a-f]{64}$/),
+  note: z.string().max(1000).nullish(),
+  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
+});
+
+/**
+ * QuestionUpdate
+ */
+export const zQuestionUpdate = z.object({
+  answer: z.string().regex(/^[A-J]$/),
+  answer_html: z.string().max(5000).nullish(),
+  block: z.int().gte(1).lte(999).nullish(),
+  chapter_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9-]{1,63}$/)
+    .nullish(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullish(),
+  educational_objective: z.string().max(2000).nullish(),
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  expected_version: z.string().regex(/^[0-9a-f]{64}$/),
+  explanation_html: z.string().max(20000).nullish(),
+  options: z.array(zOptionIn).min(2).max(10),
+  source_id: z.string().regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/),
+  stem_html: z.string().min(1).max(20000),
+  tags: z.array(z.string().min(1).max(60)).max(30).optional(),
+  taxonomy_ids: z.array(z.string()).max(50).optional(),
+  why_not_html: z.string().max(20000).nullish(),
+});
+
+/**
  * QuestionView
  */
 export const zQuestionView = z.object({
@@ -1587,6 +2104,85 @@ export const zQuestionView = z.object({
   question: zQuestionBody,
   section_n: z.int().optional().default(1),
   total: z.int(),
+});
+
+/**
+ * QueueApprove
+ */
+export const zQueueApprove = z.object({
+  note: z.string().max(1000).nullish(),
+  params: z.record(z.string(), zJsonValue).optional(),
+});
+
+/**
+ * QueueCount
+ */
+export const zQueueCount = z.object({
+  count: z.int().gte(0),
+  decides_here: z.boolean(),
+  filters: z.array(z.string()),
+  kind: z.string(),
+  path: z.string().nullable(),
+});
+
+/**
+ * QueueCounts
+ */
+export const zQueueCounts = z.object({
+  items: z.array(zQueueCount),
+});
+
+/**
+ * QueueDecision
+ */
+export const zQueueDecision = z.object({
+  id: z.string(),
+  status: z.enum(["approved", "rejected"]),
+});
+
+/**
+ * QueueRef
+ */
+export const zQueueRef = z.object({
+  id: z.string().min(1).max(200),
+  type: z.enum([
+    "section",
+    "question",
+    "media",
+    "chapter",
+    "generated_media",
+    "pathway_task",
+    "youtube_candidate",
+    "report",
+  ]),
+});
+
+/**
+ * QueueItem
+ */
+export const zQueueItem = z.object({
+  created_at: z.iso.datetime(),
+  detail: z.record(z.string(), zJsonValue).optional(),
+  id: z.string().min(1).max(200),
+  kind: z.string(),
+  ref: zQueueRef.nullish(),
+  title: z.string().nullish(),
+});
+
+/**
+ * QueuePage
+ */
+export const zQueuePage = z.object({
+  items: z.array(zQueueItem),
+  next_cursor: z.string().nullish(),
+  total: z.int().gte(0),
+});
+
+/**
+ * QueueReject
+ */
+export const zQueueReject = z.object({
+  note: z.string().max(1000).nullish(),
 });
 
 /**
@@ -1727,6 +2323,45 @@ export const zReportIssueIn = z.object({
 export const zReportIssueOut = z.object({
   created_at: z.iso.datetime(),
   id: z.uuid(),
+  status: z.enum(["open", "triaged", "resolved", "dismissed"]),
+});
+
+/**
+ * ReportLink
+ */
+export const zReportLink = z.object({
+  chapter_id: z.string().nullish(),
+  media_id: z.string().nullish(),
+  question_id: z.string().nullish(),
+  section_id: z.string().nullish(),
+});
+
+/**
+ * AdminReport
+ */
+export const zAdminReport = z.object({
+  body: z.string(),
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  link: zReportLink,
+  ref_id: z.string().nullable(),
+  ref_type: z.string(),
+  status: z.enum(["open", "triaged", "resolved", "dismissed"]),
+});
+
+/**
+ * AdminReportList
+ */
+export const zAdminReportList = z.object({
+  counts: z.record(z.string(), z.int()),
+  items: z.array(zAdminReport),
+});
+
+/**
+ * ReportStatusChange
+ */
+export const zReportStatusChange = z.object({
+  note: z.string().max(1000).nullish(),
   status: z.enum(["open", "triaged", "resolved", "dismissed"]),
 });
 
@@ -2054,6 +2689,88 @@ export const zReviewSummary = z.object({
 });
 
 /**
+ * Revision
+ */
+export const zRevision = z.object({
+  author_user_id: z.uuid().nullable(),
+  body: z.record(z.string(), zJsonValue).nullable(),
+  created_at: z.iso.datetime(),
+  id: z.int(),
+  is_live: z.boolean(),
+  note: z.string().nullable(),
+  origin: z.enum(["admin", "assistant", "seed"]),
+  parent_revision_id: z.int().nullable(),
+  published_at: z.iso.datetime().nullable(),
+  restored_from_id: z.int().nullable(),
+  section_id: z.string(),
+  status: z.enum(["draft", "published"]),
+  updated_at: z.iso.datetime(),
+  word_count: z.int(),
+});
+
+/**
+ * RevisionDiff
+ */
+export const zRevisionDiff = z.object({
+  blocks: z.array(zDiffBlock),
+  from_id: z.int().nullable(),
+  to_id: z.int(),
+});
+
+/**
+ * RevisionSummary
+ */
+export const zRevisionSummary = z.object({
+  author_user_id: z.uuid().nullable(),
+  created_at: z.iso.datetime(),
+  id: z.int(),
+  is_live: z.boolean(),
+  note: z.string().nullable(),
+  origin: z.enum(["admin", "assistant", "seed"]),
+  parent_revision_id: z.int().nullable(),
+  published_at: z.iso.datetime().nullable(),
+  restored_from_id: z.int().nullable(),
+  section_id: z.string(),
+  status: z.enum(["draft", "published"]),
+  updated_at: z.iso.datetime(),
+  word_count: z.int(),
+});
+
+/**
+ * RevisionList
+ */
+export const zRevisionList = z.object({
+  items: z.array(zRevisionSummary),
+});
+
+/**
+ * RollbackRequest
+ */
+export const zRollbackRequest = z.object({
+  note: z.string().max(500).nullish(),
+});
+
+/**
+ * SectionCreate
+ */
+export const zSectionCreate = z.object({
+  heading: z.string().min(1).max(200),
+  taxonomy_ids: z.array(z.string()).max(50).optional(),
+});
+
+/**
+ * SectionEditor
+ */
+export const zSectionEditor = z.object({
+  chapter: zAdminChapter,
+  draft: zRevision.nullable(),
+  live: zLiveBody,
+  media: z.array(zAdminMedia),
+  questions: z.array(zEditorQuestion),
+  section: zAdminSection,
+});
+
+/**
  * SectionLayout
  *
  * One section of a timed/exam block: a consecutive slice of `question_ids`.
@@ -2125,6 +2842,26 @@ export const zBlockList = z.object({
 });
 
 /**
+ * SectionMediaIn
+ */
+export const zSectionMediaIn = z.object({
+  end_s: z.int().gte(1).nullish(),
+  sort: z.int().gte(0).lte(32767).nullish(),
+  start_s: z.int().gte(0).nullish(),
+});
+
+/**
+ * SectionMediaOut
+ */
+export const zSectionMediaOut = z.object({
+  end_s: z.int().nullable(),
+  media_id: z.string(),
+  section_id: z.string(),
+  sort: z.int().nullable(),
+  start_s: z.int().nullable(),
+});
+
+/**
  * SectionOut
  */
 export const zSectionOut = z.object({
@@ -2134,6 +2871,24 @@ export const zSectionOut = z.object({
   reading_minutes: z.int(),
   sort: z.int(),
   taxonomy_ids: z.array(z.string()),
+});
+
+/**
+ * SectionPatch
+ */
+export const zSectionPatch = z.object({
+  heading: z.string().min(1).max(200).nullish(),
+  taxonomy_ids: z.array(z.string()).max(50).nullish(),
+});
+
+/**
+ * SectionReorder
+ */
+export const zSectionReorder = z.object({
+  ids: z
+    .array(z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/))
+    .min(1)
+    .max(500),
 });
 
 /**
@@ -2203,6 +2958,17 @@ export const zLabValuesOut = z.object({
   groups: z.array(zLabGroupOut),
   official: zSourceRef,
   source: zSourceRef,
+});
+
+/**
+ * SystemCoverage
+ */
+export const zSystemCoverage = z.object({
+  counts: zCounts,
+  id: z.string(),
+  label: z.string(),
+  topics: z.int(),
+  topics_covered: z.int(),
 });
 
 /**
@@ -2301,6 +3067,33 @@ export const zSearchResponse = z.object({
 });
 
 /**
+ * TavilyCredits
+ */
+export const zTavilyCredits = z.object({
+  month_credits: z.int(),
+  monthly_guard: z.int(),
+  today_credits: z.int(),
+});
+
+/**
+ * TaxonomyNode
+ */
+export const zTaxonomyNode = z.object({
+  exam: z.array(z.string()),
+  id: z.string(),
+  kind: z.string(),
+  label: z.string(),
+  parent_id: z.string().nullable(),
+});
+
+/**
+ * TaxonomyList
+ */
+export const zTaxonomyList = z.object({
+  items: z.array(zTaxonomyNode),
+});
+
+/**
  * TimeStats
  */
 export const zTimeStats = z.object({
@@ -2340,6 +3133,31 @@ export const zTodayOut = z.object({
 });
 
 /**
+ * TopicCoverage
+ */
+export const zTopicCoverage = z.object({
+  counts: zCounts,
+  id: z.string(),
+  label: z.string(),
+  missing: z.array(z.enum(["sections", "videos", "questions", "cards"])),
+  status: z.enum(["gap", "thin", "covered"]),
+  system_id: z.string().nullable(),
+});
+
+/**
+ * CoverageReport
+ */
+export const zCoverageReport = z.object({
+  cells: z.array(zCell),
+  disciplines: z.array(zNode),
+  exam: z.string(),
+  goals: zGoals,
+  system_totals: z.array(zSystemCoverage),
+  systems: z.array(zNode),
+  topics: z.array(zTopicCoverage),
+});
+
+/**
  * TopicStat
  */
 export const zTopicStat = z.object({
@@ -2361,6 +3179,38 @@ export const zTrendPoint = z.object({
   finished_at: z.iso.datetime(),
   mode: z.enum(["timed", "exam"]),
   score: z.number(),
+});
+
+/**
+ * UsageCap
+ */
+export const zUsageCap = z.object({
+  cap: z.int(),
+  provider: z.string(),
+  purpose: z.enum(["chat", "job", "total"]),
+});
+
+/**
+ * UsageDay
+ */
+export const zUsageDay = z.object({
+  calls: z.int(),
+  date: z.iso.date(),
+  failed: z.int(),
+  ok: z.int(),
+  provider: z.string(),
+  purpose: z.string(),
+});
+
+/**
+ * AgentUsage
+ */
+export const zAgentUsage = z.object({
+  caps: z.array(zUsageCap),
+  days: z.array(zUsageDay),
+  health: z.array(zHealthRow),
+  tavily: zTavilyCredits,
+  today: z.array(zUsageDay),
 });
 
 /**
@@ -2400,6 +3250,37 @@ export const zValidationError = z.object({
  */
 export const zHttpValidationError = z.object({
   detail: z.array(zValidationError).optional(),
+});
+
+/**
+ * VideoAdd
+ */
+export const zVideoAdd = z.object({
+  caption: z.string().max(1000).nullish(),
+  source_id: z.string().regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/),
+  taxonomy_ids: z.array(z.string()).max(50).optional(),
+  title: z.string().max(300).nullish(),
+  url: z.string().min(10).max(300),
+});
+
+/**
+ * VideoLookupIn
+ */
+export const zVideoLookupIn = z.object({
+  url: z.string().min(10).max(300),
+});
+
+/**
+ * VideoLookupOut
+ */
+export const zVideoLookupOut = z.object({
+  channel_id: z.string().nullable(),
+  channel_title: z.string().nullable(),
+  duration_s: z.int().nullable(),
+  embeddable: z.boolean(),
+  existing_media_id: z.string().nullable(),
+  title: z.string(),
+  youtube_id: z.string(),
 });
 
 /**
@@ -2642,6 +3523,136 @@ export const zOnboardingState = z.object({
 /**
  * Successful Response
  */
+export const zListAdminAgentCronsResponse = zAgentCronList;
+
+export const zListAdminAgentRunsQuery = z.object({
+  graph: z
+    .string()
+    .regex(/^[a-z][a-z0-9_]{0,47}$/)
+    .nullish(),
+  status: z.enum(["pending", "running", "success", "error", "timeout", "interrupted"]).nullish(),
+  limit: z.int().gte(1).lte(200).optional().default(50),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminAgentRunsResponse = zAgentRunList;
+
+export const zCancelAdminAgentRunPath = z.object({
+  thread_id: z.string().regex(/^[A-Za-z0-9-]{8,64}$/),
+  run_id: z.string().regex(/^[A-Za-z0-9-]{8,64}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zCancelAdminAgentRunResponse = zCancelOut;
+
+export const zGetAdminAgentUsageQuery = z.object({
+  days: z.int().gte(1).lte(60).optional().default(14),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminAgentUsageResponse = zAgentUsage;
+
+export const zListAdminAuditQuery = z.object({
+  ref_type: z
+    .string()
+    .regex(/^[a-z][a-z0-9_]{0,47}$/)
+    .nullish(),
+  ref_id: z.string().min(1).max(200).nullish(),
+  limit: z.int().gte(1).lte(200).optional().default(50),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminAuditResponse = zAuditList;
+
+export const zListAdminChaptersQuery = z.object({
+  exam: z.enum(["step1", "step2ck", "step3"]).nullish(),
+  status: z.enum(["draft", "in_review", "published", "retired"]).nullish(),
+  q: z.string().max(100).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminChaptersResponse = zAdminChapterList;
+
+export const zCreateAdminChapterBody = zChapterCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateAdminChapterResponse = zAdminChapter;
+
+export const zReorderAdminChaptersBody = zChapterReorder;
+
+/**
+ * Successful Response
+ */
+export const zReorderAdminChaptersResponse = zAdminChapterList;
+
+export const zGetAdminChapterPath = z.object({
+  chapter_id: z.string().regex(/^[a-z0-9][a-z0-9-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminChapterResponse = zAdminChapterDetail;
+
+export const zPatchAdminChapterBody = zChapterPatch;
+
+export const zPatchAdminChapterPath = z.object({
+  chapter_id: z.string().regex(/^[a-z0-9][a-z0-9-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchAdminChapterResponse = zAdminChapter;
+
+export const zCreateAdminSectionBody = zSectionCreate;
+
+export const zCreateAdminSectionPath = z.object({
+  chapter_id: z.string().regex(/^[a-z0-9][a-z0-9-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zCreateAdminSectionResponse = zAdminSection;
+
+export const zReorderAdminSectionsBody = zSectionReorder;
+
+export const zReorderAdminSectionsPath = z.object({
+  chapter_id: z.string().regex(/^[a-z0-9][a-z0-9-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zReorderAdminSectionsResponse = zAdminChapterDetail;
+
+export const zSetAdminChapterStatusBody = zChapterStatusChange;
+
+export const zSetAdminChapterStatusPath = z.object({
+  chapter_id: z.string().regex(/^[a-z0-9][a-z0-9-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zSetAdminChapterStatusResponse = zAdminChapter;
+
+/**
+ * Successful Response
+ */
 export const zListAppConfigResponse = zConfigKeyList;
 
 export const zGetAppConfigPath = z.object({
@@ -2676,6 +3687,26 @@ export const zGetAppConfigHistoryQuery = z.object({
  * Successful Response
  */
 export const zGetAppConfigHistoryResponse = zConfigHistory;
+
+export const zRevertAppConfigBody = zConfigRevert;
+
+export const zRevertAppConfigPath = z.object({
+  key: z.string().regex(/^[a-z][a-z0-9_.]{1,47}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zRevertAppConfigResponse = zConfigEntry;
+
+export const zGetAdminCoverageQuery = z.object({
+  exam: z.enum(["step1", "step2ck", "step3"]).optional().default("step1"),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminCoverageResponse = zCoverageReport;
 
 /**
  * Successful Response
@@ -2712,10 +3743,218 @@ export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostPath = z.o
  */
 export const zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse = zGeneratedApproveOut;
 
+export const zListAdminMediaQuery = z.object({
+  kind: z.enum(["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]).nullish(),
+  review_status: z.enum(["unreviewed", "approved", "rejected"]).nullish(),
+  q: z.string().max(100).nullish(),
+  limit: z.int().gte(1).lte(100).optional().default(48),
+  cursor: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9_-]{0,127}$/)
+    .nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminMediaResponse = zAdminMediaList;
+
+export const zUploadAdminMediaBody = z.string();
+
+export const zUploadAdminMediaQuery = z.object({
+  source_id: z.string().regex(/^[a-z0-9][a-z0-9:._-]{0,127}$/),
+  title: z.string().min(1).max(300),
+  caption: z.string().max(1000).nullish(),
+  attribution: z.string().max(500).nullish(),
+  taxonomy_ids: z.string().max(2000).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zUploadAdminMediaResponse = zAdminMedia;
+
+export const zAddAdminYoutubeBody = zVideoAdd;
+
+/**
+ * Successful Response
+ */
+export const zAddAdminYoutubeResponse = zAdminMedia;
+
+export const zLookupAdminYoutubeBody = zVideoLookupIn;
+
+/**
+ * Successful Response
+ */
+export const zLookupAdminYoutubeResponse = zVideoLookupOut;
+
+export const zPatchAdminMediaBody = zMediaPatch;
+
+export const zPatchAdminMediaPath = z.object({
+  media_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchAdminMediaResponse = zAdminMedia;
+
+export const zReviewAdminMediaBody = zMediaReview;
+
+export const zReviewAdminMediaPath = z.object({
+  media_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zReviewAdminMediaResponse = zAdminMedia;
+
 /**
  * Successful Response
  */
 export const zGetAdminOverviewResponse = zAdminOverview;
+
+export const zListAdminQuestionsQuery = z.object({
+  exam: z.enum(["step1", "step2ck", "step3"]).nullish(),
+  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]).nullish(),
+  chapter_id: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9-]{1,63}$/)
+    .nullish(),
+  taxonomy_id: z.string().max(128).nullish(),
+  q: z.string().max(100).nullish(),
+  limit: z.int().gte(1).lte(100).optional().default(50),
+  cursor: z
+    .string()
+    .regex(/^[a-z0-9][a-z0-9_-]{1,63}$/)
+    .nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminQuestionsResponse = zAdminQuestionList;
+
+export const zCreateAdminQuestionBody = zQuestionCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateAdminQuestionResponse = zAdminQuestion;
+
+export const zGetAdminQuestionPath = z.object({
+  question_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminQuestionResponse = zAdminQuestion;
+
+export const zUpdateAdminQuestionBody = zQuestionUpdate;
+
+export const zUpdateAdminQuestionPath = z.object({
+  question_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zUpdateAdminQuestionResponse = zAdminQuestion;
+
+export const zLintAdminQuestionPath = z.object({
+  question_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zLintAdminQuestionResponse = zLintResult;
+
+export const zListAdminQuestionRevisionsPath = z.object({
+  question_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminQuestionRevisionsResponse = zQuestionRevisionList;
+
+export const zSetAdminQuestionStatusBody = zQuestionStatusChange;
+
+export const zSetAdminQuestionStatusPath = z.object({
+  question_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,63}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zSetAdminQuestionStatusResponse = zAdminQuestion;
+
+/**
+ * Successful Response
+ */
+export const zListAdminQueuesResponse = zQueueCounts;
+
+export const zGetAdminQueuePath = z.object({
+  kind: z.string().regex(/^[a-z][a-z0-9_]{1,47}$/),
+});
+
+export const zGetAdminQueueQuery = z.object({
+  limit: z.int().gte(1).lte(100).optional().default(25),
+  cursor: z.string().max(200).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminQueueResponse = zQueuePage;
+
+export const zApproveAdminQueueItemBody = zQueueApprove;
+
+export const zApproveAdminQueueItemPath = z.object({
+  kind: z.string().regex(/^[a-z][a-z0-9_]{1,47}$/),
+  item_id: z.string().min(1).max(200),
+});
+
+/**
+ * Successful Response
+ */
+export const zApproveAdminQueueItemResponse = zQueueDecision;
+
+export const zRejectAdminQueueItemBody = zQueueReject;
+
+export const zRejectAdminQueueItemPath = z.object({
+  kind: z.string().regex(/^[a-z][a-z0-9_]{1,47}$/),
+  item_id: z.string().min(1).max(200),
+});
+
+/**
+ * Successful Response
+ */
+export const zRejectAdminQueueItemResponse = zQueueDecision;
+
+export const zListAdminReportsQuery = z.object({
+  status: z.enum(["open", "triaged", "resolved", "dismissed"]).nullish(),
+  limit: z.int().gte(1).lte(200).optional().default(100),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminReportsResponse = zAdminReportList;
+
+export const zSetAdminReportStatusBody = zReportStatusChange;
+
+export const zSetAdminReportStatusPath = z.object({
+  report_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zSetAdminReportStatusResponse = zAdminReport;
 
 /**
  * Successful Response
@@ -2818,6 +4057,129 @@ export const zGetAuthoringTaxonomyQuery = z.object({
  */
 export const zGetAuthoringTaxonomyResponse = zAuthoringTaxonomyList;
 
+export const zGetAdminRevisionPath = z.object({
+  revision_id: z.int().gte(1),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminRevisionResponse = zRevision;
+
+export const zDiffAdminRevisionPath = z.object({
+  revision_id: z.int().gte(1),
+});
+
+export const zDiffAdminRevisionQuery = z.object({
+  against: z
+    .string()
+    .regex(/^(live|[1-9][0-9]{0,17})$/)
+    .optional()
+    .default("live"),
+});
+
+/**
+ * Successful Response
+ */
+export const zDiffAdminRevisionResponse = zRevisionDiff;
+
+export const zRollbackAdminRevisionBody = zRollbackRequest;
+
+export const zRollbackAdminRevisionPath = z.object({
+  revision_id: z.int().gte(1),
+});
+
+/**
+ * Successful Response
+ */
+export const zRollbackAdminRevisionResponse = zRevision;
+
+export const zPatchAdminSectionBody = zSectionPatch;
+
+export const zPatchAdminSectionPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPatchAdminSectionResponse = zAdminSection;
+
+export const zDiscardAdminSectionDraftPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zDiscardAdminSectionDraftResponse = z.void();
+
+export const zSaveAdminSectionDraftBody = zDraftSave;
+
+export const zSaveAdminSectionDraftPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zSaveAdminSectionDraftResponse = zRevision;
+
+export const zGetAdminSectionEditorPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetAdminSectionEditorResponse = zSectionEditor;
+
+export const zDetachAdminSectionMediaPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+  media_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zDetachAdminSectionMediaResponse = z.void();
+
+export const zAttachAdminSectionMediaBody = zSectionMediaIn;
+
+export const zAttachAdminSectionMediaPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+  media_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zAttachAdminSectionMediaResponse = zSectionMediaOut;
+
+export const zPublishAdminSectionBody = zPublishRequest;
+
+export const zPublishAdminSectionPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+});
+
+/**
+ * Successful Response
+ */
+export const zPublishAdminSectionResponse = zRevision;
+
+export const zListAdminSectionRevisionsPath = z.object({
+  section_id: z.string().regex(/^[a-z0-9][a-z0-9_-]{1,127}$/),
+});
+
+export const zListAdminSectionRevisionsQuery = z.object({
+  limit: z.int().gte(1).lte(200).optional().default(100),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminSectionRevisionsResponse = zRevisionList;
+
 export const zStartSeedBody = zSeedRequest;
 
 /**
@@ -2838,6 +4200,20 @@ export const zGetSeedRunPath = z.object({
  * Successful Response
  */
 export const zGetSeedRunResponse = zSeedRun;
+
+/**
+ * Successful Response
+ */
+export const zListAdminSourcesResponse = zAdminSourceList;
+
+export const zListAdminTaxonomyQuery = z.object({
+  exam: z.enum(["step1", "step2ck", "step3"]).nullish(),
+});
+
+/**
+ * Successful Response
+ */
+export const zListAdminTaxonomyResponse = zTaxonomyList;
 
 export const zAddYoutubeVideoBody = zAddIn;
 

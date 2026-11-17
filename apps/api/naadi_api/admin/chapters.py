@@ -48,6 +48,7 @@ from .common import (
 )
 from .content_schema import check_doc, refs_of, text_of, word_count
 from .licence import GateRefused, check_media_row
+from .media import MEDIA_SELECT, AdminMedia, media_out, media_previews
 
 log = get_logger("naadi.admin.chapters")
 
@@ -222,18 +223,11 @@ class LiveBody(BaseModel):
     revision_id: int | None
 
 
-class EditorMedia(BaseModel):
-    id: str
-    kind: str
-    title: str | None
-    review_status: str
-    source_id: str
-
-
 class EditorQuestion(BaseModel):
     id: str
     status: str
     exam: str
+    stem_text: str = Field(description="Plain-text start of the stem (no key, no explanation)")
 
 
 class SectionEditor(BaseModel):
@@ -241,7 +235,7 @@ class SectionEditor(BaseModel):
     section: AdminSection
     live: LiveBody
     draft: Revision | None
-    media: list[EditorMedia]
+    media: list[AdminMedia] = Field(description="Media referenced by the live body or the draft, with previews")
     questions: list[EditorQuestion]
 
 
@@ -774,7 +768,7 @@ async def _draft(conn: AsyncConnection[Any], section_id: str, *, lock: bool = Fa
 async def get_editor(
     request: Request, admin: ConsoleAdmin, section_id: Annotated[str, Path(pattern=SECTION_ID)]
 ) -> SectionEditor:
-    async def run(conn: AsyncConnection[Any]) -> SectionEditor:
+    async def run(conn: AsyncConnection[Any]) -> tuple[SectionEditor, list[Row]]:
         srow = await get_section_row(conn, section_id)
         chapter = await get_chapter_row(conn, srow["chapter_id"])
         body_row = await one(conn, "select body from public.chapter_sections where id = %s", (section_id,))
@@ -787,24 +781,27 @@ async def get_editor(
             m, q = refs_of(b)
             media_ids += [mid for _k, mid in m if mid not in media_ids]
             question_ids += [qid for qid in q if qid not in question_ids]
-        media = await rows(
-            conn,
-            "select id, kind, title, review_status, source_id from public.media_assets where id = any(%s) order by id",
-            (media_ids,),
-        )
+        media = await rows(conn, MEDIA_SELECT + " where m.id = any(%s) order by m.id", (media_ids,))
         questions = await rows(
-            conn, "select id, status, exam from public.questions where id = any(%s) order by id", (question_ids,)
+            conn,
+            "select id, status, exam, left(regexp_replace(regexp_replace(stem_html, '<[^>]*>', ' ', 'g'),"
+            " '\\s+', ' ', 'g'), 200) as stem_text from public.questions where id = any(%s) order by id",
+            (question_ids,),
         )
-        return SectionEditor(
+        editor = SectionEditor(
             chapter=_chapter(chapter),
             section=_section(srow),
             live=LiveBody(body=live_body, revision_id=live_id),
             draft=_revision(draft, live_id, with_body=True) if draft else None,
-            media=[EditorMedia(**m) for m in media],
-            questions=[EditorQuestion(**q) for q in questions],
+            media=[],
+            questions=[EditorQuestion(**{**q, "stem_text": q["stem_text"].strip()}) for q in questions],
         )
+        return editor, media
 
-    return await run_tx(request, run)
+    editor, media = await run_tx(request, run)
+    previews = await media_previews(request, media)  # signed URLs are made outside the transaction
+    editor.media = [media_out(m, previews) for m in media]
+    return editor
 
 
 @router.put(

@@ -26,9 +26,9 @@ def _ts_tuple(name: str, src: str) -> tuple[str, ...]:
 def test_node_and_mark_tables_match_the_typescript_contract() -> None:
     assert cs.NODE_TYPES == frozenset(_ts_tuple("CONTENT_NODE_TYPES", SCHEMA_TS)) == CONTENT_NODE_TYPES
     assert frozenset(cs.MARK_SPECS) == frozenset(_ts_tuple("CONTENT_MARK_TYPES", SCHEMA_TS)) == CONTENT_MARK_TYPES
-    assert cs.CALLOUT_VARIANTS == _ts_tuple("CALLOUT_VARIANTS", EXT_TS)
-    assert cs.HIGHLIGHT_COLORS == _ts_tuple("HIGHLIGHT_COLORS", EXT_TS)
-    assert cs.HIGHLIGHT_MEANINGS == _ts_tuple("HIGHLIGHT_MEANINGS", EXT_TS)
+    assert _ts_tuple("CALLOUT_VARIANTS", EXT_TS) == cs.CALLOUT_VARIANTS
+    assert _ts_tuple("HIGHLIGHT_COLORS", EXT_TS) == cs.HIGHLIGHT_COLORS
+    assert _ts_tuple("HIGHLIGHT_MEANINGS", EXT_TS) == cs.HIGHLIGHT_MEANINGS
 
 
 def test_block_attribute_names_match_the_zod_strict_objects() -> None:
@@ -62,12 +62,22 @@ def codes(body: Any) -> list[tuple[tuple[str | int, ...], str]]:
 
 
 def test_valid_rich_document() -> None:
-    cell = {"type": "tableCell", "attrs": {"colspan": 1, "rowspan": 1, "colwidth": None, "align": None}, "content": [para()]}
+    cell = {
+        "type": "tableCell",
+        "attrs": {"colspan": 1, "rowspan": 1, "colwidth": None, "align": None},
+        "content": [para()],
+    }
     body = doc(
         {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "H"}]},
-        para("bold", marks=[{"type": "bold"}, {"type": "highlight", "attrs": {"color": "lime", "meaning": "key_fact"}}]),
+        para(
+            "bold", marks=[{"type": "bold"}, {"type": "highlight", "attrs": {"color": "lime", "meaning": "key_fact"}}]
+        ),
         {"type": "bulletList", "content": [{"type": "listItem", "content": [para()]}]},
-        {"type": "orderedList", "attrs": {"start": 1, "type": None}, "content": [{"type": "listItem", "content": [para()]}]},
+        {
+            "type": "orderedList",
+            "attrs": {"start": 1, "type": None},
+            "content": [{"type": "listItem", "content": [para()]}],
+        },
         {"type": "table", "attrs": {"highYield": True}, "content": [{"type": "tableRow", "content": [cell]}]},
         {"type": "callout", "attrs": {"variant": "pearl"}, "content": [para()]},
         {"type": "figure", "attrs": {"mediaId": "fig-1"}},
@@ -90,13 +100,22 @@ def test_valid_rich_document() -> None:
         ({"type": "paragraph"}, [((), "not_a_doc")]),
         (doc(), [(("content",), "bad_content")]),
         (doc({"type": "iframe", "attrs": {"src": "x"}}), [(("content", 0), "unknown_node")]),
-        (doc(para(marks=[{"type": "link", "attrs": {"href": "x"}}])), [(("content", 0, "content", 0, "marks", 0), "unknown_mark")]),
+        (
+            doc(para(marks=[{"type": "link", "attrs": {"href": "x"}}])),
+            [(("content", 0, "content", 0, "marks", 0), "unknown_mark")],
+        ),
         (doc({"type": "figure", "attrs": {"mediaId": "Bad Id"}}), [(("content", 0, "attrs", "mediaId"), "bad_value")]),
         (doc({"type": "figure", "attrs": {"mediaId": "a", "src": "x"}}), [(("content", 0, "attrs"), "bad_attrs")]),
         (doc({"type": "heading", "attrs": {"level": 1}}), [(("content", 0, "attrs", "level"), "bad_value")]),
         (doc({"type": "heading", "attrs": {"level": True}}), [(("content", 0, "attrs", "level"), "bad_value")]),
-        (doc({"type": "callout", "attrs": {"variant": "note"}, "content": [para()]}), [(("content", 0, "attrs", "variant"), "bad_value")]),
-        (doc({"type": "paragraph", "content": [{"type": "text", "text": ""}]}), [(("content", 0, "content", 0, "text"), "bad_value")]),
+        (
+            doc({"type": "callout", "attrs": {"variant": "note"}, "content": [para()]}),
+            [(("content", 0, "attrs", "variant"), "bad_value")],
+        ),
+        (
+            doc({"type": "paragraph", "content": [{"type": "text", "text": ""}]}),
+            [(("content", 0, "content", 0, "text"), "bad_value")],
+        ),
         (doc({"type": "paragraph", "style": "x"}), [(("content", 0, "style"), "bad_attrs")]),
         (doc({"type": "bulletList", "content": [para()]}), [(("content", 0, "content", 0), "bad_content")]),
         (doc({"type": "text", "text": "loose"}), [(("content", 0), "bad_content")]),
@@ -111,11 +130,13 @@ def test_depth_is_bounded() -> None:
     node: dict[str, Any] = para()
     for _ in range(80):
         node = {"type": "callout", "attrs": {"variant": "trap"}, "content": [node]}
-    assert ("too_large" in {c for _p, c in codes(doc(node))})
+    assert "too_large" in {c for _p, c in codes(doc(node))}
 
 
 def test_text_and_word_count() -> None:
-    body = doc(para("one two"), {"type": "paragraph", "content": [{"type": "text", "text": "three"}, {"type": "hardBreak"}]})
+    body = doc(
+        para("one two"), {"type": "paragraph", "content": [{"type": "text", "text": "three"}, {"type": "hardBreak"}]}
+    )
     assert cs.text_of(body) == "one two three"
     assert cs.word_count(body) == 3
     assert cs.word_count(None) == 0

@@ -11,6 +11,9 @@ import type {
   ActOnPsychometricsData,
   ActOnPsychometricsErrors,
   ActOnPsychometricsResponses,
+  AddAdminYoutubeData,
+  AddAdminYoutubeErrors,
+  AddAdminYoutubeResponses,
   AddYoutubeVideoData,
   AddYoutubeVideoErrors,
   AddYoutubeVideoResponses,
@@ -20,15 +23,33 @@ import type {
   AdminListGeneratedApiAdminGeneratedGetData,
   AdminListGeneratedApiAdminGeneratedGetErrors,
   AdminListGeneratedApiAdminGeneratedGetResponses,
+  ApproveAdminQueueItemData,
+  ApproveAdminQueueItemErrors,
+  ApproveAdminQueueItemResponses,
   ApproveYoutubeCandidateData,
   ApproveYoutubeCandidateErrors,
   ApproveYoutubeCandidateResponses,
+  AttachAdminSectionMediaData,
+  AttachAdminSectionMediaErrors,
+  AttachAdminSectionMediaResponses,
+  CancelAdminAgentRunData,
+  CancelAdminAgentRunErrors,
+  CancelAdminAgentRunResponses,
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
   ConvertInkToTextData,
   ConvertInkToTextErrors,
   ConvertInkToTextResponses,
+  CreateAdminChapterData,
+  CreateAdminChapterErrors,
+  CreateAdminChapterResponses,
+  CreateAdminQuestionData,
+  CreateAdminQuestionErrors,
+  CreateAdminQuestionResponses,
+  CreateAdminSectionData,
+  CreateAdminSectionErrors,
+  CreateAdminSectionResponses,
   CreateAttemptData,
   CreateAttemptErrors,
   CreateAttemptResponses,
@@ -77,6 +98,15 @@ import type {
   DeleteNoteData,
   DeleteNoteErrors,
   DeleteNoteResponses,
+  DetachAdminSectionMediaData,
+  DetachAdminSectionMediaErrors,
+  DetachAdminSectionMediaResponses,
+  DiffAdminRevisionData,
+  DiffAdminRevisionErrors,
+  DiffAdminRevisionResponses,
+  DiscardAdminSectionDraftData,
+  DiscardAdminSectionDraftErrors,
+  DiscardAdminSectionDraftResponses,
   DismissCoachSuggestionData,
   DismissCoachSuggestionErrors,
   DismissCoachSuggestionResponses,
@@ -98,9 +128,30 @@ import type {
   GetActiveExamData,
   GetActiveExamErrors,
   GetActiveExamResponses,
+  GetAdminAgentUsageData,
+  GetAdminAgentUsageErrors,
+  GetAdminAgentUsageResponses,
+  GetAdminChapterData,
+  GetAdminChapterErrors,
+  GetAdminChapterResponses,
+  GetAdminCoverageData,
+  GetAdminCoverageErrors,
+  GetAdminCoverageResponses,
   GetAdminOverviewData,
   GetAdminOverviewErrors,
   GetAdminOverviewResponses,
+  GetAdminQuestionData,
+  GetAdminQuestionErrors,
+  GetAdminQuestionResponses,
+  GetAdminQueueData,
+  GetAdminQueueErrors,
+  GetAdminQueueResponses,
+  GetAdminRevisionData,
+  GetAdminRevisionErrors,
+  GetAdminRevisionResponses,
+  GetAdminSectionEditorData,
+  GetAdminSectionEditorErrors,
+  GetAdminSectionEditorResponses,
   GetAnkiDecksData,
   GetAnkiDecksErrors,
   GetAnkiDecksResponses,
@@ -202,6 +253,45 @@ import type {
   ImportAnkiDeckData,
   ImportAnkiDeckErrors,
   ImportAnkiDeckResponses,
+  LintAdminQuestionData,
+  LintAdminQuestionErrors,
+  LintAdminQuestionResponses,
+  ListAdminAgentCronsData,
+  ListAdminAgentCronsErrors,
+  ListAdminAgentCronsResponses,
+  ListAdminAgentRunsData,
+  ListAdminAgentRunsErrors,
+  ListAdminAgentRunsResponses,
+  ListAdminAuditData,
+  ListAdminAuditErrors,
+  ListAdminAuditResponses,
+  ListAdminChaptersData,
+  ListAdminChaptersErrors,
+  ListAdminChaptersResponses,
+  ListAdminMediaData,
+  ListAdminMediaErrors,
+  ListAdminMediaResponses,
+  ListAdminQuestionRevisionsData,
+  ListAdminQuestionRevisionsErrors,
+  ListAdminQuestionRevisionsResponses,
+  ListAdminQuestionsData,
+  ListAdminQuestionsErrors,
+  ListAdminQuestionsResponses,
+  ListAdminQueuesData,
+  ListAdminQueuesErrors,
+  ListAdminQueuesResponses,
+  ListAdminReportsData,
+  ListAdminReportsErrors,
+  ListAdminReportsResponses,
+  ListAdminSectionRevisionsData,
+  ListAdminSectionRevisionsErrors,
+  ListAdminSectionRevisionsResponses,
+  ListAdminSourcesData,
+  ListAdminSourcesErrors,
+  ListAdminSourcesResponses,
+  ListAdminTaxonomyData,
+  ListAdminTaxonomyErrors,
+  ListAdminTaxonomyResponses,
   ListAppConfigData,
   ListAppConfigErrors,
   ListAppConfigResponses,
@@ -235,12 +325,27 @@ import type {
   ListYoutubeCandidatesData,
   ListYoutubeCandidatesErrors,
   ListYoutubeCandidatesResponses,
+  LookupAdminYoutubeData,
+  LookupAdminYoutubeErrors,
+  LookupAdminYoutubeResponses,
+  PatchAdminChapterData,
+  PatchAdminChapterErrors,
+  PatchAdminChapterResponses,
+  PatchAdminMediaData,
+  PatchAdminMediaErrors,
+  PatchAdminMediaResponses,
+  PatchAdminSectionData,
+  PatchAdminSectionErrors,
+  PatchAdminSectionResponses,
   PostInkChangesData,
   PostInkChangesErrors,
   PostInkChangesResponses,
   PreviewPlanData,
   PreviewPlanErrors,
   PreviewPlanResponses,
+  PublishAdminSectionData,
+  PublishAdminSectionErrors,
+  PublishAdminSectionResponses,
   PutAppConfigData,
   PutAppConfigErrors,
   PutAppConfigResponses,
@@ -250,9 +355,18 @@ import type {
   ReindexEmbeddingsData,
   ReindexEmbeddingsErrors,
   ReindexEmbeddingsResponses,
+  RejectAdminQueueItemData,
+  RejectAdminQueueItemErrors,
+  RejectAdminQueueItemResponses,
   RejectYoutubeCandidateData,
   RejectYoutubeCandidateErrors,
   RejectYoutubeCandidateResponses,
+  ReorderAdminChaptersData,
+  ReorderAdminChaptersErrors,
+  ReorderAdminChaptersResponses,
+  ReorderAdminSectionsData,
+  ReorderAdminSectionsErrors,
+  ReorderAdminSectionsResponses,
   ReorderNotebookPagesData,
   ReorderNotebookPagesErrors,
   ReorderNotebookPagesResponses,
@@ -262,15 +376,27 @@ import type {
   ResubmitReviewItemData,
   ResubmitReviewItemErrors,
   ResubmitReviewItemResponses,
+  RevertAppConfigData,
+  RevertAppConfigErrors,
+  RevertAppConfigResponses,
+  ReviewAdminMediaData,
+  ReviewAdminMediaErrors,
+  ReviewAdminMediaResponses,
   ReviewCardData,
   ReviewCardErrors,
   ReviewCardResponses,
+  RollbackAdminRevisionData,
+  RollbackAdminRevisionErrors,
+  RollbackAdminRevisionResponses,
   RunPsychometricsData,
   RunPsychometricsErrors,
   RunPsychometricsResponses,
   RunReviewChecksData,
   RunReviewChecksErrors,
   RunReviewChecksResponses,
+  SaveAdminSectionDraftData,
+  SaveAdminSectionDraftErrors,
+  SaveAdminSectionDraftResponses,
   SaveOnboardingData,
   SaveOnboardingErrors,
   SaveOnboardingResponses,
@@ -280,6 +406,15 @@ import type {
   SearchWebData,
   SearchWebErrors,
   SearchWebResponses,
+  SetAdminChapterStatusData,
+  SetAdminChapterStatusErrors,
+  SetAdminChapterStatusResponses,
+  SetAdminQuestionStatusData,
+  SetAdminQuestionStatusErrors,
+  SetAdminQuestionStatusResponses,
+  SetAdminReportStatusData,
+  SetAdminReportStatusErrors,
+  SetAdminReportStatusResponses,
   SetPlanItemStatusData,
   SetPlanItemStatusErrors,
   SetPlanItemStatusResponses,
@@ -295,6 +430,9 @@ import type {
   SubmitReviewData,
   SubmitReviewErrors,
   SubmitReviewResponses,
+  UpdateAdminQuestionData,
+  UpdateAdminQuestionErrors,
+  UpdateAdminQuestionResponses,
   UpdateCardData,
   UpdateCardErrors,
   UpdateCardResponses,
@@ -307,6 +445,9 @@ import type {
   UpdateNoteData,
   UpdateNoteErrors,
   UpdateNoteResponses,
+  UploadAdminMediaData,
+  UploadAdminMediaErrors,
+  UploadAdminMediaResponses,
 } from "./types.gen";
 import {
   zAcceptCoachSuggestionPath,
@@ -314,6 +455,8 @@ import {
   zActOnPsychometricsBody,
   zActOnPsychometricsPath,
   zActOnPsychometricsResponse,
+  zAddAdminYoutubeBody,
+  zAddAdminYoutubeResponse,
   zAddYoutubeVideoBody,
   zAddYoutubeVideoResponse,
   zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostBody,
@@ -321,13 +464,28 @@ import {
   zAdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse,
   zAdminListGeneratedApiAdminGeneratedGetQuery,
   zAdminListGeneratedApiAdminGeneratedGetResponse,
+  zApproveAdminQueueItemBody,
+  zApproveAdminQueueItemPath,
+  zApproveAdminQueueItemResponse,
   zApproveYoutubeCandidateBody,
   zApproveYoutubeCandidatePath,
   zApproveYoutubeCandidateResponse,
+  zAttachAdminSectionMediaBody,
+  zAttachAdminSectionMediaPath,
+  zAttachAdminSectionMediaResponse,
+  zCancelAdminAgentRunPath,
+  zCancelAdminAgentRunResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
   zConvertInkToTextBody,
   zConvertInkToTextResponse,
+  zCreateAdminChapterBody,
+  zCreateAdminChapterResponse,
+  zCreateAdminQuestionBody,
+  zCreateAdminQuestionResponse,
+  zCreateAdminSectionBody,
+  zCreateAdminSectionPath,
+  zCreateAdminSectionResponse,
   zCreateAttemptBody,
   zCreateAttemptPath,
   zCreateAttemptResponse,
@@ -361,6 +519,13 @@ import {
   zDeleteNotebookResponse,
   zDeleteNotePath,
   zDeleteNoteResponse,
+  zDetachAdminSectionMediaPath,
+  zDetachAdminSectionMediaResponse,
+  zDiffAdminRevisionPath,
+  zDiffAdminRevisionQuery,
+  zDiffAdminRevisionResponse,
+  zDiscardAdminSectionDraftPath,
+  zDiscardAdminSectionDraftResponse,
   zDismissCoachSuggestionPath,
   zDismissCoachSuggestionResponse,
   zExportAnkiDeckQuery,
@@ -372,7 +537,22 @@ import {
   zFlagAttemptResponse,
   zGenerationStatusApiGenerationStatusGetResponse,
   zGetActiveExamResponse,
+  zGetAdminAgentUsageQuery,
+  zGetAdminAgentUsageResponse,
+  zGetAdminChapterPath,
+  zGetAdminChapterResponse,
+  zGetAdminCoverageQuery,
+  zGetAdminCoverageResponse,
   zGetAdminOverviewResponse,
+  zGetAdminQuestionPath,
+  zGetAdminQuestionResponse,
+  zGetAdminQueuePath,
+  zGetAdminQueueQuery,
+  zGetAdminQueueResponse,
+  zGetAdminRevisionPath,
+  zGetAdminRevisionResponse,
+  zGetAdminSectionEditorPath,
+  zGetAdminSectionEditorResponse,
   zGetAnkiDecksResponse,
   zGetAppConfigHistoryPath,
   zGetAppConfigHistoryQuery,
@@ -431,6 +611,30 @@ import {
   zGetTodayResponse,
   zImportAnkiDeckQuery,
   zImportAnkiDeckResponse,
+  zLintAdminQuestionPath,
+  zLintAdminQuestionResponse,
+  zListAdminAgentCronsResponse,
+  zListAdminAgentRunsQuery,
+  zListAdminAgentRunsResponse,
+  zListAdminAuditQuery,
+  zListAdminAuditResponse,
+  zListAdminChaptersQuery,
+  zListAdminChaptersResponse,
+  zListAdminMediaQuery,
+  zListAdminMediaResponse,
+  zListAdminQuestionRevisionsPath,
+  zListAdminQuestionRevisionsResponse,
+  zListAdminQuestionsQuery,
+  zListAdminQuestionsResponse,
+  zListAdminQueuesResponse,
+  zListAdminReportsQuery,
+  zListAdminReportsResponse,
+  zListAdminSectionRevisionsPath,
+  zListAdminSectionRevisionsQuery,
+  zListAdminSectionRevisionsResponse,
+  zListAdminSourcesResponse,
+  zListAdminTaxonomyQuery,
+  zListAdminTaxonomyResponse,
   zListAppConfigResponse,
   zListAuthoringGapsResponse,
   zListAuthoringRunsResponse,
@@ -447,11 +651,25 @@ import {
   zListSeedRunsResponse,
   zListYoutubeCandidatesQuery,
   zListYoutubeCandidatesResponse,
+  zLookupAdminYoutubeBody,
+  zLookupAdminYoutubeResponse,
+  zPatchAdminChapterBody,
+  zPatchAdminChapterPath,
+  zPatchAdminChapterResponse,
+  zPatchAdminMediaBody,
+  zPatchAdminMediaPath,
+  zPatchAdminMediaResponse,
+  zPatchAdminSectionBody,
+  zPatchAdminSectionPath,
+  zPatchAdminSectionResponse,
   zPostInkChangesBody,
   zPostInkChangesPath,
   zPostInkChangesResponse,
   zPreviewPlanQuery,
   zPreviewPlanResponse,
+  zPublishAdminSectionBody,
+  zPublishAdminSectionPath,
+  zPublishAdminSectionResponse,
   zPutAppConfigBody,
   zPutAppConfigPath,
   zPutAppConfigResponse,
@@ -459,8 +677,16 @@ import {
   zPutReadingPositionResponse,
   zReindexEmbeddingsBody,
   zReindexEmbeddingsResponse,
+  zRejectAdminQueueItemBody,
+  zRejectAdminQueueItemPath,
+  zRejectAdminQueueItemResponse,
   zRejectYoutubeCandidatePath,
   zRejectYoutubeCandidateResponse,
+  zReorderAdminChaptersBody,
+  zReorderAdminChaptersResponse,
+  zReorderAdminSectionsBody,
+  zReorderAdminSectionsPath,
+  zReorderAdminSectionsResponse,
   zReorderNotebookPagesBody,
   zReorderNotebookPagesPath,
   zReorderNotebookPagesResponse,
@@ -468,19 +694,40 @@ import {
   zReportIssueResponse,
   zResubmitReviewItemPath,
   zResubmitReviewItemResponse,
+  zRevertAppConfigBody,
+  zRevertAppConfigPath,
+  zRevertAppConfigResponse,
+  zReviewAdminMediaBody,
+  zReviewAdminMediaPath,
+  zReviewAdminMediaResponse,
   zReviewCardBody,
   zReviewCardPath,
   zReviewCardResponse,
+  zRollbackAdminRevisionBody,
+  zRollbackAdminRevisionPath,
+  zRollbackAdminRevisionResponse,
   zRunPsychometricsResponse,
   zRunReviewChecksBody,
   zRunReviewChecksPath,
   zRunReviewChecksResponse,
+  zSaveAdminSectionDraftBody,
+  zSaveAdminSectionDraftPath,
+  zSaveAdminSectionDraftResponse,
   zSaveOnboardingBody,
   zSaveOnboardingResponse,
   zSearchLocalQuery,
   zSearchLocalResponse,
   zSearchWebQuery,
   zSearchWebResponse,
+  zSetAdminChapterStatusBody,
+  zSetAdminChapterStatusPath,
+  zSetAdminChapterStatusResponse,
+  zSetAdminQuestionStatusBody,
+  zSetAdminQuestionStatusPath,
+  zSetAdminQuestionStatusResponse,
+  zSetAdminReportStatusBody,
+  zSetAdminReportStatusPath,
+  zSetAdminReportStatusResponse,
   zSetPlanItemStatusBody,
   zSetPlanItemStatusPath,
   zSetPlanItemStatusResponse,
@@ -493,6 +740,9 @@ import {
   zSubmitReviewBody,
   zSubmitReviewPath,
   zSubmitReviewResponse,
+  zUpdateAdminQuestionBody,
+  zUpdateAdminQuestionPath,
+  zUpdateAdminQuestionResponse,
   zUpdateCardBody,
   zUpdateCardPath,
   zUpdateCardResponse,
@@ -504,6 +754,9 @@ import {
   zUpdateNotebookResponse,
   zUpdateNotePath,
   zUpdateNoteResponse,
+  zUploadAdminMediaBody,
+  zUploadAdminMediaQuery,
+  zUploadAdminMediaResponse,
 } from "./zod.gen";
 
 export type Options<
@@ -523,6 +776,290 @@ export type Options<
    */
   meta?: keyof ClientMeta extends never ? Record<string, unknown> : ClientMeta;
 };
+
+/**
+ * Admin only: agent crons with the next run and the last result
+ */
+export const listAdminAgentCrons = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminAgentCronsData, ThrowOnError>,
+): RequestResult<ListAdminAgentCronsResponses, ListAdminAgentCronsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminAgentCronsResponses, ListAdminAgentCronsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminAgentCronsResponse.parseAsync(data),
+    url: "/api/admin/agent/crons",
+    ...options,
+  });
+
+/**
+ * Admin only: recent agent runs (metadata only)
+ */
+export const listAdminAgentRuns = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminAgentRunsData, ThrowOnError>,
+): RequestResult<ListAdminAgentRunsResponses, ListAdminAgentRunsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminAgentRunsResponses, ListAdminAgentRunsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminAgentRunsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminAgentRunsResponse.parseAsync(data),
+    url: "/api/admin/agent/runs",
+    ...options,
+  });
+
+/**
+ * Admin only: cancel a pending or running agent run
+ */
+export const cancelAdminAgentRun = <ThrowOnError extends boolean = false>(
+  options: Options<CancelAdminAgentRunData, ThrowOnError>,
+): RequestResult<CancelAdminAgentRunResponses, CancelAdminAgentRunErrors, ThrowOnError> =>
+  (options.client ?? client).post<CancelAdminAgentRunResponses, CancelAdminAgentRunErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zCancelAdminAgentRunPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCancelAdminAgentRunResponse.parseAsync(data),
+    url: "/api/admin/agent/runs/{thread_id}/{run_id}/cancel",
+    ...options,
+  });
+
+/**
+ * Admin only: model calls per day × provider × purpose against the caps, Tavily credits, agent health
+ */
+export const getAdminAgentUsage = <ThrowOnError extends boolean = false>(
+  options?: Options<GetAdminAgentUsageData, ThrowOnError>,
+): RequestResult<GetAdminAgentUsageResponses, GetAdminAgentUsageErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetAdminAgentUsageResponses, GetAdminAgentUsageErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetAdminAgentUsageQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminAgentUsageResponse.parseAsync(data),
+    url: "/api/admin/agent/usage",
+    ...options,
+  });
+
+/**
+ * Admin only: the admin audit trail, newest first
+ */
+export const listAdminAudit = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminAuditData, ThrowOnError>,
+): RequestResult<ListAdminAuditResponses, ListAdminAuditErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminAuditResponses, ListAdminAuditErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminAuditQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminAuditResponse.parseAsync(data),
+    url: "/api/admin/audit",
+    ...options,
+  });
+
+/**
+ * Admin only: shared chapters of every status
+ */
+export const listAdminChapters = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminChaptersData, ThrowOnError>,
+): RequestResult<ListAdminChaptersResponses, ListAdminChaptersErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminChaptersResponses, ListAdminChaptersErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminChaptersQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminChaptersResponse.parseAsync(data),
+    url: "/api/admin/chapters",
+    ...options,
+  });
+
+/**
+ * Admin only: create a shared chapter (status draft, invisible to students)
+ */
+export const createAdminChapter = <ThrowOnError extends boolean = false>(
+  options: Options<CreateAdminChapterData, ThrowOnError>,
+): RequestResult<CreateAdminChapterResponses, CreateAdminChapterErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateAdminChapterResponses, CreateAdminChapterErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateAdminChapterBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateAdminChapterResponse.parseAsync(data),
+    url: "/api/admin/chapters",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: set the order of an exam's chapters
+ */
+export const reorderAdminChapters = <ThrowOnError extends boolean = false>(
+  options: Options<ReorderAdminChaptersData, ThrowOnError>,
+): RequestResult<ReorderAdminChaptersResponses, ReorderAdminChaptersErrors, ThrowOnError> =>
+  (options.client ?? client).post<ReorderAdminChaptersResponses, ReorderAdminChaptersErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReorderAdminChaptersBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReorderAdminChaptersResponse.parseAsync(data),
+    url: "/api/admin/chapters/reorder",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: one chapter with its sections
+ */
+export const getAdminChapter = <ThrowOnError extends boolean = false>(
+  options: Options<GetAdminChapterData, ThrowOnError>,
+): RequestResult<GetAdminChapterResponses, GetAdminChapterErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAdminChapterResponses, GetAdminChapterErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAdminChapterPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminChapterResponse.parseAsync(data),
+    url: "/api/admin/chapters/{chapter_id}",
+    ...options,
+  });
+
+/**
+ * Admin only: edit a chapter's title, meta line or source
+ */
+export const patchAdminChapter = <ThrowOnError extends boolean = false>(
+  options: Options<PatchAdminChapterData, ThrowOnError>,
+): RequestResult<PatchAdminChapterResponses, PatchAdminChapterErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchAdminChapterResponses, PatchAdminChapterErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchAdminChapterBody,
+          path: zPatchAdminChapterPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchAdminChapterResponse.parseAsync(data),
+    url: "/api/admin/chapters/{chapter_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: add an empty section at the end of a chapter
+ */
+export const createAdminSection = <ThrowOnError extends boolean = false>(
+  options: Options<CreateAdminSectionData, ThrowOnError>,
+): RequestResult<CreateAdminSectionResponses, CreateAdminSectionErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateAdminSectionResponses, CreateAdminSectionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateAdminSectionBody,
+          path: zCreateAdminSectionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateAdminSectionResponse.parseAsync(data),
+    url: "/api/admin/chapters/{chapter_id}/sections",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: set the order of a chapter's sections
+ */
+export const reorderAdminSections = <ThrowOnError extends boolean = false>(
+  options: Options<ReorderAdminSectionsData, ThrowOnError>,
+): RequestResult<ReorderAdminSectionsResponses, ReorderAdminSectionsErrors, ThrowOnError> =>
+  (options.client ?? client).post<ReorderAdminSectionsResponses, ReorderAdminSectionsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReorderAdminSectionsBody,
+          path: zReorderAdminSectionsPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReorderAdminSectionsResponse.parseAsync(data),
+    url: "/api/admin/chapters/{chapter_id}/sections/reorder",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: move a chapter through draft → in_review → published → retired
+ */
+export const setAdminChapterStatus = <ThrowOnError extends boolean = false>(
+  options: Options<SetAdminChapterStatusData, ThrowOnError>,
+): RequestResult<SetAdminChapterStatusResponses, SetAdminChapterStatusErrors, ThrowOnError> =>
+  (options.client ?? client).post<SetAdminChapterStatusResponses, SetAdminChapterStatusErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSetAdminChapterStatusBody,
+          path: zSetAdminChapterStatusPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSetAdminChapterStatusResponse.parseAsync(data),
+    url: "/api/admin/chapters/{chapter_id}/status",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
 
 /**
  * Admin only: every app_config key with its source and last change
@@ -605,6 +1142,50 @@ export const getAppConfigHistory = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetAppConfigHistoryResponse.parseAsync(data),
     url: "/api/admin/config/{key}/history",
+    ...options,
+  });
+
+/**
+ * Admin only: restore an app_config value from its history (validated like any save)
+ */
+export const revertAppConfig = <ThrowOnError extends boolean = false>(
+  options: Options<RevertAppConfigData, ThrowOnError>,
+): RequestResult<RevertAppConfigResponses, RevertAppConfigErrors, ThrowOnError> =>
+  (options.client ?? client).post<RevertAppConfigResponses, RevertAppConfigErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zRevertAppConfigBody,
+          path: zRevertAppConfigPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRevertAppConfigResponse.parseAsync(data),
+    url: "/api/admin/config/{key}/revert",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: published content per taxonomy topic against the goals, and the system × discipline grid
+ */
+export const getAdminCoverage = <ThrowOnError extends boolean = false>(
+  options?: Options<GetAdminCoverageData, ThrowOnError>,
+): RequestResult<GetAdminCoverageResponses, GetAdminCoverageErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetAdminCoverageResponses, GetAdminCoverageErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zGetAdminCoverageQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminCoverageResponse.parseAsync(data),
+    url: "/api/admin/coverage",
     ...options,
   });
 
@@ -714,6 +1295,147 @@ export const adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost = <ThrowOn
   });
 
 /**
+ * Admin only: the media library (every review status)
+ */
+export const listAdminMedia = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminMediaData, ThrowOnError>,
+): RequestResult<ListAdminMediaResponses, ListAdminMediaErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminMediaResponses, ListAdminMediaErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminMediaQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminMediaResponse.parseAsync(data),
+    url: "/api/admin/media",
+    ...options,
+  });
+
+/**
+ * Admin only: upload a figure (SVG/PNG/JPEG/WebP/GIF) or a PDF as the raw request body
+ */
+export const uploadAdminMedia = <ThrowOnError extends boolean = false>(
+  options: Options<UploadAdminMediaData, ThrowOnError>,
+): RequestResult<UploadAdminMediaResponses, UploadAdminMediaErrors, ThrowOnError> =>
+  (options.client ?? client).post<UploadAdminMediaResponses, UploadAdminMediaErrors, ThrowOnError>({
+    bodySerializer: null,
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zUploadAdminMediaBody,
+          path: z.never().optional(),
+          query: zUploadAdminMediaQuery,
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUploadAdminMediaResponse.parseAsync(data),
+    url: "/api/admin/media/files",
+    ...options,
+    headers: {
+      "Content-Type": "application/pdf",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: add a YouTube video (embed only, through the official IFrame player)
+ */
+export const addAdminYoutube = <ThrowOnError extends boolean = false>(
+  options: Options<AddAdminYoutubeData, ThrowOnError>,
+): RequestResult<AddAdminYoutubeResponses, AddAdminYoutubeErrors, ThrowOnError> =>
+  (options.client ?? client).post<AddAdminYoutubeResponses, AddAdminYoutubeErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zAddAdminYoutubeBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zAddAdminYoutubeResponse.parseAsync(data),
+    url: "/api/admin/media/youtube",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: read a YouTube video's title, channel and embeddable flag (server-side)
+ */
+export const lookupAdminYoutube = <ThrowOnError extends boolean = false>(
+  options: Options<LookupAdminYoutubeData, ThrowOnError>,
+): RequestResult<LookupAdminYoutubeResponses, LookupAdminYoutubeErrors, ThrowOnError> =>
+  (options.client ?? client).post<LookupAdminYoutubeResponses, LookupAdminYoutubeErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zLookupAdminYoutubeBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zLookupAdminYoutubeResponse.parseAsync(data),
+    url: "/api/admin/media/youtube/lookup",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: edit a media asset's title, caption, attribution, taxonomy or source
+ */
+export const patchAdminMedia = <ThrowOnError extends boolean = false>(
+  options: Options<PatchAdminMediaData, ThrowOnError>,
+): RequestResult<PatchAdminMediaResponses, PatchAdminMediaErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchAdminMediaResponses, PatchAdminMediaErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchAdminMediaBody,
+          path: zPatchAdminMediaPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchAdminMediaResponse.parseAsync(data),
+    url: "/api/admin/media/{media_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: approve (gates apply) or reject a media asset
+ */
+export const reviewAdminMedia = <ThrowOnError extends boolean = false>(
+  options: Options<ReviewAdminMediaData, ThrowOnError>,
+): RequestResult<ReviewAdminMediaResponses, ReviewAdminMediaErrors, ThrowOnError> =>
+  (options.client ?? client).post<ReviewAdminMediaResponses, ReviewAdminMediaErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReviewAdminMediaBody,
+          path: zReviewAdminMediaPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReviewAdminMediaResponse.parseAsync(data),
+    url: "/api/admin/media/{media_id}/review",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
  * Admin only: environment, version, number of admins configured and of profiles
  */
 export const getAdminOverview = <ThrowOnError extends boolean = false>(
@@ -731,6 +1453,290 @@ export const getAdminOverview = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zGetAdminOverviewResponse.parseAsync(data),
     url: "/api/admin/overview",
     ...options,
+  });
+
+/**
+ * Admin only: questions of every status (no keys or explanations in the list)
+ */
+export const listAdminQuestions = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminQuestionsData, ThrowOnError>,
+): RequestResult<ListAdminQuestionsResponses, ListAdminQuestionsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminQuestionsResponses, ListAdminQuestionsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminQuestionsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminQuestionsResponse.parseAsync(data),
+    url: "/api/admin/questions",
+    ...options,
+  });
+
+/**
+ * Admin only: create a question (status draft, invisible to students)
+ */
+export const createAdminQuestion = <ThrowOnError extends boolean = false>(
+  options: Options<CreateAdminQuestionData, ThrowOnError>,
+): RequestResult<CreateAdminQuestionResponses, CreateAdminQuestionErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateAdminQuestionResponses, CreateAdminQuestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateAdminQuestionBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateAdminQuestionResponse.parseAsync(data),
+    url: "/api/admin/questions",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: one question with its key and explanations
+ */
+export const getAdminQuestion = <ThrowOnError extends boolean = false>(
+  options: Options<GetAdminQuestionData, ThrowOnError>,
+): RequestResult<GetAdminQuestionResponses, GetAdminQuestionErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAdminQuestionResponses, GetAdminQuestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAdminQuestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminQuestionResponse.parseAsync(data),
+    url: "/api/admin/questions/{question_id}",
+    ...options,
+  });
+
+/**
+ * Admin only: replace a question's fields (a published item is re-embedded)
+ */
+export const updateAdminQuestion = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateAdminQuestionData, ThrowOnError>,
+): RequestResult<UpdateAdminQuestionResponses, UpdateAdminQuestionErrors, ThrowOnError> =>
+  (options.client ?? client).put<UpdateAdminQuestionResponses, UpdateAdminQuestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zUpdateAdminQuestionBody,
+          path: zUpdateAdminQuestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUpdateAdminQuestionResponse.parseAsync(data),
+    url: "/api/admin/questions/{question_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: NBME item-writing lint findings for a question
+ */
+export const lintAdminQuestion = <ThrowOnError extends boolean = false>(
+  options: Options<LintAdminQuestionData, ThrowOnError>,
+): RequestResult<LintAdminQuestionResponses, LintAdminQuestionErrors, ThrowOnError> =>
+  (options.client ?? client).get<LintAdminQuestionResponses, LintAdminQuestionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zLintAdminQuestionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zLintAdminQuestionResponse.parseAsync(data),
+    url: "/api/admin/questions/{question_id}/lint",
+    ...options,
+  });
+
+/**
+ * Admin only: a question's edit snapshots, newest first
+ */
+export const listAdminQuestionRevisions = <ThrowOnError extends boolean = false>(
+  options: Options<ListAdminQuestionRevisionsData, ThrowOnError>,
+): RequestResult<ListAdminQuestionRevisionsResponses, ListAdminQuestionRevisionsErrors, ThrowOnError> =>
+  (options.client ?? client).get<ListAdminQuestionRevisionsResponses, ListAdminQuestionRevisionsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zListAdminQuestionRevisionsPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminQuestionRevisionsResponse.parseAsync(data),
+    url: "/api/admin/questions/{question_id}/revisions",
+    ...options,
+  });
+
+/**
+ * Admin only: move a question through its status workflow (publishing runs the gates)
+ */
+export const setAdminQuestionStatus = <ThrowOnError extends boolean = false>(
+  options: Options<SetAdminQuestionStatusData, ThrowOnError>,
+): RequestResult<SetAdminQuestionStatusResponses, SetAdminQuestionStatusErrors, ThrowOnError> =>
+  (options.client ?? client).post<SetAdminQuestionStatusResponses, SetAdminQuestionStatusErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSetAdminQuestionStatusBody,
+          path: zSetAdminQuestionStatusPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSetAdminQuestionStatusResponse.parseAsync(data),
+    url: "/api/admin/questions/{question_id}/status",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: pending items per registered approval queue
+ */
+export const listAdminQueues = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminQueuesData, ThrowOnError>,
+): RequestResult<ListAdminQueuesResponses, ListAdminQueuesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminQueuesResponses, ListAdminQueuesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminQueuesResponse.parseAsync(data),
+    url: "/api/admin/queues",
+    ...options,
+  });
+
+/**
+ * Admin only: one page of pending items in a queue, oldest first
+ */
+export const getAdminQueue = <ThrowOnError extends boolean = false>(
+  options: Options<GetAdminQueueData, ThrowOnError>,
+): RequestResult<GetAdminQueueResponses, GetAdminQueueErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAdminQueueResponses, GetAdminQueueErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAdminQueuePath,
+          query: zGetAdminQueueQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminQueueResponse.parseAsync(data),
+    url: "/api/admin/queues/{kind}",
+    ...options,
+  });
+
+/**
+ * Admin only: approve one queued item (publishing gates apply)
+ */
+export const approveAdminQueueItem = <ThrowOnError extends boolean = false>(
+  options: Options<ApproveAdminQueueItemData, ThrowOnError>,
+): RequestResult<ApproveAdminQueueItemResponses, ApproveAdminQueueItemErrors, ThrowOnError> =>
+  (options.client ?? client).post<ApproveAdminQueueItemResponses, ApproveAdminQueueItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zApproveAdminQueueItemBody,
+          path: zApproveAdminQueueItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zApproveAdminQueueItemResponse.parseAsync(data),
+    url: "/api/admin/queues/{kind}/{item_id}/approve",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: reject one queued item
+ */
+export const rejectAdminQueueItem = <ThrowOnError extends boolean = false>(
+  options: Options<RejectAdminQueueItemData, ThrowOnError>,
+): RequestResult<RejectAdminQueueItemResponses, RejectAdminQueueItemErrors, ThrowOnError> =>
+  (options.client ?? client).post<RejectAdminQueueItemResponses, RejectAdminQueueItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zRejectAdminQueueItemBody,
+          path: zRejectAdminQueueItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRejectAdminQueueItemResponse.parseAsync(data),
+    url: "/api/admin/queues/{kind}/{item_id}/reject",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: reported issues, oldest open first
+ */
+export const listAdminReports = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminReportsData, ThrowOnError>,
+): RequestResult<ListAdminReportsResponses, ListAdminReportsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminReportsResponses, ListAdminReportsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminReportsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminReportsResponse.parseAsync(data),
+    url: "/api/admin/reports",
+    ...options,
+  });
+
+/**
+ * Admin only: triage, resolve, dismiss or reopen a reported issue
+ */
+export const setAdminReportStatus = <ThrowOnError extends boolean = false>(
+  options: Options<SetAdminReportStatusData, ThrowOnError>,
+): RequestResult<SetAdminReportStatusResponses, SetAdminReportStatusErrors, ThrowOnError> =>
+  (options.client ?? client).post<SetAdminReportStatusResponses, SetAdminReportStatusErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSetAdminReportStatusBody,
+          path: zSetAdminReportStatusPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSetAdminReportStatusResponse.parseAsync(data),
+    url: "/api/admin/reports/{report_id}/status",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });
 
 /**
@@ -1001,6 +2007,246 @@ export const getAuthoringTaxonomy = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Admin only: one section revision with its body
+ */
+export const getAdminRevision = <ThrowOnError extends boolean = false>(
+  options: Options<GetAdminRevisionData, ThrowOnError>,
+): RequestResult<GetAdminRevisionResponses, GetAdminRevisionErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAdminRevisionResponses, GetAdminRevisionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAdminRevisionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminRevisionResponse.parseAsync(data),
+    url: "/api/admin/revisions/{revision_id}",
+    ...options,
+  });
+
+/**
+ * Admin only: block diff of a revision against another revision or the live body
+ */
+export const diffAdminRevision = <ThrowOnError extends boolean = false>(
+  options: Options<DiffAdminRevisionData, ThrowOnError>,
+): RequestResult<DiffAdminRevisionResponses, DiffAdminRevisionErrors, ThrowOnError> =>
+  (options.client ?? client).get<DiffAdminRevisionResponses, DiffAdminRevisionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDiffAdminRevisionPath,
+          query: zDiffAdminRevisionQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDiffAdminRevisionResponse.parseAsync(data),
+    url: "/api/admin/revisions/{revision_id}/diff",
+    ...options,
+  });
+
+/**
+ * Admin only: publish a new revision copying an older one (gates apply)
+ */
+export const rollbackAdminRevision = <ThrowOnError extends boolean = false>(
+  options: Options<RollbackAdminRevisionData, ThrowOnError>,
+): RequestResult<RollbackAdminRevisionResponses, RollbackAdminRevisionErrors, ThrowOnError> =>
+  (options.client ?? client).post<RollbackAdminRevisionResponses, RollbackAdminRevisionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zRollbackAdminRevisionBody,
+          path: zRollbackAdminRevisionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRollbackAdminRevisionResponse.parseAsync(data),
+    url: "/api/admin/revisions/{revision_id}/rollback",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: edit a section's heading or taxonomy tags
+ */
+export const patchAdminSection = <ThrowOnError extends boolean = false>(
+  options: Options<PatchAdminSectionData, ThrowOnError>,
+): RequestResult<PatchAdminSectionResponses, PatchAdminSectionErrors, ThrowOnError> =>
+  (options.client ?? client).patch<PatchAdminSectionResponses, PatchAdminSectionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPatchAdminSectionBody,
+          path: zPatchAdminSectionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPatchAdminSectionResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: discard the section's draft
+ */
+export const discardAdminSectionDraft = <ThrowOnError extends boolean = false>(
+  options: Options<DiscardAdminSectionDraftData, ThrowOnError>,
+): RequestResult<DiscardAdminSectionDraftResponses, DiscardAdminSectionDraftErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DiscardAdminSectionDraftResponses, DiscardAdminSectionDraftErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDiscardAdminSectionDraftPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDiscardAdminSectionDraftResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/draft",
+    ...options,
+  });
+
+/**
+ * Admin only: save (autosave) the section's draft; the body must match the content schema
+ */
+export const saveAdminSectionDraft = <ThrowOnError extends boolean = false>(
+  options: Options<SaveAdminSectionDraftData, ThrowOnError>,
+): RequestResult<SaveAdminSectionDraftResponses, SaveAdminSectionDraftErrors, ThrowOnError> =>
+  (options.client ?? client).put<SaveAdminSectionDraftResponses, SaveAdminSectionDraftErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zSaveAdminSectionDraftBody,
+          path: zSaveAdminSectionDraftPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zSaveAdminSectionDraftResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/draft",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: everything the chapter editor needs for one section (live body, draft, references)
+ */
+export const getAdminSectionEditor = <ThrowOnError extends boolean = false>(
+  options: Options<GetAdminSectionEditorData, ThrowOnError>,
+): RequestResult<GetAdminSectionEditorResponses, GetAdminSectionEditorErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetAdminSectionEditorResponses, GetAdminSectionEditorErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetAdminSectionEditorPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetAdminSectionEditorResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/editor",
+    ...options,
+  });
+
+/**
+ * Admin only: detach a media asset from a section
+ */
+export const detachAdminSectionMedia = <ThrowOnError extends boolean = false>(
+  options: Options<DetachAdminSectionMediaData, ThrowOnError>,
+): RequestResult<DetachAdminSectionMediaResponses, DetachAdminSectionMediaErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DetachAdminSectionMediaResponses, DetachAdminSectionMediaErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDetachAdminSectionMediaPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDetachAdminSectionMediaResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/media/{media_id}",
+    ...options,
+  });
+
+/**
+ * Admin only: attach a media asset to a section (videos: optional start/end seconds)
+ */
+export const attachAdminSectionMedia = <ThrowOnError extends boolean = false>(
+  options: Options<AttachAdminSectionMediaData, ThrowOnError>,
+): RequestResult<AttachAdminSectionMediaResponses, AttachAdminSectionMediaErrors, ThrowOnError> =>
+  (options.client ?? client).put<AttachAdminSectionMediaResponses, AttachAdminSectionMediaErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zAttachAdminSectionMediaBody,
+          path: zAttachAdminSectionMediaPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zAttachAdminSectionMediaResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/media/{media_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: publish the draft; it becomes the live body (licence gates and schema apply)
+ */
+export const publishAdminSection = <ThrowOnError extends boolean = false>(
+  options: Options<PublishAdminSectionData, ThrowOnError>,
+): RequestResult<PublishAdminSectionResponses, PublishAdminSectionErrors, ThrowOnError> =>
+  (options.client ?? client).post<PublishAdminSectionResponses, PublishAdminSectionErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zPublishAdminSectionBody,
+          path: zPublishAdminSectionPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zPublishAdminSectionResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/publish",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Admin only: a section's revisions, newest first
+ */
+export const listAdminSectionRevisions = <ThrowOnError extends boolean = false>(
+  options: Options<ListAdminSectionRevisionsData, ThrowOnError>,
+): RequestResult<ListAdminSectionRevisionsResponses, ListAdminSectionRevisionsErrors, ThrowOnError> =>
+  (options.client ?? client).get<ListAdminSectionRevisionsResponses, ListAdminSectionRevisionsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zListAdminSectionRevisionsPath,
+          query: zListAdminSectionRevisionsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminSectionRevisionsResponse.parseAsync(data),
+    url: "/api/admin/sections/{section_id}/revisions",
+    ...options,
+  });
+
+/**
  * Admin only: start a seed import job in the background (dry run by default)
  */
 export const startSeed = <ThrowOnError extends boolean = false>(
@@ -1061,6 +2307,46 @@ export const getSeedRun = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetSeedRunResponse.parseAsync(data),
     url: "/api/admin/seed/runs/{run_id}",
+    ...options,
+  });
+
+/**
+ * Admin only: content sources and their licence terms
+ */
+export const listAdminSources = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminSourcesData, ThrowOnError>,
+): RequestResult<ListAdminSourcesResponses, ListAdminSourcesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminSourcesResponses, ListAdminSourcesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminSourcesResponse.parseAsync(data),
+    url: "/api/admin/sources",
+    ...options,
+  });
+
+/**
+ * Admin only: taxonomy nodes for the tag pickers
+ */
+export const listAdminTaxonomy = <ThrowOnError extends boolean = false>(
+  options?: Options<ListAdminTaxonomyData, ThrowOnError>,
+): RequestResult<ListAdminTaxonomyResponses, ListAdminTaxonomyErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListAdminTaxonomyResponses, ListAdminTaxonomyErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListAdminTaxonomyQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListAdminTaxonomyResponse.parseAsync(data),
+    url: "/api/admin/taxonomy",
     ...options,
   });
 

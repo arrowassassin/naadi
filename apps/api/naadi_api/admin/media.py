@@ -284,7 +284,7 @@ class SectionMediaOut(BaseModel):
 
 # ── helpers ──
 
-_MEDIA_SELECT = """
+MEDIA_SELECT = """
 select m.id, m.kind, m.title, m.caption, m.source_id, m.review_status, m.url, m.youtube_id, m.channel_id,
        m.embeddable, m.duration_s, m.width, m.height, m.attribution, m.taxonomy_ids, m.metadata_fetched_at,
        coalesce((select array_agg(sm.section_id order by sm.section_id) from public.section_media sm
@@ -293,7 +293,7 @@ select m.id, m.kind, m.title, m.caption, m.source_id, m.review_status, m.url, m.
 """
 
 
-async def _previews(request: Request, found: list[Row]) -> dict[str, str | None]:
+async def media_previews(request: Request, found: list[Row]) -> dict[str, str | None]:
     resolver: MediaUrlResolver | None = getattr(request.app.state, "media_resolver", None)
     raws = [(r["id"], r["url"]) for r in found if r["url"] and r["kind"] != "video_youtube"]
     if resolver is None or not raws:
@@ -306,7 +306,7 @@ async def _previews(request: Request, found: list[Row]) -> dict[str, str | None]
         return {}
 
 
-def _media(r: Row, previews: dict[str, str | None]) -> AdminMedia:
+def media_out(r: Row, previews: dict[str, str | None]) -> AdminMedia:
     return AdminMedia(
         **{
             k: r[k]
@@ -336,7 +336,7 @@ def _media(r: Row, previews: dict[str, str | None]) -> AdminMedia:
 async def load_media(conn: AsyncConnection[Any], media_id: str, *, lock: bool = False) -> Row:
     if lock:
         await conn.execute("select 1 from public.media_assets where id = %s for update", (media_id,))
-    r = await one(conn, _MEDIA_SELECT + " where m.id = %s", (media_id,))
+    r = await one(conn, MEDIA_SELECT + " where m.id = %s", (media_id,))
     if r is None:
         raise not_found("media asset")
     return r
@@ -424,7 +424,7 @@ async def list_media(
     cursor: Annotated[str | None, Query(pattern=MEDIA_ID)] = None,
 ) -> AdminMediaList:
     async def run(conn: AsyncConnection[Any]) -> list[Row]:
-        sql = _MEDIA_SELECT + " where true"
+        sql = MEDIA_SELECT + " where true"
         params: dict[str, Any] = {"limit": limit + 1}
         if kind:
             sql += " and m.kind = %(kind)s"
@@ -443,9 +443,9 @@ async def list_media(
     found = await run_tx(request, run)
     more = len(found) > limit
     found = found[:limit]
-    previews = await _previews(request, found)
+    previews = await media_previews(request, found)
     return AdminMediaList(
-        items=[_media(r, previews) for r in found], next_cursor=found[-1]["id"] if more and found else None
+        items=[media_out(r, previews) for r in found], next_cursor=found[-1]["id"] if more and found else None
     )
 
 
@@ -545,7 +545,7 @@ async def upload_media(
         return row
 
     row = await run_tx(request, record)
-    return _media(row, await _previews(request, [row]))
+    return media_out(row, await media_previews(request, [row]))
 
 
 @router.post(
@@ -616,7 +616,7 @@ async def youtube_add(request: Request, admin: ConsoleAdmin, body: VideoAdd) -> 
         await audit(conn, admin, "media.youtube_add", "media", mid, after=row)
         return row
 
-    return _media(await run_tx(request, run), {})
+    return media_out(await run_tx(request, run), {})
 
 
 @router.patch(
@@ -656,7 +656,7 @@ async def patch_media(
         return after
 
     row = await run_tx(request, run)
-    return _media(row, await _previews(request, [row]))
+    return media_out(row, await media_previews(request, [row]))
 
 
 @router.post(
@@ -698,7 +698,7 @@ async def review_media(
         from ..embeddings.jobs import schedule_reindex
 
         schedule_reindex(request.app, ("sections",), ref_ids=sections)  # captions are part of section chunks
-    return _media(row, await _previews(request, [row]))
+    return media_out(row, await media_previews(request, [row]))
 
 
 @router.put(

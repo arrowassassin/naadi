@@ -57,6 +57,77 @@ export type AddIn = {
 };
 
 /**
+ * AdminChapter
+ */
+export type AdminChapter = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Meta
+   */
+  meta: string | null;
+  /**
+   * Section Count
+   */
+  section_count: number;
+  /**
+   * Sort
+   */
+  sort: number | null;
+  /**
+   * Source Id
+   */
+  source_id: string | null;
+  /**
+   * Status
+   */
+  status: "draft" | "in_review" | "published" | "retired";
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * AdminChapterDetail
+ */
+export type AdminChapterDetail = {
+  chapter: AdminChapter;
+  /**
+   * Sections
+   */
+  sections: Array<AdminSection>;
+};
+
+/**
+ * AdminChapterList
+ */
+export type AdminChapterList = {
+  /**
+   * Items
+   */
+  items: Array<AdminChapter>;
+};
+
+/**
  * AdminGeneratedItem
  */
 export type AdminGeneratedItem = {
@@ -149,6 +220,96 @@ export type AdminGeneratedList = {
 };
 
 /**
+ * AdminMedia
+ */
+export type AdminMedia = {
+  /**
+   * Attribution
+   */
+  attribution: string | null;
+  /**
+   * Caption
+   */
+  caption: string | null;
+  /**
+   * Channel Id
+   */
+  channel_id: string | null;
+  /**
+   * Duration S
+   */
+  duration_s: number | null;
+  /**
+   * Embeddable
+   */
+  embeddable: boolean | null;
+  /**
+   * Height
+   */
+  height: number | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link";
+  /**
+   * Metadata Fetched At
+   */
+  metadata_fetched_at: string | null;
+  /**
+   * Preview Url
+   *
+   * Public URL or short-lived signed URL for the admin preview
+   */
+  preview_url: string | null;
+  /**
+   * Review Status
+   */
+  review_status: "unreviewed" | "approved" | "rejected";
+  /**
+   * Section Ids
+   */
+  section_ids: Array<string>;
+  /**
+   * Source Id
+   */
+  source_id: string;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+  /**
+   * Title
+   */
+  title: string | null;
+  /**
+   * Width
+   */
+  width: number | null;
+  /**
+   * Youtube Id
+   */
+  youtube_id: string | null;
+};
+
+/**
+ * AdminMediaList
+ */
+export type AdminMediaList = {
+  /**
+   * Items
+   */
+  items: Array<AdminMedia>;
+  /**
+   * Next Cursor
+   */
+  next_cursor: string | null;
+};
+
+/**
  * AdminOverview
  */
 export type AdminOverview = {
@@ -168,6 +329,422 @@ export type AdminOverview = {
    * Version
    */
   version: string;
+};
+
+/**
+ * AdminQuestion
+ */
+export type AdminQuestion = {
+  /**
+   * Answer
+   */
+  answer: string;
+  /**
+   * Answer Html
+   */
+  answer_html: string | null;
+  /**
+   * Block
+   */
+  block: number | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Difficulty
+   */
+  difficulty: "easy" | "medium" | "hard" | null;
+  /**
+   * Educational Objective
+   */
+  educational_objective: string | null;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Explanation Html
+   */
+  explanation_html: string | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Options
+   */
+  options: Array<OptionOut>;
+  /**
+   * Review
+   */
+  review: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Source Id
+   */
+  source_id: string | null;
+  /**
+   * Status
+   */
+  status: "draft" | "auto_checked" | "in_review" | "published" | "retired";
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+  /**
+   * Tags
+   */
+  tags: Array<string>;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+  /**
+   * Version
+   *
+   * Send back as expected_version when saving
+   */
+  version: string;
+  /**
+   * Why Not Html
+   */
+  why_not_html: string | null;
+};
+
+/**
+ * AdminQuestionList
+ */
+export type AdminQuestionList = {
+  /**
+   * Items
+   */
+  items: Array<AdminQuestionSummary>;
+  /**
+   * Next Cursor
+   */
+  next_cursor: string | null;
+};
+
+/**
+ * AdminQuestionSummary
+ */
+export type AdminQuestionSummary = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Difficulty
+   */
+  difficulty: "easy" | "medium" | "hard" | null;
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Source Id
+   */
+  source_id: string | null;
+  /**
+   * Status
+   */
+  status: "draft" | "auto_checked" | "in_review" | "published" | "retired";
+  /**
+   * Stem Text
+   *
+   * Plain-text start of the stem
+   */
+  stem_text: string;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+};
+
+/**
+ * AdminReport
+ */
+export type AdminReport = {
+  /**
+   * Body
+   */
+  body: string;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  link: ReportLink;
+  /**
+   * Ref Id
+   */
+  ref_id: string | null;
+  /**
+   * Ref Type
+   */
+  ref_type: string;
+  /**
+   * Status
+   */
+  status: "open" | "triaged" | "resolved" | "dismissed";
+};
+
+/**
+ * AdminReportList
+ */
+export type AdminReportList = {
+  /**
+   * Counts
+   */
+  counts: {
+    [key: string]: number;
+  };
+  /**
+   * Items
+   */
+  items: Array<AdminReport>;
+};
+
+/**
+ * AdminSection
+ */
+export type AdminSection = {
+  /**
+   * Admin Edited At
+   */
+  admin_edited_at: string | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Draft Updated At
+   */
+  draft_updated_at: string | null;
+  /**
+   * Has Body
+   *
+   * The section has a live (published) body
+   */
+  has_body: boolean;
+  /**
+   * Has Draft
+   */
+  has_draft: boolean;
+  /**
+   * Heading
+   */
+  heading: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Live Revision Id
+   *
+   * Latest published non-seed revision (null: the seed body)
+   */
+  live_revision_id: number | null;
+  /**
+   * Reading Minutes
+   */
+  reading_minutes: number | null;
+  /**
+   * Sort
+   */
+  sort: number;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids: Array<string>;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * AdminSource
+ */
+export type AdminSource = {
+  /**
+   * Allow Ai Ingest
+   */
+  allow_ai_ingest: boolean;
+  /**
+   * Allow Commercial
+   */
+  allow_commercial: boolean;
+  /**
+   * Allow Copy
+   */
+  allow_copy: boolean;
+  /**
+   * Allow Modify
+   */
+  allow_modify: boolean;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * License
+   */
+  license: string;
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Url
+   */
+  url: string | null;
+  /**
+   * Verified
+   */
+  verified: boolean;
+};
+
+/**
+ * AdminSourceList
+ */
+export type AdminSourceList = {
+  /**
+   * Items
+   */
+  items: Array<AdminSource>;
+};
+
+/**
+ * AgentCron
+ */
+export type AgentCron = {
+  /**
+   * Cron Id
+   */
+  cron_id: string;
+  /**
+   * Enabled
+   */
+  enabled: boolean;
+  /**
+   * Graph Id
+   */
+  graph_id: string | null;
+  /**
+   * Key
+   *
+   * Naadi's cron key (metadata.naadi_key), e.g. ping
+   */
+  key: string | null;
+  last_run: AgentCronLastRun | null;
+  /**
+   * Next Run Date
+   */
+  next_run_date: string | null;
+  /**
+   * Schedule
+   */
+  schedule: string;
+};
+
+/**
+ * AgentCronLastRun
+ */
+export type AgentCronLastRun = {
+  /**
+   * At
+   */
+  at: string;
+  /**
+   * Status
+   */
+  status: string;
+};
+
+/**
+ * AgentCronList
+ */
+export type AgentCronList = {
+  /**
+   * Available
+   */
+  available: boolean;
+  /**
+   * Items
+   */
+  items: Array<AgentCron>;
+};
+
+/**
+ * AgentRun
+ */
+export type AgentRun = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Graph Id
+   */
+  graph_id: string | null;
+  /**
+   * Has Error
+   */
+  has_error: boolean;
+  /**
+   * Run Id
+   */
+  run_id: string;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * System
+   *
+   * Started by a system cron (not a person)
+   */
+  system: boolean;
+  /**
+   * Thread Id
+   */
+  thread_id: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * AgentRunList
+ */
+export type AgentRunList = {
+  /**
+   * Available
+   */
+  available: boolean;
+  /**
+   * Items
+   */
+  items: Array<AgentRun>;
 };
 
 /**
@@ -198,6 +775,29 @@ export type AgentRuntimeFacts = {
    * Reason
    */
   reason: "ok" | "not_installed" | "not_hosted" | "checks_failed" | "no_cron_ping" | "cron_stale";
+};
+
+/**
+ * AgentUsage
+ */
+export type AgentUsage = {
+  /**
+   * Caps
+   */
+  caps: Array<UsageCap>;
+  /**
+   * Days
+   */
+  days: Array<UsageDay>;
+  /**
+   * Health
+   */
+  health: Array<HealthRow>;
+  tavily: TavilyCredits;
+  /**
+   * Today
+   */
+  today: Array<UsageDay>;
 };
 
 /**
@@ -401,6 +1001,50 @@ export type AttemptState = {
    * Seconds
    */
   seconds: number | null;
+};
+
+/**
+ * AuditEntry
+ */
+export type AuditEntry = {
+  /**
+   * Action
+   */
+  action: string;
+  /**
+   * Actor User Id
+   */
+  actor_user_id: string | null;
+  /**
+   * At
+   */
+  at: string;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Note
+   */
+  note: string | null;
+  /**
+   * Ref Id
+   */
+  ref_id: string;
+  /**
+   * Ref Type
+   */
+  ref_type: string;
+};
+
+/**
+ * AuditList
+ */
+export type AuditList = {
+  /**
+   * Items
+   */
+  items: Array<AuditEntry>;
 };
 
 /**
@@ -1054,6 +1698,20 @@ export type BlockSummary = {
 };
 
 /**
+ * CancelOut
+ */
+export type CancelOut = {
+  /**
+   * Run Id
+   */
+  run_id: string;
+  /**
+   * Status
+   */
+  status: string;
+};
+
+/**
  * CandidateOut
  */
 export type CandidateOut = {
@@ -1387,6 +2045,25 @@ export type CardsOut = {
 };
 
 /**
+ * Cell
+ */
+export type Cell = {
+  counts: Counts;
+  /**
+   * Discipline Id
+   */
+  discipline_id: string;
+  /**
+   * Status
+   */
+  status: "gap" | "thin" | "covered";
+  /**
+   * System Id
+   */
+  system_id: string;
+};
+
+/**
  * ChangeStats
  */
 export type ChangeStats = {
@@ -1406,6 +2083,38 @@ export type ChangeStats = {
    * Wrong To Wrong
    */
   wrong_to_wrong: number;
+};
+
+/**
+ * ChapterCreate
+ */
+export type ChapterCreate = {
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Id
+   *
+   * Leave out to generate one
+   */
+  id?: string | null;
+  /**
+   * Kind
+   */
+  kind?: "chapter" | "mock_exam" | "pathway";
+  /**
+   * Meta
+   */
+  meta?: string | null;
+  /**
+   * Source Id
+   */
+  source_id: string;
+  /**
+   * Title
+   */
+  title: string;
 };
 
 /**
@@ -1485,6 +2194,32 @@ export type ChapterLink = {
 };
 
 /**
+ * ChapterPatch
+ */
+export type ChapterPatch = {
+  /**
+   * Clear Meta
+   */
+  clear_meta?: boolean;
+  /**
+   * Expected Updated At
+   */
+  expected_updated_at: string;
+  /**
+   * Meta
+   */
+  meta?: string | null;
+  /**
+   * Source Id
+   */
+  source_id?: string | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
  * ChapterPositions
  */
 export type ChapterPositions = {
@@ -1526,6 +2261,34 @@ export type ChapterProgress = {
    * Status
    */
   status: "not_started" | "in_progress" | "done";
+};
+
+/**
+ * ChapterReorder
+ */
+export type ChapterReorder = {
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Ids
+   */
+  ids: Array<string>;
+};
+
+/**
+ * ChapterStatusChange
+ */
+export type ChapterStatusChange = {
+  /**
+   * Note
+   */
+  note?: string | null;
+  /**
+   * Status
+   */
+  status: "draft" | "in_review" | "published" | "retired";
 };
 
 /**
@@ -1801,6 +2564,20 @@ export type ConfigKeySummary = {
 };
 
 /**
+ * ConfigRevert
+ */
+export type ConfigRevert = {
+  /**
+   * Expected Updated At
+   */
+  expected_updated_at: string | null;
+  /**
+   * History Id
+   */
+  history_id: number;
+};
+
+/**
  * ConfigUpdate
  */
 export type ConfigUpdate = {
@@ -1817,6 +2594,28 @@ export type ConfigUpdate = {
    */
   expected_updated_at: string | null;
   value: JsonValue;
+};
+
+/**
+ * Counts
+ */
+export type Counts = {
+  /**
+   * Cards
+   */
+  cards?: number;
+  /**
+   * Questions
+   */
+  questions?: number;
+  /**
+   * Sections
+   */
+  sections?: number;
+  /**
+   * Videos
+   */
+  videos?: number;
 };
 
 /**
@@ -1960,6 +2759,37 @@ export type Coverage = {
 };
 
 /**
+ * CoverageReport
+ */
+export type CoverageReport = {
+  /**
+   * Cells
+   */
+  cells: Array<Cell>;
+  /**
+   * Disciplines
+   */
+  disciplines: Array<Node>;
+  /**
+   * Exam
+   */
+  exam: string;
+  goals: Goals;
+  /**
+   * System Totals
+   */
+  system_totals: Array<SystemCoverage>;
+  /**
+   * Systems
+   */
+  systems: Array<Node>;
+  /**
+   * Topics
+   */
+  topics: Array<TopicCoverage>;
+};
+
+/**
  * DeckCount
  */
 export type DeckCount = {
@@ -2046,6 +2876,56 @@ export type DiagnosticState = {
 };
 
 /**
+ * DiffBlock
+ */
+export type DiffBlock = {
+  /**
+   * Kind
+   *
+   * Top-level node type
+   */
+  kind: string;
+  /**
+   * Op
+   */
+  op: "equal" | "insert" | "delete";
+  /**
+   * Text
+   *
+   * Plain text of the block, or the media/question id for an embed
+   */
+  text: string;
+};
+
+/**
+ * DraftSave
+ */
+export type DraftSave = {
+  /**
+   * Body
+   */
+  body: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Expected Updated At
+   *
+   * The draft's updated_at; null for a new draft
+   */
+  expected_updated_at: string | null;
+  /**
+   * Note
+   */
+  note?: string | null;
+  /**
+   * Parent Revision Id
+   *
+   * live_revision_id the draft was started from
+   */
+  parent_revision_id: number | null;
+};
+
+/**
  * DueResponse
  */
 export type DueResponse = {
@@ -2074,6 +2954,30 @@ export type DueResponse = {
    */
   now: string;
   scheduler: FsrsSchedulerConfig;
+};
+
+/**
+ * EditorQuestion
+ */
+export type EditorQuestion = {
+  /**
+   * Exam
+   */
+  exam: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Stem Text
+   *
+   * Plain-text start of the stem (no key, no explanation)
+   */
+  stem_text: string;
 };
 
 /**
@@ -2608,6 +3512,28 @@ export type GenerationStatusOut = {
 };
 
 /**
+ * Goals
+ */
+export type Goals = {
+  /**
+   * Cards
+   */
+  cards?: number;
+  /**
+   * Questions
+   */
+  questions?: number;
+  /**
+   * Sections
+   */
+  sections?: number;
+  /**
+   * Videos
+   */
+  videos?: number;
+};
+
+/**
  * HTTPValidationError
  */
 export type HttpValidationError = {
@@ -2657,6 +3583,32 @@ export type HealthResponse = {
    * Version
    */
   version: string;
+};
+
+/**
+ * HealthRow
+ */
+export type HealthRow = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Latency Ms
+   */
+  latency_ms: number | null;
+  /**
+   * Ok
+   */
+  ok: boolean;
+  /**
+   * Trigger
+   */
+  trigger: string;
 };
 
 /**
@@ -3113,6 +4065,62 @@ export type LessonLink = {
 };
 
 /**
+ * LintFinding
+ */
+export type LintFinding = {
+  /**
+   * Detail
+   */
+  detail?: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Field
+   */
+  field?: string | null;
+  /**
+   * Rule
+   */
+  rule: string;
+  /**
+   * Severity
+   */
+  severity: "error" | "warning" | "info";
+};
+
+/**
+ * LintResult
+ */
+export type LintResult = {
+  /**
+   * Available
+   *
+   * False until the authoring linter (segment 21) is installed
+   */
+  available: boolean;
+  /**
+   * Findings
+   */
+  findings: Array<LintFinding>;
+};
+
+/**
+ * LiveBody
+ */
+export type LiveBody = {
+  /**
+   * Body
+   */
+  body: {
+    [key: string]: JsonValue;
+  } | null;
+  /**
+   * Revision Id
+   */
+  revision_id: number | null;
+};
+
+/**
  * MeResponse
  */
 export type MeResponse = {
@@ -3214,6 +4222,46 @@ export type MediaOut = {
    * Youtube Id
    */
   youtube_id: string | null;
+};
+
+/**
+ * MediaPatch
+ */
+export type MediaPatch = {
+  /**
+   * Attribution
+   */
+  attribution?: string | null;
+  /**
+   * Caption
+   */
+  caption?: string | null;
+  /**
+   * Source Id
+   */
+  source_id?: string | null;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids?: Array<string> | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
+ * MediaReview
+ */
+export type MediaReview = {
+  /**
+   * Note
+   */
+  note?: string | null;
+  /**
+   * Status
+   */
+  status: "approved" | "rejected";
 };
 
 /**
@@ -3432,6 +4480,20 @@ export type NextUp = {
    * Section Id
    */
   section_id: string;
+};
+
+/**
+ * Node
+ */
+export type Node = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
 };
 
 /**
@@ -4016,6 +5078,34 @@ export type OnboardingValues = {
    * Study Days
    */
   study_days: Array<number>;
+};
+
+/**
+ * OptionIn
+ */
+export type OptionIn = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
+ * OptionOut
+ */
+export type OptionOut = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
 };
 
 /**
@@ -4641,6 +5731,24 @@ export type PublicConfig = {
 };
 
 /**
+ * PublishRequest
+ */
+export type PublishRequest = {
+  /**
+   * Expected Updated At
+   */
+  expected_updated_at: string;
+  /**
+   * Note
+   */
+  note?: string | null;
+  /**
+   * Revision Id
+   */
+  revision_id: number;
+};
+
+/**
  * QuestionBody
  *
  * A question as the client may see it before answering: never the answer or any explanation.
@@ -4668,6 +5776,74 @@ export type QuestionBody = {
    * Labels of the question's systems and disciplines
    */
   topics: Array<string>;
+};
+
+/**
+ * QuestionCreate
+ */
+export type QuestionCreate = {
+  /**
+   * Answer
+   */
+  answer: string;
+  /**
+   * Answer Html
+   */
+  answer_html?: string | null;
+  /**
+   * Block
+   */
+  block?: number | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Difficulty
+   */
+  difficulty?: "easy" | "medium" | "hard" | null;
+  /**
+   * Educational Objective
+   */
+  educational_objective?: string | null;
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Explanation Html
+   */
+  explanation_html?: string | null;
+  /**
+   * Id
+   *
+   * Leave out to generate one
+   */
+  id?: string | null;
+  /**
+   * Options
+   */
+  options: Array<OptionIn>;
+  /**
+   * Source Id
+   */
+  source_id: string;
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+  /**
+   * Tags
+   */
+  tags?: Array<string>;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids?: Array<string>;
+  /**
+   * Why Not Html
+   */
+  why_not_html?: string | null;
 };
 
 /**
@@ -4704,6 +5880,136 @@ export type QuestionReviewIn = {
    * Request Second
    */
   request_second?: boolean;
+};
+
+/**
+ * QuestionRevisionItem
+ */
+export type QuestionRevisionItem = {
+  /**
+   * Author User Id
+   */
+  author_user_id: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Note
+   */
+  note: string | null;
+  /**
+   * Origin
+   */
+  origin: "admin" | "author" | "review" | "seed";
+  /**
+   * Status
+   *
+   * The question's status in that snapshot
+   */
+  status: string | null;
+  /**
+   * Version
+   */
+  version: number;
+};
+
+/**
+ * QuestionRevisionList
+ */
+export type QuestionRevisionList = {
+  /**
+   * Items
+   */
+  items: Array<QuestionRevisionItem>;
+};
+
+/**
+ * QuestionStatusChange
+ */
+export type QuestionStatusChange = {
+  /**
+   * Expected Version
+   */
+  expected_version: string;
+  /**
+   * Note
+   */
+  note?: string | null;
+  /**
+   * Status
+   */
+  status: "draft" | "auto_checked" | "in_review" | "published" | "retired";
+};
+
+/**
+ * QuestionUpdate
+ */
+export type QuestionUpdate = {
+  /**
+   * Answer
+   */
+  answer: string;
+  /**
+   * Answer Html
+   */
+  answer_html?: string | null;
+  /**
+   * Block
+   */
+  block?: number | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Difficulty
+   */
+  difficulty?: "easy" | "medium" | "hard" | null;
+  /**
+   * Educational Objective
+   */
+  educational_objective?: string | null;
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck" | "step3";
+  /**
+   * Expected Version
+   */
+  expected_version: string;
+  /**
+   * Explanation Html
+   */
+  explanation_html?: string | null;
+  /**
+   * Options
+   */
+  options: Array<OptionIn>;
+  /**
+   * Source Id
+   */
+  source_id: string;
+  /**
+   * Stem Html
+   */
+  stem_html: string;
+  /**
+   * Tags
+   */
+  tags?: Array<string>;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids?: Array<string>;
+  /**
+   * Why Not Html
+   */
+  why_not_html?: string | null;
 };
 
 /**
@@ -4747,6 +6053,164 @@ export type QuestionView = {
    * Total
    */
   total: number;
+};
+
+/**
+ * QueueApprove
+ */
+export type QueueApprove = {
+  /**
+   * Note
+   */
+  note?: string | null;
+  /**
+   * Params
+   *
+   * Kind-specific approve options
+   */
+  params?: {
+    [key: string]: JsonValue;
+  };
+};
+
+/**
+ * QueueCount
+ */
+export type QueueCount = {
+  /**
+   * Count
+   */
+  count: number;
+  /**
+   * Decides Here
+   *
+   * Approve / reject in the queues hub (false: decided on `path`)
+   */
+  decides_here: boolean;
+  /**
+   * Filters
+   */
+  filters: Array<string>;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Path
+   *
+   * Admin page where this queue is worked, when it has its own
+   */
+  path: string | null;
+};
+
+/**
+ * QueueCounts
+ */
+export type QueueCounts = {
+  /**
+   * Items
+   */
+  items: Array<QueueCount>;
+};
+
+/**
+ * QueueDecision
+ */
+export type QueueDecision = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Status
+   */
+  status: "approved" | "rejected";
+};
+
+/**
+ * QueueItem
+ */
+export type QueueItem = {
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Detail
+   *
+   * Structured, kind-specific fields
+   */
+  detail?: {
+    [key: string]: JsonValue;
+  };
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Deep link target
+   */
+  ref?: QueueRef | null;
+  /**
+   * Title
+   *
+   * The content's own title (not UI copy)
+   */
+  title?: string | null;
+};
+
+/**
+ * QueuePage
+ */
+export type QueuePage = {
+  /**
+   * Items
+   */
+  items: Array<QueueItem>;
+  /**
+   * Next Cursor
+   */
+  next_cursor?: string | null;
+  /**
+   * Total
+   */
+  total: number;
+};
+
+/**
+ * QueueRef
+ */
+export type QueueRef = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Type
+   */
+  type:
+    | "section"
+    | "question"
+    | "media"
+    | "chapter"
+    | "generated_media"
+    | "pathway_task"
+    | "youtube_candidate"
+    | "report";
+};
+
+/**
+ * QueueReject
+ */
+export type QueueReject = {
+  /**
+   * Note
+   */
+  note?: string | null;
 };
 
 /**
@@ -4951,6 +6415,42 @@ export type ReportIssueOut = {
    * Id
    */
   id: string;
+  /**
+   * Status
+   */
+  status: "open" | "triaged" | "resolved" | "dismissed";
+};
+
+/**
+ * ReportLink
+ */
+export type ReportLink = {
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Media Id
+   */
+  media_id?: string | null;
+  /**
+   * Question Id
+   */
+  question_id?: string | null;
+  /**
+   * Section Id
+   */
+  section_id?: string | null;
+};
+
+/**
+ * ReportStatusChange
+ */
+export type ReportStatusChange = {
+  /**
+   * Note
+   */
+  note?: string | null;
   /**
    * Status
    */
@@ -5646,6 +7146,172 @@ export type ReviewSummary = {
 };
 
 /**
+ * Revision
+ */
+export type Revision = {
+  /**
+   * Author User Id
+   */
+  author_user_id: string | null;
+  /**
+   * Body
+   */
+  body: {
+    [key: string]: JsonValue;
+  } | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Is Live
+   *
+   * This revision's body is the section's live body
+   */
+  is_live: boolean;
+  /**
+   * Note
+   */
+  note: string | null;
+  /**
+   * Origin
+   */
+  origin: "admin" | "assistant" | "seed";
+  /**
+   * Parent Revision Id
+   */
+  parent_revision_id: number | null;
+  /**
+   * Published At
+   */
+  published_at: string | null;
+  /**
+   * Restored From Id
+   */
+  restored_from_id: number | null;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Status
+   */
+  status: "draft" | "published";
+  /**
+   * Updated At
+   */
+  updated_at: string;
+  /**
+   * Word Count
+   */
+  word_count: number;
+};
+
+/**
+ * RevisionDiff
+ */
+export type RevisionDiff = {
+  /**
+   * Blocks
+   */
+  blocks: Array<DiffBlock>;
+  /**
+   * From Id
+   *
+   * null: the live body
+   */
+  from_id: number | null;
+  /**
+   * To Id
+   */
+  to_id: number;
+};
+
+/**
+ * RevisionList
+ */
+export type RevisionList = {
+  /**
+   * Items
+   */
+  items: Array<RevisionSummary>;
+};
+
+/**
+ * RevisionSummary
+ */
+export type RevisionSummary = {
+  /**
+   * Author User Id
+   */
+  author_user_id: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: number;
+  /**
+   * Is Live
+   *
+   * This revision's body is the section's live body
+   */
+  is_live: boolean;
+  /**
+   * Note
+   */
+  note: string | null;
+  /**
+   * Origin
+   */
+  origin: "admin" | "assistant" | "seed";
+  /**
+   * Parent Revision Id
+   */
+  parent_revision_id: number | null;
+  /**
+   * Published At
+   */
+  published_at: string | null;
+  /**
+   * Restored From Id
+   */
+  restored_from_id: number | null;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Status
+   */
+  status: "draft" | "published";
+  /**
+   * Updated At
+   */
+  updated_at: string;
+  /**
+   * Word Count
+   */
+  word_count: number;
+};
+
+/**
+ * RollbackRequest
+ */
+export type RollbackRequest = {
+  /**
+   * Note
+   */
+  note?: string | null;
+};
+
+/**
  * SearchHit
  */
 export type SearchHit = {
@@ -5715,6 +7381,40 @@ export type SearchResponse = {
 };
 
 /**
+ * SectionCreate
+ */
+export type SectionCreate = {
+  /**
+   * Heading
+   */
+  heading: string;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids?: Array<string>;
+};
+
+/**
+ * SectionEditor
+ */
+export type SectionEditor = {
+  chapter: AdminChapter;
+  draft: Revision | null;
+  live: LiveBody;
+  /**
+   * Media
+   *
+   * Media referenced by the live body or the draft, with previews
+   */
+  media: Array<AdminMedia>;
+  /**
+   * Questions
+   */
+  questions: Array<EditorQuestion>;
+  section: AdminSection;
+};
+
+/**
  * SectionLayout
  *
  * One section of a timed/exam block: a consecutive slice of `question_ids`.
@@ -5736,6 +7436,50 @@ export type SectionLayout = {
    * Time Limit S
    */
   time_limit_s: number;
+};
+
+/**
+ * SectionMediaIn
+ */
+export type SectionMediaIn = {
+  /**
+   * End S
+   */
+  end_s?: number | null;
+  /**
+   * Sort
+   */
+  sort?: number | null;
+  /**
+   * Start S
+   */
+  start_s?: number | null;
+};
+
+/**
+ * SectionMediaOut
+ */
+export type SectionMediaOut = {
+  /**
+   * End S
+   */
+  end_s: number | null;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Sort
+   */
+  sort: number | null;
+  /**
+   * Start S
+   */
+  start_s: number | null;
 };
 
 /**
@@ -5770,6 +7514,30 @@ export type SectionOut = {
    * Taxonomy Ids
    */
   taxonomy_ids: Array<string>;
+};
+
+/**
+ * SectionPatch
+ */
+export type SectionPatch = {
+  /**
+   * Heading
+   */
+  heading?: string | null;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids?: Array<string> | null;
+};
+
+/**
+ * SectionReorder
+ */
+export type SectionReorder = {
+  /**
+   * Ids
+   */
+  ids: Array<string>;
 };
 
 /**
@@ -5894,6 +7662,29 @@ export type SourceRef = {
    * Url
    */
   url: string | null;
+};
+
+/**
+ * SystemCoverage
+ */
+export type SystemCoverage = {
+  counts: Counts;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Topics
+   */
+  topics: number;
+  /**
+   * Topics Covered
+   */
+  topics_covered: number;
 };
 
 /**
@@ -6027,6 +7818,60 @@ export type Target = {
 };
 
 /**
+ * TavilyCredits
+ */
+export type TavilyCredits = {
+  /**
+   * Month Credits
+   */
+  month_credits: number;
+  /**
+   * Monthly Guard
+   */
+  monthly_guard: number;
+  /**
+   * Today Credits
+   */
+  today_credits: number;
+};
+
+/**
+ * TaxonomyList
+ */
+export type TaxonomyList = {
+  /**
+   * Items
+   */
+  items: Array<TaxonomyNode>;
+};
+
+/**
+ * TaxonomyNode
+ */
+export type TaxonomyNode = {
+  /**
+   * Exam
+   */
+  exam: Array<string>;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Parent Id
+   */
+  parent_id: string | null;
+};
+
+/**
  * TimeStats
  */
 export type TimeStats = {
@@ -6132,6 +7977,35 @@ export type TodayPlan = {
 };
 
 /**
+ * TopicCoverage
+ */
+export type TopicCoverage = {
+  counts: Counts;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Missing
+   *
+   * Measures below their goal
+   */
+  missing: Array<"sections" | "videos" | "questions" | "cards">;
+  /**
+   * Status
+   */
+  status: "gap" | "thin" | "covered";
+  /**
+   * System Id
+   */
+  system_id: string | null;
+};
+
+/**
  * TopicStat
  */
 export type TopicStat = {
@@ -6194,6 +8068,54 @@ export type TrendPoint = {
 };
 
 /**
+ * UsageCap
+ */
+export type UsageCap = {
+  /**
+   * Cap
+   */
+  cap: number;
+  /**
+   * Provider
+   */
+  provider: string;
+  /**
+   * Purpose
+   */
+  purpose: "chat" | "job" | "total";
+};
+
+/**
+ * UsageDay
+ */
+export type UsageDay = {
+  /**
+   * Calls
+   */
+  calls: number;
+  /**
+   * Date
+   */
+  date: string;
+  /**
+   * Failed
+   */
+  failed: number;
+  /**
+   * Ok
+   */
+  ok: number;
+  /**
+   * Provider
+   */
+  provider: string;
+  /**
+   * Purpose
+   */
+  purpose: string;
+};
+
+/**
  * UsageOut
  */
 export type UsageOut = {
@@ -6237,6 +8159,78 @@ export type ValidationError = {
    * Error Type
    */
   type: string;
+};
+
+/**
+ * VideoAdd
+ */
+export type VideoAdd = {
+  /**
+   * Caption
+   */
+  caption?: string | null;
+  /**
+   * Source Id
+   */
+  source_id: string;
+  /**
+   * Taxonomy Ids
+   */
+  taxonomy_ids?: Array<string>;
+  /**
+   * Title
+   */
+  title?: string | null;
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
+ * VideoLookupIn
+ */
+export type VideoLookupIn = {
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
+ * VideoLookupOut
+ */
+export type VideoLookupOut = {
+  /**
+   * Channel Id
+   */
+  channel_id: string | null;
+  /**
+   * Channel Title
+   */
+  channel_title: string | null;
+  /**
+   * Duration S
+   */
+  duration_s: number | null;
+  /**
+   * Embeddable
+   */
+  embeddable: boolean;
+  /**
+   * Existing Media Id
+   *
+   * Set when this video is already in the library
+   */
+  existing_media_id: string | null;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Youtube Id
+   */
+  youtube_id: string;
 };
 
 /**
@@ -6458,6 +8452,657 @@ export type NaadiApiPlanModelsExamOption = {
   label: string;
 };
 
+export type ListAdminAgentCronsData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/agent/crons";
+};
+
+export type ListAdminAgentCronsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminAgentCronsError = ListAdminAgentCronsErrors[keyof ListAdminAgentCronsErrors];
+
+export type ListAdminAgentCronsResponses = {
+  /**
+   * Successful Response
+   */
+  200: AgentCronList;
+};
+
+export type ListAdminAgentCronsResponse = ListAdminAgentCronsResponses[keyof ListAdminAgentCronsResponses];
+
+export type ListAdminAgentRunsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Graph
+     */
+    graph?: string | null;
+    /**
+     * Status
+     */
+    status?: "pending" | "running" | "success" | "error" | "timeout" | "interrupted" | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/admin/agent/runs";
+};
+
+export type ListAdminAgentRunsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminAgentRunsError = ListAdminAgentRunsErrors[keyof ListAdminAgentRunsErrors];
+
+export type ListAdminAgentRunsResponses = {
+  /**
+   * Successful Response
+   */
+  200: AgentRunList;
+};
+
+export type ListAdminAgentRunsResponse = ListAdminAgentRunsResponses[keyof ListAdminAgentRunsResponses];
+
+export type CancelAdminAgentRunData = {
+  body?: never;
+  path: {
+    /**
+     * Thread Id
+     */
+    thread_id: string;
+    /**
+     * Run Id
+     */
+    run_id: string;
+  };
+  query?: never;
+  url: "/api/admin/agent/runs/{thread_id}/{run_id}/cancel";
+};
+
+export type CancelAdminAgentRunErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CancelAdminAgentRunError = CancelAdminAgentRunErrors[keyof CancelAdminAgentRunErrors];
+
+export type CancelAdminAgentRunResponses = {
+  /**
+   * Successful Response
+   */
+  200: CancelOut;
+};
+
+export type CancelAdminAgentRunResponse = CancelAdminAgentRunResponses[keyof CancelAdminAgentRunResponses];
+
+export type GetAdminAgentUsageData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Days
+     */
+    days?: number;
+  };
+  url: "/api/admin/agent/usage";
+};
+
+export type GetAdminAgentUsageErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminAgentUsageError = GetAdminAgentUsageErrors[keyof GetAdminAgentUsageErrors];
+
+export type GetAdminAgentUsageResponses = {
+  /**
+   * Successful Response
+   */
+  200: AgentUsage;
+};
+
+export type GetAdminAgentUsageResponse = GetAdminAgentUsageResponses[keyof GetAdminAgentUsageResponses];
+
+export type ListAdminAuditData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Ref Type
+     */
+    ref_type?: string | null;
+    /**
+     * Ref Id
+     */
+    ref_id?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/admin/audit";
+};
+
+export type ListAdminAuditErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminAuditError = ListAdminAuditErrors[keyof ListAdminAuditErrors];
+
+export type ListAdminAuditResponses = {
+  /**
+   * Successful Response
+   */
+  200: AuditList;
+};
+
+export type ListAdminAuditResponse = ListAdminAuditResponses[keyof ListAdminAuditResponses];
+
+export type ListAdminChaptersData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     */
+    exam?: "step1" | "step2ck" | "step3" | null;
+    /**
+     * Status
+     */
+    status?: "draft" | "in_review" | "published" | "retired" | null;
+    /**
+     * Q
+     */
+    q?: string | null;
+  };
+  url: "/api/admin/chapters";
+};
+
+export type ListAdminChaptersErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminChaptersError = ListAdminChaptersErrors[keyof ListAdminChaptersErrors];
+
+export type ListAdminChaptersResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminChapterList;
+};
+
+export type ListAdminChaptersResponse = ListAdminChaptersResponses[keyof ListAdminChaptersResponses];
+
+export type CreateAdminChapterData = {
+  body: ChapterCreate;
+  path?: never;
+  query?: never;
+  url: "/api/admin/chapters";
+};
+
+export type CreateAdminChapterErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateAdminChapterError = CreateAdminChapterErrors[keyof CreateAdminChapterErrors];
+
+export type CreateAdminChapterResponses = {
+  /**
+   * Successful Response
+   */
+  201: AdminChapter;
+};
+
+export type CreateAdminChapterResponse = CreateAdminChapterResponses[keyof CreateAdminChapterResponses];
+
+export type ReorderAdminChaptersData = {
+  body: ChapterReorder;
+  path?: never;
+  query?: never;
+  url: "/api/admin/chapters/reorder";
+};
+
+export type ReorderAdminChaptersErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ReorderAdminChaptersError = ReorderAdminChaptersErrors[keyof ReorderAdminChaptersErrors];
+
+export type ReorderAdminChaptersResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminChapterList;
+};
+
+export type ReorderAdminChaptersResponse = ReorderAdminChaptersResponses[keyof ReorderAdminChaptersResponses];
+
+export type GetAdminChapterData = {
+  body?: never;
+  path: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  query?: never;
+  url: "/api/admin/chapters/{chapter_id}";
+};
+
+export type GetAdminChapterErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminChapterError = GetAdminChapterErrors[keyof GetAdminChapterErrors];
+
+export type GetAdminChapterResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminChapterDetail;
+};
+
+export type GetAdminChapterResponse = GetAdminChapterResponses[keyof GetAdminChapterResponses];
+
+export type PatchAdminChapterData = {
+  body: ChapterPatch;
+  path: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  query?: never;
+  url: "/api/admin/chapters/{chapter_id}";
+};
+
+export type PatchAdminChapterErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PatchAdminChapterError = PatchAdminChapterErrors[keyof PatchAdminChapterErrors];
+
+export type PatchAdminChapterResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminChapter;
+};
+
+export type PatchAdminChapterResponse = PatchAdminChapterResponses[keyof PatchAdminChapterResponses];
+
+export type CreateAdminSectionData = {
+  body: SectionCreate;
+  path: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  query?: never;
+  url: "/api/admin/chapters/{chapter_id}/sections";
+};
+
+export type CreateAdminSectionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateAdminSectionError = CreateAdminSectionErrors[keyof CreateAdminSectionErrors];
+
+export type CreateAdminSectionResponses = {
+  /**
+   * Successful Response
+   */
+  201: AdminSection;
+};
+
+export type CreateAdminSectionResponse = CreateAdminSectionResponses[keyof CreateAdminSectionResponses];
+
+export type ReorderAdminSectionsData = {
+  body: SectionReorder;
+  path: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  query?: never;
+  url: "/api/admin/chapters/{chapter_id}/sections/reorder";
+};
+
+export type ReorderAdminSectionsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ReorderAdminSectionsError = ReorderAdminSectionsErrors[keyof ReorderAdminSectionsErrors];
+
+export type ReorderAdminSectionsResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminChapterDetail;
+};
+
+export type ReorderAdminSectionsResponse = ReorderAdminSectionsResponses[keyof ReorderAdminSectionsResponses];
+
+export type SetAdminChapterStatusData = {
+  body: ChapterStatusChange;
+  path: {
+    /**
+     * Chapter Id
+     */
+    chapter_id: string;
+  };
+  query?: never;
+  url: "/api/admin/chapters/{chapter_id}/status";
+};
+
+export type SetAdminChapterStatusErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SetAdminChapterStatusError = SetAdminChapterStatusErrors[keyof SetAdminChapterStatusErrors];
+
+export type SetAdminChapterStatusResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminChapter;
+};
+
+export type SetAdminChapterStatusResponse = SetAdminChapterStatusResponses[keyof SetAdminChapterStatusResponses];
+
 export type ListAppConfigData = {
   body?: never;
   path?: never;
@@ -6668,6 +9313,106 @@ export type GetAppConfigHistoryResponses = {
 
 export type GetAppConfigHistoryResponse = GetAppConfigHistoryResponses[keyof GetAppConfigHistoryResponses];
 
+export type RevertAppConfigData = {
+  body: ConfigRevert;
+  path: {
+    /**
+     * Key
+     */
+    key: string;
+  };
+  query?: never;
+  url: "/api/admin/config/{key}/revert";
+};
+
+export type RevertAppConfigErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RevertAppConfigError = RevertAppConfigErrors[keyof RevertAppConfigErrors];
+
+export type RevertAppConfigResponses = {
+  /**
+   * Successful Response
+   */
+  200: ConfigEntry;
+};
+
+export type RevertAppConfigResponse = RevertAppConfigResponses[keyof RevertAppConfigResponses];
+
+export type GetAdminCoverageData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     */
+    exam?: "step1" | "step2ck" | "step3";
+  };
+  url: "/api/admin/coverage";
+};
+
+export type GetAdminCoverageErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminCoverageError = GetAdminCoverageErrors[keyof GetAdminCoverageErrors];
+
+export type GetAdminCoverageResponses = {
+  /**
+   * Successful Response
+   */
+  200: CoverageReport;
+};
+
+export type GetAdminCoverageResponse = GetAdminCoverageResponses[keyof GetAdminCoverageResponses];
+
 export type GetEmbeddingsStatusData = {
   body?: never;
   path?: never;
@@ -6869,6 +9614,346 @@ export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses = 
 export type AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponse =
   AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses[keyof AdminApproveGeneratedApiAdminGeneratedMediaIdApprovePostResponses];
 
+export type ListAdminMediaData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Kind
+     */
+    kind?: "svg" | "image" | "video_own" | "video_youtube" | "audio" | "pdf" | "link" | null;
+    /**
+     * Review Status
+     */
+    review_status?: "unreviewed" | "approved" | "rejected" | null;
+    /**
+     * Q
+     */
+    q?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Cursor
+     */
+    cursor?: string | null;
+  };
+  url: "/api/admin/media";
+};
+
+export type ListAdminMediaErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminMediaError = ListAdminMediaErrors[keyof ListAdminMediaErrors];
+
+export type ListAdminMediaResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminMediaList;
+};
+
+export type ListAdminMediaResponse = ListAdminMediaResponses[keyof ListAdminMediaResponses];
+
+export type UploadAdminMediaData = {
+  body: Blob | File;
+  path?: never;
+  query: {
+    /**
+     * Source Id
+     */
+    source_id: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Caption
+     */
+    caption?: string | null;
+    /**
+     * Attribution
+     */
+    attribution?: string | null;
+    /**
+     * Taxonomy Ids
+     *
+     * Comma-separated taxonomy ids
+     */
+    taxonomy_ids?: string | null;
+  };
+  url: "/api/admin/media/files";
+};
+
+export type UploadAdminMediaErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The file is too large
+   */
+  413: ErrorResponse;
+  /**
+   * Not an SVG, PNG, JPEG, WebP, GIF or PDF
+   */
+  415: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type UploadAdminMediaError = UploadAdminMediaErrors[keyof UploadAdminMediaErrors];
+
+export type UploadAdminMediaResponses = {
+  /**
+   * Successful Response
+   */
+  201: AdminMedia;
+};
+
+export type UploadAdminMediaResponse = UploadAdminMediaResponses[keyof UploadAdminMediaResponses];
+
+export type AddAdminYoutubeData = {
+  body: VideoAdd;
+  path?: never;
+  query?: never;
+  url: "/api/admin/media/youtube";
+};
+
+export type AddAdminYoutubeErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type AddAdminYoutubeError = AddAdminYoutubeErrors[keyof AddAdminYoutubeErrors];
+
+export type AddAdminYoutubeResponses = {
+  /**
+   * Successful Response
+   */
+  201: AdminMedia;
+};
+
+export type AddAdminYoutubeResponse = AddAdminYoutubeResponses[keyof AddAdminYoutubeResponses];
+
+export type LookupAdminYoutubeData = {
+  body: VideoLookupIn;
+  path?: never;
+  query?: never;
+  url: "/api/admin/media/youtube/lookup";
+};
+
+export type LookupAdminYoutubeErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type LookupAdminYoutubeError = LookupAdminYoutubeErrors[keyof LookupAdminYoutubeErrors];
+
+export type LookupAdminYoutubeResponses = {
+  /**
+   * Successful Response
+   */
+  200: VideoLookupOut;
+};
+
+export type LookupAdminYoutubeResponse = LookupAdminYoutubeResponses[keyof LookupAdminYoutubeResponses];
+
+export type PatchAdminMediaData = {
+  body: MediaPatch;
+  path: {
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/media/{media_id}";
+};
+
+export type PatchAdminMediaErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PatchAdminMediaError = PatchAdminMediaErrors[keyof PatchAdminMediaErrors];
+
+export type PatchAdminMediaResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminMedia;
+};
+
+export type PatchAdminMediaResponse = PatchAdminMediaResponses[keyof PatchAdminMediaResponses];
+
+export type ReviewAdminMediaData = {
+  body: MediaReview;
+  path: {
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/media/{media_id}/review";
+};
+
+export type ReviewAdminMediaErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ReviewAdminMediaError = ReviewAdminMediaErrors[keyof ReviewAdminMediaErrors];
+
+export type ReviewAdminMediaResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminMedia;
+};
+
+export type ReviewAdminMediaResponse = ReviewAdminMediaResponses[keyof ReviewAdminMediaResponses];
+
 export type GetAdminOverviewData = {
   body?: never;
   path?: never;
@@ -6905,6 +9990,706 @@ export type GetAdminOverviewResponses = {
 };
 
 export type GetAdminOverviewResponse = GetAdminOverviewResponses[keyof GetAdminOverviewResponses];
+
+export type ListAdminQuestionsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     */
+    exam?: "step1" | "step2ck" | "step3" | null;
+    /**
+     * Status
+     */
+    status?: "draft" | "auto_checked" | "in_review" | "published" | "retired" | null;
+    /**
+     * Chapter Id
+     */
+    chapter_id?: string | null;
+    /**
+     * Taxonomy Id
+     */
+    taxonomy_id?: string | null;
+    /**
+     * Q
+     */
+    q?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Cursor
+     */
+    cursor?: string | null;
+  };
+  url: "/api/admin/questions";
+};
+
+export type ListAdminQuestionsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminQuestionsError = ListAdminQuestionsErrors[keyof ListAdminQuestionsErrors];
+
+export type ListAdminQuestionsResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminQuestionList;
+};
+
+export type ListAdminQuestionsResponse = ListAdminQuestionsResponses[keyof ListAdminQuestionsResponses];
+
+export type CreateAdminQuestionData = {
+  body: QuestionCreate;
+  path?: never;
+  query?: never;
+  url: "/api/admin/questions";
+};
+
+export type CreateAdminQuestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateAdminQuestionError = CreateAdminQuestionErrors[keyof CreateAdminQuestionErrors];
+
+export type CreateAdminQuestionResponses = {
+  /**
+   * Successful Response
+   */
+  201: AdminQuestion;
+};
+
+export type CreateAdminQuestionResponse = CreateAdminQuestionResponses[keyof CreateAdminQuestionResponses];
+
+export type GetAdminQuestionData = {
+  body?: never;
+  path: {
+    /**
+     * Question Id
+     */
+    question_id: string;
+  };
+  query?: never;
+  url: "/api/admin/questions/{question_id}";
+};
+
+export type GetAdminQuestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminQuestionError = GetAdminQuestionErrors[keyof GetAdminQuestionErrors];
+
+export type GetAdminQuestionResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminQuestion;
+};
+
+export type GetAdminQuestionResponse = GetAdminQuestionResponses[keyof GetAdminQuestionResponses];
+
+export type UpdateAdminQuestionData = {
+  body: QuestionUpdate;
+  path: {
+    /**
+     * Question Id
+     */
+    question_id: string;
+  };
+  query?: never;
+  url: "/api/admin/questions/{question_id}";
+};
+
+export type UpdateAdminQuestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type UpdateAdminQuestionError = UpdateAdminQuestionErrors[keyof UpdateAdminQuestionErrors];
+
+export type UpdateAdminQuestionResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminQuestion;
+};
+
+export type UpdateAdminQuestionResponse = UpdateAdminQuestionResponses[keyof UpdateAdminQuestionResponses];
+
+export type LintAdminQuestionData = {
+  body?: never;
+  path: {
+    /**
+     * Question Id
+     */
+    question_id: string;
+  };
+  query?: never;
+  url: "/api/admin/questions/{question_id}/lint";
+};
+
+export type LintAdminQuestionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type LintAdminQuestionError = LintAdminQuestionErrors[keyof LintAdminQuestionErrors];
+
+export type LintAdminQuestionResponses = {
+  /**
+   * Successful Response
+   */
+  200: LintResult;
+};
+
+export type LintAdminQuestionResponse = LintAdminQuestionResponses[keyof LintAdminQuestionResponses];
+
+export type ListAdminQuestionRevisionsData = {
+  body?: never;
+  path: {
+    /**
+     * Question Id
+     */
+    question_id: string;
+  };
+  query?: never;
+  url: "/api/admin/questions/{question_id}/revisions";
+};
+
+export type ListAdminQuestionRevisionsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminQuestionRevisionsError = ListAdminQuestionRevisionsErrors[keyof ListAdminQuestionRevisionsErrors];
+
+export type ListAdminQuestionRevisionsResponses = {
+  /**
+   * Successful Response
+   */
+  200: QuestionRevisionList;
+};
+
+export type ListAdminQuestionRevisionsResponse =
+  ListAdminQuestionRevisionsResponses[keyof ListAdminQuestionRevisionsResponses];
+
+export type SetAdminQuestionStatusData = {
+  body: QuestionStatusChange;
+  path: {
+    /**
+     * Question Id
+     */
+    question_id: string;
+  };
+  query?: never;
+  url: "/api/admin/questions/{question_id}/status";
+};
+
+export type SetAdminQuestionStatusErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SetAdminQuestionStatusError = SetAdminQuestionStatusErrors[keyof SetAdminQuestionStatusErrors];
+
+export type SetAdminQuestionStatusResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminQuestion;
+};
+
+export type SetAdminQuestionStatusResponse = SetAdminQuestionStatusResponses[keyof SetAdminQuestionStatusResponses];
+
+export type ListAdminQueuesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/queues";
+};
+
+export type ListAdminQueuesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminQueuesError = ListAdminQueuesErrors[keyof ListAdminQueuesErrors];
+
+export type ListAdminQueuesResponses = {
+  /**
+   * Successful Response
+   */
+  200: QueueCounts;
+};
+
+export type ListAdminQueuesResponse = ListAdminQueuesResponses[keyof ListAdminQueuesResponses];
+
+export type GetAdminQueueData = {
+  body?: never;
+  path: {
+    /**
+     * Kind
+     *
+     * Queue kind, e.g. generated_media
+     */
+    kind: string;
+  };
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Cursor
+     */
+    cursor?: string | null;
+  };
+  url: "/api/admin/queues/{kind}";
+};
+
+export type GetAdminQueueErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminQueueError = GetAdminQueueErrors[keyof GetAdminQueueErrors];
+
+export type GetAdminQueueResponses = {
+  /**
+   * Successful Response
+   */
+  200: QueuePage;
+};
+
+export type GetAdminQueueResponse = GetAdminQueueResponses[keyof GetAdminQueueResponses];
+
+export type ApproveAdminQueueItemData = {
+  body: QueueApprove;
+  path: {
+    /**
+     * Kind
+     *
+     * Queue kind, e.g. generated_media
+     */
+    kind: string;
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/queues/{kind}/{item_id}/approve";
+};
+
+export type ApproveAdminQueueItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Decided on its own page
+   */
+  405: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ApproveAdminQueueItemError = ApproveAdminQueueItemErrors[keyof ApproveAdminQueueItemErrors];
+
+export type ApproveAdminQueueItemResponses = {
+  /**
+   * Successful Response
+   */
+  200: QueueDecision;
+};
+
+export type ApproveAdminQueueItemResponse = ApproveAdminQueueItemResponses[keyof ApproveAdminQueueItemResponses];
+
+export type RejectAdminQueueItemData = {
+  body: QueueReject;
+  path: {
+    /**
+     * Kind
+     *
+     * Queue kind, e.g. generated_media
+     */
+    kind: string;
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/admin/queues/{kind}/{item_id}/reject";
+};
+
+export type RejectAdminQueueItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Decided on its own page
+   */
+  405: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RejectAdminQueueItemError = RejectAdminQueueItemErrors[keyof RejectAdminQueueItemErrors];
+
+export type RejectAdminQueueItemResponses = {
+  /**
+   * Successful Response
+   */
+  200: QueueDecision;
+};
+
+export type RejectAdminQueueItemResponse = RejectAdminQueueItemResponses[keyof RejectAdminQueueItemResponses];
+
+export type ListAdminReportsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Status
+     */
+    status?: "open" | "triaged" | "resolved" | "dismissed" | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/admin/reports";
+};
+
+export type ListAdminReportsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminReportsError = ListAdminReportsErrors[keyof ListAdminReportsErrors];
+
+export type ListAdminReportsResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminReportList;
+};
+
+export type ListAdminReportsResponse = ListAdminReportsResponses[keyof ListAdminReportsResponses];
+
+export type SetAdminReportStatusData = {
+  body: ReportStatusChange;
+  path: {
+    /**
+     * Report Id
+     */
+    report_id: string;
+  };
+  query?: never;
+  url: "/api/admin/reports/{report_id}/status";
+};
+
+export type SetAdminReportStatusErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SetAdminReportStatusError = SetAdminReportStatusErrors[keyof SetAdminReportStatusErrors];
+
+export type SetAdminReportStatusResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminReport;
+};
+
+export type SetAdminReportStatusResponse = SetAdminReportStatusResponses[keyof SetAdminReportStatusResponses];
 
 export type ListAuthoringGapsData = {
   body?: never;
@@ -7481,6 +11266,596 @@ export type GetAuthoringTaxonomyResponses = {
 
 export type GetAuthoringTaxonomyResponse = GetAuthoringTaxonomyResponses[keyof GetAuthoringTaxonomyResponses];
 
+export type GetAdminRevisionData = {
+  body?: never;
+  path: {
+    /**
+     * Revision Id
+     */
+    revision_id: number;
+  };
+  query?: never;
+  url: "/api/admin/revisions/{revision_id}";
+};
+
+export type GetAdminRevisionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminRevisionError = GetAdminRevisionErrors[keyof GetAdminRevisionErrors];
+
+export type GetAdminRevisionResponses = {
+  /**
+   * Successful Response
+   */
+  200: Revision;
+};
+
+export type GetAdminRevisionResponse = GetAdminRevisionResponses[keyof GetAdminRevisionResponses];
+
+export type DiffAdminRevisionData = {
+  body?: never;
+  path: {
+    /**
+     * Revision Id
+     */
+    revision_id: number;
+  };
+  query?: {
+    /**
+     * Against
+     */
+    against?: string;
+  };
+  url: "/api/admin/revisions/{revision_id}/diff";
+};
+
+export type DiffAdminRevisionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DiffAdminRevisionError = DiffAdminRevisionErrors[keyof DiffAdminRevisionErrors];
+
+export type DiffAdminRevisionResponses = {
+  /**
+   * Successful Response
+   */
+  200: RevisionDiff;
+};
+
+export type DiffAdminRevisionResponse = DiffAdminRevisionResponses[keyof DiffAdminRevisionResponses];
+
+export type RollbackAdminRevisionData = {
+  body: RollbackRequest;
+  path: {
+    /**
+     * Revision Id
+     */
+    revision_id: number;
+  };
+  query?: never;
+  url: "/api/admin/revisions/{revision_id}/rollback";
+};
+
+export type RollbackAdminRevisionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RollbackAdminRevisionError = RollbackAdminRevisionErrors[keyof RollbackAdminRevisionErrors];
+
+export type RollbackAdminRevisionResponses = {
+  /**
+   * Successful Response
+   */
+  200: Revision;
+};
+
+export type RollbackAdminRevisionResponse = RollbackAdminRevisionResponses[keyof RollbackAdminRevisionResponses];
+
+export type PatchAdminSectionData = {
+  body: SectionPatch;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}";
+};
+
+export type PatchAdminSectionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PatchAdminSectionError = PatchAdminSectionErrors[keyof PatchAdminSectionErrors];
+
+export type PatchAdminSectionResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminSection;
+};
+
+export type PatchAdminSectionResponse = PatchAdminSectionResponses[keyof PatchAdminSectionResponses];
+
+export type DiscardAdminSectionDraftData = {
+  body?: never;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}/draft";
+};
+
+export type DiscardAdminSectionDraftErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DiscardAdminSectionDraftError = DiscardAdminSectionDraftErrors[keyof DiscardAdminSectionDraftErrors];
+
+export type DiscardAdminSectionDraftResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DiscardAdminSectionDraftResponse =
+  DiscardAdminSectionDraftResponses[keyof DiscardAdminSectionDraftResponses];
+
+export type SaveAdminSectionDraftData = {
+  body: DraftSave;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}/draft";
+};
+
+export type SaveAdminSectionDraftErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type SaveAdminSectionDraftError = SaveAdminSectionDraftErrors[keyof SaveAdminSectionDraftErrors];
+
+export type SaveAdminSectionDraftResponses = {
+  /**
+   * Successful Response
+   */
+  200: Revision;
+};
+
+export type SaveAdminSectionDraftResponse = SaveAdminSectionDraftResponses[keyof SaveAdminSectionDraftResponses];
+
+export type GetAdminSectionEditorData = {
+  body?: never;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}/editor";
+};
+
+export type GetAdminSectionEditorErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminSectionEditorError = GetAdminSectionEditorErrors[keyof GetAdminSectionEditorErrors];
+
+export type GetAdminSectionEditorResponses = {
+  /**
+   * Successful Response
+   */
+  200: SectionEditor;
+};
+
+export type GetAdminSectionEditorResponse = GetAdminSectionEditorResponses[keyof GetAdminSectionEditorResponses];
+
+export type DetachAdminSectionMediaData = {
+  body?: never;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}/media/{media_id}";
+};
+
+export type DetachAdminSectionMediaErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DetachAdminSectionMediaError = DetachAdminSectionMediaErrors[keyof DetachAdminSectionMediaErrors];
+
+export type DetachAdminSectionMediaResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DetachAdminSectionMediaResponse = DetachAdminSectionMediaResponses[keyof DetachAdminSectionMediaResponses];
+
+export type AttachAdminSectionMediaData = {
+  body: SectionMediaIn;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+    /**
+     * Media Id
+     */
+    media_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}/media/{media_id}";
+};
+
+export type AttachAdminSectionMediaErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type AttachAdminSectionMediaError = AttachAdminSectionMediaErrors[keyof AttachAdminSectionMediaErrors];
+
+export type AttachAdminSectionMediaResponses = {
+  /**
+   * Successful Response
+   */
+  200: SectionMediaOut;
+};
+
+export type AttachAdminSectionMediaResponse = AttachAdminSectionMediaResponses[keyof AttachAdminSectionMediaResponses];
+
+export type PublishAdminSectionData = {
+  body: PublishRequest;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+  };
+  query?: never;
+  url: "/api/admin/sections/{section_id}/publish";
+};
+
+export type PublishAdminSectionErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Changed since you read it, or a publishing gate refused
+   */
+  409: ErrorResponse;
+  /**
+   * The request was not valid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type PublishAdminSectionError = PublishAdminSectionErrors[keyof PublishAdminSectionErrors];
+
+export type PublishAdminSectionResponses = {
+  /**
+   * Successful Response
+   */
+  200: Revision;
+};
+
+export type PublishAdminSectionResponse = PublishAdminSectionResponses[keyof PublishAdminSectionResponses];
+
+export type ListAdminSectionRevisionsData = {
+  body?: never;
+  path: {
+    /**
+     * Section Id
+     */
+    section_id: string;
+  };
+  query?: {
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/admin/sections/{section_id}/revisions";
+};
+
+export type ListAdminSectionRevisionsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * No such item
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminSectionRevisionsError = ListAdminSectionRevisionsErrors[keyof ListAdminSectionRevisionsErrors];
+
+export type ListAdminSectionRevisionsResponses = {
+  /**
+   * Successful Response
+   */
+  200: RevisionList;
+};
+
+export type ListAdminSectionRevisionsResponse =
+  ListAdminSectionRevisionsResponses[keyof ListAdminSectionRevisionsResponses];
+
 export type StartSeedData = {
   body: SeedRequest;
   path?: never;
@@ -7600,6 +11975,89 @@ export type GetSeedRunResponses = {
 };
 
 export type GetSeedRunResponse = GetSeedRunResponses[keyof GetSeedRunResponses];
+
+export type ListAdminSourcesData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/sources";
+};
+
+export type ListAdminSourcesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminSourcesError = ListAdminSourcesErrors[keyof ListAdminSourcesErrors];
+
+export type ListAdminSourcesResponses = {
+  /**
+   * Successful Response
+   */
+  200: AdminSourceList;
+};
+
+export type ListAdminSourcesResponse = ListAdminSourcesResponses[keyof ListAdminSourcesResponses];
+
+export type ListAdminTaxonomyData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     */
+    exam?: "step1" | "step2ck" | "step3" | null;
+  };
+  url: "/api/admin/taxonomy";
+};
+
+export type ListAdminTaxonomyErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListAdminTaxonomyError = ListAdminTaxonomyErrors[keyof ListAdminTaxonomyErrors];
+
+export type ListAdminTaxonomyResponses = {
+  /**
+   * Successful Response
+   */
+  200: TaxonomyList;
+};
+
+export type ListAdminTaxonomyResponse = ListAdminTaxonomyResponses[keyof ListAdminTaxonomyResponses];
 
 export type AddYoutubeVideoData = {
   body: AddIn;

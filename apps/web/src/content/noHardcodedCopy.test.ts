@@ -8,6 +8,7 @@ import { describe, expect, it } from "vitest";
  * tags and for literal user-facing attributes. Segments add their roots to ROOTS.
  */
 const ROOTS = [
+  "admin",
   "agent",
   "anki",
   "cards",

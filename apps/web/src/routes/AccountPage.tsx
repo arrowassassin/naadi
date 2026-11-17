@@ -1,7 +1,7 @@
 import type { MeResponse } from "@naadi/shared";
 import { Button, Chip, ErrorState, Skeleton, Tile, TileLabel } from "@naadi/ui";
-import { useNavigate } from "@tanstack/react-router";
-import { Check, ChevronDown, LogOut } from "lucide-react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { Check, ChevronDown, LogOut, Shield } from "lucide-react";
 import { type FormEvent, useId, useMemo, useState } from "react";
 import { useMe, useUpdateMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
@@ -235,6 +235,17 @@ export function AccountPage() {
                 </Chip>
                 {me.data.is_admin ? <Chip tone="meta">{t("account.admin_chip")}</Chip> : null}
               </div>
+              {/* The one place the admin console is linked from; non-admins never see it (the API also 403s). */}
+              {me.data.is_admin ? (
+                <Link
+                  to="/admin"
+                  data-testid="admin-link"
+                  className="inline-flex min-h-11 items-center gap-2 self-start text-text"
+                >
+                  <Shield aria-hidden="true" size={16} />
+                  {t("admin.account_link")}
+                </Link>
+              ) : null}
             </Tile>
             <Tile as="section" aria-labelledby="signout-h" className="flex flex-col gap-4">
               <h2 id="signout-h" className="m-0 font-display font-bold text-[1.5rem]">

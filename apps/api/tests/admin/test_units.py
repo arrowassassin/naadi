@@ -36,10 +36,13 @@ def test_diff_marks_changed_blocks_in_order() -> None:
 
 
 def test_diff_labels_callouts_and_headings() -> None:
-    new = {"type": "doc", "content": [
-        {"type": "heading", "attrs": {"level": 3}, "content": [{"type": "text", "text": "H"}]},
-        {"type": "callout", "attrs": {"variant": "trap"}, "content": [p("t")]},
-    ]}
+    new = {
+        "type": "doc",
+        "content": [
+            {"type": "heading", "attrs": {"level": 3}, "content": [{"type": "text", "text": "H"}]},
+            {"type": "callout", "attrs": {"variant": "trap"}, "content": [p("t")]},
+        ],
+    }
     assert [b.kind for b in diff_bodies(None, new)] == ["heading:3", "callout:trap"]
 
 
@@ -92,7 +95,7 @@ def test_queue_registry_rules() -> None:
         assert "test_kind" in queues.registered_kinds()
     finally:
         queues.unregister_queue("test_kind")
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="must match"):
         queues.register_queue("Bad-Kind", _noop_list, _noop_decide, _noop_decide, ref_type="question")
     with pytest.raises(ValueError, match="both"):
         queues.register_queue("half", _noop_list, _noop_decide, None, ref_type="question")
@@ -101,7 +104,9 @@ def test_queue_registry_rules() -> None:
     with pytest.raises(ValueError, match="/admin"):
         queues.register_queue("outside", _noop_list, None, None, ref_type="question", path="/review")
     try:
-        queues.register_queue("own_page", _noop_list, None, None, ref_type="question", path="/admin/review", filters=("ai_drafts",))
+        queues.register_queue(
+            "own_page", _noop_list, None, None, ref_type="question", path="/admin/review", filters=("ai_drafts",)
+        )
     finally:
         queues.unregister_queue("own_page")
     # the console's own queues register at import
@@ -141,7 +146,7 @@ def test_raster_is_reencoded_to_webp_without_metadata() -> None:
     data, w, h = raster_to_webp(buf.getvalue())
     assert data[:4] == b"RIFF" and data[8:12] == b"WEBP"
     assert (w, h) == (4096, 82)
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="not a readable image"):
         raster_to_webp(b"<svg/>")
 
 
@@ -176,7 +181,11 @@ def test_question_form_validation() -> None:
 
 def test_item_changed_only_for_stem_options_or_key() -> None:
     q = QuestionCreate(**_q())
-    before = {"stem_html": q.stem_html, "answer": "C", "options": [{"label": o.label, "html": o.html} for o in q.options]}
+    before = {
+        "stem_html": q.stem_html,
+        "answer": "C",
+        "options": [{"label": o.label, "html": o.html} for o in q.options],
+    }
     assert not item_changed(before, QuestionCreate(**_q(explanation_html="<p>new</p>")))
     assert not item_changed(before, QuestionCreate(**_q(stem_html="<p>A 30-year-old  man …</p>")))
     assert item_changed(before, QuestionCreate(**_q(answer="B")))

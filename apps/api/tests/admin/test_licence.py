@@ -33,11 +33,35 @@ FRESH = AssetFacts("video_youtube", True, NOW - dt.timedelta(days=1))
         (src("link-only", allow_copy=False), AssetFacts("svg"), "page", None, "copy_not_allowed"),
         (src(), AssetFacts("svg"), "host", None, None),
         (src(), AssetFacts("svg"), "page", None, None),
-        (src("CC-BY-NC-ND-4.0", allow_commercial=False, allow_modify=False), AssetFacts("image"), "page", PageFacts(paid=True), "noncommercial_on_paid"),
-        (src("CC-BY-ND-4.0", allow_modify=False), AssetFacts("image"), "page", PageFacts(paid=True), "noncommercial_on_paid"),
-        (src("CC-BY-NC-4.0", allow_commercial=False), AssetFacts("image"), "page", PageFacts(paid=False, proprietary=False), None),
+        (
+            src("CC-BY-NC-ND-4.0", allow_commercial=False, allow_modify=False),
+            AssetFacts("image"),
+            "page",
+            PageFacts(paid=True),
+            "noncommercial_on_paid",
+        ),
+        (
+            src("CC-BY-ND-4.0", allow_modify=False),
+            AssetFacts("image"),
+            "page",
+            PageFacts(paid=True),
+            "noncommercial_on_paid",
+        ),
+        (
+            src("CC-BY-NC-4.0", allow_commercial=False),
+            AssetFacts("image"),
+            "page",
+            PageFacts(paid=False, proprietary=False),
+            None,
+        ),
         (src("CC-BY-SA-4.0"), AssetFacts("image"), "page", None, "share_alike_in_proprietary"),
-        (src("CC-BY-NC-SA-3.0", allow_commercial=False), AssetFacts("image"), "page", None, "share_alike_in_proprietary"),
+        (
+            src("CC-BY-NC-SA-3.0", allow_commercial=False),
+            AssetFacts("image"),
+            "page",
+            None,
+            "share_alike_in_proprietary",
+        ),
         (src("CC-BY-SA-4.0"), AssetFacts("image"), "page", PageFacts(proprietary=False), None),
         (src("CC-BY-SA-4.0"), AssetFacts("image"), "host", None, None),
         (src(allow_ai_ingest=False), AssetFacts("svg"), "rag", None, "no_ai_ingest"),
@@ -51,7 +75,9 @@ FRESH = AssetFacts("video_youtube", True, NOW - dt.timedelta(days=1))
         (YT, AssetFacts("video_youtube", True, None), "embed", None, "metadata_stale"),
     ],
 )
-def test_gate_matrix(source: SourceTerms | None, asset: AssetFacts, use: str, page: PageFacts | None, expected: str | None) -> None:
+def test_gate_matrix(
+    source: SourceTerms | None, asset: AssetFacts, use: str, page: PageFacts | None, expected: str | None
+) -> None:
     assert decide(source, asset, use, POLICY, page=page, now=NOW) == expected  # type: ignore[arg-type]
 
 
@@ -60,7 +86,7 @@ def test_policy_switches_turn_soft_gates_off() -> None:
     nc = src("CC-BY-NC-SA-4.0", allow_commercial=False)
     assert decide(nc, AssetFacts("image"), "page", off, page=PageFacts(paid=True), now=NOW) is None
     # the licence and RAG gates are pinned on in the model itself
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="block_without_license"):
         SourcesPolicy(block_without_license=False)  # type: ignore[arg-type]
 
 

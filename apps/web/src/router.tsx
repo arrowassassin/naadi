@@ -1,5 +1,6 @@
 import { ErrorState } from "@naadi/ui";
 import { createRootRoute, createRoute, createRouter, Link, Outlet, redirect } from "@tanstack/react-router";
+import { adminRoutes } from "./admin/routes";
 import { agentDiagnosticsRoute } from "./agent/route";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
@@ -150,6 +151,7 @@ export const routeTree = rootRoute.addChildren([
     agentDiagnosticsRoute(appRoute),
     adminGeneratedRoute(appRoute),
     generatedRoute(appRoute),
+    ...adminRoutes(appRoute),
   ]),
 ]);
 
