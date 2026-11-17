@@ -1,7 +1,9 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate } from "@tanstack/react-router";
 import { useMe } from "../auth/api";
-import { PathwayPage } from "./PathwayPage";
+import { lazyPage } from "../shell/lazyPage";
+
+const PathwayPage = lazyPage(() => import("./PathwayPage").then((m) => m.PathwayPage));
 
 /** `/pathway` while the server's `features.pathway` flag is on (offline with a saved profile: the device copy). */
 function PathwayGate() {
