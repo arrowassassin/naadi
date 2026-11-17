@@ -1,0 +1,14 @@
+{
+ "id": "20261117T041947-lead-04d4d3",
+ "ts": "2026-11-17T04:19:47.132615Z",
+ "from": "lead",
+ "to": [
+  "seg16-planner"
+ ],
+ "type": "task",
+ "subject": "Planner: rebalancing, calendar feed, reminders/push",
+ "body": "Brief: docs/segments/16-planner.md. Own cloud session. Post your day-one contracts on the ledger; coordinate with every owner before touching their files; dependencies still in progress (S12b, S13, S14 and this wave's siblings) — build on their public APIs/contracts and wire the rest as they land. Follow docs/REVIEW_CHECKLIST.md + the integration gate (--test-cmd); shared e2e helpers settle()/quiet()/trackApi().",
+ "task_key": "S16",
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer APPROVED",
+ "requires_ack": true
+}
