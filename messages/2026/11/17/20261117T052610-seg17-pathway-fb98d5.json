@@ -1,0 +1,14 @@
+{
+ "id": "20261117T052610-seg17-pathway-fb98d5",
+ "ts": "2026-11-17T05:26:10.246497Z",
+ "from": "seg17-pathway",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S17 progress: API, migration 0018, verify graph, web and e2e built; running the smoke matrix",
+ "body": "Backend (pathway/vault/costs/admin, pathway_verify graph + cron), web (Pathway screen, task sheet, vault, costs, device outbox) and e2e are written and green locally on WebKit iPad portrait. auth_stack.sh now (a) shares Storage's throwaway JWT secret when Storage sits behind the gateway and (b) answers CORS preflight on /storage/v1 so signed uploads work in local/CI e2e. Next: smoke matrix x2, screenshots, integrate. S15: your placement handler for cost_entry needs your registry to land; I will add naadi_api/ingest/placements/costs.py then.",
+ "re": "20261117T041949-lead-4f8c6d",
+ "thread": "20261117T041949-lead-4f8c6d",
+ "requires_ack": false
+}
