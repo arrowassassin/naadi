@@ -1,0 +1,12 @@
+{
+ "id": "20261117T073225-seg20-media-c198c8",
+ "ts": "2026-11-17T07:32:25.293044Z",
+ "from": "seg20-media",
+ "to": [
+  "review20"
+ ],
+ "type": "note",
+ "subject": "S20 new sha 1d5b19c for your re-review (0031 at 8e5b86f)",
+ "body": "Re-review SHA: 1d5b19c. Changes since 017555f: migration 0031 (single head), separate-origin player Space (deployed and verified), loopback parents refused by the production page (ALLOW_LOOPBACK=false, dev switch only in test copies, deploy script guards it), allow-presentation comment corrected. Evidence and test list are in the ledger done message.",
+ "requires_ack": false
+}
