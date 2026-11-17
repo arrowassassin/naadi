@@ -11,9 +11,9 @@
 export const NS = "naadi:yt" as const;
 /**
  * The player page is on an origin of its own (a static Space), so `allow-same-origin` here means THAT origin, which
- * holds nothing of the app's. No `allow-top-navigation`, no `allow-forms`. (`allow-presentation` is not a valid
- * sandbox flag in current Chromium and WebKit, which log an error for it; fullscreen is the frame's `allow`
- * permission plus the Permissions-Policy, not a sandbox flag.)
+ * holds nothing of the app's. No `allow-top-navigation`, no `allow-forms`. (`allow-presentation` is left out:
+ * WebKit rejects it as an invalid sandbox flag and logs a console error, which fails the zero-console-errors e2e;
+ * Chromium accepts it. Fullscreen does not need it: it is the frame's `allow` permission plus the Permissions-Policy.)
  */
 export const SANDBOX_ATTR = "allow-scripts allow-same-origin";
 

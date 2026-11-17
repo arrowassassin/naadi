@@ -20,6 +20,7 @@ done
 [[ -n "${HF_TOKEN:-}" || "$DRY" == 1 ]] || { echo "deploy-player: HF_TOKEN is not set" >&2; exit 1; }
 command -v uv >/dev/null || { echo "deploy-player: uv is required" >&2; exit 1; }
 SRC="$ROOT/deploy/player-space"
+grep -q '^  var ALLOW_LOOPBACK = false;$' "$SRC/player.js" || { echo "deploy-player: player.js must ship with ALLOW_LOOPBACK = false" >&2; exit 1; }
 for f in README.md index.html player.js; do [[ -f "$SRC/$f" ]] || { echo "deploy-player: missing $SRC/$f" >&2; exit 1; }; done
 if [[ "$DRY" == 1 ]]; then
   echo "deploy-player: would upload $SRC to $SPACE ($(ls "$SRC" | tr '\n' ' '))"

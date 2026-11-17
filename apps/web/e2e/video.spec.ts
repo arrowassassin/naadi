@@ -81,7 +81,11 @@ async function stubYouTube(page: Page): Promise<string[]> {
     route.fulfill({
       status: 200,
       contentType: file === "player.js" ? "text/javascript" : "text/html",
-      body: readFileSync(path.join(PLAYER_DIR, file)),
+      // The deployed file refuses loopback parents; the e2e app runs on 127.0.0.1, so its copy switches that on.
+      body: readFileSync(path.join(PLAYER_DIR, file), "utf8").replace(
+        "var ALLOW_LOOPBACK = false;",
+        "var ALLOW_LOOPBACK = true;",
+      ),
     });
   });
   return asked;

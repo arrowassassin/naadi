@@ -17,8 +17,10 @@
   var VIDEO_ID = /^[A-Za-z0-9_-]{11}$/;
   var MAX_SECONDS = 86400 * 2;
 
-  // The Naadi origins that may embed this page. Loopback hosts (any port) are allowed so local and CI runs work: a
-  // page on someone's own machine can embed a player that holds nothing.
+  // The Naadi origins that may embed this page. Production accepts ONLY the Naadi Space. Loopback parents are a
+  // development convenience that is OFF here: the e2e matrix and local runs serve this same file with the next line
+  // switched to `true` (apps/web/e2e/video.spec.ts), and the deployed copy is this file as it is.
+  var ALLOW_LOOPBACK = false;
   var ALLOWED_PARENTS = ["https://arrowassassin-naadi.hf.space"];
   var LOOPBACK = ["localhost", "127.0.0.1", "[::1]"];
 
@@ -42,6 +44,7 @@
   function allowedParent(origin) {
     if (typeof origin !== "string" || originOf(origin) !== origin) return false;
     if (ALLOWED_PARENTS.indexOf(origin) !== -1) return true;
+    if (!ALLOW_LOOPBACK) return false;
     var u = new URL(origin);
     return LOOPBACK.indexOf(u.hostname) !== -1;
   }

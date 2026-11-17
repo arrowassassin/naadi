@@ -16,8 +16,9 @@ signed-in app. It holds no cookies, no storage and no secrets.
 - Naadi embeds it in an `<iframe>` (`sandbox="allow-scripts allow-same-origin"`: same-origin here means *this* page's
   own origin) and talks to it only through typed `postMessage` messages (`apps/web/src/video/bridge.ts`).
 - Both sides check `event.origin` exactly. This page accepts `init` only from the Naadi origin named in `?parent=`,
-  and only when that origin is on the allow-list in `player.js` and is also the page that actually embeds it
-  (`location.ancestorOrigins` or `document.referrer`). Anything else is ignored.
+  and only when that origin is on the allow-list in `player.js` (production: the Naadi Space only; loopback parents are
+  off, `ALLOW_LOOPBACK = false`, and only tests and local runs switch them on in a copy) and is also the page that
+  actually embeds it (`location.ancestorOrigins` or `document.referrer`). Anything else is ignored.
 - Nothing is requested from YouTube until Naadi sends `init`, and Naadi adds this frame only when a student presses
   play.
 - Its own CSP (meta tag in `index.html`): `script-src 'self' https://www.youtube.com https://s.ytimg.com`,

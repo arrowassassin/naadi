@@ -14,22 +14,52 @@ interface Core {
   parseToFrame(data: unknown): unknown;
   originOf(url: string): string | null;
 }
+const FILE = path.resolve(import.meta.dirname, "../../../../deploy/player-space/player.js");
+const SOURCE = readFileSync(FILE, "utf8");
+
+/** Load player.js without auto-running; `loopback` switches the development-only allowance on in a COPY. */
+function load(loopback: boolean): Core {
+  (globalThis as { __NAADI_PLAYER_NO_AUTORUN__?: boolean }).__NAADI_PLAYER_NO_AUTORUN__ = true;
+  new Function(loopback ? SOURCE.replace("var ALLOW_LOOPBACK = false;", "var ALLOW_LOOPBACK = true;") : SOURCE)();
+  return (globalThis as { NaadiPlayerCore?: Core }).NaadiPlayerCore as Core;
+}
 let core: Core;
 
 beforeAll(() => {
-  const file = path.resolve(import.meta.dirname, "../../../../deploy/player-space/player.js");
-  (globalThis as { __NAADI_PLAYER_NO_AUTORUN__?: boolean }).__NAADI_PLAYER_NO_AUTORUN__ = true;
-  new Function(readFileSync(file, "utf8"))();
-  core = (globalThis as { NaadiPlayerCore?: Core }).NaadiPlayerCore as Core;
+  core = load(false); // the file exactly as it is deployed
 });
 
 const NAADI = "https://arrowassassin-naadi.hf.space";
 
 describe("player page: who may embed it", () => {
-  it("allows the Naadi Space and loopback hosts, nothing else", () => {
+  it("ships with loopback parents OFF", () => {
+    expect(SOURCE).toContain("\n  var ALLOW_LOOPBACK = false;\n"); // scripts/deploy_player_space.sh checks the same line
+  });
+
+  it("production accepts the Naadi Space only: no loopback parent, whatever the port", () => {
     expect(core.allowedParent(NAADI)).toBe(true);
-    expect(core.allowedParent("http://localhost:5173")).toBe(true);
-    expect(core.allowedParent("http://127.0.0.1:7860")).toBe(true);
+    for (const loop of [
+      "http://localhost:5173",
+      "http://127.0.0.1:7860",
+      "https://127.0.0.1:7860",
+      "http://[::1]:7860",
+    ]) {
+      expect(core.allowedParent(loop), loop).toBe(false);
+      const q = `?parent=${encodeURIComponent(loop)}`;
+      expect(core.trustedParent(q, [loop], ""), loop).toBeNull(); // not even when it really is the embedder
+    }
+  });
+
+  it("a development copy (loopback switched on) accepts loopback hosts, still not look-alikes", () => {
+    const dev = load(true);
+    expect(dev.allowedParent("http://localhost:5173")).toBe(true);
+    expect(dev.allowedParent("http://127.0.0.1:7860")).toBe(true);
+    expect(dev.allowedParent("http://localhost.evil.example")).toBe(false);
+    expect(dev.allowedParent("http://127.0.0.1.evil.example")).toBe(false);
+    load(false);
+  });
+
+  it("allows only exact origins", () => {
     for (const bad of [
       "https://evil.example",
       `${NAADI}.evil.example`,

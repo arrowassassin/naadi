@@ -1,13 +1,16 @@
-import { mkdirSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import path from "node:path";
+import type { Route } from "@playwright/test";
 import { canMintUsers } from "./auth-users";
 import { expect, quiet, test } from "./fixtures";
 import { freshStudent, richChapter } from "./support/student";
 
 /**
- * @live: the REAL player page (https://arrowassassin-naadi-player.static.hf.space, deployed from deploy/player-space)
- * with the REAL YouTube IFrame API and embed. Nothing is stubbed, so it needs the network and the deployed Space and
- * runs only on demand:
+ * @live: the player page's own code with the REAL YouTube IFrame API and embed, from the player's real origin. The
+ * deployed page refuses loopback parents (production: the Naadi Space only), so the first test serves the repo's
+ * deploy/player-space files at the player origin with the development-only loopback switch on (the only change), while
+ * YouTube itself is real. The second test hits the DEPLOYED Space and checks that it refuses this loopback app.
+ * Needs the network; runs only on demand:
  *
  *   E2E_LIVE_YOUTUBE=1 pnpm --filter @naadi/web exec playwright test video-live.spec.ts --project chromium-laptop-1440
  *
@@ -23,6 +26,8 @@ if (process.env.E2E_LIVE_PROXY) {
   test.use({ proxy: { server: process.env.E2E_LIVE_PROXY, bypass: "127.0.0.1,localhost" } });
 }
 
+const PLAYER_DIR = path.resolve(import.meta.dirname, "../../../deploy/player-space");
+
 test.describe("@live YouTube player page", () => {
   test("one press: the real player readies, plays, seeks and changes speed through the bridge", async ({
     browser,
@@ -32,6 +37,18 @@ test.describe("@live YouTube player page", () => {
     const student = await freshStudent(browser, baseURL as string, info, "videolive");
     try {
       const page = await student.open("/learn");
+      // the player origin serves the repo's player files (loopback parent on); YouTube is not stubbed
+      await page.route(`${PLAYER_ORIGIN}/**`, (route: Route) => {
+        const file = new URL(route.request().url()).pathname === "/player.js" ? "player.js" : "index.html";
+        route.fulfill({
+          status: 200,
+          contentType: file === "player.js" ? "text/javascript" : "text/html",
+          body: readFileSync(path.join(PLAYER_DIR, file), "utf8").replace(
+            "var ALLOW_LOOPBACK = false;",
+            "var ALLOW_LOOPBACK = true;",
+          ),
+        });
+      });
       const rich = richChapter("create", student.email);
       await page.goto(`/learn/${rich.chapter_id}/${rich.section_id}`);
       await quiet(page);
@@ -70,6 +87,37 @@ test.describe("@live YouTube player page", () => {
 
       mkdirSync(SHOTS, { recursive: true });
       await page.screenshot({ path: path.join(SHOTS, `player--${info.project.name}.png`), animations: "disabled" });
+    } finally {
+      try {
+        richChapter("delete", student.email);
+      } finally {
+        await student.done();
+      }
+    }
+  });
+
+  test("the DEPLOYED page refuses a loopback parent: no hello, no player, nothing from YouTube", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.setTimeout(120_000);
+    const student = await freshStudent(browser, baseURL as string, info, "videoref");
+    try {
+      const page = await student.open("/learn");
+      const asked: string[] = [];
+      page.on("request", (r) => {
+        if (/youtube|ytimg/.test(new URL(r.url()).hostname)) asked.push(r.url());
+      });
+      const rich = richChapter("create", student.email);
+      await page.goto(`/learn/${rich.chapter_id}/${rich.section_id}`);
+      await quiet(page);
+      const video = page.locator("[data-node=video]");
+      await video.getByRole("button", { name: /^Play video: Anion gap/ }).click();
+      await expect(video.locator("iframe")).toHaveAttribute("src", new RegExp(`^${PLAYER_ORIGIN}/`));
+      // the production page stays silent for a loopback embedder: the controls never appear, YouTube is never asked
+      await page.waitForTimeout(8_000);
+      await expect(video.getByRole("button", { name: "1×", exact: true })).toHaveCount(0);
+      expect(asked).toEqual([]);
     } finally {
       try {
         richChapter("delete", student.email);
