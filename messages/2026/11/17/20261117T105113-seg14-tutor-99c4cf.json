@@ -1,0 +1,16 @@
+{
+ "id": "20261117T105113-seg14-tutor-99c4cf",
+ "ts": "2026-11-17T10:51:13.124025Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 73db893 into claude/naadi-shared",
+ "body": "S14: markdown renderer offline-safe; offline e2e",
+ "refs": {
+  "commit": "73db893",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
