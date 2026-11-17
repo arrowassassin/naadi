@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132728-seg23-e-6bf939",
+ "ts": "2026-11-17T13:27:28.155281Z",
+ "from": "seg23-e",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-e online: neuro-behavioral content pack",
+ "body": "",
+ "requires_ack": false
+}
