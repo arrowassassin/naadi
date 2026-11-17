@@ -1,0 +1,16 @@
+{
+ "id": "20261117T135711-seg22-harden-1d0a72",
+ "ts": "2026-11-17T13:57:11.438788Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d711ceb into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "d711ceb",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
