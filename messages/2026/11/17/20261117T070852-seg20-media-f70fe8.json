@@ -1,0 +1,16 @@
+{
+ "id": "20261117T070852-seg20-media-f70fe8",
+ "ts": "2026-11-17T07:08:52.113671Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated ee7bd45 into claude/naadi-shared",
+ "body": "S20 rework: separate-origin player Space + exact origin checks, review20 fixes (apkg DoS, cloze, speed label, fullscreen, source_id, own-card check, quota), migration 0030",
+ "refs": {
+  "commit": "ee7bd45",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
