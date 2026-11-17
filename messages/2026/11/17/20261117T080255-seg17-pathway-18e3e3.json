@@ -1,0 +1,16 @@
+{
+ "id": "20261117T080255-seg17-pathway-18e3e3",
+ "ts": "2026-11-17T08:02:55.356578Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 53564a9 into claude/naadi-shared",
+ "body": "S17 review fixes: vault server-write, SSRF-safe fetch, More tab sheet",
+ "refs": {
+  "commit": "53564a9",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
