@@ -21,10 +21,11 @@ import json
 import re
 import sqlite3
 import tempfile
+import time
 import zipfile
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import IO, Literal
+from typing import IO, Any, Literal
 
 import zstandard
 
@@ -52,6 +53,10 @@ class AnkiLimits:
     max_manifest_bytes: int = 64 * 1024 * 1024
     max_cards: int = 50_000
     max_face_chars: int = 20_000
+    max_field_chars: int = 200_000  # one note field, before any rendering
+    max_template_chars: int = 20_000
+    max_cloze_depth: int = 32
+    parse_seconds: float = 20.0  # wall-clock budget for everything SQLite does for one package
 
 
 @dataclass(slots=True)
@@ -166,10 +171,13 @@ class Package:
             del raw
             conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
             try:
-                _lock_down(conn)
+                _lock_down(conn, self.limits.parse_seconds)
                 try:
+                    _require_plain_tables(conn)
                     self._read_cards(conn, out)
-                except sqlite3.DatabaseError as exc:
+                except (sqlite3.DatabaseError, ValueError, KeyError, TypeError) as exc:
+                    if isinstance(exc, ApkgError):
+                        raise
                     raise ApkgError("anki_corrupt") from exc
             finally:
                 conn.close()
@@ -193,6 +201,9 @@ class Package:
                 out.skipped_cards += 1
                 continue
             fields = str(flds or "").split(SEP)
+            if any(len(f) > self.limits.max_field_chars for f in fields):
+                out.skipped_cards += 1
+                continue
             values = {name: (fields[i] if i < len(fields) else "") for i, name in enumerate(nt.fields)}
             ti = 0 if nt.cloze else int(ord_)
             if ti >= len(nt.templates):
@@ -200,6 +211,9 @@ class Package:
                 continue
             deck = decks.get(did, "Default")
             qfmt, afmt = nt.templates[ti]
+            if len(qfmt) > self.limits.max_template_chars or len(afmt) > self.limits.max_template_chars:
+                out.skipped_cards += 1
+                continue
             cl = int(ord_) + 1 if nt.cloze else None
             tag_list = [t for t in str(tags or "").split() if t]
             ctx = Ctx(values, deck, nt.name, tag_list, cl)
@@ -291,17 +305,35 @@ def _unicase(a: str, b: str) -> int:
     return (a > b) - (a < b)
 
 
-def _lock_down(conn: sqlite3.Connection) -> None:
+def _lock_down(conn: sqlite3.Connection, deadline_s: float) -> None:
+    """Reads only, no recursion and a wall-clock deadline: a crafted collection cannot hang a worker."""
     # Anki's own tables index names with its `unicase` collation; SQLite cannot plan a query without it.
     conn.create_collation("unicase", _unicase)
 
     def authorizer(action: int, *_: object) -> int:
-        allowed = {sqlite3.SQLITE_SELECT, sqlite3.SQLITE_READ, sqlite3.SQLITE_FUNCTION, sqlite3.SQLITE_RECURSIVE}
+        # No SQLITE_RECURSIVE: a view or query with a never-ending recursive CTE is refused at prepare time.
+        allowed = {sqlite3.SQLITE_SELECT, sqlite3.SQLITE_READ, sqlite3.SQLITE_FUNCTION}
         return sqlite3.SQLITE_OK if action in allowed else sqlite3.SQLITE_DENY
+
+    stop_at = time.monotonic() + deadline_s
+
+    def progress() -> int:
+        return 1 if time.monotonic() > stop_at else 0  # non-zero aborts the running statement
 
     conn.execute("pragma query_only = on")
     conn.execute("pragma trusted_schema = off")
     conn.set_authorizer(authorizer)
+    conn.set_progress_handler(progress, 1000)
+
+
+def _require_plain_tables(conn: sqlite3.Connection) -> None:
+    """A real Anki collection has tables and indexes only. A view or a trigger can hide arbitrary queries behind a
+    table name, so a package that has one is refused before any card is read."""
+    if conn.execute("select count(*) from sqlite_master where type in ('view', 'trigger')").fetchone()[0]:
+        raise ApkgError("anki_corrupt")
+    have = {r[0] for r in conn.execute("select name from sqlite_master where type = 'table'")}
+    if not {"notes", "cards"} <= have:
+        raise ApkgError("anki_corrupt")
 
 
 def _deck_name(raw: str) -> str:
@@ -361,24 +393,60 @@ class Ctx:
     cloze: int | None
 
 
-_CLOZE = re.compile(r"\{\{c(\d+)::(.*?)(?:::(.*?))?\}\}", re.DOTALL)
 _SECTION = re.compile(r"\{\{([#^])\s*([^{}]+?)\s*\}\}((?:(?!\{\{[#^]).)*?)\{\{/\s*\2\s*\}\}", re.DOTALL)
 _TOKEN = re.compile(r"\{\{\s*([^{}#^/][^{}]*?)\s*\}\}")
 _TAGS = re.compile(r"<[^>]*>")
 
 
-def cloze_text(text: str, ordinal: int | None, mode: str) -> str:
-    """`{{c1::answer::hint}}` for card `ordinal`: the question hides it, the answer shows it in bold."""
+_CLOZE_TOKEN = re.compile(r"\{\{c(\d{1,4})::|\}\}|::")
 
-    def sub(m: re.Match[str]) -> str:
-        n, body, hint = int(m.group(1)), m.group(2), m.group(3)
-        if n != ordinal:
-            return body
-        if mode == "q":
-            return f"<b>[{hint}]</b>" if hint else "<b>[...]</b>"
-        return f"<b>{body}</b>"
 
-    return _CLOZE.sub(sub, text)
+def cloze_text(text: str, ordinal: int | None, mode: str, max_depth: int = 32) -> str:
+    """`{{c1::answer::hint}}` for card `ordinal`: the question hides it, the answer shows it in bold.
+
+    One left-to-right pass over a fixed token set with an explicit stack (nesting deeper than `max_depth` and
+    unclosed openers stay literal text): linear in the text, no backtracking, whatever a deck's author wrote.
+    """
+    # Frame: [cloze number, answer pieces, hint pieces or None]; frames[0] is the plain text around the clozes.
+    frames: list[list[Any]] = [[0, [], None]]
+    last = 0
+
+    def put(chunk: str) -> None:
+        if chunk:
+            top = frames[-1]
+            (top[2] if top[2] is not None else top[1]).append(chunk)
+
+    for m in _CLOZE_TOKEN.finditer(text):
+        tok = m.group(0)
+        if tok == "::":
+            if len(frames) > 1 and frames[-1][2] is None:  # the first `::` inside a cloze starts its hint
+                put(text[last : m.start()])
+                frames[-1][2] = []
+                last = m.end()
+        elif tok == "}}":
+            if len(frames) > 1:
+                put(text[last : m.start()])
+                num, answer, hint = frames.pop()
+                body = "".join(answer)
+                if num != ordinal:
+                    piece = body
+                elif mode == "q":
+                    hint_text = "".join(hint) if hint is not None else ""
+                    piece = f"<b>[{hint_text}]</b>" if hint_text else "<b>[...]</b>"
+                else:
+                    piece = f"<b>{body}</b>"
+                put(piece)
+                last = m.end()
+        elif len(frames) <= max_depth:
+            put(text[last : m.start()])
+            frames.append([int(m.group(1)), [], None])
+            last = m.end()
+    put(text[last:])
+    while len(frames) > 1:  # never closed: its text is literal
+        num, answer, hint = frames.pop()
+        raw = f"{{{{c{num}::" + "".join(answer) + ("::" + "".join(hint) if hint is not None else "")
+        put(raw)
+    return "".join(frames[0][1])
 
 
 def render(template: str, ctx: Ctx, mode: str, front_side: str) -> str:

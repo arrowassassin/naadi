@@ -138,22 +138,23 @@ def test_a_zip_bomb_stops_at_the_cap(tmp_path: Path) -> None:
     assert e.value.code == "anki_too_large"
 
 
-def test_a_hostile_sqlite_cannot_write(tmp_path: Path) -> None:
+def test_a_trigger_in_the_collection_is_refused(tmp_path: Path) -> None:
     import sqlite3
 
     raw = build_apkg("anki2", [NoteSpec(BASIC.mid, ["a", "b"], "g")])
     with zipfile.ZipFile(io.BytesIO(raw)) as z:
-        db = bytearray(z.read("collection.anki2"))
+        db = z.read("collection.anki2")
     dbp = tmp_path / "c.db"
-    dbp.write_bytes(bytes(db))
+    dbp.write_bytes(db)
     c = sqlite3.connect(dbp)
     c.execute("create trigger t after insert on notes begin delete from cards; end")
     c.commit()
     c.close()
     p = tmp_path / "x.apkg"
     p.write_bytes(_zip({"collection.anki2": dbp.read_bytes(), "media": b"{}"}))
-    with Package(p) as pkg:
-        assert len(pkg.parse().cards) == 1  # reading never fires a trigger
+    with pytest.raises(ApkgError) as e, Package(p) as pkg:
+        pkg.parse()
+    assert e.value.code == "anki_corrupt"
 
 
 def test_card_cap_counts_the_rest_as_skipped(tmp_path: Path) -> None:
@@ -161,3 +162,90 @@ def test_card_cap_counts_the_rest_as_skipped(tmp_path: Path) -> None:
     with Package(write_apkg(tmp_path / "d.apkg", "anki2", many), AnkiLimits(max_cards=3)) as pkg:
         parsed = pkg.parse()
     assert len(parsed.cards) == 3 and parsed.skipped_cards == 2
+
+
+# ── review20: crafted packages must not hang a worker ──
+
+
+def _crafted(tmp_path: Path, sql: str) -> Path:
+    """A real collection plus extra SQL (a view, a trigger...), zipped as collection.anki2."""
+    import sqlite3
+
+    raw = build_apkg("anki2", [NoteSpec(BASIC.mid, ["a", "b"], "g")])
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        db = z.read("collection.anki2")
+    dbp = tmp_path / "c.db"
+    dbp.write_bytes(db)
+    c = sqlite3.connect(dbp)
+    c.executescript(sql)
+    c.commit()
+    c.close()
+    p = tmp_path / "x.apkg"
+    p.write_bytes(_zip({"collection.anki2": dbp.read_bytes(), "media": b"{}"}))
+    return p
+
+
+def test_a_view_with_an_endless_recursive_query_is_refused_at_once(tmp_path: Path) -> None:
+    import time
+
+    p = _crafted(
+        tmp_path,
+        "drop table cards; create view cards as with recursive r(x) as (select 1 union all select x+1 from r)"
+        " select 0 ord, 0 odid, 1 did, 1 nid, x id from r where x < 0;",
+    )
+    started = time.monotonic()
+    with pytest.raises(ApkgError) as e, Package(p) as pkg:
+        pkg.parse()
+    assert e.value.code == "anki_corrupt" and time.monotonic() - started < 3
+
+
+def test_triggers_and_views_are_refused_even_when_harmless(tmp_path: Path) -> None:
+    with pytest.raises(ApkgError), Package(_crafted(tmp_path, "create view v as select 1;")) as pkg:
+        pkg.parse()
+    with (
+        pytest.raises(ApkgError),
+        Package(_crafted(tmp_path, "create trigger t after insert on notes begin select 1; end;")) as pkg,
+    ):
+        pkg.parse()
+
+
+def test_a_slow_query_is_stopped_by_the_deadline(tmp_path: Path) -> None:
+    import time
+
+    # A real table, but a huge cross product is what a hostile `notes` x `cards` join could cost: the deadline stops it.
+    raw = build_apkg("anki2", [NoteSpec(BASIC.mid, [f"q{i}", "a"], f"g{i}") for i in range(3000)])
+    p = tmp_path / "d.apkg"
+    p.write_bytes(raw)
+    started = time.monotonic()
+    with Package(p, AnkiLimits(parse_seconds=0.0)) as pkg, pytest.raises(ApkgError):
+        pkg.parse()
+    assert time.monotonic() - started < 3
+
+
+@pytest.mark.parametrize("n", [500, 5000, 50_000])
+def test_cloze_rendering_is_linear_whatever_the_field_holds(n: int) -> None:
+    import time
+
+    started = time.monotonic()
+    for text in ("{{c1::" * n, "{{c1::a}}" * n, "{{c1::a::" * n, "}}::" * n, "{{c1::" * n + "x" + "}}" * n):
+        cloze_text(text, 1, "q")
+        cloze_text(text, 1, "a")
+    assert time.monotonic() - started < 3, n
+
+
+def test_cloze_semantics_nesting_hints_and_literals() -> None:
+    assert cloze_text("{{c1::a}} {{c2::b::hint}}", 2, "q") == "a <b>[hint]</b>"
+    assert cloze_text("{{c1::a {{c2::b}} c}}", 1, "q") == "<b>[...]</b>"
+    assert cloze_text("{{c1::a {{c2::b}} c}}", 2, "q") == "a <b>[...]</b> c"
+    assert cloze_text("{{c1::a {{c2::b}} c}}", 1, "a") == "<b>a b c</b>"
+    assert cloze_text("{{c1::x::h::more}}", 1, "q") == "<b>[h::more]</b>"
+    assert cloze_text("no cloze :: here }} {{c9::open", 1, "q") == "no cloze :: here }} {{c9::open"
+    deep = "{{c1::" * 40 + "x" + "}}" * 40
+    assert "x" in cloze_text(deep, 1, "a")  # beyond the depth cap the extra openers are literal text, not an error
+
+
+def test_oversized_fields_and_templates_are_skipped_not_rendered(tmp_path: Path) -> None:
+    big = [NoteSpec(CLOZE.mid, ["{{c1::" * 5000, ""], "g", cards=[0]), NoteSpec(BASIC.mid, ["ok", "fine"], "g2")]
+    with Package(write_apkg(tmp_path / "d.apkg", "anki2", big), AnkiLimits(max_field_chars=1000)) as pkg:
+        parsed = pkg.parse()
+    assert [c.guid for c in parsed.cards] == ["g2"] and parsed.skipped_cards == 1

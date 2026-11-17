@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from typing import Any, Protocol
 
 BATCH = 50
+MAX_ATTEMPTS = 3
 _DUR = re.compile(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?")
 
 
@@ -71,17 +72,24 @@ class GoogleYouTube:
     def _execute(self, request: Any, units: int = 1) -> dict[str, Any]:
         from googleapiclient.errors import HttpError
 
-        self.quota.spend(units)
-        try:
-            out: dict[str, Any] = request.execute(num_retries=2)
-        except HttpError as exc:
-            status = getattr(exc.resp, "status", 0)
-            reason = str(getattr(exc, "reason", "") or "")
-            text = str(exc.content[:400]) if exc.content else ""
-            if status in (403, 429) and ("quota" in reason.lower() or "quotaExceeded" in text or "rateLimit" in text):
-                raise QuotaExceeded("youtube quota") from None
-            raise YouTubeError(f"http_{status}") from None
-        return out
+        # Every attempt is a request YouTube may count, so every attempt spends units: the ledger is never optimistic.
+        for attempt in range(MAX_ATTEMPTS):
+            self.quota.spend(units)
+            try:
+                out: dict[str, Any] = request.execute(num_retries=0)
+            except HttpError as exc:
+                status = getattr(exc.resp, "status", 0)
+                reason = str(getattr(exc, "reason", "") or "")
+                text = str(exc.content[:400]) if exc.content else ""
+                if status in (403, 429) and (
+                    "quota" in reason.lower() or "quotaExceeded" in text or "rateLimit" in text
+                ):
+                    raise QuotaExceeded("youtube quota") from None
+                if status >= 500 and attempt + 1 < MAX_ATTEMPTS:
+                    continue  # a server error: try again, spending again
+                raise YouTubeError(f"http_{status}") from None
+            return out
+        raise YouTubeError("http_0")  # unreachable: the loop returns or raises
 
     def playlist_video_ids(self, playlist_id: str, limit: int) -> list[str]:
         ids: list[str] = []

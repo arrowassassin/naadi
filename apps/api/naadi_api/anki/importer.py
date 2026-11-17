@@ -268,8 +268,8 @@ async def import_package(
             async with conn.cursor() as cur2:
                 await cur2.executemany(
                     "insert into public.flashcards (owner_user_id, deck, front_html, back_html, front_doc, back_doc,"
-                    " origin, tags, anki_guid, anki_note_type)"
-                    " values (%s, %s, %s, %s, %s, %s, 'anki_import', %s, %s, %s)"
+                    " origin, source_id, tags, anki_guid, anki_note_type)"
+                    " values (%s, %s, %s, %s, %s, %s, 'anki_import', 'user-upload', %s, %s, %s)"
                     " on conflict (owner_user_id, anki_guid) where anki_guid is not null do nothing",
                     rows,
                 )

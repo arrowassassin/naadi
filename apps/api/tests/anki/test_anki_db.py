@@ -202,3 +202,43 @@ def test_a_student_cannot_write_anki_columns_through_rls(world: World, pg: psyco
             " values (%s, 'x', 'f', 'b', 'anki_import')",
             (world.a,),
         )
+
+
+def test_imported_cards_name_their_source_and_a_student_cannot_stamp_anki_columns(
+    client: TestClient, key: Any, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    import pytest
+    from psycopg import errors
+
+    assert post(client, key, world.a, deck_bytes()).status_code == 200
+    assert pg.execute(
+        "select count(*) filter (where source_id = 'user-upload'), count(*) from public.flashcards"
+        " where owner_user_id = %s and origin = 'anki_import'",
+        (world.a,),
+    ).fetchone() == (4, 4)
+    # a typed card cannot carry an Anki id, an Anki note type or a source (those are the import API's columns)
+    with as_user(pg, world.a) as conn:
+        for col, val in (("anki_guid", "x"), ("anki_note_type", "Basic"), ("source_id", "user-upload")):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(
+                    f"insert into public.flashcards (owner_user_id, deck, front_html, back_html, origin, {col})"  # noqa: S608
+                    " values (%s, 'x', 'f', 'b', 'user', %s)",
+                    (world.a, val),
+                )
+        conn.execute(
+            "insert into public.flashcards (owner_user_id, deck, front_html, back_html, origin)"
+            " values (%s, 'x', 'f', 'b', 'user')",
+            (world.a,),
+        )
+        with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(
+                "update public.flashcards set anki_guid = 'stamp' where owner_user_id = %s and origin = 'user'",
+                (world.a,),
+            )
+    # and an imported card must name the upload source
+    with pytest.raises(errors.CheckViolation), pg.transaction():
+        pg.execute(
+            "insert into public.flashcards (owner_user_id, deck, front_html, back_html, origin)"
+            " values (%s, 'x', 'f', 'b', 'anki_import')",
+            (world.a,),
+        )

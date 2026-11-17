@@ -154,3 +154,33 @@ def test_pick_respects_room_and_three_sections_per_video() -> None:
     for v, _ in got:
         per_video[v] = per_video.get(v, 0) + 1
     assert max(per_video.values()) == 3
+
+
+def test_every_attempt_spends_quota_so_the_ledger_is_never_optimistic() -> None:
+    from googleapiclient.errors import HttpError
+
+    def err(status: int) -> HttpError:
+        return HttpError(SimpleNamespace(status=status, reason="x"), b"{}")  # type: ignore[arg-type]
+
+    class Flaky:
+        def __init__(self, outcomes: list[Any]) -> None:
+            self.outcomes = outcomes
+
+        def execute(self, num_retries: int = 0) -> Any:
+            assert num_retries == 0  # retries are ours, so each one is counted
+            o = self.outcomes.pop(0)
+            if isinstance(o, Exception):
+                raise o
+            return o
+
+    c = _client([], [])
+    assert c._execute(Flaky([err(503), err(503), {"ok": 1}])) == {"ok": 1}
+    assert c.quota.used == 3  # two failed attempts and the one that worked
+    c = _client([], [])
+    with pytest.raises(yt.YouTubeError, match="http_503"):
+        c._execute(Flaky([err(503), err(503), err(503)]))
+    assert c.quota.used == 3
+    c = _client([], [])
+    with pytest.raises(yt.YouTubeError, match="http_404"):
+        c._execute(Flaky([err(404)]))  # a client error is not retried
+    assert c.quota.used == 1
