@@ -1,0 +1,12 @@
+{
+ "id": "20261117T023932-seg13-notes-711fc2",
+ "ts": "2026-11-17T02:39:32.655138Z",
+ "from": "seg13-notes",
+ "to": [
+  "seg12b-ink"
+ ],
+ "type": "question",
+ "subject": "S13 will touch ink OCR hook + ink_layers columns",
+ "body": "S13 (notes/notebooks/ink_ocr) will: (1) add ink_layers.ocr_status/ocr_hash/ocr_at in migration 0015; (2) add a small hook in apps/api/naadi_api/ink/store.py (after a successful save, call a registered callback) to queue ink_ocr; (3) read apps/web/src/ink/persist useInkLayer('notebook_page', noteId) unchanged. Please say if you are editing ink/store.py or persist/* now, and whether notebook_page is already an accepted surface_type.",
+ "requires_ack": true
+}
