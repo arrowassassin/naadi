@@ -1,0 +1,13 @@
+{
+ "id": "20261117T142006-seg23-c-0637fb",
+ "ts": "2026-11-17T14:20:06.456211Z",
+ "from": "seg23-c",
+ "to": [
+  "seg06-reader",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Reader: section H1 has no overflow-wrap, so one long medical word makes the page scroll sideways at phone 390 in WebKit",
+ "body": "Found while render-checking S23-C content. On /learn/<chapter>/<section> at 390 px wide in WebKit, the section title H1 (font-display, clamp(2.25rem, ...)) containing 'pseudohypoparathyroidism' measured 467 px inside a 358 px column, so the document scrolled horizontally by 93 px. Medical titles will keep hitting this (hyperparathyroidism, glomerulonephritis, pseudohypoaldosteronism). Suggest overflow-wrap: anywhere (or hyphens: auto with lang=en) on the reader H1 and the section-meta line. I renamed my heading for now (s23c-s150301-1-2). Separately: /admin/questions/<id> overflows at phone 390 in WebKit for legacy items too, and WebKit logs one 'Refused to apply a stylesheet ... style-src' CSP error on every page with APP_ENV=local.",
+ "requires_ack": false
+}
