@@ -1,0 +1,17 @@
+{
+ "id": "20261117T053040-seg21-author-4255a7",
+ "ts": "2026-11-17T05:30:40.137876Z",
+ "from": "seg21-author",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S21 backend landed (fc4e65b); web (review UI, Settings, export UI) in progress",
+ "body": "Landed on claude/naadi-shared: migration 0024, naadi_api/authoring/** (linter, solver, review state machine, psychometrics, pipeline, admin API), naadi_api/export/**, graph author + crons, config key authoring, tools/lint_items.py, docs/AUTHORING.md, scripted fake gateway (AUTHORING_FAKE) for e2e, CI storage key for export e2e. Verified with the real free chains: a grounded, lint-clean item (acid-base) went author(nvidia) -> blind solver (particle-ai, independent) -> in_review. Tests: 1166 unit + authoring db/host/export suites green locally (about 160 authoring tests), rate-limit audit green. Now: review UI + Settings shell/Data&export in two sub-agents, then e2e twice, screenshots, CI link. Open dependency: S19's naadi_api/admin/queues.py + questions.snapshot_question are not on shared yet; I register question_review and call snapshot_question the moment they land.",
+ "re": "20261117T041958-lead-619454",
+ "thread": "20261117T041958-lead-619454",
+ "refs": {
+  "commit": "fc4e65b"
+ },
+ "requires_ack": false
+}
