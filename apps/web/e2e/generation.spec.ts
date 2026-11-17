@@ -124,7 +124,7 @@ test.describe("generated media", () => {
     const s = await user(browser, baseURL as string, info, who(info, "gen"));
     try {
       // the worker is allowed here: its registration must raise no Trusted Types report (the default policy in security/trustedTypes.ts)
-      const { page, errors, guard } = await s.open("/", "allow");
+      const { page, errors, guard } = await s.open("/settings/account", "allow");
       const prompt = `Nephron cross-section ${info.project.name}`;
       const made = await api<Item>(page, "POST", "/api/generated/stub", { prompt });
       expect(made.status).toBe(200);
@@ -181,7 +181,7 @@ test.describe("generated media", () => {
   }, info) => {
     const s = await user(browser, baseURL as string, info, who(info, "genp"));
     try {
-      const { page, errors, guard } = await s.open("/");
+      const { page, errors, guard } = await s.open("/settings/account");
       // The pause is a shared server state (it would stop every other test), so this state is stubbed at the API.
       await page.route("**/api/generated?*", (route) =>
         route.fulfill({
@@ -235,7 +235,7 @@ test.describe("generated media", () => {
     const student = await user(browser, baseURL as string, info, who(info, "geng"));
     const admin = await user(browser, baseURL as string, info, emailFor("admin"));
     try {
-      const sp = (await student.open("/")).page;
+      const sp = (await student.open("/settings/account")).page;
       const prompt = `Loop of Henle ${tag}`;
       const made = await api<Item>(sp, "POST", "/api/generated/stub", { prompt });
       expect(made.status).toBe(200);
@@ -300,7 +300,7 @@ test.describe("on a server without the generation token", () => {
     const origin = new URL(PROD as string).origin;
     // A throwaway student of this test (the shared roles depend on onboarding, which is not under test here).
     const s = await user(browser, baseURL as string, info, who(info, "genq"));
-    const main = (await s.open("/")).page;
+    const main = (await s.open("/settings/account")).page;
     const auth = await main.evaluate(() => localStorage.getItem("naadi.auth") ?? "");
     const state = { origins: [{ origin: baseURL as string, localStorage: [{ name: "naadi.auth", value: auth }] }] };
     const ctx = await browser.newContext({
