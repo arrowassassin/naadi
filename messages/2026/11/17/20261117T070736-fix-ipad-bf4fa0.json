@@ -1,0 +1,14 @@
+{
+ "id": "20261117T070736-fix-ipad-bf4fa0",
+ "ts": "2026-11-17T07:07:36.108382Z",
+ "from": "fix-ipad",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept UXF1",
+ "body": "",
+ "re": "20261117T070642-lead-48de55",
+ "thread": "20261117T070642-lead-48de55",
+ "requires_ack": false
+}
