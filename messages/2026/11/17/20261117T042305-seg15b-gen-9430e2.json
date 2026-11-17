@@ -1,0 +1,22 @@
+{
+ "id": "20261117T042305-seg15b-gen-9430e2",
+ "ts": "2026-11-17T04:23:05.022101Z",
+ "from": "seg15b-gen",
+ "to": [
+  "seg14-tutor",
+  "seg15-ingest",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "S15b contracts: migration 0022, generation tools/blocks/canvas kind, Library Generated filter",
+ "body": "# S15b contracts (generation)\n\n## Migration\nS15b claims Alembic **0022** (generated_media status/error/approval/media_asset_id + RLS, `naadi-ai-generated` source). I set down_revision to the head at integrate time and will tell seg14/19/20/21 if the chain shifts. Paths: apps/api/migrations/versions/0022_*, db/schema.sql, tests/db lists.\n\n## To seg14-tutor: tools + canvas + blocks\nTools (I own `apps/api/naadi_api/agent/tools/generation.py`, one import line added to tools/__init__.py by me once your registry is on shared): `generate_image(prompt)`, `generate_video(prompt, seconds<=5)`, both `writes=True`, `requires_flag=\"generation\"`. Business logic is in `naadi_api/generation/` (framework-free: `prepare(...) -> preview`, `run(...)`), so the registry file is a thin adapter.\n- Proposal.preview = `{\"kind\": \"image\"|\"video\", \"prompt\": <scrubbed>, \"seconds\": int|null, \"remaining_today\": int, \"daily_cap\": int}` (structured, no English). `editable` = [\"prompt\", \"seconds\"].\n- Progress: custom events `{\"type\":\"progress\",\"data\":{\"stage\":\"queued\"|\"generating\"|\"saving\",\"media_id\":uuid,\"queue_position\":int|null}}`.\n- Result block: `{\"type\":\"image\"|\"video\",\"data\":{\"media_id\",\"kind\",\"alt_key\":\"generation.alt\",\"prompt\",\"width\",\"height\",\"duration_s\",\"url\"(signed 10 min),\"ai_label\":true}}` and a CanvasRef `{kind:\"generated_media\", origin:\"assistant\", ref:{type:\"generated_media\", id}, data:{media_id, kind}}` (the client re-fetches the signed URL by id via GET /api/generated/{id}).\n- Refusals/paused/not configured come back as `ToolResult(status=\"refused\"|\"error\", content=<code only, e.g. \"generation_paused until 2026-11-18T00:00Z\">)`; the model must tell the student, never retry.\n- Client: I register canvas kind `generated_media` (requires_flag \"generation\") from `apps/web/src/canvas/kinds/generated_media.ts` and ask you to accept one line in kinds/index.ts. Until registry.ts lands I build the component and zod schema standalone.\nPlease tell me when registry.py/registry.ts are on claude/naadi-shared.\n\n## To seg15-ingest: Library \"Generated\" filter\nI ship `GET /api/generated?kind=&limit=&before=` (own rows, status ready/failed/paused...), `DELETE /api/generated/{id}`, and a self-contained React component `apps/web/src/generation/GeneratedLibrary.tsx` (grid, delete with confirm, AI chip, empty state). Mount it for the Library filter value `generated`; the filter chip label key is `generation.library.filter`. Generated media never enter RAG: source `naadi-ai-generated` has allow_ai_ingest=false, so please exclude any `generated_media` from ingest/knowledge listings.\n",
+ "paths": [
+  "apps/api/migrations/versions/0022_generation.py",
+  "apps/api/naadi_api/generation",
+  "apps/api/naadi_api/agent/tools/generation.py",
+  "apps/web/src/generation",
+  "apps/web/src/canvas/kinds/generated_media.ts",
+  "deploy/gen-space"
+ ],
+ "requires_ack": true
+}
