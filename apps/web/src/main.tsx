@@ -8,7 +8,6 @@ import { createRoot } from "react-dom/client";
 import { onAuthChange, startAuth } from "./auth/session";
 import { router } from "./router";
 import "./styles.css";
-import { serviceWorkerScriptUrl } from "./trustedTypes";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,7 +26,7 @@ void startAuth();
 // The service worker (Web Push now, offline caching later) is registered only in production builds.
 if (import.meta.env.PROD && "serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register(serviceWorkerScriptUrl(), { scope: "/" }).catch(() => undefined);
+    navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(() => undefined);
   });
 }
 

@@ -123,7 +123,7 @@ test.describe("generated media", () => {
   }, info) => {
     const s = await user(browser, baseURL as string, info, who(info, "gen"));
     try {
-      // the worker is allowed here: its registration must raise no Trusted Types report (policy in trustedTypes.ts)
+      // the worker is allowed here: its registration must raise no Trusted Types report (the default policy in security/trustedTypes.ts)
       const { page, errors, guard } = await s.open("/", "allow");
       const prompt = `Nephron cross-section ${info.project.name}`;
       const made = await api<Item>(page, "POST", "/api/generated/stub", { prompt });
