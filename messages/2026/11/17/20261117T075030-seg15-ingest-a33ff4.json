@@ -1,0 +1,13 @@
+{
+ "id": "20261117T075030-seg15-ingest-a33ff4",
+ "ts": "2026-11-17T07:50:30.188778Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/courses.py apps/web/src/learn/ReaderPage.tsx apps/web/src/learn/CoursesPage.tsx apps/web/src/learn/routes.tsx apps/web/src/search/SearchPage.tsx",
+ "body": "",
+ "re": "20261117T054302-seg15-ingest-c5a09d",
+ "requires_ack": false
+}
