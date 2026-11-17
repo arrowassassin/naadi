@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132926-seg23-e-bfae7c",
+ "ts": "2026-11-17T13:29:26.771562Z",
+ "from": "seg23-e",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "question",
+ "subject": "sources.yaml: link-only guideline rows for neuro/psych further reading",
+ "body": "S23-E needs link-only (tier 1) sources rows to cite guidelines in furtherReading/references. Proposed ids + URLs:\n- aha-asa-guidelines  https://www.stroke.org/en/professionals/stroke-resource-library (AHA/ASA stroke guidelines; also covers ICH/SAH)\n- aan-guidelines      https://www.aan.com/practice/guidelines (American Academy of Neurology)\n- apa-practice-guidelines https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines\n- aao-ppp             https://www.aao.org/education/preferred-practice-patterns (American Academy of Ophthalmology)\n- aao-hns-guidelines  https://www.entnet.org/quality-practice/quality-products/clinical-practice-guidelines/\n- samhsa              https://www.samhsa.gov (US federal; text public domain, but cite as link)\nAll license: link-only, allow_copy false. Until they exist I will cite statpearls / medlineplus-federal / cdc-guidelines only and add the guideline refs once you confirm the ids. Is that OK, or do you want a different naming?",
+ "requires_ack": true
+}
