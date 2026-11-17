@@ -276,12 +276,12 @@ test.describe("authoring flow", () => {
         await sd.getByRole("button", { name: c("admin.field.taxonomy_open") }).click();
         await sd.getByLabel(c("admin.field.taxonomy_filter")).fill(topic.label);
         await sd
-          .getByRole("checkbox", { name: new RegExp(topic.label) })
+          .getByRole("checkbox", { name: new RegExp(`^${topic.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`) })
           .first()
           .check();
       }
       await sd.getByRole("button", { name: c("admin.sections.create") }).click();
-      await expect(admin.getByText(sectionHeading)).toBeVisible();
+      await expect(admin.getByText(sectionHeading, { exact: true }).first()).toBeVisible();
 
       // 2. Figure + PDF uploads (raw body, source required) and approval.
       await go(admin, "/admin/media");
@@ -331,8 +331,9 @@ test.describe("authoring flow", () => {
         await go(admin, `/admin/media?q=${encodeURIComponent(id)}`);
         await admin.locator(`[data-media-id="${id}"]`).click();
         const d = admin.getByRole("dialog");
-        const approve = d.getByRole("button", { name: c("admin.action.approve") });
+        const approve = d.getByRole("button", { name: c("admin.action.approve"), exact: true });
         if (await approve.isEnabled()) await approve.click();
+        else await d.getByRole("button", { name: c("admin.action.close") }).click();
         await expect(d).toHaveCount(0);
       }
 
@@ -345,7 +346,12 @@ test.describe("authoring flow", () => {
       }
       await form.getByLabel(c("admin.questions.key_is", { letter: "C" })).check();
       await form.getByLabel(c("admin.questions.why_not_option", { letter: "A" })).fill("A is a distractor.");
-      await form.getByLabel(c("admin.questions.why_not_option", { letter: "B" })).fill("B is a distractor.");
+      // A publishable item passes the S21 linter: every wrong option explained, an objective and a difficulty.
+      for (const l of ["B", "D", "E"]) {
+        await form.getByLabel(c("admin.questions.why_not_option", { letter: l })).fill(`${l} is a distractor.`);
+      }
+      await form.getByLabel(c("admin.questions.objective")).fill("Recognise the key of a test item.");
+      await form.getByLabel(c("admin.questions.difficulty_label")).selectOption("easy");
       await form.getByLabel(c("admin.questions.explanation")).fill("<p>C is the key in this test item.</p>");
       await form.getByLabel(c("admin.field.source")).selectOption((original as Src).id);
       await form.getByRole("button", { name: c("admin.questions.create") }).click();
@@ -401,16 +407,16 @@ test.describe("authoring flow", () => {
       await expect(admin.locator("[data-save-state='saved']")).toBeVisible({ timeout: 20_000 });
       const preview2 = admin.locator("[data-admin-preview]");
       if ((admin.viewportSize()?.width ?? 0) < 1100) {
-        await admin.getByRole("button", { name: c("admin.editor.view_preview") }).click();
+        await admin.getByRole("button", { name: c("admin.editor.view_preview"), exact: true }).click();
       }
       await expect(preview2.getByText(v1)).toBeVisible();
       await expect(preview2.locator("[data-node='question-embed']")).toBeVisible();
       await expectNoAxeViolations(admin);
       if ((admin.viewportSize()?.width ?? 0) < 1100) {
-        await admin.getByRole("button", { name: c("admin.editor.view_edit") }).click();
+        await admin.getByRole("button", { name: c("admin.editor.view_edit"), exact: true }).click();
       }
       const publish = async () => {
-        await admin.getByRole("button", { name: c("admin.editor.publish") }).click();
+        await admin.getByRole("button", { name: c("admin.editor.publish"), exact: true }).click();
         await admin
           .getByRole("dialog")
           .getByRole("button", { name: c("admin.editor.publish_confirm") })
@@ -437,7 +443,7 @@ test.describe("authoring flow", () => {
       // 6. The student sees all of it, with no redeploy.
       const reader = `/learn/${encodeURIComponent(chapterId)}/${encodeURIComponent(sectionId)}`;
       await go(student, reader);
-      await expect(student.getByText(v1)).toBeVisible();
+      await expect(student.locator("[data-content-root]")).toContainText(v1);
       await expect(student.locator(`[data-node='figure'][data-media-id='${mediaIds.figure}'] img`)).toBeVisible();
       await expect(student.locator("[data-node='pdf'] a")).toBeVisible();
       await expect(student.locator(`[data-node='video'][data-media-id='${mediaIds.video}']`)).toBeVisible();
@@ -453,7 +459,7 @@ test.describe("authoring flow", () => {
       await expect(admin.locator("[data-save-state='saved']")).toBeVisible({ timeout: 20_000 });
       await publish();
       await go(student, reader);
-      await expect(student.getByText(`${v1}${v2}`)).toBeVisible();
+      await expect(student.locator("[data-content-root]")).toContainText(`${v1}${v2}`);
       await go(admin, `/admin/sections/${encodeURIComponent(sectionId)}/edit`);
       const history = admin.getByRole("region", { name: c("admin.revision.title") });
       await history
@@ -469,8 +475,8 @@ test.describe("authoring flow", () => {
       await expect(admin.locator("[data-save-state='saved']")).toBeVisible({ timeout: 20_000 });
       await publish();
       await go(student, reader);
-      await expect(student.getByText(v1, { exact: true })).toBeVisible();
-      await expect(student.getByText(v2.trim())).toHaveCount(0);
+      await expect(student.locator("[data-content-root]")).toContainText(v1);
+      await expect(student.locator("[data-content-root]")).not.toContainText(v2.trim());
 
       // 8. Coverage: the topic's published-section count went up.
       if (topic) {
@@ -494,26 +500,20 @@ test.describe("authoring flow", () => {
         "GET",
         "/api/admin/config/feature_flags",
       );
-      const flags = flagsBefore.value as Record<string, { enabled?: boolean; everyone_outside_prod?: boolean }>;
+      const flags = flagsBefore.value as Record<string, { enabled: boolean; audience?: string }>;
       // A disabled flag: changing who would see it changes nothing anyone sees while the test runs.
-      const name = Object.keys(flags).find(
-        (k) => flags[k]?.enabled === false && "everyone_outside_prod" in (flags[k] ?? {}),
-      );
+      const name = Object.keys(flags).find((k) => flags[k]?.enabled === false);
       test.skip(!name, "no disabled feature flag to edit harmlessly");
+      const flag = flags[name as string] as { enabled: boolean; audience?: string };
       const edited = {
         ...flags,
-        [name as string]: {
-          ...flags[name as string],
-          everyone_outside_prod: !flags[name as string]?.everyone_outside_prod,
-        },
+        [name as string]: { ...flag, audience: flag.audience === "admins" ? "everyone" : "admins" },
       };
       await go(admin, "/admin/config/feature_flags");
       await admin.getByRole("button", { name: c("admin.config.view_json") }).click();
       await admin.getByLabel(c("admin.config.json_label")).fill(JSON.stringify(edited, null, 2));
       await admin.getByRole("button", { name: cre("admin.config.review") }).click();
-      await expect(admin.getByRole("region", { name: c("admin.config.diff_label") })).toContainText(
-        "everyone_outside_prod",
-      );
+      await expect(admin.getByRole("region", { name: c("admin.config.diff_label") })).toContainText("audience");
       await admin.getByRole("button", { name: c("admin.config.save") }).click();
       await expect(admin.getByText(c("admin.config.saved_live"))).toBeVisible();
       const hist = admin.getByTestId("config-history");

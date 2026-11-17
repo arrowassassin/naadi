@@ -18,7 +18,6 @@ import asyncio
 import datetime as dt
 import hashlib
 import io
-import os
 import re
 import secrets
 import uuid
@@ -33,8 +32,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from ..chapters_media import MediaUrlResolver
 from ..errors import ErrorResponse
+from ..export.storage import target_from
 from ..logs import get_logger
-from ..seed.cli import storage_target
 from ..seed.storage import StorageTarget
 from ..seed.svg import SvgError, sanitize_svg
 from .common import ADMIN_ERRORS, CONFLICT, INVALID, NOT_FOUND, ConsoleAdmin, Row, audit, not_found, one, rows, run_tx
@@ -87,8 +86,8 @@ def object_store_of(app: Any) -> ObjectStore | None:
     store: ObjectStore | None = getattr(app.state, "admin_object_store", None)
     if store is not None:
         return store
-    # Same resolution as the seed importer: a bare storage-api (local stack / CI) or the Supabase project.
-    target = storage_target(app.state.settings, os.environ.get("NAADI_STORAGE_URL") or None)
+    # A bare storage-api (local stack / CI: NAADI_STORAGE_URL with its own service key) or the Supabase project.
+    target = target_from(app.state.settings)
     return SupabaseObjectStore(target) if target else None
 
 
