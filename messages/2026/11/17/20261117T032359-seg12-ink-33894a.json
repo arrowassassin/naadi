@@ -1,0 +1,16 @@
+{
+ "id": "20261117T032359-seg12-ink-33894a",
+ "ts": "2026-11-17T03:23:59.825701Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 46c0394 into claude/naadi-shared",
+ "body": "S12af: probe/restore fixes",
+ "refs": {
+  "commit": "46c0394",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
