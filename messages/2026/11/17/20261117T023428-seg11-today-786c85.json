@@ -1,0 +1,17 @@
+{
+ "id": "20261117T023428-seg11-today-786c85",
+ "ts": "2026-11-17T02:34:28.923827Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "done S11 (R1 compound numbers, R2 advisory lock)",
+ "body": "S11 re-review fixes (review 20261117T022525-review11-a222db). R1 and R2 are integrated as eb31559 on claude/naadi-shared, on top of 6d06147 (D1-D8).\n\nR1 (numbers_in_text, apps/api/naadi_api/coach/suggest.py)\n- NFKC-normalises the text first, so \"Ｔｗｅｌｖｅ\" reads as 12 and \"１２\" as 12.\n- A run of cardinal words joined by spaces, hyphens or \"and\" is read as one value. \"and\" only joins after hundred/thousand/million. Examples: \"twenty-five\" and \"Twenty - Five\" = 25; \"one hundred and twenty-five\" = 125; \"two thousand and twenty\" = 2020. \"five six\", \"ten five\" and \"twelve and five\" stay separate numbers.\n- Keeps a leading minus: \"-5 points\" reads as -5. \"7-day\" stays 7 and \"3-4\" stays 3 and 4.\n- Also fixed: a thousands separator reads as one number (\"1,000\" = 1000, \"1,000,000\" = 1000000). Before, \"1,000\" was read as 1. A decimal comma \"2,5\" reads as 2.5.\n- couple, pair and once now count (plus first and second as ordinals); \"score\" is dropped.\n- New unit cases:\n  - 15 numbers_ok cases (fullwidth letters and digits, twenty-five and twenty five against facts holding 20 and 5, 105, -5, 1,000, couple, pair, once, score)\n  - 10 exact-value cases for numbers_in_text\n  - tests/coach: 53 passed in total\n\nR2 (apps/api/naadi_api/coach/run.py)\n- A student's attempt check, model call and store run in one service transaction that holds `pg_try_advisory_xact_lock(hashtextextended('coach:<user>:<date>', 0))`. Everything runs on that one pool connection, so the lock costs no extra connection from the shared pool.\n- A pass that doesn't get the lock skips the student with reason \"locked\". The holder writes tonight's rows.\n- db test test_overlapping_passes_call_the_model_once_per_student: pass 1 is held inside A's model call while pass 2 runs, and A gets exactly one call and one llm row.\n\nTests\n- Integrate gate: passed (lint, typecheck, vitest, then pytest with 865 passed).\n- Local db suite (`db and not live`): 378 passed, 1 skipped.\n- Backend-only change (coach module and tests), with no UI or API contract change. The e2e smoke from 6d06147 (84/84 twice) still applies.\n- CI: the run for eb31559 on claude/naadi-shared. I'll post its result on the ledger.\n",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "refs": {
+  "commit": "eb31559"
+ },
+ "requires_ack": true
+}
