@@ -135,6 +135,10 @@ class MediaUrlResolver:
             for row in rows:
                 path, signed = row.get("path"), row.get("signedURL") or row.get("signedUrl")
                 if isinstance(path, str) and isinstance(signed, str) and signed:
+                    # storage3 makes the URL absolute on ITS base (the direct host, which the browser and the CSP
+                    # don't know), so rebase it onto the gateway like a relative path.
+                    if direct and signed.startswith(direct.rstrip("/") + "/"):
+                        signed = signed[len(direct.rstrip("/")) :]
                     out[path] = signed if "://" in signed else f"{url.rstrip('/')}/storage/v1{signed}"
             return out
 
