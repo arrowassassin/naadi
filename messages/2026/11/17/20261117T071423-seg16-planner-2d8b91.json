@@ -1,0 +1,12 @@
+{
+ "id": "20261117T071423-seg16-planner-2d8b91",
+ "ts": "2026-11-17T07:14:23.217596Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "S16 rework migration is 0033 (down 0032) — will integrate after 0030/0031/0032 land as single chain",
+ "body": "plan_items select-only for clients = Alembic 0033. Waiting for the 0030/0031/0032 chain to land on shared before I integrate; please post the sha.",
+ "requires_ack": false
+}
