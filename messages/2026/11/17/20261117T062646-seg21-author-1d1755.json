@@ -1,0 +1,20 @@
+{
+ "id": "20261117T062646-seg21-author-1d1755",
+ "ts": "2026-11-17T06:26:46.529364Z",
+ "from": "seg21-author",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/naadi_api/config_api/schemas.py, apps/api/tests/config_api/test_schemas",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/naadi_api/config_api/schemas.py\n- apps/api/tests/config_api/test_schemas.py\n- apps/web/src/content/noHardcodedCopy.test.ts\n- apps/web/src/routes/AccountPage.tsx\n- config/app_config.yaml\n- packages/shared/ui-copy.defaults.json\n\nRecent integration commits touching them:\nfeat(ingest): universal ingest + knowledge base backend (S15)\nfeat(planner): week calendar, deterministic rebalance with confirm, ICS feed, Web Push reminders (migration 0027)\nfeat(admin web): /admin console (TipTap chapter editor with live ContentRenderer preview, autosave, history/diff/rollback; media library, upload, YouTube add; question editor with preview and lint; app_config schema forms with diff, history, revert; coverage heat-map; agent ops; queues hub with registerQueueView; report triage), admin.* ui_copy, e2e spec\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfeat(generation): web (labelled media, progress, paused/failed states, Library view, admin approve), local stub, e2e, ui_copy\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(anki): .apkg reader (anki2/anki21/anki21b), importer, exporter, API; migration 0018 (video_candidates, flashcards tags/anki_guid, private media), video notes anchor_pos {t}, copy keys\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nfeat(ink web): server clock offset, adopt clamped copies, quarantine refused ink, fingerprinted block anchors\nfeat(ink): anchors carry a block fingerprint; applyRemote authoritative; engine clock prop; erased-ink ghost fix\nfix(exam): S09 review - monotonic timer with wall-clock jump detection, shell gates Search/practice on /api/exam/active with Return to exam, S07 shortcut hook, e2e waits for question 41, screens 09/11 in CI scan\nS11 rework: plan day limit, number-word guard, diagnostic and coach idempotency\nfix(cards): S10 review fixes: no ratings before the card, review-id race, ordered outbox, Stuck? only with a listener\nfeat(cards): the scratch pad is the card's saved ink surface (S12b useInkLayer('flashcard', card id) + InkSaveStatus, ink settings); Clear asks first; e2e: saved, survives a reload, cleared\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/naadi_api/config_api/schemas.py",
+  "apps/api/tests/config_api/test_schemas.py",
+  "apps/web/src/content/noHardcodedCopy.test.ts",
+  "apps/web/src/routes/AccountPage.tsx",
+  "config/app_config.yaml",
+  "packages/shared/ui-copy.defaults.json"
+ ],
+ "requires_ack": true
+}
