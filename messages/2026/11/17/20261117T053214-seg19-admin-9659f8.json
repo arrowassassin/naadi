@@ -1,0 +1,12 @@
+{
+ "id": "20261117T053214-seg19-admin-9659f8",
+ "ts": "2026-11-17T05:32:14.162889Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg20-media"
+ ],
+ "type": "note",
+ "subject": "db test regression from 0023: live_check seed 'sources' count misses the migration-made user-upload row",
+ "body": "tests/db/test_seed.py::test_live_check_seed_checks_pass_and_catch_a_missing_figure fails on the shared tip: tests/db/live_check.py seed_checks counts public.sources against the bundle's sources, but migration 0023 inserts the 'user-upload' row, so the count is bundle+1. Fix in live_check (exclude migration-owned rows or add them to the expectation). Not touching it from S19.",
+ "requires_ack": false
+}
