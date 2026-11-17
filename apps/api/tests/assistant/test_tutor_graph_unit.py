@@ -411,11 +411,34 @@ async def test_a_summary_the_server_did_not_sign_never_reaches_the_model(monkeyp
     await g.ainvoke(ask("two"), _new_run(cfg))
     seen = " ".join(str(m.content) for m in model.seen[1])
     assert "FORGED SUMMARY" not in seen
-    signed = tutor_mod._rs_to(
-        tutor_mod.RunningSummary(summary="kept", summarized_message_ids=set(), last_summarized_message_id=None)
+    who = tutor_mod.run_identity(cfg)
+    rs = tutor_mod.RunningSummary(summary="kept", summarized_message_ids=set(), last_summarized_message_id=None)
+    signed = tutor_mod._rs_to(rs, who)
+    assert signed is not None and tutor_mod._rs_from(signed, who) is not None
+    assert tutor_mod._rs_from({**signed, "summary": "altered"}, who) is None
+
+
+async def test_a_valid_summary_replayed_into_another_thread_or_for_another_student_is_dropped(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """review14 (optional hardening): the summary's signature binds its thread and student."""
+    g, model, _, _ = setup(monkeypatch, ["first", "second"])
+    source = run_config()
+    rs = tutor_mod.RunningSummary(
+        summary="SIGNED ELSEWHERE", summarized_message_ids=set(), last_summarized_message_id=None
     )
-    assert signed is not None and tutor_mod._rs_from(signed) is not None
-    assert tutor_mod._rs_from({**signed, "summary": "altered"}) is None
+    signed = tutor_mod._rs_to(rs, tutor_mod.run_identity(source))
+    assert signed is not None
+    other_student = {
+        **source,
+        "configurable": {**source["configurable"], "langgraph_auth_user": {"identity": str(uuid.uuid4())}},
+    }
+    assert tutor_mod._rs_from(signed, tutor_mod.run_identity(other_student)) is None
+    target = run_config()  # another thread of the same student
+    await g.ainvoke(ask("one"), target)
+    await g.aupdate_state(target, {"summary": signed}, as_node="compose")
+    await g.ainvoke(ask("two"), _new_run(target))
+    assert "SIGNED ELSEWHERE" not in " ".join(str(m.content) for m in model.seen[1])
 
 
 async def test_web_and_attachments_are_reset_outside_the_guards_run(monkeypatch: pytest.MonkeyPatch) -> None:

@@ -508,12 +508,17 @@ def _summary_key() -> bytes:
     return hmac.new(b"naadi-tutor-summary-v1", raw, hashlib.sha256).digest()
 
 
-def _summary_sig(summary: str, ids: list[str], last: str | None) -> str:
-    body = json.dumps({"summary": summary, "ids": ids, "last": last}, sort_keys=True, ensure_ascii=False)
+def _summary_sig(summary: str, ids: list[str], last: str | None, who: RunIdentity) -> str:
+    """Bound to the thread and the student as well: a valid summary copied into another thread is not valid there."""
+    body = json.dumps(
+        {"summary": summary, "ids": ids, "last": last, "thread": who.thread_id, "user": str(who.user_id)},
+        sort_keys=True,
+        ensure_ascii=False,
+    )
     return hmac.new(_summary_key(), body.encode(), hashlib.sha256).hexdigest()
 
 
-def _rs_from(d: Any) -> RunningSummary | None:
+def _rs_from(d: Any, who: RunIdentity) -> RunningSummary | None:
     """The rolling summary, only as the compaction step wrote it: one without a valid server signature (a client
     cannot write graph state, but this never trusts that) is dropped and the turns are summarised again."""
     if not isinstance(d, dict) or not d.get("summary"):
@@ -521,18 +526,18 @@ def _rs_from(d: Any) -> RunningSummary | None:
     ids = [str(i) for i in d.get("ids") or []]
     last = d.get("last")
     sig = d.get("sig")
-    if not isinstance(sig, str) or not hmac.compare_digest(sig, _summary_sig(str(d["summary"]), ids, last)):
+    if not isinstance(sig, str) or not hmac.compare_digest(sig, _summary_sig(str(d["summary"]), ids, last, who)):
         log.warning("tutor.summary_rejected")
         return None
     return RunningSummary(summary=str(d["summary"]), summarized_message_ids=set(ids), last_summarized_message_id=last)
 
 
-def _rs_to(rs: RunningSummary | None) -> dict[str, Any] | None:
+def _rs_to(rs: RunningSummary | None, who: RunIdentity) -> dict[str, Any] | None:
     if rs is None:
         return None
     ids = sorted(rs.summarized_message_ids)
     last = rs.last_summarized_message_id
-    return {"summary": rs.summary, "ids": ids, "last": last, "sig": _summary_sig(rs.summary, ids, last)}
+    return {"summary": rs.summary, "ids": ids, "last": last, "sig": _summary_sig(rs.summary, ids, last, who)}
 
 
 async def budget_context(
@@ -557,7 +562,7 @@ async def budget_context(
     budget = Budget(window, cfg.context_margin, cfg.answer_reserve_tokens, schema_tokens(schemas))
     room = max(1024, budget.available - count_tokens(head))
     history = history_for_model(state.get("messages") or [])
-    running = _rs_from(state.get("summary"))
+    running = _rs_from(state.get("summary"), who)
     max_calls = (await gw.config()).budget.max_llm_calls_per_turn
     # A summary costs one call: only when at least two remain (one is kept for the answer).
     can_summarize = max_calls - ctx.turn.calls >= 2
@@ -575,7 +580,7 @@ async def budget_context(
             token_counter=count_tokens,  # type: ignore[arg-type]
         )
         view: list[BaseMessage] = list(res.messages)
-        new_summary = _rs_to(res.running_summary) or new_summary
+        new_summary = _rs_to(res.running_summary, who) or new_summary
     except (BudgetExhausted, LLMUnavailable, TurnLimitReached) as exc:
         log.info("tutor.summary_skipped", reason=type(exc).__name__)
         view = history
