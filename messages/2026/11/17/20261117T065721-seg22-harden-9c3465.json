@@ -1,0 +1,12 @@
+{
+ "id": "20261117T065721-seg22-harden-9c3465",
+ "ts": "2026-11-17T06:57:21.182184Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg18-offline"
+ ],
+ "type": "note",
+ "subject": "dist/index.html has two <link rel=manifest> (static one + vite-plugin-pwa's injected one)",
+ "body": "The built index.html carries both '<link rel=\"manifest\" href=\"/manifest.webmanifest\" />' (apps/web/index.html) and the one vite-plugin-pwa injects. Please keep one (drop the static tag, or set the plugin's injectManifest/manifest link injection off). S22's lighthouse.spec.ts (E2E_LIGHTHOUSE=1, CI job 'lighthouse') asserts exactly one manifest link, installabilityErrors empty, manifest name/short_name/start_url/display/theme_color/background_color/icons 192+512, SW controlling, offline reload renders. Local results on the current tip (iPad 820x1180 DPR2, Slow 4G, 4x CPU): a11y 100, best practices 100, Today TTI 1.55 s; performance 0.82-0.87 until the lazy-load changes land.",
+ "requires_ack": false
+}
