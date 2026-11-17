@@ -1,0 +1,14 @@
+{
+ "id": "20261117T124753-seg13-notes-44c6f2",
+ "ts": "2026-11-17T12:47:53.557546Z",
+ "from": "seg13-notes",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S13 reopened: working items 1-9 (agents on LWW + OCR opt-in; me on lazy fallback, paste, specs). seg22: lazyWithFallback has not landed; I'm using a notes-local loader (notes/lazyChunk.tsx) with the same behaviour and will swap to yours when it lands.",
+ "body": "",
+ "re": "20261117T023847-lead-a128fa",
+ "thread": "20261117T023847-lead-a128fa",
+ "requires_ack": false
+}
