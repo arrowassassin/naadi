@@ -33,14 +33,32 @@ from naadi_api.main import create_app
 from .conftest import fake_service, make_settings
 
 INLINE_HIT = re.compile(r"""\[\s*["']([a-z0-9_]+)["']\s*\]\.hit\(""")
+PARAM_HIT = re.compile(r"\[\s*bucket\s*\]\.hit\(")
 CALLED = re.compile(r"\b([A-Za-z_]\w*)\(")
+WRITES_TAG = "__naadi_rate_limit_writes__"  # require_admin's extra bucket for non-GET methods
 SPA_FALLBACKS = {"api_not_found", "spa"}
 
 # Ceilings in requests per minute per key. A route matching several rules takes the strictest.
 HEAVY_RULES: tuple[tuple[str, Callable[[str, str], bool], int], ...] = (
-    ("ingest/upload", lambda m, p: m != "GET" and bool(re.search(r"/(ingest|uploads?|library)\b", p)), 30),
-    ("export", lambda _m, p: "export" in p, 30),
-    ("generation", lambda m, p: m != "GET" and bool(re.search(r"/(generat\w*|gen)\b", p)), 30),
+    (
+        "ingest/upload/import",
+        lambda m, p: m == "POST" and bool(re.search(r"/(ingest|uploads?|library|import)\b", p)),
+        30,
+    ),
+    # Starting or producing an export; polling a job's status (GET /api/export/{id}) is not heavy.
+    (
+        "export",
+        lambda m, p: (
+            (m == "POST" and "export" in p)
+            or (m == "GET" and bool(re.search(r"/export(\.\w+)?$", p)) and not p.endswith("/api/export"))
+        ),
+        30,
+    ),
+    (
+        "generation",
+        lambda m, p: m != "GET" and not p.startswith("/api/admin") and bool(re.search(r"/(generat\w*|gen)\b", p)),
+        30,
+    ),
     ("admin write", lambda m, p: m != "GET" and p.startswith("/api/admin"), 60),
     ("auth/account write", lambda m, p: m != "GET" and p in ("/api/me",), 60),
 )
@@ -93,7 +111,12 @@ def _buckets_of(fn: Callable[..., Any], authenticated: bool) -> list[tuple[str, 
         helper = getattr(fn, "__globals__", {}).get(name)
         if inspect.isfunction(helper) and helper.__module__ == module and helper is not fn:
             with contextlib.suppress(OSError, TypeError):
-                found += [(b, key) for b in INLINE_HIT.findall(inspect.getsource(helper))]
+                helper_src = inspect.getsource(helper)
+                found += [(b, key) for b in INLINE_HIT.findall(helper_src)]
+                # A helper that takes the bucket as an argument (`_limit(request, "export_start", user_id)`).
+                if PARAM_HIT.search(helper_src):
+                    lit = re.compile(rf"\b{re.escape(name)}\(\s*\w+\s*,\s*[\"']([a-z0-9_]+)[\"']")
+                    found += [(b, key) for b in lit.findall(src)]
     return found
 
 
@@ -105,9 +128,15 @@ def audit(app: FastAPI) -> list[RouteAudit]:
         calls = list(_calls(route.dependant))
         authenticated = any(c in (get_current_user, get_account_user) for c in calls)
         for method in sorted(route.methods - {"HEAD", "OPTIONS"}):
-            a = RouteAudit(method, route.path, route.operation_id, authenticated=authenticated)
+            # FastAPI names an operation without an explicit operation_id after route.unique_id.
+            op_id = route.operation_id or route.unique_id
+            a = RouteAudit(method, route.path, op_id, authenticated=authenticated)
             for fn in [*calls, route.endpoint]:
-                for b in _buckets_of(fn, authenticated):
+                found = _buckets_of(fn, authenticated)
+                writes = getattr(fn, WRITES_TAG, None)
+                if writes and method != "GET":
+                    found.append(tuple(writes))  # type: ignore[arg-type]
+                for b in found:
                     if b not in a.buckets:
                         a.buckets.append(b)
             for name, match, ceiling in HEAVY_RULES:
@@ -170,6 +199,8 @@ def test_heavy_rules_match_the_routes_we_know_about() -> None:
     assert by_op["putAppConfig"].heavy == "admin write"
     assert by_op["updateMe"].heavy == "auth/account write"
     assert by_op["getCourses"].heavy is None
+    assert by_op["getExport"].heavy is None  # polling an export job is not heavy; starting one is
+    assert by_op["startExport"].heavy == "export"
 
 
 def markdown_table(app: FastAPI | None = None) -> str:

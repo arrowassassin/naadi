@@ -143,6 +143,7 @@ def create_app(
         app,
         {
             "admin_any": RateLimiter(120, 60.0),
+            "admin_write": RateLimiter(60, 60.0),
             "public_read": RateLimiter(120, 60.0),
             "health": RateLimiter(60, 60.0),
         },
