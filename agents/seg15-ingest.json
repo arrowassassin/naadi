@@ -1,0 +1,9 @@
+{
+ "name": "seg15-ingest",
+ "role": "implementer",
+ "segment": "S15",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T04:22:22.614421Z",
+ "purpose": "Universal ingest graph, Library, KB, PDF canvas, model_eval"
+}

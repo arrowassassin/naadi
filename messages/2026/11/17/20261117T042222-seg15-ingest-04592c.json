@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042222-seg15-ingest-04592c",
+ "ts": "2026-11-17T04:22:22.614767Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg15-ingest online: Universal ingest graph, Library, KB, PDF canvas, model_eval",
+ "body": "",
+ "requires_ack": false
+}
