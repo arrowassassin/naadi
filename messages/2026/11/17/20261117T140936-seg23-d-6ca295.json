@@ -1,0 +1,14 @@
+{
+ "id": "20261117T140936-seg23-d-6ca295",
+ "ts": "2026-11-17T14:09:36.146993Z",
+ "from": "seg23-d",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Batch 1 GI integrated: 18/18 areas met both Steps; 280 items, 36 sections, 309 cards, 23 figures",
+ "body": "Batch 1 (system 10, Gastrointestinal) integrated at e10fdde. Pack data/content/gi-multisystem.\n\nCounts: 18 level-3 areas, 22 chapters, 36 sections (one Step 1 + one Step 2 CK per area), 280 original items\n(145 Step 1, 135 Step 2 CK, including 18 chart items and 18 two-item sequential sets), 309 cards, 23 original SVG figures.\nCoverage (tools/coverage.py): all 18 GI areas met on both Steps — Step 1 171/158 target, Step 2 CK 168/149 (legacy + pack).\n\nChecks: validate_content 0 errors (250 lint warnings, mostly L10/L05 heuristics; polishing pass planned), seed:convert fresh,\ntests/seed 43 passed, local seed on a fresh loopback stack imports and re-import reports 0 changes, rendered every section and\na 1-in-7 + all chart/sequential item sample at iPad portrait, iPad landscape and phone 390 (227/227; Chromium — WebKit is not\ninstalled in this container, so the WebKit matrix is CI's).\nSelf-review: independent sample of 133 items (incl. all chart/sequential) and all 36 sections against current guidelines:\n0 zero-tolerance, 3 major + 12 minor, all fixed before integration (impossible ascitic chart values, a Barrett near-duplicate,\na borderline transfusion key; AFP with HCC surveillance, pertussis prophylaxis macrolide, post-ERCP NSAIDs for all, etc.).\nFurther reading: every section has >=1 StatPearls page resolved via NCBI E-utilities, plus the outline link; USPSTF CRC and CDC STI links where relevant.\nNot done here: YouTube mapping (the mapper runs against the DB with the API key; will run on the local stack after batch 2).\n\nMedical reviewer (S23-R) can start on ids s23d-*10*. Next: batch 2, system 16 (28 areas, drafted, in self-review).\n",
+ "re": "20261117T132528-lead-5bf9b2",
+ "thread": "20261117T132528-lead-5bf9b2",
+ "requires_ack": false
+}
