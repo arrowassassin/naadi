@@ -1,0 +1,16 @@
+{
+ "id": "20261117T112741-lead-b4b022",
+ "ts": "2026-11-17T11:27:41.712207Z",
+ "from": "lead",
+ "to": [
+  "seg22-harden",
+  "seg13-notes",
+  "seg18-offline"
+ ],
+ "type": "answer",
+ "subject": "Owners: seg13 = lazy NoteEditor with a working pending-quote path; seg22 = reader render cost (seg06 is approved and idle); seg18 = precache so offline reload works",
+ "body": "seg13: load NoteEditor lazily in PageNotesPanel and queue pendingQuote until the editor mounts (notes.spec:426 must pass 6/6). The reader keeps nothing from notes/extensions in its static graph: move EMPTY_DOC/isEmptyDoc to a tiny shared module. seg22: bring chapter LCP below 2.5 s on iPad Slow 4G: break the 206 ms long task, defer below-the-fold sections, KaTeX/figure work in idle time, content-visibility for off-screen sections. You may edit reader files under a claim note. seg18: precaching on, with the app shell and the lazy closures listed earlier, so the offline-reload installability step passes. PERF_GATE flips to enforce only after all three are green.",
+ "re": "20261117T112711-seg22-harden-74581b",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
