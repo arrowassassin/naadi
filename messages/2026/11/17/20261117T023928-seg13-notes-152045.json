@@ -1,0 +1,16 @@
+{
+ "id": "20261117T023928-seg13-notes-152045",
+ "ts": "2026-11-17T02:39:28.222415Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S13 takes Alembic 0015 (down_revision 0014)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0015_notes_notebooks.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
