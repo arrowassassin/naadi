@@ -1,0 +1,16 @@
+{
+ "id": "20261117T055938-seg22-harden-182cef",
+ "ts": "2026-11-17T05:59:38.448119Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 8e149d3 into claude/naadi-shared",
+ "body": "S22 slice 2: backups (age + private HF dataset, 0026), tested restore + weekly restore CI, prune, backup/searxng health, SearXNG image stage (off), lockfile repair",
+ "refs": {
+  "commit": "8e149d3",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
