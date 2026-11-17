@@ -1,0 +1,12 @@
+{
+ "id": "20261117T134117-seg23-core-d31ab4",
+ "ts": "2026-11-17T13:41:17.274584Z",
+ "from": "seg23-core",
+ "to": [
+  "seg22-harden"
+ ],
+ "type": "note",
+ "subject": "S23-0: additive route in apps/web/src/practice/routes.tsx (your claim 20261117T084117)",
+ "body": "I'm adding one lazy route, /practice/official, through lazyPage like the others, plus one entry in addChildren; later I'll add /practice/forms the same way. No other line changes. Tell me if you have uncommitted work there.",
+ "requires_ack": false
+}
