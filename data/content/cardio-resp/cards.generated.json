@@ -7187,21 +7187,6 @@
   ]
  },
  {
-  "id": "s23b-g-d0da1bf15f22",
-  "frontHtml": "<p>Choose a DOAC for stroke prevention in nonvalvular atrial fibrillation with an elevated CHA2DS2-VASc score.</p>",
-  "backHtml": "<p>Nonvalvular AF with a high CHA 2 DS 2 -VASc score: start a DOAC.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-ck-01",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
   "id": "s23b-g-a860b1403f21",
   "frontHtml": "<p>Select warfarin for atrial fibrillation associated with moderate-to-severe mitral stenosis.</p>",
   "backHtml": "<p>AF with a mechanical valve or moderate-to-severe mitral stenosis requires warfarin, not a DOAC.</p>",
@@ -7237,51 +7222,6 @@
   "backHtml": "<p>Stable paroxysmal SVT: vagal maneuvers first, then IV adenosine.</p>",
   "sectionId": null,
   "questionId": "s23b-q-080301-ck-04",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-387bac0f58e3",
-  "frontHtml": "<p>Recognize Mobitz type II AV block and its indication for permanent pacing.</p>",
-  "backHtml": "<p>Mobitz II without a reversible cause is an indication for a permanent pacemaker.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-ck-05",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-9e2d955d4a19",
-  "frontHtml": "<p>Escalate from atropine to pacing in unstable complete heart block.</p>",
-  "backHtml": "<p>Unstable bradycardia unresponsive to atropine: transcutaneous pacing, then transvenous pacing.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-ck-06",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-b816098c94ab",
-  "frontHtml": "<p>Treat drug-induced torsades de pointes with IV magnesium.</p>",
-  "backHtml": "<p>Torsades de pointes with a pulse: IV magnesium, stop QT-prolonging drugs, correct electrolytes.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-ck-07",
   "areas": [
    "usmle2026.08.03.01"
   ],
@@ -7382,36 +7322,6 @@
   ]
  },
  {
-  "id": "s23b-g-9044185f9f66",
-  "frontHtml": "<p>Localize Mobitz type I second-degree AV block to the AV node from its rhythm strip.</p>",
-  "backHtml": "<p>Progressive PR lengthening before a dropped beat localizes block to the AV node, which is usually benign.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-s1-01",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-3a0d5a400234",
-  "frontHtml": "<p>Explain the ECG triad of ventricular pre-excitation by an accessory pathway.</p>",
-  "backHtml": "<p>Short PR + delta wave + slightly wide QRS = an accessory pathway pre-exciting the ventricle.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-s1-02",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
   "id": "s23b-g-7efd152de591",
   "frontHtml": "<p>Identify use-dependent Na⁺ channel blockade by class IC antiarrhythmics.</p>",
   "backHtml": "<p>Rate-dependent QRS widening with little QT change is the hallmark of class IC sodium channel blockers.</p>",
@@ -7477,21 +7387,6 @@
   "backHtml": "<p>Adenosine causes seconds-long AV nodal block via A 1 -receptor-mediated K⁺ efflux, terminating AV node–dependent SVT.</p>",
   "sectionId": null,
   "questionId": "s23b-q-080301-s1-07",
-  "areas": [
-   "usmle2026.08.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-4015a9105c35",
-  "frontHtml": "<p>Locate the circuit and curative ablation target of typical atrial flutter.</p>",
-  "backHtml": "<p>Typical atrial flutter circles the tricuspid annulus; ablation of the cavotricuspid isthmus cures it.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080301-s1-08",
   "areas": [
    "usmle2026.08.03.01"
   ],
@@ -7867,21 +7762,6 @@
   "backHtml": "<p>ACS + stent → DAPT for 12 months by default, then lifelong single antiplatelet therapy.</p>",
   "sectionId": null,
   "questionId": "s23b-q-080501-ck-08",
-  "areas": [
-   "usmle2026.08.05.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-2bc6d98fcaae",
-  "frontHtml": "<p>Localize an inferior STEMI on the ECG to the right coronary artery.</p>",
-  "backHtml": "<p>inferior leads (II, III, aVF) → usually the right coronary artery; look for bradycardia, AV block and right ventricular involvement.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080501-s1-01",
   "areas": [
    "usmle2026.08.05.01"
   ],
@@ -8432,21 +8312,6 @@
   ]
  },
  {
-  "id": "s23b-g-ecb34633840f",
-  "frontHtml": "<p>Recognize the ECG pattern of acute pericarditis.</p>",
-  "backHtml": "<p>diffuse concave ST elevation + PR depression (with PR elevation in aVR) + pleuritic positional pain + rub = acute pericarditis.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080701-s1-01",
-  "areas": [
-   "usmle2026.08.07.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
   "id": "s23b-g-815abf96069c",
   "frontHtml": "<p>Explain referred pericardial pain through phrenic nerve innervation.</p>",
   "backHtml": "<p>pericardial (and diaphragmatic) pain refers to the trapezius ridge via the phrenic nerve, C3–C5.</p>",
@@ -8527,21 +8392,6 @@
   "backHtml": "<p>pericarditis 1–3 days after MI = local inflammation over the infarct; weeks after MI = autoimmune post-cardiac injury syndrome.</p>",
   "sectionId": null,
   "questionId": "s23b-q-080701-s1-07",
-  "areas": [
-   "usmle2026.08.07.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-7d2cbd056568",
-  "frontHtml": "<p>Interpret electrical alternans as a sign of a large pericardial effusion.</p>",
-  "backHtml": "<p>electrical alternans + low voltage + tachycardia = large effusion, often with tamponade.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-080701-s1-08",
   "areas": [
    "usmle2026.08.07.01"
   ],
@@ -12953,21 +12803,6 @@
   "backHtml": "<p>COPD exacerbation with hypercapnic acidosis in an alert patient → NIV.</p>",
   "sectionId": null,
   "questionId": "s23b-q-090301-ck-07",
-  "areas": [
-   "usmle2026.09.03.01"
-  ],
-  "source": "naadi-original-v1",
-  "tags": [
-   "generated",
-   "objective"
-  ]
- },
- {
-  "id": "s23b-g-fcb6c8df1887",
-  "frontHtml": "<p>Interpret a flow–volume loop showing fixed upper airway obstruction.</p>",
-  "backHtml": "<p>Plateaus on both limbs of the flow–volume loop = fixed upper airway obstruction, e.g. post-intubation tracheal stenosis.</p>",
-  "sectionId": null,
-  "questionId": "s23b-q-090301-ck-08",
   "areas": [
    "usmle2026.09.03.01"
   ],

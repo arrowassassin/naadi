@@ -4239,9 +4239,10 @@
         "ECG",
         "image",
         "AF",
-        "geriatrics"
+        "geriatrics",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -4489,9 +4490,10 @@
       "tags": [
         "ECG",
         "image",
-        "geriatrics"
+        "geriatrics",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -4555,9 +4557,10 @@
         "ECG",
         "image",
         "ACLS",
-        "geriatrics"
+        "geriatrics",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -4621,9 +4624,10 @@
         "ECG",
         "image",
         "QT",
-        "drug safety"
+        "drug safety",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -5061,9 +5065,10 @@
       ],
       "tags": [
         "ECG",
-        "image"
+        "image",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -5126,9 +5131,10 @@
       "tags": [
         "ECG",
         "image",
-        "WPW"
+        "WPW",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -5503,9 +5509,10 @@
       "tags": [
         "ECG",
         "image",
-        "flutter"
+        "flutter",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -7115,9 +7122,10 @@
       ],
       "tags": [
         "ECG",
-        "image"
+        "image",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -9428,9 +9436,10 @@
       "tags": [
         "ECG",
         "image",
-        "pericarditis"
+        "pericarditis",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -9866,9 +9875,10 @@
       "tags": [
         "ECG",
         "image",
-        "tamponade"
+        "tamponade",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
@@ -28063,7 +28073,7 @@
       "id": "s23b-q-090301-ck-08",
       "exam": "step2ck",
       "format": "single",
-      "stemHtml": "<p>A 46-year-old man has 3 months of progressive dyspnea and noisy breathing on exertion. Eight months ago he was intubated for 3 weeks for severe pneumonia. He does not smoke. A flow–volume loop is shown.</p>[[figure:s23b-fig-090301-02]]<p>Which of the following is the most likely diagnosis?</p>",
+      "stemHtml": "<p>A 46-year-old man has 3 months of progressive dyspnea and noisy breathing on exertion. Eight months ago he was intubated for 3 weeks for severe pneumonia. He does not smoke. A flow–volume loop is shown. Which of the following is the most likely diagnosis?</p>",
       "options": [
         {
           "label": "A",
@@ -28114,9 +28124,10 @@
       ],
       "tags": [
         "flow-volume loop",
-        "image"
+        "image",
+        "awaits-item-figures"
       ],
-      "status": "published",
+      "status": "in_review",
       "review": {
         "status": "self_reviewed",
         "humanExpertReviewed": false,
