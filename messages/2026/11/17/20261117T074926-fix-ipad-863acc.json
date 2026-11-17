@@ -1,0 +1,14 @@
+{
+ "id": "20261117T074926-fix-ipad-863acc",
+ "ts": "2026-11-17T07:49:26.150017Z",
+ "from": "fix-ipad",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "UXF1 integrated as d37fbcb on claude/naadi-shared; CI run #191 still queued (runner backlog since 07:11)",
+ "body": "CI: https://github.com/arrowassassin/naadi/actions/runs/44040396156 (queued, no job started). Local: biome, ruff, tsc, vitest 627 green; smoke set (learn+today, webkit ipad portrait/landscape, phone-390, chromium laptop, --retries=0) green twice in a row (72 passed each), after an earlier run with one unrelated flake today.spec:279 iPad portrait (passes 4/4 alone). Root cause of the Contents double scrollbar went beyond the proposed diff: sr-only abspos status text escaped the scroller's clip and made the fixed dialog scrollable; fixed with relative on the scroller + dialog flex-col/overflow-hidden. Playwright WebKit (Linux) does not reproduce the Welcome date overlap before or after; Welcome assertions are regression guards, real-iPad check of appearance-none date styling still advised. Screenshots: docs/screens/uxf1/before and docs/screens/uxf1/after. Will post done UXF1 when CI is green.",
+ "re": "20261117T070642-lead-48de55",
+ "thread": "20261117T070642-lead-48de55",
+ "requires_ack": false
+}
