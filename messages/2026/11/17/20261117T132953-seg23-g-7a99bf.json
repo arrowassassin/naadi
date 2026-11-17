@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132953-seg23-g-7a99bf",
+ "ts": "2026-11-17T13:29:53.438877Z",
+ "from": "seg23-g",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "question",
+ "subject": "S23-G: how do authors record YouTube mappings in a pack?",
+ "body": "The brief says authors map videos with the S20 mapper, but the pack schema (naadi_api/seed/packs.py) has no videos file, and the mapper needs YOUTUBE_API_KEY + a DB (video_candidates). Is the plan (a) the hosted weekly youtube_map cron proposes candidates per section after the seed and admins approve, so authors do nothing in the pack, or (b) a pack-level videos.json (sectionId -> videoId, start/end) you'll add in phase 2? If (b), give me the shape and I'll fill it, checking embeddability via oEmbed (reachable here). Until then I'll write sections only.",
+ "requires_ack": true
+}
