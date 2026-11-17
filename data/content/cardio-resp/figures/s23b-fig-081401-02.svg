@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" role="img" aria-label="Schematic of postductal coarctation of the aorta: a narrowing of the descending aorta just beyond the left subclavian artery near the ligamentum arteriosum, with dilated intercostal collateral arteries that notch the ribs, high blood pressure in the arms and low pressure in the legs">
+<rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+<text x="350" y="28" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#0f172a">Coarctation of the aorta (juxtaductal)</text>
+<path d="M150,330 L150,170 Q150,80 260,80 L400,80 Q480,80 480,160 L480,215" fill="none" stroke="#334155" stroke-width="34"/>
+<path d="M480,245 L480,380" fill="none" stroke="#334155" stroke-width="34"/>
+<path d="M463,215 Q480,232 497,215 L497,245 Q480,228 463,245 Z" fill="#334155"/>
+<line x1="210" y1="66" x2="200" y2="40" stroke="#334155" stroke-width="12"/>
+<line x1="290" y1="66" x2="290" y2="40" stroke="#334155" stroke-width="12"/>
+<line x1="370" y1="66" x2="385" y2="40" stroke="#334155" stroke-width="12"/>
+<line x1="420" y1="140" x2="470" y2="205" stroke="#64748b" stroke-width="3" stroke-dasharray="5,4"/>
+<text x="250" y="165" font-family="sans-serif" font-size="12" fill="#64748b">ligamentum arteriosum</text>
+<line x1="358" y1="160" x2="440" y2="168" stroke="#64748b" stroke-width="1"/>
+<text x="520" y="235" font-family="sans-serif" font-size="13" fill="#dc2626">narrowing distal to the</text>
+<text x="520" y="251" font-family="sans-serif" font-size="13" fill="#dc2626">left subclavian artery</text>
+<path d="M500,180 C600,190 600,300 500,320" fill="none" stroke="#dc2626" stroke-width="4"/>
+<path d="M500,200 C570,210 570,280 500,300" fill="none" stroke="#dc2626" stroke-width="3"/>
+<text x="560" y="345" font-family="sans-serif" font-size="13" fill="#0f172a">dilated intercostal collaterals</text>
+<text x="560" y="361" font-family="sans-serif" font-size="13" fill="#0f172a">(rib notching on CXR)</text>
+<text x="40" y="100" font-family="sans-serif" font-size="13" fill="#0f172a">Arms: high BP,</text>
+<text x="40" y="116" font-family="sans-serif" font-size="13" fill="#0f172a">bounding pulses</text>
+<text x="300" y="385" font-family="sans-serif" font-size="13" fill="#0f172a">Legs: low BP, weak and delayed femoral pulses</text>
+<text x="130" y="355" font-family="sans-serif" font-size="13" fill="#0f172a">from LV</text>
+</svg>

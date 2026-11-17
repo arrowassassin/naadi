@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Timeline from group A streptococcal pharyngitis to acute rheumatic fever and chronic rheumatic heart disease">
+<defs><marker id="s23b-fig-080102-01-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="300" fill="#ffffff"/>
+<text x="360" y="28" font-family="sans-serif" font-size="17" font-weight="bold" fill="#0f172a" text-anchor="middle">From sore throat to scarred valve</text>
+<line x1="40" y1="150" x2="690" y2="150" stroke="#334155" stroke-width="3" marker-end="url(#s23b-fig-080102-01-ar)"/>
+<circle cx="80" cy="150" r="9" fill="#fee2e2" stroke="#334155" stroke-width="2"/>
+<circle cx="270" cy="150" r="9" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<circle cx="440" cy="150" r="9" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<circle cx="630" cy="150" r="9" fill="#ede9fe" stroke="#334155" stroke-width="2"/>
+<text x="80" y="125" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Day 0</text>
+<text x="80" y="180" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Group A strep</text>
+<text x="80" y="196" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">pharyngitis</text>
+<text x="80" y="216" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">(not skin infection)</text>
+<text x="175" y="140" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">latent 2–4 weeks</text>
+<text x="270" y="125" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Weeks 2–4</text>
+<text x="270" y="180" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Acute rheumatic fever:</text>
+<text x="270" y="196" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">fever, migratory arthritis,</text>
+<text x="270" y="212" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">pancarditis, skin signs</text>
+<text x="270" y="232" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">antibodies to M protein</text>
+<text x="270" y="248" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">cross-react with heart</text>
+<text x="440" y="125" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Months 1–8</text>
+<text x="440" y="180" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Chorea may appear late,</text>
+<text x="440" y="196" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">sometimes alone, when</text>
+<text x="440" y="212" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">antibody titers have fallen</text>
+<text x="630" y="125" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">Decades</text>
+<text x="630" y="180" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Chronic rheumatic</text>
+<text x="630" y="196" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">heart disease:</text>
+<text x="630" y="212" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">mitral stenosis,</text>
+<text x="630" y="228" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">fused commissures</text>
+<text x="535" y="140" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">each recurrence adds damage</text>
+<rect x="150" y="262" width="420" height="28" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="360" y="281" font-family="sans-serif" font-size="12" fill="#0f172a" text-anchor="middle">Treat the throat → primary prevention · monthly penicillin → secondary prevention</text>
+</svg>

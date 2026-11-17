@@ -1,1 +1,218 @@
-[]
+[
+  {
+    "id": "s23b-fig-080101-01",
+    "caption": "Figure. Infective endocarditis: embolic, local and immune-complex consequences of an infected vegetation.",
+    "file": "figures/s23b-fig-080101-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0801-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080102-01",
+    "caption": "Figure. Time course of group A streptococcal pharyngitis, acute rheumatic fever and chronic rheumatic heart disease.",
+    "file": "figures/s23b-fig-080102-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0801-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080201-01",
+    "caption": "Figure. Left atrial myxoma: a pedunculated mass on the interatrial septum prolapses through the mitral orifice in diastole, obstructing filling and shedding emboli.",
+    "file": "figures/s23b-fig-080201-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0802-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-01",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-02",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-03",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-03.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-04",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-04.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-05",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-05.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-06",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-06.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080301-07",
+    "caption": "ECG, lead II rhythm strip (original illustration).",
+    "file": "figures/s23b-fig-080301-07.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0803-ck",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080401-01",
+    "caption": "Figure. Left ventricular pressure–volume loops. Systolic dysfunction flattens the end-systolic line and shifts the loop right; diastolic dysfunction steepens the end-diastolic curve, raising filling pressure at a normal volume.",
+    "file": "figures/s23b-fig-080401-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0804-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080501-01",
+    "caption": "Figure. Twelve-lead ECG with a lead II rhythm strip (25 mm/s, 10 mm/mV).",
+    "file": "figures/s23b-fig-080501-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0805-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080501-02",
+    "caption": "Figure. Timeline of microscopic changes after myocardial infarction, with the complications typical of each window.",
+    "file": "figures/s23b-fig-080501-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0805-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080601-01",
+    "caption": "Figure. Schematic comparison of the normal heart with dilated, hypertrophic and restrictive cardiomyopathy.",
+    "file": "figures/s23b-fig-080601-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0806-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080601-02",
+    "caption": "Figure. Healing of a myocardial infarct and the typical timing of its complications.",
+    "file": "figures/s23b-fig-080601-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0806-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080701-01",
+    "caption": "Figure. ECG leads II, V5 and aVR in a patient with chest pain (25 mm/s, 10 mm/mV).",
+    "file": "figures/s23b-fig-080701-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0807-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080701-02",
+    "caption": "Figure. ECG rhythm strip, lead II (25 mm/s, 10 mm/mV).",
+    "file": "figures/s23b-fig-080701-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0807-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080801-01",
+    "caption": "Figure. Timing and shape of common murmurs and extra sounds within one cardiac cycle.",
+    "file": "figures/s23b-fig-080801-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0808-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-080901-01",
+    "caption": "Figure. Schematic blood pressure and heart rate responses during an active stand: normal response, non-neurogenic orthostatic hypotension (volume depletion) and neurogenic orthostatic hypotension (autonomic failure).",
+    "file": "figures/s23b-fig-080901-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0809-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081001-01",
+    "caption": "Figure. The renin–angiotensin–aldosterone system and where the main antihypertensive classes act.",
+    "file": "figures/s23b-fig-081001-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0810-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081101-01",
+    "caption": "Figure. Lipoprotein transport: the exogenous (dietary) pathway, the endogenous (hepatic) pathway and reverse cholesterol transport, with the main apolipoproteins and enzymes.",
+    "file": "figures/s23b-fig-081101-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0811-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081201-01",
+    "caption": "Figure. Stanford classification of aortic dissection: type A involves the ascending aorta; type B starts beyond the left subclavian artery.",
+    "file": "figures/s23b-fig-081201-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0812-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081202-01",
+    "caption": "Figure. Interpreting the resting ankle-brachial index.",
+    "file": "figures/s23b-fig-081202-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0812-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081203-01",
+    "caption": "Figure. Where anticoagulants act on the common pathway of coagulation.",
+    "file": "figures/s23b-fig-081203-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0812-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081301-01",
+    "caption": "Figure. The thoracic aorta and its isthmus, just distal to the left subclavian artery at the ligamentum arteriosum: the usual site of a blunt deceleration tear.",
+    "file": "figures/s23b-fig-081301-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0813-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081401-01",
+    "caption": "Figure. Tetralogy of Fallot: anterosuperior deviation of the outlet septum produces outflow obstruction, a malaligned VSD and an overriding aorta, with right ventricular hypertrophy; desaturated blood crosses into the aorta.",
+    "file": "figures/s23b-fig-081401-01.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0814-s1",
+    "attribution": null
+  },
+  {
+    "id": "s23b-fig-081401-02",
+    "caption": "Figure. Juxtaductal coarctation of the aorta: narrowing beyond the left subclavian artery, intercostal collaterals and the arm–leg pressure difference.",
+    "file": "figures/s23b-fig-081401-02.svg",
+    "source": "naadi-original-v1",
+    "chapterId": "s23b-ch0814-s1",
+    "attribution": null
+  }
+]
