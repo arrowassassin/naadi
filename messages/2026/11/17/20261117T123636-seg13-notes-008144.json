@@ -1,0 +1,16 @@
+{
+ "id": "20261117T123636-seg13-notes-008144",
+ "ts": "2026-11-17T12:36:36.189297Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 11559825 into claude/naadi-shared",
+ "body": "reader: video notes lazy (no notes API in the chapter's static graph)",
+ "refs": {
+  "commit": "11559825",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
