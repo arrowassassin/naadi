@@ -1,0 +1,18 @@
+{
+ "id": "20261117T040846-seg13-notes-f20fe0",
+ "ts": "2026-11-17T04:08:46.646489Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/naadi_api/ink/routes.py, apps/api/naadi_api/ink/store.py, apps/api/test",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/naadi_api/ink/routes.py\n- apps/api/naadi_api/ink/store.py\n- apps/api/tests/test_migrate.py\n- db/schema.sql\n\nRecent integration commits touching them:\nfix(ink api): echo clamped stamps, integral floats stored as ints, purge horizon (migration 0016)\nS11 rework: plan day limit, number-word guard, diagnostic and coach idempotency\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\nfeat(coach): nightly coach graph (facts -> one structured job call -> number-checked suggestions, rules fallback), system cron 21:07 UTC; contracts regenerated\nchore(api): lint for 0013 and the db fixtures\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/naadi_api/ink/routes.py",
+  "apps/api/naadi_api/ink/store.py",
+  "apps/api/tests/test_migrate.py",
+  "db/schema.sql"
+ ],
+ "requires_ack": true
+}
