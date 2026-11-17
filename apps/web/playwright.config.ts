@@ -188,7 +188,9 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     HF_GEN_TOKEN: "",
     APP_VERSION: process.env.APP_VERSION ?? "e2e",
     // The local API is checked against throwaway test accounts, never the owner's address.
-    ADMIN_EMAILS: ["admin", "adminb", "adminc"].map((r) => `naadi-e2e-${r}-${process.env.E2E_RUN_ID}@example.com`).join(","),
+    ADMIN_EMAILS: ["admin", "adminb", "adminc"]
+      .map((r) => `naadi-e2e-${r}-${process.env.E2E_RUN_ID}@example.com`)
+      .join(","),
     // Always explicit (empty when there is none), so a .env file can never supply another database or project.
     DATABASE_URL: dbUrl,
     SUPABASE_URL: targets?.supabaseUrl ?? "",
