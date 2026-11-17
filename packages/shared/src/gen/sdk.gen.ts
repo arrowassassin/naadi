@@ -319,6 +319,8 @@ import type {
   GetReviewSummaryData,
   GetReviewSummaryErrors,
   GetReviewSummaryResponses,
+  GetSearxngProbeData,
+  GetSearxngProbeResponses,
   GetSeedRunData,
   GetSeedRunErrors,
   GetSeedRunResponses,
@@ -796,6 +798,7 @@ import {
   zGetReviewItemPath,
   zGetReviewItemResponse,
   zGetReviewSummaryResponse,
+  zGetSearxngProbeResponse,
   zGetSeedRunPath,
   zGetSeedRunResponse,
   zGetTodayResponse,
@@ -2366,6 +2369,26 @@ export const rollbackAdminRevision = <ThrowOnError extends boolean = false>(
       "Content-Type": "application/json",
       ...options.headers,
     },
+  });
+
+/**
+ * Admin only: one fixed query through the self-hosted SearXNG, parsed like a student search
+ */
+export const getSearxngProbe = <ThrowOnError extends boolean = false>(
+  options?: Options<GetSearxngProbeData, ThrowOnError>,
+): RequestResult<GetSearxngProbeResponses, unknown, ThrowOnError> =>
+  (options?.client ?? client).get<GetSearxngProbeResponses, unknown, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetSearxngProbeResponse.parseAsync(data),
+    url: "/api/admin/search/searxng-probe",
+    ...options,
   });
 
 /**

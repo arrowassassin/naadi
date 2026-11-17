@@ -40,6 +40,7 @@ from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import ClientFloorMiddleware, RequestContextMiddleware
 from .notes.routes import install_notes_routes
+from .ops.searxng_probe import install_searxng_probe
 from .pathway.install import install_pathway_routes
 from .plan.planner_routes import install_planner_routes
 from .plan.routes import install_plan_routes
@@ -156,6 +157,7 @@ def create_app(
         },
     )
     install_csp_report(app)
+    install_searxng_probe(app)
     install_courses_routes(app)
     install_qbank_routes(app)
     install_cards_routes(app)

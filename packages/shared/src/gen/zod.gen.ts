@@ -3215,6 +3215,20 @@ export const zRollbackRequest = z.object({
 });
 
 /**
+ * SearxngProbe
+ */
+export const zSearxngProbe = z.object({
+  base_url: z.string(),
+  engines: z.array(z.string()).max(20).optional(),
+  http_status: z.int().nullish(),
+  latency_ms: z.int().nullish(),
+  layer_enabled: z.boolean(),
+  outcome: z.enum(["ok", "no_results", "unreachable", "http_error", "bad_response"]),
+  results: z.int().gte(0),
+  unresponsive: z.array(z.string()).max(20).optional(),
+});
+
+/**
  * SectionCreate
  */
 export const zSectionCreate = z.object({
@@ -5134,6 +5148,11 @@ export const zRollbackAdminRevisionPath = z.object({
  * Successful Response
  */
 export const zRollbackAdminRevisionResponse = zRevision;
+
+/**
+ * Successful Response
+ */
+export const zGetSearxngProbeResponse = zSearxngProbe;
 
 export const zPatchAdminSectionBody = zSectionPatch;
 

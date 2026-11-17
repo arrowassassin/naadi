@@ -8649,6 +8649,54 @@ export type SearchResponse = {
 };
 
 /**
+ * SearxngProbe
+ */
+export type SearxngProbe = {
+  /**
+   * Base Url
+   *
+   * Where the API reaches SearXNG (loopback on the Space)
+   */
+  base_url: string;
+  /**
+   * Engines
+   *
+   * Engines that returned results
+   */
+  engines?: Array<string>;
+  /**
+   * Http Status
+   */
+  http_status?: number | null;
+  /**
+   * Latency Ms
+   */
+  latency_ms?: number | null;
+  /**
+   * Layer Enabled
+   *
+   * app_config search.layers.searxng.enabled as shipped in config
+   */
+  layer_enabled: boolean;
+  /**
+   * Outcome
+   */
+  outcome: "ok" | "no_results" | "unreachable" | "http_error" | "bad_response";
+  /**
+   * Results
+   *
+   * https results the parser keeps
+   */
+  results: number;
+  /**
+   * Unresponsive
+   *
+   * Engines SearXNG reports failing
+   */
+  unresponsive?: Array<string>;
+};
+
+/**
  * SectionCreate
  */
 export type SectionCreate = {
@@ -13811,6 +13859,22 @@ export type RollbackAdminRevisionResponses = {
 };
 
 export type RollbackAdminRevisionResponse = RollbackAdminRevisionResponses[keyof RollbackAdminRevisionResponses];
+
+export type GetSearxngProbeData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/admin/search/searxng-probe";
+};
+
+export type GetSearxngProbeResponses = {
+  /**
+   * Successful Response
+   */
+  200: SearxngProbe;
+};
+
+export type GetSearxngProbeResponse = GetSearxngProbeResponses[keyof GetSearxngProbeResponses];
 
 export type PatchAdminSectionData = {
   body: SectionPatch;

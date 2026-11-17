@@ -47,7 +47,16 @@ Secrets are environment variables, named in [`docs/SECRETS.md`](docs/SECRETS.md)
 
 `GET /api/health` reports the database, Supabase Storage, the OpenRouter free quota, a probe of each NVIDIA
 model in the role chains and Tavily credits; `GET /api/ready` reports readiness. The token sheet at `/` (and
-`/system`) shows the design system with a live health panel.
+`/system`) shows the design system with a live health panel, including Backups (encrypted, private dataset) and,
+on the Space, SearXNG.
+
+## Docs
+
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): processes, data flow, agent graphs and crons, budgets, code map
+- [`docs/SECURITY.md`](docs/SECURITY.md): threat model, privacy, headers and CSP, rate limits, ASVS 4.0.3 Level 2
+- [`docs/RUNBOOK.md`](docs/RUNBOOK.md): deploy and rollback, backups and restore, rotating secrets, free-tier incidents, SearXNG, seed
+- [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md): sources and licences, authoring pipeline, YouTube rules, coverage goals
+- [`docs/SECRETS.md`](docs/SECRETS.md): every environment variable, where it comes from and who sets it
 
 ## License
 

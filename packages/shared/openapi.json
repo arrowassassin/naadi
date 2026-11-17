@@ -15595,6 +15595,85 @@
         "title": "SearchResponse",
         "type": "object"
       },
+      "SearxngProbe": {
+        "properties": {
+          "base_url": {
+            "description": "Where the API reaches SearXNG (loopback on the Space)",
+            "title": "Base Url",
+            "type": "string"
+          },
+          "engines": {
+            "description": "Engines that returned results",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20,
+            "title": "Engines",
+            "type": "array"
+          },
+          "http_status": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Http Status"
+          },
+          "latency_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latency Ms"
+          },
+          "layer_enabled": {
+            "description": "app_config search.layers.searxng.enabled as shipped in config",
+            "title": "Layer Enabled",
+            "type": "boolean"
+          },
+          "outcome": {
+            "enum": [
+              "ok",
+              "no_results",
+              "unreachable",
+              "http_error",
+              "bad_response"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          },
+          "results": {
+            "description": "https results the parser keeps",
+            "minimum": 0.0,
+            "title": "Results",
+            "type": "integer"
+          },
+          "unresponsive": {
+            "description": "Engines SearXNG reports failing",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20,
+            "title": "Unresponsive",
+            "type": "array"
+          }
+        },
+        "required": [
+          "outcome",
+          "base_url",
+          "layer_enabled",
+          "results"
+        ],
+        "title": "SearxngProbe",
+        "type": "object"
+      },
       "SectionCreate": {
         "additionalProperties": false,
         "properties": {
@@ -25666,6 +25745,27 @@
           }
         },
         "summary": "Admin only: publish a new revision copying an older one (gates apply)",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/search/searxng-probe": {
+      "get": {
+        "operationId": "getSearxngProbe",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearxngProbe"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Admin only: one fixed query through the self-hosted SearXNG, parsed like a student search",
         "tags": [
           "admin"
         ]
