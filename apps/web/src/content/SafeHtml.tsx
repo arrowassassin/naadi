@@ -72,35 +72,6 @@ function convert(node: Node, key: string, budget: Walk): ReactNode {
   return createElement(tag, props, ...children);
 }
 
-interface InertHtmlPolicy {
-  createHTML: (input: string) => unknown;
-}
-let inertPolicy: InertHtmlPolicy | null | undefined;
-
-/**
- * The Trusted Types policy for this one sink (the CSP requires Trusted Types for script sinks). It is safe to pass
- * the string through unchanged: DOMParser builds an inert document (no scripts run, nothing loads), and only the
- * allowlisted tags of that document ever reach React. null where Trusted Types do not exist.
- */
-function policy(): InertHtmlPolicy | null {
-  if (inertPolicy !== undefined) return inertPolicy;
-  const tt = (globalThis as { trustedTypes?: { createPolicy: (n: string, r: InertHtmlPolicy) => InertHtmlPolicy } })
-    .trustedTypes;
-  try {
-    inertPolicy = tt ? tt.createPolicy("naadi-inert-html", { createHTML: (input: string) => input }) : null;
-  } catch {
-    inertPolicy = null;
-  }
-  return inertPolicy;
-}
-
-/** Parse an HTML fragment into an inert document through the Trusted Types policy. */
-export function parseInertHtml(html: string): Document {
-  const p = policy();
-  const markup = p ? (p.createHTML(html) as string) : html;
-  return new DOMParser().parseFromString(markup, "text/html");
-}
-
 export function sanitizeToReact(html: string, decorate?: HtmlTextDecorator): ReactNode {
   if (typeof DOMParser === "undefined") return html.replace(/<[^>]*>/g, "");
   const doc = parseInertHtml(`<body>${html}</body>`);
