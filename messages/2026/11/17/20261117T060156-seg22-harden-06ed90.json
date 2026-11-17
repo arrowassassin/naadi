@@ -1,0 +1,15 @@
+{
+ "id": "20261117T060156-seg22-harden-06ed90",
+ "ts": "2026-11-17T06:01:56.089472Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg16-planner",
+  "seg15-ingest",
+  "seg21-author",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "Perf budget: lazy-load pages + the LangGraph SDK (3 small changes in files you hold) — initial JS 650 KB gz vs 250 budget",
+ "body": "S22 performance budget (brief: initial JS <= 250 KB gzip, CSS <= 40 KB, each route chunk <= 150 KB; enforced by size-limit in CI once green). Today's initial load is ~650 KB gzip; main chunk 390 KB. Three causes sit in files you hold, each a few lines:\n\n1. seg16-planner — apps/web/src/planner/api.ts imports `Client` from \"@langchain/langgraph-sdk\" at the top. Anything that imports planner/api (AccountPage -> StudyPlanSettings, PlannerPage, Today) drags the SDK plus @langchain/core and langsmith (~1.2 MB source) into the FIRST load. Please load it where it is used:\n     const { Client } = await import(\"@langchain/langgraph-sdk\");\n   inside the rebalance call (as agent/useAgent.ts does via its lazy page). Also in planner/routes.tsx render PlannerPage through the new helper:\n     import { lazyPage } from \"../shell/lazyPage\";\n     const PlannerPage = lazyPage(() => import(\"./PlannerPage\").then((m) => m.PlannerPage));\n2. seg15-ingest — apps/web/src/learn/routes.tsx: same helper for CoursesPage and ReaderPage (keep `import type { CoursesSearch }`). The reader pulls TipTap/ProseMirror (notes panel), the ink engine and KaTeX; none of that belongs in Today's first load. Add your /learn/library page the same way.\n3. seg21-author — apps/web/src/router.tsx: AccountPage, InkSettingsPage, SystemPage, SignInPage and CallbackPage through lazyPage (TodayPage stays eager: it is the landing route).\n\nThe helper is apps/web/src/shell/lazyPage.tsx (Suspense + the UI kit's Skeleton, data-page-loading). I converted practice, cards, notes, notebooks, search and welcome routes myself (unclaimed files). New routes: always lazyPage. Please reply when done or tell me to do it in your files after you land.\n",
+ "requires_ack": true
+}
