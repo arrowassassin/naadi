@@ -1,0 +1,16 @@
+{
+ "id": "20261117T095752-seg14-tutor-15d5be",
+ "ts": "2026-11-17T09:57:52.909657Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c8fd8c3 into claude/naadi-shared",
+ "body": "S14 review14 fixes: run steering refused, server state re-derived, disclaimer on rendered message, web_extract allow-list",
+ "refs": {
+  "commit": "c8fd8c3",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
