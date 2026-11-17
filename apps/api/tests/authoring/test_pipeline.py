@@ -526,3 +526,25 @@ def test_build_cell_validates_against_the_taxonomy() -> None:
         with pytest.raises(CellError) as e:
             build_cell(tax, **kwargs)
         assert e.value.code == code
+
+
+async def test_the_scripted_fake_gateway_drives_the_whole_pipeline_to_the_review_queue() -> None:
+    """`AUTHORING_FAKE` (non-production e2e): a well-formed grounded item and a correct, independent solver."""
+    from naadi_api.authoring.fake import FakeAuthoringGateway
+
+    store = FakeStore(excerpts=[EXCERPT])
+    out = await pipeline.author_item(
+        deps(store, FakeAuthoringGateway()),  # type: ignore[arg-type]
+        CELL,
+        "Recall the key concept.",
+        "medium",
+        trigger="admin",
+    )
+    assert out.outcome == "in_review", store.runs[0].lint
+    row, status, review = store.items[out.question_id or ""]
+    assert status == "in_review" and review["solver"]["independent"] is True
+    assert (
+        review["authorModel"]["model"] == "nvidia/fake-author"
+        and review["solver"]["model"] == "particle-ai/fake-reviewer"
+    )
+    assert row["answer"] == "A" and "Escherichia coli is the commonest cause" in row["explanation_html"]

@@ -24,6 +24,8 @@ class StorageNotConfigured(RuntimeError):
 
 def target_from(settings: Settings) -> StorageTarget | None:
     key = settings.supabase_service_role_key
+    if settings.storage_url and settings.storage_service_key is not None:
+        key = settings.storage_service_key
     if key is None:
         return None
     if settings.storage_url:

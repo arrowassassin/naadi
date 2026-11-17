@@ -139,7 +139,7 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
         insert_row(
             pg,
             "taxonomy_nodes",
-            {"id": nid, "kind": kind, "parent_id": parent, "label": f"{kind} {tag}", "exam": ["step1"]},
+            {"id": nid, "kind": kind, "parent_id": parent, "label": f"Zqxv {tag}", "exam": ["step1"]},
         )
     yield w
     pg.execute("delete from public.questions where id like %s", (f"t{tag}-%",))

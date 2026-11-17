@@ -13,7 +13,7 @@ import uuid
 import zipfile
 from collections.abc import Iterator
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import httpx
 import psycopg
@@ -206,17 +206,18 @@ def test_exam_mode_correctness_is_withheld_until_the_block_is_finished(
         )
         qs.append(qid)
     live, done = uuid.uuid4(), uuid.uuid4()
-    for block, finished in ((live, None), (done, "now()")):
+    for block, finished in ((live, False), (done, True)):
         pg.execute(
-            f"insert into public.blocks (id, user_id, config, question_ids, finished_at) values (%s, %s, '{{}}', %s, {finished or 'null'})",  # noqa: S608
-            (block, me.id, qs),
+            "insert into public.blocks (id, user_id, config, question_ids, finished_at)"
+            " values (%s, %s, '{}', %s, case when %s then now() end)",
+            (block, me.id, qs, finished),
         )
     rows = [(qs[0], live, "exam"), (qs[1], done, "exam"), (qs[2], None, "tutor")]
-    for qid, block, mode in rows:
+    for qid, attempt_block, mode in rows:
         pg.execute(
             "insert into public.attempts (user_id, question_id, block_id, chosen, correct, mode)"
             " values (%s, %s, %s, 'A', true, %s)",
-            (me.id, qid, block, mode),
+            (me.id, qid, attempt_block, mode),
         )
     try:
         job = wait_ready(client, me, client.post("/api/export", json={}, headers=me.h).json()["id"])
@@ -271,7 +272,7 @@ def test_expired_jobs_lose_their_files_and_downloads(
     pg.execute("update public.export_jobs set expires_at = now() - interval '1 minute' where id = %s", (job["id"],))
     after_expiry = client.get(f"/api/export/{job['id']}", headers=me.h).json()
     assert after_expiry["downloads"] == []  # no new link after the 24 hours, even before the sweep runs
-    result = asyncio.run(sweep(client.app.state.export_service))
+    result = asyncio.run(sweep(cast(Any, client.app).state.export_service))
     assert result["expired"] >= 1
     assert not any(o["name"] == f"{job['id']}.zip" for o in bucket("user-uploads").list(f"{me.id}/exports"))
     assert client.get(f"/api/export/{job['id']}", headers=me.h).json()["status"] == "expired"
@@ -281,7 +282,8 @@ async def sweep(svc: Any) -> dict[str, int]:
     """The housekeeping on a service of its own (the app's lives on the TestClient's event loop)."""
     fresh = type(svc)(Database(SecretStr(os.environ["DATABASE_URL"])), svc.storage, svc.buckets)
     try:
-        return await fresh.gc()
+        result: dict[str, int] = await fresh.gc()
+        return result
     finally:
         await fresh.db.close()
 

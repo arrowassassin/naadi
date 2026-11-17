@@ -339,6 +339,12 @@ def _gateway(request: Request) -> Any:
     gw = getattr(request.app.state, "authoring_gateway", None)
     if gw is not None:
         return gw
+    settings = request.app.state.settings
+    if settings.authoring_fake and settings.app_env != "prod":
+        from .fake import FakeAuthoringGateway
+
+        gw = request.app.state.authoring_gateway = FakeAuthoringGateway()
+        return gw
     from ..llm import get_gateway
 
     try:

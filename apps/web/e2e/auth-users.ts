@@ -12,7 +12,8 @@ import path from "node:path";
  */
 const API_DIR = path.resolve(import.meta.dirname, "../../api");
 
-export const ROLES = ["student", "editor", "admin", "link", "global", "mail"] as const;
+// `adminb` and `adminc` are the second and third admin of the review flows (S21: two blind reviewers, adjudication).
+export const ROLES = ["student", "editor", "admin", "adminb", "adminc", "link", "global", "mail"] as const;
 export type E2ERole = (typeof ROLES)[number];
 
 export const isLive = (): boolean => Boolean(process.env.E2E_BASE_URL);

@@ -178,10 +178,17 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     // Generation runs against the in-process fake (no Space call, in-memory media served by the app itself). The
     // production-mode server ignores this and reports `not configured`, like a deploy without HF_GEN_TOKEN.
     GENERATION_FAKE: "1",
+    // Question authoring (segment 21) answers its model calls from a scripted fake (never in production).
+    AUTHORING_FAKE: "1",
+    // Export-all talks to the local storage-api (its own service key) when the e2e stack provides one.
+    ...(process.env.NAADI_STORAGE_URL ? { NAADI_STORAGE_URL: process.env.NAADI_STORAGE_URL } : {}),
+    ...(process.env.NAADI_STORAGE_SERVICE_KEY
+      ? { NAADI_STORAGE_SERVICE_KEY: process.env.NAADI_STORAGE_SERVICE_KEY }
+      : {}),
     HF_GEN_TOKEN: "",
     APP_VERSION: process.env.APP_VERSION ?? "e2e",
     // The local API is checked against throwaway test accounts, never the owner's address.
-    ADMIN_EMAILS: `naadi-e2e-admin-${process.env.E2E_RUN_ID}@example.com`,
+    ADMIN_EMAILS: ["admin", "adminb", "adminc"].map((r) => `naadi-e2e-${r}-${process.env.E2E_RUN_ID}@example.com`).join(","),
     // Always explicit (empty when there is none), so a .env file can never supply another database or project.
     DATABASE_URL: dbUrl,
     SUPABASE_URL: targets?.supabaseUrl ?? "",

@@ -79,6 +79,11 @@ class Settings(BaseSettings):
     # A bare storage-api (the local stack and CI) the server-side Storage work (export-all) talks to instead of
     # `supabase_url`. Unset on the real project.
     storage_url: str | None = Field(default=None, validation_alias=AliasChoices("NAADI_STORAGE_URL"))
+    # The service key of that bare storage-api when it is not the project's own (its JWT secret is the stack's, not
+    # the auth server's). Used with `storage_url` only; unset on the real project.
+    storage_service_key: SecretStr | None = Field(
+        default=None, validation_alias=AliasChoices("NAADI_STORAGE_SERVICE_KEY")
+    )
 
     # ── AI ──
     openrouter_api_key: SecretStr | None = None
@@ -93,6 +98,10 @@ class Settings(BaseSettings):
     # Non-production stub (tests, e2e): generation runs against an in-process fake and an in-memory store, with no
     # Space call. Ignored when APP_ENV=prod.
     generation_fake: bool = False
+    # Non-production stub (tests, e2e): the authoring pipeline's model calls (admin runs, the solver re-check) are
+    # answered by a scripted fake (naadi_api/authoring/fake.py), with no provider and no quota. Ignored when
+    # APP_ENV=prod.
+    authoring_fake: bool = False
     # YouTube Data API v3 (segment 20): read only by the weekly `youtube_map` graph; unset = the graph does nothing.
     youtube_api_key: SecretStr | None = None
     # Local search (segment 07): bring the embeddings index in line with the content when the API starts
@@ -163,6 +172,7 @@ class Settings(BaseSettings):
         for s in (
             self.database_url,
             self.supabase_service_role_key,
+            self.storage_service_key,
             self.supabase_jwt_secret,
             self.openrouter_api_key,
             self.nvidia_api_key,

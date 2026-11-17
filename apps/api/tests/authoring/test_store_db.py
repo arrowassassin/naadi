@@ -102,7 +102,7 @@ def library(pg: psycopg.Connection[Any], world: World) -> Iterator[dict[str, str
                 "ref_type": "section",
                 "ref_id": sid,
                 "chunk_index": 0,
-                "content": f"cystitis lactose indole {key}",
+                "content": f"zqxvcystitis zqxvlactose indole {key}",
             },
         )
         ids[key] = sid
@@ -115,11 +115,11 @@ def library(pg: psycopg.Connection[Any], world: World) -> Iterator[dict[str, str
 async def test_excerpts_come_only_from_published_shared_ai_ingestible_sources(
     store: PgAuthoringStore, world: World, library: dict[str, str]
 ) -> None:
-    ex = await store.excerpts(world.taxonomy_ids, "cystitis lactose", 10, 1200)
+    ex = await store.excerpts(world.taxonomy_ids, "zqxvcystitis zqxvlactose", 10, 1200)
     assert [e.id for e in ex] == [f"{library['ok']}#0"]
-    assert ex[0].source_id == world.source and ex[0].text == "cystitis lactose indole ok"
-    assert await store.excerpts(world.taxonomy_ids, "cystitis", 10, 12) == [
-        type(ex[0])(f"{library['ok']}#0", world.source, "cystitis lac", library["ok"])
+    assert ex[0].source_id == world.source and ex[0].text == "zqxvcystitis zqxvlactose indole ok"
+    assert await store.excerpts(world.taxonomy_ids, "zqxvcystitis", 10, 12) == [
+        type(ex[0])(f"{library['ok']}#0", world.source, "zqxvcystitis", library["ok"])
     ]
     assert await store.excerpts([], "", 10, 100) == []
 
@@ -187,8 +187,8 @@ def test_an_admin_run_drafts_an_item_into_the_review_queue(
 ) -> None:
     gw = world.gateway
     draft = json.loads(draft_json())
-    draft["citations"] = [{"excerpt_id": f"{library['ok']}#0", "claim": "cystitis lactose indole ok"}]
-    draft["explanation"] = "Cystitis lactose indole ok."
+    draft["citations"] = [{"excerpt_id": f"{library['ok']}#0", "claim": "zqxvcystitis zqxvlactose indole ok"}]
+    draft["explanation"] = "Zqxvcystitis zqxvlactose indole ok."
     gw.queue_draft(json.dumps(draft))
     gw.queue_agreeing("A")
     gw.delay = 0.4  # hold the first run open long enough to try a second
@@ -197,6 +197,7 @@ def test_an_admin_run_drafts_an_item_into_the_review_queue(
         "topic_id": world.topic,
         "second_id": world.discipline,
         "competency_id": world.competency,
+        "objective": "zqxvcystitis zqxvlactose",
         "difficulty": "medium",
         "count": 1,
     }
@@ -234,7 +235,13 @@ def test_an_admin_run_drafts_an_item_into_the_review_queue(
 def test_a_run_without_grounding_records_it_and_calls_no_model(
     client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
 ) -> None:
-    body = {"exam": "step1", "topic_id": world.topic, "second_id": world.discipline, "competency_id": world.competency}
+    body = {
+        "exam": "step1",
+        "topic_id": world.topic,
+        "second_id": world.discipline,
+        "competency_id": world.competency,
+        "objective": "Zzyzx quux",  # words no seeded section contains
+    }
     job = client.post("/api/admin/review/runs", json=body, headers=head(key, world, "a")).json()
     assert wait_done(client, key, world, job["id"])["outcomes"] == ["no_excerpts"]
     assert world.gateway.calls == 0
