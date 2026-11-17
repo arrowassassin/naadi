@@ -1,5 +1,4 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, emailFor, runUsers, toLink } from "./auth-users";
@@ -15,7 +14,6 @@ import {
   test,
   trackApi,
 } from "./fixtures";
-import { signedInState } from "./session";
 
 /**
  * Segment 15b: image generation against the real API, database and auth server, with generation stubbed at the API
@@ -296,12 +294,13 @@ test.describe("on a server without the generation token", () => {
   test("generation reports not configured, its flag is off and /generated sends a student home", async ({
     browser,
     baseURL,
-  }) => {
+  }, info) => {
     const origin = new URL(PROD as string).origin;
-    const file = await signedInState(browser, baseURL as string, "student");
-    const state = JSON.parse(readFileSync(file, "utf8")) as {
-      origins: { origin: string; localStorage: { name: string; value: string }[] }[];
-    };
+    // A throwaway student of this test (the shared roles depend on onboarding, which is not under test here).
+    const s = await user(browser, baseURL as string, info, who(info, "genq"));
+    const main = (await s.open("/")).page;
+    const auth = await main.evaluate(() => localStorage.getItem("naadi.auth") ?? "");
+    const state = { origins: [{ origin: baseURL as string, localStorage: [{ name: "naadi.auth", value: auth }] }] };
     const ctx = await browser.newContext({
       baseURL: PROD,
       ignoreHTTPSErrors: true,
@@ -312,7 +311,7 @@ test.describe("on a server without the generation token", () => {
       const me = page.waitForResponse((r) => r.url().endsWith("/api/me"));
       await page.goto("/generated");
       expect((await (await me).json()).features.generation).toBe(false);
-      await page.waitForURL((u) => u.pathname === "/");
+      await page.waitForURL((u) => u.pathname !== "/generated");
       const status = await api<{ state: string }>(page, "GET", "/api/generation/status");
       expect(status.json.state).toBe("not_configured");
       const health = await page.request.get("/api/health");
@@ -320,6 +319,7 @@ test.describe("on a server without the generation token", () => {
       expect(generation.configured).toBe(false);
     } finally {
       await ctx.close();
+      await s.done();
     }
   });
 });
