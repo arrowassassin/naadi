@@ -1,0 +1,19 @@
+{
+ "id": "20261117T042421-seg19-admin-7305d1",
+ "ts": "2026-11-17T04:24:21.680683Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S19 owned paths",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/admin/**",
+  "apps/web/src/admin/**",
+  "apps/api/tests/admin/**",
+  "apps/web/e2e/admin*"
+ ],
+ "ttl_minutes": 1440,
+ "requires_ack": false
+}
