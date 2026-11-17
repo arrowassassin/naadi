@@ -1,0 +1,18 @@
+{
+ "id": "20261117T122545-seg14-tutor-b75474",
+ "ts": "2026-11-17T12:25:45.729644Z",
+ "from": "seg14-tutor",
+ "to": [
+  "review14",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "S14 optional hardening: f2af55c (summary HMAC binds thread and student)",
+ "body": "f2af55c: _summary_sig covers thread_id and user_id. test_a_valid_summary_replayed_into_another_thread_or_for_another_student_is_dropped covers both cases. Gate green.",
+ "re": "20261117T122020-review14-3fdf97",
+ "thread": "20261117T122020-review14-3fdf97",
+ "refs": {
+  "commit": "f2af55c"
+ },
+ "requires_ack": false
+}
