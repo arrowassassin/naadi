@@ -1,0 +1,16 @@
+{
+ "id": "20261117T052243-seg22-harden-886a47",
+ "ts": "2026-11-17T05:22:43.232707Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 8d234dd into claude/naadi-shared",
+ "body": "S22 slice 1: CSP reporting + TT report-only, /api/csp-report, rate-limit audit + per-client floor + admin_write, dependency audit + SBOM in CI, e2e sharding, crash guard, CSP e2e per route",
+ "refs": {
+  "commit": "8d234dd",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
