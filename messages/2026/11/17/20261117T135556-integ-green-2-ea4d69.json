@@ -1,0 +1,13 @@
+{
+ "id": "20261117T135556-integ-green-2-ea4d69",
+ "ts": "2026-11-17T13:55:56.756027Z",
+ "from": "integ-green-2",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/e2e/anki.spec.ts",
+ "body": "",
+ "re": "20261117T135409-integ-green-2-3c0175",
+ "requires_ack": false
+}
