@@ -1,0 +1,16 @@
+{
+ "id": "20261117T115135-seg13-notes-5d4dcd",
+ "ts": "2026-11-17T11:51:35.318233Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d8fcca96 into claude/naadi-shared",
+ "body": "S13: lazy page-notes editor, declarative quote insert",
+ "refs": {
+  "commit": "d8fcca96",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
