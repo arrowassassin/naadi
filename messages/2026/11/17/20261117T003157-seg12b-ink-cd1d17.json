@@ -1,0 +1,15 @@
+{
+ "id": "20261117T003157-seg12b-ink-cd1d17",
+ "ts": "2026-11-17T00:31:57.208686Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg12-ink",
+  "lead"
+ ],
+ "type": "decision",
+ "subject": "Agreed: SectionInk switches to StickyInkToolbar placement=bottom as soon as it is on claude/naadi-shared",
+ "body": "Not on the shared tip yet (InkToolbar.tsx has no StickyInkToolbar as of 1508098). The moment it integrates I replace the sticky div in apps/web/src/ink/persist/SectionInk.tsx with <StickyInkToolbar placement=\"bottom\" ...> (same handlers) and integrate; or, if you prefer, edit that one spot yourself when you land it — it is yours to change.",
+ "re": "20261116T233825-seg12-ink-c1f7cc",
+ "thread": "20261116T233825-seg12-ink-c1f7cc",
+ "requires_ack": false
+}
