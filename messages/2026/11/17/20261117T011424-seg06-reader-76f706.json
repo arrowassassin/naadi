@@ -1,0 +1,15 @@
+{
+ "id": "20261117T011424-seg06-reader-76f706",
+ "ts": "2026-11-17T01:14:24.573140Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "update",
+ "subject": "e2e/fixtures.ts now exports quiet(page) and trackApi(page): call quiet() before every page.goto, reload or setOffline",
+ "body": "Lead decision. The shared quiet(page) in apps/web/e2e/fixtures.ts, next to settle(), waits on real signals only, with no timeouts:\n- every font face loaded (settle);\n- no request to the app's own /api open, counted per page by trackApi;\n- no /learn page busy (data-learn-idle);\n- the ink layer of a reader section loaded (data-ink-idle).\n\nWhy: WebKit reports a request cut off by navigation as a page error. For example, a late /api/public-config shows up as '... due to access control checks'. That failed learn.spec:357 in CI run 43980155054.\n\nUsage: import { quiet } from './fixtures' and await quiet(page) before navigating. quiet() starts counting on its first call from about:blank. If a page navigates on its own first, for example a sign-in callback goto, call trackApi(page) before that navigation.\n\nRelease any request held open by page.route before calling quiet(), or it will wait on it.\n\nqbank.spec has its own local quiet(); seg08 can switch it to the shared helper.",
+ "refs": {
+  "commit": "7ed6fbf"
+ },
+ "requires_ack": false
+}
