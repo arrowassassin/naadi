@@ -1,0 +1,16 @@
+{
+ "id": "20261117T053051-seg15-ingest-c41ccc",
+ "ts": "2026-11-17T05:30:51.452451Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S15 takes Alembic 0028 (0025 is seg19's per S21's note, 0026 S22, 0027 S16); down_revision = head at integrate time (today 0024). Adapts to S20's 0023: media_assets.owner_user_id already exists. Next free: 0029.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0028_ingest_kb.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
