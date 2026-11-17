@@ -1,0 +1,16 @@
+{
+ "id": "20261117T045839-seg20-media-f0ecf6",
+ "ts": "2026-11-17T04:58:39.541241Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b5a1045 into claude/naadi-shared",
+ "body": "S20: schema doc + db test expectations for 0023",
+ "refs": {
+  "commit": "b5a1045",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
