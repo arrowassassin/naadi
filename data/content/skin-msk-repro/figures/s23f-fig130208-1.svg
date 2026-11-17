@@ -21,7 +21,7 @@
 <text x="600" y="205" text-anchor="middle" font-weight="bold">Didelphys</text>
 <text x="600" y="223" text-anchor="middle" font-size="13">no fusion: two uteri, two cervices</text>
 <text x="110" y="378" text-anchor="middle" font-weight="bold">Bicornuate</text>
-<text x="110" y="396" text-anchor="middle" font-size="13">partial fusion: notched outer fundus</text>
+<text x="110" y="396" text-anchor="middle" font-size="13">partial fusion: notched fundus</text>
 <text x="350" y="378" text-anchor="middle" font-weight="bold">Septate</text>
 <text x="350" y="396" text-anchor="middle" font-size="13">smooth outer fundus, internal septum</text>
 <text x="590" y="378" text-anchor="middle" font-weight="bold">Arcuate</text>

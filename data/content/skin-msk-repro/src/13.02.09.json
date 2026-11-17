@@ -1,0 +1,742 @@
+{
+ "area": "13.02.09",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Pharmacology of contraceptives, SERMs and other drugs acting on the female reproductive tract and breast",
+   "html": "<h2>How hormonal contraceptives work</h2>\n<p>Combined hormonal contraceptives (pill, patch, vaginal ring) contain an estrogen, usually ethinyl estradiol (some pills use estradiol valerate or estetrol), and a progestin. The <strong>progestin</strong> does most of the contraceptive work: it slows GnRH pulse frequency and prevents the LH surge, so ovulation does not occur; it thickens cervical mucus so sperm cannot penetrate; and it makes the endometrium thin and inactive. The <strong>estrogen</strong> suppresses FSH (and so follicle development) and stabilises the endometrium, giving predictable bleeding. Progestin-only methods (pills, implant, injection, levonorgestrel IUD) rely on mucus thickening and endometrial effects and suppress ovulation to differing degrees: almost always with the etonogestrel implant and depot medroxyprogesterone acetate (DMPA), inconsistently with low-dose progestin pills and the levonorgestrel IUD.</p>\n<h3>Adverse effects explained by pharmacology</h3>\n<table class=\"hy\"><thead><tr><th>Effect</th><th>Mechanism</th><th>Clinical consequence</th></tr></thead><tbody>\n<tr><td>Venous thromboembolism</td><td>Ethinyl estradiol increases hepatic synthesis of factors II, VII, VIII, X and fibrinogen, reduces protein S and antithrombin, and induces acquired resistance to activated protein C</td><td>Risk is several-fold higher than baseline (still lower than in pregnancy and postpartum); magnified by factor V Leiden, smoking, obesity, immobility and the early postpartum period</td></tr>\n<tr><td>Arterial events</td><td>Prothrombotic effects plus raised blood pressure</td><td>Stroke and myocardial infarction risk, especially with smoking at 35 or older, migraine with aura and hypertension</td></tr>\n<tr><td>Hypertension</td><td>Estrogen increases hepatic angiotensinogen</td><td>Check blood pressure before and during use</td></tr>\n<tr><td>Liver and biliary</td><td>Estrogen increases cholesterol secretion into bile and can impair bile flow</td><td>Gallstones, cholestasis; hepatocellular adenoma (rare; may bleed)</td></tr>\n<tr><td>Raised binding globulins</td><td>Estrogen increases SHBG, thyroxine-binding globulin and cortisol-binding globulin</td><td>Total T4 and cortisol rise with normal free levels; lower free testosterone helps acne and hirsutism</td></tr>\n<tr><td>Progestin androgenicity</td><td>Older 19-nortestosterone progestins (levonorgestrel, norgestrel) bind androgen receptors</td><td>Acne, lower HDL in some users</td></tr>\n<tr><td>Drospirenone</td><td>Derived from spironolactone; antimineralocorticoid and antiandrogenic</td><td>Potassium caution with ACE inhibitors, ARBs or kidney disease; slightly higher VTE risk than levonorgestrel pills</td></tr>\n</tbody></table>\n<p>Combined methods also have noncontraceptive benefits: less dysmenorrhea and heavy bleeding, improvement in acne and hirsutism, fewer ovarian cysts and lower lifetime risks of ovarian and endometrial cancer. Current use is associated with a small increase in breast cancer risk and a modest rise in cervical cancer risk with long use.</p>\n<h3>Drug interactions</h3>\n<p>Ethinyl estradiol and progestins are metabolised by hepatic <strong>CYP3A4</strong>. Inducers increase their clearance and cause contraceptive failure: <strong>rifampin and rifabutin</strong>, many anticonvulsants (carbamazepine, oxcarbazepine, phenytoin, phenobarbital, primidone, topiramate at higher doses), St John's wort and some antiretrovirals (efavirenz, ritonavir-boosted regimens). The etonogestrel implant and progestin pills are also affected. DMPA, which gives high progestin levels, and IUDs, which act locally, remain effective. Most broad-spectrum antibiotics other than rifamycins do not reduce efficacy. In the other direction, estrogen induces glucuronidation of <strong>lamotrigine</strong>, lowering its level, with rebound toxicity in pill-free weeks.</p>\n<h2>Progestin-only methods and IUDs</h2>\n<ul>\n<li><strong>DMPA</strong> suppresses ovulation for at least 13 weeks. Hypoestrogenism causes reversible loss of bone mineral density; it also causes weight gain in some users and a <strong>delay in return of fertility</strong> of up to about a year after the last injection. Amenorrhea is common with continued use.</li>\n<li><strong>Etonogestrel implant</strong>: the most effective reversible method; unpredictable bleeding is its main drawback.</li>\n<li><strong>Levonorgestrel IUD</strong>: local progestin causes endometrial decidualisation and atrophy, thickens mucus and impairs sperm function; reduces menstrual blood loss and dysmenorrhea. Systemic effects are small.</li>\n<li><strong>Copper IUD</strong>: copper ions and a sterile inflammatory reaction in the endometrium are toxic to sperm and ova, preventing fertilisation. Contains no hormone; it can increase bleeding and cramping. It is the most effective emergency contraceptive.</li>\n</ul>\n<h2>Emergency contraception</h2>\n<p><strong>Levonorgestrel</strong> (single oral dose) works mainly by delaying or preventing ovulation; it is ineffective once the LH surge has begun and does not disrupt an implanted pregnancy. <strong>Ulipristal acetate</strong>, a selective progesterone receptor modulator, can delay follicle rupture even after LH has started to rise, so it remains effective up to 120 hours and is more effective than levonorgestrel at higher body weight. Because it blocks the progesterone receptor, a progestin started immediately afterwards can reduce its effect. The <strong>copper IUD</strong> (and, in current US guidance, the 52-mg levonorgestrel IUD) inserted within 5 days is the most effective option.</p>\n<h2>Drugs acting on the breast and endometrium</h2>\n<ul>\n<li><strong>Tamoxifen</strong> is a SERM: an antagonist in breast tissue and a partial <strong>agonist in the endometrium</strong> and bone (after menopause). It increases the risk of endometrial hyperplasia, polyps, carcinoma and uterine sarcoma, venous thromboembolism and hot flashes, and it causes cataracts. It is a prodrug activated mainly by <strong>CYP2D6</strong> to endoxifen; strong CYP2D6 inhibitors (paroxetine, fluoxetine, bupropion) may reduce efficacy.</li>\n<li><strong>Aromatase inhibitors</strong> (anastrozole, letrozole, exemestane) block peripheral estrogen synthesis, causing bone loss, arthralgia and vaginal atrophy, without endometrial stimulation.</li>\n<li><strong>Drug-induced hyperprolactinemia</strong>: dopamine D2 antagonists remove tonic tuberoinfundibular inhibition of lactotrophs. The main culprits are risperidone and paliperidone, first-generation antipsychotics, metoclopramide and domperidone; others include methyldopa, verapamil, opioids and some antidepressants. Effects are galactorrhea, oligomenorrhea, low estradiol, bone loss and sexual dysfunction. Aripiprazole, a D2 partial agonist, tends to lower prolactin.</li>\n<li><strong>Testosterone</strong> in transmasculine people causes amenorrhea, clitoral growth, vaginal and cervical atrophy (dyspareunia, unsatisfactory cytology), pelvic pain, acne and erythrocytosis (from increased erythropoietin and lower hepcidin). It does not reliably prevent ovulation and is teratogenic.</li>\n<li>Other drugs to know: in utero <strong>diethylstilbestrol</strong> exposure (vaginal clear cell adenocarcinoma, structural uterine and cervical anomalies); <strong>alkylating chemotherapy</strong> (primary ovarian insufficiency); <strong>GnRH agonists</strong> (hot flashes, bone loss); <strong>danazol</strong> (androgenic effects); <strong>valproate</strong> (menstrual irregularity and features resembling PCOS).</li>\n</ul>\n<div class=\"pearl\"><p>The progestin prevents pregnancy; the estrogen controls bleeding and causes most of the serious vascular risk. That is why people with estrogen contraindications can still use any progestin-only method or an IUD.</p></div>\n<div class=\"trap\"><p>Tamoxifen stimulates the endometrium; raloxifene and aromatase inhibitors do not. Bleeding on tamoxifen needs endometrial evaluation, and paroxetine is a poor choice for hot flashes in someone on tamoxifen.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Oral Contraceptive Pills"
+    },
+    {
+     "statpearls": "Tamoxifen"
+    },
+    {
+     "label": "CDC: US Medical Eligibility Criteria for Contraceptive Use",
+     "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Contraceptive safety, emergency contraception and drug-related reproductive problems: management",
+   "html": "<h2>Choosing a method safely: the US Medical Eligibility Criteria</h2>\n<p>The CDC US Medical Eligibility Criteria (US MEC, updated 2024) rate each method for each condition: <strong>1</strong> no restriction, <strong>2</strong> benefits generally outweigh risks, <strong>3</strong> risks usually outweigh benefits, <strong>4</strong> unacceptable health risk. Most contraindications apply to estrogen. Conditions rated <strong>category 4 for combined hormonal contraception</strong> include:</p>\n<ul>\n<li>Migraine with aura (any age).</li>\n<li>Age 35 or older and smoking 15 or more cigarettes a day.</li>\n<li>Blood pressure of 160/100 mm Hg or higher, or hypertension with vascular disease.</li>\n<li>Acute venous thromboembolism, or past VTE with a higher risk of recurrence; known thrombogenic mutations; major surgery with prolonged immobilisation.</li>\n<li>Ischaemic heart disease, stroke, complicated valvular heart disease, peripartum cardiomyopathy.</li>\n<li>Current breast cancer.</li>\n<li>Decompensated cirrhosis, hepatocellular adenoma or malignant liver tumour.</li>\n<li>Systemic lupus erythematosus with positive or unknown antiphospholipid antibodies.</li>\n<li>Less than 21 days postpartum.</li>\n</ul>\n<p>Category 3 examples for combined methods include adequately controlled hypertension or blood pressure of 140&ndash;159/90&ndash;99 mm Hg, age 35 or older with lighter smoking, multiple cardiovascular risk factors, the early postpartum weeks with other VTE risk factors, malabsorptive bariatric surgery (for pills), and use of enzyme-inducing anticonvulsants or rifampin. For these patients, choose an IUD, the implant or DMPA; with enzyme inducers, IUDs and DMPA are preferred because implant levels can fall (implant rated category 2). Progestin-only methods and IUDs have very few category 4 conditions (current breast cancer for hormonal methods; for IUDs, current PID, purulent cervicitis, distorted cavity, unexplained bleeding, pregnancy).</p>\n<table class=\"hy\"><thead><tr><th>Situation</th><th>Good choices</th><th>Avoid</th></tr></thead><tbody>\n<tr><td>Migraine with aura; smoker 35 or older; past VTE</td><td>LNG or copper IUD, implant, progestin pill, DMPA</td><td>Pill, patch, ring</td></tr>\n<tr><td>Enzyme-inducing anticonvulsant or rifampin</td><td>LNG or copper IUD, DMPA</td><td>Pill, patch, ring, progestin pill (implant efficacy may also fall)</td></tr>\n<tr><td>Adolescent wanting the most effective method</td><td>Implant or IUD (long-acting reversible contraception)</td><td>No method is contraindicated by age alone</td></tr>\n<tr><td>Testosterone therapy</td><td>IUDs, implant, DMPA, progestin pill</td><td>Relying on testosterone-induced amenorrhea</td></tr>\n<tr><td>Heavy menstrual bleeding</td><td>LNG IUD, combined methods</td><td>Copper IUD may worsen bleeding</td></tr>\n</tbody></table>\n<h2>Starting and using methods (US Selected Practice Recommendations)</h2>\n<ul>\n<li>Start any method on any day if it is reasonably certain the person is not pregnant (\"quick start\"). Backup contraception: 7 days for combined methods, the implant, DMPA and the levonorgestrel IUD (unless started early in the cycle); 2 days for progestin-only pills; none for the copper IUD.</li>\n<li>No pelvic examination or routine laboratory tests are needed before starting pills; blood pressure is measured before combined methods.</li>\n<li>Gonorrhea and chlamydia testing can be done at IUD insertion without delaying it. If PID develops with an IUD in place, treat with antibiotics and leave the IUD unless there is no improvement. The small increase in PID risk is confined to the first weeks after insertion.</li>\n<li>Pregnancy with an IUD in place: exclude ectopic pregnancy; for an intrauterine pregnancy, remove the IUD if the strings are visible, which lowers the risk of miscarriage and infection.</li>\n<li>DMPA does not need DEXA monitoring or a time limit; discuss the reversible bone effect.</li>\n<li>After <strong>ulipristal</strong> emergency contraception, wait 5 days before starting or restarting hormonal contraception, then use backup or abstain for the next 7 days. After levonorgestrel emergency contraception, hormonal contraception can be started immediately.</li>\n</ul>\n<h2>Tamoxifen and the uterus</h2>\n<p>People with a uterus taking tamoxifen should report any abnormal bleeding, which is evaluated promptly; because tamoxifen produces a thickened, cystic-appearing endometrium on ultrasound, office biopsy or hysteroscopy is often used directly. Routine screening without symptoms is not recommended. Premenopausal patients need nonhormonal contraception because tamoxifen is teratogenic and does not reliably prevent ovulation; the copper IUD is a common choice, and the levonorgestrel IUD is sometimes used with oncology input.</p>\n<h2>Drug-induced hyperprolactinemia</h2>\n<p>When galactorrhea or amenorrhea starts after a D2-blocking drug, confirm hyperprolactinemia, exclude pregnancy and hypothyroidism, and ask whether the drug can be changed. For antipsychotics, discuss with the prescribing psychiatrist: options are a lower dose or a switch to a prolactin-sparing agent (aripiprazole, or adding low-dose aripiprazole). Pituitary MRI is needed when symptoms began without a clear temporal link to the drug, when prolactin is very high, when headaches or visual symptoms are present or when it does not normalise after stopping the drug. Dopamine agonists can worsen psychosis and are not the first choice.</p>\n<h2>Testosterone in transmasculine patients</h2>\n<p>Counsel before starting: amenorrhea usually develops within months, but ovulation and pregnancy can still occur; contraception is needed if sexual activity could cause pregnancy, and testosterone is stopped if pregnancy occurs. Breakthrough bleeding may need a check of adherence and testosterone level, a progestin, or evaluation of the endometrium if persistent. Pelvic pain is common and needs the usual differential. Monitor hematocrit; for erythrocytosis, reduce the dose, lengthen the dosing interval or change to a transdermal preparation, and look for contributing smoking or sleep apnoea.</p>\n<div class=\"trap\"><p>Testosterone is not contraception. A transmasculine patient who has receptive vaginal sex with a partner who produces sperm needs a contraceptive method, and estrogen-free options are effective and compatible with masculinization.</p></div>\n<div class=\"pearl\"><p>For anyone on an enzyme inducer, the safest choices are methods that do not depend on liver metabolism: the copper IUD, the levonorgestrel IUD or DMPA.</p></div>",
+   "furtherReading": [
+    {
+     "statpearls": "Emergency Contraception"
+    },
+    {
+     "statpearls": "Intrauterine Device"
+    },
+    {
+     "label": "CDC: US Medical Eligibility Criteria for Contraceptive Use",
+     "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
+     "sourceId": "cdc-guidelines"
+    }
+   ]
+  }
+ ],
+ "figures": [],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old woman develops a deep venous thrombosis of the left leg 4 months after starting a combined oral contraceptive containing ethinyl estradiol. She has no other risk factors. Testing shows that she is heterozygous for factor V Leiden. Which of the following effects of the estrogen component most directly contributed to her thrombosis?</p>",
+   "options": [
+    "Decreased hepatic synthesis of fibrinogen",
+    "Decreased platelet production of thromboxane A2",
+    "Increased endothelial release of tissue plasminogen activator",
+    "Increased hepatic synthesis of procoagulant factors with reduced protein S",
+    "Increased hepatic synthesis of antithrombin"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Ethinyl estradiol has strong hepatic effects: it increases synthesis of factors II, VII, VIII and X and fibrinogen and decreases natural anticoagulants such as protein S, producing acquired resistance to activated protein C. Factor V Leiden itself makes factor Va resistant to cleavage by activated protein C, so the two effects multiply the risk of venous thrombosis.</p><p><strong>Takeaway:</strong> Estrogen raises hepatic procoagulant synthesis and lowers protein S, which compounds the risk in factor V Leiden.</p>",
+   "whyNot": {
+    "A": "Estrogen increases, not decreases, fibrinogen.",
+    "B": "Lower thromboxane would reduce platelet aggregation and would not promote venous thrombosis.",
+    "C": "More tissue plasminogen activator would promote fibrinolysis and protect against clots.",
+    "E": "Estrogen tends to lower antithrombin; increased antithrombin would be protective."
+   },
+   "objective": "Explain how estrogen in combined contraceptives increases venous thrombosis risk.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "thrombosis"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 25-year-old woman who takes a combined oral contraceptive is treated for latent tuberculosis. Five months later she has a positive pregnancy test, although she reports taking every pill on time. Which of the following best explains the contraceptive failure?</p>",
+   "options": [
+    "Competition for renal tubular secretion of ethinyl estradiol",
+    "Decreased gastrointestinal absorption of the progestin",
+    "Displacement of ethinyl estradiol from sex hormone-binding globulin",
+    "Increased hepatic CYP3A4 metabolism of contraceptive steroids",
+    "Inhibition of the enterohepatic recirculation of ethinyl estradiol by gut flora"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Rifampin, a common regimen for latent tuberculosis, is a potent inducer of hepatic CYP3A4 (and other enzymes). It accelerates metabolism of both ethinyl estradiol and the progestin, lowering their levels enough to allow ovulation. People taking rifampin or rifabutin should use a method that does not rely on hepatic metabolism, such as an IUD or DMPA.</p><p><strong>Takeaway:</strong> Rifamycins induce CYP3A4 and cause combined contraceptive failure; use an IUD or DMPA.</p>",
+   "whyNot": {
+    "A": "Contraceptive steroids are cleared mainly by hepatic metabolism, not renal tubular secretion.",
+    "B": "Rifampin does not meaningfully reduce gut absorption of progestins.",
+    "C": "Protein-binding displacement does not lower active hormone levels enough to cause failure.",
+    "E": "Disruption of enterohepatic recirculation by antibiotics was proposed for other antibiotics but has not been shown to cause failure; enzyme induction is the established mechanism."
+   },
+   "objective": "Explain contraceptive failure with rifampin through CYP3A4 induction.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "drug interactions"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old premenopausal woman with estrogen receptor-positive breast cancer has taken tamoxifen for 1 year. She develops depression and is prescribed paroxetine. Her oncologist recommends a different antidepressant. Which of the following best explains the concern?</p>",
+   "options": [
+    "Paroxetine increases tamoxifen's agonist effect on the endometrium",
+    "Paroxetine induces CYP3A4, accelerating tamoxifen clearance",
+    "Paroxetine inhibits CYP2D6, reducing formation of the active metabolite endoxifen",
+    "Paroxetine and tamoxifen together cause serotonin syndrome",
+    "Paroxetine displaces tamoxifen from estrogen receptors"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Tamoxifen is a prodrug: CYP2D6 converts it to endoxifen, a much more potent estrogen receptor antagonist. Paroxetine and fluoxetine are strong CYP2D6 inhibitors and lower endoxifen levels, which may reduce tamoxifen's benefit. Antidepressants with little CYP2D6 inhibition (for example venlafaxine, escitalopram or sertraline at usual doses) are preferred.</p><p><strong>Takeaway:</strong> Tamoxifen needs CYP2D6 activation to endoxifen; avoid strong CYP2D6 inhibitors such as paroxetine.</p>",
+   "whyNot": {
+    "A": "Paroxetine does not change tamoxifen's tissue-specific receptor effects on the endometrium.",
+    "B": "Paroxetine is a CYP2D6 inhibitor, not a CYP3A4 inducer.",
+    "D": "Tamoxifen has no serotonergic activity, so serotonin syndrome is not the concern.",
+    "E": "Paroxetine does not bind estrogen receptors."
+   },
+   "objective": "Explain why strong CYP2D6 inhibitors are avoided with tamoxifen.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug interactions",
+    "breast cancer therapy"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old woman had unprotected intercourse 30 hours ago, on day 11 of a regular 28-day cycle. A urinary LH test this morning was negative. She takes a single oral dose of levonorgestrel. Which of the following is the primary mechanism by which this drug prevents pregnancy?</p>",
+   "options": [
+    "Blocking implantation of a fertilised embryo",
+    "Delaying or preventing ovulation",
+    "Disrupting an implanted pregnancy",
+    "Inducing luteolysis of the corpus luteum",
+    "Killing sperm in the reproductive tract"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Levonorgestrel emergency contraception works mainly by suppressing or delaying the LH surge and therefore ovulation, so sperm already present die before an oocyte is released. It is ineffective once the LH surge has begun and does not prevent implantation or harm an established pregnancy. Ulipristal can delay follicle rupture slightly later in the cycle, and the copper IUD is the most effective option.</p><p><strong>Takeaway:</strong> Levonorgestrel emergency contraception works by delaying ovulation, not by blocking implantation.</p>",
+   "whyNot": {
+    "A": "Evidence does not support an effect on implantation at the doses used.",
+    "C": "Levonorgestrel does not interrupt an established pregnancy; that requires a progesterone receptor antagonist such as mifepristone.",
+    "D": "Luteolysis does not explain its effect; it acts before ovulation.",
+    "E": "Levonorgestrel is not spermicidal; copper ions in an IUD are toxic to sperm."
+   },
+   "objective": "Describe the mechanism of levonorgestrel emergency contraception.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "contraception"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old woman wants a highly effective, hormone-free, long-acting contraceptive. She chooses a T-shaped intrauterine device wrapped with metal wire. Which of the following best describes how this device prevents pregnancy?</p>",
+   "options": [
+    "Atrophy of the endometrium from local progestin release",
+    "Inhibition of the midcycle LH surge",
+    "Ions released by the device and a sterile inflammatory reaction that are toxic to sperm and ova",
+    "Mechanical blockage of the tubal ostia",
+    "Thickening of cervical mucus by local estrogen"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>The copper IUD releases copper ions and provokes a sterile inflammatory reaction in the endometrium and uterine fluid. These impair sperm motility and viability and damage ova, preventing fertilisation. It contains no hormone, does not suppress ovulation, and can increase menstrual bleeding and cramping. It is also the most effective emergency contraceptive when inserted within 5 days.</p><p><strong>Takeaway:</strong> The copper IUD prevents fertilisation through spermicidal copper ions and sterile inflammation.</p>",
+   "whyNot": {
+    "A": "Local progestin with endometrial atrophy describes the levonorgestrel IUD.",
+    "B": "Inhibition of the LH surge is a progestin effect of combined contraceptives and DMPA; the copper IUD does not affect ovulation.",
+    "D": "The IUD sits in the uterine cavity and does not block the tubes.",
+    "E": "Estrogen thins cervical mucus, and the copper IUD contains no hormone."
+   },
+   "objective": "Describe the mechanism of the copper intrauterine device.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "contraception"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman with schizophrenia has had amenorrhea and bilateral milky nipple discharge for 4 months. Five months ago she was started on risperidone. Urine hCG is negative, TSH is normal and serum prolactin is 96 ng/mL (reference less than 20 ng/mL). Which of the following mechanisms best explains her symptoms?</p>",
+   "options": [
+    "Blockade of D2 receptors on pituitary lactotrophs",
+    "Blockade of muscarinic receptors in the hypothalamus",
+    "Direct stimulation of breast prolactin receptors",
+    "Stimulation of hypothalamic TRH release",
+    "Stimulation of serotonin 5-HT2A receptors on lactotrophs"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Dopamine from the tuberoinfundibular pathway tonically inhibits prolactin secretion through D2 receptors on pituitary lactotrophs. Risperidone blocks D2 receptors, and because it crosses the blood-brain barrier poorly, it reaches high concentrations at the pituitary, which lies outside it. Prolactin rises, suppressing GnRH (causing amenorrhea) and stimulating milk production.</p><p><strong>Takeaway:</strong> D2 antagonists cause hyperprolactinemia by blocking dopamine's tonic inhibition of lactotrophs.</p>",
+   "whyNot": {
+    "B": "Anticholinergic effects cause dry mouth and constipation, not hyperprolactinemia.",
+    "C": "Risperidone does not act on breast prolactin receptors; galactorrhea results from high circulating prolactin.",
+    "D": "TRH stimulates prolactin in hypothyroidism, but her TSH is normal and risperidone does not stimulate TRH.",
+    "E": "Risperidone is a 5-HT2A antagonist, not an agonist, and serotonin is not the main mechanism."
+   },
+   "objective": "Explain antipsychotic-induced hyperprolactinemia by D2 blockade at the pituitary.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "galactorrhea",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old transgender man has taken intramuscular testosterone for 2 years. He feels well. Routine laboratory studies show hemoglobin 18.6 g/dL (186 g/L) and hematocrit 56%. His trough testosterone is in the upper male reference range. He does not smoke, and oxygen saturation is 98% on room air. Which of the following best explains his laboratory findings?</p>",
+   "options": [
+    "Androgen-induced bone marrow fibrosis",
+    "Decreased plasma volume from androgen-induced diuresis",
+    "Increased renal erythropoietin production and decreased hepcidin",
+    "Iron overload from increased intestinal absorption",
+    "Somatic JAK2 mutation induced by testosterone"
+   ],
+   "answer": "C",
+   "explanationHtml": "<p>Testosterone stimulates erythropoiesis: it increases erythropoietin secretion by the kidney, suppresses hepcidin (increasing iron availability) and acts directly on marrow progenitors. This explains why hemoglobin and hematocrit rise into the male range and sometimes above it. Erythrocytosis is the most common laboratory adverse effect of testosterone and is managed by adjusting the dose, interval or route.</p><p><strong>Takeaway:</strong> Testosterone causes erythrocytosis by raising erythropoietin and lowering hepcidin.</p>",
+   "whyNot": {
+    "A": "Androgens do not cause marrow fibrosis.",
+    "B": "Androgens do not cause diuresis; they tend to cause mild fluid retention.",
+    "D": "Lower hepcidin increases iron availability, but iron overload is not the cause of a high hematocrit.",
+    "E": "Testosterone does not cause JAK2 mutations; polycythemia vera would usually raise other cell lines and is unrelated to hormone therapy."
+   },
+   "objective": "Explain testosterone-induced erythrocytosis.",
+   "extraAreas": [],
+   "disciplines": [
+    "physiology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gender-affirming care",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman with focal epilepsy wants a reliable contraceptive. She has had no seizures for 2 years. She does not want to become pregnant in the next 5 years. Her current medications are listed.</p><table><thead><tr><th>Medication</th><th>Use</th></tr></thead><tbody><tr><td>Carbamazepine, extended release, twice daily</td><td>Epilepsy</td></tr><tr><td>Folic acid daily</td><td>Supplement</td></tr><tr><td>Ibuprofen as needed</td><td>Dysmenorrhea</td></tr></tbody></table><p>She has heavy, painful periods. Blood pressure is 114/70 mm Hg. Which of the following is the most appropriate contraceptive method?</p>",
+   "options": [
+    "Combined oral contraceptive",
+    "Combined transdermal patch",
+    "Etonogestrel implant",
+    "Levonorgestrel intrauterine device",
+    "Progestin-only pill"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Carbamazepine induces hepatic enzymes and lowers levels of ethinyl estradiol and progestins, making combined methods and progestin-only pills less effective (US MEC category 3) and possibly reducing implant efficacy (category 2). The levonorgestrel IUD acts locally and is not affected, is highly effective for years, and also reduces heavy and painful menses. DMPA and the copper IUD are also unaffected, but the copper IUD could worsen her bleeding.</p><p><strong>Takeaway:</strong> With enzyme-inducing anticonvulsants, choose an IUD or DMPA.</p>",
+   "whyNot": {
+    "A": "Carbamazepine increases metabolism of both hormones, raising the risk of failure.",
+    "B": "The patch delivers the same hormones and is equally affected by enzyme induction.",
+    "C": "The implant is usable (category 2), but enzyme inducers can lower etonogestrel levels and failures have been reported; an IUD avoids the interaction and treats her heavy bleeding.",
+    "E": "Progestin-only pill levels fall with enzyme induction, and these pills already have a narrow margin of efficacy."
+   },
+   "objective": "Choose an intrauterine device for a patient taking an enzyme-inducing anticonvulsant.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "drug interactions"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 38-year-old woman, para 2, requests contraception. She smokes 20 cigarettes a day and is not ready to quit. She has no other medical problems. Blood pressure is 124/78 mm Hg. She would prefer a method that does not require daily action. Which of the following is the most appropriate method?</p>",
+   "options": [
+    "Combined oral contraceptive",
+    "Combined transdermal patch",
+    "Combined vaginal ring",
+    "Etonogestrel implant",
+    "Extended-cycle combined oral contraceptive"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Age 35 or older with smoking 15 or more cigarettes a day is a US MEC category 4 condition for all estrogen-containing methods because of the risk of myocardial infarction and stroke. Progestin-only and nonhormonal methods are safe. The etonogestrel implant is highly effective, lasts for years and requires no daily action. Smoking cessation should still be offered.</p><p><strong>Takeaway:</strong> Smokers aged 35 or older should not use estrogen-containing contraception.</p>",
+   "whyNot": {
+    "A": "Combined pills are category 4 for a heavy smoker aged 35 or older.",
+    "B": "The patch contains estrogen and carries the same restriction, with somewhat higher estrogen exposure.",
+    "C": "The ring contains estrogen and is equally contraindicated.",
+    "E": "Extended cycling does not remove the estrogen-related cardiovascular risk."
+   },
+   "objective": "Avoid estrogen-containing contraception in smokers aged 35 or older.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 23-year-old woman takes ulipristal acetate today, 3 days after unprotected intercourse. She wants to begin combined oral contraceptive pills, which she has used before without problems. Urine hCG is negative. Which of the following is the most appropriate instruction?</p>",
+   "options": [
+    "Begin the pill on the first day of her next menses only",
+    "Begin the pill today with no backup method",
+    "Begin the pill today and use condoms for 2 days",
+    "Wait 5 days, then begin the pill and use condoms or abstain for 7 days",
+    "Wait for a negative pregnancy test in 3 weeks before starting any method"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Ulipristal is a progesterone receptor modulator; a progestin taken in the next few days can compete with it and reduce its ability to delay ovulation. US Selected Practice Recommendations advise waiting 5 days after ulipristal before starting or resuming hormonal contraception, then using backup (condoms) or abstaining for 7 days. A pregnancy test is advised if menses are delayed. After levonorgestrel emergency contraception, by contrast, the pill can be started immediately.</p><p><strong>Takeaway:</strong> After ulipristal, wait 5 days before starting hormonal contraception, then use backup for 7 days.</p>",
+   "whyNot": {
+    "A": "Waiting for the next menses leaves her unprotected and is not required.",
+    "B": "Starting a progestin immediately may reduce ulipristal's effectiveness, and backup would be needed anyway.",
+    "C": "Two days of backup applies to progestin-only pills, and starting immediately is not advised after ulipristal.",
+    "E": "Delaying all contraception for 3 weeks leaves her at risk of pregnancy."
+   },
+   "objective": "Advise a 5-day delay before hormonal contraception after ulipristal emergency contraception.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 4,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman had a levonorgestrel IUD inserted 8 months ago. She now has 3 days of lower abdominal pain, dyspareunia and abnormal discharge. Temperature is 38.0&deg;C (100.4&deg;F). She is tolerating oral intake. Examination shows cervical motion and adnexal tenderness; the IUD strings are visible. Urine hCG is negative. Transvaginal ultrasound shows the IUD correctly placed and no adnexal mass. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Admit for IV antibiotics and remove the IUD",
+    "Leave the IUD in place and give outpatient antibiotics, with reassessment in 48&ndash;72 hours",
+    "Remove the IUD and give no antibiotics",
+    "Remove the IUD and give outpatient antibiotics",
+    "Replace the device with a copper IUD and give outpatient antibiotics"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>She has mild to moderate PID without an abscess. The IUD does not need to be removed: outcomes are similar with it left in place, and removal would leave her without contraception. She should receive the standard outpatient regimen (ceftriaxone IM once plus 14 days of doxycycline and metronidazole) and be reassessed within 48&ndash;72 hours; the IUD is removed only if she does not improve.</p><p><strong>Takeaway:</strong> PID with an IUD: treat with antibiotics and leave the IUD unless there is no improvement.</p>",
+   "whyNot": {
+    "A": "She does not meet admission criteria, and IUD removal is not routinely needed.",
+    "C": "Removal without antibiotics fails to treat the infection.",
+    "D": "Removing the IUD offers no benefit for mild to moderate PID and interrupts effective contraception.",
+    "E": "Exchanging devices during active infection is not indicated."
+   },
+   "objective": "Leave an IUD in place when treating mild to moderate PID.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "pelvic infection"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman with a copper IUD inserted 2 years ago has a positive home pregnancy test. Her last menstrual period was 7 weeks ago. She wants to continue the pregnancy. Transvaginal ultrasound shows a single live intrauterine pregnancy at 6 weeks' gestation and the IUD in the lower uterine segment, separate from the gestational sac. The strings are visible at the cervical os. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Leave the IUD in place and perform serial ultrasounds",
+    "Leave the IUD in place until delivery and remove it at cesarean birth",
+    "Recommend termination because of fetal toxicity from copper",
+    "Remove the IUD by gentle traction on the strings",
+    "Start prophylactic antibiotics and leave the IUD in place"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Pregnancy with an IUD in place carries higher risks of miscarriage, septic abortion, preterm birth and chorioamnionitis. Once an ectopic pregnancy has been excluded, the IUD should be removed if the strings are visible, which lowers these risks, although removal itself carries a small risk of miscarriage. If the strings are not visible, ultrasound localisation guides management.</p><p><strong>Takeaway:</strong> With an intrauterine pregnancy and an IUD whose strings are visible, remove the IUD.</p>",
+   "whyNot": {
+    "A": "Leaving the IUD increases the risk of miscarriage, infection and preterm birth.",
+    "B": "Retaining the device through pregnancy carries more risk than early removal.",
+    "C": "Copper IUDs are not known to be teratogenic; there is no reason to recommend termination.",
+    "E": "Antibiotics do not reduce the risks from a retained IUD and are not routinely indicated."
+   },
+   "objective": "Remove an IUD with visible strings in a desired intrauterine pregnancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [
+    "cdc-guidelines"
+   ],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "early pregnancy"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman with schizoaffective disorder has had bilateral galactorrhea and no menses for 5 months. Six months ago her risperidone dose was increased, and her psychiatric symptoms are now well controlled. She has no headaches or visual changes. Urine hCG is negative, TSH and creatinine are normal and prolactin is 78 ng/mL (reference less than 20 ng/mL). In consultation with her psychiatrist, which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Add bromocriptine and continue risperidone at the same dose",
+    "Begin a combined oral contraceptive and continue risperidone",
+    "Order MRI of the pituitary before any medication change",
+    "Stop risperidone without replacement",
+    "Switch to aripiprazole or add low-dose aripiprazole"
+   ],
+   "answer": "E",
+   "explanationHtml": "<p>The timing, a moderately raised prolactin and the absence of neurologic symptoms point to risperidone-induced hyperprolactinemia. The preferred approach, coordinated with psychiatry, is to switch to a prolactin-sparing antipsychotic or add low-dose aripiprazole, a D2 partial agonist that lowers prolactin; prolactin is then rechecked. Imaging is reserved for unclear timing, very high prolactin, neurologic symptoms or failure of prolactin to normalise.</p><p><strong>Takeaway:</strong> For antipsychotic-induced hyperprolactinemia, switch to or add aripiprazole with psychiatry rather than adding a dopamine agonist.</p>",
+   "whyNot": {
+    "A": "Dopamine agonists can worsen psychosis and are not first-line for drug-induced hyperprolactinemia.",
+    "B": "A combined pill can restore withdrawal bleeding and protect bone, but it does not address galactorrhea or the cause; it is used when the antipsychotic cannot be changed.",
+    "C": "MRI is unnecessary when the drug link is clear and prolactin is only moderately raised without neurologic symptoms.",
+    "D": "Stopping her antipsychotic without replacement risks relapse."
+   },
+   "objective": "Manage antipsychotic-induced hyperprolactinemia by switching to or adding aripiprazole.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "psychiatry"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "galactorrhea",
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 25-year-old transgender man has taken subcutaneous testosterone for 8 months, and his menses stopped 4 months ago. He has a male partner and has receptive vaginal intercourse; they use condoms inconsistently. He does not want to become pregnant and does not want any treatment that would reduce masculinization. He has no medical problems. Which of the following is the most appropriate advice?</p>",
+   "options": [
+    "He can rely on testosterone because amenorrhea indicates suppressed ovulation",
+    "He should increase his testosterone dose to ensure suppression of ovulation",
+    "He should start a combined oral contraceptive",
+    "He should use a reliable method such as an IUD or implant",
+    "He should stop testosterone so that contraception can be started"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>Testosterone suppresses ovulation inconsistently, and pregnancy can occur even with amenorrhea. Testosterone is also teratogenic. He needs effective contraception compatible with his goals: IUDs (copper or levonorgestrel), the etonogestrel implant and DMPA do not reduce masculinization and may reduce breakthrough bleeding. Condoms also protect against STIs.</p><p><strong>Takeaway:</strong> Testosterone is not contraception; offer an IUD, implant or injectable progestin to transmasculine patients at risk of pregnancy.</p>",
+   "whyNot": {
+    "A": "Amenorrhea on testosterone does not reliably indicate absent ovulation, and pregnancies have occurred.",
+    "B": "Raising the dose above the male range adds risk (erythrocytosis) and still does not guarantee contraception.",
+    "C": "Estrogen-containing pills are effective but are less acceptable when he wants to avoid feminizing effects, and estrogen-free methods work well.",
+    "E": "Testosterone can continue alongside estrogen-free contraception."
+   },
+   "objective": "Counsel transmasculine patients on testosterone that they need contraception.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "communication",
+    "pc_health_maintenance"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "contraception",
+    "transgender health"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which component of combined contraceptives provides most of the contraceptive effect?",
+   "back": "The progestin (blocks the LH surge, thickens mucus).",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "How does estrogen raise VTE risk?",
+   "back": "More hepatic procoagulant factors, less protein S and antithrombin, acquired APC resistance.",
+   "question": 1
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Why does rifampin cause pill failure?",
+   "back": "CYP3A4 induction accelerates steroid metabolism.",
+   "question": 2
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Which contraceptives are unaffected by enzyme inducers?",
+   "back": "IUDs (copper or levonorgestrel) and DMPA.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "How do strong CYP2D6 inhibitors affect tamoxifen?",
+   "back": "They reduce conversion to the active metabolite endoxifen.",
+   "question": 3
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Main mechanism of levonorgestrel emergency contraception?",
+   "back": "Delays or prevents ovulation; ineffective after the LH surge.",
+   "question": 4
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "How does the copper IUD work?",
+   "back": "Copper ions and sterile inflammation are toxic to sperm and ova.",
+   "question": 5
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Why does risperidone cause galactorrhea?",
+   "back": "D2 blockade at pituitary lactotrophs raises prolactin.",
+   "question": 6
+  },
+  {
+   "n": 9,
+   "section": 1,
+   "front": "How does testosterone cause erythrocytosis?",
+   "back": "More erythropoietin and less hepcidin.",
+   "question": 7
+  },
+  {
+   "n": 10,
+   "section": 1,
+   "front": "Adverse effects of DMPA?",
+   "back": "Reversible bone density loss, weight gain in some, delayed return of fertility.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Name five US MEC category 4 conditions for combined contraception.",
+   "back": "Migraine with aura; age 35+ smoking 15+/day; BP 160/100+; VTE history or thrombophilia; under 21 days postpartum (also IHD, stroke, breast cancer, SLE with aPL).",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Contraception with carbamazepine?",
+   "back": "Levonorgestrel or copper IUD, or DMPA.",
+   "question": 8
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Smoker aged 38 wanting a no-daily-action method?",
+   "back": "Etonogestrel implant or an IUD (no estrogen).",
+   "question": 9
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Starting hormonal contraception after ulipristal?",
+   "back": "Wait 5 days, then start with 7 days of backup.",
+   "question": 10
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "PID with an IUD in place?",
+   "back": "Treat with antibiotics and leave the IUD unless no improvement.",
+   "question": 11
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "Intrauterine pregnancy with an IUD and visible strings?",
+   "back": "Remove the IUD after excluding ectopic pregnancy.",
+   "question": 12
+  },
+  {
+   "n": 17,
+   "section": 2,
+   "front": "Antipsychotic-induced hyperprolactinemia: preferred step?",
+   "back": "Switch to or add aripiprazole with psychiatry.",
+   "question": 13
+  },
+  {
+   "n": 18,
+   "section": 2,
+   "front": "Does testosterone-induced amenorrhea mean contraception is unnecessary?",
+   "back": "No; ovulation can occur and testosterone is teratogenic.",
+   "question": 14
+  },
+  {
+   "n": 19,
+   "section": 2,
+   "front": "Backup needed after quick-starting combined pills?",
+   "back": "7 days.",
+   "question": null
+  }
+ ]
+}

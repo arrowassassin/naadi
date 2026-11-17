@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="Table-style diagram relating the day of monozygotic twin division to dichorionic diamniotic, monochorionic diamniotic, monochorionic monoamniotic and conjoined twins">
+<title>Table-style diagram relating the day of monozygotic twin division to dichorionic diamniotic, monochorionic diamniotic, monochorionic monoamniotic and conjoined twins</title>
+<rect x="0" y="0" width="760" height="330" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="28" font-size="16" text-anchor="middle" font-weight="bold">Monozygotic twins: day of embryo division determines chorionicity and amnionicity</text>
+<text x="30" y="66" font-size="14" text-anchor="start" font-weight="bold">Division</text>
+<text x="170" y="66" font-size="14" text-anchor="start" font-weight="bold">Stage of embryo</text>
+<text x="440" y="66" font-size="14" text-anchor="start" font-weight="bold">Result</text>
+<text x="630" y="66" font-size="14" text-anchor="start" font-weight="bold">Key risk</text>
+<rect x="20" y="80" width="720" height="52" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="111" font-size="14" text-anchor="start" font-weight="bold">Days 0 to 3</text>
+<text x="170" y="111" font-size="13" text-anchor="start">Before the morula compacts</text>
+<text x="440" y="111" font-size="13" text-anchor="start" font-weight="bold">Dichorionic diamniotic</text>
+<text x="630" y="104" font-size="12" text-anchor="start">Two placentas (or fused)</text>
+<text x="630" y="120" font-size="12" text-anchor="start">two sacs</text>
+<rect x="20" y="138" width="720" height="52" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="169" font-size="14" text-anchor="start" font-weight="bold">Days 4 to 8</text>
+<text x="170" y="169" font-size="13" text-anchor="start">Blastocyst, after the inner cell mass forms</text>
+<text x="440" y="169" font-size="13" text-anchor="start" font-weight="bold">Monochorionic diamniotic</text>
+<text x="630" y="162" font-size="12" text-anchor="start">Shared placenta</text>
+<text x="630" y="178" font-size="12" text-anchor="start">TTTS risk</text>
+<rect x="20" y="196" width="720" height="52" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="227" font-size="14" text-anchor="start" font-weight="bold">Days 8 to 12</text>
+<text x="170" y="227" font-size="13" text-anchor="start">After the amnion forms</text>
+<text x="440" y="227" font-size="13" text-anchor="start" font-weight="bold">Monochorionic monoamniotic</text>
+<text x="630" y="220" font-size="12" text-anchor="start">One sac</text>
+<text x="630" y="236" font-size="12" text-anchor="start">cord entanglement</text>
+<rect x="20" y="254" width="720" height="52" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="285" font-size="14" text-anchor="start" font-weight="bold">Day 13 or later</text>
+<text x="170" y="285" font-size="13" text-anchor="start">Embryonic disc already formed</text>
+<text x="440" y="285" font-size="13" text-anchor="start" font-weight="bold">Conjoined twins</text>
+<text x="630" y="278" font-size="12" text-anchor="start">Incomplete separation</text>
+<text x="380" y="318" font-size="12" text-anchor="middle">Dizygotic twins are always dichorionic diamniotic. Ultrasound clue: lambda (twin-peak) sign = dichorionic; T sign = monochorionic.</text>
+</g>
+</svg>

@@ -64,6 +64,11 @@
   "nbk": "NBK448124",
   "title": "Acute Compartment Syndrome"
  },
+ "Acute Fatty Liver of Pregnancy": {
+  "exact": true,
+  "nbk": "NBK545315",
+  "title": "Acute Fatty Liver of Pregnancy"
+ },
  "Acute Mastitis": {
   "exact": true,
   "nbk": "NBK557782",
@@ -309,6 +314,11 @@
   "nbk": "NBK431093",
   "title": "Cervical Cancer"
  },
+ "Cervical Insufficiency": {
+  "exact": true,
+  "nbk": "NBK525954",
+  "title": "Cervical Insufficiency"
+ },
  "Chancroid": {
   "exact": true,
   "nbk": "NBK513331",
@@ -531,6 +541,21 @@
   "nbk": "NBK562159",
   "title": "Dyspareunia"
  },
+ "Early Pregnancy Loss (Spontaneous Abortion)": {
+  "exact": true,
+  "nbk": "NBK560521",
+  "title": "Early Pregnancy Loss (Spontaneous Abortion)"
+ },
+ "Eclampsia": {
+  "exact": true,
+  "nbk": "NBK554392",
+  "title": "Eclampsia"
+ },
+ "Ectopic Pregnancy": {
+  "exact": true,
+  "nbk": "NBK539860",
+  "title": "Ectopic Pregnancy"
+ },
  "Eczema Herpeticum": {
   "exact": true,
   "nbk": "NBK560781",
@@ -550,6 +575,10 @@
   "exact": true,
   "nbk": "NBK557601",
   "title": "Embryology, Sexual Development"
+ },
+ "Emergency Contraception": {
+  "nbk": null,
+  "title": "Emergency Contraception"
  },
  "Enchondroma": {
   "exact": true,
@@ -703,6 +732,11 @@
   "nbk": "NBK448178",
   "title": "Fetal Alcohol Syndrome"
  },
+ "Fetal Growth Restriction": {
+  "exact": true,
+  "nbk": "NBK562268",
+  "title": "Fetal Growth Restriction"
+ },
  "Fetal Radiation Exposure": {
   "nbk": null,
   "title": "Fetal Radiation Exposure"
@@ -833,6 +867,11 @@
   "nbk": "NBK430812",
   "title": "Gynecomastia"
  },
+ "HELLP Syndrome": {
+  "exact": true,
+  "nbk": "NBK560615",
+  "title": "HELLP Syndrome"
+ },
  "HER2-Positive Breast Cancer": {
   "nbk": null,
   "title": "HER2-Positive Breast Cancer"
@@ -938,10 +977,20 @@
   "nbk": "NBK493191",
   "title": "Hormone Replacement Therapy"
  },
+ "Hydatidiform Mole": {
+  "exact": true,
+  "nbk": "NBK459155",
+  "title": "Hydatidiform Mole"
+ },
  "Hydrocele": {
   "exact": true,
   "nbk": "NBK559125",
   "title": "Hydrocele"
+ },
+ "Hyperemesis Gravidarum": {
+  "exact": true,
+  "nbk": "NBK532917",
+  "title": "Hyperemesis Gravidarum"
  },
  "Hyperhidrosis": {
   "exact": true,
@@ -1423,6 +1472,11 @@
   "nbk": null,
   "title": "Obstetric Cholestasis"
  },
+ "Oligohydramnios": {
+  "exact": true,
+  "nbk": "NBK562326",
+  "title": "Oligohydramnios"
+ },
  "Onychomycosis": {
   "exact": true,
   "nbk": "NBK441853",
@@ -1659,10 +1713,25 @@
   "nbk": "NBK559304",
   "title": "Physiology, Pregnancy"
  },
+ "Placenta Previa": {
+  "exact": true,
+  "nbk": "NBK539818",
+  "title": "Placenta Previa"
+ },
+ "Placental Abruption": {
+  "exact": true,
+  "nbk": "NBK482335",
+  "title": "Placental Abruption"
+ },
  "Plantar Fasciitis": {
   "exact": true,
   "nbk": "NBK431073",
   "title": "Plantar Fasciitis"
+ },
+ "Polyhydramnios": {
+  "exact": true,
+  "nbk": "NBK562140",
+  "title": "Polyhydramnios"
  },
  "Polymyalgia Rheumatica": {
   "exact": true,
@@ -1693,10 +1762,25 @@
   "nbk": "NBK441880",
   "title": "Preconception Counseling"
  },
+ "Preeclampsia": {
+  "exact": true,
+  "nbk": "NBK570611",
+  "title": "Preeclampsia"
+ },
+ "Pregnancy Intrahepatic Cholestasis": {
+  "exact": true,
+  "nbk": "NBK551503",
+  "title": "Pregnancy Intrahepatic Cholestasis"
+ },
  "Pregnancy Medications": {
   "exact": true,
   "nbk": "NBK507858",
   "title": "Pregnancy Medications"
+ },
+ "Pregnancy Trauma": {
+  "exact": true,
+  "nbk": "NBK430926",
+  "title": "Pregnancy Trauma"
  },
  "Premature Ejaculation": {
   "exact": true,
@@ -2103,6 +2187,11 @@
   "exact": true,
   "nbk": "NBK554621",
   "title": "Turner Syndrome"
+ },
+ "Twin-to-Twin Transfusion Syndrome": {
+  "exact": true,
+  "nbk": "NBK563133",
+  "title": "Twin-to-Twin Transfusion Syndrome"
  },
  "Urethral Injury": {
   "exact": true,

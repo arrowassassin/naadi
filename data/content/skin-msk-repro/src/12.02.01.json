@@ -1,0 +1,1525 @@
+{
+ "area": "12.02.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Early pregnancy loss, ectopic pregnancy and uterine anomalies: pathology and genetics",
+   "html": "\n<h2>Early pregnancy loss</h2>\n<p>About 10% of clinically recognised pregnancies end in loss before 13 weeks, and loss is far more common when very early losses are counted. About half of first-trimester losses are chromosomally abnormal. Autosomal trisomies dominate, with trisomy 16 the most common in miscarriage tissue (it is almost never seen at birth). 45,X is the most common single karyotype, followed by triploidy. Risk rises with oocyte age. Other contributors include poorly controlled diabetes, uterine anomalies, antiphospholipid syndrome (recurrent loss), heavy smoking and some infections. Routine activity, exercise, intercourse and emotional stress do not cause miscarriage, which is worth saying explicitly to patients.</p>\n<h3>Müllerian anomalies</h3>\n<p>The uterus forms when the paired paramesonephric (Müllerian) ducts fuse in the midline, and the septum between them then resorbs. <strong>Incomplete fusion</strong> gives a bicornuate uterus (an indented fundus with two cavities). <strong>Failed resorption</strong> gives a septate uterus. The septum is poorly vascularised fibromuscular tissue, which makes it the anomaly most strongly associated with miscarriage, and it can be resected hysteroscopically. Failure of one duct gives a unicornuate uterus. Anomalies raise the risk of malpresentation, preterm birth and growth restriction. The ureteric bud grows from the neighbouring mesonephric duct, so look for an ipsilateral renal anomaly.</p>\n\n<h2>Ectopic pregnancy</h2>\n<p>Implantation outside the endometrial cavity accounts for about 2% of pregnancies. Ectopic pregnancy remains a leading cause of first-trimester maternal death through hemorrhage. About 95% are tubal, most often in the <strong>ampulla</strong>, then the isthmus and fimbria. The interstitial (cornual) segment is less common but ruptures later and bleeds heavily because it is surrounded by myometrium. Risk factors include anything that damages tubal cilia or narrows the lumen: previous ectopic pregnancy, salpingitis (chlamydia and gonorrhea), tubal surgery, smoking, IVF and conception with an IUD in place (the IUD lowers overall pregnancy risk, but a pregnancy that does occur is more likely to be ectopic).</p>\n<p>The endometrium responds to the hormones of an ectopic pregnancy anyway. Curettage shows <strong>decidualised stroma without chorionic villi</strong>, sometimes with the Arias-Stella reaction (hypersecretory glands with enlarged, atypical nuclei). Finding no villi when the uterus is evacuated, with a rising or plateauing hCG, means an ectopic pregnancy until proven otherwise.</p>\n<table class=\"hy\">\n<thead><tr><th>Methotrexate fact</th><th>Basis</th></tr></thead>\n<tbody>\n<tr><td>Inhibits dihydrofolate reductase</td><td>Rapidly dividing trophoblast needs tetrahydrofolate for purine and thymidylate synthesis</td></tr>\n<tr><td>Avoid folate supplements during treatment</td><td>They bypass the block</td></tr>\n<tr><td>Avoid NSAIDs</td><td>They reduce renal clearance and raise toxicity</td></tr>\n<tr><td>Contraindicated in breastfeeding, renal or hepatic disease, cytopenias, active peptic ulcer or lung disease, immunodeficiency</td><td>Toxicity to marrow, gut mucosa, liver and lung</td></tr>\n<tr><td>Less successful with high hCG, embryonic cardiac activity or a large mass</td><td>Larger trophoblast burden</td></tr>\n</tbody>\n</table>\n\n<h2>Gestational trophoblastic disease in brief</h2>\n<p>A complete mole (46,XX, all paternal chromosomes, from an empty ovum, with diffuse villous swelling, no fetal tissue and absent p57 staining) and a partial mole (triploid, usually 69,XXY from two sperm, with some fetal tissue) both cause very high hCG. That can produce hyperemesis, early-onset preeclampsia (before 20 weeks) and hyperthyroidism through TSH-receptor stimulation. Evacuation is followed by serial hCG measurements until normal, because of the risk of gestational trophoblastic neoplasia.</p>\n<div class=\"trap\"><p>Preeclampsia before 20 weeks is a clue to a molar pregnancy, not to ordinary preeclampsia. Check hCG and look at the uterus with ultrasound.</p></div>\n\n<h2>Septic abortion</h2>\n<p>Retained products of conception can become infected by vaginal and bowel flora: streptococci (including group A), <em>E. coli</em> and other gram-negative rods, anaerobes such as <em>Bacteroides</em> and <em>Peptostreptococcus</em>, and rarely <em>Clostridium sordellii</em> or <em>C. perfringens</em>, which cause toxic shock. Infection spreads from the endometrium to the myometrium, parametrium and bloodstream. The source has to be removed, because antibiotics cannot sterilise necrotic retained tissue.</p>\n<div class=\"pearl\"><p>Rh(D)-negative patients can be sensitised by any pregnancy loss after the embryonic heart begins to form. That is why anti-D is considered after miscarriage, abortion and ectopic pregnancy, as described in the prenatal screening section.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Early Pregnancy Loss (Spontaneous Abortion)"
+    },
+    {
+     "statpearls": "Ectopic Pregnancy"
+    },
+    {
+     "statpearls": "Hydatidiform Mole"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "heading": "Hypertensive disorders of pregnancy: placental pathophysiology and pharmacology",
+   "html": "\n<h2>The placental origin of preeclampsia</h2>\n<p>In normal pregnancy, extravillous cytotrophoblast invades the decidua and inner myometrium and replaces the smooth muscle and endothelium of maternal spiral arteries. The arteries become wide, low-resistance channels that no longer respond to vasoconstrictors. In preeclampsia this remodelling is shallow. Spiral arteries stay narrow and muscular, the placenta is underperfused and under oxidative stress, and it releases <strong>antiangiogenic factors</strong> into the maternal circulation.</p>\n<ul>\n<li><strong>Soluble fms-like tyrosine kinase 1 (sFlt-1)</strong> is a soluble VEGF receptor that binds VEGF and placental growth factor (PlGF) and stops them acting on endothelium.</li>\n<li><strong>Soluble endoglin</strong> blocks TGF-β signalling and endothelial nitric oxide production.</li>\n<li>The result is systemic endothelial dysfunction. Vasoconstriction raises blood pressure. Glomerular endotheliosis (swollen endothelial cells occluding capillary loops) causes proteinuria. Capillary leak causes edema, and later pulmonary edema. Hepatic sinusoidal injury and periportal fibrin deposition cause rising transaminases and right upper quadrant pain from capsular stretch. Platelets are activated and consumed.</li>\n<li>A high sFlt-1/PlGF ratio is now used in some settings to help predict which patients with suspected preeclampsia will develop it soon.</li>\n</ul>\n<p>Risk factors are those of abnormal placentation or a large placental mass (first pregnancy, a new partner, multifetal gestation, molar pregnancy) and those of preexisting vascular disease (chronic hypertension, diabetes, kidney disease, SLE, antiphospholipid syndrome, obesity). Smoking is associated with a <em>lower</em> preeclampsia risk, but it increases abruption, growth restriction and stillbirth, so it is never protective overall.</p>\n\n<h2>HELLP syndrome and eclampsia</h2>\n<p><strong>HELLP</strong> (hemolysis, elevated liver enzymes, low platelets) is a severe form of the same endothelial disease. Hemolysis is microangiopathic: red cells are sheared by fibrin strands in small vessels, giving schistocytes, high LDH, low haptoglobin and indirect hyperbilirubinemia. HELLP can occur with mild or even normal blood pressure, and up to a third of cases start postpartum. Complications include subcapsular hepatic hematoma and rupture, DIC, abruption and acute kidney injury.</p>\n<p><strong>Eclampsia</strong> is a new-onset generalised seizure in a patient with preeclampsia, with no other cause. Loss of cerebral autoregulation and endothelial leak produce vasogenic edema, mostly in the parieto-occipital white matter, which is the picture of posterior reversible encephalopathy syndrome. This explains the warning symptoms: severe headache, scotomata and cortical blindness. Hemorrhagic stroke is the main cause of death from hypertensive disorders.</p>\n\n<h2>Magnesium sulfate</h2>\n<ul>\n<li><strong>Use</strong>: prevention and treatment of eclamptic seizures. It is better than phenytoin and benzodiazepines for this purpose. It is not an antihypertensive.</li>\n<li><strong>Mechanism</strong>: magnesium competes with calcium at voltage-gated channels and blocks NMDA receptors. It reduces acetylcholine release at the neuromuscular junction and causes cerebral vasodilation.</li>\n<li><strong>Elimination</strong>: renal. Oliguria or a rising creatinine leads to accumulation, so dose and monitoring depend on urine output.</li>\n<li><strong>Toxicity sequence</strong>: loss of deep tendon reflexes, then respiratory depression, then cardiac conduction block and arrest. Reflexes are checked regularly for this reason.</li>\n<li><strong>Antidote</strong>: IV calcium gluconate, which antagonises magnesium at the membrane.</li>\n<li><strong>Interactions</strong>: it potentiates neuromuscular blockers. Combining it with calcium channel blockers raises a theoretical risk of hypotension and weakness, but nifedipine is still commonly used with it.</li>\n</ul>\n\n<h2>Antihypertensive pharmacology in pregnancy</h2>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>Pregnancy notes</th></tr></thead>\n<tbody>\n<tr><td>Labetalol</td><td>Nonselective β-blocker with α1 blockade</td><td>First line oral and IV. Avoid in asthma and heart block.</td></tr>\n<tr><td>Nifedipine</td><td>Dihydropyridine L-type calcium channel blocker (arteriolar)</td><td>First line oral. Immediate-release form for acute severe hypertension. Reflex tachycardia and headache.</td></tr>\n<tr><td>Hydralazine</td><td>Arteriolar dilator (increases cGMP)</td><td>IV for acute severe hypertension. Reflex tachycardia, maternal hypotension.</td></tr>\n<tr><td>Methyldopa</td><td>Central α2 agonist (via α-methylnorepinephrine)</td><td>Long safety record but weaker. Sedation, positive Coombs test, rarely hemolytic anemia or hepatitis.</td></tr>\n<tr><td>ACE inhibitors, ARBs, direct renin inhibitors</td><td>RAAS blockade</td><td>Contraindicated: fetal renal tubular dysgenesis, oligohydramnios, skull hypoplasia, death</td></tr>\n</tbody>\n</table>\n<div class=\"trap\"><p>Diuretics and fluid restriction do not treat preeclampsia. Intravascular volume is actually contracted, because fluid has leaked into the tissues. Liberal IV fluids are also dangerous, because leaky capillaries make pulmonary edema more likely.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Preeclampsia"
+    },
+    {
+     "statpearls": "HELLP Syndrome"
+    },
+    {
+     "statpearls": "Eclampsia"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "heading": "Placental bleeding, alloimmunisation and the physiology of trauma",
+   "html": "\n<h2>Where the placenta attaches, and why it bleeds</h2>\n[[figure:s23f-fig120201-1]]\n<p><strong>Placenta previa</strong> is a placenta that covers the internal cervical os. A <em>low-lying placenta</em> has its edge within 2 cm of the os. As the lower uterine segment forms and thins in the third trimester, the placenta, which cannot stretch, shears from its bed and maternal sinuses bleed. The bleeding is painless and bright red, and it often happens first around 32 to 36 weeks or after intercourse. The lower segment has less muscle, so contraction cannot compress the vessels well. Risk factors include previous cesarean delivery or other uterine surgery, multiparity, older age, smoking, IVF and previous previa. Most previas seen at 20 weeks \"migrate\" away from the os as the lower segment grows.</p>\n<p><strong>Placenta accreta spectrum</strong> is abnormal adherence because the decidua basalis is deficient, usually at a uterine scar. Villi attach to the myometrium (accreta), invade it (increta) or penetrate the serosa and sometimes the bladder (percreta). The combination of previa and previous cesarean delivery is the strongest risk. It is covered further in the puerperium sections.</p>\n<p><strong>Placental abruption</strong> is separation of a normally implanted placenta before delivery. Bleeding from decidual arterioles creates a retroplacental hematoma that dissects further. Blood can track out through the cervix or stay concealed. Thrombin from the decidua stimulates frequent contractions and uterine hypertonus, which explains the pain and the firm, tender uterus. Released tissue factor triggers <strong>DIC</strong>, with fibrinogen falling first. Blood forced into the myometrium causes a bruised Couvelaire uterus that contracts poorly after delivery. Risk factors include hypertension and preeclampsia, cocaine (vasospasm), smoking, abdominal trauma (shearing of the inelastic placenta from the elastic myometrium), sudden uterine decompression (rupture of membranes in polyhydramnios, delivery of a first twin), previous abruption, thrombophilia and PPROM.</p>\n<p><strong>Vasa previa</strong> is fetal vessels running in the membranes, with no protective cord or placenta, across or near the os. It is associated with a velamentous cord insertion or a succenturiate (accessory) lobe, a low-lying placenta and IVF. When the membranes rupture, the vessels tear and the <em>fetus</em> bleeds. Its blood volume is small, so bradycardia or a sinusoidal pattern can follow within minutes. Fetal blood can be identified because fetal hemoglobin resists alkali denaturation (the Apt test) and fetal red cells resist acid elution (the Kleihauer-Betke principle).</p>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Previa</th><th>Abruption</th><th>Vasa previa</th></tr></thead>\n<tbody>\n<tr><td>Pain</td><td>Usually none</td><td>Present. Uterus tender and firm.</td><td>None</td></tr>\n<tr><td>Whose blood</td><td>Maternal</td><td>Maternal</td><td>Fetal</td></tr>\n<tr><td>Fetal heart rate</td><td>Usually normal at first</td><td>Often abnormal (late decelerations, bradycardia)</td><td>Rapid bradycardia or sinusoidal pattern</td></tr>\n<tr><td>Coagulopathy</td><td>Uncommon</td><td>Common (DIC)</td><td>Not maternal</td></tr>\n<tr><td>Ultrasound</td><td>Diagnostic (transvaginal)</td><td>Insensitive. A clinical diagnosis.</td><td>Transvaginal color Doppler before labour</td></tr>\n</tbody>\n</table>\n\n<h2>Rh and other red cell alloimmunisation</h2>\n<p>Hemolytic disease of the fetus and newborn is a type II hypersensitivity reaction. Maternal IgG against a paternal red cell antigen crosses the placenta, coats fetal red cells and causes them to be destroyed in the fetal spleen. The fetus responds with extramedullary hematopoiesis (hepatosplenomegaly) and circulating erythroblasts. When anemia is severe, high-output cardiac failure, hepatic dysfunction with low albumin and capillary leak cause <strong>hydrops fetalis</strong> (fluid in at least two compartments). Bilirubin is cleared by the placenta before birth and does not cause kernicterus until after delivery.</p>\n<ul>\n<li><strong>Anti-D</strong> is the classic antibody. Anti-c, anti-E, anti-Fy (Duffy) and anti-K (Kell) also cause disease.</li>\n<li><strong>Anti-Kell</strong> also targets erythroid progenitors, so it suppresses red cell production as well as causing hemolysis. Titers predict severity poorly, and bilirubin-based tests underestimate anemia.</li>\n<li><strong>ABO incompatibility</strong> (a group O mother with a group A or B fetus) is common but mild. Anti-A and anti-B are mostly IgM, fetal red cells express A and B antigens weakly, and the antigens are also found on other tissues that absorb the antibody. It can affect a first pregnancy.</li>\n</ul>\n<p>Fetal anemia is detected without invasive testing because anemic blood is less viscous and cardiac output rises. Both increase the <strong>peak systolic velocity in the middle cerebral artery</strong> on Doppler.</p>\n\n<h2>Trauma physiology</h2>\n<p>In pregnancy, normal maternal vital signs can hide significant hemorrhage. The expanded blood volume lets a patient lose a lot of blood before becoming hypotensive, and the body protects maternal perfusion by constricting uterine vessels, so <strong>fetal distress may be the first sign of maternal shock</strong>. Gastric emptying is delayed (aspiration risk), the bladder sits higher in the abdomen, and the uterus protects the bowel but is itself exposed. The inelastic placenta can shear from the elastic uterine wall even after minor blunt trauma, so abruption can show up hours later.</p>\n<div class=\"pearl\"><p>Fetal blood loss is in millilitres, not litres. A 3,000-g fetus has only about 250 to 300 mL of blood, which is why ruptured vasa previa is so dangerous.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Placenta Previa"
+    },
+    {
+     "statpearls": "Placental Abruption"
+    },
+    {
+     "statpearls": "Pregnancy Trauma"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "heading": "Metabolic and hepatic complications: diabetes, hyperemesis, cholestasis and acute fatty liver",
+   "html": "\n<h2>Diabetes in pregnancy: fuel flow to the fetus</h2>\n<p>Glucose crosses the placenta by facilitated diffusion through GLUT1, so fetal glucose follows maternal glucose. Insulin does not cross. Ketones and amino acids do cross (amino acids by active transport). In the second half of pregnancy, human placental lactogen, progesterone, cortisol and prolactin cause rising insulin resistance. Pancreatic β-cells normally compensate by hypertrophy and hyperplasia. <strong>Gestational diabetes</strong> develops when they cannot. It is a warning of future type 2 diabetes: about half of affected people develop it within 10 to 20 years.</p>\n<p>The fetal response to maternal hyperglycemia, called the Pedersen hypothesis, drives most complications. Fetal β-cell hyperplasia and hyperinsulinemia follow. Insulin is a fetal growth hormone, so fat and organ growth increase, especially in the shoulders and trunk, producing macrosomia and shoulder dystocia. Hyperinsulinemia raises fetal oxygen consumption, which leads to chronic hypoxemia, more erythropoietin and polycythemia, and a higher risk of stillbirth. Insulin also delays surfactant maturation.</p>\n<table class=\"hy\">\n<thead><tr><th>Neonatal problem</th><th>Mechanism</th></tr></thead>\n<tbody>\n<tr><td>Hypoglycemia (first hours)</td><td>Fetal hyperinsulinemia persists after the maternal glucose supply stops at cord clamping</td></tr>\n<tr><td>Polycythemia, hyperbilirubinemia</td><td>Chronic fetal hypoxemia raises erythropoietin, and the extra red cells break down after birth</td></tr>\n<tr><td>Respiratory distress syndrome</td><td>Hyperinsulinemia delays surfactant production by type II pneumocytes</td></tr>\n<tr><td>Hypocalcemia, hypomagnesemia</td><td>Functional hypoparathyroidism in infants of mothers with poorly controlled diabetes</td></tr>\n<tr><td>Hypertrophic (septal) cardiomyopathy</td><td>Insulin-driven myocardial growth. It usually resolves.</td></tr>\n<tr><td>Malformations (pregestational diabetes only)</td><td>Hyperglycemia during organogenesis</td></tr>\n</tbody>\n</table>\n<p>Oral agents cross the placenta. Metformin reaches fetal levels similar to maternal levels, and glyburide crosses and is linked to more neonatal hypoglycemia and macrosomia than insulin. That is the pharmacologic reason insulin is preferred in pregnancy.</p>\n\n<h2>Nausea, vomiting and hyperemesis gravidarum</h2>\n<p>Nausea peaks at about 8 to 12 weeks, around the hCG peak, and is worse with high hCG (multiple gestation, molar pregnancy). Hyperemesis gravidarum is the severe end: persistent vomiting with weight loss of more than about 5% of prepregnancy weight, ketonuria and electrolyte disturbance. Losing gastric HCl and volume causes a <strong>hypochloremic, hypokalemic metabolic alkalosis</strong>, which is maintained by volume contraction and aldosterone. Mild transaminase elevation and transient biochemical hyperthyroidism (from hCG acting on the TSH receptor) are common and resolve without antithyroid drugs.</p>\n<p>The most serious nutritional complication is <strong>Wernicke encephalopathy</strong> from thiamine depletion. Thiamine pyrophosphate is the cofactor for pyruvate dehydrogenase, α-ketoglutarate dehydrogenase and transketolase. Neurons in the mammillary bodies and periaqueductal regions fail when glucose is given without it. Give thiamine <em>before</em> dextrose-containing fluids. Refeeding syndrome (low phosphate, potassium and magnesium) is a risk when nutrition restarts after prolonged starvation.</p>\n\n<h2>Liver diseases unique to pregnancy</h2>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Intrahepatic cholestasis of pregnancy</th><th>Acute fatty liver of pregnancy</th><th>HELLP syndrome</th></tr></thead>\n<tbody>\n<tr><td>Timing</td><td>Late second or third trimester</td><td>Third trimester, sometimes postpartum</td><td>Late second or third trimester, or postpartum</td></tr>\n<tr><td>Key symptom</td><td>Itching of palms and soles, worse at night, no rash</td><td>Malaise, nausea, vomiting, abdominal pain, then jaundice and encephalopathy</td><td>RUQ or epigastric pain, often hypertension</td></tr>\n<tr><td>Hallmark lab</td><td>Serum bile acids 10 µmol/L or more</td><td><strong>Hypoglycemia</strong>, high INR, low fibrinogen, raised creatinine and ammonia</td><td>Hemolysis, raised transaminases, platelets below 100,000/mm³</td></tr>\n<tr><td>Histology</td><td>Bland cholestasis</td><td>Microvesicular steatosis</td><td>Periportal hemorrhage and fibrin deposition</td></tr>\n<tr><td>Main risk</td><td>Stillbirth (sudden, rises with bile acid level), meconium, preterm birth</td><td>Liver failure, maternal and fetal death</td><td>Rupture, DIC, abruption</td></tr>\n</tbody>\n</table>\n<p><strong>Cholestasis</strong> reflects a genetic susceptibility in canalicular transporters (such as ABCB4 and ABCB11) that is unmasked by high estrogen and progesterone metabolites. Bile acids cross to the fetus and may provoke arrhythmia and vasoconstriction of placental vessels. Ursodeoxycholic acid is a hydrophilic bile acid. It replaces more toxic hydrophobic bile acids in the pool and stimulates bile flow, which relieves itching.</p>\n<p><strong>Acute fatty liver</strong> is linked to fetal deficiency of long-chain 3-hydroxyacyl-CoA dehydrogenase (LCHAD), part of the mitochondrial trifunctional protein. A heterozygous mother cannot fully oxidise the long-chain fatty acid metabolites that come back from the fetus and placenta, so they build up in her hepatocytes as microvesicular fat. Mitochondrial failure stops gluconeogenesis (hypoglycemia) and clotting factor synthesis. Infants of affected pregnancies should be tested for fatty acid oxidation disorders.</p>\n<div class=\"trap\"><p>In pregnancy, alkaline phosphatase is a poor marker of cholestasis because the placenta makes it. Use serum bile acids. Hypoglycemia with coagulopathy points to acute fatty liver rather than HELLP.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Gestational Diabetes"
+    },
+    {
+     "statpearls": "Hyperemesis Gravidarum"
+    },
+    {
+     "statpearls": "Pregnancy Intrahepatic Cholestasis"
+    },
+    {
+     "statpearls": "Acute Fatty Liver of Pregnancy"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "heading": "Twins, amniotic fluid, fetal growth and the cervix: mechanisms",
+   "html": "\n<h2>Twins: zygosity and chorionicity</h2>\n<p>About two-thirds of twins are <strong>dizygotic</strong>: two oocytes fertilised by two sperm. Dizygotic twinning rises with maternal age, family history on the maternal side, high FSH, African ancestry and ovulation induction or IVF. Dizygotic twins always have two chorions and two amnions. <strong>Monozygotic</strong> twinning happens at a fairly constant rate worldwide, and its type depends on when the embryo divides.</p>\n[[figure:s23f-fig120201-2]]\n<p>Chorionicity is the main determinant of risk and is best assigned by ultrasound in the first trimester. A thick dividing membrane with a triangular \"twin peak\" (lambda) sign means two chorions. A thin membrane meeting the placenta at a right angle (the T sign) means one. In a shared placenta, vascular anastomoses connect the two circulations.</p>\n<ul>\n<li><strong>Twin-twin transfusion syndrome (TTTS)</strong> affects about 10 to 15% of monochorionic diamniotic pairs. Unbalanced arteriovenous anastomoses deep in the placenta move blood from the donor to the recipient. The donor becomes hypovolemic and oliguric, leading to oligohydramnios, a \"stuck\" twin and growth restriction. The recipient becomes hypervolemic and polyuric (atrial natriuretic peptide), leading to polyhydramnios and high-output cardiac failure.</li>\n<li><strong>Twin anemia-polycythemia sequence</strong>: small anastomoses cause a slow transfusion, producing discordant hemoglobin without the fluid discordance.</li>\n<li><strong>Twin reversed arterial perfusion</strong>: an acardiac twin is perfused backwards by the pump twin, which risks high-output failure.</li>\n<li><strong>Single fetal demise</strong> in a monochorionic pair can cause acute hypotension and brain injury in the survivor through the anastomoses.</li>\n<li><strong>Monoamniotic twins</strong> risk cord entanglement and sudden death.</li>\n</ul>\n\n<h2>Amniotic fluid physiology</h2>\n<p>After about 16 weeks, amniotic fluid is mainly fetal urine, with a contribution from lung fluid. It is removed mainly by fetal swallowing and absorption in the gut, plus intramembranous flow across the placental surface. So disorders of fluid volume point to the fetal kidneys or the fetal gut and nervous system.</p>\n<table class=\"hy\">\n<thead><tr><th>Oligohydramnios (AFI 5 cm or less, or deepest pocket less than 2 cm)</th><th>Polyhydramnios (AFI 24 cm or more, or deepest pocket 8 cm or more)</th></tr></thead>\n<tbody>\n<tr><td>Rupture of membranes (most common)</td><td>Idiopathic (most common)</td></tr>\n<tr><td>Uteroplacental insufficiency: redistribution of fetal blood flow away from the kidneys (preeclampsia, growth restriction, postterm)</td><td>Maternal diabetes (fetal osmotic diuresis)</td></tr>\n<tr><td>Bilateral renal agenesis (failure of the ureteric bud to induce metanephric mesoderm), polycystic kidneys</td><td>Impaired swallowing or gut obstruction: esophageal atresia with or without fistula, duodenal atresia, anencephaly, neuromuscular disorders</td></tr>\n<tr><td>Posterior urethral valves (male fetus) or other outlet obstruction</td><td>High-output fetal states: anemia (alloimmunisation, parvovirus B19), TTTS recipient</td></tr>\n<tr><td>Drugs: ACE inhibitors and ARBs, NSAIDs after 20 weeks</td><td>Chromosomal and genetic syndromes</td></tr>\n</tbody>\n</table>\n<p>Severe oligohydramnios in the second trimester leads to the <strong>oligohydramnios sequence</strong>: pulmonary hypoplasia (fluid is needed in the airways to drive lung growth, and the chest is compressed), flattened facies, limb deformities such as clubfeet, and growth restriction. Pulmonary hypoplasia decides survival. Polyhydramnios risks preterm labour, malpresentation, cord prolapse, abruption when the membranes rupture, and postpartum atony.</p>\n\n<h2>Fetal growth restriction</h2>\n<p>FGR is an estimated fetal weight or abdominal circumference below the 10th percentile. It is distinct from a fetus that is constitutionally small. Causes fall into three groups:</p>\n<ul>\n<li><strong>Maternal</strong>: hypertension, preeclampsia, pregestational diabetes with vasculopathy, renal disease, antiphospholipid syndrome, smoking, alcohol, opioids and cocaine, undernutrition, living at high altitude.</li>\n<li><strong>Placental and cord</strong>: abnormal placentation (the most common cause), infarcts, chronic abruption, velamentous insertion, confined placental mosaicism, monochorionic twins.</li>\n<li><strong>Fetal</strong>: aneuploidy (trisomies 13 and 18, triploidy), structural anomalies and infections (CMV, rubella, toxoplasmosis, syphilis, varicella).</li>\n</ul>\n<p>Early, <strong>symmetric</strong> restriction, where head and body are equally small, suggests a fetal cause acting before the cell-number phase ends: aneuploidy, infection or toxins. Later, <strong>asymmetric</strong> restriction, with a relatively preserved head and a small abdomen, reflects placental insufficiency. The fetus redistributes its cardiac output to the brain (\"brain sparing\"), the liver's glycogen stores shrink, and kidney perfusion falls, leading to oligohydramnios. As placental resistance rises, end-diastolic flow in the umbilical artery falls, then disappears, then reverses. These Doppler changes mark progressive compromise. Restricted infants risk hypoglycemia, hypothermia, polycythemia and, as adults, cardiometabolic disease (developmental programming).</p>\n\n<h2>Cervical insufficiency</h2>\n<p>Cervical insufficiency is the inability of the cervix to stay closed in the second trimester without contractions or labour. The result is painless dilation, bulging membranes and loss of the pregnancy or a very preterm birth. Causes include previous excisional procedures (cone biopsy, LEEP), repeated forceful dilation, obstetric lacerations, congenital collagen disorders (Ehlers-Danlos syndrome), Müllerian anomalies and in utero diethylstilbestrol exposure. Subclinical inflammation and infection often coexist, which is why a cerclage is contraindicated when there is intra-amniotic infection.</p>\n<div class=\"pearl\"><p>Fluid, growth and chorionicity are linked: a monochorionic pair with one fetus in polyhydramnios and the other in oligohydramnios is TTTS until proven otherwise, not two separate problems.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Twin-to-Twin Transfusion Syndrome"
+    },
+    {
+     "statpearls": "Oligohydramnios"
+    },
+    {
+     "statpearls": "Polyhydramnios"
+    },
+    {
+     "statpearls": "Fetal Growth Restriction"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step2ck",
+   "heading": "Early pregnancy bleeding: pregnancy loss, septic abortion and ectopic pregnancy",
+   "html": "\n<h2>First-trimester bleeding: the framework</h2>\n<p>Vaginal bleeding before 20 weeks affects up to a quarter of pregnancies. The differential is early pregnancy loss, ectopic pregnancy, molar pregnancy, and cervical or vaginal causes such as cervicitis, polyps or trauma. Bleeding from implantation is a diagnosis of exclusion. The first steps are vital signs, a quantitative β-hCG, Rh type, CBC, a speculum examination and transvaginal ultrasonography. Hemodynamic instability with a positive pregnancy test means ruptured ectopic pregnancy until proven otherwise. The next step is surgery, after resuscitation, not more tests.</p>\n<table class=\"hy\">\n<thead><tr><th>Type of loss</th><th>Cervical os</th><th>Ultrasound</th><th>Usual management</th></tr></thead>\n<tbody>\n<tr><td>Threatened</td><td>Closed</td><td>Viable intrauterine pregnancy</td><td>Reassure. Most pregnancies continue. Bed rest does not help.</td></tr>\n<tr><td>Inevitable</td><td>Open, no tissue passed yet</td><td>Intrauterine pregnancy</td><td>Expectant, misoprostol or uterine aspiration</td></tr>\n<tr><td>Incomplete</td><td>Open, some tissue passed</td><td>Retained products</td><td>Expectant, misoprostol or aspiration. Aspiration if bleeding is heavy or there is infection.</td></tr>\n<tr><td>Complete</td><td>Closed</td><td>Empty uterus, after a previously documented intrauterine pregnancy</td><td>Confirm with ultrasound. Follow hCG to zero if no intrauterine pregnancy was ever documented.</td></tr>\n<tr><td>Missed (early pregnancy loss)</td><td>Closed</td><td>Nonviable intrauterine pregnancy, often no symptoms</td><td>Expectant, mifepristone plus misoprostol, or aspiration</td></tr>\n<tr><td>Septic</td><td>Usually open</td><td>Retained products</td><td>IV broad-spectrum antibiotics and prompt uterine aspiration</td></tr>\n</tbody>\n</table>\n<p>Ultrasound findings that are <strong>diagnostic</strong> of nonviability include a CRL of 7 mm or more with no cardiac activity, a mean sac diameter of 25 mm or more with no embryo, or no embryo with a heartbeat 2 weeks or more after a scan showing a sac without a yolk sac (11 days or more if a yolk sac was seen). Findings short of these are only suspicious. Repeat the scan rather than intervening, especially in a wanted pregnancy. For medical management of a missed loss, mifepristone 200 mg orally followed by misoprostol 800 µg vaginally is more effective than misoprostol alone. Give Rh(D)-negative patients anti-D according to local protocol. Offer grief support, and explain that the loss was not caused by anything they did.</p>\n<p>Septic abortion presents with fever, uterine tenderness, foul or purulent discharge and sometimes shock, after a spontaneous loss or any abortion with retained tissue. It can be rapidly fatal. Draw blood cultures, start IV broad-spectrum antibiotics (for example ampicillin, gentamicin and metronidazole or clindamycin), and evacuate the uterus promptly without waiting for the fever to settle. Hysterectomy is reserved for necrotising infection or failure to respond.</p>\n\n<h2>Ectopic pregnancy</h2>\n<ul>\n<li><strong>Pregnancy of unknown location</strong>: positive hCG with no pregnancy visible on transvaginal ultrasound. If the patient is stable, repeat hCG in 48 hours. A viable intrauterine pregnancy usually raises hCG by at least about 35 to 50% over 48 hours in early pregnancy. A failing pregnancy falls. A slow rise or a plateau suggests an ectopic pregnancy or a failing intrauterine pregnancy.</li>\n<li><strong>Discriminatory level</strong>: an intrauterine sac should usually be seen on transvaginal ultrasound by an hCG of about 3,500 mIU/mL. A level above this with an empty uterus strongly suggests an ectopic pregnancy, but do not end a possibly wanted pregnancy on one value.</li>\n<li><strong>Methotrexate</strong> for a stable, unruptured ectopic pregnancy in a reliable patient with normal CBC, liver and kidney tests who is not breastfeeding. Success is lower with high hCG (above about 5,000 mIU/mL), embryonic cardiac activity or a large mass. With the single-dose protocol, measure hCG on days 4 and 7. A fall of at least 15% between those days is expected, and a smaller fall needs another dose or surgery. Follow hCG until undetectable.</li>\n<li><strong>Surgery</strong> (laparoscopic salpingectomy or salpingostomy) for rupture, instability, contraindications to methotrexate, failed medical treatment, or patient choice. Unstable patients go straight to the operating room with transfusion.</li>\n<li>Counsel about the high recurrence risk, and arrange early ultrasound in future pregnancies.</li>\n</ul>\n<div class=\"trap\"><p>An empty uterus with hCG above the discriminatory level, in a patient who has not documented passing tissue, is <strong>not</strong> a complete abortion until an ectopic pregnancy is excluded. Never diagnose a \"complete abortion\" without a previous ultrasound showing an intrauterine pregnancy, unless hCG is followed to zero.</p></div>\n\n<h2>Recurrent pregnancy loss and maternal anomalies</h2>\n<p>After two or more clinical losses, evaluate for antiphospholipid antibodies (lupus anticoagulant, anticardiolipin and anti-β2-glycoprotein I, repeated after 12 weeks), uterine cavity anomalies (saline sonohysterography, 3-D ultrasound or hysteroscopy), parental karyotypes for balanced translocations, and poorly controlled diabetes or thyroid disease. Antiphospholipid syndrome with recurrent loss is treated with low-dose aspirin plus prophylactic heparin. A uterine septum can be resected hysteroscopically. A bicornuate uterus is usually managed expectantly, with attention to malpresentation and preterm birth. Many couples have no cause found and still have a good chance of a live birth next time.</p>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Early Pregnancy Loss (Spontaneous Abortion)"
+    },
+    {
+     "statpearls": "Ectopic Pregnancy"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "heading": "Hypertensive disorders of pregnancy: diagnosis, treatment and timing of delivery",
+   "html": "\n<h2>Definitions</h2>\n<table class=\"hy\">\n<thead><tr><th>Disorder</th><th>Criteria</th></tr></thead>\n<tbody>\n<tr><td>Chronic hypertension</td><td>Blood pressure of 140/90 mm Hg or more before pregnancy or before 20 weeks, or persisting beyond 12 weeks postpartum</td></tr>\n<tr><td>Gestational hypertension</td><td>New blood pressure of 140/90 mm Hg or more on two readings at least 4 hours apart after 20 weeks, without proteinuria or severe features</td></tr>\n<tr><td>Preeclampsia</td><td>Gestational hypertension plus proteinuria (300 mg or more per 24 hours, a protein-creatinine ratio of 0.3 or more, or dipstick 2+ if quantitative testing is unavailable), <em>or</em> hypertension with any severe feature even without proteinuria</td></tr>\n<tr><td>Severe features</td><td>Systolic 160 or more, or diastolic 110 or more (confirmed within minutes so treatment is timely); platelets below 100,000/mm³; transaminases twice normal or severe persistent RUQ pain; creatinine above 1.1 mg/dL or doubled; pulmonary edema; new headache not relieved by medication; visual disturbances</td></tr>\n<tr><td>Superimposed preeclampsia</td><td>Chronic hypertension plus new proteinuria, a sudden rise in pressure or severe features</td></tr>\n<tr><td>Eclampsia</td><td>New generalised seizures in preeclampsia with no other cause</td></tr>\n<tr><td>HELLP</td><td>LDH of 600 U/L or more (hemolysis), AST or ALT twice normal, platelets below 100,000/mm³</td></tr>\n</tbody>\n</table>\n<p>Massive proteinuria and fetal growth restriction are no longer severe features on their own. Proteinuria is not needed for the diagnosis once a severe feature is present.</p>\n\n<h2>Management and timing of delivery</h2>\n<ul>\n<li><strong>Gestational hypertension or preeclampsia without severe features</strong>: outpatient or inpatient monitoring (blood pressure, symptoms, platelets, creatinine and liver enzymes weekly or more often, fetal growth and antenatal testing), and delivery at 37 0/7 weeks. Magnesium is not routinely needed. Treat blood pressure once it reaches the severe range.</li>\n<li><strong>Preeclampsia with severe features</strong>: admit, give magnesium sulfate, treat severe-range blood pressure, and deliver at 34 0/7 weeks or later once the patient is stable. Before 34 weeks, expectant management with betamethasone can be offered in a tertiary centre to stable patients with a reassuring fetal status. Deliver regardless of gestational age for uncontrollable blood pressure, eclampsia, pulmonary edema, DIC, abruption, HELLP that is getting worse, renal deterioration or an abnormal fetal status. Steroids should not delay delivery when maternal disease is unstable.</li>\n<li><strong>Mode of delivery</strong>: vaginal delivery is preferred. Cesarean is for the usual obstetric indications.</li>\n<li><strong>Chronic hypertension</strong>: treat to keep pressure below 140/90 mm Hg (this improves outcomes). Use labetalol or nifedipine. Give low-dose aspirin from 12 weeks. Establish baseline labs early.</li>\n</ul>\n\n<h2>Acute severe hypertension</h2>\n<p>Systolic 160 mm Hg or more or diastolic 110 mm Hg or more that persists for 15 minutes is a hypertensive emergency in pregnancy and postpartum. The aim is to start treatment within 30 to 60 minutes, to reduce the risk of stroke. First-line options are IV labetalol, IV hydralazine or immediate-release oral nifedipine, repeated stepwise according to protocol. The target is about 140 to 150/90 to 100 mm Hg, not normal pressure, because a sudden large drop can reduce placental perfusion.</p>\n\n<h2>Magnesium sulfate in practice</h2>\n<ul>\n<li>Give a 4 to 6 g IV loading dose, then a 1 to 2 g/h infusion. It is continued for 24 hours after delivery (or after the last seizure). IM regimens can be used where IV access is not possible.</li>\n<li>Monitor deep tendon reflexes, respiratory rate, oxygen saturation, mental status and urine output. Measure serum magnesium if there is renal impairment or a suspicion of toxicity.</li>\n<li>Toxicity: stop the infusion, give IV calcium gluconate, and support breathing.</li>\n<li>Eclamptic seizure: protect the airway and turn the patient on their left side, give magnesium, and treat blood pressure. Do not rush to the operating room during a seizure, because fetal bradycardia usually recovers once the mother is stabilised. Give a further 2 to 4 g bolus for a recurrent seizure. A benzodiazepine or other agent is used only if seizures continue despite magnesium.</li>\n</ul>\n<div class=\"trap\"><p>Pulmonary edema, myasthenia gravis (magnesium can trigger a myasthenic crisis) and renal failure change how magnesium is used. In myasthenia, use another antiseizure drug (such as levetiracetam). In renal failure, reduce the maintenance dose and check levels.</p></div>\n\n<h2>HELLP and postpartum disease</h2>\n<p>HELLP is managed as preeclampsia with severe features. Deliver after stabilisation. Steroids can be given before 34 weeks if a short delay is safe. Transfuse platelets before cesarean if they are below about 50,000/mm³. Sudden severe RUQ pain with hypotension suggests rupture of a hepatic hematoma, which needs CT and surgical or interventional care. Preeclampsia can first appear up to 6 weeks postpartum. Postpartum patients with headache, visual symptoms or dyspnea need a blood pressure check. Check blood pressure 3 to 10 days after delivery in all patients with hypertensive disorders. Remote monitoring at home is effective. NSAIDs can be used postpartum in most patients with hypertension. Hypertensive disorders raise lifelong cardiovascular risk, so record them and follow up with primary care.</p>\n<div class=\"pearl\"><p>In people with preexisting disability, low baseline mobility or communication barriers (for example after a stroke, or with intellectual disability), headache or visual symptoms may be reported late. Use scheduled blood pressure checks and caregiver education rather than relying on symptoms.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Preeclampsia"
+    },
+    {
+     "statpearls": "Eclampsia"
+    },
+    {
+     "statpearls": "HELLP Syndrome"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "heading": "Antepartum hemorrhage, trauma and alloimmunisation: management",
+   "html": "\n<h2>Bleeding in the second half of pregnancy</h2>\n<p>Any vaginal bleeding after 20 weeks is evaluated in labour and delivery. Assess maternal vital signs and estimated blood loss, place two large-bore IV lines, send a CBC, type and crossmatch, coagulation tests including fibrinogen, and Rh status, and start continuous fetal monitoring. <strong>Do not perform a digital cervical examination until ultrasound has excluded previa.</strong></p>\n<h3>Placenta previa</h3>\n<ul>\n<li>Diagnose with transvaginal ultrasound, which is safe and more accurate than transabdominal. A previa or low-lying placenta at the 18 to 22 week anatomy scan is rechecked at about 32 weeks, and most resolve.</li>\n<li>If it persists, plan a cesarean at 36 0/7 to 37 6/7 weeks. Advise avoiding intercourse and seeking care immediately for any bleeding.</li>\n<li>Bleeding episodes: admit, stabilise, transfuse as needed, give anti-D to Rh(D)-negative patients, and give betamethasone if before 34 weeks.</li>\n<li>Deliver for bleeding that is heavy or continuing, an abnormal fetal status or labour.</li>\n<li>With a previous cesarean and an anterior previa, look actively for <strong>placenta accreta spectrum</strong>: loss of the clear zone, placental lacunae and bladder-wall interruption on ultrasound, with MRI as an adjunct. Plan cesarean hysterectomy at 34 0/7 to 35 6/7 weeks at a centre with the right team.</li>\n</ul>\n<h3>Placental abruption</h3>\n<p>Abruption is a clinical diagnosis: bleeding (sometimes concealed), abdominal or back pain, a tender or rigid uterus, frequent low-amplitude contractions and fetal heart rate changes. A normal ultrasound does not exclude it. Management depends on maternal and fetal status. If the fetus is alive and the tracing is abnormal, deliver quickly, usually by cesarean. If mother and fetus are stable and the pregnancy is preterm, the patient may be observed closely in hospital with steroids. With fetal death, vaginal delivery is usually preferred and is often rapid, while coagulopathy is corrected. Watch for DIC: replace fibrinogen with cryoprecipitate or fibrinogen concentrate, and transfuse platelets and plasma as needed. Expect postpartum atony.</p>\n<h3>Vasa previa</h3>\n<p>Ideally it is found antenatally with transvaginal color Doppler, in patients with a low-lying placenta, velamentous or marginal cord insertion, an accessory lobe or IVF. Planned cesarean at about 34 0/7 to 35 6/7 weeks, before the membranes rupture, gives survival above 95%. Hospitalisation from about 30 to 32 weeks is considered. When it is first recognised during labour (bleeding at rupture of membranes with fetal bradycardia), perform an emergency cesarean and prepare for neonatal transfusion.</p>\n<p>Uterine rupture can also bleed vaginally, and it is covered under labour.</p>\n\n<h2>Trauma in pregnancy</h2>\n<ul>\n<li><strong>Primary survey first</strong>: the mother is the priority. Displace the uterus to the left (manually or with a wedge) once the fundus is at or above the umbilicus, give oxygen, and place IV access above the diaphragm.</li>\n<li><strong>Imaging</strong>: never withhold necessary imaging, including CT. A fetal dose below about 50 mGy is not associated with anomalies or loss.</li>\n<li><strong>Fetal assessment</strong>: once the fetus is viable, start continuous fetal heart rate and contraction monitoring after any significant trauma, even minor-appearing blunt trauma, for at least 2 to 6 hours (4 hours is common). Extend monitoring if there are frequent contractions, uterine tenderness, bleeding, ruptured membranes, an abnormal tracing or serious maternal injury.</li>\n<li><strong>Rh(D)-negative patients</strong>: give anti-D, and use Kleihauer-Betke or flow cytometry to dose it for a large fetomaternal hemorrhage. KB is not a reliable test for abruption.</li>\n<li><strong>Tetanus</strong> prophylaxis as for nonpregnant patients (Tdap is preferred in pregnancy).</li>\n<li><strong>Cardiac arrest</strong> with the fundus at or above the umbilicus (about 20 weeks or more): high-quality CPR with left uterine displacement, and a <em>perimortem cesarean</em> started by about 4 minutes if circulation has not returned. This improves maternal resuscitation and may save the infant.</li>\n<li><strong>Intimate partner violence</strong> often starts or escalates in pregnancy. Ask privately, document injuries and offer resources at every visit, and particularly after trauma.</li>\n</ul>\n\n<h2>Managing alloimmunisation</h2>\n<ul>\n<li>A positive antibody screen is followed by antibody identification and titer. Antibodies that are clinically insignificant (such as anti-Lewis and anti-I) need no further action.</li>\n<li>Determine whether the fetus is at risk. Test the partner's antigen status (homozygous or heterozygous). Fetal RhD genotyping is possible from cell-free DNA or by amniocentesis.</li>\n<li>Below the critical titer (usually 1:16 for anti-D at most laboratories, in the range of 1:8 to 1:32): repeat the titer every 4 weeks.</li>\n<li>At or above the critical titer, or with any anti-Kell: serial <strong>middle cerebral artery peak systolic velocity</strong> Doppler, usually every 1 to 2 weeks from about 18 weeks. A value above 1.5 MoM suggests moderate to severe anemia and leads to <strong>cordocentesis with intrauterine transfusion</strong> of O-negative, irradiated, crossmatched red cells.</li>\n<li>Anti-D immune globulin is useless once the patient is sensitised.</li>\n<li>Deliver at about 37 to 38 weeks in mild cases, or earlier after transfusions. Prepare the neonatal team for anemia and hyperbilirubinemia.</li>\n</ul>\n<div class=\"trap\"><p>Anti-Kell titers underestimate fetal risk, because the antibody suppresses red cell production as well as destroying cells. Use MCA Doppler surveillance at any titer.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Placenta Previa"
+    },
+    {
+     "statpearls": "Placental Abruption"
+    },
+    {
+     "statpearls": "Pregnancy Trauma"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "heading": "Diabetes, hyperemesis, liver disease, infection and anemia in pregnancy: management",
+   "html": "\n<h2>Gestational and pregestational diabetes</h2>\n<h3>Screening and diagnosis</h3>\n<p>Screen everyone at 24 to 28 weeks, and earlier when risk factors are present. ACOG accepts two approaches:</p>\n<ul>\n<li><strong>Two-step</strong>: a nonfasting 1-hour 50-g glucose challenge, with a threshold of 130, 135 or 140 mg/dL depending on the institution. A positive result leads to a 3-hour 100-g OGTT. Two or more values at or above the thresholds confirm GDM. Carpenter-Coustan thresholds are fasting 95, 1 hour 180, 2 hours 155 and 3 hours 140 mg/dL.</li>\n<li><strong>One-step</strong>: a fasting 75-g 2-hour OGTT. One value at or above fasting 92, 1 hour 180 or 2 hours 153 mg/dL confirms GDM.</li>\n</ul>\n<p>An early HbA1c of 6.5% or more, or a fasting glucose of 126 mg/dL or more, indicates overt (pregestational) diabetes.</p>\n<h3>Treatment</h3>\n<table class=\"hy\">\n<thead><tr><th>Step</th><th>Details</th></tr></thead>\n<tbody>\n<tr><td>Medical nutrition therapy and exercise</td><td>Carbohydrate distributed through the day, with a dietitian. Exercise after meals.</td></tr>\n<tr><td>Glucose targets (self-monitoring)</td><td>Fasting below 95 mg/dL; 1 hour after meals below 140 mg/dL, or 2 hours below 120 mg/dL</td></tr>\n<tr><td>If targets are not met after 1 to 2 weeks</td><td><strong>Insulin</strong> is preferred: NPH at bedtime for high fasting values, rapid-acting insulin before meals for high postprandial values.</td></tr>\n<tr><td>Alternatives</td><td>Metformin for those who decline or cannot use insulin. It crosses the placenta, and long-term data on offspring are limited. Glyburide is less preferred.</td></tr>\n<tr><td>Fetal surveillance</td><td>Antenatal testing for medication-treated or poorly controlled GDM. Growth ultrasound for suspected macrosomia.</td></tr>\n<tr><td>Delivery</td><td>Diet-controlled: 39 0/7 to 40 6/7 weeks. Well controlled on medication: 39 0/7 to 39 6/7 weeks. Poorly controlled: earlier, individualised.</td></tr>\n<tr><td>Postpartum</td><td>75-g 2-hour OGTT at 4 to 12 weeks, then screening for diabetes every 1 to 3 years. Encourage breastfeeding, weight management and contraception.</td></tr>\n</tbody>\n</table>\n<p><strong>Pregestational diabetes</strong> adds an early HbA1c, renal function and urine albumin, a retinal examination, TSH (in type 1), an ECG when indicated, aspirin from 12 weeks, a detailed anatomy scan and fetal echocardiography, and a tighter insulin regimen (needs fall in the first trimester, which raises hypoglycemia risk, then rise steadily). Diabetic ketoacidosis can occur at lower glucose levels in pregnancy and is dangerous to the fetus. Intrapartum, keep glucose roughly 70 to 110 mg/dL with an insulin and dextrose infusion. Insulin needs drop sharply after delivery of the placenta. Offer scheduled cesarean when the estimated fetal weight is 4,500 g or more in a diabetic pregnancy.</p>\n\n<h2>Nausea and vomiting, and hyperemesis</h2>\n<ol>\n<li>Small, frequent, bland meals; ginger; changing from a prenatal vitamin to folic acid alone if iron worsens the nausea.</li>\n<li><strong>Pyridoxine (vitamin B6), alone or with doxylamine</strong>: first-line drug therapy.</li>\n<li>Add an antihistamine (dimenhydrinate, diphenhydramine) or a dopamine antagonist (metoclopramide, prochlorperazine, promethazine). Watch for extrapyramidal effects.</li>\n<li>Ondansetron is an option after weighing a possible small first-trimester risk. It prolongs the QT interval, so check electrolytes.</li>\n<li>For dehydration: IV fluids, electrolyte replacement and <strong>thiamine before dextrose</strong>.</li>\n<li>Refractory hyperemesis: methylprednisolone, avoided before 10 weeks because of a possible small cleft risk. Then enteral nutrition, and parenteral nutrition as a last resort.</li>\n</ol>\n<p>Evaluate for other causes: an ultrasound for multiple or molar pregnancy, electrolytes, liver enzymes, lipase and TSH. Vomiting that starts after 9 weeks, or with abdominal pain, fever or headache, needs a broader search (pancreatitis, appendicitis, pyelonephritis, cholecystitis, hepatitis).</p>\n\n<h2>Cholestasis and acute fatty liver</h2>\n<ul>\n<li><strong>Cholestasis</strong>: check total serum bile acids (10 µmol/L or more is diagnostic in the right setting) and liver tests. Treat itching with ursodiol. Plan delivery by bile acid level. Deliver at 36 0/7 weeks when bile acids are 100 µmol/L or more (stillbirth risk rises steeply). With lower levels, deliver between 36 0/7 and 39 0/7 weeks. Itching and labs should resolve after delivery. Recheck if they do not, to look for underlying liver disease. Cholestasis tends to recur, including with combined hormonal contraception.</li>\n<li><strong>Acute fatty liver</strong>: an emergency. Stabilise (correct glucose and coagulopathy, manage the airway and blood pressure, consider an ICU) and deliver promptly whatever the gestational age. Use vaginal delivery if it will be quick, otherwise cesarean with blood products. Most patients recover after delivery. Transplant is rarely needed. Test the infant for fatty acid oxidation disorders.</li>\n</ul>\n\n<h2>Infections and anemia that change obstetric care</h2>\n<ul>\n<li><strong>Pyelonephritis</strong>: admit for IV antibiotics (such as ceftriaxone). It risks sepsis, ARDS and preterm labour. Consider suppressive antibiotics for the rest of pregnancy after an episode or recurrent bacteriuria.</li>\n<li><strong>Listeriosis</strong> (fever and myalgia after high-risk foods): blood cultures and high-dose IV <strong>ampicillin</strong>. Cephalosporins do not cover it.</li>\n<li><strong>Syphilis</strong>: penicillin only, with desensitisation if allergic. A Jarisch-Herxheimer reaction can trigger contractions.</li>\n<li><strong>Iron deficiency anemia</strong> is the most common anemia in pregnancy. Use oral iron, and IV iron for intolerance, poor response or the third trimester. In <strong>sickle cell disease</strong>, plan care with hematology: folic acid, aspirin from 12 weeks, VTE risk assessment, serial growth scans, and transfusion when indicated. Hydroxyurea is usually stopped. Thalassemia trait needs partner screening and is not treated with iron unless iron deficiency is proven.</li>\n</ul>\n<div class=\"pearl\"><p>Itching in pregnancy with a rash is not cholestasis. Consider atopic eruption, polymorphic eruption of pregnancy or pemphigoid gestationis. Itching without a rash, on the palms and soles at night, is cholestasis until bile acids say otherwise.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Gestational Diabetes"
+    },
+    {
+     "statpearls": "Hyperemesis Gravidarum"
+    },
+    {
+     "statpearls": "Pregnancy Intrahepatic Cholestasis"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "heading": "Multiple gestation, fetal growth restriction, amniotic fluid and cervical insufficiency: management",
+   "html": "\n<h2>Multiple gestation</h2>\n<p>Establish chorionicity and amnionicity on first-trimester ultrasound, because they decide the surveillance plan.</p>\n<table class=\"hy\">\n<thead><tr><th>Type</th><th>Surveillance</th><th>Suggested delivery timing (uncomplicated)</th></tr></thead>\n<tbody>\n<tr><td>Dichorionic diamniotic</td><td>Growth ultrasound about every 4 weeks from about 20 weeks</td><td>38 0/7 to 38 6/7 weeks</td></tr>\n<tr><td>Monochorionic diamniotic</td><td>Ultrasound every 2 weeks from 16 weeks for TTTS (fluid, bladders), plus MCA Doppler for twin anemia-polycythemia sequence; fetal echocardiography</td><td>34 0/7 to 37 6/7 weeks</td></tr>\n<tr><td>Monochorionic monoamniotic</td><td>Inpatient or intensive fetal monitoring from about 24 to 28 weeks</td><td>32 0/7 to 34 0/7 weeks by cesarean</td></tr>\n</tbody>\n</table>\n<p>All twins carry higher risks of preterm birth, preeclampsia (aspirin is indicated), GDM, anemia, growth restriction, malpresentation and postpartum hemorrhage. Prophylactic cerclage, progesterone, bed rest and tocolysis do not prevent preterm birth in unselected twins. A vertex-vertex pair can have a trial of labour. Vaginal delivery is also reasonable for vertex-nonvertex pairs when an experienced clinician is present.</p>\n<p><strong>TTTS</strong> is staged by the Quintero system. Stage I: oligohydramnios (deepest pocket below 2 cm) and polyhydramnios (above 8 cm) with the donor bladder visible. Stage II: donor bladder not visible. Stage III: abnormal Dopplers. Stage IV: hydrops. Stage V: death of a twin. For stages II to IV at 16 to 26 weeks, <strong>fetoscopic laser photocoagulation</strong> of the anastomoses gives better survival and neurologic outcome than serial amnioreduction. Stage I may be followed closely or treated, depending on the centre.</p>\n\n<h2>Fetal growth restriction</h2>\n<ul>\n<li>Confirm dating, look for anomalies with a detailed scan, and offer diagnostic genetic testing (microarray) for early-onset or anomalous FGR, polyhydramnios, or when the patient wants it. Consider CMV testing.</li>\n<li>The key test is <strong>umbilical artery Doppler</strong>, with growth scans every 3 to 4 weeks (not more often than every 2 weeks) and antenatal testing.</li>\n<li>Delivery timing (ACOG/SMFM): normal Doppler with EFW between the 3rd and 10th percentile at 38 0/7 to 39 0/7 weeks; EFW below the 3rd percentile or reduced end-diastolic flow at 37 0/7 weeks; absent end-diastolic flow at 33 0/7 to 34 0/7 weeks; reversed end-diastolic flow at 30 0/7 to 32 0/7 weeks. Give steroids if before 34 weeks, and magnesium for neuroprotection if before 32 weeks.</li>\n<li>Low-dose aspirin started after FGR is diagnosed does not treat it. Stopping smoking does help.</li>\n</ul>\n\n<h2>Amniotic fluid disorders</h2>\n<p><strong>Oligohydramnios</strong>: check for ruptured membranes, growth restriction, anomalies and drugs (NSAIDs, ACE inhibitors). Isolated oligohydramnios with normal growth near term is an indication for delivery at 36 0/7 to 37 6/7 weeks. Maternal hydration can raise the measured fluid volume, but it does not change outcomes. <strong>Polyhydramnios</strong>: perform a detailed anatomy scan (looking for gut obstruction, CNS defects, hydrops), a glucose screen, and antibody and infection testing (parvovirus) when hydrops or anemia is suspected. Consider genetic testing. Severe symptomatic polyhydramnios may need amnioreduction. Indomethacin is used rarely and for short periods, because of the risk of ductal constriction. Rupture of the membranes risks cord prolapse and abruption, so control it.</p>\n\n<h2>Cervical insufficiency and short cervix</h2>\n<table class=\"hy\">\n<thead><tr><th>Scenario</th><th>Recommended action</th></tr></thead>\n<tbody>\n<tr><td>One or more previous second-trimester losses from painless dilation (no labour or abruption)</td><td><strong>History-indicated cerclage</strong> at about 12 to 14 weeks, after an ultrasound shows a viable fetus without major anomalies</td></tr>\n<tr><td>Previous spontaneous preterm birth before 34 weeks, with cervical length below 25 mm before 24 weeks</td><td>Ultrasound-indicated cerclage. Vaginal progesterone is also used.</td></tr>\n<tr><td>No previous preterm birth, with cervical length 20 mm or less at 16 to 24 weeks</td><td><strong>Vaginal progesterone</strong>. Cerclage has not been shown to help.</td></tr>\n<tr><td>Painless dilation with visible membranes at 16 to 24 weeks, no labour, infection or bleeding</td><td>Physical-examination-indicated (\"rescue\") cerclage after excluding infection</td></tr>\n<tr><td>Failed transvaginal cerclage in a previous pregnancy</td><td>Transabdominal cerclage, ideally before pregnancy</td></tr>\n</tbody>\n</table>\n<p>Cerclage is contraindicated with active labour, intra-amniotic infection, active bleeding, PPROM, fetal death or a lethal anomaly. Hydroxyprogesterone caproate injections were withdrawn from the US market in 2023 and are no longer used. Bed rest and pelvic rest do not prevent preterm birth and cause harm (VTE, bone loss, isolation).</p>\n\n<h2>Maternal mortality and safety bundles</h2>\n<p>US maternal mortality is higher than in comparable countries. Black women die at about three times the rate of White women, and American Indian and Alaska Native people also face higher rates. The difference reflects structural racism and access to care, not biology. Mental health conditions (including overdose and suicide), hemorrhage, cardiac conditions and cardiomyopathy, infection, thrombosis and hypertensive disorders are leading underlying causes. Many deaths happen in the year after delivery, and most are judged preventable by review committees. Hospitals reduce harm with standardised bundles for hemorrhage and severe hypertension, early-warning criteria, drills, and postpartum follow-up that includes mental health screening.</p>\n<div class=\"pearl\"><p>Fetal anomalies change obstetric management. Open spina bifida may qualify for fetal surgery before 26 weeks in selected patients, and severe hydrocephalus with macrocephaly may need cesarean delivery. Lethal anomalies change counselling about monitoring and mode of delivery. Plan delivery at a centre with the right neonatal and surgical teams.</p></div>\n",
+   "furtherReading": [
+    {
+     "statpearls": "Twin-to-Twin Transfusion Syndrome"
+    },
+    {
+     "statpearls": "Fetal Growth Restriction"
+    },
+    {
+     "statpearls": "Cervical Insufficiency"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Placenta previa (placenta over the internal os), placental abruption (retroplacental clot behind a normally sited placenta) and vasa previa (unprotected fetal vessels crossing the os), with each one's typical bleeding pattern."
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "caption": "Figure. In monozygotic twins, the day the embryo divides decides whether the twins share a chorion and an amnion, and that sets their main risks."
+  }
+ ],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "sequential",
+   "title": "Blunt trauma at 31 weeks"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman with a history of chlamydial cervicitis has vaginal spotting 7 weeks after her last menstrual period. Serum β-hCG is 2,100 mIU/mL. Transvaginal ultrasonography shows no intrauterine gestational sac and no adnexal mass. Uterine aspiration is performed. Histology shows decidualised endometrial stroma and hypersecretory glands with enlarged, hyperchromatic nuclei, and no chorionic villi. Two days later, β-hCG is 2,400 mIU/mL. Which of the following is the most likely site of the pregnancy?</p>",
+   "options": [
+    "Ampulla of the uterine tube",
+    "Ovary",
+    "Cervical canal",
+    "Peritoneal surface of the bowel",
+    "Interstitial portion of the uterine tube"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Decidualised endometrium with an Arias-Stella reaction and no villi, plus a rising hCG after aspiration, indicates an ectopic pregnancy. The endometrium responds to the hormones even though the pregnancy is elsewhere. About 95% of ectopic pregnancies are tubal, and the ampulla is the most common site. Previous salpingitis damages ciliated cells and folds and delays the embryo's transport.</p><p><strong>Takeaway:</strong> No chorionic villi on uterine aspiration with a rising hCG means ectopic pregnancy, most often in the tubal ampulla.</p>",
+   "whyNot": {
+    "B": "Ovarian pregnancy is rare compared with tubal implantation.",
+    "C": "Cervical pregnancy is rare and is usually visible as a sac in the cervix on ultrasound.",
+    "D": "Abdominal pregnancy is rare and usually follows tubal abortion.",
+    "E": "Interstitial (cornual) pregnancy is far less common than ampullary pregnancy and is often visible next to the cavity."
+   },
+   "objective": "Recognize the pathology of ectopic pregnancy and its most common site.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "early pregnancy",
+    "pathology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 22-year-old primigravida at 33 weeks' gestation has new-onset blood pressure of 158/104 mm Hg and a urine protein-creatinine ratio of 0.9. Research testing of maternal serum shows an increased level of a soluble receptor that binds vascular endothelial growth factor and placental growth factor. Which of the following best describes this circulating factor?</p>",
+   "options": [
+    "Soluble fms-like tyrosine kinase 1",
+    "Soluble endoglin",
+    "Angiotensin II type 1 receptor",
+    "Prostacyclin synthase",
+    "Placental growth factor"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Soluble fms-like tyrosine kinase 1 (sFlt-1) is a splice variant of VEGF receptor 1 that the ischemic placenta releases. It binds VEGF and placental growth factor (PlGF) and stops them maintaining endothelial health, causing the systemic endothelial dysfunction of preeclampsia: hypertension, glomerular endotheliosis and capillary leak. A high sFlt-1/PlGF ratio supports the diagnosis.</p><p><strong>Takeaway:</strong> In preeclampsia the placenta releases sFlt-1, which binds VEGF and PlGF and causes endothelial dysfunction.</p>",
+   "whyNot": {
+    "B": "Soluble endoglin is also antiangiogenic in preeclampsia, but it binds TGF-β rather than VEGF and PlGF.",
+    "C": "Agonistic autoantibodies to the AT1 receptor occur in preeclampsia, but the receptor is not a soluble VEGF-binding protein.",
+    "D": "Prostacyclin production falls in preeclampsia, and the synthase does not bind growth factors.",
+    "E": "PlGF is one of the factors that sFlt-1 binds. Free PlGF is decreased, not increased, in preeclampsia."
+   },
+   "objective": "Identify sFlt-1 as an antiangiogenic mediator of preeclampsia.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hypertensive disorders"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman, gravida 2, para 1, at 38 weeks' gestation conceived by IVF. She is in early labour, and spontaneous rupture of the membranes is followed immediately by painless vaginal bleeding of about 100 mL. The fetal heart rate falls from 140/min to 70/min within minutes. Her blood pressure and pulse are unchanged. An earlier ultrasound showed a velamentous cord insertion. A bedside test of the vaginal blood shows that its hemoglobin resists denaturation by alkali. Which of the following is the source of the bleeding?</p>",
+   "options": [
+    "Fetal vessels running unprotected through the membranes",
+    "Maternal decidual arterioles behind the placenta",
+    "Maternal sinuses torn at the lower uterine segment",
+    "Cervical ectropion",
+    "Rupture of the lower uterine segment at a scar"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Velamentous insertion and IVF are risk factors for <strong>vasa previa</strong>, where fetal vessels cross the membranes near the os without the protection of the cord or placenta. When the membranes rupture, the vessels tear and the fetus, with a blood volume of only about 250 to 300 mL, bleeds quickly. Fetal hemoglobin resists alkali denaturation (the Apt test principle), confirming that the blood is fetal. Emergency cesarean delivery is needed.</p><p><strong>Takeaway:</strong> Painless bleeding at rupture of the membranes with rapid fetal bradycardia and fetal-type hemoglobin is ruptured vasa previa.</p>",
+   "whyNot": {
+    "B": "Bleeding from decidual arterioles is abruption. The blood would be maternal and the uterus usually tender.",
+    "C": "Torn maternal sinuses at the lower segment are the source in placenta previa. The blood would be maternal and would denature with alkali.",
+    "D": "Bleeding from a cervical ectropion is maternal, minor and does not cause fetal bradycardia.",
+    "E": "Uterine rupture involves maternal blood and usually a previous uterine scar, which she does not have."
+   },
+   "objective": "Identify fetal blood loss from vasa previa.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antepartum hemorrhage"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman, gravida 2, para 1, is Rh(D)-negative. Her first child, who was Rh(D)-positive, was healthy. She did not receive anti-D immune globulin during or after that pregnancy. She now has an anti-D titer of 1:64 at 22 weeks' gestation. Which of the following best explains why her first child was unaffected?</p>",
+   "options": [
+    "Her first exposure produced mainly IgM, which does not cross the placenta",
+    "The first fetus was protected by maternal regulatory T cells that were later lost",
+    "Fetal red cells do not express D antigen until the second pregnancy",
+    "Her anti-D was IgA, which binds placental FcRn poorly",
+    "Her first child's spleen could not remove antibody-coated red cells"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Sensitisation usually happens at delivery, when fetal cells enter the maternal circulation in the largest numbers. The primary response is IgM, which is too large to cross the placenta and arrives too late to affect that pregnancy. In later pregnancies with a D-positive fetus, memory B cells quickly make IgG, which crosses through FcRn and causes hemolysis.</p><p><strong>Takeaway:</strong> Rh disease usually spares the first pregnancy, because the primary response is IgM and happens late. The IgG response in later pregnancies causes the disease.</p>",
+   "whyNot": {
+    "B": "Rh disease is not explained by a pregnancy-specific loss of regulatory T cells.",
+    "C": "D antigen is expressed on fetal red cells early in pregnancy in every pregnancy.",
+    "D": "Anti-D is IgG (or IgM in the primary response), not IgA. FcRn transports IgG.",
+    "E": "Fetal splenic macrophages can clear coated cells. The issue in the first pregnancy is the antibody, not the spleen."
+   },
+   "objective": "Explain why Rh alloimmunisation usually spares the first pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "alloimmunisation"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman with poorly controlled gestational diabetes delivers a 4,450-g boy at 39 weeks. At 2 hours of age he is jittery, and his plasma glucose is 28 mg/dL. Which of the following best explains his hypoglycemia?</p>",
+   "options": [
+    "Fetal β-cell hyperplasia with persistent hyperinsulinemia after cord clamping",
+    "Transplacental passage of maternal insulin",
+    "Neonatal adrenal insufficiency from maternal cortisol",
+    "Deficient hepatic glycogen stores from placental insufficiency",
+    "Inherited glucokinase deficiency"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Maternal glucose crosses the placenta, while maternal insulin does not. Chronic fetal hyperglycemia causes fetal β-cell hyperplasia and hyperinsulinemia, which drives growth (macrosomia). When the cord is clamped, the glucose supply stops but insulin secretion continues, causing hypoglycemia in the first hours of life.</p><p><strong>Takeaway:</strong> Neonatal hypoglycemia in infants of diabetic mothers comes from fetal hyperinsulinemia, not from maternal insulin.</p>",
+   "whyNot": {
+    "B": "Maternal insulin does not cross the placenta in meaningful amounts.",
+    "C": "Maternal diabetes does not cause neonatal adrenal insufficiency.",
+    "D": "Low glycogen stores cause hypoglycemia in growth-restricted infants, not in macrosomic ones.",
+    "E": "Inactivating glucokinase mutations cause hyperglycemia (MODY), not hypoglycemia."
+   },
+   "objective": "Explain neonatal hypoglycemia in an infant of a mother with diabetes.",
+   "extraAreas": [
+    "12.05.02"
+   ],
+   "disciplines": [
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetes in pregnancy",
+    "newborn"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 28-year-old woman at 35 weeks' gestation has 1 week of malaise, nausea and vomiting, followed by jaundice. Blood pressure is 132/84 mm Hg. Plasma glucose is 48 mg/dL, INR 2.0, fibrinogen 95 mg/dL, creatinine 1.7 mg/dL, ammonia elevated, and AST 410 U/L. After emergency delivery she recovers. Liver biopsy is not performed. Testing of the newborn is recommended for a disorder of which metabolic pathway?</p>",
+   "options": [
+    "Long-chain fatty acid oxidation",
+    "Urea cycle ammonia disposal",
+    "Hepatic glycogen breakdown",
+    "Mitochondrial heme synthesis",
+    "Galactose conversion to glucose"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Hypoglycemia, coagulopathy, renal injury and high ammonia in the third trimester indicate acute fatty liver of pregnancy. It is associated with fetal deficiency of long-chain 3-hydroxyacyl-CoA dehydrogenase (LCHAD), part of the mitochondrial trifunctional protein. Long-chain fatty acid metabolites from the affected fetus and placenta overwhelm the mother's partial oxidative capacity (she is heterozygous), causing microvesicular steatosis. The infant should be tested for fatty acid oxidation disorders.</p><p><strong>Takeaway:</strong> Acute fatty liver of pregnancy is linked to fetal LCHAD deficiency, a defect of long-chain fatty acid oxidation.</p>",
+   "whyNot": {
+    "B": "Urea cycle defects cause hyperammonemia but are not associated with acute fatty liver of pregnancy.",
+    "C": "Glycogen storage diseases cause hypoglycemia in the affected child, not maternal liver failure in pregnancy.",
+    "D": "Porphyrias are disorders of heme synthesis and do not cause this pregnancy syndrome.",
+    "E": "Galactosemia affects the newborn after milk feeding and has no link to maternal acute fatty liver."
+   },
+   "objective": "Link acute fatty liver of pregnancy to fetal LCHAD deficiency.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "liver disease in pregnancy"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman has a first-trimester ultrasound showing twins with a single placenta, a thin dividing membrane and a T-shaped junction between the membrane and the placenta. Genetic testing later confirms the twins are monozygotic. Division of the embryo most likely occurred at which stage of development?</p>",
+   "options": [
+    "After the inner cell mass formed and before the amnion formed (days 4 to 8)",
+    "Before formation of the morula (days 0 to 3)",
+    "After formation of the amnion (days 8 to 12)",
+    "After formation of the embryonic disc (day 13 or later)",
+    "At fertilisation, from two sperm entering one oocyte"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>One placenta with a thin membrane and a T sign means monochorionic diamniotic twins. The chorion (trophoblast) had already formed, but the amnion had not. Division therefore happened in the blastocyst, between about days 4 and 8. Shared placental circulation with vascular anastomoses puts these twins at risk of twin-twin transfusion syndrome.</p><p><strong>Takeaway:</strong> Monochorionic diamniotic twins come from a split at days 4 to 8, after the trophoblast forms and before the amnion.</p>",
+   "whyNot": {
+    "B": "A split before the morula stage produces dichorionic diamniotic twins with two chorions and a thick membrane (lambda sign).",
+    "C": "A split after the amnion forms produces monoamniotic twins with no dividing membrane.",
+    "D": "Division at day 13 or later produces conjoined twins.",
+    "E": "Two sperm entering one oocyte produces triploidy, not twins. Dizygotic twins come from two oocytes."
+   },
+   "objective": "Relate the timing of monozygotic twin division to chorionicity.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [
+    2
+   ],
+   "tags": [
+    "multiple gestation",
+    "embryology"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman had no measurable amniotic fluid on ultrasonography from 19 weeks' gestation, with intact membranes. She delivers at 34 weeks. The newborn has a flattened nose, low-set ears, a receding chin, bilateral clubfeet and severe respiratory failure, and dies in the first hours of life. Which embryologic failure most likely explains these findings?</p>",
+   "options": [
+    "Failure of the ureteric bud to induce the metanephric mesoderm",
+    "Failure of fusion of the paramesonephric ducts",
+    "Failure of recanalisation of the duodenum",
+    "Failure of closure of the caudal neuropore",
+    "Failure of the pleuroperitoneal membranes to close"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Anhydramnios from the second trimester with intact membranes points to absent fetal urine production. Bilateral renal agenesis results from failure of the ureteric bud (from the mesonephric duct) to induce the metanephric blastema. Without amniotic fluid, the fetus is compressed (flattened facies, limb deformities) and the lungs fail to develop (pulmonary hypoplasia), which is the fatal part of the oligohydramnios sequence.</p><p><strong>Takeaway:</strong> Second-trimester anhydramnios with intact membranes suggests bilateral renal agenesis. Pulmonary hypoplasia is the fatal result.</p>",
+   "whyNot": {
+    "B": "Failed Müllerian duct fusion causes uterine anomalies in the mother or child, not fetal anhydramnios.",
+    "C": "Duodenal atresia blocks swallowed fluid and causes polyhydramnios, not anhydramnios.",
+    "D": "Open spina bifida raises AFP and is not a cause of absent amniotic fluid.",
+    "E": "Congenital diaphragmatic hernia causes pulmonary hypoplasia but often with normal or increased fluid, and not with these compression deformities."
+   },
+   "objective": "Explain the oligohydramnios sequence caused by bilateral renal agenesis.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "amniotic fluid",
+    "embryology"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman at 33 weeks' gestation has had intense itching of her palms and soles, worse at night, for 2 weeks. There is no rash apart from excoriations. Total serum bile acids are 38 µmol/L (reference below 10 µmol/L), and ALT is 88 U/L. She is started on a drug to reduce itching. Which of the following best describes the main mechanism of this drug?</p>",
+   "options": [
+    "It enriches the bile acid pool with a hydrophilic bile acid and stimulates bile secretion",
+    "It binds bile acids in the intestinal lumen and prevents their reabsorption",
+    "It inhibits HMG-CoA reductase and reduces cholesterol synthesis",
+    "It inhibits the intestinal cholesterol transporter NPC1L1",
+    "It antagonises histamine H1 receptors in the skin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Intrahepatic cholestasis of pregnancy is treated with ursodeoxycholic acid, a hydrophilic bile acid. It displaces more cytotoxic hydrophobic bile acids from the pool, stimulates hepatocellular and biliary secretion, and protects hepatocytes. It reliably relieves itching and lowers bile acids and transaminases, although it may not lower stillbirth risk. Timing of delivery depends on the bile acid level.</p><p><strong>Takeaway:</strong> Ursodiol relieves cholestasis of pregnancy by making the bile acid pool more hydrophilic and increasing bile flow.</p>",
+   "whyNot": {
+    "B": "Binding bile acids in the gut is the mechanism of cholestyramine, which is less effective and can worsen vitamin K absorption.",
+    "C": "HMG-CoA reductase inhibition is the mechanism of statins, which are not used here.",
+    "D": "NPC1L1 inhibition is the mechanism of ezetimibe.",
+    "E": "Antihistamines may help sleep but do not treat the cholestasis, and ursodiol is not an antihistamine."
+   },
+   "objective": "Describe the mechanism of ursodeoxycholic acid in cholestasis of pregnancy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "liver disease in pregnancy"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 24-year-old woman at 11 weeks' gestation has had persistent vomiting for 4 weeks and has lost 7 kg. In the emergency department she receives intravenous 5% dextrose. Several hours later she is confused, has horizontal nystagmus and cannot walk steadily. Deficiency of a cofactor for which of the following enzymes most directly explains her new findings?</p>",
+   "options": [
+    "Transketolase",
+    "Glucose-6-phosphate dehydrogenase",
+    "Pyruvate carboxylase",
+    "Methionine synthase",
+    "Glutamate decarboxylase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Prolonged vomiting depletes thiamine, and giving glucose increases thiamine-dependent metabolism, triggering Wernicke encephalopathy (confusion, ophthalmoplegia or nystagmus, ataxia). Thiamine pyrophosphate is the cofactor for transketolase, pyruvate dehydrogenase, α-ketoglutarate dehydrogenase and branched-chain α-keto acid dehydrogenase. In hyperemesis, give thiamine before dextrose.</p><p><strong>Takeaway:</strong> Give thiamine before dextrose in hyperemesis gravidarum to prevent Wernicke encephalopathy. Thiamine pyrophosphate is the cofactor for transketolase and the α-keto acid dehydrogenases.</p>",
+   "whyNot": {
+    "B": "G6PD uses NADP+, not a vitamin cofactor deficient in starvation. Its deficiency causes hemolysis, not encephalopathy.",
+    "C": "Pyruvate carboxylase needs biotin, which is not the cause of this syndrome.",
+    "D": "Methionine synthase needs vitamin B12 and folate. Its deficiency causes megaloblastic anemia and subacute neurologic signs, not this acute picture.",
+    "E": "Glutamate decarboxylase needs pyridoxal phosphate (vitamin B6). Its deficiency causes seizures, not this triad."
+   },
+   "objective": "Identify thiamine deficiency and Wernicke encephalopathy as complications of hyperemesis gravidarum.",
+   "extraAreas": [],
+   "disciplines": [
+    "biochemistry",
+    "nutrition"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nutrition",
+    "hyperemesis"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 20-year-old woman comes to the emergency department 6 days after a medication abortion at 9 weeks' gestation. She has fever, lower abdominal pain and foul-smelling vaginal discharge. Temperature is 39.2°C (102.6°F), pulse 118/min and blood pressure 98/60 mm Hg. The uterus is tender and enlarged, and the cervical os is open with purulent discharge. Ultrasonography shows heterogeneous material in the endometrial cavity. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "IV broad-spectrum antibiotics and prompt suction aspiration of the uterus",
+    "Oral doxycycline and metronidazole, with outpatient follow-up in 2 days",
+    "A repeat dose of misoprostol at home and acetaminophen",
+    "IV broad-spectrum antibiotics, with uterine aspiration delayed until she has been afebrile for 48 hours",
+    "Hysterectomy"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Fever, uterine tenderness, purulent discharge and retained tissue after an abortion indicate a septic abortion. Tachycardia and borderline hypotension suggest early sepsis. Draw cultures, start IV broad-spectrum antibiotics covering gram-negative, gram-positive and anaerobic organisms, and evacuate the uterus promptly. Antibiotics cannot clear infected retained tissue. Hysterectomy is kept for necrotising infection or failure of these measures.</p><p><strong>Takeaway:</strong> Septic abortion: IV broad-spectrum antibiotics plus prompt uterine evacuation.</p>",
+   "whyNot": {
+    "B": "Outpatient oral treatment is not enough for early sepsis with retained infected tissue.",
+    "C": "Misoprostol alone leaves the infected tissue in place and the infection untreated.",
+    "D": "Delaying evacuation allows sepsis to progress. The source should be removed promptly.",
+    "E": "Hysterectomy is for necrotising infection or failure of antibiotics plus evacuation, not first-line treatment."
+   },
+   "objective": "Manage septic abortion with antibiotics and prompt uterine evacuation.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "early pregnancy"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>A 27-year-old woman, gravida 2, para 1, at 31 weeks' gestation is brought to the emergency department after a low-speed rear-end car crash. She was wearing a lap-and-shoulder belt. She has mild neck soreness but no abdominal pain, bleeding or fluid leakage. Pulse is 88/min and blood pressure 116/72 mm Hg. There are no seat-belt marks, and the uterus is soft and nontender. The fetal heart rate is 140/min by Doppler. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Continuous fetal heart rate and contraction monitoring for several hours",
+    "Discharge home with instructions to count fetal movements",
+    "Kleihauer-Betke test, with discharge if it is negative",
+    "Immediate cesarean delivery",
+    "Abdominal ultrasonography, with discharge if the placenta appears normal"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Placental abruption can follow even minor blunt trauma, because the inelastic placenta shears from the elastic uterine wall, and signs may be delayed. After 20 to 24 weeks, monitor fetal heart rate and contractions continuously for at least 2 to 6 hours (4 hours is common). Extend the period if there are frequent contractions, uterine tenderness, bleeding, ruptured membranes or an abnormal tracing.</p><p><strong>Takeaway:</strong> After any significant trauma with a viable pregnancy, monitor the fetus and contractions continuously for several hours, even when the mother appears well.</p>",
+   "whyNot": {
+    "B": "Discharging her without monitoring misses delayed abruption.",
+    "C": "Kleihauer-Betke testing measures fetomaternal hemorrhage for anti-D dosing. A negative result does not exclude abruption.",
+    "D": "There is no indication for delivery in a stable mother with a reassuring fetal heart rate.",
+    "E": "Ultrasound misses most abruptions, so a normal scan is not reassuring enough to skip monitoring."
+   },
+   "objective": "Monitor the fetus and contractions continuously after trauma in pregnancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "trauma in pregnancy"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Ninety minutes into monitoring, she reports increasing lower abdominal and back pain and passes a small amount of dark red blood. Contractions are now every 2 minutes, and the uterus is firm and tender between contractions. The fetal heart rate tracing now shows a baseline of 150/min, absent variability and recurrent late decelerations. Maternal pulse is 102/min and blood pressure 110/70 mm Hg. Ultrasonography shows a fundal placenta. The cervix is closed. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Emergency cesarean delivery",
+    "Tocolysis with nifedipine",
+    "Betamethasone and observation for 48 hours",
+    "Amniotomy and oxytocin induction",
+    "Repeat ultrasonography in 1 hour"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Painful bleeding, a firm tender uterus and frequent contractions after trauma indicate placental abruption. Absent variability with recurrent late decelerations is a Category III tracing, showing fetal hypoxemia. With a live fetus at 31 weeks and a closed cervix, delivery cannot wait for steroids. Emergency cesarean delivery is needed, with blood products ready because DIC may be developing.</p><p><strong>Takeaway:</strong> Abruption with a Category III tracing and an unfavourable cervix needs emergency cesarean delivery, whatever the gestational age once the fetus is viable.</p>",
+   "whyNot": {
+    "B": "Tocolysis is contraindicated in abruption with fetal compromise, because it delays delivery and can worsen bleeding.",
+    "C": "Steroids should not delay delivery when the tracing shows ongoing fetal hypoxemia.",
+    "D": "With a closed cervix, induction would take far too long for a fetus with a Category III tracing.",
+    "E": "Ultrasound often misses abruption, and waiting is unsafe with this tracing."
+   },
+   "objective": "Deliver by emergency cesarean for placental abruption with a Category III tracing.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "trauma in pregnancy",
+    "antepartum hemorrhage"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "sequential",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>At cesarean delivery, a large retroplacental clot is found. One hour later she is oozing from the incision and IV sites. Uterine tone is good. Laboratory results show platelets 72,000/mm³, prothrombin time 17 s, aPTT 44 s and fibrinogen 90 mg/dL. She has received 2 units of red cells. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Cryoprecipitate",
+    "Intravenous vitamin K",
+    "Unfractionated heparin infusion",
+    "Desmopressin",
+    "Tranexamic acid alone, without blood products"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Abruption releases tissue factor, which causes consumptive coagulopathy (DIC). A fibrinogen below 100 mg/dL with active bleeding is critical. Very low fibrinogen predicts severe postpartum hemorrhage, so fibrinogen should be replaced with cryoprecipitate (or fibrinogen concentrate), along with platelets and plasma as needed and red cells, ideally under a massive transfusion protocol.</p><p><strong>Takeaway:</strong> In DIC from abruption with bleeding, replace fibrinogen with cryoprecipitate. Fibrinogen is the first factor to fall and the best predictor of bleeding.</p>",
+   "whyNot": {
+    "B": "Vitamin K corrects deficiency of vitamin K-dependent factors and does not address consumption of fibrinogen.",
+    "C": "Heparin is not used in acute obstetric DIC with active bleeding.",
+    "D": "Desmopressin raises von Willebrand factor and factor VIII and does not replace fibrinogen.",
+    "E": "Tranexamic acid can be an adjunct, but it cannot replace the fibrinogen that has already been consumed."
+   },
+   "objective": "Replace fibrinogen with cryoprecipitate in obstetric DIC.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antepartum hemorrhage",
+    "coagulation"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old woman, gravida 2, para 1, at 20 weeks' gestation has a routine anatomy scan that shows a normally grown fetus and a posterior placenta whose edge covers the internal cervical os. Her previous child was born vaginally, and she has never had uterine surgery. She has had no bleeding. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Repeat transvaginal ultrasonography at about 32 weeks",
+    "Schedule cesarean delivery at 36 weeks now",
+    "Hospitalisation until delivery",
+    "Cervical cerclage",
+    "MRI to evaluate for placenta accreta"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Most placentas that cover the os in the second trimester move away from it as the lower uterine segment develops. ACOG and SMFM advise repeating transvaginal ultrasonography at about 32 weeks. If the previa persists, plan cesarean delivery at 36 0/7 to 37 6/7 weeks. Meanwhile, avoid intercourse and come in promptly for any bleeding. Without a previous cesarean or an anterior placenta at a scar, her risk of accreta is low.</p><p><strong>Takeaway:</strong> Previa at the anatomy scan: repeat ultrasound at about 32 weeks, because most resolve.</p>",
+   "whyNot": {
+    "B": "Scheduling a cesarean now is premature, because the previa is likely to resolve.",
+    "C": "Hospitalisation is not indicated in an asymptomatic patient with no bleeding.",
+    "D": "Cerclage does not treat previa and is not indicated.",
+    "E": "MRI for accreta is used when ultrasound or risk factors (a previous cesarean with an anterior previa) suggest it, which is not the case here."
+   },
+   "objective": "Follow up placenta previa found in the second trimester with a repeat ultrasound at about 32 weeks.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antepartum hemorrhage"
+   ]
+  },
+  {
+   "n": 16,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 34-year-old woman, gravida 3, para 2, was diagnosed with gestational diabetes at 27 weeks. She has followed a dietitian-guided meal plan and walks after meals. She returns at 29 weeks with her capillary glucose log.</p><table><thead><tr><th>Day</th><th>Fasting (mg/dL)</th><th>1 h after breakfast</th><th>1 h after lunch</th><th>1 h after dinner</th></tr></thead><tbody><tr><td>1</td><td>104</td><td>132</td><td>128</td><td>136</td></tr><tr><td>2</td><td>101</td><td>129</td><td>134</td><td>131</td></tr><tr><td>3</td><td>108</td><td>138</td><td>125</td><td>133</td></tr><tr><td>4</td><td>99</td><td>127</td><td>130</td><td>137</td></tr><tr><td>5</td><td>106</td><td>135</td><td>132</td><td>129</td></tr></tbody></table><p>Fetal growth is at the 70th percentile. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Start bedtime NPH insulin",
+    "Continue diet and exercise, and review the log in 4 weeks",
+    "Start glyburide",
+    "Plan induction of labour at 34 weeks",
+    "Start sitagliptin"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The targets are fasting below 95 mg/dL and 1-hour postprandial below 140 mg/dL. Her postprandial values meet the target, but every fasting value is above it despite nutrition therapy. Insulin is preferred when GDM needs medication, because it does not cross the placenta and can be titrated precisely. Bedtime intermediate-acting (NPH) insulin targets fasting hyperglycemia. Antenatal testing is added once she is on medication.</p><p><strong>Takeaway:</strong> GDM that misses targets on diet: start insulin. Use bedtime NPH for high fasting values and prandial insulin for high postprandial values.</p>",
+   "whyNot": {
+    "B": "Persistent fasting hyperglycemia for 2 weeks should be treated now, not reviewed in 4 weeks.",
+    "C": "Glyburide crosses the placenta and is associated with more neonatal hypoglycemia and macrosomia than insulin. It is not preferred.",
+    "D": "Well-controlled GDM on medication is delivered at 39 weeks. Delivery at 34 weeks is not indicated.",
+    "E": "DPP-4 inhibitors are not used to treat GDM."
+   },
+   "objective": "Start insulin for gestational diabetes with persistent fasting hyperglycemia despite nutrition therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "diabetes in pregnancy"
+   ]
+  },
+  {
+   "n": 17,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 19-year-old primigravida at 36 weeks' gestation has a generalised tonic-clonic seizure in the antenatal clinic waiting room. She had a headache this morning. After the seizure stops, she is turned on her left side and given oxygen, and her airway is clear. Blood pressure is 166/108 mm Hg. Fetal heart rate monitoring shows a bradycardia of 90/min that is beginning to recover. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Intravenous magnesium sulfate",
+    "Intravenous lorazepam",
+    "Intravenous phenytoin",
+    "Emergency cesarean delivery",
+    "CT of the head before any medication"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>A new seizure with hypertension at 36 weeks is eclampsia. After the airway is secured and she is turned onto her side, the next step is a magnesium sulfate loading dose (4 to 6 g IV) followed by an infusion, which prevents recurrent seizures better than benzodiazepines or phenytoin. Severe-range blood pressure should be treated next. Fetal bradycardia during and just after the seizure usually recovers as the mother is stabilised, so delivery is planned once she is stable.</p><p><strong>Takeaway:</strong> Eclampsia: protect the airway, then magnesium sulfate, then control blood pressure, and deliver once the mother is stable.</p>",
+   "whyNot": {
+    "B": "Benzodiazepines are used only if seizures continue despite magnesium, or when magnesium is unavailable.",
+    "C": "Phenytoin is less effective than magnesium for preventing recurrent eclamptic seizures.",
+    "D": "Operating before the mother is stabilised adds risk, and the fetal bradycardia is recovering.",
+    "E": "Imaging is for atypical features or focal deficits, and it should not delay magnesium."
+   },
+   "objective": "Give magnesium sulfate as first-line treatment for eclampsia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "hypertensive disorders"
+   ]
+  },
+  {
+   "n": 18,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 30-year-old woman, gravida 3, para 1, at 22 weeks' gestation is Rh(D)-negative. She did not receive anti-D immune globulin after a miscarriage 3 years ago. Her anti-D titer was 1:8 at 12 weeks and is now 1:64. Her partner is the father of all her pregnancies and is homozygous Rh(D)-positive. Ultrasonography shows a normally grown fetus with no ascites or skin edema. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Doppler measurement of middle cerebral artery peak systolic velocity",
+    "Anti-D immune globulin now",
+    "Repeat the antibody titer in 4 weeks",
+    "Immediate delivery",
+    "Cordocentesis with intrauterine transfusion today"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Her titer has risen above the critical level (usually 1:16), and her homozygous partner means the fetus must be D-positive. The next step is serial middle cerebral artery peak systolic velocity Doppler, every 1 to 2 weeks. Anemic fetal blood is less viscous and cardiac output is higher, so a velocity above 1.5 MoM predicts moderate to severe anemia and leads to cordocentesis with intrauterine transfusion.</p><p><strong>Takeaway:</strong> At or above the critical anti-D titer, monitor for fetal anemia with MCA peak systolic velocity Doppler. Cordocentesis is for velocities above 1.5 MoM.</p>",
+   "whyNot": {
+    "B": "Anti-D immune globulin does nothing once the patient is sensitised.",
+    "C": "Serial titers are used only below the critical titer. Above it, fetal surveillance is needed.",
+    "D": "Delivery at 22 weeks would be previable and is not indicated without evidence of severe anemia.",
+    "E": "Cordocentesis is invasive and is kept for abnormal Doppler findings or hydrops."
+   },
+   "objective": "Use MCA Doppler surveillance once the anti-D titer reaches the critical level.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic",
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "alloimmunisation"
+   ]
+  },
+  {
+   "n": 19,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old primigravida at 35 weeks' gestation has had 5 days of malaise, anorexia, nausea and vomiting, and her family has noticed that her eyes are yellow. Results are shown.</p><table><thead><tr><th>Measurement</th><th>Result</th></tr></thead><tbody><tr><td>Blood pressure</td><td>136/84 mm Hg</td></tr><tr><td>Glucose</td><td>51 mg/dL (2.8 mmol/L)</td></tr><tr><td>AST / ALT</td><td>320 U/L / 290 U/L</td></tr><tr><td>Bilirubin, total</td><td>5.6 mg/dL (96 µmol/L)</td></tr><tr><td>INR</td><td>1.9</td></tr><tr><td>Fibrinogen</td><td>110 mg/dL (nonpregnant 200-400 mg/dL)</td></tr><tr><td>Creatinine</td><td>1.6 mg/dL (141 µmol/L)</td></tr><tr><td>Platelets</td><td>128,000/mm³ (128 × 10⁹/L)</td></tr><tr><td>Peripheral smear</td><td>No schistocytes</td></tr><tr><td>Hepatitis A, B, C serologies</td><td>Negative</td></tr></tbody></table><p>Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Acute fatty liver of pregnancy",
+    "HELLP syndrome",
+    "Intrahepatic cholestasis of pregnancy",
+    "Thrombotic thrombocytopenic purpura",
+    "Hyperemesis gravidarum"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Third-trimester liver dysfunction with <strong>hypoglycemia</strong>, coagulopathy (high INR, low fibrinogen), jaundice and renal injury points to acute fatty liver of pregnancy. Mild or absent hypertension and the absence of hemolysis make HELLP less likely. Management is stabilisation (glucose, blood products) and prompt delivery, and the newborn should be tested for fatty acid oxidation disorders.</p><p><strong>Takeaway:</strong> Hypoglycemia plus coagulopathy and jaundice in the third trimester suggests acute fatty liver of pregnancy rather than HELLP.</p>",
+   "whyNot": {
+    "B": "HELLP needs hemolysis and platelets below 100,000/mm³, and hypoglycemia and early coagulopathy are uncommon.",
+    "C": "Cholestasis of pregnancy causes itching and high bile acids without liver failure, hypoglycemia or coagulopathy.",
+    "D": "TTP causes microangiopathic hemolysis with schistocytes and severe thrombocytopenia, not hepatic failure with hypoglycemia.",
+    "E": "Hyperemesis is a first-trimester condition and does not cause this degree of liver failure at 35 weeks."
+   },
+   "objective": "Distinguish acute fatty liver of pregnancy from HELLP syndrome.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn",
+    "medicine"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "liver disease in pregnancy"
+   ]
+  },
+  {
+   "n": 20,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old woman at 8 weeks' gestation has nausea most of the day and vomits two or three times daily. She is keeping fluids down, her weight is stable, and urine ketones are negative. Small frequent meals and ginger have not helped enough. Which of the following is the most appropriate first-line drug therapy?</p>",
+   "options": [
+    "Pyridoxine, alone or with doxylamine",
+    "Ondansetron",
+    "Methylprednisolone",
+    "Metoclopramide",
+    "Intravenous fluids with dextrose"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>For nausea and vomiting of pregnancy that persists despite dietary measures, ACOG recommends pyridoxine (vitamin B6), alone or combined with doxylamine, as first-line drug therapy. It is effective and has a strong safety record. Antihistamines, dopamine antagonists and ondansetron are added if symptoms persist. Corticosteroids are kept for refractory hyperemesis and avoided before 10 weeks.</p><p><strong>Takeaway:</strong> First-line drug therapy for nausea and vomiting of pregnancy is pyridoxine with or without doxylamine.</p>",
+   "whyNot": {
+    "B": "Ondansetron is a later option, after weighing a possible small first-trimester risk and the effect on the QT interval.",
+    "C": "Corticosteroids are a last resort for refractory hyperemesis and are avoided before 10 weeks.",
+    "D": "Metoclopramide is a second-line agent with a risk of extrapyramidal effects.",
+    "E": "She is not dehydrated or ketotic, so IV fluids are not needed."
+   },
+   "objective": "Prescribe pyridoxine with or without doxylamine as first-line therapy for nausea and vomiting of pregnancy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "nausea and vomiting"
+   ]
+  },
+  {
+   "n": 21,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 31-year-old woman with monochorionic diamniotic twins has routine ultrasonography at 19 weeks. Twin A has a deepest vertical pocket of 1.2 cm, appears pressed against the uterine wall, and its bladder is not seen during the 60-minute examination. Twin B has a deepest pocket of 9.5 cm and a distended bladder. Umbilical artery and venous Dopplers are normal in both, and neither twin has hydrops. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Referral for fetoscopic laser photocoagulation of placental anastomoses",
+    "Serial amnioreduction of twin B",
+    "Immediate delivery",
+    "Indomethacin to reduce fluid in twin B",
+    "Repeat ultrasonography in 4 weeks"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Oligohydramnios in one twin and polyhydramnios in the other, in a monochorionic pair, is twin-twin transfusion syndrome. A donor bladder that cannot be seen, with normal Dopplers, is Quintero stage II. For stages II to IV between 16 and 26 weeks, fetoscopic laser photocoagulation of the anastomoses gives better survival and neurologic outcome than amnioreduction.</p><p><strong>Takeaway:</strong> TTTS stages II to IV at 16 to 26 weeks are treated with fetoscopic laser ablation of the shared vessels.</p>",
+   "whyNot": {
+    "B": "Amnioreduction relieves symptoms but does not treat the cause, and its outcomes are worse than laser treatment.",
+    "C": "Delivery at 19 weeks is previable.",
+    "D": "Indomethacin is not a treatment for TTTS and can harm both fetuses.",
+    "E": "TTTS can progress quickly. Monochorionic twins need scans every 2 weeks, and this stage needs treatment now."
+   },
+   "objective": "Refer stage II twin-twin transfusion syndrome for fetoscopic laser therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "multiple gestation"
+   ]
+  },
+  {
+   "n": 22,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 29-year-old woman at 32 weeks' gestation, dated by first-trimester ultrasonography, has an estimated fetal weight at the 6th percentile, with a relatively small abdominal circumference. Amniotic fluid is normal, and the anatomy scan at 20 weeks was normal. Blood pressure is 118/74 mm Hg. A nonstress test is reactive. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Umbilical artery Doppler velocimetry",
+    "Delivery after a course of betamethasone",
+    "Repeat growth ultrasonography in 1 week",
+    "Start low-dose aspirin",
+    "Bed rest at home"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>An estimated fetal weight below the 10th percentile is fetal growth restriction. Umbilical artery Doppler is the key test, because it distinguishes a fetus with placental insufficiency from one that is constitutionally small, and it sets the surveillance and the timing of delivery. Normal Doppler with an EFW between the 3rd and 10th percentile supports delivery at 38 to 39 weeks. Absent or reversed end-diastolic flow means earlier delivery.</p><p><strong>Takeaway:</strong> After diagnosing FGR, get umbilical artery Doppler to guide surveillance and delivery timing.</p>",
+   "whyNot": {
+    "B": "Delivery at 32 weeks is not indicated without abnormal Doppler or testing.",
+    "C": "Growth scans are repeated every 3 to 4 weeks. Measurement error makes a 1-week interval unhelpful.",
+    "D": "Starting aspirin after FGR is diagnosed does not treat it.",
+    "E": "Bed rest does not improve fetal growth and carries maternal risks."
+   },
+   "objective": "Order umbilical artery Doppler after a diagnosis of fetal growth restriction.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "fetal growth"
+   ]
+  },
+  {
+   "n": 23,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 33-year-old woman, gravida 3, para 0, is at 12 weeks' gestation with a viable singleton fetus. Her two previous pregnancies ended at 19 and 20 weeks with painless cervical dilation and bulging membranes, without contractions, bleeding or infection. She had a cervical cone biopsy 6 years ago. Today the cervix is closed. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Cervical cerclage at about 12 to 14 weeks",
+    "Vaginal progesterone alone",
+    "Weekly hydroxyprogesterone caproate injections",
+    "Strict bed rest from 16 weeks",
+    "Placement of a cervical pessary at 24 weeks"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Previous second-trimester losses from painless dilation, without labour or abruption, are the classic history of cervical insufficiency, made more likely by her cone biopsy. A history-indicated cerclage at about 12 to 14 weeks, after confirming a viable fetus without major anomalies, is recommended. Vaginal progesterone is for a short cervix in people without a previous preterm birth, and bed rest does not help.</p><p><strong>Takeaway:</strong> Previous painless second-trimester losses (cervical insufficiency) call for a history-indicated cerclage at 12 to 14 weeks.</p>",
+   "whyNot": {
+    "B": "Vaginal progesterone is for a short cervix found on ultrasound without a history like this one.",
+    "C": "Hydroxyprogesterone caproate was withdrawn from the US market in 2023 because it was not effective.",
+    "D": "Bed rest does not prevent preterm birth and raises the risk of VTE and deconditioning.",
+    "E": "Pessaries have not consistently prevented preterm birth, and 24 weeks is after her previous losses."
+   },
+   "objective": "Place a history-indicated cerclage for cervical insufficiency.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "obgyn"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "cervical insufficiency",
+    "preterm birth"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Most common trisomy in first-trimester miscarriage tissue?",
+   "back": "Trisomy 16.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Uterine anomaly most strongly associated with miscarriage?",
+   "back": "Septate uterus (failed resorption of the septum).",
+   "question": null
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Most common site of ectopic pregnancy?",
+   "back": "Ampulla of the uterine tube.",
+   "question": 1
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Endometrial finding with an ectopic pregnancy and no villi?",
+   "back": "Decidualisation with the Arias-Stella reaction.",
+   "question": null
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Why avoid folate during methotrexate treatment for ectopic pregnancy?",
+   "back": "Folate bypasses dihydrofolate reductase inhibition.",
+   "question": null
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Preeclampsia before 20 weeks suggests what?",
+   "back": "Molar pregnancy.",
+   "question": null
+  },
+  {
+   "n": 7,
+   "section": 2,
+   "front": "Which antiangiogenic factor binds VEGF and PlGF in preeclampsia?",
+   "back": "sFlt-1 (soluble fms-like tyrosine kinase 1).",
+   "question": 2
+  },
+  {
+   "n": 8,
+   "section": 2,
+   "front": "Renal lesion of preeclampsia?",
+   "back": "Glomerular endotheliosis.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Brain imaging pattern in eclampsia?",
+   "back": "Posterior reversible encephalopathy (parieto-occipital vasogenic edema).",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "First sign of magnesium toxicity?",
+   "back": "Loss of deep tendon reflexes.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Antidote for magnesium toxicity?",
+   "back": "IV calcium gluconate.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Antihypertensives contraindicated in pregnancy?",
+   "back": "ACE inhibitors, ARBs and direct renin inhibitors.",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 3,
+   "front": "Painless bright red bleeding in the third trimester: first test?",
+   "back": "Transvaginal ultrasound for placental location, before any digital exam.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 3,
+   "front": "Abruption: first clotting factor to fall?",
+   "back": "Fibrinogen.",
+   "question": null
+  },
+  {
+   "n": 15,
+   "section": 3,
+   "front": "Vasa previa: whose blood is lost?",
+   "back": "Fetal blood.",
+   "question": 3
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Why is anti-Kell disease worse than its titer suggests?",
+   "back": "It suppresses erythroid progenitors as well as causing hemolysis.",
+   "question": null
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Doppler marker of fetal anemia?",
+   "back": "Raised MCA peak systolic velocity.",
+   "question": null
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Why is the first Rh-positive pregnancy usually spared?",
+   "back": "The primary response is IgM, which does not cross the placenta.",
+   "question": 4
+  },
+  {
+   "n": 19,
+   "section": 4,
+   "front": "Mechanism of macrosomia in maternal diabetes?",
+   "back": "Fetal hyperinsulinemia from maternal hyperglycemia (insulin does not cross).",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 4,
+   "front": "Acid-base disturbance in hyperemesis gravidarum?",
+   "back": "Hypochloremic, hypokalemic metabolic alkalosis.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 4,
+   "front": "Give what before dextrose in hyperemesis?",
+   "back": "Thiamine.",
+   "question": 10
+  },
+  {
+   "n": 22,
+   "section": 4,
+   "front": "Hallmark test for cholestasis of pregnancy?",
+   "back": "Serum bile acids (10 µmol/L or more).",
+   "question": null
+  },
+  {
+   "n": 23,
+   "section": 4,
+   "front": "Fetal enzyme deficiency linked to acute fatty liver of pregnancy?",
+   "back": "LCHAD (long-chain 3-hydroxyacyl-CoA dehydrogenase).",
+   "question": 6
+  },
+  {
+   "n": 24,
+   "section": 4,
+   "front": "Feature that separates acute fatty liver from HELLP?",
+   "back": "Hypoglycemia with early coagulopathy.",
+   "question": null
+  },
+  {
+   "n": 25,
+   "section": 5,
+   "front": "Day of split for monochorionic diamniotic twins?",
+   "back": "Days 4 to 8.",
+   "question": 7
+  },
+  {
+   "n": 26,
+   "section": 5,
+   "front": "Ultrasound sign of dichorionic twins?",
+   "back": "Lambda (twin-peak) sign.",
+   "question": null
+  },
+  {
+   "n": 27,
+   "section": 5,
+   "front": "Main source of amniotic fluid after 16 weeks?",
+   "back": "Fetal urine.",
+   "question": null
+  },
+  {
+   "n": 28,
+   "section": 5,
+   "front": "Fatal component of the oligohydramnios sequence?",
+   "back": "Pulmonary hypoplasia.",
+   "question": null
+  },
+  {
+   "n": 29,
+   "section": 5,
+   "front": "Asymmetric FGR suggests what cause?",
+   "back": "Placental insufficiency (brain-sparing).",
+   "question": null
+  },
+  {
+   "n": 30,
+   "section": 5,
+   "front": "Polyhydramnios from a fetal gut cause?",
+   "back": "Esophageal or duodenal atresia (impaired swallowing or absorption).",
+   "question": null
+  },
+  {
+   "n": 31,
+   "section": 6,
+   "front": "Ultrasound criteria for nonviability by CRL and sac size?",
+   "back": "CRL 7 mm or more with no heartbeat, or mean sac diameter 25 mm or more with no embryo.",
+   "question": null
+  },
+  {
+   "n": 32,
+   "section": 6,
+   "front": "Septic abortion treatment?",
+   "back": "IV broad-spectrum antibiotics plus prompt uterine evacuation.",
+   "question": 11
+  },
+  {
+   "n": 33,
+   "section": 6,
+   "front": "Expected fall in hCG between days 4 and 7 after single-dose methotrexate?",
+   "back": "At least 15%.",
+   "question": null
+  },
+  {
+   "n": 34,
+   "section": 6,
+   "front": "Hemodynamically unstable ectopic pregnancy: next step?",
+   "back": "Surgery, with resuscitation and transfusion.",
+   "question": null
+  },
+  {
+   "n": 35,
+   "section": 6,
+   "front": "Regimen for medical management of a missed early loss?",
+   "back": "Mifepristone 200 mg, then misoprostol 800 µg vaginally.",
+   "question": null
+  },
+  {
+   "n": 36,
+   "section": 6,
+   "front": "Workup after two or more pregnancy losses?",
+   "back": "Antiphospholipid antibodies, uterine cavity evaluation, parental karyotypes, glucose and thyroid tests.",
+   "question": null
+  },
+  {
+   "n": 37,
+   "section": 7,
+   "front": "BP threshold for severe-range hypertension in pregnancy?",
+   "back": "Systolic 160 or more, or diastolic 110 or more.",
+   "question": null
+  },
+  {
+   "n": 38,
+   "section": 7,
+   "front": "Delivery timing for gestational hypertension without severe features?",
+   "back": "37 0/7 weeks.",
+   "question": null
+  },
+  {
+   "n": 39,
+   "section": 7,
+   "front": "Delivery timing for preeclampsia with severe features?",
+   "back": "34 0/7 weeks or later, once stable (earlier if the patient deteriorates).",
+   "question": null
+  },
+  {
+   "n": 40,
+   "section": 7,
+   "front": "First-line drugs for acute severe hypertension in pregnancy?",
+   "back": "IV labetalol, IV hydralazine or immediate-release oral nifedipine.",
+   "question": null
+  },
+  {
+   "n": 41,
+   "section": 7,
+   "front": "How long is magnesium continued after delivery?",
+   "back": "24 hours.",
+   "question": null
+  },
+  {
+   "n": 42,
+   "section": 7,
+   "front": "First-line treatment of an eclamptic seizure after airway protection?",
+   "back": "IV magnesium sulfate.",
+   "question": 17
+  },
+  {
+   "n": 43,
+   "section": 8,
+   "front": "Previa at the 20-week scan: next step?",
+   "back": "Repeat transvaginal ultrasound at about 32 weeks.",
+   "question": 15
+  },
+  {
+   "n": 44,
+   "section": 8,
+   "front": "Delivery timing for persistent previa without accreta?",
+   "back": "36 0/7 to 37 6/7 weeks by cesarean.",
+   "question": null
+  },
+  {
+   "n": 45,
+   "section": 8,
+   "front": "Delivery timing for suspected placenta accreta spectrum?",
+   "back": "34 0/7 to 35 6/7 weeks (planned cesarean hysterectomy).",
+   "question": null
+  },
+  {
+   "n": 46,
+   "section": 8,
+   "front": "Minimum fetal monitoring after trauma with a viable pregnancy?",
+   "back": "Continuous monitoring for at least 2 to 6 hours.",
+   "question": 12
+  },
+  {
+   "n": 47,
+   "section": 8,
+   "front": "When is perimortem cesarean started?",
+   "back": "By about 4 minutes of arrest, with the fundus at or above the umbilicus.",
+   "question": null
+  },
+  {
+   "n": 48,
+   "section": 8,
+   "front": "Blood product to replace fibrinogen in DIC?",
+   "back": "Cryoprecipitate (or fibrinogen concentrate).",
+   "question": 14
+  },
+  {
+   "n": 49,
+   "section": 9,
+   "front": "GDM glucose targets?",
+   "back": "Fasting below 95; 1 hour below 140 or 2 hours below 120 mg/dL.",
+   "question": null
+  },
+  {
+   "n": 50,
+   "section": 9,
+   "front": "Preferred drug when GDM needs medication?",
+   "back": "Insulin.",
+   "question": 16
+  },
+  {
+   "n": 51,
+   "section": 9,
+   "front": "Postpartum test after GDM?",
+   "back": "75-g 2-hour OGTT at 4 to 12 weeks.",
+   "question": null
+  },
+  {
+   "n": 52,
+   "section": 9,
+   "front": "First-line drug for nausea and vomiting of pregnancy?",
+   "back": "Pyridoxine with or without doxylamine.",
+   "question": 20
+  },
+  {
+   "n": 53,
+   "section": 9,
+   "front": "Delivery timing for cholestasis with bile acids of 100 µmol/L or more?",
+   "back": "36 0/7 weeks.",
+   "question": null
+  },
+  {
+   "n": 54,
+   "section": 9,
+   "front": "Antibiotic for suspected listeriosis in pregnancy?",
+   "back": "High-dose IV ampicillin.",
+   "question": null
+  },
+  {
+   "n": 55,
+   "section": 10,
+   "front": "Delivery timing for uncomplicated dichorionic diamniotic twins?",
+   "back": "38 0/7 to 38 6/7 weeks.",
+   "question": null
+  },
+  {
+   "n": 56,
+   "section": 10,
+   "front": "Delivery timing for uncomplicated monochorionic diamniotic twins?",
+   "back": "34 0/7 to 37 6/7 weeks.",
+   "question": null
+  },
+  {
+   "n": 57,
+   "section": 10,
+   "front": "Treatment for TTTS stages II to IV at 16 to 26 weeks?",
+   "back": "Fetoscopic laser photocoagulation.",
+   "question": 21
+  },
+  {
+   "n": 58,
+   "section": 10,
+   "front": "Key test after diagnosing FGR?",
+   "back": "Umbilical artery Doppler.",
+   "question": 22
+  },
+  {
+   "n": 59,
+   "section": 10,
+   "front": "Delivery timing for FGR with absent end-diastolic flow?",
+   "back": "33 0/7 to 34 0/7 weeks.",
+   "question": null
+  },
+  {
+   "n": 60,
+   "section": 10,
+   "front": "Short cervix (20 mm or less) without previous preterm birth: treatment?",
+   "back": "Vaginal progesterone.",
+   "question": null
+  },
+  {
+   "n": 61,
+   "section": 10,
+   "front": "History-indicated cerclage timing?",
+   "back": "About 12 to 14 weeks.",
+   "question": 23
+  }
+ ]
+}

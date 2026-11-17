@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 524" width="760" height="524" role="img" aria-label="Schematic line graph of hCG and TSH across 40 weeks of pregnancy showing hCG peaking at about 10 to 12 weeks while TSH reaches its lowest level, with explanatory notes" font-family="sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 544" width="760" height="544" role="img" aria-label="Schematic line graph of hCG and TSH across 40 weeks of pregnancy showing hCG peaking at about 10 to 12 weeks while TSH reaches its lowest level, with explanatory notes" font-family="sans-serif">
 <title>Schematic line graph of hCG and TSH across 40 weeks of pregnancy showing hCG peaking at about 10 to 12 weeks while TSH reaches its lowest level, with explanatory notes</title>
-<rect x="0" y="0" width="760" height="524" fill="#ffffff"/>
+<rect x="0" y="0" width="760" height="544" fill="#ffffff"/>
 <text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">hCG and TSH across pregnancy (schematic, relative units)</text>
 <line x1="110" y1="380" x2="720" y2="380" stroke="#0f172a" stroke-width="1.5"/>
 <line x1="110" y1="90" x2="110" y2="380" stroke="#0f172a" stroke-width="1.5"/>
@@ -29,14 +29,15 @@
 <text x="415.0" y="424" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f172a">Weeks of gestation</text>
 <text x="30" y="80" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">Relative</text>
 <text x="30" y="96" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">level</text>
+<rect x="232.0" y="90" width="91.5" height="290" rx="0" fill="#e2e8f0" fill-opacity="0.45" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3"/>
 <polyline fill="none" stroke="#0f172a" stroke-width="3" points="110.0,374.2 171.0,345.2 201.5,249.5 232.0,142.2 262.5,104.5 293.0,133.5 323.5,211.8 354.0,275.6 415.0,310.4 537.0,322.0 659.0,316.2 720.0,310.4"/>
 <polyline fill="none" stroke="#0f172a" stroke-width="3" stroke-dasharray="8,6" points="110.0,200.2 171.0,206.0 201.5,229.2 232.0,264.0 262.5,287.2 293.0,275.6 323.5,246.6 354.0,223.4 415.0,206.0 537.0,194.4 659.0,188.6 720.0,188.6"/>
 <text x="268.6" y="94.5" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">hCG peaks at about 10 to 12 weeks</text>
-<text x="415.0" y="182.4" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">TSH (dashed) dips as hCG peaks, then recovers</text>
-<rect x="232.0" y="90" width="91.5" height="290" rx="0" fill="#e2e8f0" fill-opacity="0.45" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="277.75" y="372" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">window of</text>
-<text x="277.75" y="358" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">lowest TSH</text>
-<text x="20" y="454" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">hCG shares its alpha subunit with TSH and weakly stimulates the TSH receptor, so free T4 rises slightly and</text>
-<text x="20" y="474" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">TSH falls in the first trimester. Very high hCG (hyperemesis, twins, molar pregnancy) can cause transient</text>
-<text x="20" y="494" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">thyrotoxicosis. Estrogen raises thyroxine-binding globulin, so total T4 and T3 rise; use trimester-specific ranges.</text>
+<text x="369.25" y="180.4" font-size="13" font-weight="bold" text-anchor="start" fill="#0f172a">TSH (dashed) is lowest as hCG peaks</text>
+<text x="277.75" y="356" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">window of</text>
+<text x="277.75" y="372" font-size="12" font-weight="normal" text-anchor="middle" fill="#0f172a">lowest TSH</text>
+<text x="20" y="454" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">hCG shares its alpha subunit with TSH and weakly stimulates the TSH receptor, so free T4 rises</text>
+<text x="20" y="474" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">slightly and TSH falls in the first trimester. Very high hCG (hyperemesis, twins, molar pregnancy)</text>
+<text x="20" y="494" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">can cause transient thyrotoxicosis. Estrogen raises thyroxine-binding globulin, so total T4 and T3</text>
+<text x="20" y="514" font-size="12" font-weight="normal" text-anchor="start" fill="#0f172a">rise; interpret results with trimester-specific ranges.</text>
 </svg>

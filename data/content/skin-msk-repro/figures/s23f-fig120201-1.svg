@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" role="img" aria-label="Three uterus schematics: placenta previa with placenta covering the internal os, placental abruption with clot behind a fundal placenta, and vasa previa with unprotected fetal vessels crossing the os">
+<title>Three uterus schematics: placenta previa with placenta covering the internal os, placental abruption with clot behind a fundal placenta, and vasa previa with unprotected fetal vessels crossing the os</title>
+<rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="28" font-size="16" text-anchor="middle" font-weight="bold">Placenta previa, placental abruption and vasa previa (schematic sagittal views)</text>
+<text x="130" y="60" font-size="15" text-anchor="middle" font-weight="bold">Placenta previa</text>
+<path d="M 50 110 Q 130 60 210 110 L 210 260 Q 210 300 150 310 L 150 345 L 110 345 L 110 310 Q 50 300 50 260 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="130" y="365" font-size="12" text-anchor="middle">cervix and internal os</text>
+<line x1="110" y1="310" x2="150" y2="310" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="380" y="60" font-size="15" text-anchor="middle" font-weight="bold">Placental abruption</text>
+<path d="M 300 110 Q 380 60 460 110 L 460 260 Q 460 300 400 310 L 400 345 L 360 345 L 360 310 Q 300 300 300 260 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="380" y="365" font-size="12" text-anchor="middle">cervix and internal os</text>
+<line x1="360" y1="310" x2="400" y2="310" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="630" y="60" font-size="15" text-anchor="middle" font-weight="bold">Vasa previa</text>
+<path d="M 550 110 Q 630 60 710 110 L 710 260 Q 710 300 650 310 L 650 345 L 610 345 L 610 310 Q 550 300 550 260 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="630" y="365" font-size="12" text-anchor="middle">cervix and internal os</text>
+<line x1="610" y1="310" x2="650" y2="310" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M 75 285 Q 130 320 185 285 L 180 265 Q 130 292 80 265 Z" fill="#c4b5fd" stroke="#0f172a" stroke-width="1.5"/>
+<text x="130" y="255" font-size="12" text-anchor="middle">placenta covers os</text>
+<text x="130" y="385" font-size="12" text-anchor="middle">Painless bright red bleeding</text>
+<path d="M 330 105 Q 380 78 430 105 L 420 125 Q 380 105 340 125 Z" fill="#c4b5fd" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="380" cy="92" rx="30" ry="8" fill="#7f1d1d" stroke="#0f172a" stroke-width="1"/>
+<text x="380" y="150" font-size="12" text-anchor="middle">clot behind placenta</text>
+<path d="M 458 120 L 458 300" stroke="#7f1d1d" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+<text x="380" y="385" font-size="12" text-anchor="middle">Painful bleeding, firm tender uterus</text>
+<path d="M 580 105 Q 630 78 680 105 L 670 125 Q 630 105 590 125 Z" fill="#c4b5fd" stroke="#0f172a" stroke-width="1.5"/>
+<path d="M 670 120 C 705 200 670 300 632 306" stroke="#b91c1c" stroke-width="3" fill="none"/>
+<path d="M 660 125 C 690 210 660 296 626 304" stroke="#1d4ed8" stroke-width="3" fill="none"/>
+<text x="630" y="230" font-size="12" text-anchor="middle">fetal vessels</text>
+<text x="630" y="246" font-size="12" text-anchor="middle">cross the os</text>
+<text x="630" y="385" font-size="12" text-anchor="middle">Bleeding at rupture, fetal distress</text>
+</g>
+</svg>
