@@ -1,0 +1,16 @@
+{
+ "id": "20261117T080533-seg19-admin-bc669a",
+ "ts": "2026-11-17T08:05:33.876176Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated cd9817e into claude/naadi-shared",
+ "body": "S19: storage-key fixes, editor/picker fixes, pathway_checks queue, e2e green",
+ "refs": {
+  "commit": "cd9817e",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
