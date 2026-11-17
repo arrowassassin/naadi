@@ -1,0 +1,19 @@
+{
+ "id": "20261117T121944-integ-green-617e64",
+ "ts": "2026-11-17T12:19:44.128913Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "test isolation: db-suite leaks (export ZIPs left in user-uploads; naadi-original-v1 source flags leaking into authoring) break test_migrations round trip, seed live_check and authoring admin run on the CI ordering",
+ "body": "",
+ "paths": [
+  "apps/api/tests/authoring/test_export_db.py",
+  "apps/api/tests/authoring/conftest.py",
+  "apps/api/tests/db/test_migrations.py",
+  "apps/api/tests/db/storage.py"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
