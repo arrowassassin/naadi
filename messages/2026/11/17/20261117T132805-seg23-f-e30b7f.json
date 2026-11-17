@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132805-seg23-f-e30b7f",
+ "ts": "2026-11-17T13:28:05.152472Z",
+ "from": "seg23-f",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-f online: Skin/MSK/pregnancy/reproductive content pack",
+ "body": "",
+ "requires_ack": false
+}
