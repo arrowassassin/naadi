@@ -225,6 +225,12 @@ export const GATE_KEYS: Record<string, string> = {
   storage_unavailable: "admin.gate.storage_unavailable",
   bad_storage_path: "admin.gate.bad_storage_path",
   reject_unsupported: "admin.gate.reject_unsupported",
+  link_only: "admin.gate.link_only",
+  no_derivatives: "admin.gate.no_derivatives",
+  noncommercial: "admin.gate.noncommercial",
+  embed_only: "admin.gate.embed_only",
+  private_source: "admin.gate.private_source",
+  modify_not_allowed: "admin.gate.modify_not_allowed",
   unknown: "admin.gate.unknown",
 };
 

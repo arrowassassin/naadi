@@ -34,16 +34,26 @@ export function sourceSummary(s: SourceRow, t: ReturnType<typeof useT>): string 
   return flags.join(" · ");
 }
 
-/** A required `sources` row: every asset references one (HANDOFF §7.1). */
+/** What a source is chosen for (the server's `sources.usable_for`): a stored file, a page, text, or an embed. */
+export type SourceUse = "host" | "page" | "text" | "embed";
+
+/** Whether the source's licence allows this use (the server's licence gate decides; this filters the picker). */
+export function usableFor(s: SourceRow, use: SourceUse): boolean {
+  return s.usable_for.includes(use);
+}
+
+/** A required `sources` row: every asset references one (HANDOFF §7.1). Only sources usable for `use` are offered. */
 export function SourceSelect({
   value,
   onChange,
+  use,
   label,
   invalid,
   disabled,
 }: {
   value: string;
   onChange: (id: string) => void;
+  use: SourceUse;
   label?: string;
   invalid?: boolean;
   disabled?: boolean;
@@ -52,6 +62,9 @@ export function SourceSelect({
   const id = useId();
   const sources = useSources();
   const current = sources.data?.find((s) => s.id === value);
+  const usable = (sources.data ?? []).filter((s) => usableFor(s, use));
+  // A saved value whose licence no longer allows this use stays visible (disabled, with the reason) until changed.
+  const stale = current && !usableFor(current, use) ? current : null;
   return (
     <label htmlFor={id} className={LABEL}>
       {label ?? t("admin.field.source")}
@@ -67,7 +80,12 @@ export function SourceSelect({
           className={cx(INPUT, "appearance-none pr-11")}
         >
           <option value="">{t(sources.isPending ? "admin.state.loading" : "admin.field.source_choose")}</option>
-          {(sources.data ?? []).map((s) => (
+          {stale ? (
+            <option value={stale.id} disabled>
+              {t("admin.field.source_not_usable_option", { name: stale.name })}
+            </option>
+          ) : null}
+          {usable.map((s) => (
             <option key={s.id} value={s.id}>
               {s.name}
             </option>
@@ -82,9 +100,13 @@ export function SourceSelect({
       <span id={`${id}-hint`} className="text-text-3">
         {sources.isError
           ? t("admin.field.source_failed")
-          : current
-            ? sourceSummary(current, t)
-            : t("admin.field.source_hint")}
+          : stale
+            ? t("admin.field.source_not_usable")
+            : current
+              ? sourceSummary(current, t)
+              : sources.data && usable.length === 0
+                ? t("admin.field.source_none_usable")
+                : t("admin.field.source_hint")}
       </span>
     </label>
   );
@@ -190,6 +212,8 @@ export function TaxonomyPicker({
                     <label key={n.id} className="flex min-h-11 cursor-pointer items-center gap-3 text-ui text-text">
                       <input
                         type="checkbox"
+                        value={n.id}
+                        data-taxonomy-id={n.id}
                         checked={selected.has(n.id)}
                         onChange={() => toggle(n.id)}
                         className="size-5 accent-paper"

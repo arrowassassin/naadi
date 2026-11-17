@@ -532,6 +532,7 @@ function Editor({
             </label>
             <TaxonomyPicker exam={f.exam} value={f.taxonomy_ids} onChange={(taxonomy_ids) => set({ taxonomy_ids })} />
             <SourceSelect
+              use="text"
               value={f.source_id}
               onChange={(source_id) => set({ source_id })}
               invalid={Boolean(err("source"))}

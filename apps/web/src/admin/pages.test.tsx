@@ -140,6 +140,7 @@ vi.mock("./api", async (orig) => {
             allow_commercial: true,
             allow_ai_ingest: true,
             verified: true,
+            usable_for: ["host", "page", "text", "embed"],
           },
         ],
       }),

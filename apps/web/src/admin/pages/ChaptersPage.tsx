@@ -117,6 +117,7 @@ function CreateChapterDialog({ open, onClose, exam }: { open: boolean; onClose: 
           />
         </label>
         <SourceSelect
+          use="text"
           value={form.source_id}
           onChange={(source_id) => setForm({ ...form, source_id })}
           invalid={tried && sourceBad}

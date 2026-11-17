@@ -260,7 +260,11 @@ interface Src {
   allow_copy: boolean;
   allow_commercial: boolean;
   verified: boolean;
+  usable_for?: string[];
 }
+
+/** A disabled, admin-only flag no screen reads: the config edit/history/revert step changes nothing anyone sees. */
+const PROBE_FLAG = "e2e_admin_probe";
 
 test.describe("authoring flow", () => {
   test.skip(isLive(), "writes shared content and global config: local stack only, never against a deployed Space");
@@ -298,17 +302,22 @@ test.describe("authoring flow", () => {
     const chapterTitle = `E2E admin chapter ${stamp}`;
     const sectionHeading = `E2E section ${stamp}`;
     let chapterId = "";
-    let flagsBefore: { value: unknown; updated_at: string | null } | null = null;
+    // feature_flags as found, put back in `finally` whatever happens in between.
+    let flagsOriginal: { value: unknown; admin_edited_at: string | null } | null = null;
 
     await go(admin, "/settings/account");
     const auth = await bearer(admin);
     const sources = (await api<{ items: Src[] }>(admin.request, auth, "GET", "/api/admin/sources")).items;
-    const original =
-      sources.find((s) => s.id === "naadi-original-v1") ??
-      sources.find((s) => s.verified && s.allow_copy && s.allow_commercial);
-    expect(original, "a licensed source for uploads").toBeTruthy();
+    const usable = (s: Src, use: string) => !s.usable_for || s.usable_for.includes(use);
+    // Naadi's own content: usable for stored files, pages and text (uploads, the chapter, the question).
+    const original = sources.find((s) => s.id === "naadi-original-v1");
+    expect(original, "the naadi-original-v1 source").toBeTruthy();
+    for (const use of ["host", "page", "text"]) expect(usable(original as Src, use), use).toBe(true);
     const youtubeSource =
-      sources.find((s) => /youtube/i.test(`${s.id} ${s.name} ${s.license}`) && s.verified) ?? (original as Src);
+      sources.find((s) => /youtube/i.test(`${s.id} ${s.name} ${s.license}`) && s.verified && usable(s, "embed")) ??
+      sources.find((s) => s.verified && usable(s, "embed"));
+    expect(youtubeSource, "a source usable for embedded video").toBeTruthy();
+    // One topic, chosen and later asserted by id (labels can collide across taxonomy kinds).
     const topic = (
       await api<{ items: { id: string; kind: string; label: string }[] }>(
         admin.request,
@@ -316,7 +325,11 @@ test.describe("authoring flow", () => {
         "GET",
         "/api/admin/taxonomy?exam=step1",
       )
-    ).items.find((n) => n.kind === "topic");
+    ).items
+      .filter((n) => n.kind === "topic")
+      .sort((a, b) => a.id.localeCompare(b.id))[0];
+    expect(topic, "a step1 topic").toBeTruthy();
+    const topicId = (topic as { id: string }).id;
     const coverageBefore = await api<{ topics: { id: string; counts: Record<string, number> }[] }>(
       admin.request,
       auth,
@@ -325,6 +338,23 @@ test.describe("authoring flow", () => {
     );
 
     try {
+      // 0. A deterministic feature_flags edit target, set through the admin API (restored in `finally`).
+      const flagsNow = await api<{
+        value: Record<string, unknown>;
+        updated_at: string | null;
+        admin_edited_at: string | null;
+      }>(admin.request, auth, "GET", "/api/admin/config/feature_flags");
+      flagsOriginal = { value: flagsNow.value, admin_edited_at: flagsNow.admin_edited_at };
+      const flagsSetup = {
+        ...flagsNow.value,
+        [PROBE_FLAG]: { enabled: false, audience: "admins", everyone_outside_prod: false },
+      };
+      await api(admin.request, auth, "PUT", "/api/admin/config/feature_flags", {
+        value: flagsSetup,
+        expected_updated_at: flagsNow.updated_at,
+        admin_edited: true,
+      });
+
       // 1. Chapter + section through the UI.
       await go(admin, "/admin/chapters?exam=step1");
       await admin.getByRole("button", { name: c("admin.chapters.new") }).click();
@@ -338,16 +368,18 @@ test.describe("authoring flow", () => {
       await admin.getByRole("button", { name: c("admin.sections.new") }).click();
       const sd = admin.getByRole("dialog", { name: c("admin.sections.new_title") });
       await sd.getByLabel(c("admin.field.heading")).fill(sectionHeading);
-      if (topic) {
-        await sd.getByRole("button", { name: c("admin.field.taxonomy_open") }).click();
-        await sd.getByLabel(c("admin.field.taxonomy_filter")).fill(topic.label);
-        await sd
-          .getByRole("checkbox", { name: new RegExp(`^${topic.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`) })
-          .first()
-          .check();
-      }
+      await sd.getByRole("button", { name: c("admin.field.taxonomy_open") }).click();
+      await sd.getByLabel(c("admin.field.taxonomy_filter")).fill(topicId);
+      await sd.locator(`input[type='checkbox'][data-taxonomy-id='${topicId}']`).check();
       await sd.getByRole("button", { name: c("admin.sections.create") }).click();
       await expect(admin.getByText(sectionHeading, { exact: true }).first()).toBeVisible();
+      const saved = await api<{ sections: { heading: string; taxonomy_ids: string[] }[] }>(
+        admin.request,
+        auth,
+        "GET",
+        `/api/admin/chapters/${encodeURIComponent(chapterId)}`,
+      );
+      expect(saved.sections.find((x) => x.heading === sectionHeading)?.taxonomy_ids).toContain(topicId);
 
       // 2. Figure + PDF uploads (raw body, source required) and approval.
       await go(admin, "/admin/media");
@@ -383,7 +415,7 @@ test.describe("authoring flow", () => {
           ((await yt.getByText(cre("admin.media.yt_existing")).textContent()) ?? "").match(/\S+(?=\.$)/)?.[0] ?? "";
         await yt.getByRole("button", { name: c("admin.action.close") }).click();
       } else {
-        await yt.getByLabel(c("admin.field.source")).selectOption(youtubeSource.id);
+        await yt.getByLabel(c("admin.field.source")).selectOption((youtubeSource as Src).id);
         const added = admin.waitForResponse(
           (r) => r.url().endsWith("/api/admin/media/youtube") && r.request().method() === "POST",
         );
@@ -550,43 +582,45 @@ test.describe("authoring flow", () => {
       await expect(student.locator("[data-content-root]")).not.toContainText(v2.trim());
 
       // 8. Coverage: the topic's published-section count went up.
-      if (topic) {
-        const after = await api<{ topics: { id: string; counts: Record<string, number> }[] }>(
-          admin.request,
-          auth,
-          "GET",
-          "/api/admin/coverage?exam=step1",
-        );
-        const before = coverageBefore.topics.find((x) => x.id === topic.id)?.counts.sections ?? 0;
-        expect(after.topics.find((x) => x.id === topic.id)?.counts.sections ?? 0).toBeGreaterThan(before);
-        await go(admin, "/admin/coverage?exam=step1");
-        await expect(admin.locator(`[data-topic='${topic.id}']`)).toBeVisible();
-        await expect(admin.getByTestId("coverage-grid")).toBeVisible();
-      }
+      const after = await api<{ topics: { id: string; counts: Record<string, number> }[] }>(
+        admin.request,
+        auth,
+        "GET",
+        "/api/admin/coverage?exam=step1",
+      );
+      const before = coverageBefore.topics.find((x) => x.id === topicId)?.counts.sections ?? 0;
+      expect(after.topics.find((x) => x.id === topicId)?.counts.sections ?? 0).toBeGreaterThan(before);
+      await go(admin, "/admin/coverage?exam=step1");
+      await expect(admin.locator(`[data-topic='${topicId}']`)).toBeVisible();
+      await expect(admin.getByTestId("coverage-grid")).toBeVisible();
 
-      // 9. feature_flags: edit (diff before save) → history shows it → revert restores the value.
-      flagsBefore = await api<{ value: unknown; updated_at: string | null }>(
+      // 9. feature_flags: edit the probe flag in the UI (diff before save) → history shows it → revert.
+      const flagsBefore = await api<{ value: Record<string, Record<string, unknown>> }>(
         admin.request,
         auth,
         "GET",
         "/api/admin/config/feature_flags",
       );
-      const flags = flagsBefore.value as Record<string, { enabled: boolean; audience?: string }>;
-      // A disabled flag: changing who would see it changes nothing anyone sees while the test runs.
-      const name = Object.keys(flags).find((k) => flags[k]?.enabled === false);
-      test.skip(!name, "no disabled feature flag to edit harmlessly");
-      const flag = flags[name as string] as { enabled: boolean; audience?: string };
       const edited = {
-        ...flags,
-        [name as string]: { ...flag, audience: flag.audience === "admins" ? "everyone" : "admins" },
+        ...flagsBefore.value,
+        [PROBE_FLAG]: { ...flagsBefore.value[PROBE_FLAG], everyone_outside_prod: true },
       };
       await go(admin, "/admin/config/feature_flags");
       await admin.getByRole("button", { name: c("admin.config.view_json") }).click();
       await admin.getByLabel(c("admin.config.json_label")).fill(JSON.stringify(edited, null, 2));
       await admin.getByRole("button", { name: cre("admin.config.review") }).click();
-      await expect(admin.getByRole("region", { name: c("admin.config.diff_label") })).toContainText("audience");
+      await expect(admin.getByRole("region", { name: c("admin.config.diff_label") })).toContainText(
+        "everyone_outside_prod",
+      );
       await admin.getByRole("button", { name: c("admin.config.save") }).click();
       await expect(admin.getByText(c("admin.config.saved_live"))).toBeVisible();
+      const savedFlags = await api<{ value: Record<string, Record<string, unknown>> }>(
+        admin.request,
+        auth,
+        "GET",
+        "/api/admin/config/feature_flags",
+      );
+      expect(savedFlags.value[PROBE_FLAG]?.everyone_outside_prod).toBe(true);
       const hist = admin.getByTestId("config-history");
       await expect(hist.locator("li").first()).toBeVisible();
       await hist
@@ -600,10 +634,9 @@ test.describe("authoring flow", () => {
           ),
         )
         .toBe(JSON.stringify(flagsBefore.value));
-      flagsBefore = null;
       expect(errors, "console errors").toEqual([]);
     } finally {
-      // Leave nothing a student would see: retire the chapter, and put the flag back if the revert did not run.
+      // Leave nothing a student would see: retire the chapter, and put feature_flags back as they were found.
       if (chapterId) {
         await admin.request
           .post(`/api/admin/chapters/${encodeURIComponent(chapterId)}/status`, {
@@ -612,17 +645,22 @@ test.describe("authoring flow", () => {
           })
           .catch(() => undefined);
       }
-      if (flagsBefore) {
+      if (flagsOriginal) {
         const now = await api<{ updated_at: string | null }>(
           admin.request,
           auth,
           "GET",
           "/api/admin/config/feature_flags",
         );
-        await admin.request.put("/api/admin/config/feature_flags", {
+        const res = await admin.request.put("/api/admin/config/feature_flags", {
           headers: { authorization: auth },
-          data: { value: flagsBefore.value, expected_updated_at: now.updated_at, admin_edited: true },
+          data: {
+            value: flagsOriginal.value,
+            expected_updated_at: now.updated_at,
+            admin_edited: flagsOriginal.admin_edited_at !== null,
+          },
         });
+        expect(res.status(), "feature_flags restored").toBe(200);
       }
       await adminCtx.close();
       await studentCtx.close();

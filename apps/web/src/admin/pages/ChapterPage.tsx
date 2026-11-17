@@ -149,6 +149,7 @@ function MetadataForm({ chapter }: { chapter: AdminChapter }) {
         />
       </label>
       <SourceSelect
+        use="text"
         value={source}
         onChange={(v) => {
           setSource(v);

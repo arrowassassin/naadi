@@ -65,7 +65,17 @@ export function questionIdsOf(doc: unknown): string[] {
   return [...out].sort();
 }
 
-function SaveStatus({ state, draftAt, onRetry }: { state: SaveState; draftAt: string | null; onRetry: () => void }) {
+function SaveStatus({
+  id,
+  state,
+  draftAt,
+  onRetry,
+}: {
+  id: string;
+  state: SaveState;
+  draftAt: string | null;
+  onRetry: () => void;
+}) {
   const t = useT();
   let icon = <Check aria-hidden="true" size={16} />;
   let text: string;
@@ -99,7 +109,7 @@ function SaveStatus({ state, draftAt, onRetry }: { state: SaveState; draftAt: st
   }
   return (
     <span className="flex flex-wrap items-center gap-2">
-      <span role="status" data-save-state={state.kind} className="inline-flex items-center gap-2 text-text-2">
+      <span id={id} role="status" data-save-state={state.kind} className="inline-flex items-center gap-2 text-text-2">
         {icon}
         {text}
       </span>
@@ -372,7 +382,7 @@ function Workspace({ data, sectionId }: { data: SectionEditor; sectionId: string
           size="cta"
           icon={<Send size={18} />}
           disabled={!canPublish}
-          aria-describedby={canPublish ? undefined : `${ids}-why`}
+          aria-describedby={canPublish ? undefined : state.kind === "conflict" ? `${ids}-why` : `${ids}-save`}
           onClick={() => {
             publish.reset();
             setPublishing(true);
@@ -394,12 +404,14 @@ function Workspace({ data, sectionId }: { data: SectionEditor; sectionId: string
         ) : (
           <Chip tone="planned">{t("admin.sections.not_live")}</Chip>
         )}
-        <SaveStatus state={state} draftAt={draftAt} onRetry={() => void autosave.flush()} />
-        {canPublish ? null : (
+        <SaveStatus id={`${ids}-save`} state={state} draftAt={draftAt} onRetry={() => void autosave.flush()} />
+        {/* Publish disabled: the save state above already says why ("No unpublished changes", "Not saved: …");
+            only a conflict needs its own words. */}
+        {state.kind === "conflict" ? (
           <span id={`${ids}-why`} className="text-ui-sm text-text-3">
-            {t(state.kind === "conflict" ? "admin.editor.publish_blocked_conflict" : "admin.editor.publish_nothing")}
+            {t("admin.editor.publish_blocked_conflict")}
           </span>
-        )}
+        ) : null}
         {draftAt || state.kind === "saved" ? (
           <Button
             icon={<Trash2 size={16} />}

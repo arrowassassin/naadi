@@ -4,7 +4,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { Ban, Check, CirclePlay, Link2, Search, Unlink, Upload, X } from "lucide-react";
 import { type DragEvent, type FormEvent, useEffect, useId, useRef, useState } from "react";
 import { type AdminMedia, api, isConflict, MEDIA_KINDS, qk, REVIEW_STATUSES, type YoutubeLookup } from "../api";
-import { SourceSelect, TaxonomyPicker } from "../components/pickers";
+import { SourceSelect, type SourceUse, TaxonomyPicker } from "../components/pickers";
 import { type SectionChoice, SectionPicker } from "../components/SectionPicker";
 import {
   AdminPage,
@@ -66,8 +66,10 @@ function MetaForm({
   value,
   onChange,
   tried,
+  use,
   titleRequired = true,
 }: {
+  use: SourceUse;
   value: MetaFields;
   onChange: (v: MetaFields) => void;
   tried: boolean;
@@ -109,6 +111,7 @@ function MetaForm({
         />
       </label>
       <SourceSelect
+        use={use}
         value={value.source_id}
         onChange={(source_id) => onChange({ ...value, source_id })}
         invalid={tried && !value.source_id}
@@ -169,7 +172,7 @@ function UploadDialog({ file, onClose }: { file: File | null; onClose: () => voi
     >
       <form noValidate onSubmit={submit} className="flex flex-col gap-5">
         <p className="m-0 break-all font-mono text-ui-sm text-text-2">{file?.name}</p>
-        <MetaForm value={meta} onChange={setMeta} tried={tried} />
+        <MetaForm value={meta} onChange={setMeta} tried={tried} use="host" />
         <InlineError error={upload.error} />
         <div className="flex flex-wrap gap-3">
           <Button type="submit" variant="strong" icon={<Upload size={16} />} disabled={upload.isPending}>
@@ -295,7 +298,7 @@ function YoutubeDialog({ open, onClose }: { open: boolean; onClose: () => void }
                 {t("admin.gate.not_embeddable")}
               </p>
             ) : null}
-            <MetaForm value={meta} onChange={setMeta} tried={tried} titleRequired={false} />
+            <MetaForm value={meta} onChange={setMeta} tried={tried} titleRequired={false} use="embed" />
             <InlineError error={add.error} />
             <div className="flex flex-wrap gap-3">
               <Button type="submit" variant="strong" disabled={add.isPending || found.embeddable === false}>
@@ -475,7 +478,13 @@ function MediaDetail({ m, onClose }: { m: AdminMedia | null; onClose: () => void
                 if (meta.source_id && !save.isPending) save.mutate();
               }}
             >
-              <MetaForm value={meta} onChange={setMeta} tried titleRequired={false} />
+              <MetaForm
+                value={meta}
+                onChange={setMeta}
+                tried
+                titleRequired={false}
+                use={m.kind === "video_youtube" ? "embed" : "host"}
+              />
               <InlineError error={save.error}>
                 {isConflict(save.error) ? <p className="m-0 text-text-2">{t("admin.conflict.reload_hint")}</p> : null}
               </InlineError>
