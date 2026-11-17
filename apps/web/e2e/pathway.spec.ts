@@ -1,5 +1,4 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
@@ -66,6 +65,8 @@ function watchConsole(page: Page) {
   const errors: string[] = [];
   let tool = 0;
   page.on("console", (m) => {
+    // Trusted Types ship report-only: WebKit and Firefox log those reports as console errors (csp.spec collects them).
+    if (/\[Report Only\]|report-only|Report-Only/i.test(m.text())) return;
     if (m.type() === "error" && !(tool > 0 && m.text() === TOOL_CSP_NOISE)) errors.push(m.text());
   });
   page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
@@ -694,15 +695,16 @@ test.describe("today strip and production", () => {
   test("the pathway loads on the production server (strict CSP) with no console errors", async ({
     browser,
     baseURL,
-  }) => {
+  }, info) => {
     const prod = process.env.E2E_PROD_URL;
     test.skip(!prod, "needs the local APP_ENV=prod API (not available against the live Space)");
     test.setTimeout(150_000);
     const origin = new URL(prod as string).origin;
-    const file = await signedInState(browser, baseURL as string, "student");
-    const saved = JSON.parse(readFileSync(file, "utf8")) as {
-      origins: { origin: string; localStorage: { name: string; value: string }[] }[];
-    };
+    // Its own throwaway student: a shared session dies as soon as another test refreshes it (tokens rotate).
+    const student = await freshStudent(browser, baseURL as string, info, "prod");
+    const own = await student.open("/pathway");
+    const saved = await own.context.storageState();
+    await own.context.close();
     const context = await browser.newContext({
       baseURL: prod,
       ignoreHTTPSErrors: true,
@@ -723,6 +725,7 @@ test.describe("today strip and production", () => {
       expect(errors).toEqual([]);
     } finally {
       await context.close();
+      await student.done();
     }
   });
 });
