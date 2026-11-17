@@ -31,12 +31,17 @@ def _own(buckets: Sequence[str]) -> str:
     return f"bucket_id = any({arr}) and (storage.foldername(name))[1] = (select auth.uid())::text"
 
 
-def _policies(buckets: Sequence[str]) -> str:
-    own = _own(buckets)
-    return f"""
+def _drop() -> str:
+    return """
 drop policy if exists naadi_user_folders_insert on storage.objects;
 drop policy if exists naadi_user_folders_update on storage.objects;
 drop policy if exists naadi_user_folders_delete on storage.objects;
+"""
+
+
+def _create(buckets: Sequence[str]) -> str:
+    own = _own(buckets)
+    return f"""
 create policy naadi_user_folders_insert on storage.objects for insert to authenticated with check ({own});
 create policy naadi_user_folders_update on storage.objects for update to authenticated
   using ({own}) with check ({own});
@@ -45,8 +50,10 @@ create policy naadi_user_folders_delete on storage.objects for delete to authent
 
 
 def upgrade() -> None:
-    op.execute(_policies(("user-uploads", "generated-media")))
+    op.execute(_drop())
+    op.execute(_create(("user-uploads", "generated-media")))
 
 
 def downgrade() -> None:
-    op.execute(_policies(("user-uploads", "vault", "generated-media")))
+    op.execute(_drop())
+    op.execute(_create(("user-uploads", "vault", "generated-media")))
