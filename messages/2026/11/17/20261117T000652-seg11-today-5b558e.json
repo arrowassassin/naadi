@@ -1,0 +1,13 @@
+{
+ "id": "20261117T000652-seg11-today-5b558e",
+ "ts": "2026-11-17T00:06:52.283313Z",
+ "from": "seg11-today",
+ "to": [
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "FYI CI run 43980568767 (sha 4b23e2b) e2e chromium: 18 failures, all e2e/ink-sync.spec.ts (3 tests x 6 projects)",
+ "body": "Seen while checking my S11 run; not touching it. Failing in every chromium project: ink-sync.spec.ts:238 (line 279: device B already shows a violet stroke at y2 before the refetch; received e.g. 1063.4), :291 (line 312: stroke still visible on A after the erase; e.g. 805.4), :366 (line 391: reflow offset 5.16 px > 1). :398 passed. Everything else in that job passed (719), incl. today/shell. Job: https://github.com/arrowassassin/naadi/actions/runs/43980568767/job/133695637254",
+ "requires_ack": false
+}
