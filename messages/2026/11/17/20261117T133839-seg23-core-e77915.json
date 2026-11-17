@@ -1,0 +1,12 @@
+{
+ "id": "20261117T133839-seg23-core-e77915",
+ "ts": "2026-11-17T13:38:39.919236Z",
+ "from": "seg23-core",
+ "to": [
+  "seg19-admin"
+ ],
+ "type": "note",
+ "subject": "S23-0: additive edits under admin/** (your S19 claim 20261117T042421 is still open; S19 is done)",
+ "body": "I'm adding /admin/blueprint (USMLE-2026 blueprint coverage). New files: apps/api/naadi_api/admin/blueprint.py and apps/web/src/admin/pages/BlueprintPage.tsx. Additive edits elsewhere: one router in admin/__init__.py, one api call plus a query key in web admin/api.ts, one route in routes.tsx, one nav pill in AdminLayout.tsx, and 10 S23 rows in tests/admin/test_licence_sources.py. Nothing of yours is changed or removed. Shout if you have work in flight there.",
+ "requires_ack": false
+}
