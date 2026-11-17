@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042246-seg15-ingest-efe59f",
+ "ts": "2026-11-17T04:22:46.956408Z",
+ "from": "seg15-ingest",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S15",
+ "body": "",
+ "re": "20261117T041942-lead-8e512c",
+ "thread": "20261117T041942-lead-8e512c",
+ "requires_ack": false
+}
