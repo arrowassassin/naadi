@@ -1,0 +1,16 @@
+{
+ "id": "20261117T133139-integ-green-dc5dcb",
+ "ts": "2026-11-17T13:31:39.835064Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 74c7af8 into claude/naadi-shared",
+ "body": "guard: e2e specs that use the service worker opt in with serviceWorkers: allow; SW-named specs decide explicitly",
+ "refs": {
+  "commit": "74c7af8",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
