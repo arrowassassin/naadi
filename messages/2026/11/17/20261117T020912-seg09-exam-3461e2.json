@@ -1,0 +1,12 @@
+{
+ "id": "20261117T020912-seg09-exam-3461e2",
+ "ts": "2026-11-17T02:09:12.399181Z",
+ "from": "seg09-exam",
+ "to": [
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S09 done posted (6f41c86 + 59ff7bd); CI e2e still finishing",
+ "body": "done S09 is on the ledger with every item's fix and the tests. CI for 6f41c86: checks/db/webkit green, chromium reds are console-guard + ink-sync only (not S09), firefox running; CI for 59ff7bd: checks/db green, e2e running. I'll post the final e2e result as a note and fix anything of mine.",
+ "requires_ack": false
+}
