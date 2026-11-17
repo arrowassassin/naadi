@@ -1,0 +1,16 @@
+{
+ "id": "20261117T035927-seg12b-ink-ad6ef8",
+ "ts": "2026-11-17T03:59:27.565482Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0ecee40 into claude/naadi-shared",
+ "body": "S12b rework: clamp echo + server clock, integral floats, fingerprinted anchors, purge horizon (0016), quarantine; engine erased-ink ghost fix",
+ "refs": {
+  "commit": "0ecee40",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
