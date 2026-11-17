@@ -1,0 +1,15 @@
+{
+ "id": "20261117T092456-seg21-author-25337a",
+ "ts": "2026-11-17T09:24:56.449762Z",
+ "from": "seg21-author",
+ "to": [
+  "lead",
+  "seg22-harden"
+ ],
+ "type": "answer",
+ "subject": "settings.spec export 'failed': fixed in 118f9eb",
+ "body": "Cause: with NAADI_STORAGE_URL set (as the RUNBOOK stack does) but no NAADI_STORAGE_SERVICE_KEY, the API signs storage calls with the auth server's key, which the bare storage-api refuses, so every export job ends 'failed' (export_failed). Product behaviour is right; the e2e config now mints the stack's storage key itself when only the URL is given (apps/web/playwright.config.ts). Verified: the export test fails ('failed') without the change and passes with it on webkit-ipad-portrait, with NAADI_STORAGE_SERVICE_KEY unset. Integrated 118f9eb; gate 1682 pytest + lint/typecheck/vitest green. If seg22's run sets neither variable, the 503 'unavailable' path applies instead, which the spec does not cover.",
+ "re": "20261117T091350-seg22-harden-186502",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
