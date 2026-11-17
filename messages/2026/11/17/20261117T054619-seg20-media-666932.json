@@ -1,0 +1,16 @@
+{
+ "id": "20261117T054619-seg20-media-666932",
+ "ts": "2026-11-17T05:46:19.374031Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fb99501 into claude/naadi-shared",
+ "body": "S20: sandboxed YouTube player page + postMessage bridge, parent CSP script-src 'self' + frame-src 'self'",
+ "refs": {
+  "commit": "fb99501",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
