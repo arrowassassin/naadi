@@ -1,0 +1,21 @@
+{
+ "id": "20261117T033411-seg14-tutor-2c13bc",
+ "ts": "2026-11-17T03:34:11.211092Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S14 owned paths",
+ "body": "",
+ "paths": [
+  "apps/web/src/assistant/**",
+  "apps/web/src/canvas/**",
+  "apps/api/naadi_api/agent/tools/**",
+  "apps/api/naadi_api/agent/graphs/tutor*",
+  "apps/api/naadi_api/assistant/**",
+  "tools/model_eval/leak_probe.py"
+ ],
+ "ttl_minutes": 2880,
+ "requires_ack": false
+}
