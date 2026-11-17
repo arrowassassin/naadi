@@ -1,18 +1,19 @@
 import type { EraserMode, InkEngineState, InkTheme, InkToolName } from "@naadi/ink";
 import type { InkColor } from "@naadi/shared";
 import { Button, cx } from "@naadi/ui";
-import { Redo2, Trash2, Undo2 } from "lucide-react";
+import { Eraser, Highlighter, Lasso, type LucideIcon, Pen, Redo2, Shapes, Trash2, Type, Undo2 } from "lucide-react";
 import { useRef } from "react";
 import { useInkCopy } from "./copy";
 
-/** Tools with their keyboard shortcut (the letter is a key, not copy: it is what the student presses). */
-export const TOOLS: { tool: InkToolName; key?: string }[] = [
-  { tool: "pen", key: "P" },
-  { tool: "marker", key: "M" },
-  { tool: "eraser", key: "E" },
-  { tool: "lasso", key: "L" },
-  { tool: "shapes" },
-  { tool: "text" },
+/** Tools with their keyboard shortcut (the letter is a key, not copy: it is what the student presses) and the icon
+ * a phone shows in place of the word. */
+export const TOOLS: { tool: InkToolName; key?: string; icon: LucideIcon }[] = [
+  { tool: "pen", key: "P", icon: Pen },
+  { tool: "marker", key: "M", icon: Highlighter },
+  { tool: "eraser", key: "E", icon: Eraser },
+  { tool: "lasso", key: "L", icon: Lasso },
+  { tool: "shapes", icon: Shapes },
+  { tool: "text", icon: Type },
 ];
 
 /** The ui_copy key naming each swatch and the token class that shows each colour role on the given theme. */
@@ -50,7 +51,13 @@ export interface InkToolbarProps {
   className?: string;
 }
 
-/** Drawing toolbar per the Chapter and Ink boards: 44 px targets, accessible names, shortcuts announced. */
+/**
+ * Drawing toolbar per the Chapter and Ink boards: 44 px targets, accessible names, shortcuts announced.
+ *
+ * Phone widths (under 640 px): tools are 44 px icons, with the name kept as screen-reader text and as the title. The
+ * bar wraps onto a second row (colours, undo, redo, clear), so every control is on screen. Nothing scrolls sideways
+ * out of sight.
+ */
 export function InkToolbar({
   state,
   theme,
@@ -72,8 +79,8 @@ export function InkToolbar({
       role="toolbar"
       aria-label={t("ink.toolbar")}
       className={cx(
-        // One row at every width; on a phone it scrolls sideways instead of wrapping into three rows.
-        "relative flex flex-nowrap items-center gap-0.5 overflow-x-auto overscroll-x-contain rounded-[28px] border border-line-strong bg-ground p-1.5 [scrollbar-width:none] [&>*]:shrink-0",
+        // One row from 640 px up; on a phone, icons and a second row (never a sideways scroll that hides controls).
+        "relative flex flex-nowrap items-center gap-0.5 rounded-[28px] border border-line-strong bg-ground p-1.5 max-tablet:flex-wrap max-tablet:gap-y-1 [&>*]:shrink-0",
         className,
       )}
     >
@@ -90,6 +97,7 @@ export function InkToolbar({
       {TOOLS.map((tool) => {
         const on = state.tool === tool.tool;
         const label = t(`ink.tool.${tool.tool}`);
+        const Icon = tool.icon;
         return (
           <button
             key={tool.tool}
@@ -101,15 +109,17 @@ export function InkToolbar({
             onClick={() => onTool(tool.tool)}
             className={cx(
               toolBtn,
+              "max-tablet:size-11 max-tablet:px-0",
               on && state.enabled ? "bg-paper font-semibold text-ground" : "text-text hover:bg-surface-2",
               !state.enabled && "cursor-not-allowed text-text-muted",
             )}
           >
-            {label}
+            <Icon aria-hidden="true" size={20} className="tablet:hidden" />
+            <span className="max-tablet:sr-only">{label}</span>
           </button>
         );
       })}
-      <span aria-hidden="true" className="mx-0.5 h-6 w-px bg-line-strong" />
+      <span aria-hidden="true" className="mx-0.5 h-6 w-px bg-line-strong max-tablet:hidden" />
       {state.tool === "eraser" ? (
         <fieldset className="m-0 flex items-center gap-1 border-0 p-0">
           <legend className="sr-only">{t("ink.eraser.mode")}</legend>

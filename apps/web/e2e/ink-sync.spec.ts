@@ -602,6 +602,58 @@ test.describe("ink on a reader section", () => {
   });
 });
 
+test.describe("ink toolbar on a phone", () => {
+  test.setTimeout(120_000);
+
+  for (const width of [390, 412]) {
+    test(`every control fits at ${width} px: on screen, at least 44 px, nothing scrolled out of sight`, async ({
+      browser,
+      baseURL,
+    }, info) => {
+      const s = await student(browser, baseURL as string, info, width === 390 ? "barsmall" : "barwide");
+      try {
+        const a = await s.device({ width, height: 844 });
+        await turnInkOn(a);
+        const bar = a.getByRole("toolbar", { name: "Ink tools" });
+        const check = async (state: string) => {
+          await bar.scrollIntoViewIfNeeded();
+          const r = await bar.evaluate((el) => {
+            const vw = document.documentElement.clientWidth;
+            const controls = [...el.querySelectorAll<HTMLElement>("button")].filter(
+              (b) => !b.closest("dialog") && b.getClientRects().length > 0,
+            );
+            return {
+              scrolls: el.scrollWidth > el.clientWidth + 1,
+              bad: controls
+                .map((b) => {
+                  const box = b.getBoundingClientRect();
+                  const name = b.getAttribute("aria-label") ?? b.textContent ?? "?";
+                  if (box.left < -0.5 || box.right > vw + 0.5) return `${name}: off screen (${box.left}-${box.right})`;
+                  if (box.width < 43.5 || box.height < 43.5) return `${name}: ${box.width}x${box.height}`;
+                  return null;
+                })
+                .filter(Boolean),
+              count: controls.length,
+            };
+          });
+          expect(r.scrolls, `${state}: the toolbar scrolls sideways`).toBe(false);
+          expect(r.bad, state).toEqual([]);
+          expect(r.count).toBeGreaterThanOrEqual(11);
+        };
+        await check("pen");
+        await expectNoHorizontalOverflow(a);
+        await snap(a, info, consoleOf(a).guard, `toolbar-phone-${width}`);
+        await a.getByRole("button", { name: "Eraser", exact: true }).click();
+        await check("eraser");
+        await a.getByRole("button", { name: "Marker", exact: true }).click();
+        await check("marker");
+      } finally {
+        await s.done();
+      }
+    });
+  }
+});
+
 test.describe("ink on a tutor-mode question", () => {
   test.setTimeout(120_000);
 
