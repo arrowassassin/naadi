@@ -1,0 +1,107 @@
+[
+ {
+  "id": "smp-g-735884870eca",
+  "frontHtml": "<p>Myocardial oxygen supply and demand: The left ventricle extracts about 70–75% of the oxygen delivered to it even at rest, so a rise in demand is met almost entirely by a rise in […], not by more extraction.</p>",
+  "backHtml": "<p>The left ventricle extracts about 70–75% of the oxygen delivered to it even at rest, so a rise in demand is met almost entirely by a rise in <strong>coronary blood flow</strong>, not by more extraction.</p>",
+  "sectionId": "smp-s01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.08.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "key-fact"
+  ]
+ },
+ {
+  "id": "smp-g-123361e013b4",
+  "frontHtml": "<p>Myocardial oxygen supply and demand: Flow to the left ventricle occurs mostly in […], when the contracting wall no longer compresses intramural vessels.</p>",
+  "backHtml": "<p>Flow to the left ventricle occurs mostly in <strong>diastole</strong>, when the contracting wall no longer compresses intramural vessels.</p>",
+  "sectionId": "smp-s01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.08.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "key-fact"
+  ]
+ },
+ {
+  "id": "smp-g-01aebb88d604",
+  "frontHtml": "<p>Explain why increased myocardial oxygen demand is met by increased coronary flow rather than increased extraction.</p>",
+  "backHtml": "<p>the heart raises supply by raising flow, not extraction.</p>",
+  "sectionId": null,
+  "questionId": "smp-q01",
+  "areas": [
+   "usmle2026.08.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "smp-g-5edfcaaa1412",
+  "frontHtml": "<p>Calculate the number needed to treat from two event rates.</p>",
+  "backHtml": "<p>Absolute risk reduction = 10.0% − 8.0% = 2.0% = 0.02.</p>",
+  "sectionId": null,
+  "questionId": "smp-q02",
+  "areas": [
+   "usmle2026.17.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "smp-g-462aed1f93f7",
+  "frontHtml": "<p>Distinguish relative from absolute risk reduction.</p>",
+  "backHtml": "<p>Relative risk = 8.0% / 10.0% = 0.8.</p>",
+  "sectionId": null,
+  "questionId": "smp-q03",
+  "areas": [
+   "usmle2026.17.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "smp-g-b7637e69e7fe",
+  "frontHtml": "<p>Choose primary PCI for STEMI when it is promptly available.</p>",
+  "backHtml": "<p>In ST-elevation myocardial infarction, primary PCI is the preferred reperfusion strategy when it can be performed promptly (within 120 minutes of first medical contact).</p>",
+  "sectionId": null,
+  "questionId": "smp-q04",
+  "areas": [
+   "usmle2026.08.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ },
+ {
+  "id": "smp-g-5eb7b8621d8d",
+  "frontHtml": "<p>Treat hypotension from right ventricular infarction with volume.</p>",
+  "backHtml": "<p>Right ventricular infarction makes cardiac output preload-dependent.</p>",
+  "sectionId": null,
+  "questionId": "smp-q05",
+  "areas": [
+   "usmle2026.08.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": [
+   "generated",
+   "objective"
+  ]
+ }
+]

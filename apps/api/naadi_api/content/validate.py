@@ -235,6 +235,8 @@ def _texts(b: SeedBundle) -> list[tuple[str, str | None, str]]:
         out.append((f"item {q.id} stem", q.pack_id, q.stem_html))
         out.append((f"item {q.id} explanation", q.pack_id, q.explanation_html or ""))
     for pid, card in b.cards:
+        if "generated" in card.tags:
+            continue  # tools/generate_cards.py derives them from texts this check already compares
         out.append((f"card {card.id}", pid, f"{card.front_html} {card.back_html}"))
     for pid, qs in b.sets:
         if qs.intro_html:
@@ -245,6 +247,16 @@ def _texts(b: SeedBundle) -> list[tuple[str, str | None, str]]:
 def _originality(b: SeedBundle, config_dir: Path, report: Report) -> None:
     out = report.findings
     texts = [(ref, pack, shingles(t)) for ref, pack, t in _texts(b)]
+    # A hand-written card may restate its own section or item; that pair is not a duplicate.
+    linked: dict[str, set[str]] = defaultdict(set)
+    for _pid, card in b.cards:
+        if card.section_id:
+            linked[f"card {card.id}"].add(f"section {card.section_id}")
+            linked[f"section {card.section_id}"].add(f"card {card.id}")
+        if card.question_id:
+            for part in ("stem", "explanation"):
+                linked[f"card {card.id}"].add(f"item {card.question_id} {part}")
+                linked[f"item {card.question_id} {part}"].add(f"card {card.id}")
     salt, prints = load_fingerprints(config_dir)
     report.originality_mode = "fingerprints" if prints else "fallback"
     if prints:
@@ -271,10 +283,17 @@ def _originality(b: SeedBundle, config_dir: Path, report: Report) -> None:
                     shared[j] += 1
         if not shared:
             continue
-        j, n = shared.most_common(1)[0]
+        allowed = linked.get(ref, set())
+        best = [
+            (n, j)
+            for j, n in shared.items()
+            if texts[j][0] not in allowed and texts[j][0].split(" ")[:2] != ref.split(" ")[:2]
+        ]
+        if not best:
+            continue
+        n, j = max(best)
         other = texts[j][0]
-        same_item = ref.split(" ")[:2] == other.split(" ")[:2]
-        if n / len(sh) > ORIGINALITY_THRESHOLD and not same_item:
+        if n / len(sh) > ORIGINALITY_THRESHOLD:
             out.append(Finding("originality", "error", ref, pack, f"shares {n}/{len(sh)} 8-grams with {other}"))
 
 

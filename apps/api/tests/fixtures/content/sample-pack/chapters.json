@@ -10,7 +10,7 @@
       {
         "id": "smp-s01",
         "heading": "Myocardial oxygen supply and demand",
-        "html": "<p>The left ventricle extracts about 70–75% of the oxygen delivered to it even at rest, so a rise in demand is met almost entirely by a rise in <strong>coronary blood flow</strong>, not by more extraction.</p>[[figure:smp-fig01]]<p>Flow to the left ventricle occurs mostly in <em>diastole</em>, when the contracting wall no longer compresses intramural vessels. Tachycardia shortens diastole and so limits supply just as demand rises.</p>",
+        "html": "<p>The left ventricle extracts about 70–75% of the oxygen delivered to it even at rest, so a rise in demand is met almost entirely by a rise in <span class=\"hy\">coronary blood flow</span>, not by more extraction.</p>[[figure:smp-fig01]]<p>Flow to the left ventricle occurs mostly in <span class=\"hy\">diastole</span>, when the contracting wall no longer compresses intramural vessels. Tachycardia shortens diastole and so limits supply just as demand rises.</p>",
         "figureIds": [
           "smp-fig01"
         ],

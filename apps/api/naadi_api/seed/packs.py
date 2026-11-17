@@ -343,6 +343,8 @@ def load_packs(data_dir: Path, problems: list[str]) -> list[Pack]:
         chapters = _load_list(PackChapter, d / "chapters.json", f"{where}/chapters", problems)
         figures = _load_list(PackFigure, d / "figures.json", f"{where}/figures", problems)
         cards = _load_list(PackCard, d / "cards.json", f"{where}/cards", problems)
+        # tools/generate_cards.py: key-fact cloze and objective cards derived from the pack's own text
+        cards += _load_list(PackCard, d / "cards.generated.json", f"{where}/cards.generated", problems)
         sets: list[PackSet] = []
         items: list[PackItem] = []
         qpath = d / "questions.json"
