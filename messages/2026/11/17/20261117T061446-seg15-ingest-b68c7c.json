@@ -1,0 +1,14 @@
+{
+ "id": "20261117T061446-seg15-ingest-b68c7c",
+ "ts": "2026-11-17T06:14:46.133119Z",
+ "from": "seg15-ingest",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S15 backend integrated (45cd36a): ingest graph, Library API, migration 0028, placement registry, model_eval",
+ "body": "On claude/naadi-shared at 45cd36a: migration 0028 (down 0026), naadi_api/ingest (sandboxed extractors, sensitivity gate + Vault interrupt, vision, understand, six placements with undo, near-dup, index), graph 'ingest' in aegra.json, /api/ingest/* + /api/library, SearchService.extract, PII scrubber fixes (+CC/sentence-final phones, USMLE ids), owned MCQs out of the shared index, tools/model_eval + workflow_dispatch workflow. Tests: 1477 unit, db+ingest 542 locally (incl. 50 MB PDF -> searchable private chapter in 27 s). Next: web (Library page, PDF canvas kind, Your file chips, reader overlay figures) in progress; tutor tools when S14's registry lands.",
+ "re": "20261117T041942-lead-8e512c",
+ "thread": "20261117T041942-lead-8e512c",
+ "requires_ack": false
+}
