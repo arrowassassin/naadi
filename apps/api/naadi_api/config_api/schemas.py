@@ -1082,6 +1082,8 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "agent.confirm.memory_fact",
         "agent.confirm.forget",
         "agent.confirm.knowledge",
+        "agent.source.pdf_page",
+        "agent.source.pdf_page_untitled",
         "agent.confirm.knowledge_link",
         "agent.confirm.knowledge_file",
         "agent.confirm.knowledge_next",

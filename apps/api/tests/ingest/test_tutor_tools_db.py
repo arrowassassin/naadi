@@ -188,7 +188,7 @@ async def test_get_page_reads_a_gated_page_of_the_students_own_pdf(
     r = await run_tool_call(tc(db, a), "get_page", {"type": "pdf_page", "id": ref}, {"get_page"})
     assert r.status == "ok" and r.content.startswith("PDF page 2 of 3:") and "Section heading 2" in r.content
     assert r.citations[0]["target"] == {"type": "pdf_page", "upload_id": str(up), "page": "2"}
-    assert r.citations[0]["layer"] == "notes" and r.citations[0]["title"] == "Renal.pdf, page 2"
+    assert r.citations[0]["layer"] == "notes" and r.citations[0]["title"] == "Renal.pdf"
     # The page the student is on, as `current`.
     page = PageRef(type="pdf_page", id=f"{up}:1")
     r = await knowledge.get_page(tc(db, a, page=page), knowledge.PageArgs(type="current"))

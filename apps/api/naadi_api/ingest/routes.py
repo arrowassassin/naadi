@@ -191,7 +191,7 @@ def item_out(row: dict[str, Any]) -> IngestItemOut:
     records = row.get("placements") or []
     placed = None
     if records:
-        kind = (row.get("confirmed_placement") or {}).get("kind") or records[0].get("kind")
+        kind = records[0].get("handler") or records[0].get("kind")  # server-written, not confirmed_placement
         chapter = next((r["id"] for r in records if r.get("table") == "chapters"), None)
         placed = IngestPlacedOut(kind=str(kind), chapter_id=chapter, rows=len(records), can_undo=True)
     name = row.get("original_name") or row.get("kb_title")

@@ -194,11 +194,12 @@ async def pdf_page(ctx: ToolContext, ref_id: str) -> ToolResult:
         raise ToolRefused("sensitive_page")
     limit = max(200, ctx.tool_result_max_chars - 200)
     text = out.text if len(out.text) <= limit else out.text[: limit - 1].rstrip() + "…"
-    name = (row["original_name"] or "Your PDF")[:LABEL_MAX]
+    name = (row["original_name"] or "")[:LABEL_MAX]
+    # Data only: the client words it ("{name}, page {page}") from ui_copy and links to the viewer at that page.
     cite = {
         "id": f"kb:pdf_page:{upload_id}:{page}",
-        "title": f"{name}, page {page}",
-        "source": "Your file",
+        "title": name,
+        "source": name,
         "layer": "notes",
         "url": None,
         "target": {"type": "pdf_page", "upload_id": str(upload_id), "page": str(page)},

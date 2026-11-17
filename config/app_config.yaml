@@ -696,6 +696,8 @@ ui_copy:
   agent.confirm.memory_fact: "What to remember"
   agent.confirm.forget: "Forget this?"
   agent.confirm.knowledge: "Add this to your knowledge base?"
+  agent.source.pdf_page: "{name}, page {page}"
+  agent.source.pdf_page_untitled: "Your PDF, page {page}"
   agent.confirm.knowledge_link: "Link"
   agent.confirm.knowledge_file: "File"
   agent.confirm.knowledge_next: "Naadi reads it in the background. You choose where it goes in your Library; nothing is added before that."

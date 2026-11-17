@@ -168,6 +168,35 @@ describe("answer blocks", () => {
     off();
   });
 
+  it("sources: a page of the student's PDF is worded from ui_copy and opens the viewer at that page", async () => {
+    const upload = "0b9a7c8e-1f2d-4c3b-9a8e-7d6c5b4a3f21";
+    show(
+      block({
+        type: "sources",
+        data: {
+          items: [
+            citation(1, {
+              title: "Renal.pdf",
+              source: "Renal.pdf",
+              layer: "notes",
+              target: { type: "pdf_page", upload_id: upload, page: "2" },
+            }),
+            citation(2, { title: "", layer: "notes", target: { type: "pdf_page", upload_id: upload, page: "5" } }),
+            citation(3, { title: "Odd", layer: "notes", target: { type: "pdf_page", upload_id: "../x", page: "1" } }),
+          ],
+        },
+      }),
+    );
+    const list = await screen.findByRole("region", { name: "Sources" });
+    expect(within(list).getByText("Renal.pdf, page 2")).toBeInTheDocument();
+    expect(within(list).getByText("Your PDF, page 5")).toBeInTheDocument();
+    const links = within(list).getAllByRole("link");
+    expect(links[0]).toHaveAttribute("href", `/learn/library/pdf/${upload}?page=2`);
+    expect(links[1]).toHaveAttribute("href", `/learn/library/pdf/${upload}?page=5`);
+    // A malformed target is plain text: no link built from it.
+    expect(within(list).getByText("Odd").closest("a")).toBeNull();
+  });
+
   it("actions: open_library (S15 add_to_knowledge) goes to the Library", async () => {
     const user = userEvent.setup();
     const { router } = show(

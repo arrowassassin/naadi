@@ -776,7 +776,8 @@ async def place(deps: Deps, item_id: uuid.UUID, user_id: uuid.UUID, option_id: s
             records = await handler.apply(ctx, cand)
         except (LookupError, ValueError, psycopg.errors.IntegrityError) as exc:
             raise IngestRejected(errors.PLACEMENT_FAILED) from exc
-        await st.add_placements(conn, item_id, user_id, [r.to_json() for r in records])
+        # Each stored record names the handler that wrote it: Undo reads that, never confirmed_placement.
+        await st.add_placements(conn, item_id, user_id, [{**r.to_json(), "handler": cand.kind} for r in records])
         chapter = next((r.id for r in records if r.table == "chapters"), None)
         if row["upload_id"]:
             await st.set_upload(conn, row["upload_id"], user_id, status="ready", processed_chapter_id=chapter)
@@ -804,15 +805,18 @@ async def undo(deps: Deps, item_id: uuid.UUID, user_id: uuid.UUID) -> list[dict[
         row = await st.get_item(conn, item_id, user_id)
         if row is None:
             raise LookupError("item")
-        records = [PlacementRecord.from_json(r) for r in row["placements"] or []]
+        stored = list(row["placements"] or [])
+        records = [PlacementRecord.from_json(r) for r in stored]
         if not records:
             return []
         doc = await st.load_extract(conn, item_id, user_id) or ExtractedDoc(kind=row["input_kind"] or "other")
         view = await _view(deps, row, doc, [])
         ctx = PlacementContext(conn=conn, user_id=user_id, item_id=item_id, source_id=USER_SOURCE_ID, view=view)
-        kind = str((row["confirmed_placement"] or {}).get("kind") or records[0].kind)
-        # Undo works even when the placement's flag has since been turned off.
-        handler = handler_for(kind, _all_on())
+        # The handler comes from the records the server wrote at placement time (`placements` is not client-
+        # writable), never from confirmed_placement, which the client may update: a forged kind cannot leave the
+        # placed rows behind (review15 #7). Undo works even when the placement's flag has since been turned off.
+        kinds = {str(r.get("handler") or "") for r in stored}
+        handler = handler_for(kinds.pop(), _all_on()) if len(kinds) == 1 else None
         if handler is None:
             raise IngestRejected(errors.PLACEMENT_UNAVAILABLE)
         await handler.undo(ctx, records)

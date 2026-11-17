@@ -156,8 +156,29 @@ function layerWord(t: T, c: Citation): string {
 
 const LAYER_ICON = { course: BookOpen, notes: NotebookPen, web: Globe } as const;
 
+const UPLOAD_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+
+/** A page of the student's own PDF (S15 `pdf_page`): its upload id and page number, when well formed. */
+function pdfPage(c: Citation): { uploadId: string; page: number } | null {
+  const target = c.target ?? {};
+  const page = Number(target.page);
+  if (target.type !== "pdf_page" || !UPLOAD_ID.test(target.upload_id ?? "") || !Number.isInteger(page) || page < 1)
+    return null;
+  return { uploadId: target.upload_id as string, page };
+}
+
+function citationTitle(t: T, c: Citation): string {
+  const pdf = pdfPage(c);
+  if (!pdf) return c.title;
+  return c.title
+    ? t("agent.source.pdf_page", { name: c.title, page: String(pdf.page) })
+    : t("agent.source.pdf_page_untitled", { page: String(pdf.page) });
+}
+
 function citationHref(c: Citation): { to: string; external: boolean } | null {
   if (c.url && allowedUrl(c.url, ["https://"], window.location.origin)) return { to: c.url, external: true };
+  const pdf = pdfPage(c);
+  if (pdf) return { to: `/learn/library/pdf/${pdf.uploadId}?page=${pdf.page}`, external: false };
   const target = c.target ?? {};
   if (target.chapter_id && target.section_id) {
     return {
@@ -185,7 +206,7 @@ export function SourcesBlock({ items }: { items: readonly Citation[] }) {
             <>
               <Icon aria-hidden="true" size={14} className="shrink-0" />
               {c.n ? <span className="font-mono text-text-3">{c.n}</span> : null}
-              <span className="max-w-[16rem] truncate">{c.title}</span>
+              <span className="max-w-[16rem] truncate">{citationTitle(t, c)}</span>
               <span className="sr-only">{`(${layerWord(t, c)})`}</span>
             </>
           );

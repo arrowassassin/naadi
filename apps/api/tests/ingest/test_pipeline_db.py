@@ -356,3 +356,40 @@ async def test_the_graph_runs_in_process_with_both_interrupts(
     await runner.resume(a, False, vault_item, thread, {"decision": "vault"}, db)
     await runner.drain()
     assert (await item(db, vault_item, a))["status"] == "vaulted" and len(gw.seen) == calls
+
+
+async def test_undo_follows_the_server_written_records_not_a_forged_kind(
+    db: Database, users: tuple[uuid.UUID, uuid.UUID], url: str
+) -> None:
+    """review15 #7: the client may update confirmed_placement; Undo must still delete what was placed."""
+    import json
+
+    a, _ = users
+    storage = MemoryStorage()
+    deps = make_deps(db, storage, SpyGateway("reading"))
+    item_id = await add_upload(db, storage, a, files.pdf(2), "Forge.pdf")
+    out = await pipeline.run_all(deps, item_id, a)
+    assert out.next == "end"
+    row = await item(db, item_id, a)
+    chapter = row["processed_chapter_id"]
+    assert row["confirmed_placement"]["kind"] == "private_chapter" and chapter
+    assert {p["handler"] for p in row["placements"]} == {"private_chapter"}
+    # As the student, through the column grant 0028 leaves them: claim it was a flashcards placement.
+    with psycopg.connect(url) as c:
+        c.execute("set role authenticated")
+        c.execute(
+            "select set_config('request.jwt.claims', %s, false), set_config('request.jwt.claim.sub', %s, false)",
+            (json.dumps({"sub": str(a), "role": "authenticated"}), str(a)),
+        )
+        c.execute(
+            "update public.ingest_items set confirmed_placement = %s where id = %s",
+            (json.dumps({"kind": "flashcards", "option_id": "flashcards:0"}), item_id),
+        )
+        with pytest.raises(psycopg.errors.InsufficientPrivilege):
+            c.execute("update public.ingest_items set placements = '{}' where id = %s", (item_id,))
+        c.commit()
+    records = await pipeline.undo(deps, item_id, a)
+    assert {r["table"] for r in records} == {"chapters", "media_assets"}
+    assert as_user(url, a, "select id from public.chapters where id = %s", (chapter,)) == []
+    assert as_user(url, a, "select id from public.media_assets where id like %s", (chapter + "-%",)) == []
+    assert (await item(db, item_id, a))["placements"] == []
