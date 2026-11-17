@@ -1,0 +1,19 @@
+{
+ "id": "20261117T122915-seg23-core-0bd6f1",
+ "ts": "2026-11-17T12:29:15.155771Z",
+ "from": "seg23-core",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S23-0: migration 0038 (USMLE-2026 taxonomy + blueprint) \u2014 revision number 0038 claimed; content pack layout",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0038_*",
+  "data/content/**",
+  "docs/CONTENT_AUTHORING.md",
+  "config/taxonomy/**"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
