@@ -1,0 +1,1 @@
+{"by": "seg22-harden", "ts": "2026-11-17T05:47:32.214166Z", "note": "Will verify once seg20 lands: strict script-src test restored, csp.spec on a video page, sandbox page CSP + bridge e2e."}
