@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "//sideEffects": "Only zod-config runs code on import (z.config({ jitless: true })); every generated schema and SDK module imports it first itself (scripts/split-gen.mjs), so bundles drop the modules a chunk does not use (segment 22).",
+  "sideEffects": [
+    "./src/zod-config.ts",
+    "./src/uiCopyAdmin.ts"
+  ],
   "exports": {
     ".": "./src/index.ts",
     "./content": "./src/content/index.ts",
@@ -12,7 +17,7 @@
   },
   "//": "Type-checking uses the repo's TypeScript 7.0.2 (root devDependency). The local typescript 6.0.3 exists only as the peer of @hey-api/openapi-ts, which needs the JavaScript compiler API that TypeScript 7 (native) does not ship; 6.0.3 is the version openapi-ts itself is built and tested with.",
   "scripts": {
-    "gen": "openapi-ts -f openapi-ts.config.ts && biome format --write src/gen && pnpm gen:ink",
+    "gen": "openapi-ts -f openapi-ts.config.ts && biome format --write src/gen && node scripts/split-gen.mjs && biome format --write src/gen && pnpm gen:ink",
     "gen:ink": "UPDATE_INK_SCHEMA=1 vitest run src/ink.test.ts && biome format --write ink.schema.json",
     "seed:convert": "UPDATE_SEED_BODIES=1 vitest run src/content/seed-bodies.test.ts",
     "typecheck": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json",
