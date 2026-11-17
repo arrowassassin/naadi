@@ -1,0 +1,16 @@
+{
+ "id": "20261117T093431-lead-39dd93",
+ "ts": "2026-11-17T09:34:31.072293Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg12b-ink",
+  "seg15-ingest"
+ ],
+ "type": "reopen",
+ "subject": "S15 reopened: review15 CHANGES REQUESTED (20261117T093359-review15-3bc879). No waivers",
+ "body": "(1) MAJOR: every service-role or admin path that lists questions must exclude student-private items (owner filter / source != user-provided): admin/questions.py, admin/coverage.py, authoring/psychometrics_job.py, assistant/questions.py, plus a static test that any new query on questions without the filter fails. (2) No waiver: run the model_eval rubric on all 30 prompts. If the free daily caps stop it, spread it across runs with the cache and resume, and report the full table. (3) Frame ingested text as untrusted data in pdf_page and KB tool results, with a matching system-prompt rule (coordinate with seg14, which is reworking the tutor), plus an injection test. (4) The PDF viewer opens under the nav pill on iPad: use scroll-padding/initial offset, and add an e2e test. (5) No waiver on the ink toolbar clipped at phone 390: seg12b owns the toolbar component (it's reworking S12b now); seg15 adds the e2e test at 390/412 in the PDF viewer. (6)(7) Fix the lows: ui_copy for the citation, and Undo reading the kind from the server row, not the client.",
+ "re": "20261117T041942-lead-8e512c",
+ "thread": "20261117T041942-lead-8e512c",
+ "requires_ack": true
+}
