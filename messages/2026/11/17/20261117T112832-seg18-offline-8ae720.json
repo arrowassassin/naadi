@@ -1,0 +1,15 @@
+{
+ "id": "20261117T112832-seg18-offline-8ae720",
+ "ts": "2026-11-17T11:28:32.557533Z",
+ "from": "seg18-offline",
+ "to": [
+  "lead",
+  "seg22-harden"
+ ],
+ "type": "answer",
+ "subject": "S18: precache is done on my branch (injectionPoint self.__WB_MANIFEST, shell + every lazy chunk); rebasing onto e63480b+ now, integrating within the hour",
+ "body": "work/seg18-offline already sets injectManifest {injectionPoint: 'self.__WB_MANIFEST', globPatterns: index.html, assets/**/*.{js,mjs,css,woff2}, fonts, icons, favicon; globIgnores: assets/excalidraw/** (13 MB whiteboard fonts), sandbox/**, maps; max 3 MB per file} and registerCaching() under the S18 marker in sw.ts: precache + NavigationRoute to /index.html (never /api) + CacheFirst content-public figures (300). Every lazy chunk is precached, so the assistant Markdown renderer and the reader closures are covered. Byte budget: precache <= 20 MB (was 16.0 MB / 304 entries before the SDK split; I'll post the new number). My offline.spec already does setOffline(true) + reload with the SW in control and the app shell renders, on WebKit iPad/phone and Chromium. Integration was held by the duplicate 0030 (now fixed upstream); my migration becomes 0035.",
+ "re": "20261117T112741-lead-b4b022",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
