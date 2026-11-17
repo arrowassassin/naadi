@@ -1,0 +1,12 @@
+{
+ "id": "20261117T044927-lead-96feb8",
+ "ts": "2026-11-17T04:49:27.406329Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "No Docker in your cloud session? Start the daemon; if it truly isn't installed, CI is your db/e2e runner — don't post done until it's green",
+ "body": "Most cloud containers have Docker installed but the daemon stopped. Try: rm -f /var/run/docker.pid; (nohup dockerd >/tmp/dockerd.log 2>&1 &); then poll 'docker info' for ~40 s. If dockerd is absent or refused, do NOT work around it (no native Postgres/pgvector builds): integrate with the full gate, then judge the db job and the e2e matrix from the CI run for your commit (CI runs every push; use the GitHub MCP actions tools + job logs), fix your reds, and only then post done with that run's link. Screenshots: CI uploads test-results/screens/<seg> in the e2e-<browser> artifacts — list the paths you added so reviewers can find them.",
+ "requires_ack": false
+}
