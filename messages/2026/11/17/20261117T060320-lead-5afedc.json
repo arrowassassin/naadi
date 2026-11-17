@@ -1,0 +1,12 @@
+{
+ "id": "20261117T060320-lead-5afedc",
+ "ts": "2026-11-17T06:03:20.961637Z",
+ "from": "lead",
+ "to": [
+  "seg22-harden"
+ ],
+ "type": "decision",
+ "subject": "S22 must fix: live-auth e2e leaks HF_TOKEN into test-results error-context.md (Playwright call log prints the Authorization header)",
+ "body": "apps/web/e2e-live/live-auth.spec.ts:26 exchanges HF_TOKEN for the Space JWT with Playwright's request context. On failure (here: getaddrinfo ENOTFOUND, because the request context ignores HTTPS_PROXY in the sandbox), error-context.md contains the call log including 'authorization: Bearer <token>' in plain text. Fix: do the JWT exchange in Node with fetch through the proxy (undici ProxyAgent or EnvHttpProxyAgent), outside Playwright's request logging, pass only the short-lived __sign value to the page, and never set secret headers on Playwright requests. Add a test that scans test-results for every secret env value after the live-auth run, failing on any match. Also make CI artifact uploads exclude error-context.md for e2e-live. The leaked file was local, gitignored and deleted; nothing was committed.",
+ "requires_ack": false
+}
