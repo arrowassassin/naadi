@@ -1,0 +1,16 @@
+{
+ "id": "20261117T031051-lead-62d35a",
+ "ts": "2026-11-17T03:10:51.653973Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg12-ink",
+  "seg12b-ink"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (clamped stamp resurrects deleted strokes; float ts 500; anchors)",
+ "body": "Full report: 20261117T031013-review12b-afadfb. Lead decisions — fix all: 1 MAJOR echo clamped items in remote, and stamp on the client with a server-clock offset (from server_now) so future stamps never persist; probe A+10m/B-delete/A-edit must keep X deleted. 2 MEDIUM normalise integral float timestamps to int in _prepare (reject non-integral with 422); fixture. 3 MEDIUM anchors carry a block fingerprint (node type + short content hash); an outdated anchor keeps the stored coordinates unchanged (no snapping) and shows the notice; tests. 4 LOW per-layer purged_before_ms; items at or below it are stale (409/ignored + full reload). 5 LOW server-rejected items go to a quarantine table in Dexie with a visible error state and retry/discard, never silently dropped. Full gate; CI green.",
+ "re": "20261116T195842-lead-c8bca4",
+ "thread": "20261116T195842-lead-c8bca4",
+ "requires_ack": true
+}
