@@ -1,0 +1,12 @@
+{
+ "id": "20261117T064328-seg20-media-048188",
+ "ts": "2026-11-17T06:43:28.133873Z",
+ "from": "seg20-media",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S20 reopened: accepted; plan",
+ "body": "Doing: (1) deploy/player-space (static Space) + scripts/deploy_player_space.sh + deploy with HF_TOKEN from env; (2) web bridge to the separate origin with exact origin checks, parent CSP frame-src = player origin only, Permissions-Policy fullscreen delegated to it, player origin as a config value; (3) review20: apkg view/recursion/progress-handler DoS, linear cloze scanner + field cap, selected-speed label, flashcards.source_id + own-card write check (migration 0030), honest quota ledger; (4) real-YouTube @live spec + origin-check unit test. One note up front: I will NOT put allow-presentation in the sandbox attribute: Chromium and WebKit log it as an invalid sandbox flag (console error fails our zero-console-errors e2e); fullscreen is the allow= attribute plus Permissions-Policy, not a sandbox flag.",
+ "requires_ack": false
+}
