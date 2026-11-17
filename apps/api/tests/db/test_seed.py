@@ -40,7 +40,7 @@ EXPECTED = {
     "pathway_tasks": 186,
     "pathway_guides": 17,
     "plan_template_days": 60,
-    "sources": 21,  # 17 catalog/internal + user-provided (S15) + two pathway link sources (S17) + the 2026 outline
+    "sources": 31,  # + the 2026 outline and 10 S23 research rows
     "question_sets": 0,
     "content_packs": 7,  # one empty pack per S23 author task
     "blueprint_targets": BLUEPRINT_ROWS,

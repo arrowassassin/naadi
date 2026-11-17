@@ -35,7 +35,7 @@ EXPECTED: dict[str, tuple[str | None, str | None, str | None]] = {
     "medlineplus-federal": (None, None, None),
     "medlineplus-licensed": ("link_only", "link_only", "link_only"),
     "cdc-phil": ("no_license", "no_license", "no_license"),
-    "uspstf": ("copy_not_allowed", "copy_not_allowed", "copy_not_allowed"),
+    "uspstf": ("link_only", "link_only", "link_only"),
     "cdc-guidelines": ("copy_not_allowed", "copy_not_allowed", "copy_not_allowed"),
     "ahrq": ("copy_not_allowed", "copy_not_allowed", "copy_not_allowed"),
     "wikimedia-commons": ("no_license", "no_license", "no_license"),
@@ -44,6 +44,16 @@ EXPECTED: dict[str, tuple[str | None, str | None, str | None]] = {
     "nbme-lab-values": ("link_only", "link_only", "link_only"),
     "pathway-official-pages": ("link_only", "link_only", "link_only"),
     "pathway-third-party-pages": ("link_only", "link_only", "link_only"),
+    "openstax-1e": (None, None, None),
+    "genereviews": ("link_only", "link_only", "link_only"),
+    "openfda-labels": (None, None, None),
+    "dailymed": ("link_only", "link_only", "link_only"),
+    "nci-pdq-text": (None, None, None),
+    "wikipedia": (None, "share_alike_in_proprietary", "share_alike_in_proprietary"),
+    "wikidoc": (None, "share_alike_in_proprietary", "share_alike_in_proprietary"),
+    "servier-medical-art": (None, None, None),
+    "pmc-oa": ("copy_not_allowed", "copy_not_allowed", "copy_not_allowed"),
+    "who": ("noncommercial", "noncommercial", "noncommercial"),
     "mesh": (None, None, "modify_not_allowed"),
     "rxnorm": (None, None, None),
 }
@@ -97,6 +107,7 @@ def test_never_storable_whatever_the_flags_say(sid: str) -> None:
 EXPECTED_NC_CONFIRMED: dict[str, tuple[str | None, str | None, str | None]] = {
     **EXPECTED,
     "radiopaedia": (None, "share_alike_in_proprietary", "share_alike_in_proprietary"),
+    "who": (None, "share_alike_in_proprietary", "share_alike_in_proprietary"),  # NC-SA like radiopaedia
 }
 
 

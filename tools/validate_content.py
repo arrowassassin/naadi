@@ -26,6 +26,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from naadi_api.content.validate import review_sample, validate
 from naadi_api.seed.data import SeedDataError, load_bundle
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +38,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--config", type=Path, default=ROOT / "config")
     p.add_argument("--pack", help="only report this pack's counts")
     p.add_argument("--json", action="store_true")
+    p.add_argument("--sample", action="store_true", help="print the stratified 15%% manual review sample (S23-R)")
     p.add_argument(
         "--areas",
         action="store_true",
@@ -53,6 +55,12 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"ERROR {line}", file=sys.stderr)
             print(f"{len(exc.problems)} problem(s)", file=sys.stderr)
         return 1
+    report = validate(b, args.config)
+    if args.sample:
+        for qid in review_sample(b):
+            print(qid)
+        return 0
+    findings = [f for f in report.findings if args.pack in (None, f.pack)]
     packs = [pk for pk in b.packs if args.pack in (None, pk.meta.id)]
     if args.pack and not packs:
         print(f"no pack {args.pack!r} in {args.data / 'content'}", file=sys.stderr)
@@ -86,13 +94,23 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             cells = [f"{st} {have[(n.id, st)]}/{target.get((n.id, st), 0)}" for st in ("step1", "step2ck")]
             print(f"{n.id:24} {'  '.join(cells):24} {n.label}")
+    ok = report.ok
     if args.json:
-        print(json.dumps({"ok": True, "packs": summary}, indent=1))
+        doc = {"ok": ok, "originality": report.originality_mode, "packs": summary}
+        print(json.dumps(doc | {"findings": [f.as_dict() for f in findings]}, indent=1))
     else:
         for row in summary:
             print("  ".join(f"{k}={v}" for k, v in row.items()))
-        print(f"ok: {len(b.questions)} items, {len(b.sections)} sections, {len(b.cards)} pack cards", file=sys.stderr)
-    return 0
+        for f in findings:
+            print(f"{f.severity.upper():5} {f.check:11} {f.ref}: {f.detail}", file=sys.stderr)
+        mode = "forbidden-corpus fingerprints" if report.originality_mode == "fingerprints" else "fallback"
+        print(
+            f"{'ok' if ok else 'FAILED'}: {len(b.questions)} items, {len(b.sections)} sections, {len(b.cards)} pack"
+            f" cards; {len(report.errors)} error(s), {len(report.findings) - len(report.errors)} warning(s);"
+            f" originality check: {mode}",
+            file=sys.stderr,
+        )
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

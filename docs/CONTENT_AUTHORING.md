@@ -181,8 +181,8 @@ list.
 ### Lab values
 
 Use the analyte names and units of Naadi's own lab table (`lab_values` in `config/app_config.yaml`). Give SI
-units next to conventional units where the exam does. Phase 2 of S23-0 adds a validator that checks values and
-units against this table.
+units next to conventional units where the exam does. The validator (lint rule L13) checks every value and unit
+against this table.
 
 ## 5. Flashcards (`cards.json`)
 
@@ -217,7 +217,8 @@ Start a local stack first. Never point these commands at the hosted project: exp
 # 1. After editing any section html: regenerate the bodies (all packs; only yours changes)
 pnpm --filter @naadi/shared seed:convert
 
-# 2. Validate (schema, ids, tags, sets, why-not, references, stale bodies); exit 1 on any problem
+# 2. Validate (schema, ids, tags, sets, why-not, key, item-writing lint, labs, licence gate, originality,
+#    stale bodies); exit 1 on any error. Warnings are listed for you and the reviewer.
 cd apps/api && uv run python ../../tools/validate_content.py --pack <pack>
 uv run python ../../tools/validate_content.py --pack <pack> --areas      # targets vs current counts
 
@@ -242,4 +243,30 @@ Store only commercial-safe content: Naadi originals (`naadi-original-v1`), publi
 stays in its own partition. NC and ND sources are link-only and appear only in `furtherReading` or `references`:
 StatPearls, OpenStax 2e, WHO, Radiopaedia, GeneReviews and the text of USPSTF. Don't use imported question
 banks or Anki decks, and don't copy text, mnemonics or images from commercial review books or question banks.
-Phase 2 adds the licence gate and the originality check to the validator; write as if they already run.
+The validator's licence gate refuses any stored row whose source is not storable.
+
+## 9. What the validator checks
+
+| Check | Fails on |
+|---|---|
+| schema | a field missing or misnamed, an id without your prefix, fewer than 5 options, a key that is not an option, `whyNot` not covering exactly the wrong options, a set of the wrong size or numbering |
+| references | an area that is not a USMLE-2026 leaf, an unknown discipline, clinical-science or task slug, an unknown set, figure, chapter, section or source |
+| why_not | a reason under 4 words, or two options with the same reason |
+| key | two options with the same text, or an explanation that names another letter ("the correct answer is D") |
+| lint | the NBME item-writing rules the review queue runs (naadi_api/authoring/lint.py): "all/none of the above", negative stems, cueing, option homogeneity, vignette shape, lab values and units (L13). Its warnings (for example L08 option order) are advisory |
+| licence | a chapter, item, set or card whose source cannot be stored as text, or a figure whose source cannot be hosted, or a licensed figure without attribution |
+| originality | see below |
+| stale bodies | `section_bodies.json` older than the section html |
+
+**Originality: the fallback applies.** The brief asks for an 8-gram check against fingerprints of the
+forbidden commercial texts (First Aid, UWorld, AMBOSS, Pathoma, NBME …). No such corpus can be assembled
+legally inside this repository, so `config/originality_fingerprints.txt` has no digests. The validator says
+`originality check: fallback` and runs:
+1. an **internal near-duplicate check**: a pack stem, explanation, section, card or abstract that shares more
+   than 35% of its 8-word shingles with any other stored text is an error; and
+2. a **manual review sample** for S23-R: `uv run python ../../tools/validate_content.py --sample` prints a
+   deterministic 15% sample of pack items, stratified by pack, Step, system and difficulty.
+
+If someone who may lawfully read such snippets builds digests locally (`python tools/build_fingerprints.py
+<folder outside the repo>`), only salted hashes are committed. The validator then reports
+`originality check: forbidden-corpus fingerprints` and also fails any text with more than 8% matching 8-grams.
