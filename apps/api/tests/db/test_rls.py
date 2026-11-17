@@ -178,7 +178,7 @@ API_WRITTEN = ("attempts", "blocks")
 # Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
 # Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
 # Export jobs (0024): the export service writes them; students only read their own.
-# Knowledge-base entries (0029): created and updated by the ingest pipeline only.
+# Knowledge-base entries (0028): created and updated by the ingest pipeline only.
 SELECT_ONLY = (
     "ink_layers",
     "ink_items",
@@ -203,7 +203,7 @@ SELECT_ONLY = (
 CREATE_BLOCKED = ("generated_media", "push_subscriptions")
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
-# Uploads and ingest items (0029): rows come from the ingest API; the student may rename a file (original_name) and
+# Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and
 # set an item's confirmed_placement, nothing else.
 API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items", "uploads", "ingest_items")
 
@@ -736,7 +736,7 @@ def test_question_linked_shared_flashcard_needs_an_attempt(
 def test_ingest_rows_take_a_rename_and_a_confirmation_only(
     pg: psycopg.Connection, user_a: uuid.UUID, shared: Shared
 ) -> None:
-    """0029: the ingest API creates uploads, KB entries and items and owns every status column; the student may
+    """0028: the ingest API creates uploads, KB entries and items and owns every status column; the student may
     rename a file and set an item's confirmed placement, nothing else."""
     upload, item, kb = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
     for conn in (pg,):  # the pipeline writes as a privileged role

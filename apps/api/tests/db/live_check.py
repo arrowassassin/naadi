@@ -171,8 +171,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "56 Naadi tables present",
-            "select count(*) = 56 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "57 Naadi tables present",
+            "select count(*) = 57 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -244,7 +244,7 @@ def checks(head: str) -> list[Check]:
             " ('ink_layers','ocr_hash'), ('ink_layers','ocr_at'), ('notes','body_text'))",
         ),
         Check(
-            "ingest (0029): uploads/ingest_items API-written (rename + confirmed_placement only), owned media and"
+            "ingest (0028): uploads/ingest_items API-written (rename + confirmed_placement only), owned media and"
             " questions, user-provided source",
             "select has_column_privilege('authenticated', 'public.uploads', 'original_name', 'update')"
             " and not has_column_privilege('authenticated', 'public.uploads', 'status', 'update')"
