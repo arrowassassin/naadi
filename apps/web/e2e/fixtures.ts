@@ -1,7 +1,7 @@
 import { mkdirSync } from "node:fs";
 import path from "node:path";
 import AxeBuilder from "@axe-core/playwright";
-import { test as base, expect, type Page, type TestInfo } from "@playwright/test";
+import { test as base, expect, type Page, type Request, type TestInfo } from "@playwright/test";
 
 const SCREENS_DIR = path.resolve(
   import.meta.dirname,
@@ -286,4 +286,48 @@ export async function loadAllFonts(page: Page): Promise<void> {
 export async function settle(page: Page): Promise<void> {
   await loadAllFonts(page);
   await page.waitForFunction(() => document.fonts.status === "loaded");
+}
+
+/**
+ * Requests to the app's own /api that have started and not yet finished or failed, counted per page. `quiet()`
+ * attaches it on a page's first call (about:blank, before the first navigation); a page that navigates on its
+ * own before that (a sign-in callback, say) should call `trackApi(page)` first, so no request is missed.
+ */
+const apiTrackers = new WeakMap<Page, { open: () => number }>();
+export function trackApi(page: Page): { open: () => number } {
+  const known = apiTrackers.get(page);
+  if (known) return known;
+  const inFlight = new Set<Request>();
+  const isApi = (r: Request) => {
+    try {
+      return new URL(r.url()).pathname.startsWith("/api/");
+    } catch {
+      return false;
+    }
+  };
+  page.on("request", (r) => {
+    if (isApi(r)) inFlight.add(r);
+  });
+  page.on("requestfinished", (r) => inFlight.delete(r));
+  page.on("requestfailed", (r) => inFlight.delete(r));
+  const tracker = { open: () => inFlight.size };
+  apiTrackers.set(page, tracker);
+  return tracker;
+}
+
+/**
+ * Nothing in flight on the current page, waited on real signals only (no timeouts): every font face loaded
+ * (`settle`), no request to the app's own /api open (WebKit reports one cut off by navigation, e.g. a late
+ * /api/public-config, as "... due to access control checks"), no /learn page with a reading-position save or
+ * offline cache write pending (`data-learn-idle`), and a reader section's ink layer loaded (`data-ink-idle`).
+ * Call it before every page.goto / reload and before going offline. A request a test holds open with
+ * page.route must be released first.
+ */
+export async function quiet(page: Page): Promise<void> {
+  const api = trackApi(page);
+  if (page.url() === "about:blank") return;
+  await settle(page);
+  await expect.poll(() => api.open(), { message: "open /api requests before navigating" }).toBe(0);
+  await page.waitForFunction(() => document.querySelector("[data-learn-page]:not([data-learn-idle])") === null);
+  if (await page.locator("[data-section-ink]").count()) await expect(page.locator("[data-ink-idle]")).toBeAttached();
 }

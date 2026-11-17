@@ -1,16 +1,18 @@
 import { execFileSync } from "node:child_process";
 import path from "node:path";
-import type { Browser, BrowserContext, Page, Request, Response, TestInfo } from "@playwright/test";
+import type { Browser, BrowserContext, Page, Response, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  quiet,
   settle,
   snapSegment,
   TOOL_CSP_NOISE,
   test,
+  trackApi,
 } from "./fixtures";
 import { signedInState } from "./session";
 
@@ -30,50 +32,6 @@ const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string, fu
     await snapSegment(page, info, guard, "06", state, full);
     await page.waitForTimeout(500);
   });
-
-/**
- * Requests to the app's own /api that have started and not yet finished or failed, per page. Attached before
- * a page's first navigation (go/quiet on about:blank, or freshReader), so every request is counted.
- */
-const apiTrackers = new WeakMap<Page, { open: () => number }>();
-function trackApi(page: Page): { open: () => number } {
-  const known = apiTrackers.get(page);
-  if (known) return known;
-  const inFlight = new Set<Request>();
-  const isApi = (r: Request) => {
-    try {
-      return new URL(r.url()).pathname.startsWith("/api/");
-    } catch {
-      return false;
-    }
-  };
-  page.on("request", (r) => {
-    if (isApi(r)) inFlight.add(r);
-  });
-  page.on("requestfinished", (r) => inFlight.delete(r));
-  page.on("requestfailed", (r) => inFlight.delete(r));
-  const tracker = { open: () => inFlight.size };
-  apiTrackers.set(page, tracker);
-  return tracker;
-}
-
-/**
- * Nothing in flight on the current page: every font face loaded (shared `settle`), no /api request open and,
- * on a /learn page, no reading-position save or offline cache write pending (`data-learn-idle`). Called before
- * every navigation and before going offline, so nothing is cut off by the page leaving.
- */
-async function quiet(page: Page): Promise<void> {
-  const api = trackApi(page);
-  if (page.url() === "about:blank") return;
-  await settle(page);
-  // No request to our own /api is still open (WebKit reports one cut off by navigation, e.g. a late
-  // /api/public-config, as "... due to access control checks").
-  await expect.poll(() => api.open(), { message: "open /api requests before navigating" }).toBe(0);
-  await page.waitForFunction(() => document.querySelector("[data-learn-page]:not([data-learn-idle])") === null);
-  // On a reader section, its ink layer has finished loading too (WebKit logs a request cut off by the next
-  // navigation as an error).
-  if (await page.locator("[data-section-ink]").count()) await expect(page.locator("[data-ink-idle]")).toBeAttached();
-}
 
 /**
  * Navigate after the current page is quiet, then wait until the new page and its fonts are settled.
