@@ -5,6 +5,6 @@ import "../../zod-config";
 import { zNoteOut } from "./zNoteOut";
 
 /**
- * Replayed: the stored page
+ * Replayed: the stored page (applied true when a newer stamp updated it)
  */
 export const zCreateNotebookPageResponse = zNoteOut;

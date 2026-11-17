@@ -5,17 +5,18 @@ import {
   getChapter,
   getCourses,
   getReadingPosition,
-  putReadingPosition,
   type ReadingPositionIn,
-  type ReadingPositionWrite,
   type ReportIssueIn,
   type ReportIssueOut,
   reportIssue,
 } from "@naadi/shared";
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
+import { onPositionStored, savePosition } from "../offline/entities/readingPosition";
+import { OFFLINE_FIRST } from "../offline/runtime";
 import { installOfflineCacheReset, readOffline, writeOffline } from "./offlineCache";
 
 installOfflineCacheReset();
@@ -69,6 +70,7 @@ export function useCourses(filter: CourseFilter) {
   const userId = useUserId();
   return useQuery({
     queryKey: coursesKey(userId, filter),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
     placeholderData: keepPreviousData,
     queryFn: ({ signal }) =>
@@ -84,6 +86,7 @@ export function useChapter(chapterId: string) {
   const userId = useUserId();
   return useQuery({
     queryKey: chapterKey(userId, chapterId),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
     staleTime: 5 * 60_000,
     queryFn: ({ signal }) =>
@@ -97,6 +100,7 @@ export function usePositions(chapterId: string) {
   const userId = useUserId();
   return useQuery({
     queryKey: positionsKey(userId, chapterId),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
     staleTime: 0,
     queryFn: ({ signal }) =>
@@ -112,20 +116,30 @@ export function usePositions(chapterId: string) {
 export function useSavePosition(chapterId: string) {
   const userId = useUserId();
   const qc = useQueryClient();
+  // Every save goes through the outbox (segment 18): sent now when online, kept and replayed (latest per section)
+  // when not. The stored position (this device's or a newer one from another device) is adopted when it arrives.
+  useEffect(
+    () =>
+      onPositionStored((res) => {
+        if (res.position.chapter_id !== chapterId) return;
+        qc.setQueryData<Offline<ChapterPositions>>(positionsKey(userId, chapterId), (old) => {
+          const prev = old?.data.sections ?? [];
+          const sections = [res.position, ...prev.filter((p) => p.section_id !== res.position.section_id)].sort(
+            (a, b) => Date.parse(b.client_updated_at) - Date.parse(a.client_updated_at),
+          );
+          const data = { chapter_id: chapterId, last: sections[0] ?? null, sections };
+          if (userId) void writeOffline(userId, "positions", chapterId, data);
+          return { data, fromCache: false };
+        });
+        void qc.invalidateQueries({ queryKey: ["courses", userId] });
+      }),
+    [qc, userId, chapterId],
+  );
   return useMutation({
-    mutationFn: ({ body }: { body: ReadingPositionIn }) =>
-      authed<ReadingPositionWrite>((headers) => putReadingPosition({ headers, body })),
-    onSuccess: (res) => {
-      qc.setQueryData<Offline<ChapterPositions>>(positionsKey(userId, chapterId), (old) => {
-        const prev = old?.data.sections ?? [];
-        const sections = [res.position, ...prev.filter((p) => p.section_id !== res.position.section_id)].sort(
-          (a, b) => Date.parse(b.client_updated_at) - Date.parse(a.client_updated_at),
-        );
-        const data = { chapter_id: chapterId, last: sections[0] ?? null, sections };
-        if (userId) void writeOffline(userId, "positions", chapterId, data);
-        return { data, fromCache: false };
-      });
-      void qc.invalidateQueries({ queryKey: ["courses", userId] });
+    mutationFn: async ({ body }: { body: ReadingPositionIn }) => {
+      if (!userId) return null;
+      await savePosition(userId, body);
+      return null;
     },
   });
 }

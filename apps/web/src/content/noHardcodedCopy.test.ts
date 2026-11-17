@@ -28,6 +28,7 @@ const ROOTS = [
   "pdf",
   "planner",
   "review",
+  "offline",
   "routes",
   "search",
   "settings",

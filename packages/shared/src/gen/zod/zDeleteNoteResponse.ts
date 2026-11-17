@@ -3,8 +3,6 @@
 import "../../zod-config";
 
 import * as z from "zod";
+import { zNoteOut } from "./zNoteOut";
 
-/**
- * Successful Response
- */
-export const zDeleteNoteResponse = z.void();
+export const zDeleteNoteResponse = z.union([zNoteOut, z.void()]);

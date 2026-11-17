@@ -179,6 +179,7 @@ API_WRITTEN = ("attempts", "blocks")
 # Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
 # Export jobs (0024): the export service writes them; students only read their own.
 # Knowledge-base entries (0028): created and updated by the ingest pipeline only.
+# Sync tombstones (0038): the API records deletes for last-writer-wins; students only read their own.
 SELECT_ONLY = (
     "ink_layers",
     "ink_items",
@@ -198,6 +199,7 @@ SELECT_ONLY = (
     "costs",
     "vault_documents",
     "generated_media",  # 0030: the API creates, hides and counts rows; the client can only read them
+    "sync_tombstones",
 )
 # Planner (0027): push subscriptions. The API registers and updates them; students may read and delete their own
 # (turning reminders off on a device).

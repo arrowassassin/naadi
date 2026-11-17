@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { CreateNotebookPageData, CreateNotebookPageErrors, CreateNotebookPageResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zCreateNotebookPageBody } from "../zod/zCreateNotebookPageBody";
+import { zCreateNotebookPageHeaders } from "../zod/zCreateNotebookPageHeaders";
 import { zCreateNotebookPagePath } from "../zod/zCreateNotebookPagePath";
 import { zCreateNotebookPageResponse } from "../zod/zCreateNotebookPageResponse";
 
@@ -22,6 +23,7 @@ export const createNotebookPage = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zCreateNotebookPageBody,
+          headers: zCreateNotebookPageHeaders.optional(),
           path: zCreateNotebookPagePath,
           query: z.never().optional(),
         })

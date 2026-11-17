@@ -31,10 +31,11 @@ from .chapters_media import MediaUrlResolver
 from .db import Database, DatabaseNotConfigured
 from .errors import ErrorResponse
 from .logs import get_logger
+from .sync.idempotency import IDEMPOTENT, IdempotentRoute
 
 log = get_logger("naadi.courses")
 
-router = APIRouter(prefix="/api", tags=["courses"])
+router = APIRouter(prefix="/api", tags=["courses"], route_class=IdempotentRoute)
 
 # A chapter is listed under a system when at least this share of its questions (and at least
 # SYSTEM_MIN_QUESTIONS of them) are tagged with that system, or when one of its sections is tagged with it.
@@ -745,6 +746,21 @@ async def get_chapter(
     user: Annotated[CurrentUser, limited("courses_read")],
     chapter_id: Annotated[str, Path(pattern=ID_PATTERN)],
 ) -> Response:
+    detail = await load_chapter(request, user, chapter_id)
+    payload = json.dumps(detail.model_dump(mode="json"), separators=(",", ":"), ensure_ascii=False).encode()
+    etag = _etag(payload)
+    # Signed URLs expire, so a private chapter is revalidated every time; the ETag saves the body transfer.
+    headers = {"etag": etag, "cache-control": "private, no-cache", "vary": "authorization"}
+    inm = request.headers.get("if-none-match")
+    if inm and etag in [t.strip() for t in inm.split(",")]:
+        return Response(status_code=304, headers=headers)
+    return Response(payload, media_type="application/json", headers=headers)
+
+
+async def load_chapter(request: Request, user: CurrentUser, chapter_id: str) -> ChapterDetail:
+    """A chapter as the reader gets it (read as the user under RLS; media URLs resolved). Shared with the offline
+    manifest (segment 18), so both serve exactly the same fields."""
+
     async def run(conn: psycopg.AsyncConnection[Any]) -> tuple[Row, list[Row], list[Row], list[Row], list[Row], Any]:
         found = await _rows(conn, _Q_CHAPTER, {"id": chapter_id})
         if not found:
@@ -805,7 +821,7 @@ async def get_chapter(
     nxt = order[number] if number is not None and number < len(order) else None
     system_ids = {n["id"] for n in nodes}
     labels = {n["id"]: n["label"] for n in nodes}
-    detail = ChapterDetail(
+    return ChapterDetail(
         id=ch["id"],
         exam=ch["exam"],
         kind=ch["kind"],
@@ -834,14 +850,6 @@ async def get_chapter(
         },
         next_chapter=ChapterLink(id=nxt["id"], title=nxt["title"]) if nxt else None,
     )
-    payload = json.dumps(detail.model_dump(mode="json"), separators=(",", ":"), ensure_ascii=False).encode()
-    etag = _etag(payload)
-    # Signed URLs expire, so a private chapter is revalidated every time; the ETag saves the body transfer.
-    headers = {"etag": etag, "cache-control": "private, no-cache", "vary": "authorization"}
-    inm = request.headers.get("if-none-match")
-    if inm and etag in [t.strip() for t in inm.split(",")]:
-        return Response(status_code=304, headers=headers)
-    return Response(payload, media_type="application/json", headers=headers)
 
 
 # ── Routes: reading position ──
@@ -855,7 +863,7 @@ on conflict (user_id, section_id) do update set
   scroll_position = excluded.scroll_position,
   completed_at = coalesce(reading_positions.completed_at, excluded.completed_at),
   client_updated_at = excluded.client_updated_at
-where reading_positions.client_updated_at <= excluded.client_updated_at
+where reading_positions.client_updated_at < excluded.client_updated_at
   and reading_positions.chapter_id = excluded.chapter_id
 returning chapter_id, section_id, scroll_position, completed_at, client_updated_at, updated_at
 """
@@ -875,9 +883,11 @@ from public.reading_positions where user_id = (select auth.uid()) and section_id
 @router.put(
     "/reading-position",
     operation_id="putReadingPosition",
-    summary="Save where the caller is in a section (last-writer-wins by the device's timestamp)",
+    summary="Save where the caller is in a section (last-writer-wins by the device's timestamp; a tie keeps the "
+    "stored position)",
     response_model=ReadingPositionWrite,
     responses={**_ERRORS, **_NOT_FOUND, 422: {"model": ErrorResponse, "description": "Invalid fields"}},
+    dependencies=[IDEMPOTENT],
 )
 async def put_reading_position(
     request: Request, body: ReadingPositionIn, user: Annotated[CurrentUser, limited("position_write")]
@@ -927,12 +937,19 @@ async def get_reading_position(
     chapter_id: Annotated[str, Query(pattern=ID_PATTERN)],
 ) -> JSONResponse:
     async def run(conn: psycopg.AsyncConnection[Any]) -> ChapterPositions:
-        rows = await _rows(conn, _Q_POSITIONS, {"ids": [chapter_id]})
-        items = [_position(r) for r in rows]
-        return ChapterPositions(chapter_id=chapter_id, last=items[0] if items else None, sections=items)
+        return (await chapter_positions(conn, [chapter_id]))[0]
 
     out = await as_user(_db(request), user, run)
     return JSONResponse(out.model_dump(mode="json"), headers={"cache-control": "private, no-store"})
+
+
+async def chapter_positions(conn: psycopg.AsyncConnection[Any], chapter_ids: Sequence[str]) -> list[ChapterPositions]:
+    """The caller's positions per chapter (RLS: their own rows), newest first; shared with the offline manifest."""
+    rows = await _rows(conn, _Q_POSITIONS, {"ids": list(chapter_ids)})
+    by: dict[str, list[ReadingPosition]] = defaultdict(list)
+    for r in rows:
+        by[r["chapter_id"]].append(_position(r))
+    return [ChapterPositions(chapter_id=c, last=by[c][0] if by[c] else None, sections=by[c]) for c in chapter_ids]
 
 
 # ── Routes: report an issue ──

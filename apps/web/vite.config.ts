@@ -7,6 +7,7 @@ import react from "@vitejs/plugin-react";
 import type { Plugin } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vitest/config";
+import { PRECACHE_BUDGET_BYTES, skippedFiles } from "./src/offline/sw/precache";
 
 const API_TARGET = process.env.NAADI_API_ORIGIN ?? "http://localhost:7860";
 
@@ -94,16 +95,42 @@ export default defineConfig({
     react(),
     tailwindcss(),
     excalidrawFonts(),
-    // The service worker is src/sw.ts, compiled to /sw.js. Segment 16: push handlers only, so no precache
-    // manifest is injected (`injectionPoint: undefined`). Segment 18 adds caching: set an `injectionPoint`
-    // and `globPatterns` here and the runtime caching in sw.ts. The app registers it itself (main.tsx), in
-    // production only.
+    // The service worker is src/sw.ts, compiled to /sw.js: push handlers (segment 16) and caching (segment 18).
+    // Precached: the app shell, every JS/CSS chunk (lazy routes must open offline), the app's fonts, icons and
+    // the pdf.js worker. Not precached: Excalidraw's whiteboard fonts (13 MB; a whiteboard needs them only to
+    // draw hand-written text) and the YouTube player page (YouTube never works offline). Nothing under /api is
+    // in the build, and the worker caches no API response (src/offline/sw/rules.ts). The app registers it itself
+    // (src/pwa/register.ts), in production only.
     VitePWA({
       strategies: "injectManifest",
       srcDir: "src",
       filename: "sw.ts",
       injectRegister: false,
-      injectManifest: { injectionPoint: undefined },
+      injectManifest: {
+        injectionPoint: "self.__WB_MANIFEST",
+        globPatterns: [
+          "index.html",
+          "assets/**/*.{js,mjs,css,woff2}",
+          "fonts/**/*.woff2",
+          "icons/*.png",
+          "favicon.svg",
+        ],
+        globIgnores: ["assets/excalidraw/**", "sandbox/**", "**/*.map"],
+        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
+        // Leave out syntax-highlighting grammars/themes (assistant only, online only) and hold the budget.
+        manifestTransforms: [
+          async (entries) => {
+            const file = fileURLToPath(new URL("./dist/.vite/manifest.json", import.meta.url));
+            const manifest = JSON.parse(readFileSync(file, "utf8"));
+            const skip = skippedFiles(manifest);
+            const kept = entries.filter((e) => !skip.has(e.url.replace(/^\//, "")));
+            const bytes = kept.reduce((n, e) => n + e.size, 0);
+            if (bytes > PRECACHE_BUDGET_BYTES)
+              throw new Error(`precache ${bytes} bytes is over the ${PRECACHE_BUDGET_BYTES}-byte budget`);
+            return { manifest: kept, warnings: [] };
+          },
+        ],
+      },
       manifest: {
         name: "Naadi",
         short_name: "Naadi",
@@ -133,6 +160,8 @@ export default defineConfig({
     emptyOutDir: true,
     target: "es2022",
     sourcemap: false,
+    // dist/.vite/manifest.json: the service worker's precache list is computed from it (src/offline/sw/precache.ts).
+    manifest: true,
     // Never inline assets as data: URIs; fonts must come from 'self' under the CSP.
     assetsInlineLimit: 0,
     rolldownOptions: {

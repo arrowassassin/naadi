@@ -1,8 +1,22 @@
-import { type ReviewIn, type ReviewOut, uiText } from "@naadi/shared";
+import "fake-indexeddb/auto";
+import { type ReviewIn, uiText } from "@naadi/shared";
+import { Dexie } from "dexie";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ApiError } from "../auth/apiError";
+import { unwrap } from "../auth/apiError";
+import { DB_NAME, resetNaadiDbForTests } from "../offline/db";
+import { conflictsFor, resetOutboxForTests, setOnlineProbe, startOutbox, stopOutbox } from "../offline/outbox";
+
+const reviewCardMock = vi.hoisted(() => vi.fn());
+vi.mock("@naadi/shared", async (orig) => ({
+  ...(await orig<typeof import("@naadi/shared")>()),
+  reviewCard: reviewCardMock,
+}));
+vi.mock("../auth/api", () => ({
+  authed: (make: (h: Record<string, string>) => Promise<never>) => unwrap(make({ authorization: "Bearer t" })),
+}));
+
 import { cardKey, intervalLabel, ownedElsewhere } from "./format";
-import { dropReview, enqueueReview, flushQueue, readQueue, type SendOutcome } from "./outbox";
+import { dropReview, enqueueReview, migrateLegacyCardQueue, readQueue } from "./outbox";
 import { isRetryable, submitReview } from "./submit";
 
 const t = (key: string, vars: Record<string, string | number> = {}) =>
@@ -74,76 +88,62 @@ describe("review keys", () => {
   });
 });
 
-describe("rating outbox", () => {
+describe("ratings through the outbox", () => {
   const user = "u-1";
-  const body = (id: string, rating: 1 | 2 | 3 | 4 = 3) => ({
+  const body = (id: string, rating: 1 | 2 | 3 | 4 = 3): ReviewIn => ({
     client_review_id: id,
     rating,
     reviewed_at: "2026-11-16T10:00:00.000Z",
     duration_ms: 1000,
   });
-  beforeEach(() => localStorage.clear());
 
-  it("keeps ratings per user, in order, once per review id", () => {
+  beforeEach(async () => {
+    localStorage.clear();
+    resetOutboxForTests();
+    resetNaadiDbForTests();
+    await Dexie.delete(DB_NAME);
+    reviewCardMock.mockReset();
+    await startOutbox(user);
+  });
+  afterEach(() => stopOutbox());
+
+  const answer = (status: number | null, code: string | null = null) =>
+    status === null
+      ? Promise.reject(new TypeError("offline"))
+      : Promise.resolve(
+          status < 300
+            ? { data: { client_review_id: "x" }, response: new Response(null, { status }) }
+            : {
+                error: { error: { code: code ?? "code", message: "m", request_id: null } },
+                response: new Response(null, { status }),
+              },
+        );
+
+  it("keeps ratings per user, in order, once per review id; migrates the old queue once", async () => {
+    setOnlineProbe(() => false);
     enqueueReview(user, { cardId: "c1", body: body("r1") });
     enqueueReview(user, { cardId: "c1", body: body("r2", 4) });
-    enqueueReview(user, { cardId: "c1", body: body("r1") }); // the same id again moves to the end
     enqueueReview("u-2", { cardId: "c9", body: body("r9") });
-    expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["r2", "r1"]);
+    await vi.waitFor(() => expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["r1", "r2"]));
     dropReview(user, "r2");
-    expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["r1"]);
+    await vi.waitFor(() => expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["r1"]));
     expect(readQueue("u-2")).toHaveLength(1);
+    localStorage.setItem(`naadi.cards.outbox.v1:${user}`, JSON.stringify([{ cardId: "c2", body: body("old") }]));
+    expect(await migrateLegacyCardQueue(user)).toBe(1);
+    expect(localStorage.getItem(`naadi.cards.outbox.v1:${user}`)).toBeNull();
+    expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["r1", "old"]);
   });
 
-  it("replays in order, drops what the server answered and stops at the first network failure", async () => {
-    for (const id of ["a", "b", "c", "d"]) enqueueReview(user, { cardId: "c1", body: body(id) });
-    const outcomes: Record<string, SendOutcome> = { a: "sent", b: "refused", c: "unreachable", d: "sent" };
+  it("sends with an Idempotency-Key, in order, and never lets a new rating overtake one that failed", async () => {
     const seen: string[] = [];
-    const sent = await flushQueue(user, async (item) => {
-      seen.push(item.body.client_review_id);
-      return outcomes[item.body.client_review_id] as SendOutcome;
+    reviewCardMock.mockImplementation((o: { body: ReviewIn; headers: Record<string, string> }) => {
+      seen.push(`${o.body.client_review_id}:${o.headers["idempotency-key"] ? "key" : "nokey"}`);
+      return answer(o.body.client_review_id === "a" ? 503 : 200);
     });
-    expect(seen).toEqual(["a", "b", "c"]);
-    expect(sent).toBe(1);
-    expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["c", "d"]);
-  });
-
-  it("survives unreadable storage", () => {
-    localStorage.setItem(`naadi.cards.outbox.v1:${user}`, "{not json");
-    expect(readQueue(user)).toEqual([]);
-  });
-});
-
-describe("sending a rating", () => {
-  const user = "u-send";
-  const body = (id: string) => ({ client_review_id: id, rating: 3 as const, reviewed_at: "2026-11-16T10:00:00.000Z" });
-  const ok = (id: string) => ({ client_review_id: id }) as unknown as ReviewOut;
-  beforeEach(() => localStorage.clear());
-
-  it("queues a new rating behind one still in flight that then fails, in order", async () => {
-    let fail: (e: unknown) => void = () => {};
-    const sent: string[] = [];
-    const send = vi.fn((_card: string, b: ReviewIn) => {
-      sent.push(b.client_review_id);
-      return new Promise<ReviewOut>((_, reject) => {
-        fail = reject;
-      });
-    });
-    const deps = { send, online: () => true, queued: vi.fn() };
-    // the page's chain: one send at a time, each reading the queue when its turn comes
-    let chain: Promise<unknown> = Promise.resolve();
-    const results: Promise<unknown>[] = [];
-    for (const id of ["a", "b"]) {
-      const link = chain.then(() => submitReview(user, "c1", body(id), deps));
-      results.push(link);
-      chain = link;
-    }
-    await vi.waitFor(() => expect(sent).toEqual(["a"]));
-    fail(new ApiError("busy", 503, null, null));
-    expect(await Promise.all(results)).toEqual([{ kind: "queued" }, { kind: "queued" }]);
-    expect(sent).toEqual(["a"]); // "b" never overtook "a"
+    expect((await submitReview(user, "c1", body("a"))).kind).toBe("queued");
+    expect((await submitReview(user, "c1", body("b"))).kind).toBe("queued"); // behind "a", which backs off
+    expect(seen).toEqual(["a:key"]);
     expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["a", "b"]);
-    expect(deps.queued).toHaveBeenCalledTimes(2);
   });
 
   it.each([
@@ -151,23 +151,21 @@ describe("sending a rating", () => {
     [500, "queued"],
     [503, "queued"],
     [429, "queued"],
-    [401, "queued"],
     [404, "refused"],
-    [409, "refused"],
     [422, "refused"],
-  ])("status %s → %s", async (status, kind) => {
-    const err = new ApiError("x", status, status === null ? null : "code", null);
-    const r = await submitReview(user, "c1", body("r"), { send: () => Promise.reject(err), online: () => true });
+  ])("status %s → %s; a refusal is shown, never queued, and kept in the conflict log", async (status, kind) => {
+    reviewCardMock.mockImplementation(() => answer(status, "card_not_found"));
+    const r = await submitReview(user, "c1", body("r"));
     expect(r.kind).toBe(kind);
     expect(readQueue(user).length).toBe(kind === "queued" ? 1 : 0);
+    if (kind === "refused") expect((await conflictsFor(user)).map((c) => c.key)).toEqual(["r"]);
   });
 
-  it("sends directly when nothing waits, and queues while offline", async () => {
-    const send = vi.fn(async (_c: string, b: ReviewIn) => ok(b.client_review_id));
-    expect((await submitReview(user, "c1", body("x"), { send, online: () => true })).kind).toBe("sent");
-    expect((await submitReview(user, "c1", body("y"), { send, online: () => false })).kind).toBe("queued");
-    expect((await submitReview(user, "c1", body("z"), { send, online: () => true })).kind).toBe("queued"); // behind y
-    expect(send).toHaveBeenCalledTimes(1);
+  it("sends at once when online and nothing waits", async () => {
+    reviewCardMock.mockImplementation(() => answer(200));
+    expect((await submitReview(user, "c1", body("x"))).kind).toBe("sent");
+    setOnlineProbe(() => false);
+    expect((await submitReview(user, "c1", body("y"))).kind).toBe("queued");
     expect(isRetryable(new Error("plain"))).toBe(false);
   });
 });

@@ -1,11 +1,15 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import type { AttemptIn, AttemptOut } from "@naadi/shared";
+import "fake-indexeddb/auto";
+import type { AttemptIn } from "@naadi/shared";
 import { REQUIRED_UI_COPY_KEYS } from "@naadi/shared";
+import { Dexie } from "dexie";
 import { beforeEach, describe, expect, it } from "vitest";
+import { DB_NAME, resetNaadiDbForTests } from "../offline/db";
+import { loadOutbox, resetOutboxForTests } from "../offline/outbox";
 import { percent, resumeIndex, splitWhyNot } from "./format";
 import { isTypingTarget, type KeyLike, keyAction } from "./keys";
-import { enqueueAttempt, flushQueue, queuedFor, readQueue } from "./outbox";
+import { enqueueAttempt, migrateLegacyPracticeQueue, queuedFor, readQueue } from "./outbox";
 import { parsePracticeSearch } from "./routes";
 
 const press = (key: string, mods: Partial<KeyLike> = {}): KeyLike => ({
@@ -101,71 +105,44 @@ describe("block helpers", () => {
   });
 });
 
-describe("offline answer queue", () => {
+describe("offline answer queue (outbox facade)", () => {
   const user = "u1";
   const body = (q: string, chosen = "B"): AttemptIn => ({ question_id: q, chosen, seconds: 5, flagged: false });
-  const out = (q: string): AttemptOut => ({
-    question_id: q,
-    n: 1,
-    chosen: "B",
-    correct: true,
-    flagged: false,
-    seconds: 5,
-    explanation: null,
-    answered: 1,
-    total: 2,
-    finished: false,
+
+  beforeEach(async () => {
+    localStorage.clear();
+    resetOutboxForTests();
+    resetNaadiDbForTests();
+    await Dexie.delete(DB_NAME);
   });
-  const unreachable = (e: unknown) => e instanceof TypeError;
 
-  beforeEach(() => localStorage.clear());
-
-  it("keeps one entry per (block, question) and finds it again", () => {
+  it("keeps one unsent entry per (block, question) and finds it again", async () => {
     enqueueAttempt(user, "b1", body("q1", "A"));
     enqueueAttempt(user, "b1", body("q1", "B"));
     enqueueAttempt(user, "b1", body("q2"));
     enqueueAttempt(user, "b2", body("q1"));
+    await new Promise((r) => setTimeout(r, 0));
     expect(readQueue(user)).toHaveLength(3);
     expect(queuedFor(user, "b1", "q1")?.body.chosen).toBe("B");
     expect(queuedFor(user, "b1", "q9")).toBeUndefined();
     expect(readQueue("someone-else")).toEqual([]);
   });
 
-  it("replays in order and removes what the server answered", async () => {
-    enqueueAttempt(user, "b1", body("q1"));
-    enqueueAttempt(user, "b1", body("q2"));
-    const sent: string[] = [];
-    const n = await flushQueue(
-      user,
-      async (b, a) => {
-        sent.push(`${b}:${a.question_id}`);
-        return out(a.question_id);
-      },
-      unreachable,
-    );
-    expect(n).toBe(2);
-    expect(sent).toEqual(["b1:q1", "b1:q2"]);
-    expect(readQueue(user)).toEqual([]);
-  });
-
-  it("stops at a network failure and keeps the rest; drops answers the server refuses for good", async () => {
-    enqueueAttempt(user, "b1", body("q1"));
-    enqueueAttempt(user, "b1", body("q2"));
-    enqueueAttempt(user, "b1", body("q3"));
-    let calls = 0;
-    const n = await flushQueue(
-      user,
-      async (_b, a) => {
-        calls += 1;
-        if (a.question_id === "q1") return out("q1");
-        if (a.question_id === "q2") throw new Error("404 block gone"); // answered by the server: not retried
-        throw new TypeError("offline");
-      },
-      unreachable,
-    );
-    expect(n).toBe(1);
-    expect(calls).toBe(3);
-    expect(readQueue(user).map((q) => q.body.question_id)).toEqual(["q3"]);
+  it("moves the old localStorage queue into the outbox once and deletes it", async () => {
+    const legacy = [
+      { blockId: "b1", body: body("q1"), queuedAt: 1 },
+      { blockId: "b1", body: body("q2"), queuedAt: 2 },
+      { junk: true },
+    ];
+    localStorage.setItem(`naadi.practice.outbox.v1:${user}`, JSON.stringify(legacy));
+    expect(await migrateLegacyPracticeQueue(user)).toBe(2);
+    expect(localStorage.getItem(`naadi.practice.outbox.v1:${user}`)).toBeNull();
+    expect(readQueue(user).map((q) => q.body.question_id)).toEqual(["q1", "q2"]);
+    // A second run finds nothing to move (and the rows survive a reload: they are in IndexedDB).
+    expect(await migrateLegacyPracticeQueue(user)).toBe(0);
+    resetOutboxForTests();
+    await loadOutbox(user);
+    expect(readQueue(user)).toHaveLength(2);
   });
 });
 

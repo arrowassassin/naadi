@@ -1,8 +1,10 @@
 import "fake-indexeddb/auto";
 import { blockResolver } from "@naadi/ink";
 import { type InkDiff, type InkItem, type InkStroke, mergeInkItems, uuidv7 } from "@naadi/shared";
+import { Dexie } from "dexie";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { dexieStore, inkDb, resetInkDbForTests } from "./db";
+import { whenPersisted } from "../../offline/outbox";
+import { dexieStore, inkRowsForTests, resetInkDbForTests } from "./db";
 import { hasOpaqueBlocks } from "./SectionInk";
 import {
   beats,
@@ -117,11 +119,19 @@ function make(
 const add = (...items: InkItem[]): InkDiff => ({ added: items, updated: [], removed: [] });
 
 beforeEach(async () => {
+  await whenPersisted();
   resetInkDbForTests();
-  await inkDb().delete(); // Dexie keeps the IndexedDB factory it saw at import: empty the database instead
+  await Dexie.delete("naadi-v1");
   resetInkDbForTests();
 });
-afterEach(() => resetInkDbForTests());
+afterEach(async () => {
+  // Writes a test started without awaiting (record() persists in the background) settle before the next test.
+  for (let i = 0; i < 10; i++) {
+    await new Promise((r) => setTimeout(r, 0));
+    await whenPersisted();
+  }
+  resetInkDbForTests();
+});
 
 /** Manual timers: fake-indexeddb runs on real timers, so the clock is driven by hand. */
 function manualClock() {
@@ -306,7 +316,7 @@ describe("remote changes", () => {
     server.offline = true;
     const second = make(server);
     expect((await second.s.restore()).map((i) => i.id)).toEqual([synced.id]);
-    expect((await inkDb().inkLayers.toArray())[0]?.rev).toBe(1);
+    expect((await dexieStore("u1", "section:s1").readLayer())?.rev).toBe(1);
   });
 });
 
@@ -420,8 +430,8 @@ describe("review fixes", () => {
     expect(A.s.pendingCount).toBe(0); // the rest of the queue is not blocked
     expect(server.rows.has(good.id)).toBe(true);
     expect(A.s.liveItems().map((i) => i.id)).toContain(bad.id); // still on the canvas
-    expect((await inkDb().inkRejected.toArray()).map((r) => r.id)).toEqual([bad.id]);
-    expect(await inkDb().inkPending.count()).toBe(0);
+    expect(inkRowsForTests().rejected.map((i) => i.id)).toEqual([bad.id]);
+    expect(inkRowsForTests().pending).toHaveLength(0);
     // A reload keeps it quarantined (and on the canvas).
     const again = make(server);
     expect((await again.s.restore()).map((i) => i.id)).toContain(bad.id);
@@ -431,7 +441,7 @@ describe("review fixes", () => {
     await again.s.retry({ rejected: true });
     expect(server.rows.has(bad.id)).toBe(true);
     expect(again.s.state).toBe("saved");
-    expect(await inkDb().inkRejected.count()).toBe(0);
+    expect(inkRowsForTests().rejected).toHaveLength(0);
   });
 
   it("P5: Discard removes the quarantined item from the canvas and the device", async () => {
@@ -447,7 +457,7 @@ describe("review fixes", () => {
     expect(A.s.liveItems()).toEqual([]);
     expect(A.remote.flat()).toEqual([{ ...bad, deleted: true }]);
     await new Promise((r) => setTimeout(r, 0));
-    expect(await inkDb().inkRejected.count()).toBe(0);
+    expect(inkRowsForTests().rejected).toHaveLength(0);
     expect(server.rows.has(bad.id)).toBe(false);
   });
 

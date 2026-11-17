@@ -106,7 +106,7 @@ async def check_anchor(conn: psycopg.AsyncConnection[Any], anchor_type: str | No
 
 NOTE_COLS = """
   n.id, n.kind, n.title, n.notebook_id, n.anchor_type, n.anchor_id, n.anchor_pos, n.highlight_color,
-  n.body_text, n.paper, n.canvas, n.sort, n.created_at, n.updated_at,
+  n.body_text, n.paper, n.canvas, n.sort, n.created_at, n.updated_at, n.client_updated_at_ms,
   exists (select 1 from public.ink_layers l where l.user_id = n.user_id and l.surface_type = 'notebook_page'
           and l.surface_id = n.id::text and l.item_count > 0) as has_ink
 """
@@ -297,6 +297,7 @@ def shape_note(row: Row, sources: Mapping[tuple[str, str], Row]) -> dict[str, An
         "has_ink": bool(row["has_ink"]),
         "created_at": row["created_at"],
         "updated_at": row["updated_at"],
+        "client_updated_at_ms": row["client_updated_at_ms"],
     }
 
 
@@ -332,6 +333,7 @@ class NewNote:
     paper: str | None
     canvas: str
     sort: int
+    client_updated_at_ms: int | None = None
 
 
 async def existing_for_create(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note: NewNote) -> Row | None:
@@ -361,8 +363,8 @@ async def insert_note(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note: 
     try:
         cur = await conn.execute(
             "insert into public.notes (id, user_id, kind, title, notebook_id, anchor_type, anchor_id, anchor_pos,"
-            " highlight_color, body, body_text, paper, canvas, sort)"
-            " values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            " highlight_color, body, body_text, paper, canvas, sort, client_updated_at_ms)"
+            " values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             " on conflict do nothing",
             (
                 note.id,
@@ -379,6 +381,7 @@ async def insert_note(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note: 
                 note.paper,
                 note.canvas,
                 note.sort,
+                note.client_updated_at_ms,
             ),
         )
     except psycopg.errors.ForeignKeyViolation as exc:  # a notebook that is not the caller's
@@ -397,7 +400,7 @@ async def lock_note(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note_id:
     row = await _one(
         conn,
         "select id, kind, title, notebook_id, anchor_type, anchor_id, anchor_pos, highlight_color, body, paper,"
-        " canvas, sort, updated_at from public.notes where user_id = %s and id = %s for update",
+        " canvas, sort, updated_at, client_updated_at_ms from public.notes where user_id = %s and id = %s for update",
         (uid, note_id),
     )
     if row is None:
@@ -408,7 +411,9 @@ async def lock_note(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note_id:
 async def update_note(
     conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note_id: uuid.UUID, values: Mapping[str, Any]
 ) -> None:
-    """Set `values` (column -> value; column names are module constants of the caller)."""
+    """Set `values` (column -> value; column names are module constants of the caller). With a
+    `client_updated_at_ms` among them the statement is guarded (last writer wins: only an older stored stamp is
+    overwritten); the caller holds the row lock and has already decided, so the guard is a second line."""
     if not values:
         await conn.execute("update public.notes set updated_at = now() where user_id = %s and id = %s", (uid, note_id))
         return
@@ -421,9 +426,14 @@ async def update_note(
             params[c] = Jsonb(v) if v is not None else None
         else:
             params[c] = v
+    guard = (
+        " and (client_updated_at_ms is null or client_updated_at_ms < %(client_updated_at_ms)s)"
+        if "client_updated_at_ms" in values
+        else ""
+    )
     try:
         await conn.execute(
-            f"update public.notes set {cols} where user_id = %(uid)s and id = %(id)s",  # noqa: S608 - fixed columns
+            f"update public.notes set {cols} where user_id = %(uid)s and id = %(id)s{guard}",  # noqa: S608 - fixed columns
             {**params, "uid": uid, "id": note_id},
         )
     except psycopg.errors.ForeignKeyViolation as exc:
@@ -480,7 +490,7 @@ async def delete_note(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, note_i
 # ── Notebooks ──
 
 NOTEBOOK_COLS = """
-  b.id, b.title, b.cover, b.paper, b.created_at, b.updated_at,
+  b.id, b.title, b.cover, b.paper, b.created_at, b.updated_at, b.client_updated_at_ms,
   (select count(*) from public.notes n where n.notebook_id = b.id and n.user_id = b.user_id and n.kind = 'page')::int
     as page_count,
   (select count(*) from public.notes n where n.notebook_id = b.id and n.user_id = b.user_id and n.kind <> 'page')::int
@@ -524,6 +534,7 @@ async def insert_notebook(
     title: str,
     cover: str | None,
     paper: str,
+    stamp_ms: int | None = None,
 ) -> bool:
     await lock_user(conn, uid)
     row = await _one(conn, "select user_id = %s as mine from public.notebooks where id = %s", (uid, notebook_id))
@@ -535,8 +546,9 @@ async def insert_notebook(
     if n and n["n"] >= MAX_NOTEBOOKS_PER_USER:
         raise NotesError(409, "notebook_limit")
     await conn.execute(
-        "insert into public.notebooks (id, user_id, title, cover, paper) values (%s, %s, %s, %s, %s)",
-        (notebook_id, uid, title, cover, paper),
+        "insert into public.notebooks (id, user_id, title, cover, paper, client_updated_at_ms)"
+        " values (%s, %s, %s, %s, %s, %s)",
+        (notebook_id, uid, title, cover, paper, stamp_ms),
     )
     return True
 

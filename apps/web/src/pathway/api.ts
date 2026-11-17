@@ -190,13 +190,23 @@ function outcome(e: unknown): SendResult {
   return { refused: e.code ?? `http_${e.status}` };
 }
 
+/** The outbox op id as `Idempotency-Key` (segment 18): a replay after a lost answer returns the first answer. */
+function withKey(headers: Record<string, string>, opId?: string): Record<string, string> {
+  return opId ? { ...headers, "idempotency-key": opId } : headers;
+}
+
+/** `applied: false`: another device's newer version is stored; it is adopted, this one kept in the sync sheet. */
+function applied(out: unknown): SendResult {
+  return (out as { applied?: boolean } | null)?.applied === false ? { conflict: out } : "ok";
+}
+
 export const apiTransport: PathwayTransport = {
-  async patchTask(taskId, fields, stamp) {
+  async patchTask(taskId, fields, stamp, opId) {
     try {
       assertOnline();
-      await authed((headers) =>
+      const out = await authed((headers) =>
         patchPathwayTask({
-          headers,
+          headers: withKey(headers, opId),
           path: { task_id: taskId },
           body: {
             ...(fields as { status?: TaskOut["status"]; due?: string | null; notes?: string | null }),
@@ -204,44 +214,51 @@ export const apiTransport: PathwayTransport = {
           },
         }),
       );
-      return "ok";
+      return applied(out);
     } catch (e) {
       return outcome(e);
     }
   },
-  async createCost(id, fields, stamp) {
+  async createCost(id, fields, stamp, opId) {
     try {
       assertOnline();
-      await authed((headers) =>
-        createCost({ headers, body: { ...(fields as unknown as CostFields), id, client_updated_at_ms: stamp } }),
+      const out = await authed((headers) =>
+        createCost({
+          headers: withKey(headers, opId),
+          body: { ...(fields as unknown as CostFields), id, client_updated_at_ms: stamp },
+        }),
       );
-      return "ok";
+      return applied(out);
     } catch (e) {
       if (e instanceof ApiError && e.status === 409 && e.code === "cost_id_conflict") return { refused: e.code };
       return outcome(e);
     }
   },
-  async patchCost(id, fields, stamp) {
+  async patchCost(id, fields, stamp, opId) {
     try {
       assertOnline();
-      await authed((headers) =>
+      const out = await authed((headers) =>
         patchCost({
-          headers,
+          headers: withKey(headers, opId),
           path: { cost_id: id },
           body: { ...(fields as Partial<CostFields>), client_updated_at_ms: stamp },
         }),
       );
-      return "ok";
+      return applied(out);
     } catch (e) {
-      if (e instanceof ApiError && e.status === 404 && e.code === "cost_not_found") return "ok"; // deleted elsewhere
+      // Deleted on another device: the delete stands, this edit is kept in the sync sheet (never lost silently).
+      if (e instanceof ApiError && e.status === 404 && e.code === "cost_not_found")
+        return { conflict: { deleted: true } };
       return outcome(e);
     }
   },
-  async deleteCost(id, stamp) {
+  async deleteCost(id, stamp, opId) {
     try {
       assertOnline();
-      await authed((headers) => deleteCost({ headers, path: { cost_id: id }, query: { client_updated_at_ms: stamp } }));
-      return "ok";
+      const out = await authed((headers) =>
+        deleteCost({ headers: withKey(headers, opId), path: { cost_id: id }, query: { client_updated_at_ms: stamp } }),
+      );
+      return applied(out);
     } catch (e) {
       return outcome(e);
     }

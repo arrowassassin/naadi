@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { ReviewCardData, ReviewCardErrors, ReviewCardResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zReviewCardBody } from "../zod/zReviewCardBody";
+import { zReviewCardHeaders } from "../zod/zReviewCardHeaders";
 import { zReviewCardPath } from "../zod/zReviewCardPath";
 import { zReviewCardResponse } from "../zod/zReviewCardResponse";
 
@@ -22,6 +23,7 @@ export const reviewCard = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zReviewCardBody,
+          headers: zReviewCardHeaders.optional(),
           path: zReviewCardPath,
           query: z.never().optional(),
         })

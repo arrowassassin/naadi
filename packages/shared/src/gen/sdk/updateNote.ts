@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { UpdateNoteData, UpdateNoteErrors, UpdateNoteResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zUpdateNoteBody } from "../zod/zUpdateNoteBody";
+import { zUpdateNoteHeaders } from "../zod/zUpdateNoteHeaders";
 import { zUpdateNotePath } from "../zod/zUpdateNotePath";
 import { zUpdateNoteResponse } from "../zod/zUpdateNoteResponse";
 
@@ -22,6 +23,7 @@ export const updateNote = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zUpdateNoteBody,
+          headers: zUpdateNoteHeaders.optional(),
           path: zUpdateNotePath,
           query: z.never().optional(),
         })

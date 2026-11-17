@@ -432,6 +432,8 @@ create table public.notebooks (
   created_at timestamptz not null default now(),
   -- 0017: API-written (clients SELECT only); cover = a colour token name of packages/ui/src/tokens.css
   updated_at timestamptz not null default now(),
+  -- 0038: the device stamp of the last write that won (offline sync, last writer wins; null = before 0038)
+  client_updated_at_ms bigint,
   unique (id, user_id),
   check (cover is null or cover in ('lime','violet','amber','paper','surface-2','ink-violet')),
   check (char_length(title) between 1 and 200)
@@ -458,6 +460,8 @@ create table public.notes (
   paper text check (paper is null or paper in ('ruled','dotted','grid','cornell','blank')),
   canvas text not null default 'paper' check (canvas in ('paper','whiteboard')),
   body_text text,
+  -- 0038: the device stamp of the last write that won (offline sync, last writer wins; null = before 0038)
+  client_updated_at_ms bigint,
   foreign key (notebook_id, user_id) references public.notebooks (id, user_id) on delete set null (notebook_id),
   check ((coalesce(anchor_type, 'free') = 'free') = (anchor_id is null)),
   check (anchor_pos is null or jsonb_typeof(anchor_pos) = 'object'),
@@ -1144,6 +1148,32 @@ create table public.agent_health (
 );
 create index agent_health_kind_trigger_created_idx on public.agent_health (kind, trigger, created_at desc);
 
+-- 0038: offline sync. A deleted LWW row leaves a tombstone (API-written; the student may read their own), kept 90 days.
+create table public.sync_tombstones (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  entity text not null
+    check (entity in ('note','highlight','notebook','page','plan_item','user_pathway_task','cost','reading_position')),
+  key text not null check (char_length(key) between 1 and 200),
+  client_updated_at_ms bigint not null,
+  created_at timestamptz not null default now(),
+  primary key (user_id, entity, key)
+);
+create index sync_tombstones_created_idx on public.sync_tombstones (created_at);
+
+-- 0038: the stored response of each write sent with an Idempotency-Key (backend-only: no client grant at all);
+-- status 0 = in flight. Kept 24 hours.
+create table public.sync_ops (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  op_id uuid not null,
+  method text not null check (char_length(method) between 1 and 10),
+  path text not null check (char_length(path) between 1 and 512),
+  status int not null check (status = 0 or status between 200 and 499),
+  body jsonb,
+  created_at timestamptz not null default now(),
+  primary key (user_id, op_id)
+);
+create index sync_ops_created_idx on public.sync_ops (created_at);
+
 -- 0005: RLS on + client privileges revoked for each Aegra / LangGraph table that exists (called by the
 -- migration and again by migrate_all after every startup).
 create function public.naadi_secure_aegra_tables() returns int
@@ -1210,6 +1240,7 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 --   reading_positions (0003)  (client insert: user_id, chapter_id, section_id, scroll_position, completed_at, client_updated_at; client update: scroll_position, completed_at, client_updated_at)
 --     + insert/update check: exists (select 1 from public.chapter_sections s where s.id = reading_positions.section_id and s.chapter_id = reading_positions.chapter_id)
 --   card_review_logs (0012)  (API-written; client select only)
+--   sync_tombstones (0038)  (API-written; client select only)
 --     + insert/update check: exists (select 1 from public.flashcards p where p.id = card_review_logs.card_id)
 --
 -- Shared content: RLS enabled; select to anon, authenticated with the row filter below; writes by the
@@ -1241,6 +1272,7 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 --   naadi_alembic_version
 --   search_usage, agent_health (0005), question_reviews, authoring_runs (0024), naadi_alembic_version
 --   search_usage, agent_health (0005), pathway_task_checks (0029), naadi_alembic_version
+--   sync_ops (0038: no policy; stored response bodies)
 --   (embeddings: retrieval runs in the API; question and draft chunks would leak answers)
 --
 -- 0013: study_plans: select only. study_plan_days: select + update (status, score_notes). coach_suggestions:

@@ -165,6 +165,7 @@ export { createNote } from "./sdk/createNote";
 export { deleteNote } from "./sdk/deleteNote";
 export { getNote } from "./sdk/getNote";
 export { updateNote } from "./sdk/updateNote";
+export { getOfflineWeek } from "./sdk/getOfflineWeek";
 export { getOnboarding } from "./sdk/getOnboarding";
 export { saveOnboarding } from "./sdk/saveOnboarding";
 export { getPathway } from "./sdk/getPathway";

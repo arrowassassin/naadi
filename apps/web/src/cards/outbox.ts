@@ -1,65 +1,71 @@
 import type { ReviewIn } from "@naadi/shared";
+import { queueCardReview, queuedCardReviews } from "../offline/entities/cardReview";
+import { dropRows, outboxPersists, replay } from "../offline/outbox";
 
 /**
- * Ratings made while the server could not be reached. Each keeps its own `client_review_id` and `reviewed_at`,
- * so a replay schedules from the time the student rated, and the server is idempotent per review id: sending
- * one twice can never review a card twice. Kept per user in localStorage, replayed in order. The full offline
- * outbox (Dexie, every write kind) is segment 18; it takes these over by the same request body.
+ * Ratings waiting for the server, as the review screen sees them. Since segment 18 they live in the device outbox
+ * (offline/entities/cardReview.ts, IndexedDB `naadi-v1`). Each keeps its own `client_review_id` and `reviewed_at`,
+ * so a replay schedules from the time the student rated, and the server is idempotent per review id. A rating the
+ * server refuses is parked (visible in the sync sheet), never dropped silently.
  */
 export interface QueuedReview {
   cardId: string;
   body: ReviewIn;
 }
 
-const key = (userId: string) => `naadi.cards.outbox.v1:${userId}`;
-const MAX_QUEUED = 1000;
-
+/** Ratings still to send (parked ones are counted by the sync sheet, not here: they no longer block the queue). */
 export function readQueue(userId: string): QueuedReview[] {
-  try {
-    const raw = localStorage.getItem(key(userId));
-    const parsed: unknown = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? (parsed as QueuedReview[]) : [];
-  } catch {
-    return [];
-  }
-}
-
-function writeQueue(userId: string, queue: QueuedReview[]): void {
-  try {
-    if (queue.length === 0) localStorage.removeItem(key(userId));
-    else localStorage.setItem(key(userId), JSON.stringify(queue.slice(-MAX_QUEUED)));
-  } catch {
-    // storage unavailable (private mode, quota): the rating stays in memory until the page closes
-  }
+  return queuedCardReviews(userId)
+    .filter((r) => r.state !== "failed")
+    .map((r) => {
+      const b = r.body as { cardId: string; review: ReviewIn };
+      return { cardId: b.cardId, body: b.review };
+    });
 }
 
 export function enqueueReview(userId: string, item: QueuedReview): void {
-  const queue = readQueue(userId).filter((q) => q.body.client_review_id !== item.body.client_review_id);
-  queue.push(item);
-  writeQueue(userId, queue);
+  void queueCardReview(userId, item.cardId, item.body);
 }
 
 export function dropReview(userId: string, clientReviewId: string): void {
-  writeQueue(
-    userId,
-    readQueue(userId).filter((q) => q.body.client_review_id !== clientReviewId),
+  void dropRows(
+    queuedCardReviews(userId)
+      .filter((r) => r.key === clientReviewId)
+      .map((r) => r.op_id),
   );
 }
 
 export type SendOutcome = "sent" | "refused" | "unreachable";
 
-/**
- * Replay the queue in order. An entry leaves the queue once the server answered it (scheduled, replayed, or refused
- * for a reason a retry cannot fix, such as a card that was deleted); a network failure stops the replay and keeps
- * the rest, in order. Returns how many the server accepted.
- */
-export async function flushQueue(userId: string, send: (item: QueuedReview) => Promise<SendOutcome>): Promise<number> {
-  let sent = 0;
-  for (const item of readQueue(userId)) {
-    const outcome = await send(item);
-    if (outcome === "unreachable") break;
-    if (outcome === "sent") sent += 1;
-    dropReview(userId, item.body.client_review_id);
+/** Replay now (the outbox also replays on its own). Returns how many ratings left the queue. */
+export async function flushQueue(userId: string, _send?: unknown): Promise<number> {
+  const before = readQueue(userId).length;
+  await replay();
+  return Math.max(0, before - readQueue(userId).length);
+}
+
+/** One-time move of the pre-segment-18 localStorage queue into the outbox (then the key is deleted). */
+export async function migrateLegacyCardQueue(userId: string): Promise<number> {
+  const key = `naadi.cards.outbox.v1:${userId}`;
+  if (!(await outboxPersists())) return 0;
+  let legacy: QueuedReview[] = [];
+  try {
+    const raw = localStorage.getItem(key);
+    const parsed: unknown = raw ? JSON.parse(raw) : [];
+    legacy = Array.isArray(parsed) ? (parsed as QueuedReview[]) : [];
+  } catch {
+    return 0;
   }
-  return sent;
+  let moved = 0;
+  for (const item of legacy) {
+    if (!item?.cardId || !item.body?.client_review_id) continue;
+    await queueCardReview(userId, item.cardId, item.body);
+    moved += 1;
+  }
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // nothing to delete
+  }
+  return moved;
 }

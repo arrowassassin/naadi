@@ -152,7 +152,7 @@ test.describe("signed in as a student", () => {
     );
     await context.setOffline(true);
     const banner = page.getByRole("status").filter({ hasText: "Offline" });
-    await expect(banner).toContainText("Showing what was loaded last");
+    await expect(banner).toContainText("Nothing waiting to sync");
     await expect(page.locator("[data-state=populated]")).toBeVisible();
     await expectNoAxeViolations(page);
     await snap(page, info, consoleErrors, "today-offline");

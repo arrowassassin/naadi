@@ -1,6 +1,7 @@
 import type { ReviewIn, ReviewOut } from "@naadi/shared";
 import { ApiError } from "../auth/apiError";
-import { enqueueReview, readQueue } from "./outbox";
+import type { CardReviewBody } from "../offline/entities/cardReview";
+import { discardRow, submit } from "../offline/outbox";
 
 /**
  * A failure a later retry can fix: no connection, the server down or busy (5xx, 429), or a session that needs a
@@ -13,34 +14,32 @@ export function isRetryable(e: unknown): boolean {
 export type SubmitResult = { kind: "sent"; out: ReviewOut } | { kind: "queued" } | { kind: "refused"; error: unknown };
 
 export interface SubmitDeps {
-  send: (cardId: string, body: ReviewIn) => Promise<ReviewOut>;
-  online: () => boolean;
   /** Called after a rating is queued (refresh the count, start a replay). */
   queued?: () => void;
 }
 
 /**
- * Send one rating, or queue it behind ratings already waiting. Reads the queue at the moment of sending (not a
- * rendered count): a rating made while the previous one was failing must queue behind it, never overtake it,
- * since the server refuses a rating older than the card's last one.
+ * Send one rating through the outbox (segment 18: every write does, online or not). It is tried at once unless
+ * older ratings wait (FIFO: it never overtakes them, since the server refuses a rating older than the card's last
+ * one). A refusal is shown on the review screen; its copy is kept in the device's conflict log for 7 days.
  */
 export async function submitReview(
   userId: string,
   cardId: string,
   body: ReviewIn,
-  deps: SubmitDeps,
+  deps: SubmitDeps = {},
 ): Promise<SubmitResult> {
-  if (readQueue(userId).length > 0 || !deps.online()) {
-    enqueueReview(userId, { cardId, body });
-    deps.queued?.();
-    return { kind: "queued" };
+  const { row, outcome } = await submit(userId, {
+    entity: "card_review",
+    key: body.client_review_id,
+    method: "POST",
+    body: { cardId, review: body } satisfies CardReviewBody,
+  });
+  if (outcome?.kind === "ok") return { kind: "sent", out: outcome.server as ReviewOut };
+  if (outcome?.kind === "failed") {
+    if (row) await discardRow(row.op_id);
+    return { kind: "refused", error: new ApiError(outcome.code, 422, outcome.code, null) };
   }
-  try {
-    return { kind: "sent", out: await deps.send(cardId, body) };
-  } catch (error) {
-    if (!isRetryable(error)) return { kind: "refused", error };
-    enqueueReview(userId, { cardId, body });
-    deps.queued?.();
-    return { kind: "queued" };
-  }
+  deps.queued?.();
+  return { kind: "queued" };
 }

@@ -1,10 +1,25 @@
-import { Dexie, type EntityTable } from "dexie";
+import { Dexie } from "dexie";
+import { type OutboxRow, resetNaadiDbForTests } from "../offline/db";
+import {
+  importRows,
+  loadOutbox,
+  outboxPersists,
+  outboxRows,
+  outboxVersion,
+  putEntityRow,
+  recordConflict,
+  removeEntityRow,
+  resetOutboxForTests,
+  rowsFor,
+  subscribeOutbox,
+} from "../offline/outbox";
 
 /**
- * Notes and highlights written on this device and not yet confirmed by the server (segment 13), in IndexedDB
- * ("naadi-notes", Dexie, the pattern of ink/persist/db.ts). Every write is recorded here BEFORE any request, so a
- * reload, a closed tab or no connection loses nothing; the screens show "Saved on this device · will sync" while a
- * note has an entry.
+ * Notes and highlights written on this device and not yet confirmed by the server (segment 13). Since segment 18
+ * the entries live in the device outbox (IndexedDB `naadi-v1`, entity `note`, one row per note) with every other
+ * write, so one status line, one sync sheet and one replay schedule cover them; the rules below are unchanged.
+ * Every write is recorded BEFORE any request, so a reload, a closed tab or no connection loses nothing; the screens
+ * show "Saved on this device · will sync" while a note has an entry.
  *
  * One entry per note holds the latest local state of what must reach the server:
  * - `create`: the server has not confirmed the note yet; it is sent as a POST with the note's own id (made on the
@@ -12,6 +27,7 @@ import { Dexie, type EntityTable } from "dexie";
  * - `fields`: every field changed since the last confirmed write (a create sends them all).
  * - `deleted`: delete the note. A note created and deleted before any request went out never reaches the server.
  * `v` grows with every local change; an answer only clears the entry when no newer change arrived meanwhile.
+ * Each request carries the row's op id as `Idempotency-Key` and its `client_updated_at_ms` (last-writer-wins).
  * Entries are never cleared on sign-out: they belong to that user and are sent when they sign in again here.
  */
 
@@ -29,87 +45,128 @@ export interface NoteOp {
   queuedAt: number;
   /** The server refused this write for a reason a retry cannot fix (kept so the screen can say so). */
   refused: string | null;
+  /** The outbox op id (sent as `Idempotency-Key`) and the LWW stamp of the latest change. */
+  opId?: string;
+  stamp?: number;
 }
 
-type NotesDb = Dexie & { noteOps: EntityTable<NoteOp, "id"> };
+type StoredOp = Pick<NoteOp, "v" | "create" | "attempted" | "deleted" | "fields">;
 
-let db: NotesDb | null = null;
-
-function notesDb(): NotesDb {
-  if (!db) {
-    const d = new Dexie("naadi-notes") as NotesDb;
-    d.version(1).stores({ noteOps: "[user+id], user, queuedAt" });
-    db = d;
-  }
-  return db;
-}
-
-/** Test hook: drop the cached handle (fake-indexeddb is reset between tests). */
-export function resetNotesDbForTests(): void {
-  db?.close();
-  db = null;
-  memory.clear();
-  loaded.clear();
-  emit();
-}
-
-/** Entries also live in memory, so a private window (no IndexedDB) still queues for the life of the page. */
-const memory = new Map<string, NoteOp>();
-const listeners = new Set<() => void>();
-let version = 0;
-
-function emit(): void {
-  version += 1;
-  for (const l of listeners) l();
-}
-
-export function subscribeNoteOps(listener: () => void): () => void {
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
+function fromRow(r: OutboxRow): NoteOp {
+  const b = r.body as StoredOp;
+  return {
+    user: r.user_id,
+    id: r.key,
+    v: b.v,
+    create: b.create,
+    attempted: b.attempted,
+    deleted: b.deleted,
+    fields: b.fields,
+    queuedAt: r.queued_at,
+    refused: r.state === "failed" ? (r.last_error ?? "refused") : null,
+    opId: r.op_id,
+    stamp: r.client_updated_at_ms,
   };
 }
 
+function getOp(user: string, id: string): NoteOp | undefined {
+  const r = rowsFor(user, "note", id)[0];
+  return r ? fromRow(r) : undefined;
+}
+
+/** Test hook: forget what is in memory (as a reload would); IndexedDB keeps its rows. */
+export function resetNotesDbForTests(): void {
+  loaded.clear();
+  resetOutboxForTests();
+  resetNaadiDbForTests();
+}
+
+export function subscribeNoteOps(listener: () => void): () => void {
+  return subscribeOutbox(listener);
+}
+
 export function noteOpsVersion(): number {
-  return version;
+  return outboxVersion();
 }
 
-const mkey = (user: string, id: string) => `${user}\u0000${id}`;
-
-/** The entries of one user (memory first: it holds every entry written in this page's life). */
+/** The entries of one user, oldest first. */
 export function pendingOps(user: string): NoteOp[] {
-  return [...memory.values()].filter((o) => o.user === user).sort((a, b) => a.queuedAt - b.queuedAt);
+  return outboxRows(user, "note")
+    .map(fromRow)
+    .sort((a, b) => a.queuedAt - b.queuedAt);
 }
 
-async function persist(op: NoteOp | null, user: string, id: string): Promise<void> {
-  try {
-    const t = notesDb().noteOps;
-    if (op) await t.put(op);
-    else await t.delete([user, id] as unknown as string);
-  } catch {
-    // IndexedDB unavailable: the entry stays in memory until the page closes
-  }
-}
-
-/** Read this user's entries from IndexedDB into memory (once per page and user). */
+/** Read this user's entries (once per page and user), moving the pre-segment-18 `naadi-notes` rows in once. */
 const loaded = new Set<string>();
 export async function loadOps(user: string): Promise<void> {
   if (loaded.has(user)) return;
   loaded.add(user);
+  await loadOutbox(user);
+  await migrateLegacyNotes(user);
+}
+
+/** One-time move of the segment-13 `naadi-notes` database into the outbox; the old database is then deleted. */
+export async function migrateLegacyNotes(user: string): Promise<number> {
+  if (!(await outboxPersists())) return 0;
   try {
-    const rows = await notesDb().noteOps.where("user").equals(user).toArray();
-    for (const r of rows) if (!memory.has(mkey(user, r.id))) memory.set(mkey(user, r.id), r);
-    emit();
+    if (!(await Dexie.exists("naadi-notes"))) return 0;
+    const old = new Dexie("naadi-notes");
+    old.version(1).stores({ noteOps: "[user+id], user, queuedAt" });
+    const all = (await old.table("noteOps").toArray()) as NoteOp[];
+    const mine = all.filter((o) => o.user === user && getOp(user, o.id) === undefined);
+    const { uuidv7 } = await import("@naadi/shared");
+    await importRows(
+      mine.map((o, i) => ({
+        op_id: uuidv7(),
+        user_id: user,
+        entity: "note",
+        key: o.id,
+        group: "",
+        method: "POST",
+        body: {
+          v: o.v,
+          create: o.create,
+          attempted: o.attempted,
+          deleted: o.deleted,
+          fields: o.fields,
+        } satisfies StoredOp,
+        client_updated_at_ms: o.queuedAt,
+        queued_at: o.queuedAt,
+        seq: o.queuedAt * 1000 + i,
+        rev: o.v,
+        attempts: o.attempted ? 1 : 0,
+        next_at: 0,
+        state: o.refused ? "failed" : "queued",
+        last_error: o.refused,
+      })),
+    );
+    await old.table("noteOps").where("user").equals(user).delete();
+    const left = await old.table("noteOps").count();
+    old.close();
+    if (left === 0) await Dexie.delete("naadi-notes");
+    return mine.length;
   } catch {
-    // nothing stored (or no IndexedDB)
+    return 0;
   }
 }
 
-function write(op: NoteOp | null, user: string, id: string): Promise<void> {
-  if (op) memory.set(mkey(user, id), op);
-  else memory.delete(mkey(user, id));
-  emit();
-  return persist(op, user, id);
+async function write(op: NoteOp | null, user: string, id: string): Promise<void> {
+  if (!op) {
+    await removeEntityRow(user, "note", id);
+    return;
+  }
+  const body: StoredOp = {
+    v: op.v,
+    create: op.create,
+    attempted: op.attempted,
+    deleted: op.deleted,
+    fields: op.fields,
+  };
+  await putEntityRow(user, "note", id, body, {
+    state: op.refused ? "failed" : "queued",
+    last_error: op.refused,
+    method: op.deleted ? "DELETE" : op.create ? "POST" : "PATCH",
+  });
 }
 
 let clock = 0;
@@ -138,7 +195,7 @@ export function queueCreate(user: string, id: string, fields: NoteFields): Promi
 }
 
 export function queueUpdate(user: string, id: string, patch: NoteFields): Promise<void> {
-  const prev = memory.get(mkey(user, id));
+  const prev = getOp(user, id);
   if (prev?.deleted) return Promise.resolve();
   const op: NoteOp = prev
     ? { ...prev, v: prev.v + 1, fields: { ...prev.fields, ...patch }, refused: null }
@@ -157,7 +214,7 @@ export function queueUpdate(user: string, id: string, patch: NoteFields): Promis
 }
 
 export function queueDelete(user: string, id: string): Promise<void> {
-  const prev = memory.get(mkey(user, id));
+  const prev = getOp(user, id);
   // Made here and never sent: nothing to tell the server.
   if (prev?.create && !prev.attempted) return write(null, user, id);
   const op: NoteOp = prev
@@ -182,12 +239,22 @@ export function dropOp(user: string, id: string): Promise<void> {
 }
 
 /** What a send attempt came to. `gone`: the note no longer exists on the server (404). */
-export type SendResult = "ok" | "gone" | "unreachable" | { refused: string };
+export type SendResult = "ok" | "gone" | "unreachable" | { refused: string } | { conflict: unknown };
+
+/** What a request carries besides the note: the `Idempotency-Key` and the LWW stamp of the change. */
+export interface SendMeta {
+  opId?: string;
+  stamp?: number;
+}
 
 export interface NotesTransport {
-  create(id: string, fields: NoteFields): Promise<SendResult>;
-  update(id: string, fields: NoteFields): Promise<SendResult>;
-  remove(id: string): Promise<SendResult>;
+  create(id: string, fields: NoteFields, meta?: SendMeta): Promise<SendResult>;
+  update(id: string, fields: NoteFields, meta?: SendMeta): Promise<SendResult>;
+  remove(id: string, meta?: SendMeta): Promise<SendResult>;
+}
+
+function meta(op: NoteOp): SendMeta {
+  return { opId: op.opId, stamp: op.stamp };
 }
 
 const flushing = new Map<string, Promise<number>>();
@@ -207,25 +274,38 @@ export function flushOps(user: string, transport: NotesTransport): Promise<numbe
     for (let pass = 0; pass < 3; pass++) {
       let again = false;
       for (const listed of pendingOps(user)) {
-        const sending = memory.get(mkey(user, listed.id));
+        const sending = getOp(user, listed.id);
         if (!sending || sending.refused) continue;
         let result: SendResult;
         try {
           if (sending.deleted) {
-            result = await transport.remove(sending.id);
+            result = await transport.remove(sending.id, meta(sending));
             if (result === "gone") result = "ok";
           } else if (sending.create) {
             if (!sending.attempted) await write({ ...sending, attempted: true }, user, sending.id);
-            result = await transport.create(sending.id, sending.fields);
+            result = await transport.create(sending.id, sending.fields, meta(getOp(user, sending.id) ?? sending));
           } else {
-            result = await transport.update(sending.id, sending.fields);
+            result = await transport.update(sending.id, sending.fields, meta(sending));
           }
         } catch {
           result = "unreachable";
         }
         if (result === "unreachable") return cleared;
-        const after = memory.get(mkey(user, sending.id));
+        const after = getOp(user, sending.id);
         if (!after) continue;
+        if (typeof result === "object" && "conflict" in result) {
+          // Last-writer-wins: the server kept a newer version (or a newer delete). Its copy is what the screens show
+          // after the refetch; this device's version is kept for 7 days in the sync sheet, never dropped silently.
+          await recordConflict(user, "note", sending.id, sending.fields, result.conflict);
+          if (after.v === sending.v) {
+            await write(null, user, sending.id);
+            cleared += 1;
+          } else {
+            await write({ ...after, create: false, attempted: true }, user, sending.id);
+            again = true;
+          }
+          continue;
+        }
         if (typeof result === "object") {
           if (after.v === sending.v) await write({ ...after, refused: result.refused }, user, sending.id);
           continue;

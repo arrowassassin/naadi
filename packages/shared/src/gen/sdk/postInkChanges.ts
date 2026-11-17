@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { PostInkChangesData, PostInkChangesErrors, PostInkChangesResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zPostInkChangesBody } from "../zod/zPostInkChangesBody";
+import { zPostInkChangesHeaders } from "../zod/zPostInkChangesHeaders";
 import { zPostInkChangesPath } from "../zod/zPostInkChangesPath";
 import { zPostInkChangesResponse } from "../zod/zPostInkChangesResponse";
 
@@ -22,6 +23,7 @@ export const postInkChanges = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zPostInkChangesBody,
+          headers: zPostInkChangesHeaders.optional(),
           path: zPostInkChangesPath,
           query: z.never().optional(),
         })

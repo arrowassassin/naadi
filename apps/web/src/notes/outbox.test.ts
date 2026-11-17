@@ -1,5 +1,6 @@
 import "fake-indexeddb/auto";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { conflictsFor, wasChangedElsewhere } from "../offline/outbox";
 import {
   flushOps,
   loadOps,
@@ -39,6 +40,7 @@ function fakeTransport(script: Partial<Record<"create" | "update" | "remove", Se
 beforeEach(async () => {
   resetNotesDbForTests();
   indexedDB.deleteDatabase("naadi-notes");
+  indexedDB.deleteDatabase("naadi-v1");
 });
 
 describe("notes offline queue", () => {
@@ -119,7 +121,7 @@ describe("notes offline queue", () => {
       remove: async () => "ok",
     };
     const done = flushOps(U, t);
-    await new Promise((r) => setTimeout(r, 0));
+    await vi.waitFor(() => expect(calls).toEqual(["create"]));
     await queueUpdate(U, "n1", { title: "b" });
     release("ok");
     await done;
@@ -133,6 +135,65 @@ describe("notes offline queue", () => {
     expect(pendingOps(U)).toEqual([]);
     await loadOps(U);
     expect(pendingOps(U).map((o) => o.id)).toEqual(["n1"]);
+  });
+
+  it("moves the segment-13 naadi-notes rows into the outbox once and deletes that database", async () => {
+    const { Dexie } = await import("dexie");
+    const old = new Dexie("naadi-notes");
+    old.version(1).stores({ noteOps: "[user+id], user, queuedAt" });
+    await old.table("noteOps").bulkPut([
+      {
+        user: U,
+        id: "old1",
+        v: 2,
+        create: true,
+        attempted: false,
+        deleted: false,
+        fields: { kind: "note" },
+        queuedAt: 5,
+        refused: null,
+      },
+      {
+        user: U,
+        id: "old2",
+        v: 1,
+        create: false,
+        attempted: true,
+        deleted: false,
+        fields: { title: "x" },
+        queuedAt: 6,
+        refused: "note_invalid",
+      },
+    ]);
+    old.close();
+    await loadOps(U);
+    expect(pendingOps(U).map((o) => [o.id, o.v, o.refused])).toEqual([
+      ["old1", 2, null],
+      ["old2", 1, "note_invalid"],
+    ]);
+    expect(await Dexie.exists("naadi-notes")).toBe(false);
+    resetNotesDbForTests();
+    await loadOps(U);
+    expect(pendingOps(U)).toHaveLength(2);
+  });
+
+  it("LWW: when another device's newer version wins, the local one is kept 7 days and the note is marked", async () => {
+    await queueUpdate(U, "n1", { title: "mine" });
+    const server = { id: "n1", title: "theirs", applied: false };
+    const { t } = fakeTransport({ update: [{ conflict: server }] });
+    expect(await flushOps(U, t)).toBe(1);
+    expect(pendingOps(U)).toEqual([]);
+    expect(wasChangedElsewhere("note", "n1")).toBe(true);
+    const kept = await conflictsFor(U);
+    expect(kept.map((c) => [c.key, c.local, c.server])).toEqual([["n1", { title: "mine" }, server]]);
+  });
+
+  it("LWW: an edit made before another device's delete loses to the delete, and is kept", async () => {
+    await queueUpdate(U, "n2", { title: "late edit" });
+    const { t } = fakeTransport({ update: [{ conflict: { deleted: true } }] });
+    await flushOps(U, t);
+    expect(pendingOps(U)).toEqual([]);
+    expect((await conflictsFor(U)).map((c) => c.server)).toEqual([{ deleted: true }]);
   });
 
   it("keeps users apart", async () => {

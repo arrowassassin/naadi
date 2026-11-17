@@ -14,13 +14,14 @@ import {
   updateCard,
 } from "@naadi/shared";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 import { installOfflineCacheReset, readOffline, writeOffline } from "../learn/offlineCache";
-import { enqueueReview, flushQueue, readQueue, type SendOutcome } from "./outbox";
-import { isRetryable } from "./submit";
+import { subscribeOutbox } from "../offline/outbox";
+import { OFFLINE_FIRST } from "../offline/runtime";
+import { enqueueReview, flushQueue, readQueue } from "./outbox";
 
 installOfflineCacheReset();
 
@@ -87,6 +88,7 @@ export function useDueCards() {
   const userId = useUserId();
   return useQuery({
     queryKey: dueKey(userId),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
     staleTime: 30_000,
     refetchOnWindowFocus: false,
@@ -162,57 +164,44 @@ export function sendReview(cardId: string, body: ReviewIn): Promise<ReviewOut> {
   return authed<ReviewOut>((headers) => reviewCard({ body, headers, path: { card_id: cardId } }));
 }
 
-async function sendQueued(cardId: string, body: ReviewIn): Promise<SendOutcome> {
-  try {
-    await sendReview(cardId, body);
-    return "sent";
-  } catch (err) {
-    // the server is down or busy, or the session needs a refresh: keep it for later
-    return isRetryable(err) ? "unreachable" : "refused";
-  }
-}
-
 /**
  * Ratings waiting to sync: queue one, see how many wait, and replay them when the connection returns (on the
  * `online` event, on mount and on demand). Replays are idempotent server-side (client_review_id).
  */
 export function usePendingReviews() {
   const userId = useUserId();
-  const qc = useQueryClient();
-  const [count, setCount] = useState(() => (userId ? readQueue(userId).length : 0));
+  const count = useSyncExternalStore(
+    subscribeOutbox,
+    () => (userId ? readQueue(userId).length : 0),
+    () => 0,
+  );
   const [syncing, setSyncing] = useState(false);
 
-  const refresh = useCallback(() => setCount(userId ? readQueue(userId).length : 0), [userId]);
+  // The count follows the outbox on its own; kept for the screen's existing calls.
+  const refresh = useCallback(() => {}, []);
 
   const flush = useCallback(async () => {
     if (!userId || readQueue(userId).length === 0) return 0;
     setSyncing(true);
     try {
-      const sent = await flushQueue(userId, (item) => sendQueued(item.cardId, item.body));
-      if (sent > 0) void qc.invalidateQueries({ queryKey: ["cards-stats", userId] });
-      return sent;
+      return await flushQueue(userId);
     } finally {
       setSyncing(false);
-      refresh();
     }
-  }, [qc, refresh, userId]);
+  }, [userId]);
 
   const enqueue = useCallback(
     (cardId: string, body: ReviewIn) => {
       if (!userId) return;
       enqueueReview(userId, { cardId, body });
-      refresh();
     },
-    [refresh, userId],
+    [userId],
   );
 
   useEffect(() => {
-    refresh();
+    // The outbox replays on `online`, on visibility and every 30 s; one try on arrival.
     void flush();
-    const onOnline = () => void flush();
-    window.addEventListener("online", onOnline);
-    return () => window.removeEventListener("online", onOnline);
-  }, [flush, refresh]);
+  }, [flush]);
 
   return { userId, count, syncing, enqueue, flush, refresh };
 }

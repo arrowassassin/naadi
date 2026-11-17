@@ -12,6 +12,8 @@ from typing import Annotated, Any, Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+from ..sync.models import ClientStamp
+
 NoteKind = Literal["note", "highlight", "page"]
 AnchorType = Literal["section", "question", "video", "pdf", "free"]
 HighlightColor = Literal["lime", "violet", "amber"]
@@ -123,6 +125,14 @@ class NoteOut(BaseModel):
     has_ink: bool = Field(description="A notebook page with live ink items on its notebook_page layer")
     created_at: dt.datetime
     updated_at: dt.datetime
+    client_updated_at_ms: int | None = Field(
+        default=None, description="Offline sync: the stamp of the write that won (null: written before stamps)"
+    )
+    applied: bool = Field(
+        default=True,
+        description="Writes only: false when this request changed nothing because the stored row (returned) is as "
+        "new or newer (last writer wins), or the create was a replay",
+    )
 
 
 class ColorCounts(BaseModel):
@@ -172,6 +182,7 @@ class NoteCreate(BaseModel):
     highlight_color: HighlightColor | None = None
     body: dict[str, Any] | None = None
     canvas: Canvas = "paper"
+    client_updated_at_ms: ClientStamp | None = None
 
     @model_validator(mode="after")
     def _shape(self) -> Self:
@@ -205,6 +216,8 @@ class NotePatch(BaseModel):
         default=None, description="Refuse (409 note_conflict) unless the stored note still has this updated_at"
     )
 
+    client_updated_at_ms: ClientStamp | None = None
+
     @model_validator(mode="after")
     def _pairs(self) -> Self:
         sent = self.model_fields_set
@@ -214,6 +227,8 @@ class NotePatch(BaseModel):
             raise ValueError("canvas cannot be null")
         if "sort" in sent and self.sort is None:
             raise ValueError("sort cannot be null")
+        if "client_updated_at_ms" in sent and self.client_updated_at_ms is None:
+            raise ValueError("client_updated_at_ms cannot be null")
         return self
 
 
@@ -262,6 +277,14 @@ class NotebookOut(BaseModel):
     note_count: int = Field(description="Typed notes filed in this notebook (pages not counted)")
     created_at: dt.datetime
     updated_at: dt.datetime
+    client_updated_at_ms: int | None = Field(
+        default=None, description="Offline sync: the stamp of the write that won (null: written before stamps)"
+    )
+    applied: bool = Field(
+        default=True,
+        description="Writes only: false when this request changed nothing because the stored notebook (returned) is"
+        " as new or newer (last writer wins), or the create was a replay",
+    )
 
 
 class NotebookList(BaseModel):
@@ -281,6 +304,7 @@ class NotebookCreate(BaseModel):
     title: Title = Field(min_length=1)
     cover: NotebookCover | None = None
     paper: Paper = "ruled"
+    client_updated_at_ms: ClientStamp | None = None
 
 
 class NotebookPatch(BaseModel):
@@ -288,10 +312,11 @@ class NotebookPatch(BaseModel):
     title: Title | None = Field(default=None, min_length=1)
     cover: NotebookCover | None = None
     paper: Paper | None = None
+    client_updated_at_ms: ClientStamp | None = None
 
     @model_validator(mode="after")
     def _no_nulls(self) -> Self:
-        for f in ("title", "paper"):
+        for f in ("title", "paper", "client_updated_at_ms"):
             if f in self.model_fields_set and getattr(self, f) is None:
                 raise ValueError(f"{f} cannot be null")
         return self
@@ -307,6 +332,7 @@ class PageCreate(BaseModel):
     position: Sort | None = Field(default=None, description="0-based place among the pages; default: at the end")
     anchor_type: Literal["section", "question", "video", "pdf"] | None = None
     anchor_id: AnchorId | None = None
+    client_updated_at_ms: ClientStamp | None = None
 
     @model_validator(mode="after")
     def _anchor(self) -> Self:

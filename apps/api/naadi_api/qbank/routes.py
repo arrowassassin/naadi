@@ -31,6 +31,7 @@ from ..config_api.service import AppConfigService
 from ..db import Database, DatabaseNotConfigured
 from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
+from ..sync.idempotency import IDEMPOTENT, IdempotentRoute
 from . import exam
 from .clock import Session
 from .exam_state import active_exam
@@ -84,7 +85,7 @@ from .selection import (
 
 log = get_logger("naadi.qbank")
 
-router = APIRouter(prefix="/api", tags=["qbank"])
+router = APIRouter(prefix="/api", tags=["qbank"], route_class=IdempotentRoute)
 
 Row = dict[str, Any]
 UNAVAILABLE = "Practice questions cannot be reached right now. Try again in a moment."
@@ -835,8 +836,7 @@ async def get_block_question(
 
     block, qid, q, attempt, lesson, labels = await as_user(db, user, read)
     cfg = BlockConfig.model_validate(block["config"])
-    graded = attempt is not None and attempt["chosen"] is not None and attempt["correct"] is not None
-    reveal = graded and cfg.mode == "tutor"
+    graded, reveal = tutor_reveal(cfg.mode, attempt)
     clock_now: Any = None
     section_n = 1
     if exam.is_timed(cfg.mode):
@@ -874,11 +874,50 @@ async def get_block_question(
 
         s = await as_service(db, secret)
         explanation = _explanation(s) if s else None
+    return question_view(
+        block,
+        n,
+        q,
+        attempt,
+        lesson,
+        labels,
+        graded=graded,
+        reveal=reveal,
+        explanation=explanation,
+        section_n=section_n,
+        clock=clock_now,
+    )
+
+
+def tutor_reveal(mode: str, attempt: Row | None) -> tuple[bool, bool]:
+    """(graded, reveal) for a question of a block that is not a running timed session: the caller's answer shows
+    once graded, and its correctness and explanation only in tutor mode (HANDOFF 6.3)."""
+    graded = attempt is not None and attempt["chosen"] is not None and attempt["correct"] is not None
+    return graded, graded and mode == "tutor"
+
+
+def question_view(
+    block: Row,
+    n: int,
+    q: Row,
+    attempt: Row | None,
+    lesson: Row | None,
+    labels: list[str],
+    *,
+    graded: bool,
+    reveal: bool,
+    explanation: Explanation | None,
+    section_n: int = 1,
+    clock: Any = None,
+) -> QuestionView:
+    """The one serializer of a block question (GET /api/blocks/{id}/questions/{n} and the offline manifest). `q` is
+    a row of the client-readable question columns only (`_QUESTION`); `explanation` is passed only after the
+    caller's gate (`tutor_reveal` / a finished timed block), so an unanswered question never carries one."""
     return QuestionView(
-        block_id=block_id,
+        block_id=block["id"],
         n=n,
         total=len(block["question_ids"]),
-        mode=cfg.mode,
+        mode=BlockConfig.model_validate(block["config"]).mode,
         question=QuestionBody(
             id=q["id"],
             stem_html=q["stem_html"],
@@ -897,9 +936,9 @@ async def get_block_question(
             if graded and attempt is not None
             else None
         ),
-        explanation=explanation,
+        explanation=explanation if reveal else None,
         section_n=section_n,
-        clock=clock_now,
+        clock=clock,
     )
 
 
@@ -924,7 +963,17 @@ from public.attempts where block_id = %s and user_id = %s
     operation_id="createAttempt",
     summary="Answer a question: the server grades it; idempotent per (block, question); explanation in tutor mode only",
     response_model=AttemptOut,
-    responses={**_ERRORS, **_NOT_FOUND, **_INVALID},
+    responses={
+        **_ERRORS,
+        **_NOT_FOUND,
+        **_INVALID,
+        409: {
+            "model": ErrorResponse,
+            "description": "Timed/exam: section_ended (time was up), finished, not_current, not_started, paused, "
+            "on_break; tutor: exam_active",
+        },
+    },
+    dependencies=[IDEMPOTENT],
 )
 async def create_attempt(
     request: Request, block_id: BlockId, body: AttemptIn, user: Annotated[CurrentUser, limited("qbank_write")]

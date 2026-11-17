@@ -15,6 +15,7 @@ import { useRegisterPageContext } from "../assistant/pageContext";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
+import { WeekDownloadPanel } from "../offline/OfflineSettingsPage";
 import { type CachedToday, useAcceptSuggestion, useDismissSuggestion, useItemStatus, useToday } from "../today/api";
 import {
   actionLabel,
@@ -366,6 +367,19 @@ function Systems({ s }: { s: SystemsOut }) {
   );
 }
 
+/** "Download this week" on Today (segment 18): a secondary action; Today's one lime CTA stays the plan's. */
+function OfflineWeekTile() {
+  const t = useUiText();
+  return (
+    <Tile as="section" aria-labelledby="today-offline" className="flex flex-col gap-3">
+      <h2 id="today-offline" className="m-0">
+        <TileLabel>{t("offline.group_title")}</TileLabel>
+      </h2>
+      <WeekDownloadPanel compact />
+    </Tile>
+  );
+}
+
 function Cards({ today }: { today: TodayOut }) {
   const t = useUiText();
   const c = today.cards;
@@ -549,6 +563,7 @@ function Populated({ cached }: { cached: CachedToday }) {
               </Link>
             </Tile>
           ) : null}
+          <OfflineWeekTile />
           {today.coach.length > 0 ? (
             <section aria-labelledby="today-coach" className="flex flex-col gap-4">
               <h2 id="today-coach" className="sr-only">

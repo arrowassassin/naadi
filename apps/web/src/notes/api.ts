@@ -16,6 +16,7 @@ import { ApiError, UNREACHABLE } from "../auth/apiError";
 import { AUTH_STORAGE_KEY, useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { installOfflineCacheReset, readOffline, writeOffline } from "../learn/offlineCache";
+import { OFFLINE_FIRST } from "../offline/runtime";
 import {
   flushOps,
   loadOps,
@@ -28,6 +29,7 @@ import {
   queueCreate,
   queueDelete,
   queueUpdate,
+  type SendMeta,
   type SendResult,
   subscribeNoteOps,
 } from "./outbox";
@@ -84,15 +86,30 @@ function assertOnline(): void {
 function outcome(e: unknown): SendResult {
   if (isRetryable(e) || !(e instanceof ApiError)) return "unreachable";
   if (e.status === 404 && e.code === "note_not_found") return "gone";
+  // Deleted on another device after this edit was made: the delete stands, this edit is kept in the sync sheet.
+  if (e.status === 409 && e.code === "sync_deleted") return { conflict: { deleted: true } };
   return { refused: e.code ?? `http_${e.status}` };
+}
+
+/** The outbox op id as `Idempotency-Key` (segment 18): a replay after a lost answer returns the first answer. */
+function withKey(headers: Record<string, string>, meta?: SendMeta): Record<string, string> {
+  return meta?.opId ? { ...headers, "idempotency-key": meta.opId } : headers;
+}
+
+/** The change's last-writer-wins stamp (device ms on the server's clock). */
+function stamp(meta?: SendMeta): { client_updated_at_ms?: number } {
+  return meta?.stamp ? { client_updated_at_ms: meta.stamp } : {};
 }
 
 /** The Notes API through the generated SDK (validated against the OpenAPI contract). */
 export const apiTransport: NotesTransport = {
-  async create(id, fields) {
+  async create(id, fields, meta) {
     try {
       assertOnline();
-      const out = await authed<NoteOut>((headers) => createNote({ headers, body: { ...(fields as NoteCreate), id } }));
+      const out = await authed<NoteOut>((headers) =>
+        createNote({ headers: withKey(headers, meta), body: { ...(fields as NoteCreate), id, ...stamp(meta) } }),
+      );
+      if (out.applied === false) return { conflict: out };
       // Another device made this section's page note first: the server answers with that note. Keep both texts
       // (theirs, then this device's) instead of losing what was typed here.
       const mine = (fields.body as { content?: unknown } | undefined)?.content;
@@ -112,20 +129,29 @@ export const apiTransport: NotesTransport = {
       return outcome(e);
     }
   },
-  async update(id, fields) {
+  async update(id, fields, meta) {
     try {
       assertOnline();
-      await authed<NoteOut>((headers) => updateNote({ headers, path: { note_id: id }, body: fields as NotePatch }));
-      return "ok";
+      const out = await authed<NoteOut>((headers) =>
+        updateNote({
+          headers: withKey(headers, meta),
+          path: { note_id: id },
+          body: { ...(fields as NotePatch), ...stamp(meta) },
+        }),
+      );
+      return out.applied === false ? { conflict: out } : "ok";
     } catch (e) {
       return outcome(e);
     }
   },
-  async remove(id) {
+  async remove(id, meta) {
     try {
       assertOnline();
-      await authed<unknown>((headers) => deleteNote({ headers, path: { note_id: id } }));
-      return "ok";
+      const out = await authed<unknown>((headers) =>
+        deleteNote({ headers: withKey(headers, meta), path: { note_id: id }, query: stamp(meta) }),
+      );
+      // A newer edit from another device beat this delete: the note stays, as the server has it.
+      return (out as NoteOut | null | undefined)?.applied === false ? { conflict: out } : "ok";
     } catch (e) {
       return outcome(e);
     }
@@ -259,6 +285,7 @@ export function useNotes(filters: NoteFilters, opts: { enabled?: boolean } = {})
   const ops = usePendingOps();
   const query = useQuery({
     queryKey: listKey(userId, filters),
+    ...OFFLINE_FIRST,
     enabled: userId !== null && opts.enabled !== false,
     staleTime: 15_000,
     retry: (n, e) => n < 1 && isRetryable(e) && online,

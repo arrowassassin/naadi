@@ -21,6 +21,7 @@ import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tansta
 import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { readOffline, writeOffline } from "../learn/offlineCache";
+import { OFFLINE_FIRST } from "../offline/runtime";
 import { isUnreachable, useUserId } from "../practice/api";
 
 export const todayKey = (userId: string | null) => ["today", userId] as const;
@@ -38,6 +39,7 @@ export function useToday() {
   const userId = useUserId();
   return useQuery({
     queryKey: todayKey(userId),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
     staleTime: 30_000,
     queryFn: async ({ signal }): Promise<CachedToday> => {

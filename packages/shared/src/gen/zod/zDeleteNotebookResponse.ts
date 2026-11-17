@@ -3,8 +3,6 @@
 import "../../zod-config";
 
 import * as z from "zod";
+import { zNotebookDetail } from "./zNotebookDetail";
 
-/**
- * Successful Response
- */
-export const zDeleteNotebookResponse = z.void();
+export const zDeleteNotebookResponse = z.union([zNotebookDetail, z.void()]);

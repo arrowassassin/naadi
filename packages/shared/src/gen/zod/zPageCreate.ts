@@ -15,6 +15,7 @@ export const zPageCreate = z.object({
   anchor_type: z.enum(["section", "question", "video", "pdf"]).nullish(),
   body: z.record(z.string(), z.unknown()).nullish(),
   canvas: z.enum(["paper", "whiteboard"]).optional().default("paper"),
+  client_updated_at_ms: z.int().gte(0).lte(9999999999999).nullish(),
   id: z.uuid().nullish(),
   paper: z.enum(["ruled", "dotted", "grid", "cornell", "blank"]).nullish(),
   position: z.int().gte(0).lte(100000).nullish(),

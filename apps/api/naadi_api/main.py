@@ -41,6 +41,7 @@ from .ink.routes import install_ink_routes, start_ink_gc, stop_ink_gc
 from .logs import configure_logging, get_logger, register_secrets
 from .middleware import ClientFloorMiddleware, RequestContextMiddleware
 from .notes.routes import install_notes_routes
+from .offline.routes import install_offline_routes
 from .ops.searxng_probe import install_searxng_probe
 from .pathway.install import install_pathway_routes
 from .plan.planner_routes import install_planner_routes
@@ -52,6 +53,9 @@ from .seed.jobs import drain_seed_tasks
 from .seed.jobs import router as seed_router
 from .settings import Settings, get_settings
 from .spa import install_spa
+from .sync.gc import start_sync_gc, stop_sync_gc
+from .sync.idempotency import check_routes
+from .sync.models import SyncDeleted, sync_deleted_handler
 from .youtube.routes import install_youtube_routes
 
 log = get_logger("naadi.app")
@@ -111,6 +115,7 @@ def create_app(
         await start_search(app)
         await start_ink_gc(app)
         await start_export_gc(app)
+        await start_sync_gc(app)
         log.info(
             "startup",
             environment=settings.app_env,
@@ -125,6 +130,7 @@ def create_app(
             await stop_ink_gc(app)
             await app.state.authoring_jobs.drain()
             await stop_export_gc(app)
+            await stop_sync_gc(app)
             await stop_search(app)
             await app.state.app_config.stop()
             await db.close()
@@ -175,11 +181,14 @@ def create_app(
     install_ingest_routes(app)
     install_pathway_routes(app)
     install_assistant_routes(app)
+    install_offline_routes(app)
+    app.add_exception_handler(SyncDeleted, sync_deleted_handler)
     install_app_config(app, settings)
     install_generation_routes(app)  # needs app.state.app_config
     install_admin_routes(app)
     app.include_router(seed_router)
     install_spa(app, settings.static_dir)
+    check_routes(app)  # every route taking an Idempotency-Key stores its responses
     # Chapter JSON is large and repetitive; Starlette's GZip skips text/event-stream, so SSE is untouched.
     app.add_middleware(GZipMiddleware, minimum_size=1024)
     app.add_middleware(ClientFloorMiddleware)  # inside RequestContext: a 429 still gets headers and a log line

@@ -1,14 +1,8 @@
 import "fake-indexeddb/auto";
+import { Dexie } from "dexie";
 import { afterEach, describe, expect, it } from "vitest";
-import {
-  dexieOutbox,
-  enqueue,
-  flushOutbox,
-  type NbOp,
-  notebooksDb,
-  type QueuedOp,
-  resetNotebooksDbForTests,
-} from "./outbox";
+import { outboxRows } from "../offline/outbox";
+import { dexieOutbox, enqueue, flushOutbox, type NbOp, type QueuedOp, resetNotebooksDbForTests } from "./outbox";
 import {
   applyOrder,
   clampPageNumber,
@@ -166,8 +160,8 @@ describe("offline queue coalescing", () => {
 
 describe("offline queue on IndexedDB", () => {
   afterEach(async () => {
-    await notebooksDb().delete();
     resetNotebooksDbForTests();
+    await Dexie.delete("naadi-v1");
   });
 
   it("persists per user, replays in order and stops at the first unreachable op", async () => {
@@ -193,6 +187,8 @@ describe("offline queue on IndexedDB", () => {
     expect(first).toMatchObject({ stopped: false });
     expect(first.dropped.map((o) => o.kind)).toEqual(["patchNote"]);
     expect(await store.read()).toEqual([]);
+    // Refused for good: parked in the outbox (sync sheet: Retry / Discard), never dropped silently.
+    expect(outboxRows("u1", "notebook").map((r) => [r.state, r.last_error])).toEqual([["failed", "notebook_refused"]]);
     expect(sent).toEqual(["createPage", "patchNote"]);
     expect(inflight.size).toBe(0);
   });
@@ -205,6 +201,18 @@ describe("offline queue on IndexedDB", () => {
     });
     expect(r.stopped).toBe(true);
     expect(kinds(await store.read())).toEqual(["deleteNote"]);
+  });
+
+  it("moves the segment-13 naadi-notebooks queue into the outbox once", async () => {
+    const old = new Dexie("naadi-notebooks");
+    old.version(1).stores({ nbOutbox: "seq, user", nbSnapshots: "[user+key], user" });
+    await old.table("nbOutbox").bulkPut([
+      { seq: 1, user: "u1", op: { kind: "deleteNote", id: PG, notebookId: NB }, queuedAt: 1 },
+      { seq: 2, user: "u1", op: { kind: "reorder", notebookId: NB, pageIds: [PG2] }, queuedAt: 2 },
+    ]);
+    old.close();
+    expect(kinds(await dexieOutbox("u1").read())).toEqual(["deleteNote", "reorder"]);
+    expect(await Dexie.exists("naadi-notebooks")).toBe(false);
   });
 
   it("keeps device copies per user", async () => {

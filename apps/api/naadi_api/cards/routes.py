@@ -37,6 +37,7 @@ from ..courses import MediaOut, MediaSource
 from ..db import Database, DatabaseNotConfigured
 from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
+from ..sync.idempotency import IDEMPOTENT, IdempotentRoute
 from . import docs, stats
 from .models import (
     CardCreate,
@@ -54,7 +55,7 @@ from .models import (
 from .scheduler import FsrsParams, Memory, review
 
 log = get_logger("naadi.cards")
-router = APIRouter(prefix="/api/cards", tags=["cards"])
+router = APIRouter(prefix="/api/cards", tags=["cards"], route_class=IdempotentRoute)
 
 Row = dict[str, Any]
 DEFAULT_DECK = "My cards"
@@ -339,36 +340,44 @@ async def get_due(
 ) -> DueResponse:
     _, cfg = await _params(request)
     now = _now()
-    p = {"uid": user.user_id, "now": now, "limit": limit}
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> DueResponse:
-        rows = await _rows(
-            conn,
-            f"select {_CARD_COLUMNS} {_CARD_FROM}"
-            f" where {VISIBLE} and (r.card_id is null or r.due <= %(now)s)"
-            " order by (r.card_id is null), r.due, f.created_at, f.id limit %(limit)s",
-            p,
-        )
-        counts = await _first(
-            conn,
-            "select count(*) filter (where r.card_id is null or r.due <= %(now)s) as due,"  # noqa: S608
-            " min(r.due) filter (where r.due > %(now)s) as next_due"
-            f" from public.flashcards f left join public.card_reviews r on r.card_id = f.id and r.user_id = %(uid)s"
-            f" where {VISIBLE}",
-            p,
-        )
-        assert counts is not None
-        cards = [_card(r, user.user_id) for r in rows]
-        await _attach_media(request, conn, user.user_id, cards)
-        return DueResponse(
-            now=now,
-            cards=cards,
-            due_count=int(counts["due"]),
-            next_due=counts["next_due"],
-            scheduler=FsrsSchedulerConfig(**cfg),
-        )
+        due = await load_due(conn, user.user_id, now, limit, cfg)
+        await _attach_media(request, conn, user.user_id, due.cards)
+        return due
 
     return await as_service(_db(request), run)
+
+
+async def load_due(
+    conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, now: dt.datetime, limit: int, cfg: dict[str, Any]
+) -> DueResponse:
+    """Cards due at `now` for `uid` (privileged connection), with the `VISIBLE` gate: a shared card linked to a
+    question only after the caller's graded attempt on it. Shared with the offline manifest (segment 18)."""
+    p = {"uid": uid, "now": now, "limit": limit}
+    rows = await _rows(
+        conn,
+        f"select {_CARD_COLUMNS} {_CARD_FROM}"
+        f" where {VISIBLE} and (r.card_id is null or r.due <= %(now)s)"
+        " order by (r.card_id is null), r.due, f.created_at, f.id limit %(limit)s",
+        p,
+    )
+    counts = await _first(
+        conn,
+        "select count(*) filter (where r.card_id is null or r.due <= %(now)s) as due,"  # noqa: S608
+        " min(r.due) filter (where r.due > %(now)s) as next_due"
+        f" from public.flashcards f left join public.card_reviews r on r.card_id = f.id and r.user_id = %(uid)s"
+        f" where {VISIBLE}",
+        p,
+    )
+    assert counts is not None
+    return DueResponse(
+        now=now,
+        cards=[_card(r, uid) for r in rows],
+        due_count=int(counts["due"]),
+        next_due=counts["next_due"],
+        scheduler=FsrsSchedulerConfig(**cfg),
+    )
 
 
 # ── Create / edit / delete (as the user: RLS enforces own + origin 'user') ──
@@ -578,6 +587,7 @@ def _replay(row: Row) -> ReviewOut:
         },
         422: {"model": ErrorResponse, "description": "Invalid request, or review_too_old"},
     },
+    dependencies=[IDEMPOTENT],
 )
 async def review_card(
     request: Request,

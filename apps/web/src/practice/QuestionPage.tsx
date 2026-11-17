@@ -1,4 +1,4 @@
-import type { BlockDetail, QuestionView } from "@naadi/shared";
+import type { AttemptOut, BlockDetail, QuestionView } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { BookOpen, Check, ChevronLeft, ChevronRight, Flag, FlaskConical, PenLine, TriangleAlert } from "lucide-react";
@@ -16,21 +16,15 @@ import { useInkSettings } from "../ink/persist/settings";
 import { useInkLayer } from "../ink/persist/useInkLayer";
 import { ReportIssueDialog } from "../learn/ReportIssueDialog";
 import { QuickNoteDialog } from "../notes/QuickNoteDialog";
+import { onAttemptApplied, submitAttempt } from "../offline/entities/attempt";
+import { replay, subscribeOutbox } from "../offline/outbox";
 import { parseInertHtml } from "../security/trustedTypes";
-import {
-  isUnreachable,
-  useBlock,
-  useBlockQuestion,
-  useFlag,
-  usePrefetchQuestion,
-  useSendAttempt,
-  useUserId,
-} from "./api";
+import { useBlock, useBlockQuestion, useFlag, usePrefetchQuestion, useSendAttempt, useUserId } from "./api";
 import { useCopy } from "./copy";
 import { percent, splitWhyNot } from "./format";
 import { isTypingTarget, keyAction } from "./keys";
 import { LabValuesSheet } from "./LabValuesSheet";
-import { enqueueAttempt, flushQueue, type QueuedAttempt, queuedFor } from "./outbox";
+import { type QueuedAttempt, queuedFor } from "./outbox";
 import { OptionRow, WhyNotRows } from "./QuestionParts";
 
 function Loading() {
@@ -180,16 +174,18 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
     if (n < total) prefetch(blockId, n + 1);
   }, [blockId, n, total, prefetch]);
 
-  // Answers saved while offline are sent as soon as the connection returns (and once on arrival).
+  // Answers saved on this device: the outbox replays them (online, visible again, every 30 s); this page adopts the
+  // graded answer and follows the queued one (sent, or parked as "Not counted: time was up").
   useEffect(() => {
     if (!userId) return;
-    const run = () =>
-      void flushQueue(userId, attempts.send, isUnreachable, (b, out) => attempts.applied(b, out)).then((sent) => {
-        if (sent > 0) setPending(queuedFor(userId, blockId, qid) ?? null);
-      });
-    run();
-    window.addEventListener("online", run);
-    return () => window.removeEventListener("online", run);
+    const offApplied = onAttemptApplied((b, out) => attempts.applied(b, out));
+    const offQueue = subscribeOutbox(() => setPending(queuedFor(userId, blockId, qid) ?? null));
+    setPending(queuedFor(userId, blockId, qid) ?? null);
+    void replay();
+    return () => {
+      offApplied();
+      offQueue();
+    };
   }, [userId, blockId, qid, attempts]);
 
   const submit = useCallback(async () => {
@@ -203,18 +199,17 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
       flagged: view.flagged,
     };
     try {
-      attempts.applied(blockId, await attempts.send(blockId, body));
-    } catch (err) {
-      if (isUnreachable(err)) {
-        enqueueAttempt(userId, blockId, body);
-        setPending({ blockId, body, queuedAt: Date.now() });
-      } else {
-        setError(err instanceof Error ? err.message : String(err));
-      }
+      // Every answer goes through the outbox (segment 18): sent now when online, kept and replayed when not.
+      const { outcome } = await submitAttempt(userId, blockId, body);
+      if (outcome?.kind === "ok") attempts.applied(blockId, outcome.server as AttemptOut);
+      else if (outcome?.kind === "failed") {
+        if (outcome.code === "time_up") setPending(queuedFor(userId, blockId, qid) ?? null);
+        else setError(t("practice.generic_error"));
+      } else setPending(queuedFor(userId, blockId, qid) ?? { blockId, body, queuedAt: Date.now(), failed: null });
     } finally {
       setSubmitting(false);
     }
-  }, [attempts, blockId, choice, locked, qid, submitting, userId, view.flagged]);
+  }, [attempts, blockId, choice, locked, qid, submitting, userId, view.flagged, t]);
 
   const toggleFlag = useCallback(() => {
     flag.mutate({ questionId: qid, flagged: !view.flagged });
@@ -370,9 +365,20 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
       {inkOn ? null : <p className="m-0 hidden text-text-3 text-ui-sm laptop:block">{t("practice.keys_hint")}</p>}
 
       {pending && !answered ? (
-        <p role="status" className="m-0 rounded-block border border-line-control px-4 py-3 text-text-2">
-          {t("practice.offline_saved")}
-        </p>
+        pending.failed === "time_up" ? (
+          <p
+            role="status"
+            className="m-0 flex items-center gap-2 rounded-block border border-amber px-4 py-3 text-amber"
+          >
+            <TriangleAlert aria-hidden="true" size={18} />
+            {t("sync.not_counted_time_up")}
+          </p>
+        ) : (
+          <p role="status" className="m-0 rounded-block border border-line-control px-4 py-3 text-text-2">
+            {t("practice.offline_saved")}
+            {tutor ? <span className="block pt-1 text-text-3">{t("offline.explanation_after_reconnect")}</span> : null}
+          </p>
+        )
       ) : null}
       {error ? (
         <p role="alert" className="m-0 rounded-block border border-amber px-4 py-3 text-amber">

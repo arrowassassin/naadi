@@ -7,7 +7,9 @@ import type { RequestResult } from "../client";
 import { client } from "../client.gen";
 import type { DeleteNoteData, DeleteNoteErrors, DeleteNoteResponses } from "../types.gen";
 import type { Options } from "./_Options";
+import { zDeleteNoteHeaders } from "../zod/zDeleteNoteHeaders";
 import { zDeleteNotePath } from "../zod/zDeleteNotePath";
+import { zDeleteNoteQuery } from "../zod/zDeleteNoteQuery";
 import { zDeleteNoteResponse } from "../zod/zDeleteNoteResponse";
 
 /**
@@ -21,8 +23,9 @@ export const deleteNote = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: z.never().optional(),
+          headers: zDeleteNoteHeaders.optional(),
           path: zDeleteNotePath,
-          query: z.never().optional(),
+          query: zDeleteNoteQuery.optional(),
         })
         .parseAsync(data),
     responseValidator: async (data) => await zDeleteNoteResponse.parseAsync(data),

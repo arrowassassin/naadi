@@ -88,39 +88,47 @@ export function errorKey(err: unknown): string {
 
 // ── Sending one queued op ──
 
-async function sendOp(userId: string, op: NbOp): Promise<void> {
+async function sendOp(userId: string, op: NbOp, opId?: string): Promise<void> {
+  // The outbox op id as `Idempotency-Key` (segment 18): a replay after a lost answer returns the first answer.
+  const key = (headers: Record<string, string>) => (opId ? { ...headers, "idempotency-key": opId } : headers);
   switch (op.kind) {
     case "createNotebook":
-      await authed<NotebookDetail>((headers) => createNotebook({ body: op.body, headers }));
+      await authed<NotebookDetail>((headers) => createNotebook({ body: op.body, headers: key(headers) }));
       return;
     case "patchNotebook":
       await authed<NotebookDetail>((headers) =>
-        updateNotebook({ body: op.patch, headers, path: { notebook_id: op.id } }),
+        updateNotebook({ body: op.patch, headers: key(headers), path: { notebook_id: op.id } }),
       );
       return;
     case "deleteNotebook":
-      await authed<unknown>((headers) => deleteNotebook({ headers, path: { notebook_id: op.id } }));
+      await authed<unknown>((headers) => deleteNotebook({ headers: key(headers), path: { notebook_id: op.id } }));
       return;
     case "createPage": {
       const body = op.body.body
         ? { ...op.body, body: await prepareSceneForUpload(userId, op.id, op.body.body) }
         : op.body;
-      await authed<NoteOut>((headers) => createNotebookPage({ body, headers, path: { notebook_id: op.notebookId } }));
+      await authed<NoteOut>((headers) =>
+        createNotebookPage({ body, headers: key(headers), path: { notebook_id: op.notebookId } }),
+      );
       return;
     }
     case "patchNote": {
       const patch = op.patch.body
         ? { ...op.patch, body: await prepareSceneForUpload(userId, op.id, op.patch.body) }
         : op.patch;
-      await authed<NoteOut>((headers) => updateNote({ body: patch, headers, path: { note_id: op.id } }));
+      await authed<NoteOut>((headers) => updateNote({ body: patch, headers: key(headers), path: { note_id: op.id } }));
       return;
     }
     case "deleteNote":
-      await authed<unknown>((headers) => deleteNote({ headers, path: { note_id: op.id } }));
+      await authed<unknown>((headers) => deleteNote({ headers: key(headers), path: { note_id: op.id } }));
       return;
     case "reorder":
       await authed<NotebookDetail>((headers) =>
-        reorderNotebookPages({ body: { page_ids: op.pageIds }, headers, path: { notebook_id: op.notebookId } }),
+        reorderNotebookPages({
+          body: { page_ids: op.pageIds },
+          headers: key(headers),
+          path: { notebook_id: op.notebookId },
+        }),
       );
       return;
   }
@@ -154,7 +162,7 @@ export class NotebookSync {
   constructor(
     readonly userId: string,
     readonly store: OutboxStore,
-    private readonly send: (op: NbOp) => Promise<void>,
+    private readonly send: (op: NbOp, opId?: string) => Promise<void>,
     private readonly onSettled: (ops: NbOp[]) => void,
     /** Called the moment the server confirmed an op, before it leaves the queue (no flicker in between). */
     private readonly onSent: (op: NbOp) => void = () => undefined,
@@ -213,9 +221,9 @@ export class NotebookSync {
         this.state = "saving";
         this.emit();
         let refused: string | null = null;
-        const result = await flushOutbox(this.store, this.inflight, async (op) => {
+        const result = await flushOutbox(this.store, this.inflight, async (op, opId) => {
           try {
-            await this.send(op);
+            await this.send(op, opId);
             this.onSent(op);
             return "sent";
           } catch (err) {
@@ -314,7 +322,7 @@ export function notebookSync(userId: string, qc: QueryClient): NotebookSync {
     s = new NotebookSync(
       userId,
       dexieOutbox(userId),
-      (op) => sendOp(userId, op),
+      (op, opId) => sendOp(userId, op, opId),
       (ops) => invalidateFor(qc, userId, ops),
       (op) => applyToCache(qc, userId, op),
     );

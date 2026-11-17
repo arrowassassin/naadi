@@ -10,6 +10,7 @@ import * as z from "zod";
  * Creates the notebook with its first page.
  */
 export const zNotebookCreate = z.object({
+  client_updated_at_ms: z.int().gte(0).lte(9999999999999).nullish(),
   cover: z.enum(["lime", "violet", "amber", "paper", "surface-2", "ink-violet"]).nullish(),
   first_page_id: z.uuid().nullish(),
   id: z.uuid().nullish(),

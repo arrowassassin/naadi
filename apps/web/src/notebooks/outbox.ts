@@ -9,7 +9,19 @@
  * database `naadi-notebooks`; segment 18 folds it into the general outbox) so the rules are unit-tested alone.
  */
 import type { NotebookCreate, NotebookPatch, NotePatch, PageCreate } from "@naadi/shared";
-import { Dexie, type EntityTable } from "dexie";
+import { Dexie } from "dexie";
+import { getCached, putCached } from "../offline/cache";
+import { resetNaadiDbForTests } from "../offline/db";
+import {
+  loadOutbox,
+  nextSeq,
+  outboxPersists,
+  outboxRows,
+  putEntityRow,
+  removeEntityRow,
+  resetOutboxForTests,
+  rowsFor,
+} from "../offline/outbox";
 
 export type NbOp =
   | { kind: "createNotebook"; id: string; body: NotebookCreate & { id: string; first_page_id: string } }
@@ -24,6 +36,8 @@ export interface QueuedOp {
   seq: number;
   op: NbOp;
   queuedAt: number;
+  /** The outbox op id, sent as `Idempotency-Key`. */
+  opId?: string;
 }
 
 /** The notebook an op belongs to (for reads that overlay the queue on one notebook). */
@@ -126,37 +140,24 @@ export function enqueue(
 
 // ── Storage ──
 
-export interface OutboxRow extends QueuedOp {
-  user: string;
+/**
+ * Since segment 18 the queue lives in the device outbox (IndexedDB `naadi-v1`, entity `notebook`, one row per
+ * queued op, FIFO by seq) and the snapshots in its `notebooks` cache table. An op the server refuses for good is
+ * parked there (visible in the sync sheet with Retry / Discard), never dropped silently.
+ */
+const NB = "notebook" as const;
+
+function queued(user: string): QueuedOp[] {
+  return outboxRows(user, NB)
+    .filter((r) => r.state !== "failed")
+    .map((r) => ({ seq: r.seq, op: (r.body as { op: NbOp }).op, queuedAt: r.queued_at, opId: r.op_id }));
 }
 
-interface SnapshotRow {
-  user: string;
-  key: string;
-  value: unknown;
-  savedAt: number;
-}
-
-type NbDb = Dexie & {
-  nbOutbox: EntityTable<OutboxRow, "seq">;
-  nbSnapshots: EntityTable<SnapshotRow, "key">;
-};
-
-let db: NbDb | null = null;
-
-export function notebooksDb(): NbDb {
-  if (!db) {
-    const d = new Dexie("naadi-notebooks") as NbDb;
-    d.version(1).stores({ nbOutbox: "seq, user", nbSnapshots: "[user+key], user" });
-    db = d;
-  }
-  return db;
-}
-
-/** Test hook: drop the cached handle (fake-indexeddb is reset between tests). */
+/** Test hook: forget what is in memory (as a reload would); IndexedDB keeps its rows. */
 export function resetNotebooksDbForTests(): void {
-  db?.close();
-  db = null;
+  resetOutboxForTests();
+  resetNaadiDbForTests();
+  migrated.clear();
 }
 
 export interface OutboxStore {
@@ -164,49 +165,87 @@ export interface OutboxStore {
   /** Apply `op` with the coalescing rules, atomically. */
   add(op: NbOp, inflight: ReadonlySet<number>): Promise<void>;
   remove(seq: number): Promise<void>;
+  /** Keep an op the server refused for good, visible, out of the queue's way. */
+  park?(seq: number, code: string): Promise<void>;
   readSnapshot<T>(key: string): Promise<T | undefined>;
   writeSnapshot(key: string, value: unknown): Promise<void>;
 }
 
+const migrated = new Set<string>();
+
 export function dexieOutbox(user: string): OutboxStore {
-  const d = () => notebooksDb();
+  let chain: Promise<unknown> = Promise.resolve();
+  const serial = <T>(fn: () => Promise<T>): Promise<T> => {
+    const p = chain.then(fn, fn);
+    chain = p.catch(() => undefined);
+    return p;
+  };
+  const ready = async () => {
+    await loadOutbox(user);
+    if (!migrated.has(user)) {
+      migrated.add(user);
+      await migrateLegacyNotebooks(user);
+    }
+  };
   return {
     async read() {
-      const rows = await d().nbOutbox.where("user").equals(user).sortBy("seq");
-      return rows.map(({ seq, op, queuedAt }) => ({ seq, op, queuedAt }));
+      await ready();
+      return queued(user);
     },
-    async add(op, inflight) {
-      const t = d().nbOutbox;
-      await d().transaction("rw", t, async () => {
-        const rows = await t.where("user").equals(user).sortBy("seq");
-        const last = await t.orderBy("seq").last();
-        const next = enqueue(rows, op, (last?.seq ?? 0) + 1, inflight);
+    add(op, inflight) {
+      return serial(async () => {
+        await ready();
+        const rows = queued(user);
+        const next = enqueue(rows, op, nextSeq(), inflight);
         const keep = new Set(next.map((q) => q.seq));
-        const drop = rows.filter((r) => !keep.has(r.seq)).map((r) => r.seq);
-        if (drop.length) await t.bulkDelete(drop);
-        await t.bulkPut(next.map((q) => ({ ...q, user })));
+        for (const r of rows) if (!keep.has(r.seq)) await removeEntityRow(user, NB, String(r.seq));
+        for (const q of next)
+          await putEntityRow(user, NB, String(q.seq), { op: q.op }, { seq: q.seq, group: opNotebook(q.op) });
       });
     },
     async remove(seq) {
-      await d().nbOutbox.delete(seq);
+      await removeEntityRow(user, NB, String(seq));
+    },
+    async park(seq, code) {
+      const row = rowsFor(user, NB, String(seq))[0];
+      if (row) await putEntityRow(user, NB, row.key, row.body, { seq, state: "failed", last_error: code });
     },
     async readSnapshot<T>(key: string) {
-      const row = await d().nbSnapshots.get([user, key] as unknown as string);
-      return row?.value as T | undefined;
+      return getCached<T>(user, "notebooks", key);
     },
     async writeSnapshot(key, value) {
-      await d().nbSnapshots.put({ user, key, value, savedAt: Date.now() });
+      await putCached(user, "notebooks", key, value);
     },
   };
 }
 
+/** One-time move of the segment-13 `naadi-notebooks` queue into the outbox; the old database is then deleted. */
+export async function migrateLegacyNotebooks(user: string): Promise<number> {
+  if (!(await outboxPersists())) return 0;
+  try {
+    if (!(await Dexie.exists("naadi-notebooks"))) return 0;
+    const old = new Dexie("naadi-notebooks");
+    old.version(1).stores({ nbOutbox: "seq, user", nbSnapshots: "[user+key], user" });
+    const rows = (await old.table("nbOutbox").where("user").equals(user).sortBy("seq")) as (QueuedOp & {
+      user: string;
+    })[];
+    const base = nextSeq();
+    for (const [i, r] of rows.entries())
+      await putEntityRow(user, NB, String(base + i), { op: r.op }, { seq: base + i, group: opNotebook(r.op) });
+    await old.table("nbOutbox").where("user").equals(user).delete();
+    await old.table("nbSnapshots").where("user").equals(user).delete();
+    const left = (await old.table("nbOutbox").count()) + (await old.table("nbSnapshots").count());
+    old.close();
+    if (left === 0) await Dexie.delete("naadi-notebooks");
+    return rows.length;
+  } catch {
+    return 0;
+  }
+}
+
 /** On sign-out: forget the device copies (the server has them). Unsent edits stay for their owner. */
 export async function clearNotebookSnapshots(): Promise<void> {
-  try {
-    await notebooksDb().nbSnapshots.clear();
-  } catch {
-    // IndexedDB unavailable: nothing was stored
-  }
+  // The cache tables are cleared per user by the offline layer (offline/cache.ts clearCacheFor) on sign-out.
 }
 
 // ── Replay ──
@@ -221,7 +260,7 @@ export type SendOutcome = "sent" | "dropped" | "retry";
 export async function flushOutbox(
   store: OutboxStore,
   inflight: Set<number>,
-  send: (op: NbOp) => Promise<SendOutcome>,
+  send: (op: NbOp, opId?: string) => Promise<SendOutcome>,
 ): Promise<{ done: NbOp[]; dropped: NbOp[]; stopped: boolean }> {
   const done: NbOp[] = [];
   const dropped: NbOp[] = [];
@@ -231,14 +270,15 @@ export async function flushOutbox(
     inflight.add(head.seq);
     let outcome: SendOutcome;
     try {
-      outcome = await send(head.op);
+      outcome = await send(head.op, head.opId);
     } catch {
       outcome = "retry";
     } finally {
       inflight.delete(head.seq);
     }
     if (outcome === "retry") return { done, dropped, stopped: true };
-    await store.remove(head.seq);
+    if (outcome === "dropped" && store.park) await store.park(head.seq, "notebook_refused");
+    else await store.remove(head.seq);
     (outcome === "sent" ? done : dropped).push(head.op);
   }
 }

@@ -57,9 +57,10 @@ USER_TABLES = (
     "plan_rebalances",
     "calendar_feeds",
     "push_subscriptions",
+    "sync_tombstones",
 )
 # Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017),
-# export jobs (0024), knowledge-base entries (S15).
+# export jobs (0024), knowledge-base entries (S15), sync tombstones (0038).
 # Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017).
 # Pathway progress, costs and the vault (0029) are the API's too: last-writer-wins and the path are checked there.
 SELECT_ONLY_TABLES = (
@@ -72,7 +73,10 @@ SELECT_ONLY_TABLES = (
     "public.user_pathway_tasks",
     "public.costs",
     "public.vault_documents",
+    "public.sync_tombstones",
 )
+# Backend-only: no grant to anon or authenticated at all (stored idempotent responses, 0038).
+BACKEND_ONLY_TABLES = ("public.sync_ops",)
 # Card scheduling: only the API writes it (the client may only SELECT its own rows).
 API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
@@ -102,6 +106,7 @@ CLIENT_CLOSED_TABLES = (
     "ingest_extracts",
     "pathway_task_checks",
     "generation_state",
+    "sync_ops",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -172,8 +177,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "58 Naadi tables present",
-            "select count(*) = 58 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "60 Naadi tables present",
+            "select count(*) = 60 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),
@@ -227,6 +232,21 @@ def checks(head: str) -> list[Check]:
             " and not has_table_privilege('authenticated', 'public.generation_state', 'select,insert,update,delete')"
             " and not has_table_privilege('anon', 'public.generation_state', 'select,insert,update,delete')"
             " as ok, '' as detail",
+        ),
+        Check(
+            "sync_ops is backend-only (RLS forced, no anon/authenticated privilege)",
+            "select bool_and(c.relrowsecurity and c.relforcerowsecurity"
+            " and not has_table_privilege('anon', c.oid, 'select,insert,update,delete,truncate')"
+            " and not has_table_privilege('authenticated', c.oid, 'select,insert,update,delete,truncate'))"
+            " and count(*) = 1 as ok, count(*)::text as detail"
+            " from pg_class c where c.oid = any(array(select to_regclass(t)"
+            f" from unnest({_array(BACKEND_ONLY_TABLES)}) t))",
+        ),
+        Check(
+            "offline sync stamps present (notes, notebooks client_updated_at_ms)",
+            "select count(*) = 2 as ok, count(*)::text as detail from information_schema.columns"
+            " where table_schema = 'public' and column_name = 'client_updated_at_ms'"
+            " and table_name in ('notes', 'notebooks')",
         ),
         Check(
             "handwriting OCR columns present (ocr_status, ocr_hash, ocr_at) and notes.body_text",

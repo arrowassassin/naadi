@@ -2,7 +2,6 @@ import {
   getPlanWeek,
   type ItemPatchOut,
   type PlanWeekOut,
-  patchPlanItem,
   type RebalanceOut,
   startPlanRebalance,
   type WeekItemOut,
@@ -14,9 +13,11 @@ import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 import { readOffline, writeOffline } from "../learn/offlineCache";
+import { submitPlanItem } from "../offline/entities/planItem";
+import { replay } from "../offline/outbox";
 import { isUnreachable, useUserId } from "../practice/api";
 import { todayKey } from "../today/api";
-import { enqueueStatus, flushQueue, type ItemStatus, type SendOutcome } from "./outbox";
+import type { ItemStatus } from "./outbox";
 import { awaitConfirm, type DecideResult, type Decision, decide, type Runtime } from "./runs";
 
 export const weekKey = (userId: string | null, start: string | undefined) =>
@@ -76,12 +77,6 @@ function nextOpen(week: WeekOut): WeekItemOut | null {
   return today?.items.find((i) => i.status === "planned" || i.status === "now" || i.status === "behind") ?? null;
 }
 
-async function sendStatus(id: string, status: ItemStatus, stamp: number): Promise<ItemPatchOut> {
-  return authed<ItemPatchOut>((headers) =>
-    patchPlanItem({ headers, path: { item_id: id }, body: { status, client_updated_at_ms: stamp } }),
-  );
-}
-
 /**
  * Mark an item done / skipped / planned. The screen updates at once; offline the change is queued with its time and
  * sent when the connection is back (last-writer-wins per item on the server).
@@ -92,18 +87,14 @@ export function useSetItemStatus() {
   return useMutation({
     // Offline the change is queued with its time (below) instead of waiting for the browser to say it is online.
     networkMode: "always",
+    // Every change goes through the outbox (segment 18): sent now when online, kept and replayed when not.
     mutationFn: async (v: { id: string; status: ItemStatus }) => {
-      const stamp = Date.now();
-      try {
-        const out = await sendStatus(v.id, v.status, stamp);
-        return { ...out, queued: false };
-      } catch (err) {
-        if (isUnreachable(err) && userId) {
-          enqueueStatus(userId, { id: v.id, status: v.status, client_updated_at_ms: stamp });
-          return { applied: true, item: null, queued: true };
-        }
-        throw err;
-      }
+      if (!userId) throw new ApiError("", 401, "unauthorized", null);
+      const { outcome } = await submitPlanItem(userId, { id: v.id, status: v.status });
+      if (outcome?.kind === "ok" || outcome?.kind === "conflict")
+        return { ...(outcome.server as ItemPatchOut), queued: false };
+      if (outcome?.kind === "failed") throw new ApiError(outcome.code, 422, outcome.code, null);
+      return { applied: true, item: null, queued: true };
     },
     onMutate: async (v) => {
       await qc.cancelQueries({ queryKey: ["plan-week", userId] });
@@ -127,28 +118,11 @@ export function useSetItemStatus() {
   });
 }
 
-/** Replays queued status changes when the page opens and whenever the connection returns. */
+/** Kept for the page's call: the outbox replays on its own (online, visible again, every 30 s). */
 export function useFlushPlanOutbox(online: boolean) {
-  const userId = useUserId();
-  const qc = useQueryClient();
   useEffect(() => {
-    if (!online || !userId) return;
-    let cancelled = false;
-    const send = async (q: { id: string; status: ItemStatus; client_updated_at_ms: number }): Promise<SendOutcome> => {
-      try {
-        await sendStatus(q.id, q.status, q.client_updated_at_ms);
-        return "sent";
-      } catch (err) {
-        return isUnreachable(err) ? "unreachable" : "refused";
-      }
-    };
-    void flushQueue(userId, send).then((n) => {
-      if (n > 0 && !cancelled) void qc.invalidateQueries({ queryKey: ["plan-week", userId] });
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [online, userId, qc]);
+    if (online) void replay();
+  }, [online]);
 }
 
 /** The LangGraph SDK is loaded when a rebalance is started or answered, never in the first load. */

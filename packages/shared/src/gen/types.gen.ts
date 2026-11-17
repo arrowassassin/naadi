@@ -5525,6 +5525,10 @@ export type NoteCreate = {
    */
   canvas?: "paper" | "whiteboard";
   /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms?: number | null;
+  /**
    * Highlight Color
    */
   highlight_color?: "lime" | "violet" | "amber" | null;
@@ -5582,6 +5586,12 @@ export type NoteOut = {
    */
   anchor_type: "section" | "question" | "video" | "pdf" | "free" | null;
   /**
+   * Applied
+   *
+   * Writes only: false when this request changed nothing because the stored row (returned) is as new or newer (last writer wins), or the create was a replay
+   */
+  applied?: boolean;
+  /**
    * Body
    *
    * TipTap JSON (canvas paper) or an Excalidraw scene (canvas whiteboard); null in lists for whiteboards (`body_omitted`)
@@ -5605,6 +5615,12 @@ export type NoteOut = {
    * Canvas
    */
   canvas: "paper" | "whiteboard";
+  /**
+   * Client Updated At Ms
+   *
+   * Offline sync: the stamp of the write that won (null: written before stamps)
+   */
+  client_updated_at_ms?: number | null;
   /**
    * Created At
    */
@@ -5689,6 +5705,10 @@ export type NotePatch = {
    * Canvas
    */
   canvas?: "paper" | "whiteboard" | null;
+  /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms?: number | null;
   /**
    * Highlight Color
    */
@@ -5789,6 +5809,10 @@ export type NoteSource = {
  */
 export type NotebookCreate = {
   /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms?: number | null;
+  /**
    * Cover
    */
   cover?: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
@@ -5818,6 +5842,18 @@ export type NotebookCreate = {
  * NotebookDetail
  */
 export type NotebookDetail = {
+  /**
+   * Applied
+   *
+   * Writes only: false when this request changed nothing because the stored notebook (returned) is as new or newer (last writer wins), or the create was a replay
+   */
+  applied?: boolean;
+  /**
+   * Client Updated At Ms
+   *
+   * Offline sync: the stamp of the write that won (null: written before stamps)
+   */
+  client_updated_at_ms?: number | null;
   /**
    * Cover
    */
@@ -5875,6 +5911,18 @@ export type NotebookList = {
  */
 export type NotebookOut = {
   /**
+   * Applied
+   *
+   * Writes only: false when this request changed nothing because the stored notebook (returned) is as new or newer (last writer wins), or the create was a replay
+   */
+  applied?: boolean;
+  /**
+   * Client Updated At Ms
+   *
+   * Offline sync: the stamp of the write that won (null: written before stamps)
+   */
+  client_updated_at_ms?: number | null;
+  /**
    * Cover
    */
   cover: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
@@ -5915,6 +5963,10 @@ export type NotebookOut = {
  */
 export type NotebookPatch = {
   /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms?: number | null;
+  /**
    * Cover
    */
   cover?: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
@@ -5940,6 +5992,234 @@ export type OfficialLink = {
    * Url
    */
   url: string;
+};
+
+/**
+ * OfflineDay
+ */
+export type OfflineDay = {
+  /**
+   * Date
+   */
+  date: string;
+  /**
+   * Items
+   *
+   * Every plan item on this date (generator, user, assistant)
+   */
+  items: Array<PlanItemOut>;
+  /**
+   * The active plan's day on this date, if any
+   */
+  plan_day: PlanDayMeta | null;
+};
+
+/**
+ * OfflineFigure
+ */
+export type OfflineFigure = {
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Url
+   *
+   * Public URL in the content-public bucket
+   */
+  url: string;
+};
+
+/**
+ * OfflineInkLayer
+ */
+export type OfflineInkLayer = {
+  layer: InkLayerOut;
+  /**
+   * Surface Id
+   */
+  surface_id: string;
+  /**
+   * Surface Type
+   */
+  surface_type: "section" | "question" | "notebook_page";
+};
+
+/**
+ * OfflinePlan
+ */
+export type OfflinePlan = {
+  /**
+   * Days
+   *
+   * The 7 dates from `start`, in order
+   */
+  days: Array<OfflineDay>;
+  /**
+   * Plan Id
+   *
+   * The active plan; null when the student has none
+   */
+  plan_id: string | null;
+};
+
+/**
+ * OfflineQuestion
+ */
+export type OfflineQuestion = {
+  /**
+   * Block Id
+   */
+  block_id: string;
+  /**
+   * N
+   *
+   * 1-based position in the block
+   */
+  n: number;
+  /**
+   * As GET /api/blocks/{block_id}/questions/{n}: an explanation only after a graded tutor answer, and none at all while a timed/exam session is active
+   */
+  view: QuestionView;
+};
+
+/**
+ * OfflineVideo
+ */
+export type OfflineVideo = {
+  /**
+   * Height
+   *
+   * Pixels; never above 1080
+   */
+  height: number;
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Url
+   */
+  url: string;
+};
+
+/**
+ * OfflineWeek
+ */
+export type OfflineWeek = {
+  /**
+   * Blocks
+   *
+   * The student's unfinished tutor blocks (newest first), as GET /api/blocks/{id}
+   */
+  blocks: Array<BlockDetail>;
+  /**
+   * Bytes
+   *
+   * Sum of the parts' bytes
+   */
+  bytes: number;
+  /**
+   * Chapters
+   *
+   * Chapters the week's plan reads, as GET /api/chapters/{id}
+   */
+  chapters: Array<ChapterDetail>;
+  /**
+   * As GET /api/cards/due (attempt gate applied); `now` is `due_by`
+   */
+  due: DueResponse;
+  /**
+   * Due By
+   *
+   * `due` holds cards due up to the end of the week (student's time zone)
+   */
+  due_by: string;
+  /**
+   * End
+   *
+   * The last of the 7 dates (inclusive)
+   */
+  end: string;
+  /**
+   * Exam Active
+   *
+   * A timed/exam session is running: no explanation is included anywhere
+   */
+  exam_active: boolean;
+  /**
+   * Figures
+   */
+  figures: Array<OfflineFigure>;
+  /**
+   * Generated At
+   */
+  generated_at: string;
+  /**
+   * Ink
+   *
+   * The student's ink on the week's sections, questions and pages
+   */
+  ink: Array<OfflineInkLayer>;
+  /**
+   * Notebooks
+   *
+   * As GET /api/notebooks/{id}: every notebook with its pages
+   */
+  notebooks: Array<NotebookDetail>;
+  /**
+   * As GET /api/notes: notes and highlights on the week's sections and questions
+   */
+  notes: NoteList;
+  /**
+   * Parts
+   */
+  parts: Array<PartSize>;
+  /**
+   * Pathway
+   */
+  pathway: Array<PathwayTaskStatus>;
+  plan: OfflinePlan;
+  /**
+   * Positions
+   *
+   * As GET /api/reading-position, one per chapter
+   */
+  positions: Array<ChapterPositions>;
+  /**
+   * Questions
+   */
+  questions: Array<OfflineQuestion>;
+  /**
+   * Section Revisions
+   */
+  section_revisions: Array<SectionRevision>;
+  /**
+   * Server Now Ms
+   *
+   * Server clock (ms) for the device's clock offset
+   */
+  server_now_ms: number;
+  /**
+   * Skipped Media
+   */
+  skipped_media: Array<SkippedMedia>;
+  /**
+   * Start
+   */
+  start: string;
+  /**
+   * Timezone
+   *
+   * The profile's time zone the dates are in (UTC when unset)
+   */
+  timezone: string;
+  /**
+   * Videos
+   *
+   * Own videos at most 1080p; empty when there are none
+   */
+  videos: Array<OfflineVideo>;
 };
 
 /**
@@ -6116,6 +6396,10 @@ export type PageCreate = {
    */
   canvas?: "paper" | "whiteboard";
   /**
+   * Client Updated At Ms
+   */
+  client_updated_at_ms?: number | null;
+  /**
    * Id
    *
    * Client-made id: makes the create idempotent
@@ -6165,6 +6449,28 @@ export type PageRefOut = {
    * Type
    */
   type?: string | null;
+};
+
+/**
+ * PartSize
+ */
+export type PartSize = {
+  /**
+   * Bytes
+   *
+   * Length of the part's JSON in bytes (UTF-8, compact)
+   */
+  bytes: number;
+  /**
+   * Count
+   *
+   * Items in the part (chapters, figures, questions, cards, notes, layers, …)
+   */
+  count: number;
+  /**
+   * Part
+   */
+  part: "plan" | "chapters" | "figures" | "videos" | "questions" | "due" | "notes" | "notebooks" | "ink" | "pathway";
 };
 
 /**
@@ -6228,6 +6534,24 @@ export type PathwayStageOut = {
    * Total
    */
   total: number;
+};
+
+/**
+ * PathwayTaskStatus
+ */
+export type PathwayTaskStatus = {
+  /**
+   * Due
+   */
+  due: string | null;
+  /**
+   * Status
+   */
+  status: "todo" | "doing" | "done" | "na";
+  /**
+   * Task Id
+   */
+  task_id: string;
 };
 
 /**
@@ -8928,6 +9252,30 @@ export type SectionReorder = {
 };
 
 /**
+ * SectionRevision
+ */
+export type SectionRevision = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string;
+  /**
+   * Revision
+   *
+   * md5 of the section body (the ink and notes content revision)
+   */
+  revision: string;
+  /**
+   * Section Id
+   */
+  section_id: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
  * SeedRequest
  */
 export type SeedRequest = {
@@ -9027,6 +9375,22 @@ export type SingleBlockCreate = {
    * Question Id
    */
   question_id: string;
+};
+
+/**
+ * SkippedMedia
+ */
+export type SkippedMedia = {
+  /**
+   * Media Id
+   */
+  media_id: string;
+  /**
+   * Reason
+   *
+   * youtube: never cached (IFrame player only); over_1080p / size_unknown: own videos are taken only at a known height of at most 1080; no_url: not servable; not_public: a figure outside content-public (signed URLs expire); not_offline: audio, PDF or link
+   */
+  reason: "youtube" | "over_1080p" | "size_unknown" | "no_url" | "not_public" | "not_offline";
 };
 
 /**
@@ -9224,6 +9588,19 @@ export type SuggestionDecision = {
    * Decision
    */
   decision: "keep" | "discard";
+};
+
+/**
+ * SyncDeletedResponse
+ *
+ * The 409 body of an LWW endpoint: the usual error, plus `tombstone` when the code is `sync_deleted`.
+ */
+export type SyncDeletedResponse = {
+  error: ErrorBody;
+  /**
+   * Present when error.code is sync_deleted
+   */
+  tombstone?: TombstoneOut | null;
 };
 
 /**
@@ -9747,6 +10124,30 @@ export type TodayRebalance = {
    * Unplaced
    */
   unplaced: number;
+};
+
+/**
+ * TombstoneOut
+ */
+export type TombstoneOut = {
+  /**
+   * Client Updated At Ms
+   *
+   * Stamp of the delete that won
+   */
+  client_updated_at_ms: number;
+  /**
+   * Entity
+   *
+   * note, highlight, page, notebook, …
+   */
+  entity: string;
+  /**
+   * Key
+   *
+   * The deleted row's id
+   */
+  key: string;
 };
 
 /**
@@ -15332,6 +15733,14 @@ export type GetBlockResponse = GetBlockResponses[keyof GetBlockResponses];
 
 export type CreateAttemptData = {
   body: AttemptIn;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Block Id
@@ -15353,6 +15762,10 @@ export type CreateAttemptErrors = {
    * Not found or not visible
    */
   404: ErrorResponse;
+  /**
+   * Timed/exam: section_ended (time was up), finished, not_current, not_started, paused, on_break; tutor: exam_active
+   */
+  409: ErrorResponse;
   /**
    * Invalid request or a pool too small for the block
    */
@@ -15975,6 +16388,14 @@ export type UpdateCardResponse = UpdateCardResponses[keyof UpdateCardResponses];
 
 export type ReviewCardData = {
   body: ReviewIn;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Card Id
@@ -17753,6 +18174,14 @@ export type GetInkLayerResponse = GetInkLayerResponses[keyof GetInkLayerResponse
 
 export type PostInkChangesData = {
   body: InkChangesIn;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Surface Type
@@ -18058,6 +18487,14 @@ export type ListNotebooksResponse = ListNotebooksResponses[keyof ListNotebooksRe
 
 export type CreateNotebookData = {
   body: NotebookCreate;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path?: never;
   query?: never;
   url: "/api/notebooks";
@@ -18069,9 +18506,9 @@ export type CreateNotebookErrors = {
    */
   401: ErrorResponse;
   /**
-   * notebook_id_conflict or notebook_limit
+   * notebook_id_conflict or notebook_limit, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp
    */
-  409: ErrorResponse;
+  409: SyncDeletedResponse;
   /**
    * Invalid request
    */
@@ -18090,7 +18527,7 @@ export type CreateNotebookError = CreateNotebookErrors[keyof CreateNotebookError
 
 export type CreateNotebookResponses = {
   /**
-   * Replayed: the stored notebook
+   * Replayed: the stored notebook (applied true when a newer stamp updated it)
    */
   200: NotebookDetail;
   /**
@@ -18103,13 +18540,28 @@ export type CreateNotebookResponse = CreateNotebookResponses[keyof CreateNoteboo
 
 export type DeleteNotebookData = {
   body?: never;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Notebook Id
      */
     notebook_id: string;
   };
-  query?: never;
+  query?: {
+    /**
+     * Client Updated At Ms
+     *
+     * Offline sync: the device's time of the delete (ms). A stored row with a newer or equal stamp is kept and returned with 200 and applied false; otherwise the row is deleted (204) and a tombstone recorded
+     */
+    client_updated_at_ms?: number | null;
+  };
   url: "/api/notebooks/{notebook_id}";
 };
 
@@ -18139,6 +18591,10 @@ export type DeleteNotebookErrors = {
 export type DeleteNotebookError = DeleteNotebookErrors[keyof DeleteNotebookErrors];
 
 export type DeleteNotebookResponses = {
+  /**
+   * Not deleted: the stored notebook is as new or newer (applied false)
+   */
+  200: NotebookDetail;
   /**
    * Successful Response
    */
@@ -18195,6 +18651,14 @@ export type GetNotebookResponse = GetNotebookResponses[keyof GetNotebookResponse
 
 export type UpdateNotebookData = {
   body: NotebookPatch;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Notebook Id
@@ -18214,6 +18678,10 @@ export type UpdateNotebookErrors = {
    * notebook_not_found
    */
   404: ErrorResponse;
+  /**
+   * never otherwise, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp
+   */
+  409: SyncDeletedResponse;
   /**
    * Invalid request
    */
@@ -18241,6 +18709,14 @@ export type UpdateNotebookResponse = UpdateNotebookResponses[keyof UpdateNoteboo
 
 export type CreateNotebookPageData = {
   body: PageCreate;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Notebook Id
@@ -18265,9 +18741,9 @@ export type CreateNotebookPageErrors = {
    */
   404: ErrorResponse;
   /**
-   * notebook_page_limit, note_id_conflict or note_limit
+   * notebook_page_limit, note_id_conflict or note_limit, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp
    */
-  409: ErrorResponse;
+  409: SyncDeletedResponse;
   /**
    * note_body_too_large (the body is over 1 MB)
    */
@@ -18290,7 +18766,7 @@ export type CreateNotebookPageError = CreateNotebookPageErrors[keyof CreateNoteb
 
 export type CreateNotebookPageResponses = {
   /**
-   * Replayed: the stored page
+   * Replayed: the stored page (applied true when a newer stamp updated it)
    */
   200: NoteOut;
   /**
@@ -18303,6 +18779,14 @@ export type CreateNotebookPageResponse = CreateNotebookPageResponses[keyof Creat
 
 export type ReorderNotebookPagesData = {
   body: PageOrder;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Notebook Id
@@ -18431,6 +18915,14 @@ export type ListNotesResponse = ListNotesResponses[keyof ListNotesResponses];
 
 export type CreateNoteData = {
   body: NoteCreate;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path?: never;
   query?: never;
   url: "/api/notes";
@@ -18450,9 +18942,9 @@ export type CreateNoteErrors = {
    */
   404: ErrorResponse;
   /**
-   * note_id_conflict or note_limit
+   * note_id_conflict or note_limit, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp
    */
-  409: ErrorResponse;
+  409: SyncDeletedResponse;
   /**
    * note_body_too_large (the body is over 1 MB)
    */
@@ -18475,7 +18967,7 @@ export type CreateNoteError = CreateNoteErrors[keyof CreateNoteErrors];
 
 export type CreateNoteResponses = {
   /**
-   * Replayed: the stored note
+   * Replayed onto a stored note: the stored note (applied true when a newer stamp updated it)
    */
   200: NoteOut;
   /**
@@ -18488,13 +18980,28 @@ export type CreateNoteResponse = CreateNoteResponses[keyof CreateNoteResponses];
 
 export type DeleteNoteData = {
   body?: never;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Note Id
      */
     note_id: string;
   };
-  query?: never;
+  query?: {
+    /**
+     * Client Updated At Ms
+     *
+     * Offline sync: the device's time of the delete (ms). A stored row with a newer or equal stamp is kept and returned with 200 and applied false; otherwise the row is deleted (204) and a tombstone recorded
+     */
+    client_updated_at_ms?: number | null;
+  };
   url: "/api/notes/{note_id}";
 };
 
@@ -18524,6 +19031,10 @@ export type DeleteNoteErrors = {
 export type DeleteNoteError = DeleteNoteErrors[keyof DeleteNoteErrors];
 
 export type DeleteNoteResponses = {
+  /**
+   * Not deleted: the stored note is as new or newer (applied false)
+   */
+  200: NoteOut;
   /**
    * Successful Response
    */
@@ -18580,6 +19091,14 @@ export type GetNoteResponse = GetNoteResponses[keyof GetNoteResponses];
 
 export type UpdateNoteData = {
   body: NotePatch;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Note Id
@@ -18604,9 +19123,9 @@ export type UpdateNoteErrors = {
    */
   404: ErrorResponse;
   /**
-   * note_conflict (if_updated_at did not match) or note_section_has_note
+   * note_conflict (if_updated_at did not match), note_section_has_note, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp
    */
-  409: ErrorResponse;
+  409: SyncDeletedResponse;
   /**
    * note_body_too_large (the body is over 1 MB)
    */
@@ -18635,6 +19154,50 @@ export type UpdateNoteResponses = {
 };
 
 export type UpdateNoteResponse = UpdateNoteResponses[keyof UpdateNoteResponses];
+
+export type GetOfflineWeekData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Start
+     *
+     * First day (YYYY-MM-DD); default today in the profile's time zone
+     */
+    start?: string | null;
+  };
+  url: "/api/offline/week";
+};
+
+export type GetOfflineWeekErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * start is not a date within a year of today
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetOfflineWeekError = GetOfflineWeekErrors[keyof GetOfflineWeekErrors];
+
+export type GetOfflineWeekResponses = {
+  /**
+   * Successful Response
+   */
+  200: OfflineWeek;
+};
+
+export type GetOfflineWeekResponse = GetOfflineWeekResponses[keyof GetOfflineWeekResponses];
 
 export type GetOnboardingData = {
   body?: never;
@@ -19087,6 +19650,14 @@ export type PatchPlanItemResponse = PatchPlanItemResponses[keyof PatchPlanItemRe
 
 export type SetPlanItemStatusData = {
   body: ItemStatusIn;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path: {
     /**
      * Item Id
@@ -19620,6 +20191,14 @@ export type GetReadingPositionResponse = GetReadingPositionResponses[keyof GetRe
 
 export type PutReadingPositionData = {
   body: ReadingPositionIn;
+  headers?: {
+    /**
+     * Idempotency-Key
+     *
+     * Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours
+     */
+    "Idempotency-Key"?: string | null;
+  };
   path?: never;
   query?: never;
   url: "/api/reading-position";

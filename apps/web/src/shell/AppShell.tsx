@@ -1,5 +1,5 @@
 import type { NavItem } from "@naadi/shared";
-import { cx, ErrorState, OfflineBanner, Skeleton } from "@naadi/ui";
+import { cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, Outlet, useRouter, useRouterState } from "@tanstack/react-router";
 import { Search, UserRound, X } from "lucide-react";
 import { type RefObject, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
@@ -11,6 +11,8 @@ import { useUiText } from "../copy/useUiText";
 import { useActiveExam } from "../exam/api";
 import { ExamActiveBanner, ExamActiveGate, examGates, onExamRoute } from "../exam/ExamActive";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { SyncIndicator } from "../offline/SyncStatus";
+import { UpdatePrompt } from "../offline/UpdatePrompt";
 import { useSearchCopy } from "../search/copy";
 import { useSearchShortcut, useSuppressSearchShortcut } from "../search/shortcut";
 import { setShellBottomSlot, usePenActive } from "./chrome";
@@ -332,11 +334,13 @@ export function AppShell() {
       </header>
       <div aria-hidden="true" className="h-[env(safe-area-inset-top)] tablet:hidden" />
 
-      {offline ? (
-        <div className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3">
-          <OfflineBanner message={t("shell.offline")} />
-        </div>
-      ) : null}
+      {/* Sync state (segment 18): offline with what will sync, syncing, saved, or what needs attention. */}
+      <div className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3 empty:hidden has-[>[hidden]]:hidden">
+        <SyncIndicator offline={offline} />
+      </div>
+      <div className="mx-auto w-full max-w-(--content-max) px-(--gutter) pt-3 empty:hidden">
+        <UpdatePrompt hidden={active !== null} />
+      </div>
 
       {/* The window scrolls; nothing here sets touch-action, transform or filter on main or its ancestors
           (pen surfaces depend on it). Children are centred at 1320 px unless they opt out with data-bleed. */}

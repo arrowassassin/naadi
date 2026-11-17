@@ -8,10 +8,11 @@ import { client } from "../client.gen";
 import type { PutReadingPositionData, PutReadingPositionErrors, PutReadingPositionResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zPutReadingPositionBody } from "../zod/zPutReadingPositionBody";
+import { zPutReadingPositionHeaders } from "../zod/zPutReadingPositionHeaders";
 import { zPutReadingPositionResponse } from "../zod/zPutReadingPositionResponse";
 
 /**
- * Save where the caller is in a section (last-writer-wins by the device's timestamp)
+ * Save where the caller is in a section (last-writer-wins by the device's timestamp; a tie keeps the stored position)
  */
 export const putReadingPosition = <ThrowOnError extends boolean = false>(
   options: Options<PutReadingPositionData, ThrowOnError>,
@@ -21,6 +22,7 @@ export const putReadingPosition = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zPutReadingPositionBody,
+          headers: zPutReadingPositionHeaders.optional(),
           path: z.never().optional(),
           query: z.never().optional(),
         })

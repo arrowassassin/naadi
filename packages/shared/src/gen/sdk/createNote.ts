@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { CreateNoteData, CreateNoteErrors, CreateNoteResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zCreateNoteBody } from "../zod/zCreateNoteBody";
+import { zCreateNoteHeaders } from "../zod/zCreateNoteHeaders";
 import { zCreateNoteResponse } from "../zod/zCreateNoteResponse";
 
 /**
@@ -21,6 +22,7 @@ export const createNote = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zCreateNoteBody,
+          headers: zCreateNoteHeaders.optional(),
           path: z.never().optional(),
           query: z.never().optional(),
         })

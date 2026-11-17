@@ -1,35 +1,28 @@
 /**
- * The last good course map and chapters per user, in the Cache Storage API (chapters are hundreds of KB, too
- * big for localStorage). Used only when the network fails, so an offline reload still shows what was read.
- * Keys are per user; everything is deleted on sign-out or a user change. The full "download this week"
- * offline mode (Dexie, outbox) is segment 18.
+ * The last good copy of what a screen read online (course map, chapters, a question view, the due list, notes),
+ * per user, for an offline reload. Since segment 18 it lives in IndexedDB (`naadi-v1.reads`, Dexie) with the rest
+ * of the offline data; the service worker caches no API response. Used only when the network fails, so a stale
+ * copy never hides a fresh one. Every value passes the leak guard (no answer or explanation before an attempt).
+ * Everything is deleted on sign-out or a user change.
  */
 import { useSyncExternalStore } from "react";
 import { onAuthChange } from "../auth/session";
+import { naadiDb, pk } from "../offline/db";
+import { stripHidden } from "../offline/guard";
 
-const CACHE = "naadi-reader-v1";
-const BASE = "https://naadi-reader.invalid";
+const id = (kind: string, key: string) => `${kind}\u0000${key}`;
 
-function available(): boolean {
-  return typeof caches !== "undefined" && typeof caches.open === "function";
-}
-
-function keyFor(userId: string, kind: string, id: string): string {
-  return `${BASE}/${encodeURIComponent(userId)}/${kind}/${encodeURIComponent(id)}`;
-}
-
-export async function readOffline<T>(userId: string, kind: string, id: string): Promise<T | undefined> {
-  if (!available()) return undefined;
+export async function readOffline<T>(userId: string, kind: string, key: string): Promise<T | undefined> {
   try {
-    const res = await (await caches.open(CACHE)).match(keyFor(userId, kind, id));
-    return res ? ((await res.json()) as T) : undefined;
+    const row = await naadiDb().reads.get(pk(userId, id(kind, key)));
+    return row ? (row.data as T) : undefined;
   } catch {
     return undefined;
   }
 }
 
-// Cache writes still in flight. The reader and the course map count them in their idle signal, so a test
-// (or a prefetching router) can tell when nothing would be cut off by navigating away.
+// Writes still in flight. The reader and the course map count them in their idle signal, so a test (or a
+// prefetching router) can tell when nothing would be cut off by navigating away.
 let pending = 0;
 const listeners = new Set<() => void>();
 function setPending(delta: number): void {
@@ -48,7 +41,7 @@ export function subscribeOfflineWrites(listener: () => void): () => void {
   };
 }
 
-/** True while no offline cache write is in flight (part of the page's idle signal). */
+/** True while no offline write is in flight (part of the page's idle signal). */
 export function useOfflineWritesIdle(): boolean {
   return useSyncExternalStore(
     subscribeOfflineWrites,
@@ -57,36 +50,51 @@ export function useOfflineWritesIdle(): boolean {
   );
 }
 
-/**
- * Store `value` for an offline reload. Never rejects: the handler is attached synchronously to the whole
- * open-then-put chain, so a put cut off by navigation (WebKit: "Context is stopped") is never unhandled.
- */
-export function writeOffline(userId: string, kind: string, id: string, value: unknown): Promise<void> {
-  if (!available()) return Promise.resolve();
-  let body: string;
+/** Store `value` for an offline reload. Never rejects (quota, storage disabled, a page unloading). */
+export function writeOffline(userId: string, kind: string, key: string, value: unknown): Promise<void> {
+  let data: unknown;
+  let bytes: number;
   try {
-    body = JSON.stringify(value);
+    data = stripHidden(value);
+    bytes = JSON.stringify(data).length;
   } catch {
     return Promise.resolve();
   }
   setPending(1);
-  return caches
-    .open(CACHE)
-    .then((cache) =>
-      cache.put(keyFor(userId, kind, id), new Response(body, { headers: { "content-type": "application/json" } })),
+  return Promise.resolve()
+    .then(() =>
+      naadiDb().reads.put({
+        pk: pk(userId, id(kind, key)),
+        user_id: userId,
+        id: id(kind, key),
+        data,
+        bytes,
+        saved_at: Date.now(),
+      }),
     )
+    .then(() => undefined)
     .catch(() => {
-      // quota exceeded, storage disabled or the page is unloading: only the offline fallback is lost
+      // only the offline fallback is lost
     })
     .finally(() => setPending(-1));
 }
 
+/** Delete every user's last-good copy (and the pre-segment-18 Cache Storage copy, which held the same data). */
 export async function clearOffline(): Promise<void> {
-  if (!available()) return;
   try {
-    await caches.delete(CACHE);
+    await naadiDb().reads.clear();
   } catch {
-    // ignore
+    // nothing stored
+  }
+  await dropLegacyReaderCache();
+}
+
+/** The reader's old Cache Storage copy (segment 06): data only, never the student's work, so it is just removed. */
+export async function dropLegacyReaderCache(): Promise<void> {
+  try {
+    if (typeof caches !== "undefined") await caches.delete("naadi-reader-v1");
+  } catch {
+    // no Cache Storage
   }
 }
 
@@ -94,6 +102,7 @@ let installed = false;
 export function installOfflineCacheReset(): void {
   if (installed) return;
   installed = true;
+  void dropLegacyReaderCache();
   onAuthChange((event, prev, next) => {
     if (event === "SIGNED_OUT" || (prev && next && prev !== next)) void clearOffline();
   });

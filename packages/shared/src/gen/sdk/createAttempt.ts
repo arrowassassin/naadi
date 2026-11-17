@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { CreateAttemptData, CreateAttemptErrors, CreateAttemptResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zCreateAttemptBody } from "../zod/zCreateAttemptBody";
+import { zCreateAttemptHeaders } from "../zod/zCreateAttemptHeaders";
 import { zCreateAttemptPath } from "../zod/zCreateAttemptPath";
 import { zCreateAttemptResponse } from "../zod/zCreateAttemptResponse";
 
@@ -22,6 +23,7 @@ export const createAttempt = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zCreateAttemptBody,
+          headers: zCreateAttemptHeaders.optional(),
           path: zCreateAttemptPath,
           query: z.never().optional(),
         })

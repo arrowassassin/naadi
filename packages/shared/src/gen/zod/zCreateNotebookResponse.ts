@@ -5,6 +5,6 @@ import "../../zod-config";
 import { zNotebookDetail } from "./zNotebookDetail";
 
 /**
- * Replayed: the stored notebook
+ * Replayed: the stored notebook (applied true when a newer stamp updated it)
  */
 export const zCreateNotebookResponse = zNotebookDetail;

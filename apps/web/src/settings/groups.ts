@@ -18,8 +18,8 @@ export const SETTINGS_GROUPS = [
   { id: "ink", to: "/settings/ink", labelKey: "settings.nav_ink" },
   { id: "plan", to: "/settings/plan", labelKey: "settings.nav_plan", flag: "today" },
   { id: "appearance", to: "/settings/appearance", labelKey: "settings.nav_appearance" },
-  // S18 registers Offline here once apps/web/src/offline/OfflineSettingsPage.tsx exists (and adds its route line):
-  // { id: "offline", to: "/settings/offline", labelKey: "settings.nav_offline", flag: "offline" },
+  // S18: Download this week, storage and persistence (offline works for every student: no flag).
+  { id: "offline", to: "/settings/offline", labelKey: "settings.nav_offline" },
   { id: "assistant", to: "/settings/assistant", labelKey: "settings.nav_assistant", flag: "assistant" },
   { id: "data", to: "/settings/data", labelKey: "settings.nav_data", flag: "export" },
   { id: "about", to: "/settings/about", labelKey: "settings.nav_about" },

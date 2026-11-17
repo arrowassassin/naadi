@@ -5,6 +5,6 @@ import "../../zod-config";
 import { zNoteOut } from "./zNoteOut";
 
 /**
- * Replayed: the stored note
+ * Replayed onto a stored note: the stored note (applied true when a newer stamp updated it)
  */
 export const zCreateNoteResponse = zNoteOut;

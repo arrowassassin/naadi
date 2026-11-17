@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { SetPlanItemStatusData, SetPlanItemStatusErrors, SetPlanItemStatusResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zSetPlanItemStatusBody } from "../zod/zSetPlanItemStatusBody";
+import { zSetPlanItemStatusHeaders } from "../zod/zSetPlanItemStatusHeaders";
 import { zSetPlanItemStatusPath } from "../zod/zSetPlanItemStatusPath";
 import { zSetPlanItemStatusResponse } from "../zod/zSetPlanItemStatusResponse";
 
@@ -22,6 +23,7 @@ export const setPlanItemStatus = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zSetPlanItemStatusBody,
+          headers: zSetPlanItemStatusHeaders.optional(),
           path: zSetPlanItemStatusPath,
           query: z.never().optional(),
         })

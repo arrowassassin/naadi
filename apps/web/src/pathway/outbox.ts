@@ -1,13 +1,25 @@
-import { Dexie, type EntityTable } from "dexie";
+import { Dexie } from "dexie";
+import { type OutboxRow, resetNaadiDbForTests } from "../offline/db";
+import {
+  loadOutbox,
+  outboxPersists,
+  outboxRows,
+  outboxVersion,
+  putEntityRow,
+  recordConflict,
+  removeEntityRow,
+  resetOutboxForTests,
+  rowsFor,
+  subscribeOutbox,
+} from "../offline/outbox";
 
 /**
- * Pathway progress and cost entries written on this device and not yet confirmed by the server (segment 17), in
- * IndexedDB ("naadi-pathway", the pattern of notes/outbox.ts). Every write is recorded here BEFORE any request, so a
- * reload or no connection loses nothing; the screens show "Saved on this device · will sync" while an entry exists.
- *
- * Entities follow the S18 contract (`user_pathway_task` keyed by task id, `cost` keyed by cost id, last-writer-wins
- * per row by `client_updated_at_ms`): one entry per (entity, key) holds the latest local state, so a replay after a
- * lost answer is harmless. S18's shared outbox replaces this store; the entity names and endpoints do not change.
+ * Pathway progress and cost entries written on this device and not yet confirmed by the server (segment 17). Since
+ * segment 18 the entries live in the device outbox (IndexedDB `naadi-v1`, entities `user_pathway_task` and `cost`,
+ * one row per (entity, key)) with every other write; the rules below are unchanged. Every write is recorded BEFORE
+ * any request, so a reload or no connection loses nothing; the screens show "Saved on this device · will sync"
+ * while an entry exists. Last-writer-wins per row by `client_updated_at_ms`; each request carries the row's op id as
+ * `Idempotency-Key`. When another device's newer version wins, the local one is kept 7 days in the sync sheet.
  * Vault files are NEVER queued or kept here: an upload or an open needs a connection.
  *
  * `v` grows with every local change; an answer only clears the entry when no newer change arrived meanwhile.
@@ -29,98 +41,101 @@ export interface PathwayOp {
   queuedAt: number;
   /** The server refused this write for a reason a retry cannot fix. */
   refused: string | null;
+  /** The outbox op id (sent as `Idempotency-Key`). */
+  opId?: string;
 }
 
-type PathwayDb = Dexie & { ops: EntityTable<PathwayOp, "key"> };
+type Stored = Pick<PathwayOp, "v" | "kind" | "fields" | "stamp">;
 
-let db: PathwayDb | null = null;
-
-function pathwayDb(): PathwayDb {
-  if (!db) {
-    const d = new Dexie("naadi-pathway") as PathwayDb;
-    d.version(1).stores({ ops: "[user+entity+key], user, queuedAt" });
-    db = d;
-  }
-  return db;
-}
-
-const memory = new Map<string, PathwayOp>();
-/** Creates that were sent at least once (the request may have reached the server, so a delete must follow). */
-const attempted = new Set<string>();
-const loaded = new Set<string>();
-const listeners = new Set<() => void>();
-let version = 0;
-
-function emit(): void {
-  version += 1;
-  for (const l of listeners) l();
-}
-
-export function subscribePathwayOps(listener: () => void): () => void {
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
+function fromRow(r: OutboxRow): PathwayOp {
+  const b = r.body as Stored;
+  return {
+    user: r.user_id,
+    entity: r.entity as PathwayEntity,
+    key: r.key,
+    v: b.v,
+    kind: b.kind,
+    fields: b.fields,
+    stamp: b.stamp,
+    queuedAt: r.queued_at,
+    refused: r.state === "failed" ? (r.last_error ?? "refused") : null,
+    opId: r.op_id,
   };
 }
 
+/** Creates that were sent at least once (the request may have reached the server, so a delete must follow). */
+const attempted = new Set<string>();
+const loaded = new Set<string>();
+
+export function subscribePathwayOps(listener: () => void): () => void {
+  return subscribeOutbox(listener);
+}
+
 export function pathwayOpsVersion(): number {
-  return version;
+  return outboxVersion();
 }
 
 const mkey = (user: string, entity: PathwayEntity, key: string) => `${user}\u0000${entity}\u0000${key}`;
 
+/** Test hook: forget what is in memory (as a reload would); IndexedDB keeps its rows. */
 export function resetPathwayDbForTests(): void {
-  db?.close();
-  db = null;
-  memory.clear();
   loaded.clear();
-  emit();
+  attempted.clear();
+  resetOutboxForTests();
+  resetNaadiDbForTests();
 }
 
 export function pendingOps(user: string): PathwayOp[] {
-  return [...memory.values()].filter((o) => o.user === user).sort((a, b) => a.queuedAt - b.queuedAt);
+  return [...outboxRows(user, "user_pathway_task"), ...outboxRows(user, "cost")]
+    .map(fromRow)
+    .sort((a, b) => a.queuedAt - b.queuedAt);
 }
 
 export function pendingFor(user: string, entity: PathwayEntity, key: string): PathwayOp | undefined {
-  return memory.get(mkey(user, entity, key));
+  const r = rowsFor(user, entity, key)[0];
+  return r ? fromRow(r) : undefined;
 }
 
-/** Read this user's entries from IndexedDB once per page (memory already holds everything written since). */
+/** Read this user's entries (once per page), moving the pre-segment-18 `naadi-pathway` rows in once. */
 export async function loadOps(user: string): Promise<void> {
   if (loaded.has(user)) return;
   loaded.add(user);
-  try {
-    const rows = await pathwayDb().ops.where("user").equals(user).toArray();
-    for (const r of rows) {
-      const k = mkey(r.user, r.entity, r.key);
-      if (!memory.has(k)) memory.set(k, r);
-    }
-    if (rows.length) emit();
-  } catch {
-    // no IndexedDB (a private window): entries live in memory for the life of the page
-  }
+  await loadOutbox(user);
+  await migrateLegacyPathway(user);
 }
 
-async function persist(op: PathwayOp): Promise<void> {
+/** One-time move of the segment-17 `naadi-pathway` database into the outbox; the old database is then deleted. */
+export async function migrateLegacyPathway(user: string): Promise<number> {
+  if (!(await outboxPersists())) return 0;
   try {
-    await pathwayDb().ops.put(op);
+    if (!(await Dexie.exists("naadi-pathway"))) return 0;
+    const old = new Dexie("naadi-pathway");
+    old.version(1).stores({ ops: "[user+entity+key], user, queuedAt" });
+    const mine = ((await old.table("ops").where("user").equals(user).toArray()) as PathwayOp[]).filter(
+      (o) => !pendingFor(user, o.entity, o.key),
+    );
+    for (const o of mine) await write(o);
+    await old.table("ops").where("user").equals(user).delete();
+    const left = await old.table("ops").count();
+    old.close();
+    if (left === 0) await Dexie.delete("naadi-pathway");
+    return mine.length;
   } catch {
-    // memory still holds it
+    return 0;
   }
 }
 
 async function forget(user: string, entity: PathwayEntity, key: string): Promise<void> {
-  try {
-    await pathwayDb().ops.delete([user, entity, key] as never);
-  } catch {
-    // nothing to forget
-  }
+  await removeEntityRow(user, entity, key);
 }
 
 function write(op: PathwayOp): PathwayOp {
-  memory.set(mkey(op.user, op.entity, op.key), op);
-  void persist(op);
-  emit();
+  const body: Stored = { v: op.v, kind: op.kind, fields: op.fields, stamp: op.stamp };
+  void putEntityRow(op.user, op.entity, op.key, body, {
+    state: op.refused ? "failed" : "queued",
+    last_error: op.refused,
+    method: op.kind === "delete" ? "DELETE" : op.kind === "create" ? "POST" : "PATCH",
+  });
   return op;
 }
 
@@ -172,12 +187,10 @@ export function queueCostUpdate(user: string, id: string, fields: Record<string,
 
 export function queueCostDelete(user: string, id: string, stamp: number): void {
   const k = mkey(user, "cost", id);
-  const prior = memory.get(k);
+  const prior = pendingFor(user, "cost", id);
   if (prior?.kind === "create" && !attempted.has(k)) {
     // never sent: the server has never heard of it, so there is nothing to delete there
-    memory.delete(k);
     void forget(user, "cost", id);
-    emit();
     return;
   }
   write({
@@ -193,13 +206,13 @@ export function queueCostDelete(user: string, id: string, stamp: number): void {
   });
 }
 
-export type SendResult = "ok" | "unreachable" | { refused: string };
+export type SendResult = "ok" | "unreachable" | { refused: string } | { conflict: unknown };
 
 export interface PathwayTransport {
-  patchTask: (taskId: string, fields: Record<string, unknown>, stamp: number) => Promise<SendResult>;
-  createCost: (id: string, fields: Record<string, unknown>, stamp: number) => Promise<SendResult>;
-  patchCost: (id: string, fields: Record<string, unknown>, stamp: number) => Promise<SendResult>;
-  deleteCost: (id: string, stamp: number) => Promise<SendResult>;
+  patchTask: (taskId: string, fields: Record<string, unknown>, stamp: number, opId?: string) => Promise<SendResult>;
+  createCost: (id: string, fields: Record<string, unknown>, stamp: number, opId?: string) => Promise<SendResult>;
+  patchCost: (id: string, fields: Record<string, unknown>, stamp: number, opId?: string) => Promise<SendResult>;
+  deleteCost: (id: string, stamp: number, opId?: string) => Promise<SendResult>;
 }
 
 let flushing: Promise<number> | null = null;
@@ -215,24 +228,26 @@ export function flushOps(user: string, transport: PathwayTransport): Promise<num
       const k = mkey(op.user, op.entity, op.key);
       if (op.kind === "create") attempted.add(k);
       let result: SendResult;
-      if (op.entity === "user_pathway_task") result = await transport.patchTask(op.key, op.fields, op.stamp);
-      else if (op.kind === "create") result = await transport.createCost(op.key, op.fields, op.stamp);
-      else if (op.kind === "delete") result = await transport.deleteCost(op.key, op.stamp);
-      else result = await transport.patchCost(op.key, op.fields, op.stamp);
+      if (op.entity === "user_pathway_task") result = await transport.patchTask(op.key, op.fields, op.stamp, op.opId);
+      else if (op.kind === "create") result = await transport.createCost(op.key, op.fields, op.stamp, op.opId);
+      else if (op.kind === "delete") result = await transport.deleteCost(op.key, op.stamp, op.opId);
+      else result = await transport.patchCost(op.key, op.fields, op.stamp, op.opId);
       if (result === "unreachable") break;
-      const now = memory.get(k);
-      if (result === "ok") {
+      const now = pendingFor(op.user, op.entity, op.key);
+      if (typeof result === "object" && "conflict" in result) {
+        // Last-writer-wins: another device's newer version (or delete) stands; this one is kept in the sync sheet.
+        await recordConflict(op.user, op.entity, op.key, op.fields, result.conflict);
+      }
+      if (result === "ok" || (typeof result === "object" && "conflict" in result)) {
         confirmed += 1;
         if (now && now.v === op.v) {
-          memory.delete(k);
           attempted.delete(k);
           await forget(op.user, op.entity, op.key);
         } else if (now && now.kind === "create") {
           // a change arrived while the create was in flight: it is now an update of an existing entry
           write({ ...now, kind: "patch" });
         }
-        emit();
-      } else if (now && now.v === op.v) {
+      } else if (now && now.v === op.v && typeof result === "object" && "refused" in result) {
         write({ ...now, refused: result.refused });
       }
     }
@@ -247,8 +262,6 @@ export function flushOps(user: string, transport: PathwayTransport): Promise<num
 }
 
 export function discardOp(user: string, entity: PathwayEntity, key: string): void {
-  memory.delete(mkey(user, entity, key));
   attempted.delete(mkey(user, entity, key));
   void forget(user, entity, key);
-  emit();
 }

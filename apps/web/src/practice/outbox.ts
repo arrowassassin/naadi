@@ -1,73 +1,88 @@
 import type { AttemptIn, AttemptOut } from "@naadi/shared";
+import type { OutboxRow } from "../offline/db";
+import { onAttemptApplied, queueAttempt, queuedAttempt, queuedAttempts } from "../offline/entities/attempt";
+import { outboxPersists, replay } from "../offline/outbox";
 
 /**
- * Answers submitted while offline. Each is kept on this device (per user) and replayed when the connection
- * returns; the server grades and is idempotent per (block, question), so a replay can never double-count.
- * The full offline outbox (Dexie, every write kind) is segment 18; this holds only practice answers until then.
+ * Practice answers waiting for the server, as the practice and exam screens see them. Since segment 18 they live
+ * in the device outbox (offline/entities/attempt.ts, IndexedDB `naadi-v1`) with every other write; this module keeps
+ * the screens' small API. The server grades and is idempotent per (block, question), so a replay can never
+ * double-count; an answer refused because the section's time was up stays visible (`failed: "time_up"`).
  */
 export interface QueuedAttempt {
   blockId: string;
   body: AttemptIn;
   queuedAt: number;
+  /** Parked by the server's answer (e.g. `time_up`); null while it waits to be sent. */
+  failed: string | null;
 }
 
-const key = (userId: string) => `naadi.practice.outbox.v1:${userId}`;
-const MAX_QUEUED = 400;
+function toQueued(row: OutboxRow): QueuedAttempt {
+  const b = row.body as { blockId: string; attempt: AttemptIn };
+  return {
+    blockId: b.blockId,
+    body: b.attempt,
+    queuedAt: row.queued_at,
+    failed: row.state === "failed" ? row.last_error : null,
+  };
+}
 
 export function readQueue(userId: string): QueuedAttempt[] {
-  try {
-    const raw = localStorage.getItem(key(userId));
-    const parsed: unknown = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? (parsed as QueuedAttempt[]) : [];
-  } catch {
-    return [];
-  }
+  return queuedAttempts(userId).map(toQueued);
 }
 
-function writeQueue(userId: string, queue: QueuedAttempt[]): void {
-  try {
-    if (queue.length === 0) localStorage.removeItem(key(userId));
-    else localStorage.setItem(key(userId), JSON.stringify(queue.slice(-MAX_QUEUED)));
-  } catch {
-    // storage unavailable (private mode, quota): the answer is still shown as chosen until the page closes
-  }
-}
-
-/** Queue one answer; answering the same question again replaces the earlier entry (the first stands server-side). */
+/** Queue one answer; answering the same question again replaces the earlier unsent one (the first stands server-side). */
 export function enqueueAttempt(userId: string, blockId: string, body: AttemptIn): void {
-  const queue = readQueue(userId).filter((q) => !(q.blockId === blockId && q.body.question_id === body.question_id));
-  queue.push({ blockId, body, queuedAt: Date.now() });
-  writeQueue(userId, queue);
+  void queueAttempt(userId, blockId, body);
 }
 
 export function queuedFor(userId: string, blockId: string, questionId: string): QueuedAttempt | undefined {
-  return readQueue(userId).find((q) => q.blockId === blockId && q.body.question_id === questionId);
+  const row = queuedAttempt(userId, blockId, questionId);
+  return row ? toQueued(row) : undefined;
 }
 
 /**
- * Replay the queue in order. An entry leaves the queue when the server answered it (graded, or refused for a
- * reason a retry cannot fix, such as a block that no longer exists); a network failure stops the replay and
- * keeps the rest. Returns how many were sent.
+ * Replay now (the outbox also replays on its own: online, visible again, every 30 s). `onSent` sees each answer the
+ * server graded during this replay. Returns how many answers left the queue.
  */
 export async function flushQueue(
   userId: string,
-  send: (blockId: string, body: AttemptIn) => Promise<AttemptOut>,
-  isUnreachable: (e: unknown) => boolean,
+  _send?: unknown,
+  _isUnreachable?: unknown,
   onSent?: (blockId: string, out: AttemptOut) => void,
 ): Promise<number> {
-  let sent = 0;
-  for (const item of readQueue(userId)) {
-    try {
-      const out = await send(item.blockId, item.body);
-      onSent?.(item.blockId, out);
-      sent += 1;
-    } catch (err) {
-      if (isUnreachable(err)) break;
-    }
-    writeQueue(
-      userId,
-      readQueue(userId).filter((q) => !(q.blockId === item.blockId && q.body.question_id === item.body.question_id)),
-    );
+  const before = queuedAttempts(userId).filter((r) => r.state !== "failed").length;
+  const off = onSent ? onAttemptApplied(onSent) : () => {};
+  try {
+    await replay();
+  } finally {
+    off();
   }
-  return sent;
+  return Math.max(0, before - queuedAttempts(userId).filter((r) => r.state !== "failed").length);
+}
+
+/** One-time move of the pre-segment-18 localStorage queue into the outbox (then the key is deleted). */
+export async function migrateLegacyPracticeQueue(userId: string): Promise<number> {
+  const key = `naadi.practice.outbox.v1:${userId}`;
+  if (!(await outboxPersists())) return 0; // keep the old queue until the outbox can hold it across reloads
+  let legacy: { blockId: string; body: AttemptIn }[] = [];
+  try {
+    const raw = localStorage.getItem(key);
+    const parsed: unknown = raw ? JSON.parse(raw) : [];
+    legacy = Array.isArray(parsed) ? (parsed as typeof legacy) : [];
+  } catch {
+    return 0;
+  }
+  let moved = 0;
+  for (const item of legacy) {
+    if (!item?.blockId || !item.body?.question_id) continue;
+    await queueAttempt(userId, item.blockId, item.body);
+    moved += 1;
+  }
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // storage unavailable: nothing to delete
+  }
+  return moved;
 }

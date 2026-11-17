@@ -35,6 +35,7 @@ from ..db import Database
 from ..errors import ErrorResponse, FieldError, error_response
 from ..logs import get_logger
 from ..qbank.routes import as_service, as_user
+from ..sync.idempotency import IDEMPOTENT, IdempotentRoute
 from . import diagnostic as diag
 from . import planner_store as ps
 from .generator import PlanDay, PlanError, PlanInputs, available_dates, generate, summarize, to_csv
@@ -72,7 +73,7 @@ from .models import (
 from .store import DAY_COLS, ITEM_COLS, day_out, item_row_out, load_template, rows, save_profile, write_plan
 
 log = get_logger("naadi.plan")
-router = APIRouter(prefix="/api", tags=["plan"])
+router = APIRouter(prefix="/api", tags=["plan"], route_class=IdempotentRoute)
 Row = dict[str, Any]
 
 _ERRORS: dict[int | str, dict[str, Any]] = {
@@ -513,6 +514,7 @@ async def export_plan(request: Request, user: Annotated[CurrentUser, limited("pl
     summary="Mark a plan item done, skipped or planned again",
     response_model=PlanItemOut,
     responses={**_ERRORS, **_NOT_FOUND},
+    dependencies=[IDEMPOTENT],
 )
 async def set_item_status(
     request: Request,

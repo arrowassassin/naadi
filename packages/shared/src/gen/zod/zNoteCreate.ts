@@ -21,6 +21,7 @@ export const zNoteCreate = z.object({
   anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullish(),
   body: z.record(z.string(), z.unknown()).nullish(),
   canvas: z.enum(["paper", "whiteboard"]).optional().default("paper"),
+  client_updated_at_ms: z.int().gte(0).lte(9999999999999).nullish(),
   highlight_color: z.enum(["lime", "violet", "amber"]).nullish(),
   id: z.uuid().nullish(),
   kind: z.enum(["note", "highlight"]).optional().default("note"),

@@ -6,6 +6,8 @@ import { RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { onAuthChange, startAuth } from "./auth/session";
+import { bootOffline } from "./offline/boot";
+import { registerServiceWorker } from "./pwa/register";
 import { router } from "./router";
 import "./styles.css";
 
@@ -22,17 +24,11 @@ onAuthChange((event, prev, next) => {
   if (event !== "TOKEN_REFRESHED" && event !== "INITIAL") void router.invalidate();
 });
 void startAuth();
+// The offline layer (segment 18): outbox replay for whoever signs in, Dexie fallbacks, the service worker.
+bootOffline(queryClient);
 
-// The service worker (Web Push now, offline caching later) is registered only in production builds.
-if (import.meta.env.PROD && "serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    // The script URL passes the Trusted Types default policy (same origin only). A failed registration is not
-    // silent: without a worker there is no push, so it is logged for support instead of swallowed.
-    navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch((err: unknown) => {
-      console.warn("Service worker registration failed", err instanceof Error ? err.name : "unknown");
-    });
-  });
-}
+// The service worker (Web Push, offline caching; production builds only) with its "New version ready" flow.
+registerServiceWorker();
 
 const rootEl = document.getElementById("root");
 if (!rootEl) throw new Error("#root element missing from index.html");

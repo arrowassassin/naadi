@@ -29,6 +29,7 @@ from ..auth_limits import RateLimiter
 from ..db import Database, DatabaseNotConfigured
 from ..errors import ErrorResponse, error_response
 from ..logs import get_logger
+from ..sync.idempotency import IDEMPOTENT, IdempotentRoute
 from .models import (
     INK_MAX_ITEMS,
     MAX_CHANGE_BYTES,
@@ -53,7 +54,7 @@ from .store import (
 )
 
 log = get_logger("naadi.ink")
-router = APIRouter(prefix="/api", tags=["ink"])
+router = APIRouter(prefix="/api", tags=["ink"], route_class=IdempotentRoute)
 
 _ERRORS: dict[int | str, dict[str, Any]] = {
     401: {"model": ErrorResponse, "description": "Missing, expired or invalid access token"},
@@ -235,7 +236,7 @@ async def _ocr_min_items(request: Request) -> int | None:
         413: {"model": ErrorResponse, "description": "The request body is larger than 2 MB"},
         422: {"model": ErrorResponse, "description": f"Not a change set (more than {MAX_CHANGE_ITEMS} items?)"},
     },
-    dependencies=[Depends(_body_within_limit)],
+    dependencies=[Depends(_body_within_limit), IDEMPOTENT],
 )
 async def post_ink_changes(
     request: Request,

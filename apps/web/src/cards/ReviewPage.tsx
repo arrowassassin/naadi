@@ -14,7 +14,7 @@ import { InkCanvas } from "../ink/InkCanvas";
 import { InkSaveStatus } from "../ink/persist/InkSaveStatus";
 import { useInkSettings } from "../ink/persist/settings";
 import { useInkLayer } from "../ink/persist/useInkLayer";
-import { errorKey, isUnreachable, sendReview, useDueCards, usePendingReviews } from "./api";
+import { errorKey, isUnreachable, useDueCards, usePendingReviews } from "./api";
 import { CardDialog, type CardDraft } from "./CardDialog";
 import { useCardsCopy } from "./copy";
 import { cardKey, intervalLabel, ownedElsewhere, whenLabel } from "./format";
@@ -259,14 +259,7 @@ export function ReviewPage() {
       chain.current = chain.current.then(async () => {
         const userId = pending.userId;
         if (!userId) return;
-        const result = await submitReview(userId, cardId, body, {
-          send: sendReview,
-          online: () => navigator.onLine,
-          queued: () => {
-            pending.refresh();
-            void pending.flush();
-          },
-        });
+        const result = await submitReview(userId, cardId, body);
         if (result.kind === "sent") {
           const { schedule } = result.out;
           setSession((s) =>
@@ -277,7 +270,7 @@ export function ReviewPage() {
         }
       });
     },
-    [pending.userId, pending.refresh, pending.flush, t],
+    [pending.userId, t],
   );
 
   const rate = useCallback(

@@ -28,6 +28,7 @@ import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 import { installOfflineCacheReset, readOffline, writeOffline } from "../learn/offlineCache";
+import { OFFLINE_FIRST } from "../offline/runtime";
 
 installOfflineCacheReset();
 
@@ -97,9 +98,22 @@ export function useBlock(blockId: string) {
   const userId = useUserId();
   return useQuery({
     queryKey: blockKey(userId, blockId),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
-    queryFn: ({ signal }) =>
-      authed<BlockDetail>((headers) => getBlock({ signal, headers, path: { block_id: blockId } })),
+    // A copy kept on this device (and written by "Download this week"), so a block opens offline.
+    queryFn: async ({ signal }) => {
+      try {
+        const data = await authed<BlockDetail>((headers) => getBlock({ signal, headers, path: { block_id: blockId } }));
+        if (userId) void writeOffline(userId, "practice-block", blockId, data);
+        return data;
+      } catch (err) {
+        if (userId && isUnreachable(err)) {
+          const saved = await readOffline<BlockDetail>(userId, "practice-block", blockId);
+          if (saved !== undefined) return saved;
+        }
+        throw err;
+      }
+    },
   });
 }
 
@@ -130,6 +144,7 @@ export function useBlockQuestion(blockId: string, n: number) {
   const userId = useUserId();
   return useQuery({
     queryKey: questionKey(userId, blockId, n),
+    ...OFFLINE_FIRST,
     enabled: userId !== null,
     staleTime: 30_000,
     queryFn: ({ signal }) => loadQuestion(userId as string, blockId, n, signal),
@@ -145,6 +160,7 @@ export function usePrefetchQuestion() {
       if (!userId) return;
       void qc.prefetchQuery({
         queryKey: questionKey(userId, blockId, n),
+        ...OFFLINE_FIRST,
         staleTime: 30_000,
         queryFn: ({ signal }) => loadQuestion(userId, blockId, n, signal),
       });
@@ -157,6 +173,7 @@ export function useLabValues(enabled: boolean) {
   const userId = useUserId();
   return useQuery({
     queryKey: ["qbank-lab-values", userId],
+    ...OFFLINE_FIRST,
     enabled: enabled && userId !== null,
     staleTime: 10 * 60_000,
     queryFn: async ({ signal }) => {

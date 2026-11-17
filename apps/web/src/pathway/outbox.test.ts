@@ -1,5 +1,7 @@
 import "fake-indexeddb/auto";
+import { Dexie } from "dexie";
 import { beforeEach, describe, expect, it } from "vitest";
+import { conflictsFor, wasChangedElsewhere, whenPersisted } from "../offline/outbox";
 import {
   discardOp,
   flushOps,
@@ -40,7 +42,13 @@ function transport(script: Partial<Record<keyof PathwayTransport, SendResult>> =
   return { t, calls };
 }
 
-beforeEach(() => resetPathwayDbForTests());
+beforeEach(async () => {
+  await whenPersisted();
+  resetPathwayDbForTests();
+  await Dexie.delete("naadi-v1");
+  await Dexie.delete("naadi-pathway");
+  resetPathwayDbForTests();
+});
 
 describe("pathway outbox", () => {
   it("folds later changes to a task into one entry with the newest stamp", () => {
@@ -129,6 +137,21 @@ describe("pathway outbox", () => {
     await flushOps(U, second.t);
     expect(second.calls.map((c) => c.op)).toEqual(expect.arrayContaining(["deleteCost", "patchCost"]));
     expect(calls).toHaveLength(1);
+  });
+
+  it("LWW: a newer version from another device wins; this one is kept 7 days and the row is marked", async () => {
+    queueTask(U, "t5", { status: "doing" }, 10);
+    const server = { task: { id: "t5", status: "done" }, applied: false };
+    const t: PathwayTransport = {
+      patchTask: async () => ({ conflict: server }),
+      createCost: async () => "ok",
+      patchCost: async () => "ok",
+      deleteCost: async () => "ok",
+    };
+    expect(await flushOps(U, t)).toBe(1);
+    expect(pendingFor(U, "user_pathway_task", "t5")).toBeUndefined();
+    expect(wasChangedElsewhere("user_pathway_task", "t5")).toBe(true);
+    expect((await conflictsFor(U)).map((c) => [c.key, c.local])).toEqual([["t5", { status: "doing" }]]);
   });
 
   it("survives a reload: entries come back from IndexedDB, per user", async () => {

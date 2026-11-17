@@ -7,7 +7,9 @@ import type { RequestResult } from "../client";
 import { client } from "../client.gen";
 import type { DeleteNotebookData, DeleteNotebookErrors, DeleteNotebookResponses } from "../types.gen";
 import type { Options } from "./_Options";
+import { zDeleteNotebookHeaders } from "../zod/zDeleteNotebookHeaders";
 import { zDeleteNotebookPath } from "../zod/zDeleteNotebookPath";
+import { zDeleteNotebookQuery } from "../zod/zDeleteNotebookQuery";
 import { zDeleteNotebookResponse } from "../zod/zDeleteNotebookResponse";
 
 /**
@@ -21,8 +23,9 @@ export const deleteNotebook = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: z.never().optional(),
+          headers: zDeleteNotebookHeaders.optional(),
           path: zDeleteNotebookPath,
-          query: z.never().optional(),
+          query: zDeleteNotebookQuery.optional(),
         })
         .parseAsync(data),
     responseValidator: async (data) => await zDeleteNotebookResponse.parseAsync(data),

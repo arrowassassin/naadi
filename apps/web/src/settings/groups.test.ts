@@ -6,21 +6,36 @@ const ids = (gs: readonly SettingsGroup[]) => gs.map((g) => g.id);
 
 describe("settings groups registry", () => {
   it("lists the groups in the board's order", () => {
-    expect(ids(visibleGroups(ALL))).toEqual(["account", "ink", "plan", "appearance", "assistant", "data", "about"]);
+    expect(ids(visibleGroups(ALL))).toEqual([
+      "account",
+      "ink",
+      "plan",
+      "appearance",
+      "offline",
+      "assistant",
+      "data",
+      "about",
+    ]);
   });
 
   it("hides a group whose flag is off and keeps the always-on ones", () => {
-    expect(ids(visibleGroups({ today: false, export: false }))).toEqual(["account", "ink", "appearance", "about"]);
+    expect(ids(visibleGroups({ today: false, export: false }))).toEqual([
+      "account",
+      "ink",
+      "appearance",
+      "offline",
+      "about",
+    ]);
     expect(ids(visibleGroups({ today: true, export: false }))).toContain("plan");
   });
 
   it("hides flagged groups while the flags are unknown", () => {
-    expect(ids(visibleGroups(undefined))).toEqual(["account", "ink", "appearance", "about"]);
+    expect(ids(visibleGroups(undefined))).toEqual(["account", "ink", "appearance", "offline", "about"]);
   });
 
-  it("does not show Offline until its segment registers it; Assistant (S14) follows its flag", () => {
-    expect(ids(SETTINGS_GROUPS)).not.toContain("offline");
-    expect(ids(visibleGroups(ALL))).not.toContain("offline");
+  it("shows Offline for everyone (S18, no flag); Assistant (S14) follows its flag", () => {
+    expect(ids(SETTINGS_GROUPS)).toContain("offline");
+    expect(ids(visibleGroups({}))).toContain("offline");
     expect(ids(visibleGroups(ALL))).toContain("assistant");
     expect(ids(visibleGroups({ ...ALL, assistant: false }))).not.toContain("assistant");
   });

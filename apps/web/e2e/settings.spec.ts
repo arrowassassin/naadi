@@ -42,6 +42,8 @@ const GROUPS = [
   { id: "ink", path: "/settings/ink", name: "Pencil & ink" },
   { id: "plan", path: "/settings/plan", name: "Study plan" },
   { id: "appearance", path: "/settings/appearance", name: "Appearance" },
+  // S18: Download this week, storage and persistence (every student, no flag).
+  { id: "offline", path: "/settings/offline", name: "Offline" },
   // S14: shown only while the assistant feature is on (the test filters it by /api/me's features).
   { id: "assistant", path: "/settings/assistant", name: "Assistant" },
   { id: "data", path: "/settings/data", name: "Data & export" },
@@ -151,7 +153,7 @@ test.describe("Settings shell and groups", () => {
       const groups = GROUPS.filter((g) => g.id !== "assistant" || features.assistant === true);
       const links = await nav.getByRole("link").evaluateAll((as) => as.map((a) => (a as HTMLAnchorElement).pathname));
       expect(links).toEqual(groups.map((g) => g.path));
-      await expect(nav.getByRole("link", { name: "Offline" })).toHaveCount(0);
+      await expect(nav.getByRole("link", { name: "Offline" })).toHaveCount(1);
       if (features.assistant !== true) await expect(nav.getByRole("link", { name: "Assistant" })).toHaveCount(0);
 
       for (const g of groups) {

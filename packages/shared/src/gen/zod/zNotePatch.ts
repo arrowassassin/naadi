@@ -20,6 +20,7 @@ export const zNotePatch = z.object({
   anchor_type: z.enum(["section", "question", "video", "pdf", "free"]).nullish(),
   body: z.record(z.string(), z.unknown()).nullish(),
   canvas: z.enum(["paper", "whiteboard"]).nullish(),
+  client_updated_at_ms: z.int().gte(0).lte(9999999999999).nullish(),
   highlight_color: z.enum(["lime", "violet", "amber"]).nullish(),
   if_updated_at: z.iso.datetime().nullish(),
   notebook_id: z.uuid().nullish(),

@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { UpdateNotebookData, UpdateNotebookErrors, UpdateNotebookResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zUpdateNotebookBody } from "../zod/zUpdateNotebookBody";
+import { zUpdateNotebookHeaders } from "../zod/zUpdateNotebookHeaders";
 import { zUpdateNotebookPath } from "../zod/zUpdateNotebookPath";
 import { zUpdateNotebookResponse } from "../zod/zUpdateNotebookResponse";
 
@@ -22,6 +23,7 @@ export const updateNotebook = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zUpdateNotebookBody,
+          headers: zUpdateNotebookHeaders.optional(),
           path: zUpdateNotebookPath,
           query: z.never().optional(),
         })

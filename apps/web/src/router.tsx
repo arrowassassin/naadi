@@ -25,6 +25,7 @@ import { welcomeRoute } from "./today/routes";
 const SettingsAssistantPage = lazyPage(() =>
   import("./assistant/SettingsAssistantPage").then((m) => m.SettingsAssistantPage),
 );
+const OfflineSettingsPage = lazyPage(() => import("./offline/OfflineSettingsPage").then((m) => m.OfflineSettingsPage));
 const InkSettingsPage = lazyPage(() => import("./ink/persist/InkSettingsPage").then((m) => m.InkSettingsPage));
 const AccountPage = lazyPage(() => import("./routes/AccountPage").then((m) => m.AccountPage));
 const CallbackPage = lazyPage(() => import("./routes/CallbackPage").then((m) => m.CallbackPage));
@@ -162,6 +163,11 @@ const assistantSettingsRoute = createRoute({
   path: "/assistant",
   component: SettingsAssistantPage,
 });
+const offlineSettingsRoute = createRoute({
+  getParentRoute: () => settingsRoute,
+  path: "/offline",
+  component: OfflineSettingsPage,
+});
 
 export const routeTree = rootRoute.addChildren([
   signInRoute,
@@ -188,6 +194,7 @@ export const routeTree = rootRoute.addChildren([
       dataSettingsRoute,
       aboutRoute,
       assistantSettingsRoute,
+      offlineSettingsRoute,
     ]),
     agentDiagnosticsRoute(appRoute),
     ...adminReviewRoutes(appRoute),

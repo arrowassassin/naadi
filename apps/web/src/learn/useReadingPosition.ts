@@ -101,7 +101,6 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
       const changed = Math.abs(s.offset - s.sent) >= MIN_CHANGE || (s.completed && !s.sentCompleted);
       if (!changed) return;
       // Offline: keep the latest position and send it when the connection is back (the "online" listener).
-      if (typeof navigator !== "undefined" && navigator.onLine === false) return;
       s.sent = s.offset;
       s.sentCompleted = s.completed;
       const body: ReadingPositionIn = {
@@ -111,8 +110,10 @@ export function useReadingPosition({ chapterId, sectionId, root, end, saved, rea
         completed: s.completed,
         client_updated_at: new Date().toISOString(),
       };
-      if (keepalive) sendOnLeave(body);
-      else saveRef.current({ body });
+      // Always into the outbox (kept across a reload, replayed offline); a page going away also starts a keepalive
+      // request, since the outbox's own replay may not get to run before the page is gone.
+      saveRef.current({ body });
+      if (keepalive && navigator.onLine !== false) sendOnLeave(body);
     },
     [chapterId, sectionId, enabled],
   );

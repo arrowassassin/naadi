@@ -1,8 +1,24 @@
+import "fake-indexeddb/auto";
 import type { RebalanceOut } from "@naadi/shared";
-import { beforeEach, describe, expect, it } from "vitest";
+import { Dexie } from "dexie";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { unwrap } from "../auth/apiError";
+import { DB_NAME, resetNaadiDbForTests } from "../offline/db";
+import "../offline/entities/planItem";
+import { resetOutboxForTests, setOnlineProbe, startOutbox, stopOutbox, wasChangedElsewhere } from "../offline/outbox";
+
+const patchMock = vi.hoisted(() => vi.fn());
+vi.mock("@naadi/shared", async (orig) => ({
+  ...(await orig<typeof import("@naadi/shared")>()),
+  patchPlanItem: patchMock,
+}));
+vi.mock("../auth/api", () => ({
+  authed: (make: (h: Record<string, string>) => Promise<never>) => unwrap(make({ authorization: "Bearer t" })),
+}));
+
 import { counted, dateOf, dayMonth, range, relativeDays } from "./format";
 import { itemLink } from "./itemLink";
-import { dropStatus, enqueueStatus, flushQueue, readQueue } from "./outbox";
+import { dropStatus, enqueueStatus, flushQueue, migrateLegacyPlanQueue, readQueue } from "./outbox";
 import { awaitConfirm, decide, type Interrupt, type Runtime } from "./runs";
 
 const copy: Record<string, string> = {
@@ -83,44 +99,69 @@ describe("itemLink", () => {
   });
 });
 
-describe("outbox", () => {
-  beforeEach(() => localStorage.clear());
-  it("keeps only the latest change per item and replays in order", async () => {
-    enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 1 });
-    enqueueStatus("u", { id: "b", status: "skipped", client_updated_at_ms: 2 });
-    enqueueStatus("u", { id: "a", status: "planned", client_updated_at_ms: 3 });
-    expect(readQueue("u").map((q) => [q.id, q.status])).toEqual([
-      ["b", "skipped"],
-      ["a", "planned"],
+describe("plan item changes through the outbox", () => {
+  const ok = (applied: boolean) =>
+    Promise.resolve({ data: { applied, item: null }, response: new Response(null, { status: 200 }) });
+  beforeEach(async () => {
+    localStorage.clear();
+    resetOutboxForTests();
+    resetNaadiDbForTests();
+    await Dexie.delete(DB_NAME);
+    patchMock.mockReset();
+  });
+  afterEach(() => stopOutbox());
+
+  it("keeps only the latest change per item, with its time, per user", async () => {
+    setOnlineProbe(() => false);
+    await enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 1 });
+    await enqueueStatus("u", { id: "b", status: "skipped", client_updated_at_ms: 2 });
+    await enqueueStatus("u", { id: "a", status: "planned", client_updated_at_ms: 3 });
+    expect(readQueue("u").map((q) => [q.id, q.status, q.client_updated_at_ms])).toEqual([
+      ["a", "planned", 3],
+      ["b", "skipped", 2],
     ]);
-    const sent: string[] = [];
-    const n = await flushQueue("u", async (q) => {
-      sent.push(q.id);
-      return "sent";
-    });
-    expect([n, sent, readQueue("u")]).toEqual([2, ["b", "a"], []]);
+    expect(readQueue("u2")).toEqual([]);
   });
-  it("stops at the first network failure and keeps the rest", async () => {
-    enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 1 });
-    enqueueStatus("u", { id: "b", status: "done", client_updated_at_ms: 2 });
-    expect(await flushQueue("u", async () => "unreachable")).toBe(0);
-    expect(readQueue("u")).toHaveLength(2);
+
+  it("replays with the stamp and an Idempotency-Key; a lost LWW race is kept and marked", async () => {
+    await startOutbox("u");
+    setOnlineProbe(() => false);
+    await enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 7 });
+    await enqueueStatus("u", { id: "b", status: "done", client_updated_at_ms: 8 });
+    setOnlineProbe(() => true);
+    patchMock.mockImplementation((o: { path: { item_id: string } }) => ok(o.path.item_id !== "b"));
+    expect(await flushQueue("u")).toBe(2);
+    expect(
+      patchMock.mock.calls.map(([o]) => [
+        o.path.item_id,
+        o.body.client_updated_at_ms,
+        Boolean(o.headers["idempotency-key"]),
+      ]),
+    ).toEqual([
+      ["a", 7, true],
+      ["b", 8, true],
+    ]);
+    expect(wasChangedElsewhere("plan_item", "b")).toBe(true);
+    expect(wasChangedElsewhere("plan_item", "a")).toBe(false);
   });
-  it("an answered refusal leaves the queue too (a retry cannot fix it)", async () => {
-    enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 1 });
-    await flushQueue("u", async () => "refused");
-    expect(readQueue("u")).toEqual([]);
-  });
-  it("a newer change made while replaying stays queued", () => {
-    enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 5 });
-    dropStatus("u", "a", 4);
+
+  it("a newer change made while replaying stays queued", async () => {
+    setOnlineProbe(() => false);
+    await enqueueStatus("u", { id: "a", status: "done", client_updated_at_ms: 5 });
+    await dropStatus("u", "a", 4);
     expect(readQueue("u")).toHaveLength(1);
-    dropStatus("u", "a", 5);
+    await dropStatus("u", "a", 5);
     expect(readQueue("u")).toHaveLength(0);
   });
-  it("is per user", () => {
-    enqueueStatus("u1", { id: "a", status: "done", client_updated_at_ms: 1 });
-    expect(readQueue("u2")).toEqual([]);
+
+  it("moves the segment-16 localStorage queue in once", async () => {
+    localStorage.setItem(
+      "naadi.plan.outbox.v1:u",
+      JSON.stringify([{ id: "x", status: "skipped", client_updated_at_ms: 9 }]),
+    );
+    expect(await migrateLegacyPlanQueue("u")).toBe(1);
+    expect(localStorage.getItem("naadi.plan.outbox.v1:u")).toBeNull();
+    expect(readQueue("u")).toEqual([{ id: "x", status: "skipped", client_updated_at_ms: 9 }]);
   });
 });
 

@@ -8,6 +8,7 @@ import { client } from "../client.gen";
 import type { ReorderNotebookPagesData, ReorderNotebookPagesErrors, ReorderNotebookPagesResponses } from "../types.gen";
 import type { Options } from "./_Options";
 import { zReorderNotebookPagesBody } from "../zod/zReorderNotebookPagesBody";
+import { zReorderNotebookPagesHeaders } from "../zod/zReorderNotebookPagesHeaders";
 import { zReorderNotebookPagesPath } from "../zod/zReorderNotebookPagesPath";
 import { zReorderNotebookPagesResponse } from "../zod/zReorderNotebookPagesResponse";
 
@@ -22,6 +23,7 @@ export const reorderNotebookPages = <ThrowOnError extends boolean = false>(
       await z
         .object({
           body: zReorderNotebookPagesBody,
+          headers: zReorderNotebookPagesHeaders.optional(),
           path: zReorderNotebookPagesPath,
           query: z.never().optional(),
         })

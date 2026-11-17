@@ -267,6 +267,13 @@ USER_TABLES: tuple[UserTable, ...] = (
         ("user_id", "plan_id", "day_no"),
         ("status", "Done"),
     ),
+    # Offline sync tombstones (0038): written by the API when an LWW row is deleted; students read their own.
+    UserTable(
+        "sync_tombstones",
+        lambda u, s: {"user_id": u, "entity": "note", "key": str(_id()), "client_updated_at_ms": 1_763_280_000_000},
+        ("user_id",),
+        ("client_updated_at_ms", 1_763_280_000_001),
+    ),
     UserTable(
         "plan_rebalances",
         lambda u, s: {

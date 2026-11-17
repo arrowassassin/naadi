@@ -10,7 +10,8 @@ const auth = vi.hoisted(() => ({ state: { status: "signed-in", session: { user: 
 vi.mock("../../auth/session", () => ({ useAuth: () => auth.state, accessToken: async () => "token" }));
 vi.mock("../../copy/useUiText", () => ({ useUiText: () => (k: string) => k }));
 
-import { inkDb, resetInkDbForTests } from "./db";
+import { Dexie } from "dexie";
+import { resetInkDbForTests } from "./db";
 import { InkSaveStatus } from "./InkSaveStatus";
 import type { ChangesPayload, InkTransport } from "./sync";
 import { useInkLayer } from "./useInkLayer";
@@ -59,7 +60,7 @@ const last = () => (Harness as unknown as { last: ReturnType<typeof useInkLayer>
 
 beforeEach(async () => {
   resetInkDbForTests();
-  await inkDb().delete();
+  await Dexie.delete("naadi-v1");
   resetInkDbForTests();
 });
 

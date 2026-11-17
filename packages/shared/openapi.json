@@ -9748,6 +9748,20 @@
             "title": "Canvas",
             "type": "string"
           },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                "maximum": 9999999999999.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
           "highlight_color": {
             "anyOf": [
               {
@@ -9892,6 +9906,12 @@
             ],
             "title": "Anchor Type"
           },
+          "applied": {
+            "default": true,
+            "description": "Writes only: false when this request changed nothing because the stored row (returned) is as new or newer (last writer wins), or the create was a replay",
+            "title": "Applied",
+            "type": "boolean"
+          },
           "body": {
             "anyOf": [
               {
@@ -9923,6 +9943,18 @@
             ],
             "title": "Canvas",
             "type": "string"
+          },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Offline sync: the stamp of the write that won (null: written before stamps)",
+            "title": "Client Updated At Ms"
           },
           "created_at": {
             "format": "date-time",
@@ -10129,6 +10161,20 @@
               }
             ],
             "title": "Canvas"
+          },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                "maximum": 9999999999999.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
           },
           "highlight_color": {
             "anyOf": [
@@ -10367,6 +10413,20 @@
         "additionalProperties": false,
         "description": "Creates the notebook with its first page.",
         "properties": {
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                "maximum": 9999999999999.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
           "cover": {
             "anyOf": [
               {
@@ -10439,6 +10499,24 @@
       },
       "NotebookDetail": {
         "properties": {
+          "applied": {
+            "default": true,
+            "description": "Writes only: false when this request changed nothing because the stored notebook (returned) is as new or newer (last writer wins), or the create was a replay",
+            "title": "Applied",
+            "type": "boolean"
+          },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Offline sync: the stamp of the write that won (null: written before stamps)",
+            "title": "Client Updated At Ms"
+          },
           "cover": {
             "anyOf": [
               {
@@ -10538,6 +10616,24 @@
       },
       "NotebookOut": {
         "properties": {
+          "applied": {
+            "default": true,
+            "description": "Writes only: false when this request changed nothing because the stored notebook (returned) is as new or newer (last writer wins), or the create was a replay",
+            "title": "Applied",
+            "type": "boolean"
+          },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Offline sync: the stamp of the write that won (null: written before stamps)",
+            "title": "Client Updated At Ms"
+          },
           "cover": {
             "anyOf": [
               {
@@ -10613,6 +10709,20 @@
       "NotebookPatch": {
         "additionalProperties": false,
         "properties": {
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                "maximum": 9999999999999.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
           "cover": {
             "anyOf": [
               {
@@ -10683,6 +10793,341 @@
           "url"
         ],
         "title": "OfficialLink",
+        "type": "object"
+      },
+      "OfflineDay": {
+        "properties": {
+          "date": {
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "items": {
+            "description": "Every plan item on this date (generator, user, assistant)",
+            "items": {
+              "$ref": "#/components/schemas/PlanItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "plan_day": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlanDayMeta"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The active plan's day on this date, if any"
+          }
+        },
+        "required": [
+          "date",
+          "plan_day",
+          "items"
+        ],
+        "title": "OfflineDay",
+        "type": "object"
+      },
+      "OfflineFigure": {
+        "properties": {
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "url": {
+            "description": "Public URL in the content-public bucket",
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "media_id",
+          "url"
+        ],
+        "title": "OfflineFigure",
+        "type": "object"
+      },
+      "OfflineInkLayer": {
+        "properties": {
+          "layer": {
+            "$ref": "#/components/schemas/InkLayerOut"
+          },
+          "surface_id": {
+            "title": "Surface Id",
+            "type": "string"
+          },
+          "surface_type": {
+            "enum": [
+              "section",
+              "question",
+              "notebook_page"
+            ],
+            "title": "Surface Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "surface_type",
+          "surface_id",
+          "layer"
+        ],
+        "title": "OfflineInkLayer",
+        "type": "object"
+      },
+      "OfflinePlan": {
+        "properties": {
+          "days": {
+            "description": "The 7 dates from `start`, in order",
+            "items": {
+              "$ref": "#/components/schemas/OfflineDay"
+            },
+            "title": "Days",
+            "type": "array"
+          },
+          "plan_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The active plan; null when the student has none",
+            "title": "Plan Id"
+          }
+        },
+        "required": [
+          "plan_id",
+          "days"
+        ],
+        "title": "OfflinePlan",
+        "type": "object"
+      },
+      "OfflineQuestion": {
+        "properties": {
+          "block_id": {
+            "format": "uuid",
+            "title": "Block Id",
+            "type": "string"
+          },
+          "n": {
+            "description": "1-based position in the block",
+            "title": "N",
+            "type": "integer"
+          },
+          "view": {
+            "$ref": "#/components/schemas/QuestionView",
+            "description": "As GET /api/blocks/{block_id}/questions/{n}: an explanation only after a graded tutor answer, and none at all while a timed/exam session is active"
+          }
+        },
+        "required": [
+          "block_id",
+          "n",
+          "view"
+        ],
+        "title": "OfflineQuestion",
+        "type": "object"
+      },
+      "OfflineVideo": {
+        "properties": {
+          "height": {
+            "description": "Pixels; never above 1080",
+            "title": "Height",
+            "type": "integer"
+          },
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "media_id",
+          "url",
+          "height"
+        ],
+        "title": "OfflineVideo",
+        "type": "object"
+      },
+      "OfflineWeek": {
+        "properties": {
+          "blocks": {
+            "description": "The student's unfinished tutor blocks (newest first), as GET /api/blocks/{id}",
+            "items": {
+              "$ref": "#/components/schemas/BlockDetail"
+            },
+            "title": "Blocks",
+            "type": "array"
+          },
+          "bytes": {
+            "description": "Sum of the parts' bytes",
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "chapters": {
+            "description": "Chapters the week's plan reads, as GET /api/chapters/{id}",
+            "items": {
+              "$ref": "#/components/schemas/ChapterDetail"
+            },
+            "title": "Chapters",
+            "type": "array"
+          },
+          "due": {
+            "$ref": "#/components/schemas/DueResponse",
+            "description": "As GET /api/cards/due (attempt gate applied); `now` is `due_by`"
+          },
+          "due_by": {
+            "description": "`due` holds cards due up to the end of the week (student's time zone)",
+            "format": "date-time",
+            "title": "Due By",
+            "type": "string"
+          },
+          "end": {
+            "description": "The last of the 7 dates (inclusive)",
+            "format": "date",
+            "title": "End",
+            "type": "string"
+          },
+          "exam_active": {
+            "description": "A timed/exam session is running: no explanation is included anywhere",
+            "title": "Exam Active",
+            "type": "boolean"
+          },
+          "figures": {
+            "items": {
+              "$ref": "#/components/schemas/OfflineFigure"
+            },
+            "title": "Figures",
+            "type": "array"
+          },
+          "generated_at": {
+            "format": "date-time",
+            "title": "Generated At",
+            "type": "string"
+          },
+          "ink": {
+            "description": "The student's ink on the week's sections, questions and pages",
+            "items": {
+              "$ref": "#/components/schemas/OfflineInkLayer"
+            },
+            "title": "Ink",
+            "type": "array"
+          },
+          "notebooks": {
+            "description": "As GET /api/notebooks/{id}: every notebook with its pages",
+            "items": {
+              "$ref": "#/components/schemas/NotebookDetail"
+            },
+            "title": "Notebooks",
+            "type": "array"
+          },
+          "notes": {
+            "$ref": "#/components/schemas/NoteList",
+            "description": "As GET /api/notes: notes and highlights on the week's sections and questions"
+          },
+          "parts": {
+            "items": {
+              "$ref": "#/components/schemas/PartSize"
+            },
+            "title": "Parts",
+            "type": "array"
+          },
+          "pathway": {
+            "items": {
+              "$ref": "#/components/schemas/PathwayTaskStatus"
+            },
+            "title": "Pathway",
+            "type": "array"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/OfflinePlan"
+          },
+          "positions": {
+            "description": "As GET /api/reading-position, one per chapter",
+            "items": {
+              "$ref": "#/components/schemas/ChapterPositions"
+            },
+            "title": "Positions",
+            "type": "array"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/OfflineQuestion"
+            },
+            "title": "Questions",
+            "type": "array"
+          },
+          "section_revisions": {
+            "items": {
+              "$ref": "#/components/schemas/SectionRevision"
+            },
+            "title": "Section Revisions",
+            "type": "array"
+          },
+          "server_now_ms": {
+            "description": "Server clock (ms) for the device's clock offset",
+            "title": "Server Now Ms",
+            "type": "integer"
+          },
+          "skipped_media": {
+            "items": {
+              "$ref": "#/components/schemas/SkippedMedia"
+            },
+            "title": "Skipped Media",
+            "type": "array"
+          },
+          "start": {
+            "format": "date",
+            "title": "Start",
+            "type": "string"
+          },
+          "timezone": {
+            "description": "The profile's time zone the dates are in (UTC when unset)",
+            "title": "Timezone",
+            "type": "string"
+          },
+          "videos": {
+            "description": "Own videos at most 1080p; empty when there are none",
+            "items": {
+              "$ref": "#/components/schemas/OfflineVideo"
+            },
+            "title": "Videos",
+            "type": "array"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "timezone",
+          "generated_at",
+          "server_now_ms",
+          "plan",
+          "chapters",
+          "section_revisions",
+          "positions",
+          "figures",
+          "videos",
+          "skipped_media",
+          "blocks",
+          "questions",
+          "exam_active",
+          "due_by",
+          "due",
+          "notes",
+          "notebooks",
+          "ink",
+          "pathway",
+          "parts",
+          "bytes"
+        ],
+        "title": "OfflineWeek",
         "type": "object"
       },
       "OnboardingIn": {
@@ -11034,6 +11479,20 @@
             "title": "Canvas",
             "type": "string"
           },
+          "client_updated_at_ms": {
+            "anyOf": [
+              {
+                "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                "maximum": 9999999999999.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Client Updated At Ms"
+          },
           "id": {
             "anyOf": [
               {
@@ -11152,6 +11611,43 @@
           }
         },
         "title": "PageRefOut",
+        "type": "object"
+      },
+      "PartSize": {
+        "properties": {
+          "bytes": {
+            "description": "Length of the part's JSON in bytes (UTF-8, compact)",
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "count": {
+            "description": "Items in the part (chapters, figures, questions, cards, notes, layers, …)",
+            "title": "Count",
+            "type": "integer"
+          },
+          "part": {
+            "enum": [
+              "plan",
+              "chapters",
+              "figures",
+              "videos",
+              "questions",
+              "due",
+              "notes",
+              "notebooks",
+              "ink",
+              "pathway"
+            ],
+            "title": "Part",
+            "type": "string"
+          }
+        },
+        "required": [
+          "part",
+          "bytes",
+          "count"
+        ],
+        "title": "PartSize",
         "type": "object"
       },
       "PasteCreate": {
@@ -11281,6 +11777,43 @@
           "total"
         ],
         "title": "PathwayStageOut",
+        "type": "object"
+      },
+      "PathwayTaskStatus": {
+        "properties": {
+          "due": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Due"
+          },
+          "status": {
+            "enum": [
+              "todo",
+              "doing",
+              "done",
+              "na"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "status",
+          "due"
+        ],
+        "title": "PathwayTaskStatus",
         "type": "object"
       },
       "PlacementChoice": {
@@ -16095,6 +16628,36 @@
         "title": "SectionReorder",
         "type": "object"
       },
+      "SectionRevision": {
+        "properties": {
+          "chapter_id": {
+            "title": "Chapter Id",
+            "type": "string"
+          },
+          "revision": {
+            "description": "md5 of the section body (the ink and notes content revision)",
+            "title": "Revision",
+            "type": "string"
+          },
+          "section_id": {
+            "title": "Section Id",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapter_id",
+          "section_id",
+          "revision",
+          "updated_at"
+        ],
+        "title": "SectionRevision",
+        "type": "object"
+      },
       "SeedRequest": {
         "additionalProperties": false,
         "properties": {
@@ -16272,6 +16835,33 @@
           "question_id"
         ],
         "title": "SingleBlockCreate",
+        "type": "object"
+      },
+      "SkippedMedia": {
+        "properties": {
+          "media_id": {
+            "title": "Media Id",
+            "type": "string"
+          },
+          "reason": {
+            "description": "youtube: never cached (IFrame player only); over_1080p / size_unknown: own videos are taken only at a known height of at most 1080; no_url: not servable; not_public: a figure outside content-public (signed URLs expire); not_offline: audio, PDF or link",
+            "enum": [
+              "youtube",
+              "over_1080p",
+              "size_unknown",
+              "no_url",
+              "not_public",
+              "not_offline"
+            ],
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "media_id",
+          "reason"
+        ],
+        "title": "SkippedMedia",
         "type": "object"
       },
       "SourceRef": {
@@ -16648,6 +17238,30 @@
           "decision"
         ],
         "title": "SuggestionDecision",
+        "type": "object"
+      },
+      "SyncDeletedResponse": {
+        "description": "The 409 body of an LWW endpoint: the usual error, plus `tombstone` when the code is `sync_deleted`.",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorBody"
+          },
+          "tombstone": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TombstoneOut"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Present when error.code is sync_deleted"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "SyncDeletedResponse",
         "type": "object"
       },
       "SystemCoverage": {
@@ -17696,6 +18310,32 @@
           "unplaced"
         ],
         "title": "TodayRebalance",
+        "type": "object"
+      },
+      "TombstoneOut": {
+        "properties": {
+          "client_updated_at_ms": {
+            "description": "Stamp of the delete that won",
+            "title": "Client Updated At Ms",
+            "type": "integer"
+          },
+          "entity": {
+            "description": "note, highlight, page, notebook, …",
+            "title": "Entity",
+            "type": "string"
+          },
+          "key": {
+            "description": "The deleted row's id",
+            "title": "Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity",
+          "key",
+          "client_updated_at_ms"
+        ],
+        "title": "TombstoneOut",
         "type": "object"
       },
       "TopicCoverage": {
@@ -28546,6 +29186,25 @@
               "title": "Block Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "requestBody": {
@@ -28588,6 +29247,16 @@
               }
             },
             "description": "Not found or not visible"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Timed/exam: section_ended (time was up), finished, not_current, not_started, paused, on_break; tutor: exam_active"
           },
           "422": {
             "content": {
@@ -29753,6 +30422,25 @@
               "format": "uuid",
               "title": "Card Id",
               "type": "string"
+            }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
             }
           }
         ],
@@ -33100,6 +33788,25 @@
               "title": "Surface Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "requestBody": {
@@ -33616,6 +34323,27 @@
       },
       "post": {
         "operationId": "createNotebook",
+        "parameters": [
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -33635,7 +34363,7 @@
                 }
               }
             },
-            "description": "Replayed: the stored notebook"
+            "description": "Replayed: the stored notebook (applied true when a newer stamp updated it)"
           },
           "201": {
             "content": {
@@ -33661,11 +34389,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/SyncDeletedResponse"
                 }
               }
             },
-            "description": "notebook_id_conflict or notebook_limit"
+            "description": "notebook_id_conflict or notebook_limit, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp"
           },
           "422": {
             "content": {
@@ -33717,9 +34445,59 @@
               "title": "Notebook Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Offline sync: the device's time of the delete (ms). A stored row with a newer or equal stamp is kept and returned with 200 and applied false; otherwise the row is deleted (204) and a tombstone recorded",
+            "in": "query",
+            "name": "client_updated_at_ms",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                  "maximum": 9999999999999,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Offline sync: the device's time of the delete (ms). A stored row with a newer or equal stamp is kept and returned with 200 and applied false; otherwise the row is deleted (204) and a tombstone recorded",
+              "title": "Client Updated At Ms"
+            }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookDetail"
+                }
+              }
+            },
+            "description": "Not deleted: the stored notebook is as new or newer (applied false)"
+          },
           "204": {
             "description": "Successful Response"
           },
@@ -33872,6 +34650,25 @@
               "title": "Notebook Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "requestBody": {
@@ -33914,6 +34711,16 @@
               }
             },
             "description": "notebook_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncDeletedResponse"
+                }
+              }
+            },
+            "description": "never otherwise, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp"
           },
           "422": {
             "content": {
@@ -33965,6 +34772,25 @@
               "title": "Notebook Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "requestBody": {
@@ -33986,7 +34812,7 @@
                 }
               }
             },
-            "description": "Replayed: the stored page"
+            "description": "Replayed: the stored page (applied true when a newer stamp updated it)"
           },
           "201": {
             "content": {
@@ -34032,11 +34858,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/SyncDeletedResponse"
                 }
               }
             },
-            "description": "notebook_page_limit, note_id_conflict or note_limit"
+            "description": "notebook_page_limit, note_id_conflict or note_limit, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp"
           },
           "413": {
             "content": {
@@ -34097,6 +34923,25 @@
               "format": "uuid",
               "title": "Notebook Id",
               "type": "string"
+            }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
             }
           }
         ],
@@ -34406,6 +35251,27 @@
       },
       "post": {
         "operationId": "createNote",
+        "parameters": [
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -34425,7 +35291,7 @@
                 }
               }
             },
-            "description": "Replayed: the stored note"
+            "description": "Replayed onto a stored note: the stored note (applied true when a newer stamp updated it)"
           },
           "201": {
             "content": {
@@ -34471,11 +35337,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/SyncDeletedResponse"
                 }
               }
             },
-            "description": "note_id_conflict or note_limit"
+            "description": "note_id_conflict or note_limit, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp"
           },
           "413": {
             "content": {
@@ -34537,9 +35403,59 @@
               "title": "Note Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Offline sync: the device's time of the delete (ms). A stored row with a newer or equal stamp is kept and returned with 200 and applied false; otherwise the row is deleted (204) and a tombstone recorded",
+            "in": "query",
+            "name": "client_updated_at_ms",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "description": "Offline sync: the device's time of this change (ms since the epoch). Last writer wins per row (clamped to server time + 5 min; a tie keeps the stored row). Omitted: stamped with the server's clock",
+                  "maximum": 9999999999999,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Offline sync: the device's time of the delete (ms). A stored row with a newer or equal stamp is kept and returned with 200 and applied false; otherwise the row is deleted (204) and a tombstone recorded",
+              "title": "Client Updated At Ms"
+            }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Not deleted: the stored note is as new or newer (applied false)"
+          },
           "204": {
             "description": "Successful Response"
           },
@@ -34692,6 +35608,25 @@
               "title": "Note Id",
               "type": "string"
             }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "requestBody": {
@@ -34749,11 +35684,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/SyncDeletedResponse"
                 }
               }
             },
-            "description": "note_conflict (if_updated_at did not match) or note_section_has_note"
+            "description": "note_conflict (if_updated_at did not match), note_section_has_note, or sync_deleted: the row was deleted by a change at least as new as this one (`tombstone` carries the delete's stamp). The write is not applied. A client whose own change is newer re-creates the row with a create that carries its stamp"
           },
           "413": {
             "content": {
@@ -34799,6 +35734,88 @@
         "summary": "Partial update of one of the caller's notes (null clears a nullable field)",
         "tags": [
           "notes"
+        ]
+      }
+    },
+    "/api/offline/week": {
+      "get": {
+        "operationId": "getOfflineWeek",
+        "parameters": [
+          {
+            "description": "First day (YYYY-MM-DD); default today in the profile's time zone",
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "First day (YYYY-MM-DD); default today in the profile's time zone",
+              "title": "Start"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfflineWeek"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "start is not a date within a year of today"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Everything 'Download this week' stores on the device for 7 plan days, with a size per part",
+        "tags": [
+          "offline"
         ]
       }
     },
@@ -35589,6 +36606,25 @@
               "format": "uuid",
               "title": "Item Id",
               "type": "string"
+            }
+          },
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
             }
           }
         ],
@@ -36595,6 +37631,27 @@
       },
       "put": {
         "operationId": "putReadingPosition",
+        "parameters": [
+          {
+            "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional client op id (uuid). A repeat with the same key returns the stored response (`Idempotent-Replayed: true`) without running the write again; kept 24 hours",
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -36667,7 +37724,7 @@
             "description": "Database unavailable"
           }
         },
-        "summary": "Save where the caller is in a section (last-writer-wins by the device's timestamp)",
+        "summary": "Save where the caller is in a section (last-writer-wins by the device's timestamp; a tie keeps the stored position)",
         "tags": [
           "courses"
         ]

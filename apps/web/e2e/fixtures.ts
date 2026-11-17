@@ -62,8 +62,20 @@ export function fromEmbedHost(sourceUrl: string): boolean {
   }
 }
 
+/** The service worker script (segment 18): the browser fetches it itself to check for an update. */
+export function isServiceWorkerScript(url: string): boolean {
+  try {
+    return new URL(url).pathname === "/sw.js";
+  } catch {
+    return false;
+  }
+}
+
 /** A console error line the guard may ignore: from an embed host's document, and not a network failure. */
 export function ignorableConsoleLine(text: string, sourceUrl: string): boolean {
+  // The browser re-checks the service worker script on every navigation; with no connection that check fails and
+  // WebKit logs it. The page itself is served from the worker's precache, so it is not an app error.
+  if (text.includes(FAILED_RESOURCE) && isServiceWorkerScript(sourceUrl)) return true;
   return !text.includes(FAILED_RESOURCE) && fromEmbedHost(sourceUrl);
 }
 
@@ -125,6 +137,8 @@ export const test = base.extend<Fixtures>({
     });
     page.on("requestfailed", (req) => {
       const why = req.failure()?.errorText ?? "failed";
+      // The browser's own service-worker update check (segment 18) fails while offline: not the app's request.
+      if (isServiceWorkerScript(req.url())) return;
       if (!isBenignRequestFailure(why) && fromMainFrame(req)) network.push({ url: req.url(), status: 0, what: why });
     });
     await use({
