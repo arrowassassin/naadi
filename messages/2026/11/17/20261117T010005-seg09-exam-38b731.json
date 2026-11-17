@@ -1,0 +1,19 @@
+{
+ "id": "20261117T010005-seg09-exam-38b731",
+ "ts": "2026-11-17T01:00:05.370660Z",
+ "from": "seg09-exam",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S09 reopen: exam_active guard in tutor routes (409), shell gates Search/practice on /api/exam/active, screens/09 in CI scan, Builder error codes",
+ "body": "",
+ "paths": [
+  "apps/api/naadi_api/qbank/routes.py",
+  "apps/web/src/shell/AppShell.tsx",
+  ".github/workflows/ci.yml",
+  "apps/web/src/practice/BuilderPage.tsx"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
