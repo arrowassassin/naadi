@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass, field
 from typing import Any, Literal
@@ -23,26 +24,39 @@ KINDS: tuple[Kind, ...] = ("catch_up_block", "review_misses", "cards_catchup", "
 MIN_MISSES = 5
 MIN_CARDS_DUE = 20
 LOW_RETENTION = 80
-# Every way a number can be written in the model's text. Digits count anywhere ("Q99", "a20" too); number words
-# and multiplicatives ("twelve", "triple", "a dozen") and multi-letter roman numerals ("XL", "III") count as their
-# value. A suggestion whose text holds any number that is not in its facts is dropped.
-_DIGITS = re.compile(r"\d+(?:[.,]\d+)?")
+# Every way a number can be written in the model's text, read after NFKC normalisation (so fullwidth "Ｔｗｅｌｖｅ"
+# or "１２" read as "Twelve" and "12"). Digits count anywhere ("Q99", "a20" too) and keep a leading minus ("-5");
+# runs of cardinal words joined by spaces, hyphens or "and" count as one value ("twenty-five" is 25, "one hundred
+# and five" is 105); multiplicatives and ordinals ("triple", "a dozen", "a couple", "once", "third") and
+# multi-letter roman numerals ("XL", "III") count as their value. A suggestion whose text holds any number that is
+# not in its facts is dropped.
+_DIGITS = re.compile(r"(?:(?<![\w.\-])-)?\d+(?:[.,]\d+)*")
+_GROUPED = re.compile(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?")  # "1,000" / "12,500.5": commas group thousands
 _WORD = re.compile(r"[A-Za-z]+")
+_JOIN = re.compile(r"\s*-\s*|\s+")  # what may sit between two words of one number
 _ROMAN = re.compile(r"\b[IVXL]{2,}\b")
 _UNITS = (
     "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
-    "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
+    "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
 )  # fmt: skip
-_TENS = ("thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety")
+_TENS = ("twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety")
+_SCALES: dict[str, int] = {
+    "hundred": 100, "hundreds": 100, "thousand": 1000, "thousands": 1000, "million": 1_000_000,
+    "millions": 1_000_000,
+}  # fmt: skip
+CARDINALS: dict[str, int] = {
+    **{w: i for i, w in enumerate(_UNITS)},
+    **{w: 10 * i for i, w in enumerate(_TENS, start=2)},
+    **_SCALES,
+}
+# Words that stand for a number on their own and never combine with a neighbour.
 NUMBER_WORDS: dict[str, float] = {
-    **{w: float(i) for i, w in enumerate(_UNITS)},
-    **{w: float(10 * i) for i, w in enumerate(_TENS, start=3)},
-    "hundred": 100, "hundreds": 100, "thousand": 1000, "thousands": 1000, "million": 1e6, "millions": 1e6,
     "half": 0.5, "halves": 0.5, "quarter": 0.25, "quarters": 0.25,
-    "double": 2, "doubled": 2, "twice": 2, "triple": 3, "tripled": 3, "thrice": 3, "treble": 3,
-    "quadruple": 4, "dozen": 12, "dozens": 12, "score": 20,
-    "third": 3, "fourth": 4, "fifth": 5, "sixth": 6, "seventh": 7, "eighth": 8, "ninth": 9, "tenth": 10,
-    "eleventh": 11, "twelfth": 12, "thirteenth": 13, "fourteenth": 14, "fifteenth": 15, "twentieth": 20,
+    "once": 1, "double": 2, "doubled": 2, "twice": 2, "couple": 2, "couples": 2, "pair": 2, "pairs": 2,
+    "triple": 3, "tripled": 3, "thrice": 3, "treble": 3, "quadruple": 4, "dozen": 12, "dozens": 12,
+    "first": 1, "second": 2, "third": 3, "fourth": 4, "fifth": 5, "sixth": 6, "seventh": 7, "eighth": 8,
+    "ninth": 9, "tenth": 10, "eleventh": 11, "twelfth": 12, "thirteenth": 13, "fourteenth": 14, "fifteenth": 15,
+    "twentieth": 20,
 }  # fmt: skip
 _ROMAN_VALUES = {"I": 1, "V": 5, "X": 10, "L": 50}
 
@@ -175,7 +189,12 @@ def _numbers_in(value: Any) -> set[str]:
 
 
 def _norm(n: str) -> str:
-    n = n.replace(",", ".")
+    if _GROUPED.fullmatch(n):
+        n = n.replace(",", "")
+    elif n.count(",") == 1 and "." not in n:
+        n = n.replace(",", ".")  # a decimal comma ("2,5")
+    if n.count(".") > 1:
+        return n  # not one number ("1.2.3"): kept verbatim, so it matches nothing in the facts
     if "." in n:
         n = n.rstrip("0").rstrip(".")
     return n
@@ -200,10 +219,81 @@ def _to_roman(n: int) -> str:
     return out
 
 
+class _Run:
+    """One spelled-out cardinal being read word by word ("one hundred and twenty-five")."""
+
+    def __init__(self) -> None:
+        self.total = 0
+        self.current = 0
+        self.last: str | None = None  # None (nothing yet), "unit", "teen", "tens", "hundred", "scale"
+
+    def takes(self, word: str) -> bool:
+        """Whether `word` continues this number ("twenty" + "five") rather than starting a new one ("five six")."""
+        v = CARDINALS[word]
+        if self.last is None:
+            return True
+        if v >= 100:
+            return v > 100 or self.last in ("unit", "teen", "tens")  # "five hundred", "two thousand"
+        if self.last in ("hundred", "scale"):
+            return True
+        return self.last == "tens" and v < 10 and v != 0  # "twenty" + "five"
+
+    def add(self, word: str) -> None:
+        v = CARDINALS[word]
+        if v == 100:
+            self.current = (self.current or 1) * 100
+            self.last = "hundred"
+        elif v > 100:
+            self.total += (self.current or 1) * v
+            self.current = 0
+            self.last = "scale"
+        else:
+            self.current += v
+            self.last = "tens" if v >= 20 else "teen" if v >= 10 else "unit"
+
+    def value(self) -> str:
+        return str(self.total + self.current)
+
+
+def _spelled(text: str) -> list[str]:
+    found: list[str] = []
+    run: _Run | None = None
+    prev_end = 0
+    words = list(_WORD.finditer(text))
+    for i, m in enumerate(words):
+        w = m.group().lower()
+        gap = text[prev_end : m.start()]
+        prev_end = m.end()
+        joined = run is not None and _JOIN.fullmatch(gap) is not None
+        if w == "and" and run is not None and joined and run.last in ("hundred", "scale"):
+            nxt = words[i + 1] if i + 1 < len(words) else None
+            if nxt and nxt.group().lower() in CARDINALS and _JOIN.fullmatch(text[m.end() : nxt.start()]):
+                continue  # "one hundred and five": the "and" belongs to the number
+        if w in CARDINALS:
+            if run is not None and joined and run.takes(w):
+                run.add(w)
+                continue
+            if run is not None:
+                found.append(run.value())
+            run = _Run()
+            run.add(w)
+            continue
+        if run is not None:
+            found.append(run.value())
+            run = None
+        if w in NUMBER_WORDS:
+            found.append(_norm(str(NUMBER_WORDS[w])))
+    if run is not None:
+        found.append(run.value())
+    return found
+
+
 def numbers_in_text(text: str) -> list[str]:
-    """Every number written in `text`, normalised: digits anywhere, number words, multi-letter roman numerals."""
+    """Every number written in `text`, normalised: digits anywhere (with a leading minus), spelled-out numbers as
+    one value per run, multiplicatives and ordinals, multi-letter roman numerals."""
+    text = unicodedata.normalize("NFKC", text)
     found = [_norm(m) for m in _DIGITS.findall(text)]
-    found += [_norm(str(NUMBER_WORDS[w.lower()])) for w in _WORD.findall(text) if w.lower() in NUMBER_WORDS]
+    found += _spelled(text)
     for tok in _ROMAN.findall(text):
         value = _roman(tok)
         if value is not None:

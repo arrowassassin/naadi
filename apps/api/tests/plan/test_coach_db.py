@@ -3,6 +3,7 @@ student per day, rules when the (mocked) model is spent, idempotent re-runs, and
 
 from __future__ import annotations
 
+import asyncio
 import datetime as dt
 import json
 import uuid
@@ -209,3 +210,46 @@ async def test_the_least_recently_coached_student_goes_first(
     assert after[b] is not None and after[a] == start[a]  # B, never coached, went first; A waited
     await _pass(url, None, one)
     assert coached()[a] > start[a]  # then A, now the least recently coached
+
+
+class GatedGateway(FakeGateway):
+    """Holds the call for `who` until released, so a second pass can run while the first is inside the model."""
+
+    def __init__(self, reply: Any, who: uuid.UUID) -> None:
+        super().__init__(reply)
+        self.who = who
+        self.entered = asyncio.Event()
+        self.release = asyncio.Event()
+
+    async def ainvoke(self, role: str, messages: Any, ctx: Any, **kw: Any) -> Any:
+        if ctx.user_id == self.who:
+            self.entered.set()
+            await asyncio.wait_for(self.release.wait(), 30)
+        return await super().ainvoke(role, messages, ctx, **kw)
+
+
+async def test_overlapping_passes_call_the_model_once_per_student(
+    url: str,
+    client: TestClient,
+    key: SigningKey,
+    users: tuple[uuid.UUID, uuid.UUID],
+    pg: psycopg.Connection[Any],
+    practice: dict[str, Any],
+) -> None:
+    """R2: the advisory lock on coach:<user>:<date> covers the check, the call and the write, so a pass that
+    overlaps another (before the first one's llm_usage row could be seen) skips the student instead of calling."""
+    a, _ = users
+    assert onboard(client, key, a).status_code == 200
+    reply = AIMessage(
+        content=json.dumps({"suggestions": [{"kind": "catch_up_block", "title": "Catch up", "body": "Try 20 more."}]})
+    )
+    first, second = GatedGateway(reply, a), FakeGateway(reply)
+    running = asyncio.create_task(_pass(url, first, RULES))
+    await asyncio.wait_for(first.entered.wait(), 30)
+    stats = await _pass(url, second, RULES)  # runs while the first pass is inside A's model call
+    first.release.set()
+    await running
+    assert [c for c in second.calls if c[1] == a] == []
+    assert stats.reasons.get("locked", 0) >= 1
+    assert len([c for c in first.calls if c[1] == a]) == 1
+    assert [(r[0], r[1]) for r in _rows(pg, a)] == [("catch_up_block", "llm")]

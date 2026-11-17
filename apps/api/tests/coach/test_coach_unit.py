@@ -12,7 +12,7 @@ from langchain_core.messages import AIMessage
 
 from naadi_api.analytics.student import CoachFacts
 from naadi_api.coach.run import PassStats, word
-from naadi_api.coach.suggest import Section, candidates, numbers_ok, parse_llm, rules
+from naadi_api.coach.suggest import Section, candidates, numbers_in_text, numbers_ok, parse_llm, rules
 from naadi_api.llm import LLMUnavailable
 from naadi_api.llm_budget import BudgetExhausted
 
@@ -186,6 +186,53 @@ MISSES = {"misses": 9, "days": 7, "questions": 9}
 )
 def test_number_words_digits_and_roman_numerals_must_come_from_facts(text: str, ok: bool) -> None:
     assert numbers_ok(text, MISSES) is ok
+
+
+# R1: facts that hold 20 and 5 (and 100, 2) but not 25, 105, -5 or 1000.
+PARTS = {"questions": 20, "days": 5, "cards": 100, "blocks": 2}
+
+
+@pytest.mark.parametrize(
+    ("text", "ok"),
+    [
+        ("Ｔｗｅｌｖｅ questions tonight.", False),  # fullwidth letters, NFKC-normalised first
+        ("Do １２ questions.", False),  # fullwidth digits
+        ("Do ２０ questions.", True),
+        ("Twenty-five questions.", False),  # one value, 25, although 20 and 5 are both facts
+        ("twenty five questions", False),
+        ("Twenty questions over five days.", True),  # two separate numbers, both facts
+        ("one hundred and five cards", False),  # 105
+        ("one hundred cards", True),
+        ("You dropped -5 points.", False),  # the minus is kept: -5 is not 5
+        ("Do 5 a day for 20 days.", True),
+        ("1,000 cards", False),  # a thousands separator is one number, not 1 and 0
+        ("a couple of blocks", True),  # couple = 2
+        ("a pair of blocks", True),
+        ("Do it once more.", False),  # once = 1
+        ("A score of questions.", True),  # "score" is an ordinary word now
+    ],
+)
+def test_compound_fullwidth_and_signed_numbers_are_read_whole(text: str, ok: bool) -> None:
+    assert numbers_ok(text, PARTS) is ok
+
+
+@pytest.mark.parametrize(
+    ("text", "values"),
+    [
+        ("twenty-five", ["25"]),
+        ("Twenty  -  Five", ["25"]),
+        ("one hundred and twenty-five", ["125"]),
+        ("two thousand and twenty", ["2020"]),
+        ("five six", ["5", "6"]),  # two units do not combine
+        ("ten five", ["10", "5"]),
+        ("twelve and five", ["12", "5"]),  # "and" joins only after hundred/thousand
+        ("-5 points, 7-day streak, 3-4 blocks", ["-5", "7", "3", "4"]),
+        ("1,000,000 and 2,5 h", ["1000000", "2.5"]),
+        ("Ｔｗｅｌｖｅ", ["12"]),
+    ],
+)
+def test_numbers_in_text_values(text: str, values: list[str]) -> None:
+    assert numbers_in_text(text) == values
 
 
 async def test_a_spelled_out_invented_number_is_dropped_and_rules_used() -> None:

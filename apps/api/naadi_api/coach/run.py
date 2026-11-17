@@ -107,6 +107,7 @@ _HAS_LLM_ROWS = (
 )
 
 
+_TRY_LOCK = "select pg_try_advisory_xact_lock(hashtextextended(%s, 0)) as got"
 _MARK_COACHED = "update public.study_plans set last_coached_at = %s where id = %s"
 
 
@@ -261,10 +262,36 @@ async def coach_student(
         facts, catch_up_questions=rules_cfg.catch_up_questions, section=section, limit=rules_cfg.max_suggestions + 1
     )
     key = attempt_key(today)
-    async with service_conn(db) as conn:
-        tried = (await (await conn.execute(_ATTEMPTED, (uid, key))).fetchone() or {"tried": False})["tried"]
-        has_llm = (await (await conn.execute(_HAS_LLM_ROWS, (uid, today))).fetchone() or {"has": False})["has"]
-        await conn.execute(_MARK_COACHED, (now, student["plan_id"]))
+    # Two overlapping passes (a second cron fire, a manual run) must not both call the model for this student
+    # tonight: the check, the call and the write happen under one transaction-scoped advisory lock on
+    # coach:<user>:<date>. The pass that does not get it skips the student; the holder writes tonight's rows.
+    async with service_conn(db) as lock:
+        got = await (await lock.execute(_TRY_LOCK, (f"coach:{uid}:{today.isoformat()}",))).fetchone()
+        if not (got and got["got"]):
+            stats.note("locked")
+            return 0
+        return await _coach_locked(
+            lock, gateway, rules_cfg, student, offered, now=now, today=today, key=key, stats=stats
+        )
+
+
+async def _coach_locked(
+    conn: psycopg.AsyncConnection[Any],
+    gateway: Gateway | None,
+    rules_cfg: CoachRules,
+    student: dict[str, Any],
+    offered: list[Candidate],
+    *,
+    now: dt.datetime,
+    today: dt.date,
+    key: str,
+    stats: PassStats,
+) -> int:
+    """Runs on the lock's own connection and transaction (one pool connection for the whole student)."""
+    uid: uuid.UUID = student["user_id"]
+    tried = (await (await conn.execute(_ATTEMPTED, (uid, key))).fetchone() or {"tried": False})["tried"]
+    has_llm = (await (await conn.execute(_HAS_LLM_ROWS, (uid, today))).fetchone() or {"has": False})["has"]
+    await conn.execute(_MARK_COACHED, (now, student["plan_id"]))
     if tried and has_llm:
         stats.note("already_coached")  # tonight's model-worded rows stand; no second call, nothing rewritten
         return 0
@@ -277,8 +304,7 @@ async def coach_student(
         written = await word(gateway, offered, user_id=uid, run_id=key, limit=rules_cfg.max_suggestions, stats=stats)
     if written and written[0].source == "rules":
         stats.rules_students += 1
-    async with service_conn(db) as conn:
-        return await store(conn, uid, today, written, limit=rules_cfg.max_suggestions)
+    return await store(conn, uid, today, written, limit=rules_cfg.max_suggestions)
 
 
 async def coach_pass(
