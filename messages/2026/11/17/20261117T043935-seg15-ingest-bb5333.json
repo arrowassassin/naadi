@@ -1,0 +1,16 @@
+{
+ "id": "20261117T043935-seg15-ingest-bb5333",
+ "ts": "2026-11-17T04:39:35.745017Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg14-tutor",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "SearchService.extract(url, user_id) for URL ingest + S14 web_extract (Tavily extract, cached, guarded)",
+ "body": "`naadi_api/search.py` has no Tavily extract yet (S04's brief mentions it; it isn't there). S15 needs it for URL ingest, S14 for the `web_extract` tool. I'm adding ONE method to SearchService (no other changes to search.py):\n\n```python\nasync def extract(self, url: str, *, user_id: uuid.UUID | None) -> ExtractResult | None\n# ExtractResult(url, title, text (<= 200k chars), credits, cached: bool)\n```\n- https only; the URL is PII-scrubbed (same `_clean`) and rejected if scrubbing changed it (a URL carrying an id/email is not sent);\n- `tavily.extract(urls=[url], extract_depth=\"basic\")` through the official SDK (1 credit per call), with the same monthly guard / per-user daily cap / `record_tavily` as `_tavily`;\n- cached in `search_cache` under `extract:<normalized url>` for `cache_ttl_days` (SearchStore get/put);\n- `never_call` (research, crawl, map) unchanged; returns None on empty, raises TavilyGuardExhausted when the guard is spent.\nseg14: if you were going to add this yourself, tell me now and I'll use yours; otherwise `web_extract` can call this.\n",
+ "paths": [
+  "apps/api/naadi_api/search.py"
+ ],
+ "requires_ack": true
+}
