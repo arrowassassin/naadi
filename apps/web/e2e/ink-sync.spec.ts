@@ -602,6 +602,60 @@ test.describe("ink on a reader section", () => {
   });
 });
 
+test.describe("ink code not loaded yet, then offline", () => {
+  test.setTimeout(120_000);
+
+  test("the section stays readable, Write says it needs a connection, and ink loads when back online", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    const email = emailFor(info, "lazyoff");
+    runUsers(["delete", "--email", email]);
+    const context = await browser.newContext({ ...info.project.use, baseURL, serviceWorkers: NO_SW });
+    try {
+      const page = await context.newPage();
+      const c = consoleOf(page);
+      c.allowOffline();
+      // The ink chunk cannot be fetched (as if the device went offline before it ever loaded).
+      let blocked = true;
+      await page.route(/\/assets\/SectionInkLive-[^/]+\.js$/, (route) =>
+        blocked ? route.abort("internetdisconnected") : route.continue(),
+      );
+      await page.goto(callbackPath(toLink(runUsers(["link", "--email", email])), SECTION));
+      await page.waitForURL((u) => u.pathname === SECTION, { timeout: 30_000 });
+      await expect(page.locator(SURFACE).locator("[data-block-pm]").first()).toBeVisible({ timeout: 20_000 });
+      await page.waitForTimeout(1500); // the idle-time load has been tried (and failed) by now
+      await context.setOffline(true);
+      // Readable: the text is there; nothing about ink shows until the student asks to write.
+      await expect(page.locator("[data-chunk-unavailable]")).toBeHidden();
+      await page.getByRole("button", { name: "Write" }).click();
+      const notice = page.locator("[data-chunk-unavailable='inline']");
+      await expect(notice).toBeVisible({ timeout: 15_000 });
+      await expect(notice).toContainText("This part needs a connection.");
+      await expect(notice.getByRole("button", { name: "Try again" })).toBeVisible();
+      await expect(page.locator(SURFACE).locator("[data-block-pm]").first()).toBeVisible();
+      await expectNoAxeViolations(page);
+      await snap(page, info, c.guard, "reader-ink-needs-connection");
+      // Back online: it retries by itself, the engine attaches, and ink works.
+      blocked = false;
+      await context.setOffline(false);
+      await expect(page.getByRole("toolbar", { name: "Ink tools" })).toBeVisible({ timeout: 20_000 });
+      await expect(notice).toBeHidden();
+      await pickViolet(page);
+      const y = (await blockTop(page, 2)) + 10;
+      const sent = page.waitForResponse((r) => r.url().includes("/changes") && r.status() === 200);
+      await penStroke(page, 0.1, 0.45, y);
+      await sent;
+      await expect(page.locator(SAVE)).toHaveAttribute("data-ink-save", "saved", { timeout: 15_000 });
+      expect(c.errors.filter((e) => !e.startsWith("pageerror"))).toEqual([]);
+      expect(c.errors).toEqual([]);
+    } finally {
+      await context.close();
+      runUsers(["delete", "--email", email]);
+    }
+  });
+});
+
 test.describe("ink toolbar on a phone", () => {
   test.setTimeout(120_000);
 

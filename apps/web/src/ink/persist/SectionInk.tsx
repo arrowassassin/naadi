@@ -1,8 +1,9 @@
 import type { InkSelectionPayload } from "@naadi/ink";
 import { Button, cx } from "@naadi/ui";
 import { PenLine } from "lucide-react";
-import { lazy, type PointerEvent, type ReactNode, Suspense, useCallback, useEffect, useState } from "react";
+import { type PointerEvent, type ReactNode, useCallback, useEffect, useState } from "react";
 import { useUiText } from "../../copy/useUiText";
+import { lazyWithFallback } from "../../shell/lazyPage";
 
 /** Blocks with their own fills (tables, figures, callouts, embeds): markers multiply over them (markerModeFor). */
 const OPAQUE_BLOCKS = new Set(["table", "figure", "video", "pdf", "questionEmbed", "mermaid", "math", "callout"]);
@@ -28,9 +29,15 @@ export interface SectionInkProps {
   className?: string;
 }
 
-/** The engine, sync, Dexie and toolbar: a separate chunk, loaded after the section text has painted. */
-const loadLive = () => import("./SectionInkLive");
-const SectionInkLive = lazy(() => loadLive().then((m) => ({ default: m.SectionInkLive })));
+/**
+ * The engine, sync, Dexie and toolbar: a separate chunk, loaded after the section text has painted. If it cannot
+ * be fetched (offline before it ever loaded, or a deploy replaced it), lazyWithFallback shows the inline "needs a
+ * connection" notice in its place and retries on `online` or Try again. No error boundary, no console error.
+ */
+const SectionInkLive = lazyWithFallback(() => import("./SectionInkLive").then((m) => m.SectionInkLive), {
+  fallback: null,
+  unavailable: "inline",
+});
 
 /** Slots the live part fills (portals), so the page's layout and the content's elements never change. */
 export interface SectionInkSlots {
@@ -118,6 +125,12 @@ export function SectionInk(props: SectionInkProps) {
         </Button>
         <div ref={setStatus} className="contents" />
       </div>
+      {/* Where the live part sits in the tree. When it loads, it renders nothing here (its output goes to the
+          slots). When its chunk could not load, the "needs a connection" notice shows here, and only once the
+          student asks to write. The section text stays readable either way. */}
+      <div hidden={!on} data-section-ink-live="" className="empty:hidden">
+        {load && slots ? <SectionInkLive key={sectionId} {...props} slots={slots} onIdle={setIdle} /> : null}
+      </div>
       <div ref={setNotice} className="contents" />
       <section
         aria-label={t("ink.page.surface")}
@@ -130,11 +143,6 @@ export function SectionInk(props: SectionInkProps) {
         <div ref={setHost} data-ink-host="" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />
       </section>
       <div ref={setAfter} className="contents" />
-      {load && slots ? (
-        <Suspense fallback={null}>
-          <SectionInkLive key={sectionId} {...props} slots={slots} onIdle={setIdle} />
-        </Suspense>
-      ) : null}
     </div>
   );
 }
