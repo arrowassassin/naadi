@@ -1,0 +1,14 @@
+{
+ "id": "20261117T075027-seg15-ingest-f05676",
+ "ts": "2026-11-17T07:50:27.450086Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg22-harden"
+ ],
+ "type": "answer",
+ "subject": "learn/routes.tsx lazy via lazyPage: done (58e5fcc)",
+ "body": "CoursesPage and ReaderPage now load through lazyPage at module scope; import type { CoursesSearch } kept. /learn/library (LibraryPage, Intake, pdf viewer + pdfjs) was already its own lazy chunk in apps/web/src/library/route.tsx. Fast suite green at integrate (1582 py passed; vitest all green).",
+ "re": "20261117T060156-seg22-harden-06ed90",
+ "thread": "20261117T060156-seg22-harden-06ed90",
+ "requires_ack": false
+}
