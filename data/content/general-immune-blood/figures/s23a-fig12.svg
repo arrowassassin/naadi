@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" aria-label="Stepwise laboratory workup of suspected primary immunodeficiency by infection pattern">
+<title>Workup of suspected primary immunodeficiency by infection pattern</title>
+<defs><marker id="c" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+<rect x="0" y="0" width="760" height="460" fill="#ffffff"/>
+<text x="380" y="28" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#222">Match the first tests to the infection pattern</text>
+<g font-family="sans-serif" font-size="13" fill="#222">
+<rect x="230" y="44" width="300" height="56" rx="8" fill="#eeeeee" stroke="#555"/>
+<text x="380" y="66" text-anchor="middle" font-weight="bold">Every patient</text><text x="380" y="86" text-anchor="middle">CBC with differential, HIV test, review of drugs</text>
+</g>
+<g stroke="#555" stroke-width="2" fill="none" marker-end="url(#c)">
+<path d="M300,100 L100,138"/><path d="M350,100 L290,138"/><path d="M410,100 L475,138"/><path d="M460,100 L665,138"/>
+</g>
+<g font-family="sans-serif" font-size="12" fill="#222">
+<rect x="10" y="140" width="180" height="70" rx="8" fill="#ffffff" stroke="#222"/>
+<text x="100" y="160" text-anchor="middle" font-weight="bold">Sinopulmonary,</text><text x="100" y="176" text-anchor="middle" font-weight="bold">encapsulated bacteria</text><text x="100" y="194" text-anchor="middle">(antibody pattern)</text>
+<rect x="200" y="140" width="180" height="70" rx="8" fill="#ffffff" stroke="#222"/>
+<text x="290" y="160" text-anchor="middle" font-weight="bold">Opportunists, viruses,</text><text x="290" y="176" text-anchor="middle" font-weight="bold">thrush, failure to thrive</text><text x="290" y="194" text-anchor="middle">(T-cell or combined)</text>
+<rect x="390" y="140" width="170" height="70" rx="8" fill="#ffffff" stroke="#222"/>
+<text x="475" y="160" text-anchor="middle" font-weight="bold">Recurrent Neisseria</text><text x="475" y="176" text-anchor="middle" font-weight="bold">or lupus-like illness</text><text x="475" y="194" text-anchor="middle">(complement)</text>
+<rect x="570" y="140" width="180" height="70" rx="8" fill="#ffffff" stroke="#222"/>
+<text x="660" y="160" text-anchor="middle" font-weight="bold">Abscesses, deep fungi,</text><text x="660" y="176" text-anchor="middle" font-weight="bold">poor pus or wound healing</text><text x="660" y="194" text-anchor="middle">(phagocyte)</text>
+</g>
+<g stroke="#555" stroke-width="2" fill="none" marker-end="url(#c)">
+<line x1="100" y1="210" x2="100" y2="238"/><line x1="290" y1="210" x2="290" y2="238"/><line x1="475" y1="210" x2="475" y2="238"/><line x1="660" y1="210" x2="660" y2="238"/>
+</g>
+<g font-family="sans-serif" font-size="12" fill="#222">
+<rect x="10" y="240" width="180" height="96" rx="8" fill="#eeeeee" stroke="#555"/>
+<text x="100" y="260" text-anchor="middle">IgG, IgA, IgM (age-</text><text x="100" y="276" text-anchor="middle">specific ranges)</text><text x="100" y="296" text-anchor="middle">then tetanus and</text><text x="100" y="312" text-anchor="middle">pneumococcal titers</text><text x="100" y="328" text-anchor="middle">before and after vaccine</text>
+<rect x="200" y="240" width="180" height="96" rx="8" fill="#eeeeee" stroke="#555"/>
+<text x="290" y="260" text-anchor="middle">Absolute lymphocyte</text><text x="290" y="276" text-anchor="middle">count, flow cytometry</text><text x="290" y="296" text-anchor="middle">(CD3, CD4, CD8, CD19,</text><text x="290" y="312" text-anchor="middle">CD16/56, naive T cells),</text><text x="290" y="328" text-anchor="middle">mitogen response</text>
+<rect x="390" y="240" width="170" height="96" rx="8" fill="#eeeeee" stroke="#555"/>
+<text x="475" y="260" text-anchor="middle">CH50 and AH50</text><text x="475" y="280" text-anchor="middle">then single</text><text x="475" y="296" text-anchor="middle">components;</text><text x="475" y="316" text-anchor="middle">angioedema: C4, then</text><text x="475" y="332" text-anchor="middle">C1-INH level, function</text>
+<rect x="570" y="240" width="180" height="96" rx="8" fill="#eeeeee" stroke="#555"/>
+<text x="660" y="260" text-anchor="middle">Neutrophil count</text><text x="660" y="276" text-anchor="middle">(serial if cyclic),</text><text x="660" y="296" text-anchor="middle">DHR flow, CD18/CD15s</text><text x="660" y="312" text-anchor="middle">flow, smear for</text><text x="660" y="328" text-anchor="middle">granules</text>
+</g>
+<g font-family="sans-serif" font-size="12" fill="#222">
+<text x="20" y="372" font-weight="bold">Then: genetic confirmation, family testing and referral to clinical immunology.</text>
+<text x="20" y="394">Newborns: an absent or low TREC on the newborn screen goes straight to lymphocyte flow cytometry.</text>
+<text x="20" y="416">Until a T-cell defect is excluded: no live vaccines; irradiated, leukoreduced, CMV-safe cellular blood products.</text>
+<text x="20" y="438">Polysaccharide responses are physiologically weak before about age 2 years; interpret titers by age.</text>
+</g>
+</svg>

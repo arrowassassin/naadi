@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" aria-label="Schematic of FSH, inhibin B and estradiol levels from age 40 to 60 across the menopausal transition">
+<title>Hormone changes across the menopausal transition</title>
+<rect x="0" y="0" width="680" height="380" fill="#ffffff"/>
+<text x="340" y="28" font-family="sans-serif" font-size="16" font-weight="bold" fill="#222222" text-anchor="middle">Relative hormone levels across the menopausal transition</text>
+<line x1="80" y1="310" x2="600" y2="310" stroke="#444444" stroke-width="2"/>
+<line x1="80" y1="310" x2="80" y2="60" stroke="#444444" stroke-width="2"/>
+<text x="30" y="190" font-family="sans-serif" font-size="13" fill="#333333" transform="rotate(-90 30 190)" text-anchor="middle">Relative level (schematic)</text>
+<g font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">
+<text x="80" y="330">40</text><text x="210" y="330">45</text><text x="340" y="330">50</text><text x="470" y="330">55</text><text x="600" y="330">60</text>
+<text x="340" y="354">Age (years)</text>
+</g>
+<line x1="366" y1="60" x2="366" y2="310" stroke="#777777" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="372" y="74" font-family="sans-serif" font-size="12" fill="#333333">Final menstrual period (about 51)</text>
+<text x="180" y="300" font-family="sans-serif" font-size="12" fill="#555555" text-anchor="middle">Reproductive</text>
+<text x="300" y="300" font-family="sans-serif" font-size="12" fill="#555555" text-anchor="middle">Transition</text>
+<text x="490" y="300" font-family="sans-serif" font-size="12" fill="#555555" text-anchor="middle">Postmenopause</text>
+<path d="M80 270 C180 266 230 250 280 220 S350 120 400 105 S520 95 600 98" fill="none" stroke="#1f5fa8" stroke-width="3.5"/>
+<text x="606" y="102" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1f5fa8">FSH</text>
+<path d="M80 120 C160 125 220 160 270 210 S340 270 380 280 S520 284 600 284" fill="none" stroke="#c25a0e" stroke-width="3.5" stroke-dasharray="10 4"/>
+<text x="606" y="288" font-family="sans-serif" font-size="13" font-weight="bold" fill="#c25a0e">Inhibin B</text>
+<path d="M80 165 L130 160 L170 168 L210 158 L240 175 L265 140 L290 190 L315 150 L340 215 L360 240 L390 262 L450 268 L600 268" fill="none" stroke="#555555" stroke-width="3" stroke-dasharray="2 4"/>
+<text x="606" y="264" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444444">Estradiol</text>
+<text x="300" y="132" font-family="sans-serif" font-size="12" fill="#444444" text-anchor="middle">erratic</text>
+</svg>

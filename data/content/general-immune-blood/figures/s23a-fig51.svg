@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360" aria-label="Flow diagram for the evaluation of a low platelet count"><title>Approach to thrombocytopenia</title><desc>From a low platelet count: review the smear for clumps, then separate isolated thrombocytopenia from multiple cytopenias and from red cell fragmentation, and use the clinical context.</desc>
+<rect x="0" y="0" width="540" height="360" fill="#ffffff"/>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/></marker></defs>
+<rect x="180" y="14" width="180" height="40" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="270" y="32" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">Platelets below</text>
+<text x="270" y="47" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">150,000/mm3</text>
+<line x1="270" y1="54" x2="270" y2="76" stroke="#444444" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="170" y="78" width="200" height="38" rx="6" fill="#dbe6f3" stroke="#1f5fa8"/>
+<text x="270" y="102" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">Step 1: review the smear</text>
+<line x1="170" y1="97" x2="110" y2="97" stroke="#444444" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="6" y="78" width="102" height="52" rx="6" fill="#f3e8d0" stroke="#9a6b00"/>
+<text x="57" y="98" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Clumps seen:</text>
+<text x="57" y="112" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">recount in a</text>
+<text x="57" y="125" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">citrate tube</text>
+<line x1="270" y1="116" x2="270" y2="138" stroke="#444444" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="150" y="140" width="240" height="38" rx="6" fill="#dbe6f3" stroke="#1f5fa8"/>
+<text x="270" y="164" font-family="sans-serif" font-size="12" fill="#111111" text-anchor="middle">Step 2: other cytopenias? fragments?</text>
+<line x1="200" y1="178" x2="120" y2="206" stroke="#444444" stroke-width="1.5" marker-end="url(#ar)"/>
+<line x1="270" y1="178" x2="270" y2="206" stroke="#444444" stroke-width="1.5" marker-end="url(#ar)"/>
+<line x1="340" y1="178" x2="420" y2="206" stroke="#444444" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="18" y="208" width="170" height="68" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="103" y="226" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Schistocytes present</text>
+<text x="103" y="243" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Microangiopathy:</text>
+<text x="103" y="258" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">TTP, HUS, DIC</text>
+<text x="103" y="271" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">(emergency)</text>
+<rect x="196" y="208" width="148" height="68" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="270" y="226" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Isolated low platelets</text>
+<text x="270" y="243" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">ITP, drugs, HIT,</text>
+<text x="270" y="258" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">pregnancy, liver</text>
+<text x="270" y="271" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">disease, alloimmune</text>
+<rect x="352" y="208" width="176" height="68" rx="6" fill="#eeeeee" stroke="#444444"/>
+<text x="440" y="226" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Several lineages low</text>
+<text x="440" y="243" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Marrow disease, B12</text>
+<text x="440" y="258" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">deficiency,</text>
+<text x="440" y="271" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">hypersplenism</text>
+<rect x="100" y="296" width="340" height="50" rx="6" fill="#dbe6f3" stroke="#1f5fa8"/>
+<text x="270" y="316" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">Step 3: context — heparin in the last 5 to 10 days,</text>
+<text x="270" y="333" font-family="sans-serif" font-size="11" fill="#111111" text-anchor="middle">new drugs, pregnancy, cirrhosis, sepsis, transfusion</text>
+</svg>
