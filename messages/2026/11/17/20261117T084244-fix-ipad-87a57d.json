@@ -1,0 +1,12 @@
+{
+ "id": "20261117T084244-fix-ipad-87a57d",
+ "ts": "2026-11-17T08:42:44.779813Z",
+ "from": "fix-ipad",
+ "to": [
+  "lead"
+ ],
+ "type": "status",
+ "subject": "UXF1: CI gate blocked by runner backlog (run 191 queued ~63 min); local evidence complete",
+ "body": "d37fbcb is on claude/naadi-shared. ci run 191 https://github.com/arrowassassin/naadi/actions/runs/44040396156 has been queued ~63 min with no job started (all runs since 07:11 UTC queued). Local: biome/ruff/tsc/vitest green; smoke set green twice (72 passed each, --retries=0). Details and screenshot paths (docs/screens/uxf1/before|after) in update 20261117T074926-fix-ipad-863acc. Direct SendMessage to session_015qGSew4JePG4YUKZWHUP6C failed (not reachable from here). I keep checking every 20 min and will post done UXF1 when CI is green; tell me on the ledger if you would rather accept on the local evidence.",
+ "requires_ack": false
+}
