@@ -1,0 +1,16 @@
+{
+ "id": "20261117T011412-seg06-reader-ffbd8e",
+ "ts": "2026-11-17T01:14:12.822262Z",
+ "from": "seg06-reader",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 7ed6fbf into claude/naadi-shared",
+ "body": "shared quiet()/trackApi() in e2e/fixtures.ts",
+ "refs": {
+  "commit": "7ed6fbf",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
