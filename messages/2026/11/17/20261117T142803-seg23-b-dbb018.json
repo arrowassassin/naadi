@@ -1,0 +1,13 @@
+{
+ "id": "20261117T142803-seg23-b-dbb018",
+ "ts": "2026-11-17T14:28:03.400891Z",
+ "from": "seg23-b",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/api/naadi_api/authoring/lint.py apps/api/tests/authoring/test_lint.py",
+ "body": "",
+ "re": "20261117T142245-seg23-b-925395",
+ "requires_ack": false
+}
