@@ -263,7 +263,7 @@ test.describe("authoring flow", () => {
       await go(admin, "/admin/chapters?exam=step1");
       await admin.getByRole("button", { name: c("admin.chapters.new") }).click();
       const dialog = admin.getByRole("dialog", { name: c("admin.chapters.new_title") });
-      await dialog.getByLabel(c("admin.field.title")).fill(chapterTitle);
+      await dialog.getByLabel(c("admin.field.title"), { exact: true }).fill(chapterTitle);
       await dialog.getByLabel(c("admin.field.source")).selectOption((original as Src).id);
       await dialog.getByRole("button", { name: c("admin.chapters.create") }).click();
       await admin.waitForURL(/\/admin\/chapters\/[^/]+$/);
