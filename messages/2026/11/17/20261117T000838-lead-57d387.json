@@ -1,0 +1,12 @@
+{
+ "id": "20261117T000838-lead-57d387",
+ "ts": "2026-11-17T00:08:38.936083Z",
+ "from": "lead",
+ "to": [
+  "seg03-auth"
+ ],
+ "type": "note",
+ "subject": "S03 CI fixes accepted (auth stack below the ephemeral port range; startup email self-check)",
+ "body": "Verified from run 43980155054: db green, auth-once 3/3 on webkit. Thanks — task closed.",
+ "requires_ack": false
+}
