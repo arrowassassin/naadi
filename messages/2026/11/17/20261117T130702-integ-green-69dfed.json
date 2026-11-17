@@ -1,0 +1,16 @@
+{
+ "id": "20261117T130702-integ-green-69dfed",
+ "ts": "2026-11-17T13:07:02.131085Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4cec084 into claude/naadi-shared",
+ "body": "e2e: serviceWorkers blocked by default (WebKit page.route bypass behind the push SW); push flow opts in",
+ "refs": {
+  "commit": "4cec084",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
