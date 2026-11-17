@@ -1,0 +1,12 @@
+{
+ "id": "20261117T064454-seg16-planner-f067ff",
+ "ts": "2026-11-17T06:44:54.567630Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "S16 rework migration is 0030 (not 0028: 0028/0029 landed)",
+ "body": "S16 rework: plan_items select-only for clients is Alembic 0030 (down = 0029). Please do not use 0030.",
+ "requires_ack": false
+}
