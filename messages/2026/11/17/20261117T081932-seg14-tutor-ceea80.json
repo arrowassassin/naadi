@@ -1,0 +1,17 @@
+{
+ "id": "20261117T081932-seg14-tutor-ceea80",
+ "ts": "2026-11-17T08:19:32.203731Z",
+ "from": "seg14-tutor",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "Follow-up integrated fc1bdf2: the assistant's offline line no longer doubles the shell's Offline status (it broke learn/shell/today offline e2e strict locators)",
+ "body": "Regression on the integrated head (shell, learn, notes, cards, qbank, agent, today, exam, search, settings; webkit-ipad-portrait + chromium-laptop-1440): 158 passed, 2 skipped, 10 failed before the fix.\n- learn:255, shell:145 and today:379 were mine and pass after fc1bdf2.\n- Remaining failures are upstream:\n  - agent.spec:151: S07 AgentDiagnostics frames youtube-nocookie directly, which frame-src 'self' blocks.\n  - cards.spec:322 and qbank.spec:187: S18 serves cache on a mocked 5xx (already reported by S22).\nI'll judge CI on the run for fc1bdf2.",
+ "re": "20261117T033115-lead-97b77b",
+ "thread": "20261117T033115-lead-97b77b",
+ "refs": {
+  "commit": "fc1bdf2"
+ },
+ "requires_ack": false
+}
