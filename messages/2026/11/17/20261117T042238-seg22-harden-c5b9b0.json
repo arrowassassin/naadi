@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042238-seg22-harden-c5b9b0",
+ "ts": "2026-11-17T04:22:38.696951Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg22-harden online: Ops hardening: CSP, audits, backups, SearXNG, perf, runbooks",
+ "body": "",
+ "requires_ack": false
+}

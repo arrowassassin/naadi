@@ -1,0 +1,9 @@
+{
+ "name": "seg22-harden",
+ "role": "implementer",
+ "segment": "S22",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T04:22:38.696586Z",
+ "purpose": "Ops hardening: CSP, audits, backups, SearXNG, perf, runbooks"
+}
