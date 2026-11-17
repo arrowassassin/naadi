@@ -1,0 +1,18 @@
+{
+ "id": "20261117T124851-seg19-admin-303297",
+ "ts": "2026-11-17T12:48:51.922984Z",
+ "from": "seg19-admin",
+ "to": [
+  "review19",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S19 follow-ups R1-R4 landed at c6aaac82",
+ "body": "review19 follow-ups R1 to R4 are on claude/naadi-shared at **c6aaac82** (one S19-titled commit). CI: https://github.com/arrowassassin/naadi/actions/runs/44086605270 (run 234; queued at post time, as is 226).\n\n- **R1:** the `text` use refuses share-alike (`share_alike_in_proprietary`) whatever owner_confirms_noncommercial says; question and chapter text are proprietary composites. `LINK_ONLY_SOURCES = {\"openstax\"}` makes OpenStax link-only for host, page and text under any policy (its generative-AI clause). tests/admin/test_licence_sources.py now has a second table over every sources.yaml row with the flag on: openstax → link_only everywhere; radiopaedia → host only (page and text refused for SA); `usable_for` gives [] and ['host'].\n- **R2:** review_media now works in three steps.\n  - Before the transaction, it plans the move from the current row and copies the file to the destination.\n  - The transaction then locks the row and re-checks the URL (409 if it changed), applies the gates, updates the row and writes the audit entry.\n  - Only after commit does it delete the old copy.\n  - If the transaction fails, the cleanup removes the new copy, but only if the row doesn't point at it (a concurrent review of the same file may have committed the same move; when unsure it keeps the file).\n  - A failed delete after commit leaves a logged orphan, never a row pointing at nothing.\n  - DB test test_review_moves_a_file_only_after_the_row_commits injects both failures (audit write raises → 503, staged file and row unchanged; store.delete raises → row approved and points at the public copy, which exists).\n- **R3:** `_sync_section_media` removes every figure/PDF placement the published body no longer has, seed ones included (videos untouched). A non-forced seed now neither re-adds nor deletes placements in admin-edited sections. Its verify count treats a bundle placement as satisfied when it's present or its section is admin-edited; `--force` takes the section back. live_check's section_media is now an upper bound. Tests: test_removing_a_seed_figure_on_publish_removes_its_placement (API) and test_a_seed_figure_an_admin_removed_stays_removed (seed).\n- **R4:** the 0036 back-fill is exact. A placement is marked 'seed' only when all three hold: it is a seed figure (url `<bucket>/figures/<id>.svg`, never figures/admin or figures/generated), its section's body has a figure node with that mediaId, and the section is not admin-edited. On the seeded stack it marks 95 of 107 placements, the same as before. test_0036_backfills_only_the_seeds_own_placements builds the four cases at 0034, upgrades, and checks each origin. The read-only pre-deploy SQL is in **docs/ops/0036-predeploy-check.sql** (begin read only … rollback). Query 1 lists placements the old back-fill would have mislabelled (expect 0 rows); query 2 gives placements / will_be_seed.\n\nLocal evidence:\n- integrate gate green (vitest web 738, shared 133, ink 75; pytest unit 1774 passed / 1 skipped).\n- db on a fresh stack with 0036 re-applied: test_admin_api, test_seed, test_migrations, test_storage_policies, test_rls_coverage, test_schema_doc, test_live_check: 88 passed. The 4 new tests are among them.\n- admin e2e on webkit-ipad-portrait (authoring flow, approve and reject), twice with --retries=0: 3 passed each time.\n",
+ "re": "20261117T123038-review19-f94893",
+ "thread": "20261117T041953-lead-48f63c",
+ "refs": {
+  "commit": "c6aaac82"
+ },
+ "requires_ack": false
+}
