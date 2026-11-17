@@ -43,6 +43,8 @@ export interface BudgetNotice {
 export interface AgentError {
   status: number | null;
   requestId: string | null;
+  /** Seconds the runtime asked to wait (`retry-after` on a 429), when it said. */
+  retryAfterS?: number | null;
 }
 
 interface CustomEvent {
@@ -87,6 +89,8 @@ export function useAgent<State extends Record<string, unknown>>({
   const [threadId, setThreadId] = useState<string | null>(null);
   // The request id of the runtime's latest answer (both our middleware and Aegra's echo X-Request-ID).
   const lastRequestId = useRef<string | null>(null);
+  // The latest failed answer's status and retry-after: the SDK's errors do not always carry the HTTP status.
+  const lastFailure = useRef<{ status: number; retryAfterS: number | null } | null>(null);
   const customRef = useRef(onCustomEvent);
   customRef.current = onCustomEvent;
 
@@ -101,14 +105,30 @@ export function useAgent<State extends Record<string, unknown>>({
         if (fresh) headers.set("authorization", `Bearer ${fresh}`);
         const res = await fetch(input, { ...init, headers });
         lastRequestId.current = res.headers.get("x-request-id");
+        const after = Number(res.headers.get("retry-after"));
+        lastFailure.current = res.ok
+          ? null
+          : { status: res.status, retryAfterS: Number.isFinite(after) && after > 0 ? after : null };
         return res;
       },
     }),
     [],
   );
-  const fail = useCallback((err: unknown) => {
-    setRunError({ status: statusOf(err), requestId: lastRequestId.current });
+  const errorOf = useCallback((err: unknown): AgentError => {
+    const failed = lastFailure.current;
+    const status = statusOf(err) ?? failed?.status ?? null;
+    return {
+      status,
+      requestId: lastRequestId.current,
+      retryAfterS: failed && failed.status === status ? failed.retryAfterS : null,
+    };
   }, []);
+  const fail = useCallback(
+    (err: unknown) => {
+      setRunError(errorOf(err));
+    },
+    [errorOf],
+  );
 
   const stream = useStream<State>({
     apiUrl: window.location.origin,
@@ -214,7 +234,7 @@ export function useAgent<State extends Record<string, unknown>>({
     text,
     blocks,
     budget,
-    error: runError ?? (stream.error ? { status: statusOf(stream.error), requestId: lastRequestId.current } : null),
+    error: runError ?? (stream.error ? errorOf(stream.error) : null),
     interrupt: stream.interrupt?.value as Record<string, unknown> | undefined,
     values: stream.values,
     messages: stream.messages,

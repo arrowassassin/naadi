@@ -142,7 +142,10 @@ function RunState({ tutor }: { tutor: Tutor }) {
     );
   }
   if (tutor.phase === "rate_limited" && !tutor.turnNotice) {
-    return <NoticeBlock notice={{ kind: "unavailable" }} />;
+    // The runtime refused the run (429): busy, with the time it said to come back (a minute when it did not).
+    const wait = tutor.error?.retryAfterS ?? 60;
+    const resetAt = new Date(Date.now() + wait * 1000).toISOString();
+    return <NoticeBlock notice={{ kind: "rate_limited", reset_at: resetAt }} />;
   }
   if (tutor.phase === "error" && tutor.error) {
     const status = tutor.error.status;
@@ -165,6 +168,23 @@ function RunState({ tutor }: { tutor: Tutor }) {
     );
   }
   return null;
+}
+
+/**
+ * The sources a rendered answer lists. A tool turn and its answer render as one message, so the tool's citations
+ * and compose's `#final` ones (the sources the answer actually used) meet here: the final ones win; without them,
+ * one entry per source.
+ */
+export function sourcesOf(list: readonly Citation[]): Citation[] {
+  const finals = list.filter((c) => c.id.endsWith("#final"));
+  const pick = finals.length ? finals : list;
+  const seen = new Set<string>();
+  return pick.filter((c) => {
+    const key = c.id.replace(/#final$/, "").replace(/@[^@]*$/, "");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 /** The browser's report of a ResizeObserver loop: benign by the ResizeObserver spec (delivered next frame). */
@@ -223,7 +243,7 @@ export function ThreadView({ tutor, empty, onAsk }: { tutor: Tutor; empty: React
       tutor,
       blocksFor: (id) => byMessage.get(id) ?? [],
       // Citations the stream has not tied to a rendered message yet belong to the latest answer.
-      citationsFor: (id) => [...(cites.get(id) ?? []), ...(id === last ? looseCites : [])],
+      citationsFor: (id) => sourcesOf([...(cites.get(id) ?? []), ...(id === last ? looseCites : [])]),
       disclaimerId: firstDisclaimer?.id ?? null,
       handlers: { ask: onAsk },
       orphans,

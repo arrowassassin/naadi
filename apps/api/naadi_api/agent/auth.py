@@ -170,7 +170,6 @@ async def store_server_only(ctx: Auth.types.AuthContext, value: Any) -> bool:
 
 # Run fields that let a client steer a graph past its own checks: `command.goto`/`command.update` jump to any node
 # with any state, a checkpoint forks from an older state, and interrupt_before/after stop a run between nodes.
-_STATE_WRITE = re.compile(r"^/threads/[^/]+/state/?$")
 _RUN_STEERING = ("checkpoint", "checkpoint_id", "interrupt_before", "interrupt_after")
 
 
@@ -209,23 +208,69 @@ async def thread_deletes_server_only(ctx: Auth.types.AuthContext, value: Any) ->
     return False
 
 
-class ThreadStateWritesDenied:
-    """Aegra's POST /threads/{id}/state writes graph state under any node name and calls no auth handler, so it
-    is refused here for every client (the GET form of that route stays: reads use GET /state and /history). The
-    graphs write their own state; nothing in the app needs a client-side state write."""
+# Aegra's protocol routes a client may call: exactly what the web app uses (useStream in agent/useAgent.ts: create a
+# thread, stream a run, read state and history, list/get/join/cancel runs; the planner and the diagnostics ping:
+# create, wait and join a run). Everything else under the protocol prefixes is refused, whatever a later Aegra adds:
+# v2 /commands and /stream/events, stateless /runs, state writes, thread search/copy/prune, crons, assistants, store.
+_SEG = r"[^/]+"
+PROTOCOL_ALLOWLIST: tuple[tuple[str, str], ...] = (
+    ("POST", "/threads"),
+    ("GET", "/threads/{thread_id}/state"),
+    ("POST", "/threads/{thread_id}/history"),
+    ("POST", "/threads/{thread_id}/runs"),
+    ("POST", "/threads/{thread_id}/runs/stream"),
+    ("POST", "/threads/{thread_id}/runs/wait"),
+    ("GET", "/threads/{thread_id}/runs"),
+    ("GET", "/threads/{thread_id}/runs/{run_id}"),
+    ("GET", "/threads/{thread_id}/runs/{run_id}/join"),
+    ("GET", "/threads/{thread_id}/runs/{run_id}/stream"),
+    ("POST", "/threads/{thread_id}/runs/{run_id}/cancel"),
+    # Aegra's own probes (no protocol data).
+    ("GET", "/health"),
+    ("GET", "/info"),
+    ("GET", "/live"),
+    ("GET", "/ready"),
+)
+# Paths the protocol owns: anything under these that is not allowlisted is refused.
+PROTOCOL_PREFIXES = ("/threads", "/runs", "/assistants", "/store", "/crons", "/health", "/info", "/live", "/ready")
+
+
+def _template_regex(path: str) -> re.Pattern[str]:
+    return re.compile("^" + re.sub(r"\{[^}]+\}", _SEG, path) + "/?$")
+
+
+_ALLOWED = [(m, _template_regex(p)) for m, p in PROTOCOL_ALLOWLIST]
+
+
+def protocol_route_allowed(method: str, path: str) -> bool:
+    m = "GET" if method == "HEAD" else method
+    return any(m == am and rx.match(path) for am, rx in _ALLOWED)
+
+
+def is_protocol_path(path: str) -> bool:
+    return any(path == p or path.startswith(p + "/") for p in PROTOCOL_PREFIXES)
+
+
+class ProtocolAllowlist:
+    """Deny by default on Aegra's protocol routes: only PROTOCOL_ALLOWLIST passes (review14). Naadi's own routes
+    (/api/*, the SPA) are not protocol paths and pass through to their own auth."""
 
     def __init__(self, app: Any) -> None:
         self.app = app
 
     async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
-        if (
-            scope.get("type") == "http"
-            and scope.get("method") == "POST"
-            and _STATE_WRITE.match(str(scope.get("path", "")))
-        ):
-            from ..errors import error_response
+        if scope.get("type") == "http":
+            path = str(scope.get("path", ""))
+            method = str(scope.get("method", "GET"))
+            if is_protocol_path(path) and method != "OPTIONS" and not protocol_route_allowed(method, path):
+                from ..errors import error_response
 
-            log.info("agent_auth_denied", resource="threads", action="state_write")
-            await error_response(403, "This change is not allowed.", "forbidden")(scope, receive, send)
-            return
+                log.info("agent_auth_denied", resource="protocol", method=method, path_kind=_kind(path))
+                await error_response(403, "This change is not allowed.", "forbidden")(scope, receive, send)
+                return
         await self.app(scope, receive, send)
+
+
+def _kind(path: str) -> str:
+    """The route shape, without ids (log lines carry no thread or run ids from refused requests)."""
+    return re.sub(r"/[0-9a-fA-F-]{8,}", "/{id}", path)[:80]

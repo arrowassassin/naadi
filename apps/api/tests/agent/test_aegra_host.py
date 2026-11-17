@@ -111,15 +111,13 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
     with pytest.raises(httpx.HTTPStatusError) as denied:
         await a.store.put_item(["notes"], "k1", {"v": 1})
     assert denied.value.response.status_code in (403, 404)
-    probe = uuid.uuid4().hex
-    await a.crons.create("ping", schedule="0 3 * * *", input={"trigger": "background"}, metadata={"probe": probe})
-    with pg() as conn:
-        found = conn.execute("select cron_id from public.crons where metadata->>'probe' = %s", (probe,)).fetchone()
-    assert found is not None
-    cron = {"cron_id": found[0]}
+    # Crons are the server's (the system ping is ensured at startup); the protocol's cron routes are refused for
+    # every client, admins included (S14 review14: deny by default, only the routes the web app uses).
+    with pytest.raises(httpx.HTTPStatusError) as denied:
+        await a.crons.create("ping", schedule="0 3 * * *", input={"trigger": "background"})
+    assert denied.value.response.status_code == 403
 
     calls = {
-        "threads.get": lambda: b.threads.get(tid),
         "threads.get_state": lambda: b.threads.get_state(tid),
         "threads.get_history": lambda: b.threads.get_history(tid),
         "runs.get": lambda: b.runs.get(tid, run["run_id"]),
@@ -134,11 +132,14 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
         except pytest.fail.Exception:
             not_404.append(name)
     assert not_404 == []
-    # Thread metadata patches and protocol deletes are refused for every client (S14 review: the server owns
-    # thread state and deletes threads with their list rows through /api/assistant), so B gets 403, not 404.
+    # Routes the web app does not use are refused for every client before any ownership check (S14 review14:
+    # deny by default), so B gets 403 there, not 404.
     for name, call in {
+        "threads.get": lambda: b.threads.get(tid),
         "threads.update": lambda: b.threads.update(tid, metadata={"x": 1}),
         "threads.delete": lambda: b.threads.delete(tid),
+        "threads.search": lambda: b.threads.search(limit=100),
+        "crons.search": lambda: b.crons.search(),
     }.items():
         with pytest.raises(httpx.HTTPStatusError) as refused:
             await call()
@@ -150,14 +151,12 @@ async def test_user_b_cannot_see_or_touch_user_a_objects(host: Host) -> None:
             pass
 
     await expect_404(stream_other)
-    assert all(t["thread_id"] != tid for t in await b.threads.search(limit=100))
     for who in (a, b):
         with pytest.raises(httpx.HTTPStatusError):
             await who.store.search_items(["notes"])
-    assert all(c["cron_id"] != cron["cron_id"] for c in await b.crons.search())
-    # The owner still sees everything.
-    assert (await a.threads.get(tid))["thread_id"] == tid
-    await a.crons.delete(cron["cron_id"])
+    # The owner still sees everything through the routes the app uses.
+    assert (await a.threads.get_state(tid))["values"] is not None
+    assert any(r["run_id"] == run["run_id"] for r in await a.runs.list(tid))
 
 
 async def test_students_cannot_schedule_crons_or_edit_assistants_or_ping(host: Host) -> None:
@@ -197,10 +196,10 @@ async def test_students_cannot_schedule_crons_or_edit_assistants_or_ping(host: H
 
 def test_spa_fallback_does_not_shadow_agent_routes(host: Host, tmp_path: Path) -> None:
     headers = {"authorization": f"Bearer {host.admin_token}"}
-    r = httpx.get(f"{host.url}/threads/{uuid.uuid4()}", headers=headers, timeout=10)
+    r = httpx.get(f"{host.url}/threads/{uuid.uuid4()}/state", headers=headers, timeout=10)
     assert r.status_code == 404 and r.headers["content-type"].startswith("application/json")
-    r = httpx.post(f"{host.url}/threads/search", json={"limit": 1}, headers=headers, timeout=10)
-    assert r.status_code == 200
+    r = httpx.post(f"{host.url}/threads", json={}, headers=headers, timeout=10)
+    assert r.status_code == 200 and r.headers["content-type"].startswith("application/json")
     r = httpx.get(f"{host.url}/api/nope", timeout=10)
     assert r.status_code == 404
 
@@ -225,10 +224,14 @@ async def test_concurrent_requests_all_authenticate_within_the_connection_budget
     stop = asyncio.Event()
     watcher = asyncio.create_task(watch(stop))
     async with httpx.AsyncClient(timeout=30) as c:
+        own: list[str] = []
+        for tok in tokens:
+            created = await c.post(f"{host.url}/threads", json={}, headers={"authorization": f"Bearer {tok}"})
+            own.append(created.json()["thread_id"])
 
         async def one(i: int) -> int:
             hdr = {"authorization": f"Bearer {tokens[i % 3]}"}
-            r = await c.post(f"{host.url}/threads/search", json={"limit": 1}, headers=hdr)
+            r = await c.get(f"{host.url}/threads/{own[i % 3]}/state", headers=hdr)
             return r.status_code
 
         for n in (20, 120):

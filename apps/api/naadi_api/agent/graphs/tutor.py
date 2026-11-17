@@ -20,7 +20,11 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+import hashlib
+import hmac
+import json
 import re
+import secrets
 import time
 import uuid
 from collections.abc import Sequence
@@ -34,6 +38,7 @@ from langchain_core.messages import (
     RemoveMessage,
     SystemMessage,
     ToolMessage,
+    convert_to_messages,
 )
 from langchain_core.runnables import RunnableConfig
 from langgraph.config import get_store, get_stream_writer
@@ -108,10 +113,36 @@ def _canvas(left: list[Any] | None, right: list[Any] | None) -> list[Any]:
     return out
 
 
+# ── messages: append-only for everything but the guard ──
+
+_SERVER_MESSAGES = "__naadi_server_messages__"
+
+
+def server_messages(items: list[Any]) -> dict[str, list[Any]]:
+    """A `messages` update from the guard: it may remove what a client slipped in and replace the turn's own new
+    message with its cleaned copy. Every other write, client input included, only appends."""
+    return {_SERVER_MESSAGES: list(items)}
+
+
+def append_only_messages(left: list[AnyMessage] | None, right: Any) -> list[AnyMessage]:
+    """The `messages` reducer: a client's input can add new messages but never rewrite or remove an earlier one (an
+    item reusing an existing id, or a RemoveMessage, is dropped). The guard's own updates (`server_messages`) keep
+    add_messages' full semantics."""
+    left = list(left or [])
+    if isinstance(right, dict) and _SERVER_MESSAGES in right:
+        return add_messages(left, right[_SERVER_MESSAGES])  # type: ignore[return-value,arg-type]
+    items = right if isinstance(right, list) else [right]
+    existing = {m.id for m in left if getattr(m, "id", None)}
+    keep = [
+        m for m in convert_to_messages(items) if not isinstance(m, RemoveMessage) and not (m.id and m.id in existing)
+    ]
+    return add_messages(left, keep)  # type: ignore[return-value,arg-type]
+
+
 class TutorInput(TypedDict):
     """What a client may send. Everything else in the state is the server's (LangGraph filters input to this)."""
 
-    messages: Annotated[list[AnyMessage], add_messages]
+    messages: Annotated[list[AnyMessage], append_only_messages]
     page_context: NotRequired[dict[str, Any] | None]
     attachments: NotRequired[list[dict[str, Any]]]
     web: NotRequired[bool]
@@ -223,17 +254,17 @@ async def guard(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
     removals += [RemoveMessage(id=m.id) for m in humans[:-1] if m.id]
     base: dict[str, Any] = {"refusal": None, "notice": None, "attachments": [], "degraded": False, "kb_best": None}
     if not flags.get("assistant"):
-        return {**base, "messages": removals, "refusal": {"reason": "disabled"}, "msg_count": known}
+        return {**base, "messages": server_messages(removals), "refusal": {"reason": "disabled"}, "msg_count": known}
     if await _exam_active(who.user_id, rules):
         return {
             **base,
-            "messages": removals,
+            "messages": server_messages(removals),
             "refusal": {"reason": "exam_mode"},
             "exam_mode": True,
             "msg_count": known,
         }
     if not humans:
-        return {**base, "messages": removals, "refusal": {"reason": "empty"}, "msg_count": known}
+        return {**base, "messages": server_messages(removals), "refusal": {"reason": "empty"}, "msg_count": known}
     human = humans[-1]
     text = _text(human).strip()[: cfg.max_message_chars]
     ask = state.get("ask") if isinstance(state.get("ask"), dict) else None
@@ -242,17 +273,22 @@ async def guard(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
     try:
         att = parse_attachments(state.get("attachments"), cfg.max_attachments)
     except InvalidAttachment as exc:
-        return {**base, "messages": removals, "refusal": {"reason": f"attachment:{exc}"}, "msg_count": known}
+        return {
+            **base,
+            "messages": server_messages(removals),
+            "refusal": {"reason": f"attachment:{exc}"},
+            "msg_count": known,
+        }
     if att.selections or att.image_texts:
         quoted = "\n\n".join(f"Selected text:\n> {s}" for s in att.selections + att.image_texts)
         text = f"{text}\n\n{quoted}" if text else quoted
     if not text and not att.images:
-        return {**base, "messages": removals, "refusal": {"reason": "empty"}, "msg_count": known}
+        return {**base, "messages": server_messages(removals), "refusal": {"reason": "empty"}, "msg_count": known}
     try:
         check_payload(text, where="message")
     except LeakBlocked:
         # Vault material never reaches a model (llm.py would refuse the call anyway): refuse the turn cleanly.
-        return {**base, "messages": removals, "refusal": {"reason": "vault"}, "msg_count": known}
+        return {**base, "messages": server_messages(removals), "refusal": {"reason": "vault"}, "msg_count": known}
     clean_human = HumanMessage(
         content=text or "(image)",
         id=human.id,
@@ -289,7 +325,7 @@ async def guard(state: TutorState, config: RunnableConfig) -> dict[str, Any]:
             log.warning("tutor.thread_row_failed", error=type(exc).__name__)
     return {
         **base,
-        "messages": [*removals, clean_human],
+        "messages": server_messages([*removals, clean_human]),
         "attachments": [{"kind": "image", "data_url": u} for u in att.images],
         "page": page_to_state(page),
         "exam_mode": False,
@@ -408,6 +444,10 @@ async def _recheck(
         "intent": "dosing" if ambiguous else (intent or "study"),
         "memories": memories,
         "exam_mode": False,
+        # Only the guard's own run validated these: elsewhere the web stays off unless the student asks again, and
+        # attachments (checked image data only in the guard) are dropped.
+        "web_allowed": False,
+        "attachments": [],
         "guard_run": who.run_id,
     }
 
@@ -446,20 +486,43 @@ def _turn_human_with_images(history: list[BaseMessage], state: TutorState) -> li
     return out
 
 
+_PROCESS_SUMMARY_KEY = secrets.token_bytes(32)
+
+
+def _summary_key() -> bytes:
+    """The key the compaction step signs its summary with: derived from a server secret (stable across restarts),
+    or a per-process key where none is configured (unit tests)."""
+    s = get_settings()
+    base = s.supabase_jwt_secret or s.database_url
+    raw = base.get_secret_value().encode() if base else _PROCESS_SUMMARY_KEY
+    return hmac.new(b"naadi-tutor-summary-v1", raw, hashlib.sha256).digest()
+
+
+def _summary_sig(summary: str, ids: list[str], last: str | None) -> str:
+    body = json.dumps({"summary": summary, "ids": ids, "last": last}, sort_keys=True, ensure_ascii=False)
+    return hmac.new(_summary_key(), body.encode(), hashlib.sha256).hexdigest()
+
+
 def _rs_from(d: Any) -> RunningSummary | None:
+    """The rolling summary, only as the compaction step wrote it: one without a valid server signature (a client
+    cannot write graph state, but this never trusts that) is dropped and the turns are summarised again."""
     if not isinstance(d, dict) or not d.get("summary"):
         return None
-    return RunningSummary(
-        summary=str(d["summary"]),
-        summarized_message_ids=set(d.get("ids") or []),
-        last_summarized_message_id=d.get("last"),
-    )
+    ids = [str(i) for i in d.get("ids") or []]
+    last = d.get("last")
+    sig = d.get("sig")
+    if not isinstance(sig, str) or not hmac.compare_digest(sig, _summary_sig(str(d["summary"]), ids, last)):
+        log.warning("tutor.summary_rejected")
+        return None
+    return RunningSummary(summary=str(d["summary"]), summarized_message_ids=set(ids), last_summarized_message_id=last)
 
 
 def _rs_to(rs: RunningSummary | None) -> dict[str, Any] | None:
     if rs is None:
         return None
-    return {"summary": rs.summary, "ids": sorted(rs.summarized_message_ids), "last": rs.last_summarized_message_id}
+    ids = sorted(rs.summarized_message_ids)
+    last = rs.last_summarized_message_id
+    return {"summary": rs.summary, "ids": ids, "last": last, "sig": _summary_sig(rs.summary, ids, last)}
 
 
 async def budget_context(

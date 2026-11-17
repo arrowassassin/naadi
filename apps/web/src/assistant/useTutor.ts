@@ -198,9 +198,21 @@ export function useTutor({ examMode }: { examMode: boolean }) {
 
   // A failed send keeps what the student typed: put it back in an empty input.
   useEffect(() => {
-    if ((phase === "error" || phase === "session_expired") && lastSent && !getAssistantUi().draft) {
-      const persisted = messages.some((m) => m.type === "human" && messageText(m) === lastSent);
-      if (!persisted) setAssistantUi({ draft: lastSent });
+    if (
+      (phase === "error" || phase === "session_expired" || phase === "rate_limited") &&
+      lastSent &&
+      !getAssistantUi().draft
+    ) {
+      // A refused run (429) never started: the question shown is only the client's optimistic copy.
+      const persisted =
+        phase !== "rate_limited" && messages.some((m) => m.type === "human" && messageText(m) === lastSent);
+      if (persisted) return;
+      // After the bar has settled: it empties its text once the send resolves, which would wipe a draft put back
+      // during the send (a refused run fails before the send resolves).
+      const t = window.setTimeout(() => {
+        if (!getAssistantUi().draft) setAssistantUi({ draft: lastSent });
+      }, 50);
+      return () => window.clearTimeout(t);
     }
   }, [phase, lastSent, messages]);
 

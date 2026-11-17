@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import type { Browser, BrowserContext, Locator, Page, Route, TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
@@ -27,11 +28,39 @@ test.skip(!canMintUsers() || !hasRuntime, "the tutor runtime needs a local datab
 
 const STREAM_TIMEOUT = 60_000;
 
-const asStudent = {
+/**
+ * A student of this test's own, onboarded and deleted afterwards: projects, workers and repeats run in parallel, and
+ * one shared student would share one per-token run limit and one set of notes (review14 r2 #3). Where users cannot
+ * be minted (a deployed target), the shared student.
+ */
+const asOwnStudent = {
   storageState: async (
     { browser, baseURL }: { browser: Browser; baseURL: string | undefined },
     use: (p: string) => Promise<void>,
-  ) => use(await signedInState(browser, baseURL as string, "student")),
+    info: TestInfo,
+  ) => {
+    if (!canMintUsers()) return use(await signedInState(browser, baseURL as string, "student"));
+    const slug = createHash("sha1")
+      .update(`${info.titlePath.join("/")}|${info.project.name}`)
+      .digest("hex");
+    // naadi-e2e-<letters>-<run>: the helper only accepts that test-address shape.
+    const email = `naadi-e2e-tutorown-${slug.slice(0, 10)}r${info.repeatEachIndex}t${info.retry}-${process.env.E2E_RUN_ID}@example.com`;
+    runUsers(["delete", "--email", email]);
+    const context = await browser.newContext({ baseURL });
+    try {
+      const page = await context.newPage();
+      await page.goto(callbackPath(toLink(runUsers(["link", "--email", email])), "/settings/account"));
+      await page.waitForURL((u) => u.pathname === "/settings/account", { timeout: 30_000 });
+      await ensureOnboarded(page);
+      const file = info.outputPath("student-state.json");
+      await context.storageState({ path: file });
+      await context.close();
+      await use(file);
+    } finally {
+      await context.close().catch(() => undefined);
+      runUsers(["delete", "--email", email]);
+    }
+  },
 };
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string) =>
@@ -103,7 +132,7 @@ async function noteCount(page: Page, marker = "Winters' formula"): Promise<numbe
 }
 
 test.describe("tutor assistant", () => {
-  test.use(asStudent);
+  test.use(asOwnStudent);
 
   test("ask on a section: thinking, tokens, then the sources block stream in", async ({
     page,
@@ -123,6 +152,10 @@ test.describe("tutor assistant", () => {
     await expect(panel.locator('[data-status="thinking"], [data-status="tool"]')).toHaveCount(0, {
       timeout: STREAM_TIMEOUT,
     });
+    // each source once (the tool's citations and the answer's final ones render under one message)
+    const sourceNames = await answer.getByRole("region", { name: "Sources" }).locator("a, button").allInnerTexts();
+    expect(sourceNames.length).toBeGreaterThan(0);
+    expect(new Set(sourceNames).size, sourceNames.join(" | ")).toBe(sourceNames.length);
     // every word comes from ui_copy; the one lime action of the view is Send (disabled while the input is empty)
     await expect(panel.getByRole("button", { name: "Send" })).toBeDisabled();
     await expectNoAxeViolations(page);
@@ -278,8 +311,36 @@ test.describe("exam mode", () => {
   });
 });
 
+test.describe("assistant rate limited", () => {
+  test.use(asOwnStudent);
+
+  test("a 429 from the runtime shows Busy with the time to come back, and keeps the question", async ({
+    page,
+    consoleErrors,
+  }, info) => {
+    await openFirstSection(page);
+    await page.route(/\/threads\/[^/]+\/runs\/stream/, (route) =>
+      route.fulfill({
+        status: 429,
+        contentType: "application/json",
+        headers: { "retry-after": "30" },
+        body: JSON.stringify({ error: { code: "rate_limited", message: "Too many requests.", request_id: "req-e2e" } }),
+      }),
+    );
+    consoleErrors.allowHttpError({ urlPart: "/runs/stream", status: 429, agentSdk: true });
+    const question = "e2e:answer What does the anion gap tell me?";
+    await ask(page, question);
+    const panel = conversation(page);
+    await expect(panel.locator('[data-notice="rate_limited"]')).toBeVisible({ timeout: STREAM_TIMEOUT });
+    await expect(panel.getByText(/The assistant is busy\. Try again after/)).toBeVisible();
+    await expect(panel.getByText("Unavailable")).toHaveCount(0);
+    await expect(await input(page)).toHaveValue(question);
+    await snap(page, info, consoleErrors, "rate-limited");
+  });
+});
+
 test.describe("assistant offline", () => {
-  test.use(asStudent);
+  test.use(asOwnStudent);
 
   test("an answer renders as plain text while the markdown renderer cannot load, then as markdown once back online", async ({
     page,
@@ -325,7 +386,7 @@ test.describe("assistant offline", () => {
 });
 
 test.describe("assistant states (screens)", () => {
-  test.use(asStudent);
+  test.use(asOwnStudent);
 
   test("dock idle, thinking, past chats, offline and Settings → Assistant", async ({ page, consoleErrors }, info) => {
     test.setTimeout(120_000);

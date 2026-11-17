@@ -141,7 +141,6 @@ async def test_user_b_cannot_read_stream_resume_cancel_or_delete_user_a_threads(
     runs = await a.runs.list(tid)
     run_id = runs[0]["run_id"]
     calls = {
-        "get": lambda: b.threads.get(tid),
         "state": lambda: b.threads.get_state(tid),
         "history": lambda: b.threads.get_history(tid),
         "resume": lambda: b.runs.create(tid, "tutor", command={"resume": {"decision": "accept"}}),
@@ -183,7 +182,7 @@ async def test_rename_search_and_delete_a_thread(host: Host) -> None:
         assert [t["id"] for t in r.get("/api/assistant/threads", params={"q": "murmur"}).json()["items"]] == [row["id"]]
         assert r.delete(f"/api/assistant/threads/{row['id']}").status_code == 204
         assert all(t["id"] != row["id"] for t in r.get("/api/assistant/threads").json()["items"])
-    await expect_404(lambda: a.threads.get(tid))
+    await expect_404(lambda: a.threads.get_state(tid))
     with pg() as conn:
         left = conn.execute("select count(*) from public.checkpoints where thread_id = %s", (tid,)).fetchone()
     assert left == (0,)
@@ -252,6 +251,27 @@ async def test_a_client_cannot_steer_a_run_past_the_guard_or_write_thread_state(
         "state_write": lambda: a.threads.update_state(tid, {"page": forged_page}, as_node="guard"),
         "metadata_patch": lambda: a.threads.update(tid, metadata={"x": 1}),
         "protocol_delete": lambda: a.threads.delete(tid),
+        # Aegra's v2 event streaming (review14 round 2): commands start and answer runs outside create_run's
+        # handler and the run limit, so the routes are refused outright.
+        "v2_input_respond": lambda: _raw_post(
+            host,
+            f"/threads/{tid}/commands",
+            {
+                "id": 1,
+                "method": "input.respond",
+                "params": {
+                    "response": {"decision": "cancel"},
+                    "goto": "tutor",
+                    "update": {"summary": {"summary": "FORGED SUMMARY", "ids": [], "last": None}, "web_allowed": True},
+                },
+            },
+        ),
+        "v2_run_start": lambda: _raw_post(
+            host,
+            f"/threads/{tid}/commands",
+            {"id": 2, "method": "run.start", "params": {"assistant_id": "tutor", "input": {"messages": [human]}}},
+        ),
+        "v2_stream_events": lambda: _raw_post(host, f"/threads/{tid}/stream/events", {}),
     }
     allowed = []
     for name, call in attempts.items():
@@ -270,6 +290,8 @@ async def test_a_client_cannot_steer_a_run_past_the_guard_or_write_thread_state(
     # The thread is untouched: no forged page, still listed, and a normal input run and a resume still work.
     state = await a.threads.get_state(tid)
     assert (state["values"].get("page") or {}).get("question_revealed") is not True
+    assert "FORGED" not in str((state["values"].get("summary") or {}).get("summary"))
+    assert state["values"].get("web_allowed") is not True
     events = await turn(a, tid, "e2e:save this formula")
     assert "error" not in {e for e, _ in events}
     run_id = (await a.runs.list(tid))[0]["run_id"]
@@ -277,6 +299,12 @@ async def test_a_client_cannot_steer_a_run_past_the_guard_or_write_thread_state(
     await resume(a, tid, {"decision": "cancel"})
     with rest(host, host.student_token) as r:
         assert any(t["aegra_thread_id"] == tid for t in r.get("/api/assistant/threads").json()["items"])
+
+
+async def _raw_post(host: Host, path: str, body: dict[str, Any]) -> None:
+    async with httpx.AsyncClient(timeout=20) as c:
+        r = await c.post(f"{host.url}{path}", json=body, headers={"authorization": f"Bearer {host.student_token}"})
+    r.raise_for_status()
 
 
 async def _drain(stream: Any) -> None:
