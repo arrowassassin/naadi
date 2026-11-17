@@ -82,5 +82,4841 @@
   "tags": [
    "Bell palsy"
   ]
+ },
+ {
+  "id": "s23e-c01001",
+  "frontHtml": "Three leading causes of bacterial meningitis in the first month of life?",
+  "backHtml": "Group B streptococcus, <em>E. coli</em> (K1 capsule) and <em>Listeria monocytogenes</em>.",
+  "sectionId": "s23e-s01a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01002",
+  "frontHtml": "Which meningococcal component causes septic shock and DIC?",
+  "backHtml": "<strong>Lipooligosaccharide</strong> (endotoxin), shed in outer-membrane blebs.",
+  "sectionId": "s23e-s01a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01003",
+  "frontHtml": "Which immune defect predisposes to recurrent <em>Neisseria</em> infections?",
+  "backHtml": "Terminal complement (C5–C9) deficiency; also asplenia and the C5 inhibitor eculizumab.",
+  "sectionId": "s23e-s01a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01004",
+  "frontHtml": "CSF in bacterial versus viral meningitis: the most reliable single difference?",
+  "backHtml": "<strong>Glucose</strong>: low in bacterial (CSF:serum ratio below about 0.4), normal in viral.",
+  "sectionId": "s23e-s01a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01005",
+  "frontHtml": "Which organism needs ampicillin cover in meningitis, and in which patients?",
+  "backHtml": "<em>Listeria</em>: neonates, adults over 50, pregnancy and impaired cell-mediated immunity.",
+  "sectionId": "s23e-s01a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01006",
+  "frontHtml": "Which brain regions does HSV encephalitis target?",
+  "backHtml": "Medial temporal lobes and orbitofrontal cortex (haemorrhagic necrosis).",
+  "sectionId": "s23e-s01a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01007",
+  "frontHtml": "How is acyclovir activated, and how does resistance arise?",
+  "backHtml": "First phosphorylated by viral <strong>thymidine kinase</strong>; resistance comes from loss or alteration of that kinase (use foscarnet).",
+  "sectionId": "s23e-s01a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01008",
+  "frontHtml": "Pathological hallmark of prion disease?",
+  "backHtml": "Spongiform vacuolation with neuronal loss and <strong>no inflammation</strong>; PrP<sup>Sc</sup> is β-sheet rich and protease resistant.",
+  "sectionId": "s23e-s01a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01009",
+  "frontHtml": "Which HIV-related brain lesion does not enhance or cause mass effect?",
+  "backHtml": "<strong>PML</strong> (JC virus infection of oligodendrocytes).",
+  "sectionId": "s23e-s01a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01010",
+  "frontHtml": "Multiple ring-enhancing lesions at the basal ganglia in HIV with CD4 below 100: likely cause?",
+  "backHtml": "Cerebral <strong>toxoplasmosis</strong>; a single periventricular lesion with EBV DNA in CSF suggests primary CNS lymphoma.",
+  "sectionId": "s23e-s01a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01011",
+  "frontHtml": "Argyll Robertson pupil?",
+  "backHtml": "Small, irregular pupil that constricts to a near target but not to light; seen in neurosyphilis.",
+  "sectionId": "s23e-s01a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01012",
+  "frontHtml": "Where are MS plaques typically found on MRI?",
+  "backHtml": "Periventricular (ovoid, perpendicular to the ventricles), juxtacortical, infratentorial and spinal cord.",
+  "sectionId": "s23e-s01a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01013",
+  "frontHtml": "Internuclear ophthalmoplegia: lesion and findings?",
+  "backHtml": "Medial longitudinal fasciculus: the eye on the lesion side cannot adduct, the abducting eye has nystagmus, convergence is spared.",
+  "sectionId": "s23e-s01a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01014",
+  "frontHtml": "Natalizumab: target and main risk?",
+  "backHtml": "α4-integrin (blocks lymphocyte entry to the CNS); <strong>PML</strong>.",
+  "sectionId": "s23e-s01a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01015",
+  "frontHtml": "Which MS drugs cause first-dose bradycardia, and how do they lower lymphocyte counts?",
+  "backHtml": "S1P receptor modulators (fingolimod, siponimod, ozanimod); they trap lymphocytes in lymph nodes.",
+  "sectionId": "s23e-s01a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01016",
+  "frontHtml": "Target antigen in NMOSD and the cell it injures?",
+  "backHtml": "<strong>Aquaporin-4</strong> on astrocyte foot processes.",
+  "sectionId": "s23e-s01a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01017",
+  "frontHtml": "Anti-NMDA receptor encephalitis: classic patient and associated tumour?",
+  "backHtml": "Young woman with psychiatric symptoms, seizures, dyskinesias and autonomic instability; <strong>ovarian teratoma</strong>.",
+  "sectionId": "s23e-s01a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01018",
+  "frontHtml": "When do the rostral and caudal neuropores close?",
+  "backHtml": "Rostral about day 25; caudal about day 27–28.",
+  "sectionId": "s23e-s01a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01019",
+  "frontHtml": "Which neural tube defects raise AFP, and which does not?",
+  "backHtml": "Open defects (anencephaly, open myelomeningocele) raise AFP; skin-covered spina bifida occulta does not.",
+  "sectionId": "s23e-s01a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01020",
+  "frontHtml": "Chiari I versus Chiari II?",
+  "backHtml": "Chiari I: tonsillar descent, adolescents and adults, cough headache, syrinx. Chiari II: vermis and medulla herniate, myelomeningocele and hydrocephalus at birth.",
+  "sectionId": "s23e-s01a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01021",
+  "frontHtml": "Dandy-Walker malformation: three features?",
+  "backHtml": "Hypoplastic vermis, cystic enlargement of the fourth ventricle, enlarged posterior fossa.",
+  "sectionId": "s23e-s01a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01022",
+  "frontHtml": "Holoprosencephaly: signalling defect and two associations?",
+  "backHtml": "Sonic hedgehog; trisomy 13 and prenatal alcohol (also maternal diabetes).",
+  "sectionId": "s23e-s01a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01023",
+  "frontHtml": "NF1 gene product and function?",
+  "backHtml": "Neurofibromin (chromosome 17), a GTPase-activating protein that switches off Ras.",
+  "sectionId": "s23e-s01a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01024",
+  "frontHtml": "Hallmark tumour of NF2-related schwannomatosis?",
+  "backHtml": "<strong>Bilateral vestibular schwannomas</strong> (also meningiomas and ependymomas).",
+  "sectionId": "s23e-s01a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01025",
+  "frontHtml": "Tuberous sclerosis: pathway and four non-CNS lesions?",
+  "backHtml": "mTOR overactivity; cardiac rhabdomyoma, renal angiomyolipoma, facial angiofibromas, hypomelanotic macules (also LAM).",
+  "sectionId": "s23e-s01a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01026",
+  "frontHtml": "Sturge-Weber syndrome: genetic cause and skin sign?",
+  "backHtml": "Somatic activating <em>GNAQ</em> mutation; port-wine stain in the V1 distribution.",
+  "sectionId": "s23e-s01a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01027",
+  "frontHtml": "Why does preterm periventricular leukomalacia cause spastic diplegia?",
+  "backHtml": "The corticospinal fibres to the legs run closest to the lateral ventricles.",
+  "sectionId": "s23e-s01a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01028",
+  "frontHtml": "Six findings that call for CT before lumbar puncture in suspected meningitis?",
+  "backHtml": "Immunocompromise, known CNS disease, seizure in the past week, papilledema, reduced consciousness, focal deficit.",
+  "sectionId": "s23e-s01b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01029",
+  "frontHtml": "If CT must come first, what happens before the scan?",
+  "backHtml": "Blood cultures, then <strong>dexamethasone and empirical antibiotics</strong>; do not delay treatment for imaging.",
+  "sectionId": "s23e-s01b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01030",
+  "frontHtml": "Empirical meningitis therapy for a 30-year-old? For a 70-year-old?",
+  "backHtml": "30: vancomycin + ceftriaxone. 70: vancomycin + ceftriaxone + <strong>ampicillin</strong>.",
+  "sectionId": "s23e-s01b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01031",
+  "frontHtml": "Chemoprophylaxis options for close contacts of meningococcal disease?",
+  "backHtml": "Single-dose oral ciprofloxacin, 2 days of rifampin, or single-dose IM ceftriaxone.",
+  "sectionId": "s23e-s01b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01032",
+  "frontHtml": "Should acyclovir wait for the HSV PCR result in suspected encephalitis?",
+  "backHtml": "No. Start intravenous acyclovir on suspicion; repeat PCR if an early test is negative and suspicion stays high.",
+  "sectionId": "s23e-s01b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01033",
+  "frontHtml": "Cryptococcal meningitis: induction therapy and pressure control?",
+  "backHtml": "Amphotericin B (liposomal) + flucytosine; repeated therapeutic lumbar punctures. Delay ART about 4–6 weeks.",
+  "sectionId": "s23e-s01b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01034",
+  "frontHtml": "When should a presumed toxoplasmosis lesion in HIV be biopsied?",
+  "backHtml": "If it does not improve after about 2 weeks of pyrimethamine, sulfadiazine and leucovorin.",
+  "sectionId": "s23e-s01b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01035",
+  "frontHtml": "Treatment of neurosyphilis?",
+  "backHtml": "Intravenous aqueous penicillin G for 10–14 days (desensitise if allergic).",
+  "sectionId": "s23e-s01b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01036",
+  "frontHtml": "Key test after a first episode of optic neuritis?",
+  "backHtml": "MRI of the brain with gadolinium, to assess MS risk and dissemination in space.",
+  "sectionId": "s23e-s01b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01037",
+  "frontHtml": "MS patient with old symptoms returning plus fever and dysuria: next step?",
+  "backHtml": "Urinalysis and culture; treat the infection (pseudo-relapse), not with steroids.",
+  "sectionId": "s23e-s01b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01038",
+  "frontHtml": "Treatment of a disabling MS relapse? If it fails?",
+  "backHtml": "High-dose methylprednisolone for 3–5 days; then plasma exchange.",
+  "sectionId": "s23e-s01b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01039",
+  "frontHtml": "Which MS drugs can worsen NMOSD?",
+  "backHtml": "Interferon-β, natalizumab and fingolimod.",
+  "sectionId": "s23e-s01b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01040",
+  "frontHtml": "Screening test before starting an anti-CD20 antibody?",
+  "backHtml": "Hepatitis B surface antigen and core antibody (risk of reactivation).",
+  "sectionId": "s23e-s01b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.01.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01041",
+  "frontHtml": "Folic acid dose with no prior NTD versus after an affected pregnancy?",
+  "backHtml": "0.4–0.8 mg daily versus <strong>4 mg</strong> daily, from at least 1 month before conception.",
+  "sectionId": "s23e-s01b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01042",
+  "frontHtml": "Immediate care of a newborn with an open myelomeningocele?",
+  "backHtml": "Sterile saline-moistened dressing, prone positioning, latex-free care, antibiotics if leaking, closure within about 48–72 hours.",
+  "sectionId": "s23e-s01b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01043",
+  "frontHtml": "Child with a VP shunt, vomiting and drowsiness: next step?",
+  "backHtml": "Urgent brain imaging plus shunt series and neurosurgery; shunt failure until proven otherwise.",
+  "sectionId": "s23e-s01b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01044",
+  "frontHtml": "First-line treatment of infantile spasms in tuberous sclerosis?",
+  "backHtml": "<strong>Vigabatrin</strong> (monitor for visual field loss).",
+  "sectionId": "s23e-s01b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01045",
+  "frontHtml": "Which antenatal drug reduces cerebral palsy risk in imminent birth before 32 weeks?",
+  "backHtml": "Magnesium sulfate.",
+  "sectionId": "s23e-s01b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c01046",
+  "frontHtml": "Treatment of focal spasticity limiting gait in cerebral palsy?",
+  "backHtml": "Botulinum toxin injections with stretching, casting or orthoses.",
+  "sectionId": "s23e-s01b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.15.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02001",
+  "frontHtml": "Most common primary brain tumour in adults? Most common malignant one?",
+  "backHtml": "Meningioma; <strong>glioblastoma</strong> (but metastases outnumber all primary tumours).",
+  "sectionId": "s23e-s02a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02",
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02002",
+  "frontHtml": "Where do most brain tumours arise in adults and in children?",
+  "backHtml": "Adults: <strong>supratentorial</strong>. Children: <strong>posterior fossa</strong> (cerebellum, fourth ventricle, brainstem).",
+  "sectionId": "s23e-s02a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02003",
+  "frontHtml": "Which primary CNS tumours seed the spinal leptomeninges through CSF?",
+  "backHtml": "Medulloblastoma, ependymoma and germinoma (\"drop metastases\").",
+  "sectionId": "s23e-s02a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02004",
+  "frontHtml": "Why do posterior fossa tumours present early with vomiting and headache on waking?",
+  "backHtml": "They obstruct the fourth ventricle and cause <strong>obstructive hydrocephalus</strong> with raised intracranial pressure.",
+  "sectionId": "s23e-s02a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02005",
+  "frontHtml": "Meningioma: cell of origin and two histology clues?",
+  "backHtml": "Arachnoid cap cells; <strong>whorls</strong> and <strong>psammoma bodies</strong>. EMA and progesterone receptor positive.",
+  "sectionId": "s23e-s02a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02006",
+  "frontHtml": "Schwannoma histology?",
+  "backHtml": "Cellular <strong>Antoni A</strong> areas with palisaded nuclei (Verocay bodies) and loose <strong>Antoni B</strong> areas; S-100 positive.",
+  "sectionId": "s23e-s02a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02007",
+  "frontHtml": "Cyst with a mural nodule in the cerebellum: child versus adult?",
+  "backHtml": "Child: <strong>pilocytic astrocytoma</strong> (Rosenthal fibres). Adult: <strong>hemangioblastoma</strong> (VHL; may cause polycythemia).",
+  "sectionId": "s23e-s02a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02008",
+  "frontHtml": "Gene and protein function in von Hippel–Lindau disease?",
+  "backHtml": "VHL on chromosome 3p; the protein targets <strong>hypoxia-inducible factor</strong> for degradation.",
+  "sectionId": "s23e-s02a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02009",
+  "frontHtml": "Craniopharyngioma: origin and classic triad of findings in a child?",
+  "backHtml": "Rathke pouch remnant. Bitemporal field loss, growth failure (hypopituitarism) and a <strong>calcified</strong> suprasellar cyst.",
+  "sectionId": "s23e-s02a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02010",
+  "frontHtml": "What is the pituitary stalk effect?",
+  "backHtml": "Compression of the stalk cuts off hypothalamic dopamine, so prolactin rises <strong>modestly</strong> (usually below about 150 ng/mL) with a nonfunctioning adenoma.",
+  "sectionId": "s23e-s02a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02011",
+  "frontHtml": "Glioblastoma: two histologic hallmarks?",
+  "backHtml": "<strong>Pseudopalisading necrosis</strong> and <strong>microvascular proliferation</strong>.",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02012",
+  "frontHtml": "Which molecular features define oligodendroglioma (WHO CNS5)?",
+  "backHtml": "<strong>IDH mutation</strong> plus <strong>1p/19q codeletion</strong>.",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02013",
+  "frontHtml": "What does mutant IDH produce, and what does that product do?",
+  "backHtml": "<strong>2-hydroxyglutarate</strong>, which inhibits α-ketoglutarate–dependent demethylases, causing hypermethylation and blocked differentiation.",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02014",
+  "frontHtml": "Why does MGMT promoter methylation predict response to temozolomide?",
+  "backHtml": "It silences MGMT, the enzyme that removes temozolomide's methyl adducts from guanine.",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02015",
+  "frontHtml": "Medulloblastoma: site, histology and marker?",
+  "backHtml": "Cerebellar <strong>vermis</strong> in children; small round blue cells with <strong>Homer Wright rosettes</strong>; synaptophysin positive.",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02016",
+  "frontHtml": "Ependymoma: characteristic microscopic structure?",
+  "backHtml": "<strong>Perivascular pseudorosettes</strong> (cells around vessels with a nucleus-free fibrillary zone).",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02017",
+  "frontHtml": "Primary CNS lymphoma in advanced HIV: cell type and virus?",
+  "backHtml": "Diffuse large <strong>B-cell</strong> lymphoma driven by <strong>Epstein–Barr virus</strong>.",
+  "sectionId": "s23e-s02a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02018",
+  "frontHtml": "Most common sources of brain metastases?",
+  "backHtml": "<strong>Lung</strong> (most common), breast, melanoma, renal cell carcinoma, colorectal.",
+  "sectionId": "s23e-s02a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02019",
+  "frontHtml": "Which brain metastases tend to bleed?",
+  "backHtml": "Melanoma, renal cell carcinoma, choriocarcinoma and thyroid carcinoma.",
+  "sectionId": "s23e-s02a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02020",
+  "frontHtml": "Anti-Yo antibody: tumour and syndrome?",
+  "backHtml": "Ovarian or breast carcinoma; <strong>subacute cerebellar degeneration</strong>.",
+  "sectionId": "s23e-s02a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02021",
+  "frontHtml": "Anti-Hu antibody: tumour and syndromes?",
+  "backHtml": "<strong>Small cell lung carcinoma</strong>; encephalomyelitis and sensory neuronopathy.",
+  "sectionId": "s23e-s02a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02022",
+  "frontHtml": "Why do anti-NMDA receptor syndromes respond to immunotherapy while anti-Hu syndromes rarely do?",
+  "backHtml": "NMDA receptor is on the cell surface, so the antibody is pathogenic. Hu is intracellular; T cells cause irreversible neuron loss.",
+  "sectionId": "s23e-s02a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02023",
+  "frontHtml": "Best imaging test for a suspected brain tumour?",
+  "backHtml": "<strong>MRI of the brain with and without gadolinium</strong> (CT first only in an emergency).",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02024",
+  "frontHtml": "Should a patient with a brain tumour and no seizures receive antiseizure prophylaxis?",
+  "backHtml": "<strong>No.</strong> Treat only after a seizure; prefer levetiracetam (non–enzyme-inducing).",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02025",
+  "frontHtml": "Standard treatment of glioblastoma in a fit patient?",
+  "backHtml": "Maximal safe resection, then focal radiotherapy with <strong>concurrent and adjuvant temozolomide</strong>.",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02026",
+  "frontHtml": "Suspected primary CNS lymphoma in a stable patient: what to avoid before biopsy?",
+  "backHtml": "<strong>Corticosteroids</strong>; they can shrink the lymphoma and make the biopsy nondiagnostic.",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02027",
+  "frontHtml": "First-line treatment of a macroprolactinoma that causes visual field loss?",
+  "backHtml": "A dopamine agonist, <strong>cabergoline</strong>.",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02028",
+  "frontHtml": "First step in pituitary apoplexy with hypotension?",
+  "backHtml": "<strong>Stress-dose intravenous hydrocortisone</strong>, then neurosurgical evaluation.",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02029",
+  "frontHtml": "New enhancement within the radiation field 6 weeks after glioblastoma chemoradiation in a well patient?",
+  "backHtml": "Suspect <strong>pseudoprogression</strong>: continue temozolomide and repeat MRI.",
+  "sectionId": "s23e-s02b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02030",
+  "frontHtml": "Child with morning vomiting, ataxia and papilledema: next step?",
+  "backHtml": "<strong>MRI of the brain</strong> before any lumbar puncture.",
+  "sectionId": "s23e-s02b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01",
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02031",
+  "frontHtml": "How is medulloblastoma staged?",
+  "backHtml": "<strong>MRI of the whole spine</strong> and <strong>CSF cytology</strong>, plus postoperative brain MRI.",
+  "sectionId": "s23e-s02b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02032",
+  "frontHtml": "Yearly surveillance in a young child with NF1?",
+  "backHtml": "<strong>Ophthalmologic examination</strong> (optic pathway glioma) and blood pressure at every visit.",
+  "sectionId": "s23e-s02b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02033",
+  "frontHtml": "Treatment of a cerebellar pilocytic astrocytoma?",
+  "backHtml": "<strong>Complete surgical resection</strong>, usually curative.",
+  "sectionId": "s23e-s02b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02034",
+  "frontHtml": "Cancer patient with back pain and new leg weakness: first two actions?",
+  "backHtml": "<strong>Dexamethasone now</strong> and <strong>emergency MRI of the whole spine</strong>.",
+  "sectionId": "s23e-s02b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02035",
+  "frontHtml": "Cord compression from myeloma or lymphoma in a stable spine: definitive treatment?",
+  "backHtml": "<strong>Radiotherapy</strong> (radiosensitive tumours); surgery for instability or radioresistant tumours.",
+  "sectionId": "s23e-s02b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02036",
+  "frontHtml": "Single accessible symptomatic brain metastasis in a fit patient?",
+  "backHtml": "<strong>Resection</strong> followed by stereotactic radiosurgery to the cavity.",
+  "sectionId": "s23e-s02b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02037",
+  "frontHtml": "A few small brain metastases in a fit patient?",
+  "backHtml": "<strong>Stereotactic radiosurgery</strong> (preserves cognition better than whole-brain radiotherapy).",
+  "sectionId": "s23e-s02b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02038",
+  "frontHtml": "How is leptomeningeal metastasis diagnosed?",
+  "backHtml": "Gadolinium <strong>MRI of the brain and whole spine</strong>, then <strong>CSF cytology</strong> (repeat if negative).",
+  "sectionId": "s23e-s02b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c02039",
+  "frontHtml": "Anti-NMDA receptor encephalitis in a young woman: what tumour search?",
+  "backHtml": "<strong>Pelvic MRI or transvaginal ultrasonography</strong> for an ovarian teratoma.",
+  "sectionId": "s23e-s02b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.02.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03001",
+  "frontHtml": "Leg weakness worse than arm, urinary incontinence and abulia: which artery?",
+  "backHtml": "The <strong>anterior cerebral artery</strong> (medial frontal and parietal cortex, leg area of the motor and sensory strips).",
+  "sectionId": "s23e-s03a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03002",
+  "frontHtml": "Which way do the eyes deviate after a large hemispheric infarct?",
+  "backHtml": "<strong>Toward the lesion</strong> (away from the weak side), because the frontal eye field that drives gaze to the opposite side is lost.",
+  "sectionId": "s23e-s03a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03003",
+  "frontHtml": "Why is central vision often spared in a posterior cerebral artery infarct?",
+  "backHtml": "The occipital pole has dual supply, with <strong>collateral flow from the middle cerebral artery</strong>.",
+  "sectionId": "s23e-s03a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03004",
+  "frontHtml": "Proximal arm and thigh weakness after profound hypotension: where is the injury?",
+  "backHtml": "Bilateral <strong>watershed (border-zone) infarcts</strong> between the anterior and middle cerebral territories.",
+  "sectionId": "s23e-s03a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03005",
+  "frontHtml": "Left-sided weakness with neglect of left space and denial of the deficit: which territory?",
+  "backHtml": "The <strong>right (nondominant) middle cerebral artery</strong>.",
+  "sectionId": "s23e-s03a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03006",
+  "frontHtml": "In the lateral medullary syndrome, on which sides is pain and temperature lost?",
+  "backHtml": "<strong>Same-side face</strong> (spinal trigeminal tract) and <strong>opposite-side body</strong> (crossed spinothalamic tract).",
+  "sectionId": "s23e-s03a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03007",
+  "frontHtml": "Which nucleus, damaged in a lateral medullary infarct, causes hoarseness and dysphagia?",
+  "backHtml": "The <strong>nucleus ambiguus</strong> (motor to pharynx and larynx via IX and X).",
+  "sectionId": "s23e-s03a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03008",
+  "frontHtml": "In a medial medullary infarct, which way does the tongue deviate?",
+  "backHtml": "<strong>Toward the side of the lesion</strong> (the weak genioglossus is pushed over by the normal side).",
+  "sectionId": "s23e-s03a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03009",
+  "frontHtml": "What preserved movements identify a locked-in patient?",
+  "backHtml": "<strong>Vertical eye movements and blinking</strong>; the midbrain gaze centres are spared in a ventral pontine infarct.",
+  "sectionId": "s23e-s03a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03010",
+  "frontHtml": "Name the most common lacunar syndrome and its usual site.",
+  "backHtml": "<strong>Pure motor hemiparesis</strong> of face, arm and leg: posterior limb of the internal capsule (or basis pontis).",
+  "sectionId": "s23e-s03a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03011",
+  "frontHtml": "Pure sensory stroke of the face, arm and leg: where is the lacune?",
+  "backHtml": "The <strong>ventral posterolateral (and posteromedial) thalamus</strong>.",
+  "sectionId": "s23e-s03a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03012",
+  "frontHtml": "When do red neurons appear after an ischemic stroke?",
+  "backHtml": "About <strong>12–24 hours</strong> after the insult.",
+  "sectionId": "s23e-s03a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03013",
+  "frontHtml": "What type of necrosis does an infarct of the brain undergo?",
+  "backHtml": "<strong>Liquefactive necrosis</strong>, leaving a glial-lined cyst.",
+  "sectionId": "s23e-s03a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03014",
+  "frontHtml": "Lobar hemorrhages in an older normotensive person: most likely cause?",
+  "backHtml": "<strong>Cerebral amyloid angiopathy</strong> (beta-amyloid in cortical and leptomeningeal vessel walls).",
+  "sectionId": "s23e-s03a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03015",
+  "frontHtml": "Most common site of hypertensive intracerebral hemorrhage?",
+  "backHtml": "The <strong>putamen</strong> (lenticulostriate arteries); then thalamus, pons and cerebellum.",
+  "sectionId": "s23e-s03a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03016",
+  "frontHtml": "Which inherited kidney disease is linked to saccular cerebral aneurysms?",
+  "backHtml": "<strong>Autosomal dominant polycystic kidney disease</strong>.",
+  "sectionId": "s23e-s03a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03017",
+  "frontHtml": "When does vasospasm after subarachnoid hemorrhage usually occur?",
+  "backHtml": "About <strong>days 3–14</strong> after the bleed.",
+  "sectionId": "s23e-s03a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03018",
+  "frontHtml": "What two kinds of lesion can cause coma?",
+  "backHtml": "Damage to the <strong>upper brainstem tegmentum or thalamus</strong> (reticular activating system), or diffuse dysfunction of <strong>both hemispheres</strong>.",
+  "sectionId": "s23e-s03a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03019",
+  "frontHtml": "Eyes open with sleep–wake cycles but no awareness on repeated testing: what state?",
+  "backHtml": "<strong>Unresponsive wakefulness</strong> (vegetative state).",
+  "sectionId": "s23e-s03a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03020",
+  "frontHtml": "Which neurons are most vulnerable to global hypoxic-ischemic injury?",
+  "backHtml": "Hippocampal <strong>CA1</strong> pyramidal cells, cerebellar <strong>Purkinje</strong> cells, and neocortical layers 3, 5 and 6.",
+  "sectionId": "s23e-s03a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03021",
+  "frontHtml": "Coma with pinpoint pupils and quadriplegia: where is the lesion?",
+  "backHtml": "The <strong>pons</strong> (for example, a pontine hemorrhage).",
+  "sectionId": "s23e-s03a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03022",
+  "frontHtml": "Cold water in one ear of a comatose patient: what response shows an intact brainstem?",
+  "backHtml": "Slow <strong>tonic deviation of both eyes toward the cold ear</strong>, without a fast corrective phase.",
+  "sectionId": "s23e-s03a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03023",
+  "frontHtml": "Biconvex hematoma that does not cross sutures: which space and vessel?",
+  "backHtml": "<strong>Epidural</strong>; usually the <strong>middle meningeal artery</strong> after a temporal bone fracture.",
+  "sectionId": "s23e-s03a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03024",
+  "frontHtml": "Crescent-shaped hematoma that crosses sutures: which space and vessels?",
+  "backHtml": "<strong>Subdural</strong>; torn <strong>bridging veins</strong>.",
+  "sectionId": "s23e-s03a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03025",
+  "frontHtml": "Deep coma after a high-speed rotational injury with a nearly normal CT: likely diagnosis?",
+  "backHtml": "<strong>Diffuse axonal injury</strong>.",
+  "sectionId": "s23e-s03a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03026",
+  "frontHtml": "Name four signs of a basilar skull fracture.",
+  "backHtml": "<strong>Mastoid bruising, periorbital bruising, blood behind the tympanic membrane, CSF leak</strong> from the nose or ear.",
+  "sectionId": "s23e-s03a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03027",
+  "frontHtml": "Formula for cerebral perfusion pressure?",
+  "backHtml": "<strong>CPP = mean arterial pressure − intracranial pressure</strong>.",
+  "sectionId": "s23e-s03a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03028",
+  "frontHtml": "What three signs make up the Cushing reflex?",
+  "backHtml": "<strong>Hypertension, bradycardia and irregular breathing</strong>: a late sign of brainstem compression.",
+  "sectionId": "s23e-s03a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03029",
+  "frontHtml": "Uncal herniation: first cranial nerve sign and why?",
+  "backHtml": "A <strong>fixed dilated pupil</strong> on the same side: compression of the oculomotor nerve, whose pupillary fibres lie superficially.",
+  "sectionId": "s23e-s03a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03030",
+  "frontHtml": "Which artery is compressed in subfalcine herniation, and what deficit results?",
+  "backHtml": "The <strong>anterior cerebral artery</strong>: weakness of the opposite leg.",
+  "sectionId": "s23e-s03a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03031",
+  "frontHtml": "All four ventricles enlarged after meningitis: what type of hydrocephalus?",
+  "backHtml": "<strong>Communicating</strong> hydrocephalus from scarred arachnoid granulations.",
+  "sectionId": "s23e-s03a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03032",
+  "frontHtml": "Triad of normal pressure hydrocephalus?",
+  "backHtml": "<strong>Gait disturbance, urinary incontinence and cognitive slowing</strong>.",
+  "sectionId": "s23e-s03a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03033",
+  "frontHtml": "Time window for IV thrombolysis in acute ischemic stroke?",
+  "backHtml": "Within <strong>4.5 hours</strong> of last known well.",
+  "sectionId": "s23e-s03b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03034",
+  "frontHtml": "Blood pressure limits around IV thrombolysis?",
+  "backHtml": "Below <strong>185/110 mm Hg</strong> before treatment and below <strong>180/105 mm Hg</strong> for 24 hours after.",
+  "sectionId": "s23e-s03b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03035",
+  "frontHtml": "Which strokes benefit from endovascular thrombectomy?",
+  "backHtml": "<strong>Large-vessel occlusion</strong> (internal carotid or proximal middle cerebral; also basilar), within 6 hours, and selected patients up to 24 hours.",
+  "sectionId": "s23e-s03b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03036",
+  "frontHtml": "Blood pressure threshold for treatment in acute ischemic stroke without thrombolysis?",
+  "backHtml": "Treat only above about <strong>220/120 mm Hg</strong> (permissive hypertension).",
+  "sectionId": "s23e-s03b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03037",
+  "frontHtml": "When is antiplatelet therapy started after IV thrombolysis?",
+  "backHtml": "After <strong>24 hours</strong>, once repeat imaging excludes hemorrhage.",
+  "sectionId": "s23e-s03b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03038",
+  "frontHtml": "Antithrombotic therapy for minor noncardioembolic stroke or high-risk TIA?",
+  "backHtml": "<strong>Aspirin plus clopidogrel</strong> started within 24 hours for about 21 days, then a single antiplatelet drug.",
+  "sectionId": "s23e-s03b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03039",
+  "frontHtml": "Stroke with nonvalvular atrial fibrillation: preferred long-term therapy?",
+  "backHtml": "A <strong>direct oral anticoagulant</strong> (for example, apixaban).",
+  "sectionId": "s23e-s03b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03040",
+  "frontHtml": "Indication for carotid endarterectomy after a TIA?",
+  "backHtml": "<strong>Symptomatic stenosis of 70–99%</strong> (consider 50–69%), ideally within 2 weeks.",
+  "sectionId": "s23e-s03b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03041",
+  "frontHtml": "LDL cholesterol target after ischemic stroke of atherosclerotic origin?",
+  "backHtml": "Below <strong>70 mg/dL</strong>, with a high-intensity statin (add ezetimibe if needed).",
+  "sectionId": "s23e-s03b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03042",
+  "frontHtml": "How is warfarin reversed in intracerebral hemorrhage?",
+  "backHtml": "<strong>Four-factor prothrombin complex concentrate plus IV vitamin K</strong>.",
+  "sectionId": "s23e-s03b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03043",
+  "frontHtml": "Specific reversal agent for dabigatran?",
+  "backHtml": "<strong>Idarucizumab</strong>.",
+  "sectionId": "s23e-s03b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03044",
+  "frontHtml": "Thunderclap headache with a normal CT 10 hours later: next step?",
+  "backHtml": "<strong>Lumbar puncture</strong> for xanthochromia and red cells that do not clear.",
+  "sectionId": "s23e-s03b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03045",
+  "frontHtml": "Which drug improves outcome after aneurysmal subarachnoid hemorrhage?",
+  "backHtml": "Oral <strong>nimodipine</strong> for 21 days.",
+  "sectionId": "s23e-s03b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03046",
+  "frontHtml": "Treatment of cerebral venous thrombosis with a hemorrhagic venous infarct?",
+  "backHtml": "<strong>Anticoagulation with heparin</strong> despite the hemorrhage.",
+  "sectionId": "s23e-s03b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03047",
+  "frontHtml": "Neck pain, partial Horner syndrome and a TIA after neck manipulation: diagnosis and treatment?",
+  "backHtml": "<strong>Internal carotid dissection</strong>; antithrombotic therapy (antiplatelet or anticoagulant).",
+  "sectionId": "s23e-s03b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.03.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03048",
+  "frontHtml": "First bedside test in any comatose patient?",
+  "backHtml": "A <strong>fingerstick glucose</strong>.",
+  "sectionId": "s23e-s03b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03049",
+  "frontHtml": "When can neurological prognosis be assessed after cardiac arrest?",
+  "backHtml": "No sooner than about <strong>72 hours</strong>, using several tests together.",
+  "sectionId": "s23e-s03b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03050",
+  "frontHtml": "Minimum core temperature before evaluating for death by neurologic criteria?",
+  "backHtml": "At least <strong>36 °C</strong>.",
+  "sectionId": "s23e-s03b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03051",
+  "frontHtml": "Apnea test thresholds for death by neurologic criteria?",
+  "backHtml": "No breathing with PaCO<sub>2</sub> <strong>at least 60 mm Hg and at least 20 mm Hg above baseline</strong>.",
+  "sectionId": "s23e-s03b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03052",
+  "frontHtml": "Are spinal reflexes compatible with brain death?",
+  "backHtml": "<strong>Yes</strong>: for example, triple flexion of the legs can persist.",
+  "sectionId": "s23e-s03b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.08.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03053",
+  "frontHtml": "Which patients with a minor head injury need CT regardless of examination?",
+  "backHtml": "Those taking <strong>anticoagulants</strong> or with a bleeding disorder (and others meeting decision-rule criteria).",
+  "sectionId": "s23e-s03b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03054",
+  "frontHtml": "Can an athlete return to play the same day after a concussion?",
+  "backHtml": "<strong>No</strong>; remove from play and follow a graded, stepwise return once symptom-free.",
+  "sectionId": "s23e-s03b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03055",
+  "frontHtml": "Treatment of a symptomatic chronic subdural hematoma with mass effect?",
+  "backHtml": "<strong>Burr-hole drainage</strong>.",
+  "sectionId": "s23e-s03b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03056",
+  "frontHtml": "Are glucocorticoids used in traumatic brain injury?",
+  "backHtml": "<strong>No</strong>; they increase mortality.",
+  "sectionId": "s23e-s03b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03057",
+  "frontHtml": "Polyuria with dilute urine and hypernatremia after head injury: diagnosis and treatment?",
+  "backHtml": "<strong>Central diabetes insipidus</strong>; desmopressin.",
+  "sectionId": "s23e-s03b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03058",
+  "frontHtml": "Step after first-tier measures for raised ICP in traumatic brain injury?",
+  "backHtml": "<strong>CSF drainage and hyperosmolar therapy</strong> (hypertonic saline or mannitol).",
+  "sectionId": "s23e-s03b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03059",
+  "frontHtml": "Role of hyperventilation in raised ICP?",
+  "backHtml": "A <strong>brief bridge</strong> for impending herniation only (PaCO<sub>2</sub> about 30–35 mm Hg).",
+  "sectionId": "s23e-s03b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03060",
+  "frontHtml": "Suspected idiopathic intracranial hypertension: which test comes first?",
+  "backHtml": "<strong>MRI of the brain with MR venography</strong>, then lumbar puncture.",
+  "sectionId": "s23e-s03b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03061",
+  "frontHtml": "First-line treatment of idiopathic intracranial hypertension?",
+  "backHtml": "<strong>Weight loss plus acetazolamide</strong>, with visual field monitoring.",
+  "sectionId": "s23e-s03b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c03062",
+  "frontHtml": "Suspected normal pressure hydrocephalus: next step after imaging?",
+  "backHtml": "A <strong>high-volume lumbar puncture (tap test)</strong> to predict shunt response.",
+  "sectionId": "s23e-s03b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.14.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04001",
+  "frontHtml": "Which spinal tract crosses within 1–2 segments of entry, and where?",
+  "backHtml": "The <strong>spinothalamic tract</strong>: second-order axons cross in the anterior white commissure.",
+  "sectionId": "s23e-s04a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04002",
+  "frontHtml": "Right cord hemisection: which side loses pain and temperature, and which side is weak?",
+  "backHtml": "Pain and temperature lost on the <strong>left</strong> (from 1–2 segments below); weakness and lost vibration/position sense on the <strong>right</strong>.",
+  "sectionId": "s23e-s04a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04003",
+  "frontHtml": "Which modality is preserved in anterior spinal artery infarction?",
+  "backHtml": "Vibration and joint position sense (dorsal columns, supplied by the posterior spinal arteries).",
+  "sectionId": "s23e-s04a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04004",
+  "frontHtml": "Bilateral cape-like loss of pain and temperature with preserved touch: lesion and usual association?",
+  "backHtml": "Syrinx damaging the <strong>anterior white commissure</strong>; often a Chiari I malformation.",
+  "sectionId": "s23e-s04a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04005",
+  "frontHtml": "Which tracts does subacute combined degeneration damage?",
+  "backHtml": "Dorsal columns and lateral corticospinal tracts (plus peripheral nerves). Causes: B<sub>12</sub> or copper deficiency, nitrous oxide.",
+  "sectionId": "s23e-s04a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04006",
+  "frontHtml": "At what vertebral level does the adult spinal cord end?",
+  "backHtml": "About <strong>L1–L2</strong> (conus medullaris); lumbar puncture is done at L3–L4 or L4–L5.",
+  "sectionId": "s23e-s04a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04007",
+  "frontHtml": "A posterolateral L4–L5 disc herniation compresses which root?",
+  "backHtml": "<strong>L5</strong> (the root exiting one level lower).",
+  "sectionId": "s23e-s04a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04008",
+  "frontHtml": "Conus medullaris vs cauda equina: which has early symmetric saddle loss and early sphincter failure?",
+  "backHtml": "<strong>Conus medullaris</strong>; cauda equina is gradual, asymmetric, painful and purely lower motor neuron.",
+  "sectionId": "s23e-s04a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04009",
+  "frontHtml": "Neurogenic shock: heart rate and skin?",
+  "backHtml": "<strong>Bradycardia</strong> with warm, dry skin (lost sympathetic tone, unopposed vagus).",
+  "sectionId": "s23e-s04a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04010",
+  "frontHtml": "Above which cord level does autonomic dysreflexia occur?",
+  "backHtml": "At or above about <strong>T6</strong> (above the splanchnic sympathetic outflow).",
+  "sectionId": "s23e-s04a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04011",
+  "frontHtml": "Why does a posterior communicating artery aneurysm dilate the pupil?",
+  "backHtml": "Pupillary parasympathetic fibres lie on the <strong>surface</strong> of the oculomotor nerve and are compressed first.",
+  "sectionId": "s23e-s04a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04012",
+  "frontHtml": "Head tilt and diplopia pattern of a right trochlear nerve palsy?",
+  "backHtml": "Vertical diplopia worse looking down and in; head tilted to the <strong>left</strong> (away from the lesion).",
+  "sectionId": "s23e-s04a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04013",
+  "frontHtml": "Which cranial nerve runs free in the cavernous sinus beside the carotid artery?",
+  "backHtml": "The <strong>abducens nerve</strong> (VI).",
+  "sectionId": "s23e-s04a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04014",
+  "frontHtml": "Which trigeminal division does not pass through the cavernous sinus?",
+  "backHtml": "<strong>V3</strong> (mandibular): it leaves through the foramen ovale.",
+  "sectionId": "s23e-s04a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04015",
+  "frontHtml": "Vagus lesion: which way does the uvula deviate?",
+  "backHtml": "<strong>Away</strong> from the side of the lesion.",
+  "sectionId": "s23e-s04a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04016",
+  "frontHtml": "Hypoglossal lesion: which way does the tongue deviate?",
+  "backHtml": "<strong>Toward</strong> the side of the lesion.",
+  "sectionId": "s23e-s04a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04017",
+  "frontHtml": "Which nerves pass through the jugular foramen?",
+  "backHtml": "Glossopharyngeal (IX), vagus (X) and accessory (XI).",
+  "sectionId": "s23e-s04a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04018",
+  "frontHtml": "Why can a thoracic aortic aneurysm cause hoarseness?",
+  "backHtml": "The <strong>left recurrent laryngeal nerve</strong> loops under the aortic arch.",
+  "sectionId": "s23e-s04a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04019",
+  "frontHtml": "Jaw deviation with a lower motor neuron V3 lesion?",
+  "backHtml": "<strong>Toward</strong> the weak side (the opposite lateral pterygoid pushes it across).",
+  "sectionId": "s23e-s04a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04020",
+  "frontHtml": "Erb palsy: roots and arm position?",
+  "backHtml": "<strong>C5–C6</strong> (upper trunk): arm adducted, internally rotated, elbow extended, forearm pronated.",
+  "sectionId": "s23e-s04a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04021",
+  "frontHtml": "Klumpke palsy plus ptosis and miosis: why the eye signs?",
+  "backHtml": "The <strong>T1 root</strong> carries preganglionic sympathetic fibres to the head (Horner syndrome).",
+  "sectionId": "s23e-s04a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04022",
+  "frontHtml": "Midshaft humerus fracture: nerve, deficit, and is triceps spared?",
+  "backHtml": "<strong>Radial nerve</strong> in the spiral groove: wrist and finger drop; triceps usually spared.",
+  "sectionId": "s23e-s04a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04023",
+  "frontHtml": "Why is central palm sensation spared in carpal tunnel syndrome?",
+  "backHtml": "The <strong>palmar cutaneous branch</strong> of the median nerve passes above the flexor retinaculum.",
+  "sectionId": "s23e-s04a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04024",
+  "frontHtml": "Ulnar lesion at Guyon canal vs elbow: which sensory area separates them?",
+  "backHtml": "The <strong>dorsal medial hand</strong>: spared at the wrist (dorsal cutaneous branch leaves proximally), lost at the elbow.",
+  "sectionId": "s23e-s04a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04025",
+  "frontHtml": "Anterior interosseous nerve palsy: what can't the patient do, and is sensation lost?",
+  "backHtml": "Cannot flex the tips of the thumb and index finger (circle collapses); <strong>no sensory loss</strong>.",
+  "sectionId": "s23e-s04a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04026",
+  "frontHtml": "Foot drop with weak inversion: root or fibular nerve?",
+  "backHtml": "<strong>L5 root</strong>; inversion (tibialis posterior) is tibial nerve, spared in fibular neuropathy.",
+  "sectionId": "s23e-s04a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04027",
+  "frontHtml": "Anticoagulated patient, groin pain, weak knee extension, lost knee jerk: nerve and cause?",
+  "backHtml": "<strong>Femoral nerve</strong> compressed by an iliopsoas haematoma.",
+  "sectionId": "s23e-s04a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04028",
+  "frontHtml": "Trendelenburg sign: which nerve and which side drops?",
+  "backHtml": "<strong>Superior gluteal nerve</strong>; the pelvis drops on the side opposite the stance leg.",
+  "sectionId": "s23e-s04a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04029",
+  "frontHtml": "Mononeuritis multiplex most often signals what?",
+  "backHtml": "<strong>Vasculitis</strong> of the vasa nervorum (e.g. polyarteritis nodosa, ANCA vasculitis, cryoglobulinaemia).",
+  "sectionId": "s23e-s04a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04030",
+  "frontHtml": "Gene and inheritance of Charcot-Marie-Tooth type 1A?",
+  "backHtml": "<strong>PMP22 duplication</strong>, autosomal dominant; demyelinating.",
+  "sectionId": "s23e-s04a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04031",
+  "frontHtml": "Which fibres carry slow, burning second pain?",
+  "backHtml": "Unmyelinated <strong>C fibres</strong> (A-delta fibres carry fast, sharp first pain).",
+  "sectionId": "s23e-s04a07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04032",
+  "frontHtml": "Gabapentin and pregabalin bind what?",
+  "backHtml": "The <strong>α2δ subunit</strong> of voltage-gated calcium channels.",
+  "sectionId": "s23e-s04a07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04033",
+  "frontHtml": "Why do SNRIs and tricyclics relieve neuropathic pain?",
+  "backHtml": "They strengthen <strong>descending</strong> serotonergic and noradrenergic inhibition of the dorsal horn.",
+  "sectionId": "s23e-s04a07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04034",
+  "frontHtml": "HLA allele to test before carbamazepine in at-risk Asian ancestry?",
+  "backHtml": "<strong>HLA-B*15:02</strong> (SJS/TEN risk).",
+  "sectionId": "s23e-s04a07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04035",
+  "frontHtml": "Dejerine–Roussy syndrome: lesion and symptom?",
+  "backHtml": "<strong>VPL/VPM thalamus</strong> stroke; delayed burning pain and allodynia in the numb half of the body.",
+  "sectionId": "s23e-s04a07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04036",
+  "frontHtml": "Capsaicin acts on which receptor?",
+  "backHtml": "<strong>TRPV1</strong>; high doses defunctionalise nociceptor terminals.",
+  "sectionId": "s23e-s04a07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04037",
+  "frontHtml": "First imaging for suspected spinal epidural abscess or cord compression?",
+  "backHtml": "<strong>MRI of the whole spine with gadolinium</strong> (CT myelography if MRI contraindicated).",
+  "sectionId": "s23e-s04b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04038",
+  "frontHtml": "Cancer patient with back pain and new leg weakness: first treatment?",
+  "backHtml": "<strong>High-dose dexamethasone</strong> at once, then emergency MRI and radiotherapy or surgery.",
+  "sectionId": "s23e-s04b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04039",
+  "frontHtml": "Most common organism in spinal epidural abscess?",
+  "backHtml": "<em>Staphylococcus aureus</em> (cover MRSA empirically).",
+  "sectionId": "s23e-s04b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04040",
+  "frontHtml": "Which procedure is avoided in suspected epidural abscess?",
+  "backHtml": "<strong>Lumbar puncture</strong>.",
+  "sectionId": "s23e-s04b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04041",
+  "frontHtml": "Vasopressor of choice in neurogenic shock with bradycardia?",
+  "backHtml": "<strong>Norepinephrine</strong> (pure α-agonists can worsen bradycardia).",
+  "sectionId": "s23e-s04b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04042",
+  "frontHtml": "First steps in autonomic dysreflexia?",
+  "backHtml": "Sit the patient up, loosen clothing, check the bladder and catheter, then bowel; antihypertensive only if pressure stays high.",
+  "sectionId": "s23e-s04b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04043",
+  "frontHtml": "Is high-dose methylprednisolone routine after acute spinal cord injury?",
+  "backHtml": "<strong>No</strong>: doubtful benefit, real harms.",
+  "sectionId": "s23e-s04b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04044",
+  "frontHtml": "Longitudinally extensive transverse myelitis: which antibody to test?",
+  "backHtml": "<strong>Aquaporin-4 IgG</strong> (and MOG IgG).",
+  "sectionId": "s23e-s04b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04045",
+  "frontHtml": "Older adult with clumsy hands, gait imbalance and Hoffmann sign: test?",
+  "backHtml": "<strong>MRI of the cervical spine</strong> (degenerative cervical myelopathy).",
+  "sectionId": "s23e-s04b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04046",
+  "frontHtml": "When should acute sciatica without red flags be imaged?",
+  "backHtml": "After about <strong>6 weeks</strong> of persistent symptoms in a candidate for intervention, or sooner with red flags or a progressive deficit.",
+  "sectionId": "s23e-s04b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04047",
+  "frontHtml": "Initial treatment of acute sciatica without red flags?",
+  "backHtml": "Stay active, heat, an <strong>NSAID</strong>; avoid bed rest and routine opioids.",
+  "sectionId": "s23e-s04b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04048",
+  "frontHtml": "Lost Achilles reflex points to which root?",
+  "backHtml": "<strong>S1</strong>.",
+  "sectionId": "s23e-s04b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.04.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04049",
+  "frontHtml": "Double vision that persists with the other eye covered: where is the problem?",
+  "backHtml": "In the <strong>eye</strong> itself (monocular diplopia): refractive error, cataract, cornea.",
+  "sectionId": "s23e-s04b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04050",
+  "frontHtml": "Painful third nerve palsy with a dilated pupil: next step?",
+  "backHtml": "Emergency <strong>CT or MR angiography</strong> for a posterior communicating artery aneurysm.",
+  "sectionId": "s23e-s04b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04051",
+  "frontHtml": "Pituitary apoplexy with hypotension: first treatment?",
+  "backHtml": "<strong>IV hydrocortisone</strong>, then MRI and neurosurgery.",
+  "sectionId": "s23e-s04b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04052",
+  "frontHtml": "Unexplained left vocal fold paralysis in a smoker: next test?",
+  "backHtml": "<strong>CT from skull base to chest</strong> along the recurrent laryngeal nerve.",
+  "sectionId": "s23e-s04b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04053",
+  "frontHtml": "Shoulder droop and weak shrug after posterior triangle node biopsy: nerve?",
+  "backHtml": "<strong>Spinal accessory nerve</strong>.",
+  "sectionId": "s23e-s04b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04054",
+  "frontHtml": "First-line treatment of mild carpal tunnel syndrome?",
+  "backHtml": "<strong>Neutral night wrist splint</strong> (± steroid injection); surgery for wasting, weakness or severe conduction findings.",
+  "sectionId": "s23e-s04b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04055",
+  "frontHtml": "Bilateral carpal tunnel syndrome can be an early sign of which systemic disease?",
+  "backHtml": "<strong>Transthyretin amyloidosis</strong> (also hypothyroidism, acromegaly, RA, diabetes, pregnancy).",
+  "sectionId": "s23e-s04b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04056",
+  "frontHtml": "Meralgia paresthetica: nerve and treatment?",
+  "backHtml": "<strong>Lateral femoral cutaneous nerve</strong>; remove compression (belts, tight clothing), weight loss, reassurance.",
+  "sectionId": "s23e-s04b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04057",
+  "frontHtml": "Newborn Erb palsy: initial management and when to refer?",
+  "backHtml": "Gentle range-of-motion exercises; refer if biceps function has not recovered by about <strong>3–6 months</strong>.",
+  "sectionId": "s23e-s04b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04058",
+  "frontHtml": "Highest-yield blood tests for distal symmetric polyneuropathy?",
+  "backHtml": "<strong>Glucose tolerance/HbA1c, B<sub>12</sub> (± MMA), serum immunofixation</strong>.",
+  "sectionId": "s23e-s04b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04059",
+  "frontHtml": "When to start neuropathy screening in type 2 and type 1 diabetes?",
+  "backHtml": "Type 2: <strong>at diagnosis</strong>; type 1: <strong>5 years after diagnosis</strong>; then yearly.",
+  "sectionId": "s23e-s04b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04060",
+  "frontHtml": "Components of the annual diabetic foot sensory screen?",
+  "backHtml": "<strong>10-g monofilament</strong> plus one other test (pinprick, temperature or 128-Hz vibration).",
+  "sectionId": "s23e-s04b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04061",
+  "frontHtml": "ANCA-negative mononeuritis multiplex with hepatitis B and hypertension: diagnosis?",
+  "backHtml": "<strong>Polyarteritis nodosa</strong>.",
+  "sectionId": "s23e-s04b06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.05.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04062",
+  "frontHtml": "First-line drug for trigeminal neuralgia?",
+  "backHtml": "<strong>Carbamazepine</strong> (or oxcarbazepine).",
+  "sectionId": "s23e-s04b07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04063",
+  "frontHtml": "Trigeminal neuralgia features that suggest MS or a tumour?",
+  "backHtml": "Young age, <strong>sensory loss</strong>, bilateral pain; image every patient with MRI.",
+  "sectionId": "s23e-s04b07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04064",
+  "frontHtml": "Durable treatment for drug-refractory trigeminal neuralgia in a fit patient?",
+  "backHtml": "<strong>Microvascular decompression</strong>.",
+  "sectionId": "s23e-s04b07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04065",
+  "frontHtml": "Who should receive the recombinant zoster vaccine?",
+  "backHtml": "Adults <strong>≥50</strong>, and immunocompromised adults ≥19; 2 doses 2–6 months apart.",
+  "sectionId": "s23e-s04b07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04066",
+  "frontHtml": "Cornerstone of CRPS treatment?",
+  "backHtml": "Early graded <strong>physical and occupational therapy</strong>; avoid immobilisation.",
+  "sectionId": "s23e-s04b07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c04067",
+  "frontHtml": "Painful diabetic neuropathy with depression: preferred drug?",
+  "backHtml": "<strong>Duloxetine</strong> (avoid with severe kidney impairment).",
+  "sectionId": "s23e-s04b07",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.06.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05001",
+  "frontHtml": "Alzheimer disease: what is outside the neuron and what is inside?",
+  "backHtml": "Outside: <strong>amyloid-beta plaques</strong> (from APP cut by beta- then gamma-secretase). Inside: <strong>neurofibrillary tangles</strong> of hyperphosphorylated tau.",
+  "sectionId": "s23e-s05a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05002",
+  "frontHtml": "Which loss of cholinergic neurons underlies the use of cholinesterase inhibitors in Alzheimer disease?",
+  "backHtml": "Loss of the <strong>nucleus basalis of Meynert</strong>, which supplies acetylcholine to the cortex.",
+  "sectionId": "s23e-s05a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05003",
+  "frontHtml": "Name three genes for autosomal dominant early-onset Alzheimer disease and their chromosomes.",
+  "backHtml": "<em>APP</em> (21), <em>PSEN1</em> (14), <em>PSEN2</em> (1).",
+  "sectionId": "s23e-s05a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05004",
+  "frontHtml": "Main adverse effect of lecanemab and donanemab, and who is at highest risk?",
+  "backHtml": "<strong>ARIA</strong>: vasogenic edema and microhemorrhage/siderosis; highest in <em>APOE</em> e4 homozygotes.",
+  "sectionId": "s23e-s05a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05005",
+  "frontHtml": "Personality change, disinhibition and sweet cravings at 58 with good memory: diagnosis and pathology?",
+  "backHtml": "<strong>Frontotemporal dementia</strong>: frontal and anterior temporal atrophy with tau (Pick bodies) or TDP-43 inclusions.",
+  "sectionId": "s23e-s05a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05006",
+  "frontHtml": "Four core features of dementia with Lewy bodies?",
+  "backHtml": "Fluctuating cognition, recurrent visual hallucinations, REM sleep behaviour disorder, parkinsonism.",
+  "sectionId": "s23e-s05a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05007",
+  "frontHtml": "Which four enzymes need thiamine pyrophosphate?",
+  "backHtml": "Pyruvate dehydrogenase, alpha-ketoglutarate dehydrogenase, branched-chain ketoacid dehydrogenase and <strong>transketolase</strong>.",
+  "sectionId": "s23e-s05a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01",
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05008",
+  "frontHtml": "Classic findings of Wernicke encephalopathy?",
+  "backHtml": "Confusion, eye movement abnormalities (nystagmus, lateral rectus palsy) and gait ataxia; often incomplete.",
+  "sectionId": "s23e-s05a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01",
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05009",
+  "frontHtml": "Korsakoff syndrome: memory pattern and key lesion?",
+  "backHtml": "Anterograde (and some retrograde) amnesia with <strong>confabulation</strong>; mammillary bodies and medial dorsal thalamus.",
+  "sectionId": "s23e-s05a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01",
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05010",
+  "frontHtml": "Hours of anterograde amnesia with repetitive questioning and preserved identity after cold water swimming?",
+  "backHtml": "<strong>Transient global amnesia</strong>; benign, resolves within 24 hours.",
+  "sectionId": "s23e-s05a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01",
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05011",
+  "frontHtml": "ALS: which motor neurons, and what is spared?",
+  "backHtml": "Upper and lower motor neurons; sensation, eye movements and sphincters are spared.",
+  "sectionId": "s23e-s05a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05012",
+  "frontHtml": "Mechanism of nusinersen versus onasemnogene abeparvovec in SMA?",
+  "backHtml": "Nusinersen: antisense oligonucleotide that makes <em>SMN2</em> keep exon 7. Onasemnogene: AAV9 vector carrying a working <em>SMN1</em>.",
+  "sectionId": "s23e-s05a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05013",
+  "frontHtml": "Myasthenia gravis versus Lambert-Eaton syndrome: effect of repeated effort?",
+  "backHtml": "MG: weakness <strong>worsens</strong>. LEMS: strength and reflexes briefly <strong>improve</strong>.",
+  "sectionId": "s23e-s05a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05014",
+  "frontHtml": "Lambert-Eaton syndrome: antibody target and associated tumour?",
+  "backHtml": "Presynaptic P/Q-type voltage-gated calcium channels; <strong>small cell lung cancer</strong>.",
+  "sectionId": "s23e-s05a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05015",
+  "frontHtml": "How does botulinum toxin cause paralysis?",
+  "backHtml": "Its protease cleaves <strong>SNARE proteins</strong>, so acetylcholine vesicles cannot fuse and release.",
+  "sectionId": "s23e-s05a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05016",
+  "frontHtml": "Name drug classes that can worsen myasthenia gravis.",
+  "backHtml": "Aminoglycosides, fluoroquinolones, macrolides, magnesium, beta-blockers, immune checkpoint inhibitors.",
+  "sectionId": "s23e-s05a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05017",
+  "frontHtml": "Duchenne versus Becker: what does the dystrophin mutation do to the reading frame?",
+  "backHtml": "Duchenne: <strong>frameshift</strong>, almost no dystrophin. Becker: <strong>in-frame</strong>, shorter partly working dystrophin.",
+  "sectionId": "s23e-s05a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05018",
+  "frontHtml": "Why are the calves big in Duchenne muscular dystrophy?",
+  "backHtml": "<strong>Pseudohypertrophy</strong>: muscle replaced by fat and fibrous tissue.",
+  "sectionId": "s23e-s05a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05019",
+  "frontHtml": "Myotonic dystrophy type 1: mutation and four non-muscle features?",
+  "backHtml": "CTG repeat in <em>DMPK</em>; cataracts, frontal balding, cardiac conduction block, insulin resistance (also testicular atrophy).",
+  "sectionId": "s23e-s05a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05020",
+  "frontHtml": "Which organism and mechanism link diarrhea to Guillain-Barré syndrome?",
+  "backHtml": "<em>Campylobacter jejuni</em>; antibodies to its lipooligosaccharide cross-react with nerve gangliosides (molecular mimicry).",
+  "sectionId": "s23e-s05a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05021",
+  "frontHtml": "Miller Fisher syndrome: triad and antibody?",
+  "backHtml": "Ophthalmoplegia, ataxia, areflexia; <strong>anti-GQ1b</strong>.",
+  "sectionId": "s23e-s05a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05022",
+  "frontHtml": "Dopamine acts on which receptor in each basal ganglia pathway, and with what effect?",
+  "backHtml": "Direct pathway: <strong>D1</strong>, excites. Indirect pathway: <strong>D2</strong>, inhibits. Both favour movement.",
+  "sectionId": "s23e-s05a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05023",
+  "frontHtml": "A lesion of which nucleus causes contralateral hemiballismus?",
+  "backHtml": "The <strong>subthalamic nucleus</strong>.",
+  "sectionId": "s23e-s05a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05024",
+  "frontHtml": "Which striatal neurons die first in Huntington disease?",
+  "backHtml": "Indirect-pathway (D2) neurons projecting to the <strong>external globus pallidus</strong>, causing chorea.",
+  "sectionId": "s23e-s05a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05025",
+  "frontHtml": "Why is carbidopa given with levodopa?",
+  "backHtml": "It blocks <strong>peripheral DOPA decarboxylase</strong> and does not enter the brain, so less nausea and more levodopa reaches the CNS.",
+  "sectionId": "s23e-s05a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05026",
+  "frontHtml": "Dopamine agonist adverse effect to ask about at every visit?",
+  "backHtml": "<strong>Impulse control disorders</strong>: gambling, shopping, binge eating, hypersexuality.",
+  "sectionId": "s23e-s05a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05027",
+  "frontHtml": "Wilson disease: gene, protein function and eye sign?",
+  "backHtml": "<em>ATP7B</em>, hepatocyte copper ATPase that loads ceruloplasmin and excretes copper into bile; <strong>Kayser-Fleischer rings</strong>.",
+  "sectionId": "s23e-s05a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05028",
+  "frontHtml": "How does ammonia injure the brain in hepatic encephalopathy?",
+  "backHtml": "Astrocytes make glutamine from ammonia; glutamine accumulates and the <strong>astrocytes swell</strong>.",
+  "sectionId": "s23e-s05a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05029",
+  "frontHtml": "Osmotic demyelination syndrome: cause and timing?",
+  "backHtml": "Correcting chronic hyponatremia too quickly; dysarthria, dysphagia and quadriparesis appear <strong>days later</strong>.",
+  "sectionId": "s23e-s05a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05030",
+  "frontHtml": "B12 versus folate deficiency: methylmalonic acid and homocysteine?",
+  "backHtml": "B12: <strong>both high</strong>. Folate: homocysteine high, methylmalonic acid normal.",
+  "sectionId": "s23e-s05a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05031",
+  "frontHtml": "Cherry-red spot: how do you tell Tay-Sachs from Niemann-Pick type A?",
+  "backHtml": "Tay-Sachs has <strong>no hepatosplenomegaly</strong> (hexosaminidase A); Niemann-Pick has it (sphingomyelinase).",
+  "sectionId": "s23e-s05a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05032",
+  "frontHtml": "X-linked adrenoleukodystrophy: defect and what accumulates?",
+  "backHtml": "<em>ABCD1</em> peroxisomal transporter; <strong>very-long-chain fatty acids</strong>, in adrenal cortex and white matter.",
+  "sectionId": "s23e-s05a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05033",
+  "frontHtml": "Muscle biopsy hallmark of mitochondrial encephalomyopathies?",
+  "backHtml": "<strong>Ragged red fibres</strong> on modified Gomori trichrome.",
+  "sectionId": "s23e-s05a06",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05034",
+  "frontHtml": "Which blood tests are part of the basic dementia work-up?",
+  "backHtml": "Blood count, metabolic panel with calcium and glucose, <strong>vitamin B12</strong> and <strong>TSH</strong>; syphilis and HIV if at risk.",
+  "sectionId": "s23e-s05b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05035",
+  "frontHtml": "Normal pressure hydrocephalus: order of symptoms and the test that predicts shunt response?",
+  "backHtml": "Gait, then urinary urgency, then cognitive slowing; <strong>large-volume lumbar tap</strong> with gait testing.",
+  "sectionId": "s23e-s05b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05036",
+  "frontHtml": "What must be done before starting an anti-amyloid antibody?",
+  "backHtml": "Confirm amyloid (PET or CSF), a <strong>recent brain MRI</strong>, <em>APOE</em> counseling, review of anticoagulants; MRI monitoring for ARIA.",
+  "sectionId": "s23e-s05b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05037",
+  "frontHtml": "First step for new evening agitation in a nursing home resident with dementia?",
+  "backHtml": "Look for <strong>pain, constipation, retention, infection</strong> and environmental triggers; non-drug measures first.",
+  "sectionId": "s23e-s05b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05038",
+  "frontHtml": "Why avoid antipsychotics in dementia when possible?",
+  "backHtml": "They raise <strong>mortality and stroke risk</strong> in older adults with dementia.",
+  "sectionId": "s23e-s05b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.07.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05039",
+  "frontHtml": "Bedside thresholds for elective intubation in neuromuscular weakness?",
+  "backHtml": "FVC below about <strong>20 mL/kg</strong>, NIF weaker than about <strong>−30 cm H<sub>2</sub>O</strong>, a rapid fall, or pooling secretions.",
+  "sectionId": "s23e-s05b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05040",
+  "frontHtml": "Guillain-Barré syndrome treatment and what does not work?",
+  "backHtml": "<strong>IVIG or plasma exchange</strong> (equal); corticosteroids do not help.",
+  "sectionId": "s23e-s05b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05041",
+  "frontHtml": "After diagnosing myasthenia gravis, which imaging is needed?",
+  "backHtml": "Chest CT or MRI for <strong>thymoma</strong>.",
+  "sectionId": "s23e-s05b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05042",
+  "frontHtml": "Treatment of infant botulism?",
+  "backHtml": "<strong>Human botulism immune globulin</strong> early, supportive care; avoid aminoglycosides.",
+  "sectionId": "s23e-s05b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05043",
+  "frontHtml": "When should noninvasive ventilation start in ALS?",
+  "backHtml": "When FVC falls below about <strong>50% predicted</strong> or orthopnea or nocturnal hypoventilation symptoms appear.",
+  "sectionId": "s23e-s05b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.09.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05044",
+  "frontHtml": "First-line drug for Parkinson disease that limits function in a 76-year-old?",
+  "backHtml": "<strong>Carbidopa-levodopa</strong>.",
+  "sectionId": "s23e-s05b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05045",
+  "frontHtml": "Order of drug withdrawal for psychosis in Parkinson disease?",
+  "backHtml": "Anticholinergics, amantadine, MAO-B inhibitors, dopamine agonists, COMT inhibitors; reduce levodopa last.",
+  "sectionId": "s23e-s05b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05046",
+  "frontHtml": "Antipsychotics that can be used in Parkinson disease psychosis?",
+  "backHtml": "<strong>Pimavanserin</strong>, low-dose quetiapine, clozapine; avoid haloperidol and risperidone.",
+  "sectionId": "s23e-s05b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05047",
+  "frontHtml": "Essential tremor first-line drugs?",
+  "backHtml": "<strong>Propranolol</strong> or <strong>primidone</strong> (primidone if asthma).",
+  "sectionId": "s23e-s05b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05048",
+  "frontHtml": "Tardive dyskinesia treatment?",
+  "backHtml": "A <strong>VMAT2 inhibitor</strong> (valbenazine, deutetrabenazine); review the antipsychotic; anticholinergics worsen it.",
+  "sectionId": "s23e-s05b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05049",
+  "frontHtml": "Acute dystonic reaction treatment?",
+  "backHtml": "IV or IM <strong>diphenhydramine or benztropine</strong>.",
+  "sectionId": "s23e-s05b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.10.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05050",
+  "frontHtml": "Is a blood ammonia level needed to diagnose or follow hepatic encephalopathy?",
+  "backHtml": "<strong>No</strong>; diagnosis is clinical, and levels do not guide treatment.",
+  "sectionId": "s23e-s05b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05051",
+  "frontHtml": "Hepatic encephalopathy recurrence despite lactulose: next drug?",
+  "backHtml": "<strong>Rifaximin</strong>.",
+  "sectionId": "s23e-s05b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05052",
+  "frontHtml": "Severe symptomatic hyponatremia: first treatment?",
+  "backHtml": "<strong>100 mL of 3% saline</strong>, repeated up to twice, for a 4–6 mEq/L rise.",
+  "sectionId": "s23e-s05b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05053",
+  "frontHtml": "Maximum 24-hour sodium rise in a patient at high risk of osmotic demyelination?",
+  "backHtml": "About <strong>8 mEq/L</strong>.",
+  "sectionId": "s23e-s05b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05054",
+  "frontHtml": "How do you reverse overcorrection of hyponatremia?",
+  "backHtml": "Stop saline; give <strong>5% dextrose in water and desmopressin</strong>.",
+  "sectionId": "s23e-s05b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c05055",
+  "frontHtml": "A B12-like myelopathy with cytopenias, normal B12 and heavy denture cream use?",
+  "backHtml": "<strong>Copper deficiency</strong> from zinc excess; check serum copper and ceruloplasmin.",
+  "sectionId": "s23e-s05b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.11.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06001",
+  "frontHtml": "Which antiseizure drug blocks thalamic T-type calcium channels, and for which seizure type?",
+  "backHtml": "<strong>Ethosuximide</strong>: absence seizures only.",
+  "sectionId": "s23e-s06a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06002",
+  "frontHtml": "Benzodiazepines versus barbiturates at the GABA<sub>A</sub> receptor?",
+  "backHtml": "Benzodiazepines increase the <strong>frequency</strong> of channel opening; barbiturates increase its <strong>duration</strong> (and can open it directly at high doses).",
+  "sectionId": "s23e-s06a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06003",
+  "frontHtml": "Which antiseizure drug binds synaptic vesicle protein SV2A?",
+  "backHtml": "<strong>Levetiracetam</strong> (and brivaracetam).",
+  "sectionId": "s23e-s06a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06004",
+  "frontHtml": "Commonest pathology behind drug-resistant temporal lobe epilepsy in adults?",
+  "backHtml": "<strong>Hippocampal sclerosis</strong>: neuron loss and gliosis, worst in CA1.",
+  "sectionId": "s23e-s06a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06005",
+  "frontHtml": "Which antiseizure drugs can worsen absence and myoclonic seizures?",
+  "backHtml": "Sodium channel blockers such as <strong>carbamazepine, oxcarbazepine and phenytoin</strong>.",
+  "sectionId": "s23e-s06a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06006",
+  "frontHtml": "What causes the visual aura of migraine?",
+  "backHtml": "<strong>Cortical spreading depolarization</strong>: a slow wave of depolarization, then suppression, crossing the occipital cortex.",
+  "sectionId": "s23e-s06a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06007",
+  "frontHtml": "Triptan receptor targets and the main contraindication?",
+  "backHtml": "<strong>5-HT<sub>1B/1D</sub></strong> agonists; avoid in coronary, cerebrovascular or peripheral arterial disease.",
+  "sectionId": "s23e-s06a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06008",
+  "frontHtml": "Which migraine antibody binds the CGRP receptor rather than CGRP itself?",
+  "backHtml": "<strong>Erenumab</strong>.",
+  "sectionId": "s23e-s06a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06009",
+  "frontHtml": "Pathway for tearing in cluster headache?",
+  "backHtml": "Superior salivatory nucleus → <strong>facial nerve</strong> (greater petrosal) → <strong>pterygopalatine ganglion</strong> → lacrimal gland.",
+  "sectionId": "s23e-s06a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06010",
+  "frontHtml": "EEG hallmark of N2 sleep?",
+  "backHtml": "<strong>Sleep spindles and K complexes</strong>.",
+  "sectionId": "s23e-s06a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06011",
+  "frontHtml": "Which sleep stage dominates the first third of the night, and which parasomnias arise from it?",
+  "backHtml": "<strong>N3 (slow-wave)</strong>; sleepwalking and sleep terrors.",
+  "sectionId": "s23e-s06a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06012",
+  "frontHtml": "Cause of narcolepsy type 1?",
+  "backHtml": "Loss of <strong>orexin (hypocretin)</strong> neurons in the lateral hypothalamus; linked to HLA-DQB1*06:02.",
+  "sectionId": "s23e-s06a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06013",
+  "frontHtml": "REM sleep behavior disorder is an early sign of which group of diseases?",
+  "backHtml": "<strong>α-Synucleinopathies</strong>: Parkinson disease, dementia with Lewy bodies, multiple system atrophy.",
+  "sectionId": "s23e-s06a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06014",
+  "frontHtml": "Mechanism of sodium oxybate?",
+  "backHtml": "<strong>GABA<sub>B</sub> agonist</strong> (GHB); treats cataplexy and consolidates night sleep.",
+  "sectionId": "s23e-s06a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06015",
+  "frontHtml": "Sleep changes in major depression?",
+  "backHtml": "<strong>Shorter REM latency</strong>, more REM, less N3, early morning waking.",
+  "sectionId": "s23e-s06a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06016",
+  "frontHtml": "Why does a small phenytoin dose increase cause toxicity?",
+  "backHtml": "Its metabolism <strong>saturates</strong>: zero-order kinetics at usual doses.",
+  "sectionId": "s23e-s06a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06017",
+  "frontHtml": "Genetic marker to test before carbamazepine in patients of Asian ancestry?",
+  "backHtml": "<strong>HLA-B*15:02</strong> (risk of SJS/TEN).",
+  "sectionId": "s23e-s06a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06018",
+  "frontHtml": "Why do isoniazid-induced seizures resist benzodiazepines?",
+  "backHtml": "Pyridoxal phosphate depletion cuts <strong>GABA synthesis</strong> (glutamate decarboxylase); give IV pyridoxine.",
+  "sectionId": "s23e-s06a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06019",
+  "frontHtml": "Topiramate: mechanism behind its kidney stones?",
+  "backHtml": "<strong>Carbonic anhydrase inhibition</strong> causes acidosis and alkaline urine, which favour calcium phosphate stones.",
+  "sectionId": "s23e-s06a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06020",
+  "frontHtml": "Rigidity with slow reflexes versus clonus with brisk reflexes?",
+  "backHtml": "Rigidity: <strong>neuroleptic malignant syndrome</strong>. Clonus: <strong>serotonin syndrome</strong>.",
+  "sectionId": "s23e-s06a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06021",
+  "frontHtml": "Standard evaluation after a first unprovoked seizure with normal labs?",
+  "backHtml": "<strong>Brain MRI and EEG</strong>.",
+  "sectionId": "s23e-s06b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06022",
+  "frontHtml": "Antiseizure drugs for a person with generalized epilepsy who could become pregnant?",
+  "backHtml": "<strong>Levetiracetam or lamotrigine</strong> (avoid valproate), plus folic acid before conception.",
+  "sectionId": "s23e-s06b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06023",
+  "frontHtml": "Definition of a simple febrile seizure?",
+  "backHtml": "Generalized, <strong>under 15 minutes</strong>, once in 24 hours, in a feverish child aged 6 months to 5 years.",
+  "sectionId": "s23e-s06b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06024",
+  "frontHtml": "Diagnostic standard for functional (psychogenic nonepileptic) seizures?",
+  "backHtml": "<strong>Video-EEG</strong> capturing a typical event without epileptic EEG change.",
+  "sectionId": "s23e-s06b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06025",
+  "frontHtml": "First drug for convulsive status epilepticus without IV access?",
+  "backHtml": "<strong>IM midazolam</strong>.",
+  "sectionId": "s23e-s06b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06026",
+  "frontHtml": "Second-line drugs when status epilepticus continues after benzodiazepines?",
+  "backHtml": "IV <strong>levetiracetam, fosphenytoin or valproate</strong>.",
+  "sectionId": "s23e-s06b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06027",
+  "frontHtml": "Patient does not wake after convulsions stop. What next?",
+  "backHtml": "<strong>EEG</strong> for nonconvulsive status epilepticus.",
+  "sectionId": "s23e-s06b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06028",
+  "frontHtml": "Acute treatment of a cluster headache attack?",
+  "backHtml": "<strong>100% oxygen</strong> at 12–15 L/min by non-rebreather, or subcutaneous sumatriptan.",
+  "sectionId": "s23e-s06b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06029",
+  "frontHtml": "Which contraceptives are contraindicated in migraine with aura?",
+  "backHtml": "<strong>Estrogen-containing</strong> methods (pill, patch, ring).",
+  "sectionId": "s23e-s06b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06030",
+  "frontHtml": "Thresholds for medication-overuse headache?",
+  "backHtml": "Simple analgesics on 15 or more days a month; <strong>triptans, opioids or combination analgesics on 10 or more</strong>.",
+  "sectionId": "s23e-s06b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06031",
+  "frontHtml": "Thunderclap headache with a negative CT more than 6 hours after onset: next step?",
+  "backHtml": "<strong>Lumbar puncture</strong> (or CT angiography).",
+  "sectionId": "s23e-s06b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.12.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06032",
+  "frontHtml": "First-line treatment for chronic insomnia?",
+  "backHtml": "<strong>CBT-I</strong>.",
+  "sectionId": "s23e-s06b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06033",
+  "frontHtml": "MSLT criteria supporting narcolepsy?",
+  "backHtml": "Mean sleep latency of <strong>8 minutes or less</strong> with <strong>2 or more sleep-onset REM periods</strong>.",
+  "sectionId": "s23e-s06b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06034",
+  "frontHtml": "Iron threshold for treating restless legs syndrome?",
+  "backHtml": "Ferritin <strong>75 ng/mL or less</strong> or transferrin saturation under 20%.",
+  "sectionId": "s23e-s06b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06035",
+  "frontHtml": "Preferred first-line drugs for restless legs syndrome, and why not dopamine agonists?",
+  "backHtml": "<strong>α2δ ligands</strong> (gabapentin enacarbil, gabapentin, pregabalin); dopamine agonists cause <strong>augmentation</strong>.",
+  "sectionId": "s23e-s06b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06036",
+  "frontHtml": "Why avoid adaptive servo-ventilation in central sleep apnea with HFrEF?",
+  "backHtml": "It increased mortality when the ejection fraction is <strong>45% or less</strong>.",
+  "sectionId": "s23e-s06b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06037",
+  "frontHtml": "Light therapy for delayed versus advanced sleep phase?",
+  "backHtml": "Delayed: <strong>morning</strong> light. Advanced: <strong>evening</strong> light.",
+  "sectionId": "s23e-s06b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.13.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06038",
+  "frontHtml": "Treatment of acute dystonia from metoclopramide?",
+  "backHtml": "IV or IM <strong>diphenhydramine or benztropine</strong>.",
+  "sectionId": "s23e-s06b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06039",
+  "frontHtml": "Treatment of tardive dyskinesia when the antipsychotic must continue?",
+  "backHtml": "Add a <strong>VMAT2 inhibitor</strong> (valbenazine or deutetrabenazine).",
+  "sectionId": "s23e-s06b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06040",
+  "frontHtml": "Why avoid flumazenil in an unknown overdose?",
+  "backHtml": "It can provoke <strong>seizures</strong> in benzodiazepine-dependent patients or after tricyclic co-ingestion.",
+  "sectionId": "s23e-s06b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06041",
+  "frontHtml": "Drug for painful chemotherapy-induced neuropathy?",
+  "backHtml": "<strong>Duloxetine</strong>.",
+  "sectionId": "s23e-s06b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06042",
+  "frontHtml": "Confusion with high ammonia and normal liver tests on valproate?",
+  "backHtml": "<strong>Valproate hyperammonemic encephalopathy</strong>: stop valproate, give levocarnitine.",
+  "sectionId": "s23e-s06b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c06043",
+  "frontHtml": "Management of PRES on tacrolimus?",
+  "backHtml": "<strong>Lower the blood pressure</strong> and reduce or switch the calcineurin inhibitor.",
+  "sectionId": "s23e-s06b05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.16.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07001",
+  "frontHtml": "Neonatal conjunctivitis: typical day of onset for chemical, gonococcal and chlamydial causes?",
+  "backHtml": "Chemical: first day. Gonococcal: about days 2–5. Chlamydial: about days 5–14.",
+  "sectionId": "s23e-s07a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07002",
+  "frontHtml": "Which organism classically causes keratitis in a contact lens wearer who sleeps in the lenses?",
+  "backHtml": "<em>Pseudomonas aeruginosa</em>, which can melt the cornea within a day.",
+  "sectionId": "s23e-s07a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07003",
+  "frontHtml": "Branching corneal ulcer with terminal bulbs on fluorescein staining: cause, and where does the virus hide?",
+  "backHtml": "Herpes simplex keratitis; latent in the <strong>trigeminal ganglion</strong>.",
+  "sectionId": "s23e-s07a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07004",
+  "frontHtml": "Episcleritis versus scleritis: what does phenylephrine do to the red vessels?",
+  "backHtml": "Episcleral vessels <strong>blanch</strong>; the deep vessels in scleritis do not.",
+  "sectionId": "s23e-s07a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07005",
+  "frontHtml": "Through which structure does ethmoid sinusitis spread into the orbit?",
+  "backHtml": "The thin medial orbital wall, the <strong>lamina papyracea</strong>.",
+  "sectionId": "s23e-s07a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07006",
+  "frontHtml": "Why can orbital infection cause cavernous sinus thrombosis?",
+  "backHtml": "The ophthalmic veins have <strong>no valves</strong> and drain into the cavernous sinus.",
+  "sectionId": "s23e-s07a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07007",
+  "frontHtml": "What does the RB protein do when it is unphosphorylated?",
+  "backHtml": "It binds and inactivates <strong>E2F</strong>, blocking the G1-to-S transition until cyclin D–CDK4/6 phosphorylates it.",
+  "sectionId": "s23e-s07a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07008",
+  "frontHtml": "Bilateral retinoblastoma implies what about the <em>RB1</em> mutation?",
+  "backHtml": "It is <strong>germline</strong> (heritable): only one more somatic hit is needed in any retinal cell.",
+  "sectionId": "s23e-s07a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07009",
+  "frontHtml": "Characteristic second cancer in survivors of heritable retinoblastoma?",
+  "backHtml": "<strong>Osteosarcoma</strong> (also soft-tissue sarcomas and melanoma).",
+  "sectionId": "s23e-s07a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07010",
+  "frontHtml": "Most common intraocular malignancy in adults overall, and most common primary one?",
+  "backHtml": "Overall: <strong>metastasis to the choroid</strong> (breast, lung). Primary: <strong>uveal melanoma</strong>.",
+  "sectionId": "s23e-s07a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07011",
+  "frontHtml": "Where does uveal melanoma metastasise, and why not to lymph nodes?",
+  "backHtml": "To the <strong>liver</strong>, through the blood; the inside of the globe has no lymphatics.",
+  "sectionId": "s23e-s07a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07012",
+  "frontHtml": "Most common eyelid malignancy and its histology?",
+  "backHtml": "<strong>Basal cell carcinoma</strong>: basaloid nests with peripheral palisading; usually lower lid.",
+  "sectionId": "s23e-s07a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07013",
+  "frontHtml": "Two routes of aqueous outflow?",
+  "backHtml": "Trabecular meshwork to Schlemm's canal (main), and the uveoscleral route through the ciliary muscle.",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07014",
+  "frontHtml": "Latanoprost: mechanism and two cosmetic adverse effects?",
+  "backHtml": "Increases <strong>uveoscleral outflow</strong>; darkens the iris and lengthens lashes.",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07015",
+  "frontHtml": "Which glaucoma drug classes reduce aqueous production?",
+  "backHtml": "β-Blockers, α2-agonists and carbonic anhydrase inhibitors.",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07016",
+  "frontHtml": "Lens dislocation direction: Marfan versus homocystinuria?",
+  "backHtml": "Marfan: usually <strong>up and out</strong>. Homocystinuria: usually <strong>down and in</strong>.",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07017",
+  "frontHtml": "Which cataract is typical of long-term corticosteroid use?",
+  "backHtml": "<strong>Posterior subcapsular</strong> cataract (glare, poor near vision).",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07018",
+  "frontHtml": "Myopia: where is the focus, and which lens corrects it?",
+  "backHtml": "In front of the retina; a <strong>diverging (concave, minus)</strong> lens.",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07019",
+  "frontHtml": "Cause of presbyopia?",
+  "backHtml": "Age-related <strong>loss of lens elasticity</strong>, so the lens cannot round up for near focus.",
+  "sectionId": "s23e-s07a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07020",
+  "frontHtml": "Bitemporal hemianopia: where is the lesion and the usual cause?",
+  "backHtml": "Optic <strong>chiasm</strong>; usually a pituitary adenoma pressing from below.",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07021",
+  "frontHtml": "Contralateral upper quadrantanopia localises to?",
+  "backHtml": "<strong>Meyer loop</strong> in the temporal lobe.",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07022",
+  "frontHtml": "Homonymous hemianopia with macular sparing localises to?",
+  "backHtml": "The <strong>occipital cortex</strong>, usually a posterior cerebral artery stroke.",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07023",
+  "frontHtml": "Swinging-flashlight test: both pupils dilate when the light moves to the left eye. Meaning?",
+  "backHtml": "A <strong>left relative afferent pupillary defect</strong> (left optic nerve disease).",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07024",
+  "frontHtml": "Classic triad of Horner syndrome?",
+  "backHtml": "Mild <strong>ptosis</strong>, <strong>miosis</strong> and facial <strong>anhidrosis</strong> (anhidrosis spared in most third-order lesions).",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07025",
+  "frontHtml": "Pupils that constrict to near effort but not to light, in tertiary syphilis?",
+  "backHtml": "<strong>Argyll Robertson</strong> pupils (dorsal midbrain, near the pretectal area).",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07026",
+  "frontHtml": "Why does a compressive oculomotor palsy dilate the pupil?",
+  "backHtml": "Parasympathetic pupillary fibres run on the <strong>outside</strong> of the nerve and are compressed first.",
+  "sectionId": "s23e-s07a04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07027",
+  "frontHtml": "Which cranial nerve palsy causes vertical diplopia worse when reading, with a head tilt away from the affected side?",
+  "backHtml": "<strong>Trochlear (IV)</strong> nerve palsy (superior oblique).",
+  "sectionId": "s23e-s07a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07028",
+  "frontHtml": "On right gaze the left eye fails to adduct and the right eye has nystagmus; convergence is normal. Lesion?",
+  "backHtml": "<strong>Left MLF</strong>: left internuclear ophthalmoplegia.",
+  "sectionId": "s23e-s07a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07029",
+  "frontHtml": "Why is the abducens nerve a false-localising sign in raised intracranial pressure?",
+  "backHtml": "Its long course along the clivus makes it easy to stretch.",
+  "sectionId": "s23e-s07a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07030",
+  "frontHtml": "Strongest modifiable risk factor for thyroid eye disease?",
+  "backHtml": "<strong>Smoking</strong>.",
+  "sectionId": "s23e-s07a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07031",
+  "frontHtml": "Define amblyopia and its main causes.",
+  "backHtml": "Cortical suppression of an eye's image in early childhood, from <strong>strabismus</strong>, <strong>anisometropia</strong> or a <strong>blocked visual axis</strong>.",
+  "sectionId": "s23e-s07a05",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07032",
+  "frontHtml": "Red-eye red flags that need same-day ophthalmology?",
+  "backHtml": "Moderate or severe pain, photophobia, reduced acuity, corneal opacity, abnormal pupil, contact lens wear, recent surgery or trauma, newborn.",
+  "sectionId": "s23e-s07b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07033",
+  "frontHtml": "Treatment of neonatal gonococcal conjunctivitis?",
+  "backHtml": "A single parenteral dose of <strong>ceftriaxone</strong>, eye irrigation, admission and evaluation for disseminated infection.",
+  "sectionId": "s23e-s07b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07034",
+  "frontHtml": "Why does neonatal chlamydial conjunctivitis need systemic, not topical, treatment?",
+  "backHtml": "To clear nasopharyngeal carriage and prevent <strong>afebrile pneumonia</strong>.",
+  "sectionId": "s23e-s07b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07035",
+  "frontHtml": "Two things never to do for a suspected contact lens corneal ulcer?",
+  "backHtml": "Never <strong>patch</strong> it and never start <strong>steroid</strong> drops.",
+  "sectionId": "s23e-s07b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07036",
+  "frontHtml": "Emergency treatment of endophthalmitis after cataract surgery?",
+  "backHtml": "Vitreous tap and <strong>intravitreal antibiotics</strong> (for example vancomycin plus ceftazidime); vitrectomy if vision is very poor.",
+  "sectionId": "s23e-s07b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07037",
+  "frontHtml": "Findings that separate orbital from preseptal cellulitis?",
+  "backHtml": "Pain with eye movement, restricted movement, proptosis, reduced vision or an afferent pupillary defect.",
+  "sectionId": "s23e-s07b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.01"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07038",
+  "frontHtml": "Next step for an infant with an absent or white red reflex?",
+  "backHtml": "<strong>Urgent</strong> ophthalmology referral for a dilated examination.",
+  "sectionId": "s23e-s07b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07039",
+  "frontHtml": "Preferred imaging to stage retinoblastoma, and why not CT?",
+  "backHtml": "<strong>MRI</strong> of brain and orbits; CT radiation raises second-cancer risk in germline carriers.",
+  "sectionId": "s23e-s07b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07040",
+  "frontHtml": "What should siblings of a child with heritable retinoblastoma receive?",
+  "backHtml": "Testing for the family's <em>RB1</em> mutation and serial <strong>dilated fundus examinations</strong> from birth.",
+  "sectionId": "s23e-s07b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07041",
+  "frontHtml": "Staging and surveillance focus for uveal melanoma?",
+  "backHtml": "<strong>Liver</strong> imaging and liver function tests.",
+  "sectionId": "s23e-s07b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07042",
+  "frontHtml": "A chalazion recurs in the same place in a 72-year-old. Next step?",
+  "backHtml": "<strong>Full-thickness biopsy</strong> to exclude sebaceous gland carcinoma.",
+  "sectionId": "s23e-s07b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.02"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07043",
+  "frontHtml": "Immediate drugs for acute angle-closure glaucoma?",
+  "backHtml": "Topical β-blocker and α2-agonist, systemic <strong>acetazolamide</strong>, then pilocarpine as pressure falls; mannitol if needed.",
+  "sectionId": "s23e-s07b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07044",
+  "frontHtml": "Definitive treatment after an angle-closure attack, and what about the other eye?",
+  "backHtml": "<strong>Laser peripheral iridotomy</strong>, plus a prophylactic iridotomy in the fellow eye.",
+  "sectionId": "s23e-s07b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07045",
+  "frontHtml": "First-line treatments for primary open-angle glaucoma?",
+  "backHtml": "A <strong>prostaglandin analogue</strong> drop or selective laser trabeculoplasty.",
+  "sectionId": "s23e-s07b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07046",
+  "frontHtml": "Bilateral angle closure with a sudden myopic shift soon after starting a migraine drug?",
+  "backHtml": "<strong>Topiramate</strong>: stop it; use aqueous suppressants and cycloplegia, not iridotomy.",
+  "sectionId": "s23e-s07b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07047",
+  "frontHtml": "When is cataract surgery offered?",
+  "backHtml": "When the cataract <strong>limits daily activities</strong> such as driving or reading.",
+  "sectionId": "s23e-s07b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07048",
+  "frontHtml": "Dry eyes with a dry mouth and dental caries: which antibodies?",
+  "backHtml": "Anti-Ro/SSA and anti-La/SSB (Sjögren syndrome).",
+  "sectionId": "s23e-s07b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.03"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07049",
+  "frontHtml": "Anisocoria greater in the dark versus greater in bright light: which pupil is abnormal?",
+  "backHtml": "Dark: the <strong>small</strong> pupil fails to dilate (Horner). Light: the <strong>large</strong> pupil fails to constrict (CN III, tonic pupil, drug).",
+  "sectionId": "s23e-s07b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07050",
+  "frontHtml": "Painful oculomotor palsy with a dilated pupil: next step?",
+  "backHtml": "Emergency <strong>CT or MR angiography</strong> for a posterior communicating artery aneurysm.",
+  "sectionId": "s23e-s07b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07051",
+  "frontHtml": "Acute painful Horner syndrome after neck manipulation: diagnosis and test?",
+  "backHtml": "<strong>Carotid dissection</strong>; CT or MR angiography of head and neck.",
+  "sectionId": "s23e-s07b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07052",
+  "frontHtml": "Eye-drop test that confirms Horner syndrome?",
+  "backHtml": "<strong>Apraclonidine</strong> dilates the Horner pupil and reverses the anisocoria.",
+  "sectionId": "s23e-s07b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07053",
+  "frontHtml": "First-line treatment for active moderate-to-severe thyroid eye disease?",
+  "backHtml": "<strong>IV methylprednisolone pulses</strong> (teprotumumab is an alternative); stop smoking.",
+  "sectionId": "s23e-s07b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c07054",
+  "frontHtml": "Treatment of amblyopia after correcting the refraction?",
+  "backHtml": "<strong>Patch</strong> the stronger eye (or atropine in the stronger eye).",
+  "sectionId": "s23e-s07b04",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.04"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08001",
+  "frontHtml": "Which circulation supplies the photoreceptors and the fovea?",
+  "backHtml": "The <strong>choroid</strong> (ciliary arteries). The central retinal artery supplies the inner two-thirds of the retina.",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08002",
+  "frontHtml": "Why is the fovea red in central retinal artery occlusion?",
+  "backHtml": "The fovea has no inner retinal layers to whiten, so the normal choroid shows through, surrounded by pale ischaemic retina.",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08003",
+  "frontHtml": "Earliest histological and earliest clinical sign of diabetic retinopathy?",
+  "backHtml": "Histological: <strong>loss of pericytes</strong>. Clinical: <strong>microaneurysms</strong>.",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08004",
+  "frontHtml": "What drives new vessel growth in proliferative diabetic retinopathy, wet AMD and retinopathy of prematurity?",
+  "backHtml": "<strong>VEGF</strong> released by ischaemic or hypoxic retina.",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08005",
+  "frontHtml": "Fundus with haemorrhages in all four quadrants and dilated tortuous veins?",
+  "backHtml": "<strong>Central retinal vein occlusion</strong> (risk: hypertension, age, diabetes, glaucoma).",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08006",
+  "frontHtml": "Night blindness, then tunnel vision, with bone-spicule pigment: which cells fail first?",
+  "backHtml": "<strong>Rods</strong> (retinitis pigmentosa, a rod-cone dystrophy).",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08007",
+  "frontHtml": "Why does papilloedema swell the disc?",
+  "backHtml": "Raised intracranial pressure in the optic nerve sheath stops <strong>axoplasmic flow</strong>, so axons swell at the disc.",
+  "sectionId": "s23e-s08a01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08008",
+  "frontHtml": "Why are alkali eye burns usually worse than acid burns?",
+  "backHtml": "Alkali saponifies lipids and causes <strong>liquefactive necrosis</strong> that keeps penetrating; acid causes coagulative necrosis that forms a barrier.",
+  "sectionId": "s23e-s08a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08009",
+  "frontHtml": "Orbital floor fracture: which muscle is trapped and which nerve is injured?",
+  "backHtml": "<strong>Inferior rectus</strong> (limited upgaze) and the <strong>infraorbital nerve</strong> (V2; numb cheek and upper lip).",
+  "sectionId": "s23e-s08a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08010",
+  "frontHtml": "Afferent and efferent limbs of the oculocardiac reflex?",
+  "backHtml": "Afferent: <strong>trigeminal (V1)</strong>. Efferent: <strong>vagus</strong> (bradycardia, nausea).",
+  "sectionId": "s23e-s08a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08011",
+  "frontHtml": "Signs of an open globe?",
+  "backHtml": "Peaked or teardrop pupil, shallow chamber, extensive subconjunctival haemorrhage, low pressure, positive Seidel sign.",
+  "sectionId": "s23e-s08a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08012",
+  "frontHtml": "Why is a hyphema more dangerous in sickle cell disease or trait?",
+  "backHtml": "Red cells sickle in the low-oxygen aqueous and block the trabecular meshwork, so pressure rises more.",
+  "sectionId": "s23e-s08a02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08013",
+  "frontHtml": "Which cataract do glucocorticoids cause?",
+  "backHtml": "<strong>Posterior subcapsular</strong> cataract. Steroids can also raise intraocular pressure.",
+  "sectionId": "s23e-s08a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08014",
+  "frontHtml": "How does topiramate cause angle closure?",
+  "backHtml": "<strong>Ciliochoroidal effusion</strong> rotates the lens-iris diaphragm forward: bilateral closure with myopic shift, no pupillary block.",
+  "sectionId": "s23e-s08a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08015",
+  "frontHtml": "Tamsulosin and cataract surgery?",
+  "backHtml": "Alpha-1A blockade weakens the iris dilator: <strong>intraoperative floppy iris syndrome</strong>.",
+  "sectionId": "s23e-s08a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08016",
+  "frontHtml": "Which drug tints vision blue, and which tints it yellow?",
+  "backHtml": "Blue: PDE5 inhibitors (via retinal <strong>PDE6</strong>). Yellow: <strong>digoxin</strong> toxicity.",
+  "sectionId": "s23e-s08a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08017",
+  "frontHtml": "Ethambutol eye toxicity?",
+  "backHtml": "Optic neuropathy: falling acuity, <strong>red-green colour loss</strong>, central scotoma; worse with renal impairment.",
+  "sectionId": "s23e-s08a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08018",
+  "frontHtml": "Why can timolol eye drops cause bronchospasm?",
+  "backHtml": "Non-selective beta-blocker absorbed through the nasal mucosa, bypassing first-pass metabolism.",
+  "sectionId": "s23e-s08a03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08019",
+  "frontHtml": "First step for acute central retinal artery occlusion?",
+  "backHtml": "Treat as a stroke: <strong>immediate transfer to a stroke centre</strong>; check ESR/CRP if over 50.",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08020",
+  "frontHtml": "Giant cell arteritis with visual loss: first step?",
+  "backHtml": "High-dose <strong>intravenous methylprednisolone now</strong>; biopsy afterward.",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08021",
+  "frontHtml": "When does retinopathy screening start in type 1 and type 2 diabetes?",
+  "backHtml": "Type 2: <strong>at diagnosis</strong>. Type 1: <strong>within 5 years</strong> of onset. Then yearly (1–2 yearly if normal and well controlled).",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08022",
+  "frontHtml": "First-line treatment for centre-involving diabetic macular oedema with reduced vision?",
+  "backHtml": "<strong>Intravitreal anti-VEGF</strong> injections.",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08023",
+  "frontHtml": "Intermediate dry AMD in a smoker: what supplement?",
+  "backHtml": "AREDS2-type: vitamins C and E, zinc, copper, lutein, zeaxanthin; <strong>no beta-carotene</strong>.",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08024",
+  "frontHtml": "Bilateral disc swelling: first test?",
+  "backHtml": "<strong>MRI of the brain with MR venography</strong>, before lumbar puncture.",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08025",
+  "frontHtml": "Retinopathy of prematurity screening criteria (US)?",
+  "backHtml": "Born at <strong>30 weeks or less</strong> or weighing <strong>1,500 g or less</strong>, plus selected larger unstable infants.",
+  "sectionId": "s23e-s08b01",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.05"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08026",
+  "frontHtml": "Chemical splash to the eye: first step?",
+  "backHtml": "<strong>Irrigate immediately</strong>, before acuity, until the tear pH is neutral (about 7.0–7.5).",
+  "sectionId": "s23e-s08b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08027",
+  "frontHtml": "Corneal abrasion in a contact lens wearer: treatment?",
+  "backHtml": "Anti-pseudomonal <strong>fluoroquinolone</strong> drops, no lens wear, <strong>no patch</strong>, no take-home anaesthetic.",
+  "sectionId": "s23e-s08b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08028",
+  "frontHtml": "Open globe: what to do and what to avoid?",
+  "backHtml": "Rigid shield, antiemetic, analgesia, systemic antibiotics, tetanus, CT. Avoid pressure, tonometry and drops.",
+  "sectionId": "s23e-s08b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08029",
+  "frontHtml": "Post-traumatic proptosis, tense orbit, falling vision and RAPD: next step?",
+  "backHtml": "Bedside <strong>lateral canthotomy and inferior cantholysis</strong>, before imaging.",
+  "sectionId": "s23e-s08b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08030",
+  "frontHtml": "Suspected metallic intraocular foreign body: imaging?",
+  "backHtml": "<strong>CT of the orbits</strong>; MRI is contraindicated.",
+  "sectionId": "s23e-s08b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08031",
+  "frontHtml": "Child with orbital floor fracture, quiet eye, bradycardia and vomiting?",
+  "backHtml": "Trapdoor fracture with entrapment and oculocardiac reflex: <strong>urgent surgical release</strong>.",
+  "sectionId": "s23e-s08b02",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.06"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08032",
+  "frontHtml": "Hydroxychloroquine screening plan?",
+  "backHtml": "Dose at or below 5 mg/kg/day actual weight; <strong>baseline exam</strong>, then <strong>yearly from 5 years</strong> (sooner with risk factors); OCT plus visual fields.",
+  "sectionId": "s23e-s08b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08033",
+  "frontHtml": "Topiramate-induced angle closure: treatment?",
+  "backHtml": "<strong>Stop topiramate</strong>; aqueous suppressants and cycloplegics. No pilocarpine, no iridotomy.",
+  "sectionId": "s23e-s08b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08034",
+  "frontHtml": "Patient on tamsulosin before cataract surgery?",
+  "backHtml": "<strong>Tell the surgeon</strong>; stopping the drug does not reliably help.",
+  "sectionId": "s23e-s08b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08035",
+  "frontHtml": "Unexplained bradycardia in a glaucoma patient: which drop to suspect?",
+  "backHtml": "<strong>Timolol</strong>; switch to a prostaglandin analogue.",
+  "sectionId": "s23e-s08b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
+ },
+ {
+  "id": "s23e-c08036",
+  "frontHtml": "Non-healing corneal defect in a patient using numbing drops at home?",
+  "backHtml": "Topical anaesthetic toxic keratopathy: <strong>stop the drops</strong>, urgent ophthalmology.",
+  "sectionId": "s23e-s08b03",
+  "questionId": null,
+  "areas": [
+   "usmle2026.05.17.07"
+  ],
+  "source": "naadi-original-v1",
+  "tags": []
  }
 ]

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" role="img" aria-label="Cross-section of the cervical spinal cord, dorsal side up, with the grey matter and several white-matter regions outlined but not named. Five sites are marked with the letters A to E, all on the right half of the cord.">
+<rect x="0" y="0" width="760" height="470" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="24" font-size="16" font-weight="bold" text-anchor="middle">Cervical spinal cord in cross-section: lettered sites</text>
+<text x="280" y="66" font-size="12" text-anchor="middle" font-style="italic">Dorsal (posterior)</text>
+<text x="280" y="446" font-size="12" text-anchor="middle" font-style="italic">Ventral (anterior)</text>
+<text x="38" y="254" font-size="12" text-anchor="middle" font-style="italic">Left</text>
+<text x="497" y="262" font-size="12" font-style="italic">Right</text>
+<ellipse cx="280" cy="250" rx="210" ry="160" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<line x1="280" y1="90" x2="280" y2="200" stroke="#334155" stroke-width="1.2"/>
+<path d="M274,410 L280,312 L286,410" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<path d="M280,212 C300,205 320,170 342,118 L360,124 C345,175 330,215 340,235 C365,245 395,280 392,320 C390,350 350,360 320,345 C300,330 292,300 280,292 C268,300 260,330 240,345 C210,360 170,350 168,320 C165,280 195,245 220,235 C230,215 215,175 200,124 L218,118 C240,170 260,205 280,212 Z" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<ellipse cx="291" cy="140" rx="8" ry="30" fill="#cbd5e1" stroke="#334155" stroke-width="1.2"/>
+<ellipse cx="310" cy="138" rx="8" ry="26" fill="#cbd5e1" stroke="#334155" stroke-width="1.2"/>
+<ellipse cx="269" cy="140" rx="8" ry="30" fill="#cbd5e1" stroke="#334155" stroke-width="1.2"/>
+<ellipse cx="250" cy="138" rx="8" ry="26" fill="#cbd5e1" stroke="#334155" stroke-width="1.2"/>
+<ellipse cx="420" cy="225" rx="32" ry="42" fill="#94a3b8" stroke="#334155" stroke-width="1.2"/>
+<ellipse cx="140" cy="225" rx="32" ry="42" fill="#94a3b8" stroke="#334155" stroke-width="1.2"/>
+<ellipse cx="425" cy="335" rx="25" ry="24" fill="#f1f5f9" stroke="#334155" stroke-width="1.4" stroke-dasharray="4 3"/>
+<ellipse cx="135" cy="335" rx="25" ry="24" fill="#f1f5f9" stroke="#334155" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="260" y="293" width="40" height="9" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.4" stroke-dasharray="3 2"/>
+<circle cx="280" cy="252" r="4" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<g font-weight="bold" font-size="13" text-anchor="middle">
+<circle cx="310" cy="150" r="12" fill="#0f172a"/><text x="310" y="155" fill="#ffffff">A</text>
+<circle cx="420" cy="225" r="12" fill="#0f172a"/><text x="420" y="230" fill="#ffffff">B</text>
+<circle cx="425" cy="335" r="12" fill="#0f172a"/><text x="425" y="340" fill="#ffffff">C</text>
+<circle cx="280" cy="298" r="11" fill="#0f172a"/><text x="280" y="303" fill="#ffffff">D</text>
+<circle cx="358" cy="318" r="12" fill="#0f172a"/><text x="358" y="323" fill="#ffffff">E</text>
+</g>
+</g>
+</svg>

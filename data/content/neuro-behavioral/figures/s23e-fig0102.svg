@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" role="img" aria-label="Two schematic cervical spinal cords beside vertebrae C1 to C7. In multiple sclerosis the dark lesion is short, spanning less than one vertebral segment. In NMOSD the lesion runs continuously from C2 to C5, longer than three segments.">
+<rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="28" font-size="16" font-weight="bold" text-anchor="middle">Spinal cord lesion length: MS versus NMOSD</text>
+<text x="170" y="62" font-size="14" font-weight="bold" text-anchor="middle">Multiple sclerosis</text>
+<text x="170" y="80" font-size="11" text-anchor="middle">short, partial-width lesion</text>
+<rect x="110" y="100" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="121" font-size="11" text-anchor="end">C1</text>
+<rect x="110" y="138" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="159" font-size="11" text-anchor="end">C2</text>
+<rect x="110" y="176" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="197" font-size="11" text-anchor="end">C3</text>
+<rect x="110" y="214" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="235" font-size="11" text-anchor="end">C4</text>
+<rect x="110" y="252" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="273" font-size="11" text-anchor="end">C5</text>
+<rect x="110" y="290" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="311" font-size="11" text-anchor="end">C6</text>
+<rect x="110" y="328" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="102" y="349" font-size="11" text-anchor="end">C7</text>
+<rect x="160" y="96" width="22" height="270" rx="11" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<rect x="168" y="214" width="12" height="30" rx="6" fill="#334155"/>
+<text x="390" y="62" font-size="14" font-weight="bold" text-anchor="middle">NMOSD (AQP4-IgG)</text>
+<text x="390" y="80" font-size="11" text-anchor="middle">long central lesion, 3+ segments</text>
+<rect x="330" y="100" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="121" font-size="11" text-anchor="end">C1</text>
+<rect x="330" y="138" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="159" font-size="11" text-anchor="end">C2</text>
+<rect x="330" y="176" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="197" font-size="11" text-anchor="end">C3</text>
+<rect x="330" y="214" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="235" font-size="11" text-anchor="end">C4</text>
+<rect x="330" y="252" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="273" font-size="11" text-anchor="end">C5</text>
+<rect x="330" y="290" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="311" font-size="11" text-anchor="end">C6</text>
+<rect x="330" y="328" width="30" height="32" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="322" y="349" font-size="11" text-anchor="end">C7</text>
+<rect x="380" y="96" width="22" height="270" rx="11" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<rect x="382" y="138" width="18" height="150" rx="8" fill="#334155"/>
+<text x="540" y="140" font-size="13" font-weight="bold">Reading the cord MRI</text>
+<text x="540" y="164" font-size="12">MS: lesions usually span fewer</text>
+<text x="540" y="180" font-size="12">than 2 vertebral segments and</text>
+<text x="540" y="196" font-size="12">sit at the edge of the cord.</text>
+<text x="540" y="226" font-size="12">NMOSD: longitudinally extensive</text>
+<text x="540" y="242" font-size="12">transverse myelitis, 3 or more</text>
+<text x="540" y="258" font-size="12">contiguous segments, central.</text>
+<text x="540" y="288" font-size="12">Long lesion + area postrema</text>
+<text x="540" y="304" font-size="12">signs or severe optic neuritis:</text>
+<text x="540" y="320" font-size="12">test serum AQP4-IgG.</text>
+<text x="380" y="388" font-size="11" text-anchor="middle" fill="#334155">Schematic sagittal view, not to scale. Dark bar = T2-hyperintense lesion.</text>
+</g></svg>
