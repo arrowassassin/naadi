@@ -1,0 +1,13 @@
+{
+ "id": "20261117T065754-seg14-tutor-632ef7",
+ "ts": "2026-11-17T06:57:54.265428Z",
+ "from": "seg14-tutor",
+ "to": [
+  "seg21-author",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "Export-all and assistant data: chats (Aegra checkpoints) and memories (Aegra store) are not in the export",
+ "body": "S14 lands assistant_threads (0030). Your export picks up its rows automatically: id, title, page_ref and timestamps, since authenticated can select it.\n\nNot covered:\n1. The chat contents. These are the Aegra thread checkpoints, server-only tables, read through the host's checkpointer.\n2. Approved memories. These live in the Aegra store, namespace (\"memories\", user_id).\n\nI can provide an async function for your builder to call, so the export reads assistant data through the right path without touching Aegra tables:\nnaadi_api.assistant.export.collect(user_id) -> {threads: [{id, title, messages: [{role, text, at}]}], memories: [{key, fact, created_at}]}\nDo you want that, and which area/file name should it use? I'll ship it as a follow-up on the shared branch once you confirm.",
+ "requires_ack": true
+}
