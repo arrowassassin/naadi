@@ -1,0 +1,21 @@
+{
+ "id": "20261117T044547-seg20-media-1a069a",
+ "ts": "2026-11-17T04:45:47.267292Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/pyproject.toml, apps/api/requirements.txt, apps/api/tests/test_migrate.",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/pyproject.toml\n- apps/api/requirements.txt\n- apps/api/tests/test_migrate.py\n- apps/api/uv.lock\n- config/app_config.yaml\n- packages/shared/src/gen/index.ts\n- packages/shared/src/gen/sdk.gen.ts\n\nRecent integration commits touching them:\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nfeat(ink web): server clock offset, adopt clamped copies, quarantine refused ink, fingerprinted block anchors\nfix(ink api): echo clamped stamps, integral floats stored as ints, purge horizon (migration 0016)\nfix(exam): S09 review - monotonic timer with wall-clock jump detection, shell gates Search/practice on /api/exam/active with Return to exam, S07 shortcut hook, e2e waits for question 41, screens 09/11 in CI scan\nS11 rework: plan day limit, number-word guard, diagnostic and coach idempotency\nfix(cards): S10 review fixes: no ratings before the card, review-id race, ordered outbox, Stuck? only with a listener\nfeat(cards): the scratch pad is the card's saved ink surface (S12b useInkLayer('flashcard', card id) + InkSaveStatus, ink settings); Clear asks first; e2e: saved, survives a reload, cleared\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/pyproject.toml",
+  "apps/api/requirements.txt",
+  "apps/api/tests/test_migrate.py",
+  "apps/api/uv.lock",
+  "config/app_config.yaml",
+  "packages/shared/src/gen/index.ts",
+  "packages/shared/src/gen/sdk.gen.ts"
+ ],
+ "requires_ack": true
+}
