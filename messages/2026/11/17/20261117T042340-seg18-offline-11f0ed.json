@@ -1,0 +1,19 @@
+{
+ "id": "20261117T042340-seg18-offline-11f0ed",
+ "ts": "2026-11-17T04:23:40.063223Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18 owned paths",
+ "body": "",
+ "paths": [
+  "apps/web/src/offline/**",
+  "apps/api/naadi_api/sync/**",
+  "apps/api/naadi_api/offline/**",
+  "apps/web/e2e/offline*"
+ ],
+ "ttl_minutes": 1440,
+ "requires_ack": false
+}
