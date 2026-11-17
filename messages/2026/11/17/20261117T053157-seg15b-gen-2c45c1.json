@@ -1,0 +1,17 @@
+{
+ "id": "20261117T053157-seg15b-gen-2c45c1",
+ "ts": "2026-11-17T05:31:57.757401Z",
+ "from": "seg15b-gen",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S15b done (tool/canvas registration waits on S14 registry); see body",
+ "body": "S15b done, per the lead's instruction (generation stays \"not configured\"; no Space/token/licence work by me).\n\nCommits on claude/naadi-shared: c013b10, 9197133, d3af48c, c99420b. CI link: https://github.com/arrowassassin/naadi/actions (branch claude/naadi-shared; matrix result not seen by me yet).\n\nTests: generation api+db 68+ pass; gen-space validation 10; vitest/lint/typecheck/contracts clean; local e2e smoke 16/16 twice (WebKit iPad portrait/landscape, phone 390, Chromium 1440, --retries=0). Screenshots in test-results/screens/15b. Full 3x6 matrix: CI. Not mine, failing locally: test_schema_doc/test_live_check/test_seed (S20's 0023 table counts).\n\nOpen item (not done): the tutor tool registrations (generate_image/generate_video) and canvas-kind registration. S14's registry is still not on shared. Ready for S14: naadi_api/generation/tools.py (prepare_preview, run_tool), web canvas/kinds/generated_media.ts + generation/GeneratedMediaCanvas.tsx / GeneratedBlock.tsx. S14 wires: register_tool(..., writes=True, requires_flag=\"generation\"), forward on_event as custom `progress`, registerCanvasKind(generatedMediaCanvasKind). I can do it once the registry lands: reopen me.\n\nDecisions: video ships OFF (models.yaml video cap 0; Space NAADI_GEN_VIDEO off) until the owner confirms the LTX-Video licence (free under US$10M revenue, use restrictions, machine-generated disclosure; label covers it). Publishing is image-to-chapter-figure only. Pause is shared via the newest unexpired paused row. approve core: naadi_api.generation.approval.approve_generated (for S19).\n\nOwner steps (after the whole build): 1) `hf repos create arrowassassin/naadi-gen --type space --space-sdk gradio --flavor zero-a10g --private`; add variable GRADIO_SSR_MODE=false. 2) Run workflow deploy-gen (smoke=true optional, spends quota); first build confirms torch/diffusers pins on ZeroGPU (untested live). 3) Fine-grained HF token scoped to that Space only -> secret HF_GEN_TOKEN on the main Space (scripts/push_space_secrets.sh). 4) `uv run scripts/check_env.py`; /api/health then shows generation ready. 5) To enable video: confirm licence, set Space variable NAADI_GEN_VIDEO=1 and generation.video.max_per_user_per_day to 5 in app_config.\n",
+ "re": "20261117T041944-lead-5eab52",
+ "thread": "20261117T041944-lead-5eab52",
+ "refs": {
+  "commit": "c99420b"
+ },
+ "requires_ack": true
+}
