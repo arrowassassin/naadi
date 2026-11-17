@@ -1,14 +1,6 @@
 import { cx } from "@naadi/ui";
-import { createCodePlugin } from "@streamdown/code";
-import { createMathPlugin } from "@streamdown/math";
-import { type ComponentProps, memo, type ReactNode, useMemo } from "react";
-import {
-  type CustomRendererProps,
-  defaultRehypePlugins,
-  type PluginConfig,
-  Streamdown,
-  type StreamdownProps,
-} from "streamdown";
+import { type ComponentProps, memo, type ReactNode, useEffect, useMemo, useState } from "react";
+import type { CustomRendererProps, PluginConfig, StreamdownProps } from "streamdown";
 import { useAuth } from "../auth/session";
 import { MermaidBlock } from "../content/RichNodes";
 import type { ContentEnv } from "../content/types";
@@ -24,6 +16,9 @@ import type { Citation } from "./protocol";
  *   katex (one copy, pnpm override).
  * - Mermaid uses the app's sandboxed renderer (content/mermaidHost.ts, mermaid 12), not @streamdown/mermaid.
  * - [n] markers become citation chips linked to the citation with that n; unknown n stays text.
+ * - Streamdown and its plugins (unified, micromark, Shiki, KaTeX) load on demand, outside the surface's chunk
+ *   (performance budget): `preloadMarkdown()` starts the load when the surface mounts; until it lands, text
+ *   shows as plain wrapped text.
  */
 
 type Pluggable = NonNullable<StreamdownProps["rehypePlugins"]>[number];
@@ -35,28 +30,72 @@ type HastNode = {
   children?: HastNode[];
 };
 
-const mathBase = createMathPlugin({ singleDollarTextMath: true });
-const [rehypeKatex, katexOptions] = mathBase.rehypePlugin as [Pluggable, Record<string, unknown>];
-const MATH: PluginConfig["math"] = {
-  ...mathBase,
-  rehypePlugin: [
-    rehypeKatex,
-    {
-      ...katexOptions,
-      output: "mathml",
-      throwOnError: false,
-      trust: false,
-      strict: "ignore",
-      maxSize: 50,
-      maxExpand: 500,
-    },
-  ] as unknown as Pluggable,
-  getStyles: undefined,
-};
-const CODE = createCodePlugin({ themes: ["github-dark", "github-dark"] });
+interface MarkdownLib {
+  Streamdown: typeof import("streamdown").Streamdown;
+  math: PluginConfig["math"];
+  code: PluginConfig["code"];
+  harden: Pluggable;
+  hardenDefaults: Record<string, unknown>;
+  sanitize: Pluggable;
+}
 
-const [harden, hardenDefaults] = defaultRehypePlugins.harden as [Pluggable, Record<string, unknown>];
-const sanitize = defaultRehypePlugins.sanitize as Pluggable;
+let lib: MarkdownLib | null = null;
+let loading: Promise<MarkdownLib> | null = null;
+
+/** Loads Streamdown and its math/code plugins once (separate chunks); safe to call repeatedly. */
+export function preloadMarkdown(): Promise<MarkdownLib> {
+  loading ??= Promise.all([import("streamdown"), import("@streamdown/math"), import("@streamdown/code")]).then(
+    ([sd, { createMathPlugin }, { createCodePlugin }]) => {
+      const mathBase = createMathPlugin({ singleDollarTextMath: true });
+      const [rehypeKatex, katexOptions] = mathBase.rehypePlugin as [Pluggable, Record<string, unknown>];
+      const [harden, hardenDefaults] = sd.defaultRehypePlugins.harden as [Pluggable, Record<string, unknown>];
+      lib = {
+        Streamdown: sd.Streamdown,
+        math: {
+          ...mathBase,
+          rehypePlugin: [
+            rehypeKatex,
+            {
+              ...katexOptions,
+              output: "mathml",
+              throwOnError: false,
+              trust: false,
+              strict: "ignore",
+              maxSize: 50,
+              maxExpand: 500,
+            },
+          ] as unknown as Pluggable,
+          getStyles: undefined,
+        },
+        code: createCodePlugin({ themes: ["github-dark", "github-dark"] }),
+        harden,
+        hardenDefaults,
+        sanitize: sd.defaultRehypePlugins.sanitize as Pluggable,
+      };
+      return lib;
+    },
+  );
+  loading.catch(() => {
+    loading = null; // a failed chunk load (offline) is retried on the next render that needs it
+  });
+  return loading;
+}
+
+function useMarkdownLib(): MarkdownLib | null {
+  const [ready, setReady] = useState<MarkdownLib | null>(lib);
+  useEffect(() => {
+    if (ready) return;
+    let alive = true;
+    preloadMarkdown().then(
+      (l) => alive && setReady(l),
+      () => undefined,
+    );
+    return () => {
+      alive = false;
+    };
+  }, [ready]);
+  return ready;
+}
 
 const SKIP = new Set(["code", "pre", "a", "math", "annotation"]);
 
@@ -147,7 +186,20 @@ export interface MarkdownProps {
   className?: string;
 }
 
-function MarkdownImpl({ text, streaming, citations = [], className }: MarkdownProps) {
+function MarkdownImpl(props: MarkdownProps) {
+  const md = useMarkdownLib();
+  if (!md) {
+    return (
+      <div className={cx("naadi-md flex flex-col gap-3 text-reading text-text", props.className)}>
+        <p className="m-0 whitespace-pre-wrap">{props.text}</p>
+      </div>
+    );
+  }
+  return <MarkdownLoaded {...props} md={md} />;
+}
+
+function MarkdownLoaded({ text, streaming, citations = [], className, md }: MarkdownProps & { md: MarkdownLib }) {
+  const { Streamdown, harden, hardenDefaults, sanitize } = md;
   const t = useUiText();
   const auth = useAuth();
   const supabaseUrl = auth.status === "signed-in" || auth.status === "signed-out" ? auth.config.supabase_url : null;
@@ -177,7 +229,7 @@ function MarkdownImpl({ text, streaming, citations = [], className }: MarkdownPr
         ],
         [rehypeCiteMarkers, { known: knownKey ? knownKey.split(",").map(Number) : [] }],
       ] as Pluggable[],
-    [origin, images, knownKey],
+    [origin, images, knownKey, harden, hardenDefaults, sanitize],
   );
 
   const components = useMemo(
@@ -260,8 +312,8 @@ function MarkdownImpl({ text, streaming, citations = [], className }: MarkdownPr
   );
 
   const plugins = useMemo<PluginConfig>(
-    () => ({ code: CODE, math: MATH, renderers: [{ language: "mermaid", component: MermaidFence }] }),
-    [],
+    () => ({ code: md.code, math: md.math, renderers: [{ language: "mermaid", component: MermaidFence }] }),
+    [md],
   );
 
   return (
