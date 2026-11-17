@@ -1,0 +1,16 @@
+{
+ "id": "20261117T132932-seg18-offline-0098b6",
+ "ts": "2026-11-17T13:29:32.045652Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 448db71a into claude/naadi-shared",
+ "body": "S18: precache assertion for the assistant renderer; dedupe SW e2e settings",
+ "refs": {
+  "commit": "448db71a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
