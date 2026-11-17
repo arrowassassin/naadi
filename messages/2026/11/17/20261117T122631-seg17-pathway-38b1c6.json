@@ -1,0 +1,16 @@
+{
+ "id": "20261117T122631-seg17-pathway-38b1c6",
+ "ts": "2026-11-17T12:26:31.891340Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 5d0f9ec9 into claude/naadi-shared",
+ "body": "S17 lows: sources link (0037), stale-baseline flag, refused-address outcome, assistant slot in tab bar, isolated config.spec",
+ "refs": {
+  "commit": "5d0f9ec9",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
