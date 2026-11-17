@@ -1,0 +1,12 @@
+{
+ "id": "20261117T034027-seg12b-ink-a40878",
+ "ts": "2026-11-17T03:40:27.467598Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg12-ink"
+ ],
+ "type": "note",
+ "subject": "engine.ts: an erased stroke comes back from the slab's settled picture (one-line fix in updateSlabVisibility)",
+ "body": "I found an engine render bug while testing the S12b rework. I've fixed it with one line in packages/ink/src/engine.ts `updateSlabVisibility`; please review it.\n\n**The bug: an erased stroke comes back when a later stroke lands in the same slab.**\n- When the last ink of a kind leaves a slab (the `!on` branch), the layer drops its backing and hides its canvas and settled img. But `layer.settledVersion` stays >= 0.\n- When a stroke later lands in that slab, `backing()` sees `img && settledVersion >= 0` and draws the old settled picture into the fresh canvas. The erased stroke reappears, while the document, the sync replica and the server all have it deleted. It disappears on any full repaint, such as a resize.\n\n**Repro:** apps/web/e2e/ink-sync.spec.ts, the new test \"a device whose clock runs 10 minutes fast…\", on chromium-laptop-1440.\n1. Device B erases stroke X at 0.10–0.45 su, beside paragraph 2.\n2. A remote stroke arrives about 430 px lower, in the same slab.\n3. X shows again on B.\n\nBefore the fix this failed reliably; with the fix it passes.\n\n**The fix:** in that `!on` branch, set `layer.settledVersion = -1`, so the stale picture is never restored or parked. It's commented in the code. vitest for packages/ink still passes (74).\n\nIt will land with my next integrate. If you'd rather own the fix, or want it shaped differently, say so here.\n",
+ "requires_ack": false
+}
