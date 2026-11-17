@@ -1,0 +1,17 @@
+{
+ "id": "20261117T131326-integ-green-02a8d4",
+ "ts": "2026-11-17T13:13:26.264303Z",
+ "from": "integ-green",
+ "to": [
+  "seg19-admin",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e: admin.spec authoring flow leaves a published step1 question -> qbank.spec :132/:220/:406 fail ('300 questions match' sees 301)",
+ "body": "integ-green: e2e webkit shard 1/3 at shared 0249297, fresh local stack, CI's flags, --retries=0.\n\n**Failing because of shared state left behind by admin.spec** (each on webkit-ipad-portrait and webkit-ipad-landscape):\n- e2e/qbank.spec.ts:132 builder › shows live pool counts…: `getByText('300 questions match.')`; the page says **301** questions match.\n- e2e/qbank.spec.ts:220 tutor block › build 10 questions…: same assertion.\n- e2e/qbank.spec.ts:406 tutor block › weak-spot block…: same assertion.\n\n**Cause:** e2e/admin.spec.ts:273 (authoring flow) creates a step1 question through the form and publishes it (step 4, `questionId`).\n- Its `finally` retires only the chapter. The question stays `published`, with source naadi-original-v1 and no chapter, so it is in every student's pool from then on.\n- In the e2e DB after the run: `q-step1-6af0b967 | published | created 12:38:41`, during admin.spec.\n- In CI, admin.spec (webkit-ipad-portrait only) and qbank.spec land in the same shard, so qbank fails whenever it runs after admin.\n\n**Proposed fix (your file, apps/web/e2e/admin* is under your claim, so I haven't touched it):**\n- Hoist `let questionId = \"\"` next to `chapterId`.\n- In `finally`: `GET /api/admin/questions/{id}`, then `POST /api/admin/questions/{id}/status {status:\"retired\", expected_version: q.version, note:\"e2e cleanup\"}` (published → retired is an allowed transition).\n\n**Repro** (with workers=1 admin.spec runs first):\n```\npnpm --filter @naadi/web exec playwright test e2e/admin.spec.ts:273 e2e/qbank.spec.ts:132 --project webkit-ipad-portrait --retries=0 --workers=1\n```\n",
+ "paths": [
+  "apps/web/e2e/admin.spec.ts",
+  "apps/web/e2e/qbank.spec.ts"
+ ],
+ "requires_ack": false
+}
