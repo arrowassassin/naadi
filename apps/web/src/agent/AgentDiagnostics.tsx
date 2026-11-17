@@ -6,6 +6,7 @@ import { useMe } from "../auth/api";
 import { useUiText } from "../copy/useUiText";
 import { StatusChip } from "../health/HealthPanel";
 import { HealthRequestError, useHealth } from "../health/useHealth";
+import { PlayerEmbed } from "../video/PlayerEmbed";
 import { type AgentError, type ReceivedBlock, useAgent } from "./useAgent";
 
 interface PingState extends Record<string, unknown> {
@@ -157,30 +158,21 @@ function isMediaItem(v: unknown): v is MediaItem {
   return (m.kind === "image" || m.kind === "video") && typeof m.title === "string" && typeof m.link === "string";
 }
 
-/** Media answer block: Commons / PMC images with title, credit and licence; YouTube through the official
- * IFrame player (privacy-enhanced domain, origin + strict-origin-when-cross-origin referrer). */
-/** Click-to-load facade (as ContentRenderer's Video): nothing is requested from YouTube until the admin asks
- * for the video; then the official IFrame player on the privacy-enhanced domain, with origin and an
- * origin-only referrer (YouTube refuses to play without one). */
+/** Media answer block: Commons / PMC images with title, credit and licence; YouTube through the official IFrame
+ * player on its own origin (PlayerEmbed). */
+/** Click-to-load facade (as ContentRenderer's Video): nothing is requested from YouTube until the admin asks for the
+ * video; then the official player through the same sandboxed player page and bridge as the lessons (PlayerEmbed): the
+ * app's CSP lets no page frame YouTube directly. */
 function YouTubeFacade({ videoId, title, t }: { videoId: string; title: string; t: T }) {
   const [loaded, setLoaded] = useState(false);
-  const src = new URL(`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`);
-  src.search = new URLSearchParams({
-    autoplay: "1",
-    rel: "0",
-    playsinline: "1",
-    origin: window.location.origin,
-  }).toString();
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-swatch border border-line bg-surface-2">
       {loaded ? (
-        <iframe
-          src={src.toString()}
+        <PlayerEmbed
+          videoId={videoId}
           title={t("agent.diag.video_title", { title })}
-          referrerPolicy="strict-origin-when-cross-origin"
-          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-          allowFullScreen
-          className="absolute inset-0 size-full border-0"
+          errorText={t("video.player_error")}
+          watchText={t("video.watch_on_youtube")}
         />
       ) : (
         <button

@@ -180,11 +180,18 @@ test.describe("admin, answer blocks", () => {
     await expectNoAxeViolations(page);
     await expectNoHorizontalOverflow(page);
     await snap(page, info, consoleErrors, "media");
+    // Only the player page's frame is asserted here (the bridge itself is covered by video.spec.ts): serve a blank page.
+    await page.route("https://arrowassassin-naadi-player.static.hf.space/**", (route) =>
+      route.fulfill({ status: 200, contentType: "text/html", body: "<!doctype html><title>player</title>" }),
+    );
     await video.getByRole("button", { name: /^Play video: / }).click();
     const yt = video.locator("iframe");
-    await expect(yt).toHaveAttribute("src", /^https:\/\/www\.youtube-nocookie\.com\/embed\/czY5nyvZ7cU\?/);
-    const src = new URL((await yt.getAttribute("src")) ?? "");
-    expect(src.searchParams.get("origin")).toBe(new URL(page.url()).origin);
+    // The strict app CSP frames only the player page (its own origin); the YouTube embed lives inside that page.
+    await expect(yt).toHaveAttribute(
+      "src",
+      /^https:\/\/arrowassassin-naadi-player\.static\.hf\.space\/index\.html\?parent=/,
+    );
+    await expect(yt).toHaveAttribute("sandbox", "allow-scripts allow-same-origin");
     await expect(yt).toHaveAttribute("referrerpolicy", "strict-origin-when-cross-origin");
     await expect(yt).toHaveAttribute("title", /^Video: /);
   });
