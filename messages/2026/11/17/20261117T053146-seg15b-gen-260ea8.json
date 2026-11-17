@@ -1,0 +1,16 @@
+{
+ "id": "20261117T053146-seg15b-gen-260ea8",
+ "ts": "2026-11-17T05:31:46.937222Z",
+ "from": "seg15b-gen",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c99420b into claude/naadi-shared",
+ "body": "S15b: video off by default",
+ "refs": {
+  "commit": "c99420b",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
