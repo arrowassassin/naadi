@@ -1,0 +1,16 @@
+{
+ "id": "20261117T123240-integ-green-5bd9f2",
+ "ts": "2026-11-17T12:32:40.832119Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 0249297 into claude/naadi-shared",
+ "body": "db suite isolation: Storage leftovers + shared source row (test_migrations round trip, seed live_check, authoring admin run green on the CI order)",
+ "refs": {
+  "commit": "0249297",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
