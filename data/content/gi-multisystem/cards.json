@@ -217,8 +217,8 @@
  },
  {
   "id": "s23d-c100102-s1-03",
-  "frontHtml": "Why do patients with ileal Crohn disease form oxalate kidney stones?",
-  "backHtml": "Unabsorbed fat binds calcium, leaving free oxalate to be absorbed in the colon.",
+  "frontHtml": "Ileal Crohn disease raises the risk of which kidney stone, and by what mechanism?",
+  "backHtml": "Calcium oxalate (enteric hyperoxaluria): malabsorbed fatty acids bind luminal calcium, so more oxalate stays soluble and the colon absorbs it.",
   "sectionId": "s23d-s100102-s1",
   "questionId": null,
   "areas": [
@@ -577,8 +577,8 @@
  },
  {
   "id": "s23d-c100201-s2-06",
-  "frontHtml": "Hepatic adenoma persisting at 5 cm or larger after stopping estrogen: management?",
-  "backHtml": "Surgical resection.",
+  "frontHtml": "A hepatic adenoma is still at least 5 cm after estrogen has been stopped. Next step?",
+  "backHtml": "Resect it, because large adenomas carry a risk of bleeding and malignant change.",
   "sectionId": "s23d-s100201-s2",
   "questionId": null,
   "areas": [
@@ -793,8 +793,8 @@
  },
  {
   "id": "s23d-c100202-s2-06",
-  "frontHtml": "First-line treatment of anal squamous cell carcinoma?",
-  "backHtml": "Chemoradiation with 5-fluorouracil and mitomycin.",
+  "frontHtml": "Anal squamous cell carcinoma persists or recurs after chemoradiation. Treatment?",
+  "backHtml": "Salvage abdominoperineal resection.",
   "sectionId": "s23d-s100202-s2",
   "questionId": null,
   "areas": [
@@ -2185,8 +2185,8 @@
  },
  {
   "id": "s23d-c100503-s2-06",
-  "frontHtml": "Empiric treatment for acute STI proctitis (CDC)?",
-  "backHtml": "Ceftriaxone 500 mg IM once plus doxycycline 100 mg twice daily for 7 days.",
+  "frontHtml": "Suspected gonococcal or chlamydial proctitis: which empiric regimen?",
+  "backHtml": "A single 500 mg IM ceftriaxone dose plus a 7-day oral doxycycline course (100 mg twice daily).",
   "sectionId": "s23d-s100503-s2",
   "questionId": null,
   "areas": [
@@ -2941,8 +2941,8 @@
  },
  {
   "id": "s23d-c100801-s2-02",
-  "frontHtml": "Albumin dose with SBP treatment?",
-  "backHtml": "1.5 g/kg on day 1 and 1 g/kg on day 3.",
+  "frontHtml": "Spontaneous bacterial peritonitis: how is IV albumin dosed?",
+  "backHtml": "1.5 g/kg on the first day, then 1 g/kg on the third day, alongside the antibiotic.",
   "sectionId": "s23d-s100801-s2",
   "questionId": null,
   "areas": [
