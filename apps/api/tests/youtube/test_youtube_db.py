@@ -97,7 +97,7 @@ async def test_a_second_run_asks_the_api_about_nothing_it_already_knows(db: Data
     await run(db, api)
     api.calls.clear()
     rep = await run(db, api)
-    assert rep.new_videos == 0 and ("videos", 5) not in api.calls
+    assert rep.candidates_added == 0 and ("videos", 5) not in api.calls
     # only the three that were stored are skipped; unmatched ids may be looked at again, never stored
     assert all(n <= 5 for k, n in api.calls if k == "videos")
 
@@ -208,9 +208,10 @@ async def test_refresh_updates_fresh_metadata_and_drops_what_is_gone(
 async def test_fresh_metadata_is_not_refetched(db: Database, world: World) -> None:
     api = api_for(world)
     await run(db, api)
-    api.calls.clear()
+    api.asked.clear()
     await run(db, api)
-    assert ("videos", 3) not in api.calls  # nothing stored is older than refresh_days
+    # nothing stored is older than refresh_days: only never-stored ids (3, 4, 5) are looked at again
+    assert not {vid(world, 1), vid(world, 2)} & set(api.asked)
 
 
 def test_admin_routes_gate_list_approve_reject_and_add(

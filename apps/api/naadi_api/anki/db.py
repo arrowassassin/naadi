@@ -7,6 +7,7 @@ rows. Pictures are private `media_assets` rows (`owner_user_id` set) that RLS sh
 
 from __future__ import annotations
 
+import hashlib
 import uuid
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
@@ -47,6 +48,11 @@ async def service_tx(db: Database, *, timeout_ms: int = 30_000) -> AsyncIterator
 MAX_CARDS_PER_USER = 100_000
 
 
+def derived_guid(card_id: uuid.UUID) -> str:
+    """The note GUID an export gives a card that has no `anki_guid` (its own typed cards)."""
+    return "n" + hashlib.sha256(str(card_id).encode()).hexdigest()[:20]
+
+
 async def existing_guids(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, guids: list[str]) -> set[str]:
     found: set[str] = set()
     for i in range(0, len(guids), 5000):
@@ -55,6 +61,11 @@ async def existing_guids(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID, gui
             (uid, guids[i : i + 5000]),
         )
         found.update(r["anki_guid"] for r in await cur.fetchall())
+    # A package exported from this library names the student's own cards by an id-derived GUID: importing it back
+    # must find them (it would otherwise copy every typed card).
+    cur = await conn.execute("select id from public.flashcards where owner_user_id = %s and anki_guid is null", (uid,))
+    wanted = set(guids)
+    found.update(g for g in (derived_guid(r["id"]) for r in await cur.fetchall()) if g in wanted)
     return found
 
 

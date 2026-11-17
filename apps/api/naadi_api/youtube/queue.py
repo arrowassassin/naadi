@@ -116,6 +116,8 @@ async def approve(
         rows = await _candidate(conn, media)
         if not rows:
             raise QueueError(404, "video_candidate_not_found")
+        if all(r["status"] == "rejected" for r in rows):
+            raise QueueError(409, "video_rejected")
         target = section_id or next((r["section_id"] for r in rows if r["status"] in ("pending", "approved")), None)
         if target is None:
             raise QueueError(422, "video_needs_section")
@@ -132,8 +134,6 @@ async def approve(
         m = await cur.fetchone()
         if m is None or m["embeddable"] is False or all(r["status"] == "stale" for r in rows):
             raise QueueError(409, "video_unavailable")
-        if m["review_status"] == "rejected" and all(r["status"] == "rejected" for r in rows):
-            raise QueueError(409, "video_rejected")
         await conn.execute("update public.media_assets set review_status = 'approved' where id = %s", (media,))
         await conn.execute(
             "insert into public.section_media (section_id, media_id, sort, start_s, end_s)"

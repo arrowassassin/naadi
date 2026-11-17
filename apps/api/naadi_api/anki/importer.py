@@ -130,8 +130,11 @@ def _prepare(path: Path, user_id: uuid.UUID, deck_prefix: str | None, limits: An
                 dropped += 1
                 continue
             seen_guids.add(c.guid)
+            audio_before = stats.audio
             front = html_to_doc(c.front_html, resolve, stats)
             back = html_to_doc(c.back_html, resolve, stats)
+            # A card with sound counts once, however many times its faces mention it.
+            stats.audio = audio_before + (1 if stats.audio > audio_before else 0)
             if not front["content"] or not back["content"]:
                 if not front["content"]:
                     dropped += 1

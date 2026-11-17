@@ -20,7 +20,7 @@ import genanki
 
 from ..db import Database
 from . import images
-from .db import AnkiError, service_tx
+from .db import AnkiError, derived_guid, service_tx
 from .html import doc_to_html
 
 # genanki needs numeric ids; both are fixed so Anki recognises our note type across exports.
@@ -53,7 +53,7 @@ def deck_id(name: str) -> int:
 
 
 def note_guid(card_id: uuid.UUID, anki_guid: str | None) -> str:
-    return anki_guid or "n" + hashlib.sha256(str(card_id).encode()).hexdigest()[:20]
+    return anki_guid or derived_guid(card_id)
 
 
 def anki_deck_name(name: str) -> str:

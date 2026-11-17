@@ -77,6 +77,10 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
     tag = uuid.uuid4().hex[:8]
     a, b, admin = create_auth_user(pg), create_auth_user(pg), create_auth_user(pg)
     w = World(tag, a, b, admin, f"t{tag}-mch", f"t{tag}-mch-s1", f"t{tag}-mch-s2")
+    pg.execute(
+        "insert into public.sources (id, name, license) values ('youtube', 'YouTube', 'youtube-embed-only')"
+        " on conflict (id) do nothing"
+    )
     insert_row(pg, "sources", {"id": f"t{tag}-msrc", "name": "Naadi original", "license": "proprietary-naadi"})
     insert_row(
         pg,
@@ -102,9 +106,9 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
         {"id": w.section2, "chapter_id": w.chapter, "heading": f"Nephron {tag} physiology", "sort": 2},
     )
     yield w
-    pg.execute("delete from public.video_candidates where media_id like %s", (f"yt-t{tag}%",))
+    pg.execute("delete from public.video_candidates where media_id like %s", (f"yt-{tag}%",))
     pg.execute("delete from public.section_media where section_id = any(%s)", ([w.section, w.section2],))
-    pg.execute("delete from public.media_assets where id like %s or owner_user_id = any(%s)", (f"yt-t{tag}%", [a, b]))
+    pg.execute("delete from public.media_assets where id like %s or owner_user_id = any(%s)", (f"yt-{tag}%", [a, b]))
     pg.execute("delete from public.flashcards where owner_user_id = any(%s)", ([a, b],))
     pg.execute("delete from public.chapters where id = %s", (w.chapter,))
     pg.execute("delete from public.sources where id = %s", (f"t{tag}-msrc",))

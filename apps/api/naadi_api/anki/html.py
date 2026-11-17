@@ -358,7 +358,7 @@ def doc_to_html(doc: Node, image_src: Callable[[str], str | None] | None = None)
         t = n["type"]
         c = n.get("content", [])
         if t == "paragraph":
-            return f"<div>{inline(c)}</div>"
+            return f"<p>{inline(c)}</p>"
         if t == "heading":
             level = min(max(int(n.get("attrs", {}).get("level", 3)), 2), 4)
             return f"<h{level}>{inline(c)}</h{level}>"

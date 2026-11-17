@@ -42,6 +42,7 @@ class FakeYouTube:
         self.catalog = catalog
         self.quota = Quota(budget)
         self.calls: list[tuple[str, int]] = []
+        self.asked: list[str] = []
 
     def playlist_video_ids(self, playlist_id: str, limit: int) -> list[str]:
         self.quota.spend(1)
@@ -53,6 +54,7 @@ class FakeYouTube:
         for _ in range(0, max(len(ids), 1), 50):
             self.quota.spend(1)
         self.calls.append(("videos", len(ids)))
+        self.asked += ids
         return {i: self.catalog[i] for i in ids if i in self.catalog}
 
 
