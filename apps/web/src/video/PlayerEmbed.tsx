@@ -42,22 +42,21 @@ export function PlayerEmbed({
   }, [videoId]);
 
   return (
-    <>
-      <iframe
-        ref={frameRef}
-        title={title}
-        src={playerUrl(playerOrigin(), window.location.origin)}
-        sandbox={SANDBOX_ATTR}
-        referrerPolicy="strict-origin-when-cross-origin"
-        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-        allowFullScreen
-        className="absolute inset-0 size-full border-0"
-      />
+    <div className="w-full">
+      <div className="relative aspect-video w-full overflow-hidden rounded-swatch border border-line bg-surface-2">
+        <iframe
+          ref={frameRef}
+          title={title}
+          src={playerUrl(playerOrigin(), window.location.origin)}
+          sandbox={SANDBOX_ATTR}
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          allowFullScreen
+          className="absolute inset-0 size-full border-0"
+        />
+      </div>
       {failed ? (
-        <p
-          role="alert"
-          className="absolute inset-x-0 bottom-0 m-0 flex flex-wrap items-center gap-2 bg-ground/90 p-3 text-text-2 text-ui-sm"
-        >
+        <p role="alert" className="m-0 mt-2 flex flex-wrap items-center gap-2 text-text-2 text-ui-sm">
           <span>{errorText}</span>
           <a
             className="text-text underline underline-offset-4"
@@ -69,6 +68,6 @@ export function PlayerEmbed({
           </a>
         </p>
       ) : null}
-    </>
+    </div>
   );
 }

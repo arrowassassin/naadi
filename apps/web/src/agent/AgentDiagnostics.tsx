@@ -165,28 +165,29 @@ function isMediaItem(v: unknown): v is MediaItem {
  * app's CSP lets no page frame YouTube directly. */
 function YouTubeFacade({ videoId, title, t }: { videoId: string; title: string; t: T }) {
   const [loaded, setLoaded] = useState(false);
+  if (loaded) {
+    return (
+      <PlayerEmbed
+        videoId={videoId}
+        title={t("agent.diag.video_title", { title })}
+        errorText={t("video.player_error")}
+        watchText={t("video.watch_on_youtube")}
+      />
+    );
+  }
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-swatch border border-line bg-surface-2">
-      {loaded ? (
-        <PlayerEmbed
-          videoId={videoId}
-          title={t("agent.diag.video_title", { title })}
-          errorText={t("video.player_error")}
-          watchText={t("video.watch_on_youtube")}
-        />
-      ) : (
-        <button
-          type="button"
-          onClick={() => setLoaded(true)}
-          className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-text"
-        >
-          <span className="flex size-12 items-center justify-center rounded-pill bg-paper text-ground">
-            <Play aria-hidden="true" size={22} />
-          </span>
-          <span className="text-center font-semibold">{t("content.video_play", { title })}</span>
-          <span className="text-center text-ui-sm text-text-2">{t("content.video_loads")}</span>
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={() => setLoaded(true)}
+        className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-text"
+      >
+        <span className="flex size-12 items-center justify-center rounded-pill bg-paper text-ground">
+          <Play aria-hidden="true" size={22} />
+        </span>
+        <span className="text-center font-semibold">{t("content.video_play", { title })}</span>
+        <span className="text-center text-ui-sm text-text-2">{t("content.video_loads")}</span>
+      </button>
     </div>
   );
 }

@@ -155,7 +155,11 @@ test.describe("admin, answer blocks", () => {
     test.skip(!canSeedMedia, "the recorded media results are seeded only into a local test database");
     const youtubeRequests: string[] = [];
     page.on("request", (r) => {
-      if (/(^|\.)(youtube(-nocookie)?\.com|ytimg\.com|googlevideo\.com)$/.test(new URL(r.url()).hostname)) {
+      if (
+        /(^|\.)(youtube(-nocookie)?\.com|ytimg\.com|googlevideo\.com|arrowassassin-naadi-player\.static\.hf\.space)$/.test(
+          new URL(r.url()).hostname,
+        )
+      ) {
         youtubeRequests.push(r.url());
       }
     });
