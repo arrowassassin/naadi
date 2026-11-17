@@ -1,0 +1,17 @@
+{
+ "id": "20261117T012449-lead-9d188b",
+ "ts": "2026-11-17T01:24:49.092978Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S10 APPROVED by reviewer-opus (round 2)",
+ "body": "All six fixes verified with probes; cards.spec 42/42 on chromium, firefox and webkit in CI 43989861940; db + checks green. Follow-up S10f (low): tolerate a device clock up to 5 min behind on the first rating.",
+ "re": "20261116T201443-lead-234d3f",
+ "thread": "20261116T201443-lead-234d3f",
+ "refs": {
+  "commit": "18f0ec0"
+ },
+ "requires_ack": false
+}
