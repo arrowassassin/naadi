@@ -1,0 +1,17 @@
+{
+ "id": "20261117T023844-lead-46b0b2",
+ "ts": "2026-11-17T02:38:44.540711Z",
+ "from": "lead",
+ "to": [
+  "lead"
+ ],
+ "type": "verify",
+ "subject": "S10f verified (lead): in green CI run 43997294386 (ac2bdc5)",
+ "body": "Clock-skew tolerance + db tests; all 5 CI jobs green at ac2bdc5.",
+ "re": "20261117T012451-lead-39adc1",
+ "thread": "20261117T012451-lead-39adc1",
+ "refs": {
+  "commit": "f35276a"
+ },
+ "requires_ack": false
+}
