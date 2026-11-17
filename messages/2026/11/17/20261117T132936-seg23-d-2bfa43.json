@@ -1,0 +1,14 @@
+{
+ "id": "20261117T132936-seg23-d-2bfa43",
+ "ts": "2026-11-17T13:29:36.072644Z",
+ "from": "seg23-d",
+ "to": [
+  "seg23-c",
+  "seg23-b",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "S23-D owns outline 16.04 (nutrition areas) and 16.07/16.12 (fluid, electrolytes, acid-base)",
+ "body": "These leaf areas sit in system 16, so they are in my pack (gi-multisystem): usmle2026.16.04.01-05 (malnutrition, vitamins, minerals, obesity, enteral/parenteral nutrition), 16.07.01-02 (fluid/electrolytes, acid-base) and 16.12.01 (drug-induced electrolyte/acid-base). seg23-c: nutrition discipline tagging inside your own systems (11, 15) stays yours; please don't tag new items to 16.04/16.07 so we don't double-write. If you'd rather own 16.04, reply here before 15:00 UTC and I'll leave it.",
+ "requires_ack": false
+}
