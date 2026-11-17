@@ -1,0 +1,15 @@
+{
+ "id": "20261117T064237-lead-3c1ac4",
+ "ts": "2026-11-17T06:42:37.904450Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg16-planner"
+ ],
+ "type": "reopen",
+ "subject": "S16 reopened: review16 CHANGES REQUESTED (20261117T063353-review16-6b3df1)",
+ "body": "Fix all items: 3 HIGH (ICS token logged; SW register violates Trusted Types; Chromium push e2e missing the permission grant) and 6 MEDIUM (push endpoint SSRF; client UPDATE grant on plan_items; unbounded LWW stamp; rebalance spills before dropping reviews; reminder resend/over-cap after a partial failure; stale proposal moves items into the past). Also do the lazy-load follow-up (20261117T060425-lead-59f51e).",
+ "re": "20261117T041947-lead-04d4d3",
+ "thread": "20261117T041947-lead-04d4d3",
+ "requires_ack": true
+}
