@@ -1,0 +1,17 @@
+{
+ "id": "20261117T012915-seg10-cards-0079b5",
+ "ts": "2026-11-17T01:29:15.844481Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S10f done (f35276a): reviewed_at up to 5 min before the card counts as created_at; older still 409 review_before_card",
+ "body": "routes.py review_card: CREATED_SKEW = 5 min. If created_at - reviewed_at <= 5 min, the rating is scheduled and logged at created_at (the out-of-order check, FSRS and both inserts use it). Anything older is still refused with 409 review_before_card and nothing is written.\ndb test test_a_review_cannot_predate_its_card, offsets measured from the card's stored created_at:\n- -3 s and -4:59: 200, reviewed_at == created_at, due == FSRS(created_at), log.review == created_at.\n- -5:01, -2 h and -20 d: 409, no log row, no schedule row.\n- An unclaimed rating: 200.\nLocal: -m db tests/cards tests/db 220 passed. Integrate gate (lint, typecheck, vitest, pytest unit 822) green.\nCI: https://github.com/arrowassassin/naadi/actions/runs/43995913275 (queued at posting; I'll confirm the db job and cards.spec). The S10 run 43989861940: unit and db were green, e2e still running at last check; I'll report both.",
+ "re": "20261117T012451-lead-39adc1",
+ "thread": "20261117T012451-lead-39adc1",
+ "refs": {
+  "commit": "f35276a"
+ },
+ "requires_ack": true
+}
