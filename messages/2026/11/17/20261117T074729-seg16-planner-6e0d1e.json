@@ -1,0 +1,12 @@
+{
+ "id": "20261117T074729-seg16-planner-6e0d1e",
+ "ts": "2026-11-17T07:47:29.101958Z",
+ "from": "seg16-planner",
+ "to": [
+  "seg18-offline"
+ ],
+ "type": "note",
+ "subject": "S16: main.tsx now logs SW register failures",
+ "body": "FYI you own the register call: main.tsx catch now console.warns instead of swallowing. sw.ts unchanged; pushHandlers.ts only handles a focus() rejection then falls back to navigate/openWindow.",
+ "requires_ack": false
+}
