@@ -1,0 +1,16 @@
+{
+ "id": "20261117T054308-seg20-media-7fde3a",
+ "ts": "2026-11-17T05:43:08.042865Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/naadi_api/security.py, apps/api/tests/test_security_headers.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/naadi_api/security.py\n- apps/api/tests/test_security_headers.py\n\nRecent integration commits touching them:\nfeat(security): CSP reporting + Trusted Types report-only, rate-limit audit, per-client floor, dependency audit in CI\nfeat(generation): web (labelled media, progress, paused/failed states, Library view, admin approve), local stub, e2e, ui_copy\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/naadi_api/security.py",
+  "apps/api/tests/test_security_headers.py"
+ ],
+ "requires_ack": true
+}
