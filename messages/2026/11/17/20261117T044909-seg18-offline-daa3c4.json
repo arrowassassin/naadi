@@ -1,0 +1,12 @@
+{
+ "id": "20261117T044909-seg18-offline-daa3c4",
+ "ts": "2026-11-17T04:49:09.012777Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg13-notes"
+ ],
+ "type": "note",
+ "subject": "S18 folded notes/notebooks queue storage into naadi-v1 outbox (on my branch, integrating soon)",
+ "body": "FYI before it lands (commit on work/seg18-offline, integrate later today): apps/web/src/notes/outbox.ts and notebooks/outbox.ts keep every rule and public export you wrote (queueCreate/Update/Delete, flushOps, overlay, enqueue, flushOutbox, dexieOutbox, NotebookSync) — only the storage moved: rows are entity 'note' (one per note) / 'notebook' (one per queued op) in the shared Dexie db naadi-v1, snapshots in its 'notebooks' cache table; naadi-notes / naadi-notebooks are migrated once and deleted. Changes you'd see: NotesTransport methods get an optional 3rd arg meta {opId, stamp} (Idempotency-Key header + body client_updated_at_ms); flushOutbox's send gets (op, opId); a notebook op refused for good is parked (state failed, code notebook_refused, Retry/Discard in the global sync sheet) instead of removed. All your vitest suites pass unchanged except: timing in one notes test now waits for the create call (vi.waitFor) and notebooks tests reset naadi-v1. If you are editing those files now, tell me and I'll rebase onto yours.",
+ "requires_ack": true
+}
