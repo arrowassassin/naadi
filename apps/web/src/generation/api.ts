@@ -1,11 +1,5 @@
 import {
-  type AdminGeneratedItem,
-  type AdminGeneratedList,
-  adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost,
-  adminListGeneratedApiAdminGeneratedGet,
   deleteGeneratedApiGeneratedMediaIdDelete,
-  type GeneratedApproveBody,
-  type GeneratedApproveOut,
   type GeneratedItem,
   type GeneratedList,
   type GenerationStatusOut,
@@ -18,7 +12,7 @@ import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 
-export type { AdminGeneratedItem, GeneratedApproveOut, GeneratedItem, GenerationStatusOut };
+export type { GeneratedItem, GenerationStatusOut };
 
 const KNOWN_CODES = new Set([
   "prompt_empty",
@@ -114,32 +108,5 @@ export function useDeleteGenerated() {
     mutationFn: (id: string) =>
       authed<unknown>((headers) => deleteGeneratedApiGeneratedMediaIdDelete({ headers, path: { media_id: id } })),
     onSuccess: () => void qc.invalidateQueries({ queryKey: generatedKey(userId) }),
-  });
-}
-
-export function usePendingGenerated(enabled: boolean) {
-  const userId = useUserId();
-  return useQuery({
-    queryKey: ["generated-pending", userId],
-    enabled: enabled && userId !== null,
-    queryFn: ({ signal }) =>
-      authed<AdminGeneratedList>((headers) =>
-        adminListGeneratedApiAdminGeneratedGet({ signal, headers, query: { pending: true } }),
-      ),
-  });
-}
-
-export function useApproveGenerated() {
-  const qc = useQueryClient();
-  const userId = useUserId();
-  return useMutation({
-    mutationFn: ({ id, body }: { id: string; body: GeneratedApproveBody }) =>
-      authed<GeneratedApproveOut>((headers) =>
-        adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost({ headers, path: { media_id: id }, body }),
-      ),
-    onSuccess: () => {
-      void qc.invalidateQueries({ queryKey: ["generated-pending", userId] });
-      void qc.invalidateQueries({ queryKey: generatedKey(userId) });
-    },
   });
 }

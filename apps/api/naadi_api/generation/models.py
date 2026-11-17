@@ -57,25 +57,6 @@ class GenerationStatusOut(BaseModel):
     video_enabled: bool
 
 
-class AdminGeneratedItem(GeneratedItem):
-    user_ref: str = Field(description="Short opaque owner reference (first 8 characters of the user id)")
-
-
-class AdminGeneratedList(BaseModel):
-    items: list[AdminGeneratedItem]
-
-
-class GeneratedApproveBody(BaseModel):
-    section_id: str = Field(min_length=1, max_length=120, pattern=r"^[A-Za-z0-9._-]+$")
-    caption: str = Field(min_length=1, max_length=300)
-
-
-class GeneratedApproveOut(BaseModel):
-    item: AdminGeneratedItem
-    media_id: str
-    section_id: str
-
-
 class StubRequest(BaseModel):
     """Non-production stub only: run a generation against the in-process fake."""
 

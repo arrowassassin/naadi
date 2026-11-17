@@ -30,7 +30,6 @@ from psycopg.rows import dict_row, tuple_row
 from ..db import Database, DatabaseNotConfigured
 from ..llm_config import GenerationSection
 from ..logs import get_logger
-from .approval import approve_generated
 from .client import (
     MAX_VIDEO_SECONDS,
     GenerationClient,
@@ -40,10 +39,8 @@ from .client import (
     QuotaExceeded,
     next_utc_midnight,
 )
-from .common import COLUMNS, SOURCE_ID, GenerationError, row_to_admin_item, row_to_item
+from .common import COLUMNS, SOURCE_ID, GenerationError, row_to_item
 from .models import (
-    AdminGeneratedItem,
-    GeneratedApproveOut,
     GeneratedItem,
     GeneratedKind,
     GenerationState,
@@ -427,39 +424,6 @@ class GenerationService:
             except MediaStoreError:
                 log.warning("generation_file_delete_failed")
         return True
-
-    # ── admin ──
-
-    async def list_pending(self, *, limit: int = 50) -> list[AdminGeneratedItem]:
-        async with service_tx(self._db) as conn:
-            cur = await conn.execute(
-                f"select {COLUMNS} from public.generated_media"  # noqa: S608
-                " where status = 'ready' and kind = 'image' and not approved_for_publish and hidden_at is null"
-                " order by created_at desc limit %s",
-                (limit,),
-            )
-            rows = await cur.fetchall()
-        return [await self._admin_item(r) for r in rows]
-
-    async def _admin_item(self, row: dict[str, Any]) -> AdminGeneratedItem:
-        return row_to_admin_item(row, (await self._item(row)).url)
-
-    async def approve(
-        self, media_id: uuid.UUID, admin_id: uuid.UUID, section_id: str, caption: str
-    ) -> GeneratedApproveOut:
-        """Publish a generated image as a shared chapter figure (admin only; the route is the gate)."""
-        label = (await self._config()).label
-        async with service_tx(self._db) as conn:
-            return await approve_generated(
-                conn,
-                media_id,
-                admin_id,
-                section_id,
-                caption,
-                store=self._store,
-                buckets=(self._private_bucket, self._public_bucket),
-                label=label,
-            )
 
 
 __all__ = [

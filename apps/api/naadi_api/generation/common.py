@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
-from .models import AdminGeneratedItem, GeneratedItem
+from .models import GeneratedItem
 
 SOURCE_ID = "naadi-ai-generated"
 
@@ -42,7 +42,3 @@ def row_to_item(row: dict[str, Any], url: str | None = None) -> GeneratedItem:
         published=bool(row["approved_for_publish"]),
         created_at=row["created_at"],
     )
-
-
-def row_to_admin_item(row: dict[str, Any], url: str | None = None) -> AdminGeneratedItem:
-    return AdminGeneratedItem(**row_to_item(row, url).model_dump(), user_ref=str(row["user_id"])[:8])

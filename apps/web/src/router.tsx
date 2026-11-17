@@ -5,7 +5,7 @@ import { agentDiagnosticsRoute } from "./agent/route";
 import { safeNext } from "./auth/redirect";
 import { getAuthState, startAuth, useAuth } from "./auth/session";
 import { cardsRoute } from "./cards/routes";
-import { adminGeneratedRoute, generatedRoute } from "./generation/route";
+import { generatedRoute } from "./generation/route";
 import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
 import { notebooksRoutes } from "./notebooks/routes";
@@ -190,7 +190,6 @@ export const routeTree = rootRoute.addChildren([
       assistantSettingsRoute,
     ]),
     agentDiagnosticsRoute(appRoute),
-    adminGeneratedRoute(appRoute),
     ...adminReviewRoutes(appRoute),
     generatedRoute(appRoute),
     ...adminRoutes(appRoute),

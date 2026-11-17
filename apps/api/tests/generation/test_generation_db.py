@@ -297,8 +297,6 @@ def test_routes_need_a_signed_in_user(client: TestClient) -> None:
         ("get", "/api/generated"),
         ("get", "/api/generation/status"),
         ("delete", f"/api/generated/{uuid.uuid4()}"),
-        ("get", "/api/admin/generated"),
-        ("post", f"/api/admin/generated/{uuid.uuid4()}/approve"),
     ):
         assert getattr(client, method)(path).status_code == 401, path
 
@@ -315,126 +313,32 @@ async def test_status_route_reports_usage_and_the_stub_route_is_absent_in_prod(
     assert stub.status_code in (404, 405)
 
 
-# ── admin approval ──
+# ── admin approval lives in S19's queue ──
 
 
-async def test_only_admins_can_list_or_approve(client: TestClient, key: SigningKey, rig: Rig, world: World) -> None:
-    item = await rig.service.run(world.user_a, "image", "heart")
-    ha = bearer(key, world.user_a)
-    assert client.get("/api/admin/generated?pending=1", headers=ha).status_code == 403
-    r = client.post(
-        f"/api/admin/generated/{item.id}/approve", headers=ha, json={"section_id": world.section, "caption": "c"}
-    )
-    assert r.status_code == 403
-    assert (await rig.service.get(world.user_a, item.id)).published is False  # type: ignore[union-attr]
-
-
-async def test_approval_publishes_a_labelled_figure_with_revision_and_source(
-    client: TestClient, key: SigningKey, rig: Rig, world: World, pg: psycopg.Connection[Any]
+async def test_there_is_no_second_approval_path_and_the_queue_sees_only_publishable_items(
+    client: TestClient, key: SigningKey, rig: Rig, world: World
 ) -> None:
-    item = await rig.service.run(world.user_a, "image", "Nephron cross-section")
+
     hd = bearer(key, world.admin, ADMIN_EMAIL)
-    pending = client.get("/api/admin/generated?pending=1", headers=hd).json()["items"]
-    assert str(item.id) in {i["id"] for i in pending} and all(len(i["user_ref"]) == 8 for i in pending)
-
-    r = client.post(
-        f"/api/admin/generated/{item.id}/approve",
-        headers=hd,
-        json={"section_id": world.section, "caption": "The nephron"},
-    )
-    assert r.status_code == 200, r.text
-    out = r.json()
-    mid = out["media_id"]
-    assert out["item"]["published"] is True and mid.startswith("gen-")
-
-    label = "AI-generated illustration — not clinical reference"
-    asset = pg.execute(
-        "select kind, source_id, caption, url, review_status, attribution, width, content_sha256"
-        " from public.media_assets where id = %s",
-        (mid,),
-    ).fetchone()
-    assert asset is not None
-    kind, source, caption, asset_url, review, attribution, width, sha = asset
-    assert (kind, source, review, attribution) == ("image", "naadi-ai-generated", "approved", label)
-    assert caption == f"The nephron — {label}" and caption.endswith(label)
-    assert (asset_url == f"{PUBLIC}/generated/{mid}.webp" and width == 1024) or width == 64
-    assert sha and len(sha) == 64
-    assert (PUBLIC, f"generated/{mid}.webp") in rig.store.objects  # copied; the private file stays
-    assert (PRIVATE, f"{world.user_a}/{item.id}.webp") in rig.store.objects
-
-    body, html = pg.execute(
-        "select body, body_html from public.chapter_sections where id = %s", (world.section,)
-    ).fetchone()  # type: ignore[misc]
-    assert body["content"][-1] == {"type": "figure", "attrs": {"mediaId": mid, "caption": caption}}
-    assert f'<figure data-media-id="{mid}"></figure>' in html and html.startswith("<p>Hello</p>")
-    rev = pg.execute(
-        "select origin, author_user_id, body_html from public.chapter_section_revisions where section_id = %s",
-        (world.section,),
-    ).fetchall()
-    assert [(o, a) for o, a, _ in rev] == [("admin", world.admin)] and mid in rev[0][2]
-    assert pg.execute(
-        "select count(*) from public.section_media where section_id = %s and media_id = %s", (world.section, mid)
-    ).fetchone() == (1,)
-    gm = pg.execute(
-        "select approved_for_publish, approved_by, approved_at is not null, media_asset_id"
-        " from public.generated_media where id = %s",
-        (item.id,),
-    ).fetchone()
-    assert gm == (True, world.admin, True, mid)
-    admin_edited = pg.execute(
-        "select admin_edited_at is not null from public.chapter_sections where id = %s", (world.section,)
-    ).fetchone()
-    assert admin_edited == (True,)  # the seed importer keeps an edited section
-
-    # idempotent: a second approval returns the same figure and adds nothing
-    again = client.post(
-        f"/api/admin/generated/{item.id}/approve", headers=hd, json={"section_id": world.section, "caption": "other"}
-    ).json()
-    assert again["media_id"] == mid
-    assert pg.execute(
-        "select count(*) from public.chapter_section_revisions where section_id = %s", (world.section,)
-    ).fetchone() == (1,)
-    # approved items leave the pending list; deleting the personal copy keeps the published figure
-    assert str(item.id) not in {
-        i["id"] for i in client.get("/api/admin/generated?pending=1", headers=hd).json()["items"]
-    }
-    assert await rig.service.delete(world.user_a, item.id)
-    assert pg.execute("select count(*) from public.media_assets where id = %s", (mid,)).fetchone() == (1,)
-    assert (PUBLIC, f"generated/{mid}.webp") in rig.store.objects
-
-
-async def test_approval_refusals(
-    client: TestClient, key: SigningKey, rig: Rig, world: World, pg: psycopg.Connection[Any]
-) -> None:
-    hd = bearer(key, world.admin, ADMIN_EMAIL)
-    img = await rig.service.run(world.user_a, "image", "heart")
-    vid = await rig.service.run(world.user_a, "video", "valve")
-
-    def approve(mid: uuid.UUID, section: str) -> Any:
-        return client.post(
-            f"/api/admin/generated/{mid}/approve", headers=hd, json={"section_id": section, "caption": "c"}
-        )
-
-    assert approve(uuid.uuid4(), world.section).json()["error"]["code"] == "generated_not_found"
-    assert approve(img.id, "no-such-section").json()["error"]["code"] == "section_not_found"
-    # a private (student-owned) chapter is never a target for a shared figure
-    assert approve(img.id, world.private_section).json()["error"]["code"] == "section_not_found"
-    r = approve(vid.id, world.section)
-    assert (r.status_code, r.json()["error"]["code"]) == (422, "generated_video_not_publishable")
-    pg.execute("update public.generated_media set status = 'failed' where id = %s", (img.id,))
-    r = approve(img.id, world.section)
-    assert (r.status_code, r.json()["error"]["code"]) == (409, "generated_not_ready")
-    assert (
-        client.post(
-            f"/api/admin/generated/{img.id}/approve", headers=hd, json={"section_id": "../x", "caption": "c"}
-        ).status_code
-        == 422
-    )
-    # nothing was published by any refusal
-    assert pg.execute("select count(*) from public.media_assets where source_id = 'naadi-ai-generated'").fetchone() == (
-        0,
-    )
-    assert not [k for k in rig.store.objects if k[0] == PUBLIC]
+    img = await rig.service.run(world.user_a, "image", "queue heart")
+    hidden = await rig.service.run(world.user_a, "image", "queue lung")
+    vid = await rig.service.run(world.user_a, "video", "queue valve")
+    assert await rig.service.delete(world.user_a, hidden.id)
+    # the 15b routes (and their bypass of S19's gates, schema check and audit) are gone
+    for method, path in (
+        ("get", "/api/admin/generated"),
+        ("post", f"/api/admin/generated/{img.id}/approve"),
+    ):
+        assert getattr(client, method)(path, headers=hd).status_code in (404, 405), path
+    queue = client.get("/api/admin/queues/generated_media", headers=hd)
+    assert queue.status_code == 200, queue.text
+    ids = {i["id"] for i in queue.json()["items"]}
+    assert str(img.id) in ids  # a ready image waits for S19's decision
+    assert str(hidden.id) not in ids  # a hidden (student-deleted) item has no file and never waits
+    assert str(vid.id) not in ids  # a clip is never publishable
+    mine = next(i for i in queue.json()["items"] if i["id"] == str(img.id))
+    assert mine["detail"]["ai_generated"] is True
 
 
 def test_the_local_stub_generates_serves_and_labels_through_the_real_routes(

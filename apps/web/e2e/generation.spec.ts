@@ -1,7 +1,5 @@
-import { execFileSync } from "node:child_process";
-import path from "node:path";
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
-import { callbackPath, canMintUsers, emailFor, runUsers, toLink } from "./auth-users";
+import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
   type ConsoleGuard,
   expect,
@@ -19,13 +17,12 @@ import {
  * Segment 15b: image generation against the real API, database and auth server, with generation stubbed at the API
  * (GENERATION_FAKE: an in-process fake client and an in-memory media store served by the app itself; never a call to
  * the Space). Covers the labelled item in the Library's "Generated" view (chip, label-first alt text, caption), the
- * failed and paused states, delete, the admin approval that publishes a labelled figure in a section, and that the
+ * failed and paused states, delete, and that the
  * feature is hidden on a server without the generation token (the APP_ENV=prod server).
  */
 test.skip(!canMintUsers(), "signed-in tests need the service role (run pnpm e2e:live-auth against the Space)");
 
 const LABEL = "AI-generated illustration — not clinical reference";
-const API_DIR = path.resolve(import.meta.dirname, "../../api");
 
 const snap = (page: Page, info: TestInfo, guard: ConsoleGuard, state: string) =>
   guard.duringTool(async () => {
@@ -105,15 +102,6 @@ interface Item {
   id: string;
   status: string;
   url: string | null;
-}
-
-function world(cmd: "make" | "drop", tag: string): { chapter: string; section: string; title: string } {
-  const out = execFileSync(
-    "uv",
-    ["--directory", API_DIR, "run", "--frozen", "python", "-m", "tests.generation.e2e_world", cmd, "--tag", tag],
-    { encoding: "utf8", env: { ...process.env }, timeout: 60_000 },
-  );
-  return JSON.parse(out.trim().split("\n").pop() ?? "{}");
 }
 
 test.describe("generated media", () => {
@@ -223,68 +211,6 @@ test.describe("generated media", () => {
       expect(errors).toEqual([]);
     } finally {
       await s.done();
-    }
-  });
-
-  test("an admin approves an image: a labelled figure lands in the chosen section", async ({
-    browser,
-    baseURL,
-  }, info) => {
-    const tag = `g${info.workerIndex}${info.parallelIndex}${Date.now().toString(36)}`.slice(0, 20);
-    const target = world("make", tag);
-    const student = await user(browser, baseURL as string, info, who(info, "geng"));
-    const admin = await user(browser, baseURL as string, info, emailFor("admin"));
-    try {
-      const sp = (await student.open("/settings/account")).page;
-      const prompt = `Loop of Henle ${tag}`;
-      const made = await api<Item>(sp, "POST", "/api/generated/stub", { prompt });
-      expect(made.status).toBe(200);
-
-      const { page, errors, guard } = await admin.open("/admin/generated");
-      await expect(page.getByRole("heading", { level: 1, name: "Generated images to review" })).toBeVisible();
-      const card = page.getByTestId("admin-generated-card").filter({ hasText: prompt });
-      await expect(card.getByText(LABEL)).toBeVisible();
-      await expect
-        .poll(() => card.getByRole("img").evaluate((el: HTMLImageElement) => el.naturalWidth))
-        .toBeGreaterThan(0);
-      await settle(page);
-      await expectNoAxeViolations(page);
-      await snap(page, info, guard, "admin-list");
-
-      await card.getByRole("button", { name: "Publish as a figure" }).click();
-      const dialog = page.getByRole("dialog", { name: "Publish as a chapter figure" });
-      await expect(dialog).toBeVisible();
-      await dialog.getByLabel("Chapter").selectOption({ label: target.title });
-      await dialog.getByLabel("Section").selectOption({ label: "Target section 1" });
-      await dialog.getByLabel("Caption").fill("The loop of Henle");
-      await expect(dialog.getByText("The AI label is added to the end of the caption automatically.")).toBeVisible();
-      await snap(page, info, guard, "admin-dialog");
-      await dialog.getByRole("button", { name: "Publish", exact: true }).click();
-      await expect(dialog).toBeHidden();
-      await expect(card).toHaveCount(0); // approved items leave the review list
-
-      const chapter = await api<{
-        sections: { id: string; body: { content: { type: string; attrs?: { mediaId: string; caption: string } }[] } }[];
-        media: Record<string, { caption: string | null }>;
-      }>(page, "GET", `/api/chapters/${target.chapter}`);
-      expect(chapter.status).toBe(200);
-      const section = chapter.json.sections.find((x) => x.id === target.section);
-      const figure = section?.body.content.at(-1);
-      expect(figure?.type).toBe("figure");
-      const mediaId = figure?.attrs?.mediaId as string;
-      expect(mediaId).toMatch(/^gen-/);
-      expect(chapter.json.media[mediaId]?.caption).toBe(`The loop of Henle — ${LABEL}`);
-      expect(figure?.attrs?.caption.endsWith(LABEL)).toBe(true);
-
-      // The student's own copy is marked published.
-      const mine = await api<{ items: { published: boolean }[] }>(sp, "GET", "/api/generated");
-      expect(mine.json.items[0]?.published).toBe(true);
-      await quiet(page);
-      expect(errors).toEqual([]);
-    } finally {
-      await student.done();
-      await admin.done();
-      world("drop", tag);
     }
   });
 });

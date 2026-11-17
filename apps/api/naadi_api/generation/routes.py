@@ -4,10 +4,10 @@
     GET    /api/generated                       the caller's generated items (filters: kind, before, limit)
     GET    /api/generated/{id}                  one item with a fresh signed URL
     DELETE /api/generated/{id}                  the row and its private file (a published copy stays)
-    GET    /api/admin/generated?pending=1       ready images waiting for approval (admin)
-    POST   /api/admin/generated/{id}/approve    publish as a shared chapter figure (admin)
     POST   /api/generated/stub                  non-production stub only: run a generation against the fake client
 
+Publishing a generated image as a chapter figure is S19's approval queue (`/api/admin/queues/generated_media`), the single
+approval path with the licence gates, schema check, audit and draft lock; there is no approve route here.
 Generation itself runs only through the tutor tools (confirm first). Errors carry a stable `code` the client words
 with ui_copy (`generation.error.<code>`); prompts and files are never logged.
 """
@@ -22,7 +22,7 @@ from typing import Annotated, Any
 from fastapi import APIRouter, Depends, Path, Query, Request
 from fastapi.responses import JSONResponse, Response
 
-from ..auth import AdminUser, CurrentUser, get_account_user
+from ..auth import CurrentUser, get_account_user
 from ..auth_limits import RateLimiter
 from ..db import DatabaseNotConfigured
 from ..errors import ErrorResponse, error_response
@@ -30,9 +30,6 @@ from ..logs import get_logger
 from .models import (
     LIST_LIMIT_DEFAULT,
     LIST_LIMIT_MAX,
-    AdminGeneratedList,
-    GeneratedApproveBody,
-    GeneratedApproveOut,
     GeneratedItem,
     GeneratedKind,
     GeneratedList,
@@ -49,13 +46,6 @@ _ERRORS: dict[int | str, dict[str, Any]] = {
     429: {"model": ErrorResponse, "description": "Rate limited"},
     503: {"model": ErrorResponse, "description": "Database unavailable (code generation_unavailable)"},
 }
-_ADMIN_ERRORS: dict[int | str, dict[str, Any]] = {
-    403: {"model": ErrorResponse, "description": "Not an admin"},
-    404: {"model": ErrorResponse, "description": "generated_not_found or section_not_found"},
-    409: {"model": ErrorResponse, "description": "generated_not_ready"},
-    422: {"model": ErrorResponse, "description": "validation_error or generated_video_not_publishable"},
-}
-
 MediaId = Annotated[uuid.UUID, Path(description="Generated media id")]
 
 
@@ -141,35 +131,6 @@ async def delete_generated(
     if not await _guard(lambda: _service(request).delete(user.user_id, media_id)):
         raise GenerationError(404, "generated_not_found")
     return Response(status_code=204)
-
-
-@router.get(
-    "/admin/generated",
-    response_model=AdminGeneratedList,
-    summary="Ready generated images waiting for approval (admin)",
-    responses={**_ERRORS, **_ADMIN_ERRORS},
-)
-async def admin_list_generated(
-    request: Request,
-    admin: AdminUser,
-    pending: Annotated[bool, Query(description="Only items not yet approved (the default list)")] = True,
-) -> AdminGeneratedList:
-    del admin, pending  # approved items are listed in S19's queues; this list is the pending one
-    return AdminGeneratedList(items=await _guard(lambda: _service(request).list_pending()))
-
-
-@router.post(
-    "/admin/generated/{media_id}/approve",
-    response_model=GeneratedApproveOut,
-    summary="Publish a generated image as a shared chapter figure (admin)",
-    responses={**_ERRORS, **_ADMIN_ERRORS},
-)
-async def admin_approve_generated(
-    request: Request, media_id: MediaId, body: GeneratedApproveBody, admin: AdminUser
-) -> GeneratedApproveOut:
-    out = await _guard(lambda: _service(request).approve(media_id, admin.user_id, body.section_id, body.caption))
-    log.info("generated_media_approved")
-    return out
 
 
 stub_router = APIRouter(prefix="/api", tags=["generation"], include_in_schema=False)
