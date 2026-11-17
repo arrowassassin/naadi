@@ -1,0 +1,16 @@
+{
+ "id": "20261117T061418-seg15-ingest-ee99f9",
+ "ts": "2026-11-17T06:14:18.457980Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 45cd36a into claude/naadi-shared",
+ "body": "S15 backend: ingest pipeline + graph, Library API, migration 0028 (down 0026), placement registry, model_eval harness, PII scrubber fixes",
+ "refs": {
+  "commit": "45cd36a",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
