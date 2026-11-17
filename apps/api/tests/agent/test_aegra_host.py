@@ -296,3 +296,76 @@ async def test_tavily_usage_reconciliation_records_and_never_blocks(host: Host) 
     srun = await s.runs.create(st["thread_id"], "tavily_usage", input={})
     await s.runs.join(st["thread_id"], srun["run_id"])
     assert (await s.runs.get(st["thread_id"], srun["run_id"]))["status"] == "error"
+
+
+async def test_ink_ocr_graph_runs_in_the_host_on_its_crons(host: Host) -> None:
+    """Segment 13: both system crons exist; an admin sweep runs the graph end to end in the real host (no layer is
+    due, so no model is called and nothing is recorded); the nightly pass records its counts. Students cannot run
+    it."""
+    with pg() as conn:
+        rows = conn.execute(
+            "select metadata->>'naadi_key', schedule, payload->'input' from public.crons"
+            " where user_id = 'naadi-system' and metadata->>'naadi_key' like 'naadi.ink_ocr.%%' order by 1"
+        ).fetchall()
+        conn.execute("update public.ink_layers set ocr_status = null where ocr_status is not null")
+    assert [(k, s) for k, s, _ in rows] == [
+        ("naadi.ink_ocr.nightly", "23 0 * * *"),
+        ("naadi.ink_ocr.sweep", "*/2 * * * *"),
+    ]
+    a = client(host, host.admin_token)
+    for mode, recorded in (("sweep", False), ("nightly", True)):
+        thread = await a.threads.create()
+        run = await a.runs.create(thread["thread_id"], "ink_ocr", input={"mode": mode})
+        await a.runs.join(thread["thread_id"], run["run_id"])
+        assert (await a.runs.get(thread["thread_id"], run["run_id"]))["status"] == "success", mode
+        with pg() as conn:
+            row = conn.execute(
+                "select kind, ok, detail->>'mode' from public.agent_health where run_id = %s", (run["run_id"],)
+            ).fetchone()
+        assert (row == ("ink_ocr", True, "nightly")) if recorded else row is None, (mode, row)
+    s = client(host, host.student_token)
+    st = await s.threads.create()
+    srun = await s.runs.create(st["thread_id"], "ink_ocr", input={"mode": "sweep"})
+    await s.runs.join(st["thread_id"], srun["run_id"])
+    assert (await s.runs.get(st["thread_id"], srun["run_id"]))["status"] == "error"
+
+
+async def test_ink_saved_in_the_host_is_queued_and_read_through_the_real_gateway(host: Host) -> None:
+    """The whole path in one process: the notes API makes a notebook page, the ink API's save hook queues its layer,
+    the admin-run sweep reads it through the real LLM gateway (privacy directory included). No provider key is
+    configured in this host, so the gateway answers `LLMUnavailable` and the layer waits as `deferred`."""
+    from ..ink.test_ink_db import stroke
+
+    h = {"authorization": f"Bearer {host.student_token}"}
+    async with httpx.AsyncClient(base_url=host.url, timeout=20.0) as http:
+        nb = (await http.post("/api/notebooks", json={"title": "Renal"}, headers=h)).json()
+        page = nb["pages"][0]["id"]
+        items = [stroke(points=[[0.1, 0.1 + i / 20, 0.5, 0], [0.5, 0.1 + i / 20, 0.5, 9]]) for i in range(3)]
+        r = await http.post(f"/api/ink/notebook_page/{page}/changes", json={"base_rev": 0, "items": items}, headers=h)
+        assert r.status_code == 200, r.text
+    with pg() as conn:
+        conn.execute(
+            "update public.ink_layers set ocr_status = null where ocr_status is not null and surface_id <> %s", (page,)
+        )
+        assert conn.execute(
+            "select ocr_status from public.ink_layers where surface_type = 'notebook_page' and surface_id = %s", (page,)
+        ).fetchone() == ("pending",)
+        conn.execute("set session_replication_role = replica")
+        conn.execute(
+            "update public.ink_layers set updated_at = now() - interval '1 hour' where surface_id = %s", (page,)
+        )
+        conn.execute("set session_replication_role = origin")
+    a = client(host, host.admin_token)
+    thread = await a.threads.create()
+    run = await a.runs.create(thread["thread_id"], "ink_ocr", input={"mode": "sweep"})
+    await a.runs.join(thread["thread_id"], run["run_id"])
+    assert (await a.runs.get(thread["thread_id"], run["run_id"]))["status"] == "success"
+    with pg() as conn:
+        status = conn.execute(
+            "select ocr_status, recognized_text from public.ink_layers where surface_id = %s", (page,)
+        ).fetchone()
+        health = conn.execute(
+            "select (detail->>'deferred')::int from public.agent_health where run_id = %s", (run["run_id"],)
+        ).fetchone()
+    assert status == ("deferred", None)
+    assert health == (1,)

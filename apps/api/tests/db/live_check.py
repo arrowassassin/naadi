@@ -54,6 +54,8 @@ USER_TABLES = (
     "study_plan_days",
     "coach_suggestions",
 )
+# Written by the API only (the client may only SELECT its own rows): ink (0009), notes and notebooks (0017).
+SELECT_ONLY_TABLES = ("public.ink_layers", "public.ink_items", "public.notes", "public.notebooks")
 # Card scheduling: only the API writes it (the client may only SELECT its own rows).
 API_WRITTEN_TABLES = ("card_reviews", "card_review_logs")
 BUCKETS = ("content-public", "content-private", "user-uploads", "vault", "generated-media")
@@ -185,10 +187,16 @@ def checks(head: str) -> list[Check]:
             " and table_name = any(array['embeddings','app_config','llm_usage','naadi_alembic_version','seed_runs'])",
         ),
         Check(
-            "ink layers and items are select-only for clients",
+            "ink layers and items, notes and notebooks are select-only for clients",
             "select bool_and(has_table_privilege('authenticated', t, 'select')"
             " and not has_table_privilege('authenticated', t, 'insert,update,delete,truncate')) as ok, '' as detail"
-            " from unnest(array['public.ink_layers','public.ink_items']) t",
+            f" from unnest({_array(SELECT_ONLY_TABLES)}) t",
+        ),
+        Check(
+            "handwriting OCR columns present (ocr_status, ocr_hash, ocr_at) and notes.body_text",
+            "select count(*) = 4 as ok, count(*)::text as detail from information_schema.columns"
+            " where table_schema = 'public' and (table_name, column_name) in (('ink_layers','ocr_status'),"
+            " ('ink_layers','ocr_hash'), ('ink_layers','ocr_at'), ('notes','body_text'))",
         ),
         Check(
             "study plans are API-written; plan days and coach suggestions take status only",

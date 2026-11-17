@@ -249,6 +249,7 @@ async def apply_changes(
     items: list[dict[str, Any]],
     *,
     echo: set[str] | frozenset[str] = frozenset(),
+    ocr_min_items: int | None = None,
 ) -> ChangeResult:
     """Merge validated items into the caller's layer (privileged `conn`, one transaction). Raises TooManyItems
     (the caller's transaction then rolls back) when the layer would hold more than INK_MAX_ITEMS live items.
@@ -256,7 +257,10 @@ async def apply_changes(
     `remote` holds what the client lacks: changes after `base_rev` from elsewhere, the stored version of every
     stale item, and the stored version of the `echo` ids (items this request wrote with a stamp the server
     changed, i.e. clamped). An item at or below the layer's purge horizon that the table no longer holds is stale
-    and forces `reset` (a full list without it), so the device drops it as well."""
+    and forces `reset` (a full list without it), so the device drops it as well.
+
+    `ocr_min_items` (app_config `ink_ocr.min_items`; None = handwriting OCR off) is the segment 13 hook: a layer
+    whose content changed is queued for the `ink_ocr` graph in this same transaction (ink/ocr/queue.py)."""
     await conn.execute(_ENSURE, (user_id, surface.type, surface.id))
     layer = await _one(conn, _LOCK, (user_id, surface.type, surface.id))
     assert layer is not None
@@ -287,6 +291,10 @@ async def apply_changes(
     assert stats is not None
     if stats["item_count"] > INK_MAX_ITEMS:
         raise TooManyItems(int(stats["item_count"]))
+    if ocr_min_items is not None and applied:
+        from .ocr.queue import queue_after_save
+
+        await queue_after_save(conn, layer_id, ocr_min_items)
     done = set(applied)
     stale = [i["id"] for i in items if i["id"] not in done]
     reset = base_rev < layer["purged_rev"] or base_rev > layer["rev"]

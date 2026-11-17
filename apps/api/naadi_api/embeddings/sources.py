@@ -199,6 +199,17 @@ async def pathway_docs(
             yield Doc(None, "pathway", ref, tuple(chunks))
 
 
+def note_text(r: Mapping[str, Any]) -> str:
+    """A note's indexed text: its title, `body_text` (computed by the notes API from TipTap JSON or a whiteboard's
+    text elements; a row written before segment 13 falls back to its TipTap body) and any OCR text. A highlight's
+    quote is not indexed: it is course text the section index already holds."""
+    body = r.get("body_text")
+    if body is None and r.get("canvas", "paper") == "paper":
+        body = tiptap_to_text(r.get("body"))
+    parts = ((r.get("title") or "").strip(), (body or "").strip(), (r.get("ocr_text") or "").strip())
+    return "\n".join(x for x in parts if x)
+
+
 async def note_docs(
     conn: psycopg.AsyncConnection[Any], *, owner: uuid.UUID | None = None, ref_ids: Sequence[str] | None = None
 ) -> AsyncIterator[Doc]:
@@ -209,12 +220,12 @@ async def note_docs(
         params["owner"] = owner
     rows = await _rows(
         conn,
-        f"select n.id, n.user_id, n.body, n.ocr_text from public.notes n where true{where} order by n.id",  # noqa: S608
+        "select n.id, n.user_id, n.title, n.canvas, n.body, n.body_text, n.ocr_text"  # noqa: S608
+        f" from public.notes n where true{where} order by n.id",
         params,
     )
     for r in rows:
-        text = "\n".join(x for x in (tiptap_to_text(r["body"]), (r["ocr_text"] or "").strip()) if x)
-        chunks = chunk_text(text)
+        chunks = chunk_text(note_text(r))
         if chunks:
             yield Doc(r["user_id"], "note", str(r["id"]), tuple(chunks))
 

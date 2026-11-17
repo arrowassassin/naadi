@@ -161,7 +161,17 @@ API_WRITTEN = ("attempts", "blocks")
 # Ink (0009): every item is validated and merged by the API; students may only read their own layers and items.
 # Exam timing (0011): every timing write is the API's own clock; students may only read their sections.
 # Card scheduling (0012): the API runs the FSRS scheduler and writes every review; students only read their own.
-SELECT_ONLY = ("ink_layers", "ink_items", "block_sections", "card_reviews", "card_review_logs", "study_plans")
+# Notes (0017): the notes API computes body_text, keeps the index in step and gates anchors; students only read.
+SELECT_ONLY = (
+    "ink_layers",
+    "ink_items",
+    "block_sections",
+    "card_reviews",
+    "card_review_logs",
+    "study_plans",
+    "notes",
+    "notebooks",
+)
 # Plans and coach suggestions (0013): rows come from the API; the student may change only their status (and a
 # plan day's score notes), never insert, delete or re-point them.
 API_ROWS = ("study_plan_days", "coach_suggestions")
@@ -391,8 +401,11 @@ def test_composite_foreign_keys_keep_parents_per_user(
 ) -> None:
     notebook = uuid.uuid4()
     insert_row(pg, "notebooks", {"id": notebook, "user_id": user_a, "title": "A's"})
-    with as_user(pg, user_b) as conn, pytest.raises(errors.ForeignKeyViolation), conn.transaction():
-        insert_row(conn, "notes", {"user_id": user_b, "notebook_id": notebook, "anchor_type": "free"})
+    # Notes are API-written (0017); the foreign key still holds for the API's own writes.
+    with pytest.raises(errors.ForeignKeyViolation), pg.transaction():
+        insert_row(pg, "notes", {"user_id": user_b, "notebook_id": notebook, "anchor_type": "free"})
+    with as_user(pg, user_b) as conn, pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+        insert_row(conn, "notes", {"user_id": user_b, "anchor_type": "free"})
 
 
 def test_anon_reads_only_published_shared_content(pg: psycopg.Connection, shared: Shared) -> None:

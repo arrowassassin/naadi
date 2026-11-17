@@ -11,6 +11,9 @@ import type {
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
+  ConvertInkToTextData,
+  ConvertInkToTextErrors,
+  ConvertInkToTextResponses,
   CreateAttemptData,
   CreateAttemptErrors,
   CreateAttemptResponses,
@@ -26,6 +29,15 @@ import type {
   CreateMockBlockData,
   CreateMockBlockErrors,
   CreateMockBlockResponses,
+  CreateNotebookData,
+  CreateNotebookErrors,
+  CreateNotebookPageData,
+  CreateNotebookPageErrors,
+  CreateNotebookPageResponses,
+  CreateNotebookResponses,
+  CreateNoteData,
+  CreateNoteErrors,
+  CreateNoteResponses,
   CreateSingleQuestionBlockData,
   CreateSingleQuestionBlockErrors,
   CreateSingleQuestionBlockResponses,
@@ -35,6 +47,12 @@ import type {
   DeleteCardData,
   DeleteCardErrors,
   DeleteCardResponses,
+  DeleteNotebookData,
+  DeleteNotebookErrors,
+  DeleteNotebookResponses,
+  DeleteNoteData,
+  DeleteNoteErrors,
+  DeleteNoteResponses,
   DismissCoachSuggestionData,
   DismissCoachSuggestionErrors,
   DismissCoachSuggestionResponses,
@@ -104,6 +122,12 @@ import type {
   GetNavData,
   GetNavErrors,
   GetNavResponses,
+  GetNotebookData,
+  GetNotebookErrors,
+  GetNotebookResponses,
+  GetNoteData,
+  GetNoteErrors,
+  GetNoteResponses,
   GetOnboardingData,
   GetOnboardingErrors,
   GetOnboardingResponses,
@@ -133,6 +157,12 @@ import type {
   ListBlocksData,
   ListBlocksErrors,
   ListBlocksResponses,
+  ListNotebooksData,
+  ListNotebooksErrors,
+  ListNotebooksResponses,
+  ListNotesData,
+  ListNotesErrors,
+  ListNotesResponses,
   ListSeedRunsData,
   ListSeedRunsErrors,
   ListSeedRunsResponses,
@@ -151,6 +181,9 @@ import type {
   ReindexEmbeddingsData,
   ReindexEmbeddingsErrors,
   ReindexEmbeddingsResponses,
+  ReorderNotebookPagesData,
+  ReorderNotebookPagesErrors,
+  ReorderNotebookPagesResponses,
   ReportIssueData,
   ReportIssueErrors,
   ReportIssueResponses,
@@ -178,12 +211,20 @@ import type {
   UpdateMeData,
   UpdateMeErrors,
   UpdateMeResponses,
+  UpdateNotebookData,
+  UpdateNotebookErrors,
+  UpdateNotebookResponses,
+  UpdateNoteData,
+  UpdateNoteErrors,
+  UpdateNoteResponses,
 } from "./types.gen";
 import {
   zAcceptCoachSuggestionPath,
   zAcceptCoachSuggestionResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
+  zConvertInkToTextBody,
+  zConvertInkToTextResponse,
   zCreateAttemptBody,
   zCreateAttemptPath,
   zCreateAttemptResponse,
@@ -194,12 +235,23 @@ import {
   zCreateDiagnosticResponse,
   zCreateMockBlockBody,
   zCreateMockBlockResponse,
+  zCreateNoteBody,
+  zCreateNotebookBody,
+  zCreateNotebookPageBody,
+  zCreateNotebookPagePath,
+  zCreateNotebookPageResponse,
+  zCreateNotebookResponse,
+  zCreateNoteResponse,
   zCreateSingleQuestionBlockBody,
   zCreateSingleQuestionBlockResponse,
   zCreateWeakSpotBlockBody,
   zCreateWeakSpotBlockResponse,
   zDeleteCardPath,
   zDeleteCardResponse,
+  zDeleteNotebookPath,
+  zDeleteNotebookResponse,
+  zDeleteNotePath,
+  zDeleteNoteResponse,
   zDismissCoachSuggestionPath,
   zDismissCoachSuggestionResponse,
   zFinishBlockPath,
@@ -240,6 +292,10 @@ import {
   zGetLabValuesResponse,
   zGetMeResponse,
   zGetNavResponse,
+  zGetNotebookPath,
+  zGetNotebookResponse,
+  zGetNotePath,
+  zGetNoteResponse,
   zGetOnboardingResponse,
   zGetPlanResponse,
   zGetPublicConfigResponse,
@@ -254,6 +310,9 @@ import {
   zListAppConfigResponse,
   zListBlocksQuery,
   zListBlocksResponse,
+  zListNotebooksResponse,
+  zListNotesQuery,
+  zListNotesResponse,
   zListSeedRunsResponse,
   zPostInkChangesBody,
   zPostInkChangesPath,
@@ -267,6 +326,9 @@ import {
   zPutReadingPositionResponse,
   zReindexEmbeddingsBody,
   zReindexEmbeddingsResponse,
+  zReorderNotebookPagesBody,
+  zReorderNotebookPagesPath,
+  zReorderNotebookPagesResponse,
   zReportIssueBody,
   zReportIssueResponse,
   zReviewCardBody,
@@ -288,6 +350,12 @@ import {
   zUpdateCardResponse,
   zUpdateMeBody,
   zUpdateMeResponse,
+  zUpdateNoteBody,
+  zUpdateNotebookBody,
+  zUpdateNotebookPath,
+  zUpdateNotebookResponse,
+  zUpdateNotePath,
+  zUpdateNoteResponse,
 } from "./zod.gen";
 
 export type Options<
@@ -1097,6 +1165,31 @@ export const getHealth = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * Recognise the handwriting in a lasso selection (PNG body) and return the text; nothing is stored
+ */
+export const convertInkToText = <ThrowOnError extends boolean = false>(
+  options: Options<ConvertInkToTextData, ThrowOnError>,
+): RequestResult<ConvertInkToTextResponses, ConvertInkToTextErrors, ThrowOnError> =>
+  (options.client ?? client).post<ConvertInkToTextResponses, ConvertInkToTextErrors, ThrowOnError>({
+    bodySerializer: null,
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zConvertInkToTextBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zConvertInkToTextResponse.parseAsync(data),
+    url: "/api/ink/convert",
+    ...options,
+    headers: {
+      "Content-Type": "image/png",
+      ...options.headers,
+    },
+  });
+
+/**
  * The caller's ink on one surface: a full load, or the changes since a sync cursor
  */
 export const getInkLayer = <ThrowOnError extends boolean = false>(
@@ -1222,6 +1315,270 @@ export const getNav = <ThrowOnError extends boolean = false>(
     responseValidator: async (data) => await zGetNavResponse.parseAsync(data),
     url: "/api/nav",
     ...options,
+  });
+
+/**
+ * The caller's notebooks, most recently changed first, with page and note counts
+ */
+export const listNotebooks = <ThrowOnError extends boolean = false>(
+  options?: Options<ListNotebooksData, ThrowOnError>,
+): RequestResult<ListNotebooksResponses, ListNotebooksErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListNotebooksResponses, ListNotebooksErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListNotebooksResponse.parseAsync(data),
+    url: "/api/notebooks",
+    ...options,
+  });
+
+/**
+ * Create a notebook with its first page. A replay with the same id returns the stored notebook (200)
+ */
+export const createNotebook = <ThrowOnError extends boolean = false>(
+  options: Options<CreateNotebookData, ThrowOnError>,
+): RequestResult<CreateNotebookResponses, CreateNotebookErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateNotebookResponses, CreateNotebookErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateNotebookBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateNotebookResponse.parseAsync(data),
+    url: "/api/notebooks",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Delete a notebook with its pages (their ink and index rows); notes filed in it stay, unfiled
+ */
+export const deleteNotebook = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteNotebookData, ThrowOnError>,
+): RequestResult<DeleteNotebookResponses, DeleteNotebookErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteNotebookResponses, DeleteNotebookErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteNotebookPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteNotebookResponse.parseAsync(data),
+    url: "/api/notebooks/{notebook_id}",
+    ...options,
+  });
+
+/**
+ * One of the caller's notebooks with its pages in order
+ */
+export const getNotebook = <ThrowOnError extends boolean = false>(
+  options: Options<GetNotebookData, ThrowOnError>,
+): RequestResult<GetNotebookResponses, GetNotebookErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetNotebookResponses, GetNotebookErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetNotebookPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetNotebookResponse.parseAsync(data),
+    url: "/api/notebooks/{notebook_id}",
+    ...options,
+  });
+
+/**
+ * Rename a notebook or change its cover or paper
+ */
+export const updateNotebook = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateNotebookData, ThrowOnError>,
+): RequestResult<UpdateNotebookResponses, UpdateNotebookErrors, ThrowOnError> =>
+  (options.client ?? client).patch<UpdateNotebookResponses, UpdateNotebookErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zUpdateNotebookBody,
+          path: zUpdateNotebookPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUpdateNotebookResponse.parseAsync(data),
+    url: "/api/notebooks/{notebook_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Add a page to a notebook (at `position`, default the end). A replay with the same id returns it (200)
+ */
+export const createNotebookPage = <ThrowOnError extends boolean = false>(
+  options: Options<CreateNotebookPageData, ThrowOnError>,
+): RequestResult<CreateNotebookPageResponses, CreateNotebookPageErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateNotebookPageResponses, CreateNotebookPageErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateNotebookPageBody,
+          path: zCreateNotebookPagePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateNotebookPageResponse.parseAsync(data),
+    url: "/api/notebooks/{notebook_id}/pages",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Put a notebook's pages in a new order (every page exactly once)
+ */
+export const reorderNotebookPages = <ThrowOnError extends boolean = false>(
+  options: Options<ReorderNotebookPagesData, ThrowOnError>,
+): RequestResult<ReorderNotebookPagesResponses, ReorderNotebookPagesErrors, ThrowOnError> =>
+  (options.client ?? client).put<ReorderNotebookPagesResponses, ReorderNotebookPagesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zReorderNotebookPagesBody,
+          path: zReorderNotebookPagesPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zReorderNotebookPagesResponse.parseAsync(data),
+    url: "/api/notebooks/{notebook_id}/pages/order",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * The caller's notes, highlights and pages (filtered), plus counts over all of them
+ */
+export const listNotes = <ThrowOnError extends boolean = false>(
+  options?: Options<ListNotesData, ThrowOnError>,
+): RequestResult<ListNotesResponses, ListNotesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListNotesResponses, ListNotesErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListNotesQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListNotesResponse.parseAsync(data),
+    url: "/api/notes",
+    ...options,
+  });
+
+/**
+ * Create a note or a highlight. A replay with the same id (or a second note on a section) returns the stored note with 200
+ */
+export const createNote = <ThrowOnError extends boolean = false>(
+  options: Options<CreateNoteData, ThrowOnError>,
+): RequestResult<CreateNoteResponses, CreateNoteErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateNoteResponses, CreateNoteErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateNoteBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateNoteResponse.parseAsync(data),
+    url: "/api/notes",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Delete one of the caller's notes with its index rows (a page also loses its ink)
+ */
+export const deleteNote = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteNoteData, ThrowOnError>,
+): RequestResult<DeleteNoteResponses, DeleteNoteErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteNoteResponses, DeleteNoteErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteNotePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteNoteResponse.parseAsync(data),
+    url: "/api/notes/{note_id}",
+    ...options,
+  });
+
+/**
+ * One of the caller's notes with its body
+ */
+export const getNote = <ThrowOnError extends boolean = false>(
+  options: Options<GetNoteData, ThrowOnError>,
+): RequestResult<GetNoteResponses, GetNoteErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetNoteResponses, GetNoteErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetNotePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetNoteResponse.parseAsync(data),
+    url: "/api/notes/{note_id}",
+    ...options,
+  });
+
+/**
+ * Partial update of one of the caller's notes (null clears a nullable field)
+ */
+export const updateNote = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateNoteData, ThrowOnError>,
+): RequestResult<UpdateNoteResponses, UpdateNoteErrors, ThrowOnError> =>
+  (options.client ?? client).patch<UpdateNoteResponses, UpdateNoteErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zUpdateNoteBody,
+          path: zUpdateNotePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUpdateNoteResponse.parseAsync(data),
+    url: "/api/notes/{note_id}",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
   });
 
 /**

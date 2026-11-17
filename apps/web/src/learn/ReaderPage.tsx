@@ -1,7 +1,7 @@
 import type { ChapterDetail, ReadingPosition } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Flag, ListOrdered } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Flag, ListOrdered, NotebookPen } from "lucide-react";
 import {
   type ReactNode,
   type RefObject,
@@ -14,10 +14,15 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import { ApiError } from "../auth/apiError";
+import { CardDialog, type CardDraft } from "../cards/CardDialog";
 import { ContentRenderer } from "../content/ContentRenderer";
 import type { TextLookup, UnknownContent } from "../content/types";
 import { useUiText } from "../copy/useUiText";
+import { sectionRuns } from "../highlights/anchor";
+import { HighlightableText } from "../highlights/HighlightableText";
 import { SectionInk } from "../ink/persist/SectionInk";
+import type { PageNotesHandle } from "../notes/PageNotesPanel";
+import { ReaderNotesLayout, readNotesOpen, writeNotesOpen } from "../notes/ReaderNotes";
 import { useShellBottomSlot } from "../shell/chrome";
 import { useChapter, usePositions } from "./api";
 import { ContentsSheet } from "./ContentsSheet";
@@ -179,6 +184,21 @@ function Reader({
   const [reportOpen, setReportOpen] = useState(false);
   // Ink on (12b): the ink toolbar takes the page bar's place, so the view keeps one lime action.
   const [inkOn, setInkOn] = useState(false);
+  // Page notes (segment 13): the panel beside the page (laptop) or a sheet; its ink also takes the page bar's place.
+  const [notesOpen, setNotesOpen] = useState(readNotesOpen);
+  const [panelInk, setPanelInk] = useState(false);
+  const [cardDraft, setCardDraft] = useState<CardDraft | null>(null);
+  const panelRef = useRef<PageNotesHandle | null>(null);
+  const quoteRef = useRef<string | null>(null);
+  const toggleNotes = useCallback((open: boolean) => {
+    setNotesOpen(open);
+    writeNotesOpen(open);
+    if (!open) setPanelInk(false);
+  }, []);
+  const onPanelInk = useCallback((on: boolean) => {
+    setPanelInk(on);
+    if (on) setInkOn(false);
+  }, []);
   const total = detail.sections.length;
   useReaderBarVar(barRef, slot === null);
 
@@ -220,6 +240,15 @@ function Reader({
   useEffect(() => {
     if (section) document.title = t("learn.document_title", { section: section.heading, chapter: detail.title });
   }, [section, detail.title, t]);
+
+  const runs = useMemo(() => sectionRuns(section?.body ?? null), [section?.body]);
+  // A quote sent to the page notes before the panel was open: added once it is.
+  useEffect(() => {
+    if (notesOpen && quoteRef.current && panelRef.current) {
+      panelRef.current.addQuote(quoteRef.current);
+      quoteRef.current = null;
+    }
+  });
 
   if (!section) {
     const first = detail.sections[0];
@@ -334,6 +363,19 @@ function Reader({
         </p>
         <button
           type="button"
+          onClick={() => toggleNotes(!notesOpen)}
+          aria-pressed={notesOpen}
+          aria-label={t("notes.reader_toggle")}
+          data-page-notes-toggle=""
+          className={cx(
+            "flex size-11 shrink-0 items-center justify-center rounded-pill border",
+            notesOpen ? "border-paper bg-paper text-ground" : "border-line-control text-text",
+          )}
+        >
+          <NotebookPen aria-hidden="true" size={18} />
+        </button>
+        <button
+          type="button"
           onClick={() => setContentsOpen(true)}
           aria-haspopup="dialog"
           aria-label={t("learn.contents")}
@@ -352,7 +394,7 @@ function Reader({
         >
           <ArrowLeft aria-hidden="true" size={18} />
         </Link>
-        <div className="mr-auto flex min-w-0 flex-1 flex-col">
+        <div className="mr-auto flex min-w-0 flex-1 basis-[18rem] flex-col">
           <span className="truncate font-mono text-label-sm tracking-[0.12em] text-text-3 uppercase">{label}</span>
           <span className="font-bold font-display text-[1.25rem] leading-tight">{detail.title}</span>
         </div>
@@ -382,6 +424,15 @@ function Reader({
         >
           {t("learn.contents")}
         </Button>
+        <Button
+          variant={notesOpen ? "strong" : "secondary"}
+          onClick={() => toggleNotes(!notesOpen)}
+          icon={<NotebookPen size={16} />}
+          aria-pressed={notesOpen}
+          data-page-notes-toggle=""
+        >
+          {notesOpen ? t("notes.reader_toggle_open") : t("notes.reader_toggle")}
+        </Button>
       </header>
 
       {fromCache ? (
@@ -394,66 +445,108 @@ function Reader({
 
       {/* Reading page: full-bleed text on phone, a card from tablet up. The selection toolbar (Highlight / Note /
           Card / Ask, segments 13/14) anchors to this article; ink (12b) mounts per section inside it. */}
-      <article
-        ref={articleRef}
-        tabIndex={-1}
-        aria-labelledby="section-h"
-        className="relative flex flex-col gap-6 pb-6 outline-none tablet:rounded-tile tablet:border tablet:border-line-soft tablet:bg-surface-1 tablet:px-11 tablet:pt-9 tablet:pb-8"
-      >
-        <div className="hidden flex-wrap items-baseline justify-between gap-2 font-mono text-label-sm text-text-3 tablet:flex">
-          <span className="tracking-[0.12em] uppercase">
-            {t("learn.section_label", { n: String(index + 1), heading: section.heading })}
-          </span>
-          <span>
-            {t("learn.section_meta", {
-              ...pos,
-              minutes: minutesLabel(t, section.reading_minutes),
-              read: String(read),
-            })}
-          </span>
-        </div>
-        <h1
-          id="section-h"
-          className="m-0 font-display font-extrabold text-[clamp(2.25rem,1.4rem+2.6vw,3.25rem)] leading-[0.98] tracking-[-0.04em]"
-        >
-          {section.heading}
-        </h1>
-        <div className="mx-auto w-full max-w-[46rem]">
-          {section.body ? (
-            <SectionInk sectionId={section.id} doc={section.body} on={inkOn} onToggle={setInkOn} offline={fromCache}>
-              <div ref={rootRef} className="contents">
-                <ContentRenderer
-                  key={section.id}
-                  doc={section.body}
-                  sectionId={section.id}
-                  media={detail.media}
-                  questions={detail.questions}
-                  onUnknown={logUnknown}
-                  text={t}
-                />
-              </div>
-            </SectionInk>
-          ) : (
-            <p className="m-0 text-text-2">{t("learn.section_empty")}</p>
-          )}
-        </div>
-        <div ref={endRef} aria-hidden="true" className="h-px" />
-        <div className="mx-auto flex w-full max-w-[46rem] flex-wrap items-center justify-between gap-3 border-line-soft border-t pt-5">
-          <span className="text-text-3 text-ui-sm">{t("content.report_issue_prompt")}</span>
-          <Button
-            variant="secondary"
-            icon={<Flag size={16} />}
-            onClick={() => setReportOpen(true)}
-            aria-haspopup="dialog"
+      <ReaderNotesLayout
+        open={notesOpen}
+        onClose={() => toggleNotes(false)}
+        sectionId={section.id}
+        sectionHeading={section.heading}
+        panelRef={panelRef}
+        onInkChange={onPanelInk}
+        article={
+          <article
+            ref={articleRef}
+            tabIndex={-1}
+            aria-labelledby="section-h"
+            className="relative flex flex-col gap-6 pb-6 outline-none tablet:rounded-tile tablet:border tablet:border-line-soft tablet:bg-surface-1 tablet:px-11 tablet:pt-9 tablet:pb-8"
           >
-            {t("content.report_issue")}
-          </Button>
-        </div>
-      </article>
+            <div className="hidden flex-wrap items-baseline justify-between gap-2 font-mono text-label-sm text-text-3 tablet:flex">
+              <span className="tracking-[0.12em] uppercase">
+                {t("learn.section_label", { n: String(index + 1), heading: section.heading })}
+              </span>
+              <span>
+                {t("learn.section_meta", {
+                  ...pos,
+                  minutes: minutesLabel(t, section.reading_minutes),
+                  read: String(read),
+                })}
+              </span>
+            </div>
+            <h1
+              id="section-h"
+              className="m-0 font-display font-extrabold text-[clamp(2.25rem,1.4rem+2.6vw,3.25rem)] leading-[0.98] tracking-[-0.04em]"
+            >
+              {section.heading}
+            </h1>
+            <div className="mx-auto w-full max-w-[46rem]">
+              {section.body ? (
+                <SectionInk
+                  sectionId={section.id}
+                  doc={section.body}
+                  on={inkOn}
+                  onToggle={(on) => {
+                    setInkOn(on);
+                    if (on) setPanelInk(false);
+                  }}
+                  offline={fromCache}
+                >
+                  <div ref={rootRef} className="contents">
+                    {/* Segment 13: highlights and the selection toolbar (Highlight / Note / Card; Ask with S14). */}
+                    <HighlightableText
+                      key={section.id}
+                      anchorType="section"
+                      anchorId={section.id}
+                      runs={runs}
+                      enabled={!inkOn}
+                      offline={fromCache}
+                      onNote={(sel) => {
+                        quoteRef.current = sel.anchor.quote;
+                        if (notesOpen && panelRef.current) {
+                          panelRef.current.addQuote(sel.anchor.quote);
+                          quoteRef.current = null;
+                        } else toggleNotes(true);
+                      }}
+                      onCard={(sel) =>
+                        setCardDraft({ front_text: "", back_text: sel.anchor.quote, section_id: section.id })
+                      }
+                    >
+                      {(decorate) => (
+                        <ContentRenderer
+                          key={section.id}
+                          doc={section.body}
+                          sectionId={section.id}
+                          media={detail.media}
+                          questions={detail.questions}
+                          onUnknown={logUnknown}
+                          text={t}
+                          decorateText={decorate}
+                        />
+                      )}
+                    </HighlightableText>
+                  </div>
+                </SectionInk>
+              ) : (
+                <p className="m-0 text-text-2">{t("learn.section_empty")}</p>
+              )}
+            </div>
+            <div ref={endRef} aria-hidden="true" className="h-px" />
+            <div className="mx-auto flex w-full max-w-[46rem] flex-wrap items-center justify-between gap-3 border-line-soft border-t pt-5">
+              <span className="text-text-3 text-ui-sm">{t("content.report_issue_prompt")}</span>
+              <Button
+                variant="secondary"
+                icon={<Flag size={16} />}
+                onClick={() => setReportOpen(true)}
+                aria-haspopup="dialog"
+              >
+                {t("content.report_issue")}
+              </Button>
+            </div>
+          </article>
+        }
+      />
 
       {/* Page bar: previous · where · next (the one lime action). On phone it joins the shell's bottom bar.
           While ink is on, the ink toolbar takes its place, so the view keeps one lime action. */}
-      {inkOn ? null : slot ? (
+      {inkOn || panelInk ? null : slot ? (
         createPortal(<nav aria-label={t("learn.sections_nav")}>{barRow}</nav>, slot)
       ) : (
         <nav
@@ -477,6 +570,7 @@ function Reader({
           go(sid);
         }}
       />
+      <CardDialog open={cardDraft !== null} draft={cardDraft ?? undefined} onClose={() => setCardDraft(null)} />
       <ReportIssueDialog
         open={reportOpen}
         onClose={() => setReportOpen(false)}

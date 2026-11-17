@@ -39,6 +39,7 @@ def test_config_files_define_every_key(values: dict[str, Any]) -> None:
         "fsrs",
         "plan",
         "coach",
+        "ink_ocr",
         "ui_copy",
     }
     assert set(PUBLIC_KEYS) == {"feature_flags", "ui.nav", "exam_rules", "ui_copy"}
@@ -66,7 +67,7 @@ def test_seeded_defaults_match_the_contract(values: dict[str, Any]) -> None:
     assert flags["assistant"]["enabled"] is False
     assert flags["qbank"]["enabled"] is True and flags["qbank_timed"]["enabled"] is True
     assert flags["ink_lab"] == {"enabled": True, "audience": "admins", "everyone_outside_prod": True}
-    assert [i["path"] for i in values["ui.nav"]] == ["/", "/learn", "/practice"]
+    assert [i["path"] for i in values["ui.nav"]] == ["/", "/learn", "/practice", "/notes"]
     assert values["exam_rules"]["modes"]["exam"]["assistant"] is False
     assert values["exam_rules"]["block"]["max_questions"] == 40
     assert values["storage"]["content_public"] == "content-public"
@@ -173,7 +174,12 @@ async def test_service_falls_back_to_files_without_a_database_and_caches(values:
     assert await svc.feature_enabled("ink_lab", is_admin=False, app_env="prod") is False
     assert await svc.feature_enabled("ink_lab", is_admin=True, app_env="prod") is True
     assert await svc.feature_enabled("ghost", is_admin=True, app_env="local") is False
-    assert [i["id"] for i in await svc.nav_for(is_admin=False, app_env="prod")] == ["today", "learn", "practice"]
+    assert [i["id"] for i in await svc.nav_for(is_admin=False, app_env="prod")] == [
+        "today",
+        "learn",
+        "practice",
+        "notes",
+    ]
     assert (await svc.row("feature_flags")) is row  # cached
     clock.t += 61
     assert (await svc.row("feature_flags")) is not row  # expired

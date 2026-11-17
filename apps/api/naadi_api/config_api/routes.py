@@ -21,7 +21,8 @@ from .service import AppConfigService, ConfigRow, CrossKeyInvalid, HistoryRow, S
 log = get_logger("naadi.app_config.http")
 
 KEY_PATTERN = r"^[a-z][a-z0-9_.]{1,47}$"
-MAX_PUT_BYTES = 64 * 1024
+# ui_copy is the largest value (about 70 KB once segment 13's notes copy landed; at most 2000 strings of 500 chars).
+MAX_PUT_BYTES = 256 * 1024
 
 router = APIRouter(prefix="/api")
 
@@ -184,7 +185,7 @@ async def get_config(request: Request, admin: AdminUser, key: ConfigKey) -> Conf
     responses={
         **_ADMIN_ERRORS,
         409: {"model": ErrorResponse, "description": "The value changed since you read it"},
-        413: {"model": ErrorResponse, "description": "The request body is larger than 64 KB"},
+        413: {"model": ErrorResponse, "description": "The request body is larger than 256 KB"},
         422: {"model": ErrorResponse, "description": "The value is not valid for this key"},
     },
     tags=["admin"],

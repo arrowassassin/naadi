@@ -23,12 +23,12 @@ const MIN_CHARS = 2;
 const AUTO_WEB_MIN_CHARS = 4;
 
 type Copy = SearchCopy;
-type LocalGroup = "chapters" | "notes" | "questions" | "uploads" | "pathway";
-const GROUP_ORDER: LocalGroup[] = ["chapters", "notes", "questions", "uploads", "pathway"];
+type LocalGroup = "chapters" | "notes" | "handwriting" | "questions" | "uploads" | "pathway";
+const GROUP_ORDER: LocalGroup[] = ["chapters", "notes", "handwriting", "questions", "uploads", "pathway"];
 
-/** Notes and handwriting share one group, as on the Search board. */
+/** Segment 13: notes and handwriting are groups of their own (each hit links to its note or its ink surface). */
 function groupOf(hit: SearchHit): LocalGroup {
-  return hit.group === "handwriting" ? "notes" : hit.group;
+  return hit.group;
 }
 
 function Snippet({ segments }: { segments: Segment[] }) {
@@ -107,6 +107,7 @@ function HitRow({ hit, copy }: { hit: SearchHit; copy: Copy }) {
         <Link
           to={dest.to}
           params={dest.params}
+          search={dest.search}
           data-result=""
           className={cx(ROW, "rounded-inner focus-visible:outline-2 focus-visible:outline-offset-2")}
         >

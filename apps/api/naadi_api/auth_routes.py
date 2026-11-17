@@ -62,6 +62,10 @@ class PublicConfig(BaseModel):
     nav: list[NavEntry] = Field(description="Navigation items whose flag is on for a signed-out visitor")
     exam_rules: ExamRules
     ui_copy: dict[str, str] = Field(description="Editable UI strings (app_config.ui_copy); {name} = placeholder")
+    storage_buckets: dict[str, str] = Field(
+        default_factory=dict,
+        description="Supabase Storage bucket names the web uploads to (app_config.storage.user_uploads); not secret",
+    )
 
 
 ExamTarget = Literal["step1", "step2ck", "step3"]
@@ -131,6 +135,13 @@ class MeUpdate(BaseModel):
             raise ValueError(f"settings must be at most {MAX_SETTINGS_PATCH_BYTES // 1024} KB")
         if any(not k or len(k) > 64 for k in v):
             raise ValueError("settings keys must be 1-64 characters")
+        if (
+            "handwriting_search" in v
+            and v["handwriting_search"] is not None
+            and not isinstance(v["handwriting_search"], bool)
+        ):
+            # Settings -> Pencil & ink -> Handwriting search (segment 13): true / false, or null for the default (on).
+            raise ValueError("settings.handwriting_search must be true or false")
         if v.get("ink") is not None:
             # Settings -> Pencil & ink (segment 12b): replaced whole (the merge is one level deep), so validate whole.
             v = {**v, "ink": InkSettings.model_validate(v["ink"]).model_dump(exclude_none=True)}
@@ -224,6 +235,7 @@ async def public_config(request: Request) -> JSONResponse:
         nav=[NavEntry.model_validate(i) for i in await cfg.nav_for(is_admin=False, app_env=s.app_env)],
         exam_rules=ExamRules.model_validate(await cfg.get("exam_rules")),
         ui_copy=await cfg.get("ui_copy"),
+        storage_buckets={"user_uploads": str((await cfg.get("storage"))["user_uploads"])},
     )
     return JSONResponse(body.model_dump(mode="json"), headers={"cache-control": PUBLIC_CONFIG_CACHE})
 
@@ -361,7 +373,23 @@ async def update_me(
     except psycopg.errors.CheckViolation as exc:
         raise _validation("body", "One of the values is out of range.") from exc
     log.info("profile_updated", fields=sorted(sent))
+    if patch.settings is not None and "handwriting_search" in patch.settings:
+        await _handwriting_changed(request, user, patch.settings["handwriting_search"] is not False)
     return await _me(request, user, row)
+
+
+async def _handwriting_changed(request: Request, user: CurrentUser, enabled: bool) -> None:
+    """Off: recognised handwriting and its index rows go now. On: the ink already there is queued for OCR. A failure
+    here is logged only: the OCR pass checks the setting itself and its nightly run clears what is left."""
+    from .config_api.schemas import InkOcrRules
+    from .ink.ocr.queue import apply_handwriting_setting
+
+    try:
+        rules = InkOcrRules.model_validate(await _config(request).get("ink_ocr"))
+        changed = await apply_handwriting_setting(_db(request), user.user_id, enabled, rules.min_items)
+        log.info("handwriting_search_set", enabled=enabled, layers=changed)
+    except Exception as exc:  # noqa: BLE001 - the setting is saved; see the docstring
+        log.warning("handwriting_search_apply_failed", enabled=enabled, error=type(exc).__name__)
 
 
 class _FieldInvalid(Exception):

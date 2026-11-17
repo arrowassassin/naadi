@@ -136,8 +136,9 @@ describe("Search screen", () => {
     const link = within(chapters).getByRole("link", { name: /Renal tubular acidosis/ });
     expect(link).toHaveAttribute("href", "/learn/ch07/ch07-s3");
     expect(chapters.querySelector("mark")?.textContent).toBe("RTA");
-    // notes and handwriting share one group, as on the board
-    expect(screen.getByRole("region", { name: "Your notes and handwriting" })).toBeVisible();
+    // segment 13: handwriting is a group of its own, linked to the surface it was written on
+    const ink = screen.getByRole("region", { name: "Your handwriting" });
+    expect(within(ink).getByRole("link", { name: /4 → aldo problem/ })).toHaveAttribute("href", "/learn/ch07/ch07-s3");
     // the question route is not in this build: the hit is listed but not linked
     const questions = screen.getByRole("region", { name: "Questions" });
     expect(within(questions).queryByRole("link")).toBeNull();
@@ -283,7 +284,19 @@ describe("targets", () => {
     expect(resolveTarget({ type: "section", chapter_id: "c", section_id: "s" }, {})).toBeNull();
     expect(resolveTarget({ type: "question", question_id: "q" }, routes)?.params).toEqual({ questionId: "q" });
     expect(resolveTarget({ type: "question", question_id: "q" }, {})).toBeNull();
-    expect(resolveTarget({ type: "note", note_id: "n" }, routes)).toBeNull(); // no section anchor
+    expect(resolveTarget({ type: "note", note_id: "n" }, routes)).toBeNull(); // no Notes route, no section anchor
+    const withNotes = { ...routes, "/notes": {} };
+    expect(resolveTarget({ type: "note", note_id: "n" }, withNotes)).toEqual({
+      to: "/notes",
+      params: {},
+      search: { note: "n" },
+    });
+    expect(
+      resolveTarget({ type: "ink", surface_type: "notebook_page", surface_id: "p1", note_id: "p1" }, withNotes)?.search,
+    ).toEqual({ note: "p1" });
+    expect(resolveTarget({ type: "ink", surface_type: "question", question_id: "q" }, routes)?.params).toEqual({
+      questionId: "q",
+    });
     expect(resolveTarget({ type: "pathway", stage_key: "step1" }, routes)).toBeNull();
   });
 });

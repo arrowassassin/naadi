@@ -364,9 +364,11 @@ def test_scopes_filter_by_type_and_links_are_structured(
     assert only_q and all(h["type"] == "question" for h in only_q)
     only_notes = client.get("/api/search", params={**params, "scope": "notes"}, headers=a).json()["hits"]
     assert [h["id"] for h in only_notes] == [f"note:{world.note_a}"]
+    assert only_notes[0]["target"]["kind"] == "note" and only_notes[0]["target"]["note_id"] == str(world.note_a)
     hw = client.get("/api/search", params={**params, "scope": "handwriting"}, headers=a).json()["hits"]
     assert [h["group"] for h in hw] == ["handwriting"]
     assert hw[0]["target"]["chapter_id"] == world.shared_ch and hw[0]["target"]["section_id"] == world.ink_surface
+    assert hw[0]["target"]["note_id"] is None and hw[0]["target"]["question_id"] is None  # section ink
     chapters = client.get("/api/search", params={**params, "scope": "chapters"}, headers=a).json()["hits"]
     sec = next(h for h in chapters if h["id"] == f"section:{world.shared_s}")
     assert sec["target"] == {
@@ -378,6 +380,7 @@ def test_scopes_filter_by_type_and_links_are_structured(
             for k in (
                 "question_id",
                 "note_id",
+                "kind",
                 "anchor_type",
                 "anchor_id",
                 "surface_type",

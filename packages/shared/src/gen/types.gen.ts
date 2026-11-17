@@ -81,6 +81,72 @@ export type AgentRuntimeFacts = {
 };
 
 /**
+ * AnchorCounts
+ */
+export type AnchorCounts = {
+  /**
+   * Free
+   */
+  free: number;
+  /**
+   * Pdf
+   */
+  pdf: number;
+  /**
+   * Question
+   */
+  question: number;
+  /**
+   * Section
+   */
+  section: number;
+  /**
+   * Video
+   */
+  video: number;
+};
+
+/**
+ * AnchorPos
+ *
+ * Where a highlight sits. Section anchors: ProseMirror positions in the section body. Question anchors: UTF-16
+ * offsets into the text of the explanation. `quote` (+ `prefix`/`suffix`) re-anchors it when positions drift;
+ * `revision` is the web's fingerprint of the content it was made on. Stored as sent.
+ */
+export type AnchorPos = {
+  /**
+   * Detached
+   *
+   * Set by the web when the quote can no longer be found (listed as Detached)
+   */
+  detached?: boolean | null;
+  /**
+   * From
+   */
+  from: number;
+  /**
+   * Prefix
+   */
+  prefix?: string;
+  /**
+   * Quote
+   */
+  quote: string;
+  /**
+   * Revision
+   */
+  revision?: string | null;
+  /**
+   * Suffix
+   */
+  suffix?: string;
+  /**
+   * To
+   */
+  to: number;
+};
+
+/**
  * AttemptIn
  */
 export type AttemptIn = {
@@ -1068,6 +1134,24 @@ export type CoachSuggestionOut = {
 };
 
 /**
+ * ColorCounts
+ */
+export type ColorCounts = {
+  /**
+   * Amber
+   */
+  amber: number;
+  /**
+   * Lime
+   */
+  lime: number;
+  /**
+   * Violet
+   */
+  violet: number;
+};
+
+/**
  * ComponentHealth
  */
 export type ComponentHealth = {
@@ -1962,6 +2046,22 @@ export type InkChangesOut = {
 };
 
 /**
+ * InkConvertOut
+ */
+export type InkConvertOut = {
+  /**
+   * Lines
+   */
+  lines: Array<string>;
+  /**
+   * Text
+   *
+   * Recognised text, lines joined with newlines; empty when nothing was legible
+   */
+  text: string;
+};
+
+/**
  * InkLayerOut
  */
 export type InkLayerOut = {
@@ -2466,6 +2566,458 @@ export type NextUp = {
 };
 
 /**
+ * NoteCounts
+ *
+ * Over all of the caller's notes (not filtered).
+ */
+export type NoteCounts = {
+  /**
+   * Notes and highlights per anchor type (pages excluded)
+   */
+  by_anchor: AnchorCounts;
+  /**
+   * Highlights per colour
+   */
+  by_color: ColorCounts;
+  /**
+   * Highlights
+   */
+  highlights: number;
+  /**
+   * Notes
+   */
+  notes: number;
+  /**
+   * Pages
+   */
+  pages: number;
+};
+
+/**
+ * NoteCreate
+ *
+ * `kind 'page'` is created with POST /api/notebooks/{id}/pages. Replaying a create with the same `id` returns
+ * the stored note (200); so does a second `kind 'note'` on a section that already has one.
+ */
+export type NoteCreate = {
+  /**
+   * Anchor Id
+   */
+  anchor_id?: string | null;
+  anchor_pos?: AnchorPos | null;
+  /**
+   * Anchor Type
+   */
+  anchor_type?: "section" | "question" | "video" | "pdf" | "free" | null;
+  /**
+   * Body
+   */
+  body?: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Canvas
+   */
+  canvas?: "paper" | "whiteboard";
+  /**
+   * Highlight Color
+   */
+  highlight_color?: "lime" | "violet" | "amber" | null;
+  /**
+   * Id
+   *
+   * Client-made id (offline queue): makes the create idempotent
+   */
+  id?: string | null;
+  /**
+   * Kind
+   */
+  kind?: "note" | "highlight";
+  /**
+   * Notebook Id
+   */
+  notebook_id?: string | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
+ * NoteList
+ */
+export type NoteList = {
+  counts: NoteCounts;
+  /**
+   * Items
+   */
+  items: Array<NoteOut>;
+  /**
+   * Next Offset
+   *
+   * Pass as `offset` for the next page; null on the last page
+   */
+  next_offset: number | null;
+};
+
+/**
+ * NoteOut
+ */
+export type NoteOut = {
+  /**
+   * Anchor Id
+   */
+  anchor_id: string | null;
+  anchor_pos: AnchorPos | null;
+  /**
+   * Anchor Type
+   */
+  anchor_type: "section" | "question" | "video" | "pdf" | "free" | null;
+  /**
+   * Body
+   *
+   * TipTap JSON (canvas paper) or an Excalidraw scene (canvas whiteboard); null in lists for whiteboards (`body_omitted`)
+   */
+  body: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Body Omitted
+   *
+   * true when `body` was left out (fetch the note)
+   */
+  body_omitted?: boolean;
+  /**
+   * Body Text
+   *
+   * Plain text of the body, computed by the server
+   */
+  body_text: string;
+  /**
+   * Canvas
+   */
+  canvas: "paper" | "whiteboard";
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Excerpt
+   *
+   * body_text on one line, at most ~280 characters
+   */
+  excerpt: string;
+  /**
+   * Has Ink
+   *
+   * A notebook page with live ink items on its notebook_page layer
+   */
+  has_ink: boolean;
+  /**
+   * Highlight Color
+   */
+  highlight_color: "lime" | "violet" | "amber" | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Kind
+   */
+  kind: "note" | "highlight" | "page";
+  /**
+   * Notebook Id
+   */
+  notebook_id: string | null;
+  /**
+   * Paper
+   *
+   * A page's paper override; null = the notebook's paper
+   */
+  paper: "ruled" | "dotted" | "grid" | "cornell" | "blank" | null;
+  /**
+   * Sort
+   */
+  sort: number;
+  /**
+   * null when unanchored or the anchor is no longer visible
+   */
+  source: NoteSource | null;
+  /**
+   * Title
+   */
+  title: string | null;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * NotePatch
+ *
+ * Partial update: only the fields sent change; `null` clears a nullable field. `kind` never changes.
+ */
+export type NotePatch = {
+  /**
+   * Anchor Id
+   */
+  anchor_id?: string | null;
+  anchor_pos?: AnchorPos | null;
+  /**
+   * Anchor Type
+   */
+  anchor_type?: "section" | "question" | "video" | "pdf" | "free" | null;
+  /**
+   * Body
+   */
+  body?: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Canvas
+   */
+  canvas?: "paper" | "whiteboard" | null;
+  /**
+   * Highlight Color
+   */
+  highlight_color?: "lime" | "violet" | "amber" | null;
+  /**
+   * If Updated At
+   *
+   * Refuse (409 note_conflict) unless the stored note still has this updated_at
+   */
+  if_updated_at?: string | null;
+  /**
+   * Notebook Id
+   */
+  notebook_id?: string | null;
+  /**
+   * Paper
+   */
+  paper?: "ruled" | "dotted" | "grid" | "cornell" | "blank" | null;
+  /**
+   * Sort
+   */
+  sort?: number | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
+ * NoteSource
+ *
+ * What a note's anchor points at, for source chips and links (structured; the web words it). Only what the
+ * caller may see: a section of a chapter they can read, a question they attempted (never stem or answer).
+ */
+export type NoteSource = {
+  /**
+   * Block Id
+   *
+   * Block of the caller's latest graded attempt
+   */
+  block_id?: string | null;
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Chapter Title
+   */
+  chapter_title?: string | null;
+  /**
+   * Media Id
+   */
+  media_id?: string | null;
+  /**
+   * Question Id
+   */
+  question_id?: string | null;
+  /**
+   * Question Number
+   *
+   * 1-based position of the question in that block
+   */
+  question_number?: number | null;
+  /**
+   * Section Heading
+   */
+  section_heading?: string | null;
+  /**
+   * Section Id
+   */
+  section_id?: string | null;
+  /**
+   * Section Revision
+   *
+   * md5 of the section's current body (the ink API's content revision)
+   */
+  section_revision?: string | null;
+  /**
+   * Title
+   *
+   * Video title or PDF file name
+   */
+  title?: string | null;
+  /**
+   * Type
+   */
+  type: "section" | "question" | "video" | "pdf";
+  /**
+   * Upload Id
+   */
+  upload_id?: string | null;
+};
+
+/**
+ * NotebookCreate
+ *
+ * Creates the notebook with its first page.
+ */
+export type NotebookCreate = {
+  /**
+   * Cover
+   */
+  cover?: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
+  /**
+   * First Page Id
+   *
+   * Client-made id of page 1
+   */
+  first_page_id?: string | null;
+  /**
+   * Id
+   *
+   * Client-made id: makes the create idempotent
+   */
+  id?: string | null;
+  /**
+   * Paper
+   */
+  paper?: "ruled" | "dotted" | "grid" | "cornell" | "blank";
+  /**
+   * Title
+   */
+  title: string;
+};
+
+/**
+ * NotebookDetail
+ */
+export type NotebookDetail = {
+  /**
+   * Cover
+   */
+  cover: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Note Count
+   *
+   * Typed notes filed in this notebook (pages not counted)
+   */
+  note_count: number;
+  /**
+   * Page Count
+   */
+  page_count: number;
+  /**
+   * Pages
+   *
+   * kind 'page' notes in order (bodies of whiteboards omitted)
+   */
+  pages: Array<NoteOut>;
+  /**
+   * Paper
+   */
+  paper: "ruled" | "dotted" | "grid" | "cornell" | "blank";
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * NotebookList
+ */
+export type NotebookList = {
+  /**
+   * Items
+   */
+  items: Array<NotebookOut>;
+};
+
+/**
+ * NotebookOut
+ */
+export type NotebookOut = {
+  /**
+   * Cover
+   */
+  cover: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Note Count
+   *
+   * Typed notes filed in this notebook (pages not counted)
+   */
+  note_count: number;
+  /**
+   * Page Count
+   */
+  page_count: number;
+  /**
+   * Paper
+   */
+  paper: "ruled" | "dotted" | "grid" | "cornell" | "blank";
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * NotebookPatch
+ */
+export type NotebookPatch = {
+  /**
+   * Cover
+   */
+  cover?: "lime" | "violet" | "amber" | "paper" | "surface-2" | "ink-violet" | null;
+  /**
+   * Paper
+   */
+  paper?: "ruled" | "dotted" | "grid" | "cornell" | "blank" | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
  * OnboardingIn
  */
 export type OnboardingIn = {
@@ -2586,6 +3138,62 @@ export type OnboardingValues = {
    * Study Days
    */
   study_days: Array<number>;
+};
+
+/**
+ * PageCreate
+ */
+export type PageCreate = {
+  /**
+   * Anchor Id
+   */
+  anchor_id?: string | null;
+  /**
+   * Anchor Type
+   */
+  anchor_type?: "section" | "question" | "video" | "pdf" | null;
+  /**
+   * Body
+   */
+  body?: {
+    [key: string]: unknown;
+  } | null;
+  /**
+   * Canvas
+   */
+  canvas?: "paper" | "whiteboard";
+  /**
+   * Id
+   *
+   * Client-made id: makes the create idempotent
+   */
+  id?: string | null;
+  /**
+   * Paper
+   */
+  paper?: "ruled" | "dotted" | "grid" | "cornell" | "blank" | null;
+  /**
+   * Position
+   *
+   * 0-based place among the pages; default: at the end
+   */
+  position?: number | null;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
+ * PageOrder
+ */
+export type PageOrder = {
+  /**
+   * Page Ids
+   *
+   * Every page of the notebook exactly once, in the new order
+   */
+  page_ids: Array<string>;
 };
 
 /**
@@ -3108,6 +3716,14 @@ export type PublicConfig = {
    * Navigation items whose flag is on for a signed-out visitor
    */
   nav: Array<NavEntry>;
+  /**
+   * Storage Buckets
+   *
+   * Supabase Storage bucket names the web uploads to (app_config.storage.user_uploads); not secret
+   */
+  storage_buckets?: {
+    [key: string]: string;
+  };
   /**
    * Supabase Anon Key
    *
@@ -3950,6 +4566,12 @@ export type Target = {
    */
   guide_key?: string | null;
   /**
+   * Kind
+   *
+   * A note's kind (note, highlight, page)
+   */
+  kind?: string | null;
+  /**
    * Note Id
    */
   note_id?: string | null;
@@ -4508,7 +5130,7 @@ export type PutAppConfigErrors = {
    */
   409: ErrorResponse;
   /**
-   * The request body is larger than 64 KB
+   * The request body is larger than 256 KB
    */
   413: ErrorResponse;
   /**
@@ -6066,6 +6688,55 @@ export type GetHealthResponses = {
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
 
+export type ConvertInkToTextData = {
+  body: Blob | File;
+  path?: never;
+  query?: never;
+  url: "/api/ink/convert";
+};
+
+export type ConvertInkToTextErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * ink_convert_too_large (over 4 MB)
+   */
+  413: ErrorResponse;
+  /**
+   * ink_convert_not_png
+   */
+  415: ErrorResponse;
+  /**
+   * ink_convert_invalid (not decodable, or a side over 4096 px)
+   */
+  422: ErrorResponse;
+  /**
+   * rate_limited, ink_convert_daily_cap or ink_convert_budget (Retry-After set)
+   */
+  429: ErrorResponse;
+  /**
+   * ink_convert_failed (the model did not answer as asked)
+   */
+  502: ErrorResponse;
+  /**
+   * ink_convert_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ConvertInkToTextError = ConvertInkToTextErrors[keyof ConvertInkToTextErrors];
+
+export type ConvertInkToTextResponses = {
+  /**
+   * Successful Response
+   */
+  200: InkConvertOut;
+};
+
+export type ConvertInkToTextResponse = ConvertInkToTextResponses[keyof ConvertInkToTextResponses];
+
 export type GetInkLayerData = {
   body?: never;
   path: {
@@ -6316,6 +6987,619 @@ export type GetNavResponses = {
 };
 
 export type GetNavResponse = GetNavResponses[keyof GetNavResponses];
+
+export type ListNotebooksData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/notebooks";
+};
+
+export type ListNotebooksErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ListNotebooksError = ListNotebooksErrors[keyof ListNotebooksErrors];
+
+export type ListNotebooksResponses = {
+  /**
+   * Successful Response
+   */
+  200: NotebookList;
+};
+
+export type ListNotebooksResponse = ListNotebooksResponses[keyof ListNotebooksResponses];
+
+export type CreateNotebookData = {
+  body: NotebookCreate;
+  path?: never;
+  query?: never;
+  url: "/api/notebooks";
+};
+
+export type CreateNotebookErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * notebook_id_conflict or notebook_limit
+   */
+  409: ErrorResponse;
+  /**
+   * Invalid request
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type CreateNotebookError = CreateNotebookErrors[keyof CreateNotebookErrors];
+
+export type CreateNotebookResponses = {
+  /**
+   * Replayed: the stored notebook
+   */
+  200: NotebookDetail;
+  /**
+   * Successful Response
+   */
+  201: NotebookDetail;
+};
+
+export type CreateNotebookResponse = CreateNotebookResponses[keyof CreateNotebookResponses];
+
+export type DeleteNotebookData = {
+  body?: never;
+  path: {
+    /**
+     * Notebook Id
+     */
+    notebook_id: string;
+  };
+  query?: never;
+  url: "/api/notebooks/{notebook_id}";
+};
+
+export type DeleteNotebookErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * notebook_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteNotebookError = DeleteNotebookErrors[keyof DeleteNotebookErrors];
+
+export type DeleteNotebookResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteNotebookResponse = DeleteNotebookResponses[keyof DeleteNotebookResponses];
+
+export type GetNotebookData = {
+  body?: never;
+  path: {
+    /**
+     * Notebook Id
+     */
+    notebook_id: string;
+  };
+  query?: never;
+  url: "/api/notebooks/{notebook_id}";
+};
+
+export type GetNotebookErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * notebook_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetNotebookError = GetNotebookErrors[keyof GetNotebookErrors];
+
+export type GetNotebookResponses = {
+  /**
+   * Successful Response
+   */
+  200: NotebookDetail;
+};
+
+export type GetNotebookResponse = GetNotebookResponses[keyof GetNotebookResponses];
+
+export type UpdateNotebookData = {
+  body: NotebookPatch;
+  path: {
+    /**
+     * Notebook Id
+     */
+    notebook_id: string;
+  };
+  query?: never;
+  url: "/api/notebooks/{notebook_id}";
+};
+
+export type UpdateNotebookErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * notebook_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Invalid request
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type UpdateNotebookError = UpdateNotebookErrors[keyof UpdateNotebookErrors];
+
+export type UpdateNotebookResponses = {
+  /**
+   * Successful Response
+   */
+  200: NotebookDetail;
+};
+
+export type UpdateNotebookResponse = UpdateNotebookResponses[keyof UpdateNotebookResponses];
+
+export type CreateNotebookPageData = {
+  body: PageCreate;
+  path: {
+    /**
+     * Notebook Id
+     */
+    notebook_id: string;
+  };
+  query?: never;
+  url: "/api/notebooks/{notebook_id}/pages";
+};
+
+export type CreateNotebookPageErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * note_question_not_attempted (no graded answer on that question yet)
+   */
+  403: ErrorResponse;
+  /**
+   * note_anchor_not_found (anchor not visible), notebook_not_found or note_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * notebook_page_limit, note_id_conflict or note_limit
+   */
+  409: ErrorResponse;
+  /**
+   * note_body_too_large (the body is over 1 MB)
+   */
+  413: ErrorResponse;
+  /**
+   * validation_error, note_invalid or note_body_invalid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type CreateNotebookPageError = CreateNotebookPageErrors[keyof CreateNotebookPageErrors];
+
+export type CreateNotebookPageResponses = {
+  /**
+   * Replayed: the stored page
+   */
+  200: NoteOut;
+  /**
+   * Successful Response
+   */
+  201: NoteOut;
+};
+
+export type CreateNotebookPageResponse = CreateNotebookPageResponses[keyof CreateNotebookPageResponses];
+
+export type ReorderNotebookPagesData = {
+  body: PageOrder;
+  path: {
+    /**
+     * Notebook Id
+     */
+    notebook_id: string;
+  };
+  query?: never;
+  url: "/api/notebooks/{notebook_id}/pages/order";
+};
+
+export type ReorderNotebookPagesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * notebook_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * notebook_pages_changed: the list is not the current pages
+   */
+  409: ErrorResponse;
+  /**
+   * Invalid request
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ReorderNotebookPagesError = ReorderNotebookPagesErrors[keyof ReorderNotebookPagesErrors];
+
+export type ReorderNotebookPagesResponses = {
+  /**
+   * Successful Response
+   */
+  200: NotebookDetail;
+};
+
+export type ReorderNotebookPagesResponse = ReorderNotebookPagesResponses[keyof ReorderNotebookPagesResponses];
+
+export type ListNotesData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Kind
+     */
+    kind?: "note" | "highlight" | "page" | null;
+    /**
+     * Color
+     */
+    color?: "lime" | "violet" | "amber" | null;
+    /**
+     * Anchor Type
+     */
+    anchor_type?: "section" | "question" | "video" | "pdf" | "free" | null;
+    /**
+     * Anchor Id
+     */
+    anchor_id?: string | null;
+    /**
+     * Notebook Id
+     */
+    notebook_id?: string | null;
+    /**
+     * Q
+     *
+     * Substring of title, text or quote
+     */
+    q?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
+    /**
+     * Include Body
+     *
+     * false: every body is left out (body_omitted)
+     */
+    include_body?: boolean;
+  };
+  url: "/api/notes";
+};
+
+export type ListNotesErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type ListNotesError = ListNotesErrors[keyof ListNotesErrors];
+
+export type ListNotesResponses = {
+  /**
+   * Successful Response
+   */
+  200: NoteList;
+};
+
+export type ListNotesResponse = ListNotesResponses[keyof ListNotesResponses];
+
+export type CreateNoteData = {
+  body: NoteCreate;
+  path?: never;
+  query?: never;
+  url: "/api/notes";
+};
+
+export type CreateNoteErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * note_question_not_attempted (no graded answer on that question yet)
+   */
+  403: ErrorResponse;
+  /**
+   * note_anchor_not_found (anchor not visible), notebook_not_found or note_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * note_id_conflict or note_limit
+   */
+  409: ErrorResponse;
+  /**
+   * note_body_too_large (the body is over 1 MB)
+   */
+  413: ErrorResponse;
+  /**
+   * validation_error, note_invalid or note_body_invalid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type CreateNoteError = CreateNoteErrors[keyof CreateNoteErrors];
+
+export type CreateNoteResponses = {
+  /**
+   * Replayed: the stored note
+   */
+  200: NoteOut;
+  /**
+   * Successful Response
+   */
+  201: NoteOut;
+};
+
+export type CreateNoteResponse = CreateNoteResponses[keyof CreateNoteResponses];
+
+export type DeleteNoteData = {
+  body?: never;
+  path: {
+    /**
+     * Note Id
+     */
+    note_id: string;
+  };
+  query?: never;
+  url: "/api/notes/{note_id}";
+};
+
+export type DeleteNoteErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * note_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteNoteError = DeleteNoteErrors[keyof DeleteNoteErrors];
+
+export type DeleteNoteResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteNoteResponse = DeleteNoteResponses[keyof DeleteNoteResponses];
+
+export type GetNoteData = {
+  body?: never;
+  path: {
+    /**
+     * Note Id
+     */
+    note_id: string;
+  };
+  query?: never;
+  url: "/api/notes/{note_id}";
+};
+
+export type GetNoteErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * note_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type GetNoteError = GetNoteErrors[keyof GetNoteErrors];
+
+export type GetNoteResponses = {
+  /**
+   * Successful Response
+   */
+  200: NoteOut;
+};
+
+export type GetNoteResponse = GetNoteResponses[keyof GetNoteResponses];
+
+export type UpdateNoteData = {
+  body: NotePatch;
+  path: {
+    /**
+     * Note Id
+     */
+    note_id: string;
+  };
+  query?: never;
+  url: "/api/notes/{note_id}";
+};
+
+export type UpdateNoteErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * note_question_not_attempted (no graded answer on that question yet)
+   */
+  403: ErrorResponse;
+  /**
+   * note_anchor_not_found (anchor not visible), notebook_not_found or note_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * note_conflict (if_updated_at did not match) or note_section_has_note
+   */
+  409: ErrorResponse;
+  /**
+   * note_body_too_large (the body is over 1 MB)
+   */
+  413: ErrorResponse;
+  /**
+   * validation_error, note_invalid or note_body_invalid
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable (code notes_unavailable)
+   */
+  503: ErrorResponse;
+};
+
+export type UpdateNoteError = UpdateNoteErrors[keyof UpdateNoteErrors];
+
+export type UpdateNoteResponses = {
+  /**
+   * Successful Response
+   */
+  200: NoteOut;
+};
+
+export type UpdateNoteResponse = UpdateNoteResponses[keyof UpdateNoteResponses];
 
 export type GetOnboardingData = {
   body?: never;

@@ -99,7 +99,7 @@ def test_public_config(client: TestClient) -> None:
     assert body["features"]["today"] is True
     assert body["features"]["assistant"] is False
     assert body["features"]["ink_lab"] is False  # admins only in prod
-    assert [i["id"] for i in body["nav"]] == ["today", "learn", "practice"]
+    assert [i["id"] for i in body["nav"]] == ["today", "learn", "practice", "notes"]
     assert body["exam_rules"]["modes"]["exam"]["assistant"] is False
     assert body["ui_copy"]["agent.quota_reset"] == "AI quota resets at {time}"
     # nothing from the server-only keys (model routing, budgets, search rules, buckets, generation)
@@ -118,10 +118,10 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     assert client.get("/api/me", headers=admin).json()["features"]["ink_lab"] is True
     nav = client.get("/api/nav", headers=student).json()
     assert nav["source"] == "app_config"
-    assert "notes" not in [i["id"] for i in nav["items"]]
+    assert "pathway" not in [i["id"] for i in nav["items"]]
 
     flags = client.get("/api/admin/config/feature_flags", headers=admin).json()
-    on = {**flags["value"], "notes": {"enabled": True}}
+    on = {**flags["value"], "pathway": {"enabled": True}}
     r = client.put(
         "/api/admin/config/feature_flags", headers=admin, json={"value": on, "expected_updated_at": flags["updated_at"]}
     )
@@ -129,7 +129,7 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     nav_cfg = client.get("/api/admin/config/ui.nav", headers=admin).json()
     items = [
         *nav_cfg["value"],
-        {"id": "notes", "label": "Notes", "path": "/notes", "icon": "notebook-pen", "feature": "notes"},
+        {"id": "pathway", "label": "Pathway", "path": "/pathway", "icon": "route", "feature": "pathway"},
     ]
     r = client.put(
         "/api/admin/config/ui.nav", headers=admin, json={"value": items, "expected_updated_at": nav_cfg["updated_at"]}
@@ -146,11 +146,11 @@ def test_flag_nav_and_copy_changes_apply_without_a_redeploy(
     )
     assert r.status_code == 200, r.text
     try:
-        assert "notes" in [i["id"] for i in client.get("/api/nav", headers=student).json()["items"]]
-        assert client.get("/api/me", headers=student).json()["features"]["notes"] is True
+        assert "pathway" in [i["id"] for i in client.get("/api/nav", headers=student).json()["items"]]
+        assert client.get("/api/me", headers=student).json()["features"]["pathway"] is True
         public = client.get("/api/public-config").json()
-        assert public["features"]["notes"] is True
-        assert "notes" in [i["id"] for i in public["nav"]]
+        assert public["features"]["pathway"] is True
+        assert "pathway" in [i["id"] for i in public["nav"]]
         assert public["ui_copy"]["signin.tagline"] == "Study in one place"
     finally:
         with psycopg.connect(url, autocommit=True) as c:
@@ -230,7 +230,7 @@ async def test_a_stored_copy_missing_new_keys_is_merged_not_discarded(url: str) 
 
 def test_put_body_is_capped(client: TestClient, key: SigningKey, users: dict[str, uuid.UUID]) -> None:
     admin = _h(key, users["admin"], ADMIN_EMAIL)
-    big = {f"x.k{i}": "v" * 400 for i in range(200)}  # ~90 KB
+    big = {f"x.k{i}": "v" * 400 for i in range(700)}  # ~290 KB
     r = client.put("/api/admin/config/ui_copy", headers=admin, json={"value": big, "expected_updated_at": None})
     assert r.status_code == 413
     assert r.json()["error"]["code"] == "payload_too_large"
@@ -250,7 +250,7 @@ def test_admin_list_get_put_history(client: TestClient, key: SigningKey, users: 
 
     listed = client.get("/api/admin/config", headers=admin).json()["items"]
     assert {i["key"]: i["source"] for i in listed} == {i["key"]: "db" for i in listed}
-    assert len(listed) == 14  # S10 fsrs, S11 plan + coach
+    assert len(listed) == 15  # S10 fsrs, S11 plan + coach, S13 ink_ocr
 
     entry = client.get("/api/admin/config/ui_copy", headers=admin).json()
     assert entry["source"] == "db"

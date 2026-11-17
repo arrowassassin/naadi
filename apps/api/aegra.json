@@ -11,6 +11,10 @@
     "coach": {
       "path": "./naadi_api/agent/graphs/coach.py:graph",
       "description": "Nightly study coach: facts -> validated suggestions for Today (rules fallback when the job budget is spent)"
+    },
+    "ink_ocr": {
+      "path": "./naadi_api/agent/graphs/ink_ocr.py:graph",
+      "description": "Handwriting search: idle ink layers -> Pillow tiles -> one vision call per tile -> recognized_text (sweep every 2 min, nightly retry of deferred layers)"
     }
   },
   "auth": {

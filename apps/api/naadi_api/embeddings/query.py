@@ -30,7 +30,7 @@ from ..db import Database
 from ..logs import get_logger
 from . import ranking
 from .engine import Engine, vector_literal
-from .sources import clean_pathway_text, pathway_task_text, question_text
+from .sources import clean_pathway_text, note_text, pathway_task_text, question_text
 from .text import html_to_text, markdown_to_text, tiptap_to_text
 
 log = get_logger("naadi.embeddings.query")
@@ -248,12 +248,12 @@ async def _load_meta(
     nids = [c.ref_id for c in by_type.get("note", [])]
     if nids:
         cur = await conn.execute(
-            "select id::text as id, anchor_type, anchor_id, body, ocr_text from public.notes where id::text = any(%s)",
+            "select id::text as id, kind, anchor_type, anchor_id, title, canvas, body, body_text, ocr_text"
+            " from public.notes where id::text = any(%s)",
             (nids,),
         )
         for r in await cur.fetchall():
-            text = "\n".join(x for x in (tiptap_to_text(r["body"]), (r["ocr_text"] or "").strip()) if x)
-            meta[("note", r["id"])] = {**r, "current": text}
+            meta[("note", r["id"])] = {**r, "current": note_text(r)}
     iids = [c.ref_id for c in by_type.get("ink", [])]
     if iids:
         cur = await conn.execute(
@@ -342,6 +342,7 @@ async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], t
             target = {
                 "type": "note",
                 "note_id": info["id"],
+                "kind": info["kind"],
                 "anchor_type": info["anchor_type"],
                 "anchor_id": info["anchor_id"],
                 "chapter_id": info.get("chapter_id"),
@@ -355,6 +356,8 @@ async def hydrate(db: Database, user: CurrentUser, cands: Sequence[Candidate], t
                 "surface_id": info["surface_id"],
                 "chapter_id": info.get("chapter_id"),
                 "section_id": info["surface_id"] if info.get("chapter_id") else None,
+                "note_id": info["surface_id"] if info["surface_type"] == "notebook_page" else None,
+                "question_id": info["surface_id"] if info["surface_type"] == "question" else None,
             }
         else:  # pathway
             title = info["title"]

@@ -39,9 +39,23 @@ function span(el: Element, name: string): number | undefined {
   return Number.isInteger(n) && n > 1 && n <= 50 ? n : undefined;
 }
 
-function convert(node: Node, key: string, budget: { left: number }): ReactNode {
+/** Segment 13: renders each text node given its UTF-16 offset in the fragment's text (highlights, anchors). */
+export type HtmlTextDecorator = (text: string, offset: number, key: string) => ReactNode;
+
+interface Walk {
+  left: number;
+  offset: number;
+  decorate?: HtmlTextDecorator;
+}
+
+function convert(node: Node, key: string, budget: Walk): ReactNode {
   if (budget.left-- <= 0) return null;
-  if (node.nodeType === 3) return node.textContent;
+  if (node.nodeType === 3) {
+    const text = node.textContent ?? "";
+    const at = budget.offset;
+    budget.offset += text.length;
+    return budget.decorate && text ? budget.decorate(text, at, key) : text;
+  }
   if (node.nodeType !== 1) return null;
   const el = node as Element;
   const tag = el.tagName.toLowerCase();
@@ -57,13 +71,31 @@ function convert(node: Node, key: string, budget: { left: number }): ReactNode {
   return createElement(tag, props, ...children);
 }
 
-export function sanitizeToReact(html: string): ReactNode {
+export function sanitizeToReact(html: string, decorate?: HtmlTextDecorator): ReactNode {
   if (typeof DOMParser === "undefined") return html.replace(/<[^>]*>/g, "");
   const doc = new DOMParser().parseFromString(`<body>${html}</body>`, "text/html");
-  const budget = { left: MAX_NODES };
+  const budget: Walk = { left: MAX_NODES, offset: 0, decorate };
   return Array.from(doc.body.childNodes).map((c, i) => convert(c, String(i), budget));
 }
 
-export function SafeHtml({ html, className }: { html: string; className?: string }) {
-  return <div className={className}>{sanitizeToReact(html)}</div>;
+/** The text nodes the renderer shows, with their offsets (the coordinates `decorate` receives). */
+export function htmlTextRuns(html: string): { pos: number; text: string }[] {
+  const runs: { pos: number; text: string }[] = [];
+  sanitizeToReact(html, (text, offset) => {
+    runs.push({ pos: offset, text });
+    return text;
+  });
+  return runs;
+}
+
+export function SafeHtml({
+  html,
+  className,
+  decorateText,
+}: {
+  html: string;
+  className?: string;
+  decorateText?: HtmlTextDecorator;
+}) {
+  return <div className={className}>{sanitizeToReact(html, decorateText)}</div>;
 }

@@ -89,3 +89,17 @@ def schedule_reindex(app: Any, kinds: Sequence[Kind] = KINDS, **kw: Any) -> asyn
     content change (seed importer, chapter editor, notes, uploads). Returns None when search is not set up."""
     jobs: IndexJobs | None = getattr(app.state, "embedding_jobs", None)
     return jobs.schedule(kinds, **kw) if jobs is not None else None
+
+
+# The API process's job (set by `install_search_routes`), for code that runs outside a request in the same process:
+# the `ink_ocr` graph indexes recognised handwriting with its engine.
+_ACTIVE: IndexJobs | None = None
+
+
+def register_index_jobs(jobs: IndexJobs | None) -> None:
+    global _ACTIVE
+    _ACTIVE = jobs
+
+
+def active_index_jobs() -> IndexJobs | None:
+    return _ACTIVE

@@ -2,16 +2,18 @@ import type { BlockDetail, QuestionView } from "@naadi/shared";
 import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { BookOpen, Check, ChevronLeft, ChevronRight, Flag, FlaskConical, PenLine, TriangleAlert } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { SaveAsFlashcard } from "../cards/hooks";
-import { SafeHtml } from "../content/SafeHtml";
+import { htmlTextRuns, SafeHtml } from "../content/SafeHtml";
 import { ExamPage } from "../exam/ExamPage";
+import { HighlightableText } from "../highlights/HighlightableText";
 import { InkCanvas } from "../ink/InkCanvas";
 import { InkSaveStatus } from "../ink/persist/InkSaveStatus";
 import { useInkSettings } from "../ink/persist/settings";
 import { useInkLayer } from "../ink/persist/useInkLayer";
 import { ReportIssueDialog } from "../learn/ReportIssueDialog";
+import { QuickNoteDialog } from "../notes/QuickNoteDialog";
 import {
   isUnreachable,
   useBlock,
@@ -53,10 +55,26 @@ function htmlText(html: string): string {
 }
 
 function Explanation({ view, correct }: { view: QuestionView; correct: boolean | null }) {
-  const t = useCopy();
   const ex = view.explanation;
   if (!ex) return null;
   const rows = splitWhyNot(ex.why_not_html);
+  return <ExplanationBody view={view} correct={correct} rows={rows} />;
+}
+
+function ExplanationBody({
+  view,
+  correct,
+  rows,
+}: {
+  view: QuestionView;
+  correct: boolean | null;
+  rows: ReturnType<typeof splitWhyNot>;
+}) {
+  const t = useCopy();
+  const ex = view.explanation as NonNullable<QuestionView["explanation"]>;
+  const html = ex.explanation_html ?? "";
+  const runs = useMemo(() => htmlTextRuns(html), [html]);
+  const [quote, setQuote] = useState<string | null>(null);
   return (
     <section
       aria-label={t("practice.explanation_label")}
@@ -66,7 +84,18 @@ function Explanation({ view, correct }: { view: QuestionView; correct: boolean |
         {t("practice.why_it_is", { answer: ex.answer })}
       </h2>
       {ex.explanation_html ? (
-        <SafeHtml html={ex.explanation_html} className="text-reading text-text-2 [&_p]:m-0 [&_p+p]:mt-3" />
+        // Segment 13: the explanation exists only after the graded attempt, so it can be highlighted (no Card:
+        // "Save as flashcard" below makes the card; no Ask until the assistant, never in exam mode).
+        <HighlightableText
+          anchorType="question"
+          anchorId={view.question.id}
+          runs={runs}
+          onNote={(sel) => setQuote(sel.anchor.quote)}
+        >
+          {(decorate) => (
+            <SafeHtml html={html} decorateText={decorate} className="text-reading text-text-2 [&_p]:m-0 [&_p+p]:mt-3" />
+          )}
+        </HighlightableText>
       ) : null}
       {rows ? (
         <div className="flex flex-col">
@@ -97,6 +126,13 @@ function Explanation({ view, correct }: { view: QuestionView; correct: boolean |
         graded
         prefill={{ front: htmlText(view.question.stem_html), back: ex.educational_objective ?? "" }}
         className="self-start"
+      />
+      <QuickNoteDialog
+        open={quote !== null}
+        quote={quote ?? ""}
+        anchorType="question"
+        anchorId={view.question.id}
+        onClose={() => setQuote(null)}
       />
     </section>
   );

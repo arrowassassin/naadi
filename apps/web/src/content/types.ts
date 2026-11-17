@@ -1,4 +1,5 @@
 import type { EmbeddedQuestion, MediaOut } from "@naadi/shared";
+import type { ReactNode } from "react";
 
 /**
  * A TipTap JSON node as stored in `chapter_sections.body` (schema owned by `@naadi/shared/content`,
@@ -68,7 +69,14 @@ export interface ContentEnv {
   embedOrigin: string;
   /** UI wording from app_config.ui_copy (shipped defaults until the config is loaded). */
   text: TextLookup;
+  /** Segment 13: renders a text node at its ProseMirror position (highlights, selection anchors). */
+  decorate?: TextDecorator;
+  /** The ProseMirror position of every text node object of the document (only when `decorate` is set). */
+  textPos?: ReadonlyMap<object, number>;
 }
+
+/** Renders the text of one text node (`pos`: its ProseMirror position, or its offset in an HTML fragment). */
+export type TextDecorator = (text: string, pos: number, key: string) => ReactNode;
 
 /** `t(key, vars)` over app_config.ui_copy, never empty (see @naadi/shared uiText and copy/useUiText.ts). */
 export type TextLookup = (key: string, vars?: Readonly<Record<string, string>>) => string;

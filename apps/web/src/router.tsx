@@ -7,6 +7,8 @@ import { cardsRoute } from "./cards/routes";
 import { InkSettingsPage } from "./ink/persist/InkSettingsPage";
 import { inkLabRoute } from "./ink/route";
 import { learnRoutes } from "./learn/routes";
+import { notebooksRoutes } from "./notebooks/routes";
+import { notesRoutes } from "./notes/routes";
 import { practiceRoutes } from "./practice/routes";
 import { AccountPage } from "./routes/AccountPage";
 import { CallbackPage } from "./routes/CallbackPage";
@@ -141,6 +143,8 @@ export const routeTree = rootRoute.addChildren([
     practiceRoutes(appRoute),
     cardsRoute(appRoute),
     searchRoute(appRoute),
+    notebooksRoutes(appRoute),
+    ...notesRoutes(appRoute),
     settingsRoute.addChildren([accountRoute, inkSettingsRoute]),
     agentDiagnosticsRoute(appRoute),
   ]),

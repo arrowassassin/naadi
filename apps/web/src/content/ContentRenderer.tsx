@@ -3,6 +3,7 @@ import { topLevelBlocks } from "@naadi/shared/content/positions";
 import { cx, Highlight, type HighlightKind } from "@naadi/ui";
 import { AlertTriangle, ArrowLeftRight, Gem, OctagonAlert } from "lucide-react";
 import { createElement, type ReactNode, useEffect, useMemo, useRef } from "react";
+import { sectionTextPositions } from "../highlights/anchor";
 import { Figure, PdfLink, Video } from "./MediaNodes";
 import { QuestionEmbed } from "./QuestionEmbed";
 import { MathBlock, MermaidBlock } from "./RichNodes";
@@ -14,6 +15,7 @@ import {
   isNode,
   type RenderMode,
   str,
+  type TextDecorator,
   type TextLookup,
   type UnknownContent,
 } from "./types";
@@ -41,6 +43,11 @@ export interface ContentRendererProps {
   onUnknown?: (u: UnknownContent) => void;
   /** UI wording (app_config.ui_copy, via copy/useUiText); defaults to the shipped ui_copy defaults. */
   text?: TextLookup;
+  /**
+   * Renders each text node given its ProseMirror position (segment 13: the student's highlights and the selection
+   * anchors). Pass a stable function (memoised): a new one re-walks the document.
+   */
+  decorateText?: TextDecorator;
   className?: string;
 }
 
@@ -114,6 +121,8 @@ class Walker {
 
   text(node: ContentNode, path: string, key: number): ReactNode {
     let out: ReactNode = node.text ?? "";
+    const pos = this.env.textPos?.get(node);
+    if (this.env.decorate && node.text && pos !== undefined) out = this.env.decorate(node.text, pos, String(key));
     // Marks apply innermost-first in TipTap order; wrap from the last to the first.
     const marks = [...(node.marks ?? [])].reverse();
     for (const [i, m] of marks.entries()) out = this.mark(m, out, path, `${key}-${i}`);
@@ -351,6 +360,7 @@ export function ContentRenderer({
   headingBase = 2,
   onUnknown,
   text,
+  decorateText,
   className,
 }: ContentRendererProps) {
   const unknownRef = useRef(onUnknown);
@@ -374,6 +384,8 @@ export function ContentRenderer({
       onUnknown: (u) => unknown.push(u),
       embedOrigin: typeof window === "undefined" ? "" : window.location.origin,
       text: (key, vars) => textRef.current(key, vars),
+      decorate: decorateText,
+      textPos: decorateText ? sectionTextPositions(doc) : undefined,
     };
     const w = new Walker(env);
     const pms = topLevelBlocks(doc);
@@ -389,7 +401,7 @@ export function ContentRenderer({
       </div>
     ));
     return { error: false as const, nodes, unknown };
-  }, [doc, media, questions, mode, sectionId, headingBase]);
+  }, [doc, media, questions, mode, sectionId, headingBase, decorateText]);
 
   // Report after render, never during it.
   useEffect(() => {

@@ -757,7 +757,9 @@ pillow==13.0.0 \
     --hash=sha256:e98b4f91f99b24b1da72e10621ba181f7281922384a7403094debb4199de6c00 \
     --hash=sha256:ef5fe6b7db3f501c56000ba8fe7c7e1a35ca1d45824fbeb95a67daa85cff4dbe \
     --hash=sha256:f11a3c1358bb3c68012a7b1f41b223c3db9f7bfde90b481df028cfe1c3363313
-    # via fastembed
+    # via
+    #   fastembed
+    #   naadi-api
 postgrest==2.34.1 \
     --hash=sha256:7abb123b050011408f61410e334b4288c5c69768acea4eef8c4c1e518853c09a \
     --hash=sha256:fb3f7b225601b9bd6dfbf439a341f67302b3b7fbb43868a347fc438440d77601

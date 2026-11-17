@@ -69,7 +69,12 @@ GC_LOCK_KEY = 0x6E6B_6763  # pg advisory lock id for the purge: one worker runs 
 
 def default_limiters() -> dict[str, RateLimiter]:
     # A device flushes at most every 800 ms while drawing and refetches every 30 s per mounted surface.
-    return {"ink_read": RateLimiter(600, 60.0), "ink_write": RateLimiter(300, 60.0)}
+    # Convert to text is one vision call per request (segment 13).
+    return {
+        "ink_read": RateLimiter(600, 60.0),
+        "ink_write": RateLimiter(300, 60.0),
+        "ink_convert": RateLimiter(10, 60.0),
+    }
 
 
 def _limited(bucket: str) -> Any:
@@ -207,6 +212,18 @@ def _prepare(raw: list[Any], server_now: int) -> tuple[list[dict[str, Any]], lis
     return list(by_id.values()), rejected, clamped
 
 
+async def _ocr_min_items(request: Request) -> int | None:
+    """app_config `ink_ocr` (cached by the config service): None when handwriting OCR is switched off."""
+    from ..config_api.schemas import InkOcrRules
+
+    try:
+        rules = InkOcrRules.model_validate(await request.app.state.app_config.get("ink_ocr"))
+    except Exception as exc:  # noqa: BLE001 - a config problem must never block saving ink
+        log.warning("ink_ocr_config_unreadable", error=type(exc).__name__)
+        return None
+    return rules.min_items if rules.enabled else None
+
+
 @router.post(
     "/ink/{surface_type}/{surface_id}/changes",
     operation_id="postInkChanges",
@@ -231,10 +248,13 @@ async def post_ink_changes(
     surface = await _surface(db, user, surface_type, surface_id)
     server_now = now_ms()
     items, rejected, clamped = _prepare(body.items, server_now)
+    ocr_min_items = await _ocr_min_items(request)
 
     async def run() -> InkChangesOut:
         async with _service_tx(db) as conn:
-            r = await apply_changes(conn, user.user_id, surface, body.base_rev, items, echo=clamped)
+            r = await apply_changes(
+                conn, user.user_id, surface, body.base_rev, items, echo=clamped, ocr_min_items=ocr_min_items
+            )
         stale = {i: InkRejected(id=i, reason="stale") for i in r.stale}
         log.info(
             "ink_changes",
@@ -311,6 +331,9 @@ def install_ink_routes(app: Any) -> None:
         limiters.setdefault(k, v)
     app.state.rate_limiters = limiters
     app.include_router(router)
+    from .convert import install_convert_route
+
+    install_convert_route(app)
 
 
 __all__ = ["install_ink_routes", "router", "run_purge", "start_ink_gc", "stop_ink_gc"]

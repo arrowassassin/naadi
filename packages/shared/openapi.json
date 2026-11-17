@@ -134,6 +134,106 @@
         "title": "AgentRuntimeFacts",
         "type": "object"
       },
+      "AnchorCounts": {
+        "properties": {
+          "free": {
+            "title": "Free",
+            "type": "integer"
+          },
+          "pdf": {
+            "title": "Pdf",
+            "type": "integer"
+          },
+          "question": {
+            "title": "Question",
+            "type": "integer"
+          },
+          "section": {
+            "title": "Section",
+            "type": "integer"
+          },
+          "video": {
+            "title": "Video",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "section",
+          "question",
+          "video",
+          "pdf",
+          "free"
+        ],
+        "title": "AnchorCounts",
+        "type": "object"
+      },
+      "AnchorPos": {
+        "additionalProperties": false,
+        "description": "Where a highlight sits. Section anchors: ProseMirror positions in the section body. Question anchors: UTF-16\noffsets into the text of the explanation. `quote` (+ `prefix`/`suffix`) re-anchors it when positions drift;\n`revision` is the web's fingerprint of the content it was made on. Stored as sent.",
+        "properties": {
+          "detached": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set by the web when the quote can no longer be found (listed as Detached)",
+            "title": "Detached"
+          },
+          "from": {
+            "maximum": 100000000.0,
+            "minimum": 0.0,
+            "title": "From",
+            "type": "integer"
+          },
+          "prefix": {
+            "default": "",
+            "maxLength": 64,
+            "title": "Prefix",
+            "type": "string"
+          },
+          "quote": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Quote",
+            "type": "string"
+          },
+          "revision": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revision"
+          },
+          "suffix": {
+            "default": "",
+            "maxLength": 64,
+            "title": "Suffix",
+            "type": "string"
+          },
+          "to": {
+            "maximum": 100000000.0,
+            "minimum": 0.0,
+            "title": "To",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "quote"
+        ],
+        "title": "AnchorPos",
+        "type": "object"
+      },
       "AttemptIn": {
         "additionalProperties": false,
         "properties": {
@@ -1875,6 +1975,29 @@
         "title": "CoachSuggestionOut",
         "type": "object"
       },
+      "ColorCounts": {
+        "properties": {
+          "amber": {
+            "title": "Amber",
+            "type": "integer"
+          },
+          "lime": {
+            "title": "Lime",
+            "type": "integer"
+          },
+          "violet": {
+            "title": "Violet",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "lime",
+          "violet",
+          "amber"
+        ],
+        "title": "ColorCounts",
+        "type": "object"
+      },
       "ComponentHealth": {
         "properties": {
           "agent": {
@@ -3349,6 +3472,28 @@
         "title": "InkChangesOut",
         "type": "object"
       },
+      "InkConvertOut": {
+        "properties": {
+          "lines": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Lines",
+            "type": "array"
+          },
+          "text": {
+            "description": "Recognised text, lines joined with newlines; empty when nothing was legible",
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "lines"
+        ],
+        "title": "InkConvertOut",
+        "type": "object"
+      },
       "InkLayerOut": {
         "properties": {
           "hash": {
@@ -4176,6 +4321,1016 @@
         "title": "NextUp",
         "type": "object"
       },
+      "NoteCounts": {
+        "description": "Over all of the caller's notes (not filtered).",
+        "properties": {
+          "by_anchor": {
+            "$ref": "#/components/schemas/AnchorCounts",
+            "description": "Notes and highlights per anchor type (pages excluded)"
+          },
+          "by_color": {
+            "$ref": "#/components/schemas/ColorCounts",
+            "description": "Highlights per colour"
+          },
+          "highlights": {
+            "title": "Highlights",
+            "type": "integer"
+          },
+          "notes": {
+            "title": "Notes",
+            "type": "integer"
+          },
+          "pages": {
+            "title": "Pages",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "notes",
+          "highlights",
+          "pages",
+          "by_color",
+          "by_anchor"
+        ],
+        "title": "NoteCounts",
+        "type": "object"
+      },
+      "NoteCreate": {
+        "additionalProperties": false,
+        "description": "`kind 'page'` is created with POST /api/notebooks/{id}/pages. Replaying a create with the same `id` returns\nthe stored note (200); so does a second `kind 'note'` on a section that already has one.",
+        "properties": {
+          "anchor_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,199}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Id"
+          },
+          "anchor_pos": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnchorPos"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "anchor_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "section",
+                  "question",
+                  "video",
+                  "pdf",
+                  "free"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Type"
+          },
+          "body": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body"
+          },
+          "canvas": {
+            "default": "paper",
+            "enum": [
+              "paper",
+              "whiteboard"
+            ],
+            "title": "Canvas",
+            "type": "string"
+          },
+          "highlight_color": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Highlight Color"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Client-made id (offline queue): makes the create idempotent",
+            "title": "Id"
+          },
+          "kind": {
+            "default": "note",
+            "enum": [
+              "note",
+              "highlight"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "notebook_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notebook Id"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "NoteCreate",
+        "type": "object"
+      },
+      "NoteList": {
+        "properties": {
+          "counts": {
+            "$ref": "#/components/schemas/NoteCounts"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/NoteOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_offset": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Pass as `offset` for the next page; null on the last page",
+            "title": "Next Offset"
+          }
+        },
+        "required": [
+          "items",
+          "counts",
+          "next_offset"
+        ],
+        "title": "NoteList",
+        "type": "object"
+      },
+      "NoteOut": {
+        "properties": {
+          "anchor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Id"
+          },
+          "anchor_pos": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnchorPos"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "anchor_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "section",
+                  "question",
+                  "video",
+                  "pdf",
+                  "free"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Type"
+          },
+          "body": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "TipTap JSON (canvas paper) or an Excalidraw scene (canvas whiteboard); null in lists for whiteboards (`body_omitted`)",
+            "title": "Body"
+          },
+          "body_omitted": {
+            "default": false,
+            "description": "true when `body` was left out (fetch the note)",
+            "title": "Body Omitted",
+            "type": "boolean"
+          },
+          "body_text": {
+            "description": "Plain text of the body, computed by the server",
+            "title": "Body Text",
+            "type": "string"
+          },
+          "canvas": {
+            "enum": [
+              "paper",
+              "whiteboard"
+            ],
+            "title": "Canvas",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "excerpt": {
+            "description": "body_text on one line, at most ~280 characters",
+            "title": "Excerpt",
+            "type": "string"
+          },
+          "has_ink": {
+            "description": "A notebook page with live ink items on its notebook_page layer",
+            "title": "Has Ink",
+            "type": "boolean"
+          },
+          "highlight_color": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Highlight Color"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "note",
+              "highlight",
+              "page"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "notebook_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notebook Id"
+          },
+          "paper": {
+            "anyOf": [
+              {
+                "enum": [
+                  "ruled",
+                  "dotted",
+                  "grid",
+                  "cornell",
+                  "blank"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A page's paper override; null = the notebook's paper",
+            "title": "Paper"
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "integer"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NoteSource"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null when unanchored or the anchor is no longer visible"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "notebook_id",
+          "anchor_type",
+          "anchor_id",
+          "anchor_pos",
+          "highlight_color",
+          "body",
+          "body_text",
+          "excerpt",
+          "paper",
+          "canvas",
+          "sort",
+          "source",
+          "has_ink",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "NoteOut",
+        "type": "object"
+      },
+      "NotePatch": {
+        "additionalProperties": false,
+        "description": "Partial update: only the fields sent change; `null` clears a nullable field. `kind` never changes.",
+        "properties": {
+          "anchor_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,199}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Id"
+          },
+          "anchor_pos": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnchorPos"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "anchor_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "section",
+                  "question",
+                  "video",
+                  "pdf",
+                  "free"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Type"
+          },
+          "body": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body"
+          },
+          "canvas": {
+            "anyOf": [
+              {
+                "enum": [
+                  "paper",
+                  "whiteboard"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canvas"
+          },
+          "highlight_color": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Highlight Color"
+          },
+          "if_updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Refuse (409 note_conflict) unless the stored note still has this updated_at",
+            "title": "If Updated At"
+          },
+          "notebook_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notebook Id"
+          },
+          "paper": {
+            "anyOf": [
+              {
+                "enum": [
+                  "ruled",
+                  "dotted",
+                  "grid",
+                  "cornell",
+                  "blank"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paper"
+          },
+          "sort": {
+            "anyOf": [
+              {
+                "maximum": 100000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sort"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "NotePatch",
+        "type": "object"
+      },
+      "NoteSource": {
+        "description": "What a note's anchor points at, for source chips and links (structured; the web words it). Only what the\ncaller may see: a section of a chapter they can read, a question they attempted (never stem or answer).",
+        "properties": {
+          "block_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Block of the caller's latest graded attempt",
+            "title": "Block Id"
+          },
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Id"
+          },
+          "chapter_title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Title"
+          },
+          "media_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Media Id"
+          },
+          "question_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question Id"
+          },
+          "question_number": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "1-based position of the question in that block",
+            "title": "Question Number"
+          },
+          "section_heading": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Section Heading"
+          },
+          "section_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Section Id"
+          },
+          "section_revision": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "md5 of the section's current body (the ink API's content revision)",
+            "title": "Section Revision"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Video title or PDF file name",
+            "title": "Title"
+          },
+          "type": {
+            "enum": [
+              "section",
+              "question",
+              "video",
+              "pdf"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "upload_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Id"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "NoteSource",
+        "type": "object"
+      },
+      "NotebookCreate": {
+        "additionalProperties": false,
+        "description": "Creates the notebook with its first page.",
+        "properties": {
+          "cover": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber",
+                  "paper",
+                  "surface-2",
+                  "ink-violet"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover"
+          },
+          "first_page_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Client-made id of page 1",
+            "title": "First Page Id"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Client-made id: makes the create idempotent",
+            "title": "Id"
+          },
+          "paper": {
+            "default": "ruled",
+            "enum": [
+              "ruled",
+              "dotted",
+              "grid",
+              "cornell",
+              "blank"
+            ],
+            "title": "Paper",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "title": "NotebookCreate",
+        "type": "object"
+      },
+      "NotebookDetail": {
+        "properties": {
+          "cover": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber",
+                  "paper",
+                  "surface-2",
+                  "ink-violet"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "note_count": {
+            "description": "Typed notes filed in this notebook (pages not counted)",
+            "title": "Note Count",
+            "type": "integer"
+          },
+          "page_count": {
+            "title": "Page Count",
+            "type": "integer"
+          },
+          "pages": {
+            "description": "kind 'page' notes in order (bodies of whiteboards omitted)",
+            "items": {
+              "$ref": "#/components/schemas/NoteOut"
+            },
+            "title": "Pages",
+            "type": "array"
+          },
+          "paper": {
+            "enum": [
+              "ruled",
+              "dotted",
+              "grid",
+              "cornell",
+              "blank"
+            ],
+            "title": "Paper",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "cover",
+          "paper",
+          "page_count",
+          "note_count",
+          "created_at",
+          "updated_at",
+          "pages"
+        ],
+        "title": "NotebookDetail",
+        "type": "object"
+      },
+      "NotebookList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/NotebookOut"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "NotebookList",
+        "type": "object"
+      },
+      "NotebookOut": {
+        "properties": {
+          "cover": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber",
+                  "paper",
+                  "surface-2",
+                  "ink-violet"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "note_count": {
+            "description": "Typed notes filed in this notebook (pages not counted)",
+            "title": "Note Count",
+            "type": "integer"
+          },
+          "page_count": {
+            "title": "Page Count",
+            "type": "integer"
+          },
+          "paper": {
+            "enum": [
+              "ruled",
+              "dotted",
+              "grid",
+              "cornell",
+              "blank"
+            ],
+            "title": "Paper",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "cover",
+          "paper",
+          "page_count",
+          "note_count",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "NotebookOut",
+        "type": "object"
+      },
+      "NotebookPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "cover": {
+            "anyOf": [
+              {
+                "enum": [
+                  "lime",
+                  "violet",
+                  "amber",
+                  "paper",
+                  "surface-2",
+                  "ink-violet"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover"
+          },
+          "paper": {
+            "anyOf": [
+              {
+                "enum": [
+                  "ruled",
+                  "dotted",
+                  "grid",
+                  "cornell",
+                  "blank"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paper"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "NotebookPatch",
+        "type": "object"
+      },
       "OnboardingIn": {
         "additionalProperties": false,
         "properties": {
@@ -4430,6 +5585,140 @@
           "materials"
         ],
         "title": "OnboardingValues",
+        "type": "object"
+      },
+      "PageCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:\\-]{0,199}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Id"
+          },
+          "anchor_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "section",
+                  "question",
+                  "video",
+                  "pdf"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anchor Type"
+          },
+          "body": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body"
+          },
+          "canvas": {
+            "default": "paper",
+            "enum": [
+              "paper",
+              "whiteboard"
+            ],
+            "title": "Canvas",
+            "type": "string"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Client-made id: makes the create idempotent",
+            "title": "Id"
+          },
+          "paper": {
+            "anyOf": [
+              {
+                "enum": [
+                  "ruled",
+                  "dotted",
+                  "grid",
+                  "cornell",
+                  "blank"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paper"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "maximum": 100000.0,
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "0-based place among the pages; default: at the end",
+            "title": "Position"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "title": "PageCreate",
+        "type": "object"
+      },
+      "PageOrder": {
+        "additionalProperties": false,
+        "properties": {
+          "page_ids": {
+            "description": "Every page of the notebook exactly once, in the new order",
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "title": "Page Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "page_ids"
+        ],
+        "title": "PageOrder",
         "type": "object"
       },
       "PathwayStageOut": {
@@ -5304,6 +6593,14 @@
             },
             "title": "Nav",
             "type": "array"
+          },
+          "storage_buckets": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Supabase Storage bucket names the web uploads to (app_config.storage.user_uploads); not secret",
+            "title": "Storage Buckets",
+            "type": "object"
           },
           "supabase_anon_key": {
             "anyOf": [
@@ -6714,6 +8011,18 @@
             ],
             "title": "Guide Key"
           },
+          "kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A note's kind (note, highlight, page)",
+            "title": "Kind"
+          },
           "note_id": {
             "anyOf": [
               {
@@ -7759,7 +9068,7 @@
                 }
               }
             },
-            "description": "The request body is larger than 64 KB"
+            "description": "The request body is larger than 256 KB"
           },
           "422": {
             "content": {
@@ -10633,6 +11942,108 @@
         ]
       }
     },
+    "/api/ink/convert": {
+      "post": {
+        "operationId": "convertInkToText",
+        "requestBody": {
+          "content": {
+            "image/png": {
+              "schema": {
+                "format": "binary",
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InkConvertOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ink_convert_too_large (over 4 MB)"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ink_convert_not_png"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ink_convert_invalid (not decodable, or a side over 4096 px)"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "rate_limited, ink_convert_daily_cap or ink_convert_budget (Retry-After set)"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ink_convert_failed (the model did not answer as asked)"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ink_convert_unavailable"
+          }
+        },
+        "summary": "Recognise the handwriting in a lasso selection (PNG body) and return the text; nothing is stored",
+        "tags": [
+          "ink"
+        ]
+      }
+    },
     "/api/ink/{surface_type}/{surface_id}": {
       "get": {
         "operationId": "getInkLayer",
@@ -11083,6 +12494,1244 @@
         "summary": "Navigation for the signed-in user: enabled items only, plus shell feature flags",
         "tags": [
           "auth"
+        ]
+      }
+    },
+    "/api/notebooks": {
+      "get": {
+        "operationId": "listNotebooks",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "The caller's notebooks, most recently changed first, with page and note counts",
+        "tags": [
+          "notes"
+        ]
+      },
+      "post": {
+        "operationId": "createNotebook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotebookCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookDetail"
+                }
+              }
+            },
+            "description": "Replayed: the stored notebook"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_id_conflict or notebook_limit"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Create a notebook with its first page. A replay with the same id returns the stored notebook (200)",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/notebooks/{notebook_id}": {
+      "delete": {
+        "operationId": "deleteNotebook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "notebook_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Notebook Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Delete a notebook with its pages (their ink and index rows); notes filed in it stay, unfiled",
+        "tags": [
+          "notes"
+        ]
+      },
+      "get": {
+        "operationId": "getNotebook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "notebook_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Notebook Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "One of the caller's notebooks with its pages in order",
+        "tags": [
+          "notes"
+        ]
+      },
+      "patch": {
+        "operationId": "updateNotebook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "notebook_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Notebook Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotebookPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Rename a notebook or change its cover or paper",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/notebooks/{notebook_id}/pages": {
+      "post": {
+        "operationId": "createNotebookPage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "notebook_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Notebook Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PageCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Replayed: the stored page"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_question_not_attempted (no graded answer on that question yet)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_anchor_not_found (anchor not visible), notebook_not_found or note_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_page_limit, note_id_conflict or note_limit"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_body_too_large (the body is over 1 MB)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, note_invalid or note_body_invalid"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Add a page to a notebook (at `position`, default the end). A replay with the same id returns it (200)",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/notebooks/{notebook_id}/pages/order": {
+      "put": {
+        "operationId": "reorderNotebookPages",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "notebook_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Notebook Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PageOrder"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "notebook_pages_changed: the list is not the current pages"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Put a notebook's pages in a new order (every page exactly once)",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/notes": {
+      "get": {
+        "operationId": "listNotes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "kind",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "note",
+                    "highlight",
+                    "page"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Kind"
+            }
+          },
+          {
+            "in": "query",
+            "name": "color",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "lime",
+                    "violet",
+                    "amber"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Color"
+            }
+          },
+          {
+            "in": "query",
+            "name": "anchor_type",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "section",
+                    "question",
+                    "video",
+                    "pdf",
+                    "free"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Anchor Type"
+            }
+          },
+          {
+            "in": "query",
+            "name": "anchor_id",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Anchor Id"
+            }
+          },
+          {
+            "in": "query",
+            "name": "notebook_id",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Notebook Id"
+            }
+          },
+          {
+            "description": "Substring of title, text or quote",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Substring of title, text or quote",
+              "title": "Q"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "false: every body is left out (body_omitted)",
+            "in": "query",
+            "name": "include_body",
+            "required": false,
+            "schema": {
+              "default": true,
+              "description": "false: every body is left out (body_omitted)",
+              "title": "Include Body",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "The caller's notes, highlights and pages (filtered), plus counts over all of them",
+        "tags": [
+          "notes"
+        ]
+      },
+      "post": {
+        "operationId": "createNote",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NoteCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Replayed: the stored note"
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_question_not_attempted (no graded answer on that question yet)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_anchor_not_found (anchor not visible), notebook_not_found or note_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_id_conflict or note_limit"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_body_too_large (the body is over 1 MB)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, note_invalid or note_body_invalid"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Create a note or a highlight. A replay with the same id (or a second note on a section) returns the stored note with 200",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/notes/{note_id}": {
+      "delete": {
+        "operationId": "deleteNote",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "note_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Note Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Delete one of the caller's notes with its index rows (a page also loses its ink)",
+        "tags": [
+          "notes"
+        ]
+      },
+      "get": {
+        "operationId": "getNote",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "note_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Note Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "One of the caller's notes with its body",
+        "tags": [
+          "notes"
+        ]
+      },
+      "patch": {
+        "operationId": "updateNote",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "note_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Note Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotePatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_question_not_attempted (no graded answer on that question yet)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_anchor_not_found (anchor not visible), notebook_not_found or note_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_conflict (if_updated_at did not match) or note_section_has_note"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "note_body_too_large (the body is over 1 MB)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, note_invalid or note_body_invalid"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable (code notes_unavailable)"
+          }
+        },
+        "summary": "Partial update of one of the caller's notes (null clears a nullable field)",
+        "tags": [
+          "notes"
         ]
       }
     },

@@ -29,7 +29,7 @@ from .auth_limits import RateLimiter
 from .db import Database, DatabaseNotConfigured
 from .embeddings.engine import Engine, ModelsNotCached, spec_from_config
 from .embeddings.index import index_counts
-from .embeddings.jobs import IndexJobs
+from .embeddings.jobs import IndexJobs, register_index_jobs
 from .embeddings.query import Hit, Scope, search_local
 from .embeddings.sources import KINDS, Kind
 from .errors import ErrorResponse
@@ -81,6 +81,7 @@ class Target(BaseModel):
     section_id: str | None = None
     question_id: str | None = None
     note_id: str | None = None
+    kind: str | None = Field(default=None, description="A note's kind (note, highlight, page)")
     anchor_type: str | None = None
     anchor_id: str | None = None
     surface_type: str | None = None
@@ -384,6 +385,7 @@ def install_search_routes(app: Any, engine: Engine | None = None) -> None:
     db: Database = app.state.db
     eng = engine or Engine(spec_from_config(app.state.settings.config_dir))
     app.state.embedding_jobs = IndexJobs(db, eng)
+    register_index_jobs(app.state.embedding_jobs)
     app.include_router(router)
 
 
