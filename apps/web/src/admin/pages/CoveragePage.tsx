@@ -88,7 +88,7 @@ function HeatMap({ data }: { data: Coverage }) {
       aria-label={t("admin.coverage.grid_label")}
       // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
       tabIndex={0}
-      className="overflow-x-auto rounded-block border border-line-soft [-webkit-overflow-scrolling:touch]"
+      className="relative overflow-x-auto rounded-block border border-line-soft [-webkit-overflow-scrolling:touch]"
     >
       <table className="w-full min-w-[40rem] border-collapse text-left" data-testid="coverage-grid">
         <caption className="sr-only">{t("admin.coverage.grid_label")}</caption>
@@ -230,7 +230,7 @@ export function CoveragePage({ search }: { search: ExamSearch }) {
                 aria-label={t("admin.coverage.topics")}
                 // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
                 tabIndex={0}
-                className="overflow-x-auto"
+                className="relative overflow-x-auto"
               >
                 <table className="w-full min-w-[36rem] border-collapse text-left text-ui-sm">
                   <thead>

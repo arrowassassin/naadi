@@ -43,11 +43,19 @@ function ElsewhereLink({ q }: { q: QueueCount }) {
       </DynamicLink>
       {q.filters.length ? (
         <span className="flex flex-wrap gap-2 text-ui-sm text-text-2">
-          {q.filters.map((f) => (
-            <span key={f} className="rounded-pill border border-line-chip px-2.5 py-1">
-              {t(`admin.queues.${q.kind}.filter.${f}`)}
-            </span>
-          ))}
+          {q.filters.map((f) => {
+            // Filter names are the owning segment's ui_copy; one it has not worded yet is left out, never shown raw.
+            const key = `admin.queues.${q.kind}.filter.${f}`;
+            const word = t(key);
+            return word === key ? null : (
+              <span
+                key={f}
+                className="max-w-full rounded-pill border border-line-chip px-2.5 py-1 [overflow-wrap:anywhere]"
+              >
+                {word}
+              </span>
+            );
+          })}
         </span>
       ) : null}
     </span>
@@ -70,9 +78,9 @@ export function QueuesPage() {
       ) : (
         <ul className="m-0 grid list-none gap-4 p-0 tablet:grid-cols-2 laptop:grid-cols-3">
           {list.data.items.map((q) => (
-            <li key={q.kind}>
-              <Tile as="article" className="flex h-full flex-col gap-3" data-queue={q.kind}>
-                <h2 className="m-0 font-semibold text-[1.125rem]">{title(q.kind)}</h2>
+            <li key={q.kind} className="min-w-0">
+              <Tile as="article" className="flex h-full min-w-0 flex-col gap-3" data-queue={q.kind}>
+                <h2 className="m-0 font-semibold text-[1.125rem] [overflow-wrap:anywhere]">{title(q.kind)}</h2>
                 <span className="font-display font-bold text-[2.5rem] leading-none tracking-[-0.03em]">
                   {fmtNumber(q.count)}
                 </span>

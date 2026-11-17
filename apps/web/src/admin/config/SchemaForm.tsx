@@ -412,7 +412,7 @@ export function LineDiff({ lines, label }: { lines: DiffLine[]; label: string })
       aria-label={label}
       // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
       tabIndex={0}
-      className="max-h-[60vh] overflow-auto rounded-block border border-line-soft bg-ground"
+      className="relative max-h-[60vh] overflow-auto rounded-block border border-line-soft bg-ground"
     >
       <ol className="m-0 list-none p-0 font-mono text-[0.8125rem] leading-relaxed">
         {rows.map((r, i) =>

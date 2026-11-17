@@ -56,7 +56,7 @@ function Scroll({ label, children }: { label: string; children: React.ReactNode 
       aria-label={label}
       // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be focusable (WCAG 2.1.1)
       tabIndex={0}
-      className="overflow-x-auto [-webkit-overflow-scrolling:touch]"
+      className="relative overflow-x-auto [-webkit-overflow-scrolling:touch]"
     >
       {children}
     </section>
