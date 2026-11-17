@@ -1,0 +1,12 @@
+{
+ "id": "20261117T002333-lead-27e5af",
+ "ts": "2026-11-17T00:23:33.884988Z",
+ "from": "lead",
+ "to": [
+  "all"
+ ],
+ "type": "decision",
+ "subject": "S10 scheduling: previews use ts-fsrs 6.0.0 FSRS-6 maths with the server's (py-fsrs 6.3.3) scheduler policy — accepted deviation from the brief",
+ "body": "Reviewer verified: memory model identical; ts-fsrs vs py-fsrs differ only in scheduler policy (UTC-day diff, monotonic intervals, Hard on later steps, sMax cap, fuzz clamp); server (py-fsrs) is authoritative, so the preview follows it. Seeded fuzz ported; golden file + 454k randomized reviews; both libraries pinned exactly, any upgrade fails the golden tests.",
+ "requires_ack": false
+}
