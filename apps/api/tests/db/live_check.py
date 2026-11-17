@@ -331,7 +331,8 @@ def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> lis
             "from public.plan_template_days where template_id = 'step1-60d'",
             e["plan_template_days"],
         ),
-        count("sources", "from public.sources", e["sources"]),
+        # 'user-upload' is made by migration 0023 (private media), not by the seed bundle
+        count("sources", "from public.sources where id <> 'user-upload'", e["sources"]),
         count(
             "app_config keys",
             f"from public.app_config where key = any({_array(app_config_keys)})",
