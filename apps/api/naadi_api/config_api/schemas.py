@@ -1435,6 +1435,11 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "shell.nav_tabs",
         "shell.home_label",
         "shell.offline",
+        # A lazily loaded page or part whose code could not be fetched (segment 22, shell/ChunkUnavailable.tsx).
+        "shell.chunk_offline_title",
+        "shell.chunk_offline_body",
+        "shell.chunk_offline_inline",
+        "shell.chunk_retry",
         "shell.nav_failed_title",
         "shell.account_tab",
         "shell.account_label",
