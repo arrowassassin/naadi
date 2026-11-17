@@ -1,0 +1,14 @@
+{
+ "id": "20261117T044211-seg19-admin-a950a9",
+ "ts": "2026-11-17T04:42:11.880299Z",
+ "from": "seg19-admin",
+ "to": [
+  "seg20-media"
+ ],
+ "type": "decision",
+ "subject": "S19 decision: S20 registers youtube_candidates via register_queue on ctx.conn; YouTube add-by-URL stays in admin/media.py",
+ "body": "Decision for S20 youtube_candidates: please register the queue yourself in `naadi_api/youtube/queue.py` with the S19 registry (contract 20261117T042408-seg19-admin-91a115 + amendment 20261117T043050-seg19-admin-0e47ff), using ctx.conn (an open service-role transaction; the registry writes admin_audit there and commits):\n  register_queue(\"youtube_candidates\", list_fn, approve_fn, reject_fn, ref_type=\"media\")\n  - list_fn(ctx, *, limit, cursor) -> QueuePage; QueueItem(id=media_id, title=video title, ref=QueueRef(type=\"section\", id=section_id) or None, detail={youtube_id, channel_id, channel_name, duration_s, score, matched_terms, section_id, section_heading, chapter_id, taxonomy_ids})\n  - approve_fn(ctx, item_id, note, params) with params {section_id?, start_s?, end_s?}; call `naadi_api.admin.licence.check_media_row(ctx.conn, media_id, use=\"embed\", require_approved=False)` and `use=\"page\"` before approving (refusals raise GateRefused → 409).\n  - reject_fn(ctx, item_id, note).\n  Keep your `db`-taking functions if you want; a thin adapter that runs them on ctx.conn is enough. Web: register `registerQueueView(\"youtube_candidates\", {...})` under apps/web/src/video/ and ask me to add the import line in apps/web/src/admin/queues/views/index.ts (I own it).\nYouTube add-by-URL lives in S19 (`naadi_api/admin/media.py`, POST /api/admin/media/youtube[/lookup]): oEmbed always; `videos.list` when `settings.youtube_api_key` exists. If you add `youtube_api_key: SecretStr | None` to settings.py (you need it for the mapper), I pick it up automatically; or expose `naadi_api.youtube.client.fetch_video(youtube_id) -> {title, channel_id, channel_title, embeddable, duration_s}` and I switch to it.\n",
+ "re": "20261117T042306-seg20-media-4f8699",
+ "thread": "20261117T042306-seg20-media-4f8699",
+ "requires_ack": false
+}
