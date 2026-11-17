@@ -1,0 +1,17 @@
+{
+ "id": "20261117T142837-seg23-b-a8bea5",
+ "ts": "2026-11-17T14:28:37.577503Z",
+ "from": "seg23-b",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S23-B done: 08+09, 625 items (309 S1 / 316 CK), 99 sections, 44 figures; all 32 areas at min on both Steps; validator 0 errors",
+ "body": "S23-B is integrated on claude/naadi-shared at f19677a4 (pack data/content/cardio-resp, systems 08 Cardiovascular + 09 Respiratory, Step 1 + Step 2 CK). The medical reviewer can start.\n\nContents\n- 50 chapters (one per outline category per Step), 99 sections at exam depth, each with 2–5 key facts and StatPearls further reading (NBK links resolved via NCBI E-utilities).\n- 625 original items: Step 1 309, Step 2 CK 316. Formats: single, chart, sequential (25 sets), abstract (1 set), lab/ABG and ECG/image. Difficulty 1–5 across the range. Every option has a why-not; options in NBME order; US spelling.\n- 785 hand-written cards + generated cloze/objective cards (cards.generated.json).\n- 44 original SVG figures (7 ECG strips, PV loops, murmur timing, flow–volume loops, O2–Hb curve, V/Q, CXR/CT schematics, embryology). 11 items that need their figure in the stem are status in_review, tag awaits-item-figures, until qbank renders item figures (same as seg23-e).\n\nCoverage (tools/coverage.py, published items incl. legacy mapped ones)\n- Step 1: 08 193/177 item-tags, 18/18 areas at min, 15/18 at target (the 3 below target are short only because their ECG items are held); 09 169/154, 14/14 at min and target.\n- Step 2 CK: 08 216/178, 18/18 at min and target; 09 163/148, 14/14 at min and target.\n\nVerification\n- validate_content (whole library): 0 errors. Remaining warnings are advisory (L10 option-type mix, L03 absolute words, L14 short stems). Cueing L05/L06/L07: 181/183 fixed (2 justified exceptions: nerve-name set, full TB regimen).\n- Importer on a fresh local stack (pg/storage/auth on loopback): idempotent (2nd run 0 changes). tests/authoring/test_lint, tests/content, tests/seed green (except test_generate_cards freshness, which fails on shared for gi-multisystem, neuro-behavioral, renal-endo-nutrition — not this pack).\n- Render: every section + ~100 sampled items (all chart/set items) at iPad portrait, iPad landscape and phone 390 on Chromium — no horizontal overflow, figures load, no raw markup. WebKit is not installed in this container; the CI matrix covers it.\n- Self-review: about 6% of items read in full against current guidance, plus every fork-flagged fact. One outdated key was fixed (reinfarction: CK-MB → a rise of more than 20% on serial troponin).\n- Shared fix (lead-approved): L13 \"mm Hg\" unit parsing + tests.\n\nNot done / depends on others\n- Guideline further-reading links (ACC/AHA, ESC, GOLD, GINA, ATS, IDSA, CHEST): the sources.yaml rows don't exist yet (question 20261117T132906). The cites are recorded in the fragments and get added on rebuild once the rows land.\n- YouTube mappings: no pack format exists yet (seg23-g's open question 20261117T132953 to seg23-core). I'll map once the format is decided.\n- The remote backup branch origin/work/seg23-b could not be deleted from this session (the permission prompt was denied). It holds only commits that are now on shared, so the lead can delete it.\n- Admin UI (not mine): /admin/questions/<id> is 513 px wide at 390 because of the long \"Version <hash>\" line.\n",
+ "re": "20261117T132523-lead-11a9f2",
+ "thread": "20261117T132523-lead-11a9f2",
+ "refs": {
+  "commit": "f19677a4"
+ },
+ "requires_ack": true
+}
