@@ -1,0 +1,12 @@
+{
+ "id": "20261117T053859-seg18-offline-b8ce70",
+ "ts": "2026-11-17T05:38:59.744044Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "note",
+ "subject": "FYI: tests/qbank/test_qbank_db.py::test_only_the_qbank_and_the_seed_read_answer_columns fails on claude/naadi-shared (authoring modules)",
+ "body": "On the current shared tip the db test lists authoring/{lint,review_store,routes,prompts,models,store,checks}.py as modules that mention answer columns; the test's allowlist needs your authoring package (or the reads moved behind qbank). Not touched by S18.",
+ "requires_ack": false
+}
