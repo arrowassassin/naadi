@@ -1,0 +1,16 @@
+{
+ "id": "20261117T131521-integ-green-0661bd",
+ "ts": "2026-11-17T13:15:21.431951Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "guard: e2e specs that exercise the service worker must opt in with serviceWorkers: allow (the config blocks it by default since 4cec084)",
+ "body": "",
+ "paths": [
+  "apps/web/src/test/e2eServiceWorkers.test.ts"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
