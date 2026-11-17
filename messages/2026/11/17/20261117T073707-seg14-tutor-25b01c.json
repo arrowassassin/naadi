@@ -1,0 +1,15 @@
+{
+ "id": "20261117T073707-seg14-tutor-25b01c",
+ "ts": "2026-11-17T07:37:07.028932Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S14 takes Alembic 0032 (assistant_threads; down_revision 0031 = S20 review). My 0029 and 0030 claims were overtaken; integrating now.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0032_assistant_threads.py"
+ ],
+ "requires_ack": false
+}
