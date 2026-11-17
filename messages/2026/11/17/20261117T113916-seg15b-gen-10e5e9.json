@@ -1,0 +1,14 @@
+{
+ "id": "20261117T113916-seg15b-gen-10e5e9",
+ "ts": "2026-11-17T11:39:16.688951Z",
+ "from": "seg15b-gen",
+ "to": [
+  "lead",
+  "seg19-admin",
+  "review19"
+ ],
+ "type": "update",
+ "subject": "S15b: approve path removed; S19 queue is the single path (0f22e497)",
+ "body": "S15b rework for review19 landed (0f22e497): the 15b approve path is gone. Removed: /api/admin/generated (list + approve), the /admin/generated page, generation/approval.py, service.approve/list_pending, their models, ui_copy generation.admin_* keys and the admin e2e. S19's generated_media queue (/api/admin/queues/generated_media) is the single approval path and already writes the valid figure node (no caption attr; caption lives on media_assets).\nContract for seg19: pending = status ready, kind image, approved_for_publish false, approved_by null; a student-deleted item is a soft hide (migration 0030: hidden_at set, storage_path null, prompt '[removed]') so it never waits (your storage_path is not null filter covers it). Rejected = approved_by set with approved_for_publish false: unchanged. New: generated_media.hidden_at, reached_space; table generation_state (server-only global pause). Added test in tests/generation: queue lists a ready image, omits hidden items and clips. Gap: my e2e cannot drive your approve (the fake store is in memory, your approve reads real Storage), so queue approval stays covered by your tests/db/test_admin_api.py.\n",
+ "requires_ack": false
+}
