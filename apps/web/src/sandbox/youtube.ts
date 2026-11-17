@@ -1,5 +1,5 @@
 /*
- * The YouTube player page, loaded only inside <iframe sandbox="allow-scripts allow-presentation"> (an opaque
+ * The YouTube player page, loaded only inside <iframe sandbox="allow-scripts"> (an opaque
  * origin: no cookies, no storage, no way to read the app's session) and served with its own CSP, the only place
  * that allows https://www.youtube.com scripts. It runs the official IFrame Player API, unmodified, and talks to the
  * app through the typed messages in src/video/bridge.ts. Nothing here runs until the student has pressed play:

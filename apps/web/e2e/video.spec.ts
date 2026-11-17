@@ -101,7 +101,7 @@ test.describe("YouTube player and video notes", () => {
       const frame = page.locator("[data-node=video] iframe");
       await expect(frame).toHaveAttribute("referrerpolicy", "strict-origin-when-cross-origin");
       await expect(frame).toHaveAttribute("src", "/sandbox/youtube.html");
-      await expect(frame).toHaveAttribute("sandbox", "allow-scripts allow-presentation");
+      await expect(frame).toHaveAttribute("sandbox", "allow-scripts");
       // init over the bridge reached the player page, which started the (fake) official player and played
       await expect.poll(() => fake(page, (y) => y.played)).toBe(1);
       // the app's own document allows no third-party script; the player page has its own, sandboxed policy
@@ -110,7 +110,7 @@ test.describe("YouTube player and video notes", () => {
       expect(appCsp).not.toContain("youtube");
       const playerCsp = (await page.request.get("/sandbox/youtube.html")).headers()["content-security-policy"] ?? "";
       expect(playerCsp).toContain("script-src 'self' https://www.youtube.com");
-      expect(playerCsp).toContain("sandbox allow-scripts allow-presentation");
+      expect(playerCsp).toContain("sandbox allow-scripts");
       expect(playerCsp).not.toContain("allow-same-origin");
 
       // source line and Terms link under the player

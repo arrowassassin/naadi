@@ -10,7 +10,9 @@
  */
 export const NS = "naadi:yt" as const;
 export const SANDBOX_URL = "/sandbox/youtube.html";
-export const SANDBOX_ATTR = "allow-scripts allow-presentation";
+/** No `allow-same-origin`: an opaque origin. (`allow-presentation` is not a valid flag in current browsers; fullscreen
+ * is the `allow` permission on the frame, not a sandbox flag.) */
+export const SANDBOX_ATTR = "allow-scripts";
 
 export type Command =
   | { cmd: "play" }

@@ -104,7 +104,7 @@ def test_the_youtube_player_page_has_its_own_opaque_origin_policy() -> None:
     assert d["script-src"] == ["'self'", "https://www.youtube.com"]
     assert d["frame-src"] == ["https://www.youtube-nocookie.com"]
     assert d["default-src"] == ["'none'"] and d["connect-src"] == ["'none'"]
-    assert d["sandbox"] == ["allow-scripts", "allow-presentation"]  # never allow-same-origin
+    assert d["sandbox"] == ["allow-scripts"]  # never allow-same-origin
     assert d["frame-ancestors"] == ["'self'"]
 
 
@@ -120,4 +120,4 @@ def test_each_sandbox_document_is_served_with_its_own_policy(static_dir: Path) -
     yt = c.get("/sandbox/youtube.html").headers["content-security-policy"]
     mm = c.get("/sandbox/mermaid.html").headers["content-security-policy"]
     assert "https://www.youtube.com" in yt and "https://www.youtube.com" not in mm
-    assert "sandbox allow-scripts allow-presentation" in yt
+    assert "sandbox allow-scripts" in yt

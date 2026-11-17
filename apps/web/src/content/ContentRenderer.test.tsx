@@ -213,7 +213,7 @@ describe("ContentRenderer", () => {
     expect(frame).not.toBeNull();
     // Same-origin static page, opaque origin: the third-party player script never shares the app's origin.
     expect(frame?.getAttribute("src")).toBe("/sandbox/youtube.html");
-    expect(frame?.getAttribute("sandbox")).toBe("allow-scripts allow-presentation");
+    expect(frame?.getAttribute("sandbox")).toBe("allow-scripts");
     expect(frame?.getAttribute("referrerpolicy")).toBe("strict-origin-when-cross-origin");
   });
 

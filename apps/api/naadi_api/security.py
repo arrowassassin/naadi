@@ -108,7 +108,7 @@ def youtube_sandbox_content_security_policy() -> str:
             "base-uri 'none'",
             "form-action 'none'",
             "frame-ancestors 'self'",
-            "sandbox allow-scripts allow-presentation",
+            "sandbox allow-scripts",
         ]
     )
 

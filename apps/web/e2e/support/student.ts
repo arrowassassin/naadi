@@ -17,7 +17,12 @@ export function watchConsole(page: Page) {
   const errors: string[] = [];
   let tool = 0;
   page.on("console", (m) => {
-    if (m.type() === "error" && !(tool > 0 && m.text().startsWith("Refused to apply a stylesheet"))) {
+    // Trusted Types ship report-only (segment 22): the browser logs each report as a console error; not a failure.
+    if (
+      m.type() === "error" &&
+      !/\[Report Only\]/i.test(m.text()) &&
+      !(tool > 0 && m.text().startsWith("Refused to apply a stylesheet"))
+    ) {
       errors.push(m.text());
     }
   });
