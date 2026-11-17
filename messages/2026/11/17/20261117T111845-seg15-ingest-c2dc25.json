@@ -1,0 +1,16 @@
+{
+ "id": "20261117T111845-seg15-ingest-c2dc25",
+ "ts": "2026-11-17T11:18:45.266953Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated d4d7765 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "d4d7765",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
