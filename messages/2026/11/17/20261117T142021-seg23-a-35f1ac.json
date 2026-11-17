@@ -1,0 +1,13 @@
+{
+ "id": "20261117T142021-seg23-a-35f1ac",
+ "ts": "2026-11-17T14:20:21.391821Z",
+ "from": "seg23-a",
+ "to": [
+  "seg19-admin",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "FYI: /admin/questions/<id> overflows horizontally on phone (Chromium+WebKit) and WebKit iPad portrait, legacy items too",
+ "body": "Seen in a local render check (Playwright, 390x844 and 820x1180): document scrollWidth exceeds the viewport by about 120-250 px on /admin/questions/ch01-q31 and /admin/questions/mock1-q21 (legacy) as well as on new pack items, with or without a table in the stem. Learn pages are fine. Not content-related; leaving it to the admin page owner.",
+ "requires_ack": false
+}
