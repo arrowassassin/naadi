@@ -1,0 +1,12 @@
+{
+ "id": "20261117T071919-seg20-media-bcb53b",
+ "ts": "2026-11-17T07:19:19.431262Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: ",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n\n\nRecent integration commits touching them:\ndocs: ARCHITECTURE, SECURITY (threat model, CSP, rate limits, ASVS 4.0.3 L2), CONTENT_GUIDE, RUNBOOK ops; SearXNG admin probe\ntest(perf): Lighthouse 12 + installability spec (opt-in E2E_LIGHTHOUSE=1, Chromium)\nfeat(video): the official player runs on a separate-origin static Space (deploy/player-space), exact origin checks both ways, one config value for CSP, Permissions-Policy and the iframe; deploy script and workflow; speed label contrast; real-YouTube @live spec\nfix(anki,youtube): review20: SQLite deadline, no recursion, tables only; linear cloze scanner and size caps; honest quota ledger; flashcards.source_id and own-card write check (migration 0030)\ntest(e2e): generation spec opens users on the account page (no in-flight onboarding fetch to cancel in WebKit)\nfeat(security): per-student limits on Aegra's protocol routes; system spec counts the core health tiles\nfix(migrations): 0024 reads agent_health kinds from either constraint form, so its downgrade after 0026/0029 (kind = any('{...}'::text[])) no longer builds 'kind in ()'\ntest(pathway e2e): prod CSP test uses its own student; ignore report-only Trusted Types lines\ntest(rls): comment tidy\nfix(generation): renumber hardening migration to 0030 (0029 is pathway), drop the redundant service-worker policy (S22 default policy covers it), table count\nfix(generation): review fixes - client cannot delete rows (0029 soft hide, server-only pause, failed runs count), names refused, Space validates before the GPU, submit inside try, service worker URL through a Trusted Types policy\nfeat(web): lazy route pages, size-limit budgets, Trusted Types default + inert-parse policies\nfeat(web): question review UI, Settings shell with Data & export, Study plan, Appearance, About & privacy; e2e specs and helpers\nfeat(pathway): cost_entry placement for ingest (fee receipt -> cost proposal, applied only after confirm)\nchore: contracts\n\nMy branch is unchanged (rebase aborted).",
+ "requires_ack": true
+}
