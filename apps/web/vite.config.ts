@@ -7,7 +7,7 @@ import react from "@vitejs/plugin-react";
 import type { Plugin } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vitest/config";
-import { PRECACHE_BUDGET_BYTES, skippedFiles } from "./src/offline/sw/precache";
+import { coreFiles, PRECACHE_BUDGET_BYTES, precached } from "./src/offline/sw/precache";
 
 const API_TARGET = process.env.NAADI_API_ORIGIN ?? "http://localhost:7860";
 
@@ -96,11 +96,9 @@ export default defineConfig({
     tailwindcss(),
     excalidrawFonts(),
     // The service worker is src/sw.ts, compiled to /sw.js: push handlers (segment 16) and caching (segment 18).
-    // Precached: the app shell, every JS/CSS chunk (lazy routes must open offline), the app's fonts, icons and
-    // the pdf.js worker. Not precached: Excalidraw's whiteboard fonts (13 MB; a whiteboard needs them only to
-    // draw hand-written text) and the YouTube player page (YouTube never works offline). Nothing under /api is
-    // in the build, and the worker caches no API response (src/offline/sw/rules.ts). The app registers it itself
-    // (src/pwa/register.ts), in production only.
+    // Precached (≤ 5 MB, checked here): the app shell and the core study screens' closures (precache.ts). Every
+    // other chunk is cached on first use (caching.ts). Never: the YouTube player page, any /api response.
+    // The app registers the worker itself (src/pwa/register.ts), in production only.
     VitePWA({
       strategies: "injectManifest",
       srcDir: "src",
@@ -117,13 +115,12 @@ export default defineConfig({
         ],
         globIgnores: ["assets/excalidraw/**", "sandbox/**", "**/*.map"],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
-        // Leave out syntax-highlighting grammars/themes (assistant only, online only) and hold the budget.
+        // Only the shell and the core screens' closures (src/offline/sw/precache.ts); the rest is cached on first use.
         manifestTransforms: [
           async (entries) => {
             const file = fileURLToPath(new URL("./dist/.vite/manifest.json", import.meta.url));
-            const manifest = JSON.parse(readFileSync(file, "utf8"));
-            const skip = skippedFiles(manifest);
-            const kept = entries.filter((e) => !skip.has(e.url.replace(/^\//, "")));
+            const core = coreFiles(JSON.parse(readFileSync(file, "utf8")));
+            const kept = entries.filter((e) => precached(e.url, core));
             const bytes = kept.reduce((n, e) => n + e.size, 0);
             if (bytes > PRECACHE_BUDGET_BYTES)
               throw new Error(`precache ${bytes} bytes is over the ${PRECACHE_BUDGET_BYTES}-byte budget`);

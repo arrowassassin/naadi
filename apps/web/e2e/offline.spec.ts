@@ -37,7 +37,8 @@ async function freshStudent(browser: Browser, baseURL: string, info: TestInfo, r
   runUsers(["delete", "--email", address]);
   const contexts: BrowserContext[] = [];
   const open = async (path: string): Promise<{ page: Page; context: BrowserContext }> => {
-    const context = await browser.newContext({ ...info.project.use, baseURL });
+    // The service worker is under test here (precache, offline reload): the projects block it by default.
+    const context = await browser.newContext({ ...info.project.use, baseURL, serviceWorkers: "allow" });
     contexts.push(context);
     const page = await context.newPage();
     trackApi(page);

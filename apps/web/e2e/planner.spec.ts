@@ -486,6 +486,7 @@ test.describe("push service worker", () => {
       // The push flow needs the service worker (the config blocks workers by default).
       serviceWorkers: "allow",
       permissions: ["notifications"],
+      serviceWorkers: "allow", // the worker is under test (the projects block it by default)
     });
     await context.grantPermissions(["notifications"], { origin: new URL(prod).origin });
     const page = await context.newPage();

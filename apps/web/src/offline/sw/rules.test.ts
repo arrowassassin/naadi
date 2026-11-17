@@ -51,3 +51,12 @@ describe("service worker cache rules", () => {
     for (const p of ["api/offline/week", "assets/data.json", "stats.html.map"]) expect(precacheable(p), p).toBe(false);
   });
 });
+
+describe("runtime asset cache", () => {
+  it("covers the app's own hashed build output only", async () => {
+    const { isAppAsset } = await import("./rules");
+    expect(isAppAsset(new URL(`${ORIGIN}/assets/PathwayPage-abc.js`), ORIGIN)).toBe(true);
+    expect(isAppAsset(new URL(`${ORIGIN}/api/vault/1/url`), ORIGIN)).toBe(false);
+    expect(isAppAsset(new URL("https://cdn.example/assets/x.js"), ORIGIN)).toBe(false);
+  });
+});

@@ -1,20 +1,35 @@
 import { describe, expect, it } from "vitest";
-import { skippedFiles, skippedSource } from "./precache";
+import { coreFiles, precached } from "./precache";
+
+const manifest = {
+  "index.html": { file: "assets/main-1.js", css: ["assets/main-1.css"], imports: ["_shared-2.js"] },
+  "_shared-2.js": { file: "assets/shared-2.js", assets: ["assets/inter-3.woff2"] },
+  "src/learn/ReaderPage.tsx": { file: "assets/ReaderPage-4.js", imports: ["_shared-2.js", "_editor-5.js"] },
+  "_editor-5.js": { file: "assets/editor-5.js" },
+  "src/admin/pages/index.ts": { file: "assets/admin-6.js", imports: ["_shared-2.js"] },
+  "../../node_modules/katex/dist/katex.mjs": { file: "assets/katex-7.js" },
+};
 
 describe("precache selection", () => {
-  it("leaves out Shiki grammars and unused themes, keeps everything else", () => {
-    expect(
-      skippedSource("../../node_modules/.pnpm/@shikijs+langs@3.1.0/node_modules/@shikijs/langs/dist/cpp.mjs"),
-    ).toBe(true);
-    expect(skippedSource("node_modules/@shikijs/themes/dist/nord.mjs")).toBe(true);
-    expect(skippedSource("node_modules/@shikijs/themes/dist/github-dark.mjs")).toBe(false);
-    expect(skippedSource("src/learn/ReaderPage.tsx")).toBe(false);
-    expect(skippedSource("node_modules/mermaid/dist/mermaid.core.mjs")).toBe(false);
-    expect(
-      skippedFiles({
-        a: { file: "assets/cpp-1.js", src: "node_modules/@shikijs/langs/dist/cpp.mjs" },
-        b: { file: "assets/ReaderPage-2.js", src: "src/learn/ReaderPage.tsx" },
-      }),
-    ).toEqual(new Set(["assets/cpp-1.js"]));
+  it("is the static closure of the core roots (CSS and fonts included), nothing else", () => {
+    const core = coreFiles(manifest, ["index.html", "src/learn/ReaderPage.tsx", /\/katex\/dist\/katex\.mjs$/]);
+    expect([...core].sort()).toEqual([
+      "assets/ReaderPage-4.js",
+      "assets/editor-5.js",
+      "assets/inter-3.woff2",
+      "assets/katex-7.js",
+      "assets/main-1.css",
+      "assets/main-1.js",
+      "assets/shared-2.js",
+    ]);
+    expect(core.has("assets/admin-6.js")).toBe(false);
+  });
+
+  it("keeps the shell files outside /assets and only the core chunks inside it", () => {
+    const core = new Set(["assets/main-1.js"]);
+    expect(precached("index.html", core)).toBe(true);
+    expect(precached("/icons/icon-192.png", core)).toBe(true);
+    expect(precached("assets/main-1.js", core)).toBe(true);
+    expect(precached("assets/admin-6.js", core)).toBe(false);
   });
 });

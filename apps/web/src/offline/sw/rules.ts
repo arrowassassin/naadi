@@ -7,6 +7,9 @@
  *   or other private Storage URL, no YouTube (policy), no signed URL.
  */
 export const FIGURE_CACHE = "naadi-figures-v1";
+/** App chunks and assets outside the precache, cached on first use (hashed names: never stale). */
+export const ASSET_CACHE = "naadi-assets-v1";
+export const ASSET_MAX_ENTRIES = 600;
 export const FIGURE_MAX_ENTRIES = 300;
 
 const PUBLIC_FIGURES = "/storage/v1/object/public/content-public/";
@@ -31,6 +34,11 @@ export function isShellNavigation(url: URL, selfOrigin: string): boolean {
   if (url.origin !== selfOrigin) return false;
   if (url.pathname.startsWith("/api/") || url.pathname === "/api") return false;
   return !/\.(js|mjs|css|json|webmanifest|png|svg|ico|woff2?|txt|xml|map)$/i.test(url.pathname); // a file is not a page
+}
+
+/** The app's own hashed build output (/assets/...), runtime-cached on first use. */
+export function isAppAsset(url: URL, selfOrigin: string): boolean {
+  return url.origin === selfOrigin && url.pathname.startsWith("/assets/");
 }
 
 /** Build-manifest entries to precache: shell, assets, fonts, icons, pdf.js worker; never anything under /api. */

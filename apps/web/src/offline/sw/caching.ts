@@ -9,7 +9,7 @@ import {
 } from "workbox-precaching";
 import { NavigationRoute, registerRoute } from "workbox-routing";
 import { CacheFirst } from "workbox-strategies";
-import { FIGURE_CACHE, FIGURE_MAX_ENTRIES, isPublicFigure } from "./rules";
+import { ASSET_CACHE, ASSET_MAX_ENTRIES, FIGURE_CACHE, FIGURE_MAX_ENTRIES, isAppAsset, isPublicFigure } from "./rules";
 
 /**
  * The service worker's caching (segment 18), registered by sw.ts under the "S18: caching" marker (S16 owns the
@@ -18,18 +18,6 @@ import { FIGURE_CACHE, FIGURE_MAX_ENTRIES, isPublicFigure } from "./rules";
  * in the middle of an exam.
  */
 export function registerCaching(sw: ServiceWorkerGlobalScope, manifest: (string | PrecacheEntry)[]): void {
-  // The API is never cached and never answered from a cache: requests go straight to the network from here, so
-  // no other handler sees them. (WebKit reports a page's fetch cut off by a navigation as a page error when a
-  // worker with a fetch handler lets it fall through; answering it here keeps the cut-off inside the worker.)
-  sw.addEventListener("fetch", (event: FetchEvent) => {
-    const url = new URL(event.request.url);
-    if (url.origin !== sw.location.origin || !(url.pathname === "/api" || url.pathname.startsWith("/api/"))) return;
-    event.stopImmediatePropagation();
-    // Offline, the request is left to the browser, which fails it as a plain network error (the outbox and the
-    // device copies take it from there); a worker-made failure would also be logged by WebKit as a page error.
-    if (sw.navigator.onLine === false) return;
-    event.respondWith(fetch(event.request));
-  });
   cleanupOutdatedCaches();
   precacheAndRoute(manifest);
 
@@ -45,6 +33,20 @@ export function registerCaching(sw: ServiceWorkerGlobalScope, manifest: (string 
       plugins: [
         new CacheableResponsePlugin({ statuses: [0, 200] }),
         new ExpirationPlugin({ maxEntries: FIGURE_MAX_ENTRIES, purgeOnQuotaError: true }),
+      ],
+    }),
+  );
+
+  // Chunks and assets outside the precache (admin, authoring, pathway, the PDF viewer, diagram engines, the
+  // whiteboard): cached the first time a screen uses them, least recently used dropped past the cap. Precached
+  // files are answered by the precache route above, which matches first.
+  registerRoute(
+    ({ url, request }) => request.method === "GET" && isAppAsset(url, sw.location.origin),
+    new CacheFirst({
+      cacheName: ASSET_CACHE,
+      plugins: [
+        new CacheableResponsePlugin({ statuses: [200] }),
+        new ExpirationPlugin({ maxEntries: ASSET_MAX_ENTRIES, purgeOnQuotaError: true }),
       ],
     }),
   );
