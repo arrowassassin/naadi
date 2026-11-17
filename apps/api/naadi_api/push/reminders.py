@@ -30,7 +30,6 @@ from .sender import Payload, PushNotConfigured, Transport, send
 log = get_logger("naadi.push")
 WINDOW_HOURS = 4  # after the reminder time a late run still sends; later it would be noise
 MAX_DEVICES_PER_PASS = 2000
-MAX_FAILURES = 5  # consecutive transient failures before a device is dropped
 
 
 @dataclass
@@ -141,20 +140,22 @@ async def reminder_pass(
                 if outcome == "gone":
                     await conn.execute("delete from public.push_subscriptions where id = %s", (sid,))
                     stats.removed += 1
-                elif outcome == "failed":
+                elif outcome == "failed" and sent_n == 0:
+                    # Nothing went out: count it and try again on the next tick. Only a 404/410 deletes a device.
                     await conn.execute(
                         "update public.push_subscriptions set failures = failures + 1 where id = %s", (sid,)
                     )
-                    await conn.execute(
-                        "delete from public.push_subscriptions where id = %s and failures >= %s", (sid, MAX_FAILURES)
-                    )
                     stats.failed += 1
                 else:
+                    # Sent (or nothing to say), also after a failure of a later message: what went out is recorded,
+                    # so the next tick never repeats it and the day's cap holds.
                     await conn.execute(
                         "update public.push_subscriptions set last_sent_on = %s, sent_today = %s,"
                         " last_ok_at = case when %s > 0 then now() else last_ok_at end, failures = 0 where id = %s",
                         (local_date, sent_n, sent_n, sid),
                     )
                     stats.sent += sent_n
+                    if outcome == "failed":
+                        stats.failed += 1
     log.info("push_reminders", **stats.as_dict())
     return stats

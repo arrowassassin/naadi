@@ -173,6 +173,9 @@ function webServers(): PlaywrightTestConfig["webServer"] {
   const env = (extra: Record<string, string> = {}) => ({
     NAADI_STATIC_DIR: path.join(here, "dist"),
     APP_ENV: "local",
+    // Links the API builds for itself (the calendar feed URL) point at the server under test, never at an ambient
+    // APP_BASE_URL (in an agent sandbox that is the hosted Space).
+    APP_BASE_URL: "",
     // Aegra reads DEBUG as a boolean; Playwright's own DEBUG=pw:* must not reach the API process.
     DEBUG: "false",
     // Generation runs against the in-process fake (no Space call, in-memory media served by the app itself). The

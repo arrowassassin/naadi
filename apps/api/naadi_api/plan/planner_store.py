@@ -34,6 +34,9 @@ DAY_SELECT = (
     " (self_assessment is not null) as assessment, self_assessment as assessment_title"
 )
 SERVER_MS = "(extract(epoch from clock_timestamp()) * 1000)::bigint"
+# A device clock may run a little ahead of the server's; a stamp further ahead would freeze the item (every honest
+# later change would lose), so the stored stamp is never more than this far past the server's own clock.
+MAX_STAMP_SKEW_MS = 300_000
 REBALANCE_SELECT = "id, created_at, trigger, status, applied_at, thread_id, proposal"
 Outcome = Literal["applied", "stale", "gone"]
 
@@ -216,7 +219,9 @@ async def decline(conn: Conn, user_id: uuid.UUID, rebalance_id: uuid.UUID) -> bo
     return bool(done)
 
 
-async def apply(conn: Conn, user_id: uuid.UUID, rebalance_id: uuid.UUID) -> tuple[Outcome, int, int]:
+async def apply(
+    conn: Conn, user_id: uuid.UUID, rebalance_id: uuid.UUID, now: dt.datetime | None = None
+) -> tuple[Outcome, int, int]:
     """Apply a proposed rebalance in the caller's transaction: (outcome, moved, dropped).
 
     `stale` when any item it would touch has changed since it was proposed (done, moved, re-planned): nothing is
@@ -246,7 +251,11 @@ async def apply(conn: Conn, user_id: uuid.UUID, rebalance_id: uuid.UUID) -> tupl
     expected = [(uuid.UUID(m["item_id"]), dt.date.fromisoformat(m["from_day"])) for m in moves] + [
         (uuid.UUID(d["item_id"]), dt.date.fromisoformat(d["day"])) for d in drops
     ]
-    if any(
+    tz = (await rows(conn, "select timezone from public.profiles where user_id = %s", (user_id,)) or [{}])[0]
+    today = local_now(tz.get("timezone"), now).date()
+    # Stale: an item changed since the proposal, or its destination day has passed (a proposal made at 23:30 and
+    # accepted after midnight must not put items on a day that is already over).
+    if any(dt.date.fromisoformat(m["to_day"]) < today for m in moves) or any(
         i not in current or current[i]["day"] != day or current[i]["status"] not in MOVABLE_STATUSES
         for i, day in expected
     ):
@@ -287,10 +296,11 @@ async def patch_status(
 ) -> tuple[bool, Row] | None:
     """Last-writer-wins per row: a strictly newer stamp wins, an equal or older one changes nothing and the stored
     row is returned (a tie goes to the server). None when the item is not the student's."""
+    stamp = f"least(%s::bigint, {SERVER_MS} + {MAX_STAMP_SKEW_MS})"
     done = await rows(
         conn,
-        f"update public.plan_items set status = %s, client_updated_at_ms = %s where id = %s and user_id = %s"  # noqa: S608
-        f" and (client_updated_at_ms is null or client_updated_at_ms < %s) returning {ITEM_SELECT}",
+        f"update public.plan_items set status = %s, client_updated_at_ms = {stamp} where id = %s and user_id = %s"  # noqa: S608
+        f" and (client_updated_at_ms is null or client_updated_at_ms < {stamp}) returning {ITEM_SELECT}",
         (status, client_updated_at_ms, item_id, user_id, client_updated_at_ms),
     )
     if done:

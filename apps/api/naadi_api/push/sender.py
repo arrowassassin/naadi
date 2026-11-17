@@ -18,6 +18,7 @@ from pywebpush import WebPushException, webpush_async
 from ..copy import render
 from ..logs import get_logger
 from ..settings import Settings
+from .hosts import allowed_endpoint
 
 log = get_logger("naadi.push")
 TTL_SECONDS = 6 * 3600  # a reminder that arrives after lunch is noise: the push service may drop it by then
@@ -75,6 +76,8 @@ async def send(
     """Deliver `data` to one stored subscription row (`endpoint`, `p256dh`, `auth`)."""
     if not settings.push_configured or settings.vapid_private_key is None:
         raise PushNotConfigured("VAPID keys are not set")
+    if not allowed_endpoint(str(subscription["endpoint"])):
+        return "gone"  # never called: a row that predates the allowlist is dropped by the caller
     send_fn: Transport = transport or webpush_async
     info = {
         "endpoint": subscription["endpoint"],

@@ -26,7 +26,11 @@ void startAuth();
 // The service worker (Web Push now, offline caching later) is registered only in production builds.
 if (import.meta.env.PROD && "serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(() => undefined);
+    // The script URL passes the Trusted Types default policy (same origin only). A failed registration is not
+    // silent: without a worker there is no push, so it is logged for support instead of swallowed.
+    navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch((err: unknown) => {
+      console.warn("Service worker registration failed", err instanceof Error ? err.name : "unknown");
+    });
   });
 }
 

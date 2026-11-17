@@ -40,6 +40,7 @@ class WeekDayOut(BaseModel):
     rest: bool
     extra: bool
     in_plan: bool
+    day_off: bool = Field(description="A date inside the plan's span that is not a study day")
     is_today: bool
     past: bool
     items: list[WeekItemOut]
@@ -137,7 +138,10 @@ class ItemPatchIn(BaseModel):
 
     status: Literal["planned", "done", "skipped"]
     client_updated_at_ms: int = Field(
-        ge=0, le=9_999_999_999_999, description="When the student made the change (device clock, ms since the epoch)"
+        ge=0,
+        le=9_999_999_999_999,
+        description="When the student made the change (device clock, ms since the epoch); the server never lets a"
+        " stamp run more than a few minutes ahead of its own clock",
     )
 
 
@@ -205,6 +209,15 @@ class PushSubscriptionIn(BaseModel):
 
     endpoint: str = Field(min_length=12, max_length=1024, pattern=r"^https://")
     keys: PushSubscriptionKeys
+
+    @field_validator("endpoint")
+    @classmethod
+    def _push_service(cls, v: str) -> str:
+        from ..push.hosts import allowed_endpoint
+
+        if not allowed_endpoint(v):
+            raise ValueError("endpoint is not a known push service")
+        return v
 
 
 class PushSubscriptionOut(BaseModel):

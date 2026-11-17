@@ -525,11 +525,12 @@ async def set_item_status(
             conn,
             "update public.plan_items set status = %s,"  # noqa: S608
             " client_updated_at_ms = (extract(epoch from clock_timestamp()) * 1000)::bigint"
-            f" where id = %s and user_id = (select auth.uid()) returning {ITEM_COLS}",
-            (body.status, item_id),
+            f" where id = %s and user_id = %s returning {ITEM_COLS}",
+            (body.status, item_id, user.user_id),
         )
 
-    out = await as_user(_db(request), user, run)
+    # Clients have no write grant on plan items (0030): the API writes, naming the student in the statement.
+    out = await as_service(_db(request), run)
     if not out:
         return error_response(404, "This plan item does not exist.", "not_found")
     return PlanItemOut.model_validate(item_row_out(out[0]))

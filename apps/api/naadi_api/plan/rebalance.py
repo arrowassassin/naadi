@@ -179,16 +179,20 @@ class _Placement:
         # An item longer than a whole day still lands on an empty day (it would never fit anywhere otherwise).
         return used + minutes <= self.cap[day] or used == 0
 
-    def run(self, queue: Sequence[RItem]) -> tuple[list[tuple[RItem, dt.date]], list[RItem]]:
+    def run(self, queue: Sequence[RItem], *, spill: bool = True) -> tuple[list[tuple[RItem, dt.date]], list[RItem]]:
+        """Place the queue in order with a forward-only cursor. Without `spill` only the stretch before the next
+        assessment day is used. Items that may not spill (questions) always search that first stretch from its
+        start, so an earlier reading item that had to move past the assessment never makes them look unplaceable."""
         placed: list[tuple[RItem, dt.date]] = []
         unplaced: list[RItem] = []
         w, k = 0, 0  # window index, day index within the window
         for it in queue:
             m = _minutes(it)
-            ww, kk = w, k
+            spills = spill and it.kind in SPILLS
+            ww, kk = (w, k) if spills or w == 0 else (0, 0)
             found: dt.date | None = None
             while ww < len(self.windows):
-                if ww > 0 and it.kind not in SPILLS:
+                if ww > 0 and not spills:
                     break  # questions never spill past the assessment they prepare for
                 days = self.windows[ww]
                 while kk < len(days):
@@ -202,7 +206,8 @@ class _Placement:
             if found is None:
                 unplaced.append(it)
                 continue
-            w, k = ww, kk
+            if spills or w == 0:
+                w, k = ww, kk
             self.load[found] += m
             placed.append((it, found))
         return placed, unplaced
@@ -302,8 +307,10 @@ def rebalance(inp: RebalanceInput) -> Proposal:
     queue = list(missed_items)
     load = dict(keep_load)
     while True:
+        # Review items give way first: everything is tried inside the stretch before the next assessment day, and
+        # only what still does not fit after the reviews are gone may spill past it.
         attempt = _Placement(inp, windows, load, cap)
-        placed, unplaced = attempt.run(queue)
+        placed, unplaced = attempt.run(queue, spill=False)
         if not unplaced or not candidates:
             break
         victim = candidates.pop(0)

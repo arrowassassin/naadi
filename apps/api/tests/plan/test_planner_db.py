@@ -416,7 +416,7 @@ class Pushed:
 
 
 SUB = {
-    "endpoint": "https://push.example.org/send/abc123",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/abc123",
     "keys": {
         "p256dh": "BNcRdreALRFXTkOOUHK1EtK2wtaz5Ry4YfYCA_0QTpQtUbVlUls0VJXg7A8u-Ts1XbjhazAkj7I99e8QcYP7DkM",
         "auth": "tBHItJI5svbpez7KI4CCXg",
@@ -523,14 +523,18 @@ def test_a_student_can_keep_at_most_ten_devices(
 ) -> None:
     h = hdr(key, student)
     for n in range(10):
-        r = client.post("/api/push/subscriptions", json={**SUB, "endpoint": f"https://push.example.org/{n}"}, headers=h)
+        r = client.post(
+            "/api/push/subscriptions", json={**SUB, "endpoint": f"https://fcm.googleapis.com/fcm/send/{n}"}, headers=h
+        )
         assert r.status_code == 201
-    over = client.post("/api/push/subscriptions", json={**SUB, "endpoint": "https://push.example.org/11"}, headers=h)
+    over = client.post(
+        "/api/push/subscriptions", json={**SUB, "endpoint": "https://fcm.googleapis.com/fcm/send/11"}, headers=h
+    )
     assert over.status_code == 422 and over.json()["error"]["code"] == "too_many_subscriptions"
     # updating one of the ten is still fine
     assert (
         client.post(
-            "/api/push/subscriptions", json={**SUB, "endpoint": "https://push.example.org/3"}, headers=h
+            "/api/push/subscriptions", json={**SUB, "endpoint": "https://fcm.googleapis.com/fcm/send/3"}, headers=h
         ).status_code
         == 201
     )
@@ -624,3 +628,177 @@ def test_student_items_helper_is_usable_in_process(url: str, student: uuid.UUID)
     items = [StudentItemIn(day=today_local(), kind="cards", title="Anki: renal", target_minutes=30)]
     made = run_async(url, lambda c: ps.create_items(c, student, items))
     assert made[0]["origin"] == "user" and made[0]["kind"] == "cards"
+
+
+# ── review fixes ──
+
+
+@pytest.mark.parametrize(
+    "endpoint",
+    [
+        "https://10.0.0.1/x",
+        "https://169.254.169.254/latest/meta-data",
+        "https://localhost/x",
+        "https://internal.example.org/push",
+        "https://fcm.googleapis.com.evil.example.org/x",
+        "https://user:pw@fcm.googleapis.com/x",
+        "https://fcm.googleapis.com:8443/x",
+        "http://fcm.googleapis.com/x",
+    ],
+)
+def test_only_known_push_services_are_accepted_as_endpoints(
+    client: TestClient, key: SigningKey, student: uuid.UUID, push_on: Pushed, endpoint: str
+) -> None:
+    r = client.post("/api/push/subscriptions", json={**SUB, "endpoint": endpoint}, headers=hdr(key, student))
+    assert r.status_code == 422, endpoint
+    assert push_on.sent == []
+
+
+def test_knowing_an_endpoint_does_not_take_it_over(
+    client: TestClient, key: SigningKey, student: uuid.UUID, users: tuple[uuid.UUID, uuid.UUID], push_on: Pushed
+) -> None:
+    assert client.post("/api/push/subscriptions", json=SUB, headers=hdr(key, student)).status_code == 201
+    stolen = client.post(
+        "/api/push/subscriptions",
+        json={
+            **SUB,
+            "keys": {
+                "p256dh": "BOtherKeysOtherKeysOtherKeysOtherKeysOtherKeysOtherKeysOtherKeysOtherKeys",
+                "auth": "other",
+            },
+        },
+        headers=hdr(key, users[1]),
+    )
+    assert stolen.status_code == 409 and stolen.json()["error"]["code"] == "endpoint_in_use"
+    # the same browser (same keys) signing in as someone else does move to them
+    assert client.post("/api/push/subscriptions", json=SUB, headers=hdr(key, users[1])).status_code == 201
+
+
+def test_a_stamp_from_the_future_is_bounded_by_the_server_clock(
+    client: TestClient, key: SigningKey, student: uuid.UUID, pg: psycopg.Connection[Any]
+) -> None:
+    item = first_item(client, key, student)
+    url = f"/api/plan/items/{item['id']}"
+    far = int((dt.datetime.now(dt.UTC) + dt.timedelta(days=365)).timestamp() * 1000)
+    r = client.patch(url, json={"status": "done", "client_updated_at_ms": far}, headers=hdr(key, student))
+    assert r.status_code == 200 and r.json()["applied"] is True
+    stored = pg.execute("select client_updated_at_ms from public.plan_items where id = %s", (item["id"],)).fetchone()[0]
+    assert stored <= dt.datetime.now(dt.UTC).timestamp() * 1000 + 300_000 + 5_000
+
+
+def test_clients_have_no_direct_write_access_to_plan_items(pg: psycopg.Connection[Any], student: uuid.UUID) -> None:
+    from psycopg import errors
+
+    from tests.db.rls import as_user
+
+    with as_user(pg, student) as conn:
+        for stmt in (
+            "update public.plan_items set status = 'done'",
+            "update public.plan_items set client_updated_at_ms = 9999999999999",
+        ):
+            with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
+                conn.execute(stmt)
+
+
+def test_a_proposal_that_would_move_items_into_the_past_is_refused(
+    url: str, student: uuid.UUID, pg: psycopg.Connection[Any]
+) -> None:
+    row, proposal = run_async(url, lambda c: ps.propose(c, student, RULES, trigger="student"))
+    assert row is not None and proposal is not None
+    later = dt.datetime.now(dt.UTC) + dt.timedelta(days=2)  # accepted after the destination days are over
+    outcome, moved, dropped = run_async(url, lambda c: ps.apply(c, student, row["id"], later))
+    assert (outcome, moved, dropped) == ("stale", 0, 0)
+    assert (
+        pg.execute("select status from public.plan_rebalances where id = %s", (row["id"],)).fetchone()[0] == "expired"
+    )
+    assert all(
+        pg.execute("select day from public.plan_items where id = %s", (m.item_id,)).fetchone()[0] == m.from_day
+        for m in proposal.moves
+    )
+
+
+def test_the_feed_shows_a_generic_label_for_items_the_student_typed(
+    client: TestClient, key: SigningKey, student: uuid.UUID
+) -> None:
+    secret = "my private diagnosis notes"
+    client.post(
+        "/api/plan/items",
+        json={"items": [{"day": today_local().isoformat(), "kind": "read", "title": secret, "target_minutes": 30}]},
+        headers=hdr(key, student),
+    )
+    token = token_of(client.post("/api/plan/calendar-feed", headers=hdr(key, student)).json()["url"])
+    text = client.get(f"/api/plan/ics/{token}").text
+    assert secret not in text and "Your own item" in text
+
+
+def test_a_failure_after_the_first_message_does_not_repeat_it_or_delete_the_device(
+    client: TestClient, key: SigningKey, student: uuid.UUID, push_on: Pushed, pg: psycopg.Connection[Any]
+) -> None:
+    import json
+
+    from naadi_api.db import Database
+
+    h = hdr(key, student)
+    client.post("/api/push/subscriptions", json=SUB, headers=h)
+    pg.execute("update public.profiles set timezone = 'UTC' where user_id = %s", (student,))
+    today = dt.datetime.now(dt.UTC).date()
+    day = pg.execute("select min(day) from public.plan_items where user_id = %s", (student,)).fetchone()[0]
+    for delta in (-SHIFT, SHIFT + (today - dt.timedelta(days=6) - day).days):
+        pg.execute("update public.study_plan_days set date = date + %s where user_id = %s", (delta, student))
+        pg.execute("update public.plan_items set day = day + %s where user_id = %s", (delta, student))
+
+    class Flaky:
+        def __init__(self) -> None:
+            self.calls = 0
+
+        async def __call__(self, info: dict[str, Any], **kwargs: Any) -> Any:
+            self.calls += 1
+            if self.calls == 2:
+
+                class Resp:
+                    status_code = 503
+
+                raise WebPushException("down", response=Resp())
+
+            class Ok:
+                status = 201
+
+            return Ok()
+
+    flaky = Flaky()
+    settings = client.app.state.settings
+    copy = {"push.title": "Naadi", "push.reminder_body": "{items} {hours}", "push.nudge_body": "{behind}"}
+
+    async def go(hour: int, transport: Any) -> Any:
+        db = Database(settings.database_url)
+        await db.open()
+        try:
+            return await reminder_pass(
+                db,
+                settings,
+                RULES,
+                copy,
+                now=dt.datetime.combine(today, dt.time(hour, 45), dt.UTC),
+                transport=transport,
+            )
+        finally:
+            await db.close()
+
+    first = asyncio.run(go(7, flaky))
+    assert first.sent == 1 and first.failed == 1
+    row = pg.execute(
+        "select last_sent_on, sent_today, failures from public.push_subscriptions where user_id = %s", (student,)
+    ).fetchone()
+    assert row == (today, 1, 0)
+    # the next tick (and every one after) sends nothing more: no repeat of message one, the cap holds
+    again = asyncio.run(go(8, flaky))
+    assert again.sent == 0 and flaky.calls == 2
+    # many transient failures never delete a device (only 404/410 do)
+    pg.execute("update public.push_subscriptions set last_sent_on = null, failures = 9 where user_id = %s", (student,))
+    push_on.status = 503
+    for hour in (7, 8, 9):
+        asyncio.run(go(hour, push_on))
+    assert (
+        pg.execute("select count(*) from public.push_subscriptions where user_id = %s", (student,)).fetchone()[0] == 1
+    )
+    assert json.loads(push_on.sent[-1][1]["data"])["url"] == "/plan"

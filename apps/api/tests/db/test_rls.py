@@ -191,6 +191,7 @@ SELECT_ONLY = (
     "export_jobs",
     "plan_rebalances",
     "calendar_feeds",
+    "plan_items",  # 0030: every status change goes through the API (last-writer-wins, clock bound)
     "kb_sources",
     # Pathway progress, costs and the vault (0029): last-writer-wins and the object path are the API's to check.
     "user_pathway_tasks",
@@ -205,7 +206,7 @@ CREATE_BLOCKED = ("push_subscriptions",)
 # plan day's score notes), never insert, delete or re-point them.
 # Uploads and ingest items (0028): rows come from the ingest API; the student may rename a file (original_name) and
 # set an item's confirmed_placement, nothing else.
-API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items", "uploads", "ingest_items")
+API_ROWS = ("study_plan_days", "coach_suggestions", "uploads", "ingest_items")
 
 
 @pytest.mark.parametrize(
@@ -217,11 +218,6 @@ API_ROWS = ("study_plan_days", "coach_suggestions", "plan_items", "uploads", "in
         ("coach_suggestions", "facts", Jsonb({"misses": 99})),
         ("coach_suggestions", "action", Jsonb({"kind": "add_plan_items"})),
         ("coach_suggestions", "source", "llm"),
-        ("plan_items", "title", "Something else"),
-        ("plan_items", "day", "2027-01-01"),
-        ("plan_items", "origin", "user"),
-        ("plan_items", "rebalance_id", uuid.uuid4()),
-        ("plan_items", "moved_from", "2026-11-01"),
     ],
 )
 def test_plan_and_coach_rows_take_status_only(

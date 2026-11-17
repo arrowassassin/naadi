@@ -1,4 +1,3 @@
-import { Client } from "@langchain/langgraph-sdk";
 import {
   getPlanWeek,
   type ItemPatchOut,
@@ -10,7 +9,7 @@ import {
   type WeekOut,
 } from "@naadi/shared";
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect } from "react";
 import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
@@ -152,8 +151,10 @@ export function useFlushPlanOutbox(online: boolean) {
   }, [online, userId, qc]);
 }
 
-function runtimeFor(token: string): Runtime {
-  // The LangGraph SDK's own client against the Aegra runtime on this origin, with the student's token.
+/** The LangGraph SDK is loaded when a rebalance is started or answered, never in the first load. */
+async function runtimeFor(token: string): Promise<Runtime> {
+  const { Client } = await import("@langchain/langgraph-sdk");
+  // The SDK's own client against the Aegra runtime on this origin, with the student's token.
   const client = new Client({ apiUrl: window.location.origin, defaultHeaders: { authorization: `Bearer ${token}` } });
   return client as unknown as Runtime;
 }
@@ -170,7 +171,7 @@ export function useStartRebalance() {
     mutationFn: async (): Promise<RebalanceStart> => {
       if (!token) throw new ApiError("Sign in to continue.", 401, "unauthorized", null);
       const started = await authed((headers) => startPlanRebalance({ headers }));
-      const waiting = await awaitConfirm(runtimeFor(token), started.thread_id, started.run_id);
+      const waiting = await awaitConfirm(await runtimeFor(token), started.thread_id, started.run_id);
       return waiting ? { kind: "proposal" } : { kind: "nothing" };
     },
     onSettled: () => {
@@ -186,13 +187,12 @@ export function useDecideRebalance() {
   const userId = useUserId();
   const qc = useQueryClient();
   const token = auth.status === "signed-in" ? auth.session.access_token : null;
-  const rt = useMemo(() => (token ? runtimeFor(token) : null), [token]);
   const run = useCallback(
     async (v: { row: RebalanceOut; decision: Decision }): Promise<DecideResult> => {
-      if (!rt) throw new ApiError("Sign in to continue.", 401, "unauthorized", null);
-      return decide(rt, v.row, v.decision);
+      if (!token) throw new ApiError("Sign in to continue.", 401, "unauthorized", null);
+      return decide(await runtimeFor(token), v.row, v.decision);
     },
-    [rt],
+    [token],
   );
   return useMutation({
     mutationFn: run,

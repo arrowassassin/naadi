@@ -4778,7 +4778,7 @@ export type ItemPatchIn = {
   /**
    * Client Updated At Ms
    *
-   * When the student made the change (device clock, ms since the epoch)
+   * When the student made the change (device clock, ms since the epoch); the server never lets a stamp run more than a few minutes ahead of its own clock
    */
   client_updated_at_ms: number;
   /**
@@ -10467,6 +10467,12 @@ export type WeekDayOut = {
    * null for a date outside the plan
    */
   day_no: number | null;
+  /**
+   * Day Off
+   *
+   * A date inside the plan's span that is not a study day
+   */
+  day_off: boolean;
   /**
    * Extra
    */

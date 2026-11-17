@@ -161,3 +161,23 @@ def test_logger_drops_forbidden_keys(logs: LogCapture) -> None:
     e = logs.lines()[-1]
     assert e["ok"] == 1
     assert not {"body", "authorization", "query"} & set(e)
+
+
+FEED_TOKEN = "Zk3-Tq9_aB7cD1eF5gH2iJ4kL6mN8oP0qR2sT4uV6wX"
+
+
+def test_the_calendar_feed_token_never_reaches_a_log_line(
+    client_factory: Callable[..., TestClient], logs: LogCapture
+) -> None:
+    """The feed URL is a capability: the request log, a stdlib access log (Aegra logs the full url) and the rate-limit
+    warning all go through the same redaction."""
+    import logging
+
+    c = client_factory()
+    c.get(f"/api/plan/ics/{FEED_TOKEN}")
+    logging.getLogger("app.access_logs").info(
+        "request", extra={"url": f"http://127.0.0.1:7860/api/plan/ics/{FEED_TOKEN}?x=1"}
+    )
+    logging.getLogger("uvicorn.access").warning('GET /api/plan/ics/%s HTTP/1.1" 200', FEED_TOKEN)
+    assert FEED_TOKEN not in logs.text
+    assert "/api/plan/ics/[redacted]" in logs.text

@@ -1,7 +1,9 @@
 import { Skeleton } from "@naadi/ui";
 import { type AnyRoute, createRoute, Navigate } from "@tanstack/react-router";
 import { useMe } from "../auth/api";
-import { PlannerPage } from "./PlannerPage";
+import { lazyPage } from "../shell/lazyPage";
+
+const PlannerPage = lazyPage(() => import("./PlannerPage").then((m) => m.PlannerPage));
 
 /** `/plan`: only while the server's `features.planner` is on (the flag that also shows Plan in the navigation). */
 function PlannerGate() {

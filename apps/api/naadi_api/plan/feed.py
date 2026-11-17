@@ -131,7 +131,10 @@ def build_ics(
         for i in day_items:
             dur = _duration(copy, i["target_minutes"])
             key = "planner.ics_item" if dur else "planner.ics_item_plain"
-            lines.append(render(copy, key, {"title": i["title"], "duration": dur}).strip())
+            # Items the student (or the tutor) typed are free text: the feed shows a generic label instead, so it
+            # carries only the plan template's own words, whatever a student writes.
+            title = render(copy, "planner.ics_own_item") if i.get("origin") == "user" else i["title"]
+            lines.append(render(copy, key, {"title": title, "duration": dur}).strip())
         ev.add("description", "\n".join(lines))
         cal.add_component(ev)
     return bytes(cal.to_ical())

@@ -33,7 +33,9 @@ function DayFlags({ day }: { day: WeekDayOut }) {
 
 function DayHours({ day }: { day: WeekDayOut }) {
   const t = useUiText();
-  if (!day.in_plan) return <span className="text-ui-sm text-text-3">{t("planner.day_outside")}</span>;
+  if (!day.in_plan) {
+    return <span className="text-ui-sm text-text-3">{t(day.day_off ? "planner.day_off" : "planner.day_outside")}</span>;
+  }
   return (
     <span className="text-ui-sm text-text-3">
       {day.planned_hours > 0 || (day.target_hours ?? 0) > 0
@@ -166,7 +168,9 @@ export function DayList({
         <DayHours day={day} />
       </div>
       {day.items.length === 0 ? (
-        <p className="m-0 text-ui text-text-3">{t(day.in_plan ? "planner.day_empty" : "planner.day_outside")}</p>
+        <p className="m-0 text-ui text-text-3">
+          {t(day.in_plan ? "planner.day_empty" : day.day_off ? "planner.day_off" : "planner.day_outside")}
+        </p>
       ) : (
         <ul className="m-0 flex list-none flex-col gap-2 p-0">
           {day.items.map((i) => (

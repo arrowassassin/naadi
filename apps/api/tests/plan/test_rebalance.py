@@ -255,3 +255,49 @@ def test_missed_before_waits_for_the_grace_hours() -> None:
 
 
 GOLDEN = (7, 3, ["unplaced"])
+
+
+def _mini(today_items: list[RItem], missed: list[RItem], *, review_today: bool) -> Proposal:
+    """d0 (missed), d1 today (1 h target), d2 assessment, d3 study, d4 the final rest day; exam on d5."""
+    d = [dt.date(2026, 12, 1) + dt.timedelta(days=n) for n in range(6)]
+    rdays = [
+        RDay(d[0], 1, 1.0),
+        RDay(d[1], 2, 1.0, chapter_ref="Review" if review_today else "Ch 1"),
+        RDay(d[2], 3, 1.0, assessment=True),
+        RDay(d[3], 4, 1.0),
+        RDay(d[4], 5, 1.0),
+    ]
+    return rebalance(
+        RebalanceInput(
+            days=rdays,
+            items=[*missed, *today_items],
+            today=d[1],
+            missed_before=d[1],
+            exam_date=d[5],
+            study_days=frozenset(range(1, 8)),
+            daily_hours=1.0,
+        )
+    )
+
+
+def test_reviews_are_dropped_before_anything_spills_past_the_assessment() -> None:
+    d0, d1 = dt.date(2026, 12, 1), dt.date(2026, 12, 2)
+    missed = [RItem("m1", d0, "read", "planned", 0, 60)]
+    review = [RItem("rev", d1, "read", "planned", 0, 60)]
+    p = _mini(review, missed, review_today=True)
+    assert [m.item_id for m in p.moves] == ["m1"] and p.moves[0].to_day == d1
+    assert [x.item_id for x in p.drops] == ["rev"] and p.spilled == 0
+    # without a review to give way, the reading item may spill past the assessment day
+    p2 = _mini(review, missed, review_today=False)
+    assert p2.drops == () and p2.spilled == 1 and p2.moves[0].to_day == dt.date(2026, 12, 4)
+
+
+def test_questions_that_fit_before_the_assessment_are_not_reported_as_not_fitting() -> None:
+    d0, d1 = dt.date(2026, 12, 1), dt.date(2026, 12, 2)
+    missed = [RItem("r", d0, "read", "planned", 0, 60), RItem("q", d0, "questions", "planned", 1, 30)]
+    today = [RItem("t", d1, "read", "planned", 0, 30)]  # 75 min cap: 45 free, so the 60 min read cannot stay
+    p = _mini(today, missed, review_today=False)
+    by = {m.item_id: m for m in p.moves}
+    assert by["r"].to_day > dt.date(2026, 12, 3)  # the reading item spilled past the assessment
+    assert by["q"].to_day == d1  # the questions still fit today
+    assert not [w for w in p.warnings if w.code == "unplaced"]

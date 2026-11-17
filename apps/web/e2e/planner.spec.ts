@@ -395,6 +395,8 @@ test.describe("calendar feed", () => {
       await expect(field).toBeVisible();
       const url = await field.inputValue();
       expect(url).toMatch(/\/api\/plan\/ics\/[A-Za-z0-9_-]{40,}$/);
+      // the link points at the server under test, not at an ambient APP_BASE_URL
+      expect(new URL(url).origin).toBe(new URL(baseURL as string).origin);
       await expect(page.getByRole("link", { name: "Subscribe in Calendar" })).toHaveAttribute("href", /^webcal:\/\//);
       await settle(page);
       await expectNoAxeViolations(page);
@@ -437,7 +439,13 @@ test.describe("push service worker", () => {
     );
     const prod = process.env.E2E_PROD_URL;
     test.skip(!prod, "the service worker is registered by the production build only");
-    const context = await browser.newContext({ ...info.project.use, baseURL: prod, ignoreHTTPSErrors: true });
+    // showNotification needs the permission a student grants in the real app.
+    const context = await browser.newContext({
+      ...info.project.use,
+      baseURL: prod,
+      ignoreHTTPSErrors: true,
+      permissions: ["notifications"],
+    });
     const page = await context.newPage();
     try {
       await page.goto("/sign-in");
@@ -479,6 +487,16 @@ test.describe("push service worker", () => {
       expect(shown).toEqual([{ title: "Naadi", body: payload.body, tag: payload.tag, url: "/plan" }]);
       // The payload carries numbers and a link, never note text
       expect(JSON.stringify(shown)).not.toMatch(/note|question/i);
+
+      // Tapping the notification focuses the open window and takes it to the deep link (signed out, the planner
+      // route sends it on to sign-in with the plan as the destination).
+      await worker.evaluate(async () => {
+        const scope = self as unknown as ServiceWorkerGlobalScope;
+        const n = (await scope.registration.getNotifications())[0] as Notification;
+        scope.dispatchEvent(new NotificationEvent("notificationclick", { notification: n }));
+        await new Promise((r) => setTimeout(r, 500));
+      });
+      await expect.poll(() => decodeURIComponent(page.url()), { timeout: 15_000 }).toContain("/plan");
     } finally {
       await context.close();
     }

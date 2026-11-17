@@ -27,12 +27,12 @@ export function ItemChips({ item, pending }: { item: WeekItemOut; pending: boole
         </Chip>
       ) : null}
       {item.moved_from ? (
-        <Chip tone="meta" icon={<CornerDownRight size={11} />}>
+        <Chip tone="meta" icon={<CornerDownRight size={11} />} className="max-w-full whitespace-normal text-left">
           {t("planner.moved_from", { date: dayMonth(item.moved_from) })}
         </Chip>
       ) : null}
       {item.ref_type === "external" ? (
-        <Chip tone="meta" icon={<ExternalLink size={11} />}>
+        <Chip tone="meta" icon={<ExternalLink size={11} />} className="max-w-full whitespace-normal text-left">
           {t("planner.sheet_outside")}
         </Chip>
       ) : null}
@@ -99,7 +99,7 @@ export function ItemBlock({
             .join(" · ")}
         </span>
       ) : null}
-      <span className="flex flex-wrap gap-1.5 empty:hidden">
+      <span className="flex min-w-0 max-w-full flex-wrap gap-1.5 empty:hidden">
         <ItemChips item={item} pending={pending} />
       </span>
     </button>

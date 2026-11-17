@@ -4418,6 +4418,7 @@ export const zWeekDayOut = z.object({
   chapter_ref: z.string().nullable(),
   date: z.iso.date(),
   day_no: z.int().nullable(),
+  day_off: z.boolean(),
   extra: z.boolean(),
   in_plan: z.boolean(),
   is_today: z.boolean(),

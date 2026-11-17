@@ -207,6 +207,7 @@ def build_week(
                 rest=date == last,
                 extra=bool(d and d["extra"]),
                 in_plan=d is not None,
+                day_off=d is None and first <= date <= last,
                 is_today=date == today,
                 past=date < today,
                 items=its,
@@ -442,8 +443,9 @@ async def revoke_feed(request: Request, user: Annotated[CurrentUser, limited("pl
 
 
 def _client_key(request: Request) -> str:
-    fwd = request.headers.get("x-forwarded-for", "")
-    host = fwd.split(",")[0].strip() if fwd else (request.client.host if request.client else "?")
+    # The address uvicorn resolved (it applies the trusted proxy headers itself): a client-sent X-Forwarded-For is
+    # never read here, so the per-address limit cannot be dodged by changing it.
+    host = request.client.host if request.client else "?"
     return hashlib.sha256(host.encode()).hexdigest()[:16]
 
 

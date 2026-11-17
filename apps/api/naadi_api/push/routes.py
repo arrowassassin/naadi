@@ -156,6 +156,9 @@ async def create_subscription(
             "insert into public.push_subscriptions (user_id, endpoint, p256dh, auth, ua_label) values (%s,%s,%s,%s,%s)"  # noqa: S608
             " on conflict (endpoint) do update set user_id = excluded.user_id, p256dh = excluded.p256dh,"
             " auth = excluded.auth, ua_label = excluded.ua_label, failures = 0, last_sent_on = null, sent_today = 0"
+            # Knowing an endpoint is not enough to take it over: the same student, or the same browser keys.
+            " where push_subscriptions.user_id = excluded.user_id"
+            " or (push_subscriptions.p256dh = excluded.p256dh and push_subscriptions.auth = excluded.auth)"
             f" returning {SUB_COLS}",
             (user.user_id, body.endpoint, body.keys.p256dh, body.keys.auth, label),
         )
@@ -163,6 +166,8 @@ async def create_subscription(
     made = await as_service(_db(request), run)
     if made is None:
         return error_response(422, "Too many devices are registered.", "too_many_subscriptions")
+    if not made:
+        return error_response(409, "This device belongs to another account.", "endpoint_in_use")
     return PushSubscriptionOut.model_validate(made[0])
 
 

@@ -8424,7 +8424,7 @@
         "additionalProperties": false,
         "properties": {
           "client_updated_at_ms": {
-            "description": "When the student made the change (device clock, ms since the epoch)",
+            "description": "When the student made the change (device clock, ms since the epoch); the server never lets a stamp run more than a few minutes ahead of its own clock",
             "maximum": 9999999999999.0,
             "minimum": 0.0,
             "title": "Client Updated At Ms",
@@ -18875,6 +18875,11 @@
             "description": "null for a date outside the plan",
             "title": "Day No"
           },
+          "day_off": {
+            "description": "A date inside the plan's span that is not a study day",
+            "title": "Day Off",
+            "type": "boolean"
+          },
           "extra": {
             "title": "Extra",
             "type": "boolean"
@@ -18958,6 +18963,7 @@
           "rest",
           "extra",
           "in_plan",
+          "day_off",
           "is_today",
           "past",
           "items"

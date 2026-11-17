@@ -8,6 +8,8 @@ from collections.abc import Iterable
 _PG_PASSWORD = re.compile(r"(postgres(?:ql)?://[^:/@\s]+:)[^@\s]+@")
 _BEARER = re.compile(r"(Bearer\s+)[A-Za-z0-9._~+/=\-]+", re.IGNORECASE)
 _KEYLIKE = re.compile(r"\b(sk-or-v1-|tvly-|hf_|sbp_|nvapi-|eyJ)[A-Za-z0-9._\-]{8,}")
+# Capability URLs: the calendar feed token is the whole credential, so it never reaches a log line.
+_CAPABILITY_URL = re.compile(r"(/api/plan/ics/)[A-Za-z0-9_\-%.~]+")
 _EMAIL = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 
 
@@ -18,6 +20,7 @@ def redact(text: str, secrets: Iterable[str] = ()) -> str:
             text = text.replace(s, "***")
     text = _PG_PASSWORD.sub(r"\1***@", text)
     text = _BEARER.sub(r"\1***", text)
+    text = _CAPABILITY_URL.sub(r"\1[redacted]", text)
     text = _KEYLIKE.sub(r"\1***", text)
     return _EMAIL.sub("***@***", text)
 

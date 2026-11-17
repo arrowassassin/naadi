@@ -73,6 +73,7 @@ function day(date: string, n: number, over: Record<string, unknown> = {}) {
     rest: false,
     extra: false,
     in_plan: true,
+    day_off: false,
     is_today: false,
     past: false,
     items: [],

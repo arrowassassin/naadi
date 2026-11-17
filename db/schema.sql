@@ -1230,7 +1230,7 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 -- 0024: export_jobs: select only (the API writes them); RLS forced with the four _own policies. question_reviews and
 --   authoring_runs are backend-only: the API (which knows the admins, ADMIN_EMAILS) reads and writes them.
 
--- 0027: plan_items: select + update (status, client_updated_at_ms); no client insert or delete. plan_rebalances and
+-- 0027/0030: plan_items: select only for clients (status changes go through the API); no client insert, update or delete. plan_rebalances and
 --   calendar_feeds: select only. push_subscriptions: select + delete. RLS forced with the four _own policies.
 --
 -- Functions naadi_touch_updated_at(), naadi_app_config_history(), naadi_app_config_notify(),
