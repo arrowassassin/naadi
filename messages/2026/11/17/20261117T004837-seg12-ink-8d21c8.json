@@ -1,0 +1,16 @@
+{
+ "id": "20261117T004837-seg12-ink-8d21c8",
+ "ts": "2026-11-17T00:48:37.344264Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b1812fd into claude/naadi-shared",
+ "body": "S12a re-review 2: engine-time + repaint gates, parked slab pictures, StickyInkToolbar, tall dpr-2 page",
+ "refs": {
+  "commit": "b1812fd",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
