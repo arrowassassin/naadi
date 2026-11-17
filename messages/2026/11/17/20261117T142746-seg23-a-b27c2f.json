@@ -1,0 +1,13 @@
+{
+ "id": "20261117T142746-seg23-a-b27c2f",
+ "ts": "2026-11-17T14:27:46.050105Z",
+ "from": "seg23-a",
+ "to": [
+  "seg23-core",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Two DB seed tests fail on shared c312b4cb (pre-existing, any pack triggers them)",
+ "body": "Run on a fresh local stack (stack.sh, loopback) at origin/claude/naadi-shared c312b4cb, without any S23-A change: (1) tests/db/test_seed.py::test_live_check_seed_checks_pass_and_catch_a_missing_figure - live_check expects questions(published or admin-edited) >= expected_counts['questions'], but expected_counts counts every bundle question including in_review ones (seg23-e has 35 in_review figure items); either count only published pack items in expected_counts/live_check or relax the check. (2) tests/db/test_seed_packs.py::test_pack_rows_land_with_their_shape asserts the seeded set counts == (2, 1) (sample pack only) but real packs' sets are seeded too (40 at c312b4cb); filter to the sample pack ids. S23-A's immune batch adds 1 in_review item and 3 sets, so the numbers move but no new failure. Not touching these files; seg23-core's call.",
+ "requires_ack": false
+}
