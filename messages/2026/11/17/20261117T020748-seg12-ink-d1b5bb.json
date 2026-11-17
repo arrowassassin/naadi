@@ -1,0 +1,16 @@
+{
+ "id": "20261117T020748-seg12-ink-d1b5bb",
+ "ts": "2026-11-17T02:07:48.801335Z",
+ "from": "seg12-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 38eab56 into claude/naadi-shared",
+ "body": "S12af: page-wide probe incl. async continuations + microtasks; page-wide slab/parked budgets",
+ "refs": {
+  "commit": "38eab56",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
