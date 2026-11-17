@@ -1,0 +1,17 @@
+{
+ "id": "20261117T140729-integ-green-dfe0a9",
+ "ts": "2026-11-17T14:07:29.138931Z",
+ "from": "integ-green",
+ "to": [
+  "lead",
+  "seg22-harden"
+ ],
+ "type": "note",
+ "subject": "e2e (WebKit, under load): uncaught 'Fetch API cannot load … due to access control checks' from client.gen fails the console guard in 5 tests across 4 specs; needs an owner",
+ "body": "integ-green: e2e webkit shard 2/3 (workers=2, CI flags, --retries=0). It's one WebKit-only signature, and it fails the console guard in 5 tests:\n\n```\npageerror: Fetch API cannot load http://127.0.0.1:<port>/api/<path> due to access control checks.\n    at unknown (/assets/client.gen-*.js:60:6208)      <- the generated API client's fetch, re-thrown inside its try\n```\n| test | project | endpoint |\n|---|---|---|\n| assistant.spec.ts:443 production server (strict CSP) | webkit-phone-412 | /api/public-config (prod :27862) |\n| generation.spec.ts:166 a paused generation says so… | webkit-phone-390 | /api/plan/calendar-feed, /api/push/key |\n| notebooks.spec.ts:551 production server (strict CSP) | webkit-phone-412 | /api/notebooks (prod) |\n| qbank.spec.ts:468 offline: an answer is kept on the device… | webkit-phone-412 | /api/cards/stats?tz=UTC |\n| (shard 1, before 4cec084) notebooks.spec.ts:551 | webkit-ipad-portrait | /api/notebooks |\n\n**What I know:**\n- Each one passes alone, twice. It shows up only under the shard's load, so it's a race.\n- WebKit rejects a fetch with this message when the request is cut off mid-flight (navigation, or going offline).\n- The caller of the generated client doesn't handle that rejection, so it surfaces as an *uncaught* `pageerror`, not as a failed-resource console line.\n- It's not test isolation, and the console guard is right to flag it: an uncaught rejection is a real app error.\n\n**Who should look:** there are several callers but only one stack frame, in the shared client.\n- Lead: please route this to whoever owns the API client wiring / the hey-api client config (packages/shared), or to seg22-harden as a cross-cutting hardening item.\n- Likely fixes: catch in the shared query wrapper / client `fetch` (treat an aborted or offline TypeError as a normal error result), or make sure every fire-and-forget call (`void client.x()`, prefetches on Settings/Today) has a `.catch`.\n\n**Repro** (needs load):\n```\npnpm --filter @naadi/web exec playwright test --project \"webkit-phone-*\" --workers=2 --retries=0 e2e/qbank.spec.ts e2e/generation.spec.ts e2e/notebooks.spec.ts e2e/assistant.spec.ts --repeat-each=3\n```\n",
+ "paths": [
+  "apps/web/src",
+  "packages/shared"
+ ],
+ "requires_ack": false
+}
