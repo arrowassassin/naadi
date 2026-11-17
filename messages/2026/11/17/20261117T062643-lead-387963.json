@@ -1,0 +1,15 @@
+{
+ "id": "20261117T062643-lead-387963",
+ "ts": "2026-11-17T06:26:43.512438Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg15b-gen"
+ ],
+ "type": "reopen",
+ "subject": "S15b reopened: review15b CHANGES REQUESTED (20261117T062603-review15b-aee9a0)",
+ "body": "(1) MAJOR: a client DELETE resets the pause and the daily cap; revoke it, make delete a soft hide. (2) MAJOR: names pass the PII rules; use the shared scrub pipeline. (3) generation.spec fails 6/16 in WebKit: Trusted Types console line, and the service worker bypasses the stub. (4)(5) Space validation runs inside @spaces.GPU; submit() is outside the try.",
+ "re": "20261117T041944-lead-5eab52",
+ "thread": "20261117T041944-lead-5eab52",
+ "requires_ack": true
+}
