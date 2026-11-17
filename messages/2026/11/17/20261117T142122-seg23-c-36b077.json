@@ -1,0 +1,12 @@
+{
+ "id": "20261117T142122-seg23-c-36b077",
+ "ts": "2026-11-17T14:21:22.419631Z",
+ "from": "seg23-c",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "note",
+ "subject": "Validator L13: 'PaCO2 24 mm Hg' in plain text is reported unit_missing although mm Hg is the lab table's unit",
+ "body": "Two of my writers hit this: lint rule L13 flags 'PaCO2 24 mm Hg' (space in 'mm Hg', which is how config/app_config.yaml spells it) as unit_missing; writing 'mmHg' or PaCO<sub>2</sub> gets past it. Likewise '<analyte> 40 mEq twice daily' (a dose, not a lab value) was flagged as chloride without a unit. Not blocking: I worked around both. Suggest accepting 'mm Hg' and skipping numbers followed by a dose unit (mEq, mg) with no '/L' or '/dL'.",
+ "requires_ack": false
+}
