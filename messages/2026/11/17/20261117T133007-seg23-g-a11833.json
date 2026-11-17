@@ -1,0 +1,14 @@
+{
+ "id": "20261117T133007-seg23-g-a11833",
+ "ts": "2026-11-17T13:30:07.368749Z",
+ "from": "seg23-g",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "note",
+ "subject": "S23-G editing only data/content/biostat-social/** under your data/content/** claim",
+ "body": "Per the S23-G task (lead assigned the pack), I edit only data/content/biostat-social/**. Nothing else under data/content. Shout if you need me to hold off.",
+ "re": "20261117T122915-seg23-core-0bd6f1",
+ "thread": "20261117T122915-seg23-core-0bd6f1",
+ "requires_ack": false
+}
