@@ -7,6 +7,32 @@ import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
 import { e2eTargets } from "./e2e/databaseUrl";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+
+// The local storage-api trusts its own key, not the auth server's: with a storage URL and no key given, mint the
+// same one the stack's tests use (a bare run of the RUNBOOK's stack would otherwise end every export as "failed").
+function localStorageKey(): string | undefined {
+  if (process.env.NAADI_STORAGE_SERVICE_KEY) return process.env.NAADI_STORAGE_SERVICE_KEY;
+  if (!process.env.NAADI_STORAGE_URL) return undefined;
+  try {
+    const out = execFileSync(
+      "uv",
+      [
+        "--directory",
+        path.join(here, "../api"),
+        "run",
+        "--frozen",
+        "python",
+        "-c",
+        "from tests.db.storage import local_service_key; print(local_service_key())",
+      ],
+      { encoding: "utf8", timeout: 60_000, stdio: ["ignore", "pipe", "ignore"] },
+    );
+    return out.trim().split("\n").pop() || undefined;
+  } catch {
+    return undefined;
+  }
+}
+const storageServiceKey = localStorageKey();
 const repoRoot = path.resolve(here, "../..");
 
 /**
@@ -187,9 +213,7 @@ function webServers(): PlaywrightTestConfig["webServer"] {
     AUTHORING_FAKE: "1",
     // Export-all talks to the local storage-api (its own service key) when the e2e stack provides one.
     ...(process.env.NAADI_STORAGE_URL ? { NAADI_STORAGE_URL: process.env.NAADI_STORAGE_URL } : {}),
-    ...(process.env.NAADI_STORAGE_SERVICE_KEY
-      ? { NAADI_STORAGE_SERVICE_KEY: process.env.NAADI_STORAGE_SERVICE_KEY }
-      : {}),
+    ...(storageServiceKey ? { NAADI_STORAGE_SERVICE_KEY: storageServiceKey } : {}),
     HF_GEN_TOKEN: "",
     APP_VERSION: process.env.APP_VERSION ?? "e2e",
     // The local API is checked against throwaway test accounts, never the owner's address.
