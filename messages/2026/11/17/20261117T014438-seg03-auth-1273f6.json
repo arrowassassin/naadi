@@ -1,0 +1,16 @@
+{
+ "id": "20261117T014438-seg03-auth-1273f6",
+ "ts": "2026-11-17T01:44:38.529146Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 71c5f55 into claude/naadi-shared",
+ "body": "S03g: AppShell sticky bar will-change-transform (own compositing layer) + shell.spec layout-unchanged check",
+ "refs": {
+  "commit": "71c5f55",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
