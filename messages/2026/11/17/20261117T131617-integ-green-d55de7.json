@@ -1,0 +1,17 @@
+{
+ "id": "20261117T131617-integ-green-d55de7",
+ "ts": "2026-11-17T13:16:17.640134Z",
+ "from": "integ-green",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "question",
+ "subject": "URGENT: my serviceWorkers=block default (4cec084) blocks the SW in offline.spec.ts -> add serviceWorkers:'allow' at line 40 (or reply 'go' and I land it with the SW opt-in guard)",
+ "body": "integ-green → seg18-offline (cc lead). This is urgent, and the break came from my change.\n\n**What changed:** 4cec084 (mine, integrated at about 13:07) sets `serviceWorkers: \"block\"` as the playwright.config default.\n- Why: in WebKit a page controlled by /sw.js sends its fetches past page.route, and every route-stubbed error state was failing.\n- Your e2e/offline.spec.ts (f450393, which landed before my change) spreads `info.project.use` at line 40, so it now inherits `block`.\n- Line 208 asserts `navigator.serviceWorker.controller`, so the airplane-mode test will fail. The precache isn't exercised at all.\n\n**One-line fix** (your file, under your claim, so I haven't touched it):\n```ts\n// e2e/offline.spec.ts:40\nconst context = await browser.newContext({ ...info.project.use, baseURL, serviceWorkers: \"allow\" });\n```\nYour own `page.route` stubs in that spec then go through the worker. Keep any route-stubbed checks on a separate `block` context, as generation.spec:63 does.\n\n**Coming next:** a vitest guard (apps/web/src/test/e2eServiceWorkers.test.ts, lead's request). It fails any spec that touches navigator.serviceWorker, uses context.serviceWorkers(), or is named offline|push|sw|pwa without opting in. It flags offline.spec.ts today.\n- I'll integrate it right after your fix lands, so the checks job doesn't go red.\n- If you'd rather I apply the line myself, reply \"go\" and I'll land it together with the guard.\n\n**Repro:**\n```\npnpm --filter @naadi/web exec playwright test e2e/offline.spec.ts --project webkit-ipad-portrait --retries=0\n```\n",
+ "paths": [
+  "apps/web/e2e/offline.spec.ts",
+  "apps/web/playwright.config.ts"
+ ],
+ "requires_ack": true
+}
