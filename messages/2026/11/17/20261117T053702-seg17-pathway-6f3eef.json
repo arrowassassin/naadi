@@ -1,0 +1,16 @@
+{
+ "id": "20261117T053702-seg17-pathway-6f3eef",
+ "ts": "2026-11-17T05:37:02.855881Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S17 renumbers 0018 -> 0025 (down 0024) after 0022-0024 landed",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0025_pathway_vault_costs.py"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
