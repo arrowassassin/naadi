@@ -404,7 +404,7 @@
         "D": "An intra-aortic balloon pump is contraindicated in significant aortic regurgitation because it worsens diastolic backflow.",
         "E": "β-blockers slow the heart, lengthen diastole and increase regurgitant volume in acute aortic regurgitation."
       },
-      "objective": "Recognise heart failure from valve destruction as an indication for urgent surgery in endocarditis.",
+      "objective": "Recognize heart failure from valve destruction as an indication for urgent surgery in endocarditis.",
       "areas": [
         "usmle2026.08.01.01"
       ],
@@ -526,7 +526,7 @@
       "whyNot": {
         "A": "<em>S gallolyticus</em> bacteremia calls for prompt colonoscopy now, whatever the screening schedule says; waiting for the routine interval could miss a colorectal neoplasm.",
         "B": "CT does not detect polyps or early cancers reliably.",
-        "D": "Stool testing is a screening tool for average-risk people and can miss adenomas; this patient needs direct visualisation.",
+        "D": "Stool testing is a screening tool for average-risk people and can miss adenomas; this patient needs direct visualization.",
         "E": "CEA is not a diagnostic or screening test for colon cancer."
       },
       "objective": "Order colonoscopy after Streptococcus gallolyticus endocarditis.",
@@ -652,7 +652,7 @@
         "C": "Lyme carditis causes AV block but not <em>S. aureus</em> bacteremia.",
         "E": "Septic lung emboli arise from right-sided disease and do not lengthen the PR interval."
       },
-      "objective": "Recognise perivalvular abscess from persistent bacteremia and new AV block in aortic valve endocarditis.",
+      "objective": "Recognize perivalvular abscess from persistent bacteremia and new AV block in aortic valve endocarditis.",
       "areas": [
         "usmle2026.08.01.01"
       ],
@@ -774,8 +774,8 @@
       "whyNot": {
         "A": "Pneumococcal pneumonia causes lobar consolidation, not multiple round cavitating nodules, and does not explain the murmur.",
         "B": "Granulomatosis with polyangiitis can cause cavitating nodules but brings sinus and kidney disease, not a new murmur with fever after injection use.",
-        "C": "Choriocarcinoma can metastasise to the lung as nodules but would not cause a new tricuspid murmur and acute fever.",
-        "D": "Reactivation TB favours the apices, and a subacute course over weeks would be expected."
+        "C": "Choriocarcinoma can metastasize to the lung as nodules but would not cause a new tricuspid murmur and acute fever.",
+        "D": "Reactivation TB favors the apices, and a subacute course over weeks would be expected."
       },
       "objective": "Diagnose tricuspid endocarditis with septic pulmonary emboli.",
       "areas": [
@@ -933,7 +933,7 @@
       "id": "s23b-q-080101-s1-02",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 58-year-old woman has had low-grade fevers, night sweats and a 4-kg weight loss over 6 weeks. Two months ago she had two molars extracted. She has known mitral valve prolapse with regurgitation. Three blood cultures grow alpha-hemolytic, optochin-resistant gram-positive cocci in chains. Which of the following properties of this organism most directly allows it to colonise her mitral valve?</p>",
+      "stemHtml": "<p>A 58-year-old woman has had low-grade fevers, night sweats and a 4-kg weight loss over 6 weeks. Two months ago she had two molars extracted. She has known mitral valve prolapse with regurgitation. Three blood cultures grow alpha-hemolytic, optochin-resistant gram-positive cocci in chains. Which of the following properties of this organism most directly allows it to colonize her mitral valve?</p>",
       "options": [
         {
           "label": "A",
@@ -957,7 +957,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>Subacute endocarditis on a previously damaged valve after dental work, with alpha-hemolytic, optochin-resistant streptococci, is caused by <strong>viridans group streptococci</strong> (for example <em>S. sanguinis</em> or <em>S. mutans</em>). They synthesise <strong>dextrans (glucans)</strong> from sucrose; these sticky polymers attach the organism to the sterile platelet–fibrin nidus that forms where a regurgitant jet has injured the endothelium.</p><p><strong>Takeaway:</strong> viridans streptococci need a damaged valve and use dextran to adhere to its fibrin–platelet deposit.</p>",
+      "explanationHtml": "<p>Subacute endocarditis on a previously damaged valve after dental work, with alpha-hemolytic, optochin-resistant streptococci, is caused by <strong>viridans group streptococci</strong> (for example <em>S. sanguinis</em> or <em>S. mutans</em>). They synthesize <strong>dextrans (glucans)</strong> from sucrose; these sticky polymers attach the organism to the sterile platelet–fibrin nidus that forms where a regurgitant jet has injured the endothelium.</p><p><strong>Takeaway:</strong> viridans streptococci need a damaged valve and use dextran to adhere to its fibrin–platelet deposit.</p>",
       "whyNot": {
         "A": "Protein A is a virulence factor of <em>S. aureus</em>, not of streptococci.",
         "B": "A capsule is the key virulence factor of <em>S. pneumoniae</em>, which is also alpha-hemolytic but optochin-sensitive.",
@@ -1019,7 +1019,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Bacteremia or endocarditis caused by <em>Streptococcus gallolyticus</em> (formerly <em>S. bovis</em> biotype I) is strongly associated with <strong>colonic adenomas and adenocarcinoma</strong>. The tumour's disrupted mucosa is thought to let this gut commensal enter the blood. Colonoscopy is indicated even without GI symptoms.</p><p><strong>Takeaway:</strong> <em>S. gallolyticus</em> in the blood → colonoscopy.</p>",
+      "explanationHtml": "<p>Bacteremia or endocarditis caused by <em>Streptococcus gallolyticus</em> (formerly <em>S. bovis</em> biotype I) is strongly associated with <strong>colonic adenomas and adenocarcinoma</strong>. The tumor's disrupted mucosa is thought to let this gut commensal enter the blood. Colonoscopy is indicated even without GI symptoms.</p><p><strong>Takeaway:</strong> <em>S. gallolyticus</em> in the blood → colonoscopy.</p>",
       "whyNot": {
         "A": "Lung cancer is not linked to <em>S. gallolyticus</em> bacteremia.",
         "C": "Dental disease is the source of viridans streptococci, a different group.",
@@ -1086,7 +1086,7 @@
         "B": "Organisms are not seeded in digital arteries to form these nodules; invasion of an arterial wall produces a mycotic aneurysm.",
         "C": "Septic microemboli with microabscesses explain Janeway lesions, which are painless, flat and on the palms and soles.",
         "D": "Antiphospholipid thrombosis can cause digital ischemia but does not explain tender nodules in a febrile patient with a valve lesion.",
-        "E": "Cold-triggered vasospasm is Raynaud phenomenon, which causes colour change rather than nodules."
+        "E": "Cold-triggered vasospasm is Raynaud phenomenon, which causes color change rather than nodules."
       },
       "objective": "Distinguish the immunologic and embolic mechanisms of the peripheral signs of endocarditis.",
       "areas": [
@@ -1147,10 +1147,10 @@
       "whyNot": {
         "A": "Body lice transmit <em>Bartonella quintana</em>, another cause of culture-negative endocarditis, in people experiencing homelessness.",
         "B": "Ticks transmit <em>Rickettsia rickettsii</em> and <em>Borrelia</em>; <em>Coxiella</em> does not need a tick to infect humans.",
-        "C": "Food-borne infection does not fit; unpasteurised milk is a minor route, not unwashed vegetables.",
+        "C": "Food-borne infection does not fit; unpasteurized milk is a minor route, not unwashed vegetables.",
         "E": "Cat scratches transmit <em>Bartonella henselae</em>."
       },
-      "objective": "Recognise Coxiella burnetii as a cause of culture-negative endocarditis and describe its transmission.",
+      "objective": "Recognize Coxiella burnetii as a cause of culture-negative endocarditis and describe its transmission.",
       "areas": [
         "usmle2026.08.01.01"
       ],
@@ -1331,7 +1331,7 @@
       "answer": "C",
       "explanationHtml": "<p>Tertiary syphilis causes <strong>syphilitic aortitis</strong>: inflammation and <strong>obliterative endarteritis of the vasa vasorum</strong> of the thoracic aorta. Ischemia of the outer media destroys smooth muscle and elastic tissue, leaving scars that wrinkle the intima (“tree-bark”) and allowing aneurysmal dilation of the ascending aorta and root. Root dilation causes aortic regurgitation; ostial involvement can narrow the coronaries.</p><p><strong>Takeaway:</strong> ascending aortic aneurysm + aortic regurgitation + positive treponemal test → vasa vasorum endarteritis.</p>",
       "whyNot": {
-        "A": "Atherosclerotic aneurysms favour the abdominal aorta below the renal arteries, not the ascending aorta.",
+        "A": "Atherosclerotic aneurysms favor the abdominal aorta below the renal arteries, not the ascending aorta.",
         "B": "Cystic medial degeneration from abnormal fibrillin explains aortic root disease in Marfan syndrome, usually in younger people.",
         "D": "Granulomatous aortitis is the lesion of giant cell arteritis and Takayasu arteritis.",
         "E": "Immune complex deposition is not the mechanism of luetic aortitis."
@@ -1399,7 +1399,7 @@
         "C": "<em>Rickettsia rickettsii</em> causes Rocky Mountain spotted fever, a petechial rash spreading from wrists and ankles, with vasculitis rather than isolated heart block.",
         "D": "Coxsackievirus B causes myocarditis with heart failure; it does not follow a tick-associated rash."
       },
-      "objective": "Recognise Lyme carditis as AV block after erythema migrans.",
+      "objective": "Recognize Lyme carditis as AV block after erythema migrans.",
       "areas": [
         "usmle2026.08.01.01"
       ],
@@ -1574,7 +1574,7 @@
         },
         {
           "label": "E",
-          "html": "Oral azithromycin daily for 1 year"
+          "html": "Oral azithromycin daily for 12 months"
         }
       ],
       "answer": "B",
@@ -1583,7 +1583,7 @@
         "A": "Throat culture surveillance does not prevent infection and is not an accepted strategy.",
         "C": "Treating only symptomatic pharyngitis misses asymptomatic infections, which can also trigger recurrences.",
         "D": "Rheumatic valve disease without a prosthesis is not an indication for dental endocarditis prophylaxis, and that would not prevent rheumatic fever.",
-        "E": "Azithromycin is an alternative only for penicillin allergy, and 1 year is too short."
+        "E": "Azithromycin is an alternative only for penicillin allergy, and 12 months is far too short after carditis."
       },
       "objective": "Choose secondary prophylaxis and its duration after rheumatic fever with carditis.",
       "areas": [
@@ -1702,12 +1702,12 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>Purposeless choreiform movements with emotional lability months after pharyngitis are <strong>Sydenham chorea</strong>, a major manifestation of acute rheumatic fever. Chorea appears late, often alone, when inflammatory markers have normalised. <strong>Echocardiography with Doppler</strong> is indicated in every suspected case, because subclinical carditis is common and changes the duration of penicillin prophylaxis.</p><p><strong>Takeaway:</strong> Sydenham chorea → echocardiogram for silent carditis, then secondary prophylaxis.</p>",
+      "explanationHtml": "<p>Purposeless choreiform movements with emotional lability months after pharyngitis are <strong>Sydenham chorea</strong>, a major manifestation of acute rheumatic fever. Chorea appears late, often alone, when inflammatory markers have normalized. <strong>Echocardiography with Doppler</strong> is indicated in every suspected case, because subclinical carditis is common and changes the duration of penicillin prophylaxis.</p><p><strong>Takeaway:</strong> Sydenham chorea → echocardiogram for silent carditis, then secondary prophylaxis.</p>",
       "whyNot": {
         "B": "There is no sign of CNS infection to justify a lumbar puncture.",
         "C": "CT is not needed for typical chorea without focal deficits.",
         "D": "EEG does not diagnose chorea, which is not epileptic.",
-        "E": "Wilson disease can cause movement disorders, but the timing after pharyngitis and the age favour rheumatic chorea."
+        "E": "Wilson disease can cause movement disorders, but the timing after pharyngitis and the age favor rheumatic chorea."
       },
       "objective": "Order echocardiography to detect subclinical carditis in Sydenham chorea.",
       "areas": [
@@ -2203,7 +2203,7 @@
       "answer": "D",
       "explanationHtml": "<p>Standard initial therapy for Kawasaki disease is <strong>IV immunoglobulin (2 g/kg as a single infusion) plus aspirin</strong>, given as early as possible within the first 10 days of fever. IVIG lowers the rate of coronary aneurysm from about 25% to a few per cent. Echocardiography is repeated at 1–2 and 4–6 weeks; children at high risk of aneurysm may also receive glucocorticoids with IVIG.</p><p><strong>Takeaway:</strong> Kawasaki disease → IVIG + aspirin, then serial echocardiography.</p>",
       "whyNot": {
-        "A": "Ibuprofen antagonises the antiplatelet effect of aspirin, and observation leaves the coronary risk untreated.",
+        "A": "Ibuprofen antagonizes the antiplatelet effect of aspirin, and observation leaves the coronary risk untreated.",
         "B": "Infliximab is used for IVIG-resistant disease, not as sole initial therapy.",
         "C": "There is no evidence of bacterial infection to justify broad-spectrum antibiotics.",
         "E": "Glucocorticoids alone are not first-line; they are an adjunct for high-risk or IVIG-resistant cases."
@@ -2249,7 +2249,7 @@
         },
         {
           "label": "B",
-          "html": "Give a double dose of measles-mumps-rubella vaccine now"
+          "html": "Give measles-mumps-rubella vaccine now and repeat it in 4 weeks"
         },
         {
           "label": "C",
@@ -2265,12 +2265,12 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>High-dose IVIG contains antibodies against measles and other viruses that can neutralise live attenuated vaccine viruses. <strong>Live vaccines such as MMR and varicella should be deferred for about 11 months after IVIG</strong> for Kawasaki disease (sooner if exposure risk is high, followed by a repeat dose). He should receive <strong>inactivated</strong> influenza vaccine while on aspirin to lower the risk of Reye syndrome.</p><p><strong>Takeaway:</strong> after Kawasaki IVIG, delay live vaccines about 11 months; give inactivated flu vaccine during aspirin therapy.</p>",
+      "explanationHtml": "<p>High-dose IVIG contains antibodies against measles and other viruses that can neutralize live attenuated vaccine viruses. <strong>Live vaccines such as MMR and varicella should be deferred for about 11 months after IVIG</strong> for Kawasaki disease (sooner if exposure risk is high, followed by a repeat dose). He should receive <strong>inactivated</strong> influenza vaccine while on aspirin to lower the risk of Reye syndrome.</p><p><strong>Takeaway:</strong> after Kawasaki IVIG, delay live vaccines about 11 months; give inactivated flu vaccine during aspirin therapy.</p>",
       "whyNot": {
         "A": "There is no reason to withhold MMR permanently; it is only deferred.",
-        "B": "A double dose is not effective and is not recommended.",
+        "B": "Giving the vaccine now wastes it: antibody from the IVIG neutralizes the live virus, and an early repeat dose does not overcome this.",
         "C": "The live intranasal influenza vaccine is contraindicated in children taking aspirin because of the Reye syndrome risk.",
-        "D": "Giving MMR now risks a poor immune response because passive antibody neutralises the vaccine virus."
+        "D": "Giving MMR now risks a poor immune response because passive antibody neutralizes the vaccine virus."
       },
       "objective": "Defer live vaccines after IVIG for Kawasaki disease.",
       "areas": [
@@ -2640,7 +2640,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>Small sterile vegetations on a normal valve in a patient with a <strong>mucin-producing adenocarcinoma</strong> are <strong>nonbacterial thrombotic (marantic) endocarditis</strong>. Tumour mucin and tissue factor create a <strong>hypercoagulable state</strong>, and bland fibrin–platelet thrombi form where leaflets meet. They embolise easily, causing infarcts in several territories.</p><p><strong>Takeaway:</strong> cancer + sterile vegetations + multiple emboli = NBTE from hypercoagulability.</p>",
+      "explanationHtml": "<p>Small sterile vegetations on a normal valve in a patient with a <strong>mucin-producing adenocarcinoma</strong> are <strong>nonbacterial thrombotic (marantic) endocarditis</strong>. Tumor mucin and tissue factor create a <strong>hypercoagulable state</strong>, and bland fibrin–platelet thrombi form where leaflets meet. They embolize easily, causing infarcts in several territories.</p><p><strong>Takeaway:</strong> cancer + sterile vegetations + multiple emboli = NBTE from hypercoagulability.</p>",
       "whyNot": {
         "A": "Negative cultures and a normal valve argue against infective endocarditis.",
         "B": "Cross-reacting antibodies cause rheumatic valvulitis after streptococcal pharyngitis.",
@@ -2677,11 +2677,11 @@
       "id": "s23b-q-080102-s1-07",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 58-year-old woman with a well-differentiated neuroendocrine tumour of the ileum and multiple liver metastases has episodic facial flushing, watery diarrhea and leg swelling. Echocardiography shows thickened, retracted tricuspid and pulmonic valves; the mitral and aortic valves are normal. Which of the following best explains why her left-sided valves are spared?</p>",
+      "stemHtml": "<p>A 58-year-old woman with a well-differentiated neuroendocrine tumor of the ileum and multiple liver metastases has episodic facial flushing, watery diarrhea and leg swelling. Echocardiography shows thickened, retracted tricuspid and pulmonic valves; the mitral and aortic valves are normal. Which of the following best explains why her left-sided valves are spared?</p>",
       "options": [
         {
           "label": "A",
-          "html": "Bronchial vessels filter out tumour cells"
+          "html": "Bronchial vessels filter out tumor cells"
         },
         {
           "label": "B",
@@ -2703,7 +2703,7 @@
       "answer": "C",
       "explanationHtml": "<p>In <strong>carcinoid heart disease</strong>, serotonin and related products from liver metastases enter the hepatic veins and reach the right heart, where they stimulate fibroblasts to lay down endocardial plaques that fix the tricuspid and pulmonic valves. Blood then passes through the lungs, where <strong>monoamine oxidase</strong> degrades serotonin, so left-sided valves are usually spared unless there is a bronchial primary or a right-to-left shunt.</p><p><strong>Takeaway:</strong> carcinoid heart disease is right-sided because the lung inactivates serotonin.</p>",
       "whyNot": {
-        "A": "Bronchial vessels do not filter tumour cells; the protection is metabolic, not mechanical.",
+        "A": "Bronchial vessels do not filter tumor cells; the protection is metabolic, not mechanical.",
         "B": "Serotonin receptors such as 5-HT<sub>2B</sub> are present on valves of both sides of the heart.",
         "D": "Pressure differences do not explain the sparing; serotonin-driven fibrosis depends on exposure.",
         "E": "Hepatic metastases release products into the hepatic veins, bypassing first-pass metabolism; that is why the syndrome appears."
@@ -2770,7 +2770,7 @@
         "D": "Intussusception is linked with IgA vasculitis (Henoch–Schönlein purpura).",
         "E": "Glomerulonephritis is a feature of small-vessel vasculitides; sterile pyuria is common in Kawasaki, but renal failure is not."
       },
-      "objective": "Recognise coronary aneurysm as the major complication of Kawasaki disease.",
+      "objective": "Recognize coronary aneurysm as the major complication of Kawasaki disease.",
       "areas": [
         "usmle2026.08.01.02"
       ],
@@ -2887,7 +2887,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p><strong>IL-6</strong> drives the fever, high CRP and ESR and vessel inflammation of giant cell arteritis. <strong>Tocilizumab</strong>, a humanised monoclonal antibody against the IL-6 receptor, lowers relapse rates and cumulative glucocorticoid dose. Because it suppresses CRP, CRP is no longer a reliable marker of infection or flare on treatment.</p><p><strong>Takeaway:</strong> giant cell arteritis steroid-sparing therapy = tocilizumab (anti-IL-6 receptor).</p>",
+      "explanationHtml": "<p><strong>IL-6</strong> drives the fever, high CRP and ESR and vessel inflammation of giant cell arteritis. <strong>Tocilizumab</strong>, a humanized monoclonal antibody against the IL-6 receptor, lowers relapse rates and cumulative glucocorticoid dose. Because it suppresses CRP, CRP is no longer a reliable marker of infection or flare on treatment.</p><p><strong>Takeaway:</strong> giant cell arteritis steroid-sparing therapy = tocilizumab (anti-IL-6 receptor).</p>",
       "whyNot": {
         "A": "Anakinra is an IL-1 receptor antagonist used for autoinflammatory diseases and gout.",
         "B": "Infliximab blocks TNF-α and did not prevent relapse in trials in giant cell arteritis.",
@@ -3172,7 +3172,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Annual chest CT to screen for pulmonary metastatic spread"
+          "html": "Annual chest CT to screen for pulmonary metastases"
         },
         {
           "label": "B",
@@ -5272,7 +5272,7 @@
         },
         {
           "label": "B",
-          "html": "Fast sodium current in Purkinje fibres"
+          "html": "Fast sodium current in Purkinje fibers"
         },
         {
           "label": "C",
@@ -5543,7 +5543,7 @@
       "answer": "B",
       "explanationHtml": "<p>This is carotid sinus hypersensitivity, an exaggerated baroreceptor reflex. Stretch receptors in the carotid sinus send impulses through the carotid sinus nerve, a branch of the <strong>glossopharyngeal nerve</strong> (CN IX), to the nucleus tractus solitarius. The efferent limb is increased vagal outflow (slowing the sinus node and AV node) and decreased sympathetic outflow (vasodilation). Recurrent syncope from the cardioinhibitory form is treated with a pacemaker.</p><p><strong>Takeaway:</strong> Carotid sinus baroreceptor afferents run in CN IX; the efferent bradycardia runs in CN X.</p>",
       "whyNot": {
-        "A": "The facial nerve carries no baroreceptor fibres.",
+        "A": "The facial nerve carries no baroreceptor fibers.",
         "C": "The hypoglossal nerve is purely motor to the tongue.",
         "D": "The phrenic nerve supplies the diaphragm and carries no baroreceptor afferents.",
         "E": "The vagus carries the efferent limb to the heart here, and the afferents from the aortic arch baroreceptors, but not those from the carotid sinus."
@@ -5607,7 +5607,7 @@
       "explanationHtml": "<p>His guideline-directed therapy lacks one of the four mortality-reducing classes: a mineralocorticoid receptor antagonist. Potassium below 5.0 mEq/L and eGFR above 30 make spironolactone (or eplerenone) appropriate, with potassium and creatinine checked within about a week and again during titration.</p><p><strong>Takeaway:</strong> HFrEF needs all four pillars (ARNI/ACEi/ARB, evidence-based beta-blocker, MRA, SGLT2 inhibitor) unless contraindicated.</p>",
       "whyNot": {
         "A": "Amlodipine is neutral in HFrEF and would only be used for uncontrolled hypertension or angina; his blood pressure is controlled.",
-        "B": "Digoxin reduces hospitalisation for symptoms but not mortality; it is added after the four core classes when symptoms persist.",
+        "B": "Digoxin reduces hospitalization for symptoms but not mortality; it is added after the four core classes when symptoms persist.",
         "C": "Hydralazine–isosorbide dinitrate is reserved for self-identified Black patients with persistent NYHA III–IV symptoms on optimal therapy or for those who cannot take any renin–angiotensin blocker.",
         "D": "Ivabradine requires sinus rhythm with a resting heart rate of at least 70/min on a maximally tolerated beta-blocker; his rate is 64/min."
       },
@@ -5670,9 +5670,9 @@
         "A": "Apixaban prevents stroke in atrial fibrillation; her risk score is high (age, female sex, heart failure), so it should continue.",
         "B": "A statin is appropriate cardiovascular prevention and is not harmful in heart failure.",
         "D": "Empagliflozin is one of the four mortality-reducing drug classes in HFrEF.",
-        "E": "Sacubitril–valsartan reduces death and hospitalisation in HFrEF and should continue."
+        "E": "Sacubitril–valsartan reduces death and hospitalization in HFrEF and should continue."
       },
-      "objective": "Recognise non-dihydropyridine calcium channel blockers as harmful in HFrEF.",
+      "objective": "Recognize non-dihydropyridine calcium channel blockers as harmful in HFrEF.",
       "areas": [
         "usmle2026.08.04.01"
       ],
@@ -5858,7 +5858,7 @@
         "C": "Hypertensive HFpEF occurs in older patients with long-standing hypertension; her diastolic pressure is low and the features of thyrotoxicosis dominate.",
         "D": "Ischemic cardiomyopathy causes low-output failure with cool extremities, and there is no history of coronary disease or angina."
       },
-      "objective": "Recognise thyrotoxicosis as a cause of high-output heart failure.",
+      "objective": "Recognize thyrotoxicosis as a cause of high-output heart failure.",
       "areas": [
         "usmle2026.08.04.01"
       ],
@@ -5892,7 +5892,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Cardiac resynchronisation therapy with defibrillator"
+          "html": "Cardiac resynchronization therapy with defibrillator"
         },
         {
           "label": "B",
@@ -5912,12 +5912,12 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>An implantable cardioverter-defibrillator for primary prevention of sudden cardiac death is indicated when the ejection fraction remains ≤ 35% with NYHA class II–III symptoms after at least 3 months of optimised guideline-directed therapy, in a patient expected to live more than a year. His QRS is narrow, so resynchronisation would not help.</p><p><strong>Takeaway:</strong> EF ≤ 35%, NYHA II–III, ≥ 3 months of GDMT → primary-prevention ICD; add CRT only for wide QRS (especially LBBB ≥ 150 ms).</p>",
+      "explanationHtml": "<p>An implantable cardioverter-defibrillator for primary prevention of sudden cardiac death is indicated when the ejection fraction remains ≤ 35% with NYHA class II–III symptoms after at least 3 months of optimized guideline-directed therapy, in a patient expected to live more than a year. His QRS is narrow, so resynchronization would not help.</p><p><strong>Takeaway:</strong> EF ≤ 35%, NYHA II–III, ≥ 3 months of GDMT → primary-prevention ICD; add CRT only for wide QRS (especially LBBB ≥ 150 ms).</p>",
       "whyNot": {
-        "A": "Resynchronisation requires a wide QRS, ideally left bundle branch block of at least 150 ms; his QRS is 98 ms.",
+        "A": "Resynchronization requires a wide QRS, ideally left bundle branch block of at least 150 ms; his QRS is 98 ms.",
         "C": "Prophylactic amiodarone does not reduce mortality in this setting and has substantial toxicity.",
         "D": "Delaying a device leaves him exposed to sudden death; his EF has not improved despite optimal therapy.",
-        "E": "A wearable defibrillator bridges the waiting period early after a new diagnosis or myocardial infarction; he has completed optimisation and now qualifies for a permanent device."
+        "E": "A wearable defibrillator bridges the waiting period early after a new diagnosis or myocardial infarction; he has completed optimization and now qualifies for a permanent device."
       },
       "objective": "Apply the criteria for a primary-prevention ICD in HFrEF.",
       "areas": [
@@ -6074,7 +6074,7 @@
       "id": "s23b-q-080401-ck-09",
       "exam": "step2ck",
       "format": "single",
-      "stemHtml": "<p>A 76-year-old woman with obesity, hypertension and type 2 diabetes comes for follow-up of heart failure. She has dyspnea when walking one block. Echocardiography shows concentric left ventricular hypertrophy, an ejection fraction of 62% and raised filling pressures. She takes furosemide, amlodipine, lisinopril and metformin. She has no edema, and her lungs are clear. Blood pressure is 126/74 mm Hg. Estimated GFR is 55 mL/min/1.73 m<sup>2</sup>. Which of the following added drugs is most likely to reduce her risk of hospitalisation for heart failure?</p>",
+      "stemHtml": "<p>A 76-year-old woman with obesity, hypertension and type 2 diabetes comes for follow-up of heart failure. She has dyspnea when walking one block. Echocardiography shows concentric left ventricular hypertrophy, an ejection fraction of 62% and raised filling pressures. She takes furosemide, amlodipine, lisinopril and metformin. She has no edema, and her lungs are clear. Blood pressure is 126/74 mm Hg. Estimated GFR is 55 mL/min/1.73 m<sup>2</sup>. Which of the following added drugs is most likely to reduce her risk of hospitalization for heart failure?</p>",
       "options": [
         {
           "label": "A",
@@ -6098,14 +6098,14 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>In heart failure with preserved ejection fraction, SGLT2 inhibitors (empagliflozin, dapagliflozin) reduce the combined risk of cardiovascular death or HF hospitalisation, driven mainly by fewer hospitalisations. Other priorities are diuretics for congestion, blood pressure control, weight loss and treating atrial fibrillation and sleep apnea.</p><p><strong>Takeaway:</strong> SGLT2 inhibitors are a first-line drug class across the whole ejection-fraction range.</p>",
+      "explanationHtml": "<p>In heart failure with preserved ejection fraction, SGLT2 inhibitors (empagliflozin, dapagliflozin) reduce the combined risk of cardiovascular death or HF hospitalization, driven mainly by fewer hospitalizations. Other priorities are diuretics for congestion, blood pressure control, weight loss and treating atrial fibrillation and sleep apnea.</p><p><strong>Takeaway:</strong> SGLT2 inhibitors are a first-line drug class across the whole ejection-fraction range.</p>",
       "whyNot": {
         "A": "Digoxin has no proven benefit in HFpEF and is mainly used for rate control or symptoms in HFrEF.",
-        "B": "Diltiazem can be used for rate control in HFpEF with atrial fibrillation, but she is not in atrial fibrillation and it does not reduce HF hospitalisation.",
+        "B": "Diltiazem can be used for rate control in HFpEF with atrial fibrillation, but she is not in atrial fibrillation and it does not reduce HF hospitalization.",
         "D": "Long-acting nitrates did not improve activity or quality of life in HFpEF trials.",
         "E": "Ivabradine is indicated only in HFrEF with sinus rhythm and a heart rate of at least 70/min."
       },
-      "objective": "Choose an SGLT2 inhibitor to reduce hospitalisation in HFpEF.",
+      "objective": "Choose an SGLT2 inhibitor to reduce hospitalization in HFpEF.",
       "areas": [
         "usmle2026.08.04.01"
       ],
@@ -6287,7 +6287,7 @@
         "A": "Renin–angiotensin blockade dilates the efferent arteriole whichever drug is used; the delay does not change this.",
         "C": "Hypotension can occur with sacubitril–valsartan, but the mandated washout specifically prevents angioedema.",
         "D": "Hyperkalemia is a concern with any renin–angiotensin blocker plus spironolactone, but a 36-hour gap does not address it; potassium monitoring does.",
-        "E": "Rebound hypertension is not a recognised problem when an ACE inhibitor is swapped for an ARB-containing drug; the washout is about bradykinin."
+        "E": "Rebound hypertension is not a recognized problem when an ACE inhibitor is swapped for an ARB-containing drug; the washout is about bradykinin."
       },
       "objective": "Explain why an ACE inhibitor must be stopped 36 hours before a neprilysin inhibitor is started.",
       "areas": [
@@ -6343,7 +6343,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Spironolactone blocks the mineralocorticoid receptor but also antagonises the androgen receptor (and increases conversion to estrogen), causing gynecomastia, breast pain and reduced libido. Eplerenone is a more selective mineralocorticoid receptor antagonist with far fewer antiandrogenic effects, and it also lowers mortality in HFrEF.</p><p><strong>Takeaway:</strong> spironolactone-related gynecomastia → switch to eplerenone to keep the MRA benefit.</p>",
+      "explanationHtml": "<p>Spironolactone blocks the mineralocorticoid receptor but also antagonizes the androgen receptor (and increases conversion to estrogen), causing gynecomastia, breast pain and reduced libido. Eplerenone is a more selective mineralocorticoid receptor antagonist with far fewer antiandrogenic effects, and it also lowers mortality in HFrEF.</p><p><strong>Takeaway:</strong> spironolactone-related gynecomastia → switch to eplerenone to keep the MRA benefit.</p>",
       "whyNot": {
         "A": "Acetazolamide inhibits carbonic anhydrase and has no role in replacing an MRA.",
         "B": "Amiloride blocks the epithelial sodium channel and spares potassium, but it is not a mineralocorticoid receptor antagonist and has no proven survival benefit in HFrEF.",
@@ -6529,14 +6529,14 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Rupture of a chorda tendineae causes acute severe mitral regurgitation. The left atrium has not had time to dilate and is non-compliant, so the regurgitant volume during systole produces a giant v wave on the wedge (left atrial) tracing and an abrupt rise in pulmonary venous pressure, causing flash pulmonary edema. The murmur is often soft and short because atrial and ventricular pressures quickly equalise.</p><p><strong>Takeaway:</strong> acute MR = small stiff left atrium, giant v waves, sudden pulmonary edema, and a deceptively soft murmur.</p>",
+      "explanationHtml": "<p>Rupture of a chorda tendineae causes acute severe mitral regurgitation. The left atrium has not had time to dilate and is non-compliant, so the regurgitant volume during systole produces a giant v wave on the wedge (left atrial) tracing and an abrupt rise in pulmonary venous pressure, causing flash pulmonary edema. The murmur is often soft and short because atrial and ventricular pressures quickly equalize.</p><p><strong>Takeaway:</strong> acute MR = small stiff left atrium, giant v waves, sudden pulmonary edema, and a deceptively soft murmur.</p>",
       "whyNot": {
-        "A": "Absent a waves indicate absent organised atrial contraction (atrial fibrillation), not acute regurgitation.",
+        "A": "Absent a waves indicate absent organized atrial contraction (atrial fibrillation), not acute regurgitation.",
         "B": "Irregular cannon a waves occur when the atrium contracts against a closed AV valve, as in complete heart block; they are seen in the jugular venous pulse.",
         "D": "A dip-and-plateau (square-root) pattern with a steep y descent is the signature of constrictive pericarditis or restrictive cardiomyopathy.",
         "E": "A steep x descent with a small v wave is the normal or tamponade-like pattern; regurgitation blunts the x descent and enlarges the v wave."
       },
-      "objective": "Recognise the giant v wave of acute mitral regurgitation from chordal rupture.",
+      "objective": "Recognize the giant v wave of acute mitral regurgitation from chordal rupture.",
       "areas": [
         "usmle2026.08.04.01"
       ],
@@ -6591,7 +6591,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Primary PCI is preferred only if it can be delivered within 120 minutes of first medical contact when transfer is needed. With an expected delay of about 150 minutes, symptoms for less than 12 hours and no contraindications, he should receive a fibrinolytic (ideally within 30 minutes of arrival) and then be transferred to a PCI centre: immediately for rescue PCI if reperfusion fails, otherwise for angiography within about 2–24 hours (pharmacoinvasive strategy).</p><p><strong>Takeaway:</strong> STEMI with expected PCI delay over 120 minutes → fibrinolysis within 30 minutes, then transfer.</p>",
+      "explanationHtml": "<p>Primary PCI is preferred only if it can be delivered within 120 minutes of first medical contact when transfer is needed. With an expected delay of about 150 minutes, symptoms for less than 12 hours and no contraindications, he should receive a fibrinolytic (ideally within 30 minutes of arrival) and then be transferred to a PCI center: immediately for rescue PCI if reperfusion fails, otherwise for angiography within about 2–24 hours (pharmacoinvasive strategy).</p><p><strong>Takeaway:</strong> STEMI with expected PCI delay over 120 minutes → fibrinolysis within 30 minutes, then transfer.</p>",
       "whyNot": {
         "A": "Stress testing is contraindicated in an acute STEMI.",
         "C": "After fibrinolysis, patients need transfer for angiography; discharge would be unsafe.",
@@ -6645,7 +6645,7 @@
         },
         {
           "label": "D",
-          "html": "Intravenous alteplase as reperfusion therapy"
+          "html": "Intravenous alteplase within the next 30 minutes"
         },
         {
           "label": "E",
@@ -6691,7 +6691,7 @@
       "id": "s23b-q-080501-ck-03",
       "exam": "step2ck",
       "format": "single",
-      "stemHtml": "<p>A 61-year-old man is brought to the emergency department with 1 hour of chest pain. ECG shows ST elevation in II, III and aVF and 1-mm ST elevation in V4R. After a sublingual nitroglycerin tablet given by paramedics, his blood pressure fell from 110/70 to 78/50 mm Hg. Pulse is 58/min. Jugular venous pressure is raised, and the lungs are clear. The catheterisation laboratory has been activated. Which of the following is the most appropriate immediate step?</p>",
+      "stemHtml": "<p>A 61-year-old man is brought to the emergency department with 1 hour of chest pain. ECG shows ST elevation in II, III and aVF and 1-mm ST elevation in V4R. After a sublingual nitroglycerin tablet given by paramedics, his blood pressure fell from 110/70 to 78/50 mm Hg. Pulse is 58/min. Jugular venous pressure is raised, and the lungs are clear. The catheterization laboratory has been activated. Which of the following is the most appropriate immediate step?</p>",
       "options": [
         {
           "label": "A",
@@ -6942,7 +6942,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Activate the catheterisation laboratory for primary PCI"
+          "html": "Activate the catheterization laboratory for primary PCI"
         },
         {
           "label": "B",
@@ -6962,7 +6962,7 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>This is an anterior STEMI presenting early to a hospital that can perform PCI. Primary PCI within 90 minutes of first medical contact is the preferred reperfusion strategy; give a P2Y12 inhibitor and anticoagulation around the procedure. Nothing should delay reperfusion.</p><p><strong>Takeaway:</strong> STEMI at a PCI-capable centre → primary PCI, door-to-device ≤ 90 minutes.</p>",
+      "explanationHtml": "<p>This is an anterior STEMI presenting early to a hospital that can perform PCI. Primary PCI within 90 minutes of first medical contact is the preferred reperfusion strategy; give a P2Y12 inhibitor and anticoagulation around the procedure. Nothing should delay reperfusion.</p><p><strong>Takeaway:</strong> STEMI at a PCI-capable center → primary PCI, door-to-device ≤ 90 minutes.</p>",
       "whyNot": {
         "B": "CT angiography is used when aortic dissection is suspected; nothing here suggests dissection (no tearing pain radiating to the back, no pulse or blood pressure differential, no neurologic deficit).",
         "C": "Fibrinolysis is the alternative only when timely PCI is unavailable; PCI is superior when it can be done promptly.",
@@ -7095,7 +7095,7 @@
         "C": "The circumflex can cause an inferior infarct in left-dominant hearts, but it usually produces more elevation in II than III and often lateral changes; the right coronary artery is far more likely.",
         "D": "Left main occlusion causes widespread ischemia, typically diffuse ST depression with ST elevation in aVR, and usually shock."
       },
-      "objective": "Localise an inferior STEMI on the ECG to the right coronary artery.",
+      "objective": "Localize an inferior STEMI on the ECG to the right coronary artery.",
       "areas": [
         "usmle2026.08.05.01"
       ],
@@ -7129,7 +7129,7 @@
       "id": "s23b-q-080501-s1-02",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 71-year-old woman is admitted with an anterior myocardial infarction. She is treated medically because she arrived 30 hours after symptom onset. On day 5, she suddenly becomes hypotensive and pulseless with organised electrical activity on the monitor, and resuscitation fails. Autopsy shows hemopericardium and a tear through the anterior left ventricular wall. Microscopic examination of the infarct margin is most likely to show which of the following?</p>",
+      "stemHtml": "<p>A 71-year-old woman is admitted with an anterior myocardial infarction. She is treated medically because she arrived 30 hours after symptom onset. On day 5, she suddenly becomes hypotensive and pulseless with organized electrical activity on the monitor, and resuscitation fails. Autopsy shows hemopericardium and a tear through the anterior left ventricular wall. Microscopic examination of the infarct margin is most likely to show which of the following?</p>",
       "options": [
         {
           "label": "A",
@@ -7339,14 +7339,14 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Clopidogrel is a prodrug that must be activated, mainly by CYP2C19, to a metabolite that irreversibly blocks the platelet P2Y12 (ADP) receptor. Carriers of two loss-of-function CYP2C19 alleles (poor metabolisers) form little active drug, so platelet inhibition is weak and the risk of stent thrombosis rises. Prasugrel (also a prodrug, but less dependent on CYP2C19) or ticagrelor (active as given) are alternatives. Strong CYP2C19 inhibitors such as omeprazole can have a smaller, similar effect.</p><p><strong>Takeaway:</strong> CYP2C19 poor metabolisers cannot activate clopidogrel well.</p>",
+      "explanationHtml": "<p>Clopidogrel is a prodrug that must be activated, mainly by CYP2C19, to a metabolite that irreversibly blocks the platelet P2Y12 (ADP) receptor. Carriers of two loss-of-function CYP2C19 alleles (poor metabolizers) form little active drug, so platelet inhibition is weak and the risk of stent thrombosis rises. Prasugrel (also a prodrug, but less dependent on CYP2C19) or ticagrelor (active as given) are alternatives. Strong CYP2C19 inhibitors such as omeprazole can have a smaller, similar effect.</p><p><strong>Takeaway:</strong> CYP2C19 poor metabolizers cannot activate clopidogrel well.</p>",
       "whyNot": {
         "A": "Aspirin's action does not depend on the hepatic genotype tested; it irreversibly acetylates platelet COX-1.",
         "C": "Loss-of-function alleles reduce activation; they do not speed clearance of the active metabolite.",
         "D": "Absorption is not affected by CYP2C19 genotype.",
         "E": "Receptor up-regulation is not the mechanism of clopidogrel non-response."
       },
-      "objective": "Explain clopidogrel resistance in CYP2C19 poor metabolisers.",
+      "objective": "Explain clopidogrel resistance in CYP2C19 poor metabolizers.",
       "areas": [
         "usmle2026.08.05.01"
       ],
@@ -7443,19 +7443,19 @@
       "options": [
         {
           "label": "A",
-          "html": "Constriction of arterioles distal to the stenosis"
-        },
-        {
-          "label": "B",
           "html": "Increased myocardial oxygen demand from tachycardia caused by the drug"
         },
         {
-          "label": "C",
+          "label": "B",
           "html": "Platelet aggregation at the stenosis triggered by the drug"
         },
         {
-          "label": "D",
+          "label": "C",
           "html": "Reduced cardiac output from AV nodal blockade"
+        },
+        {
+          "label": "D",
+          "html": "Stenosis-induced constriction of distal arterioles"
         },
         {
           "label": "E",
@@ -7465,10 +7465,10 @@
       "answer": "E",
       "explanationHtml": "<p>Regadenoson is a selective adenosine A<sub>2A</sub> receptor agonist that dilates coronary resistance vessels. Beyond a severe stenosis, autoregulation has already dilated the arterioles to maintain resting flow, so they cannot dilate further. Flow rises several-fold in normal territories but little in the stenotic one, creating a relative perfusion defect ('coronary steal').</p><p><strong>Takeaway:</strong> vasodilator stress reveals stenoses by heterogeneity of flow, not by raising oxygen demand.</p>",
       "whyNot": {
-        "A": "A2A stimulation dilates, not constricts, coronary arterioles.",
-        "B": "Vasodilator agents cause only a modest rise in heart rate; they work by uneven flow, which is why dobutamine (not regadenoson) is the demand-raising stress agent.",
-        "C": "Adenosine-pathway drugs do not trigger platelet aggregation.",
-        "D": "A1 receptor stimulation can slow AV conduction, but a selective A2A agonist rarely does so, and reduced output would lower perfusion uniformly."
+        "A": "Vasodilator agents cause only a modest rise in heart rate; they work by uneven flow, which is why dobutamine (not regadenoson) is the demand-raising stress agent.",
+        "B": "Adenosine-pathway drugs do not trigger platelet aggregation.",
+        "C": "A1 receptor stimulation can slow AV conduction, but a selective A2A agonist rarely does so, and reduced output would lower perfusion uniformly.",
+        "D": "A2A stimulation dilates, not constricts, coronary arterioles."
       },
       "objective": "Explain coronary steal during vasodilator stress perfusion imaging.",
       "areas": [
@@ -7526,14 +7526,14 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>Troponin stays raised for 7–10 days after an infarct, so on day 4 a single elevated value is expected and cannot by itself show new injury. What matters is the trend: when troponin is already elevated but stable or falling, a further rise of more than 20% on serial testing, with symptoms or ECG changes, indicates new myocardial necrosis (reinfarction). CK-MB, which clears within 2–3 days, was used for this before sensitive troponin assays; troponin trends are now the standard.</p><p><strong>Takeaway:</strong> Reinfarction is recognised by a new rise (&gt; 20%) on serial troponin, not by a single elevated value.</p>",
+      "explanationHtml": "<p>Troponin stays raised for 7–10 days after an infarct, so on day 4 a single elevated value is expected and cannot by itself show new injury. What matters is the trend: when troponin is already elevated but stable or falling, a further rise of more than 20% on serial testing, with symptoms or ECG changes, indicates new myocardial necrosis (reinfarction). CK-MB, which clears within 2–3 days, was used for this before sensitive troponin assays; troponin trends are now the standard.</p><p><strong>Takeaway:</strong> Reinfarction is recognized by a new rise (&gt; 20%) on serial troponin, not by a single elevated value.</p>",
       "whyNot": {
         "A": "AST is found in liver and skeletal muscle and is not specific for myocardial injury.",
         "B": "Lactate dehydrogenase is non-specific and rises late; it is no longer used to diagnose infarction.",
         "C": "Myoglobin is non-specific, and an elevation present since admission says nothing about new injury.",
         "E": "An elevated troponin on day 4 is expected after the original infarct; a single value cannot separate old from new injury."
       },
-      "objective": "Use serial troponin kinetics to recognise reinfarction a few days after a myocardial infarction.",
+      "objective": "Use serial troponin kinetics to recognize reinfarction a few days after a myocardial infarction.",
       "areas": [
         "usmle2026.08.05.01"
       ],
@@ -7774,7 +7774,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>This is <strong>peripartum cardiomyopathy</strong>: new systolic heart failure near the end of pregnancy or within months of delivery with no other cause. Recovery of ejection fraction is the strongest predictor of outcome in a later pregnancy. When the ejection fraction has <strong>not normalised</strong>, a subsequent pregnancy carries a substantial risk of further deterioration and maternal death, so pregnancy is discouraged and effective contraception is recommended. Even with full recovery, relapse can occur, so any later pregnancy needs specialist planning.</p><p><strong>Takeaway:</strong> peripartum cardiomyopathy with persistent LV dysfunction → advise against further pregnancy; relapse risk is highest when the EF has not recovered.</p>",
+      "explanationHtml": "<p>This is <strong>peripartum cardiomyopathy</strong>: new systolic heart failure near the end of pregnancy or within months of delivery with no other cause. Recovery of ejection fraction is the strongest predictor of outcome in a later pregnancy. When the ejection fraction has <strong>not normalized</strong>, a subsequent pregnancy carries a substantial risk of further deterioration and maternal death, so pregnancy is discouraged and effective contraception is recommended. Even with full recovery, relapse can occur, so any later pregnancy needs specialist planning.</p><p><strong>Takeaway:</strong> peripartum cardiomyopathy with persistent LV dysfunction → advise against further pregnancy; relapse risk is highest when the EF has not recovered.</p>",
       "whyNot": {
         "A": "Symptom resolution does not mean recovery; her ejection fraction remains reduced, which predicts a high relapse risk.",
         "C": "The mode and timing of delivery do not remove the risk created by the extra hemodynamic load of pregnancy.",
@@ -7836,10 +7836,10 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>This man has <strong>alcohol-related dilated cardiomyopathy</strong> after excluding coronary disease. Alcohol is directly toxic to myocytes, and <strong>complete abstinence</strong>, together with guideline-directed therapy, can lead to marked improvement or normalisation of the ejection fraction. Support for alcohol use disorder (counselling and pharmacotherapy) is part of the treatment.</p><p><strong>Takeaway:</strong> in alcoholic cardiomyopathy, total abstinence plus standard HFrEF therapy is the intervention most likely to restore function.</p>",
+      "explanationHtml": "<p>This man has <strong>alcohol-related dilated cardiomyopathy</strong> after excluding coronary disease. Alcohol is directly toxic to myocytes, and <strong>complete abstinence</strong>, together with guideline-directed therapy, can lead to marked improvement or normalization of the ejection fraction. Support for alcohol use disorder (counselling and pharmacotherapy) is part of the treatment.</p><p><strong>Takeaway:</strong> in alcoholic cardiomyopathy, total abstinence plus standard HFrEF therapy is the intervention most likely to restore function.</p>",
       "whyNot": {
-        "B": "Digoxin may reduce hospitalisation in selected patients but does not reverse the cardiomyopathy.",
-        "C": "A primary-prevention ICD is considered only if the ejection fraction stays ≤35% after at least about 3 months of optimised therapy (and abstinence); recovery is likely.",
+        "B": "Digoxin may reduce hospitalization in selected patients but does not reverse the cardiomyopathy.",
+        "C": "A primary-prevention ICD is considered only if the ejection fraction stays ≤35% after at least about 3 months of optimized therapy (and abstinence); recovery is likely.",
         "D": "Thiamine is reasonable in heavy drinkers, but thiamine deficiency gives a high-output state; supplementation alone will not reverse direct alcohol toxicity.",
         "E": "Transplant is reserved for advanced heart failure refractory to therapy; active alcohol use is a contraindication."
       },
@@ -7964,7 +7964,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Papillary muscle rupture with cardiogenic shock is a surgical emergency. Mortality with medical therapy alone is very high. The patient is stabilised with afterload reduction where blood pressure allows and with temporary mechanical support (such as an intra-aortic balloon pump, which lowers afterload and augments coronary perfusion) as a bridge to <strong>emergency mitral valve repair or replacement</strong>.</p><p><strong>Takeaway:</strong> acute severe MR from papillary muscle rupture → mechanical support as a bridge to emergency surgery.</p>",
+      "explanationHtml": "<p>Papillary muscle rupture with cardiogenic shock is a surgical emergency. Mortality with medical therapy alone is very high. The patient is stabilized with afterload reduction where blood pressure allows and with temporary mechanical support (such as an intra-aortic balloon pump, which lowers afterload and augments coronary perfusion) as a bridge to <strong>emergency mitral valve repair or replacement</strong>.</p><p><strong>Takeaway:</strong> acute severe MR from papillary muscle rupture → mechanical support as a bridge to emergency surgery.</p>",
       "whyNot": {
         "A": "He is in cardiogenic shock; discharge is unsafe and the lesion will not heal with diuresis.",
         "B": "β-Blockers reduce contractility and would worsen cardiogenic shock.",
@@ -8188,7 +8188,7 @@
       "id": "s23b-q-080601-ck-10",
       "exam": "step2ck",
       "format": "single",
-      "stemHtml": "<p>A 19-year-old college soccer player was hospitalised 3 weeks ago with chest pain, troponin elevation and a cardiac MRI diagnosis of acute myocarditis after a viral illness. His ejection fraction was 50% and recovered to 60% before discharge. He has no symptoms and wants to return to competitive training next week. Which of the following is the most appropriate recommendation?</p>",
+      "stemHtml": "<p>A 19-year-old college soccer player was hospitalized 3 weeks ago with chest pain, troponin elevation and a cardiac MRI diagnosis of acute myocarditis after a viral illness. His ejection fraction was 50% and recovered to 60% before discharge. He has no symptoms and wants to return to competitive training next week. Which of the following is the most appropriate recommendation?</p>",
       "options": [
         {
           "label": "A",
@@ -8212,7 +8212,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>After acute myocarditis, athletes should refrain from competitive sports and strenuous exercise for <strong>about 3–6 months</strong>. Return is allowed when ventricular function and biomarkers have normalised and there are no clinically relevant arrhythmias on ambulatory monitoring and exercise testing. Persistent inflammation increases the risk of ventricular arrhythmia and sudden death during exertion.</p><p><strong>Takeaway:</strong> myocarditis → no competitive sport for 3–6 months, then return only after normal reassessment.</p>",
+      "explanationHtml": "<p>After acute myocarditis, athletes should refrain from competitive sports and strenuous exercise for <strong>about 3–6 months</strong>. Return is allowed when ventricular function and biomarkers have normalized and there are no clinically relevant arrhythmias on ambulatory monitoring and exercise testing. Persistent inflammation increases the risk of ventricular arrhythmia and sudden death during exertion.</p><p><strong>Takeaway:</strong> myocarditis → no competitive sport for 3–6 months, then return only after normal reassessment.</p>",
       "whyNot": {
         "A": "An ICD is not indicated in recovered myocarditis without sustained ventricular arrhythmia or other high-risk features.",
         "B": "A normal ejection fraction does not exclude ongoing inflammation and arrhythmic risk in the first months.",
@@ -8275,7 +8275,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>Strong bone-tracer uptake in the absence of a monoclonal protein establishes <strong>wild-type transthyretin amyloid cardiomyopathy</strong> without biopsy. A <strong>transthyretin stabiliser</strong> such as tafamidis binds the transthyretin tetramer, prevents its dissociation into amyloidogenic monomers, and reduces mortality and heart failure hospitalisations. Diuretics manage congestion.</p><p><strong>Takeaway:</strong> ATTR cardiomyopathy (positive bone scan, no monoclonal protein) → transthyretin stabiliser plus diuretics.</p>",
+      "explanationHtml": "<p>Strong bone-tracer uptake in the absence of a monoclonal protein establishes <strong>wild-type transthyretin amyloid cardiomyopathy</strong> without biopsy. A <strong>transthyretin stabilizer</strong> such as tafamidis binds the transthyretin tetramer, prevents its dissociation into amyloidogenic monomers, and reduces mortality and heart failure hospitalizations. Diuretics manage congestion.</p><p><strong>Takeaway:</strong> ATTR cardiomyopathy (positive bone scan, no monoclonal protein) → transthyretin stabilizer plus diuretics.</p>",
       "whyNot": {
         "A": "Plasma-cell–directed chemotherapy treats AL amyloidosis, which has been excluded.",
         "B": "Digoxin binds amyloid fibrils and can cause toxicity; it does not slow disease progression.",
@@ -8531,7 +8531,7 @@
         "C": "Toxoplasma myocarditis is rare and mainly seen in severely immunocompromised patients; it does not cause megaesophagus.",
         "D": "Trypanosoma brucei causes African sleeping sickness, a neurologic illness transmitted by the tsetse fly."
       },
-      "objective": "Recognise chronic Chagas cardiomyopathy and its causative organism.",
+      "objective": "Recognize chronic Chagas cardiomyopathy and its causative organism.",
       "areas": [
         "usmle2026.08.06.01"
       ],
@@ -8718,7 +8718,7 @@
         "A": "A dense collagen scar takes about 2 months or more to form.",
         "B": "Granulation tissue fills the infarct at about 1–2 weeks and beyond; at day 6 it is only beginning at the edges.",
         "D": "A neutrophil-dominated infiltrate is typical of days 1–3.",
-        "E": "Wavy fibres without inflammation are seen in the first hours (up to about a day)."
+        "E": "Wavy fibers without inflammation are seen in the first hours (up to about a day)."
       },
       "objective": "Match the histology of a healing infarct to the timing of free wall rupture.",
       "areas": [
@@ -8782,7 +8782,7 @@
         "D": "Giant cell myocarditis is rare, fulminant and associated with autoimmune disease; the giant cells and eosinophils distinguish it from the usual lymphocytic form.",
         "E": "Noncaseating granulomas suggest cardiac sarcoidosis, which typically presents with heart block or ventricular tachycardia rather than a post-viral illness."
       },
-      "objective": "Recognise the histologic hallmark of viral myocarditis.",
+      "objective": "Recognize the histologic hallmark of viral myocarditis.",
       "areas": [
         "usmle2026.08.06.01"
       ],
@@ -8837,7 +8837,7 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>Chronic pressure overload from hypertension raises wall stress during systole. Myocytes respond by adding new sarcomeres <strong>in parallel</strong>, thickening each cell and the wall: <strong>concentric hypertrophy</strong>. The thick wall normalises systolic wall stress but relaxes poorly, so filling depends on atrial contraction (S4) and diastolic dysfunction follows.</p><p><strong>Takeaway:</strong> pressure overload → sarcomeres in parallel → concentric hypertrophy and diastolic dysfunction; volume overload → sarcomeres in series → eccentric hypertrophy.</p>",
+      "explanationHtml": "<p>Chronic pressure overload from hypertension raises wall stress during systole. Myocytes respond by adding new sarcomeres <strong>in parallel</strong>, thickening each cell and the wall: <strong>concentric hypertrophy</strong>. The thick wall normalizes systolic wall stress but relaxes poorly, so filling depends on atrial contraction (S4) and diastolic dysfunction follows.</p><p><strong>Takeaway:</strong> pressure overload → sarcomeres in parallel → concentric hypertrophy and diastolic dysfunction; volume overload → sarcomeres in series → eccentric hypertrophy.</p>",
       "whyNot": {
         "B": "Sarcomeres added in series lengthen myocytes and dilate the chamber (eccentric hypertrophy), the response to volume overload.",
         "C": "Adult cardiac myocytes are essentially terminally differentiated; the heart grows by hypertrophy, not hyperplasia.",
@@ -9030,7 +9030,7 @@
       "whyNot": {
         "B": "CT takes the unstable patient away from the resuscitation area and adds contrast; echocardiography answers the question faster.",
         "C": "A chest radiograph may show an enlarged silhouette but cannot assess hemodynamic effect.",
-        "D": "Right heart catheterisation shows equalised pressures but is invasive, slow and unnecessary for diagnosis.",
+        "D": "Right heart catheterization shows equalized pressures but is invasive, slow and unnecessary for diagnosis.",
         "E": "BNP does not distinguish tamponade from other causes of dyspnea and does not guide drainage."
       },
       "objective": "Use bedside echocardiography to confirm suspected cardiac tamponade.",
@@ -9190,7 +9190,7 @@
       "id": "s23b-q-080701-ck-06",
       "exam": "step2ck",
       "format": "single",
-      "stemHtml": "<p>A 52-year-old woman has had progressive edema, abdominal distension and fatigue for a year despite increasing doses of furosemide. She received chest radiation for Hodgkin lymphoma at age 24. Jugular venous pressure is raised and rises on inspiration. An early diastolic sound follows S2. There is hepatomegaly and ascites. CT shows a diffusely thickened, calcified pericardium. Echocardiography shows normal ventricular wall thickness, normal ejection fraction and a septal bounce. Cardiac catheterisation confirms constrictive physiology. Which of the following is the most appropriate definitive treatment?</p>",
+      "stemHtml": "<p>A 52-year-old woman has had progressive edema, abdominal distension and fatigue for a year despite increasing doses of furosemide. She received chest radiation for Hodgkin lymphoma at age 24. Jugular venous pressure is raised and rises on inspiration. An early diastolic sound follows S2. There is hepatomegaly and ascites. CT shows a diffusely thickened, calcified pericardium. Echocardiography shows normal ventricular wall thickness, normal ejection fraction and a septal bounce. Cardiac catheterization confirms constrictive physiology. Which of the following is the most appropriate definitive treatment?</p>",
       "options": [
         {
           "label": "A",
@@ -9276,7 +9276,7 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p><strong>Uremic pericarditis</strong> (and dialysis-associated pericarditis from inadequate dialysis) responds to <strong>starting or intensifying dialysis</strong>. The ECG usually lacks the typical ST elevation because the myocardium is not inflamed. Heparin use during dialysis should be minimised because of the risk of hemopericardium. Drainage is reserved for tamponade or failure to improve.</p><p><strong>Takeaway:</strong> uremic pericarditis without tamponade → more dialysis.</p>",
+      "explanationHtml": "<p><strong>Uremic pericarditis</strong> (and dialysis-associated pericarditis from inadequate dialysis) responds to <strong>starting or intensifying dialysis</strong>. The ECG usually lacks the typical ST elevation because the myocardium is not inflamed. Heparin use during dialysis should be minimized because of the risk of hemopericardium. Drainage is reserved for tamponade or failure to improve.</p><p><strong>Takeaway:</strong> uremic pericarditis without tamponade → more dialysis.</p>",
       "whyNot": {
         "B": "Nothing suggests bacterial pericarditis; he is not septic, and the cause is uremia.",
         "C": "Steroids do not address the underlying uremia and are not first line.",
@@ -9337,7 +9337,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>Fatigue, weight gain, constipation, bradycardia, mild hyponatremia, a very high TSH and a low free T4 indicate <strong>primary hypothyroidism</strong>, a recognised cause of a slowly accumulating, often large but well-tolerated pericardial effusion with low inflammation (normal CRP, no pain). Without tamponade, the effusion resolves gradually with <strong>levothyroxine</strong> (started at a lower dose in older patients with possible coronary disease).</p><p><strong>Takeaway:</strong> hypothyroid pericardial effusion without tamponade → treat the hypothyroidism, not the fluid.</p>",
+      "explanationHtml": "<p>Fatigue, weight gain, constipation, bradycardia, mild hyponatremia, a very high TSH and a low free T4 indicate <strong>primary hypothyroidism</strong>, a recognized cause of a slowly accumulating, often large but well-tolerated pericardial effusion with low inflammation (normal CRP, no pain). Without tamponade, the effusion resolves gradually with <strong>levothyroxine</strong> (started at a lower dose in older patients with possible coronary disease).</p><p><strong>Takeaway:</strong> hypothyroid pericardial effusion without tamponade → treat the hypothyroidism, not the fluid.</p>",
       "whyNot": {
         "A": "Drainage is for tamponade or diagnostic uncertainty about infection or malignancy; the cause is clear and she is stable.",
         "B": "There is no inflammation (no pain, normal CRP), so NSAIDs and colchicine are not indicated.",
@@ -9407,7 +9407,7 @@
         "D": "Brugada syndrome shows coved ST elevation in V1–V2 with a right bundle branch block–like pattern and presents with syncope or arrest, not pleuritic pain.",
         "E": "Hyperkalemia causes peaked T waves, then PR prolongation and QRS widening, not PR depression with concave ST elevation."
       },
-      "objective": "Recognise the ECG pattern of acute pericarditis.",
+      "objective": "Recognize the ECG pattern of acute pericarditis.",
       "areas": [
         "usmle2026.08.07.01"
       ],
@@ -9442,7 +9442,7 @@
       "id": "s23b-q-080701-s1-02",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 33-year-old woman with acute viral pericarditis reports sharp chest pain that radiates to the top of her left shoulder along the upper border of the trapezius muscle. Irritation of afferent fibres carried in which of the following nerves best explains the radiation of her pain?</p>",
+      "stemHtml": "<p>A 33-year-old woman with acute viral pericarditis reports sharp chest pain that radiates to the top of her left shoulder along the upper border of the trapezius muscle. Irritation of afferent fibers carried in which of the following nerves best explains the radiation of her pain?</p>",
       "options": [
         {
           "label": "A",
@@ -9466,7 +9466,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>The fibrous and parietal pericardium receive sensory fibres from the <strong>phrenic nerve</strong> (C3–C5). Pain from these fibres is referred to the skin of the same spinal segments, over the trapezius ridge and shoulder. The visceral pericardium is insensitive to pain.</p><p><strong>Takeaway:</strong> pericardial (and diaphragmatic) pain refers to the trapezius ridge via the phrenic nerve, C3–C5.</p>",
+      "explanationHtml": "<p>The fibrous and parietal pericardium receive sensory fibers from the <strong>phrenic nerve</strong> (C3–C5). Pain from these fibers is referred to the skin of the same spinal segments, over the trapezius ridge and shoulder. The visceral pericardium is insensitive to pain.</p><p><strong>Takeaway:</strong> pericardial (and diaphragmatic) pain refers to the trapezius ridge via the phrenic nerve, C3–C5.</p>",
       "whyNot": {
         "A": "Greater splanchnic nerves carry visceral pain from foregut organs, referred to the epigastrium.",
         "B": "The intercostobrachial nerve supplies skin of the medial upper arm and axilla, the territory of the arm pain of myocardial ischemia rather than pericardial pain.",
@@ -9590,9 +9590,9 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Equal diastolic pressures in all chambers after cardiac surgery suggest <strong>cardiac tamponade</strong> (for example from postoperative bleeding). Because pericardial pressure restricts filling throughout diastole, blood cannot rush into the right ventricle when the tricuspid valve opens, so the <strong>y descent is blunted or absent</strong>. The x descent (atrial relaxation during ventricular systole, when cardiac volume falls) is preserved.</p><p><strong>Takeaway:</strong> tamponade = equalised diastolic pressures + lost y descent; constriction = prominent y descent.</p>",
+      "explanationHtml": "<p>Equal diastolic pressures in all chambers after cardiac surgery suggest <strong>cardiac tamponade</strong> (for example from postoperative bleeding). Because pericardial pressure restricts filling throughout diastole, blood cannot rush into the right ventricle when the tricuspid valve opens, so the <strong>y descent is blunted or absent</strong>. The x descent (atrial relaxation during ventricular systole, when cardiac volume falls) is preserved.</p><p><strong>Takeaway:</strong> tamponade = equalized diastolic pressures + lost y descent; constriction = prominent y descent.</p>",
       "whyNot": {
-        "A": "Absent a waves occur in atrial fibrillation because there is no organised atrial contraction.",
+        "A": "Absent a waves occur in atrial fibrillation because there is no organized atrial contraction.",
         "C": "Cannon a waves occur when the atrium contracts against a closed tricuspid valve, as in complete heart block or ventricular tachycardia.",
         "D": "Giant v waves are typical of severe tricuspid regurgitation (or mitral regurgitation in the wedge tracing).",
         "E": "A prominent y descent reflects rapid early diastolic filling that then stops, as in constrictive pericarditis or restrictive cardiomyopathy."
@@ -9715,7 +9715,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Uremia irritates the serosal surfaces and increases vascular permeability, so fibrinogen leaks into the pericardial space and polymerises into a rough fibrin coat (\"bread-and-butter\" appearance) that rubs during each heartbeat. <strong>Fibrinous pericarditis</strong> is typical of uremia, transmural infarction, rheumatic fever and post-surgical pericarditis.</p><p><strong>Takeaway:</strong> uremic and post-infarction pericarditis are fibrinous; the rough fibrin surfaces produce the friction rub.</p>",
+      "explanationHtml": "<p>Uremia irritates the serosal surfaces and increases vascular permeability, so fibrinogen leaks into the pericardial space and polymerizes into a rough fibrin coat (\"bread-and-butter\" appearance) that rubs during each heartbeat. <strong>Fibrinous pericarditis</strong> is typical of uremia, transmural infarction, rheumatic fever and post-surgical pericarditis.</p><p><strong>Takeaway:</strong> uremic and post-infarction pericarditis are fibrinous; the rough fibrin surfaces produce the friction rub.</p>",
       "whyNot": {
         "A": "Caseous necrosis in the pericardium points to tuberculosis.",
         "C": "Granulomatous pericarditis suggests tuberculosis, fungal infection or sarcoidosis, not uremia.",
@@ -9778,7 +9778,7 @@
       "answer": "A",
       "explanationHtml": "<p>Pericarditis with fever, effusion and high inflammatory markers <strong>weeks</strong> after infarction is <strong>post-cardiac injury (Dressler) syndrome</strong>. Necrosis exposes myocardial and pericardial antigens that provoke an autoimmune reaction, producing a sterile serositis that can also involve the pleura.</p><p><strong>Takeaway:</strong> pericarditis 1–3 days after MI = local inflammation over the infarct; weeks after MI = autoimmune post-cardiac injury syndrome.</p>",
       "whyNot": {
-        "B": "Purulent pericarditis would cause a toxic illness with bacteremia; catheterisation sites rarely seed the pericardium.",
+        "B": "Purulent pericarditis would cause a toxic illness with bacteremia; catheterization sites rarely seed the pericardium.",
         "C": "Direct inflammation over a transmural infarct causes pericarditis in the first few days, not 3 weeks later.",
         "D": "A leaking pseudoaneurysm causes hemopericardium and hemodynamic compromise, and echocardiography would show the defect.",
         "E": "There is no evidence of a latent virus; the timing after myocardial injury points to an immune mechanism."
@@ -9880,7 +9880,7 @@
       "id": "s23b-q-080701-s1-09",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 62-year-old man has had pleuritic chest pain and joint aches for 3 weeks. Five months ago he started a new antihypertensive drug that acts by directly relaxing arteriolar smooth muscle. He has a friction rub. Echocardiography shows a small pericardial effusion. Antinuclear antibodies are positive at a high titre. Antibodies against double-stranded DNA are negative. Antibodies against which of the following are most likely to be present?</p>",
+      "stemHtml": "<p>A 62-year-old man has had pleuritic chest pain and joint aches for 3 weeks. Five months ago he started a new antihypertensive drug that acts by directly relaxing arteriolar smooth muscle. He has a friction rub. Echocardiography shows a small pericardial effusion. Antinuclear antibodies are positive at a high titer. Antibodies against double-stranded DNA are negative. Antibodies against which of the following are most likely to be present?</p>",
       "options": [
         {
           "label": "A",
@@ -9911,7 +9911,7 @@
         "D": "Anti-Jo-1 antibodies occur in inflammatory myopathy with interstitial lung disease.",
         "E": "Anti-Smith antibodies are highly specific for idiopathic systemic lupus erythematosus and are not typical of the drug-induced form."
       },
-      "objective": "Recognise drug-induced lupus pericarditis and its antibody marker.",
+      "objective": "Recognize drug-induced lupus pericarditis and its antibody marker.",
       "areas": [
         "usmle2026.08.07.01"
       ],
@@ -9972,7 +9972,7 @@
         "A": "Balloon valvuloplasty gives only short-lived benefit and is a bridge, not definitive therapy.",
         "B": "No drug relieves fixed outflow obstruction; nitrates can cause dangerous hypotension in severe AS.",
         "C": "Watchful waiting is inappropriate once severe stenosis causes symptoms; mortality rises sharply.",
-        "D": "Surgical replacement is favoured in younger, lower-risk patients; her age and comorbidities make TAVR the better choice."
+        "D": "Surgical replacement is favored in younger, lower-risk patients; her age and comorbidities make TAVR the better choice."
       },
       "objective": "Choose TAVR for an older, higher-risk patient with symptomatic severe aortic stenosis.",
       "areas": [
@@ -10009,7 +10009,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Cardiac catheterisation"
+          "html": "Cardiac catheterization"
         },
         {
           "label": "B",
@@ -10031,7 +10031,7 @@
       "answer": "E",
       "explanationHtml": "<p>A <strong>diastolic murmur is never innocent</strong>. An early diastolic decrescendo murmur at the left sternal border suggests aortic regurgitation (for example from a bicuspid valve or root dilation). <strong>Transthoracic echocardiography</strong> defines the cause, severity, ventricular size and function, and aortic dimensions.</p><p><strong>Takeaway:</strong> any diastolic murmur → echocardiography, even without symptoms.</p>",
       "whyNot": {
-        "A": "Catheterisation is invasive and reserved for discordant noninvasive data or coronary assessment before surgery.",
+        "A": "Catheterization is invasive and reserved for discordant noninvasive data or coronary assessment before surgery.",
         "B": "Exercise testing can help assess symptoms but does not show valve anatomy or severity.",
         "C": "Functional murmurs are soft and systolic; diastolic murmurs always need evaluation.",
         "D": "Delaying evaluation risks missing progressive ventricular dilation or an aortopathy."
@@ -10098,7 +10098,7 @@
         "D": "Referral is not needed for a clearly innocent murmur.",
         "E": "Echocardiography is for murmurs with concerning features (diastolic, harsh, loud, fixed split S2, symptoms, abnormal pulses)."
       },
-      "objective": "Recognise an innocent Still murmur and reassure.",
+      "objective": "Recognize an innocent Still murmur and reassure.",
       "areas": [
         "usmle2026.08.08.01"
       ],
@@ -10153,7 +10153,7 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>Patients with <strong>mechanical heart valves</strong> require lifelong anticoagulation with a <strong>vitamin K antagonist</strong>. Direct oral anticoagulants are <strong>contraindicated</strong>: in a randomised trial of dabigatran in mechanical valves, both valve thrombosis and bleeding increased, and other DOACs have not been shown to be safe. Home INR testing can make warfarin more convenient.</p><p><strong>Takeaway:</strong> mechanical valve → warfarin for life; never a DOAC.</p>",
+      "explanationHtml": "<p>Patients with <strong>mechanical heart valves</strong> require lifelong anticoagulation with a <strong>vitamin K antagonist</strong>. Direct oral anticoagulants are <strong>contraindicated</strong>: in a randomized trial of dabigatran in mechanical valves, both valve thrombosis and bleeding increased, and other DOACs have not been shown to be safe. Home INR testing can make warfarin more convenient.</p><p><strong>Takeaway:</strong> mechanical valve → warfarin for life; never a DOAC.</p>",
       "whyNot": {
         "B": "Apixaban has not been shown to prevent valve thrombosis with mechanical valves and is contraindicated.",
         "C": "Aspirin alone does not prevent mechanical valve thrombosis.",
@@ -10531,7 +10531,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p><strong>Atrial fibrillation with moderate or severe rheumatic mitral stenosis</strong> carries a very high stroke risk regardless of the CHA<sub>2</sub>DS<sub>2</sub>-VASc score. Anticoagulation with a <strong>vitamin K antagonist (warfarin)</strong> is indicated; a randomised trial in rheumatic heart disease with atrial fibrillation found a DOAC (rivaroxaban) inferior to warfarin, and DOAC trials in atrial fibrillation excluded moderate–severe mitral stenosis.</p><p><strong>Takeaway:</strong> AF + moderate/severe rheumatic MS → warfarin, regardless of risk score.</p>",
+      "explanationHtml": "<p><strong>Atrial fibrillation with moderate or severe rheumatic mitral stenosis</strong> carries a very high stroke risk regardless of the CHA<sub>2</sub>DS<sub>2</sub>-VASc score. Anticoagulation with a <strong>vitamin K antagonist (warfarin)</strong> is indicated; a randomized trial in rheumatic heart disease with atrial fibrillation found a DOAC (rivaroxaban) inferior to warfarin, and DOAC trials in atrial fibrillation excluded moderate–severe mitral stenosis.</p><p><strong>Takeaway:</strong> AF + moderate/severe rheumatic MS → warfarin, regardless of risk score.</p>",
       "whyNot": {
         "A": "DOACs are not recommended in moderate or severe rheumatic mitral stenosis.",
         "B": "Aspirin does not adequately prevent stroke in atrial fibrillation.",
@@ -10879,7 +10879,7 @@
       "id": "s23b-q-080801-s1-06",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 9-year-old boy in Ethiopia has fever, painful swelling that moves from his knees to his elbows over a week, and a new soft apical holosystolic murmur. Three weeks ago he had a severe sore throat that was not treated. Antistreptolysin O titre is raised. Which of the following best explains his cardiac injury?</p>",
+      "stemHtml": "<p>A 9-year-old boy in Ethiopia has fever, painful swelling that moves from his knees to his elbows over a week, and a new soft apical holosystolic murmur. Three weeks ago he had a severe sore throat that was not treated. Antistreptolysin O titer is raised. Which of the following best explains his cardiac injury?</p>",
       "options": [
         {
           "label": "A",
@@ -10965,7 +10965,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>In <strong>carcinoid heart disease</strong>, vasoactive substances (especially serotonin) from hepatic metastases of a neuroendocrine tumour enter the hepatic veins and reach the right heart, where they stimulate fibrous plaques on the tricuspid and pulmonic valves. Lung <strong>monoamine oxidase</strong> inactivates serotonin before blood reaches the left heart, which is therefore usually spared (unless there is a right-to-left shunt or a bronchial carcinoid).</p><p><strong>Takeaway:</strong> carcinoid heart disease affects right-sided valves because the lungs inactivate serotonin.</p>",
+      "explanationHtml": "<p>In <strong>carcinoid heart disease</strong>, vasoactive substances (especially serotonin) from hepatic metastases of a neuroendocrine tumor enter the hepatic veins and reach the right heart, where they stimulate fibrous plaques on the tricuspid and pulmonic valves. Lung <strong>monoamine oxidase</strong> inactivates serotonin before blood reaches the left heart, which is therefore usually spared (unless there is a right-to-left shunt or a bronchial carcinoid).</p><p><strong>Takeaway:</strong> carcinoid heart disease affects right-sided valves because the lungs inactivate serotonin.</p>",
       "whyNot": {
         "A": "All heart valves contain interstitial cells with fibroblast-like properties.",
         "B": "Pressure does not protect valves from serotonin-driven fibrosis; the protective factor is pulmonary metabolism.",
@@ -11035,7 +11035,7 @@
         "D": "Spherocytes are typical of hereditary spherocytosis and warm autoimmune hemolysis, which would usually give a positive Coombs test.",
         "E": "Target cells are seen in thalassemia, liver disease and hemoglobin C disease."
       },
-      "objective": "Recognise mechanical hemolysis with schistocytes as a prosthetic valve complication.",
+      "objective": "Recognize mechanical hemolysis with schistocytes as a prosthetic valve complication.",
       "areas": [
         "usmle2026.08.08.01"
       ],
@@ -11070,7 +11070,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Acquired inhibitory antibodies against factor VIII"
+          "html": "Acquired factor VIII inhibitory antibodies"
         },
         {
           "label": "B",
@@ -11821,7 +11821,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Extracellular β-amyloid plaques in the cerebral cortex"
+          "html": "Cortical extracellular β-amyloid plaques"
         },
         {
           "label": "B",
@@ -12376,7 +12376,7 @@
       "options": [
         {
           "label": "A",
-          "html": "24-hour ambulatory blood pressure monitoring"
+          "html": "Ambulatory blood pressure monitoring over 24 hours"
         },
         {
           "label": "B",
@@ -12706,7 +12706,7 @@
       "answer": "A",
       "explanationHtml": "<p>Confusion, papilledema and acute kidney injury with severe hypertension indicate a <strong>hypertensive emergency</strong> (hypertensive encephalopathy). He needs ICU admission and a titratable IV drug such as nicardipine, clevidipine or labetalol. Lower pressure by no more than about 25% in the first hour, then to about 160/100–110 mm Hg over the next 2–6 hours, then gradually toward normal over 24–48 hours, because autoregulation is shifted upward.</p><p><strong>Takeaway:</strong> hypertensive emergency: titratable IV drug, reduce mean pressure by ≤ 25% in the first hour.</p>",
       "whyNot": {
-        "B": "Normalising pressure within an hour risks cerebral, coronary and renal ischemia (aortic dissection is the exception).",
+        "B": "Normalizing pressure within an hour risks cerebral, coronary and renal ischemia (aortic dissection is the exception).",
         "C": "Oral therapy and discharge are for severe hypertension without acute organ damage.",
         "D": "Sublingual nifedipine causes unpredictable, precipitous falls and is contraindicated.",
         "E": "Treatment should not wait; CT has excluded hemorrhage, and encephalopathy improves as pressure is lowered."
@@ -13691,7 +13691,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>A recent sharp rise in LDL with fatigue, weight gain, cold intolerance, bradycardia and delayed reflex relaxation suggests <strong>hypothyroidism</strong>, a common secondary cause of hypercholesterolemia (fewer hepatic LDL receptors). Measure TSH; treating hypothyroidism often normalises LDL, and untreated hypothyroidism raises the risk of statin myopathy.</p><p><strong>Takeaway:</strong> exclude hypothyroidism (TSH) in new hypercholesterolemia.</p>",
+      "explanationHtml": "<p>A recent sharp rise in LDL with fatigue, weight gain, cold intolerance, bradycardia and delayed reflex relaxation suggests <strong>hypothyroidism</strong>, a common secondary cause of hypercholesterolemia (fewer hepatic LDL receptors). Measure TSH; treating hypothyroidism often normalizes LDL, and untreated hypothyroidism raises the risk of statin myopathy.</p><p><strong>Takeaway:</strong> exclude hypothyroidism (TSH) in new hypercholesterolemia.</p>",
       "whyNot": {
         "A": "Nephrotic syndrome raises LDL, but there is no edema or proteinuria history, and her symptoms point to the thyroid.",
         "B": "Familial hypercholesterolemia is lifelong, and her LDL was normal 3 years ago.",
@@ -14256,7 +14256,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Simvastatin (like lovastatin and, to a lesser degree, atorvastatin) is metabolised by <strong>CYP3A4</strong>. Clarithromycin is a strong CYP3A4 inhibitor, so statin levels rise and muscle toxicity follows, here rhabdomyolysis. Other CYP3A4 inhibitors include azole antifungals, HIV protease inhibitors, verapamil, diltiazem, amiodarone and grapefruit juice. Pravastatin and rosuvastatin are not mainly CYP3A4-dependent.</p><p><strong>Takeaway:</strong> CYP3A4 inhibitors raise simvastatin levels and can precipitate rhabdomyolysis.</p>",
+      "explanationHtml": "<p>Simvastatin (like lovastatin and, to a lesser degree, atorvastatin) is metabolized by <strong>CYP3A4</strong>. Clarithromycin is a strong CYP3A4 inhibitor, so statin levels rise and muscle toxicity follows, here rhabdomyolysis. Other CYP3A4 inhibitors include azole antifungals, HIV protease inhibitors, verapamil, diltiazem, amiodarone and grapefruit juice. Pravastatin and rosuvastatin are not mainly CYP3A4-dependent.</p><p><strong>Takeaway:</strong> CYP3A4 inhibitors raise simvastatin levels and can precipitate rhabdomyolysis.</p>",
       "whyNot": {
         "A": "Macrolides do not cause immune destruction of muscle.",
         "B": "Simvastatin is cleared mainly by hepatic metabolism, not renal secretion.",
@@ -14751,7 +14751,7 @@
         },
         {
           "label": "D",
-          "html": "Repeat ultrasonography in about 12 months"
+          "html": "Repeat ultrasonography in about 1 year"
         },
         {
           "label": "E",
@@ -15068,7 +15068,7 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>Ascending aortic aneurysms in older hypertensive patients are caused mainly by medial degeneration: loss of smooth muscle cells, fragmentation of elastic fibers and accumulation of mucoid ground substance. Atherosclerosis, by contrast, is the dominant association of abdominal aneurysms.</p><p><strong>Takeaway:</strong> Ascending aortic aneurysm with hypertension or ageing = cystic medial degeneration.</p>",
+      "explanationHtml": "<p>Ascending aortic aneurysms in older hypertensive patients are caused mainly by medial degeneration: loss of smooth muscle cells, fragmentation of elastic fibers and accumulation of mucoid ground substance. Atherosclerosis, by contrast, is the dominant association of abdominal aneurysms.</p><p><strong>Takeaway:</strong> Ascending aortic aneurysm with hypertension or aging = cystic medial degeneration.</p>",
       "whyNot": {
         "B": "Granulomatous aortitis with giant cells describes giant cell arteritis or Takayasu arteritis, which are much less common causes.",
         "C": "Hyaline thickening is the lesion of small arterioles in hypertension and diabetes, not of the aortic media.",
@@ -16180,7 +16180,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Hyaline arteriolosclerosis is the arteriolar lesion of long-standing hypertension, diabetes and ageing. Hemodynamic and metabolic injury lets plasma proteins leak into the vessel wall, and smooth muscle cells make excess basement-membrane matrix. The lumen narrows, causing diffuse ischemic scarring of the kidney (nephrosclerosis).</p><p><strong>Takeaway:</strong> Hyaline arteriolosclerosis = plasma-protein leakage plus excess matrix, from chronic hypertension and diabetes.</p>",
+      "explanationHtml": "<p>Hyaline arteriolosclerosis is the arteriolar lesion of long-standing hypertension, diabetes and aging. Hemodynamic and metabolic injury lets plasma proteins leak into the vessel wall, and smooth muscle cells make excess basement-membrane matrix. The lumen narrows, causing diffuse ischemic scarring of the kidney (nephrosclerosis).</p><p><strong>Takeaway:</strong> Hyaline arteriolosclerosis = plasma-protein leakage plus excess matrix, from chronic hypertension and diabetes.</p>",
       "whyNot": {
         "A": "Amyloid would stain with Congo red and is not linked to this history.",
         "B": "Fibrinoid necrosis with neutrophils is a feature of malignant hypertension or vasculitis.",
@@ -17089,11 +17089,11 @@
       "options": [
         {
           "label": "A",
-          "html": "Acute arterial embolism"
+          "html": "Acute bacterial cellulitis"
         },
         {
           "label": "B",
-          "html": "Acute bacterial cellulitis"
+          "html": "Acute embolic occlusion of the leg arteries"
         },
         {
           "label": "C",
@@ -17111,8 +17111,8 @@
       "answer": "C",
       "explanationHtml": "<p>Sudden massive swelling of the whole leg with cyanosis, pain and blistering is phlegmasia cerulea dolens: extensive iliofemoral thrombosis that blocks almost all venous outflow. Rising tissue pressure can impair arterial inflow and lead to venous gangrene. Cancer is a common trigger. Treat with heparin, elevation and urgent catheter-directed thrombolysis or thrombectomy.</p><p><strong>Takeaway:</strong> Massive, blue, painful swollen leg = phlegmasia cerulea dolens (iliofemoral DVT) → urgent clot removal.</p>",
       "whyNot": {
-        "A": "Arterial embolism causes a pale, cold, pulseless leg without massive swelling.",
-        "B": "Cellulitis causes erythema and warmth with fever, not cyanosis and massive swelling over a day.",
+        "A": "Cellulitis causes erythema and warmth with fever, not cyanosis and massive swelling over a day.",
+        "B": "Arterial embolism causes a pale, cold, pulseless leg without massive swelling.",
         "D": "A ruptured Baker cyst causes calf swelling and bruising near the ankle, not cyanosis of the whole leg.",
         "E": "Lymphedema develops slowly and is not cyanotic or acutely painful."
       },
@@ -17978,7 +17978,7 @@
       "whyNot": {
         "A": "Bilirubin causes generalized jaundice, not localized brown pigment over the ankles.",
         "B": "Carotene causes diffuse yellow-orange skin, especially palms, with no venous link.",
-        "D": "Lipofuscin is an intracellular 'wear and tear' pigment of ageing cells, not visible skin discoloration.",
+        "D": "Lipofuscin is an intracellular 'wear and tear' pigment of aging cells, not visible skin discoloration.",
         "E": "Melanin increases with sun or hormonal stimulation; post-inflammatory change contributes little compared with hemosiderin here."
       },
       "objective": "Explain the hemosiderin pigmentation of chronic venous insufficiency.",
@@ -18144,7 +18144,7 @@
         },
         {
           "label": "B",
-          "html": "Further crystalloid boluses until blood pressure normalises"
+          "html": "Further crystalloid boluses until blood pressure normalizes"
         },
         {
           "label": "C",
@@ -18160,7 +18160,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Traumatic tamponade from a penetrating wound needs operative repair: relieve the tamponade and suture the cardiac laceration through a median sternotomy (or an anterolateral thoracotomy). Because a surgeon and operating room are available, the patient should go there immediately. Pericardiocentesis is only a temporising bridge when surgery is not immediately available.</p><p><strong>Takeaway:</strong> penetrating cardiac injury with tamponade → operating room, not a needle.</p>",
+      "explanationHtml": "<p>Traumatic tamponade from a penetrating wound needs operative repair: relieve the tamponade and suture the cardiac laceration through a median sternotomy (or an anterolateral thoracotomy). Because a surgeon and operating room are available, the patient should go there immediately. Pericardiocentesis is only a temporizing bridge when surgery is not immediately available.</p><p><strong>Takeaway:</strong> penetrating cardiac injury with tamponade → operating room, not a needle.</p>",
       "whyNot": {
         "A": "An unstable patient should never be sent to CT; the diagnosis is already made at the bedside.",
         "B": "Fluids can transiently raise filling pressure, but large volumes delay definitive treatment and dilute clotting factors.",
@@ -18219,7 +18219,7 @@
         },
         {
           "label": "E",
-          "html": "Synchronised cardioversion"
+          "html": "Synchronized cardioversion"
         }
       ],
       "answer": "C",
@@ -18228,7 +18228,7 @@
         "A": "Breath sounds were equal and the problem is tamponade; decompression is reasonable only when tension pneumothorax cannot be excluded in traumatic arrest.",
         "B": "Atropine does not address the mechanical cause (tamponade) and is no longer part of routine PEA treatment.",
         "D": "Survival after resuscitative thoracotomy is highest exactly in this group: penetrating cardiac injury with recently lost signs of life.",
-        "E": "Synchronised cardioversion is for unstable tachyarrhythmias with a pulse; this is pulseless electrical activity."
+        "E": "Synchronized cardioversion is for unstable tachyarrhythmias with a pulse; this is pulseless electrical activity."
       },
       "objective": "Identify the indication for resuscitative thoracotomy in penetrating chest trauma.",
       "areas": [
@@ -18540,7 +18540,7 @@
         "D": "Repeat imaging in a patient with ongoing shock delays definitive hemorrhage control.",
         "E": "Repairing the contained aortic injury first delays control of the bleeding that is killing her."
       },
-      "objective": "Prioritise control of active hemorrhage over repair of a contained blunt aortic injury.",
+      "objective": "Prioritize control of active hemorrhage over repair of a contained blunt aortic injury.",
       "areas": [
         "usmle2026.08.13.01"
       ],
@@ -18587,7 +18587,7 @@
         },
         {
           "label": "D",
-          "html": "Immobilise the cervical spine before any other intervention"
+          "html": "Immobilize the cervical spine before other interventions"
         },
         {
           "label": "E",
@@ -18664,7 +18664,7 @@
         "D": "Diuretics lower preload and would worsen tamponade physiology.",
         "E": "Nitroglycerin lowers preload and can cause collapse in tamponade."
       },
-      "objective": "Recognise and confirm tamponade from iatrogenic ventricular puncture.",
+      "objective": "Recognize and confirm tamponade from iatrogenic ventricular puncture.",
       "areas": [
         "usmle2026.08.13.01"
       ],
@@ -18966,14 +18966,14 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>Commotio cordis occurs when a blunt blow to the precordium, without structural injury, lands during a narrow window on the upstroke of the T wave. At that time, myocardial repolarisation is heterogeneous, and the mechanically induced depolarisation (through stretch-activated ion channels) can trigger ventricular fibrillation, much like an 'R-on-T' premature beat.</p><p><strong>Takeaway:</strong> commotio cordis = chest blow during the vulnerable period of repolarisation → VF; treat with immediate defibrillation.</p>",
+      "explanationHtml": "<p>Commotio cordis occurs when a blunt blow to the precordium, without structural injury, lands during a narrow window on the upstroke of the T wave. At that time, myocardial repolarization is heterogeneous, and the mechanically induced depolarization (through stretch-activated ion channels) can trigger ventricular fibrillation, much like an 'R-on-T' premature beat.</p><p><strong>Takeaway:</strong> commotio cordis = chest blow during the vulnerable period of repolarization → VF; treat with immediate defibrillation.</p>",
       "whyNot": {
-        "A": "The early ST segment falls in the absolute refractory period, so a new depolarisation cannot propagate.",
-        "B": "During the PR segment the ventricles are fully repolarised and not vulnerable.",
-        "C": "A blow during atrial depolarisation does not reach the ventricles at a vulnerable time.",
-        "D": "During the QRS peak the ventricles are depolarising and refractory; impacts here may cause heart block but rarely VF."
+        "A": "The early ST segment falls in the absolute refractory period, so a new depolarization cannot propagate.",
+        "B": "During the PR segment the ventricles are fully repolarized and not vulnerable.",
+        "C": "A blow during atrial depolarization does not reach the ventricles at a vulnerable time.",
+        "D": "During the QRS peak the ventricles are depolarizing and refractory; impacts here may cause heart block but rarely VF."
       },
-      "objective": "Relate commotio cordis to the vulnerable period of ventricular repolarisation.",
+      "objective": "Relate commotio cordis to the vulnerable period of ventricular repolarization.",
       "areas": [
         "usmle2026.08.13.01"
       ],
@@ -19028,14 +19028,14 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>In tamponade, the pressure inside the pericardium is transmitted to every chamber during diastole, so right atrial, right ventricular diastolic, pulmonary artery diastolic and wedge (left atrial) pressures rise and become nearly equal. Low cardiac output results because none of the chambers can fill.</p><p><strong>Takeaway:</strong> equalised, raised diastolic pressures across all chambers = tamponade (constriction can look similar).</p>",
+      "explanationHtml": "<p>In tamponade, the pressure inside the pericardium is transmitted to every chamber during diastole, so right atrial, right ventricular diastolic, pulmonary artery diastolic and wedge (left atrial) pressures rise and become nearly equal. Low cardiac output results because none of the chambers can fill.</p><p><strong>Takeaway:</strong> equalized, raised diastolic pressures across all chambers = tamponade (constriction can look similar).</p>",
       "whyNot": {
         "A": "Uniformly low pressures fit hypovolemic shock from hemorrhage without tamponade.",
         "B": "A high wedge with low right-sided pressures fits left ventricular failure (cardiogenic pulmonary edema).",
         "D": "High right-sided with low left-sided pressures fit isolated right ventricular failure, such as right ventricular infarction or massive pulmonary embolism with a normal left heart.",
         "E": "A high pulmonary artery diastolic pressure with a normal wedge and low right atrial pressure is not a coherent shock pattern and does not fit tamponade."
       },
-      "objective": "Recognise equalisation of diastolic pressures in cardiac tamponade.",
+      "objective": "Recognize equalization of diastolic pressures in cardiac tamponade.",
       "areas": [
         "usmle2026.08.13.01"
       ],
@@ -19221,7 +19221,7 @@
         "C": "Lower rib fractures raise concern for liver, spleen or kidney injury rather than the aorta.",
         "D": "A deep sulcus sign on a supine film suggests pneumothorax."
       },
-      "objective": "Recognise radiographic signs of blunt thoracic aortic injury.",
+      "objective": "Recognize radiographic signs of blunt thoracic aortic injury.",
       "areas": [
         "usmle2026.08.13.01"
       ],
@@ -20460,7 +20460,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Digoxin-specific antibody fragments"
+          "html": "Antidigoxin Fab"
         },
         {
           "label": "B",
@@ -20728,7 +20728,7 @@
         },
         {
           "label": "E",
-          "html": "Prolonged ventricular repolarization causing tachyarrhythmia"
+          "html": "Prolonged ventricular repolarization causing early afterdepolarizations"
         }
       ],
       "answer": "C",
@@ -20796,7 +20796,7 @@
       "explanationHtml": "<p>Intranasal use, sympathomimetic signs (tachycardia, hypertension, mydriasis, diaphoresis) and myocardial ischemia in a young man point to cocaine. Cocaine blocks reuptake of norepinephrine, dopamine and serotonin at presynaptic terminals. The excess norepinephrine constricts coronary arteries (α<sub>1</sub>) while raising heart rate and contractility (β<sub>1</sub>), and cocaine also promotes thrombosis.</p><p><strong>Takeaway:</strong> Cocaine blocks catecholamine reuptake, causing coronary vasoconstriction and increased myocardial oxygen demand.</p>",
       "whyNot": {
         "A": "Opioids cause miosis, bradypnea and sedation, not sympathetic excess.",
-        "B": "NMDA antagonism describes PCP and ketamine; PCP is usually smoked and causes nystagmus and violent behaviour.",
+        "B": "NMDA antagonism describes PCP and ketamine; PCP is usually smoked and causes nystagmus and violent behavior.",
         "D": "MAO inhibitors are prescription antidepressants, not drugs typically used intranasally at parties.",
         "E": "5-HT<sub>2A</sub> agonists (LSD, psilocybin) cause hallucinations with only mild sympathetic effects."
       },
@@ -22257,7 +22257,7 @@
         },
         {
           "label": "E",
-          "html": "Release of interleukin-1 from activated macrophages"
+          "html": "Release of interleukin-1 from activated macrophages in the airway wall"
         }
       ],
       "answer": "C",
@@ -22991,7 +22991,7 @@
         },
         {
           "label": "C",
-          "html": "Levofloxacin, ethambutol and pyrazinamide for 6 months"
+          "html": "Levofloxacin, ethambutol and pyrazinamide, each given daily"
         },
         {
           "label": "D",
@@ -23821,10 +23821,10 @@
       "whyNot": {
         "A": "Bronchoscopy has a low yield for peripheral nodules and is unnecessary here.",
         "B": "Biopsy adds the risk of pneumothorax and cannot add certainty to a diagnostic CT appearance.",
-        "D": "PET-CT is used to characterise indeterminate solid nodules; this nodule is already characterised as benign.",
+        "D": "PET-CT is used to characterize indeterminate solid nodules; this nodule is already characterized as benign.",
         "E": "Short-interval CT is used for indeterminate nodules, not those with diagnostic benign features."
       },
-      "objective": "Recognise benign CT features of a pulmonary nodule that end the workup.",
+      "objective": "Recognize benign CT features of a pulmonary nodule that end the workup.",
       "areas": [
         "usmle2026.09.02.01"
       ],
@@ -23882,7 +23882,7 @@
       "whyNot": {
         "A": "Annual low-dose CT is lung cancer screening for older adults with a heavy smoking history, which she does not have.",
         "B": "A 4-mm nodule is too small to biopsy safely or reliably.",
-        "D": "PET-CT cannot reliably characterise nodules this small and would not change management.",
+        "D": "PET-CT cannot reliably characterize nodules this small and would not change management.",
         "E": "Short-interval CT is reserved for larger or higher-risk nodules."
       },
       "objective": "Apply size and risk to decide that a tiny incidental nodule needs no follow-up.",
@@ -24063,7 +24063,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Hoarseness lasting more than about 4 weeks, especially in a heavy smoker and drinker, needs <strong>direct visualisation of the larynx</strong> to look for carcinoma or a benign lesion. Empiric reflux treatment or voice therapy before laryngoscopy risks delaying a cancer diagnosis.</p><p><strong>Takeaway:</strong> persistent hoarseness in a smoker: look at the vocal folds first.</p>",
+      "explanationHtml": "<p>Hoarseness lasting more than about 4 weeks, especially in a heavy smoker and drinker, needs <strong>direct visualization of the larynx</strong> to look for carcinoma or a benign lesion. Empiric reflux treatment or voice therapy before laryngoscopy risks delaying a cancer diagnosis.</p><p><strong>Takeaway:</strong> persistent hoarseness in a smoker: look at the vocal folds first.</p>",
       "whyNot": {
         "A": "Empiric proton pump inhibitor therapy before laryngoscopy can delay the diagnosis of laryngeal cancer in a high-risk patient.",
         "B": "CT is used to stage a lesion seen on laryngoscopy, not as the first test; it cannot assess mucosal lesions well.",
@@ -24125,12 +24125,12 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>Vocal fold nodules are reactive lesions caused by phonotrauma. <strong>Voice therapy</strong> to change how the voice is used is first-line and often curative, especially in children; surgery is reserved for persistent nodules after adequate therapy, because nodules recur if the vocal behaviour does not change.</p><p><strong>Takeaway:</strong> vocal fold nodules: voice therapy first.</p>",
+      "explanationHtml": "<p>Vocal fold nodules are reactive lesions caused by phonotrauma. <strong>Voice therapy</strong> to change how the voice is used is first-line and often curative, especially in children; surgery is reserved for persistent nodules after adequate therapy, because nodules recur if the vocal behavior does not change.</p><p><strong>Takeaway:</strong> vocal fold nodules: voice therapy first.</p>",
       "whyNot": {
         "A": "Systemic steroids do not resolve fibrotic nodules and carry avoidable adverse effects in a child.",
         "B": "Reflux therapy has no role without reflux symptoms and does not treat phonotrauma nodules.",
         "C": "Laser ablation is used for papillomas, not for reactive nodules in a child.",
-        "D": "Surgery is a last resort for nodules that persist despite voice therapy; without behaviour change they recur."
+        "D": "Surgery is a last resort for nodules that persist despite voice therapy; without behavior change they recur."
       },
       "objective": "Treat vocal fold nodules first with voice therapy.",
       "areas": [
@@ -24249,7 +24249,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>She has aspirin-exacerbated respiratory disease with chronic rhinosinusitis and nasal polyps. First-line treatment of polyps is a <strong>topical intranasal glucocorticoid</strong> with saline irrigation, together with strict avoidance of aspirin and nonselective NSAIDs. Short oral steroid bursts, leukotriene modifiers, sinus surgery, aspirin desensitisation and type 2 biologics are escalation steps.</p><p><strong>Takeaway:</strong> nasal polyps: intranasal steroid first; escalate to surgery or biologics when it fails.</p>",
+      "explanationHtml": "<p>She has aspirin-exacerbated respiratory disease with chronic rhinosinusitis and nasal polyps. First-line treatment of polyps is a <strong>topical intranasal glucocorticoid</strong> with saline irrigation, together with strict avoidance of aspirin and nonselective NSAIDs. Short oral steroid bursts, leukotriene modifiers, sinus surgery, aspirin desensitization and type 2 biologics are escalation steps.</p><p><strong>Takeaway:</strong> nasal polyps: intranasal steroid first; escalate to surgery or biologics when it fails.</p>",
       "whyNot": {
         "A": "Long antibiotic courses do not treat type 2 eosinophilic polyps without bacterial sinusitis.",
         "B": "Months of systemic glucocorticoids cause serious adverse effects and are not used as maintenance therapy for polyps.",
@@ -24432,7 +24432,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>A slowly growing, smooth peripheral nodule containing <strong>fat</strong> and <strong>popcorn calcification</strong> is a pulmonary hamartoma, the most common benign lung tumor. It is a disorganised mixture of mature cartilage, fat, smooth muscle and connective tissue with entrapped respiratory epithelium; the calcified cartilage produces the popcorn pattern.</p><p><strong>Takeaway:</strong> fat plus popcorn calcification in a lung nodule means hamartoma: cartilage, fat and epithelial clefts.</p>",
+      "explanationHtml": "<p>A slowly growing, smooth peripheral nodule containing <strong>fat</strong> and <strong>popcorn calcification</strong> is a pulmonary hamartoma, the most common benign lung tumor. It is a disorganized mixture of mature cartilage, fat, smooth muscle and connective tissue with entrapped respiratory epithelium; the calcified cartilage produces the popcorn pattern.</p><p><strong>Takeaway:</strong> fat plus popcorn calcification in a lung nodule means hamartoma: cartilage, fat and epithelial clefts.</p>",
       "whyNot": {
         "A": "Lepidic growth of atypical columnar cells is adenocarcinoma in situ or minimally invasive adenocarcinoma, which looks like ground glass, not fat and popcorn calcification.",
         "C": "Necrotizing granulomas explain a calcified granuloma, but granulomas do not contain fat.",
@@ -24668,7 +24668,7 @@
         },
         {
           "label": "C",
-          "html": "Deficient secretory IgA on mucosal surfaces"
+          "html": "Deficient secretory IgA at the mucosal surface"
         },
         {
           "label": "D",
@@ -24810,7 +24810,7 @@
         "C": "Broad-based budding yeasts are Blastomyces, which causes pulmonary and skin disease and is less often seen as an incidental calcified nodule.",
         "D": "Acute-angle septate hyphae are Aspergillus, which forms fungus balls in cavities rather than calcified granulomas with calcified nodes."
       },
-      "objective": "Recognise a calcified granuloma from histoplasmosis as a benign solitary nodule.",
+      "objective": "Recognize a calcified granuloma from histoplasmosis as a benign solitary nodule.",
       "areas": [
         "usmle2026.09.02.01"
       ],
@@ -24871,7 +24871,7 @@
         "D": "Inflammatory polyps shrink with steroids; inverted papillomas are neoplasms and do not regress.",
         "E": "CFTR defects cause bilateral inflammatory polyps in children, not unilateral inverted papillomas in older adults."
       },
-      "objective": "Recognise inverted papilloma and its association with squamous cell carcinoma.",
+      "objective": "Recognize inverted papilloma and its association with squamous cell carcinoma.",
       "areas": [
         "usmle2026.09.02.01"
       ],
@@ -24988,12 +24988,12 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>He has <strong>superior vena cava syndrome</strong> from a mediastinal mass, but no stridor, laryngeal edema or confusion. Because treatment depends on histology (small cell carcinoma and lymphoma are treated with chemotherapy, other tumours with radiation or stenting), the next step is <strong>tissue diagnosis</strong>, for example by EBUS-guided aspiration or mediastinoscopy. Elevate the head of the bed meanwhile.</p><p><strong>Takeaway:</strong> stable SVC syndrome → biopsy before treatment; stridor or cerebral edema → urgent stent.</p>",
+      "explanationHtml": "<p>He has <strong>superior vena cava syndrome</strong> from a mediastinal mass, but no stridor, laryngeal edema or confusion. Because treatment depends on histology (small cell carcinoma and lymphoma are treated with chemotherapy, other tumors with radiation or stenting), the next step is <strong>tissue diagnosis</strong>, for example by EBUS-guided aspiration or mediastinoscopy. Elevate the head of the bed meanwhile.</p><p><strong>Takeaway:</strong> stable SVC syndrome → biopsy before treatment; stridor or cerebral edema → urgent stent.</p>",
       "whyNot": {
         "A": "Radiation before a tissue diagnosis may obscure histology, and he is stable without airway or brain compromise.",
         "B": "Stenting is first for stridor, laryngeal edema or confusion; this stable patient can have a diagnosis first.",
-        "C": "Steroids help mainly in steroid-responsive tumours such as lymphoma and can confound a lymphoma biopsy; they do not replace diagnosis.",
-        "D": "This obstruction is from extrinsic tumour compression, not primarily thrombus."
+        "C": "Steroids help mainly in steroid-responsive tumors such as lymphoma and can confound a lymphoma biopsy; they do not replace diagnosis.",
+        "D": "This obstruction is from extrinsic tumor compression, not primarily thrombus."
       },
       "objective": "Manage superior vena cava syndrome in a stable patient.",
       "areas": [
@@ -25172,7 +25172,7 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>This is <strong>stage I non-small cell lung cancer</strong> in a fit patient with adequate lung function. Curative treatment is <strong>anatomic resection</strong> (lobectomy, or segmentectomy for small peripheral tumours) with lymph node sampling. Molecular testing of the specimen guides any adjuvant therapy.</p><p><strong>Takeaway:</strong> early-stage NSCLC in a fit patient → surgical resection; SBRT if inoperable.</p>",
+      "explanationHtml": "<p>This is <strong>stage I non-small cell lung cancer</strong> in a fit patient with adequate lung function. Curative treatment is <strong>anatomic resection</strong> (lobectomy, or segmentectomy for small peripheral tumors) with lymph node sampling. Molecular testing of the specimen guides any adjuvant therapy.</p><p><strong>Takeaway:</strong> early-stage NSCLC in a fit patient → surgical resection; SBRT if inoperable.</p>",
       "whyNot": {
         "A": "Chemoradiation is for unresectable stage III disease.",
         "B": "Systemic therapy alone is for metastatic disease.",
@@ -25295,12 +25295,12 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>Hoarseness lasting more than about 4 weeks, especially in a person who smokes and drinks, needs <strong>visualisation of the larynx</strong> (flexible laryngoscopy) to look for glottic carcinoma, which causes early hoarseness. Empiric treatments and imaging should not come first.</p><p><strong>Takeaway:</strong> persistent hoarseness in a smoker → laryngoscopy.</p>",
+      "explanationHtml": "<p>Hoarseness lasting more than about 4 weeks, especially in a person who smokes and drinks, needs <strong>visualization of the larynx</strong> (flexible laryngoscopy) to look for glottic carcinoma, which causes early hoarseness. Empiric treatments and imaging should not come first.</p><p><strong>Takeaway:</strong> persistent hoarseness in a smoker → laryngoscopy.</p>",
       "whyNot": {
-        "A": "Empiric acid suppression before visualising the larynx can delay a cancer diagnosis.",
-        "B": "Imaging comes after the larynx has been visualised, not instead of it.",
+        "A": "Empiric acid suppression before visualizing the larynx can delay a cancer diagnosis.",
+        "B": "Imaging comes after the larynx has been visualized, not instead of it.",
         "D": "Steroids are not indicated for undiagnosed hoarseness.",
-        "E": "Persistent hoarseness in a smoker and drinker needs prompt visualisation."
+        "E": "Persistent hoarseness in a smoker and drinker needs prompt visualization."
       },
       "objective": "Evaluate persistent hoarseness in an adult at risk of laryngeal cancer.",
       "areas": [
@@ -25360,7 +25360,7 @@
       "explanationHtml": "<p>A persistent firm neck mass in an adult smoker is metastatic squamous cell carcinoma until proven otherwise. After head and neck examination and laryngoscopy, obtain <strong>fine-needle aspiration</strong> (with p16/HPV testing) and contrast CT of the neck; look for an occult primary in the oropharynx and nasopharynx.</p><p><strong>Takeaway:</strong> adult neck mass that persists → FNA, not open excision.</p>",
       "whyNot": {
         "A": "A firm mass that persisted through antibiotics in a smoker needs tissue, not more antibiotics.",
-        "C": "Open excision of a possible metastatic squamous node can spill tumour and complicate definitive treatment; FNA comes first.",
+        "C": "Open excision of a possible metastatic squamous node can spill tumor and complicate definitive treatment; FNA comes first.",
         "D": "The mass is lateral and anterior to the sternocleidomastoid, not in the thyroid.",
         "E": "Observation delays diagnosis of a likely malignancy."
       },
@@ -25517,7 +25517,7 @@
       "id": "s23b-q-090202-ck-11",
       "exam": "step2ck",
       "format": "single",
-      "stemHtml": "<p>A 58-year-old woman has a 4-cm right lower lobe adenocarcinoma with metastases to bone and the adrenal gland. She has never smoked. Tissue testing shows an activating EGFR mutation, and PD-L1 is expressed in 60% of tumour cells. Her performance status is good. Which of the following is the most appropriate first-line systemic therapy?</p>",
+      "stemHtml": "<p>A 58-year-old woman has a 4-cm right lower lobe adenocarcinoma with metastases to bone and the adrenal gland. She has never smoked. Tissue testing shows an activating EGFR mutation, and PD-L1 is expressed in 60% of tumor cells. Her performance status is good. Which of the following is the most appropriate first-line systemic therapy?</p>",
       "options": [
         {
           "label": "A",
@@ -25541,9 +25541,9 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>In metastatic NSCLC with a <strong>targetable driver</strong>, targeted therapy is first line regardless of PD-L1. An EGFR tyrosine kinase inhibitor (a third-generation agent such as osimertinib) gives higher response rates and longer disease control than chemotherapy, and immunotherapy is of limited benefit in EGFR-mutant tumours.</p><p><strong>Takeaway:</strong> driver mutation present → targeted therapy first, even with high PD-L1.</p>",
+      "explanationHtml": "<p>In metastatic NSCLC with a <strong>targetable driver</strong>, targeted therapy is first line regardless of PD-L1. An EGFR tyrosine kinase inhibitor (a third-generation agent such as osimertinib) gives higher response rates and longer disease control than chemotherapy, and immunotherapy is of limited benefit in EGFR-mutant tumors.</p><p><strong>Takeaway:</strong> driver mutation present → targeted therapy first, even with high PD-L1.</p>",
       "whyNot": {
-        "A": "Checkpoint inhibitors work poorly in EGFR-driven tumours and add toxicity before or with EGFR inhibitors; the driver takes priority over PD-L1.",
+        "A": "Checkpoint inhibitors work poorly in EGFR-driven tumors and add toxicity before or with EGFR inhibitors; the driver takes priority over PD-L1.",
         "B": "Anti-angiogenic therapy is not used alone as first-line treatment.",
         "D": "This is the regimen for limited-stage small cell carcinoma.",
         "E": "Chemotherapy alone is inferior when a targetable driver is present."
@@ -25602,12 +25602,12 @@
         }
       ],
       "answer": "C",
-      "explanationHtml": "<p>A central, cavitating mass in a heavy smoker with hypercalcemia, low phosphate and suppressed PTH points to <strong>squamous cell carcinoma</strong> secreting PTH-related peptide. PTHrP acts on the PTH receptor, raising bone resorption and renal calcium reabsorption and lowering phosphate reabsorption, while the parathyroids switch off.</p><p><strong>Takeaway:</strong> central + cavitation + PTHrP hypercalcemia = squamous cell carcinoma, recognised by keratin pearls.</p>",
+      "explanationHtml": "<p>A central, cavitating mass in a heavy smoker with hypercalcemia, low phosphate and suppressed PTH points to <strong>squamous cell carcinoma</strong> secreting PTH-related peptide. PTHrP acts on the PTH receptor, raising bone resorption and renal calcium reabsorption and lowering phosphate reabsorption, while the parathyroids switch off.</p><p><strong>Takeaway:</strong> central + cavitation + PTHrP hypercalcemia = squamous cell carcinoma, recognized by keratin pearls.</p>",
       "whyNot": {
         "A": "Adenocarcinoma is usually peripheral and is not the classic source of PTHrP hypercalcemia.",
         "B": "Large cell carcinoma is usually peripheral and is not linked to PTHrP.",
         "D": "Small cell carcinoma is central but causes SIADH or ectopic ACTH, not PTHrP hypercalcemia, and rarely cavitates.",
-        "E": "A carcinoid tumour is a central endobronchial polyp; it does not cause PTHrP hypercalcemia."
+        "E": "A carcinoid tumor is a central endobronchial polyp; it does not cause PTHrP hypercalcemia."
       },
       "objective": "Identify squamous cell lung carcinoma from location, cavitation and PTHrP-mediated hypercalcemia.",
       "areas": [
@@ -25640,7 +25640,7 @@
       "id": "s23b-q-090202-s1-02",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 58-year-old woman who has never smoked has a 2.5-cm peripheral nodule in the right upper lobe. Biopsy shows adenocarcinoma. Tumour DNA sequencing finds an exon 19 deletion in a gene encoding a cell-surface receptor. The drug chosen for her acts by which of the following mechanisms?</p>",
+      "stemHtml": "<p>A 58-year-old woman who has never smoked has a 2.5-cm peripheral nodule in the right upper lobe. Biopsy shows adenocarcinoma. Tumor DNA sequencing finds an exon 19 deletion in a gene encoding a cell-surface receptor. The drug chosen for her acts by which of the following mechanisms?</p>",
       "options": [
         {
           "label": "A",
@@ -25660,13 +25660,13 @@
         },
         {
           "label": "E",
-          "html": "Inhibiting tubulin polymerization in dividing tumour cells"
+          "html": "Inhibiting tubulin polymerization in dividing tumor cells"
         }
       ],
       "answer": "D",
       "explanationHtml": "<p>Exon 19 deletions activate the <strong>epidermal growth factor receptor (EGFR)</strong>, a receptor tyrosine kinase, most often in adenocarcinoma of people who never smoked. Small-molecule <strong>EGFR tyrosine kinase inhibitors</strong> (e.g., osimertinib) compete at the ATP-binding site and shut off downstream signalling.</p><p><strong>Takeaway:</strong> never-smoker adenocarcinoma with an EGFR mutation is treated with an EGFR tyrosine kinase inhibitor.</p>",
       "whyNot": {
-        "A": "Anti-VEGF therapy targets angiogenesis, not the tumour's mutated receptor.",
+        "A": "Anti-VEGF therapy targets angiogenesis, not the tumor's mutated receptor.",
         "B": "Checkpoint blockade is used when no targetable driver is present; it does not target the mutated receptor.",
         "C": "Farnesyltransferase inhibitors are not used for lung cancer, and the mutated gene here is a receptor, not Ras.",
         "E": "Taxanes and vinca alkaloids are cytotoxic, not targeted at a driver mutation."
@@ -25765,7 +25765,7 @@
       "id": "s23b-q-090202-s1-04",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 55-year-old man who smokes has severe right shoulder pain radiating down the inner arm for 4 months. He has wasting of the small muscles of the right hand. His right upper eyelid droops and the right pupil is smaller than the left; the difference is greatest in dim light. The forehead on the right is dry. Which structure is the tumour also most likely compressing?</p>",
+      "stemHtml": "<p>A 55-year-old man who smokes has severe right shoulder pain radiating down the inner arm for 4 months. He has wasting of the small muscles of the right hand. His right upper eyelid droops and the right pupil is smaller than the left; the difference is greatest in dim light. The forehead on the right is dry. Which structure is the tumor also most likely compressing?</p>",
       "options": [
         {
           "label": "A",
@@ -25789,14 +25789,14 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>An apical (superior sulcus, Pancoast) tumour invades the <strong>lower brachial plexus</strong> (C8–T1: medial arm pain, intrinsic hand wasting) and the <strong>cervical sympathetic chain</strong>, producing ipsilateral Horner syndrome: ptosis from loss of the superior tarsal muscle, miosis that is most obvious in the dark, and facial anhidrosis.</p><p><strong>Takeaway:</strong> shoulder pain + hand wasting + Horner syndrome = superior sulcus tumour.</p>",
+      "explanationHtml": "<p>An apical (superior sulcus, Pancoast) tumor invades the <strong>lower brachial plexus</strong> (C8–T1: medial arm pain, intrinsic hand wasting) and the <strong>cervical sympathetic chain</strong>, producing ipsilateral Horner syndrome: ptosis from loss of the superior tarsal muscle, miosis that is most obvious in the dark, and facial anhidrosis.</p><p><strong>Takeaway:</strong> shoulder pain + hand wasting + Horner syndrome = superior sulcus tumor.</p>",
       "whyNot": {
         "B": "A third nerve palsy causes ptosis with a dilated, not small, pupil and eye movement deficits.",
         "C": "Phrenic involvement paralyses the hemidiaphragm; it does not affect the eye.",
         "D": "Recurrent laryngeal involvement causes hoarseness, not ptosis and miosis; and the right nerve loops under the subclavian, not the apex.",
         "E": "SVC obstruction causes facial and arm swelling with distended veins, not Horner syndrome."
       },
-      "objective": "Localise a superior sulcus tumour from brachial plexus and sympathetic chain findings.",
+      "objective": "Localize a superior sulcus tumor from brachial plexus and sympathetic chain findings.",
       "areas": [
         "usmle2026.09.02.02"
       ],
@@ -25827,7 +25827,7 @@
       "id": "s23b-q-090202-s1-05",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 66-year-old woman with a 45-pack-year history has 3 weeks of nausea, headache and confusion. Serum sodium is 121 mEq/L, serum osmolality 254 mOsm/kg and urine osmolality 520 mOsm/kg. She is clinically euvolemic. CT shows a large central mass. Immunohistochemistry of the tumour is most likely positive for which of the following?</p>",
+      "stemHtml": "<p>A 66-year-old woman with a 45-pack-year history has 3 weeks of nausea, headache and confusion. Serum sodium is 121 mEq/L, serum osmolality 254 mOsm/kg and urine osmolality 520 mOsm/kg. She is clinically euvolemic. CT shows a large central mass. Immunohistochemistry of the tumor is most likely positive for which of the following?</p>",
       "options": [
         {
           "label": "A",
@@ -25851,12 +25851,12 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Euvolemic hypotonic hyponatremia with inappropriately concentrated urine is <strong>SIADH</strong>. The classic lung source is <strong>small cell carcinoma</strong>, a central neuroendocrine tumour whose cells stain for chromogranin, synaptophysin and CD56.</p><p><strong>Takeaway:</strong> SIADH with a central mass = small cell carcinoma, a neuroendocrine tumour (chromogranin, synaptophysin).</p>",
+      "explanationHtml": "<p>Euvolemic hypotonic hyponatremia with inappropriately concentrated urine is <strong>SIADH</strong>. The classic lung source is <strong>small cell carcinoma</strong>, a central neuroendocrine tumor whose cells stain for chromogranin, synaptophysin and CD56.</p><p><strong>Takeaway:</strong> SIADH with a central mass = small cell carcinoma, a neuroendocrine tumor (chromogranin, synaptophysin).</p>",
       "whyNot": {
-        "A": "Calretinin marks mesothelioma, a pleural tumour.",
+        "A": "Calretinin marks mesothelioma, a pleural tumor.",
         "C": "These mark squamous cell carcinoma, which causes PTHrP hypercalcemia rather than SIADH.",
         "D": "CD45 marks lymphoma, which can cause a mediastinal mass but not this paraneoplastic picture.",
-        "E": "Napsin A marks adenocarcinoma of lung origin, a peripheral tumour not classically linked to SIADH."
+        "E": "Napsin A marks adenocarcinoma of lung origin, a peripheral tumor not classically linked to SIADH."
       },
       "objective": "Connect SIADH to small cell lung carcinoma and its neuroendocrine immunoprofile.",
       "areas": [
@@ -25889,7 +25889,7 @@
       "id": "s23b-q-090202-s1-06",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 47-year-old man has a 3-cm painless lump below the angle of the left jaw for 2 months. He has never smoked and drinks socially. Fine-needle aspiration shows squamous cell carcinoma with strong, diffuse p16 staining. A small primary tumour is found in the left tonsil. A viral protein in the tumour cells most likely contributes to cancer by which of the following?</p>",
+      "stemHtml": "<p>A 47-year-old man has a 3-cm painless lump below the angle of the left jaw for 2 months. He has never smoked and drinks socially. Fine-needle aspiration shows squamous cell carcinoma with strong, diffuse p16 staining. A small primary tumor is found in the left tonsil. A viral protein in the tumor cells most likely contributes to cancer by which of the following?</p>",
       "options": [
         {
           "label": "A",
@@ -25952,7 +25952,7 @@
       "id": "s23b-q-090202-s1-07",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 44-year-old man who emigrated from southern China 10 years ago has 2 months of a blocked left ear and a firm left upper neck node. Otoscopy shows a dull left tympanic membrane with an air-fluid level. He has no fever or ear pain. Biopsy of a nasopharyngeal mass shows undifferentiated carcinoma with many lymphocytes. Which infectious agent is most strongly associated with this tumour?</p>",
+      "stemHtml": "<p>A 44-year-old man who emigrated from southern China 10 years ago has 2 months of a blocked left ear and a firm left upper neck node. Otoscopy shows a dull left tympanic membrane with an air-fluid level. He has no fever or ear pain. Biopsy of a nasopharyngeal mass shows undifferentiated carcinoma with many lymphocytes. Which infectious agent is most strongly associated with this tumor?</p>",
       "options": [
         {
           "label": "A",
@@ -25976,7 +25976,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Nonkeratinizing (undifferentiated) <strong>nasopharyngeal carcinoma</strong> is associated with <strong>EBV</strong> and is common in southern China. Tumour near the eustachian tube opening causes a one-sided middle-ear effusion in an adult; early nodal spread to the upper neck is typical.</p><p><strong>Takeaway:</strong> adult unilateral serous otitis + neck node + East Asian background = EBV-associated nasopharyngeal carcinoma.</p>",
+      "explanationHtml": "<p>Nonkeratinizing (undifferentiated) <strong>nasopharyngeal carcinoma</strong> is associated with <strong>EBV</strong> and is common in southern China. Tumor near the eustachian tube opening causes a one-sided middle-ear effusion in an adult; early nodal spread to the upper neck is typical.</p><p><strong>Takeaway:</strong> adult unilateral serous otitis + neck node + East Asian background = EBV-associated nasopharyngeal carcinoma.</p>",
       "whyNot": {
         "A": "CMV is not an oncogenic cause of head and neck carcinoma.",
         "C": "HHV-8 causes Kaposi sarcoma and primary effusion lymphoma.",
@@ -26042,10 +26042,10 @@
       "whyNot": {
         "A": "Adenocarcinoma is associated with hypertrophic osteoarthropathy and Trousseau syndrome rather than ectopic ACTH.",
         "B": "Large cell carcinoma occasionally secretes hCG, not ACTH.",
-        "C": "Mesothelioma is a pleural tumour without endocrine syndromes.",
+        "C": "Mesothelioma is a pleural tumor without endocrine syndromes.",
         "E": "Squamous cell carcinoma secretes PTHrP, not ACTH."
       },
-      "objective": "Recognise ectopic ACTH secretion by small cell lung carcinoma.",
+      "objective": "Recognize ectopic ACTH secretion by small cell lung carcinoma.",
       "areas": [
         "usmle2026.09.02.02"
       ],
@@ -26084,7 +26084,7 @@
         },
         {
           "label": "B",
-          "html": "Drug-induced capillary leak from cytokine release by tumour lysis"
+          "html": "Drug-induced capillary leak from cytokine release by tumor lysis"
         },
         {
           "label": "C",
@@ -26100,7 +26100,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>PD-1 normally restrains activated T cells in peripheral tissues. Blocking it boosts antitumour immunity but also breaks <strong>peripheral self-tolerance</strong>, causing immune-related adverse events: pneumonitis, colitis, hepatitis, thyroiditis, hypophysitis, dermatitis. Pneumonitis is treated by holding the drug and giving glucocorticoids.</p><p><strong>Takeaway:</strong> checkpoint inhibitor toxicity is autoimmune (loss of T-cell tolerance), treated with steroids.</p>",
+      "explanationHtml": "<p>PD-1 normally restrains activated T cells in peripheral tissues. Blocking it boosts antitumor immunity but also breaks <strong>peripheral self-tolerance</strong>, causing immune-related adverse events: pneumonitis, colitis, hepatitis, thyroiditis, hypophysitis, dermatitis. Pneumonitis is treated by holding the drug and giving glucocorticoids.</p><p><strong>Takeaway:</strong> checkpoint inhibitor toxicity is autoimmune (loss of T-cell tolerance), treated with steroids.</p>",
       "whyNot": {
         "A": "This describes drugs such as bleomycin; checkpoint inhibitors are not directly cytotoxic.",
         "B": "Cytokine release syndrome is acute and systemic, not a delayed isolated pneumonitis.",
@@ -26151,7 +26151,7 @@
         },
         {
           "label": "C",
-          "html": "Lifelong carcinoid syndrome from residual tumour"
+          "html": "Lifelong carcinoid syndrome from residual tumor"
         },
         {
           "label": "D",
@@ -26163,12 +26163,12 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>A young nonsmoker with an endobronchial polyp causing obstruction, and low-grade neuroendocrine histology, has a <strong>typical carcinoid tumour</strong>. Surgical resection is usually curative, and long-term survival is excellent. It sits at the low-grade end of the neuroendocrine spectrum that ends in small cell carcinoma.</p><p><strong>Takeaway:</strong> bronchial typical carcinoid: young nonsmoker, endobronchial polyp, cured by resection.</p>",
+      "explanationHtml": "<p>A young nonsmoker with an endobronchial polyp causing obstruction, and low-grade neuroendocrine histology, has a <strong>typical carcinoid tumor</strong>. Surgical resection is usually curative, and long-term survival is excellent. It sits at the low-grade end of the neuroendocrine spectrum that ends in small cell carcinoma.</p><p><strong>Takeaway:</strong> bronchial typical carcinoid: young nonsmoker, endobronchial polyp, cured by resection.</p>",
       "whyNot": {
         "A": "This describes small cell carcinoma, which is high grade with many mitoses and necrosis.",
         "C": "Carcinoid syndrome is uncommon with bronchial carcinoids and usually requires liver metastases.",
-        "D": "This again describes small cell carcinoma's behaviour.",
-        "E": "Neuroendocrine tumours do not transform into squamous carcinoma."
+        "D": "This again describes small cell carcinoma's behavior.",
+        "E": "Neuroendocrine tumors do not transform into squamous carcinoma."
       },
       "objective": "Distinguish the prognosis of bronchial carcinoid from small cell carcinoma.",
       "areas": [
@@ -26200,7 +26200,7 @@
       "id": "s23b-q-090202-s1-11",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 63-year-old man with a 40-pack-year history has a 3-cm right upper lobe mass. While being staged he notices that his finger ends have become bulbous, and he has aching, tender wrists and shins. Radiographs show new periosteal bone formation along the distal radius, ulna, tibia and fibula. Which tumour type is most often associated with this syndrome?</p>",
+      "stemHtml": "<p>A 63-year-old man with a 40-pack-year history has a 3-cm right upper lobe mass. While being staged he notices that his finger ends have become bulbous, and he has aching, tender wrists and shins. Radiographs show new periosteal bone formation along the distal radius, ulna, tibia and fibula. Which tumor type is most often associated with this syndrome?</p>",
       "options": [
         {
           "label": "A",
@@ -26220,13 +26220,13 @@
         },
         {
           "label": "E",
-          "html": "Typical carcinoid tumour"
+          "html": "Typical carcinoid tumor"
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>Clubbing with painful periostitis of long bones is <strong>hypertrophic pulmonary osteoarthropathy</strong>. In adults it is most often caused by non-small cell lung cancer, classically <strong>adenocarcinoma</strong>; it may improve after tumour resection.</p><p><strong>Takeaway:</strong> clubbing plus periostitis in a smoker suggests NSCLC, especially adenocarcinoma.</p>",
+      "explanationHtml": "<p>Clubbing with painful periostitis of long bones is <strong>hypertrophic pulmonary osteoarthropathy</strong>. In adults it is most often caused by non-small cell lung cancer, classically <strong>adenocarcinoma</strong>; it may improve after tumor resection.</p><p><strong>Takeaway:</strong> clubbing plus periostitis in a smoker suggests NSCLC, especially adenocarcinoma.</p>",
       "whyNot": {
-        "B": "Mesothelioma can cause clubbing, but it is a pleural tumour and the mass here is parenchymal; NSCLC remains the commonest cause.",
+        "B": "Mesothelioma can cause clubbing, but it is a pleural tumor and the mass here is parenchymal; NSCLC remains the commonest cause.",
         "C": "RCC metastases can cause paraneoplastic polycythemia or hypercalcemia, not this classic lung association.",
         "D": "Small cell carcinoma is associated with endocrine and neurologic syndromes, rarely with hypertrophic osteoarthropathy.",
         "E": "Carcinoids cause obstruction and, rarely, carcinoid syndrome."
@@ -26671,7 +26671,7 @@
         "C": "Observation allows the metastases to grow and spread when they are still resectable.",
         "E": "Whole-lung radiation is not a treatment for colorectal lung metastases and damages healthy lung."
       },
-      "objective": "Recognise candidates for pulmonary metastasectomy.",
+      "objective": "Recognize candidates for pulmonary metastasectomy.",
       "areas": [
         "usmle2026.09.02.03"
       ],
@@ -26856,7 +26856,7 @@
         "C": "Hemothorax would show reaccumulating pleural fluid and falling hemoglobin, not alveolar opacities in a re-expanded lung.",
         "D": "Lymphangitic spread develops over weeks and is not triggered by drainage."
       },
-      "objective": "Recognise re-expansion pulmonary edema after large-volume thoracentesis.",
+      "objective": "Recognize re-expansion pulmonary edema after large-volume thoracentesis.",
       "areas": [
         "usmle2026.09.02.03"
       ],
@@ -26980,7 +26980,7 @@
         "D": "Synchronous multiple primary cancers are uncommon; with a known prior cancer, metastases are far more likely.",
         "E": "Lymphangitic spread thickens interlobular septa and bronchovascular bundles rather than forming discrete round nodules."
       },
-      "objective": "Recognise the hematogenous pattern of pulmonary metastases.",
+      "objective": "Recognize the hematogenous pattern of pulmonary metastases.",
       "areas": [
         "usmle2026.09.02.03"
       ],
@@ -27096,7 +27096,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>Clear cell renal cell carcinoma metastasises to the lung (often as nodules, sometimes endobronchial) and stains for <strong>PAX8</strong>, a transcription factor of renal, Müllerian and thyroid epithelium. Combined with TTF-1 negativity, it distinguishes a renal metastasis from a primary lung tumor.</p><p><strong>Takeaway:</strong> PAX8 = kidney (also ovary, thyroid); TTF-1 = lung (and thyroid).</p>",
+      "explanationHtml": "<p>Clear cell renal cell carcinoma metastasizes to the lung (often as nodules, sometimes endobronchial) and stains for <strong>PAX8</strong>, a transcription factor of renal, Müllerian and thyroid epithelium. Combined with TTF-1 negativity, it distinguishes a renal metastasis from a primary lung tumor.</p><p><strong>Takeaway:</strong> PAX8 = kidney (also ovary, thyroid); TTF-1 = lung (and thyroid).</p>",
       "whyNot": {
         "A": "Calretinin marks mesothelial cells and mesothelioma.",
         "B": "CDX2 marks intestinal adenocarcinoma such as colorectal cancer.",
@@ -27465,7 +27465,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>A metaphyseal distal-femur tumor in an adolescent with a sunburst reaction and Codman triangle is <strong>osteosarcoma</strong>, defined by malignant cells that make osteoid. The lung is its main site of metastasis, and the metastases can mineralise because they make bone matrix too.</p><p><strong>Takeaway:</strong> calcified lung metastases in a teenager suggest osteosarcoma.</p>",
+      "explanationHtml": "<p>A metaphyseal distal-femur tumor in an adolescent with a sunburst reaction and Codman triangle is <strong>osteosarcoma</strong>, defined by malignant cells that make osteoid. The lung is its main site of metastasis, and the metastases can mineralize because they make bone matrix too.</p><p><strong>Takeaway:</strong> calcified lung metastases in a teenager suggest osteosarcoma.</p>",
       "whyNot": {
         "A": "Dystrophic calcification of fibrous tissue does not describe a primary tumor that makes matrix.",
         "B": "Giant cell tumor arises in the epiphysis of young adults and is usually benign; it rarely gives lung metastases.",
@@ -27595,7 +27595,7 @@
         "D": "Short microvilli with glycocalyx are the pattern of adenocarcinoma.",
         "E": "Birbeck granules indicate Langerhans cell histiocytosis."
       },
-      "objective": "Recognise the ultrastructural signature of mesothelioma.",
+      "objective": "Recognize the ultrastructural signature of mesothelioma.",
       "areas": [
         "usmle2026.09.02.03"
       ],
@@ -29589,11 +29589,11 @@
         }
       ],
       "answer": "A",
-      "explanationHtml": "<p>Pleural plaques, lower-lobe fibrosis and ferruginous bodies (asbestos fibres coated with iron and protein) establish asbestosis. Asbestos increases the risk of both lung carcinoma and mesothelioma, but bronchogenic carcinoma is by far the more common cancer, and asbestos and tobacco act synergistically (the combined risk is greater than the sum of the separate risks).</p><p><strong>Takeaway:</strong> Asbestos is most specific for mesothelioma but most often causes lung carcinoma, especially in smokers.</p>",
+      "explanationHtml": "<p>Pleural plaques, lower-lobe fibrosis and ferruginous bodies (asbestos fibers coated with iron and protein) establish asbestosis. Asbestos increases the risk of both lung carcinoma and mesothelioma, but bronchogenic carcinoma is by far the more common cancer, and asbestos and tobacco act synergistically (the combined risk is greater than the sum of the separate risks).</p><p><strong>Takeaway:</strong> Asbestos is most specific for mesothelioma but most often causes lung carcinoma, especially in smokers.</p>",
       "whyNot": {
         "B": "Asbestos and tobacco raise laryngeal cancer risk modestly, but the absolute risk is much lower than for lung carcinoma.",
         "C": "Mesothelioma is strongly linked to asbestos and is the more <em>specific</em> association, but it is far less common than lung carcinoma, especially in someone who also smoked.",
-        "D": "Swallowed fibres have been linked to some gastrointestinal cancers, but small bowel cancer is rare and not a major asbestos outcome.",
+        "D": "Swallowed fibers have been linked to some gastrointestinal cancers, but small bowel cancer is rare and not a major asbestos outcome.",
         "E": "Thymoma has no association with asbestos or tobacco."
       },
       "objective": "Identify bronchogenic carcinoma as the most common malignancy after asbestos exposure.",
@@ -31011,7 +31011,7 @@
         },
         {
           "label": "B",
-          "html": "Hyperventilation driven by hypoxemia and lung receptors"
+          "html": "Hyperventilation from chemoreceptor and juxtacapillary receptor stimulation"
         },
         {
           "label": "C",
@@ -31139,7 +31139,7 @@
         },
         {
           "label": "C",
-          "html": "Competitive antagonism of endothelin-1 receptors"
+          "html": "Competitive antagonism at the endothelin-1 receptor"
         },
         {
           "label": "D",
@@ -31945,11 +31945,11 @@
         },
         {
           "label": "B",
-          "html": "Maximize guideline-based cardiac drugs"
+          "html": "Nightly oral theophylline"
         },
         {
           "label": "C",
-          "html": "Nightly oral theophylline"
+          "html": "Optimizing his cardiac therapy"
         },
         {
           "label": "D",
@@ -31960,11 +31960,11 @@
           "html": "Uvulopalatopharyngoplasty"
         }
       ],
-      "answer": "B",
+      "answer": "C",
       "explanationHtml": "<p>He has <strong>central sleep apnea with Cheyne–Stokes breathing</strong> due to heart failure with reduced ejection fraction, and he is on incomplete therapy. First <strong>optimize heart failure treatment</strong> (ARNI or ACE inhibitor, evidence-based β-blocker, mineralocorticoid antagonist, SGLT2 inhibitor), which often reduces the central events. CPAP or nocturnal oxygen may be added if symptoms persist. Adaptive servo-ventilation is contraindicated with an ejection fraction of 45% or less.</p><p><strong>Takeaway:</strong> Central sleep apnea in HFrEF: treat the heart failure first; avoid adaptive servo-ventilation.</p>",
       "whyNot": {
         "A": "Adaptive servo-ventilation increased cardiovascular mortality in patients with an ejection fraction of 45% or less and should not be used.",
-        "C": "Theophylline is arrhythmogenic and is not used in heart failure.",
+        "B": "Theophylline is arrhythmogenic and is not used in heart failure.",
         "D": "Sedatives do not treat central apnea and are risky.",
         "E": "Airway surgery does not treat central apnea."
       },
@@ -33193,7 +33193,7 @@
         },
         {
           "label": "D",
-          "html": "Rupture of apical subpleural blebs"
+          "html": "Rupture of an apical subpleural bleb"
         },
         {
           "label": "E",
@@ -36308,7 +36308,7 @@
         "D": "Pneumothorax shifts the heart but the abdomen is not scaphoid; the abdominal contents are in place.",
         "E": "TTN is mild tachypnea in the first hours with symmetric breath sounds and no mediastinal shift."
       },
-      "objective": "Recognise congenital diaphragmatic hernia in a newborn.",
+      "objective": "Recognize congenital diaphragmatic hernia in a newborn.",
       "areas": [
         "usmle2026.09.09.01"
       ],
@@ -36859,7 +36859,7 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>A positive newborn screen for cystic fibrosis (raised immunoreactive trypsinogen, here with one CFTR variant) needs confirmation with a <strong>sweat chloride test</strong> at an accredited centre: 60 mmol/L or more confirms CF, while intermediate values need further genetic and clinical evaluation.</p><p><strong>Takeaway:</strong> positive CF newborn screen → sweat chloride test; one variant does not mean carrier only.</p>",
+      "explanationHtml": "<p>A positive newborn screen for cystic fibrosis (raised immunoreactive trypsinogen, here with one CFTR variant) needs confirmation with a <strong>sweat chloride test</strong> at an accredited center: 60 mmol/L or more confirms CF, while intermediate values need further genetic and clinical evaluation.</p><p><strong>Takeaway:</strong> positive CF newborn screen → sweat chloride test; one variant does not mean carrier only.</p>",
       "whyNot": {
         "A": "Imaging is not diagnostic for CF and exposes her to radiation.",
         "B": "One variant on a limited panel does not exclude a second, untested variant; CF has not been ruled out.",
@@ -37026,7 +37026,7 @@
       "options": [
         {
           "label": "A",
-          "html": "Airflow stops because pressures equalise immediately"
+          "html": "Airflow stops because pressures equalize immediately"
         },
         {
           "label": "B",
@@ -37046,9 +37046,9 @@
         }
       ],
       "answer": "E",
-      "explanationHtml": "<p>By the law of Laplace (P = 2T / r), with equal surface tension the <strong>smaller alveolus has the higher collapsing pressure</strong>, so it empties into the larger one. Surfactant prevents this by lowering surface tension more in small (compressed) alveoli, which keeps alveoli of different sizes stable at end-expiration.</p><p><strong>Takeaway:</strong> without surfactant, small alveoli collapse into large ones (Laplace); surfactant equalises them.</p>",
+      "explanationHtml": "<p>By the law of Laplace (P = 2T / r), with equal surface tension the <strong>smaller alveolus has the higher collapsing pressure</strong>, so it empties into the larger one. Surfactant prevents this by lowering surface tension more in small (compressed) alveoli, which keeps alveoli of different sizes stable at end-expiration.</p><p><strong>Takeaway:</strong> without surfactant, small alveoli collapse into large ones (Laplace); surfactant equalizes them.</p>",
       "whyNot": {
-        "A": "Pressures cannot equalise while radii differ under equal tension.",
+        "A": "Pressures cannot equalize while radii differ under equal tension.",
         "B": "Loss of surfactant lowers compliance; it does not cause overdistension.",
         "C": "Equal tension with unequal radii means unequal collapsing pressures, so they are not stable.",
         "D": "The larger alveolus has the lower pressure, so air flows toward it, not out of it."
@@ -37108,7 +37108,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Maternal hyperglycemia causes fetal hyperglycemia and compensatory <strong>fetal hyperinsulinemia</strong>, which antagonises the maturing effect of glucocorticoids on type II pneumocytes and delays surfactant synthesis. These infants can have RDS later in gestation than expected, even when large.</p><p><strong>Takeaway:</strong> infant of a diabetic mother: big but surfactant-immature because insulin delays lung maturation.</p>",
+      "explanationHtml": "<p>Maternal hyperglycemia causes fetal hyperglycemia and compensatory <strong>fetal hyperinsulinemia</strong>, which antagonizes the maturing effect of glucocorticoids on type II pneumocytes and delays surfactant synthesis. These infants can have RDS later in gestation than expected, even when large.</p><p><strong>Takeaway:</strong> infant of a diabetic mother: big but surfactant-immature because insulin delays lung maturation.</p>",
       "whyNot": {
         "A": "Cortisol speeds lung maturation; it would protect, not harm.",
         "C": "The fetus of a poorly controlled diabetic mother is hyperglycemic, not hypoglycemic, before birth.",
@@ -37301,7 +37301,7 @@
         "C": "Pouch defects produce thymic, parathyroid or ear anomalies, not esophageal atresia.",
         "D": "Failed duodenal recanalization causes duodenal atresia with a double-bubble, not a blind esophagus."
       },
-      "objective": "Recognise the most common type of esophageal atresia with tracheoesophageal fistula and its embryology.",
+      "objective": "Recognize the most common type of esophageal atresia with tracheoesophageal fistula and its embryology.",
       "areas": [
         "usmle2026.09.09.01"
       ],
@@ -37355,7 +37355,7 @@
         }
       ],
       "answer": "D",
-      "explanationHtml": "<p>Nonfunctioning lung tissue without a bronchial connection, supplied by a <strong>systemic artery from the aorta</strong>, is pulmonary sequestration. The <strong>intralobar</strong> type lies within normal pleura, favours the posterior basal segments and causes recurrent infection in older children; the extralobar type has its own pleura and systemic venous drainage.</p><p><strong>Takeaway:</strong> lower-lobe mass + aortic arterial supply + no bronchial connection = pulmonary sequestration.</p>",
+      "explanationHtml": "<p>Nonfunctioning lung tissue without a bronchial connection, supplied by a <strong>systemic artery from the aorta</strong>, is pulmonary sequestration. The <strong>intralobar</strong> type lies within normal pleura, favors the posterior basal segments and causes recurrent infection in older children; the extralobar type has its own pleura and systemic venous drainage.</p><p><strong>Takeaway:</strong> lower-lobe mass + aortic arterial supply + no bronchial connection = pulmonary sequestration.</p>",
       "whyNot": {
         "A": "CF bronchiectasis is diffuse and upper-lobe predominant and connects to the airways.",
         "B": "Bronchogenic cysts are usually mediastinal and are not supplied by a systemic artery from the aorta.",
@@ -37417,7 +37417,7 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Bronchiectasis, chronic sinusitis, otitis, <strong>situs inversus</strong> and immotile sperm make up Kartagener syndrome, a form of <strong>primary ciliary dyskinesia</strong>. Defective <strong>axonemal dynein arms</strong> stop ciliary and flagellar bending; failure of embryonic nodal cilia randomises left-right orientation, so about half of patients have situs inversus.</p><p><strong>Takeaway:</strong> immotile sperm + bronchiectasis + situs inversus = dynein arm defect (primary ciliary dyskinesia).</p>",
+      "explanationHtml": "<p>Bronchiectasis, chronic sinusitis, otitis, <strong>situs inversus</strong> and immotile sperm make up Kartagener syndrome, a form of <strong>primary ciliary dyskinesia</strong>. Defective <strong>axonemal dynein arms</strong> stop ciliary and flagellar bending; failure of embryonic nodal cilia randomizes left-right orientation, so about half of patients have situs inversus.</p><p><strong>Takeaway:</strong> immotile sperm + bronchiectasis + situs inversus = dynein arm defect (primary ciliary dyskinesia).</p>",
       "whyNot": {
         "A": "CF causes male infertility through absent vas deferens (azoospermia), not immotile sperm, and does not cause situs inversus.",
         "C": "Kinesin moves cargo toward microtubule plus ends in axons; it does not power ciliary bending.",
@@ -37483,8 +37483,8 @@
       "whyNot": {
         "B": "A pericardial cyst is lined by mesothelium and usually sits at the cardiophrenic angle.",
         "C": "Gastric mucosa suggests an enteric duplication cyst, usually posterior, near the esophagus.",
-        "D": "Skin adnexa suggest a mature teratoma, an anterior mediastinal tumour.",
-        "E": "A nerve sheath tumour is solid and posterior mediastinal."
+        "D": "Skin adnexa suggest a mature teratoma, an anterior mediastinal tumor.",
+        "E": "A nerve sheath tumor is solid and posterior mediastinal."
       },
       "objective": "Identify the histology of a bronchogenic cyst.",
       "areas": [
@@ -38283,7 +38283,7 @@
         },
         {
           "label": "D",
-          "html": "Low activity of the enzyme that inactivates the drug in lung tissue"
+          "html": "Low activity of drug-inactivating enzymes in lung cells"
         },
         {
           "label": "E",
