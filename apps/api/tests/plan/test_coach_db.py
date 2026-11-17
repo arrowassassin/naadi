@@ -175,8 +175,10 @@ async def test_one_model_attempt_per_student_per_night_across_runs(
         ).fetchall()
         == before
     )
-    # Tried tonight but nothing usable came back (no llm rows): the next run uses rules, still without a call.
+    # The model was tried (llm_usage) but nothing usable came back and the student is not claimed for tonight
+    # (as for a pass that crashed after the call): the next run words rules, still without a call.
     pg.execute("delete from public.coach_suggestions where user_id = %s", (a,))
+    pg.execute("update public.study_plans set last_coached_at = null where user_id = %s", (a,))
     third = FakeGateway(reply)
     stats = await _pass(url, third, RULES)
     assert [c for c in third.calls if c[1] == a] == []
@@ -250,6 +252,47 @@ async def test_overlapping_passes_call_the_model_once_per_student(
     first.release.set()
     await running
     assert [c for c in second.calls if c[1] == a] == []
-    assert stats.reasons.get("locked", 0) >= 1
+    assert stats.reasons.get("claimed", 0) + stats.reasons.get("locked", 0) >= 1
     assert len([c for c in first.calls if c[1] == a]) == 1
+    assert [(r[0], r[1]) for r in _rows(pg, a)] == [("catch_up_block", "llm")]
+
+
+async def test_no_lock_or_transaction_is_held_while_the_model_answers(
+    url: str,
+    client: TestClient,
+    key: SigningKey,
+    users: tuple[uuid.UUID, uuid.UUID],
+    pg: psycopg.Connection[Any],
+    practice: dict[str, Any],
+) -> None:
+    """The claim commits before the call and the rows are written in a second short transaction: while A's model
+    call is in flight, the advisory lock is free, the claim is visible, and no coach transaction is open."""
+    a, _ = users
+    assert onboard(client, key, a).status_code == 200
+    today = _local_today(pg, a)
+    reply = AIMessage(
+        content=json.dumps({"suggestions": [{"kind": "catch_up_block", "title": "Catch up", "body": "Try 20 more."}]})
+    )
+    gw = GatedGateway(reply, a)
+    running = asyncio.create_task(_pass(url, gw, RULES))
+    try:
+        await asyncio.wait_for(gw.entered.wait(), 30)
+        with pg.transaction(force_rollback=True):
+            free = pg.execute(
+                "select pg_try_advisory_xact_lock(hashtextextended(%s, 0))", (f"coach:{a}:{today.isoformat()}",)
+            ).fetchone()
+        assert free == (True,)
+        claimed = pg.execute(
+            "select last_coached_at is not null from public.study_plans where user_id = %s and active", (a,)
+        ).fetchone()
+        assert claimed == (True,)
+        idle = pg.execute(
+            "select count(*) from pg_stat_activity where state like 'idle in transaction%%' and pid <> pg_backend_pid()"
+            " and datname = current_database()"
+        ).fetchone()
+        assert idle == (0,)
+        assert _rows(pg, a) == []  # nothing written until the model answers
+    finally:
+        gw.release.set()
+        await running
     assert [(r[0], r[1]) for r in _rows(pg, a)] == [("catch_up_block", "llm")]

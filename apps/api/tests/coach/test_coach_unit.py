@@ -235,6 +235,39 @@ def test_numbers_in_text_values(text: str, values: list[str]) -> None:
     assert numbers_in_text(text) == values
 
 
+@pytest.mark.parametrize(
+    ("text", "values"),
+    [
+        ("twenty\u2013five", ["25"]),  # en dash
+        ("twenty\u2014five", ["25"]),  # em dash
+        ("twenty\u2012five", ["25"]),  # figure dash
+        ("a 3\u20134 block", ["3", "4"]),
+        ("\u22125 points", ["-5"]),  # minus sign
+        ("minus five", ["-5"]),
+        ("Minus 5", ["-5"]),
+        ("minus twenty\u2013five", ["-25"]),
+        ("-five", ["-5"]),
+        ("seven-five", ["7", "5"]),  # a hyphen between words joins, it does not negate
+        ("dominus", []),
+    ],
+)
+def test_dashes_join_and_minus_negates(text: str, values: list[str]) -> None:
+    assert numbers_in_text(text) == values
+
+
+@pytest.mark.parametrize(
+    ("text", "ok"),
+    [
+        ("Twenty\u2013five questions.", False),  # 25, although 20 and 5 are facts
+        ("You are minus five on renal.", False),  # -5 is not 5
+        ("\u22125 points", False),
+        ("Twenty questions \u2014 five days.", True),  # a spaced dash between two numbers keeps them apart
+    ],
+)
+def test_dashes_and_minus_against_facts(text: str, ok: bool) -> None:
+    assert numbers_ok(text, PARTS) is ok
+
+
 async def test_a_spelled_out_invented_number_is_dropped_and_rules_used() -> None:
     gw = FakeGateway(
         _reply([{"kind": "review_misses", "title": "Misses", "body": "You missed twelve questions, triple last week."}])

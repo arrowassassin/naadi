@@ -35,6 +35,10 @@ _GROUPED = re.compile(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?")  # "1,000" / "12,500.5"
 _WORD = re.compile(r"[A-Za-z]+")
 _JOIN = re.compile(r"\s*-\s*|\s+")  # what may sit between two words of one number
 _ROMAN = re.compile(r"\b[IVXL]{2,}\b")
+# En, em and figure dashes join words like a hyphen ("twenty–five"); the minus sign and the word "minus" are a "-".
+_DASHES = str.maketrans({"\u2013": "-", "\u2014": "-", "\u2012": "-", "\u2212": "-"})
+_MINUS_WORD = re.compile(r"\bminus\s*", re.IGNORECASE)
+_SIGN_BEFORE = re.compile(r"(?:^|[\s(\[])-$")  # a "-" opening a number, not one joining two words
 _UNITS = (
     "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
     "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
@@ -222,7 +226,8 @@ def _to_roman(n: int) -> str:
 class _Run:
     """One spelled-out cardinal being read word by word ("one hundred and twenty-five")."""
 
-    def __init__(self) -> None:
+    def __init__(self, *, negative: bool = False) -> None:
+        self.negative = negative
         self.total = 0
         self.current = 0
         self.last: str | None = None  # None (nothing yet), "unit", "teen", "tens", "hundred", "scale"
@@ -252,7 +257,8 @@ class _Run:
             self.last = "tens" if v >= 20 else "teen" if v >= 10 else "unit"
 
     def value(self) -> str:
-        return str(self.total + self.current)
+        n = self.total + self.current
+        return str(-n if self.negative else n)
 
 
 def _spelled(text: str) -> list[str]:
@@ -275,7 +281,7 @@ def _spelled(text: str) -> list[str]:
                 continue
             if run is not None:
                 found.append(run.value())
-            run = _Run()
+            run = _Run(negative=_SIGN_BEFORE.search(text[: m.start()]) is not None)
             run.add(w)
             continue
         if run is not None:
@@ -291,7 +297,7 @@ def _spelled(text: str) -> list[str]:
 def numbers_in_text(text: str) -> list[str]:
     """Every number written in `text`, normalised: digits anywhere (with a leading minus), spelled-out numbers as
     one value per run, multiplicatives and ordinals, multi-letter roman numerals."""
-    text = unicodedata.normalize("NFKC", text)
+    text = _MINUS_WORD.sub("-", unicodedata.normalize("NFKC", text).translate(_DASHES))
     found = [_norm(m) for m in _DIGITS.findall(text)]
     found += _spelled(text)
     for tok in _ROMAN.findall(text):

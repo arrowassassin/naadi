@@ -108,6 +108,8 @@ _HAS_LLM_ROWS = (
 
 
 _TRY_LOCK = "select pg_try_advisory_xact_lock(hashtextextended(%s, 0)) as got"
+_LOCK = "select pg_advisory_xact_lock(hashtextextended(%s, 0))"
+_CLAIM = "select last_coached_at from public.study_plans where id = %s for update"
 _MARK_COACHED = "update public.study_plans set last_coached_at = %s where id = %s"
 
 
@@ -262,49 +264,45 @@ async def coach_student(
         facts, catch_up_questions=rules_cfg.catch_up_questions, section=section, limit=rules_cfg.max_suggestions + 1
     )
     key = attempt_key(today)
+    lock_key = f"coach:{uid}:{today.isoformat()}"
     # Two overlapping passes (a second cron fire, a manual run) must not both call the model for this student
-    # tonight: the check, the call and the write happen under one transaction-scoped advisory lock on
-    # coach:<user>:<date>. The pass that does not get it skips the student; the holder writes tonight's rows.
-    async with service_conn(db) as lock:
-        got = await (await lock.execute(_TRY_LOCK, (f"coach:{uid}:{today.isoformat()}",))).fetchone()
+    # tonight, and no transaction stays open while the model answers. So: (1) a short transaction under the
+    # advisory lock on coach:<user>:<date> checks tonight's state and claims the student (last_coached_at), then
+    # commits; (2) the model is called with no transaction open; (3) a second short transaction, under the same
+    # lock, writes the rows unless another pass already wrote model-worded rows for the date.
+    async with service_conn(db) as conn:
+        got = await (await conn.execute(_TRY_LOCK, (lock_key,))).fetchone()
         if not (got and got["got"]):
             stats.note("locked")
             return 0
-        return await _coach_locked(
-            lock, gateway, rules_cfg, student, offered, now=now, today=today, key=key, stats=stats
-        )
-
-
-async def _coach_locked(
-    conn: psycopg.AsyncConnection[Any],
-    gateway: Gateway | None,
-    rules_cfg: CoachRules,
-    student: dict[str, Any],
-    offered: list[Candidate],
-    *,
-    now: dt.datetime,
-    today: dt.date,
-    key: str,
-    stats: PassStats,
-) -> int:
-    """Runs on the lock's own connection and transaction (one pool connection for the whole student)."""
-    uid: uuid.UUID = student["user_id"]
-    tried = (await (await conn.execute(_ATTEMPTED, (uid, key))).fetchone() or {"tried": False})["tried"]
-    has_llm = (await (await conn.execute(_HAS_LLM_ROWS, (uid, today))).fetchone() or {"has": False})["has"]
-    await conn.execute(_MARK_COACHED, (now, student["plan_id"]))
-    if tried and has_llm:
+        plan = await (await conn.execute(_CLAIM, (student["plan_id"],))).fetchone()
+        last = plan["last_coached_at"] if plan else None
+        claimed = last is not None and last.astimezone(zone).date() == today
+        tried = (await (await conn.execute(_ATTEMPTED, (uid, key))).fetchone() or {"tried": False})["tried"]
+        has_llm = (await (await conn.execute(_HAS_LLM_ROWS, (uid, today))).fetchone() or {"has": False})["has"]
+        await conn.execute(_MARK_COACHED, (now, student["plan_id"]))
+    if has_llm:
         stats.note("already_coached")  # tonight's model-worded rows stand; no second call, nothing rewritten
+        return 0
+    if claimed:
+        stats.note("claimed")  # an earlier or overlapping pass took this student tonight
         return 0
     if not offered:
         written: list[Written] = []
     elif tried:
-        stats.note("llm_already_tried")  # an earlier run tonight called the model and got nothing usable
+        stats.note("llm_already_tried")  # tonight's attempt is in llm_usage and gave nothing usable
         written = rules(offered, limit=rules_cfg.max_suggestions)
     else:
         written = await word(gateway, offered, user_id=uid, run_id=key, limit=rules_cfg.max_suggestions, stats=stats)
     if written and written[0].source == "rules":
         stats.rules_students += 1
-    return await store(conn, uid, today, written, limit=rules_cfg.max_suggestions)
+    async with service_conn(db) as conn:
+        await conn.execute(_LOCK, (lock_key,))
+        again = await (await conn.execute(_HAS_LLM_ROWS, (uid, today))).fetchone()
+        if again and again["has"]:
+            stats.note("written_by_other")
+            return 0
+        return await store(conn, uid, today, written, limit=rules_cfg.max_suggestions)
 
 
 async def coach_pass(
