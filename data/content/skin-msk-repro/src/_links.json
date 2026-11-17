@@ -153,9 +153,19 @@
   "nbk": null,
   "title": "Anterior Shoulder Dislocation"
  },
+ "Antiphospholipid Syndrome": {
+  "exact": true,
+  "nbk": "NBK430980",
+  "title": "Antiphospholipid Syndrome"
+ },
  "Aphthous Ulcers": {
   "nbk": null,
   "title": "Aphthous Ulcers"
+ },
+ "Asthma in Pregnancy": {
+  "exact": true,
+  "nbk": "NBK532283",
+  "title": "Asthma in Pregnancy"
  },
  "Atopic Dermatitis": {
   "exact": true,
@@ -429,6 +439,11 @@
   "nbk": "NBK482232",
   "title": "Hyperbaric Treatment of Crush Injury and Compartment Syndrome"
  },
+ "Cryptorchidism": {
+  "exact": true,
+  "nbk": "NBK470270",
+  "title": "Cryptorchidism"
+ },
  "Cutaneous Melanoma: Guideline-Based Management and Interprofessional Collaboration": {
   "exact": true,
   "nbk": "NBK572149",
@@ -578,6 +593,11 @@
  "Epilepsy in Pregnancy": {
   "nbk": null,
   "title": "Epilepsy in Pregnancy"
+ },
+ "Epispadias": {
+  "exact": true,
+  "nbk": "NBK563180",
+  "title": "Epispadias"
  },
  "Epithelial Ovarian Cancer": {
   "exact": true,
@@ -933,6 +953,11 @@
   "nbk": "NBK537331",
   "title": "Hyperprolactinemia"
  },
+ "Hypertension In Pregnancy": {
+  "exact": true,
+  "nbk": "NBK430839",
+  "title": "Hypertension In Pregnancy"
+ },
  "Hypertension in Pregnancy": {
   "exact": true,
   "nbk": "NBK430839",
@@ -961,6 +986,11 @@
  "Hypophosphatemic Rickets": {
   "nbk": null,
   "title": "Hypophosphatemic Rickets"
+ },
+ "Hypospadias Urogenital Reconstruction": {
+  "exact": true,
+  "nbk": "NBK564407",
+  "title": "Hypospadias Urogenital Reconstruction"
  },
  "Hypothyroid Myopathy": {
   "exact": true,
@@ -1054,6 +1084,11 @@
   "nbk": "NBK554605",
   "title": "Juvenile Idiopathic Arthritis"
  },
+ "Kallmann Syndrome": {
+  "exact": true,
+  "nbk": "NBK538210",
+  "title": "Kallmann Syndrome"
+ },
  "Kaposi Sarcoma": {
   "exact": true,
   "nbk": "NBK534839",
@@ -1063,6 +1098,11 @@
   "exact": true,
   "nbk": "NBK559120",
   "title": "Kernicterus"
+ },
+ "Klinefelter Syndrome": {
+  "exact": true,
+  "nbk": "NBK482314",
+  "title": "Klinefelter Syndrome"
  },
  "Knee Meniscal Tears": {
   "exact": true,

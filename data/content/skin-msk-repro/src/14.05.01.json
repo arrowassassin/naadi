@@ -1,0 +1,811 @@
+{
+ "area": "14.05.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Male genital development: hypospadias, testicular descent and genetic syndromes",
+   "html": "<p>Male genital development depends on a testis that forms on time and secretes three products: AMH from Sertoli cells, testosterone from Leydig cells, and insulin-like peptide 3 (INSL3), also from Leydig cells. DHT, made from testosterone by 5-alpha-reductase in target tissues, then shapes the external genitalia. Each common male congenital disorder maps to a step in this sequence.</p>\n<h2>External genitalia and the urethra</h2>\n<table class=\"hy\">\n<thead><tr><th>Indifferent structure</th><th>Male derivative (DHT-dependent)</th><th>Female homologue</th></tr></thead>\n<tbody>\n<tr><td>Genital tubercle</td><td>Glans and corpora of the penis</td><td>Clitoris</td></tr>\n<tr><td>Urethral (urogenital) folds</td><td>Ventral shaft and penile (spongy) urethra, by fusion in the midline</td><td>Labia minora</td></tr>\n<tr><td>Labioscrotal swellings</td><td>Scrotum</td><td>Labia majora</td></tr>\n<tr><td>Urogenital sinus</td><td>Prostate, prostatic urethra, bulbourethral glands</td><td>Lower vagina, urethra, Skene and Bartholin glands</td></tr>\n</tbody></table>\n<ul>\n<li><strong>Hypospadias</strong>: incomplete fusion of the urethral folds leaves the meatus on the ventral side, anywhere from the glans to the perineum. The ventral foreskin fails to form (a dorsal &ldquo;hooded&rdquo; prepuce), and fibrous tissue may bend the penis ventrally (chordee). Low DHT action (from reduced testosterone, 5-alpha-reductase deficiency or partial androgen insensitivity) and placental insufficiency raise the risk, so proximal hypospadias, especially with an undescended testis, raises the question of a difference of sex development.</li>\n<li><strong>Epispadias</strong>: a dorsal meatus. It usually belongs to the <strong>bladder exstrophy&ndash;epispadias complex</strong>, in which mesenchyme fails to migrate into the infraumbilical cloacal membrane; when the membrane ruptures, the bladder plate and dorsal urethra lie open. Widely separated pubic bones, a short upturned penis and incontinence (an incomplete bladder neck) are typical.</li>\n</ul>\n[[figure:s23f-fig140501-1]]\n<h2>Testicular descent</h2>\n<ol>\n<li><strong>Transabdominal phase</strong> (about weeks 8&ndash;15): INSL3 makes the gubernaculum swell and anchor the testis near the internal inguinal ring while the abdomen grows; AMH may contribute.</li>\n<li><strong>Inguinoscrotal phase</strong> (about weeks 25&ndash;35): <strong>androgen-dependent</strong> migration of the gubernaculum through the inguinal canal into the scrotum, aided by the genitofemoral nerve and intra-abdominal pressure. A peritoneal pouch, the processus vaginalis, goes with it and normally closes afterwards.</li>\n</ol>\n<p>Because descent finishes late in pregnancy, cryptorchidism is far more common in preterm infants. Low androgen action, abdominal wall defects and syndromes affecting the hypothalamic-pituitary axis also cause it. A <strong>patent processus vaginalis</strong> accompanies most undescended testes, so an indirect inguinal hernia is common.</p>\n<p><strong>Consequences of an undescended testis</strong>: the higher temperature impairs the transformation of gonocytes into spermatogonia during the first year, and germ cell numbers fall progressively, so fertility drops, especially when both testes are affected. The risk of <strong>testicular germ cell tumours</strong> (mainly seminoma) is several-fold higher, related to the same dysgenesis; orchiopexy before puberty lowers the risk and allows self-examination but does not remove it. Undescended testes are also more prone to torsion and trauma.</p>\n<h2>Klinefelter syndrome (47,XXY and variants)</h2>\n<p>The most common sex chromosome aneuploidy in males and the most common genetic cause of primary hypogonadism and of non-obstructive azoospermia. The extra X comes from meiotic nondisjunction in either parent. One X is inactivated, so cells show one Barr body, but genes that escape inactivation are overexpressed.</p>\n<ul>\n<li><strong>Testes</strong>: germ cells are lost progressively from fetal life onward; after puberty, seminiferous tubules become <strong>hyalinised and fibrotic</strong>, leaving small, firm testes with clusters of Leydig cells that look hyperplastic but function poorly.</li>\n<li><strong>Hormones</strong>: low inhibin B and high FSH (tubular failure); high LH with low or low-normal testosterone (Leydig failure); relatively high estradiol, causing gynecomastia.</li>\n<li><strong>Body</strong>: tall stature with long legs (extra SHOX dose and delayed epiphyseal fusion), reduced body hair, increased fat, osteoporosis.</li>\n<li><strong>Associations</strong>: language-based learning difficulties and attention problems, type 2 diabetes and metabolic syndrome, venous thromboembolism, autoimmune disease, male breast cancer, and mediastinal germ cell tumours.</li>\n</ul>\n<h2>Kallmann syndrome</h2>\n<p>GnRH neurons originate in the olfactory placode and migrate along olfactory and terminal nerve axons into the hypothalamus. In Kallmann syndrome this migration fails, so there is <strong>isolated hypogonadotropic hypogonadism with anosmia or hyposmia</strong> (absent or hypoplastic olfactory bulbs). Genes include <em>ANOS1</em> (X-linked; associated with unilateral renal agenesis and bimanual synkinesis) and <em>FGFR1</em> (autosomal dominant; cleft lip or palate, dental agenesis). Newborn boys may have micropenis or cryptorchidism, because androgens are low late in gestation. Adolescents have absent or arrested puberty, eunuchoid proportions and low LH, FSH and testosterone with otherwise normal pituitary function.</p>\n<h2>Persistent M&uuml;llerian duct syndrome</h2>\n<p>A 46,XY condition with typical male external genitalia in which a uterus and fallopian tubes persist because of variants in the <strong>AMH gene or the AMH type II receptor</strong> (autosomal recessive). Testosterone production and action are normal, so virilisation is normal. It usually comes to light during surgery for cryptorchidism or an inguinal hernia, when a uterus and tube are found in the hernia sac or both testes lie on the same side (transverse testicular ectopia).</p>\n<table class=\"hy\">\n<thead><tr><th>Condition</th><th>Karyotype</th><th>LH / FSH</th><th>Testosterone</th><th>Distinguishing feature</th></tr></thead>\n<tbody>\n<tr><td>Klinefelter syndrome</td><td>47,XXY</td><td>High / high</td><td>Low or low-normal</td><td>Small firm testes, gynecomastia, tall</td></tr>\n<tr><td>Kallmann syndrome</td><td>46,XY</td><td>Low / low</td><td>Low</td><td>Anosmia; may have renal agenesis or synkinesis</td></tr>\n<tr><td>Persistent M&uuml;llerian duct syndrome</td><td>46,XY</td><td>Normal</td><td>Normal</td><td>Uterus and tubes found at hernia or orchiopexy surgery</td></tr>\n<tr><td>Partial androgen insensitivity</td><td>46,XY</td><td>High LH</td><td>Normal or high</td><td>Hypospadias, micropenis, gynecomastia</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>Low LH and FSH with low testosterone means a central (hypothalamic or pituitary) cause, such as Kallmann syndrome; high LH and FSH means testicular failure, such as Klinefelter syndrome. Ask about the sense of smell in every adolescent with absent puberty.</p></div>\n<div class=\"pearl\"><p>Naadi memory aid, &ldquo;Folds below, Tubercle above&rdquo;: hypospadias is a failure of the urethral folds on the ventral (below) side; epispadias reflects a defect on the dorsal (above) side, linked to exstrophy.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Cryptorchidism"
+    },
+    {
+     "statpearls": "Klinefelter Syndrome"
+    },
+    {
+     "statpearls": "Kallmann Syndrome"
+    },
+    {
+     "statpearls": "Epispadias"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Hypospadias, epispadias and cryptorchidism: timing and management",
+   "html": "<h2>Hypospadias</h2>\n<p>One of the most common congenital anomalies in boys. Classify by meatal position: distal (glanular, coronal, subcoronal), midshaft, or proximal (penoscrotal, scrotal, perineal). Look for chordee, a hooded foreskin, penile torsion, scrotal transposition and, most importantly, the position of both testes.</p>\n<ul>\n<li><strong>Do not circumcise</strong> a newborn with hypospadias, epispadias, chordee, a buried or webbed penis, or a very small penis. The foreskin may be needed for reconstruction.</li>\n<li><strong>Isolated distal or midshaft hypospadias with two descended testes</strong> needs no routine imaging or genetic testing. Refer to pediatric urology; repair is usually done at about 6&ndash;18 months of age, ideally in one stage.</li>\n<li><strong>Proximal hypospadias, or hypospadias of any severity with one or both testes undescended</strong>, needs a DSD evaluation before surgery: karyotype, and hormonal tests guided by endocrinology (including 17-hydroxyprogesterone when testes are non-palpable).</li>\n<li>Renal ultrasound is not needed for isolated hypospadias.</li>\n<li>Complications of repair include urethrocutaneous fistula, meatal stenosis, urethral stricture, diverticulum and residual curvature; follow-up into adolescence assesses voiding, appearance and sexual function.</li>\n</ul>\n<h2>Epispadias and bladder exstrophy</h2>\n<p>Usually diagnosed prenatally or at birth: an exposed bladder plate in the lower abdomen, a dorsal urethral plate, widely separated pubic bones and low-set umbilicus. Cover the bladder plate with plastic film (not gauze), avoid circumcision, and transfer to a specialist centre for staged or complete primary repair. Long-term issues are urinary continence, upper tract protection, sexual function and fertility, and psychosocial support.</p>\n<h2>Cryptorchidism</h2>\n<p>An undescended testis is present in about 3% of term and up to about 30% of preterm boys; many descend spontaneously in the first months of life.</p>\n<table class=\"hy\">\n<thead><tr><th>Finding</th><th>What it means</th><th>Management</th></tr></thead>\n<tbody>\n<tr><td>Undescended at birth (palpable)</td><td>May still descend</td><td>Re-examine; refer to a surgeon if not descended by 6 months (corrected for prematurity)</td></tr>\n<tr><td>Undescended after 6 months</td><td>Unlikely to descend</td><td>Orchiopexy, preferably within the following year (by about 18 months)</td></tr>\n<tr><td>Non-palpable unilateral</td><td>Intra-abdominal, inguinal, or absent (vanished after prenatal torsion)</td><td>Examination under anesthesia and diagnostic laparoscopy; imaging does not change management</td></tr>\n<tr><td>Bilateral non-palpable in a newborn</td><td>Possible 46,XX CAH or other DSD</td><td>Urgent karyotype, 17-hydroxyprogesterone and electrolytes; endocrinology</td></tr>\n<tr><td>Retractile testis</td><td>Normal testis pulled up by an active cremaster reflex; can be brought to the scrotum and stays there</td><td>No surgery; examine yearly because some ascend later</td></tr>\n<tr><td>Acquired (ascending) testis</td><td>Previously descended testis now out of the scrotum</td><td>Orchiopexy</td></tr>\n<tr><td>Unilateral undescended testis after puberty with a normal contralateral testis</td><td>Little or no spermatogenic function and an increased tumour risk</td><td>Orchiectomy is usually advised</td></tr>\n</tbody></table>\n[[figure:s23f-fig140501-2]]\n<p>Ultrasound before referral is <strong>not</strong> recommended: it rarely finds a non-palpable testis that an experienced surgeon cannot, and it delays care. Hormonal therapy (hCG or GnRH) is not recommended to induce descent. After orchiopexy, teach testicular self-examination at puberty, because the risk of germ cell tumours remains above average; fertility is better after early repair, particularly in unilateral cases.</p>\n<div class=\"trap\"><p>A testis that can be manipulated into the scrotum and stays there after release is retractile, not undescended; it needs yearly follow-up, not surgery. A testis that springs back immediately is undescended.</p></div>\n<div class=\"pearl\"><p>Hypospadias plus an undescended testis is a DSD until shown otherwise; obtain a karyotype before any surgery.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Hypospadias Urogenital Reconstruction"
+    },
+    {
+     "statpearls": "Cryptorchidism"
+    },
+    {
+     "statpearls": "Epispadias"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step2ck",
+   "heading": "Klinefelter syndrome, Kallmann syndrome and persistent M&uuml;llerian ducts: diagnosis and care",
+   "html": "<h2>Klinefelter syndrome</h2>\n<p>Most cases are never diagnosed or are found only in adulthood during infertility evaluation. Suspect it at any age: in childhood with language delay, learning or behavioural difficulties and small testes for age; in adolescence with incomplete puberty, gynecomastia, small firm testes (often under 4 mL) and tall stature; and in adults with infertility, hypogonadism or osteoporosis. Prenatal diagnosis is increasingly made incidentally through cell-free DNA screening.</p>\n<ul>\n<li><strong>Diagnosis</strong>: peripheral blood karyotype. FSH and LH are high, and testosterone is low or low-normal after mid-puberty.</li>\n<li><strong>Testosterone therapy</strong> from mid-puberty or when levels fall improves virilisation, bone density, muscle, energy and mood; it does not reverse established gynecomastia (surgery may be needed) or restore fertility, and it suppresses whatever spermatogenesis remains.</li>\n<li><strong>Fertility</strong>: most men are azoospermic, but focal spermatogenesis often persists. <strong>Microdissection testicular sperm extraction (micro-TESE) with ICSI</strong> allows biological fatherhood for many. Counsel early; some centres offer sperm retrieval in late adolescence. Exogenous testosterone should be stopped before retrieval.</li>\n<li><strong>Surveillance</strong>: bone density, glucose and lipids, weight, venous thromboembolism risk (particularly with testosterone), breast awareness, and educational and psychological support with speech and language therapy where needed.</li>\n</ul>\n<h2>Kallmann syndrome and constitutional delay</h2>\n<p>Delayed puberty in boys means no testicular enlargement (volume under 4 mL) by about 14 years. The most common cause is <strong>constitutional delay of growth and puberty</strong>; the key differential is congenital hypogonadotropic hypogonadism, including Kallmann syndrome.</p>\n<table class=\"hy\">\n<thead><tr><th>Feature</th><th>Constitutional delay</th><th>Kallmann syndrome</th><th>Primary testicular failure (for example Klinefelter)</th></tr></thead>\n<tbody>\n<tr><td>Family history</td><td>Often a parent who matured late</td><td>Sometimes relatives with infertility or anosmia</td><td>Usually none</td></tr>\n<tr><td>Smell</td><td>Normal</td><td>Absent or reduced</td><td>Normal</td></tr>\n<tr><td>Growth</td><td>Short for age with delayed bone age; normal growth velocity for bone age</td><td>Normal childhood height; eunuchoid proportions later</td><td>Tall</td></tr>\n<tr><td>LH, FSH</td><td>Low (prepubertal)</td><td>Low</td><td>High</td></tr>\n<tr><td>Other clues</td><td>Eventually enters puberty spontaneously</td><td>Micropenis or cryptorchidism at birth, renal agenesis, cleft palate, synkinesis</td><td>Small firm testes, gynecomastia</td></tr>\n</tbody></table>\n<p>Workup of delayed puberty: growth chart, bone age, LH, FSH and testosterone, TSH, prolactin, IGF-1 and celiac screening where indicated, a smell test, and brain MRI for hypogonadotropic patients with neurologic signs, other pituitary deficits or no clear explanation. Constitutional delay and congenital hypogonadotropic hypogonadism can be hard to separate; time, and response to a short course of testosterone, often clarify.</p>\n<h3>Treatment of Kallmann syndrome</h3>\n<ul>\n<li><strong>Virilisation and bone health</strong>: testosterone, started at low dose and increased gradually to mimic puberty.</li>\n<li><strong>Fertility</strong>: gonadotropins (hCG with FSH) or pulsatile GnRH stimulate the testes; testosterone alone does not produce sperm. Pretreatment with FSH may help men who never had testicular growth.</li>\n<li>Genetic counselling, because inheritance can be X-linked, autosomal dominant or autosomal recessive.</li>\n<li>Smell loss is permanent; advise on smoke and gas detectors and food safety.</li>\n</ul>\n<h2>Persistent M&uuml;llerian duct syndrome</h2>\n<p>Found at surgery for cryptorchidism or hernia. Management is orchiopexy where possible. The M&uuml;llerian structures are usually left in place or only partly removed, because the vasa deferentia run in their wall and are easily damaged. Fertility may be reduced, and the cryptorchid testes carry the usual tumour risk.</p>\n<div class=\"trap\"><p>Treating a man with Klinefelter syndrome or Kallmann syndrome who wants children with testosterone alone is a common mistake. Testosterone supports virilisation but suppresses or fails to start spermatogenesis; fertility needs micro-TESE (Klinefelter) or gonadotropins (Kallmann).</p></div>\n<div class=\"pearl\"><p>An adolescent boy with absent puberty and a poor sense of smell needs LH, FSH, testosterone and an MRI of the olfactory bulbs and hypothalamic-pituitary region; a smell test takes a minute and changes the diagnosis.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Klinefelter Syndrome"
+    },
+    {
+     "statpearls": "Kallmann Syndrome"
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "caption": "Figure. Meatal positions in hypospadias compared with epispadias (schematic)."
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "caption": "Figure. The path of testicular descent and abnormal testicular positions (schematic)."
+  }
+ ],
+ "sets": [],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A term newborn boy has a urethral opening on the ventral surface of the penis about halfway along the shaft. The foreskin is incomplete ventrally and forms a dorsal hood, and the penis curves downward when erect. Both testes are palpable in the scrotum. Incomplete development of which of the following embryologic structures best explains this finding?</p>",
+   "options": [
+    "Genital tubercle",
+    "Urethral folds",
+    "Labioscrotal swellings",
+    "Urogenital sinus",
+    "Mesonephric ducts"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>The penile urethra forms when the urethral (urogenital) folds fuse in the ventral midline under the influence of DHT, closing the urethral groove from proximal to distal. Incomplete fusion leaves the meatus on the ventral shaft (hypospadias), with a dorsal hooded foreskin and often ventral curvature from fibrous tissue.</p><p><strong>Takeaway:</strong> Hypospadias is failure of the urethral folds to fuse fully on the ventral side.</p>",
+   "whyNot": {
+    "A": "The genital tubercle forms the glans and corpora; abnormal positioning is associated with epispadias and exstrophy, not a ventral meatus.",
+    "C": "The labioscrotal swellings form the scrotum, which is normal and contains both testes.",
+    "D": "The urogenital sinus forms the prostate and prostatic urethra; it does not form the penile urethra.",
+    "E": "The mesonephric ducts form the epididymis, vas deferens and seminal vesicles, not the urethra."
+   },
+   "objective": "Attribute hypospadias to incomplete fusion of the urethral folds.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital anomalies",
+    "embryology"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A newborn boy has an exposed, moist red mucosal plate on the lower abdominal wall from which urine drips. The umbilicus is low-set, the pubic bones are widely separated, and the penis is short and broad with the urethra open along its dorsal surface. Both testes are in the scrotum. A defect in which of the following developmental processes is most likely responsible?</p>",
+   "options": [
+    "Fusion of the urethral folds",
+    "Ingrowth of mesenchyme into the infraumbilical cloacal membrane",
+    "Obliteration of the urachus",
+    "Descent of the urorectal septum to the cloacal membrane",
+    "Elongation of the ureteric bud"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>This is classic bladder exstrophy with epispadias. Normally mesenchyme migrates between the ectoderm and endoderm of the infraumbilical cloacal membrane to form the lower abdominal wall and pubic structures. When this ingrowth fails, the thin membrane ruptures, exposing the bladder and leaving the dorsal urethra open, with widely separated pubic bones.</p><p><strong>Takeaway:</strong> Bladder exstrophy&ndash;epispadias results from failed mesenchymal reinforcement of the cloacal membrane.</p>",
+   "whyNot": {
+    "A": "Failure of urethral fold fusion causes hypospadias with a ventral meatus, not a dorsal urethral plate with an exposed bladder.",
+    "C": "Failure of urachal obliteration causes a urachal fistula, cyst or sinus at the umbilicus, not an open bladder plate.",
+    "D": "Urorectal septum defects cause anorectal malformations and rectourinary fistulas.",
+    "E": "Ureteric bud defects cause renal agenesis, duplication or dysplasia, not abdominal wall defects."
+   },
+   "objective": "Explain bladder exstrophy and epispadias as failure of mesenchymal ingrowth into the cloacal membrane.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital anomalies",
+    "embryology"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 6-year-old boy is brought to the clinic because his right testis has never been in the scrotum. He was born at term. Examination shows a normal left testis and a right testis palpable in the inguinal canal that cannot be brought into the scrotum. If this condition is not treated, which of the following is most increased in this patient's right testis over his lifetime?</p>",
+   "options": [
+    "Leydig cell tumour",
+    "Seminoma",
+    "Sertoli cell tumour",
+    "Lymphoma",
+    "Rhabdomyosarcoma"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Undescended testes carry a several-fold higher risk of testicular germ cell tumours, and seminoma is the most common type. The risk is related to underlying gonadal dysgenesis and to the abnormal position; it is highest for intra-abdominal testes. Orchiopexy before puberty reduces the risk and makes the testis accessible to self-examination, but does not remove it entirely.</p><p><strong>Takeaway:</strong> Cryptorchidism raises the risk of germ cell tumours, most often seminoma.</p>",
+   "whyNot": {
+    "A": "Leydig cell tumours are uncommon sex cord-stromal tumours without a strong link to cryptorchidism.",
+    "C": "Sertoli cell tumours are rare and are not the characteristic risk of an undescended testis.",
+    "D": "Testicular lymphoma is a disease of older men and is not linked to cryptorchidism.",
+    "E": "Paratesticular rhabdomyosarcoma arises from spermatic cord soft tissue in children and is not caused by maldescent."
+   },
+   "objective": "Recognise the increased germ cell tumour risk, chiefly seminoma, in cryptorchidism.",
+   "extraAreas": [
+    "14.02.01"
+   ],
+   "disciplines": [
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge",
+    "pc_prognosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "testicular position"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old boy is evaluated for absent pubertal development. He has never been able to smell coffee or smoke. Testes are 2 mL bilaterally. Serum LH, FSH and testosterone are low; TSH, free T4, prolactin, IGF-1 and morning cortisol are normal. Renal ultrasound shows absence of the left kidney. Failure of which of the following processes during development best explains his hormonal findings?</p>",
+   "options": [
+    "Migration of GnRH neurons from the olfactory placode to the hypothalamus",
+    "Fusion of Rathke pouch with the infundibulum",
+    "Differentiation of Leydig cells in the fetal testis",
+    "Expression of the LH receptor on Leydig cells",
+    "Descent of the testes into the scrotum"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Isolated hypogonadotropic hypogonadism with anosmia is Kallmann syndrome. GnRH neurons arise in the olfactory placode and migrate along olfactory axons into the hypothalamus; when migration fails, the olfactory bulbs are hypoplastic and the pituitary receives no GnRH signal, so LH, FSH and testosterone stay low while other pituitary axes are normal. Unilateral renal agenesis is associated with the X-linked form (<em>ANOS1</em>).</p><p><strong>Takeaway:</strong> Kallmann syndrome results from failed migration of GnRH neurons along the olfactory pathway.</p>",
+   "whyNot": {
+    "B": "Defects of Rathke pouch development cause combined pituitary hormone deficiencies, but his other pituitary axes are normal.",
+    "C": "Leydig cell failure would cause primary hypogonadism with high LH.",
+    "D": "LH receptor defects cause high LH with low testosterone and undervirilisation from fetal life.",
+    "E": "Maldescent does not lower gonadotropins and does not explain anosmia."
+   },
+   "objective": "Explain Kallmann syndrome by failed GnRH neuron migration from the olfactory placode.",
+   "extraAreas": [],
+   "disciplines": [
+    "anatomy_embryology",
+    "physiology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "delayed puberty",
+    "embryology"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 32-year-old man is evaluated for infertility. He is 191 cm tall and had speech therapy as a child. Both testes are 3 mL and firm. Semen analysis shows no sperm in a centrifuged sample. Serum FSH and LH are markedly elevated, and testosterone is at the lower limit of normal. Karyotype is 47,XXY. Which of the following findings is most likely on testicular biopsy?</p>",
+   "options": [
+    "Normal spermatogenesis with dilated efferent ducts",
+    "Hyalinised seminiferous tubules with clusters of Leydig cells",
+    "Sheets of large cells with clear cytoplasm and lymphocytes",
+    "Granulomas with caseous necrosis",
+    "Arrest at the spermatid stage with normal tubular walls"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>In Klinefelter syndrome, germ cells are lost progressively, and after puberty the seminiferous tubules become hyalinised and fibrotic, with only rare foci of spermatogenesis. Leydig cells cluster between the shrunken tubules and look hyperplastic, but they produce too little testosterone, so LH is high. Tubular failure lowers inhibin B and raises FSH.</p><p><strong>Takeaway:</strong> Klinefelter testes show tubular hyalinisation with Leydig cell clusters, explaining small firm testes and azoospermia.</p>",
+   "whyNot": {
+    "A": "Normal spermatogenesis with dilated ducts indicates obstruction, which would come with normal FSH and normal-sized testes.",
+    "C": "Sheets of clear cells with lymphocytes describe seminoma, which would present as a mass rather than diffusely small testes.",
+    "D": "Caseating granulomas suggest tuberculous orchitis, which presents with a painful or nodular testis or epididymis.",
+    "E": "Maturation arrest with normal tubules does not match the small firm testes and karyotype."
+   },
+   "objective": "Describe the testicular histology of Klinefelter syndrome.",
+   "extraAreas": [],
+   "disciplines": [
+    "histology_cell_biology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility",
+    "genetics"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 15-year-old boy with tall stature, learning difficulties and small testes is found to have a 47,XXY karyotype. A buccal mucosal smear is examined. How many Barr bodies are expected in most of his somatic cells?</p>",
+   "options": [
+    "None",
+    "One",
+    "Two",
+    "Three",
+    "One in half of cells and none in the rest"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A Barr body is an inactivated X chromosome condensed at the nuclear periphery. X-inactivation leaves one active X per cell, so the number of Barr bodies equals the number of X chromosomes minus one. With 47,XXY he has one Barr body. Genes that escape X-inactivation, including those in the pseudoautosomal regions, are expressed from both X chromosomes and contribute to the phenotype.</p><p><strong>Takeaway:</strong> Barr bodies equal X chromosomes minus one; 47,XXY cells have one.</p>",
+   "whyNot": {
+    "A": "No Barr body is expected in 46,XY males and in 45,X Turner syndrome, which have a single X.",
+    "C": "Two Barr bodies are found with three X chromosomes, as in 48,XXXY or 47,XXX.",
+    "D": "Three Barr bodies require four X chromosomes, as in 49,XXXXY.",
+    "E": "A split pattern would suggest mosaicism such as 46,XY/47,XXY, not a uniform 47,XXY karyotype."
+   },
+   "objective": "Predict the number of Barr bodies from the X chromosome count.",
+   "extraAreas": [],
+   "disciplines": [
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genetics"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 3-year-old boy undergoes surgery for a right inguinal hernia and a non-palpable left testis. External genitalia are typical male with a normal-sized penis and a meatus at the tip. At operation, the hernia sac contains both testes, a small uterus and fallopian tubes; the vasa deferentia run alongside the uterus. Karyotype is 46,XY, and testosterone response to hCG stimulation is normal. Which of the following is the most likely underlying defect?</p>",
+   "options": [
+    "Loss-of-function variants in the AMH type II receptor",
+    "Loss-of-function variants in the androgen receptor",
+    "Deficiency of 5-alpha-reductase type 2",
+    "Deletion of SRY",
+    "Deficiency of 21-hydroxylase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Typical male external genitalia with normal testosterone production, plus a uterus and tubes, is persistent M&uuml;llerian duct syndrome. M&uuml;llerian regression requires AMH acting through the AMH type II receptor; variants in either the AMH gene or its receptor leave the ducts intact. Transverse testicular ectopia (both testes on one side) is a characteristic finding. Treatment is orchiopexy, usually leaving the M&uuml;llerian remnants because the vasa run in their walls.</p><p><strong>Takeaway:</strong> A uterus in a normally virilised 46,XY boy means AMH or AMH-receptor failure.</p>",
+   "whyNot": {
+    "B": "Androgen receptor loss causes undervirilisation (female or atypical genitalia), and AMH still causes M&uuml;llerian regression.",
+    "C": "5-alpha-reductase deficiency causes atypical external genitalia at birth and no uterus.",
+    "D": "SRY deletion prevents testis formation, giving streak gonads and a female phenotype.",
+    "E": "21-hydroxylase deficiency causes virilisation of 46,XX infants and salt-wasting; it does not leave a uterus in a 46,XY boy."
+   },
+   "objective": "Identify persistent Mullerian duct syndrome as a defect in AMH signalling.",
+   "extraAreas": [
+    "13.02.08"
+   ],
+   "disciplines": [
+    "genetics",
+    "anatomy_embryology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 5,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "sex development",
+    "testicular position"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 1-day-old boy born at 39 weeks' gestation is examined in the newborn nursery. The urethral meatus is on the ventral side just below the corona; the foreskin is incomplete ventrally, and there is no penile curvature. Both testes are palpable in the scrotum, and the penis is of normal size. The parents request circumcision before discharge. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Perform circumcision before discharge",
+    "Defer circumcision and refer to pediatric urology",
+    "Obtain a karyotype before discharge",
+    "Obtain renal and bladder ultrasound",
+    "Perform voiding cystourethrography"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Distal (subcoronal) hypospadias with two descended testes and a normal-sized penis is an isolated anomaly that needs no genetic or imaging workup. Circumcision should be deferred because the foreskin may be used in the repair. Refer to pediatric urology; repair is usually performed between about 6 and 18 months of age.</p><p><strong>Takeaway:</strong> In newborn hypospadias, avoid circumcision and refer for repair in infancy.</p>",
+   "whyNot": {
+    "A": "Circumcision may remove tissue needed for urethroplasty and is contraindicated with hypospadias.",
+    "C": "Karyotype is indicated for proximal hypospadias or hypospadias with an undescended testis, not for isolated distal hypospadias.",
+    "D": "Isolated hypospadias is not associated with enough upper tract disease to justify routine renal imaging.",
+    "E": "VCUG is for suspected vesicoureteral reflux or urethral valves, not isolated hypospadias."
+   },
+   "objective": "Defer circumcision and refer isolated distal hypospadias to pediatric urology.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital anomalies",
+    "newborn care"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 2-day-old infant born at term has a urethral opening at the penoscrotal junction with marked ventral curvature and a bifid scrotum. The right gonad is palpable in the scrotum; the left gonad cannot be felt in the scrotum or inguinal canal. The infant is feeding well, and vital signs are normal. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Circumcision and early hypospadias repair",
+    "Karyotype with endocrine evaluation for a difference of sex development",
+    "Reassurance and re-examination at the 2-month visit",
+    "Scrotal ultrasound alone",
+    "Begin intramuscular testosterone"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Proximal (penoscrotal) hypospadias with a non-palpable gonad is a recognised presentation of a difference of sex development, including 45,X/46,XY mosaicism, partial androgen insensitivity, 5-alpha-reductase deficiency, and occasionally virilised 46,XX CAH. Karyotype and an endocrine evaluation (with 17-hydroxyprogesterone, electrolytes and pelvic ultrasound as directed by the team) are needed before any surgery or definitive decisions.</p><p><strong>Takeaway:</strong> Hypospadias with an undescended or non-palpable gonad needs a DSD evaluation starting with a karyotype.</p>",
+   "whyNot": {
+    "A": "Surgery is deferred until the evaluation is complete, and circumcision is contraindicated.",
+    "C": "Waiting delays recognition of conditions such as salt-wasting CAH and important counselling.",
+    "D": "Ultrasound alone does not establish the cause and does not replace karyotype and hormonal testing.",
+    "E": "Testosterone may be used later in selected cases but is not given before a diagnosis."
+   },
+   "objective": "Order a karyotype and DSD evaluation for proximal hypospadias with a non-palpable gonad.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "genital anomalies",
+    "newborn care"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 7-month-old boy born at 38 weeks' gestation is brought for a well-child visit. At birth his left testis was not in the scrotum. Today the left testis is palpable in the inguinal canal, but it cannot be brought into the scrotum. The right testis is normal, and the penis has a normal meatus. Which of the following is the most appropriate next step in management?</p>",
+   "options": [
+    "Scrotal and inguinal ultrasound before referral",
+    "Referral to a pediatric surgeon for orchiopexy",
+    "Intramuscular hCG injections",
+    "Re-examination at 2 years of age",
+    "Abdominal MRI"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A testis that has not descended by 6 months (corrected for prematurity) is unlikely to descend spontaneously. He should be referred to a pediatric surgeon or urologist, with orchiopexy performed preferably within the next year (by about 18 months). Early repair supports germ cell development, allows examination and may reduce tumour risk. Imaging before referral is not recommended because it rarely changes management.</p><p><strong>Takeaway:</strong> Refer an undescended testis at 6 months for orchiopexy before about 18 months; skip the ultrasound.</p>",
+   "whyNot": {
+    "A": "Ultrasound before referral adds cost and delay and does not change the need for surgical evaluation.",
+    "C": "Hormonal therapy has low success and is not recommended for inducing descent.",
+    "D": "Waiting until 2 years misses the window of spontaneous descent and delays orchiopexy past the recommended age.",
+    "E": "MRI is not needed for a palpable testis and would require sedation without changing management."
+   },
+   "objective": "Refer an undescended testis persisting beyond 6 months for orchiopexy by about 18 months.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "testicular position"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 16-year-old boy is brought to the clinic because he has not started puberty. His height is at the 25th percentile and has followed that line throughout childhood; his arm span exceeds his height by 6 cm. He cannot detect strong odours when tested in the office. He had surgery for an undescended right testis at age 1 year. Testes are 2 mL bilaterally, and there is no pubic hair. Laboratory and imaging results are shown.</p><table><thead><tr><th>Test</th><th>Result</th><th>Reference range</th></tr></thead><tbody><tr><td>LH</td><td>0.3 mIU/mL</td><td>1.5&ndash;9.0 mIU/mL (adult)</td></tr><tr><td>FSH</td><td>0.5 mIU/mL</td><td>1.5&ndash;12.0 mIU/mL (adult)</td></tr><tr><td>Total testosterone</td><td>18 ng/dL</td><td>264&ndash;916 ng/dL (adult)</td></tr><tr><td>Prolactin</td><td>8 ng/mL</td><td>below 18 ng/mL</td></tr><tr><td>TSH</td><td>2.2 &mu;U/mL</td><td>0.5&ndash;5.0 &mu;U/mL</td></tr><tr><td>Bone age</td><td>13 years</td><td></td></tr><tr><td>Brain MRI</td><td colspan=\"2\">Normal pituitary; olfactory bulbs not visualised</td></tr></tbody></table><p>Which of the following is the most likely diagnosis?</p>",
+   "options": [
+    "Constitutional delay of growth and puberty",
+    "Kallmann syndrome",
+    "Klinefelter syndrome",
+    "Prolactin-secreting pituitary adenoma",
+    "Primary hypothyroidism"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Absent puberty with low LH, FSH and testosterone, normal other pituitary hormones, eunuchoid proportions, a history of cryptorchidism, anosmia and absent olfactory bulbs on MRI make Kallmann syndrome the diagnosis. Treatment is testosterone to induce puberty, with gonadotropins or pulsatile GnRH later when fertility is desired.</p><p><strong>Takeaway:</strong> Hypogonadotropic hypogonadism plus anosmia and absent olfactory bulbs is Kallmann syndrome.</p>",
+   "whyNot": {
+    "A": "Constitutional delay is common and also has low gonadotropins, but smell and olfactory bulbs are normal and childhood growth is often slow.",
+    "C": "Klinefelter syndrome causes high LH and FSH, not low values.",
+    "D": "Prolactin is normal and the pituitary looks normal on MRI.",
+    "E": "TSH is normal, excluding primary hypothyroidism."
+   },
+   "objective": "Diagnose Kallmann syndrome from hypogonadotropic hypogonadism with anosmia.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "delayed puberty"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man with Klinefelter syndrome (47,XXY) diagnosed at age 14 years and his partner want to have a biological child. He stopped testosterone injections 6 months ago in preparation for this visit. Two centrifuged semen samples show no sperm. Serum FSH is markedly elevated. His partner is 26 years old and has a normal fertility evaluation. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Resume testosterone and repeat semen analysis in 1 year",
+    "Microdissection testicular sperm extraction with ICSI",
+    "Varicocele repair",
+    "Intrauterine insemination with his ejaculate",
+    "Counsel that biological fatherhood is not possible"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Most men with Klinefelter syndrome are azoospermic, but foci of spermatogenesis often remain in the testes. Microdissection testicular sperm extraction can retrieve sperm in many cases, and the sperm are used for intracytoplasmic sperm injection. Exogenous testosterone should be stopped beforehand because it suppresses spermatogenesis, which he has done. Genetic counselling should accompany treatment.</p><p><strong>Takeaway:</strong> Azoospermic men with Klinefelter syndrome can often father children by micro-TESE with ICSI.</p>",
+   "whyNot": {
+    "A": "Testosterone suppresses gonadotropins and residual spermatogenesis and would lower the chance of retrieving sperm.",
+    "C": "He has no varicocele, and repair would not reverse tubular hyalinisation.",
+    "D": "Insemination needs sperm in the ejaculate, which he lacks.",
+    "E": "Sperm retrieval succeeds in many men with Klinefelter syndrome, so this counselling is inaccurate."
+   },
+   "objective": "Offer micro-TESE with ICSI to azoospermic men with Klinefelter syndrome.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine",
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "infertility"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 14-year-old boy is brought to the clinic because of breast enlargement for 1 year. He is 183 cm tall (above the 97th percentile), taller than both parents, and receives extra support at school for reading and language. Examination shows bilateral rubbery subareolar tissue 4 cm in diameter, sparse pubic hair (Tanner stage 3) and firm testes of 3 mL each. Which of the following is the most appropriate next step in diagnosis?</p>",
+   "options": [
+    "Reassure the family that pubertal gynecomastia resolves",
+    "Peripheral blood karyotype",
+    "Mammography",
+    "Testicular ultrasound for a tumour",
+    "Serum prolactin only"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Pubertal gynecomastia is common, but tall stature, language-based learning difficulties and small firm testes (3 mL) at Tanner stage 3 suggest Klinefelter syndrome. A karyotype confirms it. LH, FSH and testosterone are also measured; FSH is typically high. Diagnosis in adolescence allows timely testosterone therapy, educational support and fertility counselling.</p><p><strong>Takeaway:</strong> Gynecomastia with small firm testes and tall stature in a teenager calls for a karyotype.</p>",
+   "whyNot": {
+    "A": "Physiological pubertal gynecomastia occurs with testes that are enlarging normally; his testes are small for his pubertal stage.",
+    "C": "Mammography has no role in evaluating gynecomastia in adolescents.",
+    "D": "A testicular tumour causing gynecomastia would usually produce a palpable mass or asymmetric testis; his testes are small and symmetric.",
+    "E": "Prolactin alone would not establish the cause; his findings point to a chromosomal diagnosis."
+   },
+   "objective": "Order a karyotype for an adolescent with gynecomastia, tall stature and small firm testes.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_lab_diagnostic"
+   ],
+   "difficulty": 1,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "gynecomastia",
+    "genetics"
+   ]
+  },
+  {
+   "n": 14,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 4-year-old boy is brought to the clinic because his mother sometimes cannot see his left testis in the scrotum, especially when he is cold. Both testes were in the scrotum at his newborn examination. With the child relaxed in a frog-leg position, the left testis is felt in the upper scrotum near the inguinal canal; it can be brought gently to the bottom of the scrotum and stays there after release. Both testes are the same size. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Orchiopexy within the next 6 months",
+    "Yearly examination until puberty",
+    "Scrotal ultrasound",
+    "Intramuscular hCG injections",
+    "Diagnostic laparoscopy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A testis that can be brought to the bottom of the scrotum and remains there after release is retractile: a normal testis drawn upward by an active cremaster reflex. No surgery is needed. Because some retractile testes later ascend and become truly undescended, the testis should be examined yearly until puberty.</p><p><strong>Takeaway:</strong> Retractile testes need yearly re-examination, not orchiopexy.</p>",
+   "whyNot": {
+    "A": "Orchiopexy is for undescended or ascending testes; this testis stays in the scrotum after manipulation.",
+    "C": "Imaging does not distinguish retractile from undescended testes better than examination and is not needed.",
+    "D": "Hormonal therapy is not recommended for maldescent and is unnecessary for a retractile testis.",
+    "E": "Laparoscopy is for non-palpable testes; his testis is easily palpable."
+   },
+   "objective": "Manage a retractile testis with yearly examination.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "pediatrics"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "testicular position"
+   ]
+  },
+  {
+   "n": 15,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 26-year-old man who immigrated recently comes to the clinic because his left testis has never been in his scrotum. He has no symptoms. The right testis is normal in size and consistency; the left hemiscrotum is empty, and a small, soft mass is palpable in the left inguinal canal. Serum testosterone is normal. Semen analysis is normal. Ultrasound shows a small inguinal testis without a mass. He does not want more children. Which of the following is the most appropriate management?</p>",
+   "options": [
+    "Left orchiopexy",
+    "Left orchiectomy",
+    "Annual tumour markers without surgery",
+    "Testosterone replacement",
+    "Bilateral orchiopexy"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>A unilateral undescended testis discovered after puberty, with a normal contralateral testis, has little or no spermatogenic function and carries an increased risk of germ cell tumour that is hard to monitor. Orchiectomy is usually recommended, with counselling about a testicular prosthesis. His normal testosterone and semen analysis confirm that the right testis provides hormonal function and fertility.</p><p><strong>Takeaway:</strong> A postpubertal unilateral undescended testis with a normal contralateral testis is usually removed.</p>",
+   "whyNot": {
+    "A": "Orchiopexy after puberty does not restore function and leaves a testis with increased tumour risk; it is chosen mainly when the testis is solitary or both are undescended.",
+    "C": "Tumour markers are insensitive for early germ cell neoplasia and do not replace removal of a high-risk, non-functional testis.",
+    "D": "His testosterone is normal, so replacement is not indicated.",
+    "E": "The right testis is normally descended and needs no surgery."
+   },
+   "objective": "Recommend orchiectomy for a postpubertal unilateral undescended testis with a normal contralateral testis.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "surgery"
+   ],
+   "tasks": [
+    "pc_clinical_interventions"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "testicular position"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Embryologic failure in hypospadias?",
+   "back": "Incomplete fusion of the urethral folds (ventral meatus).",
+   "question": 1
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Developmental defect in bladder exstrophy with epispadias?",
+   "back": "Failed mesenchymal ingrowth into the infraumbilical cloacal membrane.",
+   "question": 2
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Which phase of testicular descent is androgen-dependent?",
+   "back": "The inguinoscrotal phase (the transabdominal phase depends on INSL3).",
+   "question": null
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "Most common tumour in an undescended testis?",
+   "back": "Seminoma (germ cell tumour).",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Embryologic basis of Kallmann syndrome?",
+   "back": "Failed migration of GnRH neurons from the olfactory placode.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Testicular histology in Klinefelter syndrome?",
+   "back": "Hyalinised tubules with Leydig cell clusters.",
+   "question": 5
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Barr bodies in 47,XXY?",
+   "back": "One (X count minus one).",
+   "question": 6
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Defect in persistent M&uuml;llerian duct syndrome?",
+   "back": "AMH or AMH type II receptor variants.",
+   "question": 7
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "Newborn hypospadias: circumcision?",
+   "back": "Defer; the foreskin may be needed for repair.",
+   "question": 8
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Usual age for hypospadias repair?",
+   "back": "About 6&ndash;18 months.",
+   "question": null
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Hypospadias with a non-palpable gonad: first test?",
+   "back": "Karyotype with DSD evaluation.",
+   "question": 9
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "When to refer an undescended testis, and by when to operate?",
+   "back": "Refer at 6 months (corrected); orchiopexy by about 18 months.",
+   "question": 10
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Is ultrasound recommended before referral for cryptorchidism?",
+   "back": "No.",
+   "question": null
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "Management of a retractile testis?",
+   "back": "Yearly examination; no surgery.",
+   "question": 14
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "Postpubertal unilateral undescended testis with normal contralateral testis?",
+   "back": "Orchiectomy is usually advised.",
+   "question": 15
+  },
+  {
+   "n": 16,
+   "section": 3,
+   "front": "Hypogonadotropic hypogonadism with anosmia?",
+   "back": "Kallmann syndrome.",
+   "question": 11
+  },
+  {
+   "n": 17,
+   "section": 3,
+   "front": "Fertility option for azoospermic men with Klinefelter syndrome?",
+   "back": "Micro-TESE with ICSI (stop testosterone first).",
+   "question": 12
+  },
+  {
+   "n": 18,
+   "section": 3,
+   "front": "Teen with gynecomastia, tall stature and small firm testes: next step?",
+   "back": "Karyotype.",
+   "question": 13
+  },
+  {
+   "n": 19,
+   "section": 3,
+   "front": "Fertility treatment in Kallmann syndrome?",
+   "back": "hCG with FSH, or pulsatile GnRH.",
+   "question": null
+  },
+  {
+   "n": 20,
+   "section": 3,
+   "front": "Clue separating constitutional delay from Kallmann syndrome?",
+   "back": "Smell (normal in constitutional delay) and family history of late puberty.",
+   "question": null
+  },
+  {
+   "n": 21,
+   "section": 3,
+   "front": "Cancers with increased risk in Klinefelter syndrome?",
+   "back": "Male breast cancer and mediastinal germ cell tumours.",
+   "question": null
+  }
+ ]
+}

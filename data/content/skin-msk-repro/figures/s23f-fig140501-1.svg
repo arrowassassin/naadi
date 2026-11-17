@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-label="Schematic comparing a typical penis with the meatus at the tip, hypospadias with ventral meatal positions from distal to perineal, and epispadias with an open dorsal urethral plate associated with bladder exstrophy." font-family="sans-serif" font-size="14" fill="#0f172a">
+<title>Schematic comparing a typical penis with the meatus at the tip, hypospadias with ventral meatal positions from distal to perineal, and epispadias with an open dorsal urethral plate associated with bladder exstrophy.</title>
+<rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+
+<text x="380" y="30" text-anchor="middle" font-size="18" font-weight="bold">Meatal positions in hypospadias and epispadias (schematic)</text>
+<g stroke="#0f172a" stroke-width="2" fill="#f8fafc">
+<rect x="70" y="80" width="80" height="240" rx="38"/>
+<rect x="330" y="80" width="80" height="240" rx="38"/>
+<rect x="590" y="80" width="80" height="240" rx="38"/>
+<ellipse cx="110" cy="350" rx="70" ry="30"/>
+<ellipse cx="370" cy="350" rx="70" ry="30"/>
+</g>
+<text x="110" y="62" text-anchor="middle" font-weight="bold">Ventral view</text>
+<text x="370" y="62" text-anchor="middle" font-weight="bold">Ventral view</text>
+<text x="630" y="62" text-anchor="middle" font-weight="bold">Dorsal view</text>
+<circle cx="110" cy="95" r="6" fill="#0f172a"/><text x="160" y="100">typical meatus (tip)</text>
+<g fill="#ffffff" stroke="#0f172a" stroke-width="2">
+<circle cx="370" cy="125" r="7"/><circle cx="370" cy="210" r="7"/><circle cx="370" cy="300" r="7"/><circle cx="370" cy="352" r="7"/>
+</g>
+<text x="420" y="130" font-size="13">distal (coronal)</text>
+<text x="420" y="215" font-size="13">midshaft</text>
+<text x="420" y="305" font-size="13">penoscrotal</text>
+<text x="450" y="357" font-size="13">scrotal or perineal</text>
+<text x="370" y="410" text-anchor="middle" font-size="13">Hypospadias: open circles, ventral</text>
+<rect x="622" y="110" width="16" height="140" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="630" y="280" text-anchor="middle" font-size="13">open dorsal</text>
+<text x="630" y="297" text-anchor="middle" font-size="13">urethral plate</text>
+<text x="630" y="345" text-anchor="middle" font-size="13">Epispadias: dorsal,</text>
+<text x="630" y="362" text-anchor="middle" font-size="13">usually with bladder</text>
+<text x="630" y="379" text-anchor="middle" font-size="13">exstrophy</text>
+<text x="110" y="410" text-anchor="middle" font-size="13">Typical anatomy</text>
+
+</svg>

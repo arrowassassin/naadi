@@ -1,0 +1,671 @@
+{
+ "area": "07.06.01",
+ "sections": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "heading": "Drug-induced myopathy: mechanisms by drug class",
+   "html": "<p>Drugs injure skeletal muscle by a handful of mechanisms: they disrupt energy production in mitochondria, interfere with the cytoskeleton, shift muscle protein metabolism toward breakdown, trigger an autoimmune attack, cause ischemia, or change electrolytes. Knowing the mechanism predicts the pattern: a raised or normal CK, pain or painless weakness, and whether nerves are involved too.</p>\n<h3>Statins</h3>\n<p>Statins inhibit HMG-CoA reductase, the rate-limiting step of the mevalonate pathway. In muscle this lowers more than cholesterol. Downstream isoprenoids (farnesyl and geranylgeranyl groups, needed to prenylate small GTPases) and <strong>ubiquinone (coenzyme Q10)</strong> of the respiratory chain fall, mitochondrial function is impaired, and myocytes become prone to apoptosis. The spectrum runs from myalgia with a normal CK, through myopathy with a raised CK, to rare rhabdomyolysis.</p>\n<ul>\n<li><strong>Risk rises with drug exposure.</strong>\n<ul>\n<li>High doses, especially of simvastatin.</li>\n<li>Older age, female sex, low body mass, hypothyroidism, CKD and liver disease.</li>\n<li>Variants in <em>SLCO1B1</em>, which encodes the hepatic uptake transporter <strong>OATP1B1</strong>. Reduced uptake raises plasma statin levels.</li>\n<li>Drug interactions: simvastatin, lovastatin and atorvastatin are CYP3A4 substrates, so macrolides, azole antifungals, HIV protease inhibitors, cyclosporine, diltiazem, verapamil, amiodarone and grapefruit juice raise their levels. Gemfibrozil blocks statin glucuronidation and OATP1B1 uptake.</li>\n<li>Pravastatin, rosuvastatin, fluvastatin and pitavastatin depend less on CYP3A4.</li>\n</ul></li>\n<li><strong>Statin-associated immune-mediated necrotizing myopathy</strong> is rare but important. Statin exposure upregulates HMG-CoA reductase in regenerating fibers and can break tolerance. Patients develop <strong>autoantibodies to HMG-CoA reductase</strong> and progressive proximal weakness with a very high CK that persists or worsens after the statin is stopped. Biopsy shows scattered necrotic and regenerating fibers with sparse inflammation. Risk is linked to HLA-DRB1*11:01.</li>\n</ul>\n<h3>Glucocorticoids</h3>\n<p>Excess glucocorticoid shifts muscle toward catabolism. It inhibits the IGF-1/Akt/mTOR anabolic pathway, activates FOXO transcription factors and the ubiquitin–proteasome ligases (atrogin-1, MuRF1), and induces myostatin. <strong>Type IIb (fast-twitch glycolytic) fibers atrophy</strong> without necrosis or inflammation, so <strong>CK is normal</strong>. Hip-girdle weakness develops over weeks to months. The risk is higher with fluorinated steroids (dexamethasone, triamcinolone, betamethasone) and higher doses. In the ICU, high-dose glucocorticoids with neuromuscular blockers and sepsis contribute to critical illness myopathy, with loss of myosin.</p>\n<h3>Microtubule and lysosomal toxins</h3>\n<ul>\n<li><strong>Colchicine</strong> binds tubulin and stops microtubule polymerization. Autophagic vacuoles cannot be cleared, and a <strong>vacuolar myopathy with axonal neuropathy</strong> (neuromyopathy) results. It occurs with reduced renal clearance or with inhibitors of CYP3A4 and P-glycoprotein (clarithromycin, cyclosporine, ketoconazole, verapamil). CK is raised, and distal reflexes are lost.</li>\n<li><strong>Hydroxychloroquine and chloroquine</strong> raise lysosomal pH and impair autophagy. They cause a vacuolar myopathy with curvilinear bodies on electron microscopy and can cause cardiomyopathy.</li>\n<li><strong>Amiodarone</strong> rarely causes a similar neuromyopathy.</li>\n</ul>\n<h3>Mitochondrial toxins</h3>\n<ul>\n<li><strong>Zidovudine</strong> (a nucleoside reverse transcriptase inhibitor) also inhibits mitochondrial <strong>DNA polymerase γ</strong>. Mitochondrial DNA is depleted, and muscle shows <strong>ragged red fibers</strong> and cytochrome oxidase–negative fibers. It causes proximal myopathy with a raised CK, and lactic acidosis. It is now used mainly for prevention of perinatal transmission. The older \"d-drugs\" (stavudine, didanosine) were more toxic to mitochondria.</li>\n<li><strong>Propofol infusion syndrome</strong> (prolonged, high-dose infusions): impaired fatty-acid oxidation causes rhabdomyolysis, metabolic acidosis, hyperkalemia and cardiac failure.</li>\n<li><strong>Daptomycin</strong> inserts into membranes and can raise CK and cause myopathy, so CK is checked weekly.</li>\n</ul>\n<h3>Immune, ischemic and metabolic mechanisms</h3>\n<ul>\n<li><strong>Immune checkpoint inhibitors</strong> (anti-PD-1, anti-PD-L1, anti-CTLA-4) release T-cell brakes. They can cause necrotizing myositis that overlaps with <strong>myocarditis</strong> and myasthenia-like ocular and bulbar weakness. The overlap can be fatal.</li>\n<li><strong>D-penicillamine</strong> can cause myasthenia gravis and inflammatory myositis.</li>\n<li><strong>Cocaine and amphetamines:</strong> block reuptake of catecholamines (cocaine) or release them (amphetamines), causing vasoconstriction, agitation, seizures and hyperthermia, then muscle ischemia and rhabdomyolysis.</li>\n<li><strong>Alcohol:</strong> acute necrotizing myopathy after binges, chronic proximal myopathy, and pressure injury from immobility.</li>\n<li><strong>Electrolyte-mediated:</strong> diuretics, laxatives, licorice, amphotericin B and toluene cause hypokalemia; refeeding causes hypophosphatemia. Ipecac (emetine) abuse in eating disorders causes skeletal myopathy and cardiomyopathy.</li>\n<li><strong>Antipsychotics:</strong> neuroleptic malignant syndrome (central dopamine blockade) with rigidity, fever and rhabdomyolysis.</li>\n</ul>\n<table class=\"hy\">\n<thead><tr><th>Drug</th><th>Mechanism</th><th>CK</th><th>Distinctive feature</th></tr></thead>\n<tbody>\n<tr><td>Statin (toxic)</td><td>Mevalonate pathway products and CoQ10 depleted</td><td>Normal to very high</td><td>Dose and interaction dependent; resolves after stopping</td></tr>\n<tr><td>Statin (immune)</td><td>Anti-HMG-CoA reductase antibodies</td><td>Very high</td><td>Persists after stopping; needs immunotherapy</td></tr>\n<tr><td>Glucocorticoid</td><td>Catabolism, type IIb atrophy</td><td>Normal</td><td>Painless hip-girdle weakness</td></tr>\n<tr><td>Colchicine</td><td>Microtubule disruption, autophagic vacuoles</td><td>High</td><td>Plus axonal neuropathy; CKD or CYP3A4/P-gp inhibitor</td></tr>\n<tr><td>Zidovudine</td><td>DNA polymerase γ inhibition</td><td>High</td><td>Ragged red fibers, lactic acidosis</td></tr>\n<tr><td>Hydroxychloroquine</td><td>Lysosomal dysfunction</td><td>Normal or mildly high</td><td>Curvilinear bodies; cardiomyopathy</td></tr>\n<tr><td>Checkpoint inhibitor</td><td>T-cell–mediated necrosis</td><td>High</td><td>Myocarditis and ptosis overlap</td></tr>\n</tbody></table>\n<div class=\"trap\"><p>A statin user whose weakness and CK keep worsening months after the statin was stopped does not have \"slow washout\": test for anti-HMG-CoA reductase antibodies.</p></div>\n<div class=\"pearl\"><p>Normal CK with proximal weakness on steroids favours steroid myopathy. A raised CK on colchicine with lost ankle reflexes is colchicine neuromyopathy.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "Statin Medications"
+    },
+    {
+     "statpearls": "Corticosteroid-Induced Myopathy"
+    },
+    {
+     "statpearls": "Colchicine"
+    },
+    {
+     "statpearls": "Zidovudine"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step2ck",
+   "heading": "Statin muscle symptoms, steroid myopathy and other drug myopathies: diagnosis and management",
+   "html": "<p>Prescription drugs are among the commonest reversible causes of muscle pain and weakness. Step 2 CK expects you to separate true drug toxicity from coincidence, choose what to stop, and know what to give instead, especially in older adults on several drugs.</p>\n<h3>Statin-associated muscle symptoms</h3>\n<p>Muscle complaints are common in people taking statins, but in blinded trials most occur at similar rates on placebo. True statin myopathy and rhabdomyolysis are uncommon. Typical statin-related symptoms are symmetric, proximal, large-muscle aching or weakness (thighs, buttocks, calves, shoulders). They start within weeks to months of starting or increasing the dose, and they resolve within weeks of stopping.</p>\n<ol>\n<li><strong>Assess:</strong> the timing and pattern, exercise, CK, TSH (hypothyroidism raises the risk), kidney and liver function, and interacting drugs (fibrates, macrolides, azoles, protease inhibitors, cyclosporine, diltiazem, amiodarone).</li>\n<li><strong>Severe symptoms or CK above 10 times the upper limit:</strong> stop the statin. Check creatinine and urine for myoglobin and treat rhabdomyolysis if present.</li>\n<li><strong>Tolerable symptoms with CK below 10 times the limit:</strong> either continue and monitor, or pause until symptoms resolve (usually 2–4 weeks). Then <strong>rechallenge</strong> with the same statin at a lower dose, a different statin (rosuvastatin, pravastatin, fluvastatin, pitavastatin), or intermittent dosing of a long-acting statin. Most patients can take some statin.</li>\n<li><strong>Persistent weakness and a high CK after stopping:</strong> test for anti-HMG-CoA reductase antibodies, consider MRI and biopsy, and refer to rheumatology or neuromuscular care. Treatment is immunotherapy (glucocorticoids, IVIG, methotrexate). Never rechallenge with a statin.</li>\n<li><strong>Patients who truly cannot take a statin</strong> but need LDL lowering for ASCVD or high risk:\n<ul>\n<li>Ezetimibe (blocks NPC1L1 absorption).</li>\n<li>Bempedoic acid (an ATP-citrate lyase inhibitor that is activated only in the liver, so it causes little myopathy; it can raise urate, cause gout and, rarely, tendon rupture).</li>\n<li>PCSK9 monoclonal antibodies (evolocumab, alirocumab) or inclisiran (small interfering RNA).</li>\n</ul></li>\n</ol>\n<p>Avoid gemfibrozil with any statin; fenofibrate is the safer fibrate partner. Coenzyme Q10 supplements have not consistently helped. Vitamin D repletion is reasonable if the patient is deficient, but it is not proven to prevent symptoms.</p>\n<table class=\"hy\">\n<thead><tr><th>Scenario</th><th>Best action</th></tr></thead>\n<tbody>\n<tr><td>Aching thighs on high-dose atorvastatin, CK 2 times the limit</td><td>Pause, then rechallenge at a lower dose or with another statin</td></tr>\n<tr><td>Simvastatin plus a new azole or macrolide, CK 40 times the limit, dark urine</td><td>Stop both, IV fluids, monitor kidney function and potassium</td></tr>\n<tr><td>Weakness worse 3 months after stopping a statin, CK 8,000 U/L</td><td>Anti-HMG-CoA reductase antibodies; immunotherapy</td></tr>\n<tr><td>On daptomycin and a statin</td><td>Weekly CK; consider holding the statin during therapy</td></tr>\n<tr><td>CKD, gout flare, clarithromycin started, colchicine continued</td><td>Stop colchicine (or the interacting drug); CK, nerve conduction if weak</td></tr>\n</tbody></table>\n<h3>Glucocorticoid myopathy</h3>\n<ul>\n<li>Painless, symmetric weakness of the hip flexors and thighs (\"trouble getting out of a chair\") after weeks or more of prednisone, often 20 mg/day or higher, or any dose of dexamethasone. CK and EMG are usually normal, and cushingoid features are common.</li>\n<li>In a patient treated for an inflammatory myopathy, new weakness on high-dose steroids with a CK that has fallen to normal suggests steroid myopathy. A rising CK, new MRI edema or a worsening rash suggests a flare.</li>\n<li><strong>Management:</strong> taper to the lowest effective dose (adding a steroid-sparing agent when the underlying disease needs it), switch from a fluorinated to a non-fluorinated steroid, and prescribe resistance and aerobic exercise. Recovery takes weeks to months.</li>\n</ul>\n<h3>Colchicine</h3>\n<p>Reduce the dose in CKD and older adults, and avoid strong CYP3A4 or P-glycoprotein inhibitors (clarithromycin, ketoconazole, ritonavir, cyclosporine), or stop colchicine during their use. Neuromyopathy presents with proximal weakness, a raised CK and loss of distal reflexes and sensation. Stop the drug; recovery takes weeks.</p>\n<h3>Checkpoint-inhibitor myositis</h3>\n<p>In a patient receiving immunotherapy for cancer, new myalgia, proximal weakness, ptosis, diplopia, dysphagia or dyspnea should prompt checks of CK, troponin, ECG and acetylcholine receptor antibodies. For significant myositis, hold the checkpoint inhibitor and start high-dose glucocorticoids promptly. Add IVIG or plasma exchange for severe or myasthenic features or myocarditis, and involve cardiology and oncology.</p>\n<h3>Other drug causes</h3>\n<ul>\n<li>Zidovudine (proximal myopathy, lactic acidosis) improves after stopping.</li>\n<li>Hydroxychloroquine myopathy or cardiomyopathy needs the drug stopped. Cardiac evaluation is needed if there is heart failure or conduction disease.</li>\n<li>Alcohol: abstinence, thiamine and nutrition.</li>\n<li>Cocaine: treat agitation and hyperthermia with benzodiazepines, give fluids for rhabdomyolysis, and avoid pure β-blockers in acute toxicity.</li>\n<li>Diuretics and laxatives: correct potassium and magnesium.</li>\n</ul>\n<h3>Special populations</h3>\n<ul>\n<li><strong>Older adults</strong> take more interacting drugs and have less muscle reserve. Review the whole list, including over-the-counter products.</li>\n<li><strong>People with HIV:</strong> check protease-inhibitor interactions before choosing a statin (pravastatin, pitavastatin or low-dose rosuvastatin or atorvastatin are commonly chosen). Avoid simvastatin and lovastatin with ritonavir- or cobicistat-boosted regimens.</li>\n<li><strong>Transgender people taking testosterone</strong>, and other people with large muscle mass, may have a mildly higher baseline CK. Interpret mild elevations against their own baseline and symptoms.</li>\n</ul>\n<div class=\"trap\"><p>Stopping all lipid-lowering therapy in a patient after myocardial infarction because of mild statin myalgia is a common wrong answer. Rechallenge, switch, or use non-statin therapy.</p></div>",
+   "extraAreas": [],
+   "furtherReading": [
+    {
+     "statpearls": "HMG-CoA Reductase Inhibitors"
+    },
+    {
+     "statpearls": "Daptomycin"
+    },
+    {
+     "statpearls": "Cocaine Toxicity"
+    }
+   ]
+  }
+ ],
+ "figures": [],
+ "sets": [
+  {
+   "n": 1,
+   "exam": "step2ck",
+   "kind": "abstract",
+   "title": "Blinded statin rechallenge trial (fictional)",
+   "introHtml": "<p><strong>Study summary (fictional).</strong> Investigators enrolled 240 adults (mean age 66 years; 46% women; 30% older than 75) who had stopped a statin in the previous 3 years because of muscle symptoms and whose CK was normal at entry. Each participant completed eight 2-month periods in random order: four taking atorvastatin 20 mg daily and four taking an identical-looking placebo. Participants, clinicians and outcome assessors did not know which tablet was being taken. At the end of each period, participants rated muscle symptoms on a 0–10 scale. A period could be ended early if symptoms were intolerable.</p><table><thead><tr><th>Outcome</th><th>Atorvastatin periods</th><th>Placebo periods</th></tr></thead><tbody><tr><td>Mean muscle symptom score</td><td>2.1</td><td>1.9</td></tr><tr><td>Difference (95% CI)</td><td colspan=\"2\">0.2 (−0.1 to 0.5)</td></tr><tr><td>Periods ended early for intolerable symptoms</td><td>9%</td><td>8%</td></tr><tr><td>CK above 10 times the upper limit</td><td>0</td><td>0</td></tr><tr><td>Mean change in LDL cholesterol</td><td>−45%</td><td>−1%</td></tr></tbody></table><p>Patients with previous rhabdomyolysis, CK above 10 times the upper limit on a statin, or anti-HMG-CoA reductase antibodies were excluded.</p>"
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 74-year-old man with gout and stage 4 chronic kidney disease takes colchicine 0.6 mg twice daily for flare prevention. Ten days ago he started clarithromycin for pneumonia. He now has proximal weakness, numb feet and loss of the ankle reflexes. Creatine kinase is 2,800 U/L (reference 25–200). Which of the following best explains why toxicity developed now?</p>",
+   "options": [
+    "Induction of colchicine glucuronidation",
+    "Inhibition of CYP3A4 and P-glycoprotein",
+    "Displacement of colchicine from albumin",
+    "Increased renal tubular secretion of colchicine",
+    "Inhibition of xanthine oxidase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Colchicine is cleared by CYP3A4 metabolism and by P-glycoprotein efflux in the gut, liver and kidney. Clarithromycin strongly inhibits both, so colchicine levels rise sharply, especially when kidney function is already reduced. High levels disrupt microtubules in muscle and nerve, causing a vacuolar myopathy with axonal neuropathy (neuromyopathy). Life-threatening multiorgan toxicity can follow.</p><p><strong>Takeaway:</strong> colchicine plus a CYP3A4/P-gp inhibitor (clarithromycin, cyclosporine, azoles) in CKD causes neuromyopathy and worse.</p>",
+   "whyNot": {
+    "A": "Inducing metabolism would lower colchicine levels; clarithromycin inhibits, rather than induces, drug metabolism.",
+    "C": "Protein-binding displacement causes only transient changes in free drug and is not the clinically important mechanism here.",
+    "D": "More renal secretion would lower levels; clarithromycin reduces P-gp–mediated tubular secretion instead.",
+    "E": "Xanthine oxidase inhibition (allopurinol, febuxostat) lowers urate and does not change colchicine handling."
+   },
+   "objective": "Explain how CYP3A4 and P-glycoprotein inhibition causes colchicine neuromyopathy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug interactions",
+    "older adults"
+   ]
+  },
+  {
+   "n": 2,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 58-year-old woman develops severe thigh pain and a creatine kinase of 9,500 U/L 6 weeks after starting simvastatin 80 mg daily. She takes no other medications and has normal thyroid and kidney function. Pharmacogenetic testing shows she is homozygous for a reduced-function variant that raises plasma simvastatin acid concentrations several-fold. The affected gene most likely encodes which of the following?</p>",
+   "options": [
+    "A hepatic sinusoidal uptake transporter",
+    "Cytochrome P450 2D6",
+    "Thiopurine S-methyltransferase",
+    "N-acetyltransferase 2",
+    "Vitamin K epoxide reductase"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>The <em>SLCO1B1</em> gene encodes OATP1B1, the transporter that carries statins from portal blood into hepatocytes, where they act and are cleared. Reduced-function variants lower hepatic uptake and raise systemic statin levels, so more drug reaches muscle. The effect is largest for simvastatin, and genotype-guided prescribing recommends avoiding high-dose simvastatin in carriers.</p><p><strong>Takeaway:</strong> <em>SLCO1B1</em> (OATP1B1) loss of function predisposes to simvastatin myopathy.</p>",
+   "whyNot": {
+    "B": "CYP2D6 metabolizes codeine, tamoxifen, many antidepressants and β-blockers, not statins.",
+    "C": "TPMT variants predict toxicity from azathioprine and mercaptopurine.",
+    "D": "NAT2 slow acetylators accumulate isoniazid, hydralazine and procainamide.",
+    "E": "VKORC1 variants change warfarin dose requirements."
+   },
+   "objective": "Link SLCO1B1 (OATP1B1) variants to statin myopathy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "genetics"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "pharmacogenomics"
+   ]
+  },
+  {
+   "n": 3,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 46-year-old woman has taken prednisone 40 mg daily for 4 months for severe asthma and now has difficulty climbing stairs and rising from a chair. She has no muscle pain. Hip flexor strength is 4/5 bilaterally; reflexes and sensation are normal. Creatine kinase is 85 U/L (reference 25–200). A muscle biopsy is performed. Which of the following findings is most likely?</p>",
+   "options": [
+    "Selective atrophy of type II fibers without necrosis or inflammation",
+    "Perifascicular atrophy with perivascular inflammation",
+    "Ragged red fibers on modified Gomori trichrome stain",
+    "Endomysial CD8 T cells invading non-necrotic fibers",
+    "Widespread necrotic and regenerating fibers"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Painless proximal weakness with a normal CK after months of high-dose prednisone is glucocorticoid myopathy. Glucocorticoids suppress anabolic IGF-1/mTOR signalling and activate ubiquitin–proteasome breakdown, mainly in type II (fast-twitch glycolytic) fibers. Fibers shrink but do not die, so CK is normal and there is no inflammation.</p><p><strong>Takeaway:</strong> steroid myopathy = type II fiber atrophy with a normal CK.</p>",
+   "whyNot": {
+    "B": "Perifascicular atrophy with perivascular inflammation is dermatomyositis, which raises CK and usually has a rash.",
+    "C": "Ragged red fibers indicate mitochondrial myopathy, such as that caused by zidovudine.",
+    "D": "CD8 T cells invading non-necrotic fibers describe polymyositis or inclusion body myositis, with a raised CK.",
+    "E": "Widespread necrosis would raise CK, as in necrotizing myopathy or rhabdomyolysis."
+   },
+   "objective": "Describe the histology of glucocorticoid-induced myopathy.",
+   "extraAreas": [],
+   "disciplines": [
+    "pathology",
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 4,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 52-year-old man with HIV infection has taken an antiretroviral regimen that includes zidovudine for many years. He now has progressive proximal muscle weakness and fatigue. Creatine kinase is 1,100 U/L (reference 25–200), and serum lactate is mildly elevated. Muscle biopsy shows fibers with subsarcolemmal accumulations of abnormal mitochondria that stain red with modified Gomori trichrome. Inhibition of which of the following enzymes most likely caused these findings?</p>",
+   "options": [
+    "HIV reverse transcriptase",
+    "Mitochondrial DNA polymerase γ",
+    "HMG-CoA reductase",
+    "Thymidylate synthase",
+    "Muscle glycogen phosphorylase"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Zidovudine and other nucleoside analogs can inhibit mitochondrial DNA polymerase γ, the only polymerase that replicates mitochondrial DNA. Mitochondrial DNA is depleted, oxidative phosphorylation fails, abnormal mitochondria proliferate (ragged red fibers), and lactic acidosis follows.</p><p><strong>Takeaway:</strong> nucleoside analog myopathy comes from DNA polymerase γ inhibition and shows ragged red fibers.</p>",
+   "whyNot": {
+    "A": "Reverse transcriptase is the intended antiviral target; its inhibition suppresses HIV but does not explain mitochondrial damage in human muscle.",
+    "C": "HMG-CoA reductase inhibition by statins causes myopathy, but without ragged red fibers and not in the absence of a statin.",
+    "D": "Thymidylate synthase is inhibited by 5-fluorouracil, which causes marrow and mucosal toxicity, not mitochondrial myopathy.",
+    "E": "Loss of glycogen phosphorylase (McArdle disease) causes exercise cramps and glycogen accumulation, not ragged red fibers."
+   },
+   "objective": "Explain zidovudine myopathy by inhibition of mitochondrial DNA polymerase γ.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology",
+    "biochemistry"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 5,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 63-year-old man took atorvastatin 40 mg daily for 3 years. He stopped it 4 months ago because of thigh weakness, but the weakness has steadily worsened, and he now cannot climb stairs. He has no rash or dysphagia. Creatine kinase is 8,600 U/L (reference 25–200), and TSH is normal. Biopsy of the vastus lateralis shows many necrotic and regenerating fibers with very few lymphocytes. Antibodies against which of the following are most likely present?</p>",
+   "options": [
+    "Histidyl-tRNA synthetase",
+    "HMG-CoA reductase",
+    "Mi-2 helicase",
+    "Acetylcholine receptor",
+    "Cytosolic 5′-nucleotidase 1A"
+   ],
+   "answer": "B",
+   "explanationHtml": "<p>Progressive proximal weakness and a very high CK that continue after stopping a statin, with a necrotizing myopathy and little inflammation, are statin-associated immune-mediated necrotizing myopathy. Statins upregulate HMG-CoA reductase in muscle, and some patients form autoantibodies against it. Unlike toxic statin myopathy, it does not resolve after stopping the drug and needs immunosuppression.</p><p><strong>Takeaway:</strong> worsening weakness with a very high CK months after stopping a statin means anti-HMG-CoA reductase myopathy.</p>",
+   "whyNot": {
+    "A": "Anti-Jo-1 (histidyl-tRNA synthetase) antibodies occur in antisynthetase syndrome with interstitial lung disease, arthritis and mechanic's hands.",
+    "C": "Anti-Mi-2 antibodies are linked to dermatomyositis with classic skin findings.",
+    "D": "Acetylcholine receptor antibodies cause fatigable weakness in myasthenia gravis with a normal CK.",
+    "E": "Anti-cN1A antibodies are associated with inclusion body myositis, which affects quadriceps and finger flexors in older adults and shows rimmed vacuoles."
+   },
+   "objective": "Recognize anti-HMG-CoA reductase immune-mediated necrotizing myopathy after statin exposure.",
+   "extraAreas": [],
+   "disciplines": [
+    "immunology",
+    "pathology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "pc_diagnosis"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "myopathy"
+   ]
+  },
+  {
+   "n": 6,
+   "exam": "step1",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 27-year-old man is brought to the emergency department after 2 days of heavy use of a stimulant that he snorts. He is agitated and diaphoretic. Temperature is 39.6°C (103.3°F), pulse 132/min and blood pressure 178/104 mm Hg. Pupils are dilated. His urine is dark, and creatine kinase is 38,000 U/L (reference 25–200). The drug's main sympathomimetic action results from which of the following?</p>",
+   "options": [
+    "Blocking presynaptic reuptake of norepinephrine, dopamine and serotonin",
+    "Inhibiting monoamine oxidase in nerve terminals",
+    "Directly activating postsynaptic α1-adrenergic receptors",
+    "Reversing vesicular monoamine transporters to release stored catecholamines",
+    "Blocking muscarinic acetylcholine receptors"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Snorted stimulant use with hyperthermia, hypertension, tachycardia, mydriasis and rhabdomyolysis fits cocaine toxicity. Cocaine blocks the presynaptic transporters for norepinephrine, dopamine and serotonin, so catecholamines stay in the synapse. Muscle injury comes from vasoconstriction and ischemia, agitation and seizures, hyperthermia and direct toxicity. (Cocaine also blocks sodium channels, which explains its local anesthetic and QRS-widening effects.)</p><p><strong>Takeaway:</strong> cocaine is a monoamine reuptake blocker; its sympathomimetic storm causes rhabdomyolysis.</p>",
+   "whyNot": {
+    "B": "MAO inhibition describes drugs such as phenelzine and selegiline, not cocaine.",
+    "C": "Direct α1 agonism describes phenylephrine; cocaine acts indirectly by raising synaptic catecholamines.",
+    "D": "Reversing vesicular and plasma-membrane transporters to release catecholamines is the main action of amphetamines.",
+    "E": "Antimuscarinic toxicity causes dry, flushed skin rather than diaphoresis."
+   },
+   "objective": "Identify cocaine's reuptake-blocking mechanism as the cause of sympathomimetic rhabdomyolysis.",
+   "extraAreas": [],
+   "disciplines": [
+    "pharmacology"
+   ],
+   "clinicalSciences": [],
+   "tasks": [
+    "medical_knowledge"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "substance use"
+   ]
+  },
+  {
+   "n": 7,
+   "exam": "step2ck",
+   "format": "chart",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 64-year-old man had a myocardial infarction 4 months ago. Since discharge he has had aching in both thighs and calves that makes his daily walks unpleasant. He has no weakness or dark urine. His medications are shown.</p><table><thead><tr><th>Medication</th><th>Dose</th><th>Started</th></tr></thead><tbody><tr><td>Atorvastatin</td><td>80 mg daily</td><td>4 months ago</td></tr><tr><td>Aspirin</td><td>81 mg daily</td><td>4 months ago</td></tr><tr><td>Clopidogrel</td><td>75 mg daily</td><td>4 months ago</td></tr><tr><td>Metoprolol succinate</td><td>50 mg daily</td><td>4 months ago</td></tr><tr><td>Lisinopril</td><td>10 mg daily</td><td>4 months ago</td></tr></tbody></table><p>Strength is normal. Creatine kinase is 340 U/L (reference 25–200), TSH is normal, and creatinine is 1.0 mg/dL. LDL cholesterol is 62 mg/dL. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Pause atorvastatin, then rechallenge at a lower dose",
+    "Continue atorvastatin 80 mg unchanged",
+    "Stop all lipid-lowering therapy permanently",
+    "Add coenzyme Q10 and continue the same dose",
+    "Refer for a muscle biopsy"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>He has statin-associated muscle symptoms: symmetric large-muscle aching after starting a high-intensity statin, with normal strength and a CK under 10 times the upper limit. Because he needs secondary prevention after MI, the aim is to keep him on effective LDL lowering. Pausing the statin until symptoms resolve, then rechallenging at a lower dose or with a different statin, allows most patients to continue; ezetimibe or a PCSK9 inhibitor can be added if the LDL goal is not met.</p><p><strong>Takeaway:</strong> for tolerable statin myalgia with CK under 10 times the limit, pause and rechallenge rather than abandoning LDL lowering.</p>",
+   "whyNot": {
+    "B": "Continuing an unchanged high dose despite symptoms that limit his walking risks nonadherence and does not address his complaint.",
+    "C": "Abandoning lipid lowering after an MI removes a major benefit; most patients tolerate a rechallenge or a non-statin agent.",
+    "D": "Coenzyme Q10 has not consistently relieved statin muscle symptoms.",
+    "E": "A biopsy is for persistent weakness or a very high CK, not mild myalgia with a modest CK rise."
+   },
+   "objective": "Manage statin-associated muscle symptoms with a pause and rechallenge while keeping LDL lowering.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "lipid therapy"
+   ]
+  },
+  {
+   "n": 8,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 67-year-old woman with metastatic melanoma received her second dose of an anti-PD-1 antibody 3 weeks ago. She now has 5 days of aching shoulders and thighs, difficulty rising from a chair, drooping eyelids and double vision late in the day. Strength is 4/5 in the hip flexors and deltoids, and there is bilateral ptosis. Creatine kinase is 6,200 U/L (reference 25–200), and troponin I is 0.9 ng/mL. ECG shows new first-degree AV block. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Hold the antibody and start high-dose glucocorticoids",
+    "Continue the antibody and start an NSAID",
+    "Start pyridostigmine alone and continue the antibody",
+    "Give intravenous fluids only and repeat CK in 1 week",
+    "Obtain a muscle biopsy before any treatment"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>New proximal weakness with a high CK, ptosis and diplopia, and a raised troponin with a conduction abnormality after a checkpoint inhibitor indicate immune-mediated myositis with myasthenia-like features and myocarditis, an overlap with substantial mortality. The checkpoint inhibitor must be held and high-dose glucocorticoids started promptly, with cardiac monitoring; IVIG or plasma exchange is added for severe disease. Cardiology and oncology should be involved.</p><p><strong>Takeaway:</strong> checkpoint-inhibitor myositis with myocarditis: stop the drug and give high-dose steroids now.</p>",
+   "whyNot": {
+    "B": "Continuing the drug lets the immune attack progress; NSAIDs do not treat T-cell–mediated myositis or myocarditis.",
+    "C": "Pyridostigmine may help myasthenic symptoms but does not treat the myositis or myocarditis.",
+    "D": "Fluids alone ignore an autoimmune process that can quickly involve the heart and respiratory muscles.",
+    "E": "Biopsy can support the diagnosis but must not delay treatment when myocarditis is present."
+   },
+   "objective": "Treat checkpoint-inhibitor myositis and myocarditis by holding the drug and starting high-dose glucocorticoids.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "immunotherapy adverse effects"
+   ]
+  },
+  {
+   "n": 9,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 49-year-old woman with dermatomyositis was started on prednisone 60 mg daily and methotrexate 3 months ago. Her rash cleared, and creatine kinase fell from 4,800 U/L to 110 U/L (reference 25–200) by week 6. Over the past 4 weeks she has had new difficulty rising from a chair; arm strength remains normal and she has no pain. She has gained 8 kg, and her face is round. Today's CK is 95 U/L, and MRI of the thighs shows no muscle edema. Which of the following is the most appropriate next step?</p>",
+   "options": [
+    "Taper prednisone and continue methotrexate",
+    "Increase prednisone to 1 mg/kg twice daily",
+    "Add intravenous immunoglobulin",
+    "Switch prednisone to an equivalent dose of dexamethasone",
+    "Add rituximab"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>New painless hip-girdle weakness with a normal and stable CK, no muscle edema on MRI and cushingoid features while on high-dose prednisone points to glucocorticoid myopathy rather than a myositis flare. The right step is to taper prednisone while keeping the steroid-sparing agent and adding progressive exercise. Escalating immunosuppression would worsen the problem.</p><p><strong>Takeaway:</strong> on steroids for myositis, new weakness with a normal CK and no MRI edema is steroid myopathy: taper, do not escalate.</p>",
+   "whyNot": {
+    "B": "Raising the steroid dose treats a flare that is not present and would worsen steroid myopathy.",
+    "C": "IVIG is used for refractory active myositis; her disease is inactive by CK, rash and MRI.",
+    "D": "Fluorinated steroids such as dexamethasone are more likely to cause myopathy than prednisone.",
+    "E": "Rituximab is for refractory active disease, which is not present."
+   },
+   "objective": "Distinguish glucocorticoid myopathy from a myositis flare and taper the steroid.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_mixed_management"
+   ],
+   "difficulty": 4,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "drug adverse effects"
+   ]
+  },
+  {
+   "n": 10,
+   "exam": "step2ck",
+   "format": "single",
+   "set": null,
+   "setOrder": null,
+   "stemHtml": "<p>A 70-year-old man is being treated for methicillin-resistant <em>Staphylococcus aureus</em> bacteremia with intravenous daptomycin, planned for 6 weeks. He also takes simvastatin 40 mg daily, lisinopril and metformin. Creatine kinase at the start of therapy is 90 U/L (reference 25–200). In addition to stopping simvastatin for the duration of therapy, which of the following monitoring plans is most appropriate for this antibiotic?</p>",
+   "options": [
+    "Weekly serum creatine kinase",
+    "Weekly audiometry",
+    "Serum trough drug levels before every fourth dose",
+    "Weekly ECG for QT prolongation",
+    "Weekly ophthalmologic examination"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Daptomycin can cause myopathy and rhabdomyolysis, with a higher risk when combined with statins or in kidney impairment. CK should be measured at baseline and at least weekly, and statins are usually held during therapy. Daptomycin should be stopped for unexplained muscle symptoms with CK above 5 times the upper limit, or CK above 10 times the limit without symptoms.</p><p><strong>Takeaway:</strong> daptomycin requires weekly CK monitoring, and statins are usually held.</p>",
+   "whyNot": {
+    "B": "Audiometry monitors ototoxicity from aminoglycosides, which he is not receiving.",
+    "C": "Trough-level monitoring is routine for vancomycin and aminoglycosides, not daptomycin.",
+    "D": "QT monitoring matters for macrolides and fluoroquinolones; daptomycin does not prolong QT significantly.",
+    "E": "Eye examinations monitor ethambutol, hydroxychloroquine and linezolid optic neuropathy, not daptomycin."
+   },
+   "objective": "Monitor CK weekly during daptomycin therapy.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pc_pharmacotherapy"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "antibiotic adverse effects"
+   ]
+  },
+  {
+   "n": 11,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 1,
+   "stemHtml": "<p>Which of the following conclusions is best supported by this study?</p>",
+   "options": [
+    "Atorvastatin 20 mg did not meaningfully increase muscle symptoms compared with placebo in this population",
+    "Atorvastatin 20 mg caused clinically important myopathy in about 9% of treatment periods",
+    "Statins of any type and dose can be given safely to anyone with prior muscle symptoms",
+    "Placebo tablets caused measurable muscle damage",
+    "Patients in this trial had psychiatric disorders explaining their symptoms"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Symptom scores were almost the same on atorvastatin and placebo (difference 0.2 on a 10-point scale, with a confidence interval that includes zero), and early discontinuations were 9% versus 8%. In this population, most symptoms people had attributed to their statin occurred just as often on placebo, which is consistent with a nocebo effect or background symptoms rather than drug toxicity. Meanwhile, LDL fell substantially.</p><p><strong>Takeaway:</strong> in blinded comparisons, most statin-attributed muscle symptoms occur as often on placebo; rechallenge is reasonable for most patients.</p>",
+   "whyNot": {
+    "B": "Symptoms ended 8% of placebo periods as well, so the drug-attributable fraction is about 1 percentage point, and no CK elevations occurred.",
+    "C": "The trial tested one statin at one dose and excluded people with prior rhabdomyolysis, large CK rises or anti-HMGCR antibodies, so the result cannot be extended to everyone.",
+    "D": "No CK rises occurred in either arm; symptoms on placebo do not mean muscle damage.",
+    "E": "The trial measured symptoms, not psychiatric diagnoses; similar symptom rates do not show that patients had a psychiatric disorder."
+   },
+   "objective": "Interpret a blinded crossover trial of statin-associated muscle symptoms.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 2,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "evidence-based medicine",
+    "lipid therapy"
+   ]
+  },
+  {
+   "n": 12,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 2,
+   "stemHtml": "<p>Which feature of the study design was most important for separating a true drug effect from patients' expectations about the drug?</p>",
+   "options": [
+    "Identical-looking placebo with blinding of participants",
+    "Inclusion of participants older than 75 years",
+    "Measurement of LDL cholesterol in each period",
+    "Exclusion of patients with anti-HMG-CoA reductase antibodies",
+    "Use of a 0–10 symptom scale"
+   ],
+   "answer": "A",
+   "explanationHtml": "<p>Expectation (nocebo) effects are strong for subjective outcomes such as muscle aches. Only if participants cannot tell statin from placebo can symptoms during placebo periods measure expectation and background symptoms, leaving the difference between arms as the drug effect. The crossover design, with each patient as their own control, adds statistical efficiency, but blinding is what removes expectation bias.</p><p><strong>Takeaway:</strong> blinding is essential when the outcome is subjective.</p>",
+   "whyNot": {
+    "B": "Including older adults improves applicability to them but does not control expectation bias.",
+    "C": "LDL measurement confirms adherence and drug activity; it does not separate drug effects from expectations, and could even unblind clinicians if reported during the trial.",
+    "D": "Excluding antibody-positive patients defines the population; it does not address expectation bias.",
+    "E": "A symptom scale quantifies the outcome but would be just as biased without blinding."
+   },
+   "objective": "Identify blinding as the key safeguard against expectation bias for subjective outcomes.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "evidence-based medicine",
+    "lipid therapy"
+   ]
+  },
+  {
+   "n": 13,
+   "exam": "step2ck",
+   "format": "abstract",
+   "set": 1,
+   "setOrder": 3,
+   "stemHtml": "<p>Using the proportions of periods ended early for intolerable symptoms, approximately how many treatment periods with atorvastatin rather than placebo would result in one additional period ended early because of symptoms?</p>",
+   "options": [
+    "1",
+    "11",
+    "17",
+    "100",
+    "1,000"
+   ],
+   "answer": "D",
+   "explanationHtml": "<p>The absolute risk increase is 9% − 8% = 1 percentage point (0.01). The number needed to harm is 1 ÷ 0.01 = 100 periods. A small absolute harm, set against a 45% fall in LDL, shapes the shared decision to rechallenge.</p><p><strong>Takeaway:</strong> NNH = 1 ÷ absolute risk increase; express risks as absolute differences for patients.</p>",
+   "whyNot": {
+    "A": "An NNH of 1 would mean every statin period caused an extra early stop, which the data do not show.",
+    "B": "11 is roughly 1 ÷ 0.09, which uses the statin-period rate alone and ignores the placebo rate.",
+    "C": "17 would correspond to an absolute difference of about 6 percentage points, far larger than the 1 point observed.",
+    "E": "1,000 would correspond to an absolute difference of 0.1 percentage points, ten times smaller than observed."
+   },
+   "objective": "Calculate number needed to harm from absolute risk difference.",
+   "extraAreas": [],
+   "disciplines": [],
+   "clinicalSciences": [
+    "medicine"
+   ],
+   "tasks": [
+    "pbli"
+   ],
+   "difficulty": 3,
+   "references": [],
+   "figures": [],
+   "tags": [
+    "evidence-based medicine"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "n": 1,
+   "section": 1,
+   "front": "Which statins are CYP3A4 substrates?",
+   "back": "Simvastatin, lovastatin and atorvastatin.",
+   "question": null
+  },
+  {
+   "n": 2,
+   "section": 1,
+   "front": "Gene whose variants raise simvastatin myopathy risk?",
+   "back": "SLCO1B1 (encodes the hepatic uptake transporter OATP1B1).",
+   "question": 2
+  },
+  {
+   "n": 3,
+   "section": 1,
+   "front": "Antibody in statin-associated necrotizing myopathy?",
+   "back": "Anti-HMG-CoA reductase.",
+   "question": 5
+  },
+  {
+   "n": 4,
+   "section": 1,
+   "front": "CK in glucocorticoid myopathy?",
+   "back": "Normal (type II fiber atrophy without necrosis).",
+   "question": 3
+  },
+  {
+   "n": 5,
+   "section": 1,
+   "front": "Mechanism of zidovudine myopathy?",
+   "back": "Inhibition of mitochondrial DNA polymerase γ; ragged red fibers.",
+   "question": 4
+  },
+  {
+   "n": 6,
+   "section": 1,
+   "front": "Colchicine neuromyopathy is precipitated by what?",
+   "back": "CKD and CYP3A4/P-glycoprotein inhibitors such as clarithromycin.",
+   "question": 1
+  },
+  {
+   "n": 7,
+   "section": 1,
+   "front": "Hydroxychloroquine myopathy finding on electron microscopy?",
+   "back": "Curvilinear bodies in a vacuolar myopathy.",
+   "question": null
+  },
+  {
+   "n": 8,
+   "section": 1,
+   "front": "Checkpoint-inhibitor myositis overlaps with which two conditions?",
+   "back": "Myocarditis and myasthenia-like weakness.",
+   "question": null
+  },
+  {
+   "n": 9,
+   "section": 2,
+   "front": "CK threshold to stop a statin regardless of symptoms?",
+   "back": "Above 10 times the upper limit of normal.",
+   "question": null
+  },
+  {
+   "n": 10,
+   "section": 2,
+   "front": "Next step for tolerable statin myalgia with CK under 10 times the limit?",
+   "back": "Pause, then rechallenge at a lower dose or with a different statin.",
+   "question": 7
+  },
+  {
+   "n": 11,
+   "section": 2,
+   "front": "Non-statin LDL-lowering options for statin intolerance?",
+   "back": "Ezetimibe, bempedoic acid, PCSK9 antibodies or inclisiran.",
+   "question": null
+  },
+  {
+   "n": 12,
+   "section": 2,
+   "front": "Which fibrate should never be combined with a statin?",
+   "back": "Gemfibrozil (use fenofibrate if needed).",
+   "question": null
+  },
+  {
+   "n": 13,
+   "section": 2,
+   "front": "Monitoring required with daptomycin?",
+   "back": "Weekly CK; consider holding statins.",
+   "question": 10
+  },
+  {
+   "n": 14,
+   "section": 2,
+   "front": "New weakness with normal CK on high-dose prednisone for myositis?",
+   "back": "Steroid myopathy: taper and keep the steroid-sparing agent.",
+   "question": 9
+  },
+  {
+   "n": 15,
+   "section": 2,
+   "front": "First step in checkpoint-inhibitor myositis with raised troponin?",
+   "back": "Hold the drug and start high-dose glucocorticoids.",
+   "question": 8
+  },
+  {
+   "n": 16,
+   "section": 2,
+   "front": "How is number needed to harm calculated?",
+   "back": "1 divided by the absolute risk increase.",
+   "question": 13
+  }
+ ]
+}
