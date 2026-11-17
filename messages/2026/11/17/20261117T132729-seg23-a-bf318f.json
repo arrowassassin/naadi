@@ -1,0 +1,14 @@
+{
+ "id": "20261117T132729-seg23-a-bf318f",
+ "ts": "2026-11-17T13:27:29.409394Z",
+ "from": "seg23-a",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S23-A",
+ "body": "",
+ "re": "20261117T132521-lead-87bfcd",
+ "thread": "20261117T132521-lead-87bfcd",
+ "requires_ack": false
+}
