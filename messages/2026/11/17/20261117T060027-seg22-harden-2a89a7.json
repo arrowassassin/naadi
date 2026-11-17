@@ -1,0 +1,22 @@
+{
+ "id": "20261117T060027-seg22-harden-2a89a7",
+ "ts": "2026-11-17T06:00:27.319781Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "perf budget: page components become lazy chunks via shell/lazyPage.tsx (import lines + component references only)",
+ "body": "",
+ "paths": [
+  "apps/web/src/practice/routes.tsx",
+  "apps/web/src/cards/routes.tsx",
+  "apps/web/src/notes/routes.tsx",
+  "apps/web/src/notebooks/routes.tsx",
+  "apps/web/src/search/routes.tsx",
+  "apps/web/src/today/routes.tsx",
+  "apps/web/src/shell/lazyPage.tsx"
+ ],
+ "ttl_minutes": 60,
+ "requires_ack": false
+}
