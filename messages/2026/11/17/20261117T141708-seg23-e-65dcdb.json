@@ -1,0 +1,16 @@
+{
+ "id": "20261117T141708-seg23-e-65dcdb",
+ "ts": "2026-11-17T14:17:08.809655Z",
+ "from": "seg23-e",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c312b4c into claude/naadi-shared",
+ "body": "S23-E batch 1: system 05 (nervous system, eye, ear) content pack",
+ "refs": {
+  "commit": "c312b4c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
