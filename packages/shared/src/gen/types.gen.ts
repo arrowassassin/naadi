@@ -378,7 +378,7 @@ export type AdminQuestion = {
   /**
    * Options
    */
-  options: Array<OptionOut>;
+  options: Array<NaadiApiAdminQuestionsOptionOut>;
   /**
    * Review
    */
@@ -1296,6 +1296,30 @@ export type BackupFacts = {
 };
 
 /**
+ * BatchConfirm
+ */
+export type BatchConfirm = {
+  /**
+   * Items
+   */
+  items: Array<BatchConfirmItem>;
+};
+
+/**
+ * BatchConfirmItem
+ */
+export type BatchConfirmItem = {
+  /**
+   * Item Id
+   */
+  item_id: string;
+  /**
+   * Option Id
+   */
+  option_id: string;
+};
+
+/**
  * BlockClock
  *
  * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
@@ -2120,7 +2144,7 @@ export type CardsOut = {
  * Cell
  */
 export type Cell = {
-  counts: Counts;
+  counts: NaadiApiAdminCoverageCounts;
   /**
    * Discipline Id
    */
@@ -2673,25 +2697,16 @@ export type ConfigUpdate = {
 };
 
 /**
- * Counts
+ * ConfirmBody
+ *
+ * Exactly one: the placement chosen on the confirm card, or the answer to the Vault prompt.
  */
-export type Counts = {
+export type ConfirmBody = {
+  placement?: PlacementChoice | null;
   /**
-   * Cards
+   * Vault
    */
-  cards?: number;
-  /**
-   * Questions
-   */
-  questions?: number;
-  /**
-   * Sections
-   */
-  sections?: number;
-  /**
-   * Videos
-   */
-  videos?: number;
+  vault?: "vault" | "continue" | "discard" | null;
 };
 
 /**
@@ -3325,6 +3340,59 @@ export type FieldError = {
 };
 
 /**
+ * FileOut
+ */
+export type FileOut = {
+  /**
+   * Expires In
+   */
+  expires_in: number;
+  /**
+   * Kind
+   */
+  kind:
+    | "pdf"
+    | "docx"
+    | "pptx"
+    | "xlsx"
+    | "csv"
+    | "txt"
+    | "md"
+    | "html"
+    | "epub"
+    | "rtf"
+    | "image"
+    | "audio"
+    | "video"
+    | "link"
+    | "anki"
+    | "zip"
+    | "paste";
+  /**
+   * Mime
+   */
+  mime: string | null;
+  /**
+   * Name
+   */
+  name: string | null;
+  /**
+   * Pages
+   */
+  pages: number | null;
+  /**
+   * Upload Id
+   */
+  upload_id: string;
+  /**
+   * Url
+   *
+   * Signed URL, valid for expires_in seconds
+   */
+  url: string;
+};
+
+/**
  * FlagIn
  */
 export type FlagIn = {
@@ -3418,6 +3486,22 @@ export type FsrsSchedulerConfig = {
     number,
     number,
   ];
+};
+
+/**
+ * GateOut
+ */
+export type GateOut = {
+  /**
+   * Doc Type
+   */
+  doc_type: string | null;
+  /**
+   * Signals
+   *
+   * Sensitivity signal codes (ingest.signal.<code>)
+   */
+  signals: Array<string>;
 };
 
 /**
@@ -3839,6 +3923,148 @@ export type IndexStatus = {
 };
 
 /**
+ * IngestItemList
+ */
+export type IngestItemList = {
+  /**
+   * Items
+   */
+  items: Array<IngestItemOut>;
+  /**
+   * Next Before
+   */
+  next_before: string | null;
+};
+
+/**
+ * IngestItemOut
+ */
+export type IngestItemOut = {
+  /**
+   * Batch Id
+   */
+  batch_id: string | null;
+  /**
+   * Bundle Files
+   */
+  bundle_files?: number | null;
+  /**
+   * Bytes
+   */
+  bytes: number | null;
+  /**
+   * Chapter Id
+   *
+   * The private chapter this item became (or duplicates)
+   */
+  chapter_id: string | null;
+  counts: NaadiApiIngestModelsCounts | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Duplicate
+   */
+  duplicate: "exact" | "near" | null;
+  /**
+   * Duplicate Of
+   */
+  duplicate_of: string | null;
+  /**
+   * Error
+   *
+   * Reason code when failed (ingest.error.<code>)
+   */
+  error: string | null;
+  /**
+   * Set while the Vault prompt waits
+   */
+  gate: GateOut | null;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Input Kind
+   */
+  input_kind:
+    | "pdf"
+    | "docx"
+    | "pptx"
+    | "xlsx"
+    | "csv"
+    | "txt"
+    | "md"
+    | "html"
+    | "epub"
+    | "rtf"
+    | "image"
+    | "audio"
+    | "video"
+    | "link"
+    | "anki"
+    | "zip"
+    | "paste"
+    | null;
+  /**
+   * Name
+   *
+   * File name, page title or link host
+   */
+  name: string | null;
+  /**
+   * Options
+   *
+   * The confirm card's placements, best first
+   */
+  options: Array<NaadiApiIngestModelsOptionOut>;
+  /**
+   * Pages
+   */
+  pages: number | null;
+  placed: PlacedOut | null;
+  /**
+   * Progress
+   */
+  progress: number;
+  /**
+   * Retryable
+   */
+  retryable: boolean;
+  /**
+   * Stage
+   */
+  stage:
+    | "upload"
+    | "receive"
+    | "vault"
+    | "extract"
+    | "understand"
+    | "propose"
+    | "confirm"
+    | "place"
+    | "done"
+    | "vaulted";
+  /**
+   * Status
+   */
+  status: "received" | "extracting" | "needs_confirmation" | "placing" | "ready" | "failed" | "vaulted";
+  /**
+   * Updated At
+   */
+  updated_at: string;
+  /**
+   * Upload Id
+   */
+  upload_id: string | null;
+  /**
+   * Url
+   */
+  url: string | null;
+};
+
+/**
  * InkChangesIn
  */
 export type InkChangesIn = {
@@ -4175,6 +4401,120 @@ export type LessonLink = {
    * Title
    */
   title: string;
+};
+
+/**
+ * LibraryChapter
+ */
+export type LibraryChapter = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Item Id
+   */
+  item_id: string | null;
+  /**
+   * Kind
+   */
+  kind: "user_upload" | "user_kb";
+  /**
+   * Sections
+   */
+  sections: number;
+  /**
+   * Title
+   */
+  title: string;
+  /**
+   * Updated At
+   */
+  updated_at: string;
+};
+
+/**
+ * LibraryKb
+ */
+export type LibraryKb = {
+  /**
+   * Chapter Id
+   */
+  chapter_id: string | null;
+  /**
+   * Created At
+   */
+  created_at: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Item Id
+   */
+  item_id: string | null;
+  /**
+   * Kind
+   */
+  kind: "url" | "file" | "paste";
+  /**
+   * Status
+   */
+  status: "processing" | "ready" | "failed" | "needs_confirmation";
+  /**
+   * Title
+   */
+  title: string | null;
+  /**
+   * Url
+   */
+  url: string | null;
+};
+
+/**
+ * LibraryLimits
+ */
+export type LibraryLimits = {
+  /**
+   * Enabled
+   */
+  enabled: boolean;
+  /**
+   * Max File Mb
+   */
+  max_file_mb: number;
+  /**
+   * Max Paste Chars
+   */
+  max_paste_chars: number;
+};
+
+/**
+ * LibraryOut
+ */
+export type LibraryOut = {
+  /**
+   * Accepts
+   *
+   * Extra input kinds a registered placement takes (e.g. anki once S20 lands)
+   */
+  accepts: Array<string>;
+  /**
+   * Chapters
+   */
+  chapters: Array<LibraryChapter>;
+  /**
+   * Items
+   *
+   * Files, links and pastes, newest first (bundles' members included)
+   */
+  items: Array<IngestItemOut>;
+  /**
+   * Kb
+   */
+  kb: Array<LibraryKb>;
+  limits: LibraryLimits;
+  storage: StorageOut;
 };
 
 /**
@@ -5238,20 +5578,6 @@ export type OptionIn = {
 };
 
 /**
- * OptionOut
- */
-export type OptionOut = {
-  /**
-   * Html
-   */
-  html: string;
-  /**
-   * Label
-   */
-  label: string;
-};
-
-/**
  * PageCreate
  */
 export type PageCreate = {
@@ -5308,6 +5634,42 @@ export type PageOrder = {
 };
 
 /**
+ * PageTextOut
+ */
+export type PageTextOut = {
+  /**
+   * Page
+   */
+  page: number;
+  /**
+   * Pages
+   */
+  pages: number;
+  /**
+   * Text
+   */
+  text: string;
+  /**
+   * Upload Id
+   */
+  upload_id: string;
+};
+
+/**
+ * PasteCreate
+ */
+export type PasteCreate = {
+  /**
+   * Text
+   */
+  text: string;
+  /**
+   * Title
+   */
+  title?: string | null;
+};
+
+/**
  * PathwayStageOut
  */
 export type PathwayStageOut = {
@@ -5327,6 +5689,38 @@ export type PathwayStageOut = {
    * Total
    */
   total: number;
+};
+
+/**
+ * PlacedOut
+ */
+export type PlacedOut = {
+  /**
+   * Can Undo
+   */
+  can_undo: boolean;
+  /**
+   * Chapter Id
+   */
+  chapter_id?: string | null;
+  /**
+   * Kind
+   */
+  kind: string;
+  /**
+   * Rows
+   */
+  rows: number;
+};
+
+/**
+ * PlacementChoice
+ */
+export type PlacementChoice = {
+  /**
+   * Option Id
+   */
+  option_id: string;
 };
 
 /**
@@ -8081,6 +8475,24 @@ export type SourceRef = {
 };
 
 /**
+ * StorageOut
+ */
+export type StorageOut = {
+  /**
+   * Limit Bytes
+   */
+  limit_bytes: number;
+  /**
+   * Remaining Bytes
+   */
+  remaining_bytes: number;
+  /**
+   * Used Bytes
+   */
+  used_bytes: number;
+};
+
+/**
  * StudentItemIn
  */
 export type StudentItemIn = {
@@ -8138,7 +8550,7 @@ export type StudentItemsOut = {
  * SystemCoverage
  */
 export type SystemCoverage = {
-  counts: Counts;
+  counts: NaadiApiAdminCoverageCounts;
   /**
    * Id
    */
@@ -8482,7 +8894,7 @@ export type TodayRebalance = {
  * TopicCoverage
  */
 export type TopicCoverage = {
-  counts: Counts;
+  counts: NaadiApiAdminCoverageCounts;
   /**
    * Id
    */
@@ -8567,6 +8979,110 @@ export type TrendPoint = {
    * Score
    */
   score: number;
+};
+
+/**
+ * UploadBatchCreate
+ *
+ * Many files dropped together (one request: S22's heavy-route limit is 30/min).
+ */
+export type UploadBatchCreate = {
+  /**
+   * Files
+   */
+  files: Array<UploadCreate>;
+};
+
+/**
+ * UploadBatchOut
+ */
+export type UploadBatchOut = {
+  /**
+   * Batch Id
+   */
+  batch_id: string;
+  /**
+   * Tickets
+   */
+  tickets: Array<UploadTicket>;
+};
+
+/**
+ * UploadCreate
+ */
+export type UploadCreate = {
+  /**
+   * Batch Id
+   *
+   * Files dropped together share one batch
+   */
+  batch_id?: string | null;
+  /**
+   * Content Type
+   *
+   * The MIME type the browser will upload with
+   */
+  content_type: string;
+  /**
+   * Name
+   *
+   * The file name as the student chose it
+   */
+  name: string;
+  /**
+   * Size
+   *
+   * Bytes
+   */
+  size: number;
+};
+
+/**
+ * UploadTicket
+ */
+export type UploadTicket = {
+  /**
+   * Bucket
+   */
+  bucket: string;
+  /**
+   * Expires In
+   */
+  expires_in: number;
+  /**
+   * Item Id
+   */
+  item_id: string;
+  /**
+   * Path
+   *
+   * Object path inside the bucket ({user_id}/{item_id}/original)
+   */
+  path: string;
+  /**
+   * Token
+   *
+   * Signed-upload token for supabase-js uploadToSignedUrl
+   */
+  token: string;
+  /**
+   * Upload Id
+   */
+  upload_id: string;
+};
+
+/**
+ * UrlCreate
+ */
+export type UrlCreate = {
+  /**
+   * Batch Id
+   */
+  batch_id?: string | null;
+  /**
+   * Url
+   */
+  url: string;
 };
 
 /**
@@ -9145,6 +9661,42 @@ export type WeightOverlay = {
 };
 
 /**
+ * Counts
+ */
+export type NaadiApiAdminCoverageCounts = {
+  /**
+   * Cards
+   */
+  cards?: number;
+  /**
+   * Questions
+   */
+  questions?: number;
+  /**
+   * Sections
+   */
+  sections?: number;
+  /**
+   * Videos
+   */
+  videos?: number;
+};
+
+/**
+ * OptionOut
+ */
+export type NaadiApiAdminQuestionsOptionOut = {
+  /**
+   * Html
+   */
+  html: string;
+  /**
+   * Label
+   */
+  label: string;
+};
+
+/**
  * ExamOption
  */
 export type NaadiApiCoursesExamOption = {
@@ -9160,6 +9712,72 @@ export type NaadiApiCoursesExamOption = {
    * Label
    */
   label: string;
+};
+
+/**
+ * Counts
+ */
+export type NaadiApiIngestModelsCounts = {
+  /**
+   * Duration S
+   */
+  duration_s?: number | null;
+  /**
+   * Figures
+   */
+  figures?: number | null;
+  /**
+   * Mcqs
+   */
+  mcqs?: number | null;
+  /**
+   * Pages
+   */
+  pages?: number | null;
+  /**
+   * Qa Pairs
+   */
+  qa_pairs?: number | null;
+  /**
+   * Scanned
+   */
+  scanned?: number | null;
+  /**
+   * Sections
+   */
+  sections?: number | null;
+  /**
+   * Words
+   */
+  words?: number | null;
+};
+
+/**
+ * OptionOut
+ */
+export type NaadiApiIngestModelsOptionOut = {
+  /**
+   * Kind
+   *
+   * Placement kind (ui_copy ingest.placement.<kind>)
+   */
+  kind: string;
+  /**
+   * Option Id
+   */
+  option_id: string;
+  /**
+   * Preview
+   *
+   * Counts, titles and target ids; never an answer
+   */
+  preview: {
+    [key: string]: unknown;
+  };
+  /**
+   * Recommended
+   */
+  recommended: boolean;
 };
 
 /**
@@ -14747,6 +15365,752 @@ export type GetHealthResponses = {
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
 
+export type ConfirmIngestBatchData = {
+  body: BatchConfirm;
+  path: {
+    /**
+     * Batch Id
+     */
+    batch_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/batches/{batch_id}/confirm";
+};
+
+export type ConfirmIngestBatchErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * ingest_state_conflict (the item is not in a state for this)
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ConfirmIngestBatchError = ConfirmIngestBatchErrors[keyof ConfirmIngestBatchErrors];
+
+export type ConfirmIngestBatchResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemList;
+};
+
+export type ConfirmIngestBatchResponse = ConfirmIngestBatchResponses[keyof ConfirmIngestBatchResponses];
+
+export type StartIngestBatchData = {
+  body?: never;
+  path: {
+    /**
+     * Batch Id
+     */
+    batch_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/batches/{batch_id}/start";
+};
+
+export type StartIngestBatchErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type StartIngestBatchError = StartIngestBatchErrors[keyof StartIngestBatchErrors];
+
+export type StartIngestBatchResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemList;
+};
+
+export type StartIngestBatchResponse = StartIngestBatchResponses[keyof StartIngestBatchResponses];
+
+export type ListIngestItemsData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Status
+     */
+    status?: string | null;
+    /**
+     * Before
+     */
+    before?: string | null;
+    /**
+     * Limit
+     */
+    limit?: number;
+  };
+  url: "/api/ingest/items";
+};
+
+export type ListIngestItemsErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ListIngestItemsError = ListIngestItemsErrors[keyof ListIngestItemsErrors];
+
+export type ListIngestItemsResponses = {
+  /**
+   * Successful Response
+   */
+  200: IngestItemList;
+};
+
+export type ListIngestItemsResponse = ListIngestItemsResponses[keyof ListIngestItemsResponses];
+
+export type DeleteIngestItemData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/items/{item_id}";
+};
+
+export type DeleteIngestItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * ingest_state_conflict (the item is not in a state for this)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type DeleteIngestItemError = DeleteIngestItemErrors[keyof DeleteIngestItemErrors];
+
+export type DeleteIngestItemResponses = {
+  /**
+   * Successful Response
+   */
+  204: void;
+};
+
+export type DeleteIngestItemResponse = DeleteIngestItemResponses[keyof DeleteIngestItemResponses];
+
+export type GetIngestItemData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/items/{item_id}";
+};
+
+export type GetIngestItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetIngestItemError = GetIngestItemErrors[keyof GetIngestItemErrors];
+
+export type GetIngestItemResponses = {
+  /**
+   * Successful Response
+   */
+  200: IngestItemOut;
+};
+
+export type GetIngestItemResponse = GetIngestItemResponses[keyof GetIngestItemResponses];
+
+export type ConfirmIngestItemData = {
+  body: ConfirmBody;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/items/{item_id}/confirm";
+};
+
+export type ConfirmIngestItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * ingest_state_conflict (the item is not in a state for this)
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type ConfirmIngestItemError = ConfirmIngestItemErrors[keyof ConfirmIngestItemErrors];
+
+export type ConfirmIngestItemResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemOut;
+};
+
+export type ConfirmIngestItemResponse = ConfirmIngestItemResponses[keyof ConfirmIngestItemResponses];
+
+export type RetryIngestItemData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/items/{item_id}/retry";
+};
+
+export type RetryIngestItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * ingest_state_conflict (the item is not in a state for this)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type RetryIngestItemError = RetryIngestItemErrors[keyof RetryIngestItemErrors];
+
+export type RetryIngestItemResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemOut;
+};
+
+export type RetryIngestItemResponse = RetryIngestItemResponses[keyof RetryIngestItemResponses];
+
+export type StartIngestItemData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/items/{item_id}/start";
+};
+
+export type StartIngestItemErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * ingest_state_conflict (the item is not in a state for this)
+   */
+  409: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type StartIngestItemError = StartIngestItemErrors[keyof StartIngestItemErrors];
+
+export type StartIngestItemResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemOut;
+};
+
+export type StartIngestItemResponse = StartIngestItemResponses[keyof StartIngestItemResponses];
+
+export type UndoIngestPlacementData = {
+  body?: never;
+  path: {
+    /**
+     * Item Id
+     */
+    item_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/items/{item_id}/undo";
+};
+
+export type UndoIngestPlacementErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * ingest_state_conflict (the item is not in a state for this)
+   */
+  409: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type UndoIngestPlacementError = UndoIngestPlacementErrors[keyof UndoIngestPlacementErrors];
+
+export type UndoIngestPlacementResponses = {
+  /**
+   * Successful Response
+   */
+  200: IngestItemOut;
+};
+
+export type UndoIngestPlacementResponse = UndoIngestPlacementResponses[keyof UndoIngestPlacementResponses];
+
+export type CreateIngestPasteData = {
+  body: PasteCreate;
+  path?: never;
+  query?: never;
+  url: "/api/ingest/paste";
+};
+
+export type CreateIngestPasteErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateIngestPasteError = CreateIngestPasteErrors[keyof CreateIngestPasteErrors];
+
+export type CreateIngestPasteResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemOut;
+};
+
+export type CreateIngestPasteResponse = CreateIngestPasteResponses[keyof CreateIngestPasteResponses];
+
+export type CreateIngestUploadData = {
+  body: UploadCreate;
+  path?: never;
+  query?: never;
+  url: "/api/ingest/uploads";
+};
+
+export type CreateIngestUploadErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateIngestUploadError = CreateIngestUploadErrors[keyof CreateIngestUploadErrors];
+
+export type CreateIngestUploadResponses = {
+  /**
+   * Successful Response
+   */
+  201: UploadTicket;
+};
+
+export type CreateIngestUploadResponse = CreateIngestUploadResponses[keyof CreateIngestUploadResponses];
+
+export type CreateIngestUploadBatchData = {
+  body: UploadBatchCreate;
+  path?: never;
+  query?: never;
+  url: "/api/ingest/uploads/batch";
+};
+
+export type CreateIngestUploadBatchErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateIngestUploadBatchError = CreateIngestUploadBatchErrors[keyof CreateIngestUploadBatchErrors];
+
+export type CreateIngestUploadBatchResponses = {
+  /**
+   * Successful Response
+   */
+  201: UploadBatchOut;
+};
+
+export type CreateIngestUploadBatchResponse = CreateIngestUploadBatchResponses[keyof CreateIngestUploadBatchResponses];
+
+export type GetIngestFileData = {
+  body?: never;
+  path: {
+    /**
+     * Upload Id
+     */
+    upload_id: string;
+  };
+  query?: never;
+  url: "/api/ingest/uploads/{upload_id}/file";
+};
+
+export type GetIngestFileErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetIngestFileError = GetIngestFileErrors[keyof GetIngestFileErrors];
+
+export type GetIngestFileResponses = {
+  /**
+   * Successful Response
+   */
+  200: FileOut;
+};
+
+export type GetIngestFileResponse = GetIngestFileResponses[keyof GetIngestFileResponses];
+
+export type GetIngestPageTextData = {
+  body?: never;
+  path: {
+    /**
+     * Upload Id
+     */
+    upload_id: string;
+    /**
+     * Page
+     */
+    page: number;
+  };
+  query?: never;
+  url: "/api/ingest/uploads/{upload_id}/pages/{page}";
+};
+
+export type GetIngestPageTextErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * ingest_item_not_found
+   */
+  404: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetIngestPageTextError = GetIngestPageTextErrors[keyof GetIngestPageTextErrors];
+
+export type GetIngestPageTextResponses = {
+  /**
+   * Successful Response
+   */
+  200: PageTextOut;
+};
+
+export type GetIngestPageTextResponse = GetIngestPageTextResponses[keyof GetIngestPageTextResponses];
+
+export type CreateIngestUrlData = {
+  body: UrlCreate;
+  path?: never;
+  query?: never;
+  url: "/api/ingest/urls";
+};
+
+export type CreateIngestUrlErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled
+   */
+  422: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type CreateIngestUrlError = CreateIngestUrlErrors[keyof CreateIngestUrlErrors];
+
+export type CreateIngestUrlResponses = {
+  /**
+   * Successful Response
+   */
+  202: IngestItemOut;
+};
+
+export type CreateIngestUrlResponse = CreateIngestUrlResponses[keyof CreateIngestUrlResponses];
+
 export type ConvertInkToTextData = {
   body: Blob | File;
   path?: never;
@@ -14943,6 +16307,43 @@ export type GetLabValuesResponses = {
 };
 
 export type GetLabValuesResponse = GetLabValuesResponses[keyof GetLabValuesResponses];
+
+export type GetLibraryData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/library";
+};
+
+export type GetLibraryErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * library_disabled (the Library is off for this account)
+   */
+  403: ErrorResponse;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * ingest_unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetLibraryError = GetLibraryErrors[keyof GetLibraryErrors];
+
+export type GetLibraryResponses = {
+  /**
+   * Successful Response
+   */
+  200: LibraryOut;
+};
+
+export type GetLibraryResponse = GetLibraryResponses[keyof GetLibraryResponses];
 
 export type GetMeData = {
   body?: never;

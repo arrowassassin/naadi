@@ -38,6 +38,12 @@ import type {
   ChangeBlockSectionData,
   ChangeBlockSectionErrors,
   ChangeBlockSectionResponses,
+  ConfirmIngestBatchData,
+  ConfirmIngestBatchErrors,
+  ConfirmIngestBatchResponses,
+  ConfirmIngestItemData,
+  ConfirmIngestItemErrors,
+  ConfirmIngestItemResponses,
   ConvertInkToTextData,
   ConvertInkToTextErrors,
   ConvertInkToTextResponses,
@@ -62,6 +68,18 @@ import type {
   CreateDiagnosticData,
   CreateDiagnosticErrors,
   CreateDiagnosticResponses,
+  CreateIngestPasteData,
+  CreateIngestPasteErrors,
+  CreateIngestPasteResponses,
+  CreateIngestUploadBatchData,
+  CreateIngestUploadBatchErrors,
+  CreateIngestUploadBatchResponses,
+  CreateIngestUploadData,
+  CreateIngestUploadErrors,
+  CreateIngestUploadResponses,
+  CreateIngestUrlData,
+  CreateIngestUrlErrors,
+  CreateIngestUrlResponses,
   CreateMockBlockData,
   CreateMockBlockErrors,
   CreateMockBlockResponses,
@@ -98,6 +116,9 @@ import type {
   DeleteImportedAnkiDeckData,
   DeleteImportedAnkiDeckErrors,
   DeleteImportedAnkiDeckResponses,
+  DeleteIngestItemData,
+  DeleteIngestItemErrors,
+  DeleteIngestItemResponses,
   DeleteNotebookData,
   DeleteNotebookErrors,
   DeleteNotebookResponses,
@@ -215,12 +236,24 @@ import type {
   GetHealthData,
   GetHealthErrors,
   GetHealthResponses,
+  GetIngestFileData,
+  GetIngestFileErrors,
+  GetIngestFileResponses,
+  GetIngestItemData,
+  GetIngestItemErrors,
+  GetIngestItemResponses,
+  GetIngestPageTextData,
+  GetIngestPageTextErrors,
+  GetIngestPageTextResponses,
   GetInkLayerData,
   GetInkLayerErrors,
   GetInkLayerResponses,
   GetLabValuesData,
   GetLabValuesErrors,
   GetLabValuesResponses,
+  GetLibraryData,
+  GetLibraryErrors,
+  GetLibraryResponses,
   GetMeData,
   GetMeErrors,
   GetMeResponses,
@@ -331,6 +364,9 @@ import type {
   ListGeneratedApiGeneratedGetData,
   ListGeneratedApiGeneratedGetErrors,
   ListGeneratedApiGeneratedGetResponses,
+  ListIngestItemsData,
+  ListIngestItemsErrors,
+  ListIngestItemsResponses,
   ListNotebooksData,
   ListNotebooksErrors,
   ListNotebooksResponses,
@@ -406,6 +442,9 @@ import type {
   ResubmitReviewItemData,
   ResubmitReviewItemErrors,
   ResubmitReviewItemResponses,
+  RetryIngestItemData,
+  RetryIngestItemErrors,
+  RetryIngestItemResponses,
   RevertAppConfigData,
   RevertAppConfigErrors,
   RevertAppConfigResponses,
@@ -463,6 +502,12 @@ import type {
   StartExportData,
   StartExportErrors,
   StartExportResponses,
+  StartIngestBatchData,
+  StartIngestBatchErrors,
+  StartIngestBatchResponses,
+  StartIngestItemData,
+  StartIngestItemErrors,
+  StartIngestItemResponses,
   StartPlanRebalanceData,
   StartPlanRebalanceErrors,
   StartPlanRebalanceResponses,
@@ -472,6 +517,9 @@ import type {
   SubmitReviewData,
   SubmitReviewErrors,
   SubmitReviewResponses,
+  UndoIngestPlacementData,
+  UndoIngestPlacementErrors,
+  UndoIngestPlacementResponses,
   UpdateAdminQuestionData,
   UpdateAdminQuestionErrors,
   UpdateAdminQuestionResponses,
@@ -519,6 +567,12 @@ import {
   zCancelAdminAgentRunResponse,
   zChangeBlockSectionPath,
   zChangeBlockSectionResponse,
+  zConfirmIngestBatchBody,
+  zConfirmIngestBatchPath,
+  zConfirmIngestBatchResponse,
+  zConfirmIngestItemBody,
+  zConfirmIngestItemPath,
+  zConfirmIngestItemResponse,
   zConvertInkToTextBody,
   zConvertInkToTextResponse,
   zCreateAdminChapterBody,
@@ -536,6 +590,14 @@ import {
   zCreateCardBody,
   zCreateCardResponse,
   zCreateDiagnosticResponse,
+  zCreateIngestPasteBody,
+  zCreateIngestPasteResponse,
+  zCreateIngestUploadBatchBody,
+  zCreateIngestUploadBatchResponse,
+  zCreateIngestUploadBody,
+  zCreateIngestUploadResponse,
+  zCreateIngestUrlBody,
+  zCreateIngestUrlResponse,
   zCreateMockBlockBody,
   zCreateMockBlockResponse,
   zCreateNoteBody,
@@ -561,6 +623,8 @@ import {
   zDeleteGeneratedApiGeneratedMediaIdDeleteResponse,
   zDeleteImportedAnkiDeckQuery,
   zDeleteImportedAnkiDeckResponse,
+  zDeleteIngestItemPath,
+  zDeleteIngestItemResponse,
   zDeleteNotebookPath,
   zDeleteNotebookResponse,
   zDeleteNotePath,
@@ -634,10 +698,17 @@ import {
   zGetGeneratedApiGeneratedMediaIdGetPath,
   zGetGeneratedApiGeneratedMediaIdGetResponse,
   zGetHealthResponse,
+  zGetIngestFilePath,
+  zGetIngestFileResponse,
+  zGetIngestItemPath,
+  zGetIngestItemResponse,
+  zGetIngestPageTextPath,
+  zGetIngestPageTextResponse,
   zGetInkLayerPath,
   zGetInkLayerQuery,
   zGetInkLayerResponse,
   zGetLabValuesResponse,
+  zGetLibraryResponse,
   zGetMeResponse,
   zGetNavResponse,
   zGetNotebookPath,
@@ -696,6 +767,8 @@ import {
   zListExportsResponse,
   zListGeneratedApiGeneratedGetQuery,
   zListGeneratedApiGeneratedGetResponse,
+  zListIngestItemsQuery,
+  zListIngestItemsResponse,
   zListNotebooksResponse,
   zListNotesQuery,
   zListNotesResponse,
@@ -753,6 +826,8 @@ import {
   zReportIssueResponse,
   zResubmitReviewItemPath,
   zResubmitReviewItemResponse,
+  zRetryIngestItemPath,
+  zRetryIngestItemResponse,
   zRevertAppConfigBody,
   zRevertAppConfigPath,
   zRevertAppConfigResponse,
@@ -797,12 +872,18 @@ import {
   zStartAuthoringRunResponse,
   zStartExportBody,
   zStartExportResponse,
+  zStartIngestBatchPath,
+  zStartIngestBatchResponse,
+  zStartIngestItemPath,
+  zStartIngestItemResponse,
   zStartPlanRebalanceResponse,
   zStartSeedBody,
   zStartSeedResponse,
   zSubmitReviewBody,
   zSubmitReviewPath,
   zSubmitReviewResponse,
+  zUndoIngestPlacementPath,
+  zUndoIngestPlacementResponse,
   zUpdateAdminQuestionBody,
   zUpdateAdminQuestionPath,
   zUpdateAdminQuestionResponse,
@@ -3346,6 +3427,330 @@ export const getHealth = <ThrowOnError extends boolean = false>(
   });
 
 /**
+ * One grouped confirm for the items of a batch
+ */
+export const confirmIngestBatch = <ThrowOnError extends boolean = false>(
+  options: Options<ConfirmIngestBatchData, ThrowOnError>,
+): RequestResult<ConfirmIngestBatchResponses, ConfirmIngestBatchErrors, ThrowOnError> =>
+  (options.client ?? client).post<ConfirmIngestBatchResponses, ConfirmIngestBatchErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zConfirmIngestBatchBody,
+          path: zConfirmIngestBatchPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zConfirmIngestBatchResponse.parseAsync(data),
+    url: "/api/ingest/batches/{batch_id}/confirm",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Start every uploaded item of a batch (files that never arrived are skipped)
+ */
+export const startIngestBatch = <ThrowOnError extends boolean = false>(
+  options: Options<StartIngestBatchData, ThrowOnError>,
+): RequestResult<StartIngestBatchResponses, StartIngestBatchErrors, ThrowOnError> =>
+  (options.client ?? client).post<StartIngestBatchResponses, StartIngestBatchErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zStartIngestBatchPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zStartIngestBatchResponse.parseAsync(data),
+    url: "/api/ingest/batches/{batch_id}/start",
+    ...options,
+  });
+
+/**
+ * The student's ingest items, newest first
+ */
+export const listIngestItems = <ThrowOnError extends boolean = false>(
+  options?: Options<ListIngestItemsData, ThrowOnError>,
+): RequestResult<ListIngestItemsResponses, ListIngestItemsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListIngestItemsResponses, ListIngestItemsErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: zListIngestItemsQuery.optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zListIngestItemsResponse.parseAsync(data),
+    url: "/api/ingest/items",
+    ...options,
+  });
+
+/**
+ * Delete an item with its files and anything it placed
+ */
+export const deleteIngestItem = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteIngestItemData, ThrowOnError>,
+): RequestResult<DeleteIngestItemResponses, DeleteIngestItemErrors, ThrowOnError> =>
+  (options.client ?? client).delete<DeleteIngestItemResponses, DeleteIngestItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zDeleteIngestItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zDeleteIngestItemResponse.parseAsync(data),
+    url: "/api/ingest/items/{item_id}",
+    ...options,
+  });
+
+/**
+ * One ingest item
+ */
+export const getIngestItem = <ThrowOnError extends boolean = false>(
+  options: Options<GetIngestItemData, ThrowOnError>,
+): RequestResult<GetIngestItemResponses, GetIngestItemErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetIngestItemResponses, GetIngestItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetIngestItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetIngestItemResponse.parseAsync(data),
+    url: "/api/ingest/items/{item_id}",
+    ...options,
+  });
+
+/**
+ * Answer the item's confirm card (a placement) or its Vault prompt
+ */
+export const confirmIngestItem = <ThrowOnError extends boolean = false>(
+  options: Options<ConfirmIngestItemData, ThrowOnError>,
+): RequestResult<ConfirmIngestItemResponses, ConfirmIngestItemErrors, ThrowOnError> =>
+  (options.client ?? client).post<ConfirmIngestItemResponses, ConfirmIngestItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zConfirmIngestItemBody,
+          path: zConfirmIngestItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zConfirmIngestItemResponse.parseAsync(data),
+    url: "/api/ingest/items/{item_id}/confirm",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Run a failed item again from the start
+ */
+export const retryIngestItem = <ThrowOnError extends boolean = false>(
+  options: Options<RetryIngestItemData, ThrowOnError>,
+): RequestResult<RetryIngestItemResponses, RetryIngestItemErrors, ThrowOnError> =>
+  (options.client ?? client).post<RetryIngestItemResponses, RetryIngestItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zRetryIngestItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zRetryIngestItemResponse.parseAsync(data),
+    url: "/api/ingest/items/{item_id}/retry",
+    ...options,
+  });
+
+/**
+ * Start processing an uploaded file (its background run)
+ */
+export const startIngestItem = <ThrowOnError extends boolean = false>(
+  options: Options<StartIngestItemData, ThrowOnError>,
+): RequestResult<StartIngestItemResponses, StartIngestItemErrors, ThrowOnError> =>
+  (options.client ?? client).post<StartIngestItemResponses, StartIngestItemErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zStartIngestItemPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zStartIngestItemResponse.parseAsync(data),
+    url: "/api/ingest/items/{item_id}/start",
+    ...options,
+  });
+
+/**
+ * Undo the placement: delete exactly what it created; the item waits for a new choice
+ */
+export const undoIngestPlacement = <ThrowOnError extends boolean = false>(
+  options: Options<UndoIngestPlacementData, ThrowOnError>,
+): RequestResult<UndoIngestPlacementResponses, UndoIngestPlacementErrors, ThrowOnError> =>
+  (options.client ?? client).post<UndoIngestPlacementResponses, UndoIngestPlacementErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zUndoIngestPlacementPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zUndoIngestPlacementResponse.parseAsync(data),
+    url: "/api/ingest/items/{item_id}/undo",
+    ...options,
+  });
+
+/**
+ * Add pasted text
+ */
+export const createIngestPaste = <ThrowOnError extends boolean = false>(
+  options: Options<CreateIngestPasteData, ThrowOnError>,
+): RequestResult<CreateIngestPasteResponses, CreateIngestPasteErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateIngestPasteResponses, CreateIngestPasteErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateIngestPasteBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateIngestPasteResponse.parseAsync(data),
+    url: "/api/ingest/paste",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Reserve an item and get a signed upload URL for user-uploads/{user}/{item}/original
+ */
+export const createIngestUpload = <ThrowOnError extends boolean = false>(
+  options: Options<CreateIngestUploadData, ThrowOnError>,
+): RequestResult<CreateIngestUploadResponses, CreateIngestUploadErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateIngestUploadResponses, CreateIngestUploadErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateIngestUploadBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateIngestUploadResponse.parseAsync(data),
+    url: "/api/ingest/uploads",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * Reserve items for many files dropped together and get their signed upload URLs
+ */
+export const createIngestUploadBatch = <ThrowOnError extends boolean = false>(
+  options: Options<CreateIngestUploadBatchData, ThrowOnError>,
+): RequestResult<CreateIngestUploadBatchResponses, CreateIngestUploadBatchErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateIngestUploadBatchResponses, CreateIngestUploadBatchErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateIngestUploadBatchBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateIngestUploadBatchResponse.parseAsync(data),
+    url: "/api/ingest/uploads/batch",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
+ * A short-lived signed URL of the student's original file
+ */
+export const getIngestFile = <ThrowOnError extends boolean = false>(
+  options: Options<GetIngestFileData, ThrowOnError>,
+): RequestResult<GetIngestFileResponses, GetIngestFileErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetIngestFileResponses, GetIngestFileErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetIngestFilePath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetIngestFileResponse.parseAsync(data),
+    url: "/api/ingest/uploads/{upload_id}/file",
+    ...options,
+  });
+
+/**
+ * One page's text of the student's PDF
+ */
+export const getIngestPageText = <ThrowOnError extends boolean = false>(
+  options: Options<GetIngestPageTextData, ThrowOnError>,
+): RequestResult<GetIngestPageTextResponses, GetIngestPageTextErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetIngestPageTextResponses, GetIngestPageTextErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: zGetIngestPageTextPath,
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetIngestPageTextResponse.parseAsync(data),
+    url: "/api/ingest/uploads/{upload_id}/pages/{page}",
+    ...options,
+  });
+
+/**
+ * Add a link (article, online PDF, YouTube) to the knowledge base
+ */
+export const createIngestUrl = <ThrowOnError extends boolean = false>(
+  options: Options<CreateIngestUrlData, ThrowOnError>,
+): RequestResult<CreateIngestUrlResponses, CreateIngestUrlErrors, ThrowOnError> =>
+  (options.client ?? client).post<CreateIngestUrlResponses, CreateIngestUrlErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: zCreateIngestUrlBody,
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zCreateIngestUrlResponse.parseAsync(data),
+    url: "/api/ingest/urls",
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+/**
  * Recognise the handwriting in a lasso selection (PNG body) and return the text; nothing is stored
  */
 export const convertInkToText = <ThrowOnError extends boolean = false>(
@@ -3431,6 +3836,26 @@ export const getLabValues = <ThrowOnError extends boolean = false>(
         .parseAsync(data),
     responseValidator: async (data) => await zGetLabValuesResponse.parseAsync(data),
     url: "/api/lab-values",
+    ...options,
+  });
+
+/**
+ * The student's Library: files, links and pastes, private chapters, KB entries and storage use
+ */
+export const getLibrary = <ThrowOnError extends boolean = false>(
+  options?: Options<GetLibraryData, ThrowOnError>,
+): RequestResult<GetLibraryResponses, GetLibraryErrors, ThrowOnError> =>
+  (options?.client ?? client).get<GetLibraryResponses, GetLibraryErrors, ThrowOnError>({
+    requestValidator: async (data) =>
+      await z
+        .object({
+          body: z.never().optional(),
+          path: z.never().optional(),
+          query: z.never().optional(),
+        })
+        .parseAsync(data),
+    responseValidator: async (data) => await zGetLibraryResponse.parseAsync(data),
+    url: "/api/library",
     ...options,
   });
 

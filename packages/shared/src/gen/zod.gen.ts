@@ -409,6 +409,25 @@ export const zBackupFacts = z.object({
 });
 
 /**
+ * BatchConfirmItem
+ */
+export const zBatchConfirmItem = z.object({
+  item_id: z.uuid(),
+  option_id: z
+    .string()
+    .min(3)
+    .max(80)
+    .regex(/^[a-z][a-z0-9_]{1,39}:\d{1,2}$/),
+});
+
+/**
+ * BatchConfirm
+ */
+export const zBatchConfirm = z.object({
+  items: z.array(zBatchConfirmItem).min(1).max(200),
+});
+
+/**
  * BlockClock
  *
  * The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,
@@ -735,26 +754,6 @@ export const zConfigRevert = z.object({
 });
 
 /**
- * Counts
- */
-export const zCounts = z.object({
-  cards: z.int().optional().default(0),
-  questions: z.int().optional().default(0),
-  sections: z.int().optional().default(0),
-  videos: z.int().optional().default(0),
-});
-
-/**
- * Cell
- */
-export const zCell = z.object({
-  counts: zCounts,
-  discipline_id: z.string(),
-  status: z.enum(["gap", "thin", "covered"]),
-  system_id: z.string(),
-});
-
-/**
  * Coverage
  *
  * What exists today for a chapter or a system (counts of items visible to the caller).
@@ -970,6 +969,37 @@ export const zErrorResponse = z.object({
 });
 
 /**
+ * FileOut
+ */
+export const zFileOut = z.object({
+  expires_in: z.int(),
+  kind: z.enum([
+    "pdf",
+    "docx",
+    "pptx",
+    "xlsx",
+    "csv",
+    "txt",
+    "md",
+    "html",
+    "epub",
+    "rtf",
+    "image",
+    "audio",
+    "video",
+    "link",
+    "anki",
+    "zip",
+    "paste",
+  ]),
+  mime: z.string().nullable(),
+  name: z.string().nullable(),
+  pages: z.int().nullable(),
+  upload_id: z.uuid(),
+  url: z.string(),
+});
+
+/**
  * FlagIn
  */
 export const zFlagIn = z.object({
@@ -1027,6 +1057,14 @@ export const zFsrsSchedulerConfig = z.object({
     z.number(),
     z.number(),
   ]),
+});
+
+/**
+ * GateOut
+ */
+export const zGateOut = z.object({
+  doc_type: z.string().nullable(),
+  signals: z.array(z.string()),
 });
 
 /**
@@ -1374,6 +1412,41 @@ export const zLabGroupOut = z.object({
 export const zLessonLink = z.object({
   chapter_id: z.string(),
   title: z.string(),
+});
+
+/**
+ * LibraryChapter
+ */
+export const zLibraryChapter = z.object({
+  id: z.string(),
+  item_id: z.uuid().nullable(),
+  kind: z.enum(["user_upload", "user_kb"]),
+  sections: z.int(),
+  title: z.string(),
+  updated_at: z.iso.datetime(),
+});
+
+/**
+ * LibraryKb
+ */
+export const zLibraryKb = z.object({
+  chapter_id: z.string().nullable(),
+  created_at: z.iso.datetime(),
+  id: z.uuid(),
+  item_id: z.uuid().nullable(),
+  kind: z.enum(["url", "file", "paste"]),
+  status: z.enum(["processing", "ready", "failed", "needs_confirmation"]),
+  title: z.string().nullable(),
+  url: z.string().nullable(),
+});
+
+/**
+ * LibraryLimits
+ */
+export const zLibraryLimits = z.object({
+  enabled: z.boolean(),
+  max_file_mb: z.int(),
+  max_paste_chars: z.int(),
 });
 
 /**
@@ -1733,39 +1806,6 @@ export const zOptionIn = z.object({
 });
 
 /**
- * OptionOut
- */
-export const zOptionOut = z.object({
-  html: z.string(),
-  label: z.string(),
-});
-
-/**
- * AdminQuestion
- */
-export const zAdminQuestion = z.object({
-  answer: z.string(),
-  answer_html: z.string().nullable(),
-  block: z.int().nullable(),
-  chapter_id: z.string().nullable(),
-  created_at: z.iso.datetime(),
-  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
-  educational_objective: z.string().nullable(),
-  exam: z.string(),
-  explanation_html: z.string().nullable(),
-  id: z.string(),
-  options: z.array(zOptionOut),
-  review: z.record(z.string(), zJsonValue),
-  source_id: z.string().nullable(),
-  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
-  stem_html: z.string(),
-  tags: z.array(z.string()),
-  taxonomy_ids: z.array(z.string()),
-  version: z.string(),
-  why_not_html: z.string().nullable(),
-});
-
-/**
  * PageCreate
  */
 export const zPageCreate = z.object({
@@ -1790,6 +1830,24 @@ export const zPageOrder = z.object({
 });
 
 /**
+ * PageTextOut
+ */
+export const zPageTextOut = z.object({
+  page: z.int().gte(1),
+  pages: z.int(),
+  text: z.string(),
+  upload_id: z.uuid(),
+});
+
+/**
+ * PasteCreate
+ */
+export const zPasteCreate = z.object({
+  text: z.string().min(1).max(2000000),
+  title: z.string().max(200).nullish(),
+});
+
+/**
  * PathwayStageOut
  */
 export const zPathwayStageOut = z.object({
@@ -1797,6 +1855,37 @@ export const zPathwayStageOut = z.object({
   key: z.string(),
   title: z.string().nullable(),
   total: z.int(),
+});
+
+/**
+ * PlacedOut
+ */
+export const zPlacedOut = z.object({
+  can_undo: z.boolean(),
+  chapter_id: z.string().nullish(),
+  kind: z.string(),
+  rows: z.int(),
+});
+
+/**
+ * PlacementChoice
+ */
+export const zPlacementChoice = z.object({
+  option_id: z
+    .string()
+    .min(3)
+    .max(80)
+    .regex(/^[a-z][a-z0-9_]{1,39}:\d{1,2}$/),
+});
+
+/**
+ * ConfirmBody
+ *
+ * Exactly one: the placement chosen on the confirm card, or the answer to the Vault prompt.
+ */
+export const zConfirmBody = z.object({
+  placement: zPlacementChoice.nullish(),
+  vault: z.enum(["vault", "continue", "discard"]).nullish(),
 });
 
 /**
@@ -3151,6 +3240,15 @@ export const zLabValuesOut = z.object({
 });
 
 /**
+ * StorageOut
+ */
+export const zStorageOut = z.object({
+  limit_bytes: z.int(),
+  remaining_bytes: z.int(),
+  used_bytes: z.int(),
+});
+
+/**
  * StudentItemIn
  */
 export const zStudentItemIn = z.object({
@@ -3175,17 +3273,6 @@ export const zStudentItemsIn = z.object({
  */
 export const zStudentItemsOut = z.object({
   items: z.array(zPlanItemOut),
-});
-
-/**
- * SystemCoverage
- */
-export const zSystemCoverage = z.object({
-  counts: zCounts,
-  id: z.string(),
-  label: z.string(),
-  topics: z.int(),
-  topics_covered: z.int(),
 });
 
 /**
@@ -3364,31 +3451,6 @@ export const zTodayOut = z.object({
 });
 
 /**
- * TopicCoverage
- */
-export const zTopicCoverage = z.object({
-  counts: zCounts,
-  id: z.string(),
-  label: z.string(),
-  missing: z.array(z.enum(["sections", "videos", "questions", "cards"])),
-  status: z.enum(["gap", "thin", "covered"]),
-  system_id: z.string().nullable(),
-});
-
-/**
- * CoverageReport
- */
-export const zCoverageReport = z.object({
-  cells: z.array(zCell),
-  disciplines: z.array(zNode),
-  exam: z.string(),
-  goals: zGoals,
-  system_totals: z.array(zSystemCoverage),
-  systems: z.array(zNode),
-  topics: z.array(zTopicCoverage),
-});
-
-/**
  * TopicStat
  */
 export const zTopicStat = z.object({
@@ -3410,6 +3472,57 @@ export const zTrendPoint = z.object({
   finished_at: z.iso.datetime(),
   mode: z.enum(["timed", "exam"]),
   score: z.number(),
+});
+
+/**
+ * UploadCreate
+ */
+export const zUploadCreate = z.object({
+  batch_id: z.uuid().nullish(),
+  content_type: z.string().min(3).max(120),
+  name: z.string().min(1).max(255),
+  size: z.int().gte(1),
+});
+
+/**
+ * UploadBatchCreate
+ *
+ * Many files dropped together (one request: S22's heavy-route limit is 30/min).
+ */
+export const zUploadBatchCreate = z.object({
+  files: z.array(zUploadCreate).min(1).max(200),
+});
+
+/**
+ * UploadTicket
+ */
+export const zUploadTicket = z.object({
+  bucket: z.string(),
+  expires_in: z.int(),
+  item_id: z.uuid(),
+  path: z.string(),
+  token: z.string(),
+  upload_id: z.uuid(),
+});
+
+/**
+ * UploadBatchOut
+ */
+export const zUploadBatchOut = z.object({
+  batch_id: z.uuid(),
+  tickets: z.array(zUploadTicket),
+});
+
+/**
+ * UrlCreate
+ */
+export const zUrlCreate = z.object({
+  batch_id: z.uuid().nullish(),
+  url: z
+    .string()
+    .min(8)
+    .max(2048)
+    .regex(/^https:\/\//),
 });
 
 /**
@@ -3783,6 +3896,95 @@ export const zBlockResults = z.object({
 });
 
 /**
+ * Counts
+ */
+export const zNaadiApiAdminCoverageCounts = z.object({
+  cards: z.int().optional().default(0),
+  questions: z.int().optional().default(0),
+  sections: z.int().optional().default(0),
+  videos: z.int().optional().default(0),
+});
+
+/**
+ * Cell
+ */
+export const zCell = z.object({
+  counts: zNaadiApiAdminCoverageCounts,
+  discipline_id: z.string(),
+  status: z.enum(["gap", "thin", "covered"]),
+  system_id: z.string(),
+});
+
+/**
+ * SystemCoverage
+ */
+export const zSystemCoverage = z.object({
+  counts: zNaadiApiAdminCoverageCounts,
+  id: z.string(),
+  label: z.string(),
+  topics: z.int(),
+  topics_covered: z.int(),
+});
+
+/**
+ * TopicCoverage
+ */
+export const zTopicCoverage = z.object({
+  counts: zNaadiApiAdminCoverageCounts,
+  id: z.string(),
+  label: z.string(),
+  missing: z.array(z.enum(["sections", "videos", "questions", "cards"])),
+  status: z.enum(["gap", "thin", "covered"]),
+  system_id: z.string().nullable(),
+});
+
+/**
+ * CoverageReport
+ */
+export const zCoverageReport = z.object({
+  cells: z.array(zCell),
+  disciplines: z.array(zNode),
+  exam: z.string(),
+  goals: zGoals,
+  system_totals: z.array(zSystemCoverage),
+  systems: z.array(zNode),
+  topics: z.array(zTopicCoverage),
+});
+
+/**
+ * OptionOut
+ */
+export const zNaadiApiAdminQuestionsOptionOut = z.object({
+  html: z.string(),
+  label: z.string(),
+});
+
+/**
+ * AdminQuestion
+ */
+export const zAdminQuestion = z.object({
+  answer: z.string(),
+  answer_html: z.string().nullable(),
+  block: z.int().nullable(),
+  chapter_id: z.string().nullable(),
+  created_at: z.iso.datetime(),
+  difficulty: z.enum(["easy", "medium", "hard"]).nullable(),
+  educational_objective: z.string().nullable(),
+  exam: z.string(),
+  explanation_html: z.string().nullable(),
+  id: z.string(),
+  options: z.array(zNaadiApiAdminQuestionsOptionOut),
+  review: z.record(z.string(), zJsonValue),
+  source_id: z.string().nullable(),
+  status: z.enum(["draft", "auto_checked", "in_review", "published", "retired"]),
+  stem_html: z.string(),
+  tags: z.array(z.string()),
+  taxonomy_ids: z.array(z.string()),
+  version: z.string(),
+  why_not_html: z.string().nullable(),
+});
+
+/**
  * ExamOption
  */
 export const zNaadiApiCoursesExamOption = z.object({
@@ -3801,6 +4003,110 @@ export const zCoursesResponse = z.object({
   next_up: zNextUp.nullable(),
   system: z.string().nullable(),
   systems: z.array(zCourseSystem),
+});
+
+/**
+ * Counts
+ */
+export const zNaadiApiIngestModelsCounts = z.object({
+  duration_s: z.number().nullish(),
+  figures: z.int().nullish(),
+  mcqs: z.int().nullish(),
+  pages: z.int().nullish(),
+  qa_pairs: z.int().nullish(),
+  scanned: z.int().nullish(),
+  sections: z.int().nullish(),
+  words: z.int().nullish(),
+});
+
+/**
+ * OptionOut
+ */
+export const zNaadiApiIngestModelsOptionOut = z.object({
+  kind: z.string(),
+  option_id: z.string(),
+  preview: z.record(z.string(), z.unknown()),
+  recommended: z.boolean(),
+});
+
+/**
+ * IngestItemOut
+ */
+export const zIngestItemOut = z.object({
+  batch_id: z.uuid().nullable(),
+  bundle_files: z.int().nullish(),
+  bytes: z.int().nullable(),
+  chapter_id: z.string().nullable(),
+  counts: zNaadiApiIngestModelsCounts.nullable(),
+  created_at: z.iso.datetime(),
+  duplicate: z.enum(["exact", "near"]).nullable(),
+  duplicate_of: z.uuid().nullable(),
+  error: z.string().nullable(),
+  gate: zGateOut.nullable(),
+  id: z.uuid(),
+  input_kind: z
+    .enum([
+      "pdf",
+      "docx",
+      "pptx",
+      "xlsx",
+      "csv",
+      "txt",
+      "md",
+      "html",
+      "epub",
+      "rtf",
+      "image",
+      "audio",
+      "video",
+      "link",
+      "anki",
+      "zip",
+      "paste",
+    ])
+    .nullable(),
+  name: z.string().nullable(),
+  options: z.array(zNaadiApiIngestModelsOptionOut),
+  pages: z.int().nullable(),
+  placed: zPlacedOut.nullable(),
+  progress: z.int().gte(0).lte(100),
+  retryable: z.boolean(),
+  stage: z.enum([
+    "upload",
+    "receive",
+    "vault",
+    "extract",
+    "understand",
+    "propose",
+    "confirm",
+    "place",
+    "done",
+    "vaulted",
+  ]),
+  status: z.enum(["received", "extracting", "needs_confirmation", "placing", "ready", "failed", "vaulted"]),
+  updated_at: z.iso.datetime(),
+  upload_id: z.uuid().nullable(),
+  url: z.string().nullable(),
+});
+
+/**
+ * IngestItemList
+ */
+export const zIngestItemList = z.object({
+  items: z.array(zIngestItemOut),
+  next_before: z.iso.datetime().nullable(),
+});
+
+/**
+ * LibraryOut
+ */
+export const zLibraryOut = z.object({
+  accepts: z.array(z.string()),
+  chapters: z.array(zLibraryChapter),
+  items: z.array(zIngestItemOut),
+  kb: z.array(zLibraryKb),
+  limits: zLibraryLimits,
+  storage: zStorageOut,
 });
 
 /**
@@ -4895,6 +5201,143 @@ export const zGenerationStatusApiGenerationStatusGetResponse = zGenerationStatus
  */
 export const zGetHealthResponse = zHealthResponse;
 
+export const zConfirmIngestBatchBody = zBatchConfirm;
+
+export const zConfirmIngestBatchPath = z.object({
+  batch_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zConfirmIngestBatchResponse = zIngestItemList;
+
+export const zStartIngestBatchPath = z.object({
+  batch_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zStartIngestBatchResponse = zIngestItemList;
+
+export const zListIngestItemsQuery = z.object({
+  status: z
+    .string()
+    .regex(/^(received|extracting|needs_confirmation|placing|ready|failed|vaulted)$/)
+    .nullish(),
+  before: z.iso.datetime().nullish(),
+  limit: z.int().gte(1).lte(100).optional().default(50),
+});
+
+/**
+ * Successful Response
+ */
+export const zListIngestItemsResponse = zIngestItemList;
+
+export const zDeleteIngestItemPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zDeleteIngestItemResponse = z.void();
+
+export const zGetIngestItemPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetIngestItemResponse = zIngestItemOut;
+
+export const zConfirmIngestItemBody = zConfirmBody;
+
+export const zConfirmIngestItemPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zConfirmIngestItemResponse = zIngestItemOut;
+
+export const zRetryIngestItemPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zRetryIngestItemResponse = zIngestItemOut;
+
+export const zStartIngestItemPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zStartIngestItemResponse = zIngestItemOut;
+
+export const zUndoIngestPlacementPath = z.object({
+  item_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zUndoIngestPlacementResponse = zIngestItemOut;
+
+export const zCreateIngestPasteBody = zPasteCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateIngestPasteResponse = zIngestItemOut;
+
+export const zCreateIngestUploadBody = zUploadCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateIngestUploadResponse = zUploadTicket;
+
+export const zCreateIngestUploadBatchBody = zUploadBatchCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateIngestUploadBatchResponse = zUploadBatchOut;
+
+export const zGetIngestFilePath = z.object({
+  upload_id: z.uuid(),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetIngestFileResponse = zFileOut;
+
+export const zGetIngestPageTextPath = z.object({
+  upload_id: z.uuid(),
+  page: z.int().gte(1).lte(10000),
+});
+
+/**
+ * Successful Response
+ */
+export const zGetIngestPageTextResponse = zPageTextOut;
+
+export const zCreateIngestUrlBody = zUrlCreate;
+
+/**
+ * Successful Response
+ */
+export const zCreateIngestUrlResponse = zIngestItemOut;
+
 export const zConvertInkToTextBody = z.string();
 
 /**
@@ -4932,6 +5375,11 @@ export const zPostInkChangesResponse = zInkChangesOut;
  * Successful Response
  */
 export const zGetLabValuesResponse = zLabValuesOut;
+
+/**
+ * Successful Response
+ */
+export const zGetLibraryResponse = zLibraryOut;
 
 /**
  * Successful Response

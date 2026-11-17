@@ -737,7 +737,7 @@
           },
           "options": {
             "items": {
-              "$ref": "#/components/schemas/OptionOut"
+              "$ref": "#/components/schemas/naadi_api__admin__questions__OptionOut"
             },
             "title": "Options",
             "type": "array"
@@ -2368,6 +2368,48 @@
         "title": "BackupFacts",
         "type": "object"
       },
+      "BatchConfirm": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/BatchConfirmItem"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "BatchConfirm",
+        "type": "object"
+      },
+      "BatchConfirmItem": {
+        "additionalProperties": false,
+        "properties": {
+          "item_id": {
+            "format": "uuid",
+            "title": "Item Id",
+            "type": "string"
+          },
+          "option_id": {
+            "maxLength": 80,
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_]{1,39}:\\d{1,2}$",
+            "title": "Option Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item_id",
+          "option_id"
+        ],
+        "title": "BatchConfirmItem",
+        "type": "object"
+      },
       "BlockClock": {
         "description": "The server's clock for a timed/exam block. The client shows `deadline_at - (Date.now() + offset)`,\nwhere offset is estimated from `server_now`; it never counts down on its own.",
         "properties": {
@@ -3818,7 +3860,7 @@
       "Cell": {
         "properties": {
           "counts": {
-            "$ref": "#/components/schemas/Counts"
+            "$ref": "#/components/schemas/naadi_api__admin__coverage__Counts"
           },
           "discipline_id": {
             "title": "Discipline Id",
@@ -4842,30 +4884,38 @@
         "title": "ConfigUpdate",
         "type": "object"
       },
-      "Counts": {
+      "ConfirmBody": {
+        "additionalProperties": false,
+        "description": "Exactly one: the placement chosen on the confirm card, or the answer to the Vault prompt.",
         "properties": {
-          "cards": {
-            "default": 0,
-            "title": "Cards",
-            "type": "integer"
+          "placement": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlacementChoice"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
-          "questions": {
-            "default": 0,
-            "title": "Questions",
-            "type": "integer"
-          },
-          "sections": {
-            "default": 0,
-            "title": "Sections",
-            "type": "integer"
-          },
-          "videos": {
-            "default": 0,
-            "title": "Videos",
-            "type": "integer"
+          "vault": {
+            "anyOf": [
+              {
+                "enum": [
+                  "vault",
+                  "continue",
+                  "discard"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vault"
           }
         },
-        "title": "Counts",
+        "title": "ConfirmBody",
         "type": "object"
       },
       "CourseChapter": {
@@ -5902,6 +5952,91 @@
         "title": "FieldError",
         "type": "object"
       },
+      "FileOut": {
+        "properties": {
+          "expires_in": {
+            "title": "Expires In",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "pdf",
+              "docx",
+              "pptx",
+              "xlsx",
+              "csv",
+              "txt",
+              "md",
+              "html",
+              "epub",
+              "rtf",
+              "image",
+              "audio",
+              "video",
+              "link",
+              "anki",
+              "zip",
+              "paste"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "mime": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mime"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pages"
+          },
+          "upload_id": {
+            "format": "uuid",
+            "title": "Upload Id",
+            "type": "string"
+          },
+          "url": {
+            "description": "Signed URL, valid for expires_in seconds",
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "upload_id",
+          "kind",
+          "name",
+          "url",
+          "expires_in",
+          "pages",
+          "mime"
+        ],
+        "title": "FileOut",
+        "type": "object"
+      },
       "FlagIn": {
         "additionalProperties": false,
         "properties": {
@@ -6005,6 +6140,35 @@
           "enable_fuzz"
         ],
         "title": "FsrsSchedulerConfig",
+        "type": "object"
+      },
+      "GateOut": {
+        "properties": {
+          "doc_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doc Type"
+          },
+          "signals": {
+            "description": "Sensitivity signal codes (ingest.signal.<code>)",
+            "items": {
+              "type": "string"
+            },
+            "title": "Signals",
+            "type": "array"
+          }
+        },
+        "required": [
+          "signals",
+          "doc_type"
+        ],
+        "title": "GateOut",
         "type": "object"
       },
       "GeneratedApproveBody": {
@@ -6718,6 +6882,319 @@
         "title": "IndexStatus",
         "type": "object"
       },
+      "IngestItemList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/IngestItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_before": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Before"
+          }
+        },
+        "required": [
+          "items",
+          "next_before"
+        ],
+        "title": "IngestItemList",
+        "type": "object"
+      },
+      "IngestItemOut": {
+        "properties": {
+          "batch_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Batch Id"
+          },
+          "bundle_files": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bundle Files"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          },
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The private chapter this item became (or duplicates)",
+            "title": "Chapter Id"
+          },
+          "counts": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/naadi_api__ingest__models__Counts"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "duplicate": {
+            "anyOf": [
+              {
+                "enum": [
+                  "exact",
+                  "near"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duplicate"
+          },
+          "duplicate_of": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duplicate Of"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Reason code when failed (ingest.error.<code>)",
+            "title": "Error"
+          },
+          "gate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GateOut"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Set while the Vault prompt waits"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "input_kind": {
+            "anyOf": [
+              {
+                "enum": [
+                  "pdf",
+                  "docx",
+                  "pptx",
+                  "xlsx",
+                  "csv",
+                  "txt",
+                  "md",
+                  "html",
+                  "epub",
+                  "rtf",
+                  "image",
+                  "audio",
+                  "video",
+                  "link",
+                  "anki",
+                  "zip",
+                  "paste"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Kind"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "File name, page title or link host",
+            "title": "Name"
+          },
+          "options": {
+            "description": "The confirm card's placements, best first",
+            "items": {
+              "$ref": "#/components/schemas/naadi_api__ingest__models__OptionOut"
+            },
+            "title": "Options",
+            "type": "array"
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pages"
+          },
+          "placed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlacedOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "progress": {
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Progress",
+            "type": "integer"
+          },
+          "retryable": {
+            "title": "Retryable",
+            "type": "boolean"
+          },
+          "stage": {
+            "enum": [
+              "upload",
+              "receive",
+              "vault",
+              "extract",
+              "understand",
+              "propose",
+              "confirm",
+              "place",
+              "done",
+              "vaulted"
+            ],
+            "title": "Stage",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "received",
+              "extracting",
+              "needs_confirmation",
+              "placing",
+              "ready",
+              "failed",
+              "vaulted"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "upload_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Id"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "stage",
+          "error",
+          "progress",
+          "input_kind",
+          "name",
+          "url",
+          "upload_id",
+          "bytes",
+          "pages",
+          "batch_id",
+          "duplicate_of",
+          "duplicate",
+          "chapter_id",
+          "gate",
+          "options",
+          "placed",
+          "counts",
+          "retryable",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "IngestItemOut",
+        "type": "object"
+      },
       "InkChangesIn": {
         "additionalProperties": false,
         "properties": {
@@ -7237,6 +7714,220 @@
           "title"
         ],
         "title": "LessonLink",
+        "type": "object"
+      },
+      "LibraryChapter": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "item_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Item Id"
+          },
+          "kind": {
+            "enum": [
+              "user_upload",
+              "user_kb"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "sections": {
+            "title": "Sections",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "sections",
+          "item_id",
+          "updated_at"
+        ],
+        "title": "LibraryChapter",
+        "type": "object"
+      },
+      "LibraryKb": {
+        "properties": {
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Id"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "item_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Item Id"
+          },
+          "kind": {
+            "enum": [
+              "url",
+              "file",
+              "paste"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "processing",
+              "ready",
+              "failed",
+              "needs_confirmation"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "url",
+          "status",
+          "chapter_id",
+          "item_id",
+          "created_at"
+        ],
+        "title": "LibraryKb",
+        "type": "object"
+      },
+      "LibraryLimits": {
+        "properties": {
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean"
+          },
+          "max_file_mb": {
+            "title": "Max File Mb",
+            "type": "integer"
+          },
+          "max_paste_chars": {
+            "title": "Max Paste Chars",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "max_file_mb",
+          "max_paste_chars",
+          "enabled"
+        ],
+        "title": "LibraryLimits",
+        "type": "object"
+      },
+      "LibraryOut": {
+        "properties": {
+          "accepts": {
+            "description": "Extra input kinds a registered placement takes (e.g. anki once S20 lands)",
+            "items": {
+              "type": "string"
+            },
+            "title": "Accepts",
+            "type": "array"
+          },
+          "chapters": {
+            "items": {
+              "$ref": "#/components/schemas/LibraryChapter"
+            },
+            "title": "Chapters",
+            "type": "array"
+          },
+          "items": {
+            "description": "Files, links and pastes, newest first (bundles' members included)",
+            "items": {
+              "$ref": "#/components/schemas/IngestItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "kb": {
+            "items": {
+              "$ref": "#/components/schemas/LibraryKb"
+            },
+            "title": "Kb",
+            "type": "array"
+          },
+          "limits": {
+            "$ref": "#/components/schemas/LibraryLimits"
+          },
+          "storage": {
+            "$ref": "#/components/schemas/StorageOut"
+          }
+        },
+        "required": [
+          "items",
+          "chapters",
+          "kb",
+          "storage",
+          "accepts",
+          "limits"
+        ],
+        "title": "LibraryOut",
         "type": "object"
       },
       "LintFinding": {
@@ -9368,24 +10059,6 @@
         "title": "OptionIn",
         "type": "object"
       },
-      "OptionOut": {
-        "properties": {
-          "html": {
-            "title": "Html",
-            "type": "string"
-          },
-          "label": {
-            "title": "Label",
-            "type": "string"
-          }
-        },
-        "required": [
-          "label",
-          "html"
-        ],
-        "title": "OptionOut",
-        "type": "object"
-      },
       "PageCreate": {
         "additionalProperties": false,
         "properties": {
@@ -9520,6 +10193,64 @@
         "title": "PageOrder",
         "type": "object"
       },
+      "PageTextOut": {
+        "properties": {
+          "page": {
+            "minimum": 1.0,
+            "title": "Page",
+            "type": "integer"
+          },
+          "pages": {
+            "title": "Pages",
+            "type": "integer"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "upload_id": {
+            "format": "uuid",
+            "title": "Upload Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "upload_id",
+          "page",
+          "pages",
+          "text"
+        ],
+        "title": "PageTextOut",
+        "type": "object"
+      },
+      "PasteCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "maxLength": 2000000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "PasteCreate",
+        "type": "object"
+      },
       "PathwayStageOut": {
         "properties": {
           "done": {
@@ -9553,6 +10284,57 @@
           "total"
         ],
         "title": "PathwayStageOut",
+        "type": "object"
+      },
+      "PlacedOut": {
+        "properties": {
+          "can_undo": {
+            "title": "Can Undo",
+            "type": "boolean"
+          },
+          "chapter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Id"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "rows": {
+            "title": "Rows",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "rows",
+          "can_undo"
+        ],
+        "title": "PlacedOut",
+        "type": "object"
+      },
+      "PlacementChoice": {
+        "additionalProperties": false,
+        "properties": {
+          "option_id": {
+            "maxLength": 80,
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_]{1,39}:\\d{1,2}$",
+            "title": "Option Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "option_id"
+        ],
+        "title": "PlacementChoice",
         "type": "object"
       },
       "PlanDayMeta": {
@@ -14471,6 +15253,29 @@
         "title": "SourceRef",
         "type": "object"
       },
+      "StorageOut": {
+        "properties": {
+          "limit_bytes": {
+            "title": "Limit Bytes",
+            "type": "integer"
+          },
+          "remaining_bytes": {
+            "title": "Remaining Bytes",
+            "type": "integer"
+          },
+          "used_bytes": {
+            "title": "Used Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "used_bytes",
+          "limit_bytes",
+          "remaining_bytes"
+        ],
+        "title": "StorageOut",
+        "type": "object"
+      },
       "StudentItemIn": {
         "additionalProperties": false,
         "properties": {
@@ -14600,7 +15405,7 @@
       "SystemCoverage": {
         "properties": {
           "counts": {
-            "$ref": "#/components/schemas/Counts"
+            "$ref": "#/components/schemas/naadi_api__admin__coverage__Counts"
           },
           "id": {
             "title": "Id",
@@ -15254,7 +16059,7 @@
       "TopicCoverage": {
         "properties": {
           "counts": {
-            "$ref": "#/components/schemas/Counts"
+            "$ref": "#/components/schemas/naadi_api__admin__coverage__Counts"
           },
           "id": {
             "title": "Id",
@@ -15397,6 +16202,164 @@
           "current"
         ],
         "title": "TrendPoint",
+        "type": "object"
+      },
+      "UploadBatchCreate": {
+        "additionalProperties": false,
+        "description": "Many files dropped together (one request: S22's heavy-route limit is 30/min).",
+        "properties": {
+          "files": {
+            "items": {
+              "$ref": "#/components/schemas/UploadCreate"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Files",
+            "type": "array"
+          }
+        },
+        "required": [
+          "files"
+        ],
+        "title": "UploadBatchCreate",
+        "type": "object"
+      },
+      "UploadBatchOut": {
+        "properties": {
+          "batch_id": {
+            "format": "uuid",
+            "title": "Batch Id",
+            "type": "string"
+          },
+          "tickets": {
+            "items": {
+              "$ref": "#/components/schemas/UploadTicket"
+            },
+            "title": "Tickets",
+            "type": "array"
+          }
+        },
+        "required": [
+          "batch_id",
+          "tickets"
+        ],
+        "title": "UploadBatchOut",
+        "type": "object"
+      },
+      "UploadCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "batch_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Files dropped together share one batch",
+            "title": "Batch Id"
+          },
+          "content_type": {
+            "description": "The MIME type the browser will upload with",
+            "maxLength": 120,
+            "minLength": 3,
+            "title": "Content Type",
+            "type": "string"
+          },
+          "name": {
+            "description": "The file name as the student chose it",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "size": {
+            "description": "Bytes",
+            "minimum": 1.0,
+            "title": "Size",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "size",
+          "content_type"
+        ],
+        "title": "UploadCreate",
+        "type": "object"
+      },
+      "UploadTicket": {
+        "properties": {
+          "bucket": {
+            "title": "Bucket",
+            "type": "string"
+          },
+          "expires_in": {
+            "title": "Expires In",
+            "type": "integer"
+          },
+          "item_id": {
+            "format": "uuid",
+            "title": "Item Id",
+            "type": "string"
+          },
+          "path": {
+            "description": "Object path inside the bucket ({user_id}/{item_id}/original)",
+            "title": "Path",
+            "type": "string"
+          },
+          "token": {
+            "description": "Signed-upload token for supabase-js uploadToSignedUrl",
+            "title": "Token",
+            "type": "string"
+          },
+          "upload_id": {
+            "format": "uuid",
+            "title": "Upload Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item_id",
+          "upload_id",
+          "bucket",
+          "path",
+          "token",
+          "expires_in"
+        ],
+        "title": "UploadTicket",
+        "type": "object"
+      },
+      "UrlCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "batch_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Batch Id"
+          },
+          "url": {
+            "maxLength": 2048,
+            "minLength": 8,
+            "pattern": "^https://",
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "UrlCreate",
         "type": "object"
       },
       "UsageCap": {
@@ -16415,6 +17378,50 @@
         "title": "WeightOverlay",
         "type": "object"
       },
+      "naadi_api__admin__coverage__Counts": {
+        "properties": {
+          "cards": {
+            "default": 0,
+            "title": "Cards",
+            "type": "integer"
+          },
+          "questions": {
+            "default": 0,
+            "title": "Questions",
+            "type": "integer"
+          },
+          "sections": {
+            "default": 0,
+            "title": "Sections",
+            "type": "integer"
+          },
+          "videos": {
+            "default": 0,
+            "title": "Videos",
+            "type": "integer"
+          }
+        },
+        "title": "Counts",
+        "type": "object"
+      },
+      "naadi_api__admin__questions__OptionOut": {
+        "properties": {
+          "html": {
+            "title": "Html",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "html"
+        ],
+        "title": "OptionOut",
+        "type": "object"
+      },
       "naadi_api__courses__ExamOption": {
         "properties": {
           "chapter_count": {
@@ -16436,6 +17443,131 @@
           "chapter_count"
         ],
         "title": "ExamOption",
+        "type": "object"
+      },
+      "naadi_api__ingest__models__Counts": {
+        "properties": {
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "figures": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Figures"
+          },
+          "mcqs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcqs"
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pages"
+          },
+          "qa_pairs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Qa Pairs"
+          },
+          "scanned": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scanned"
+          },
+          "sections": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sections"
+          },
+          "words": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Words"
+          }
+        },
+        "title": "Counts",
+        "type": "object"
+      },
+      "naadi_api__ingest__models__OptionOut": {
+        "properties": {
+          "kind": {
+            "description": "Placement kind (ui_copy ingest.placement.<kind>)",
+            "title": "Kind",
+            "type": "string"
+          },
+          "option_id": {
+            "title": "Option Id",
+            "type": "string"
+          },
+          "preview": {
+            "additionalProperties": true,
+            "description": "Counts, titles and target ids; never an answer",
+            "title": "Preview",
+            "type": "object"
+          },
+          "recommended": {
+            "title": "Recommended",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "option_id",
+          "kind",
+          "recommended",
+          "preview"
+        ],
+        "title": "OptionOut",
         "type": "object"
       },
       "naadi_api__plan__models__ExamOption": {
@@ -27360,6 +28492,1461 @@
         ]
       }
     },
+    "/api/ingest/batches/{batch_id}/confirm": {
+      "post": {
+        "operationId": "confirmIngestBatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batch_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Batch Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchConfirm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_state_conflict (the item is not in a state for this)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "One grouped confirm for the items of a batch",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/batches/{batch_id}/start": {
+      "post": {
+        "operationId": "startIngestBatch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batch_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Batch Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Start every uploaded item of a batch (files that never arrived are skipped)",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/items": {
+      "get": {
+        "operationId": "listIngestItems",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^(received|extracting|needs_confirmation|placing|ready|failed|vaulted)$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Before"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemList"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "The student's ingest items, newest first",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/items/{item_id}": {
+      "delete": {
+        "operationId": "deleteIngestItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_state_conflict (the item is not in a state for this)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Delete an item with its files and anything it placed",
+        "tags": [
+          "ingest"
+        ]
+      },
+      "get": {
+        "operationId": "getIngestItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "One ingest item",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/items/{item_id}/confirm": {
+      "post": {
+        "operationId": "confirmIngestItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_state_conflict (the item is not in a state for this)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Answer the item's confirm card (a placement) or its Vault prompt",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/items/{item_id}/retry": {
+      "post": {
+        "operationId": "retryIngestItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_state_conflict (the item is not in a state for this)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Run a failed item again from the start",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/items/{item_id}/start": {
+      "post": {
+        "operationId": "startIngestItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_state_conflict (the item is not in a state for this)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Start processing an uploaded file (its background run)",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/items/{item_id}/undo": {
+      "post": {
+        "operationId": "undoIngestPlacement",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_state_conflict (the item is not in a state for this)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Undo the placement: delete exactly what it created; the item waits for a new choice",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/paste": {
+      "post": {
+        "operationId": "createIngestPaste",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PasteCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Add pasted text",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/uploads": {
+      "post": {
+        "operationId": "createIngestUpload",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadTicket"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Reserve an item and get a signed upload URL for user-uploads/{user}/{item}/original",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/uploads/batch": {
+      "post": {
+        "operationId": "createIngestUploadBatch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadBatchCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadBatchOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Reserve items for many files dropped together and get their signed upload URLs",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/uploads/{upload_id}/file": {
+      "get": {
+        "operationId": "getIngestFile",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "upload_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Upload Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "A short-lived signed URL of the student's original file",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/uploads/{upload_id}/pages/{page}": {
+      "get": {
+        "operationId": "getIngestPageText",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "upload_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Upload Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "schema": {
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Page",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageTextOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_item_not_found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "One page's text of the student's PDF",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
+    "/api/ingest/urls": {
+      "post": {
+        "operationId": "createIngestUrl",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UrlCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestItemOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "validation_error, file_too_large, unsupported_type, storage_full, daily_limit, ingest_disabled"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "Add a link (article, online PDF, YouTube) to the knowledge base",
+        "tags": [
+          "ingest"
+        ]
+      }
+    },
     "/api/ink/convert": {
       "post": {
         "operationId": "convertInkToText",
@@ -27741,6 +30328,67 @@
         "summary": "Reference ranges for the question view (Naadi's own table; the official one is linked, not copied)",
         "tags": [
           "qbank"
+        ]
+      }
+    },
+    "/api/library": {
+      "get": {
+        "operationId": "getLibrary",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "library_disabled (the Library is off for this account)"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "ingest_unavailable"
+          }
+        },
+        "summary": "The student's Library: files, links and pastes, private chapters, KB entries and storage use",
+        "tags": [
+          "ingest"
         ]
       }
     },

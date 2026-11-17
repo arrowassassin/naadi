@@ -1,7 +1,7 @@
 """Universal ingest and the private knowledge base (segment 15).
 
 Revision ID: 0028
-Revises: 0027
+Revises: 0026
 Create Date: 2026-11-17
 
 - `sources` gains the `user-provided` row ("the student's own material"): every private chapter, figure, question,
@@ -36,7 +36,7 @@ from collections.abc import Sequence
 from alembic import op
 
 revision: str = "0028"
-down_revision: str | None = "0027"
+down_revision: str | None = "0026"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
