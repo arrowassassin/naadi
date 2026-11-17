@@ -1,0 +1,16 @@
+{
+ "id": "20261117T014434-seg10-cards-800361",
+ "ts": "2026-11-17T01:44:34.364097Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4b2a221 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "4b2a221",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
