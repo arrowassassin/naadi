@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" role="img" aria-label="Simplified right brachial plexus. Roots C5 to T1 form the upper trunk (C5, C6), middle trunk (C7) and lower trunk (C8, T1). Anterior divisions of the upper and middle trunks form the lateral cord; the anterior division of the lower trunk forms the medial cord; all posterior divisions form the posterior cord. Lateral cord gives the musculocutaneous nerve and a root of the median nerve; medial cord gives the ulnar nerve and the other median root; posterior cord gives the axillary and radial nerves. The long thoracic nerve arises from roots C5 to C7 and the suprascapular nerve from the upper trunk.">
+<rect x="0" y="0" width="760" height="450" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="22" font-size="16" font-weight="bold" text-anchor="middle">Brachial plexus (simplified): roots, trunks, cords, branches</text>
+<g font-size="12" font-style="italic" text-anchor="middle"><text x="65" y="430">Roots</text><text x="245" y="430">Trunks</text><text x="340" y="430">Divisions</text><text x="435" y="430">Cords</text><text x="670" y="430">Terminal branches</text></g>
+<g stroke="#334155" stroke-width="2" fill="none">
+<path d="M100,90 L200,120"/><path d="M100,150 L200,124"/><path d="M100,210 L200,210"/><path d="M100,270 L200,296"/><path d="M100,330 L200,300"/>
+<path d="M290,120 L390,120"/><path d="M290,210 L390,126"/><path d="M290,300 L390,300"/>
+<path d="M290,124 L390,206" stroke-dasharray="7 5"/><path d="M290,210 L390,210" stroke-dasharray="7 5"/><path d="M290,296 L390,214" stroke-dasharray="7 5"/>
+<path d="M480,116 L600,70"/><path d="M480,124 L600,143"/><path d="M480,206 L600,215"/><path d="M480,214 L600,280"/><path d="M480,296 L600,147"/><path d="M480,304 L600,350"/>
+<path d="M118,92 L118,206"/><path d="M118,92 L118,48"/>
+<path d="M260,105 L300,52"/>
+</g>
+<g stroke="#334155" stroke-width="1.5">
+<rect x="30" y="75" width="70" height="30" rx="6" fill="#f1f5f9"/><rect x="30" y="135" width="70" height="30" rx="6" fill="#f1f5f9"/><rect x="30" y="195" width="70" height="30" rx="6" fill="#f1f5f9"/><rect x="30" y="255" width="70" height="30" rx="6" fill="#f1f5f9"/><rect x="30" y="315" width="70" height="30" rx="6" fill="#f1f5f9"/>
+<rect x="200" y="105" width="90" height="34" rx="6" fill="#ffffff"/><rect x="200" y="193" width="90" height="34" rx="6" fill="#ffffff"/><rect x="200" y="283" width="90" height="34" rx="6" fill="#ffffff"/>
+<rect x="390" y="103" width="90" height="34" rx="6" fill="#e2e8f0"/><rect x="390" y="193" width="90" height="34" rx="6" fill="#e2e8f0"/><rect x="390" y="283" width="90" height="34" rx="6" fill="#e2e8f0"/>
+<rect x="600" y="55" width="140" height="30" rx="6" fill="#ffffff"/><rect x="600" y="130" width="140" height="30" rx="6" fill="#ffffff"/><rect x="600" y="200" width="140" height="30" rx="6" fill="#ffffff"/><rect x="600" y="265" width="140" height="30" rx="6" fill="#ffffff"/><rect x="600" y="335" width="140" height="30" rx="6" fill="#ffffff"/>
+</g>
+<g font-size="13" text-anchor="middle">
+<text x="65" y="95">C5</text><text x="65" y="155">C6</text><text x="65" y="215">C7</text><text x="65" y="275">C8</text><text x="65" y="335">T1</text>
+<text x="245" y="127">Upper</text><text x="245" y="215">Middle</text><text x="245" y="305">Lower</text>
+<text x="435" y="125">Lateral</text><text x="435" y="215">Posterior</text><text x="435" y="305">Medial</text>
+<text x="670" y="75">Musculocutaneous</text><text x="670" y="150">Median</text><text x="670" y="220">Axillary</text><text x="670" y="285">Radial</text><text x="670" y="355">Ulnar</text>
+</g>
+<text x="128" y="44" font-size="12">Long thoracic n. (C5–C7) → serratus anterior</text>
+<text x="306" y="58" font-size="12">Suprascapular n.</text>
+<text x="300" y="392" font-size="12">Solid: anterior divisions. Dashed: posterior divisions.</text>
+</g>
+</svg>

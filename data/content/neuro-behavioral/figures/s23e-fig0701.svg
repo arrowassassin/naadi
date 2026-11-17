@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-label="Visual pathway seen from above with six lettered lesion sites and the visual field defect each one causes. A, left optic nerve: blind left eye. B, optic chiasm: bitemporal hemianopia. C, left optic tract: right homonymous hemianopia. D, left Meyer loop in the temporal lobe: right upper quadrantanopia. E, left parietal radiation: right lower quadrantanopia. F, left occipital cortex: right homonymous hemianopia with macular sparing.">
+<defs><marker id="s23e-fig0701-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="760" height="560" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="26" font-size="16" font-weight="bold" text-anchor="middle">Visual pathway: lesion sites and field defects</text>
+<text x="110" y="52" font-size="12" text-anchor="middle">Left eye</text><text x="290" y="52" font-size="12" text-anchor="middle">Right eye</text>
+<circle cx="110" cy="90" r="30" fill="#f1f5f9" stroke="#334155" stroke-width="1.6"/>
+<circle cx="110" cy="78" r="9" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<circle cx="290" cy="90" r="30" fill="#f1f5f9" stroke="#334155" stroke-width="1.6"/>
+<circle cx="290" cy="78" r="9" fill="#ffffff" stroke="#334155" stroke-width="1.2"/>
+<path d="M110,120 L200,200" fill="none" stroke="#334155" stroke-width="2.4"/><path d="M290,120 L200,200" fill="none" stroke="#334155" stroke-width="2.4"/>
+<rect x="178" y="190" width="44" height="20" rx="8" fill="#e2e8f0" stroke="#334155" stroke-width="1.4"/>
+<text x="236" y="205" font-size="11">optic chiasm</text>
+<path d="M200,210 L130,285" fill="none" stroke="#334155" stroke-width="2.4"/><path d="M200,210 L270,285" fill="none" stroke="#334155" stroke-width="2.4"/>
+<rect x="110" y="285" width="40" height="18" rx="5" fill="#e2e8f0" stroke="#334155" stroke-width="1.4"/>
+<rect x="250" y="285" width="40" height="18" rx="5" fill="#e2e8f0" stroke="#334155" stroke-width="1.4"/>
+<text x="70" y="298" font-size="11" text-anchor="end">left LGN</text><text x="298" y="298" font-size="11">right LGN</text>
+<path d="M120,303 C60,330 40,390 95,470" fill="none" stroke="#334155" stroke-width="2.4"/>
+<path d="M135,303 C150,360 150,420 125,470" fill="none" stroke="#334155" stroke-width="2.4"/>
+<path d="M280,303 C340,330 360,390 305,470" fill="none" stroke="#334155" stroke-width="2.4"/>
+<path d="M265,303 C250,360 250,420 275,470" fill="none" stroke="#334155" stroke-width="2.4"/>
+<rect x="80" y="470" width="70" height="26" rx="6" fill="#e2e8f0" stroke="#334155" stroke-width="1.4"/><rect x="250" y="470" width="70" height="26" rx="6" fill="#e2e8f0" stroke="#334155" stroke-width="1.4"/>
+<text x="115" y="514" font-size="11" text-anchor="middle">left visual cortex</text><text x="285" y="514" font-size="11" text-anchor="middle">right visual cortex</text>
+<text x="14" y="350" font-size="10" fill="#334155">Meyer</text><text x="14" y="362" font-size="10" fill="#334155">loop</text>
+<text x="160" y="385" font-size="10" fill="#334155">parietal</text><text x="160" y="397" font-size="10" fill="#334155">radiation</text>
+<line x1="200" y1="240" x2="200" y2="540" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="155" cy="160" r="12" fill="#0f172a"/><text x="155" y="165" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">A</text>
+<circle cx="200" cy="200" r="12" fill="#0f172a"/><text x="200" y="205" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">B</text>
+<circle cx="165" cy="248" r="12" fill="#0f172a"/><text x="165" y="253" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+<circle cx="58" cy="385" r="12" fill="#0f172a"/><text x="58" y="390" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">D</text>
+<circle cx="146" cy="415" r="12" fill="#0f172a"/><text x="146" y="420" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">E</text>
+<circle cx="115" cy="483" r="12" fill="#0f172a"/><text x="115" y="488" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">F</text>
+<text x="560" y="56" font-size="12" font-weight="bold" text-anchor="middle">Fields (shaded = lost), as the patient sees them</text>
+<text x="490" y="74" font-size="11" text-anchor="middle">left eye</text><text x="560" y="74" font-size="11" text-anchor="middle">right eye</text>
+<circle cx="430" cy="110" r="12" fill="#0f172a"/><text x="430" y="115" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">A</text>
+<circle cx="490" cy="110" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<circle cx="490" cy="110" r="22" fill="#334155"/>
+<circle cx="490" cy="110" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="110" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="110" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<text x="594" y="114" font-size="11">left eye blind</text>
+<circle cx="430" cy="182" r="12" fill="#0f172a"/><text x="430" y="187" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">B</text>
+<circle cx="490" cy="182" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M490,160 A22,22 0 0 0 490,204 Z" fill="#334155"/>
+<circle cx="490" cy="182" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="182" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M560,160 A22,22 0 0 1 560,204 Z" fill="#334155"/>
+<circle cx="560" cy="182" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<text x="594" y="186" font-size="11">bitemporal hemianopia</text>
+<circle cx="430" cy="254" r="12" fill="#0f172a"/><text x="430" y="259" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+<circle cx="490" cy="254" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M490,232 A22,22 0 0 1 490,276 Z" fill="#334155"/>
+<circle cx="490" cy="254" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="254" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M560,232 A22,22 0 0 1 560,276 Z" fill="#334155"/>
+<circle cx="560" cy="254" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<text x="594" y="258" font-size="11">right homonymous hemianopia</text>
+<circle cx="430" cy="326" r="12" fill="#0f172a"/><text x="430" y="331" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">D</text>
+<circle cx="490" cy="326" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M490,326 L490,304 A22,22 0 0 1 512,326 Z" fill="#334155"/>
+<circle cx="490" cy="326" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="326" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M560,326 L560,304 A22,22 0 0 1 582,326 Z" fill="#334155"/>
+<circle cx="560" cy="326" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<text x="594" y="330" font-size="11">right upper quadrantanopia</text>
+<circle cx="430" cy="398" r="12" fill="#0f172a"/><text x="430" y="403" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">E</text>
+<circle cx="490" cy="398" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M490,398 L512,398 A22,22 0 0 1 490,420 Z" fill="#334155"/>
+<circle cx="490" cy="398" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="398" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M560,398 L582,398 A22,22 0 0 1 560,420 Z" fill="#334155"/>
+<circle cx="560" cy="398" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<text x="594" y="402" font-size="11">right lower quadrantanopia</text>
+<circle cx="430" cy="470" r="12" fill="#0f172a"/><text x="430" y="475" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">F</text>
+<circle cx="490" cy="470" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M490,448 A22,22 0 0 1 490,492 Z" fill="#334155"/><circle cx="490" cy="470" r="6" fill="#ffffff"/>
+<circle cx="490" cy="470" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<circle cx="560" cy="470" r="22" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
+<path d="M560,448 A22,22 0 0 1 560,492 Z" fill="#334155"/><circle cx="560" cy="470" r="6" fill="#ffffff"/>
+<circle cx="560" cy="470" r="22" fill="none" stroke="#334155" stroke-width="1.4"/>
+<text x="594" y="474" font-size="11">right hemianopia, macula spared</text>
+<text x="400" y="548" font-size="10" fill="#334155">LGN, lateral geniculate nucleus. Pupillary fibres leave the tract before the LGN.</text>
+</g></svg>

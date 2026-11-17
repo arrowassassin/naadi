@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-label="Coronal schematic of the skull with a hematoma over the right hemisphere. Four numbered arrows show directions of brain herniation: 1 under the free edge of the falx, 2 the medial temporal lobe over the edge of the tentorium beside the midbrain, 3 straight down through the tentorial notch, and 4 the cerebellar tonsils down through the foramen magnum.">
+<defs><marker id="s23e-fig0303-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+<rect x="0" y="0" width="760" height="560" fill="#ffffff"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="380" y="26" font-size="16" font-weight="bold" text-anchor="middle">Brain herniation from a supratentorial mass (coronal schematic)</text>
+<text x="380" y="46" font-size="12" text-anchor="middle" fill="#334155">The patient's right side is on the right; the hematoma is over the right hemisphere.</text>
+<path d="M352,500 C200,495 90,420 85,290 C80,150 210,62 380,62 C550,62 680,150 675,290 C670,420 560,495 408,500" fill="none" stroke="#334155" stroke-width="5"/>
+<path d="M120,285 C110,170 210,92 372,90 L372,228 C330,232 300,262 300,300 C250,300 170,300 120,285 Z" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<path d="M600,285 C610,175 530,96 388,92 L388,236 C430,240 455,268 455,305 C510,305 570,300 600,285 Z" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<path d="M620,150 C660,200 668,270 640,330 C628,280 615,210 590,165 Z" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
+<line x1="380" y1="64" x2="380" y2="215" stroke="#334155" stroke-width="4"/>
+<path d="M95,330 C200,330 290,328 340,348" fill="none" stroke="#334155" stroke-width="4"/>
+<path d="M665,330 C560,330 470,328 420,348" fill="none" stroke="#334155" stroke-width="4"/>
+<path d="M352,300 L408,300 L404,470 L400,545 L360,545 L356,470 Z" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<ellipse cx="275" cy="410" rx="78" ry="50" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<ellipse cx="485" cy="410" rx="78" ry="50" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<path d="M330,440 C340,470 345,488 352,498" fill="none" stroke="#334155" stroke-width="1.5"/>
+<path d="M455,305 C445,325 432,335 420,340" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+<g stroke="#0f172a" stroke-width="3.5" fill="none" marker-end="url(#s23e-fig0303-arr)">
+<path d="M500,222 L358,222"/>
+<path d="M480,300 C470,330 440,350 414,372"/>
+<path d="M395,240 L395,290"/>
+<path d="M300,440 C318,468 330,490 348,520"/>
+</g>
+<g font-size="14" font-weight="bold" text-anchor="middle">
+<circle cx="518" cy="222" r="13" fill="#0f172a"/><text x="518" y="227" fill="#ffffff">1</text>
+<circle cx="494" cy="286" r="13" fill="#0f172a"/><text x="494" y="291" fill="#ffffff">2</text>
+<circle cx="412" cy="256" r="13" fill="#0f172a"/><text x="412" y="261" fill="#ffffff">3</text>
+<circle cx="286" cy="432" r="13" fill="#0f172a"/><text x="286" y="437" fill="#ffffff">4</text>
+</g>
+<g font-size="12">
+<text x="388" y="84">Falx cerebri</text>
+<text x="592" y="140" text-anchor="end">Hematoma</text>
+<text x="112" y="374">Tentorium cerebelli</text>
+<text x="648" y="374" text-anchor="end">Tentorium cerebelli</text>
+<text x="485" y="414" text-anchor="middle">Cerebellum</text>
+<text x="420" y="510">Brainstem and</text>
+<text x="420" y="525">foramen magnum</text>
+<text x="230" y="200" text-anchor="middle">Left hemisphere</text>
+<text x="520" y="180" text-anchor="middle">Right hemisphere</text>
+</g>
+</g>
+</svg>

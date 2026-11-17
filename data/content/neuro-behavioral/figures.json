@@ -6,5 +6,197 @@
   "file": "figures/s23e-fig0001.svg",
   "source": "naadi-original-v1",
   "attribution": null
+ },
+ {
+  "id": "s23e-fig0101",
+  "chapterId": "s23e-ch01a",
+  "caption": "Figure. Spinal neural tube defects in cross-section: normal, spina bifida occulta, meningocele and myelomeningocele, showing what each sac contains. Naadi original diagram.",
+  "file": "figures/s23e-fig0101.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0102",
+  "chapterId": "s23e-ch01a",
+  "caption": "Figure. Spinal cord lesion length on MRI: a short, eccentric lesion in multiple sclerosis versus a longitudinally extensive central lesion in NMOSD. Schematic, Naadi original diagram.",
+  "file": "figures/s23e-fig0102.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0201",
+  "chapterId": "s23e-ch02a",
+  "caption": "Figure. Where CNS tumours arise, by site and typical age, on a midline schematic of the brain. Adults: mostly supratentorial; children: mostly posterior fossa. Naadi original diagram.",
+  "file": "figures/s23e-fig0201.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0202",
+  "chapterId": "s23e-ch02a",
+  "caption": "Figure. Midline schematic of the brain with lettered sites A to I. Naadi original diagram.",
+  "file": "figures/s23e-fig0202.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0301",
+  "chapterId": "s23e-ch03a",
+  "caption": "Figure. Arteries at the base of the brain (schematic). ICA, internal carotid artery; AComm, anterior communicating artery; AICA and PICA, anterior and posterior inferior cerebellar arteries. Numbered circles mark occlusion sites used in the questions. Naadi original diagram.",
+  "file": "figures/s23e-fig0301.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0302",
+  "chapterId": "s23e-ch03a",
+  "caption": "Figure. Rostral medulla in cross-section (schematic). Region 1 is the medial strip; region 2 is the lateral wedge. Naadi original diagram.",
+  "file": "figures/s23e-fig0302.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0303",
+  "chapterId": "s23e-ch03a",
+  "caption": "Figure. Herniation from a right-sided supratentorial mass (coronal schematic). Numbered arrows show four directions of herniation. Naadi original diagram.",
+  "file": "figures/s23e-fig0303.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0304",
+  "chapterId": "s23e-ch03a",
+  "caption": "Figure. Arteries at the base of the brain (schematic, unlabelled). Numbered circles mark possible occlusion sites. Naadi original diagram.",
+  "file": "figures/s23e-fig0304.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0305",
+  "chapterId": "s23e-ch03a",
+  "caption": "Figure. Rostral medulla in cross-section (schematic, unlabelled) with two numbered shaded regions on the left half. Naadi original diagram.",
+  "file": "figures/s23e-fig0305.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0306",
+  "chapterId": "s23e-ch03a",
+  "caption": "Figure. Coronal schematic of a right-sided supratentorial mass with four numbered herniation arrows (unlabelled). Naadi original diagram.",
+  "file": "figures/s23e-fig0306.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0401",
+  "chapterId": "s23e-ch04a",
+  "caption": "Figure. Cervical spinal cord in cross-section with the dorsal columns, lateral corticospinal tract, spinothalamic tract, ventral horn and anterior white commissure; Naadi original diagram.",
+  "file": "figures/s23e-fig0401.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0402",
+  "chapterId": "s23e-ch04a",
+  "caption": "Figure. Simplified brachial plexus from roots C5–T1 to the terminal branches, with the long thoracic and suprascapular nerves; Naadi original diagram.",
+  "file": "figures/s23e-fig0402.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0403",
+  "chapterId": "s23e-ch04a",
+  "caption": "Figure. Cervical spinal cord in cross-section with five lettered sites (A–E). Naadi original diagram.",
+  "file": "figures/s23e-fig0403.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0404",
+  "chapterId": "s23e-ch04a",
+  "caption": "Figure. Simplified brachial plexus with five lettered sites (A–E). Naadi original diagram.",
+  "file": "figures/s23e-fig0404.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0501",
+  "chapterId": "s23e-ch05a",
+  "caption": "Figure. The neuromuscular junction. A: presynaptic voltage-gated calcium channel (Lambert-Eaton antibodies). B: SNARE fusion proteins (cleaved by botulinum toxin). C: acetylcholinesterase (inhibited by pyridostigmine). D: nicotinic acetylcholine receptor (most myasthenia gravis antibodies). E: MuSK (antibodies in some seronegative myasthenia). Naadi original diagram.",
+  "file": "figures/s23e-fig0501.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0502",
+  "chapterId": "s23e-ch05a",
+  "caption": "Figure. Basal ganglia motor circuit. A: striatum. B: external globus pallidus. C: subthalamic nucleus. D: internal globus pallidus and substantia nigra pars reticulata. E: motor thalamus. Dopamine excites the direct pathway (D1) and inhibits the indirect pathway (D2). Naadi original diagram.",
+  "file": "figures/s23e-fig0502.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0503",
+  "chapterId": "s23e-ch05a",
+  "caption": "Figure. The neuromuscular junction, with five sites marked A to E. Naadi original diagram.",
+  "file": "figures/s23e-fig0503.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0504",
+  "chapterId": "s23e-ch05a",
+  "caption": "Figure. The basal ganglia motor circuit, with five structures marked A to E. Naadi original diagram.",
+  "file": "figures/s23e-fig0504.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0601",
+  "chapterId": "s23e-ch06a",
+  "caption": "Figure. Hypnogram of a normal night in a young adult. N3 dominates the first third of the night; REM periods (shaded) lengthen toward morning. Labelled points A–E are used in practice questions. Naadi original diagram.",
+  "file": "figures/s23e-fig0601.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0602",
+  "chapterId": "s23e-ch06b",
+  "caption": "Figure. Time-based treatment of convulsive status epilepticus: stabilise, benzodiazepine, second-line IV drug, then anaesthetic infusion with EEG for refractory status. Naadi original diagram.",
+  "file": "figures/s23e-fig0602.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0701",
+  "chapterId": "s23e-ch07a",
+  "caption": "Figure. Visual pathway with lesion sites A–F and the matching field defects (A optic nerve, B chiasm, C optic tract, D Meyer loop, E parietal radiation, F occipital cortex). Naadi original diagram.",
+  "file": "figures/s23e-fig0701.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0702",
+  "chapterId": "s23e-ch07a",
+  "caption": "Figure. Pupil pathways: the light reflex (parasympathetic) and the three-neuron oculosympathetic chain, with typical lesions of each neuron. Naadi original diagram.",
+  "file": "figures/s23e-fig0702.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0703",
+  "chapterId": "s23e-ch07a",
+  "caption": "Figure. Visual pathway seen from above with lesion sites A–F. Naadi original diagram.",
+  "file": "figures/s23e-fig0703.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23e-fig0801",
+  "chapterId": "s23e-ch08a",
+  "caption": "Figure. Schematic fundus patterns in acute visual loss: (1) normal; (2) central retinal artery occlusion, with a pale retina and cherry-red spot; (3) central retinal vein occlusion, with dilated veins and haemorrhages in all quadrants; (4) papilloedema, with a swollen disc and blurred margins. Naadi original diagram.",
+  "file": "figures/s23e-fig0801.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
  }
 ]
