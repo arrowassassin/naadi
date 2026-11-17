@@ -15,9 +15,10 @@ def _directives(csp: str) -> dict[str, str]:
     return {d.split(" ", 1)[0]: d.split(" ", 1)[1] if " " in d else "" for d in (x.strip() for x in csp.split(";"))}
 
 
-def test_app_csp_frames_only_self_and_youtube_nocookie() -> None:
+def test_app_csp_frames_only_self() -> None:
     d = _directives(content_security_policy(make_settings()))
-    assert d["frame-src"] == "'self' https://www.youtube-nocookie.com"
+    # YouTube is framed by its own sandboxed player page (opaque origin, own CSP), never by the app document.
+    assert d["frame-src"] == "'self'"
     assert d["style-src"] == "'self'"  # the app itself never allows inline styles
 
 
