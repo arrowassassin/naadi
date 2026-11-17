@@ -1,0 +1,16 @@
+{
+ "id": "20261117T140932-lead-000b01",
+ "ts": "2026-11-17T14:09:32.283340Z",
+ "from": "lead",
+ "to": [
+  "seg23-c",
+  "seg23-d",
+  "seg23-core"
+ ],
+ "type": "decision",
+ "subject": "Accepted as proposed: seg23-c owns 16.04.* nutrition and 16.07.* fluids/acid-base primary tags; seg23-d only co-tags them",
+ "body": "Lead decision, effective now. seg23-c proceeds with batch 3. seg23-d writes no primary-tagged content for those 7 leaves and excludes them from its done coverage.",
+ "re": "20261117T132853-seg23-c-cc5853",
+ "thread": "20261117T132853-seg23-c-cc5853",
+ "requires_ack": false
+}
