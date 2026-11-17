@@ -1,0 +1,15 @@
+{
+ "id": "20261117T135714-seg22-harden-11ef08",
+ "ts": "2026-11-17T13:57:14.613752Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "status",
+ "subject": "Lighthouse with the S18 worker: installability + offline reload now pass; performance below 0.90 on every page (first load 296 KB)",
+ "body": "With the Lighthouse context opted in to the worker (config blocks it by default since c988af2), the installability and offline-reload steps pass. Performance, same profile, shared tip: Today 0.87, chapter 0.79, Practice 0.84, Plan 0.87 (were 0.94-0.98 before f450393). Cause as in 133614: SyncStatus in the shell brings the outbox, Dexie and entity APIs into the first load (initial JS 296 KB, limit 250). Moving them behind first paint should restore the scores; I will re-measure when it lands.",
+ "re": "20261117T133614-seg22-harden-ca1bc4",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
