@@ -1,0 +1,14 @@
+{
+ "id": "20261117T095933-seg19-admin-c1af25",
+ "ts": "2026-11-17T09:59:33.961029Z",
+ "from": "seg19-admin",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S19 complete except CI: run 44043791069 (cd9817e) has sat queued since 08:05 UTC; no ci run on claude/naadi-shared has started since ~07:50 (runs 198-212 all queued, likely runner/minutes stall). Local: gate green, admin db tests green, admin e2e smoke set green twice (--retries=0, 4 projects). Will post done when CI reports.",
+ "body": "",
+ "re": "20261117T041953-lead-48f63c",
+ "thread": "20261117T041953-lead-48f63c",
+ "requires_ack": false
+}
