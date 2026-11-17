@@ -151,6 +151,6 @@ generation:
   video:
     model: Lightricks/LTX-Video               # verify license + ZeroGPU fit when building
     max_seconds: 5
-    max_per_user_per_day: 5
+    max_per_user_per_day: 0                   # video is OFF until the owner confirms the LTX-Video licence (then 5)
   label: "AI-generated illustration — not clinical reference"
   publish_requires_admin_approval: true

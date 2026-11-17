@@ -46,8 +46,8 @@ def generation_config(**caps: int) -> GenerationSection:
     raw = yaml.safe_load((REPO_ROOT / "config" / "models.yaml").read_text(encoding="utf-8"))["generation"]
     if "image" in caps:
         raw["image"]["max_per_user_per_day"] = caps["image"]
-    if "video" in caps:
-        raw["video"]["max_per_user_per_day"] = caps["video"]
+    # the shipped default is video OFF (0); the tests exercise it enabled unless they say otherwise
+    raw["video"]["max_per_user_per_day"] = caps.get("video", 5)
     return GenerationSection.model_validate(raw)
 
 

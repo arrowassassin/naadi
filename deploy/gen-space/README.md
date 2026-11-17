@@ -28,8 +28,8 @@ computed from the request. Nothing here ever requests paid hardware.
 - FLUX.1-schnell: Apache-2.0.
 - LTX-Video: Lightricks open-weights licence. Free for organisations under US$10M annual revenue; use restrictions
   apply (no medical advice, no impersonation, no harm to minors) and generated content must be disclosed as machine
-  generated, which Naadi does with the AI label (chip, alt text, caption). Set `NAADI_GEN_VIDEO=0` (Space variable)
-  to turn video off, and set `generation.video.max_per_user_per_day: 0` in app_config.
+  generated, which Naadi does with the AI label (chip, alt text, caption). Video ships OFF: set the Space variable
+  `NAADI_GEN_VIDEO=1` and `generation.video.max_per_user_per_day: 5` in app_config only after the owner confirms the licence.
 
 ## Create (owner, once)
     hf repos create arrowassassin/naadi-gen --type space --space-sdk gradio --flavor zero-a10g --private

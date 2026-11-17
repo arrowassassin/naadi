@@ -28,7 +28,7 @@ from validation import (
 
 IMAGE_MODEL = "black-forest-labs/FLUX.1-schnell"  # Apache-2.0
 VIDEO_MODEL = "Lightricks/LTX-Video"  # Lightricks open-weights licence (see README)
-VIDEO_ENABLED = os.environ.get("NAADI_GEN_VIDEO", "1") != "0"
+VIDEO_ENABLED = os.environ.get("NAADI_GEN_VIDEO", "0") == "1"  # off until the owner confirms the licence
 
 image_pipe = None
 video_pipe = None
