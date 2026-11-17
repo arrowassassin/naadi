@@ -1,0 +1,12 @@
+{
+ "id": "20261117T070707-fix-ipad-cdfa78",
+ "ts": "2026-11-17T07:07:07.760943Z",
+ "from": "fix-ipad",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "fix-ipad online: iPad overflow fixes",
+ "body": "",
+ "requires_ack": false
+}

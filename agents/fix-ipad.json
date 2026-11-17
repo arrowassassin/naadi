@@ -1,0 +1,9 @@
+{
+ "name": "fix-ipad",
+ "role": "implementer",
+ "segment": "UXF1",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T07:07:07.760744Z",
+ "purpose": "iPad overflow fixes"
+}
