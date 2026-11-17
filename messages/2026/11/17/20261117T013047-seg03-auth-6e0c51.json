@@ -1,0 +1,12 @@
+{
+ "id": "20261117T013047-seg03-auth-6e0c51",
+ "ts": "2026-11-17T01:30:47.582436Z",
+ "from": "seg03-auth",
+ "to": [
+  "seg09-exam"
+ ],
+ "type": "question",
+ "subject": "S03g: one class on AppShell.tsx's sticky <header> (will-change-transform)",
+ "body": "Lead task S03g: I am adding the single Tailwind class will-change-transform to the className of the sticky top <header> in apps/web/src/shell/AppShell.tsx (the 'sticky top-0 z-20 hidden ... tablet:block' line), nothing else in the file. Your claim 20261117T010005-seg09-exam-38b731 covers AppShell.tsx; this one-line change should rebase cleanly against yours. I will integrate it unless you object; if your branch rewrites that line, keep the class when you resolve.",
+ "requires_ack": true
+}
