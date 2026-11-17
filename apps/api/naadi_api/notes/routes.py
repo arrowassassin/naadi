@@ -77,7 +77,7 @@ from .models import (
     check_shape,
 )
 from .store import NewNote, NoteFilter, NotesError
-from .text import MAX_DEPTH, body_text, json_depth, valid_tiptap
+from .text import MAX_DEPTH, body_text, json_depth, own_images, valid_tiptap
 
 log = get_logger("naadi.notes")
 router = APIRouter(prefix="/api", tags=["notes"], route_class=IdempotentRoute)
@@ -238,6 +238,17 @@ def checked_body(body: dict[str, Any] | None, canvas: str) -> str:
     return body_text(body, "whiteboard" if canvas == "whiteboard" else "paper")
 
 
+def own_body(body: dict[str, Any] | None, canvas: str, user_id: uuid.UUID) -> dict[str, Any] | None:
+    """`body` (already validated by `checked_body`) without image references outside the student's own notes
+    folder; only a count is logged."""
+    if body is None:
+        return None
+    cleaned, dropped = own_images(body, "whiteboard" if canvas == "whiteboard" else "paper", str(user_id))
+    if dropped:
+        log.info("notes.foreign_images_dropped", count=dropped)
+    return cleaned  # type: ignore[no-any-return]
+
+
 async def _anchor(db: Database, user: CurrentUser, anchor_type: str | None, anchor_id: str | None) -> None:
     if anchor_type in (None, "free"):
         return
@@ -383,7 +394,7 @@ async def create_note(
         anchor_id=body.anchor_id,
         anchor_pos=body.anchor_pos,
         highlight_color=body.highlight_color,
-        body=body.body,
+        body=own_body(body.body, body.canvas, user.user_id),
         body_text=text,
         paper=None,
         canvas=body.canvas,
@@ -526,7 +537,7 @@ async def update_note(
             values["title"] = _clean_title(values["title"])
         text_changed = bool({"title", "body", "canvas"} & sent)
         if "body" in sent or "canvas" in sent:
-            values["body"] = merged["body"]
+            values["body"] = own_body(merged["body"], merged["canvas"], uid)
             values["canvas"] = merged["canvas"]
             values["body_text"] = checked_body(merged["body"], merged["canvas"])
         if "sort" in sent and body.sort is not None:
@@ -905,7 +916,7 @@ async def create_page(
             anchor_id=body.anchor_id,
             anchor_pos=None,
             highlight_color=None,
-            body=body.body,
+            body=own_body(body.body, body.canvas, uid),
             body_text=text,
             paper=body.paper,
             canvas=body.canvas,

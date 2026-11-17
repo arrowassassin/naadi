@@ -15,7 +15,6 @@ import {
   usePendingOps,
   useUserId,
 } from "./api";
-import { ConflictNotices, useConflictRevision } from "./conflicts";
 import { EMPTY_DOC, isEmptyDoc } from "./doc";
 import { NoteInk } from "./NoteInk";
 import { PAPER_NOTICE } from "./paperNotice";
@@ -99,8 +98,6 @@ export function PageNotesPanel({
   // The note id: the stored one, or one made here on the first edit.
   const [madeId, setMadeId] = useState<string | null>(null);
   const noteId = note?.id ?? madeId;
-  // A newer copy adopted after a conflict replaces the stale text in the editor (instead of being saved over it).
-  const conflictRevision = useConflictRevision(noteId);
   // Read synchronously by the editor's change handler (two keystrokes before a re-render must not make two notes).
   const idRef = useRef<string | null>(noteId);
   idRef.current = noteId ?? idRef.current;
@@ -274,7 +271,7 @@ export function PageNotesPanel({
               <div className={PAPER_NOTICE}>
                 <NoteEditor
                   // One editor per note; a note made here keeps the editor it was typed in.
-                  key={`${madeId ? "local" : (note?.id ?? "local")}:${conflictRevision}`}
+                  key={madeId ? "local" : (note?.id ?? "local")}
                   noteId={noteId ?? sectionId}
                   initial={note?.body ?? EMPTY_DOC}
                   onChange={onChange}
@@ -328,9 +325,6 @@ export function PageNotesPanel({
               )}
             </div>
           ) : null}
-          <div className={PAPER_NOTICE}>
-            <ConflictNotices filter={{ scope: "notes", anchorId: sectionId }} />
-          </div>
           {noteId ? <NoteSaveStatus ids={[noteId]} tone="paper" dirty={dirty} /> : null}
         </>
       )}

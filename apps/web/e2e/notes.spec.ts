@@ -594,4 +594,72 @@ test.describe("highlights, notes and the selection toolbar", () => {
       await s.done();
     }
   });
+  test("two devices: a stale offline edit does not overwrite a newer one, and the student's version is kept", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.setTimeout(180_000);
+    const student = await freshStudent(browser, baseURL as string, info, "twodev");
+    try {
+      // Device A: writes the page note of a section, goes offline and edits it further.
+      const { page: a, context: ctxA } = await student.open(READER);
+      const { errors } = watchConsole(a);
+      await expect(a.getByRole("heading", { level: 1 })).toBeVisible();
+      await quiet(a);
+      await a.locator("[data-page-notes-toggle]:visible").first().click();
+      const editorA = a.locator("[data-page-notes]").getByRole("textbox", { name: /^Your notes on / });
+      await expect(editorA).toBeVisible({ timeout: 20_000 });
+      await editorA.click();
+      await a.keyboard.type("Base text");
+      await expect(a.locator("[data-page-notes] [data-note-save=saved]")).toBeVisible({ timeout: 20_000 });
+      const listed = await api<{ items: { id: string }[] }>(
+        a,
+        "GET",
+        "/api/notes?kind=note&anchor_type=section&limit=5",
+      );
+      const id = listed.json.items[0]?.id as string;
+      expect(id).toBeTruthy();
+      await quiet(a);
+
+      await ctxA.setOffline(true);
+      await a.evaluate(() => window.dispatchEvent(new Event("offline")));
+      await editorA.click();
+      await editorA.press("ControlOrMeta+End");
+      await a.keyboard.type(" from device A offline");
+      await expect(a.locator("[data-page-notes] [data-note-save=local]")).toContainText("will sync", {
+        timeout: 20_000,
+      });
+
+      // Device B (the same student, online) saves a newer version of that note meanwhile.
+      const { page: b } = await student.open("/learn");
+      const newer = {
+        type: "doc",
+        content: [{ type: "paragraph", content: [{ type: "text", text: "Newer text from device B" }] }],
+      };
+      const saved = await api<{ body_text: string }>(b, "PATCH", `/api/notes/${id}`, { body: newer });
+      expect(saved.status).toBe(200);
+
+      // A reconnects: its older edit is refused by the server, B's text stays, and A's version is kept in the
+      // sync sheet (nothing is lost, nothing newer is overwritten).
+      const flushed = a.waitForResponse(
+        (r) => r.url().includes(`/api/notes/${id}`) && r.request().method() === "PATCH",
+      );
+      await ctxA.setOffline(false);
+      await a.evaluate(() => window.dispatchEvent(new Event("online")));
+      await flushed;
+      await expect
+        .poll(async () => (await api<{ body_text: string }>(b, "GET", `/api/notes/${id}`)).json.body_text, {
+          timeout: 20_000,
+        })
+        .toContain("Newer text from device B");
+      const final = (await api<{ body_text: string }>(b, "GET", `/api/notes/${id}`)).json.body_text;
+      expect(final).not.toContain("from device A offline");
+
+      await a.locator("[data-sync-phase]").first().click();
+      await expect(a.locator("[data-sync-sheet] [data-sync-conflict]").first()).toBeVisible({ timeout: 20_000 });
+      expect(errors.filter((e) => !/Failed to load resource|net::ERR|NetworkError|Load failed/.test(e))).toEqual([]);
+    } finally {
+      await student.done();
+    }
+  });
 });

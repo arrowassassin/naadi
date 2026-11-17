@@ -14,11 +14,10 @@ import {
   Presentation,
   Trash2,
 } from "lucide-react";
-import { Fragment, type ReactNode, useState } from "react";
+import { useState } from "react";
 import { ApiError } from "../auth/apiError";
 import { useUiText } from "../copy/useUiText";
 import { useOnlineStatus } from "../health/useOnlineStatus";
-import { ConflictNotices, useConflictRevision } from "../notes/conflicts";
 import { deliverPdf, exportNotebookToPdf } from "../pdf";
 import { errorKey, useNotebook, useNotebookSync } from "./api";
 import { ConfirmDialog } from "./dialogs";
@@ -88,12 +87,6 @@ function LinkedChip({ page }: { page: NoteOut }) {
  * persisted ink, or a whiteboard; paper choice per page, add / reorder / delete pages, export the notebook as a PDF.
  * The shelf sits beside the page on wide screens, as on the board.
  */
-/** Remounts its children when a conflict replaced the page's content with the server's copy (notes/conflicts.tsx). */
-function ConflictKeyed({ id, children }: { id: string; children: ReactNode }) {
-  const revision = useConflictRevision(id);
-  return <Fragment key={revision}>{children}</Fragment>;
-}
-
 export function NotebookPage({ id, page: rawPage }: { id: string; page: string }) {
   const t = useUiText();
   const navigate = useNavigate();
@@ -261,7 +254,6 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
         </div>
 
         {fromDevice || !online ? <OfflineBanner message={t("notebooks.page.offline")} /> : null}
-        <ConflictNotices filter={{ scope: "notebooks", notebookId: id }} />
 
         {current === null ? (
           <div className="flex flex-col items-start gap-3 rounded-block border border-line p-6" data-notebook-empty="">
@@ -317,9 +309,7 @@ export function NotebookPage({ id, page: rawPage }: { id: string; page: string }
             </div>
 
             {current.canvas === "whiteboard" && sync ? (
-              <ConflictKeyed key={current.id} id={current.id}>
-                <WhiteboardPage page={current} notebookId={id} sync={sync} label={pageLabel} />
-              </ConflictKeyed>
+              <WhiteboardPage key={current.id} page={current} notebookId={id} sync={sync} label={pageLabel} />
             ) : (
               <PageInk
                 key={current.id}

@@ -10,7 +10,6 @@ import { NotebooksShelf } from "../notebooks/NotebooksShelf";
 import { useLocalSearch } from "../search/api";
 import { resolveTarget } from "../search/targets";
 import { errorKey, type Note, useNote, useNotes, useNotesSync, useNoteWriter } from "./api";
-import { ConflictNotices, useConflictRevision } from "./conflicts";
 import { ExportHighlightsPdf } from "./ExportPdf";
 import { EMPTY_DOC } from "./extensions";
 import { editedLabel, noteTitle, sourceLabel } from "./format";
@@ -178,8 +177,6 @@ export function NotesPage({ search }: { search: NotesSearch }) {
   // A note outside the list (a search hit, an older note) or a notebook page (opened in its notebook).
   const single = useNote(search.note, tab === "notes" && Boolean(list.data) && !listed);
   const open = listed ?? (single.data?.kind === "note" ? single.data : undefined);
-  // The server's copy replaced this note after a conflict: the sheet reloads it (its editor holds the old text).
-  const revision = useConflictRevision(open?.id);
   const page = single.data?.kind === "page" ? single.data : undefined;
   useEffect(() => {
     if (page?.notebook_id) {
@@ -335,7 +332,7 @@ export function NotesPage({ search }: { search: NotesSearch }) {
 
   const sheet = open ? (
     <NoteSheet
-      key={`${open.id}:${revision}`}
+      key={open.id}
       note={open}
       onBack={() => go({ note: undefined })}
       onDeleted={() => go({ note: undefined })}
@@ -358,7 +355,6 @@ export function NotesPage({ search }: { search: NotesSearch }) {
     <div className="flex flex-col gap-8 pt-8 pb-10 tablet:pt-14" data-notes-page="notes">
       {header}
       {tabs}
-      <ConflictNotices filter={{ scope: "notes", exceptNoteId: open?.id }} />
       <div
         className={cx(
           "grid grid-cols-[minmax(0,1fr)] gap-5",

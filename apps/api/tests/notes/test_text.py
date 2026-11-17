@@ -188,3 +188,53 @@ def test_list_bodies_stay_within_the_response_budget() -> None:
     out = within_budget(rows, budget=400)
     assert [r["body"] is not None for r in out] == [True, True, False, False, False]
     assert all(r["body_omitted"] for r in out[2:]) and not rows[2]["body_omitted"]
+
+
+# ── foreign image references (S13 review defect 8) ──
+
+
+def test_own_images_drops_paths_outside_the_students_notes_folder() -> None:
+    from naadi_api.notes.text import own_images, own_path
+
+    uid = "11111111-1111-1111-1111-111111111111"
+    mine = f"{uid}/notes/a.png"
+    assert own_path(mine, uid)
+    for bad in (
+        "other/notes/a.png",
+        f"{uid}/notes/",
+        f"{uid}/notes/../x.png",
+        f"{uid}/exports/a.zip",
+        "..\\x",
+        None,
+        7,
+    ):
+        assert not own_path(bad, uid)
+    doc = {
+        "type": "doc",
+        "content": [
+            {"type": "paragraph", "content": [{"type": "text", "text": "keep"}]},
+            {"type": "image", "attrs": {"path": mine}},
+            {"type": "image", "attrs": {"path": "someone-else/notes/x.png"}},
+            {"type": "bulletList", "content": [{"type": "image", "attrs": {"path": f"{uid}/notes/../../y.png"}}]},
+        ],
+    }
+    cleaned, dropped = own_images(doc, "paper", uid)
+    assert dropped == 2
+    assert [c["type"] for c in cleaned["content"]] == ["paragraph", "image", "bulletList"]
+    assert cleaned["content"][1]["attrs"]["path"] == mine
+    # An unchanged body comes back as is.
+    same, none = own_images(cleaned, "paper", uid)
+    assert none == 0 and same is cleaned
+
+
+def test_own_images_cleans_whiteboard_files() -> None:
+    from naadi_api.notes.text import own_images
+
+    uid = "22222222-2222-2222-2222-222222222222"
+    scene = {
+        "elements": [],
+        "files": {"a": {"path": f"{uid}/notes/w.png"}, "b": {"path": "x/notes/w.png"}, "c": {"id": "c"}},
+    }
+    cleaned, dropped = own_images(scene, "whiteboard", uid)
+    assert dropped == 1
+    assert set(cleaned["files"]) == {"a", "c"}

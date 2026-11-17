@@ -12,7 +12,6 @@ export const zNotebookOut = z.object({
   client_updated_at_ms: z.int().nullish(),
   cover: z.enum(["lime", "violet", "amber", "paper", "surface-2", "ink-violet"]).nullable(),
   created_at: z.iso.datetime(),
-  edited_at: z.iso.datetime(),
   id: z.uuid(),
   note_count: z.int(),
   page_count: z.int(),

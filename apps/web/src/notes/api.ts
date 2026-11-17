@@ -10,7 +10,7 @@ import {
   updateNote,
 } from "@naadi/shared";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import { authed } from "../auth/api";
 import { ApiError, UNREACHABLE } from "../auth/apiError";
 import { AUTH_STORAGE_KEY, useAuth } from "../auth/session";
@@ -33,6 +33,7 @@ import {
   type SendResult,
   subscribeNoteOps,
 } from "./outbox";
+import { untilLeave } from "./pageLeave";
 import type { NoteFilters } from "./types";
 
 installOfflineCacheReset();
@@ -295,7 +296,7 @@ export function useNotes(filters: NoteFilters, opts: { enabled?: boolean } = {})
         assertOnline();
         const data = await authed<NoteList>((headers) =>
           listNotes({
-            signal,
+            signal: untilLeave(signal),
             headers,
             query: {
               kind: filters.kind,
@@ -320,15 +321,21 @@ export function useNotes(filters: NoteFilters, opts: { enabled?: boolean } = {})
     },
   });
 
+  // Callers pass a new filter object on every render: key the list on the filters' content, so `items` (and what
+  // is derived from it) only change when the data, the queue or the filters really change.
+  const filtersRef = useRef(filters);
+  filtersRef.current = filters;
+  const filterKey = offlineId(filters);
+  // biome-ignore lint/correctness/useExhaustiveDependencies: `filterKey` is the content of `filters`
   const items = useMemo(() => {
     const base = query.data?.data.items ?? [];
     const merged = overlay(
       base,
       ops.filter((o) => !o.refused),
-      (fields) => matches(filters, fields),
+      (fields) => matches(filtersRef.current, fields),
     );
     return merged.map((n) => (n.created_at ? n : localNote(n.id, n as unknown as NoteFields)));
-  }, [query.data, ops, filters]);
+  }, [query.data, ops, filterKey]);
 
   return { ...query, items, fromCache: query.data?.fromCache ?? false, counts: query.data?.data.counts ?? null };
 }
@@ -409,6 +416,6 @@ export function useNote(id: string | undefined, enabled: boolean) {
     staleTime: 15_000,
     retry: (n, e) => n < 1 && isRetryable(e),
     queryFn: ({ signal }) =>
-      authed<NoteOut>((headers) => getNote({ signal, headers, path: { note_id: id as string } })),
+      authed<NoteOut>((headers) => getNote({ signal: untilLeave(signal), headers, path: { note_id: id as string } })),
   });
 }

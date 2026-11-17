@@ -19,9 +19,9 @@ from .executor import ToolRefused
 from .registry import ToolContext
 
 
-def _checked(doc: dict[str, Any], ctx: ToolContext) -> str:
+def _checked(doc: dict[str, Any]) -> str:
     try:
-        return notes_api.checked_body(doc, "paper", ctx.user_id)[1]
+        return notes_api.checked_body(doc, "paper")
     except notes.NotesError as exc:
         raise ToolRefused(exc.code) from exc
 
@@ -82,7 +82,7 @@ def _reindex(ctx: ToolContext, note_ids: list[str]) -> None:
 
 async def create(ctx: ToolContext, anchor_type: str, anchor_id: str | None, doc: dict[str, Any]) -> uuid.UUID:
     """A new note; on a section that already has its page note, the blocks are appended to that note."""
-    text = _checked(doc, ctx)
+    text = _checked(doc)
     note = notes.NewNote(
         id=uuid.uuid4(),
         kind="note",
@@ -124,7 +124,7 @@ async def _append_locked(
         else {"type": "doc", "content": []}
     )
     merged = {"type": "doc", "content": [*(body.get("content") or []), *doc["content"]]}
-    text = _checked(merged, ctx)
+    text = _checked(merged)
     await notes.update_note(conn, ctx.user_id, note_id, {"body": merged, "body_text": text})
 
 
@@ -140,7 +140,7 @@ async def append(ctx: ToolContext, note_id: uuid.UUID, doc: dict[str, Any]) -> N
 
 
 async def replace(ctx: ToolContext, note_id: uuid.UUID, doc: dict[str, Any]) -> None:
-    text = _checked(doc, ctx)
+    text = _checked(doc)
 
     async def write(conn: psycopg.AsyncConnection[Any]) -> None:
         await notes.lock_note(conn, ctx.user_id, note_id)

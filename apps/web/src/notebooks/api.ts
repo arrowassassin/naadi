@@ -25,6 +25,7 @@ import { authed } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { onAuthChange, useAuth } from "../auth/session";
 import { useOnlineStatus } from "../health/useOnlineStatus";
+import { untilLeave } from "../notes/pageLeave";
 import {
   clearNotebookSnapshots,
   dexieOutbox,
@@ -387,7 +388,7 @@ export function useNotebooks() {
     retry: (n, err) => n < 1 && !isUnreachable(err),
     queryFn: ({ signal }) =>
       withDeviceCopy((sync as NotebookSync).store, "list", () =>
-        authed<NotebookList>((headers) => listNotebooks({ signal, headers })),
+        authed<NotebookList>((headers) => listNotebooks({ signal: untilLeave(signal), headers })),
       ),
   });
   const items = useMemo<NotebookOut[] | undefined>(
@@ -417,7 +418,9 @@ export function useNotebook(id: string) {
     queryFn: async ({ signal }) => {
       try {
         return await withDeviceCopy((sync as NotebookSync).store, `nb:${id}`, () =>
-          authed<NotebookDetail>((headers) => getNotebook({ signal, headers, path: { notebook_id: id } })),
+          authed<NotebookDetail>((headers) =>
+            getNotebook({ signal: untilLeave(signal), headers, path: { notebook_id: id } }),
+          ),
         );
       } catch (err) {
         // Made on this device and not sent yet: the queue holds it.
@@ -465,7 +468,7 @@ export function usePageNote(page: NoteOut | null) {
     retry: (n, err) => n < 1 && !isUnreachable(err),
     queryFn: ({ signal }) =>
       withDeviceCopy((sync as NotebookSync).store, `note:${id}`, () =>
-        authed<NoteOut>((headers) => getNote({ signal, headers, path: { note_id: id } })),
+        authed<NoteOut>((headers) => getNote({ signal: untilLeave(signal), headers, path: { note_id: id } })),
       ),
   });
   const note = useMemo(() => {
