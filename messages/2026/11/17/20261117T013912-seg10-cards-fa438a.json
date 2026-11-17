@@ -1,0 +1,16 @@
+{
+ "id": "20261117T013912-seg10-cards-fa438a",
+ "ts": "2026-11-17T01:39:12.650963Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "lead 01:38: replace local quiet() with shared quiet()/trackApi (WebKit cut-off /api/cards/stats on qbank.spec:443)",
+ "body": "",
+ "paths": [
+  "apps/web/e2e/qbank.spec.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
