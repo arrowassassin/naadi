@@ -48,7 +48,11 @@ REFERS_TO_CLINICIAN = (
 _CITE = re.compile(r"\[\s*ctx\s*:\s*([^\]]+)\]", re.I)
 _SEPARATORS = re.compile(r"[\s\-./_()+]")
 # After the letter: not part of a word, and not the article of a phrase ("A key point", "go with A strategy").
-_AFTER = r"(?![A-Za-z0-9])(?!\s+(?!(?:because|since|as|is|was|for|here)\b)[a-z])"
+_AFTER = (
+    r"(?![A-Za-z0-9])(?!\s+(?!(?:because|since|as|is|was|for|here)\b)[a-z])"
+    # nor the start of a range or list of letters ("commit to an answer (A–E)", "answer A, B or C")
+    r"(?!\s*(?:[–\-]|to|through)\s*[A-J](?![A-Za-z0-9]))(?!\s*,\s*[A-J](?![A-Za-z0-9]))"
+)
 _LEAK_TEMPLATES = (
     # "the answer is C", "correct option: (C)", "best choice would be C"
     r"\b(?:answer|correct\s+(?:option|choice|one|letter)|right\s+(?:answer|option|choice|one)|"

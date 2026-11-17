@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 from model_eval.answerers import LocalAnswerer
 from model_eval.heldout import HELDOUT_SIZE, Question, load_questions, pick_heldout
-from model_eval.prompts import load_prompts
+from model_eval.prompts import EvalPrompt, load_prompts
 from model_eval.retrieval import HashingEmbedder, HeldoutFilter, Index, build_corpus, is_answer_key, shingles
 
 from .conftest import DATA, PROMPTS
@@ -92,6 +92,34 @@ def test_mcq_context_never_contains_heldout_text(
         human = str(answerer.mcq_messages(q, [])[1].content)
         assert f"Answer: {q.answer}" not in human
         assert q.explanation[:60] not in human
+
+
+def test_prompt_retrieval_scrubs_pii_and_covers_every_sentence(
+    heldout: list[Question], sections: list[tuple[str, str, str, str]], eval_prompts: list[EvalPrompt]
+) -> None:
+    hidden = HeldoutFilter(t for q in heldout for t in q.hidden_texts())
+    chunks, _ = build_corpus(sections, hidden)
+    seen: list[str] = []
+
+    class Spy(HashingEmbedder):
+        def embed_query(self, text: str) -> list[float]:
+            seen.append(text)
+            return super().embed_query(text)
+
+    answerer = LocalAnswerer(gateway=None, index=Index(chunks, Spy()), k=6)  # type: ignore[arg-type]
+    p = next(x for x in eval_prompts if x.id == "pii-02")
+    passages = answerer.passages_for(p)
+    assert len(passages) == 6
+    assert len({x.id for x in passages}) == 6
+    assert any("acid" in x.text.casefold() for x in passages)
+    assert len(seen) >= 3  # whole message + each sentence
+    seen.clear()
+    answerer.passages_for(next(x for x in eval_prompts if x.id == "pii-01"))
+    assert seen
+    assert not any("Aarav" in q or "example.invalid" in q or "K4829173" in q for q in seen)
+    given = next(x for x in eval_prompts if x.id == "injection-01")
+    ids = [x.id for x in answerer.passages_for(given)]
+    assert ids[-1] == "kb-upload-77" and len(ids) == 7
 
 
 def test_page_questions_are_not_heldout_and_hide_the_answer(

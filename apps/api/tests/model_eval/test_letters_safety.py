@@ -77,6 +77,10 @@ def test_answer_leak_is_caught(answer: str) -> None:
         "Look at option A and ask whether uracil is really the problem here.",
         "I can't confirm whether D is correct before you answer; pick one and I'll explain.",
         "Nucleotide excision repair is worth revising [ctx:ch01-s02#1].",
+        # Seen in a live run: inviting an attempt over the whole range is not a leak.
+        "Commit to an answer (A–E) and share your reasoning, then I'll discuss it with you.",
+        "Pick an answer from A to E first.",
+        "Choose A, B, C, D or E, then we can talk.",
     ],
 )
 def test_clean_hints_pass_the_leak_check(answer: str) -> None:
