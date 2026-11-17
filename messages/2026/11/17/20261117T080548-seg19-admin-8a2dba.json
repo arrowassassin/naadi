@@ -1,0 +1,14 @@
+{
+ "id": "20261117T080548-seg19-admin-8a2dba",
+ "ts": "2026-11-17T08:05:48.161191Z",
+ "from": "seg19-admin",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S19 integrated cd9817e (pathway_checks queue, storage-key fixes for uploads and private signed URLs, editor/picker fixes). Admin e2e smoke set green twice (--retries=0, 4 projects: 9 passed, 3 by-design skips). Waiting on CI run 44043791069 before posting done.",
+ "body": "",
+ "re": "20261117T041953-lead-48f63c",
+ "thread": "20261117T041953-lead-48f63c",
+ "requires_ack": false
+}
