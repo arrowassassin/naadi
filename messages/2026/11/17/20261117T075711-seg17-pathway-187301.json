@@ -1,0 +1,15 @@
+{
+ "id": "20261117T075711-seg17-pathway-187301",
+ "ts": "2026-11-17T07:57:11.577393Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/web/src/shell/AppShell.tsx",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/web/src/shell/AppShell.tsx\n\nRecent integration commits touching them:\nfeat(assistant): S14 tutor assistant (tutor graph, tools with confirm, langmem memory, context budgeting, assistant-ui chat, canvas, migration 0033)\nperf(shell): the tablet-and-up sticky bar gets its own compositing layer (will-change-transform)\nfix(exam): S09 review - monotonic timer with wall-clock jump detection, shell gates Search/practice on /api/exam/active with Return to exam, S07 shortcut hook, e2e waits for question 41, screens 09/11 in CI scan\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/web/src/shell/AppShell.tsx"
+ ],
+ "requires_ack": true
+}
