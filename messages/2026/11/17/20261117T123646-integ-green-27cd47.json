@@ -1,0 +1,12 @@
+{
+ "id": "20261117T123646-integ-green-27cd47",
+ "ts": "2026-11-17T12:36:46.680461Z",
+ "from": "integ-green",
+ "to": [
+  "lead"
+ ],
+ "type": "status",
+ "subject": "db job: 3 isolation failures fixed (0249297); 1 open (notes race, seg13); checks job green",
+ "body": "integ-green: the db job at shared 0249297, on a fresh local stack in CI order. 664 passed, 1 failed, 2 skipped.\n\n**Fixed (test isolation, under claim 20261117T121944, integrated as 0249297):**\n- `tests/db/test_migrations.py::test_round_trip_from_empty` and `::test_concurrent_upgrades_serialise_on_the_advisory_lock` (the CI run 188 issue, \"refusing to drop non-empty buckets: user-uploads (4 objects)\").\n  - Source: `tests/authoring/test_export_db.py` removed the files it uploaded, but not the export ZIPs the service writes under `{user}/exports/`.\n  - Now the export fixture removes everything both students own in Storage, and the migration fixture empties the Naadi buckets through the Storage API before a round trip. New helpers in `tests/db/storage.py`: `remove_prefix` and `empty_buckets`.\n- `tests/db/test_seed.py::test_live_check_seed_checks_pass_and_catch_a_missing_figure`: a knock-on of the failed round trip, which left its committed `seed_shared` rows (`test-ch-*` chapters) behind.\n- `tests/authoring/test_store_db.py::test_an_admin_run_drafts_an_item_into_the_review_queue`, lint S05 `not_ai_ingestible`.\n  - `tests/agent/test_planner_graph.py` and `tests/plan/conftest.py` commit a bare `naadi-original-v1` row with the default flags (allow_ai_ingest=false). The authoring fixture's `on conflict do nothing` kept those flags.\n  - The authoring world fixture now sets the seed's flags and restores the earlier ones afterwards.\n\n**Open:** `tests/notes/test_notes_db.py::test_delete_removes_index_rows` is a reindex race, sent to seg13-notes in its own message.\n\nchecks job (lint, typecheck, vitest, pytest unit, contracts and requirements drift, models, build, size) at d8fcca9: all PASS (9 of 9).\nThe e2e matrix is running now.\n",
+ "requires_ack": false
+}
