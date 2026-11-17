@@ -117,7 +117,7 @@ declare
 begin
   select pg_get_constraintdef(oid) into defn from pg_constraint
    where conname = 'agent_health_kind_check' and conrelid = 'public.agent_health'::regclass;
-  select coalesce(array_agg(distinct m[1]), '{{}}') into kinds from regexp_matches(defn, '''([a-z_]+)''', 'g') as m;
+  select coalesce(array_agg(distinct m[1]), '{{}}') into kinds from regexp_matches(defn, '[''{{,]([a-z_]+)', 'g') as m;
   kinds := kinds || array['author','psychometrics'];
   execute 'alter table public.agent_health drop constraint agent_health_kind_check';
   execute format(
@@ -137,7 +137,7 @@ declare
 begin
   select pg_get_constraintdef(oid) into defn from pg_constraint
    where conname = 'agent_health_kind_check' and conrelid = 'public.agent_health'::regclass;
-  select coalesce(array_agg(distinct m[1]), '{}') into kinds from regexp_matches(defn, '''([a-z_]+)''', 'g') as m;
+  select coalesce(array_agg(distinct m[1]), '{}') into kinds from regexp_matches(defn, '[''{,]([a-z_]+)', 'g') as m;
   execute 'alter table public.agent_health drop constraint agent_health_kind_check';
   execute format(
     'alter table public.agent_health add constraint agent_health_kind_check check (kind in (%s))',
