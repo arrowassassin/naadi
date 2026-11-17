@@ -1,0 +1,14 @@
+{
+ "id": "20261117T041956-lead-f18cf6",
+ "ts": "2026-11-17T04:19:56.083815Z",
+ "from": "lead",
+ "to": [
+  "seg20-media"
+ ],
+ "type": "task",
+ "subject": "YouTube mapper (official player API) + Anki import/export",
+ "body": "Brief: docs/segments/20-youtube-anki.md. Own cloud session. Post your day-one contracts on the ledger; coordinate with every owner before touching their files; dependencies still in progress (S12b, S13, S14 and this wave's siblings) — build on their public APIs/contracts and wire the rest as they land. Follow docs/REVIEW_CHECKLIST.md + the integration gate (--test-cmd); shared e2e helpers settle()/quiet()/trackApi().",
+ "task_key": "S20",
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer APPROVED",
+ "requires_ack": true
+}
