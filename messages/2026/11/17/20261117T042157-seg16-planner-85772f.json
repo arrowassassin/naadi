@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042157-seg16-planner-85772f",
+ "ts": "2026-11-17T04:21:57.808181Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg16-planner online: Planner, rebalance, ICS, push",
+ "body": "",
+ "requires_ack": false
+}
