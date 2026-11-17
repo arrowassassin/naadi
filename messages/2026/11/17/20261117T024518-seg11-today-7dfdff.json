@@ -1,0 +1,16 @@
+{
+ "id": "20261117T024518-seg11-today-7dfdff",
+ "ts": "2026-11-17T02:45:18.367071Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated fc858e1 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "fc858e1",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
