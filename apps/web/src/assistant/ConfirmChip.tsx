@@ -117,6 +117,18 @@ function planRows(t: T, p: PreviewOf<"plan_item">): [string, string][] {
   return rows;
 }
 
+function KnowledgePreview({ p }: { p: PreviewOf<"knowledge"> }) {
+  const t = useUiText();
+  return (
+    <div className="flex flex-col gap-2">
+      <Rows
+        rows={[[t(p.source === "link" ? "agent.confirm.knowledge_link" : "agent.confirm.knowledge_file"), p.label]]}
+      />
+      <p className="m-0 text-text-2 text-ui-sm">{t("agent.confirm.knowledge_next")}</p>
+    </div>
+  );
+}
+
 const OP_ICON = { replace: Pencil, insert_after: Plus, delete: Minus } as const;
 
 function ChapterDiff({ p }: { p: PreviewOf<"chapter_diff"> }) {
@@ -180,6 +192,8 @@ function PreviewView({ p }: { p: Preview }) {
     case "memory":
     case "forget":
       return <p className="m-0 rounded-inner bg-surface-2 p-3 text-text">{p.fact}</p>;
+    case "knowledge":
+      return <KnowledgePreview p={p} />;
   }
 }
 

@@ -127,7 +127,7 @@ export const zVideoData = z.object({
 });
 export const zSourcesData = z.object({ items: z.array(zCitation) });
 export const zAction = z.object({
-  action: z.enum(["open_block", "open_canvas", "ask"]),
+  action: z.enum(["open_block", "open_canvas", "open_library", "ask"]),
   label_key: z.string().min(1),
   payload: z.record(z.string(), z.unknown()),
 });
@@ -260,6 +260,12 @@ export const zPreview = z.discriminatedUnion("kind", [
   }),
   z.object({ kind: z.literal("memory"), key: z.string(), fact: z.string() }),
   z.object({ kind: z.literal("forget"), key: z.string(), fact: z.string() }),
+  z.object({
+    kind: z.literal("knowledge"),
+    source: z.enum(["link", "file"]),
+    label: z.string(),
+    host: z.string().nullable(),
+  }),
 ]);
 export type Preview = z.infer<typeof zPreview>;
 export type PreviewOf<K extends Preview["kind"]> = Extract<Preview, { kind: K }>;

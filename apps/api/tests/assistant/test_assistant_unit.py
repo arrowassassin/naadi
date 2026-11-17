@@ -350,6 +350,9 @@ async def test_get_page_dispatches_to_a_registered_page_kind() -> None:
             flags=flags,
         )
 
+    from naadi_api.agent.tools import registry
+
+    shipped = registry._PAGE_RESOLVERS.pop("pdf_page", None)  # S15's real resolver, restored below
     register_page_resolver("pdf_page", pdf_page, requires_flag="library")
     try:
         with pytest.raises(ToolRegistrationError):
@@ -369,3 +372,5 @@ async def test_get_page_dispatches_to_a_registered_page_kind() -> None:
             await knowledge.get_page(tc(PageRef(), on), knowledge.PageArgs(type="pdf_page"))
     finally:
         unregister_page_resolver("pdf_page")
+        if shipped is not None:
+            registry._PAGE_RESOLVERS["pdf_page"] = shipped

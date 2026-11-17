@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { zTipTapDoc } from "../../assistant/protocol";
 import { registerCanvasKind } from "../registry";
+import { type PdfCanvasData, pdfCanvasKind } from "./pdf";
 
 /*
  * Canvas kinds. Each is registered with its payload schema and a lazy component; S15 adds `pdf` and S15b
@@ -84,4 +85,5 @@ export function registerBuiltInCanvasKinds(): void {
     label_key: "canvas.kind.video",
     icon: "film",
   });
+  registerCanvasKind<PdfCanvasData>(pdfCanvasKind);
 }

@@ -387,6 +387,7 @@ async def test_every_write_tool_has_a_confirm_flow_test() -> None:
         "edit_chapter_section",
         "remember",
         "forget",
+        "add_to_knowledge",  # S15: tests/ingest/test_tutor_tools_db.py (link and uploaded file)
     }
     assert {t.name for t in all_tools() if t.writes} == covered
     assert get_tool("save_note") is not None

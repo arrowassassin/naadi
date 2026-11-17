@@ -25,7 +25,7 @@ function block(raw: Record<string, unknown>): Block {
 function show(b: Block, ask = vi.fn()) {
   return renderInApp(
     () => <BlockView block={b} handlers={{ ask }} busy={false} />,
-    ["/cards", "/practice/blocks/$blockId/$n"],
+    ["/cards", "/practice/blocks/$blockId/$n", "/learn/library"],
   );
 }
 
@@ -166,6 +166,21 @@ describe("answer blocks", () => {
     await act(async () => {});
     expect(router.state.location.pathname).toBe("/practice/blocks/b7/3");
     off();
+  });
+
+  it("actions: open_library (S15 add_to_knowledge) goes to the Library", async () => {
+    const user = userEvent.setup();
+    const { router } = show(
+      block({
+        type: "actions",
+        data: {
+          items: [{ action: "open_library", label_key: "agent.action.open_library", payload: { item_id: "i1" } }],
+        },
+      }),
+    );
+    await user.click(await screen.findByRole("button", { name: "Open Library" }));
+    await act(async () => {});
+    expect(router.state.location.pathname).toBe("/learn/library");
   });
 
   it("card preview, table, chart and notices word everything from ui_copy", async () => {

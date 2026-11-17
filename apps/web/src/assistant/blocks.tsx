@@ -251,6 +251,13 @@ export function ActionsBlock({
         </Button>,
       ];
     }
+    if (a.action === "open_library") {
+      return [
+        <Button key={actionKey(a)} variant="secondary" onClick={() => void navigate({ to: "/learn/library" })}>
+          {label}
+        </Button>,
+      ];
+    }
     if (a.action === "open_canvas") {
       const ref = zCanvasRef.safeParse(a.payload.canvas ?? a.payload);
       if (!ref.success || !getCanvasKind(ref.data.kind)) return [];

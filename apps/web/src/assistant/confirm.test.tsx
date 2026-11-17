@@ -133,4 +133,26 @@ describe("confirm chip", () => {
     expect(screen.getByText("Answered wrong")).toBeInTheDocument();
     expect(screen.getByText("Any")).toBeInTheDocument();
   });
+
+  it("knowledge preview (S15 add_to_knowledge): the link or file in words, what happens next, no Edit", async () => {
+    const onResume = chip(
+      req({ kind: "knowledge", source: "link", label: "https://example.org/renal", host: "example.org" }, false),
+    );
+    expect(screen.getByText("Add this to your knowledge base?")).toBeInTheDocument();
+    expect(screen.getByText("Link")).toBeInTheDocument();
+    expect(screen.getByText("https://example.org/renal")).toBeInTheDocument();
+    expect(screen.getByText(/You choose where it goes in your Library/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Edit" })).toBeNull();
+    await userEvent.setup().click(screen.getByRole("button", { name: "Accept" }));
+    expect(onResume).toHaveBeenCalledWith(expect.objectContaining({ decision: "accept" }));
+  });
+
+  it("knowledge preview of an uploaded file; a malformed one is not a confirm", () => {
+    chip(req({ kind: "knowledge", source: "file", label: "Acid-base lecture.pdf", host: null }, false));
+    expect(screen.getByText("File")).toBeInTheDocument();
+    expect(screen.getByText("Acid-base lecture.pdf")).toBeInTheDocument();
+    expect(
+      parseInterrupt({ type: "confirm", tool: "t", preview: { kind: "knowledge", source: "ftp" }, editable: false }),
+    ).toBeNull();
+  });
 });

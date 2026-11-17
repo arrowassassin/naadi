@@ -271,8 +271,8 @@ async def _read_item(db: Database, user: CurrentUser, item_id: uuid.UUID) -> dic
 
 async def _quota(
     conn: psycopg.AsyncConnection[Any],
-    request: Request,
-    user: CurrentUser,
+    settings: Any,
+    user_id: uuid.UUID,
     rules: IngestRules,
     adding: int,
     *,
@@ -280,10 +280,10 @@ async def _quota(
 ) -> None:
     if not rules.enabled:
         raise IngestError(422, "ingest_disabled")
-    if await st.items_today(conn, user.user_id) + adding_items > rules.items_per_user_daily:
+    if await st.items_today(conn, user_id) + adding_items > rules.items_per_user_daily:
         raise IngestError(422, codes.DAILY_LIMIT)
-    b = configured_buckets(request.app.state.settings)
-    used = await st.storage_used(conn, user.user_id, [b.user_uploads])
+    b = configured_buckets(settings)
+    used = await st.storage_used(conn, user_id, [b.user_uploads])
     if used + adding > rules.user_storage_mb * MB:
         raise IngestError(422, codes.STORAGE_FULL)
 
@@ -332,7 +332,14 @@ async def _reserve(
 
     async def run() -> None:
         async with st.service_tx(_db(request)) as conn:
-            await _quota(conn, request, user, rules, sum(b.size for b in bodies), adding_items=len(bodies))
+            await _quota(
+                conn,
+                request.app.state.settings,
+                user.user_id,
+                rules,
+                sum(b.size for b in bodies),
+                adding_items=len(bodies),
+            )
             for body, item_id, upload_id, path, stored, kind in planned:
                 await conn.execute(
                     "insert into public.uploads (id, user_id, kind, storage_path, original_name, bytes, mime, status)"
@@ -398,13 +405,33 @@ async def create_upload(
     return (await _reserve(request, user, [body], None))[0]
 
 
-async def _start(request: Request, user: CurrentUser, item_id: uuid.UUID, payload: dict[str, Any]) -> None:
-    runner = get_runner(request.app.state.settings)
+async def start_run(
+    db: Database, settings: Any, user_id: uuid.UUID, is_admin: bool, item_id: uuid.UUID, payload: dict[str, Any]
+) -> None:
+    """Start an item's background run (the API and the tutor's `add_to_knowledge`)."""
+    runner = get_runner(settings)
     try:
-        await runner.start(user.user_id, user.is_admin, item_id, payload, _db(request))
+        await runner.start(user_id, is_admin, item_id, payload, db)
     except Exception as exc:
         log.warning("ingest.start_failed", item_id=str(item_id), error=type(exc).__name__)
         raise IngestError(503, "ingest_unavailable") from exc
+
+
+async def _start(request: Request, user: CurrentUser, item_id: uuid.UUID, payload: dict[str, Any]) -> None:
+    await start_run(_db(request), request.app.state.settings, user.user_id, user.is_admin, item_id, payload)
+
+
+async def check_startable(settings: Any, rules: IngestRules, row: dict[str, Any]) -> None:
+    """An uploaded file may start once: received, no run yet, its object present and within the size limit."""
+    if not rules.enabled:
+        raise IngestError(422, "ingest_disabled")
+    if row["status"] != "received" or row["run_id"] or row["input_kind"] in ("link", "paste"):
+        raise IngestError(409, "ingest_state_conflict")
+    size = await get_storage(settings).size(configured_buckets(settings).user_uploads, row["storage_path"] or "")
+    if size is None:
+        raise IngestError(422, codes.UPLOAD_MISSING)
+    if size > rules.max_file_mb * MB:
+        raise IngestError(422, codes.FILE_TOO_LARGE)
 
 
 @router.post(
@@ -419,16 +446,7 @@ async def start_item(
     request: Request, item_id: uuid.UUID, user: Annotated[CurrentUser, limited("ingest_write")]
 ) -> IngestItemOut:
     row = await _read_item(_db(request), user, item_id)
-    if row["status"] != "received" or row["run_id"] or row["input_kind"] in ("link", "paste"):
-        raise IngestError(409, "ingest_state_conflict")
-    rules = await _rules(request)
-    size = await get_storage(request.app.state.settings).size(
-        configured_buckets(request.app.state.settings).user_uploads, row["storage_path"] or ""
-    )
-    if size is None:
-        raise IngestError(422, codes.UPLOAD_MISSING)
-    if size > rules.max_file_mb * MB:
-        raise IngestError(422, codes.FILE_TOO_LARGE)
+    await check_startable(request.app.state.settings, await _rules(request), row)
     await _start(request, user, item_id, {"item_id": str(item_id), "mode": "start"})
     return item_out(await _read_item(_db(request), user, item_id))
 
@@ -471,6 +489,31 @@ async def start_batch(
     return IngestItemList(items=[item_out(r) for r in await _guard(load)], next_before=None)
 
 
+async def create_link(
+    db: Database, settings: Any, rules: IngestRules, user_id: uuid.UUID, url: str, batch_id: uuid.UUID | None
+) -> uuid.UUID:
+    """A link item and its `kb_sources` row, within the student's quota (not started yet)."""
+    item_id, kb_id = uuid.uuid4(), uuid.uuid4()
+
+    async def run() -> None:
+        async with st.service_tx(db) as conn:
+            await _quota(conn, settings, user_id, rules, 0)
+            await conn.execute(
+                "insert into public.ingest_items (id, user_id, input_kind, batch_id, status)"
+                " values (%s, %s, 'link', %s, 'received')",
+                (item_id, user_id, batch_id),
+            )
+            await conn.execute(
+                "insert into public.kb_sources (id, user_id, kind, url, status, ingest_item_id)"
+                " values (%s, %s, 'url', %s, 'processing', %s)",
+                (kb_id, user_id, url, item_id),
+            )
+            await conn.execute("update public.ingest_items set kb_source_id = %s where id = %s", (kb_id, item_id))
+
+    await _guard(run)
+    return item_id
+
+
 @router.post(
     "/ingest/urls",
     operation_id="createIngestUrl",
@@ -482,25 +525,9 @@ async def start_batch(
 async def create_url(
     request: Request, body: UrlCreate, user: Annotated[CurrentUser, limited("ingest_write")]
 ) -> IngestItemOut:
-    rules = await _rules(request)
-    item_id, kb_id = uuid.uuid4(), uuid.uuid4()
-
-    async def run() -> None:
-        async with st.service_tx(_db(request)) as conn:
-            await _quota(conn, request, user, rules, 0)
-            await conn.execute(
-                "insert into public.ingest_items (id, user_id, input_kind, batch_id, status)"
-                " values (%s, %s, 'link', %s, 'received')",
-                (item_id, user.user_id, body.batch_id),
-            )
-            await conn.execute(
-                "insert into public.kb_sources (id, user_id, kind, url, status, ingest_item_id)"
-                " values (%s, %s, 'url', %s, 'processing', %s)",
-                (kb_id, user.user_id, body.url, item_id),
-            )
-            await conn.execute("update public.ingest_items set kb_source_id = %s where id = %s", (kb_id, item_id))
-
-    await _guard(run)
+    item_id = await create_link(
+        _db(request), request.app.state.settings, await _rules(request), user.user_id, body.url, body.batch_id
+    )
     await _start(request, user, item_id, {"item_id": str(item_id), "mode": "start"})
     return item_out(await _read_item(_db(request), user, item_id))
 
@@ -528,7 +555,7 @@ async def create_paste(
 
     async def run() -> None:
         async with st.service_tx(_db(request)) as conn:
-            await _quota(conn, request, user, rules, 0)
+            await _quota(conn, request.app.state.settings, user.user_id, rules, 0)
             await conn.execute(
                 "insert into public.ingest_items (id, user_id, input_kind, status)"
                 " values (%s, %s, 'paste', 'received')",
