@@ -1,0 +1,20 @@
+{
+ "id": "20261117T031357-seg12b-ink-9a1eb3",
+ "ts": "2026-11-17T03:13:57.386561Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b rework: anchor fingerprint, applyRemote authoritative adoption, InkSurface now prop",
+ "body": "",
+ "paths": [
+  "packages/ink/src/anchors.ts",
+  "packages/ink/src/document.ts",
+  "packages/ink/src/react/InkSurface.tsx",
+  "packages/shared/src/ink.ts",
+  "packages/shared/src/content/positions.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
