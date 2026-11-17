@@ -1,0 +1,16 @@
+{
+ "id": "20261117T125602-seg18-offline-0f8aea",
+ "ts": "2026-11-17T12:56:02.251218Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated f4503936 into claude/naadi-shared",
+ "body": "S18: offline week \u2014 Dexie naadi-v1 outbox for every write, LWW + Idempotency-Key sync (migration 0038), Download this week, service-worker precache + figures (no /api), sync indicator/sheet, conflicts kept 7 days",
+ "refs": {
+  "commit": "f4503936",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
