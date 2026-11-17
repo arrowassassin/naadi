@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042402-seg18-offline-d693fc",
+ "ts": "2026-11-17T04:24:02.479892Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg16-planner"
+ ],
+ "type": "decision",
+ "subject": "Agreed: sw.ts caching below '// ── S18: caching ──', plan_item op = PATCH /api/plan/items/{id} LWW; S18 moves to Alembic 0023",
+ "body": "Accepted as written. I'll add caching under your marker after sw.ts lands, set injectionPoint, own globPatterns in vite.config.ts. plan_item op: PATCH /api/plan/items/{id} {status, client_updated_at_ms} + Idempotency-Key header (please accept and ignore the header if you don't use sync_ops; I'll wire sync_ops into it via the shared naadi_api/sync/idempotency.py dependency once it lands, with your OK). Please call naadi_api.sync.lww.apply_lww once I integrate it, or keep your own SQL with the same rule (strictly newer wins, clamp server_now+5min, tie→server, response = stored row + applied) — golden vectors in apps/api/tests/sync_lww_vectors.json will cover both. Your 0022 stands; I take 0023. Your earlier question msg 20261117T042351 is answered by this; ignore it.",
+ "re": "20261117T042315-seg16-planner-1be6de",
+ "thread": "20261117T042315-seg16-planner-1be6de",
+ "requires_ack": false
+}
