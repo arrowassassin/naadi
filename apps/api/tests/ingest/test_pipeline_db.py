@@ -19,7 +19,7 @@ from pydantic import SecretStr
 
 from naadi_api.config_api.schemas import IngestRules, StorageBuckets
 from naadi_api.db import Database
-from naadi_api.ingest import pipeline
+from naadi_api.ingest import pipeline, routes
 from naadi_api.ingest import store as st
 from naadi_api.ingest.storage import MemoryStorage, upload_path
 
@@ -266,10 +266,18 @@ async def test_cards_questions_and_paste(db: Database, users: tuple[uuid.UUID, u
     assert row["confirmed_placement"]["kind"] == "private_questions"
     assert as_user(url, a, "select count(*) from public.questions where owner_user_id = %s", (a,)) == [(3,)]
     assert as_user(url, b, "select count(*) from public.questions where owner_user_id = %s", (a,)) == [(0,)]
-    with pytest.raises(psycopg.errors.InsufficientPrivilege):
-        as_user(url, a, "select answer from public.questions where owner_user_id = %s", (a,))
-    # The proposal never carried an answer letter.
-    assert "Answer" not in str(row["proposed_placement"]) and "'A'" not in str(row["proposed_placement"])
+    # The answer and explanation of the student's own questions stay behind the same attempt gate as shared ones.
+    for col in ("answer", "explanation_html"):
+        with pytest.raises(psycopg.errors.InsufficientPrivilege):
+            as_user(url, a, f"select {col} from public.questions where owner_user_id = %s", (a,))  # noqa: S608
+    stored = as_user(url, a, "select id from public.questions where owner_user_id = %s", (a,))
+    async with st.service_tx(db) as conn:
+        expl = await st.rows(conn, "select explanation_html from public.questions where id = %s", (stored[0][0],))
+    assert "two thirds" in (expl[0]["explanation_html"] or "")  # written, for the Qbank to show after an attempt
+    # Neither the proposal nor the item the Library API returns carries an answer letter or the explanation.
+    out = routes.item_out(row).model_dump_json()
+    for text in (str(row["proposed_placement"]), out):
+        assert "Answer" not in text and "'A'" not in text and "two thirds" not in text
     await pipeline.undo(deps, mcq, a)
     assert as_user(url, a, "select count(*) from public.questions where owner_user_id = %s", (a,)) == [(0,)]
 

@@ -639,7 +639,8 @@ def test_lab_values_come_from_app_config_with_their_sources(
 SECRET_COLUMN = re.compile(r"\b(answer_html|explanation_html|why_not_html|educational_objective)\b")
 # admin/questions.py (S19 question editor) and authoring (S21 review pipeline) are behind require_admin; no student
 # route imports them. assistant/questions.py: the tutor reads answers only after a revealed attempt (segment 14,
-# leak-probed).
+# leak-probed). ingest/placements/builtin.py (S15) only WRITES a student's own parsed MCQs (insert, no select,
+# no returning); reads stay with the Qbank API: tests/ingest/test_ingest_unit.py and test_pipeline_db.py pin that.
 ALLOWED = {
     "qbank/routes.py",
     "qbank/models.py",
@@ -648,6 +649,7 @@ ALLOWED = {
     "admin/questions.py",
     "authoring",
     "assistant/questions.py",
+    "ingest/placements/builtin.py",
 }
 
 

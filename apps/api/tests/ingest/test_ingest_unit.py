@@ -427,3 +427,33 @@ def test_vision_reply_parsing() -> None:
     assert v.text == "Loop of Henle" and v.handwritten and v.caption == "A nephron"
     with pytest.raises(UnreadableReply):
         parse_vision("I cannot read this")
+
+
+# ── answer columns: ingest writes a student's own MCQs, it never reads answers back ──
+
+
+def test_ingest_only_ever_inserts_the_answer_columns() -> None:
+    """tests/qbank/test_qbank_db.py allowlists ingest/placements/builtin.py for the secret question columns. That
+    entry holds only while every mention is the private-question INSERT (no select, no returning) and no other
+    ingest module mentions them: answers reach a client only through the Qbank API, after an attempt."""
+    import re
+    from pathlib import Path
+
+    secret = re.compile(r"\b(answer_html|explanation_html|why_not_html|educational_objective)\b")
+    root = Path(__file__).resolve().parents[2] / "naadi_api" / "ingest"
+    mentions: dict[str, list[str]] = {}
+    for path in sorted(root.rglob("*.py")):
+        src = path.read_text(encoding="utf-8")
+        # Each SQL statement as written: adjacent string literals joined.
+        for stmt in re.findall(r'"((?:insert|select|update|delete|with)\b[^"]*"(?:\s*"[^"]*")*)', src, re.I):
+            sql = re.sub(r'"\s*"', "", stmt)
+            if secret.search(sql):
+                mentions.setdefault(path.relative_to(root).as_posix(), []).append(sql)
+        # Any other mention (an f-string, a dict key, a model field) would be a read path: none allowed.
+        outside = secret.sub("", src) != src and path.name != "builtin.py"
+        assert not outside, f"{path.name} mentions an answer column"
+    assert list(mentions) == ["placements/builtin.py"]
+    for sql in mentions["placements/builtin.py"]:
+        low = sql.lower()
+        assert low.startswith("insert into public.questions"), sql
+        assert "returning" not in low and "select" not in low, sql
