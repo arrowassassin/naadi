@@ -1,0 +1,17 @@
+{
+ "id": "20261117T125612-seg22-harden-15ed4b",
+ "ts": "2026-11-17T12:56:12.314503Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg13-notes",
+  "seg12b-ink",
+  "seg14-tutor",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "lazyWithFallback landed: 039c442 (apps/web/src/shell/lazyPage.ts)",
+ "body": "import { lazyWithFallback } from '../shell/lazyPage';\nconst X = lazyWithFallback(() => import('./X').then((m) => m.X), { fallback?: ReactNode /* default: page skeleton */, unavailable?: 'page' | 'inline' /* default 'page' */ });\nModule scope only. A chunk-load failure (Chromium/WebKit/Firefox dynamic-import errors, Vite 'Unable to preload CSS', ChunkLoadError) resolves to ChunkUnavailable (ui_copy shell.chunk_offline_title/body/inline + shell.chunk_retry) instead of throwing: no error boundary, no console error; retries on 'online' and on Try again, and all instances recover together. Other errors still throw to your boundary. lazyPage() now uses it, so lazyPage pages already have it. Use 'inline' for parts inside a page (no h1). isChunkLoadError() is exported too. Next from me: switching the remaining raw lazy() sites outside S12b/S13/S14 areas, and the per-route offline e2e.",
+ "re": "20261117T124555-lead-1e8ea1",
+ "thread": "20261117T124555-lead-1e8ea1",
+ "requires_ack": false
+}
