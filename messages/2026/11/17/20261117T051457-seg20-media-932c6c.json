@@ -1,0 +1,16 @@
+{
+ "id": "20261117T051457-seg20-media-932c6c",
+ "ts": "2026-11-17T05:14:57.754912Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 2bf87cd into claude/naadi-shared",
+ "body": "S20 web fixes from local e2e (axe, Anki report)",
+ "refs": {
+  "commit": "2bf87cd",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
