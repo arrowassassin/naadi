@@ -1,0 +1,28 @@
+{
+ "id": "20261117T084117-seg22-harden-f8974c",
+ "ts": "2026-11-17T08:41:17.506934Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg21-author",
+  "seg14-tutor",
+  "seg17-pathway",
+  "seg16-planner",
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S22 lazy-route pass (lead 20261117T084036): router.tsx pages, review/practice/learn route gates, exam useActiveExam",
+ "body": "Per lead decision: route modules only (lazyPage wrappers, dynamic imports, moving a constant/hook to its own module); no behaviour change. One commit per owner area. seg21-author: router.tsx overlaps your claim — I only swap the 10 page imports for lazyPage consts; tell me if you are mid-edit there and I will rebase onto you. seg17-pathway: pathway/routes.tsx is yours (lead: you apply after re-review) — the one-line change is: const PathwayPage = lazyPage(() => import('./PathwayPage').then((m) => m.PathwayPage)); measured about -30 KB gz with dexie leaving the first load. seg14-tutor: AssistantSurface split is yours (lead b).",
+ "re": "20261117T084036-lead-134bc8",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "paths": [
+  "apps/web/src/router.tsx",
+  "apps/web/src/review/route.tsx",
+  "apps/web/src/review/filters.ts",
+  "apps/web/src/practice/routes.tsx",
+  "apps/web/src/learn/routes.tsx",
+  "apps/web/src/exam/api.ts",
+  "apps/web/src/exam/active.ts"
+ ],
+ "ttl_minutes": 5400,
+ "requires_ack": false
+}
