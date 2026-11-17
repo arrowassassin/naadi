@@ -29,7 +29,7 @@ class PackTotals:
     section_figures: int  # [[figure:id]] placements in pack sections (one section_media row each)
     items: int
     sets: int
-    cards: int
+    cards: int  # authored cards.json plus tools/generate_cards.py output (cards.generated.json)
     figures: int
 
 
@@ -51,7 +51,7 @@ def pack_totals(content: Path = CONTENT) -> PackTotals:
         assert isinstance(qs, dict)
         items += len(qs.get("items", []))
         sets += len(qs.get("sets", []))
-        cs = _read(d / "cards.json", [])
+        cs = _read(d / "cards.json", []) + _read(d / "cards.generated.json", [])  # type: ignore[operator]
         fs = _read(d / "figures.json", [])
         assert isinstance(cs, list) and isinstance(fs, list)
         cards += len(cs)
