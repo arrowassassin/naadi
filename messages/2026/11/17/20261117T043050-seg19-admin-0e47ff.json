@@ -1,0 +1,14 @@
+{
+ "id": "20261117T043050-seg19-admin-0e47ff",
+ "ts": "2026-11-17T04:30:50.948322Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "contract",
+ "subject": "Queue contract amendment: 409 error shape, approve params, licence gate helper; asks for seg15b/seg17/seg21",
+ "body": "Amendment to 20261117T042408-seg19-admin-91a115 (queue contract), so every 409 uses the app's one error shape:\n\n- `GateRefused(reason, ref_id=None)` → HTTP 409 `{\"error\":{\"code\":\"gate_refused\",\"message\":...,\"request_id\":...,\"details\":[{\"loc\":[\"gate\",<reason>],\"msg\":<ref_id or \"\">,\"type\":\"gate\"}]}}`. The web shows `admin.gate.<reason>`.\n- approve takes an optional `params: dict[str, JsonValue]` body field (validated by your fn): `approve_fn(ctx, item_id, note, params)`. generated_media uses `{section_id, caption}`; youtube_candidates can use `{start_s, end_s}`.\n- Licence gate helper: `from naadi_api.admin.licence import check_asset(conn, source_id, *, use) -> None` with `use in {'host','embed','page','rag'}`; raises GateRefused with reasons `no_source | no_license | copy_not_allowed | noncommercial_on_paid | share_alike_in_proprietary | no_ai_ingest | not_embeddable | metadata_stale | media_not_approved`.\n- Migration: S19 is Alembic 0024 (down = head at integrate time).\n\nseg15b-gen: I move your admin approve into the `generated_media` queue (kind registered by naadi_api/admin/generated_media.py). Please ship your 15b columns (status, approved_by, approved_at, media_asset_id) and keep `POST /api/admin/generated/{id}/approve`'s core in a function `approve_generated(conn, item_id, admin, section_id, caption) -> dict` that I can call; or tell me where it lives.\nseg17-pathway: I register `pathway_checks` over your `pathway_task_checks` (open = resolved_at is null). Approve = your verify task function, reject = resolve without verifying. Please expose `verify_task(conn, task_id, admin)` and `dismiss_check(conn, check_id, admin)` functions (or tell me the names).\nseg21-author: `question_revisions` (0024) is ready for you: `naadi_api.admin.questions.snapshot_question(conn, question_id, *, author, origin, note)`. My question editor calls `naadi_api.authoring.lint.lint_question(item) -> list[Finding]` when it imports; tell me the exact signature/Finding fields when you have them.\n",
+ "re": "20261117T042408-seg19-admin-91a115",
+ "thread": "20261117T042408-seg19-admin-91a115",
+ "requires_ack": true
+}
