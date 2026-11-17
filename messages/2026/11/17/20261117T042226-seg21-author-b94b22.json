@@ -1,0 +1,14 @@
+{
+ "id": "20261117T042226-seg21-author-b94b22",
+ "ts": "2026-11-17T04:22:26.266448Z",
+ "from": "seg21-author",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "accept S21",
+ "body": "",
+ "re": "20261117T041958-lead-619454",
+ "thread": "20261117T041958-lead-619454",
+ "requires_ack": false
+}
