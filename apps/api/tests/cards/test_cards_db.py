@@ -301,6 +301,73 @@ def test_review_time_rules(client: TestClient, key: SigningKey, world: World) ->
     assert bad.status_code == 422
 
 
+def test_concurrent_reuse_of_a_review_id_across_cards_is_refused(
+    url: str, key: SigningKey, static_dir: Path, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    """The same client_review_id sent for two cards at once: one is scheduled, the other is told the id is taken
+    (never a 500 from the unique index), and only one card changes."""
+    for _ in range(5):
+        rid = str(uuid.uuid4())
+        with (
+            build_client(url, key, static_dir) as a,
+            build_client(url, key, static_dir) as b,
+            ThreadPoolExecutor(4) as pool,
+        ):
+            calls = [(a, world.own), (b, world.shared_plain), (b, world.own), (a, world.shared_plain)]
+            results = list(pool.map(lambda c, r=rid: rate(c[0], key, world.owner, c[1], 3, rid=r), calls))
+        # the winner's card: scheduled once, then replayed; the other card: refused both times
+        codes = sorted(r.status_code for r in results)
+        assert codes == [200, 200, 409, 409], [r.text for r in results]
+        refused = [r.json()["error"]["code"] for r in results if r.status_code == 409]
+        assert set(refused) == {"review_id_reused"}
+        ok = [r.json() for r in results if r.status_code == 200]
+        assert len({o["card_id"] for o in ok}) == 1 and sum(not o["replayed"] for o in ok) == 1
+        logged = pg.execute(
+            "select card_id from public.card_review_logs where client_review_id = %s", (rid,)
+        ).fetchall()
+        assert logged == [(uuid.UUID(ok[0]["card_id"]),)]
+
+
+def test_a_review_cannot_predate_its_card(
+    client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    now = datetime.now(UTC)
+    made = client.post(
+        "/api/cards", json={"front_text": "New", "back_text": "Card"}, headers=auth(key, world.owner)
+    ).json()
+    card = uuid.UUID(made["id"])
+    for back in (timedelta(days=20), timedelta(hours=2), timedelta(seconds=30)):
+        res = rate(client, key, world.owner, card, 4, reviewed_at=(now - back).isoformat())
+        assert res.status_code == 409 and res.json()["error"]["code"] == "review_before_card", res.text
+    assert pg.execute("select count(*) from public.card_review_logs where card_id = %s", (card,)).fetchone() == (0,)
+    assert pg.execute("select count(*) from public.card_reviews where card_id = %s", (card,)).fetchone() == (0,)
+    # from its creation on, a rating is accepted
+    assert rate(client, key, world.owner, card, 3).status_code == 200
+
+
+def test_backdated_reviews_count_when_received(
+    client: TestClient, key: SigningKey, world: World, pg: psycopg.Connection[Any]
+) -> None:
+    """A batch claiming days of past reviews (an old card, so the claims pass every other check) adds to today,
+    not to the streak: a claim more than a day old counts at the time the server received it."""
+    now = datetime.now(UTC)
+    for days in (6, 5, 4, 3, 2):
+        res = rate(client, key, world.owner, world.own, 3, reviewed_at=(now - timedelta(days=days)).isoformat())
+        assert res.status_code == 200, res.text
+    s = client.get("/api/cards/stats", params={"tz": "UTC"}, headers=auth(key, world.owner)).json()
+    assert (s["streak_days"], s["reviewed_today"]) == (1, 5)
+    # a claim within the day counts when the student rated (2 h ago can be yesterday, just after midnight)
+    hours = rate(client, key, world.owner, world.own, 3, reviewed_at=(now - timedelta(hours=2)).isoformat())
+    assert hours.status_code == 200, hours.text
+    s = client.get("/api/cards/stats", params={"tz": "UTC"}, headers=auth(key, world.owner)).json()
+    yesterday = (now - timedelta(hours=2)).date() < now.date()
+    assert (s["streak_days"], s["reviewed_today"]) == ((2, 5) if yesterday else (1, 6))
+    rows = pg.execute(
+        "select review from public.card_review_logs where card_id = %s order by review", (world.own,)
+    ).fetchall()
+    assert rows[0][0] < now - timedelta(days=5)  # the schedule still uses the time the student rated
+
+
 def test_offline_reviews_replay_in_order(client: TestClient, key: SigningKey, world: World) -> None:
     """An outbox sends ratings made offline with their own times; the server schedules each from the last."""
     t0 = datetime.now(UTC) - timedelta(days=3)
@@ -404,8 +471,9 @@ def test_stats_retention_and_streak_from_logs(
         cur.executemany(
             "insert into public.card_review_logs (user_id, card_id, client_review_id, rating, state, due,"
             " elapsed_days, last_elapsed_days, scheduled_days, review, next_state, next_due, next_stability,"
-            " next_difficulty, reps, lapses) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-            rows,
+            " next_difficulty, reps, lapses, created_at)"
+            " values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            [(*r, r[9]) for r in rows],  # received when it was rated: history as it happened
         )
     s = client.get("/api/cards/stats", params={"tz": "UTC"}, headers=auth(key, world.owner)).json()
     assert s["retention"] == {"reviews": 4, "recalled": 3, "rate": 0.75}

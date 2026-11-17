@@ -7,6 +7,7 @@ from __future__ import annotations
 import uuid
 from collections.abc import Iterator
 from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -24,6 +25,7 @@ from tests.conftest import fake_service, make_settings
 
 GATED_SECRET = "GATED-BACK-RESTATES-ANSWER-"
 PRIVATE_SECRET = "OTHER-STUDENT-PRIVATE-"
+CARDS_AGE = timedelta(days=30)  # the world's cards were made this long ago
 
 
 @dataclass
@@ -150,6 +152,7 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
     insert(pg, "attempts", {"user_id": owner, "question_id": w.q_ungraded, "chosen": "A", "mode": "exam"})
     # another student's graded attempt on q_untouched opens nothing for the owner
     insert(pg, "attempts", {"user_id": other, "question_id": w.q_untouched, "chosen": "B", "correct": True})
+    made = datetime.now(UTC) - CARDS_AGE  # reviews may be dated back to the card, never before it
     for cid, qid in (
         (w.shared_plain, None),
         (w.shared_graded, w.q_graded),
@@ -167,12 +170,20 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
                 "back_html": f"<p>{GATED_SECRET}{cid}</p>",
                 "origin": "seed",
                 "question_id": qid,
+                "created_at": made,
             },
         )
     insert(
         pg,
         "flashcards",
-        {"id": w.own, "owner_user_id": owner, "deck": f"t{tag}", "front_html": "<p>Mine</p>", "back_html": "<p>A</p>"},
+        {
+            "id": w.own,
+            "owner_user_id": owner,
+            "deck": f"t{tag}",
+            "front_html": "<p>Mine</p>",
+            "back_html": "<p>A</p>",
+            "created_at": made,
+        },
     )
     insert(
         pg,
@@ -183,6 +194,7 @@ def world(pg: psycopg.Connection[Any]) -> Iterator[World]:
             "deck": f"t{tag}",
             "front_html": "<p>x</p>",
             "back_html": f"<p>{PRIVATE_SECRET}</p>",
+            "created_at": made,
         },
     )
     yield w

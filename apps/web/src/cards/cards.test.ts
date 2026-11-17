@@ -1,7 +1,9 @@
-import { uiText } from "@naadi/shared";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { type ReviewIn, type ReviewOut, uiText } from "@naadi/shared";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { ApiError } from "../auth/apiError";
 import { cardKey, intervalLabel, ownedElsewhere } from "./format";
 import { dropReview, enqueueReview, flushQueue, readQueue, type SendOutcome } from "./outbox";
+import { isRetryable, submitReview } from "./submit";
 
 const t = (key: string, vars: Record<string, string | number> = {}) =>
   uiText(null, key, Object.fromEntries(Object.entries(vars).map(([k, v]) => [k, String(v)])));
@@ -109,5 +111,63 @@ describe("rating outbox", () => {
   it("survives unreadable storage", () => {
     localStorage.setItem(`naadi.cards.outbox.v1:${user}`, "{not json");
     expect(readQueue(user)).toEqual([]);
+  });
+});
+
+describe("sending a rating", () => {
+  const user = "u-send";
+  const body = (id: string) => ({ client_review_id: id, rating: 3 as const, reviewed_at: "2026-11-16T10:00:00.000Z" });
+  const ok = (id: string) => ({ client_review_id: id }) as unknown as ReviewOut;
+  beforeEach(() => localStorage.clear());
+
+  it("queues a new rating behind one still in flight that then fails, in order", async () => {
+    let fail: (e: unknown) => void = () => {};
+    const sent: string[] = [];
+    const send = vi.fn((_card: string, b: ReviewIn) => {
+      sent.push(b.client_review_id);
+      return new Promise<ReviewOut>((_, reject) => {
+        fail = reject;
+      });
+    });
+    const deps = { send, online: () => true, queued: vi.fn() };
+    // the page's chain: one send at a time, each reading the queue when its turn comes
+    let chain: Promise<unknown> = Promise.resolve();
+    const results: Promise<unknown>[] = [];
+    for (const id of ["a", "b"]) {
+      const link = chain.then(() => submitReview(user, "c1", body(id), deps));
+      results.push(link);
+      chain = link;
+    }
+    await vi.waitFor(() => expect(sent).toEqual(["a"]));
+    fail(new ApiError("busy", 503, null, null));
+    expect(await Promise.all(results)).toEqual([{ kind: "queued" }, { kind: "queued" }]);
+    expect(sent).toEqual(["a"]); // "b" never overtook "a"
+    expect(readQueue(user).map((q) => q.body.client_review_id)).toEqual(["a", "b"]);
+    expect(deps.queued).toHaveBeenCalledTimes(2);
+  });
+
+  it.each([
+    [null, "queued"],
+    [500, "queued"],
+    [503, "queued"],
+    [429, "queued"],
+    [401, "queued"],
+    [404, "refused"],
+    [409, "refused"],
+    [422, "refused"],
+  ])("status %s → %s", async (status, kind) => {
+    const err = new ApiError("x", status, status === null ? null : "code", null);
+    const r = await submitReview(user, "c1", body("r"), { send: () => Promise.reject(err), online: () => true });
+    expect(r.kind).toBe(kind);
+    expect(readQueue(user).length).toBe(kind === "queued" ? 1 : 0);
+  });
+
+  it("sends directly when nothing waits, and queues while offline", async () => {
+    const send = vi.fn(async (_c: string, b: ReviewIn) => ok(b.client_review_id));
+    expect((await submitReview(user, "c1", body("x"), { send, online: () => true })).kind).toBe("sent");
+    expect((await submitReview(user, "c1", body("y"), { send, online: () => false })).kind).toBe("queued");
+    expect((await submitReview(user, "c1", body("z"), { send, online: () => true })).kind).toBe("queued"); // behind y
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(isRetryable(new Error("plain"))).toBe(false);
   });
 });

@@ -11,6 +11,7 @@ import {
   memoryFromSchedule,
   mulberry32First,
   NEW_CARD,
+  pyRound,
   type Rating,
   Scheduler,
   type ServerSchedulerConfig,
@@ -131,5 +132,17 @@ describe("preview", () => {
     });
     expect(m.due?.toISOString()).toBe("2026-11-20T08:00:00.000Z");
     expect(m.lastReview?.toISOString()).toBe("2026-11-16T08:00:00.000Z");
+  });
+});
+
+describe("whole-day intervals (as the Python package rounds them)", () => {
+  it("rounds ties to even", () => {
+    expect([0.5, 1.5, 2.5, 3.5, -2.5, 2.4999, 2.5001].map(pyRound)).toEqual([0, 2, 2, 4, -2, 2, 3]);
+  });
+
+  it("matches fsrs 6.3.3's _next_interval at the default retention, where the interval equals the stability", () => {
+    const sch = new Scheduler();
+    // values printed by the Python package: Scheduler()._next_interval(stability=s)
+    expect([0.4, 1.5, 2.5, 3.5, 7.25].map((s) => sch["nextInterval"](s))).toEqual([1, 2, 2, 4, 7]);
   });
 });

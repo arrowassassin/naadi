@@ -4,6 +4,7 @@ import { Button, Chip, cx, ErrorState, Skeleton } from "@naadi/ui";
 import { Link } from "@tanstack/react-router";
 import { Eraser, PenLine, Plus } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { askAssistant, useAssistantAvailable } from "../assistant/ask";
 import { useMe } from "../auth/api";
 import { ApiError } from "../auth/apiError";
 import { ContentRenderer } from "../content/ContentRenderer";
@@ -24,6 +25,7 @@ import {
   type ReviewOutcome,
   Scheduler,
 } from "./fsrs";
+import { submitReview } from "./submit";
 
 /** A learning card due within this window comes back in the same session (as Anki's learn-ahead limit). */
 const LEARN_AHEAD_MS = 20 * 60_000;
@@ -191,11 +193,8 @@ function ScratchPad({ cardId }: { cardId: string }) {
 
 function StuckPanel({ card }: { card: CardOut }) {
   const t = useCardsCopy();
-  // The assistant (segment 14) listens for this event and answers in its panel with the card as page context.
-  const ask = (kind: "hint" | "explain") =>
-    window.dispatchEvent(
-      new CustomEvent("naadi:assistant-ask", { detail: { kind, context: { type: "flashcard", id: card.id } } }),
-    );
+  // The assistant (segment 14) answers in its panel with the card as page context; see assistant/ask.ts.
+  const ask = (kind: "hint" | "explain") => askAssistant({ kind, context: { type: "flashcard", id: card.id } });
   return (
     <aside
       aria-label={t("cards.stuck")}
@@ -218,7 +217,9 @@ export function ReviewPage() {
   const me = useMe();
   const online = useOnline();
   const pending = usePendingReviews();
-  const assistantOn = me.data?.features.assistant === true;
+  // Only while the assistant is switched on and its panel has registered to answer: a button never does nothing.
+  const listening = useAssistantAvailable();
+  const assistantOn = me.data?.features.assistant === true && listening;
   const [session, setSession] = useState<Session | null>(null);
   const [flipped, setFlipped] = useState(false);
   const [shownAt, setShownAt] = useState(() => Date.now());
@@ -252,26 +253,27 @@ export function ReviewPage() {
     (cardId: string, body: ReviewIn) => {
       // One request at a time, in order: a learning card rated twice must reach the server in that order.
       chain.current = chain.current.then(async () => {
-        if (pending.count > 0 || !navigator.onLine) {
-          pending.enqueue(cardId, body);
-          void pending.flush();
-          return;
-        }
-        try {
-          const out = await sendReview(cardId, body);
+        const userId = pending.userId;
+        if (!userId) return;
+        const result = await submitReview(userId, cardId, body, {
+          send: sendReview,
+          online: () => navigator.onLine,
+          queued: () => {
+            pending.refresh();
+            void pending.flush();
+          },
+        });
+        if (result.kind === "sent") {
+          const { schedule } = result.out;
           setSession((s) =>
-            s?.memory[cardId] ? { ...s, memory: { ...s.memory, [cardId]: memoryFromSchedule(out.schedule) } } : s,
+            s?.memory[cardId] ? { ...s, memory: { ...s.memory, [cardId]: memoryFromSchedule(schedule) } } : s,
           );
-        } catch (err) {
-          if (isUnreachable(err) || (err instanceof ApiError && (err.status ?? 500) >= 500)) {
-            pending.enqueue(cardId, body);
-          } else {
-            setNotice(t(errorKey(err)));
-          }
+        } else if (result.kind === "refused") {
+          setNotice(t(errorKey(result.error)));
         }
       });
     },
-    [pending, t],
+    [pending.userId, pending.refresh, pending.flush, t],
   );
 
   const rate = useCallback(

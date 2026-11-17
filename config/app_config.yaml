@@ -1233,6 +1233,7 @@ ui_copy:
   cards.error.card_question_not_found: "That question is not available."
   cards.error.card_section_not_found: "That section is not available."
   cards.error.review_out_of_order: "A newer rating of this card is already saved."
+  cards.error.review_before_card: "This rating is dated before the card was made, so it was not saved."
   cards.error.review_id_reused: "That rating was already used for another card."
   cards.error.review_too_old: "This rating is too old to sync and was dropped."
   cards.error.cards_unavailable: "Flashcards cannot be reached right now. Try again in a moment."

@@ -5725,7 +5725,7 @@ export type ReviewCardErrors = {
    */
   404: ErrorResponse;
   /**
-   * review_out_of_order (older than the card's last review) or review_id_reused
+   * review_out_of_order (older than the card's last review), review_before_card (older than the card itself) or review_id_reused
    */
   409: ErrorResponse;
   /**

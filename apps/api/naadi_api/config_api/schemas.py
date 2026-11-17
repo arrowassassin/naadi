@@ -1235,6 +1235,7 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "cards.error.card_question_not_found",
         "cards.error.card_section_not_found",
         "cards.error.review_out_of_order",
+        "cards.error.review_before_card",
         "cards.error.review_id_reused",
         "cards.error.review_too_old",
         "cards.error.cards_unavailable",

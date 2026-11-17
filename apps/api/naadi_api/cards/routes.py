@@ -1,7 +1,7 @@
 """Flashcards: due list, create / edit / delete, server-scheduled reviews (FSRS-6), stats.
 
 Scheduling is server-authoritative: `card_reviews` and `card_review_logs` are written only here, with the pool's
-privileged role (clients have SELECT and DELETE of their own rows, migration 0012). Every privileged statement
+privileged role (clients may only SELECT their own rows; migration 0012 revokes the rest). Every privileged statement
 filters on the caller's id and applies `VISIBLE`, the same row filter as the `flashcards` RLS policy:
 
 - the caller's own cards, or
@@ -507,7 +507,8 @@ def _replay(row: Row) -> ReviewOut:
         **_NOT_FOUND,
         409: {
             "model": ErrorResponse,
-            "description": "review_out_of_order (older than the card's last review) or review_id_reused",
+            "description": "review_out_of_order (older than the card's last review), review_before_card (older"
+            " than the card itself) or review_id_reused",
         },
         422: {"model": ErrorResponse, "description": "Invalid request, or review_too_old"},
     },
@@ -526,7 +527,13 @@ async def review_card(
     uid = user.user_id
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> ReviewOut:
-        # One review of a card at a time per student (a new card has no row to lock yet).
+        # One use of a review id at a time per student (the same id sent for two cards at once must not race to
+        # the unique index), then one review of a card at a time (a new card has no row to lock yet). Always in
+        # this order, so two requests never wait on each other's second lock.
+        await conn.execute(
+            "select pg_advisory_xact_lock(hashtextextended(%s, 0))",
+            (f"naadi.card_review_id:{uid}:{body.client_review_id}",),
+        )
         await conn.execute(
             "select pg_advisory_xact_lock(hashtextextended(%s, 0))", (f"naadi.card_review:{uid}:{card_id}",)
         )
@@ -542,6 +549,9 @@ async def review_card(
         row = await _visible_card(conn, uid, card_id)
         if row is None:
             raise CardsError(404, "card_not_found")
+        if reviewed_at < row["created_at"]:
+            # A rating cannot predate the card: refusing it keeps a fresh card from carrying a made-up history.
+            raise CardsError(409, "review_before_card")
         memory = _memory(row)
         if memory.last_review is not None and reviewed_at < memory.last_review:
             raise CardsError(409, "review_out_of_order")
@@ -588,7 +598,7 @@ async def review_card(
             " next_state, next_step, next_due, next_stability, next_difficulty, reps, lapses)"
             " values (%(uid)s, %(id)s, %(rid)s, %(rating)s, %(state)s, %(due)s, %(s)s, %(d)s, %(ed)s, %(led)s,"
             " %(sd)s, %(step)s, %(at)s, %(ms)s, %(ns)s, %(nstep)s, %(ndue)s, %(nst)s, %(nd)s, %(reps)s, %(lapses)s)"
-            " returning *",
+            " on conflict (user_id, client_review_id) do nothing returning *",
             {
                 "uid": uid,
                 "id": card_id,
@@ -613,7 +623,8 @@ async def review_card(
                 "lapses": m.lapses,
             },
         )
-        assert logged is not None
+        if logged is None:  # the id was taken after the check above (the lock makes this unreachable); roll back
+            raise CardsError(409, "review_id_reused")
         result = _replay(logged)
         return result.model_copy(update={"replayed": False})
 
@@ -621,6 +632,15 @@ async def review_card(
 
 
 # ── Stats ──
+
+# When a review counts for "reviewed today" and the streak: the time the student rated, unless the client claimed a
+# time more than a day before the server received it (an offline replay is that old only rarely; a made-up history
+# always is). Then the receive time counts, so a backdated batch cannot fill in a streak or someone else's today.
+CLAIM_TRUSTED_FOR = dt.timedelta(hours=24)
+_COUNTED_AT = (
+    f"(case when l.created_at - l.review > interval '{int(CLAIM_TRUSTED_FOR.total_seconds())} seconds'"
+    " then l.created_at else l.review end)"
+)
 
 
 @router.get(
@@ -670,7 +690,7 @@ async def get_stats(
         # Only reviews of cards the student can still see (a card's history goes with it).
         logs = await _first(
             conn,
-            "select count(*) filter (where l.review >= %(today)s) as today,"  # noqa: S608
+            f"select count(*) filter (where {_COUNTED_AT} >= %(today)s) as today,"  # noqa: S608
             " count(*) filter (where l.review >= %(since)s and l.state = 2) as retention_reviews,"
             " count(*) filter (where l.review >= %(since)s and l.state = 2 and l.rating > 1) as recalled"
             " from public.card_review_logs l join public.flashcards f on f.id = l.card_id"
@@ -679,8 +699,9 @@ async def get_stats(
         )
         stamps = await _rows(
             conn,
-            "select distinct date_bin('15 minutes', review, timestamptz '2000-01-01') as t"
-            " from public.card_review_logs where user_id = %(uid)s and review >= %(streak_since)s",
+            f"select distinct date_bin('15 minutes', {_COUNTED_AT}, timestamptz '2000-01-01') as t"  # noqa: S608
+            " from public.card_review_logs l where l.user_id = %(uid)s"
+            f" and {_COUNTED_AT} >= %(streak_since)s",
             p,
         )
         assert c is not None

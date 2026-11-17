@@ -20,6 +20,7 @@ import { ApiError } from "../auth/apiError";
 import { useAuth } from "../auth/session";
 import { installOfflineCacheReset, readOffline, writeOffline } from "../learn/offlineCache";
 import { enqueueReview, flushQueue, readQueue, type SendOutcome } from "./outbox";
+import { isRetryable } from "./submit";
 
 installOfflineCacheReset();
 
@@ -52,6 +53,7 @@ const KNOWN_CODES = new Set([
   "card_question_not_found",
   "card_section_not_found",
   "review_out_of_order",
+  "review_before_card",
   "review_id_reused",
   "review_too_old",
   "cards_unavailable",
@@ -165,14 +167,8 @@ async function sendQueued(cardId: string, body: ReviewIn): Promise<SendOutcome> 
     await sendReview(cardId, body);
     return "sent";
   } catch (err) {
-    if (isUnreachable(err)) return "unreachable";
-    if (
-      err instanceof ApiError &&
-      (err.status === null || err.status >= 500 || err.status === 429 || err.status === 401)
-    ) {
-      return "unreachable"; // the server is down, busy or the session needs a refresh: keep it for later
-    }
-    return "refused";
+    // the server is down or busy, or the session needs a refresh: keep it for later
+    return isRetryable(err) ? "unreachable" : "refused";
   }
 }
 
@@ -218,5 +214,5 @@ export function usePendingReviews() {
     return () => window.removeEventListener("online", onOnline);
   }, [flush, refresh]);
 
-  return { count, syncing, enqueue, flush };
+  return { userId, count, syncing, enqueue, flush, refresh };
 }

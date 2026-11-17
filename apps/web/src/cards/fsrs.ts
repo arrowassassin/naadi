@@ -3,8 +3,8 @@
  *
  * The API is authoritative and schedules with the official Python `fsrs` package (6.3.3). This module
  * reproduces that scheduler's policy exactly, with every piece of memory-model math (initial and next
- * stability/difficulty, short-term stability, forgetting curve, interval) delegated to ts-fsrs 6's FSRS-6
- * algorithm with the same default weights. ts-fsrs's own scheduler differs from the Python one in three
+ * stability/difficulty, short-term stability, forgetting curve) delegated to ts-fsrs 6's FSRS-6 algorithm with
+ * the same default weights; the whole-day interval is computed here, as Python does (see `nextInterval`). ts-fsrs's own scheduler differs from the Python one in three
  * policy details (UTC calendar-day vs 24-hour elapsed days, a monotonic Hard < Good < Easy clamp, and Hard
  * on a later learning step), so its scheduler is not used; nor is its 36500-day stability cap, which the
  * Python package does not have. Parity is proven by the shared golden vectors in
@@ -109,6 +109,12 @@ export function fuzzSeed(cardId: string, repsAfter: number): string {
   return `${cardId}${repsAfter}`;
 }
 
+/** Python's `round(x)`: to the nearest integer, ties to the even one. */
+export function pyRound(x: number): number {
+  const r = Math.round(x);
+  return r - x === 0.5 && r % 2 !== 0 ? r - 1 : r;
+}
+
 export class Scheduler {
   readonly config: FsrsConfig;
   private readonly algo: FSRS6Algorithm;
@@ -131,8 +137,15 @@ export class Scheduler {
     return this.algo.forgetting_curve(days, card.stability);
   }
 
+  /**
+   * Whole days, as the Python package computes them: from the unrounded decay factor (ts-fsrs rounds it to 8
+   * places, which moved about 2 in 450k intervals by a day) and with Python's round (half to even).
+   */
   private nextInterval(stability: number): number {
-    return Math.min(this.algo.next_interval(stability, this.config.desiredRetention), this.config.maximumInterval);
+    const decay = -(this.config.weights[20] as number);
+    const factor = 0.9 ** (1 / decay) - 1;
+    const days = pyRound((stability / factor) * (this.config.desiredRetention ** (1 / decay) - 1));
+    return Math.min(Math.max(days, 1), this.config.maximumInterval);
   }
 
   private fuzzed(days: number, seed: string): number {
