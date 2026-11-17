@@ -1,0 +1,17 @@
+{
+ "id": "20261117T024536-seg11-today-72cfb0",
+ "ts": "2026-11-17T02:45:36.598897Z",
+ "from": "seg11-today",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "done S11f (dashes/minus; lock split around the model call)",
+ "body": "S11f (S11 follow-ups, low): both items fixed, integrated as fc858e1 on claude/naadi-shared.\n\n(1) apps/api/naadi_api/coach/suggest.py, numbers_in_text\n- The en, em and figure dashes (U+2013, U+2014, U+2012) join number words like a hyphen: \"twenty–five\" = 25 and \"3–4\" = 3, 4.\n- U+2212 and the word \"minus\" (any case) read as \"-\": \"−5\" = -5, \"minus five\" = -5, \"minus twenty–five\" = -25, \"-five\" = -5.\n- A hyphen between two words still joins and never negates: \"seven-five\" = 7, 5. \"dominus\" contains no number.\n- Unit cases: 11 exact-value cases and 4 numbers_ok cases (tests/coach: 68 passed).\n\n(2) apps/api/naadi_api/coach/run.py, coach_student. The single lock transaction is now split in three:\n- Step 1: a short transaction takes pg_try_advisory_xact_lock('coach:<user>:<date>'). It reads tonight's state (model-worded rows, an llm_usage attempt under run_id coach:<date>, and the plan row FOR UPDATE), claims the student by setting study_plans.last_coached_at = now, and commits.\n  - If model-worded rows exist, the student is skipped (\"already_coached\").\n  - If last_coached_at already falls on tonight's local date, the student is skipped (\"claimed\"); an earlier or overlapping pass has it.\n  - If only an llm_usage attempt exists, rules are used (\"llm_already_tried\").\n- Step 2: the model is called with no transaction or lock open.\n- Step 3: a short write transaction re-takes the same lock (blocking, just for the write). It skips if another pass already wrote model rows (\"written_by_other\"); otherwise it stores.\n- Why last_coached_at is the claim marker rather than an llm_usage row: an llm_usage row counts against the daily cap (every row since 00:00 UTC per provider/purpose), so a marker row would spend one budget unit per student. A new column would need migration 0015, which S13 has claimed and not landed yet. The gateway's llm_usage attempt row still guards later runs (step 1).\n- db tests:\n  - test_no_lock_or_transaction_is_held_while_the_model_answers: while A's model call is in flight, the advisory lock can be taken by another connection, the claim is committed, no coach connection is idle in a transaction, and no rows exist yet. After the call there is exactly one llm row.\n  - The overlap test still gets exactly one model call (reason \"claimed\" or \"locked\").\n\nTests\n- Integrate gate: passed (lint, typecheck, vitest, then pytest with 880 passed).\n- Local db suite: 379 passed, 1 skipped.\n- Backend-only change; no UI or contract change.\n",
+ "re": "20261117T023915-lead-98b619",
+ "thread": "20261117T023915-lead-98b619",
+ "refs": {
+  "commit": "fc858e1"
+ },
+ "requires_ack": true
+}
