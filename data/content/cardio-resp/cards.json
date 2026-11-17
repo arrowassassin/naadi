@@ -1629,8 +1629,8 @@
   },
   {
     "id": "s23b-c-080501-06",
-    "frontHtml": "Why was CK-MB used to detect reinfarction?",
-    "backHtml": "It returns to normal within 2–3 days, so a new rise means new necrosis.",
+    "frontHtml": "Reinfarction on day 4 after an MI, when troponin is still raised: which result supports it?",
+    "backHtml": "A new rise of more than 20% on serial troponin (with symptoms or ECG change). A single raised value is expected for 7–10 days. CK-MB was used for this before sensitive troponin assays.",
     "sectionId": "s23b-s-080501-s1-01",
     "areas": [
       "usmle2026.08.05.01"

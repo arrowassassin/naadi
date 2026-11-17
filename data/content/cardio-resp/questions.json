@@ -7425,15 +7425,15 @@
       "id": "s23b-q-080501-s1-08",
       "exam": "step1",
       "format": "single",
-      "stemHtml": "<p>A 60-year-old woman was admitted 4 days ago with an NSTEMI and treated with PCI. Her cardiac enzymes had been falling. This morning she has a new episode of chest pain with new ST depression in V4–V6. Which of the following results most strongly supports a new (re)infarction?</p>",
+      "stemHtml": "<p>A 60-year-old woman was admitted 4 days ago with an NSTEMI and treated with PCI. Her high-sensitivity troponin values had been falling steadily. This morning she has a new episode of chest pain with new ST depression in V4–V6. A troponin sample is drawn now and repeated 3 hours later. Which of the following results most strongly supports a new (re)infarction?</p>",
       "options": [
         {
           "label": "A",
-          "html": "A troponin level that is still above the reference range"
+          "html": "A troponin value that is still above the 99th-percentile upper reference limit"
         },
         {
           "label": "B",
-          "html": "A newly raised CK-MB level"
+          "html": "A rise of more than 20% between the two troponin values"
         },
         {
           "label": "C",
@@ -7449,14 +7449,14 @@
         }
       ],
       "answer": "B",
-      "explanationHtml": "<p>Troponin stays raised for 7–10 days after an infarction, so an elevated value on day 4 is expected and does not by itself show new injury. CK-MB returns to normal within 2–3 days, so a fresh rise on day 4 indicates new myocardial necrosis. In current practice, a new rise of more than 20% in serial high-sensitivity troponin values also supports reinfarction.</p><p><strong>Takeaway:</strong> CK-MB normalises in 2–3 days, so a new rise detects early reinfarction; a single raised troponin does not.</p>",
+      "explanationHtml": "<p>Troponin stays raised for 7–10 days after an infarct, so on day 4 a single elevated value is expected and cannot by itself show new injury. What matters is the trend: when troponin is already elevated but stable or falling, a further rise of more than 20% on serial testing, with symptoms or ECG changes, indicates new myocardial necrosis (reinfarction). CK-MB, which clears within 2–3 days, was used for this before sensitive troponin assays; troponin trends are now the standard.</p><p><strong>Takeaway:</strong> Reinfarction is recognised by a new rise (&gt; 20%) on serial troponin, not by a single elevated value.</p>",
       "whyNot": {
-        "A": "An elevated troponin on day 4 is expected after the original infarct; only a new rise above the falling baseline would be informative.",
-        "C": "Lactate dehydrogenase is non-specific and rises late; it is no longer used for infarct diagnosis.",
-        "D": "Myoglobin is non-specific and an elevation present since admission says nothing about new injury.",
-        "E": "AST is found in liver and muscle and is not specific for myocardial injury."
+        "A": "An elevated troponin on day 4 is expected after the original infarct; a single value cannot separate old from new injury.",
+        "C": "Lactate dehydrogenase is non-specific and rises late; it is no longer used to diagnose infarction.",
+        "D": "Myoglobin is non-specific, and an elevation present since admission says nothing about new injury.",
+        "E": "AST is found in liver and skeletal muscle and is not specific for myocardial injury."
       },
-      "objective": "Use biomarker kinetics to recognise reinfarction a few days after a myocardial infarction.",
+      "objective": "Use serial troponin kinetics to recognise reinfarction a few days after a myocardial infarction.",
       "areas": [
         "usmle2026.08.05.01"
       ],
