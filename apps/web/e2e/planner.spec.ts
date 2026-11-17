@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
 import path from "node:path";
-import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
+import { type Browser, type BrowserContext, chromium, type Page, type TestInfo } from "@playwright/test";
 import { callbackPath, canMintUsers, runUsers, toLink } from "./auth-users";
 import {
   type ConsoleGuard,
@@ -432,20 +432,24 @@ test.describe("calendar feed", () => {
 });
 
 test.describe("push service worker", () => {
-  test("the worker shows a notification for a push and opens the deep link on click", async ({ browser }, info) => {
+  test("the worker shows a notification for a push and opens the deep link on click", async ({ baseURL }, info) => {
     test.skip(
       info.project.name.startsWith("webkit") || info.project.name.startsWith("firefox"),
       "Chromium delivers synthetic push events",
     );
-    const prod = process.env.E2E_PROD_URL;
-    test.skip(!prod, "the service worker is registered by the production build only");
+    // The e2e web build is a production build, so the worker registers on the plain loopback server too; its secure
+    // context (unlike the prod server's self-signed certificate) lets Chromium honour the notifications grant.
+    const prod = baseURL as string;
     // showNotification needs the permission a student grants in the real app.
+    // Chromium's headless shell (the default for the matrix's Chromium projects) never grants notifications; the
+    // full browser in its new headless mode does, so this one test runs in that.
+    const browser = await chromium.launch({ channel: "chromium" });
     const context = await browser.newContext({
       ...info.project.use,
       baseURL: prod,
-      ignoreHTTPSErrors: true,
       permissions: ["notifications"],
     });
+    await context.grantPermissions(["notifications"], { origin: new URL(prod).origin });
     const page = await context.newPage();
     try {
       await page.goto("/sign-in");
@@ -457,6 +461,9 @@ test.describe("push service worker", () => {
           },
         )
         .toBe(true);
+      // A window the worker controls (loaded after the worker was active) is the one it can navigate.
+      await page.reload();
+      await expect.poll(async () => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true);
       const worker =
         context.serviceWorkers().find((w) => w.url().endsWith("/sw.js")) ??
         (await context.waitForEvent("serviceworker"));
@@ -499,6 +506,7 @@ test.describe("push service worker", () => {
       await expect.poll(() => decodeURIComponent(page.url()), { timeout: 15_000 }).toContain("/plan");
     } finally {
       await context.close();
+      await browser.close();
     }
   });
 });

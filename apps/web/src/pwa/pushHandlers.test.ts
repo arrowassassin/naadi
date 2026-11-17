@@ -94,6 +94,24 @@ describe("notification click", () => {
     expect(w.open).not.toHaveBeenCalled();
   });
 
+  it("still navigates when focusing is refused, and opens a window when the open one cannot be navigated", async () => {
+    const navigate = vi.fn(async () => undefined);
+    const a = fakeScope([
+      { url: "https://naadi.example/today", focus: vi.fn(async () => Promise.reject(new Error("no"))), navigate },
+    ]);
+    await a.click({ url: "/plan" });
+    expect(navigate).toHaveBeenCalledWith("/plan");
+    const b = fakeScope([
+      {
+        url: "https://naadi.example/today",
+        focus: vi.fn(async () => undefined),
+        navigate: vi.fn(async () => Promise.reject(new Error("uncontrolled"))),
+      },
+    ]);
+    await b.click({ url: "/plan" });
+    expect(b.open).toHaveBeenCalledWith("/plan");
+  });
+
   it("opens a window when none is open, and never an off-site address", async () => {
     const w = fakeScope([]);
     await w.click({ url: "/plan" });

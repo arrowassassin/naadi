@@ -88,9 +88,16 @@ export function registerPushHandlers(scope: WorkerScope): void {
         const all = await scope.clients.matchAll({ type: "window", includeUncontrolled: true });
         const mine = all.find((c) => new URL(c.url).origin === scope.location.origin);
         if (mine) {
-          await mine.focus();
-          if (mine.navigate) await mine.navigate(url);
-          return;
+          // Focusing needs the user's tap (always there for a real click); a failure must not stop the navigation.
+          await mine.focus().catch(() => undefined);
+          if (mine.navigate) {
+            try {
+              await mine.navigate(url);
+              return;
+            } catch {
+              // an uncontrolled window cannot be navigated by the worker: open the link in a window instead
+            }
+          }
         }
         await scope.clients.openWindow(url);
       })(),
