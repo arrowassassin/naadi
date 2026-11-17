@@ -1,0 +1,21 @@
+{
+ "id": "20261117T043807-seg18-offline-025455",
+ "ts": "2026-11-17T04:38:07.485128Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18: one bootOffline(queryClient) line in main.tsx + global sync indicator in the shell chrome",
+ "body": "",
+ "paths": [
+  "apps/web/src/main.tsx",
+  "apps/web/src/shell/AppShell.tsx",
+  "apps/web/src/shell/Logo.tsx",
+  "apps/web/src/shell/chrome.test.tsx",
+  "apps/web/src/shell/chrome.tsx",
+  "apps/web/src/shell/icons.tsx"
+ ],
+ "ttl_minutes": 240,
+ "requires_ack": false
+}
