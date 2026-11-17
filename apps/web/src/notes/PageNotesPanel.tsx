@@ -1,5 +1,4 @@
 import { Button, cx, ErrorState, Skeleton } from "@naadi/ui";
-import type { Editor } from "@tiptap/react";
 import { PenLine } from "lucide-react";
 import { lazy, type Ref, Suspense, useCallback, useEffect, useId, useImperativeHandle, useRef, useState } from "react";
 import { ApiError } from "../auth/apiError";
@@ -21,7 +20,7 @@ import { NoteSaveStatus } from "./SaveStatus";
 
 /**
  * TipTap and ProseMirror (about 130 KB gzipped) are their own chunk: the Reader renders the section first and loads
- * the editor beside it. A quote sent before the editor exists waits in `pendingQuote` (see `onEditor`).
+ * the editor beside it. A quote sent before the editor exists waits in state and is inserted by the editor once it is attached.
  */
 const NoteEditor = lazy(() => import("./NoteEditor").then((m) => ({ default: m.NoteEditor })));
 
@@ -88,8 +87,8 @@ export function PageNotesPanel({
   // Read synchronously by the editor's change handler (two keystrokes before a re-render must not make two notes).
   const idRef = useRef<string | null>(noteId);
   idRef.current = noteId ?? idRef.current;
-  const editor = useRef<Editor | null>(null);
-  const pendingQuote = useRef<string | null>(null);
+  // A quote waiting for the editor (it is a lazy chunk, and the panel may be opened by the very tap that quotes).
+  const [quote, setQuote] = useState<{ id: number; text: string } | null>(null);
   const timer = useRef(0);
   const latest = useRef<Record<string, unknown> | null>(null);
   // Typed but not yet handed to the queue (the save waits for a pause): shown as "Saving…".
@@ -169,49 +168,17 @@ export function PageNotesPanel({
     [inkChange],
   );
 
-  const insertQuote = useCallback((ed: Editor, quote: string) => {
-    const insert = () =>
-      ed
-        .chain()
-        .focus("end")
-        .insertContent([
-          { type: "blockquote", content: [{ type: "paragraph", content: [{ type: "text", text: quote }] }] },
-          { type: "paragraph" },
-        ])
-        .run();
-    // A freshly made editor's view is attached to the page a frame later: insert once it is (bounded retries).
-    let tries = 0;
-    const attempt = () => {
-      if (ed.isDestroyed) return;
-      if (ed.view.dom.isConnected || tries++ >= 60) insert();
-      else window.requestAnimationFrame(attempt);
-    };
-    attempt();
-  }, []);
-
   useImperativeHandle(
     ref,
     () => ({
-      addQuote(quote: string) {
+      addQuote(text: string) {
         if (mode === "write") pick("both");
-        if (editor.current) insertQuote(editor.current, quote);
-        else pendingQuote.current = quote;
+        setQuote((q) => ({ id: (q?.id ?? 0) + 1, text }));
       },
     }),
-    [mode, insertQuote, pick],
+    [mode, pick],
   );
-
-  const onEditor = useCallback(
-    (ed: Editor | null) => {
-      editor.current = ed;
-      if (ed && pendingQuote.current) {
-        const q = pendingQuote.current;
-        pendingQuote.current = null;
-        insertQuote(ed, q);
-      }
-    },
-    [insertQuote],
-  );
+  const quoteInserted = useCallback((id: number) => setQuote((q) => (q && q.id === id ? null : q)), []);
 
   const pendingCreate = noteId ? ops.some((o) => o.id === noteId && o.create) : false;
   const showType = mode !== "write";
@@ -301,7 +268,8 @@ export function PageNotesPanel({
                   onChange={onChange}
                   label={t("notes.panel_editor", { section: sectionHeading })}
                   placeholder={t("notes.panel_placeholder")}
-                  onEditor={onEditor}
+                  quote={quote}
+                  onQuoteInserted={quoteInserted}
                   compact
                 />
               </Suspense>

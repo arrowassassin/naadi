@@ -23,6 +23,12 @@ export interface NoteEditorProps {
   compact?: boolean;
   /** The editor once it exists (insert a quote, focus). */
   onEditor?: (editor: Editor | null) => void;
+  /**
+   * A quote to add at the end of the note as a block quote (the selection toolbar's Note). It is inserted once the
+   * editor exists and is attached to the page, however late that is, then `onQuoteInserted(id)` is called.
+   */
+  quote?: { id: number; text: string } | null;
+  onQuoteInserted?: (id: number) => void;
   className?: string;
 }
 
@@ -87,6 +93,8 @@ export function NoteEditor({
   editable = true,
   compact,
   onEditor,
+  quote,
+  onQuoteInserted,
   className,
 }: NoteEditorProps) {
   const t = useUiText();
@@ -140,6 +148,34 @@ export function NoteEditor({
     onEditor?.(editor);
     return () => onEditor?.(null);
   }, [editor, onEditor]);
+
+  const insertedRef = useRef(onQuoteInserted);
+  insertedRef.current = onQuoteInserted;
+  useEffect(() => {
+    if (!editor || !quote) return;
+    let frame = 0;
+    let tries = 0;
+    const insert = () => {
+      if (editor.isDestroyed) return;
+      editor
+        .chain()
+        .focus("end")
+        .insertContent([
+          { type: "blockquote", content: [{ type: "paragraph", content: [{ type: "text", text: quote.text }] }] },
+          { type: "paragraph" },
+        ])
+        .run();
+      insertedRef.current?.(quote.id);
+    };
+    // A fresh editor's view is attached to the page a frame later: insert once it is (bounded retries).
+    const attempt = () => {
+      if (editor.isDestroyed) return;
+      if (editor.view.dom.isConnected || tries++ >= 60) insert();
+      else frame = window.requestAnimationFrame(attempt);
+    };
+    attempt();
+    return () => window.cancelAnimationFrame(frame);
+  }, [editor, quote]);
 
   useEffect(() => {
     // false: changing editability is not an edit (no update event, nothing saved).
