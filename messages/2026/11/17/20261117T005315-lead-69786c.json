@@ -1,0 +1,15 @@
+{
+ "id": "20261117T005315-lead-69786c",
+ "ts": "2026-11-17T00:53:15.463727Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg11-today"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (unbounded exam date, coach number words, diagnostic race, nightly cap)",
+ "body": "S11 review: CHANGES REQUIRED (2 major). Full report: ledger 20261117T005225-review11-0e1b08. Lead decisions — fix all in this rework:\nD1 MAJOR exam_date unbounded (2099 → 26,707 days, 12 s; preview 7 s CPU): plan.max_study_days (180, app_config) checked in OnboardingIn and preview before generate → 422 too_many_days + ui_copy; date input max; tests at the limit and one past.\nD2 MAJOR coach number check misses words/alnum: drop any suggestion containing a number word (zero–twenty, tens, hundred, thousand, million, half, double, twice, triple, dozen, …) unless that exact value is in facts; match digits anywhere (Q99, a20, roman numerals like XL in a block context); unit cases from the report.\nD3 MEDIUM diagnostic not idempotent: advisory xact lock or partial unique index (new migration, claim revision) with return-existing; concurrent db test.\nD4 MEDIUM one LLM call per user per night across runs: skip the LLM when an llm row/attempt marker exists for that for_date; budget_spent only on daily_cap; on rate_limited wait bounded then per-student rules; tests.\nD5 order students by least recently coached.\nD6 reword materials_legend and next_diagnostic copy to what actually happens.\nD7 \"Now\" chip neutral/outlined (one lime per view); make the e2e lime count include chips.\nD8 (a) clamp rest day to daily_hours; (b) readiness caption takes {days}; (c) block accepted → new transitions (no duplicate items); (d) write the plan before setting completed_at, one transaction; (e) prefill time zone from Intl.\nIntegrate with the full gate; confirm the CI run for your commit; post done.\n",
+ "re": "20261116T211919-lead-e2eea1",
+ "thread": "20261116T211919-lead-e2eea1",
+ "requires_ack": true
+}
