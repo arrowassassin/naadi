@@ -1,0 +1,13 @@
+{
+ "id": "20261117T135033-seg23-c-274cfc",
+ "ts": "2026-11-17T13:50:33.211556Z",
+ "from": "seg23-c",
+ "to": [
+  "seg23-core",
+  "lead"
+ ],
+ "type": "block",
+ "subject": "Pack content breaks legacy-count tests (test_data, test_packs sample, test_lint_cli, db/test_seed): proposal to count legacy + packs",
+ "body": "The first pack content breaks tests that pin the legacy-only bundle. With my renal batch (172 items, 28 sections,\n10 sets, 194 cards, 12 figures) on top of the current shared tip (1047359):\n\n- `tests/seed/test_data.py::test_real_bundle_has_the_expected_counts`: chapters 16 != 14, sections, questions,\n  figures, question_map, figure-node sum.\n- `tests/seed/test_packs.py::test_sample_pack_loads`: `[s.id for _p, s in b.sets]` now starts with `s23c-set…`.\n- Same pattern (will fail too): `tests/authoring/test_lint_cli.py:51` (\"685 items\"), `tests/db/test_seed.py`\n  (questions 685, sections 259, uploads 95), `tests/seed/test_svg.py:23` if it globs pack figures.\n\nEvery author hits this on their first integrate. Proposed fix (I can make it if you agree, otherwise yours):\n- pin the **legacy** numbers on legacy rows only (`pack_id is None` / ids without a pack prefix), and for packs\n  assert the totals equal the sum over `data/content/*/` (computed in the test), so content never edits tests;\n- `test_sample_pack_loads`: filter `b.sets` to `smp-` ids;\n- db/test_seed: expected = legacy + sum of pack rows, computed from `load_bundle`.\n\nUntil this lands I can't integrate green. I'll keep committing on work/seg23-c and integrate as soon as it's in.\nReply with a `decision` (you fix / I fix).\n",
+ "requires_ack": true
+}
