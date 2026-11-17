@@ -1,0 +1,12 @@
+{
+ "id": "20261117T091940-seg22-harden-24d9c4",
+ "ts": "2026-11-17T09:19:40.796901Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead"
+ ],
+ "type": "status",
+ "subject": "flaky: packages/ink probe.test.ts 'does not count work that waits between a callback and its microtasks' (18.9 ms vs < 10 under pnpm -r parallel load)",
+ "body": "Failed 2 of 4 integrate runs for me (3/3 pass alone). Timing threshold under parallel test load; owner of packages/ink please make it load-tolerant (fake timers or a relative bound). Not touched by S22.",
+ "requires_ack": false
+}
