@@ -21,6 +21,8 @@ from .registry import (
 for _h in BUILTINS:
     register_placement(_h.kind, _h)
 
+from . import costs  # noqa: E402,F401  (S17: fee receipt -> cost entry)
+
 __all__ = [
     "Candidate",
     "IngestView",

@@ -876,6 +876,8 @@ ui_copy:
   costs.save: "Save cost"
   costs.error_invalid: "Enter what it is for and an amount of 0 or more."
   today.pathway_open: "Open the pathway"
+  ingest.placement.cost_entry: "Add to your costs"
+  ingest.placement.cost_entry.preview: "{label}: {amount} {currency}, paid {paid_on}"
   coach.rules.catch_up_block.title: "Catch up on {system}"
   coach.rules.catch_up_block.body: "You got {correct} of {attempts} right lately ({percent}%). Add a {questions}-question block on your weak spots."
   coach.rules.review_misses.title: "Redo your misses"
