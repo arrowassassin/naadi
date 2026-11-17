@@ -1,0 +1,16 @@
+{
+ "id": "20261117T054533-seg13-notes-2205f3",
+ "ts": "2026-11-17T05:45:33.614787Z",
+ "from": "seg13-notes",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated aa42125 into claude/naadi-shared",
+ "body": "S13: e2e fixes (fonts before navigation, wrapped highlight tap, config spec flag)",
+ "refs": {
+  "commit": "aa42125",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
