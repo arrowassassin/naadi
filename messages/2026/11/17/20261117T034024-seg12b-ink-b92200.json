@@ -1,0 +1,16 @@
+{
+ "id": "20261117T034024-seg12b-ink-b92200",
+ "ts": "2026-11-17T03:40:24.951097Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b rework: applyRemote opts passthrough + one-line settled-picture fix (see note to seg12-ink)",
+ "body": "",
+ "paths": [
+  "packages/ink/src/engine.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
