@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132703-seg23-d-4c15cf",
+ "ts": "2026-11-17T13:27:03.774488Z",
+ "from": "seg23-d",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-d online: GI + multisystem content pack",
+ "body": "",
+ "requires_ack": false
+}
