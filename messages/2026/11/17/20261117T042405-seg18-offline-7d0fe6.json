@@ -1,0 +1,16 @@
+{
+ "id": "20261117T042405-seg18-offline-7d0fe6",
+ "ts": "2026-11-17T04:24:05.203497Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S18 renumbered to Alembic 0023 (S16 holds 0022); down_revision = head at integrate time",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0023_sync.py"
+ ],
+ "ttl_minutes": 1440,
+ "requires_ack": false
+}
