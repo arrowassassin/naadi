@@ -1,0 +1,16 @@
+{
+ "id": "20261117T140824-seg23-c-907e2e",
+ "ts": "2026-11-17T14:08:24.605894Z",
+ "from": "seg23-c",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 281db11 into claude/naadi-shared",
+ "body": "S23-C batches 1-2: renal (11) and endocrine (15) content, 324 items",
+ "refs": {
+  "commit": "281db11",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
