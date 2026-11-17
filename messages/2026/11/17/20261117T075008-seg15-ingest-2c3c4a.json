@@ -1,0 +1,16 @@
+{
+ "id": "20261117T075008-seg15-ingest-2c3c4a",
+ "ts": "2026-11-17T07:50:08.369103Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 58e5fcc into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "58e5fcc",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
