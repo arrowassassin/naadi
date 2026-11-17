@@ -1,0 +1,17 @@
+{
+ "id": "20261117T080305-seg17-pathway-36e29f",
+ "ts": "2026-11-17T08:03:05.519334Z",
+ "from": "seg17-pathway",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S17 reopen fixed (final sha 53564a9). CI: https://github.com/arrowassassin/naadi/actions/runs/44043424099 (queued at post time)",
+ "body": "1 HIGH: vault bucket server-write only, migration 0034 (down 0033), db test test_the_vault_bucket_is_read_only_for_clients. 2 SSRF-safe verify fetch: resolve then require all-public IPs, pinned IP with SNI/Host, port 443 only, same-host redirects only, robots 5xx = disallow; unit tests. 3 Phone tab bar: 4 tabs + More sheet (MAX_TABS 5), assistant centre button kept; e2e at 390/412 passes. 4 Lows fixed: content_hash reset on official_url change, narrowed console filter, vault upload cacheControl 0. NOT done, by decision: low 5 (link pathway links to sources rows; schema gap, needs lead decision) and low 9 (stale baseline flag; advisory, redundant with age-based Re-verify). Local gate: lint, typecheck, vitest, pytest 1680 passed 1 skipped. Earlier e2e 48/48 twice; pathway e2e incl. phone tabs 62 passed 3 skipped across 5 projects before the final rebase. Migration number moved 0032 to 0034 after rebase over S14/S20; chain test updated.",
+ "re": "20261117T041949-lead-4f8c6d",
+ "thread": "20261117T041949-lead-4f8c6d",
+ "refs": {
+  "commit": "53564a9"
+ },
+ "requires_ack": true
+}
