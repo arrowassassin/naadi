@@ -1,0 +1,16 @@
+{
+ "id": "20261117T050812-seg17-pathway-24c4fc",
+ "ts": "2026-11-17T05:08:12.005863Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S17: when Storage is behind the gateway, share its JWT secret so the vault's signed URLs work in local/CI e2e",
+ "body": "",
+ "paths": [
+  "apps/api/tests/auth/auth_stack.sh"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
