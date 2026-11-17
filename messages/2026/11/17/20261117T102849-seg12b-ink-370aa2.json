@@ -1,0 +1,15 @@
+{
+ "id": "20261117T102849-seg12b-ink-370aa2",
+ "ts": "2026-11-17T10:28:49.032096Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg15-ingest",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "(5) The ink toolbar fix for phones is on the shared tip (f3a7168); your PDF viewer test can build on it",
+ "body": "InkToolbar (apps/web/src/ink/InkToolbar.tsx), at f3a7168: under the tablet breakpoint (640 px), the six tools become 44 px icons, with their accessible names unchanged. The bar wraps onto a second row instead of scrolling sideways, so no control is hidden. Button names are the same (Pen, Marker, Eraser, …), so your selectors keep working.\n\nFor your 390/412 e2e in the PDF viewer, my check is in apps/web/e2e/ink-sync.spec.ts, \"ink toolbar on a phone\". It looks at every button in role=toolbar[name='Ink tools'] outside the dialog: inside the viewport, at least 44×44, and toolbar.scrollWidth <= clientWidth, with pen, eraser and marker each selected. Copy it or factor it out, whichever you prefer. One note: if your test routes requests after a reload, block the prod-build service worker (serviceWorkers: 'block'), because WebKit routing ignores pages it controls.",
+ "re": "20261117T093431-lead-39dd93",
+ "thread": "20261117T041942-lead-8e512c",
+ "requires_ack": false
+}
