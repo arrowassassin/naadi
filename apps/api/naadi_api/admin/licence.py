@@ -25,7 +25,7 @@ from psycopg import AsyncConnection
 
 from ..config_api.schemas import SourcesPolicy
 
-Use = Literal["host", "embed", "page", "rag"]
+Use = Literal["host", "embed", "page", "rag", "text"]
 Reason = Literal[
     "no_source",
     "no_license",
@@ -36,6 +36,12 @@ Reason = Literal[
     "not_embeddable",
     "metadata_stale",
     "media_not_approved",
+    "private_source",
+    "embed_only",
+    "link_only",
+    "no_derivatives",
+    "noncommercial",
+    "modify_not_allowed",
     "media_missing",
     "question_missing",
 ]
@@ -43,7 +49,12 @@ Reason = Literal[
 # Licence strings that name no licence at all, or defer to a per-file licence that a shared row cannot state.
 NO_LICENSE = frozenset({"", "unknown", "none", "per-item", "per-file"})
 SHARE_ALIKE = re.compile(r"(^|[-_ ])SA([-_ ]|$)", re.IGNORECASE)
+NO_DERIVATIVES = re.compile(r"(^|[-_ ])ND([-_ ]|$)", re.IGNORECASE)
+NONCOMMERCIAL = re.compile(r"(^|[-_ ])NC([-_ ]|$)", re.IGNORECASE)
 YOUTUBE_LICENSE = "youtube-embed-only"
+LINK_ONLY = frozenset({"link-only"})
+# A student's own material (uploads, knowledge base): never shared content, whatever the flags say.
+PRIVATE_LICENSES = frozenset({"user-own-material", "private-user-content"})
 
 
 class GateRefused(Exception):
@@ -87,6 +98,22 @@ class SourceTerms:
     def youtube(self) -> bool:
         return self.license.strip().lower() == YOUTUBE_LICENSE
 
+    @property
+    def link_only(self) -> bool:
+        return self.license.strip().lower() in LINK_ONLY
+
+    @property
+    def private(self) -> bool:
+        return self.license.strip().lower() in PRIVATE_LICENSES
+
+    @property
+    def no_derivatives(self) -> bool:
+        return bool(NO_DERIVATIVES.search(self.license))
+
+    @property
+    def noncommercial(self) -> bool:
+        return bool(NONCOMMERCIAL.search(self.license))
+
 
 @dataclass(frozen=True)
 class AssetFacts:
@@ -108,6 +135,33 @@ class PageFacts:
 HOSTED_KINDS = frozenset({"svg", "image", "pdf", "audio", "video_own"})
 
 
+def stored_copy_refusal(source: SourceTerms, policy: SourcesPolicy, *, modified: bool) -> Reason | None:
+    """Can we keep a copy of this source's material in Naadi (Storage file, question or chapter text)?
+
+    Only storable licences pass (review19 / lead 20261117T111847): public domain, CC0, CC BY, CC BY-SA (its own
+    partition: the page gate refuses it inside a proprietary chapter) and Naadi originals. A link-only or
+    embed-only source, a student's private material, any ND licence and (unless the owner has confirmed
+    non-commercial use in `sources_policy`) any NC licence or a source that forbids commercial use are refused,
+    whatever `allow_copy` says. `modified`: the copy is re-written or re-encoded (text, raster to WebP)."""
+    if source.private:
+        return "private_source"
+    if source.youtube:
+        return "embed_only"
+    if source.link_only:
+        return "link_only"
+    if source.no_derivatives:
+        return "no_derivatives"
+    if source.noncommercial and not policy.owner_confirms_noncommercial:
+        return "noncommercial"
+    if not source.allow_copy:
+        return "copy_not_allowed"
+    if modified and not source.allow_modify:
+        return "modify_not_allowed"
+    if not source.allow_commercial and not policy.owner_confirms_noncommercial:
+        return "noncommercial"
+    return None
+
+
 def decide(
     source: SourceTerms | None,
     asset: AssetFacts,
@@ -117,13 +171,19 @@ def decide(
     page: PageFacts | None = None,
     now: dt.datetime | None = None,
 ) -> Reason | None:
-    """The first gate that refuses, or None. Pure: no I/O."""
+    """The first gate that refuses, or None. Pure: no I/O.
+
+    Uses: `host` (we store a copy of a file), `embed` (YouTube through the official player), `page` (an asset in
+    a chapter page: host or embed rules, then the page rules), `text` (a question or chapter body written from the
+    source: a stored, modified copy), `rag` (prompts, retrieval, embeddings)."""
     if source is None:
         return "no_source"
     if not source.licensed and policy.block_without_license:
         return "no_license"
     if use == "rag":
         return None if source.allow_ai_ingest or not policy.block_non_ai_ingest_from_rag else "no_ai_ingest"
+    if use == "text":
+        return stored_copy_refusal(source, policy, modified=True)
     if asset.kind == "video_youtube":
         if not source.youtube:
             return "no_license"
@@ -133,8 +193,13 @@ def decide(
         max_age = dt.timedelta(days=policy.youtube_metadata_max_age_days)
         if fetched is None or (now or dt.datetime.now(dt.UTC)) - fetched > max_age:
             return "metadata_stale"
-    elif asset.kind in HOSTED_KINDS and not source.allow_copy:
-        return "copy_not_allowed"
+    elif use == "embed":
+        return "embed_only" if not source.youtube else None
+    else:
+        # Every other kind is a stored copy (files, and `link` rows that still point at a stored object).
+        reason = stored_copy_refusal(source, policy, modified=asset.kind == "image")
+        if reason is not None:
+            return reason
     if use == "page":
         p = page or PageFacts()
         if p.paid and policy.block_noncommercial_on_paid and not (source.allow_commercial and source.allow_modify):
@@ -142,6 +207,29 @@ def decide(
         if p.proprietary and policy.block_share_alike_in_proprietary and source.share_alike:
             return "share_alike_in_proprietary"
     return None
+
+
+USES: tuple[Use, ...] = ("host", "embed", "page", "text")
+_PROBE: dict[Use, AssetFacts] = {
+    "host": AssetFacts("svg"),
+    "page": AssetFacts("svg"),
+    "text": AssetFacts("svg"),
+    "embed": AssetFacts("video_youtube", True, None),
+}
+
+
+def usable_for(source: SourceTerms, policy: SourcesPolicy) -> list[Use]:
+    """The uses a source passes the licence gates for (the admin pickers offer only these). `embed` assumes a
+    freshly checked, embeddable video."""
+    now = dt.datetime.now(dt.UTC)
+    out: list[Use] = []
+    for use in USES:
+        facts = _PROBE[use]
+        if use == "embed":
+            facts = AssetFacts("video_youtube", True, now)
+        if decide(source, facts, use, policy, now=now) is None:
+            out.append(use)
+    return out
 
 
 async def load_policy(conn: AsyncConnection[Any]) -> SourcesPolicy:
@@ -206,3 +294,9 @@ async def check_media_row(
         ref_id=media_id,
         page=page,
     )
+
+
+async def check_text_source(conn: AsyncConnection[Any], source_id: str | None, *, ref_id: str | None = None) -> None:
+    """A question or chapter written from `source_id` is a stored, modified copy: refuse unless the source's
+    licence allows that (link-only, embed-only, private, ND, unconfirmed NC and no-copy sources never pass)."""
+    await check_asset(conn, source_id, use="text", asset=AssetFacts("text"), ref_id=ref_id or source_id)

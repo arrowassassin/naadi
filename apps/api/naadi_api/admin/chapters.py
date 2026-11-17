@@ -47,7 +47,7 @@ from .common import (
     run_tx,
 )
 from .content_schema import check_doc, refs_of, text_of, word_count
-from .licence import GateRefused, check_media_row
+from .licence import GateRefused, check_media_row, check_text_source
 from .media import MEDIA_SELECT, AdminMedia, media_out, media_previews
 
 log = get_logger("naadi.admin.chapters")
@@ -398,7 +398,8 @@ def reading_minutes(body: Any) -> int:
 
 async def _sync_section_media(conn: AsyncConnection[Any], section_id: str, body: Any) -> None:
     """Keep `section_media` in step with the published body for media that only appear through body nodes
-    (figures and PDFs); videos attached through approvals (S20) without a node are left alone."""
+    (figures and PDFs); videos attached through approvals (S20) without a node are left alone, and the seed's own
+    placements (origin 'seed') are the seed's to manage."""
     media, _ = refs_of(body)
     ids = [mid for _k, mid in media]
     for n, mid in enumerate(ids):
@@ -409,7 +410,7 @@ async def _sync_section_media(conn: AsyncConnection[Any], section_id: str, body:
         )
     await conn.execute(
         "delete from public.section_media sm using public.media_assets m"
-        " where sm.section_id = %s and m.id = sm.media_id and m.kind in ('svg','image','pdf')"
+        " where sm.section_id = %s and m.id = sm.media_id and m.kind in ('svg','image','pdf') and sm.origin = 'admin'"
         " and not (sm.media_id = any(%s))",
         (section_id, ids),
     )
@@ -470,8 +471,7 @@ def _new_chapter_id(title: str) -> str:
 )
 async def create_chapter(request: Request, admin: ConsoleAdmin, body: ChapterCreate) -> AdminChapter:
     async def run(conn: AsyncConnection[Any]) -> AdminChapter:
-        if await one(conn, "select 1 from public.sources where id = %s", (body.source_id,)) is None:
-            raise GateRefused("no_source", body.source_id)
+        await check_text_source(conn, body.source_id)
         cid = body.id or _new_chapter_id(body.title)
         if await one(conn, "select 1 from public.chapters where id = %s", (cid,)):
             raise conflict("id_taken", "A chapter with this id exists.")
@@ -524,8 +524,8 @@ async def patch_chapter(
         before = await get_chapter_row(conn, chapter_id, lock=True)
         if before["updated_at"] != body.expected_updated_at:
             raise conflict("stale_write", "This chapter was changed since you opened it.")
-        if body.source_id and await one(conn, "select 1 from public.sources where id = %s", (body.source_id,)) is None:
-            raise GateRefused("no_source", body.source_id)
+        if body.source_id:
+            await check_text_source(conn, body.source_id)
         title = body.title.strip() if body.title else before["title"]
         if not title:
             raise HTTPException(422, "The title must not be blank.")
@@ -552,12 +552,7 @@ async def gate_chapter_publish(conn: AsyncConnection[Any], chapter_id: str) -> N
             raise GateRefused("section_empty", s["id"])
         await gate_body(conn, s["body"])
     ch = await one(conn, "select source_id from public.chapters where id = %s", (chapter_id,))
-    if (
-        ch is None
-        or ch["source_id"] is None
-        or await one(conn, "select 1 from public.sources where id = %s", (ch["source_id"],)) is None
-    ):
-        raise GateRefused("no_source", chapter_id)
+    await check_text_source(conn, ch["source_id"] if ch else None, ref_id=chapter_id)
 
 
 @router.post(

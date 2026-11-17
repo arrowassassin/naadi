@@ -16,5 +16,6 @@ export const zAdminSource = z.object({
   license: z.string(),
   name: z.string(),
   url: z.string().nullable(),
+  usable_for: z.array(z.enum(["host", "embed", "page", "text"])),
   verified: z.boolean(),
 });

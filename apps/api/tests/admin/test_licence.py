@@ -29,39 +29,30 @@ FRESH = AssetFacts("video_youtube", True, NOW - dt.timedelta(days=1))
         (src(""), AssetFacts("svg"), "host", None, "no_license"),
         (src("per-file"), AssetFacts("image"), "page", None, "no_license"),
         (src("unknown"), AssetFacts("pdf"), "host", None, "no_license"),
-        (src("link-only", allow_copy=False), AssetFacts("pdf"), "host", None, "copy_not_allowed"),
-        (src("link-only", allow_copy=False), AssetFacts("svg"), "page", None, "copy_not_allowed"),
+        (src("link-only", allow_copy=False), AssetFacts("pdf"), "host", None, "link_only"),
+        (src("link-only"), AssetFacts("svg"), "page", None, "link_only"),
+        (src("link-only"), AssetFacts("text"), "text", None, "link_only"),
+        (src("public-domain", allow_copy=False), AssetFacts("pdf"), "host", None, "copy_not_allowed"),
+        (src("CC-BY-4.0", allow_modify=False), AssetFacts("image"), "host", None, "modify_not_allowed"),
+        (src("CC-BY-4.0", allow_modify=False), AssetFacts("svg"), "host", None, None),
+        (src("CC-BY-4.0", allow_modify=False), AssetFacts("text"), "text", None, "modify_not_allowed"),
+        (src("user-own-material"), AssetFacts("text"), "text", None, "private_source"),
+        (YT, AssetFacts("svg"), "host", None, "embed_only"),
+        (src(), AssetFacts("text"), "text", None, None),
         (src(), AssetFacts("svg"), "host", None, None),
         (src(), AssetFacts("svg"), "page", None, None),
         (
             src("CC-BY-NC-ND-4.0", allow_commercial=False, allow_modify=False),
-            AssetFacts("image"),
-            "page",
-            PageFacts(paid=True),
-            "noncommercial_on_paid",
-        ),
-        (
-            src("CC-BY-ND-4.0", allow_modify=False),
-            AssetFacts("image"),
-            "page",
-            PageFacts(paid=True),
-            "noncommercial_on_paid",
-        ),
-        (
-            src("CC-BY-NC-4.0", allow_commercial=False),
-            AssetFacts("image"),
-            "page",
-            PageFacts(paid=False, proprietary=False),
+            AssetFacts("pdf"),
+            "host",
             None,
+            "no_derivatives",
         ),
+        (src("CC-BY-ND-4.0"), AssetFacts("svg"), "page", PageFacts(paid=True), "no_derivatives"),
+        (src("CC-BY-NC-4.0"), AssetFacts("svg"), "page", PageFacts(proprietary=False), "noncommercial"),
+        (src("CC-BY-NC-4.0", allow_commercial=False), AssetFacts("text"), "text", None, "noncommercial"),
         (src("CC-BY-SA-4.0"), AssetFacts("image"), "page", None, "share_alike_in_proprietary"),
-        (
-            src("CC-BY-NC-SA-3.0", allow_commercial=False),
-            AssetFacts("image"),
-            "page",
-            None,
-            "share_alike_in_proprietary",
-        ),
+        (src("CC-BY-NC-SA-3.0", allow_commercial=False), AssetFacts("image"), "page", None, "noncommercial"),
         (src("CC-BY-SA-4.0"), AssetFacts("image"), "page", PageFacts(proprietary=False), None),
         (src("CC-BY-SA-4.0"), AssetFacts("image"), "host", None, None),
         (src(allow_ai_ingest=False), AssetFacts("svg"), "rag", None, "no_ai_ingest"),
@@ -69,6 +60,7 @@ FRESH = AssetFacts("video_youtube", True, NOW - dt.timedelta(days=1))
         (YT, FRESH, "embed", None, None),
         (YT, FRESH, "page", None, None),
         (src(), FRESH, "embed", None, "no_license"),
+        (src(), AssetFacts("svg"), "embed", None, "embed_only"),
         (YT, AssetFacts("video_youtube", False, NOW), "embed", None, "not_embeddable"),
         (YT, AssetFacts("video_youtube", None, NOW), "embed", None, "not_embeddable"),
         (YT, AssetFacts("video_youtube", True, NOW - dt.timedelta(days=31)), "page", None, "metadata_stale"),
@@ -82,9 +74,12 @@ def test_gate_matrix(
 
 
 def test_policy_switches_turn_soft_gates_off() -> None:
-    off = SourcesPolicy(block_noncommercial_on_paid=False, block_share_alike_in_proprietary=False)
+    off = SourcesPolicy(
+        block_noncommercial_on_paid=False, block_share_alike_in_proprietary=False, owner_confirms_noncommercial=True
+    )
     nc = src("CC-BY-NC-SA-4.0", allow_commercial=False)
     assert decide(nc, AssetFacts("image"), "page", off, page=PageFacts(paid=True), now=NOW) is None
+    assert decide(nc, AssetFacts("image"), "page", SourcesPolicy(), now=NOW) == "noncommercial"
     # the licence and RAG gates are pinned on in the model itself
     with pytest.raises(ValueError, match="block_without_license"):
         SourcesPolicy(block_without_license=False)  # type: ignore[arg-type]

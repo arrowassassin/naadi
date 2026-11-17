@@ -41,16 +41,14 @@ from .common import (
     rows,
     run_tx,
 )
-from .licence import GateRefused, source_terms
+from .html_clean import clean_html, text_of
+from .licence import GateRefused, check_text_source
 
 router = APIRouter(prefix="/api/admin/questions", tags=["admin"])
 
 QUESTION_ID = r"^[a-z0-9][a-z0-9_-]{1,63}$"
 TAXONOMY = re.compile(r"^[a-z0-9][a-z0-9_.-]{0,127}$")
 LABELS = "ABCDEFGHIJ"
-ACTIVE_HTML = re.compile(
-    r"<\s*/?\s*(script|iframe|object|embed|style|link|meta|form|base)\b|<[^>]*\son[a-z]+\s*=|<[^>]*javascript\s*:", re.I
-)
 QuestionStatus = Literal["draft", "auto_checked", "in_review", "published", "retired"]
 Difficulty = Literal["easy", "medium", "hard"]
 Exam = Literal["step1", "step2ck", "step3"]
@@ -74,9 +72,23 @@ def _html(v: str | None, *, required: bool = False, max_len: int = 20_000) -> st
         return None
     if len(v) > max_len:
         raise ValueError(f"at most {max_len} characters")
-    if ACTIVE_HTML.search(v):
-        raise ValueError("active content (scripts, event handlers, embedded frames) is not allowed")
-    return v.strip()
+    # Stored already clean (the web's SafeHtml allowlist, enforced here too): other consumers read it as well.
+    cleaned = clean_html(v)
+    if not text_of(cleaned):
+        if required:
+            raise ValueError("must not be blank")
+        return None
+    return cleaned
+
+
+def _plain_text(v: str | None, *, max_len: int) -> str | None:
+    """Plain-text fields (the educational objective is rendered as text): markup is stripped, not stored."""
+    if v is None:
+        return None
+    if len(v) > max_len:
+        raise ValueError(f"at most {max_len} characters")
+    text = text_of(clean_html(v))
+    return text or None
 
 
 class OptionIn(BaseModel):
@@ -116,10 +128,15 @@ class QuestionFields(BaseModel):
         assert out is not None
         return out
 
-    @field_validator("answer_html", "explanation_html", "why_not_html", "educational_objective")
+    @field_validator("answer_html", "explanation_html", "why_not_html")
     @classmethod
     def _optional_html(cls, v: str | None) -> str | None:
         return _html(v)
+
+    @field_validator("educational_objective")
+    @classmethod
+    def _objective(cls, v: str | None) -> str | None:
+        return _plain_text(v, max_len=2_000)
 
     @field_validator("taxonomy_ids")
     @classmethod
@@ -307,8 +324,7 @@ async def snapshot_question(
 
 
 async def _check_refs(conn: AsyncConnection[Any], f: QuestionFields) -> None:
-    if await source_terms(conn, f.source_id) is None:
-        raise GateRefused("no_source", f.source_id)
+    await check_text_source(conn, f.source_id)
     if (
         f.chapter_id
         and await one(conn, "select 1 from public.chapters where id = %s and owner_user_id is null", (f.chapter_id,))
@@ -528,11 +544,8 @@ async def set_question_status(
         if body.status not in TRANSITIONS[before["status"]]:
             raise conflict("bad_transition", "This status change is not allowed.")
         if body.status == "published":
-            terms = await source_terms(conn, before["source_id"])
-            if terms is None:
-                raise GateRefused("no_source", question_id)
-            if not terms.licensed:
-                raise GateRefused("no_license", question_id)
+            # The source may have changed tier since the item was saved (sources.yaml, sources_policy).
+            await check_text_source(conn, before["source_id"], ref_id=question_id)
             findings = run_lint(before)
             if findings.available and any(f.severity == "error" for f in findings.findings):
                 raise GateRefused("lint_errors", question_id)

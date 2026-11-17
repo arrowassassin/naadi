@@ -57,6 +57,9 @@ class MemoryStore:
     def get(self, bucket: str, path: str) -> bytes:
         return self.objects[(bucket, path)][0]
 
+    def delete(self, bucket: str, path: str) -> None:
+        self.objects.pop((bucket, path), None)
+
 
 @pytest.fixture(scope="module")
 def url(migrated_url: str) -> Iterator[str]:
@@ -408,6 +411,10 @@ def test_media_uploads_gates_and_youtube(client: TestClient, h: dict[str, dict[s
         201,
     )
     assert fig["kind"] == "svg" and fig["review_status"] == "unreviewed" and (fig["width"], fig["height"]) == (10, 10)
+    # review19 #7: an unreviewed figure is private (staging), never in the public bucket
+    assert [(b, p) for (b, p) in store.objects if fig["id"] in p] == [
+        ("content-private", f"staging/figures/{fig['id']}.svg")
+    ]
     stored = next(v for (b, p), v in store.objects.items() if p.endswith(f"{fig['id']}.svg"))
     assert b"<script" not in stored[0]
     png = io.BytesIO()
@@ -452,7 +459,7 @@ def test_media_uploads_gates_and_youtube(client: TestClient, h: dict[str, dict[s
                 headers={**a, "content-type": "image/svg+xml"},
             )
         )
-        == "copy_not_allowed"
+        == "link_only"
     )
     assert len(store.objects) == before
     # an unreviewed figure in a body blocks publishing; after approval it publishes
@@ -470,6 +477,18 @@ def test_media_uploads_gates_and_youtube(client: TestClient, h: dict[str, dict[s
             ]
             == "approved"
         )
+    # approval publishes the staged figure and removes the private copy; the PDF stays private
+    assert [(b, p) for (b, p) in store.objects if fig["id"] in p] == [
+        ("content-public", f"figures/admin/{fig['id']}.svg")
+    ]
+    assert any(b == "content-private" and p.endswith(f"{pdf['id']}.pdf") for (b, p) in store.objects)
+    # a rejected (unused) figure goes back out of the public bucket
+    img_rej = _ok(client.post(f"/api/admin/media/{img['id']}/review", json={"status": "approved"}, headers=a))
+    assert img_rej["review_status"] == "approved"
+    _ok(client.post(f"/api/admin/media/{img['id']}/review", json={"status": "rejected"}, headers=a))
+    assert [(b, p) for (b, p) in store.objects if img["id"] in p] == [
+        ("content-private", f"staging/figures/{img['id']}.webp")
+    ]
     ed = _ok(client.get(f"/api/admin/sections/{sid}/editor", headers=a))
     d = ed["draft"]
     _ok(
@@ -796,3 +815,69 @@ def test_pathway_checks_queue_verifies_or_dismisses(client: TestClient, h: dict[
         with psycopg.connect(url, autocommit=True) as c:
             c.execute("delete from public.pathway_tasks where id = 'admin-test-task'")
             c.execute("delete from public.pathway_stages where key = 'admin_test_stage'")
+
+
+def test_only_storable_licences_publish_text_or_files(
+    client: TestClient, h: dict[str, dict[str, str]], url: str
+) -> None:
+    """review19 defects 2-3: link-only, NC-ND and NC sources never become stored content."""
+    a = h["admin"]
+    with psycopg.connect(url, autocommit=True) as c:
+        c.execute(
+            "insert into public.sources"
+            " (id, name, license, allow_copy, allow_modify, allow_commercial, allow_ai_ingest)"
+            " values ('test-ncnd', 'NC-ND test', 'CC-BY-NC-ND-4.0', true, false, false, false),"
+            " ('test-usmle', 'Link only test', 'link-only', false, false, false, false)"
+            " on conflict (id) do nothing"
+        )
+    try:
+        assert (
+            _gate(client.post("/api/admin/questions", json=_question(source_id="test-usmle"), headers=a)) == "link_only"
+        )
+        assert (
+            _gate(client.post("/api/admin/questions", json=_question(source_id="test-ncnd"), headers=a))
+            == "no_derivatives"
+        )
+        r = client.post(
+            "/api/admin/chapters",
+            json={"id": "admin-test-ncnd", "exam": "step1", "title": "NC-ND", "source_id": "test-ncnd"},
+            headers=a,
+        )
+        assert _gate(r) == "no_derivatives"
+        upload = client.post(
+            "/api/admin/media/files",
+            params={"source_id": "test-ncnd", "title": "x"},
+            content=SVG,
+            headers={**a, "content-type": "image/svg+xml"},
+        )
+        assert _gate(upload) == "no_derivatives"
+        # A question saved under a good source whose licence later turns link-only cannot be published.
+        q = _ok(client.post("/api/admin/questions", json=_question(), headers=a), 201)
+        q = _ok(
+            client.post(
+                f"/api/admin/questions/{q['id']}/status",
+                json={"status": "in_review", "expected_version": q["version"]},
+                headers=a,
+            )
+        )
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("update public.questions set source_id = 'test-usmle' where id = %s", (q["id"],))
+        fresh = _ok(client.get(f"/api/admin/questions/{q['id']}", headers=a))
+        pub = client.post(
+            f"/api/admin/questions/{q['id']}/status",
+            json={"status": "published", "expected_version": fresh["version"]},
+            headers=a,
+        )
+        assert _gate(pub) == "link_only"
+        usable = {s["id"]: set(s["usable_for"]) for s in _ok(client.get("/api/admin/sources", headers=a))["items"]}
+        assert usable["naadi-original-v1"] == {"host", "page", "text"}
+        assert usable["test-usmle"] == set() and usable["test-ncnd"] == set()
+        assert usable["youtube"] == {"embed"}
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute(
+                "delete from public.question_revisions where question_id in"
+                " (select id from public.questions where source_id in ('test-usmle','test-ncnd'))"
+            )
+            c.execute("delete from public.questions where source_id in ('test-usmle', 'test-ncnd')")
+            c.execute("delete from public.sources where id in ('test-ncnd', 'test-usmle')")

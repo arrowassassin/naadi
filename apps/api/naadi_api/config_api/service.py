@@ -19,7 +19,7 @@ import datetime as dt
 import json
 import time
 import uuid
-from collections.abc import Callable, Collection, Mapping
+from collections.abc import Awaitable, Callable, Collection, Mapping
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal
@@ -71,6 +71,9 @@ class HistoryRow:
     updated_at: dt.datetime | None
     op: str
     replaced_at: dt.datetime
+
+
+OnSaved = Callable[[Any, dict[str, Any] | None, dict[str, Any]], Awaitable[None]]
 
 
 class StaleWrite(Exception):
@@ -248,9 +251,12 @@ class AppConfigService:
         expected_updated_at: dt.datetime | None,
         user_id: uuid.UUID,
         admin_edited: bool = True,
+        on_saved: OnSaved | None = None,
     ) -> ConfigRow:
         """Save `value`. `admin_edited=False` hands the key back to the seed (no admin_edited_at mark), e.g. when
-        an admin restores the shipped value: the next seed run may then update it again."""
+        an admin restores the shipped value: the next seed run may then update it again. `on_saved(conn, before,
+        after)` runs inside the same transaction after the write (the admin audit row): if it fails, nothing is
+        saved."""
         normalized = validate_value(key, value)
         others = {k: (normalized if k == key else (await self.get(k))) for k in ("ui.nav", "feature_flags")}
         problems = cross_key_problems(others)
@@ -263,7 +269,7 @@ class AppConfigService:
         assert self._db.pool is not None
         async with self._db.pool.connection(timeout=DB_DEADLINE_S) as conn, conn.transaction():
             cur = conn.cursor(row_factory=dict_row)
-            await cur.execute("select updated_at from public.app_config where key = %s for update", (key,))
+            await cur.execute("select value, updated_at from public.app_config where key = %s for update", (key,))
             current = await cur.fetchone()
             current_at = current["updated_at"] if current else None
             if current_at != expected_updated_at:
@@ -277,7 +283,9 @@ class AppConfigService:
                 (key, json.dumps(normalized, separators=(",", ":")), user_id, admin_edited),
             )
             saved = await cur.fetchone()
-        assert saved is not None
+            assert saved is not None
+            if on_saved is not None:
+                await on_saved(conn, {"value": current["value"]} if current else None, {"value": saved["value"]})
         self.invalidate(key)
         if key in llm_config.AGENT_CONFIG_KEYS:
             llm_config.invalidate_runtime_config()

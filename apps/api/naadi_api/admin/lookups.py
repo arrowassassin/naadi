@@ -12,11 +12,12 @@ from fastapi import APIRouter, HTTPException, Path, Query, Request
 from psycopg import AsyncConnection
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
-from ..config_api.routes import KEY_PATTERN, ConfigEntry, _entry
+from ..config_api.routes import KEY_PATTERN, ConfigEntry, _auditor, _entry
 from ..config_api.schemas import KEY_SPECS
 from ..config_api.service import AppConfigService, CrossKeyInvalid, StaleWrite
 from ..errors import FieldError, error_response
-from .common import ADMIN_ERRORS, CONFLICT, INVALID, NOT_FOUND, ConsoleAdmin, audit, one, rows, run_tx
+from .common import ADMIN_ERRORS, CONFLICT, INVALID, NOT_FOUND, ConsoleAdmin, one, rows, run_tx
+from .licence import SourceTerms, load_policy, usable_for
 
 router = APIRouter(prefix="/api/admin", tags=["admin"])
 
@@ -31,6 +32,10 @@ class AdminSource(BaseModel):
     allow_commercial: bool
     allow_ai_ingest: bool
     verified: bool
+    usable_for: list[Literal["host", "embed", "page", "text"]] = Field(
+        description="Uses the licence gates allow: host = store a file, embed = YouTube player, page = in a chapter"
+        " page, text = a question or chapter written from it"
+    )
 
 
 class AdminSourceList(BaseModel):
@@ -83,7 +88,10 @@ async def list_sources(request: Request, admin: ConsoleAdmin) -> AdminSourceList
             "select id, name, license, url, allow_copy, allow_modify, allow_commercial, allow_ai_ingest,"
             " verified from public.sources order by id",
         )
-        return AdminSourceList(items=[AdminSource(**r) for r in found])
+        policy = await load_policy(conn)
+        return AdminSourceList(
+            items=[AdminSource(**r, usable_for=usable_for(SourceTerms.of(r), policy)) for r in found]
+        )
 
     return await run_tx(request, run)
 
@@ -159,7 +167,13 @@ async def revert_config(
         raise HTTPException(404, "No such history entry.")
     svc: AppConfigService = request.app.state.app_config
     try:
-        row = await svc.put(key, hist["value"], expected_updated_at=body.expected_updated_at, user_id=admin.user_id)
+        row = await svc.put(
+            key,
+            hist["value"],
+            expected_updated_at=body.expected_updated_at,
+            user_id=admin.user_id,
+            on_saved=_auditor(admin, key, "config.revert", str(body.history_id)),
+        )
     except ValidationError as exc:
         # An old value can be invalid under today's schema (a key was added since): refuse with the paths.
         details = [
@@ -180,10 +194,4 @@ async def revert_config(
     except (psycopg.OperationalError, TimeoutError) as exc:
         raise HTTPException(503, "The database cannot be reached right now. Try again in a moment.") from exc
 
-    async def record(conn: AsyncConnection[Any]) -> None:
-        await audit(
-            conn, admin, "config.revert", "app_config", key, after={"value": row.value}, note=str(body.history_id)
-        )
-
-    await run_tx(request, record)
     return _entry(row)

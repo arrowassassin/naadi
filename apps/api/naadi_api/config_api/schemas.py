@@ -2544,7 +2544,6 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "admin.editor.publish_blocked_conflict",
         "admin.editor.publish_body",
         "admin.editor.publish_confirm",
-        "admin.editor.publish_nothing",
         "admin.editor.publish_title",
         "admin.editor.publishing",
         "admin.editor.range",
@@ -2667,6 +2666,15 @@ REQUIRED_UI_COPY_KEYS: frozenset[str] = frozenset(
         "admin.gate.taxonomy_missing",
         "admin.gate.title",
         "admin.gate.unknown",
+        "admin.gate.modify_not_allowed",
+        "admin.gate.link_only",
+        "admin.gate.no_derivatives",
+        "admin.gate.noncommercial",
+        "admin.gate.embed_only",
+        "admin.gate.private_source",
+        "admin.field.source_not_usable",
+        "admin.field.source_not_usable_option",
+        "admin.field.source_none_usable",
         "admin.label",
         "admin.lint.clean",
         "admin.lint.error",
@@ -3770,6 +3778,11 @@ class SourcesPolicy(_Strict):
     block_non_ai_ingest_from_rag: Literal[True] = True
     youtube_metadata_max_age_days: int = Field(default=30, ge=1, le=30)
     original_source_id: str = Field(default="naadi-original-v1", min_length=1)
+    owner_confirms_noncommercial: bool = Field(
+        default=False,
+        description="The owner confirms Naadi is non-commercial, so NC-licensed (not ND) sources may be stored and"
+        " published. False until counsel has reviewed the business model (HANDOFF §17).",
+    )
 
 
 # ── lab_values ──

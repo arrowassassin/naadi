@@ -336,23 +336,28 @@ def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> lis
     def count(name: str, query: str, want: int) -> Check:
         return Check(f"seed: {name} = {want}", f"select count(*) = {want} as ok, count(*)::text as detail {query}")
 
+    def at_least(name: str, query: str, want: int) -> Check:
+        # Admins add chapters, sections and questions through the console (S19), so shared totals only have a floor.
+        return Check(f"seed: {name} >= {want}", f"select count(*) >= {want} as ok, count(*)::text as detail {query}")
+
     e = expected
     return [
-        count(
+        at_least(
             "chapters",
-            "from public.chapters where owner_user_id is null and status = 'published'"
-            " and kind in ('chapter','mock_exam')",
+            "from public.chapters where owner_user_id is null and kind in ('chapter','mock_exam')"
+            " and (status = 'published' or admin_edited_at is not null)",
             e["chapters"],
         ),
-        count(
+        at_least(
             "chapter_sections",
             "from public.chapter_sections s join public.chapters c on c.id = s.chapter_id"
             " where c.owner_user_id is null and c.kind in ('chapter','mock_exam')",
             e["chapter_sections"],
         ),
-        count(
-            "questions (published, original)",
-            "from public.questions where status = 'published' and source_id = 'naadi-original-v1'",
+        at_least(
+            "questions (published or admin-edited, original)",
+            "from public.questions where source_id = 'naadi-original-v1'"
+            " and (status = 'published' or admin_edited_at is not null)",
             e["questions"],
         ),
         count(
@@ -364,7 +369,7 @@ def seed_checks(expected: dict[str, int], app_config_keys: Sequence[str]) -> lis
         count(
             "section_media",
             "from public.section_media m join public.media_assets a on a.id = m.media_id"
-            " where a.kind = 'svg' and a.source_id = 'naadi-original-v1'",
+            " where m.origin = 'seed' and a.kind = 'svg' and a.source_id = 'naadi-original-v1'",
             e["section_media"],
         ),
         count("taxonomy_nodes", "from public.taxonomy_nodes", e["taxonomy_nodes"]),

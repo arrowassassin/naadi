@@ -7,8 +7,12 @@
   app_config. Sources go first so every asset's `source_id` resolves.
 - A row is written only when a column differs (`is distinct from`), so a second run reports 0 changes and
   fires no updated_at / history triggers. A row an admin (or, for sections, the assistant) edited has
-  `admin_edited_at` set and is kept; `force` overwrites it and clears the mark. When the seed replaces a
-  section body, the previous body is saved as a 'seed' revision.
+  `admin_edited_at` set and is kept: chapters, sections, questions, media_assets and app_config keys
+  (migration 0036 marks chapters, questions and media by trigger on every non-seed write; the importer's own
+  transactions set `naadi.seed` so they never mark). `force` overwrites marked rows and clears the mark.
+  `section_media` placements the seed did not make (origin 'admin': admin console, YouTube and generated-media
+  approvals) are never replaced or deleted, forced or not. When the seed replaces a section body, the previous
+  body is saved as a 'seed' revision.
 - License gate: sources.yaml rows without complete license fields are skipped and listed in the report; they
   do not fail the run (nothing references them). Every other check, the counts included, must pass.
 - Targets: a local database with a remote Storage (or the reverse) is refused unless allow_split_target, so a
@@ -292,6 +296,7 @@ def _media_rows(b: SeedBundle, figures: list[PreparedFigure], bucket: str) -> li
                 "height": p.height,
                 "content_sha256": p.sha256,
                 "review_status": "approved",
+                "admin_edited_at": None,  # a forced run takes the figure back from the admin
             }
         )
     return rows
@@ -299,6 +304,9 @@ def _media_rows(b: SeedBundle, figures: list[PreparedFigure], bucket: str) -> li
 
 # A section edited outside the seed (admin editor, assistant) is not overwritten unless forced.
 SECTION_GUARD: LiteralString = "t.admin_edited_at is null"
+# Chapters, questions and media an admin changed (migration 0036 trigger) are kept unless forced.
+ADMIN_EDIT_GUARD: LiteralString = "t.admin_edited_at is null"
+SEED_PLACEMENT_GUARD: LiteralString = "t.origin = 'seed'"
 
 
 def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
@@ -312,10 +320,11 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
             "sort": c.order,
             "status": "published",
             "source_id": ORIGINAL_SOURCE,
+            "admin_edited_at": None,  # a forced run takes the chapter back from the admin
         }
         for c in b.chapters
     ]
-    out = {"chapters": upsert(cur, "chapters", ["id"], chapters)}
+    out = {"chapters": upsert(cur, "chapters", ["id"], chapters, guard=None if force else ADMIN_EDIT_GUARD)}
     sections = []
     for c, i, s in b.sections:
         body = b.bodies.sections[s.id]
@@ -370,14 +379,16 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
     out["chapter_section_revisions"] = TableCounts(total=cur.rowcount, inserted=cur.rowcount)
 
     placements = [
-        {"section_id": s.id, "media_id": fid, "sort": n}
+        {"section_id": s.id, "media_id": fid, "sort": n, "origin": "seed"}
         for _c, _i, s in b.sections
         for n, fid in enumerate(b.bodies.sections[s.id].figure_ids)
     ]
-    sm = upsert(cur, "section_media", ["section_id", "media_id"], placements)
-    # Figures moved or removed from a seeded section: drop placements the data no longer has.
+    # Only the seed's own placements are replaced: an admin's attachment of the same media keeps its row.
+    sm = upsert(cur, "section_media", ["section_id", "media_id"], placements, guard=SEED_PLACEMENT_GUARD)
+    # Figures moved or removed from a seeded section: drop the seed placements the data no longer has. Placements
+    # an admin, a YouTube approval or a generated-media approval made (origin 'admin') are never deleted.
     cur.execute(
-        "delete from public.section_media m where m.section_id = any(%s) and not exists ("
+        "delete from public.section_media m where m.section_id = any(%s) and m.origin = 'seed' and not exists ("
         " select 1 from jsonb_to_recordset(%s::jsonb) as x(section_id text, media_id text)"
         " where x.section_id = m.section_id and x.media_id = m.media_id)",
         (
@@ -390,7 +401,7 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
     return out
 
 
-def _questions(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]:
+def _questions(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
     rows = [
         {
             "id": q.id,
@@ -410,10 +421,11 @@ def _questions(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts
             "source_id": q.source,
             "status": "published",
             "review": q.review.model_dump(by_alias=True),
+            "admin_edited_at": None,  # a forced run takes the item back from the admin
         }
         for q in b.questions
     ]
-    return {"questions": upsert(cur, "questions", ["id"], rows)}
+    return {"questions": upsert(cur, "questions", ["id"], rows, guard=None if force else ADMIN_EDIT_GUARD)}
 
 
 def _pathway(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]:
@@ -458,9 +470,6 @@ def _plan(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]:
     cur.execute("delete from public.plan_template_days where template_id = %s and day > %s", (p.id, len(p.days)))
     out["plan_template_days"].deleted = cur.rowcount
     return out
-
-
-ADMIN_EDIT_GUARD: LiteralString = "t.admin_edited_at is null"
 
 
 def _app_config(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[str, TableCounts]:
@@ -522,7 +531,9 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
         json.dumps(b.question_map),
     )
     actual["section_media"] = one(
-        cur, "select count(*) from public.section_media where section_id = any(%s)", section_ids
+        cur,
+        "select count(*) from public.section_media where section_id = any(%s) and origin = 'seed'",
+        section_ids,
     )
     actual["app_config"] = one(
         cur, "select count(*) from public.app_config where key = any(%s)", list(file_values(b.config_dir))
@@ -552,16 +563,24 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
             detail=", ".join(dangling[:10]) or "all resolve",
         )
     )
+    # Sections an admin edited may hold the admin's own figures and placements; the 1:1 check covers the rest.
     figure_nodes = one(
         cur,
         "select count(*) from public.chapter_sections s"
-        " cross join lateral jsonb_path_query(s.body, 'strict $.** ? (@.type == \"figure\")') where s.id = any(%s)",
+        " cross join lateral jsonb_path_query(s.body, 'strict $.** ? (@.type == \"figure\")')"
+        " where s.id = any(%s) and s.admin_edited_at is null",
+        section_ids,
+    )
+    seed_placements = one(
+        cur,
+        "select count(*) from public.section_media m join public.chapter_sections s on s.id = m.section_id"
+        " where m.section_id = any(%s) and m.origin = 'seed' and s.admin_edited_at is null",
         section_ids,
     )
     checks.append(
         Check(
             name="figure nodes = section_media rows",
-            ok=figure_nodes == actual["section_media"],
+            ok=figure_nodes == seed_placements,
             detail=f"{figure_nodes} nodes",
         )
     )
@@ -582,7 +601,11 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
     )
     # questions-scope: seed (verifies the bundle's own ids only)
     unpublished = one(
-        cur, "select count(*) from public.questions where id = any(%s) and status <> 'published'", ids["questions"]
+        cur,
+        # an item an admin retired or sent back to review (admin_edited_at, migration 0036) is the admin's call
+        "select count(*) from public.questions where id = any(%s) and status <> 'published'"
+        " and admin_edited_at is null",
+        ids["questions"],
     )
     checks.append(
         Check(name="seeded questions are published", ok=unpublished == 0, detail=f"{unpublished} not published")
@@ -694,6 +717,8 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
                     t0 = time.monotonic()
                     with conn.transaction(), conn.cursor() as cur:
                         cur.execute(f"set local statement_timeout = {STATEMENT_TIMEOUT_MS}")
+                        # Seed writes never count as admin edits (migration 0036 trigger reads this).
+                        cur.execute("select set_config('naadi.seed', 'on', true)")
                         if group == "sources":
                             report.tables.update(_sources(cur, b))
                         elif group == "taxonomy":
@@ -715,11 +740,12 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
                                 ["id"],
                                 _media_rows(b, figures, bucket_name),
                                 keep_existing=("attribution",),
+                                guard=None if opts.force else ADMIN_EDIT_GUARD,
                             )
                         elif group == "chapters":
                             report.tables.update(_chapters(cur, b, force=opts.force))
                         elif group == "questions":
-                            report.tables.update(_questions(cur, b))
+                            report.tables.update(_questions(cur, b, force=opts.force))
                         elif group == "pathway":
                             report.tables.update(_pathway(cur, b))
                         elif group == "plan":

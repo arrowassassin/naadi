@@ -525,6 +525,12 @@ export type AdminSource = {
    */
   url: string | null;
   /**
+   * Usable For
+   *
+   * Uses the licence gates allow: host = store a file, embed = YouTube player, page = in a chapter page, text = a question or chapter written from it
+   */
+  usable_for: Array<"host" | "embed" | "page" | "text">;
+  /**
    * Verified
    */
   verified: boolean;

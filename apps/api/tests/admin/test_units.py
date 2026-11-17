@@ -150,6 +150,18 @@ def test_raster_is_reencoded_to_webp_without_metadata() -> None:
         raster_to_webp(b"<svg/>")
 
 
+def test_raster_pixel_bomb_is_refused_from_the_header_without_touching_pillows_global() -> None:
+    from PIL import Image
+
+    before = Image.MAX_IMAGE_PIXELS
+    bomb = io.BytesIO()
+    Image.new("1", (8000, 6000)).save(bomb, format="PNG")  # 48 MP in a tiny file
+    assert len(bomb.getvalue()) < 1_000_000
+    with pytest.raises(ValueError, match="too large"):
+        raster_to_webp(bomb.getvalue())
+    assert before == Image.MAX_IMAGE_PIXELS
+
+
 def _q(**kw: Any) -> dict[str, Any]:
     base: dict[str, Any] = {
         "exam": "step1",
@@ -167,16 +179,21 @@ def test_question_form_validation() -> None:
         _q(answer="F"),
         _q(options=[{"label": "A", "html": "x"}, {"label": "C", "html": "y"}]),
         _q(options=[{"label": "A", "html": "same"}, {"label": "B", "html": "Same"}]),
-        _q(stem_html="<p onclick=alert(1)>x</p>"),
-        _q(stem_html="<script>x</script>"),
-        _q(explanation_html='<a href="javascript:x">y</a>'),
+        _q(stem_html="<script>x</script>"),  # nothing left after cleaning: a blank stem
         _q(taxonomy_ids=["Not Valid"]),
         _q(extra_field=1),
     ):
         with pytest.raises(ValidationError):
             QuestionCreate(**bad)
     # clinical prose such as "Onset = 3 days" is not mistaken for an event handler
-    assert QuestionCreate(**_q(stem_html="<p>Onset = 3 days</p>")).stem_html
+    assert QuestionCreate(**_q(stem_html="<p>Onset = 3 days</p>")).stem_html == "<p>Onset = 3 days</p>"
+    # active content is stored cleaned, not refused (review19 defect 6)
+    assert QuestionCreate(**_q(stem_html="<p onclick=alert(1)>x</p>")).stem_html == "<p>x</p>"
+    assert QuestionCreate(**_q(explanation_html='<a href="javascript:x">y</a>')).explanation_html == "y"
+    assert (
+        QuestionCreate(**_q(educational_objective="<b>Know</b> the &amp; key")).educational_objective
+        == "Know the & key"
+    )
 
 
 def test_item_changed_only_for_stem_options_or_key() -> None:

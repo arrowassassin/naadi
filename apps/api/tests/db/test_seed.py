@@ -255,14 +255,16 @@ def test_admin_edits_survive_a_reseed_and_force_overwrites(first_run: object, ur
 
 
 def test_drift_is_repaired_with_a_revision(first_run: object, url: str, b: SeedBundle) -> None:
-    with psycopg.connect(url, autocommit=True) as c:
+    """Seed-owned data that drifted without an admin mark (a stray write in a seed session) is repaired."""
+    with psycopg.connect(url, autocommit=True) as c, c.transaction():
+        c.execute("select set_config('naadi.seed', 'on', true)")  # not an admin edit (migration 0036 trigger)
         c.execute(
             "update public.chapter_sections set body = jsonb_set(body, '{content,0,type}', '\"paragraph\"')"
             " where id = 'ch03-s02'"
         )
         c.execute(
-            "insert into public.section_media (section_id, media_id, sort) values ('ch03-s02', 'ch01-fig01', 99)"
-            " on conflict do nothing"
+            "insert into public.section_media (section_id, media_id, sort, origin)"
+            " values ('ch03-s02', 'ch01-fig01', 99, 'seed') on conflict do nothing"
         )
         c.execute(
             "update public.questions set answer = case when answer = 'A' then 'B' else 'A' end where id = 'ch03-q01'"
@@ -277,6 +279,56 @@ def test_drift_is_repaired_with_a_revision(first_run: object, url: str, b: SeedB
     finally:
         with psycopg.connect(url, autocommit=True) as c:
             c.execute("delete from public.chapter_section_revisions where section_id = 'ch03-s02'")
+
+
+def test_admin_edits_and_attachments_survive_a_seed_unless_forced(first_run: object, url: str, b: SeedBundle) -> None:
+    """review19 defect 1: the admin's fixes to seed questions, chapters and figures, and the admin's own
+    section_media attachments, survive the next deploy seed; --force takes rows back but never deletes admin
+    attachments."""
+    q = next(x for x in b.questions if x.id == "ch01-q01")
+    other = "A" if q.answer != "A" else "B"
+    with psycopg.connect(url, autocommit=True) as c:
+        # What the admin API does (any non-seed write marks the row).
+        c.execute("update public.questions set answer = %s, status = 'retired' where id = 'ch01-q01'", (other,))
+        c.execute("update public.chapters set status = 'retired', title = 'Admin-retitled' where id = 'ch01'")
+        c.execute("update public.media_assets set caption = 'Admin caption' where id = 'ch01-fig01'")
+        c.execute("insert into public.section_media (section_id, media_id, sort) values ('ch02-s01', 'ch01-fig01', 50)")
+        marks = c.execute(
+            "select (select admin_edited_at is not null from public.questions where id = 'ch01-q01'),"
+            " (select admin_edited_at is not null from public.chapters where id = 'ch01'),"
+            " (select admin_edited_at is not null from public.media_assets where id = 'ch01-fig01'),"
+            " (select origin from public.section_media where section_id = 'ch02-s01' and media_id = 'ch01-fig01')"
+        ).fetchone()
+        assert marks == (True, True, True, "admin")
+        # Bookkeeping writes are not edits: psychometrics on another question leave it unmarked.
+        c.execute("update public.questions set stats = '{\"n\": 1}'::jsonb where id = 'ch01-q02'")
+        assert c.execute("select admin_edited_at from public.questions where id = 'ch01-q02'").fetchone() == (None,)
+    try:
+        r = run_seed(options(url), bundle=b)
+        assert r.ok
+        with psycopg.connect(url) as c:
+            row = c.execute(
+                "select (select answer || status from public.questions where id = 'ch01-q01'),"
+                " (select title || status from public.chapters where id = 'ch01'),"
+                " (select caption from public.media_assets where id = 'ch01-fig01'),"
+                " (select count(*) from public.section_media where section_id = 'ch02-s01' and media_id = 'ch01-fig01')"
+            ).fetchone()
+        assert row == (f"{other}retired", "Admin-retitledretired", "Admin caption", 1)
+        forced = run_seed(options(url, force=True), bundle=b)
+        assert forced.ok
+        with psycopg.connect(url) as c:
+            row = c.execute(
+                "select (select answer || status from public.questions where id = 'ch01-q01'),"
+                " (select status from public.chapters where id = 'ch01'),"
+                " (select admin_edited_at from public.chapters where id = 'ch01'),"
+                " (select count(*) from public.section_media where section_id = 'ch02-s01' and media_id = 'ch01-fig01')"
+            ).fetchone()
+        assert row == (f"{q.answer}published", "published", None, 1)  # attachment kept even when forced
+    finally:
+        with psycopg.connect(url, autocommit=True) as c:
+            c.execute("delete from public.section_media where section_id = 'ch02-s01' and media_id = 'ch01-fig01'")
+            c.execute("update public.questions set stats = '{}'::jsonb where id = 'ch01-q02'")
+        run_seed(options(url, force=True), bundle=b)
 
 
 def test_a_missing_storage_object_is_restored(first_run: object, url: str, b: SeedBundle) -> None:

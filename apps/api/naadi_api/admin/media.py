@@ -30,7 +30,7 @@ from fastapi import APIRouter, HTTPException, Path, Query, Request
 from psycopg import AsyncConnection
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from ..chapters_media import MediaUrlResolver
+from ..chapters_media import MediaUrlResolver, parse_storage_path
 from ..errors import ErrorResponse
 from ..export.storage import target_from
 from ..logs import get_logger
@@ -50,10 +50,21 @@ TAXONOMY = re.compile(r"^[a-z0-9][a-z0-9_.-]{0,127}$")
 MAX_FIGURE_BYTES = 10 * 1024 * 1024
 MAX_PDF_BYTES = 50 * 1024 * 1024
 MAX_RASTER_SIDE = 4096
+# 40 MP decodes to at most 160 MB RGBA: a bound the free Space survives (a 10 MB file can claim far more).
+MAX_RASTER_PIXELS = 40_000_000
 WEBP_QUALITY = 85
 RASTER_TYPES = frozenset({"image/png", "image/jpeg", "image/webp", "image/gif"})
 FIGURE_FOLDER = "figures/admin"
+# Unreviewed figures wait in the private bucket; approval publishes them to FIGURE_FOLDER, rejection takes them back.
+STAGING_FOLDER = "staging/figures"
 PDF_FOLDER = "pdfs/admin"
+CONTENT_TYPES = {
+    "svg": "image/svg+xml",
+    "webp": "image/webp",
+    "png": "image/png",
+    "jpg": "image/jpeg",
+    "jpeg": "image/jpeg",
+}
 YOUTUBE_ID = re.compile(r"^[A-Za-z0-9_-]{11}$")
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be", "www.youtube-nocookie.com"})
 MediaKind = Literal["svg", "image", "video_own", "video_youtube", "audio", "pdf", "link"]
@@ -66,6 +77,7 @@ ReviewStatus = Literal["unreviewed", "approved", "rejected"]
 class ObjectStore(Protocol):
     def put(self, bucket: str, path: str, data: bytes, content_type: str) -> None: ...
     def get(self, bucket: str, path: str) -> bytes: ...
+    def delete(self, bucket: str, path: str) -> None: ...
 
 
 @dataclass
@@ -80,6 +92,9 @@ class SupabaseObjectStore:
     def get(self, bucket: str, path: str) -> bytes:
         data: bytes = self.target.client().from_(bucket).download(path)
         return data
+
+    def delete(self, bucket: str, path: str) -> None:
+        self.target.client().from_(bucket).remove([path])
 
 
 def object_store_of(app: Any) -> ObjectStore | None:
@@ -353,17 +368,30 @@ def _clean(v: str | None) -> str | None:
 
 
 def raster_to_webp(data: bytes) -> tuple[bytes, int, int]:
-    """Decode a PNG/JPEG/WebP/GIF (first frame), drop metadata, bound the size, encode WebP."""
+    """Decode a PNG/JPEG/WebP/GIF (first frame), drop metadata, bound the size, encode WebP.
+
+    The pixel count is checked from the header before anything is decoded (Pillow's own bomb check only raises
+    above twice its process-wide limit, which this code does not change), so a small file cannot expand into
+    hundreds of MB on the Space; Pillow's DecompressionBombWarning is an error here too."""
+    import warnings
+
     from PIL import Image, UnidentifiedImageError
 
-    Image.MAX_IMAGE_PIXELS = 64_000_000
     try:
-        with Image.open(io.BytesIO(data)) as im:
-            if im.format not in ("PNG", "JPEG", "WEBP", "GIF"):
-                raise ValueError("unsupported image format")
-            im.seek(0)
-            frame = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
-    except (UnidentifiedImageError, OSError, Image.DecompressionBombError) as exc:
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", Image.DecompressionBombWarning)
+            with Image.open(io.BytesIO(data)) as im:
+                if im.format not in ("PNG", "JPEG", "WEBP", "GIF"):
+                    raise ValueError("unsupported image format")
+                w, h = im.size
+                if w <= 0 or h <= 0 or w * h > MAX_RASTER_PIXELS:
+                    raise ValueError("image too large")
+                im.seek(0)
+                if max(w, h) > MAX_RASTER_SIDE:
+                    # Let the decoder downscale (JPEG draft mode) before converting.
+                    im.draft("RGB", (MAX_RASTER_SIDE, MAX_RASTER_SIDE))
+                frame = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
+    except (UnidentifiedImageError, OSError, Image.DecompressionBombError, Image.DecompressionBombWarning) as exc:
         raise ValueError("not a readable image") from exc
     frame.thumbnail((MAX_RASTER_SIDE, MAX_RASTER_SIDE))
     out = io.BytesIO()
@@ -509,9 +537,10 @@ async def upload_media(
     store = object_store(request)
     if store is None:
         raise HTTPException(503, "File storage is not configured on this server.")
-    public, private = _buckets(request)
+    _public, private = _buckets(request)
     mid = _new_id("pdf" if is_pdf else "fig")
-    bucket, folder = (private, PDF_FOLDER) if is_pdf else (public, FIGURE_FOLDER)
+    # Nothing is world-readable before an admin approves it: figures wait in the private bucket (review19 #7).
+    bucket, folder = (private, PDF_FOLDER) if is_pdf else (private, STAGING_FOLDER)
     path = f"{folder}/{mid}.{ext}"
     try:
         await asyncio.to_thread(store.put, bucket, path, data, store_type)
@@ -686,7 +715,11 @@ async def review_media(
             )
             if live:
                 raise GateRefused("media_in_use", live[0]["id"])
-        await conn.execute("update public.media_assets set review_status = %s where id = %s", (body.status, media_id))
+        new_url = await _move_for_review(request, before, body.status)
+        await conn.execute(
+            "update public.media_assets set review_status = %s, url = coalesce(%s, url) where id = %s",
+            (body.status, new_url, media_id),
+        )
         after = await load_media(conn, media_id)
         sections.extend(after["section_ids"])
         await audit(conn, admin, f"media.{body.status}", "media", media_id, before=before, after=after, note=body.note)
@@ -698,6 +731,35 @@ async def review_media(
 
         schedule_reindex(request.app, ("sections",), ref_ids=sections)  # captions are part of section chunks
     return media_out(row, await media_previews(request, [row]))
+
+
+async def _move_for_review(request: Request, row: Row, status: str) -> str | None:
+    """Approve: a staged figure is copied to the public bucket (and the private copy removed). Reject: a public
+    admin figure goes back to the private staging folder, so a rejected file is never world-readable. Returns the
+    new `url`, or None when nothing moves (PDFs and videos, seed figures, already in place)."""
+    sp = parse_storage_path(row["url"]) if row["url"] else None
+    if sp is None or row["kind"] not in ("svg", "image"):
+        return None
+    public, private = _buckets(request)
+    name = sp.path.rsplit("/", 1)[-1]
+    if status == "approved" and sp.bucket == private and sp.path.startswith(STAGING_FOLDER + "/"):
+        src, dest = (private, sp.path), (public, f"{FIGURE_FOLDER}/{name}")
+    elif status == "rejected" and sp.bucket == public and sp.path.startswith(FIGURE_FOLDER + "/"):
+        src, dest = (public, sp.path), (private, f"{STAGING_FOLDER}/{name}")
+    else:
+        return None
+    store = object_store(request)
+    if store is None:
+        raise HTTPException(503, "File storage is not configured on this server.")
+    ctype = CONTENT_TYPES.get(name.rsplit(".", 1)[-1].lower(), "application/octet-stream")
+    try:
+        data = await asyncio.to_thread(store.get, *src)
+        await asyncio.to_thread(store.put, dest[0], dest[1], data, ctype)
+        await asyncio.to_thread(store.delete, *src)
+    except Exception as exc:  # storage outage: the review is not recorded
+        log.warning("admin_media_move_failed", error=type(exc).__name__)
+        raise HTTPException(503, "File storage cannot be reached right now. Try again in a moment.") from exc
+    return f"{dest[0]}/{dest[1]}"
 
 
 @router.put(

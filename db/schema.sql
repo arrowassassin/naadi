@@ -1,6 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py, 0027, 0026, 0028_ingest_kb.py;
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py, 0027, 0026, 0028_ingest_kb.py, 0029 … 0034, 0036_admin_edit_marks.py;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -168,6 +168,8 @@ create table public.chapters (
   source_id text references public.sources(id) default 'naadi-original-v1',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
+  -- 0036: set by trigger naadi_mark_admin_edit on every non-seed write that changes content; the seed keeps the row
+  admin_edited_at timestamptz,
   -- private chapters (uploads, knowledge-base documents) always have an owner; shared ones never do
   check ((kind in ('user_upload','user_kb')) = (owner_user_id is not null))
 );
@@ -239,6 +241,8 @@ create table public.media_assets (
   content_sha256 text check (content_sha256 is null or content_sha256 ~ '^[0-9a-f]{64}$'),
   -- 0023: private media (pictures of an imported Anki deck); null = shared. RLS shows it to its owner only
   owner_user_id uuid references auth.users(id) on delete cascade,
+  -- 0036: set by trigger naadi_mark_admin_edit on every non-seed write that changes content; the seed keeps the row
+  admin_edited_at timestamptz,
   -- S15: owned media always points at a private source row (never publishable)
   constraint media_assets_owned_private_source check (owner_user_id is null or source_id in ('user-upload','user-provided'))
 );
@@ -250,7 +254,9 @@ create table public.section_media (
   sort smallint,
   start_s int check (start_s is null or start_s >= 0),
   end_s int check (end_s is null or start_s is null or end_s > start_s),
-  primary key (section_id, media_id)
+  primary key (section_id, media_id),
+  -- 0036: 'seed' rows belong to the seed importer; every other writer's rows are 'admin' and the seed never deletes them
+  origin text not null default 'admin' check (origin in ('seed','admin'))
 );
 create index section_media_media_idx on public.section_media (media_id);
 
@@ -276,7 +282,9 @@ create table public.questions (
   stats jsonb not null default '{}',
   created_at timestamptz not null default now(),
   -- 0028: the student's own MCQs (null = shared); visible to the owner only, answer columns hidden as for shared
-  owner_user_id uuid references auth.users(id) on delete cascade
+  owner_user_id uuid references auth.users(id) on delete cascade,
+  -- 0036: set by trigger naadi_mark_admin_edit on every non-seed write that changes content; the seed keeps the row
+  admin_edited_at timestamptz
 );
 create index questions_owner_idx on public.questions (owner_user_id) where owner_user_id is not null;
 create index questions_chapter_idx on public.questions (chapter_id);
@@ -1147,6 +1155,7 @@ revoke all on function public.naadi_secure_aegra_tables() from public, anon, aut
 revoke all on function public.naadi_revision_guard() from public, anon, authenticated;
 revoke all on function public.naadi_publish_section_revision() from public, anon, authenticated;
 revoke all on function public.naadi_question_revision_version() from public, anon, authenticated;
+revoke all on function public.naadi_mark_admin_edit() from public, anon, authenticated;
 
 -- ───────────── updated_at triggers ─────────────
 create trigger profiles_touch_updated_at before update on public.profiles for each row execute function public.naadi_touch_updated_at();

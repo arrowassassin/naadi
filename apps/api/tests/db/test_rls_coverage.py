@@ -129,6 +129,7 @@ def test_naadi_functions_pin_search_path_and_are_not_callable_by_clients(pg: psy
         "naadi_revision_guard",  # 0025: published section revisions are immutable
         "naadi_publish_section_revision",  # 0025: the live body is the latest published revision
         "naadi_question_revision_version",  # 0025: question_revisions.version numbered per question
+        "naadi_mark_admin_edit",  # 0036: non-seed content writes mark chapters, questions, media for the seed
     }
     for name, config, anon_exec, auth_exec in rows:
         assert config == ['search_path=""'], name

@@ -11,6 +11,7 @@ sources_policy:
   block_share_alike_in_proprietary: true
   block_non_ai_ingest_from_rag: true
   youtube_metadata_max_age_days: 30
+  owner_confirms_noncommercial: false   # NC sources stay link-only until counsel confirms non-commercial use
   original_source_id: naadi-original-v1
 
 # Feature flags. audience "admins" = only admins see it; everyone_outside_prod = also everyone when
@@ -2443,7 +2444,6 @@ ui_copy:
   admin.editor.publish_blocked_conflict: "Resolve the conflict before publishing."
   admin.editor.publish_body: "Students see this version as soon as it is published. Licence gates are checked first."
   admin.editor.publish_confirm: "Publish now"
-  admin.editor.publish_nothing: "No unpublished changes."
   admin.editor.publish_title: "Publish this section"
   admin.editor.publishing: "Publishing…"
   admin.editor.range: "{start} to {end}"
@@ -2525,6 +2525,9 @@ ui_copy:
   admin.field.source_choose: "Choose a source"
   admin.field.source_failed: "Sources could not be loaded."
   admin.field.source_hint: "Every asset needs a source with a licence."
+  admin.field.source_none_usable: "No source allows this use yet."
+  admin.field.source_not_usable_option: "{name} (not allowed here)"
+  admin.field.source_not_usable: "This source's licence does not allow this use. Choose another source."
   admin.field.source_required: "Choose a source."
   admin.field.status: "Status"
   admin.field.taxonomy: "Topics"
@@ -2566,6 +2569,12 @@ ui_copy:
   admin.gate.taxonomy_missing: "A chosen topic does not exist."
   admin.gate.title: "Publishing blocked"
   admin.gate.unknown: "A publishing rule refused this ({reason})."
+  admin.gate.modify_not_allowed: "The source's licence does not allow changes, so it cannot be edited or re-encoded here."
+  admin.gate.private_source: "This source is private material and cannot be published."
+  admin.gate.embed_only: "This source may only be embedded with its own player, never stored here."
+  admin.gate.noncommercial: "The source is non-commercial and cannot be stored or published here."
+  admin.gate.no_derivatives: "The source's licence allows no derivatives, so it cannot be edited or published here."
+  admin.gate.link_only: "This source may only be linked to, never stored or copied here."
   admin.label: "Admin"
   admin.lint.clean: "No findings."
   admin.lint.error: "Error"
