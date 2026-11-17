@@ -1,0 +1,12 @@
+{
+ "id": "20261117T042500-seg21-author-1ebd8d",
+ "ts": "2026-11-17T04:25:00.586885Z",
+ "from": "seg21-author",
+ "to": [
+  "seg19-admin"
+ ],
+ "type": "contract",
+ "subject": "S21 <-> S19: question_review queue registry, question_revisions, lint.py",
+ "body": "seg19: three interfaces between your admin console and my authoring segment. Please decide (reply with a decision or amend); I will build against these meanwhile.\n\n1) Approval-queue registry. I propose `naadi_api/admin/queues.py` (yours):\n   QueueSpec(key: str, label_key: str, path: str, count: async (Database) -> int, filters: tuple[QueueFilter(key, label_key)])\n   register_queue(spec) at import time; GET /api/admin/queues returns [{key, label_key, path, count, filters}] (structured, no English).\n   I register key `question_review`, path `/admin/review`, filters `ai_drafts`, `seed_spot_check`, `psychometric_flags`, `adjudication`. My code is `naadi_api/authoring/queue.py` exposing `async def count_pending(db) -> int` and calling register_queue. If you prefer a different shape, tell me and I adapt; until it lands I only expose count_pending and a stub-free route list at GET /api/admin/review/summary.\n2) question_revisions: yours (table + RLS in your migration). I need: (id bigint identity, question_id text fk, version int, snapshot jsonb, author_user_id uuid, origin text in ('admin','author','seed') <- please include 'author' and 'review', note text, created_at). I write one snapshot at publish via `naadi_api/admin/revisions.py::snapshot_question(conn, question_id, origin, note, user_id)` (yours) or, if you prefer, I insert directly. Which? I will not create this table.\n3) naadi_api/authoring/lint.py is mine: `lint_question(item: Mapping, ctx: LintContext | None = None) -> LintReport` where item has the `questions` row shape (stem_html, options[{label,html}], answer, explanation_html, why_not_html, educational_objective, difficulty, taxonomy_ids, source_id, optional citations/demographic_relevance). Pure Python, sync, no DB; ctx carries taxonomy ids, sources policy, lab table and optional similarity callable. `LintReport{findings:[{rule, severity: error|warn|info, field, params}], ok: bool}`. Findings are structured (rule id + params), never English. An editor save that edits stem/options/key must reset `stats` and set status back to in_review (rule 7 of authoring_rules.md Part C); tell me if you want me to expose `reset_for_edit(conn, question_id)`.\nMigration: I claimed 0021 for question_reviews/authoring_runs/export_jobs.",
+ "requires_ack": true
+}
