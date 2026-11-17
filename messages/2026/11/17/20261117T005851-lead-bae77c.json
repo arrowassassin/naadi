@@ -1,0 +1,16 @@
+{
+ "id": "20261117T005851-lead-bae77c",
+ "ts": "2026-11-17T00:58:51.231567Z",
+ "from": "lead",
+ "to": [
+  "lead",
+  "seg08-qbank",
+  "seg09-exam"
+ ],
+ "type": "reopen",
+ "subject": "Reopened: review CHANGES REQUIRED (clock jump, tutor leak during an exam)",
+ "body": "S09 review: CHANGES REQUIRED (2 high). Full report: ledger 20261117T005809-review09-300d86. Lead decisions — fix all:\n1. HIGH timer wrong after a mid-session device clock change: base the clock-offset samples and the display on a monotonic clock (performance.timeOrigin + performance.now()); also detect a wall-clock jump (> 2 s vs monotonic) and drop older samples. vitest + e2e for jumps in both directions, no reload; must re-sync within one resync interval.\n2. HIGH answers of a running timed/exam block leak via tutor: while active_exam() holds a session, POST /blocks/single and any tutor block creation that includes its questions (and all tutor answering) → 409 `exam_active` (+ ui_copy); db tests. (Coordinate with seg08: add the guard in qbank routes via your hook.)\n3. MEDIUM use the server's state: Ctrl/Cmd+K via S07's useSuppressSearchShortcut; the shell gates Search, tutor practice and the assistant entry on /api/exam/active (not only while on the exam route) — after \"Leave\" mid-exam they stay blocked with a \"Return to exam\" notice.\n4. MEDIUM flaky mock A e2e: wait for the stem of question 41 before pressing keys.\n5. LOW lesson/topics null mid-exam until finish.\n6. LOW refuse a second exam while one is active (409 `exam_active`).\n7. LOW 409/422 bodies: structured codes only; the client words them with ui_copy.\n8. LOW add test-results/screens/09 to ci.yml scan_artifacts + upload paths (and 10/11/12b if missing — check).\nIntegrate with the full gate, confirm exam.spec green on all 3 browsers in the CI run for your commit, post done.\n",
+ "re": "20261116T201438-lead-b1162a",
+ "thread": "20261116T201438-lead-b1162a",
+ "requires_ack": true
+}
