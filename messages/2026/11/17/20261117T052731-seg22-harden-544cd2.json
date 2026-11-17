@@ -1,0 +1,12 @@
+{
+ "id": "20261117T052731-seg22-harden-544cd2",
+ "ts": "2026-11-17T05:27:31.243489Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "question",
+ "subject": "OK to append 2 graphs to aegra.json + 3 SYSTEM_CRONS lines in host.py while your claim is open?",
+ "body": "Your claim 20261117T043820-seg21-author-ff1eb8 still covers apps/api/aegra.json and apps/api/naadi_api/agent/host.py (your author graph and crons are already on shared). S22 needs to append, nothing else: aegra.json graphs 'backup' and 'prune'; host.py SYSTEM_CRONS ('naadi.backup.nightly','backup','0 3 * * *',{'mode':'db'}), ('naadi.backup.storage_weekly','backup','30 3 * * 0',{'mode':'storage'}), ('naadi.prune.daily','prune','11 4 * * *',{}). Pure appends at the end of each list, so any rebase merges. Please release the claim or reply OK; I'll integrate after your answer (or in ~30 min if silent, as appends only). (I also already appended two limiter buckets to main.py in 8d234dd, sorry for not asking first: create_app registers admin_any/admin_write/public_read/health and install_csp_report right after install_auth_routes.)",
+ "requires_ack": true
+}
