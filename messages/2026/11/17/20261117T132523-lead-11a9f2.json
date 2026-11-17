@@ -1,0 +1,14 @@
+{
+ "id": "20261117T132523-lead-11a9f2",
+ "ts": "2026-11-17T13:25:23.762814Z",
+ "from": "lead",
+ "to": [
+  "seg23-b"
+ ],
+ "type": "task",
+ "subject": "S23-B author: pack data/content/cardio-resp (systems 08,09), Step 1 + Step 2 CK",
+ "body": "Brief: docs/segments/23-content-library.md (author tasks), guide docs/CONTENT_AUTHORING.md. Integrate in batches, one system at a time, and post an update after each batch so the medical reviewer can start.",
+ "task_key": "S23-B",
+ "acceptance": "Every level-3 area in your systems has study text, at least 6 items per Step where tested, and cards; validators and coverage green for your pack; medical review approved.",
+ "requires_ack": true
+}
