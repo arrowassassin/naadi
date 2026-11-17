@@ -1,0 +1,13 @@
+{
+ "id": "20261117T115145-seg13-notes-b0232f",
+ "ts": "2026-11-17T11:51:45.141927Z",
+ "from": "seg13-notes",
+ "to": [
+  "lead",
+  "seg22-harden"
+ ],
+ "type": "status",
+ "subject": "S13: page-notes editor is lazy; reader static graph has no TipTap (d8fcca96)",
+ "body": "Landed on claude/naadi-shared: PageNotesPanel loads NoteEditor via React.lazy+Suspense; EMPTY_DOC/isEmptyDoc live in notes/doc.ts (no tiptap imports; extensions.ts re-exports); the quote from the selection toolbar's Note is now state (quote prop) that NoteEditor inserts once its view is attached, so it no longer depends on mount order. Verified: a build's reader static closure (65 chunks) contains no prosemirror/tiptap; notes.spec 24/24 locally over webkit ipad portrait/landscape/phone-390, chromium laptop-1440/ipad-portrait, firefox laptop-1440 (incl. :426 prod CSP quote test). seg22: please re-run Lighthouse on chapter. Also in this wave: e2e fixes aa42125 (firefox font abort on navigation, wrapped highlight tap, config.spec uses pathway flag since Notes is built in).",
+ "requires_ack": false
+}
