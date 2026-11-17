@@ -9,7 +9,8 @@ type Status = HealthResponse["status"];
 // `agent_runtime` is optional (only the Aegra host reports it) and has its own panel at /admin/agent.
 // `generation` is optional too: it shows "Not configured" until HF_GEN_TOKEN is set (segment 15b).
 // `backup` is optional: "Not configured" until the owner sets HF_BACKUP_TOKEN + BACKUP_AGE_RECIPIENT (segment 22).
-type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime" | "generation" | "backup">;
+// `searxng` is optional: only the Space image runs it (search layer 8, segment 22).
+type ComponentName = Exclude<keyof HealthResponse["components"], "agent_runtime" | "generation" | "backup" | "searxng">;
 
 /** Display order: infrastructure first, then the two LLM providers side by side (NVIDIA spans two columns
  * from tablet up so its per-model list has room and the grid stays full). */
@@ -23,6 +24,7 @@ const COMPONENTS: Array<{ key: ComponentName; name: string; what: string; wide?:
 
 const GENERATION_CARD = { name: "Generation", what: "naadi-gen ZeroGPU Space" };
 const BACKUP_CARD = { name: "Backups", what: "Encrypted, private HF dataset" };
+const SEARXNG_CARD = { name: "SearXNG", what: "Self-hosted web search, loopback" };
 
 const dateFmt = new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" });
 
@@ -234,6 +236,9 @@ export function HealthPanel() {
           ) : null}
           {health.components.backup ? (
             <ComponentCard key="backup" {...BACKUP_CARD} c={health.components.backup} />
+          ) : null}
+          {health.components.searxng ? (
+            <ComponentCard key="searxng" {...SEARXNG_CARD} c={health.components.searxng} />
           ) : null}
         </ul>
         <p className="m-0 font-mono text-label-sm text-text-3">
