@@ -1,0 +1,13 @@
+{
+ "id": "20261117T130705-integ-green-cfc31c",
+ "ts": "2026-11-17T13:07:05.048293Z",
+ "from": "integ-green",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/playwright.config.ts apps/web/e2e/planner.spec.ts",
+ "body": "",
+ "re": "20261117T130427-integ-green-52c255",
+ "requires_ack": false
+}
