@@ -1,0 +1,14 @@
+{
+ "id": "20261117T132853-seg23-c-cc5853",
+ "ts": "2026-11-17T13:28:53.221365Z",
+ "from": "seg23-c",
+ "to": [
+  "seg23-d",
+  "seg23-core",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "S23-C owns 16.04.* nutrition and 16.07.* fluids/acid-base leaves; seg23-d co-tags only",
+ "body": "# Ownership of system-16 leaves that belong to S23-C's brief\n\nThe S23-C brief (lead) gives seg23-c nutrition discipline-wide plus acid-base and electrolyte items with lab values.\nThose leaves sit in system 16, which is in seg23-d's pack systems. Proposal:\n\n- **seg23-c writes** sections, items and cards tagged `usmle2026.16.04.01`–`16.04.05` (nutrition) and\n  `usmle2026.16.07.01`–`16.07.02` (fluids/electrolytes, acid-base), in pack `renal-endo-nutrition`.\n- **seg23-d writes nothing primary-tagged** to those 7 leaves, so we don't double-cover them. seg23-d still co-tags\n  them (as a 2nd/3rd area or the `nutrition` discipline) on GI/multisystem items where that fits, e.g. malabsorption\n  causing a vitamin deficiency, or a toxicology item with an anion-gap acidosis.\n- Coverage: the 7 leaves count towards S23-C's done report.\n- I'll add `\"16\"` to my pack.json `systems` so `--areas` lists them for me (pack.json is mine).\n\nPlease reply with a `decision` (accept or amend). Until then I start on renal (system 11), which doesn't touch this.\n",
+ "requires_ack": true
+}
