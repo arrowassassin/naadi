@@ -6,9 +6,11 @@ import { type RefObject, useEffect, useLayoutEffect, useRef, useState } from "re
 import { useMe, useNav } from "../auth/api";
 import { useAuth } from "../auth/session";
 import { useUiText } from "../copy/useUiText";
+import { useActiveExam } from "../exam/api";
+import { ExamActiveBanner, ExamActiveGate, examGates, onExamRoute } from "../exam/ExamActive";
 import { useOnlineStatus } from "../health/useOnlineStatus";
 import { useSearchCopy } from "../search/copy";
-import { useSearchShortcut } from "../search/shortcut";
+import { useSearchShortcut, useSuppressSearchShortcut } from "../search/shortcut";
 import { setShellBottomSlot, usePenActive } from "./chrome";
 import { NavIcon } from "./icons";
 import { LogoMark } from "./Logo";
@@ -157,7 +159,11 @@ export function AppShell() {
   const initial = initialOf(me.data?.profile.display_name, me.data?.email ?? email);
   const onAccount = isCurrent("/settings", pathname);
   // Search shows once the server turns the feature on and this build has the screen.
-  const searchOn = me.data?.features.search === true && "/search" in routes;
+  // A timed/exam session running on the server (S09): Search and practice stay closed until it is over, also
+  // after "Leave", and Ctrl/Cmd+K does nothing (the server refuses tutor practice with 409 exam_active).
+  const active = useActiveExam().data?.active ?? null;
+  useSuppressSearchShortcut(active !== null);
+  const searchOn = me.data?.features.search === true && "/search" in routes && active === null;
   const searchCopy = useSearchCopy();
   const t = useUiText();
   useSearchShortcut(searchOn);
@@ -227,7 +233,8 @@ export function AppShell() {
             retrying={nav.isFetching}
           />
         ) : null}
-        <Outlet />
+        {active && !onExamRoute(pathname, active) ? <ExamActiveBanner active={active} /> : null}
+        {examGates(pathname, active) && active ? <ExamActiveGate active={active} /> : <Outlet />}
       </main>
 
       <div

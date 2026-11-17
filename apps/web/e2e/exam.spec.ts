@@ -291,6 +291,9 @@ test.describe("mock exam A", () => {
       await settle(page);
       await expect(page.getByText(isPhone(page) ? "1 / 40" : "Block 2 of 2 · Question 1 of 40")).toBeVisible();
       await expectTimerAccurate(page, blockId);
+      // question 41's stem and options are on screen (the key map binds to the loaded question)
+      await expect(page.locator(".exam-reading").first()).toBeVisible();
+      await expect(page.getByRole("group", { name: "Answer options" }).getByRole("button")).toHaveCount(5);
       await page.keyboard.press("c");
       await expect(page.getByRole("button", { name: /^C, your answer/ })).toHaveAttribute("aria-pressed", "true");
 
@@ -445,6 +448,53 @@ test.describe("timed block", () => {
   });
 });
 
+test.describe("an exam in progress", () => {
+  test("closes Search and practice everywhere, also after leaving the exam screen", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.setTimeout(120_000);
+    const student = await freshStudent(browser, baseURL as string, info);
+    try {
+      const { page } = await student.open("/learn");
+      const { errors, guard } = watchConsole(page);
+      const blockId = await startMock(page);
+      expect((await api(page, "POST", `/api/blocks/${blockId}/sections/1/start`)).status).toBe(200);
+      const qid = (await api<{ question: { id: string } }>(page, "GET", `/api/blocks/${blockId}/questions/1`)).json
+        .question.id;
+      const single = await api<{ error: { code: string } }>(page, "POST", "/api/blocks/single", { question_id: qid });
+      expect(single.status).toBe(409);
+      expect(single.json.error.code).toBe("exam_active");
+
+      await page.reload();
+      await settle(page);
+      await expect(page.getByText("An exam is running. The timer keeps going while you are away.")).toBeVisible();
+      await page.keyboard.press("ControlOrMeta+k");
+      await page.waitForTimeout(400);
+      expect(new URL(page.url()).pathname).toBe("/learn");
+      await expect(page.getByRole("link", { name: "Search" })).toHaveCount(0);
+      await snap(page, info, guard, "exam-active-banner");
+
+      for (const path of ["/search", "/practice"]) {
+        await page.goto(path);
+        await settle(page);
+        await expect(page.getByRole("heading", { level: 1, name: "Finish your exam first." })).toBeVisible();
+      }
+      expect(await limeCount(page)).toBe(1);
+      await expectNoAxeViolations(page);
+      await expectNoHorizontalOverflow(page);
+      await snap(page, info, guard, "exam-active-gate");
+      await page.getByRole("main").getByRole("link", { name: "Return to exam" }).first().click();
+      await page.waitForURL(new RegExp(`/practice/blocks/${blockId}/\\d+$`));
+      await settle(page);
+      await expect(page.getByRole("timer")).toBeVisible();
+      expect(errors.filter((e) => !/409/.test(e))).toEqual([]);
+    } finally {
+      await student.done();
+    }
+  });
+});
+
 test.describe("timer integrity", () => {
   test("stays within 1 s of the server after a reload and a 30 s background", async ({ browser, baseURL }, info) => {
     test.setTimeout(150_000);
@@ -482,6 +532,37 @@ test.describe("timer integrity", () => {
       }
       await page.waitForTimeout(1_000);
       await expectTimerAccurate(page, blockId);
+      expect(errors).toEqual([]);
+    } finally {
+      await student.done();
+    }
+  });
+
+  test("follows the server when the device clock is changed mid-session, both ways, without a reload", async ({
+    browser,
+    baseURL,
+  }, info) => {
+    test.setTimeout(120_000);
+    const student = await freshStudent(browser, baseURL as string, info);
+    try {
+      const { page } = await student.open();
+      const blockId = await startMock(page);
+      expect((await api(page, "POST", `/api/blocks/${blockId}/sections/1/start`)).status).toBe(200);
+      const { page: p } = await student.open("/practice");
+      await p.waitForLoadState("networkidle");
+      await p.clock.install({ time: Date.now() });
+      await p.clock.resume();
+      const { errors } = watchConsole(p);
+      await p.goto(`/practice/blocks/${blockId}/1`);
+      await settle(p);
+      await expectTimerAccurate(p, blockId);
+      for (const jump of [3 * 60_000, -10 * 60_000]) {
+        await p.clock.setSystemTime(Date.now() + jump);
+        // well within one re-sync interval (the jump check runs every second)
+        await p.waitForTimeout(2_500);
+        const d = await drift(p, blockId);
+        expect(Math.abs(d), `drift after a ${jump / 60_000} min jump: ${d.toFixed(3)} s`).toBeLessThanOrEqual(1);
+      }
       expect(errors).toEqual([]);
     } finally {
       await student.done();

@@ -1,18 +1,39 @@
 import {
+  type ActiveExamOut,
   type BlockClock,
   type BlockDetail,
   changeBlockSection,
   createMockBlock,
   finishBlock,
+  getActiveExam,
   getBlockClock,
 } from "@naadi/shared";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { authed } from "../auth/api";
 import { blockKey, blocksKey, questionKey, useUserId } from "../practice/api";
-import { addSample, bestOffset, type ClockSample } from "./clock";
+import { addSample, bestOffset, type ClockSample, monoNow, wallJumped, wallSkew } from "./clock";
 
 export type SectionAction = "start" | "pause" | "resume" | "end";
+
+export const activeExamKey = (userId: string | null) => ["exam-active", userId] as const;
+
+/**
+ * The caller's timed/exam session that is running, paused or on a break (GET /api/exam/active, the server's
+ * `active_exam()`): the shell gates Search and tutor practice on it, also after "Leave" mid-exam, and the
+ * assistant (S14) stays silent while an exam-mode session is active. Polled every 30 s and on focus.
+ */
+export function useActiveExam() {
+  const userId = useUserId();
+  return useQuery({
+    queryKey: activeExamKey(userId),
+    enabled: userId !== null,
+    staleTime: 10_000,
+    refetchInterval: 30_000,
+    refetchOnWindowFocus: true,
+    queryFn: ({ signal }) => authed<ActiveExamOut>((headers) => getActiveExam({ signal, headers })),
+  });
+}
 
 /** The last offset estimate per user, so an offline reload still shows the server's deadline correctly. */
 const OFFSET_KEY = (userId: string) => `naadi.exam.offset.v1:${userId}`;
@@ -40,7 +61,7 @@ function writeCachedOffset(userId: string | null, offset: number): void {
 export interface ServerClock {
   /** The latest clock the server sent (from the clock endpoint or any block response). */
   clock: BlockClock | null;
-  /** serverTime ≈ Date.now() + offsetMs (0 until the first sample, or the cached offset when offline). */
+  /** serverTime ≈ monoNow() + offsetMs (0 until the first sample, or the cached offset when offline). */
   offsetMs: number;
   /** true when the last re-sync failed (the display keeps running from the last clock and offset). */
   stale: boolean;
@@ -51,6 +72,7 @@ export interface ServerClock {
 }
 
 const RESYNC_MS = 60_000;
+const JUMP_CHECK_MS = 1_000;
 
 /**
  * The server's clock for one block. The offset comes from the best-RTT sample of `GET /clock`, re-measured on
@@ -67,10 +89,10 @@ export function useServerClock(blockId: string, initial: BlockClock | null | und
   const resync = useCallback(async (): Promise<BlockClock | null> => {
     if (inFlight.current) return inFlight.current;
     const run = (async () => {
-      const sentAt = Date.now();
+      const sentAt = monoNow();
       try {
         const c = await authed<BlockClock>((headers) => getBlockClock({ headers, path: { block_id: blockId } }));
-        const receivedAt = Date.now();
+        const receivedAt = monoNow();
         samples.current = addSample(samples.current, { sentAt, receivedAt, serverNow: c.server_now });
         const best = bestOffset(samples.current, receivedAt);
         if (best) {
@@ -102,12 +124,24 @@ export function useServerClock(blockId: string, initial: BlockClock | null | und
       if (document.visibilityState === "visible") void resync();
     };
     const id = window.setInterval(again, RESYNC_MS);
+    // The device clock was set (or jumped) mid-session: samples are monotonic, but drop them anyway and measure
+    // again at once, so a changed wall clock can never leave a stale estimate behind.
+    let skew = wallSkew();
+    const watch = window.setInterval(() => {
+      const next = wallSkew();
+      if (wallJumped(skew, next)) {
+        samples.current = [];
+        void resync();
+      }
+      skew = next;
+    }, JUMP_CHECK_MS);
     document.addEventListener("visibilitychange", again);
     window.addEventListener("pageshow", again);
     window.addEventListener("focus", again);
     window.addEventListener("online", again);
     return () => {
       window.clearInterval(id);
+      window.clearInterval(watch);
       document.removeEventListener("visibilitychange", again);
       window.removeEventListener("pageshow", again);
       window.removeEventListener("focus", again);
@@ -129,6 +163,7 @@ export function useSectionAction(blockId: string) {
       qc.setQueryData(blockKey(userId, blockId), block);
       void qc.invalidateQueries({ queryKey: ["qbank-question", userId, blockId] });
       void qc.invalidateQueries({ queryKey: blocksKey(userId) });
+      void qc.invalidateQueries({ queryKey: activeExamKey(userId) });
     },
   });
 }
@@ -145,6 +180,7 @@ export function useFinishBlock(blockId: string) {
       void qc.invalidateQueries({ queryKey: blocksKey(userId) });
       void qc.invalidateQueries({ queryKey: ["exam-results", userId, blockId] });
       void qc.invalidateQueries({ queryKey: ["qbank-pool", userId] });
+      void qc.invalidateQueries({ queryKey: activeExamKey(userId) });
     },
   });
 }

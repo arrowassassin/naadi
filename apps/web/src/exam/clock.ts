@@ -1,11 +1,30 @@
 /**
  * The exam timer's arithmetic. The server owns time: every timed/exam response carries `server_now` and a
- * `deadline_at`. The client keeps only an estimate of the offset between its own clock and the server's and
- * shows `deadline_at − (Date.now() + offset)`, recomputed on every tick, so the display is right after a
- * reload, a backgrounded tab or a wrong device clock. It never counts down on its own.
+ * `deadline_at`. The client keeps only an estimate of the offset between a MONOTONIC client clock and the
+ * server's and shows `deadline_at − (monoNow() + offset)`, recomputed on every tick, so the display is right
+ * after a reload, a backgrounded tab, a wrong device clock, and a device clock changed mid-session (the wall
+ * clock can jump; `performance.now()` cannot). It never counts down on its own.
  */
 
-/** One round trip to the clock endpoint, in client milliseconds (Date.now()) and the server's ISO time. */
+/**
+ * A monotonic client clock in epoch-like milliseconds: the page's time origin plus `performance.now()`. Unlike
+ * `Date.now()` it never jumps when the device clock is set, so an offset measured against it stays valid.
+ */
+export function monoNow(): number {
+  return performance.timeOrigin + performance.now();
+}
+
+/** How far the wall clock (Date.now) currently is from the monotonic one. A change means the device clock jumped. */
+export function wallSkew(): number {
+  return Date.now() - monoNow();
+}
+
+/** A jump of the device clock between two skew readings, beyond scheduling noise (2 s, lead decision). */
+export function wallJumped(previousSkew: number, currentSkew: number, thresholdMs = 2000): boolean {
+  return Math.abs(currentSkew - previousSkew) > thresholdMs;
+}
+
+/** One round trip to the clock endpoint, in monotonic client milliseconds (monoNow()) and the server's ISO time. */
 export interface ClockSample {
   sentAt: number;
   receivedAt: number;
@@ -13,7 +32,7 @@ export interface ClockSample {
 }
 
 export interface OffsetEstimate {
-  /** serverTime ≈ Date.now() + offsetMs */
+  /** serverTime ≈ monoNow() + offsetMs */
   offsetMs: number;
   /** The round trip of the sample the estimate comes from (its uncertainty is ±rtt/2). */
   rttMs: number;

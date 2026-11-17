@@ -32,7 +32,7 @@ import { LabValuesSheet } from "../practice/LabValuesSheet";
 import { enqueueAttempt, flushQueue, queuedFor } from "../practice/outbox";
 import { type SectionAction, type ServerClock, useFinishBlock, useSectionAction, useServerClock } from "./api";
 import { Calculator } from "./Calculator";
-import { crossedThreshold, formatRemaining, remainingMs, spokenParts } from "./clock";
+import { crossedThreshold, formatRemaining, monoNow, remainingMs, spokenParts } from "./clock";
 import "./exam.css";
 import { paint, type Span, selectionSpan, toggleSpan } from "./highlight";
 import { markFinished, readMarks, sweep, writeMarks } from "./local";
@@ -49,9 +49,9 @@ const FRAME = "fixed inset-0 z-30 overflow-y-auto overscroll-contain bg-ground t
 
 /** Re-render on a steady tick (the display is recomputed from the deadline each time, never decremented). */
 function useNow(ms = 100): number {
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState(() => monoNow());
   useEffect(() => {
-    const id = window.setInterval(() => setNow(Date.now()), ms);
+    const id = window.setInterval(() => setNow(monoNow()), ms);
     return () => window.clearInterval(id);
   }, [ms]);
   return now;
@@ -468,7 +468,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
   const action = useSectionAction(blockId);
   const finish = useFinishBlock(blockId);
   const stemRef = useRef<HTMLDivElement>(null);
-  const shownAt = useRef(Date.now());
+  const shownAt = useRef(monoNow());
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   const firstN = layout.first_index + 1;
@@ -509,7 +509,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
   }, [view, userId, blockId]);
 
   useEffect(() => {
-    shownAt.current = Date.now();
+    shownAt.current = monoNow();
     headingRef.current?.focus({ preventScroll: true });
     if (n < lastN) prefetch(blockId, n + 1);
   }, [blockId, n, lastN, prefetch]);
@@ -570,7 +570,7 @@ function Running({ t, blockId, n, block, clock, layout, server, offsetMs, now }:
       const body: AttemptIn = {
         question_id: view.question.id,
         chosen: label,
-        seconds: (view.attempt?.seconds ?? 0) + Math.max(0, Math.round((Date.now() - shownAt.current) / 1000)),
+        seconds: (view.attempt?.seconds ?? 0) + Math.max(0, Math.round((monoNow() - shownAt.current) / 1000)),
         flagged: view.flagged,
       };
       try {

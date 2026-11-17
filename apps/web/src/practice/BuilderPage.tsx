@@ -295,8 +295,12 @@ function MockExamsGroup(props: {
 }
 
 /** A refusal the student can act on, in ui_copy words when its code has some. */
+const TIMED_CODES = new Set(["exam_active", "timed_unavailable", "sections_out_of_range", "tutor_single_section"]);
+
 function errorText(t: ReturnType<typeof useCopy>, err: Error): string {
   if (err instanceof ApiError && err.code === "mock_not_found") return t("practice.mock_not_found");
+  // S09 codes (the server sends no sentence for these): worded here with ui_copy.
+  if (err instanceof ApiError && err.code && TIMED_CODES.has(err.code)) return t(`practice.error.${err.code}`);
   return err.message;
 }
 

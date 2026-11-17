@@ -6,9 +6,12 @@ import {
   bestOffset,
   crossedThreshold,
   formatRemaining,
+  monoNow,
   remainingMs,
   sampleOffset,
   spokenParts,
+  wallJumped,
+  wallSkew,
 } from "./clock";
 import { breakLeft, sectionLeft } from "./ExamPage";
 import { normalize, offsetOf, rangesFor, selectionSpan, toggleSpan } from "./highlight";
@@ -201,5 +204,37 @@ describe("navigator tiles", () => {
     expect(tileOf(q, 3)).toEqual({ status: "current", flagged: true });
     expect(tileOf(q, 1)).toEqual({ status: "unanswered", flagged: true });
     expect(tileOf(q, 1, true)).toEqual({ status: "answered", flagged: true });
+  });
+});
+
+describe("device clock jumps (S09 review 1)", () => {
+  it("detects a jump of the wall clock against the monotonic one, in both directions", () => {
+    expect(wallJumped(1_000, 1_400)).toBe(false); // scheduling noise
+    expect(wallJumped(1_000, 181_000)).toBe(true); // set 3 minutes forward
+    expect(wallJumped(1_000, -599_000)).toBe(true); // set 10 minutes back
+  });
+
+  it("keeps the display on the monotonic clock when Date.now() jumps", () => {
+    const realNow = Date.now;
+    try {
+      const deadline = monoNow() + 600_000;
+      // an offset measured before the jump, against the monotonic clock
+      const offset = 0;
+      const before = remainingMs(new Date(deadline).toISOString(), offset, monoNow());
+      for (const jump of [180_000, -600_000]) {
+        Date.now = () => realNow() + jump;
+        const after = remainingMs(new Date(deadline).toISOString(), offset, monoNow());
+        expect(Math.abs(after - before)).toBeLessThan(1_000);
+        expect(Math.abs(wallSkew() - jump)).toBeLessThan(1_000);
+      }
+    } finally {
+      Date.now = realNow;
+    }
+  });
+
+  it("measures offsets on the monotonic clock", () => {
+    const t = Math.floor(monoNow());
+    const e = sampleOffset({ sentAt: t, receivedAt: t + 100, serverNow: new Date(t + 5_050).toISOString() });
+    expect(e).toEqual({ offsetMs: 5_000, rttMs: 100 });
   });
 });
