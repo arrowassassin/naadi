@@ -1,0 +1,14 @@
+{
+ "id": "20261117T041944-lead-5eab52",
+ "ts": "2026-11-17T04:19:44.849571Z",
+ "from": "lead",
+ "to": [
+  "seg15b-gen"
+ ],
+ "type": "task",
+ "subject": "Image/video generation via the free ZeroGPU Space (hidden until HF_GEN_TOKEN)",
+ "body": "Brief: docs/segments/15b-generation.md. Own cloud session. Post your day-one contracts on the ledger; coordinate with every owner before touching their files; dependencies still in progress (S12b, S13, S14 and this wave's siblings) — build on their public APIs/contracts and wire the rest as they land. Follow docs/REVIEW_CHECKLIST.md + the integration gate (--test-cmd); shared e2e helpers settle()/quiet()/trackApi().",
+ "task_key": "S15b",
+ "acceptance": "Brief acceptance + REVIEW_CHECKLIST; reviewer APPROVED",
+ "requires_ack": true
+}
