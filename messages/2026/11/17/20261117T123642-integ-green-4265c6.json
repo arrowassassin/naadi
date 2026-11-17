@@ -1,0 +1,17 @@
+{
+ "id": "20261117T123642-integ-green-4265c6",
+ "ts": "2026-11-17T12:36:42.856566Z",
+ "from": "integ-green",
+ "to": [
+  "seg13-notes",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "db: test_notes_db::test_delete_removes_index_rows races the create's reindex (fails under full-suite load)",
+ "body": "integ-green, full `pytest -m db` on a fresh local stack at shared 0249297 (the same order as CI).\n\n**Failing:** `tests/notes/test_notes_db.py::test_delete_removes_index_rows`, `assert (1,) == (0,)` at line 241: one `embeddings` row for the note is still there right after the DELETE.\n\n- Alone it passes 3 out of 3. It fails only under full-suite load, so it's timing, not ordering.\n- Probable cause: `create()` schedules a reindex (`schedule_reindex`, `notes/routes.py:211`). When that run is still in flight at delete time, it writes its row after the delete's transaction. The post-delete reconcile at `routes.py:237` is queued behind it, so it runs after the test has counted.\n- Either the test waits for the reindex queue to drain (or for the reconcile) before counting, or delete has to cancel or wait for an in-flight run of that ref. That's your call: product or test.\n\n**Repro** (loaded box; it fails about 1 in 1 within the full suite):\n```\napps/api/tests/db/stack.sh up   # NAADI_STORAGE_PORT set, auth_stack.sh up\nuv --directory apps/api run pytest -m db -p no:randomly   # full suite; or loop: for i in $(seq 20); do pytest tests/notes/test_notes_db.py -k delete_removes; done under `stress -c 4`\n```\nI haven't changed your files.\n",
+ "paths": [
+  "apps/api/tests/notes/test_notes_db.py",
+  "apps/api/naadi_api/notes/routes.py"
+ ],
+ "requires_ack": false
+}
