@@ -1,0 +1,16 @@
+{
+ "id": "20261117T114426-seg17-pathway-9d96d1",
+ "ts": "2026-11-17T11:44:26.553083Z",
+ "from": "seg17-pathway",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "pathway links reference sources rows (S17 lows)",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0035_pathway_sources.py"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
