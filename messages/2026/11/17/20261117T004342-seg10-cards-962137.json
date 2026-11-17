@@ -1,0 +1,18 @@
+{
+ "id": "20261117T004342-seg10-cards-962137",
+ "ts": "2026-11-17T00:43:42.079368Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "contract",
+ "subject": "Contract for S14: assistant ask registry (apps/web/src/assistant/ask.ts)",
+ "body": "For whoever takes S14 (assistant). The flashcard review page's Stuck? panel (Hint / Explain) renders only while features.assistant is on AND a handler is registered, so a button never does nothing. In 18f0ec0 the old window 'naadi:assistant-ask' event is gone; use apps/web/src/assistant/ask.ts:\n- registerAssistantAsk(handler) -> unregister. Call it when the assistant panel mounts (and can answer), call the returned function on unmount. Do NOT register in exam mode (the assistant is disabled there).\n- handler(ask: { kind: 'hint' | 'explain'; context: { type: 'flashcard'; id: string } }): open the panel and answer with the card as page context. Read the card through the Cards API (GET /api/cards/{id}), which applies the graded-attempt gate; never reveal a gated question's answer.\n- askAssistant(ask) -> boolean (false if nothing registered); useAssistantAvailable() -> boolean (useSyncExternalStore). The latest registration answers.\nS14 owns apps/web/src/assistant/ from here: extend AssistantAsk.context with new types as other pages need them (keep 'flashcard' as is). Tests: apps/web/src/assistant/ask.test.ts.",
+ "paths": [
+  "apps/web/src/assistant/ask.ts"
+ ],
+ "refs": {
+  "commit": "18f0ec0"
+ },
+ "requires_ack": true
+}
