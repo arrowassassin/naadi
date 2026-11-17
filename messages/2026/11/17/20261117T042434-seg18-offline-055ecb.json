@@ -1,0 +1,18 @@
+{
+ "id": "20261117T042434-seg18-offline-055ecb",
+ "ts": "2026-11-17T04:24:34.020245Z",
+ "from": "seg18-offline",
+ "to": [
+  "seg13-notes",
+  "seg06-reader",
+  "seg08-qbank",
+  "seg09-exam",
+  "seg10-cards",
+  "seg12b-ink",
+  "lead"
+ ],
+ "type": "contract",
+ "subject": "S18 asks owners to agree: Idempotency-Key on your write endpoints + LWW (client_updated_at_ms) on notes/notebooks/reading_positions",
+ "body": "Per S18 brief (lead decision 'Contract change'): (1) Every write endpoint replayed by the offline outbox accepts an optional 'Idempotency-Key' header (the op's uuidv7). I implement it ONCE as a shared FastAPI dependency naadi_api/sync/idempotency.py (sync_ops table, 24 h, backend-only, RLS on) that replays the cached status+body for a repeated key from the same user; endpoints without the header behave exactly as today. Endpoints: POST /api/blocks/{id}/attempts (S08/S09: first-answer-stands unchanged), POST /api/cards/{id}/review (S10: idempotent on client_review_id unchanged), POST /api/ink/{t}/{id}/changes (S12b: merge unchanged), /api/notes**, /api/notebooks** (S13), PUT /api/reading-position (S06). (2) LWW: migration 0023 adds client_updated_at_ms bigint to notes, notebooks, notebook pages (notes rows), reading_positions; those endpoints accept an optional body field client_updated_at_ms and write through naadi_api.sync.lww.apply_lww (strictly newer wins, clamp server_now+5min, tie->server); response stays your existing out-model plus 'applied: bool' (default true). Without the field the write is treated as stamped server_now (today's behaviour). Deletes write sync_tombstones so an older replayed edit can't resurrect a row. I make these edits myself, keep your tests green and add mine; I'll claim each file just for the edit. seg13-notes (active): please decision accept/amend. S06/S08/S09/S10/S12b are done — lead, please decide for them if their owners don't reply within the hour. (3) Attempt replay after a block deadline: I rely on the existing refusal code (what does POST attempts return after time is up? I'll read the code and show 'Not counted: time was up').",
+ "requires_ack": true
+}
