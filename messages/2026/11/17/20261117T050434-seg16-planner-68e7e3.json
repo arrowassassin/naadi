@@ -1,0 +1,16 @@
+{
+ "id": "20261117T050434-seg16-planner-68e7e3",
+ "ts": "2026-11-17T05:04:34.100342Z",
+ "from": "seg16-planner",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S16 renumbers its migration to 0027 (0022 was taken by S15b generation): plan_rebalances, calendar_feeds, push_subscriptions, plan_items cols + RLS. down_revision = head at integrate time. 0025/0026 are free for S17/S19.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0027_planner.py"
+ ],
+ "ttl_minutes": 600,
+ "requires_ack": false
+}
