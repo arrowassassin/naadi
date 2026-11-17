@@ -1,0 +1,16 @@
+{
+ "id": "20261117T100001-seg12b-ink-632914",
+ "ts": "2026-11-17T10:00:01.271195Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated f3a7168 into claude/naadi-shared",
+ "body": "S12b: ink toolbar fits phones at 390/412",
+ "refs": {
+  "commit": "f3a7168",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
