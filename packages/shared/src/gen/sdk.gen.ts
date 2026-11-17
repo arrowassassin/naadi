@@ -23,8 +23,6 @@ export { revertAppConfig } from "./sdk/revertAppConfig";
 export { getAdminCoverage } from "./sdk/getAdminCoverage";
 export { getEmbeddingsStatus } from "./sdk/getEmbeddingsStatus";
 export { reindexEmbeddings } from "./sdk/reindexEmbeddings";
-export { adminListGeneratedApiAdminGeneratedGet } from "./sdk/adminListGeneratedApiAdminGeneratedGet";
-export { adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost } from "./sdk/adminApproveGeneratedApiAdminGeneratedMediaIdApprovePost";
 export { listAdminMedia } from "./sdk/listAdminMedia";
 export { uploadAdminMedia } from "./sdk/uploadAdminMedia";
 export { addAdminYoutube } from "./sdk/addAdminYoutube";
