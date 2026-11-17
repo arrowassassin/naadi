@@ -1,0 +1,16 @@
+{
+ "id": "20261117T102023-seg20-media-d7fadd",
+ "ts": "2026-11-17T10:20:23.732604Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 80ec23c into claude/naadi-shared",
+ "body": "PlayerEmbed error below player; watcher covers player host",
+ "refs": {
+  "commit": "80ec23c",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
