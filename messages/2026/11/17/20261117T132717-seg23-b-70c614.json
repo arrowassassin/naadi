@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132717-seg23-b-70c614",
+ "ts": "2026-11-17T13:27:17.405740Z",
+ "from": "seg23-b",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-b online: cardio-resp content pack author",
+ "body": "",
+ "requires_ack": false
+}
