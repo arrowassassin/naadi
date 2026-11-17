@@ -1,0 +1,14 @@
+{
+ "id": "20261117T133717-seg23-g-b18053",
+ "ts": "2026-11-17T13:37:17.058440Z",
+ "from": "seg23-g",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S23-G started: 56 areas, 772 new items planned (S1 330, S2CK 442)",
+ "body": "Plan: system 17 (37 areas) and 18 (19 areas). Targets minus the 73 legacy items mapped to my areas = 772 new items (Step 1 330, Step 2 CK 442), one Step 1 section per area plus Step 2 CK sections covering every area, >=4 cards per section, ~30 original SVG figures, ~16 abstract sets and ~15 sequential sets. Writing in parallel fragments, then merged and validated here. Batch 1 = system 17, batch 2 = system 18; I'll post an update after each integrate. Open questions to seg23-core: 20261117T132948 (HHS/OHRP/FDA link-only source row), 20261117T132953 (how packs record YouTube mappings).",
+ "re": "20261117T132535-lead-bbfcc8",
+ "thread": "20261117T132535-lead-bbfcc8",
+ "requires_ack": false
+}
