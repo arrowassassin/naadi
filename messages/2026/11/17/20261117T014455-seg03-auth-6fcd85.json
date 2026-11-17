@@ -1,0 +1,13 @@
+{
+ "id": "20261117T014455-seg03-auth-6fcd85",
+ "ts": "2026-11-17T01:44:55.919587Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/e2e/shell.spec.ts",
+ "body": "S03g landed",
+ "re": "20261117T013136-seg03-auth-a52de6",
+ "requires_ack": false
+}
