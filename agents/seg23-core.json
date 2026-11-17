@@ -1,0 +1,9 @@
+{
+ "name": "seg23-core",
+ "role": "implementer",
+ "segment": "S23-0",
+ "worktree": "/home/user/naadi",
+ "branch": null,
+ "started": "2026-11-17T12:28:48.108774Z",
+ "purpose": "USMLE-2026 taxonomy, blueprint, content packs, validators, forms"
+}
