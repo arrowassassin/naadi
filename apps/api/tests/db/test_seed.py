@@ -27,18 +27,24 @@ from .seed_helpers import BUCKET, CONFIG, DATA, bundle, options, remove_seed, st
 
 pytestmark = DB_MARKS
 
+BLUEPRINT_ROWS = len(json.loads((DATA / "taxonomy" / "usmle2026.json").read_text(encoding="utf-8"))["blueprint"])
+
 EXPECTED = {
     "chapters": 14,
     "chapter_sections": 259,
     "questions": 685,
     "media_assets": 95,
-    "taxonomy_nodes": 217,
+    "taxonomy_nodes": 688,  # 217 legacy + 471 USMLE-2026 (root, 18 systems, 147 categories, 276 areas, 29 axes)
     "question_map_entries": 685,
     "pathway_stages": 16,
     "pathway_tasks": 186,
     "pathway_guides": 17,
     "plan_template_days": 60,
-    "sources": 20,  # 17 catalog/internal sources + user-provided (S15) + two pathway link sources (S17)
+    "sources": 21,  # 17 catalog/internal + user-provided (S15) + two pathway link sources (S17) + the 2026 outline
+    "question_sets": 0,
+    "content_packs": 7,  # one empty pack per S23 author task
+    "blueprint_targets": BLUEPRINT_ROWS,
+    "pack_flashcards": 0,
     "section_media": 95,
     "app_config": len(KEY_SPECS),  # every registered key (other segments add their own)
 }

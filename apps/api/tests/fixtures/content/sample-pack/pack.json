@@ -1,0 +1,17 @@
+{
+  "id": "sample-pack",
+  "title": "Sample pack (test fixture)",
+  "owner": "seg23-core",
+  "idPrefix": "smp",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "08",
+    "17"
+  ],
+  "retire": [],
+  "retag": {
+    "ch05-q01": [
+      "usmle2026.08.08.01"
+    ]
+  }
+}

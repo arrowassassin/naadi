@@ -49,7 +49,11 @@ def remove_seed(url: str, b: SeedBundle) -> None:
         c.execute("delete from public.seed_runs")
         c.execute("delete from public.section_media where section_id = any(%s)", (sections,))
         c.execute("delete from public.chapter_section_revisions where section_id = any(%s)", (sections,))
+        from naadi_api.seed.packs import card_uuid
+
+        c.execute("delete from public.flashcards where id = any(%s::uuid[])", ([card_uuid(x.id) for _p, x in b.cards],))
         c.execute("delete from public.questions where id = any(%s)", ([q.id for q in b.questions],))
+        c.execute("delete from public.question_sets where id = any(%s)", ([x.id for _p, x in b.sets],))
         c.execute("delete from public.chapter_sections where id = any(%s)", (sections,))
         c.execute("delete from public.chapters where id = any(%s)", ([ch.id for ch in b.chapters],))
         c.execute("delete from public.media_assets where id = any(%s)", ([f.id for f in b.figures],))
@@ -62,6 +66,7 @@ def remove_seed(url: str, b: SeedBundle) -> None:
         )
         c.execute("delete from public.pathway_stages where key = any(%s)", ([s.key for s in b.stages],))
         c.execute("delete from public.taxonomy_nodes where id = any(%s)", ([t.id for t in b.taxonomy],))
+        c.execute("delete from public.content_packs where id = any(%s)", ([p.meta.id for p in b.packs],))
         keys = c.execute("select key from public.app_config").fetchall()
         from naadi_api.config_api.schemas import KEY_SPECS
 

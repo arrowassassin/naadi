@@ -35,6 +35,8 @@ SHARED_TABLES = (
     "pathway_stages",
     "pathway_tasks",
     "flashcards",
+    "blueprint_targets",
+    "question_sets",
 )
 SECRET_QUESTION_COLUMNS = (
     "answer",

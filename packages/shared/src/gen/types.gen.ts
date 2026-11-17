@@ -9294,7 +9294,9 @@ export type SeedRequest = {
   /**
    * Only
    */
-  only?: Array<"sources" | "taxonomy" | "figures" | "chapters" | "questions" | "pathway" | "plan" | "app_config">;
+  only?: Array<
+    "sources" | "taxonomy" | "figures" | "chapters" | "questions" | "cards" | "pathway" | "plan" | "app_config"
+  >;
 };
 
 /**

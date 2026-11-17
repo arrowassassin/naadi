@@ -1,0 +1,3769 @@
+{
+"ch01-q01": [
+"usmle2026.16.11.01",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q02": [
+"usmle2026.16.11.06",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q03": [
+"usmle2026.16.11.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q04": [
+"usmle2026.16.11.06",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q05": [
+"usmle2026.16.11.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q06": [
+"usmle2026.16.11.04",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q07": [
+"usmle2026.16.11.04",
+"usmle2026.16.11.03",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q08": [
+"usmle2026.16.11.05",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q09": [
+"usmle2026.16.11.02",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q10": [
+"usmle2026.16.11.06",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q11": [
+"usmle2026.16.11.01",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q12": [
+"usmle2026.02.01.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.disc.immunology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q13": [
+"usmle2026.16.11.04",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q14": [
+"usmle2026.16.11.03",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q15": [
+"usmle2026.16.04.02",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q16": [
+"usmle2026.03.03.02",
+"usmle2026.03.03.03",
+"usmle2026.disc.physiology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q17": [
+"usmle2026.03.03.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q18": [
+"usmle2026.16.11.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q19": [
+"usmle2026.16.11.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q20": [
+"usmle2026.16.11.03",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q21": [
+"usmle2026.16.11.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q22": [
+"usmle2026.16.11.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q23": [
+"usmle2026.16.11.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q24": [
+"usmle2026.16.11.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q25": [
+"usmle2026.08.11.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q26": [
+"usmle2026.16.11.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q27": [
+"usmle2026.16.11.03",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q28": [
+"usmle2026.16.11.03",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q29": [
+"usmle2026.02.03.01",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q30": [
+"usmle2026.02.03.01",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q31": [
+"usmle2026.02.01.01",
+"usmle2026.02.01.04",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q32": [
+"usmle2026.02.01.04",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q33": [
+"usmle2026.02.01.01",
+"usmle2026.02.01.04",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q34": [
+"usmle2026.02.01.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q35": [
+"usmle2026.02.03.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q36": [
+"usmle2026.02.01.04",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q37": [
+"usmle2026.02.03.02",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q38": [
+"usmle2026.02.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q39": [
+"usmle2026.02.02.01",
+"usmle2026.16.01.01",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch01-q40": [
+"usmle2026.02.01.04",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q01": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q02": [
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q03": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q04": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q05": [
+"usmle2026.16.01.01",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q06": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q07": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q08": [
+"usmle2026.02.01.03",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q09": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q10": [
+"usmle2026.11.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q11": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q12": [
+"usmle2026.09.01.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q13": [
+"usmle2026.10.05.01",
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q14": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q15": [
+"usmle2026.02.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch02-q16": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q17": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q18": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q19": [
+"usmle2026.16.12.01",
+"usmle2026.16.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q20": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q21": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q22": [
+"usmle2026.02.02.01",
+"usmle2026.16.12.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q23": [
+"usmle2026.10.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q24": [
+"usmle2026.16.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q25": [
+"usmle2026.02.02.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q26": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q27": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q28": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q29": [
+"usmle2026.16.11.05",
+"usmle2026.16.11.06",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q30": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q31": [
+"usmle2026.02.02.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q32": [
+"usmle2026.16.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q33": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q34": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q35": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q36": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q37": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q38": [
+"usmle2026.16.01.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q39": [
+"usmle2026.16.12.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch02-q40": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q01": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q02": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q03": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q04": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q05": [
+"usmle2026.16.05.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q06": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q07": [
+"usmle2026.16.12.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q08": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q09": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q10": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q11": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q12": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q13": [
+"usmle2026.08.04.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q14": [
+"usmle2026.18.02.06",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q15": [
+"usmle2026.03.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q16": [
+"usmle2026.16.12.01",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q17": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q18": [
+"usmle2026.16.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch03-q19": [
+"usmle2026.17.06.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q20": [
+"usmle2026.17.06.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q21": [
+"usmle2026.17.06.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q22": [
+"usmle2026.17.06.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q23": [
+"usmle2026.17.06.02",
+"usmle2026.disc.physiology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q24": [
+"usmle2026.17.03.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q25": [
+"usmle2026.17.03.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q26": [
+"usmle2026.17.03.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q27": [
+"usmle2026.17.03.01",
+"usmle2026.17.08.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q28": [
+"usmle2026.17.03.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.disc.immunology",
+"usmle2026.task.pbli"
+],
+"ch03-q29": [
+"usmle2026.17.01.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q30": [
+"usmle2026.17.07.06",
+"usmle2026.17.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q31": [
+"usmle2026.17.07.04",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q32": [
+"usmle2026.17.07.04",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q33": [
+"usmle2026.17.04.01",
+"usmle2026.17.07.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q34": [
+"usmle2026.17.08.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q35": [
+"usmle2026.17.04.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q36": [
+"usmle2026.17.04.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q37": [
+"usmle2026.18.02.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q38": [
+"usmle2026.18.02.07",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q39": [
+"usmle2026.18.02.07",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q40": [
+"usmle2026.18.02.06",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q41": [
+"usmle2026.18.03.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q42": [
+"usmle2026.18.02.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q43": [
+"usmle2026.18.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch03-q44": [
+"usmle2026.18.03.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"ch03-q45": [
+"usmle2026.18.01.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"ch04-q01": [
+"usmle2026.08.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q02": [
+"usmle2026.16.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q03": [
+"usmle2026.16.11.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q04": [
+"usmle2026.16.01.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q05": [
+"usmle2026.02.01.04",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.disc.immunology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch04-q06": [
+"usmle2026.16.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q07": [
+"usmle2026.16.11.04",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q08": [
+"usmle2026.03.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q09": [
+"usmle2026.16.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q10": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q11": [
+"usmle2026.16.02.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q12": [
+"usmle2026.03.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q13": [
+"usmle2026.03.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q14": [
+"usmle2026.15.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q15": [
+"usmle2026.16.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch04-q16": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_history_pe"
+],
+"ch04-q17": [
+"usmle2026.03.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q18": [
+"usmle2026.03.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q19": [
+"usmle2026.03.03.03",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q20": [
+"usmle2026.16.04.01",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q21": [
+"usmle2026.03.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q22": [
+"usmle2026.03.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q23": [
+"usmle2026.03.03.03",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q24": [
+"usmle2026.03.03.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q25": [
+"usmle2026.03.03.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q26": [
+"usmle2026.03.03.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q27": [
+"usmle2026.02.01.04",
+"usmle2026.03.03.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q28": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q29": [
+"usmle2026.03.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q30": [
+"usmle2026.03.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q31": [
+"usmle2026.03.04.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q32": [
+"usmle2026.03.04.03",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q33": [
+"usmle2026.03.06.01",
+"usmle2026.03.04.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q34": [
+"usmle2026.03.04.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q35": [
+"usmle2026.03.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q36": [
+"usmle2026.03.04.03",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q37": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q38": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q39": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch04-q40": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q01": [
+"usmle2026.08.04.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q02": [
+"usmle2026.08.04.01",
+"usmle2026.08.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q03": [
+"usmle2026.08.14.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch05-q04": [
+"usmle2026.08.14.01",
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q05": [
+"usmle2026.08.08.01",
+"usmle2026.16.10.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch05-q06": [
+"usmle2026.08.10.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q07": [
+"usmle2026.08.08.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q08": [
+"usmle2026.08.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q09": [
+"usmle2026.08.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q10": [
+"usmle2026.08.11.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q11": [
+"usmle2026.08.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q12": [
+"usmle2026.08.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q13": [
+"usmle2026.08.14.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q14": [
+"usmle2026.08.15.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q15": [
+"usmle2026.16.10.01",
+"usmle2026.08.10.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q16": [
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q17": [
+"usmle2026.09.06.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q18": [
+"usmle2026.09.06.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q19": [
+"usmle2026.09.06.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q20": [
+"usmle2026.09.06.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q21": [
+"usmle2026.09.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q22": [
+"usmle2026.09.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q23": [
+"usmle2026.09.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q24": [
+"usmle2026.09.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q25": [
+"usmle2026.09.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q26": [
+"usmle2026.16.07.02",
+"usmle2026.09.05.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q27": [
+"usmle2026.09.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q28": [
+"usmle2026.09.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q29": [
+"usmle2026.09.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch05-q30": [
+"usmle2026.09.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q31": [
+"usmle2026.09.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q32": [
+"usmle2026.09.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q33": [
+"usmle2026.11.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q34": [
+"usmle2026.11.04.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q35": [
+"usmle2026.16.12.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q36": [
+"usmle2026.16.07.02",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q37": [
+"usmle2026.16.07.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.pc_history_pe"
+],
+"ch05-q38": [
+"usmle2026.16.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch05-q39": [
+"usmle2026.11.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q40": [
+"usmle2026.11.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q41": [
+"usmle2026.11.04.01",
+"usmle2026.11.07.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q42": [
+"usmle2026.11.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q43": [
+"usmle2026.11.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q44": [
+"usmle2026.11.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch05-q45": [
+"usmle2026.11.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q01": [
+"usmle2026.16.07.02",
+"usmle2026.16.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q02": [
+"usmle2026.10.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q03": [
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q04": [
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q05": [
+"usmle2026.10.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q06": [
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q07": [
+"usmle2026.10.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q08": [
+"usmle2026.10.06.01",
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q09": [
+"usmle2026.10.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q10": [
+"usmle2026.10.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q11": [
+"usmle2026.10.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q12": [
+"usmle2026.10.11.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q13": [
+"usmle2026.10.11.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q14": [
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q15": [
+"usmle2026.10.10.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q16": [
+"usmle2026.15.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q17": [
+"usmle2026.15.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q18": [
+"usmle2026.15.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q19": [
+"usmle2026.15.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q20": [
+"usmle2026.15.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch06-q21": [
+"usmle2026.15.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q22": [
+"usmle2026.15.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch06-q23": [
+"usmle2026.16.11.05",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.genetics",
+"usmle2026.task.pc_diagnosis"
+],
+"ch06-q24": [
+"usmle2026.15.01.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch06-q25": [
+"usmle2026.15.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q26": [
+"usmle2026.15.07",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q27": [
+"usmle2026.15.07",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q28": [
+"usmle2026.15.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q29": [
+"usmle2026.15.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.pc_diagnosis"
+],
+"ch06-q30": [
+"usmle2026.15.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_history_pe"
+],
+"ch06-q31": [
+"usmle2026.15.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q32": [
+"usmle2026.13.02.05",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q33": [
+"usmle2026.13.02.05",
+"usmle2026.15.05.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q34": [
+"usmle2026.14.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q35": [
+"usmle2026.12.01.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q36": [
+"usmle2026.13.02.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q37": [
+"usmle2026.14.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q38": [
+"usmle2026.13.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q39": [
+"usmle2026.13.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q40": [
+"usmle2026.14.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q41": [
+"usmle2026.12.01.03",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q42": [
+"usmle2026.12.02.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q43": [
+"usmle2026.16.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q44": [
+"usmle2026.13.02.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch06-q45": [
+"usmle2026.12.01.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q01": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q02": [
+"usmle2026.05.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q03": [
+"usmle2026.05.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q04": [
+"usmle2026.05.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q05": [
+"usmle2026.05.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q06": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q07": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q08": [
+"usmle2026.05.10.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q09": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q10": [
+"usmle2026.05.14.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q11": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q12": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q13": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q14": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q15": [
+"usmle2026.05.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q16": [
+"usmle2026.05.14.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q17": [
+"usmle2026.05.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q18": [
+"usmle2026.05.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q19": [
+"usmle2026.05.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q20": [
+"usmle2026.05.02.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q21": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q22": [
+"usmle2026.05.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q23": [
+"usmle2026.05.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q24": [
+"usmle2026.04.04.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q25": [
+"usmle2026.01.01.01",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q26": [
+"usmle2026.05.13.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q27": [
+"usmle2026.05.13.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q28": [
+"usmle2026.04.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pc_diagnosis"
+],
+"ch07-q29": [
+"usmle2026.04.03.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q30": [
+"usmle2026.04.03.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q31": [
+"usmle2026.04.01.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q32": [
+"usmle2026.05.16.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q33": [
+"usmle2026.05.16.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q34": [
+"usmle2026.04.11.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q35": [
+"usmle2026.04.11.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q36": [
+"usmle2026.04.11.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q37": [
+"usmle2026.04.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pc_diagnosis"
+],
+"ch07-q38": [
+"usmle2026.05.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q39": [
+"usmle2026.05.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q40": [
+"usmle2026.07.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q41": [
+"usmle2026.07.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q42": [
+"usmle2026.07.03.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q43": [
+"usmle2026.06.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q44": [
+"usmle2026.05.09.01",
+"usmle2026.07.01.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"ch07-q45": [
+"usmle2026.07.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"ch08-q01": [
+"usmle2026.08.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q02": [
+"usmle2026.08.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q03": [
+"usmle2026.08.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q04": [
+"usmle2026.08.15.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q05": [
+"usmle2026.08.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch08-q06": [
+"usmle2026.08.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch08-q07": [
+"usmle2026.08.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q08": [
+"usmle2026.08.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch08-q09": [
+"usmle2026.16.10.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch08-q10": [
+"usmle2026.08.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q11": [
+"usmle2026.08.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q12": [
+"usmle2026.08.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q13": [
+"usmle2026.08.10.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q14": [
+"usmle2026.08.11.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q15": [
+"usmle2026.08.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_lab_diagnostic"
+],
+"ch08-q16": [
+"usmle2026.08.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q17": [
+"usmle2026.08.07.01",
+"usmle2026.08.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q18": [
+"usmle2026.08.07.01",
+"usmle2026.08.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch08-q19": [
+"usmle2026.11.05.01",
+"usmle2026.11.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q20": [
+"usmle2026.08.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q21": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q22": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q23": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_clinical_interventions"
+],
+"ch08-q24": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q25": [
+"usmle2026.09.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_diagnosis"
+],
+"ch08-q26": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q27": [
+"usmle2026.09.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q28": [
+"usmle2026.09.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q29": [
+"usmle2026.09.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q30": [
+"usmle2026.09.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch08-q31": [
+"usmle2026.01.01.01",
+"usmle2026.01.01.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch08-q32": [
+"usmle2026.16.10.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q33": [
+"usmle2026.09.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q34": [
+"usmle2026.09.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q35": [
+"usmle2026.11.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q36": [
+"usmle2026.16.07.01",
+"usmle2026.08.15.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q37": [
+"usmle2026.16.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q38": [
+"usmle2026.16.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q39": [
+"usmle2026.16.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q40": [
+"usmle2026.16.07.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q41": [
+"usmle2026.16.07.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q42": [
+"usmle2026.11.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q43": [
+"usmle2026.11.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q44": [
+"usmle2026.11.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch08-q45": [
+"usmle2026.11.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q01": [
+"usmle2026.10.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q02": [
+"usmle2026.03.04.03",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q03": [
+"usmle2026.10.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q04": [
+"usmle2026.10.05.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q05": [
+"usmle2026.10.05.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q06": [
+"usmle2026.10.05.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q07": [
+"usmle2026.10.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q08": [
+"usmle2026.10.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q09": [
+"usmle2026.10.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch09-q10": [
+"usmle2026.10.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q11": [
+"usmle2026.10.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q12": [
+"usmle2026.10.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q13": [
+"usmle2026.10.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q14": [
+"usmle2026.01.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch09-q15": [
+"usmle2026.15.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch09-q16": [
+"usmle2026.15.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q17": [
+"usmle2026.16.07.01",
+"usmle2026.16.07.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q18": [
+"usmle2026.15.01.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q19": [
+"usmle2026.15.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q20": [
+"usmle2026.15.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q21": [
+"usmle2026.15.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q22": [
+"usmle2026.15.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q23": [
+"usmle2026.15.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q24": [
+"usmle2026.15.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q25": [
+"usmle2026.15.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q26": [
+"usmle2026.15.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch09-q27": [
+"usmle2026.03.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q28": [
+"usmle2026.03.04.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q29": [
+"usmle2026.03.04.01",
+"usmle2026.03.04.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q30": [
+"usmle2026.03.04.03",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q31": [
+"usmle2026.03.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q32": [
+"usmle2026.03.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q33": [
+"usmle2026.01.01.04",
+"usmle2026.13.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch09-q34": [
+"usmle2026.02.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q35": [
+"usmle2026.02.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q36": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q37": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q38": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q39": [
+"usmle2026.13.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q40": [
+"usmle2026.12.01.03",
+"usmle2026.cs.medicine",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q41": [
+"usmle2026.06.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q42": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q43": [
+"usmle2026.08.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q44": [
+"usmle2026.07.03.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch09-q45": [
+"usmle2026.07.01.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q01": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q02": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q03": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_diagnosis"
+],
+"ch10-q04": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q05": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q06": [
+"usmle2026.10.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q07": [
+"usmle2026.16.10.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q08": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q09": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q10": [
+"usmle2026.16.10.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q11": [
+"usmle2026.06.06.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q12": [
+"usmle2026.06.06.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q13": [
+"usmle2026.12.01.03",
+"usmle2026.cs.obgyn",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_lab_diagnostic"
+],
+"ch10-q14": [
+"usmle2026.10.06.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q15": [
+"usmle2026.10.06.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q16": [
+"usmle2026.10.05.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q17": [
+"usmle2026.10.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q18": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q19": [
+"usmle2026.10.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q20": [
+"usmle2026.08.05.01",
+"usmle2026.08.03.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q21": [
+"usmle2026.03.06.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_clinical_interventions"
+],
+"ch10-q22": [
+"usmle2026.16.10.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q23": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q24": [
+"usmle2026.10.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q25": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q26": [
+"usmle2026.13.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q27": [
+"usmle2026.13.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q28": [
+"usmle2026.15.07",
+"usmle2026.15.02.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q29": [
+"usmle2026.01.01.01",
+"usmle2026.01.01.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch10-q30": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q31": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q32": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q33": [
+"usmle2026.07.04.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q34": [
+"usmle2026.14.04.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q35": [
+"usmle2026.14.04.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q36": [
+"usmle2026.07.04.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q37": [
+"usmle2026.10.06.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q38": [
+"usmle2026.16.07.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q39": [
+"usmle2026.08.03.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q40": [
+"usmle2026.16.05.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch10-q41": [
+"usmle2026.16.05.01",
+"usmle2026.cs.obgyn",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q42": [
+"usmle2026.16.05.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q43": [
+"usmle2026.07.06.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q44": [
+"usmle2026.16.05.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch10-q45": [
+"usmle2026.02.03.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q01": [
+"usmle2026.12.05.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q02": [
+"usmle2026.12.05.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q03": [
+"usmle2026.01.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q04": [
+"usmle2026.09.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q05": [
+"usmle2026.08.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch11-q06": [
+"usmle2026.10.04.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q07": [
+"usmle2026.10.10.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q08": [
+"usmle2026.10.09.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q09": [
+"usmle2026.03.04.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q10": [
+"usmle2026.02.04.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch11-q11": [
+"usmle2026.01.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q12": [
+"usmle2026.04.07.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q13": [
+"usmle2026.08.14.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch11-q14": [
+"usmle2026.09.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q15": [
+"usmle2026.05.17.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q16": [
+"usmle2026.09.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q17": [
+"usmle2026.16.11.03",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q18": [
+"usmle2026.01.01.02",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q19": [
+"usmle2026.12.05.01",
+"usmle2026.12.05.02",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q20": [
+"usmle2026.12.05.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q21": [
+"usmle2026.01.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch11-q22": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q23": [
+"usmle2026.12.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q24": [
+"usmle2026.12.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q25": [
+"usmle2026.12.01.03",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q26": [
+"usmle2026.12.03.01",
+"usmle2026.12.04.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q27": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q28": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q29": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q30": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q31": [
+"usmle2026.12.04.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q32": [
+"usmle2026.12.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q33": [
+"usmle2026.12.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q34": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q35": [
+"usmle2026.15.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q36": [
+"usmle2026.13.02.04",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q37": [
+"usmle2026.15.08.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q38": [
+"usmle2026.13.02.05",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q39": [
+"usmle2026.13.02.03",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q40": [
+"usmle2026.13.02.03",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q41": [
+"usmle2026.13.02.02",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q42": [
+"usmle2026.13.02.02",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q43": [
+"usmle2026.13.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q44": [
+"usmle2026.13.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch11-q45": [
+"usmle2026.13.02.04",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q01": [
+"usmle2026.05.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q02": [
+"usmle2026.05.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q03": [
+"usmle2026.05.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch12-q04": [
+"usmle2026.05.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"ch12-q05": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q06": [
+"usmle2026.05.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q07": [
+"usmle2026.05.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q08": [
+"usmle2026.05.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q09": [
+"usmle2026.05.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q10": [
+"usmle2026.05.09.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q11": [
+"usmle2026.05.09.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q12": [
+"usmle2026.05.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q13": [
+"usmle2026.05.14.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q14": [
+"usmle2026.05.10.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch12-q15": [
+"usmle2026.04.03.01",
+"usmle2026.05.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch12-q16": [
+"usmle2026.04.03.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q17": [
+"usmle2026.04.03.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q18": [
+"usmle2026.04.01.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q19": [
+"usmle2026.05.16.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q20": [
+"usmle2026.04.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch12-q21": [
+"usmle2026.04.11.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q22": [
+"usmle2026.10.06.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q23": [
+"usmle2026.04.11.01",
+"usmle2026.cs.obgyn",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q24": [
+"usmle2026.04.06.01",
+"usmle2026.disc.nutrition",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q25": [
+"usmle2026.04.06.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q26": [
+"usmle2026.04.02.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q27": [
+"usmle2026.04.03.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch12-q28": [
+"usmle2026.18.02.03",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"ch12-q29": [
+"usmle2026.04.11.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"ch12-q30": [
+"usmle2026.18.02.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"ch12-q31": [
+"usmle2026.18.02.06",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"ch12-q32": [
+"usmle2026.18.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.professionalism"
+],
+"ch12-q33": [
+"usmle2026.18.02.07",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"ch12-q34": [
+"usmle2026.18.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"ch12-q35": [
+"usmle2026.18.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.systems_based_practice"
+],
+"ch12-q36": [
+"usmle2026.18.02.08",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"ch12-q37": [
+"usmle2026.18.02.04",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"ch12-q38": [
+"usmle2026.18.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.professionalism"
+],
+"ch12-q39": [
+"usmle2026.17.06.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"ch12-q40": [
+"usmle2026.17.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"ch12-q41": [
+"usmle2026.17.06.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"ch12-q42": [
+"usmle2026.17.07.04",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"ch12-q43": [
+"usmle2026.17.07.06",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"ch12-q44": [
+"usmle2026.17.07.05",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"ch12-q45": [
+"usmle2026.18.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.systems_based_practice"
+],
+"mock1-q01": [
+"usmle2026.17.06.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"mock1-q02": [
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q03": [
+"usmle2026.16.07.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q04": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q05": [
+"usmle2026.15.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q06": [
+"usmle2026.18.02.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"mock1-q07": [
+"usmle2026.05.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q08": [
+"usmle2026.03.04.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q09": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q10": [
+"usmle2026.09.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q11": [
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q12": [
+"usmle2026.15.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q13": [
+"usmle2026.07.03.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q14": [
+"usmle2026.02.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q15": [
+"usmle2026.08.07.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q16": [
+"usmle2026.04.09.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q17": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q18": [
+"usmle2026.16.11.03",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q19": [
+"usmle2026.05.10.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q20": [
+"usmle2026.06.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q21": [
+"usmle2026.03.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q22": [
+"usmle2026.10.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q23": [
+"usmle2026.15.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q24": [
+"usmle2026.09.06.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q25": [
+"usmle2026.18.02.07",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"mock1-q26": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q27": [
+"usmle2026.08.10.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q28": [
+"usmle2026.14.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q29": [
+"usmle2026.05.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q30": [
+"usmle2026.15.03.01",
+"usmle2026.disc.physiology",
+"usmle2026.disc.nutrition",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q31": [
+"usmle2026.17.03.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"mock1-q32": [
+"usmle2026.11.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q33": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q34": [
+"usmle2026.16.01.01",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q35": [
+"usmle2026.10.05.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q36": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q37": [
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q38": [
+"usmle2026.15.07",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q39": [
+"usmle2026.18.01.01",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"mock1-q40": [
+"usmle2026.02.03.02",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q41": [
+"usmle2026.17.03.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"mock1-q42": [
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q43": [
+"usmle2026.09.06.01",
+"usmle2026.09.05.01",
+"usmle2026.disc.physiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q44": [
+"usmle2026.16.07.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q45": [
+"usmle2026.15.07",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q46": [
+"usmle2026.15.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q47": [
+"usmle2026.12.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q48": [
+"usmle2026.05.04.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q49": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q50": [
+"usmle2026.03.03.02",
+"usmle2026.03.03.03",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q51": [
+"usmle2026.16.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q52": [
+"usmle2026.18.03.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"mock1-q53": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q54": [
+"usmle2026.08.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q55": [
+"usmle2026.09.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q56": [
+"usmle2026.11.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.histology_cell_biology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q57": [
+"usmle2026.10.06.01",
+"usmle2026.16.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q58": [
+"usmle2026.15.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q59": [
+"usmle2026.13.01.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q60": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q61": [
+"usmle2026.06.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q62": [
+"usmle2026.03.04.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q63": [
+"usmle2026.02.03.01",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q64": [
+"usmle2026.17.07.04",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.pbli"
+],
+"mock1-q65": [
+"usmle2026.04.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q66": [
+"usmle2026.08.14.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q67": [
+"usmle2026.09.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q68": [
+"usmle2026.15.05.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.pc_diagnosis"
+],
+"mock1-q69": [
+"usmle2026.10.10.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.anatomy_embryology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q70": [
+"usmle2026.15.08.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q71": [
+"usmle2026.13.01.01",
+"usmle2026.13.02.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q72": [
+"usmle2026.05.09.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q73": [
+"usmle2026.07.06.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q74": [
+"usmle2026.07.01.02",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.immunology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q75": [
+"usmle2026.16.12.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.nutrition",
+"usmle2026.disc.microbiology",
+"usmle2026.disc.pharmacology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q76": [
+"usmle2026.16.11.03",
+"usmle2026.disc.pathology",
+"usmle2026.disc.biochemistry",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q77": [
+"usmle2026.03.02.01",
+"usmle2026.disc.pathology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q78": [
+"usmle2026.08.03.01",
+"usmle2026.disc.pathology",
+"usmle2026.disc.pharmacology",
+"usmle2026.task.medical_knowledge"
+],
+"mock1-q79": [
+"usmle2026.18.02.02",
+"usmle2026.disc.behavioral_sciences",
+"usmle2026.task.communication"
+],
+"mock1-q80": [
+"usmle2026.16.11.05",
+"usmle2026.disc.genetics",
+"usmle2026.task.medical_knowledge"
+],
+"mock2-q01": [
+"usmle2026.08.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q02": [
+"usmle2026.15.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q03": [
+"usmle2026.01.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"mock2-q04": [
+"usmle2026.18.02.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"mock2-q05": [
+"usmle2026.08.12.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q06": [
+"usmle2026.12.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q07": [
+"usmle2026.04.03.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q08": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q09": [
+"usmle2026.17.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"mock2-q10": [
+"usmle2026.16.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q11": [
+"usmle2026.10.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q12": [
+"usmle2026.16.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q13": [
+"usmle2026.16.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q14": [
+"usmle2026.03.06.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q15": [
+"usmle2026.10.06.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_diagnosis"
+],
+"mock2-q16": [
+"usmle2026.13.02.02",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q17": [
+"usmle2026.04.03.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q18": [
+"usmle2026.10.06.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q19": [
+"usmle2026.05.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q20": [
+"usmle2026.15.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q21": [
+"usmle2026.05.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q22": [
+"usmle2026.18.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.systems_based_practice"
+],
+"mock2-q23": [
+"usmle2026.02.04.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q24": [
+"usmle2026.07.03.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q25": [
+"usmle2026.10.09.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q26": [
+"usmle2026.17.06.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"mock2-q27": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q28": [
+"usmle2026.12.03.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q29": [
+"usmle2026.09.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q30": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q31": [
+"usmle2026.05.16.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q32": [
+"usmle2026.15.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q33": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_health_maintenance"
+],
+"mock2-q34": [
+"usmle2026.03.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q35": [
+"usmle2026.08.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q36": [
+"usmle2026.09.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q37": [
+"usmle2026.16.07.01",
+"usmle2026.16.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q38": [
+"usmle2026.13.02.03",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q39": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q40": [
+"usmle2026.15.03.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q41": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q42": [
+"usmle2026.15.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q43": [
+"usmle2026.09.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q44": [
+"usmle2026.05.12.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q45": [
+"usmle2026.08.12.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q46": [
+"usmle2026.18.02.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.professionalism"
+],
+"mock2-q47": [
+"usmle2026.17.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"mock2-q48": [
+"usmle2026.10.06.02",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q49": [
+"usmle2026.10.06.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q50": [
+"usmle2026.11.04.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_diagnosis"
+],
+"mock2-q51": [
+"usmle2026.12.04.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q52": [
+"usmle2026.12.01.03",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q53": [
+"usmle2026.15.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q54": [
+"usmle2026.05.05.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q55": [
+"usmle2026.09.07.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q56": [
+"usmle2026.10.10.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_lab_diagnostic"
+],
+"mock2-q57": [
+"usmle2026.08.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q58": [
+"usmle2026.07.02.02",
+"usmle2026.07.03.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q59": [
+"usmle2026.04.07.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q60": [
+"usmle2026.12.02.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q61": [
+"usmle2026.04.02.01",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_pharmacotherapy"
+],
+"mock2-q62": [
+"usmle2026.05.08.01",
+"usmle2026.cs.medicine",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_diagnosis"
+],
+"mock2-q63": [
+"usmle2026.13.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q64": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q65": [
+"usmle2026.18.03.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.systems_based_practice"
+],
+"mock2-q66": [
+"usmle2026.09.01.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q67": [
+"usmle2026.11.03.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q68": [
+"usmle2026.12.01.03",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q69": [
+"usmle2026.08.11.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_health_maintenance"
+],
+"mock2-q70": [
+"usmle2026.18.02.03",
+"usmle2026.cs.psychiatry",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q71": [
+"usmle2026.03.03.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q72": [
+"usmle2026.08.12.01",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_lab_diagnostic"
+],
+"mock2-q73": [
+"usmle2026.17.07.04",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+],
+"mock2-q74": [
+"usmle2026.16.07.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_lab_diagnostic"
+],
+"mock2-q75": [
+"usmle2026.13.01.01",
+"usmle2026.cs.obgyn",
+"usmle2026.task.pc_health_maintenance"
+],
+"mock2-q76": [
+"usmle2026.10.09.01",
+"usmle2026.cs.pediatrics",
+"usmle2026.cs.surgery",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q77": [
+"usmle2026.08.12.01",
+"usmle2026.08.12.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q78": [
+"usmle2026.16.01.01",
+"usmle2026.cs.medicine",
+"usmle2026.task.pc_mixed_management"
+],
+"mock2-q79": [
+"usmle2026.18.02.06",
+"usmle2026.cs.medicine",
+"usmle2026.task.professionalism"
+],
+"mock2-q80": [
+"usmle2026.17.06.02",
+"usmle2026.cs.medicine",
+"usmle2026.task.pbli"
+]
+}

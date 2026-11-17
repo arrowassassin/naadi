@@ -11,7 +11,14 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { collectTypes } from "./schema";
-import { buildSeedBodies, SEED_BODIES_FILE as OUT } from "./seed-bodies";
+import {
+  buildPackBodies,
+  buildSeedBodies,
+  FIXTURE_CONTENT_DIR,
+  SEED_BODIES_FILE as OUT,
+  PACK_BODIES,
+  packDirs,
+} from "./seed-bodies";
 
 describe("seed section bodies", () => {
   it("data/generated/section_bodies.json matches a fresh conversion", () => {
@@ -22,6 +29,23 @@ describe("seed section bodies", () => {
     }
     const committed = readFileSync(OUT, "utf8");
     expect(committed === fresh, "stale: run `pnpm --filter @naadi/shared seed:convert` and commit").toBe(true);
+  }, 60_000);
+
+  it("every content pack's section_bodies.json matches a fresh conversion", () => {
+    for (const dir of [...packDirs(), ...packDirs(FIXTURE_CONTENT_DIR)]) {
+      const fresh = buildPackBodies(dir);
+      const file = path.join(dir, PACK_BODIES);
+      if (process.env.UPDATE_SEED_BODIES) writeFileSync(file, fresh);
+      let committed = "";
+      try {
+        committed = readFileSync(file, "utf8");
+      } catch {
+        committed = "";
+      }
+      expect(committed === fresh, `${file} stale: run \`pnpm --filter @naadi/shared seed:convert\` and commit`).toBe(
+        true,
+      );
+    }
   }, 60_000);
 
   it("covers 259 sections and 95 figures with only seed node types", () => {

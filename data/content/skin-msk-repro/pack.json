@@ -1,0 +1,16 @@
+{
+  "id": "skin-msk-repro",
+  "title": "Skin, musculoskeletal, pregnancy and reproductive",
+  "owner": "seg23-f",
+  "idPrefix": "s23f",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "06",
+    "07",
+    "12",
+    "13",
+    "14"
+  ],
+  "retire": [],
+  "retag": {}
+}

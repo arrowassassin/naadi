@@ -1,6 +1,6 @@
 -- Naadi — Postgres 17 schema (Supabase). DOCUMENTATION of the data contract.
 -- The database is created ONLY by the Alembic migrations in apps/api/migrations/versions/
--- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py, 0027, 0026, 0028_ingest_kb.py, 0029 … 0034, 0036_admin_edit_marks.py;
+-- (0001_core_schema.py, 0002_storage_buckets.py, 0003_reading_positions.py, 0004_seed_content.py, 0005_agent_platform.py, 0006, 0007, 0008, 0009, 0010, 0011, 0012_card_review_logs.py, 0013, 0014, 0016, 0017, 0022, 0023, 0024, 0025_admin_console.py, 0027, 0026, 0028_ingest_kb.py, 0029 … 0034, 0036_admin_edit_marks.py, 0037, 0038, 0039_usmle2026_taxonomy.py;
 -- version table public.naadi_alembic_version).
 -- tests/db/test_schema_doc.py fails if a table or column here differs from the migrated database.
 -- Extensions (schema `extensions`, as Supabase expects): vector (halfvec), pg_trgm.
@@ -40,16 +40,61 @@ create table public.sources (
 
 create table public.taxonomy_nodes (
   id text primary key,
-  kind text not null check (kind in ('exam','system','discipline','competency','clinical_science','topic')),
+  -- 0039: + outline, outline_system, outline_category, outline_area, task (the USMLE-2026 tree and axes)
+  kind text not null check (kind in ('exam','system','discipline','competency','clinical_science','topic',
+    'outline','outline_system','outline_category','outline_area','task')),
   parent_id text references public.taxonomy_nodes(id) on delete cascade,
   label text not null,
   exam text[] not null,
   weight_min numeric,
   weight_max numeric,
   sort smallint not null default 0,
+  -- 0039: 'naadi-legacy' (the 217 original nodes) or 'USMLE-2026'; a future outline migrates side by side
+  outline_version text not null default 'naadi-legacy' check (outline_version ~ '^[A-Za-z0-9._-]{1,32}$'),
+  -- 0039: the outline number ('08', '08.05', '08.05.01'), its level (0 root .. 3 area) and the outline's source row
+  code text check (code is null or code ~ '^[0-9]{2}(\.[0-9]{2}){0,2}$'),
+  level smallint check (level is null or level between 0 and 3),
+  source_id text references public.sources(id),
   check (weight_min is null or weight_max is null or weight_min <= weight_max)
 );
 create index taxonomy_nodes_parent_idx on public.taxonomy_nodes (parent_id);
+create unique index taxonomy_nodes_version_code_idx on public.taxonomy_nodes (outline_version, code)
+  where code is not null;
+
+-- 0039: items per USMLE-2026 leaf area (and co-coded axis targets) per Step (tools/usmle2026.py). Shared read.
+create table public.blueprint_targets (
+  node_id text not null references public.taxonomy_nodes(id) on delete cascade,
+  exam text not null check (exam in ('step1','step2ck','step3')),
+  outline_version text not null,
+  row_key text not null,
+  row_label text not null,
+  weight_min numeric not null,
+  weight_max numeric not null check (weight_min <= weight_max),
+  share integer not null check (share >= 0),
+  min_items integer not null check (min_items >= 0),
+  target_items integer not null check (target_items >= min_items),
+  tested boolean not null default true,
+  primary key (node_id, exam)
+);
+create index blueprint_targets_version_idx on public.blueprint_targets (outline_version, exam);
+
+-- 0039: legacy node -> USMLE-2026 node(s). Server-only.
+create table public.taxonomy_crosswalk (
+  from_id text not null references public.taxonomy_nodes(id) on delete cascade,
+  to_id text not null references public.taxonomy_nodes(id) on delete cascade,
+  to_version text not null,
+  primary key (from_id, to_id)
+);
+
+-- 0039: one row per data/content/<pack>/ (one author task each). Server-only.
+create table public.content_packs (
+  id text primary key check (id ~ '^[a-z0-9][a-z0-9-]{0,63}$'),
+  title text not null check (char_length(title) between 1 and 200),
+  owner text not null check (char_length(owner) between 1 and 64),
+  outline_version text not null,
+  systems text[] not null default '{}',
+  updated_at timestamptz not null default now()
+);
 
 create table public.pathway_stages (
   key text primary key,
@@ -173,6 +218,8 @@ create table public.chapters (
   updated_at timestamptz not null default now(),
   -- 0036: set by trigger naadi_mark_admin_edit on every non-seed write that changes content; the seed keeps the row
   admin_edited_at timestamptz,
+  -- 0039: the content pack that seeds the chapter (null for the legacy bundle and for user chapters)
+  pack_id text references public.content_packs(id) on delete set null,
   -- private chapters (uploads, knowledge-base documents) always have an owner; shared ones never do
   check ((kind in ('user_upload','user_kb')) = (owner_user_id is not null))
 );
@@ -190,9 +237,13 @@ create table public.chapter_sections (
   updated_at timestamptz not null default now(),
   -- 0004: set when an admin or the assistant edits the section (trigger on non-seed revisions); the seed
   -- importer keeps such sections unless forced
-  admin_edited_at timestamptz
+  admin_edited_at timestamptz,
+  -- 0039: pack sections: their pack and link-only further reading [{label, url, sourceId}]
+  pack_id text references public.content_packs(id) on delete set null,
+  further_reading jsonb not null default '[]' check (jsonb_typeof(further_reading) = 'array')
 );
 create index chapter_sections_chapter_idx on public.chapter_sections (chapter_id, sort);
+create index chapter_sections_taxonomy_idx on public.chapter_sections using gin (taxonomy_ids);
 
 create table public.chapter_section_revisions (
   id bigint generated by default as identity primary key,
@@ -263,6 +314,21 @@ create table public.section_media (
 );
 create index section_media_media_idx on public.section_media (media_id);
 
+-- 0039: sequential item sets (2-3 linked items, locked once answered) and abstract-format sets (a study summary
+-- with 2+ questions). intro_html is stem-level text (shared read for published sets); no answer lives here.
+create table public.question_sets (
+  id text primary key check (id ~ '^[a-z0-9][a-z0-9_.-]{0,127}$'),
+  exam text not null check (exam in ('step1','step2ck','step3')),
+  kind text not null check (kind in ('sequential','abstract')),
+  title text,
+  intro_html text,
+  source_id text not null references public.sources(id) default 'naadi-original-v1',
+  pack_id text references public.content_packs(id) on delete set null,
+  status text not null default 'published' check (status in ('draft','in_review','published','retired')),
+  created_at timestamptz not null default now(),
+  check (kind <> 'abstract' or intro_html is not null)
+);
+
 create table public.questions (
   id text primary key,
   chapter_id text references public.chapters(id),
@@ -287,8 +353,21 @@ create table public.questions (
   -- 0028: the student's own MCQs (null = shared); visible to the owner only, answer columns hidden as for shared
   owner_user_id uuid references auth.users(id) on delete cascade,
   -- 0036: set by trigger naadi_mark_admin_edit on every non-seed write that changes content; the seed keeps the row
-  admin_edited_at timestamptz
+  admin_edited_at timestamptz,
+  -- 0039: the 2026 item formats. None of these is granted to clients (why_not, like why_not_html, leaves only
+  -- through the API after an attempt). difficulty_level 1-5 (difficulty keeps the easy/medium/hard bucket).
+  difficulty_level smallint check (difficulty_level is null or difficulty_level between 1 and 5),
+  item_format text not null default 'single' check (item_format in ('single','chart','sequential','abstract')),
+  set_id text references public.question_sets(id) on delete set null,
+  set_order smallint check (set_order is null or set_order between 1 and 9),
+  why_not jsonb check (why_not is null or jsonb_typeof(why_not) = 'object'),
+  figure_ids text[] not null default '{}',
+  pack_id text references public.content_packs(id) on delete set null,
+  constraint questions_set_shape check ((set_id is null) = (set_order is null)
+    and (item_format not in ('sequential','abstract') or set_id is not null))
 );
+create unique index questions_set_order_idx on public.questions (set_id, set_order) where set_id is not null;
+create index questions_pack_idx on public.questions (pack_id) where pack_id is not null;
 create index questions_owner_idx on public.questions (owner_user_id) where owner_user_id is not null;
 create index questions_chapter_idx on public.questions (chapter_id);
 create index questions_taxonomy_idx on public.questions using gin (taxonomy_ids);
@@ -314,6 +393,8 @@ create table public.flashcards (
   anki_note_type text check (anki_note_type is null or char_length(anki_note_type) <= 200),
   -- 0031: the source of the text: seed cards 'naadi-original-v1', imported Anki cards 'user-upload', else null
   source_id text references public.sources(id),
+  -- 0039: the content pack of a seed card (stable uuid5 of the pack card id)
+  pack_id text references public.content_packs(id) on delete set null,
   constraint flashcards_anki_source_check check (origin <> 'anki_import' or coalesce(source_id = 'user-upload', false))
 );
 create index flashcards_owner_idx on public.flashcards (owner_user_id);
@@ -1260,6 +1341,8 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 --   questions: status = 'published' and (chapter_id is null or exists (select 1 from public.chapters c where c.id = questions.chapter_id))
 --   flashcards (anon): owner_user_id is null and question_id is null
 --   flashcards (authenticated): owner_user_id = (select auth.uid()) or (owner_user_id is null and (question_id is null or exists (select 1 from public.attempts a where a.user_id = (select auth.uid()) and a.question_id = flashcards.question_id)))
+--   blueprint_targets (0039): true
+--   question_sets (0039): status = 'published'
 --
 -- questions: clients get column-level select only on
 --   (id, chapter_id, exam, block, stem_html, options, difficulty, taxonomy_ids, tags, source_id, status, created_at);
@@ -1273,6 +1356,7 @@ create trigger export_jobs_touch_updated_at before update on public.export_jobs 
 --   search_usage, agent_health (0005), question_reviews, authoring_runs (0024), naadi_alembic_version
 --   search_usage, agent_health (0005), pathway_task_checks (0029), naadi_alembic_version
 --   sync_ops (0038: no policy; stored response bodies)
+--   taxonomy_crosswalk, content_packs (0039)
 --   (embeddings: retrieval runs in the API; question and draft chunks would leak answers)
 --
 -- 0013: study_plans: select only. study_plan_days: select + update (status, score_notes). coach_suggestions:

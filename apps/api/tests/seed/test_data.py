@@ -33,14 +33,14 @@ def test_real_bundle_has_the_expected_counts(bundle) -> None:  # type: ignore[no
     assert len(bundle.sections) == 259
     assert len(bundle.questions) == 685
     assert len(bundle.figures) == 95
-    assert len(bundle.taxonomy) == 217
+    assert len(bundle.taxonomy) == 688  # 217 legacy + 471 USMLE-2026
     assert len(bundle.question_map) == 685
     assert len(bundle.stages) == 16
     assert len(bundle.tasks) == 186
     assert len(bundle.plan.days) == 60
     assert len(bundle.guides) == 17
     assert {g.key for g in bundle.guides} == {"overview"} | {s.key for s in bundle.stages}
-    assert len(bundle.sources.accepted) == 20  # catalog + internal + user-provided + two pathway link sources
+    assert len(bundle.sources.accepted) == 21  # catalog + internal + user-provided + two pathway link sources + outline
     assert bundle.sources.rejected == []
     assert sum(len(bundle.bodies.sections[s.id].figure_ids) for _c, _i, s in bundle.sections) == 95
 

@@ -81,6 +81,10 @@ jobs:
       - name: Model chains (free-only, catalog, capabilities)
         # No NVIDIA key in CI: NVIDIA models are listed as "not probed in CI"; the Space health check probes them.
         run: uv --directory apps/api run python ../../tools/check_models.py
+      - name: Content library (USMLE-2026 taxonomy drift + pack validation)
+        run: |
+          python3 tools/usmle2026.py --check
+          uv --directory apps/api run python ../../tools/validate_content.py
       - name: Build web
         run: pnpm build
       - name: Bundle budgets (size-limit; initial JS <= 250 KB gz, CSS <= 40 KB, each page chunk <= 150 KB)

@@ -322,6 +322,24 @@ sources:
     verified_url: null
     reference_url: https://www.usmle.org/privacy-policy
 
+  - id: usmle-content-outline-2026
+    name: USMLE Content Outline (2026)
+    url: https://www.usmle.org/sites/default/files/2022-01/USMLE_Content_Outline_0.pdf
+    license: link-only
+    allow_copy: false
+    allow_modify: false
+    allow_commercial: false
+    allow_ai_ingest: false
+    attribution_template: "Topic areas follow the USMLE Content Outline (2026), © FSMB and NBME: {url}"
+    notes: >-
+      "Copyright © 2026 by the Federation of State Medical Boards of the United States, Inc. (FSMB), and NBME.
+      All rights reserved." Cited by the USMLE-2026 taxonomy (taxonomy_nodes.source_id): Naadi stores only short
+      functional area names (levels 1-3) as internal labels, never the PDF text or the level-4 example lists,
+      and links out for the full outline (docs/research/usmle_outline_and_text_licences.md A.6). No USMLE/NBME
+      mark implies endorsement. Permission from FSMB/NBME would strengthen this; not requested yet.
+    verified: true
+    verified_url: https://www.usmle.org/sites/default/files/2022-01/USMLE_Content_Outline_0.pdf
+
   - id: nbme-lab-values
     name: NBME Laboratory Values (reference ranges)
     url: https://www.nbme.org/?p=217124

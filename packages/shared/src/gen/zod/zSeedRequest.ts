@@ -11,7 +11,9 @@ export const zSeedRequest = z.object({
   dry_run: z.boolean().optional().default(true),
   force: z.boolean().optional().default(false),
   only: z
-    .array(z.enum(["sources", "taxonomy", "figures", "chapters", "questions", "pathway", "plan", "app_config"]))
+    .array(
+      z.enum(["sources", "taxonomy", "figures", "chapters", "questions", "cards", "pathway", "plan", "app_config"]),
+    )
     .min(1)
     .optional(),
 });

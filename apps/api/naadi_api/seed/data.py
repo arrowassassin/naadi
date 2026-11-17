@@ -19,6 +19,20 @@ import yaml
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from ..settings import APP_DIR, REPO_ROOT
+from .packs import (
+    LEGACY_VERSION,
+    OUTLINE_VERSION,
+    PACK_BODIES,
+    Outline,
+    Pack,
+    PackCard,
+    PackSet,
+    answer_html,
+    difficulty_bucket,
+    load_outline,
+    load_packs,
+    why_not_html,
+)
 
 ORIGINAL_SOURCE = "naadi-original-v1"
 SECTION_BODIES = Path("generated") / "section_bodies.json"
@@ -120,6 +134,9 @@ class SectionIn(_In):
     heading: str = Field(min_length=1)
     html: str = Field(min_length=1)
     figure_ids: list[str] = Field(alias="figureIds")
+    # Content packs only (seed/packs.py): USMLE-2026 leaf ids (with ancestors) and link-only further reading.
+    taxonomy_ids: list[str] | None = None
+    further_reading: list[dict[str, str]] | None = None
 
 
 class ChapterIn(_In):
@@ -132,13 +149,18 @@ class ChapterIn(_In):
     sections: list[SectionIn] = Field(min_length=1)
     figure_ids: list[str] = Field(alias="figureIds")
     question_ids: list[str] = Field(alias="questionIds")
+    pack_id: str | None = None
+    source: str = ORIGINAL_SOURCE
 
 
 class FigureIn(_In):
     id: str = Field(pattern=ID)
     chapter_id: str = Field(alias="chapterId")
     caption: str = Field(min_length=1)
-    file: str = Field(pattern=r"^figures/[a-z0-9_.-]+\.svg$")
+    file: str = Field(pattern=r"^(content/[a-z0-9-]+/)?figures/[a-z0-9_.-]+\.svg$")
+    source: str = ORIGINAL_SOURCE
+    attribution: str | None = None
+    pack_id: str | None = None
 
 
 class OptionIn(_In):
@@ -154,7 +176,7 @@ class ReviewIn(BaseModel):
 
 class QuestionIn(_In):
     id: str = Field(pattern=ID)
-    chapter_id: str = Field(alias="chapterId")
+    chapter_id: str | None = Field(alias="chapterId")
     exam: Exam
     number: int = Field(ge=1)
     block: int | None = Field(ge=1, le=99)
@@ -168,17 +190,43 @@ class QuestionIn(_In):
     difficulty: Literal["easy", "medium", "hard"]
     source: str
     review: ReviewIn
+    status: Literal["draft", "in_review", "published", "retired"] = "published"
+    # Content packs only (seed/packs.py); None on the legacy rows, which keep their original column set.
+    pack_id: str | None = None
+    difficulty_level: int | None = None
+    item_format: str | None = None
+    set_id: str | None = None
+    set_order: int | None = None
+    why_not: dict[str, str] | None = None
+    objective: str | None = None
+    figure_ids: list[str] | None = None
 
 
 class TaxonomyIn(_In):
     id: str = Field(pattern=ID)
-    kind: Literal["exam", "system", "discipline", "competency", "clinical_science", "topic"]
+    kind: Literal[
+        "exam",
+        "system",
+        "discipline",
+        "competency",
+        "clinical_science",
+        "topic",
+        "outline",
+        "outline_system",
+        "outline_category",
+        "outline_area",
+        "task",
+    ]
     parent_id: str | None
     label: str = Field(min_length=1)
     exam: list[Exam] = Field(min_length=1)
     weight_min: float | None
     weight_max: float | None
     sort: int
+    outline_version: str = LEGACY_VERSION
+    code: str | None = None
+    level: int | None = None
+    source_id: str | None = None
 
 
 class LinkIn(_In):
@@ -297,6 +345,10 @@ class SeedBundle:
     plan: PlanTemplateIn
     sources: LicenseGate
     bodies: SectionBodies
+    outline: Outline | None = None
+    packs: list[Pack] = field(default_factory=list)
+    sets: list[tuple[str, PackSet]] = field(default_factory=list)  # (pack id, set)
+    cards: list[tuple[str, PackCard]] = field(default_factory=list)  # (pack id, card)
     problems: list[str] = field(default_factory=list)
 
     @property
@@ -487,6 +539,10 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
     if unknown_nodes or unknown_marks:
         problems.append(f"{SECTION_BODIES}: unknown node types {unknown_nodes} / mark types {unknown_marks}")
 
+    outline, packs, sets, cards = merge_content(
+        data_dir, chapters, figures, questions, taxonomy, question_map, bodies, problems
+    )
+
     def dupes(ids: list[str], what: str) -> None:
         seen: set[str] = set()
         for i in ids:
@@ -542,6 +598,7 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
                 problems += body_problems(s.id, body.body, s.figure_ids)
                 if "[[figure:" in body.body_html:
                     problems.append(f"section {s.id}: [[figure: placeholder left in bodyHtml")
+    placed += [fid for q in questions for fid in q.figure_ids or []]
     unplaced = sorted(figure_ids - set(placed))
     if unplaced:
         problems.append(f"figures never placed in a section: {unplaced}")
@@ -549,7 +606,7 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
     if extra:
         problems.append(f"{SECTION_BODIES} has sections not in chapters.json: {extra[:5]}")
     for q in questions:
-        if q.chapter_id not in chapter_ids:
+        if q.chapter_id is not None and q.chapter_id not in chapter_ids:
             problems.append(f"question {q.id}: unknown chapter {q.chapter_id}")
         if q.source not in source_ids:
             problems.append(f"question {q.id}: source {q.source} is not seedable")
@@ -568,6 +625,7 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
     for qid in question_map:
         if qid not in question_ids:
             problems.append(f"question_taxonomy_map.json: unknown question {qid}")
+    problems += content_problems(outline, packs, sets, cards, chapters, figures, questions, source_ids, question_ids)
     for task in tasks:
         if task.stage_key not in stage_keys:
             problems.append(f"pathway task {task.id}: unknown stage {task.stage_key}")
@@ -600,6 +658,10 @@ def load_bundle(data_dir: Path, config_dir: Path) -> SeedBundle:
         plan=plan,
         sources=gate,
         bodies=bodies,
+        outline=outline,
+        packs=packs,
+        sets=sets,
+        cards=cards,
     )
 
 
@@ -621,4 +683,258 @@ def topological_taxonomy(nodes: list[TaxonomyIn]) -> list[TaxonomyIn]:
 
     for n in sorted(nodes, key=lambda x: (x.sort, x.id)):
         visit(n, ())
+    return out
+
+
+# ── content packs + USMLE-2026 (seed/packs.py) ──
+
+
+def _outline_taxonomy(outline: Outline) -> list[TaxonomyIn]:
+    return [
+        TaxonomyIn(
+            id=n.id,
+            kind=n.kind,
+            parent_id=n.parent_id,
+            label=n.label,
+            exam=list(n.exam),
+            weight_min=None,
+            weight_max=None,
+            sort=n.sort,
+            outline_version=OUTLINE_VERSION,
+            code=n.code,
+            level=n.level,
+            source_id=outline.source_id,
+        )
+        for n in outline.nodes
+    ]
+
+
+def _axes(outline: Outline, kind: str, slugs: list[str], where: str, problems: list[str]) -> list[str]:
+    out = []
+    for slug in slugs:
+        tid = outline.axis(kind, slug)
+        node = outline.by_id.get(tid)
+        if node is None or node.kind != kind:
+            problems.append(f"{where}: unknown {kind} {slug!r}")
+        else:
+            out.append(tid)
+    return out
+
+
+def _leaves(outline: Outline, areas: list[str], where: str, problems: list[str]) -> list[str]:
+    bad = [a for a in areas if a not in outline.leaves]
+    if bad:
+        problems.append(f"{where}: {bad} are not USMLE-2026 leaf areas (use ids like usmle2026.08.05.01)")
+    return outline.with_ancestors([a for a in areas if a in outline.leaves])
+
+
+def merge_content(
+    data_dir: Path,
+    chapters: list[ChapterIn],
+    figures: list[FigureIn],
+    questions: list[QuestionIn],
+    taxonomy: list[TaxonomyIn],
+    question_map: dict[str, list[str]],
+    bodies: SectionBodies,
+    problems: list[str],
+) -> tuple[Outline | None, list[Pack], list[tuple[str, PackSet]], list[tuple[str, PackCard]]]:
+    """Add the USMLE-2026 tree and every pack to the bundle's lists (in place). Legacy questions get their
+    USMLE-2026 areas (generated map, or a pack's `retag`) next to their legacy taxonomy ids."""
+    outline = load_outline(data_dir, problems)
+    packs = load_packs(data_dir, problems)
+    sets: list[tuple[str, PackSet]] = []
+    cards: list[tuple[str, PackCard]] = []
+    if outline is None:
+        return None, packs, sets, cards
+    taxonomy += _outline_taxonomy(outline)
+
+    legacy_ids = {q.id for q in questions}
+    retag: dict[str, list[str]] = {}
+    retire: set[str] = set()
+    for p in packs:
+        for qid, areas in p.meta.retag.items():
+            if qid not in legacy_ids:
+                problems.append(f"content/{p.meta.id}/pack.json: retag of unknown legacy question {qid}")
+            elif qid in retag:
+                problems.append(f"content/{p.meta.id}/pack.json: {qid} is retagged by two packs")
+            else:
+                retag[qid] = _leaves(outline, areas, f"content/{p.meta.id}/pack.json retag {qid}", problems)
+        for qid in p.meta.retire:
+            if qid not in legacy_ids:
+                problems.append(f"content/{p.meta.id}/pack.json: retire of unknown legacy question {qid}")
+            retire.add(qid)
+    for i, q in enumerate(questions):
+        generated = outline.question_map.get(q.id, [])
+        if q.id in retag:
+            ids = retag[q.id] + [
+                t for t in generated if outline.by_id[t].kind in ("discipline", "clinical_science", "task")
+            ]
+        else:
+            ids = outline.with_ancestors(generated)
+        if q.id in question_map:
+            question_map[q.id] = question_map[q.id] + [t for t in ids if t not in question_map[q.id]]
+        if q.id in retire:
+            questions[i] = q.model_copy(update={"status": "retired"})
+
+    for p in packs:
+        pid = p.meta.id
+        where = f"content/{pid}"
+        if p.bodies is not None:
+            try:
+                pb = SectionBodies.model_validate(p.bodies)
+            except ValidationError as exc:
+                problems.append(f"{where}/{PACK_BODIES}: {exc.errors()[0]['msg']}; run `{CONVERT_CMD}`")
+            else:
+                if pb.schema_version != CONTENT_SCHEMA_VERSION:
+                    problems.append(f"{where}/{PACK_BODIES}: schema version {pb.schema_version}; run `{CONVERT_CMD}`")
+                bodies.sections.update(pb.sections)
+        for c in p.chapters:
+            secs = []
+            for sec in c.sections:
+                secs.append(
+                    SectionIn.model_validate(
+                        {
+                            "id": sec.id,
+                            "heading": sec.heading,
+                            "html": sec.html,
+                            "figureIds": sec.figure_ids,
+                            "taxonomy_ids": _leaves(outline, sec.areas, f"{where} section {sec.id}", problems),
+                            "further_reading": [r.model_dump(by_alias=True) for r in sec.further_reading],
+                        }
+                    )
+                )
+            chapters.append(
+                ChapterIn.model_validate(
+                    {
+                        "id": c.id,
+                        "exam": c.exam,
+                        "order": c.order,
+                        "kind": "chapter",
+                        "title": c.title,
+                        "meta": c.meta,
+                        "sections": secs,
+                        "figureIds": [f for sec in c.sections for f in sec.figure_ids],
+                        "questionIds": [q.id for q in p.items if q.chapter_id == c.id],
+                        "pack_id": pid,
+                        "source": c.source,
+                    }
+                )
+            )
+        for f in p.figures:
+            figures.append(
+                FigureIn.model_validate(
+                    {
+                        "id": f.id,
+                        "chapterId": f.chapter_id,
+                        "caption": f.caption,
+                        "file": f"content/{pid}/{f.file}",
+                        "source": f.source,
+                        "attribution": f.attribution,
+                        "pack_id": pid,
+                    }
+                )
+            )
+        sets += [(pid, s) for s in p.sets]
+        cards += [(pid, c) for c in p.cards]
+        for n, item in enumerate(p.items, start=1):
+            iw = f"{where} item {item.id}"
+            ids = _leaves(outline, item.areas, iw, problems)
+            ids += _axes(outline, "discipline", item.disciplines, iw, problems)
+            ids += _axes(outline, "clinical_science", item.clinical_sciences, iw, problems)
+            ids += _axes(outline, "task", item.tasks, iw, problems)
+            question_map[item.id] = ids
+            questions.append(
+                QuestionIn.model_validate(
+                    {
+                        "id": item.id,
+                        "chapterId": item.chapter_id,
+                        "exam": item.exam,
+                        "number": n,
+                        "block": None,
+                        "stemHtml": item.stem_html,
+                        "options": [{"label": o.label, "html": o.html} for o in item.options],
+                        "answer": item.answer,
+                        "answerHtml": answer_html(item),
+                        "explanationHtml": item.explanation_html,
+                        "whyNotHtml": why_not_html(item),
+                        "tags": item.tags,
+                        "difficulty": difficulty_bucket(item.difficulty),
+                        "source": item.source,
+                        "review": item.review.model_dump(by_alias=True),
+                        "status": item.status,
+                        "pack_id": pid,
+                        "difficulty_level": item.difficulty,
+                        "item_format": item.format,
+                        "set_id": item.set_id,
+                        "set_order": item.set_order,
+                        "why_not": item.why_not,
+                        "objective": item.objective,
+                        "figure_ids": item.figure_ids,
+                    }
+                )
+            )
+    return outline, packs, sets, cards
+
+
+def content_problems(
+    outline: Outline | None,
+    packs: list[Pack],
+    sets: list[tuple[str, PackSet]],
+    cards: list[tuple[str, PackCard]],
+    chapters: list[ChapterIn],
+    figures: list[FigureIn],
+    questions: list[QuestionIn],
+    source_ids: set[str],
+    question_ids: set[str],
+) -> list[str]:
+    """Cross-pack references: sources, sets, cards, figures and further reading."""
+    out: list[str] = []
+    if outline is not None and outline.source_id not in source_ids:
+        out.append(f"USMLE-2026 taxonomy: source {outline.source_id} is not seedable")
+    seen: set[str] = set()
+    for _pid, qs in sets:
+        if qs.id in seen:
+            out.append(f"sets: duplicate id {qs.id}")
+        seen.add(qs.id)
+        if qs.source not in source_ids:
+            out.append(f"set {qs.id}: source {qs.source} is not seedable")
+    section_ids = {s.id for c in chapters for s in c.sections}
+    figure_ids = {f.id for f in figures}
+    for c in chapters:
+        if c.pack_id and c.source not in source_ids:
+            out.append(f"chapter {c.id}: source {c.source} is not seedable")
+        for s in c.sections:
+            for r in s.further_reading or []:
+                if r["sourceId"] not in source_ids:
+                    out.append(f"section {s.id}: further reading source {r['sourceId']} is not in sources.yaml")
+    for f in figures:
+        if f.pack_id and f.source not in source_ids:
+            out.append(f"figure {f.id}: source {f.source} is not seedable")
+    for q in questions:
+        if q.pack_id is None:
+            continue
+        if q.set_id is not None and q.set_id not in seen:
+            out.append(f"question {q.id}: unknown set {q.set_id}")
+        for fid in q.figure_ids or []:
+            if fid not in figure_ids:
+                out.append(f"question {q.id}: unknown figure {fid}")
+    refs = {(p.meta.id, ref) for p in packs for item in p.items for ref in item.references}
+    for pid, ref in sorted(refs):
+        if ref not in source_ids:
+            out.append(f"content/{pid}: reference source {ref} is not in sources.yaml")
+    card_ids: set[str] = set()
+    for _pid, card in cards:
+        if card.id in card_ids:
+            out.append(f"cards: duplicate id {card.id}")
+        card_ids.add(card.id)
+        if card.source not in source_ids:
+            out.append(f"card {card.id}: source {card.source} is not seedable")
+        if card.section_id is not None and card.section_id not in section_ids:
+            out.append(f"card {card.id}: unknown section {card.section_id}")
+        if card.question_id is not None and card.question_id not in question_ids:
+            out.append(f"card {card.id}: unknown question {card.question_id}")
+        if outline is not None:
+            bad = [a for a in card.areas if a not in outline.leaves]
+            if bad:
+                out.append(f"card {card.id}: {bad} are not USMLE-2026 leaf areas")
     return out

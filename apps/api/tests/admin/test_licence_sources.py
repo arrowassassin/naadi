@@ -40,6 +40,7 @@ EXPECTED: dict[str, tuple[str | None, str | None, str | None]] = {
     "ahrq": ("copy_not_allowed", "copy_not_allowed", "copy_not_allowed"),
     "wikimedia-commons": ("no_license", "no_license", "no_license"),
     "usmle-official-samples": ("link_only", "link_only", "link_only"),
+    "usmle-content-outline-2026": ("link_only", "link_only", "link_only"),
     "nbme-lab-values": ("link_only", "link_only", "link_only"),
     "pathway-official-pages": ("link_only", "link_only", "link_only"),
     "pathway-third-party-pages": ("link_only", "link_only", "link_only"),

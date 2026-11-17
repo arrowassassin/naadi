@@ -107,6 +107,8 @@ CLIENT_CLOSED_TABLES = (
     "pathway_task_checks",
     "generation_state",
     "sync_ops",
+    "taxonomy_crosswalk",
+    "content_packs",
 )
 
 Rows = Sequence[dict[str, Any]]
@@ -177,8 +179,8 @@ def checks(head: str) -> list[Check]:
             " where relnamespace = 'public'::regnamespace and relkind in ('r','p') and not relrowsecurity",
         ),
         Check(
-            "60 Naadi tables present",
-            "select count(*) = 60 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
+            "64 Naadi tables present",
+            "select count(*) = 64 as ok, count(*)::text as detail from pg_tables where schemaname = 'public'"
             " and tablename not in ('naadi_alembic_version', 'alembic_version')"
             f" and tablename <> all({_array(AEGRA_TABLES)})",
         ),

@@ -1,0 +1,13 @@
+{
+  "id": "biostat-social",
+  "title": "Biostatistics, epidemiology and social sciences",
+  "owner": "seg23-g",
+  "idPrefix": "s23g",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "17",
+    "18"
+  ],
+  "retire": [],
+  "retag": {}
+}

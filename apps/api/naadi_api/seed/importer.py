@@ -45,6 +45,7 @@ from ..logs import get_logger
 from ..pathway.rules import host_matches
 from .data import ORIGINAL_SOURCE, SeedBundle, load_bundle, topological_taxonomy
 from .mock import strip_answer_key
+from .packs import OUTLINE_VERSION, card_uuid
 from .report import Check, SeedReport, StorageCounts, TableCounts
 from .storage import StorageTarget, md5_hex, sync_objects
 from .svg import SvgError, sanitize_svg
@@ -54,7 +55,7 @@ log = get_logger("naadi.seed")
 LOCK_KEY = 0x6E616164_69736564  # "naadised": one seed at a time per database
 STATEMENT_TIMEOUT_MS = 120_000
 FIGURE_FOLDER = "figures"
-GROUPS = ("sources", "taxonomy", "figures", "chapters", "questions", "pathway", "plan", "app_config")
+GROUPS = ("sources", "taxonomy", "figures", "chapters", "questions", "cards", "pathway", "plan", "app_config")
 _FIGURE_TITLE = re.compile(r"^(Figure\s+\d+[A-Za-z]?)\.\s")
 
 
@@ -230,10 +231,62 @@ def _taxonomy(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]
             "weight_min": t.weight_min,
             "weight_max": t.weight_max,
             "sort": t.sort,
+            "outline_version": t.outline_version,
+            "code": t.code,
+            "level": t.level,
+            "source_id": t.source_id,
         }
         for t in topological_taxonomy(b.taxonomy)
     ]
-    return {"taxonomy_nodes": upsert(cur, "taxonomy_nodes", ["id"], rows)}
+    out = {"taxonomy_nodes": upsert(cur, "taxonomy_nodes", ["id"], rows)}
+    if b.outline is not None:
+        out["blueprint_targets"] = upsert(cur, "blueprint_targets", ["node_id", "exam"], blueprint_rows(b))
+        out["taxonomy_crosswalk"] = upsert(cur, "taxonomy_crosswalk", ["from_id", "to_id"], crosswalk_rows(b))
+    out["content_packs"] = upsert(
+        cur,
+        "content_packs",
+        ["id"],
+        [
+            {
+                "id": p.meta.id,
+                "title": p.meta.title,
+                "owner": p.meta.owner,
+                "outline_version": p.meta.outline_version,
+                "systems": p.meta.systems,
+            }
+            for p in b.packs
+        ],
+    )
+    return out
+
+
+def blueprint_rows(b: SeedBundle) -> list[dict[str, Any]]:
+    assert b.outline is not None
+    return [
+        {
+            "node_id": r.node_id,
+            "exam": r.exam,
+            "outline_version": OUTLINE_VERSION,
+            "row_key": r.row,
+            "row_label": r.row_label,
+            "weight_min": r.weight_min,
+            "weight_max": r.weight_max,
+            "share": r.share,
+            "min_items": r.min_items,
+            "target_items": r.target_items,
+            "tested": r.tested,
+        }
+        for r in b.outline.blueprint
+    ]
+
+
+def crosswalk_rows(b: SeedBundle) -> list[dict[str, Any]]:
+    assert b.outline is not None
+    return [
+        {"from_id": src, "to_id": dst, "to_version": OUTLINE_VERSION}
+        for src, dsts in sorted(b.outline.crosswalk.items())
+        for dst in dsts
+    ]
 
 
 @dataclass
@@ -274,8 +327,8 @@ def prepare_figures(b: SeedBundle) -> list[PreparedFigure]:
     return out
 
 
-def _attribution(b: SeedBundle) -> str:
-    template = next((s.attribution_template for s in b.sources.accepted if s.id == ORIGINAL_SOURCE), None)
+def _attribution(b: SeedBundle, source_id: str = ORIGINAL_SOURCE) -> str:
+    template = next((s.attribution_template for s in b.sources.accepted if s.id == source_id), None)
     return (template or "Naadi").replace("{year}", str(dt.datetime.now(dt.UTC).year))
 
 
@@ -289,11 +342,11 @@ def _media_rows(b: SeedBundle, figures: list[PreparedFigure], bucket: str) -> li
             {
                 "id": p.id,
                 "kind": "svg",
-                "source_id": ORIGINAL_SOURCE,
+                "source_id": f.source,
                 "title": m.group(1) if m else None,
                 "caption": f.caption,
                 "url": f"{bucket}/{FIGURE_FOLDER}/{p.name}",
-                "attribution": _attribution(b),
+                "attribution": f.attribution or _attribution(b, f.source),
                 "width": p.width,
                 "height": p.height,
                 "content_sha256": p.sha256,
@@ -321,7 +374,8 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
             "meta": c.meta,
             "sort": c.order,
             "status": "published",
-            "source_id": ORIGINAL_SOURCE,
+            "source_id": c.source,
+            "pack_id": c.pack_id,
             "admin_edited_at": None,  # a forced run takes the chapter back from the admin
         }
         for c in b.chapters
@@ -368,7 +422,30 @@ def _chapters(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[s
         kept = int(row[0]) if row else 0
     else:
         kept = 0
-    counts = upsert(cur, "chapter_sections", ["id"], sections, guard=guard)
+    # Legacy sections keep their original column set (their taxonomy_ids belong to whoever set them); pack
+    # sections also carry their pack, USMLE-2026 areas and link-only further reading.
+    pack_of = {s.id: (c.pack_id, s) for c, _i, s in b.sections if c.pack_id}
+    counts = upsert(cur, "chapter_sections", ["id"], [r for r in sections if r["id"] not in pack_of], guard=guard)
+    packed = upsert(
+        cur,
+        "chapter_sections",
+        ["id"],
+        [
+            r
+            | {
+                "pack_id": pack_of[r["id"]][0],
+                "taxonomy_ids": pack_of[r["id"]][1].taxonomy_ids or [],
+                "further_reading": pack_of[r["id"]][1].further_reading or [],
+            }
+            for r in sections
+            if r["id"] in pack_of
+        ],
+        guard=guard,
+    )
+    counts.total += packed.total
+    counts.inserted += packed.inserted
+    counts.updated += packed.updated
+    counts.unchanged += packed.unchanged
     counts.kept = kept
     counts.unchanged -= kept
     out["chapter_sections"] = counts
@@ -431,13 +508,79 @@ def _questions(cur: psycopg.Cursor[Any], b: SeedBundle, *, force: bool) -> dict[
             "taxonomy_ids": b.question_map[q.id],
             "tags": q.tags,
             "source_id": q.source,
-            "status": "published",
+            "status": q.status,
             "review": q.review.model_dump(by_alias=True),
             "admin_edited_at": None,  # a forced run takes the item back from the admin
         }
         for q in b.questions
     ]
-    return {"questions": upsert(cur, "questions", ["id"], rows, guard=None if force else ADMIN_EDIT_GUARD)}
+    guard = None if force else ADMIN_EDIT_GUARD
+    out = {
+        "question_sets": upsert(
+            cur,
+            "question_sets",
+            ["id"],
+            [
+                {
+                    "id": s.id,
+                    "exam": s.exam,
+                    "kind": s.kind,
+                    "title": s.title,
+                    "intro_html": s.intro_html,
+                    "source_id": s.source,
+                    "pack_id": pid,
+                    "status": "published",
+                }
+                for pid, s in b.sets
+            ],
+        )
+    }
+    legacy = [r for r, q in zip(rows, b.questions, strict=True) if q.pack_id is None]
+    packed = [
+        r
+        | {
+            "educational_objective": q.objective,
+            "pack_id": q.pack_id,
+            "difficulty_level": q.difficulty_level,
+            "item_format": q.item_format,
+            "set_id": q.set_id,
+            "set_order": q.set_order,
+            "why_not": q.why_not,
+            "figure_ids": q.figure_ids or [],
+        }
+        for r, q in zip(rows, b.questions, strict=True)
+        if q.pack_id is not None
+    ]
+    counts = upsert(cur, "questions", ["id"], legacy, guard=guard)
+    more = upsert(cur, "questions", ["id"], packed, guard=guard)
+    counts.total += more.total
+    counts.inserted += more.inserted
+    counts.updated += more.updated
+    counts.unchanged += more.unchanged
+    out["questions"] = counts
+    return out
+
+
+def _cards(cur: psycopg.Cursor[Any], b: SeedBundle) -> dict[str, TableCounts]:
+    """Pack flashcards: shared (no owner), origin 'seed', with a stable uuid per pack card id."""
+    rows = [
+        {
+            "id": card_uuid(c.id),
+            "owner_user_id": None,
+            "deck": "Naadi core",
+            "front_html": c.front_html,
+            "back_html": c.back_html,
+            "question_id": c.question_id,
+            "section_id": c.section_id,
+            "taxonomy_ids": b.outline.with_ancestors(c.areas) if b.outline else [],
+            "origin": "seed",
+            "source_id": c.source,
+            "pack_id": pid,
+            "tags": c.tags,
+        }
+        for pid, c in b.cards
+    ]
+    return {"flashcards": upsert(cur, "flashcards", ["id"], rows)}
 
 
 PATHWAY_OFFICIAL_SOURCE = "pathway-official-pages"
@@ -536,6 +679,8 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
         "media_assets": [f.id for f in b.figures],
         "taxonomy_nodes": [t.id for t in b.taxonomy],
         "pathway_tasks": [t.id for t in b.tasks],
+        "question_sets": [s.id for _p, s in b.sets],
+        "content_packs": [p.meta.id for p in b.packs],
     }
     actual: dict[str, int] = {}
     for table, wanted in ids.items():
@@ -579,6 +724,14 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
                 for fid in b.bodies.sections[s.id].figure_ids
             ]
         ),
+    )
+    actual["blueprint_targets"] = one(
+        cur,
+        "select count(*) from public.blueprint_targets where outline_version = %s",
+        OUTLINE_VERSION,
+    )
+    actual["pack_flashcards"] = one(
+        cur, "select count(*) from public.flashcards where id = any(%s::uuid[])", [card_uuid(c.id) for _p, c in b.cards]
     )
     actual["app_config"] = one(
         cur, "select count(*) from public.app_config where key = any(%s)", list(file_values(b.config_dir))
@@ -647,13 +800,14 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
     # questions-scope: seed (verifies the bundle's own ids only)
     unpublished = one(
         cur,
-        # an item an admin retired or sent back to review (admin_edited_at, migration 0036) is the admin's call
-        "select count(*) from public.questions where id = any(%s) and status <> 'published'"
-        " and admin_edited_at is null",
-        ids["questions"],
+        # an item an admin retired or sent back to review (admin_edited_at, migration 0036) is the admin's call;
+        # otherwise the status is the bundle's (published, or retired by a pack / held back as draft in a pack)
+        "select count(*) from public.questions q join jsonb_each_text(%s::jsonb) s on s.key = q.id"
+        " where q.status <> s.value and q.admin_edited_at is null",
+        json.dumps({q.id: q.status for q in b.questions}),
     )
     checks.append(
-        Check(name="seeded questions are published", ok=unpublished == 0, detail=f"{unpublished} not published")
+        Check(name="seeded questions have the bundle's status", ok=unpublished == 0, detail=f"{unpublished} differ")
     )
     # questions-scope: seed (verifies the bundle's own ids only)
     expert = one(
@@ -723,6 +877,10 @@ def expected_counts(b: SeedBundle) -> dict[str, int]:
         "pathway_guides": len(b.guides),
         "plan_template_days": len(b.plan.days),
         "sources": len(b.sources.accepted),
+        "question_sets": len(b.sets),
+        "content_packs": len(b.packs),
+        "blueprint_targets": len(b.outline.blueprint) if b.outline else 0,
+        "pack_flashcards": len(b.cards),
         "section_media": sum(len(b.bodies.sections[s.id].figure_ids) for _c, _i, s in b.sections),
         "app_config": len(file_values(b.config_dir)),
     }
@@ -804,6 +962,8 @@ def run_seed(opts: SeedOptions, *, bundle: SeedBundle | None = None) -> SeedRepo
                             report.tables.update(_chapters(cur, b, force=opts.force))
                         elif group == "questions":
                             report.tables.update(_questions(cur, b, force=opts.force))
+                        elif group == "cards":
+                            report.tables.update(_cards(cur, b))
                         elif group == "pathway":
                             report.tables.update(_pathway(cur, b))
                         elif group == "plan":
@@ -851,6 +1011,10 @@ _COUNT_GROUP = {
     "section_media": "chapters",
     "questions": "questions",
     "question_map_entries": "questions",
+    "question_sets": "questions",
+    "content_packs": "taxonomy",
+    "blueprint_targets": "taxonomy",
+    "pack_flashcards": "cards",
     "media_assets": "figures",
     "taxonomy_nodes": "taxonomy",
     "pathway_stages": "pathway",

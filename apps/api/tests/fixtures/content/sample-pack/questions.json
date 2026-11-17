@@ -1,0 +1,298 @@
+{
+  "sets": [
+    {
+      "id": "smp-set01",
+      "exam": "step2ck",
+      "kind": "abstract",
+      "title": "Study drug and cardiovascular events",
+      "introHtml": "<p><strong>Study summary (fictional).</strong> A randomized, double-blind, placebo-controlled trial enrolled 2,000 adults with type 2 diabetes and no prior cardiovascular events. Participants received the study drug or placebo for 3 years. The primary outcome (cardiovascular death, myocardial infarction or stroke) occurred in 8.0% of the study-drug group and 10.0% of the placebo group (P = .03).</p>",
+      "source": "naadi-original-v1"
+    },
+    {
+      "id": "smp-set02",
+      "exam": "step2ck",
+      "kind": "sequential",
+      "title": "Inferior STEMI",
+      "source": "naadi-original-v1"
+    }
+  ],
+  "items": [
+    {
+      "id": "smp-q01",
+      "exam": "step1",
+      "format": "single",
+      "chapterId": "smp-ch01",
+      "stemHtml": "<p>A 24-year-old woman runs on a treadmill during a fitness assessment. Her heart rate rises from 64/min to 160/min, and her myocardial oxygen consumption roughly triples. Which of the following mainly meets the increased myocardial oxygen demand?</p>",
+      "options": [
+        {
+          "label": "A",
+          "html": "A rise in oxygen extraction from coronary blood"
+        },
+        {
+          "label": "B",
+          "html": "Coronary arteriolar dilation that raises blood flow"
+        },
+        {
+          "label": "C",
+          "html": "A rise in blood hemoglobin concentration"
+        },
+        {
+          "label": "D",
+          "html": "Greater left ventricular coronary flow during systole"
+        },
+        {
+          "label": "E",
+          "html": "Recruitment of new collateral vessels"
+        }
+      ],
+      "answer": "B",
+      "explanationHtml": "<p>Myocardial oxygen extraction is already near its maximum at rest, so extra demand is met by metabolic vasodilation of coronary arterioles (adenosine, nitric oxide, local hypoxia), which raises flow several-fold.</p><p><strong>Takeaway:</strong> the heart raises supply by raising flow, not extraction.</p>",
+      "whyNot": {
+        "A": "Resting extraction is about 70–75%, so it can rise only a little.",
+        "C": "Hemoglobin does not change meaningfully during a single bout of exercise.",
+        "D": "Systolic compression reduces left ventricular coronary flow; most flow occurs in diastole.",
+        "E": "Collaterals develop over weeks of chronic ischemia, not during one exercise session."
+      },
+      "objective": "Explain why increased myocardial oxygen demand is met by increased coronary flow rather than increased extraction.",
+      "areas": [
+        "usmle2026.08.05.01"
+      ],
+      "disciplines": [
+        "physiology"
+      ],
+      "tasks": [
+        "medical_knowledge"
+      ],
+      "difficulty": 2,
+      "source": "naadi-original-v1",
+      "tags": [
+        "coronary physiology"
+      ],
+      "review": {
+        "status": "self_reviewed",
+        "humanExpertReviewed": false,
+        "author": "seg23-core"
+      }
+    },
+    {
+      "id": "smp-q02",
+      "exam": "step2ck",
+      "format": "abstract",
+      "setId": "smp-set01",
+      "setOrder": 1,
+      "stemHtml": "<p>Based on the study summary, what is the number of patients who need to be treated with the study drug for 3 years to prevent one primary outcome event?</p>",
+      "options": [
+        {
+          "label": "A",
+          "html": "10"
+        },
+        {
+          "label": "B",
+          "html": "20"
+        },
+        {
+          "label": "C",
+          "html": "50"
+        },
+        {
+          "label": "D",
+          "html": "80"
+        },
+        {
+          "label": "E",
+          "html": "100"
+        }
+      ],
+      "answer": "C",
+      "explanationHtml": "<p>Absolute risk reduction = 10.0% − 8.0% = 2.0% = 0.02. NNT = 1 / 0.02 = 50.</p>",
+      "whyNot": {
+        "A": "10 would need an absolute risk reduction of 10 percentage points.",
+        "B": "20 would need an absolute risk reduction of 5 percentage points.",
+        "D": "80 is not derived from either event rate.",
+        "E": "100 would need an absolute risk reduction of 1 percentage point."
+      },
+      "objective": "Calculate the number needed to treat from two event rates.",
+      "areas": [
+        "usmle2026.17.03.01"
+      ],
+      "clinicalSciences": [
+        "medicine"
+      ],
+      "tasks": [
+        "pbli"
+      ],
+      "difficulty": 2,
+      "source": "naadi-original-v1",
+      "review": {
+        "status": "self_reviewed",
+        "humanExpertReviewed": false,
+        "author": "seg23-core"
+      }
+    },
+    {
+      "id": "smp-q03",
+      "exam": "step2ck",
+      "format": "abstract",
+      "setId": "smp-set01",
+      "setOrder": 2,
+      "stemHtml": "<p>Based on the study summary, what is the relative risk reduction of the primary outcome with the study drug?</p>",
+      "options": [
+        {
+          "label": "A",
+          "html": "2%"
+        },
+        {
+          "label": "B",
+          "html": "8%"
+        },
+        {
+          "label": "C",
+          "html": "20%"
+        },
+        {
+          "label": "D",
+          "html": "25%"
+        },
+        {
+          "label": "E",
+          "html": "80%"
+        }
+      ],
+      "answer": "C",
+      "explanationHtml": "<p>Relative risk = 8.0% / 10.0% = 0.8. Relative risk reduction = 1 − 0.8 = 20%.</p>",
+      "whyNot": {
+        "A": "2% is the absolute risk reduction, not the relative one.",
+        "B": "8% is the event rate in the treated group.",
+        "D": "25% divides the difference by the treated group's rate instead of the control rate.",
+        "E": "80% is the relative risk itself."
+      },
+      "objective": "Distinguish relative from absolute risk reduction.",
+      "areas": [
+        "usmle2026.17.03.01"
+      ],
+      "clinicalSciences": [
+        "medicine"
+      ],
+      "tasks": [
+        "pbli"
+      ],
+      "difficulty": 2,
+      "source": "naadi-original-v1",
+      "review": {
+        "status": "self_reviewed",
+        "humanExpertReviewed": false,
+        "author": "seg23-core"
+      }
+    },
+    {
+      "id": "smp-q04",
+      "exam": "step2ck",
+      "format": "sequential",
+      "setId": "smp-set02",
+      "setOrder": 1,
+      "stemHtml": "<p>A 67-year-old man comes to the emergency department 2 hours after the onset of crushing substernal chest pain. He has already chewed aspirin. Pulse is 92/min and blood pressure is 128/78 mm Hg. An ECG shows 3-mm ST-segment elevation in leads II, III and aVF. The hospital performs primary percutaneous coronary intervention (PCI) around the clock, and the catheterization team can start within 30 minutes. Which of the following is the most appropriate next step in management?</p>",
+      "options": [
+        {
+          "label": "A",
+          "html": "Fibrinolytic therapy in the emergency department"
+        },
+        {
+          "label": "B",
+          "html": "Primary PCI"
+        },
+        {
+          "label": "C",
+          "html": "CT coronary angiography"
+        },
+        {
+          "label": "D",
+          "html": "Exercise stress testing"
+        },
+        {
+          "label": "E",
+          "html": "Serial troponin measurement before deciding on reperfusion"
+        }
+      ],
+      "answer": "B",
+      "explanationHtml": "<p>In ST-elevation myocardial infarction, primary PCI is the preferred reperfusion strategy when it can be performed promptly (within 120 minutes of first medical contact).</p>",
+      "whyNot": {
+        "A": "Fibrinolysis is for STEMI when timely PCI is not available.",
+        "C": "CT angiography delays reperfusion and has no role in STEMI.",
+        "D": "Stress testing is contraindicated in an acute myocardial infarction.",
+        "E": "STEMI is diagnosed from the ECG; waiting for troponin delays reperfusion."
+      },
+      "objective": "Choose primary PCI for STEMI when it is promptly available.",
+      "areas": [
+        "usmle2026.08.05.01"
+      ],
+      "clinicalSciences": [
+        "medicine"
+      ],
+      "tasks": [
+        "pc_mixed_management"
+      ],
+      "difficulty": 2,
+      "source": "naadi-original-v1",
+      "review": {
+        "status": "self_reviewed",
+        "humanExpertReviewed": false,
+        "author": "seg23-core"
+      }
+    },
+    {
+      "id": "smp-q05",
+      "exam": "step2ck",
+      "format": "sequential",
+      "setId": "smp-set02",
+      "setOrder": 2,
+      "stemHtml": "<p>The patient undergoes successful stenting of a proximal right coronary artery occlusion. One hour later, blood pressure is 82/50 mm Hg. Jugular venous pressure is elevated and the lungs are clear. A right-sided ECG shows ST-segment elevation in lead V4R. Which of the following is the most appropriate next step to treat the hypotension?</p>",
+      "options": [
+        {
+          "label": "A",
+          "html": "Intravenous nitroglycerin"
+        },
+        {
+          "label": "B",
+          "html": "Intravenous furosemide"
+        },
+        {
+          "label": "C",
+          "html": "Intravenous normal saline bolus"
+        },
+        {
+          "label": "D",
+          "html": "Intravenous metoprolol"
+        },
+        {
+          "label": "E",
+          "html": "Intravenous morphine"
+        }
+      ],
+      "answer": "C",
+      "explanationHtml": "<p>Right ventricular infarction makes cardiac output preload-dependent. Hypotension with clear lungs and raised jugular venous pressure is treated first with intravenous fluid.</p>",
+      "whyNot": {
+        "A": "Nitrates reduce preload and can worsen hypotension in right ventricular infarction.",
+        "B": "Diuresis lowers preload further.",
+        "D": "A beta-blocker lowers heart rate and contractility in a hypotensive patient.",
+        "E": "Morphine causes venodilation and lowers preload."
+      },
+      "objective": "Treat hypotension from right ventricular infarction with volume.",
+      "areas": [
+        "usmle2026.08.05.01"
+      ],
+      "clinicalSciences": [
+        "medicine"
+      ],
+      "tasks": [
+        "pc_pharmacotherapy"
+      ],
+      "difficulty": 3,
+      "source": "naadi-original-v1",
+      "review": {
+        "status": "self_reviewed",
+        "humanExpertReviewed": false,
+        "author": "seg23-core"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"schemaVersion":1,"generator":"pnpm --filter @naadi/shared seed:convert","nodeTypes":["doc","paragraph","heading","bulletList","orderedList","listItem","table","tableRow","tableHeader","tableCell","callout","figure","video","pdf","questionEmbed","mermaid","math","hardBreak","text"],"markTypes":["bold","italic","subscript","superscript","highlight"],"sections":{}}

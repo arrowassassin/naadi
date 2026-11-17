@@ -8,7 +8,7 @@
  * header written here).
  */
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { htmlToContentDoc } from "./convert";
 import { CONTENT_SCHEMA_VERSION } from "./extensions";
@@ -28,10 +28,39 @@ interface SeedChapter {
   sections: SeedSection[];
 }
 
+export const CONTENT_DIR = path.join(DATA_DIR, "content");
+export const PACK_BODIES = "section_bodies.json";
+/** The importer tests' sample pack (apps/api/tests/fixtures/content), converted the same way. */
+export const FIXTURE_CONTENT_DIR = path.resolve(DATA_DIR, "../apps/api/tests/fixtures/content");
+
+/** Every content pack directory (<root>/<pack>/ with a pack.json), sorted. */
+export function packDirs(root: string = CONTENT_DIR): string[] {
+  if (!existsSync(root)) return [];
+  return readdirSync(root, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && existsSync(path.join(root, d.name, "pack.json")))
+    .map((d) => path.join(root, d.name))
+    .sort();
+}
+
+function readList<T>(file: string): T[] {
+  return existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as T[]) : [];
+}
+
 export function buildSeedBodies(): string {
   const chapters = JSON.parse(readFileSync(path.join(DATA_DIR, "chapters.json"), "utf8")) as SeedChapter[];
   const figures = JSON.parse(readFileSync(path.join(DATA_DIR, "figures.json"), "utf8")) as { id: string }[];
-  const known = new Set(figures.map((f) => f.id));
+  return convertChapters(chapters, new Set(figures.map((f) => f.id)));
+}
+
+/** A pack's section_bodies.json: its chapters, with its own figures and the legacy figures as known media. */
+export function buildPackBodies(packDir: string): string {
+  const chapters = readList<SeedChapter>(path.join(packDir, "chapters.json"));
+  const own = readList<{ id: string }>(path.join(packDir, "figures.json"));
+  const legacy = JSON.parse(readFileSync(path.join(DATA_DIR, "figures.json"), "utf8")) as { id: string }[];
+  return convertChapters(chapters, new Set([...legacy, ...own].map((f) => f.id)));
+}
+
+function convertChapters(chapters: SeedChapter[], known: Set<string>): string {
   const lines: string[] = [];
   const ids = new Set<string>();
   for (const chapter of chapters) {
@@ -66,5 +95,5 @@ export function buildSeedBodies(): string {
     markTypes: CONTENT_MARK_TYPES,
   };
   const head = JSON.stringify(header).slice(0, -1);
-  return `${head},"sections":{\n${lines.join(",\n")}\n}}\n`;
+  return lines.length ? `${head},"sections":{\n${lines.join(",\n")}\n}}\n` : `${head},"sections":{}}\n`;
 }

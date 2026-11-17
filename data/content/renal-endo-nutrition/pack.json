@@ -1,0 +1,13 @@
+{
+  "id": "renal-endo-nutrition",
+  "title": "Renal, endocrine and nutrition",
+  "owner": "seg23-c",
+  "idPrefix": "s23c",
+  "outlineVersion": "USMLE-2026",
+  "systems": [
+    "11",
+    "15"
+  ],
+  "retire": [],
+  "retag": {}
+}
