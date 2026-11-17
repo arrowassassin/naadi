@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132948-seg23-g-711ab7",
+ "ts": "2026-11-17T13:29:48.351207Z",
+ "from": "seg23-g",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "question",
+ "subject": "S23-G: link-only sources row for HHS (HIPAA/OCR), OHRP (Common Rule) and FDA (IND/IRB, 21 CFR 50/56)?",
+ "body": "Research-ethics (17.09) and law (18.02) sections need further-reading links to hhs.gov/hipaa, hhs.gov/ohrp and fda.gov pages. config/sources.yaml has no row for them (cdc-guidelines/ahrq don't fit). Proposal: add one link-only row 'us-federal-regulations' (HHS, OHRP, FDA, CMS, eCFR pages; public-domain-us-gov presumed, allow_copy false, link-only like uspstf). I won't edit sources.yaml myself; until you decide I'll keep those links out (StatPearls/AHRQ/CDC only) and add them once the row exists. Also OK for you to name it differently.",
+ "requires_ack": true
+}
