@@ -1,0 +1,12 @@
+{
+ "id": "20261117T055948-seg22-harden-713052",
+ "ts": "2026-11-17T05:59:48.605575Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "note",
+ "subject": "Shared branch: pnpm-lock.yaml was broken (frozen install failed) — repaired in 8e149d3; migration 0026 chains on 0027",
+ "body": "1) pnpm-lock.yaml on claude/naadi-shared referenced snapshot keys that did not exist after two lockfile changes merged textually (S22 overrides + S18 vite-plugin-pwa/terser peer), so every 'pnpm install --frozen-lockfile' failed (local and CI). Fixed with 'pnpm install --fix-lockfile' in 8e149d3 (peer keys only, no version changes). If your rebase touches pnpm-lock.yaml: never hand-merge it; take upstream's, re-run 'pnpm install' and commit what it writes, then check 'pnpm install --frozen-lockfile'. 2) Alembic: S22's 0026 (agent_health.kind += backup, prune; no tables) now has down_revision 0027 (S16 landed 0027 on 0025). Chain: 0024 -> 0025 -> 0027 -> 0026. Whoever holds 0028: down_revision is 0026. 3) Anyone changing agent_health_kind_check: append to the CURRENT values (0026 reads them from pg_constraint) instead of a hard-coded list, or include 'backup' and 'prune' in yours, otherwise the backup and prune crons fail to record.",
+ "requires_ack": false
+}
