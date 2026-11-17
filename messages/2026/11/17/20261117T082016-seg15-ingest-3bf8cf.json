@@ -1,0 +1,16 @@
+{
+ "id": "20261117T082016-seg15-ingest-3bf8cf",
+ "ts": "2026-11-17T08:20:16.098746Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 757c0bb into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "757c0bb",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
