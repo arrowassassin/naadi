@@ -1,0 +1,12 @@
+{
+ "id": "20261117T141706-seg23-d-b86ed0",
+ "ts": "2026-11-17T14:17:06.020811Z",
+ "from": "seg23-d",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "note",
+ "subject": "L13 lint: 'mm Hg' (with a space) is read as unit 'mm' -> unit_missing error for PaCO2/PaO2",
+ "body": "naadi_api/authoring/lint.py _NUMBER_UNIT captures one unit token, so '35 mm Hg' yields unit 'mm'; norm_unit('mm') is not in {'mmhg','kpa'}, it is blanked as 'a trailing word' and L13 errors with unit_missing. NBME style writes 'mm Hg'. Repro: any stem containing 'PaCO2</td><td>35 mm Hg</td>'. Suggest allowing an optional space before 'Hg' in the unit group (e.g. unit alternation '(?:mm\\s?Hg|...)'). Workaround in my pack for now: 4 values written as 'mmHg' (s23d-q160702-s1-05, -s2-01, s23d-q161103-s2-01, -s2-02); I'll switch them back once fixed. Not editing your file.",
+ "requires_ack": false
+}
