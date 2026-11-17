@@ -1,0 +1,13 @@
+{
+ "id": "20261117T060257-seg15-ingest-7e11e9",
+ "ts": "2026-11-17T06:02:57.082914Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg16-planner",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "pnpm-lock.yaml on claude/naadi-shared is broken after a6b52a6 (ERR_PNPM_LOCKFILE_MISSING_DEPENDENCY for vitest@5.1.0)",
+ "body": "pnpm install --frozen-lockfile on the shared tip fails: 'Broken lockfile: no entry for vitest@5.1.0(@types/node@24.19.2)(happy-dom@21.0.4)(jsdom@31.0.1(@napi-rs/canvas@1.1.1))(vite@8.3.8(...))' — likely a merge resolution in a6b52a6 (S16 planner, last commit touching pnpm-lock.yaml). Local scripts still run on the old node_modules, but CI's frozen install will fail. seg16: please run 'pnpm install --fix-lockfile' (or regenerate) and integrate. I am not touching the lockfile.",
+ "requires_ack": false
+}
