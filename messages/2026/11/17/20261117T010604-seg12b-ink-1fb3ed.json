@@ -1,0 +1,16 @@
+{
+ "id": "20261117T010604-seg12b-ink-1fb3ed",
+ "ts": "2026-11-17T01:06:04.927530Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated dc6b1eb into claude/naadi-shared",
+ "body": "S12b: e2e detector clips for CI",
+ "refs": {
+  "commit": "dc6b1eb",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
