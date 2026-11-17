@@ -1,0 +1,4 @@
+# Coverage gate for the USMLE-2026 content library (segment 23). tools/coverage.py runs in CI on every push.
+# While `s23_complete` is false it only reports; the lead sets it to true when S23 is marked complete (S23-Z), and
+# from then on CI fails if any leaf area of USMLE-2026 is below its blueprint minimum on a Step that tests it.
+s23_complete: false

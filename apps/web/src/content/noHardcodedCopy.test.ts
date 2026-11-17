@@ -16,6 +16,7 @@ const ROOTS = [
   "cards",
   "content",
   "exam",
+  "forms",
   "generation",
   "highlights",
   "ink",

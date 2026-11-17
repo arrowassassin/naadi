@@ -13,6 +13,7 @@ const NAV = [
   { to: "/admin/queues", key: "admin.nav.queues" },
   { to: "/admin/reports", key: "admin.nav.reports" },
   { to: "/admin/coverage", key: "admin.nav.coverage" },
+  { to: "/admin/blueprint", key: "admin.nav.blueprint" },
   { to: "/admin/config", key: "admin.nav.config" },
   { to: "/admin/agent-ops", key: "admin.nav.agent_ops" },
 ] as const;

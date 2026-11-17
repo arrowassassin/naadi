@@ -141,3 +141,20 @@ def test_pack_tables_are_read_only_for_students(url: str, pg: psycopg.Connection
         ):
             with pytest.raises(errors.InsufficientPrivilege), conn.transaction():
                 conn.execute(stmt)
+
+
+def test_blueprint_coverage_queries_count_the_seeded_pack(url: str) -> None:
+    from naadi_api.admin.blueprint import _ITEMS, _LEAVES, _TARGETS, OUTLINE_VERSION
+    from naadi_api.content.coverage import Leaf, Tagged, Target, blueprint_coverage
+
+    with psycopg.connect(url) as c:
+        v = {"v": OUTLINE_VERSION}
+        leaves = [Leaf(*r) for r in c.execute(_LEAVES, v).fetchall()]
+        targets = {(r[0], r[1]): Target(r[2], r[3], r[4]) for r in c.execute(_TARGETS, v).fetchall()}
+        items = [Tagged(r[0], r[1], frozenset(r[2] or ())) for r in c.execute(_ITEMS).fetchall()]
+    assert len(leaves) == 278
+    s2 = {a.id: a for a in blueprint_coverage(leaves, targets, items, "step2ck").areas}
+    ihd = s2["usmle2026.08.05.01"]
+    assert ihd.items >= 2 and ihd.sections >= 1 and ihd.cards >= 2  # smp-q04/q05, smp-s01, smp-c01/c02
+    s1 = {a.id: a for a in blueprint_coverage(leaves, targets, items, "step1").areas}
+    assert s1["usmle2026.08.08.01"].items >= 1  # ch05-q01 retagged by the sample pack

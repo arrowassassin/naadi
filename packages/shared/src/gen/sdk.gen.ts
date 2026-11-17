@@ -21,6 +21,7 @@ export { putAppConfig } from "./sdk/putAppConfig";
 export { getAppConfigHistory } from "./sdk/getAppConfigHistory";
 export { revertAppConfig } from "./sdk/revertAppConfig";
 export { getAdminCoverage } from "./sdk/getAdminCoverage";
+export { getAdminBlueprintCoverage } from "./sdk/getAdminBlueprintCoverage";
 export { getEmbeddingsStatus } from "./sdk/getEmbeddingsStatus";
 export { reindexEmbeddings } from "./sdk/reindexEmbeddings";
 export { listAdminMedia } from "./sdk/listAdminMedia";

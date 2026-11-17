@@ -8,7 +8,19 @@ from fastapi import Request
 from fastapi.responses import JSONResponse
 
 from ..errors import FieldError, error_response
-from . import agent_ops, chapters, coverage, generated_media, lookups, media, questions, queues, reports, sibling_queues
+from . import (
+    agent_ops,
+    blueprint,
+    chapters,
+    coverage,
+    generated_media,
+    lookups,
+    media,
+    questions,
+    queues,
+    reports,
+    sibling_queues,
+)
 from .chapters import InvalidBody
 from .common import ensure_limiters
 from .licence import GateRefused
@@ -43,5 +55,5 @@ def install_admin_routes(app: Any) -> None:
     ensure_limiters(app)
     app.add_exception_handler(GateRefused, _gate_refused)
     app.add_exception_handler(InvalidBody, _invalid_body)
-    for mod in (queues, chapters, media, questions, coverage, agent_ops, reports, lookups):
+    for mod in (queues, chapters, media, questions, coverage, blueprint, agent_ops, reports, lookups):
         app.include_router(mod.router)

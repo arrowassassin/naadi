@@ -4,6 +4,7 @@ import "@naadi/shared/ui-copy-admin";
 
 export { AdminLayout } from "./AdminLayout";
 export { AgentOpsPage } from "./AgentOpsPage";
+export { BlueprintPage } from "./BlueprintPage";
 export { ChapterPage } from "./ChapterPage";
 export { ChaptersPage } from "./ChaptersPage";
 export { ConfigKeyPage, ConfigListPage } from "./ConfigPages";

@@ -26,6 +26,8 @@ import type {
   AgentRun,
   AgentRunList,
   AgentUsage,
+  BlueprintArea,
+  BlueprintCoverage,
   CancelOut,
   ChapterCreate,
   ChapterPatch,
@@ -233,6 +235,8 @@ export type {
   AgentCron,
   AgentRun,
   AgentUsage,
+  BlueprintArea,
+  BlueprintCoverage as Blueprint,
   CoverageReport as Coverage,
   DiffBlock,
   EditorQuestion,
@@ -401,6 +405,8 @@ export const api = {
 
   coverage: (exam: string, signal?: AbortSignal) =>
     g<CoverageReport>("/coverage", Z.zGetAdminCoverageResponse, { exam }, signal),
+  blueprint: (exam: string, signal?: AbortSignal) =>
+    g<BlueprintCoverage>("/coverage/blueprint", Z.zGetAdminBlueprintCoverageResponse, { exam }, signal),
 
   agentRuns: (q: { graph?: string; status?: string; limit?: number }, signal?: AbortSignal) =>
     g<AgentRunList>("/agent/runs", Z.zListAdminAgentRunsResponse, q, signal),
@@ -446,6 +452,7 @@ export const qk = {
   config: (key: string) => ["admin", "config", key] as const,
   configHistory: (key: string) => ["admin", "config-history", key] as const,
   coverage: (exam: string) => ["admin", "coverage", exam] as const,
+  blueprint: (exam: string) => ["admin", "blueprint", exam] as const,
   runs: (q: object) => ["admin", "agent-runs", q] as const,
   crons: ["admin", "agent-crons"] as const,
   usage: (days: number) => ["admin", "agent-usage", days] as const,

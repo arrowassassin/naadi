@@ -12,6 +12,9 @@ const ReviewPage = lazyPage(() => import("../exam/results/ReviewPage").then((m) 
 const ResultsPage = lazyPage(() => import("../exam/results/ResultsPage").then((m) => m.ResultsPage));
 const BuilderPage = lazyPage(() => import("./BuilderPage").then((m) => m.BuilderPage));
 const QuestionPage = lazyPage(() => import("./QuestionPage").then((m) => m.QuestionPage));
+const OfficialPracticePage = lazyPage(() =>
+  import("../forms/OfficialPracticePage").then((m) => m.OfficialPracticePage),
+);
 
 const ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -161,5 +164,7 @@ export function practiceRoutes(parent: AnyRoute) {
       return <ReviewPage key={blockId} blockId={blockId} n={n} filter={filter} />;
     },
   });
-  return practice.addChildren([builder, question, results, review, single]);
+  // Official USMLE/NBME practice as links only (segment 23). A static segment, so it never reads as a block id.
+  const official = createRoute({ getParentRoute: () => practice, path: "official", component: OfficialPracticePage });
+  return practice.addChildren([builder, question, results, review, single, official]);
 }

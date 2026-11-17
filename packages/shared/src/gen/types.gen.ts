@@ -1708,6 +1708,128 @@ export type BlockSummary = {
 };
 
 /**
+ * BlueprintArea
+ */
+export type BlueprintArea = {
+  /**
+   * Cards
+   */
+  cards: number;
+  /**
+   * Code
+   */
+  code: string;
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Items
+   */
+  items: number;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Min Items
+   */
+  min_items: number;
+  /**
+   * Sections
+   */
+  sections: number;
+  /**
+   * Status
+   */
+  status: "below_min" | "below_target" | "met";
+  /**
+   * System
+   */
+  system: string;
+  /**
+   * Target Items
+   */
+  target_items: number;
+};
+
+/**
+ * BlueprintCoverage
+ */
+export type BlueprintCoverage = {
+  /**
+   * Area Rows
+   */
+  area_rows: Array<BlueprintArea>;
+  /**
+   * Areas
+   */
+  areas: number;
+  /**
+   * Areas Below Min
+   */
+  areas_below_min: number;
+  /**
+   * Areas Met
+   */
+  areas_met: number;
+  /**
+   * Exam
+   */
+  exam: "step1" | "step2ck";
+  /**
+   * Items
+   */
+  items: number;
+  /**
+   * Outline Version
+   */
+  outline_version: string;
+  /**
+   * Systems
+   */
+  systems: Array<BlueprintSystem>;
+  /**
+   * Target Items
+   */
+  target_items: number;
+};
+
+/**
+ * BlueprintSystem
+ */
+export type BlueprintSystem = {
+  /**
+   * Areas
+   */
+  areas: number;
+  /**
+   * Areas At Min
+   */
+  areas_at_min: number;
+  /**
+   * Areas Met
+   */
+  areas_met: number;
+  /**
+   * Code
+   */
+  code: string;
+  /**
+   * Items
+   */
+  items: number;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Target Items
+   */
+  target_items: number;
+};
+
+/**
  * CalendarFeedCreatedOut
  */
 export type CalendarFeedCreatedOut = {
@@ -12112,6 +12234,53 @@ export type GetAdminCoverageResponses = {
 };
 
 export type GetAdminCoverageResponse = GetAdminCoverageResponses[keyof GetAdminCoverageResponses];
+
+export type GetAdminBlueprintCoverageData = {
+  body?: never;
+  path?: never;
+  query?: {
+    /**
+     * Exam
+     */
+    exam?: "step1" | "step2ck";
+  };
+  url: "/api/admin/coverage/blueprint";
+};
+
+export type GetAdminBlueprintCoverageErrors = {
+  /**
+   * Missing, expired or invalid access token
+   */
+  401: ErrorResponse;
+  /**
+   * Not an admin
+   */
+  403: ErrorResponse;
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+  /**
+   * Rate limited
+   */
+  429: ErrorResponse;
+  /**
+   * Database unavailable
+   */
+  503: ErrorResponse;
+};
+
+export type GetAdminBlueprintCoverageError = GetAdminBlueprintCoverageErrors[keyof GetAdminBlueprintCoverageErrors];
+
+export type GetAdminBlueprintCoverageResponses = {
+  /**
+   * Successful Response
+   */
+  200: BlueprintCoverage;
+};
+
+export type GetAdminBlueprintCoverageResponse =
+  GetAdminBlueprintCoverageResponses[keyof GetAdminBlueprintCoverageResponses];
 
 export type GetEmbeddingsStatusData = {
   body?: never;

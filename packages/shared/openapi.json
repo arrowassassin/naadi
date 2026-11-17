@@ -3124,6 +3124,175 @@
         "title": "BlockSummary",
         "type": "object"
       },
+      "BlueprintArea": {
+        "properties": {
+          "cards": {
+            "title": "Cards",
+            "type": "integer"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "items": {
+            "title": "Items",
+            "type": "integer"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "min_items": {
+            "title": "Min Items",
+            "type": "integer"
+          },
+          "sections": {
+            "title": "Sections",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "below_min",
+              "below_target",
+              "met"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "system": {
+            "title": "System",
+            "type": "string"
+          },
+          "target_items": {
+            "title": "Target Items",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "label",
+          "system",
+          "items",
+          "sections",
+          "cards",
+          "min_items",
+          "target_items",
+          "status"
+        ],
+        "title": "BlueprintArea",
+        "type": "object"
+      },
+      "BlueprintCoverage": {
+        "properties": {
+          "area_rows": {
+            "items": {
+              "$ref": "#/components/schemas/BlueprintArea"
+            },
+            "title": "Area Rows",
+            "type": "array"
+          },
+          "areas": {
+            "title": "Areas",
+            "type": "integer"
+          },
+          "areas_below_min": {
+            "title": "Areas Below Min",
+            "type": "integer"
+          },
+          "areas_met": {
+            "title": "Areas Met",
+            "type": "integer"
+          },
+          "exam": {
+            "enum": [
+              "step1",
+              "step2ck"
+            ],
+            "title": "Exam",
+            "type": "string"
+          },
+          "items": {
+            "title": "Items",
+            "type": "integer"
+          },
+          "outline_version": {
+            "title": "Outline Version",
+            "type": "string"
+          },
+          "systems": {
+            "items": {
+              "$ref": "#/components/schemas/BlueprintSystem"
+            },
+            "title": "Systems",
+            "type": "array"
+          },
+          "target_items": {
+            "title": "Target Items",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "exam",
+          "outline_version",
+          "items",
+          "target_items",
+          "areas",
+          "areas_below_min",
+          "areas_met",
+          "systems",
+          "area_rows"
+        ],
+        "title": "BlueprintCoverage",
+        "type": "object"
+      },
+      "BlueprintSystem": {
+        "properties": {
+          "areas": {
+            "title": "Areas",
+            "type": "integer"
+          },
+          "areas_at_min": {
+            "title": "Areas At Min",
+            "type": "integer"
+          },
+          "areas_met": {
+            "title": "Areas Met",
+            "type": "integer"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "items": {
+            "title": "Items",
+            "type": "integer"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "target_items": {
+            "title": "Target Items",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "code",
+          "label",
+          "items",
+          "target_items",
+          "areas",
+          "areas_at_min",
+          "areas_met"
+        ],
+        "title": "BlueprintSystem",
+        "type": "object"
+      },
       "CalendarFeedCreatedOut": {
         "properties": {
           "created_at": {
@@ -22007,6 +22176,93 @@
           }
         },
         "summary": "Admin only: published content per taxonomy topic against the goals, and the system × discipline grid",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/coverage/blueprint": {
+      "get": {
+        "operationId": "getAdminBlueprintCoverage",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "exam",
+            "required": false,
+            "schema": {
+              "default": "step1",
+              "enum": [
+                "step1",
+                "step2ck"
+              ],
+              "title": "Exam",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlueprintCoverage"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Missing, expired or invalid access token"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not an admin"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Rate limited"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database unavailable"
+          }
+        },
+        "summary": "Admin only: published items per USMLE-2026 leaf area against the blueprint minimum and target",
         "tags": [
           "admin"
         ]

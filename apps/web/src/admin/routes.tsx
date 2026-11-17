@@ -28,6 +28,7 @@ const Question = page("QuestionPage");
 const ConfigList = page("ConfigListPage");
 const ConfigKey = page("ConfigKeyPage");
 const Coverage = page("CoveragePage");
+const Blueprint = page("BlueprintPage");
 const AgentOps = page("AgentOpsPage");
 const Queues = page("QueuesPage");
 const Queue = page("QueuePage");
@@ -179,6 +180,14 @@ export function adminRoutes<P extends AnyRoute>(parent: P) {
       return <Coverage search={coverage.useSearch()} />;
     },
   });
+  const blueprint = createRoute({
+    getParentRoute: () => layout,
+    path: "/admin/blueprint",
+    validateSearch: (s: Record<string, unknown>): ExamSearch => ({ exam: str(s.exam, TOKEN) }),
+    component: function BlueprintRoute() {
+      return <Blueprint search={blueprint.useSearch()} />;
+    },
+  });
   const agentOps = createRoute({
     getParentRoute: () => layout,
     path: "/admin/agent-ops",
@@ -214,6 +223,7 @@ export function adminRoutes<P extends AnyRoute>(parent: P) {
       configList,
       configKey,
       coverage,
+      blueprint,
       agentOps,
       queues,
       queue,
