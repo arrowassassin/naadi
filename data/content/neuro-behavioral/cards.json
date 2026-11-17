@@ -1713,8 +1713,8 @@
  },
  {
   "id": "s23e-c03051",
-  "frontHtml": "Apnea test thresholds for death by neurologic criteria?",
-  "backHtml": "No breathing with PaCO<sub>2</sub> <strong>at least 60 mm Hg and at least 20 mm Hg above baseline</strong>.",
+  "frontHtml": "Apnea test for death by neurologic criteria: what result confirms absent respiratory drive?",
+  "backHtml": "No breaths while arterial CO<sub>2</sub> climbs to 60 mm Hg or more and rises at least 20 mm Hg over the patient's baseline.",
   "sectionId": "s23e-s03b04",
   "questionId": null,
   "areas": [
@@ -2037,8 +2037,8 @@
  },
  {
   "id": "s23e-c04016",
-  "frontHtml": "Hypoglossal lesion: which way does the tongue deviate?",
-  "backHtml": "<strong>Toward</strong> the side of the lesion.",
+  "frontHtml": "A patient's protruded tongue drifts to the right. Which hypoglossal nerve is damaged?",
+  "backHtml": "The <strong>right</strong> one: the healthy left genioglossus pushes the tongue toward the weak side.",
   "sectionId": "s23e-s04a04",
   "questionId": null,
   "areas": [
@@ -3590,7 +3590,7 @@
  {
   "id": "s23e-c06023",
   "frontHtml": "Definition of a simple febrile seizure?",
-  "backHtml": "Generalized, <strong>under 15 minutes</strong>, once in 24 hours, in a feverish child aged 6 months to 5 years.",
+  "backHtml": "One brief (under 15 minutes) generalized fit in a feverish child aged 6 months to 5 years, not repeated within the day, with no focal features.",
   "sectionId": "s23e-s06b01",
   "questionId": null,
   "areas": [
@@ -3781,8 +3781,8 @@
  },
  {
   "id": "s23e-c06039",
-  "frontHtml": "Treatment of tardive dyskinesia when the antipsychotic must continue?",
-  "backHtml": "Add a <strong>VMAT2 inhibitor</strong> (valbenazine or deutetrabenazine).",
+  "frontHtml": "Tardive dyskinesia, but the antipsychotic cannot be stopped: which drug class helps?",
+  "backHtml": "<strong>VMAT2 inhibitors</strong>: valbenazine or deutetrabenazine.",
   "sectionId": "s23e-s06b05",
   "questionId": null,
   "areas": [
@@ -4429,8 +4429,8 @@
  },
  {
   "id": "s23e-c07050",
-  "frontHtml": "Painful oculomotor palsy with a dilated pupil: next step?",
-  "backHtml": "Emergency <strong>CT or MR angiography</strong> for a posterior communicating artery aneurysm.",
+  "frontHtml": "Why is a dilated pupil the warning sign in an oculomotor palsy?",
+  "backHtml": "Pupillomotor fibres run on the outside of the nerve, so compression (often a posterior communicating artery aneurysm) affects them early; ischemic palsies usually spare the pupil.",
   "sectionId": "s23e-s07b04",
   "questionId": null,
   "areas": [
