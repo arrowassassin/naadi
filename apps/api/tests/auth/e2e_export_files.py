@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+import uuid
 from typing import Any
 from urllib.parse import urlparse
 
@@ -27,7 +28,6 @@ from tests.db.storage import local_service_key
 TEST_EMAIL = re.compile(r"^naadi-e2e-[a-z]+-[a-z0-9-]{4,40}@example\.com$")
 LOCAL = {"localhost", "127.0.0.1", "::1"}
 UPLOAD_NAME = "e2e-upload.pdf"
-VAULT_NAME = "e2e-vault.pdf"
 TITLE = "E2E vault document"
 
 
@@ -59,7 +59,8 @@ def main(argv: list[str] | None = None) -> None:
     storage = _client()
     with psycopg.connect(a.db, autocommit=True) as conn:
         uid = _user_id(conn, a.email.strip().lower())
-        upload, vault = f"{uid}/{UPLOAD_NAME}", f"{uid}/{VAULT_NAME}"
+        doc_id = uuid.uuid5(uuid.NAMESPACE_URL, f"e2e-vault-{uid}")  # vault_documents_path_check: path = user_id/id
+        upload, vault = f"{uid}/{UPLOAD_NAME}", f"{uid}/{doc_id}"
         conn.execute("delete from public.vault_documents where user_id = %s and title = %s", (uid, TITLE))
         if a.action == "delete":
             for bucket, path in (("user-uploads", upload), ("vault", vault)):
@@ -72,10 +73,11 @@ def main(argv: list[str] | None = None) -> None:
         storage.from_("user-uploads").upload(upload, b"%PDF-1.4 e2e uploaded file", opts)
         storage.from_("vault").upload(vault, b"%PDF-1.4 e2e vault document", opts)
         conn.execute(
-            "insert into public.vault_documents (user_id, doc_type, title, storage_path) values (%s, 'other', %s, %s)",
-            (uid, TITLE, vault),
+            "insert into public.vault_documents (id, user_id, doc_type, title, storage_path)"
+            " values (%s, %s, 'other', %s, %s)",
+            (doc_id, uid, TITLE, vault),
         )
-    print(json.dumps({"upload": UPLOAD_NAME, "vault": VAULT_NAME}))
+    print(json.dumps({"upload": UPLOAD_NAME, "vault": str(doc_id)}))
 
 
 if __name__ == "__main__":

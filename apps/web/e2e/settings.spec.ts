@@ -88,8 +88,8 @@ function dbUrl(): string {
 }
 
 /** A stored upload, a vault object and its vault_documents row for the throwaway student (local stack only). */
-function exportFiles(action: "create" | "delete", email: string): void {
-  execFileSync(
+function exportFiles(action: "create" | "delete", email: string): { upload: string; vault: string } {
+  const out = execFileSync(
     "uv",
     ["--directory", API_DIR, "run", "--frozen", "python", "-m", "tests.auth.e2e_export_files", action].concat([
       "--email",
@@ -99,6 +99,7 @@ function exportFiles(action: "create" | "delete", email: string): void {
     ]),
     { encoding: "utf8", timeout: 60_000, stdio: ["ignore", "pipe", "pipe"] },
   );
+  return JSON.parse(out.trim().split("\n").pop() || "{}") as { upload: string; vault: string };
 }
 
 const PY_LIST = "import sys,zipfile,json;print(json.dumps(zipfile.ZipFile(sys.argv[1]).namelist()))";
@@ -292,7 +293,7 @@ test.describe("Data & export", () => {
         paper: "ruled",
       });
       expect(book.status).toBe(201);
-      exportFiles("create", student.email);
+      const stored = exportFiles("create", student.email);
 
       // Offline: the CTA is disabled and says why
       await page.context().setOffline(true);
@@ -381,9 +382,9 @@ test.describe("Data & export", () => {
       await second.getByRole("link", { name: /Data and files/ }).click();
       const vaultZip = (await (await vaultDownload).path()) as string;
       const vaultNames = zipNames(vaultZip);
-      expect(vaultNames).toContain("files/vault/e2e-vault.pdf");
+      expect(vaultNames).toContain(`files/vault/${stored.vault}`);
       expect(vaultNames).toContain("data/vault_documents.json");
-      expect(zipText(vaultZip, "files/vault/e2e-vault.pdf")).toBe("%PDF-1.4 e2e vault document");
+      expect(zipText(vaultZip, `files/vault/${stored.vault}`)).toBe("%PDF-1.4 e2e vault document");
       expect(zipText(vaultZip, "files/uploads/e2e-upload.pdf")).toBe("%PDF-1.4 e2e uploaded file");
       expect((JSON.parse(zipText(vaultZip, "manifest.json")) as { include_vault: boolean }).include_vault).toBe(true);
       await quiet(page);
@@ -422,10 +423,18 @@ test.describe("Data & export", () => {
       };
       let items: unknown[] = [];
       let startAnswer: { status: number; code: string } | null = null;
+      let listFails = true;
       const page = await student.open("/settings/data", async (p) => {
         await p.route("**/api/export", async (route) => {
           const req = route.request();
           if (req.method() === "GET") {
+            if (listFails) {
+              return route.fulfill({
+                status: 500,
+                contentType: "application/json",
+                body: JSON.stringify({ error: { code: "internal", message: "internal", request_id: "req-e2e" } }),
+              });
+            }
             return route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ items }) });
           }
           if (startAnswer) {
@@ -449,10 +458,26 @@ test.describe("Data & export", () => {
       });
       const { errors, guard } = watchConsole(page);
       await ready(page, "Data & export");
+      // The list could not be loaded: the error, its request id and a retry (the stub answers 500 until told otherwise).
+      // Pages are not reloaded below: once the service worker controls the page, the stubs no longer see its requests.
+      await expect(page.getByRole("alert").filter({ hasText: "Your exports could not be loaded" })).toContainText(
+        "req-e2e",
+      );
+      await expectNoAxeViolations(page);
+      await shot(page, info, guard, "export-list-error");
+      listFails = false;
+      await page.getByRole("button", { name: "Try again" }).click();
+      await expect(page.locator("[data-export-empty]")).toBeVisible();
+      // Not page.reload(): a reload skips the stubs above (the service worker controls the page), so leave the page and come back to refetch
+      const revisit = async () => {
+        await page.getByRole("link", { name: "Appearance" }).first().click();
+        await ready(page, "Appearance");
+        await page.getByRole("link", { name: "Data & export" }).first().click();
+        await ready(page, "Data & export");
+      };
       const state = async (name: string, list: unknown[]) => {
         items = list;
-        await page.reload();
-        await ready(page, "Data & export");
+        await revisit();
         await expectNoAxeViolations(page);
         await expectNoHorizontalOverflow(page);
         await shot(page, info, guard, `export-${name}`);
@@ -497,8 +522,7 @@ test.describe("Data & export", () => {
         ["503", 503, "export_unavailable", "Export is not available right now"],
       ] as const) {
         startAnswer = { status, code };
-        await page.reload();
-        await ready(page, "Data & export");
+        await revisit();
         await page.getByRole("button", { name: "Export everything" }).click();
         await expect(page.getByText(words)).toBeVisible();
         await expectNoAxeViolations(page);
@@ -509,25 +533,6 @@ test.describe("Data & export", () => {
         });
       }
       startAnswer = null;
-
-      // List error with retry and request id
-      await page.unroute("**/api/export");
-      await page.route("**/api/export", (route) =>
-        route.request().method() === "GET"
-          ? route.fulfill({
-              status: 500,
-              contentType: "application/json",
-              body: JSON.stringify({ error: { code: "internal", message: "internal", request_id: "req-e2e" } }),
-            })
-          : route.continue(),
-      );
-      await page.reload();
-      await expect(page.getByRole("alert").filter({ hasText: "Your exports could not be loaded" })).toContainText(
-        "req-e2e",
-      );
-      await expectNoAxeViolations(page);
-      await shot(page, info, guard, "export-list-error");
-      await page.unroute("**/api/export");
 
       // The intended refusals log "Failed to load resource"; anything else is a defect
       expect(errors().filter((e) => !/Failed to load resource|status of (409|500|503)/.test(e))).toEqual([]);

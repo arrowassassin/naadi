@@ -65,6 +65,8 @@ function fakeItems(action: "embeddings" | "retire" | "seed-ids", ids: string[] =
 }
 
 const signedInAs = (role: E2ERole) => ({
+  // The stubs below (slow item, refused checks) only see a page's requests when no service worker controls it
+  serviceWorkers: "block" as const,
   storageState: async (
     { browser, baseURL }: { browser: Browser; baseURL: string | undefined },
     use: (path: string) => Promise<void>,
