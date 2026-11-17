@@ -65,7 +65,7 @@ select r.id, r.ref_type, r.ref_id, r.body, r.status, r.created_at,
        case when r.ref_type = 'media' then r.ref_id end as media_id
   from public.report_issues r
   left join public.chapter_sections s on r.ref_type = 'section' and s.id = r.ref_id
-  left join public.questions q on r.ref_type = 'question' and q.id = r.ref_id
+  left join public.questions q on r.ref_type = 'question' and q.id = r.ref_id and q.owner_user_id is null
 """
 
 

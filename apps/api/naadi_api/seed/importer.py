@@ -514,6 +514,7 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
     actual["sources"] = one(
         cur, "select count(*) from public.sources where id = any(%s)", [s.id for s in b.sources.accepted]
     )
+    # questions-scope: seed (verifies the bundle's own ids only)
     actual["question_map_entries"] = one(
         cur,
         "select count(*) from public.questions q join jsonb_each(%s::jsonb) m on m.key = q.id"
@@ -579,18 +580,21 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
             + (f" ({len(storage_pending)} pending upload in a dry run)" if storage_pending else ""),
         )
     )
+    # questions-scope: seed (verifies the bundle's own ids only)
     unpublished = one(
         cur, "select count(*) from public.questions where id = any(%s) and status <> 'published'", ids["questions"]
     )
     checks.append(
         Check(name="seeded questions are published", ok=unpublished == 0, detail=f"{unpublished} not published")
     )
+    # questions-scope: seed (verifies the bundle's own ids only)
     expert = one(
         cur,
         "select count(*) from public.questions where id = any(%s) and (review->>'humanExpertReviewed')::boolean",
         ids["questions"],
     )
     checks.append(Check(name="humanExpertReviewed stays false", ok=expert == 0, detail=f"{expert} marked reviewed"))
+    # questions-scope: seed (verifies the bundle's own ids only)
     mock_blocks = one(
         cur,
         "select count(*) from public.questions q join public.chapters c on c.id = q.chapter_id"
@@ -600,6 +604,7 @@ def verify(cur: psycopg.Cursor[Any], b: SeedBundle, *, storage_pending: set[str]
     checks.append(
         Check(name="mock exam questions keep their block", ok=mock_blocks == 0, detail=f"{mock_blocks} without block")
     )
+    # questions-scope: seed (verifies the bundle's own ids only)
     orphan_sources = one(
         cur,
         "select count(*) from (select source_id from public.chapters where id = any(%s) union all"

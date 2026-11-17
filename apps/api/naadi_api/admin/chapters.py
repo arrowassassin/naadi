@@ -387,7 +387,7 @@ async def gate_body(conn: AsyncConnection[Any], body: Any) -> None:
     for _kind, mid in media:
         await check_media_row(conn, mid, use="page", require_approved=True)
     for qid in questions:
-        q = await one(conn, "select status from public.questions where id = %s", (qid,))
+        q = await one(conn, "select status from public.questions where id = %s and owner_user_id is null", (qid,))
         if q is None or q["status"] != "published":
             raise GateRefused("question_missing", qid)
 
@@ -785,7 +785,8 @@ async def get_editor(
         questions = await rows(
             conn,
             "select id, status, exam, left(regexp_replace(regexp_replace(stem_html, '<[^>]*>', ' ', 'g'),"
-            " '\\s+', ' ', 'g'), 200) as stem_text from public.questions where id = any(%s) order by id",
+            " '\\s+', ' ', 'g'), 200) as stem_text from public.questions where id = any(%s)"
+            " and owner_user_id is null order by id",
             (question_ids,),
         )
         editor = SectionEditor(

@@ -220,6 +220,7 @@ def _check_exam(rules: dict[str, Any], exam: str) -> None:
 # ── Reads under RLS ──
 
 # Mock exam questions (`block` set) are exam-only: they run in the exam flow (S09), never in a tutor pool.
+# questions-scope: rls (runs as the student: shared rows plus the caller's own private ones)
 _POOL = "select id, taxonomy_ids, difficulty from public.questions where exam = %s and block is null order by id"
 _HISTORY = """
 select question_id,
@@ -282,6 +283,7 @@ async def get_pool(
         questions, history = await _load_pool(conn, chosen)
         nodes = await _load_taxonomy(conn, chosen)
         # Seeded mock exams (S09): visible chapters of kind mock_exam with their seeded blocks, under RLS.
+        # questions-scope: rls (under as_user)
         mock_rows = await _rows(
             conn,
             "select c.id, c.exam, c.title, count(distinct q.block)::int as blocks, count(q.id)::int as questions"
@@ -567,6 +569,7 @@ async def create_single_block(
 
     async def run(conn: psycopg.AsyncConnection[Any]) -> BlockDetail | tuple[BlockConfig, list[str]] | None:
         # Read under RLS: a question the caller may not see (draft, hidden chapter) is simply not found.
+        # questions-scope: rls (read under as_user)
         found = await _first(conn, "select id, exam, block from public.questions where id = %s", (body.question_id,))
         if found is None:
             raise HTTPException(404, "This question does not exist or is not available to you.")
@@ -604,6 +607,7 @@ async def create_single_block(
     return await _insert_block(_db(request), user, cfg, ids)
 
 
+# questions-scope: rls (the caller's own attempts, auth.uid())
 _GRADED = """
 select a.question_id, a.correct, a.created_at, q.taxonomy_ids
 from public.attempts a join public.questions q on q.id = a.question_id
@@ -757,6 +761,7 @@ async def get_block(
 
 # ── Questions ──
 
+# questions-scope: rls (runs as the student: shared rows plus the caller's own private ones)
 _QUESTION = """
 select id, chapter_id, stem_html, options, difficulty, taxonomy_ids
 from public.questions where id = %s
@@ -764,6 +769,7 @@ from public.questions where id = %s
 _REVEAL = """
 select answer, answer_html, explanation_html, why_not_html, educational_objective
 from public.questions where id = %s and status = 'published'
+  and (owner_user_id is null or owner_user_id = %s)
 """
 _OWN_ATTEMPT = """
 select id, chosen, correct, seconds, flagged from public.attempts
@@ -864,7 +870,7 @@ async def get_block_question(
     if reveal:
 
         async def secret(conn: psycopg.AsyncConnection[Any]) -> Row | None:
-            return await _first(conn, _REVEAL, (qid,))
+            return await _first(conn, _REVEAL, (qid, user.user_id))
 
         s = await as_service(db, secret)
         explanation = _explanation(s) if s else None
@@ -943,8 +949,9 @@ async def create_attempt(
         cfg = BlockConfig.model_validate(block["config"])
         questions = await _rows(
             conn,
-            "select options, answer from public.questions where id = %s and status = 'published'",
-            (body.question_id,),
+            "select options, answer from public.questions where id = %s and status = 'published'"
+            " and (owner_user_id is null or owner_user_id = %s)",
+            (body.question_id, uid),
         )
         if not questions:
             raise HTTPException(404, "This question is no longer available.")
@@ -989,7 +996,7 @@ async def create_attempt(
             )
             finished = True
         reveal = cfg.mode == "tutor"
-        secret = await _first(conn, _REVEAL, (body.question_id,)) if reveal else None
+        secret = await _first(conn, _REVEAL, (body.question_id, uid)) if reveal else None
         return (
             AttemptOut(
                 question_id=body.question_id,
@@ -1023,7 +1030,10 @@ async def _timed_attempt(
     if block["finished_at"] is not None:
         raise exam.conflict("finished")
     questions = await _rows(
-        conn, "select options from public.questions where id = %s and status = 'published'", (body.question_id,)
+        conn,
+        "select options from public.questions where id = %s and status = 'published'"
+        " and (owner_user_id is null or owner_user_id = %s)",
+        (body.question_id, uid),
     )
     if not questions:
         raise HTTPException(404, "This question is no longer available.")

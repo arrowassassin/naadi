@@ -113,6 +113,7 @@ class PgAuthoringStore:
                 from public.taxonomy_nodes t
                 join (select unnest(%(exams)s::text[]) as exam) ex on ex.exam = any(t.exam)
                 left join public.questions q on q.exam = ex.exam and q.taxonomy_ids @> array[t.id]
+                  and q.owner_user_id is null
                 where t.kind = 'topic' and not (t.id = any(%(skip)s))
                 group by t.id, t.label, ex.exam, t.sort
                 having count(q.id) filter (where q.status = 'published' or q.status = any(%(pending)s)) < %(min)s
@@ -140,6 +141,7 @@ class PgAuthoringStore:
                 cross join lateral unnest(q.taxonomy_ids) as tid
                 join public.taxonomy_nodes n on n.id = tid and n.kind = %s and %s = any(n.exam)
                 where q.exam = %s and q.taxonomy_ids @> array[%s] and q.status = 'published'
+                  and q.owner_user_id is null
                 group by n.id order by count(*) desc, n.id limit 1
                 """,
                 (kind, exam, exam, topic_id),
@@ -211,6 +213,7 @@ class PgAuthoringStore:
         self, question_id: str, row: Mapping[str, Any], status: str, review: Mapping[str, Any]
     ) -> None:
         async with service_conn(self.db) as c:
+            # questions-scope: insert (authored items are shared: owner_user_id stays null)
             await c.execute(
                 """
                 insert into public.questions
@@ -283,7 +286,7 @@ class PgAuthoringStore:
         async with service_conn(self.db) as c:
             cur = await c.execute(
                 "select count(*)::int as n from public.questions"
-                " where status = any(%s) and (review->>'authorModel') is not null",
+                " where status = any(%s) and (review->>'authorModel') is not null and owner_user_id is null",
                 (list(PENDING),),
             )
             row = await cur.fetchone()

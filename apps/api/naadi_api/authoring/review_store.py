@@ -53,7 +53,9 @@ def _row(r: Mapping[str, Any]) -> ReviewRow:
 
 async def round_of(conn: psycopg.AsyncConnection[Any], question_id: str) -> int:
     cur = await conn.execute(
-        "select coalesce((review->>'round')::int, 1) as r from public.questions where id = %s", (question_id,)
+        "select coalesce((review->>'round')::int, 1) as r from public.questions"
+        " where id = %s and owner_user_id is null",
+        (question_id,),
     )
     row = await cur.fetchone()
     return int(row["r"]) if row else 1
@@ -78,7 +80,10 @@ async def history_of(conn: psycopg.AsyncConnection[Any], question_id: str) -> li
 
 
 async def get_item(conn: psycopg.AsyncConnection[Any], question_id: str) -> dict[str, Any] | None:
-    cur = await conn.execute(f"select {ITEM_COLUMNS} from public.questions where id = %s", (question_id,))  # noqa: S608
+    cur = await conn.execute(
+        f"select {ITEM_COLUMNS} from public.questions where id = %s and owner_user_id is null",  # noqa: S608
+        (question_id,),
+    )
     return await cur.fetchone()
 
 
@@ -160,7 +165,9 @@ async def list_queue(
             " or (status = 'published' and jsonb_array_length(coalesce(stats->'flags', '[]'::jsonb)) > 0)"
         )
     cur = await conn.execute(
-        f"select {ITEM_COLUMNS} from public.questions where {where} order by created_at desc, id limit %s offset %s",  # noqa: S608
+        # Students' private questions (S15) are never review items.
+        f"select {ITEM_COLUMNS} from public.questions where owner_user_id is null and ({where})"  # noqa: S608
+        " order by created_at desc, id limit %s offset %s",
         (limit, offset),
     )
     items = list(await cur.fetchall())
@@ -171,7 +178,7 @@ async def list_queue(
         "select r.question_id, r.reviewer_user_id, r.round, r.decision, r.adjudication, r.request_second, r.ratings,"
         " r.created_at from public.question_reviews r"
         " join public.questions q on q.id = r.question_id and r.round = coalesce((q.review->>'round')::int, 1)"
-        " where r.question_id = any(%s) order by r.created_at, r.id",
+        " and q.owner_user_id is null where r.question_id = any(%s) order by r.created_at, r.id",
         (ids,),
     )
     by_q: dict[str, list[dict[str, Any]]] = {}
@@ -216,7 +223,7 @@ async def counts(conn: psycopg.AsyncConnection[Any], required: int) -> dict[str,
                              and jsonb_array_length(coalesce(stats->'flags','[]'::jsonb)) > 0)::int
             as psychometric_flags,
           count(*) filter (where status = 'auto_checked')::int as needs_check
-        from public.questions
+        from public.questions where owner_user_id is null
         """
     )
     row = await cur.fetchone()
@@ -226,6 +233,7 @@ async def counts(conn: psycopg.AsyncConnection[Any], required: int) -> dict[str,
         "select r.question_id, r.reviewer_user_id, r.decision, r.adjudication, r.request_second, r.created_at"
         " from public.question_reviews r join public.questions q on q.id = r.question_id"
         " and r.round = coalesce((q.review->>'round')::int, 1) and q.status in ('in_review','auto_checked')"
+        " and q.owner_user_id is null"
         " order by r.question_id, r.created_at"
     )
     grouped: dict[str, list[ReviewRow]] = {}
@@ -267,7 +275,10 @@ async def insert_review(
 
 async def lock_item(conn: psycopg.AsyncConnection[Any], question_id: str) -> dict[str, Any] | None:
     """Serialise reviews of one item (two admins submitting at once must not both close the round)."""
-    cur = await conn.execute(f"select {ITEM_COLUMNS} from public.questions where id = %s for update", (question_id,))  # noqa: S608
+    cur = await conn.execute(
+        f"select {ITEM_COLUMNS} from public.questions where id = %s and owner_user_id is null for update",  # noqa: S608
+        (question_id,),
+    )
     return await cur.fetchone()
 
 
@@ -311,7 +322,8 @@ async def apply_outcome(
             conn, {**item, "status": "published", "review": review}, "review", "published", reviewer
         )
     await conn.execute(
-        "update public.questions set status = %s, review = %s where id = %s", (status, Jsonb(review), item["id"])
+        "update public.questions set status = %s, review = %s where id = %s and owner_user_id is null",
+        (status, Jsonb(review), item["id"]),
     )
     return status
 
@@ -322,7 +334,8 @@ async def resubmit(conn: psycopg.AsyncConnection[Any], item: Mapping[str, Any], 
     new_round = int(review.get("round", 1)) + 1
     review["round"] = new_round
     await conn.execute(
-        "update public.questions set status = %s, review = %s, stats = '{}'::jsonb where id = %s",
+        "update public.questions set status = %s, review = %s, stats = '{}'::jsonb"
+        " where id = %s and owner_user_id is null",
         (to_status, Jsonb(review), item["id"]),
     )
     return new_round
@@ -334,4 +347,7 @@ async def store_checks(
     patch: dict[str, Any] = {"lint": dict(lint)}
     if solver is not None:
         patch["solver"] = dict(solver)
-    await conn.execute("update public.questions set review = review || %s where id = %s", (Jsonb(patch), question_id))
+    await conn.execute(
+        "update public.questions set review = review || %s where id = %s and owner_user_id is null",
+        (Jsonb(patch), question_id),
+    )

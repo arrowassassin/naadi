@@ -403,10 +403,12 @@ where s.chapter_id = any(%(ids)s)
 group by 1, 2
 """
 
+# questions-scope: rls (runs as the student: shared rows plus the caller's own private ones)
 _Q_QUESTION_COUNTS = """
 select chapter_id, count(*)::int as n from public.questions where chapter_id = any(%(ids)s) group by 1
 """
 
+# questions-scope: rls (runs as the student: shared rows plus the caller's own private ones)
 _Q_QUESTION_SYSTEMS = """
 select q.chapter_id, t.id as system_id, count(*)::int as n
 from public.questions q
@@ -416,6 +418,7 @@ where q.chapter_id = any(%(ids)s)
 group by 1, 2
 """
 
+# questions-scope: rls (runs as the student: shared rows plus the caller's own private ones)
 _Q_CARD_COUNTS = """
 select coalesce(s.chapter_id, q.chapter_id) as chapter_id, count(*)::int as n
 from public.flashcards f
@@ -708,6 +711,7 @@ from public.media_assets m left join public.sources src on src.id = m.source_id
 where m.id = any(%(ids)s)
 """
 
+# questions-scope: rls (runs as the student: shared rows plus the caller's own private ones)
 _Q_EMBED_QUESTIONS = "select id, stem_html, options from public.questions where id = any(%(ids)s)"
 
 
@@ -937,6 +941,7 @@ _REF_EXISTS: dict[str, str] = {
     "section": "select 1 from public.chapter_sections where id = %(id)s",
     "chapter": "select 1 from public.chapters where id = %(id)s",
     "media": "select 1 from public.media_assets where id = %(id)s",
+    # questions-scope: rls (a student reports what they can see: shared items and their own)
     "question": "select 1 from public.questions where id = %(id)s",
 }
 

@@ -79,6 +79,7 @@ async def resolve_surface(conn: psycopg.AsyncConnection[Any], surface_type: str,
         )
     elif surface_type == "question":
         # The layer covers the stem and the options only; the explanation never carries ink.
+        # questions-scope: rls (conn runs as the user)
         row = await _one(
             conn, "select md5(stem_html || options::text) as rev from public.questions where id = %s", (surface_id,)
         )

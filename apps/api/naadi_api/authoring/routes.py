@@ -682,7 +682,10 @@ async def checks(
                 fresh, review_store.lint_item(fresh, {k: v.kind for k, v in taxonomy.items()}, sources, labs)
             )
             if not publish_blockers(gates):
-                await conn.execute("update public.questions set status = 'in_review' where id = %s", (item_id,))
+                await conn.execute(
+                    "update public.questions set status = 'in_review' where id = %s and owner_user_id is null",
+                    (item_id,),
+                )
         return await _load(request, conn, item_id, admin.user_id)
 
 
@@ -745,12 +748,16 @@ async def psychometric_action(
         review = dict(it["review"] or {})
         if body.action == "keep":
             review["psychAckAt"] = stats.get("computedAt")
-            await conn.execute("update public.questions set review = %s where id = %s", (Jsonb(review), item_id))
+            await conn.execute(
+                "update public.questions set review = %s where id = %s and owner_user_id is null",
+                (Jsonb(review), item_id),
+            )
         else:
             status = "retired" if body.action == "retire" else "draft"
             review["psychAction"] = {"action": body.action, "by": str(admin.user_id), "n": stats.get("n")}
             await conn.execute(
-                "update public.questions set status = %s, review = %s where id = %s", (status, Jsonb(review), item_id)
+                "update public.questions set status = %s, review = %s where id = %s and owner_user_id is null",
+                (status, Jsonb(review), item_id),
             )
         detail = await _load(request, conn, item_id, admin.user_id)
     if body.action != "keep":

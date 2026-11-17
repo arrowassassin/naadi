@@ -61,6 +61,7 @@ async def accuracy_by_node(
     modes: Sequence[Mode] = ("tutor", "timed", "exam"),
 ) -> list[NodeAccuracy]:
     """Accuracy per taxonomy node of `exam` over the student's graded, answered attempts (omitted not counted)."""
+    # questions-scope: rls (the caller's own attempts only: shared questions plus their own private ones)
     rows = await _rows(
         conn,
         """
@@ -87,6 +88,7 @@ async def time_per_question(
     since: dt.datetime | None = None,
     modes: Sequence[Mode] = ("timed", "exam"),
 ) -> TimePerQuestion:
+    # questions-scope: rls (the caller's own attempts only: shared questions plus their own private ones)
     rows = await _rows(
         conn,
         """

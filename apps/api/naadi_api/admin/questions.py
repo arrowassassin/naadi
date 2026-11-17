@@ -273,7 +273,9 @@ def _question(r: Row) -> AdminQuestion:
 async def load_question(conn: AsyncConnection[Any], question_id: str, *, lock: bool = False) -> Row:
     r = await one(
         conn,
-        f"select {_COLS} from public.questions where id = %s" + (" for update" if lock else ""),  # noqa: S608
+        # A student's private question (S15) is not an admin item: it is simply not found here.
+        f"select {_COLS} from public.questions where id = %s and owner_user_id is null"  # noqa: S608
+        + (" for update" if lock else ""),
         (question_id,),
     )
     if r is None:
@@ -380,7 +382,7 @@ async def list_questions(
     async def run(conn: AsyncConnection[Any]) -> AdminQuestionList:
         sql = (
             "select id, exam, chapter_id, status, difficulty, stem_html, taxonomy_ids, source_id, created_at"
-            " from public.questions where true"
+            " from public.questions where owner_user_id is null"
         )
         params: dict[str, Any] = {"limit": limit + 1}
         for name, value in (("exam", exam), ("status", status), ("chapter_id", chapter_id)):
@@ -449,10 +451,12 @@ async def create_question(request: Request, admin: ConsoleAdmin, body: QuestionC
     async def run(conn: AsyncConnection[Any]) -> AdminQuestion:
         await _check_refs(conn, body)
         qid = body.id or f"q-{body.exam}-{secrets.token_hex(4)}"
+        # questions-scope: id-unique (an id is unique across every row, private ones included)
         if await one(conn, "select 1 from public.questions where id = %s", (qid,)):
             raise conflict("id_taken", "A question with this id exists.")
         v = _values(body)
         cols = ", ".join(v)
+        # questions-scope: insert (an admin item is shared: owner_user_id stays null)
         await conn.execute(
             f"insert into public.questions (id, {cols}, status, review) values (%(id)s, "  # noqa: S608 - fixed column names
             + ", ".join(f"%({k})s" for k in v)
@@ -489,7 +493,7 @@ async def update_question(
             # review, and its psychometrics start again (they describe the old item).
             sets += ["status = 'in_review'", "stats = '{}'::jsonb"]
         await conn.execute(
-            "update public.questions set " + ", ".join(sets) + " where id = %(id)s",  # noqa: S608
+            "update public.questions set " + ", ".join(sets) + " where id = %(id)s and owner_user_id is null",  # noqa: S608
             {**v, "id": question_id},
         )
         await snapshot_question(conn, question_id, author=admin.user_id, origin="admin")
@@ -532,7 +536,10 @@ async def set_question_status(
             findings = run_lint(before)
             if findings.available and any(f.severity == "error" for f in findings.findings):
                 raise GateRefused("lint_errors", question_id)
-        await conn.execute("update public.questions set status = %s where id = %s", (body.status, question_id))
+        await conn.execute(
+            "update public.questions set status = %s where id = %s and owner_user_id is null",
+            (body.status, question_id),
+        )
         await snapshot_question(conn, question_id, author=admin.user_id, origin="admin", note=body.note)
         after = await load_question(conn, question_id)
         await audit(

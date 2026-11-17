@@ -98,6 +98,7 @@ _CARD_FROM = """
 from public.flashcards f
 left join public.card_reviews r on r.card_id = f.id and r.user_id = %(uid)s
 left join public.questions q on q.id = f.question_id
+  and (q.owner_user_id is null or q.owner_user_id = %(uid)s)
 left join public.chapter_sections s on s.id = f.section_id
 left join public.chapters c on c.id = s.chapter_id
 """
@@ -378,7 +379,7 @@ async def _has_graded_attempt(conn: psycopg.AsyncConnection[Any], uid: uuid.UUID
         conn,
         "select exists (select 1 from public.attempts a join public.questions q on q.id = a.question_id"
         " where a.user_id = %(uid)s and a.question_id = %(q)s and a.chosen is not null and a.correct is not null"
-        " and q.status = 'published') as ok",
+        " and q.status = 'published' and (q.owner_user_id is null or q.owner_user_id = %(uid)s)) as ok",
         {"uid": uid, "q": question_id},
     )
     return bool(row and row["ok"])

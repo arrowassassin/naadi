@@ -97,7 +97,8 @@ async def create_mock_block(
             raise CodedHTTPException(404, "mock_not_found", "mock_not_found")
         qs = await _rows(
             conn,
-            "select id, block from public.questions where chapter_id = %s and block is not null order by block, id",
+            "select id, block from public.questions where chapter_id = %s and block is not null"
+            " and owner_user_id is null order by block, id",
             (body.chapter_id,),
         )
         if not qs:
@@ -276,7 +277,10 @@ async def get_results(
         qrows = {
             r["id"]: r
             for r in await _rows(
-                conn, "select id, answer, taxonomy_ids from public.questions where id = any(%s)", (ids,)
+                conn,
+                "select id, answer, taxonomy_ids from public.questions where id = any(%s)"
+                " and (owner_user_id is null or owner_user_id = %s)",
+                (ids, uid),
             )
         }
         arows = {

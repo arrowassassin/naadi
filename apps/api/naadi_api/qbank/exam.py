@@ -265,7 +265,8 @@ async def grade(conn: psycopg.AsyncConnection[Any], block: Row, user_id: uuid.UU
     mode = block["config"]["mode"]
     await conn.execute(
         "update public.attempts a set correct = (a.chosen = q.answer) from public.questions q"
-        " where a.block_id = %s and a.user_id = %s and q.id = a.question_id and a.chosen is not null",
+        " where a.block_id = %s and a.user_id = %s and q.id = a.question_id and a.chosen is not null"
+        " and (q.owner_user_id is null or q.owner_user_id = a.user_id)",
         (bid, user_id),
     )
     # A flag-only row of a question never answered: omitted counts as a miss (the flashcard gate stays closed:
@@ -277,9 +278,10 @@ async def grade(conn: psycopg.AsyncConnection[Any], block: Row, user_id: uuid.UU
     await conn.execute(
         "insert into public.attempts (user_id, question_id, block_id, chosen, correct, flagged, mode)"
         " select %s, q.qid, %s, null, false, false, %s from unnest(%s::text[]) as q(qid)"
-        " where exists (select 1 from public.questions x where x.id = q.qid)"
+        " where exists (select 1 from public.questions x where x.id = q.qid"
+        " and (x.owner_user_id is null or x.owner_user_id = %s))"
         " and not exists (select 1 from public.attempts a where a.block_id = %s and a.question_id = q.qid)",
-        (user_id, bid, mode, list(block["question_ids"]), bid),
+        (user_id, bid, mode, list(block["question_ids"]), user_id, bid),
     )
     rows = await _rows(
         conn,

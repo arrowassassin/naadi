@@ -51,6 +51,7 @@ async def load_weights(conn: psycopg.AsyncConnection[Any], exam: str) -> list[Sy
 
 # Per system: graded attempts in the by-system window, and first graded attempts (per question, ever) that fall
 # inside the readiness window. One row with system '' carries the answered total.
+# questions-scope: rls (the caller's own attempts only: shared questions plus their own private ones)
 _CELLS = """
 with graded as (
   select a.id, a.question_id, a.correct, a.created_at, q.taxonomy_ids
@@ -164,6 +165,7 @@ def readiness(weights: Sequence[SystemWeight], cells: Cells, *, min_answered: in
 
 # ── coach facts ──
 
+# questions-scope: rls (the caller's own attempts only: shared questions plus their own private ones)
 _MISSES = """
 select s as system, count(*)::int as misses
 from public.attempts a join public.questions q on q.id = a.question_id cross join lateral unnest(q.taxonomy_ids) s
@@ -179,6 +181,7 @@ where attrelid = 'public.attempts'::regclass and attname in ('changes', 'first_c
 
 # Segment 09's columns: `changes` = number of answer changes, `first_chosen` = the first choice. Right → wrong =
 # the first choice was the key and the final one is not.
+# questions-scope: rls (the caller's own attempts only: shared questions plus their own private ones)
 _CHANGED = """
 select count(*) filter (where a.changes > 0)::int as changed,
        count(*) filter (where a.changes > 0 and a.first_chosen = q.answer and a.chosen <> q.answer)::int
@@ -275,6 +278,7 @@ async def coach_facts(
     total_misses = (
         await privileged_rows(
             conn,
+            # questions-scope: rls (the caller's own attempts only, filtered on auth.uid())
             "select count(*)::int as n from public.attempts a join public.questions q on q.id = a.question_id"
             " where a.user_id = (select auth.uid()) and a.correct is false and a.chosen is not null"
             " and q.block is null and q.exam = %(exam)s and a.created_at >= %(now)s - interval '7 days'",

@@ -20,6 +20,7 @@ from .store import service_conn
 FIRST_ATTEMPTS = """
 select distinct on (a.user_id, a.question_id) a.user_id, a.question_id, a.chosen, a.correct, a.seconds
 from public.attempts a join public.questions q on q.id = a.question_id and q.status = 'published'
+ and q.owner_user_id is null
 where a.mode in ('tutor', 'timed') and a.chosen is not null and a.correct is not null
 order by a.user_id, a.question_id, a.created_at, a.id
 """
@@ -68,7 +69,8 @@ async def run(db: Database, cfg: AuthoringRules) -> PsychStats:
         )
         reports = {r["ref_id"]: r["n"] for r in await cur.fetchall()}
         cur = await conn.execute(
-            "select id, answer, options, stats from public.questions where status = 'published'"
+            "select id, answer, options, stats from public.questions"
+            " where status = 'published' and owner_user_id is null"
             " and (id = any(%s) or id = any(%s) or jsonb_array_length(coalesce(stats->'flags', '[]'::jsonb)) > 0)",
             (list(by_q), list(reports)),
         )
@@ -82,6 +84,9 @@ async def run(db: Database, cfg: AuthoringRules) -> PsychStats:
             before = q["stats"] or {}
             comparable = {k: v for k, v in stats.items() if k != "computedAt"}
             if comparable != {k: v for k, v in before.items() if k != "computedAt"}:
-                await conn.execute("update public.questions set stats = %s where id = %s", (Jsonb(stats), q["id"]))
+                await conn.execute(
+                    "update public.questions set stats = %s where id = %s and owner_user_id is null",
+                    (Jsonb(stats), q["id"]),
+                )
                 out.updated += 1
     return out

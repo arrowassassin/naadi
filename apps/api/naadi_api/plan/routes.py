@@ -566,6 +566,7 @@ async def create_diagnostic(
         weights = await load_weights(conn, exam)
         pool = [
             diag.Candidate(r["id"], tuple(r["taxonomy_ids"]), r["difficulty"])
+            # questions-scope: rls (pick runs through as_user)
             for r in await rows(
                 conn,
                 "select id, taxonomy_ids, difficulty from public.questions where exam = %s and block is null"

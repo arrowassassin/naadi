@@ -207,7 +207,8 @@ select 'videos', (m.taxonomy_ids || coalesce((select array_agg(distinct t) from 
   from public.media_assets m
  where m.review_status = 'approved' and m.kind in ('video_youtube','video_own')
 union all
-select 'questions', q.taxonomy_ids from public.questions q where q.status = 'published' and q.exam = %(exam)s
+select 'questions', q.taxonomy_ids from public.questions q
+ where q.owner_user_id is null and q.status = 'published' and q.exam = %(exam)s
 union all
 select 'cards', f.taxonomy_ids from public.flashcards f where f.owner_user_id is null
 """

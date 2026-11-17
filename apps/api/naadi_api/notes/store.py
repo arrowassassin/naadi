@@ -80,6 +80,7 @@ async def check_anchor(conn: psycopg.AsyncConnection[Any], anchor_type: str | No
     if anchor_type == "section":
         row = await _one(conn, "select 1 as ok from public.chapter_sections where id = %s", (anchor_id,))
     elif anchor_type == "question":
+        # questions-scope: rls (conn runs as the user)
         row = await _one(conn, "select 1 as ok from public.questions where id = %s", (anchor_id,))
         if row is not None:
             # The flashcard gate of migration 0010: a graded answer of the caller's own (a flag-only row is not).
@@ -247,6 +248,7 @@ async def load_sources(conn: psycopg.AsyncConnection[Any], rows: Iterable[Row]) 
                 (qids,),
             )
         }
+        # questions-scope: rls (conn runs as the user)
         for q in await _rows(conn, "select q.id, q.chapter_id from public.questions q where q.id = any(%s)", (qids,)):
             a = latest.get(q["id"]) or {}
             out[("question", q["id"])] = {

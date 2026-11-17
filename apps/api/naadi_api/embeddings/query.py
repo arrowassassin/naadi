@@ -234,6 +234,7 @@ async def _load_meta(
     qids = [c.ref_id for c in by_type.get("question", [])]
     if qids:
         # Only client-readable question columns: the answer, explanations and objective are not granted to this role.
+        # questions-scope: rls (hydrate reads as the caller through user_tx)
         cur = await conn.execute(
             "select q.id, q.stem_html, q.options, q.chapter_id, q.exam, c.title as chapter_title, c.kind,"
             " src.allow_ai_ingest from public.questions q"

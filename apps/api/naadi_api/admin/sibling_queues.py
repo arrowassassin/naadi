@@ -126,9 +126,10 @@ async def _review_count(ctx: QueueContext) -> int:
     # The filters overlap (an AI draft can also need adjudication): the hub shows distinct items waiting.
     r = await one(
         ctx.conn,
-        "select count(*)::int as n from public.questions where status in ('in_review','auto_checked')"
+        "select count(*)::int as n from public.questions where owner_user_id is null"
+        " and (status in ('in_review','auto_checked')"
         " or (status = 'published' and (review->>'humanExpertReviewed') = 'false')"
-        " or (status = 'published' and jsonb_array_length(coalesce(stats->'flags','[]'::jsonb)) > 0)",
+        " or (status = 'published' and jsonb_array_length(coalesce(stats->'flags','[]'::jsonb)) > 0))",
     )
     return int(r["n"]) if r else sum(c.values())
 
@@ -139,7 +140,7 @@ async def _review_list(ctx: QueueContext, *, limit: int, cursor: str | None) -> 
         ctx.conn,
         "select id, exam, status, difficulty, created_at,"
         " left(btrim(regexp_replace(regexp_replace(stem_html, '<[^>]*>', ' ', 'g'), '\\s+', ' ', 'g')), 160) as stem"
-        " from public.questions where status in ('in_review','auto_checked')"
+        " from public.questions where owner_user_id is null and status in ('in_review','auto_checked')"
         " order by created_at, id limit %s offset %s",
         (limit + 1, offset),
     )

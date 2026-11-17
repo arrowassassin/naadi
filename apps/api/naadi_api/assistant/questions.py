@@ -16,6 +16,7 @@ HIDDEN_FIELDS = ("answer", "answer_html", "explanation_html", "why_not_html", "e
 _REVEALED = """
 select distinct a.question_id from public.attempts a
 join public.questions q on q.id = a.question_id and q.status = 'published'
+ and (q.owner_user_id is null or q.owner_user_id = a.user_id)
 left join public.chapters c on c.id = q.chapter_id
 left join public.blocks b on b.id = a.block_id and b.user_id = a.user_id
 where a.user_id = %(uid)s and a.question_id = any(%(ids)s)
@@ -66,8 +67,10 @@ async def question_for_assistant(db: Database, user_id: uuid.UUID, question_id: 
         "select q.id, q.stem_html, q.options, q.chapter_id, c.kind as chapter_kind,"
         " q.answer, q.answer_html, q.explanation_html, q.why_not_html, q.educational_objective"
         " from public.questions q left join public.chapters c on c.id = q.chapter_id"
-        " where q.id = %(q)s and q.status = 'published'",
-        {"q": question_id},
+        " where q.id = %(q)s and q.status = 'published'"
+        # Pool connection: a student's private question is read only for its owner.
+        " and (q.owner_user_id is null or q.owner_user_id = %(uid)s)",
+        {"q": question_id, "uid": user_id},
     )
     if not rows or rows[0]["chapter_kind"] == "mock_exam":
         return None
