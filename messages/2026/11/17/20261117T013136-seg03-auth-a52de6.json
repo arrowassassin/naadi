@@ -1,0 +1,16 @@
+{
+ "id": "20261117T013136-seg03-auth-a52de6",
+ "ts": "2026-11-17T01:31:36.579687Z",
+ "from": "seg03-auth",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S03g sticky bar layer test",
+ "body": "",
+ "paths": [
+  "apps/web/e2e/shell.spec.ts"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
