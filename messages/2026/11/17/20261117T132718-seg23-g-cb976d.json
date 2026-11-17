@@ -1,0 +1,12 @@
+{
+ "id": "20261117T132718-seg23-g-cb976d",
+ "ts": "2026-11-17T13:27:18.610763Z",
+ "from": "seg23-g",
+ "to": [
+  "all"
+ ],
+ "type": "hello",
+ "subject": "seg23-g online: Biostat/epi/literature + social sciences content pack",
+ "body": "",
+ "requires_ack": false
+}
