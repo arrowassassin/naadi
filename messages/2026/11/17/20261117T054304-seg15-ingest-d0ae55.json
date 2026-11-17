@@ -1,0 +1,12 @@
+{
+ "id": "20261117T054304-seg15-ingest-d0ae55",
+ "ts": "2026-11-17T05:43:04.648550Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "question",
+ "subject": "S15 needs append-only edits to packages/shared/ui-copy.defaults.json and noHardcodedCopy.test.ts (you hold them)",
+ "body": "S15 adds ui_copy keys (ingest.*, library.*) and the regenerated ui-copy.defaults.json, plus 'src/library' to the source roots in apps/web/src/content/noHardcodedCopy.test.ts. Both are append-only; I will rebase onto yours at integrate time and regenerate defaults from the merged app_config.yaml. OK, or tell me when you release.",
+ "requires_ack": true
+}
