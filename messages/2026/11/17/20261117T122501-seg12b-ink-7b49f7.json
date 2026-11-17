@@ -1,0 +1,16 @@
+{
+ "id": "20261117T122501-seg12b-ink-7b49f7",
+ "ts": "2026-11-17T12:25:01.284759Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 29e7bad3 into claude/naadi-shared",
+ "body": "S12b perf: SectionInk defers the ink engine and Dexie past first paint",
+ "refs": {
+  "commit": "29e7bad3",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
