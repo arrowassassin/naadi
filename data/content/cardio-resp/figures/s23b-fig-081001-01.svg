@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="Renin-angiotensin-aldosterone pathway with sites of action of ACE inhibitors, angiotensin receptor blockers, renin inhibitors, mineralocorticoid antagonists and thiazides">
+<defs><marker id="s23b-fig-081001-01-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="440" fill="#ffffff"/>
+<rect x="20" y="30" width="150" height="46" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="95.0" y="50.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Angiotensinogen</text>
+<text x="95.0" y="66.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">(liver)</text>
+<rect x="270" y="30" width="150" height="46" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="345.0" y="58.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Angiotensin I</text>
+<rect x="520" y="30" width="170" height="46" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="605.0" y="58.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Angiotensin II</text>
+<line x1="170" y1="53" x2="268" y2="53" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<text x="179.0" y="43.0" font-family="sans-serif" font-size="12" fill="#334155">Renin (kidney)</text>
+<line x1="420" y1="53" x2="518" y2="53" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<text x="439.0" y="43.0" font-family="sans-serif" font-size="12" fill="#334155">ACE (lung)</text>
+<rect x="175" y="82" width="91.2" height="24" rx="12" fill="#fee2e2" stroke="#b91c1c"/>
+<text x="183" y="98" font-family="sans-serif" font-size="12" fill="#7f1d1d">✕ Aliskiren</text>
+<rect x="400" y="82" width="127.2" height="24" rx="12" fill="#fee2e2" stroke="#b91c1c"/>
+<text x="408" y="98" font-family="sans-serif" font-size="12" fill="#7f1d1d">✕ ACE inhibitors</text>
+<rect x="20" y="150" width="190" height="56" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="115.0" y="167.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Low renal perfusion,</text>
+<text x="115.0" y="183.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">β1 stimulation, low</text>
+<text x="115.0" y="199.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">macula densa NaCl</text>
+<line x1="115" y1="150" x2="190" y2="62" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<rect x="520" y="150" width="170" height="40" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="605.0" y="175.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">AT1 receptor</text>
+<line x1="605" y1="76" x2="605" y2="148" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<rect x="615" y="104" width="55.2" height="24" rx="12" fill="#fee2e2" stroke="#b91c1c"/>
+<text x="623" y="120" font-family="sans-serif" font-size="12" fill="#7f1d1d">✕ ARBs</text>
+<rect x="330" y="240" width="170" height="56" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="415.0" y="265.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Aldosterone</text>
+<text x="415.0" y="281.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">(zona glomerulosa)</text>
+<rect x="530" y="240" width="170" height="56" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="615.0" y="265.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Vasoconstriction,</text>
+<text x="615.0" y="281.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">efferent arteriole ↑</text>
+<rect x="150" y="240" width="150" height="56" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="225.0" y="265.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">ADH release,</text>
+<text x="225.0" y="281.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">thirst</text>
+<line x1="560" y1="190" x2="430" y2="238" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<line x1="615" y1="190" x2="615" y2="238" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<line x1="540" y1="190" x2="240" y2="238" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<rect x="300" y="340" width="230" height="56" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="415.0" y="365.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Collecting duct: Na⁺ retained,</text>
+<text x="415.0" y="381.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">K⁺ and H⁺ secreted</text>
+<line x1="415" y1="296" x2="415" y2="338" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-081001-01-ar)"/>
+<rect x="300" y="404" width="213.6" height="24" rx="12" fill="#fee2e2" stroke="#b91c1c"/>
+<text x="308" y="420" font-family="sans-serif" font-size="12" fill="#7f1d1d">✕ Spironolactone, eplerenone</text>
+<rect x="20" y="340" width="240" height="56" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+<text x="140.0" y="365.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Distal convoluted tubule:</text>
+<text x="140.0" y="381.0" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f172a">Na⁺–Cl⁻ cotransporter</text>
+<rect x="40" y="310" width="91.2" height="24" rx="12" fill="#fee2e2" stroke="#b91c1c"/>
+<text x="48" y="326" font-family="sans-serif" font-size="12" fill="#7f1d1d">✕ Thiazides</text>
+</svg>

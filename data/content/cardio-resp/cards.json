@@ -1,1 +1,4545 @@
-[]
+[
+  {
+    "id": "s23b-c-080101-01",
+    "frontHtml": "Endocarditis in a person who injects drugs: most likely valve and organism?",
+    "backHtml": "Tricuspid valve; <em>Staphylococcus aureus</em>.",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-02",
+    "frontHtml": "How do viridans streptococci stick to a damaged valve?",
+    "backHtml": "Extracellular dextran (glucan) binds the sterile platelet–fibrin nidus on injured endothelium.",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-03",
+    "frontHtml": "<em>S. gallolyticus</em> (<em>S. bovis</em>) endocarditis: what else must you look for?",
+    "backHtml": "Colonic adenoma or carcinoma: colonoscopy.",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-04",
+    "frontHtml": "Osler nodes vs Janeway lesions: pain and mechanism?",
+    "backHtml": "Osler: tender finger/toe-pad nodules, immune complexes. Janeway: painless palm/sole macules, septic microemboli.",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-05",
+    "frontHtml": "Early prosthetic valve endocarditis: leading organism and key virulence factor?",
+    "backHtml": "Coagulase-negative staphylococci (<em>S. epidermidis</em>); polysaccharide biofilm.",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-06",
+    "frontHtml": "Two zoonotic or vector-borne causes of culture-negative endocarditis?",
+    "backHtml": "<em>Coxiella burnetii</em> (inhaled from livestock birth products) and <em>Bartonella</em> (<em>B. quintana</em> from body lice; <em>B. henselae</em> from cats).",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-07",
+    "frontHtml": "Name the HACEK organisms.",
+    "backHtml": "<em>Haemophilus</em> (non-influenzae), <em>Aggregatibacter</em>, <em>Cardiobacterium</em>, <em>Eikenella</em>, <em>Kingella</em>: fastidious oral gram-negative bacilli.",
+    "sectionId": "s23b-s-080101-s1-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-08",
+    "frontHtml": "Classic virus of myocarditis and its structure?",
+    "backHtml": "Coxsackievirus B: picornavirus, nonenveloped, positive-sense ssRNA.",
+    "sectionId": "s23b-s-080101-s1-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-09",
+    "frontHtml": "Chronic Chagas disease: heart and gut findings?",
+    "backHtml": "Dilated cardiomyopathy, apical aneurysm, RBBB + left anterior fascicular block; megaesophagus and megacolon.",
+    "sectionId": "s23b-s-080101-s1-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-10",
+    "frontHtml": "Mechanism of syphilitic aortitis?",
+    "backHtml": "Obliterative endarteritis of the vasa vasorum → medial loss → ascending aortic aneurysm, aortic regurgitation, tree-bark intima.",
+    "sectionId": "s23b-s-080101-s1-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-11",
+    "frontHtml": "Typical cardiac lesion of Lyme disease?",
+    "backHtml": "AV block (can fluctuate from first-degree to complete), weeks after erythema migrans.",
+    "sectionId": "s23b-s-080101-s1-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-12",
+    "frontHtml": "How does diphtheria cause myocarditis?",
+    "backHtml": "Exotoxin ADP-ribosylates elongation factor 2 and halts protein synthesis in myocytes.",
+    "sectionId": "s23b-s-080101-s1-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-13",
+    "frontHtml": "Suspected endocarditis, stable patient: first step?",
+    "backHtml": "Three sets of blood cultures from separate venipunctures before antibiotics.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-14",
+    "frontHtml": "When is TEE preferred over (or after) TTE in suspected endocarditis?",
+    "backHtml": "Negative TTE with high suspicion, prosthetic valve or device, <em>S. aureus</em> bacteremia, suspected abscess or other complication.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-15",
+    "frontHtml": "MSSA endocarditis: drug of choice?",
+    "backHtml": "An antistaphylococcal β-lactam (cefazolin, nafcillin or oxacillin); better than vancomycin.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-16",
+    "frontHtml": "Main indications for surgery in endocarditis?",
+    "backHtml": "Heart failure from valve dysfunction; uncontrolled infection (abscess, heart block, persistent bacteremia); fungal or resistant organisms; large mobile vegetation with embolism.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-17",
+    "frontHtml": "Who gets endocarditis prophylaxis before dental work?",
+    "backHtml": "Prosthetic valve or valve-repair material, prior IE, specific congenital heart disease, transplant with valvulopathy.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-18",
+    "frontHtml": "Usual dental endocarditis prophylaxis regimen?",
+    "backHtml": "A single oral dose of amoxicillin 30–60 minutes before the procedure (clindamycin no longer advised).",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-19",
+    "frontHtml": "Aortic valve endocarditis with a lengthening PR interval: what do you suspect?",
+    "backHtml": "Perivalvular (root) abscess reaching the conduction system: TEE and surgery.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-20",
+    "frontHtml": "Enterococcus faecalis endocarditis: a common regimen that avoids aminoglycosides?",
+    "backHtml": "Ampicillin plus ceftriaxone.",
+    "sectionId": "s23b-s-080101-ck-01",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-21",
+    "frontHtml": "Best noninvasive test to confirm acute myocarditis?",
+    "backHtml": "Cardiac MRI (edema, non-coronary late gadolinium enhancement).",
+    "sectionId": "s23b-s-080101-ck-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-22",
+    "frontHtml": "Lyme carditis: who needs admission and IV ceftriaxone?",
+    "backHtml": "Symptomatic patients, PR ≥ 300 ms, or second- or third-degree block.",
+    "sectionId": "s23b-s-080101-ck-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-23",
+    "frontHtml": "Is a permanent pacemaker usually needed for Lyme carditis?",
+    "backHtml": "No: the block usually resolves with antibiotics; use temporary pacing if unstable.",
+    "sectionId": "s23b-s-080101-ck-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-24",
+    "frontHtml": "How is chronic Chagas infection diagnosed?",
+    "backHtml": "Serology with two different IgG assays (smears only help in the acute phase).",
+    "sectionId": "s23b-s-080101-ck-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080101-25",
+    "frontHtml": "Treatment of tertiary (non-neurologic) syphilis such as aortitis?",
+    "backHtml": "Benzathine penicillin G IM weekly for 3 weeks (neurosyphilis needs IV aqueous penicillin G).",
+    "sectionId": "s23b-s-080101-ck-02",
+    "areas": [
+      "usmle2026.08.01.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-01",
+    "frontHtml": "Mechanism of acute rheumatic fever?",
+    "backHtml": "Molecular mimicry: anti–M protein antibodies and T cells cross-react with cardiac myosin and valve proteins (type II hypersensitivity).",
+    "sectionId": "s23b-s-080102-s1-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-02",
+    "frontHtml": "Which group A strep infection triggers rheumatic fever?",
+    "backHtml": "Pharyngitis only (skin infection can cause glomerulonephritis but not rheumatic fever).",
+    "sectionId": "s23b-s-080102-s1-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-03",
+    "frontHtml": "What is an Aschoff body?",
+    "backHtml": "Fibrinoid necrosis with lymphocytes and Anitschkow cells (wavy \"caterpillar\" chromatin): rheumatic carditis.",
+    "sectionId": "s23b-s-080102-s1-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-04",
+    "frontHtml": "Acute vs chronic rheumatic valve lesion?",
+    "backHtml": "Acute: mitral regurgitation (valvulitis). Chronic: mitral stenosis with fused commissures.",
+    "sectionId": "s23b-s-080102-s1-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-05",
+    "frontHtml": "Usual cause of death in acute rheumatic fever?",
+    "backHtml": "Myocarditis with heart failure.",
+    "sectionId": "s23b-s-080102-s1-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-06",
+    "frontHtml": "Which rheumatic fever manifestation can appear months later and alone?",
+    "backHtml": "Sydenham chorea.",
+    "sectionId": "s23b-s-080102-s1-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-07",
+    "frontHtml": "Libman–Sacks vegetations: location and association?",
+    "backHtml": "Small sterile vegetations on both surfaces of (usually mitral) leaflets; lupus and antiphospholipid antibodies.",
+    "sectionId": "s23b-s-080102-s1-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-08",
+    "frontHtml": "Nonbacterial thrombotic endocarditis: classic setting?",
+    "backHtml": "Hypercoagulable state, especially mucin-producing adenocarcinoma (pancreas, lung); sterile vegetations that embolise.",
+    "sectionId": "s23b-s-080102-s1-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-09",
+    "frontHtml": "Why does carcinoid heart disease spare the left heart?",
+    "backHtml": "Lung monoamine oxidase degrades serotonin (unless bronchial primary or right-to-left shunt).",
+    "sectionId": "s23b-s-080102-s1-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-10",
+    "frontHtml": "Valve lesions of carcinoid heart disease?",
+    "backHtml": "Tricuspid regurgitation and pulmonic stenosis or regurgitation (fibrous endocardial plaques).",
+    "sectionId": "s23b-s-080102-s1-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-11",
+    "frontHtml": "Kawasaki disease: vessel size and key complication?",
+    "backHtml": "Medium vessels; coronary artery aneurysm.",
+    "sectionId": "s23b-s-080102-s1-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-12",
+    "frontHtml": "Takayasu vs giant cell arteritis: how to tell apart?",
+    "backHtml": "Both granulomatous large-vessel vasculitis; Takayasu in women under 40 (arch branches, pulseless), GCA over 50 (temporal, jaw claudication).",
+    "sectionId": "s23b-s-080102-s1-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-13",
+    "frontHtml": "Steroid-sparing biologic in giant cell arteritis and its target?",
+    "backHtml": "Tocilizumab: IL-6 receptor antibody.",
+    "sectionId": "s23b-s-080102-s1-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-14",
+    "frontHtml": "Late aortic complication of giant cell arteritis?",
+    "backHtml": "Thoracic aortic aneurysm (and dissection).",
+    "sectionId": "s23b-s-080102-s1-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-15",
+    "frontHtml": "Dressler syndrome: timing and mechanism?",
+    "backHtml": "Pericarditis 1–6 weeks after MI; autoimmune reaction to myocardial antigens.",
+    "sectionId": "s23b-s-080102-s1-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-16",
+    "frontHtml": "Secondary prophylaxis drug after rheumatic fever?",
+    "backHtml": "IM benzathine penicillin G every 4 weeks (every 3 weeks in high-risk settings).",
+    "sectionId": "s23b-s-080102-ck-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-17",
+    "frontHtml": "Duration of rheumatic fever prophylaxis with residual valve disease?",
+    "backHtml": "10 years or until age 40, whichever is longer (sometimes lifelong).",
+    "sectionId": "s23b-s-080102-ck-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-18",
+    "frontHtml": "Duration of rheumatic fever prophylaxis without carditis?",
+    "backHtml": "5 years or until age 21, whichever is longer.",
+    "sectionId": "s23b-s-080102-ck-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-19",
+    "frontHtml": "Which test in every suspected rheumatic fever case detects silent carditis?",
+    "backHtml": "Echocardiography with Doppler.",
+    "sectionId": "s23b-s-080102-ck-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-20",
+    "frontHtml": "Anticoagulant for atrial fibrillation with moderate-to-severe rheumatic mitral stenosis?",
+    "backHtml": "Warfarin (vitamin K antagonist), not a DOAC.",
+    "sectionId": "s23b-s-080102-ck-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-21",
+    "frontHtml": "Symptomatic mitral stenosis in pregnancy: first-line drug?",
+    "backHtml": "A β<sub>1</sub>-selective blocker (e.g. metoprolol), plus a diuretic for congestion.",
+    "sectionId": "s23b-s-080102-ck-01",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-22",
+    "frontHtml": "Criteria for complete Kawasaki disease?",
+    "backHtml": "Fever ≥ 5 days + ≥ 4 of: bilateral nonexudative conjunctivitis, oral changes, polymorphous rash, extremity changes, cervical node ≥ 1.5 cm.",
+    "sectionId": "s23b-s-080102-ck-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-23",
+    "frontHtml": "Initial treatment of Kawasaki disease?",
+    "backHtml": "IVIG 2 g/kg single infusion + aspirin, ideally within 10 days of fever onset.",
+    "sectionId": "s23b-s-080102-ck-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-24",
+    "frontHtml": "When is echocardiography done in Kawasaki disease?",
+    "backHtml": "At diagnosis, at 1–2 weeks and at 4–6 weeks (more often if coronaries are abnormal).",
+    "sectionId": "s23b-s-080102-ck-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-25",
+    "frontHtml": "After IVIG for Kawasaki disease, when can MMR and varicella be given?",
+    "backHtml": "About 11 months later.",
+    "sectionId": "s23b-s-080102-ck-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-26",
+    "frontHtml": "Why give inactivated (not live) influenza vaccine to a child on aspirin?",
+    "backHtml": "Live vaccine is contraindicated with aspirin, and influenza on aspirin raises the risk of Reye syndrome.",
+    "sectionId": "s23b-s-080102-ck-02",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-27",
+    "frontHtml": "Long-term anticoagulant in thrombotic antiphospholipid syndrome?",
+    "backHtml": "Warfarin; DOACs are inferior in high-risk (triple-positive, arterial) APS.",
+    "sectionId": "s23b-s-080102-ck-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-28",
+    "frontHtml": "Antithrombotic for nonbacterial thrombotic endocarditis?",
+    "backHtml": "Therapeutic heparin (LMWH or unfractionated).",
+    "sectionId": "s23b-s-080102-ck-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-29",
+    "frontHtml": "First test for suspected carcinoid syndrome?",
+    "backHtml": "24-hour urine 5-HIAA (or plasma 5-HIAA).",
+    "sectionId": "s23b-s-080102-ck-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-30",
+    "frontHtml": "Suspected GCA with visual symptoms: first step?",
+    "backHtml": "High-dose glucocorticoids immediately; biopsy or ultrasound within 1–2 weeks.",
+    "sectionId": "s23b-s-080102-ck-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080102-31",
+    "frontHtml": "Diagnostic test for suspected Takayasu arteritis?",
+    "backHtml": "MR or CT angiography of the aorta and its branches.",
+    "sectionId": "s23b-s-080102-ck-03",
+    "areas": [
+      "usmle2026.08.01.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-01",
+    "frontHtml": "Most common tumor involving the heart in adults?",
+    "backHtml": "A metastasis (lung, breast, lymphoma/leukemia most often; melanoma has the highest rate relative to its frequency).",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-02",
+    "frontHtml": "Most common primary cardiac tumor in adults, and its usual site?",
+    "backHtml": "Myxoma; left atrium, on a stalk attached to the interatrial septum near the fossa ovalis.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-03",
+    "frontHtml": "Histology of a cardiac myxoma?",
+    "backHtml": "Stellate and spindle 'myxoma cells', often around small vessels, in an abundant mucopolysaccharide (myxoid) matrix with hemorrhage.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-04",
+    "frontHtml": "Which cytokine from a myxoma causes fever, weight loss, anemia and a high ESR?",
+    "backHtml": "Interleukin-6.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-05",
+    "frontHtml": "Three ways a left atrial myxoma causes disease?",
+    "backHtml": "Mitral orifice obstruction (positional dyspnea/syncope, diastolic 'plop'), systemic embolism, and IL-6 constitutional symptoms.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-06",
+    "frontHtml": "Gene and syndrome for familial myxomas with spotty pigmentation and endocrine overactivity?",
+    "backHtml": "Carney complex, autosomal dominant; <em>PRKAR1A</em> (protein kinase A regulatory subunit 1A).",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-07",
+    "frontHtml": "Most common primary cardiac tumor in children, and its syndrome?",
+    "backHtml": "Rhabdomyoma (ventricular, often multiple), associated with tuberous sclerosis (TSC1/TSC2 → mTOR); usually regresses.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-08",
+    "frontHtml": "Most common primary malignant cardiac tumor in adults; site and markers?",
+    "backHtml": "Angiosarcoma; right atrium; endothelial markers (CD31, ERG); hemorrhagic pericardial effusion.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-09",
+    "frontHtml": "Valve tumor of older adults that causes embolic stroke?",
+    "backHtml": "Papillary fibroelastoma (often aortic valve): avascular fronds with an elastic core.",
+    "sectionId": "s23b-s-080201-s1-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-10",
+    "frontHtml": "Best initial test for a suspected cardiac mass?",
+    "backHtml": "Transthoracic echocardiography (TEE and cardiac MRI for detail and tissue characterization).",
+    "sectionId": "s23b-s-080201-ck-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-11",
+    "frontHtml": "Treatment of a left atrial myxoma?",
+    "backHtml": "Prompt surgical excision including the stalk and a cuff of septum; follow-up echocardiography for recurrence.",
+    "sectionId": "s23b-s-080201-ck-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-12",
+    "frontHtml": "Left atrial mass in a patient with atrial fibrillation and mitral stenosis: most likely?",
+    "backHtml": "Thrombus (left atrial appendage); it shrinks with anticoagulation, unlike a myxoma.",
+    "sectionId": "s23b-s-080201-ck-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-13",
+    "frontHtml": "Management of asymptomatic, non-obstructive rhabdomyomas in an infant?",
+    "backHtml": "Observation with serial echocardiography; most regress. Treat only obstruction or refractory arrhythmia. Evaluate for tuberous sclerosis.",
+    "sectionId": "s23b-s-080201-ck-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-14",
+    "frontHtml": "When to excise a papillary fibroelastoma?",
+    "backHtml": "When it has embolized, is mobile or is large; small immobile asymptomatic lesions can be followed.",
+    "sectionId": "s23b-s-080201-ck-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080201-15",
+    "frontHtml": "Malignant pericardial effusion with tamponade: immediate step and step for recurrence?",
+    "backHtml": "Urgent pericardiocentesis (send cytology); recurrence → pericardial window or extended catheter drainage.",
+    "sectionId": "s23b-s-080201-ck-01",
+    "areas": [
+      "usmle2026.08.02.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-01",
+    "frontHtml": "Which ion current produces phase 0 of the ventricular myocyte action potential?",
+    "backHtml": "Fast inward Na<sup>+</sup> current through voltage-gated Na<sup>+</sup> channels.",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-02",
+    "frontHtml": "Which current carries the upstroke (phase 0) of SA and AV nodal cells?",
+    "backHtml": "L-type Ca<sup>2+</sup> current (nodal cells have no fast Na<sup>+</sup>-driven upstroke).",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-03",
+    "frontHtml": "What sets the intrinsic heart rate in the SA node?",
+    "backHtml": "The slope of phase 4 diastolic depolarization, driven by the funny current I<sub>f</sub> (HCN channels) and T-type Ca<sup>2+</sup> current.",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-04",
+    "frontHtml": "How do sympathetic and vagal inputs change SA node firing?",
+    "backHtml": "β<sub>1</sub> (cAMP) steepens phase 4 → faster; M<sub>2</sub> opens K<sup>+</sup> channels and flattens phase 4 → slower.",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-05",
+    "frontHtml": "Rank conduction velocity through cardiac tissues.",
+    "backHtml": "Purkinje fibres (fastest) &gt; atrial and ventricular muscle &gt; AV node (slowest).",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-06",
+    "frontHtml": "Normal PR and QRS durations?",
+    "backHtml": "PR 0.12–0.20 s; QRS &lt; 0.12 s.",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-07",
+    "frontHtml": "Which coronary artery usually supplies the AV node, and what is the clinical link?",
+    "backHtml": "The artery giving off the posterior descending artery (usually the right coronary artery); inferior MI often causes (usually transient) nodal block.",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-08",
+    "frontHtml": "What is the vulnerable period of ventricular repolarization?",
+    "backHtml": "The relative refractory period on the downslope of the T wave; a stimulus there (R on T) can start VF.",
+    "sectionId": "s23b-s-080301-s1-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-09",
+    "frontHtml": "Class IA antiarrhythmics: ECG effect and signature toxicities?",
+    "backHtml": "Longer QRS and QT; torsades; procainamide → drug-induced lupus; quinidine → cinchonism, diarrhea.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-10",
+    "frontHtml": "Why do class IB drugs (lidocaine) work best in ischemic tissue?",
+    "backHtml": "They bind preferentially to depolarized/inactivated Na<sup>+</sup> channels and unbind rapidly from normal tissue.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-11",
+    "frontHtml": "Class IC drugs: key mechanism feature and main contraindication?",
+    "backHtml": "Strong use-dependent Na<sup>+</sup> block (QRS widens at fast rates); avoid in structural or ischemic heart disease.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-12",
+    "frontHtml": "Main ECG effect of class II and IV antiarrhythmics?",
+    "backHtml": "Slower AV nodal conduction → longer PR interval.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-13",
+    "frontHtml": "Class III drugs act on which current and which phase?",
+    "backHtml": "Block K<sup>+</sup> efflux (I<sub>Kr</sub>) → longer phase 3 and QT.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-14",
+    "frontHtml": "Name six toxicities of amiodarone.",
+    "backHtml": "Pulmonary fibrosis, thyroid dysfunction (hypo or hyper), hepatotoxicity, corneal deposits/optic neuropathy, photosensitivity/blue-grey skin, bradycardia; also raises warfarin and digoxin levels.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-15",
+    "frontHtml": "Adenosine: receptor, ionic effect and what blunts it?",
+    "backHtml": "A<sub>1</sub> receptor → more K<sup>+</sup> efflux, less Ca<sup>2+</sup> current in AV node; blunted by theophylline/caffeine, enhanced by dipyridamole.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-16",
+    "frontHtml": "Ivabradine: target and typical adverse effect?",
+    "backHtml": "Blocks I<sub>f</sub> (HCN) in the SA node; luminous visual phenomena (phosphenes), bradycardia.",
+    "sectionId": "s23b-s-080301-s1-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-17",
+    "frontHtml": "Mobitz I vs Mobitz II: PR pattern and level of block?",
+    "backHtml": "Mobitz I: progressive PR lengthening, AV node, usually benign. Mobitz II: constant PR then dropped beat, infranodal, may progress.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-18",
+    "frontHtml": "Third-degree AV block: relationship of P waves and QRS complexes?",
+    "backHtml": "None: atria and ventricles beat independently; atrial rate exceeds the escape rate.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-19",
+    "frontHtml": "Three conditions needed for re-entry?",
+    "backHtml": "Two pathways with different conduction/refractoriness, unidirectional block in one, and enough slow conduction for recovery ahead of the wave.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-20",
+    "frontHtml": "Typical atrial flutter: circuit and ablation target?",
+    "backHtml": "Macro-re-entry around the tricuspid annulus (right atrium); ablate the cavotricuspid isthmus.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-21",
+    "frontHtml": "ECG triad of ventricular pre-excitation?",
+    "backHtml": "Short PR, delta wave, slightly wide QRS.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-22",
+    "frontHtml": "Why is AF dangerous in WPW?",
+    "backHtml": "The accessory pathway lacks the AV node's rate limiting, so very fast ventricular rates can degenerate to VF.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-23",
+    "frontHtml": "Long QT types 1, 2 and 3: channel and trigger?",
+    "backHtml": "LQT1: ↓I<sub>Ks</sub>, exercise/swimming; LQT2: ↓I<sub>Kr</sub>, sudden noise/postpartum; LQT3: ↑late Na<sup>+</sup> current, rest/sleep.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-24",
+    "frontHtml": "Long QT plus congenital sensorineural deafness, recessive inheritance?",
+    "backHtml": "Jervell and Lange-Nielsen syndrome (I<sub>Ks</sub> channel subunits).",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-25",
+    "frontHtml": "Brugada syndrome: ECG and treatment for high-risk patients?",
+    "backHtml": "Coved ST elevation in V1–V2 (Na<sup>+</sup> channel loss of function); ICD.",
+    "sectionId": "s23b-s-080301-s1-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-26",
+    "frontHtml": "First decision in any tachycardia?",
+    "backHtml": "Is the patient unstable (hypotension, altered mentation, shock, ischemic pain, acute HF)? If so → synchronized cardioversion.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-27",
+    "frontHtml": "Stable paroxysmal SVT: sequence of treatment?",
+    "backHtml": "Vagal maneuvers → IV adenosine → IV diltiazem/verapamil or β-blocker → cardioversion; ablation for recurrence.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-28",
+    "frontHtml": "Components of CHA<sub>2</sub>DS<sub>2</sub>-VASc?",
+    "backHtml": "CHF 1, HTN 1, age ≥ 75 2, diabetes 1, stroke/TIA/embolism 2, vascular disease 1, age 65–74 1, female sex 1.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-29",
+    "frontHtml": "When must AF be anticoagulated with warfarin rather than a DOAC?",
+    "backHtml": "Mechanical heart valve or moderate-to-severe mitral stenosis.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-30",
+    "frontHtml": "Before elective cardioversion of AF ≥ 48 h, what is required?",
+    "backHtml": "≥ 3 weeks of anticoagulation or TEE excluding left atrial thrombus; anticoagulate ≥ 4 weeks afterwards.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-31",
+    "frontHtml": "Rate-control drug to avoid in AF with HFrEF?",
+    "backHtml": "Diltiazem/verapamil (negative inotropes); use a β-blocker, with digoxin as an add-on.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-32",
+    "frontHtml": "Stable regular wide-complex tachycardia in a patient with prior MI: presumed diagnosis and drug options?",
+    "backHtml": "VT; IV amiodarone or procainamide, or elective synchronized cardioversion. Never a calcium channel blocker.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-33",
+    "frontHtml": "Pre-excited AF (WPW), stable: treatment, and drugs to avoid?",
+    "backHtml": "IV procainamide or ibutilide; avoid adenosine, β-blockers, diltiazem/verapamil, digoxin (and IV amiodarone).",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-34",
+    "frontHtml": "Torsades de pointes with a pulse: first treatment?",
+    "backHtml": "IV magnesium sulfate; stop QT-prolonging drugs, correct K<sup>+</sup> and Mg<sup>2+</sup>; defibrillate if pulseless.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-35",
+    "frontHtml": "Multifocal atrial tachycardia: ECG and main association?",
+    "backHtml": "≥ 3 P-wave morphologies with an irregular rate &gt; 100/min; severe lung disease such as COPD. Treat the underlying cause.",
+    "sectionId": "s23b-s-080301-ck-01",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-36",
+    "frontHtml": "Symptomatic bradycardia unresponsive to atropine: next step?",
+    "backHtml": "Transcutaneous pacing or dopamine/epinephrine infusion, then transvenous pacing.",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-37",
+    "frontHtml": "Which AV blocks need a permanent pacemaker even without symptoms (no reversible cause)?",
+    "backHtml": "Mobitz II, advanced (high-grade) and third-degree AV block; alternating bundle branch block.",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-38",
+    "frontHtml": "Reversible causes to exclude before pacing for bradycardia?",
+    "backHtml": "AV nodal drugs, hyperkalemia, hypothyroidism, acute inferior MI, Lyme carditis, high vagal tone/sleep apnea.",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-39",
+    "frontHtml": "Tachy–brady syndrome: why pace first?",
+    "backHtml": "The rate-controlling drugs needed for the tachycardia would worsen the pauses.",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-40",
+    "frontHtml": "Carotid sinus hypersensitivity: diagnostic criteria with massage?",
+    "backHtml": "Pause ≥ 3 s (cardioinhibitory) and/or systolic fall ≥ 50 mm Hg (vasodepressor); pace recurrent cardioinhibitory syncope.",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-41",
+    "frontHtml": "RBBB vs LBBB in V1?",
+    "backHtml": "RBBB: rsR′ (M-shaped) in V1. LBBB: deep broad S in V1 with broad notched R in V6.",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-42",
+    "frontHtml": "Pacing spikes not followed by a QRS?",
+    "backHtml": "Failure to capture (lead dislodgement, fracture, high threshold, hyperkalemia, battery).",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-43",
+    "frontHtml": "Spikes appearing on top of the patient's own QRS complexes?",
+    "backHtml": "Failure to sense (undersensing).",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-44",
+    "frontHtml": "What does a magnet do to a pacemaker?",
+    "backHtml": "Switches it to asynchronous pacing at a fixed rate (useful with electrocautery or oversensing).",
+    "sectionId": "s23b-s-080301-ck-02",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-45",
+    "frontHtml": "Shockable vs nonshockable arrest rhythms?",
+    "backHtml": "Shockable: VF, pulseless VT. Nonshockable: PEA, asystole.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-46",
+    "frontHtml": "Timing of epinephrine and amiodarone in VF arrest?",
+    "backHtml": "Epinephrine after the 2nd shock then every 3–5 min; amiodarone (or lidocaine) after the 3rd shock.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-47",
+    "frontHtml": "PEA/asystole: first drug and key search?",
+    "backHtml": "Epinephrine as soon as possible; search for reversible causes (Hs and Ts).",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-48",
+    "frontHtml": "List the reversible causes of cardiac arrest.",
+    "backHtml": "Hypovolemia, hypoxia, acidosis, hypo/hyperkalemia, hypothermia; tension pneumothorax, tamponade, toxins, coronary or pulmonary thrombosis.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-49",
+    "frontHtml": "High-quality CPR targets?",
+    "backHtml": "100–120 compressions/min, ≥ 5 cm depth, full recoil, minimal interruptions, 30:2 without an advanced airway.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-50",
+    "frontHtml": "ROSC with ST elevation on the ECG?",
+    "backHtml": "Emergent coronary angiography, even if comatose.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-51",
+    "frontHtml": "Primary prevention ICD criteria?",
+    "backHtml": "LVEF ≤ 35%, NYHA II–III despite ≥ 3 months of optimal therapy (≥ 40 days after MI), reasonable survival.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080301-52",
+    "frontHtml": "Congenital long QT: first-line drug?",
+    "backHtml": "Nonselective β-blocker (nadolol or propranolol), plus avoiding QT-prolonging drugs; ICD after arrest.",
+    "sectionId": "s23b-s-080301-ck-03",
+    "areas": [
+      "usmle2026.08.03.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-01",
+    "frontHtml": "On a pressure–volume loop, what does systolic dysfunction do to the end-systolic pressure–volume line and the loop?",
+    "backHtml": "The line flattens (lower contractility); end-systolic and end-diastolic volumes rise, so the loop shifts right and the ejection fraction falls.",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-02",
+    "frontHtml": "Diastolic dysfunction: which pressure–volume relation changes and how?",
+    "backHtml": "The end-diastolic pressure–volume curve becomes steeper: a normal filling volume costs a high end-diastolic pressure.",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-03",
+    "frontHtml": "Where and why is BNP secreted?",
+    "backHtml": "From ventricular myocytes, in response to wall stretch (volume or pressure overload). It raises cGMP to cause natriuresis and vasodilation.",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-04",
+    "frontHtml": "Which enzyme breaks down natriuretic peptides and bradykinin, and what drug inhibits it?",
+    "backHtml": "Neprilysin; sacubitril (given with valsartan, never with an ACE inhibitor).",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-05",
+    "frontHtml": "Cor pulmonale: definition and main mechanism?",
+    "backHtml": "Right ventricular hypertrophy or failure caused by lung or pulmonary vascular disease; chiefly hypoxic pulmonary vasoconstriction raising RV afterload.",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-06",
+    "frontHtml": "Name five causes of high-output heart failure.",
+    "backHtml": "Thyrotoxicosis, severe anemia, arteriovenous fistula, wet beriberi (thiamine deficiency), Paget disease of bone (also pregnancy, sepsis, cirrhosis).",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-07",
+    "frontHtml": "Why is the murmur of acute severe mitral regurgitation often soft?",
+    "backHtml": "The small non-compliant left atrium's pressure rises quickly (giant v wave), so the LV–LA gradient falls early in systole.",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-08",
+    "frontHtml": "S3 versus S4: which suggests a dilated volume-overloaded ventricle and which a stiff one?",
+    "backHtml": "S3: dilated, volume-overloaded (systolic failure). S4: stiff, hypertrophied (diastolic dysfunction); an S4 is never normal.",
+    "sectionId": "s23b-s-080401-s1-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-09",
+    "frontHtml": "The four drug classes that lower mortality in HFrEF?",
+    "backHtml": "ARNI (or ACE inhibitor/ARB), evidence-based beta-blocker (carvedilol, metoprolol succinate, bisoprolol), mineralocorticoid receptor antagonist, SGLT2 inhibitor.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-10",
+    "frontHtml": "Ejection fraction cut-offs for HFrEF, HFmrEF and HFpEF?",
+    "backHtml": "HFrEF ≤ 40%; HFmrEF 41–49%; HFpEF ≥ 50%.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-11",
+    "frontHtml": "When should an MRA not be started in HFrEF?",
+    "backHtml": "Potassium ≥ 5.0 mEq/L or eGFR ≤ 30 mL/min/1.73 m²; hold or reduce it if potassium rises above 5.5 mEq/L.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-12",
+    "frontHtml": "Which patients with HFrEF benefit from hydralazine plus isosorbide dinitrate?",
+    "backHtml": "Self-identified Black patients with NYHA III–IV symptoms on optimal therapy, and anyone unable to take any renin–angiotensin blocker.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-13",
+    "frontHtml": "Primary-prevention ICD criteria in HFrEF?",
+    "backHtml": "EF ≤ 35%, NYHA II–III despite ≥ 3 months of guideline therapy, &gt; 40 days after MI, expected survival &gt; 1 year.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-14",
+    "frontHtml": "Cardiac resynchronisation therapy: who benefits most?",
+    "backHtml": "EF ≤ 35%, sinus rhythm, left bundle branch block with QRS ≥ 150 ms, symptomatic despite guideline therapy.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-15",
+    "frontHtml": "Which drug classes worsen HFrEF?",
+    "backHtml": "Non-dihydropyridine calcium channel blockers, thiazolidinediones, NSAIDs, cilostazol and most class I antiarrhythmics.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-16",
+    "frontHtml": "Which drug class reduces HF hospitalisation in HFpEF?",
+    "backHtml": "SGLT2 inhibitors (empagliflozin, dapagliflozin); diuretics treat congestion.",
+    "sectionId": "s23b-s-080401-ck-01",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-17",
+    "frontHtml": "Hypertensive acute pulmonary edema in an alert patient: first treatments?",
+    "backHtml": "Noninvasive positive-pressure ventilation, high-dose nitroglycerin and an IV loop diuretic.",
+    "sectionId": "s23b-s-080401-ck-02",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-18",
+    "frontHtml": "'Cold and wet' decompensated heart failure: what drug class?",
+    "backHtml": "An inotrope (dobutamine or milrinone) plus diuretic; norepinephrine if hypotensive.",
+    "sectionId": "s23b-s-080401-ck-02",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-19",
+    "frontHtml": "Cardiogenic shock after acute MI: what treatment improves survival?",
+    "backHtml": "Emergency revascularisation of the culprit artery (usually PCI).",
+    "sectionId": "s23b-s-080401-ck-02",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080401-20",
+    "frontHtml": "Why follow NT-proBNP rather than BNP in a patient on sacubitril–valsartan?",
+    "backHtml": "Neprilysin inhibition raises BNP itself; NT-proBNP is not a neprilysin substrate.",
+    "sectionId": "s23b-s-080401-ck-02",
+    "areas": [
+      "usmle2026.08.04.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-01",
+    "frontHtml": "Why is the subendocardium the layer most vulnerable to ischemia?",
+    "backHtml": "It is furthest from the epicardial arteries and most compressed during systole; LV flow occurs mainly in diastole.",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-02",
+    "frontHtml": "ST elevation in II, III and aVF: territory and usual culprit artery?",
+    "backHtml": "Inferior wall; right coronary artery (left circumflex in left-dominant hearts).",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-03",
+    "frontHtml": "ST elevation in V1–V4: which artery?",
+    "backHtml": "Left anterior descending (anterior and septal wall).",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-04",
+    "frontHtml": "How does a posterior MI look on a standard 12-lead ECG?",
+    "backHtml": "ST depression with tall R waves in V1–V3; confirm with ST elevation in V7–V9.",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-05",
+    "frontHtml": "Troponin kinetics after MI?",
+    "backHtml": "Rises within hours, peaks at about 24 hours, stays raised 7–10 days.",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-06",
+    "frontHtml": "Why was CK-MB used to detect reinfarction?",
+    "backHtml": "It returns to normal within 2–3 days, so a new rise means new necrosis.",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-07",
+    "frontHtml": "Dominant microscopic finding 1–3 days after MI?",
+    "backHtml": "Neutrophil infiltration of coagulation necrosis (clinically: early fibrinous pericarditis).",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-08",
+    "frontHtml": "When after MI is the wall weakest, and what complications occur then?",
+    "backHtml": "About days 3–14 (macrophage phase, before collagen): free wall, septal or papillary muscle rupture.",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-09",
+    "frontHtml": "What causes contraction band necrosis?",
+    "backHtml": "Reperfusion of lethally injured myocytes: calcium influx causes hypercontraction.",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-10",
+    "frontHtml": "Features of a rupture-prone plaque?",
+    "backHtml": "Thin fibrous cap, large lipid-rich necrotic core, many macrophages (MMPs degrade the cap).",
+    "sectionId": "s23b-s-080501-s1-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-11",
+    "frontHtml": "Main mechanism by which nitrates relieve exertional angina?",
+    "backHtml": "Venodilation → lower preload → smaller LV volume and wall stress → less oxygen demand.",
+    "sectionId": "s23b-s-080501-s1-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-12",
+    "frontHtml": "Clopidogrel versus ticagrelor: activation and binding?",
+    "backHtml": "Clopidogrel: prodrug activated by CYP2C19, irreversible. Ticagrelor: active drug, reversible, can cause dyspnea.",
+    "sectionId": "s23b-s-080501-s1-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-13",
+    "frontHtml": "Which P2Y12 inhibitor is avoided after stroke or TIA?",
+    "backHtml": "Prasugrel.",
+    "sectionId": "s23b-s-080501-s1-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-14",
+    "frontHtml": "Mechanism of ranolazine?",
+    "backHtml": "Inhibits the late inward sodium current, reducing calcium overload and diastolic wall tension; can prolong QT.",
+    "sectionId": "s23b-s-080501-s1-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-15",
+    "frontHtml": "What is coronary steal in vasodilator stress testing?",
+    "backHtml": "Normal arterioles dilate while those beyond a stenosis are already maximal, so flow shifts away from the stenotic region.",
+    "sectionId": "s23b-s-080501-s1-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-16",
+    "frontHtml": "Why is a non-selective beta-blocker avoided in vasospastic angina?",
+    "backHtml": "Unopposed α-adrenergic vasoconstriction can worsen spasm; use a calcium channel blocker.",
+    "sectionId": "s23b-s-080501-s1-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-17",
+    "frontHtml": "Best stress test for a patient with LBBB?",
+    "backHtml": "Vasodilator (regadenoson or adenosine) myocardial perfusion imaging.",
+    "sectionId": "s23b-s-080501-ck-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-18",
+    "frontHtml": "First-line daily antianginal drugs in chronic coronary disease?",
+    "backHtml": "A beta-blocker or a calcium channel blocker, plus sublingual nitroglycerin as needed.",
+    "sectionId": "s23b-s-080501-ck-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-19",
+    "frontHtml": "When is coronary bypass surgery favoured over PCI in stable disease?",
+    "backHtml": "Significant left main disease, or multivessel disease with diabetes or reduced EF.",
+    "sectionId": "s23b-s-080501-ck-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-20",
+    "frontHtml": "Nitrate timing after PDE-5 inhibitors?",
+    "backHtml": "Avoid for 24 hours after sildenafil or vardenafil and 48 hours after tadalafil.",
+    "sectionId": "s23b-s-080501-ck-01",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-21",
+    "frontHtml": "STEMI: preferred reperfusion and time targets?",
+    "backHtml": "Primary PCI within 90 minutes of first contact (120 minutes if transfer needed); otherwise fibrinolysis within 30 minutes of arrival.",
+    "sectionId": "s23b-s-080501-ck-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-22",
+    "frontHtml": "Is fibrinolysis used in NSTEMI?",
+    "backHtml": "No: no benefit without complete occlusion, more bleeding.",
+    "sectionId": "s23b-s-080501-ck-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-23",
+    "frontHtml": "NSTE-ACS: indications for immediate (&lt; 2 h) angiography?",
+    "backHtml": "Refractory angina, hemodynamic instability, acute heart failure, sustained ventricular arrhythmias, mechanical complications.",
+    "sectionId": "s23b-s-080501-ck-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-24",
+    "frontHtml": "Inferior STEMI with hypotension, raised JVP and clear lungs: diagnosis and treatment?",
+    "backHtml": "Right ventricular infarction: IV fluids, urgent reperfusion; avoid nitrates and diuretics.",
+    "sectionId": "s23b-s-080501-ck-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-25",
+    "frontHtml": "Default duration of DAPT after ACS treated with a stent?",
+    "backHtml": "12 months (shorter with high bleeding risk), then lifelong single antiplatelet therapy.",
+    "sectionId": "s23b-s-080501-ck-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080501-26",
+    "frontHtml": "After ACS, LDL ≥ 70 mg/dL on a maximal statin: next drug?",
+    "backHtml": "Ezetimibe; then a PCSK9 inhibitor if still above goal.",
+    "sectionId": "s23b-s-080501-ck-02",
+    "areas": [
+      "usmle2026.08.05.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-01",
+    "frontHtml": "Dilated cardiomyopathy: which phase of the cardiac cycle fails, and which hypertrophy pattern is seen?",
+    "backHtml": "Systolic dysfunction (low ejection fraction) with eccentric hypertrophy (sarcomeres added in series).",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-02",
+    "frontHtml": "Most common genetic cause of familial dilated cardiomyopathy?",
+    "backHtml": "Truncating variants in <em>TTN</em> (titin); inheritance is usually autosomal dominant.",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-03",
+    "frontHtml": "Hypertrophic cardiomyopathy: inheritance, two most often affected genes and histologic hallmark?",
+    "backHtml": "Autosomal dominant; <em>MYH7</em> (β-myosin heavy chain) and <em>MYBPC3</em> (myosin-binding protein C); myocyte disarray.",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-04",
+    "frontHtml": "Which manoeuvres make the murmur of obstructive HCM louder?",
+    "backHtml": "Those that shrink the left ventricle: Valsalva strain, standing up, vasodilators (nitrates, amyl nitrite), dehydration.",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-05",
+    "frontHtml": "Takotsubo cardiomyopathy: typical patient, trigger and angiographic finding?",
+    "backHtml": "Postmenopausal woman after acute emotional or physical stress; ACS-like presentation with apical ballooning and no obstructive coronary disease.",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-06",
+    "frontHtml": "Cardiac amyloidosis: what ECG–echo mismatch is classic?",
+    "backHtml": "Thick ventricular walls on echocardiography with low QRS voltage on the ECG.",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-07",
+    "frontHtml": "Pressure overload versus volume overload: how do myocytes respond?",
+    "backHtml": "Pressure overload → sarcomeres in parallel (concentric hypertrophy). Volume overload → sarcomeres in series (eccentric hypertrophy).",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-08",
+    "frontHtml": "Arrhythmogenic right ventricular cardiomyopathy: pathology?",
+    "backHtml": "Fibrofatty replacement of (mainly right) ventricular myocardium, usually from desmosomal gene variants; ventricular arrhythmias and sudden death in the young.",
+    "sectionId": "s23b-s-080601-s1-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-09",
+    "frontHtml": "Biopsy hallmark of viral myocarditis?",
+    "backHtml": "Lymphocytic infiltrate with adjacent myocyte necrosis.",
+    "sectionId": "s23b-s-080601-s1-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-10",
+    "frontHtml": "Why does the posteromedial papillary muscle rupture more often than the anterolateral?",
+    "backHtml": "It usually has a single supply (posterior descending artery), whereas the anterolateral muscle is supplied by both the LAD and the circumflex.",
+    "sectionId": "s23b-s-080601-s1-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-11",
+    "frontHtml": "When after MI is the risk of free wall, septal and papillary muscle rupture highest, and why?",
+    "backHtml": "Roughly days 3–14: macrophages have removed necrotic myocytes but collagen has not yet formed, so the wall is weakest.",
+    "sectionId": "s23b-s-080601-s1-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-12",
+    "frontHtml": "Post-MI new holosystolic murmur with a thrill at the left lower sternal border and an O<sub>2</sub> step-up in the right ventricle?",
+    "backHtml": "Ventricular septal rupture.",
+    "sectionId": "s23b-s-080601-s1-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-13",
+    "frontHtml": "True ventricular aneurysm versus pseudoaneurysm?",
+    "backHtml": "True: thin scarred wall, wide neck, weeks to months after MI, low rupture risk. Pseudoaneurysm: contained rupture walled off by pericardium, narrow neck, high rupture risk.",
+    "sectionId": "s23b-s-080601-s1-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-14",
+    "frontHtml": "Chronic Chagas cardiomyopathy: classic findings?",
+    "backHtml": "Dilated cardiomyopathy with an apical aneurysm, right bundle branch block ± left anterior fascicular block, and megaesophagus/megacolon.",
+    "sectionId": "s23b-s-080601-s1-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-15",
+    "frontHtml": "First-line drug for symptomatic obstructive HCM?",
+    "backHtml": "A non-vasodilating β-blocker (non-dihydropyridine calcium channel blocker if β-blockers fail or are not tolerated).",
+    "sectionId": "s23b-s-080601-ck-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-16",
+    "frontHtml": "Drugs to avoid in obstructive HCM?",
+    "backHtml": "Arterial vasodilators (dihydropyridines, nitrates), aggressive diuretics and digoxin: all shrink the ventricle or raise contractility and worsen obstruction.",
+    "sectionId": "s23b-s-080601-ck-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-17",
+    "frontHtml": "HCM: indications for an ICD (examples)?",
+    "backHtml": "Prior cardiac arrest or sustained VT; primary prevention with risk markers such as unexplained syncope, sudden death in a close relative, wall thickness ≥30 mm, apical aneurysm, LVEF &lt;50% or extensive late gadolinium enhancement.",
+    "sectionId": "s23b-s-080601-ck-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-18",
+    "frontHtml": "Suspected cardiac amyloidosis: what must be excluded before a bone-tracer scan can diagnose ATTR?",
+    "backHtml": "A monoclonal protein (serum free light chains plus serum and urine immunofixation), to exclude AL amyloidosis.",
+    "sectionId": "s23b-s-080601-ck-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-19",
+    "frontHtml": "Disease-modifying therapy for ATTR cardiomyopathy?",
+    "backHtml": "A transthyretin stabiliser such as tafamidis.",
+    "sectionId": "s23b-s-080601-ck-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-20",
+    "frontHtml": "Alcoholic cardiomyopathy: intervention most likely to restore ejection fraction?",
+    "backHtml": "Complete abstinence from alcohol, together with guideline-directed HFrEF therapy.",
+    "sectionId": "s23b-s-080601-ck-01",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-21",
+    "frontHtml": "Post-MI papillary muscle rupture with shock: management?",
+    "backHtml": "Urgent echocardiography, afterload reduction and temporary mechanical support as a bridge to emergency mitral valve surgery.",
+    "sectionId": "s23b-s-080601-ck-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-22",
+    "frontHtml": "Right ventricular infarction: what to give and what to avoid?",
+    "backHtml": "Give IV fluids (inotropes if needed) and reperfuse; avoid nitrates, diuretics and morphine (preload-dependent).",
+    "sectionId": "s23b-s-080601-ck-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-23",
+    "frontHtml": "Left ventricular thrombus after anterior MI: treatment?",
+    "backHtml": "Oral anticoagulation for about 3 months, then repeat imaging.",
+    "sectionId": "s23b-s-080601-ck-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-24",
+    "frontHtml": "Return to competitive sport after myocarditis?",
+    "backHtml": "Avoid competitive sport for about 3–6 months, then return only after normal ECG, echocardiography, rhythm monitoring and exercise testing.",
+    "sectionId": "s23b-s-080601-ck-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080601-25",
+    "frontHtml": "Immune checkpoint inhibitor myocarditis: management?",
+    "backHtml": "Stop the drug and give high-dose glucocorticoids; monitor closely for arrhythmias and heart block.",
+    "sectionId": "s23b-s-080601-ck-02",
+    "areas": [
+      "usmle2026.08.06.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-01",
+    "frontHtml": "ECG of acute pericarditis?",
+    "backHtml": "Diffuse concave ST elevation with PR depression; aVR shows PR elevation and ST depression; no Q waves or territorial reciprocal changes.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-02",
+    "frontHtml": "Why does pericardial pain radiate to the trapezius ridge?",
+    "backHtml": "The parietal pericardium is supplied by the phrenic nerve (C3–C5).",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-03",
+    "frontHtml": "Beck triad?",
+    "backHtml": "Hypotension, raised jugular venous pressure and muffled heart sounds: cardiac tamponade.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-04",
+    "frontHtml": "Mechanism of pulsus paradoxus in tamponade?",
+    "backHtml": "Inspiration increases right ventricular filling; in a fixed pericardial volume the septum bows into the LV, lowering LV filling and stroke volume (ventricular interdependence).",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-05",
+    "frontHtml": "Jugular venous y descent: tamponade versus constriction?",
+    "backHtml": "Tamponade: blunted or absent. Constriction: prominent and steep.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-06",
+    "frontHtml": "Electrical alternans?",
+    "backHtml": "Beat-to-beat alternation of QRS amplitude as the heart swings in a large pericardial effusion; suggests tamponade.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-07",
+    "frontHtml": "Pericardial knock: what is it?",
+    "backHtml": "An early diastolic sound in constrictive pericarditis from abrupt cessation of ventricular filling by the rigid pericardium.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-08",
+    "frontHtml": "Pericarditis 1–3 days versus weeks after MI?",
+    "backHtml": "1–3 days: fibrinous inflammation over a transmural infarct. Weeks: autoimmune post-cardiac injury (Dressler) syndrome.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-09",
+    "frontHtml": "Type of pericarditis typical of uremia and transmural MI?",
+    "backHtml": "Fibrinous.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-10",
+    "frontHtml": "Main cause of constrictive pericarditis worldwide, and in high-income countries?",
+    "backHtml": "Tuberculosis worldwide; prior cardiac surgery, mediastinal radiation and idiopathic or viral pericarditis in high-income countries.",
+    "sectionId": "s23b-s-080701-s1-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-11",
+    "frontHtml": "First-line treatment of uncomplicated acute pericarditis?",
+    "backHtml": "High-dose NSAID or aspirin (tapered) plus colchicine for about 3 months, as an outpatient.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-12",
+    "frontHtml": "High-risk features that require admission in acute pericarditis?",
+    "backHtml": "Fever &gt;38 °C, subacute onset, large effusion or tamponade, failure of NSAIDs after a week, immunosuppression, trauma, oral anticoagulation, raised troponin (myopericarditis).",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-13",
+    "frontHtml": "Anti-inflammatory of choice for pericarditis after MI?",
+    "backHtml": "Aspirin; avoid other NSAIDs and glucocorticoids because they may impair infarct healing.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-14",
+    "frontHtml": "Echocardiographic signs of tamponade?",
+    "backHtml": "Right atrial systolic collapse, right ventricular diastolic collapse, plethoric IVC and exaggerated respiratory variation in inflow.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-15",
+    "frontHtml": "What to avoid before draining tamponade?",
+    "backHtml": "Diuretics, vasodilators and (when possible) intubation with positive-pressure ventilation.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-16",
+    "frontHtml": "Uremic pericarditis without tamponade: treatment?",
+    "backHtml": "Start or intensify dialysis.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-17",
+    "frontHtml": "Recurrent malignant pericardial effusion: treatment?",
+    "backHtml": "Pericardial window (or extended catheter drainage) plus treatment of the cancer.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-18",
+    "frontHtml": "Definitive treatment of chronic symptomatic constrictive pericarditis?",
+    "backHtml": "Surgical pericardiectomy.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080701-19",
+    "frontHtml": "Why are glucocorticoids second line in acute pericarditis?",
+    "backHtml": "Early steroid use increases the risk of recurrence; reserve them for NSAID/colchicine failure or contraindication, or specific indications.",
+    "sectionId": "s23b-s-080701-ck-01",
+    "areas": [
+      "usmle2026.08.07.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-01",
+    "frontHtml": "Aortic stenosis murmur and associated pulse?",
+    "backHtml": "Crescendo–decrescendo systolic ejection murmur at the right upper sternal border radiating to the carotids; slow-rising, weak pulse (pulsus parvus et tardus).",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-02",
+    "frontHtml": "Most common cause of aortic stenosis in older adults, and the type of calcification?",
+    "backHtml": "Age-related calcific degeneration of a trileaflet valve; dystrophic calcification with normal serum calcium.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-03",
+    "frontHtml": "Genetic syndrome associated with bicuspid aortic valve and coarctation?",
+    "backHtml": "Turner syndrome (45,X).",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-04",
+    "frontHtml": "Mitral valve prolapse: effect of standing on the click?",
+    "backHtml": "Smaller LV volume → the click occurs earlier and the murmur lasts longer.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-05",
+    "frontHtml": "Mitral stenosis: what does a short S2–opening snap interval mean?",
+    "backHtml": "Higher left atrial pressure, i.e. more severe stenosis.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-06",
+    "frontHtml": "Why does tachycardia worsen mitral stenosis?",
+    "backHtml": "It shortens diastole, leaving less time for the atrium to empty across the narrow valve, so the gradient and left atrial pressure rise.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-07",
+    "frontHtml": "Chronic aortic regurgitation: pulse findings and mechanism?",
+    "backHtml": "Wide pulse pressure with bounding, collapsing pulses: a large stroke volume plus diastolic runoff into the LV.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-08",
+    "frontHtml": "Rheumatic heart disease: immune mechanism and pathognomonic lesion?",
+    "backHtml": "Molecular mimicry (type II hypersensitivity) against streptococcal M protein; Aschoff bodies with Anitschkow cells.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-09",
+    "frontHtml": "Why does carcinoid heart disease spare the left-sided valves?",
+    "backHtml": "Lung monoamine oxidase inactivates serotonin before blood reaches the left heart.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-10",
+    "frontHtml": "Heyde syndrome?",
+    "backHtml": "Severe aortic stenosis with GI angiodysplasia bleeding from acquired von Willebrand syndrome (shear-induced loss of large vWF multimers).",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-11",
+    "frontHtml": "Which murmurs get louder with sustained handgrip?",
+    "backHtml": "Mitral regurgitation, aortic regurgitation and VSD (higher afterload); aortic stenosis and HCM murmurs soften.",
+    "sectionId": "s23b-s-080801-s1-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-12",
+    "frontHtml": "Which murmurs always need echocardiography?",
+    "backHtml": "Any diastolic or continuous murmur, any murmur grade ≥3, and any murmur with symptoms or abnormal findings.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-13",
+    "frontHtml": "Echocardiographic criteria for severe aortic stenosis?",
+    "backHtml": "Peak velocity ≥4 m/s, mean gradient ≥40 mm Hg, valve area ≤1.0 cm<sup>2</sup>.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-14",
+    "frontHtml": "Indications for valve replacement in severe aortic stenosis?",
+    "backHtml": "Symptoms; or no symptoms with LVEF &lt;50%; or other cardiac surgery planned.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-15",
+    "frontHtml": "TAVR or SAVR?",
+    "backHtml": "Heart team decision: TAVR favoured in older or higher-risk patients with suitable access; SAVR in younger, lower-risk patients.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-16",
+    "frontHtml": "Asymptomatic severe primary mitral regurgitation: when to operate?",
+    "backHtml": "When the LV shows dysfunction (EF ≤60% or end-systolic diameter ≥40 mm); repair preferred over replacement.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-17",
+    "frontHtml": "Acute severe aortic regurgitation: treatment and what to avoid?",
+    "backHtml": "Urgent surgery; avoid an intra-aortic balloon pump and β-blockade.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-18",
+    "frontHtml": "Anticoagulant for a mechanical heart valve?",
+    "backHtml": "Warfarin for life; DOACs are contraindicated.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-19",
+    "frontHtml": "Atrial fibrillation with moderate or severe rheumatic mitral stenosis: anticoagulant?",
+    "backHtml": "Warfarin, regardless of the CHA<sub>2</sub>DS<sub>2</sub>-VASc score; not a DOAC.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-20",
+    "frontHtml": "Who needs endocarditis prophylaxis before gingival dental procedures?",
+    "backHtml": "Prosthetic valves (including transcatheter), prosthetic material used in valve repair, prior endocarditis, certain congenital heart disease and transplant valvulopathy.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080801-21",
+    "frontHtml": "Symptomatic mitral stenosis in pregnancy: first-line drug?",
+    "backHtml": "A β<sub>1</sub>-selective blocker (e.g. metoprolol) to slow the heart, with cautious diuresis.",
+    "sectionId": "s23b-s-080801-ck-01",
+    "areas": [
+      "usmle2026.08.08.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-01",
+    "frontHtml": "Definition of orthostatic hypotension?",
+    "backHtml": "A sustained fall of ≥ 20 mm Hg systolic or ≥ 10 mm Hg diastolic within 3 minutes of standing (or head-up tilt).",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-02",
+    "frontHtml": "Afferent nerve from the carotid sinus baroreceptors?",
+    "backHtml": "Glossopharyngeal nerve (CN IX); the aortic arch afferents travel in the vagus (CN X).",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-03",
+    "frontHtml": "Heart-rate clue to neurogenic orthostatic hypotension?",
+    "backHtml": "Little heart-rate rise: ratio of heart-rate rise to systolic fall below about 0.5 beats/min per mm Hg.",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-04",
+    "frontHtml": "Multiple system atrophy histology?",
+    "backHtml": "α-Synuclein glial cytoplasmic inclusions in oligodendrocytes.",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-05",
+    "frontHtml": "Midodrine: mechanism and main adverse effect?",
+    "backHtml": "Prodrug of a peripheral α<sub>1</sub> agonist; supine hypertension (also piloerection, urinary retention).",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-06",
+    "frontHtml": "Droxidopa is converted to norepinephrine by which enzyme?",
+    "backHtml": "Aromatic L-amino acid (DOPA) decarboxylase.",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-07",
+    "frontHtml": "Fludrocortisone electrolyte effect?",
+    "backHtml": "Hypokalemia (mineralocorticoid-driven K<sup>+</sup> secretion), with sodium and water retention.",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-08",
+    "frontHtml": "Why does primary, but not secondary, adrenal insufficiency cause hyperkalemia?",
+    "backHtml": "Primary destroys the zona glomerulosa (no aldosterone); secondary loses only ACTH, and aldosterone is controlled by angiotensin II.",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-09",
+    "frontHtml": "Three age-related changes that promote orthostatic hypotension?",
+    "backHtml": "Reduced baroreflex sensitivity, blunted β-adrenergic responses, and lower renin/aldosterone and thirst (plus a preload-dependent stiff ventricle).",
+    "sectionId": "s23b-s-080901-s1-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-10",
+    "frontHtml": "How are orthostatic vital signs measured?",
+    "backHtml": "After 5 minutes supine, then at 1 and 3 minutes of standing; record both pressure and pulse.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-11",
+    "frontHtml": "Three parts of the initial evaluation of every syncope?",
+    "backHtml": "History (with witness), physical examination including orthostatic vital signs, and a 12-lead ECG.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-12",
+    "frontHtml": "POTS criteria?",
+    "backHtml": "Heart-rate rise ≥ 30/min (≥ 40/min at 12–19 years) within 10 minutes of standing, with symptoms, without orthostatic hypotension.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-13",
+    "frontHtml": "First step for new orthostatic hypotension in an older adult on many drugs?",
+    "backHtml": "Stop or reduce culprit drugs (α<sub>1</sub> blockers, diuretics, nitrates, tricyclics, sedatives).",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-14",
+    "frontHtml": "Non-drug measures for orthostatic hypotension?",
+    "backHtml": "2–3 L fluid and liberal salt (if no HF/CKD), staged rising, compression stockings/abdominal binder, counter-manoeuvres, head-of-bed elevation, small meals, avoid alcohol and heat.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-15",
+    "frontHtml": "Drugs for persistent symptomatic orthostatic hypotension?",
+    "backHtml": "Midodrine, droxidopa (neurogenic OH) or fludrocortisone; pyridostigmine for mild cases.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-16",
+    "frontHtml": "How is supine hypertension managed?",
+    "backHtml": "Last pressor dose ≥ 4 hours before bed, head of bed raised, avoid lying flat by day, short-acting antihypertensive at bedtime only if needed.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-17",
+    "frontHtml": "Red flags that syncope is cardiac?",
+    "backHtml": "Exertional or supine syncope, no prodrome, palpitations, structural heart disease, abnormal ECG, family history of sudden death.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-080901-18",
+    "frontHtml": "Dietary advice for postprandial hypotension?",
+    "backHtml": "Small, frequent meals lower in refined carbohydrate; avoid alcohol; water before meals.",
+    "sectionId": "s23b-s-080901-ck-01",
+    "areas": [
+      "usmle2026.08.09.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-01",
+    "frontHtml": "Three triggers of renin release?",
+    "backHtml": "Low renal perfusion pressure (afferent arteriole), β<sub>1</sub> sympathetic stimulation, low NaCl at the macula densa.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-02",
+    "frontHtml": "Why do ACE inhibitors cause cough and angioedema?",
+    "backHtml": "ACE also degrades bradykinin; inhibition raises bradykinin.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-03",
+    "frontHtml": "Thiazide effects on serum calcium, uric acid and glucose?",
+    "backHtml": "All tend to rise (hypercalcemia, hyperuricemia, hyperglycemia); potassium falls.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-04",
+    "frontHtml": "Hyaline vs hyperplastic arteriolosclerosis?",
+    "backHtml": "Hyaline: benign hypertension/diabetes, pink homogeneous wall. Hyperplastic: malignant hypertension, onion-skin layers ± fibrinoid necrosis.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-05",
+    "frontHtml": "Primary vs renovascular hypertension: renin?",
+    "backHtml": "Primary aldosteronism: renin low. Renovascular (and diuretics): renin high.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-06",
+    "frontHtml": "Why α before β blockade in pheochromocytoma?",
+    "backHtml": "β blockade alone leaves α<sub>1</sub> vasoconstriction unopposed and can cause a hypertensive crisis.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-07",
+    "frontHtml": "Mechanism of amlodipine ankle edema?",
+    "backHtml": "Arteriolar &gt; venular dilation raises capillary hydrostatic pressure; diuretics barely help.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-08",
+    "frontHtml": "Hydralazine and minoxidil adverse effects?",
+    "backHtml": "Hydralazine: reflex tachycardia, fluid retention, drug-induced lupus. Minoxidil: hypertrichosis, fluid retention, pericardial effusion.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-09",
+    "frontHtml": "Brain lesion of chronic hypertension that causes basal ganglia hemorrhage?",
+    "backHtml": "Charcot–Bouchard microaneurysms of the lenticulostriate arteries.",
+    "sectionId": "s23b-s-081001-s1-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-10",
+    "frontHtml": "Blood pressure categories (adults)?",
+    "backHtml": "Normal &lt; 120/&lt; 80; elevated 120–129/&lt; 80; stage 1 130–139 or 80–89; stage 2 ≥ 140 or ≥ 90 mm Hg.",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-11",
+    "frontHtml": "White-coat vs masked hypertension?",
+    "backHtml": "White-coat: high in office, normal outside. Masked: normal in office, high outside (risk like sustained hypertension).",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-12",
+    "frontHtml": "Usual blood pressure target for most adults?",
+    "backHtml": "Below 130/80 mm Hg if tolerated.",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-13",
+    "frontHtml": "Four first-line antihypertensive classes?",
+    "backHtml": "Thiazide-type diuretic, ACE inhibitor, ARB, dihydropyridine calcium channel blocker.",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-14",
+    "frontHtml": "Preferred antihypertensive with albuminuria?",
+    "backHtml": "ACE inhibitor or ARB (never both).",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-15",
+    "frontHtml": "Antihypertensives that are safe in pregnancy, and ones that are contraindicated?",
+    "backHtml": "Safe: labetalol, extended-release nifedipine, methyldopa. Contraindicated: ACE inhibitors, ARBs, direct renin inhibitors.",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-16",
+    "frontHtml": "Definition of resistant hypertension and the best fourth drug?",
+    "backHtml": "Above goal on three classes including a diuretic (or needing four); spironolactone.",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-17",
+    "frontHtml": "Lifestyle measures for hypertension?",
+    "backHtml": "Weight loss, DASH-style diet, less sodium, more dietary potassium, exercise, limit alcohol.",
+    "sectionId": "s23b-s-081001-ck-01",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-18",
+    "frontHtml": "Hypertensive emergency vs urgency?",
+    "backHtml": "Emergency = severe hypertension with acute target-organ damage (ICU, IV drugs); urgency = no acute damage (oral drugs, follow-up).",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-19",
+    "frontHtml": "How fast to lower pressure in most hypertensive emergencies?",
+    "backHtml": "≤ 25% fall in mean pressure in the first hour, then about 160/100–110 over 2–6 hours, then normal over 24–48 hours.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-20",
+    "frontHtml": "Aortic dissection blood pressure goal?",
+    "backHtml": "β blocker first, then systolic about 120 mm Hg or lower within the first hour.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-21",
+    "frontHtml": "Fibromuscular dysplasia: patient, imaging, treatment?",
+    "backHtml": "Woman under about 50; string-of-beads mid-distal renal artery; balloon angioplasty.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-22",
+    "frontHtml": "Screening test for pheochromocytoma?",
+    "backHtml": "Plasma free (or 24-hour urine fractionated) metanephrines.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-23",
+    "frontHtml": "Toxicity of prolonged nitroprusside infusion?",
+    "backHtml": "Cyanide (and thiocyanate) toxicity, especially with kidney failure.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-24",
+    "frontHtml": "Clues to coarctation as a cause of hypertension?",
+    "backHtml": "Arm pressure higher than leg, weak delayed femoral pulses, rib notching.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081001-25",
+    "frontHtml": "Drugs that commonly raise blood pressure?",
+    "backHtml": "NSAIDs, decongestants, stimulants, combined oral contraceptives, glucocorticoids, calcineurin inhibitors, VEGF inhibitors, licorice, alcohol.",
+    "sectionId": "s23b-s-081001-ck-02",
+    "areas": [
+      "usmle2026.08.10.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-01",
+    "frontHtml": "Activator of lipoprotein lipase?",
+    "backHtml": "Apolipoprotein C-II.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-02",
+    "frontHtml": "Apolipoprotein that mediates hepatic remnant uptake?",
+    "backHtml": "ApoE.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-03",
+    "frontHtml": "What does PCSK9 do?",
+    "backHtml": "Binds the LDL receptor and targets it for lysosomal degradation instead of recycling.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-04",
+    "frontHtml": "Familial hypercholesterolemia: gene and signs?",
+    "backHtml": "Usually LDL receptor (autosomal dominant); tendon xanthomas, xanthelasma, premature arcus and coronary disease.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-05",
+    "frontHtml": "Familial chylomicronemia: defect and presentation?",
+    "backHtml": "LPL or apoC-II deficiency (AR); pancreatitis, eruptive xanthomas, lipemia retinalis, creamy plasma layer.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-06",
+    "frontHtml": "Dysbetalipoproteinemia: genotype and signature xanthoma?",
+    "backHtml": "ApoE2/E2 plus a second hit; palmar crease xanthomas.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-07",
+    "frontHtml": "Abetalipoproteinemia defect and complications?",
+    "backHtml": "MTP deficiency; steatorrhea, acanthocytes, vitamin E deficiency ataxia and retinopathy.",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-08",
+    "frontHtml": "Mechanisms: ezetimibe, bempedoic acid, fibrates?",
+    "backHtml": "Ezetimibe blocks NPC1L1; bempedoic acid inhibits ATP-citrate lyase; fibrates activate PPAR-α (more LPL).",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-09",
+    "frontHtml": "Lipid drug that raises triglyceride?",
+    "backHtml": "Bile acid sequestrants (cholestyramine, colestipol, colesevelam).",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-10",
+    "frontHtml": "Fibrate adverse effects?",
+    "backHtml": "Cholesterol gallstones; myopathy with statins (gemfibrozil worst).",
+    "sectionId": "s23b-s-081101-s1-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-11",
+    "frontHtml": "Four statin benefit groups?",
+    "backHtml": "Clinical ASCVD; LDL ≥ 190 mg/dL; diabetes aged 40–75; primary prevention 40–75 with elevated risk.",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-12",
+    "frontHtml": "High-intensity statins and doses?",
+    "backHtml": "Atorvastatin 40–80 mg, rosuvastatin 20–40 mg (≥ 50% LDL lowering).",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-13",
+    "frontHtml": "Next steps when LDL stays above goal on a maximal statin?",
+    "backHtml": "Add ezetimibe, then a PCSK9 inhibitor (or inclisiran).",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-14",
+    "frontHtml": "Statin muscle aches with normal CK: management?",
+    "backHtml": "Pause, then rechallenge at lower dose, different statin or alternate days; check TSH and interacting drugs.",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-15",
+    "frontHtml": "Triglyceride level that calls for urgent lowering to prevent pancreatitis, and the drug?",
+    "backHtml": "About ≥ 1,000 mg/dL; fibrate plus removal of secondary causes (alcohol, hyperglycemia).",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-16",
+    "frontHtml": "Secondary causes of high LDL?",
+    "backHtml": "Hypothyroidism, nephrotic syndrome, cholestatic liver disease, some drugs (glucocorticoids, cyclosporine, some progestins).",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-17",
+    "frontHtml": "When is lipid screening done in children?",
+    "backHtml": "Universally at about 9–11 and 17–21 years; earlier with family history of premature CVD or severe hypercholesterolemia.",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-18",
+    "frontHtml": "Omega-3 product with event reduction in ASCVD with raised triglyceride on a statin?",
+    "backHtml": "Icosapent ethyl (purified EPA).",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081101-19",
+    "frontHtml": "Diet for familial chylomicronemia?",
+    "backHtml": "Very low fat (about 10–15% of calories), medium-chain triglycerides, fat-soluble vitamin and essential fatty acid supplements.",
+    "sectionId": "s23b-s-081101-ck-01",
+    "areas": [
+      "usmle2026.08.11.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-01",
+    "frontHtml": "Stanford type A vs type B aortic dissection: definition and usual treatment?",
+    "backHtml": "Type A involves the ascending aorta → emergency surgery. Type B begins beyond the left subclavian and spares the ascending aorta → medical therapy (repair only if complicated).",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-02",
+    "frontHtml": "Most common predisposing factor for aortic dissection?",
+    "backHtml": "Chronic hypertension (others: Marfan, vascular Ehlers-Danlos, bicuspid aortic valve, coarctation, Turner syndrome, stimulants, pregnancy, instrumentation).",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-03",
+    "frontHtml": "Histology of the aortic media in Marfan syndrome or hypertensive ascending aneurysm?",
+    "backHtml": "Cystic medial degeneration: fragmented, lost elastic fibers and pools of mucoid ground substance, with loss of smooth muscle cells.",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-04",
+    "frontHtml": "Gene and protein in vascular Ehlers-Danlos syndrome?",
+    "backHtml": "<em>COL3A1</em>, type III collagen: spontaneous arterial, bowel and uterine rupture; thin translucent skin.",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-05",
+    "frontHtml": "Mechanism of syphilitic aortitis?",
+    "backHtml": "Obliterative endarteritis of the vasa vasorum (plasma cells) → ischemic scarring of the outer media → ascending aorta/arch aneurysm, aortic regurgitation, 'tree-bark' intima.",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-06",
+    "frontHtml": "Why does an aneurysm tend to keep growing (law of Laplace)?",
+    "backHtml": "Wall tension ∝ pressure × radius; a wider segment carries more tension, so it stretches further.",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-07",
+    "frontHtml": "Hoarseness with an aortic arch aneurysm: which nerve?",
+    "backHtml": "Left recurrent laryngeal nerve, which loops under the arch by the ligamentum arteriosum.",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-08",
+    "frontHtml": "Key process weakening the wall in abdominal aortic aneurysm?",
+    "backHtml": "Transmural inflammation with matrix metalloproteinase degradation of elastin and collagen; smoking is the strongest modifiable risk factor.",
+    "sectionId": "s23b-s-081201-s1-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-09",
+    "frontHtml": "Suspected aortic dissection: imaging if stable vs unstable?",
+    "backHtml": "Stable: CT angiography. Unstable: transesophageal echocardiography at the bedside or in the operating room.",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-10",
+    "frontHtml": "Order of drugs in acute aortic dissection?",
+    "backHtml": "Analgesia, then an IV beta-blocker (esmolol/labetalol) to heart rate ≈ 60/min, then a vasodilator if systolic pressure stays above about 120 mm Hg.",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-11",
+    "frontHtml": "What makes a type B dissection 'complicated'?",
+    "backHtml": "Malperfusion (gut, kidney, limb), rupture, rapid expansion, or refractory pain/hypertension → usually endovascular repair (TEVAR).",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-12",
+    "frontHtml": "Who gets AAA screening, and how?",
+    "backHtml": "One-time abdominal ultrasound in men aged 65–75 who have ever smoked.",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-13",
+    "frontHtml": "Usual elective repair thresholds for abdominal aortic aneurysm?",
+    "backHtml": "About 5.5 cm in men (about 5.0 cm in women), rapid growth (≈ 0.5 cm or more per year) or symptoms.",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-14",
+    "frontHtml": "Pain, hypotension and pulsatile abdominal mass in an older smoker: next step?",
+    "backHtml": "Ruptured AAA → straight to the operating room; permissive hypotension; no imaging if unstable.",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081201-15",
+    "frontHtml": "Superior vena cava syndrome without a tissue diagnosis: why avoid empirical steroids or radiation?",
+    "backHtml": "They can obscure the histology (especially lymphoma); give them only if airway compromise or cerebral edema forces urgent treatment (stent first).",
+    "sectionId": "s23b-s-081201-ck-01",
+    "areas": [
+      "usmle2026.08.12.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-01",
+    "frontHtml": "Earliest visible lesion of atherosclerosis and its main cell?",
+    "backHtml": "Fatty streak: intimal foam cells (macrophages that took up oxidized LDL through scavenger receptors).",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-02",
+    "frontHtml": "Which cells make the fibrous cap of an atheroma, and what recruits them?",
+    "backHtml": "Smooth muscle cells that migrate from the media into the intima, driven by growth factors such as PDGF.",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-03",
+    "frontHtml": "Hyaline vs hyperplastic arteriolosclerosis?",
+    "backHtml": "Hyaline: glassy plasma-protein/matrix thickening in chronic hypertension, diabetes, age. Hyperplastic: onion-skin smooth muscle layers in severe (malignant) hypertension.",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-04",
+    "frontHtml": "Mönckeberg sclerosis: where, and what does it do to the ABI?",
+    "backHtml": "Medial calcification of medium muscular arteries; lumen not narrowed; noncompressible vessels can give a falsely high ABI (&gt; 1.40).",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-05",
+    "frontHtml": "Cilostazol: mechanism and key contraindication?",
+    "backHtml": "PDE3 inhibitor → ↑ cAMP → less platelet aggregation and arterial dilation; contraindicated in heart failure.",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-06",
+    "frontHtml": "Why can clopidogrel fail in CYP2C19 poor metabolizers?",
+    "backHtml": "Clopidogrel is a prodrug that CYP2C19 converts to the active P2Y<sub>12</sub> blocker; less activation means less platelet inhibition.",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-07",
+    "frontHtml": "Young heavy smoker with digital ulcers, Raynaud and migratory superficial phlebitis?",
+    "backHtml": "Thromboangiitis obliterans (Buerger disease); only complete tobacco cessation halts it.",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-08",
+    "frontHtml": "Biopsy finding in cholesterol (atheroembolic) embolization?",
+    "backHtml": "Biconvex, needle-shaped clefts in small arteries (cholesterol crystals dissolved in processing).",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-09",
+    "frontHtml": "Fibromuscular dysplasia: who, which arteries, angiographic sign?",
+    "backHtml": "Women aged 20–60; renal and internal carotid arteries; 'string of beads'; causes renovascular hypertension (high renin).",
+    "sectionId": "s23b-s-081202-s1-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-10",
+    "frontHtml": "ABI cut-offs?",
+    "backHtml": "≤ 0.90 PAD; 0.91–0.99 borderline; 1.00–1.40 normal; &gt; 1.40 noncompressible (do a toe-brachial index).",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-11",
+    "frontHtml": "First-line therapy for intermittent claudication (after risk-factor control)?",
+    "backHtml": "Supervised exercise program (about 3 sessions/week for at least 12 weeks); add cilostazol if still limiting and no heart failure.",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-12",
+    "frontHtml": "Acute limb ischemia: first drug, then what?",
+    "backHtml": "IV unfractionated heparin immediately; then revascularization according to viability (urgent if threatened, amputation if irreversible). Watch for compartment syndrome after reperfusion.",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-13",
+    "frontHtml": "Define chronic limb-threatening ischemia and its management.",
+    "backHtml": "Rest pain, non-healing ulcer or gangrene &gt; 2 weeks → urgent imaging and revascularization for limb salvage.",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-14",
+    "frontHtml": "Symptomatic carotid stenosis: who gets endarterectomy?",
+    "backHtml": "TIA/non-disabling stroke in the territory with 70–99% stenosis (selected 50–69%), ideally within 2 weeks; not for occlusion.",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-15",
+    "frontHtml": "Secondary Raynaud red flags and first test?",
+    "backHtml": "Onset after ~40, asymmetry, digital ulcers, skin thickening, abnormal nailfold capillaries → ANA and nailfold capillaroscopy.",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081202-16",
+    "frontHtml": "Chronic mesenteric ischemia: classic triad and test?",
+    "backHtml": "Postprandial pain, food fear, weight loss in a smoker with vascular disease → CT angiography.",
+    "sectionId": "s23b-s-081202-ck-01",
+    "areas": [
+      "usmle2026.08.12.02"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-01",
+    "frontHtml": "Three components of the Virchow triad, with one example each?",
+    "backHtml": "Stasis (long travel, immobility), endothelial injury (surgery, catheter), hypercoagulability (cancer, estrogen, thrombophilia).",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-02",
+    "frontHtml": "Factor V Leiden mechanism?",
+    "backHtml": "Arg506Gln mutation removes the activated-protein-C cleavage site; factor Va resists inactivation.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-03",
+    "frontHtml": "Prothrombin G20210A?",
+    "backHtml": "3′ UTR variant of the prothrombin gene → higher prothrombin levels → venous thrombosis.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-04",
+    "frontHtml": "Heparin resistance with familial venous thrombosis suggests?",
+    "backHtml": "Antithrombin deficiency (heparin acts through antithrombin).",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-05",
+    "frontHtml": "Why is LMWH mainly anti-Xa?",
+    "backHtml": "Its chains are mostly too short to bridge antithrombin and thrombin; Xa inhibition needs only antithrombin activation.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-06",
+    "frontHtml": "Warfarin skin necrosis: mechanism?",
+    "backHtml": "Protein C (short half-life) falls before factors II, IX, X → transient hypercoagulability; risk ↑ with protein C deficiency; prevented by heparin overlap.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-07",
+    "frontHtml": "HIT pathogenesis and timing?",
+    "backHtml": "IgG against heparin–PF4 complexes activates platelets via FcγRIIa → thrombocytopenia plus thrombosis, typically 5–10 days after starting heparin.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-08",
+    "frontHtml": "Reversal agents: dabigatran, apixaban/rivaroxaban, warfarin, heparin?",
+    "backHtml": "Idarucizumab; andexanet alfa (or PCC); vitamin K + 4-factor PCC; protamine.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-09",
+    "frontHtml": "Brown skin above the medial malleolus in chronic venous insufficiency is due to?",
+    "backHtml": "Hemosiderin from red cells leaking out of congested capillaries.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-10",
+    "frontHtml": "Trousseau syndrome?",
+    "backHtml": "Migratory superficial thrombophlebitis from a cancer-associated hypercoagulable state, classically pancreatic adenocarcinoma.",
+    "sectionId": "s23b-s-081203-s1-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-11",
+    "frontHtml": "Suspected DVT: test if unlikely vs likely (Wells)?",
+    "backHtml": "Unlikely → high-sensitivity D-dimer (negative excludes). Likely → compression ultrasound.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-12",
+    "frontHtml": "Preferred anticoagulant for most patients with DVT?",
+    "backHtml": "A DOAC (apixaban or rivaroxaban can be started without heparin lead-in). Exceptions: pregnancy (LMWH), antiphospholipid syndrome or mechanical valves (warfarin).",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-13",
+    "frontHtml": "Duration of anticoagulation: provoked by surgery vs unprovoked?",
+    "backHtml": "Major transient trigger → 3 months. Unprovoked or persistent risk (cancer) → at least 3 months, often extended if bleeding risk allows.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-14",
+    "frontHtml": "Indication for an IVC filter?",
+    "backHtml": "Acute proximal DVT/PE when anticoagulation is contraindicated (e.g. active bleeding, recent intracranial hemorrhage); anticoagulate once safe.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-15",
+    "frontHtml": "Suspected HIT: what to do immediately?",
+    "backHtml": "Stop all heparin (incl. LMWH, flushes) and start a non-heparin anticoagulant (argatroban, bivalirudin, fondaparinux or DOAC); no warfarin until platelets recover; no routine platelet transfusion.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-16",
+    "frontHtml": "Phlegmasia cerulea dolens?",
+    "backHtml": "Massive iliofemoral DVT → swollen, painful, cyanotic leg with risk of venous gangrene → anticoagulation and urgent catheter-directed thrombolysis or thrombectomy.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-17",
+    "frontHtml": "Superficial vein thrombosis: when to anticoagulate?",
+    "backHtml": "Leg segment ≥ 5 cm → prophylactic-dose anticoagulation (e.g. fondaparinux ~45 days); within ~3 cm of the saphenofemoral junction → treat as DVT; short arm segment → compresses and NSAIDs.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081203-18",
+    "frontHtml": "Venous ulcer treatment, and what to check first?",
+    "backHtml": "Compression with elevation and wound care; check the ABI first because compression is unsafe with significant arterial disease.",
+    "sectionId": "s23b-s-081203-ck-01",
+    "areas": [
+      "usmle2026.08.12.03"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-01",
+    "frontHtml": "Which cardiac chamber is most often injured by an anterior chest stab wound, and why?",
+    "backHtml": "The right ventricle: it forms most of the anterior (sternocostal) surface.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-02",
+    "frontHtml": "Beck triad?",
+    "backHtml": "Hypotension, distended neck veins and muffled heart sounds: acute cardiac tamponade.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-03",
+    "frontHtml": "Mechanism of pulsus paradoxus in tamponade?",
+    "backHtml": "Inspiration increases RV filling; with a fixed pericardial volume the septum bows left, reducing LV filling and stroke volume.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-04",
+    "frontHtml": "Hemodynamic hallmark of tamponade on right heart catheterisation?",
+    "backHtml": "Raised, equalised diastolic pressures (RA ≈ RV diastolic ≈ PA diastolic ≈ wedge).",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-05",
+    "frontHtml": "Where does blunt aortic injury usually occur, and why there?",
+    "backHtml": "At the isthmus, just distal to the left subclavian at the ligamentum arteriosum: mobile arch meets tethered descending aorta.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-06",
+    "frontHtml": "Embryologic origin of the ligamentum arteriosum?",
+    "backHtml": "Ductus arteriosus, from the left sixth pharyngeal arch artery.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-07",
+    "frontHtml": "Commotio cordis: mechanism?",
+    "backHtml": "A low-energy chest blow during the upstroke of the T wave triggers ventricular fibrillation without structural injury.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-08",
+    "frontHtml": "Chest radiograph clues to traumatic aortic injury?",
+    "backHtml": "Widened mediastinum, indistinct aortic knob, rightward tracheal or NG tube shift, depressed left mainstem bronchus, left apical cap, left hemothorax.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-09",
+    "frontHtml": "Tamponade versus tension pneumothorax at the bedside?",
+    "backHtml": "Both: shock with distended neck veins. Tension: absent breath sounds on one side ± tracheal shift. Tamponade: equal breath sounds, muffled heart sounds.",
+    "sectionId": "s23b-s-081301-s1-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-10",
+    "frontHtml": "Penetrating cardiac injury with tamponade and an available surgeon: treatment?",
+    "backHtml": "Immediate operation (sternotomy or thoracotomy); pericardiocentesis only as a temporising bridge.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-11",
+    "frontHtml": "Strongest indication for resuscitative (ED) thoracotomy?",
+    "backHtml": "Penetrating chest trauma with loss of pulses shortly before or after arrival (recent signs of life).",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-12",
+    "frontHtml": "Screening for blunt cardiac injury?",
+    "backHtml": "12-lead ECG plus troponin; both normal excludes significant injury.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-13",
+    "frontHtml": "Blunt cardiac injury with new ECG changes but stable: management?",
+    "backHtml": "Admit for continuous ECG monitoring (about 24–48 hours); echocardiography if unstable or unexplained arrhythmia.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-14",
+    "frontHtml": "Test of choice for suspected blunt aortic injury in a stable patient?",
+    "backHtml": "CT angiography of the chest.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-15",
+    "frontHtml": "Anti-impulse therapy for a contained aortic injury: order of drugs?",
+    "backHtml": "IV beta-blocker (esmolol) first to slow the heart, then a vasodilator if blood pressure stays high; withhold in hemorrhagic shock.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-16",
+    "frontHtml": "Preferred repair of blunt thoracic aortic injury?",
+    "backHtml": "Thoracic endovascular aortic repair (TEVAR), after life-threatening hemorrhage elsewhere is controlled.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-17",
+    "frontHtml": "Young athlete collapses after a ball strikes the chest: first actions?",
+    "backHtml": "Start chest compressions and defibrillate with an AED as soon as possible.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081301-18",
+    "frontHtml": "New hypotension and raised JVP after a pacing lead: suspect what, and what test?",
+    "backHtml": "Ventricular perforation with tamponade; bedside echocardiography, then pericardiocentesis.",
+    "sectionId": "s23b-s-081301-ck-01",
+    "areas": [
+      "usmle2026.08.13.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-01",
+    "frontHtml": "Adult derivative of the truncus arteriosus? Of the bulbus cordis?",
+    "backHtml": "Truncus: ascending aorta and pulmonary trunk. Bulbus cordis: smooth outflow parts of both ventricles.",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-02",
+    "frontHtml": "Adult derivatives of the left and right horns of the sinus venosus?",
+    "backHtml": "Left horn: coronary sinus. Right horn: smooth posterior wall of the right atrium (sinus venarum).",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-03",
+    "frontHtml": "Which cells form the aorticopulmonary septum, and which lesions follow their failure?",
+    "backHtml": "Neural crest cells; truncus arteriosus (no septum), transposition (no spiral), tetralogy (malaligned outlet septum); linked to 22q11.2 deletion.",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-04",
+    "frontHtml": "Why does the foramen ovale close at birth?",
+    "backHtml": "Left atrial pressure rises above right atrial pressure (falling pulmonary resistance, more pulmonary venous return), pressing septum primum against septum secundum.",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-05",
+    "frontHtml": "What keeps the fetal ductus arteriosus open, and what closes it after birth?",
+    "backHtml": "Prostaglandin E<sub>2</sub> and low oxygen keep it open; rising oxygen and falling PGE<sub>2</sub> close it (→ ligamentum arteriosum).",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-06",
+    "frontHtml": "Most oxygenated vessel in the fetus?",
+    "backHtml": "Umbilical vein.",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-07",
+    "frontHtml": "Eisenmenger syndrome: what reverses the shunt, and how do the murmur and P<sub>2</sub> change?",
+    "backHtml": "Pulmonary vascular resistance exceeds systemic resistance; the original murmur softens and P<sub>2</sub> becomes loud.",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-08",
+    "frontHtml": "Differential cyanosis (blue toes, pink fingers) suggests which lesion?",
+    "backHtml": "PDA with reversed (Eisenmenger) flow entering the aorta distal to the left subclavian artery.",
+    "sectionId": "s23b-s-081401-s1-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-09",
+    "frontHtml": "The four features of tetralogy of Fallot, and their single embryologic cause?",
+    "backHtml": "RV outflow obstruction, malaligned VSD, overriding aorta, RV hypertrophy; anterosuperior displacement of the infundibular septum.",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-10",
+    "frontHtml": "Why does squatting help a child with tetralogy of Fallot?",
+    "backHtml": "It raises systemic vascular resistance, reducing right-to-left shunting and increasing pulmonary blood flow.",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-11",
+    "frontHtml": "Transposition of the great arteries: CXR sign and maternal association?",
+    "backHtml": "Egg-shaped heart with a narrow mediastinum; maternal pregestational diabetes.",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-12",
+    "frontHtml": "Most characteristic heart defect in Down syndrome, and its embryologic origin?",
+    "backHtml": "Atrioventricular septal defect; failure of the endocardial cushions.",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-13",
+    "frontHtml": "Coarctation: four exam findings?",
+    "backHtml": "Arm hypertension, weak delayed femoral pulses (low leg pressure), interscapular murmur, rib notching; associated with Turner syndrome and bicuspid aortic valve.",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-14",
+    "frontHtml": "Infant at 1–3 months with sweating during feeds and Q waves in I, aVL, V5–V6?",
+    "backHtml": "Anomalous left coronary artery from the pulmonary artery (ischemia as pulmonary pressure falls).",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-15",
+    "frontHtml": "Cardiac lesion of Williams syndrome? Of Noonan syndrome?",
+    "backHtml": "Williams: supravalvular aortic stenosis. Noonan: pulmonary valve stenosis (and hypertrophic cardiomyopathy).",
+    "sectionId": "s23b-s-081401-s1-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-16",
+    "frontHtml": "Cyanotic newborn whose saturation does not rise with 100% oxygen: first drug?",
+    "backHtml": "Alprostadil (PGE<sub>1</sub>) infusion; watch for apnea.",
+    "sectionId": "s23b-s-081401-ck-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-17",
+    "frontHtml": "Tet spell management sequence?",
+    "backHtml": "Calm, knee-to-chest, oxygen → IV fluids, morphine → beta-blocker → phenylephrine; avoid inotropes.",
+    "sectionId": "s23b-s-081401-ck-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-18",
+    "frontHtml": "Shock with weak femoral pulses in the first 2 weeks of life: think of what, and give what?",
+    "backHtml": "Duct-dependent systemic lesion (critical coarctation, interrupted arch, hypoplastic left heart); start alprostadil.",
+    "sectionId": "s23b-s-081401-ck-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-19",
+    "frontHtml": "Small asymptomatic muscular VSD with normal growth: management?",
+    "backHtml": "Reassurance and follow-up; many close spontaneously; no endocarditis prophylaxis.",
+    "sectionId": "s23b-s-081401-ck-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-20",
+    "frontHtml": "Drugs to close a significant PDA in a preterm infant, and contraindications?",
+    "backHtml": "Ibuprofen or indomethacin (or acetaminophen); avoid NSAIDs with bleeding, thrombocytopenia, NEC or significant renal impairment.",
+    "sectionId": "s23b-s-081401-ck-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-21",
+    "frontHtml": "Definitive operation for transposition of the great arteries?",
+    "backHtml": "Arterial switch operation in the first weeks of life (balloon atrial septostomy before it if mixing is poor).",
+    "sectionId": "s23b-s-081401-ck-01",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-22",
+    "frontHtml": "Secundum ASD with right heart enlargement and normal pulmonary resistance: treatment?",
+    "backHtml": "Transcatheter device closure (surgery for primum, sinus venosus or unsuitable rims).",
+    "sectionId": "s23b-s-081401-ck-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-23",
+    "frontHtml": "When is PFO closure recommended?",
+    "backHtml": "Adults up to about 60 years with a nonlacunar cryptogenic ischemic stroke and a PFO, especially with a large shunt or atrial septal aneurysm, after other causes are excluded; plus antiplatelet therapy.",
+    "sectionId": "s23b-s-081401-ck-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-24",
+    "frontHtml": "Key counselling point for a woman with Eisenmenger syndrome?",
+    "backHtml": "Pregnancy carries very high maternal mortality and is advised against; avoid estrogen-containing contraception.",
+    "sectionId": "s23b-s-081401-ck-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-25",
+    "frontHtml": "Which congenital heart patients need dental endocarditis prophylaxis?",
+    "backHtml": "Unrepaired cyanotic disease (incl. shunts/conduits), first 6 months after repair with prosthetic material, residual defect at prosthetic material; also prosthetic valves, prior endocarditis, transplant valvulopathy.",
+    "sectionId": "s23b-s-081401-ck-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081401-26",
+    "frontHtml": "Late problems after repair of tetralogy of Fallot?",
+    "backHtml": "Pulmonary regurgitation with RV dilation, ventricular arrhythmias and sudden death; pulmonary valve replacement for symptoms or progressive dilation.",
+    "sectionId": "s23b-s-081401-ck-02",
+    "areas": [
+      "usmle2026.08.14.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-01",
+    "frontHtml": "Anthracycline cardiotoxicity: pattern, mechanism, protection?",
+    "backHtml": "Cumulative dose–dependent dilated cardiomyopathy (topoisomerase IIβ, iron-mediated free radicals), largely irreversible; dexrazoxane reduces risk.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-02",
+    "frontHtml": "Trastuzumab cardiotoxicity: mechanism and reversibility?",
+    "backHtml": "HER2 (ERBB2) signalling blockade in cardiomyocytes → dysfunction without much necrosis; not dose-dependent, usually reversible.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-03",
+    "frontHtml": "Chemotherapy that causes coronary vasospasm?",
+    "backHtml": "5-Fluorouracil and capecitabine.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-04",
+    "frontHtml": "Cancer drugs causing myocarditis?",
+    "backHtml": "Immune checkpoint inhibitors (often with myositis/myasthenia); high-dose cyclophosphamide (hemorrhagic myocarditis).",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-05",
+    "frontHtml": "How does cocaine cause myocardial ischemia?",
+    "backHtml": "Blocks NE/DA/5-HT reuptake → α<sub>1</sub> coronary vasoconstriction + ↑ demand (β<sub>1</sub>) + thrombosis.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-06",
+    "frontHtml": "Why can cocaine widen the QRS?",
+    "backHtml": "It blocks fast Na<sup>+</sup> channels; treat with IV sodium bicarbonate.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-07",
+    "frontHtml": "ACE inhibitor cough and angioedema: mediator?",
+    "backHtml": "Bradykinin (and substance P), because ACE = kininase II; not IgE-mediated.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-08",
+    "frontHtml": "Why does amlodipine edema not respond to diuretics?",
+    "backHtml": "It comes from precapillary arteriolar dilation (↑ capillary hydrostatic pressure), not salt retention.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-09",
+    "frontHtml": "Minoxidil: mechanism and adverse effects?",
+    "backHtml": "Opens K<sub>ATP</sub> channels in arteriolar smooth muscle; hypertrichosis, fluid retention, reflex tachycardia, pericardial effusion.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-10",
+    "frontHtml": "First-dose syncope: which antihypertensive class?",
+    "backHtml": "α<sub>1</sub> blockers (prazosin, terazosin, doxazosin).",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-11",
+    "frontHtml": "Digoxin toxicity: classic symptoms and arrhythmias?",
+    "backHtml": "Nausea, confusion, yellow-green vision; PVCs, bidirectional VT, atrial tachycardia with block, AV block; hyperkalemia in acute overdose.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-12",
+    "frontHtml": "Drugs that raise digoxin levels via P-glycoprotein?",
+    "backHtml": "Amiodarone, verapamil, quinidine, clarithromycin.",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-13",
+    "frontHtml": "Electrolyte disturbances that increase digoxin toxicity?",
+    "backHtml": "Hypokalemia, hypomagnesemia, hypercalcemia (and renal failure).",
+    "sectionId": "s23b-s-081501-s1-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-14",
+    "frontHtml": "Before anthracycline or trastuzumab therapy?",
+    "backHtml": "Baseline echocardiogram (LVEF) and risk-factor optimization.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-15",
+    "frontHtml": "Asymptomatic EF fall ≥ 10 points to &lt; 50% on trastuzumab?",
+    "backHtml": "Hold trastuzumab, start HF therapy, reimage in about 3–4 weeks; often restart if it recovers.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-16",
+    "frontHtml": "Cocaine chest pain: first-line drug class and class to avoid?",
+    "backHtml": "Benzodiazepines (with aspirin, nitrates, CCB); avoid β-blockers during acute intoxication.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-17",
+    "frontHtml": "After ACE inhibitor angioedema, which drugs are contraindicated?",
+    "backHtml": "All ACE inhibitors and sacubitril-valsartan; ARBs only with caution.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-18",
+    "frontHtml": "ACE inhibitor cough in a patient with albuminuria?",
+    "backHtml": "Switch to an ARB.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-19",
+    "frontHtml": "Acceptable creatinine rise after starting an ACE inhibitor?",
+    "backHtml": "Up to about 30%; larger rises suggest volume depletion or renal artery stenosis.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-20",
+    "frontHtml": "Indications for digoxin-specific antibody fragments?",
+    "backHtml": "Life-threatening arrhythmia, hemodynamic instability, end-organ dysfunction, or high K<sup>+</sup> in acute ingestion.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-21",
+    "frontHtml": "Is digoxin removed by hemodialysis?",
+    "backHtml": "No: large volume of distribution.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-22",
+    "frontHtml": "Amlodipine-induced ankle edema: best fix?",
+    "backHtml": "Lower the dose and/or add an ACE inhibitor or ARB.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-23",
+    "frontHtml": "QTc threshold to avoid adding another QT-prolonging drug?",
+    "backHtml": "About 500 ms (or a rise of more than about 60 ms).",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  },
+  {
+    "id": "s23b-c-081501-24",
+    "frontHtml": "Verapamil or diltiazem plus a β-blocker: main risk?",
+    "backHtml": "Additive bradycardia and AV block, especially in older adults.",
+    "sectionId": "s23b-s-081501-ck-01",
+    "areas": [
+      "usmle2026.08.15.01"
+    ],
+    "source": "naadi-original-v1",
+    "tags": []
+  }
+]

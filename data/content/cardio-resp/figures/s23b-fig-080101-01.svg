@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Diagram linking a valve vegetation to embolic findings and immune-complex findings of infective endocarditis">
+<defs><marker id="s23b-fig-080101-01-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="0" y="0" width="720" height="400" fill="#ffffff"/>
+<text x="360" y="30" font-family="sans-serif" font-size="17" font-weight="bold" fill="#0f172a" text-anchor="middle">Infective endocarditis: where the findings come from</text>
+<rect x="250" y="55" width="220" height="70" rx="10" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+<text x="360" y="83" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Infected vegetation</text>
+<text x="360" y="104" font-family="sans-serif" font-size="12" fill="#334155" text-anchor="middle">platelets + fibrin + organisms on a valve</text>
+<line x1="300" y1="125" x2="170" y2="180" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-080101-01-ar)"/>
+<line x1="420" y1="125" x2="550" y2="180" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-080101-01-ar)"/>
+<line x1="360" y1="125" x2="360" y2="180" stroke="#334155" stroke-width="2" marker-end="url(#s23b-fig-080101-01-ar)"/>
+<rect x="30" y="185" width="260" height="190" rx="10" fill="#fee2e2" stroke="#334155" stroke-width="2"/>
+<text x="160" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Fragments break off (emboli)</text>
+<text x="45" y="238" font-family="sans-serif" font-size="12" fill="#0f172a">• Painless macules on palms/soles</text>
+<text x="45" y="258" font-family="sans-serif" font-size="12" fill="#0f172a">  (Janeway lesions: microabscesses)</text>
+<text x="45" y="282" font-family="sans-serif" font-size="12" fill="#0f172a">• Splinter hemorrhages in nail beds</text>
+<text x="45" y="306" font-family="sans-serif" font-size="12" fill="#0f172a">• Left-sided: stroke, splenic or renal</text>
+<text x="45" y="326" font-family="sans-serif" font-size="12" fill="#0f172a">  infarct, mycotic aneurysm</text>
+<text x="45" y="350" font-family="sans-serif" font-size="12" fill="#0f172a">• Right-sided: septic lung emboli</text>
+<rect x="300" y="185" width="120" height="190" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+<text x="360" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Local damage</text>
+<text x="312" y="240" font-family="sans-serif" font-size="12" fill="#0f172a">• Regurgitation</text>
+<text x="312" y="262" font-family="sans-serif" font-size="12" fill="#0f172a">• Leaflet</text>
+<text x="312" y="278" font-family="sans-serif" font-size="12" fill="#0f172a">  perforation</text>
+<text x="312" y="302" font-family="sans-serif" font-size="12" fill="#0f172a">• Root abscess</text>
+<text x="312" y="324" font-family="sans-serif" font-size="12" fill="#0f172a">• New AV block</text>
+<text x="312" y="348" font-family="sans-serif" font-size="12" fill="#0f172a">• Heart failure</text>
+<rect x="430" y="185" width="260" height="190" rx="10" fill="#ede9fe" stroke="#334155" stroke-width="2"/>
+<text x="560" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Immune complexes</text>
+<text x="445" y="238" font-family="sans-serif" font-size="12" fill="#0f172a">• Tender nodules on finger and</text>
+<text x="445" y="258" font-family="sans-serif" font-size="12" fill="#0f172a">  toe pads (Osler nodes)</text>
+<text x="445" y="282" font-family="sans-serif" font-size="12" fill="#0f172a">• Retinal hemorrhages with pale</text>
+<text x="445" y="302" font-family="sans-serif" font-size="12" fill="#0f172a">  centres (Roth spots)</text>
+<text x="445" y="326" font-family="sans-serif" font-size="12" fill="#0f172a">• Glomerulonephritis, hematuria</text>
+<text x="445" y="350" font-family="sans-serif" font-size="12" fill="#0f172a">• Positive rheumatoid factor</text>
+</svg>
