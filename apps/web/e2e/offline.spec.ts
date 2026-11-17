@@ -218,6 +218,20 @@ test.describe("offline week", () => {
       await expect(syncLine(page)).toHaveAttribute("data-sync-phase", "offline");
       await expect(page.getByText(/^Ready offline until /)).toBeVisible();
       await snap(page, info, guard, "reload-offline");
+      // The assistant's renderer (Streamdown, math, KaTeX) and the reader are in the precache, so a chat or a
+      // chapter opened offline renders formatted text, not plain text (lead 20261117T112324).
+      const precached = await page.evaluate(async () => {
+        const urls: string[] = [];
+        for (const name of await caches.keys())
+          if (name.includes("precache")) for (const r of await (await caches.open(name)).keys()) urls.push(r.url);
+        return urls;
+      });
+      for (const chunk of [/\/assets\/AssistantSurface-/, /\/assets\/ReaderPage-/, /\/assets\/QuestionPage-/, /katex/i])
+        expect(
+          precached.some((u) => chunk.test(u)),
+          String(chunk),
+        ).toBe(true);
+      expect(precached.some((u) => u.includes("/api/"))).toBe(false);
 
       // Tutor questions on the device: each answer is kept, the explanation waits for the server.
       await go(page, `/practice/blocks/${block.json.id}/1`);

@@ -96,9 +96,6 @@ const projects: NonNullable<PlaywrightTestConfig["projects"]> = BROWSERS.flatMap
       // Firefox has no mobile emulation; WebKit and Chromium emulate the mobile viewport + touch.
       isMobile: v.touch && browserName !== "firefox",
       deviceScaleFactor: 1,
-      // Specs mock /api with page.route, which cannot see requests from a page the service worker controls
-      // (Playwright). The worker is tested where it matters: offline.spec.ts and the planner's push test allow it.
-      serviceWorkers: "block",
     },
   })),
 );
