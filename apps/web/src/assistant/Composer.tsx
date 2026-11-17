@@ -209,9 +209,10 @@ export function Composer({
         before={before}
       />
       {waiting ? <p className="m-0 px-2 text-text-3 text-ui-sm">{t("agent.bar.confirm_first")}</p> : null}
-      {offline ? (
-        // The bar's placeholder truncates on a phone; the whole reason, with an icon (never colour alone).
-        <p role="status" data-assistant-offline="" className="m-0 flex items-center gap-2 px-2 text-text-2 text-ui-sm">
+      {offline && !compact ? (
+        // The bar's placeholder truncates on a phone; the whole reason, with an icon (never colour alone). Not a
+        // live region: the shell announces Offline, and the input already describes itself with this reason.
+        <p data-assistant-offline="" className="m-0 flex items-center gap-2 px-2 text-text-2 text-ui-sm">
           <WifiOff aria-hidden="true" size={16} className="shrink-0" />
           {t("agent.offline")}
         </p>
