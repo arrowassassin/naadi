@@ -1,0 +1,15 @@
+{
+ "id": "20261117T075129-seg14-tutor-937dc3",
+ "ts": "2026-11-17T07:51:29.784210Z",
+ "from": "seg14-tutor",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/db/test_rls.py",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/db/test_rls.py\n\nRecent integration commits touching them:\nfix(planner): review rework: token redaction in logs, push endpoint allowlist, plan_items API-only (0030), stamp clamp, stale-proposal and reminder fixes, reviews drop before spill, lazy SDK and page, e2e permission and base URL\ntest(rls): comment tidy\nfix(generation): review fixes - client cannot delete rows (0029 soft hide, server-only pause, failed runs count), names refused, Space validates before the GPU, submit inside try, service worker URL through a Trusted Types policy\nfix(pathway): test counts and migration references after rebasing onto ingest (0028)\nfeat(pathway): stages with Re-verify, task progress and costs (LWW), document vault, weekly official-page check (migration 0028)\nfeat(ingest): universal ingest + knowledge base backend (S15)\nfeat(planner): week calendar, deterministic rebalance with confirm, ICS feed, Web Push reminders (migration 0027)\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\ntest(e2e): Today/onboarding spec (fresh users, real numbers via tests/plan/e2e_today.py, coach card, ticks, warm-load budget, prod CSP); shared roles onboard once; shell Today assertions follow the new Today\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/db/test_rls.py"
+ ],
+ "requires_ack": true
+}
