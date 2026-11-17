@@ -419,9 +419,9 @@ export class InkEngine {
    * Merge items from another replica (sync, 12b) without touching undo history: see InkDocument.applyRemote.
    * Returns what changed (null for nothing). Emits no onStrokesChange (it is not this user's edit).
    */
-  applyRemote(items: readonly InkItem[]): InkDiff | null {
+  applyRemote(items: readonly InkItem[], opts: { authoritative?: boolean } = {}): InkDiff | null {
     if (this.destroyed) return null;
-    const diff = this.doc.applyRemote(items);
+    const diff = this.doc.applyRemote(items, opts);
     if (diff) {
       this.refreshSelectionAfterChange();
       this.emitState();
@@ -1399,10 +1399,13 @@ export class InkEngine {
       [slab.ink, k],
     ] as const) {
       if (!on) {
-        // Nothing of this kind left in the slab: no memory, nothing shown.
+        // Nothing of this kind left in the slab: no memory, nothing shown. Its settled picture is now wrong: it
+        // must never be drawn back into a new backing store (a later stroke in this slab would bring the
+        // erased ink back with it), nor parked.
         this.dropBacking(layer);
         if (layer.canvas) layer.canvas.style.display = "none";
         if (layer.img) layer.img.style.display = "none";
+        layer.settledVersion = -1;
         layer.version++;
         continue;
       }

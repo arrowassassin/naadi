@@ -91,17 +91,30 @@ export class InkDocument {
    * It is not a user action: no undo step, history untouched, no onDiff. Undo/redo after it still re-stamp what
    * they bring back strictly newer than every incoming version, so the local action wins (as for any replica).
    * Returns what changed, or null.
+   *
+   * `authoritative`: the server's stored copy of items this device just sent, whose stamp the server changed (a
+   * clock running ahead was clamped). Each replaces the local version whatever its updatedAt, and the replica stamp
+   * drops to it, so a later deletion on another device wins as it should. Only for versions of this device's own
+   * last edit (sync checks that nothing newer is pending).
    */
-  applyRemote(items: readonly InkItem[]): InkDiff | null {
+  applyRemote(items: readonly InkItem[], opts: { authoritative?: boolean } = {}): InkDiff | null {
     if (this.tx) throw new Error("InkDocument: applyRemote during a transaction");
     const before: Entry[] = [];
     const after: Entry[] = [];
     const seen = new Set<string>();
+    const adopted = new Map<string, number>();
     for (const raw of items) {
       if (seen.has(raw.id)) continue; // callers pass one version per id (mergeInkItems output); keep the first
       seen.add(raw.id);
       const cur = this.entries.get(raw.id);
       const stamp = this.replicaStamp.get(raw.id);
+      if (opts.authoritative) {
+        adopted.set(raw.id, raw.updatedAt);
+        if (cur && cur.item.updatedAt === raw.updatedAt && !!cur.item.deleted === !!raw.deleted) continue;
+        if (cur) before.push(cur);
+        if (!raw.deleted) after.push({ item: raw, seq: cur ? cur.seq : this.nextSeq++ });
+        continue;
+      }
       this.replicaStamp.set(raw.id, Math.max(stamp ?? 0, raw.updatedAt));
       if (cur) {
         const a = cur.item;
@@ -115,10 +128,15 @@ export class InkDocument {
         after.push({ item: raw, seq: this.nextSeq++ });
       }
     }
-    if (before.length === 0 && after.length === 0) return null;
+    if (before.length === 0 && after.length === 0) {
+      for (const [id, s] of adopted) this.replicaStamp.set(id, s);
+      return null;
+    }
     // applyRaw bumps replicaStamp for removals the way a local delete would; that only makes later undo stamps
     // larger, never smaller than what a replica holds.
-    return this.applyRaw({ before, after });
+    const diff = this.applyRaw({ before, after });
+    for (const [id, s] of adopted) this.replicaStamp.set(id, s);
+    return diff;
   }
 
   /**

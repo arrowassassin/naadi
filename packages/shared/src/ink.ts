@@ -51,10 +51,15 @@ export const InkPointSchema = z.tuple([su, su, z.number().min(0).max(1), z.numbe
 export type InkPoint = z.infer<typeof InkPointSchema>;
 
 /** Text-anchored margin notes: a ProseMirror document position plus an optional su offset. */
+/** `<node type>:<fnv1a-32 hex of the block's JSON>` (content/positions.ts blockFingerprint). */
+export const INK_ANCHOR_FP_PATTERN = /^[A-Za-z][A-Za-z0-9]{0,30}:[0-9a-f]{8}$/;
+
 export const InkAnchorSchema = z.strictObject({
   pm: z.number().int().min(0),
   dx: su.optional(),
   dy: su.optional(),
+  /** The block's fingerprint when the anchor was stamped: the anchor resolves only to a block that still matches. */
+  fp: z.string().regex(INK_ANCHOR_FP_PATTERN).optional(),
 });
 export type InkAnchor = z.infer<typeof InkAnchorSchema>;
 

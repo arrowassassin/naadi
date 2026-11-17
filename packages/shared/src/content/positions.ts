@@ -49,3 +49,31 @@ export function topLevelBlockPositions(doc: unknown): number[] {
   }
   return out;
 }
+
+/** fnv1a-32 over UTF-16 code units, as 8 hex digits. */
+function fnv1a32(s: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16).padStart(8, "0");
+}
+
+/**
+ * A top-level block's fingerprint, `<node type>:<8 hex>` (InkAnchor.fp). Any change to the block (text, marks,
+ * attrs) changes it, so ink anchored to a block that was edited, removed or replaced keeps its stored
+ * coordinates instead of moving beside whatever block now starts at the same position.
+ */
+export function blockFingerprint(block: unknown): string {
+  const type = block && typeof block === "object" ? (block as JsonNode).type : undefined;
+  const name = typeof type === "string" && /^[A-Za-z][A-Za-z0-9]{0,30}$/.test(type) ? type : "block";
+  return `${name}:${fnv1a32(JSON.stringify(block) ?? "")}`;
+}
+
+/** Each top-level block's start position and fingerprint (empty for anything that is not a doc). */
+export function topLevelBlocks(doc: unknown): { pm: number; fp: string }[] {
+  const pms = topLevelBlockPositions(doc);
+  const content = pms.length ? ((doc as JsonNode).content as unknown[]) : [];
+  return pms.map((pm, i) => ({ pm, fp: blockFingerprint(content[i]) }));
+}

@@ -1,4 +1,4 @@
-"""Regenerates items.json and merge-vectors.json (from the repo root: python3 packages/shared/fixtures/ink/generate.py && npx biome format --write packages/shared/fixtures/ink).
+"""Regenerates items.json and merge-vectors.json (from the repo root: python3 packages/shared/fixtures/ink/generate.py, then format each file with `biome format --stdin-file-path=x.json < f > tmp`: biome.json ignores this folder).
 
 Hand-written cases; the expected merge results are checked by both test suites, not computed here."""
 import json
@@ -20,6 +20,8 @@ cases=[
  ("anchor with dx and dy",True,w(pen,anchor={"pm":0,"dx":-0.5,"dy":1.25})),
  ("tombstone",True,w(pen,deleted=True)),
  ("integer-valued float timestamp",True,w(pen,createdAt=float(T))),
+ ("integer-valued float updatedAt, point t and anchor pm",True,w(pen,updatedAt=float(T),points=[[0.1,0.1,0.5,0.0],[0.2,0.15,0.6,8.0]],anchor={"pm":3.0})),
+ ("anchor with block fingerprint",True,w(pen,anchor={"pm":12,"dy":0.01,"fp":"paragraph:0a1b2c3d"})),
  ("unrounded su precision is accepted",True,w(pen,points=[[0.1234567891,0.98765432,0.333333333,0]])),
  ("negative su inside the bound",True,w(pen,points=[[-10000,10000,0,86400000]])),
  ("one point",True,w(pen,points=[[0.5,0.5,1,0]])),
@@ -67,6 +69,10 @@ cases=[
  ("anchor negative pm",False,w(pen,anchor={"pm":-1})),
  ("anchor extra key",False,w(pen,anchor={"pm":1,"dz":0})),
  ("anchor without pm",False,w(pen,anchor={"dy":0.1})),
+ ("anchor fp without type",False,w(pen,anchor={"pm":1,"fp":"0a1b2c3d"})),
+ ("anchor fp uppercase hex",False,w(pen,anchor={"pm":1,"fp":"paragraph:0A1B2C3D"})),
+ ("anchor fp null",False,w(pen,anchor={"pm":1,"fp":None})),
+ ("fractional updatedAt",False,w(pen,updatedAt=T+0.5)),
  ("unknown shape",False,w(pen,shape="star")),
  ("missing color",False,w(pen,color=...)),
  ("array instead of object",False,[1,2]),

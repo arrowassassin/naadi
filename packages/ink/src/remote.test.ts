@@ -94,17 +94,58 @@ describe("InkDocument.applyRemote", () => {
   });
 });
 
+describe("InkDocument.applyRemote authoritative (the server clamped this device's stamp)", () => {
+  it("adopts the server's lower stamp, so a later remote tombstone wins and the stroke stays deleted", () => {
+    const ahead = T + 600_000; // this device's clock is 10 minutes fast
+    const { doc, diffs } = setup(() => ahead);
+    const x = line(0.1, { updatedAt: ahead });
+    doc.commit({ before: [], after: doc.fresh([x]) });
+    diffs.length = 0;
+    const clamped = { ...x, updatedAt: T } as InkItem;
+    expect(doc.applyRemote([clamped])).toBeNull(); // without the flag: our future copy wins
+    expect(doc.applyRemote([clamped], { authoritative: true })).not.toBeNull();
+    expect(doc.get(x.id)?.updatedAt).toBe(T);
+    doc.applyRemote([{ ...clamped, deleted: true, updatedAt: T + 5 } as InkItem]); // erased on another device
+    expect(doc.get(x.id)).toBeUndefined();
+    expect(diffs).toEqual([]); // not a user action
+  });
+
+  it("an identical stamp is a no-op; an unknown id is added", () => {
+    const { doc } = setup();
+    const a = line(0.1);
+    doc.load([a]);
+    expect(doc.applyRemote([a], { authoritative: true })).toBeNull();
+    const b = line(0.2);
+    doc.applyRemote([b], { authoritative: true });
+    expect(doc.get(b.id)).toEqual(b);
+  });
+
+  it("after adopting, undo re-stamps from the server's stamp, not the future one", () => {
+    let now = T + 600_000;
+    const { doc } = setup(() => now);
+    const x = line(0.1, { updatedAt: now });
+    doc.commit({ before: [], after: doc.fresh([x]) });
+    doc.applyRemote([{ ...x, updatedAt: T } as InkItem], { authoritative: true });
+    now = T + 10; // the corrected clock
+    const e = doc.entry(x.id);
+    doc.commit({ before: [e as never], after: [] });
+    doc.undo();
+    // One past the delete's tombstone (T + 10), and nowhere near the old future stamp.
+    expect(doc.get(x.id)?.updatedAt).toBe(T + 11);
+  });
+});
+
 describe("anchors", () => {
   // Three blocks; on a narrow layout they start lower (text wraps into more lines).
   const wide = blockResolver([
-    { pm: 0, y: 0 },
-    { pm: 40, y: 0.3 },
-    { pm: 90, y: 0.6 },
+    { pm: 0, y: 0, fp: "heading:00000000" },
+    { pm: 40, y: 0.3, fp: "paragraph:00000040" },
+    { pm: 90, y: 0.6, fp: "paragraph:00000090" },
   ]);
   const narrow = blockResolver([
-    { pm: 0, y: 0 },
-    { pm: 40, y: 0.55 },
-    { pm: 90, y: 1.2 },
+    { pm: 0, y: 0, fp: "heading:00000000" },
+    { pm: 40, y: 0.55, fp: "paragraph:00000040" },
+    { pm: 90, y: 1.2, fp: "paragraph:00000090" },
   ]);
 
   it("stamps the block under the item's top edge on commit", () => {
@@ -113,6 +154,7 @@ describe("anchors", () => {
     doc.commit({ before: [], after: doc.fresh([a]) });
     const saved = doc.get(a.id) as InkItem;
     expect(saved.anchor?.pm).toBe(40);
+    expect(saved.anchor?.fp).toBe("paragraph:00000040");
     expect(saved.anchor?.dy).toBeCloseTo(bboxOfItem(a).y0 - 0.3, 5);
   });
 
@@ -135,12 +177,15 @@ describe("anchors", () => {
 
   it("loads and merges remote items for the current layout; unanchored items stay put", () => {
     const doc = new InkDocument({ anchors: narrow });
-    const anchored = { ...line(0.31), anchor: { pm: 40, dy: 0.01 } } as InkItem;
+    const anchored = { ...line(0.31), anchor: { pm: 40, dy: 0.01, fp: "paragraph:00000040" } } as InkItem;
     const plainItem = line(0.5);
     doc.load([anchored, plainItem]);
     expect(bboxOfItem(doc.get(anchored.id) as InkItem).y0).toBeCloseTo(0.56, 5);
     expect(doc.get(plainItem.id)).toEqual(plainItem);
-    const remote = { ...textBox({ y: 0.9, updatedAt: T }), anchor: { pm: 90, dy: 0 } } as InkItem;
+    const remote = {
+      ...textBox({ y: 0.9, updatedAt: T }),
+      anchor: { pm: 90, dy: 0, fp: "paragraph:00000090" },
+    } as InkItem;
     doc.applyRemote([remote]);
     expect((doc.get(remote.id) as { y: number }).y).toBeCloseTo(1.2, 5);
   });
@@ -150,6 +195,23 @@ describe("anchors", () => {
     const lost = { ...line(0.42), anchor: { pm: 777, dy: 0.02 } } as InkItem;
     doc.load([lost]);
     expect(doc.get(lost.id)).toEqual(lost);
+  });
+
+  it("an edited section: an anchor whose block changed keeps its stored coordinates, never a neighbour's place", () => {
+    // A paragraph was inserted at the top: pm 40 now holds the new paragraph, the anchored one moved down.
+    const edited = blockResolver([
+      { pm: 0, y: 0, fp: "heading:00000000" },
+      { pm: 40, y: 0.3, fp: "paragraph:0000new0" },
+      { pm: 75, y: 0.62, fp: "paragraph:00000040" },
+    ]);
+    const doc = new InkDocument({ anchors: edited });
+    const beside = { ...line(0.31), anchor: { pm: 40, dy: 0.01, fp: "paragraph:00000040" } } as InkItem;
+    const legacy = { ...line(0.33), anchor: { pm: 40, dy: 0.01 } } as InkItem; // no fp: never trusted
+    doc.load([beside, legacy]);
+    expect(doc.get(beside.id)).toEqual(beside);
+    expect(doc.get(legacy.id)).toEqual(legacy);
+    doc.applyRemote([{ ...beside, color: "violet", updatedAt: T + 1 } as InkItem]);
+    expect(bboxOfItem(doc.get(beside.id) as InkItem).y0).toBeCloseTo(bboxOfItem(beside).y0, 6);
   });
 
   it("undo brings a version back placed for the current layout", () => {

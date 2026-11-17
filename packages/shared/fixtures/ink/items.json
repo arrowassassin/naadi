@@ -87,6 +87,34 @@
       }
     },
     {
+      "name": "integer-valued float updatedAt, point t and anchor pm",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0.0], [0.2, 0.15, 0.6, 8.0]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000.0,
+        "anchor": { "pm": 3.0 }
+      }
+    },
+    {
+      "name": "anchor with block fingerprint",
+      "valid": true,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 12, "dy": 0.01, "fp": "paragraph:0a1b2c3d" }
+      }
+    },
+    {
       "name": "unrounded su precision is accepted",
       "valid": true,
       "item": {
@@ -717,6 +745,61 @@
         "createdAt": 1763000000000,
         "updatedAt": 1763000000000,
         "anchor": { "dy": 0.1 }
+      }
+    },
+    {
+      "name": "anchor fp without type",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 1, "fp": "0a1b2c3d" }
+      }
+    },
+    {
+      "name": "anchor fp uppercase hex",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 1, "fp": "paragraph:0A1B2C3D" }
+      }
+    },
+    {
+      "name": "anchor fp null",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000,
+        "anchor": { "pm": 1, "fp": null }
+      }
+    },
+    {
+      "name": "fractional updatedAt",
+      "valid": false,
+      "item": {
+        "id": "019a8c4e-0000-7000-8000-000000000001",
+        "tool": "pen",
+        "color": "ink",
+        "size": 0.002,
+        "points": [[0.1, 0.1, 0.5, 0], [0.2, 0.15, 0.6, 8]],
+        "createdAt": 1763000000000,
+        "updatedAt": 1763000000000.5
       }
     },
     {

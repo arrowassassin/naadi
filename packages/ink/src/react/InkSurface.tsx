@@ -38,6 +38,8 @@ export interface InkSurfaceProps {
   latency?: LatencyRecorder;
   /** Reflow anchoring for text surfaces (12b); a new resolver re-places anchored items. */
   anchors?: InkAnchorResolver | null;
+  /** Clock for updatedAt stamps (epoch ms; read at mount). Sync passes a server-corrected clock (12b). */
+  now?: () => number;
   onStrokesChange?: (diff: InkDiff) => void;
   /** A lasso closed; `png` is an ink-only picture, null when the loop selected no ink (region only). */
   onLasso?: (selection: SelectionInfo, png: Blob | null) => void;
@@ -87,6 +89,8 @@ export function InkSurface(props: InkSurfaceProps) {
       sizes: p.sizes,
       latency: p.latency,
       anchors: p.anchors ?? null,
+      // Read through the ref, so a corrected clock that arrives after mount is used.
+      now: () => (cb.current.now ?? Date.now)(),
       onStrokesChange: (d) => cb.current.onStrokesChange?.(d),
       onLasso: (s, png) => cb.current.onLasso?.(s, png),
       onConvertToText: (x) => cb.current.onConvertToText?.(x),
