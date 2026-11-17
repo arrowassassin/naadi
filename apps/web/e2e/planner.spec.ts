@@ -343,7 +343,8 @@ test.describe("outside items", () => {
     const { page, errors, done } = await fresh(browser, baseURL as string, info, "pout", { plan: true, missed: 0 });
     try {
       const w = await week(page);
-      const day = w.days.find((d) => d.date >= w.days[0].date && !d.assessment) ?? w.days[0];
+      const day = w.days.find((d) => !d.assessment);
+      if (!day) throw new Error("the week has no study day");
       const res = await page.request.post("/api/plan/items", {
         headers: { authorization: `Bearer ${await token(page)}` },
         data: {
