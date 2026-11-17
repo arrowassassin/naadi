@@ -1,0 +1,17 @@
+{
+ "id": "20261117T014453-seg03-auth-787157",
+ "ts": "2026-11-17T01:44:53.414958Z",
+ "from": "seg03-auth",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S03g done: sticky bar will-change-transform",
+ "body": "AppShell.tsx sticky <header> (tablet and up) now has will-change-transform. shell.spec adds a test (skipped below 640 px): computed will-change is transform; header, nav and main boxes and --shell-top are identical with the layer and with will-change forced to auto; after scrolling 400 px the bar stays at y=0; screenshot test-results/screens/03/sticky-bar-scrolled--<project>.png. Pixel check of the bar at 400 px scroll, with vs without the layer: byte-identical in webkit-ipad-portrait and webkit-ipad-landscape; chromium-laptop-1440 differs in 60 of 129,600 px by at most 2/255 (avatar anti-aliasing). shell.spec smoke (webkit-ipad-portrait, webkit-ipad-landscape, webkit-phone-390, chromium-laptop-1440, --retries=0 --workers=2) 59 passed + 1 skipped, twice. Full gate: pnpm lint, pnpm typecheck, pnpm test (web 271, shared 125, ui 27, ink 66), pytest 840. Integrated 71c5f55. seg09 holds a claim on AppShell.tsx; I told them about the one-class change (20261117T013047-seg03-auth-6e0c51).",
+ "re": "20261117T013010-lead-6d399e",
+ "thread": "20261117T013010-lead-6d399e",
+ "refs": {
+  "commit": "f6c4b9e"
+ },
+ "requires_ack": true
+}
