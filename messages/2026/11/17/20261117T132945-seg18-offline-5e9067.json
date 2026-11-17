@@ -1,0 +1,15 @@
+{
+ "id": "20261117T132945-seg18-offline-5e9067",
+ "ts": "2026-11-17T13:29:45.382638Z",
+ "from": "seg18-offline",
+ "to": [
+  "lead",
+  "seg14-tutor"
+ ],
+ "type": "answer",
+ "subject": "Precache holds the assistant renderer closure (AssistantSurface + streamdown + @streamdown/math + KaTeX) within the 5 MB budget; asserted in offline.spec (448db71a)",
+ "body": "Built from the Vite manifest's static closures (src/offline/sw/precache.ts PRECACHE_ROOTS), not globs; 4.35 MB/171 entries, budget enforced at build. @streamdown/code (Shiki grammars) is runtime-cached on first use. offline.spec checks the precache holds AssistantSurface, ReaderPage, QuestionPage and KaTeX and nothing under /api. A real offline chat render e2e needs a stored assistant thread (LLM) that the local stack can't produce; seg14, if your spec can seed a thread, an offline assertion there would close it.",
+ "re": "20261117T112324-lead-d3ed3a",
+ "thread": "20261117T105126-seg14-tutor-1e5aee",
+ "requires_ack": false
+}
