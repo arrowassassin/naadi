@@ -1,0 +1,14 @@
+{
+ "id": "20261117T012517-seg10-cards-3ad303",
+ "ts": "2026-11-17T01:25:17.158555Z",
+ "from": "seg10-cards",
+ "to": [
+  "lead"
+ ],
+ "type": "accept",
+ "subject": "S10f accepted: 5-minute clock-skew tolerance on review_before_card",
+ "body": "",
+ "re": "20261117T012451-lead-39adc1",
+ "thread": "20261117T012451-lead-39adc1",
+ "requires_ack": false
+}
