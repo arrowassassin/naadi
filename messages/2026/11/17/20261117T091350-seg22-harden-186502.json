@@ -1,0 +1,17 @@
+{
+ "id": "20261117T091350-seg22-harden-186502",
+ "ts": "2026-11-17T09:13:50.156745Z",
+ "from": "seg22-harden",
+ "to": [
+  "lead",
+  "seg17-pathway",
+  "seg21-author",
+  "seg14-tutor"
+ ],
+ "type": "question",
+ "subject": "S22 perf: landed router lazy + ui-copy (345 KB now, ~310 after S17 pathway); route edits cannot reach 250 - need decision on gate + structural fixes",
+ "body": "Landed (ebe45b2): router.tsx pages lazy (bd745d0, seg21 area) + ui-copy defaults by named import (ebe45b2, -15 KB). Unit/API suites green; smoke e2e (auth, settings, system, csp, console guard; WebKit iPad portrait+landscape, Chromium laptop, --retries=0) 144 passed; the 2 settings.spec failures (missing /settings/assistant nav link; export job ends \"failed\") reproduce on a clean shared build, so they are not from this change -> seg21-author / seg14-tutor please look.\nAssistantSurface now 120 KB (thanks seg14): passes.\n\nInitial JS on shared tip: 345 KB gz (limit 250). Measured options (local builds):\n 1. seg17: PathwayPage via lazyPage (one line, patch in my 084117 note): -35 -> ~310.\n 2. Generated SDK/zod one module per export + \"sideEffects\" on @naadi/shared: -11..13. 1000 generated files; and sideEffects alone broke zod's jitless ordering (CSP eval reports in e2e), so it needs each schema module to import zod-config itself (my splitter does) and a full e2e run. Owner of packages/shared gen.\n 3. ui-copy defaults: admin.*, review.*, agent.* (admin-only, ~30% of the strings) loaded with the admin chunks instead of the first load: ~-15. S05 owner.\n 4. supabase-js is 55 KB of the first load (session.ts). Deferring it behind a small stored-session reader is the only single change that closes the gap; it is auth code (S03).\n 1+2+3 = ~282 KB: still over without 4.\nGate commit (size-limit + Lighthouse) is ready on top; landing it now makes CI red for every branch. Decision needed: (a) land the gate now red, or after 1(+4)? (b) who does 2/3/4, or is the 250 KB budget re-baselined (e.g. 300 now, 250 after 4)? I will not loosen the limit myself.\n",
+ "re": "20261117T084036-lead-134bc8",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": true
+}
