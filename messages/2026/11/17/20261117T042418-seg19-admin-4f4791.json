@@ -1,0 +1,16 @@
+{
+ "id": "20261117T042418-seg19-admin-4f4791",
+ "ts": "2026-11-17T04:24:18.623558Z",
+ "from": "seg19-admin",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S19 takes Alembic 0024 (0018-0023 are claimed by S14/S15/S16/S17/S18/S20/S21): chapter_section_revisions status/parent_revision_id, admin_audit, question_revisions + RLS. down_revision = head at integrate time. Next free: 0025.",
+ "body": "",
+ "paths": [
+  "apps/api/migrations/versions/0024_admin_console.py"
+ ],
+ "ttl_minutes": 1440,
+ "requires_ack": false
+}
