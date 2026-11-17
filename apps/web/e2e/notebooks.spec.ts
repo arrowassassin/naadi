@@ -6,10 +6,12 @@ import {
   expect,
   expectNoAxeViolations,
   expectNoHorizontalOverflow,
+  quiet,
   settle,
   snapSegment,
   TOOL_CSP_NOISE,
   test,
+  trackApi,
 } from "./fixtures";
 
 /**
@@ -92,6 +94,7 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
     const context = await browser.newContext({ ...info.project.use, baseURL: base, acceptDownloads: true, ...extra });
     contexts.push(context);
     const page = await context.newPage();
+    trackApi(page);
     const w = watch(page);
     const link = toLink(runUsers(["link", "--email", email]));
     await page.goto(callbackPath(link, path));
@@ -113,12 +116,13 @@ async function student(browser: Browser, baseURL: string, info: TestInfo, tag: s
  * error, and the unicode-range faces start loading as soon as new text paints.
  */
 async function visit(page: Page, url: string): Promise<void> {
-  await settle(page);
+  // No request of the app's own /api open when the navigation cancels it (WebKit logs a cancelled fetch as a page error).
+  await quiet(page);
   await page.goto(url);
 }
 
 async function reload(page: Page): Promise<void> {
-  await settle(page);
+  await quiet(page);
   await page.reload();
 }
 
