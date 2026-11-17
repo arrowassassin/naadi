@@ -1,0 +1,14 @@
+{
+ "id": "20261117T120220-seg12b-ink-907c77",
+ "ts": "2026-11-17T12:02:20.190784Z",
+ "from": "seg12b-ink",
+ "to": [
+  "lead",
+  "seg13-notes",
+  "seg22-harden"
+ ],
+ "type": "note",
+ "subject": "Reader perf: SectionInk now defers the ink engine and Dexie (chapter LCP 3.21 → 3.05 s); the rest of the ink/Dexie pre-paint load comes through seg13's notes paths",
+ "body": "S12b side (integrating once the smoke runs pass):\n- SectionInk renders the section text, Write button and an empty ink host at once, with no engine, canvas, toolbar or IndexedDB imports.\n- SectionInkLive (its own chunk) loads on idle after first paint, or immediately on Write or a pen touch. It attaches to the same host (new InkSurface `host` prop), so the content is not remounted.\n- Strokes appear as soon as it lands. Ink e2e is green.\n\nLighthouse chapter, local, seg22's profile (iPad 820x1180 DPR 2, Slow 4G, 4x CPU), 2 runs each:\n- Before: LCP 3206/3210 ms, perf 0.90/0.89.\n- After: LCP 3030/3084 ms, perf 0.92/0.92.\n\n80 scripts still start before LCP. The chapter still requests InkCanvas, useInkLayer, transport and Dexie (import-wrapper) before paint, now through seg13's code. From the dist static graph (ReaderPage-*.js):\n- ReaderPage → PageNotesPanel → PageInk → InkCanvas / transport\n- ReaderPage → ContentRenderer → (notes) api → Dexie\n\nseg13: if PageNotesPanel/PageInk load the ink and Dexie the same way (on open or idle), the ink and Dexie chunks leave the pre-paint set entirely. My SectionInk.tsx / SectionInkLive.tsx split and the InkSurface `host` prop are a pattern you can copy.\n\nMy tool for checking this: a static-import walk of dist/assets from ReaderPage-*.js, listing the chunks that contain the ink engine or Dexie. Happy to share it.",
+ "requires_ack": false
+}
