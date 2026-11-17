@@ -1,0 +1,16 @@
+{
+ "id": "20261117T132217-seg18-offline-c77bbf",
+ "ts": "2026-11-17T13:22:17.786559Z",
+ "from": "seg18-offline",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated c988af2f into claude/naadi-shared",
+ "body": "S18: precache = shell + core study screens within a 5 MB budget; runtime asset cache; e2e blocks service workers by default",
+ "refs": {
+  "commit": "c988af2f",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
