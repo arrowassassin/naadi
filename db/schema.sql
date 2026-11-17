@@ -301,7 +301,7 @@ create table public.flashcards (
   tags text[] not null default '{}',
   anki_guid text check (anki_guid is null or char_length(anki_guid) between 1 and 200),
   anki_note_type text check (anki_note_type is null or char_length(anki_note_type) <= 200),
-  -- 0030: the source of the text: seed cards 'naadi-original-v1', imported Anki cards 'user-upload', else null
+  -- 0031: the source of the text: seed cards 'naadi-original-v1', imported Anki cards 'user-upload', else null
   source_id text references public.sources(id),
   constraint flashcards_anki_source_check check (origin <> 'anki_import' or coalesce(source_id = 'user-upload', false))
 );

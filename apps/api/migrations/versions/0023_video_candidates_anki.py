@@ -17,7 +17,7 @@ Create Date: 2026-11-17
   deterministic id `yt-<id>` instead, and e2e helpers may seed several rows for one demo video.
 - `flashcards` gains `tags`, `anki_guid` and `anki_note_type`. `(owner_user_id, anki_guid)` is unique, which makes a
   re-import of the same deck idempotent. These are written by the import API (privileged role); a student's own
-  `origin 'user'` card can carry none of them (enforced from migration 0030 on).
+  `origin 'user'` card can carry none of them (enforced from migration 0031 on).
 - `agent_health.kind` gains `youtube_map` (one row per weekly run: counts and quota units only).
 - `sources` gains the `user-upload` row private media points at (seeded here, not from config/sources.yaml, so the
   public license catalog stays a list of third-party sources).

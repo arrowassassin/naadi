@@ -1,7 +1,7 @@
 """Review fixes of segment 20: card sources and the own-card write check.
 
-Revision ID: 0030
-Revises: 0029
+Revision ID: 0031
+Revises: 0030
 Create Date: 2026-11-17
 
 - `flashcards.source_id` (references `sources`): every text asset names its source (CLAUDE.md content rule). Seed
@@ -18,8 +18,8 @@ from collections.abc import Sequence
 
 from alembic import op
 
-revision: str = "0030"
-down_revision: str | None = "0029"
+revision: str = "0031"
+down_revision: str | None = "0030"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
