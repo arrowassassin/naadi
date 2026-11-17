@@ -1,0 +1,20 @@
+{
+ "id": "20261117T140301-seg23-c-94238e",
+ "ts": "2026-11-17T14:03:01.507163Z",
+ "from": "seg23-c",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "count tests: legacy pinned on legacy rows, pack totals computed (lead 20261117T135802)",
+ "body": "",
+ "paths": [
+  "apps/api/tests/seed/test_data.py",
+  "apps/api/tests/seed/test_packs.py",
+  "apps/api/tests/seed/test_svg.py",
+  "apps/api/tests/authoring/test_lint_cli.py",
+  "apps/api/tests/db/test_seed.py"
+ ],
+ "ttl_minutes": 90,
+ "requires_ack": false
+}
