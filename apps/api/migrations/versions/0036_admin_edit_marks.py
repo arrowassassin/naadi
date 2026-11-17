@@ -14,6 +14,9 @@ Create Date: 2026-11-17
   console, YouTube approvals, generated-media approvals) owns its placements, and the importer only replaces or
   deletes 'seed' rows. Existing placements of the seed's own figures (SVGs in the seed figure folder) are
   backfilled as 'seed'; everything else stays 'admin', so it is never deleted.
+- Storage: `content-private` also accepts `image/svg+xml`, because unreviewed admin figures wait there (review19 #7)
+  until an admin approves them into `content-public`. Every staged SVG has already been through the seed's
+  sanitiser (seed/svg.py), as figures in `content-public` have; `user-uploads` still refuses SVG.
 - No change to grants or RLS: these columns are written by the API and the importer only (clients have no write
   privileges on shared content), and `section_media` stays select-only for clients.
 """
@@ -38,6 +41,9 @@ alter table public.section_media
 update public.section_media sm set origin = 'seed'
   from public.media_assets m
  where m.id = sm.media_id and m.kind = 'svg' and m.url ~ '^[a-z0-9-]+/figures/[^/]+$';
+
+update storage.buckets set allowed_mime_types = array_append(allowed_mime_types, 'image/svg+xml')
+ where id = 'content-private' and not ('image/svg+xml' = any(allowed_mime_types));
 
 create function public.naadi_mark_admin_edit() returns trigger
 language plpgsql set search_path = '' as $$
@@ -71,6 +77,8 @@ drop function if exists public.naadi_mark_admin_edit();
 """
 
 DOWNGRADE = """
+update storage.buckets set allowed_mime_types = array_remove(allowed_mime_types, 'image/svg+xml')
+ where id = 'content-private';
 alter table public.section_media drop column if exists origin;
 alter table public.media_assets drop column if exists admin_edited_at;
 alter table public.questions drop column if exists admin_edited_at;

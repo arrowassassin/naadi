@@ -47,6 +47,7 @@ def test_bucket_configuration(pg: psycopg.Connection) -> None:
         assert mimes, b
     assert "application/pdf" in cfg["vault"][2]
     assert "image/svg+xml" in cfg["content-public"][2]
+    assert "image/svg+xml" in cfg["content-private"][2]  # 0036: sanitised admin figures wait here for review
     assert "image/svg+xml" not in cfg["user-uploads"][2]  # user SVGs could carry script
     for b, (_, _, mimes) in cfg.items():
         # a catch-all type would make the allowlist meaningless
