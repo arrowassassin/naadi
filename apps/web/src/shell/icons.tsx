@@ -1,6 +1,7 @@
 import {
   BookOpen,
   Calendar,
+  ClipboardCheck,
   ListChecks,
   type LucideIcon,
   NotebookPen,
@@ -15,6 +16,7 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   sun: Sun,
   "book-open": BookOpen,
   "list-checks": ListChecks,
+  "clipboard-check": ClipboardCheck,
   calendar: Calendar,
   "notebook-pen": NotebookPen,
   route: Route,

@@ -14,11 +14,16 @@ import { notesRoutes } from "./notes/routes";
 import { pathwayRoutes } from "./pathway/routes";
 import { plannerRoute } from "./planner/routes";
 import { practiceRoutes } from "./practice/routes";
+import { adminReviewRoutes } from "./review/route";
 import { AccountPage } from "./routes/AccountPage";
 import { CallbackPage } from "./routes/CallbackPage";
 import { SignInPage } from "./routes/SignInPage";
 import { TodayPage } from "./routes/TodayPage";
 import { searchRoute } from "./search/routes";
+import { AboutPage } from "./settings/AboutPage";
+import { AppearancePage } from "./settings/AppearancePage";
+import { DataExportPage } from "./settings/DataExportPage";
+import { StudyPlanPage } from "./settings/StudyPlanPage";
 import { AppShell } from "./shell/AppShell";
 import { Wordmark } from "./shell/Logo";
 import { SystemPage } from "./system/SystemPage";
@@ -133,6 +138,19 @@ const settingsRoute = createRoute({
 });
 const accountRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/account", component: AccountPage });
 const inkSettingsRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/ink", component: InkSettingsPage });
+// Settings groups (S21): one route line per group; S18 (/offline) and S14 (/assistant) add theirs here and in groups.ts.
+const planSettingsRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/plan", component: StudyPlanPage });
+const appearanceRoute = createRoute({
+  getParentRoute: () => settingsRoute,
+  path: "/appearance",
+  component: AppearancePage,
+});
+const dataSettingsRoute = createRoute({
+  getParentRoute: () => settingsRoute,
+  path: "/data",
+  component: DataExportPage,
+});
+const aboutRoute = createRoute({ getParentRoute: () => settingsRoute, path: "/about", component: AboutPage });
 
 export const routeTree = rootRoute.addChildren([
   signInRoute,
@@ -151,9 +169,17 @@ export const routeTree = rootRoute.addChildren([
     notebooksRoutes(appRoute),
     ...notesRoutes(appRoute),
     ...pathwayRoutes(appRoute),
-    settingsRoute.addChildren([accountRoute, inkSettingsRoute]),
+    settingsRoute.addChildren([
+      accountRoute,
+      inkSettingsRoute,
+      planSettingsRoute,
+      appearanceRoute,
+      dataSettingsRoute,
+      aboutRoute,
+    ]),
     agentDiagnosticsRoute(appRoute),
     adminGeneratedRoute(appRoute),
+    ...adminReviewRoutes(appRoute),
     generatedRoute(appRoute),
     ...adminRoutes(appRoute),
   ]),

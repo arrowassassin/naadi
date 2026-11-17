@@ -28,10 +28,7 @@ import { percent, splitWhyNot } from "./format";
 import { isTypingTarget, keyAction } from "./keys";
 import { LabValuesSheet } from "./LabValuesSheet";
 import { enqueueAttempt, flushQueue, type QueuedAttempt, queuedFor } from "./outbox";
-
-const ROW =
-  "flex w-full min-h-[68px] items-center gap-4 rounded-block border p-3 pr-5 text-[1.0625rem] box-border transition-colors duration-(--duration-control) ease-out";
-const DOT = "flex size-11 shrink-0 items-center justify-center rounded-full font-display font-bold text-[1.125rem]";
+import { OptionRow, WhyNotRows } from "./QuestionParts";
 
 function Loading() {
   const t = useCopy();
@@ -98,15 +95,7 @@ function ExplanationBody({
         </HighlightableText>
       ) : null}
       {rows ? (
-        <div className="flex flex-col">
-          <h3 className="m-0 pb-2 font-mono text-label text-text-3 uppercase">{t("practice.why_not")}</h3>
-          {rows.map((r) => (
-            <div key={r.label} className="grid grid-cols-[2.5rem_1fr] gap-4 border-line-soft border-t py-3.5">
-              <span className="font-mono text-label text-text-2 uppercase">{r.label}</span>
-              <span className="text-text-2">{r.text}</span>
-            </div>
-          ))}
-        </div>
+        <WhyNotRows rows={rows} />
       ) : ex.why_not_html ? (
         <SafeHtml html={ex.why_not_html} className="text-text-2 [&_p]:m-0" />
       ) : null}
@@ -353,55 +342,20 @@ function QuestionBody({ blockId, n, view, fromCache, block }: BodyProps) {
                     ? t("practice.your_answer")
                     : "";
               return (
-                <label
+                <OptionRow
                   key={o.label}
-                  className={cx(
-                    ROW,
-                    "has-[:focus-visible]:outline has-[:focus-visible]:outline-(--focus-ring-width) has-[:focus-visible]:outline-offset-(--focus-ring-offset) has-[:focus-visible]:outline-violet",
-                    locked ? "cursor-default" : "cursor-pointer",
-                    isCorrect
-                      ? "border-lime bg-lime text-lime-ink"
-                      : wrong
-                        ? "border-2 border-amber bg-surface-1 text-text"
-                        : mine
-                          ? "border-paper bg-paper text-ground"
-                          : cx("border-line-soft bg-surface-1 text-text", !locked && "hover:border-line-control"),
-                  )}
-                >
-                  <input
-                    type="radio"
-                    name={`answer-${qid}`}
-                    value={o.label}
-                    checked={mine}
-                    disabled={locked}
-                    onChange={() => setChoice(o.label)}
-                    className="sr-only"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className={cx(
-                      DOT,
-                      isCorrect
-                        ? "bg-lime-ink text-lime"
-                        : wrong
-                          ? "bg-amber text-amber-ink"
-                          : mine
-                            ? "bg-ground text-text"
-                            : "bg-surface-2 text-text",
-                    )}
-                  >
-                    {o.label}
-                  </span>
-                  <span className="sr-only">{`${o.label}. `}</span>
-                  <SafeHtml html={o.html} className="min-w-0 flex-1 text-left [&_p]:m-0" />
-                  {tag ? (
-                    <span className="flex shrink-0 items-center gap-1.5 font-mono text-label-sm tracking-[0.06em] uppercase">
-                      {isCorrect ? <Check aria-hidden="true" size={14} /> : null}
-                      {wrong ? <TriangleAlert aria-hidden="true" size={14} /> : null}
-                      {tag}
-                    </span>
-                  ) : null}
-                </label>
+                  label={o.label}
+                  html={o.html}
+                  tone={isCorrect ? "correct" : wrong ? "wrong" : mine ? "mine" : "idle"}
+                  tag={tag}
+                  locked={locked}
+                  input={{
+                    name: `answer-${qid}`,
+                    checked: mine,
+                    disabled: locked,
+                    onChange: () => setChoice(o.label),
+                  }}
+                />
               );
             })}
           </fieldset>

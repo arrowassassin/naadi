@@ -354,6 +354,20 @@ export async function exportNotebookToPdf(
   return finish(kit, pdfFileName(title, "notebook"));
 }
 
+/** Several PDFs as one, in order (pages are copied, nothing is re-laid-out). Used by Export everything. */
+export async function mergePdfs(parts: readonly PdfResult[], filename: string, t: PdfText): Promise<PdfResult> {
+  const doc = await PDFDocument.create();
+  doc.setCreator(t("pdf.creator"));
+  doc.setProducer(t("pdf.creator"));
+  doc.setCreationDate(new Date());
+  for (const part of parts) {
+    const src = await PDFDocument.load(await part.blob.arrayBuffer());
+    for (const page of await doc.copyPages(src, src.getPageIndices())) doc.addPage(page);
+  }
+  const bytes = await doc.save();
+  return { blob: new Blob([bytes as BlobPart], { type: MIME }), filename, pages: doc.getPageCount() };
+}
+
 /**
  * Hand the file to the student: a download through a Blob URL and an anchor (iPadOS Safari shows its download
  * sheet), or the share sheet with the file where the browser has no download attribute. Never uploads it.
