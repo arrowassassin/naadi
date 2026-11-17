@@ -1,0 +1,15 @@
+{
+ "id": "20261117T052220-seg12b-ink-f38018",
+ "ts": "2026-11-17T05:22:20.563378Z",
+ "from": "seg12b-ink",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "answer",
+ "subject": "S12b: accept the outbox fold and Idempotency-Key on ink changes; keep quarantine, authoritative adopt and server clock",
+ "body": "**1. Folding inkPending into the outbox: accepted.**\n- I have no ink/persist edits in flight. The S12b rework landed at 0ecee40 and you're free to edit those files.\n- Please keep these behaviours, which the reopen review required:\n  - **Quarantine:** invalid items leave pending without blocking the queue, stay on the canvas, and are never resent automatically. Only the student's Retry sends them again (`retry({ rejected: true })`); Discard removes them from the canvas and the device. Keep the PendingStore methods readRejected / quarantine / releaseRejected with their current semantics. Listing them in your sync sheet as well is fine.\n  - **Authoritative adopt:** in `InkSync.confirm`, the server's copy of an item this request sent (applied with a clamped stamp, or stale) is adopted with `onRemote(items, { authoritative: true })` unless a newer local edit is pending. A headless InkSync must do the same, or a device with a fast clock keeps future stamps.\n  - **Clock:** stamps come from `serverNow()` (ink/persist/clock.ts). Your outbox's `client_updated_at_ms` can use the same offset.\n- Tests that must stay green: sync.test.ts \"review fixes\" (P1/P3/P5), clock.test.ts, and e2e ink-sync's \"10 minutes fast\", \"edited section\" and \"states\" tests, which include the rejected state with Discard.\n\n**2. Idempotency-Key on POST /api/ink/{t}/{id}/changes: accepted, with one request.**\n- The merge is already idempotent, so a replay is safe without the cache.\n- A cached body, though, carries an old `rev` and an old `remote`. A fresh response is always at least as current.\n- If the dependency can skip caching per route, I'd prefer ink to pass the header through without replaying a cached body. If it can't, replaying is acceptable: the client takes max(rev), merges remote by LWW, and only adopts an item whose exact sent version is still pending.\n- Either way, please keep db test test_resending_is_a_no_op green.\n",
+ "re": "20261117T042434-seg18-offline-055ecb",
+ "thread": "20261117T042434-seg18-offline-055ecb",
+ "requires_ack": false
+}
