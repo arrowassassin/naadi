@@ -188,8 +188,8 @@
   },
   {
     "id": "s23b-c-080101-18",
-    "frontHtml": "Usual dental endocarditis prophylaxis regimen?",
-    "backHtml": "A single oral dose of amoxicillin 30–60 minutes before the procedure (clindamycin no longer advised).",
+    "frontHtml": "Dental procedure in a high-risk cardiac patient: what prophylaxis?",
+    "backHtml": "One oral dose of amoxicillin given about half an hour to an hour beforehand. Clindamycin has been dropped as the penicillin-allergy alternative.",
     "sectionId": "s23b-s-080101-ck-01",
     "areas": [
       "usmle2026.08.01.01"
@@ -487,17 +487,6 @@
     "id": "s23b-c-080102-20",
     "frontHtml": "Anticoagulant for atrial fibrillation with moderate-to-severe rheumatic mitral stenosis?",
     "backHtml": "Warfarin (vitamin K antagonist), not a DOAC.",
-    "sectionId": "s23b-s-080102-ck-01",
-    "areas": [
-      "usmle2026.08.01.02"
-    ],
-    "source": "naadi-original-v1",
-    "tags": []
-  },
-  {
-    "id": "s23b-c-080102-21",
-    "frontHtml": "Symptomatic mitral stenosis in pregnancy: first-line drug?",
-    "backHtml": "A β<sub>1</sub>-selective blocker (e.g. metoprolol), plus a diuretic for congestion.",
     "sectionId": "s23b-s-080102-ck-01",
     "areas": [
       "usmle2026.08.01.02"
@@ -1783,8 +1772,8 @@
   },
   {
     "id": "s23b-c-080501-20",
-    "frontHtml": "Nitrate timing after PDE-5 inhibitors?",
-    "backHtml": "Avoid for 24 hours after sildenafil or vardenafil and 48 hours after tadalafil.",
+    "frontHtml": "Patient with chest pain took a PDE-5 inhibitor: how long must nitrates be withheld?",
+    "backHtml": "Sildenafil or vardenafil: a full day. Tadalafil, which lasts longer: two days. Combined use can cause profound hypotension.",
     "sectionId": "s23b-s-080501-ck-01",
     "areas": [
       "usmle2026.08.05.01"
@@ -2432,8 +2421,8 @@
   },
   {
     "id": "s23b-c-080801-09",
-    "frontHtml": "Why does carcinoid heart disease spare the left-sided valves?",
-    "backHtml": "Lung monoamine oxidase inactivates serotonin before blood reaches the left heart.",
+    "frontHtml": "Carcinoid heart disease: why are the mitral and aortic valves usually spared?",
+    "backHtml": "Serotonin from hepatic metastases reaches the right heart first; the lungs break it down (monoamine oxidase) before it can reach the left side.",
     "sectionId": "s23b-s-080801-s1-01",
     "areas": [
       "usmle2026.08.08.01"
@@ -2564,8 +2553,8 @@
   },
   {
     "id": "s23b-c-080801-21",
-    "frontHtml": "Symptomatic mitral stenosis in pregnancy: first-line drug?",
-    "backHtml": "A β<sub>1</sub>-selective blocker (e.g. metoprolol) to slow the heart, with cautious diuresis.",
+    "frontHtml": "Pregnant woman with symptomatic mitral stenosis: first drug?",
+    "backHtml": "A β<sub>1</sub>-selective blocker such as metoprolol, to lengthen diastolic filling time; add a careful diuretic if she is congested.",
     "sectionId": "s23b-s-080801-ck-01",
     "areas": [
       "usmle2026.08.08.01"
@@ -2575,8 +2564,8 @@
   },
   {
     "id": "s23b-c-080901-01",
-    "frontHtml": "Definition of orthostatic hypotension?",
-    "backHtml": "A sustained fall of ≥ 20 mm Hg systolic or ≥ 10 mm Hg diastolic within 3 minutes of standing (or head-up tilt).",
+    "frontHtml": "Orthostatic hypotension: the numbers that define it?",
+    "backHtml": "Within 3 minutes upright (standing or tilt), systolic drops by 20 mm Hg or more, or diastolic by 10 mm Hg or more, and the drop persists.",
     "sectionId": "s23b-s-080901-s1-01",
     "areas": [
       "usmle2026.08.09.01"
@@ -2872,8 +2861,8 @@
   },
   {
     "id": "s23b-c-081001-10",
-    "frontHtml": "Blood pressure categories (adults)?",
-    "backHtml": "Normal &lt; 120/&lt; 80; elevated 120–129/&lt; 80; stage 1 130–139 or 80–89; stage 2 ≥ 140 or ≥ 90 mm Hg.",
+    "frontHtml": "Adult office BP categories (systolic/diastolic)?",
+    "backHtml": "Normal: below 120 and below 80. Elevated: 120–129 with diastolic below 80. Stage 1: 130–139 or 80–89. Stage 2: 140 or more, or 90 or more.",
     "sectionId": "s23b-s-081001-ck-01",
     "areas": [
       "usmle2026.08.10.01"
@@ -3939,8 +3928,8 @@
   },
   {
     "id": "s23b-c-081301-14",
-    "frontHtml": "Test of choice for suspected blunt aortic injury in a stable patient?",
-    "backHtml": "CT angiography of the chest.",
+    "frontHtml": "Hemodynamically stable blunt chest trauma with suspected aortic injury: best imaging?",
+    "backHtml": "Contrast CT angiography of the chest.",
     "sectionId": "s23b-s-081301-ck-01",
     "areas": [
       "usmle2026.08.13.01"
@@ -3994,8 +3983,8 @@
   },
   {
     "id": "s23b-c-081401-01",
-    "frontHtml": "Adult derivative of the truncus arteriosus? Of the bulbus cordis?",
-    "backHtml": "Truncus: ascending aorta and pulmonary trunk. Bulbus cordis: smooth outflow parts of both ventricles.",
+    "frontHtml": "What does the embryonic truncus arteriosus become? And the bulbus cordis?",
+    "backHtml": "Truncus: the proximal aorta and the pulmonary trunk. Bulbus cordis: the smooth-walled outflow tracts of the right and left ventricles.",
     "sectionId": "s23b-s-081401-s1-01",
     "areas": [
       "usmle2026.08.14.01"
@@ -5171,8 +5160,8 @@
   },
   {
     "id": "s23b-c-090102-23",
-    "frontHtml": "Empiric CAP therapy for an outpatient with comorbidities?",
-    "backHtml": "Amoxicillin-clavulanate or a cephalosporin plus a macrolide or doxycycline, or a respiratory fluoroquinolone alone.",
+    "frontHtml": "Outpatient pneumonia, patient has heart or lung disease or diabetes: empiric options?",
+    "backHtml": "Two routes: (1) a β-lactam such as amoxicillin-clavulanate or cefpodoxime, combined with azithromycin or doxycycline; or (2) levofloxacin or moxifloxacin on its own.",
     "sectionId": "s23b-s-090102-ck-01",
     "areas": [
       "usmle2026.09.01.02"
@@ -5446,8 +5435,8 @@
   },
   {
     "id": "s23b-c-090201-08",
-    "frontHtml": "First step for any incidental pulmonary nodule?",
-    "backHtml": "Compare with prior imaging; a solid nodule stable for 2 years or more is very likely benign.",
+    "frontHtml": "Incidental lung nodule on CT: what do you do before anything else?",
+    "backHtml": "Look for older images. A solid nodule unchanged in size over two or more years almost always behaves benignly.",
     "areas": [
       "usmle2026.09.02.01"
     ],
@@ -5677,8 +5666,8 @@
   },
   {
     "id": "s23b-c-090202-14",
-    "frontHtml": "Lung cancer screening criteria (USPSTF)?",
-    "backHtml": "Annual low-dose CT, age 50–80, ≥ 20 pack-years, currently smoking or quit within 15 years.",
+    "frontHtml": "Who gets yearly low-dose CT for lung cancer (USPSTF)?",
+    "backHtml": "Adults aged 50 to 80 with a smoking history of at least 20 pack-years who still smoke or stopped less than 15 years ago.",
     "sectionId": "s23b-s-090202-ck-01",
     "areas": [
       "usmle2026.09.02.02"
@@ -7800,8 +7789,8 @@
   },
   {
     "id": "s23b-c-090802-01",
-    "frontHtml": "Why does a tension pneumothorax cause shock?",
-    "backHtml": "Rising intrathoracic pressure compresses and kinks the vena cavae, so venous return and cardiac output fall (obstructive shock).",
+    "frontHtml": "Tension pneumothorax: what kind of shock, and why?",
+    "backHtml": "Obstructive shock. Air trapped under pressure shifts the mediastinum and squeezes the great veins, so the right heart fills poorly and output collapses.",
     "sectionId": "s23b-s-090802-s1-01",
     "areas": [
       "usmle2026.09.08.02"
