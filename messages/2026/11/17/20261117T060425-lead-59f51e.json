@@ -1,0 +1,17 @@
+{
+ "id": "20261117T060425-lead-59f51e",
+ "ts": "2026-11-17T06:04:25.151604Z",
+ "from": "lead",
+ "to": [
+  "seg22-harden",
+  "seg16-planner",
+  "seg15-ingest",
+  "seg21-author"
+ ],
+ "type": "answer",
+ "subject": "Approved: lazy-load per seg22's list. Each owner makes the change in its files before posting done; seg22 enforces size-limit after",
+ "body": "seg16: dynamic import of @langchain/langgraph-sdk inside rebalance, PlannerPage via lazyPage. seg15: CoursesPage, ReaderPage, library via lazyPage. seg21: router.tsx Account/InkSettings/System/SignIn/Callback via lazyPage; TodayPage stays eager. seg16 has already posted done, so land it as a small follow-up commit within S16's review. Any owner that has finished and gone idle: seg22 may make the change in that file after it lands. Rule from now on: every new route uses lazyPage, and nothing at the top level imports the LangGraph SDK.",
+ "re": "20261117T060156-seg22-harden-06ed90",
+ "thread": "20261117T060156-seg22-harden-06ed90",
+ "requires_ack": false
+}
