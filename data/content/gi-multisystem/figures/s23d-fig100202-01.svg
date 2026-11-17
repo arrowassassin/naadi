@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Two molecular pathways to colorectal cancer" font-family="sans-serif"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<text x="360" y="22" text-anchor="middle" font-size="16" fill="#0f172a" font-weight="bold">Routes from normal colonic mucosa to carcinoma</text>
+<text x="10" y="52" font-size="13" fill="#0f172a" font-weight="bold">Chromosomal instability pathway (most sporadic cancers; FAP)</text>
+<g fill="#e0f2fe" stroke="#334155"><rect x="10" y="82" width="120" height="50" rx="6"/><rect x="200" y="82" width="120" height="50" rx="6"/><rect x="390" y="82" width="120" height="50" rx="6"/><rect x="580" y="82" width="120" height="50" rx="6"/></g>
+<g font-size="13" fill="#0f172a" text-anchor="middle"><text x="70" y="112">Normal mucosa</text><text x="260" y="112">Early adenoma</text><text x="450" y="112">Late adenoma</text><text x="640" y="112">Carcinoma</text></g>
+<g stroke="#334155" stroke-width="2" marker-end="url(#a)"><line x1="132" y1="107" x2="196" y2="107"/><line x1="322" y1="107" x2="386" y2="107"/><line x1="512" y1="107" x2="576" y2="107"/></g>
+<g font-size="12" fill="#0f172a" text-anchor="middle"><text x="165" y="76">APC loss</text><text x="355" y="76">KRAS gain</text><text x="545" y="76">TP53 loss</text></g>
+<text x="10" y="172" font-size="13" fill="#0f172a" font-weight="bold">Serrated pathway (sporadic MSI-high, often right colon)</text>
+<g fill="#fef3c7" stroke="#334155"><rect x="10" y="202" width="120" height="50" rx="6"/><rect x="200" y="202" width="120" height="50" rx="6"/><rect x="390" y="202" width="120" height="50" rx="6"/><rect x="580" y="202" width="120" height="50" rx="6"/></g>
+<g font-size="13" fill="#0f172a" text-anchor="middle"><text x="70" y="232">Normal mucosa</text><text x="260" y="224">Sessile</text><text x="260" y="242">serrated lesion</text><text x="450" y="232">Dysplasia</text><text x="640" y="224">MSI-high</text><text x="640" y="242">carcinoma</text></g>
+<g stroke="#334155" stroke-width="2" marker-end="url(#a)"><line x1="132" y1="227" x2="196" y2="227"/><line x1="322" y1="227" x2="386" y2="227"/><line x1="512" y1="227" x2="576" y2="227"/></g>
+<g font-size="12" fill="#0f172a" text-anchor="middle"><text x="165" y="196">BRAF V600E</text><text x="355" y="196">CIMP</text><text x="545" y="196">MLH1 silenced</text></g>
+<text x="360" y="284" text-anchor="middle" font-size="13" fill="#0f172a">Lynch syndrome: germline mismatch repair defect gives MSI-high cancer from an adenoma</text></svg>

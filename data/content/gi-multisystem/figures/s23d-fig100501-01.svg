@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-label="Parietal cell receptors and second messengers converging on the proton pump, with sites of drug action" font-family="sans-serif" font-size="13">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect x="10" y="30" width="220" height="70" rx="8" fill="#e0f2fe" stroke="#334155"/>
+<text x="120" y="52" text-anchor="middle" fill="#0f172a" font-weight="bold">Histamine (ECL cell)</text>
+<text x="120" y="70" text-anchor="middle" fill="#0f172a">H2 receptor: Gs, cAMP up</text>
+<text x="120" y="88" text-anchor="middle" fill="#0f172a">Blocked by famotidine</text>
+<rect x="10" y="115" width="220" height="70" rx="8" fill="#dcfce7" stroke="#334155"/>
+<text x="120" y="137" text-anchor="middle" fill="#0f172a" font-weight="bold">Gastrin (G cell)</text>
+<text x="120" y="155" text-anchor="middle" fill="#0f172a">CCK-B receptor: Gq, Ca2+ up</text>
+<text x="120" y="173" text-anchor="middle" fill="#0f172a">Also releases histamine</text>
+<rect x="10" y="200" width="220" height="70" rx="8" fill="#fef3c7" stroke="#334155"/>
+<text x="120" y="222" text-anchor="middle" fill="#0f172a" font-weight="bold">ACh (vagus)</text>
+<text x="120" y="240" text-anchor="middle" fill="#0f172a">M3 receptor: Gq, Ca2+ up</text>
+<text x="120" y="258" text-anchor="middle" fill="#0f172a">Blocked by atropine</text>
+<rect x="10" y="285" width="220" height="70" rx="8" fill="#fce7f3" stroke="#334155"/>
+<text x="120" y="307" text-anchor="middle" fill="#0f172a" font-weight="bold">Somatostatin, PGE2</text>
+<text x="120" y="325" text-anchor="middle" fill="#0f172a">Gi receptor: cAMP down</text>
+<text x="120" y="343" text-anchor="middle" fill="#0f172a">Misoprostol mimics PGE</text>
+<rect x="270" y="30" width="230" height="325" rx="16" fill="#f1f5f9" stroke="#334155"/>
+<text x="385" y="56" text-anchor="middle" fill="#0f172a" font-weight="bold">Parietal cell</text>
+<line x1="230" y1="65" x2="380" y2="185" stroke="#334155" marker-end="url(#ar)"/>
+<line x1="230" y1="150" x2="380" y2="195" stroke="#334155" marker-end="url(#ar)"/>
+<line x1="230" y1="235" x2="380" y2="210" stroke="#334155" marker-end="url(#ar)"/>
+<line x1="230" y1="320" x2="380" y2="222" stroke="#334155" stroke-dasharray="6 4" marker-end="url(#ar)"/>
+<text x="300" y="300" fill="#0f172a">inhibits</text>
+<rect x="382" y="170" width="108" height="60" rx="8" fill="#ede9fe" stroke="#334155"/>
+<text x="436" y="196" text-anchor="middle" fill="#0f172a" font-weight="bold">H+/K+</text>
+<text x="436" y="214" text-anchor="middle" fill="#0f172a" font-weight="bold">ATPase</text>
+<text x="436" y="256" text-anchor="middle" fill="#0f172a">PPIs bind pump</text>
+<text x="436" y="274" text-anchor="middle" fill="#0f172a">irreversibly</text>
+<text x="385" y="320" text-anchor="middle" fill="#0f172a">Also secretes</text>
+<text x="385" y="338" text-anchor="middle" fill="#0f172a">intrinsic factor</text>
+<line x1="490" y1="200" x2="558" y2="200" stroke="#334155" marker-end="url(#ar)"/>
+<rect x="560" y="160" width="150" height="80" rx="8" fill="#e0f2fe" stroke="#334155"/>
+<text x="635" y="190" text-anchor="middle" fill="#0f172a" font-weight="bold">Gastric lumen</text>
+<text x="635" y="212" text-anchor="middle" fill="#0f172a">H+ out, K+ in</text>
+</svg>

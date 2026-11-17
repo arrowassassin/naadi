@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 410" role="img" aria-label="Comparison of structures above and below the pectinate line" font-family="sans-serif">
+<text x="360" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">The pectinate line divides the anal canal</text>
+<rect x="40" y="40" width="640" height="150" rx="8" fill="#e0f2fe" stroke="#334155"/>
+<text x="60" y="66" font-size="15" font-weight="bold" fill="#0f172a">Above the line (hindgut endoderm)</text>
+<text x="60" y="92" font-size="14" fill="#0f172a">Epithelium: simple columnar (glandular)</text>
+<text x="60" y="114" font-size="14" fill="#0f172a">Artery: superior rectal (from IMA)</text>
+<text x="60" y="136" font-size="14" fill="#0f172a">Vein: superior rectal, drains to portal system</text>
+<text x="60" y="158" font-size="14" fill="#0f172a">Lymph: internal iliac nodes</text>
+<text x="60" y="180" font-size="14" fill="#0f172a">Nerve: visceral afferents, so lesions are painless</text>
+<line x1="20" y1="210" x2="700" y2="210" stroke="#334155" stroke-width="3" stroke-dasharray="10 6"/>
+<rect x="250" y="198" width="220" height="24" fill="#f1f5f9" stroke="#334155"/>
+<text x="360" y="215" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f172a">Pectinate (dentate) line</text>
+<rect x="40" y="230" width="640" height="150" rx="8" fill="#fef3c7" stroke="#334155"/>
+<text x="60" y="256" font-size="15" font-weight="bold" fill="#0f172a">Below the line (ectoderm, proctodeum)</text>
+<text x="60" y="282" font-size="14" fill="#0f172a">Epithelium: stratified squamous</text>
+<text x="60" y="304" font-size="14" fill="#0f172a">Artery: inferior rectal (from internal pudendal)</text>
+<text x="60" y="326" font-size="14" fill="#0f172a">Vein: inferior rectal, drains to systemic veins</text>
+<text x="60" y="348" font-size="14" fill="#0f172a">Lymph: superficial inguinal nodes</text>
+<text x="60" y="370" font-size="14" fill="#0f172a">Nerve: somatic (pudendal), so lesions are painful</text>
+<text x="360" y="402" text-anchor="middle" font-size="12" fill="#0f172a">Internal hemorrhoids and adenocarcinoma arise above; external hemorrhoids, fissures and SCC below.</text>
+</svg>

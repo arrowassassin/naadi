@@ -1,1 +1,186 @@
-[]
+[
+ {
+  "id": "s23d-fig100101-01",
+  "chapterId": "s23d-ch1001-s1",
+  "caption": "Figure. Schematic sequence of hepatitis B markers in acute infection that resolves. HBsAg clears before anti-HBs appears; in the window between them IgM anti-HBc is the only positive marker. Timings are illustrative.",
+  "file": "figures/s23d-fig100101-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100102-01",
+  "chapterId": "s23d-ch1001-s1",
+  "caption": "Figure. Typical segment involvement in Crohn disease and ulcerative colitis. Crohn disease skips segments and often spares the rectum; ulcerative colitis always involves the rectum and extends proximally without gaps.",
+  "file": "figures/s23d-fig100102-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100201-01",
+  "chapterId": "s23d-ch1002-s1",
+  "caption": "Figure. Two main molecular routes to colorectal cancer. Conventional adenomas progress through APC, KRAS and TP53 changes; sessile serrated lesions start with BRAF mutation and progress through CpG island methylation that silences MLH1.",
+  "file": "figures/s23d-fig100201-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100202-01",
+  "chapterId": "s23d-ch1002-s1",
+  "caption": "Figure. Two molecular routes to colorectal cancer: the chromosomal instability pathway (APC, KRAS, TP53) and the serrated pathway (BRAF, CpG island methylation, MLH1 silencing).",
+  "file": "figures/s23d-fig100202-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100202-02",
+  "chapterId": "s23d-ch1002-s2",
+  "caption": "Figure. Hepatocellular carcinoma surveillance in cirrhosis: nodule size on ultrasound decides between repeat ultrasound and multiphase imaging, and typical imaging features establish the diagnosis without biopsy.",
+  "file": "figures/s23d-fig100202-02.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100203-01",
+  "chapterId": "s23d-ch1002-s1",
+  "caption": "Figure. The three routes of spread of gastrointestinal carcinoma: lymphatic to the thoracic duct and left supraclavicular node, hematogenous through the portal vein to the liver, and transcoelomic across the peritoneum to the omentum, pelvis and ovaries.",
+  "file": "figures/s23d-fig100203-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100203-02",
+  "chapterId": "s23d-ch1002-s2",
+  "caption": "Figure. Approach to new ascites in a patient with cancer: the serum-ascites albumin gradient and cytology separate peritoneal carcinomatosis from portal hypertension caused by liver metastases, which guides palliation.",
+  "file": "figures/s23d-fig100203-02.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100301-01",
+  "chapterId": "s23d-ch1003-s1",
+  "caption": "Figure. The four main inputs to the medullary vomiting centre, the receptors each uses, and the antiemetic classes that block them with their characteristic adverse effects.",
+  "file": "figures/s23d-fig100301-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100401-01",
+  "chapterId": "s23d-ch1004-s1",
+  "caption": "Figure. A practical sort of white and red oral lesions by whether they wipe off, where they sit and their colour, with the malignant potential and next step for each.",
+  "file": "figures/s23d-fig100401-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100402-01",
+  "chapterId": "s23d-ch1004-s2",
+  "caption": "Figure. Sorting dysphagia by history: oropharyngeal versus esophageal, then solids only (mechanical) versus solids and liquids (motility), and progressive versus intermittent course.",
+  "file": "figures/s23d-fig100402-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100501-01",
+  "chapterId": "s23d-ch1005-s1",
+  "caption": "Figure. Three stimuli (histamine, gastrin, acetylcholine) and two inhibitors (somatostatin, prostaglandin E2) regulate the parietal cell proton pump; drug targets are labelled at each step.",
+  "file": "figures/s23d-fig100501-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100502-01",
+  "chapterId": "s23d-ch1005-s1",
+  "caption": "Figure. Arterial territories of the colon: the splenic flexure lies between SMA and IMA supply and the rectosigmoid junction between IMA and internal iliac supply, the two segments most vulnerable to low-flow ischemia.",
+  "file": "figures/s23d-fig100502-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100502-02",
+  "chapterId": "s23d-ch1005-s2",
+  "caption": "Figure. Management of CT-confirmed diverticulitis by severity, from selective antibiotics for uncomplicated disease to drainage or surgery for complicated disease, with colonoscopy after recovery.",
+  "file": "figures/s23d-fig100502-02.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100503-01",
+  "chapterId": "s23d-ch1005-s1",
+  "caption": "Figure. The pectinate line separates endoderm-derived glandular mucosa with visceral innervation and portal venous drainage from ectoderm-derived squamous anoderm with somatic innervation, systemic venous drainage and inguinal lymph drainage.",
+  "file": "figures/s23d-fig100503-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100601-01",
+  "chapterId": "s23d-ch1006-s1",
+  "caption": "Figure. Bilirubin moves from heme to unconjugated bilirubin, hepatocyte uptake, UGT1A1 conjugation and MRP2 export into bile; each hereditary hyperbilirubinemia blocks one of these steps.",
+  "file": "figures/s23d-fig100601-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100602-01",
+  "chapterId": "s23d-ch1006-s1",
+  "caption": "Figure. The biliary tree and where a gallstone lodges for each classic complication; the level of obstruction predicts the clinical and laboratory picture.",
+  "file": "figures/s23d-fig100602-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100602-02",
+  "chapterId": "s23d-ch1006-s2",
+  "caption": "Figure. Risk-based approach to a suspected common bile duct stone: high likelihood goes straight to ERCP, intermediate likelihood is confirmed with MRCP or endoscopic ultrasound first.",
+  "file": "figures/s23d-fig100602-02.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100701-01",
+  "chapterId": "s23d-ch1007-s2",
+  "caption": "Figure. Pancreatic collections classified by whether the pancreatitis is necrotizing and by time since onset; only the later, walled forms are drained, and only when symptomatic or infected.",
+  "file": "figures/s23d-fig100701-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100801-01",
+  "chapterId": "s23d-ch1008-s2",
+  "caption": "Figure. Classifying ascites: the serum-ascites albumin gradient separates portal hypertension from peritoneal causes, and ascitic total protein then separates cirrhosis from cardiac and hepatic vein causes.",
+  "file": "figures/s23d-fig100801-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100901-01",
+  "chapterId": "s23d-ch1009-s1",
+  "caption": "Figure. Schematic of the groin viewed from inside. Direct hernias pass through Hesselbach triangle medial to the inferior epigastric vessels; indirect hernias enter the deep ring lateral to them; femoral hernias pass below the inguinal ligament medial to the femoral vein.",
+  "file": "figures/s23d-fig100901-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig100901-02",
+  "chapterId": "s23d-ch1009-s2",
+  "caption": "Figure. Simplified approach to blunt abdominal trauma: unstable patients get FAST and go to laparotomy if positive; stable patients get CT, and most solid organ injuries are managed without surgery.",
+  "file": "figures/s23d-fig100901-02.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig101001-01",
+  "chapterId": "s23d-ch1010-s1",
+  "caption": "Figure. The three divisions of the primitive gut, their arteries, main derivatives and the region where visceral pain is felt, with the timing of midgut herniation and rotation.",
+  "file": "figures/s23d-fig101001-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ },
+ {
+  "id": "s23d-fig101101-01",
+  "chapterId": "s23d-ch1011-s1",
+  "caption": "Figure. Acetaminophen metabolism. Most of the drug is conjugated; a minor CYP2E1 route forms NAPQI, which is safe while glutathione lasts and causes zone 3 necrosis once it is depleted. N-acetylcysteine restores glutathione.",
+  "file": "figures/s23d-fig101101-01.svg",
+  "source": "naadi-original-v1",
+  "attribution": null
+ }
+]

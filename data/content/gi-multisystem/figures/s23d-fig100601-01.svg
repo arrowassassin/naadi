@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-label="Bilirubin pathway with the step affected in each hereditary hyperbilirubinemia" font-family="sans-serif">
+<defs><marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#334155"/></marker></defs>
+<text x="190" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Normal pathway</text>
+<text x="540" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">Inherited defect</text>
+<rect x="40" y="30" width="300" height="40" rx="6" fill="#f1f5f9" stroke="#334155"/>
+<text x="190" y="55" text-anchor="middle" font-size="13" fill="#0f172a">Heme from red cell breakdown</text>
+<line x1="190" y1="70" x2="190" y2="96" stroke="#334155" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="40" y="100" width="300" height="40" rx="6" fill="#fef3c7" stroke="#334155"/>
+<text x="190" y="125" text-anchor="middle" font-size="13" fill="#0f172a">Unconjugated bilirubin on albumin</text>
+<line x1="190" y1="140" x2="190" y2="166" stroke="#334155" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="40" y="170" width="300" height="40" rx="6" fill="#e0f2fe" stroke="#334155"/>
+<text x="190" y="195" text-anchor="middle" font-size="13" fill="#0f172a">Hepatocyte uptake (OATP1B1/1B3)</text>
+<line x1="190" y1="210" x2="190" y2="236" stroke="#334155" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="40" y="240" width="300" height="40" rx="6" fill="#e0f2fe" stroke="#334155"/>
+<text x="190" y="265" text-anchor="middle" font-size="13" fill="#0f172a">Conjugation by UGT1A1</text>
+<line x1="190" y1="280" x2="190" y2="306" stroke="#334155" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="40" y="310" width="300" height="40" rx="6" fill="#e0f2fe" stroke="#334155"/>
+<text x="190" y="335" text-anchor="middle" font-size="13" fill="#0f172a">Canalicular export to bile (MRP2)</text>
+<line x1="190" y1="350" x2="190" y2="376" stroke="#334155" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="40" y="380" width="300" height="40" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="190" y="405" text-anchor="middle" font-size="13" fill="#0f172a">Gut bacteria form urobilinogen</text>
+<line x1="190" y1="420" x2="190" y2="446" stroke="#334155" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="40" y="450" width="300" height="40" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="190" y="475" text-anchor="middle" font-size="13" fill="#0f172a">Stercobilin (stool), urobilin (urine)</text>
+<line x1="340" y1="190" x2="380" y2="190" stroke="#334155" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="380" y="170" width="320" height="40" rx="6" fill="#fce7f3" stroke="#334155"/>
+<text x="540" y="195" text-anchor="middle" font-size="13" fill="#0f172a">Rotor: uptake transporters absent</text>
+<line x1="340" y1="260" x2="380" y2="260" stroke="#334155" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="380" y="226" width="320" height="68" rx="6" fill="#fce7f3" stroke="#334155"/>
+<text x="540" y="246" text-anchor="middle" font-size="13" fill="#0f172a">Gilbert: UGT1A1 reduced (mild)</text>
+<text x="540" y="266" text-anchor="middle" font-size="13" fill="#0f172a">Crigler-Najjar II: severely reduced</text>
+<text x="540" y="286" text-anchor="middle" font-size="13" fill="#0f172a">Crigler-Najjar I: absent</text>
+<line x1="340" y1="330" x2="380" y2="330" stroke="#334155" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="380" y="310" width="320" height="40" rx="6" fill="#fce7f3" stroke="#334155"/>
+<text x="540" y="335" text-anchor="middle" font-size="13" fill="#0f172a">Dubin-Johnson: MRP2 defect, dark liver</text>
+<text x="540" y="400" text-anchor="middle" font-size="12" fill="#0f172a">Defects before conjugation raise</text>
+<text x="540" y="418" text-anchor="middle" font-size="12" fill="#0f172a">unconjugated bilirubin (Gilbert, Crigler-Najjar);</text>
+<text x="540" y="436" text-anchor="middle" font-size="12" fill="#0f172a">uptake-storage and export defects raise</text>
+<text x="540" y="454" text-anchor="middle" font-size="12" fill="#0f172a">conjugated bilirubin (Rotor, Dubin-Johnson).</text>
+</svg>

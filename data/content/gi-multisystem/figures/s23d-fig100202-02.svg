@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" role="img" aria-label="Surveillance algorithm for hepatocellular carcinoma in cirrhosis" font-family="sans-serif"><defs><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<text x="340" y="22" text-anchor="middle" font-size="16" fill="#0f172a" font-weight="bold">HCC surveillance in cirrhosis</text>
+<rect x="160" y="38" width="360" height="44" rx="6" fill="#e0f2fe" stroke="#334155"/><text x="340" y="65" text-anchor="middle" font-size="13" fill="#0f172a">Ultrasound every 6 months (with or without AFP)</text>
+<g stroke="#334155" stroke-width="2" marker-end="url(#b)"><line x1="280" y1="84" x2="130" y2="126"/><line x1="400" y1="84" x2="540" y2="126"/></g>
+<rect x="20" y="128" width="220" height="44" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="130" y="155" text-anchor="middle" font-size="13" fill="#0f172a">Nodule under 1 cm</text>
+<rect x="440" y="128" width="220" height="44" rx="6" fill="#fef3c7" stroke="#334155"/><text x="550" y="155" text-anchor="middle" font-size="13" fill="#0f172a">Nodule 1 cm or more</text>
+<g stroke="#334155" stroke-width="2" marker-end="url(#b)"><line x1="130" y1="174" x2="130" y2="212"/><line x1="550" y1="174" x2="550" y2="212"/></g>
+<rect x="20" y="214" width="220" height="44" rx="6" fill="#f1f5f9" stroke="#334155"/><text x="130" y="241" text-anchor="middle" font-size="13" fill="#0f172a">Repeat ultrasound in 3 months</text>
+<rect x="440" y="214" width="220" height="44" rx="6" fill="#fef3c7" stroke="#334155"/><text x="550" y="241" text-anchor="middle" font-size="13" fill="#0f172a">Multiphase CT or MRI</text>
+<g stroke="#334155" stroke-width="2" marker-end="url(#b)"><line x1="510" y1="260" x2="420" y2="300"/><line x1="590" y1="260" x2="600" y2="300"/></g>
+<rect x="250" y="302" width="250" height="58" rx="6" fill="#dcfce7" stroke="#334155"/><text x="375" y="326" text-anchor="middle" font-size="13" fill="#0f172a">Arterial enhancement + washout</text><text x="375" y="346" text-anchor="middle" font-size="13" fill="#0f172a">LI-RADS 5: HCC, no biopsy</text>
+<rect x="520" y="302" width="150" height="58" rx="6" fill="#fce7f3" stroke="#334155"/><text x="595" y="326" text-anchor="middle" font-size="13" fill="#0f172a">Indeterminate:</text><text x="595" y="346" text-anchor="middle" font-size="13" fill="#0f172a">biopsy or MRI</text>
+<text x="340" y="388" text-anchor="middle" font-size="12" fill="#0f172a">Biopsy is reserved for indeterminate lesions or a noncirrhotic liver</text></svg>

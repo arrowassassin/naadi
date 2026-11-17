@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Management pathway for CT-confirmed diverticulitis" font-family="sans-serif">
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#334155"/></marker></defs>
+<rect x="220" y="12" width="280" height="40" rx="6" fill="#f1f5f9" stroke="#334155"/>
+<text x="360" y="37" text-anchor="middle" font-size="14" fill="#0f172a">CT-confirmed diverticulitis</text>
+<line x1="300" y1="52" x2="140" y2="98" stroke="#334155" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="420" y1="52" x2="560" y2="98" stroke="#334155" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="20" y="100" width="250" height="40" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="145" y="125" text-anchor="middle" font-size="14" fill="#0f172a">Uncomplicated</text>
+<rect x="440" y="100" width="260" height="40" rx="6" fill="#fef3c7" stroke="#334155"/>
+<text x="570" y="125" text-anchor="middle" font-size="14" fill="#0f172a">Complicated</text>
+<rect x="20" y="166" width="250" height="88" rx="6" fill="#dcfce7" stroke="#334155"/>
+<text x="145" y="190" text-anchor="middle" font-size="13" fill="#0f172a">Well, eating, immunocompetent:</text>
+<text x="145" y="210" text-anchor="middle" font-size="13" fill="#0f172a">outpatient, analgesia,</text>
+<text x="145" y="230" text-anchor="middle" font-size="13" fill="#0f172a">antibiotics used selectively</text>
+<line x1="145" y1="140" x2="145" y2="164" stroke="#334155" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="300" y="166" width="130" height="88" rx="6" fill="#fef3c7" stroke="#334155"/>
+<text x="365" y="194" text-anchor="middle" font-size="13" fill="#0f172a">Abscess:</text>
+<text x="365" y="214" text-anchor="middle" font-size="13" fill="#0f172a">IV antibiotics</text>
+<text x="365" y="234" text-anchor="middle" font-size="13" fill="#0f172a">+ drain if large</text>
+<rect x="445" y="166" width="125" height="88" rx="6" fill="#fce7f3" stroke="#334155"/>
+<text x="507" y="190" text-anchor="middle" font-size="13" fill="#0f172a">Perforation,</text>
+<text x="507" y="208" text-anchor="middle" font-size="13" fill="#0f172a">peritonitis:</text>
+<text x="507" y="226" text-anchor="middle" font-size="13" fill="#0f172a">emergency</text>
+<text x="507" y="244" text-anchor="middle" font-size="13" fill="#0f172a">surgery</text>
+<rect x="585" y="166" width="115" height="88" rx="6" fill="#ede9fe" stroke="#334155"/>
+<text x="642" y="190" text-anchor="middle" font-size="13" fill="#0f172a">Fistula or</text>
+<text x="642" y="208" text-anchor="middle" font-size="13" fill="#0f172a">stricture:</text>
+<text x="642" y="226" text-anchor="middle" font-size="13" fill="#0f172a">elective</text>
+<text x="642" y="244" text-anchor="middle" font-size="13" fill="#0f172a">resection</text>
+<line x1="540" y1="140" x2="365" y2="164" stroke="#334155" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="560" y1="140" x2="507" y2="164" stroke="#334155" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="600" y1="140" x2="642" y2="164" stroke="#334155" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="120" y="292" width="480" height="48" rx="6" fill="#e0f2fe" stroke="#334155"/>
+<text x="360" y="313" text-anchor="middle" font-size="13" fill="#0f172a">After recovery: colonoscopy if none recent;</text>
+<text x="360" y="331" text-anchor="middle" font-size="13" fill="#0f172a">elective resection decided case by case</text>
+</svg>
