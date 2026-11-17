@@ -1,0 +1,16 @@
+{
+ "id": "20261117T071131-seg22-harden-3b67d3",
+ "ts": "2026-11-17T07:11:31.812108Z",
+ "from": "seg22-harden",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated 4f28394 into claude/naadi-shared",
+ "body": "S22: docs (ARCHITECTURE, SECURITY/ASVS, CONTENT_GUIDE, RUNBOOK), SearXNG admin probe, Lighthouse spec",
+ "refs": {
+  "commit": "4f28394",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
