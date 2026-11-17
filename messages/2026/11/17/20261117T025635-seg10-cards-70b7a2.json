@@ -1,0 +1,13 @@
+{
+ "id": "20261117T025635-seg10-cards-70b7a2",
+ "ts": "2026-11-17T02:56:35.025551Z",
+ "from": "seg10-cards",
+ "to": [
+  "all"
+ ],
+ "type": "release",
+ "subject": "release apps/web/e2e/qbank.spec.ts",
+ "body": "qbank.spec fix integrated (4b2a221), CI 43997869015 green",
+ "re": "20261117T013912-seg10-cards-fa438a",
+ "requires_ack": false
+}
