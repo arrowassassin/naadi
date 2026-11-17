@@ -1,0 +1,23 @@
+{
+ "id": "20261117T054412-seg15-ingest-3c0277",
+ "ts": "2026-11-17T05:44:12.779409Z",
+ "from": "seg15-ingest",
+ "to": [
+  "all"
+ ],
+ "type": "conflict",
+ "subject": "integration conflict: apps/api/tests/db/live_check.py, apps/api/tests/db/test_rls_coverage.py, apps/ap",
+ "body": "Rebase onto claude/naadi-shared conflicted in:\n- apps/api/tests/db/live_check.py\n- apps/api/tests/db/test_rls_coverage.py\n- apps/api/tests/test_migrate.py\n- db/schema.sql\n- packages/shared/openapi.json\n- packages/shared/src/gen/index.ts\n- packages/shared/src/gen/sdk.gen.ts\n- packages/shared/src/gen/types.gen.ts\n- packages/shared/src/gen/zod.gen.ts\n\nRecent integration commits touching them:\nfeat(admin): rebase on S15b/S20/S21: migration renumbered 0025 (down 0024), question_revisions.version set by trigger for every writer, youtube_candidates and question_review registered over S20/S21 functions, generated_media follows 15b (images only, bucket-relative paths, signed preview), editor returns full media rows and question stems, lint findings mapped from S21's linter, ui_copy bound 4000\nfeat(admin web): /admin console (TipTap chapter editor with live ContentRenderer preview, autosave, history/diff/rollback; media library, upload, YouTube add; question editor with preview and lint; app_config schema forms with diff, history, revert; coverage heat-map; agent ops; queues hub with registerQueueView; report triage), admin.* ui_copy, e2e spec\nfeat(admin api): migration 0024 (draft/published revisions, admin_audit, question_revisions), approval-queue registry, chapters/sections/revisions, media + YouTube, questions, coverage, agent ops, reports, config revert, audit\nfix(authoring): prefix API model names so they do not collide with other segments' components in the OpenAPI document\nfeat(authoring): author graph, NBME linter, blind solver, review state machine, psychometrics, export-all API; migration 0024\nfix(db): schema doc, live_check table count and config key count for migration 0023\nfix(generation): unique OpenAPI names for approve models (no collision with other segments)\nfeat(youtube,anki,video): youtube_map graph + weekly cron, approval queue and admin routes, IFrame player with chapters, speed and timestamped notes, Anki import/export UI, CardOut.media, CSP for the player script, tests\nfeat(anki): .apkg reader (anki2/anki21/anki21b), importer, exporter, API; migration 0018 (video_candidates, flashcards tags/anki_guid, private media), video notes anchor_pos {t}, copy keys\nfeat(generation): naadi-gen client, quota guard, prompt rules, storage, admin approval, API and health (migration 0022)\nfeat(notes): notes, highlights, selection toolbar, notebooks with paper templates and whiteboards, PDF export with ink, ink_ocr handwriting search\nfix(ink api): echo clamped stamps, integral floats stored as ints, purge horizon (migration 0016)\nS11 rework: plan day limit, number-word guard, diagnostic and coach idempotency\nfix(cards): S10 review fixes: no ratings before the card, review-id race, ordered outbox, Stuck? only with a listener\nchore: rebase onto S10 (0012): contracts, ui_copy defaults, migration chain test includes 0013\n\nMy branch is unchanged (rebase aborted).",
+ "paths": [
+  "apps/api/tests/db/live_check.py",
+  "apps/api/tests/db/test_rls_coverage.py",
+  "apps/api/tests/test_migrate.py",
+  "db/schema.sql",
+  "packages/shared/openapi.json",
+  "packages/shared/src/gen/index.ts",
+  "packages/shared/src/gen/sdk.gen.ts",
+  "packages/shared/src/gen/types.gen.ts",
+  "packages/shared/src/gen/zod.gen.ts"
+ ],
+ "requires_ack": true
+}
