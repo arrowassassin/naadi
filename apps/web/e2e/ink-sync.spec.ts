@@ -206,21 +206,24 @@ async function violetCentre(page: Page, fromPx: number, toPx: number): Promise<n
     const ctx = c.getContext("2d") as CanvasRenderingContext2D;
     ctx.drawImage(img, 0, 0);
     const d = ctx.getImageData(0, 0, c.width, c.height).data;
+    // A stroke is a long run of violet in a row; anti-aliased text (sub-pixel colour fringes on some renderers)
+    // only scatters a few bluish pixels per row. Rows count when at least 10 % of the band is violet.
+    const minRun = Math.max(12, Math.floor(c.width * 0.1));
     let sum = 0;
     let weight = 0;
     for (let y = 0; y < c.height; y++) {
+      let n = 0;
       for (let x = 0; x < c.width; x++) {
         const i = (y * c.width + x) * 4;
         const r = d[i] ?? 0;
         const g = d[i + 1] ?? 0;
         const bl = d[i + 2] ?? 0;
-        // Ink violet (#c4baff on dark): blue well above green AND red above green. A blue text-selection
-        // highlight (red below green) is not ink.
-        const v = bl - g;
-        if (v > 40 && bl > 120 && r > g + 4) {
-          sum += (y + 0.5) * v;
-          weight += v;
-        }
+        // Ink violet (#c4baff on dark): blue well above green, and red above green.
+        if (bl - g > 40 && bl > 120 && r > g + 4) n++;
+      }
+      if (n >= minRun) {
+        sum += (y + 0.5) * n;
+        weight += n;
       }
     }
     return weight > 0 ? { y: sum / weight, scale: img.height } : null;
