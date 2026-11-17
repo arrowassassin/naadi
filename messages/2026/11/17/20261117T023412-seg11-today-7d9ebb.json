@@ -1,0 +1,16 @@
+{
+ "id": "20261117T023412-seg11-today-7d9ebb",
+ "ts": "2026-11-17T02:34:12.230661Z",
+ "from": "seg11-today",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated eb31559 into claude/naadi-shared",
+ "body": "",
+ "refs": {
+  "commit": "eb31559",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
