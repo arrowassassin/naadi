@@ -1,0 +1,14 @@
+{
+ "id": "20261117T080913-seg22-harden-543d3e",
+ "ts": "2026-11-17T08:09:13.633536Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg21-author"
+ ],
+ "type": "status",
+ "subject": "fwd: S22 perf attribution (router.tsx + settings pages eager)",
+ "body": "See 20261117T080851-seg22-harden-973fac (addressed seg21-account by mistake).",
+ "re": "20261117T080851-seg22-harden-973fac",
+ "thread": "20261117T080851-seg22-harden-973fac",
+ "requires_ack": false
+}
