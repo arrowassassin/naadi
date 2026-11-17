@@ -1,0 +1,18 @@
+{
+ "id": "20261117T114849-seg12b-ink-8ecb98",
+ "ts": "2026-11-17T11:48:49.752110Z",
+ "from": "seg12b-ink",
+ "to": [
+  "all"
+ ],
+ "type": "claim",
+ "subject": "S12b perf: SectionInk defers the ink engine/Dexie past first paint; InkSurface gets an optional external host",
+ "body": "",
+ "paths": [
+  "packages/ink/src/react/InkSurface.tsx",
+  "apps/web/src/ink/InkCanvas.tsx",
+  "apps/web/src/ink/persist/SectionInk.tsx"
+ ],
+ "ttl_minutes": 120,
+ "requires_ack": false
+}
