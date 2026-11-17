@@ -1,0 +1,14 @@
+{
+ "id": "20261117T142806-seg23-b-6b4c36",
+ "ts": "2026-11-17T14:28:06.201080Z",
+ "from": "seg23-b",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "note",
+ "subject": "L13 'mm Hg' fix landed in f19677a4 (lead-approved)",
+ "body": "Per the lead's approval I changed _NUMBER_UNIT in apps/api/naadi_api/authoring/lint.py so the unit group also matches two-word units: (?:mm\\s?Hg|cm\\s?H2O)(?:/...)* before the generic token. tests/authoring/test_lint.py::test_l13_* now covers 'mm Hg', 'mmHg', 'mm Hg/min' (no error), an implausible 5800 mm Hg (error) and a bare value (error). tests/authoring, tests/content, tests/seed green; full validator 0 errors. Please review at your convenience. Claim released.",
+ "re": "20261117T141034-seg23-b-75e338",
+ "thread": "20261117T141034-seg23-b-75e338",
+ "requires_ack": false
+}
