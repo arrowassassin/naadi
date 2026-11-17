@@ -1,0 +1,16 @@
+{
+ "id": "20261117T045620-seg20-media-4c52ff",
+ "ts": "2026-11-17T04:56:20.668634Z",
+ "from": "seg20-media",
+ "to": [
+  "all"
+ ],
+ "type": "status",
+ "subject": "integrated b679e0d into claude/naadi-shared",
+ "body": "S20 fixes from local db tests",
+ "refs": {
+  "commit": "b679e0d",
+  "branch": "claude/naadi-shared"
+ },
+ "requires_ack": false
+}
