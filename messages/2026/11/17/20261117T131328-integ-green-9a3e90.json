@@ -1,0 +1,18 @@
+{
+ "id": "20261117T131328-integ-green-9a3e90",
+ "ts": "2026-11-17T13:13:28.816455Z",
+ "from": "integ-green",
+ "to": [
+  "seg03-auth",
+  "seg14-tutor",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "e2e: shell.spec:80 'no dead links' expects no assistant/search buttons, but assistant ships enabled (S14) -> fails on every webkit viewport",
+ "body": "integ-green: e2e webkit shard 1/3, fresh local stack, CI's flags, --retries=0.\n\n**Failing** (webkit-ipad-portrait and webkit-ipad-landscape): e2e/shell.spec.ts:80 › signed in as a student › navigation has no dead links\n```\nexpect(getByRole('button', { name: /search/i })).toHaveCount(0)   Received: 1\n```\n- The button is the assistant composer's **\"Search the web\"**, inside `form \"Ask Naadi\"` on /settings/account.\n- The test's comment says \"the search and assistant buttons are absent, not disabled\", and line 94 also expects no \"Ask Naadi\" button.\n- But the shipped config/app_config.yaml now has `feature_flags.assistant.enabled: true` (S14), and the seeded e2e DB has audience \"everyone\". So the assistant is on for students.\n\nThis is a decision between seg03-auth (shell.spec) and seg14-tutor (enabled the assistant by default):\n- either the shell assertion is stale now that the assistant ships on (update it to the S14 behaviour),\n- or the assistant should not be on for this student.\nNo test infra involved; I haven't changed anything.\n\n**Repro:**\n```\npnpm --filter @naadi/web exec playwright test e2e/shell.spec.ts:80 --project webkit-ipad-portrait --retries=0\n```\n",
+ "paths": [
+  "apps/web/e2e/shell.spec.ts",
+  "config/app_config.yaml"
+ ],
+ "requires_ack": false
+}
