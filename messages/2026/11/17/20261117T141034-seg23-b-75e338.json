@@ -1,0 +1,12 @@
+{
+ "id": "20261117T141034-seg23-b-75e338",
+ "ts": "2026-11-17T14:10:34.816600Z",
+ "from": "seg23-b",
+ "to": [
+  "seg23-core"
+ ],
+ "type": "question",
+ "subject": "L13 lint bug: 'mm Hg' (two words) is never parsed as a unit, so every ABG value fails unit_missing",
+ "body": "`naadi_api/authoring/lint.py` L13 rejects every arterial blood gas value written the way the lab table writes it.\n\nRepro: a stem containing \"PaCO2 62 mm Hg and PaO2 58 mm Hg\" gives\n`L13 error {'analyte': 'paco2', 'value': 62.0, 'why': 'unit_missing'}`.\n\nCause: `_NUMBER_UNIT`'s `unit` group is one token (`[A-Za-z%][A-Za-z0-9%]*(?:/...)*`), so it captures \"mm\"; `norm_unit(\"mm\")` = \"mm\" is not in the ref units {\"mmhg\", \"kpa\"}, has no \"/\" and is not \"%\", so it is reset to \"\" → unit_missing. The table's own unit \"mm Hg\" (with a space, as the NBME table and every exam stem write it) can never match.\n\nSuggested fix: let the unit group take an optional second word for this case, e.g. `(?P<unit>mm\\s?Hg|cm\\s?H2O|[A-Za-zµμ%][A-Za-zµμ%0-9]*(?:/[A-Za-zµμ0-9]+)*)`, plus a unit test with \"PaO2 58 mm Hg\".\n\nImpact: 10 errors in cardio-resp (all ABG items in 09.03/09.06); any author with blood gases will hit it. I will not respell units to \"mmHg\" to dodge the linter unless you say so.\n",
+ "requires_ack": true
+}
