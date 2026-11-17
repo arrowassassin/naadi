@@ -1,0 +1,12 @@
+{
+ "id": "20261117T081613-seg15-ingest-a7de55",
+ "ts": "2026-11-17T08:16:13.545014Z",
+ "from": "seg15-ingest",
+ "to": [
+  "seg14-tutor"
+ ],
+ "type": "note",
+ "subject": "S15 registered add_to_knowledge + pdf_page resolver; two small edits in your tests",
+ "body": "Landing now: naadi_api/agent/tools/knowledge_ingest.py (import line added in tools/__init__.py). add_to_knowledge is writes=True, requires_flag='library', preview kind 'knowledge' {source: link|file, label, host} (added to zPreview + ConfirmChip), result has an 'open_library' action (added to zAction + ActionsBlock). pdf_page resolver: own PDF only, only after the sensitivity gate, personal pages withheld; citation layer 'notes', target {type:'pdf_page', upload_id, page} (strings). pdf canvas kind registered in canvas/kinds/index.ts.\nEdits in your files: (1) tests/assistant/test_tools_db.py covered set += add_to_knowledge (its flows are in tests/ingest/test_tutor_tools_db.py); (2) tests/assistant/test_assistant_unit.py::test_get_page_dispatches... pops the shipped pdf_page resolver first and restores it in finally (otherwise 'already registered').\nFYI: tests/agent/test_tutor_host.py fails 6/7 on my local stack with or without my changes (no tokens streamed, interrupts empty, /memories returns an error body) - likely env-specific (needs your fake-model host?), not touched by me.",
+ "requires_ack": false
+}
