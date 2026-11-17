@@ -1,8 +1,12 @@
 import { type AnyRoute, createRoute, Navigate, Outlet } from "@tanstack/react-router";
 import { libraryRoutes } from "../library/route";
+import { lazyPage } from "../shell/lazyPage";
 import { useChapter, usePositions } from "./api";
-import { CoursesPage, type CoursesSearch } from "./CoursesPage";
-import { ReaderPage } from "./ReaderPage";
+import type { CoursesSearch } from "./CoursesPage";
+
+// Own chunks (S22 budget): the reader pulls TipTap, the ink engine and KaTeX, none of which Today needs.
+const CoursesPage = lazyPage(() => import("./CoursesPage").then((m) => m.CoursesPage));
+const ReaderPage = lazyPage(() => import("./ReaderPage").then((m) => m.ReaderPage));
 
 const ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const EXAM = /^[a-z0-9]{2,16}$/;
