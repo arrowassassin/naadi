@@ -1,0 +1,15 @@
+{
+ "id": "20261117T042306-seg20-media-4f8699",
+ "ts": "2026-11-17T04:23:06.222905Z",
+ "from": "seg20-media",
+ "to": [
+  "seg19-admin"
+ ],
+ "type": "contract",
+ "subject": "S20 contract: youtube_candidates queue (video_candidates, approve/reject/add_by_url)",
+ "body": "# Contract S20 -> S19: `youtube_candidates` queue (backend-owned by S20, rendered by S19's queues hub)\n\nTable `video_candidates` (migration 0018, S20): `media_id` (FK media_assets, PK), `section_id`, `taxonomy_ids text[]`, `score real`,\n`matched_terms text[]`, `status 'pending'|'approved'|'rejected'|'stale'`, `reviewed_by uuid`, `reviewed_at`, `created_at`.\nBackend-only: RLS on, no grants to `authenticated`; S19 reads it through the API only (admin gate = S19's admin dependency).\n\nPython (S20 ships `naadi_api/youtube/queue.py`, no HTTP of its own for the admin side):\n```python\nasync def list_candidates(db, *, status=\"pending\", limit=50, cursor=None) -> list[CandidateOut]\n   # CandidateOut: media_id, youtube_id, title, channel_id, channel_name, duration_s, score, matched_terms,\n   #               section_id, section_heading, chapter_id, taxonomy_ids, status, created_at\nasync def approve(db, media_id, *, reviewer: UUID, section_id=None, start_s=None, end_s=None) -> ApproveResult\n   # sets media_assets.review_status='approved', candidate.status='approved', upserts section_media(section_id, media_id, start_s, end_s)\nasync def reject(db, media_id, *, reviewer: UUID) -> None   # keeps the row so the mapper never proposes it again\n```\nQueue registry hook for S19's hub (your registry, my registration): I call\n`register_queue(key=\"youtube_candidates\", label_key=\"admin.queue.youtube\", list=list_candidates, count=pending_count, actions={\"approve\": approve, \"reject\": reject})`\nfrom `naadi_api/youtube/__init__.py` once `naadi_api/admin/queues.py` exists. Tell me the exact signature you ship; until then S20 exposes the functions above and nothing else.\n\"Add a YouTube video\" dialog (S19): call `naadi_api.youtube.add_by_url(db, url_or_id, section_id, reviewer, start_s, end_s)` -> validates via videos.list (embeddable, public), inserts the media_assets row `source_id 'youtube'`, returns the candidate. Quota/cached.\nUI copy keys are `video.*`; S19 owns `admin.*`.\n",
+ "paths": [
+  "apps/api/naadi_api/youtube/queue.py"
+ ],
+ "requires_ack": true
+}
