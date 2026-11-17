@@ -155,3 +155,16 @@ def test_artifact_uploads_never_include_playwright_error_context() -> None:
             assert "!**/error-context.md" in path, f"{f}: {step.get('name') or step['uses']}"
             checked += 1
     assert checked >= 2  # the e2e screenshots (ci) and the live smoke (deploy)
+
+
+def test_ci_runs_bundle_budgets_and_lighthouse() -> None:
+    ci = _load("ci.yml")
+    checks = "\n".join(s.get("run", "") for s in ci["jobs"]["checks"]["steps"])
+    assert "pnpm --filter @naadi/web size" in checks
+    lh = next(s for s in ci["jobs"]["e2e"]["steps"] if s.get("name", "").startswith("Lighthouse"))
+    assert lh["env"]["E2E_LIGHTHOUSE"] == "1" and "lighthouse.spec.ts" in lh["run"]
+    # Report-only until segment 22's last commit flips it (lead decision 20261117T091425); either way an over-budget
+    # run must fail once PERF_GATE is "enforce", so both steps exit 1 in that mode.
+    assert ci["env"]["PERF_GATE"] in {"report", "enforce"}
+    for run in (checks, lh["run"]):
+        assert 'if [ "$PERF_GATE" = "enforce" ]; then exit 1; fi' in run
