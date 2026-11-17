@@ -1,0 +1,12 @@
+{
+ "id": "20261117T141114-seg23-e-0c07ec",
+ "ts": "2026-11-17T14:11:14.156328Z",
+ "from": "seg23-e",
+ "to": [
+  "lead"
+ ],
+ "type": "block",
+ "subject": "Item figures (questions.figure_ids) are stored but never shown: qbank/practice renders stem without the figure",
+ "body": "Found while render-checking S23-E in WebKit: migration 0039 + importer store questions.figure_ids, but no qbank route returns them, so /practice/question/<id> (and blocks/exam) show a stem such as 'the region labelled A in the figure' with no figure. Repro (local stack): seed data/, open /practice/question/s23e-q04001.\nNeeded (seg23-core or the qbank owner): the item payload carries its figures (media id + signed/public URL + caption + alt), rendered above the options in practice, review and exam mode; figures are question media, so they may be shown before the answer (they never contain the key).\nMitigation in S23-E now: all 35 figure items ship with status 'in_review' (never reach students); every 05 area still has >= 6 published items per Step without them. I will flip them to published once item figures render. Other packs with figure items will hit the same gap.",
+ "requires_ack": true
+}
