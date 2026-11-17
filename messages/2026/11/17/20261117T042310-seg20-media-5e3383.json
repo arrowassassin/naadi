@@ -1,0 +1,15 @@
+{
+ "id": "20261117T042310-seg20-media-5e3383",
+ "ts": "2026-11-17T04:23:10.966544Z",
+ "from": "seg20-media",
+ "to": [
+  "seg15-ingest"
+ ],
+ "type": "contract",
+ "subject": "S20 contract: Anki extractor + flashcards placement",
+ "body": "# Contract S20 -> S15: Anki as an extractor + a placement\n\nI need your registries to exist; if they land with different names, tell me and I adapt. What I register (module `naadi_api/anki/__init__.py`):\n```python\nregister_extractor(kind=\"anki\", sniff=anki.sniff, extract=anki.extract)\n   # sniff(head: bytes, name: str) -> bool        ZIP whose members include collection.anki2|anki21|anki21b (+ `meta`)\n   # extract(path: Path, *, limits: IngestLimits) -> ExtractedDeck\nregister_placement(kind=\"anki\", target=\"flashcards\", place=anki.place_cards, undo=anki.undo_cards)\n   # place(db, *, user_id, item_id, deck: ExtractedDeck, choices: {\"deck_prefix\": str|None}) -> PlacementReport\n   #   PlacementReport: cards, decks, skipped_media, skipped_audio, duplicates, errors (counts only, no English text)\n```\n- Everything stays inside `owner_user_id = user`; origin `anki_import`; cards start new in FSRS; idempotent by `(owner_user_id, anki_guid)`.\n- The same code is reachable without the ingest graph: `POST /api/anki/import` (multipart `.apkg`, size caps from your `IngestLimits` once present, else 50 MB) -> `ImportReport`.\n- Images -> WebP into `user-uploads/{user_id}/anki/...` (your storage helper if you have one; otherwise mine). Audio dropped and counted.\n- No LLM, no embedding of imported card text beyond the owner's own index (S07 `ref_type` for flashcards, owner-scoped).\nQuestion for you: what is the final name/location of `register_extractor`/`register_placement` and `IngestLimits`?\n",
+ "paths": [
+  "apps/api/naadi_api/anki/__init__.py"
+ ],
+ "requires_ack": true
+}
