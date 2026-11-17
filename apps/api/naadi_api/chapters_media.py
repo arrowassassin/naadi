@@ -24,6 +24,7 @@ import time
 import uuid
 from collections.abc import Awaitable, Callable, Iterable
 from dataclasses import dataclass
+from typing import Any
 from urllib.parse import quote, urlparse
 
 from .config_api.defaults import file_values
@@ -107,15 +108,29 @@ class MediaUrlResolver:
         if self._signer is not None:
             return self._signer
         s = self._settings
-        if not s.supabase_url or s.supabase_service_role_key is None:
+        if not s.supabase_url:
             return None
-        url, key = s.supabase_url, s.supabase_service_role_key.get_secret_value()
+        url = s.supabase_url
+        # A bare storage-api (local stack / CI: NAADI_STORAGE_URL) only accepts its own service key; the browser
+        # still reaches it through SUPABASE_URL/storage/v1 (the gateway), so signed paths are made absolute there.
+        direct = s.storage_url if s.storage_url and s.storage_service_key is not None else None
+        secret = s.storage_service_key if direct else s.supabase_service_role_key
+        if secret is None:
+            return None
+        key = secret.get_secret_value()
 
         async def sign(bucket: str, paths: list[str], expires_in: int) -> dict[str, str]:
-            from supabase import acreate_client
+            if direct:
+                from storage3 import AsyncStorageClient
 
-            client = await acreate_client(url, key)
-            rows = await client.storage.from_(bucket).create_signed_urls(paths, expires_in)
+                storage: Any = AsyncStorageClient(
+                    direct.rstrip("/") + "/", {"apikey": key, "Authorization": f"Bearer {key}"}
+                )
+            else:
+                from supabase import acreate_client
+
+                storage = (await acreate_client(url, key)).storage
+            rows = await storage.from_(bucket).create_signed_urls(paths, expires_in)
             out: dict[str, str] = {}
             for row in rows:
                 path, signed = row.get("path"), row.get("signedURL") or row.get("signedUrl")

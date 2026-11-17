@@ -100,6 +100,8 @@ test.describe("admin console pages", () => {
     page,
     consoleErrors,
   }, info) => {
+    // Fifteen views, each audited with axe and photographed: well past the default 60 s on WebKit.
+    test.setTimeout(240_000);
     await go(page, "/settings/account");
     const link = page.getByTestId("admin-link");
     await expect(link).toHaveText(c("admin.account_link"));
@@ -508,7 +510,7 @@ test.describe("authoring flow", () => {
       await go(student, reader);
       await expect(student.locator("[data-content-root]")).toContainText(v1);
       await expect(student.locator(`[data-node='figure'][data-media-id='${mediaIds.figure}'] img`)).toBeVisible();
-      // TEMP-PDF await expect(student.locator("[data-node='pdf'] a")).toBeVisible();
+      await expect(student.locator("[data-node='pdf'] a")).toBeVisible();
       await expect(student.locator(`[data-node='video'][data-media-id='${mediaIds.video}']`)).toBeVisible();
       await expect(student.locator(`[data-node='question-embed'][data-question-id='${questionId}']`)).toBeVisible();
 
