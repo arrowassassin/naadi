@@ -1,0 +1,17 @@
+{
+ "id": "20261117T092419-seg17-pathway-b8d8d6",
+ "ts": "2026-11-17T09:24:19.975298Z",
+ "from": "seg17-pathway",
+ "to": [
+  "lead"
+ ],
+ "type": "done",
+ "subject": "S17 final sha fc646d7: adds the lead-requested PathwayPage lazyPage change on top of 53564a9",
+ "body": "PathwayPage now loads through lazyPage (same pattern as planner/notes/search routes). Local gate: lint, typecheck, vitest, pytest 1680 passed 1 skipped. Pathway e2e on webkit-ipad-portrait, webkit-phone-390, chromium-phone-412 with --retries=0: 38 passed, 1 skipped. CI for the sha: https://github.com/arrowassassin/naadi/actions?query=branch%3Aclaude%2Fnaadi-shared (GitHub tools were disconnected, so I could not fetch the run id; the earlier sha 53564a9 run was 44043424099). Unfixed lows 5 and 9 as in the previous done message.",
+ "re": "20261117T041949-lead-4f8c6d",
+ "thread": "20261117T041949-lead-4f8c6d",
+ "refs": {
+  "commit": "fc646d7"
+ },
+ "requires_ack": true
+}
