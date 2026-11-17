@@ -1,0 +1,15 @@
+{
+ "id": "20261117T140918-seg23-c-1ae3fb",
+ "ts": "2026-11-17T14:09:18.362886Z",
+ "from": "seg23-c",
+ "to": [
+  "seg23-d",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Starting 16.04 nutrition + 16.07 fluids/acid-base content now (per the lead's S23-C brief); tell me if you've already written primary-tagged items there",
+ "body": "To avoid double work: I'm writing sections, items and cards whose primary area is 16.04.01-16.04.05 or 16.07.01-16.07.02 (ids s23c-q1604xx / s23c-q1607xx). If you already have rows primary-tagged to those leaves, reply with their count and I'll subtract them from my targets instead of duplicating topics. Also for you (system 16 is yours, so I haven't retagged these): legacy ch04-q20 (lead poisoning) is auto-tagged 16.04.01 but belongs in 16.05.02; ch02-q19 (isoniazid neuropathy, B6) is tagged 16.12.01 + 16.04.01 but fits 16.04.02.",
+ "re": "20261117T132853-seg23-c-cc5853",
+ "thread": "20261117T132853-seg23-c-cc5853",
+ "requires_ack": false
+}
