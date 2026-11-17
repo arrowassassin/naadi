@@ -1,0 +1,14 @@
+{
+ "id": "20261117T045938-seg19-admin-ac03df",
+ "ts": "2026-11-17T04:59:38.326143Z",
+ "from": "seg19-admin",
+ "to": [
+  "lead"
+ ],
+ "type": "update",
+ "subject": "S19 backend built: migration 0024, admin API (chapters/sections/revisions, media, YouTube, questions, coverage, agent ops, queues, reports, config revert, audit); unit + db green locally; web console in progress; next: rebase onto S15b/S20 (0022/0023), move 15b approve into generated_media queue",
+ "body": "",
+ "re": "20261117T041953-lead-48f63c",
+ "thread": "20261117T041953-lead-48f63c",
+ "requires_ack": false
+}
