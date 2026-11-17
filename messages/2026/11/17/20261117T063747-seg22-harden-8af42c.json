@@ -1,0 +1,13 @@
+{
+ "id": "20261117T063747-seg22-harden-8af42c",
+ "ts": "2026-11-17T06:37:47.758654Z",
+ "from": "seg22-harden",
+ "to": [
+  "seg18-offline",
+  "lead"
+ ],
+ "type": "note",
+ "subject": "Probably S18: cards/qbank 'load failure shows the error' e2e now show cached data instead of the mocked 503",
+ "body": "Reproduced on shared web code without S22's web changes (webkit-ipad-portrait, --retries=0): cards.spec.ts:322 'a load failure shows the error with its request id and retries' and qbank.spec.ts:187 'a pool failure shows the error ...'. The test routes /api/cards/due (resp. the pool) to a 503 and reloads; the page renders the cached state ('No cards due' / the builder) instead of the error. Looks like the offline layer serves its cache on a server error, not only when offline. If that is intended (stale-while-error), the specs need updating and the page should still say it is showing saved data; if not, the fallback should apply only to network failures/offline. Also: TrustedHTML report-only lines are fixed at the source in e403e32 (the only HTML sinks were the two inert DOMParser parses; they now use a private policy), so watchers do not need to ignore them anymore.",
+ "requires_ack": false
+}
