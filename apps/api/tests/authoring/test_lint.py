@@ -237,6 +237,12 @@ def test_l13_lab_values_have_units_and_plausible_magnitudes() -> None:
     assert "L13" not in rules(with_lab("Arterial pH is 7.32."))  # unitless analyte
     assert "L13" not in rules(with_lab("24-hour urinary calcium was 350 mg."))  # other fluid
     assert "L13" not in rules(with_lab("Hemoglobin was 12 months ago normal."))
+    # Two-word units: the table writes "mm Hg"; "mmHg" is the same unit; a "/min" rate is not a missing unit.
+    assert "L13" not in rules(with_lab("Arterial PaCO2 is 62 mm Hg and PaO2 58 mm Hg."))
+    assert "L13" not in rules(with_lab("Arterial PaCO2 is 62 mmHg and PaO2 58 mmHg."))
+    assert "L13" not in rules(with_lab("Arterial PaO2 rose by 4 mm Hg/min."), severity="error")
+    assert "L13" in rules(with_lab("Arterial PaO2 is 5800 mm Hg."), severity="error")  # implausible still caught
+    assert "L13" in rules(with_lab("Arterial PaO2 is 58."), severity="error")  # still needs a unit
 
 
 def test_l14_stem_length() -> None:

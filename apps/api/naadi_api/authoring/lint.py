@@ -560,7 +560,7 @@ def _vignette_rules(item: Mapping[str, Any], stem: str, out: list[Finding]) -> N
 
 _UNIT_MAP = str.maketrans({"µ": "u", "μ": "u"})
 _NUMBER_UNIT = re.compile(
-    r"^\s*(?:(?:level|concentration|count|value)s?\s*)?(?:of|is|was|:|=)?\s*(?!\d+\s*(?:months?|weeks?|days?|hours?|years?|times|minutes?)\b)(-?\d{1,3}(?:,\d{3})+(?:\.\d+)?|-?\d+(?:\.\d+)?)\s*(?P<unit>[A-Za-zµμ%][A-Za-zµμ%0-9]*(?:/[A-Za-zµμ0-9]+)*)?",
+    r"^\s*(?:(?:level|concentration|count|value)s?\s*)?(?:of|is|was|:|=)?\s*(?!\d+\s*(?:months?|weeks?|days?|hours?|years?|times|minutes?)\b)(-?\d{1,3}(?:,\d{3})+(?:\.\d+)?|-?\d+(?:\.\d+)?)\s*(?P<unit>(?:mm\s?Hg|cm\s?H2O)(?:/[A-Za-zµμ0-9]+)*(?![A-Za-z])|[A-Za-zµμ%][A-Za-zµμ%0-9]*(?:/[A-Za-zµμ0-9]+)*)?",
     re.I,
 )
 
