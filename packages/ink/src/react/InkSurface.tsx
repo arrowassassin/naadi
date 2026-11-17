@@ -38,6 +38,13 @@ export interface InkSurfaceProps {
   latency?: LatencyRecorder;
   /** Reflow anchoring for text surfaces (12b); a new resolver re-places anchored items. */
   anchors?: InkAnchorResolver | null;
+  /**
+   * Attach to this element instead of rendering one (12b): the page already rendered the content and an empty host
+   * (position absolute, inset 0, pointer-events none, inside a relative container) before the engine's code
+   * loaded, so the content is not remounted when ink arrives. With `host`, InkSurface renders nothing and
+   * `children`, `label`, `className` and `style` are the page's business. Read at mount.
+   */
+  host?: HTMLElement | null;
   /** Clock for updatedAt stamps (epoch ms; read at mount). Sync passes a server-corrected clock (12b). */
   now?: () => number;
   onStrokesChange?: (diff: InkDiff) => void;
@@ -71,7 +78,7 @@ export function InkSurface(props: InkSurfaceProps) {
 
   // The engine is created once per mount; the effects below keep it in sync with props.
   useEffect(() => {
-    const host = hostRef.current;
+    const host = cb.current.host ?? hostRef.current;
     if (!host) return;
     const p = cb.current;
     const e = new InkEngine({
@@ -154,6 +161,7 @@ export function InkSurface(props: InkSurfaceProps) {
     if (props.theme) engine.current?.setTheme(props.theme, props.palette);
   }, [props.theme, props.palette]);
 
+  if (props.host !== undefined) return null;
   return (
     <section
       aria-label={props.label}
